@@ -123,6 +123,18 @@ title: "Lunar Sabbath Calendar"
   margin-bottom: 2px;
 }
 
+.calendar-title .site-title .book-link {
+  text-decoration: none;
+  font-size: 0.7em;
+  margin-left: 8px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.calendar-title .site-title .book-link:hover {
+  opacity: 1;
+}
+
 .calendar-title .month-year-row {
   display: flex;
   align-items: baseline;
@@ -2802,7 +2814,7 @@ function renderMonth(month) {
             </div>
           </div>
           <div class="calendar-title" onclick="toggleMonthPicker()">
-            <div class="site-title">Lunar Sabbath Calendar</div>
+            <div class="site-title">Lunar Sabbath Calendar <a href="/book/" class="book-link" onclick="event.stopPropagation()">📖</a></div>
             <div class="month-year-row">
               <div class="month-name">${month.name} <span class="dropdown-arrow">▼</span></div>
               <div class="year">${displayYear}</div>

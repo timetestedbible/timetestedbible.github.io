@@ -2,6 +2,7 @@
 layout: post
 title: Lunar Sabbath
 content-type: post
+permalink: /book/
 ---
 
 # Lunar Sabbath
@@ -22,7 +23,7 @@ This book presents a systematic, evidence-based exploration of the biblical cale
 <div class="explore-options" markdown="1">
 
 - **[📖 Read the Chapters](/chapters/)** — Start from the beginning or jump to any chapter.
-- **[📅 Lunar Sabbath Calendar](/calendar.html)** — Generate a calendar for any year showing Sabbaths and feast days.
+- **[📅 Lunar Sabbath Calendar](/)** — Generate a calendar for any year showing Sabbaths and feast days.
 - **[🔍 Browse the Facts](/facts/)** — Explore the evidence and see how facts connect to each other.
 - **[🕸️ Fact Explorer](/explorer/)** — Interactive visualization of how all the evidence fits together.
 
