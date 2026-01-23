@@ -86,20 +86,23 @@ title: "Lunar Sabbath Calendar"
 /* Header Section */
 .calendar-header {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: 1fr auto;
   padding: 0;
   background: linear-gradient(180deg, #0d2840 0%, #1a3a5c 100%);
   color: white;
   align-items: stretch;
   gap: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .header-left {
   display: flex;
   align-items: center;
   gap: 12px;
-  grid-column: span 6;
   padding: 10px 15px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .calendar-title {
@@ -123,16 +126,23 @@ title: "Lunar Sabbath Calendar"
   margin-bottom: 2px;
 }
 
-.calendar-title .site-title .book-link {
+.calendar-title .site-tagline .book-link {
   text-decoration: none;
-  font-size: 0.7em;
-  margin-left: 8px;
+  font-size: 1.1em;
+  margin-left: 6px;
   opacity: 0.8;
   transition: opacity 0.2s;
 }
 
-.calendar-title .site-title .book-link:hover {
+.calendar-title .site-tagline .book-link:hover {
   opacity: 1;
+}
+
+.calendar-title .site-tagline {
+  font-size: 0.85em;
+  color: #d4a017;
+  font-style: italic;
+  margin-bottom: 4px;
 }
 
 .calendar-title .month-year-row {
@@ -623,7 +633,22 @@ title: "Lunar Sabbath Calendar"
 
 /* Day 1 in header - inherits from .day-cell */
 .new-moon-box {
-  aspect-ratio: 1;
+  aspect-ratio: unset;
+  min-height: 80px;
+  width: calc((min(100vw, 900px) - 16px) / 7);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.new-moon-box .gregorian {
+  flex-direction: row;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.new-moon-box .gregorian .day-year {
+  font-size: 0.85em;
 }
 
 /* Week Header */
@@ -837,9 +862,9 @@ title: "Lunar Sabbath Calendar"
 .settings-dialog {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 5vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background: #1a3a5c;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
@@ -1074,9 +1099,6 @@ title: "Lunar Sabbath Calendar"
   border-top: 3px solid #d4a017;
   padding: 15px 20px;
   margin-top: 0;
-  transition: all 0.3s ease;
-  max-height: 300px;
-  overflow-y: auto;
 }
 
 .day-detail-panel.hidden {
@@ -1181,6 +1203,20 @@ title: "Lunar Sabbath Calendar"
   border-top: 1px solid rgba(126, 200, 227, 0.3);
   color: #aaa;
   font-size: 0.9em;
+}
+
+.feast-basis {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.feast-basis strong {
+  color: #d4a017;
 }
 
 .day-detail-sabbath {
@@ -1314,15 +1350,32 @@ title: "Lunar Sabbath Calendar"
   }
   
   .calendar-header {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 1fr auto;
     gap: 0;
     padding: 0;
   }
   
   .header-left {
     gap: 6px;
-    grid-column: span 6;
     padding: 8px 10px;
+  }
+  
+  .new-moon-box {
+    min-height: 60px;
+    padding: 3px;
+    width: calc(100vw / 7);
+  }
+  
+  .new-moon-box .gregorian {
+    font-size: 0.75em;
+  }
+  
+  .new-moon-box .lunar-day {
+    font-size: 1.1em;
+  }
+  
+  .new-moon-box .feast-icons {
+    font-size: 0.7em;
   }
   
   .full-moon-info .moon-icon {
@@ -1337,6 +1390,10 @@ title: "Lunar Sabbath Calendar"
   
   .calendar-title .site-title {
     font-size: 1em;
+  }
+  
+  .calendar-title .site-tagline {
+    font-size: 0.7em;
   }
   
   .calendar-title .month-name {
@@ -1458,6 +1515,28 @@ title: "Lunar Sabbath Calendar"
   
   .day-cell .moon-phase {
     font-size: 0.5em;
+  }
+  
+  .new-moon-box {
+    min-height: 50px;
+    padding: 2px;
+    width: calc(100vw / 7);
+  }
+  
+  .new-moon-box .gregorian {
+    font-size: 0.7em;
+  }
+  
+  .new-moon-box .gregorian .day-year {
+    display: none;
+  }
+  
+  .new-moon-box .lunar-day {
+    font-size: 1em;
+  }
+  
+  .new-moon-box .feast-icons {
+    font-size: 0.6em;
   }
   
   .feast-icons {
@@ -1687,6 +1766,7 @@ const FEASTS = [
   { name: 'Atzeret', shortName: 'Atzeret', icon: '🕍', month: 7, day: 22, description: 'Shemini Atzeret - Last Great Day', chapter: '/chapters/18-appointed-times/#atzeret---last-great-day' },
   { name: 'Hanukkah', shortName: 'Hanukkah', icon: '🕎', month: 9, day: 25, endDay: 30, description: 'Festival of Dedication (8 days)', chapter: '/chapters/18-appointed-times/#hanukkah', continuesNextMonth: true },
   { name: 'Hanukkah', shortName: 'Hanukkah', icon: '🕎', month: 10, day: 1, endDay: 2, description: 'Festival of Dedication (continued)', chapter: '/chapters/18-appointed-times/#hanukkah', startDayNum: 7 },
+  { name: 'Atzeret of Hanukkah', shortName: 'Atzeret', icon: '🕍', month: 10, day: 2, description: 'Atzeret - 8th day of Hanukkah', chapter: '/chapters/18-appointed-times/#hanukkah' },
   { name: 'Purim', shortName: 'Purim', icon: '📜', month: 12, day: 14, endDay: 15, description: 'Feast of Lots - deliverance from Haman', chapter: '/chapters/18-appointed-times/#purim' }
 ];
 
@@ -2814,7 +2894,8 @@ function renderMonth(month) {
             </div>
           </div>
           <div class="calendar-title" onclick="toggleMonthPicker()">
-            <div class="site-title">Lunar Sabbath Calendar <a href="/book/" class="book-link" onclick="event.stopPropagation()">📖</a></div>
+            <div class="site-title">Lunar Sabbath Calendar</div>
+            <div class="site-tagline">a time tested tradition <a href="/book/" class="book-link" onclick="event.stopPropagation()">📖</a></div>
             <div class="month-year-row">
               <div class="month-name">${month.name} <span class="dropdown-arrow">▼</span></div>
               <div class="year">${displayYear}</div>
@@ -3130,6 +3211,60 @@ function showDayDetail(dayObj, month) {
       const dayNum = f.dayNum;
       const nameText = dayNum ? `${feast.name} (Day ${dayNum})` : feast.name;
       
+      // Check if this is a Renewed Moon feast and we have moon event data
+      let basisHtml = '';
+      if (feast.name === 'Renewed Moon' && dayObj.lunarDay === 1 && month.moonEvent) {
+        const moonEventTime = month.moonEvent;
+        const signName = getMoonLabel();
+        
+        // Format moon event date in a friendly way
+        const moonEventDate = new Date(moonEventTime);
+        const dayOfWeek = moonEventDate.toLocaleDateString('en-US', { weekday: 'long' });
+        const monthName = moonEventDate.toLocaleDateString('en-US', { month: 'short' });
+        const dayNum = moonEventDate.getDate();
+        const daySuffix = getOrdinalSuffix(dayNum);
+        const year = moonEventDate.getFullYear();
+        const moonTimeStr = moonEventDate.toLocaleTimeString('en-US', { 
+          hour: 'numeric', minute: '2-digit', hour12: true 
+        });
+        
+        // Get sunrise time
+        const sunriseTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+        const sunriseDate = new Date(sunriseTimestamp);
+        const sunriseStr = sunriseDate.toLocaleTimeString('en-US', { 
+          hour: 'numeric', minute: '2-digit', hour12: true 
+        });
+        
+        // Calculate time difference
+        const diffMs = sunriseTimestamp - moonEventTime.getTime();
+        const diffMins = Math.round(Math.abs(diffMs) / (1000 * 60));
+        const hours = Math.floor(diffMins / 60);
+        const mins = diffMins % 60;
+        
+        let timeDiffStr = '';
+        if (hours > 0 && mins > 0) {
+          timeDiffStr = `${hours} hour${hours > 1 ? 's' : ''} ${mins} minute${mins > 1 ? 's' : ''}`;
+        } else if (hours > 0) {
+          timeDiffStr = `${hours} hour${hours > 1 ? 's' : ''}`;
+        } else {
+          timeDiffStr = `${mins} minute${mins > 1 ? 's' : ''}`;
+        }
+        
+        const beforeAfter = diffMs > 0 ? 'before' : 'after';
+        
+        // Determine tense based on whether the date is past or future
+        const now = new Date();
+        const isPast = moonEventDate < now;
+        const observedVerb = isPast ? 'was observed' : 'will be observed';
+        
+        basisHtml = `
+          <div class="feast-basis">
+            The ${signName} ${observedVerb} ${dayOfWeek} ${monthName} ${dayNum}${daySuffix}, ${year} at ${moonTimeStr}, 
+            which is ${timeDiffStr} ${beforeAfter} first light at ${sunriseStr}.
+          </div>
+        `;
+      }
+      
       const item = document.createElement('div');
       item.className = 'day-detail-feast-item';
       item.innerHTML = `
@@ -3137,6 +3272,7 @@ function showDayDetail(dayObj, month) {
         <div class="day-detail-feast-info">
           <div class="day-detail-feast-name">${nameText}</div>
           <div class="day-detail-feast-desc">${feast.description}</div>
+          ${basisHtml}
           ${feast.chapter ? `<a href="${feast.chapter}" class="day-detail-feast-link">Learn more &rarr;</a>` : ''}
         </div>
       `;
@@ -3154,11 +3290,7 @@ function showDayDetail(dayObj, month) {
     infoHtml += '<div class="day-detail-sabbath">🕯️ Weekly Sabbath</div>';
   }
   
-  if (dayObj.isNewMoon) {
-    infoHtml += `<div>New Moon (${getMoonLabel()})</div>`;
-  }
-  
-  if (dayObj.moonPhase) {
+  if (dayObj.moonPhase && dayObj.lunarDay !== 1) {
     infoHtml += `<div>Moon phase: ${dayObj.moonPhase}</div>`;
   }
   
