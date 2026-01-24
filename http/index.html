@@ -1473,6 +1473,36 @@ body.feasts-open {
   white-space: nowrap;
 }
 
+.settings-engine-info {
+  margin-top: 15px;
+  padding: 12px 15px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.engine-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.engine-info-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.engine-info-label {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85em;
+}
+
+.engine-info-value {
+  color: #7ec8e3;
+  font-size: 0.9em;
+  font-family: monospace;
+}
+
 .profile-select {
   width: 100%;
   padding: 12px 15px;
@@ -1740,6 +1770,34 @@ body.feasts-open {
 
 .feast-basis strong {
   color: #d4a017;
+}
+
+/* Uncertainty warning for ancient dates */
+.uncertainty-warning {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 193, 7, 0.15);
+  border: 1px solid rgba(255, 193, 7, 0.4);
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: #ffc107;
+  line-height: 1.4;
+}
+
+.uncertainty-warning .warning-icon {
+  margin-right: 6px;
+}
+
+/* Day 1 box with date uncertainty - yellow highlight */
+.day-cell.date-uncertain {
+  background: linear-gradient(180deg, rgba(255, 193, 7, 0.25) 0%, rgba(255, 152, 0, 0.2) 100%) !important;
+  border: 2px solid #ffc107 !important;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.3);
+}
+
+.day-cell.date-uncertain .lunar-day::after {
+  content: ' ⚠️';
+  font-size: 0.7em;
 }
 
 .day-detail-sabbath {
@@ -2274,10 +2332,13 @@ body.feasts-open {
   <div id="date-jump-popup" class="date-jump-popup" style="display: none;">
     <button class="close-btn" onclick="toggleDateJump()">✕</button>
     <h3>Jump to Date</h3>
+    <div id="jump-ancient-display" style="display: none; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 4px; margin-bottom: 10px; text-align: center;">
+      <div style="color: #d4a017; font-size: 1.1em;" id="jump-ancient-date"></div>
+      <div style="color: #888; font-size: 0.85em; margin-top: 4px;">Date picker unavailable for BC dates</div>
+    </div>
     <input type="datetime-local" id="jump-datetime" step="60">
     <div class="btn-row">
-      <button class="btn" onclick="executeJumpToDate()">Go</button>
-      <button class="btn secondary" onclick="jumpToTodayFromPopup()">Today</button>
+      <button class="btn secondary" onclick="jumpToTodayFromPopup()">Jump to Today</button>
     </div>
     <div class="days-jump">
       <button onclick="addDaysFromPopup(-1)">◀</button>
@@ -2442,6 +2503,25 @@ body.feasts-open {
     </div>
     
     <div class="settings-section">
+      <h3>Astronomy Engine</h3>
+      <p class="settings-description">The library used for calculating lunar phases and equinoxes. Different engines use different ΔT models, which affects accuracy for ancient dates.</p>
+      <div id="astro-engine-info" class="settings-engine-info">
+        <div class="engine-info-row">
+          <span class="engine-info-label">Library:</span>
+          <span id="astro-engine-name" class="engine-info-value">astronomy-engine v2.1.19</span>
+        </div>
+        <div class="engine-info-row">
+          <span class="engine-info-label">ΔT Model:</span>
+          <span id="astro-engine-delta" class="engine-info-value">Espenak-Meeus polynomial</span>
+        </div>
+        <div class="engine-info-row">
+          <span class="engine-info-label">Note:</span>
+          <span class="engine-info-value" style="color: rgba(255,255,255,0.6); font-family: inherit;">For ancient dates (before 500 BC), ΔT uncertainty is ±hours. Different sources may vary.</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="settings-section">
       <h3>Your Location</h3>
       <p class="settings-description">Your location determines the timing of sunrise, sunset, and twilight.</p>
       <div id="settings-page-map"></div>
@@ -2538,6 +2618,956 @@ body.feasts-open {
 
 <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
 <script>
+// ============================================================================
+// ASTRONOMY ENGINE ABSTRACTION LAYER
+// ============================================================================
+// This abstraction allows switching between different astronomy calculation
+// libraries (astronomy-engine, Swiss Ephemeris WASM, etc.) without changing
+// the rest of the codebase.
+
+// Available engines registry
+const AstroEngines = {};
+
+// Currently active engine instance
+let activeAstroEngine = null;
+
+// Engine interface definition (for documentation):
+// {
+//   name: string,                          // Human-readable name
+//   version: string,                       // Library version
+//   deltaTModel: string,                   // ΔT model used
+//   isLoaded: boolean,                     // Whether engine is ready
+//   
+//   // Core methods:
+//   searchMoonPhase(phase, startDate, limitDays) => { date: Date } | null
+//   getSeasons(year) => { mar_equinox: { date: Date }, ... }
+//   searchRiseSet(body, observer, direction, startDate, limitDays) => { date: Date } | null
+//   searchAltitude(body, observer, direction, startDate, limitDays, altitude) => { date: Date } | null
+//   getEquator(body, date, observer) => { ra: number, dec: number }
+//   getHorizon(date, observer, ra, dec) => { altitude: number, azimuth: number }
+//   getDeltaT(date) => number (in seconds)
+//   createObserver(lat, lon, elevation) => observer object
+// }
+
+// ============================================================================
+// ASTRONOMY-ENGINE IMPLEMENTATION
+// ============================================================================
+AstroEngines.astronomyEngine = {
+  name: 'astronomy-engine',
+  version: '2.1.19',
+  deltaTModel: 'Espenak-Meeus polynomial',
+  deltaTNote: 'Good for modern dates; ~9.5h ΔT uncertainty at 1500 BC',
+  isLoaded: true, // Loaded synchronously via script tag
+  
+  searchMoonPhase(phase, startDate, limitDays) {
+    return Astronomy.SearchMoonPhase(phase, startDate, limitDays);
+  },
+  
+  getSeasons(year) {
+    return Astronomy.Seasons(year);
+  },
+  
+  searchRiseSet(body, observer, direction, startDate, limitDays) {
+    const astroBody = body === 'sun' ? Astronomy.Body.Sun : Astronomy.Body.Moon;
+    return Astronomy.SearchRiseSet(astroBody, observer, direction, startDate, limitDays);
+  },
+  
+  searchAltitude(body, observer, direction, startDate, limitDays, altitude) {
+    const astroBody = body === 'sun' ? Astronomy.Body.Sun : Astronomy.Body.Moon;
+    return Astronomy.SearchAltitude(astroBody, observer, direction, startDate, limitDays, altitude);
+  },
+  
+  getEquator(body, date, observer) {
+    // Validate date before calling astronomy-engine
+    if (!date || isNaN(date.getTime())) {
+      return { ra: 0, dec: 0 };
+    }
+    try {
+      const astroBody = body === 'sun' ? Astronomy.Body.Sun : Astronomy.Body.Moon;
+      const result = Astronomy.Equator(astroBody, date, observer, true, true);
+      
+      // Validate result
+      if (result && isFinite(result.ra) && isFinite(result.dec)) {
+        return result;
+      }
+      return { ra: 0, dec: 0 };
+    } catch (err) {
+      return { ra: 0, dec: 0 };
+    }
+  },
+  
+  getHorizon(date, observer, ra, dec) {
+    // Validate inputs before calling astronomy-engine
+    if (!date || isNaN(date.getTime()) || !isFinite(ra) || !isFinite(dec)) {
+      return { altitude: 0, azimuth: 0 };
+    }
+    try {
+      const result = Astronomy.Horizon(date, observer, ra, dec, 'normal');
+      if (result && isFinite(result.altitude) && isFinite(result.azimuth)) {
+        return result;
+      }
+      return { altitude: 0, azimuth: 0 };
+    } catch (err) {
+      return { altitude: 0, azimuth: 0 };
+    }
+  },
+  
+  getDeltaT(date) {
+    // astronomy-engine doesn't expose DeltaT directly, but we can calculate it
+    // from the difference between TT and UT
+    const astroTime = new Astronomy.AstroTime(date);
+    return (astroTime.tt - astroTime.ut) * 86400; // Convert days to seconds
+  },
+  
+  createObserver(lat, lon, elevation = 0) {
+    return new Astronomy.Observer(lat, lon, elevation);
+  }
+};
+
+// ============================================================================
+// SWISS EPHEMERIS WASM IMPLEMENTATION (@swisseph/browser - self-hosted)
+// ============================================================================
+AstroEngines.swissEphemeris = {
+  name: 'Swiss Ephemeris',
+  version: 'Loading...',
+  deltaTModel: 'Moshier Ephemeris',
+  deltaTNote: 'Built-in analytical ephemeris; good for dates from 3000 BC to 3000 AD',
+  isLoaded: false,
+  _swe: null,
+  _module: null,
+  _loadPromise: null,
+  
+  async load() {
+    if (this.isLoaded) return true;
+    if (this._loadPromise) return this._loadPromise;
+    
+    this._loadPromise = (async () => {
+      try {
+        // Dynamic import of self-hosted @swisseph/browser
+        const module = await import('/lib/swisseph/swisseph-browser.js');
+        this._module = module;
+        
+        // Create SwissEphemeris instance and initialize WASM with explicit path
+        this._swe = new module.SwissEphemeris();
+        await this._swe.init('/lib/swisseph/swisseph.wasm');
+        
+        this.version = '1.1.0';
+        this.isLoaded = true;
+        console.log('Swiss Ephemeris WASM loaded successfully');
+        return true;
+      } catch (err) {
+        console.error('Failed to load Swiss Ephemeris WASM:', err);
+        this.isLoaded = false;
+        return false;
+      }
+    })();
+    
+    return this._loadPromise;
+  },
+  
+  // Julian Day conversion helpers
+  _dateToJD(date) {
+    const y = date.getUTCFullYear();
+    const m = date.getUTCMonth() + 1;
+    const d = date.getUTCDate();
+    const h = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+    
+    const a = Math.floor((14 - m) / 12);
+    const yy = y + 4800 - a;
+    const mm = m + 12 * a - 3;
+    
+    // Julian calendar for dates before Oct 15, 1582
+    // Gregorian calendar for dates on or after Oct 15, 1582
+    let jdn;
+    if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d < 15)))) {
+      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - 32083;
+    } else {
+      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+    }
+    return jdn + (h - 12) / 24;
+  },
+  
+  _jdToDate(jd) {
+    // Helper to create Date with proper year handling (including negative years)
+    const createDate = (year, month, day, h, min, sec) => {
+      // JavaScript Date.UTC interprets years 0-99 as 1900-1999
+      // We need to use setUTCFullYear for ancient dates
+      const date = new Date(Date.UTC(2000, month - 1, day, h, min, sec));
+      date.setUTCFullYear(year);
+      return date;
+    };
+    
+    if (!this._swe) {
+      // Manual Julian Day to calendar date conversion
+      const z = Math.floor(jd + 0.5);
+      const f = jd + 0.5 - z;
+      let a = z;
+      if (z >= 2299161) {
+        const alpha = Math.floor((z - 1867216.25) / 36524.25);
+        a = z + 1 + alpha - Math.floor(alpha / 4);
+      }
+      const b = a + 1524;
+      const c = Math.floor((b - 122.1) / 365.25);
+      const d = Math.floor(365.25 * c);
+      const e = Math.floor((b - d) / 30.6001);
+      
+      const day = b - d - Math.floor(30.6001 * e);
+      const month = e < 14 ? e - 1 : e - 13;
+      const year = month > 2 ? c - 4716 : c - 4715;
+      
+      const hours = f * 24;
+      const h = Math.floor(hours);
+      const minutes = (hours - h) * 60;
+      const min = Math.floor(minutes);
+      const sec = Math.floor((minutes - min) * 60);
+      
+      return createDate(year, month, day, h, min, sec);
+    }
+    
+    // Use library's conversion
+    try {
+      const cal = this._swe.julianDayToDate(jd);
+      // The library might return hours as a decimal or separate hour/minute/second fields
+      let h = 0, min = 0, sec = 0;
+      if (typeof cal.hours === 'number') {
+        h = Math.floor(cal.hours);
+        min = Math.floor((cal.hours % 1) * 60);
+        sec = Math.floor(((cal.hours % 1) * 60 % 1) * 60);
+      } else if (typeof cal.hour === 'number') {
+        h = cal.hour;
+        min = cal.minute || 0;
+        sec = Math.floor(cal.second || 0);
+      }
+      
+      return createDate(cal.year, cal.month, cal.day, h, min, sec);
+    } catch (err) {
+      console.warn('Swiss Ephemeris julianDayToDate failed, using manual conversion:', err);
+      // Fall through to manual calculation
+      const z = Math.floor(jd + 0.5);
+      const f = jd + 0.5 - z;
+      let a = z;
+      if (z >= 2299161) {
+        const alpha = Math.floor((z - 1867216.25) / 36524.25);
+        a = z + 1 + alpha - Math.floor(alpha / 4);
+      }
+      const b = a + 1524;
+      const c = Math.floor((b - 122.1) / 365.25);
+      const d = Math.floor(365.25 * c);
+      const e = Math.floor((b - d) / 30.6001);
+      
+      const day = b - d - Math.floor(30.6001 * e);
+      const month = e < 14 ? e - 1 : e - 13;
+      const year = month > 2 ? c - 4716 : c - 4715;
+      
+      const hours = f * 24;
+      const hh = Math.floor(hours);
+      const minutes = (hours - hh) * 60;
+      const mm = Math.floor(minutes);
+      const ss = Math.floor((minutes - mm) * 60);
+      
+      return createDate(year, month, day, hh, mm, ss);
+    }
+  },
+  
+  // Get Moon-Sun elongation for phase calculations
+  _getMoonSunElongation(jd) {
+    if (!this._swe || !this._module) return null;
+    
+    try {
+      const Planet = this._module.Planet;
+      const sunPos = this._swe.calculatePosition(jd, Planet.Sun);
+      const moonPos = this._swe.calculatePosition(jd, Planet.Moon);
+      
+      if (sunPos.longitude === undefined || moonPos.longitude === undefined) {
+        return null;
+      }
+      
+      let elongation = moonPos.longitude - sunPos.longitude;
+      while (elongation < 0) elongation += 360;
+      while (elongation >= 360) elongation -= 360;
+      return elongation;
+    } catch (err) {
+      return null;
+    }
+  },
+  
+  searchMoonPhase(phase, startDate, limitDays) {
+    if (!this.isLoaded || !this._swe) {
+      return AstroEngines.astronomyEngine.searchMoonPhase(phase, startDate, limitDays);
+    }
+    
+    const startJD = this._dateToJD(startDate);
+    const endJD = startJD + limitDays;
+    const step = 1;
+    
+    let prevJD = startJD;
+    let prevElong = this._getMoonSunElongation(prevJD);
+    if (prevElong === null) {
+      return AstroEngines.astronomyEngine.searchMoonPhase(phase, startDate, limitDays);
+    }
+    
+    const targetPhase = phase % 360;
+    
+    for (let jd = startJD + step; jd <= endJD; jd += step) {
+      let elong = this._getMoonSunElongation(jd);
+      if (elong === null) continue;
+      
+      // Check for phase crossing (handling 360→0 wrap)
+      let crossed = false;
+      if (targetPhase === 0) {
+        // New moon: elongation wraps from ~359° down to ~1° (crosses 0°)
+        // This happens when prevElong is high (>300) and elong is low (<60)
+        if (prevElong > 300 && elong < 60) crossed = true;
+      } else if (targetPhase === 180) {
+        // Full moon: elongation crossing 180 from below
+        if (prevElong < 180 && elong >= 180) crossed = true;
+      } else {
+        // Other phases
+        if ((prevElong < targetPhase && elong >= targetPhase) ||
+            (prevElong > targetPhase && elong <= targetPhase && Math.abs(prevElong - elong) < 180)) {
+          crossed = true;
+        }
+      }
+      
+      if (crossed) {
+        // Refine with bisection
+        let lo = prevJD, hi = jd;
+        for (let i = 0; i < 20; i++) { // ~1 second precision
+          const mid = (lo + hi) / 2;
+          const midElong = this._getMoonSunElongation(mid);
+          if (midElong === null) break;
+          
+          if (targetPhase === 0) {
+            // New moon: we want to find where elongation is closest to 0
+            // If midElong > 180, we're before the crossing (moon catching up)
+            if (midElong > 180) lo = mid; else hi = mid;
+          } else if (targetPhase === 180) {
+            if (midElong < 180) lo = mid; else hi = mid;
+          } else {
+            if (midElong < targetPhase) lo = mid; else hi = mid;
+          }
+        }
+        
+        const resultJD = (lo + hi) / 2;
+        return { date: this._jdToDate(resultJD), jd: resultJD };
+      }
+      
+      prevJD = jd;
+      prevElong = elong;
+    }
+    
+    return null;
+  },
+  
+  getSeasons(year) {
+    if (!this.isLoaded || !this._swe || !this._module) {
+      return AstroEngines.astronomyEngine.getSeasons(year);
+    }
+    
+    try {
+      const Planet = this._module.Planet;
+      
+      // Start search around March 1
+      // Use setUTCFullYear for proper handling of negative/ancient years
+      const startDate = new Date(Date.UTC(2000, 2, 1));
+      startDate.setUTCFullYear(year);
+      let jd = this._dateToJD(startDate);
+      const endJD = jd + 30;
+      
+      let prevLon = null;
+      for (; jd <= endJD; jd += 0.5) {
+        const sunPos = this._swe.calculatePosition(jd, Planet.Sun);
+        const lon = sunPos.longitude;
+        
+        // Spring equinox: Sun crossing 0° from ~359° to ~1°
+        if (prevLon !== null && prevLon > 350 && lon < 10) {
+          // Refine with bisection
+          let lo = jd - 0.5, hi = jd;
+          for (let i = 0; i < 20; i++) {
+            const mid = (lo + hi) / 2;
+            const midPos = this._swe.calculatePosition(mid, Planet.Sun);
+            const midLon = midPos.longitude;
+            if (midLon > 180) lo = mid; else hi = mid;
+          }
+          
+          return {
+            mar_equinox: { date: this._jdToDate((lo + hi) / 2) }
+          };
+        }
+        prevLon = lon;
+      }
+    } catch (err) {
+      console.warn('Error finding equinox with Swiss Ephemeris:', err);
+    }
+    
+    // Fallback
+    return AstroEngines.astronomyEngine.getSeasons(year);
+  },
+  
+  searchRiseSet(body, observer, direction, startDate, limitDays) {
+    // Swiss Ephemeris rise/set calculation is complex, use fallback for now
+    return AstroEngines.astronomyEngine.searchRiseSet(body, observer, direction, startDate, limitDays);
+  },
+  
+  searchAltitude(body, observer, direction, startDate, limitDays, altitude) {
+    return AstroEngines.astronomyEngine.searchAltitude(body, observer, direction, startDate, limitDays, altitude);
+  },
+  
+  getEquator(body, date, observer) {
+    if (!this.isLoaded || !this._swe || !this._module) {
+      return AstroEngines.astronomyEngine.getEquator(body, date, observer);
+    }
+    
+    try {
+      const Planet = this._module.Planet;
+      const CalculationFlag = this._module.CalculationFlag;
+      const planet = body === 'sun' ? Planet.Sun : Planet.Moon;
+      const jd = this._dateToJD(date);
+      
+      // Get equatorial coordinates
+      const pos = this._swe.calculatePosition(jd, planet, CalculationFlag.Equatorial);
+      
+      // Validate result - if invalid, fall back to astronomy-engine
+      if (pos && isFinite(pos.rightAscension) && isFinite(pos.declination)) {
+        return {
+          ra: pos.rightAscension / 15, // Convert degrees to hours
+          dec: pos.declination
+        };
+      }
+      
+      // Invalid result, fall back
+      return AstroEngines.astronomyEngine.getEquator(body, date, observer);
+    } catch (err) {
+      return AstroEngines.astronomyEngine.getEquator(body, date, observer);
+    }
+  },
+  
+  getHorizon(date, observer, ra, dec) {
+    // Use astronomy-engine for horizon conversion (simpler)
+    return AstroEngines.astronomyEngine.getHorizon(date, observer, ra, dec);
+  },
+  
+  getDeltaT(date) {
+    if (!this.isLoaded || !this._swe) {
+      return AstroEngines.astronomyEngine.getDeltaT(date);
+    }
+    
+    try {
+      const jd = this._dateToJD(date);
+      const deltaT = this._swe.deltaT(jd);
+      return deltaT * 86400; // Convert days to seconds
+    } catch (err) {
+      return AstroEngines.astronomyEngine.getDeltaT(date);
+    }
+  },
+  
+  createObserver(lat, lon, elevation = 0) {
+    // Use astronomy-engine observer format for compatibility
+    return new Astronomy.Observer(lat, lon, elevation);
+  }
+};
+
+// ============================================================================
+// HYBRID ENGINE: Swiss Ephemeris calibrated against NASA Eclipse anchors
+// ============================================================================
+// This approach uses Swiss Ephemeris for precise local calculations, but
+// calibrates the ΔT model against NASA eclipse data to reduce drift for 
+// ancient dates. NASA eclipses are observable historical events with known
+// times, providing ground truth for ΔT corrections.
+// ============================================================================
+AstroEngines.nasaEclipse = {
+  name: 'Hybrid (Swiss Eph + NASA)',
+  version: '1.0',
+  deltaTModel: 'NASA Eclipse Calibrated',
+  deltaTNote: 'Swiss Ephemeris calculations aligned to NASA eclipse anchors',
+  isLoaded: false,
+  _eclipses: null,  // Array of {jd, y, t} where t='n' (new) or 'f' (full)
+  _loadPromise: null,
+  _offsetCache: new Map(), // Cache offset calculations by year
+  
+  async load() {
+    if (this.isLoaded) return true;
+    if (this._loadPromise) return this._loadPromise;
+    
+    this._loadPromise = (async () => {
+      try {
+        const response = await fetch('/data/eclipses.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        this._eclipses = await response.json();
+        this.isLoaded = true;
+        console.log(`NASA Eclipse data loaded: ${this._eclipses.length} eclipses`);
+        return true;
+      } catch (err) {
+        console.error('Failed to load NASA eclipse data:', err);
+        this.isLoaded = false;
+        return false;
+      }
+    })();
+    
+    return this._loadPromise;
+  },
+  
+  // Julian Day conversion (handles both Julian and Gregorian calendars)
+  _dateToJD(date) {
+    const y = date.getUTCFullYear();
+    const m = date.getUTCMonth() + 1;
+    const d = date.getUTCDate();
+    const h = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+    
+    const a = Math.floor((14 - m) / 12);
+    const yy = y + 4800 - a;
+    const mm = m + 12 * a - 3;
+    
+    // Julian calendar for dates before Oct 15, 1582
+    // Gregorian calendar for dates on or after Oct 15, 1582
+    let jdn;
+    if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d < 15)))) {
+      // Julian calendar
+      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - 32083;
+    } else {
+      // Gregorian calendar
+      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+    }
+    return jdn + (h - 12) / 24;
+  },
+  
+  _jdToDate(jd) {
+    const createDate = (year, month, day, h, min, sec) => {
+      const date = new Date(Date.UTC(2000, month - 1, day, h, min, sec));
+      date.setUTCFullYear(year);
+      return date;
+    };
+    
+    const z = Math.floor(jd + 0.5);
+    const f = jd + 0.5 - z;
+    let a = z;
+    if (z >= 2299161) {
+      const alpha = Math.floor((z - 1867216.25) / 36524.25);
+      a = z + 1 + alpha - Math.floor(alpha / 4);
+    }
+    const b = a + 1524;
+    const c = Math.floor((b - 122.1) / 365.25);
+    const d = Math.floor(365.25 * c);
+    const e = Math.floor((b - d) / 30.6001);
+    
+    const day = b - d - Math.floor(30.6001 * e);
+    const month = e < 14 ? e - 1 : e - 13;
+    const year = month > 2 ? c - 4716 : c - 4715;
+    
+    const hours = f * 24;
+    const hh = Math.floor(hours);
+    const minutes = (hours - hh) * 60;
+    const mm = Math.floor(minutes);
+    const ss = Math.floor((minutes - mm) * 60);
+    
+    return createDate(year, month, day, hh, mm, ss);
+  },
+  
+  // Find eclipse of given type before or after a JD
+  _findEclipse(targetJD, type, direction) {
+    if (!this._eclipses) return null;
+    
+    // Binary search for approximate position
+    let lo = 0, hi = this._eclipses.length - 1;
+    while (lo < hi) {
+      const mid = Math.floor((lo + hi) / 2);
+      if (this._eclipses[mid].jd < targetJD) lo = mid + 1;
+      else hi = mid;
+    }
+    
+    if (direction < 0) {
+      // Search backward for eclipse of this type
+      for (let i = lo - 1; i >= 0; i--) {
+        if (this._eclipses[i].t === type) return this._eclipses[i];
+      }
+    } else {
+      // Search forward for eclipse of this type
+      for (let i = lo; i < this._eclipses.length; i++) {
+        if (this._eclipses[i].t === type) return this._eclipses[i];
+      }
+    }
+    return null;
+  },
+  
+  // Find the nearest eclipse (any type) to a given JD
+  _findNearestEclipse(targetJD) {
+    if (!this._eclipses || this._eclipses.length === 0) return null;
+    
+    let lo = 0, hi = this._eclipses.length - 1;
+    while (lo < hi) {
+      const mid = Math.floor((lo + hi) / 2);
+      if (this._eclipses[mid].jd < targetJD) lo = mid + 1;
+      else hi = mid;
+    }
+    
+    // Check both lo and lo-1 to find closest
+    const candidates = [];
+    if (lo > 0) candidates.push(this._eclipses[lo - 1]);
+    if (lo < this._eclipses.length) candidates.push(this._eclipses[lo]);
+    
+    let nearest = null;
+    let minDist = Infinity;
+    for (const e of candidates) {
+      const dist = Math.abs(e.jd - targetJD);
+      if (dist < minDist) {
+        minDist = dist;
+        nearest = e;
+      }
+    }
+    return nearest;
+  },
+  
+  // Helper to create Date with proper year handling (including negative years)
+  _createDate(year, month, day, hour, minute, second) {
+    // JavaScript Date.UTC interprets years 0-99 as 1900-1999
+    // We need to use setUTCFullYear for all dates to be safe
+    const date = new Date(Date.UTC(2000, month - 1, day, hour || 0, minute || 0, second || 0));
+    date.setUTCFullYear(year);
+    return date;
+  },
+  
+  // Calculate the ΔT offset between Swiss Ephemeris and NASA eclipse
+  // This is the key to the hybrid approach
+  _calculateOffset(nearYear, eclipseType) {
+    const cacheKey = `${nearYear}_${eclipseType}`;
+    if (this._offsetCache.has(cacheKey)) {
+      return this._offsetCache.get(cacheKey);
+    }
+    
+    if (!AstroEngines.swissEphemeris.isLoaded) {
+      return 0;
+    }
+    
+    // Find a NASA eclipse near the target year
+    const midYearDate = this._createDate(nearYear, 7, 1, 0, 0, 0);
+    const approxJD = this._dateToJD(midYearDate);
+    
+    const nasaEclipse = this._findEclipse(approxJD, eclipseType, -1) || 
+                        this._findEclipse(approxJD, eclipseType, 1);
+    
+    if (!nasaEclipse) {
+      return 0;
+    }
+    
+    // Get what Swiss Ephemeris calculates for this same moon phase
+    const searchStart = this._jdToDate(nasaEclipse.jd - 3);
+    const phase = eclipseType === 'n' ? 0 : 180;
+    
+    try {
+      const sweResult = AstroEngines.swissEphemeris.searchMoonPhase(phase, searchStart, 10);
+      if (!sweResult || !sweResult.date) {
+        return 0;
+      }
+      
+      // Use JD directly if available (avoids Date round-trip issues with ancient dates)
+      const sweJD = sweResult.jd || this._dateToJD(sweResult.date);
+      
+      // Sanity check - offset should be reasonable (less than a few days)
+      const offset = nasaEclipse.jd - sweJD;
+      if (!isFinite(offset) || Math.abs(offset) > 5) {
+        return 0;
+      }
+      
+      this._offsetCache.set(cacheKey, offset);
+      return offset;
+    } catch (err) {
+      console.warn(`Error calculating offset for year ${nearYear}:`, err);
+      return 0;
+    }
+  },
+  
+  // Hybrid moon phase search:
+  // 1. Use Swiss Ephemeris for precise phase calculation
+  // 2. Apply ΔT correction from nearest NASA eclipse anchor
+  searchMoonPhase(phase, startDate, limitDays) {
+    try {
+      if (!AstroEngines.swissEphemeris.isLoaded) {
+        return this._searchMoonPhaseInterpolate(phase, startDate, limitDays);
+      }
+      
+      if (!this.isLoaded || !this._eclipses) {
+        return AstroEngines.swissEphemeris.searchMoonPhase(phase, startDate, limitDays);
+      }
+      
+      const sweResult = AstroEngines.swissEphemeris.searchMoonPhase(phase, startDate, limitDays);
+      if (!sweResult || !sweResult.date) return null;
+      
+      if (isNaN(sweResult.date.getTime())) {
+        return this._searchMoonPhaseInterpolate(phase, startDate, limitDays);
+      }
+      
+      // For modern dates (1600-2100 CE), Swiss Eph is already accurate
+      const year = sweResult.date.getUTCFullYear();
+      if (year >= 1600 && year <= 2100) {
+        return sweResult;
+      }
+      
+      // For ancient/future dates, apply NASA eclipse calibration
+      const eclipseType = (phase === 0 || phase === 360) ? 'n' : 'f';
+      const offset = this._calculateOffset(year, eclipseType);
+      
+      if (!isFinite(offset) || Math.abs(offset) < 0.001) {
+        return sweResult;
+      }
+      
+      // Apply the offset correction using JD directly if available
+      const sweJD = sweResult.jd || this._dateToJD(sweResult.date);
+      const correctedJD = sweJD + offset;
+      
+      if (!isFinite(correctedJD)) {
+        return sweResult;
+      }
+      
+      return { date: this._jdToDate(correctedJD) };
+    } catch (err) {
+      return this._searchMoonPhaseInterpolate(phase, startDate, limitDays);
+    }
+  },
+  
+  // Pure interpolation fallback (original algorithm)
+  _searchMoonPhaseInterpolate(phase, startDate, limitDays) {
+    if (!this.isLoaded || !this._eclipses) {
+      return AstroEngines.astronomyEngine.searchMoonPhase(phase, startDate, limitDays);
+    }
+    
+    const targetJD = this._dateToJD(startDate);
+    const endJD = targetJD + limitDays;
+    const SYNODIC_MONTH = 29.530588853;
+    
+    const wantNewMoon = (phase === 0 || phase === 360);
+    const eclipseType = wantNewMoon ? 'n' : 'f';
+    
+    const eclipseBefore = this._findEclipse(targetJD, eclipseType, -1);
+    const eclipseAfter = this._findEclipse(targetJD, eclipseType, 1);
+    
+    if (!eclipseBefore && !eclipseAfter) {
+      return AstroEngines.astronomyEngine.searchMoonPhase(phase, startDate, limitDays);
+    }
+    
+    let localSynodicMonth = SYNODIC_MONTH;
+    if (eclipseBefore && eclipseAfter) {
+      const span = eclipseAfter.jd - eclipseBefore.jd;
+      const lunations = Math.round(span / SYNODIC_MONTH);
+      if (lunations > 0) {
+        localSynodicMonth = span / lunations;
+      }
+    }
+    
+    let anchorEclipse, direction;
+    if (!eclipseBefore) {
+      anchorEclipse = eclipseAfter;
+      direction = -1;
+    } else if (!eclipseAfter) {
+      anchorEclipse = eclipseBefore;
+      direction = 1;
+    } else {
+      const distBefore = targetJD - eclipseBefore.jd;
+      const distAfter = eclipseAfter.jd - targetJD;
+      if (distBefore <= distAfter) {
+        anchorEclipse = eclipseBefore;
+        direction = 1;
+      } else {
+        anchorEclipse = eclipseAfter;
+        direction = -1;
+      }
+    }
+    
+    let resultJD;
+    if (direction > 0) {
+      const lunationsFromAnchor = Math.ceil((targetJD - anchorEclipse.jd) / localSynodicMonth);
+      resultJD = anchorEclipse.jd + lunationsFromAnchor * localSynodicMonth;
+    } else {
+      const lunationsFromAnchor = Math.ceil((anchorEclipse.jd - targetJD) / localSynodicMonth);
+      resultJD = anchorEclipse.jd - (lunationsFromAnchor - 1) * localSynodicMonth;
+    }
+    
+    while (resultJD < targetJD) resultJD += localSynodicMonth;
+    if (resultJD > endJD) return null;
+    
+    return { date: this._jdToDate(resultJD) };
+  },
+  
+  // Use Swiss Ephemeris or astronomy-engine for other calculations
+  getSeasons(year) {
+    return AstroEngines.swissEphemeris.isLoaded 
+      ? AstroEngines.swissEphemeris.getSeasons(year)
+      : AstroEngines.astronomyEngine.getSeasons(year);
+  },
+  
+  searchRiseSet(body, observer, direction, startDate, limitDays) {
+    return AstroEngines.astronomyEngine.searchRiseSet(body, observer, direction, startDate, limitDays);
+  },
+  
+  searchAltitude(body, observer, direction, startDate, limitDays, altitude) {
+    return AstroEngines.astronomyEngine.searchAltitude(body, observer, direction, startDate, limitDays, altitude);
+  },
+  
+  getEquator(body, date, observer) {
+    return AstroEngines.swissEphemeris.isLoaded 
+      ? AstroEngines.swissEphemeris.getEquator(body, date, observer)
+      : AstroEngines.astronomyEngine.getEquator(body, date, observer);
+  },
+  
+  getHorizon(date, observer, ra, dec) {
+    return AstroEngines.astronomyEngine.getHorizon(date, observer, ra, dec);
+  },
+  
+  getDeltaT(date) {
+    // We don't have direct ΔT values, but the eclipse times incorporate it
+    return AstroEngines.swissEphemeris.isLoaded 
+      ? AstroEngines.swissEphemeris.getDeltaT(date)
+      : AstroEngines.astronomyEngine.getDeltaT(date);
+  },
+  
+  createObserver(lat, lon, elevation = 0) {
+    return new Astronomy.Observer(lat, lon, elevation);
+  },
+  
+  // Estimate ΔT uncertainty in hours based on year
+  // Since we use NASA eclipse anchors for calibration, uncertainty is reduced
+  // compared to raw ΔT models. These values represent residual uncertainty.
+  // Reference: https://eclipse.gsfc.nasa.gov/SEcat5/uncertainty.html
+  getDeltaTUncertainty(year) {
+    // Modern dates (1600-2100): uncertainty is negligible
+    if (year >= 1600 && year <= 2100) {
+      return 0;
+    }
+    
+    // For ancient dates, uncertainty grows but our hybrid calibration helps
+    // These are practical estimates for when day-boundary could be affected:
+    // - 500 BC: ~0.5 hours
+    // - 1000 BC: ~1 hour
+    // - 2000 BC: ~2 hours
+    // - 3000 BC: ~3-4 hours
+    const yearsFromPresent = Math.abs(year - 2000);
+    
+    if (yearsFromPresent <= 500) return 0.25;
+    if (yearsFromPresent <= 1000) return 0.5;
+    if (yearsFromPresent <= 1500) return 1;
+    if (yearsFromPresent <= 2000) return 1.5;
+    if (yearsFromPresent <= 2500) return 2;
+    if (yearsFromPresent <= 3000) return 2.5;
+    if (yearsFromPresent <= 4000) return 3;
+    if (yearsFromPresent <= 5000) return 4;
+    return 6; // Very ancient dates
+  }
+};
+
+// ============================================================================
+// ENGINE MANAGEMENT FUNCTIONS
+// ============================================================================
+
+function getAstroEngine() {
+  if (!activeAstroEngine) {
+    activeAstroEngine = AstroEngines.astronomyEngine;
+  }
+  return activeAstroEngine;
+}
+
+async function setAstroEngine(engineId) {
+  const engine = AstroEngines[engineId];
+  if (!engine) {
+    console.error(`Unknown astronomy engine: ${engineId}`);
+    return false;
+  }
+  
+  // If engine needs async loading, do it
+  if (engine.load && !engine.isLoaded) {
+    const loaded = await engine.load();
+    if (!loaded) {
+      console.error(`Failed to load engine: ${engineId}`);
+      return false;
+    }
+  }
+  
+  activeAstroEngine = engine;
+  state.astronomyEngine = engineId;
+  saveState();
+  
+  // Update UI
+  updateAstroEngineUI();
+  
+  return true;
+}
+
+function updateAstroEngineUI() {
+  const engine = getAstroEngine();
+  
+  // Update engine info display
+  const nameEl = document.getElementById('astro-engine-name');
+  const deltaEl = document.getElementById('astro-engine-delta');
+  
+  if (nameEl) nameEl.textContent = `${engine.name} v${engine.version}`;
+  if (deltaEl) deltaEl.textContent = engine.deltaTModel;
+  
+  // Update button states
+  document.querySelectorAll('.astro-engine-btn').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.engine === state.astronomyEngine);
+  });
+}
+
+// UI handler for selecting astronomy engine (currently disabled - Swiss Ephemeris requires self-hosting)
+// The abstraction layer is in place for future engine support
+function selectAstroEngine(engineId) {
+  if (engineId !== 'astronomyEngine') {
+    console.log('Swiss Ephemeris WASM requires self-hosting. Using astronomy-engine.');
+  }
+}
+
+// Initialize astronomy engine - Hybrid approach combines Swiss Ephemeris precision with NASA eclipse calibration
+async function initializeAstroEngine() {
+  // Load Swiss Ephemeris for precise calculations
+  let sweLoaded = false;
+  try {
+    sweLoaded = await AstroEngines.swissEphemeris.load();
+  } catch (err) {
+    console.warn('Swiss Ephemeris not available:', err.message);
+  }
+  
+  // Load NASA Eclipse data for ΔT calibration
+  let nasaLoaded = false;
+  try {
+    nasaLoaded = await AstroEngines.nasaEclipse.load();
+  } catch (err) {
+    console.warn('NASA Eclipse data not available:', err.message);
+  }
+  
+  // Choose the best available engine configuration
+  if (nasaLoaded && sweLoaded) {
+    // Best case: Hybrid mode - Swiss Ephemeris calibrated against NASA eclipses
+    activeAstroEngine = AstroEngines.nasaEclipse;
+    state.astronomyEngine = 'nasaEclipse';
+    console.log('Using Hybrid mode: Swiss Ephemeris + NASA Eclipse calibration');
+    console.log('  - Modern dates (1600-2100): Swiss Ephemeris direct');
+    console.log('  - Ancient dates: Swiss Ephemeris with NASA ΔT correction');
+  } else if (nasaLoaded) {
+    // NASA data but no Swiss Eph - use interpolation fallback
+    activeAstroEngine = AstroEngines.nasaEclipse;
+    state.astronomyEngine = 'nasaEclipse';
+    console.log('Using NASA Eclipse interpolation (Swiss Ephemeris not available)');
+  } else if (sweLoaded) {
+    // Swiss Eph but no NASA data - use Swiss Eph alone
+    activeAstroEngine = AstroEngines.swissEphemeris;
+    state.astronomyEngine = 'swissEphemeris';
+    console.log('Using Swiss Ephemeris (no NASA calibration)');
+  } else {
+    // Fallback to astronomy-engine
+    activeAstroEngine = AstroEngines.astronomyEngine;
+    state.astronomyEngine = 'astronomyEngine';
+    console.log('Using astronomy-engine for calculations');
+  }
+  
+  updateAstroEngineUI();
+}
+
+// Make these available globally
+window.AstroEngines = AstroEngines;
+window.getAstroEngine = getAstroEngine;
+window.setAstroEngine = setAstroEngine;
+window.updateAstroEngineUI = updateAstroEngineUI;
+window.selectAstroEngine = selectAstroEngine;
+window.initializeAstroEngine = initializeAstroEngine;
+
 const MONTH_NAMES = [
   '1st Month', '2nd Month', '3rd Month', '4th Month', '5th Month', '6th Month',
   '7th Month', '8th Month', '9th Month', '10th Month', '11th Month', '12th Month', '13th Month'
@@ -2600,6 +3630,7 @@ const defaultState = {
   crescentThreshold: 8,     // Minimum moon altitude (degrees) at sunset for crescent visibility
   sabbathMode: 'lunar',     // 'lunar', 'saturday', 'sunday', 'friday', 'none'
   selectedProfile: 'biblicalFull', // Currently selected profile ID
+  astronomyEngine: 'astronomyEngine', // 'astronomyEngine' or 'swissEphemeris'
   lunarMonths: [],
   currentMonthIndex: 0,
   highlightedLunarDay: null,
@@ -2625,6 +3656,7 @@ function loadState() {
         crescentThreshold: parsed.crescentThreshold !== undefined ? parsed.crescentThreshold : defaultState.crescentThreshold,
         sabbathMode: parsed.sabbathMode || defaultState.sabbathMode,
         selectedProfile: parsed.selectedProfile || defaultState.selectedProfile
+        // astronomyEngine is always 'astronomyEngine' for now (Swiss Ephemeris requires self-hosting)
       };
     } catch (e) {
       return { ...defaultState };
@@ -2647,6 +3679,7 @@ function saveState() {
     crescentThreshold: state.crescentThreshold,
     sabbathMode: state.sabbathMode,
     selectedProfile: state.selectedProfile
+    // astronomyEngine not saved - always uses astronomy-engine for now
   };
   localStorage.setItem('lunarCalendarState', JSON.stringify(toSave));
 }
@@ -3725,19 +4758,19 @@ function isSabbath(day) {
       // Lunar sabbath: days 8, 15, 22, 29
       return [8, 15, 22, 29].includes(day.lunarDay);
     case 'sunday':
-      return day.gregorianDate.getDay() === 0;
+      return getCorrectWeekday(day.gregorianDate) === 0;
     case 'monday':
-      return day.gregorianDate.getDay() === 1;
+      return getCorrectWeekday(day.gregorianDate) === 1;
     case 'tuesday':
-      return day.gregorianDate.getDay() === 2;
+      return getCorrectWeekday(day.gregorianDate) === 2;
     case 'wednesday':
-      return day.gregorianDate.getDay() === 3;
+      return getCorrectWeekday(day.gregorianDate) === 3;
     case 'thursday':
-      return day.gregorianDate.getDay() === 4;
+      return getCorrectWeekday(day.gregorianDate) === 4;
     case 'friday':
-      return day.gregorianDate.getDay() === 5;
+      return getCorrectWeekday(day.gregorianDate) === 5;
     case 'saturday':
-      return day.gregorianDate.getDay() === 6;
+      return getCorrectWeekday(day.gregorianDate) === 6;
     case 'none':
       return false;
     default:
@@ -3867,7 +4900,23 @@ function toggleDateJump() {
   if (!isOpen) {
     // Opening - sync the datetime input
     const gotoDate = document.getElementById('goto-date').value;
-    document.getElementById('jump-datetime').value = gotoDate;
+    const datetimeInput = document.getElementById('jump-datetime');
+    const ancientDisplay = document.getElementById('jump-ancient-display');
+    const ancientDateText = document.getElementById('jump-ancient-date');
+    
+    if (gotoDate) {
+      // Modern date - show datetime picker
+      datetimeInput.value = gotoDate;
+      datetimeInput.style.display = 'block';
+      ancientDisplay.style.display = 'none';
+    } else if (state.selectedTimestamp) {
+      // Ancient date - show text display instead
+      const date = new Date(state.selectedTimestamp);
+      const dateStr = formatDisplayDate(date);
+      ancientDateText.textContent = dateStr;
+      datetimeInput.style.display = 'none';
+      ancientDisplay.style.display = 'block';
+    }
   }
   
   overlay.classList.toggle('open');
@@ -3894,17 +4943,34 @@ function addDaysFromPopup(direction) {
   const datetime = document.getElementById('jump-datetime').value;
   const days = parseInt(document.getElementById('jump-days').value) || 1;
   
-  if (!datetime) {
+  // For ancient dates, datetime input will be empty, use selectedTimestamp
+  let utcTimestamp;
+  if (datetime) {
+    utcTimestamp = parseDatetimeLocal(datetime);
+  } else if (state.selectedTimestamp) {
+    utcTimestamp = state.selectedTimestamp;
+  } else {
     alert('Please select a date first');
     return;
   }
-  
-  // Parse as local time at location, add days, convert back
-  const utcTimestamp = parseDatetimeLocal(datetime);
   const newTimestamp = utcTimestamp + (direction * days * 24 * 60 * 60 * 1000);
   
-  document.getElementById('jump-datetime').value = formatLocalDatetime(newTimestamp);
-  document.getElementById('goto-date').value = formatLocalDatetime(newTimestamp);
+  const formattedDate = formatLocalDatetime(newTimestamp);
+  if (formattedDate) {
+    // Modern date - update datetime input
+    document.getElementById('jump-datetime').value = formattedDate;
+    document.getElementById('jump-datetime').style.display = 'block';
+    document.getElementById('jump-ancient-display').style.display = 'none';
+  } else {
+    // Ancient date - update text display
+    const date = new Date(newTimestamp);
+    document.getElementById('jump-ancient-date').textContent = formatDisplayDate(date);
+    document.getElementById('jump-datetime').style.display = 'none';
+    document.getElementById('jump-ancient-display').style.display = 'block';
+  }
+  
+  document.getElementById('goto-date').value = formattedDate;
+  state.selectedTimestamp = newTimestamp;
   jumpToDate();
 }
 
@@ -4227,13 +5293,18 @@ function addDaysToDate(direction) {
 
 function jumpToDate() {
   const dateInput = document.getElementById('goto-date').value;
-  if (!dateInput) {
+  
+  // For ancient dates, dateInput will be empty - use selectedTimestamp
+  let utcTimestamp;
+  if (dateInput) {
+    utcTimestamp = parseDatetimeLocal(dateInput);
+  } else if (state.selectedTimestamp) {
+    utcTimestamp = state.selectedTimestamp;
+  } else {
     alert('Please enter a date');
     return;
   }
   
-  // Parse as local time at selected location, convert to UTC
-  const utcTimestamp = parseDatetimeLocal(dateInput);
   const targetDate = new Date(utcTimestamp);
   const targetYear = targetDate.getUTCFullYear();
   
@@ -4449,29 +5520,58 @@ function isBeforeGregorianReform(date) {
   return date < GREGORIAN_REFORM_DATE;
 }
 
+// Calculate Julian Day Number from Julian calendar date (year, month 0-indexed, day)
+function julianCalendarToJDN(year, month, day) {
+  // Convert 0-indexed month to 1-indexed
+  const m = month + 1;
+  const a = Math.floor((14 - m) / 12);
+  const y = year + 4800 - a;
+  const mm = m + 12 * a - 3;
+  // Julian calendar formula
+  return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
+}
+
+// Calculate day of week from Julian Day Number (0 = Sunday, 6 = Saturday)
+function jdnToWeekday(jdn) {
+  return (jdn + 1) % 7;
+}
+
+// Get correct weekday for a date (handles Julian calendar for ancient dates)
+function getCorrectWeekday(date) {
+  if (isBeforeGregorianReform(date)) {
+    const year = date.getUTCFullYear();
+    const month = date.getUTCMonth();
+    const day = date.getUTCDate();
+    const jdn = julianCalendarToJDN(year, month, day);
+    return jdnToWeekday(jdn);
+  }
+  return date.getUTCDay();
+}
+
 // Get formatted date components (handles Julian calendar for pre-1582 dates)
+// Note: Dates from _jdToDate() already have Julian calendar components stored,
+// so we just use getFullYear/getMonth/getDate directly - no conversion needed.
 function getFormattedDateParts(date) {
   const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 
                   'July', 'August', 'September', 'October', 'November', 'December'];
   const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   
-  let year, month, day, weekday;
-  let isJulian = false;
+  // For ancient dates, use UTC methods to avoid timezone issues
+  // The astronomy engine's _jdToDate already stores Julian calendar values
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth();
+  const day = date.getUTCDate();
+  const isJulian = isBeforeGregorianReform(date);
   
-  if (isBeforeGregorianReform(date)) {
-    const julian = gregorianToJulian(date);
-    year = julian.year;
-    month = julian.month;
-    day = julian.day;
-    // Calculate day of week from the JS date (this is correct since it's based on actual time)
-    weekday = date.getDay();
-    isJulian = true;
+  // Calculate weekday from Julian Day Number for correct result
+  // (JavaScript's getUTCDay() uses proleptic Gregorian internally, which is wrong for Julian dates)
+  let weekday;
+  if (isJulian) {
+    const jdn = julianCalendarToJDN(year, month, day);
+    weekday = jdnToWeekday(jdn);
   } else {
-    year = date.getFullYear();
-    month = date.getMonth();
-    day = date.getDate();
-    weekday = date.getDay();
+    weekday = date.getUTCDay();
   }
   
   // Year string: only BC suffix, never AD
@@ -4555,8 +5655,9 @@ function generateCalendar(options = {}) {
   // Update all UI to match state
   updateUI();
   
-  const springEquinox = Astronomy.Seasons(state.year).mar_equinox.date;
-  const nextSpringEquinox = Astronomy.Seasons(state.year + 1).mar_equinox.date;
+  const engine = getAstroEngine();
+  const springEquinox = engine.getSeasons(state.year).mar_equinox.date;
+  const nextSpringEquinox = engine.getSeasons(state.year + 1).mar_equinox.date;
   const moonEvents = findMoonEvents(state.year, state.moonPhase);
   
   // Get year start point based on yearStartRule setting
@@ -4631,9 +5732,16 @@ function generateCalendar(options = {}) {
 }
 
 function findMoonEvents(year, phaseType) {
+  const engine = getAstroEngine();
   const events = [];
-  let searchDate = new Date(year - 1, 11, 1);
-  const endDate = new Date(year + 1, 5, 1); // Search through May of next year to cover full lunar year
+  
+  // Create dates with proper year handling for ancient dates
+  // JavaScript Date constructor doesn't handle negative years correctly
+  let searchDate = new Date(Date.UTC(2000, 11, 1));
+  searchDate.setUTCFullYear(year - 1);
+  
+  let endDate = new Date(Date.UTC(2000, 5, 1));
+  endDate.setUTCFullYear(year + 1); // Search through May of next year to cover full lunar year
   
   // Moon phase angles: 0 = new/dark, 90 = first quarter, 180 = full, 270 = last quarter
   let targetPhase;
@@ -4646,10 +5754,10 @@ function findMoonEvents(year, phaseType) {
   }
   
   // Create observer for crescent visibility calculations
-  const observer = new Astronomy.Observer(state.lat, state.lon, 0);
+  const observer = engine.createObserver(state.lat, state.lon, 0);
   
   while (searchDate < endDate) {
-    const result = Astronomy.SearchMoonPhase(targetPhase, searchDate, 40);
+    const result = engine.searchMoonPhase(targetPhase, searchDate, 40);
     if (result) {
       let eventDate = result.date;
       
@@ -4661,20 +5769,17 @@ function findMoonEvents(year, phaseType) {
         // Check each evening for up to 5 days after conjunction
         for (let dayOffset = 0; dayOffset < 5; dayOffset++) {
           // Create a date at midnight UTC of the target day to ensure we find THAT day's sunset
-          const conjunctionDay = new Date(Date.UTC(
-            conjunction.getUTCFullYear(),
-            conjunction.getUTCMonth(),
-            conjunction.getUTCDate() + dayOffset,
-            0, 0, 0
-          ));
+          // Use setUTCFullYear for proper handling of negative/ancient years
+          const conjunctionDay = new Date(Date.UTC(2000, conjunction.getUTCMonth(), conjunction.getUTCDate() + dayOffset, 0, 0, 0));
+          conjunctionDay.setUTCFullYear(conjunction.getUTCFullYear());
           
           // Find sunset on this day (searching from midnight will find this evening's sunset)
-          const sunset = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, -1, conjunctionDay, 1);
+          const sunset = engine.searchRiseSet('sun', observer, -1, conjunctionDay, 1);
           
           if (sunset) {
             // Calculate moon position at sunset
-            const moonEquator = Astronomy.Equator(Astronomy.Body.Moon, sunset.date, observer, true, true);
-            const moonHorizon = Astronomy.Horizon(sunset.date, observer, moonEquator.ra, moonEquator.dec, 'normal');
+            const moonEquator = engine.getEquator('moon', sunset.date, observer);
+            const moonHorizon = engine.getHorizon(sunset.date, observer, moonEquator.ra, moonEquator.dec);
             
             // Check if moon altitude exceeds threshold
             if (moonHorizon.altitude >= state.crescentThreshold) {
@@ -4701,11 +5806,45 @@ function getLocalDateFromUTC(utcDate, longitude) {
   // Each 15° of longitude = 1 hour offset
   const hourOffset = longitude / 15;
   
-  // Create a new date adjusted by the longitude offset
-  const localTime = new Date(utcDate.getTime() + hourOffset * 60 * 60 * 1000);
+  // For ancient dates, _jdToDate stores Julian calendar components in the Date object.
+  // We need to work with UTC components directly to avoid JavaScript's proleptic Gregorian timestamp issues.
+  const utcHour = utcDate.getUTCHours() + utcDate.getUTCMinutes() / 60;
+  const localHour = utcHour + hourOffset;
   
-  // Return just the date part (midnight local time)
-  return new Date(localTime.getFullYear(), localTime.getMonth(), localTime.getDate());
+  // Get the base date components (these are already in the correct calendar from _jdToDate)
+  let year = utcDate.getUTCFullYear();
+  let month = utcDate.getUTCMonth();
+  let day = utcDate.getUTCDate();
+  
+  // Adjust day if local time crosses midnight
+  if (localHour >= 24) {
+    day += 1;
+    // Handle month/year rollover (simplified - assumes 30-day months for edge cases)
+    const daysInMonth = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+    if (day > daysInMonth) {
+      day = 1;
+      month += 1;
+      if (month > 11) {
+        month = 0;
+        year += 1;
+      }
+    }
+  } else if (localHour < 0) {
+    day -= 1;
+    if (day < 1) {
+      month -= 1;
+      if (month < 0) {
+        month = 11;
+        year -= 1;
+      }
+      day = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+    }
+  }
+  
+  // Create date with correct components (use Date.UTC and setUTCFullYear for ancient dates)
+  const result = new Date(Date.UTC(2000, month, day, 0, 0, 0));
+  result.setUTCFullYear(year);
+  return result;
 }
 
 function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStartPoint) {
@@ -4715,16 +5854,6 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
   let startIdx = allMoonEvents.findIndex(m => Math.abs(m.getTime() - nissanMoon.getTime()) < 1000);
   if (startIdx === -1) startIdx = allMoonEvents.findIndex(m => m >= nissanMoon);
   if (startIdx === -1) startIdx = 0; // Final fallback to first event
-  
-  // Debug logging for troubleshooting empty months
-  console.log('buildLunarMonths debug:', {
-    nissanMoon: nissanMoon?.toISOString(),
-    startIdx,
-    totalEvents: allMoonEvents.length,
-    nextYearStartPoint: nextYearStartPoint?.toISOString(),
-    firstMoonEvent: allMoonEvents[startIdx]?.toISOString(),
-    moonPhase: state.moonPhase
-  });
   
   // Get observer's longitude for local time calculation
   const observerLon = parseFloat(document.getElementById('lon-input')?.value) || 35.2137;
@@ -4752,12 +5881,13 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
       // Exception: Crescent + Evening + 0° (Sunset)
       // The day containing the crescent sighting IS Day 1
       // Day 1 starts at sunset of that day
-      monthStartDate = new Date(moonEventLocalDate);
+      monthStartDate = new Date(moonEventLocalDate.getTime());
     } else {
       // General rule: Day 1 starts at the NEXT day start after the moon event
       // The day containing the moon event is the last day of the prior month
-      monthStartDate = new Date(moonEventLocalDate);
-      monthStartDate.setDate(monthStartDate.getDate() + 1);
+      // Use UTC methods to avoid timezone issues with ancient dates
+      monthStartDate = new Date(moonEventLocalDate.getTime());
+      monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
     }
     
     // Same logic for next month start
@@ -4765,18 +5895,18 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
     let nextMonthStart;
     
     if (isCrescentSunset) {
-      nextMonthStart = new Date(nextMoonEventLocalDate);
+      nextMonthStart = new Date(nextMoonEventLocalDate.getTime());
     } else {
-      nextMonthStart = new Date(nextMoonEventLocalDate);
-      nextMonthStart.setDate(nextMonthStart.getDate() + 1);
+      nextMonthStart = new Date(nextMoonEventLocalDate.getTime());
+      nextMonthStart.setUTCDate(nextMonthStart.getUTCDate() + 1);
     }
     
     const daysInMonth = Math.round((nextMonthStart - monthStartDate) / (24 * 60 * 60 * 1000));
     
     const days = [];
     for (let d = 1; d <= daysInMonth; d++) {
-      const dayDate = new Date(monthStartDate);
-      dayDate.setDate(dayDate.getDate() + d - 1);
+      const dayDate = new Date(monthStartDate.getTime());
+      dayDate.setUTCDate(dayDate.getUTCDate() + d - 1);
       
       const isSabbath = [8, 15, 22, 29].includes(d);
       const isNewMoon = d === 1;
@@ -4862,49 +5992,61 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
 
 function formatShortDate(date) {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  
-  if (isBeforeGregorianReform(date)) {
-    // Use Julian calendar for dates before Oct 15, 1582
-    const julian = gregorianToJulian(date);
-    return `${months[julian.month]} ${julian.day}`;
-  }
-  
-  return `${months[date.getMonth()]} ${date.getDate()}`;
+  // Use UTC methods - dates from _jdToDate already have correct calendar components stored
+  return `${months[date.getUTCMonth()]} ${date.getUTCDate()}`;
 }
 
 // Calculate sunrise timestamp for a given date at the selected location
 function getSunriseTimestamp(date) {
-  const observer = new Astronomy.Observer(state.lat, state.lon, 0);
-  // Search for sunrise starting from midnight of that day
-  const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
-  const sunrise = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, +1, midnight, 1);
+  const engine = getAstroEngine();
+  const observer = engine.createObserver(state.lat, state.lon, 0);
+  // Search for sunrise starting from midnight of that day (use UTC for ancient dates)
+  const midnightUTC = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
+  midnightUTC.setUTCFullYear(date.getUTCFullYear());
+  const sunrise = engine.searchRiseSet('sun', observer, +1, midnightUTC, 1);
   if (sunrise) {
     return sunrise.date.getTime();
   }
-  // Fallback to 6am local solar time if no sunrise found (polar regions)
-  return date.getTime() + 6 * 60 * 60 * 1000;
+  // Fallback to 6am if no sunrise found (polar regions)
+  return midnightUTC.getTime() + 6 * 60 * 60 * 1000;
+}
+
+// Calculate sunset timestamp for a given date at the selected location
+function getSunsetTimestamp(date) {
+  const engine = getAstroEngine();
+  const observer = engine.createObserver(state.lat, state.lon, 0);
+  // Use UTC for ancient dates
+  const midnightUTC = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
+  midnightUTC.setUTCFullYear(date.getUTCFullYear());
+  const sunset = engine.searchRiseSet('sun', observer, -1, midnightUTC, 1);
+  if (sunset) {
+    return sunset.date.getTime();
+  }
+  // Fallback to 6pm if no sunset found (polar regions)
+  return midnightUTC.getTime() + 18 * 60 * 60 * 1000;
 }
 
 // Calculate moon altitude at sunset for a given date
 // Returns an object with sunset time, moon altitude, and elongation
 function getMoonAltitudeAtSunset(date) {
   try {
-    const observer = new Astronomy.Observer(state.lat, state.lon, 0);
+    const engine = getAstroEngine();
+    const observer = engine.createObserver(state.lat, state.lon, 0);
     const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
     
     // Find sunset on this day
-    const sunset = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, -1, midnight, 1);
+    const sunset = engine.searchRiseSet('sun', observer, -1, midnight, 1);
     
     if (!sunset) {
       return null;
     }
     
     // Calculate moon position at sunset
-    const moonEquator = Astronomy.Equator(Astronomy.Body.Moon, sunset.date, observer, true, true);
-    const moonHorizon = Astronomy.Horizon(sunset.date, observer, moonEquator.ra, moonEquator.dec, 'normal');
+    const moonEquator = engine.getEquator('moon', sunset.date, observer);
+    const moonHorizon = engine.getHorizon(sunset.date, observer, moonEquator.ra, moonEquator.dec);
     
     // Calculate sun position at sunset
-    const sunEquator = Astronomy.Equator(Astronomy.Body.Sun, sunset.date, observer, true, true);
+    const sunEquator = engine.getEquator('sun', sunset.date, observer);
     
     // Calculate elongation using spherical geometry (angular distance between RA/Dec positions)
     // Convert RA from hours to degrees
@@ -4934,28 +6076,32 @@ function getMoonAltitudeAtSunset(date) {
 // Get the day start time for a given date based on current settings
 // Returns a UTC timestamp for when the day starts
 function getDayStartTime(date) {
-  const observer = new Astronomy.Observer(state.lat, state.lon, 0);
-  const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
+  const engine = getAstroEngine();
+  const observer = engine.createObserver(state.lat, state.lon, 0);
+  
+  // Use UTC methods to avoid timezone issues with ancient dates
+  const midnightUTC = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
+  midnightUTC.setUTCFullYear(date.getUTCFullYear());
   
   // Direction: -1 for evening (descending sun), +1 for morning (ascending sun)
   const direction = state.dayStartTime === 'evening' ? -1 : +1;
   
   // For evening, we need to search from noon of the previous day
   // For morning, we search from midnight of this day
-  let searchStart = midnight;
+  let searchStart = midnightUTC;
   if (state.dayStartTime === 'evening') {
     // Search starting from noon of the previous day to find evening twilight
-    searchStart = new Date(midnight.getTime() - 12 * 60 * 60 * 1000);
+    searchStart = new Date(midnightUTC.getTime() - 12 * 60 * 60 * 1000);
   }
   
   let result;
   if (state.dayStartAngle === 0) {
     // Use sunrise/sunset (sun at horizon)
-    result = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, direction, searchStart, 1);
+    result = engine.searchRiseSet('sun', observer, direction, searchStart, 1);
   } else {
     // Use twilight angle (sun below horizon)
     // SearchAltitude finds when sun reaches the specified altitude
-    result = Astronomy.SearchAltitude(Astronomy.Body.Sun, observer, direction, searchStart, 1, -state.dayStartAngle);
+    result = engine.searchAltitude('sun', observer, direction, searchStart, 1, -state.dayStartAngle);
   }
   
   if (result) {
@@ -4964,15 +6110,16 @@ function getDayStartTime(date) {
   
   // Fallback for polar regions
   if (state.dayStartTime === 'morning') {
-    return midnight.getTime() + 6 * 60 * 60 * 1000; // 6am
+    return midnightUTC.getTime() + 6 * 60 * 60 * 1000; // 6am
   } else {
-    return midnight.getTime() - 6 * 60 * 60 * 1000; // 6pm previous day
+    return midnightUTC.getTime() - 6 * 60 * 60 * 1000; // 6pm previous day
   }
 }
 
 // Get the year start point based on yearStartRule setting
 function getYearStartPoint(year) {
-  const springEquinox = Astronomy.Seasons(year).mar_equinox.date;
+  const engine = getAstroEngine();
+  const springEquinox = engine.getSeasons(year).mar_equinox.date;
   
   if (state.yearStartRule === '13daysBefore') {
     // Return 13 days before the equinox
@@ -5019,8 +6166,13 @@ function localTimeToUtc(localDate, longitude) {
 
 // Format date for datetime-local input (YYYY-MM-DDTHH:MM)
 // Uses UTC values since we pre-convert to local time
+// Returns null for dates before year 1 (datetime-local doesn't support negative years)
 function formatDatetimeLocal(date) {
-  return date.getUTCFullYear() + '-' + 
+  const year = date.getUTCFullYear();
+  // datetime-local inputs don't support years before 1
+  if (year < 1) return null;
+  
+  return year + '-' + 
     String(date.getUTCMonth() + 1).padStart(2, '0') + '-' +
     String(date.getUTCDate()).padStart(2, '0') + 'T' +
     String(date.getUTCHours()).padStart(2, '0') + ':' +
@@ -5028,9 +6180,10 @@ function formatDatetimeLocal(date) {
 }
 
 // Format UTC timestamp as local time string at selected location
+// Returns empty string for ancient dates (datetime-local doesn't support them)
 function formatLocalDatetime(utcTimestamp) {
   const localDate = utcToLocalTime(utcTimestamp, state.lon);
-  return formatDatetimeLocal(localDate);
+  return formatDatetimeLocal(localDate) || '';
 }
 
 // Parse datetime-local input as local time at selected location, return UTC timestamp
@@ -5051,22 +6204,12 @@ function formatFullDate(date) {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 
                   'July', 'August', 'September', 'October', 'November', 'December'];
   
-  let year, month, day, calendarSuffix;
-  
-  if (isBeforeGregorianReform(date)) {
-    // Use Julian calendar for dates before Oct 15, 1582
-    const julian = gregorianToJulian(date);
-    year = julian.year;
-    month = julian.month;
-    day = julian.day;
-    calendarSuffix = ' (Julian)';
-  } else {
-    // Use Gregorian calendar
-    year = date.getFullYear();
-    month = date.getMonth();
-    day = date.getDate();
-    calendarSuffix = '';
-  }
+  // Use UTC methods - dates from _jdToDate already have correct calendar components stored
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth();
+  const day = date.getUTCDate();
+  const isJulian = isBeforeGregorianReform(date);
+  const calendarSuffix = isJulian ? ' (Julian)' : '';
   
   // Format year: only show BC suffix, never AD
   const yearStr = year <= 0 ? `${Math.abs(year - 1)} BC` : `${year}`;
@@ -5212,8 +6355,8 @@ function formatMoonDateTime(date) {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   
-  // UTC date and time
-  const utcDay = days[date.getUTCDay()];
+  // UTC date and time - use correct weekday calculation for ancient dates
+  const utcDay = days[getCorrectWeekday(date)];
   const utcMonth = months[date.getUTCMonth()];
   const utcDate = date.getUTCDate();
   const utcHours = date.getUTCHours().toString().padStart(2, '0');
@@ -5257,7 +6400,7 @@ function renderMonth(month) {
   
   // Find Day 2's Gregorian weekday to determine the weekday labels
   const day2 = month.days.find(d => d.lunarDay === 2);
-  const day2Weekday = day2 ? day2.gregorianDate.getDay() : 0;
+  const day2Weekday = day2 ? getCorrectWeekday(day2.gregorianDate) : 0;
   
   // Generate weekday labels starting from Day 2's weekday
   const weekdayNames = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
@@ -5275,8 +6418,8 @@ function renderMonth(month) {
   // Get Day 1 info for header
   const day1 = month.days.find(d => d.lunarDay === 1);
   const day1Date = day1 ? formatShortDate(day1.gregorianDate) : '';
-  const day1Year = day1 ? formatYear(day1.gregorianDate.getFullYear()) : '';
-  const day1Weekday = day1 ? weekdayNames[day1.gregorianDate.getDay()] : '';
+  const day1Year = day1 ? formatYear(day1.gregorianDate.getUTCFullYear()) : '';
+  const day1Weekday = day1 ? weekdayNames[getCorrectWeekday(day1.gregorianDate)] : '';
   
   // Check for feasts on day 1
   let day1FeastIcons = '';
@@ -5285,10 +6428,49 @@ function renderMonth(month) {
     day1FeastIcons = `<div class="feast-icons">${icons.join('')}</div>`;
   }
   
+  // Check for ΔT uncertainty warning on Day 1
+  let day1UncertaintyIndicator = '';
+  if (month.moonEvent) {
+    const eventYear = month.moonEvent.getUTCFullYear();
+    const uncertaintyHours = AstroEngines.nasaEclipse.getDeltaTUncertainty(eventYear);
+    
+    if (uncertaintyHours > 0 && day1 && state.dayStartTime === 'evening') {
+      const moonTime = month.moonEvent.getTime();
+      const moonDate = new Date(month.moonEvent);
+      let marginHours;
+      
+      if (state.moonPhase === 'dark' || state.moonPhase === 'full') {
+        // Dark/Full moon: Day 1 starts at the NEXT sunset after the conjunction
+        // Margin = time from conjunction to next sunset
+        const sameDaySunset = getSunsetTimestamp(moonDate);
+        
+        let nextSunset;
+        if (moonTime < sameDaySunset) {
+          nextSunset = sameDaySunset;
+        } else {
+          const nextDay = new Date(moonDate);
+          nextDay.setDate(nextDay.getDate() + 1);
+          nextSunset = getSunsetTimestamp(nextDay);
+        }
+        marginHours = (nextSunset - moonTime) / (1000 * 60 * 60);
+      } else if (state.moonPhase === 'crescent') {
+        // Crescent: Day 1 starts at the sunset when crescent is first visible
+        // The crescent sighting happens shortly AFTER sunset
+        // Margin = time from that sunset to the crescent sighting
+        const sameDaySunset = getSunsetTimestamp(moonDate);
+        marginHours = (moonTime - sameDaySunset) / (1000 * 60 * 60);
+      }
+      
+      if (marginHours > 0 && marginHours <= uncertaintyHours) {
+        day1UncertaintyIndicator = 'uncertain';
+      }
+    }
+  }
+  
   // Get the year the lunar year started (from first month's day 1)
   const firstMonth = state.lunarMonths[0];
   const firstDay1 = firstMonth ? firstMonth.days.find(d => d.lunarDay === 1) : null;
-  const lunarYearStart = firstDay1 ? firstDay1.gregorianDate.getFullYear() : state.year;
+  const lunarYearStart = firstDay1 ? firstDay1.gregorianDate.getUTCFullYear() : state.year;
   const displayYear = `from ${formatYear(lunarYearStart)}`;
   
   let html = `
@@ -5307,7 +6489,7 @@ function renderMonth(month) {
             <div class="year">${displayYear} · ${getCurrentLocationName()}</div>
           </div>
         </div>
-        <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}${day1 && isSabbath(day1) ? ' sabbath' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
+        <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}${day1 && isSabbath(day1) ? ' sabbath' : ''}${day1UncertaintyIndicator ? ' date-uncertain' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
           <div class="gregorian">${day1Date}<span class="day-year">${day1Year}</span></div>
           <div class="moon-phase">${day1 ? day1.moonPhase : ''}</div>
           <div class="lunar-day">1</div>
@@ -5570,12 +6752,15 @@ function renderFeastTable(months) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
   // Rebuild profile dropdown with any saved custom profiles
   rebuildProfileDropdown();
   
   // Initialize settings editability (presets are read-only)
   updateSettingsEditability();
+  
+  // Initialize astronomy engine (loads Swiss Ephemeris WASM)
+  await initializeAstroEngine();
   
   // Check if URL has parameters - if so, load from URL, otherwise jump to today
   const params = new URLSearchParams(window.location.search);
@@ -5691,16 +6876,15 @@ function showDayDetail(dayObj, month) {
         const dayNum = moonParts.day;
         const daySuffix = getOrdinalSuffix(dayNum);
         const year = moonParts.yearStr;
-        const moonTimeStr = moonEventDate.toLocaleTimeString('en-US', { 
-          hour: 'numeric', minute: '2-digit', hour12: true 
-        });
+        
+        // Format times in observer's local time (based on longitude), not browser timezone
+        const moonLocalTime = utcToLocalTime(moonEventDate.getTime(), state.lon);
+        const moonTimeStr = `${moonLocalTime.getUTCHours() % 12 || 12}:${String(moonLocalTime.getUTCMinutes()).padStart(2, '0')} ${moonLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
         
         // Get day start time based on current settings
         const dayStartTimestamp = getDayStartTime(dayObj.gregorianDate);
-        const dayStartDate = new Date(dayStartTimestamp);
-        const dayStartStr = dayStartDate.toLocaleTimeString('en-US', { 
-          hour: 'numeric', minute: '2-digit', hour12: true 
-        });
+        const dayStartLocalTime = utcToLocalTime(dayStartTimestamp, state.lon);
+        const dayStartStr = `${dayStartLocalTime.getUTCHours() % 12 || 12}:${String(dayStartLocalTime.getUTCMinutes()).padStart(2, '0')} ${dayStartLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
         const dayStartLabel = getDayStartLabel();
         
         // Calculate time difference between moon event and day start
@@ -5769,10 +6953,28 @@ function showDayDetail(dayObj, month) {
             `The month begins ${timeDiffStr} ${laterEarlier} at ${dayStartLabel} (${dayStartStr}).`;
         }
         
+        // Check if the margin is within ΔT uncertainty for ancient dates
+        let uncertaintyWarningHtml = '';
+        const eventYear = moonEventDate.getUTCFullYear();
+        const uncertaintyHours = AstroEngines.nasaEclipse.getDeltaTUncertainty(eventYear);
+        const marginHours = diffMins / 60;
+        
+        if (uncertaintyHours > 0 && marginHours <= uncertaintyHours) {
+          uncertaintyWarningHtml = `
+            <div class="uncertainty-warning">
+              <span class="warning-icon">⚠️</span>
+              <strong>Date Uncertainty:</strong> The ${timeDiffStr} margin between the ${getMoonLabel()} and day start 
+              is within the estimated ±${uncertaintyHours} hour uncertainty for astronomical calculations at this date. 
+              The actual Day 1 could potentially fall on the previous or next day.
+            </div>
+          `;
+        }
+        
         basisHtml = `
           <div class="feast-basis">
             ${explanationText}
           </div>
+          ${uncertaintyWarningHtml}
         `;
       }
       
@@ -5841,7 +7043,7 @@ function showDayDetail(dayObj, month) {
     const moonLabel = getMoonLabel();
     
     // Get spring equinox for this lunar year
-    const springEquinox = Astronomy.Seasons(state.year).mar_equinox.date;
+    const springEquinox = getAstroEngine().getSeasons(state.year).mar_equinox.date;
     const seqParts = getFormattedDateParts(springEquinox);
     const equinoxDateStr = `${seqParts.weekdayName}, ${seqParts.monthName} ${seqParts.day}${getOrdinalSuffix(seqParts.day)}, ${seqParts.yearStr}${seqParts.calendarSuffix}`;
     
@@ -5902,7 +7104,7 @@ function showDayDetail(dayObj, month) {
       }
     } else if (month.monthNumber === 13) {
       // Explain why 13th month exists: its day-start is BEFORE the next year's start point
-      const nextEquinox = Astronomy.Seasons(state.year + 1).mar_equinox.date;
+      const nextEquinox = getAstroEngine().getSeasons(state.year + 1).mar_equinox.date;
       const neqParts = getFormattedDateParts(nextEquinox);
       const nextEquinoxDateStr = `${neqParts.weekdayName}, ${neqParts.monthName} ${neqParts.day}${getOrdinalSuffix(neqParts.day)}, ${neqParts.yearStr}${neqParts.calendarSuffix}`;
       
@@ -6072,7 +7274,7 @@ function jumpToToday() {
   
   // Determine which lunar year today belongs to
   // Use UTC comparison - the calendar builds months based on UTC moon events
-  const springEquinox = Astronomy.Seasons(targetYear).mar_equinox.date;
+  const springEquinox = getAstroEngine().getSeasons(targetYear).mar_equinox.date;
   const lunarYear = utcTimestamp < springEquinox.getTime() ? targetYear - 1 : targetYear;
   
   // Update state year (keep other settings from localStorage)

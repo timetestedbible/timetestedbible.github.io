@@ -1,10 +1,14 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v1';
+const CACHE_NAME = 'lunar-sabbath-v33';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
-  'https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js'
+  'https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js',
+  '/lib/swisseph/swisseph-browser.js',
+  '/lib/swisseph/swisseph.js',
+  '/lib/swisseph/swisseph.wasm',
+  '/data/eclipses.json'
 ];
 
 // Install event - cache assets
