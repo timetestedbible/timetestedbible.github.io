@@ -993,6 +993,9 @@ body.feasts-open {
   /* Blood red glow effect for lunar eclipse */
   filter: sepia(1) saturate(5) hue-rotate(320deg) brightness(0.9);
   text-shadow: 0 0 10px rgba(180, 0, 0, 1), 0 0 20px rgba(255, 50, 50, 0.8), 0 0 30px rgba(200, 0, 0, 0.6);
+  background: rgba(139, 0, 0, 0.3);
+  border-radius: 50%;
+  padding: 2px 4px;
 }
 
 /* Sabbath Days */
@@ -3221,9 +3224,13 @@ AstroEngines.nasaEclipse = {
   // Check if a given date has a lunar eclipse (blood moon)
   // Returns true if there's a lunar eclipse within 0.5 days of the given date
   hasLunarEclipse(date) {
-    if (!this._eclipses) return false;
+    if (!this._eclipses) {
+      console.log('hasLunarEclipse: no eclipses loaded');
+      return false;
+    }
     
     const jd = this._dateToJD(date);
+    console.log(`hasLunarEclipse: checking date=${date.toISOString()}, jd=${jd}`);
     
     // Binary search to find nearby eclipses
     let lo = 0, hi = this._eclipses.length - 1;
@@ -3236,10 +3243,14 @@ AstroEngines.nasaEclipse = {
     // Check nearby eclipses (within a day on either side)
     for (let i = Math.max(0, lo - 2); i < Math.min(this._eclipses.length, lo + 3); i++) {
       const e = this._eclipses[i];
-      if (e.t === 'f' && Math.abs(e.jd - jd) < 0.5) {
+      const diff = Math.abs(e.jd - jd);
+      console.log(`  Eclipse ${i}: jd=${e.jd}, type=${e.t}, diff=${diff.toFixed(3)} days`);
+      if (e.t === 'f' && diff < 1.0) {
+        console.log(`  MATCH! Lunar eclipse found`);
         return true;
       }
     }
+    console.log('  No lunar eclipse found');
     return false;
   },
   
@@ -5643,6 +5654,111 @@ function getMoonIcon() {
   return '🌕';
 }
 
+// Get the moon phase icon for a specific date, but ONLY if a quarter phase
+// (new moon 0°, first quarter 90°, full moon 180°, last quarter 270°) occurs during this day
+function getMoonPhaseIconForDate(date) {
+  try {
+    // Get elongation at start and end of this calendar day
+    const startOfDay = new Date(date.getTime());
+    startOfDay.setUTCHours(0, 0, 0, 0);
+    const endOfDay = new Date(startOfDay.getTime() + 24 * 60 * 60 * 1000);
+    
+    const elongStart = getElongationForDate(startOfDay);
+    const elongEnd = getElongationForDate(endOfDay);
+    
+    if (elongStart === null || elongEnd === null) return '';
+    
+    // Check each of the 4 major quarters
+    const quarters = [
+      { angle: 0, icon: '🌑' },    // New Moon
+      { angle: 90, icon: '🌓' },   // First Quarter
+      { angle: 180, icon: '🌕' },  // Full Moon
+      { angle: 270, icon: '🌗' }   // Last Quarter
+    ];
+    
+    for (const quarter of quarters) {
+      if (phaseOccursDuringDay(elongStart, elongEnd, quarter.angle)) {
+        return quarter.icon;
+      }
+    }
+    
+    return ''; // No quarter phase on this day
+  } catch (err) {
+    console.warn('Error calculating moon phase:', err);
+    return '';
+  }
+}
+
+// Check if a phase angle is crossed between two elongation values
+function phaseOccursDuringDay(elongStart, elongEnd, targetAngle) {
+  // Elongation increases over time (moon moves ~12° per day relative to sun)
+  // Handle the 360°→0° wraparound for new moon
+  
+  if (targetAngle === 0) {
+    // New moon: elongation wraps from ~350+ to ~10-
+    // This happens when elongStart is high (>300) and elongEnd is lower OR 
+    // when elongStart > 350 and elongEnd is small
+    if (elongStart > 300 && elongEnd < elongStart) {
+      // Could be wraparound or normal decrease (shouldn't normally decrease much)
+      // If elongEnd is small (<60), it wrapped around
+      if (elongEnd < 60) return true;
+    }
+    // Also check if we're very close to 0 on either end
+    if (elongStart > 350 || elongEnd < 10) {
+      if (elongStart > 350 && elongEnd < 60) return true;
+    }
+  } else {
+    // For other phases (90, 180, 270): check if targetAngle is between start and end
+    // Normal case: elongation increases
+    if (elongStart <= targetAngle && elongEnd >= targetAngle) return true;
+    
+    // Edge case: day spans the 360→0 boundary but target is not 0
+    // In this case, elongStart > elongEnd due to wraparound
+    if (elongStart > elongEnd) {
+      // Wrapped around - check both segments
+      if (elongStart <= targetAngle || elongEnd >= targetAngle) return true;
+    }
+  }
+  
+  return false;
+}
+
+// Get moon-sun elongation for a date
+function getElongationForDate(date) {
+  // For Swiss Ephemeris, use the elongation function directly
+  if (AstroEngines.swissEphemeris.isLoaded && AstroEngines.swissEphemeris._dateToJD) {
+    const jd = AstroEngines.swissEphemeris._dateToJD(date);
+    const elongation = AstroEngines.swissEphemeris._getMoonSunElongation(jd);
+    if (elongation !== null) return elongation;
+  }
+  
+  // Fallback: use astronomy-engine
+  try {
+    const engine = getAstroEngine();
+    const observer = engine.createObserver(state.lat, state.lon, 0);
+    const sunEq = engine.getEquator('sun', date, observer);
+    const moonEq = engine.getEquator('moon', date, observer);
+    
+    if (sunEq && moonEq) {
+      let sunRA = sunEq.ra * 15;
+      let moonRA = moonEq.ra * 15;
+      let elongation = moonRA - sunRA;
+      while (elongation < 0) elongation += 360;
+      while (elongation >= 360) elongation -= 360;
+      return elongation;
+    }
+  } catch (err) {}
+  
+  return null;
+}
+
+// Calculate angular distance between two angles (0-360), handling wraparound
+function angularDistance(a, b) {
+  let diff = Math.abs(a - b);
+  if (diff > 180) diff = 360 - diff;
+  return diff;
+}
+
 function getMoonLabel() {
   if (state.moonPhase === 'full') return 'Full Moon';
   if (state.moonPhase === 'dark') return 'Dark Moon';
@@ -5895,29 +6011,19 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
     if ((state.moonPhase === 'dark' || state.moonPhase === 'full' || state.moonPhase === 'crescent') && state.dayStartTime === 'evening') {
       // Get sunset time on the moon event's local date
       const sunsetOnMoonDate = getSunsetTimestamp(moonEventLocalDate);
-      const sunriseOnMoonDate = getSunriseTimestamp(moonEventLocalDate);
       
       // Convert times to local for comparison
       const moonEventLocalTime = moonEvent.getTime() + (observerLon / 15) * 60 * 60 * 1000;
       const sunsetLocalTime = sunsetOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
-      const sunriseLocalTime = sunriseOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
       
-      // Key insight: if the moon event is between midnight and sunrise (early morning),
-      // it's actually part of the PREVIOUS evening's "day" in Hebrew calendar terms.
-      // So for events before sunrise, they are AFTER the previous day's sunset.
-      const isBeforeSunrise = moonEventLocalTime < sunriseLocalTime;
-      const isAfterSunset = moonEventLocalTime > sunsetLocalTime;
-      
-      // Moon event is "after sunset" if:
-      // 1. It's after sunset on the same calendar date, OR
-      // 2. It's before sunrise (meaning it's between last night's sunset and this morning)
-      if (isAfterSunset || isBeforeSunrise) {
-        // Moon event is AFTER the relevant sunset - add 2 days (prior month gets 30 days)
-        monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 2);
-      } else {
-        // Moon event is between sunrise and sunset - add 1 day (prior month gets 29 days)
+      // Day 1 starts at the NEXT sunset after the moon event
+      // - If moon event is AFTER sunset on its calendar date → next sunset is tomorrow → add 1 day
+      // - Otherwise (before sunset, including early morning before sunrise) → next sunset is today → add 0 days
+      if (moonEventLocalTime > sunsetLocalTime) {
+        // Moon event is AFTER sunset - Day 1 starts at next day's sunset
         monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
       }
+      // If moon event is before sunset (including early morning), Day 1 starts at same day's sunset (add 0 days)
     } else if ((state.moonPhase === 'dark' || state.moonPhase === 'full' || state.moonPhase === 'crescent') && state.dayStartTime === 'morning') {
       // For morning day start, check if moon event is before or after sunrise
       const sunriseOnMoonDate = getSunriseTimestamp(moonEventLocalDate);
@@ -5942,20 +6048,15 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
     
     if ((state.moonPhase === 'dark' || state.moonPhase === 'full' || state.moonPhase === 'crescent') && state.dayStartTime === 'evening') {
       const sunsetOnNextMoonDate = getSunsetTimestamp(nextMoonEventLocalDate);
-      const sunriseOnNextMoonDate = getSunriseTimestamp(nextMoonEventLocalDate);
       const nextMoonEventLocalTime = nextMoonEvent.getTime() + (observerLon / 15) * 60 * 60 * 1000;
       const nextSunsetLocalTime = sunsetOnNextMoonDate + (observerLon / 15) * 60 * 60 * 1000;
-      const nextSunriseLocalTime = sunriseOnNextMoonDate + (observerLon / 15) * 60 * 60 * 1000;
       
-      // Same logic: if before sunrise, it's part of previous evening's day
-      const isBeforeSunrise = nextMoonEventLocalTime < nextSunriseLocalTime;
-      const isAfterSunset = nextMoonEventLocalTime > nextSunsetLocalTime;
-      
-      if (isAfterSunset || isBeforeSunrise) {
-        nextMonthStart.setUTCDate(nextMonthStart.getUTCDate() + 2);
-      } else {
+      // Day 1 starts at the NEXT sunset after the moon event
+      if (nextMoonEventLocalTime > nextSunsetLocalTime) {
+        // Moon event is AFTER sunset - Day 1 starts at next day's sunset
         nextMonthStart.setUTCDate(nextMonthStart.getUTCDate() + 1);
       }
+      // If moon event is before sunset, Day 1 starts at same day's sunset (add 0 days)
     } else if ((state.moonPhase === 'dark' || state.moonPhase === 'full' || state.moonPhase === 'crescent') && state.dayStartTime === 'morning') {
       // For morning day start, check if moon event is before or after sunrise
       const sunriseOnNextMoonDate = getSunriseTimestamp(nextMoonEventLocalDate);
@@ -6037,29 +6138,17 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
       const feast = feasts.length > 0 ? feasts[0].feast : null;
       const feastDayNum = feasts.length > 0 ? feasts[0].dayNum : null;
       
-      // Moon phase icons depend on which phase starts the month
+      // Calculate moon phase for this day
+      // For Day 1, force the icon based on mode (since Day 1 IS the phase by definition)
+      // For other days, calculate from astronomical position
       let moonPhase = '';
-      if (state.moonPhase === 'full') {
-        // Full moon start: full → last quarter → new → first quarter → full
-        if (d === 1) moonPhase = '🌕';
-        else if (d === 8) moonPhase = '🌗';
-        else if (d === 15) moonPhase = '🌑';
-        else if (d === 22) moonPhase = '🌓';
-        else if (d === 29) moonPhase = '🌕';
-      } else if (state.moonPhase === 'dark') {
-        // Dark/new moon start: new → first quarter → full → last quarter → new
-        if (d === 1) moonPhase = '🌑';
-        else if (d === 8) moonPhase = '🌓';
-        else if (d === 15) moonPhase = '🌕';
-        else if (d === 22) moonPhase = '🌗';
-        else if (d === 29) moonPhase = '🌑';
-      } else if (state.moonPhase === 'crescent') {
-        // Crescent start (~2 days after new): crescent → first quarter → full → last quarter → crescent
-        if (d === 1) moonPhase = '🌒';
-        else if (d === 7) moonPhase = '🌓';
-        else if (d === 14) moonPhase = '🌕';
-        else if (d === 21) moonPhase = '🌗';
-        else if (d === 28) moonPhase = '🌒';
+      if (d === 1) {
+        // Day 1 always shows the mode-defining phase
+        if (state.moonPhase === 'full') moonPhase = '🌕';
+        else if (state.moonPhase === 'dark') moonPhase = '🌑';
+        else if (state.moonPhase === 'crescent') moonPhase = '🌒';
+      } else {
+        moonPhase = getMoonPhaseIconForDate(dayDate);
       }
       
       // Check if spring equinox falls on this day
@@ -6072,10 +6161,13 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
         equinox = { type: 'spring', date: state.nextSpringEquinox };
       }
       
-      // Check if there's a lunar eclipse (blood moon) on this day
-      const isBloodMoon = AstroEngines.nasaEclipse.hasLunarEclipse(dayDate);
-      if (isBloodMoon) {
-        console.log(`Blood moon detected on ${dayDate.toISOString()}`);
+      // Check if there's a lunar eclipse (blood moon) - only on days with a full moon icon
+      // For Day 1 in full moon mode, check against the month's moon event date
+      let isBloodMoon = false;
+      if (moonPhase === '🌕') {
+        const checkDate = (d === 1 && moonEvent) ? moonEvent : dayDate;
+        isBloodMoon = AstroEngines.nasaEclipse.hasLunarEclipse(checkDate);
+        console.log(`Day ${d}: moonPhase=${moonPhase}, checkDate=${checkDate.toISOString()}, isBloodMoon=${isBloodMoon}`);
       }
       
       days.push({
@@ -6508,6 +6600,8 @@ function formatMoonDateTime(date) {
 }
 
 function renderMonth(month) {
+  console.log(`renderMonth called: month ${month.monthNumber}, days with blood moon:`, 
+    month.days.filter(d => d.isBloodMoon).map(d => `Day ${d.lunarDay}`));
   const scripture = SCRIPTURES[month.monthNumber % SCRIPTURES.length];
   
   const container = document.getElementById('calendar-output');
@@ -6572,6 +6666,12 @@ function renderMonth(month) {
   // Check for ΔT uncertainty warning on Day 1 (use the already-calculated flag)
   const day1UncertaintyIndicator = (day1 && day1.isUncertain) ? 'uncertain' : '';
   
+  // Blood moon styling for Day 1
+  const day1BloodMoonClass = (day1 && day1.isBloodMoon) ? ' blood-moon' : '';
+  if (day1 && day1.isBloodMoon) {
+    console.log(`Rendering blood moon on Day 1 in header, date=${day1.gregorianDate.toISOString()}`);
+  }
+  
   // Get the year the lunar year started (from first month's day 1)
   const firstMonth = state.lunarMonths[0];
   const firstDay1 = firstMonth ? firstMonth.days.find(d => d.lunarDay === 1) : null;
@@ -6594,9 +6694,9 @@ function renderMonth(month) {
             <div class="year">${displayYear} · ${getCurrentLocationName()}</div>
           </div>
         </div>
-        <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}${day1 && isSabbath(day1) ? ' sabbath' : ''}${day1UncertaintyIndicator ? ' date-uncertain' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
+        <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}${day1 && isSabbath(day1) ? ' sabbath' : ''}${day1UncertaintyIndicator ? ' date-uncertain' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1" title="${day1 && day1.isBloodMoon ? '🔴 Blood Moon (Lunar Eclipse)' : ''}">
           <div class="gregorian">${day1Date}<span class="day-year">${day1Year}</span></div>
-          <div class="moon-phase">${day1 ? day1.moonPhase : ''}</div>
+          <div class="moon-phase${day1BloodMoonClass}">${day1 ? day1.moonPhase : ''}</div>
           <div class="lunar-day">1</div>
           ${day1FeastIcons}
         </div>
@@ -6675,6 +6775,9 @@ function renderMonth(month) {
       const bloodMoonClass = day.isBloodMoon ? ' blood-moon' : '';
       // Use red full moon emoji for blood moon, or add title
       const bloodMoonTitle = day.isBloodMoon ? ' | 🔴 Blood Moon (Lunar Eclipse)' : '';
+      if (day.isBloodMoon) {
+        console.log(`Rendering blood moon on Day ${day.lunarDay}, date=${day.gregorianDate.toISOString()}, class="${bloodMoonClass}"`);
+      }
       html += `
         <div class="${classes.join(' ')}" data-date="${dateStr}" title="${titleText}${bloodMoonTitle}">
           <div class="gregorian">${formatShortDate(day.gregorianDate)}${uncertaintySuffix}</div>
@@ -6726,10 +6829,17 @@ function renderMonth(month) {
     // Day 30 with '-' shows the suffix, Day 30 with '+' doesn't exist scenario so no suffix
     const day30Suffix = day30Uncertain ? '-' : '';
     
+    // Blood moon styling for Day 30
+    const bloodMoonClass30 = day30.isBloodMoon ? ' blood-moon' : '';
+    const bloodMoonTitle30 = day30.isBloodMoon ? ' | 🔴 Blood Moon (Lunar Eclipse)' : '';
+    if (day30.isBloodMoon) {
+      console.log(`Rendering blood moon on Day 30, date=${day30.gregorianDate.toISOString()}`);
+    }
+    
     html += `
-      <div class="${classes.join(' ')}" data-date="${dateStr}" title="${titleText}">
+      <div class="${classes.join(' ')}" data-date="${dateStr}" title="${titleText}${bloodMoonTitle30}">
         <div class="gregorian">${formatShortDate(day30.gregorianDate)}${day30Suffix}</div>
-        <div class="moon-phase">${day30.moonPhase}</div>
+        <div class="moon-phase${bloodMoonClass30}">${day30.moonPhase}</div>
         <div class="lunar-day">${day30.lunarDay}</div>
         ${feastLabel}
       </div>
