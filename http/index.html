@@ -63,12 +63,6 @@ title: "Lunar Sabbath Calendar"
   font-family: 'Georgia', serif;
 }
 
-.top-nav-tagline .book-link {
-  text-decoration: none;
-  margin-left: 6px;
-  opacity: 0.8;
-}
-
 .hamburger-btn {
   background: none;
   border: none;
@@ -301,6 +295,12 @@ title: "Lunar Sabbath Calendar"
   margin-bottom: 4px;
 }
 
+.calendar-title .profile-name {
+  font-size: 0.85em;
+  color: #7ec8e3;
+  margin-bottom: 2px;
+}
+
 .calendar-title .month-name {
   font-size: 1.2em;
   color: #d4a017;
@@ -421,6 +421,27 @@ title: "Lunar Sabbath Calendar"
   font-weight: bold;
   min-width: 130px;
   text-align: center;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.year-nav .year-display:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.year-nav .year-input {
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+  padding: 8px 12px;
+  border: 2px solid #d4a017;
+  border-radius: 8px;
+  background: #0d2840;
+  color: #fff;
+  font-family: inherit;
 }
 
 .month-grid {
@@ -640,6 +661,14 @@ title: "Lunar Sabbath Calendar"
 }
 
 /* Export/Feasts page specific styles */
+body.feasts-open {
+  overflow: hidden;
+}
+
+body.feasts-open html {
+  overflow: hidden;
+}
+
 #export-page {
   position: fixed;
   top: 55px; /* Below the top nav */
@@ -659,14 +688,18 @@ title: "Lunar Sabbath Calendar"
 }
 
 #export-page .export-header {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #export-page .export-header h2 {
   flex: 1;
   text-align: center;
   font-size: 1.2em;
+  margin: 0;
+  line-height: 1.2;
 }
 
 #export-page .export-download-btn {
@@ -728,6 +761,11 @@ title: "Lunar Sabbath Calendar"
   border-radius: 8px;
   overflow: hidden;
   cursor: crosshair;
+}
+
+.dateline-map.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .dateline-map-bg {
@@ -1320,33 +1358,67 @@ title: "Lunar Sabbath Calendar"
   flex: 1;
 }
 
-.settings-page-header .back-btn {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  color: #7ec8e3;
-  font-size: 1em;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.settings-page-header .back-btn:hover {
-  background: rgba(255,255,255,0.2);
-}
-
-.settings-page-header .defaults-btn {
+.settings-page-header .close-btn {
   background: rgba(255,255,255,0.1);
   border: none;
   color: #ccc;
-  font-size: 0.9em;
-  padding: 8px 14px;
-  border-radius: 8px;
+  font-size: 1.2em;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.settings-page-header .defaults-btn:hover {
+.settings-page-header .close-btn:hover {
   background: rgba(255,255,255,0.2);
   color: white;
+}
+
+.profile-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.profile-row .profile-select {
+  flex: 1;
+}
+
+.profile-icon-btn {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid transparent;
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.profile-icon-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,0.2);
+  border-color: #d4a017;
+}
+
+.profile-icon-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.settings-option-btn.disabled,
+.settings-select.disabled,
+.settings-location-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .settings-section {
@@ -1374,6 +1446,28 @@ title: "Lunar Sabbath Calendar"
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.profile-select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em;
+  background: #0d2840;
+  color: #fff;
+  border: 2px solid #d4a017;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.profile-select:focus {
+  outline: none;
+  border-color: #7ec8e3;
+}
+
+.profile-select option {
+  padding: 10px;
+  background: #1a3a5c;
 }
 
 .settings-option-btn {
@@ -1819,6 +1913,10 @@ title: "Lunar Sabbath Calendar"
     right: -1px;
   }
   
+  .calendar-title .profile-name {
+    font-size: 0.75em;
+  }
+  
   .calendar-title .month-name {
     font-size: 1em;
   }
@@ -2017,7 +2115,7 @@ title: "Lunar Sabbath Calendar"
 <nav class="top-nav">
   <div class="top-nav-brand" onclick="navigateTo('calendar')" style="cursor: pointer;">
     <div class="top-nav-title">Lunar Sabbath</div>
-    <div class="top-nav-tagline">a time tested tradition <a href="/book/" class="book-link" onclick="event.stopPropagation();">📖</a></div>
+    <div class="top-nav-tagline">a time tested tradition</div>
   </div>
   <button class="hamburger-btn" onclick="toggleNavMenu()" aria-label="Menu">☰</button>
 </nav>
@@ -2073,7 +2171,7 @@ title: "Lunar Sabbath Calendar"
             <span class="phase-name">Dark Moon</span>
           </button>
           <button class="moon-phase-btn" data-phase="crescent" onclick="selectMoonPhase('crescent')">
-            <span class="phase-icon">🌙</span>
+            <span class="phase-icon">🌒</span>
             <span class="phase-name">Crescent</span>
           </button>
         </div>
@@ -2137,7 +2235,10 @@ title: "Lunar Sabbath Calendar"
     </div>
     <div class="year-nav">
       <button onclick="changePickerYear(-1)">◀</button>
-      <span id="picker-year" class="year-display"></span>
+      <span id="picker-year" class="year-display" onclick="showYearInput()" title="Click to enter year"></span>
+      <input type="number" id="picker-year-input" class="year-input" style="display: none;" 
+             onkeydown="if(event.key==='Enter') applyYearInput(); if(event.key==='Escape') hideYearInput();"
+             onblur="hideYearInput()">
       <button onclick="changePickerYear(1)">▶</button>
     </div>
     <div id="month-grid" class="month-grid"></div>
@@ -2169,9 +2270,24 @@ title: "Lunar Sabbath Calendar"
   <!-- Settings Page - replaces calendar when active -->
   <div id="settings-page" class="settings-page" style="display: none;">
     <div class="settings-page-header">
-      <button class="back-btn" onclick="navigateTo('calendar')">← Calendar</button>
       <h2>Settings</h2>
-      <button class="defaults-btn" onclick="resetToDefaults()">Defaults</button>
+      <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Profile</h3>
+      <p class="settings-description">Select a preset or customize settings below.</p>
+      <div class="profile-row">
+        <select id="profile-select" class="profile-select" onchange="onProfileSelectChange(this.value)">
+          <option value="fullMoon">🌕 Full Moon — Morning 12°, Your Location</option>
+          <option value="biblicalFull">🌕 Biblical Full — Morning 12°, Jerusalem</option>
+          <option value="biblicalDark">🌑 Biblical Dark — Evening Sunset, Jerusalem</option>
+          <option value="biblicalCrescent">🌒 Biblical Crescent — Evening Sunset, Jerusalem</option>
+          <option value="custom">⚙️ Custom</option>
+        </select>
+        <button id="profile-clone-btn" class="profile-icon-btn" onclick="cloneProfile()" title="Clone as new profile">+</button>
+        <button id="profile-delete-btn" class="profile-icon-btn" onclick="deleteCustomProfile()" title="Delete profile" disabled>🗑️</button>
+      </div>
     </div>
     
     <div class="settings-section">
@@ -2187,7 +2303,7 @@ title: "Lunar Sabbath Calendar"
           <span class="option-label">Dark Moon</span>
         </button>
         <button class="settings-option-btn" data-phase="crescent" onclick="selectMoonPhase('crescent')">
-          <span class="option-icon">🌙</span>
+          <span class="option-icon">🌒</span>
           <span class="option-label">Crescent</span>
         </button>
       </div>
@@ -2588,8 +2704,13 @@ function updateUI() {
   document.getElementById('moon-phase-select').value = state.moonPhase;
   document.getElementById('city-select').value = state.city || '';
   
-  // Update button states
+  // Update all button states
   updateMoonPhaseButtons();
+  updateDayStartButtons();
+  updateYearStartButtons();
+  updateCrescentThresholdVisibility();
+  updateCrescentThresholdButtons();
+  updateProfileButtons();
   
   // Show/hide custom coordinates
   const customCoords = document.getElementById('custom-coords');
@@ -2613,14 +2734,21 @@ function toggleNavMenu() {
 }
 
 function navigateTo(page) {
-  toggleNavMenu(); // Close the menu
+  // Close the menu if it's open (don't toggle)
+  const menu = document.getElementById('nav-menu');
+  const overlay = document.getElementById('nav-menu-overlay');
+  if (menu.classList.contains('open')) {
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+  }
   
   const calendarOutput = document.getElementById('calendar-output');
   const dayDetailPanel = document.getElementById('day-detail-panel');
   const settingsPage = document.getElementById('settings-page');
   const exportPage = document.getElementById('export-page');
   
-  // Hide all pages
+  // Hide all pages and reset body state
+  document.body.classList.remove('feasts-open');
   calendarOutput.style.display = 'none';
   dayDetailPanel.style.display = 'none';
   settingsPage.style.display = 'none';
@@ -2637,6 +2765,7 @@ function navigateTo(page) {
       updateURL();
       break;
     case 'feasts':
+      document.body.classList.add('feasts-open');
       exportPage.style.display = 'block';
       exportPage.scrollTop = 0;
       updateExportTable();
@@ -2782,6 +2911,9 @@ function updateExportTable() {
 }
 
 function updateSettingsPageState() {
+  // Update profile buttons
+  updateProfileButtons();
+  
   // Update moon phase buttons
   document.querySelectorAll('.settings-option-btn[data-phase]').forEach(btn => {
     btn.classList.toggle('selected', btn.dataset.phase === state.moonPhase);
@@ -2821,6 +2953,9 @@ function updateSettingsPageState() {
   
   // Render the map
   renderSettingsPageMap();
+  
+  // Update settings editability based on current profile
+  updateSettingsEditability();
 }
 
 function renderSettingsPageMap() {
@@ -2828,6 +2963,8 @@ function renderSettingsPageMap() {
   if (container && state.lunarMonths && state.lunarMonths[state.currentMonthIndex]) {
     const month = state.lunarMonths[state.currentMonthIndex];
     container.innerHTML = renderDatelineVisualization(month.moonEvent);
+    // Update map editability after rendering
+    updateMapEditability();
   }
 }
 
@@ -2847,65 +2984,504 @@ function selectMoonPhase(phase) {
   updateMoonPhaseButtons();
   updateCrescentThresholdVisibility();
   updateYearStartButtons();  // Update year start icon to match moon phase
+  updateProfileButtons();  // Check if settings match a profile
   saveState();
-  generateCalendar({ preserveMonth: true });
-  updateURL();
-  renderSettingsPageMap();
-  refreshDayDetailIfVisible();
+  regenerateCalendarPreservingScroll();
 }
 
-function resetToDefaults() {
-  // Reset to default settings: Full Moon, Morning Nautical Twilight, Renewed Moon after Equinox
-  state.moonPhase = 'full';
-  state.dayStartTime = 'morning';
-  state.dayStartAngle = 12;
-  state.yearStartRule = 'equinox';
-  state.crescentThreshold = 8;
+// Preset profiles (built-in, cannot be deleted)
+const PRESET_PROFILES = {
+  fullMoon: {
+    name: 'Full Moon',
+    hint: 'Morning Nautical Twilight, Your Location',
+    icon: '🌕',
+    moonPhase: 'full',
+    dayStartTime: 'morning',
+    dayStartAngle: 12,
+    yearStartRule: 'equinox',
+    crescentThreshold: 8,
+    useCurrentLocation: true
+  },
+  biblicalFull: {
+    name: 'Biblical Full Moon',
+    hint: 'Morning Nautical Twilight, Jerusalem',
+    icon: '🌕',
+    moonPhase: 'full',
+    dayStartTime: 'morning',
+    dayStartAngle: 12,
+    yearStartRule: 'equinox',
+    crescentThreshold: 8,
+    lat: 31.7683,
+    lon: 35.2137,
+    city: '31.7683,35.2137'
+  },
+  biblicalDark: {
+    name: 'Biblical Dark Moon',
+    hint: 'Evening Sunset, Jerusalem',
+    icon: '🌑',
+    moonPhase: 'dark',
+    dayStartTime: 'evening',
+    dayStartAngle: 0,
+    yearStartRule: 'equinox',
+    crescentThreshold: 8,
+    lat: 31.7683,
+    lon: 35.2137,
+    city: '31.7683,35.2137'
+  },
+  biblicalCrescent: {
+    name: 'Biblical Crescent Moon',
+    hint: 'Evening Sunset, Jerusalem',
+    icon: '🌒',
+    moonPhase: 'crescent',
+    dayStartTime: 'evening',
+    dayStartAngle: 0,
+    yearStartRule: 'equinox',
+    crescentThreshold: 8,
+    lat: 31.7683,
+    lon: 35.2137,
+    city: '31.7683,35.2137'
+  }
+};
+
+// Combined profiles (presets + user-saved)
+let PROFILES = { ...PRESET_PROFILES };
+
+// Load custom profiles from localStorage
+function loadCustomProfiles() {
+  try {
+    const saved = localStorage.getItem('customProfiles');
+    if (saved) {
+      const customProfiles = JSON.parse(saved);
+      PROFILES = { ...PRESET_PROFILES, ...customProfiles };
+    }
+  } catch (e) {
+    console.error('Error loading custom profiles:', e);
+  }
+}
+
+// Save custom profiles to localStorage
+function saveCustomProfiles() {
+  const customProfiles = {};
+  for (const [id, profile] of Object.entries(PROFILES)) {
+    if (!PRESET_PROFILES[id]) {
+      customProfiles[id] = profile;
+    }
+  }
+  localStorage.setItem('customProfiles', JSON.stringify(customProfiles));
+}
+
+// Rebuild profile dropdown with all profiles
+function rebuildProfileDropdown() {
+  const select = document.getElementById('profile-select');
+  if (!select) return;
   
-  // Update UI
-  document.getElementById('moon-phase-select').value = 'full';
+  const currentValue = select.value;
+  select.innerHTML = '';
+  
+  // Add preset profiles
+  for (const [id, profile] of Object.entries(PRESET_PROFILES)) {
+    const option = document.createElement('option');
+    option.value = id;
+    option.textContent = `${profile.icon} ${profile.name} — ${profile.hint}`;
+    select.appendChild(option);
+  }
+  
+  // Add custom profiles (user-saved)
+  const customIds = Object.keys(PROFILES).filter(id => !PRESET_PROFILES[id]);
+  if (customIds.length > 0) {
+    for (const id of customIds) {
+      const profile = PROFILES[id];
+      const option = document.createElement('option');
+      option.value = id;
+      option.textContent = `${profile.icon} ${profile.name}`;
+      select.appendChild(option);
+    }
+  }
+  
+  
+  // Restore selection if valid
+  if ([...select.options].some(o => o.value === currentValue)) {
+    select.value = currentValue;
+  }
+}
+
+// Get the icon for a moon phase
+function getProfileIcon(phase) {
+  if (phase === 'full') return '🌕';
+  if (phase === 'dark') return '🌑';
+  if (phase === 'crescent') return '🌒';
+  return '🌕';
+}
+
+// Get the name of the currently selected profile
+function getCurrentProfileName() {
+  const select = document.getElementById('profile-select');
+  if (!select) return '';
+  const currentId = select.value;
+  const profile = PROFILES[currentId];
+  return profile ? profile.name : '';
+}
+
+// Get a display name for the current location
+function getCurrentLocationName() {
+  // Check if we have a city selected
+  const citySelect = document.getElementById('settings-city-select');
+  if (citySelect && citySelect.value && citySelect.value !== 'custom' && citySelect.value !== 'current') {
+    // Find the selected option text
+    const selectedOption = citySelect.options[citySelect.selectedIndex];
+    if (selectedOption) {
+      return selectedOption.text;
+    }
+  }
+  
+  // Check the profile for useCurrentLocation
+  const profileSelect = document.getElementById('profile-select');
+  if (profileSelect) {
+    const profile = PROFILES[profileSelect.value];
+    if (profile && profile.useCurrentLocation) {
+      return 'Your Location';
+    }
+  }
+  
+  // Default to coordinates
+  return `${state.lat.toFixed(2)}°, ${state.lon.toFixed(2)}°`;
+}
+
+// Refresh geolocation if the current profile uses "Your Location"
+function refreshLocationIfNeeded() {
+  const select = document.getElementById('profile-select');
+  if (!select) return;
+  
+  const currentId = select.value;
+  const profile = PROFILES[currentId];
+  
+  // Only refresh for profiles with useCurrentLocation
+  if (!profile || !profile.useCurrentLocation) return;
+  
+  if (!navigator.geolocation) return;
+  
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const newLat = Math.round(position.coords.latitude * 10000) / 10000;
+      const newLon = Math.round(position.coords.longitude * 10000) / 10000;
+      
+      // Only update if location has changed significantly (>0.01 degrees ≈ 1km)
+      if (Math.abs(newLat - state.lat) > 0.01 || Math.abs(newLon - state.lon) > 0.01) {
+        state.lat = newLat;
+        state.lon = newLon;
+        state.city = 'current';
+        
+        // Update UI
+        document.getElementById('lat-input').value = state.lat;
+        document.getElementById('lon-input').value = state.lon;
+        
+        // Regenerate calendar with new location
+        saveState();
+        generateCalendar({ preserveMonth: true });
+        renderSettingsPageMap();
+      }
+    },
+    (error) => {
+      // Silently fail - keep existing location
+      console.log('Geolocation refresh failed, keeping saved location');
+    },
+    { timeout: 5000, maximumAge: 0 }
+  );
+}
+
+// Check if a profile name is unique
+function isProfileNameUnique(name, excludeId = null) {
+  const normalizedName = name.trim().toLowerCase();
+  for (const [id, profile] of Object.entries(PROFILES)) {
+    if (id !== excludeId && profile.name.toLowerCase() === normalizedName) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Clone current profile settings as a new custom profile
+function cloneProfile() {
+  const select = document.getElementById('profile-select');
+  const currentId = select.value;
+  const currentProfile = PROFILES[currentId];
+  
+  // Suggest a name based on current profile
+  let suggestedName = currentProfile ? currentProfile.name + ' Copy' : 'My Profile';
+  
+  let name = prompt('Enter a name for this profile:', suggestedName);
+  if (!name || !name.trim()) return;
+  
+  name = name.trim();
+  
+  // Check for unique name
+  if (!isProfileNameUnique(name)) {
+    alert('A profile with this name already exists. Please choose a different name.');
+    return;
+  }
+  
+  const id = 'custom_' + Date.now();
+  PROFILES[id] = {
+    name: name,
+    icon: getProfileIcon(state.moonPhase),
+    moonPhase: state.moonPhase,
+    dayStartTime: state.dayStartTime,
+    dayStartAngle: state.dayStartAngle,
+    yearStartRule: state.yearStartRule,
+    crescentThreshold: state.crescentThreshold,
+    lat: state.lat,
+    lon: state.lon,
+    city: state.city
+  };
+  
+  saveCustomProfiles();
+  rebuildProfileDropdown();
+  
+  // Select the new profile
+  select.value = id;
+  updateProfileButtonStates();
+  updateSettingsEditability();
+}
+
+// Delete the currently selected custom profile
+function deleteCustomProfile() {
+  const select = document.getElementById('profile-select');
+  const currentId = select.value;
+  
+  // Can't delete presets
+  if (PRESET_PROFILES[currentId]) return;
+  
+  const profile = PROFILES[currentId];
+  if (!confirm(`Delete profile "${profile.name}"?`)) return;
+  
+  delete PROFILES[currentId];
+  saveCustomProfiles();
+  rebuildProfileDropdown();
+  
+  // Switch to Full Moon preset
+  applyProfile('fullMoon');
+}
+
+// Update delete button state based on current profile
+function updateProfileButtonStates() {
+  const select = document.getElementById('profile-select');
+  const deleteBtn = document.getElementById('profile-delete-btn');
+  
+  if (!select || !deleteBtn) return;
+  
+  const currentId = select.value;
+  const isPreset = !!PRESET_PROFILES[currentId];
+  
+  // Delete enabled only for user-saved profiles (not presets)
+  deleteBtn.disabled = isPreset;
+}
+
+// Enable/disable settings controls based on whether current profile is editable
+function updateSettingsEditability() {
+  const select = document.getElementById('profile-select');
+  if (!select) return;
+  
+  const currentId = select.value;
+  const isPreset = !!PRESET_PROFILES[currentId];
+  
+  // Get all settings controls
+  const settingsContainer = document.getElementById('settings-page');
+  if (!settingsContainer) return;
+  
+  // Toggle disabled state on settings buttons and selects (but not profile controls)
+  const controls = settingsContainer.querySelectorAll('.settings-option-btn, .settings-select:not(#profile-select), #settings-lat-input, #settings-lon-input');
+  controls.forEach(control => {
+    if (isPreset) {
+      control.disabled = true;
+      control.classList.add('disabled');
+    } else {
+      control.disabled = false;
+      control.classList.remove('disabled');
+    }
+  });
+  
+  // Also disable/enable the location button
+  const locationBtn = settingsContainer.querySelector('.settings-location-btn');
+  if (locationBtn) {
+    locationBtn.disabled = isPreset;
+    locationBtn.classList.toggle('disabled', isPreset);
+  }
+  
+  // Update all maps to show disabled state
+  updateMapEditability();
+}
+
+// Update map click hint and disabled state based on current profile
+function updateMapEditability() {
+  const select = document.getElementById('profile-select');
+  const isPreset = select && !!PRESET_PROFILES[select.value];
+  
+  // Update all dateline maps
+  document.querySelectorAll('.dateline-map').forEach(map => {
+    map.classList.toggle('disabled', isPreset);
+  });
+  
+  // Update click hints
+  document.querySelectorAll('.dateline-click-hint').forEach(hint => {
+    if (isPreset) {
+      hint.style.display = 'none';
+    } else {
+      hint.style.display = '';
+    }
+  });
+}
+
+// Initialize custom profiles on load
+loadCustomProfiles();
+
+function applyProfile(profileId) {
+  const profile = PROFILES[profileId];
+  if (!profile) return;
+  
+  state.moonPhase = profile.moonPhase;
+  state.dayStartTime = profile.dayStartTime;
+  state.dayStartAngle = profile.dayStartAngle;
+  state.yearStartRule = profile.yearStartRule;
+  state.crescentThreshold = profile.crescentThreshold;
+  
+  if (profile.useCurrentLocation && navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        state.lat = position.coords.latitude;
+        state.lon = position.coords.longitude;
+        state.city = 'current';
+        updateLocationUI();
+        finishApplyProfile();
+      },
+      (error) => {
+        console.log('Geolocation error, keeping current location');
+        finishApplyProfile();
+      }
+    );
+  } else if (profile.lat !== undefined) {
+    state.lat = profile.lat;
+    state.lon = profile.lon;
+    state.city = profile.city;
+    updateLocationUI();
+    finishApplyProfile();
+  } else {
+    finishApplyProfile();
+  }
+}
+
+function updateLocationUI() {
+  document.getElementById('lat-input').value = state.lat;
+  document.getElementById('lon-input').value = state.lon;
+  document.getElementById('city-select').value = state.city || '';
+  const settingsCitySelect = document.getElementById('settings-city-select');
+  if (settingsCitySelect) settingsCitySelect.value = state.city || '';
+}
+
+function finishApplyProfile() {
+  // Update all UI elements
+  document.getElementById('moon-phase-select').value = state.moonPhase;
   updateMoonPhaseButtons();
   updateDayStartButtons();
   updateYearStartButtons();
   updateCrescentThresholdVisibility();
   updateCrescentThresholdButtons();
+  updateProfileButtons();
+  updateSettingsEditability();
   
-  // Save and regenerate
+  // Save and regenerate (preserving scroll position)
   saveState();
+  regenerateCalendarPreservingScroll();
+}
+
+function getMatchingProfile() {
+  // Determine which profile matches current state (if any)
+  for (const [id, profile] of Object.entries(PROFILES)) {
+    if (profile.moonPhase === state.moonPhase &&
+        profile.dayStartTime === state.dayStartTime &&
+        profile.dayStartAngle === state.dayStartAngle &&
+        profile.yearStartRule === state.yearStartRule &&
+        profile.crescentThreshold === state.crescentThreshold) {
+      // Check location match for non-current-location profiles
+      if (profile.useCurrentLocation) {
+        // For "current location" profiles, any location works
+        return id;
+      } else if (Math.abs(profile.lat - state.lat) < 0.01 && Math.abs(profile.lon - state.lon) < 0.01) {
+        return id;
+      }
+    }
+  }
+  return null; // No matching profile
+}
+
+function updateProfileButtons() {
+  const select = document.getElementById('profile-select');
+  if (!select) return;
+  
+  // When user edits settings on a custom profile, save the changes
+  const currentId = select.value;
+  if (!PRESET_PROFILES[currentId] && PROFILES[currentId]) {
+    // Update the profile with current settings
+    PROFILES[currentId].icon = getProfileIcon(state.moonPhase);
+    PROFILES[currentId].moonPhase = state.moonPhase;
+    PROFILES[currentId].dayStartTime = state.dayStartTime;
+    PROFILES[currentId].dayStartAngle = state.dayStartAngle;
+    PROFILES[currentId].yearStartRule = state.yearStartRule;
+    PROFILES[currentId].crescentThreshold = state.crescentThreshold;
+    PROFILES[currentId].lat = state.lat;
+    PROFILES[currentId].lon = state.lon;
+    PROFILES[currentId].city = state.city;
+    saveCustomProfiles();
+    rebuildProfileDropdown();
+    select.value = currentId;
+  }
+  
+  updateProfileButtonStates();
+}
+
+function onProfileSelectChange(profileId) {
+  applyProfile(profileId);
+  updateSettingsEditability();
+}
+
+function resetToDefaults() {
+  // Apply the Full Moon profile as default
+  applyProfile('fullMoon');
+}
+
+// Helper to regenerate calendar while preserving scroll position
+function regenerateCalendarPreservingScroll() {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
   generateCalendar({ preserveMonth: true });
   updateURL();
   renderSettingsPageMap();
   refreshDayDetailIfVisible();
+  requestAnimationFrame(() => {
+    window.scrollTo(0, scrollTop);
+  });
 }
 
 function selectDayStartTime(time) {
   state.dayStartTime = time;
   updateDayStartButtons();
+  updateProfileButtons();  // Check if settings match a profile
   saveState();
-  generateCalendar({ preserveMonth: true });
-  updateURL();
-  renderSettingsPageMap();
-  refreshDayDetailIfVisible();
+  regenerateCalendarPreservingScroll();
 }
 
 function selectDayStartAngle(angle) {
   state.dayStartAngle = angle;
   updateDayStartButtons();
+  updateProfileButtons();  // Check if settings match a profile
   saveState();
-  generateCalendar({ preserveMonth: true });
-  updateURL();
-  renderSettingsPageMap();
-  refreshDayDetailIfVisible();
+  regenerateCalendarPreservingScroll();
 }
 
 function selectYearStartRule(rule) {
   state.yearStartRule = rule;
   updateYearStartButtons();
+  updateProfileButtons();  // Check if settings match a profile
   saveState();
-  generateCalendar({ preserveMonth: true });
-  updateURL();
-  renderSettingsPageMap();
-  refreshDayDetailIfVisible();
+  regenerateCalendarPreservingScroll();
 }
 
 function updateDayStartButtons() {
@@ -2934,11 +3510,9 @@ function updateYearStartButtons() {
 function selectCrescentThreshold(threshold) {
   state.crescentThreshold = threshold;
   updateCrescentThresholdButtons();
+  updateProfileButtons();  // Check if settings match a profile
   saveState();
-  generateCalendar({ preserveMonth: true });
-  updateURL();
-  renderSettingsPageMap();
-  refreshDayDetailIfVisible();
+  regenerateCalendarPreservingScroll();
 }
 
 function updateCrescentThresholdButtons() {
@@ -2959,6 +3533,8 @@ function renderSettingsMap() {
   if (container && state.lunarMonths && state.lunarMonths[state.currentMonthIndex]) {
     const month = state.lunarMonths[state.currentMonthIndex];
     container.innerHTML = renderDatelineVisualization(month.moonEvent);
+    // Update map editability after rendering
+    updateMapEditability();
   }
 }
 
@@ -3019,6 +3595,39 @@ function changePickerYear(delta) {
   updateMonthPicker();
 }
 
+function showYearInput() {
+  const display = document.getElementById('picker-year');
+  const input = document.getElementById('picker-year-input');
+  
+  display.style.display = 'none';
+  input.style.display = 'block';
+  input.value = state.year;
+  input.focus();
+  input.select();
+}
+
+function hideYearInput() {
+  const display = document.getElementById('picker-year');
+  const input = document.getElementById('picker-year-input');
+  
+  display.style.display = '';
+  input.style.display = 'none';
+}
+
+function applyYearInput() {
+  const input = document.getElementById('picker-year-input');
+  const newYear = parseInt(input.value);
+  
+  if (!isNaN(newYear) && newYear >= -4000 && newYear <= 4000) {
+    state.year = newYear;
+    document.getElementById('year-input').value = state.year;
+    generateCalendar();
+    updateMonthPicker();
+  }
+  
+  hideYearInput();
+}
+
 // Date Jump Popup
 function toggleDateJump() {
   const overlay = document.getElementById('date-jump-overlay');
@@ -3070,6 +3679,12 @@ function addDaysFromPopup(direction) {
 }
 
 function handleMapClick(event) {
+  // Don't allow map clicks when on a preset profile
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) {
+    return; // Preset profiles are read-only
+  }
+  
   const mapEl = event.currentTarget;
   const rect = mapEl.getBoundingClientRect();
   
@@ -3143,6 +3758,7 @@ function useCurrentLocation() {
       document.getElementById('city-select').value = '';
       document.getElementById('custom-coords').style.display = 'block';
       
+      updateProfileButtons();  // Check if settings match a profile
       saveState();
       generateCalendar({ preserveMonth: true });
       updateURL();
@@ -3234,6 +3850,7 @@ document.getElementById('settings-city-select').addEventListener('change', funct
     document.getElementById('lon-input').value = state.lon;
     document.getElementById('city-select').value = this.value;
     
+    updateProfileButtons();  // Check if settings match a profile
     saveState();
     generateCalendar({ preserveMonth: true });
     updateURL();
@@ -3247,6 +3864,7 @@ document.getElementById('settings-lat-input').addEventListener('change', functio
   state.lat = parseFloat(this.value);
   state.city = '';
   document.getElementById('lat-input').value = state.lat;
+  updateProfileButtons();  // Check if settings match a profile
   saveState();
   generateCalendar({ preserveMonth: true });
   updateURL();
@@ -3258,6 +3876,7 @@ document.getElementById('settings-lon-input').addEventListener('change', functio
   state.lon = parseFloat(this.value);
   state.city = '';
   document.getElementById('lon-input').value = state.lon;
+  updateProfileButtons();  // Check if settings match a profile
   saveState();
   generateCalendar({ preserveMonth: true });
   updateURL();
@@ -3291,6 +3910,7 @@ function useCurrentLocationFromSettings() {
       select.value = 'custom';
       document.getElementById('settings-custom-coords').style.display = 'flex';
       
+      updateProfileButtons();  // Check if settings match a profile
       saveState();
       generateCalendar({ preserveMonth: true });
       updateURL();
@@ -4407,7 +5027,7 @@ function renderMonth(month) {
   // Get Day 1 info for header
   const day1 = month.days.find(d => d.lunarDay === 1);
   const day1Date = day1 ? formatShortDate(day1.gregorianDate) : '';
-  const day1Year = day1 ? day1.gregorianDate.getFullYear() : '';
+  const day1Year = day1 ? formatYear(day1.gregorianDate.getFullYear()) : '';
   const day1Weekday = day1 ? weekdayNames[day1.gregorianDate.getDay()] : '';
   
   // Check for feasts on day 1
@@ -4434,8 +5054,9 @@ function renderMonth(month) {
             </div>
           </div>
           <div class="calendar-title" onclick="toggleMonthPicker()">
+            <div class="profile-name">${getCurrentProfileName()}</div>
             <div class="month-name">${month.name} <span class="dropdown-arrow">▼</span></div>
-            <div class="year">${displayYear}</div>
+            <div class="year">${displayYear} · ${getCurrentLocationName()}</div>
           </div>
         </div>
         <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
@@ -4586,6 +5207,9 @@ function renderMonth(month) {
   `;
   
   container.innerHTML = html;
+  
+  // Update map editability based on current profile
+  updateMapEditability();
 }
 
 function jumpToFeast(monthIdx, lunarDay) {
@@ -4693,6 +5317,9 @@ function renderFeastTable(months) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Rebuild profile dropdown with any saved custom profiles
+  rebuildProfileDropdown();
+  
   // Check if URL has parameters - if so, load from URL, otherwise jump to today
   const params = new URLSearchParams(window.location.search);
   if (params.has('year') || params.has('view')) {
@@ -4705,6 +5332,9 @@ document.addEventListener('DOMContentLoaded', function() {
     jumpToToday();
     updateURL(); // Set initial URL
   }
+  
+  // Auto-refresh location if current profile uses "Your Location"
+  refreshLocationIfNeeded();
   
   // Event delegation for feast table clicks
   document.getElementById('feast-tbody').addEventListener('click', function(e) {
