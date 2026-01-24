@@ -661,12 +661,10 @@ title: "Lunar Sabbath Calendar"
 }
 
 /* Export/Feasts page specific styles */
+html.feasts-open,
 body.feasts-open {
-  overflow: hidden;
-}
-
-body.feasts-open html {
-  overflow: hidden;
+  overflow: hidden !important;
+  height: 100%;
 }
 
 #export-page {
@@ -688,15 +686,17 @@ body.feasts-open html {
 }
 
 #export-page .export-header {
+  display: flex;
   flex-wrap: nowrap;
   gap: 10px;
   align-items: center;
   justify-content: space-between;
+  padding: 15px 20px;
 }
 
 #export-page .export-header h2 {
   flex: 1;
-  text-align: center;
+  text-align: left;
   font-size: 1.2em;
   margin: 0;
   line-height: 1.2;
@@ -706,7 +706,7 @@ body.feasts-open html {
   padding: 10px 16px;
   font-size: 0.95em;
   white-space: nowrap;
-  align-self: center;
+  flex-shrink: 0;
 }
 
 .export-settings-context {
@@ -904,6 +904,9 @@ body.feasts-open html {
 
 .week-header .day-label:last-child {
   border-right: none;
+}
+
+.week-header .day-label.sabbath-header {
   background: #d4a017;
   color: #1a3a5c;
   font-weight: bold;
@@ -1003,6 +1006,16 @@ body.feasts-open html {
 
 .day-cell.new-moon .lunar-day {
   color: #7ec8e3;
+}
+
+/* New Moon that is also a Sabbath (fixed weekday sabbath falls on new moon) */
+.day-cell.new-moon.sabbath {
+  background: linear-gradient(135deg, #3a6a9c 0%, #2a5a8c 100%);
+}
+
+.day-cell.new-moon.sabbath .lunar-day {
+  color: #d4a017;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Highlighted/Selected Day */
@@ -1446,6 +1459,18 @@ body.feasts-open html {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-row-label {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95em;
+  white-space: nowrap;
 }
 
 .profile-select {
@@ -2279,11 +2304,10 @@ body.feasts-open html {
       <p class="settings-description">Select a preset or customize settings below.</p>
       <div class="profile-row">
         <select id="profile-select" class="profile-select" onchange="onProfileSelectChange(this.value)">
-          <option value="fullMoon">🌕 Full Moon — Morning 12°, Your Location</option>
-          <option value="biblicalFull">🌕 Biblical Full — Morning 12°, Jerusalem</option>
-          <option value="biblicalDark">🌑 Biblical Dark — Evening Sunset, Jerusalem</option>
-          <option value="biblicalCrescent">🌒 Biblical Crescent — Evening Sunset, Jerusalem</option>
-          <option value="custom">⚙️ Custom</option>
+          <option value="biblicalFull">🌕 Biblical Full Moon — Morning Nautical Twilight, Jerusalem</option>
+          <option value="fullMoon">🌕 Full Moon — Morning Nautical Twilight, Your Location</option>
+          <option value="biblicalDark">🌑 Biblical Dark Moon — Evening Sunset, Jerusalem</option>
+          <option value="biblicalCrescent">🌒 Biblical Crescent Moon — Evening Sunset, Jerusalem</option>
         </select>
         <button id="profile-clone-btn" class="profile-icon-btn" onclick="cloneProfile()" title="Clone as new profile">+</button>
         <button id="profile-delete-btn" class="profile-icon-btn" onclick="deleteCustomProfile()" title="Delete profile" disabled>🗑️</button>
@@ -2380,6 +2404,40 @@ body.feasts-open html {
           <span class="option-label">Passover after Equinox</span>
           <span class="option-hint" id="yearstart-passover-hint">Day 14 of Month 1 after equinox</span>
         </button>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Sabbath Day</h3>
+      <p class="settings-description">Choose how the Sabbath day is determined and highlighted.</p>
+      <div class="settings-options">
+        <button class="settings-option-btn" data-sabbath="lunar" onclick="selectSabbathMode('lunar')">
+          <span class="option-icon">🌕</span>
+          <span class="option-label">Lunar Sabbath</span>
+          <span class="option-hint">Days 8, 15, 22, 29 of each month</span>
+        </button>
+        <button class="settings-option-btn" data-sabbath="saturday" onclick="selectSabbathMode('saturday')">
+          <span class="option-icon">🪐</span>
+          <span class="option-label">Saturday</span>
+          <span class="option-hint">Fixed weekly Sabbath</span>
+        </button>
+        <button class="settings-option-btn" data-sabbath="sunday" onclick="selectSabbathMode('sunday')">
+          <span class="option-icon">☀️</span>
+          <span class="option-label">Sunday</span>
+          <span class="option-hint">Christian day of rest</span>
+        </button>
+      </div>
+      <div class="settings-row" style="margin-top: 15px;">
+        <label class="settings-row-label">Other fixed day:</label>
+        <select id="sabbath-day-select" class="settings-select" onchange="selectSabbathDayFromDropdown(this.value)">
+          <option value="">— Choose —</option>
+          <option value="none">None</option>
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+        </select>
       </div>
     </div>
     
@@ -2540,6 +2598,8 @@ const defaultState = {
   dayStartAngle: 12,        // 0, 6, 12, or 18 degrees below horizon
   yearStartRule: 'equinox', // 'equinox' or '13daysBefore'
   crescentThreshold: 8,     // Minimum moon altitude (degrees) at sunset for crescent visibility
+  sabbathMode: 'lunar',     // 'lunar', 'saturday', 'sunday', 'friday', 'none'
+  selectedProfile: 'biblicalFull', // Currently selected profile ID
   lunarMonths: [],
   currentMonthIndex: 0,
   highlightedLunarDay: null,
@@ -2562,7 +2622,9 @@ function loadState() {
         dayStartTime: parsed.dayStartTime || defaultState.dayStartTime,
         dayStartAngle: parsed.dayStartAngle !== undefined ? parsed.dayStartAngle : defaultState.dayStartAngle,
         yearStartRule: parsed.yearStartRule || defaultState.yearStartRule,
-        crescentThreshold: parsed.crescentThreshold !== undefined ? parsed.crescentThreshold : defaultState.crescentThreshold
+        crescentThreshold: parsed.crescentThreshold !== undefined ? parsed.crescentThreshold : defaultState.crescentThreshold,
+        sabbathMode: parsed.sabbathMode || defaultState.sabbathMode,
+        selectedProfile: parsed.selectedProfile || defaultState.selectedProfile
       };
     } catch (e) {
       return { ...defaultState };
@@ -2582,7 +2644,9 @@ function saveState() {
     dayStartTime: state.dayStartTime,
     dayStartAngle: state.dayStartAngle,
     yearStartRule: state.yearStartRule,
-    crescentThreshold: state.crescentThreshold
+    crescentThreshold: state.crescentThreshold,
+    sabbathMode: state.sabbathMode,
+    selectedProfile: state.selectedProfile
   };
   localStorage.setItem('lunarCalendarState', JSON.stringify(toSave));
 }
@@ -2748,6 +2812,7 @@ function navigateTo(page) {
   const exportPage = document.getElementById('export-page');
   
   // Hide all pages and reset body state
+  document.documentElement.classList.remove('feasts-open');
   document.body.classList.remove('feasts-open');
   calendarOutput.style.display = 'none';
   dayDetailPanel.style.display = 'none';
@@ -2765,6 +2830,7 @@ function navigateTo(page) {
       updateURL();
       break;
     case 'feasts':
+      document.documentElement.classList.add('feasts-open');
       document.body.classList.add('feasts-open');
       exportPage.style.display = 'block';
       exportPage.scrollTop = 0;
@@ -2773,6 +2839,7 @@ function navigateTo(page) {
       break;
     case 'settings':
       settingsPage.style.display = 'block';
+      updateSettingsPageState();
       window.scrollTo(0, 0);
       break;
   }
@@ -2929,6 +2996,9 @@ function updateSettingsPageState() {
   // Update year start buttons
   updateYearStartButtons();
   
+  // Update sabbath buttons
+  updateSabbathButtons();
+  
   // Update city select
   const citySelect = document.getElementById('settings-city-select');
   const coordValue = `${state.lat},${state.lon}`;
@@ -2979,6 +3049,10 @@ function updateMoonPhaseButtons() {
 }
 
 function selectMoonPhase(phase) {
+  // Don't allow changes on preset profiles
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) return;
+  
   state.moonPhase = phase;
   document.getElementById('moon-phase-select').value = phase;
   updateMoonPhaseButtons();
@@ -2990,18 +3064,8 @@ function selectMoonPhase(phase) {
 }
 
 // Preset profiles (built-in, cannot be deleted)
+// biblicalFull is first as it's the default (no location prompt)
 const PRESET_PROFILES = {
-  fullMoon: {
-    name: 'Full Moon',
-    hint: 'Morning Nautical Twilight, Your Location',
-    icon: '🌕',
-    moonPhase: 'full',
-    dayStartTime: 'morning',
-    dayStartAngle: 12,
-    yearStartRule: 'equinox',
-    crescentThreshold: 8,
-    useCurrentLocation: true
-  },
   biblicalFull: {
     name: 'Biblical Full Moon',
     hint: 'Morning Nautical Twilight, Jerusalem',
@@ -3011,9 +3075,22 @@ const PRESET_PROFILES = {
     dayStartAngle: 12,
     yearStartRule: 'equinox',
     crescentThreshold: 8,
+    sabbathMode: 'lunar',
     lat: 31.7683,
     lon: 35.2137,
     city: '31.7683,35.2137'
+  },
+  fullMoon: {
+    name: 'Full Moon',
+    hint: 'Morning Nautical Twilight, Your Location',
+    icon: '🌕',
+    moonPhase: 'full',
+    dayStartTime: 'morning',
+    dayStartAngle: 12,
+    yearStartRule: 'equinox',
+    crescentThreshold: 8,
+    sabbathMode: 'lunar',
+    useCurrentLocation: true
   },
   biblicalDark: {
     name: 'Biblical Dark Moon',
@@ -3024,6 +3101,7 @@ const PRESET_PROFILES = {
     dayStartAngle: 0,
     yearStartRule: 'equinox',
     crescentThreshold: 8,
+    sabbathMode: 'lunar',
     lat: 31.7683,
     lon: 35.2137,
     city: '31.7683,35.2137'
@@ -3037,6 +3115,7 @@ const PRESET_PROFILES = {
     dayStartAngle: 0,
     yearStartRule: 'equinox',
     crescentThreshold: 8,
+    sabbathMode: 'lunar',
     lat: 31.7683,
     lon: 35.2137,
     city: '31.7683,35.2137'
@@ -3075,7 +3154,6 @@ function rebuildProfileDropdown() {
   const select = document.getElementById('profile-select');
   if (!select) return;
   
-  const currentValue = select.value;
   select.innerHTML = '';
   
   // Add preset profiles
@@ -3098,10 +3176,13 @@ function rebuildProfileDropdown() {
     }
   }
   
-  
-  // Restore selection if valid
-  if ([...select.options].some(o => o.value === currentValue)) {
-    select.value = currentValue;
+  // Restore selection from state if valid, otherwise default to biblicalFull
+  const profileToSelect = state.selectedProfile || 'biblicalFull';
+  if ([...select.options].some(o => o.value === profileToSelect)) {
+    select.value = profileToSelect;
+  } else {
+    select.value = 'biblicalFull';
+    state.selectedProfile = 'biblicalFull';
   }
 }
 
@@ -3122,16 +3203,54 @@ function getCurrentProfileName() {
   return profile ? profile.name : '';
 }
 
+// Known city coordinates for display lookup
+const CITY_NAMES = {
+  '31.7683,35.2137': 'Jerusalem',
+  '40.7128,-74.006': 'New York',
+  '34.0522,-118.2437': 'Los Angeles',
+  '41.8781,-87.6298': 'Chicago',
+  '29.7604,-95.3698': 'Houston',
+  '33.749,-84.388': 'Atlanta',
+  '47.6062,-122.3321': 'Seattle',
+  '25.7617,-80.1918': 'Miami',
+  '39.7392,-104.9903': 'Denver',
+  '33.4484,-112.074': 'Phoenix',
+  '51.5074,-0.1278': 'London',
+  '48.8566,2.3522': 'Paris',
+  '52.52,13.405': 'Berlin',
+  '41.9028,12.4964': 'Rome',
+  '55.7558,37.6173': 'Moscow',
+  '35.6762,139.6503': 'Tokyo',
+  '31.2304,121.4737': 'Shanghai',
+  '22.3193,114.1694': 'Hong Kong',
+  '1.3521,103.8198': 'Singapore',
+  '-33.8688,151.2093': 'Sydney',
+  '-23.5505,-46.6333': 'São Paulo',
+  '19.4326,-99.1332': 'Mexico City',
+  '-34.6037,-58.3816': 'Buenos Aires',
+  '30.0444,31.2357': 'Cairo',
+  '28.6139,77.209': 'New Delhi',
+  '-1.2921,36.8219': 'Nairobi'
+};
+
+// Get timezone name from longitude
+function getTimezoneFromLongitude(lon) {
+  // Calculate UTC offset based on longitude (15 degrees per hour)
+  const offsetHours = Math.round(lon / 15);
+  if (offsetHours === 0) {
+    return 'UTC';
+  } else if (offsetHours > 0) {
+    return `UTC+${offsetHours}`;
+  } else {
+    return `UTC${offsetHours}`;
+  }
+}
+
 // Get a display name for the current location
 function getCurrentLocationName() {
-  // Check if we have a city selected
-  const citySelect = document.getElementById('settings-city-select');
-  if (citySelect && citySelect.value && citySelect.value !== 'custom' && citySelect.value !== 'current') {
-    // Find the selected option text
-    const selectedOption = citySelect.options[citySelect.selectedIndex];
-    if (selectedOption) {
-      return selectedOption.text;
-    }
+  // Check if using current location
+  if (state.city === 'current') {
+    return 'Your Location';
   }
   
   // Check the profile for useCurrentLocation
@@ -3143,8 +3262,14 @@ function getCurrentLocationName() {
     }
   }
   
-  // Default to coordinates
-  return `${state.lat.toFixed(2)}°, ${state.lon.toFixed(2)}°`;
+  // Try to find city name from known cities
+  const coordValue = `${state.lat},${state.lon}`;
+  if (CITY_NAMES[coordValue]) {
+    return CITY_NAMES[coordValue];
+  }
+  
+  // Fall back to timezone based on longitude
+  return getTimezoneFromLongitude(state.lon);
 }
 
 // Refresh geolocation if the current profile uses "Your Location"
@@ -3229,16 +3354,19 @@ function cloneProfile() {
     dayStartAngle: state.dayStartAngle,
     yearStartRule: state.yearStartRule,
     crescentThreshold: state.crescentThreshold,
+    sabbathMode: state.sabbathMode,
     lat: state.lat,
     lon: state.lon,
     city: state.city
   };
   
   saveCustomProfiles();
-  rebuildProfileDropdown();
   
   // Select the new profile
+  state.selectedProfile = id;
+  rebuildProfileDropdown();
   select.value = id;
+  saveState();
   updateProfileButtonStates();
   updateSettingsEditability();
 }
@@ -3258,8 +3386,8 @@ function deleteCustomProfile() {
   saveCustomProfiles();
   rebuildProfileDropdown();
   
-  // Switch to Full Moon preset
-  applyProfile('fullMoon');
+  // Switch to Biblical Full Moon preset (Jerusalem)
+  applyProfile('biblicalFull');
 }
 
 // Update delete button state based on current profile
@@ -3338,11 +3466,13 @@ function applyProfile(profileId) {
   const profile = PROFILES[profileId];
   if (!profile) return;
   
+  state.selectedProfile = profileId;
   state.moonPhase = profile.moonPhase;
   state.dayStartTime = profile.dayStartTime;
   state.dayStartAngle = profile.dayStartAngle;
   state.yearStartRule = profile.yearStartRule;
   state.crescentThreshold = profile.crescentThreshold;
+  state.sabbathMode = profile.sabbathMode || 'lunar';
   
   if (profile.useCurrentLocation && navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -3385,6 +3515,7 @@ function finishApplyProfile() {
   updateYearStartButtons();
   updateCrescentThresholdVisibility();
   updateCrescentThresholdButtons();
+  updateSabbathButtons();
   updateProfileButtons();
   updateSettingsEditability();
   
@@ -3400,7 +3531,8 @@ function getMatchingProfile() {
         profile.dayStartTime === state.dayStartTime &&
         profile.dayStartAngle === state.dayStartAngle &&
         profile.yearStartRule === state.yearStartRule &&
-        profile.crescentThreshold === state.crescentThreshold) {
+        profile.crescentThreshold === state.crescentThreshold &&
+        (profile.sabbathMode || 'lunar') === state.sabbathMode) {
       // Check location match for non-current-location profiles
       if (profile.useCurrentLocation) {
         // For "current location" profiles, any location works
@@ -3427,6 +3559,7 @@ function updateProfileButtons() {
     PROFILES[currentId].dayStartAngle = state.dayStartAngle;
     PROFILES[currentId].yearStartRule = state.yearStartRule;
     PROFILES[currentId].crescentThreshold = state.crescentThreshold;
+    PROFILES[currentId].sabbathMode = state.sabbathMode;
     PROFILES[currentId].lat = state.lat;
     PROFILES[currentId].lon = state.lon;
     PROFILES[currentId].city = state.city;
@@ -3444,8 +3577,8 @@ function onProfileSelectChange(profileId) {
 }
 
 function resetToDefaults() {
-  // Apply the Full Moon profile as default
-  applyProfile('fullMoon');
+  // Apply Biblical Full Moon profile as default (Jerusalem, no location prompt)
+  applyProfile('biblicalFull');
 }
 
 // Helper to regenerate calendar while preserving scroll position
@@ -3461,6 +3594,10 @@ function regenerateCalendarPreservingScroll() {
 }
 
 function selectDayStartTime(time) {
+  // Don't allow changes on preset profiles
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) return;
+  
   state.dayStartTime = time;
   updateDayStartButtons();
   updateProfileButtons();  // Check if settings match a profile
@@ -3469,6 +3606,10 @@ function selectDayStartTime(time) {
 }
 
 function selectDayStartAngle(angle) {
+  // Don't allow changes on preset profiles
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) return;
+  
   state.dayStartAngle = angle;
   updateDayStartButtons();
   updateProfileButtons();  // Check if settings match a profile
@@ -3477,6 +3618,10 @@ function selectDayStartAngle(angle) {
 }
 
 function selectYearStartRule(rule) {
+  // Don't allow changes on preset profiles
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) return;
+  
   state.yearStartRule = rule;
   updateYearStartButtons();
   updateProfileButtons();  // Check if settings match a profile
@@ -3508,11 +3653,96 @@ function updateYearStartButtons() {
 }
 
 function selectCrescentThreshold(threshold) {
+  // Don't allow changes on preset profiles
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) return;
+  
   state.crescentThreshold = threshold;
   updateCrescentThresholdButtons();
   updateProfileButtons();  // Check if settings match a profile
   saveState();
   regenerateCalendarPreservingScroll();
+}
+
+function selectSabbathMode(mode) {
+  // Don't allow changes on preset profiles
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) return;
+  
+  state.sabbathMode = mode;
+  // Clear dropdown when selecting a button option
+  const dropdown = document.getElementById('sabbath-day-select');
+  if (dropdown) dropdown.value = '';
+  updateSabbathButtons();
+  updateProfileButtons();  // Check if settings match a profile
+  saveState();
+  regenerateCalendarPreservingScroll();
+}
+
+function updateSabbathButtons() {
+  document.querySelectorAll('.settings-option-btn[data-sabbath]').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.sabbath === state.sabbathMode);
+  });
+  
+  // Update the dropdown to reflect current selection
+  const dropdown = document.getElementById('sabbath-day-select');
+  if (dropdown) {
+    const dropdownDays = ['none', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+    if (dropdownDays.includes(state.sabbathMode)) {
+      dropdown.value = state.sabbathMode;
+    } else {
+      dropdown.value = '';
+    }
+  }
+}
+
+function selectSabbathDayFromDropdown(day) {
+  if (!day) return;
+  
+  // Don't allow changes on preset profiles
+  const select = document.getElementById('profile-select');
+  if (select && PRESET_PROFILES[select.value]) {
+    // Reset dropdown to empty
+    document.getElementById('sabbath-day-select').value = '';
+    return;
+  }
+  
+  state.sabbathMode = day;
+  // Deselect the button options when selecting from dropdown
+  document.querySelectorAll('.settings-option-btn[data-sabbath]').forEach(btn => {
+    btn.classList.remove('selected');
+  });
+  updateSabbathButtons();
+  updateProfileButtons();
+  saveState();
+  regenerateCalendarPreservingScroll();
+}
+
+// Determine if a day is a sabbath based on current sabbathMode
+function isSabbath(day) {
+  switch (state.sabbathMode) {
+    case 'lunar':
+      // Lunar sabbath: days 8, 15, 22, 29
+      return [8, 15, 22, 29].includes(day.lunarDay);
+    case 'sunday':
+      return day.gregorianDate.getDay() === 0;
+    case 'monday':
+      return day.gregorianDate.getDay() === 1;
+    case 'tuesday':
+      return day.gregorianDate.getDay() === 2;
+    case 'wednesday':
+      return day.gregorianDate.getDay() === 3;
+    case 'thursday':
+      return day.gregorianDate.getDay() === 4;
+    case 'friday':
+      return day.gregorianDate.getDay() === 5;
+    case 'saturday':
+      return day.gregorianDate.getDay() === 6;
+    case 'none':
+      return false;
+    default:
+      return [8, 15, 22, 29].includes(day.lunarDay);
+  }
 }
 
 function updateCrescentThresholdButtons() {
@@ -3824,6 +4054,10 @@ document.getElementById('city-select').addEventListener('change', function() {
 
 // Settings page city select handler
 document.getElementById('settings-city-select').addEventListener('change', function() {
+  // Don't allow changes on preset profiles
+  const profileSelect = document.getElementById('profile-select');
+  if (profileSelect && PRESET_PROFILES[profileSelect.value]) return;
+  
   const customCoords = document.getElementById('settings-custom-coords');
   
   if (this.value === 'current') {
@@ -3861,6 +4095,10 @@ document.getElementById('settings-city-select').addEventListener('change', funct
 
 // Settings page custom coordinate inputs
 document.getElementById('settings-lat-input').addEventListener('change', function() {
+  // Don't allow changes on preset profiles
+  const profileSelect = document.getElementById('profile-select');
+  if (profileSelect && PRESET_PROFILES[profileSelect.value]) return;
+  
   state.lat = parseFloat(this.value);
   state.city = '';
   document.getElementById('lat-input').value = state.lat;
@@ -3873,6 +4111,10 @@ document.getElementById('settings-lat-input').addEventListener('change', functio
 });
 
 document.getElementById('settings-lon-input').addEventListener('change', function() {
+  // Don't allow changes on preset profiles
+  const profileSelect = document.getElementById('profile-select');
+  if (profileSelect && PRESET_PROFILES[profileSelect.value]) return;
+  
   state.lon = parseFloat(this.value);
   state.city = '';
   document.getElementById('lon-input').value = state.lon;
@@ -5024,6 +5266,12 @@ function renderMonth(month) {
     shiftedWeekdays.push(weekdayNames[(day2Weekday + i) % 7]);
   }
   
+  // Determine if column 7 header should be highlighted
+  // Only highlight for lunar sabbath mode since the grid is organized by lunar weeks
+  // For non-lunar sabbaths (Saturday, Sunday, etc.), Sabbaths are scattered across columns
+  // based on Gregorian weekday, so no single column header makes sense to highlight
+  const highlightColumn7 = state.sabbathMode === 'lunar';
+  
   // Get Day 1 info for header
   const day1 = month.days.find(d => d.lunarDay === 1);
   const day1Date = day1 ? formatShortDate(day1.gregorianDate) : '';
@@ -5059,7 +5307,7 @@ function renderMonth(month) {
             <div class="year">${displayYear} · ${getCurrentLocationName()}</div>
           </div>
         </div>
-        <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
+        <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}${day1 && isSabbath(day1) ? ' sabbath' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
           <div class="gregorian">${day1Date}<span class="day-year">${day1Year}</span></div>
           <div class="moon-phase">${day1 ? day1.moonPhase : ''}</div>
           <div class="lunar-day">1</div>
@@ -5074,7 +5322,7 @@ function renderMonth(month) {
         <div class="day-label"><div class="day-name">Day 4</div><div class="weekday">${shiftedWeekdays[3]}</div></div>
         <div class="day-label"><div class="day-name">Day 5</div><div class="weekday">${shiftedWeekdays[4]}</div></div>
         <div class="day-label"><div class="day-name">Day 6</div><div class="weekday">${shiftedWeekdays[5]}</div></div>
-        <div class="day-label"><div class="day-name">SABBATH</div><div class="weekday">${shiftedWeekdays[6]}</div></div>
+        <div class="day-label${highlightColumn7 ? ' sabbath-header' : ''}"><div class="day-name">Day 7</div><div class="weekday">${shiftedWeekdays[6]}</div></div>
       </div>
       
       <div class="calendar-grid">
@@ -5100,7 +5348,9 @@ function renderMonth(month) {
       }
       
       let classes = ['day-cell'];
-      if (day.isSabbath) classes.push('sabbath');
+      // Determine if this day is a sabbath based on sabbathMode
+      const isSabbathDay = isSabbath(day);
+      if (isSabbathDay) classes.push('sabbath');
       if (day.isNewMoon) classes.push('new-moon');
       if (day.feasts && day.feasts.length > 0) classes.push('feast');
       if (day.lunarDay === state.highlightedLunarDay) classes.push('highlighted');
@@ -5227,8 +5477,12 @@ function jumpToFeast(monthIdx, lunarDay) {
     renderMonth(month);
     updateMonthButtons();
     updateURL();
-    // Scroll to calendar
-    document.querySelector('.month-calendar').scrollIntoView({ behavior: 'smooth' });
+    // Navigate to calendar view
+    navigateTo('calendar');
+    // Scroll to calendar after navigation
+    setTimeout(() => {
+      document.querySelector('.month-calendar')?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
   }
 }
 
@@ -5320,6 +5574,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Rebuild profile dropdown with any saved custom profiles
   rebuildProfileDropdown();
   
+  // Initialize settings editability (presets are read-only)
+  updateSettingsEditability();
+  
   // Check if URL has parameters - if so, load from URL, otherwise jump to today
   const params = new URLSearchParams(window.location.search);
   if (params.has('year') || params.has('view')) {
@@ -5332,9 +5589,6 @@ document.addEventListener('DOMContentLoaded', function() {
     jumpToToday();
     updateURL(); // Set initial URL
   }
-  
-  // Auto-refresh location if current profile uses "Your Location"
-  refreshLocationIfNeeded();
   
   // Event delegation for feast table clicks
   document.getElementById('feast-tbody').addEventListener('click', function(e) {
@@ -5731,8 +5985,13 @@ function showDayDetail(dayObj, month) {
   const infoContainer = panel.querySelector('.day-detail-info');
   let infoHtml = '';
   
-  if (dayObj.isSabbath) {
-    infoHtml += '<div class="day-detail-sabbath">🕯️ Weekly Sabbath</div>';
+  if (isSabbath(dayObj)) {
+    const sabbathLabel = state.sabbathMode === 'lunar' ? 'Lunar Sabbath' : 
+                         state.sabbathMode === 'saturday' ? 'Shabbat' :
+                         state.sabbathMode === 'sunday' ? 'Lord\'s Day' :
+                         state.sabbathMode === 'friday' ? 'Jumu\'ah' : 
+                         'Rest Day';
+    infoHtml += `<div class="day-detail-sabbath">🕯️ ${sabbathLabel}</div>`;
   }
   
   if (dayObj.moonPhase && dayObj.lunarDay !== 1) {
@@ -5904,11 +6163,16 @@ function generateICSContent() {
   for (const month of state.lunarMonths) {
     for (const day of month.days) {
       // Add Sabbaths
-      if (day.isSabbath) {
+      if (isSabbath(day)) {
+        const sabbathLabel = state.sabbathMode === 'lunar' ? 'Lunar Sabbath' : 
+                             state.sabbathMode === 'saturday' ? 'Shabbat' :
+                             state.sabbathMode === 'sunday' ? 'Lord\'s Day' :
+                             state.sabbathMode === 'friday' ? 'Jumu\'ah' : 
+                             'Rest Day';
         events.push({
           date: day.gregorianDate,
-          title: `Lunar Sabbath (${MONTH_NAMES[month.monthNumber - 1]} ${day.lunarDay})`,
-          description: `Weekly Sabbath - Day ${day.lunarDay} of ${MONTH_NAMES[month.monthNumber - 1]}`,
+          title: `${sabbathLabel} (${MONTH_NAMES[month.monthNumber - 1]} ${day.lunarDay})`,
+          description: `${sabbathLabel} - Day ${day.lunarDay} of ${MONTH_NAMES[month.monthNumber - 1]}`,
           allDay: true
         });
       }
