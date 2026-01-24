@@ -8,6 +8,7 @@ title: "Lunar Sabbath Calendar"
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>{{ page.title }}</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -107,15 +108,8 @@ title: "Lunar Sabbath Calendar"
 
 .calendar-title {
   text-align: left;
-  cursor: pointer;
   padding: 5px 10px;
-  border-radius: 8px;
-  transition: background 0.2s;
   flex: 1;
-}
-
-.calendar-title:hover {
-  background: rgba(255,255,255,0.1);
 }
 
 .calendar-title .site-title {
@@ -149,6 +143,15 @@ title: "Lunar Sabbath Calendar"
   display: flex;
   align-items: baseline;
   gap: 10px;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.calendar-title .month-year-row:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 .calendar-title .month-name {
@@ -444,35 +447,7 @@ title: "Lunar Sabbath Calendar"
   margin-left: 4px;
 }
 
-/* Jump button on highlighted day - positioned next to lunar day number */
-.day-cell .jump-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(60%, -50%);
-  background: rgba(212, 160, 23, 0.9);
-  color: #1a3a5c;
-  border: none;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.day-cell.highlighted .jump-btn {
-  display: flex;
-}
-
-.day-cell .jump-btn:hover {
-  background: #e5b328;
-  transform: translate(60%, -50%) scale(1.1);
-}
+/* Old jump button styles removed - button is now in day detail header */
 
 .full-moon-info {
   display: flex;
@@ -510,6 +485,123 @@ title: "Lunar Sabbath Calendar"
 
 .full-moon-info:hover .moon-gear-badge {
   opacity: 1;
+}
+
+/* Export button in header - prominent desktop icon style */
+.export-header-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: all 0.2s;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.export-header-btn .icon {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.export-header-btn .label {
+  font-size: 13px;
+  color: #d4a017;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.export-header-btn:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.05);
+}
+
+.export-header-btn:hover .label {
+  color: #f0c040;
+}
+
+.export-header-btn:active {
+  transform: scale(0.98);
+}
+
+/* Export/Feasts page specific styles */
+#export-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  z-index: 100;
+}
+
+#export-page .settings-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#export-page .export-header {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.export-branding {
+  flex: 1;
+  text-align: center;
+  min-width: 200px;
+}
+
+.export-site-title {
+  font-size: 1.4em;
+  color: #7ec8e3;
+  font-weight: bold;
+}
+
+.export-page-title {
+  font-size: 1em;
+  color: #d4a017;
+  margin-top: 2px;
+}
+
+#export-page .export-download-btn {
+  padding: 8px 16px;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+.export-settings-context {
+  background: rgba(0,0,0,0.3);
+  padding: 12px 20px;
+  font-size: 0.9em;
+  color: #ccc;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.export-settings-context span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: center;
+}
+
+.export-context-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.export-context-label {
+  color: #888;
+}
+
+.export-context-value {
+  color: #d4a017;
+  font-weight: 500;
 }
 
 /* Dateline Visualization */
@@ -589,10 +681,13 @@ title: "Lunar Sabbath Calendar"
   box-shadow: 0 0 15px rgba(255,107,107,0.8), 0 0 30px rgba(255,204,0,0.5);
   z-index: 10;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.dateline-marker::before {
-  content: '☀';
+.dateline-marker-icon {
   position: absolute;
   top: 5px;
   left: 50%;
@@ -602,8 +697,7 @@ title: "Lunar Sabbath Calendar"
   text-shadow: 0 0 10px rgba(255,204,0,0.8);
 }
 
-.dateline-marker::after {
-  content: 'SUNRISE';
+.dateline-marker-label {
   position: absolute;
   bottom: 5px;
   left: 50%;
@@ -844,39 +938,22 @@ title: "Lunar Sabbath Calendar"
 }
 
 /* Settings Dialog */
+/* Old settings overlay - now hidden, replaced by settings page */
 .settings-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 1000;
+  display: none !important;
 }
 
 .settings-overlay.open {
-  display: block;
+  display: none !important;
 }
 
+/* Old settings dialog - now hidden, replaced by settings page */
 .settings-dialog {
-  display: none;
-  position: fixed;
-  top: 5vh;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #1a3a5c;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-  z-index: 1001;
-  width: 70%;
-  max-width: 630px; /* 70% of 900px */
-  max-height: 90vh;
-  overflow-y: auto;
+  display: none !important;
 }
 
 .settings-dialog.open {
-  display: block;
+  display: none !important;
 }
 
 .settings-header {
@@ -1078,6 +1155,30 @@ title: "Lunar Sabbath Calendar"
   transition: all 0.2s;
 }
 
+/* 13th month button with calendar icon overlay */
+.month-btn.month-13 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-13-icon {
+  font-size: 1.2em;
+  position: relative;
+}
+
+.month-13-num {
+  position: absolute;
+  font-size: 0.6em;
+  font-weight: bold;
+  color: #1a3a5c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  text-shadow: 0 0 2px white, 0 0 2px white;
+}
+
 .month-btn:hover {
   background: #2a5a8c;
   transform: scale(1.05);
@@ -1091,6 +1192,180 @@ title: "Lunar Sabbath Calendar"
 .month-btn.disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+
+/* Settings Page - Full Width */
+.settings-page {
+  background: linear-gradient(180deg, #1a3a5c 0%, #2a5a8c 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.settings-page-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: linear-gradient(180deg, #0d2840 0%, #1a3a5c 100%);
+  border-bottom: 2px solid #d4a017;
+}
+
+.settings-page-header h2 {
+  margin: 0;
+  color: #d4a017;
+  font-size: 1.4em;
+  flex: 1;
+}
+
+.settings-page-header .back-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #7ec8e3;
+  font-size: 1em;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.settings-page-header .back-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.settings-page-header .defaults-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #ccc;
+  font-size: 0.9em;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.settings-page-header .defaults-btn:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.settings-section {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.settings-section:last-child {
+  border-bottom: none;
+}
+
+.settings-section h3 {
+  margin: 0 0 8px 0;
+  color: #7ec8e3;
+  font-size: 1.2em;
+}
+
+.settings-description {
+  margin: 0 0 15px 0;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9em;
+}
+
+.settings-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.settings-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 20px;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  flex: 1;
+  min-width: 90px;
+  transition: all 0.2s;
+}
+
+.settings-option-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.settings-option-btn.selected {
+  border-color: #d4a017;
+  background: rgba(212, 160, 23, 0.2);
+}
+
+.settings-option-btn .option-icon {
+  font-size: 2.5em;
+}
+
+/* Moon phase icons in Month Starts section - extra large */
+.settings-option-btn[data-phase] .option-icon {
+  font-size: 3.5em;
+}
+
+.settings-option-btn .option-label {
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.settings-option-btn .option-hint {
+  font-size: 0.75em;
+  opacity: 0.7;
+  font-weight: normal;
+}
+
+#settings-page-map {
+  margin-bottom: 15px;
+}
+
+#settings-page-map .dateline-container {
+  margin-top: 0;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.settings-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.settings-select option,
+.settings-select optgroup {
+  background: #1a3a5c;
+  color: white;
+}
+
+.settings-custom-coords {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.settings-custom-coords input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.settings-custom-coords input::placeholder {
+  color: rgba(255,255,255,0.5);
 }
 
 /* Day Detail Panel */
@@ -1129,18 +1404,33 @@ title: "Lunar Sabbath Calendar"
   color: #7ec8e3;
 }
 
-.day-detail-close {
-  background: none;
-  border: none;
-  color: #7ec8e3;
-  font-size: 1.8em;
-  cursor: pointer;
-  padding: 0 8px;
-  line-height: 1;
+.day-detail-gregorian-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.day-detail-close:hover {
-  color: #fff;
+.day-detail-jump-btn {
+  background: #d4a017;
+  border: none;
+  color: #1a3a5c;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.day-detail-jump-btn:hover {
+  background: #e5b328;
+  transform: scale(1.1);
 }
 
 .day-detail-content {
@@ -1195,6 +1485,18 @@ title: "Lunar Sabbath Calendar"
 
 .day-detail-feast-link:hover {
   text-decoration: underline;
+}
+
+.equinox-link {
+  color: #d4a017;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.equinox-link:hover {
+  text-decoration: underline;
+  color: #f0c040;
 }
 
 .day-detail-info {
@@ -1297,7 +1599,8 @@ title: "Lunar Sabbath Calendar"
     padding: 0;
   }
   
-  .month-calendar {
+  .month-calendar,
+  .settings-page {
     border-radius: 0;
   }
   
@@ -1306,6 +1609,26 @@ title: "Lunar Sabbath Calendar"
   .date-jump-popup {
     width: calc(100% - 16px);
     max-width: none;
+  }
+  
+  .settings-page-header {
+    padding: 12px 15px;
+  }
+  
+  .settings-section {
+    padding: 15px;
+  }
+  
+  .settings-option-btn {
+    padding: 12px 15px;
+  }
+  
+  .settings-option-btn .option-icon {
+    font-size: 2em;
+  }
+  
+  .settings-option-btn[data-phase] .option-icon {
+    font-size: 2.8em;
   }
   
   .calendar-controls {
@@ -1470,7 +1793,7 @@ title: "Lunar Sabbath Calendar"
   
   .feast-table {
     font-size: 0.85em;
-    min-width: 500px;
+    min-width: 400px;
   }
   
   .feast-table th,
@@ -1641,7 +1964,7 @@ title: "Lunar Sabbath Calendar"
       </div>
       
       <div class="setting-info">
-        The location determines when the lunar day begins for you (at local sunrise).
+        The location determines when the lunar day begins for you.
       </div>
     </div>
   </div>
@@ -1690,14 +2013,149 @@ title: "Lunar Sabbath Calendar"
 
   <div id="calendar-output"></div>
 
+  <!-- Settings Page - replaces calendar when active -->
+  <div id="settings-page" class="settings-page" style="display: none;">
+    <div class="settings-page-header">
+      <button class="back-btn" onclick="toggleSettings()">← Back</button>
+      <h2>Settings</h2>
+      <button class="defaults-btn" onclick="resetToDefaults()">Defaults</button>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Month Starts At</h3>
+      <p class="settings-description">Choose which lunar phase marks the beginning of each month.</p>
+      <div class="settings-options">
+        <button class="settings-option-btn" data-phase="full" onclick="selectMoonPhase('full')">
+          <span class="option-icon">🌕</span>
+          <span class="option-label">Full Moon</span>
+        </button>
+        <button class="settings-option-btn" data-phase="dark" onclick="selectMoonPhase('dark')">
+          <span class="option-icon">🌑</span>
+          <span class="option-label">Dark Moon</span>
+        </button>
+        <button class="settings-option-btn" data-phase="crescent" onclick="selectMoonPhase('crescent')">
+          <span class="option-icon">🌙</span>
+          <span class="option-label">Crescent</span>
+        </button>
+      </div>
+    </div>
+    
+    <div id="crescent-threshold-section" class="settings-section" style="display: none;">
+      <h3>Crescent Visibility Threshold</h3>
+      <p class="settings-description">Minimum moon altitude above horizon at sunset for crescent to be considered visible.</p>
+      <div class="settings-options">
+        <button class="settings-option-btn" data-threshold="5" onclick="selectCrescentThreshold(5)">
+          <span class="option-label">5° Optimistic</span>
+          <span class="option-hint">Earliest possible, ideal conditions</span>
+        </button>
+        <button class="settings-option-btn" data-threshold="8" onclick="selectCrescentThreshold(8)">
+          <span class="option-label">8° Standard</span>
+          <span class="option-hint">Typical naked-eye visibility</span>
+        </button>
+        <button class="settings-option-btn" data-threshold="10" onclick="selectCrescentThreshold(10)">
+          <span class="option-label">10° Conservative</span>
+          <span class="option-hint">Ensures easy visibility</span>
+        </button>
+        <button class="settings-option-btn" data-threshold="12" onclick="selectCrescentThreshold(12)">
+          <span class="option-label">12° Very Conservative</span>
+          <span class="option-hint">Clearly visible to anyone</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Day Starts At</h3>
+      <p class="settings-description">Choose when each day begins.</p>
+      <div class="settings-options" style="margin-bottom: 15px;">
+        <button class="settings-option-btn" data-daystart="evening" onclick="selectDayStartTime('evening')">
+          <span class="option-icon">🌅</span>
+          <span class="option-label">Evening</span>
+        </button>
+        <button class="settings-option-btn" data-daystart="morning" onclick="selectDayStartTime('morning')">
+          <span class="option-icon">🌄</span>
+          <span class="option-label">Morning</span>
+        </button>
+      </div>
+      <p class="settings-description">Sun position below horizon:</p>
+      <div class="settings-options">
+        <button class="settings-option-btn" data-angle="0" onclick="selectDayStartAngle(0)">
+          <span class="option-label">0° Horizon</span>
+          <span class="option-hint">Sun at horizon</span>
+        </button>
+        <button class="settings-option-btn" data-angle="6" onclick="selectDayStartAngle(6)">
+          <span class="option-label">6° Civil</span>
+          <span class="option-hint">Bright stars visible</span>
+        </button>
+        <button class="settings-option-btn" data-angle="12" onclick="selectDayStartAngle(12)">
+          <span class="option-label">12° Nautical</span>
+          <span class="option-hint">Most stars visible</span>
+        </button>
+        <button class="settings-option-btn" data-angle="18" onclick="selectDayStartAngle(18)">
+          <span class="option-label">18° Astronomical</span>
+          <span class="option-hint">Fully dark</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Year Starts At</h3>
+      <p class="settings-description">Choose the rule for determining the first month of the year.</p>
+      <div class="settings-options">
+        <button class="settings-option-btn" data-yearstart="equinox" onclick="selectYearStartRule('equinox')">
+          <span class="option-icon" id="yearstart-equinox-icon">🌕</span>
+          <span class="option-label">Renewed Moon after Equinox</span>
+          <span class="option-hint" id="yearstart-equinox-hint">Month 1 starts after spring equinox</span>
+        </button>
+        <button class="settings-option-btn" data-yearstart="13daysBefore" onclick="selectYearStartRule('13daysBefore')">
+          <span class="option-icon">🐑</span>
+          <span class="option-label">Passover after Equinox</span>
+          <span class="option-hint" id="yearstart-passover-hint">Day 14 of Month 1 after equinox</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Your Location</h3>
+      <p class="settings-description">Your location determines the timing of sunrise, sunset, and twilight.</p>
+      <div id="settings-page-map"></div>
+      <select id="settings-city-select" class="settings-select">
+        <option value="current">📍 Use Current Location</option>
+        <optgroup label="Biblical">
+          <option value="31.7683,35.2137">Jerusalem</option>
+        </optgroup>
+        <optgroup label="United States">
+          <option value="40.7128,-74.0060">New York (Eastern)</option>
+          <option value="41.8781,-87.6298">Chicago (Central)</option>
+          <option value="39.7392,-104.9903">Denver (Mountain)</option>
+          <option value="34.0522,-118.2437">Los Angeles (Pacific)</option>
+          <option value="61.2181,-149.9003">Anchorage (Alaska)</option>
+          <option value="21.3069,-157.8583">Honolulu (Hawaii)</option>
+        </optgroup>
+        <optgroup label="International">
+          <option value="51.5074,-0.1278">London</option>
+          <option value="48.8566,2.3522">Paris</option>
+          <option value="35.6762,139.6503">Tokyo</option>
+          <option value="-33.8688,151.2093">Sydney</option>
+        </optgroup>
+        <option value="custom">Custom Coordinates...</option>
+      </select>
+      <div id="settings-custom-coords" class="settings-custom-coords" style="display: none;">
+        <input type="number" id="settings-lat-input" step="0.0001" placeholder="Latitude">
+        <input type="number" id="settings-lon-input" step="0.0001" placeholder="Longitude">
+      </div>
+    </div>
+  </div>
+
   <!-- Day Detail Panel - slides up when a day is selected -->
   <div id="day-detail-panel" class="day-detail-panel hidden">
     <div class="day-detail-header">
       <div class="day-detail-date">
         <span class="day-detail-lunar"></span>
-        <span class="day-detail-gregorian"></span>
+        <span class="day-detail-gregorian-row">
+          <span class="day-detail-gregorian"></span>
+          <button class="day-detail-jump-btn" onclick="toggleDateJump()" title="Jump to another date">⇥</button>
+        </span>
       </div>
-      <button class="day-detail-close" onclick="closeDayDetail()">&times;</button>
     </div>
     <div class="day-detail-content">
       <div class="day-detail-feasts"></div>
@@ -1705,7 +2163,8 @@ title: "Lunar Sabbath Calendar"
     </div>
   </div>
 
-  <div class="feast-list">
+  <!-- Feast table hidden from main page - shown in export modal -->
+  <div class="feast-list" style="display: none;">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
       <h3 style="margin: 0;">Appointed Times for <span id="feast-year">2026</span></h3>
       <button class="btn" onclick="openInCalendar()" title="Download all Sabbaths and Feasts for this year">📅 Export Year to Calendar App</button>
@@ -1715,13 +2174,41 @@ title: "Lunar Sabbath Calendar"
       <thead>
         <tr>
           <th>Feast</th>
-          <th>Lunar Date</th>
-          <th>Gregorian Date</th>
+          <th>Date</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody id="feast-tbody"></tbody>
     </table>
+    </div>
+  </div>
+</div>
+
+<!-- Export/Feasts Page -->
+<div id="export-page" class="settings-page" style="display: none;">
+  <div class="settings-page-header export-header">
+    <button class="back-btn" onclick="toggleExportModal()">← Calendar</button>
+    <div class="export-branding">
+      <div class="export-site-title">Lunar Sabbath Calendar</div>
+      <div class="export-page-title">Appointed Times for <span id="export-year">2026</span></div>
+    </div>
+    <button class="btn export-download-btn" onclick="openInCalendar()">📅 Export</button>
+  </div>
+  <div class="export-settings-context">
+    <span id="export-context-text">Loading settings...</span>
+  </div>
+  <div class="settings-content" style="padding-top: 0;">
+    <div class="feast-table-container">
+      <table class="feast-table">
+        <thead>
+          <tr>
+            <th>Feast</th>
+            <th>Date</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody id="export-feast-tbody"></tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -1739,20 +2226,20 @@ const SHOFAR_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"
 // Order matters: single-day feasts should come AFTER multi-day feasts so they take priority
 // Order matters for overlapping feasts: specific single-day feasts listed AFTER multi-day feasts take priority
 const FEASTS = [
-  // Renewed Moon Day - first day of every month
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 1, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 2, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 3, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 4, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 5, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 6, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 7, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 8, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 9, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 10, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 11, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 12, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
-  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 13, day: 1, description: 'Renewed Moon Day - beginning of the month', chapter: '/chapters/18-appointed-times/#new-moon' },
+  // Renewed Moon Day - first day of every month (first light after full moon when waning moon is 12°+ above western horizon)
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 1, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 2, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 3, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 4, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 5, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 6, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 7, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 8, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 9, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 10, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 11, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 12, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
+  { name: 'Renewed Moon', shortName: 'New Moon', icon: SHOFAR_ICON, month: 13, day: 1, description: 'First light after full moon — waning moon 12°+ above western horizon', chapter: '/chapters/18-appointed-times/#new-moon' },
   // Specific feasts
   { name: 'Last Supper', shortName: 'Last Supper', icon: '🍞🍷', month: 1, day: 13, description: 'The Last Supper - bread and wine', chapter: '/chapters/18-appointed-times/#passover' },
   { name: 'Passover', shortName: 'Passover', icon: '🐑†', month: 1, day: 14, description: 'Lamb slain at twilight', chapter: '/chapters/18-appointed-times/#passover' },
@@ -1784,6 +2271,10 @@ const defaultState = {
   lon: 35.2137,
   city: '31.7683,35.2137', // Store the city select value directly
   moonPhase: 'full',
+  dayStartTime: 'morning',  // 'evening' or 'morning'
+  dayStartAngle: 12,        // 0, 6, 12, or 18 degrees below horizon
+  yearStartRule: 'equinox', // 'equinox' or '13daysBefore'
+  crescentThreshold: 8,     // Minimum moon altitude (degrees) at sunset for crescent visibility
   lunarMonths: [],
   currentMonthIndex: 0,
   highlightedLunarDay: null,
@@ -1802,7 +2293,11 @@ function loadState() {
         lat: parsed.lat || defaultState.lat,
         lon: parsed.lon || defaultState.lon,
         city: parsed.city || '',
-        moonPhase: parsed.moonPhase || defaultState.moonPhase
+        moonPhase: parsed.moonPhase || defaultState.moonPhase,
+        dayStartTime: parsed.dayStartTime || defaultState.dayStartTime,
+        dayStartAngle: parsed.dayStartAngle !== undefined ? parsed.dayStartAngle : defaultState.dayStartAngle,
+        yearStartRule: parsed.yearStartRule || defaultState.yearStartRule,
+        crescentThreshold: parsed.crescentThreshold !== undefined ? parsed.crescentThreshold : defaultState.crescentThreshold
       };
     } catch (e) {
       return { ...defaultState };
@@ -1818,7 +2313,11 @@ function saveState() {
     lat: state.lat,
     lon: state.lon,
     city: state.city,
-    moonPhase: state.moonPhase
+    moonPhase: state.moonPhase,
+    dayStartTime: state.dayStartTime,
+    dayStartAngle: state.dayStartAngle,
+    yearStartRule: state.yearStartRule,
+    crescentThreshold: state.crescentThreshold
   };
   localStorage.setItem('lunarCalendarState', JSON.stringify(toSave));
 }
@@ -1915,6 +2414,11 @@ function loadFromURL() {
     renderMonth(state.lunarMonths[state.currentMonthIndex]);
     updateMonthButtons();
   }
+  
+  // Check for view=feasts parameter to open the feasts page
+  if (params.has('view') && params.get('view') === 'feasts') {
+    toggleExportModal(true); // Skip URL update since we're loading from URL
+  }
 }
 
 const state = loadState();
@@ -1922,18 +2426,21 @@ const state = loadState();
 // Update UI to reflect current state
 function updateUI() {
   document.getElementById('year-input').value = state.year;
-  // Show BC/AD label
+  // Show BC label only when needed (no AD suffix)
   const yearVal = state.year;
   if (yearVal <= 0) {
     document.getElementById('year-display').textContent = `(${Math.abs(yearVal - 1)} BC)`;
   } else {
-    document.getElementById('year-display').textContent = `(${yearVal} AD)`;
+    document.getElementById('year-display').textContent = '';  // No AD suffix for positive years
   }
   document.getElementById('feast-year').textContent = formatYear(state.year);
   document.getElementById('lat-input').value = state.lat;
   document.getElementById('lon-input').value = state.lon;
   document.getElementById('moon-phase-select').value = state.moonPhase;
   document.getElementById('city-select').value = state.city || '';
+  
+  // Update button states
+  updateMoonPhaseButtons();
   
   // Show/hide custom coordinates
   const customCoords = document.getElementById('custom-coords');
@@ -1943,24 +2450,194 @@ function updateUI() {
 }
 
 function toggleSettings() {
-  const overlay = document.getElementById('settings-overlay');
-  const dialog = document.getElementById('settings-dialog');
-  const isOpening = !overlay.classList.contains('open');
+  const calendarOutput = document.getElementById('calendar-output');
+  const dayDetailPanel = document.getElementById('day-detail-panel');
+  const settingsPage = document.getElementById('settings-page');
+  
+  const isOpening = settingsPage.style.display === 'none';
   
   if (isOpening) {
-    // Update moon phase buttons to show current selection
-    updateMoonPhaseButtons();
-    // Render the map in settings
-    renderSettingsMap();
+    // Hide calendar, show settings
+    calendarOutput.style.display = 'none';
+    dayDetailPanel.style.display = 'none';
+    settingsPage.style.display = 'block';
+    
+    // Update settings page state
+    updateSettingsPageState();
+  } else {
+    // Show calendar, hide settings
+    calendarOutput.style.display = 'block';
+    settingsPage.style.display = 'none';
+    
+    // Reset day detail panel display and refresh if a day was selected
+    dayDetailPanel.style.display = '';  // Reset inline style
+    if (state.highlightedLunarDay !== null) {
+      dayDetailPanel.classList.remove('hidden');
+      refreshDayDetailIfVisible();
+    }
+  }
+}
+
+function toggleExportModal(skipUrlUpdate = false) {
+  const calendarOutput = document.getElementById('calendar-output');
+  const dayDetailPanel = document.getElementById('day-detail-panel');
+  const exportPage = document.getElementById('export-page');
+  const settingsPage = document.getElementById('settings-page');
+  
+  const isOpening = exportPage.style.display === 'none';
+  
+  if (isOpening) {
+    // Hide calendar and settings, show export
+    calendarOutput.style.display = 'none';
+    dayDetailPanel.style.display = 'none';
+    settingsPage.style.display = 'none';
+    exportPage.style.display = 'block';
+    
+    // Scroll to top of page (with timeout to ensure DOM update)
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      exportPage.scrollTop = 0;
+    }, 0);
+    
+    // Update export table with current feast data
+    updateExportTable();
+    
+    // Update URL with view=feasts
+    if (!skipUrlUpdate) {
+      updateURLWithView('feasts');
+    }
+  } else {
+    // Show calendar, hide export
+    calendarOutput.style.display = 'block';
+    exportPage.style.display = 'none';
+    
+    // Reset day detail panel display and refresh if a day was selected
+    dayDetailPanel.style.display = '';  // Reset inline style
+    if (state.highlightedLunarDay !== null) {
+      dayDetailPanel.classList.remove('hidden');
+      refreshDayDetailIfVisible();
+    }
+    
+    // Remove view parameter from URL
+    if (!skipUrlUpdate) {
+      updateURL();
+    }
+  }
+}
+
+function updateURLWithView(view) {
+  const params = new URLSearchParams();
+  params.set('year', state.year);
+  params.set('lat', state.lat);
+  params.set('lon', state.lon);
+  params.set('phase', state.moonPhase);
+  params.set('view', view);
+  
+  const newURL = window.location.pathname + '?' + params.toString();
+  window.history.replaceState({}, '', newURL);
+}
+
+function updateExportTable() {
+  // Update the year display
+  document.getElementById('export-year').textContent = formatYear(state.year);
+  
+  // Update settings context
+  const contextEl = document.getElementById('export-context-text');
+  if (contextEl) {
+    const moonLabel = getMoonLabel();
+    const dayStartLabel = getDayStartLabel();
+    const yearStartLabel = state.yearStartRule === '13daysBefore' ? 'Passover after Equinox' : 'Renewed Moon after Equinox';
+    const locationLabel = state.city || `${state.lat.toFixed(2)}°, ${state.lon.toFixed(2)}°`;
+    
+    contextEl.innerHTML = `
+      <span class="export-context-item">
+        <span class="export-context-label">Month Start:</span>
+        <span class="export-context-value">${moonLabel}</span>
+      </span>
+      <span class="export-context-item">
+        <span class="export-context-label">Day Start:</span>
+        <span class="export-context-value">${dayStartLabel}</span>
+      </span>
+      <span class="export-context-item">
+        <span class="export-context-label">Year Start:</span>
+        <span class="export-context-value">${yearStartLabel}</span>
+      </span>
+      <span class="export-context-item">
+        <span class="export-context-label">Location:</span>
+        <span class="export-context-value">${locationLabel}</span>
+      </span>
+    `;
   }
   
-  overlay.classList.toggle('open');
-  dialog.classList.toggle('open');
+  // Copy the feast table content to the export modal
+  const sourceTbody = document.getElementById('feast-tbody');
+  const targetTbody = document.getElementById('export-feast-tbody');
+  
+  if (sourceTbody && targetTbody) {
+    targetTbody.innerHTML = sourceTbody.innerHTML;
+  }
+}
+
+function updateSettingsPageState() {
+  // Update moon phase buttons
+  document.querySelectorAll('.settings-option-btn[data-phase]').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.phase === state.moonPhase);
+  });
+  
+  // Update crescent threshold visibility and buttons
+  updateCrescentThresholdVisibility();
+  updateCrescentThresholdButtons();
+  
+  // Update day start buttons
+  updateDayStartButtons();
+  
+  // Update year start buttons
+  updateYearStartButtons();
+  
+  // Update city select
+  const citySelect = document.getElementById('settings-city-select');
+  const coordValue = `${state.lat},${state.lon}`;
+  let found = false;
+  
+  for (let option of citySelect.options) {
+    if (option.value === coordValue) {
+      citySelect.value = coordValue;
+      found = true;
+      break;
+    }
+  }
+  
+  if (!found) {
+    citySelect.value = 'custom';
+    document.getElementById('settings-custom-coords').style.display = 'flex';
+    document.getElementById('settings-lat-input').value = state.lat;
+    document.getElementById('settings-lon-input').value = state.lon;
+  } else {
+    document.getElementById('settings-custom-coords').style.display = 'none';
+  }
+  
+  // Render the map
+  renderSettingsPageMap();
+}
+
+function renderSettingsPageMap() {
+  const container = document.getElementById('settings-page-map');
+  if (container && state.lunarMonths && state.lunarMonths[state.currentMonthIndex]) {
+    const month = state.lunarMonths[state.currentMonthIndex];
+    container.innerHTML = renderDatelineVisualization(month.moonEvent);
+  }
 }
 
 function updateMoonPhaseButtons() {
   document.querySelectorAll('.moon-phase-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.phase === state.moonPhase);
+  });
+  // Also update settings page buttons
+  document.querySelectorAll('.settings-option-btn[data-phase]').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.phase === state.moonPhase);
   });
 }
 
@@ -1968,8 +2645,113 @@ function selectMoonPhase(phase) {
   state.moonPhase = phase;
   document.getElementById('moon-phase-select').value = phase;
   updateMoonPhaseButtons();
+  updateCrescentThresholdVisibility();
+  updateYearStartButtons();  // Update year start icon to match moon phase
+  saveState();
   generateCalendar({ preserveMonth: true });
-  renderSettingsMap();
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+}
+
+function resetToDefaults() {
+  // Reset to default settings: Full Moon, Morning Nautical Twilight, Renewed Moon after Equinox
+  state.moonPhase = 'full';
+  state.dayStartTime = 'morning';
+  state.dayStartAngle = 12;
+  state.yearStartRule = 'equinox';
+  state.crescentThreshold = 8;
+  
+  // Update UI
+  document.getElementById('moon-phase-select').value = 'full';
+  updateMoonPhaseButtons();
+  updateDayStartButtons();
+  updateYearStartButtons();
+  updateCrescentThresholdVisibility();
+  updateCrescentThresholdButtons();
+  
+  // Save and regenerate
+  saveState();
+  generateCalendar({ preserveMonth: true });
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+}
+
+function selectDayStartTime(time) {
+  state.dayStartTime = time;
+  updateDayStartButtons();
+  saveState();
+  generateCalendar({ preserveMonth: true });
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+}
+
+function selectDayStartAngle(angle) {
+  state.dayStartAngle = angle;
+  updateDayStartButtons();
+  saveState();
+  generateCalendar({ preserveMonth: true });
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+}
+
+function selectYearStartRule(rule) {
+  state.yearStartRule = rule;
+  updateYearStartButtons();
+  saveState();
+  generateCalendar({ preserveMonth: true });
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+}
+
+function updateDayStartButtons() {
+  // Update day start time buttons (evening/morning)
+  document.querySelectorAll('.settings-option-btn[data-daystart]').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.daystart === state.dayStartTime);
+  });
+  // Update angle buttons
+  document.querySelectorAll('.settings-option-btn[data-angle]').forEach(btn => {
+    btn.classList.toggle('selected', parseInt(btn.dataset.angle) === state.dayStartAngle);
+  });
+}
+
+function updateYearStartButtons() {
+  document.querySelectorAll('.settings-option-btn[data-yearstart]').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.yearstart === state.yearStartRule);
+  });
+  
+  // Update the "Renewed Moon after Equinox" icon to match current moon phase
+  const iconEl = document.getElementById('yearstart-equinox-icon');
+  if (iconEl) {
+    iconEl.textContent = getMoonIcon();
+  }
+}
+
+function selectCrescentThreshold(threshold) {
+  state.crescentThreshold = threshold;
+  updateCrescentThresholdButtons();
+  saveState();
+  generateCalendar({ preserveMonth: true });
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+}
+
+function updateCrescentThresholdButtons() {
+  document.querySelectorAll('.settings-option-btn[data-threshold]').forEach(btn => {
+    btn.classList.toggle('selected', parseInt(btn.dataset.threshold) === state.crescentThreshold);
+  });
+}
+
+function updateCrescentThresholdVisibility() {
+  const section = document.getElementById('crescent-threshold-section');
+  if (section) {
+    section.style.display = state.moonPhase === 'crescent' ? 'block' : 'none';
+  }
 }
 
 function renderSettingsMap() {
@@ -2001,7 +2783,7 @@ function updateMonthPicker() {
   const grid = document.getElementById('month-grid');
   grid.innerHTML = '';
   
-  const monthNames = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th'];
+  const monthNames = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '📅13th'];
   
   for (let i = 0; i < 13; i++) {
     const btn = document.createElement('button');
@@ -2012,6 +2794,11 @@ function updateMonthPicker() {
       btn.disabled = true;
     } else if (i === state.currentMonthIndex) {
       btn.classList.add('active');
+    }
+    
+    // Add tooltip for 13th month
+    if (i === 12) {
+      btn.title = 'Intercalary 13th month';
     }
     
     btn.onclick = () => {
@@ -2101,12 +2888,23 @@ function handleMapClick(event) {
   state.lon = Math.round(lon * 100) / 100;
   state.city = ''; // Clear city selection
   
-  // Update inputs
+  // Update main inputs
   document.getElementById('lat-input').value = state.lat;
   document.getElementById('lon-input').value = state.lon;
   document.getElementById('city-select').value = '';
   
-  // Show custom coords
+  // Update settings page inputs
+  const settingsLatInput = document.getElementById('settings-lat-input');
+  const settingsLonInput = document.getElementById('settings-lon-input');
+  const settingsCitySelect = document.getElementById('settings-city-select');
+  const settingsCustomCoords = document.getElementById('settings-custom-coords');
+  
+  if (settingsLatInput) settingsLatInput.value = state.lat;
+  if (settingsLonInput) settingsLonInput.value = state.lon;
+  if (settingsCitySelect) settingsCitySelect.value = 'custom';
+  if (settingsCustomCoords) settingsCustomCoords.style.display = 'flex';
+  
+  // Show custom coords on main page
   const customCoords = document.getElementById('custom-coords');
   if (customCoords) customCoords.style.display = 'block';
   
@@ -2115,8 +2913,10 @@ function handleMapClick(event) {
   generateCalendar({ preserveMonth: true });
   updateURL();
   
-  // Update the settings map
+  // Update the settings maps (both containers)
   renderSettingsMap();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
 }
 
 function useCurrentLocation() {
@@ -2147,6 +2947,7 @@ function useCurrentLocation() {
       generateCalendar({ preserveMonth: true });
       updateURL();
       renderSettingsMap();
+      refreshDayDetailIfVisible();
       
       btn.textContent = '✓ Location set!';
       setTimeout(() => {
@@ -2201,8 +3002,109 @@ document.getElementById('city-select').addEventListener('change', function() {
     generateCalendar({ preserveMonth: true });
     updateURL();
     renderSettingsMap();
+    refreshDayDetailIfVisible();
   }
 });
+
+// Settings page city select handler
+document.getElementById('settings-city-select').addEventListener('change', function() {
+  const customCoords = document.getElementById('settings-custom-coords');
+  
+  if (this.value === 'current') {
+    // Use geolocation
+    useCurrentLocationFromSettings();
+    return;
+  }
+  
+  if (this.value === 'custom') {
+    customCoords.style.display = 'flex';
+    state.city = '';
+    return;
+  }
+  
+  if (this.value) {
+    customCoords.style.display = 'none';
+    const [lat, lon] = this.value.split(',').map(Number);
+    state.lat = lat;
+    state.lon = lon;
+    state.city = this.value;
+    
+    // Sync with old inputs
+    document.getElementById('lat-input').value = state.lat;
+    document.getElementById('lon-input').value = state.lon;
+    document.getElementById('city-select').value = this.value;
+    
+    saveState();
+    generateCalendar({ preserveMonth: true });
+    updateURL();
+    renderSettingsPageMap();
+    refreshDayDetailIfVisible();
+  }
+});
+
+// Settings page custom coordinate inputs
+document.getElementById('settings-lat-input').addEventListener('change', function() {
+  state.lat = parseFloat(this.value);
+  state.city = '';
+  document.getElementById('lat-input').value = state.lat;
+  saveState();
+  generateCalendar({ preserveMonth: true });
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+});
+
+document.getElementById('settings-lon-input').addEventListener('change', function() {
+  state.lon = parseFloat(this.value);
+  state.city = '';
+  document.getElementById('lon-input').value = state.lon;
+  saveState();
+  generateCalendar({ preserveMonth: true });
+  updateURL();
+  renderSettingsPageMap();
+  refreshDayDetailIfVisible();
+});
+
+function useCurrentLocationFromSettings() {
+  const select = document.getElementById('settings-city-select');
+  
+  if (!navigator.geolocation) {
+    alert('Geolocation is not supported by your browser');
+    // Reset to first city option
+    select.value = '31.7683,35.2137';
+    return;
+  }
+  
+  navigator.geolocation.getCurrentPosition(
+    function(position) {
+      state.lat = Math.round(position.coords.latitude * 10000) / 10000;
+      state.lon = Math.round(position.coords.longitude * 10000) / 10000;
+      state.city = '';
+      
+      // Update both old and new inputs
+      document.getElementById('lat-input').value = state.lat;
+      document.getElementById('lon-input').value = state.lon;
+      document.getElementById('settings-lat-input').value = state.lat;
+      document.getElementById('settings-lon-input').value = state.lon;
+      
+      // Show custom coordinates with the detected location
+      select.value = 'custom';
+      document.getElementById('settings-custom-coords').style.display = 'flex';
+      
+      saveState();
+      generateCalendar({ preserveMonth: true });
+      updateURL();
+      renderSettingsPageMap();
+      refreshDayDetailIfVisible();
+    },
+    function(error) {
+      alert('Unable to get your location. Please select a city or enter coordinates manually.');
+      // Reset to first city option
+      select.value = '31.7683,35.2137';
+    },
+    { timeout: 10000, enableHighAccuracy: true }
+  );
+}
 
 // Auto-regenerate when inputs change
 function regenerateAndUpdateURL() {
@@ -2215,11 +3117,13 @@ document.getElementById('lat-input').addEventListener('change', function() {
   state.city = ''; // Clear city selection when manually editing coordinates
   generateCalendar({ preserveMonth: true });
   updateURL();
+  refreshDayDetailIfVisible();
 });
 document.getElementById('lon-input').addEventListener('change', function() {
   state.city = ''; // Clear city selection when manually editing coordinates
   generateCalendar({ preserveMonth: true });
   updateURL();
+  refreshDayDetailIfVisible();
 });
 
 function changeYear(delta) {
@@ -2321,37 +3225,77 @@ function jumpToDate() {
 }
 
 function selectMonth(index) {
+  // Preserve the current day number when switching months
+  const previousDay = state.highlightedLunarDay || 1;
   state.currentMonthIndex = index;
-  state.highlightedLunarDay = null; // Clear highlight when manually switching months
-  state.selectedTimestamp = null;
+  
+  // Carry day selection to new month, clamping to valid range
+  const newMonth = state.lunarMonths[index];
+  const maxDay = newMonth.days.length;
+  state.highlightedLunarDay = Math.min(previousDay, maxDay);
+  
+  // Update selectedTimestamp for the new month's day
+  const dayObj = newMonth.days.find(d => d.lunarDay === state.highlightedLunarDay);
+  if (dayObj) {
+    state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+    document.getElementById('goto-date').value = formatLocalDatetime(state.selectedTimestamp);
+  }
+  
   renderMonth(state.lunarMonths[state.currentMonthIndex]);
   updateMonthButtons();
   updateURL();
+  
+  // Show day detail for the carried-over day
+  if (dayObj) {
+    showDayDetail(dayObj, newMonth);
+  }
 }
 
 function navigateMonth(direction) {
   const newIndex = state.currentMonthIndex + direction;
+  const previousDay = state.highlightedLunarDay || 1;
   
   if (newIndex < 0) {
     // Go to previous year, last month
     state.year -= 1;
-    state.highlightedLunarDay = null;
-    state.selectedTimestamp = null;
     updateUI();
     generateCalendar();
     // Jump to last month of previous year
     state.currentMonthIndex = state.lunarMonths.length - 1;
+    
+    // Preserve day selection, clamped to valid range
+    const newMonth = state.lunarMonths[state.currentMonthIndex];
+    const maxDay = newMonth.days.length;
+    state.highlightedLunarDay = Math.min(previousDay, maxDay);
+    const dayObj = newMonth.days.find(d => d.lunarDay === state.highlightedLunarDay);
+    if (dayObj) {
+      state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+      document.getElementById('goto-date').value = formatLocalDatetime(state.selectedTimestamp);
+      showDayDetail(dayObj, newMonth);
+    }
+    
     renderMonth(state.lunarMonths[state.currentMonthIndex]);
     updateMonthButtons();
     updateURL();
   } else if (newIndex >= state.lunarMonths.length) {
     // Go to next year, first month
     state.year += 1;
-    state.highlightedLunarDay = null;
-    state.selectedTimestamp = null;
     updateUI();
     generateCalendar();
     // Already at first month (generateCalendar sets to 0)
+    
+    // Preserve day selection, clamped to valid range
+    const newMonth = state.lunarMonths[state.currentMonthIndex];
+    const maxDay = newMonth.days.length;
+    state.highlightedLunarDay = Math.min(previousDay, maxDay);
+    const dayObj = newMonth.days.find(d => d.lunarDay === state.highlightedLunarDay);
+    if (dayObj) {
+      state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+      document.getElementById('goto-date').value = formatLocalDatetime(state.selectedTimestamp);
+      showDayDetail(dayObj, newMonth);
+    }
+    
+    renderMonth(state.lunarMonths[state.currentMonthIndex]);
     updateURL();
   } else {
     // Normal month navigation within same year
@@ -2385,11 +3329,12 @@ function renderMonthButtons() {
     container.appendChild(btn);
   }
   
-  // Month 13 button (hidden on mobile unless year has 13 months)
+  // Month 13 button (hidden on mobile unless year has 13 months) - with calendar icon
   if (state.lunarMonths.length >= 13) {
     const btn13 = document.createElement('button');
     btn13.className = 'month-btn month-13' + (has13Months ? ' has-13' : '') + (12 === state.currentMonthIndex ? ' active' : '');
-    btn13.textContent = '13';
+    btn13.innerHTML = '<span class="month-13-icon">📅</span><span class="month-13-num">13</span>';
+    btn13.title = 'Intercalary 13th month';
     btn13.onclick = () => selectMonth(12);
     container.appendChild(btn13);
   }
@@ -2400,7 +3345,94 @@ function formatYear(year) {
     // Astronomical year 0 = 1 BC, -1 = 2 BC, etc.
     return Math.abs(year - 1) + ' BC';
   }
-  return String(year);
+  return String(year);  // No "AD" suffix for positive years
+}
+
+// Gregorian calendar reform date: October 15, 1582
+// Before this date, use Julian calendar (following NASA/Stellarium convention)
+const GREGORIAN_REFORM_DATE = new Date(1582, 9, 15); // Oct 15, 1582
+
+// Convert a JavaScript Date (which is proleptic Gregorian) to Julian calendar date
+// Returns { year, month, day } in Julian calendar
+function gregorianToJulian(date) {
+  // JavaScript dates are in proleptic Gregorian calendar
+  // We need to convert to Julian for dates before 1582-10-15
+  const year = date.getFullYear();
+  const month = date.getMonth(); // 0-indexed
+  const day = date.getDate();
+  
+  // Calculate Julian Day Number from Gregorian date
+  const a = Math.floor((14 - (month + 1)) / 12);
+  const y = year + 4800 - a;
+  const m = (month + 1) + 12 * a - 3;
+  
+  // Julian Day Number for Gregorian calendar
+  const jdn = day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+  
+  // Convert JDN back to Julian calendar date
+  const c = jdn + 32082;
+  const d = Math.floor((4 * c + 3) / 1461);
+  const e = c - Math.floor(1461 * d / 4);
+  const n = Math.floor((5 * e + 2) / 153);
+  
+  const julianDay = e - Math.floor((153 * n + 2) / 5) + 1;
+  const julianMonth = n + 3 - 12 * Math.floor(n / 10); // 1-indexed
+  const julianYear = d - 4800 + Math.floor(n / 10);
+  
+  return { year: julianYear, month: julianMonth - 1, day: julianDay }; // month 0-indexed to match JS
+}
+
+// Check if a date is before the Gregorian reform
+function isBeforeGregorianReform(date) {
+  return date < GREGORIAN_REFORM_DATE;
+}
+
+// Get formatted date components (handles Julian calendar for pre-1582 dates)
+function getFormattedDateParts(date) {
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                  'July', 'August', 'September', 'October', 'November', 'December'];
+  const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  
+  let year, month, day, weekday;
+  let isJulian = false;
+  
+  if (isBeforeGregorianReform(date)) {
+    const julian = gregorianToJulian(date);
+    year = julian.year;
+    month = julian.month;
+    day = julian.day;
+    // Calculate day of week from the JS date (this is correct since it's based on actual time)
+    weekday = date.getDay();
+    isJulian = true;
+  } else {
+    year = date.getFullYear();
+    month = date.getMonth();
+    day = date.getDate();
+    weekday = date.getDay();
+  }
+  
+  // Year string: only BC suffix, never AD
+  const yearStr = year <= 0 ? `${Math.abs(year - 1)} BC` : `${year}`;
+  
+  return {
+    year,
+    yearStr,
+    month,
+    day,
+    weekday,
+    weekdayName: weekdays[weekday],
+    monthName: months[month],
+    shortMonthName: shortMonths[month],
+    isJulian,
+    calendarSuffix: isJulian ? ' (Julian)' : ''
+  };
+}
+
+// Format a date for display in day detail panel: "Monday, January 1, 2025"
+function formatDisplayDate(date) {
+  const parts = getFormattedDateParts(date);
+  return `${parts.weekdayName}, ${parts.monthName} ${parts.day}, ${parts.yearStr}${parts.calendarSuffix}`;
 }
 
 function getMoonIcon() {
@@ -2415,6 +3447,26 @@ function getMoonLabel() {
   if (state.moonPhase === 'dark') return 'Dark Moon';
   if (state.moonPhase === 'crescent') return 'Crescent';
   return 'New Moon';
+}
+
+// Get dynamic description for Renewed Moon based on current moon phase setting
+function getRenewedMoonDescription() {
+  const dayStartLabel = getDayStartLabel();
+  const isCrescentSunset = state.moonPhase === 'crescent' && 
+                           state.dayStartTime === 'evening' && 
+                           state.dayStartAngle === 0;
+  
+  if (state.moonPhase === 'full') {
+    return `Month begins at ${dayStartLabel} after full moon`;
+  } else if (state.moonPhase === 'dark') {
+    return `Month begins at ${dayStartLabel} after dark moon (conjunction)`;
+  } else if (state.moonPhase === 'crescent') {
+    if (isCrescentSunset) {
+      return 'Month begins at sunset when first crescent is sighted';
+    }
+    return `Month begins at ${dayStartLabel} after crescent sighting`;
+  }
+  return 'Beginning of the month';
 }
 
 function generateCalendar(options = {}) {
@@ -2442,12 +3494,35 @@ function generateCalendar(options = {}) {
   updateUI();
   
   const springEquinox = Astronomy.Seasons(state.year).mar_equinox.date;
+  const nextSpringEquinox = Astronomy.Seasons(state.year + 1).mar_equinox.date;
   const moonEvents = findMoonEvents(state.year, state.moonPhase);
   
-  let nissanMoon = moonEvents.find(m => m >= springEquinox);
+  // Get year start point based on yearStartRule setting
+  const yearStartPoint = getYearStartPoint(state.year);
+  const nextYearStartPoint = getYearStartPoint(state.year + 1);
+  
+  // Find first moon event on or after the year start point
+  // The resulting month's Day 1 must start after the year start point
+  let nissanMoon = moonEvents.find(m => m >= yearStartPoint);
   if (!nissanMoon) nissanMoon = moonEvents[0];
   
-  state.lunarMonths = buildLunarMonths(nissanMoon, moonEvents);
+  // Store equinoxes and year start points in state for use in day details
+  state.springEquinox = springEquinox;
+  state.nextSpringEquinox = nextSpringEquinox;
+  state.yearStartPoint = yearStartPoint;
+  state.nextYearStartPoint = nextYearStartPoint;
+  
+  state.lunarMonths = buildLunarMonths(nissanMoon, moonEvents, springEquinox, nextYearStartPoint);
+  
+  // Guard against empty months array
+  if (state.lunarMonths.length === 0) {
+    console.error('No lunar months generated - check moon event data');
+    console.error('nissanMoon:', nissanMoon);
+    console.error('moonEvents count:', moonEvents.length);
+    console.error('yearStartPoint:', yearStartPoint);
+    console.error('nextYearStartPoint:', nextYearStartPoint);
+    return;
+  }
   
   // If preserving selection, find which lunar day contains the saved UTC timestamp
   if (preserveSelection && savedTimestamp) {
@@ -2505,17 +3580,50 @@ function findMoonEvents(year, phaseType) {
   } else if (phaseType === 'dark') {
     targetPhase = 0;
   } else if (phaseType === 'crescent') {
-    targetPhase = 0; // We'll find conjunction then add days for first visibility
+    targetPhase = 0; // We'll find conjunction then calculate first visibility
   }
+  
+  // Create observer for crescent visibility calculations
+  const observer = new Astronomy.Observer(state.lat, state.lon, 0);
   
   while (searchDate < endDate) {
     const result = Astronomy.SearchMoonPhase(targetPhase, searchDate, 40);
     if (result) {
       let eventDate = result.date;
       
-      // For crescent, add ~1.5 days after conjunction for first visibility
+      // For crescent, find the first evening where moon altitude at sunset exceeds threshold
       if (phaseType === 'crescent') {
-        eventDate = new Date(result.date.getTime() + 1.5 * 24 * 60 * 60 * 1000);
+        const conjunction = result.date;
+        let visibilityDate = null;
+        
+        // Check each evening for up to 5 days after conjunction
+        for (let dayOffset = 0; dayOffset < 5; dayOffset++) {
+          // Create a date at midnight UTC of the target day to ensure we find THAT day's sunset
+          const conjunctionDay = new Date(Date.UTC(
+            conjunction.getUTCFullYear(),
+            conjunction.getUTCMonth(),
+            conjunction.getUTCDate() + dayOffset,
+            0, 0, 0
+          ));
+          
+          // Find sunset on this day (searching from midnight will find this evening's sunset)
+          const sunset = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, -1, conjunctionDay, 1);
+          
+          if (sunset) {
+            // Calculate moon position at sunset
+            const moonEquator = Astronomy.Equator(Astronomy.Body.Moon, sunset.date, observer, true, true);
+            const moonHorizon = Astronomy.Horizon(sunset.date, observer, moonEquator.ra, moonEquator.dec, 'normal');
+            
+            // Check if moon altitude exceeds threshold
+            if (moonHorizon.altitude >= state.crescentThreshold) {
+              visibilityDate = sunset.date;
+              break;
+            }
+          }
+        }
+        
+        // Use visibility date if found, otherwise fallback to conjunction + 1.5 days
+        eventDate = visibilityDate || new Date(conjunction.getTime() + 1.5 * 24 * 60 * 60 * 1000);
       }
       
       events.push(eventDate);
@@ -2538,36 +3646,68 @@ function getLocalDateFromUTC(utcDate, longitude) {
   return new Date(localTime.getFullYear(), localTime.getMonth(), localTime.getDate());
 }
 
-function buildLunarMonths(nissanMoon, allMoonEvents) {
+function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStartPoint) {
   const months = [];
-  let startIdx = allMoonEvents.findIndex(m => m.getTime() === nissanMoon.getTime());
+  
+  // Use fuzzy timestamp comparison (within 1 second) to handle potential Date object differences
+  let startIdx = allMoonEvents.findIndex(m => Math.abs(m.getTime() - nissanMoon.getTime()) < 1000);
   if (startIdx === -1) startIdx = allMoonEvents.findIndex(m => m >= nissanMoon);
+  if (startIdx === -1) startIdx = 0; // Final fallback to first event
+  
+  // Debug logging for troubleshooting empty months
+  console.log('buildLunarMonths debug:', {
+    nissanMoon: nissanMoon?.toISOString(),
+    startIdx,
+    totalEvents: allMoonEvents.length,
+    nextYearStartPoint: nextYearStartPoint?.toISOString(),
+    firstMoonEvent: allMoonEvents[startIdx]?.toISOString(),
+    moonPhase: state.moonPhase
+  });
   
   // Get observer's longitude for local time calculation
   const observerLon = parseFloat(document.getElementById('lon-input')?.value) || 35.2137;
   
-  // Find next year's spring equinox to determine when this lunar year ends
-  const nextSpringEquinox = Astronomy.Seasons(state.year + 1).mar_equinox.date;
+  // Check if we're in crescent + evening + 0° mode (special case)
+  const isCrescentSunset = state.moonPhase === 'crescent' && 
+                           state.dayStartTime === 'evening' && 
+                           state.dayStartAngle === 0;
   
   for (let m = 0; m < 13 && (startIdx + m) < allMoonEvents.length - 1; m++) {
     const moonEvent = allMoonEvents[startIdx + m];
     
-    // Stop if this moon event is after the next spring equinox (belongs to next year)
-    if (moonEvent >= nextSpringEquinox) break;
+    // Stop if this moon event is after the next year's start point (belongs to next year)
+    if (moonEvent >= nextYearStartPoint) break;
     
     const nextMoonEvent = allMoonEvents[startIdx + m + 1];
     
     // Calculate local date of moon event based on observer's longitude
     const moonEventLocalDate = getLocalDateFromUTC(moonEvent, observerLon);
     
-    // Month starts the day AFTER the moon event in local time
-    const monthStartDate = new Date(moonEventLocalDate);
-    monthStartDate.setDate(monthStartDate.getDate() + 1);
+    // Determine when Day 1 starts based on day start settings
+    let monthStartDate;
     
-    // Same for next month
+    if (isCrescentSunset) {
+      // Exception: Crescent + Evening + 0° (Sunset)
+      // The day containing the crescent sighting IS Day 1
+      // Day 1 starts at sunset of that day
+      monthStartDate = new Date(moonEventLocalDate);
+    } else {
+      // General rule: Day 1 starts at the NEXT day start after the moon event
+      // The day containing the moon event is the last day of the prior month
+      monthStartDate = new Date(moonEventLocalDate);
+      monthStartDate.setDate(monthStartDate.getDate() + 1);
+    }
+    
+    // Same logic for next month start
     const nextMoonEventLocalDate = getLocalDateFromUTC(nextMoonEvent, observerLon);
-    const nextMonthStart = new Date(nextMoonEventLocalDate);
-    nextMonthStart.setDate(nextMonthStart.getDate() + 1);
+    let nextMonthStart;
+    
+    if (isCrescentSunset) {
+      nextMonthStart = new Date(nextMoonEventLocalDate);
+    } else {
+      nextMonthStart = new Date(nextMoonEventLocalDate);
+      nextMonthStart.setDate(nextMonthStart.getDate() + 1);
+    }
     
     const daysInMonth = Math.round((nextMonthStart - monthStartDate) / (24 * 60 * 60 * 1000));
     
@@ -2622,6 +3762,16 @@ function buildLunarMonths(nissanMoon, allMoonEvents) {
         else if (d === 28) moonPhase = '🌒';
       }
       
+      // Check if spring equinox falls on this day
+      const dayStart = dayDate.getTime();
+      const dayEnd = dayStart + 24 * 60 * 60 * 1000;
+      let equinox = null;
+      if (springEquinox && springEquinox.getTime() >= dayStart && springEquinox.getTime() < dayEnd) {
+        equinox = { type: 'spring', date: springEquinox };
+      } else if (state.nextSpringEquinox && state.nextSpringEquinox.getTime() >= dayStart && state.nextSpringEquinox.getTime() < dayEnd) {
+        equinox = { type: 'spring', date: state.nextSpringEquinox };
+      }
+      
       days.push({
         lunarDay: d,
         gregorianDate: dayDate,
@@ -2630,7 +3780,8 @@ function buildLunarMonths(nissanMoon, allMoonEvents) {
         feast,
         feastDayNum,
         feasts,  // Array of all feasts for this day
-        moonPhase
+        moonPhase,
+        equinox  // Spring equinox if it falls on this day
       });
     }
     
@@ -2649,6 +3800,13 @@ function buildLunarMonths(nissanMoon, allMoonEvents) {
 
 function formatShortDate(date) {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  
+  if (isBeforeGregorianReform(date)) {
+    // Use Julian calendar for dates before Oct 15, 1582
+    const julian = gregorianToJulian(date);
+    return `${months[julian.month]} ${julian.day}`;
+  }
+  
   return `${months[date.getMonth()]} ${date.getDate()}`;
 }
 
@@ -2663,6 +3821,124 @@ function getSunriseTimestamp(date) {
   }
   // Fallback to 6am local solar time if no sunrise found (polar regions)
   return date.getTime() + 6 * 60 * 60 * 1000;
+}
+
+// Calculate moon altitude at sunset for a given date
+// Returns an object with sunset time, moon altitude, and elongation
+function getMoonAltitudeAtSunset(date) {
+  try {
+    const observer = new Astronomy.Observer(state.lat, state.lon, 0);
+    const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
+    
+    // Find sunset on this day
+    const sunset = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, -1, midnight, 1);
+    
+    if (!sunset) {
+      return null;
+    }
+    
+    // Calculate moon position at sunset
+    const moonEquator = Astronomy.Equator(Astronomy.Body.Moon, sunset.date, observer, true, true);
+    const moonHorizon = Astronomy.Horizon(sunset.date, observer, moonEquator.ra, moonEquator.dec, 'normal');
+    
+    // Calculate sun position at sunset
+    const sunEquator = Astronomy.Equator(Astronomy.Body.Sun, sunset.date, observer, true, true);
+    
+    // Calculate elongation using spherical geometry (angular distance between RA/Dec positions)
+    // Convert RA from hours to degrees
+    const moonRaDeg = moonEquator.ra * 15;
+    const sunRaDeg = sunEquator.ra * 15;
+    const moonDecRad = moonEquator.dec * Math.PI / 180;
+    const sunDecRad = sunEquator.dec * Math.PI / 180;
+    const deltaRaRad = (moonRaDeg - sunRaDeg) * Math.PI / 180;
+    
+    // Spherical law of cosines for angular distance
+    const cosAngle = Math.sin(sunDecRad) * Math.sin(moonDecRad) + 
+                     Math.cos(sunDecRad) * Math.cos(moonDecRad) * Math.cos(deltaRaRad);
+    const elongation = Math.acos(Math.max(-1, Math.min(1, cosAngle))) * 180 / Math.PI;
+    
+    return {
+      sunsetTime: sunset.date,
+      moonAltitude: moonHorizon.altitude,
+      moonAzimuth: moonHorizon.azimuth,
+      elongation: elongation
+    };
+  } catch (e) {
+    console.error('Error calculating moon altitude at sunset:', e);
+    return null;
+  }
+}
+
+// Get the day start time for a given date based on current settings
+// Returns a UTC timestamp for when the day starts
+function getDayStartTime(date) {
+  const observer = new Astronomy.Observer(state.lat, state.lon, 0);
+  const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
+  
+  // Direction: -1 for evening (descending sun), +1 for morning (ascending sun)
+  const direction = state.dayStartTime === 'evening' ? -1 : +1;
+  
+  // For evening, we need to search from noon of the previous day
+  // For morning, we search from midnight of this day
+  let searchStart = midnight;
+  if (state.dayStartTime === 'evening') {
+    // Search starting from noon of the previous day to find evening twilight
+    searchStart = new Date(midnight.getTime() - 12 * 60 * 60 * 1000);
+  }
+  
+  let result;
+  if (state.dayStartAngle === 0) {
+    // Use sunrise/sunset (sun at horizon)
+    result = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, direction, searchStart, 1);
+  } else {
+    // Use twilight angle (sun below horizon)
+    // SearchAltitude finds when sun reaches the specified altitude
+    result = Astronomy.SearchAltitude(Astronomy.Body.Sun, observer, direction, searchStart, 1, -state.dayStartAngle);
+  }
+  
+  if (result) {
+    return result.date.getTime();
+  }
+  
+  // Fallback for polar regions
+  if (state.dayStartTime === 'morning') {
+    return midnight.getTime() + 6 * 60 * 60 * 1000; // 6am
+  } else {
+    return midnight.getTime() - 6 * 60 * 60 * 1000; // 6pm previous day
+  }
+}
+
+// Get the year start point based on yearStartRule setting
+function getYearStartPoint(year) {
+  const springEquinox = Astronomy.Seasons(year).mar_equinox.date;
+  
+  if (state.yearStartRule === '13daysBefore') {
+    // Return 13 days before the equinox
+    return new Date(springEquinox.getTime() - 13 * 24 * 60 * 60 * 1000);
+  }
+  
+  return springEquinox;
+}
+
+// Get human-readable label for current day start setting
+function getDayStartLabel() {
+  const timeLabel = state.dayStartTime === 'evening' ? 'evening' : 'morning';
+  
+  let angleLabel;
+  switch (state.dayStartAngle) {
+    case 0: angleLabel = state.dayStartTime === 'evening' ? 'sunset' : 'sunrise'; break;
+    case 6: angleLabel = 'civil twilight'; break;
+    case 12: angleLabel = 'nautical twilight'; break;
+    case 18: angleLabel = 'astronomical twilight'; break;
+    default: angleLabel = `${state.dayStartAngle}° twilight`;
+  }
+  
+  // Return "morning nautical twilight" instead of "nautical twilight (morning)"
+  // For sunrise/sunset, just return that without time prefix
+  if (state.dayStartAngle === 0) {
+    return angleLabel;
+  }
+  return `${timeLabel} ${angleLabel}`;
 }
 
 // Convert UTC timestamp to local time at the selected longitude
@@ -2712,16 +3988,36 @@ function parseDatetimeLocal(datetimeStr) {
 function formatFullDate(date) {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 
                   'July', 'August', 'September', 'October', 'November', 'December'];
-  const year = date.getFullYear();
-  const yearStr = year <= 0 ? `${Math.abs(year - 1)} BC` : `${year} AD`;
-  return `${months[date.getMonth()]} ${date.getDate()}, ${yearStr}`;
+  
+  let year, month, day, calendarSuffix;
+  
+  if (isBeforeGregorianReform(date)) {
+    // Use Julian calendar for dates before Oct 15, 1582
+    const julian = gregorianToJulian(date);
+    year = julian.year;
+    month = julian.month;
+    day = julian.day;
+    calendarSuffix = ' (Julian)';
+  } else {
+    // Use Gregorian calendar
+    year = date.getFullYear();
+    month = date.getMonth();
+    day = date.getDate();
+    calendarSuffix = '';
+  }
+  
+  // Format year: only show BC suffix, never AD
+  const yearStr = year <= 0 ? `${Math.abs(year - 1)} BC` : `${year}`;
+  
+  return `${months[month]} ${day}, ${yearStr}${calendarSuffix}`;
 }
 
-// Calculate the "dateline" longitude - the first place to start the new month
+// Calculate the "dateline" longitude - the first place to start the new day
 // At any UTC time H, solar noon is at longitude = (12 - H) * 15 degrees
 // Sunrise occurs 90° to the WEST of the subsolar point (6 hours earlier in local time)
-// The dateline is where sunrise ("first light") is occurring at the moment of the moon event
-// This is the first place on Earth to begin a new day when the sign is visible that night
+// Sunset occurs 90° to the EAST of the subsolar point (6 hours later in local time)
+// The dateline is where the day start event is occurring at the moment of the moon event
+// This is the first place on Earth to begin a new day
 function calculateDatelineLongitude(moonEventDate, moonPhase) {
   // Get UTC hours as decimal
   const utcHours = moonEventDate.getUTCHours() + moonEventDate.getUTCMinutes() / 60;
@@ -2731,9 +4027,22 @@ function calculateDatelineLongitude(moonEventDate, moonPhase) {
   // At UTC 0:00, noon is at 180° (International Date Line)
   const subsolarLon = (12 - utcHours) * 15;
   
-  // Sunrise is 90° to the WEST of the subsolar point
-  // (At any instant, places west of noon are in morning)
-  let datelineLon = subsolarLon - 90;
+  let datelineLon;
+  if (state.dayStartTime === 'evening') {
+    // Sunset is 90° to the EAST of the subsolar point
+    // (At any instant, places east of noon are in afternoon/evening)
+    datelineLon = subsolarLon + 90;
+    // Adjust for twilight angle - evening twilight occurs BEFORE sunset (further east)
+    // Roughly 4° of longitude per 1° of sun angle (varies by latitude)
+    datelineLon += state.dayStartAngle * 4;
+  } else {
+    // Sunrise is 90° to the WEST of the subsolar point
+    // (At any instant, places west of noon are in morning)
+    datelineLon = subsolarLon - 90;
+    // Adjust for twilight angle - morning twilight occurs BEFORE sunrise (further east)
+    // For morning, twilight starts earlier, so we add to move east
+    datelineLon += state.dayStartAngle * 4;
+  }
   
   // Normalize to -180 to 180
   while (datelineLon > 180) datelineLon -= 360;
@@ -2751,11 +4060,32 @@ function getDatelineCity(lon) {
   if (lon >= 35) return 'Middle East';
   if (lon >= 10) return 'Europe / Africa';
   if (lon >= -30) return 'Atlantic Ocean';
-  if (lon >= -60) return 'South America (East)';
-  if (lon >= -90) return 'Americas (Central)';
+  if (lon >= -50) return 'South America (East)';
+  if (lon >= -70) return 'South America (West) / Caribbean';
+  if (lon >= -85) return 'Americas (Eastern US / Central America)';
+  if (lon >= -105) return 'Americas (Central US / Mexico)';
   if (lon >= -120) return 'Americas (West Coast)';
   if (lon >= -150) return 'Alaska / Hawaii';
   return 'Pacific Ocean';
+}
+
+// Get the day start event name for display
+function getDayStartEventName() {
+  if (state.dayStartAngle === 0) {
+    return state.dayStartTime === 'evening' ? 'Sunset' : 'Sunrise';
+  } else if (state.dayStartAngle === 6) {
+    return state.dayStartTime === 'evening' ? 'Civil Dusk' : 'Civil Dawn';
+  } else if (state.dayStartAngle === 12) {
+    return state.dayStartTime === 'evening' ? 'Nautical Dusk' : 'Nautical Dawn';
+  } else if (state.dayStartAngle === 18) {
+    return state.dayStartTime === 'evening' ? 'Astronomical Dusk' : 'Astronomical Dawn';
+  }
+  return state.dayStartTime === 'evening' ? 'Evening Twilight' : 'Morning Twilight';
+}
+
+// Get the day start icon for the marker
+function getDayStartIcon() {
+  return state.dayStartTime === 'evening' ? '🌅' : '☀';
 }
 
 function renderDatelineVisualization(moonEventDate) {
@@ -2770,8 +4100,15 @@ function renderDatelineVisualization(moonEventDate) {
     ? `${Math.abs(datelineLon).toFixed(1)}°E` 
     : `${Math.abs(datelineLon).toFixed(1)}°W`;
   
-  // Show UTC hour for debugging/verification
+  // Format moon event date for display
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const moonDateStr = `${months[moonEventDate.getUTCMonth()]} ${moonEventDate.getUTCDate()}, ${moonEventDate.getUTCFullYear()}`;
   const utcTimeStr = `${Math.floor(utcHours).toString().padStart(2,'0')}:${Math.round((utcHours % 1) * 60).toString().padStart(2,'0')} UTC`;
+  
+  // Get day start event name and icon based on settings
+  const dayStartEvent = getDayStartEventName();
+  const dayStartIcon = getDayStartIcon();
+  const markerLabel = dayStartEvent.toUpperCase();
   
   // Current location marker position
   const currentLat = parseFloat(document.getElementById('lat-input')?.value) || 31.7683;
@@ -2782,14 +4119,17 @@ function renderDatelineVisualization(moonEventDate) {
   
   return `
     <div class="dateline-container">
-      <div class="dateline-label">Sunrise at moment of ${getMoonLabel()} — ${utcTimeStr}</div>
+      <div class="dateline-label">${dayStartEvent} line at moment of ${getMoonLabel()} — ${moonDateStr} — ${utcTimeStr}</div>
       <div class="dateline-map" onclick="handleMapClick(event)">
         <div class="dateline-map-bg">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Blue_Marble_2002.png/1280px-Blue_Marble_2002.png" 
                alt="World Map"
                onerror="this.style.display='none'">
         </div>
-        <div class="dateline-marker" style="left: ${position}%"></div>
+        <div class="dateline-marker" style="left: ${position}%">
+          <span class="dateline-marker-icon">${dayStartIcon}</span>
+          <span class="dateline-marker-label">${markerLabel}</span>
+        </div>
         <div class="dateline-location-marker" style="left: ${locX}%; top: ${locY}%" title="Your Location: ${currentLat.toFixed(2)}°, ${currentLon.toFixed(2)}°"></div>
       </div>
       <div class="dateline-cities">
@@ -2799,9 +4139,9 @@ function renderDatelineVisualization(moonEventDate) {
         <span>90°E</span>
         <span>180°E</span>
       </div>
-      <div class="dateline-info">Dateline: ${lonStr} — ${region}</div>
+      <div class="dateline-info">Day start line: ${lonStr} — ${region}</div>
       <div class="dateline-info" style="color: #7ec8e3;">Your location: ${currentLat.toFixed(2)}°${currentLat >= 0 ? 'N' : 'S'}, ${Math.abs(currentLon).toFixed(2)}°${currentLon >= 0 ? 'E' : 'W'}</div>
-      <div class="dateline-click-hint">Click map to change location • First to see sunrise at ${getMoonLabel()} starts month first</div>
+      <div class="dateline-click-hint">Click map to change location • First to reach ${dayStartEvent.toLowerCase()} after ${getMoonLabel()} starts month first</div>
     </div>
   `;
 }
@@ -2893,21 +4233,24 @@ function renderMonth(month) {
               <div class="moon-gear-badge">⚙</div>
             </div>
           </div>
-          <div class="calendar-title" onclick="toggleMonthPicker()">
+          <div class="calendar-title">
             <div class="site-title">Lunar Sabbath Calendar</div>
-            <div class="site-tagline">a time tested tradition <a href="/book/" class="book-link" onclick="event.stopPropagation()">📖</a></div>
-            <div class="month-year-row">
+            <div class="site-tagline">a time tested tradition <a href="/book/" class="book-link">📖</a></div>
+            <div class="month-year-row" onclick="toggleMonthPicker()">
               <div class="month-name">${month.name} <span class="dropdown-arrow">▼</span></div>
               <div class="year">${displayYear}</div>
             </div>
           </div>
+          <button class="export-header-btn" onclick="event.stopPropagation(); toggleExportModal();" title="View Feasts & Export to Calendar">
+            <span class="icon">📅</span>
+            <span class="label">Feasts</span>
+          </button>
         </div>
         <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
           <div class="gregorian">${day1Date}<span class="day-year">${day1Year}</span></div>
           <div class="moon-phase">${day1 ? day1.moonPhase : ''}</div>
           <div class="lunar-day">1</div>
           ${day1FeastIcons}
-          ${state.highlightedLunarDay === 1 ? '<button class="jump-btn" onclick="event.stopPropagation(); toggleDateJump()">+</button>' : ''}
         </div>
       </div>
       
@@ -2950,9 +4293,16 @@ function renderMonth(month) {
       if (day.lunarDay === state.highlightedLunarDay) classes.push('highlighted');
       
       let feastLabel = '';
+      const icons = [];
       if (day.feasts && day.feasts.length > 0) {
         // Show icons for feasts (unique icons only)
-        const icons = [...new Set(day.feasts.map(f => f.feast.icon))];
+        icons.push(...new Set(day.feasts.map(f => f.feast.icon)));
+      }
+      // Add equinox icon if applicable
+      if (day.equinox) {
+        icons.push('☀️⚖️');
+      }
+      if (icons.length > 0) {
         feastLabel = `<div class="feast-icons">${icons.join('')}</div>`;
       }
       
@@ -2969,7 +4319,6 @@ function renderMonth(month) {
           <div class="moon-phase">${day.moonPhase}</div>
           <div class="lunar-day">${day.lunarDay}</div>
           ${feastLabel}
-          ${isHighlighted ? '<button class="jump-btn" onclick="event.stopPropagation(); toggleDateJump()">+</button>' : ''}
         </div>
       `;
     }
@@ -2988,8 +4337,14 @@ function renderMonth(month) {
     if (day30.lunarDay === state.highlightedLunarDay) classes.push('highlighted');
     
     let feastLabel = '';
+    const icons = [];
     if (day30.feasts && day30.feasts.length > 0) {
-      const icons = [...new Set(day30.feasts.map(f => f.feast.icon))];
+      icons.push(...new Set(day30.feasts.map(f => f.feast.icon)));
+    }
+    if (day30.equinox) {
+      icons.push('☀️⚖️');
+    }
+    if (icons.length > 0) {
       feastLabel = `<div class="feast-icons">${icons.join('')}</div>`;
     }
     
@@ -3005,7 +4360,6 @@ function renderMonth(month) {
         <div class="moon-phase">${day30.moonPhase}</div>
         <div class="lunar-day">${day30.lunarDay}</div>
         ${feastLabel}
-        ${isHighlighted30 ? '<button class="jump-btn" onclick="event.stopPropagation(); toggleDateJump()">+</button>' : ''}
       </div>
     `;
   } else {
@@ -3069,6 +4423,9 @@ function renderFeastTable(months) {
   // Track which feasts we've already shown (for multi-month feasts like Hanukkah)
   const shownFeasts = new Set();
   
+  // Collect all feast entries first
+  const feastEntries = [];
+  
   for (const feast of FEASTS) {
     // Skip if this is a continuation entry we've already handled
     if (feast.continuesNextMonth === undefined && shownFeasts.has(feast.name)) continue;
@@ -3109,12 +4466,35 @@ function renderFeastTable(months) {
     const monthIdx = months.findIndex(m => m.monthNumber === feast.month);
     const dayIdx = feast.day;
     
+    feastEntries.push({
+      feast,
+      day,
+      dateStr,
+      gregDate,
+      monthIdx,
+      dayIdx,
+      sortDate: day.gregorianDate
+    });
+  }
+  
+  // Sort by Gregorian date
+  feastEntries.sort((a, b) => a.sortDate.getTime() - b.sortDate.getTime());
+  
+  // Render sorted entries
+  for (const entry of feastEntries) {
+    // Use dynamic description for Renewed Moon based on current moon phase setting
+    const description = entry.feast.name === 'Renewed Moon' 
+      ? getRenewedMoonDescription() 
+      : entry.feast.description;
+    
     tbody.innerHTML += `
       <tr>
-        <td><a href="#" class="feast-jump" data-month="${monthIdx}" data-day="${dayIdx}" style="color: inherit; text-decoration: none;"><strong>${feast.name}</strong></a></td>
-        <td><a href="#" class="feast-jump" data-month="${monthIdx}" data-day="${dayIdx}" style="color: inherit; text-decoration: none;">${dateStr}</a></td>
-        <td><a href="#" class="feast-jump" data-month="${monthIdx}" data-day="${dayIdx}" style="color: inherit; text-decoration: none;">${gregDate}</a></td>
-        <td><a href="${feast.chapter}" style="color: #2c5282;">${feast.description} →</a></td>
+        <td><a href="#" class="feast-jump" data-month="${entry.monthIdx}" data-day="${entry.dayIdx}" style="color: inherit; text-decoration: none;"><strong>${entry.feast.name}</strong></a></td>
+        <td><a href="#" class="feast-jump" data-month="${entry.monthIdx}" data-day="${entry.dayIdx}" style="color: inherit; text-decoration: none;">
+          <div>${entry.dateStr}</div>
+          <div style="color: #666; font-size: 0.9em;">${entry.gregDate}</div>
+        </a></td>
+        <td><a href="${entry.feast.chapter}" style="color: #2c5282;">${description} →</a></td>
       </tr>
     `;
   }
@@ -3123,7 +4503,7 @@ function renderFeastTable(months) {
 document.addEventListener('DOMContentLoaded', function() {
   // Check if URL has parameters - if so, load from URL, otherwise jump to today
   const params = new URLSearchParams(window.location.search);
-  if (params.has('year')) {
+  if (params.has('year') || params.has('view')) {
     // URL has state - restore from URL
     updateUI(); // Set UI from localStorage first
     generateCalendar();
@@ -3187,6 +4567,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Helper function to refresh day detail panel if one is currently shown
+function refreshDayDetailIfVisible() {
+  if (state.highlightedLunarDay !== null && state.lunarMonths[state.currentMonthIndex]) {
+    const month = state.lunarMonths[state.currentMonthIndex];
+    const dayObj = month.days.find(d => d.lunarDay === state.highlightedLunarDay);
+    if (dayObj) {
+      showDayDetail(dayObj, month);
+    }
+  }
+}
+
 // Show the day detail panel with information about the selected day
 function showDayDetail(dayObj, month) {
   const panel = document.getElementById('day-detail-panel');
@@ -3196,10 +4587,9 @@ function showDayDetail(dayObj, month) {
   const lunarDateStr = `Day ${dayObj.lunarDay} of the ${month.monthNumber}${ordinal} Month`;
   panel.querySelector('.day-detail-lunar').textContent = lunarDateStr;
   
-  // Populate gregorian date
+  // Populate gregorian/julian date
   const gregDate = dayObj.gregorianDate;
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  panel.querySelector('.day-detail-gregorian').textContent = gregDate.toLocaleDateString('en-US', options);
+  panel.querySelector('.day-detail-gregorian').textContent = formatDisplayDate(gregDate);
   
   // Populate feasts
   const feastsContainer = panel.querySelector('.day-detail-feasts');
@@ -3219,24 +4609,26 @@ function showDayDetail(dayObj, month) {
         
         // Format moon event date in a friendly way
         const moonEventDate = new Date(moonEventTime);
-        const dayOfWeek = moonEventDate.toLocaleDateString('en-US', { weekday: 'long' });
-        const monthName = moonEventDate.toLocaleDateString('en-US', { month: 'short' });
-        const dayNum = moonEventDate.getDate();
+        const moonParts = getFormattedDateParts(moonEventDate);
+        const dayOfWeek = moonParts.weekdayName;
+        const monthName = moonParts.shortMonthName;
+        const dayNum = moonParts.day;
         const daySuffix = getOrdinalSuffix(dayNum);
-        const year = moonEventDate.getFullYear();
+        const year = moonParts.yearStr;
         const moonTimeStr = moonEventDate.toLocaleTimeString('en-US', { 
           hour: 'numeric', minute: '2-digit', hour12: true 
         });
         
-        // Get sunrise time
-        const sunriseTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
-        const sunriseDate = new Date(sunriseTimestamp);
-        const sunriseStr = sunriseDate.toLocaleTimeString('en-US', { 
+        // Get day start time based on current settings
+        const dayStartTimestamp = getDayStartTime(dayObj.gregorianDate);
+        const dayStartDate = new Date(dayStartTimestamp);
+        const dayStartStr = dayStartDate.toLocaleTimeString('en-US', { 
           hour: 'numeric', minute: '2-digit', hour12: true 
         });
+        const dayStartLabel = getDayStartLabel();
         
-        // Calculate time difference
-        const diffMs = sunriseTimestamp - moonEventTime.getTime();
+        // Calculate time difference between moon event and day start
+        const diffMs = dayStartTimestamp - moonEventTime.getTime();
         const diffMins = Math.round(Math.abs(diffMs) / (1000 * 60));
         const hours = Math.floor(diffMins / 60);
         const mins = diffMins % 60;
@@ -3255,15 +4647,63 @@ function showDayDetail(dayObj, month) {
         // Determine tense based on whether the date is past or future
         const now = new Date();
         const isPast = moonEventDate < now;
-        const observedVerb = isPast ? 'was observed' : 'will be observed';
+        const occurVerb = isPast ? 'occurred' : 'will occur';
+        
+        // Check if this is crescent + sunset mode (special case where crescent day IS Day 1)
+        const isCrescentSunset = state.moonPhase === 'crescent' && 
+                                 state.dayStartTime === 'evening' && 
+                                 state.dayStartAngle === 0;
+        
+        // Get moon altitude at sunset for crescent mode
+        let crescentAltitudeInfo = '';
+        if (state.moonPhase === 'crescent') {
+          const moonData = getMoonAltitudeAtSunset(moonEventDate);
+          if (moonData) {
+            const altStr = moonData.moonAltitude.toFixed(1);
+            const elongStr = moonData.elongation.toFixed(1);
+            const sunsetStr = moonData.sunsetTime.toLocaleTimeString('en-US', { 
+              hour: 'numeric', minute: '2-digit', hour12: true 
+            });
+            crescentAltitudeInfo = ` At sunset (${sunsetStr}), the moon was ${altStr}° above the horizon (threshold: ${state.crescentThreshold}°, elongation: ${elongStr}°).`;
+          }
+        }
+        
+        // Build explanation based on moon phase type and day start settings
+        // beforeAfter: 'before' means day start is AFTER moon event (positive diffMs)
+        // beforeAfter: 'after' means day start is BEFORE moon event (negative diffMs)
+        const laterEarlier = beforeAfter === 'before' ? 'later' : 'earlier';
+        
+        let explanationText = '';
+        if (state.moonPhase === 'full') {
+          explanationText = `The Full Moon ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year} at ${moonTimeStr}. ` +
+            `The month begins ${timeDiffStr} ${laterEarlier} at ${dayStartLabel} (${dayStartStr}).`;
+        } else if (state.moonPhase === 'dark') {
+          explanationText = `The Dark Moon (conjunction) ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year} at ${moonTimeStr}. ` +
+            `The month begins ${timeDiffStr} ${laterEarlier} at ${dayStartLabel} (${dayStartStr}).`;
+        } else if (state.moonPhase === 'crescent') {
+          if (isCrescentSunset) {
+            explanationText = `The first visible Crescent Moon ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year}. ` +
+              `The month begins immediately at sunset following the sighting.${crescentAltitudeInfo}`;
+          } else {
+            explanationText = `The first visible Crescent Moon ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year}. ` +
+              `The month begins ${timeDiffStr} ${laterEarlier} at ${dayStartLabel} (${dayStartStr}).${crescentAltitudeInfo}`;
+          }
+        } else {
+          explanationText = `The ${signName} ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year} at ${moonTimeStr}. ` +
+            `The month begins ${timeDiffStr} ${laterEarlier} at ${dayStartLabel} (${dayStartStr}).`;
+        }
         
         basisHtml = `
           <div class="feast-basis">
-            The ${signName} ${observedVerb} ${dayOfWeek} ${monthName} ${dayNum}${daySuffix}, ${year} at ${moonTimeStr}, 
-            which is ${timeDiffStr} ${beforeAfter} first light at ${sunriseStr}.
+            ${explanationText}
           </div>
         `;
       }
+      
+      // Generate dynamic description for Renewed Moon based on current moon phase setting
+      const feastDescription = feast.name === 'Renewed Moon' 
+        ? getRenewedMoonDescription() 
+        : feast.description;
       
       const item = document.createElement('div');
       item.className = 'day-detail-feast-item';
@@ -3271,15 +4711,198 @@ function showDayDetail(dayObj, month) {
         <div class="day-detail-feast-icon">${feast.icon}</div>
         <div class="day-detail-feast-info">
           <div class="day-detail-feast-name">${nameText}</div>
-          <div class="day-detail-feast-desc">${feast.description}</div>
+          <div class="day-detail-feast-desc">${feastDescription}</div>
           ${basisHtml}
           ${feast.chapter ? `<a href="${feast.chapter}" class="day-detail-feast-link">Learn more &rarr;</a>` : ''}
         </div>
       `;
       feastsContainer.appendChild(item);
     }
-  } else {
+  } else if (!dayObj.equinox) {
     feastsContainer.innerHTML = '<div class="day-detail-no-feast">No appointed times on this day</div>';
+  }
+  
+  // Add equinox info if this day has the spring equinox
+  if (dayObj.equinox) {
+    const equinoxDate = dayObj.equinox.date;
+    const eqParts = getFormattedDateParts(equinoxDate);
+    const dayOfWeek = eqParts.weekdayName;
+    const monthName = eqParts.monthName;
+    const dayNum = eqParts.day;
+    const daySuffix = getOrdinalSuffix(dayNum);
+    const year = eqParts.yearStr;
+    const timeStr = equinoxDate.toLocaleTimeString('en-US', { 
+      hour: 'numeric', minute: '2-digit', hour12: true 
+    });
+    
+    const now = new Date();
+    const isPast = equinoxDate < now;
+    const verb = isPast ? 'occurred' : 'will occur';
+    
+    const item = document.createElement('div');
+    item.className = 'day-detail-feast-item';
+    item.innerHTML = `
+      <div class="day-detail-feast-icon">☀️⚖️</div>
+      <div class="day-detail-feast-info">
+        <div class="day-detail-feast-name">Spring Equinox</div>
+        <div class="day-detail-feast-desc">The moment when day and night are equal in length, marking the astronomical beginning of spring.</div>
+        <div class="feast-basis">
+          The Spring Equinox ${verb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year} at ${timeStr}.
+        </div>
+        <a href="/chapters/08-when-does-the-year-start/" class="day-detail-feast-link">Learn more &rarr;</a>
+      </div>
+    `;
+    feastsContainer.appendChild(item);
+  }
+  
+  // Add year start explanation for 1st day of 1st month, or 13th month explanation
+  if (dayObj.lunarDay === 1 && (month.monthNumber === 1 || month.monthNumber === 13)) {
+    const item = document.createElement('div');
+    item.className = 'day-detail-feast-item day-detail-year-info';
+    
+    const totalMonths = state.lunarMonths.length;
+    const has13thMonth = totalMonths === 13;
+    const moonLabel = getMoonLabel();
+    
+    // Get spring equinox for this lunar year
+    const springEquinox = Astronomy.Seasons(state.year).mar_equinox.date;
+    const seqParts = getFormattedDateParts(springEquinox);
+    const equinoxDateStr = `${seqParts.weekdayName}, ${seqParts.monthName} ${seqParts.day}${getOrdinalSuffix(seqParts.day)}, ${seqParts.yearStr}${seqParts.calendarSuffix}`;
+    
+    // Check if we're in crescent + sunset mode
+    const isCrescentSunset = state.moonPhase === 'crescent' && 
+                             state.dayStartTime === 'evening' && 
+                             state.dayStartAngle === 0;
+    
+    // Calculate time from equinox to month start (day 1 day-start)
+    // For crescent+sunset, use the moon event time (crescent sighting = sunset)
+    let day1StartTs;
+    if (isCrescentSunset && month.moonEvent) {
+      day1StartTs = month.moonEvent.getTime();
+    } else {
+      day1StartTs = getDayStartTime(dayObj.gregorianDate);
+    }
+    const diffMs = day1StartTs - springEquinox.getTime();
+    const diffTotalHours = diffMs / (1000 * 60 * 60);
+    const diffDays = Math.floor(Math.abs(diffTotalHours) / 24);
+    const diffHours = Math.round(Math.abs(diffTotalHours) % 24);
+    
+    let timingStr = '';
+    if (diffDays > 0 && diffHours > 0) {
+      timingStr = `${diffDays} day${diffDays !== 1 ? 's' : ''} and ${diffHours} hour${diffHours !== 1 ? 's' : ''}`;
+    } else if (diffDays > 0) {
+      timingStr = `${diffDays} day${diffDays !== 1 ? 's' : ''}`;
+    } else {
+      timingStr = `${diffHours} hour${diffHours !== 1 ? 's' : ''}`;
+    }
+    const beforeAfter = diffMs >= 0 ? 'after' : 'before';
+    
+    if (month.monthNumber === 1) {
+      // Positive reason: explain why year CAN start here using current moon phase setting
+      const dayStartLabel = getDayStartLabel();
+      const day1StartDate = new Date(day1StartTs);
+      const day1StartStr = day1StartDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+      const day1Parts = getFormattedDateParts(day1StartDate);
+      const day1DateStr = `${day1Parts.weekdayName}, ${day1Parts.monthName} ${day1Parts.day}${getOrdinalSuffix(day1Parts.day)}`;
+      
+      const yearMonthInfo = `Day 1 begins at ${dayStartLabel} (${day1DateStr} at ${day1StartStr}), which is ${timingStr} ${beforeAfter} the <a href="#" class="equinox-link" data-equinox-date="${springEquinox.toISOString()}">Spring Equinox (${equinoxDateStr})</a>. This qualifies as the 1st month of Lunar Year ${state.year}.`;
+      
+      item.innerHTML = `
+        <div class="day-detail-feast-icon">📅</div>
+        <div class="day-detail-feast-info">
+          <div class="day-detail-feast-name">Lunar Year ${state.year} Begins</div>
+          <div class="day-detail-feast-desc">${yearMonthInfo}</div>
+        </div>
+      `;
+      feastsContainer.appendChild(item);
+      
+      // Add click handler for equinox link
+      const equinoxLink = item.querySelector('.equinox-link');
+      if (equinoxLink) {
+        equinoxLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          jumpToEquinoxDate(springEquinox);
+        });
+      }
+    } else if (month.monthNumber === 13) {
+      // Explain why 13th month exists: its day-start is BEFORE the next year's start point
+      const nextEquinox = Astronomy.Seasons(state.year + 1).mar_equinox.date;
+      const neqParts = getFormattedDateParts(nextEquinox);
+      const nextEquinoxDateStr = `${neqParts.weekdayName}, ${neqParts.monthName} ${neqParts.day}${getOrdinalSuffix(neqParts.day)}, ${neqParts.yearStr}${neqParts.calendarSuffix}`;
+      
+      // Get the 13th month's moon event (crescent/full/dark)
+      const month13MoonEvent = month.moonEvent;
+      let moonEventStr = '';
+      let dayStartStr = '';
+      let timingExplanation = '';
+      
+      if (month13MoonEvent) {
+        const moonParts = getFormattedDateParts(month13MoonEvent);
+        const moonTimeStr = month13MoonEvent.toLocaleTimeString('en-US', { 
+          hour: 'numeric', minute: '2-digit', hour12: true 
+        });
+        moonEventStr = `${moonParts.weekdayName}, ${moonParts.monthName} ${moonParts.day}${getOrdinalSuffix(moonParts.day)}, ${moonParts.yearStr} at ${moonTimeStr}`;
+        
+        // Check if we're in crescent + sunset mode
+        const isCrescentSunset = state.moonPhase === 'crescent' && 
+                                 state.dayStartTime === 'evening' && 
+                                 state.dayStartAngle === 0;
+        
+        // Calculate when Day 1 starts (day-start time)
+        // For crescent+sunset, the month starts at the crescent sighting time (which IS sunset)
+        let dayStartTimestamp;
+        if (isCrescentSunset) {
+          dayStartTimestamp = month13MoonEvent.getTime();
+        } else {
+          dayStartTimestamp = getDayStartTime(dayObj.gregorianDate);
+        }
+        const dayStartDate = new Date(dayStartTimestamp);
+        const dayStartLabel = getDayStartLabel();
+        const dsTimeStr = dayStartDate.toLocaleTimeString('en-US', { 
+          hour: 'numeric', minute: '2-digit', hour12: true 
+        });
+        const dsParts = getFormattedDateParts(dayStartDate);
+        dayStartStr = `${dsParts.weekdayName}, ${dsParts.monthName} ${dsParts.day}${getOrdinalSuffix(dsParts.day)} at ${dsTimeStr}`;
+        
+        // Calculate time from 13th month day-start to next equinox
+        const diffToEquinoxMs = nextEquinox.getTime() - dayStartTimestamp;
+        const diffToEquinoxHours = diffToEquinoxMs / (1000 * 60 * 60);
+        const diffDays = Math.floor(diffToEquinoxHours / 24);
+        const diffHours = Math.round(diffToEquinoxHours % 24);
+        
+        let diffStr = '';
+        if (diffDays > 0 && diffHours > 0) {
+          diffStr = `${diffDays} day${diffDays !== 1 ? 's' : ''} and ${diffHours} hour${diffHours !== 1 ? 's' : ''}`;
+        } else if (diffDays > 0) {
+          diffStr = `${diffDays} day${diffDays !== 1 ? 's' : ''}`;
+        } else {
+          diffStr = `${diffHours} hour${diffHours !== 1 ? 's' : ''}`;
+        }
+        
+        timingExplanation = `The ${moonLabel} for this month was sighted on ${moonEventStr}. ` +
+          `Day 1 begins at ${dayStartLabel} (${dayStartStr}), which is ${diffStr} before the ` +
+          `<a href="#" class="equinox-link" data-equinox-date="${nextEquinox.toISOString()}">Spring Equinox (${nextEquinoxDateStr})</a>. ` +
+          `Since this day-start falls before the equinox, this qualifies as the 13th month of the current year rather than the 1st month of the next year.`;
+      }
+      
+      item.innerHTML = `
+        <div class="day-detail-feast-icon">📅</div>
+        <div class="day-detail-feast-info">
+          <div class="day-detail-feast-name">13th Month (Intercalary)</div>
+          <div class="day-detail-feast-desc">${timingExplanation}</div>
+        </div>
+      `;
+      feastsContainer.appendChild(item);
+      
+      // Add click handler for equinox link
+      const equinoxLink = item.querySelector('.equinox-link');
+      if (equinoxLink) {
+        equinoxLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          jumpToEquinoxDate(nextEquinox);
+        });
+      }
+    }
   }
   
   // Populate additional info
@@ -3296,7 +4919,8 @@ function showDayDetail(dayObj, month) {
   
   infoContainer.innerHTML = infoHtml;
   
-  // Show the panel
+  // Show the panel (reset both inline style and class)
+  panel.style.display = '';  // Reset any inline display:none from settings page
   panel.classList.remove('hidden');
   
   // Scroll panel into view on mobile
@@ -3313,6 +4937,42 @@ function getOrdinalSuffix(n) {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
   return s[(v - 20) % 10] || s[v] || s[0];
+}
+
+// Jump to a specific equinox date and highlight that day
+function jumpToEquinoxDate(equinoxDate) {
+  const targetDate = new Date(equinoxDate);
+  
+  // Find this date in the current lunar months
+  for (let m = 0; m < state.lunarMonths.length; m++) {
+    const month = state.lunarMonths[m];
+    for (let d = 0; d < month.days.length; d++) {
+      const day = month.days[d];
+      // Check if equinox falls on this day
+      if (day.equinox && day.equinox.date.toDateString() === targetDate.toDateString()) {
+        state.currentMonthIndex = m;
+        state.highlightedLunarDay = day.lunarDay;
+        state.selectedTimestamp = getSunriseTimestamp(day.gregorianDate);
+        document.getElementById('goto-date').value = formatLocalDatetime(state.selectedTimestamp);
+        renderMonth(state.lunarMonths[state.currentMonthIndex]);
+        updateMonthButtons();
+        updateURL();
+        showDayDetail(day, month);
+        return;
+      }
+    }
+  }
+  
+  // If not found in current year's months, the equinox might be in a different year
+  // Navigate to that year first
+  const equinoxYear = targetDate.getFullYear();
+  if (equinoxYear !== state.year) {
+    state.year = equinoxYear;
+    updateUI();
+    generateCalendar();
+    // Try again after regenerating
+    jumpToEquinoxDate(equinoxDate);
+  }
 }
 
 function jumpToToday() {
@@ -3398,13 +5058,14 @@ async function openInCalendar() {
     }
   }
   
-  // Fallback: Download and show instructions
+  // Fallback: Download the file
   exportToICS();
   
-  // Show helpful message
-  setTimeout(() => {
-    alert('Calendar file downloaded!\n\nTo add events:\n• macOS: Double-click the downloaded .ics file\n• iOS: Tap the file in Downloads\n• Google Calendar: Import at calendar.google.com/calendar/r/settings/export');
-  }, 500);
+  // Close the export modal after successful download
+  const exportPage = document.getElementById('export-page');
+  if (exportPage && exportPage.style.display !== 'none') {
+    toggleExportModal();
+  }
 }
 
 // Generate ICS content for calendar export
@@ -3455,6 +5116,9 @@ function generateICSContent() {
       }
     }
   }
+  
+  // Sort events by date
+  events.sort((a, b) => a.date.getTime() - b.date.getTime());
   
   // Generate ICS content
   let ics = [
