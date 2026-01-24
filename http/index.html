@@ -301,23 +301,8 @@ title: "Lunar Sabbath Calendar"
   margin-bottom: 4px;
 }
 
-.calendar-title .month-year-row {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  cursor: pointer;
-  padding: 4px 8px;
-  margin: -4px -8px;
-  border-radius: 6px;
-  transition: background 0.2s;
-}
-
-.calendar-title .month-year-row:hover {
-  background: rgba(255,255,255,0.1);
-}
-
 .calendar-title .month-name {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #d4a017;
   display: flex;
   align-items: center;
@@ -330,9 +315,14 @@ title: "Lunar Sabbath Calendar"
 }
 
 .calendar-title .year {
-  font-size: 1.4em;
+  font-size: 1em;
   color: #7ec8e3;
   font-weight: bold;
+  margin-top: 2px;
+}
+
+.calendar-title:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 /* Month Picker Popup */
@@ -647,48 +637,6 @@ title: "Lunar Sabbath Calendar"
 
 .full-moon-info:hover .moon-gear-badge {
   opacity: 1;
-}
-
-/* Export button in header - prominent desktop icon style */
-.export-header-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 14px;
-  border-radius: 12px;
-  transition: all 0.2s;
-  margin-left: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.export-header-btn .icon {
-  font-size: 48px;
-  line-height: 1;
-}
-
-.export-header-btn .label {
-  font-size: 13px;
-  color: #d4a017;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.export-header-btn:hover {
-  background: rgba(255,255,255,0.1);
-  transform: scale(1.05);
-}
-
-.export-header-btn:hover .label {
-  color: #f0c040;
-}
-
-.export-header-btn:active {
-  transform: scale(0.98);
 }
 
 /* Export/Feasts page specific styles */
@@ -1864,41 +1812,12 @@ title: "Lunar Sabbath Calendar"
     right: -1px;
   }
   
-  .calendar-title .site-title {
+  .calendar-title .month-name {
     font-size: 1em;
   }
   
-  .calendar-title .site-tagline {
-    font-size: 0.7em;
-  }
-  
-  .calendar-title .month-name {
-    font-size: 0.9em;
-  }
-  
   .calendar-title .year {
-    font-size: 1.1em;
-  }
-  
-  .calendar-title .month-year-row {
-    gap: 8px;
-  }
-  
-  .export-header-btn {
-    padding: 4px 6px;
-    margin-left: 4px;
-    gap: 6px;
-    align-self: end;
-    margin-bottom: 3px;
-  }
-  
-  .export-header-btn .icon {
-    font-size: 28px;
-  }
-  
-  .export-header-btn .label {
-    font-size: 9px;
-    letter-spacing: 0.3px;
+    font-size: 0.9em;
   }
   
   .full-moon-info {
@@ -4509,15 +4428,9 @@ function renderMonth(month) {
             </div>
           </div>
           <div class="calendar-title" onclick="toggleMonthPicker()">
-            <div class="month-year-row">
-              <div class="month-name">${month.name} <span class="dropdown-arrow">▼</span></div>
-              <div class="year">${displayYear}</div>
-            </div>
+            <div class="month-name">${month.name} <span class="dropdown-arrow">▼</span></div>
+            <div class="year">${displayYear}</div>
           </div>
-          <button class="export-header-btn" onclick="event.stopPropagation(); navigateTo('feasts');" title="View Feasts & Export to Calendar">
-            <span class="icon">📅</span>
-            <span class="label">Feasts</span>
-          </button>
         </div>
         <div class="new-moon-box day-cell new-moon${state.highlightedLunarDay === 1 ? ' highlighted' : ''}${day1 && day1.feasts && day1.feasts.length > 0 ? ' feast' : ''}" data-date="${day1 ? day1.gregorianDate.toISOString().split('T')[0] : ''}" data-lunar-day="1">
           <div class="gregorian">${day1Date}<span class="day-year">${day1Year}</span></div>
