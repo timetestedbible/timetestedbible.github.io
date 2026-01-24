@@ -644,6 +644,18 @@ title: "Lunar Sabbath Calendar"
   position: relative;
   min-height: calc(100vh - 60px);
   z-index: 100;
+  margin-top: -8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  border-radius: 0;
+}
+
+@media (max-width: 768px) {
+  #export-page {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 #export-page .settings-page-header {
@@ -2008,9 +2020,9 @@ title: "Lunar Sabbath Calendar"
 
 <!-- Top Navigation Bar -->
 <nav class="top-nav">
-  <div class="top-nav-brand">
-    <div class="top-nav-title">Lunar Sabbath Calendar</div>
-    <div class="top-nav-tagline">a time tested tradition <a href="/book/" class="book-link">📖</a></div>
+  <div class="top-nav-brand" onclick="navigateTo('calendar')" style="cursor: pointer;">
+    <div class="top-nav-title">Lunar Sabbath</div>
+    <div class="top-nav-tagline">a time tested tradition <a href="/book/" class="book-link" onclick="event.stopPropagation();">📖</a></div>
   </div>
   <button class="hamburger-btn" onclick="toggleNavMenu()" aria-label="Menu">☰</button>
 </nav>
@@ -2333,7 +2345,6 @@ title: "Lunar Sabbath Calendar"
 <!-- Export/Feasts Page -->
 <div id="export-page" class="settings-page" style="display: none;">
   <div class="settings-page-header export-header">
-    <button class="back-btn" onclick="navigateTo('calendar')">← Calendar</button>
     <h2>Appointed Times for <span id="export-year">2026</span></h2>
     <button class="btn export-download-btn" onclick="openInCalendar()">📅 Export</button>
   </div>
