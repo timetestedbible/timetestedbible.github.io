@@ -7163,6 +7163,37 @@ function showDayDetail(dayObj, month) {
     feastsContainer.appendChild(item);
   }
   
+  // Add blood moon (lunar eclipse) info if this day has one
+  if (dayObj.isBloodMoon) {
+    const bloodMoonDate = dayObj.gregorianDate;
+    const bmParts = getFormattedDateParts(bloodMoonDate);
+    const dayOfWeek = bmParts.weekdayName;
+    const monthName = bmParts.monthName;
+    const dayNum = bmParts.day;
+    const daySuffix = getOrdinalSuffix(dayNum);
+    const year = bmParts.yearStr;
+    
+    const now = new Date();
+    const isPast = bloodMoonDate < now;
+    const verb = isPast ? 'occurred' : 'will occur';
+    
+    const item = document.createElement('div');
+    item.className = 'day-detail-feast-item';
+    item.innerHTML = `
+      <div class="day-detail-feast-icon">🌑🔴</div>
+      <div class="day-detail-feast-info">
+        <div class="day-detail-feast-name" style="color: #ff6b6b;">Blood Moon (Total Lunar Eclipse)</div>
+        <div class="day-detail-feast-desc">A total lunar eclipse occurs when the Earth passes between the Sun and Moon, 
+          casting Earth's shadow on the lunar surface. The Moon appears deep red due to sunlight filtered through Earth's atmosphere.</div>
+        <div class="feast-basis">
+          A total lunar eclipse ${verb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year}. 
+          In Scripture, blood moons are often associated with significant prophetic events (Joel 2:31, Acts 2:20, Revelation 6:12).
+        </div>
+      </div>
+    `;
+    feastsContainer.appendChild(item);
+  }
+  
   // Add uncertainty warning for any uncertain day
   if (dayObj.isUncertain && month.dateUncertainty) {
     const item = document.createElement('div');
