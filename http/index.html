@@ -5745,57 +5745,37 @@ function buildPathURL(options = {}) {
   const profile = getCurrentProfileSlug();
   const now = new Date();
   const currentYear = now.getFullYear();
+  const locationSlug = getLocationSlug();
   
-  // Determine which segments to include
+  // Build segments - always include profile, year, and location for clear SEO URLs
   const segments = [];
   
-  // Track what we've added
-  let hasProfile = false;
-  let hasYear = false;
-  let hasMonth = false;
-  let hasDay = false;
+  // Profile always included (explicit is better for SEO/analytics)
+  segments.push(profile);
   
-  // Profile (only if not default 'biblical')
-  if (profile !== 'biblical' || options.includeProfile) {
-    segments.push(profile);
-    hasProfile = true;
-  }
+  // Year always included
+  segments.push(state.year.toString());
   
-  // Determine if we need year, month, day
+  // Month (lunar month number, 1-indexed) - include if day specified or explicitly requested
   const needsDay = !!state.highlightedLunarDay;
   const needsMonth = needsDay || options.includeMonth;
-  const needsYear = needsMonth || state.year !== currentYear || options.includeYear;
   
-  // Year
-  if (needsYear) {
-    segments.push(state.year.toString());
-    hasYear = true;
-  }
-  
-  // Month (lunar month number, 1-indexed)
   if (needsMonth) {
     const monthNum = (state.currentMonthIndex || 0) + 1;
     segments.push(monthNum.toString());
-    hasMonth = true;
   }
   
-  // Day (lunar day)
+  // Day (lunar day) - include if highlighted
   if (needsDay) {
     segments.push(state.highlightedLunarDay.toString());
-    hasDay = true;
   }
   
-  // Location (only if not Jerusalem default or explicitly included)
-  const locationSlug = getLocationSlug();
-  if (locationSlug !== 'jerusalem' || options.includeLocation) {
-    if (segments.length > 0) {
-      segments.push(locationSlug);
-    }
-  }
+  // Location always included (explicit is better for SEO/analytics)
+  segments.push(locationSlug);
   
   // Build path
   let path = '/' + segments.join('/');
-  if (path !== '/' && !path.endsWith('/')) {
+  if (!path.endsWith('/')) {
     path += '/';
   }
   
