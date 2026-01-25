@@ -1,5 +1,5 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v209';
+const CACHE_NAME = 'lunar-sabbath-v210';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

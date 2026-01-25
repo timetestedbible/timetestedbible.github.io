@@ -5745,43 +5745,49 @@ function buildPathURL(options = {}) {
   const profile = getCurrentProfileSlug();
   const now = new Date();
   const currentYear = now.getFullYear();
-  const currentMonth = now.getMonth() + 1;
   
-  // Determine which segments to include (only include if different from defaults)
+  // Determine which segments to include
   const segments = [];
   
-  // Profile is always first (required for non-default)
+  // Track what we've added
+  let hasProfile = false;
+  let hasYear = false;
+  let hasMonth = false;
+  let hasDay = false;
+  
+  // Profile (only if not default 'biblical')
   if (profile !== 'biblical' || options.includeProfile) {
     segments.push(profile);
+    hasProfile = true;
   }
   
-  // Year (only if not current year or if month/day specified)
-  const includeYear = state.year !== currentYear || options.includeYear || 
-                      state.currentMonthIndex !== undefined || state.highlightedLunarDay;
-  if (includeYear || segments.length > 0) {
+  // Determine if we need year, month, day
+  const needsDay = !!state.highlightedLunarDay;
+  const needsMonth = needsDay || options.includeMonth;
+  const needsYear = needsMonth || state.year !== currentYear || options.includeYear;
+  
+  // Year
+  if (needsYear) {
     segments.push(state.year.toString());
+    hasYear = true;
   }
   
-  // Month (only if day is specified or explicitly included)
-  const monthNum = (state.currentMonthIndex || 0) + 1;
-  if (state.highlightedLunarDay || options.includeMonth) {
-    if (segments.length === 0) segments.push('biblical');
-    if (segments.length === 1) segments.push(state.year.toString());
+  // Month (lunar month number, 1-indexed)
+  if (needsMonth) {
+    const monthNum = (state.currentMonthIndex || 0) + 1;
     segments.push(monthNum.toString());
+    hasMonth = true;
   }
   
-  // Day (only if highlighted)
-  if (state.highlightedLunarDay) {
+  // Day (lunar day)
+  if (needsDay) {
     segments.push(state.highlightedLunarDay.toString());
+    hasDay = true;
   }
   
   // Location (only if not Jerusalem default or explicitly included)
   const locationSlug = getLocationSlug();
   if (locationSlug !== 'jerusalem' || options.includeLocation) {
-    // Ensure we have the full path before adding location
-    while (segments.length < 4 && state.highlightedLunarDay) {
-      // Fill in missing segments
-    }
     if (segments.length > 0) {
       segments.push(locationSlug);
     }
