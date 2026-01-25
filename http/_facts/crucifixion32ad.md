@@ -26,3 +26,5 @@ locations:
 ---
 
 The 32 AD date is established through multiple INDEPENDENT lines of evidence that do not consider the calendar. The fact that Saturday Sabbath is incompatible with 32 AD is not evidence against 32 AD - it's evidence against Saturday Sabbath.
+
+**[Test your calendar theory against biblical events →](/sabbath-tester/)**

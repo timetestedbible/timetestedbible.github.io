@@ -1659,6 +1659,35 @@ body.sabbath-tester-open {
   pointer-events: none;
 }
 
+.settings-location-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.settings-location-btn {
+  background: rgba(126, 200, 227, 0.2);
+  border: 1px solid rgba(126, 200, 227, 0.4);
+  color: #7ec8e3;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.2s;
+}
+
+.settings-location-btn:hover:not(:disabled) {
+  background: rgba(126, 200, 227, 0.3);
+  border-color: rgba(126, 200, 227, 0.6);
+}
+
+.settings-location-hint {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
 .settings-section {
   padding: 20px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -3524,8 +3553,12 @@ body.sabbath-tester-open {
       <h3>Your Location</h3>
       <p class="settings-description">Your location determines the timing of sunrise, sunset, and twilight.</p>
       <div id="settings-page-map"></div>
+      <div class="settings-location-buttons">
+        <button type="button" class="exact-location-btn settings-location-btn" onclick="getExactLocation()">📍 Use Exact GPS Location</button>
+        <span class="settings-location-hint">Requires permission</span>
+      </div>
       <select id="settings-city-select" class="settings-select">
-        <option value="current">📍 Use Current Location</option>
+        <option value="current">📍 Auto-detect via IP (approximate)</option>
         <optgroup label="Biblical">
           <option value="31.7683,35.2137">Jerusalem</option>
         </optgroup>
@@ -5329,7 +5362,7 @@ const PRESET_PROFILES = {
   },
   fullMoon: {
     name: 'Full Moon',
-    hint: 'Morning Nautical Twilight, Your Location',
+    hint: 'Morning Nautical Twilight, Your Area',
     icon: '🌕',
     moonPhase: 'full',
     dayStartTime: 'morning',
@@ -5495,7 +5528,13 @@ function getTimezoneFromLongitude(lon) {
 
 // Get a display name for the current location
 function getCurrentLocationName() {
-  // Check if using current location
+  // Check if using IP-based or GPS location
+  if (state.city === 'ip-based' || state.locationSource === 'ip') {
+    return 'Your Area (via IP)';
+  }
+  if (state.city === 'gps' || state.locationSource === 'gps') {
+    return 'Your Location (GPS)';
+  }
   if (state.city === 'current') {
     return 'Your Location';
   }
@@ -5505,7 +5544,7 @@ function getCurrentLocationName() {
   if (profileSelect) {
     const profile = PROFILES[profileSelect.value];
     if (profile && profile.useCurrentLocation) {
-      return 'Your Location';
+      return 'Your Area';
     }
   }
   
@@ -5519,7 +5558,7 @@ function getCurrentLocationName() {
   return getTimezoneFromLongitude(state.lon);
 }
 
-// Refresh geolocation if the current profile uses "Your Location"
+// Refresh location via IP if the current profile uses "Your Location"
 function refreshLocationIfNeeded() {
   const select = document.getElementById('profile-select');
   if (!select) return;
@@ -5530,35 +5569,35 @@ function refreshLocationIfNeeded() {
   // Only refresh for profiles with useCurrentLocation
   if (!profile || !profile.useCurrentLocation) return;
   
-  if (!navigator.geolocation) return;
-  
-  navigator.geolocation.getCurrentPosition(
-    (position) => {
-      const newLat = Math.round(position.coords.latitude * 10000) / 10000;
-      const newLon = Math.round(position.coords.longitude * 10000) / 10000;
-      
-      // Only update if location has changed significantly (>0.01 degrees ≈ 1km)
-      if (Math.abs(newLat - state.lat) > 0.01 || Math.abs(newLon - state.lon) > 0.01) {
-        state.lat = newLat;
-        state.lon = newLon;
-        state.city = 'current';
+  // Use IP-based geolocation (no permission prompt)
+  getLocationFromIP()
+    .then(location => {
+      if (location) {
+        const newLat = Math.round(location.lat * 10000) / 10000;
+        const newLon = Math.round(location.lon * 10000) / 10000;
         
-        // Update UI
-        document.getElementById('lat-input').value = state.lat;
-        document.getElementById('lon-input').value = state.lon;
-        
-        // Regenerate calendar with new location
-        saveState();
-        generateCalendar({ preserveMonth: true });
-        renderSettingsPageMap();
+        // Only update if location has changed significantly (>0.01 degrees ≈ 1km)
+        if (Math.abs(newLat - state.lat) > 0.01 || Math.abs(newLon - state.lon) > 0.01) {
+          state.lat = newLat;
+          state.lon = newLon;
+          state.city = 'ip-based';
+          state.locationSource = 'ip';
+          
+          // Update UI
+          document.getElementById('lat-input').value = state.lat;
+          document.getElementById('lon-input').value = state.lon;
+          
+          // Regenerate calendar with new location
+          saveState();
+          generateCalendar({ preserveMonth: true });
+          renderSettingsPageMap();
+        }
       }
-    },
-    (error) => {
+    })
+    .catch(error => {
       // Silently fail - keep existing location
-      console.log('Geolocation refresh failed, keeping saved location');
-    },
-    { timeout: 5000, maximumAge: 0 }
-  );
+      console.log('IP geolocation refresh failed, keeping saved location');
+    });
 }
 
 // Check if a profile name is unique
@@ -5859,20 +5898,23 @@ function applyProfile(profileId) {
   state.crescentThreshold = profile.crescentThreshold;
   state.sabbathMode = profile.sabbathMode || 'lunar';
   
-  if (profile.useCurrentLocation && navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        state.lat = position.coords.latitude;
-        state.lon = position.coords.longitude;
-        state.city = 'current';
-        updateLocationUI();
+  if (profile.useCurrentLocation) {
+    // Use IP-based geolocation (no permission prompt, privacy-respecting)
+    getLocationFromIP()
+      .then(location => {
+        if (location) {
+          state.lat = location.lat;
+          state.lon = location.lon;
+          state.city = 'ip-based';
+          state.locationSource = 'ip';
+          updateLocationUI();
+        }
         finishApplyProfile();
-      },
-      (error) => {
-        console.log('Geolocation error, keeping current location');
+      })
+      .catch(error => {
+        console.log('IP geolocation error, keeping current location');
         finishApplyProfile();
-      }
-    );
+      });
   } else if (profile.lat !== undefined) {
     state.lat = profile.lat;
     state.lon = profile.lon;
@@ -5882,6 +5924,76 @@ function applyProfile(profileId) {
   } else {
     finishApplyProfile();
   }
+}
+
+// Get approximate location from IP (no permission required)
+async function getLocationFromIP() {
+  try {
+    // Try ipapi.co first (HTTPS, reliable)
+    const response = await fetch('https://ipapi.co/json/', { 
+      timeout: 5000,
+      cache: 'no-store'
+    });
+    if (response.ok) {
+      const data = await response.json();
+      if (data.latitude && data.longitude) {
+        return { 
+          lat: data.latitude, 
+          lon: data.longitude,
+          city: data.city,
+          country: data.country_name
+        };
+      }
+    }
+  } catch (e) {
+    console.log('IP geolocation failed:', e);
+  }
+  return null;
+}
+
+// Get exact GPS location (requires user permission)
+function getExactLocation() {
+  if (!navigator.geolocation) {
+    alert('GPS is not available on this device');
+    return;
+  }
+  
+  // Show loading indicator
+  const btn = document.querySelector('.exact-location-btn');
+  if (btn) {
+    btn.textContent = '📍 Getting location...';
+    btn.disabled = true;
+  }
+  
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      state.lat = Math.round(position.coords.latitude * 10000) / 10000;
+      state.lon = Math.round(position.coords.longitude * 10000) / 10000;
+      state.city = 'gps';
+      state.locationSource = 'gps';
+      updateLocationUI();
+      saveState();
+      regenerateCalendarPreservingScroll();
+      
+      // Update button
+      if (btn) {
+        btn.textContent = '📍 Location Updated!';
+        setTimeout(() => {
+          btn.textContent = '📍 Use Exact Location';
+          btn.disabled = false;
+        }, 2000);
+      }
+    },
+    (error) => {
+      console.log('GPS error:', error);
+      alert('Could not get your exact location. Please check your browser permissions.');
+      if (btn) {
+        btn.textContent = '📍 Use Exact Location';
+        btn.disabled = false;
+      }
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
 }
 
 function updateLocationUI() {
@@ -10586,7 +10698,7 @@ function showDayDetail(dayObj, month) {
         // Get location info for the profile
         let locationHint = '';
         if (profile.useCurrentLocation) {
-          locationHint = '<span class="profile-compare-location">📍 Uses your location</span>';
+          locationHint = '<span class="profile-compare-location">📍 Your area (via IP)</span>';
         } else if (profile.city === '31.7683,35.2137' || (profile.lat === 31.7683 && profile.lon === 35.2137)) {
           locationHint = '<span class="profile-compare-location">🏛️ Jerusalem</span>';
         }
@@ -10893,5 +11005,9 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://lunarsabbath.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
