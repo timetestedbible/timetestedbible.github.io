@@ -677,6 +677,7 @@ body.feasts-open {
   overflow-y: auto;
   border-radius: 0;
   margin: 0;
+  background: linear-gradient(180deg, #1a3a5c 0%, #2a5a8c 100%);
 }
 
 #export-page .settings-page-header {
@@ -793,15 +794,49 @@ body.feasts-open {
 
 .dateline-location-marker {
   position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #00ff00;
-  border: 2px solid #fff;
-  border-radius: 50%;
+  width: 14px;
+  height: 14px;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px rgba(0,255,0,0.8);
   z-index: 5;
   pointer-events: none;
+}
+
+/* Vertical dashed line */
+.dateline-location-marker::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 100vh;
+  border-left: 1px dashed rgba(255, 100, 100, 0.8);
+  transform: translateX(-50%) translateY(-50vh);
+}
+
+/* Horizontal dashed line */
+.dateline-location-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  border-top: 1px dashed rgba(255, 100, 100, 0.8);
+  transform: translateY(-50%) translateX(-50vw);
+}
+
+/* Central red dot */
+.dateline-location-pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #ff3333;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.8), 0 0 12px rgba(255, 50, 50, 0.5);
 }
 
 .dateline-click-hint {
@@ -1383,12 +1418,48 @@ body.feasts-open {
   cursor: not-allowed;
 }
 
-/* Settings Page - Full Width */
+/* Settings Page - Full Screen Slide-in */
 .settings-page {
-  background: linear-gradient(180deg, #1a3a5c 0%, #2a5a8c 100%);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d1f33 100%);
+  overflow-y: auto;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.settings-page.visible {
+  transform: translateX(0);
+}
+
+.settings-page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.settings-page-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 500px) {
+  .settings-page {
+    max-width: 100%;
+  }
 }
 
 .settings-page-header {
@@ -1460,6 +1531,107 @@ body.feasts-open {
 .profile-icon-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+
+/* Profile Name Modal */
+.profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.profile-modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profile-modal {
+  background: linear-gradient(135deg, #1a3a5c 0%, #0d1f33 100%);
+  border: 1px solid #2a5a8c;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 320px;
+  max-width: 90vw;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  transition: transform 0.2s;
+}
+
+.profile-modal-overlay.visible .profile-modal {
+  transform: scale(1);
+}
+
+.profile-modal h3 {
+  margin: 0 0 16px 0;
+  color: #7ec8e3;
+  font-size: 1.2em;
+}
+
+.profile-modal-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a5a8c;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.profile-modal-input:focus {
+  outline: none;
+  border-color: #7ec8e3;
+}
+
+.profile-modal-error {
+  color: #ff6b6b;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+  min-height: 1.2em;
+}
+
+.profile-modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.profile-modal-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.profile-modal-btn.cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #aaa;
+}
+
+.profile-modal-btn.cancel:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.profile-modal-btn.save {
+  background: #2a5a8c;
+  color: #fff;
+}
+
+.profile-modal-btn.save:hover {
+  background: #3a7ab8;
 }
 
 .settings-option-btn.disabled,
@@ -1848,6 +2020,95 @@ body.feasts-open {
   border-top: 1px solid rgba(126, 200, 227, 0.3);
   color: #aaa;
   font-size: 0.9em;
+}
+
+.day-detail-dateline {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(126, 200, 227, 0.3);
+}
+
+.day-detail-dateline .dateline-container {
+  margin-top: 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.day-detail-dateline .dateline-map {
+  cursor: default;
+  pointer-events: none;
+}
+
+.day-detail-dateline .dateline-click-hint {
+  display: none;
+}
+
+.day-detail-profile-compare {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(126, 200, 227, 0.3);
+}
+
+.profile-compare-title {
+  font-size: 0.9em;
+  color: #7ec8e3;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.profile-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+}
+
+.profile-compare-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  border: 1px solid transparent;
+}
+
+.profile-compare-item:hover {
+  background: rgba(126, 200, 227, 0.15);
+  border-color: rgba(126, 200, 227, 0.3);
+}
+
+.profile-compare-item.current {
+  background: rgba(212, 160, 23, 0.15);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+}
+
+.profile-compare-item.current:hover {
+  background: rgba(212, 160, 23, 0.2);
+}
+
+.profile-compare-name {
+  color: #aaa;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.profile-compare-item.current .profile-compare-name {
+  color: #d4a017;
+}
+
+.profile-compare-day {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.profile-compare-feasts {
+  margin-top: 4px;
+  font-size: 1.1em;
+  line-height: 1.2;
 }
 
 /* Old astro-times styles removed - now styled in .day-detail-header */
@@ -2457,8 +2718,11 @@ body.feasts-open {
 
   <div id="calendar-output"></div>
 
-  <!-- Settings Page - replaces calendar when active -->
-  <div id="settings-page" class="settings-page" style="display: none;">
+  <!-- Settings Page Overlay -->
+  <div id="settings-page-overlay" class="settings-page-overlay" onclick="toggleSettings()"></div>
+  
+  <!-- Settings Page - slides in from right -->
+  <div id="settings-page" class="settings-page">
     <div class="settings-page-header">
       <h2>Settings</h2>
       <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
@@ -2475,6 +2739,7 @@ body.feasts-open {
           <option value="biblicalCrescent">🌒 Biblical Crescent Moon — Evening Sunset, Jerusalem</option>
         </select>
         <button id="profile-clone-btn" class="profile-icon-btn" onclick="cloneProfile()" title="Clone as new profile">+</button>
+        <button id="profile-edit-btn" class="profile-icon-btn" onclick="editProfileName()" title="Rename profile" disabled>✏️</button>
         <button id="profile-delete-btn" class="profile-icon-btn" onclick="deleteCustomProfile()" title="Delete profile" disabled>🗑️</button>
       </div>
     </div>
@@ -2672,6 +2937,8 @@ body.feasts-open {
     <div class="day-detail-content">
       <div class="day-detail-feasts"></div>
       <div class="day-detail-info"></div>
+      <div class="day-detail-dateline"></div>
+      <div class="day-detail-profile-compare"></div>
     </div>
   </div>
 
@@ -2696,8 +2963,21 @@ body.feasts-open {
   </div>
 </div>
 
+<!-- Profile Name Modal -->
+<div id="profile-modal-overlay" class="profile-modal-overlay" onclick="closeProfileModal(event)">
+  <div class="profile-modal" onclick="event.stopPropagation()">
+    <h3 id="profile-modal-title">Create New Profile</h3>
+    <input type="text" id="profile-modal-input" class="profile-modal-input" placeholder="Enter profile name" onkeydown="handleProfileModalKeydown(event)">
+    <div id="profile-modal-error" class="profile-modal-error"></div>
+    <div class="profile-modal-buttons">
+      <button class="profile-modal-btn cancel" onclick="closeProfileModal()">Cancel</button>
+      <button id="profile-modal-save-btn" class="profile-modal-btn save" onclick="saveProfileModal()">Create</button>
+    </div>
+  </div>
+</div>
+
 <!-- Export/Feasts Page -->
-<div id="export-page" class="settings-page" style="display: none;">
+<div id="export-page" class="export-page" style="display: none;">
   <div class="settings-page-header export-header">
     <h2>Appointed Times for <span id="export-year">2026</span></h2>
     <button class="btn export-download-btn" onclick="openInCalendar()">📅 Export</button>
@@ -3767,7 +4047,8 @@ const defaultState = {
   lunarMonths: [],
   currentMonthIndex: 0,
   highlightedLunarDay: null,
-  selectedTimestamp: null  // UTC timestamp of selected moment
+  selectedTimestamp: null,  // UTC timestamp of selected moment
+  pendingNavigationDate: null  // Used when switching profiles to navigate to same Gregorian date
 };
 
 // Migrate old crescentThreshold values (degrees) to new format (hours)
@@ -3988,14 +4269,19 @@ function navigateTo(page) {
   const calendarOutput = document.getElementById('calendar-output');
   const dayDetailPanel = document.getElementById('day-detail-panel');
   const settingsPage = document.getElementById('settings-page');
+  const settingsOverlay = document.getElementById('settings-page-overlay');
   const exportPage = document.getElementById('export-page');
   
   // Hide all pages and reset body state
   document.documentElement.classList.remove('feasts-open');
   document.body.classList.remove('feasts-open');
-  calendarOutput.style.display = 'none';
-  dayDetailPanel.style.display = 'none';
-  settingsPage.style.display = 'none';
+  document.body.style.overflow = ''; // Restore scrolling
+  
+  // Close settings slide-in
+  settingsPage.classList.remove('visible');
+  settingsOverlay.classList.remove('visible');
+  
+  // Hide export page
   exportPage.style.display = 'none';
   
   switch(page) {
@@ -4011,45 +4297,51 @@ function navigateTo(page) {
     case 'feasts':
       document.documentElement.classList.add('feasts-open');
       document.body.classList.add('feasts-open');
+      calendarOutput.style.display = 'none';
+      dayDetailPanel.style.display = 'none';
       exportPage.style.display = 'block';
       exportPage.scrollTop = 0;
       updateExportTable();
       updateURLWithView('feasts');
       break;
     case 'settings':
-      settingsPage.style.display = 'block';
+      // Show calendar in background, open settings slide-in
+      calendarOutput.style.display = 'block';
+      if (state.highlightedLunarDay !== null) {
+        dayDetailPanel.classList.remove('hidden');
+        dayDetailPanel.style.display = '';
+      }
+      settingsPage.classList.add('visible');
+      settingsOverlay.classList.add('visible');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
       updateSettingsPageState();
-      window.scrollTo(0, 0);
+      settingsPage.scrollTop = 0;
       break;
   }
 }
 
 function toggleSettings() {
-  const calendarOutput = document.getElementById('calendar-output');
-  const dayDetailPanel = document.getElementById('day-detail-panel');
   const settingsPage = document.getElementById('settings-page');
+  const settingsOverlay = document.getElementById('settings-page-overlay');
   
-  const isOpening = settingsPage.style.display === 'none';
+  const isOpening = !settingsPage.classList.contains('visible');
   
   if (isOpening) {
-    // Hide calendar, show settings
-    calendarOutput.style.display = 'none';
-    dayDetailPanel.style.display = 'none';
-    settingsPage.style.display = 'block';
+    // Show settings slide-in
+    settingsPage.classList.add('visible');
+    settingsOverlay.classList.add('visible');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
     // Update settings page state
     updateSettingsPageState();
   } else {
-    // Show calendar, hide settings
-    calendarOutput.style.display = 'block';
-    settingsPage.style.display = 'none';
+    // Hide settings slide-in
+    settingsPage.classList.remove('visible');
+    settingsOverlay.classList.remove('visible');
+    document.body.style.overflow = ''; // Restore scrolling
     
-    // Reset day detail panel display and refresh if a day was selected
-    dayDetailPanel.style.display = '';  // Reset inline style
-    if (state.highlightedLunarDay !== null) {
-      dayDetailPanel.classList.remove('hidden');
-      refreshDayDetailIfVisible();
-    }
+    // Refresh day detail if visible
+    refreshDayDetailIfVisible();
   }
 }
 
@@ -4058,6 +4350,7 @@ function toggleExportModal(skipUrlUpdate = false) {
   const dayDetailPanel = document.getElementById('day-detail-panel');
   const exportPage = document.getElementById('export-page');
   const settingsPage = document.getElementById('settings-page');
+  const settingsOverlay = document.getElementById('settings-page-overlay');
   
   const isOpening = exportPage.style.display === 'none';
   
@@ -4065,7 +4358,12 @@ function toggleExportModal(skipUrlUpdate = false) {
     // Hide calendar and settings, show export
     calendarOutput.style.display = 'none';
     dayDetailPanel.style.display = 'none';
-    settingsPage.style.display = 'none';
+    
+    // Close settings slide-in if open
+    settingsPage.classList.remove('visible');
+    settingsOverlay.classList.remove('visible');
+    document.body.style.overflow = ''; // Restore scrolling temporarily
+    
     exportPage.style.display = 'block';
     
     // Scroll to top of page (with timeout to ensure DOM update)
@@ -4125,7 +4423,13 @@ function updateExportTable() {
     const moonLabel = getMoonLabel();
     const dayStartLabel = getDayStartLabel();
     const yearStartLabel = state.yearStartRule === '13daysBefore' ? 'Passover after Equinox' : 'Renewed Moon after Equinox';
-    const locationLabel = state.city || `${state.lat.toFixed(2)}°, ${state.lon.toFixed(2)}°`;
+    
+    // Get location name with coordinates
+    const locationName = getCurrentLocationName();
+    const coordStr = `${state.lat.toFixed(2)}°${state.lat >= 0 ? 'N' : 'S'}, ${Math.abs(state.lon).toFixed(2)}°${state.lon >= 0 ? 'E' : 'W'}`;
+    const locationLabel = locationName !== 'Your Location' && !locationName.includes('/') 
+      ? `${locationName} (${coordStr})`
+      : coordStr;
     
     contextEl.innerHTML = `
       <span class="export-context-item">
@@ -4504,6 +4808,10 @@ function isProfileNameUnique(name, excludeId = null) {
   return true;
 }
 
+// Track modal mode: 'create' or 'edit'
+let profileModalMode = 'create';
+let profileModalEditId = null;
+
 // Clone current profile settings as a new custom profile
 function cloneProfile() {
   const select = document.getElementById('profile-select');
@@ -4511,43 +4819,124 @@ function cloneProfile() {
   const currentProfile = PROFILES[currentId];
   
   // Suggest a name based on current profile
-  let suggestedName = currentProfile ? currentProfile.name + ' Copy' : 'My Profile';
+  const suggestedName = currentProfile ? currentProfile.name + ' Copy' : 'My Profile';
   
-  let name = prompt('Enter a name for this profile:', suggestedName);
-  if (!name || !name.trim()) return;
+  showProfileModal('create', suggestedName);
+}
+
+// Edit the name of the current custom profile
+function editProfileName() {
+  const select = document.getElementById('profile-select');
+  const currentId = select.value;
   
-  name = name.trim();
+  // Can't edit presets
+  if (PRESET_PROFILES[currentId]) return;
   
-  // Check for unique name
-  if (!isProfileNameUnique(name)) {
-    alert('A profile with this name already exists. Please choose a different name.');
+  const currentProfile = PROFILES[currentId];
+  if (!currentProfile) return;
+  
+  showProfileModal('edit', currentProfile.name, currentId);
+}
+
+function showProfileModal(mode, defaultName, editId = null) {
+  profileModalMode = mode;
+  profileModalEditId = editId;
+  
+  const overlay = document.getElementById('profile-modal-overlay');
+  const input = document.getElementById('profile-modal-input');
+  const error = document.getElementById('profile-modal-error');
+  const title = document.getElementById('profile-modal-title');
+  const saveBtn = document.getElementById('profile-modal-save-btn');
+  
+  title.textContent = mode === 'edit' ? 'Rename Profile' : 'Create New Profile';
+  saveBtn.textContent = mode === 'edit' ? 'Save' : 'Create';
+  
+  input.value = defaultName || '';
+  error.textContent = '';
+  overlay.classList.add('visible');
+  
+  // Focus and select the input text
+  setTimeout(() => {
+    input.focus();
+    input.select();
+  }, 100);
+}
+
+function closeProfileModal(event) {
+  // If event exists and target is not the overlay itself, don't close
+  if (event && event.target !== event.currentTarget) return;
+  
+  const overlay = document.getElementById('profile-modal-overlay');
+  overlay.classList.remove('visible');
+  profileModalMode = 'create';
+  profileModalEditId = null;
+}
+
+function handleProfileModalKeydown(event) {
+  if (event.key === 'Enter') {
+    saveProfileModal();
+  } else if (event.key === 'Escape') {
+    closeProfileModal();
+  }
+}
+
+function saveProfileModal() {
+  const input = document.getElementById('profile-modal-input');
+  const error = document.getElementById('profile-modal-error');
+  const select = document.getElementById('profile-select');
+  
+  let name = input.value.trim();
+  
+  if (!name) {
+    error.textContent = 'Please enter a profile name.';
+    input.focus();
     return;
   }
   
-  const id = 'custom_' + Date.now();
-  PROFILES[id] = {
-    name: name,
-    icon: getProfileIcon(state.moonPhase),
-    moonPhase: state.moonPhase,
-    dayStartTime: state.dayStartTime,
-    dayStartAngle: state.dayStartAngle,
-    yearStartRule: state.yearStartRule,
-    crescentThreshold: state.crescentThreshold,
-    sabbathMode: state.sabbathMode,
-    lat: state.lat,
-    lon: state.lon,
-    city: state.city
-  };
+  // Check for unique name (exclude current profile when editing)
+  if (!isProfileNameUnique(name, profileModalEditId)) {
+    error.textContent = 'A profile with this name already exists.';
+    input.focus();
+    return;
+  }
   
-  saveCustomProfiles();
+  if (profileModalMode === 'edit' && profileModalEditId) {
+    // Edit existing profile name
+    PROFILES[profileModalEditId].name = name;
+    saveCustomProfiles();
+    rebuildProfileDropdown();
+    select.value = profileModalEditId;
+  } else {
+    // Create new profile
+    const id = 'custom_' + Date.now();
+    PROFILES[id] = {
+      name: name,
+      icon: getProfileIcon(state.moonPhase),
+      moonPhase: state.moonPhase,
+      dayStartTime: state.dayStartTime,
+      dayStartAngle: state.dayStartAngle,
+      yearStartRule: state.yearStartRule,
+      crescentThreshold: state.crescentThreshold,
+      sabbathMode: state.sabbathMode,
+      lat: state.lat,
+      lon: state.lon,
+      city: state.city
+    };
+    
+    saveCustomProfiles();
+    
+    // Select the new profile
+    state.selectedProfile = id;
+    rebuildProfileDropdown();
+    select.value = id;
+    saveState();
+  }
   
-  // Select the new profile
-  state.selectedProfile = id;
-  rebuildProfileDropdown();
-  select.value = id;
-  saveState();
   updateProfileButtonStates();
   updateSettingsEditability();
+  
+  // Close the modal
+  closeProfileModal();
 }
 
 // Delete the currently selected custom profile
@@ -4569,18 +4958,20 @@ function deleteCustomProfile() {
   applyProfile('biblicalFull');
 }
 
-// Update delete button state based on current profile
+// Update delete and edit button states based on current profile
 function updateProfileButtonStates() {
   const select = document.getElementById('profile-select');
   const deleteBtn = document.getElementById('profile-delete-btn');
+  const editBtn = document.getElementById('profile-edit-btn');
   
-  if (!select || !deleteBtn) return;
+  if (!select) return;
   
   const currentId = select.value;
   const isPreset = !!PRESET_PROFILES[currentId];
   
-  // Delete enabled only for user-saved profiles (not presets)
-  deleteBtn.disabled = isPreset;
+  // Delete and edit enabled only for user-saved profiles (not presets)
+  if (deleteBtn) deleteBtn.disabled = isPreset;
+  if (editBtn) editBtn.disabled = isPreset;
 }
 
 // Enable/disable settings controls based on whether current profile is editable
@@ -4640,6 +5031,57 @@ function updateMapEditability() {
 
 // Initialize custom profiles on load
 loadCustomProfiles();
+
+// Get feast icons for a given lunar month and day
+function getFeastIconsForLunarDay(month, day) {
+  const icons = [];
+  for (const f of FEASTS) {
+    if (f.month === month) {
+      if (f.endDay) {
+        // Multi-day feast
+        if (day >= f.day && day <= f.endDay) {
+          if (!icons.includes(f.icon)) icons.push(f.icon);
+        }
+      } else if (f.day === day) {
+        // Single-day feast
+        if (!icons.includes(f.icon)) icons.push(f.icon);
+      }
+    }
+  }
+  return icons;
+}
+
+// Switch to a profile and navigate to the same Gregorian date
+function switchToProfileAndNavigate(profileId, timestamp) {
+  // Store the target date to navigate to after calendar regenerates
+  state.pendingNavigationDate = new Date(timestamp);
+  
+  // Apply the profile (this will trigger calendar regeneration)
+  applyProfile(profileId);
+}
+
+// Navigate to a pending date after calendar regeneration
+function navigateToPendingDate() {
+  if (!state.pendingNavigationDate) return;
+  
+  const targetDateStr = state.pendingNavigationDate.toISOString().split('T')[0];
+  state.pendingNavigationDate = null; // Clear the pending navigation
+  
+  // Find this Gregorian date in the new calendar
+  for (let m = 0; m < state.lunarMonths.length; m++) {
+    const month = state.lunarMonths[m];
+    for (let d = 0; d < month.days.length; d++) {
+      const day = month.days[d];
+      if (day.gregorianDate.toISOString().split('T')[0] === targetDateStr) {
+        state.currentMonthIndex = m;
+        state.highlightedLunarDay = day.lunarDay;
+        renderMonth(month);
+        showDayDetail(day, month);
+        return;
+      }
+    }
+  }
+}
 
 function applyProfile(profileId) {
   const profile = PROFILES[profileId];
@@ -4766,7 +5208,14 @@ function regenerateCalendarPreservingScroll() {
   generateCalendar({ preserveMonth: true });
   updateURL();
   renderSettingsPageMap();
-  refreshDayDetailIfVisible();
+  
+  // Check for pending navigation (from profile switching)
+  if (state.pendingNavigationDate) {
+    navigateToPendingDate();
+  } else {
+    refreshDayDetailIfVisible();
+  }
+  
   requestAnimationFrame(() => {
     window.scrollTo(0, scrollTop);
   });
@@ -6084,6 +6533,157 @@ function getLocalDateFromUTC(utcDate, longitude) {
   return result;
 }
 
+// Calculate what lunar day a timestamp falls on for a given profile's settings
+// Returns { day: number, month: number } or null if unable to calculate
+function getLunarDayForTimestamp(timestamp, profile) {
+  try {
+    const date = new Date(timestamp);
+    let year = date.getFullYear();
+    
+    // Temporarily store current state and apply profile settings
+    const savedState = {
+      moonPhase: state.moonPhase,
+      dayStartTime: state.dayStartTime,
+      dayStartAngle: state.dayStartAngle,
+      yearStartRule: state.yearStartRule,
+      crescentThreshold: state.crescentThreshold,
+      lat: state.lat,
+      lon: state.lon
+    };
+    
+    // Apply profile settings temporarily
+    state.moonPhase = profile.moonPhase;
+    state.dayStartTime = profile.dayStartTime;
+    state.dayStartAngle = profile.dayStartAngle;
+    state.yearStartRule = profile.yearStartRule;
+    state.crescentThreshold = profile.crescentThreshold;
+    state.lat = profile.lat;
+    state.lon = profile.lon;
+    
+    const engine = getAstroEngine();
+    
+    // Check if timestamp is before this year's spring equinox - if so, use previous year
+    const thisYearEquinox = engine.getSeasons(year).mar_equinox.date;
+    if (date < thisYearEquinox) {
+      year = year - 1;
+    }
+    
+    // Find moon events for the year (need events spanning into next year)
+    const moonEvents = findMoonEvents(year, profile.moonPhase);
+    if (!moonEvents || moonEvents.length === 0) {
+      Object.assign(state, savedState);
+      return null;
+    }
+    
+    // Find the spring equinox for the lunar year
+    const springEquinox = engine.getSeasons(year).mar_equinox.date;
+    
+    // Find the first moon event on or after the spring equinox for Nisan
+    let nissanMoon = null;
+    for (const event of moonEvents) {
+      if (event >= springEquinox) {
+        nissanMoon = event;
+        break;
+      }
+    }
+    
+    // If no moon event after equinox, check the last one before
+    if (!nissanMoon && moonEvents.length > 0) {
+      for (let i = moonEvents.length - 1; i >= 0; i--) {
+        if (moonEvents[i] < springEquinox) {
+          nissanMoon = moonEvents[i];
+          break;
+        }
+      }
+    }
+    
+    if (!nissanMoon) {
+      Object.assign(state, savedState);
+      return null;
+    }
+    
+    // Build simplified lunar months to find the day
+    const observerLon = profile.lon;
+    let currentMoonIdx = moonEvents.findIndex(m => Math.abs(m.getTime() - nissanMoon.getTime()) < 1000);
+    if (currentMoonIdx === -1) currentMoonIdx = moonEvents.findIndex(m => m >= nissanMoon);
+    
+    // Iterate through months to find where the timestamp falls
+    for (let m = 0; m < 13 && currentMoonIdx < moonEvents.length - 1; m++) {
+      const moonEvent = moonEvents[currentMoonIdx];
+      const nextMoonEvent = moonEvents[currentMoonIdx + 1];
+      
+      // Calculate month start date (similar to buildLunarMonths)
+      const moonEventLocalDate = new Date(moonEvent.getTime());
+      const monthStartDate = new Date(Date.UTC(
+        moonEventLocalDate.getUTCFullYear(),
+        moonEventLocalDate.getUTCMonth(),
+        moonEventLocalDate.getUTCDate(),
+        0, 0, 0
+      ));
+      
+      // Apply day offset based on settings
+      if ((profile.moonPhase === 'dark' || profile.moonPhase === 'full' || profile.moonPhase === 'crescent') && profile.dayStartTime === 'evening') {
+        const sunsetOnMoonDate = getSunsetTimestamp(moonEventLocalDate);
+        if (sunsetOnMoonDate != null) {
+          const moonEventLocalTime = moonEvent.getTime() + (observerLon / 15) * 60 * 60 * 1000;
+          const sunsetLocalTime = sunsetOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
+          if (moonEventLocalTime > sunsetLocalTime) {
+            monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
+          }
+        }
+      }
+      
+      // Calculate next month start
+      const nextMoonEventLocalDate = new Date(nextMoonEvent.getTime());
+      const nextMonthStart = new Date(Date.UTC(
+        nextMoonEventLocalDate.getUTCFullYear(),
+        nextMoonEventLocalDate.getUTCMonth(),
+        nextMoonEventLocalDate.getUTCDate(),
+        0, 0, 0
+      ));
+      
+      if ((profile.moonPhase === 'dark' || profile.moonPhase === 'full' || profile.moonPhase === 'crescent') && profile.dayStartTime === 'evening') {
+        const sunsetOnNextMoonDate = getSunsetTimestamp(nextMoonEventLocalDate);
+        if (sunsetOnNextMoonDate != null) {
+          const nextMoonEventLocalTime = nextMoonEvent.getTime() + (observerLon / 15) * 60 * 60 * 1000;
+          const nextSunsetLocalTime = sunsetOnNextMoonDate + (observerLon / 15) * 60 * 60 * 1000;
+          if (nextMoonEventLocalTime > nextSunsetLocalTime) {
+            nextMonthStart.setUTCDate(nextMonthStart.getUTCDate() + 1);
+          }
+        }
+      }
+      
+      // Check if timestamp falls in this month
+      const timestampDate = new Date(timestamp);
+      const timestampDayStart = new Date(Date.UTC(
+        timestampDate.getUTCFullYear(),
+        timestampDate.getUTCMonth(),
+        timestampDate.getUTCDate(),
+        0, 0, 0
+      ));
+      
+      if (timestampDayStart >= monthStartDate && timestampDayStart < nextMonthStart) {
+        // Found the month - calculate the day
+        const dayOffset = Math.floor((timestampDayStart - monthStartDate) / (24 * 60 * 60 * 1000));
+        const lunarDay = dayOffset + 1;
+        
+        // Restore state
+        Object.assign(state, savedState);
+        return { day: lunarDay, month: m + 1 };
+      }
+      
+      currentMoonIdx++;
+    }
+    
+    // Restore state
+    Object.assign(state, savedState);
+    return null;
+  } catch (e) {
+    console.warn('Error calculating lunar day for profile:', e);
+    return null;
+  }
+}
+
 function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStartPoint) {
   const months = [];
   
@@ -6695,6 +7295,12 @@ function renderDatelineVisualization(moonEventDate) {
   const locX = ((currentLon + 180) / 360) * 100;
   const locY = ((90 - currentLat) / 180) * 100;
   
+  // Get location display name (city name or region)
+  const locationName = getCurrentLocationName();
+  const coordStr = `${currentLat.toFixed(2)}°${currentLat >= 0 ? 'N' : 'S'}, ${Math.abs(currentLon).toFixed(2)}°${currentLon >= 0 ? 'E' : 'W'}`;
+  const locationDisplay = locationName !== 'Your Location' && !locationName.includes('/') 
+    ? `${locationName} (${coordStr})`
+    : coordStr;
   
   return `
     <div class="dateline-container">
@@ -6709,7 +7315,7 @@ function renderDatelineVisualization(moonEventDate) {
           <span class="dateline-marker-icon">${dayStartIcon}</span>
           <span class="dateline-marker-label">${markerLabel}</span>
         </div>
-        <div class="dateline-location-marker" style="left: ${locX}%; top: ${locY}%" title="Your Location: ${currentLat.toFixed(2)}°, ${currentLon.toFixed(2)}°"></div>
+        <div class="dateline-location-marker" style="left: ${locX}%; top: ${locY}%" title="${locationName}: ${coordStr}"><div class="dateline-location-pin"></div></div>
       </div>
       <div class="dateline-cities">
         <span>180°W</span>
@@ -6719,7 +7325,7 @@ function renderDatelineVisualization(moonEventDate) {
         <span>180°E</span>
       </div>
       <div class="dateline-info">Day start line: ${lonStr} — ${region}</div>
-      <div class="dateline-info" style="color: #7ec8e3;">Your location: ${currentLat.toFixed(2)}°${currentLat >= 0 ? 'N' : 'S'}, ${Math.abs(currentLon).toFixed(2)}°${currentLon >= 0 ? 'E' : 'W'}</div>
+      <div class="dateline-info" style="color: #7ec8e3;">Your location: ${locationDisplay}</div>
       <div class="dateline-click-hint">Click map to change location • First to reach ${dayStartEvent.toLowerCase()} after ${getMoonLabel()} starts month first</div>
     </div>
   `;
@@ -7829,6 +8435,58 @@ function showDayDetail(dayObj, month) {
   }
   
   infoContainer.innerHTML = infoHtml;
+  
+  // Populate dateline visualization for Day 1
+  const datelineContainer = panel.querySelector('.day-detail-dateline');
+  if (dayObj.lunarDay === 1 && month.moonEvent) {
+    const datelineHtml = renderDatelineVisualization(month.moonEvent);
+    datelineContainer.innerHTML = datelineHtml;
+  } else {
+    datelineContainer.innerHTML = '';
+  }
+  
+  // Populate profile comparison section
+  const compareContainer = panel.querySelector('.day-detail-profile-compare');
+  const now = new Date();
+  const checkTimestamp = dayObj.gregorianDate.getTime();
+  
+  // Always show profile comparison for modern dates
+  if (Object.keys(PRESET_PROFILES).length > 1) {
+    let compareHtml = `<div class="profile-compare-title">📅 This Moment on Other Calendars</div>`;
+    compareHtml += `<div class="profile-compare-grid">`;
+    
+    let hasResults = false;
+    for (const [profileId, profile] of Object.entries(PRESET_PROFILES)) {
+      const isCurrent = profileId === state.selectedProfile;
+      const lunarDayInfo = getLunarDayForTimestamp(checkTimestamp, profile);
+      
+      if (lunarDayInfo) {
+        hasResults = true;
+        
+        // Get feast icons for this lunar day/month
+        const feastIcons = getFeastIconsForLunarDay(lunarDayInfo.month, lunarDayInfo.day);
+        const feastHtml = feastIcons.length > 0 ? `<div class="profile-compare-feasts">${feastIcons.join('')}</div>` : '';
+        
+        compareHtml += `
+          <div class="profile-compare-item${isCurrent ? ' current' : ''}" data-profile-id="${profileId}" onclick="switchToProfileAndNavigate('${profileId}', ${checkTimestamp})">
+            <span class="profile-compare-name">${profile.icon} ${profile.name}</span>
+            <span class="profile-compare-day">Day ${lunarDayInfo.day} of Month ${lunarDayInfo.month}</span>
+            ${feastHtml}
+          </div>
+        `;
+      }
+    }
+    
+    compareHtml += `</div>`;
+    
+    if (hasResults) {
+      compareContainer.innerHTML = compareHtml;
+    } else {
+      compareContainer.innerHTML = '';
+    }
+  } else {
+    compareContainer.innerHTML = '';
+  }
   
   // Show the panel (reset both inline style and class)
   panel.style.display = '';  // Reset any inline display:none from settings page
