@@ -4883,61 +4883,43 @@ function saveState() {
   localStorage.setItem('lunarCalendarState', JSON.stringify(toSave));
 }
 
-// Update URL with current calendar state for sharing
+// Update URL with current calendar state for sharing (uses SEO-friendly paths)
 function updateURL() {
-  const params = new URLSearchParams();
-  params.set('year', state.year);
-  params.set('month', state.currentMonthIndex + 1); // 1-indexed for readability
-  if (state.highlightedLunarDay) {
-    params.set('day', state.highlightedLunarDay);
-  }
-  params.set('lat', state.lat);
-  params.set('lon', state.lon);
-  params.set('phase', state.moonPhase);
-  
-  const newURL = window.location.pathname + '?' + params.toString();
-  window.history.replaceState({}, '', newURL);
+  updatePathURL();
 }
 
-// Load state from URL parameters (called after initial calendar generation)
+// Load state from URL (supports both path-based and legacy query params)
 function loadFromURL() {
-  const params = new URLSearchParams(window.location.search);
+  // Parse the new path-based URL
+  const urlState = parsePathURL();
   
-  if (!params.has('year')) return; // No URL params, use defaults
-  
-  let needsRegenerate = false;
-  
-  // Year
-  if (params.has('year')) {
-    const urlYear = parseInt(params.get('year'));
-    if (!isNaN(urlYear) && urlYear !== state.year) {
-      state.year = urlYear;
-      needsRegenerate = true;
-    }
+  // Handle special views
+  if (urlState.view === 'sabbath-tester') {
+    const sabbathTesterPage = document.getElementById('sabbath-tester-page');
+    const calendarOutput = document.getElementById('calendar-output');
+    const dayDetailPanel = document.getElementById('day-detail-panel');
+    calendarOutput.style.display = 'none';
+    dayDetailPanel.style.display = 'none';
+    sabbathTesterPage.style.display = 'block';
+    renderSabbathTester();
+    return;
   }
   
-  // Location
-  if (params.has('lat') && params.has('lon')) {
-    const urlLat = parseFloat(params.get('lat'));
-    const urlLon = parseFloat(params.get('lon'));
-    if (!isNaN(urlLat) && !isNaN(urlLon)) {
-      if (urlLat !== state.lat || urlLon !== state.lon) {
-        state.lat = urlLat;
-        state.lon = urlLon;
-        state.city = ''; // Clear city selection
-        needsRegenerate = true;
-      }
-    }
+  if (urlState.view === 'feasts') {
+    toggleExportModal(true);
+    return;
   }
   
-  // Moon phase
-  if (params.has('phase')) {
-    const urlPhase = params.get('phase');
-    if (['full', 'dark', 'crescent'].includes(urlPhase) && urlPhase !== state.moonPhase) {
-      state.moonPhase = urlPhase;
-      needsRegenerate = true;
-    }
+  // Check if we have a non-default URL (path segments or query params)
+  const hasPathData = window.location.pathname !== '/' && window.location.pathname !== '/index.html';
+  const hasQueryData = window.location.search.length > 0;
+  
+  if (!hasPathData && !hasQueryData) {
+    return; // No URL data, use defaults
   }
+  
+  // Apply URL state to app state
+  const { needsRegenerate, month, day, view } = applyURLState(urlState);
   
   // Regenerate if settings changed
   if (needsRegenerate) {
@@ -4945,52 +4927,30 @@ function loadFromURL() {
     generateCalendar();
   }
   
-  // Month and day (after calendar is generated)
-  if (params.has('month')) {
-    const urlMonth = parseInt(params.get('month')) - 1; // Convert to 0-indexed
-    if (!isNaN(urlMonth) && urlMonth >= 0 && urlMonth < state.lunarMonths.length) {
-      state.currentMonthIndex = urlMonth;
+  // Apply month after calendar generation
+  if (month !== null && month !== undefined) {
+    const monthIndex = month - 1; // Convert to 0-indexed
+    if (monthIndex >= 0 && monthIndex < state.lunarMonths.length) {
+      state.currentMonthIndex = monthIndex;
     }
   }
   
-  if (params.has('day')) {
-    const urlDay = parseInt(params.get('day'));
-    if (!isNaN(urlDay) && urlDay >= 1 && urlDay <= 30) {
-      state.highlightedLunarDay = urlDay;
-      // Update the goto-date input and timestamp to match the highlighted day
-      const month = state.lunarMonths[state.currentMonthIndex];
-      const dayObj = month?.days.find(d => d.lunarDay === urlDay);
-      if (dayObj) {
-        // Set to sunrise time of that day
-        state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
-        document.getElementById('goto-date').value = formatLocalDatetime(state.selectedTimestamp);
-        // Show the day detail panel
-        showDayDetail(dayObj, month);
-      }
+  // Apply day
+  if (day !== null && day !== undefined) {
+    state.highlightedLunarDay = day;
+    const monthData = state.lunarMonths[state.currentMonthIndex];
+    const dayObj = monthData?.days.find(d => d.lunarDay === day);
+    if (dayObj) {
+      state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+      document.getElementById('goto-date').value = formatLocalDatetime(state.selectedTimestamp);
+      showDayDetail(dayObj, monthData);
     }
   }
   
-  // Re-render with the URL state
-  if (params.has('month') || params.has('day')) {
+  // Re-render if month or day specified
+  if (month !== null || day !== null) {
     renderMonth(state.lunarMonths[state.currentMonthIndex]);
     updateMonthButtons();
-  }
-  
-  // Check for view parameter to open specific pages
-  if (params.has('view')) {
-    const view = params.get('view');
-    if (view === 'feasts') {
-      toggleExportModal(true); // Skip URL update since we're loading from URL
-    } else if (view === 'sabbath-tester') {
-      // Navigate to sabbath tester without updating URL (already set)
-      const sabbathTesterPage = document.getElementById('sabbath-tester-page');
-      const calendarOutput = document.getElementById('calendar-output');
-      const dayDetailPanel = document.getElementById('day-detail-panel');
-      calendarOutput.style.display = 'none';
-      dayDetailPanel.style.display = 'none';
-      sabbathTesterPage.style.display = 'block';
-      renderSabbathTester();
-    }
   }
 }
 
@@ -5198,14 +5158,19 @@ function toggleExportModal(skipUrlUpdate = false) {
 }
 
 function updateURLWithView(view) {
-  const params = new URLSearchParams();
-  params.set('year', state.year);
-  params.set('lat', state.lat);
-  params.set('lon', state.lon);
-  params.set('phase', state.moonPhase);
-  params.set('view', view);
+  let newURL;
+  if (view === 'sabbath-tester') {
+    newURL = '/sabbath-tester/';
+  } else if (view === 'feasts') {
+    // Build feasts URL with profile/year/location
+    const profile = getCurrentProfileSlug();
+    const location = getLocationSlug();
+    newURL = `/feasts/${profile}/${state.year}/${location}/`;
+  } else {
+    // Calendar view - use standard path URL
+    newURL = buildPathURL();
+  }
   
-  const newURL = window.location.pathname + '?' + params.toString();
   // Use pushState for navigation views so back button works
   window.history.pushState({ view: view }, '', newURL);
 }
@@ -5512,6 +5477,520 @@ const CITY_NAMES = {
   '28.6139,77.209': 'New Delhi',
   '-1.2921,36.8219': 'Nairobi'
 };
+
+// ========================================
+// SEO-FRIENDLY URL ROUTING
+// ========================================
+
+// City slugs for URL routing (slug -> coordinates)
+const CITY_SLUGS = {
+  // Biblical / Middle East
+  'jerusalem': { lat: 31.7683, lon: 35.2137 },
+  'cairo': { lat: 30.0444, lon: 31.2357 },
+  'baghdad': { lat: 33.3152, lon: 44.3661 },
+  'damascus': { lat: 33.5138, lon: 36.2765 },
+  'amman': { lat: 31.9454, lon: 35.9284 },
+  'beirut': { lat: 33.8938, lon: 35.5018 },
+  'tel-aviv': { lat: 32.0853, lon: 34.7818 },
+  'alexandria': { lat: 31.2001, lon: 29.9187 },
+  'istanbul': { lat: 41.0082, lon: 28.9784 },
+  'tehran': { lat: 35.6892, lon: 51.3890 },
+  // North America
+  'new-york': { lat: 40.7128, lon: -74.006 },
+  'los-angeles': { lat: 34.0522, lon: -118.2437 },
+  'chicago': { lat: 41.8781, lon: -87.6298 },
+  'houston': { lat: 29.7604, lon: -95.3698 },
+  'phoenix': { lat: 33.4484, lon: -112.074 },
+  'philadelphia': { lat: 39.9526, lon: -75.1652 },
+  'san-antonio': { lat: 29.4241, lon: -98.4936 },
+  'san-diego': { lat: 32.7157, lon: -117.1611 },
+  'dallas': { lat: 32.7767, lon: -96.7970 },
+  'san-jose': { lat: 37.3382, lon: -121.8863 },
+  'austin': { lat: 30.2672, lon: -97.7431 },
+  'jacksonville': { lat: 30.3322, lon: -81.6557 },
+  'fort-worth': { lat: 32.7555, lon: -97.3308 },
+  'columbus': { lat: 39.9612, lon: -82.9988 },
+  'charlotte': { lat: 35.2271, lon: -80.8431 },
+  'san-francisco': { lat: 37.7749, lon: -122.4194 },
+  'indianapolis': { lat: 39.7684, lon: -86.1581 },
+  'seattle': { lat: 47.6062, lon: -122.3321 },
+  'denver': { lat: 39.7392, lon: -104.9903 },
+  'washington-dc': { lat: 38.9072, lon: -77.0369 },
+  'boston': { lat: 42.3601, lon: -71.0589 },
+  'nashville': { lat: 36.1627, lon: -86.7816 },
+  'detroit': { lat: 42.3314, lon: -83.0458 },
+  'portland': { lat: 45.5152, lon: -122.6784 },
+  'las-vegas': { lat: 36.1699, lon: -115.1398 },
+  'memphis': { lat: 35.1495, lon: -90.0490 },
+  'louisville': { lat: 38.2527, lon: -85.7585 },
+  'baltimore': { lat: 39.2904, lon: -76.6122 },
+  'milwaukee': { lat: 43.0389, lon: -87.9065 },
+  'albuquerque': { lat: 35.0844, lon: -106.6504 },
+  'tucson': { lat: 32.2226, lon: -110.9747 },
+  'atlanta': { lat: 33.749, lon: -84.388 },
+  'miami': { lat: 25.7617, lon: -80.1918 },
+  'minneapolis': { lat: 44.9778, lon: -93.2650 },
+  'salt-lake-city': { lat: 40.7608, lon: -111.8910 },
+  'anchorage': { lat: 61.2181, lon: -149.9003 },
+  'honolulu': { lat: 21.3069, lon: -157.8583 },
+  'toronto': { lat: 43.6532, lon: -79.3832 },
+  'vancouver': { lat: 49.2827, lon: -123.1207 },
+  'montreal': { lat: 45.5017, lon: -73.5673 },
+  'mexico-city': { lat: 19.4326, lon: -99.1332 },
+  // Europe
+  'london': { lat: 51.5074, lon: -0.1278 },
+  'paris': { lat: 48.8566, lon: 2.3522 },
+  'berlin': { lat: 52.52, lon: 13.405 },
+  'madrid': { lat: 40.4168, lon: -3.7038 },
+  'rome': { lat: 41.9028, lon: 12.4964 },
+  'vienna': { lat: 48.2082, lon: 16.3738 },
+  'amsterdam': { lat: 52.3676, lon: 4.9041 },
+  'brussels': { lat: 50.8503, lon: 4.3517 },
+  'stockholm': { lat: 59.3293, lon: 18.0686 },
+  'oslo': { lat: 59.9139, lon: 10.7522 },
+  'copenhagen': { lat: 55.6761, lon: 12.5683 },
+  'helsinki': { lat: 60.1699, lon: 24.9384 },
+  'dublin': { lat: 53.3498, lon: -6.2603 },
+  'lisbon': { lat: 38.7223, lon: -9.1393 },
+  'barcelona': { lat: 41.3851, lon: 2.1734 },
+  'munich': { lat: 48.1351, lon: 11.5820 },
+  'milan': { lat: 45.4642, lon: 9.1900 },
+  'zurich': { lat: 47.3769, lon: 8.5417 },
+  'geneva': { lat: 46.2044, lon: 6.1432 },
+  'moscow': { lat: 55.7558, lon: 37.6173 },
+  'saint-petersburg': { lat: 59.9311, lon: 30.3609 },
+  'kiev': { lat: 50.4501, lon: 30.5234 },
+  'warsaw': { lat: 52.2297, lon: 21.0122 },
+  'prague': { lat: 50.0755, lon: 14.4378 },
+  'budapest': { lat: 47.4979, lon: 19.0402 },
+  'bucharest': { lat: 44.4268, lon: 26.1025 },
+  'athens': { lat: 37.9838, lon: 23.7275 },
+  // Asia
+  'tokyo': { lat: 35.6762, lon: 139.6503 },
+  'osaka': { lat: 34.6937, lon: 135.5023 },
+  'seoul': { lat: 37.5665, lon: 126.9780 },
+  'beijing': { lat: 39.9042, lon: 116.4074 },
+  'shanghai': { lat: 31.2304, lon: 121.4737 },
+  'hong-kong': { lat: 22.3193, lon: 114.1694 },
+  'taipei': { lat: 25.0330, lon: 121.5654 },
+  'singapore': { lat: 1.3521, lon: 103.8198 },
+  'bangkok': { lat: 13.7563, lon: 100.5018 },
+  'kuala-lumpur': { lat: 3.1390, lon: 101.6869 },
+  'jakarta': { lat: -6.2088, lon: 106.8456 },
+  'manila': { lat: 14.5995, lon: 120.9842 },
+  'hanoi': { lat: 21.0285, lon: 105.8542 },
+  'ho-chi-minh': { lat: 10.8231, lon: 106.6297 },
+  'mumbai': { lat: 19.0760, lon: 72.8777 },
+  'new-delhi': { lat: 28.6139, lon: 77.209 },
+  'bangalore': { lat: 12.9716, lon: 77.5946 },
+  'kolkata': { lat: 22.5726, lon: 88.3639 },
+  'chennai': { lat: 13.0827, lon: 80.2707 },
+  'karachi': { lat: 24.8607, lon: 67.0011 },
+  'lahore': { lat: 31.5204, lon: 74.3587 },
+  'dhaka': { lat: 23.8103, lon: 90.4125 },
+  // Oceania
+  'sydney': { lat: -33.8688, lon: 151.2093 },
+  'melbourne': { lat: -37.8136, lon: 144.9631 },
+  'brisbane': { lat: -27.4698, lon: 153.0251 },
+  'perth': { lat: -31.9505, lon: 115.8605 },
+  'auckland': { lat: -36.8485, lon: 174.7633 },
+  'wellington': { lat: -41.2865, lon: 174.7762 },
+  // South America
+  'sao-paulo': { lat: -23.5505, lon: -46.6333 },
+  'rio-de-janeiro': { lat: -22.9068, lon: -43.1729 },
+  'buenos-aires': { lat: -34.6037, lon: -58.3816 },
+  'bogota': { lat: 4.7110, lon: -74.0721 },
+  'lima': { lat: -12.0464, lon: -77.0428 },
+  'santiago': { lat: -33.4489, lon: -70.6693 },
+  'caracas': { lat: 10.4806, lon: -66.9036 },
+  // Africa
+  'johannesburg': { lat: -26.2041, lon: 28.0473 },
+  'cape-town': { lat: -33.9249, lon: 18.4241 },
+  'lagos': { lat: 6.5244, lon: 3.3792 },
+  'nairobi': { lat: -1.2921, lon: 36.8219 },
+  'addis-ababa': { lat: 9.0320, lon: 38.7469 },
+  'casablanca': { lat: 33.5731, lon: -7.5898 },
+  'tunis': { lat: 36.8065, lon: 10.1815 },
+  'algiers': { lat: 36.7538, lon: 3.0588 },
+  'accra': { lat: 5.6037, lon: -0.1870 },
+  'dakar': { lat: 14.7167, lon: -17.4677 }
+};
+
+// Reverse lookup: coordinates to slug
+const COORDS_TO_SLUG = {};
+for (const [slug, coords] of Object.entries(CITY_SLUGS)) {
+  COORDS_TO_SLUG[`${coords.lat},${coords.lon}`] = slug;
+}
+
+// Named profile configurations for short URLs
+const PROFILE_CONFIGS = {
+  'biblical': {
+    moonPhase: 'full',
+    dayStartTime: 'morning',
+    dayStartAngle: 12,
+    sabbathMode: 'lunar',
+    yearStartRule: 'equinox'
+  },
+  'lunar-dark': {
+    moonPhase: 'dark',
+    dayStartTime: 'evening',
+    dayStartAngle: 0,
+    sabbathMode: 'lunar',
+    yearStartRule: 'equinox'
+  },
+  'lunar-crescent': {
+    moonPhase: 'crescent',
+    dayStartTime: 'evening',
+    dayStartAngle: 0,
+    sabbathMode: 'lunar',
+    yearStartRule: 'equinox'
+  },
+  'traditional': {
+    moonPhase: 'crescent',
+    dayStartTime: 'evening',
+    dayStartAngle: 0,
+    sabbathMode: 'saturday',
+    yearStartRule: '13daysBefore'  // "passover" rule - Day 15 on or after equinox
+  },
+  'saturday-full': {
+    moonPhase: 'full',
+    dayStartTime: 'morning',
+    dayStartAngle: 12,
+    sabbathMode: 'saturday',
+    yearStartRule: 'equinox'
+  },
+  'saturday-dark': {
+    moonPhase: 'dark',
+    dayStartTime: 'evening',
+    dayStartAngle: 0,
+    sabbathMode: 'saturday',
+    yearStartRule: 'equinox'
+  }
+};
+
+// URL to internal value mappings
+const YEAR_START_URL_MAP = {
+  'equinox': 'equinox',
+  'passover': '13daysBefore',
+  'lamb': '13daysBefore'
+};
+const YEAR_START_INTERNAL_TO_URL = {
+  'equinox': 'equinox',
+  '13daysBefore': 'passover'
+};
+
+// Find closest city slug from coordinates (within ~100km)
+function getClosestCitySlug(lat, lon) {
+  let closestSlug = null;
+  let closestDist = Infinity;
+  const maxDistKm = 100;
+  
+  for (const [slug, coords] of Object.entries(CITY_SLUGS)) {
+    const dist = haversineDistance(lat, lon, coords.lat, coords.lon);
+    if (dist < closestDist && dist < maxDistKm) {
+      closestDist = dist;
+      closestSlug = slug;
+    }
+  }
+  
+  return closestSlug;
+}
+
+// Haversine distance in km
+function haversineDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Earth's radius in km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}
+
+// Get current profile slug based on state
+function getCurrentProfileSlug() {
+  for (const [slug, config] of Object.entries(PROFILE_CONFIGS)) {
+    if (state.moonPhase === config.moonPhase &&
+        state.dayStartTime === config.dayStartTime &&
+        state.dayStartAngle === config.dayStartAngle &&
+        state.sabbathMode === config.sabbathMode &&
+        state.yearStartRule === config.yearStartRule) {
+      return slug;
+    }
+  }
+  return 'custom';
+}
+
+// Get location slug for URL
+function getLocationSlug() {
+  // Try exact match first
+  const coordKey = `${state.lat},${state.lon}`;
+  if (COORDS_TO_SLUG[coordKey]) {
+    return COORDS_TO_SLUG[coordKey];
+  }
+  
+  // Try closest city
+  const closest = getClosestCitySlug(state.lat, state.lon);
+  if (closest) {
+    return closest;
+  }
+  
+  // Fall back to coordinates
+  return `${state.lat.toFixed(4)},${state.lon.toFixed(4)}`;
+}
+
+// Build SEO-friendly URL from current state
+function buildPathURL(options = {}) {
+  const profile = getCurrentProfileSlug();
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth() + 1;
+  
+  // Determine which segments to include (only include if different from defaults)
+  const segments = [];
+  
+  // Profile is always first (required for non-default)
+  if (profile !== 'biblical' || options.includeProfile) {
+    segments.push(profile);
+  }
+  
+  // Year (only if not current year or if month/day specified)
+  const includeYear = state.year !== currentYear || options.includeYear || 
+                      state.currentMonthIndex !== undefined || state.highlightedLunarDay;
+  if (includeYear || segments.length > 0) {
+    segments.push(state.year.toString());
+  }
+  
+  // Month (only if day is specified or explicitly included)
+  const monthNum = (state.currentMonthIndex || 0) + 1;
+  if (state.highlightedLunarDay || options.includeMonth) {
+    if (segments.length === 0) segments.push('biblical');
+    if (segments.length === 1) segments.push(state.year.toString());
+    segments.push(monthNum.toString());
+  }
+  
+  // Day (only if highlighted)
+  if (state.highlightedLunarDay) {
+    segments.push(state.highlightedLunarDay.toString());
+  }
+  
+  // Location (only if not Jerusalem default or explicitly included)
+  const locationSlug = getLocationSlug();
+  if (locationSlug !== 'jerusalem' || options.includeLocation) {
+    // Ensure we have the full path before adding location
+    while (segments.length < 4 && state.highlightedLunarDay) {
+      // Fill in missing segments
+    }
+    if (segments.length > 0) {
+      segments.push(locationSlug);
+    }
+  }
+  
+  // Build path
+  let path = '/' + segments.join('/');
+  if (path !== '/' && !path.endsWith('/')) {
+    path += '/';
+  }
+  
+  // Add query params for custom profiles or fine-tuning
+  const params = new URLSearchParams();
+  
+  if (profile === 'custom') {
+    // Include all settings that differ from biblical default
+    if (state.moonPhase !== 'full') params.set('moon', state.moonPhase);
+    if (state.dayStartTime !== 'morning') params.set('dayStart', state.dayStartTime);
+    if (state.dayStartAngle !== 12) params.set('angle', state.dayStartAngle);
+    if (state.sabbathMode !== 'lunar') params.set('sabbath', state.sabbathMode);
+    if (state.yearStartRule !== 'equinox') {
+      params.set('yearStart', YEAR_START_INTERNAL_TO_URL[state.yearStartRule] || state.yearStartRule);
+    }
+    if (state.crescentThreshold !== 18) params.set('threshold', state.crescentThreshold);
+  }
+  
+  // Time parameter if specific time is set
+  if (options.includeTime && state.selectedTimestamp) {
+    const d = new Date(state.selectedTimestamp);
+    params.set('time', `${d.getHours()}:${String(d.getMinutes()).padStart(2, '0')}`);
+  }
+  
+  const queryString = params.toString();
+  return queryString ? `${path}?${queryString}` : path;
+}
+
+// Parse SEO-friendly URL path into state
+function parsePathURL() {
+  const path = window.location.pathname;
+  const segments = path.split('/').filter(s => s.length > 0);
+  const params = new URLSearchParams(window.location.search);
+  
+  // Check for special views first
+  if (segments[0] === 'sabbath-tester') {
+    return { view: 'sabbath-tester' };
+  }
+  if (segments[0] === 'feasts') {
+    return { view: 'feasts', segments: segments.slice(1) };
+  }
+  
+  // Default state
+  const result = {
+    profile: 'biblical',
+    year: new Date().getFullYear(),
+    month: null,
+    day: null,
+    location: 'jerusalem',
+    view: 'calendar'
+  };
+  
+  if (segments.length === 0) {
+    return result;
+  }
+  
+  let segmentIndex = 0;
+  
+  // First segment: profile name or year
+  const first = segments[0];
+  if (PROFILE_CONFIGS[first]) {
+    result.profile = first;
+    segmentIndex++;
+  } else if (first === 'custom') {
+    result.profile = 'custom';
+    segmentIndex++;
+  } else if (/^-?\d+$/.test(first)) {
+    // It's a year, use default profile
+    result.profile = 'biblical';
+  }
+  
+  // Second segment (or first if no profile): year
+  if (segmentIndex < segments.length) {
+    const yearStr = segments[segmentIndex];
+    if (/^-?\d+$/.test(yearStr)) {
+      result.year = parseInt(yearStr);
+      segmentIndex++;
+    }
+  }
+  
+  // Third segment: month
+  if (segmentIndex < segments.length) {
+    const monthStr = segments[segmentIndex];
+    if (/^\d+$/.test(monthStr) && parseInt(monthStr) >= 1 && parseInt(monthStr) <= 13) {
+      result.month = parseInt(monthStr);
+      segmentIndex++;
+    }
+  }
+  
+  // Fourth segment: day
+  if (segmentIndex < segments.length) {
+    const dayStr = segments[segmentIndex];
+    if (/^\d+$/.test(dayStr) && parseInt(dayStr) >= 1 && parseInt(dayStr) <= 30) {
+      result.day = parseInt(dayStr);
+      segmentIndex++;
+    }
+  }
+  
+  // Last segment: location (city slug or coordinates)
+  if (segmentIndex < segments.length) {
+    const locStr = segments[segmentIndex];
+    if (CITY_SLUGS[locStr]) {
+      result.location = locStr;
+    } else if (/^-?\d+\.?\d*,-?\d+\.?\d*$/.test(locStr)) {
+      // Coordinates format
+      result.location = locStr;
+    }
+  }
+  
+  // Parse query params for custom profile settings
+  if (params.has('moon')) result.moonPhase = params.get('moon');
+  if (params.has('dayStart')) result.dayStartTime = params.get('dayStart');
+  if (params.has('angle')) result.dayStartAngle = parseInt(params.get('angle'));
+  if (params.has('sabbath')) result.sabbathMode = params.get('sabbath');
+  if (params.has('yearStart')) {
+    const urlValue = params.get('yearStart');
+    result.yearStartRule = YEAR_START_URL_MAP[urlValue] || urlValue;
+  }
+  if (params.has('threshold')) result.crescentThreshold = parseInt(params.get('threshold'));
+  if (params.has('time')) result.time = params.get('time');
+  
+  return result;
+}
+
+// Apply parsed URL state to app state
+function applyURLState(urlState) {
+  let needsRegenerate = false;
+  
+  // Apply profile settings
+  if (urlState.profile && PROFILE_CONFIGS[urlState.profile]) {
+    const config = PROFILE_CONFIGS[urlState.profile];
+    if (state.moonPhase !== config.moonPhase) {
+      state.moonPhase = config.moonPhase;
+      needsRegenerate = true;
+    }
+    if (state.dayStartTime !== config.dayStartTime) {
+      state.dayStartTime = config.dayStartTime;
+      needsRegenerate = true;
+    }
+    if (state.dayStartAngle !== config.dayStartAngle) {
+      state.dayStartAngle = config.dayStartAngle;
+      needsRegenerate = true;
+    }
+    if (state.sabbathMode !== config.sabbathMode) {
+      state.sabbathMode = config.sabbathMode;
+      needsRegenerate = true;
+    }
+    if (state.yearStartRule !== config.yearStartRule) {
+      state.yearStartRule = config.yearStartRule;
+      needsRegenerate = true;
+    }
+  }
+  
+  // Apply custom settings from query params
+  if (urlState.moonPhase) { state.moonPhase = urlState.moonPhase; needsRegenerate = true; }
+  if (urlState.dayStartTime) { state.dayStartTime = urlState.dayStartTime; needsRegenerate = true; }
+  if (urlState.dayStartAngle !== undefined) { state.dayStartAngle = urlState.dayStartAngle; needsRegenerate = true; }
+  if (urlState.sabbathMode) { state.sabbathMode = urlState.sabbathMode; needsRegenerate = true; }
+  if (urlState.yearStartRule) { state.yearStartRule = urlState.yearStartRule; needsRegenerate = true; }
+  if (urlState.crescentThreshold !== undefined) { state.crescentThreshold = urlState.crescentThreshold; needsRegenerate = true; }
+  
+  // Apply year
+  if (urlState.year && urlState.year !== state.year) {
+    state.year = urlState.year;
+    needsRegenerate = true;
+  }
+  
+  // Apply location
+  if (urlState.location) {
+    let lat, lon;
+    if (CITY_SLUGS[urlState.location]) {
+      lat = CITY_SLUGS[urlState.location].lat;
+      lon = CITY_SLUGS[urlState.location].lon;
+    } else if (urlState.location.includes(',')) {
+      const [latStr, lonStr] = urlState.location.split(',');
+      lat = parseFloat(latStr);
+      lon = parseFloat(lonStr);
+    }
+    if (lat !== undefined && lon !== undefined && (lat !== state.lat || lon !== state.lon)) {
+      state.lat = lat;
+      state.lon = lon;
+      needsRegenerate = true;
+    }
+  }
+  
+  return { needsRegenerate, month: urlState.month, day: urlState.day, view: urlState.view };
+}
+
+// Update browser URL without reload
+function updatePathURL() {
+  const newURL = buildPathURL();
+  if (window.location.pathname + window.location.search !== newURL) {
+    window.history.replaceState({}, '', newURL);
+  }
+}
+
+// Navigate with path URL and push to history
+function navigateToPathURL(options = {}) {
+  const newURL = buildPathURL(options);
+  window.history.pushState({}, '', newURL);
+}
 
 // Get timezone name from longitude
 function getTimezoneFromLongitude(lon) {
@@ -9943,30 +10422,36 @@ function renderFeastTable(months) {
 
 // Handle browser back/forward buttons
 window.addEventListener('popstate', function(event) {
-  const params = new URLSearchParams(window.location.search);
+  // Parse the path-based URL
+  const urlState = parsePathURL();
   
-  if (params.has('view')) {
-    const view = params.get('view');
-    if (view === 'sabbath-tester') {
-      // Navigate back to sabbath tester
-      const sabbathTesterPage = document.getElementById('sabbath-tester-page');
-      const calendarOutput = document.getElementById('calendar-output');
-      const dayDetailPanel = document.getElementById('day-detail-panel');
-      const exportPage = document.getElementById('export-page');
-      
-      calendarOutput.style.display = 'none';
-      dayDetailPanel.style.display = 'none';
-      exportPage.style.display = 'none';
-      sabbathTesterPage.style.display = 'block';
-      renderSabbathTester();
-    } else if (view === 'feasts') {
-      navigateTo('feasts');
-    }
-  } else if (params.has('year')) {
-    // Navigate to calendar with URL params
-    loadFromURL();
+  if (urlState.view === 'sabbath-tester') {
+    // Navigate back to sabbath tester
+    const sabbathTesterPage = document.getElementById('sabbath-tester-page');
+    const calendarOutput = document.getElementById('calendar-output');
+    const dayDetailPanel = document.getElementById('day-detail-panel');
+    const exportPage = document.getElementById('export-page');
+    
+    calendarOutput.style.display = 'none';
+    dayDetailPanel.style.display = 'none';
+    exportPage.style.display = 'none';
+    sabbathTesterPage.style.display = 'block';
+    renderSabbathTester();
+  } else if (urlState.view === 'feasts') {
+    navigateTo('feasts');
   } else {
-    // Default to calendar
+    // Navigate to calendar with URL state
+    const { needsRegenerate, month, day } = applyURLState(urlState);
+    if (needsRegenerate) {
+      updateUI();
+      generateCalendar();
+    }
+    if (month !== null || day !== null) {
+      if (month !== null) state.currentMonthIndex = month - 1;
+      if (day !== null) state.highlightedLunarDay = day;
+      renderMonth(state.lunarMonths[state.currentMonthIndex]);
+      updateMonthButtons();
+    }
     navigateTo('calendar');
   }
 });
@@ -9977,6 +10462,14 @@ document.addEventListener('DOMContentLoaded', async function() {
   document.documentElement.classList.remove('feasts-open');
   document.body.style.overflow = '';
   
+  // Check for redirect path from 404 page (GitHub Pages SPA routing)
+  const redirectPath = sessionStorage.getItem('redirectPath');
+  if (redirectPath) {
+    sessionStorage.removeItem('redirectPath');
+    // Replace the current URL with the intended path
+    window.history.replaceState({}, '', redirectPath);
+  }
+  
   // Rebuild profile dropdown with any saved custom profiles
   rebuildProfileDropdown();
   
@@ -9986,15 +10479,18 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Initialize astronomy engine (loads Swiss Ephemeris WASM)
   await initializeAstroEngine();
   
-  // Check if URL has parameters - if so, load from URL, otherwise jump to today
-  const params = new URLSearchParams(window.location.search);
-  if (params.has('year') || params.has('view')) {
+  // Check if URL has path data or query params - if so, load from URL
+  const path = window.location.pathname;
+  const hasPathData = path !== '/' && path !== '/index.html';
+  const hasQueryData = window.location.search.length > 0;
+  
+  if (hasPathData || hasQueryData) {
     // URL has state - restore from URL
     updateUI(); // Set UI from localStorage first
     generateCalendar();
-    loadFromURL(); // Then override with URL params
+    loadFromURL(); // Then override with URL params/path
   } else {
-    // No URL params - always jump to today's date on fresh load
+    // No URL data - always jump to today's date on fresh load
     jumpToToday();
     updateURL(); // Set initial URL
   }

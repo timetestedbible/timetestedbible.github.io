@@ -6,14 +6,14 @@ permalink: /sabbath-tester/
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=/?view=sabbath-tester">
   <title>Biblical Sabbath Tester</title>
   <script>
-    // Immediate redirect
-    window.location.replace('/?view=sabbath-tester');
+    // Store the path for client-side routing and redirect to root
+    sessionStorage.setItem('redirectPath', '/sabbath-tester/');
+    window.location.replace('/');
   </script>
 </head>
 <body>
-  <p>Redirecting to <a href="/?view=sabbath-tester">Sabbath Tester</a>...</p>
+  <p>Loading Sabbath Tester...</p>
 </body>
 </html>

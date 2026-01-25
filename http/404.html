@@ -1,39 +1,74 @@
 ---
 permalink: /404.html
-layout: post
+layout: null
 ---
-
-<style> 
-  .gHomeNF {
-    width: 120px;
-    height: 40px;
-    font-size: 1.0rem;
-    border: 1px solid #ddd;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /*'Open Sans', sans-serif; /* Font family for each predefined tags */
-    color: #555;
-    box-shadow: 0 4px 4px 0 #ddd;
-  }
-
-  .gHomeNF:hover,
-  .gHomeNF:focus {
-    background-color: #333333;
-    color: #fff;
-  }
-
-  .gHomeNF:active {
-    box-shadow: 0px 0px;
-  }
-
-  p {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /*'Open Sans', sans-serif; /* Font family for each predefined tags */
-  }
-
-</style>
-
-<h1>404</h1>
-
-<p><strong>Page not found :(</strong></p>
-<p>The requested page could not be found.</p>
-
-<button class="gHomeNF" type=button onclick="window.location='/index.html'">Go Home</button>
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Client-side routing for SEO-friendly URLs
+    // GitHub Pages returns 404 for paths like /biblical/2026/
+    // This script redirects to index.html with the path preserved for client-side routing
+    
+    const path = window.location.pathname;
+    const search = window.location.search;
+    const hash = window.location.hash;
+    
+    // Check if this looks like a calendar route (starts with a profile name, year, or special view)
+    const calendarRoutes = ['biblical', 'lunar-dark', 'lunar-crescent', 'traditional', 'saturday-full', 'saturday-dark', 'custom', 'sabbath-tester', 'feasts'];
+    const firstSegment = path.split('/').filter(s => s)[0] || '';
+    
+    // Check if first segment is a known route, a year, or the root
+    const isCalendarRoute = calendarRoutes.includes(firstSegment) || 
+                            /^-?\d+$/.test(firstSegment) ||
+                            path === '/';
+    
+    if (isCalendarRoute) {
+      // Redirect to root with path info in sessionStorage for client-side routing
+      sessionStorage.setItem('redirectPath', path + search + hash);
+      window.location.replace('/');
+    }
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #1a3a5c 0%, #0d1f33 100%);
+      color: #e8f4f8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { font-size: 4em; margin: 0; color: #7ec8e3; }
+    p { font-size: 1.2em; color: rgba(255,255,255,0.8); }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: rgba(126, 200, 227, 0.2);
+      border: 1px solid rgba(126, 200, 227, 0.4);
+      color: #7ec8e3;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: rgba(126, 200, 227, 0.3);
+      border-color: rgba(126, 200, 227, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <h1>404</h1>
+  <p><strong>Page not found</strong></p>
+  <p>The requested page could not be found.</p>
+  <a href="/" class="btn">Go to Calendar</a>
+  <a href="/book/" class="btn">Go to Book</a>
+</body>
+</html>
