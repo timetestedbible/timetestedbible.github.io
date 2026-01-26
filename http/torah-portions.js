@@ -433,7 +433,10 @@ function formatTorahPortionDisplay(portionInfo) {
   if (!portionInfo) return '';
   
   let html = '<div class="torah-portion-section">';
-  html += '<div class="torah-portion-header">📖 Torah Portion for This Sabbath</div>';
+  html += `<div class="torah-portion-header">
+    <span>📖 Torah Portion for This Sabbath</span>
+    <button class="torah-info-btn" onclick="openTorahPortionInfo()" title="How is this portion determined?">ⓘ</button>
+  </div>`;
   html += '<div class="torah-portion-content">';
   
   if (portionInfo.holidayReplacement) {
@@ -510,4 +513,42 @@ function formatTorahPortionDisplay(portionInfo) {
   
   html += '</div></div>';
   return html;
+}
+
+// Open the Torah portion info modal
+function openTorahPortionInfo() {
+  const modal = document.getElementById('torah-info-modal');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.classList.add('torah-info-open');
+  }
+}
+
+// Close the Torah portion info modal
+function closeTorahPortionInfo() {
+  const modal = document.getElementById('torah-info-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.classList.remove('torah-info-open');
+  }
+}
+
+// Toggle the summary row for a Torah portion in the full list
+function toggleTorahSummary(portionNum) {
+  const summaryRow = document.getElementById(`torah-summary-${portionNum}`);
+  const portionRow = document.querySelector(`.torah-portion-row[data-portion="${portionNum}"]`);
+  const btn = portionRow ? portionRow.querySelector('.torah-expand-btn') : null;
+  
+  if (summaryRow) {
+    const isVisible = summaryRow.classList.contains('visible');
+    summaryRow.classList.toggle('visible');
+    
+    if (portionRow) {
+      portionRow.classList.toggle('expanded');
+    }
+    if (btn) {
+      btn.classList.toggle('expanded');
+      btn.textContent = isVisible ? '▼' : '▲';
+    }
+  }
 }
