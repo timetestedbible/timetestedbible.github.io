@@ -3706,6 +3706,320 @@ body.sabbath-tester-open {
   content: "📖 ";
 }
 
+/* Torah Portion Section */
+.torah-portion-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.torah-portion-header {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #7ec8e3;
+  margin-bottom: 12px;
+}
+
+.torah-portion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.torah-portion-item {
+  padding: 14px 16px;
+  background: rgba(43, 90, 139, 0.25);
+  border-radius: 8px;
+  border-left: 3px solid #7ec8e3;
+}
+
+.torah-portion-item.torah-holiday-replacement {
+  background: rgba(139, 43, 90, 0.25);
+  border-left-color: #e37ec8;
+}
+
+.torah-portion-item.torah-maftir-addition {
+  background: rgba(90, 139, 43, 0.2);
+  border-left-color: #a5c87e;
+}
+
+.torah-portion-name {
+  font-weight: 600;
+  color: #f0e6d3;
+  margin-bottom: 8px;
+  font-size: 1.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.torah-portion-hebrew {
+  color: #7ec8e3;
+  font-size: 1.1em;
+}
+
+.torah-portion-meaning {
+  color: #aaa;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.torah-portion-citation {
+  color: #7ec8e3;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: rgba(126, 200, 227, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.torah-portion-summary {
+  color: #ccc;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.torah-portion-note {
+  color: #e37ec8;
+  font-size: 0.85em;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.maftir-label {
+  font-size: 0.8em;
+  color: #a5c87e;
+  font-weight: 400;
+}
+
+.torah-portion-item.torah-double-portion {
+  background: rgba(139, 90, 43, 0.2);
+  border-left-color: #d4a574;
+}
+
+.torah-portion-summary-item {
+  color: #ccc;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.torah-portion-summary-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.torah-portion-summary-item strong {
+  color: #7ec8e3;
+}
+
+/* Bible Citation Links */
+.bible-citation-link {
+  color: #7ec8e3;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bible-citation-link:hover {
+  color: #a5d8f0;
+  text-decoration: underline;
+}
+
+/* Make the entire citation area clickable */
+.torah-portion-citation {
+  cursor: pointer;
+}
+
+/* Bible Reader Modal */
+.bible-reader-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.bible-reader-modal.open {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+body.bible-reader-open {
+  overflow: hidden;
+}
+
+.bible-reader-container {
+  background: #1a1a2e;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(126, 200, 227, 0.2);
+}
+
+.bible-reader-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px 16px 0 0;
+}
+
+.bible-reader-header h2 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #7ec8e3;
+  font-weight: 600;
+}
+
+.bible-reader-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.bible-reader-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.bible-reader-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* Bible Reader Content Styles */
+.bible-reader-content {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.bible-reader-title {
+  font-size: 1.4em;
+  color: #7ec8e3;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.bible-reader-empty {
+  text-align: center;
+  color: #888;
+  padding: 40px;
+  font-style: italic;
+}
+
+.bible-book-section {
+  margin-bottom: 32px;
+}
+
+.bible-book-name {
+  font-size: 1.5em;
+  color: #d4a574;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(212, 165, 116, 0.3);
+  font-weight: 600;
+}
+
+.bible-chapter-section {
+  margin-bottom: 24px;
+}
+
+.bible-chapter-header {
+  font-size: 1.15em;
+  color: #7ec8e3;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.bible-chapter-text {
+  text-align: justify;
+  font-size: 1.05em;
+}
+
+.bible-verse {
+  /* Verses flow inline */
+}
+
+.bible-verse-num {
+  font-size: 0.7em;
+  color: #7ec8e3;
+  vertical-align: super;
+  margin-right: 2px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.bible-chapter-separator {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(126, 200, 227, 0.4), transparent);
+  margin: 32px 0;
+}
+
+/* Mobile adjustments for Bible Reader */
+@media (max-width: 600px) {
+  .bible-reader-modal.open {
+    padding: 10px;
+  }
+  
+  .bible-reader-container {
+    max-height: calc(100vh - 20px);
+    border-radius: 12px;
+  }
+  
+  .bible-reader-header {
+    padding: 12px 16px;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .bible-reader-header h2 {
+    font-size: 1.1em;
+  }
+  
+  .bible-reader-body {
+    padding: 16px;
+  }
+  
+  .bible-chapter-text {
+    font-size: 1em;
+    text-align: left;
+  }
+  
+  .bible-book-name {
+    font-size: 1.3em;
+  }
+}
+
 /* Feast Table */
 .feast-list {
   margin-top: 30px;

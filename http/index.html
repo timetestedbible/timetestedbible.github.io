@@ -609,6 +609,7 @@ title: "Lunar Sabbath Calendar"
     <div class="day-detail-content">
       <div class="day-detail-feasts"></div>
       <div class="day-detail-bible-events"></div>
+      <div class="day-detail-torah-portion"></div>
       <div class="day-detail-info"></div>
       <div class="day-detail-dateline"></div>
       <div class="day-detail-profile-compare"></div>
@@ -645,6 +646,19 @@ title: "Lunar Sabbath Calendar"
     <div class="profile-modal-buttons">
       <button class="profile-modal-btn cancel" onclick="closeProfileModal()">Cancel</button>
       <button id="profile-modal-save-btn" class="profile-modal-btn save" onclick="saveProfileModal()">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bible Reader Modal -->
+<div id="bible-reader-modal" class="bible-reader-modal" onclick="if(event.target === this) closeBibleReader()">
+  <div class="bible-reader-container">
+    <div class="bible-reader-header">
+      <h2 id="bible-reader-modal-title">Bible Reading</h2>
+      <button class="bible-reader-close" onclick="closeBibleReader()" aria-label="Close">&times;</button>
+    </div>
+    <div id="bible-reader-text" class="bible-reader-body">
+      <!-- Bible content will be inserted here -->
     </div>
   </div>
 </div>
@@ -823,6 +837,8 @@ title: "Lunar Sabbath Calendar"
 <script src="/state-management.js"></script>
 <script src="/astronomy-engine-abstraction.js"></script>
 <script src="/priestly-divisions.js"></script>
+<script src="/bible-reader.js"></script>
+<script src="/torah-portions.js"></script>
 <script>
 
 // Astronomy Engine abstraction moved to astronomy-engine-abstraction.js
@@ -3807,6 +3823,12 @@ document.addEventListener('DOMContentLoaded', async function() {
   
   // Load priestly divisions data
   await loadPriestlyDivisions();
+  
+  // Load Torah portions data
+  await loadTorahPortions();
+  
+  // Load Bible text for reader
+  await loadBible();
   
   // Check if URL has path data or query params - if so, load from URL
   const path = window.location.pathname;

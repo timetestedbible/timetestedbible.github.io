@@ -720,6 +720,19 @@ function showDayDetail(dayObj, month) {
     bibleEventsContainer.innerHTML = '';
   }
   
+  // Populate Torah portion for Sabbath days
+  const torahContainer = panel.querySelector('.day-detail-torah-portion');
+  if (torahContainer && typeof getTorahPortionForSabbath === 'function' && isSabbath(dayObj)) {
+    const portionInfo = getTorahPortionForSabbath(dayObj, month, state.sabbathMode);
+    if (portionInfo && (portionInfo.portion || portionInfo.holidayReplacement)) {
+      torahContainer.innerHTML = formatTorahPortionDisplay(portionInfo);
+    } else {
+      torahContainer.innerHTML = '';
+    }
+  } else if (torahContainer) {
+    torahContainer.innerHTML = '';
+  }
+  
   // Populate astronomical times in header (to the right of date info)
   const astroTimesContainer = panel.querySelector('.day-detail-astro-times');
   const astroTimes = getAstronomicalTimes(dayObj.gregorianDate);
