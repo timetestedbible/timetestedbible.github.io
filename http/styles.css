@@ -1429,6 +1429,447 @@ body.sabbath-tester-open {
   font-weight: 500;
 }
 
+/* Priestly Divisions Page - matches Sabbath Tester styling */
+#priestly-page {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d1f33 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+}
+
+.priestly-header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d1f33 50%);
+  z-index: 10;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+}
+
+.priestly-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priestly-header h2 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #7ec8e3;
+  flex: 1;
+}
+
+.priestly-header .close-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #ccc;
+  font-size: 1.2em;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.priestly-header .close-btn:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.priestly-page-content {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.priestly-page-content > h3 {
+  color: #7ec8e3;
+  font-size: 1.2em;
+  margin: 24px 0 8px 0;
+}
+
+.priestly-intro {
+  background: rgba(0,0,0,0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.priestly-intro h3 {
+  color: #7ec8e3;
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+.priestly-intro h4 {
+  color: #d4a017;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.05em;
+}
+
+.priestly-intro p {
+  color: #ccc;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.priestly-intro ul {
+  color: #ccc;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.priestly-intro blockquote {
+  border-left: 3px solid #d4a017;
+  margin: 16px 0;
+  padding: 12px 16px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 0 8px 8px 0;
+}
+
+.priestly-intro blockquote p {
+  font-style: italic;
+  margin: 0 0 8px 0;
+}
+
+.priestly-intro blockquote cite {
+  display: block;
+  color: #d4a017;
+  font-size: 0.9em;
+  font-style: normal;
+}
+
+/* Collapsible sections */
+.priestly-details {
+  margin-top: 16px;
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.priestly-details summary {
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #7ec8e3;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.priestly-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.priestly-details summary::before {
+  content: "▶";
+  font-size: 0.8em;
+  transition: transform 0.2s;
+}
+
+.priestly-details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.priestly-details summary:hover {
+  background: rgba(126, 200, 227, 0.15);
+}
+
+.priestly-details-content {
+  padding: 16px;
+  border-top: 1px solid rgba(126, 200, 227, 0.2);
+}
+
+.priestly-details-content h4 {
+  color: #d4a017;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 1em;
+}
+
+.priestly-details-content h4:first-child {
+  margin-top: 0;
+}
+
+.priestly-details-content p {
+  color: #ccc;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.priestly-details-content ol,
+.priestly-details-content ul {
+  color: #ccc;
+  line-height: 1.8;
+  padding-left: 24px;
+  margin: 10px 0;
+}
+
+.priestly-details-content li {
+  margin-bottom: 6px;
+}
+
+.priestly-table-desc {
+  color: #888;
+  font-size: 0.9em;
+  margin: 8px 0 16px 0;
+}
+
+.priestly-table-container {
+  overflow-x: auto;
+}
+
+.priestly-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.priestly-table th,
+.priestly-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+}
+
+.priestly-table th {
+  background: linear-gradient(180deg, #0d2840 0%, #1a3a5c 100%);
+  color: #7ec8e3;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.priestly-table tbody tr:hover {
+  background: rgba(126, 200, 227, 0.1);
+}
+
+.priestly-table .course-order {
+  color: #888;
+  font-weight: 600;
+  width: 40px;
+  text-align: center;
+}
+
+.priestly-table .course-name {
+  color: #7ec8e3;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.priestly-table .course-hebrew {
+  color: #aaa;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.priestly-table .course-lineage {
+  color: #d4a017;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.priestly-table .course-meaning {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.priestly-table .course-dates {
+  font-size: 0.85em;
+  color: #ccc;
+}
+
+.course-notes-indicator {
+  color: #7ec8e3;
+  cursor: pointer;
+  font-style: normal;
+  margin-left: 4px;
+  transition: color 0.2s;
+}
+
+.course-notes-indicator:hover {
+  color: #d4a017;
+}
+
+.course-notes-indicator.active {
+  color: #d4a017;
+}
+
+/* Expandable details row */
+.course-details-row td {
+  background: rgba(13, 40, 64, 0.8);
+  padding: 0 !important;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.3);
+}
+
+.course-details-content {
+  padding: 16px 20px;
+  color: #ccc;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.course-detail-notes {
+  margin: 0 0 12px 0;
+  color: #ccc;
+  font-style: italic;
+  border-left: 3px solid #d4a017;
+  padding-left: 12px;
+}
+
+.course-famous-people {
+  margin: 0;
+}
+
+.course-famous-people > strong {
+  color: #7ec8e3;
+  font-size: 0.95em;
+}
+
+.course-famous-people ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.course-famous-people li {
+  margin-bottom: 10px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.course-famous-people li::before {
+  content: "•";
+  color: #d4a017;
+  position: absolute;
+  left: 0;
+}
+
+.course-famous-people li strong {
+  color: #d4a017;
+}
+
+/* Responsive priestly table */
+@media (max-width: 768px) {
+  .priestly-table {
+    font-size: 0.85em;
+  }
+  
+  .priestly-table th,
+  .priestly-table td {
+    padding: 8px 6px;
+  }
+  
+  .priestly-table .course-meaning {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .priestly-table .course-dates {
+    max-width: 150px;
+  }
+}
+
+.priestly-table .course-date-link {
+  color: #d4a017;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.priestly-table .course-date-link:hover {
+  text-decoration: underline;
+}
+
+.priestly-course-clickable {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.priestly-course-clickable:hover {
+  text-decoration: underline;
+}
+
+/* Priestly info popup trigger */
+.priestly-info-trigger {
+  cursor: pointer;
+  color: #7ec8e3;
+  font-size: 0.85em;
+  margin-right: 4px;
+  vertical-align: baseline;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.priestly-info-trigger:hover {
+  opacity: 1;
+}
+
+/* Priestly info popup */
+.priestly-info-popup {
+  position: fixed;
+  z-index: 10000;
+  background: linear-gradient(135deg, #1a3a5c 0%, #0d2840 100%);
+  border: 1px solid rgba(126, 200, 227, 0.4);
+  border-radius: 10px;
+  padding: 16px;
+  max-width: 350px;
+  max-height: 60vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.priestly-info-popup::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(126, 200, 227, 0.4);
+}
+
+.priestly-popup-notes {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+}
+
+.priestly-popup-famous strong {
+  color: #d4a017;
+}
+
+.priestly-popup-famous ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.priestly-popup-famous li {
+  margin-bottom: 8px;
+}
+
+.priestly-popup-famous li strong {
+  color: #7ec8e3;
+}
+
 /* Dateline Visualization */
 .dateline-container {
   margin-top: 20px;
@@ -2922,14 +3363,15 @@ body.sabbath-tester-open {
 
 .profile-compare-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 8px;
 }
 
 .profile-compare-item {
   display: flex;
   flex-direction: column;
-  padding: 8px 10px;
+  gap: 3px;
+  padding: 10px 12px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   font-size: 0.85em;
@@ -2955,7 +3397,6 @@ body.sabbath-tester-open {
 .profile-compare-name {
   color: #aaa;
   font-size: 0.9em;
-  margin-bottom: 4px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -2987,7 +3428,19 @@ body.sabbath-tester-open {
 .profile-compare-location {
   font-size: 0.8em;
   color: #888;
-  margin-top: 2px;
+}
+
+.profile-compare-priest {
+  color: #9ec5d0;
+  font-weight: normal;
+  font-size: 0.85em;
+  white-space: nowrap;
+  cursor: help;
+}
+
+.profile-compare-priest .priest-icon {
+  display: inline;
+  margin-right: 3px;
 }
 
 .profile-compare-header {
@@ -3163,6 +3616,37 @@ body.sabbath-tester-open {
   color: #d4a017;
   font-weight: bold;
   margin-bottom: 8px;
+}
+
+/* Priestly Course Display - subtle inline display under Gregorian date */
+.day-detail-priestly-course {
+  display: block;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.priestly-course-subtle {
+  color: #888;
+  font-size: 0.8em;
+  font-style: italic;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.priestly-nav-btn {
+  background: none;
+  border: none;
+  color: #7ec8e3;
+  cursor: pointer;
+  padding: 0 4px;
+  font-size: 0.85em;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.priestly-nav-btn:hover {
+  opacity: 1;
 }
 
 .day-detail-no-feast {
@@ -3699,18 +4183,43 @@ body.sabbath-tester-open {
   position: sticky;
   top: 0;
   background: linear-gradient(180deg, #1a3a5c 0%, #0d1f33 50%);
+  z-index: 10;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+}
+
+.sabbath-tester-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 16px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
-  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
 }
 
 .sabbath-tester-header h2 {
   margin: 0;
   font-size: 1.3em;
   color: #7ec8e3;
+  flex: 1;
+}
+
+.sabbath-tester-header-inner .close-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #ccc;
+  font-size: 1.2em;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sabbath-tester-header-inner .close-btn:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
 }
 
 .sabbath-tester-content {

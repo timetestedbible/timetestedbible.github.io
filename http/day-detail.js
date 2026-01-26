@@ -760,6 +760,53 @@ function showDayDetail(dayObj, month) {
   
   infoContainer.innerHTML = infoHtml;
   
+  // Populate priestly course display (in header, under Gregorian date)
+  const priestlyContainer = panel.querySelector('.day-detail-priestly-course');
+  if (priestlyContainer && typeof getPriestlyCourseForDay === 'function') {
+    // Skip Day 1 for lunar sabbath (Day 1 is New Moon day, not part of a week)
+    const skipPriestlyCourse = dayObj.lunarDay === 1 && state.sabbathMode === 'lunar';
+    
+    if (!skipPriestlyCourse) {
+      const courseInfo = getPriestlyCourseForDay(dayObj, month);
+      if (courseInfo) {
+        // Check if this course has extra info (notes or famous_people)
+        const hasExtraInfo = (courseInfo.notes && courseInfo.notes.trim()) || 
+                            (courseInfo.famous_people && courseInfo.famous_people.length > 0);
+        
+        let infoIconHtml = '';
+        if (hasExtraInfo) {
+          // Build popup content
+          let popupContent = '';
+          if (courseInfo.notes && courseInfo.notes.trim()) {
+            popupContent += `<div class="priestly-popup-notes">${courseInfo.notes}</div>`;
+          }
+          if (courseInfo.famous_people && courseInfo.famous_people.length > 0) {
+            popupContent += `<div class="priestly-popup-famous"><strong>Notable figures:</strong><ul>`;
+            for (const person of courseInfo.famous_people) {
+              popupContent += `<li><strong>${person.name}</strong>: ${person.notes}</li>`;
+            }
+            popupContent += `</ul></div>`;
+          }
+          // Escape quotes for HTML attribute
+          const escapedContent = popupContent.replace(/"/g, '&quot;');
+          infoIconHtml = `<span class="priestly-info-trigger" data-popup="${escapedContent}">ⓘ</span>`;
+        }
+        
+        priestlyContainer.innerHTML = `
+          <span class="priestly-course-subtle">
+            <button class="priestly-nav-btn" onclick="jumpToPriestlyCourse(${courseInfo.order}, -1)" title="Previous time ${courseInfo.course} served">◀</button>
+            ${infoIconHtml}<span class="priestly-course-clickable" onclick="showPriestlyPage()" title="View all priestly divisions">${courseInfo.course} (${courseInfo.order}) — ${courseInfo.meaning}</span>
+            <button class="priestly-nav-btn" onclick="jumpToPriestlyCourse(${courseInfo.order}, 1)" title="Next time ${courseInfo.course} serves">▶</button>
+          </span>
+        `;
+      } else {
+        priestlyContainer.innerHTML = '';
+      }
+    } else {
+      priestlyContainer.innerHTML = '';
+    }
+  }
+  
   // Populate dateline visualization for Day 1
   const datelineContainer = panel.querySelector('.day-detail-dateline');
   if (dayObj.lunarDay === 1 && month.moonEvent) {
@@ -817,12 +864,31 @@ function showDayDetail(dayObj, month) {
       // Get local time for this location
       const localTime = getLocalTimeForLocation(coords.lat, coords.lon);
       
+      // Get priestly course for this calendar
+      // Skip Day 1 for lunar sabbath (New Moon day isn't part of a week)
+      let priestlyHtml = '';
+      if (typeof getPriestlyCourse === 'function' && PRIESTLY_DIVISIONS) {
+        const skipPriestly = lunarDayInfo.day === 1 && (profile.sabbathMode === 'lunar');
+        if (!skipPriestly) {
+          const courseInfo = getPriestlyCourse(
+            new Date(checkTimestamp),
+            lunarDayInfo.day,
+            lunarDayInfo.month,
+            { ...tempProfile, sabbathMode: profile.sabbathMode || 'lunar' }
+          );
+          if (courseInfo) {
+            priestlyHtml = `<span class="priest-icon">👨‍🦳</span><span title="${courseInfo.meaning}">${courseInfo.course}</span>`;
+          }
+        }
+      }
+      
       compareHtml += `
         <div class="profile-compare-item${isCurrent ? ' current' : ''}" onclick="navigateToWorldClockEntry('${entry.profileId}', '${entry.locationSlug}')">
           <button class="world-clock-remove-btn" onclick="event.stopPropagation(); removeWorldClockEntryAndRefresh(${index})" title="Remove">×</button>
           <span class="profile-compare-name">${renderProfileIcon(profile)} ${profile.name}</span>
           <span class="profile-compare-day">Day ${lunarDayInfo.day} of Month ${lunarDayInfo.month}</span>
           <span class="profile-compare-location">${entry.locationName || formatCitySlug(entry.locationSlug)} · ${localTime}</span>
+          ${priestlyHtml ? `<span class="profile-compare-priest">${priestlyHtml}</span>` : ''}
           ${feastHtml}
         </div>
       `;
@@ -962,3 +1028,103 @@ function jumpToEquinoxDate(equinoxDate) {
     jumpToEquinoxDate(equinoxDate);
   }
 }
+
+// Priestly info popup handling
+let currentPriestlyPopup = null;
+
+function showPriestlyInfoPopup(trigger) {
+  hidePriestlyInfoPopup();
+  
+  const content = trigger.dataset.popup;
+  if (!content) return;
+  
+  const popup = document.createElement('div');
+  popup.className = 'priestly-info-popup';
+  popup.innerHTML = content;
+  document.body.appendChild(popup);
+  
+  // Position the popup near the trigger
+  const triggerRect = trigger.getBoundingClientRect();
+  const popupRect = popup.getBoundingClientRect();
+  
+  // Position below the trigger by default
+  let top = triggerRect.bottom + 8;
+  let left = triggerRect.left - 20;
+  
+  // Adjust if popup goes off screen
+  if (left + popupRect.width > window.innerWidth - 10) {
+    left = window.innerWidth - popupRect.width - 10;
+  }
+  if (left < 10) left = 10;
+  
+  // If popup would go below screen, show above
+  if (top + popupRect.height > window.innerHeight - 10) {
+    top = triggerRect.top - popupRect.height - 8;
+    // Move the arrow to point up
+    popup.style.setProperty('--arrow-top', 'auto');
+    popup.style.setProperty('--arrow-bottom', '-8px');
+  }
+  
+  popup.style.top = `${top}px`;
+  popup.style.left = `${left}px`;
+  
+  currentPriestlyPopup = popup;
+}
+
+function hidePriestlyInfoPopup() {
+  if (currentPriestlyPopup) {
+    currentPriestlyPopup.remove();
+    currentPriestlyPopup = null;
+  }
+}
+
+// Event delegation for priestly info triggers
+document.addEventListener('mouseover', (e) => {
+  const trigger = e.target.closest('.priestly-info-trigger');
+  if (trigger) {
+    showPriestlyInfoPopup(trigger);
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  const trigger = e.target.closest('.priestly-info-trigger');
+  if (trigger && currentPriestlyPopup) {
+    // Only hide if not moving to the popup itself
+    const related = e.relatedTarget;
+    if (!related || !related.closest('.priestly-info-popup')) {
+      hidePriestlyInfoPopup();
+    }
+  }
+});
+
+// Allow hovering over the popup itself
+document.addEventListener('mouseover', (e) => {
+  if (e.target.closest('.priestly-info-popup')) {
+    // Keep popup visible
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  if (e.target.closest('.priestly-info-popup')) {
+    const related = e.relatedTarget;
+    if (!related || (!related.closest('.priestly-info-popup') && !related.closest('.priestly-info-trigger'))) {
+      hidePriestlyInfoPopup();
+    }
+  }
+});
+
+// Touch support for mobile
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('.priestly-info-trigger');
+  if (trigger) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (currentPriestlyPopup) {
+      hidePriestlyInfoPopup();
+    } else {
+      showPriestlyInfoPopup(trigger);
+    }
+  } else if (currentPriestlyPopup && !e.target.closest('.priestly-info-popup')) {
+    hidePriestlyInfoPopup();
+  }
+});

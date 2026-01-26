@@ -348,17 +348,16 @@ function generateCalendar(options = {}) {
   // Save the selected UTC timestamp before regenerating
   const savedTimestamp = state.selectedTimestamp;
   
-  // Sync UI inputs with state (state is source of truth)
-  // Only read year from input, everything else is set BY state
+  // State is source of truth - update UI inputs to match state
   const yearInput = document.getElementById('year-input');
   const latInput = document.getElementById('lat-input');
   const lonInput = document.getElementById('lon-input');
   const moonPhaseSelect = document.getElementById('moon-phase-select');
   
-  if (yearInput && yearInput.value) {
-    state.year = parseInt(yearInput.value);
+  // Update year input to match state (state is source of truth)
+  if (yearInput) {
+    yearInput.value = state.year;
   }
-  // State is source of truth - update inputs to match state
   if (latInput && lonInput) {
     latInput.value = state.lat ?? 31.7683;
     lonInput.value = state.lon ?? 35.2137;

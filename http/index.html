@@ -119,6 +119,10 @@ title: "Lunar Sabbath Calendar"
       <span class="icon">🔬</span>
       <span>Sabbath Tester</span>
     </button>
+    <button class="nav-menu-item" onclick="navigateTo('priestly')">
+      <span class="icon">👨‍🦳</span>
+      <span>Priestly Divisions</span>
+    </button>
     <div class="nav-menu-divider"></div>
     <button class="nav-menu-item" id="install-app-btn" style="display: none;" onclick="handleInstallClick()">
       <span class="icon">📲</span>
@@ -598,6 +602,7 @@ title: "Lunar Sabbath Calendar"
           <span class="day-detail-gregorian"></span>
           <button class="day-detail-jump-btn" onclick="toggleDateJump()" title="Jump to another date">⇥</button>
         </span>
+        <span class="day-detail-priestly-course"></span>
       </div>
       <div class="day-detail-astro-times"></div>
     </div>
@@ -647,8 +652,10 @@ title: "Lunar Sabbath Calendar"
 <!-- Sabbath Tester Page -->
 <div id="sabbath-tester-page" style="display: none;">
   <div class="sabbath-tester-header">
-    <h2>🔬 Sabbath Theory Tester</h2>
-    <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
+    <div class="sabbath-tester-header-inner">
+      <h2>🔬 Sabbath Theory Tester</h2>
+      <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
+    </div>
   </div>
   <div class="sabbath-tester-content">
     <div class="sabbath-tester-intro" style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 10px; margin-bottom: 20px; color: #ccc; line-height: 1.6;">
@@ -669,6 +676,110 @@ title: "Lunar Sabbath Calendar"
       Loading tests...
     </div>
     <div id="sabbath-tester-results"></div>
+  </div>
+</div>
+
+<!-- Priestly Divisions Page -->
+<div id="priestly-page" style="display: none;">
+  <div class="priestly-header">
+    <div class="priestly-header-inner">
+      <h2>👨‍🦳 Priestly Divisions</h2>
+      <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
+    </div>
+  </div>
+  <div class="priestly-page-content">
+    <div class="priestly-intro">
+      <h3>The Priestly Cycle: An Introduction</h3>
+      <p>The <strong>priestly cycle</strong> (also known as the priestly divisions, courses, or <em>mishmarot</em> in Hebrew) was the organized rotation system of 24 groups of priests (kohanim) who served in the Temple in Jerusalem. This structure ensured continuous, fair, and efficient Temple service over the course of the year.</p>
+      
+      <details class="priestly-details">
+        <summary>Read more about the history...</summary>
+        <div class="priestly-details-content">
+          <h4>Biblical Origin</h4>
+          <p>The system is described in the Hebrew Bible in <strong>1 Chronicles 24:1–19</strong>. King David, in preparation for the Temple that would be built by his son Solomon, divided the male descendants of Aaron (the first high priest) into <strong>24 courses</strong>. With the help of <strong>Zadok</strong> (from the line of Eleazar) and <strong>Ahimelech</strong> (from the line of Ithamar), David cast lots to assign the order impartially. This was necessary because the descendants of Eleazar outnumbered those of Ithamar, resulting in 16 courses from Eleazar and 8 from Ithamar.</p>
+          
+          <p>Each course served in the Temple for <strong>one full week</strong> (from Sabbath afternoon to the following Sabbath afternoon), with a midday handoff on the Sabbath. The rotation meant each group served approximately twice per year. All 24 courses participated together during the three major pilgrimage festivals: Passover, Shavuot, and Sukkot.</p>
+          
+          <p>The names of the 24 courses are listed in <strong>1 Chronicles 24:7–18</strong>, each named after its ancestral head who received the lot in that order.</p>
+          
+          <h4>When Did the Cycle Begin?</h4>
+          <p>The priestly cycle began during the final years of King David's reign (approximately 1010–970 BCE), as part of his extensive preparations for the future Temple (1 Chronicles 24–26). The courses were formally implemented upon the dedication of the First Temple by Solomon (c. 951 BCE), as recorded in <strong>2 Chronicles 8:12–14</strong>.</p>
+          
+          <p>This rotation continued through the First Temple period, the Babylonian exile (with interruption during the destruction and exile), and was reinstated in the Second Temple era after its rebuilding in 516 BCE. It remained in active use until the destruction of the Second Temple in 70 CE.</p>
+          
+          <h4>Evidence for Continuity</h4>
+          <p>The longevity of the cycle is demonstrated by several historical and textual anchors:</p>
+          <ul>
+            <li><strong>New Testament confirmation:</strong> In <strong>Luke 1:5–9</strong>, Zechariah (father of John the Baptist) is explicitly described as serving in "the division of Abijah" (the 8th course), showing the divisions were still functioning in the late Second Temple period.</li>
+            <li><strong>Rabbinic tradition:</strong> Sources preserve that the course of <strong>Jehoiarib</strong> (the 1st division) was serving when the Second Temple was destroyed on the 9th of Av, 70 CE. This allows scholars to back-calculate the entire rotation cycle over centuries.</li>
+          </ul>
+          
+          <h4>Primary Sources</h4>
+          <blockquote>
+            <p>"When the First Temple was destroyed, that day was the Ninth of Av; it was the conclusion of Shabbat; it was the conclusion of the Sabbatical Year; and it was the watch [course] of Jehoiarib."</p>
+            <cite>— Babylonian Talmud, Ta'anit 29a</cite>
+          </blockquote>
+          <blockquote>
+            <p>"The day on which the House (the Temple) was destroyed was on the night following the Shabbat, in the year following the Sabbatical year, and it was [during] the [priestly duty of the] division of Yehoyariyv (Jehoiarib) and it was on the ninth of Av."</p>
+            <cite>— Tosefta Ta'anit 3:9–10</cite>
+          </blockquote>
+        </div>
+      </details>
+      
+      <details class="priestly-details">
+        <summary>How are these dates calculated?</summary>
+        <div class="priestly-details-content">
+          <p>We know from ancient records that <strong>Course 1 (Jehoiarib)</strong> was serving when the Temple was destroyed on the <strong>9th of Av, 70 CE</strong>. This gives us a fixed reference point to calculate backward and forward in time.</p>
+          
+          <h4>The Basic Idea</h4>
+          <p>Think of it like a relay race with 24 teams. Each team runs for exactly one week, then passes the baton to the next team. After team 24 finishes, it goes back to team 1. This cycle repeats forever.</p>
+          
+          <p>If we know which team was running on a specific date (the 9th of Av, 70 CE), we can count backward or forward to figure out which team was running on any other date in history.</p>
+          
+          <h4>For Saturday Sabbath Calendars</h4>
+          <p>This is the simpler calculation:</p>
+          <ol>
+            <li>Find the Sunday that starts the week containing the 9th of Av, 70 CE (our reference point)</li>
+            <li>Count how many days between that Sunday and the date you're interested in</li>
+            <li>Divide by 7 to get the number of weeks</li>
+            <li>Divide that by 24 (the number of priestly courses) and look at the remainder</li>
+            <li>The remainder tells you which course is serving (0 = Course 1, 1 = Course 2, etc.)</li>
+          </ol>
+          
+          <h4>For Lunar Sabbath Calendars</h4>
+          <p>This is trickier because lunar months don't have a fixed number of days (they average about 29.53 days):</p>
+          <ol>
+            <li>Find the 9th of Av, 70 CE on the lunar calendar (our reference point)</li>
+            <li>Count the days between the reference and your target date</li>
+            <li>Divide by 29.53 to get the number of lunar months</li>
+            <li>Multiply by 4 (since there are 4 weeks per lunar month)</li>
+            <li>Adjust for which week of the month you're in (days 2-8, 9-15, 16-22, or 23-29)</li>
+            <li>Divide by 24 and use the remainder to find the course</li>
+          </ol>
+          
+          <h4>Why Different Calendars Give Different Answers</h4>
+          <p>The 9th of Av falls on different Gregorian dates depending on which calendar system you use (full moon vs. dark moon vs. crescent, morning vs. evening day start, etc.). Since our reference point changes, the entire calculation shifts, which is why different calendar theories show different priestly courses for the same day.</p>
+        </div>
+      </details>
+    </div>
+    
+    <h3>Priestly Courses for Year <span id="priestly-year"></span></h3>
+    <p class="priestly-table-desc">Each course serves for one week. Click on a date to navigate to that week.</p>
+    <div class="priestly-table-container">
+      <table class="priestly-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Course</th>
+            <th>Hebrew</th>
+            <th>Lineage</th>
+            <th>Meaning</th>
+            <th>Service Dates</th>
+          </tr>
+        </thead>
+        <tbody id="priestly-table-body"></tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -711,6 +822,7 @@ title: "Lunar Sabbath Calendar"
 <script src="/world-clock.js"></script>
 <script src="/state-management.js"></script>
 <script src="/astronomy-engine-abstraction.js"></script>
+<script src="/priestly-divisions.js"></script>
 <script>
 
 // Astronomy Engine abstraction moved to astronomy-engine-abstraction.js
@@ -3628,6 +3740,28 @@ window.addEventListener('popstate', function(event) {
     renderSabbathTester();
   } else if (urlState.view === 'feasts') {
     navigateTo('feasts');
+  } else if (urlState.view === 'priestly') {
+    // Apply URL state and navigate to priestly page
+    const { needsRegenerate } = applyURLState(urlState);
+    if (needsRegenerate) {
+      generateCalendar();
+    }
+    const priestlyPage = document.getElementById('priestly-page');
+    const calendarOutput = document.getElementById('calendar-output');
+    const dayDetailPanel = document.getElementById('day-detail-panel');
+    const exportPage = document.getElementById('export-page');
+    const sabbathTesterPage = document.getElementById('sabbath-tester-page');
+    
+    calendarOutput.style.display = 'none';
+    dayDetailPanel.style.display = 'none';
+    exportPage.style.display = 'none';
+    sabbathTesterPage.style.display = 'none';
+    priestlyPage.style.display = 'block';
+    if (typeof renderPriestlyTable === 'function') {
+      const yearSpan = document.getElementById('priestly-year');
+      if (yearSpan) yearSpan.textContent = formatYear(state.year);
+      renderPriestlyTable();
+    }
   } else {
     // Navigate to calendar with URL state
     const { needsRegenerate, month, day } = applyURLState(urlState);
@@ -3670,6 +3804,9 @@ document.addEventListener('DOMContentLoaded', async function() {
   
   // Load Bible events data
   await loadBibleEvents();
+  
+  // Load priestly divisions data
+  await loadPriestlyDivisions();
   
   // Check if URL has path data or query params - if so, load from URL
   const path = window.location.pathname;

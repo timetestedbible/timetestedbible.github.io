@@ -15,6 +15,8 @@ const ASSETS_TO_CACHE = [
   '/world-clock.js',
   '/state-management.js',
   '/astronomy-engine-abstraction.js',
+  '/priestly-divisions.js',
+  '/priestly_divisions.json',
   '/bible-events-by-month-day.json',
   'https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js',
   '/lib/swisseph/swisseph-browser.js',

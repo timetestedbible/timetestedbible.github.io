@@ -113,17 +113,23 @@ function getLocationSlug() {
 }
 
 // Parse year from URL segment
-// Supports: 2025, 32 (literal year 32 AD), -1445, 1446BC, 1446bc
+// Supports: 2025, 32 (literal year 32 AD), -1445, 1446BC, 1446bc, 1446BCE, 1446bce
 // Returns internal year representation (1 BC = 0, 2 BC = -1, etc.)
 function parseYearFromURL(yearStr) {
   if (!yearStr) return null;
   
-  // Check for BC suffix (e.g., "1446BC", "1446bc")
-  const bcMatch = yearStr.match(/^(\d+)[Bb][Cc]$/);
+  // Check for BC/BCE suffix (case-insensitive)
+  const bcMatch = yearStr.match(/^(\d+)(bc|bce)$/i);
   if (bcMatch) {
     const bcYear = parseInt(bcMatch[1]);
     // Convert BC to internal: 1 BC = 0, 2 BC = -1, 1446 BC = -1445
     return -(bcYear - 1);
+  }
+  
+  // Check for AD/CE suffix (case-insensitive) - just strip the suffix
+  const adMatch = yearStr.match(/^(\d+)(ad|ce)$/i);
+  if (adMatch) {
+    return parseInt(adMatch[1]);
   }
   
   // Check for negative year (already in internal format)
@@ -251,6 +257,11 @@ function updateURLWithView(view) {
     const profile = getCurrentProfileSlug();
     const location = getLocationSlug();
     newURL = `/feasts/${profile}/${state.year}/${location}/`;
+  } else if (view === 'priestly') {
+    // Build priestly URL with profile/year/priestly
+    const profile = getCurrentProfileSlug();
+    const yearStr = formatYearForURL(state.year);
+    newURL = `/${profile}/${yearStr}/priestly/`;
   } else {
     // Calendar view - use standard path URL
     newURL = buildPathURL();
@@ -289,7 +300,7 @@ function julianToGregorian(year, month, day) {
 // Parse SEO-friendly URL path into state
 function parsePathURL() {
   const path = window.location.pathname;
-  const segments = path.split('/').filter(s => s.length > 0);
+  let segments = path.split('/').filter(s => s.length > 0);
   const params = new URLSearchParams(window.location.search);
   
   // Check for special views first
@@ -301,6 +312,12 @@ function parsePathURL() {
   }
   if (segments[0] === 'feasts') {
     return { view: 'feasts', segments: segments.slice(1) };
+  }
+  
+  // Check if the last segment is "priestly" - this can be appended to any calendar URL
+  const hasPriestlyView = segments[segments.length - 1] === 'priestly';
+  if (hasPriestlyView) {
+    segments = segments.slice(0, -1); // Remove 'priestly' from segments for normal parsing
   }
   
   // Handle Gregorian date lookup: /gregorian/year/month/day/
@@ -489,6 +506,11 @@ function parsePathURL() {
   if (params.has('threshold')) result.crescentThreshold = parseInt(params.get('threshold'));
   if (params.has('time')) result.time = params.get('time');
   
+  // Add priestly view flag if URL ended with /priestly/
+  if (hasPriestlyView) {
+    result.view = 'priestly';
+  }
+  
   return result;
 }
 
@@ -529,8 +551,8 @@ function applyURLState(urlState) {
   if (urlState.yearStartRule) { state.yearStartRule = urlState.yearStartRule; needsRegenerate = true; }
   if (urlState.crescentThreshold !== undefined) { state.crescentThreshold = urlState.crescentThreshold; needsRegenerate = true; }
   
-  // Apply year
-  if (urlState.year && urlState.year !== state.year) {
+  // Apply year (use !== null check since year 0 = 1 BC is valid)
+  if (urlState.year !== null && urlState.year !== undefined && urlState.year !== state.year) {
     state.year = urlState.year;
     needsRegenerate = true;
   }
@@ -581,6 +603,16 @@ function loadFromURL() {
   
   if (urlState.view === 'feasts') {
     toggleExportModal(true);
+    return;
+  }
+  
+  if (urlState.view === 'priestly') {
+    // Apply URL state first, then show priestly page
+    const { needsRegenerate } = applyURLState(urlState);
+    if (needsRegenerate) {
+      generateCalendar();
+    }
+    navigateTo('priestly');
     return;
   }
   
@@ -800,6 +832,7 @@ function navigateTo(page) {
   const settingsOverlay = document.getElementById('settings-page-overlay');
   const exportPage = document.getElementById('export-page');
   const sabbathTesterPage = document.getElementById('sabbath-tester-page');
+  const priestlyPage = document.getElementById('priestly-page');
   
   // Hide all pages and reset body state
   document.documentElement.classList.remove('feasts-open');
@@ -811,9 +844,10 @@ function navigateTo(page) {
   settingsPage.classList.remove('visible');
   settingsOverlay.classList.remove('visible');
   
-  // Hide export page and sabbath tester
+  // Hide export page, sabbath tester, and priestly page
   exportPage.style.display = 'none';
   sabbathTesterPage.style.display = 'none';
+  if (priestlyPage) priestlyPage.style.display = 'none';
   
   switch(page) {
     case 'calendar':
@@ -865,6 +899,18 @@ function navigateTo(page) {
       sabbathTesterPage.style.display = 'block';
       renderSabbathTester();
       updateURLWithView('sabbath-tester');
+      break;
+    case 'priestly':
+      const priestlyPage = document.getElementById('priestly-page');
+      calendarOutput.style.display = 'none';
+      dayDetailPanel.style.display = 'none';
+      priestlyPage.style.display = 'block';
+      if (typeof renderPriestlyTable === 'function') {
+        const yearSpan = document.getElementById('priestly-year');
+        if (yearSpan) yearSpan.textContent = formatYear(state.year);
+        renderPriestlyTable();
+      }
+      updateURLWithView('priestly');
       break;
   }
 }
