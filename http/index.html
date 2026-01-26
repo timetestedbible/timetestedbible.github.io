@@ -1964,6 +1964,8 @@ function showAboutModal() {
   const overlay = document.getElementById('about-modal-overlay');
   if (overlay) {
     overlay.classList.add('visible');
+  } else {
+    console.error('About modal overlay not found - modal HTML may be missing');
   }
 }
 
@@ -1973,8 +1975,14 @@ function closeAboutModal(event) {
   
   const overlay = document.getElementById('about-modal-overlay');
   
-  // Always mark as shown so it only appears once
-  localStorage.setItem('hideAboutModal', 'true');
+  // Track dismissals: increment count and store today's date
+  const dismissCount = parseInt(localStorage.getItem('aboutModalDismissCount') || '0');
+  const newCount = dismissCount + 1;
+  localStorage.setItem('aboutModalDismissCount', newCount.toString());
+  
+  // Store today's date (YYYY-MM-DD format)
+  const today = new Date().toISOString().split('T')[0];
+  localStorage.setItem('aboutModalLastDismissDate', today);
   
   if (overlay) {
     overlay.classList.remove('visible');
@@ -1987,11 +1995,23 @@ function closeAboutModal(event) {
 }
 
 function shouldShowAboutModal() {
-  return localStorage.getItem('hideAboutModal') !== 'true';
+  // Never show if dismissed 3+ times
+  const dismissCount = parseInt(localStorage.getItem('aboutModalDismissCount') || '0');
+  if (dismissCount >= 3) {
+    return false;
+  }
+  
+  // Check if already shown today
+  const lastDismissDate = localStorage.getItem('aboutModalLastDismissDate');
+  const today = new Date().toISOString().split('T')[0];
+  
+  // Show if never dismissed, or if last dismissal was on a different day
+  return !lastDismissDate || lastDismissDate !== today;
 }
 
 function resetAboutModal() {
-  localStorage.removeItem('hideAboutModal');
+  localStorage.removeItem('aboutModalDismissCount');
+  localStorage.removeItem('aboutModalLastDismissDate');
 }
 
 // ============================================================================
@@ -2161,20 +2181,18 @@ function showTimePicker() {
   const monthData = state.lunarMonths?.[state.currentMonthIndex];
   const dayData = monthData?.days?.find(d => d.lunarDay === state.highlightedLunarDay);
   
-  let displayDate;
+  // Get the UTC timestamp to convert to location's local time
+  let utcTimestamp;
   if (dayData?.gregorianDate) {
-    // Use the gregorian date of the highlighted day
-    displayDate = new Date(dayData.gregorianDate);
+    // Use selectedTimestamp if available (more precise), otherwise use sunrise of the day
+    utcTimestamp = state.selectedTimestamp || getSunriseTimestamp(dayData.gregorianDate);
   } else {
     // Fallback to view time
-    displayDate = getViewTime();
+    utcTimestamp = getViewTime().getTime();
   }
   
-  // Get time component from view time (or current time if live)
-  const viewTime = getViewTime();
-  const tzOffsetHours = Math.round(state.lon / 15);
-  const localTimeMs = viewTime.getTime() + (tzOffsetHours * 60 * 60 * 1000);
-  const localTime = new Date(localTimeMs);
+  // Convert UTC timestamp to local time at the selected location
+  const localTimeAtLocation = utcToLocalTime(utcTimestamp, state.lon);
   
   // Update the time label to show the current location
   const locationName = getCurrentLocationName();
@@ -2183,15 +2201,15 @@ function showTimePicker() {
     timeLabel.textContent = `${locationName} Time:`;
   }
   
-  // Format date as YYYY-MM-DD
-  const year = displayDate.getFullYear();
-  const month = String(displayDate.getMonth() + 1).padStart(2, '0');
-  const day = String(displayDate.getDate()).padStart(2, '0');
+  // Format date as YYYY-MM-DD (using UTC methods since utcToLocalTime returns a Date where UTC methods give local time)
+  const year = localTimeAtLocation.getUTCFullYear();
+  const month = String(localTimeAtLocation.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(localTimeAtLocation.getUTCDate()).padStart(2, '0');
   document.getElementById('time-picker-date').value = `${year}-${month}-${day}`;
   
-  // Format time as HH:MM (from view time converted to local)
-  const hours = String(localTime.getUTCHours()).padStart(2, '0');
-  const minutes = String(localTime.getUTCMinutes()).padStart(2, '0');
+  // Format time as HH:MM (from local time at location)
+  const hours = String(localTimeAtLocation.getUTCHours()).padStart(2, '0');
+  const minutes = String(localTimeAtLocation.getUTCMinutes()).padStart(2, '0');
   document.getElementById('time-picker-time').value = `${hours}:${minutes}`;
   
   modal.style.display = 'flex';
@@ -7939,11 +7957,13 @@ document.addEventListener('DOMContentLoaded', async function() {
   updateTimeDisplay();
   startLiveTimeUpdates();
   
-  // Show about modal on first visit
-  if (shouldShowAboutModal()) {
-    // Small delay to let the page render first
-    setTimeout(showAboutModal, 500);
-  }
+  // Show about modal on page load (greeting) - at most once per day, max 3 dismissals
+  // Wait for calendar to be fully rendered before showing modal
+  setTimeout(() => {
+    if (shouldShowAboutModal()) {
+      showAboutModal();
+    }
+  }, 1000);  // Increased delay to ensure calendar is rendered
   
   // Initialize PWA install button
   initInstallButton();
