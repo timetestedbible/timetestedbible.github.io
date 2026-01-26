@@ -603,6 +603,7 @@ title: "Lunar Sabbath Calendar"
     </div>
     <div class="day-detail-content">
       <div class="day-detail-feasts"></div>
+      <div class="day-detail-bible-events"></div>
       <div class="day-detail-info"></div>
       <div class="day-detail-dateline"></div>
       <div class="day-detail-profile-compare"></div>
@@ -713,6 +714,43 @@ title: "Lunar Sabbath Calendar"
 <script>
 
 // Astronomy Engine abstraction moved to astronomy-engine-abstraction.js
+
+// ============================================================================
+// BIBLE EVENTS - Historical events by lunar month/day
+// ============================================================================
+
+let bibleEventsByMonthDay = null;
+
+// Load bible events from JSON file
+async function loadBibleEvents() {
+  try {
+    const response = await fetch('/bible-events-by-month-day.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const events = await response.json();
+    
+    // Index events by month-day for fast lookup
+    bibleEventsByMonthDay = {};
+    for (const event of events) {
+      const key = `${event.month}-${event.day}`;
+      if (!bibleEventsByMonthDay[key]) {
+        bibleEventsByMonthDay[key] = [];
+      }
+      bibleEventsByMonthDay[key].push(event);
+    }
+    console.log(`Bible events loaded: ${events.length} events`);
+    return true;
+  } catch (err) {
+    console.warn('Bible events not available:', err.message);
+    return false;
+  }
+}
+
+// Get bible events for a specific lunar month and day
+function getBibleEvents(month, day) {
+  if (!bibleEventsByMonthDay) return [];
+  const key = `${month}-${day}`;
+  return bibleEventsByMonthDay[key] || [];
+}
 
 const MONTH_NAMES = [
   '1st Month', '2nd Month', '3rd Month', '4th Month', '5th Month', '6th Month',
@@ -3629,6 +3667,9 @@ document.addEventListener('DOMContentLoaded', async function() {
   
   // Initialize astronomy engine (loads Swiss Ephemeris WASM)
   await initializeAstroEngine();
+  
+  // Load Bible events data
+  await loadBibleEvents();
   
   // Check if URL has path data or query params - if so, load from URL
   const path = window.location.pathname;

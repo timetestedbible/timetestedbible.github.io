@@ -693,6 +693,33 @@ function showDayDetail(dayObj, month) {
     }
   }
   
+  // Populate bible events (historical events that occurred on this lunar date)
+  const bibleEventsContainer = panel.querySelector('.day-detail-bible-events');
+  const bibleEvents = getBibleEvents(month.monthNumber, dayObj.lunarDay);
+  
+  if (bibleEvents && bibleEvents.length > 0) {
+    let eventsHtml = `
+      <div class="bible-events-section">
+        <div class="bible-events-header">📜 Biblical Events on This Date</div>
+        <div class="bible-events-list">
+    `;
+    
+    for (const event of bibleEvents) {
+      eventsHtml += `
+        <div class="bible-event-item">
+          <div class="bible-event-title">${event.title}</div>
+          <div class="bible-event-description">${event.description}</div>
+          <div class="bible-event-verse">${event.verse}</div>
+        </div>
+      `;
+    }
+    
+    eventsHtml += '</div></div>';
+    bibleEventsContainer.innerHTML = eventsHtml;
+  } else {
+    bibleEventsContainer.innerHTML = '';
+  }
+  
   // Populate astronomical times in header (to the right of date info)
   const astroTimesContainer = panel.querySelector('.day-detail-astro-times');
   const astroTimes = getAstronomicalTimes(dayObj.gregorianDate);

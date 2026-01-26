@@ -3171,6 +3171,57 @@ body.sabbath-tester-open {
   padding: 10px 0;
 }
 
+/* Bible Events Section */
+.bible-events-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bible-events-header {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #d4a574;
+  margin-bottom: 12px;
+}
+
+.bible-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bible-event-item {
+  padding: 12px 14px;
+  background: rgba(139, 90, 43, 0.25);
+  border-radius: 8px;
+  border-left: 3px solid #d4a574;
+}
+
+.bible-event-title {
+  font-weight: 600;
+  color: #f0e6d3;
+  margin-bottom: 6px;
+  font-size: 1em;
+}
+
+.bible-event-description {
+  color: #ccc;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.bible-event-verse {
+  color: #d4a574;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.bible-event-verse::before {
+  content: "📖 ";
+}
+
 /* Feast Table */
 .feast-list {
   margin-top: 30px;
