@@ -694,8 +694,10 @@ function showDayDetail(dayObj, month) {
   }
   
   // Populate bible events (historical events that occurred on this lunar date)
+  // Pass the Gregorian year to filter conditional events (Sabbath/Jubilee year specific)
   const bibleEventsContainer = panel.querySelector('.day-detail-bible-events');
-  const bibleEvents = getBibleEvents(month.monthNumber, dayObj.lunarDay);
+  const gregorianYear = dayObj.gregorianDate.getUTCFullYear();
+  const bibleEvents = getBibleEvents(month.monthNumber, dayObj.lunarDay, gregorianYear);
   
   if (bibleEvents && bibleEvents.length > 0) {
     let eventsHtml = `
@@ -705,11 +707,43 @@ function showDayDetail(dayObj, month) {
     `;
     
     for (const event of bibleEvents) {
+      // Make scripture verses clickable using the bible reader
+      const verseLink = typeof makeCitationClickable === 'function' 
+        ? makeCitationClickable(event.verse, event.title)
+        : event.verse;
+      
+      // Add condition indicator for Sabbath/Jubilee year events or year-specific events
+      let conditionBadge = '';
+      let eventClass = event.condition ? ' conditional-event' : '';
+      if (event.condition === 'sabbath_year') {
+        conditionBadge = '<span class="event-condition-badge sabbath-year-badge" title="This commandment applies during Sabbath Years (Year of Release)">🌾 Sabbath Year</span>';
+      } else if (event.condition === 'jubilee_year') {
+        conditionBadge = '<span class="event-condition-badge jubilee-year-badge" title="This commandment applies during Jubilee Years">🎺 Jubilee Year</span>';
+      } else if (event.condition && event.condition.startsWith('year_')) {
+        conditionBadge = '<span class="event-condition-badge historical-event-badge" title="Historical event that occurred in this specific year">📅 Historical Event</span>';
+        eventClass = ' historical-event';
+      }
+      
+      // Add scripture quote if present
+      let quoteHtml = '';
+      if (event.quote) {
+        quoteHtml = `<blockquote class="bible-event-quote">"${event.quote}"</blockquote>`;
+      }
+      
+      // Add book chapter link if present
+      let bookLinkHtml = '';
+      if (event.bookChapter) {
+        bookLinkHtml = `<div class="bible-event-book-link"><a href="${event.bookChapter}" target="_blank" onclick="event.stopPropagation();">📖 Read more in the book chapter</a></div>`;
+      }
+      
       eventsHtml += `
-        <div class="bible-event-item">
+        <div class="bible-event-item${eventClass}">
+          ${conditionBadge}
           <div class="bible-event-title">${event.title}</div>
           <div class="bible-event-description">${event.description}</div>
-          <div class="bible-event-verse">${event.verse}</div>
+          ${quoteHtml}
+          <div class="bible-event-verse">${verseLink}</div>
+          ${bookLinkHtml}
         </div>
       `;
     }

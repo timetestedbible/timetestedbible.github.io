@@ -44,6 +44,72 @@ function formatFullDate(date) {
   return `${months[month]} ${day}, ${yearStr}${calendarSuffix}`;
 }
 
+// Render Jubilee cycle indicator for the calendar header
+function renderJubileeIndicator(lunarYearStart) {
+  // Get jubilee info for the lunar year
+  const info = getJubileeInfo(lunarYearStart);
+  
+  // Build display text
+  let displayText = formatJubileeDisplay(info);
+  
+  // Add special year indicators
+  let specialClass = '';
+  let specialIcon = '';
+  let titleText = `Jubilee Cycle: ${displayText}`;
+  
+  if (info.isJubileeYear) {
+    specialClass = ' jubilee-year';
+    specialIcon = '🎺 ';
+    titleText += ` - Jubilee Year (${info.celebratingJubilee}th Jubilee since Adam)`;
+  } else if (info.isSabbathYear) {
+    specialClass = ' sabbath-year';
+    specialIcon = '🌾 ';
+    titleText += ' - Sabbath Year (Year of Release)';
+  }
+  
+  // Add planting prohibition info to title
+  const prohibition = getPlantingProhibitionDescription(info);
+  if (prohibition) {
+    titleText += `\n${prohibition}`;
+  }
+  
+  return `
+    <div class="jubilee-indicator${specialClass}" title="${titleText}">
+      <span class="jubilee-text">${specialIcon}${displayText}</span>
+      <a href="#" class="jubilee-info-link" onclick="event.preventDefault(); event.stopPropagation(); showJubileeModal();" title="Learn about the Jubilee and Sabbath Year cycles">ⓘ</a>
+    </div>
+  `;
+}
+
+// Get event icon for a day cell (📰 for historical, 📜 for biblical)
+function getDayEventIcon(monthNumber, lunarDay, gregorianYear) {
+  // Only check if getBibleEvents is available
+  if (typeof getBibleEvents !== 'function') return '';
+  
+  const events = getBibleEvents(monthNumber, lunarDay, gregorianYear);
+  if (!events || events.length === 0) return '';
+  
+  // Check if any events are historical (year-specific)
+  const hasHistorical = events.some(e => e.condition && e.condition.startsWith('year_'));
+  // Check if any events are biblical (no condition or cycle-based)
+  const hasBiblical = events.some(e => !e.condition || e.condition === 'sabbath_year' || e.condition === 'jubilee_year' || e.condition === 'sabbath_or_jubilee');
+  
+  // Build icon string with both if applicable
+  let icons = [];
+  if (hasHistorical) icons.push('📰');
+  if (hasBiblical) icons.push('📜');
+  
+  if (icons.length === 0) return '';
+  
+  const title = hasHistorical && hasBiblical 
+    ? 'Historical and Biblical events on this date' 
+    : hasHistorical 
+      ? 'Historical event on this date' 
+      : 'Biblical event on this date';
+  
+  return `<div class="day-event-icon" title="${title}">${icons.join('')}</div>`;
+}
+
 // Get current view time (UTC)
 function getViewTime() {
   if (!state.viewTime) {
@@ -344,9 +410,13 @@ function buildLunarMonths(nissanMoon, allMoonEvents, springEquinox, nextYearStar
 // Generate calendar for the current year
 function generateCalendar(options = {}) {
   const preserveSelection = options.preserveMonth || false;
+  const preserveMonthIndex = options.preserveMonthIndex || false;
   
   // Save the selected UTC timestamp before regenerating
   const savedTimestamp = state.selectedTimestamp;
+  
+  // Save the current month index for year changes
+  const savedMonthIndex = state.currentMonthIndex;
   
   // State is source of truth - update UI inputs to match state
   const yearInput = document.getElementById('year-input');
@@ -366,7 +436,7 @@ function generateCalendar(options = {}) {
     moonPhaseSelect.value = state.moonPhase;
   }
   
-  if (!preserveSelection) {
+  if (!preserveSelection && !preserveMonthIndex) {
     state.currentMonthIndex = 0;
     state.highlightedLunarDay = 1;  // Default to day 1
     state.selectedTimestamp = null;
@@ -464,6 +534,22 @@ function generateCalendar(options = {}) {
     }
   }
   
+  // If preserving month index (for year changes), restore the saved month index
+  // Only fall back to month 12 if we were on month 13 and new year doesn't have it
+  if (preserveMonthIndex) {
+    const maxMonthIndex = state.lunarMonths.length - 1;
+    if (savedMonthIndex <= maxMonthIndex) {
+      // Can keep the same month
+      state.currentMonthIndex = savedMonthIndex;
+    } else {
+      // Was on month 13 (index 12) but new year only has 12 months
+      // Fall back to month 12 (index 11)
+      state.currentMonthIndex = maxMonthIndex;
+    }
+    state.highlightedLunarDay = 1;  // Default to day 1 of the preserved month
+    state.selectedTimestamp = null;
+  }
+  
   renderMonthButtons();
   renderMonth(state.lunarMonths[state.currentMonthIndex]);
   renderFeastTable(state.lunarMonths);
@@ -550,11 +636,11 @@ function renderMonthButtons() {
     container.appendChild(btn);
   }
   
-  // Month 13 button (hidden on mobile unless year has 13 months) - with calendar icon
-  if (state.lunarMonths.length >= 13) {
+  // Month 13 button - only show if year has 13 months (no calendar icon, just the number)
+  if (has13Months) {
     const btn13 = document.createElement('button');
-    btn13.className = 'month-btn month-13' + (has13Months ? ' has-13' : '') + (12 === state.currentMonthIndex ? ' active' : '');
-    btn13.innerHTML = '<span class="month-13-icon">📅</span><span class="month-13-num">13</span>';
+    btn13.className = 'month-btn' + (12 === state.currentMonthIndex ? ' active' : '');
+    btn13.textContent = '13';
     btn13.title = 'Intercalary 13th month';
     btn13.onclick = () => selectMonth(12);
     container.appendChild(btn13);
@@ -649,6 +735,9 @@ function renderMonth(month) {
   // Check if Day 1 is today
   const day1IsToday = day1 && day1.gregorianDate.toISOString().split('T')[0] === todayStr;
   
+  // Get event icon for Day 1
+  const day1EventIcon = day1 ? getDayEventIcon(month.monthNumber, 1, day1.gregorianDate.getUTCFullYear()) : '';
+  
   // Calculate daylight percentage for day cycle bar based on Day 1's sunrise/sunset
   let daylightHours = 12; // default if we can't calculate
   let dayCycleGradient = '';
@@ -732,19 +821,24 @@ function renderMonth(month) {
           </div>
         </div>
         
+        <!-- Jubilee Indicator Row -->
+        <div class="header-jubilee-row">
+          ${renderJubileeIndicator(lunarYearStart)}
+        </div>
+        
         <!-- Row 2: Year | Month | Time | Location -->
         <div class="header-row-2">
-          <div class="header-dropdown year" onclick="toggleMonthPicker()" title="Change year">
+          <div class="header-dropdown year" onclick="toggleYearPicker(event)" title="Change year">
             <span>${displayYear}</span>
             <span class="dropdown-arrow">▼</span>
           </div>
           <span class="header-separator">|</span>
-          <div class="header-dropdown month" onclick="toggleMonthPicker()" title="Change month">
+          <div class="header-dropdown month" onclick="toggleMonthPicker(event)" title="Change month">
             <span>${month.name}</span>
             <span class="dropdown-arrow">▼</span>
           </div>
           <span class="header-separator">|</span>
-          <div class="header-dropdown time" id="header-time-display" onclick="showTimePicker()" title="Set date time"></div>
+          <div class="header-dropdown time" id="header-time-display" onclick="showTimePicker(event)" title="Set date time"></div>
           <span class="header-separator">|</span>
           <div class="header-dropdown location" onclick="openLocationPicker()" title="Change location">
             <span>${getCurrentLocationName()}</span>
@@ -757,6 +851,7 @@ function renderMonth(month) {
           <div class="moon-phase${day1BloodMoonClass}">${day1 ? day1.moonPhase : ''}</div>
           <div class="lunar-day">1</div>
           ${day1FeastIcons}
+          ${day1EventIcon}
         </div>
       </div>
       ${state.yearStartUncertainty ? `
@@ -843,12 +938,18 @@ function renderMonth(month) {
       const bloodMoonClass = day.isBloodMoon ? ' blood-moon' : '';
       // Use red full moon emoji for blood moon, or add title
       const bloodMoonTitle = day.isBloodMoon ? ' | 🔴 Blood Moon (Lunar Eclipse)' : '';
+      
+      // Get event icon for this day
+      const gregorianYear = day.gregorianDate.getUTCFullYear();
+      const eventIcon = getDayEventIcon(month.monthNumber, day.lunarDay, gregorianYear);
+      
       html += `
         <div class="${classes.join(' ')}" data-date="${dateStr}" title="${titleText}${bloodMoonTitle}">
           <div class="gregorian">${formatShortDate(day.gregorianDate)}${uncertaintySuffix}</div>
           <div class="moon-phase${bloodMoonClass}">${day.moonPhase}</div>
           <div class="lunar-day">${day.lunarDay}</div>
           ${feastLabel}
+          ${eventIcon}
         </div>
       `;
     }
@@ -900,12 +1001,16 @@ function renderMonth(month) {
     const bloodMoonClass30 = day30.isBloodMoon ? ' blood-moon' : '';
     const bloodMoonTitle30 = day30.isBloodMoon ? ' | 🔴 Blood Moon (Lunar Eclipse)' : '';
     
+    // Get event icon for Day 30
+    const day30EventIcon = getDayEventIcon(month.monthNumber, 30, day30.gregorianDate.getUTCFullYear());
+    
     html += `
       <div class="${classes.join(' ')}" data-date="${dateStr}" title="${titleText}${bloodMoonTitle30}">
         <div class="gregorian">${formatShortDate(day30.gregorianDate)}${day30Suffix}</div>
         <div class="moon-phase${bloodMoonClass30}">${day30.moonPhase}</div>
         <div class="lunar-day">${day30.lunarDay}</div>
         ${feastLabel}
+        ${day30EventIcon}
       </div>
     `;
   } else {
@@ -913,10 +1018,11 @@ function renderMonth(month) {
     html += `<div class="day-cell empty quote-row-spacer"></div>`;
   }
   
-  // Prev button - goes to previous year if at first month
+  // Navigation buttons - prev year and month
   html += `
-    <div class="month-nav-cell" onclick="navigateMonth(-1)" title="${isFirstMonth ? 'Previous Year' : 'Previous Month'}">
-      <span class="nav-arrow">${isFirstMonth ? '⏮' : '◀'}</span>
+    <div class="month-nav-cell nav-group">
+      <span class="nav-arrow year-nav" onclick="navigateYear(-1); event.stopPropagation();" title="Previous Year">⏮</span>
+      <span class="nav-arrow month-nav" onclick="navigateMonth(-1); event.stopPropagation();" title="${isFirstMonth ? 'Previous Year' : 'Previous Month'}">◀</span>
     </div>
   `;
   
@@ -927,10 +1033,11 @@ function renderMonth(month) {
     </div>
   `;
   
-  // Next button - goes to next year if at last month
+  // Navigation buttons - next month and year
   html += `
-    <div class="month-nav-cell" onclick="navigateMonth(1)" title="${isLastMonth ? 'Next Year' : 'Next Month'}">
-      <span class="nav-arrow">${isLastMonth ? '⏭' : '▶'}</span>
+    <div class="month-nav-cell nav-group">
+      <span class="nav-arrow month-nav" onclick="navigateMonth(1); event.stopPropagation();" title="${isLastMonth ? 'Next Year' : 'Next Month'}">▶</span>
+      <span class="nav-arrow year-nav" onclick="navigateYear(1); event.stopPropagation();" title="Next Year">⏭</span>
     </div>
   `;
   

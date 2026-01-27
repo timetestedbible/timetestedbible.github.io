@@ -907,7 +907,9 @@ function navigateTo(page) {
       priestlyPage.style.display = 'block';
       if (typeof renderPriestlyTable === 'function') {
         const yearSpan = document.getElementById('priestly-year');
+        const profileSpan = document.getElementById('priestly-profile');
         if (yearSpan) yearSpan.textContent = formatYear(state.year);
+        if (profileSpan) profileSpan.textContent = getCurrentProfileName();
         renderPriestlyTable();
       }
       updateURLWithView('priestly');

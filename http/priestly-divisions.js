@@ -2,13 +2,33 @@
 // PRIESTLY DIVISIONS - Calculate which priestly course is serving
 // ============================================================================
 // 
-// Historical reference: Course 1 (Jehoiarib) was serving when the temple fell
-// on the 9th of Av, 70 AD. We use this as our anchor point to calculate
-// forward and backward through time.
+// Three historical anchor points establish and validate the priestly cycle:
+//
+// 1. TEMPLE DEDICATION (959 BC) - Start of the cycle
+//    The priestly cycle began at Solomon's Temple dedication during Tabernacles
+//    (15th of 7th month, 959 BC). Course 1 (Jehoiarib) was the first to serve
+//    after the dedication ceremonies. (1 Kings 8; 2 Chronicles 5-7; 1 Chr 24:7)
+//
+// 2. FIRST TEMPLE DESTRUCTION (587 BC) - Validation point
+//    Jehoiarib may have been serving when the First Temple fell on the 9th of Av.
+//    This provides an intermediate validation point for the cycle continuity.
+//
+// 3. SECOND TEMPLE DESTRUCTION (70 AD) - STRONGEST validation point
+//    Historical testimony confirms Course 1 (Jehoiarib) was serving when the
+//    Second Temple fell on the 9th of Av, 70 AD. This is the STRONGEST anchor
+//    and serves as the primary validation invariant. Any calendar configuration
+//    that fails to place Jehoiarib at this date should be flagged with a warning.
 //
 // For Saturday/continuous sabbath: weeks are always 7 days
 // For Lunar sabbath: weeks follow the lunar month (4 weeks per ~29.53 day month)
 // ============================================================================
+
+// The year of the First Temple dedication (959 BC = astronomical year -958)
+const TEMPLE_DEDICATION_YEAR = -958;
+
+// The year of the First Temple destruction (587 BC = astronomical year -586)
+// Some scholars date this to 586 BC, but 587 BC aligns with many chronologies
+const FIRST_TEMPLE_DESTRUCTION_YEAR = -586;
 
 // Priestly divisions data (will be loaded from JSON)
 let PRIESTLY_DIVISIONS = null;
@@ -70,15 +90,15 @@ function dateToJulianDay(date) {
   return jdn + (h - 12) / 24;
 }
 
-// Get the reference date (9th of Av, 70 AD) for the current calendar settings
-// Returns the Julian Day Number for when Course 1 was serving
-function getTempleDestructionReferenceJD(profile) {
-  // We need to calculate when the 9th of Av 70 AD falls under the current calendar
-  // This requires generating the lunar calendar for year 70 AD
+// Get the reference date (15th of 7th month, 959 BC - Temple Dedication) for the current calendar settings
+// Returns the Julian Day Number for when Course 1 (Jehoiarib) began serving
+function getTempleDedicationReferenceJD(profile) {
+  // We need to calculate when the 15th of the 7th month in 959 BC falls under the current calendar
+  // This requires generating the lunar calendar for year 959 BC (astronomical year -958)
   
   // Create a temporary state-like object with the profile settings
   const tempState = {
-    year: 70,
+    year: TEMPLE_DEDICATION_YEAR,
     lat: profile?.lat || 31.7683,  // Jerusalem
     lon: profile?.lon || 35.2137,
     moonPhase: profile?.moonPhase || state.moonPhase,
@@ -88,40 +108,39 @@ function getTempleDestructionReferenceJD(profile) {
     crescentThreshold: profile?.crescentThreshold || state.crescentThreshold
   };
   
-  // Get moon events for year 70 AD using the current engine
+  // Get moon events for 959 BC using the current engine
   const engine = getAstroEngine();
-  const moonEvents = findMoonEvents(70, tempState.moonPhase);
+  const moonEvents = findMoonEvents(TEMPLE_DEDICATION_YEAR, tempState.moonPhase);
   
-  // Get year start point for 70 AD
-  const yearStartPoint = getYearStartPoint(70);
+  // Get year start point for 959 BC
+  const yearStartPoint = getYearStartPoint(TEMPLE_DEDICATION_YEAR);
   
   // Find the first moon event on or after year start (this is Nisan)
   let nissanMoon = moonEvents.find(m => m >= yearStartPoint);
   if (!nissanMoon) nissanMoon = moonEvents[0];
   
-  // Find the 5th moon event (Av) - index 4 since we start at 0
+  // Find the 7th moon event (Tishri/Ethanim) - index 6 since we start at 0
   const nissanIndex = moonEvents.findIndex(m => Math.abs(m.getTime() - nissanMoon.getTime()) < 1000);
-  const avMoonIndex = nissanIndex + 4; // 5th month
+  const tishriMoonIndex = nissanIndex + 6; // 7th month
   
-  if (avMoonIndex >= moonEvents.length - 1) {
-    console.error('Cannot find Av moon for 70 AD');
+  if (tishriMoonIndex >= moonEvents.length - 1) {
+    console.error('Cannot find Tishri moon for 959 BC');
     return null;
   }
   
-  const avMoon = moonEvents[avMoonIndex];
-  const nextMoon = moonEvents[avMoonIndex + 1];
+  const tishriMoon = moonEvents[tishriMoonIndex];
   
-  // Calculate when Day 1 of Av starts based on the current settings
+  // Calculate when Day 1 of Tishri starts based on the current settings
   const observerLon = tempState.lon;
-  const avMoonLocalDate = getLocalDateFromUTC(avMoon, observerLon);
+  const tishriMoonLocalDate = getLocalDateFromUTC(tishriMoon, observerLon);
   
-  let monthStartDate = new Date(avMoonLocalDate.getTime());
+  let monthStartDate = new Date(tishriMoonLocalDate.getTime());
   
   // Apply the same day start logic as buildLunarMonths
   if ((tempState.moonPhase === 'dark' || tempState.moonPhase === 'full' || tempState.moonPhase === 'crescent') && 
       tempState.dayStartTime === 'evening') {
-    const sunsetOnMoonDate = getSunsetTimestamp(avMoonLocalDate);
-    const moonEventLocalTime = avMoon.getTime() + (observerLon / 15) * 60 * 60 * 1000;
+    const sunsetOnMoonDate = getSunsetTimestamp(tishriMoonLocalDate);
+    const moonEventLocalTime = tishriMoon.getTime() + (observerLon / 15) * 60 * 60 * 1000;
     const sunsetLocalTime = sunsetOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
     
     if (moonEventLocalTime > sunsetLocalTime) {
@@ -129,8 +148,8 @@ function getTempleDestructionReferenceJD(profile) {
     }
   } else if ((tempState.moonPhase === 'dark' || tempState.moonPhase === 'full' || tempState.moonPhase === 'crescent') && 
              tempState.dayStartTime === 'morning') {
-    const sunriseOnMoonDate = getSunriseTimestamp(avMoonLocalDate);
-    const moonEventLocalTime = avMoon.getTime() + (observerLon / 15) * 60 * 60 * 1000;
+    const sunriseOnMoonDate = getSunriseTimestamp(tishriMoonLocalDate);
+    const moonEventLocalTime = tishriMoon.getTime() + (observerLon / 15) * 60 * 60 * 1000;
     const sunriseLocalTime = sunriseOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
     
     if (moonEventLocalTime >= sunriseLocalTime) {
@@ -140,11 +159,21 @@ function getTempleDestructionReferenceJD(profile) {
     monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
   }
   
-  // The 9th of Av is 8 days after Day 1 (Day 1 + 8 = Day 9)
-  const ninthOfAv = new Date(monthStartDate.getTime());
-  ninthOfAv.setUTCDate(ninthOfAv.getUTCDate() + 8);
+  // The 15th of Tishri is 14 days after Day 1 (Day 1 + 14 = Day 15)
+  // This is the start of Tabernacles when the Temple was dedicated
+  const tabernaclesStart = new Date(monthStartDate.getTime());
+  tabernaclesStart.setUTCDate(tabernaclesStart.getUTCDate() + 14);
   
-  return dateToJulianDay(ninthOfAv);
+  return dateToJulianDay(tabernaclesStart);
+}
+
+// Check if a date is before the Temple dedication (959 BC)
+function isBeforeTempleDedication(date) {
+  const targetJD = dateToJulianDay(date);
+  // Approximate JD for 959 BC - will be calculated more precisely per profile
+  // 959 BC ≈ JD 1,355,000 (rough estimate)
+  const approxDedicationJD = 1355000;
+  return targetJD < approxDedicationJD;
 }
 
 // Cache for reference JD per profile configuration
@@ -155,7 +184,7 @@ function getCachedReferenceJD(profile) {
   const key = `${profile?.moonPhase || state.moonPhase}-${profile?.dayStartTime || state.dayStartTime}-${profile?.yearStartRule || state.yearStartRule}-${profile?.crescentThreshold || state.crescentThreshold}`;
   
   if (!referenceJDCache.has(key)) {
-    const jd = getTempleDestructionReferenceJD(profile);
+    const jd = getTempleDedicationReferenceJD(profile);
     referenceJDCache.set(key, jd);
   }
   
@@ -195,6 +224,7 @@ function getLunarWeekIndex(lunarDay) {
 //   profile: (optional) calendar profile settings to use
 //
 // Returns: { order: 1-24, course: "name", meaning: "description", weekInCycle: 1-24 }
+// For dates before Temple dedication, returns: { beforeDedication: true, dedicationYear: -958 }
 function getPriestlyCourse(date, lunarDay = null, lunarMonth = null, profile = null) {
   if (!PRIESTLY_DIVISIONS) {
     console.warn('Priestly divisions not loaded');
@@ -206,49 +236,81 @@ function getPriestlyCourse(date, lunarDay = null, lunarMonth = null, profile = n
   const referenceJD = getCachedReferenceJD(profile);
   
   if (referenceJD === null) {
-    console.error('Could not calculate reference date for temple destruction');
+    console.error('Could not calculate reference date for Temple dedication');
     return null;
+  }
+  
+  // Check if this date is before the Temple dedication
+  if (targetJD < referenceJD) {
+    return {
+      beforeDedication: true,
+      dedicationYear: TEMPLE_DEDICATION_YEAR,
+      message: 'Priestly Cycles Start at First Temple Dedication'
+    };
   }
   
   let weekIndex;
   
   if (sabbathMode === 'lunar') {
     // Lunar sabbath calculation
-    // Calculate delta months from reference, then multiply by 4 weeks per month
+    // Each lunar month has exactly 4 weeks (weeks 0-3), regardless of 29 or 30 days
+    // The priestly cycle is continuous across months
     
-    const deltaJD = targetJD - referenceJD;
-    
-    // Calculate approximate months difference using high-precision synodic month
-    const deltaMonths = deltaJD / SYNODIC_MONTH;
-    
-    // Total weeks from reference (4 weeks per month)
-    // Also account for position within the current month
-    let totalWeeks;
-    
-    if (lunarDay !== null) {
-      // If we know the lunar day, we can get the exact week within the month
+    // If we have lunar month info and access to the current calendar, use exact counting
+    if (lunarDay !== null && lunarMonth !== null && state.lunarMonths && state.lunarMonths.length > 0) {
+      // Calculate weeks from the start of the current lunar year
+      // This avoids cumulative error from calculating from 959 BC
+      
+      // Weeks before this month (each month has exactly 4 weeks)
+      const weeksBeforeThisMonth = (lunarMonth - 1) * 4;
+      
+      // Week within this month
       const currentWeekInMonth = getLunarWeekIndex(lunarDay);
       
-      // Calculate full months elapsed (floor for positive, ceil for negative)
-      const fullMonths = deltaJD >= 0 ? Math.floor(deltaMonths) : Math.ceil(deltaMonths);
+      // Total weeks from start of this lunar year
+      const weeksFromYearStart = weeksBeforeThisMonth + currentWeekInMonth;
       
-      // Calculate week index from reference
-      // Reference was week 1 of its month (course 1 serving during 9th of Av)
-      // The 9th of Av falls in week 2 (days 9-15), so reference week in month = 1
-      const referenceWeekInMonth = 1; // 9th of Av is in the second week (index 1)
-      
-      // Total weeks = (full months * 4) + (current week - reference week)
-      totalWeeks = (fullMonths * 4) + (currentWeekInMonth - referenceWeekInMonth);
+      // Now we need to know what course was serving at the start of this lunar year
+      // Calculate the offset from reference (Temple Dedication, Tabernacles 959 BC) to the year start
+      const yearStartDay = state.lunarMonths[0]?.days?.[0];
+      if (yearStartDay) {
+        const yearStartJD = dateToJulianDay(yearStartDay.gregorianDate);
+        const deltaJD = yearStartJD - referenceJD;
+        const deltaMonths = deltaJD / SYNODIC_MONTH;
+        
+        // Weeks from reference to year start
+        // Reference is week 1 (index 1) of its month, year start is week 0 of month 1
+        const referenceWeekInMonth = 1;
+        const fullMonths = Math.round(deltaMonths);
+        const weeksToYearStart = (fullMonths * 4) + (0 - referenceWeekInMonth);
+        
+        // Total weeks from reference
+        const totalWeeks = weeksToYearStart + weeksFromYearStart;
+        
+        weekIndex = ((totalWeeks % 24) + 24) % 24;
+      } else {
+        // Fallback to approximate calculation
+        const deltaJD = targetJD - referenceJD;
+        const deltaMonths = deltaJD / SYNODIC_MONTH;
+        const totalWeeks = Math.round(deltaMonths * 4);
+        weekIndex = ((totalWeeks % 24) + 24) % 24;
+      }
+    } else if (lunarDay !== null) {
+      // We know the lunar day but not the month - use approximate calculation
+      const deltaJD = targetJD - referenceJD;
+      const deltaMonths = deltaJD / SYNODIC_MONTH;
+      const currentWeekInMonth = getLunarWeekIndex(lunarDay);
+      const fullMonths = Math.round(deltaMonths);
+      const referenceWeekInMonth = 1;
+      const totalWeeks = (fullMonths * 4) + (currentWeekInMonth - referenceWeekInMonth);
+      weekIndex = ((totalWeeks % 24) + 24) % 24;
     } else {
       // Approximate calculation when lunar day is not known
-      // This is less accurate but still useful for general calculations
-      totalWeeks = Math.round(deltaMonths * 4);
+      const deltaJD = targetJD - referenceJD;
+      const deltaMonths = deltaJD / SYNODIC_MONTH;
+      const totalWeeks = Math.round(deltaMonths * 4);
+      weekIndex = ((totalWeeks % 24) + 24) % 24;
     }
-    
-    // Course 1 was serving at reference, so we need to find where we are in the cycle
-    // Using modular arithmetic, handling negative values correctly
-    // 24 courses cycle: 0 = course 1, 1 = course 2, ..., 23 = course 24
-    weekIndex = ((totalWeeks % 24) + 24) % 24;
     
   } else {
     // Saturday/continuous sabbath calculation
@@ -301,12 +363,14 @@ function getPriestlyCourseForDay(dayObj, month, profile = null) {
 // Format the priestly course for display
 function formatPriestlyCourse(courseInfo) {
   if (!courseInfo) return '';
+  if (courseInfo.beforeDedication) return courseInfo.message;
   return `${courseInfo.course} (Course ${courseInfo.order})`;
 }
 
 // Format the priestly course with meaning
 function formatPriestlyCourseWithMeaning(courseInfo) {
   if (!courseInfo) return '';
+  if (courseInfo.beforeDedication) return courseInfo.message;
   return `${courseInfo.course} — "${courseInfo.meaning}"`;
 }
 
@@ -314,6 +378,19 @@ function formatPriestlyCourseWithMeaning(courseInfo) {
 function getPriestlyCourseHtml(dayObj, month) {
   const courseInfo = getPriestlyCourseForDay(dayObj, month);
   if (!courseInfo) return '';
+  
+  // Handle dates before Temple dedication
+  if (courseInfo.beforeDedication) {
+    const dedicationYear = Math.abs(courseInfo.dedicationYear - 1); // Convert to BC year
+    return `
+      <div class="priestly-course-display before-dedication">
+        <span class="priestly-course-icon">🏛️</span>
+        <a href="#" onclick="navigateToDedicationDate(); return false;" class="priestly-dedication-link">
+          ${courseInfo.message} (${dedicationYear} BC)
+        </a>
+      </div>
+    `;
+  }
   
   return `
     <div class="priestly-course-display">
@@ -323,6 +400,72 @@ function getPriestlyCourseHtml(dayObj, month) {
       <span class="priestly-course-meaning" title="${courseInfo.meaning}">"${courseInfo.meaning}"</span>
     </div>
   `;
+}
+
+// Navigate to the Temple Dedication date (Tabernacles 959 BC)
+function navigateToDedicationDate() {
+  state.year = TEMPLE_DEDICATION_YEAR;
+  updateUI();
+  generateCalendar();
+  
+  // Navigate to 7th month, day 15 (Tabernacles)
+  if (state.lunarMonths.length >= 7) {
+    state.currentMonthIndex = 6; // 7th month (0-indexed)
+    state.highlightedLunarDay = 15;
+    const month = state.lunarMonths[6];
+    const dayObj = month.days.find(d => d.lunarDay === 15);
+    if (dayObj) {
+      state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+      renderMonth(month);
+      updateMonthButtons();
+      showDayDetail(dayObj, month);
+    }
+  }
+  updateURL();
+}
+
+// Navigate to the Second Temple Destruction date (9th of Av, 70 AD)
+function navigateToDestructionDate() {
+  state.year = 70;
+  updateUI();
+  generateCalendar();
+  
+  // Navigate to 5th month (Av), day 9
+  if (state.lunarMonths.length >= 5) {
+    state.currentMonthIndex = 4; // 5th month (0-indexed)
+    state.highlightedLunarDay = 9;
+    const month = state.lunarMonths[4];
+    const dayObj = month.days.find(d => d.lunarDay === 9);
+    if (dayObj) {
+      state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+      renderMonth(month);
+      updateMonthButtons();
+      showDayDetail(dayObj, month);
+    }
+  }
+  updateURL();
+}
+
+// Navigate to the First Temple Destruction date (9th of Av, 587 BC)
+function navigateToFirstDestructionDate() {
+  state.year = FIRST_TEMPLE_DESTRUCTION_YEAR;
+  updateUI();
+  generateCalendar();
+  
+  // Navigate to 5th month (Av), day 9
+  if (state.lunarMonths.length >= 5) {
+    state.currentMonthIndex = 4; // 5th month (0-indexed)
+    state.highlightedLunarDay = 9;
+    const month = state.lunarMonths[4];
+    const dayObj = month.days.find(d => d.lunarDay === 9);
+    if (dayObj) {
+      state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+      renderMonth(month);
+      updateMonthButtons();
+      showDayDetail(dayObj, month);
+    }
+  }
+  updateURL();
 }
 
 // Jump to the next/previous time this priestly course serves
@@ -447,7 +590,7 @@ function getServiceDatesForCourse(courseOrder) {
         if (!dayObj) continue;
         
         const courseInfo = getPriestlyCourseForDay(dayObj, month);
-        if (courseInfo && courseInfo.order === courseOrder) {
+        if (courseInfo && !courseInfo.beforeDedication && courseInfo.order === courseOrder) {
           // Find the sabbath (end of this week)
           const sabbathDay = weekStart === 2 ? 8 : weekStart === 9 ? 15 : weekStart === 16 ? 22 : 29;
           const sabbathObj = month.days.find(d => d.lunarDay === sabbathDay);
@@ -470,7 +613,7 @@ function getServiceDatesForCourse(courseOrder) {
         const dayObj = month.days[d];
         const courseInfo = getPriestlyCourseForDay(dayObj, month);
         
-        if (courseInfo && courseInfo.order === courseOrder) {
+        if (courseInfo && !courseInfo.beforeDedication && courseInfo.order === courseOrder) {
           // Check if this is the start of a week (Sunday)
           const weekday = Math.floor(dateToJulianDay(dayObj.gregorianDate) + 1.5) % 7;
           if (weekday === 0) { // Sunday = start of week
@@ -497,25 +640,198 @@ function getServiceDatesForCourse(courseOrder) {
   return serviceDates;
 }
 
+// Calculate the Julian Day for 9th of Av for a given year under current calendar settings
+function getNinthOfAvJD(year, profile) {
+  // Create a temporary state-like object with the profile settings
+  const tempState = {
+    year: year,
+    lat: profile?.lat || 31.7683,  // Jerusalem
+    lon: profile?.lon || 35.2137,
+    moonPhase: profile?.moonPhase || state.moonPhase,
+    dayStartTime: profile?.dayStartTime || state.dayStartTime,
+    dayStartAngle: profile?.dayStartAngle || state.dayStartAngle,
+    yearStartRule: profile?.yearStartRule || state.yearStartRule,
+    crescentThreshold: profile?.crescentThreshold || state.crescentThreshold
+  };
+  
+  // Get moon events for the specified year
+  const moonEvents = findMoonEvents(year, tempState.moonPhase);
+  
+  // Get year start point
+  const yearStartPoint = getYearStartPoint(year);
+  
+  // Find the first moon event on or after year start (this is Nisan)
+  let nissanMoon = moonEvents.find(m => m >= yearStartPoint);
+  if (!nissanMoon) nissanMoon = moonEvents[0];
+  
+  // Find the 5th moon event (Av) - index 4 since we start at 0
+  const nissanIndex = moonEvents.findIndex(m => Math.abs(m.getTime() - nissanMoon.getTime()) < 1000);
+  const avMoonIndex = nissanIndex + 4; // 5th month
+  
+  if (avMoonIndex >= moonEvents.length - 1) {
+    console.error(`Cannot find Av moon for year ${year}`);
+    return null;
+  }
+  
+  const avMoon = moonEvents[avMoonIndex];
+  
+  // Calculate when Day 1 of Av starts based on the current settings
+  const observerLon = tempState.lon;
+  const avMoonLocalDate = getLocalDateFromUTC(avMoon, observerLon);
+  
+  let monthStartDate = new Date(avMoonLocalDate.getTime());
+  
+  // Apply the same day start logic as buildLunarMonths
+  if ((tempState.moonPhase === 'dark' || tempState.moonPhase === 'full' || tempState.moonPhase === 'crescent') && 
+      tempState.dayStartTime === 'evening') {
+    const sunsetOnMoonDate = getSunsetTimestamp(avMoonLocalDate);
+    const moonEventLocalTime = avMoon.getTime() + (observerLon / 15) * 60 * 60 * 1000;
+    const sunsetLocalTime = sunsetOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
+    
+    if (moonEventLocalTime > sunsetLocalTime) {
+      monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
+    }
+  } else if ((tempState.moonPhase === 'dark' || tempState.moonPhase === 'full' || tempState.moonPhase === 'crescent') && 
+             tempState.dayStartTime === 'morning') {
+    const sunriseOnMoonDate = getSunriseTimestamp(avMoonLocalDate);
+    const moonEventLocalTime = avMoon.getTime() + (observerLon / 15) * 60 * 60 * 1000;
+    const sunriseLocalTime = sunriseOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
+    
+    if (moonEventLocalTime >= sunriseLocalTime) {
+      monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
+    }
+  } else {
+    monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
+  }
+  
+  // The 9th of Av is 8 days after Day 1 (Day 1 + 8 = Day 9)
+  const ninthOfAv = new Date(monthStartDate.getTime());
+  ninthOfAv.setUTCDate(ninthOfAv.getUTCDate() + 8);
+  
+  return dateToJulianDay(ninthOfAv);
+}
+
+// Calculate the Julian Day for 9th of Av, 70 AD under current calendar settings
+function getTempleDestructionJD(profile) {
+  return getNinthOfAvJD(70, profile);
+}
+
+// Calculate the Julian Day for 9th of Av, 587 BC under current calendar settings
+function getFirstTempleDestructionJD(profile) {
+  return getNinthOfAvJD(FIRST_TEMPLE_DESTRUCTION_YEAR, profile);
+}
+
+// Helper function to calculate what course would be serving at a given JD
+function getCourseAtJD(targetJD, referenceJD) {
+  const deltaJD = targetJD - referenceJD;
+  const deltaMonths = deltaJD / SYNODIC_MONTH;
+  
+  // The reference is at week index 1 of its month (15th of 7th month)
+  // For 9th of Av, that's also week index 1 (days 9-15)
+  const referenceWeekInMonth = 1;
+  const targetWeekInMonth = 1; // 9th is in days 9-15 = week index 1
+  
+  const fullMonths = Math.round(deltaMonths);
+  const totalWeeks = (fullMonths * 4) + (targetWeekInMonth - referenceWeekInMonth);
+  
+  return ((totalWeeks % 24) + 24) % 24;
+}
+
+// Validate that Jehoiarib is serving at a specific 9th of Av date
+function validateJehoiaribAtNinthOfAv(year, yearLabel, profile) {
+  const ninthOfAvJD = getNinthOfAvJD(year, profile);
+  if (!ninthOfAvJD) return { valid: true, error: `Could not calculate ${yearLabel} date` };
+  
+  const referenceJD = getCachedReferenceJD(profile);
+  if (!referenceJD) return { valid: true, error: 'Could not calculate reference date' };
+  
+  const weekIndex = getCourseAtJD(ninthOfAvJD, referenceJD);
+  
+  // Week index 0 = Course 1 (Jehoiarib)
+  if (weekIndex === 0) {
+    return { valid: true, year: year, yearLabel: yearLabel };
+  }
+  
+  const course = PRIESTLY_DIVISIONS[weekIndex];
+  return {
+    valid: false,
+    year: year,
+    yearLabel: yearLabel,
+    actualCourse: course?.name || 'Unknown',
+    order: weekIndex + 1,
+    expectedCourse: 'Jehoiarib',
+    expectedOrder: 1
+  };
+}
+
+// Validate that the priestly cycle correctly places Jehoiarib at both Temple Destructions
+// These are the historical anchor points - tradition holds Course 1 was serving when both Temples fell
+// Returns an object with validation results for each event
+function validateTempleDestructionCourses(profile) {
+  return {
+    firstTemple: validateJehoiaribAtNinthOfAv(FIRST_TEMPLE_DESTRUCTION_YEAR, '587 BC (First Temple)', profile),
+    secondTemple: validateJehoiaribAtNinthOfAv(70, '70 AD (Second Temple)', profile)
+  };
+}
+
+// Legacy function name for backwards compatibility
+function validateTempleDestructionCourse(profile) {
+  return validateJehoiaribAtNinthOfAv(70, '70 AD', profile);
+}
+
+// Get a warning message if the priestly cycle doesn't meet the historical invariants
+function getPriestlyCycleWarning() {
+  const validations = validateTempleDestructionCourses();
+  const warnings = [];
+  
+  // Check First Temple destruction (587 BC)
+  if (validations.firstTemple && !validations.firstTemple.error && !validations.firstTemple.valid) {
+    warnings.push(`First Temple Destruction (9th of Av, 587 BC): Expected Jehoiarib (Course 1), but this configuration shows ${validations.firstTemple.actualCourse} (Course ${validations.firstTemple.order}).`);
+  }
+  
+  // Check Second Temple destruction (70 AD) - this is the strongest anchor
+  if (validations.secondTemple && !validations.secondTemple.error && !validations.secondTemple.valid) {
+    warnings.push(`Second Temple Destruction (9th of Av, 70 AD): Expected Jehoiarib (Course 1), but this configuration shows ${validations.secondTemple.actualCourse} (Course ${validations.secondTemple.order}). This is the strongest historical anchor point.`);
+  }
+  
+  if (warnings.length === 0) {
+    return null;
+  }
+  
+  return `Warning: This calendar configuration does not maintain the historical invariant that Jehoiarib was serving when the Temple(s) fell:\n• ${warnings.join('\n• ')}`;
+}
+
 // Render the priestly divisions table
 function renderPriestlyTable() {
   const tbody = document.getElementById('priestly-table-body');
   if (!tbody || !PRIESTLY_DIVISIONS) return;
+  
+  // Check for validation warning
+  const warning = getPriestlyCycleWarning();
+  const warningContainer = document.getElementById('priestly-warning');
+  if (warningContainer) {
+    if (warning) {
+      warningContainer.innerHTML = `<div class="priestly-warning-message">⚠️ ${warning}</div>`;
+      warningContainer.style.display = 'block';
+    } else {
+      warningContainer.style.display = 'none';
+    }
+  }
   
   let html = '';
   
   for (const division of PRIESTLY_DIVISIONS) {
     const serviceDates = getServiceDatesForCourse(division.order);
     
-    // Format service dates
+    // Format service dates - Gregorian shown only on hover
     let datesHtml = '';
     if (serviceDates.length === 0) {
       datesHtml = '<span style="color: #666;">—</span>';
     } else {
-      datesHtml = serviceDates.map(sd => {
+      datesHtml = '<div class="course-dates-list">' + serviceDates.map(sd => {
         const startStr = formatShortDate(sd.startDate);
-        return `<a class="course-date-link" onclick="jumpToPriestlyServiceDate(${sd.month.monthNumber - 1}, ${sd.startDay})">${sd.monthName} ${sd.startDay}-${sd.endDay} (${startStr})</a>`;
-      }).join(', ');
+        return `<a class="course-date-link" onclick="jumpToPriestlyServiceDate(${sd.month.monthNumber - 1}, ${sd.startDay})" title="${startStr}">${sd.monthName} ${sd.startDay}-${sd.endDay}</a>`;
+      }).join('') + '</div>';
     }
     
     // Check if there's additional info to show (notes or famous people)
@@ -539,16 +855,17 @@ function renderPriestlyTable() {
       detailsHtml += '</div>';
     }
     
+    // Format lineage under name
+    const lineageHtml = division.lineage ? `<div class="course-lineage">of ${division.lineage}</div>` : '';
+    
     html += `
       <tr class="course-row" data-order="${division.order}">
         <td class="course-order">${division.order}</td>
-        <td class="course-name">${division.course}${infoIndicator}</td>
-        <td class="course-hebrew">${division.hebrew || ''}</td>
-        <td class="course-lineage">${division.lineage || ''}</td>
+        <td class="course-name">${division.course}${infoIndicator}${lineageHtml}</td>
         <td class="course-meaning">${division.meaning}</td>
         <td class="course-dates">${datesHtml}</td>
       </tr>
-      ${hasInfo ? `<tr class="course-details-row" data-order="${division.order}" style="display: none;"><td colspan="6">${detailsHtml}</td></tr>` : ''}
+      ${hasInfo ? `<tr class="course-details-row" data-order="${division.order}" style="display: none;"><td colspan="4">${detailsHtml}</td></tr>` : ''}
     `;
   }
   

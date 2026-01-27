@@ -79,6 +79,96 @@ title: "Lunar Sabbath Calendar"
   </div>
 </div>
 
+<!-- Jubilee Info Modal -->
+<div id="jubilee-modal-overlay" class="jubilee-modal-overlay" onclick="closeJubileeModal(event)">
+  <div class="jubilee-modal" onclick="event.stopPropagation()">
+    <div class="jubilee-modal-header">
+      <h2>🎺 Jubilee & Sabbath Year Cycles</h2>
+      <button class="jubilee-modal-close" onclick="closeJubileeModal()">✕</button>
+    </div>
+    
+    <div class="jubilee-modal-content">
+      <section class="jubilee-section">
+        <h3>🌾 The Sabbath Year (Year of Release)</h3>
+        <p>Every seventh year is a <strong>Sabbath Year</strong>, also called the <strong>Year of Release</strong>. During this year:</p>
+        <ul>
+          <li>The land rests from agricultural work</li>
+          <li>Debts among the people are forgiven</li>
+          <li>The Torah is read publicly at the Feast of Tabernacles</li>
+        </ul>
+        <blockquote>
+          <strong>Deuteronomy 15:1-2</strong> — "At the end of every seven years you must cancel debts. This is the manner of remission: Every creditor shall cancel what he has loaned to his neighbor."
+        </blockquote>
+        <p>The planting prohibition begins in the <strong>fall of the 6th year</strong> and continues through the <strong>fall of the 7th year</strong>.</p>
+      </section>
+      
+      <section class="jubilee-section">
+        <h3>🎺 The Jubilee Year</h3>
+        <p>The <strong>Jubilee</strong> occurs every 50th year and is proclaimed on the <strong>Day of Atonement</strong> of the 49th year. The 50th year is simultaneously the first year of the next cycle.</p>
+        <blockquote>
+          <strong>Leviticus 25:8-10</strong> — "Count off seven sabbaths of years—seven times seven years—so that the seven sabbaths of years amount to forty-nine years. Then sound the trumpet on the tenth day of the seventh month; on the Day of Atonement sound the trumpet throughout your land. Consecrate the fiftieth year and proclaim liberty throughout the land."
+        </blockquote>
+        <p>During the Jubilee:</p>
+        <ul>
+          <li>All land returns to its original family ownership</li>
+          <li>Hebrew servants are freed</li>
+          <li>Liberty is proclaimed throughout the land</li>
+          <li>The planting prohibition extends through the fall of the 50th year</li>
+        </ul>
+      </section>
+      
+      <section class="jubilee-section">
+        <h3>📅 The Counting System</h3>
+        <p>Events are dated using the notation: <strong>Jubilee X, Week Y, Year Z</strong></p>
+        <ul>
+          <li><strong>Jubilee</strong>: The nth jubilee period since Adam</li>
+          <li><strong>Week</strong>: The xth week of years within that jubilee (1-7)</li>
+          <li><strong>Year</strong>: The yth year within that week (1-7)</li>
+        </ul>
+        
+        <h4>Reference Point: The Jordan Crossing</h4>
+        <p>The cycle is anchored to the <strong>Jordan River crossing in Spring 1406 BC</strong>, when Israel entered the Promised Land under Joshua. This was:</p>
+        <ul>
+          <li><strong>Year 1</strong> of a new cycle</li>
+          <li>The <strong>Jubilee year of the 50th Jubilee</strong> since Adam</li>
+          <li>Therefore: <strong>Jubilee 51, Week 1, Year 1</strong></li>
+        </ul>
+      </section>
+      
+      <section class="jubilee-section">
+        <h3>📖 Historical Confirmation</h3>
+        <h4>Yeshua's Proclamation (29 AD)</h4>
+        <p>In <strong>Luke 4:18-19</strong>, Yeshua read from Isaiah 61 in the synagogue at Nazareth and declared "the year of the Lord's favor." This proclamation occurred at the <strong>Day of Atonement in 29 AD</strong>, which was a <strong>Year of Release</strong> according to the cycle.</p>
+        <blockquote>
+          "The Spirit of the Lord is upon me, because he has anointed me to proclaim good news to the poor... to proclaim <strong>the year of the Lord's favor</strong>." — Luke 4:18-19
+        </blockquote>
+      </section>
+      
+      <section class="jubilee-section">
+        <h3>📜 Key Scripture References</h3>
+        <div class="scripture-refs">
+          <div class="ref-group">
+            <h4>Sabbath Year</h4>
+            <ul>
+              <li><a href="#" onclick="openBibleReader('Leviticus 25:1-7', 'Sabbath Year'); return false;">Leviticus 25:1-7</a> — Land rest</li>
+              <li><a href="#" onclick="openBibleReader('Deuteronomy 15:1-3', 'Debt Release'); return false;">Deuteronomy 15:1-3</a> — Debt release</li>
+              <li><a href="#" onclick="openBibleReader('Deuteronomy 31:10-13', 'Torah Reading'); return false;">Deuteronomy 31:10-13</a> — Torah reading</li>
+            </ul>
+          </div>
+          <div class="ref-group">
+            <h4>Jubilee Year</h4>
+            <ul>
+              <li><a href="#" onclick="openBibleReader('Leviticus 25:8-13', 'Jubilee'); return false;">Leviticus 25:8-13</a> — Jubilee command</li>
+              <li><a href="#" onclick="openBibleReader('Isaiah 61:1-2', 'Year of Favor'); return false;">Isaiah 61:1-2</a> — Year of favor</li>
+              <li><a href="#" onclick="openBibleReader('Luke 4:18-19', 'Yeshua Proclaims'); return false;">Luke 4:18-19</a> — Yeshua's proclamation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
 <!-- Top Navigation Bar -->
 <nav class="top-nav">
   <div class="top-nav-inner">
@@ -262,27 +352,30 @@ title: "Lunar Sabbath Calendar"
   <input type="datetime-local" id="goto-date" step="60" style="display: none;">
   <input type="number" id="add-days" value="1" min="1" style="display: none;">
   
-  <!-- Month Picker Popup -->
-  <div id="month-picker-overlay" class="month-picker-overlay" onclick="if(event.target === this) toggleMonthPicker()"></div>
-  <div id="month-picker" class="month-picker" style="display: none;">
-    <div class="month-picker-header">
-      <h3>Select Month</h3>
-      <button class="close-btn" onclick="toggleMonthPicker()">✕</button>
-    </div>
-    <div class="year-nav">
-      <button onclick="changePickerYear(-1)">◀</button>
+  <!-- Year Picker Popup -->
+  <div id="year-picker-overlay" class="picker-overlay" onclick="if(event.target === this) closeYearPicker()"></div>
+  <div id="year-picker" class="dropdown-picker year-picker" style="display: none;">
+    <div class="year-picker-row">
       <div class="year-display-container">
         <span id="picker-year" class="year-display" onclick="showYearInput()" title="Click to enter year"></span>
-        <input type="number" id="picker-year-input" class="year-input" min="1" max="4000"
+        <input type="text" id="picker-year-input" class="year-input" inputmode="numeric" pattern="[0-9]*"
                onkeydown="if(event.key==='Enter') applyYearInput(); if(event.key==='Escape') hideYearInput();"
                onblur="applyYearInput()">
       </div>
-      <button onclick="changePickerYear(1)">▶</button>
       <select id="era-select" class="era-select" onchange="changeEra(this.value)">
         <option value="AD">AD</option>
         <option value="BC">BC</option>
       </select>
+      <div class="year-arrows">
+        <button class="year-arrow-btn" onclick="changePickerYear(1)">▲</button>
+        <button class="year-arrow-btn" onclick="changePickerYear(-1)">▼</button>
+      </div>
     </div>
+  </div>
+  
+  <!-- Month Picker Popup -->
+  <div id="month-picker-overlay" class="picker-overlay" onclick="if(event.target === this) closeMonthPicker()"></div>
+  <div id="month-picker" class="dropdown-picker month-picker" style="display: none;">
     <div id="month-grid" class="month-grid"></div>
   </div>
   
@@ -599,8 +692,7 @@ title: "Lunar Sabbath Calendar"
       <div class="day-detail-date">
         <span class="day-detail-lunar"></span>
         <span class="day-detail-gregorian-row">
-          <span class="day-detail-gregorian"></span>
-          <button class="day-detail-jump-btn" onclick="toggleDateJump()" title="Jump to another date">⇥</button>
+          <span class="day-detail-gregorian" onclick="showTimePicker(event)" title="Click to change date/time"></span>
         </span>
         <span class="day-detail-priestly-course"></span>
       </div>
@@ -992,16 +1084,16 @@ title: "Lunar Sabbath Calendar"
       </details>
     </div>
     
-    <h3>Priestly Courses for Year <span id="priestly-year"></span></h3>
+    <h3>Priestly Courses for <span id="priestly-profile"></span> Year <span id="priestly-year"></span></h3>
     <p class="priestly-table-desc">Each course serves for one week. Click on a date to navigate to that week.</p>
+    <p class="priestly-table-note">The priestly cycle began at Solomon's Temple dedication during Tabernacles 959 BC, with Jehoiarib (Course 1) serving first. Historical testimony confirms Jehoiarib was serving when both Temples fell on the 9th of Av (587 BC and 70 AD). <a href="#" onclick="navigateToDedicationDate(); return false;">View Dedication →</a> | <a href="#" onclick="navigateToFirstDestructionDate(); return false;">587 BC →</a> | <a href="#" onclick="navigateToDestructionDate(); return false;">70 AD →</a></p>
+    <div id="priestly-warning" style="display: none;"></div>
     <div class="priestly-table-container">
       <table class="priestly-table">
         <thead>
           <tr>
             <th>#</th>
             <th>Course</th>
-            <th>Hebrew</th>
-            <th>Lineage</th>
             <th>Meaning</th>
             <th>Service Dates</th>
           </tr>
@@ -1044,6 +1136,7 @@ title: "Lunar Sabbath Calendar"
 <script src="/lunar-calendar-engine.js"></script>
 <script src="/sabbath-tester.js"></script>
 <script src="/astronomy-utils.js"></script>
+<script src="/jubilee-cycle.js"></script>
 <script src="/calendar-core.js"></script>
 <script src="/day-detail.js"></script>
 <script src="/settings-profiles.js"></script>
@@ -1089,10 +1182,49 @@ async function loadBibleEvents() {
 }
 
 // Get bible events for a specific lunar month and day
-function getBibleEvents(month, day) {
+// Optionally filters conditional events based on Sabbath/Jubilee year status
+function getBibleEvents(month, day, gregorianYear = null) {
   if (!bibleEventsByMonthDay) return [];
   const key = `${month}-${day}`;
-  return bibleEventsByMonthDay[key] || [];
+  const events = bibleEventsByMonthDay[key] || [];
+  
+  // If no year provided or getJubileeInfo not available, return all non-conditional events
+  if (gregorianYear === null || typeof getJubileeInfo !== 'function') {
+    return events.filter(e => !e.condition);
+  }
+  
+  // Get jubilee info for the year
+  const jubileeInfo = getJubileeInfo(gregorianYear);
+  
+  // Filter events based on conditions
+  return events.filter(event => {
+    // No condition means always show
+    if (!event.condition) return true;
+    
+    // Check specific conditions
+    switch (event.condition) {
+      case 'sabbath_year':
+        return jubileeInfo.isSabbathYear;
+      case 'jubilee_year':
+        return jubileeInfo.isJubileeYear;
+      case 'sabbath_or_jubilee':
+        return jubileeInfo.isSabbathYear || jubileeInfo.isJubileeYear;
+      default:
+        // Check for year-specific conditions (e.g., "year_29" for 29 AD)
+        if (event.condition.startsWith('year_')) {
+          const targetYear = parseInt(event.condition.substring(5));
+          return gregorianYear === targetYear;
+        }
+        // Check for year range conditions (e.g., "year_range_28_33")
+        if (event.condition.startsWith('year_range_')) {
+          const parts = event.condition.substring(11).split('_');
+          const startYear = parseInt(parts[0]);
+          const endYear = parseInt(parts[1]);
+          return gregorianYear >= startYear && gregorianYear <= endYear;
+        }
+        return false; // Unknown condition, don't show
+    }
+  });
 }
 
 const MONTH_NAMES = [
@@ -1144,12 +1276,27 @@ const SCRIPTURES = [
   { text: "Blow the trumpet at the new moon, at the full moon, on our feast day.", ref: "Psalms 81:3" }
 ];
 
+// Calculate default location from user's timezone
+function getDefaultLocationFromTimezone() {
+  // Get timezone offset in minutes (negative for west, positive for east)
+  const timezoneOffsetMinutes = new Date().getTimezoneOffset();
+  // Convert to longitude: offset is inverted (UTC+2 = -120 minutes offset)
+  // Longitude = -offset / 60 * 15
+  const lon = (-timezoneOffsetMinutes / 60) * 15;
+  // Use a neutral mid-latitude (40°N covers most populated areas)
+  const lat = 40;
+  return { lat, lon };
+}
+
+// Get the user's default location
+const userDefaultLocation = getDefaultLocationFromTimezone();
+
 // Central state object with defaults
 const defaultState = {
   year: new Date().getFullYear(),
-  lat: 31.7683,
-  lon: 35.2137,
-  city: '31.7683,35.2137', // Store the city select value directly
+  lat: userDefaultLocation.lat,
+  lon: userDefaultLocation.lon,
+  city: '', // No preset city
   moonPhase: 'full',
   dayStartTime: 'morning',  // 'evening' or 'morning'
   dayStartAngle: 12,        // 0, 6, 12, or 18 degrees below horizon
@@ -1265,6 +1412,29 @@ function shouldShowAboutModal() {
 function resetAboutModal() {
   localStorage.removeItem('aboutModalDismissCount');
   localStorage.removeItem('aboutModalLastDismissDate');
+}
+
+// ============================================================================
+// JUBILEE INFO MODAL
+// ============================================================================
+
+function showJubileeModal() {
+  const overlay = document.getElementById('jubilee-modal-overlay');
+  if (overlay) {
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+}
+
+function closeJubileeModal(event) {
+  // If called from overlay click, only close if clicking the overlay itself
+  if (event && event.target !== event.currentTarget) return;
+  
+  const overlay = document.getElementById('jubilee-modal-overlay');
+  if (overlay) {
+    overlay.classList.remove('visible');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
 }
 
 // ============================================================================
@@ -1390,81 +1560,84 @@ function closeIOSInstallModal(event) {
 // Update the time display in the header (shows local time at current location)
 // updateTimeDisplay moved to calendar-core.js
 
-// Show time picker modal
-function showTimePicker() {
-  let modal = document.getElementById('time-picker-modal');
-  if (!modal) {
-    modal = document.createElement('div');
-    modal.id = 'time-picker-modal';
-    modal.className = 'time-picker-modal';
-    modal.innerHTML = `
-      <div class="time-picker-content">
-        <div class="time-picker-header">
-          <h3>Set Date Time</h3>
-          <button class="close-btn" onclick="hideTimePicker()">×</button>
+// Show time picker dropdown
+function showTimePicker(event) {
+  let overlay = document.getElementById('time-picker-overlay');
+  let picker = document.getElementById('time-picker-dropdown');
+  
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'time-picker-overlay';
+    overlay.className = 'picker-overlay';
+    overlay.onclick = (e) => { if (e.target === overlay) hideTimePicker(); };
+    document.body.appendChild(overlay);
+  }
+  
+  if (!picker) {
+    picker = document.createElement('div');
+    picker.id = 'time-picker-dropdown';
+    picker.className = 'dropdown-picker time-picker-dropdown';
+    picker.innerHTML = `
+      <div class="time-picker-form">
+        <div class="time-picker-row">
+          <label>Date:</label>
+          <input type="date" id="time-picker-date">
         </div>
-        <div class="time-picker-form">
-          <div class="time-picker-row">
-            <label>Date:</label>
-            <input type="date" id="time-picker-date">
-          </div>
-          <div class="time-picker-row">
-            <label id="time-picker-time-label">Time:</label>
-            <input type="time" id="time-picker-time">
-          </div>
-          <div class="time-picker-buttons">
-            <button class="btn secondary" onclick="setTimeToNowInPicker()">Set to Now</button>
-            <button class="btn primary" onclick="applyTimePickerAndClose()">Apply</button>
-          </div>
+        <div class="time-picker-row">
+          <label id="time-picker-time-label">Time:</label>
+          <input type="time" id="time-picker-time">
+        </div>
+        <div class="time-picker-buttons">
+          <button class="btn secondary" onclick="setTimeToNowInPicker()">Now</button>
+          <button class="btn primary" onclick="applyTimePickerAndClose()">Go</button>
         </div>
       </div>
     `;
-    document.body.appendChild(modal);
+    document.body.appendChild(picker);
   }
   
   // Pre-fill with currently selected calendar date and view time
-  // Get the date from the currently highlighted day in the calendar
   const monthData = state.lunarMonths?.[state.currentMonthIndex];
   const dayData = monthData?.days?.find(d => d.lunarDay === state.highlightedLunarDay);
   
-  // Get the UTC timestamp to convert to location's local time
   let utcTimestamp;
   if (dayData?.gregorianDate) {
-    // Use selectedTimestamp if available (more precise), otherwise use sunrise of the day
     utcTimestamp = state.selectedTimestamp || getSunriseTimestamp(dayData.gregorianDate);
   } else {
-    // Fallback to view time
     utcTimestamp = getViewTime().getTime();
   }
   
-  // Convert UTC timestamp to local time at the selected location
   const localTimeAtLocation = utcToLocalTime(utcTimestamp, state.lon);
   
-  // Update the time label to show the current location
   const locationName = getCurrentLocationName();
   const timeLabel = document.getElementById('time-picker-time-label');
   if (timeLabel) {
     timeLabel.textContent = `${locationName} Time:`;
   }
   
-  // Format date as YYYY-MM-DD (using UTC methods since utcToLocalTime returns a Date where UTC methods give local time)
   const year = localTimeAtLocation.getUTCFullYear();
   const month = String(localTimeAtLocation.getUTCMonth() + 1).padStart(2, '0');
   const day = String(localTimeAtLocation.getUTCDate()).padStart(2, '0');
   document.getElementById('time-picker-date').value = `${year}-${month}-${day}`;
   
-  // Format time as HH:MM (from local time at location)
   const hours = String(localTimeAtLocation.getUTCHours()).padStart(2, '0');
   const minutes = String(localTimeAtLocation.getUTCMinutes()).padStart(2, '0');
   document.getElementById('time-picker-time').value = `${hours}:${minutes}`;
   
-  modal.style.display = 'flex';
+  // Position near the trigger
+  const trigger = event?.currentTarget || document.getElementById('header-time-display');
+  positionPickerNearTrigger(picker, trigger);
+  
+  overlay.classList.add('open');
+  picker.style.display = 'block';
 }
 
 // Hide time picker
 function hideTimePicker() {
-  const modal = document.getElementById('time-picker-modal');
-  if (modal) modal.style.display = 'none';
+  const overlay = document.getElementById('time-picker-overlay');
+  const picker = document.getElementById('time-picker-dropdown');
+  if (overlay) overlay.classList.remove('open');
+  if (picker) picker.style.display = 'none';
 }
 
 // Update the picker inputs to show current date/time (doesn't change state)
@@ -2748,35 +2921,80 @@ function renderSettingsMap() {
   }
 }
 
-// Month Picker Popup
-function toggleMonthPicker() {
-  const overlay = document.getElementById('month-picker-overlay');
-  const picker = document.getElementById('month-picker');
+// Year Picker Popup
+function toggleYearPicker(event) {
+  const overlay = document.getElementById('year-picker-overlay');
+  const picker = document.getElementById('year-picker');
   const isOpen = overlay.classList.contains('open');
   
+  // Close month picker if open
+  closeMonthPicker();
+  
   if (!isOpen) {
-    // Opening - update the picker content
-    updateMonthPicker();
+    // Opening - update the picker content and position
+    updateYearPicker();
+    positionPickerNearTrigger(picker, event?.currentTarget || document.querySelector('.header-dropdown.year'));
   }
   
   overlay.classList.toggle('open');
   picker.style.display = isOpen ? 'none' : 'block';
 }
 
-function updateMonthPicker() {
+function closeYearPicker() {
+  const overlay = document.getElementById('year-picker-overlay');
+  const picker = document.getElementById('year-picker');
+  overlay.classList.remove('open');
+  picker.style.display = 'none';
+  hideYearInput();
+}
+
+function updateYearPicker() {
   // Just show the year number (no BC/AD suffix - the dropdown handles that)
   const displayYear = state.year <= 0 ? Math.abs(state.year - 1) : state.year;
   document.getElementById('picker-year').textContent = displayYear;
   updateEraButtons();
+}
+
+// Month Picker Popup
+function toggleMonthPicker(event) {
+  const overlay = document.getElementById('month-picker-overlay');
+  const picker = document.getElementById('month-picker');
+  const isOpen = overlay.classList.contains('open');
   
+  // Close year picker if open
+  closeYearPicker();
+  
+  if (!isOpen) {
+    // Opening - update the picker content and position
+    updateMonthPickerGrid();
+    positionPickerNearTrigger(picker, event?.currentTarget || document.querySelector('.header-dropdown.month'));
+  }
+  
+  overlay.classList.toggle('open');
+  picker.style.display = isOpen ? 'none' : 'block';
+}
+
+function closeMonthPicker() {
+  const overlay = document.getElementById('month-picker-overlay');
+  const picker = document.getElementById('month-picker');
+  overlay.classList.remove('open');
+  picker.style.display = 'none';
+}
+
+function updateMonthPickerGrid() {
   const grid = document.getElementById('month-grid');
   grid.innerHTML = '';
   
-  const monthNames = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '📅13th'];
+  // Only show 13th month if it exists in the current year
+  const has13thMonth = state.lunarMonths.length >= 13;
+  const monthCount = has13thMonth ? 13 : 12;
+  const monthLabels = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th'];
+  const monthTooltips = ['Nisan', 'Iyyar', 'Sivan', 'Tammuz', 'Av', 'Elul', 'Tishri', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar', 'Adar II'];
   
-  for (let i = 0; i < 13; i++) {
+  for (let i = 0; i < monthCount; i++) {
     const btn = document.createElement('button');
-    btn.textContent = monthNames[i];
+    btn.textContent = monthLabels[i];
+    btn.title = monthTooltips[i];
     
     if (i >= state.lunarMonths.length) {
       btn.classList.add('disabled');
@@ -2785,40 +3003,60 @@ function updateMonthPicker() {
       btn.classList.add('active');
     }
     
-    // Add tooltip for 13th month
-    if (i === 12) {
-      btn.title = 'Intercalary 13th month';
-    }
-    
     btn.onclick = () => {
       if (i < state.lunarMonths.length) {
         selectMonth(i);
-        toggleMonthPicker();
+        closeMonthPicker();
       }
     };
     
     grid.appendChild(btn);
   }
+}
+
+// Position picker near its trigger element
+function positionPickerNearTrigger(picker, trigger) {
+  if (!trigger) return;
   
-  // Add "Today" button - positioned in 4th column (under 12th month)
-  // First add an empty spacer for the 3rd column position
-  const spacer1 = document.createElement('div');
-  spacer1.style.visibility = 'hidden';
-  grid.appendChild(spacer1);
+  const triggerRect = trigger.getBoundingClientRect();
+  const pickerWidth = 320; // Approximate width for month picker, 280 for year
+  const padding = 10;
   
-  const spacer2 = document.createElement('div');
-  spacer2.style.visibility = 'hidden';
-  grid.appendChild(spacer2);
+  // Position below the trigger
+  let top = triggerRect.bottom + padding;
+  let left = triggerRect.left;
   
-  const todayBtn = document.createElement('button');
-  todayBtn.textContent = 'Today';
-  todayBtn.className = 'today-btn';
-  todayBtn.title = 'Jump to today';
-  todayBtn.onclick = () => {
-    toggleMonthPicker();
-    jumpToToday();
-  };
-  grid.appendChild(todayBtn);
+  // Ensure it doesn't go off the right edge
+  if (left + pickerWidth > window.innerWidth - padding) {
+    left = window.innerWidth - pickerWidth - padding;
+  }
+  
+  // Ensure it doesn't go off the left edge
+  if (left < padding) {
+    left = padding;
+  }
+  
+  // If it would go off the bottom, position above the trigger
+  const pickerHeight = picker.offsetHeight || 300;
+  if (top + pickerHeight > window.innerHeight - padding) {
+    top = triggerRect.top - pickerHeight - padding;
+  }
+  
+  // Ensure it doesn't go off the top
+  if (top < padding) {
+    top = padding;
+  }
+  
+  picker.style.position = 'fixed';
+  picker.style.top = `${top}px`;
+  picker.style.left = `${left}px`;
+  picker.style.transform = 'none';
+}
+
+// Legacy function for backward compatibility
+function updateMonthPicker() {
+  updateYearPicker();
+  updateMonthPickerGrid();
 }
 
 function showYearInput() {
@@ -2877,7 +3115,7 @@ function changeEra(era) {
   if (newInternalYear >= -3999 && newInternalYear <= 4000) {
     state.year = newInternalYear;
     document.getElementById('year-input').value = state.year;
-    generateCalendar();
+    generateCalendar({ preserveMonthIndex: true });
     updateMonthPicker();
   }
 }
@@ -2911,7 +3149,7 @@ function applyYearInput() {
   if (internalYear >= -3999 && internalYear <= 4000) {
     state.year = internalYear;
     document.getElementById('year-input').value = state.year;
-    generateCalendar();
+    generateCalendar({ preserveMonthIndex: true });
     updateMonthPicker();
   }
   
@@ -2925,7 +3163,7 @@ function changePickerYear(delta) {
   if (newYear >= -3999 && newYear <= 4000) {
     state.year = newYear;
     document.getElementById('year-input').value = state.year;
-    generateCalendar();
+    generateCalendar({ preserveMonthIndex: true });
     updateMonthPicker();
     updateEraButtons();
   }
@@ -3238,10 +3476,8 @@ document.getElementById('lon-input').addEventListener('change', function() {
 
 function changeYear(delta) {
   state.year += delta;
-  state.highlightedLunarDay = 1;  // Default to day 1
-  state.selectedTimestamp = null;
   updateUI();
-  generateCalendar();
+  generateCalendar({ preserveMonthIndex: true });
   updateURL();
 }
 
@@ -3416,6 +3652,36 @@ function navigateMonth(direction) {
     // Normal month navigation within same year
     selectMonth(newIndex);
   }
+}
+
+// Navigate to previous or next year, preserving month and day position
+function navigateYear(direction) {
+  const previousMonthIndex = state.currentMonthIndex;
+  const previousDay = state.highlightedLunarDay || 1;
+  
+  // Change the year
+  state.year += direction;
+  updateUI();
+  generateCalendar();
+  
+  // Try to stay at the same month index (clamped to valid range)
+  const maxMonthIndex = state.lunarMonths.length - 1;
+  state.currentMonthIndex = Math.min(previousMonthIndex, maxMonthIndex);
+  
+  // Preserve day selection, clamped to valid range
+  const newMonth = state.lunarMonths[state.currentMonthIndex];
+  const maxDay = newMonth.days.length;
+  state.highlightedLunarDay = Math.min(previousDay, maxDay);
+  const dayObj = newMonth.days.find(d => d.lunarDay === state.highlightedLunarDay);
+  if (dayObj) {
+    state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+    document.getElementById('goto-date').value = formatLocalDatetime(state.selectedTimestamp);
+    showDayDetail(dayObj, newMonth);
+  }
+  
+  renderMonth(state.lunarMonths[state.currentMonthIndex]);
+  updateMonthButtons();
+  updateURL();
 }
 
 // updateMonthButtons moved to calendar-core.js
@@ -3990,7 +4256,9 @@ window.addEventListener('popstate', function(event) {
     priestlyPage.style.display = 'block';
     if (typeof renderPriestlyTable === 'function') {
       const yearSpan = document.getElementById('priestly-year');
+      const profileSpan = document.getElementById('priestly-profile');
       if (yearSpan) yearSpan.textContent = formatYear(state.year);
+      if (profileSpan) profileSpan.textContent = getCurrentProfileName();
       renderPriestlyTable();
     }
   } else {

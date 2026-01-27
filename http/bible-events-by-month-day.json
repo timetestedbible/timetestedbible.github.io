@@ -114,14 +114,33 @@
   {
     "month": 5,
     "day": 7,
-    "title": "Burning of the Temple",
-    "description": "On the seventh day of the fifth month, Nebuzaradan burns the temple, the king's house, and all houses in Jerusalem, completing the destruction.",
+    "title": "Burning of the First Temple Begins (587 BC)",
+    "description": "On the seventh day of the fifth month, Nebuzaradan begins burning Solomon's temple, the king's house, and all houses in Jerusalem.",
     "verse": "2 Kings 25:8; Jeremiah 52:12"
   },
   {
     "month": 5,
+    "day": 9,
+    "title": "Destruction of the First Temple (587 BC)",
+    "description": "The First Temple is destroyed by the Babylonians under Nebuchadnezzar on the 9th of Av. Historical expectation suggests Jehoiarib (Course 1) was serving, as with the Second Temple's fall on the same date 657 years later.",
+    "verse": "2 Kings 25:8-9; Jeremiah 52:12-13",
+    "condition": "year_-586",
+    "bookChapter": "/chapters/priestly-courses/"
+  },
+  {
+    "month": 5,
+    "day": 9,
+    "title": "Destruction of the Second Temple (70 AD)",
+    "description": "The Second Temple is destroyed by the Romans under Titus on the 9th of Av. Historical testimony confirms that Jehoiarib (Course 1) was serving in the priestly rotation when the Temple fell, providing a critical anchor point for calculating the 24-course priestly cycle.",
+    "verse": "Josephus, Wars of the Jews 6.4.5",
+    "condition": "year_70",
+    "bookChapter": "/chapters/priestly-courses/",
+    "quote": "The same month and day were now observed, as I said before, wherein the holy house was burnt formerly by the Babylonians."
+  },
+  {
+    "month": 5,
     "day": 10,
-    "title": "Burning of the Temple",
+    "title": "Burning of the First Temple (586 BC)",
     "description": "On the tenth day of the fifth month (parallel account), Nebuzaradan burns the temple and city of Jerusalem.",
     "verse": "2 Kings 25:8; Jeremiah 52:12"
   },
@@ -163,9 +182,28 @@
   {
     "month": 7,
     "day": 10,
+    "title": "Sabbath Year Debt Release",
+    "description": "On the Day of Atonement in the Sabbath Year (Year of Release), all debts among the people are to be forgiven. This is YHWH's time of release. Yeshua proclaimed 'the year of the Lord's favor' from Isaiah 61 in Luke 4 during a Year of Release.",
+    "verse": "Deuteronomy 15:1-3,9; Isaiah 61:1-2; Luke 4:18-19",
+    "condition": "sabbath_year"
+  },
+  {
+    "month": 7,
+    "day": 10,
     "title": "Proclamation of Jubilee",
-    "description": "The trumpet of the jubilee is sounded on the tenth day of the seventh month during the Day of Atonement, proclaiming liberty and return of property every 50 years.",
-    "verse": "Leviticus 25:9"
+    "description": "The trumpet of the jubilee is sounded on the tenth day of the seventh month during the Day of Atonement, proclaiming liberty throughout all the land and return of property. All Hebrew servants are freed and land returns to original family ownership. Isaiah 61 prophesies of this ultimate release.",
+    "verse": "Leviticus 25:9-13; Isaiah 61:1-2",
+    "condition": "jubilee_year"
+  },
+  {
+    "month": 7,
+    "day": 10,
+    "title": "Yeshua Proclaims the Year of the Lord's Favor",
+    "description": "In the synagogue at Nazareth, Yeshua reads from Isaiah 61 and declares 'Today this Scripture has been fulfilled in your hearing.' He proclaims liberty to captives and the year of the Lord's favor—the Year of Release commanded by Torah. The crowd, enraged, attempts to throw him off a cliff like the scapegoat, but he passes through their midst.",
+    "verse": "Luke 4:16-30; Isaiah 61:1-2",
+    "condition": "year_29",
+    "bookChapter": "/chapters/12-32-ad-resurrection/",
+    "quote": "The Spirit of the Lord is upon me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim liberty to the captives and recovering of sight to the blind, to set at liberty those who are oppressed, to proclaim the year of the Lord's favor."
   },
   {
     "month": 7,
@@ -173,6 +211,24 @@
     "title": "Feast of Tabernacles Begins",
     "description": "The Feast of Tabernacles commences on the fifteenth day of the seventh month, a seven-day celebration of dwelling in booths to remember the wilderness journey.",
     "verse": "Leviticus 23:34"
+  },
+  {
+    "month": 7,
+    "day": 15,
+    "title": "First Temple Dedication & Priestly Cycle Begins",
+    "description": "Solomon dedicates the First Temple during the Feast of Tabernacles. The Ark is placed in the Most Holy Place and the glory of the LORD fills the Temple so that the priests cannot stand to minister. All priests had sanctified themselves and 'did not then wait by course' (2 Chr 5:11). After a 14-day celebration ending on the 23rd, the regular priestly rotations began with Jehoiarib (Course 1), establishing the 24-course weekly cycle that continued until 70 AD.",
+    "verse": "1 Kings 8:1-11,65-66; 2 Chronicles 5:2-14; 7:8-10; 1 Chronicles 24:7",
+    "condition": "year_-958",
+    "bookChapter": "/chapters/priestly-courses/",
+    "quote": "And it came to pass, when the priests were come out of the holy place, that the cloud filled the house of the LORD, so that the priests could not stand to minister because of the cloud: for the glory of the LORD had filled the house of the LORD."
+  },
+  {
+    "month": 7,
+    "day": 15,
+    "title": "Public Torah Reading (Sabbath Year)",
+    "description": "At the end of every seven years, during the Feast of Tabernacles in the Year of Release, the Torah is read publicly before all Israel—men, women, children, and strangers—so that they may hear, learn, and fear YHWH.",
+    "verse": "Deuteronomy 31:10-13",
+    "condition": "sabbath_year"
   },
   {
     "month": 7,

@@ -336,11 +336,11 @@
   border-radius: 12px;
 }
 
-/* Header Section - New 2-row grid layout */
+/* Header Section - New 3-row grid layout (Profile, Jubilee, Controls) */
 .calendar-header {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   padding: 0;
   background: linear-gradient(180deg, #0d2840 0%, #1a3a5c 100%);
   color: white;
@@ -356,10 +356,17 @@
   padding: 8px 12px 4px;
 }
 
-/* Row 2: Year | Month | Time | Location */
-.header-row-2 {
+/* Row 2: Jubilee indicator */
+.header-jubilee-row {
   grid-column: 1;
   grid-row: 2;
+  padding: 0 12px 4px;
+}
+
+/* Row 3: Year | Month | Time | Location */
+.header-row-2 {
+  grid-column: 1;
+  grid-row: 3;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -367,10 +374,10 @@
   flex-wrap: wrap;
 }
 
-/* Day 1 cell spans both rows */
+/* Day 1 cell spans all three rows */
 .new-moon-box {
   grid-column: 2;
-  grid-row: 1 / 3;
+  grid-row: 1 / 4;
 }
 
 /* Dropdown item styles */
@@ -431,6 +438,43 @@
 .header-separator {
   color: rgba(255,255,255,0.3);
   font-size: 0.8em;
+}
+
+/* Jubilee Indicator Styles */
+.jubilee-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 8px;
+  font-size: 0.95em;
+  color: #c9a227;
+}
+
+.jubilee-indicator.sabbath-year {
+  color: #90EE90;
+}
+
+.jubilee-indicator.jubilee-year {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.jubilee-text {
+  white-space: nowrap;
+}
+
+.jubilee-info-link {
+  color: inherit;
+  opacity: 0.7;
+  text-decoration: none;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.jubilee-info-link:hover {
+  opacity: 1;
+  text-decoration: none;
 }
 
 /* Legacy support - keep for compatibility */
@@ -546,46 +590,17 @@
 }
 
 
-/* Time picker modal */
-.time-picker-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 1100;
-  align-items: center;
-  justify-content: center;
-}
-
-.time-picker-content {
-  background: #1a3a5c;
-  border-radius: 12px;
-  padding: 20px;
-  min-width: 280px;
-  max-width: 350px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-}
-
-.time-picker-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.time-picker-header h3 {
-  margin: 0;
-  color: #fff;
-  font-size: 1.1em;
+/* Time picker dropdown */
+.time-picker-dropdown {
+  min-width: 220px;
+  max-width: 280px;
+  padding: 12px;
 }
 
 .time-picker-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .time-picker-row {
@@ -596,11 +611,11 @@
 
 .time-picker-row label {
   color: rgba(255,255,255,0.7);
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .time-picker-row input {
-  padding: 10px;
+  padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid rgba(255,255,255,0.2);
   background: rgba(0,0,0,0.3);
@@ -611,11 +626,13 @@
 .time-picker-buttons {
   display: flex;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .time-picker-buttons .btn {
   flex: 1;
+  padding: 8px 12px;
+  font-size: 0.95em;
 }
 
 .location-display {
@@ -655,142 +672,156 @@
   color: #fff;
 }
 
-/* Month Picker Popup */
-.month-picker-overlay {
+/* Picker Overlay (shared for year/month pickers) */
+.picker-overlay {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.3);
   z-index: 1000;
 }
 
-.month-picker-overlay.open {
+.picker-overlay.open {
   display: block;
 }
 
-.month-picker {
+/* Dropdown Picker (shared styles for year/month pickers) */
+.dropdown-picker {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background: #1a3a5c;
-  border-radius: 20px;
-  padding: 28px;
+  border-radius: 16px;
+  padding: 20px;
   z-index: 1001;
-  width: 70%;
-  max-width: 630px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  min-width: 280px;
+  max-width: 360px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-.month-picker-header {
+.picker-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.2);
   position: relative;
 }
 
-.month-picker-header h3 {
+.picker-header h3 {
   margin: 0;
   color: #7ec8e3;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
-.month-picker .close-btn {
+.dropdown-picker .close-btn {
   position: absolute;
   top: -8px;
   right: -8px;
   background: rgba(255,255,255,0.1);
   border: none;
   color: #fff;
-  font-size: 1.3em;
+  font-size: 1.1em;
   cursor: pointer;
-  padding: 12px 16px;
+  padding: 8px 12px;
   line-height: 1;
-  border-radius: 10px;
-  min-width: 48px;
-  min-height: 48px;
+  border-radius: 8px;
+  min-width: 40px;
+  min-height: 40px;
 }
 
-.month-picker .close-btn:hover {
+.dropdown-picker .close-btn:hover {
   background: rgba(255,255,255,0.2);
 }
 
-.year-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
+/* Year Picker specific styles */
+.year-picker {
+  min-width: auto;
+  padding: 8px 12px;
 }
 
-.year-nav button {
+.year-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.year-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.year-arrow-btn {
   background: #0d2840;
   border: none;
   color: #d4a017;
-  padding: 16px 24px;
-  border-radius: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 1.5em;
-  min-width: 58px;
-  min-height: 58px;
-}
-
-.year-nav button:hover {
-  background: #2a5a8c;
-}
-
-.year-nav .year-display {
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: bold;
-  min-width: 130px;
-  text-align: center;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background 0.2s;
-}
-
-.year-nav .year-display:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.year-display-container {
-  position: relative;
-  min-width: 120px;
-  height: 50px;
+  font-size: 0.9em;
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.year-nav .year-display {
-  font-size: 2em;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 8px 16px;
-  color: #fff;
+.year-arrow-btn:hover {
+  background: #2a5a8c;
 }
 
-.year-nav .year-input {
+.year-arrow-btn:active {
+  background: #3a6a9c;
+}
+
+/* Month Picker specific styles */
+.month-picker {
+  min-width: 260px;
+  max-width: 300px;
+  padding: 10px;
+}
+
+
+
+.year-display-container {
+  position: relative;
+  min-width: 80px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.year-picker-row .year-display {
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 6px 12px;
+  color: #fff;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.year-picker-row .year-display:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.year-input {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   width: 100%;
   text-align: center;
-  padding: 8px 12px;
+  padding: 6px 8px;
   border: 2px solid #d4a017;
-  border-radius: 8px;
+  border-radius: 6px;
   background: #0d2840;
   color: #fff;
   font-family: inherit;
@@ -798,27 +829,27 @@
   box-sizing: border-box;
 }
 
-.year-nav .year-input.visible {
+.year-input.visible {
   display: block;
 }
 
 .era-select {
   background: #0d2840;
   border: 2px solid rgba(212, 160, 23, 0.5);
-  border-radius: 12px;
+  border-radius: 8px;
   color: #d4a017;
-  padding: 12px 16px;
-  font-size: 1.2em;
+  padding: 8px 10px;
+  font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-  margin-left: 16px;
+  margin-left: 0;
   appearance: none;
   -webkit-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4a017' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center;
-  padding-right: 32px;
-  min-height: 52px;
+  background-position: right 6px center;
+  padding-right: 24px;
+  min-height: 44px;
 }
 
 .era-select:hover {
@@ -839,19 +870,19 @@
 .month-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 8px;
 }
 
 .month-grid button {
   background: #0d2840;
   border: none;
   color: #fff;
-  padding: 18px 10px;
-  border-radius: 12px;
+  padding: 14px 8px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1em;
   transition: all 0.2s;
-  min-height: 58px;
+  min-height: 48px;
 }
 
 .month-grid button:hover {
@@ -1625,7 +1656,33 @@ body.sabbath-tester-open {
 .priestly-table-desc {
   color: #888;
   font-size: 0.9em;
-  margin: 8px 0 16px 0;
+  margin: 8px 0 8px 0;
+}
+
+.priestly-table-note {
+  color: #7ec8e3;
+  margin: 0 0 16px 0;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.priestly-table-note a {
+  color: #d4a017;
+  text-decoration: none;
+}
+
+.priestly-table-note a:hover {
+  text-decoration: underline;
+}
+
+.priestly-warning-message {
+  background: rgba(255, 100, 100, 0.15);
+  border: 1px solid rgba(255, 100, 100, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  color: #ff9999;
+  font-size: 0.9em;
 }
 
 .priestly-table-container {
@@ -1670,27 +1727,26 @@ body.sabbath-tester-open {
   white-space: nowrap;
 }
 
-.priestly-table .course-hebrew {
-  color: #aaa;
-  font-style: italic;
-  white-space: nowrap;
-}
-
 .priestly-table .course-lineage {
   color: #d4a017;
-  font-size: 0.9em;
-  white-space: nowrap;
+  font-size: 0.85em;
+  font-weight: normal;
+  margin-top: 2px;
 }
 
 .priestly-table .course-meaning {
   color: #aaa;
   font-style: italic;
   font-size: 0.9em;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .priestly-table .course-dates {
   font-size: 0.85em;
   color: #ccc;
+  min-width: 110px;
+  white-space: nowrap;
 }
 
 .course-notes-indicator {
@@ -1775,21 +1831,30 @@ body.sabbath-tester-open {
   }
   
   .priestly-table .course-meaning {
-    max-width: 120px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
+    word-wrap: break-word;
+    min-width: 80px;
   }
   
   .priestly-table .course-dates {
-    max-width: 150px;
+    min-width: 100px;
+    white-space: nowrap;
   }
+}
+
+.course-dates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .priestly-table .course-date-link {
   color: #d4a017;
   cursor: pointer;
   text-decoration: none;
+  display: block;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .priestly-table .course-date-link:hover {
@@ -1802,6 +1867,20 @@ body.sabbath-tester-open {
 }
 
 .priestly-course-clickable:hover {
+  text-decoration: underline;
+}
+
+.priestly-course-display.before-dedication {
+  font-style: italic;
+}
+
+.priestly-dedication-link {
+  color: #d4a017;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.priestly-dedication-link:hover {
   text-decoration: underline;
 }
 
@@ -2258,6 +2337,23 @@ body.sabbath-tester-open {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+/* Event icons (historical/biblical) in bottom left */
+.day-cell .day-event-icon {
+  font-size: 0.85em;
+  position: absolute;
+  bottom: 2px;
+  left: 3px;
+  text-align: left;
+  line-height: 1;
+  opacity: 0.8;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.day-cell .day-event-icon:hover {
+  opacity: 1;
+}
+
 /* Scripture Quote - integrated into last row */
 .scripture-quote {
   padding: 10px 15px;
@@ -2286,7 +2382,12 @@ body.sabbath-tester-open {
   transition: background 0.2s;
 }
 
-.month-nav-cell:hover:not(.disabled) {
+.month-nav-cell.nav-group {
+  gap: 8px;
+  cursor: default;
+}
+
+.month-nav-cell:hover:not(.disabled):not(.nav-group) {
   background: #1a3a5c;
 }
 
@@ -2297,7 +2398,29 @@ body.sabbath-tester-open {
 
 .month-nav-cell .nav-arrow {
   color: #d4a017;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  min-width: 32px;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-nav-cell .nav-arrow:hover {
+  background: rgba(212, 160, 23, 0.2);
+  color: #f0c040;
+}
+
+.month-nav-cell .nav-arrow.year-nav {
+  font-size: 1.3em;
+}
+
+.month-nav-cell .nav-arrow.year-nav:hover {
+  background: rgba(212, 160, 23, 0.2);
 }
 
 .scripture-quote .reference {
@@ -3173,6 +3296,14 @@ body.sabbath-tester-open {
 .day-detail-gregorian {
   font-size: 1em;
   color: #7ec8e3;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.day-detail-gregorian:hover {
+  background: rgba(126, 200, 227, 0.15);
 }
 
 .day-detail-gregorian-row {
@@ -3704,6 +3835,99 @@ body.sabbath-tester-open {
 
 .bible-event-verse::before {
   content: "📖 ";
+}
+
+/* Clickable scripture links in bible events */
+.bible-event-verse .bible-citation-link {
+  color: #7ec8e3;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bible-event-verse .bible-citation-link:hover {
+  color: #a8dcf0;
+  text-decoration: underline;
+}
+
+/* Conditional event styling (Sabbath/Jubilee year events) */
+.bible-event-item.conditional-event {
+  border-left-color: #90EE90;
+  background: rgba(144, 238, 144, 0.1);
+}
+
+.bible-event-item.conditional-event.jubilee-event {
+  border-left-color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* Condition badges */
+.event-condition-badge {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.sabbath-year-badge {
+  background: rgba(144, 238, 144, 0.2);
+  color: #90EE90;
+  border: 1px solid rgba(144, 238, 144, 0.4);
+}
+
+.jubilee-year-badge {
+  background: rgba(255, 215, 0, 0.2);
+  color: #FFD700;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.historical-event-badge {
+  background: rgba(126, 200, 227, 0.2);
+  color: #7ec8e3;
+  border: 1px solid rgba(126, 200, 227, 0.4);
+}
+
+/* Historical event styling */
+.bible-event-item.historical-event {
+  border-left-color: #7ec8e3;
+  background: rgba(126, 200, 227, 0.1);
+}
+
+/* Scripture quote in bible events */
+.bible-event-quote {
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: rgba(212, 165, 116, 0.15);
+  border-left: 3px solid #d4a574;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #e8dcc8;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+/* Book chapter link */
+.bible-event-book-link {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bible-event-book-link a {
+  color: #7ec8e3;
+  text-decoration: none;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.bible-event-book-link a:hover {
+  color: #a8dcf0;
+  text-decoration: underline;
 }
 
 /* Torah Portion Section */
@@ -4393,10 +4617,16 @@ body.torah-info-open {
   }
   
   .settings-dialog,
+  .dropdown-picker,
   .month-picker,
+  .year-picker,
+  .time-picker-dropdown,
   .date-jump-popup {
     width: calc(100% - 16px);
     max-width: none;
+    left: 8px !important;
+    right: 8px !important;
+    transform: none !important;
   }
   
   .settings-page-header {
@@ -4470,6 +4700,14 @@ body.torah-info-open {
     padding: 6px 10px 2px;
   }
   
+  .header-jubilee-row {
+    padding: 0 10px 2px;
+  }
+  
+  .jubilee-indicator {
+    font-size: 0.8em;
+  }
+  
   .header-row-2 {
     padding: 2px 10px 6px;
     gap: 4px;
@@ -4509,6 +4747,10 @@ body.torah-info-open {
   }
   
   .new-moon-box .feast-icons {
+    font-size: 0.7em;
+  }
+  
+  .day-cell .day-event-icon {
     font-size: 0.7em;
   }
   
@@ -4559,7 +4801,18 @@ body.torah-info-open {
   }
   
   .month-nav-cell .nav-arrow {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    padding: 4px 6px;
+    min-width: 28px;
+    min-height: 28px;
+  }
+  
+  .month-nav-cell.nav-group {
+    gap: 4px;
+  }
+  
+  .month-nav-cell .nav-arrow.year-nav {
+    font-size: 1.1em;
   }
   
   /* Feast table responsive */
@@ -4688,6 +4941,15 @@ body.torah-info-open {
     padding: 4px 8px 2px;
   }
   
+  .header-jubilee-row {
+    padding: 0 8px 2px;
+  }
+  
+  .jubilee-indicator {
+    font-size: 0.7em;
+    gap: 4px;
+  }
+  
   .header-row-2 {
     padding: 2px 8px 4px;
     gap: 2px;
@@ -4720,7 +4982,18 @@ body.torah-info-open {
   }
   
   .month-nav-cell .nav-arrow {
-    font-size: 1em;
+    font-size: 0.95em;
+    padding: 3px 5px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+  
+  .month-nav-cell.nav-group {
+    gap: 2px;
+  }
+  
+  .month-nav-cell .nav-arrow.year-nav {
+    font-size: 0.95em;
   }
   
   .full-moon-info .moon-icon {
@@ -4771,6 +5044,15 @@ body.torah-info-open {
   
   .header-separator {
     font-size: 0.45em;
+  }
+  
+  .jubilee-indicator {
+    font-size: 0.6em;
+    gap: 3px;
+  }
+  
+  .jubilee-info-link {
+    font-size: 0.8em;
   }
 }
 
@@ -5575,5 +5857,203 @@ body.torah-info-open {
   
   .about-modal-content {
     padding: 20px;
+  }
+}
+
+/* ============================================================================
+   JUBILEE INFO MODAL
+   ============================================================================ */
+
+.jubilee-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.jubilee-modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.jubilee-modal {
+  background: linear-gradient(145deg, #1a2a3a 0%, #0d1f33 50%, #0a1628 100%);
+  border-radius: 16px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(201, 162, 39, 0.2);
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s ease-out;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.jubilee-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.jubilee-modal-overlay.visible .jubilee-modal {
+  transform: scale(1) translateY(0);
+}
+
+.jubilee-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.jubilee-modal-header h2 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.jubilee-modal-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ccc;
+  font-size: 1.5em;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.jubilee-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.jubilee-modal-content {
+  padding: 24px;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.jubilee-section {
+  margin-bottom: 28px;
+}
+
+.jubilee-section:last-child {
+  margin-bottom: 0;
+}
+
+.jubilee-section h3 {
+  color: #FFD700;
+  font-size: 1.2em;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.jubilee-section h4 {
+  color: #7ec8e3;
+  font-size: 1em;
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+}
+
+.jubilee-section p {
+  margin: 0 0 12px 0;
+  color: #ccc;
+}
+
+.jubilee-section ul {
+  margin: 0 0 12px 0;
+  padding-left: 24px;
+}
+
+.jubilee-section li {
+  margin-bottom: 6px;
+  color: #ccc;
+}
+
+.jubilee-section blockquote {
+  margin: 16px 0;
+  padding: 12px 16px;
+  background: rgba(201, 162, 39, 0.1);
+  border-left: 3px solid #c9a227;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #ddd;
+}
+
+.jubilee-section blockquote strong {
+  color: #FFD700;
+  font-style: normal;
+}
+
+.scripture-refs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.ref-group h4 {
+  margin-top: 0;
+}
+
+.ref-group ul {
+  padding-left: 20px;
+}
+
+.ref-group a {
+  color: #7ec8e3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ref-group a:hover {
+  color: #a8dcf0;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .jubilee-modal {
+    border-radius: 12px;
+    max-height: 90vh;
+  }
+  
+  .jubilee-modal-header {
+    padding: 16px 20px;
+  }
+  
+  .jubilee-modal-header h2 {
+    font-size: 1.2em;
+  }
+  
+  .jubilee-modal-content {
+    padding: 20px;
+  }
+  
+  .jubilee-section h3 {
+    font-size: 1.1em;
+  }
+  
+  .scripture-refs {
+    grid-template-columns: 1fr;
   }
 }
