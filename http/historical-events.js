@@ -877,7 +877,38 @@ async function navigateToEventDate() {
     }
     navigateTo('calendar');
   } else {
-    // No year - just go to calendar with pushState for back button support
+    // No year - but if we have lunar month/day, navigate to that month/day in current calendar
+    const lunarMonth = normalizedEvent.dates?.lunar?.month || event.start?.lunar?.month;
+    const lunarDay = normalizedEvent.dates?.lunar?.day || event.start?.lunar?.day || 1;
+    
+    if (lunarMonth && state.lunarMonths?.length) {
+      const monthIndex = lunarMonth - 1;
+      
+      if (monthIndex >= 0 && monthIndex < state.lunarMonths.length) {
+        state.currentMonthIndex = monthIndex;
+        state.highlightedLunarDay = lunarDay;
+        
+        // Find the day object and show detail
+        const month = state.lunarMonths[monthIndex];
+        const dayObj = month.days.find(d => d.lunarDay === lunarDay);
+        if (dayObj) {
+          state.selectedTimestamp = getSunriseTimestamp(dayObj.gregorianDate);
+          if (typeof showDayDetail === 'function') {
+            showDayDetail(dayObj, month);
+          }
+        }
+        
+        // Render the month and update UI
+        if (typeof renderMonth === 'function') {
+          renderMonth(month);
+        }
+        if (typeof updateMonthButtons === 'function') {
+          updateMonthButtons();
+        }
+      }
+    }
+    
+    // Push state and navigate
     if (typeof buildPathURL === 'function') {
       const calendarURL = buildPathURL();
       window.history.pushState({ view: 'calendar' }, '', calendarURL);
