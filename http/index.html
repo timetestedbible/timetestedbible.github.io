@@ -228,6 +228,10 @@ title: "Lunar Sabbath Calendar"
       <span class="icon">⏱️</span>
       <span>Biblical Timeline</span>
     </button>
+    <button class="nav-menu-item" onclick="navigateTo('bible-explorer')">
+      <span class="icon">📖</span>
+      <span>KJV Bible</span>
+    </button>
     <div class="nav-menu-divider"></div>
     <button class="nav-menu-item" id="install-app-btn" style="display: none;" onclick="handleInstallClick()">
       <span class="icon">📲</span>
@@ -757,7 +761,7 @@ title: "Lunar Sabbath Calendar"
   </div>
 </div>
 
-<!-- Bible Reader Modal -->
+<!-- Bible Reader Modal (for inline verse popups) -->
 <div id="bible-reader-modal" class="bible-reader-modal" onclick="if(event.target === this) closeBibleReader()">
   <div class="bible-reader-container">
     <div class="bible-reader-header">
@@ -766,6 +770,91 @@ title: "Lunar Sabbath Calendar"
     </div>
     <div id="bible-reader-text" class="bible-reader-body">
       <!-- Bible content will be inserted here -->
+    </div>
+  </div>
+</div>
+
+<!-- KJV Bible Explorer Page -->
+<div id="bible-explorer-page" class="bible-explorer-page" style="display: none;">
+  <div class="bible-explorer-header">
+    <div class="bible-explorer-header-inner">
+      <h2>📖 KJV Bible</h2>
+      <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
+    </div>
+    <div class="bible-explorer-search">
+      <input type="text" id="bible-explorer-search-input" placeholder="Go to verse (e.g., John 3:16, Gen 1)" 
+             onkeydown="if(event.key==='Enter') jumpToVerse()">
+      <button onclick="jumpToVerse()" class="bible-explorer-search-btn">Go</button>
+    </div>
+  </div>
+  
+  <div class="bible-explorer-body">
+    <!-- Sidebar with book/chapter navigation -->
+    <div class="bible-explorer-sidebar">
+      <div class="bible-explorer-nav-tabs">
+        <button class="bible-nav-tab active" data-tab="books" onclick="switchBibleNavTab('books')">Books</button>
+        <button class="bible-nav-tab" data-tab="chapters" onclick="switchBibleNavTab('chapters')">Chapters</button>
+      </div>
+      
+      <!-- Books Panel -->
+      <div id="bible-books-panel" class="bible-nav-panel active">
+        <div class="bible-testament-section">
+          <div class="bible-testament-header" onclick="toggleTestament('ot')">
+            <span class="bible-testament-toggle" id="ot-toggle">▼</span>
+            <span>Old Testament</span>
+          </div>
+          <div id="ot-books" class="bible-books-list">
+            <!-- Old Testament books populated by JS -->
+          </div>
+        </div>
+        <div class="bible-testament-section">
+          <div class="bible-testament-header" onclick="toggleTestament('nt')">
+            <span class="bible-testament-toggle" id="nt-toggle">▼</span>
+            <span>New Testament</span>
+          </div>
+          <div id="nt-books" class="bible-books-list">
+            <!-- New Testament books populated by JS -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Chapters Panel -->
+      <div id="bible-chapters-panel" class="bible-nav-panel">
+        <div class="bible-chapters-header">
+          <button class="bible-back-btn" onclick="switchBibleNavTab('books')">← Books</button>
+          <span id="bible-current-book-name">Select a book</span>
+        </div>
+        <div id="bible-chapters-grid" class="bible-chapters-grid">
+          <!-- Chapter numbers populated by JS -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main reading area -->
+    <div class="bible-explorer-content">
+      <div class="bible-chapter-nav">
+        <button id="bible-prev-chapter" class="bible-chapter-nav-btn" onclick="navigateBibleChapter(-1)" disabled>
+          ← Previous
+        </button>
+        <span id="bible-chapter-title" class="bible-chapter-title">Select a book to begin</span>
+        <button id="bible-next-chapter" class="bible-chapter-nav-btn" onclick="navigateBibleChapter(1)" disabled>
+          Next →
+        </button>
+      </div>
+      <div id="bible-explorer-text" class="bible-explorer-text">
+        <div class="bible-explorer-welcome">
+          <div class="bible-welcome-icon">📖</div>
+          <h3>Welcome to the KJV Bible</h3>
+          <p>Select a book from the sidebar or use the search box above to jump to any verse.</p>
+          <div class="bible-quick-links">
+            <span class="bible-quick-label">Quick Start:</span>
+            <button onclick="openBibleExplorerTo('Genesis', 1)">Genesis 1</button>
+            <button onclick="openBibleExplorerTo('Psalms', 23)">Psalm 23</button>
+            <button onclick="openBibleExplorerTo('John', 1)">John 1</button>
+            <button onclick="openBibleExplorerTo('Revelation', 1)">Revelation 1</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

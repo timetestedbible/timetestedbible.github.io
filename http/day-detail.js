@@ -724,10 +724,28 @@ function showDayDetail(dayObj, month) {
         eventClass = ' historical-event';
       }
       
-      // Add scripture quote if present
+      // Extract context citation (book + chapter) from verse reference for "v. X" style references
+      // e.g., "Ezekiel 26:1-14" -> "Ezekiel 26"
+      let contextCitation = '';
+      if (event.verse) {
+        const citationMatch = event.verse.match(/^(.+?\s+\d+)/);
+        if (citationMatch) {
+          contextCitation = citationMatch[1];
+        }
+      }
+      
+      // Linkify scripture references in description
+      const linkedDescription = typeof linkifyScriptureReferences === 'function'
+        ? linkifyScriptureReferences(event.description, contextCitation)
+        : event.description;
+      
+      // Add scripture quote if present (with linkified references)
       let quoteHtml = '';
       if (event.quote) {
-        quoteHtml = `<blockquote class="bible-event-quote">"${event.quote}"</blockquote>`;
+        const linkedQuote = typeof linkifyScriptureReferences === 'function'
+          ? linkifyScriptureReferences(event.quote, contextCitation)
+          : event.quote;
+        quoteHtml = `<blockquote class="bible-event-quote">"${linkedQuote}"</blockquote>`;
       }
       
       // Add book chapter link if present
@@ -736,12 +754,41 @@ function showDayDetail(dayObj, month) {
         bookLinkHtml = `<div class="bible-event-book-link"><a href="${event.bookChapter}" target="_blank" onclick="event.stopPropagation();">📖 Read more in the book chapter</a></div>`;
       }
       
+      // Add expandable details section if present
+      let detailsHtml = '';
+      if (event.details && event.details.length > 0) {
+        const detailsId = `details-${month.monthNumber}-${dayObj.lunarDay}-${event.title.replace(/[^a-z0-9]/gi, '')}`;
+        const detailsTitle = event.detailsTitle || 'More Details';
+        let detailsContent = '';
+        for (const detail of event.details) {
+          // Linkify scripture references in the detail text
+          const linkedText = typeof linkifyScriptureReferences === 'function'
+            ? linkifyScriptureReferences(detail.text, contextCitation)
+            : detail.text;
+          detailsContent += `
+            <div class="bible-event-detail-item">
+              <div class="bible-event-detail-heading">${detail.heading}</div>
+              <div class="bible-event-detail-text">${linkedText}</div>
+            </div>
+          `;
+        }
+        detailsHtml = `
+          <details class="bible-event-details">
+            <summary class="bible-event-details-toggle">${detailsTitle}</summary>
+            <div class="bible-event-details-content">
+              ${detailsContent}
+            </div>
+          </details>
+        `;
+      }
+      
       eventsHtml += `
         <div class="bible-event-item${eventClass}">
           ${conditionBadge}
           <div class="bible-event-title">${event.title}</div>
-          <div class="bible-event-description">${event.description}</div>
+          <div class="bible-event-description">${linkedDescription}</div>
           ${quoteHtml}
+          ${detailsHtml}
           <div class="bible-event-verse">${verseLink}</div>
           ${bookLinkHtml}
         </div>

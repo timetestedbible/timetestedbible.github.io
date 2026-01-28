@@ -270,6 +270,8 @@ function updateURLWithView(view) {
     // Build biblical timeline URL with profile/biblical-timeline
     const profile = getCurrentProfileSlug();
     newURL = `/${profile}/biblical-timeline/`;
+  } else if (view === 'bible-explorer') {
+    newURL = '/bible/';
   } else {
     // Calendar view - use standard path URL
     newURL = buildPathURL();
@@ -331,6 +333,22 @@ function parsePathURL() {
       } else if (segments[1] === 'duration') {
         result.durationId = segments[2];
       }
+    }
+    return result;
+  }
+  
+  if (segments[0] === 'bible') {
+    // Handle /bible/ or /bible/Book/Chapter?verse=X
+    const result = { view: 'bible-explorer' };
+    if (segments.length >= 2) {
+      result.bibleBook = decodeURIComponent(segments[1]);
+    }
+    if (segments.length >= 3) {
+      result.bibleChapter = parseInt(segments[2]);
+    }
+    // Check for verse in query params
+    if (params.has('verse')) {
+      result.bibleVerse = parseInt(params.get('verse'));
     }
     return result;
   }
@@ -689,6 +707,19 @@ function loadFromURL() {
     return;
   }
   
+  if (urlState.view === 'bible-explorer') {
+    navigateTo('bible-explorer');
+    // Open to specific book/chapter/verse if specified
+    if (urlState.bibleBook) {
+      setTimeout(() => {
+        if (typeof openBibleExplorerTo === 'function') {
+          openBibleExplorerTo(urlState.bibleBook, urlState.bibleChapter || 1, urlState.bibleVerse || null);
+        }
+      }, 300);
+    }
+    return;
+  }
+  
   if (urlState.view === 'biblical-timeline') {
     // Apply URL state first (for profile settings), then show biblical timeline page
     const { needsRegenerate } = applyURLState(urlState);
@@ -933,6 +964,7 @@ function navigateTo(page) {
   const priestlyPage = document.getElementById('priestly-page');
   const eventsPage = document.getElementById('events-page');
   const biblicalTimelinePage = document.getElementById('biblical-timeline-page');
+  const bibleExplorerPage = document.getElementById('bible-explorer-page');
   
   // Hide all pages and reset body state
   document.documentElement.classList.remove('feasts-open');
@@ -940,13 +972,14 @@ function navigateTo(page) {
   document.body.classList.remove('sabbath-tester-open');
   document.body.classList.remove('events-open');
   document.body.classList.remove('biblical-timeline-open');
+  document.body.classList.remove('bible-explorer-open');
   document.body.style.overflow = ''; // Restore scrolling
   
   // Close settings slide-in
   settingsPage.classList.remove('visible');
   settingsOverlay.classList.remove('visible');
   
-  // Hide export page, sabbath tester, priestly page, events page, and biblical timeline page
+  // Hide export page, sabbath tester, priestly page, events page, biblical timeline page, and bible explorer
   exportPage.style.display = 'none';
   sabbathTesterPage.style.display = 'none';
   if (priestlyPage) priestlyPage.style.display = 'none';
@@ -962,6 +995,7 @@ function navigateTo(page) {
       closeDetailPanel();
     }
   }
+  if (bibleExplorerPage) bibleExplorerPage.style.display = 'none';
   
   switch(page) {
     case 'calendar':
@@ -1061,6 +1095,32 @@ function navigateTo(page) {
         initBiblicalTimelinePage();
       }
       updateURLWithView('biblical-timeline');
+      break;
+    case 'bible-explorer':
+      const bibleExplorerPage = document.getElementById('bible-explorer-page');
+      document.body.classList.add('bible-explorer-open');
+      document.body.style.overflow = 'hidden';
+      calendarOutput.style.display = 'none';
+      dayDetailPanel.style.display = 'none';
+      bibleExplorerPage.style.display = 'flex';
+      if (typeof initBibleExplorer === 'function') {
+        initBibleExplorer();
+      }
+      updateURLWithView('bible-explorer');
+      break;
+    case 'about':
+      // Show calendar in background and display about modal
+      // Always show regardless of localStorage flags (user explicitly requested it)
+      calendarOutput.style.display = 'block';
+      if (state.highlightedLunarDay !== null) {
+        dayDetailPanel.classList.remove('hidden');
+        dayDetailPanel.style.display = '';
+      }
+      if (typeof showAboutModal === 'function') {
+        showAboutModal();
+      }
+      // Update URL to /about
+      window.history.pushState({}, '', '/about/');
       break;
   }
 }
