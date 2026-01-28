@@ -91,7 +91,7 @@ function updateTopNavProfile() {
   nameEl.textContent = getCurrentProfileName();
 }
 
-// Get event icon for a day cell (📰 for historical, 📜 for biblical)
+// Get event icon for a day cell (📰 for historical, 📜 for biblical, or custom icon)
 function getDayEventIcon(monthNumber, lunarDay, gregorianYear) {
   // Only check if getBibleEvents is available
   if (typeof getBibleEvents !== 'function') return '';
@@ -99,10 +99,22 @@ function getDayEventIcon(monthNumber, lunarDay, gregorianYear) {
   const events = getBibleEvents(monthNumber, lunarDay, gregorianYear);
   if (!events || events.length === 0) return '';
   
+  // Check for custom icons first - use the first one found
+  const customIconEvent = events.find(e => e.icon);
+  if (customIconEvent) {
+    return `<div class="day-event-icon" title="${customIconEvent.title || 'Event on this date'}">${customIconEvent.icon}</div>`;
+  }
+  
   // Check if any events are historical (year-specific)
   const hasHistorical = events.some(e => e.condition && e.condition.startsWith('year_'));
-  // Check if any events are biblical (no condition or cycle-based)
-  const hasBiblical = events.some(e => !e.condition || e.condition === 'sabbath_year' || e.condition === 'jubilee_year' || e.condition === 'sabbath_or_jubilee');
+  // Check if any events are biblical (no condition, cycle-based, or moon phase)
+  const hasBiblical = events.some(e => 
+    !e.condition || 
+    e.condition === 'sabbath_year' || 
+    e.condition === 'jubilee_year' || 
+    e.condition === 'sabbath_or_jubilee' ||
+    (e.condition && e.condition.startsWith('moonPhase_'))
+  );
   
   // Build icon string with both if applicable
   let icons = [];

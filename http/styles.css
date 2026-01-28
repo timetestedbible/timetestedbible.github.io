@@ -3935,6 +3935,17 @@ body.sabbath-tester-open {
   border: 1px solid rgba(240, 230, 140, 0.4);
 }
 
+.moonphase-event-badge.moonphase-match {
+  background: rgba(100, 200, 100, 0.25);
+  border-color: rgba(100, 200, 100, 0.5);
+}
+
+.moonphase-event-badge.moonphase-other {
+  background: rgba(150, 150, 150, 0.15);
+  border-color: rgba(150, 150, 150, 0.3);
+  opacity: 0.8;
+}
+
 /* Scripture quote in bible events */
 .bible-event-quote {
   margin: 12px 0;

@@ -726,7 +726,10 @@ function showDayDetail(dayObj, month) {
       } else if (event.condition && event.condition.startsWith('moonPhase_')) {
         const phase = event.condition.substring(10);
         const phaseLabel = phase === 'full' ? 'Full Moon' : phase === 'dark' ? 'Dark Moon' : 'Crescent';
-        conditionBadge = `<span class="event-condition-badge moonphase-event-badge" title="This event requires a full moon — date varies by month start rule (${phaseLabel} = Day ${dayObj.lunarDay})">🌕 Full Moon Event</span>`;
+        const phaseIcon = phase === 'full' ? '🌕' : phase === 'dark' ? '🌑' : '🌙';
+        const isCurrentPhase = state.moonPhase === phase;
+        const matchClass = isCurrentPhase ? ' moonphase-match' : ' moonphase-other';
+        conditionBadge = `<span class="event-condition-badge moonphase-event-badge${matchClass}" title="This event date is based on ${phaseLabel} calendar (Day ${dayObj.lunarDay})${isCurrentPhase ? ' — matches your current calendar' : ''}">${phaseIcon} ${phaseLabel} Calendar</span>`;
         eventClass = ' moonphase-event';
       }
       

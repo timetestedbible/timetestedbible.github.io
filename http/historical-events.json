@@ -96,6 +96,7 @@
     {
       "id": "noah-enters-ark",
       "title": "🚢 Noah Enters the Ark",
+      "icon": "🚢",
       "type": "biblical-event",
       "description": "Noah enters the ark with his family and all the animals, 7 days before the flood begins. Noah was 600 years old when the flood waters came. God shut the door after 7 days of waiting.",
       "dates": {
@@ -117,6 +118,7 @@
     {
       "id": "flood-begins",
       "title": "🚢 Great Flood Begins",
+      "icon": "🚢",
       "type": "catastrophe",
       "description": "In Noah's 600th year, on the 17th day of the 2nd month, the fountains of the deep burst forth and the windows of heaven opened. Rain falls for 40 days and nights. This is the exact starting date of the deluge. The Flood year is established from Abraham's timeline: Covenant with Abraham occurs in 1876 BC when Abraham is ~75 years old, placing Abraham's birth at ~1951 BC. Based on genealogy from Genesis 11:10-26, Abraham was born 352 years after the Flood (Shem→Arphaxad 2 yrs + genealogy 220 yrs + Terah→Abraham 130 yrs). Therefore, the Flood occurred ~2303 BC (1951 + 352). This calculation uses the Masoretic Text genealogy with no generational gaps, assuming direct father-son relationships as stated.",
       "dates": {
@@ -176,6 +178,7 @@
     {
       "id": "ark-rests-ararat",
       "title": "🚢 Ark Rests on Mountains of Ararat",
+      "icon": "🚢",
       "type": "milestone",
       "description": "On the 17th day of the 7th month, after 150 days of prevailing waters (exactly 5 months later, assuming 30-day months), the ark comes to rest on the mountains of Ararat as floodwaters recede.",
       "dates": {
@@ -195,6 +198,7 @@
     {
       "id": "mountain-tops-seen",
       "title": "🚢 Tops of Mountains Seen",
+      "icon": "🚢",
       "type": "milestone",
       "description": "On the 1st day of the 10th month, the tops of the mountains are seen. Waters continue to decrease.",
       "dates": {
@@ -212,10 +216,11 @@
       "anniversary_display": false
     },
     {
-      "id": "noah-sends-raven",
-      "title": "🚢 Noah Sends Out the Raven",
+      "id": "noah-sends-raven-dove",
+      "title": "🚢🦅🕊️ Noah Sends Raven and Dove",
+      "icon": "🚢🦅🕊️",
       "type": "biblical-event",
-      "description": "At the end of forty days after the mountain tops were seen, Noah opens the window of the ark and sends forth a raven. The raven went forth to and fro, until the waters were dried up, and did not return.",
+      "description": "At the end of forty days after the mountain tops were seen, Noah opens the window of the ark and sends forth a raven which went to and fro. He also sends out a dove to see if the waters had abated, but the dove returns finding no rest for the sole of her foot.",
       "dates": {
         "lunar": { "month": 11, "day": 10 },
         "anno_mundi": { "year": 1656 }
@@ -225,64 +230,47 @@
       ],
       "certainty": "high",
       "sources": [
-        { "ref": "Genesis 8:6-7", "type": "scripture", "quote": "And it came to pass at the end of forty days, that Noah opened the window of the ark which he had made: And he sent forth a raven, which went forth to and fro, until the waters were dried up from off the earth." }
+        { "ref": "Genesis 8:6-9", "type": "scripture", "quote": "And it came to pass at the end of forty days, that Noah opened the window of the ark which he had made: And he sent forth a raven... Also he sent forth a dove from him, to see if the waters were abated... But the dove found no rest for the sole of her foot, and she returned unto him into the ark." }
       ],
-      "tags": ["flood", "noah", "raven", "days-of-noah"],
+      "tags": ["flood", "noah", "raven", "dove", "days-of-noah"],
       "anniversary_display": false
     },
     {
-      "id": "noah-sends-dove-first",
-      "title": "🚢 Noah Sends Out the Dove (First Time)",
-      "type": "biblical-event",
-      "description": "After sending the raven, Noah sends out a dove to see if the waters had abated from off the face of the ground. The dove returns because she found no rest for the sole of her foot, indicating the waters still cover the earth.",
-      "dates": {
-        "lunar": { "month": 11, "day": 11 },
-        "anno_mundi": { "year": 1656 }
-      },
-      "relative_to": [
-        { "event_id": "noah-sends-raven", "offset": { "days": 1 }, "relation": "after" }
-      ],
-      "certainty": "high",
-      "sources": [
-        { "ref": "Genesis 8:8-9", "type": "scripture", "quote": "Also he sent forth a dove from him, to see if the waters were abated from off the face of the ground; But the dove found no rest for the sole of her foot, and she returned unto him into the ark, for the waters were on the face of the whole earth: then he put forth his hand, and took her, and pulled her in unto him into the ark." }
-      ],
-      "tags": ["flood", "noah", "dove", "days-of-noah"],
-      "anniversary_display": false
-    },
-    {
-      "id": "noah-sends-dove-second",
-      "title": "🚢 Noah Sends Out the Dove (Second Time)",
+      "id": "dove-returns-olive-leaf",
+      "title": "🚢🕊️🌿 Dove Returns with Olive Leaf",
+      "icon": "🚢🕊️🌿",
       "type": "biblical-event",
       "description": "Seven days after sending the dove the first time, Noah sends out the dove again. The dove returns in the evening with an olive leaf plucked off, showing that the waters had abated.",
       "dates": {
-        "lunar": { "month": 11, "day": 18 },
+        "lunar": { "month": 11, "day": 17 },
         "anno_mundi": { "year": 1656 }
       },
       "relative_to": [
-        { "event_id": "noah-sends-dove-first", "offset": { "days": 7 }, "relation": "after" }
+        { "event_id": "noah-sends-raven-dove", "offset": { "days": 7 }, "relation": "after" }
       ],
       "certainty": "high",
       "sources": [
-        { "ref": "Genesis 8:10", "type": "scripture", "quote": "And he stayed yet other seven days; and again he sent forth the dove out of the ark; And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf plucked off: so Noah knew that the waters were abated from off the earth." }
+        { "ref": "Genesis 8:10-11", "type": "scripture", "quote": "And he stayed yet other seven days; and again he sent forth the dove out of the ark; And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf plucked off: so Noah knew that the waters were abated from off the earth." }
       ],
       "tags": ["flood", "noah", "dove", "olive-leaf", "days-of-noah"],
       "anniversary_display": false
     },
     {
-      "id": "noah-sends-dove-third",
-      "title": "🚢 Noah Sends Out the Dove (Third Time)",
+      "id": "dove-does-not-return",
+      "title": "🚢🕊️ Dove Does Not Return",
+      "icon": "🚢🕊️",
       "type": "biblical-event",
-      "description": "Seven days after sending the dove the second time, Noah sends out the dove again. This time the dove does not return, signifying that the waters had fully receded from the face of the ground.",
+      "description": "Seven days after the dove returned with the olive leaf, Noah sends out the dove again. This time the dove does not return, signifying that the waters had fully receded from the face of the ground.",
       "dates": {
-        "lunar": { "month": 11, "day": 25 },
+        "lunar": { "month": 11, "day": 24 },
         "anno_mundi": { "year": 1656 }
       },
       "relative_to": [
-        { "event_id": "noah-sends-dove-second", "offset": { "days": 7 }, "relation": "after" }
+        { "event_id": "dove-returns-olive-leaf", "offset": { "days": 7 }, "relation": "after" }
       ],
       "certainty": "high",
       "sources": [
-        { "ref": "Genesis 8:11-12", "type": "scripture", "quote": "And he stayed yet other seven days; and sent forth the dove; which returned not again unto him any more." }
+        { "ref": "Genesis 8:12", "type": "scripture", "quote": "And he stayed yet other seven days; and sent forth the dove; which returned not again unto him any more." }
       ],
       "tags": ["flood", "noah", "dove", "days-of-noah"],
       "anniversary_display": false
@@ -306,6 +294,7 @@
     {
       "id": "earth-dried",
       "title": "🚢 Earth Completely Dry - Exit from Ark",
+      "icon": "🚢",
       "type": "milestone",
       "description": "In the 601st year, on the 27th day of the 2nd month, the earth was completely dried. God commands Noah, his family, and all the animals to exit the ark.",
       "dates": {
