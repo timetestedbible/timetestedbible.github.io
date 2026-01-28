@@ -707,10 +707,11 @@ function showDayDetail(dayObj, month) {
     `;
     
     for (const event of bibleEvents) {
-      // Make scripture verses clickable using the bible reader
-      const verseLink = typeof makeCitationClickable === 'function' 
-        ? makeCitationClickable(event.verse, event.title)
-        : event.verse;
+      // Make scripture verses clickable using the bible reader (handle undefined)
+      const verse = event.verse || '';
+      const verseLink = verse && typeof makeCitationClickable === 'function' 
+        ? makeCitationClickable(verse, event.title)
+        : verse;
       
       // Add condition indicator for Sabbath/Jubilee year events or year-specific events
       let conditionBadge = '';
@@ -739,10 +740,11 @@ function showDayDetail(dayObj, month) {
         }
       }
       
-      // Linkify scripture references in description
-      const linkedDescription = typeof linkifyScriptureReferences === 'function'
-        ? linkifyScriptureReferences(event.description, contextCitation)
-        : event.description;
+      // Linkify scripture references in description (handle undefined)
+      const description = event.description || '';
+      const linkedDescription = description && typeof linkifyScriptureReferences === 'function'
+        ? linkifyScriptureReferences(description, contextCitation)
+        : description;
       
       // Add scripture quote if present (with linkified references)
       let quoteHtml = '';
@@ -793,15 +795,25 @@ function showDayDetail(dayObj, month) {
         imageHtml = `<div class="bible-event-image"><img src="${event.image}" alt="${event.title}" onclick="window.open('${event.image}', '_blank')"></div>`;
       }
       
+      // Only show description div if there's content
+      const descriptionHtml = linkedDescription 
+        ? `<div class="bible-event-description">${linkedDescription}</div>` 
+        : '';
+      
+      // Only show verse div if there's content
+      const verseHtml = verseLink 
+        ? `<div class="bible-event-verse">${verseLink}</div>` 
+        : '';
+      
       eventsHtml += `
         <div class="bible-event-item${eventClass}">
           ${conditionBadge}
-          <div class="bible-event-title">${event.title}</div>
-          <div class="bible-event-description">${linkedDescription}</div>
+          <div class="bible-event-title">${event.title || 'Untitled Event'}</div>
+          ${descriptionHtml}
           ${quoteHtml}
           ${imageHtml}
           ${detailsHtml}
-          <div class="bible-event-verse">${verseLink}</div>
+          ${verseHtml}
           ${bookLinkHtml}
         </div>
       `;
@@ -994,8 +1006,8 @@ function showDayDetail(dayObj, month) {
             lunarDayInfo.month,
             { ...tempProfile, sabbathMode: profile.sabbathMode || 'lunar' }
           );
-          if (courseInfo) {
-            priestlyHtml = `<span class="priest-icon">👨‍🦳</span><span title="${courseInfo.meaning}">${courseInfo.course}</span>`;
+          if (courseInfo && !courseInfo.beforeDedication && courseInfo.course) {
+            priestlyHtml = `<span class="priest-icon">👨‍🦳</span><span title="${courseInfo.meaning || ''}">${courseInfo.course}</span>`;
           }
         }
       }

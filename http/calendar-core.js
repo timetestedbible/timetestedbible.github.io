@@ -819,6 +819,11 @@ function renderMonth(month) {
   const lunarYearStart = firstDay1 ? firstDay1.gregorianDate.getUTCFullYear() : state.year;
   const displayYear = formatYear(lunarYearStart);
   
+  // Sync state.year with actual lunar year start (fixes URL/display mismatch)
+  if (lunarYearStart !== state.year) {
+    state.year = lunarYearStart;
+  }
+  
   // Update the top nav profile selector
   updateTopNavProfile();
   

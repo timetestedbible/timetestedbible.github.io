@@ -7571,6 +7571,58 @@ body.biblical-timeline-open .top-nav-inner {
    KJV BIBLE EXPLORER
    ============================================================================ */
 
+/* Bible Loading Dialog */
+.bible-loading-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.bible-loading-dialog.visible {
+  display: flex;
+}
+
+.bible-loading-content {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  border-radius: 12px;
+  padding: 32px 48px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.bible-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(126, 200, 227, 0.2);
+  border-top-color: #d4a017;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: bible-spin 1s linear infinite;
+}
+
+@keyframes bible-spin {
+  to { transform: rotate(360deg); }
+}
+
+.bible-loading-text {
+  font-size: 1.2em;
+  color: #e8e8e8;
+  margin-bottom: 8px;
+}
+
+.bible-loading-subtext {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .bible-explorer-page {
   position: fixed;
   top: 55px;
@@ -7586,34 +7638,107 @@ body.biblical-timeline-open .top-nav-inner {
 .bible-explorer-header {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   border-bottom: 1px solid rgba(126, 200, 227, 0.2);
-  padding: 12px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 16px 16px 12px 16px;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 .bible-explorer-header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.bible-explorer-header h2 {
-  margin: 0;
-  font-size: 1.3em;
+.bible-explorer-title {
+  font-size: 1.2em;
+  font-weight: bold;
   color: #d4a017;
+  white-space: nowrap;
+}
+
+.bible-explorer-select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  color: #e8e8e8;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.bible-explorer-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bible-explorer-select:focus {
+  outline: none;
+  border-color: rgba(126, 200, 227, 0.6);
+}
+
+.bible-explorer-select option {
+  background: #1a1a2e;
+  color: #e8e8e8;
+}
+
+#bible-chapter-select {
+  min-width: 70px;
+}
+
+.bible-explorer-search-inline {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  max-width: 280px;
+  margin-left: auto;
+}
+
+.bible-explorer-search-inline input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  color: #e8e8e8;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  min-width: 100px;
+}
+
+.bible-explorer-search-inline input:focus {
+  outline: none;
+  border-color: rgba(126, 200, 227, 0.6);
+}
+
+.bible-explorer-search-inline .bible-explorer-search-btn {
+  background: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+  border: none;
+  color: #1a1a2e;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bible-explorer-search-inline .bible-explorer-search-btn:hover {
+  background: linear-gradient(135deg, #e8b517 0%, #d4a017 100%);
 }
 
 .bible-explorer-header .close-btn {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   color: #aaa;
-  font-size: 1.5em;
+  font-size: 1.3em;
   cursor: pointer;
   padding: 4px 10px;
   border-radius: 4px;
   transition: all 0.2s;
+  margin-left: 8px;
 }
 
 .bible-explorer-header .close-btn:hover {
@@ -7621,6 +7746,7 @@ body.biblical-timeline-open .top-nav-inner {
   color: #fff;
 }
 
+/* Legacy search styles - kept for compatibility */
 .bible-explorer-search {
   display: flex;
   gap: 8px;
@@ -7667,12 +7793,12 @@ body.biblical-timeline-open .top-nav-inner {
   overflow: hidden;
 }
 
-/* Sidebar Navigation */
+/* Sidebar Navigation - DEPRECATED (now using header dropdowns) */
 .bible-explorer-sidebar {
+  display: none; /* Hidden - using dropdowns now */
   width: 280px;
   background: rgba(0, 0, 0, 0.2);
   border-right: 1px solid rgba(126, 200, 227, 0.1);
-  display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
@@ -7848,13 +7974,18 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .bible-chapter-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
   background: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(126, 200, 227, 0.1);
   flex-shrink: 0;
+  padding: 12px 20px;
+}
+
+.bible-chapter-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .bible-chapter-nav-btn {
@@ -8006,11 +8137,35 @@ body.biblical-timeline-open .top-nav-inner {
     flex-direction: column;
   }
   
+  .bible-explorer-header-inner {
+    gap: 8px;
+    row-gap: 10px;
+  }
+  
+  .bible-explorer-title {
+    font-size: 1em;
+  }
+  
+  .bible-title-text {
+    display: none;
+  }
+  
+  .bible-explorer-select {
+    min-width: 110px;
+    padding: 6px 8px;
+    font-size: 0.9em;
+  }
+  
+  #bible-chapter-select {
+    min-width: 60px;
+  }
+  
+  .bible-explorer-search-inline {
+    max-width: 200px;
+  }
+  
   .bible-explorer-sidebar {
-    width: 100%;
-    max-height: 40vh;
-    border-right: none;
-    border-bottom: 1px solid rgba(126, 200, 227, 0.1);
+    display: none; /* Keep hidden */
   }
   
   .bible-chapters-grid {
@@ -8036,7 +8191,38 @@ body.biblical-timeline-open .top-nav-inner {
   }
   
   .bible-explorer-header {
-    padding: 10px 12px;
+    padding: 12px 10px 10px 10px;
+  }
+  
+  .bible-explorer-header-inner {
+    gap: 6px;
+    row-gap: 10px;
+  }
+  
+  .bible-explorer-title {
+    font-size: 1.1em;
+  }
+  
+  .bible-title-text {
+    display: none;
+  }
+  
+  .bible-explorer-select {
+    min-width: 90px;
+    padding: 5px 6px;
+    font-size: 0.85em;
+  }
+  
+  #bible-chapter-select {
+    min-width: 50px;
+  }
+  
+  .bible-explorer-search-inline {
+    order: 10;
+    flex-basis: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-top: 0;
   }
   
   .bible-explorer-search input {

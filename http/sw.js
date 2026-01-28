@@ -1,5 +1,5 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v517';
+const CACHE_NAME = 'lunar-sabbath-v518';
 
 // Core app files
 const CORE_ASSETS = [
@@ -45,7 +45,7 @@ const CONTENT_ASSETS = [
 
 // Event content files
 const EVENT_ASSETS = [
-  '/_events/joshuas-long-day.md'
+  '/events/joshuas-long-day.txt'
 ];
 
 // Icons and images

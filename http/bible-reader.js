@@ -8,6 +8,17 @@ const BIBLE_CACHE_KEY = 'kjv_bible_cache';
 let bibleData = null;
 let bibleIndex = {}; // Index by "Book Chapter:Verse" for fast lookup
 
+// Show/hide Bible loading dialog
+function showBibleLoadingDialog() {
+  const dialog = document.getElementById('bible-loading-dialog');
+  if (dialog) dialog.classList.add('visible');
+}
+
+function hideBibleLoadingDialog() {
+  const dialog = document.getElementById('bible-loading-dialog');
+  if (dialog) dialog.classList.remove('visible');
+}
+
 // Load Bible from cache or parse from source
 async function loadBible() {
   // Try to load from cache first
@@ -18,6 +29,9 @@ async function loadBible() {
     console.log(`Bible loaded from cache: ${bibleData.length} verses (v${cached.version})`);
     return true;
   }
+  
+  // Show loading dialog for fresh load
+  showBibleLoadingDialog();
   
   // Parse from source file
   try {
@@ -31,9 +45,13 @@ async function loadBible() {
     // Cache the parsed data
     saveBibleToCache(bibleData);
     
+    // Hide loading dialog
+    hideBibleLoadingDialog();
+    
     console.log(`Bible parsed and cached: ${bibleData.length} verses (v${BIBLE_CACHE_VERSION})`);
     return true;
   } catch (err) {
+    hideBibleLoadingDialog();
     console.warn('Bible not available:', err.message);
     return false;
   }
@@ -682,28 +700,59 @@ function buildBookChapterCounts() {
   }
 }
 
-// Populate book lists in sidebar
+// Populate book dropdown in header
 function populateBibleBooks() {
-  const otContainer = document.getElementById('ot-books');
-  const ntContainer = document.getElementById('nt-books');
+  const bookSelect = document.getElementById('bible-book-select');
+  if (!bookSelect) return;
   
-  if (!otContainer || !ntContainer) return;
-  
-  // Old Testament
-  let otHtml = '';
+  let html = '<option value="">Select Book</option>';
+  html += '<optgroup label="Old Testament">';
   for (const book of BIBLE_BOOKS.ot) {
-    const activeClass = bibleExplorerState.currentBook === book ? ' active' : '';
-    otHtml += `<div class="bible-book-item${activeClass}" onclick="selectBibleBook('${book}')">${book}</div>`;
+    const selected = bibleExplorerState.currentBook === book ? ' selected' : '';
+    html += `<option value="${book}"${selected}>${book}</option>`;
   }
-  otContainer.innerHTML = otHtml;
-  
-  // New Testament
-  let ntHtml = '';
+  html += '</optgroup>';
+  html += '<optgroup label="New Testament">';
   for (const book of BIBLE_BOOKS.nt) {
-    const activeClass = bibleExplorerState.currentBook === book ? ' active' : '';
-    ntHtml += `<div class="bible-book-item${activeClass}" onclick="selectBibleBook('${book}')">${book}</div>`;
+    const selected = bibleExplorerState.currentBook === book ? ' selected' : '';
+    html += `<option value="${book}"${selected}>${book}</option>`;
   }
-  ntContainer.innerHTML = ntHtml;
+  html += '</optgroup>';
+  bookSelect.innerHTML = html;
+}
+
+// Handle book dropdown change
+function onBookSelectChange(book) {
+  if (!book) return;
+  selectBibleBook(book);
+}
+
+// Handle chapter dropdown change
+function onChapterSelectChange(chapter) {
+  if (!chapter) return;
+  selectBibleChapter(parseInt(chapter));
+}
+
+// Update chapter dropdown for selected book
+function updateChapterDropdown(book) {
+  const chapterSelect = document.getElementById('bible-chapter-select');
+  if (!chapterSelect) return;
+  
+  const chapterCount = bibleExplorerState.bookChapterCounts[book] || 0;
+  
+  if (chapterCount === 0) {
+    chapterSelect.innerHTML = '<option value="">Ch.</option>';
+    chapterSelect.disabled = true;
+    return;
+  }
+  
+  let html = '<option value="">Ch.</option>';
+  for (let i = 1; i <= chapterCount; i++) {
+    const selected = bibleExplorerState.currentChapter === i ? ' selected' : '';
+    html += `<option value="${i}"${selected}>${i}</option>`;
+  }
+  chapterSelect.innerHTML = html;
+  chapterSelect.disabled = false;
 }
 
 // Toggle testament expansion
@@ -734,19 +783,17 @@ function switchBibleNavTab(tab) {
 function selectBibleBook(bookName) {
   bibleExplorerState.currentBook = bookName;
   
-  // Update book list UI
-  document.querySelectorAll('.bible-book-item').forEach(el => {
-    el.classList.remove('active');
-    if (el.textContent === bookName) {
-      el.classList.add('active');
-    }
-  });
+  // Update book dropdown selection
+  const bookSelect = document.getElementById('bible-book-select');
+  if (bookSelect) {
+    bookSelect.value = bookName;
+  }
   
-  // Populate chapters
-  populateBibleChapters(bookName);
+  // Update chapter dropdown
+  updateChapterDropdown(bookName);
   
-  // Switch to chapters tab
-  switchBibleNavTab('chapters');
+  // Auto-select chapter 1 and display it
+  selectBibleChapter(1);
 }
 
 // Populate chapter grid for selected book
@@ -773,13 +820,11 @@ function selectBibleChapter(chapter) {
   bibleExplorerState.currentChapter = chapter;
   bibleExplorerState.highlightedVerse = null;
   
-  // Update chapter grid UI
-  document.querySelectorAll('.bible-chapter-btn').forEach(el => {
-    el.classList.remove('active');
-    if (parseInt(el.textContent) === chapter) {
-      el.classList.add('active');
-    }
-  });
+  // Update chapter dropdown selection
+  const chapterSelect = document.getElementById('bible-chapter-select');
+  if (chapterSelect) {
+    chapterSelect.value = chapter;
+  }
   
   // Display the chapter
   displayBibleChapter(bibleExplorerState.currentBook, chapter);

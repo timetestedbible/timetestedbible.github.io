@@ -761,6 +761,15 @@ title: "Lunar Sabbath Calendar"
   </div>
 </div>
 
+<!-- Bible Loading Dialog -->
+<div id="bible-loading-dialog" class="bible-loading-dialog">
+  <div class="bible-loading-content">
+    <div class="bible-loading-spinner"></div>
+    <div class="bible-loading-text">Loading KJV Bible...</div>
+    <div class="bible-loading-subtext">This may take a moment on first load</div>
+  </div>
+</div>
+
 <!-- Bible Reader Modal (for inline verse popups) -->
 <div id="bible-reader-modal" class="bible-reader-modal" onclick="if(event.target === this) closeBibleReader()">
   <div class="bible-reader-container">
@@ -778,74 +787,43 @@ title: "Lunar Sabbath Calendar"
 <div id="bible-explorer-page" class="bible-explorer-page" style="display: none;">
   <div class="bible-explorer-header">
     <div class="bible-explorer-header-inner">
-      <h2>📖 KJV Bible</h2>
+      <span class="bible-explorer-title"><span class="bible-title-icon">📖</span><span class="bible-title-text"> KJV Bible</span></span>
+      <select id="bible-book-select" class="bible-explorer-select" onchange="onBookSelectChange(this.value)">
+        <option value="">Select Book</option>
+        <!-- Books populated by JS -->
+      </select>
+      <select id="bible-chapter-select" class="bible-explorer-select" onchange="onChapterSelectChange(this.value)" disabled>
+        <option value="">Ch.</option>
+        <!-- Chapters populated by JS -->
+      </select>
+      <div class="bible-explorer-search-inline">
+        <input type="text" id="bible-explorer-search-input" placeholder="e.g., John 3:16" 
+               onkeydown="if(event.key==='Enter') jumpToVerse()">
+        <button onclick="jumpToVerse()" class="bible-explorer-search-btn">Go</button>
+      </div>
       <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
-    </div>
-    <div class="bible-explorer-search">
-      <input type="text" id="bible-explorer-search-input" placeholder="Go to verse (e.g., John 3:16, Gen 1)" 
-             onkeydown="if(event.key==='Enter') jumpToVerse()">
-      <button onclick="jumpToVerse()" class="bible-explorer-search-btn">Go</button>
     </div>
   </div>
   
   <div class="bible-explorer-body">
-    <!-- Sidebar with book/chapter navigation -->
-    <div class="bible-explorer-sidebar">
-      <div class="bible-explorer-nav-tabs">
-        <button class="bible-nav-tab active" data-tab="books" onclick="switchBibleNavTab('books')">Books</button>
-        <button class="bible-nav-tab" data-tab="chapters" onclick="switchBibleNavTab('chapters')">Chapters</button>
-      </div>
-      
-      <!-- Books Panel -->
-      <div id="bible-books-panel" class="bible-nav-panel active">
-        <div class="bible-testament-section">
-          <div class="bible-testament-header" onclick="toggleTestament('ot')">
-            <span class="bible-testament-toggle" id="ot-toggle">▼</span>
-            <span>Old Testament</span>
-          </div>
-          <div id="ot-books" class="bible-books-list">
-            <!-- Old Testament books populated by JS -->
-          </div>
-        </div>
-        <div class="bible-testament-section">
-          <div class="bible-testament-header" onclick="toggleTestament('nt')">
-            <span class="bible-testament-toggle" id="nt-toggle">▼</span>
-            <span>New Testament</span>
-          </div>
-          <div id="nt-books" class="bible-books-list">
-            <!-- New Testament books populated by JS -->
-          </div>
-        </div>
-      </div>
-      
-      <!-- Chapters Panel -->
-      <div id="bible-chapters-panel" class="bible-nav-panel">
-        <div class="bible-chapters-header">
-          <button class="bible-back-btn" onclick="switchBibleNavTab('books')">← Books</button>
-          <span id="bible-current-book-name">Select a book</span>
-        </div>
-        <div id="bible-chapters-grid" class="bible-chapters-grid">
-          <!-- Chapter numbers populated by JS -->
-        </div>
-      </div>
-    </div>
-    
     <!-- Main reading area -->
     <div class="bible-explorer-content">
       <div class="bible-chapter-nav">
-        <button id="bible-prev-chapter" class="bible-chapter-nav-btn" onclick="navigateBibleChapter(-1)" disabled>
-          ← Previous
-        </button>
-        <span id="bible-chapter-title" class="bible-chapter-title">Select a book to begin</span>
-        <button id="bible-next-chapter" class="bible-chapter-nav-btn" onclick="navigateBibleChapter(1)" disabled>
-          Next →
-        </button>
+        <div class="bible-chapter-nav-inner">
+          <button id="bible-prev-chapter" class="bible-chapter-nav-btn" onclick="navigateBibleChapter(-1)" disabled>
+            ← Previous
+          </button>
+          <span id="bible-chapter-title" class="bible-chapter-title">Select a book to begin</span>
+          <button id="bible-next-chapter" class="bible-chapter-nav-btn" onclick="navigateBibleChapter(1)" disabled>
+            Next →
+          </button>
+        </div>
       </div>
       <div id="bible-explorer-text" class="bible-explorer-text">
         <div class="bible-explorer-welcome">
           <div class="bible-welcome-icon">📖</div>
           <h3>Welcome to the KJV Bible</h3>
-          <p>Select a book from the sidebar or use the search box above to jump to any verse.</p>
+          <p>Select a book and chapter from the dropdowns above, or use the search box to jump to any verse.</p>
           <div class="bible-quick-links">
             <span class="bible-quick-label">Quick Start:</span>
             <button onclick="openBibleExplorerTo('Genesis', 1)">Genesis 1</button>
@@ -1419,13 +1397,13 @@ function parseEventMarkdown(markdown) {
     // Skip main title (# heading)
     if (line.match(/^#\s+/)) continue;
     
-    // Check for scripture reference section
-    if (line.match(/^\*\*.*?\*\*\s*$/) || line.match(/^## Scripture Reference/i)) {
+    // Check for scripture reference section header
+    if (line.match(/^## Scripture Reference/i)) {
       currentSection = 'verse';
       continue;
     }
     
-    // Check for verse reference (bold text like **Joshua 10:12-14**)
+    // Check for verse reference (bold text like **Joshua 10:12-14**) when in verse section
     const verseMatch = line.match(/^\*\*(.+?)\*\*\s*$/);
     if (verseMatch && currentSection === 'verse') {
       result.verse = verseMatch[1];
@@ -3606,6 +3584,7 @@ function changeEra(era) {
     generateCalendar({ preserveMonthIndex: true });
     updateMonthPicker();
     updateYearPicker();  // Update year display after era change
+    updateURL();
   }
 }
 
@@ -3651,6 +3630,7 @@ function applyYearInput() {
     document.getElementById('year-input').value = state.year;
     generateCalendar({ preserveMonthIndex: true });
     updateMonthPicker();
+    updateURL();
   }
   
   hideYearInput();
@@ -3666,6 +3646,7 @@ function changePickerYear(delta) {
     generateCalendar({ preserveMonthIndex: true });
     updateMonthPicker();
     updateEraButtons();
+    updateURL();
   }
 }
 
