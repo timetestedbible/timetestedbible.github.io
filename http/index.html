@@ -1396,11 +1396,141 @@ title: "Lunar Sabbath Calendar"
 // ============================================================================
 
 let bibleEventsByMonthDay = null;
+const eventContentCache = {}; // Cache for loaded markdown content files
+
+// Parse markdown content file into event data structure
+function parseEventMarkdown(markdown) {
+  const result = {
+    description: '',
+    verse: '',
+    quote: '',
+    detailsTitle: '',
+    details: []
+  };
+  
+  const lines = markdown.split('\n');
+  let currentSection = null;
+  let currentHeading = null;
+  let currentText = [];
+  let inQuote = false;
+  let quoteLines = [];
+  
+  for (const line of lines) {
+    // Skip main title (# heading)
+    if (line.match(/^#\s+/)) continue;
+    
+    // Check for scripture reference section
+    if (line.match(/^\*\*.*?\*\*\s*$/) || line.match(/^## Scripture Reference/i)) {
+      currentSection = 'verse';
+      continue;
+    }
+    
+    // Check for verse reference (bold text like **Joshua 10:12-14**)
+    const verseMatch = line.match(/^\*\*(.+?)\*\*\s*$/);
+    if (verseMatch && currentSection === 'verse') {
+      result.verse = verseMatch[1];
+      continue;
+    }
+    
+    // Check for details section header (## heading)
+    const detailsHeaderMatch = line.match(/^## (.+)$/);
+    if (detailsHeaderMatch) {
+      // Save any pending detail
+      if (currentHeading && currentText.length > 0) {
+        result.details.push({
+          heading: currentHeading,
+          text: currentText.join(' ').trim()
+        });
+        currentText = [];
+      }
+      result.detailsTitle = detailsHeaderMatch[1];
+      currentSection = 'details';
+      currentHeading = null;
+      continue;
+    }
+    
+    // Check for detail heading (### heading)
+    const headingMatch = line.match(/^### (.+)$/);
+    if (headingMatch && currentSection === 'details') {
+      // Save previous detail if exists
+      if (currentHeading && currentText.length > 0) {
+        result.details.push({
+          heading: currentHeading,
+          text: currentText.join(' ').trim()
+        });
+        currentText = [];
+      }
+      currentHeading = headingMatch[1];
+      continue;
+    }
+    
+    // Check for blockquote
+    if (line.startsWith('>')) {
+      inQuote = true;
+      quoteLines.push(line.substring(1).trim());
+      continue;
+    } else if (inQuote && line.trim() === '') {
+      result.quote = quoteLines.join(' ').trim();
+      inQuote = false;
+      quoteLines = [];
+      continue;
+    }
+    
+    // Skip horizontal rules and empty lines
+    if (line.match(/^---+\s*$/) || line.trim() === '') {
+      continue;
+    }
+    
+    // Collect text for current section
+    if (currentSection === 'details' && currentHeading) {
+      currentText.push(line.trim());
+    } else if (!currentSection && !result.description) {
+      // First paragraph is the description
+      result.description = line.trim();
+    }
+  }
+  
+  // Save last pending detail
+  if (currentHeading && currentText.length > 0) {
+    result.details.push({
+      heading: currentHeading,
+      text: currentText.join(' ').trim()
+    });
+  }
+  
+  // If still in quote, save it
+  if (inQuote && quoteLines.length > 0) {
+    result.quote = quoteLines.join(' ').trim();
+  }
+  
+  return result;
+}
+
+// Load content from markdown file
+async function loadEventContent(contentFile) {
+  if (eventContentCache[contentFile]) {
+    return eventContentCache[contentFile];
+  }
+  
+  try {
+    const response = await fetch(contentFile);
+    if (response.ok) {
+      const markdown = await response.text();
+      const parsed = parseEventMarkdown(markdown);
+      eventContentCache[contentFile] = parsed;
+      return parsed;
+    }
+  } catch (err) {
+    console.warn(`Failed to load event content file ${contentFile}:`, err.message);
+  }
+  return null;
+}
 
 // Load bible events from both JSON files
 async function loadBibleEvents() {
   bibleEventsByMonthDay = {};
   let totalEvents = 0;
+  const contentFilesToLoad = new Set();
   
   // Load from bible-events-by-month-day.json (legacy format)
   try {
@@ -1408,6 +1538,10 @@ async function loadBibleEvents() {
     if (response.ok) {
       const events = await response.json();
       for (const event of events) {
+        // Track content files that need loading
+        if (event.contentFile) {
+          contentFilesToLoad.add(event.contentFile);
+        }
         const key = `${event.month}-${event.day}`;
         if (!bibleEventsByMonthDay[key]) {
           bibleEventsByMonthDay[key] = [];
@@ -1418,6 +1552,28 @@ async function loadBibleEvents() {
     }
   } catch (err) {
     console.warn('Bible events file not available:', err.message);
+  }
+  
+  // Load all content files in parallel
+  if (contentFilesToLoad.size > 0) {
+    await Promise.all([...contentFilesToLoad].map(file => loadEventContent(file)));
+    
+    // Merge loaded content into events
+    for (const key of Object.keys(bibleEventsByMonthDay)) {
+      for (const event of bibleEventsByMonthDay[key]) {
+        if (event.contentFile && eventContentCache[event.contentFile]) {
+          const content = eventContentCache[event.contentFile];
+          // Merge content, but don't overwrite existing values
+          if (!event.description && content.description) event.description = content.description;
+          if (!event.verse && content.verse) event.verse = content.verse;
+          if (!event.quote && content.quote) event.quote = content.quote;
+          if (!event.detailsTitle && content.detailsTitle) event.detailsTitle = content.detailsTitle;
+          if ((!event.details || event.details.length === 0) && content.details.length > 0) {
+            event.details = content.details;
+          }
+        }
+      }
+    }
   }
   
   // Load from historical-events.json (new format)

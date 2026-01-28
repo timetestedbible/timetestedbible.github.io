@@ -1,6 +1,8 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v515';
-const ASSETS_TO_CACHE = [
+const CACHE_NAME = 'lunar-sabbath-v517';
+
+// Core app files
+const CORE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
@@ -18,16 +20,70 @@ const ASSETS_TO_CACHE = [
   '/priestly-divisions.js',
   '/historical-events.js',
   '/event-resolver.js',
+  '/biblical-timeline.js',
+  '/bible-reader.js',
+  '/jubilee-cycle.js',
+  '/torah-portions.js'
+];
+
+// Data files (JSON)
+const DATA_ASSETS = [
   '/priestly_divisions.json',
   '/bible-events-by-month-day.json',
   '/historical-events.json',
   '/historical-events-v2.json',
-  '/EVENT_SCHEMA.md',
+  '/TorahReadingCycle.json',
+  '/torah-special-readings.json',
+  '/data/eclipses.json'
+];
+
+// Bible and book content
+const CONTENT_ASSETS = [
+  '/kjv.txt',
+  '/media/time-tested-tradition.pdf'
+];
+
+// Event content files
+const EVENT_ASSETS = [
+  '/_events/joshuas-long-day.md'
+];
+
+// Icons and images
+const IMAGE_ASSETS = [
+  '/icons/icon-16.png',
+  '/icons/icon-32.png',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/icons/icon.svg',
+  '/icons/menorah.png',
+  '/assets/img/LongDay.jpg'
+];
+
+// External libraries
+const LIB_ASSETS = [
   'https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js',
   '/lib/swisseph/swisseph-browser.js',
   '/lib/swisseph/swisseph.js',
   '/lib/swisseph/swisseph.wasm',
-  '/data/eclipses.json'
+  '/assets/js/simple-jekyll-search.min.js'
+];
+
+// CSS assets
+const CSS_ASSETS = [
+  '/assets/css/style.css',
+  '/assets/css/book.css',
+  '/assets/css/highlight.css'
+];
+
+// Combine all assets
+const ASSETS_TO_CACHE = [
+  ...CORE_ASSETS,
+  ...DATA_ASSETS,
+  ...CONTENT_ASSETS,
+  ...EVENT_ASSETS,
+  ...IMAGE_ASSETS,
+  ...LIB_ASSETS,
+  ...CSS_ASSETS
 ];
 
 // Install event - cache assets
