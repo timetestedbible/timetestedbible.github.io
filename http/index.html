@@ -2059,6 +2059,15 @@ window.addEventListener('appinstalled', () => {
 
 // Handle install button click
 async function handleInstallClick() {
+  // Track install button click with GoatCounter
+  if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+    goatcounter.count({
+      path: '/event/install-app-click',
+      title: 'Install App Button Click',
+      event: true
+    });
+  }
+  
   // Close the menu
   const menu = document.getElementById('nav-menu');
   const overlay = document.getElementById('nav-menu-overlay');
@@ -2092,6 +2101,14 @@ async function handleInstallClick() {
   
   // Hide the install button if accepted
   if (outcome === 'accepted') {
+    // Track successful install with GoatCounter
+    if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+      goatcounter.count({
+        path: '/event/install-app-accepted',
+        title: 'Install App Accepted',
+        event: true
+      });
+    }
     const installBtn = document.getElementById('install-app-btn');
     if (installBtn) {
       installBtn.style.display = 'none';
@@ -5034,8 +5051,9 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Load Torah portions data
   await loadTorahPortions();
   
-  // Load Bible text for reader
-  await loadBible();
+  // Load Bible text in background (don't block app initialization)
+  // Bible will be available when user opens Bible Explorer or clicks a citation
+  loadBible().catch(err => console.log('Bible loading deferred:', err.message));
   
   // Check if URL has path data or query params - if so, load from URL
   const path = window.location.pathname;

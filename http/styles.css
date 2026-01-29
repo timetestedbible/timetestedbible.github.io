@@ -5118,6 +5118,28 @@ body.torah-info-open {
 }
 
 @media (max-width: 480px) {
+  /* Shrink top nav for small screens */
+  .top-nav-title {
+    font-size: 0.95em;
+  }
+  
+  .top-nav-tagline {
+    font-size: 0.55em;
+  }
+  
+  .top-nav-icon {
+    font-size: 1.4em;
+  }
+  
+  .top-nav-brand {
+    gap: 6px;
+  }
+  
+  .today-btn {
+    font-size: 0.85em;
+    padding: 4px 8px;
+  }
+  
   .day-cell {
     min-height: 48px;
     padding: 2px;
@@ -5247,6 +5269,32 @@ body.torah-info-open {
 
 /* Very small screens */
 @media (max-width: 360px) {
+  /* Further shrink top nav */
+  .top-nav-title {
+    font-size: 0.85em;
+  }
+  
+  .top-nav-tagline {
+    display: none;  /* Hide tagline on very small screens */
+  }
+  
+  .top-nav-icon {
+    font-size: 1.2em;
+  }
+  
+  .top-nav-brand {
+    gap: 4px;
+  }
+  
+  .today-btn {
+    font-size: 0.8em;
+    padding: 3px 6px;
+  }
+  
+  .top-nav-profile-name {
+    font-size: 0.85em;
+  }
+  
   .day-cell .gregorian {
     font-size: 0.5em;
   }

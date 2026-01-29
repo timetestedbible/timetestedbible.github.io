@@ -115,7 +115,8 @@ function hideBibleLoadingDialog() {
 }
 
 // Load Bible from cache or parse from source
-async function loadBible() {
+// showDialog: if true, shows loading dialog (use when user is waiting for Bible)
+async function loadBible(showDialog = false) {
   // Try to load from cache first
   const cached = loadBibleFromCache();
   if (cached) {
@@ -125,8 +126,10 @@ async function loadBible() {
     return true;
   }
   
-  // Show loading dialog for fresh load
-  showBibleLoadingDialog();
+  // Show loading dialog only if requested (user is actively waiting)
+  if (showDialog) {
+    showBibleLoadingDialog();
+  }
   
   // Parse from source file
   try {
@@ -134,30 +137,38 @@ async function loadBible() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const text = await response.text();
     
-    bibleData = parseBibleText(text);
+    bibleData = await parseBibleText(text);
     rebuildIndex();
     
     // Cache the parsed data
     saveBibleToCache(bibleData);
     
     // Hide loading dialog
-    hideBibleLoadingDialog();
+    if (showDialog) {
+      hideBibleLoadingDialog();
+    }
     
     console.log(`Bible parsed and cached: ${bibleData.length} verses (v${BIBLE_CACHE_VERSION})`);
     return true;
   } catch (err) {
-    hideBibleLoadingDialog();
+    if (showDialog) {
+      hideBibleLoadingDialog();
+    }
     console.warn('Bible not available:', err.message);
     return false;
   }
 }
 
-// Parse the KJV text file into structured data
-function parseBibleText(text) {
+// Parse the KJV text file into structured data (async to avoid blocking UI)
+async function parseBibleText(text) {
   const data = [];
   const lines = text.split('\n');
+  const totalLines = lines.length;
   
-  for (let i = 2; i < lines.length; i++) { // Skip header lines
+  // Process in chunks to yield to main thread
+  const CHUNK_SIZE = 2000;
+  
+  for (let i = 2; i < totalLines; i++) { // Skip header lines
     const line = lines[i].trim();
     if (!line) continue;
     
@@ -179,6 +190,11 @@ function parseBibleText(text) {
       text: verseText,
       reference: reference
     });
+    
+    // Yield to main thread every CHUNK_SIZE lines to keep UI responsive
+    if ((i - 2) % CHUNK_SIZE === 0 && i > 2) {
+      await new Promise(resolve => setTimeout(resolve, 0));
+    }
   }
   
   return data;
@@ -488,10 +504,14 @@ function openBibleExplorerFromModal(book, chapter, verse = null) {
 }
 
 // Open the Bible reader with a specific citation
-function openBibleReader(citationStr, title = '') {
+async function openBibleReader(citationStr, title = '') {
+  // If Bible not loaded yet, load it first (with dialog since user is waiting)
   if (!bibleData) {
-    console.warn('Bible data not loaded');
-    return;
+    await loadBible(true);
+    if (!bibleData) {
+      console.warn('Bible data could not be loaded');
+      return;
+    }
   }
   
   const verses = getVersesForCitationString(citationStr);
@@ -536,9 +556,28 @@ function handleCitationClick(event) {
   }
 }
 
-// Make a citation string clickable
+// Build a proper Bible URL from a citation string like "Genesis 1:5" or "Ezekiel 26:4-5"
+function buildBibleUrl(citation) {
+  // Parse citation: "Book Chapter:Verse" or "Book Chapter"
+  const match = citation.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
+  if (!match) return '/bible-explorer';
+  
+  const book = match[1];
+  const chapter = match[2];
+  const verse = match[3];
+  
+  const bookEncoded = encodeURIComponent(book);
+  let url = `/bible/${bookEncoded}/${chapter}`;
+  if (verse) {
+    url += `?verse=${verse}`;
+  }
+  return url;
+}
+
+// Make a citation string clickable with proper URL
 function makeCitationClickable(citationStr, title = '') {
-  return `<a href="#" class="bible-citation-link" data-citation="${citationStr}" data-title="${title}" onclick="handleCitationClick(event)">${citationStr}</a>`;
+  const url = buildBibleUrl(citationStr);
+  return `<a href="${url}" class="bible-citation-link" data-citation="${citationStr}" data-title="${title}" onclick="handleCitationClick(event)">${citationStr}</a>`;
 }
 
 // Map of book abbreviations to full names (matching KJV format)
@@ -702,7 +741,8 @@ function linkifyScriptureReferences(text, contextCitation = '') {
         citation += ':' + endVerse;
       }
     }
-    return `<a href="#" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match}</a>`;
+    const url = buildBibleUrl(citation);
+    return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match}</a>`;
   });
   
   // contextCitation should be like "Ezekiel 26" (book + chapter)
@@ -718,13 +758,15 @@ function linkifyScriptureReferences(text, contextCitation = '') {
         // Pass through the full verse spec (including commas)
         const cleanVerses = verses.replace(/–/g, '-');
         const citation = normalizedBook + ' ' + contextChapter + ':' + cleanVerses;
-        return `<a href="#" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match}</a>`;
+        const url = buildBibleUrl(citation);
+        return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match}</a>`;
       });
       
       result = result.replace(cfPattern, (match, prefix, verses) => {
         const cleanVerses = verses.replace(/–/g, '-');
         const citation = normalizedBook + ' ' + contextChapter + ':' + cleanVerses;
-        return `(cf. <a href="#" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${prefix} ${verses}</a>)`;
+        const url = buildBibleUrl(citation);
+        return `(cf. <a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${prefix} ${verses}</a>)`;
       });
     }
   }
@@ -769,7 +811,8 @@ let bibleExplorerState = {
 // Initialize Bible Explorer
 function initBibleExplorer() {
   if (!bibleData) {
-    loadBible().then(() => {
+    // User is actively waiting, so show loading dialog
+    loadBible(true).then(() => {
       buildBookChapterCounts();
       populateBibleBooks();
     });
