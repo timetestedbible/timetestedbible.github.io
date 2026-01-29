@@ -38,6 +38,9 @@ collections:
   extras:
     output: true
     permalink: /extras/:name/
+  symbols:
+    output: true
+    permalink: /symbols/:name/
 
 defaults:
   - scope:
@@ -58,3 +61,9 @@ defaults:
     values:
       layout: chapter
       content-type: extra
+  - scope:
+      path: ""
+      type: symbols
+    values:
+      layout: symbol
+      content-type: symbol

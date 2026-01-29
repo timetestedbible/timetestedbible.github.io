@@ -1,5 +1,5 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v547';
+const CACHE_NAME = 'lunar-sabbath-v594';
 
 // Core app files
 const CORE_ASSETS = [
@@ -23,7 +23,9 @@ const CORE_ASSETS = [
   '/biblical-timeline.js',
   '/bible-reader.js',
   '/jubilee-cycle.js',
-  '/torah-portions.js'
+  '/torah-portions.js',
+  '/strongs-hebrew-dict.js',
+  '/strongs-greek-dictionary.js'
 ];
 
 // Data files (JSON)
@@ -34,13 +36,17 @@ const DATA_ASSETS = [
   '/historical-events-v2.json',
   '/TorahReadingCycle.json',
   '/torah-special-readings.json',
-  '/data/eclipses.json'
+  '/data/eclipses.json',
+  '/data/interlinear.json',
+  '/data/nt-interlinear.json',
+  '/data/tipnr.json'
 ];
 
 // Bible and book content
 const CONTENT_ASSETS = [
   '/kjv.txt',
   '/asv.txt',
+  '/wlc/verses.txt',
   '/media/time-tested-tradition.pdf'
 ];
 
@@ -57,12 +63,15 @@ const IMAGE_ASSETS = [
   '/icons/icon-512.png',
   '/icons/icon.svg',
   '/icons/menorah.png',
-  '/assets/img/LongDay.jpg'
+  '/assets/img/LongDay.jpg',
+  '/assets/img/earth.png'
 ];
 
 // External libraries
 const LIB_ASSETS = [
   'https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js',
+  'https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js',
+  'https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css',
   '/lib/swisseph/swisseph-browser.js',
   '/lib/swisseph/swisseph.js',
   '/lib/swisseph/swisseph.wasm',

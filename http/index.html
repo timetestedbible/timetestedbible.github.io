@@ -902,9 +902,9 @@ title: "Lunar Sabbath Calendar"
         <!-- Chapters populated by JS -->
       </select>
       <div class="bible-explorer-search-inline">
-        <input type="text" id="bible-explorer-search-input" placeholder="e.g., John 3:16" 
-               onkeydown="if(event.key==='Enter') jumpToVerse()">
-        <button onclick="jumpToVerse()" class="bible-explorer-search-btn">Go</button>
+        <input type="text" id="bible-explorer-search-input" placeholder="John 3:16 or 'mountain'" 
+               onkeydown="if(event.key==='Enter') smartBibleSearch()">
+        <button onclick="smartBibleSearch()" class="bible-explorer-search-btn">Go</button>
       </div>
       <button class="close-btn" onclick="navigateTo('calendar')" aria-label="Close">✕</button>
     </div>
@@ -915,6 +915,10 @@ title: "Lunar Sabbath Calendar"
     <div class="bible-explorer-content">
       <div class="bible-chapter-nav">
         <div class="bible-chapter-nav-inner">
+          <div class="bible-history-buttons">
+            <button id="bible-history-back" class="bible-history-btn" onclick="bibleGoBack()" disabled title="Back">◀</button>
+            <button id="bible-history-forward" class="bible-history-btn" onclick="bibleGoForward()" disabled title="Forward">▶</button>
+          </div>
           <button id="bible-prev-chapter" class="bible-chapter-nav-btn" onclick="navigateBibleChapter(-1)" disabled>
             ← Previous
           </button>
@@ -924,8 +928,13 @@ title: "Lunar Sabbath Calendar"
           </button>
         </div>
       </div>
-      <div id="bible-explorer-text" class="bible-explorer-text">
-        <div class="bible-explorer-welcome">
+      <div id="concept-search-results" class="concept-search-results" style="display: none;"></div>
+      <div id="search-divider" class="search-divider" style="display: none;">
+        <div class="search-divider-handle"></div>
+      </div>
+      <div class="bible-content-wrapper">
+        <div id="bible-explorer-text" class="bible-explorer-text">
+          <div class="bible-explorer-welcome">
           <div class="bible-welcome-icon">📖</div>
           <h3>Welcome to the Bible</h3>
           <p>Choose a translation to begin reading, or select a book and chapter from the dropdowns above.</p>
@@ -969,6 +978,9 @@ title: "Lunar Sabbath Calendar"
           </div>
         </div>
       </div>
+      <!-- Strong's sidebar - populated by JS when user clicks a word -->
+      <div id="strongs-sidebar" class="strongs-sidebar"></div>
+    </div>
     </div>
   </div>
 </div>
@@ -1499,6 +1511,10 @@ title: "Lunar Sabbath Calendar"
 <script src="/historical-events.js"></script>
 <script src="/event-resolver.js?v=2.0"></script>
 <script src="/biblical-timeline.js?v=19.7"></script>
+<script src="/strongs-hebrew-dict.js"></script>
+<script src="/strongs-greek-dictionary.js"></script>
+<script src="/symbol-dictionary.js"></script>
+<script src="/book-scripture-index.js"></script>
 <script src="/bible-reader.js"></script>
 <script src="/torah-portions.js"></script>
 <script>
@@ -4896,7 +4912,7 @@ function renderDatelineVisualization(moonEventDate, options = {}) {
       <div class="dateline-label">${dayStartEvent} line at moment of ${getMoonLabel()} — ${moonDateStr} — ${utcTimeStr}</div>
       <div class="dateline-map" onclick="handleMapClick(event)">
         <div class="dateline-map-bg">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Blue_Marble_2002.png/1280px-Blue_Marble_2002.png" 
+          <img src="/assets/img/earth.png" 
                alt="World Map"
                draggable="false"
                style="user-select: none; -webkit-user-drag: none; pointer-events: none;"
@@ -4982,6 +4998,9 @@ window.addEventListener('popstate', function(event) {
     exportPage.style.display = 'none';
     sabbathTesterPage.style.display = 'block';
     renderSabbathTester();
+  } else if (urlState.view === 'bible-explorer') {
+    // Use loadFromURL to properly handle book/chapter/verse from URL path
+    loadFromURL();
   } else if (urlState.view === 'feasts') {
     navigateTo('feasts');
   } else if (urlState.view === 'priestly') {

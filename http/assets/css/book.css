@@ -44,6 +44,37 @@ blockquote strong {
     font-style: normal;
 }
 
+/* Scripture highlight when navigated to from Bible reader */
+blockquote.scripture-highlight {
+    background: linear-gradient(to right, rgba(212, 160, 23, 0.15), transparent);
+    border-left-color: #d4a017;
+    animation: highlight-fade 3s ease-out forwards;
+}
+
+@keyframes highlight-fade {
+    0% { background: linear-gradient(to right, rgba(212, 160, 23, 0.3), transparent); }
+    100% { background: linear-gradient(to right, rgba(212, 160, 23, 0.1), transparent); }
+}
+
+/* Scripture links - clickable references to Bible reader */
+.scripture-link {
+    color: #8b5a2b;
+    text-decoration: none;
+    border-bottom: 1px dotted #8b5a2b;
+    transition: all 0.15s ease;
+}
+
+.scripture-link:hover {
+    color: #d4a017;
+    border-bottom-color: #d4a017;
+    border-bottom-style: solid;
+}
+
+/* Scripture links in blockquotes */
+blockquote .scripture-link {
+    font-style: normal;
+}
+
 /* Confidence Badges */
 .confidence-badge {
     display: inline-block;
@@ -501,4 +532,43 @@ blockquote strong {
 .main-nav .nav-link:hover {
     background: #f5f5f5;
     color: #2c5282;
+}
+
+/* Header Back Button - for navigating back from chapters/symbols */
+.header-back-btn {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    z-index: 100;
+    background: rgba(139, 90, 43, 0.1);
+    border: 1px solid rgba(139, 90, 43, 0.3);
+    border-radius: 6px;
+    color: #8b5a2b;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-back-btn:hover {
+    background: rgba(139, 90, 43, 0.2);
+    border-color: rgba(139, 90, 43, 0.5);
+    color: #6b4423;
+}
+
+.header-back-btn i {
+    font-size: 12px;
+}
+
+/* Adjust on smaller screens */
+@media (max-width: 768px) {
+    .header-back-btn {
+        top: 8px;
+        left: 8px;
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }
