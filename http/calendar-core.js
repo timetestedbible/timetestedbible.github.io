@@ -85,10 +85,18 @@ function renderJubileeIndicator(lunarYearStart) {
 function updateTopNavProfile() {
   const moonEl = document.getElementById('top-nav-profile-moon');
   const nameEl = document.getElementById('top-nav-profile-name');
-  if (!moonEl || !nameEl) return;
+  if (moonEl && nameEl) {
+    moonEl.textContent = getMoonIcon();
+    nameEl.textContent = getCurrentProfileName();
+  }
   
-  moonEl.textContent = getMoonIcon();
-  nameEl.textContent = getCurrentProfileName();
+  // Also update the desktop sidebar profile display
+  const sidebarMoonEl = document.getElementById('nav-menu-profile-moon');
+  const sidebarNameEl = document.getElementById('nav-menu-profile-name');
+  if (sidebarMoonEl && sidebarNameEl) {
+    sidebarMoonEl.textContent = getMoonIcon();
+    sidebarNameEl.textContent = getCurrentProfileName();
+  }
 }
 
 // Get event icon for a day cell (📰 for historical, 📜 for biblical, or custom icons)

@@ -128,7 +128,13 @@ function selectProfile(profileId) {
   state.yearStartRule = profile.yearStartRule;
   state.crescentThreshold = profile.crescentThreshold ?? 18;
   state.sabbathMode = profile.sabbathMode;
+  state.priestlyCycleAnchor = profile.priestlyCycleAnchor || 'destruction';
   state.selectedProfile = profileId;
+  
+  // Clear priestly cycle cache when profile changes
+  if (typeof referenceJDCache !== 'undefined') {
+    referenceJDCache.clear();
+  }
   
   // Update the profile dropdown in settings page if it exists
   const select = document.getElementById('profile-select');
@@ -181,16 +187,28 @@ function toggleProfilePicker(event) {
   const picker = document.getElementById('profile-picker');
   const overlay = document.getElementById('profile-picker-overlay');
   
-  if (picker.style.display === 'none') {
-    // Position dropdown near the profile selector in top nav
-    const profileBtn = document.getElementById('top-nav-profile');
-    if (profileBtn) {
-      const rect = profileBtn.getBoundingClientRect();
-      picker.style.top = (rect.bottom + 8) + 'px';
+  if (picker.style.display === 'none' || picker.style.display === '') {
+    // Check if we're in desktop mode (menu profile item visible)
+    const menuProfileItem = document.querySelector('.nav-menu-profile-item');
+    const topNavProfile = document.getElementById('top-nav-profile');
+    const isDesktop = window.innerWidth >= 1200;
+    
+    // Position dropdown near the appropriate profile selector
+    let targetEl = isDesktop ? menuProfileItem : topNavProfile;
+    if (targetEl && targetEl.offsetParent !== null) {
+      const rect = targetEl.getBoundingClientRect();
+      picker.style.top = (rect.top) + 'px';
       
-      // Align right edge of picker with right edge of button
-      const pickerWidth = 320;
-      picker.style.left = Math.max(8, rect.right - pickerWidth) + 'px';
+      if (isDesktop) {
+        // On desktop, position to the left of the sidebar
+        picker.style.left = 'auto';
+        picker.style.right = '290px';
+      } else {
+        // On mobile, align right edge of picker with right edge of button
+        const pickerWidth = 320;
+        picker.style.left = Math.max(8, rect.right - pickerWidth) + 'px';
+        picker.style.right = 'auto';
+      }
     }
     
     picker.style.display = 'block';
@@ -255,6 +273,9 @@ function updateSettingsPageState() {
   
   // Update sabbath buttons
   updateSabbathButtons();
+  
+  // Update priestly cycle anchor buttons
+  updatePriestlyCycleAnchorButtons();
   
   // Update city select - use the editing profile's location
   const profileId = editingProfileId || state.selectedProfile;
@@ -709,6 +730,10 @@ function selectMoonPhase(phase) {
   // Only update state if editing the active profile
   if (profileId === state.selectedProfile) {
     state.moonPhase = phase;
+    // Clear priestly cycle cache - moon phase affects reference JD calculation
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
     saveState();
     regenerateCalendarPreservingScroll();
   }
@@ -747,6 +772,10 @@ function selectDayStartTime(time) {
   // Only update state if editing the active profile
   if (profileId === state.selectedProfile) {
     state.dayStartTime = time;
+    // Clear priestly cycle cache - day start time affects reference JD calculation
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
     saveState();
     regenerateCalendarPreservingScroll();
   }
@@ -768,6 +797,10 @@ function selectDayStartAngle(angle) {
   // Only update state if editing the active profile
   if (profileId === state.selectedProfile) {
     state.dayStartAngle = angle;
+    // Clear priestly cycle cache - day start angle affects reference JD calculation
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
     saveState();
     regenerateCalendarPreservingScroll();
   }
@@ -842,6 +875,10 @@ function selectYearStartRule(rule) {
   // Only update state if editing the active profile
   if (profileId === state.selectedProfile) {
     state.yearStartRule = rule;
+    // Clear priestly cycle cache - year start rule affects which years have 13 months
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
     saveState();
     regenerateCalendarPreservingScroll();
   }
@@ -886,6 +923,10 @@ function selectCrescentThreshold(threshold) {
   // Only update state if editing the active profile
   if (profileId === state.selectedProfile) {
     state.crescentThreshold = threshold;
+    // Clear priestly cycle cache - crescent threshold affects reference JD calculation
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
     saveState();
     regenerateCalendarPreservingScroll();
   }
@@ -932,6 +973,10 @@ function selectSabbathMode(mode) {
   // Only update state if editing the active profile
   if (profileId === state.selectedProfile) {
     state.sabbathMode = mode;
+    // Clear priestly cycle cache - sabbath mode affects week counting method
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
     saveState();
     regenerateCalendarPreservingScroll();
   }
@@ -949,6 +994,10 @@ function selectSabbathDayFromDropdown(day) {
   }
   
   state.sabbathMode = day;
+  // Clear priestly cycle cache - sabbath mode affects week counting method
+  if (typeof referenceJDCache !== 'undefined') {
+    referenceJDCache.clear();
+  }
   // Deselect the button options when selecting from dropdown
   document.querySelectorAll('.settings-option-btn[data-sabbath]').forEach(btn => {
     btn.classList.remove('selected');
@@ -957,6 +1006,52 @@ function selectSabbathDayFromDropdown(day) {
   updateProfileButtons();
   saveState();
   regenerateCalendarPreservingScroll();
+}
+
+// ============================================================================
+// PRIESTLY CYCLE ANCHOR SETTINGS
+// ============================================================================
+
+function updatePriestlyCycleAnchorButtons() {
+  const profileId = editingProfileId || state.selectedProfile;
+  const profile = PROFILES[profileId] || PRESET_PROFILES[profileId];
+  const anchor = profile?.priestlyCycleAnchor || state.priestlyCycleAnchor || 'destruction';
+  
+  document.querySelectorAll('.settings-option-btn[data-priestly-anchor]').forEach(btn => {
+    if (btn.dataset.priestlyAnchor === anchor) {
+      btn.classList.add('selected');
+    } else {
+      btn.classList.remove('selected');
+    }
+  });
+}
+
+function selectPriestlyCycleAnchor(anchor) {
+  // Don't allow changes on preset profiles
+  const profileId = editingProfileId || state.selectedProfile;
+  if (PRESET_PROFILES[profileId]) return;
+  
+  // Update the editing profile
+  if (PROFILES[profileId]) {
+    PROFILES[profileId].priestlyCycleAnchor = anchor;
+    saveCustomProfiles();
+  }
+  
+  updatePriestlyCycleAnchorButtons();
+  
+  // Only update state if editing the active profile
+  if (profileId === state.selectedProfile) {
+    state.priestlyCycleAnchor = anchor;
+    saveState();
+    
+    // Clear the priestly cycle cache since the anchor changed
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
+    
+    // Regenerate calendar to reflect any changes in priestly course display
+    regenerateCalendarPreservingScroll();
+  }
 }
 
 // Helper function to format city slug for display

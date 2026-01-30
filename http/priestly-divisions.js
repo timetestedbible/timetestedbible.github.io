@@ -2,25 +2,42 @@
 // PRIESTLY DIVISIONS - Calculate which priestly course is serving
 // ============================================================================
 // 
-// Three historical anchor points establish and validate the priestly cycle:
+// Two configurable anchor points for calculating the priestly cycle:
 //
-// 1. TEMPLE DEDICATION (959 BC) - Start of the cycle
-//    The priestly cycle began at Solomon's Temple dedication during Tabernacles
-//    (15th of 7th month, 959 BC). Course 1 (Jehoiarib) was the first to serve
-//    after the dedication ceremonies. (1 Kings 8; 2 Chronicles 5-7; 1 Chr 24:7)
+// TEMPLE DESTRUCTION (70 AD, 9th of Av) - Talmudic Anchor [DEFAULT]
+//    Talmud Ta'anit 29a explicitly states Jehoiarib (Course 1) was serving when
+//    the Second Temple fell on the 9th of Av, 70 AD. This is the only historically
+//    attested date tying a specific course to a specific day.
 //
-// 2. FIRST TEMPLE DESTRUCTION (587 BC) - Validation point
-//    Jehoiarib may have been serving when the First Temple fell on the 9th of Av.
-//    This provides an intermediate validation point for the cycle continuity.
+// TEMPLE DEDICATION (959 BC, 15th of 7th month) - Inaugural Activation
+//    During Solomon's Temple dedication, all priests served together "without
+//    regard to their courses" (2 Chr 5:11). After the 14-day celebration, Solomon
+//    established the divisions "according to the order of David" (2 Chr 8:14).
+//    This provides a logical starting point for when the rotation began.
 //
-// 3. SECOND TEMPLE DESTRUCTION (70 AD) - STRONGEST validation point
-//    Historical testimony confirms Course 1 (Jehoiarib) was serving when the
-//    Second Temple fell on the 9th of Av, 70 AD. This is the STRONGEST anchor
-//    and serves as the primary validation invariant. Any calendar configuration
-//    that fails to place Jehoiarib at this date should be flagged with a warning.
+// ANCHOR BEHAVIOR BY SABBATH MODE:
 //
-// For Saturday/continuous sabbath: weeks are always 7 days
-// For Lunar sabbath: weeks follow the lunar month (4 weeks per ~29.53 day month)
+//    Lunar Sabbath:
+//    - Each lunar month = exactly 4 weeks = 4 courses
+//    - The Talmudic testimony that "Jehoiarib served at both Temple destructions"
+//      (587 BC and 70 AD) is evidence for this model where weeks reset with lunar months
+//    - In this system, both anchors should produce identical results if the cycle
+//      ran continuously, because lunar months align predictably
+//
+//    Saturday Sabbath:
+//    - Continuous 7-day weeks from the reference point
+//    - The ~375,000 days between 959 BC and 70 AD is NOT a multiple of 168 days
+//      (24 weeks), so the two anchors will give different results
+//    - Saturday sabbath adherents typically rely on Talmudic tradition, which is
+//      also the source for the 70 AD destruction anchor - so they naturally pair
+//    - Default is destruction anchor (70 AD)
+//
+// LUNAR SABBATH WEEK COUNTING:
+//    - Regular year (12 months): 48 weeks = 2 full 24-course cycles
+//    - Leap year (13 months): 52 weeks = 2 full cycles + 4 courses offset
+//    - The 13th month (Adar II) adds 4 courses to the cycle position
+//    - Over a 19-year Metonic cycle: 235 months × 4 weeks = 940 weeks
+//      940 mod 24 = 4 weeks offset per Metonic cycle
 // ============================================================================
 
 // The year of the First Temple dedication (959 BC = astronomical year -958)
@@ -167,8 +184,19 @@ function getTempleDedicationReferenceJD(profile) {
   return dateToJulianDay(tabernaclesStart);
 }
 
-// Check if a date is before the Temple dedication (959 BC)
-function isBeforeTempleDedication(date) {
+// Check if a date is before the anchor point
+// For "dedication" anchor: before 959 BC
+// For "destruction" anchor: always returns false (we calculate backward from 70 AD)
+function isBeforeAnchorPoint(date, profile) {
+  const anchor = getPriestlyCycleAnchor(profile);
+  
+  if (anchor === 'destruction') {
+    // Using 70 AD as anchor - we can calculate backward indefinitely
+    // But we may want to note that dates before ~1000 BC are highly uncertain
+    return false;
+  }
+  
+  // Using Temple Dedication as anchor - can't calculate before 959 BC
   const targetJD = dateToJulianDay(date);
   // Approximate JD for 959 BC - will be calculated more precisely per profile
   // 959 BC ≈ JD 1,355,000 (rough estimate)
@@ -176,19 +204,71 @@ function isBeforeTempleDedication(date) {
   return targetJD < approxDedicationJD;
 }
 
+// Legacy alias for backward compatibility
+function isBeforeTempleDedication(date) {
+  return isBeforeAnchorPoint(date, null);
+}
+
 // Cache for reference JD per profile configuration
 const referenceJDCache = new Map();
 
+// Get the reference JD for the 70 AD Temple Destruction (9th of Av)
+// Returns the Julian Day Number for when Course 1 (Jehoiarib) was serving
+function getTempleDestructionReferenceJD(profile) {
+  // 9th of Av, 70 AD - Talmud Ta'anit 29a confirms Jehoiarib was serving
+  return getNinthOfAvJD(70, profile);
+}
+
+// Get the priestly cycle anchor setting from profile or state
+function getPriestlyCycleAnchor(profile) {
+  return profile?.priestlyCycleAnchor || state.priestlyCycleAnchor || 'destruction';
+}
+
 function getCachedReferenceJD(profile) {
-  // Create a cache key from the relevant profile settings
-  const key = `${profile?.moonPhase || state.moonPhase}-${profile?.dayStartTime || state.dayStartTime}-${profile?.yearStartRule || state.yearStartRule}-${profile?.crescentThreshold || state.crescentThreshold}`;
+  const anchor = getPriestlyCycleAnchor(profile);
+  
+  // Create a cache key from the relevant profile settings including anchor
+  const key = `${anchor}-${profile?.moonPhase || state.moonPhase}-${profile?.dayStartTime || state.dayStartTime}-${profile?.yearStartRule || state.yearStartRule}-${profile?.crescentThreshold || state.crescentThreshold}`;
   
   if (!referenceJDCache.has(key)) {
-    const jd = getTempleDedicationReferenceJD(profile);
+    let jd;
+    if (anchor === 'dedication') {
+      // Use Temple Dedication (959 BC) as anchor
+      jd = getTempleDedicationReferenceJD(profile);
+    } else {
+      // Default: Use Temple Destruction (70 AD) as anchor
+      jd = getTempleDestructionReferenceJD(profile);
+    }
     referenceJDCache.set(key, jd);
   }
   
   return referenceJDCache.get(key);
+}
+
+// Get information about which anchor is being used
+function getPriestlyCycleAnchorInfo(profile) {
+  const anchor = getPriestlyCycleAnchor(profile);
+  if (anchor === 'dedication') {
+    return {
+      anchor: 'dedication',
+      name: 'Temple Dedication',
+      year: -958,
+      yearDisplay: '959 BC',
+      date: '15th of 7th month (Tabernacles)',
+      description: 'Inaugural activation of the priestly cycle when Solomon dedicated the First Temple.',
+      basis: '2 Chronicles 5:11 and 8:14 — all priests served together at dedication, then divisions were established "according to the order of David."'
+    };
+  } else {
+    return {
+      anchor: 'destruction',
+      name: 'Temple Destruction',
+      year: 70,
+      yearDisplay: '70 AD',
+      date: '9th of Av',
+      description: 'Talmudic testimony that Jehoiarib (Course 1) was serving when the Temple fell.',
+      basis: 'Talmud Ta\'anit 29a — the only ancient source explicitly tying a specific course to a specific date.'
+    };
+  }
 }
 
 // Calculate which week within a lunar month a given day falls into
@@ -224,7 +304,7 @@ function getLunarWeekIndex(lunarDay) {
 //   profile: (optional) calendar profile settings to use
 //
 // Returns: { order: 1-24, course: "name", meaning: "description", weekInCycle: 1-24 }
-// For dates before Temple dedication, returns: { beforeDedication: true, dedicationYear: -958 }
+// For dates before the anchor point (when using dedication anchor), returns: { beforeAnchor: true, ... }
 function getPriestlyCourse(date, lunarDay = null, lunarMonth = null, profile = null) {
   if (!PRIESTLY_DIVISIONS) {
     console.warn('Priestly divisions not loaded');
@@ -232,18 +312,22 @@ function getPriestlyCourse(date, lunarDay = null, lunarMonth = null, profile = n
   }
   
   const sabbathMode = profile?.sabbathMode || state.sabbathMode;
+  const anchor = getPriestlyCycleAnchor(profile);
   const targetJD = dateToJulianDay(date);
   const referenceJD = getCachedReferenceJD(profile);
   
   if (referenceJD === null) {
-    console.error('Could not calculate reference date for Temple dedication');
+    console.error('Could not calculate priestly cycle reference date');
     return null;
   }
   
-  // Check if this date is before the Temple dedication
-  if (targetJD < referenceJD) {
+  // Check if this date is before the anchor point
+  // For "dedication" anchor: can't calculate before 959 BC
+  // For "destruction" anchor: we calculate backward from 70 AD, so any date is valid
+  if (anchor === 'dedication' && targetJD < referenceJD) {
     return {
-      beforeDedication: true,
+      beforeAnchor: true,
+      beforeDedication: true, // Legacy field for backward compatibility
       dedicationYear: TEMPLE_DEDICATION_YEAR,
       message: 'Priestly Cycles Start at First Temple Dedication'
     };
@@ -271,7 +355,10 @@ function getPriestlyCourse(date, lunarDay = null, lunarMonth = null, profile = n
       const weeksFromYearStart = weeksBeforeThisMonth + currentWeekInMonth;
       
       // Now we need to know what course was serving at the start of this lunar year
-      // Calculate the offset from reference (Temple Dedication, Tabernacles 959 BC) to the year start
+      // Calculate the offset from the reference point to the year start
+      // Note: Both anchors use a reference date in week 1 of its month:
+      //   - Dedication anchor: 15th of 7th month (days 9-15 = week 1)
+      //   - Destruction anchor: 9th of Av (days 9-15 = week 1)
       const yearStartDay = state.lunarMonths[0]?.days?.[0];
       if (yearStartDay) {
         const yearStartJD = dateToJulianDay(yearStartDay.gregorianDate);
@@ -314,6 +401,10 @@ function getPriestlyCourse(date, lunarDay = null, lunarMonth = null, profile = n
     
   } else {
     // Saturday/continuous sabbath calculation
+    // Uses the configured anchor (defaults to 70 AD destruction).
+    // Saturday sabbath adherents typically rely on Talmudic tradition, which is also
+    // the source for the 70 AD destruction anchor - so they naturally pair together.
+    
     // Normalize both dates to the start of their respective Gregorian weeks
     // Week starts on Sunday (day 0) and ends on Saturday (day 6, the Sabbath)
     

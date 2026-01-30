@@ -514,25 +514,9 @@ function formatAncientDate(date, includeWeekday = true) {
 }
 
 // Render the Sabbath Tester page
-// Cache version for sabbath tester results - increment when test logic changes
-const SABBATH_TESTER_CACHE_VERSION = 'v5';
-
 function renderSabbathTester() {
   const loadingEl = document.getElementById('sabbath-tester-loading');
   const resultsEl = document.getElementById('sabbath-tester-results');
-  
-  // Check for cached results
-  const cacheKey = 'sabbathTesterResults';
-  const cacheVersionKey = 'sabbathTesterVersion';
-  const cachedVersion = localStorage.getItem(cacheVersionKey);
-  const cachedHtml = localStorage.getItem(cacheKey);
-  
-  if (cachedVersion === SABBATH_TESTER_CACHE_VERSION && cachedHtml) {
-    // Use cached results
-    loadingEl.style.display = 'none';
-    resultsEl.innerHTML = cachedHtml;
-    return;
-  }
   
   loadingEl.style.display = 'block';
   resultsEl.innerHTML = '';
@@ -955,15 +939,6 @@ function renderSabbathTester() {
     
     loadingEl.style.display = 'none';
     resultsEl.innerHTML = html;
-    
-    // Cache the results
-    try {
-      localStorage.setItem('sabbathTesterResults', html);
-      localStorage.setItem('sabbathTesterVersion', SABBATH_TESTER_CACHE_VERSION);
-    } catch (e) {
-      // localStorage might be full or unavailable
-      console.warn('Could not cache sabbath tester results:', e);
-    }
     
     // Run engine comparison and log results to console
     setTimeout(() => {

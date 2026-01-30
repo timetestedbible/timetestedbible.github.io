@@ -32,6 +32,7 @@ function loadState() {
         yearStartRule: parsed.yearStartRule || defaultState.yearStartRule,
         crescentThreshold: migrateCrescentThreshold(parsed.crescentThreshold),
         sabbathMode: parsed.sabbathMode || defaultState.sabbathMode,
+        priestlyCycleAnchor: parsed.priestlyCycleAnchor || defaultState.priestlyCycleAnchor,
         selectedProfile: parsed.selectedProfile || defaultState.selectedProfile
         // astronomyEngine is always 'astronomyEngine' for now (Swiss Ephemeris requires self-hosting)
       };
@@ -55,6 +56,7 @@ function saveState() {
     yearStartRule: state.yearStartRule,
     crescentThreshold: state.crescentThreshold,
     sabbathMode: state.sabbathMode,
+    priestlyCycleAnchor: state.priestlyCycleAnchor,
     selectedProfile: state.selectedProfile
     // astronomyEngine not saved - always uses astronomy-engine for now
   };

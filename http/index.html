@@ -290,6 +290,12 @@ title: "Lunar Sabbath Calendar"
     <button class="nav-menu-close" onclick="toggleNavMenu()">✕</button>
   </div>
   <div class="nav-menu-items">
+    <!-- Profile selector as first menu item -->
+    <div class="nav-menu-profile-item" onclick="toggleProfilePicker()" title="Change calendar profile">
+      <span id="nav-menu-profile-moon" class="profile-moon"></span>
+      <span id="nav-menu-profile-name" class="profile-name">Profile</span>
+      <span class="profile-arrow">▼</span>
+    </div>
     <button class="nav-menu-item" onclick="navigateTo('calendar')">
       <span class="icon">📅</span>
       <span>Calendar</span>
@@ -471,10 +477,7 @@ title: "Lunar Sabbath Calendar"
                onkeydown="if(event.key==='Enter') applyYearInput(); if(event.key==='Escape') hideYearInput();"
                onblur="applyYearInput()">
       </div>
-      <select id="era-select" class="era-select" onchange="changeEra(this.value)">
-        <option value="AD">AD</option>
-        <option value="BC">BC</option>
-      </select>
+      <button id="era-toggle" class="era-toggle" onclick="toggleEra()" title="Click to toggle AD/BC">AD</button>
       <div class="year-arrows">
         <button class="year-arrow-btn" onclick="changePickerYear(1)">▲</button>
         <button class="year-arrow-btn" onclick="changePickerYear(-1)">▼</button>
@@ -706,6 +709,40 @@ title: "Lunar Sabbath Calendar"
           <option value="friday">Friday</option>
         </select>
       </div>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Priestly Cycle Reference</h3>
+      <p class="settings-description">Choose the anchor point for calculating which priestly course is serving.</p>
+      <div class="settings-options">
+        <button class="settings-option-btn" data-priestly-anchor="destruction" onclick="selectPriestlyCycleAnchor('destruction')">
+          <span class="option-icon">🏛️</span>
+          <span class="option-label">Temple Destruction (70 AD)</span>
+          <span class="option-hint">Talmudic testimony — only attested anchor</span>
+        </button>
+        <button class="settings-option-btn" data-priestly-anchor="dedication" onclick="selectPriestlyCycleAnchor('dedication')">
+          <span class="option-icon">👑</span>
+          <span class="option-label">Temple Dedication (959 BC)</span>
+          <span class="option-hint">Inaugural activation — inferred start</span>
+        </button>
+      </div>
+      <details class="settings-details">
+        <summary class="settings-details-toggle">📚 Scholarly background on these options</summary>
+        <div class="settings-details-content">
+          <h4>Temple Destruction (70 AD) — Default</h4>
+          <p>The Talmud (Ta'anit 29a) explicitly states that Jehoiarib (Course 1) was serving when the Second Temple fell on the 9th of Av, 70 AD. This is the <strong>only historically attested date</strong> tying a specific priestly course to a specific day.</p>
+          <p>Saturday sabbath adherents typically rely on Talmudic tradition, which is also the source for this anchor — so they naturally pair together.</p>
+          
+          <h4>Temple Dedication (959 BC)</h4>
+          <p>During Solomon's Temple dedication, all priests served together "without regard to their courses" (2 Chronicles 5:11). After the 14-day celebration, Solomon established the divisions "according to the order of David his father" (2 Chronicles 8:14). The dedication coincided with Tabernacles in the 7th month.</p>
+          <p>While no source explicitly states "Course 1 began here," many chronologists treat this as the inaugural activation of the priestly rotation system.</p>
+          
+          <h4>Important notes</h4>
+          <p>For <strong>Saturday sabbath</strong> (continuous 7-day weeks), the ~375,000 days between the two anchors is not a multiple of 168 days (24 weeks), so different anchors will produce different course assignments.</p>
+          <p>For <strong>lunar sabbath</strong>, each month = 4 weeks = 4 courses. Regular years (12 months) = 48 courses. Leap years with a 13th month = 52 courses.</p>
+          <p>Choose based on which evidence you find most compelling.</p>
+        </div>
+      </details>
     </div>
     
     <div class="settings-section">
@@ -1815,9 +1852,9 @@ function getBibleEvents(month, day, gregorianYear = null) {
         return jubileeInfo.isSabbathYear || jubileeInfo.isJubileeYear;
       default:
         // Check for year-specific conditions (e.g., "year_29" for 29 AD)
+        // Always include these - they will be shown as anniversaries when not the original year
         if (event.condition.startsWith('year_')) {
-          const targetYear = parseInt(event.condition.substring(5));
-          return gregorianYear === targetYear;
+          return true;
         }
         // Check for year range conditions (e.g., "year_range_28_33")
         if (event.condition.startsWith('year_range_')) {
@@ -1913,6 +1950,7 @@ const defaultState = {
   yearStartRule: 'equinox', // 'equinox', '13daysBefore', or 'virgoFeet'
   crescentThreshold: 18,    // Hours after conjunction for crescent visibility (12, 15.5, 18, or 24)
   sabbathMode: 'lunar',     // 'lunar', 'saturday', 'sunday', 'friday', 'none'
+  priestlyCycleAnchor: 'destruction', // 'destruction' (70 AD) or 'dedication' (959 BC)
   selectedProfile: 'timeTested', // Currently selected profile ID
   astronomyEngine: 'astronomyEngine', // 'astronomyEngine' or 'swissEphemeris'
   lunarMonths: [],
@@ -2495,7 +2533,16 @@ function updateUI() {
 }
 
 // Navigation Menu Functions
+const DESKTOP_BREAKPOINT = 1200;
+
+function isDesktopLayout() {
+  return window.innerWidth >= DESKTOP_BREAKPOINT;
+}
+
 function toggleNavMenu() {
+  // On desktop, don't toggle - menu is always visible via CSS
+  if (isDesktopLayout()) return;
+  
   const overlay = document.getElementById('nav-menu-overlay');
   const menu = document.getElementById('nav-menu');
   
@@ -2507,6 +2554,16 @@ function toggleNavMenu() {
     overlay.classList.add('open');
   }
 }
+
+// Close mobile menu when resizing to desktop
+window.addEventListener('resize', () => {
+  if (isDesktopLayout()) {
+    const menu = document.getElementById('nav-menu');
+    const overlay = document.getElementById('nav-menu-overlay');
+    if (menu) menu.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
+  }
+});
 
 // navigateTo moved to navigation-routing.js
 
@@ -2777,6 +2834,7 @@ const PRESET_PROFILES = {
     yearStartRule: 'equinox',
     crescentThreshold: 18,
     sabbathMode: 'lunar',
+    priestlyCycleAnchor: 'destruction',  // Uses 70 AD Temple destruction as anchor
     useLocalLocation: true  // Uses saved location or IP detection
   },
   ancientTraditional: {
@@ -2789,6 +2847,7 @@ const PRESET_PROFILES = {
     yearStartRule: '13daysBefore',
     crescentThreshold: 18,
     sabbathMode: 'saturday',
+    priestlyCycleAnchor: 'destruction',  // Uses 70 AD Temple destruction as anchor
     useLocalLocation: true
   },
   ministries119: {
@@ -2801,6 +2860,7 @@ const PRESET_PROFILES = {
     yearStartRule: 'equinox',
     crescentThreshold: 18,
     sabbathMode: 'saturday',
+    priestlyCycleAnchor: 'destruction',  // Uses 70 AD Temple destruction as anchor
     useLocalLocation: true
   },
   creatorsCalendar: {
@@ -2813,6 +2873,7 @@ const PRESET_PROFILES = {
     yearStartRule: 'virgoFeet',
     crescentThreshold: 18,
     sabbathMode: 'lunar',
+    priestlyCycleAnchor: 'destruction',  // Uses 70 AD Temple destruction as anchor
     useLocalLocation: true
   },
   traditionalLunar: {
@@ -2825,6 +2886,7 @@ const PRESET_PROFILES = {
     yearStartRule: 'equinox',
     crescentThreshold: 18,
     sabbathMode: 'lunar',
+    priestlyCycleAnchor: 'destruction',  // Uses 70 AD Temple destruction as anchor
     useLocalLocation: true
   }
 };
@@ -2906,7 +2968,13 @@ async function goToToday() {
     state.yearStartRule = profile.yearStartRule;
     state.crescentThreshold = profile.crescentThreshold || 18;
     state.sabbathMode = profile.sabbathMode;
+    state.priestlyCycleAnchor = profile.priestlyCycleAnchor || 'destruction';
     state.selectedProfile = defaultProfileId;
+    
+    // Clear priestly cycle cache when profile changes
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
   }
   
   // Try GPS first, then fall back to IP
@@ -3348,6 +3416,12 @@ function applyProfile(profileId) {
   state.yearStartRule = profile.yearStartRule;
   state.crescentThreshold = profile.crescentThreshold;
   state.sabbathMode = profile.sabbathMode || 'lunar';
+  state.priestlyCycleAnchor = profile.priestlyCycleAnchor || 'destruction';
+  
+  // Clear priestly cycle cache when profile changes
+  if (typeof referenceJDCache !== 'undefined') {
+    referenceJDCache.clear();
+  }
   
   if (profile.useLocalLocation) {
     // Use saved location first, then fall back to IP detection
@@ -3871,10 +3945,18 @@ function changeEra(era) {
 }
 
 function updateEraButtons() {
-  const eraSelect = document.getElementById('era-select');
-  if (eraSelect) {
-    eraSelect.value = state.year <= 0 ? 'BC' : 'AD';
+  const eraToggle = document.getElementById('era-toggle');
+  if (eraToggle) {
+    const era = state.year <= 0 ? 'BC' : 'AD';
+    eraToggle.textContent = era;
+    eraToggle.classList.toggle('bc', era === 'BC');
   }
+}
+
+function toggleEra() {
+  const currentEra = getPickerEra();
+  const newEra = currentEra === 'AD' ? 'BC' : 'AD';
+  changeEra(newEra);
 }
 
 function applyYearInput() {
@@ -3889,10 +3971,10 @@ function applyYearInput() {
     return;
   }
   
-  // Convert display year to internal year based on era DROPDOWN (not current state)
-  const eraSelect = document.getElementById('era-select');
-  const isBC = eraSelect ? eraSelect.value === 'BC' : state.year <= 0;
-  console.log('Era select value:', eraSelect?.value, '→ isBC:', isBC);
+  // Convert display year to internal year based on era toggle button (not current state)
+  const eraToggle = document.getElementById('era-toggle');
+  const isBC = eraToggle ? eraToggle.textContent === 'BC' : state.year <= 0;
+  console.log('Era toggle value:', eraToggle?.textContent, '→ isBC:', isBC);
   
   let internalYear;
   if (isBC) {
@@ -5219,7 +5301,13 @@ async function initializeFreshLoad() {
     state.yearStartRule = profile.yearStartRule;
     state.crescentThreshold = profile.crescentThreshold || 18;
     state.sabbathMode = profile.sabbathMode;
+    state.priestlyCycleAnchor = profile.priestlyCycleAnchor || 'destruction';
     state.selectedProfile = defaultProfileId;
+    
+    // Clear priestly cycle cache when profile changes
+    if (typeof referenceJDCache !== 'undefined') {
+      referenceJDCache.clear();
+    }
   }
   
   // Try to get location via IP

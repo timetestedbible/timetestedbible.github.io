@@ -773,6 +773,12 @@ function renderPersonInfoHtml(allPersonInfo) {
     
     html += `<div class="strongs-person-info">`;
     html += `<div class="person-info-header">${typeLabel}${nameLabel}${briefLabel}</div>`;
+    if (personInfo.meaning) {
+      html += `<div class="person-info-meaning"><strong>Meaning:</strong> ${personInfo.meaning}</div>`;
+    }
+    if (personInfo.significance) {
+      html += `<div class="person-info-significance"><strong>Significance:</strong> ${linkifyPersonText(personInfo.significance)}</div>`;
+    }
     if (personInfo.d) {
       html += `<div class="person-info-desc">${linkifyPersonText(personInfo.d)}</div>`;
     }

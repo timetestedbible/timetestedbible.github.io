@@ -882,38 +882,39 @@
   display: block;
 }
 
-.era-select {
+.era-toggle {
   background: #0d2840;
   border: 2px solid rgba(212, 160, 23, 0.5);
   border-radius: 8px;
   color: #d4a017;
-  padding: 8px 10px;
+  padding: 8px 16px;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
   margin-left: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4a017' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 6px center;
-  padding-right: 24px;
+  min-width: 50px;
   min-height: 44px;
+  text-align: center;
+  transition: all 0.2s ease;
 }
 
-.era-select:hover {
+.era-toggle:hover {
   border-color: #d4a017;
+  background: rgba(212, 160, 23, 0.1);
 }
 
-.era-select:focus {
-  outline: none;
-  border-color: #d4a017;
-  box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.2);
+.era-toggle:active {
+  transform: scale(0.95);
 }
 
-.era-select option {
-  background: #0d2840;
-  color: #fff;
+.era-toggle.bc {
+  color: #7ec8e3;
+  border-color: rgba(126, 200, 227, 0.5);
+}
+
+.era-toggle.bc:hover {
+  border-color: #7ec8e3;
+  background: rgba(126, 200, 227, 0.1);
 }
 
 .month-grid {
@@ -3015,6 +3016,69 @@ body.sabbath-tester-open {
   font-size: 0.9em;
 }
 
+/* Settings Expandable Details */
+.settings-details {
+  margin-top: 15px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
+}
+
+.settings-details-toggle {
+  cursor: pointer;
+  padding: 12px 15px;
+  color: #7ec8e3;
+  font-size: 0.95em;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-details-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.settings-details-toggle::before {
+  content: '▶';
+  font-size: 0.7em;
+  transition: transform 0.2s;
+}
+
+.settings-details[open] .settings-details-toggle::before {
+  transform: rotate(90deg);
+}
+
+.settings-details-toggle:hover {
+  color: #a0d8f0;
+}
+
+.settings-details-content {
+  padding: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.settings-details-content h4 {
+  color: #7ec8e3;
+  margin: 0 0 8px 0;
+  font-size: 1em;
+}
+
+.settings-details-content h4:not(:first-child) {
+  margin-top: 18px;
+}
+
+.settings-details-content p {
+  margin: 0 0 10px 0;
+}
+
+.settings-details-content p:last-child {
+  margin-bottom: 0;
+}
+
 /* Settings Checkbox Row */
 .settings-checkbox-row {
   display: flex;
@@ -3978,10 +4042,47 @@ body.sabbath-tester-open {
   border: 1px solid rgba(126, 200, 227, 0.4);
 }
 
+.event-year-calendar-link {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.event-year-calendar-link:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 /* Historical event styling */
 .bible-event-item.historical-event {
   border-left-color: #7ec8e3;
   background: rgba(126, 200, 227, 0.1);
+}
+
+/* Anniversary event styling */
+.bible-event-item.anniversary-event {
+  border-left-color: #c9a0dc;
+  background: rgba(201, 160, 220, 0.1);
+}
+
+.anniversary-event-badge {
+  background: rgba(201, 160, 220, 0.2);
+  color: #c9a0dc;
+  border: 1px solid rgba(201, 160, 220, 0.4);
+}
+
+/* Priestly cycle anchor event styling */
+.bible-event-item.priestly-anchor-event {
+  border-left-color: #ffd700;
+  background: rgba(255, 215, 0, 0.15);
+}
+
+.bible-event-item.priestly-anchor-event .event-condition-badge {
+  background: rgba(255, 215, 0, 0.25);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.5);
 }
 
 /* Moon phase event styling */
@@ -9187,6 +9288,24 @@ body.biblical-timeline-open .top-nav-inner {
   padding-top: 8px;
   border-top: 1px solid rgba(126, 200, 227, 0.1);
 }
+.person-info-meaning {
+  font-size: 0.9em;
+  color: #d4a017;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.person-info-meaning strong {
+  color: #e8b828;
+}
+.person-info-significance {
+  font-size: 0.9em;
+  color: #90c090;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.person-info-significance strong {
+  color: #a8d8a8;
+}
 
 /* Links in person info */
 .strongs-person-info .scripture-link {
@@ -9731,5 +9850,175 @@ details.concept-strongs-section[open] .concept-expand-icon {
   
   .concept-strongs-def {
     width: 100%;
+  }
+}
+
+/* ===========================================
+   DESKTOP LAYOUT - Fixed Sidebar Navigation
+   =========================================== */
+
+/* Profile selector as menu item (desktop only - hidden on mobile) */
+.nav-menu-profile-item {
+  display: none; /* Hidden on mobile - profile is in top nav */
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  gap: 10px;
+}
+
+/* Show profile in menu on desktop (where top nav profile is hidden) */
+@media (min-width: 1200px) {
+  .nav-menu-profile-item {
+    display: flex;
+  }
+}
+
+.nav-menu-profile-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-menu-profile-item .profile-moon {
+  font-size: 1.3em;
+  width: 30px;
+}
+
+.nav-menu-profile-item .profile-name {
+  color: #d4a017;
+  font-weight: 600;
+  flex: 1;
+}
+
+.nav-menu-profile-item .profile-arrow {
+  color: #7ec8e3;
+  font-size: 0.8em;
+}
+
+/* Desktop: hide hamburger and adjust UI */
+@media (min-width: 1200px) {
+  /* Hide hamburger button on desktop */
+  .hamburger-btn {
+    display: none !important;
+  }
+  
+  /* Hide profile selector in top nav on desktop */
+  .top-nav-profile {
+    display: none !important;
+  }
+  
+  /* Hide overlay on desktop - menu is always visible */
+  .nav-menu-overlay {
+    display: none !important;
+  }
+  
+  /* Show nav-menu on desktop - pure CSS, no JS needed */
+  #nav-menu,
+  .nav-menu {
+    right: 0 !important;
+    top: 56px !important;
+    height: calc(100% - 56px) !important;
+    width: 280px !important;
+    transition: none !important;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    z-index: 1002 !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: fixed !important;
+    background: linear-gradient(180deg, #1a3a5c 0%, #0d2840 100%) !important;
+  }
+  
+  /* Hide menu header on desktop */
+  .nav-menu .nav-menu-header {
+    display: none !important;
+  }
+  
+  /* Add margin to body for sidebar */
+  body {
+    margin-right: 280px !important;
+  }
+  
+  /* Top nav spans full width */
+  .top-nav {
+    right: 0;
+  }
+  
+  /* Center the calendar in the content area */
+  .calendar-app {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Settings page - adjust positioning */
+  .settings-page {
+    right: 280px;
+  }
+  
+  /* Feasts panel - adjust positioning */
+  .feasts-panel {
+    right: 280px;
+  }
+  
+  /* Strong's panel - adjust positioning */
+  .strongs-panel {
+    right: 280px;
+  }
+  
+  /* Symbol panel positioning */
+  .symbol-panel {
+    right: 290px;
+  }
+  
+  /* Book reference popup positioning */
+  .book-ref-popup {
+    right: 290px;
+  }
+  
+  /* Full-page sections - make room for sidebar */
+  .biblical-timeline-page,
+  .bible-explorer-page,
+  .events-page,
+  .priestly-page,
+  .sabbath-tester-page {
+    right: 280px;
+  }
+  
+  /* Center content within these pages */
+  .events-page-content,
+  .priestly-page-content,
+  .sabbath-tester-content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Day detail popup */
+  .day-popup-overlay {
+    right: 280px;
+  }
+  
+  /* Profile picker - position relative to sidebar on desktop */
+  .profile-picker {
+    right: 290px !important;
+    left: auto !important;
+    top: 70px !important;
+  }
+  
+  /* Profile picker overlay - don't cover sidebar */
+  .profile-picker-overlay {
+    right: 280px;
+  }
+  
+  /* Modals should be centered in the content area, not full viewport */
+  .modal-overlay,
+  .bible-reader-modal,
+  .torah-info-modal,
+  .about-overlay,
+  .jubilee-overlay,
+  .ios-install-overlay {
+    right: 280px;
   }
 }

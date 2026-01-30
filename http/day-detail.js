@@ -721,8 +721,54 @@ function showDayDetail(dayObj, month) {
       } else if (event.condition === 'jubilee_year') {
         conditionBadge = '<span class="event-condition-badge jubilee-year-badge" title="This commandment applies during Jubilee Years">🎺 Jubilee Year</span>';
       } else if (event.condition && event.condition.startsWith('year_')) {
-        conditionBadge = '<span class="event-condition-badge historical-event-badge" title="Historical event that occurred in this specific year">📅 Historical Event</span>';
-        eventClass = ' historical-event';
+        const eventYear = parseInt(event.condition.substring(5));
+        const yearDisplay = eventYear > 0 ? `${eventYear} AD` : `${Math.abs(eventYear)} BC`;
+        const lunarMonth = month.monthNumber;
+        const lunarDay = dayObj.lunarDay;
+        
+        // Check if this is the Temple Dedication event and if the profile uses it as the priestly cycle anchor
+        const isTempleDedication = eventYear === -958 && lunarMonth === 7 && lunarDay === 15;
+        const priestlyCycleAnchor = state.priestlyCycleAnchor || 'destruction';
+        const usesDedicationAnchor = priestlyCycleAnchor === 'dedication';
+        
+        if (gregorianYear === eventYear) {
+          // Viewing the actual historical year - show "Original Event" badge
+          let badgeText = `🏛️ Original Event (${yearDisplay})`;
+          let badgeTitle = 'This is the year this event originally occurred';
+          
+          if (isTempleDedication) {
+            if (usesDedicationAnchor) {
+              badgeText = `🏛️ Original Event (${yearDisplay}) — Priestly Cycle Anchor`;
+              badgeTitle = 'This is the configured anchor for calculating the priestly course cycle';
+              eventClass = ' historical-event priestly-anchor-event';
+            } else {
+              badgeText = `🏛️ Original Event (${yearDisplay})`;
+              badgeTitle = 'This event occurred in this year. Your profile uses the 70 AD Temple Destruction as the priestly cycle anchor, not this date.';
+            }
+          }
+          
+          conditionBadge = `<span class="event-condition-badge historical-event-badge" title="${badgeTitle}">${badgeText}</span>`;
+          eventClass = ' historical-event';
+        } else {
+          // Viewing a different year - show anniversary with calendar link
+          const calendarLink = `<a href="#" class="event-year-calendar-link" onclick="navigateToCalendarDate(${eventYear}, ${lunarMonth}, ${lunarDay}); return false;" title="View this date in ${yearDisplay}">📅</a>`;
+          
+          let badgeText = `${calendarLink} Anniversary (${yearDisplay})`;
+          let badgeTitle = `Anniversary of event from ${yearDisplay}`;
+          
+          if (isTempleDedication) {
+            if (usesDedicationAnchor) {
+              badgeText = `${calendarLink} Anniversary (${yearDisplay}) — Priestly Cycle Anchor`;
+              badgeTitle = 'Anniversary of the Temple Dedication — this is the configured anchor for calculating the priestly course cycle';
+              eventClass = ' anniversary-event priestly-anchor-event';
+            } else {
+              badgeTitle = `Anniversary of the Temple Dedication. Your profile uses the 70 AD Temple Destruction as the priestly cycle anchor.`;
+            }
+          }
+          
+          conditionBadge = `<span class="event-condition-badge anniversary-event-badge" title="${badgeTitle}">${badgeText}</span>`;
+          eventClass = eventClass || ' anniversary-event';
+        }
       } else if (event.condition && event.condition.startsWith('moonPhase_')) {
         const phase = event.condition.substring(10);
         const phaseLabel = phase === 'full' ? 'Full Moon' : phase === 'dark' ? 'Dark Moon' : 'Crescent';
@@ -1261,3 +1307,48 @@ document.addEventListener('click', (e) => {
     hidePriestlyInfoPopup();
   }
 });
+
+// Navigate to a specific calendar date from day detail (for historical events)
+function navigateToCalendarDate(year, lunarMonth, lunarDay) {
+  // Set the calendar year and regenerate
+  state.year = year;
+  
+  if (typeof generateCalendar === 'function') {
+    generateCalendar();
+  }
+  
+  // Navigate to the specific lunar month and day
+  const monthIndex = lunarMonth - 1;
+  if (state.lunarMonths && monthIndex >= 0 && monthIndex < state.lunarMonths.length) {
+    state.currentMonthIndex = monthIndex;
+    state.highlightedLunarDay = lunarDay;
+    
+    // Find the day object and show detail
+    const month = state.lunarMonths[monthIndex];
+    const dayObj = month.days.find(d => d.lunarDay === lunarDay);
+    if (dayObj) {
+      state.selectedTimestamp = typeof getSunriseTimestamp === 'function' 
+        ? getSunriseTimestamp(dayObj.gregorianDate) 
+        : dayObj.gregorianDate.getTime();
+      if (typeof showDayDetail === 'function') {
+        showDayDetail(dayObj, month);
+      }
+    }
+    
+    // Render the month and update UI
+    if (typeof renderMonth === 'function') {
+      renderMonth(month);
+    }
+    if (typeof updateMonthButtons === 'function') {
+      updateMonthButtons();
+    }
+  }
+  
+  // Update URL
+  if (typeof updatePathURL === 'function') {
+    updatePathURL();
+  }
+}
+
+// Expose navigateToCalendarDate globally
+window.navigateToCalendarDate = navigateToCalendarDate;

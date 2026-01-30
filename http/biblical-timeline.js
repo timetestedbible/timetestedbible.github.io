@@ -1025,6 +1025,15 @@ function initDetailPanel() {
         font-size: 1.1em;
         color: #e0e0e0;
       }
+      .lunar-calendar-link {
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+      }
+      .lunar-calendar-link:hover {
+        opacity: 1;
+      }
     `;
     document.head.appendChild(style);
   }
@@ -1069,6 +1078,56 @@ function closeDetailPanel() {
   updateTimelineURL(null, null);
 }
 
+// Navigate to calendar from timeline event detail
+function navigateToCalendarFromTimeline(year, lunarMonth, lunarDay) {
+  // Close the detail panel
+  closeDetailPanel();
+  
+  // Set calendar state
+  state.year = year;
+  
+  // Generate calendar for the target year first
+  if (typeof generateCalendar === 'function') {
+    generateCalendar();
+  }
+  
+  // Set the lunar month and day
+  const monthIndex = lunarMonth - 1;
+  if (state.lunarMonths && monthIndex >= 0 && monthIndex < state.lunarMonths.length) {
+    state.currentMonthIndex = monthIndex;
+    state.highlightedLunarDay = lunarDay;
+    
+    // Find the day object and show detail
+    const month = state.lunarMonths[monthIndex];
+    const dayObj = month.days.find(d => d.lunarDay === lunarDay);
+    if (dayObj) {
+      state.selectedTimestamp = typeof getSunriseTimestamp === 'function' 
+        ? getSunriseTimestamp(dayObj.gregorianDate) 
+        : dayObj.gregorianDate.getTime();
+      if (typeof showDayDetail === 'function') {
+        showDayDetail(dayObj, month);
+      }
+    }
+    
+    // Render the month and update UI
+    if (typeof renderMonth === 'function') {
+      renderMonth(month);
+    }
+    if (typeof updateMonthButtons === 'function') {
+      updateMonthButtons();
+    }
+  }
+  
+  // Push calendar URL to history and navigate
+  if (typeof buildPathURL === 'function') {
+    const calendarURL = buildPathURL();
+    window.history.pushState({ view: 'calendar' }, '', calendarURL);
+  }
+  if (typeof navigateTo === 'function') {
+    navigateTo('calendar');
+  }
+}
+
 // Open the panel with content
 function showDetailPanel(html) {
   initDetailPanel();
@@ -1094,6 +1153,7 @@ function addToDetailHistory(type, id) {
 window.initDetailPanel = initDetailPanel;
 window.closeDetailPanel = closeDetailPanel;
 window.navigateDetailHistory = navigateDetailHistory;
+window.navigateToCalendarFromTimeline = navigateToCalendarFromTimeline;
 
 // =====================================================
 // DURATION DETAIL (uses slide-out panel)
@@ -1378,6 +1438,16 @@ async function openEventDetailInternal(eventId, addHistory = true) {
     }
   }
   
+  // Build calendar link for lunar date
+  let lunarCalendarLink = '';
+  if (event.start?.lunar && resolvedGregorian) {
+    const l = event.start.lunar;
+    const lunarMonth = l.month || 1;
+    const lunarDay = l.day || 1;
+    const calYear = resolvedGregorian.year;
+    lunarCalendarLink = `<a href="#" class="lunar-calendar-link" onclick="navigateToCalendarFromTimeline(${calYear}, ${lunarMonth}, ${lunarDay}); return false;" title="View in Calendar">📅</a> `;
+  }
+  
   // Build HTML
   let html = `
     <h2 class="detail-title">
@@ -1390,7 +1460,7 @@ async function openEventDetailInternal(eventId, addHistory = true) {
       <div class="detail-date-row">
         <div class="detail-date-item">
           <div class="detail-date-label">Lunar</div>
-          <div class="detail-date-value">${lunarDateStr}</div>
+          <div class="detail-date-value">${lunarCalendarLink}${lunarDateStr}</div>
         </div>
         <div class="detail-date-item">
           <div class="detail-date-label">Gregorian</div>
