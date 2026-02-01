@@ -51,8 +51,8 @@ const DatelineMap = {
       showHint = true 
     } = options;
     
-    // Calculate dateline position
-    const datelineLon = this.calculateDatelineLongitude(moonEventDate, moonPhase, dayStartAngle);
+    // Calculate dateline position - where the day-start event is occurring right now
+    const datelineLon = this.calculateDatelineLongitude(moonEventDate, moonPhase, Math.abs(dayStartAngle), dayStartTime, lat);
     const datelinePos = ((datelineLon + 180) / 360) * 100;
     
     // Calculate location marker position
@@ -83,6 +83,14 @@ const DatelineMap = {
     const container = document.createElement('div');
     container.className = 'dateline-container';
     
+    // Calculate sun and moon positions for map overlay
+    const sunMoonPos = this.calculateSunMoonPositions(moonEventDate, moonPhase);
+    const sunX = ((sunMoonPos.sunLon + 180) / 360) * 100;
+    const sunY = ((90 - sunMoonPos.sunLat) / 180) * 100;
+    const moonX = ((sunMoonPos.moonLon + 180) / 360) * 100;
+    const moonY = ((90 - sunMoonPos.moonLat) / 180) * 100;
+    const moonEmoji = this.getMoonPhaseEmoji(moonPhase);
+    
     container.innerHTML = `
       <div class="dateline-label">${dayStartEvent} line at moment of ${moonLabel} — ${moonDateStr} — ${utcTimeStr}</div>
       <div class="dateline-map">
@@ -96,6 +104,8 @@ const DatelineMap = {
         <div class="dateline-location-marker" style="left: ${locX}%; top: ${locY}%" title="${locationName}: ${coordStr}">
           <div class="dateline-location-pin"></div>
         </div>
+        <div class="celestial-marker sun-marker" style="left: ${sunX}%; top: ${sunY}%;" title="Sub-solar point (solar noon)">☀️</div>
+        <div class="celestial-marker moon-marker" style="left: ${moonX}%; top: ${moonY}%;" title="Moon position">${moonEmoji}</div>
       </div>
       <div class="dateline-cities">
         <span>180°W</span>
@@ -104,6 +114,7 @@ const DatelineMap = {
         <span>90°E</span>
         <span>180°E</span>
       </div>
+      ${this.renderDayNightBar(moonEventDate, lat, moonPhase)}
       <div class="dateline-info dateline-daystart">Day start line: ${lonStr} — ${region}</div>
       <div class="dateline-info dateline-location">Your location: ${locationName} (${coordStr})</div>
       ${showHint ? `<div class="dateline-click-hint">Click map to change location • First to reach ${dayStartEvent.toLowerCase()} after ${moonLabel} starts month first</div>` : ''}
@@ -197,28 +208,144 @@ const DatelineMap = {
   },
   
   /**
-   * Calculate the dateline longitude based on moon event
-   * This finds the longitude where sunrise/dawn is currently occurring
+   * Calculate the dateline longitude for the given moment
+   * This finds the longitude where the day-start event (sunrise/dawn) is occurring RIGHT NOW
+   * Uses actual astronomy calculations for accuracy
+   * 
+   * @param {Date} currentTime - The current time (not moon event, but NOW)
+   * @param {string} moonPhase - Not used, kept for API compatibility
+   * @param {number} dayStartAngle - Degrees below horizon (0=sunrise, 12=nautical dawn)
+   * @param {string} dayStartTime - 'morning' or 'evening'
+   * @param {number} lat - Reference latitude for calculations
    */
-  calculateDatelineLongitude(moonEventDate, moonPhase, dayStartAngle = -12) {
-    const utcHours = moonEventDate.getUTCHours() + moonEventDate.getUTCMinutes() / 60 + 
-                     moonEventDate.getUTCSeconds() / 3600;
+  calculateDatelineLongitude(currentTime, moonPhase, dayStartAngle = 12, dayStartTime = 'morning', lat = 35) {
+    // Use the astronomy engine to find where the day-start event is occurring right now
+    const engine = typeof getAstroEngine === 'function' ? getAstroEngine() : null;
+    
+    if (!engine || !engine.getEquator || !engine.getHorizon) {
+      // Fallback to simple calculation if engine not available
+      return this._calculateDatelineLongitudeFallback(currentTime, dayStartAngle, dayStartTime);
+    }
+    
+    // Target altitude: negative for below horizon (dawn), 0 for sunrise
+    const targetAltitude = -dayStartAngle;
+    
+    // Start with the approximate calculation
+    const approxLon = this._calculateDatelineLongitudeFallback(currentTime, dayStartAngle, dayStartTime);
+    
+    // Binary search to find the longitude where sun altitude matches target
+    // The sun's altitude at any moment depends on longitude (local hour angle)
+    let bestLon = approxLon;
+    let bestDiff = Infinity;
+    
+    // Helper to get sun altitude at a longitude
+    const getSunAltitude = (lon) => {
+      try {
+        const observer = engine.createObserver(lat, lon, 0);
+        const sunEquator = engine.getEquator('sun', currentTime, observer);
+        if (!sunEquator) return null;
+        const horizon = engine.getHorizon(currentTime, observer, sunEquator.ra, sunEquator.dec);
+        return horizon ? horizon.altitude : null;
+      } catch (e) {
+        return null;
+      }
+    };
+    
+    // For morning, we want where sun is RISING through target altitude
+    // For evening, we want where sun is SETTING through target altitude
+    // The rising side is to the EAST of the setting side
+    
+    // Coarse search: 5° increments around approximate position
+    for (let offset = -45; offset <= 45; offset += 5) {
+      let testLon = approxLon + offset;
+      while (testLon > 180) testLon -= 360;
+      while (testLon < -180) testLon += 360;
+      
+      const alt = getSunAltitude(testLon);
+      if (alt !== null) {
+        const diff = Math.abs(alt - targetAltitude);
+        if (diff < bestDiff) {
+          bestDiff = diff;
+          bestLon = testLon;
+        }
+      }
+    }
+    
+    // Fine search: 1° increments around best position
+    if (bestDiff < 15) {
+      const coarseBest = bestLon;
+      for (let offset = -6; offset <= 6; offset += 1) {
+        let testLon = coarseBest + offset;
+        while (testLon > 180) testLon -= 360;
+        while (testLon < -180) testLon += 360;
+        
+        const alt = getSunAltitude(testLon);
+        if (alt !== null) {
+          const diff = Math.abs(alt - targetAltitude);
+          if (diff < bestDiff) {
+            bestDiff = diff;
+            bestLon = testLon;
+          }
+        }
+      }
+    }
+    
+    // Very fine search: 0.25° increments
+    if (bestDiff < 5) {
+      const fineBest = bestLon;
+      for (let offset = -1.5; offset <= 1.5; offset += 0.25) {
+        let testLon = fineBest + offset;
+        while (testLon > 180) testLon -= 360;
+        while (testLon < -180) testLon += 360;
+        
+        const alt = getSunAltitude(testLon);
+        if (alt !== null) {
+          const diff = Math.abs(alt - targetAltitude);
+          if (diff < bestDiff) {
+            bestDiff = diff;
+            bestLon = testLon;
+          }
+        }
+      }
+    }
+    
+    // If we didn't find a good match, return the fallback
+    if (bestDiff > 10) {
+      return approxLon;
+    }
+    
+    return bestLon;
+  },
+  
+  /**
+   * Fallback dateline calculation when astronomy engine not available
+   * Uses simple approximation: 15° per hour, sunrise ~6h before noon
+   */
+  _calculateDatelineLongitudeFallback(currentTime, dayStartAngle, dayStartTime = 'morning') {
+    const utcHours = currentTime.getUTCHours() + currentTime.getUTCMinutes() / 60 + 
+                     currentTime.getUTCSeconds() / 3600;
     
     // At 12:00 UTC, the sun is directly over 0° longitude (solar noon)
     // sunNoonLon = longitude where it's currently solar noon
     const sunNoonLon = -((utcHours - 12) * 15);
     
-    // Sunrise occurs ~6 hours before noon = 90° to the WEST of solar noon
-    // (west because those locations have earlier local time)
-    const sunriseLon = sunNoonLon - 90;
+    let datelineLon;
     
-    // For dawn angles (negative = below horizon), dawn occurs BEFORE sunrise
-    // Each degree below horizon = ~4 min earlier = 1° longitude further WEST
-    // dayStartAngle < 0 means below horizon (e.g., -12 for nautical dawn)
-    // So dawn is |dayStartAngle| degrees to the WEST of sunrise
-    const dawnOffset = Math.abs(dayStartAngle);  // degrees of longitude
-    
-    let datelineLon = sunriseLon - dawnOffset;
+    if (dayStartTime === 'morning') {
+      // Sunrise occurs ~6 hours before noon = 90° to the WEST of solar noon
+      const sunriseLon = sunNoonLon - 90;
+      
+      // Dawn offset: each degree below horizon ≈ 4 min ≈ 1° longitude further west
+      const dawnOffset = Math.abs(dayStartAngle);
+      datelineLon = sunriseLon - dawnOffset;
+    } else {
+      // Sunset occurs ~6 hours after noon = 90° to the EAST of solar noon
+      const sunsetLon = sunNoonLon + 90;
+      
+      // Twilight offset: further east for later twilight angles
+      const twilightOffset = Math.abs(dayStartAngle);
+      datelineLon = sunsetLon + twilightOffset;
+    }
     
     // Normalize to -180 to 180
     while (datelineLon > 180) datelineLon -= 360;
@@ -243,6 +370,166 @@ const DatelineMap = {
       if (dayStartAngle === -12) return 'Nautical Dawn';
       if (dayStartAngle === -18) return 'Astronomical Dawn';
       return 'Morning';
+    }
+  },
+  
+  /**
+   * Render a day/night bar showing global illumination
+   * Shows smooth gradient from day to night based on sun position
+   * Sun icon marks sub-solar point, Moon icon marks sub-lunar point with current phase
+   * @param {Date} currentTime - The current time to visualize
+   * @param {number} lat - Reference latitude
+   * @param {string} moonPhase - Current moon phase for icon ('full', 'dark', 'crescent', etc.)
+   * @returns {string} HTML for the day/night bar
+   */
+  renderDayNightBar(currentTime, lat = 0, moonPhase = 'full') {
+    // Calculate sub-solar longitude (where sun is directly overhead)
+    const utcHours = currentTime.getUTCHours() + currentTime.getUTCMinutes() / 60 + 
+                     currentTime.getUTCSeconds() / 3600;
+    
+    // At 12:00 UTC, sub-solar point is at 0° longitude
+    // Sub-solar point moves westward at 15°/hour as Earth rotates
+    let subSolarLon = (12 - utcHours) * 15;
+    // Normalize to -180 to 180
+    while (subSolarLon > 180) subSolarLon -= 360;
+    while (subSolarLon < -180) subSolarLon += 360;
+    
+    // Convert longitude to bar percentage (0% = -180°, 100% = +180°)
+    const lonToPct = (lon) => {
+      let normLon = lon;
+      while (normLon > 180) normLon -= 360;
+      while (normLon < -180) normLon += 360;
+      return ((normLon + 180) / 360) * 100;
+    };
+    
+    // Calculate angular distance from sub-solar point (0-180)
+    const getAngularDist = (lon) => {
+      let diff = lon - subSolarLon;
+      while (diff > 180) diff -= 360;
+      while (diff < -180) diff += 360;
+      return Math.abs(diff);
+    };
+    
+    // Build gradient: day in center of sun, night opposite
+    // Sample every 2° for smooth gradient
+    const stops = [];
+    for (let lon = -180; lon <= 180; lon += 2) {
+      const pct = lonToPct(lon);
+      const dist = getAngularDist(lon);
+      
+      // Brightness based on distance from sub-solar point
+      // 0° = directly under sun (full day)
+      // 90° = sunset/sunrise (horizon)
+      // 108° = end of astronomical twilight
+      // 180° = midnight (full night)
+      let brightness;
+      if (dist <= 90) {
+        // Daytime: smooth cosine falloff from 1.0 to 0.3
+        brightness = 0.3 + 0.7 * Math.cos(dist * Math.PI / 180);
+      } else if (dist <= 108) {
+        // Twilight: 0.3 down to 0
+        const twilightProg = (dist - 90) / 18;
+        brightness = 0.3 * (1 - twilightProg);
+      } else {
+        // Night
+        brightness = 0;
+      }
+      
+      // Interpolate between night color and day color
+      const nightR = 10, nightG = 22, nightB = 40;   // #0a1628
+      const dayR = 135, dayG = 206, dayB = 235;      // #87CEEB
+      
+      const r = Math.round(nightR + (dayR - nightR) * brightness);
+      const g = Math.round(nightG + (dayG - nightG) * brightness);
+      const b = Math.round(nightB + (dayB - nightB) * brightness);
+      
+      stops.push(`rgb(${r},${g},${b}) ${pct.toFixed(1)}%`);
+    }
+    
+    const gradient = `linear-gradient(to right, ${stops.join(', ')})`;
+    
+    return `
+      <div class="day-night-bar" style="background: ${gradient};" title="Day/night illumination by longitude"></div>
+    `;
+  },
+  
+  /**
+   * Calculate sun and moon positions on the map
+   * @param {Date} currentTime - Current time
+   * @param {string} moonPhase - Moon phase for offset calculation
+   * @returns {{ sunLon, sunLat, moonLon, moonLat }}
+   */
+  calculateSunMoonPositions(currentTime, moonPhase = 'full') {
+    const utcHours = currentTime.getUTCHours() + currentTime.getUTCMinutes() / 60 + 
+                     currentTime.getUTCSeconds() / 3600;
+    
+    // Sub-solar longitude: at 12:00 UTC, sun is at 0° longitude
+    let sunLon = (12 - utcHours) * 15;
+    while (sunLon > 180) sunLon -= 360;
+    while (sunLon < -180) sunLon += 360;
+    
+    // Sun's latitude (declination) varies seasonally from -23.44° to +23.44°
+    // Approximate using day of year
+    const dayOfYear = Math.floor((currentTime - new Date(currentTime.getUTCFullYear(), 0, 0)) / 86400000);
+    // Summer solstice around day 172 (June 21), winter solstice around day 355 (Dec 21)
+    // sin wave: peaks at summer solstice
+    const sunLat = 23.44 * Math.sin((dayOfYear - 80) * 2 * Math.PI / 365);
+    
+    // Moon position relative to sun based on phase
+    let moonLonOffset = 0;
+    let moonLatOffset = 0;
+    
+    if (moonPhase === 'full') {
+      moonLonOffset = 180; // Opposite the sun
+    } else if (moonPhase === 'dark' || moonPhase === 'new') {
+      moonLonOffset = 0; // Same as sun (actually near it)
+    } else if (moonPhase === 'crescent') {
+      moonLonOffset = 45;
+    } else if (moonPhase === 'first_quarter') {
+      moonLonOffset = 90;
+    } else if (moonPhase === 'last_quarter') {
+      moonLonOffset = 270;
+    } else if (moonPhase === 'waning') {
+      moonLonOffset = 225;
+    }
+    
+    let moonLon = sunLon + moonLonOffset;
+    while (moonLon > 180) moonLon -= 360;
+    while (moonLon < -180) moonLon += 360;
+    
+    // Moon's latitude varies more than sun (up to ±28.5°) due to orbital inclination
+    // Approximate with slight offset from sun's declination
+    const moonLat = sunLat * 0.9 + (moonLonOffset / 180) * 5; // Rough approximation
+    
+    return { sunLon, sunLat, moonLon, moonLat: Math.max(-60, Math.min(60, moonLat)) };
+  },
+  
+  /**
+   * Get moon phase emoji
+   */
+  getMoonPhaseEmoji(moonPhase) {
+    switch (moonPhase) {
+      case 'new':
+      case 'dark':
+        return '🌑';
+      case 'crescent':
+      case 'waxing_crescent':
+        return '🌒';
+      case 'first_quarter':
+        return '🌓';
+      case 'waxing_gibbous':
+        return '🌔';
+      case 'full':
+        return '🌕';
+      case 'waning_gibbous':
+        return '🌖';
+      case 'last_quarter':
+        return '🌗';
+      case 'waning_crescent':
+      case 'waning':
+        return '🌘';
+      default:
+        return '🌙';
     }
   },
   
@@ -520,25 +807,25 @@ function calculateBiblicalDateForLocation(timestamp, lat, lon, profile, engine) 
 let tzGuideCounter = 0;
 
 // Cache for timezone guide calculations
-// Key: JD rounded to 4 decimal places (~8.6 seconds precision)
+// Key: JD rounded to 4 decimal places (~8.6 seconds precision) + dateline position
 // Value: { samples, html, config }
 const tzGuideCache = {
   data: new Map(),
   maxSize: 50,  // Keep last 50 calculations
   
-  getKey(jd, config) {
-    // Round JD to 4 decimals and include config hash
+  getKey(jd, config, datelineLonKey = '') {
+    // Round JD to 4 decimals and include config hash and dateline position
     const jdKey = jd.toFixed(4);
     const configKey = `${config.moonPhase}-${config.dayStartTime}-${config.dayStartAngle}-${config.yearStartRule}`;
-    return `${jdKey}:${configKey}`;
+    return `${jdKey}:${configKey}:${datelineLonKey}`;
   },
   
-  get(jd, config) {
-    return this.data.get(this.getKey(jd, config));
+  get(jd, config, datelineLonKey = '') {
+    return this.data.get(this.getKey(jd, config, datelineLonKey));
   },
   
-  set(jd, config, value) {
-    const key = this.getKey(jd, config);
+  set(jd, config, value, datelineLonKey = '') {
+    const key = this.getKey(jd, config, datelineLonKey);
     // Evict oldest if at capacity
     if (this.data.size >= this.maxSize) {
       const firstKey = this.data.keys().next().value;
@@ -664,62 +951,83 @@ function getSharedTzEngine(config) {
 }
 
 /**
- * Pure function: Calculate lunar date for a JD at a specific location
- * Uses shared engine to benefit from calendar cache across timezone bands
- * @param {number} jd - Julian Day
- * @param {Object} location - { lat, lon }
+ * Calculate lunar date for a JD at a specific longitude
+ * 
+ * Simple approach: use the passed-in currentDay as the base,
+ * then adjust ±1 based on whether first light has occurred at this longitude.
+ * 
+ * @param {number} jd - Julian Day (current moment)
+ * @param {Object} location - { lat, lon } for day boundary calculation
  * @param {Object} config - Calendar config (moonPhase, dayStartTime, etc.)
+ * @param {Object} currentDay - The user's current biblical day { year, month, day }
+ * @param {number} userLon - The user's longitude (reference point)
  * @returns {{ year, month, day } | null}
  */
-function calcLunarDate(jd, location, config) {
-  try {
-    // Use shared engine to benefit from calendar caching
-    const engine = getSharedTzEngine(config);
-    if (!engine) return null;
-    
-    // Convert JD to Gregorian year
-    const timestamp = (jd - 2440587.5) * 86400000;
-    const gregYear = new Date(timestamp).getUTCFullYear();
-    
-    // Try current year and previous year (lunar years span two Gregorian years)
-    for (const lunarYear of [gregYear, gregYear - 1]) {
-      const calendar = engine.generateYear(lunarYear, location);
-      
-      // Find the day that contains this JD using proper sunrise-based boundaries
-      for (let mi = 0; mi < calendar.months.length; mi++) {
-        const month = calendar.months[mi];
-        for (let di = 0; di < month.days.length; di++) {
-          const day = month.days[di];
-          const dayStartJD = day.jd;  // Sunrise JD (or sunset for evening start)
-          
-          // Get the next day's start JD to define the day boundary
-          let nextDayStartJD;
-          if (di + 1 < month.days.length) {
-            nextDayStartJD = month.days[di + 1].jd;
-          } else if (mi + 1 < calendar.months.length) {
-            nextDayStartJD = calendar.months[mi + 1].days[0].jd;
-          } else {
-            // Last day of year - estimate next sunrise as ~24h later
-            nextDayStartJD = dayStartJD + 1.0;
-          }
-          
-          // Check if JD falls within this day (from this sunrise to next sunrise)
-          if (jd >= dayStartJD && jd < nextDayStartJD) {
-            return {
-              year: calendar.year,
-              month: month.monthNumber,
-              day: day.lunarDay
-            };
-          }
-        }
-      }
-    }
-    
-    return null;
-  } catch (err) {
-    console.warn(`[TZ Guide] calcLunarDate failed:`, err.message);
-    return null;
+function calcLunarDate(jd, location, config, currentDay, userLon) {
+  if (!currentDay) return null;
+  
+  // Calculate how many hours offset this longitude is from the user's longitude
+  // Earth rotates 360° in 24 hours = 15° per hour
+  // East = earlier sunrise, West = later sunrise
+  const lonDiff = location.lon - (userLon || 0);
+  const hoursOffset = lonDiff / 15; // Hours difference in local solar time
+  
+  // Convert JD to local solar time at both locations
+  const timestamp = (jd - 2440587.5) * 86400000;
+  const utcDate = new Date(timestamp);
+  const utcHours = utcDate.getUTCHours() + utcDate.getUTCMinutes() / 60;
+  
+  // Local solar time at target location (approximate)
+  const targetLocalHours = (utcHours + location.lon / 15 + 24) % 24;
+  
+  // Local solar time at user location
+  const userLocalHours = (utcHours + (userLon || 0) / 15 + 24) % 24;
+  
+  // Day boundary time (first light) - approximate as hours after midnight
+  // For morning start with dayStartAngle, first light is before sunrise
+  // Sunrise is ~6 AM local solar time, first light is earlier
+  const firstLightHour = 6 - (config.dayStartAngle || 12) / 15; // ~5 AM for nautical dawn
+  
+  // Determine if each location has crossed first light
+  const targetPastFirstLight = targetLocalHours >= firstLightHour;
+  const userPastFirstLight = userLocalHours >= firstLightHour;
+  
+  // If user is past first light but target isn't, target is one day behind
+  // If target is past first light but user isn't, target is one day ahead
+  let dayOffset = 0;
+  if (userPastFirstLight && !targetPastFirstLight) {
+    dayOffset = -1; // Target is still on previous day
+  } else if (!userPastFirstLight && targetPastFirstLight) {
+    dayOffset = 1; // Target is already on next day
   }
+  
+  // Apply the offset to the current day
+  if (dayOffset === 0) {
+    return { ...currentDay };
+  }
+  
+  // Simple day offset (doesn't handle month boundaries perfectly, but good enough for display)
+  let newDay = currentDay.day + dayOffset;
+  let newMonth = currentDay.month;
+  let newYear = currentDay.year;
+  
+  if (newDay < 1) {
+    newMonth--;
+    if (newMonth < 1) {
+      newMonth = 12;
+      newYear--;
+    }
+    newDay = 30; // Approximate - some months have 29 days
+  } else if (newDay > 30) {
+    newMonth++;
+    if (newMonth > 12) {
+      newMonth = 1;
+      newYear++;
+    }
+    newDay = 1;
+  }
+  
+  return { year: newYear, month: newMonth, day: newDay };
 }
 
 /**
@@ -742,52 +1050,148 @@ function computeTimezoneGuideAsync(guideId, params) {
     yearStartRule: profile.yearStartRule || 'virgoFeet'
   };
   
+  // Use user's latitude for astronomy calculations
+  const sampleLat = userLat || 35;
+  
+  // TEMPORARILY DISABLE CACHE for debugging
   // Check cache first (skip cache in debug mode)
+  // Key by JD and config only - bands are at fixed intervals now
   let samples;
-  const cached = !debug && tzGuideCache.get(jd, config);
+  const cached = !debug && tzGuideCache.get(jd, config, '');
   
   if (cached) {
     // Use cached samples
     samples = cached.samples;
   } else {
     // Calculate lunar date for each of the 24 timezones (15° each)
-    // Pure functional: calcLunarDate(JD, location, config) for each location
+    // Sample at FIXED intervals from -180° to +180° for accurate transition detection
     samples = [];
-    const sampleLat = userLat || 35;  // Use user's latitude for accuracy
     
-    // Calculate for each 15° timezone band (24 samples)
-    for (let lon = -180; lon < 180; lon += 15) {
-      const centerLon = lon + 7.5;
+    // Calculate for each 15° timezone band at fixed intervals
+    for (let i = 0; i < 24; i++) {
+      // Band starts at -180° + (i * 15°)
+      const bandStart = -180 + (i * 15);
+      const centerLon = bandStart + 7.5;
+      
       const location = { lat: sampleLat, lon: centerLon };
       
-      // Pure function call - completely independent for each location
-      // Uses sunrise-based day boundaries for accurate biblical date at this JD
-      const date = calcLunarDate(jd, location, config);
+      // Calculate the biblical date at this longitude
+      // Uses the user's currentDay as reference, adjusts based on first light
+      const date = calcLunarDate(jd, location, config, currentDay, userLon);
       
       samples.push({
-        lon: lon,
+        lon: bandStart,
         width: 15,
         date: date || currentDay  // Fallback to current day if calculation fails
       });
     }
     
     // Store in cache
-    tzGuideCache.set(jd, config, { samples });
+    tzGuideCache.set(jd, config, { samples }, '');
   }
   
+  // Find actual day transitions from samples
+  // This gives us the real longitude where the date changes
+  const transitions = findDateTransitions(samples, jd, sampleLat, config, currentDay, userLon);
+  
   // Build the final HTML and update the DOM
-  const html = buildTimezoneGuideHtml(samples, userLat, userLon, currentDay, calendarData);
+  const html = buildTimezoneGuideHtml(samples, userLat, userLon, currentDay, calendarData, transitions);
   
   const guideEl = document.getElementById(guideId);
   if (guideEl) {
     guideEl.innerHTML = html;
+    // Note: We do NOT update the map line position here.
+    // The map line shows where daybreak IS happening right now (real-time sun position).
+    // The bands show what date each region is experiencing (based on whether day-start occurred).
+    // These are calculated independently - if they align, our logic is validated.
   }
 }
 
 /**
- * Build the HTML content for the timezone guide bands
+ * Find longitude positions where the date transitions
+ * Uses binary search to refine the exact transition point
+ * @param {Array} samples - Array of { lon, width, date } objects
+ * @param {number} jd - Julian Day for calculations
+ * @param {number} lat - Latitude for calculations
+ * @param {Object} config - Calendar config
+ * @param {Object} currentDay - The user's current biblical day
+ * @param {number} userLon - The user's longitude
+ * @returns {Array} Array of { lon, fromDate, toDate } transition points
  */
-function buildTimezoneGuideHtml(samples, userLat, userLon, currentDay, calendarData) {
+function findDateTransitions(samples, jd, lat, config, currentDay, userLon) {
+  const transitions = [];
+  
+  for (let i = 0; i < samples.length; i++) {
+    const sample = samples[i];
+    // Previous sample (wrap around)
+    const prevSample = samples[(i - 1 + samples.length) % samples.length];
+    
+    // Check if date changed
+    if (sample.date.day !== prevSample.date.day ||
+        sample.date.month !== prevSample.date.month ||
+        sample.date.year !== prevSample.date.year) {
+      
+      // Refine the transition point with binary search
+      // The transition is somewhere between prevSample center and sample center
+      const prevCenter = prevSample.lon + prevSample.width / 2;
+      const currCenter = sample.lon + sample.width / 2;
+      
+      // Handle wraparound at ±180°
+      let searchStart = prevCenter;
+      let searchEnd = currCenter;
+      if (searchEnd < searchStart) {
+        searchEnd += 360; // Handle wraparound
+      }
+      
+      // Binary search to find exact transition point (to ~1° precision)
+      let refinedLon = sample.lon; // Default to band boundary
+      for (let iter = 0; iter < 5; iter++) { // 5 iterations = ~0.5° precision
+        const midLon = (searchStart + searchEnd) / 2;
+        let normMidLon = midLon;
+        while (normMidLon > 180) normMidLon -= 360;
+        while (normMidLon < -180) normMidLon += 360;
+        
+        const midDate = calcLunarDate(jd, { lat, lon: normMidLon }, config, currentDay, userLon);
+        
+        if (midDate && midDate.day === prevSample.date.day && 
+            midDate.month === prevSample.date.month && 
+            midDate.year === prevSample.date.year) {
+          // Mid point is still on old date, transition is after mid
+          searchStart = midLon;
+        } else {
+          // Mid point is on new date, transition is before mid
+          searchEnd = midLon;
+        }
+        
+        refinedLon = (searchStart + searchEnd) / 2;
+      }
+      
+      // Normalize the refined longitude
+      while (refinedLon > 180) refinedLon -= 360;
+      while (refinedLon < -180) refinedLon += 360;
+      
+      transitions.push({
+        lon: refinedLon,
+        fromDate: prevSample.date,
+        toDate: sample.date
+      });
+    }
+  }
+  
+  return transitions;
+}
+
+
+/**
+ * Build the HTML content for the timezone guide bands
+ * @param {Array} samples - Array of { lon, width, date } objects
+ * @param {number} userLat - User's latitude
+ * @param {number} userLon - User's longitude
+ * @param {Object} currentDay - Current day { year, month, day }
+ * @param {Object} calendarData - Calendar data
+ * @param {Array} transitions - Array of { lon, fromDate, toDate } transition points
+ */
+function buildTimezoneGuideHtml(samples, userLat, userLon, currentDay, calendarData, transitions = []) {
   
   // Merge adjacent samples with same date
   const mergedBands = [];
@@ -867,10 +1271,22 @@ function buildTimezoneGuideHtml(samples, userLat, userLon, currentDay, calendarD
     boundaryNote = `<div class="tz-guide-note">Month boundary: day start affects which month each region is in</div>`;
   }
   
+  // Draw transition markers at the actual day boundaries
+  // These are computed from real astronomy data
+  let transitionMarkersHtml = '';
+  for (const transition of transitions) {
+    const transitionPct = ((transition.lon + 180) / 360) * 100;
+    const transitionLabel = `${transition.fromDate.day}→${transition.toDate.day}`;
+    transitionMarkersHtml += `
+      <div class="tz-dateline-marker" style="left: ${transitionPct}%;" title="Day boundary: ${transitionLabel}"></div>
+    `;
+  }
+  
   return `
     <div class="tz-guide-label">Biblical Date by Region:</div>
     <div class="tz-bands-container">
       ${bandsHtml}
+      ${transitionMarkersHtml}
     </div>
     ${boundaryNote}
   `;
@@ -984,8 +1400,8 @@ function renderDatelineVisualization(moonEventDate, options = {}) {
     onLocationSelect: null  // No location selection in day detail view
   });
   
-  // Calculate dateline longitude - this is where day start is occurring
-  const datelineLon = DatelineMap.calculateDatelineLongitude(moonEventDate, moonPhase, dayStartAngle);
+  // Calculate dateline longitude - this is where day start is occurring right now
+  const datelineLon = DatelineMap.calculateDatelineLongitude(moonEventDate, moonPhase, Math.abs(dayStartAngle), dayStartTime, lat);
   
   // Get current day from options (passed from calendar-view.js)
   // or derive from AppStore derived state

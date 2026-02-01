@@ -169,6 +169,37 @@
   padding: 0 5px;
 }
 
+/* Celestial body markers on map */
+.celestial-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.6);
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.celestial-marker.sun-marker {
+  font-size: 28px;
+  filter: drop-shadow(0 0 8px rgba(255,200,0,0.6));
+}
+
+.celestial-marker.moon-marker {
+  font-size: 22px;
+  filter: drop-shadow(0 0 6px rgba(200,200,255,0.5));
+}
+
+/* Day/Night visualization bar */
+.day-night-bar {
+  position: relative;
+  height: 12px;
+  margin-top: 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  overflow: hidden;
+}
+
 /* Info lines below map */
 .dateline-info {
   font-size: 0.7em;

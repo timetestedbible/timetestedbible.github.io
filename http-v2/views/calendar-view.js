@@ -7,6 +7,10 @@
  */
 
 const CalendarView = {
+  // Track if resize listener has been added
+  _resizeListenerAdded: false,
+  _lastWasMobile: null,
+  
   // Month name constants (should be moved to a constants module)
   MONTH_NAMES: [
     '1st Month', '2nd Month', '3rd Month', '4th Month', '5th Month', '6th Month',
@@ -38,14 +42,12 @@ const CalendarView = {
     const { context, content } = state;
     const { lunarMonths, currentMonthIndex, currentLunarDay, year } = derived;
     
-    console.log('[CalendarView] render: lunarMonths=', lunarMonths?.length, 'monthIndex=', currentMonthIndex, 'day=', currentLunarDay, 'year=', year);
     
     // Everything derived from selectedDate (JD) - the single source of truth
     const monthIndex = currentMonthIndex;
     const selectedDay = currentLunarDay;
     const month = lunarMonths?.[monthIndex];
     
-    console.log('[CalendarView] render: month=', month ? 'exists' : 'null/undefined');
     
     if (!month || !lunarMonths || lunarMonths.length === 0) {
       container.innerHTML = `
@@ -62,6 +64,28 @@ const CalendarView = {
     
     container.innerHTML = this.renderCalendar(state, derived, month, monthIndex, selectedDay);
     this.attachEventListeners(container, month);
+    
+    // Update left panel with feast list and priestly cycles
+    const profile = derived.config || {};
+    this.updateLeftPanel(lunarMonths, profile);
+    
+    // Set up resize listener (once) to close sidebar when entering mobile mode
+    this.setupResizeListener();
+  },
+  
+  setupResizeListener() {
+    if (this._resizeListenerAdded) return;
+    this._resizeListenerAdded = true;
+    this._lastWasMobile = this.isMobileMode();
+    
+    window.addEventListener('resize', () => {
+      const isMobile = this.isMobileMode();
+      // Close sidebar when transitioning from desktop to mobile
+      if (isMobile && !this._lastWasMobile) {
+        this.closeFeastSidebar();
+      }
+      this._lastWasMobile = isMobile;
+    });
   },
 
   renderCalendar(state, derived, month, monthIndex, selectedDay) {
@@ -84,11 +108,16 @@ const CalendarView = {
     // Sabbath column (for lunar: always column 7)
     const sabbathColumnIndex = sabbathMode === 'lunar' ? 6 : this.getSabbathColumn(day2Weekday, sabbathMode);
     
-    // Today check
-    const now = new Date();
-    const todayYear = now.getUTCFullYear();
-    const todayMonth = now.getUTCMonth();
-    const todayDate = now.getUTCDate();
+    // Today check - use derived values from AppStore (single source of truth)
+    const todayMonthIndex = derived.todayMonthIndex;
+    const todayLunarDay = derived.todayLunarDay;
+    const isThisMonthToday = (monthIndex === todayMonthIndex);
+    
+    // Calculate current time progress for today's cell (0-100%)
+    const timeProgress = isThisMonthToday ? this.calculateTimeProgress(month, todayLunarDay, profile, context.location) : null;
+    
+    // Calculate selected time progress for the selected day (0-100%)
+    const selectedTimeProgress = this.calculateSelectedTimeProgress(month, selectedDay, profile, context.location, context.time);
     
     // Display year from first month
     const firstDay1 = lunarMonths[0]?.days?.find(d => d.lunarDay === 1);
@@ -109,41 +138,45 @@ const CalendarView = {
       <div class="calendar-app">
         <div class="month-calendar">
           <div class="calendar-header">
-            <!-- Row 1: Jubilee Indicator -->
-            <div class="header-row-1">
-              <span class="jubilee-text">${jubileeDisplay}</span>
-            </div>
-            
-            <!-- Row 2: Year | Month | Time | Location -->
+            <!-- Header Row 2: Jubilee label + Datetime/Location controls -->
             <div class="header-row-2">
-              <div class="header-dropdown year" data-action="year-picker">
-                <span>${this.formatYear(displayYear)}</span>
-                <span class="dropdown-arrow">▼</span>
-              </div>
-              <span class="header-separator">|</span>
-              <div class="header-dropdown month" data-action="month-picker">
-                <span>Month ${month.monthNumber}</span>
-                <span class="dropdown-arrow">▼</span>
-              </div>
-              <span class="header-separator">|</span>
-              <div class="header-dropdown time" data-action="time-picker">
-                <span>${this.formatTime(context)}</span>
-                <span class="dropdown-arrow">▼</span>
-              </div>
-              <span class="header-separator">|</span>
-              <div class="header-dropdown location" data-action="location-picker">
-                <span>${this.getLocationName(context.location)}</span>
-                <span class="dropdown-arrow">▼</span>
+              <span class="jubilee-text">${jubileeDisplay}</span>
+              <div class="header-controls">
+                <div class="header-dropdown datetime" data-action="datetime-picker">
+                  <span>${this.formatYear(displayYear)} · Month ${month.monthNumber} · ${this.formatTime(context)}</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <span class="header-separator">|</span>
+                <div class="header-dropdown location" data-action="location-picker">
+                  <span>${this.getLocationName(context.location)}</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
               </div>
             </div>
             
-            <!-- Day 1 box spans both rows -->
-            <div class="new-moon-box day-cell new-moon${selectedDay === 1 ? ' highlighted' : ''}${this.isToday(day1, todayYear, todayMonth, todayDate) ? ' today' : ''}" 
-                 data-lunar-day="1">
-              <div class="gregorian">${day1 ? this.formatShortDate(day1.gregorianDate) : ''}<span class="day-year">${day1 ? this.formatYear(day1.gregorianDate.getUTCFullYear()) : ''}</span></div>
-              <div class="moon-phase">${this.getMoonIcon(profile.moonPhase)}</div>
-              <div class="lunar-day">1</div>
-            </div>
+            <!-- Day 1 box -->
+            ${(() => {
+              const day1Icons = day1 ? this.getDayIconsHtml(day1) : { feastIcons: '', eventIcons: '' };
+              const isDay1Today = isThisMonthToday && todayLunarDay === 1;
+              const isDay1Selected = selectedDay === 1;
+              const day1TimeIndicator = (isDay1Today && timeProgress !== null) 
+                ? `<div class="time-indicator time-indicator-now" style="left: ${timeProgress}%"></div>` 
+                : '';
+              const day1SelectedIndicator = (isDay1Selected && selectedTimeProgress !== null)
+                ? `<div class="time-indicator time-indicator-selected" style="left: ${selectedTimeProgress}%"></div>`
+                : '';
+              return `
+              <div class="new-moon-box day-cell new-moon${isDay1Selected ? ' highlighted' : ''}${isDay1Today ? ' today' : ''}${day1?.feasts?.length > 0 ? ' feast' : ''}${day1?.events?.length > 0 ? ' has-events' : ''}" 
+                   data-lunar-day="1">
+                ${day1TimeIndicator}
+                ${day1SelectedIndicator}
+                <div class="gregorian">${day1 ? this.formatShortDate(day1.gregorianDate) : ''}<span class="day-year">${day1 ? this.formatYear(day1.gregorianDate.getUTCFullYear()) : ''}</span></div>
+                <div class="moon-phase">${this.getMoonIcon(profile.moonPhase)}</div>
+                <div class="lunar-day">1</div>
+                ${day1Icons.eventIcons ? `<div class="day-icons-left">${day1Icons.eventIcons}</div>` : ''}
+                ${day1Icons.feastIcons ? `<div class="day-icons-right">${day1Icons.feastIcons}</div>` : ''}
+              </div>`;
+            })()}
           </div>
           
           <!-- Week Header -->
@@ -162,7 +195,7 @@ const CalendarView = {
           
           <!-- Calendar Grid -->
           <div class="calendar-grid">
-            ${this.renderDays(month, selectedDay, sabbathMode, sabbathColumnIndex, todayYear, todayMonth, todayDate, profile, context.location)}
+            ${this.renderDays(month, selectedDay, sabbathMode, sabbathColumnIndex, isThisMonthToday, todayLunarDay, profile, context.location, selectedTimeProgress)}
           </div>
           
           <!-- Month Buttons -->
@@ -172,14 +205,17 @@ const CalendarView = {
         </div>
         
         <!-- Day Detail -->
-        ${selectedDay ? this.renderDayDetail(month, selectedDay, profile) : ''}
+        ${selectedDay ? this.renderDayDetail(month, selectedDay, profile, context.location) : ''}
       </div>
     `;
   },
 
-  renderDays(month, selectedDay, sabbathMode, sabbathColumnIndex, todayYear, todayMonth, todayDate, profile, location) {
+  renderDays(month, selectedDay, sabbathMode, sabbathColumnIndex, isThisMonthToday, todayLunarDay, profile, location, selectedTimeProgress) {
     const weeks = [[2,3,4,5,6,7,8], [9,10,11,12,13,14,15], [16,17,18,19,20,21,22], [23,24,25,26,27,28,29]];
     let html = '';
+    
+    // Calculate current time progress for today's cell
+    const timeProgress = isThisMonthToday ? this.calculateTimeProgress(month, todayLunarDay, profile, location) : null;
     
     for (const week of weeks) {
       for (const lunarDay of week) {
@@ -190,19 +226,40 @@ const CalendarView = {
         }
         
         const isSabbath = this.isSabbath(lunarDay, day, sabbathMode);
-        const isToday = this.isToday(day, todayYear, todayMonth, todayDate);
+        const isToday = isThisMonthToday && lunarDay === todayLunarDay;
         const isSelected = lunarDay === selectedDay;
+        const hasFeasts = day.feasts && day.feasts.length > 0;
+        const hasEvents = day.events && day.events.length > 0;
         
         let classes = ['day-cell'];
         if (isSabbath) classes.push('sabbath');
         if (isToday) classes.push('today');
         if (isSelected) classes.push('highlighted');
+        if (hasFeasts) classes.push('feast');
+        if (hasEvents) classes.push('has-events');
+        
+        // Build feast/event icons (separated)
+        const dayIcons = this.getDayIconsHtml(day);
+        
+        // Time indicator for today's cell (current time - NOW)
+        const timeIndicator = (isToday && timeProgress !== null) 
+          ? `<div class="time-indicator time-indicator-now" style="left: ${timeProgress}%"></div>` 
+          : '';
+        
+        // Selected time indicator for the selected day
+        const selectedIndicator = (isSelected && selectedTimeProgress !== null)
+          ? `<div class="time-indicator time-indicator-selected" style="left: ${selectedTimeProgress}%"></div>`
+          : '';
         
         html += `
           <div class="${classes.join(' ')}" data-lunar-day="${lunarDay}">
+            ${timeIndicator}
+            ${selectedIndicator}
             <div class="gregorian">${this.formatShortDate(day.gregorianDate)}</div>
             <div class="moon-phase">${this.getMoonIconForDay(day, lunarDay, profile, location)}</div>
             <div class="lunar-day">${lunarDay}</div>
+            ${dayIcons.eventIcons ? `<div class="day-icons-left">${dayIcons.eventIcons}</div>` : ''}
+            ${dayIcons.feastIcons ? `<div class="day-icons-right">${dayIcons.feastIcons}</div>` : ''}
           </div>
         `;
       }
@@ -211,17 +268,38 @@ const CalendarView = {
     // Day 30 - always show space even if month doesn't have 30 days
     const day30 = month.days.find(d => d.lunarDay === 30);
     if (day30) {
-      const isToday30 = this.isToday(day30, todayYear, todayMonth, todayDate);
+      const isToday30 = isThisMonthToday && todayLunarDay === 30;
       const isSelected30 = selectedDay === 30;
+      const hasFeasts30 = day30.feasts && day30.feasts.length > 0;
+      const hasEvents30 = day30.events && day30.events.length > 0;
+      
       let classes30 = ['day-cell'];
       if (isToday30) classes30.push('today');
       if (isSelected30) classes30.push('highlighted');
+      if (hasFeasts30) classes30.push('feast');
+      if (hasEvents30) classes30.push('has-events');
+      
+      const dayIcons30 = this.getDayIconsHtml(day30);
+      
+      // Time indicator for day 30 if it's today (NOW)
+      const timeIndicator30 = (isToday30 && timeProgress !== null) 
+        ? `<div class="time-indicator time-indicator-now" style="left: ${timeProgress}%"></div>` 
+        : '';
+      
+      // Selected time indicator for day 30 if it's selected
+      const selectedIndicator30 = (isSelected30 && selectedTimeProgress !== null)
+        ? `<div class="time-indicator time-indicator-selected" style="left: ${selectedTimeProgress}%"></div>`
+        : '';
       
       html += `
         <div class="${classes30.join(' ')}" data-lunar-day="30">
+          ${timeIndicator30}
+          ${selectedIndicator30}
           <div class="gregorian">${this.formatShortDate(day30.gregorianDate)}</div>
           <div class="moon-phase">${this.getMoonIconForDay(day30, 30, profile, location)}</div>
           <div class="lunar-day">30</div>
+          ${dayIcons30.eventIcons ? `<div class="day-icons-left">${dayIcons30.eventIcons}</div>` : ''}
+          ${dayIcons30.feastIcons ? `<div class="day-icons-right">${dayIcons30.feastIcons}</div>` : ''}
         </div>
       `;
     } else {
@@ -236,9 +314,14 @@ const CalendarView = {
         <span class="nav-arrow year-nav" data-action="prev-year" title="Previous Year">⏮</span>
         <span class="nav-arrow month-nav" data-action="prev-month" title="Previous Month">◀</span>
       </div>
-      <div class="profile-display span-4" data-action="profile-editor" title="Edit Profile Settings">
-        <span class="profile-icon">${profile.icon || '🌕'}</span>
-        <span class="profile-name">${profileName}</span>
+      <div class="profile-nav-cell span-4">
+        <div class="profile-display" data-action="profile-editor" title="Edit Profile Settings">
+          <span class="profile-icon">${profile.icon || '🌕'}</span>
+          <span class="profile-name">${profileName}</span>
+        </div>
+        <button class="feast-toggle-btn" data-action="toggle-feasts" title="Show Appointed Times & Priestly Courses">
+          🎉 <span class="feast-btn-label">Feasts</span>
+        </button>
       </div>
       <div class="month-nav-cell nav-group">
         <span class="nav-arrow month-nav" data-action="next-month" title="Next Month">▶</span>
@@ -251,27 +334,1092 @@ const CalendarView = {
 
   renderMonthButtons(monthCount, currentIndex) {
     let html = '';
-    for (let i = 0; i < Math.min(monthCount, 13); i++) {
+    // Only render buttons for actual months in this year (12 or 13)
+    for (let i = 0; i < monthCount; i++) {
       const isActive = i === currentIndex;
       html += `<button class="month-btn${isActive ? ' active' : ''}" data-month="${i}">${i + 1}</button>`;
     }
     return html;
   },
+  
+  renderFeastList(months) {
+    if (!months || months.length === 0) return '<div class="feast-list-empty">No calendar data</div>';
+    
+    // Get FEASTS array
+    const feasts = typeof getAllFeasts === 'function' ? getAllFeasts() : (typeof FEASTS !== 'undefined' ? FEASTS : []);
+    if (!feasts || feasts.length === 0) return '<div class="feast-list-empty">Feast data not loaded</div>';
+    
+    // Track shown feasts for multi-month handling
+    const shownFeasts = new Set();
+    const feastEntries = [];
+    
+    for (const feast of feasts) {
+      // Skip continuation entries and Renewed Moon (too many)
+      if (feast.name === 'Renewed Moon') continue;
+      if (feast.continuesNextMonth === undefined && shownFeasts.has(feast.name)) continue;
+      
+      const month = months.find(m => m.monthNumber === feast.month);
+      if (!month) continue;
+      
+      const day = month.days.find(d => d.lunarDay === feast.day);
+      if (!day) continue;
+      
+      let dateStr;
+      
+      // Handle Hanukkah spanning two months
+      if (feast.name === 'Hanukkah' && feast.continuesNextMonth) {
+        shownFeasts.add('Hanukkah');
+        dateStr = this.formatShortDate(day.gregorianDate);
+      } else if (feast.name === 'Hanukkah' && !feast.continuesNextMonth) {
+        continue; // Skip continuation entry
+      } else {
+        dateStr = this.formatShortDate(day.gregorianDate);
+      }
+      
+      const monthIdx = months.findIndex(m => m.monthNumber === feast.month);
+      
+      feastEntries.push({
+        feast,
+        monthIdx,
+        dayIdx: feast.day,
+        dateStr,
+        sortDate: day.gregorianDate
+      });
+    }
+    
+    // Sort by Gregorian date
+    feastEntries.sort((a, b) => a.sortDate.getTime() - b.sortDate.getTime());
+    
+    // Build list items
+    return feastEntries.map(entry => `
+      <div class="feast-list-item" data-month="${entry.monthIdx}" data-day="${entry.dayIdx}">
+        <span class="feast-icon">${entry.feast.icon}</span>
+        <div class="feast-info">
+          <div class="feast-name">${entry.feast.shortName || entry.feast.name}</div>
+          <div class="feast-date">${entry.dateStr}</div>
+        </div>
+      </div>
+    `).join('');
+  },
 
-  renderDayDetail(month, lunarDay, profile) {
+  renderPriestlyCycleList(months, profile) {
+    if (!months || months.length === 0) return '';
+    if (typeof getPriestlyCourseForDay !== 'function') return '';
+    if (typeof PRIESTLY_DIVISIONS === 'undefined' || !PRIESTLY_DIVISIONS) return '';
+    
+    const sabbathMode = profile?.sabbathMode || 'lunar';
+    const entries = [];
+    
+    // For each month, find the priestly courses for each week
+    for (let mi = 0; mi < months.length; mi++) {
+      const month = months[mi];
+      
+      if (sabbathMode === 'lunar') {
+        // Lunar sabbath: weeks are days 2-8, 9-15, 16-22, 23-29/30
+        const weekStarts = [2, 9, 16, 23];
+        for (const weekStart of weekStarts) {
+          const dayObj = month.days.find(d => d.lunarDay === weekStart);
+          if (!dayObj) continue;
+          
+          const courseInfo = getPriestlyCourseForDay(dayObj, month, profile);
+          if (!courseInfo || courseInfo.beforeDedication) continue;
+          
+          // Find the sabbath (end of this week)
+          const sabbathDay = weekStart === 2 ? 8 : weekStart === 9 ? 15 : weekStart === 16 ? 22 : 29;
+          const sabbathObj = month.days.find(d => d.lunarDay === sabbathDay);
+          
+          entries.push({
+            monthIdx: mi,
+            monthNumber: month.monthNumber,
+            weekStart,
+            sabbathDay,
+            startDate: dayObj.gregorianDate,
+            endDate: sabbathObj ? sabbathObj.gregorianDate : dayObj.gregorianDate,
+            course: courseInfo.course,
+            order: courseInfo.order,
+            meaning: courseInfo.meaning,
+            hebrew: courseInfo.hebrew
+          });
+        }
+      } else {
+        // Saturday sabbath - check start of each week
+        for (let d = 0; d < month.days.length; d++) {
+          const dayObj = month.days[d];
+          const weekday = Math.floor((dayObj.jd || 0) + 1.5) % 7;
+          
+          // Only process Sunday (start of week)
+          if (weekday !== 0) continue;
+          
+          const courseInfo = getPriestlyCourseForDay(dayObj, month, profile);
+          if (!courseInfo || courseInfo.beforeDedication) continue;
+          
+          // Find Saturday (end of week)
+          const saturdayIdx = d + 6;
+          const sabbathObj = saturdayIdx < month.days.length ? month.days[saturdayIdx] : null;
+          
+          entries.push({
+            monthIdx: mi,
+            monthNumber: month.monthNumber,
+            weekStart: dayObj.lunarDay,
+            sabbathDay: sabbathObj ? sabbathObj.lunarDay : dayObj.lunarDay,
+            startDate: dayObj.gregorianDate,
+            endDate: sabbathObj ? sabbathObj.gregorianDate : dayObj.gregorianDate,
+            course: courseInfo.course,
+            order: courseInfo.order,
+            meaning: courseInfo.meaning,
+            hebrew: courseInfo.hebrew
+          });
+        }
+      }
+    }
+    
+    if (entries.length === 0) return '<div class="priestly-list-empty">No priestly data available</div>';
+    
+    // Build HTML - list of courses for the year
+    return entries.map(entry => `
+      <div class="priestly-list-item" 
+           data-month="${entry.monthIdx}" 
+           data-day="${entry.weekStart}">
+        <span class="priestly-order">${entry.order}</span>
+        <div class="priestly-info">
+          <div class="priestly-name">${entry.course}</div>
+          <div class="priestly-dates">Month ${entry.monthNumber}: Days ${entry.weekStart}-${entry.sabbathDay}</div>
+        </div>
+      </div>
+    `).join('');
+  },
+
+  renderDayDetail(month, lunarDay, profile, location) {
     const day = month.days.find(d => d.lunarDay === lunarDay);
     if (!day) return '';
     
     const weekday = day.weekdayName || ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][day.weekday];
     
+    // Get astronomical times for this day
+    let astroTimesHtml = '';
+    if (typeof getAstronomicalTimes === 'function' && day.gregorianDate) {
+      const astroTimes = getAstronomicalTimes(day.gregorianDate, location);
+      if (astroTimes) {
+        // Calculate daylight hours
+        let daylightStr = '';
+        if (astroTimes.sunriseTs && astroTimes.sunsetTs) {
+          const daylightMs = astroTimes.sunsetTs - astroTimes.sunriseTs;
+          const daylightHours = Math.floor(daylightMs / (1000 * 60 * 60));
+          const daylightMins = Math.round((daylightMs % (1000 * 60 * 60)) / (1000 * 60));
+          daylightStr = `${daylightHours}h ${daylightMins}m`;
+        }
+        
+        astroTimesHtml = `
+          <div class="day-detail-astro-times">
+            <div class="astro-times-title">☀️ Daylight: ${daylightStr}</div>
+            <div class="astro-times-row">
+              <div class="astro-times-group">
+                <div class="astro-time"><span class="astro-label">Dark ends:</span> <span class="astro-value">${astroTimes.morningDark}</span></div>
+                <div class="astro-time"><span class="astro-label">Dawn:</span> <span class="astro-value">${astroTimes.firstLight}</span></div>
+                <div class="astro-time"><span class="astro-label">Sunrise:</span> <span class="astro-value">${astroTimes.sunrise}</span></div>
+              </div>
+              <div class="astro-times-group">
+                <div class="astro-time"><span class="astro-label">Sunset:</span> <span class="astro-value">${astroTimes.sunset}</span></div>
+                <div class="astro-time"><span class="astro-label">Twilight:</span> <span class="astro-value">${astroTimes.civilTwilight}</span></div>
+                <div class="astro-time"><span class="astro-label">Dark:</span> <span class="astro-value">${astroTimes.nauticalTwilight}</span></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+    
+    // Render priestly course
+    let priestlyHtml = '';
+    if (typeof getPriestlyCourseForDay === 'function') {
+      // Skip Day 1 for lunar sabbath (Day 1 is New Moon day, not part of a week)
+      const skipPriestly = day.lunarDay === 1 && (profile.sabbathMode === 'lunar');
+      if (!skipPriestly) {
+        const courseInfo = getPriestlyCourseForDay(day, month);
+        if (courseInfo && !courseInfo.beforeDedication) {
+          priestlyHtml = `
+            <div class="day-detail-priestly">
+              <span class="priestly-icon">👨‍🦳</span>
+              <span class="priestly-course">${courseInfo.course}</span>
+              <span class="priestly-order">(${courseInfo.order})</span>
+              <span class="priestly-meaning">— ${courseInfo.meaning}</span>
+            </div>
+          `;
+        } else if (courseInfo && courseInfo.beforeDedication) {
+          const dedicationYear = Math.abs(courseInfo.dedicationYear - 1);
+          priestlyHtml = `
+            <div class="day-detail-priestly before-dedication">
+              <span class="priestly-icon">🏛️</span>
+              <span class="priestly-note">Before priestly cycle (est. ${dedicationYear} BC)</span>
+            </div>
+          `;
+        }
+      }
+    }
+    
+    // Render year start or 13th month explanation (Day 1 of Month 1 or 13)
+    let yearInfoHtml = '';
+    if (day.lunarDay === 1 && (month.monthNumber === 1 || month.monthNumber === 13)) {
+      yearInfoHtml = this.renderYearStartInfo(day, month, profile);
+    }
+    
+    // Render dateline visualization showing biblical date by timezone
+    // For Day 1: shows where month starts first globally (at moon event time)
+    // For other days: shows day boundaries at the current state time
+    let datelineHtml = '';
+    if (typeof renderDatelineVisualization === 'function') {
+      try {
+        let vizTime, sectionTitle;
+        if (day.lunarDay === 1 && month.moonEvent) {
+          // Day 1: use moon event time to show where month starts first
+          vizTime = month.moonEvent;
+          sectionTitle = '🌍 Month Start Line';
+        } else {
+          // Other days: use the current state time (from URL ?t=HHMM)
+          // This shows the global state at the selected time
+          const appState = AppStore.getState();
+          const stateTime = appState?.context?.time || { hours: 12, minutes: 0 };
+          const dayDate = day.gregorianDate || new Date();
+          vizTime = new Date(
+            dayDate.getFullYear(),
+            dayDate.getMonth(),
+            dayDate.getDate(),
+            stateTime.hours,
+            stateTime.minutes,
+            0
+          );
+          sectionTitle = '🌍 Biblical Date by Region';
+        }
+        
+        // Pass the current biblical day for the timezone guide
+        // Get year from derived state
+        const derived = AppStore.getDerived();
+        const currentDay = {
+          month: month.monthNumber,
+          day: day.lunarDay,
+          year: derived.year
+        };
+        
+        datelineHtml = `
+          <div class="day-detail-section day-detail-dateline">
+            <div class="section-title">${sectionTitle}</div>
+            ${renderDatelineVisualization(vizTime, { currentDay })}
+          </div>
+        `;
+      } catch (e) {
+        console.warn('[CalendarView] Error rendering dateline visualization:', e);
+      }
+    }
+    
+    // Render feasts/appointed times
+    let feastsHtml = '';
+    if (day.feasts && day.feasts.length > 0) {
+      feastsHtml = `
+        <div class="day-detail-section day-detail-feasts">
+          <div class="section-title">Appointed Times</div>
+          ${day.feasts.map(f => this.renderFeastItem(f, day, month)).join('')}
+        </div>
+      `;
+    }
+    
+    // Render Bible events
+    let eventsHtml = '';
+    if (day.events && day.events.length > 0) {
+      try {
+        const eventItems = day.events.map(e => this.renderEventItem(e)).join('');
+        eventsHtml = `
+          <div class="day-detail-section day-detail-events">
+            <div class="section-title">📜 Biblical Events on This Date</div>
+            <div class="bible-events-list">
+              ${eventItems}
+            </div>
+          </div>
+        `;
+      } catch (err) {
+        console.error('[CalendarView] Error rendering events:', err);
+      }
+    }
+    
+    // Render Torah portion if this is a Sabbath
+    let torahHtml = '';
+    const sabbathMode = profile.sabbathMode || 'lunar';
+    if (typeof getTorahPortionForSabbath === 'function') {
+      const portionInfo = getTorahPortionForSabbath(day, month, sabbathMode);
+      if (portionInfo && (portionInfo.portion || portionInfo.holidayReplacement)) {
+        torahHtml = this.renderTorahPortion(portionInfo);
+      }
+    }
+    
+    // Show message if no feasts, events, or Torah
+    let noItemsHtml = '';
+    const hasContent = (day.feasts && day.feasts.length > 0) || 
+                       (day.events && day.events.length > 0) || 
+                       torahHtml;
+    if (!hasContent) {
+      noItemsHtml = '<div class="day-detail-no-items">No appointed times or events on this day</div>';
+    }
+    
     return `
       <div id="day-detail" class="day-detail-panel">
         <div class="day-detail-header">
-          <h2>Day ${lunarDay} of the ${this.getOrdinal(month.monthNumber)} Month</h2>
-          <div class="day-detail-date">${weekday}, ${this.formatFullDate(day.gregorianDate)}</div>
+          <div class="day-detail-date-info">
+            <h2>Day ${lunarDay} of the ${this.getOrdinal(month.monthNumber)} Month</h2>
+            <div class="day-detail-date header-dropdown" data-action="date-picker" title="Click to go to a specific date">
+              <span>${weekday}, ${this.formatFullDate(day.gregorianDate)}</span>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            ${priestlyHtml}
+          </div>
+          ${astroTimesHtml}
+        </div>
+        <div class="day-detail-body">
+          ${yearInfoHtml}
+          ${feastsHtml}
+          ${torahHtml}
+          ${eventsHtml}
+          ${noItemsHtml}
+          ${datelineHtml}
         </div>
       </div>
     `;
+  },
+  
+  /**
+   * Render year start explanation for Month 1 or 13th month explanation for Month 13
+   */
+  renderYearStartInfo(day, month, profile) {
+    const state = AppStore.getState();
+    const derived = AppStore.getDerived();
+    const lunarMonths = derived.lunarMonths || [];
+    const year = derived.year;
+    const yearStartRule = profile.yearStartRule || 'equinox';
+    
+    // Get spring equinox
+    let springEquinox;
+    try {
+      springEquinox = getAstroEngine().getSeasons(year).mar_equinox.date;
+    } catch (e) {
+      return '';
+    }
+    
+    const eqParts = typeof getFormattedDateParts === 'function' 
+      ? getFormattedDateParts(springEquinox)
+      : { weekdayName: springEquinox.toLocaleDateString('en-US', {weekday: 'long'}),
+          monthName: springEquinox.toLocaleDateString('en-US', {month: 'long'}),
+          day: springEquinox.getUTCDate(),
+          yearStr: String(springEquinox.getUTCFullYear()) };
+    const equinoxDateStr = `${eqParts.weekdayName}, ${eqParts.monthName} ${eqParts.day}${this.getOrdinal(eqParts.day).slice(-2)}, ${eqParts.yearStr}`;
+    
+    // Get day start info
+    const dayStartLabel = profile.dayStartTime === 'evening' ? 'sunset' : 
+      (typeof getDayStartLabel === 'function' ? getDayStartLabel() : 'sunrise');
+    
+    let day1StartTs;
+    if (typeof getDayStartTime === 'function') {
+      day1StartTs = getDayStartTime(day.gregorianDate);
+    } else {
+      day1StartTs = day.gregorianDate.getTime();
+    }
+    
+    const day1StartDate = new Date(day1StartTs);
+    const day1StartStr = day1StartDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    const day1Parts = typeof getFormattedDateParts === 'function'
+      ? getFormattedDateParts(day1StartDate)
+      : { weekdayName: day1StartDate.toLocaleDateString('en-US', {weekday: 'long'}),
+          monthName: day1StartDate.toLocaleDateString('en-US', {month: 'long'}),
+          day: day1StartDate.getUTCDate() };
+    const day1DateStr = `${day1Parts.weekdayName}, ${day1Parts.monthName} ${day1Parts.day}${this.getOrdinal(day1Parts.day).slice(-2)}`;
+    
+    // Calculate timing difference
+    const diffMs = day1StartTs - springEquinox.getTime();
+    const diffTotalHours = diffMs / (1000 * 60 * 60);
+    const diffDays = Math.floor(Math.abs(diffTotalHours) / 24);
+    const diffHours = Math.round(Math.abs(diffTotalHours) % 24);
+    
+    let timingStr = '';
+    if (diffDays > 0 && diffHours > 0) {
+      timingStr = `${diffDays} day${diffDays !== 1 ? 's' : ''} and ${diffHours} hour${diffHours !== 1 ? 's' : ''}`;
+    } else if (diffDays > 0) {
+      timingStr = `${diffDays} day${diffDays !== 1 ? 's' : ''}`;
+    } else {
+      timingStr = `${diffHours} hour${diffHours !== 1 ? 's' : ''}`;
+    }
+    const beforeAfter = diffMs >= 0 ? 'after' : 'before';
+    
+    if (month.monthNumber === 1) {
+      // Year start explanation
+      let methodologyHtml = '';
+      let ruleIcon = '📅';
+      
+      if (yearStartRule === 'virgoFeet') {
+        ruleIcon = '♍';
+        if (typeof getVirgoMethodologyHtml === 'function') {
+          // Get Virgo calculation from engine instance (no global state)
+          const engine = typeof AppStore !== 'undefined' ? AppStore.getEngine() : null;
+          const location = state.context?.location;
+          const virgoCalc = engine && location ? engine.getVirgoCalculation(year, location) : null;
+          if (virgoCalc) {
+            methodologyHtml = getVirgoMethodologyHtml({ showCalculation: true, virgoCalc });
+          }
+        }
+        if (!methodologyHtml) {
+          methodologyHtml = `<p>Using Moon Under Virgo's Feet rule. Day 1 begins at ${dayStartLabel} (${day1DateStr} at ${day1StartStr}).</p>`;
+        }
+      } else if (yearStartRule === '13daysBefore') {
+        ruleIcon = '🐑';
+        if (typeof getPassoverMethodologyHtml === 'function') {
+          methodologyHtml = getPassoverMethodologyHtml({
+            showCalculation: true,
+            equinoxDate: equinoxDateStr,
+            day1Date: `${day1DateStr} at ${day1StartStr}`,
+            timingStr,
+            beforeAfter
+          });
+        } else {
+          methodologyHtml = `<p>Using Passover after Equinox rule. Spring equinox: ${equinoxDateStr}. Day 1 begins ${timingStr} ${beforeAfter} equinox.</p>`;
+        }
+      } else {
+        ruleIcon = '⚖️';
+        if (typeof getEquinoxMethodologyHtml === 'function') {
+          methodologyHtml = getEquinoxMethodologyHtml({
+            showCalculation: true,
+            equinoxDate: equinoxDateStr,
+            day1Date: `${day1DateStr} at ${day1StartStr}`,
+            timingStr,
+            beforeAfter
+          });
+        } else {
+          methodologyHtml = `<p>Using Renewed Moon after Equinox rule. Spring equinox: ${equinoxDateStr}. Day 1 begins ${timingStr} ${beforeAfter} equinox.</p>`;
+        }
+      }
+      
+      return `
+        <div class="day-detail-section day-detail-year-info">
+          <div class="section-title">${ruleIcon} Lunar Year ${year} Begins</div>
+          <div class="year-info-content">
+            ${methodologyHtml}
+          </div>
+        </div>
+      `;
+    } else if (month.monthNumber === 13) {
+      // 13th month explanation
+      let nextEquinox;
+      try {
+        nextEquinox = getAstroEngine().getSeasons(year + 1).mar_equinox.date;
+      } catch (e) {
+        return '';
+      }
+      
+      const neqParts = typeof getFormattedDateParts === 'function'
+        ? getFormattedDateParts(nextEquinox)
+        : { weekdayName: nextEquinox.toLocaleDateString('en-US', {weekday: 'long'}),
+            monthName: nextEquinox.toLocaleDateString('en-US', {month: 'long'}),
+            day: nextEquinox.getUTCDate(),
+            yearStr: String(nextEquinox.getUTCFullYear()) };
+      const nextEquinoxDateStr = `${neqParts.weekdayName}, ${neqParts.monthName} ${neqParts.day}${this.getOrdinal(neqParts.day).slice(-2)}, ${neqParts.yearStr}`;
+      
+      const diffToNextMs = nextEquinox.getTime() - day1StartTs;
+      const diffToNextHours = diffToNextMs / (1000 * 60 * 60);
+      const diffToNextDays = Math.floor(diffToNextHours / 24);
+      
+      const explanationText = `This 13th month (intercalary month) is added to keep the calendar aligned with the seasons. ` +
+        `Day 1 begins at ${dayStartLabel} on ${day1DateStr}, which is ${diffToNextDays} days before the next spring equinox (${nextEquinoxDateStr}). ` +
+        `Since this day-start falls before the equinox, this qualifies as the 13th month of the current year rather than the 1st month of the next year.`;
+      
+      return `
+        <div class="day-detail-section day-detail-year-info">
+          <div class="section-title">📅 13th Month (Intercalary)</div>
+          <div class="year-info-content">
+            <p>${explanationText}</p>
+          </div>
+        </div>
+      `;
+    }
+    
+    return '';
+  },
+
+  renderFeastItem(feastEntry, day, month) {
+    const { feast, dayNum } = feastEntry;
+    const nameText = dayNum ? `${feast.name} (Day ${dayNum})` : feast.name;
+    
+    // Build links - can have chapter link, symbol link, or both
+    let linksHtml = '';
+    if (feast.chapter) {
+      linksHtml += `<a href="${feast.chapter}" class="feast-link">Learn more →</a>`;
+    }
+    if (feast.symbol) {
+      // Extract symbol key from path like '/symbols/TREE'
+      const symbolKey = feast.symbol.replace('/symbols/', '').toLowerCase();
+      linksHtml += `<button class="feast-symbol-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${symbolKey}'}})">📖 Symbol Study</button>`;
+    }
+    
+    // Add Stellarium link and detailed explanation for Renewed Moon on Day 1
+    let stellariumHtml = '';
+    let basisHtml = '';
+    
+    if (feast.name === 'Renewed Moon' && day && day.lunarDay === 1 && month && month.moonEvent) {
+      const state = AppStore.getState();
+      const profile = window.PROFILES?.[state.context?.profileId] || {};
+      const location = state.context?.location || { lat: 31.7683, lon: 35.2137 };
+      const moonPhase = profile.moonPhase || 'full';
+      const dayStartTime = profile.dayStartTime || 'morning';
+      
+      // Get moon event details
+      const moonEventTime = month.moonEvent;
+      const moonEventDate = new Date(moonEventTime);
+      
+      // Format moon event date/time
+      const moonParts = typeof getFormattedDateParts === 'function' 
+        ? getFormattedDateParts(moonEventDate)
+        : { weekdayName: moonEventDate.toLocaleDateString('en-US', {weekday: 'long'}),
+            shortMonthName: moonEventDate.toLocaleDateString('en-US', {month: 'short'}),
+            day: moonEventDate.getUTCDate(),
+            yearStr: String(moonEventDate.getUTCFullYear()) };
+      const dayOfWeek = moonParts.weekdayName;
+      const monthName = moonParts.shortMonthName;
+      const dayNum2 = moonParts.day;
+      const daySuffix = this.getOrdinal(dayNum2).slice(-2);
+      const year = moonParts.yearStr;
+      
+      // Format time in observer's local time
+      let moonTimeStr = '';
+      if (typeof utcToLocalTime === 'function') {
+        const moonLocalTime = utcToLocalTime(moonEventDate.getTime(), location.lon);
+        moonTimeStr = `${moonLocalTime.getUTCHours() % 12 || 12}:${String(moonLocalTime.getUTCMinutes()).padStart(2, '0')} ${moonLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
+      } else {
+        moonTimeStr = moonEventDate.toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
+      }
+      
+      // Get day start label and time
+      let dayStartLabel = 'sunrise';
+      if (dayStartTime === 'evening') dayStartLabel = 'sunset';
+      else if (typeof getDayStartLabel === 'function') dayStartLabel = getDayStartLabel();
+      
+      let dayStartStr = '';
+      if (typeof getDayStartTime === 'function') {
+        const dayStartTs = getDayStartTime(day.gregorianDate);
+        if (typeof utcToLocalTime === 'function') {
+          const dayStartLocalTime = utcToLocalTime(dayStartTs, location.lon);
+          dayStartStr = `${dayStartLocalTime.getUTCHours() % 12 || 12}:${String(dayStartLocalTime.getUTCMinutes()).padStart(2, '0')} ${dayStartLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
+        }
+      }
+      
+      // Get moon phase label
+      let signName = moonPhase === 'crescent' ? 'First Visible Crescent' : 
+                     moonPhase === 'full' ? 'Full Moon' : 'Dark Moon (conjunction)';
+      if (typeof getMoonLabel === 'function') signName = getMoonLabel();
+      
+      // Determine tense
+      const isPast = moonEventDate < new Date();
+      const occurVerb = isPast ? 'occurred' : 'will occur';
+      
+      // Build explanation text based on moon phase
+      let explanationText = '';
+      if (moonPhase === 'dark' || moonPhase === 'full') {
+        explanationText = `The ${signName} ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum2}${daySuffix}, ${year} at ${moonTimeStr}. ` +
+          `The month begins at ${dayStartLabel}${dayStartStr ? ` (${dayStartStr})` : ''}.`;
+      } else if (moonPhase === 'crescent') {
+        explanationText = `The first visible Crescent Moon ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum2}${daySuffix}, ${year}. ` +
+          `The month begins at ${dayStartLabel}${dayStartStr ? ` (${dayStartStr})` : ''}.`;
+      } else {
+        explanationText = `The ${signName} ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum2}${daySuffix}, ${year} at ${moonTimeStr}. ` +
+          `The month begins at ${dayStartLabel}${dayStartStr ? ` (${dayStartStr})` : ''}.`;
+      }
+      
+      basisHtml = `<div class="feast-basis">${explanationText}</div>`;
+      
+      // Stellarium link
+      const stellariumDate = moonEventDate.toISOString().split('.')[0] + 'Z';
+      const stellariumUrl = `https://stellarium-web.org/?date=${stellariumDate}&lat=${location.lat}&lng=${location.lon}`;
+      
+      stellariumHtml = `
+        <a href="${stellariumUrl}" target="_blank" rel="noopener" class="stellarium-link">
+          🔭 View in Stellarium
+        </a>
+      `;
+    }
+    
+    // Use dynamic description for Renewed Moon
+    let description = feast.description || '';
+    if (feast.name === 'Renewed Moon' && typeof getRenewedMoonDescription === 'function') {
+      description = getRenewedMoonDescription();
+    }
+    
+    return `
+      <div class="day-detail-feast-item">
+        <div class="feast-icon">${feast.icon}</div>
+        <div class="feast-info">
+          <div class="feast-header">
+            <div class="feast-name">${nameText}</div>
+            ${stellariumHtml}
+          </div>
+          <div class="feast-desc">${description}</div>
+          ${basisHtml}
+          ${linksHtml}
+        </div>
+      </div>
+    `;
+  },
+  
+  // Convert basic markdown to HTML and linkify scripture references
+  linkifyText(text, contextCitation = '') {
+    if (!text) return text;
+    
+    // First, handle basic markdown formatting
+    // Bold and italic with asterisks (handle nested: ***text*** = bold+italic)
+    text = text.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    
+    // Bold and italic with underscores
+    text = text.replace(/___(.+?)___/g, '<strong><em>$1</em></strong>');
+    text = text.replace(/__(.+?)__/g, '<strong>$1</strong>');
+    text = text.replace(/\b_([^_]+)_\b/g, '<em>$1</em>');
+    
+    // Inline code
+    text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+    
+    // Then linkify scripture references
+    if (typeof linkifyScriptureReferences === 'function') {
+      return linkifyScriptureReferences(text, contextCitation);
+    }
+    return text;
+  },
+  
+  renderEventItem(event) {
+    // Get context citation for "v. X" style references
+    let contextCitation = '';
+    if (event.verse) {
+      const citationMatch = event.verse.match(/^(.+?\s+\d+)/);
+      if (citationMatch) {
+        contextCitation = citationMatch[1];
+      }
+    }
+    
+    // Make verse clickable if present
+    let verseHtml = '';
+    if (event.verse) {
+      const bibleLink = this.parseCitationToLink(event.verse);
+      if (bibleLink) {
+        verseHtml = `<a href="${bibleLink}" class="event-verse-link">${event.verse}</a>`;
+      } else {
+        verseHtml = `<span class="event-verse">${event.verse}</span>`;
+      }
+    }
+    
+    // Linkify description
+    const linkedDesc = this.linkifyText(event.description || '', contextCitation);
+    const descHtml = linkedDesc ? `<div class="event-desc">${linkedDesc}</div>` : '';
+    
+    // Render quote if present (with linkified references)
+    const linkedQuote = this.linkifyText(event.quote || '', contextCitation);
+    const quoteHtml = linkedQuote ? `<blockquote class="event-quote">"${linkedQuote}"</blockquote>` : '';
+    
+    // Render details if present (handles both heading/text and title/content formats)
+    let detailsHtml = '';
+    if (event.details && event.details.length > 0) {
+      detailsHtml = `
+        <div class="event-details">
+          ${event.detailsTitle ? `<div class="event-details-title">${event.detailsTitle}</div>` : ''}
+          <ul class="event-details-list">
+            ${event.details.map(d => {
+              const title = d.heading || d.title || '';
+              const content = this.linkifyText(d.text || d.content || '', contextCitation);
+              return `<li><strong>${title}:</strong> ${content}</li>`;
+            }).join('')}
+          </ul>
+        </div>
+      `;
+    }
+    
+    // Render image if present
+    let imageHtml = '';
+    if (event.image) {
+      imageHtml = `
+        <div class="event-image">
+          <img src="${event.image}" alt="${event.title || 'Event image'}" onclick="window.open('${event.image}', '_blank')" title="Click to view full size">
+        </div>
+      `;
+    }
+    
+    // Render anniversary badge and link if event has an original year
+    // Check for explicit originalYear or parse from condition (e.g., "year_-958")
+    let eventOriginalYear = event.originalYear;
+    if (eventOriginalYear === undefined && event.condition && event.condition.startsWith('year_')) {
+      eventOriginalYear = parseInt(event.condition.substring(5));
+    }
+    
+    let anniversaryBadgeHtml = '';
+    let anniversaryLinkHtml = '';
+    if (eventOriginalYear !== undefined && eventOriginalYear !== null && !isNaN(eventOriginalYear)) {
+      // Build calendar link to the original date
+      const yearStr = eventOriginalYear < 0 
+        ? `${Math.abs(eventOriginalYear)}bc` 
+        : eventOriginalYear === 0 
+          ? '1bc'
+          : `${eventOriginalYear}`;
+      const eventMonth = event.month || 1;
+      const eventDay = event.day || 1;
+      
+      // Get location slug for URL
+      let locationSlug = 'jerusalem';
+      try {
+        const state = AppStore.getState();
+        if (state.context?.location && typeof URLRouter !== 'undefined') {
+          locationSlug = URLRouter._getLocationSlug(state.context.location);
+        }
+      } catch (e) {}
+      
+      const calendarUrl = `/${locationSlug}/${yearStr}/${eventMonth}/${eventDay}`;
+      const displayYear = eventOriginalYear < 0 
+        ? `${Math.abs(eventOriginalYear)} BC`
+        : eventOriginalYear === 0 
+          ? '1 BC'
+          : `${eventOriginalYear} AD`;
+      
+      // Anniversary badge next to title
+      anniversaryBadgeHtml = `<span class="event-year-badge">(${displayYear})</span>`;
+      
+      // Calendar link in the links section
+      anniversaryLinkHtml = `
+        <a href="${calendarUrl}" class="event-anniversary-link" title="View this date in ${displayYear}">
+          📅 View in ${displayYear}
+        </a>
+      `;
+    }
+    
+    // Remove leading emoji from title if it matches the icon
+    let displayTitle = event.title || '';
+    const eventIcon = event.icon || '📜';
+    if (displayTitle.startsWith(eventIcon)) {
+      displayTitle = displayTitle.slice(eventIcon.length).trim();
+    }
+    
+    // Build historical info section if event has precise historical data
+    let historicalInfoHtml = '';
+    if (event.historicalDate || event.historicalLocation) {
+      let infoLines = [];
+      
+      // Make date clickable - navigate to that date in calendar
+      if (event.historicalDate && eventOriginalYear !== undefined) {
+        const yearStr = eventOriginalYear < 0 
+          ? `${Math.abs(eventOriginalYear)}bc` 
+          : eventOriginalYear === 0 
+            ? '1bc'
+            : `${eventOriginalYear}`;
+        const eventMonth = event.month || 1;
+        const eventDay = event.day || 1;
+        
+        // Get location slug for URL
+        let locationSlug = 'jerusalem';
+        try {
+          const state = AppStore.getState();
+          if (state.context?.location && typeof URLRouter !== 'undefined') {
+            locationSlug = URLRouter._getLocationSlug(state.context.location);
+          }
+        } catch (e) {}
+        
+        const calendarUrl = `/${locationSlug}/${yearStr}/${eventMonth}/${eventDay}`;
+        infoLines.push(`<a href="${calendarUrl}" class="event-historical-date" title="Navigate to this date in the calendar">📅 ${event.historicalDate}</a>`);
+      } else if (event.historicalDate) {
+        infoLines.push(`<div class="event-historical-date">📅 ${event.historicalDate}</div>`);
+      }
+      
+      // Make location clickable - open in Google Maps or set as calendar location
+      if (event.historicalLocation && event.historicalLocation.name) {
+        const mapsUrl = `https://www.google.com/maps?q=${event.historicalLocation.lat},${event.historicalLocation.lon}`;
+        infoLines.push(`<a href="${mapsUrl}" target="_blank" rel="noopener" class="event-historical-location" title="View ${event.historicalLocation.name} on Google Maps">📍 ${event.historicalLocation.name} (${event.historicalLocation.lat}°N, ${event.historicalLocation.lon}°E)</a>`);
+      }
+      historicalInfoHtml = `<div class="event-historical-info">${infoLines.join('')}</div>`;
+    }
+    
+    // Build Stellarium link if event has stellariumDateTime and historicalLocation
+    let stellariumHtml = '';
+    if (event.stellariumDateTime && event.historicalLocation) {
+      const stellariumUrl = `https://stellarium-web.org/?date=${event.stellariumDateTime}&lat=${event.historicalLocation.lat}&lng=${event.historicalLocation.lon}`;
+      stellariumHtml = `
+        <a href="${stellariumUrl}" target="_blank" rel="noopener" class="stellarium-link event-stellarium-link" title="View the sky at ${event.historicalLocation.name} on this historical date">
+          🔭 View in Stellarium (${event.historicalLocation.name})
+        </a>
+      `;
+    }
+    
+    return `
+      <div class="bible-event-item">
+        <div class="event-icon">${eventIcon}</div>
+        <div class="event-info">
+          <div class="event-title">${displayTitle} ${anniversaryBadgeHtml}</div>
+          ${verseHtml}
+          ${descHtml}
+          ${historicalInfoHtml}
+          ${quoteHtml}
+          ${imageHtml}
+          ${detailsHtml}
+          <div class="event-links">
+            ${anniversaryLinkHtml}
+            ${stellariumHtml}
+            ${event.bookChapter ? `<a href="${event.bookChapter}" class="event-link">Learn more →</a>` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+  },
+  
+  // Parse citation like "Genesis 1:1-6:8" to get bible link
+  parseCitationToLink(citation) {
+    if (!citation) return null;
+    // Match patterns like "Genesis 1:1" or "Exodus 12:1-15:26"
+    const match = citation.match(/^(\d?\s*[A-Za-z]+)\s+(\d+):(\d+)/);
+    if (match) {
+      const book = match[1].trim();
+      const chapter = match[2];
+      const verse = match[3];
+      // Get saved translation preference or default to 'kjv'
+      let translation = 'kjv';
+      try {
+        translation = localStorage.getItem('bible_translation_preference') || 'kjv';
+      } catch (e) {}
+      return `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${verse}`;
+    }
+    return null;
+  },
+  
+  renderTorahPortion(portionInfo) {
+    if (!portionInfo) return '';
+    
+    let content = '';
+    
+    if (portionInfo.holidayReplacement) {
+      // Holiday replacement reading
+      const hr = portionInfo.holidayReplacement;
+      const bibleLink = this.parseCitationToLink(hr.citation);
+      const citationHtml = bibleLink 
+        ? `<a href="${bibleLink}" class="torah-citation-link">${hr.citation}</a>`
+        : `<div class="torah-citation">${hr.citation || ''}</div>`;
+      content = `
+        <div class="torah-portion-item torah-holiday-replacement">
+          <div class="torah-icon">🎺</div>
+          <div class="torah-info">
+            <div class="torah-name">${hr.name}</div>
+            ${citationHtml}
+            <div class="torah-summary">${hr.summary || ''}</div>
+            <div class="torah-note">Special holiday reading (replaces regular portion)</div>
+          </div>
+        </div>
+      `;
+    } else if (portionInfo.portion) {
+      const p = portionInfo.portion;
+      const bibleLink = this.parseCitationToLink(p.citation);
+      const citationHtml = bibleLink 
+        ? `<a href="${bibleLink}" class="torah-citation-link">${p.citation} →</a>`
+        : `<div class="torah-citation">${p.citation || ''}</div>`;
+      content = `
+        <div class="torah-portion-item">
+          <div class="torah-icon">📖</div>
+          <div class="torah-info">
+            <div class="torah-name">
+              <span class="torah-hebrew">${p.parashah || ''}</span>
+              ${p.meaning ? `<span class="torah-meaning">(${p.meaning})</span>` : ''}
+            </div>
+            ${citationHtml}
+            <div class="torah-summary">${p.summary || ''}</div>
+          </div>
+        </div>
+      `;
+      
+      // Add maftir addition if present
+      if (portionInfo.maftirAddition) {
+        const ma = portionInfo.maftirAddition;
+        const maftirLink = this.parseCitationToLink(ma.citation);
+        const maftirCitationHtml = maftirLink 
+          ? `<a href="${maftirLink}" class="torah-citation-link">${ma.citation} →</a>`
+          : `<div class="torah-citation">${ma.citation || ''}</div>`;
+        content += `
+          <div class="torah-portion-item torah-maftir-addition">
+            <div class="torah-icon">📜</div>
+            <div class="torah-info">
+              <div class="torah-name">${ma.name} <span class="maftir-label">(Special Maftir)</span></div>
+              ${maftirCitationHtml}
+              <div class="torah-summary">${ma.summary || ''}</div>
+            </div>
+          </div>
+        `;
+      }
+    }
+    
+    return `
+      <div class="day-detail-section day-detail-torah">
+        <div class="section-title">📖 Torah Portion for This Sabbath</div>
+        ${content}
+      </div>
+    `;
+  },
+  
+  showDatePicker(e, trigger) {
+    e.stopPropagation();
+    this.closePickers();
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'picker-overlay';
+    
+    const picker = document.createElement('div');
+    picker.className = 'date-picker';
+    picker.onclick = (e) => e.stopPropagation();
+    
+    // Get current date from state
+    const state = AppStore.getState();
+    const derived = AppStore.getDerived();
+    const currentMonth = derived.lunarMonths?.[derived.currentMonthIndex];
+    const currentDay = currentMonth?.days?.find(d => d.lunarDay === derived.currentLunarDay);
+    
+    let year = new Date().getFullYear();
+    let month = new Date().getMonth() + 1;
+    let day = new Date().getDate();
+    let isBC = false;
+    
+    if (currentDay?.gregorianDate) {
+      year = Math.abs(currentDay.gregorianDate.getUTCFullYear());
+      month = currentDay.gregorianDate.getUTCMonth() + 1;
+      day = currentDay.gregorianDate.getUTCDate();
+      isBC = currentDay.gregorianDate.getUTCFullYear() <= 0;
+      if (isBC) year = 1 - currentDay.gregorianDate.getUTCFullYear(); // Convert to BC year
+    }
+    
+    picker.innerHTML = `
+      <div class="date-picker-spinners">
+        <div class="date-spinner">
+          <button class="spinner-up" data-field="year">▲</button>
+          <input type="text" class="spinner-input year-input" value="${year}" inputmode="numeric">
+          <button class="spinner-down" data-field="year">▼</button>
+        </div>
+        <span class="date-sep">–</span>
+        <div class="date-spinner">
+          <button class="spinner-up" data-field="month">▲</button>
+          <input type="text" class="spinner-input month-input" value="${month}" inputmode="numeric">
+          <button class="spinner-down" data-field="month">▼</button>
+        </div>
+        <span class="date-sep">–</span>
+        <div class="date-spinner">
+          <button class="spinner-up" data-field="day">▲</button>
+          <input type="text" class="spinner-input day-input" value="${day}" inputmode="numeric">
+          <button class="spinner-down" data-field="day">▼</button>
+        </div>
+        <button class="era-toggle" data-bc="${isBC}">${isBC ? 'BC' : 'AD'}</button>
+      </div>
+    `;
+    
+    // Position below trigger, or above if would go off screen
+    const rect = trigger.getBoundingClientRect();
+    const pickerHeight = 120; // approximate height
+    const spaceBelow = window.innerHeight - rect.bottom;
+    
+    if (spaceBelow >= pickerHeight || spaceBelow > rect.top) {
+      // Position below
+      picker.style.top = (rect.bottom + 5) + 'px';
+    } else {
+      // Position above
+      picker.style.bottom = (window.innerHeight - rect.top + 5) + 'px';
+    }
+    picker.style.left = rect.left + 'px';
+    
+    overlay.appendChild(picker);
+    document.body.appendChild(overlay);
+    
+    const closePicker = () => {
+      overlay.remove();
+    };
+    
+    overlay.onclick = closePicker;
+    
+    // State for the picker
+    let pickerYear = year;
+    let pickerMonth = month;
+    let pickerDay = day;
+    let pickerIsBC = isBC;
+    
+    const yearInput = picker.querySelector('.year-input');
+    const monthInput = picker.querySelector('.month-input');
+    const dayInput = picker.querySelector('.day-input');
+    const eraBtn = picker.querySelector('.era-toggle');
+    
+    const updateInputs = () => {
+      yearInput.value = pickerYear;
+      monthInput.value = pickerMonth;
+      dayInput.value = pickerDay;
+      eraBtn.textContent = pickerIsBC ? 'BC' : 'AD';
+      eraBtn.dataset.bc = pickerIsBC;
+    };
+    
+    const dispatchDate = () => {
+      // Convert to astronomical year (BC 1 = 0, BC 2 = -1, etc.)
+      let astroYear = pickerYear;
+      if (pickerIsBC) {
+        astroYear = 1 - pickerYear;
+      }
+      
+      AppStore.dispatch({
+        type: 'SET_GREGORIAN_DATETIME',
+        year: astroYear,
+        month: pickerMonth,
+        day: pickerDay
+      });
+    };
+    
+    // Spinner buttons
+    picker.querySelectorAll('.spinner-up, .spinner-down').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const field = btn.dataset.field;
+        const delta = btn.classList.contains('spinner-up') ? 1 : -1;
+        
+        if (field === 'year') {
+          pickerYear = Math.max(1, pickerYear + delta);
+        } else if (field === 'month') {
+          pickerMonth += delta;
+          if (pickerMonth < 1) { pickerMonth = 12; pickerYear = Math.max(1, pickerYear - 1); }
+          if (pickerMonth > 12) { pickerMonth = 1; pickerYear++; }
+        } else if (field === 'day') {
+          const daysInMonth = new Date(pickerYear, pickerMonth, 0).getDate();
+          pickerDay += delta;
+          if (pickerDay < 1) { pickerDay = 31; pickerMonth--; if (pickerMonth < 1) { pickerMonth = 12; pickerYear = Math.max(1, pickerYear - 1); } }
+          if (pickerDay > daysInMonth) { pickerDay = 1; pickerMonth++; if (pickerMonth > 12) { pickerMonth = 1; pickerYear++; } }
+        }
+        
+        updateInputs();
+        dispatchDate();
+      });
+    });
+    
+    // Input changes
+    const applyInputs = () => {
+      const y = parseInt(yearInput.value);
+      const m = parseInt(monthInput.value);
+      const d = parseInt(dayInput.value);
+      
+      if (!isNaN(y) && y >= 1) pickerYear = y;
+      if (!isNaN(m) && m >= 1 && m <= 12) pickerMonth = m;
+      if (!isNaN(d) && d >= 1 && d <= 31) pickerDay = d;
+      
+      updateInputs();
+      dispatchDate();
+    };
+    
+    [yearInput, monthInput, dayInput].forEach(input => {
+      input.addEventListener('change', applyInputs);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          applyInputs();
+          closePicker();
+        }
+      });
+    });
+    
+    // Era toggle
+    eraBtn.addEventListener('click', () => {
+      pickerIsBC = !pickerIsBC;
+      updateInputs();
+      dispatchDate();
+    });
   },
 
   attachEventListeners(container, month) {
@@ -309,22 +1457,356 @@ const CalendarView = {
     container.querySelectorAll('[data-action]').forEach(el => {
       el.addEventListener('click', (e) => {
         const action = el.dataset.action;
-        console.log('[CalendarView] data-action clicked:', action);
         if (action === 'prev-month') this.navigateMonth(-1);
         else if (action === 'next-month') this.navigateMonth(1);
         else if (action === 'prev-year') this.navigateYear(-1);
         else if (action === 'next-year') this.navigateYear(1);
-        else if (action === 'year-picker') this.showYearPicker(e, el);
-        else if (action === 'month-picker') this.showMonthPicker(e, el);
-        else if (action === 'time-picker') this.showTimePicker(e, el);
+        else if (action === 'datetime-picker') this.showDatetimePicker(e, el);
         else if (action === 'location-picker') this.showLocationPicker(e, el);
+        else if (action === 'date-picker') this.showDatePicker(e, el);
         else if (action === 'profile-editor') this.showProfileEditor(e);
+        else if (action === 'toggle-feasts') this.toggleFeastSidebar();
+        else if (action === 'show-priestly') this.showPriestlyView();
+      });
+    });
+    
+  },
+  
+  toggleFeastSidebar() {
+    const leftPanel = document.getElementById('left-panel');
+    if (leftPanel) {
+      leftPanel.classList.toggle('collapsed');
+      leftPanel.classList.toggle('open');
+    }
+  },
+  
+  showPriestlyView() {
+    // Navigate to the priestly view
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'priestly' });
+  },
+  
+  closeFeastSidebar() {
+    const leftPanel = document.getElementById('left-panel');
+    if (leftPanel) {
+      leftPanel.classList.add('collapsed');
+      leftPanel.classList.remove('open');
+    }
+  },
+  
+  isMobileMode() {
+    return window.innerWidth < 900;
+  },
+  
+  // Track which tab is active in the left panel
+  _leftPanelTab: 'feasts',
+  
+  updateLeftPanel(lunarMonths, profile) {
+    const leftPanelContent = document.getElementById('left-panel-content');
+    if (leftPanelContent && lunarMonths) {
+      // Build tab toggle and content
+      const feastsHtml = this.renderFeastList(lunarMonths);
+      const priestlyHtml = this.renderPriestlyCycleList(lunarMonths, profile);
+      
+      const activeTab = this._leftPanelTab || 'feasts';
+      
+      leftPanelContent.innerHTML = `
+        <div class="left-panel-tabs">
+          <button class="left-panel-tab ${activeTab === 'feasts' ? 'active' : ''}" data-tab="feasts">
+            🎉 Feasts
+          </button>
+          <button class="left-panel-tab ${activeTab === 'priestly' ? 'active' : ''}" data-tab="priestly">
+            👨‍🦳 Priestly
+          </button>
+        </div>
+        <div class="left-panel-content-area">
+          <div class="tab-content ${activeTab === 'feasts' ? 'active' : ''}" data-content="feasts">
+            ${feastsHtml}
+          </div>
+          <div class="tab-content ${activeTab === 'priestly' ? 'active' : ''}" data-content="priestly">
+            ${priestlyHtml}
+          </div>
+        </div>
+      `;
+      
+      // Attach tab click handlers
+      leftPanelContent.querySelectorAll('.left-panel-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const tabName = tab.dataset.tab;
+          this._leftPanelTab = tabName;
+          
+          // Update active states
+          leftPanelContent.querySelectorAll('.left-panel-tab').forEach(t => {
+            t.classList.toggle('active', t.dataset.tab === tabName);
+          });
+          leftPanelContent.querySelectorAll('.tab-content').forEach(c => {
+            c.classList.toggle('active', c.dataset.content === tabName);
+          });
+        });
+      });
+      
+      // Attach click handlers for feast items
+      leftPanelContent.querySelectorAll('.feast-list-item').forEach(el => {
+        el.addEventListener('click', () => {
+          const monthIdx = parseInt(el.dataset.month);
+          const lunarDay = parseInt(el.dataset.day);
+          const derived = AppStore.getDerived();
+          
+          // Close sidebar on mobile after selection
+          if (this.isMobileMode()) {
+            this.closeFeastSidebar();
+          }
+          
+          AppStore.dispatch({ 
+            type: 'SET_LUNAR_DATETIME', 
+            year: derived.year,
+            month: monthIdx + 1,
+            day: lunarDay 
+          });
+        });
+      });
+      
+      // Attach click handlers for priestly items
+      leftPanelContent.querySelectorAll('.priestly-list-item').forEach(el => {
+        el.addEventListener('click', () => {
+          const monthIdx = parseInt(el.dataset.month);
+          const lunarDay = parseInt(el.dataset.day);
+          const derived = AppStore.getDerived();
+          
+          // Close sidebar on mobile after selection
+          if (this.isMobileMode()) {
+            this.closeFeastSidebar();
+          }
+          
+          AppStore.dispatch({ 
+            type: 'SET_LUNAR_DATETIME', 
+            year: derived.year,
+            month: monthIdx + 1,
+            day: lunarDay 
+          });
+        });
+      });
+    }
+  },
+  
+  showDatetimePicker(e, trigger) {
+    e.stopPropagation();
+    this.closePickers();
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'picker-overlay';
+    
+    const picker = document.createElement('div');
+    picker.className = 'datetime-picker';
+    picker.onclick = (e) => e.stopPropagation();
+    
+    picker.innerHTML = `
+      <div class="datetime-section year-section">
+        <div class="year-row">
+          <button class="year-arrow-btn" data-delta="-1">◀</button>
+          <div class="year-display-container">
+            <span class="year-display"></span>
+            <input type="text" class="year-input" inputmode="numeric">
+          </div>
+          <button class="year-arrow-btn" data-delta="1">▶</button>
+          <button class="era-toggle"></button>
+        </div>
+      </div>
+      <div class="datetime-section month-section">
+        <div class="month-grid"></div>
+      </div>
+      <div class="datetime-section time-section">
+        <div class="time-row">
+          <button class="time-arrow-btn" data-field="hours" data-delta="-1">◀</button>
+          <span class="time-display hours-display"></span>
+          <button class="time-arrow-btn" data-field="hours" data-delta="1">▶</button>
+          <span class="time-sep">:</span>
+          <button class="time-arrow-btn" data-field="minutes" data-delta="-1">◀</button>
+          <span class="time-display minutes-display"></span>
+          <button class="time-arrow-btn" data-field="minutes" data-delta="1">▶</button>
+          <button class="ampm-toggle"></button>
+        </div>
+      </div>
+    `;
+    
+    // Position below trigger
+    const rect = trigger.getBoundingClientRect();
+    picker.style.top = (rect.bottom + 5) + 'px';
+    picker.style.left = rect.left + 'px';
+    
+    overlay.appendChild(picker);
+    document.body.appendChild(overlay);
+    
+    const yearDisplay = picker.querySelector('.year-display');
+    const yearInput = picker.querySelector('.year-input');
+    const eraToggle = picker.querySelector('.era-toggle');
+    const monthGrid = picker.querySelector('.month-grid');
+    const hoursDisplay = picker.querySelector('.hours-display');
+    const minutesDisplay = picker.querySelector('.minutes-display');
+    const ampmToggle = picker.querySelector('.ampm-toggle');
+    
+    // Render function - updates from state
+    const renderPicker = () => {
+      const state = AppStore.getState();
+      const derived = AppStore.getDerived();
+      
+      // Year
+      const currentYear = derived.year;
+      const display = typeof YearUtils !== 'undefined' 
+        ? YearUtils.toDisplay(currentYear)
+        : { year: currentYear <= 0 ? 1 - currentYear : currentYear, isBC: currentYear <= 0 };
+      yearDisplay.textContent = display.year;
+      yearInput.value = display.year;
+      eraToggle.textContent = display.isBC ? 'BC' : 'AD';
+      eraToggle.dataset.bc = display.isBC;
+      
+      // Month grid
+      const currentMonthIdx = derived.currentMonthIndex ?? 0;
+      const monthCount = derived.lunarMonths?.length || 12;
+      let monthHtml = '';
+      for (let i = 0; i < monthCount; i++) {
+        const isActive = i === currentMonthIdx;
+        monthHtml += `<button class="month-btn${isActive ? ' active' : ''}" data-month-idx="${i}">${i + 1}</button>`;
+      }
+      monthGrid.innerHTML = monthHtml;
+      
+      // Re-attach month click handlers
+      monthGrid.querySelectorAll('.month-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const monthIdx = parseInt(btn.dataset.monthIdx);
+          this.goToMonth(monthIdx);
+        });
+      });
+      
+      // Time
+      const currentTime = state.context.time || { hours: 12, minutes: 0 };
+      let hours12 = currentTime.hours % 12;
+      if (hours12 === 0) hours12 = 12;
+      const isPM = currentTime.hours >= 12;
+      hoursDisplay.textContent = hours12;
+      minutesDisplay.textContent = String(currentTime.minutes).padStart(2, '0');
+      ampmToggle.textContent = isPM ? 'PM' : 'AM';
+      ampmToggle.dataset.pm = isPM;
+    };
+    
+    renderPicker();
+    const unsubscribe = AppStore.subscribe(renderPicker);
+    overlay._unsubscribe = unsubscribe;
+    
+    const closePicker = () => {
+      unsubscribe();
+      overlay.remove();
+    };
+    
+    overlay.onclick = closePicker;
+    
+    // Year display click to edit
+    yearDisplay.addEventListener('click', () => {
+      yearDisplay.style.display = 'none';
+      yearInput.style.display = 'block';
+      yearInput.focus();
+      yearInput.select();
+    });
+    
+    const applyYearInput = () => {
+      const val = parseInt(yearInput.value);
+      if (!isNaN(val) && val >= 1 && val <= 9999) {
+        const derived = AppStore.getDerived();
+        const currentDisplay = typeof YearUtils !== 'undefined'
+          ? YearUtils.toDisplay(derived.year)
+          : { isBC: derived.year <= 0 };
+        const internalYear = typeof YearUtils !== 'undefined'
+          ? YearUtils.toInternal(val, currentDisplay.isBC)
+          : (currentDisplay.isBC ? 1 - val : val);
+        this.goToYear(internalYear);
+      }
+      yearInput.style.display = 'none';
+      yearDisplay.style.display = 'block';
+    };
+    
+    yearInput.addEventListener('blur', applyYearInput);
+    yearInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') applyYearInput();
+      else if (e.key === 'Escape') {
+        yearInput.style.display = 'none';
+        yearDisplay.style.display = 'block';
+      }
+    });
+    
+    // Year arrows
+    picker.querySelectorAll('.year-arrow-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const derived = AppStore.getDerived();
+        const delta = parseInt(btn.dataset.delta);
+        this.goToYear(derived.year + delta);
+      });
+    });
+    
+    // Era toggle
+    eraToggle.addEventListener('click', () => {
+      const derived = AppStore.getDerived();
+      const currentYear = derived.year;
+      const display = typeof YearUtils !== 'undefined'
+        ? YearUtils.toDisplay(currentYear)
+        : { year: currentYear <= 0 ? 1 - currentYear : currentYear, isBC: currentYear <= 0 };
+      const newInternal = typeof YearUtils !== 'undefined'
+        ? YearUtils.toInternal(display.year, !display.isBC)
+        : (display.isBC ? display.year : 1 - display.year);
+      this.goToYear(newInternal);
+    });
+    
+    // Time arrows
+    picker.querySelectorAll('.time-arrow-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const state = AppStore.getState();
+        const derived = AppStore.getDerived();
+        const currentTime = state.context.time || { hours: 12, minutes: 0 };
+        const field = btn.dataset.field;
+        const delta = parseInt(btn.dataset.delta);
+        
+        let hours = currentTime.hours;
+        let minutes = currentTime.minutes;
+        
+        if (field === 'hours') {
+          hours = (hours + delta + 24) % 24;
+        } else {
+          minutes = (minutes + delta + 60) % 60;
+        }
+        
+        AppStore.dispatch({ 
+          type: 'SET_LUNAR_DATETIME', 
+          year: derived.year,
+          month: (derived.currentMonthIndex ?? 0) + 1,
+          day: derived.currentLunarDay ?? 1,
+          time: { hours, minutes } 
+        });
+      });
+    });
+    
+    // AM/PM toggle
+    ampmToggle.addEventListener('click', () => {
+      const state = AppStore.getState();
+      const derived = AppStore.getDerived();
+      const currentTime = state.context.time || { hours: 12, minutes: 0 };
+      let hours = currentTime.hours;
+      
+      // Toggle AM/PM by adding/subtracting 12 hours
+      if (hours >= 12) {
+        hours -= 12;
+      } else {
+        hours += 12;
+      }
+      
+      AppStore.dispatch({ 
+        type: 'SET_LUNAR_DATETIME', 
+        year: derived.year,
+        month: (derived.currentMonthIndex ?? 0) + 1,
+        day: derived.currentLunarDay ?? 1,
+        time: { hours, minutes: currentTime.minutes } 
       });
     });
   },
   
   showYearPicker(e, trigger) {
-    console.log('[CalendarView] showYearPicker called');
     e.stopPropagation();
     this.closePickers();
     
@@ -353,8 +1835,6 @@ const CalendarView = {
     
     overlay.appendChild(picker);
     document.body.appendChild(overlay);
-    console.log('[CalendarView] showYearPicker: overlay appended to body, overlay in DOM:', document.body.contains(overlay));
-    console.log('[CalendarView] showYearPicker: overlay style:', window.getComputedStyle(overlay).display, window.getComputedStyle(overlay).visibility);
     
     const yearDisplay = picker.querySelector('.year-display');
     const yearInput = picker.querySelector('.year-input');
@@ -364,13 +1844,11 @@ const CalendarView = {
     const renderYearPicker = () => {
       const derived = AppStore.getDerived();
       const currentYear = derived.year; // Internal astronomical year
-      console.log('[CalendarView] renderYearPicker: derived.year =', currentYear);
       // Use YearUtils to convert to display
       const display = typeof YearUtils !== 'undefined' 
         ? YearUtils.toDisplay(currentYear)
         : { year: currentYear <= 0 ? 1 - currentYear : currentYear, isBC: currentYear <= 0 };
       
-      console.log('[CalendarView] renderYearPicker: display =', display);
       yearDisplay.textContent = display.year;
       yearInput.value = display.year;
       eraToggle.textContent = display.isBC ? 'BC' : 'AD';
@@ -461,7 +1939,7 @@ const CalendarView = {
     picker.className = 'month-picker';
     picker.onclick = (e) => e.stopPropagation();
     
-    picker.innerHTML = '<div class="picker-header">Select Month</div><div class="picker-grid month-grid"></div>';
+    picker.innerHTML = '<div class="picker-grid month-grid"></div>';
     
     const rect = trigger.getBoundingClientRect();
     picker.style.top = (rect.bottom + 5) + 'px';
@@ -508,6 +1986,13 @@ const CalendarView = {
     e.stopPropagation();
     this.closePickers();
     
+    const state = AppStore.getState();
+    const currentTime = state.context.time || { hours: 12, minutes: 0 };
+    // Convert 24h to 12h format
+    let hours12 = currentTime.hours % 12;
+    if (hours12 === 0) hours12 = 12;
+    const isPM = currentTime.hours >= 12;
+    
     const overlay = document.createElement('div');
     overlay.className = 'picker-overlay';
     
@@ -516,18 +2001,19 @@ const CalendarView = {
     picker.onclick = (e) => e.stopPropagation();
     
     picker.innerHTML = `
-      <div class="time-picker-row">
+      <div class="time-picker-spinners">
         <div class="time-spinner">
-          <button class="spinner-btn" data-field="hours" data-delta="1">▲</button>
-          <input type="text" class="time-input hours-input" maxlength="2">
-          <button class="spinner-btn" data-field="hours" data-delta="-1">▼</button>
+          <button class="spinner-up" data-field="hours">▲</button>
+          <input type="text" class="spinner-input hours-input" value="${hours12}" inputmode="numeric">
+          <button class="spinner-down" data-field="hours">▼</button>
         </div>
-        <span class="time-separator">:</span>
+        <span class="time-sep">:</span>
         <div class="time-spinner">
-          <button class="spinner-btn" data-field="minutes" data-delta="1">▲</button>
-          <input type="text" class="time-input minutes-input" maxlength="2">
-          <button class="spinner-btn" data-field="minutes" data-delta="-1">▼</button>
+          <button class="spinner-up" data-field="minutes">▲</button>
+          <input type="text" class="spinner-input minutes-input" value="${String(currentTime.minutes).padStart(2, '0')}" inputmode="numeric">
+          <button class="spinner-down" data-field="minutes">▼</button>
         </div>
+        <button class="ampm-toggle" data-pm="${isPM}">${isPM ? 'PM' : 'AM'}</button>
       </div>
     `;
     
@@ -540,79 +2026,95 @@ const CalendarView = {
     
     const hoursInput = picker.querySelector('.hours-input');
     const minutesInput = picker.querySelector('.minutes-input');
+    const ampmToggle = picker.querySelector('.ampm-toggle');
     
-    // Render function
-    const renderTimePicker = () => {
-      const state = AppStore.getState();
-      const currentTime = state.context.time || { hours: 12, minutes: 0 };
-      hoursInput.value = String(currentTime.hours).padStart(2, '0');
-      minutesInput.value = String(currentTime.minutes).padStart(2, '0');
+    // Local state for picker
+    let pickerHours12 = hours12;
+    let pickerMinutes = currentTime.minutes;
+    let pickerIsPM = isPM;
+    
+    const updateInputs = () => {
+      hoursInput.value = pickerHours12;
+      minutesInput.value = String(pickerMinutes).padStart(2, '0');
+      ampmToggle.textContent = pickerIsPM ? 'PM' : 'AM';
+      ampmToggle.dataset.pm = pickerIsPM;
     };
     
-    renderTimePicker();
-    const unsubscribe = AppStore.subscribe(renderTimePicker);
-    overlay._unsubscribe = unsubscribe;
-    
-    const closePicker = () => {
-      unsubscribe();
-      overlay.remove();
-    };
-    
-    overlay.onclick = closePicker;
-    
-    // Spinner buttons - dispatch immediately
-    picker.querySelectorAll('.spinner-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const state = AppStore.getState();
-        const derived = AppStore.getDerived();
-        const currentTime = state.context.time || { hours: 12, minutes: 0 };
-        const field = btn.dataset.field;
-        const delta = parseInt(btn.dataset.delta);
-        
-        let hours = currentTime.hours;
-        let minutes = currentTime.minutes;
-        
-        if (field === 'hours') {
-          hours = (hours + delta + 24) % 24;
-        } else {
-          minutes = (minutes + delta + 60) % 60;
-        }
-        
-        // Use SET_LUNAR_DATETIME with current date and new time
-        AppStore.dispatch({ 
-          type: 'SET_LUNAR_DATETIME', 
-          year: derived.year,
-          month: (derived.currentMonthIndex ?? 0) + 1,
-          day: derived.currentLunarDay ?? 1,
-          time: { hours, minutes } 
-        });
-      });
-    });
-    
-    // Input blur - dispatch
-    const dispatchFromInputs = () => {
+    const dispatchTime = () => {
       const derived = AppStore.getDerived();
-      const hours = (parseInt(hoursInput.value) || 0) % 24;
-      const minutes = (parseInt(minutesInput.value) || 0) % 60;
+      // Convert 12h to 24h
+      let hours24 = pickerHours12;
+      if (pickerIsPM && pickerHours12 !== 12) hours24 = pickerHours12 + 12;
+      if (!pickerIsPM && pickerHours12 === 12) hours24 = 0;
+      
       AppStore.dispatch({ 
         type: 'SET_LUNAR_DATETIME', 
         year: derived.year,
         month: (derived.currentMonthIndex ?? 0) + 1,
         day: derived.currentLunarDay ?? 1,
-        time: { hours, minutes } 
+        time: { hours: hours24, minutes: pickerMinutes } 
       });
     };
     
-    hoursInput.addEventListener('blur', dispatchFromInputs);
-    minutesInput.addEventListener('blur', dispatchFromInputs);
-    hoursInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') dispatchFromInputs(); });
-    minutesInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') dispatchFromInputs(); });
+    const closePicker = () => {
+      overlay.remove();
+    };
+    
+    overlay.onclick = closePicker;
+    
+    // Spinner buttons
+    picker.querySelectorAll('.spinner-up, .spinner-down').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const field = btn.dataset.field;
+        const delta = btn.classList.contains('spinner-up') ? 1 : -1;
+        
+        if (field === 'hours') {
+          pickerHours12 += delta;
+          if (pickerHours12 > 12) pickerHours12 = 1;
+          if (pickerHours12 < 1) pickerHours12 = 12;
+        } else {
+          pickerMinutes = (pickerMinutes + delta + 60) % 60;
+        }
+        
+        updateInputs();
+        dispatchTime();
+      });
+    });
+    
+    // Input changes
+    const applyInputs = () => {
+      const h = parseInt(hoursInput.value);
+      const m = parseInt(minutesInput.value);
+      
+      if (!isNaN(h) && h >= 1 && h <= 12) pickerHours12 = h;
+      if (!isNaN(m) && m >= 0 && m <= 59) pickerMinutes = m;
+      
+      updateInputs();
+      dispatchTime();
+    };
+    
+    [hoursInput, minutesInput].forEach(input => {
+      input.addEventListener('change', applyInputs);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          applyInputs();
+          closePicker();
+        }
+      });
+    });
+    
+    // AM/PM toggle
+    ampmToggle.addEventListener('click', () => {
+      pickerIsPM = !pickerIsPM;
+      updateInputs();
+      dispatchTime();
+    });
   },
   
   showLocationPicker(e, trigger) {
     e.stopPropagation();
     this.closePickers();
-    
+
     const overlay = document.createElement('div');
     overlay.className = 'picker-overlay';
     
@@ -633,10 +2135,17 @@ const CalendarView = {
       <div class="location-map-slot"></div>
     `;
     
-    // Center the picker on screen
-    picker.style.top = '50%';
-    picker.style.left = '50%';
-    picker.style.transform = 'translate(-50%, -50%)';
+    // Position as dropdown below trigger
+    const rect = trigger.getBoundingClientRect();
+    const pickerHeight = 400;
+    const spaceBelow = window.innerHeight - rect.bottom;
+    
+    if (spaceBelow >= pickerHeight || spaceBelow > rect.top) {
+      picker.style.top = (rect.bottom + 5) + 'px';
+    } else {
+      picker.style.bottom = (window.innerHeight - rect.top + 5) + 'px';
+    }
+    picker.style.left = Math.max(10, rect.left - 150) + 'px';
     
     overlay.appendChild(picker);
     document.body.appendChild(overlay);
@@ -1232,9 +2741,8 @@ const CalendarView = {
     let month, day;
     if (targetMonth === 'last') {
       // Go to last month, day 1 (used when going back from month 1)
-      // Note: we don't know the new year's month count yet, use 12 as safe default
-      // _lunarDateToJD will clamp if needed
-      month = 12;
+      // Use special value -1 to indicate "last month" - AppStore will determine actual month count
+      month = -1;  // Sentinel for "last month of year"
       day = 1;
     } else if (targetMonth === 'first') {
       // Go to first month, day 1 (used when going forward past last month)
@@ -1251,6 +2759,156 @@ const CalendarView = {
 
   // Helpers
   
+  /**
+   * Calculate current time progress through the biblical day (0-100%)
+   * Used to position the time indicator line on today's cell
+   * @param {Object} month - Current month object
+   * @param {number} todayLunarDay - Lunar day number for today
+   * @param {Object} profile - Profile configuration
+   * @param {Object} location - { lat, lon }
+   * @returns {number|null} - Percentage (0-100) or null if can't calculate
+   */
+  calculateTimeProgress(month, todayLunarDay, profile, location) {
+    const day = month?.days?.find(d => d.lunarDay === todayLunarDay);
+    if (!day?.gregorianDate) return null;
+    
+    const dayStartTime = profile.dayStartTime || 'morning';
+    
+    try {
+      const now = Date.now();
+      let dayStartTs, dayEndTs;
+      
+      if (dayStartTime === 'morning') {
+        // Day starts at first light, ends at next first light
+        if (typeof getAstronomicalTimes === 'function') {
+          const todayAstro = getAstronomicalTimes(day.gregorianDate, location);
+          
+          // Get tomorrow's date for end of day
+          const tomorrowDate = new Date(day.gregorianDate.getTime());
+          tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1);
+          const tomorrowAstro = getAstronomicalTimes(tomorrowDate, location);
+          
+          dayStartTs = todayAstro?.firstLightTs;
+          dayEndTs = tomorrowAstro?.firstLightTs;
+        }
+      } else {
+        // Day starts at sunset, ends at next sunset
+        if (typeof getSunsetTimestamp === 'function') {
+          // Get yesterday's sunset (start of today's biblical day)
+          const yesterdayDate = new Date(day.gregorianDate.getTime());
+          yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
+          dayStartTs = getSunsetTimestamp(yesterdayDate);
+          dayEndTs = getSunsetTimestamp(day.gregorianDate);
+        }
+      }
+      
+      if (!dayStartTs || !dayEndTs) {
+        // Fallback: assume 24-hour day starting at 6am or 6pm
+        const baseHour = dayStartTime === 'morning' ? 6 : 18;
+        const dayDate = new Date(day.gregorianDate.getTime());
+        dayDate.setUTCHours(baseHour, 0, 0, 0);
+        dayStartTs = dayDate.getTime();
+        dayEndTs = dayStartTs + 24 * 60 * 60 * 1000;
+      }
+      
+      // Calculate progress as percentage
+      const totalDuration = dayEndTs - dayStartTs;
+      const elapsed = now - dayStartTs;
+      
+      if (totalDuration <= 0) return null;
+      
+      const progress = (elapsed / totalDuration) * 100;
+      
+      // Clamp to 0-100 range
+      return Math.max(0, Math.min(100, progress));
+    } catch (e) {
+      console.warn('Could not calculate time progress:', e);
+      return null;
+    }
+  },
+
+  /**
+   * Calculate selected time progress through the biblical day (0-100%)
+   * Shows where the user-selected time falls within the day
+   * @param {Object} month - Current month object
+   * @param {number} selectedDay - Selected lunar day number
+   * @param {Object} profile - Profile configuration
+   * @param {Object} location - { lat, lon }
+   * @param {Object} time - Selected time { hours, minutes } in LOCAL time at location
+   * @returns {number|null} - Percentage (0-100) or null if can't calculate
+   */
+  calculateSelectedTimeProgress(month, selectedDay, profile, location, time) {
+    if (!time) return null;
+    
+    const day = month?.days?.find(d => d.lunarDay === selectedDay);
+    if (!day?.gregorianDate) return null;
+    
+    const dayStartTime = profile.dayStartTime || 'morning';
+    const { hours, minutes } = time;
+    
+    try {
+      // Create a timestamp for the selected time on this day
+      // The time is in LOCAL solar time at the location, so we need to convert to UTC
+      // Longitude determines UTC offset: 15° = 1 hour
+      const locationOffsetHours = location.lon / 15;
+      const selectedDate = new Date(day.gregorianDate.getTime());
+      // Set the UTC hours adjusted for location offset
+      // If local time is 14:00 at Jerusalem (lon ~35°, offset ~2.33h), UTC is ~11:40
+      const utcHours = hours - locationOffsetHours;
+      selectedDate.setUTCHours(0, 0, 0, 0);
+      const selectedTs = selectedDate.getTime() + (utcHours * 60 + minutes) * 60 * 1000;
+      
+      let dayStartTs, dayEndTs;
+      
+      if (dayStartTime === 'morning') {
+        // Day starts at first light, ends at next first light
+        if (typeof getAstronomicalTimes === 'function') {
+          const todayAstro = getAstronomicalTimes(day.gregorianDate, location);
+          
+          // Get tomorrow's date for end of day
+          const tomorrowDate = new Date(day.gregorianDate.getTime());
+          tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1);
+          const tomorrowAstro = getAstronomicalTimes(tomorrowDate, location);
+          
+          dayStartTs = todayAstro?.firstLightTs;
+          dayEndTs = tomorrowAstro?.firstLightTs;
+        }
+      } else {
+        // Day starts at sunset, ends at next sunset
+        if (typeof getSunsetTimestamp === 'function') {
+          // Get yesterday's sunset (start of today's biblical day)
+          const yesterdayDate = new Date(day.gregorianDate.getTime());
+          yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
+          dayStartTs = getSunsetTimestamp(yesterdayDate);
+          dayEndTs = getSunsetTimestamp(day.gregorianDate);
+        }
+      }
+      
+      if (!dayStartTs || !dayEndTs) {
+        // Fallback: assume 24-hour day starting at 6am or 6pm
+        const baseHour = dayStartTime === 'morning' ? 6 : 18;
+        const dayDate = new Date(day.gregorianDate.getTime());
+        dayDate.setUTCHours(baseHour, 0, 0, 0);
+        dayStartTs = dayDate.getTime();
+        dayEndTs = dayStartTs + 24 * 60 * 60 * 1000;
+      }
+      
+      // Calculate progress as percentage
+      const totalDuration = dayEndTs - dayStartTs;
+      const elapsed = selectedTs - dayStartTs;
+      
+      if (totalDuration <= 0) return null;
+      
+      const progress = (elapsed / totalDuration) * 100;
+      
+      // Clamp to 0-100 range
+      return Math.max(0, Math.min(100, progress));
+    } catch (e) {
+      console.warn('Could not calculate selected time progress:', e);
+      return null;
+    }
+  },
+
   /**
    * Calculate daylight gradient for the day-cycle-bar
    * Uses getSunriseTimestamp/getSunsetTimestamp from astronomy-utils.js
@@ -1318,9 +2976,9 @@ const CalendarView = {
     if (typeof YearUtils !== 'undefined') {
       return YearUtils.format(year);
     }
-    // Fallback: astronomical year numbering
+    // Fallback: astronomical year numbering (AD is implicit, only show BC)
     if (year <= 0) return (1 - year) + ' BC';
-    return year + ' AD';
+    return String(year);
   },
 
   formatShortDate(date) {
@@ -1381,6 +3039,51 @@ const CalendarView = {
 
   getMoonIcon(phase) {
     return phase === 'full' ? '🌕' : phase === 'dark' ? '🌑' : '🌒';
+  },
+
+  /**
+   * Get feast and event icons for a day cell (separated)
+   * @param {Object} day - Day object with feasts and events arrays
+   * @returns {Object} { feastIcons: string, eventIcons: string }
+   */
+  getDayIconsHtml(day) {
+    if (!day) return { feastIcons: '', eventIcons: '' };
+    
+    // Get feast icons (unique only) - goes bottom right
+    let feastIcons = '';
+    if (day.feasts && day.feasts.length > 0) {
+      const icons = [...new Set(day.feasts.map(f => f.feast.icon))];
+      feastIcons = icons.join('');
+    }
+    
+    // Get event icons (unique only) - goes bottom left
+    let eventIcons = '';
+    if (day.events && day.events.length > 0) {
+      const icons = day.events
+        .filter(e => e.icon)
+        .map(e => e.icon);
+      if (icons.length > 0) {
+        eventIcons = [...new Set(icons)].join('');
+      } else {
+        eventIcons = '📜'; // Default event marker
+      }
+    }
+    
+    return { feastIcons, eventIcons };
+  },
+
+  /**
+   * Get feast/event icons for a day cell (legacy - returns combined string)
+   * @param {Object} day - Day object with feasts and events arrays
+   * @returns {string} Combined icons or empty string
+   * @deprecated Use getDayIconsHtml instead
+   */
+  getDayIcons(day) {
+    const { feastIcons, eventIcons } = this.getDayIconsHtml(day);
+    const icons = [];
+    if (eventIcons) icons.push(eventIcons);
+    if (feastIcons) icons.push(feastIcons);
+    return icons.join('');
   },
 
   /**
