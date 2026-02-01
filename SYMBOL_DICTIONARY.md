@@ -14,32 +14,33 @@ A reference of decoded symbolic meanings derived through systematic scriptural a
 
 | Symbol | One Word | Two Words |
 |--------|----------|-----------|
-| [LIGHT](#light) | Example | Visible Example |
-| [MOUNTAIN](#mountain) | Kingdom | Ruling Authority |
-| [TRUTH](#truth) | Commandment | God's Standard |
-| [SEA](#sea) | Nations | Chaotic Peoples |
-| [ISLAND](#island) | Sanctified | Set-Apart People |
-| [FAITH](#faith) | Obedience | Trusting Obedience |
-| [BELIEVE](#believe) | Obey | Commit to Obey |
-| [ROCK](#rock) | Covenant | Unchanging Covenant |
-| [SAND](#sand) | Unreliable | Broken Covenant |
-| [FORNICATION](#fornication) | Idolatry | Serving Idols |
-| [IDOLATRY](#idolatry) | Self-rule | Rejecting God's Word |
-| [VIRGIN](#virgin) | Faithful | Exclusively Devoted |
-| [HARLOT](#harlot--whore) | Idolater | Covenant Breaker |
-| [SLEEP](#sleep) | Death | Spiritually Unaware |
-| [MOMENT](#moment) | Judgment | Sudden Judgment |
-| [WICKEDNESS](#wickedness) | Lawlessness | Covenant Transgression |
-| [TREE](#tree) | Nation | People Group |
-| [BRIARS/THORNS](#briars-and-thorns) | Worldly | Choking People |
 | [ANIMAL](#animal-cleanunclean-wilddomestic) | People | Tribe / Sub-state |
 | [BABYLON](#babylon) | Kingdom | Worldly Kingdom |
-| [NAME](#name) | Covenant | Covenant Relationship |
-| [WINGS](#wings) | Covenant | Covenant Covering |
+| [BELIEVE](#believe) | Obey | Commit to Obey |
+| [BRIARS/THORNS](#briars-and-thorns) | Worldly | Choking People |
 | [EAGLE](#eagle) | Messenger | Angel |
-| [MARRIAGE](#marriage) | Covenant | Covenant Picture |
+| [FAITH](#faith) | Obedience | Trusting Obedience |
+| [FORNICATION](#fornication) | Idolatry | Serving Idols |
 | [FRUIT](#fruit) | Works | Deeds |
+| [HARLOT](#harlot--whore) | Idolater | Covenant Breaker |
+| [IDOLATRY](#idolatry) | Self-rule | Rejecting God's Word |
+| [ISLAND](#island) | Sanctified | Set-Apart People |
+| [LIGHT](#light) | Example | Visible Example |
+| [MARK](#mark) | Observance | Visible Practice |
+| [MARRIAGE](#marriage) | Covenant | Covenant Picture |
+| [MOMENT](#moment) | Judgment | Sudden Judgment |
+| [MOUNTAIN](#mountain) | Kingdom | Ruling Authority |
+| [NAME](#name) | Covenant | Covenant Relationship |
 | [OIL](#oil) | Works | Proven Works |
+| [ROCK](#rock) | Covenant | Unchanging Covenant |
+| [SAND](#sand) | Unreliable | Broken Covenant |
+| [SEA](#sea) | Nations | Chaotic Peoples |
+| [SLEEP](#sleep) | Death | Spiritually Unaware |
+| [TREE](#tree) | Nation | People Group |
+| [TRUTH](#truth) | Commandment | God's Standard |
+| [VIRGIN](#virgin) | Faithful | Exclusively Devoted |
+| [WICKEDNESS](#wickedness) | Lawlessness | Covenant Transgression |
+| [WINGS](#wings) | Covenant | Covenant Covering |
 
 ---
 
@@ -767,6 +768,61 @@ Jesus permits divorce "except for fornication" (Matthew 5:32, 19:9). This CANNOT
 - **WINGS** = Covenant Covering (spread over bride to marry — Ruth 3:9, Ezekiel 16:8)
 
 **Full Study**: [`symbols/MARRIAGE.md`](symbols/MARRIAGE.md)
+
+---
+
+### MARK
+
+| Dimension | Symbolic Meaning |
+|-----------|------------------|
+| **IS (One Word)** | Observance |
+| **IS (Two Words)** | Visible Practice |
+| **DOES (One Word)** | Identifies |
+| **DOES (Two Words)** | Shows Allegiance |
+| **Sentence** | The practice or observance that identifies which authority's covenant you follow—what you DO (hand) and THINK (forehead) that marks you as belonging to a particular master |
+
+**Opposite**: Unmarked / Unidentified / No visible allegiance
+
+**Key Proof Texts**:
+- **Exodus 31:13** — "my sabbaths ye shall keep: for it is a **sign**{H226} between me and you"
+- **Deuteronomy 6:8** — "bind **them** [the commandments] for a **sign**{H226} upon thine hand"
+- **Exodus 13:9** — "it shall be for a **sign** unto thee upon thine **hand**... that **the LORD's law** may be in thy mouth"
+- **Revelation 14:12** — Those with God's seal "keep the **commandments** of God"
+- **Revelation 13:16** — "receive a mark in their right **hand**, or in their **foreheads**"
+
+**Critical Discovery — H226 = Mark = Sign = Token**:
+The KJV translates the SAME Hebrew word (H226 - אוֹת) as "mark" (Gen 4:15), "sign" (Exo 31:13), and "token" (Gen 9:12, 17:11). Understanding any of these illuminates all of them.
+
+**What IS the Sign/Mark/Token?**:
+- Rainbow (Gen 9:12)
+- Circumcision (Gen 17:11)
+- Passover blood (Exo 12:13)
+- **Sabbath** (Exo 31:13)
+- **Commandments** on hand/forehead (Deut 6:8)
+
+These are all **OBSERVANCES** — practices that identify covenant membership.
+
+**How You TAKE the Mark**:
+| God's Mark | Beast's Mark |
+|------------|--------------|
+| KEEP the Sabbath | FOLLOW the beast's system |
+| OBSERVE God's commandments | PRACTICE the beast's ordinances |
+| DO what God commands (hand) | DO what the beast commands (hand) |
+| THINK according to God's word (forehead) | THINK according to beast's ideology (forehead) |
+
+**Location — Hand and Forehead**:
+- **Hand** = What you DO (actions, works)
+- **Forehead** = What you THINK/BELIEVE (mind, allegiance)
+
+The mark in hand/forehead means your PRACTICES and BELIEFS align with that authority.
+
+**Relationship to Other Symbols**:
+- **NAME** = Covenant (the relationship itself)
+- **MARK** = Observance (the visible practice that identifies covenant membership)
+- **TRUTH** = God's Standard (the content of what is observed)
+- **FAITH** = Obedience (the response to the standard)
+
+**Full Study**: [`symbols/MARK.md`](symbols/MARK.md)
 
 ---
 

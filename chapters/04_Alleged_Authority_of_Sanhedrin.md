@@ -2,9 +2,8 @@
 
 There is a well known Jewish “fable” that each month two witnesses were required to observe the first visible sliver of the moon and that on the testimony of these two witnesses the new month could be declared. The basis of this approach is this command:  
 
-_A single witness shall not suffice against a person for any crime or for any wrong in connection with any offense that he has committed. Only_ **_on the evidence of two witnesses or of three witnesses shall a charge be established._**
-
-_— Deuteronomy 19:15_
+> *A single witness shall not suffice against a person for any crime or for any wrong in connection with any offense that he has committed. Only on the evidence of two witnesses or of three witnesses shall a charge be established.*
+> — Deuteronomy 19:15
 
   
 
@@ -12,10 +11,7 @@ This verse applies to crimes and court cases, and is being used to resolve a sig
 
   
 
-_Originally, they would light torches on the mountaintops [after the court sanctified the new month]. They would light from one mountain to another until the signal reached the Diaspora._
-
-**_But when the Cutheans (Samaritans) began to act deceitfully_** > *and lit fires on the wrong days to confuse the Jews, the Sages instituted that messengers should go out [instead] to inform the people.*
-
+> *Originally, they would light torches on the mountaintops [after the court sanctified the new month]. They would light from one mountain to another until the signal reached the Diaspora. But when the Cutheans (Samaritans) began to act deceitfully and lit fires on the wrong days to confuse the Jews, the Sages instituted that messengers should go out [instead] to inform the people.*
 > — Mishnah Rosh Hashanah 2:2–4
 
   
@@ -30,8 +26,7 @@ Some argue that you must obey the Sanhedrin on the basis of this scripture:
 
   
 
-_According to the teaching that they will teach you and_ **_according to the judgment_** _that they will say to you, you shall do;_ **_you shall not deviate_** > *from the word that they will tell you, right or left.”*
-
+> _According to the teaching that they will teach you and_ **_according to the judgment_** _that they will say to you, you shall do;_ **_you shall not deviate_** from the word that they will tell you, right or left.”*
 > — Deuteronomy 17:11
 
   
@@ -52,16 +47,14 @@ The oral torah documented in the Talmud interprets this verse as giving a group 
 
 In this scriptural context “they” is defined in the prior verses as the Levitical priests located in the place God chooses (The Temple in Jerusalem).
 
-_Go to the place that the Lord your God will choose (Jerusalem Temple), and_ **_come to the Levitical priests_** > *and to the judge who will be in those days, and inquire.*
-
+> _Go to the place that the Lord your God will choose (Jerusalem Temple), and_ **_come to the Levitical priests_** and to the judge who will be in those days, and inquire.*
 > — Deuteronomy 17:7-8
 
   
 
 And the subject matter jurisdiction of the court is defined here:  
 
-_If any case arises requiring decision between one kind of homicide and another, one kind of legal right and another, or one kind of assault and another,_ **_any case within your towns that is too difficult for you_**> *, then you shall arise and go up to the place that the LORD your God will choose.*
-
+> _If any case arises requiring decision between one kind of homicide and another, one kind of legal right and another, or one kind of assault and another,_ **_any case within your towns that is too difficult for you_** , then you shall arise and go up to the place that the LORD your God will choose.*
 > — Deuteronomy 17:9
 
   
@@ -102,8 +95,7 @@ The issue is that this process was not followed without introducing corrupting a
 
   
 
-_And it came to pass, when [the prophet] Samuel was old, that he_ **_made his sons judges_** _over Israel… And his_ **_sons walked not in his ways_**> *, but turned aside after lucre, and took bribes, and perverted judgment.*
-
+> _And it came to pass, when [the prophet] Samuel was old, that he_ **_made his sons judges_** _over Israel… And his_ **_sons walked not in his ways_** , but turned aside after lucre, and took bribes, and perverted judgment.*
 > — 1 Samuel 8:1–3
 
   
@@ -116,11 +108,9 @@ Then Israel was taken into captivity and under captivity they lost the ability t
 
 Historically, the Sanhedrin as a formalized institution emerged during the Hellenistic period under foreign rule (Greek and Roman), evolving from earlier bodies like the council of elders under Persian and Seleucid control (c. 333–165 BCE). Key developments:
 
-  
-
--   **c. 200 BC**: Earliest traceable origins as a supreme theocratic court under Seleucid rule, granting Jewish autonomy in Judea.
--   **c. 191 BC**: Formal restructuring when the High Priest lost confidence; the office of Nasi was created, separating leadership from the priesthood.
--   **c. 76–57 BC**: First explicit mentions during Hasmonean rule and Roman reorganization by Aulus Gabinius, who established **five local synedria** (councils) in 57 BCE.
+- **c. 200 BC**: Earliest traceable origins as a supreme theocratic court under Seleucid rule, granting Jewish autonomy in Judea.
+- **c. 191 BC**: Formal restructuring when the High Priest lost confidence; the office of Nasi was created, separating leadership from the priesthood.
+- **c. 76–57 BC**: First explicit mentions during Hasmonean rule and Roman reorganization by Aulus Gabinius, who established **five local synedria** (councils) in 57 BCE.
 
   
 

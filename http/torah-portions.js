@@ -26,14 +26,38 @@ async function loadTorahPortions() {
   }
 }
 
+// Helper to get lunarMonths from AppStore or global state
+function getLunarMonths() {
+  if (typeof AppStore !== 'undefined') {
+    const derived = AppStore.getDerived();
+    return derived?.lunarMonths || [];
+  }
+  if (typeof state !== 'undefined' && state.lunarMonths) {
+    return state.lunarMonths;
+  }
+  return [];
+}
+
+// Check if a day is a Sabbath
+function isTorahSabbath(dayObj, sabbathMode) {
+  if (!dayObj) return false;
+  if (sabbathMode === 'lunar') {
+    return [8, 15, 22, 29].includes(dayObj.lunarDay);
+  }
+  // Saturday sabbath
+  const weekday = dayObj.weekday !== undefined ? dayObj.weekday : dayObj.gregorianDate?.getUTCDay();
+  return weekday === 6;
+}
+
 // Get the Torah portion for a specific Sabbath day
 // Returns: { portion, maftirAddition, holidayReplacement, isSpecial }
 function getTorahPortionForSabbath(dayObj, month, sabbathMode) {
   if (!torahPortions || !torahSpecialReadings) return null;
-  if (!isSabbath(dayObj)) return null;
+  if (!isTorahSabbath(dayObj, sabbathMode)) return null;
   
   const lunarMonth = month.monthNumber;
   const lunarDay = dayObj.lunarDay;
+  const lunarMonths = getLunarMonths();
   
   // Check for holiday replacement first
   const holidayReplacement = getHolidayReplacement(lunarMonth, lunarDay, sabbathMode);
@@ -48,11 +72,11 @@ function getTorahPortionForSabbath(dayObj, month, sabbathMode) {
   
   // Get the regular Torah portion based on calendar type
   const portion = sabbathMode === 'lunar' 
-    ? getLunarSabbathPortion(lunarMonth, lunarDay, state.lunarMonths)
-    : getSaturdaySabbathPortion(dayObj.gregorianDate, state.lunarMonths);
+    ? getLunarSabbathPortion(lunarMonth, lunarDay, lunarMonths)
+    : getSaturdaySabbathPortion(dayObj.gregorianDate, lunarMonths);
   
   // Check for maftir additions
-  const maftirAddition = getMaftirAddition(lunarMonth, lunarDay, sabbathMode, state.lunarMonths);
+  const maftirAddition = getMaftirAddition(lunarMonth, lunarDay, sabbathMode, lunarMonths);
   
   return {
     portion: portion,

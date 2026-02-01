@@ -1,0 +1,13 @@
+---
+description: Git commit/push workflow - only when explicitly requested
+alwaysApply: true
+---
+
+# Git Workflow
+
+**NEVER** run `git commit` or `git push` unless the user explicitly asks with words like:
+- "commit"
+- "push" 
+- "commit and push"
+
+Even after completing a task, do NOT automatically commit or push. Wait for the user to request it.

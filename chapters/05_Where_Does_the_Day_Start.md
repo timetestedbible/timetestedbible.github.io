@@ -44,8 +44,7 @@ This is just one conception of the dateline, another is to view Jerusalem as the
 
   
 
-_Thus says_ 𐤉𐤄𐤅𐤄> *: This is Jerusalem. I have set her in the center of the nations, with countries all around her.*
-
+> _Thus says_ 𐤉𐤄𐤅𐤄 : This is Jerusalem. I have set her in the center of the nations, with countries all around her.*
 > — Ezekiel 5:5
 
   
@@ -86,8 +85,7 @@ There is only one way I know to solve the mystery of the dateline that preserves
 
   
 
-_And God said, 'Let there be_ **_lights_** _(plural) in the expanse of the heavens to_ **_separate_** _the day from the night. And let them (plural) be for signs and for_ **_seasons (appointed times)_**_, and for_ **_days and years_**> *, and let them be lights in the expanse of the heavens to give light upon the earth.’*
-
+> _And God said, 'Let there be_ **_lights_** _(plural) in the expanse of the heavens to_ **_separate_** _the day from the night. And let them (plural) be for signs and for_ **_seasons (appointed times)_**_, and for_ **_days and years_** , and let them be lights in the expanse of the heavens to give light upon the earth.’*
 > — Genesis 1:14-16
 
   

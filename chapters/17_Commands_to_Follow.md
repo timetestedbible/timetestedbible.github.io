@@ -67,13 +67,13 @@ The greatest command is “You shall love 𐤉𐤄𐤅𐤄 your God with all yo
 
 Therefore, you cannot even keep the greatest commandment without attempting to keep the smallest commandment with all of your heart, soul, and mind.
 
-“Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them. For truly, I say to you, until heaven and earth pass away, not an iota, not a dot, will pass from the Law until all is accomplished. Therefore whoever relaxes one of the least of these commandments and teaches others to do the same will be called least in the kingdom of heaven, but whoever does them and teaches them will be called great in the kingdom of heaven. For I tell you, unless your righteousness exceeds that of the scribes and Pharisees, you will never enter the kingdom of heaven.” 
-— Matthew 5:17–20
+> “Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them. For truly, I say to you, until heaven and earth pass away, not an iota, not a dot, will pass from the Law until all is accomplished. Therefore whoever relaxes one of the least of these commandments and teaches others to do the same will be called least in the kingdom of heaven, but whoever does them and teaches them will be called great in the kingdom of heaven. For I tell you, unless your righteousness exceeds that of the scribes and Pharisees, you will never enter the kingdom of heaven.” 
+> — Matthew 5:17–20
 
 Notice that this may not be a salvation issue, it is a treasures in heaven issue. Apparently, even teaching people to relax the least of the commandments isn’t enough to lose your salvation and be denied the Kingdom if it wasn’t willful. That said, there are translations that suggest that “least in the kingdom” could be translated as “like nothing in the kingdom”. It is better to stay away from that side of the spectrum.
 
-…but lay up for yourselves treasures in heaven, where neither moth nor rust destroys and where thieves do not break in and steal. For where your treasure is, there your heart will be also. 
-— Matthew 6:20–21
+> …but lay up for yourselves treasures in heaven, where neither moth nor rust destroys and where thieves do not break in and steal. For where your treasure is, there your heart will be also. 
+> — Matthew 6:20–21
 
 We are commanded to lay up treasures in heaven. If you are not concerned with treasures in heaven, then where is your heart? And how do we lay up treasures in heaven? Those who follow and teach the least of these commandments will be the greatest (richest) in the kingdom of heaven.
 
@@ -109,8 +109,8 @@ The New Covenant is only with the house of Israel and the house of Judah, to whi
 > — Jeremiah 31:31–33
 
 
-“There shall be one law for the native and for the stranger who sojourns among you.” 
-— Exodus 12:49
+> “There shall be one law for the native and for the stranger who sojourns among you.” 
+> — Exodus 12:49
 
 The intentional sinner is blaspheming 𐤉𐤄𐤅𐤄 and shall be cut off. Causing people to “doubt” the law is the oldest deception in the book.
 
@@ -127,17 +127,17 @@ His law clearly states that it is forever in many places and He cannot lie nor c
 
 ‘Therefore the children of Israel (and those grafted in) shall keep the Sabbath, to observe the Sabbath throughout their generations as a perpetual covenant.‘It is a sign between Me and the children of Israel forever; for in six days 𐤉𐤄𐤅𐤄 made the heavens and the earth, and on the seventh day He rested and was refreshed.’ ”
 
-“This shall be a statute forever for you: In the seventh month, on the tenth day of the month, you shall afflict your souls, and do no work at all, whether a native of your own country or a stranger who dwells among you. It is a sabbath of solemn rest for you, and you shall afflict your souls. It is a statute forever. 
-— Leviticus 16:29,31
+> “This shall be a statute forever for you: In the seventh month, on the tenth day of the month, you shall afflict your souls, and do no work at all, whether a native of your own country or a stranger who dwells among you. It is a sabbath of solemn rest for you, and you shall afflict your souls. It is a statute forever. 
+> — Leviticus 16:29,31
 
-‘And you shall proclaim on the same day that it is a holy convocation to you. You shall do no customary work on it. It shall be a statute forever in all your dwellings throughout your generations. 
-— Leviticus 23:21
+> ‘And you shall proclaim on the same day that it is a holy convocation to you. You shall do no customary work on it. It shall be a statute forever in all your dwellings throughout your generations. 
+> — Leviticus 23:21
 
-‘You shall keep it (Tabernacles) as a feast to 𐤉𐤄𐤅𐤄 for seven days in the year. It shall be a statute forever in your generations. You shall celebrate it in the seventh month. ‘You shall dwell in booths for seven days. All who are native Israelites shall dwell in booths.
-— Leviticus 23:41
+> ‘You shall keep it (Tabernacles) as a feast to 𐤉𐤄𐤅𐤄 for seven days in the year. It shall be a statute forever in your generations. You shall celebrate it in the seventh month. ‘You shall dwell in booths for seven days. All who are native Israelites shall dwell in booths.
+> — Leviticus 23:41
 
-“Observe and obey all these words which I command you, that it may go well with you and your children after you forever, when you do what is good and right in the sight of 𐤉𐤄𐤅𐤄 your God. 
-— Deuteronomy 12:28
+> “Observe and obey all these words which I command you, that it may go well with you and your children after you forever, when you do what is good and right in the sight of 𐤉𐤄𐤅𐤄 your God. 
+> — Deuteronomy 12:28
 
 As evidence that forever means forever and not just “until Yeshua”, consider this prophecy about the millennial reign:
 
@@ -155,8 +155,8 @@ Yeshua could not teach against the commands of 𐤉𐤄𐤅𐤄 given through Mo
 Beware Traditions of Men
 One of the biggest mistakes and misunderstandings people make is to assume that the Jews and their traditions are in alignment with 𐤉𐤄𐤅𐤄’s commands. The Jews put more weight on their oral tradition written down in the Talmud than they place in the Bible. 
 
-“Watch out!” Yeshua told them. “Beware of the leaven of the Pharisees and Sadducees.”… Then they understood that He was not telling them to beware of the leaven used in bread, but of the teaching of the Pharisees and Sadducees. 
-— Matthew 16:6,12
+> “Watch out!” Yeshua told them. “Beware of the leaven of the Pharisees and Sadducees.”… Then they understood that He was not telling them to beware of the leaven used in bread, but of the teaching of the Pharisees and Sadducees. 
+> — Matthew 16:6,12
 
 Modern day Jews are the descendants of the Pharisees and carry on with their teachings. 
 

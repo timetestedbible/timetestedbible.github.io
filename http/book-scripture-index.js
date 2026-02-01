@@ -416,6 +416,29 @@ const BOOK_SCRIPTURE_INDEX = {
   "Revelation 22:18-19": [{chapter: "03", title: "Principles of Evaluation", anchor: "ref-revelation-22-18"}, {chapter: "15", title: "Solar Only Calendars", anchor: "ref-revelation-22-18"}]
 };
 
+// Chapter number to chapterId mapping for v2 navigation
+const CHAPTER_ID_MAP = {
+  "01": "01_Introduction",
+  "02": "02_Inherited_Lies",
+  "03": "03_Principles_of_Evaluation",
+  "04": "04_Alleged_Authority_of_Sanhedrin",
+  "05": "05_Where_Does_the_Day_Start",
+  "06": "06_When_Does_the_Day_Start",
+  "07": "07_When_Does_the_Month_Start",
+  "08": "08_When_does_the_Year_Start",
+  "09": "09_How_to_Observe_the_Signs",
+  "10": "10_When_is_the_Sabbath",
+  "11": "11_The_Day_of_Saturn",
+  "12": "12_32_AD_Resurrection",
+  "13": "13_Herod_the_Great",
+  "14": "14_Passion_Week_3_Days_3_Nights",
+  "15": "15_Solar_Only_Calendars",
+  "16": "16_The_Path_to_Salvation",
+  "17": "17_Commands_to_Follow",
+  "18": "18_Appointed_Times",
+  "19": "19_Miscellaneous_Commands"
+};
+
 // Helper function to normalize a verse reference for lookup
 function normalizeReference(ref) {
   // Handle variations like "Psalm" vs "Psalms", normalize spacing
@@ -455,33 +478,35 @@ function getBookReferences(book, chapter, verse) {
   return results.length > 0 ? results : null;
 }
 
-// Build chapter URL
+// Build chapter URL for v2 navigation
+// Returns an onclick handler string for AppStore navigation
 function getChapterUrl(chapterNum, anchor) {
-  // Jekyll slugifies the filenames: lowercase, hyphens instead of underscores
-  const chapterSlugs = {
-    "01": "01-introduction",
-    "02": "02-inherited-lies", 
-    "03": "03-principles-of-evaluation",
-    "04": "04-alleged-authority-of-sanhedrin",
-    "05": "05-where-does-the-day-start",
-    "06": "06-when-does-the-day-start",
-    "07": "07-when-does-the-month-start",
-    "08": "08-when-does-the-year-start",
-    "09": "09-how-to-observe-the-signs",
-    "10": "10-when-is-the-sabbath",
-    "11": "11-the-day-of-saturn",
-    "12": "12-32-ad-resurrection",
-    "13": "13-herod-the-great",
-    "14": "14-passion-week-3-days-3-nights",
-    "15": "15-solar-only-calendars",
-    "16": "16-the-path-to-salvation",
-    "17": "17-commands-to-follow",
-    "18": "18-appointed-times",
-    "19": "19-miscellaneous-commands"
-  };
+  const chapterId = CHAPTER_ID_MAP[chapterNum];
+  if (!chapterId) return null;
   
-  const slug = chapterSlugs[chapterNum];
-  if (!slug) return null;
+  // Return URL path for href attribute
+  return `/reader/timetested/${chapterId}${anchor ? '#' + anchor : ''}`;
+}
+
+// Navigate to a book chapter (called from popup links)
+function navigateToBookChapter(chapterNum, anchor) {
+  const chapterId = CHAPTER_ID_MAP[chapterNum];
+  if (!chapterId) return;
   
-  return `/chapters/${slug}/${anchor ? '#' + anchor : ''}`;
+  // Use AppStore navigation
+  AppStore.dispatch({
+    type: 'SET_VIEW',
+    view: 'reader',
+    params: { contentType: 'timetested', chapterId: chapterId }
+  });
+  
+  // Scroll to anchor after content loads
+  if (anchor) {
+    setTimeout(() => {
+      const el = document.getElementById(anchor);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 500);
+  }
 }

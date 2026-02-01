@@ -47,6 +47,76 @@ const TEMPLE_DEDICATION_YEAR = -958;
 // Some scholars date this to 586 BC, but 587 BC aligns with many chronologies
 const FIRST_TEMPLE_DESTRUCTION_YEAR = -586;
 
+// Get the year start point based on yearStartRule setting
+// Adapted for v2 - uses getAstroEngine and AppStore
+function getYearStartPoint(year) {
+  const engine = getAstroEngine();
+  const springEquinox = engine.getSeasons(year).mar_equinox.date;
+  
+  // Get yearStartRule from AppStore if available
+  let yearStartRule = 'equinox';
+  if (typeof AppStore !== 'undefined') {
+    const state = AppStore.getState();
+    yearStartRule = state.profile?.yearStartRule || 'equinox';
+  }
+  
+  if (yearStartRule === '13daysBefore') {
+    // Return 14 days before the equinox (Day 15 must be on or after equinox)
+    return new Date(springEquinox.getTime() - 14 * 24 * 60 * 60 * 1000);
+  }
+  
+  // Default to equinox
+  return springEquinox;
+}
+
+// Find moon events (full, dark, or crescent) for a given year
+// Adapted for v2 - uses getAstroEngine and AppStore
+function findMoonEvents(year, phaseType) {
+  const engine = getAstroEngine();
+  const events = [];
+  
+  // Get crescent threshold from AppStore if available
+  let crescentThreshold = 18; // Default
+  if (typeof AppStore !== 'undefined') {
+    const state = AppStore.getState();
+    crescentThreshold = state.profile?.crescentThreshold || 18;
+  }
+  
+  // Create dates with proper year handling for ancient dates
+  let searchDate = new Date(Date.UTC(2000, 11, 1));
+  searchDate.setUTCFullYear(year - 1);
+  
+  let endDate = new Date(Date.UTC(2000, 5, 1));
+  endDate.setUTCFullYear(year + 1);
+  
+  // Moon phase angles: 0 = new/dark, 90 = first quarter, 180 = full, 270 = last quarter
+  let targetPhase;
+  if (phaseType === 'full') {
+    targetPhase = 180;
+  } else if (phaseType === 'dark') {
+    targetPhase = 0;
+  } else if (phaseType === 'crescent') {
+    targetPhase = 0;
+  }
+  
+  while (searchDate < endDate) {
+    const result = engine.searchMoonPhase(targetPhase, searchDate, 40);
+    if (result) {
+      let eventDate = result.date;
+      
+      // For crescent, add offset to conjunction
+      if (phaseType === 'crescent') {
+        const conjunction = result.date;
+        eventDate = new Date(conjunction.getTime() + crescentThreshold * 60 * 60 * 1000);
+      }
+      
+      events.push(eventDate);
+      searchDate = new Date(result.date.getTime() + 20 * 24 * 60 * 60 * 1000);
+    } else break;
+  }
+  return events;
+}
+
 // Priestly divisions data (will be loaded from JSON)
 let PRIESTLY_DIVISIONS = null;
 let priestlyDivisionsLoadPromise = null;

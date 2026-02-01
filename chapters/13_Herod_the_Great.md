@@ -60,8 +60,8 @@ To further confirm the reign and death of Herod the Great, we turn to a fifth fu
 Key Event: Herod's Appointment as Governor of Galilee
 Josephus records that Herod was appointed governor of Galilee at just 15 years old, during a period that overlaps with the 9th year of Hyrcanus II's rule as high priest and ethnarch (spring 55 BC to spring 54 BC).
 
-“This [appointment as governor of Galilee] was done in the ninth year of Hyrcanus the high priest and ethnarch, in the month Panemus” (July).
-— Antiquities 14.8.5
+> “This [appointment as governor of Galilee] was done in the ninth year of Hyrcanus the high priest and ethnarch, in the month Panemus” (July).
+> — Antiquities 14.8.5
 
 The 9th year of Hyrcanus II is universally dated to 55/54 BC, as Hyrcanus became ethnarch following Pompey's conquest in 63 BC. Using inclusive counting (common in ancient chronologies), this aligns precisely.
 

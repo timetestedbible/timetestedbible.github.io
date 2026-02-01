@@ -129,8 +129,8 @@ The most obvious way to willfully break the law of 𐤉𐤄𐤅𐤄 is to claim 
 
 > — 1 John 3:4-6
 
-“Many will say to Me on that day, ‘Lord, Lord, did we not prophesy in Your name, and in Your name cast out demons, and in Your name perform many miracles?’ “And then I will declare to them, ‘I never knew you; depart from Me, you who practice lawlessness.’ 
-— Matthew 7:22-23
+> “Many will say to Me on that day, ‘Lord, Lord, did we not prophesy in Your name, and in Your name cast out demons, and in Your name perform many miracles?’ “And then I will declare to them, ‘I never knew you; depart from Me, you who practice lawlessness.’ 
+> — Matthew 7:22-23
 
 All Have Sinned & Continue to Sin
 
@@ -146,8 +146,8 @@ If sinning after coming to Yeshua is even worse than never knowing Yeshua, then 
 
 Based upon the fundamental truth that all have sinned, all are deserving of death and there is nothing of our own power we can do to have salvation except pray for His mercy and have faith in His finished work on the cross. 
 
- He that follows me shall not walk in darkness, but shall have the light of life. 
-— John 8:12
+>  He that follows me shall not walk in darkness, but shall have the light of life. 
+> — John 8:12
 
 > And ye shall know the truth (the law), and the truth shall make you free… Yeshua answered them, Verily, verily, I say unto you, Whosoever commits sin is the servant (slave) of sin. And the servant abides not in the house for ever: but the Son abides ever. If the Son therefore shall make you free, ye shall be free indeed.  
 
@@ -196,8 +196,8 @@ Can one have salvation without repentance? What is repentance except the turning
 
 > — Romans 7:12
 
-“Not everyone who says to me, ‘Lord, Lord,’ will enter the kingdom of heaven, but only the one who does the will of my Father who is in heaven. 
-— Matthew 7:21
+> “Not everyone who says to me, ‘Lord, Lord,’ will enter the kingdom of heaven, but only the one who does the will of my Father who is in heaven. 
+> — Matthew 7:21
 
 What is doing the Father’s will except being obedient to the least of his commands? Is perfect obedience possible? Not in the flesh. Is perfect obedience required for salvation, No. But a mind and heart of obedience is.
 Many say “Lord, Lord”, confessing with their mouth, but their actions show a rebellion to seeking to understand and follow His commands. They say in their hearts, “There are no laws or commands because I am forgiven of all sin”. This is like a reckless driver claiming there are no rules of the road because someone has paid his tickets. When you say “Lord, Lord” you are saying “master, master”, and how can someone be your “master” unless you attempt to obey their commands?

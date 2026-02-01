@@ -143,8 +143,8 @@ In those days Caesar Augustus issued a decree that a census (apographē) should 
 > — Luke 2:1-5
 In 3–2 BC Augustus organized an empire-wide act of allegiance to celebrate the twenty-fifth anniversary of his rule and the granting of the title Pater Patriae (“Father of the Fatherland”) in February 2 BC. The event was called an ἀπογραφή / apographē (the exact word Luke uses in Luke 2:2 and that is normally translated “census”) because, in the official Roman administrative language of the time, any formal registration of persons that produced a written list of names was labelled an apographē — regardless of whether the ultimate purpose was taxation, military service, or a loyalty oath.
 
-“There was also a great disturbance among the people because of a command that the king gave to swear allegiance to Caesar and to himself. For there were certain men among the Jews who valued the laws of their country above all things… Accordingly, when all the people of the Jews gave assurance of their good-will to Caesar, and to the king’s government, these very men [the Pharisees] did not swear, being above six thousand; and when the king imposed a fine upon them, Pheroras’ wife paid the money for them.” 
-— Josephus, Antiquities of the Jews 17.2.4
+> “There was also a great disturbance among the people because of a command that the king gave to swear allegiance to Caesar and to himself. For there were certain men among the Jews who valued the laws of their country above all things… Accordingly, when all the people of the Jews gave assurance of their good-will to Caesar, and to the king’s government, these very men [the Pharisees] did not swear, being above six thousand; and when the king imposed a fine upon them, Pheroras’ wife paid the money for them.” 
+> — Josephus, Antiquities of the Jews 17.2.4
 
 
 The primary evidence is the Res Gestae Divi Augusti itself (chapter 35) together with a surviving oath-text found on a Greek inscription from Paphlagonia (OGIS 532) that was sworn “by all the people in the land” in early 2 BC.
@@ -188,8 +188,8 @@ If we date purely from the 18th year, then the 46th year would be spring 29 to s
 Add 46 construction years later brings us to the spring of 30 AD, the very first Passover at which it could be said 46 years. Construction on the temple was on going through 65 AD just a few short years before the temple was destroyed.
 If 30 AD was the first passover, then the second was 31 AD and the final would be 32 AD. At the time this was said Jesus also said:
 
-‘Destroy this temple, and in three days I will raise it up.’ 
-— John 2:18
+> ‘Destroy this temple, and in three days I will raise it up.’ 
+> — John 2:18
 
 While it obviously alludes to him being killed and resurrected on the 3rd day, it also can be interpreted prophetically as 3 years from this conversation: 30 AD, 31 AD, and 32 AD inclusively. This prophetic interpretation is not strictly necessary, but it doesn’t hurt the case.
 
@@ -200,9 +200,9 @@ The book of Daniel has one of the most profound prophecies in the Bible because 
 
 > — Daniel 9:25
 
-Your bible probably translates it something closer to: 
-… until Anointed Prince there will be seven weeks and sixty-two weeks. It will be rebuilt with plaza and moat and the times end in distress. 
-— Daniel 9:25
+> Your bible probably translates it something closer to: 
+> … until Anointed Prince there will be seven weeks and sixty-two weeks. It will be rebuilt with plaza and moat and the times end in distress. 
+> — Daniel 9:25
 
 Under this understanding you would add it up and conclude 69 weeks or 483 years. People then reference the prior verse for context:
 > Seventy weeks (490 years) have been determined upon thy people, and upon thy holy city, for sin to be ended, and to seal up transgressions, and to blot out the iniquities, and to make atonement for iniquities, and to bring in everlasting righteousness, and to seal the vision and the prophet, and to anoint the Most Holy.
@@ -291,8 +291,8 @@ A direct example is preserved and quoted in historical compilations (e.g., F. Ri
 This refers to a predicted solar eclipse on 7 September 247 BC. Babylonian astronomers, using arithmetic progressions (precursors to the Saros cycle), accurately forecasted the time (here, ~74 degrees after sunrise, equivalent to a specific hour) but the eclipse was not visible in Babylon — it occurred far north. The prediction was for a potential event on that date/time, but location/visibility was uncertain.
 Pliny the Elder (Natural History 2.10) notes varying visibility and timing of eclipses by location, implying ancients recognized that predictions were global in timing but local in observation:
 
-…this eclipse is visible to different nations…
-— Pliny the Elder
+> …this eclipse is visible to different nations…
+> — Pliny the Elder
 
 Combined with the Saros cycle (known to Chaldeans/Babylonians by ~7th century BC, later to Hipparchus), which repeats eclipses ~every 18 years + 11 days but shifts the path ~120° westward (one-third around Earth), ancients could reliably predict recurrence times, but not precise paths/locations without advanced parallax/geometric models (achieved later by Ptolemy in the Almagest, ~2nd century AD).
 This limitation is why Babylonian records often note “predicted but not seen” — they knew when to watch, but not definitively where it would appear. No earlier Greek source (e.g., Herodotus on Thales) claims location prediction; Thales (~585 BC) reportedly forecasted only the year/season.

@@ -8,8 +8,8 @@ Yeshua entered Jerusalem on the 10th day of the month according to the Passover 
 
 Then the Passover Lamb was to be killed “between the evenings” which is generally thought to be between noon and sunset or about 3 PM. 
 
-and you shall keep it until the 14th day of this month, when the whole assembly of the congregation of Israel shall kill it at between the evenings (between noon and sunset).  
-— Exodus 12:6
+> and you shall keep it until the 14th day of this month, when the whole assembly of the congregation of Israel shall kill it at between the evenings (between noon and sunset).  
+> — Exodus 12:6
 
 This aligns with the exact time Yeshua was killed:
 
@@ -34,24 +34,24 @@ When you put all of that together we have hard calendar dates for the day he was
 
 > — Matthew 16:21
 
-and they will kill him, and he will be raised on the third day. And they were greatly distressed. 
-— Matthew 17:23
+> and they will kill him, and he will be raised on the third day. And they were greatly distressed. 
+> — Matthew 17:23
 
-and deliver him over to the Gentiles to be mocked and flogged and crucified, and he will be raised on the third day. 
-— Matthew 20:19
+> and deliver him over to the Gentiles to be mocked and flogged and crucified, and he will be raised on the third day. 
+> — Matthew 20:19
 
 > And he began to teach them that the Son of Man must suffer many things and be rejected by the elders and the chief priests and the scribes and be killed, and after three days rise again. 
 
 > — Mark 8:31
 
-for he was teaching his disciples, saying to them, The Son of Man is going to be delivered into the hands of men, and they will kill him. And when he is killed, after three days he will rise. 
-— Mark 9:31
+> for he was teaching his disciples, saying to them, The Son of Man is going to be delivered into the hands of men, and they will kill him. And when he is killed, after three days he will rise. 
+> — Mark 9:31
 
-who will mock him and spit on him, and flog him and kill him. And after three days he will rise. 
-— Mark 10:34
+> who will mock him and spit on him, and flog him and kill him. And after three days he will rise. 
+> — Mark 10:34
 
-saying, The Son of Man must suffer many things and be rejected by the elders and chief priests and scribes, and be killed, and on the third day be raised. 
-— Luke 9:22
+> saying, The Son of Man must suffer many things and be rejected by the elders and chief priests and scribes, and be killed, and on the third day be raised. 
+> — Luke 9:22
 
 > And after flogging him, they will kill him, and on the third day he will rise. 
 
@@ -64,8 +64,8 @@ and said to them, Thus it is written, that the Christ should suffer and on the t
 
 > — Acts 10:39–40
 
-that Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures 
-— 1 Corinthians 15:1-4
+> that Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures 
+> — 1 Corinthians 15:1-4
 
 > That very day (first day of the week)…The things concerning Jesus of Nazareth, a man who was a prophet mighty in deed and word before God and all the people, and how our chief priests and rulers delivered him up to be condemned to death, and crucified him. But we had hoped that he was the one to redeem Israel. Yes, and besides all this, it is now the third day since all these things. 
 
@@ -83,8 +83,8 @@ The argument is that “heart of the earth” means dead and/or in the grave and
 The typical way to resolve the “3 days and 3 nights” is to allow it to be understood as a metaphor for 3 inclusive calendar days; however, there is an even stronger case that can be derived by doing a deeper study on the meaning of the phrase “heart of the earth” and of the parable of Jonah.
 While most assume it means “grave”, it was actually a well documented expression used to refer to Jerusalem itself. 
 
-and against a people gathered from the nations (to Jerusalem), who have acquired livestock and goods, who dwell in the navel of the earth (tabbur ha’aretz). 
-— Ezekiel 38:12
+> and against a people gathered from the nations (to Jerusalem), who have acquired livestock and goods, who dwell in the navel of the earth (tabbur ha’aretz). 
+> — Ezekiel 38:12
 
 Greek-speaking Jews and early Christians sometimes replaced “navel” with “heart”. 
 

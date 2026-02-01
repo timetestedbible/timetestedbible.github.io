@@ -705,17 +705,29 @@ function initDetailPanel() {
         top: 56px; /* Below main nav */
         right: -100%;
         width: 50%;
+        max-width: calc(100% - 280px - 60px); /* Don't cover sidebar (280px) or ruler (60px) */
         height: calc(100vh - 56px);
         background: #1a1a2e;
         border-left: 2px solid rgba(126, 200, 227, 0.3);
-        z-index: 9000;
+        z-index: 900; /* Below sidebar (1000) */
         transition: right 0.3s ease;
         display: flex;
         flex-direction: column;
         overflow: hidden;
       }
       .detail-slideout.open {
-        right: 0;
+        right: 280px; /* Account for sidebar width */
+      }
+      
+      /* When sidebar is hidden (mobile or collapsed) */
+      @media (max-width: 1023px) {
+        .detail-slideout.open {
+          right: 0;
+        }
+        .detail-slideout {
+          max-width: calc(100% - 60px);
+          z-index: 9000;
+        }
       }
       
       /* Mobile: slide out covers events but not ruler, adjust for smaller nav */
@@ -1674,6 +1686,19 @@ async function openEventDetailInternal(eventId, addHistory = true) {
 
 // Update URL to reflect currently open event/duration
 function updateTimelineURL(type, id) {
+  // Use AppStore if available (http-v2)
+  if (typeof AppStore !== 'undefined') {
+    if (type === 'event') {
+      AppStore.dispatch({ type: 'SET_TIMELINE_EVENT', eventId: id });
+    } else if (type === 'duration') {
+      AppStore.dispatch({ type: 'SET_TIMELINE_DURATION', durationId: id });
+    } else {
+      AppStore.dispatch({ type: 'CLEAR_TIMELINE_SELECTION' });
+    }
+    return;
+  }
+  
+  // Fallback for http/ (old behavior)
   if (typeof getCurrentProfileSlug !== 'function') return;
   
   const profile = getCurrentProfileSlug();

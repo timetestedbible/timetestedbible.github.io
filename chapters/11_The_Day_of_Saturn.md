@@ -3,8 +3,8 @@ If you are still not convinced by the argument for a Lunar Sabbath, lets take a 
 The seven day cycle is inherently a tradition of men because it is only knowable on the basis of the testimony of our fathers. Most sabbath debates focus on Saturday vs Sunday and whether man has authority to change it. There is no real dispute that there was a change from Saturday to Sunday, what most people dispute is mans right to change it and I have already throughly covered that the space-time of the Sabbath has been declared holy. All of the energy spent on the Saturday vs Sunday debate takes the focus off of the real issue, the unquestionable assumption that Saturday has always been the seventh day of the week and the Yeshua confirmed Saturday by virtue of not explicitly speaking against it in the Bible.
 This argument from silence is built off of the following quote from Josephus that states everyone, Jew, Greek, and barbarian rests on the seventh day.
 
-There is no city, Greek or barbarian, nor any nation to which the custom of abstaining from work on the seventh day has not penetrated—not even the remotest parts of the earth.
-— Josephus, Against Apion 2.282 (Loeb Classical Library translation)
+> There is no city, Greek or barbarian, nor any nation to which the custom of abstaining from work on the seventh day has not penetrated—not even the remotest parts of the earth.
+> — Josephus, Against Apion 2.282 (Loeb Classical Library translation)
 What is casually left out is that this was written toward the end of Josephus’ life around 93 AD, over 20 years after the temple fell and 60 years after Yeshua’s death. Twenty years is enough for an entire new generation to be born and raised with no memory of how things were before them. 
 Any competing calendars potentially observed by the temple priests were lost in the ashes and downfall of the levitical priesthood’s power and the popular Rabbinic calendar took over. Consider what Josephus says about the competing doctrines of the day:
 
@@ -78,8 +78,8 @@ Scripture then continuously warns about worshiping the sun, moon, and stars. And
 
 > — Deuteronomy 4:19
 
-…transgressing his covenant, and has gone and served other gods and worshiped them, or the sun or the moon or any of the host of heaven, which I have forbidden…
-— Deuteronomy 17:2–3
+> …transgressing his covenant, and has gone and served other gods and worshiped them, or the sun or the moon or any of the host of heaven, which I have forbidden…
+> — Deuteronomy 17:2–3
 
 > And he deposed the priests whom the kings of Judah had ordained to make offerings in the high places at the cities of Judah and around Jerusalem; those also who burned incense to Baal, to the sun and the moon and the constellations and all the host of heaven.
 
@@ -102,8 +102,7 @@ The six-pointed star—known as the Star of David in Judaism—appears in remark
 The connection to Saturn is confirmed by Tacitus who claims the Jews owe the basic principles of their religion to the god of Saturn and they chose the 7th day because it is a day of idleness.
 
 > "They [the Jews] are said to have dedicated the seventh day to rest because that day brought an end to their toils; but in fact they chose it because it is a day of idleness, and for the sake of pleasure. Others say that it is an observance in honor of Saturn, either because they owe the basic principles of their religion to the Idaei (who are supposed to have been expelled with Saturn from his kingdom and to have left behind the name 'Saturnian' for the land of Italy), or because, of the seven stars which rule mankind, the star of Saturn is in the highest orbit and exercises the mightiest influence, and because many of the heavenly bodies move in orbits of seven-day periods. 
- For this reason the seventh day has been set aside for rest, in honor of Saturn. These are plausible theories, but the Jews observe the seventh day not so much because of any religious scruple as because it is a day of idleness, and they are given over to pleasure. The rest of their customs are base and abominable, and owe their persistence to their own perversity."
-
+>  For this reason the seventh day has been set aside for rest, in honor of Saturn. These are plausible theories, but the Jews observe the seventh day not so much because of any religious scruple as because it is a day of idleness, and they are given over to pleasure. The rest of their customs are base and abominable, and owe their persistence to their own perversity."
 > — Tacitus, Histories 5.4; Loeb Classical Library translation)
 
 This aligns with the superstition we already saw from Tibullus that Saturday had bad omens. It is considered “unlucky” to begin any undertaking.

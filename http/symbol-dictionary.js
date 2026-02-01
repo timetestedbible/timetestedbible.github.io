@@ -343,6 +343,19 @@ const SYMBOL_DICTIONARY = {
     sentence: 'Works that have been tested and proven through trials—as oil is produced by pressing/crushing olives (fruit of the covenant tree), so proven works result from tested faithfulness',
     opposite: 'Untested/Unproven',
     link: '/symbols/oil/'
+  },
+  
+  'mark': {
+    name: 'MARK',
+    words: ['mark', 'marks', 'marked', 'sign', 'signs', 'token', 'tokens'],
+    strongs: ['H226', 'H8420', 'G5480', 'G4742'],
+    is: 'Observance',
+    is2: 'Visible Practice',
+    does: 'Identifies',
+    does2: 'Shows Allegiance',
+    sentence: 'The practice or observance that identifies which authority\'s covenant you follow—what you DO (hand) and THINK (forehead) that marks you as belonging to a particular master',
+    opposite: 'Unmarked/Unidentified',
+    link: '/symbols/mark/'
   }
 };
 
@@ -354,9 +367,11 @@ for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
   }
 }
 
-// Build a Strong's number index
+// Build a Strong's number index (includes key for navigation)
 const SYMBOL_STRONGS_INDEX = {};
 for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
+  // Attach the key to the symbol for easy lookup
+  symbol.key = key;
   if (symbol.strongs) {
     for (const strongs of symbol.strongs) {
       SYMBOL_STRONGS_INDEX[strongs] = symbol;

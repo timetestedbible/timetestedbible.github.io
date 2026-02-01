@@ -39,21 +39,21 @@ Yeshua was the ultimate sacrifice for our sins and other sacrifices can only be 
 
 This verse clearly establishes that there are three kinds of days on 𐤉𐤄𐤅𐤄’s calendar: working days, sabbath days, and new moon days. It further establishes that the month starts with the full moon, because scripture compares the sky to a tabernacle.
 
-…In the heavens/sky He has set a tabernacle for the sun, which is like a bridegroom coming out of his chamber, And rejoices like a strong man to run its race. Its rising is 
-from one end of heaven/sky…
-— Psalm 19:4-6
+> …In the heavens/sky He has set a tabernacle for the sun, which is like a bridegroom coming out of his chamber, And rejoices like a strong man to run its race. Its rising is 
+> from one end of heaven/sky…
+> — Psalm 19:4-6
 
 The east gate, or front gate, of the sky is the area where the sun and moon rise, and on the new months the east gate opens for the full moon to rise.  Notice that this verse also provides evidence for the day to begin at first light because this is the beginning of the circuit (circle, cycle) of the sun. The sliver moon can only be sighted in the west at sunset.
 On New Moons there is no buying or selling:
 
-“When will the new moon be over, that we may sell grain? And the Sabbath, that we may offer wheat for sale,
-— Amos 8:5
+> “When will the new moon be over, that we may sell grain? And the Sabbath, that we may offer wheat for sale,
+> — Amos 8:5
 
 Weekly Sabbaths
 Many people are probably familiar with the Sabbath being the 7th day of the week during which everyone is to rest and there is no buying and selling.
 
-“Remember the Sabbath day, to keep it holy. Six days you shall labor, and do all your work, but the seventh day is a Sabbath to 𐤉𐤄𐤅𐤄 your God. On it you shall not do any work, you, or your son, or your daughter, your male servant, or your female servant, or your livestock, or the sojourner who is within your gates. For in six days 𐤉𐤄𐤅𐤄 made heaven and earth, the sea, and all that is in them, and rested on the seventh day. Therefore 𐤉𐤄𐤅𐤄 blessed the Sabbath day and made it holy. 
-— Exodus 20:8
+> “Remember the Sabbath day, to keep it holy. Six days you shall labor, and do all your work, but the seventh day is a Sabbath to 𐤉𐤄𐤅𐤄 your God. On it you shall not do any work, you, or your son, or your daughter, your male servant, or your female servant, or your livestock, or the sojourner who is within your gates. For in six days 𐤉𐤄𐤅𐤄 made heaven and earth, the sea, and all that is in them, and rested on the seventh day. Therefore 𐤉𐤄𐤅𐤄 blessed the Sabbath day and made it holy. 
+> — Exodus 20:8
 
 More broadly, the term Sabbath refers to a week ending in a day of rest. The Hebrew word ‘yom’ is typically translated as “day”, but has many different meanings including:
 
@@ -84,8 +84,8 @@ Years are divided into months and months are divided into “New Moons” and �
 
 We know that the sun, moon, and stars are for signs and appointed times and we also know that the Sabbath is a sign and appointed time; therefore it makes sense that the Sabbath should be governed by the sun,  moon and stars.
 
-‘Therefore the children of Israel (and those grafted in) shall keep the Sabbath, to observe the Sabbath throughout their generations as a perpetual covenant.‘It is a sign between Me and the children of Israel forever’.  
-— Zechariah 14
+> ‘Therefore the children of Israel (and those grafted in) shall keep the Sabbath, to observe the Sabbath throughout their generations as a perpetual covenant.‘It is a sign between Me and the children of Israel forever’.  
+> — Zechariah 14
 
 With the Sabbath days connected to the phases of the moon, we have a clear sign for our appointed times with 𐤉𐤄𐤅𐤄 that cannot be corrupted by the tradition of men. The traditional continuous weekly cycle has a number of contradictions and ambiguous situations that make it a logical impossibility. For starters, if you count your days as the number of sunrises you observe, with the Sabbath starting every 7th sunrise, then two people leaving the Garden of Eden in opposite directions (one eastward, one westward) will meet on the opposite side of the globe and will forever disagree about what day is the Sabbath. With a Full Moon Lunar Sabbath any disagreement would be resolved at the start of the next month and if traveling at historical speeds, before trains and air planes, they would be synced up before they even met.
  A benefit of the Full Moon Lunar Sabbath understanding is that there are never any conflicts between the weekly Sabbath and other appointed times. Sabbaths are days of rest, healing, and coming together to read the Bible. It would be challenging to keep the Sabbath on Preparation Day for Passover which involved a lot of work. A future chapter will provide the extensive proofs that this is the true Sabbath.
@@ -108,8 +108,8 @@ Passover & Unleavened Bread
 The feast of Passover and Unleavened bread is a remembrance of two of the most important events in biblical history: the Exodus of Egypt and the crucifixion and resurrection of Yeshua. From the evening of the 14th until the evening of the 21st you shall eat unleavened bread. More specifically, no leaven should be found anywhere in the homes of the people and community. 
 We no longer have priests to kill a Passover lamb and Yeshua was the final Passover lamb to be offered as a sacrifice for sin. That said, it is still possible for us to eat lamb and unleavened bread as a memorial. On the 13th of the month is the Last Supper which we were instructed to “do in remembrance of him”.
   
- For I tell you that from now on I will not drink of the fruit of the vine until the kingdom of God comes.” And he took bread, and when he had given thanks, he broke it and gave it to them, saying, “This is my body, which is given for you. Do this in remembrance of me.” And likewise the cup after they had eaten, saying, “This cup that is poured out for you is the new covenant in my blood.” 
-— Luke 22:18-20
+>  For I tell you that from now on I will not drink of the fruit of the vine until the kingdom of God comes.” And he took bread, and when he had given thanks, he broke it and gave it to them, saying, “This is my body, which is given for you. Do this in remembrance of me.” And likewise the cup after they had eaten, saying, “This cup that is poured out for you is the new covenant in my blood.” 
+> — Luke 22:18-20
 
 
 
@@ -187,8 +187,8 @@ Upon doing a closer study of the Hebrew, the word for “first fruits” has a �
 
 > — Revelation 6:6
 
- And the floors shall be full of wheat, and the fats shall overflow with wine and oil.
-— Joel 2:24
+>  And the floors shall be full of wheat, and the fats shall overflow with wine and oil.
+> — Joel 2:24
 
 > Therefore they shall come and sing in the height of Zion, and shall flow together to the goodness of 𐤉𐤄𐤅𐤄, for wheat, and for wine, and for oil, and for the young of the flock and of the herd: and their soul shall be as a watered garden; and they shall not sorrow any more at all.
 
@@ -230,21 +230,18 @@ The Greek **φωνὴν ἐξαρχόντων οἴνου**—literally "the sou
 
 ## Torah's Provisions for Wine in Appointed Times: The Role of First Fruits
 
-The Scriptures integrate wine into appointed times through laws ensuring its consecrated use, particularly via first fruits offerings. These establish the proper framework for a feast inaugurating the vintage, as implied in the narrative's harvest-like elements.
-
--   **Numbers 18:12** addresses the dedication of new wine:
+> The Scriptures integrate wine into appointed times through laws ensuring its consecrated use, particularly via first fruits offerings. These establish the proper framework for a feast inaugurating the vintage, as implied in the narrative's harvest-like elements.
+- **Numbers 18:12** addresses the dedication of new wine:
     
     > "All the best of the fresh oil and all the best of the **fresh wine** and of the grain, the **first fruits** of those which they shall offer unto the LORD, I give them to you [the priests]."
     
-    This positions the choicest new wine as an offering "to YHWH," mirroring the feast's intent and setting the moed's starting point with divine dedication.
-    
--   **Exodus 22:29** emphasizes timely presentation of harvest products:
+>     This positions the choicest new wine as an offering "to YHWH," mirroring the feast's intent and setting the moed's starting point with divine dedication.
+- **Exodus 22:29** emphasizes timely presentation of harvest products:
     
     > "Thou shalt not delay to offer the first of thy ripe fruits, and of thy **liquors** [including pressed wine]."
     
-    In the context of a feast "to YHWH," this supports beginning the celebration with the vintage's first fruits, aligning with the moed's proclaimed purpose.
-    
--   **Leviticus 23:13** (in the context of first fruits at Shavuot, an appointed time):
+>     In the context of a feast "to YHWH," this supports beginning the celebration with the vintage's first fruits, aligning with the moed's proclaimed purpose.
+- **Leviticus 23:13** (in the context of first fruits at Shavuot, an appointed time):
     
     > "And the meat offering thereof shall be two tenth deals of fine flour mingled with oil, an offering made by fire unto the LORD for a sweet savour: and the drink offering thereof shall be of **wine**, the fourth part of an hin."
     
@@ -260,10 +257,10 @@ In essence, this biblical moed invites recognition of the New Wine Feast as a co
 
 This feast is the least well known by traditional Christian and Jewish teaching, but once you study the scriptures it becomes a secret hidden in plain sight. 
 
-And when the day of Pentecost was fully come, they were all with one accord in one place.And suddenly there came a sound from heaven as of a rushing mighty 
-wind, and it filled all the house where they were sitting…. Others mocking said, These men are full of new wine. … But Peter, standing up with the eleven, lifted up his 
-voice, and said unto them, Ye men of Judaea, and all ye that dwell at Jerusalem, be this known unto you, and hearken to my words: For these are not drunken, as ye suppose, seeing it is but the third hour of the day.
-— Acts 2
+> And when the day of Pentecost was fully come, they were all with one accord in one place.And suddenly there came a sound from heaven as of a rushing mighty 
+> wind, and it filled all the house where they were sitting…. Others mocking said, These men are full of new wine. … But Peter, standing up with the eleven, lifted up his 
+> voice, and said unto them, Ye men of Judaea, and all ye that dwell at Jerusalem, be this known unto you, and hearken to my words: For these are not drunken, as ye suppose, seeing it is but the third hour of the day.
+> — Acts 2
 
 When the Holy Spirit came down on Pentecost they were accused of being drunk on New Wine, which is only available when grapes are freshly harvested at the end of July. Peter’s defense is even more telling, because by law you could not partake of New Wine until after the First Fruits were offered and they were offered at the 3rd hour of the day (about 9 AM). 
 We can connect Pentecost to the worship of the Golden Calf by comparing 3000 killed to the 3000 saved. The timeline of Exodus has the Golden Calf incident occur at least 50 days after they arrived at Mount Sinai on the 3rd day of the 3rd month. That would line up perfectly for the 9th day of the 5th month.
@@ -304,8 +301,8 @@ The Feast of Trumpets is often associated with Rosh Hashanah (the head of the ye
 
 Many people expect the Feast of Trumpets to be the rapture, but on the day of the rapture he comforts those who mourn. Since Nehemiah had to instruct the people not to cry, we should assume that on this day we also should not cry.
 
-‘And in the seventh month, on the first day of the month, you shall have a holy convocation. You shall do no customary work. For you it is a day of blowing the trumpets. You shall offer a burnt offering as a sweet aroma to 𐤉𐤄𐤅𐤄 
-— Numbers 29:1-6
+> ‘And in the seventh month, on the first day of the month, you shall have a holy convocation. You shall do no customary work. For you it is a day of blowing the trumpets. You shall offer a burnt offering as a sweet aroma to 𐤉𐤄𐤅𐤄 
+> — Numbers 29:1-6
 
 > On the day of your gladness also, and at your appointed feasts and at the beginnings of your months, you shall blow the trumpets over your burnt offerings and over the sacrifices of your peace offerings. They shall be a reminder of you before your God: I am 𐤉𐤄𐤅𐤄 your God.” 
 
@@ -320,8 +317,8 @@ The day of Atonement is considered a day of judgment and the 10 days leading up 
 
 > — Leviticus 23:27
 
-   And Aaron shall bring the bullock of the sin offering, which is for himself, and shall make an atonement for himself, and for his house, and shall kill the bullock of the sin offering which is for himself: And he shall take a censer full of burning coals of fire from off the altar before 𐤉𐤄𐤅𐤄, and his hands full of sweet incense beaten small, and bring it within the vail: And he shall put the incense upon the fire before 𐤉𐤄𐤅𐤄, that the cloud of the incense may cover the mercy seat that is upon the testimony, that he die not: And he shall take of the blood of the bullock, and sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood with his finger seven times.
-— Leviticus 16:11-14
+>    And Aaron shall bring the bullock of the sin offering, which is for himself, and shall make an atonement for himself, and for his house, and shall kill the bullock of the sin offering which is for himself: And he shall take a censer full of burning coals of fire from off the altar before 𐤉𐤄𐤅𐤄, and his hands full of sweet incense beaten small, and bring it within the vail: And he shall put the incense upon the fire before 𐤉𐤄𐤅𐤄, that the cloud of the incense may cover the mercy seat that is upon the testimony, that he die not: And he shall take of the blood of the bullock, and sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood with his finger seven times.
+> — Leviticus 16:11-14
 
 Because Yeshua is our High Priest and He is not guilty of any sin, this part of the Day of Atonement is no longer necessary. Going forward Yeshua makes Atonement for our sins using his own blood.
 
@@ -332,10 +329,10 @@ The Scapegoat
 
 Yeshua is our “scape goat” and we put our sins on him and he takes them away. After we confess our sins we are commanded to be baptized and this is a reflection of the instructions given to the priests on the Day of Atonement. 
 
-    And the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung. And he that burns them shall wash his clothes, and bathe his flesh in water, and afterward he shall come into the camp.
-The Day of Atonement
-    And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all, whether it be one of your own country, or a stranger that lives among you: For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before 𐤉𐤄𐤅𐤄. It shall be a sabbath of rest unto you, and ye shall afflict your souls, by a statute for ever. And the priest, whom he shall anoint, and whom he shall consecrate to minister in the priest's office in his father's stead, shall make the atonement, and shall put on the linen clothes, even the holy garments: And he shall make an atonement for the holy sanctuary, and he shall make an atonement for the tabernacle of the congregation, and for the altar, and he shall make an atonement for the priests, and for all the people of the congregation. And this shall be an everlasting statute unto you, to make an atonement for the children of Israel for all their sins once a year. And he did as 𐤉𐤄𐤅𐤄 commanded Moses.
-— Leviticus 16:15-34
+>     And the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung. And he that burns them shall wash his clothes, and bathe his flesh in water, and afterward he shall come into the camp.
+> The Day of Atonement
+>     And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all, whether it be one of your own country, or a stranger that lives among you: For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before 𐤉𐤄𐤅𐤄. It shall be a sabbath of rest unto you, and ye shall afflict your souls, by a statute for ever. And the priest, whom he shall anoint, and whom he shall consecrate to minister in the priest's office in his father's stead, shall make the atonement, and shall put on the linen clothes, even the holy garments: And he shall make an atonement for the holy sanctuary, and he shall make an atonement for the tabernacle of the congregation, and for the altar, and he shall make an atonement for the priests, and for all the people of the congregation. And this shall be an everlasting statute unto you, to make an atonement for the children of Israel for all their sins once a year. And he did as 𐤉𐤄𐤅𐤄 commanded Moses.
+> — Leviticus 16:15-34
 
 It is on the Day of Atonement on the 49th year of the  cycle that we proclaim liberty (freedom from debts) throughout all of the land and consecrate the 50th year, the first year of the next jubilee cycle.
 
@@ -343,8 +340,8 @@ It is on the Day of Atonement on the 49th year of the  cycle that we proclaim li
 
 > — Leviticus 25:9-11
 
-‘On the tenth day of this seventh month you shall have a holy convocation. You shall afflict your souls; you shall not do any work. You shall present a burnt offering to 𐤉𐤄𐤅𐤄 as a sweet aroma: one young bull, one ram, and seven lambs in their first year. Be sure they are without blemish. Their grain offering shall be of fine flour mixed with oil: three-tenths of an ephah for the bull, two-tenths for the one ram, and one-tenth for each of the seven lambs; also one kid of the goats as a sin offering, besides the sin offering for atonement, the regular burnt offering with its grain offering, and their drink offerings.
-— Numbers 29:7-11
+> ‘On the tenth day of this seventh month you shall have a holy convocation. You shall afflict your souls; you shall not do any work. You shall present a burnt offering to 𐤉𐤄𐤅𐤄 as a sweet aroma: one young bull, one ram, and seven lambs in their first year. Be sure they are without blemish. Their grain offering shall be of fine flour mixed with oil: three-tenths of an ephah for the bull, two-tenths for the one ram, and one-tenth for each of the seven lambs; also one kid of the goats as a sin offering, besides the sin offering for atonement, the regular burnt offering with its grain offering, and their drink offerings.
+> — Numbers 29:7-11
 
 It was on the Day of Atonement that Yeshua went to Nazareth, opened the scriptures, and read Isaiah 61. He then proclaimed it fulfilled in his hearing.
 
@@ -422,8 +419,8 @@ The very first command or statute given to Moses was:
 > — Deuteronomy 16
 The first statute mentioned in Deuteronomy 16 is observing the month of Abib which means we must know when that month begins and ends if we are to walk in it as a sign that 𐤉𐤄𐤅𐤄 is our God.
 
-“But I said to their children in the wilderness, ‘Do not walk in the statutes of your fathers’. 
-— Ezekiel 20
+> “But I said to their children in the wilderness, ‘Do not walk in the statutes of your fathers’. 
+> — Ezekiel 20
 
 So the question one must ask is what were the statutes of their fathers that they are not to walk in?
 
@@ -447,10 +444,10 @@ This is the context of the Jewish people after they returned from exile in Egypt
 Once again we have the Bible warning us that in the last days people would return to 𐤉𐤄𐤅𐤄’s ways from the ends of the earth and shall say “surely our fathers have inherited lies”.
 Daniel tells us that among those lies from the spirit of antichrist are changing the times and the law.
 
-He shall speak words against the Most High,
-and shall wear out the saints of the Most High,
-and shall think to change the times and the law 
-— Daniel 12:25
+> He shall speak words against the Most High,
+> and shall wear out the saints of the Most High,
+> and shall think to change the times and the law 
+> — Daniel 12:25
 
 This is a major Red flag that the anti-christ seeks to change 𐤉𐤄𐤅𐤄’s law, especially the calendar.
 
@@ -539,8 +536,8 @@ The sun rises in the east, beginning the daylight. The gate looking east is to b
 This would suggest that we should be looking to the East for signs in the sun, moon, and stars of when things begin. But Pharisee tradition has everyone looking to the West for when things begin.
 In order to see the first sliver you must look West at sunset. In order to see the “start” of the Pharisee day you must look “West” for sunset. Yet another bit of evidence for the day beginning at sunrise.
 
-“Truly, truly, I tell you, whoever does not enter the sheepfold by the [east/front] gate, but climbs in some other way, is a thief and a robber. But the one who enters by the [east/front] gate is the shepherd of the sheep. The gatekeeper (watchmen) opens the gate for him, and the sheep listen for his voice. He calls his own sheep by name and leads them out. When he has brought out all his own, he goes on ahead of them, and his sheep follow him because they know his voice. But they will never follow a stranger; in fact, they will flee from him because they do not recognize his voice.”” 
-— John 10:1
+> “Truly, truly, I tell you, whoever does not enter the sheepfold by the [east/front] gate, but climbs in some other way, is a thief and a robber. But the one who enters by the [east/front] gate is the shepherd of the sheep. The gatekeeper (watchmen) opens the gate for him, and the sheep listen for his voice. He calls his own sheep by name and leads them out. When he has brought out all his own, he goes on ahead of them, and his sheep follow him because they know his voice. But they will never follow a stranger; in fact, they will flee from him because they do not recognize his voice.”” 
+> — John 10:1
 
 > I am the Root and the Offspring of David, and the bright Morning Star. 
 
@@ -608,16 +605,16 @@ Astronomers failed to bark about a darkness people claim occurred around the tim
 Chinese Records of Cross Eclipse
 The Chinese kept detailed and highly accurate records of astrological events. The following quotes were taken from these records which document some very relevant information that aligns perfectly with Passover week in 31 AD and the Full Moon calendar.
 
-“Yin and Yang have mistakenly switched, and the sun and moon were eclipsed. The sins of all the people are now on one man. Pardon is proclaimed to all under heaven.” 
-— History of Latter Han Dynasty, Volume 1, Chronicles of Emperor Guang Wu, 7th year.
+> “Yin and Yang have mistakenly switched, and the sun and moon were eclipsed. The sins of all the people are now on one man. Pardon is proclaimed to all under heaven.” 
+> — History of Latter Han Dynasty, Volume 1, Chronicles of Emperor Guang Wu, 7th year.
 
-“In the day of Gui Hai, the last day of the (3rd) month, there was a solar eclipse. [The emperor] avoided the Throne Room, suspended all military activities and did not handle official business for five days.” 
-— History of Latter Han Dynasty, Vol. 1, Chronicles of Emperor Guang Wu, 7th year.
+> “In the day of Gui Hai, the last day of the (3rd) month, there was a solar eclipse. [The emperor] avoided the Throne Room, suspended all military activities and did not handle official business for five days.” 
+> — History of Latter Han Dynasty, Vol. 1, Chronicles of Emperor Guang Wu, 7th year.
 
 “Eclipse on the day of Gui Hai, Man from Heaven died”. — History of Latter Han, Annals, №18, Gui Hai.
 
-“During the reign of Emperor Guang Wu, on the day of Bing Yin of the fourth month of Jian Wu, a halo–a rainbow–encircled the sun.” 
-— History of Latter Han, Annals №18, Gui Hai.
+> “During the reign of Emperor Guang Wu, on the day of Bing Yin of the fourth month of Jian Wu, a halo–a rainbow–encircled the sun.” 
+> — History of Latter Han, Annals №18, Gui Hai.
 
 A Google search for “Reign of Emperor Guang Wu” will provide a helpful answer:
 
@@ -645,13 +642,13 @@ On top of all of this the Spirit of Antichrist was alive and well seeking to cha
 
 Calendar Dispute with Yeshua’s Followers
 
-“Therefore let no one pass judgment on you in questions of food and drink, or with regard to a festival or a new moon or a Sabbath.” 
-— Colossians 2
+> “Therefore let no one pass judgment on you in questions of food and drink, or with regard to a festival or a new moon or a Sabbath.” 
+> — Colossians 2
 
 While some people take this out of context to justify disregard for His calendar, I believe it is better understood to highlight a division among Jews as to what calendar to follow. The Pharisees could have persecuted or judged those who kept the full moon calendar (or any calendar different than what we have inherited from the Pharisees).
 
-The New Moons, the Sabbaths, and the calling of assemblies — I cannot endure iniquity and the sacred meeting. Your New Moons and your appointed feasts My soul hates; They are a trouble to Me, I am weary of bearing them. 
-— Isaiah 1:13–14
+> The New Moons, the Sabbaths, and the calling of assemblies — I cannot endure iniquity and the sacred meeting. Your New Moons and your appointed feasts My soul hates; They are a trouble to Me, I am weary of bearing them. 
+> — Isaiah 1:13–14
 
 Clearly Isaiah is implying that the start of the month was corrupted or prophesying that it will be corrupted and the people were keeping different feasts and sabbaths and not 𐤉𐤄𐤅𐤄’s New Moons.
 The Epistle of Barnabas, while not scripture, offers one ancient interpretation of Isaiah:
@@ -667,8 +664,8 @@ We know at the time of Yeshua via the gospels that people appeared to take keepi
 Thus says 𐤉𐤄𐤅𐤄: “Take heed to yourselves, … hallow the Sabbath day (week), as I commanded your fathers. But they did not obey nor incline their ear, but made their neck stiff, that they might not hear nor receive instruction.
 “And it shall be, if you heed Me carefully,” says 𐤉𐤄𐤅𐤄, “to bring no burden through the gates of this city on the Sabbath day, but hallow the Sabbath day, to do no work in it, then shall enter the gates of this city kings and princes sitting on the throne of David, riding in chariots and on horses, they and their princes, accompanied by the men of Judah and the inhabitants of Jerusalem; and this city shall remain forever.
 
-“But if you will not heed Me to hallow the Sabbath day, …, then I will kindle a fire in its gates, and it shall devour the palaces of Jerusalem, and it shall not be quenched.” 
-— Jeremiah 17:27
+> “But if you will not heed Me to hallow the Sabbath day, …, then I will kindle a fire in its gates, and it shall devour the palaces of Jerusalem, and it shall not be quenched.” 
+> — Jeremiah 17:27
 
 Since the temple and Jerusalem were destroyed, we can conclude that the Jews did not heed 𐤉𐤄𐤅𐤄 and lost track of the Sabbath. Following the Pharisee Tradition risks Survivorship Bias because the anti-christ spirit didn’t shoot it down. The Jews may have systematically moved to a false Sabbath and forgot the true Sabbath meaning there would be little trace of the true Sabbath left by the time the temple was destroyed.
 

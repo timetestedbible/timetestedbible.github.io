@@ -27,14 +27,12 @@ For the sake of completeness we need to address the common rabbinic argument tha
 
   
 
-“_In the beginning, God created the heavens and the earth. The earth was without form and void, and_ **_darkness_** _was over the face of the deep… And God said, ‘Let there be light,’ and there was_ **_light_**_…And there was evening, and there was morning—the first day._”
-
-— Genesis 1:1-5
+> “_In the beginning, God created the heavens and the earth. The earth was without form and void, and_ **_darkness_** _was over the face of the deep… And God said, ‘Let there be light,’ and there was_ **_light_**_…And there was evening, and there was morning—the first day._”
+> — Genesis 1:1-5
 
   
 
-“_Notice the sequence. Creation began in_ **_darkness_**_. YHWH then introduced_ **_light_**> *. That darkness-before-light sequence defined the first day. This wasn’t just the start of creation—it was the start of time itself. That same order—darkness first, then light—sets the pattern for how YHWH measures time”*
-
+> “_Notice the sequence. Creation began in_ **_darkness_**_. YHWH then introduced_ **_light_** . That darkness-before-light sequence defined the first day. This wasn’t just the start of creation—it was the start of time itself. That same order—darkness first, then light—sets the pattern for how YHWH measures time”*
 > — 119 Ministries
 
   
@@ -66,20 +64,17 @@ _“In the beginning, God…” — Genesis 1_
 
   
 
-_“_**_I am the light of the world._** > *Whoever follows me will never walk in darkness, but will have the light of life."*
-
+> _“_**_I am the light of the world._** Whoever follows me will never walk in darkness, but will have the light of life."*
 > — Jesus, John 8:12
 
   
 
-_"_**_In the beginning was the Word_**_, and the Word was with God, and the Word was God. He was with God in the beginning._ **_Through him all things were made_**> *; without him nothing was made that has been made.”*
-
+> _"_**_In the beginning was the Word_**_, and the Word was with God, and the Word was God. He was with God in the beginning._ **_Through him all things were made_** ; without him nothing was made that has been made.”*
 > — John 1:1-3
 
   
 
-_Thy_ **_word is a lamp (light)_** > *unto my feet, and a light unto my path.*
-
+> _Thy_ **_word is a lamp (light)_** unto my feet, and a light unto my path.*
 > — Psalms 119:105
 
   
@@ -138,8 +133,7 @@ Order of Words Day and Night
 
   
 
-_While the earth remains, seedtime and harvest, cold (morning frost) and heat (afternoon), summer and winter,_ **_day and night_**> *, shall not cease.*
-
+> _While the earth remains, seedtime and harvest, cold (morning frost) and heat (afternoon), summer and winter,_ **_day and night_** , shall not cease.*
 > — Genesis 8:22
 
   
@@ -148,8 +142,7 @@ There is a parallel verse in Jubilees, which is not scripture and cannot define 
 
   
 
-_All the days of the earth, seed-time and harvest shall never cease, cold (morning frost) and heat (afternoon), summer and winter, and_ **_DAY and NIGHT shall not change their order_** > *nor cease forever.*
-
+> _All the days of the earth, seed-time and harvest shall never cease, cold (morning frost) and heat (afternoon), summer and winter, and_ **_DAY and NIGHT shall not change their order_** nor cease forever.*
 > — Jubilees 6:4–5
 
   
@@ -216,26 +209,22 @@ _lights … and_ **_there was evening and there was morning_** _— day four_
 
 _waters teem … birds fly … and t_**_here was evening and there was morning_** _— day five_
 
-_living creatures … man in our image … and_ **_there was evening and there was morning_** > *— day six*
-
+> _living creatures … man in our image … and_ **_there was evening and there was morning_** — day six*
 > — Genesis 1 (creation outline)
 
 They will then argue that, by repetition, scripture is demonstrating that the day is evening before morning. The problem with this argument is the very definition of terms. Consider the following passage which is universally understood as talking about night.
 
-_Aaron and his sons shall keep it in order_ **_from evening to morning_** > *before the LORD; it shall be a perpetual statute throughout their generations for the sons of Israel.*
-
+> _Aaron and his sons shall keep it in order_ **_from evening to morning_** before the LORD; it shall be a perpetual statute throughout their generations for the sons of Israel.*
 > — Exodus 27:21
 
   
 
-_Outside the veil of the testimony in the tent of meeting, Aaron shall keep it in order_ **_from evening to morning_** > *before the LORD continually*
-
+> _Outside the veil of the testimony in the tent of meeting, Aaron shall keep it in order_ **_from evening to morning_** before the LORD continually*
 > — Leviticus 24:3
 
   
 
-_"The lamps_ **_burned the entire night_** _and would extinguish in the early morning... After_ **_they went out in the morning_**> *, the lamps would be cleaned out and fresh oil and new wicks would be placed in them. This service was known as 'hatavat ha-menorah'—preparing the Menorah for kindling [in the evening].”*
-
+> _"The lamps_ **_burned the entire night_** _and would extinguish in the early morning... After_ **_they went out in the morning_** , the lamps would be cleaned out and fresh oil and new wicks would be placed in them. This service was known as 'hatavat ha-menorah'—preparing the Menorah for kindling [in the evening].”*
 > — Mishnah Tamid 3:9
 
   
@@ -271,8 +260,7 @@ While the Jews may have used the ability to distinguish between blue and white, 
 
   
 
-_And God made the_ **_two_**  **_great_**  **_lights_**_— the greater light to govern the day, and the_ **_lesser light to govern_** _the night_ **_with the stars_**> *”*
-
+> _And God made the_ **_two_**  **_great_**  **_lights_**_— the greater light to govern the day, and the_ **_lesser light to govern_** _the night_ **_with the stars_** ”*
 > — Genesis 1:14-16
 
   
@@ -287,8 +275,7 @@ The next go-to scripture for establishing the traditional evening-to-evening int
 
   
 
-𐤉𐤄𐤅𐤄 _said to Moses, “The_ **_tenth day of this seventh month is the Day of Atonement._** _Hold a sacred assembly and deny yourselves, and present a food offering to_ 𐤉𐤄𐤅𐤄_… It shall be to you a Sabbath of solemn rest, and you shall afflict yourselves. On the ninth day of the month beginning at evening,_ **_from evening to evening shall you keep your Sabbath._**> *”*
-
+> 𐤉𐤄𐤅𐤄 _said to Moses, “The_ **_tenth day of this seventh month is the Day of Atonement._** _Hold a sacred assembly and deny yourselves, and present a food offering to_ 𐤉𐤄𐤅𐤄_… It shall be to you a Sabbath of solemn rest, and you shall afflict yourselves. On the ninth day of the month beginning at evening,_ **_from evening to evening shall you keep your Sabbath._** ”*
 > — Leviticus 23:26–32
 
   
@@ -305,8 +292,7 @@ Here is the verse that the Rabbis use to elevate majority rule over a voice from
 
   
 
-_You shall not_ **_fall in with the many_** _to do evil, nor shall you bear witness in a lawsuit,_ **_siding with the many_**> *, so as to pervert justice, nor shall you be partial to a poor man in his lawsuit.*
-
+> _You shall not_ **_fall in with the many_** _to do evil, nor shall you bear witness in a lawsuit,_ **_siding with the many_** , so as to pervert justice, nor shall you be partial to a poor man in his lawsuit.*
 > — Exodus 23:2
 
   
@@ -317,8 +303,7 @@ Here is how they determined that Torah is not in heaven:
 
   
 
-_For_ **_this commandment_** _that I command you today is not too hard for you, neither is it far off._ **_It is not in heaven_**> *, that you should say, ‘Who will ascend to heaven for us and bring it to us, that we may hear it and do it?’ Neither is it beyond the sea, that you should say, ‘Who will go over the sea for us and bring it to us, that we may hear it and do it?’ But the word is very near you. It is in your mouth and in your heart, so that you can do it.*
-
+> _For_ **_this commandment_** _that I command you today is not too hard for you, neither is it far off._ **_It is not in heaven_** , that you should say, ‘Who will ascend to heaven for us and bring it to us, that we may hear it and do it?’ Neither is it beyond the sea, that you should say, ‘Who will go over the sea for us and bring it to us, that we may hear it and do it?’ But the word is very near you. It is in your mouth and in your heart, so that you can do it.*
 > — Deuteronomy 30:11-14  
 
 
@@ -385,14 +370,12 @@ We are then told that on this Passover they are not to go out of their houses un
 
   
 
-_"They set out from Rameses in the first month, on the_ **_15th day of the first month_**_; on the day_ **_after the Passover_** > *the children of Israel went out with a high hand in the sight of all the Egyptians.”*
-
+> _"They set out from Rameses in the first month, on the_ **_15th day of the first month_**_; on the day_ **_after the Passover_** the children of Israel went out with a high hand in the sight of all the Egyptians.”*
 > — Numbers 33:3
 
   
 
-_"Observe the month of Abib and keep the Passover to the LORD your God, for in the month of Abib the LORD you> ***_r God brought you out of Egypt by night._***”*
-
+> _"Observe the month of Abib and keep the Passover to the LORD your God, for in the month of Abib the LORD you ***r God brought you out of Egypt by night._***”*
 > — Deuteronomy 16:1
 
   
@@ -410,8 +393,7 @@ The narrative of Exodus goes on to say that they journeyed from Rameses and camp
 
   
 
-_The Israelites journeyed from Rameses_ **_to Succoth_**_, about six hundred thousand men on foot, besides women and children…Consecrate to me all the firstborn._ **_Whatever is the first to open the womb among the people of Israel, both of man and of beast, is mine_**> *.*
-
+> _The Israelites journeyed from Rameses_ **_to Succoth_**_, about six hundred thousand men on foot, besides women and children…Consecrate to me all the firstborn._ **_Whatever is the first to open the womb among the people of Israel, both of man and of beast, is mine_** .*
 > — Exodus 12:37, 13:2
 
   
@@ -428,8 +410,7 @@ While we are on the subject of First Fruits, lets talk about the events the day 
 
   
 
-_Now on the_ **_first day of the_** _week Mary Magdalene_ **_came to the tomb early_**_,_ **_while it was still dark_**> *, and saw that the stone had been taken away from the tomb.*
-
+> _Now on the_ **_first day of the_** _week Mary Magdalene_ **_came to the tomb early_**_,_ **_while it was still dark_** , and saw that the stone had been taken away from the tomb.*
 > — John 20:1
 
   
@@ -440,14 +421,12 @@ _— Mark 16:1-2_
 
   
 
-_But_ **_on the first day of the week, at early dawn_**> *, they went to the tomb, taking the spices they had prepared.*
-
+> _But_ **_on the first day of the week, at early dawn_** , they went to the tomb, taking the spices they had prepared.*
 > — Luke 24:1
 
   
 
-_Now after the Sabbath,_ **_toward the dawn of the first day of the week,_** > *Mary Magdalene and the other Mary went to see the tomb*
-
+> _Now after the Sabbath,_ **_toward the dawn of the first day of the week,_** Mary Magdalene and the other Mary went to see the tomb*
 > — Matthew 28:1
 
   
@@ -456,8 +435,7 @@ This clearly establishes that the first day of the week, the 16th of the month, 
 
   
 
-**_That very day (first day of week)_** _two of them were going to a village named Emmaus,_ **_about seven miles_** _from Jerusalem…but they urged him strongly, saying, 'Stay with us,_ **_for it is toward evening and the day is now far spent._**> *' So he went in to stay with them.*
-
+> **_That very day (first day of week)_** _two of them were going to a village named Emmaus,_ **_about seven miles_** _from Jerusalem…but they urged him strongly, saying, 'Stay with us,_ **_for it is toward evening and the day is now far spent._** ' So he went in to stay with them.*
 > — Luke 24:13
 
   
@@ -466,8 +444,7 @@ This walk ends near evening when the day was far spent, likely around sunset whe
 
   
 
-_And they rose_ **_that same hour_** _and returned to Jerusalem…And they found the eleven and those who were with them gathered together, saying, 'The Lord has risen indeed, and has appeared to Simon!'_ **_Then they told what had happened on the road_**> *, and how he was known to them in the breaking of the bread.*
-
+> _And they rose_ **_that same hour_** _and returned to Jerusalem…And they found the eleven and those who were with them gathered together, saying, 'The Lord has risen indeed, and has appeared to Simon!'_ **_Then they told what had happened on the road_** , and how he was known to them in the breaking of the bread.*
 > — Luke 24:33
 
   
@@ -476,8 +453,7 @@ If they were running like fit cross-country runners it would take them almost a 
 
   
 
-_"_**_On the evening of that day, the first day of the week_**_, the doors being locked where the disciples were for fear of the Jews,_ **_Jesus came and stood among them_** > *and said to them, 'Peace be with you.’"*
-
+> _"_**_On the evening of that day, the first day of the week_**_, the doors being locked where the disciples were for fear of the Jews,_ **_Jesus came and stood among them_** and said to them, 'Peace be with you.’"*
 > — John 20:19
 
   
@@ -494,23 +470,20 @@ The next demonstration-by-example of first light start of day comes from the sec
 
   
 
-_"They set out from Elim, and all the congregation of the people of Israel came to the wilderness of Sin, which is between Elim and Sinai,_ **_on the 15th day_** > *of the second month after they had departed from the land of Egypt."*
-
+> _"They set out from Elim, and all the congregation of the people of Israel came to the wilderness of Sin, which is between Elim and Sinai,_ **_on the 15th day_** of the second month after they had departed from the land of Egypt."*
 > — Exodus 16:1  
 
 
 After some narrative about the people grumbling we are told that quail came that evening and in the morning manna fell.  
 
-_"_**_In the evening quail came_** _up and covered the camp and_ **_in the morning_** _dew lay around the camp. And when the dew had gone up, there was on the face of the wilderness a fine, flake-like thing, fine as frost on the ground. When the people of Israel saw it, they said to one another, 'What is it?' For they did not know what it was. And Moses said to them, '> ***_It is the bread that the Lord has given you to eat._***"*
-
+> _"_**_In the evening quail came_** _up and covered the camp and_ **_in the morning_** _dew lay around the camp. And when the dew had gone up, there was on the face of the wilderness a fine, flake-like thing, fine as frost on the ground. When the people of Israel saw it, they said to one another, 'What is it?' For they did not know what it was. And Moses said to them, ' ***It is the bread that the Lord has given you to eat._***"*
 > — Exodus 16:13
 
   
 
 On the 6th day Moses informed them that they would receive twice as much and instructs them to bake and boil.
 
-**_On the sixth day they gathered twice as much bread_**_, two omers each... he [Moses] said to them, 'This is what the Lord has commanded: "_**_Tomorrow is a day of solemn rest, a holy Sabbath_** _to the Lord; bake what you will bake and_ **_boil what you will boil_**> *, and all that is left over lay aside to be kept till the morning."*
-
+> **_On the sixth day they gathered twice as much bread_**_, two omers each... he [Moses] said to them, 'This is what the Lord has commanded: "_**_Tomorrow is a day of solemn rest, a holy Sabbath_** _to the Lord; bake what you will bake and_ **_boil what you will boil_** , and all that is left over lay aside to be kept till the morning."*
 > — Exodus 16:22–23
 
   
@@ -519,8 +492,7 @@ The next morning they went out to gather and found none.
 
   
 
-_"Six days you shall gather it, but_ **_on the seventh day, which is a Sabbath, there will be none._**> *" On the seventh day some of the people went out to gather, but they found none.*
-
+> _"Six days you shall gather it, but_ **_on the seventh day, which is a Sabbath, there will be none._** " On the seventh day some of the people went out to gather, but they found none.*
 > — Exodus 16:26–27
 
 The key to understanding the start of day is that they were told to keep the extra prepared manna until tomorrow which starts in the morning. The morning being the start of the sabbath when they would need the previsions prepared the night before.
@@ -539,8 +511,7 @@ Here are the key examples that demonstrate this pattern:
 
   
 
-_“This is what the LORD has commanded: ‘_**_Tomorrow_**  **_is a day_** _of solemn rest, a holy Sabbath to the LORD; bake what you will bake and boil what you will boil, and all that is left over lay aside to be_ **_kept till the morning._**> *’”*
-
+> _“This is what the LORD has commanded: ‘_**_Tomorrow_**  **_is a day_** _of solemn rest, a holy Sabbath to the LORD; bake what you will bake and boil what you will boil, and all that is left over lay aside to be_ **_kept till the morning._** ’”*
 > — Exodus 16:23
 
   
@@ -551,8 +522,7 @@ Moses speaks these words on the sixth day of the week. He commands the people to
 
   
 
-_“Moses said to Joshua, ‘Choose men for us and go out, fight against Amalek._ **_Tomorrow_** > *I will station myself on the top of the hill with the staff of God in my hand.’”*
-
+> _“Moses said to Joshua, ‘Choose men for us and go out, fight against Amalek._ **_Tomorrow_** I will station myself on the top of the hill with the staff of God in my hand.’”*
 > — Exodus 17:9
 
   
@@ -561,8 +531,7 @@ The command is given the day before the battle. “Tomorrow” is immediately fo
 
   
 
-_“Joshua said to the people, ‘Consecrate yourselves, for_ **_tomorrow_** > *the LORD will do wonders among you.’”*
-
+> _“Joshua said to the people, ‘Consecrate yourselves, for_ **_tomorrow_** the LORD will do wonders among you.’”*
 > — Joshua 3:5
 
   
@@ -591,8 +560,7 @@ Gideon acted at night (v. 27). The discovery—the next significant event—occu
 
   
 
-_“Then his wife Zeresh and all his friends said to him, ‘Let a gallows fifty cubits high be made, and_ **_in the morning_** > *tell the king to have Mordecai hanged on it.’”*
-
+> _“Then his wife Zeresh and all his friends said to him, ‘Let a gallows fifty cubits high be made, and_ **_in the morning_** tell the king to have Mordecai hanged on it.’”*
 > — Esther 5:14
 
 Again, “in the morning” is parallel to “tomorrow”—the action is set for dawn.
@@ -639,8 +607,7 @@ Scripture gives us another way to identify the daily cycle and this comes from P
 
 _In the heavens God has_ **_pitched a tent for the sun._** _Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to_ **_run a race_**
 
-_His going forth is from the end of the heaven, and_ **_his circuit_** > *unto the ends of it: and there is nothing hid from the heat thereof.*
-
+> _His going forth is from the end of the heaven, and_ **_his circuit_** unto the ends of it: and there is nothing hid from the heat thereof.*
 > — Psalm 19:4–6
 
   
@@ -733,8 +700,7 @@ If one wants to use renewal as the basis of the calendar they must also consider
 
 And finally on the them of sacrifices consider the following verse which clearly demonstrates that morning is the break, the end of being considered “_same day as his offering_”.
 
-_The flesh of the sacrifice of his peace offerings for thanksgiving shall be_ **_eaten on the day of his offering_**_. He shall not leave any of it_ **_until the morning_**> *.*
-
+> _The flesh of the sacrifice of his peace offerings for thanksgiving shall be_ **_eaten on the day of his offering_**_. He shall not leave any of it_ **_until the morning_** .*
 > — Leviticus 7:15–17
 
   
@@ -786,18 +752,15 @@ After examining each tree in detail—the traditional arguments, their internal 
 **The Strongest Arguments for a Morning Start**
 
 The cumulative case for morning-to-morning is built on interlocking, objective layers that cohere without strain:
-
--   **Creation's foundational pattern** (Genesis 1): God names light “day” first, separates it from darkness (named “night” second), and structures each completed cycle with “evening and morning — the [nth] day.” Morning consistently serves as the boundary that ends the prior day and initiates the new one with light, work, and divine activity.
--   **Astronomical and poetic renewal** (Psalm 19:4–6): The sun emerges rejoicing from its tabernacle at dawn, beginning its circuit with energy and glory-declaring purpose. The bridegroom and runner metaphors evoke new beginnings at sunrise—hard to reconcile with a day primarily defined by sunset retreat.
--   **Word order and emphasis** (Genesis 8:22): God promises enduring cycles in deliberate sequence—seedtime and harvest, cold and heat, summer and winter, **day and night**—placing day first as the initiating, productive element. This is reinforced by the overwhelming asymmetry: “day and night” appears 31 times vs. “night and day” only 13 times.
--   Narrative logic in major events:
-
--   Passover lamb eaten “that night” (still the 14th), stay inside until morning, departure “by night” on the 15th (Numbers 33:3; Deuteronomy 16:1), travel to Succoth with camp setup during daylight—fitting naturally with morning as the reset.
--   Resurrection timeline: Women arrive “while it was still dark” / “toward the dawn” on the “first day of the week,” events extend through evening (John 20:19)—pre-dawn darkness belongs to the new day, not the prior Sabbath.
-
--   **Sacrificial boundaries** (Leviticus 7:15–17): Peace offerings eaten “on the day of his offering,” nothing left “until the morning”; leftovers permitted to the next day but burned by the third morning. The morning cutoff defines “same day” limits more cleanly than sunset.
--   **Daily renewal from God** (Lamentations 3:22–23; Psalm 30:5; 90:14; 143:8; 59:16): Mercies are “new every morning,” joy comes “in the morning,” satisfaction and love heard “in the morning”—Scripture repeatedly portrays dawn as the appointed time for fresh compassion, strength, guidance, and blessing.
--   **Hebrew word roots** (erev = mixing/blending at twilight; boker = breaking through/clarity at dawn): Days are logically “split” (new clarity) in the morning and “connected” (blended transition) in the evening.
+- **Creation's foundational pattern** (Genesis 1): God names light “day” first, separates it from darkness (named “night” second), and structures each completed cycle with “evening and morning — the [nth] day.” Morning consistently serves as the boundary that ends the prior day and initiates the new one with light, work, and divine activity.
+- **Astronomical and poetic renewal** (Psalm 19:4–6): The sun emerges rejoicing from its tabernacle at dawn, beginning its circuit with energy and glory-declaring purpose. The bridegroom and runner metaphors evoke new beginnings at sunrise—hard to reconcile with a day primarily defined by sunset retreat.
+- **Word order and emphasis** (Genesis 8:22): God promises enduring cycles in deliberate sequence—seedtime and harvest, cold and heat, summer and winter, **day and night**—placing day first as the initiating, productive element. This is reinforced by the overwhelming asymmetry: “day and night” appears 31 times vs. “night and day” only 13 times.
+- Narrative logic in major events:
+- Passover lamb eaten “that night” (still the 14th), stay inside until morning, departure “by night” on the 15th (Numbers 33:3; Deuteronomy 16:1), travel to Succoth with camp setup during daylight—fitting naturally with morning as the reset.
+- Resurrection timeline: Women arrive “while it was still dark” / “toward the dawn” on the “first day of the week,” events extend through evening (John 20:19)—pre-dawn darkness belongs to the new day, not the prior Sabbath.
+- **Sacrificial boundaries** (Leviticus 7:15–17): Peace offerings eaten “on the day of his offering,” nothing left “until the morning”; leftovers permitted to the next day but burned by the third morning. The morning cutoff defines “same day” limits more cleanly than sunset.
+- **Daily renewal from God** (Lamentations 3:22–23; Psalm 30:5; 90:14; 143:8; 59:16): Mercies are “new every morning,” joy comes “in the morning,” satisfaction and love heard “in the morning”—Scripture repeatedly portrays dawn as the appointed time for fresh compassion, strength, guidance, and blessing.
+- **Hebrew word roots** (erev = mixing/blending at twilight; boker = breaking through/clarity at dawn): Days are logically “split” (new clarity) in the morning and “connected” (blended transition) in the evening.
 
 These elements form a holistic, self-reinforcing picture: light-first theology, observable solar cycles, consistent phrase priority, narrative flow, sacrificial timing, and explicit morning-renewal language all converge on morning as the natural, God-ordained start.
 
@@ -806,13 +769,12 @@ These elements form a holistic, self-reinforcing picture: light-first theology, 
 **Dismissing the Traditional Arguments**
 
 Each traditional proof for evening-to-evening, when examined without preconception, reveals itself as ambiguous, contextually limited, or reliant on rationalization rather than plain reading:
-
--   **Creation began in darkness** → Descriptive of pre-ordered chaos, not prescriptive for all days; light is named and rules “day” first; theological priority (God is light, no overcoming darkness) favors light-first order.
--   **“Evening and morning” repeated in Genesis 1** → Evening-to-morning describes night watches (Exodus 27:21; Leviticus 24:3); Hebrew roots show morning as the splitting/starting point; formula completes each cycle at morning, not begins at evening.
--   **Day of Atonement “evening to evening”** (Leviticus 23:32) → Special ritual extension for a high holy day (inclusive >24 hours, mentions 9th to avoid overlap); creates paradoxes when forced as universal (contradicts Genesis pattern, requires inconsistent “evening” assignments); ambiguous at best.
--   **Unleavened Bread “at evening”** (Exodus 12:18) → Narrative ties night events to the same day (Passover lamb “that night” on 14th); departure “by night” on 15th after morning stay; travel/camp logic fits night travel on 15th with daylight setup on 16th; yom overloaded—cannot prove calendar days without circularity.
--   **“Unclean until evening”** → Refers to waiting for evening sacrifice/atonement (tamid cycle, Daniel 8:14’s “evenings and mornings”); cleanness from blood atonement (Leviticus 17:11), not sunset/calendar flip; majority view assumes sunset transition, but text ties to sacrificial renewal.
--   **Nehemiah closing gates “at evening”** → Gates closed every night for security (Joshua 2; Judges 16); innovation was keeping them closed “until after the Sabbath” (overriding normal morning opening); precautionary over-enforcement to prevent dawn trade/Sabbath labor; ambiguous and circular if used to prove sunset start.
+- **Creation began in darkness** → Descriptive of pre-ordered chaos, not prescriptive for all days; light is named and rules “day” first; theological priority (God is light, no overcoming darkness) favors light-first order.
+- **“Evening and morning” repeated in Genesis 1** → Evening-to-morning describes night watches (Exodus 27:21; Leviticus 24:3); Hebrew roots show morning as the splitting/starting point; formula completes each cycle at morning, not begins at evening.
+- **Day of Atonement “evening to evening”** (Leviticus 23:32) → Special ritual extension for a high holy day (inclusive >24 hours, mentions 9th to avoid overlap); creates paradoxes when forced as universal (contradicts Genesis pattern, requires inconsistent “evening” assignments); ambiguous at best.
+- **Unleavened Bread “at evening”** (Exodus 12:18) → Narrative ties night events to the same day (Passover lamb “that night” on 14th); departure “by night” on 15th after morning stay; travel/camp logic fits night travel on 15th with daylight setup on 16th; yom overloaded—cannot prove calendar days without circularity.
+- **“Unclean until evening”** → Refers to waiting for evening sacrifice/atonement (tamid cycle, Daniel 8:14’s “evenings and mornings”); cleanness from blood atonement (Leviticus 17:11), not sunset/calendar flip; majority view assumes sunset transition, but text ties to sacrificial renewal.
+- **Nehemiah closing gates “at evening”** → Gates closed every night for security (Joshua 2; Judges 16); innovation was keeping them closed “until after the Sabbath” (overriding normal morning opening); precautionary over-enforcement to prevent dawn trade/Sabbath labor; ambiguous and circular if used to prove sunset start.
 
 The pattern is unmistakable: traditional arguments rely on selective emphasis, redefinition of terms in different contexts, post-hoc harmonization, and elevation of ritual exceptions to universal rules—classic rationalization to protect an inherited conclusion. Strip away these biases, and the plain text, Hebrew etymology, narrative coherence, and repeated morning-renewal theme stand as a consistent mountain of evidence for the day beginning at first light.
 

@@ -1,167 +1,185 @@
-// Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v594';
+/**
+ * Service Worker for Time Tested PWA
+ * Provides offline functionality and caching
+ */
 
-// Core app files
+const CACHE_NAME = 'time-tested-v1';
+const STATIC_CACHE = 'time-tested-static-v1';
+const DATA_CACHE = 'time-tested-data-v1';
+
+// Core assets to cache immediately on install
 const CORE_ASSETS = [
-  '/',
+  '/time-tested/',
   '/index.html',
-  '/manifest.json',
   '/styles.css',
+  '/layout.js',
+  '/app-store.js',
+  '/url-router.js',
+  '/content-manager.js',
   '/lunar-calendar-engine.js',
-  '/sabbath-tester.js',
   '/astronomy-utils.js',
-  '/calendar-core.js',
-  '/day-detail.js',
-  '/settings-profiles.js',
-  '/navigation-routing.js',
-  '/world-clock.js',
-  '/state-management.js',
-  '/astronomy-engine-abstraction.js',
-  '/priestly-divisions.js',
-  '/historical-events.js',
-  '/event-resolver.js',
-  '/biblical-timeline.js',
-  '/bible-reader.js',
-  '/jubilee-cycle.js',
-  '/torah-portions.js',
-  '/strongs-hebrew-dict.js',
-  '/strongs-greek-dictionary.js'
-];
-
-// Data files (JSON)
-const DATA_ASSETS = [
-  '/priestly_divisions.json',
-  '/bible-events-by-month-day.json',
-  '/historical-events.json',
-  '/historical-events-v2.json',
-  '/TorahReadingCycle.json',
-  '/torah-special-readings.json',
-  '/data/eclipses.json',
-  '/data/interlinear.json',
-  '/data/nt-interlinear.json',
-  '/data/tipnr.json'
-];
-
-// Bible and book content
-const CONTENT_ASSETS = [
-  '/kjv.txt',
-  '/asv.txt',
-  '/wlc/verses.txt',
-  '/media/time-tested-tradition.pdf'
-];
-
-// Event content files
-const EVENT_ASSETS = [
-  '/events/joshuas-long-day.txt'
-];
-
-// Icons and images
-const IMAGE_ASSETS = [
-  '/icons/icon-16.png',
-  '/icons/icon-32.png',
+  '/year-utils.js',
+  '/views/calendar-view.js',
+  '/views/bible-view.js',
+  '/views/book-view.js',
+  '/views/events-view.js',
+  '/components/dateline-map.js',
+  '/components/dateline-map.css',
+  '/assets/css/bible-styles.css',
+  '/assets/img/earth.png',
   '/icons/icon-192.png',
   '/icons/icon-512.png',
-  '/icons/icon.svg',
-  '/icons/menorah.png',
-  '/assets/img/LongDay.jpg',
-  '/assets/img/earth.png'
+  '/icons/icon.svg'
 ];
 
-// External libraries
-const LIB_ASSETS = [
-  'https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js',
-  'https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js',
-  'https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css',
-  '/lib/swisseph/swisseph-browser.js',
-  '/lib/swisseph/swisseph.js',
-  '/lib/swisseph/swisseph.wasm',
-  '/assets/js/simple-jekyll-search.min.js'
+// Data files to cache (larger, can be cached lazily)
+const DATA_ASSETS = [
+  '/astronomy-engine.min.js',
+  '/astronomy-engine-abstraction.js',
+  '/strongs-hebrew-dictionary.js',
+  '/strongs-greek-dictionary.js',
+  '/bible-reader.js',
+  '/kjv.txt',
+  '/bible-events-by-month-day.json'
 ];
 
-// CSS assets
-const CSS_ASSETS = [
-  '/assets/css/style.css',
-  '/assets/css/book.css',
-  '/assets/css/highlight.css'
-];
-
-// Combine all assets
-const ASSETS_TO_CACHE = [
-  ...CORE_ASSETS,
-  ...DATA_ASSETS,
-  ...CONTENT_ASSETS,
-  ...EVENT_ASSETS,
-  ...IMAGE_ASSETS,
-  ...LIB_ASSETS,
-  ...CSS_ASSETS
-];
-
-// Install event - cache assets
+// Install event - cache core assets
 self.addEventListener('install', (event) => {
+  console.log('[SW] Installing service worker...');
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(STATIC_CACHE)
       .then((cache) => {
-        console.log('Caching app assets');
-        return cache.addAll(ASSETS_TO_CACHE);
+        console.log('[SW] Caching core assets');
+        return cache.addAll(CORE_ASSETS.map(url => {
+          // Handle both absolute and relative URLs
+          return url.startsWith('/time-tested') ? url : url;
+        }));
       })
-      .then(() => self.skipWaiting())
+      .then(() => {
+        console.log('[SW] Core assets cached');
+        return self.skipWaiting();
+      })
+      .catch((err) => {
+        console.warn('[SW] Failed to cache some assets:', err);
+        return self.skipWaiting();
+      })
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
+  console.log('[SW] Activating service worker...');
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
-      );
-    }).then(() => self.clients.claim())
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames
+            .filter((name) => name !== STATIC_CACHE && name !== DATA_CACHE)
+            .map((name) => {
+              console.log('[SW] Deleting old cache:', name);
+              return caches.delete(name);
+            })
+        );
+      })
+      .then(() => {
+        console.log('[SW] Service worker activated');
+        return self.clients.claim();
+      })
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - serve from cache, fall back to network
 self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  
   // Skip non-GET requests
-  if (event.request.method !== 'GET') return;
+  if (event.request.method !== 'GET') {
+    return;
+  }
   
-  // Skip chrome-extension and other non-http requests
-  if (!event.request.url.startsWith('http')) return;
+  // Skip cross-origin requests
+  if (url.origin !== location.origin) {
+    return;
+  }
   
+  // For navigation requests, try network first, then cache
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          // Cache the response for offline use
+          const responseClone = response.clone();
+          caches.open(STATIC_CACHE).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+          return response;
+        })
+        .catch(() => {
+          // Network failed, try cache
+          return caches.match(event.request)
+            .then((cachedResponse) => {
+              if (cachedResponse) {
+                return cachedResponse;
+              }
+              // Return the cached index.html as fallback for SPA routing
+              return caches.match('/index.html');
+            });
+        })
+    );
+    return;
+  }
+  
+  // For static assets, try cache first, then network
   event.respondWith(
     caches.match(event.request)
       .then((cachedResponse) => {
-        // Return cached version if available
         if (cachedResponse) {
-          // Fetch in background to update cache
-          fetch(event.request).then((response) => {
-            if (response && response.status === 200) {
-              caches.open(CACHE_NAME).then((cache) => {
-                cache.put(event.request, response);
-              });
-            }
-          }).catch(() => {});
+          // Return cached version, but also fetch and update cache in background
+          fetch(event.request)
+            .then((response) => {
+              if (response && response.status === 200) {
+                caches.open(STATIC_CACHE).then((cache) => {
+                  cache.put(event.request, response);
+                });
+              }
+            })
+            .catch(() => { /* Ignore network errors for background update */ });
           return cachedResponse;
         }
         
-        // Otherwise fetch from network
-        return fetch(event.request).then((response) => {
-          // Cache successful responses
-          if (response && response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, responseClone);
-            });
-          }
-          return response;
-        });
-      })
-      .catch(() => {
-        // If both cache and network fail, return offline page for navigation
-        if (event.request.mode === 'navigate') {
-          return caches.match('/');
-        }
+        // Not in cache, fetch from network
+        return fetch(event.request)
+          .then((response) => {
+            // Cache successful responses
+            if (response && response.status === 200) {
+              const responseClone = response.clone();
+              caches.open(STATIC_CACHE).then((cache) => {
+                cache.put(event.request, responseClone);
+              });
+            }
+            return response;
+          });
       })
   );
+});
+
+// Handle messages from the main thread
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+  
+  if (event.data && event.data.type === 'CACHE_DATA') {
+    // Cache data assets on demand
+    event.waitUntil(
+      caches.open(DATA_CACHE)
+        .then((cache) => cache.addAll(DATA_ASSETS))
+        .then(() => {
+          event.ports[0].postMessage({ success: true });
+        })
+        .catch((err) => {
+          event.ports[0].postMessage({ success: false, error: err.message });
+        })
+    );
+  }
 });

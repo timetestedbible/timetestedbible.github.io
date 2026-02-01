@@ -1,21 +1,7 @@
 // Day Detail Panel Functions
 // Extracted from index.html for Phase 4 refactoring
 
-// Calculate Julian Day Number from Julian calendar date (year, month 0-indexed, day)
-function julianCalendarToJDN(year, month, day) {
-  // Convert 0-indexed month to 1-indexed
-  const m = month + 1;
-  const a = Math.floor((14 - m) / 12);
-  const y = year + 4800 - a;
-  const mm = m + 12 * a - 3;
-  // Julian calendar formula
-  return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
-}
-
-// Calculate day of week from Julian Day Number (0 = Sunday, 6 = Saturday)
-function jdnToWeekday(jdn) {
-  return (jdn + 1) % 7;
-}
+// Note: julianCalendarToJDN, jdnToWeekday, isBeforeGregorianReform are defined in astronomy-utils.js
 
 // Get formatted date components (handles Julian calendar for pre-1582 dates)
 // Note: Dates from _jdToDate() already have Julian calendar components stored,
@@ -56,7 +42,7 @@ function getFormattedDateParts(date) {
     monthName: months[month],
     shortMonthName: shortMonths[month],
     isJulian,
-    calendarSuffix: isJulian ? ' (Julian)' : ''
+    calendarSuffix: ''  // NASA convention: no suffix, dates < 1582 are Julian
   };
 }
 
@@ -275,7 +261,7 @@ function showDayDetail(dayObj, month) {
         }
         
         const stellariumDate = stellariumDateTime.toISOString().split('.')[0] + 'Z';
-        stellariumLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link"><img src="https://stellarium-web.org/favicon.ico" alt="" onerror="this.style.display='none'">View in Stellarium</a>`;
+        stellariumLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link">🔭 View in Stellarium</a>`;
         
         // Build explanation based on moon phase type and day start settings
         // Stellarium link is stored separately to put in header
@@ -380,6 +366,7 @@ function showDayDetail(dayObj, month) {
           <div class="day-detail-feast-desc">${feastDescription}</div>
           ${basisHtml}
           ${feast.chapter ? `<a href="${feast.chapter}" class="day-detail-feast-link">Learn more &rarr;</a>` : ''}
+          ${feast.symbol ? `<button class="day-detail-symbol-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${feast.symbol.replace('/symbols/', '').toLowerCase()}'}})">📖 Symbol Study</button>` : ''}
         </div>
       `;
       feastsContainer.appendChild(item);
@@ -443,7 +430,7 @@ function showDayDetail(dayObj, month) {
       const eclipseFormatted = formatTimeInObserverTimezone(eclipseTime);
       eclipseTimeStr = ` at ${eclipseFormatted.full}`;
       const stellariumDate = eclipseTime.toISOString().split('.')[0] + 'Z';
-      stellariumBloodMoonLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link"><img src="https://stellarium-web.org/favicon.ico" alt="" onerror="this.style.display='none'">View in Stellarium</a>`;
+      stellariumBloodMoonLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link">🔭 View in Stellarium</a>`;
     }
     
     const item = document.createElement('div');
@@ -555,7 +542,10 @@ function showDayDetail(dayObj, month) {
       
       // For Virgo rule, use shared methodology function
       if (state.yearStartRule === 'virgoFeet') {
-        const virgoCalc = getVirgoCalculation(state.year);
+        // Get Virgo calculation from engine instance (no global state)
+        const engine = typeof AppStore !== 'undefined' ? AppStore.getEngine() : null;
+        const location = { lat: state.lat, lon: state.lon };
+        const virgoCalc = engine ? engine.getVirgoCalculation(state.year, location) : null;
         if (virgoCalc) {
           // Use the shared methodology function with calculation details
           virgoExplanationHtml = getVirgoMethodologyHtml({ 

@@ -5,10 +5,8 @@
 // the rest of the codebase.
 
 // Available engines registry
-const AstroEngines = {
-  // Cache for Virgo rule calculations, keyed by year
-  virgoCache: {}
-};
+// NOTE: virgoCache has been moved to LunarCalendarEngine instances (instance-owned state)
+const AstroEngines = {};
 
 // Currently active engine instance
 let activeAstroEngine = null;
@@ -179,7 +177,13 @@ AstroEngines.swissEphemeris = {
       return date;
     };
     
-    if (!this._swe) {
+    // For dates before the Gregorian reform (JD < 2299161), always use the manual
+    // Julian calendar algorithm. The WASM library's julianDayToDate returns proleptic
+    // Gregorian dates, which causes a calendar mismatch with _dateToJD (which uses
+    // Julian for dates before 1582). This ensures consistent round-trip conversion.
+    const useManualAlgorithm = !this._swe || jd < 2299161;
+    
+    if (useManualAlgorithm) {
       // Manual Julian Day to calendar date conversion
       const z = Math.floor(jd + 0.5);
       const f = jd + 0.5 - z;
@@ -206,7 +210,7 @@ AstroEngines.swissEphemeris = {
       return createDate(year, month, day, h, min, sec);
     }
     
-    // Use library's conversion
+    // Use library's conversion for modern dates (Gregorian era)
     try {
       const cal = this._swe.julianDayToDate(jd);
       // The library might return hours as a decimal or separate hour/minute/second fields
@@ -701,6 +705,11 @@ AstroEngines.nasaEclipse = {
       // Use JD directly if available (avoids Date round-trip issues with ancient dates)
       const sweJD = sweResult.jd || this._dateToJD(sweResult.date);
       
+      // Note: NASA eclipse JD values for ancient dates appear to use proleptic Gregorian
+      // calendar conversion, but historical dates before 1582 should use Julian calendar.
+      // This causes a ~2 day offset for 1st century dates. The hybrid engine now validates
+      // Swiss Eph results and skips NASA "correction" when SWE is already accurate.
+      
       // Sanity check - offset should be reasonable (less than a few days)
       const offset = nasaEclipse.jd - sweJD;
       if (!isFinite(offset) || Math.abs(offset) > 5) {
@@ -741,23 +750,15 @@ AstroEngines.nasaEclipse = {
         return sweResult;
       }
       
-      // For ancient/future dates, apply NASA eclipse calibration
-      const eclipseType = (phase === 0 || phase === 360) ? 'n' : 'f';
-      const offset = this._calculateOffset(year, eclipseType);
-      
-      if (!isFinite(offset) || Math.abs(offset) < 0.001) {
-        return sweResult;
-      }
-      
-      // Apply the offset correction using JD directly if available
-      const sweJD = sweResult.jd || this._dateToJD(sweResult.date);
-      const correctedJD = sweJD + offset;
-      
-      if (!isFinite(correctedJD)) {
-        return sweResult;
-      }
-      
-      return { date: this._jdToDate(correctedJD) };
+      // For ancient/future dates, Swiss Eph results are already accurate.
+      // The NASA eclipse calibration offset is not needed (and was causing issues due to
+      // calendar system mismatches in the NASA data - the JD values were computed from
+      // proleptic Gregorian dates instead of Julian calendar dates for ancient eclipses).
+      // 
+      // After fixing the _jdToDate calendar conversion bug (using manual Julian algorithm
+      // for dates before 1582), Swiss Eph results now have consistent round-trip conversion
+      // and accurate elongation values.
+      return sweResult;
     } catch (err) {
       return this._searchMoonPhaseInterpolate(phase, startDate, limitDays);
     }

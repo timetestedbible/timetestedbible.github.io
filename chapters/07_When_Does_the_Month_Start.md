@@ -16,14 +16,12 @@ The very first command or statute given to Moses was:
 
   
 
-_And_ 𐤉𐤄𐤅𐤄 _spake unto Moses and Aaron in the land of Egypt, saying,_ **_This month_** **shall be** **_unto you the beginning of months_**_: it_ shall be > *the first month of the year to you…*
-
+> _And_ 𐤉𐤄𐤅𐤄 _spake unto Moses and Aaron in the land of Egypt, saying,_ **_This month_** **shall be** **_unto you the beginning of months_**_: it_ shall be the first month of the year to you…*
 > — Exodus 12
 
   
 
-_Observe the month of Abib, and keep the passover unto_ 𐤉𐤄𐤅𐤄 > *thy God…And thou shalt keep the feast of weeks… and thou shalt observe and do these statutes.*
-
+> _Observe the month of Abib, and keep the passover unto_ 𐤉𐤄𐤅𐤄 thy God…And thou shalt keep the feast of weeks… and thou shalt observe and do these statutes.*
 > — Deuteronomy 16
 
   
@@ -62,8 +60,7 @@ The Creation Mandate and the Rule of the Lights
 
 Genesis 1:14–16 establishes the purpose and authority of the sun and moon: they are for “signs” (_ʾōtōt_) and “appointed times” (_mōʿădīm_).  
 
-_And God made the_ **_two_**  **_great_**  **_lights_**_— the greater light to govern the day, and the_ **_lesser light to govern_** _the night_ **_with the stars_**> *” (Genesis 1:16, literal syntax)*
-
+> _And God made the_ **_two_**  **_great_**  **_lights_**_— the greater light to govern the day, and the_ **_lesser light to govern_** _the night_ **_with the stars_** ” (Genesis 1:16, literal syntax)*
 > — Genesis 1:14-16
 
   
@@ -84,8 +81,7 @@ This mandate is echoed in the Psalms:
 
   
 
-_“The sun to rule by day… The_ **_moon and stars_** > *to rule by night.”*
-
+> _“The sun to rule by day… The_ **_moon and stars_** to rule by night.”*
 > — Psalms 136:8–9
 
   
@@ -98,8 +94,7 @@ The Direct Definition of the Month’s Start
 
 The scriptural pattern continues with direct instruction in Psalms 81:3, which uses synonymous poetic parallelism to equate the start of the month with the full moon phase:  
 
-_“Blow_ **_in the renewed moon_** _(ḥodesh) the shofar;_ **_in the full moon_** > *(keseh) for the day of our feast (ḥag).” (Psalms 81:3, literal translation)*
-
+> _“Blow_ **_in the renewed moon_** _(ḥodesh) the shofar;_ **_in the full moon_** (keseh) for the day of our feast (ḥag).” (Psalms 81:3, literal translation)*
 > — Psalms 81:3
 
   
@@ -108,10 +103,8 @@ Without an inserted “_and_”, the text equates ḥodesh (renewed moon) with k
 
 Some scholars interpret keseh as the noun form of the Hebrew root הסכ (k-s-h). This root means “_to cover_” and is used in phrases like “_The waters covered the mountains_” or “_the cloud covered the mountain_”. They argue that the moon is “_covered_” or not visible; however, there are multiple ways of understanding “_covered_” because it could just as easily imply “_light covered moon”._ Most scholars believe keseh to be an Aramaic loanword meaning "full moon”. Hebrew, Aramaic, and Akkadian/Assyrian (all Semitic) frequently share vocabulary, especially for astronomical/time terms:
 
-  
-
--   Aramaic **kista** (or similar forms) meaning "full moon."
--   Assyrian/Akkadian **kuseu** (or related) also denoting "full moon."
+- Aramaic **kista** (or similar forms) meaning "full moon."
+- Assyrian/Akkadian **kuseu** (or related) also denoting "full moon."
 
   
 
@@ -131,14 +124,14 @@ At its core, the Hebrew word translated as “new moon”, ḥōḏeš, comes fr
 
 For example:
 
--   In Ezekiel 36:26, God promises a “**renewed heart**” — not a blank slate, not a partially renewed, but a fully renewed, perfect one.
--   In Isaiah 43:19, “Behold, I will do a **renewed thing**” — something completely restored and effective, not partial.
--   In Psalms 104:30, “You renew the face of the earth”
--   Isaiah 61:4, “they shall renew the ruined cities”
--   Psalms 51:10, “Renew a steadfast spirit within me”
--   2 Chronicles 24:12, “Renew the house of the LORD”
--   2 Chronicles 15:8, “Renewed the altar of the LORD”
--   1 Samuel 11:14, “Let us renew the kingdom”  
+- In Ezekiel 36:26, God promises a “**renewed heart**” — not a blank slate, not a partially renewed, but a fully renewed, perfect one.
+- In Isaiah 43:19, “Behold, I will do a **renewed thing**” — something completely restored and effective, not partial.
+- In Psalms 104:30, “You renew the face of the earth”
+- Isaiah 61:4, “they shall renew the ruined cities”
+- Psalms 51:10, “Renew a steadfast spirit within me”
+- 2 Chronicles 24:12, “Renew the house of the LORD”
+- 2 Chronicles 15:8, “Renewed the altar of the LORD”
+- 1 Samuel 11:14, “Let us renew the kingdom”
     
 
 In all of these cases the word implies to restore to perfection. Applied to the moon, this suggests ḥōḏeš marks the phase when the moon is fully **renewed, its most perfect form** — a visible, complete circle of light. BDB notes that in Semitic contexts, such roots often carry this sense of “perfection through renewal,” tying back to the idea of wholeness.
@@ -203,8 +196,7 @@ The theological weight for the full moon is sealed by God’s eternal oath in Ps
 
   
 
-_“_**_Once_** _(ʾaḥath, feminine) I have sworn by My holiness… His throne shall be established forever like the sun before Me,_ **_like the_**  **_moon_**_— a_ **_faithful witness_** > *in the sky.”*
-
+> _“_**_Once_** _(ʾaḥath, feminine) I have sworn by My holiness… His throne shall be established forever like the sun before Me,_ **_like the_**  **_moon_**_— a_ **_faithful witness_** in the sky.”*
 > — Psalms 89:35–37
 
   
@@ -229,8 +221,7 @@ Deuteronomy tells us the **sun, moon, and stars are a gift** or allotment given 
 
   
 
-_Lest you lift up your eyes to heaven, and see_ **_the sun and the moon and the stars, all the host of heaven_**_, and be drawn away and bow down to them and serve them — those which YHUH your_ **_God has allotted / apportioned / given_** > *as a portion to all the peoples under the whole heaven.”*
-
+> _Lest you lift up your eyes to heaven, and see_ **_the sun and the moon and the stars, all the host of heaven_**_, and be drawn away and bow down to them and serve them — those which YHUH your_ **_God has allotted / apportioned / given_** as a portion to all the peoples under the whole heaven.”*
 > — Deuteronomy 4:19
 
   
@@ -249,8 +240,7 @@ This verse deliberately repeats the word “one / single” twice in a single ve
 
 Scripture repeatedly calls the heavens God’s tabernacle / dwelling place and all dwellings have gates or doors:  
 
-_He who_ **_stretches out the heavens_** _like a curtain, and spreads them_ **_like a tabernacle to dwell in._**> *”*
-
+> _He who_ **_stretches out the heavens_** _like a curtain, and spreads them_ **_like a tabernacle to dwell in._** ”*
 > — Isaiah 40:22
 
   
@@ -264,8 +254,7 @@ _It is like a bridegroom_ **_coming out of his chamber (through a gate/door)_**_
 
   
 
-_“Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion? Canst thou bring forth_ **_Mazzaroth in his season_**_? or canst thou guide Arcturus with his sons? Do you know the ordinances of the_ **_heavens_**> *? Can you establish their rule on the earth?”*
-
+> _“Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion? Canst thou bring forth_ **_Mazzaroth in his season_**_? or canst thou guide Arcturus with his sons? Do you know the ordinances of the_ **_heavens_** ? Can you establish their rule on the earth?”*
 > — Job 38:33 
 
   
@@ -391,8 +380,7 @@ Ezekiel gives us the clearest, most concrete calendar instruction in the entire 
 
   
 
-_“Thus says the Lord GOD: The gate of the inner court that faces_ **_east_** _shall be shut the six working days, but on the_ **_Sabbath_** _it shall be opened, and on the_ **_day of the new moon_** _it shall be opened … The people of the land shall worship at the entrance of that_ **_east gate_** _before the LORD on the_ **_Sabbaths_** _and on the_ **_new moons_**> *.”*
-
+> _“Thus says the Lord GOD: The gate of the inner court that faces_ **_east_** _shall be shut the six working days, but on the_ **_Sabbath_** _it shall be opened, and on the_ **_day of the new moon_** _it shall be opened … The people of the land shall worship at the entrance of that_ **_east gate_** _before the LORD on the_ **_Sabbaths_** _and on the_ **_new moons_** .”*
 > — Ezekiel 46:1–3
 
   
@@ -401,8 +389,7 @@ This instruction tells us to look east, where the sun and moon rise and open the
 
   
 
-_They serve at a_ **_sanctuary that is a copy and shadow of what is in heaven_**> *. This is why Moses was warned when he was about to build the tabernacle: 'See to it that you make everything according to the pattern shown you on the mountain.*
-
+> _They serve at a_ **_sanctuary that is a copy and shadow of what is in heaven_** . This is why Moses was warned when he was about to build the tabernacle: 'See to it that you make everything according to the pattern shown you on the mountain.*
 > — Hebrews 8:5
 
   
@@ -427,8 +414,7 @@ Using a historical document does not violate _Sola Scriptura_. It is the same as
 
   
 
-_“He made_ **_the moon_** _also to serve in her season (gates) for a declaration of times, and a sign of the world. From the moon is the sign of feasts,_ **_a light_** _that_ **_decreases in her perfection_** _(plērōma/fullness/totality/completion)._ **_The month is called after her name_**> *, increasing wonderfully in her changing, being an instrument of the armies above, shining in the firmament of heaven…”*
-
+> _“He made_ **_the moon_** _also to serve in her season (gates) for a declaration of times, and a sign of the world. From the moon is the sign of feasts,_ **_a light_** _that_ **_decreases in her perfection_** _(plērōma/fullness/totality/completion)._ **_The month is called after her name_** , increasing wonderfully in her changing, being an instrument of the armies above, shining in the firmament of heaven…”*
 > — Sirach 43:6–8
 
   
@@ -453,16 +439,14 @@ The precise alignment between Abraham's covenant in Genesis 15 and the Exodus fr
 
   
 
-_And when the sun was going down, a deep sleep fell upon Abram; and, lo, an horror of_ **_great darkness fell_** _upon him….And it came to pass, that,_ **_when the sun went down, and it was dark_**> *, behold a smoking furnace, and a burning lamp that passed between those pieces."*
-
+> _And when the sun was going down, a deep sleep fell upon Abram; and, lo, an horror of_ **_great darkness fell_** _upon him….And it came to pass, that,_ **_when the sun went down, and it was dark_** , behold a smoking furnace, and a burning lamp that passed between those pieces."*
 > — Genesis 15:12, 17
 
   
 
 The emphasis is on total darkness—no lunar light is present or implied. The covenant seals under a moonless sky during the night portion of the day.  
 
-_Now_ **_the sojourning of the children of Israel, who dwelt in Egypt, was four hundred and thirty years_**_. And it came to pass at the end of the four hundred and thirty years, even_ **_the selfsame day it came to pass_**> *, that all the hosts of the LORD went out from the land of Egypt.”*
-
+> _Now_ **_the sojourning of the children of Israel, who dwelt in Egypt, was four hundred and thirty years_**_. And it came to pass at the end of the four hundred and thirty years, even_ **_the selfsame day it came to pass_** , that all the hosts of the LORD went out from the land of Egypt.”*
 > — Exodus 12:40–41
 
   
@@ -473,8 +457,7 @@ This departure is specified as the night of the 15th of the first month (Abib/Ni
 
   
 
-_And they departed from Rameses in the first month,_ **_on the fifteenth day of the first month_**> *; on the morrow after the passover the children of Israel went out with an high hand in the sight of all the Egyptians."*
-
+> _And they departed from Rameses in the first month,_ **_on the fifteenth day of the first month_** ; on the morrow after the passover the children of Israel went out with an high hand in the sight of all the Egyptians."*
 > — Numbers 33:3
 
   
@@ -489,8 +472,7 @@ Ecclesiastes 12 presents one of Scripture's most poignant depictions of human ag
 
   
 
-_Remember also your Creator_ **_in the days of your youth_**_,_ **_before the evil (dark) days_** _come and the years draw near of which you will say, 'I have no pleasure in them';_ **_before the sun light and the moon and the stars are darkened_** > *and the clouds return after the rain…*
-
+> _Remember also your Creator_ **_in the days of your youth_**_,_ **_before the evil (dark) days_** _come and the years draw near of which you will say, 'I have no pleasure in them';_ **_before the sun light and the moon and the stars are darkened_** and the clouds return after the rain…*
 > — Ecclesiastes 12:1–2
 
   
@@ -499,9 +481,9 @@ The sequence is deliberate: first the **sun** (greatest light, governing the day
 
 If we apply this celestial analogy to the lunar month, the parallel becomes striking. The "youth" of the month should correspond to its brightest, most vigorous phase, just as human youth is marked by peak strength and illumination. Only the **full moon** fits this description:
 
--   It is the moment of maximum light, when the moon governs the entire night with undiminished radiance
--   From that point of perfection, the light begins to fade night by night—waning through gibbous, quarter, crescent, until darkness envelops the mid-month period.
--   The "darkening of the moon" in Ecclesiastes 12:2 thus finds its monthly echo in the waning phase that follows fullness, not in a faint beginning or invisible start.
+- It is the moment of maximum light, when the moon governs the entire night with undiminished radiance
+- From that point of perfection, the light begins to fade night by night—waning through gibbous, quarter, crescent, until darkness envelops the mid-month period.
+- The "darkening of the moon" in Ecclesiastes 12:2 thus finds its monthly echo in the waning phase that follows fullness, not in a faint beginning or invisible start.
 
   
 
@@ -523,10 +505,10 @@ While it's true that one could roughly "predict" a crescent by averaging the lun
 
 By contrast, the full moon is the easiest lunar phase to predict and confirm through observation alone:
 
--   It is visible for nearly the entire night (~10–12 hours), rising near sunset and setting near sunrise.
--   Its appearance is unmistakable: a fully illuminated disk that clearly indicates the moon's phase.
--   **Advance predictability**: The night before Renewed Moon Day, observe when the moon sets. If the moon sets while the sun is still **6° above the horizon** (during afternoon daylight), this predicts that the next morning a full-looking moon will be visible at **12° above the western horizon at first light**. This 6°/12° rule provides objective, observable criteria for determining when the month begins, requiring no astronomical calculations.
--   **Renewed Moon Day timing**: In a full moon calendar, the month begins at first light after the full moon (Renewed Moon Day), when the waning gibbous moon is 12-24° above the western horizon at dawn (about 1 hour before sunrise). At sunrise, the moon would be approximately 24-36° above the western horizon, depending on the exact waning phase. This provides a clear, observable marker for the start of each month.
+- It is visible for nearly the entire night (~10–12 hours), rising near sunset and setting near sunrise.
+- Its appearance is unmistakable: a fully illuminated disk that clearly indicates the moon's phase.
+- **Advance predictability**: The night before Renewed Moon Day, observe when the moon sets. If the moon sets while the sun is still **6° above the horizon** (during afternoon daylight), this predicts that the next morning a full-looking moon will be visible at **12° above the western horizon at first light**. This 6°/12° rule provides objective, observable criteria for determining when the month begins, requiring no astronomical calculations.
+- **Renewed Moon Day timing**: In a full moon calendar, the month begins at first light after the full moon (Renewed Moon Day), when the waning gibbous moon is 12-24° above the western horizon at dawn (about 1 hour before sunrise). At sunrise, the moon would be approximately 24-36° above the western horizon, depending on the exact waning phase. This provides a clear, observable marker for the start of each month.
 
 This observational asymmetry is decisive. A crescent-based system introduces real uncertainty: tomorrow might not show a visible crescent, forcing a delay and disrupting plans. A full-moon system allows confident advance knowledge: count the days, observe the waxing progression, and the bright, unmistakable full disk will appear as expected. The narrative in 1 Samuel 20 assumes exactly this kind of certainty—no hesitation, no “_if we see it_,” no waiting for sighting. David and Jonathan plan around the day as if it is fixed and known. The king’s table is set with the expectation that the day has arrived. This fits the full moon far more naturally than a weather-dependent sliver.
 

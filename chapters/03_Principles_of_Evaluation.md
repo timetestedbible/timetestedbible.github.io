@@ -20,8 +20,7 @@ This is relevant because God commanded us to keep his Sabbath Holy and to rememb
 
   
 
-_"Also on the_ **_10th day of this seventh month_** _there shall be a day of atonement: it shall be an holy convocation unto you…For_ **_whatsoever soul_**  **_it be that shall not be afflicted in that same day, he shall be cut off_** _from among his people. And whatsoever soul it be that does any work in that same day, the same soul will_ **_I destroy from among his people._**> *”*
-
+> _"Also on the_ **_10th day of this seventh month_** _there shall be a day of atonement: it shall be an holy convocation unto you…For_ **_whatsoever soul_**  **_it be that shall not be afflicted in that same day, he shall be cut off_** _from among his people. And whatsoever soul it be that does any work in that same day, the same soul will_ **_I destroy from among his people._** ”*
 > — Leviticus 23:29-30
 
   
@@ -31,8 +30,7 @@ With this underlying motivation that applies to all people, we must evaluate wha
 
   
 
-_Now what I am commanding you today_ **_is not too difficult_** > *for you or beyond your reach.*
-
+> _Now what I am commanding you today_ **_is not too difficult_** for you or beyond your reach.*
 > — Deuteronomy 30:11
 
   
@@ -41,8 +39,7 @@ We now have **a metric by which we can judge calendars: are they beyond the reac
 
 Given the consequences for failure to obey, it seems logical that there is an objective standard — that the times themselves are holy and **our failure to read the clock properly doesn’t change the holy times**. God makes reference to a calendar and gives commands relative to this objective calendar. He does not prescribe a process, which if followed, allows man to change the times and appointed times. In fact any change to the appointed times is the spirit of Antichrist.
 
-_He shall speak words against the Most High, and shall wear out the saints of the Most High, and_ **_shall think to change the times_** > *and the law.*
-
+> _He shall speak words against the Most High, and shall wear out the saints of the Most High, and_ **_shall think to change the times_** and the law.*
 > — Daniel 7:25
 
   
@@ -110,27 +107,12 @@ There is nothing wrong with using calculation so long as the calculation does no
 
   
 
-**_The heavens_** _declare the glory of God,_
-
-_and the sky above_ **_proclaims his handiwork._**
-
-_Day to day pours forth speech,_
-
-_and_ **_night to night reveals knowledge_**_._
-
-_There is no speech, nor are there words,_
-
-_whose voice is not heard._
-
-_Yet their voice_ **_goes out through all the earth_**_,_
-
-> *and their words to the end of the world.*
+> *The heavens declare the glory of God, and the sky above proclaims his handiwork. Day to day pours forth speech, and night to night reveals knowledge. There is no speech, nor are there words, whose voice is not heard. Yet their voice goes out through all the earth, and their words to the end of the world.*
 > — Psalms 19:1-4
 
   
 
-**_Let God be found true, though every man be found a liar_**> *, as it is written: “That You may be justified in Your words, And prevail when You are judged.”*
-
+> **_Let God be found true, though every man be found a liar_** , as it is written: “That You may be justified in Your words, And prevail when You are judged.”*
 > — Romans 3:4
 
   

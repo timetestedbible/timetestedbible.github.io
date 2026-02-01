@@ -155,9 +155,9 @@ The nature of a "Sabbath" count referring to a "week" structure rather than a "d
 
 As a result of this dispute, people fall into one of three camps:
 
--   Keep First Fruits aligned and let Pentecost fall where it may
--   Keep Pentecost on the first day of the week and move First Fruits
--   Understand the month as 4 weeks (sabbaths) and only count the days that are part of the sabbaths (6+1 days). Renewed Moon days are separate and outside of the count.
+- Keep First Fruits aligned and let Pentecost fall where it may
+- Keep Pentecost on the first day of the week and move First Fruits
+- Understand the month as 4 weeks (sabbaths) and only count the days that are part of the sabbaths (6+1 days). Renewed Moon days are separate and outside of the count.
 
 The last approach has one other winkle in that there is a possible reading of Leviticus as: "_from the day after the sabbath (week) from (that starts) the day you brought first fruits, count 7 complete sabbath weeks"_. The question is whether this is a Hebraic parallelism or a way of identifying the "sabbath week" you start the count of weeks from or merely a way of identifying the "sabbath day" you start the count from. In other words, is the week of unleavened bread part of the count or do you start counting after the week of unleavened bread. Considering the context is counting weeks (sabbaths) and not days, it could be argued either way.
 

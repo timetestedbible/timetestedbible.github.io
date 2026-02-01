@@ -103,11 +103,7 @@ function formatGregorianDate(gregorian) {
     parts.push(formatYear(gregorian.year));
   }
   
-  // Add calendar indicator for ancient dates
-  if (gregorian.isJulian) {
-    parts.push('(Julian)');
-  }
-  
+  // NASA convention: dates before 1582 are Julian calendar, no suffix needed
   return parts.join(' ');
 }
 

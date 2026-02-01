@@ -1,4 +1,4 @@
-name: Deploy Jekyll site to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -21,27 +21,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          working-directory: http
-      
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       
-      - name: Build with Jekyll
-        working-directory: http
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+      - name: Copy chapters to http folder
+        run: |
+          cp -r chapters http/chapters
+          echo "Chapters copied successfully"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: http/_site
+          path: http
 
   deploy:
     environment:
