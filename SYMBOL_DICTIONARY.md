@@ -20,11 +20,13 @@ A reference of decoded symbolic meanings derived through systematic scriptural a
 | [BRIARS/THORNS](#briars-and-thorns) | Worldly | Choking People |
 | [EAGLE](#eagle) | Messenger | Angel |
 | [FAITH](#faith) | Obedience | Trusting Obedience |
+| [FOOL](#fool) | Disobedient | Self-Willed Rebel |
 | [FORNICATION](#fornication) | Idolatry | Serving Idols |
 | [FRUIT](#fruit) | Works | Deeds |
 | [HARLOT](#harlot--whore) | Idolater | Covenant Breaker |
 | [IDOLATRY](#idolatry) | Self-rule | Rejecting God's Word |
 | [ISLAND](#island) | Sanctified | Set-Apart People |
+| [LAMP](#lamp) | Commandment | God's Instruction |
 | [LIGHT](#light) | Example | Visible Example |
 | [MARK](#mark) | Observance | Visible Practice |
 | [MARRIAGE](#marriage) | Covenant | Covenant Picture |
@@ -41,10 +43,43 @@ A reference of decoded symbolic meanings derived through systematic scriptural a
 | [VIRGIN](#virgin) | Faithful | Exclusively Devoted |
 | [WICKEDNESS](#wickedness) | Lawlessness | Covenant Transgression |
 | [WINGS](#wings) | Covenant | Covenant Covering |
+| [WISE](#wise) | Obedient | Commandment Keeper |
 
 ---
 
 ## Symbols
+
+### LAMP
+
+| Dimension | Symbolic Meaning |
+|-----------|------------------|
+| **IS (One Word)** | Commandment |
+| **IS (Two Words)** | God's Instruction |
+| **DOES (One Word)** | Guides |
+| **DOES (Two Words)** | Produces Light |
+| **Sentence** | God's commandment/word that provides direction — when combined with obedient action (oil), it produces visible example (light) for others to follow |
+
+**Opposite**: Darkness = Absence of commandment/instruction
+
+**Key Proof Texts**:
+- **Proverbs 6:23** — "For the **commandment** is a **lamp**; and the **law** is **light**" (EXPLICIT DEFINITION)
+- **Psalm 119:105** — "Thy **word** is a **lamp** unto my feet, and a **light** unto my path"
+- Matthew 25:1-8 — The virgins' lamps (all had commandments; only wise had oil/works)
+
+**Production Chain**:
+- LAMP (Commandment) + OIL (Proven Works) = LIGHT (Visible Example)
+- Having the lamp without oil = knowing commandment without doing it = no light
+
+**Relationship to Other Symbols**:
+- **TRUTH** = Commandment → **LAMP** = same meaning, different metaphor
+- **OIL** = Proven Works → fuels the lamp
+- **LIGHT** = Visible Example → what the lamp produces
+- **WISE** = Obedient → has lamp AND oil
+- **FOOL** = Disobedient → has lamp but no oil
+
+**Full Study**: [`symbols/LAMP.md`](symbols/LAMP.md)
+
+---
 
 ### LIGHT
 
@@ -183,6 +218,40 @@ A reference of decoded symbolic meanings derived through systematic scriptural a
 - FAITH (Obedience) is our response to that standard
 
 **Full Study**: [`symbols/FAITH.md`](symbols/FAITH.md)
+
+---
+
+### FOOL
+
+| Dimension | Symbolic Meaning |
+|-----------|------------------|
+| **IS (One Word)** | Disobedient |
+| **IS (Two Words)** | Self-Willed Rebel |
+| **DOES (One Word)** | Rejects |
+| **DOES (Two Words)** | Despises Instruction |
+| **Sentence** | One who rejects God's instruction and follows their own heart/way — not lacking intelligence, but refusing to submit to God's wisdom and commandments |
+
+**Opposite**: WISE = Obedient / One who does God's commandments
+
+**Key Proof Texts**:
+- Titus 3:3 — "we ourselves also were sometimes **foolish, disobedient**" (direct pairing)
+- Matthew 7:26 — "heareth these sayings of mine, and **doeth them NOT**... foolish man" (explicit definition)
+- Galatians 3:1 — "O foolish Galatians... that ye should **not obey** the truth"
+- Psalm 14:1 — "The fool hath said in his heart, There is no God. They are corrupt"
+- Proverbs 1:7 — "fools **despise** wisdom and instruction"
+- Proverbs 28:26 — "He that **trusteth in his own heart** is a fool"
+
+**Antithetical Definition**:
+- Psalm 111:10 — "The fear of the LORD is the beginning of wisdom... they that **DO his commandments**"
+- Proverbs 10:8 — "The wise in heart will **receive commandments**"
+- Therefore FOOL = one who does NOT do/receive commandments = DISOBEDIENT
+
+**Relationship to Other Symbols**:
+- **FAITH** = Obedience → **FOOL** = opposite of faith
+- **IDOLATRY** = Self-rule → **FOOL** = character of idolatry
+- **OIL** = Proven Works → Foolish virgins had NO oil (no works of obedience)
+
+**Full Study**: [`symbols/FOOL.md`](symbols/FOOL.md)
 
 ---
 
@@ -823,6 +892,41 @@ The mark in hand/forehead means your PRACTICES and BELIEFS align with that autho
 - **FAITH** = Obedience (the response to the standard)
 
 **Full Study**: [`symbols/MARK.md`](symbols/MARK.md)
+
+---
+
+### WISE
+
+| Dimension | Symbolic Meaning |
+|-----------|------------------|
+| **IS (One Word)** | Obedient |
+| **IS (Two Words)** | Commandment Keeper |
+| **DOES (One Word)** | Does |
+| **DOES (Two Words)** | Receives and Acts |
+| **Sentence** | One who hears God's instruction and does it — not merely intelligent, but responsive to God's word through obedient action |
+
+**Opposite**: FOOL = Disobedient / One who hears but does not do
+
+**Key Proof Texts**:
+- **Psalm 111:10** — "The fear of the LORD is the beginning of wisdom: a good understanding have all they that **DO his commandments**"
+- **Deuteronomy 4:6** — "**Keep** therefore and **do** them; for this is your **wisdom**"
+- **Proverbs 10:8** — "The **wise** in heart will **receive commandments**"
+- **Matthew 7:24** — "whosoever **heareth** these sayings of mine, and **DOETH them**, I will liken him unto a **wise** man"
+- Matthew 25:2-4 — "five were **wise**... the wise took **oil** in their vessels with their lamps"
+
+**Antithetical Definition**:
+- FOOL (hears, does NOT) vs. WISE (hears and DOES)
+- FOOL (despises instruction) vs. WISE (receives commandments)
+- FOOL (trusts own heart) vs. WISE (fears the LORD)
+
+**Relationship to Other Symbols**:
+- **FOOL** = Disobedient → **WISE** = exact opposite
+- **FAITH** = Obedience → **WISE** = faith in action
+- **LAMP** = Commandment → **WISE** has lamp with oil
+- **OIL** = Proven Works → **WISE** has proven works
+- **LIGHT** = Visible Example → **WISE** produces light
+
+**Full Study**: [`symbols/WISE.md`](symbols/WISE.md)
 
 ---
 
