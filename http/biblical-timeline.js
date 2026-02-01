@@ -458,9 +458,9 @@ function filterResolvedEvents(events, data) {
       if (biblicalTypes.includes(eventType)) return false;
     }
     
-    // Historical events filter (conquest, decree, construction, destruction, reign)
+    // Historical events filter (conquest, decree, construction, destruction, reign, astronomical, battle)
     if (!timelineFilters.historical) {
-      const historicalTypes = ['conquest', 'decree', 'construction', 'destruction', 'reign', 'historical'];
+      const historicalTypes = ['conquest', 'decree', 'construction', 'destruction', 'reign', 'historical', 'astronomical', 'battle', 'milestone'];
       if (historicalTypes.includes(eventType)) return false;
     }
     
@@ -705,29 +705,17 @@ function initDetailPanel() {
         top: 56px; /* Below main nav */
         right: -100%;
         width: 50%;
-        max-width: calc(100% - 280px - 60px); /* Don't cover sidebar (280px) or ruler (60px) */
         height: calc(100vh - 56px);
         background: #1a1a2e;
         border-left: 2px solid rgba(126, 200, 227, 0.3);
-        z-index: 900; /* Below sidebar (1000) */
+        z-index: 9000;
         transition: right 0.3s ease;
         display: flex;
         flex-direction: column;
         overflow: hidden;
       }
       .detail-slideout.open {
-        right: 280px; /* Account for sidebar width */
-      }
-      
-      /* When sidebar is hidden (mobile or collapsed) */
-      @media (max-width: 1023px) {
-        .detail-slideout.open {
-          right: 0;
-        }
-        .detail-slideout {
-          max-width: calc(100% - 60px);
-          z-index: 9000;
-        }
+        right: 0;
       }
       
       /* Mobile: slide out covers events but not ruler, adjust for smaller nav */
@@ -1046,6 +1034,25 @@ function initDetailPanel() {
       .lunar-calendar-link:hover {
         opacity: 1;
       }
+      .lunar-date-link {
+        color: #6bc46b;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        padding: 4px 8px;
+        border-radius: 4px;
+        background: rgba(107, 196, 107, 0.1);
+        display: inline-block;
+      }
+      .lunar-date-link:hover {
+        background: rgba(107, 196, 107, 0.2);
+        color: #8fd68f;
+      }
+      .detail-reckoning-note {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
     `;
     document.head.appendChild(style);
   }
@@ -1345,10 +1352,11 @@ async function openDurationDetailInternal(durationId, addHistory = true) {
     }, 100); // Small delay to let panel animate open
   }
   
-  // Load documentation async
+  // Load documentation async (if doc file exists)
   if (duration.doc) {
     try {
       const response = await fetch('/' + duration.doc);
+      const docEl = document.getElementById('detail-doc-content');
       if (response.ok) {
         const markdown = await response.text();
         let docHtml = markdown
@@ -1361,8 +1369,10 @@ async function openDurationDetailInternal(durationId, addHistory = true) {
           .replace(/^- (.+)$/gm, '<li>$1</li>')
           .replace(/\n\n/g, '</p><p>')
           .replace(/\n/g, '<br>');
-        const docEl = document.getElementById('detail-doc-content');
         if (docEl) docEl.innerHTML = '<p>' + docHtml + '</p>';
+      } else {
+        // Doc file not found - show placeholder
+        if (docEl) docEl.innerHTML = '<em style="color: #888;">Documentation not yet available</em>';
       }
     } catch (err) {
       const docEl = document.getElementById('detail-doc-content');
@@ -1414,7 +1424,31 @@ async function openEventDetailInternal(eventId, addHistory = true) {
   
   // Format dates
   let lunarDateStr = '—';
-  let gregorianDateStr = '—';
+  let gregorianDateStr = '';
+  let hasFixedGregorian = false;
+  let reckoningExplanation = '';
+  
+  // Determine reckoning explanation
+  if (event.start?.regal?.epoch) {
+    const epoch = data?.epochs?.[event.start.regal.epoch];
+    if (epoch?.reckoning) {
+      const reckoningMap = {
+        'spring-to-spring': 'Spring-to-Spring (Nisan New Year)',
+        'fall-to-fall': 'Fall-to-Fall (Tishri New Year)',
+        'accession-year': 'Accession-Year Reckoning',
+        'exact-date': 'Exact Historical Date'
+      };
+      reckoningExplanation = reckoningMap[epoch.reckoning] || epoch.reckoning;
+    }
+  } else if (event.start?.lunar) {
+    // Infer reckoning from month
+    const month = event.start.lunar.month;
+    if (month >= 1 && month <= 6) {
+      reckoningExplanation = 'Spring Calendar (Nisan New Year)';
+    } else if (month >= 7 && month <= 12) {
+      reckoningExplanation = 'Civil Calendar (Tishri New Year)';
+    }
+  }
   
   if (event.start?.lunar) {
     const l = event.start.lunar;
@@ -1426,10 +1460,20 @@ async function openEventDetailInternal(eventId, addHistory = true) {
     }
   }
   
+  // Check for fixed Gregorian date (astronomically verified)
+  if (event.start?.fixed?.gregorian) {
+    hasFixedGregorian = true;
+    const g = event.start.fixed.gregorian;
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    gregorianDateStr = `${monthNames[(g.month || 1) - 1]} ${g.day || 1}, ${g.year > 0 ? g.year + ' AD' : Math.abs(g.year) + ' BC'}`;
+    reckoningExplanation = event.start.fixed.source || 'Astronomically/Historically Fixed';
+  }
+  
   // Get resolved dates if available
   const profile = (typeof getTimelineProfile === 'function') ? getTimelineProfile() : null;
   let resolvedStartJD = null;
   let resolvedGregorian = null;
+  let resolvedLunar = null;
   let resolved = []; // All resolved events for reference lookups
   
   if (typeof EventResolver !== 'undefined' && profile) {
@@ -1440,9 +1484,14 @@ async function openEventDetailInternal(eventId, addHistory = true) {
         resolvedStartJD = resolvedEvent.startJD;
         if (resolvedStartJD) {
           resolvedGregorian = EventResolver.julianDayToGregorian(resolvedStartJD);
-          const year = resolvedGregorian.year;
-          const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-          gregorianDateStr = `${monthNames[resolvedGregorian.month - 1]} ${resolvedGregorian.day}, ${year > 0 ? year + ' AD' : Math.abs(year) + ' BC'}`;
+          resolvedLunar = EventResolver.julianDayToLunar(resolvedStartJD, profile);
+          
+          // If no lunar date in source, use resolved lunar
+          if (lunarDateStr === '—' && resolvedLunar) {
+            const monthNames = ['Nisan', 'Iyyar', 'Sivan', 'Tammuz', 'Av', 'Elul', 'Tishri', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar'];
+            const monthName = monthNames[(resolvedLunar.month - 1) % 12] || `Month ${resolvedLunar.month}`;
+            lunarDateStr = `${monthName} ${resolvedLunar.day}, ${resolvedLunar.year > 0 ? resolvedLunar.year + ' AD' : Math.abs(resolvedLunar.year) + ' BC'}`;
+          }
         }
       }
     } catch (e) {
@@ -1450,14 +1499,14 @@ async function openEventDetailInternal(eventId, addHistory = true) {
     }
   }
   
-  // Build calendar link for lunar date
-  let lunarCalendarLink = '';
-  if (event.start?.lunar && resolvedGregorian) {
-    const l = event.start.lunar;
+  // Build clickable lunar date (navigates to calendar)
+  let lunarDateHtml = lunarDateStr;
+  if (lunarDateStr !== '—' && resolvedGregorian) {
+    const l = event.start?.lunar || resolvedLunar || {};
     const lunarMonth = l.month || 1;
     const lunarDay = l.day || 1;
     const calYear = resolvedGregorian.year;
-    lunarCalendarLink = `<a href="#" class="lunar-calendar-link" onclick="navigateToCalendarFromTimeline(${calYear}, ${lunarMonth}, ${lunarDay}); return false;" title="View in Calendar">📅</a> `;
+    lunarDateHtml = `<a href="#" class="lunar-date-link" onclick="navigateToCalendarFromTimeline(${calYear}, ${lunarMonth}, ${lunarDay}); return false;" title="View in Calendar">📅 ${lunarDateStr}</a>`;
   }
   
   // Build HTML
@@ -1468,17 +1517,24 @@ async function openEventDetailInternal(eventId, addHistory = true) {
     </h2>
     
     <div class="detail-section">
-      <h4>Dates</h4>
+      <h4>Date</h4>
       <div class="detail-date-row">
         <div class="detail-date-item">
-          <div class="detail-date-label">Lunar</div>
-          <div class="detail-date-value">${lunarCalendarLink}${lunarDateStr}</div>
+          <div class="detail-date-label">Hebrew Calendar</div>
+          <div class="detail-date-value">${lunarDateHtml}</div>
         </div>
+        ${hasFixedGregorian ? `
         <div class="detail-date-item">
-          <div class="detail-date-label">Gregorian</div>
+          <div class="detail-date-label">Fixed Gregorian</div>
           <div class="detail-date-value">${gregorianDateStr}</div>
         </div>
+        ` : ''}
       </div>
+      ${reckoningExplanation ? `
+      <div class="detail-reckoning-note" style="font-size: 0.85em; color: #888; margin-top: 8px; font-style: italic;">
+        📐 ${reckoningExplanation}
+      </div>
+      ` : ''}
     </div>
   `;
   
@@ -1615,6 +1671,39 @@ async function openEventDetailInternal(eventId, addHistory = true) {
     `;
   }
   
+  // Show image if present
+  if (event.image) {
+    html += `
+      <div class="detail-section">
+        <h4>Visualization</h4>
+        <div class="detail-image-container">
+          <img src="${event.image}" alt="${event.title}" class="detail-event-image" onclick="window.open('${event.image}', '_blank')" style="max-width: 100%; border-radius: 8px; cursor: pointer;">
+        </div>
+      </div>
+    `;
+  }
+  
+  // Show external links if present
+  if (event.links && event.links.length > 0) {
+    html += `
+      <div class="detail-section">
+        <h4>External Links</h4>
+        <div class="detail-links-container" style="display: flex; flex-direction: column; gap: 10px;">
+          ${event.links.map(link => `
+            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="detail-external-link" style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(126, 200, 227, 0.1); border: 1px solid rgba(126, 200, 227, 0.3); border-radius: 8px; text-decoration: none; color: #7ec8e3; transition: background 0.2s;">
+              <span style="font-size: 1.5em;">${link.icon || '🔗'}</span>
+              <div style="flex: 1;">
+                <div style="font-weight: 500;">${link.label}</div>
+                ${link.notes ? `<div style="font-size: 0.85em; color: #888; margin-top: 2px;">${link.notes}</div>` : ''}
+              </div>
+              <span style="color: #888;">↗</span>
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+  
   // Show related durations
   const durations = data?.durations || [];
   const relatedDurations = durations.filter(d => d.from_event === eventId || d.to_event === eventId);
@@ -1686,19 +1775,6 @@ async function openEventDetailInternal(eventId, addHistory = true) {
 
 // Update URL to reflect currently open event/duration
 function updateTimelineURL(type, id) {
-  // Use AppStore if available (http-v2)
-  if (typeof AppStore !== 'undefined') {
-    if (type === 'event') {
-      AppStore.dispatch({ type: 'SET_TIMELINE_EVENT', eventId: id });
-    } else if (type === 'duration') {
-      AppStore.dispatch({ type: 'SET_TIMELINE_DURATION', durationId: id });
-    } else {
-      AppStore.dispatch({ type: 'CLEAR_TIMELINE_SELECTION' });
-    }
-    return;
-  }
-  
-  // Fallback for http/ (old behavior)
   if (typeof getCurrentProfileSlug !== 'function') return;
   
   const profile = getCurrentProfileSlug();
@@ -2348,6 +2424,22 @@ async function renderBiblicalTimeline() {
     console.log('UNRESOLVED EVENTS (' + unresolvedEvents.length + '):', unresolvedEvents.map(e => e.id));
   }
   
+  // DEBUG: Check specific temple/monarchy events
+  const templeEvents = ['bur-sagale-eclipse', 'battle-of-qarqar', 'jehu-tribute', 'rehoboam-reign', 'ahab-reign', 'jehu-reign', 'david-reign', 'solomon-reign', 'solomon-temple-construction'];
+  console.log('=== TEMPLE CHRONOLOGY EVENT DEBUG ===');
+  console.log('Historical filter:', timelineFilters.historical);
+  templeEvents.forEach(id => {
+    const eventFiltered = resolvedEvents.find(e => e.id === id);
+    const eventFull = biblicalTimelineResolvedCache?.find(e => e.id === id);
+    
+    if (eventFull) {
+      const year = eventFull.startJD ? Math.floor((eventFull.startJD - 1721425.5) / 365.25) : 'null';
+      console.log(`${id}: startJD=${eventFull.startJD}, year=${year}, inFiltered=${!!eventFiltered}, type=${eventFull.type}`);
+    } else {
+      console.log(`${id}: NOT FOUND in cache`);
+    }
+  });
+  
   // DEBUG: Check specific pre-flood events (check both filtered and full cache)
   const preFloodDeaths = ['methuselah-death', 'lamech-death', 'noah-death', 'jared-death', 'enoch-translation', 'methuselah-birth', 'lamech-birth'];
   console.log('=== PRE-FLOOD EVENT DEBUG ===');
@@ -2475,9 +2567,9 @@ async function renderBiblicalTimeline() {
     if (event.priority !== undefined) return event.priority;
     
     // Auto-assign priority based on type and tags
-    const majorTypes = ['milestone', 'creation', 'catastrophe'];
+    const majorTypes = ['milestone', 'creation', 'catastrophe', 'astronomical', 'battle', 'reign'];
     const highTypes = ['biblical-event'];
-    const majorTags = ['prophecy', 'resurrection', 'crucifixion', 'creation', 'flood', 'exodus', 'patriarch'];
+    const majorTags = ['prophecy', 'resurrection', 'crucifixion', 'creation', 'flood', 'exodus', 'patriarch', 'genealogy', 'pre-flood', 'chronology-anchor', 'astronomical', 'assyrian'];
     
     if (majorTypes.includes(event.type)) return 1;
     if (event.tags && event.tags.some(tag => majorTags.includes(tag))) return 1;

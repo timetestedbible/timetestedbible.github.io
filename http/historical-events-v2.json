@@ -126,6 +126,48 @@
         "unit": "regal_years"
       },
       "notes": "Temple foundation in 4th year, 480 years after Exodus."
+    },
+    "thutmose-iii": {
+      "name": "Thutmose III (Egypt)",
+      "start": {
+        "lunar": {
+          "year": -1478
+        }
+      },
+      "reckoning": "spring-to-spring",
+      "duration": {
+        "value": 54,
+        "unit": "regal_years"
+      },
+      "notes": "18th Dynasty Pharaoh (c. 1479–1425 BC). Father of Amenhotep II. His 54-year reign is the longest in the 18th Dynasty, matching the 40+ year requirement for the Pharaoh of the Oppression (Acts 7:30). The Pharaoh whom Moses fled from."
+    },
+    "amenhotep-ii": {
+      "name": "Amenhotep II (Egypt)",
+      "start": {
+        "lunar": {
+          "year": -1449
+        }
+      },
+      "reckoning": "spring-to-spring",
+      "duration": {
+        "value": 27,
+        "unit": "regal_years"
+      },
+      "notes": "18th Dynasty Pharaoh (c. 1450–1423 BC). The Pharaoh of the Exodus. Identified by Manetho (via Josephus) as 'Amenophis' during whose reign the Israelites left Egypt. The biblical date of 1446 BC falls within his reign. His firstborn son died (matching the 10th plague), and his successor Thutmose IV was a younger son."
+    },
+    "thutmose-iv": {
+      "name": "Thutmose IV (Egypt)",
+      "start": {
+        "lunar": {
+          "year": -1422
+        }
+      },
+      "reckoning": "spring-to-spring",
+      "duration": {
+        "value": 10,
+        "unit": "regal_years"
+      },
+      "notes": "18th Dynasty Pharaoh (c. 1423–1413 BC). Son of Amenhotep II but NOT his firstborn. His Dream Stele at the Sphinx claims divine legitimacy because his older brother (the Crown Prince) mysteriously died—consistent with the 10th plague killing the firstborn of Pharaoh."
     }
   },
   "durations": [
@@ -301,6 +343,165 @@
       "doc": "_durations/monarchy-temple.md"
     },
     {
+      "id": "scripture-temple-7-years",
+      "title": "Temple Built in 7 Years",
+      "from_event": "solomon-temple-construction",
+      "to_event": "solomon-temple-dedication",
+      "claimed": {
+        "years": 7
+      },
+      "source": {
+        "ref": "1 Kings 6:38",
+        "type": "scripture",
+        "quote": "And in the eleventh year, in the month Bul, which is the eighth month, was the house finished throughout all the parts thereof, and according to all the fashion of it. So was he **seven years** in building it."
+      },
+      "doc": "_durations/monarchy-temple.md",
+      "notes": "Foundation laid in Ziv (2nd month) of Solomon's 4th year; completed in Bul (8th month) of his 11th year."
+    },
+    {
+      "id": "scripture-solomon-40-years",
+      "title": "Solomon Reigned 40 Years",
+      "from_event": "solomon-reign",
+      "to_event": "rehoboam-reign",
+      "claimed": {
+        "years": 40
+      },
+      "source": {
+        "ref": "1 Kings 11:42",
+        "type": "scripture",
+        "quote": "And the time that Solomon reigned in Jerusalem over all Israel was **forty years**"
+      },
+      "doc": "_durations/divided-kingdom.md",
+      "notes": "Solomon's death marks the division of the kingdom. Rehoboam succeeds in Judah."
+    },
+    {
+      "id": "assyrian-eclipse-to-qarqar",
+      "title": "90 Years: Bur-Sagale Eclipse to Battle of Qarqar",
+      "from_event": "battle-of-qarqar",
+      "to_event": "bur-sagale-eclipse",
+      "claimed": {
+        "years": 90
+      },
+      "source": {
+        "ref": "Assyrian Eponym (Limmu) Lists",
+        "type": "historical",
+        "quote": "Continuous year-by-year eponym list from Shalmaneser III's 6th year to Bur-Sagale's eponymate"
+      },
+      "doc": "_durations/assyrian-chronology.md",
+      "notes": "Shalmaneser III's 6th year (Qarqar) is 90 eponyms before Bur-Sagale (eclipse). This is the PRIMARY LINK from astronomical anchor to Israelite chronology."
+    },
+    {
+      "id": "assyrian-eclipse-to-jehu",
+      "title": "78 Years: Bur-Sagale Eclipse to Jehu Tribute",
+      "from_event": "jehu-tribute",
+      "to_event": "bur-sagale-eclipse",
+      "claimed": {
+        "years": 78
+      },
+      "source": {
+        "ref": "Assyrian Eponym (Limmu) Lists",
+        "type": "historical",
+        "quote": "Continuous year-by-year eponym list from Shalmaneser III's 18th year to Bur-Sagale's eponymate"
+      },
+      "doc": "_durations/assyrian-chronology.md",
+      "notes": "Shalmaneser III's 18th year (Jehu tribute, Black Obelisk) is 78 eponyms before Bur-Sagale (eclipse). SECOND LINK confirming Israelite chronology."
+    },
+    {
+      "id": "scripture-ahab-22-years",
+      "title": "Ahab Reigned 22 Years",
+      "from_event": "ahab-reign",
+      "to_event": "battle-of-qarqar",
+      "claimed": {
+        "years": 22
+      },
+      "source": {
+        "ref": "1 Kings 16:29",
+        "type": "scripture",
+        "quote": "Ahab the son of Omri reigned over Israel in Samaria **twenty and two years**"
+      },
+      "doc": "_durations/divided-kingdom.md",
+      "notes": "Ahab died at or near Qarqar (853 BCE). Counting back 22 years places his accession at ~874 BCE."
+    },
+    {
+      "id": "scripture-jehu-28-years",
+      "title": "Jehu Reigned 28 Years",
+      "from_event": "jehu-reign",
+      "claimed": {
+        "years": 28
+      },
+      "source": {
+        "ref": "2 Kings 10:36",
+        "type": "scripture",
+        "quote": "And the time that Jehu reigned over Israel in Samaria was **twenty and eight years**"
+      },
+      "doc": "_durations/divided-kingdom.md",
+      "notes": "Jehu began reign ~841 BCE per Black Obelisk synchronism."
+    },
+    {
+      "id": "scripture-rehoboam-17-years",
+      "title": "Rehoboam Reigned 17 Years",
+      "from_event": "rehoboam-reign",
+      "to_event": "abijah-reign",
+      "claimed": {
+        "years": 17
+      },
+      "source": {
+        "ref": "1 Kings 14:21",
+        "type": "scripture",
+        "quote": "And Rehoboam the son of Solomon reigned in Judah... and he reigned **seventeen years** in Jerusalem"
+      },
+      "doc": "_durations/divided-kingdom.md",
+      "notes": "First king of Judah after the division. Tishri-to-Tishri reckoning with accession-year system."
+    },
+    {
+      "id": "scripture-abijah-3-years",
+      "title": "Abijah Reigned 3 Years",
+      "from_event": "abijah-reign",
+      "to_event": "asa-reign",
+      "claimed": {
+        "years": 3
+      },
+      "source": {
+        "ref": "1 Kings 15:2",
+        "type": "scripture",
+        "quote": "**Three years** reigned he in Jerusalem"
+      },
+      "doc": "_durations/divided-kingdom.md",
+      "notes": "Also called Abijam. Short reign between Rehoboam and Asa."
+    },
+    {
+      "id": "scripture-asa-41-years",
+      "title": "Asa Reigned 41 Years",
+      "from_event": "asa-reign",
+      "claimed": {
+        "years": 41
+      },
+      "source": {
+        "ref": "1 Kings 15:10",
+        "type": "scripture",
+        "quote": "And **forty and one years** reigned he in Jerusalem"
+      },
+      "doc": "_durations/divided-kingdom.md",
+      "notes": "Long-reigning king of Judah. Ahab of Israel began in Asa's 38th year."
+    },
+    {
+      "id": "synchronism-ahab-asa-38th",
+      "title": "Ahab Began in Asa's 38th Year",
+      "from_event": "asa-reign",
+      "to_event": "ahab-reign",
+      "claimed": {
+        "years": 38,
+        "notes": "Cross-reference synchronism between Judah and Israel"
+      },
+      "source": {
+        "ref": "1 Kings 16:29",
+        "type": "scripture",
+        "quote": "And in the **thirty and eighth year of Asa** king of Judah began Ahab the son of Omri to reign over Israel"
+      },
+      "doc": "_durations/divided-kingdom.md",
+      "notes": "Critical synchronism linking Judah's chronology (Asa) to Israel's chronology (Ahab), which then connects to Assyrian records via Battle of Qarqar."
+    },
+    {
       "id": "scripture-430-sojourning",
       "title": "430 Years: Covenant to Exodus",
       "from_event": "covenant-with-abraham",
@@ -327,21 +528,6 @@
       ],
       "doc": "_durations/covenant-to-exodus.md",
       "notes": "Paul confirms in Galatians that the 430 years began with the covenant to Abraham, not when Israel entered Egypt. The LXX reading of Exodus 12:40 also includes 'and in the land of Canaan' clarifying the sojourning was in both lands."
-    },
-    {
-      "id": "scripture-400-affliction",
-      "title": "400 Years Affliction (Prophecy to Abraham)",
-      "from_event": "isaac-weaning",
-      "to_event": "exodus-from-egypt",
-      "claimed": {
-        "years": 400
-      },
-      "source": {
-        "ref": "Genesis 15:13",
-        "type": "scripture",
-        "quote": "**thy seed shall be a stranger** in a land that is not theirs, and shall serve them; and they shall **afflict them four hundred years**"
-      },
-      "doc": "_durations/covenant-to-exodus.md"
     },
     {
       "id": "vat4956-nebuchadnezzar-37th",
@@ -404,22 +590,6 @@
         "ref": "Luke 3:1-3",
         "type": "scripture",
         "quote": "Now **in the fifteenth year of the reign of Tiberius Caesar**... the word of God came unto John"
-      },
-      "doc": "_durations/john-jesus-chain.md"
-    },
-    {
-      "id": "luke-jesus-about-30",
-      "title": "Jesus About 30 at Baptism",
-      "from_event": "jesus-birth",
-      "to_event": "earliest-jesus-baptism",
-      "claimed": {
-        "years": 30,
-        "approximate": true
-      },
-      "source": {
-        "ref": "Luke 3:23",
-        "type": "scripture",
-        "quote": "And Jesus himself began to be **about thirty years of age**"
       },
       "doc": "_durations/john-jesus-chain.md"
     },
@@ -1066,7 +1236,7 @@
     },
     {
       "id": "exodus-from-egypt-to-journey-ramses-succoth",
-      "title": "exodus-from-egypt to journey-ramses-succoth: 1 days",
+      "title": "Exodus to Ramses-Succoth Journey: 1 Day",
       "from_event": "exodus-from-egypt",
       "to_event": "journey-ramses-succoth",
       "claimed": {
@@ -1108,7 +1278,7 @@
     },
     {
       "id": "manna-begins-to-first-weekly-sabbath",
-      "title": "manna-begins to first-weekly-sabbath: 6 days",
+      "title": "Manna Begins to First Weekly Sabbath: 6 Days",
       "from_event": "manna-begins",
       "to_event": "first-weekly-sabbath",
       "claimed": {
@@ -1122,7 +1292,7 @@
     },
     {
       "id": "exodus-from-egypt-to-tabernacle-erected",
-      "title": "exodus-from-egypt to tabernacle-erected: 2 years",
+      "title": "Exodus to Tabernacle Erected: 2 Years",
       "from_event": "exodus-from-egypt",
       "to_event": "tabernacle-erected",
       "claimed": {
@@ -1158,7 +1328,7 @@
     },
     {
       "id": "herod-death-to-herod-birth",
-      "title": "herod-death to herod-birth: 70 years",
+      "title": "Herod the Great Lived 70 Years",
       "from_event": "herod-death",
       "to_event": "herod-birth",
       "claimed": {
@@ -1173,7 +1343,7 @@
     },
     {
       "id": "herod-takes-jerusalem-to-herod-senate-appointment",
-      "title": "herod-takes-jerusalem to herod-senate-appointment: 3 years",
+      "title": "3 Years: Senate Appointment to Taking Jerusalem",
       "from_event": "herod-takes-jerusalem",
       "to_event": "herod-senate-appointment",
       "claimed": {
@@ -1188,7 +1358,7 @@
     },
     {
       "id": "david-death-to-david-reign",
-      "title": "david-death to david-reign: 40 years",
+      "title": "David Reigned 40 Years (Backward)",
       "from_event": "david-death",
       "to_event": "david-reign",
       "claimed": {
@@ -1196,29 +1366,14 @@
         "direction": "before"
       },
       "source": {
-        "ref": "1 Kings 1-6",
+        "ref": "1 Kings 2:11",
         "type": "scripture",
-        "quote": "Monarchy narrative"
-      }
-    },
-    {
-      "id": "vat-4956-observation-to-nebuchadnezzar-reign",
-      "title": "vat-4956-observation to nebuchadnezzar-reign: 36 years",
-      "from_event": "vat-4956-observation",
-      "to_event": "nebuchadnezzar-reign",
-      "claimed": {
-        "years": 36,
-        "direction": "before"
-      },
-      "source": {
-        "ref": "VAT 4956 tablet",
-        "type": "historical",
-        "quote": "Babylonian chronology"
+        "quote": "And the days that David reigned over Israel were **forty years**"
       }
     },
     {
       "id": "philip-death-to-philip-reign",
-      "title": "philip-death to philip-reign: 37 years",
+      "title": "Philip the Tetrarch Reigned 37 Years",
       "from_event": "philip-death",
       "to_event": "philip-reign",
       "claimed": {
@@ -1233,7 +1388,7 @@
     },
     {
       "id": "john-baptist-ministry-to-earliest-jesus-baptism",
-      "title": "john-baptist-ministry to earliest-jesus-baptism: 6 months",
+      "title": "John's Ministry to Jesus' Baptism: ~6 Months",
       "from_event": "john-baptist-ministry",
       "to_event": "earliest-jesus-baptism",
       "claimed": {
@@ -1247,7 +1402,7 @@
     },
     {
       "id": "earliest-jesus-baptism-to-jesus-isaiah-61",
-      "title": "earliest-jesus-baptism to jesus-isaiah-61: 6 months",
+      "title": "Jesus' Baptism to Isaiah 61 Reading: ~6 Months",
       "from_event": "earliest-jesus-baptism",
       "to_event": "jesus-isaiah-61",
       "claimed": {
@@ -1275,7 +1430,7 @@
     },
     {
       "id": "resurrection-32ad-to-pentecost-32ad",
-      "title": "resurrection-32ad to pentecost-32ad: 50 days",
+      "title": "Resurrection to Pentecost: 50 Days",
       "from_event": "resurrection-32ad",
       "to_event": "pentecost-32ad",
       "claimed": {
@@ -1289,7 +1444,7 @@
     },
     {
       "id": "john-baptist-birth-earliest-to-john-baptist-conception",
-      "title": "john-baptist-birth-earliest to john-baptist-conception: 280 days",
+      "title": "John the Baptist: Conception to Birth (280 Days)",
       "from_event": "john-baptist-birth-earliest",
       "to_event": "john-baptist-conception",
       "claimed": {
@@ -1304,7 +1459,7 @@
     },
     {
       "id": "john-baptist-ministry-to-john-baptist-birth-earliest",
-      "title": "john-baptist-ministry to john-baptist-birth-earliest: 30 years",
+      "title": "John the Baptist: About 30 Years Old at Ministry",
       "from_event": "john-baptist-ministry",
       "to_event": "john-baptist-birth-earliest",
       "claimed": {
@@ -2588,10 +2743,171 @@
       "article": "/chapters/07-when-does-the-month-start/"
     },
     {
+      "id": "thutmose-iii-reign",
+      "title": "👑 Thutmose III - Pharaoh of the Oppression",
+      "type": "reign",
+      "description": "Thutmose III begins his sole reign over Egypt. He is the Pharaoh from whom Moses fled (Exodus 2:15), and who died after Moses had been in Midian for 40 years (Acts 7:30). His 54-year reign is the longest in the 18th Dynasty, matching the biblical requirement that the Pharaoh of the oppression reigned more than 40 years.",
+      "start": {
+        "fixed": {
+          "gregorian": {
+            "year": -1478,
+            "month": 1,
+            "day": 1
+          },
+          "source": "Egyptian chronology - 18th Dynasty king lists"
+        }
+      },
+      "duration": {
+        "value": 54,
+        "unit": "solar_years"
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Exodus 2:15",
+          "type": "scripture",
+          "quote": "But Moses fled from the face of Pharaoh, and dwelt in the land of Midian."
+        },
+        {
+          "ref": "Exodus 2:23",
+          "type": "scripture",
+          "quote": "And it came to pass in process of time, that the king of Egypt died."
+        },
+        {
+          "ref": "Acts 7:30",
+          "type": "scripture",
+          "quote": "And when forty years were expired, there appeared to him in the wilderness of mount Sina an angel of the Lord."
+        }
+      ],
+      "tags": [
+        "egypt",
+        "pharaoh",
+        "18th-dynasty",
+        "oppression",
+        "egyptian-chronology"
+      ],
+      "article": "/extra/e06_Pharaoh_of_the_Exodus/"
+    },
+    {
+      "id": "amenhotep-ii-reign",
+      "title": "👑 Amenhotep II - Pharaoh of the Exodus",
+      "type": "reign",
+      "description": "Amenhotep II becomes Pharaoh of Egypt. According to Manetho (quoted by Josephus), this is the 'Amenophis' during whose reign the Israelites left Egypt. The biblical date of 1446 BC falls within his reign. His firstborn son died mysteriously (matching the 10th plague), and his successor Thutmose IV was not the Crown Prince.",
+      "start": {
+        "fixed": {
+          "gregorian": {
+            "year": -1449,
+            "month": 1,
+            "day": 1
+          },
+          "source": "Egyptian chronology - 18th Dynasty king lists"
+        }
+      },
+      "duration": {
+        "value": 27,
+        "unit": "solar_years"
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Manetho via Josephus, Against Apion",
+          "type": "historical",
+          "quote": "These people... took their journey from Egypt during the reign of Amenophis the king of Egypt."
+        },
+        {
+          "ref": "Exodus 11:5",
+          "type": "scripture",
+          "quote": "And all the firstborn in the land of Egypt shall die, from the firstborn of Pharaoh that sitteth upon his throne..."
+        }
+      ],
+      "tags": [
+        "egypt",
+        "pharaoh",
+        "18th-dynasty",
+        "exodus-pharaoh",
+        "egyptian-chronology"
+      ],
+      "article": "/extra/e06_Pharaoh_of_the_Exodus/"
+    },
+    {
+      "id": "thutmose-iv-reign",
+      "title": "👑 Thutmose IV - Son Who Was Not Firstborn",
+      "type": "reign",
+      "description": "Thutmose IV becomes Pharaoh of Egypt after his father Amenhotep II. He was NOT the firstborn son—his older brother (the Crown Prince) mysteriously died. Thutmose IV's Dream Stele at the Great Sphinx claims divine legitimacy through a dream, suggesting his succession was unexpected. This aligns with the biblical account that Pharaoh's firstborn son died in the 10th plague.",
+      "start": {
+        "fixed": {
+          "gregorian": {
+            "year": -1422,
+            "month": 1,
+            "day": 1
+          },
+          "source": "Egyptian chronology - 18th Dynasty king lists"
+        }
+      },
+      "duration": {
+        "value": 10,
+        "unit": "solar_years"
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Dream Stele of Thutmose IV",
+          "type": "archaeological",
+          "quote": "The gods came to him in a dream and they promised to him that he would become the next Pharaoh."
+        },
+        {
+          "ref": "Exodus 12:29",
+          "type": "scripture",
+          "quote": "And it came to pass, that at midnight the LORD smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne..."
+        }
+      ],
+      "tags": [
+        "egypt",
+        "pharaoh",
+        "18th-dynasty",
+        "dream-stele",
+        "egyptian-chronology"
+      ],
+      "article": "/extra/e06_Pharaoh_of_the_Exodus/"
+    },
+    {
+      "id": "avaris-palace-abandonment",
+      "title": "🏚️ 18th Dynasty Palace at Avaris Abandoned",
+      "type": "archaeological",
+      "description": "Archaeological excavations by Manfred Bietak at Tell el-Dab'a (ancient Avaris) revealed that the 18th Dynasty palace was suddenly and mysteriously abandoned during the reign of Amenhotep II. This palace had been continuously occupied from Ahmose through Thutmose III and Amenhotep II, then was inexplicably deserted—providing archaeological evidence consistent with the Exodus occurring during Amenhotep II's reign.",
+      "start": {
+        "relative": {
+          "event": "exodus-from-egypt",
+          "direction": "after",
+          "offset": {
+            "years": 0
+          }
+        },
+        "notes": "Archaeological evidence places abandonment during Amenhotep II's reign"
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Manfred Bietak excavations at Tell el-Dab'a",
+          "type": "archaeological",
+          "quote": "The occupation of this palace covers the time from Ahmose to Amenhotep II... when it was suddenly and mysteriously abandoned."
+        }
+      ],
+      "tags": [
+        "egypt",
+        "archaeology",
+        "avaris",
+        "18th-dynasty",
+        "exodus-evidence"
+      ],
+      "article": "/extra/e06_Pharaoh_of_the_Exodus/"
+    },
+    {
       "id": "exodus-from-egypt",
       "title": "\ud83c\udfc3 Exodus from Egypt",
       "type": "milestone",
-      "description": "Israel departs Egypt on the 15th of Nisan, the day after the Passover lamb was slain.",
+      "description": "Israel departs Egypt on the 15th of Nisan, the day after the Passover lamb was slain. The Pharaoh of the Exodus was Amenhotep II (c. 1450–1423 BC), as identified by the Egyptian historian Manetho (via Josephus) and confirmed by 1 Kings 6:1 which places the Exodus 480 years before Solomon's Temple (966 BC) = 1446 BC.",
+      "pharaoh": "amenhotep-ii",
       "start": {
         "relative": {
           "event": "solomon-temple-construction",
@@ -2617,15 +2933,30 @@
           "ref": "Numbers 33:3",
           "type": "scripture",
           "quote": "And they departed from Rameses in the first month, on the fifteenth day of the first month; on the morrow after the passover the children of Israel went out with an high hand in the sight of all the Egyptians."
+        },
+        {
+          "ref": "1 Kings 6:1",
+          "type": "scripture",
+          "quote": "In the four hundred and eightieth year after the children of Israel were come out of the land of Egypt, in the fourth year of Solomon's reign over Israel..."
+        },
+        {
+          "ref": "Manetho via Josephus, Against Apion",
+          "type": "historical",
+          "quote": "These people... took their journey from Egypt during the reign of Amenophis the king of Egypt."
         }
       ],
       "tags": [
         "exodus",
         "passover",
         "deliverance",
-        "chronology-anchor"
+        "chronology-anchor",
+        "amenhotep-ii",
+        "egyptian-chronology"
       ],
-      "article": "/chapters/08_When_does_the_Year_Start/"
+      "articles": [
+        "/chapters/08_When_does_the_Year_Start/",
+        "/extra/e06_Pharaoh_of_the_Exodus/"
+      ]
     },
     {
       "id": "journey-ramses-succoth",
@@ -3801,6 +4132,228 @@
         "chronology-anchor",
         "480-years"
       ]
+    },
+    {
+      "id": "bur-sagale-eclipse",
+      "title": "🌑 Bur-Sagale Eclipse",
+      "type": "astronomical",
+      "description": "Total solar eclipse recorded in Assyrian Eponym Lists during the eponymate of Bur-Sagale. This is the ROOT CHRONOLOGICAL ANCHOR for all Ancient Near Eastern chronology. Modern astronomical calculation confirms June 15, 763 BCE. The continuous Assyrian Eponym Lists count backward from this astronomically-verified date to establish absolute dates for Assyrian-Israelite synchronisms.",
+      "start": {
+        "fixed": {
+          "gregorian": {
+            "year": -762,
+            "month": 6,
+            "day": 15
+          },
+          "source": "NASA Eclipse Catalog - Total Solar Eclipse"
+        },
+        "lunar": {
+          "month": 3,
+          "day": 15
+        }
+      },
+      "certainty": "absolute",
+      "sources": [
+        {
+          "ref": "Assyrian Eponym (Limmu) Lists",
+          "type": "historical",
+          "quote": "In the month Simanu, the sun underwent an eclipse"
+        },
+        {
+          "ref": "NASA Eclipse Catalog",
+          "type": "astronomical",
+          "quote": "Total solar eclipse, June 15, 763 BCE (astronomical year -762)"
+        }
+      ],
+      "tags": ["assyrian", "eclipse", "astronomical", "chronology-anchor", "root-anchor"],
+      "image": "/assets/img/Eclipse-762-06-15.gif",
+      "links": [
+        {
+          "label": "View in Stellarium",
+          "url": "https://stellarium-web.org/skysource/Sun?fov=60&date=-0762-06-15T11:00:00Z&lat=35.5&lng=43.0",
+          "icon": "🔭"
+        },
+        {
+          "label": "NASA Eclipse Catalog",
+          "url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ession=-0762Jun15",
+          "icon": "🛰️"
+        }
+      ]
+    },
+    {
+      "id": "battle-of-qarqar",
+      "title": "⚔️ Battle of Qarqar",
+      "type": "battle",
+      "description": "Major battle between Assyrian forces under Shalmaneser III and a coalition of Levantine states including 'Ahab the Israelite' who contributed 2,000 chariots and 10,000 soldiers. Recorded on the Kurkh Monolith, dated to Shalmaneser's 6th year, 90 eponym years before the Bur-Sagale eclipse. This is the first major Assyrian-Israelite synchronism.",
+      "start": {
+        "relative": {
+          "event": "bur-sagale-eclipse",
+          "offset": {
+            "years": 90
+          },
+          "direction": "before"
+        },
+        "notes": "853 BCE - 90 years before Bur-Sagale eclipse per Assyrian Eponym Lists"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Kurkh Monolith (Shalmaneser III)",
+          "type": "historical",
+          "quote": "Ahab the Israelite [contributed] 2,000 chariots, 10,000 soldiers"
+        }
+      ],
+      "tags": ["assyrian", "ahab", "synchronism", "chronology-anchor", "shalmaneser", "divided-kingdom"]
+    },
+    {
+      "id": "jehu-tribute",
+      "title": "👑 Jehu Pays Tribute to Shalmaneser III",
+      "type": "milestone",
+      "description": "King Jehu of Israel (or his representative) kneels before Shalmaneser III paying tribute. Depicted on the Black Obelisk, dated to Shalmaneser's 18th year, 78 eponym years before the Bur-Sagale eclipse. The inscription calls him 'Jehu son of Omri'. This is the second major Assyrian-Israelite synchronism.",
+      "start": {
+        "relative": {
+          "event": "bur-sagale-eclipse",
+          "offset": {
+            "years": 78
+          },
+          "direction": "before"
+        },
+        "notes": "841 BCE - 78 years before Bur-Sagale eclipse per Assyrian Eponym Lists"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Black Obelisk of Shalmaneser III",
+          "type": "historical",
+          "quote": "The tribute of Jehu, son of Omri: silver, gold, a golden bowl, a golden vase, golden cups, golden buckets, tin, a staff for the king's hand, javelins"
+        }
+      ],
+      "tags": ["assyrian", "jehu", "synchronism", "chronology-anchor", "shalmaneser", "divided-kingdom"]
+    },
+    {
+      "id": "rehoboam-reign",
+      "title": "👑 Rehoboam Begins to Reign",
+      "type": "reign",
+      "description": "Rehoboam, son of Solomon, becomes king of Judah after the kingdom divides. He reigned 17 years in Jerusalem. The division occurred when Jeroboam led the northern tribes to secede.",
+      "start": {
+        "relative": {
+          "event": "solomon-reign",
+          "offset": {
+            "years": 40
+          },
+          "direction": "after"
+        },
+        "notes": "~931 BCE - Calculated backward from Assyrian synchronisms"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "1 Kings 14:21",
+          "type": "scripture",
+          "quote": "And Rehoboam the son of Solomon reigned in Judah. Rehoboam was forty and one years old when he began to reign, and he reigned seventeen years in Jerusalem"
+        }
+      ],
+      "tags": ["rehoboam", "reign", "judah", "divided-kingdom", "chronology-anchor", "genealogy"]
+    },
+    {
+      "id": "abijah-reign",
+      "title": "👑 Abijah Begins to Reign",
+      "type": "reign",
+      "description": "Abijah (also called Abijam), son of Rehoboam, becomes king of Judah. He reigned 3 years in Jerusalem, beginning in the 18th year of Jeroboam.",
+      "start": {
+        "relative": {
+          "event": "rehoboam-reign",
+          "offset": {
+            "years": 17
+          },
+          "direction": "after"
+        },
+        "notes": "~913 BCE - 17 years after Rehoboam"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "1 Kings 15:1-2",
+          "type": "scripture",
+          "quote": "Now in the eighteenth year of king Jeroboam the son of Nebat reigned Abijam over Judah. Three years reigned he in Jerusalem."
+        }
+      ],
+      "tags": ["abijah", "reign", "judah", "divided-kingdom", "chronology-anchor"]
+    },
+    {
+      "id": "asa-reign",
+      "title": "👑 Asa Begins to Reign",
+      "type": "reign",
+      "description": "Asa, son of Abijah, becomes king of Judah. He reigned 41 years in Jerusalem. Ahab of Israel began to reign in Asa's 38th year, providing a key synchronism.",
+      "start": {
+        "relative": {
+          "event": "abijah-reign",
+          "offset": {
+            "years": 3
+          },
+          "direction": "after"
+        },
+        "notes": "~911 BCE - 3 years after Abijah"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "1 Kings 15:9-10",
+          "type": "scripture",
+          "quote": "And in the twentieth year of Jeroboam king of Israel reigned Asa over Judah. And forty and one years reigned he in Jerusalem."
+        }
+      ],
+      "tags": ["asa", "reign", "judah", "divided-kingdom", "chronology-anchor"]
+    },
+    {
+      "id": "ahab-reign",
+      "title": "👑 Ahab Begins to Reign",
+      "type": "reign",
+      "description": "Ahab, son of Omri, becomes king of Israel. He reigned 22 years in Samaria, beginning in the 38th year of Asa king of Judah. Ahab died at or near the Battle of Qarqar (853 BCE), providing the critical link to Assyrian chronology.",
+      "start": {
+        "relative": {
+          "event": "battle-of-qarqar",
+          "offset": {
+            "years": 22
+          },
+          "direction": "before"
+        },
+        "notes": "~874 BCE - Began in Asa's 38th year, died at Qarqar 853 BCE"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "1 Kings 16:29",
+          "type": "scripture",
+          "quote": "And in the thirty and eighth year of Asa king of Judah began Ahab the son of Omri to reign over Israel: and Ahab the son of Omri reigned over Israel in Samaria twenty and two years"
+        }
+      ],
+      "tags": ["ahab", "reign", "israel", "divided-kingdom", "chronology-anchor", "assyrian-synchronism"]
+    },
+    {
+      "id": "jehu-reign",
+      "title": "👑 Jehu Begins to Reign",
+      "type": "reign",
+      "description": "Jehu, anointed by a prophet sent by Elisha, becomes king of Israel after killing Joram and Ahaziah. He reigned 28 years in Samaria. His tribute to Shalmaneser III in 841 BCE (Black Obelisk) provides the second critical Assyrian synchronism.",
+      "start": {
+        "relative": {
+          "event": "jehu-tribute",
+          "offset": {
+            "years": 0
+          },
+          "direction": "after"
+        },
+        "notes": "~841 BCE - Same year as Black Obelisk tribute"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "2 Kings 10:36",
+          "type": "scripture",
+          "quote": "And the time that Jehu reigned over Israel in Samaria was twenty and eight years"
+        }
+      ],
+      "tags": ["jehu", "reign", "israel", "divided-kingdom", "chronology-anchor", "assyrian-synchronism"]
     },
     {
       "id": "ezra-decree",

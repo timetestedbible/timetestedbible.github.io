@@ -486,8 +486,26 @@ function annoMundiToJulianDay(am, profile) {
  * @returns {number} Ending Julian Day
  */
 function applyDuration(startJD, duration, profile) {
-  const value = duration.value;
-  const unit = duration.unit;
+  // Handle both new format { value, unit } and legacy format { years, days, months }
+  let value = duration.value;
+  let unit = duration.unit;
+  
+  // Legacy format support: { years: X } or { days: X } or { months: X }
+  if (value === undefined || unit === undefined) {
+    if (duration.years !== undefined) {
+      value = duration.years;
+      unit = 'years';
+    } else if (duration.days !== undefined) {
+      value = duration.days;
+      unit = 'days';
+    } else if (duration.months !== undefined) {
+      value = duration.months;
+      unit = 'months';
+    } else if (duration.weeks !== undefined) {
+      value = duration.weeks;
+      unit = 'weeks';
+    }
+  }
   
   switch (unit) {
     case 'days':
@@ -594,7 +612,6 @@ function resolveDateSpec(dateSpec, profile, epochs, context) {
       return lunarToJulianDay(dateSpec.lunar, year, profile);
     }
     // Can't resolve without year context
-    console.warn('Cannot resolve lunar date without year context');
     return null;
   }
   
@@ -723,8 +740,13 @@ function resolveEvent(event, profile, epochs, context = null) {
   // 2. start + end → both specified
   // 3. end + duration → calculate start (duration goes backward)
   
-  let startJD = event.start ? resolveDateSpec(event.start, profile, epochs, newContext) : null;
-  let endJD = event.end ? resolveDateSpec(event.end, profile, epochs, newContext) : null;
+  // Support both old schema (start/end) and new schema (dates)
+  // Try event.start first, then fall back to event.dates
+  let startSpec = event.start || event.dates || null;
+  let endSpec = event.end || null;
+  
+  let startJD = startSpec ? resolveDateSpec(startSpec, profile, epochs, newContext) : null;
+  let endJD = endSpec ? resolveDateSpec(endSpec, profile, epochs, newContext) : null;
   
   // If we have start but no end, and there's a duration, calculate end
   if (startJD !== null && endJD === null && event.duration) {
