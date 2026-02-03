@@ -169,6 +169,13 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Message event - respond to version queries
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: CACHE_NAME });
+  }
+});
+
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
   // Skip non-GET requests

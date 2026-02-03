@@ -2,10 +2,45 @@
 // Handles loading, rendering, and filtering of historical events
 
 // ============================================================================
-// APP VERSION - Increment this when code changes require cache invalidation
-// This should match the version number in sw.js CACHE_NAME
+// VERSION MANAGEMENT - Gets version from service worker
 // ============================================================================
-const EVENTS_CACHE_VERSION = 'v768';
+let _cachedSWVersion = null;
+
+/**
+ * Get the service worker version (cached after first call)
+ * Falls back to a timestamp-based version if SW not available
+ */
+async function getSWVersion() {
+  if (_cachedSWVersion) return _cachedSWVersion;
+  
+  try {
+    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+      const messageChannel = new MessageChannel();
+      const response = await new Promise((resolve, reject) => {
+        messageChannel.port1.onmessage = (event) => resolve(event.data);
+        setTimeout(() => reject(new Error('SW timeout')), 1000);
+        navigator.serviceWorker.controller.postMessage(
+          { type: 'GET_VERSION' },
+          [messageChannel.port2]
+        );
+      });
+      _cachedSWVersion = response.version || 'unknown';
+    } else {
+      // No SW controller yet - use fallback
+      _cachedSWVersion = 'no-sw';
+    }
+  } catch (e) {
+    console.warn('[EventsCache] Could not get SW version:', e);
+    _cachedSWVersion = 'fallback';
+  }
+  
+  return _cachedSWVersion;
+}
+
+// Sync version getter (uses cached value or fallback)
+function getSWVersionSync() {
+  return _cachedSWVersion || 'pending';
+}
 
 let historicalEventsData = null;
 let resolvedEventsCache = null;  // Cache for resolved events (avoids duplicate resolution)
@@ -17,14 +52,41 @@ let selectedEventId = null;
 // ============================================================================
 
 /**
+ * Generate a unique profile hash from all relevant settings
+ * This ensures each profile configuration gets its own cache
+ */
+function getProfileHash(profile) {
+  if (!profile) return 'default';
+  
+  // Include all settings that affect event resolution
+  const settings = {
+    moonPhase: profile.moonPhase || 'full',
+    yearStartRule: profile.yearStartRule || 'equinox',
+    dayStartTime: profile.dayStartTime || 'morning',
+    dayStartAngle: profile.dayStartAngle ?? 12,
+    crescentThreshold: profile.crescentThreshold ?? 18,
+    sabbathMode: profile.sabbathMode || 'lunar',
+    priestlyCycleAnchor: profile.priestlyCycleAnchor || 'destruction'
+  };
+  
+  // Create a short hash from the settings
+  const str = JSON.stringify(settings);
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0; // Convert to 32-bit integer
+  }
+  return Math.abs(hash).toString(36);
+}
+
+/**
  * Generate a cache key based on version and profile settings
  * Different profiles produce different resolved dates, so each needs its own cache
  */
 function getResolvedEventsCacheKey(profile) {
-  const profileKey = profile ? 
-    `${profile.moonPhase || 'full'}_${profile.yearStartRule || 'equinox'}_${profile.dayStartTime || 'morning'}` : 
-    'default';
-  return `resolved_events_${EVENTS_CACHE_VERSION}_${profileKey}`;
+  const version = getSWVersionSync();
+  const profileHash = getProfileHash(profile);
+  return `resolved_events_${version}_${profileHash}`;
 }
 
 /**
@@ -46,14 +108,15 @@ function loadResolvedEventsFromStorage(profile) {
       return null;
     }
     
-    // Check version match
-    if (parsed.version !== EVENTS_CACHE_VERSION) {
-      console.log(`[EventsCache] Version mismatch: stored ${parsed.version}, current ${EVENTS_CACHE_VERSION}`);
+    // Check version match (stored version must match current SW version)
+    const currentVersion = getSWVersionSync();
+    if (parsed.version !== currentVersion) {
+      console.log(`[EventsCache] Version mismatch: stored ${parsed.version}, current ${currentVersion}`);
       localStorage.removeItem(key);
       return null;
     }
     
-    console.log(`[EventsCache] Loaded ${parsed.events.length} events from localStorage`);
+    console.log(`[EventsCache] Loaded ${parsed.events.length} events from localStorage (profile: ${getProfileHash(profile)})`);
     return parsed.events;
     
   } catch (e) {
@@ -67,16 +130,18 @@ function loadResolvedEventsFromStorage(profile) {
  */
 function saveResolvedEventsToStorage(events, profile) {
   try {
+    const version = getSWVersionSync();
     const key = getResolvedEventsCacheKey(profile);
     const data = {
-      version: EVENTS_CACHE_VERSION,
+      version: version,
+      profileHash: getProfileHash(profile),
       timestamp: Date.now(),
       events: events
     };
     
     const json = JSON.stringify(data);
     localStorage.setItem(key, json);
-    console.log(`[EventsCache] Saved ${events.length} events to localStorage (${(json.length / 1024).toFixed(1)} KB)`);
+    console.log(`[EventsCache] Saved ${events.length} events to localStorage (${(json.length / 1024).toFixed(1)} KB, profile: ${data.profileHash})`);
     
   } catch (e) {
     // localStorage might be full or disabled
@@ -87,21 +152,33 @@ function saveResolvedEventsToStorage(events, profile) {
 }
 
 /**
- * Clear old event caches (different versions or profiles)
+ * Clear old event caches (different versions)
+ * Called when version changes to clean up stale data
  */
 function clearOldEventCaches() {
   try {
+    const currentVersion = getSWVersionSync();
     const keysToRemove = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-      if (key && key.startsWith('resolved_events_') && !key.includes(EVENTS_CACHE_VERSION)) {
-        keysToRemove.push(key);
+      if (key && key.startsWith('resolved_events_')) {
+        // Extract version from key (format: resolved_events_VERSION_HASH)
+        const parts = key.split('_');
+        if (parts.length >= 3) {
+          const storedVersion = parts[2];
+          if (storedVersion !== currentVersion && currentVersion !== 'pending') {
+            keysToRemove.push(key);
+          }
+        }
       }
     }
     keysToRemove.forEach(key => {
       localStorage.removeItem(key);
       console.log(`[EventsCache] Cleared old cache: ${key}`);
     });
+    if (keysToRemove.length > 0) {
+      console.log(`[EventsCache] Cleared ${keysToRemove.length} old cache entries`);
+    }
   } catch (e) {
     console.warn('[EventsCache] Failed to clear old caches:', e);
   }
@@ -153,6 +230,9 @@ async function getResolvedEvents() {
   if (resolvedEventsCache) {
     return resolvedEventsCache;
   }
+  
+  // Ensure we have the SW version before checking localStorage
+  await getSWVersion();
   
   // Try localStorage cache (persists across page loads)
   const storedEvents = loadResolvedEventsFromStorage(profile);
@@ -253,7 +333,8 @@ function clearResolvedEventsCache() {
 window.getResolvedEvents = getResolvedEvents;
 window.clearResolvedEventsCache = clearResolvedEventsCache;
 window.clearAllEventCaches = clearAllEventCaches;
-window.EVENTS_CACHE_VERSION = EVENTS_CACHE_VERSION;
+window.getSWVersion = getSWVersion;
+window.getProfileHash = getProfileHash;
 
 // Format year for display (handles BC/AD with astronomical year numbering)
 // Astronomical: Year 1 = 1 AD, Year 0 = 1 BC, Year -1 = 2 BC, Year -17 = 18 BC

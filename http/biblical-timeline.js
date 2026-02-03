@@ -2,11 +2,6 @@
 // Renders timeline using EventResolver for profile-aware date calculations
 // Version: 11.0 - Uses EventResolver with v2 schema
 
-// ============================================================================
-// APP VERSION - Increment this when code changes require cache invalidation
-// This should match the version number in sw.js CACHE_NAME and historical-events.js
-// ============================================================================
-const TIMELINE_CACHE_VERSION = 'v768';
 const TIMELINE_RESOLVED_CACHE_KEY = 'timeline_resolved_events';
 
 let biblicalTimelineData = null;
@@ -24,16 +19,55 @@ let biblicalTimelineCacheKey = null;
 
 // ============================================================================
 // LOCALSTORAGE CACHE UTILITIES FOR TIMELINE
+// Uses getSWVersion() and getProfileHash() from historical-events.js
 // ============================================================================
+
+/**
+ * Get the SW version - delegates to historical-events.js
+ */
+function _getTimelineSWVersion() {
+  return typeof getSWVersion === 'function' ? window.getSWVersion() : Promise.resolve('unknown');
+}
+
+function _getTimelineSWVersionSync() {
+  return typeof window._cachedSWVersion !== 'undefined' ? window._cachedSWVersion : 
+         (typeof getSWVersionSync === 'function' ? getSWVersionSync() : 'pending');
+}
+
+/**
+ * Get profile hash - delegates to historical-events.js or generates locally
+ */
+function _getTimelineProfileHash(profile) {
+  if (typeof getProfileHash === 'function') {
+    return getProfileHash(profile);
+  }
+  // Fallback if historical-events.js not loaded
+  if (!profile) return 'default';
+  const settings = {
+    moonPhase: profile.moonPhase || 'full',
+    yearStartRule: profile.yearStartRule || 'equinox',
+    dayStartTime: profile.dayStartTime || 'morning',
+    dayStartAngle: profile.dayStartAngle ?? 12,
+    crescentThreshold: profile.crescentThreshold ?? 18,
+    sabbathMode: profile.sabbathMode || 'lunar',
+    priestlyCycleAnchor: profile.priestlyCycleAnchor || 'destruction'
+  };
+  const str = JSON.stringify(settings);
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash).toString(36);
+}
 
 /**
  * Generate a localStorage key based on version and profile
  */
 function getTimelineCacheStorageKey(profile) {
-  const profileKey = profile ? 
-    `${profile.moonPhase || 'full'}_${profile.yearStartRule || 'equinox'}_${profile.dayStartTime || 'morning'}` : 
-    'default';
-  return `${TIMELINE_RESOLVED_CACHE_KEY}_${TIMELINE_CACHE_VERSION}_${profileKey}`;
+  const version = _getTimelineSWVersionSync();
+  const profileHash = _getTimelineProfileHash(profile);
+  return `${TIMELINE_RESOLVED_CACHE_KEY}_${version}_${profileHash}`;
 }
 
 /**
@@ -46,15 +80,16 @@ function loadTimelineResolvedFromStorage(profile) {
     if (!stored) return null;
     
     const parsed = JSON.parse(stored);
+    const currentVersion = _getTimelineSWVersionSync();
     
     // Validate structure and version
-    if (!parsed.version || !parsed.events || parsed.version !== TIMELINE_CACHE_VERSION) {
-      console.log('[TimelineCache] Version mismatch or invalid, clearing');
+    if (!parsed.version || !parsed.events || parsed.version !== currentVersion) {
+      console.log(`[TimelineCache] Version mismatch: stored ${parsed.version}, current ${currentVersion}`);
       localStorage.removeItem(key);
       return null;
     }
     
-    console.log(`[TimelineCache] Loaded ${parsed.events.length} events from localStorage`);
+    console.log(`[TimelineCache] Loaded ${parsed.events.length} events from localStorage (profile: ${_getTimelineProfileHash(profile)})`);
     return { events: parsed.events, cacheKey: parsed.cacheKey };
     
   } catch (e) {
@@ -68,9 +103,11 @@ function loadTimelineResolvedFromStorage(profile) {
  */
 function saveTimelineResolvedToStorage(events, profile, cacheKey) {
   try {
+    const version = _getTimelineSWVersionSync();
     const key = getTimelineCacheStorageKey(profile);
     const data = {
-      version: TIMELINE_CACHE_VERSION,
+      version: version,
+      profileHash: _getTimelineProfileHash(profile),
       timestamp: Date.now(),
       cacheKey: cacheKey,
       events: events
@@ -78,7 +115,7 @@ function saveTimelineResolvedToStorage(events, profile, cacheKey) {
     
     const json = JSON.stringify(data);
     localStorage.setItem(key, json);
-    console.log(`[TimelineCache] Saved ${events.length} events to localStorage (${(json.length / 1024).toFixed(1)} KB)`);
+    console.log(`[TimelineCache] Saved ${events.length} events to localStorage (${(json.length / 1024).toFixed(1)} KB, profile: ${data.profileHash})`);
     
   } catch (e) {
     console.warn('[TimelineCache] Failed to save to localStorage:', e);
@@ -92,17 +129,28 @@ function saveTimelineResolvedToStorage(events, profile, cacheKey) {
  */
 function clearOldTimelineCaches() {
   try {
+    const currentVersion = _getTimelineSWVersionSync();
     const keysToRemove = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-      if (key && key.startsWith(TIMELINE_RESOLVED_CACHE_KEY) && !key.includes(TIMELINE_CACHE_VERSION)) {
-        keysToRemove.push(key);
+      if (key && key.startsWith(TIMELINE_RESOLVED_CACHE_KEY)) {
+        // Extract version from key (format: timeline_resolved_events_VERSION_HASH)
+        const parts = key.split('_');
+        if (parts.length >= 4) {
+          const storedVersion = parts[3];
+          if (storedVersion !== currentVersion && currentVersion !== 'pending') {
+            keysToRemove.push(key);
+          }
+        }
       }
     }
     keysToRemove.forEach(key => {
       localStorage.removeItem(key);
       console.log(`[TimelineCache] Cleared old cache: ${key}`);
     });
+    if (keysToRemove.length > 0) {
+      console.log(`[TimelineCache] Cleared ${keysToRemove.length} old cache entries`);
+    }
   } catch (e) {
     console.warn('[TimelineCache] Failed to clear old caches:', e);
   }
@@ -131,7 +179,6 @@ function clearTimelineResolvedCaches() {
 
 // Make cache clearing available globally
 window.clearTimelineResolvedCaches = clearTimelineResolvedCaches;
-window.TIMELINE_CACHE_VERSION = TIMELINE_CACHE_VERSION;
 
 // Background pre-resolution state
 let backgroundResolutionInProgress = false;
@@ -175,10 +222,13 @@ async function preResolveTimelineInBackground(data, profile) {
     return;
   }
   
+  // Ensure we have the SW version before checking localStorage
+  await _getTimelineSWVersion();
+  
   // Check localStorage cache first (instant load)
   const stored = loadTimelineResolvedFromStorage(profile);
   if (stored && stored.cacheKey === cacheKey) {
-    console.log('[Timeline Background] Using localStorage cache (instant)');
+    console.log(`[Timeline Background] Using localStorage cache (instant, profile: ${_getTimelineProfileHash(profile)})`);
     biblicalTimelineResolvedCache = stored.events;
     biblicalTimelineCacheKey = cacheKey;
     backgroundResolutionProgress = 100;
@@ -285,6 +335,7 @@ function isTimelineCacheValid(data, profile) {
 /**
  * Get resolved events, using cache if available (sync version for non-initial loads).
  * Checks RAM cache first, then localStorage, then resolves fresh.
+ * Note: Uses sync version check - caller should ensure SW version is initialized
  * @param {object} data - The events data object
  * @param {object} profile - The calendar profile
  * @returns {Array} Resolved events array
@@ -303,16 +354,20 @@ function getResolvedEvents(data, profile) {
     return biblicalTimelineResolvedCache;
   }
   
-  // Try localStorage cache
-  const stored = loadTimelineResolvedFromStorage(profile);
-  if (stored && stored.cacheKey === cacheKey) {
-    biblicalTimelineResolvedCache = stored.events;
-    biblicalTimelineCacheKey = cacheKey;
-    return stored.events;
+  // Try localStorage cache (only if SW version is known)
+  const version = _getTimelineSWVersionSync();
+  if (version && version !== 'pending') {
+    const stored = loadTimelineResolvedFromStorage(profile);
+    if (stored && stored.cacheKey === cacheKey) {
+      console.log(`[TimelineCache] Using localStorage cache (profile: ${_getTimelineProfileHash(profile)})`);
+      biblicalTimelineResolvedCache = stored.events;
+      biblicalTimelineCacheKey = cacheKey;
+      return stored.events;
+    }
+    
+    // Clear old version caches
+    clearOldTimelineCaches();
   }
-  
-  // Clear old version caches
-  clearOldTimelineCaches();
   
   // Resolve and cache (sync fallback)
   console.time('[TimelineCache] Resolution');
@@ -322,8 +377,10 @@ function getResolvedEvents(data, profile) {
     biblicalTimelineCacheKey = cacheKey;
     console.timeEnd('[TimelineCache] Resolution');
     
-    // Save to localStorage for persistence
-    saveTimelineResolvedToStorage(resolved, profile, cacheKey);
+    // Save to localStorage for persistence (only if version is known)
+    if (version && version !== 'pending') {
+      saveTimelineResolvedToStorage(resolved, profile, cacheKey);
+    }
     
     return resolved;
   } catch (e) {
@@ -353,6 +410,9 @@ async function getResolvedEventsWithProgress(data, profile) {
   if (biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey) {
     return biblicalTimelineResolvedCache;
   }
+  
+  // Ensure we have the SW version before checking localStorage
+  await _getTimelineSWVersion();
   
   // Try localStorage cache (instant load)
   const stored = loadTimelineResolvedFromStorage(profile);
