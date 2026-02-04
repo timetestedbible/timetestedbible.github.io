@@ -56,6 +56,82 @@ class LunarCalendarEngine {
   }
 
   // ==========================================================================
+  // CALENDAR SYSTEM HELPERS
+  // ==========================================================================
+
+  /**
+   * Convert Julian Day to Julian Calendar date
+   * Use for dates before Oct 15, 1582 (JD 2299161)
+   * @param {number} jd - Julian Day Number
+   * @returns {{year: number, month: number, day: number}}
+   */
+  jdToJulianCalendar(jd) {
+    const Z = Math.floor(jd + 0.5);
+    const A = Z;  // No Gregorian correction
+    const B = A + 1524;
+    const C = Math.floor((B - 122.1) / 365.25);
+    const D = Math.floor(365.25 * C);
+    const E = Math.floor((B - D) / 30.6001);
+    
+    const day = B - D - Math.floor(30.6001 * E);
+    const month = E < 14 ? E - 1 : E - 13;
+    const year = month > 2 ? C - 4716 : C - 4715;
+    
+    return { year, month, day };
+  }
+
+  /**
+   * Convert Julian Day to Gregorian Calendar date (proleptic)
+   * @param {number} jd - Julian Day Number
+   * @returns {{year: number, month: number, day: number}}
+   */
+  jdToGregorianCalendar(jd) {
+    const Z = Math.floor(jd + 0.5);
+    const alpha = Math.floor((Z - 1867216.25) / 36524.25);
+    const A = Z + 1 + alpha - Math.floor(alpha / 4);
+    const B = A + 1524;
+    const C = Math.floor((B - 122.1) / 365.25);
+    const D = Math.floor(365.25 * C);
+    const E = Math.floor((B - D) / 30.6001);
+    
+    const day = B - D - Math.floor(30.6001 * E);
+    const month = E < 14 ? E - 1 : E - 13;
+    const year = month > 2 ? C - 4716 : C - 4715;
+    
+    return { year, month, day };
+  }
+
+  /**
+   * Convert JD to the appropriate calendar based on date
+   * Before Oct 15, 1582 (JD 2299161) uses Julian calendar
+   * @param {number} jd - Julian Day Number
+   * @returns {{year: number, month: number, day: number, isJulian: boolean}}
+   */
+  jdToDisplayDate(jd) {
+    const GREGORIAN_START_JD = 2299161; // Oct 15, 1582
+    if (jd < GREGORIAN_START_JD) {
+      const julian = this.jdToJulianCalendar(jd);
+      return { ...julian, isJulian: true };
+    }
+    const gregorian = this.jdToGregorianCalendar(jd);
+    return { ...gregorian, isJulian: false };
+  }
+
+  /**
+   * Create a Date object from JD using the appropriate calendar
+   * For ancient dates, the Date will have Julian calendar values
+   * (even though JavaScript Date is internally Gregorian)
+   * @param {number} jd - Julian Day Number
+   * @returns {Date}
+   */
+  jdToDate(jd) {
+    const cal = this.jdToDisplayDate(jd);
+    const date = new Date(Date.UTC(2000, cal.month - 1, cal.day));
+    date.setUTCFullYear(cal.year);
+    return date;
+  }
+
+  // ==========================================================================
   // CORE ASTRONOMICAL CALCULATIONS
   // ==========================================================================
 
@@ -584,21 +660,33 @@ class LunarCalendarEngine {
       
       // Generate days
       const days = [];
+      // Calculate month start JD for use in day iteration
+      const monthStartJD = (monthStart.getTime() / 86400000) + 2440587.5;
+      
       for (let d = 1; d <= daysInMonth; d++) {
-        const dayDate = new Date(monthStart.getTime());
-        dayDate.setUTCDate(dayDate.getUTCDate() + d - 1);
+        // Calculate JD for this day (using approximate day offset)
+        const approxDayJD = monthStartJD + (d - 1);
+        
+        // Create a temporary date for astronomical calculations (sunrise/sunset)
+        // This is still needed for the astronomy engine which works with Date objects
+        const tempDate = new Date(monthStart.getTime());
+        tempDate.setUTCDate(tempDate.getUTCDate() + d - 1);
         
         // Calculate the day boundary JD for this day at this location
         // Uses getDayStartTime which respects dayStartAngle (nautical dawn, civil dawn, etc.)
         let dayStartJD = null;
-        const dayStartTs = this.getDayStartTime(dayDate, location);
+        const dayStartTs = this.getDayStartTime(tempDate, location);
         if (dayStartTs != null) {
           dayStartJD = (dayStartTs / 86400000) + 2440587.5;
         }
         // Fallback to midnight if day start time not available
         if (dayStartJD == null) {
-          dayStartJD = (dayDate.getTime() / 86400000) + 2440587.5;
+          dayStartJD = approxDayJD;
         }
+        
+        // Convert JD to the appropriate calendar (Julian for ancient, Gregorian for modern)
+        // This ensures ancient dates display correctly
+        const dayDate = this.jdToDate(dayStartJD);
         
         // Determine if this specific day is uncertain
         // Day 30 with '+' direction is impossible (can't add days past 30)
@@ -614,7 +702,7 @@ class LunarCalendarEngine {
         
         days.push({
           lunarDay: d,
-          gregorianDate: dayDate,
+          gregorianDate: dayDate,  // Now uses Julian calendar for ancient dates
           jd: dayStartJD,  // JD of day start (sunrise/sunset based on config)
           weekday: this.getWeekday(dayDate),
           weekdayName: this.getWeekdayName(dayDate),
@@ -624,17 +712,19 @@ class LunarCalendarEngine {
         });
       }
       
+      // Convert month start to appropriate calendar (Julian for ancient)
+      const monthStartDate = this.jdToDate(monthStartJD);
+      
       months.push({
         monthNumber: m + 1,
         moonEvent: moonEvent,
-        startDate: monthStart,
+        startDate: monthStartDate,  // Now uses Julian calendar for ancient dates
+        startJD: monthStartJD,
         daysInMonth: daysInMonth,
         days: days,
         uncertainty: monthUncertainty,
       });
     }
-    
-    // Engine logging removed for cleaner console
     
     const result = {
       year: year,

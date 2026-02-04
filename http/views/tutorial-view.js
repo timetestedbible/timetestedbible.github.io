@@ -1,8 +1,8 @@
 /**
  * TutorialView - Welcome/About page
  * 
- * Shows overview of Time-Tested calendar principles
- * and links to book chapters for deeper learning.
+ * Comprehensive introduction to the Time-Tested calendar
+ * with feature showcases, quick actions, and learning paths.
  */
 
 const TutorialView = {
@@ -14,82 +14,303 @@ const TutorialView = {
       <div class="tutorial-view">
         <!-- Hero Section -->
         <header class="tutorial-hero">
-          <div class="hero-icon">🌕</div>
-          <h1>The Time-Tested Tradition</h1>
-          <p class="hero-subtitle">Understanding the Biblical Lunar Calendar</p>
+          <div class="hero-background"></div>
+          <div class="hero-content">
+            <div class="hero-moon-phases">
+              <span class="phase-icon">🌑</span>
+              <span class="phase-icon active">🌕</span>
+              <span class="phase-icon">🌘</span>
+            </div>
+            <h1>The Time-Tested Tradition</h1>
+            <p class="hero-subtitle">Rediscovering the Biblical Lunar Calendar</p>
+            <p class="hero-description">
+              A comprehensive tool for calculating Sabbaths and appointed times 
+              based on celestial signs, as established at creation.
+            </p>
+            <div class="hero-actions">
+              <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'calendar'})">
+                <span>📅</span> View Calendar
+              </button>
+              <button class="hero-btn secondary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'01_Introduction'}})">
+                <span>📖</span> Read the Book
+              </button>
+            </div>
+          </div>
         </header>
-        
-        <!-- Principle Cards -->
-        <section class="principle-cards">
-          <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'07_When_Does_the_Month_Start'}})">
-            <div class="principle-icon">🌕</div>
-            <h3>Full Moon Months</h3>
-            <p>The month begins at the full moon, as evidenced by scripture and ancient practice. The word for "full moon" (kece) appears in Psalm 81:3 explicitly tied to feast days.</p>
-            <span class="learn-more">Learn More →</span>
-          </div>
-          
-          <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'05_Where_Does_the_Day_Start'}})">
-            <div class="principle-icon">🌅</div>
-            <h3>Morning Day Start</h3>
-            <p>The day begins at morning twilight, not evening. Genesis 1 describes "evening and morning" as the transition from one day to the next, with morning starting the new day.</p>
-            <span class="learn-more">Learn More →</span>
-          </div>
-          
-          <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'10_When_is_the_Sabbath'}})">
-            <div class="principle-icon">📅</div>
-            <h3>Lunar Sabbaths</h3>
-            <p>The weekly Sabbath follows the lunar cycle on days 8, 15, 22, and 29 of each month. This aligns with the pattern established at creation and preserved in scripture.</p>
-            <span class="learn-more">Learn More →</span>
-          </div>
-          
-          <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'08_When_does_the_Year_Start'}})">
-            <div class="principle-icon">☀️</div>
-            <h3>Spring Equinox Year</h3>
-            <p>The year begins at the first new moon after the spring equinox, ensuring Passover falls at the proper time each year.</p>
-            <span class="learn-more">Learn More →</span>
+
+        <!-- Key Features Grid -->
+        <section class="features-section">
+          <h2 class="section-title">Powerful Features</h2>
+          <div class="features-grid">
+            ${this.renderFeatureCard('📅', 'Lunar Calendar', 
+              'View any month in history with accurate moon phases, Sabbaths, and feast days calculated from astronomical data.',
+              'calendar', null)}
+            
+            ${this.renderFeatureCard('📖', 'Bible Reader', 
+              'Study Scripture with KJV, ASV, and LXX (Septuagint) translations, Strong\'s concordance, Hebrew/Greek interlinear, and word studies.',
+              'reader', {contentType:'bible'})}
+            
+            ${this.renderFeatureCard('assets/img/timeline_icon.png', 'Historical Timeline', 
+              'Explore biblical history from Creation to the Temple destruction with events placed on an interactive timeline.',
+              'timeline', null, true)}
+            
+            ${this.renderFeatureCard('🔬', 'Sabbath Tester', 
+              'Test different calendar theories against 7 biblical test cases to see which configuration best fits Scripture.',
+              'sabbath-tester', null)}
+            
+            ${this.renderFeatureCard('⛪', 'Priestly Divisions', 
+              'Track the 24 priestly courses (Mishmarot) as established by King David, with historical anchors.',
+              'priestly', null)}
+            
+            ${this.renderFeatureCard('🎺', 'Feast Days', 
+              'View all biblical appointed times for any year with explanations and Scripture references.',
+              'events', null)}
           </div>
         </section>
-        
-        <!-- Quick Actions -->
-        <section class="tutorial-actions">
-          <h2>Get Started</h2>
-          <div class="action-buttons">
-            <button class="action-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'calendar'})">
-              <span class="btn-icon">📅</span>
-              <span class="btn-text">View Calendar</span>
-            </button>
+
+        <!-- Core Principles -->
+        <section class="principles-section">
+          <h2 class="section-title">Core Principles</h2>
+          <p class="section-intro">
+            The Time-Tested calendar is built on four foundational principles derived from careful Scripture study:
+          </p>
+          
+          <div class="principles-grid">
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'07_When_Does_the_Month_Start'}})">
+              <div class="principle-header">
+                <span class="principle-icon">🌕</span>
+                <h3>Full Moon Months</h3>
+              </div>
+              <p>The month begins at the full moon, as indicated by the Hebrew word <em>kece</em> (כֶּסֶה) in Psalm 81:3, explicitly tied to feast days. The renewed moon marks the 15th day.</p>
+              <div class="principle-verse">
+                "Blow the trumpet at the new moon, at the <strong>full moon</strong>, on our feast day." — Psalm 81:3
+              </div>
+              <span class="learn-link">Learn More →</span>
+            </div>
             
-            <button class="action-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'01_Introduction'}})">
-              <span class="btn-icon">📚</span>
-              <span class="btn-text">Read the Book</span>
-            </button>
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'06_When_Does_the_Day_Start'}})">
+              <div class="principle-header">
+                <span class="principle-icon">🌅</span>
+                <h3>Morning Day Start</h3>
+              </div>
+              <p>The day begins at morning twilight, not evening. Genesis 1 describes "evening and morning" as the natural progression <em>within</em> each day, with the new day starting at light.</p>
+              <div class="principle-verse">
+                "And God called the light Day... And there was evening and there was morning, one day." — Genesis 1:5
+              </div>
+              <span class="learn-link">Learn More →</span>
+            </div>
             
-            <button class="action-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'sabbath-tester'})">
-              <span class="btn-icon">🔬</span>
-              <span class="btn-text">Test the Theory</span>
-            </button>
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'10_When_is_the_Sabbath'}})">
+              <div class="principle-header">
+                <span class="principle-icon">📆</span>
+                <h3>Lunar Sabbaths</h3>
+              </div>
+              <p>The weekly Sabbath follows the lunar cycle on days 8, 15, 22, and 29 of each month. This pattern aligns with the Passover always falling on the 15th—a Sabbath.</p>
+              <div class="principle-verse">
+                "On the fifteenth day of the same month is the feast... on the first day you shall have a holy convocation." — Leviticus 23:6-7
+              </div>
+              <span class="learn-link">Learn More →</span>
+            </div>
             
-            <button class="action-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible'}})">
-              <span class="btn-icon">📖</span>
-              <span class="btn-text">Explore Scripture</span>
-            </button>
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'08_When_does_the_Year_Start'}})">
+              <div class="principle-header">
+                <span class="principle-icon">☀️</span>
+                <h3>Equinox Year</h3>
+              </div>
+              <p>The year begins at the first full moon on or after the spring equinox, ensuring Passover falls after the equinox as commanded—in its "appointed season."</p>
+              <div class="principle-verse">
+                "You shall keep the Passover at its appointed time." — Numbers 9:2
+              </div>
+              <span class="learn-link">Learn More →</span>
+            </div>
           </div>
         </section>
-        
+
+        <!-- Quick Start Guide -->
+        <section class="quickstart-section">
+          <h2 class="section-title">Quick Start</h2>
+          <div class="quickstart-steps">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h4>Explore the Calendar</h4>
+              <p>Start with today's date and see how the lunar calendar differs from the Gregorian calendar you're used to.</p>
+              <button class="step-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'calendar'})">
+                Open Calendar
+              </button>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h4>Understand the Methodology</h4>
+              <p>Read the introduction chapter to understand the scriptural basis for each calendar principle.</p>
+              <button class="step-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'01_Introduction'}})">
+                Read Introduction
+              </button>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h4>Test the Theory</h4>
+              <p>Use the Sabbath Tester to see how different calendar configurations match biblical test cases.</p>
+              <button class="step-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'sabbath-tester'})">
+                Run Tests
+              </button>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <h4>Study Scripture</h4>
+              <p>Dive into the Bible reader with Strong's concordance to verify these principles for yourself.</p>
+              <button class="step-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible'}})">
+                Open Bible
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Book Download -->
+        <section class="book-section">
+          <div class="book-card">
+            <div class="book-cover">
+              <div class="book-spine"></div>
+              <div class="book-front">
+                <span class="book-icon">📚</span>
+                <span class="book-title-small">Time-Tested<br>Tradition</span>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Complete Book</h3>
+              <p class="book-author">by Daniel Larimer</p>
+              <p class="book-description">
+                A comprehensive examination of the biblical calendar with historical evidence, 
+                scriptural analysis, and astronomical verification. Available free as a PDF 
+                or read online chapter by chapter.
+              </p>
+              <div class="book-actions">
+                <a href="/media/time-tested-tradition.pdf" class="book-btn primary" download>
+                  <span>⬇️</span> Download PDF
+                </a>
+                <button class="book-btn secondary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
+                  <span>📖</span> Read Online
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Chapter List -->
-        <section class="chapter-list">
-          <h2>Book Chapters</h2>
+        <section class="chapters-section">
+          <h2 class="section-title">Book Chapters</h2>
           <div class="chapters-grid">
             ${this.renderChapterList()}
           </div>
+          
+          <h3 class="subsection-title">Appendices</h3>
+          <div class="chapters-grid appendices">
+            ${this.renderAppendixList()}
+          </div>
         </section>
-        
+
+        <!-- Compare Calendars -->
+        <section class="compare-section">
+          <h2 class="section-title">Calendar Options</h2>
+          <p class="section-intro">
+            The app supports multiple calendar configurations so you can explore different interpretations:
+          </p>
+          <div class="compare-grid">
+            <div class="compare-card featured">
+              <div class="compare-badge">Recommended</div>
+              <div class="compare-icon-main">🌕</div>
+              <h4>Time-Tested</h4>
+              <ul>
+                <li>Full Moon month start</li>
+                <li>Morning day start</li>
+                <li>Lunar Sabbaths (8,15,22,29)</li>
+                <li>Spring equinox year</li>
+              </ul>
+              <button class="compare-btn" onclick="AppStore.dispatchBatch([{type:'SET_PROFILE',profileId:'timeTested'},{type:'SET_VIEW',view:'calendar'}])">
+                Use This Profile
+              </button>
+            </div>
+            
+            <div class="compare-card">
+              <div class="compare-icon-main">🌒</div>
+              <h4>Ancient Traditional</h4>
+              <ul>
+                <li>Crescent Moon start</li>
+                <li>Evening day start</li>
+                <li>Saturday Sabbath</li>
+                <li>Barley/Aviv year start</li>
+              </ul>
+              <button class="compare-btn" onclick="AppStore.dispatchBatch([{type:'SET_PROFILE',profileId:'ancientTraditional'},{type:'SET_VIEW',view:'calendar'}])">
+                Use This Profile
+              </button>
+            </div>
+            
+            <div class="compare-card">
+              <div class="compare-icon-main">🌒</div>
+              <h4>Traditional Lunar</h4>
+              <ul>
+                <li>Crescent Moon start</li>
+                <li>Evening day start</li>
+                <li>Lunar Sabbaths</li>
+                <li>Spring equinox year</li>
+              </ul>
+              <button class="compare-btn" onclick="AppStore.dispatchBatch([{type:'SET_PROFILE',profileId:'traditionalLunar'},{type:'SET_VIEW',view:'calendar'}])">
+                Use This Profile
+              </button>
+            </div>
+            
+            <div class="compare-card">
+              <div class="compare-icon-main">⚙️</div>
+              <h4>Custom</h4>
+              <ul>
+                <li>Choose your month start</li>
+                <li>Choose your day start</li>
+                <li>Choose your Sabbath</li>
+                <li>Choose your year start</li>
+              </ul>
+              <button class="compare-btn" onclick="TutorialView.openProfileEditor()">
+                Configure Settings
+              </button>
+            </div>
+          </div>
+        </section>
+
         <!-- Footer -->
         <footer class="tutorial-footer">
-          <p>
-            "It is the honor of kings to search out a matter" — Proverbs 25:2
-          </p>
+          <div class="footer-verse">
+            <p>"It is the glory of God to conceal a matter, but the glory of kings is to search out a matter."</p>
+            <cite>— Proverbs 25:2</cite>
+          </div>
+          <div class="footer-links">
+            <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'settings'})">Settings</button>
+            <span>•</span>
+            <a href="/media/time-tested-tradition.pdf" download>Download Book</a>
+          </div>
         </footer>
+      </div>
+    `;
+  },
+  
+  /**
+   * Render a feature card
+   */
+  renderFeatureCard(icon, title, description, view, params, isImage = false) {
+    const iconHtml = isImage 
+      ? `<img src="/${icon}" alt="${title}" class="feature-icon-img">`
+      : `<span class="feature-icon">${icon}</span>`;
+    
+    const onclick = params 
+      ? `AppStore.dispatch({type:'SET_VIEW',view:'${view}',params:${JSON.stringify(params)}})`
+      : `AppStore.dispatch({type:'SET_VIEW',view:'${view}'})`;
+    
+    return `
+      <div class="feature-card" onclick="${onclick}">
+        <div class="feature-icon-wrap">${iconHtml}</div>
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <span class="feature-link">Explore →</span>
       </div>
     `;
   },
@@ -98,12 +319,11 @@ const TutorialView = {
    * Render the list of book chapters
    */
   renderChapterList() {
-    // TODO: Load from chapters.json
     const chapters = [
       { id: '01_Introduction', title: 'Introduction', number: 1 },
       { id: '02_Inherited_Lies', title: 'Inherited Lies', number: 2 },
       { id: '03_Principles_of_Evaluation', title: 'Principles of Evaluation', number: 3 },
-      { id: '04_Alleged_Authority_of_Sanhedrin', title: 'Alleged Authority of Sanhedrin', number: 4 },
+      { id: '04_Alleged_Authority_of_Sanhedrin', title: 'Authority of Sanhedrin', number: 4 },
       { id: '05_Where_Does_the_Day_Start', title: 'Where Does the Day Start?', number: 5 },
       { id: '06_When_Does_the_Day_Start', title: 'When Does the Day Start?', number: 6 },
       { id: '07_When_Does_the_Month_Start', title: 'When Does the Month Start?', number: 7 },
@@ -113,9 +333,9 @@ const TutorialView = {
       { id: '11_The_Day_of_Saturn', title: 'The Day of Saturn', number: 11 },
       { id: '12_32_AD_Resurrection', title: '32 AD Resurrection', number: 12 },
       { id: '13_Herod_the_Great', title: 'Herod the Great', number: 13 },
-      { id: '14_Passion_Week_-_3_Days_&_3_Nights', title: 'Passion Week - 3 Days & 3 Nights', number: 14 },
+      { id: '14_Passion_Week_-_3_Days_&_3_Nights', title: 'Passion Week', number: 14 },
       { id: '15_Solar_Only_Calendars', title: 'Solar Only Calendars', number: 15 },
-      { id: '16_The_Path_to_Salvation', title: 'The Path to Salvation', number: 16 },
+      { id: '16_The_Path_to_Salvation', title: 'Path to Salvation', number: 16 },
       { id: '17_Commands_to_Follow', title: 'Commands to Follow', number: 17 },
       { id: '18_Appointed_Times', title: 'Appointed Times', number: 18 },
       { id: '19_Miscellaneous_Commands', title: 'Miscellaneous Commands', number: 19 }
@@ -128,6 +348,43 @@ const TutorialView = {
         <span class="chapter-title">${ch.title}</span>
       </button>
     `).join('');
+  },
+  
+  /**
+   * Render appendix chapters
+   */
+  renderAppendixList() {
+    const appendices = [
+      { id: 'e01_Herod_Regal_vs_Defacto', title: 'Herod: Regal vs De Facto', letter: 'A' },
+      { id: 'e02_Battle_of_Actium', title: 'Battle of Actium', letter: 'B' },
+      { id: 'e03_Herods_Appointment', title: 'Herod\'s Appointment', letter: 'C' },
+      { id: 'e04_StabilityOfAustronomy', title: 'Stability of Astronomy', letter: 'D' },
+      { id: 'e05_FirstFruitsNewWine', title: 'First Fruits & New Wine', letter: 'E' }
+    ];
+    
+    return appendices.map(ch => `
+      <button class="chapter-item appendix" 
+              onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${ch.id}'}})">
+        <span class="chapter-number">${ch.letter}</span>
+        <span class="chapter-title">${ch.title}</span>
+      </button>
+    `).join('');
+  },
+  
+  /**
+   * Navigate to calendar and open profile editor
+   */
+  openProfileEditor() {
+    // First navigate to calendar
+    AppStore.dispatch({type: 'SET_VIEW', view: 'calendar'});
+    
+    // Then open profile editor after a brief delay to let calendar render
+    setTimeout(() => {
+      if (typeof CalendarView !== 'undefined' && CalendarView.showProfileEditor) {
+        // Create a fake event object
+        CalendarView.showProfileEditor({ stopPropagation: () => {} });
+      }
+    }, 100);
   }
 };
 

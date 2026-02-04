@@ -176,11 +176,105 @@ const Layout = {
       });
     }
     
-    // Close menu on escape key
+    // Global keyboard shortcuts
     document.addEventListener('keydown', (e) => {
+      // Don't handle shortcuts when typing in input fields
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) {
+        return;
+      }
+      
+      // Escape - close menu and pickers
       if (e.key === 'Escape') {
         AppStore.dispatch({ type: 'CLOSE_MENU' });
         AppStore.dispatch({ type: 'CLOSE_ALL_PICKERS' });
+        // Close Strong's panel if open
+        if (typeof closeStrongsPanel === 'function') {
+          closeStrongsPanel();
+        }
+        // Close concept search if open
+        if (typeof closeConceptSearch === 'function') {
+          closeConceptSearch();
+        }
+        return;
+      }
+      
+      // Get current view
+      const state = AppStore.getState();
+      const currentView = state?.content?.view;
+      
+      // Calendar shortcuts
+      if (currentView === 'calendar') {
+        // t - Go to today
+        if (e.key === 't' || e.key === 'T') {
+          e.preventDefault();
+          AppStore.dispatch({ type: 'GO_TO_TODAY' });
+          return;
+        }
+        
+        // n or → - Next day
+        if (e.key === 'n' || e.key === 'N' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          const jd = state.context.selectedDate;
+          if (jd) {
+            AppStore.dispatch({ type: 'SET_SELECTED_DATE', jd: jd + 1 });
+          }
+          return;
+        }
+        
+        // p or ← - Previous day
+        if (e.key === 'p' || e.key === 'P' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          const jd = state.context.selectedDate;
+          if (jd) {
+            AppStore.dispatch({ type: 'SET_SELECTED_DATE', jd: jd - 1 });
+          }
+          return;
+        }
+        
+        // ] - Next month
+        if (e.key === ']') {
+          e.preventDefault();
+          if (typeof CalendarView !== 'undefined' && CalendarView.navigateMonth) {
+            CalendarView.navigateMonth(1);
+          }
+          return;
+        }
+        
+        // [ - Previous month
+        if (e.key === '[') {
+          e.preventDefault();
+          if (typeof CalendarView !== 'undefined' && CalendarView.navigateMonth) {
+            CalendarView.navigateMonth(-1);
+          }
+          return;
+        }
+      }
+      
+      // Bible reader shortcuts
+      if (currentView === 'bible' || currentView === 'reader') {
+        // Only apply arrow keys for bible content in reader
+        const isBibleContent = currentView === 'bible' || 
+          (currentView === 'reader' && state?.content?.params?.contentType === 'bible');
+        
+        if (isBibleContent) {
+          // → - Next chapter
+          if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            if (typeof navigateBibleChapter === 'function') {
+              navigateBibleChapter(1);
+            }
+            return;
+          }
+          
+          // ← - Previous chapter
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            if (typeof navigateBibleChapter === 'function') {
+              navigateBibleChapter(-1);
+            }
+            return;
+          }
+        }
       }
     });
   },

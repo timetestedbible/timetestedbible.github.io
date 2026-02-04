@@ -216,25 +216,34 @@ let renderPending = false;
  * @param {object} data - The events data object (optional, will load if not provided)
  * @param {object} profile - The calendar profile (optional, will get current)
  */
+// Promise to track in-progress resolution
+let _resolutionPromise = null;
+
 async function preResolveTimelineInBackground(data, profile) {
-  // Don't run if already in progress or cache is valid
-  if (backgroundResolutionInProgress) {
-    console.log('[Timeline Background] Already in progress, skipping');
+  // If resolution is already in progress, wait for it to complete
+  if (backgroundResolutionInProgress && _resolutionPromise) {
+    console.log('[Timeline Background] Already in progress, waiting for completion...');
+    await _resolutionPromise;
+    console.log('[Timeline Background] Previous resolution completed, cache should be ready');
     return;
   }
   
   // Load data if not provided
   if (!data && typeof loadBiblicalTimelineData === 'function') {
+    console.log('[Timeline Background] Loading timeline data...');
     data = await loadBiblicalTimelineData();
+    console.log('[Timeline Background] Loaded data:', data ? (data.events?.length || 0) + ' events' : 'null');
   }
   
   // Get profile if not provided
   if (!profile && typeof getTimelineProfile === 'function') {
     profile = getTimelineProfile();
+    console.log('[Timeline Background] Got profile:', profile?.moonPhase, profile?.yearStartRule);
   }
   
   if (!data || !profile || typeof EventResolver === 'undefined') {
     console.log('[Timeline Background] Missing dependencies, skipping pre-resolution');
+    console.log('[Timeline Background] data:', !!data, 'profile:', !!profile, 'EventResolver:', typeof EventResolver !== 'undefined');
     return;
   }
   
@@ -271,59 +280,72 @@ async function preResolveTimelineInBackground(data, profile) {
     ? (cb) => window.requestIdleCallback(cb, { timeout: 2000 })
     : (cb) => setTimeout(cb, 50);
   
-  try {
-    // Check if async resolver is available
-    if (typeof EventResolver.resolveAllEventsAsync === 'function') {
-      // Use async resolver with progress tracking (only allows increasing progress)
-      const resolved = await EventResolver.resolveAllEventsAsync(data, profile, (percent, message) => {
-        // Only update if progress increased (prevents backward jumps)
-        // Never allow going backward, even to 0
-        if (percent < backgroundResolutionProgress || percent < globalProgressFloor) {
-          return;
-        }
-        backgroundResolutionProgress = percent;
-        globalProgressFloor = Math.max(globalProgressFloor, percent);
-        // Update progress bar if timeline is showing
-        const fill = document.querySelector('.timeline-progress-fill');
-        const subtext = document.querySelector('.timeline-loading-subtext');
-        if (fill) fill.style.width = percent + '%';
-        if (subtext) subtext.textContent = message || `${percent}% complete`;
-      });
+  // Create a promise that other callers can wait for
+  _resolutionPromise = (async () => {
+    try {
+      console.log('[Timeline Background] Starting resolution, async available:', typeof EventResolver.resolveAllEventsAsync === 'function');
       
-      // Store in RAM cache
-      biblicalTimelineResolvedCache = resolved;
-      biblicalTimelineCacheKey = cacheKey;
-      
-      // Save to localStorage for future page loads
-      saveTimelineResolvedToStorage(resolved, profile, cacheKey);
-      
-      console.log('[Timeline Background] Pre-resolution complete:', resolved.length, 'events');
-    } else {
-      // Fall back to sync resolver in idle chunks
-      await new Promise((resolve) => {
-        scheduleWork(() => {
-          try {
-            const resolved = EventResolver.resolveAllEvents(data, profile);
-            biblicalTimelineResolvedCache = resolved;
-            biblicalTimelineCacheKey = cacheKey;
-            
-            // Save to localStorage
-            saveTimelineResolvedToStorage(resolved, profile, cacheKey);
-            
-            console.log('[Timeline Background] Pre-resolution complete (sync):', resolved.length, 'events');
-          } catch (e) {
-            console.warn('[Timeline Background] Error during pre-resolution:', e);
+      // Check if async resolver is available
+      if (typeof EventResolver.resolveAllEventsAsync === 'function') {
+        // Use async resolver with progress tracking (only allows increasing progress)
+        const resolved = await EventResolver.resolveAllEventsAsync(data, profile, (percent, message) => {
+          // Only update if progress increased (prevents backward jumps)
+          // Never allow going backward, even to 0
+          if (percent < backgroundResolutionProgress || percent < globalProgressFloor) {
+            return;
           }
-          resolve();
+          backgroundResolutionProgress = percent;
+          globalProgressFloor = Math.max(globalProgressFloor, percent);
+          // Update progress bar if timeline is showing
+          const fill = document.querySelector('.timeline-progress-fill');
+          const subtext = document.querySelector('.timeline-loading-subtext');
+          if (fill) fill.style.width = percent + '%';
+          if (subtext) subtext.textContent = message || `${percent}% complete`;
         });
-      });
+        
+        console.log('[Timeline Background] Resolution returned:', resolved?.length || 0, 'events');
+        
+        // Store in RAM cache
+        biblicalTimelineResolvedCache = resolved;
+        biblicalTimelineCacheKey = cacheKey;
+        
+        console.log('[Timeline Background] Cache updated, biblicalTimelineResolvedCache now has:', biblicalTimelineResolvedCache?.length || 0, 'events');
+        
+        // Save to localStorage for future page loads
+        saveTimelineResolvedToStorage(resolved, profile, cacheKey);
+        
+        console.log('[Timeline Background] Pre-resolution complete:', resolved.length, 'events');
+      } else {
+        // Fall back to sync resolver in idle chunks
+        await new Promise((resolve) => {
+          scheduleWork(() => {
+            try {
+              const resolved = EventResolver.resolveAllEvents(data, profile);
+              biblicalTimelineResolvedCache = resolved;
+              biblicalTimelineCacheKey = cacheKey;
+              
+              // Save to localStorage
+              saveTimelineResolvedToStorage(resolved, profile, cacheKey);
+              
+              console.log('[Timeline Background] Pre-resolution complete (sync):', resolved.length, 'events');
+            } catch (e) {
+              console.warn('[Timeline Background] Error during pre-resolution:', e);
+            }
+            resolve();
+          });
+        });
+      }
+    } catch (e) {
+      console.warn('[Timeline Background] Pre-resolution failed:', e);
+    } finally {
+      backgroundResolutionInProgress = false;
+      backgroundResolutionProgress = 100;
+      _resolutionPromise = null;
     }
-  } catch (e) {
-    console.warn('[Timeline Background] Pre-resolution failed:', e);
-  } finally {
-    backgroundResolutionInProgress = false;
-    backgroundResolutionProgress = 100;
-  }
+  })();
+  
+  // Wait for our own resolution to complete
+  await _resolutionPromise;
 }
 
 /**
@@ -342,10 +364,20 @@ function getBackgroundResolutionProgress() {
   return backgroundResolutionProgress;
 }
 
+/**
+ * Get the cached resolved timeline events
+ * Returns the pre-resolved events if available, otherwise empty array
+ * @returns {Array} Array of resolved events
+ */
+function getTimelineResolvedEvents() {
+  return biblicalTimelineResolvedCache || [];
+}
+
 // Make background functions globally available
 window.preResolveTimelineInBackground = preResolveTimelineInBackground;
 window.isBackgroundResolutionInProgress = isBackgroundResolutionInProgress;
 window.getBackgroundResolutionProgress = getBackgroundResolutionProgress;
+window.getTimelineResolvedEvents = getTimelineResolvedEvents;
 
 /**
  * Check if timeline cache is valid for the current profile
@@ -6571,3 +6603,108 @@ if (typeof window !== 'undefined') {
   window.biblicalTimelineResetZoom = biblicalTimelineResetZoom;
   window.testAsyncResolver = testAsyncResolver;
 }
+
+// ============================================================================
+// PROFILE CHANGE HANDLING
+// When profile changes, we need to re-resolve events and rebuild indices
+// ============================================================================
+
+let _lastProfileHash = null;
+
+/**
+ * Handle profile change - clear RAM cache and trigger re-resolution
+ * This ensures events are resolved with the correct calendar settings
+ */
+async function handleProfileChange(newProfile) {
+  const newHash = _getTimelineProfileHash(newProfile);
+  
+  // Skip if profile hash hasn't actually changed
+  if (_lastProfileHash === newHash) {
+    console.log('[ProfileChange] Profile hash unchanged, skipping re-resolution');
+    return;
+  }
+  
+  console.log(`[ProfileChange] Profile changed: ${_lastProfileHash} -> ${newHash}`);
+  _lastProfileHash = newHash;
+  
+  // Clear RAM cache to force re-resolution
+  biblicalTimelineResolvedCache = null;
+  biblicalTimelineCacheKey = null;
+  
+  // Also clear historical-events.js RAM cache if available
+  if (typeof clearResolvedEventsCache === 'function') {
+    clearResolvedEventsCache();
+  }
+  
+  // Trigger background re-resolution with the new profile
+  // This will either load from localStorage cache (if exists for this profile)
+  // or resolve fresh and save to localStorage
+  if (typeof preResolveTimelineInBackground === 'function') {
+    console.log('[ProfileChange] Starting re-resolution for new profile...');
+    await preResolveTimelineInBackground(null, newProfile);
+    
+    // Rebuild bible events index after resolution
+    if (typeof loadBibleEvents === 'function') {
+      console.log('[ProfileChange] Rebuilding bible events index...');
+      await loadBibleEvents();
+    }
+    
+    // Dispatch refresh to update any visible views
+    if (typeof AppStore !== 'undefined') {
+      AppStore.dispatch({ type: 'REFRESH' });
+    }
+    
+    console.log('[ProfileChange] Profile change handling complete');
+  }
+}
+
+/**
+ * Subscribe to AppStore to detect profile changes
+ * Called once when the module loads
+ */
+function subscribeToProfileChanges() {
+  if (typeof AppStore === 'undefined') {
+    console.log('[ProfileChange] AppStore not available, retrying...');
+    setTimeout(subscribeToProfileChanges, 100);
+    return;
+  }
+  
+  // Get initial profile hash
+  const state = AppStore.getState();
+  const profileId = state.context?.profileId || 'timeTested';
+  const profiles = window.PROFILES || window.PRESET_PROFILES || {};
+  const profile = profiles[profileId];
+  if (profile) {
+    _lastProfileHash = _getTimelineProfileHash(profile);
+    console.log('[ProfileChange] Initial profile hash:', _lastProfileHash);
+  }
+  
+  // Subscribe to state changes
+  AppStore.subscribe((state, derived) => {
+    // Get current profile
+    const profileId = state.context?.profileId || 'timeTested';
+    const profiles = window.PROFILES || window.PRESET_PROFILES || {};
+    const profile = profiles[profileId];
+    
+    if (profile) {
+      const newHash = _getTimelineProfileHash(profile);
+      if (_lastProfileHash !== newHash) {
+        // Profile changed - handle async
+        handleProfileChange(profile);
+      }
+    }
+  });
+  
+  console.log('[ProfileChange] Subscribed to AppStore for profile changes');
+}
+
+// Start listening for profile changes once DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', subscribeToProfileChanges);
+} else {
+  // DOM already ready - wait a tick for AppStore to initialize
+  setTimeout(subscribeToProfileChanges, 50);
+}
+
+// Export profile change handler
+window.handleProfileChange = handleProfileChange;

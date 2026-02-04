@@ -1,0 +1,99 @@
+---
+description: Methodology for biblical word/symbol studies - MUST show work and use available tools
+globs: symbols/*.md, words/*.md, http/symbol-dictionary.js
+alwaysApply: false
+---
+
+# Word Study Methodology
+
+When creating or analyzing biblical word/symbol studies, you MUST follow this process.
+
+## CRITICAL: Show Your Work
+
+**You MUST explicitly show your work at every step.** Do NOT do "mental math" or keep analysis in your head. Write out:
+- Every search you perform and its results
+- Every verse you examine
+- Every candidate meaning you consider
+- Every substitution test with explicit before/after
+
+## Available Resources - USE THEM
+
+You have access to these resources in this codebase:
+
+| Resource | Location | Usage |
+|----------|----------|-------|
+| **KJV Bible** | `/http/kjv.txt` | Tab-separated: Reference\tVerse text |
+| **ASV Bible** | `/http/asv.txt` | Space-separated reference |
+| **Septuagint (LXX)** | `/http/lxx.txt` | Greek OT translation |
+| **Strong's Hebrew** | `/http/strongs-hebrew-dictionary.js` | Hebrew word definitions |
+| **Strong's Greek** | `/http/strongs-greek-dictionary.js` | Greek word definitions |
+| **Symbol Dictionary** | `/http/symbol-dictionary.js` | Existing symbol meanings |
+| **Existing Studies** | `/symbols/*.md` | Completed word studies |
+
+## Required Tools - USE GREP
+
+**You MUST use grep/search tools** to find occurrences. Do NOT rely on memory.
+
+```bash
+# Find all verses containing a word
+rg -i "fornication" http/kjv.txt
+
+# Find Strong's number occurrences (if interlinear data available)
+rg "H2181" http/
+
+# Compare across translations
+rg -i "peace" http/kjv.txt http/asv.txt
+
+# Find in Septuagint for OT concepts
+rg -i "word" http/lxx.txt
+```
+
+## The Process (Execute Step by Step)
+
+### Phase 1: Gather Data (SHOW YOUR WORK)
+1. **Look up Strong's number** - Find the Hebrew/Greek word
+2. **Search KJV** - `rg -i "word" http/kjv.txt` - list results
+3. **Search ASV** - `rg -i "word" http/asv.txt` - compare translations
+4. **Check LXX** - For OT words, see Greek translation choices
+5. **Find ALL translation variants** - Same Strong's # may be translated differently
+
+### Phase 2: Generate Candidates (Minimum 3)
+1. Write down Candidate #1 (first intuition)
+2. **REJECT CHECK**: Is this a dictionary synonym? If YES → discard
+3. Assume #1 is WRONG → Generate Candidate #2
+4. Assume #2 is WRONG → Generate Candidate #3
+
+### Phase 3: Test Each Candidate (SHOW SUBSTITUTIONS)
+For each candidate, explicitly:
+1. Look up related symbols from symbol-dictionary.js
+2. Find 3+ test verses
+3. Write out the verse with ALL symbols substituted
+4. Check: Does it make coherent sense?
+
+### Phase 4: Compare in Table
+Create explicit comparison table - do NOT evaluate "in your head":
+
+| Criterion | Candidate 1 | Candidate 2 | Candidate 3 |
+|-----------|-------------|-------------|-------------|
+| Fits verse A | ✓/✗ reason | | |
+| Fits verse B | | | |
+| No Torah violation | | | |
+| Production chain | | | |
+
+## Output Format
+
+```markdown
+# SYMBOL — Symbolic Word Study
+
+## Final Meaning
+| Form | Symbolic Meaning |
+|------|------------------|
+| **One Word** | X |
+| **Two Words** | X Y |
+| **Sentence** | Full explanation |
+
+**Opposite**: [antonym symbol]
+
+## The Argument
+[Show your work: searches performed, verses found, substitution tests]
+```

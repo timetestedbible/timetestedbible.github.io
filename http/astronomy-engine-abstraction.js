@@ -5,8 +5,10 @@
 // the rest of the codebase.
 
 // Available engines registry
-// NOTE: virgoCache has been moved to LunarCalendarEngine instances (instance-owned state)
-const AstroEngines = {};
+const AstroEngines = {
+  // Cache for Virgo rule calculations, keyed by year
+  virgoCache: {}
+};
 
 // Currently active engine instance
 let activeAstroEngine = null;
@@ -44,7 +46,18 @@ AstroEngines.astronomyEngine = {
   },
   
   getSeasons(year) {
-    return Astronomy.Seasons(year);
+    // Astronomy.Seasons(year) has a bug for years 0-99 (treats them as 1900-1999)
+    // Use SearchSunLongitude with a properly constructed Date instead
+    if (year >= 0 && year < 100) {
+      const startDate = new Date(Date.UTC(2000, 0, 1));
+      startDate.setUTCFullYear(year);
+      const equinox = Astronomy.SearchSunLongitude(0, startDate, 120);
+      if (equinox) {
+        return { mar_equinox: equinox };
+      }
+    }
+    const result = Astronomy.Seasons(year);
+    return result;
   },
   
   searchRiseSet(body, observer, direction, startDate, limitDays) {
@@ -116,6 +129,10 @@ AstroEngines.swissEphemeris = {
   _swe: null,
   _module: null,
   _loadPromise: null,
+  
+  // Moshier ephemeris valid Julian Day range (approximately 3003 BCE to 3003 CE)
+  _MOSHIER_JD_MIN: 625000.50,
+  _MOSHIER_JD_MAX: 2818000.50,
   
   async load() {
     if (this.isLoaded) return true;
@@ -259,6 +276,11 @@ AstroEngines.swissEphemeris = {
   _getMoonSunElongation(jd) {
     if (!this._swe || !this._module) return null;
     
+    // Check if JD is within Moshier ephemeris range
+    if (jd < this._MOSHIER_JD_MIN || jd > this._MOSHIER_JD_MAX) {
+      return null;
+    }
+    
     try {
       const Planet = this._module.Planet;
       const sunPos = this._swe.calculatePosition(jd, Planet.Sun);
@@ -284,6 +306,12 @@ AstroEngines.swissEphemeris = {
     
     const startJD = this._dateToJD(startDate);
     const endJD = startJD + limitDays;
+    
+    // Check if entire search range is outside Moshier ephemeris range
+    if (endJD < this._MOSHIER_JD_MIN || startJD > this._MOSHIER_JD_MAX) {
+      return AstroEngines.astronomyEngine.searchMoonPhase(phase, startDate, limitDays);
+    }
+    
     const step = 1;
     
     let prevJD = startJD;
@@ -360,6 +388,11 @@ AstroEngines.swissEphemeris = {
       let jd = this._dateToJD(startDate);
       const endJD = jd + 30;
       
+      // Check if JD is within Moshier ephemeris range before calling Swiss Ephemeris
+      if (jd < this._MOSHIER_JD_MIN || endJD > this._MOSHIER_JD_MAX) {
+        return AstroEngines.astronomyEngine.getSeasons(year);
+      }
+      
       let prevLon = null;
       for (; jd <= endJD; jd += 0.5) {
         const sunPos = this._swe.calculatePosition(jd, Planet.Sun);
@@ -410,6 +443,11 @@ AstroEngines.swissEphemeris = {
       const planet = body === 'sun' ? Planet.Sun : Planet.Moon;
       const jd = this._dateToJD(date);
       
+      // Check if JD is within Moshier ephemeris range
+      if (jd < this._MOSHIER_JD_MIN || jd > this._MOSHIER_JD_MAX) {
+        return AstroEngines.astronomyEngine.getEquator(body, date, observer);
+      }
+      
       // Get equatorial coordinates
       const pos = this._swe.calculatePosition(jd, planet, CalculationFlag.Equatorial);
       
@@ -440,6 +478,12 @@ AstroEngines.swissEphemeris = {
     
     try {
       const jd = this._dateToJD(date);
+      
+      // Check if JD is within Moshier ephemeris range
+      if (jd < this._MOSHIER_JD_MIN || jd > this._MOSHIER_JD_MAX) {
+        return AstroEngines.astronomyEngine.getDeltaT(date);
+      }
+      
       const deltaT = this._swe.deltaT(jd);
       return deltaT * 86400; // Convert days to seconds
     } catch (err) {

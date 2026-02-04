@@ -575,7 +575,7 @@ For physical symbols (oil, wine, bread, water, etc.), always ask:
 
 ### The Redundancy Test (Would This Meaning Create Legal Redundancy?)
 
-If a proposed symbolic meaning would create **legal or logical redundancy** with an existing law or principle, the meaning must be wrong.
+If a proposed symbolic meaning would create **legal or logical redundancy** with an existing law or principle, the meaning is likely wrong.
 
 #### Example: Fornication in Divorce Passages
 

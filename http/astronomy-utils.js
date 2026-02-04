@@ -118,6 +118,9 @@ function getAstronomicalTimes(date, location) {
       console.warn('[getAstronomicalTimes] Astro engine not yet available');
       return null;
     }
+    if (!date || typeof date.getTime !== 'function' || isNaN(date.getTime())) {
+      return null;
+    }
     const engine = getAstroEngine();
     
     // Get location from parameter, AppStore, or global state
@@ -139,17 +142,29 @@ function getAstronomicalTimes(date, location) {
     
     const observer = engine.createObserver(lat, lon, 0);
     
-    // Use UTC for dates
-    const midnightUTC = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
-    midnightUTC.setUTCFullYear(date.getUTCFullYear());
+    // Normalize to a clean calendar date (noon UTC) so TODAY and other dates behave the same
+    const y = date.getUTCFullYear();
+    const m = date.getUTCMonth();
+    const d = date.getUTCDate();
+    const midnightUTC = new Date(Date.UTC(2000, m, d, 0, 0, 0));
+    midnightUTC.setUTCFullYear(y);
+    const noonUTC = new Date(Date.UTC(2000, m, d, 12, 0, 0));
+    noonUTC.setUTCFullYear(y);
     
-    // Sunrise (sun rises above horizon)
+    // Sunrise (sun rises above horizon) - search from midnight
     const sunriseResult = engine.searchRiseSet('sun', observer, +1, midnightUTC, 1);
     const sunriseTs = sunriseResult ? sunriseResult.date.getTime() : null;
     
-    // Sunset (sun sets below horizon)
-    const sunsetResult = engine.searchRiseSet('sun', observer, -1, midnightUTC, 1);
-    const sunsetTs = sunsetResult ? sunsetResult.date.getTime() : null;
+    // Sunset (sun sets below horizon) - search from noon to get THIS day's sunset (matches getSunsetTimestamp)
+    let sunsetTs = null;
+    const sunsetResult = engine.searchRiseSet('sun', observer, -1, noonUTC, 1);
+    if (sunsetResult) {
+      sunsetTs = sunsetResult.date.getTime();
+    } else {
+      // Fallback: search from midnight (e.g. polar regions or engine edge cases)
+      const sunsetFromMidnight = engine.searchRiseSet('sun', observer, -1, midnightUTC, 1);
+      if (sunsetFromMidnight) sunsetTs = sunsetFromMidnight.date.getTime();
+    }
     
     // First light (civil dawn) - sun is 6° below horizon in the morning
     // Search for sun reaching -6° altitude before sunrise
@@ -619,7 +634,7 @@ function getEquinoxMethodologyHtml(options = {}) {
         <blockquote>"You shall observe the Feast of Weeks… and the Feast of Ingathering at the turning (tekufah) of the year."<br>— Exodus 34:22</blockquote>
         <p>If the fall feast is at one turning point (autumn equinox), Passover should be at the other (spring equinox).</p>
         
-        <p style="margin-top: 15px;"><a href="/chapters/08-when-does-the-year-start/" style="color: #7ec8e3;">📖 See "Time Tested Tradition" chapter: When Does the Year Start?</a></p>
+        <p style="margin-top: 15px;"><a href="#" style="color: #7ec8e3;" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'08_When_does_the_Year_Start'}})">📖 See "Time Tested Tradition" chapter: When Does the Year Start?</a></p>
       </div>
     </details>`;
   
@@ -663,7 +678,7 @@ function getPassoverMethodologyHtml(options = {}) {
         <blockquote>"Observe the month of Aviv, and keep the Passover unto the LORD thy God: for in the month of Aviv the LORD thy God brought thee forth out of Egypt by night."<br>— Deuteronomy 16:1</blockquote>
         <p>The month must be Aviv (spring) when Passover occurs, ensuring the festival aligns with the season of redemption and renewal.</p>
         
-        <p style="margin-top: 15px;"><a href="/chapters/08-when-does-the-year-start/" style="color: #7ec8e3;">📖 See "Time Tested Tradition" chapter: When Does the Year Start?</a></p>
+        <p style="margin-top: 15px;"><a href="#" style="color: #7ec8e3;" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'08_When_does_the_Year_Start'}})">📖 See "Time Tested Tradition" chapter: When Does the Year Start?</a></p>
       </div>
     </details>`;
   

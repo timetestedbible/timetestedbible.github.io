@@ -48,12 +48,28 @@ class SPAHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
         super().end_headers()
 
+def get_local_ip():
+    """Get the local network IP address"""
+    import socket
+    try:
+        # Connect to an external address to determine local IP
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+        s.close()
+        return ip
+    except:
+        return "unknown"
+
 if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
-    with socketserver.TCPServer(("", PORT), SPAHandler) as httpd:
-        print(f"SPA Server running at http://localhost:{PORT}")
-        print("Press Ctrl+C to stop")
+    with socketserver.TCPServer(("0.0.0.0", PORT), SPAHandler) as httpd:
+        local_ip = get_local_ip()
+        print(f"SPA Server running at:")
+        print(f"  Local:   http://localhost:{PORT}")
+        print(f"  Network: http://{local_ip}:{PORT}")
+        print("\nPress Ctrl+C to stop")
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

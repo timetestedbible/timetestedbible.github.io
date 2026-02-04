@@ -114,6 +114,35 @@ You MUST generate at least 3 candidate meanings before evaluating. **Assume your
 <strong>Test:</strong> Would a secular reader using only a dictionary arrive at this meaning? If YES → not the symbolic meaning.
 </div>
 
+<div class="principle-box">
+<strong>CRITICAL: Resolve Symbolic Recursion</strong>
+
+When Scripture defines X = Y, and Y is ITSELF a symbol, you have NOT finished. You must also define Y.
+
+| Scriptural Definition | Problem | Resolution |
+|-----------------------|---------|------------|
+| HIGHWAY = "Way of Holiness" (Isaiah 35:8) | "Holiness" is symbolic | Define HOLINESS first |
+| ROCK = Christ (1 Cor 10:4) | What does Christ symbolize here? | Christ = Covenant Mediator → ROCK = Covenant |
+| TRUTH = Word (John 17:17) | "Word" is symbolic | WORD = LAW → TRUTH = God's Commandments |
+
+**The recursion must terminate in a CONCRETE concept**, not another undefined symbol.
+</div>
+
+<div class="principle-box">
+<strong>CRITICAL: Iterate Until Satisfied</strong>
+
+If your first round of candidates all score poorly, **generate more candidates**. Do NOT accept a partial solution.
+
+| Failure Sign | Action |
+|--------------|--------|
+| Best candidate scores < 5/7 | Generate 3 MORE candidates |
+| All candidates feel "close but not quite" | The true meaning may be DEEPER — ask "what does THIS symbolize?" |
+| One context doesn't fit | Investigate that context — it may reveal the real meaning |
+| Meaning is still abstract/symbolic | Trace the symbolic chain until you reach concrete ground |
+
+**Never stop at "good enough."** Keep iterating until the meaning is CLEAR and CONCRETE.
+</div>
+
 ### Phase 2: Test Each Candidate Systematically
 
 For **EACH** candidate, execute this checklist. **Show your work** — write out each step.
@@ -488,7 +517,7 @@ This exposed why "OIL = Spirit" is wrong:
 
 ## The Redundancy Test
 
-If a proposed meaning would create **legal redundancy** with an existing law, it must be wrong.
+If a proposed meaning would create **legal redundancy** with an existing law, it is likely wrong.
 
 **Example**: "Divorce except for fornication" (Matthew 5:32)
 

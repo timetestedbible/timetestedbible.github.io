@@ -1,5 +1,5 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v771';
+const CACHE_NAME = 'lunar-sabbath-v773';
 
 // Core app files
 const CORE_ASSETS = [
@@ -49,8 +49,6 @@ const CDN_ASSETS = [
 // Data files (JSON)
 const DATA_ASSETS = [
   '/priestly_divisions.json',
-  '/bible-events-by-month-day.json',
-  '/historical-events.json',
   '/historical-events-v2.json',
   '/TorahReadingCycle.json',
   '/torah-special-readings.json',
@@ -63,6 +61,9 @@ const DATA_ASSETS = [
 
 // Bible and book content
 const CONTENT_ASSETS = [
+  '/kjv.json',
+  '/asv.json',
+  '/lxx.json',
   '/kjv.txt',
   '/asv.txt',
   '/lxx.txt',

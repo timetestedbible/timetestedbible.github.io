@@ -5551,3 +5551,11 @@ var strongsGreekDictionary = {"G1615":{"strongs_def":" to complete fully","deriv
 "G1731":{"kjv_def":"do, show (forth)","lemma":"ἐνδείκνυμι","translit":"endeíknymi","derivation":"from G1722 (ἐν) and G1166 (δεικνύω);","strongs_def":" to indicate (by word or act)"},
 "G5070":{"translit":"tetrakischílioi","lemma":"τετρακισχίλιοι","kjv_def":"four thousand","strongs_def":" four times a thousand","derivation":"from the multiplicative adverb of G5064 (τέσσαρες) and G5507 (χίλιοι);"},
 "G489":{"derivation":"from a compound of G473 (ἀντί) and G3408 (μισθός);","strongs_def":" requital, correspondence","kjv_def":"recompense","translit":"antimisthía","lemma":"ἀντιμισθία"}};
+
+// Export for both Node.js and browser
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = strongsGreekDictionary;
+}
+if (typeof window !== "undefined") {
+  window.strongsGreekDictionary = strongsGreekDictionary;
+}

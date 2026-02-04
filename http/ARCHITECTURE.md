@@ -1,226 +1,327 @@
-# Calendar Engine Architecture
+# Calendar & Event System Architecture
 
-## Design Principles
-
-1. **No Global Side Effects** - Functions are pure; one calculation never impacts another
-2. **Explicit Dependencies** - No fallback to `window.state` or other globals
-3. **Instance-Owned State** - Caches belong to engine instances, not globals
-4. **Polymorphic Rules** - Year start rules are pluggable strategies
-5. **Memoization** - Deterministic functions cache results within their instance
-
----
-
-## Proper OO Design
+## Core Components
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         STATELESS SINGLETONS                                 │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │ AstroEngine (singleton, stateless)                                   │   │
-│  │ ├── searchMoonPhase(phase, startDate, limitDays) → Date             │   │
-│  │ ├── getSeasons(year) → { mar_equinox, jun_solstice, ... }           │   │
-│  │ ├── searchRiseSet(body, observer, direction, startDate) → Date      │   │
-│  │ ├── getEquator(body, date, observer) → { ra, dec }                  │   │
-│  │ └── createObserver(lat, lon, elevation) → Observer                  │   │
-│  │                                                                      │   │
-│  │ NO application state. NO caches. Pure calculations.                  │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         YEAR START STRATEGIES                                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  interface YearStartRule {                                                  │
-│    getYearStart(year: number, location: Location, astro: AstroEngine): Date │
-│  }                                                                          │
-│                                                                             │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │ EquinoxRule implements YearStartRule                                 │   │
-│  │ └── getYearStart(year, location, astro) → spring equinox date       │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │ ThirteenDaysBeforeRule implements YearStartRule                      │   │
-│  │ └── getYearStart(year, location, astro) → equinox - 13 days         │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │ VirgoFeetRule implements YearStartRule                               │   │
-│  │ ├── _cache: { [year_lat_lon]: VirgoResult }  ← INSTANCE-OWNED       │   │
-│  │ └── getYearStart(year, location, astro) → first qualifying full moon│   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         ENGINE INSTANCES                                     │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │ LunarCalendarEngine                                                  │   │
-│  │ ├── constructor(astroEngine: AstroEngine)                           │   │
-│  │ ├── _astro: AstroEngine (reference to singleton)                    │   │
-│  │ ├── _yearStartRule: YearStartRule (pluggable strategy)              │   │
-│  │ ├── _moonEventsCache: { [year]: Date[] }  ← INSTANCE-OWNED          │   │
-│  │ ├── _calendarCache: { [year_lat_lon]: LunarYear }  ← INSTANCE-OWNED │   │
-│  │ │                                                                    │   │
-│  │ ├── configure(options) → this                                        │   │
-│  │ ├── setYearStartRule(rule: YearStartRule) → this                    │   │
-│  │ ├── generateYear(year, location) → LunarYear                        │   │
-│  │ └── getDayInfo(calendar, month, day) → DayInfo                      │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         APPLICATION STATE                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │ AppStore (singleton application state)                               │   │
-│  │ ├── _state: { context, content, ui }                                │   │
-│  │ ├── _engine: LunarCalendarEngine (OWNS its instance)                │   │
-│  │ │       └── _yearStartRule: VirgoFeetRule (OWNS its cache)          │   │
-│  │ │                                                                    │   │
-│  │ ├── dispatch(action) → void                                          │   │
-│  │ ├── getState() → State                                               │   │
-│  │ └── getEngine() → LunarCalendarEngine                                │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         app-store.js                                     │
+│  ═══════════════════════════════════════════════════════════════════    │
+│  Central State Management (Singleton)                                    │
+│                                                                          │
+│  STATE:                           DERIVED:                               │
+│  • lat, lon (location)            • lunarMonths[]                        │
+│  • selectedDate (JD)              • currentMonth                         │
+│  • moonPhase ('full'/'new')       • currentDay                           │
+│  • dayStartTime                   • priestly course info                 │
+│  • yearStartRule                  • feasts                               │
+│  • sabbathMode                                                           │
+│  • priestlyCycleAnchor                                                   │
+│                                                                          │
+│  OWNS: LunarCalendarEngine instance (_engine)                            │
+└────────────────────────────────┬────────────────────────────────────────┘
+                                 │
+                                 │ uses
+                                 ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    lunar-calendar-engine.js                              │
+│  ═══════════════════════════════════════════════════════════════════    │
+│  PURE CALCULATION ENGINE (Stateless Class)                               │
+│                                                                          │
+│  API:                                                                    │
+│  ┌────────────────────────────────────────────────────────────────┐     │
+│  │ engine.configure(options)    → Set moonPhase, dayStartTime...  │     │
+│  │ engine.generateYear(year, location)  → Full lunar calendar     │     │
+│  │ engine.findMoonEvents(year)  → Array of new/full moons         │     │
+│  │ engine.findLunarDay(calendar, date)  → { month, day }          │     │
+│  └────────────────────────────────────────────────────────────────┘     │
+│                                                                          │
+│  INTERNAL CACHES:                                                        │
+│  • _moonCache[year][moonPhase] = moonEvents[]                            │
+│  • _yearCache[year][moonPhase][yearStartRule] = calendar                 │
+│                                                                          │
+│  DEPENDS ON: astroEngine (Swiss Ephemeris / Astronomy Engine)            │
+│  NO UI DEPENDENCIES - Can be used standalone                             │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
----
-
-## Data Flow
+## Priestly Cycle Calculation
 
 ```
-User selects Dallas:
-  → AppStore.dispatch({ type: 'SET_LOCATION', payload: { lat, lon } })
-  → AppStore._recomputeDerived()
-  → AppStore._engine.generateYear(year, { lat, lon })
-      → engine._yearStartRule.getYearStart(year, location, engine._astro)
-          → VirgoFeetRule checks its own _cache["2026_32.7767_-96.7970"]
-          → If miss: calculates using astro, stores in _cache
-          → Returns full moon date
-      → engine builds calendar
-  → Calendar rendered for Dallas
-
-Timezone Guide wants Jerusalem data:
-  → Creates NEW LunarCalendarEngine(getAstroEngine())
-  → engine._yearStartRule = new VirgoFeetRule()  // NEW instance, NEW cache
-  → engine.generateYear(year, jerusalemLocation)
-      → VirgoFeetRule checks its own _cache (empty)
-      → Calculates, stores in ITS cache
-  → Returns Jerusalem calendar
-  → Dallas calendar UNAFFECTED (different engine, different rule instance)
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    priestly-divisions.js                                 │
+│  ═══════════════════════════════════════════════════════════════════    │
+│  PRIESTLY COURSE CALCULATIONS                                            │
+│                                                                          │
+│  PRIMARY API:                                                            │
+│  ┌────────────────────────────────────────────────────────────────┐     │
+│  │ getPriestlyCourse(date, lunarDay, lunarMonth, profile)         │     │
+│  │   → { order: 8, course: "Abijah", meaning: "...", ... }        │     │
+│  │                                                                 │     │
+│  │ getPriestlyCourseForDay(dayObj, month, profile)                │     │
+│  │   → Wrapper for calendar day objects                           │     │
+│  └────────────────────────────────────────────────────────────────┘     │
+│                                                                          │
+│  ANCHOR CALCULATION:                                                     │
+│  ┌────────────────────────────────────────────────────────────────┐     │
+│  │ getCachedReferenceJD(profile)                                  │     │
+│  │   • 'destruction': 9th of Av, 70 AD → Jehoiarib (1) serving    │     │
+│  │   • 'dedication': 15th of Month 7, 959 BC → Jehoiarib (1)     │     │
+│  │   Uses LunarCalendarEngine to find exact lunar dates           │     │
+│  └────────────────────────────────────────────────────────────────┘     │
+│                                                                          │
+│  WEEK INDEX CALCULATION:                                                 │
+│  • Lunar Sabbath: weeks = (lunarMonth-1)*4 + weekInMonth                 │
+│  • Saturday Sabbath: weeks = floor((targetJD - referenceJD) / 7)         │
+│  • Course = ((referenceWeekIndex + weeksFromAnchor) % 24) + 1            │
+│                                                                          │
+│  CACHES: referenceJDCache[profileHash] = JD                              │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
----
+## Event Resolution
 
-## Functions That Should NOT Reference Global State
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      event-resolver.js                                   │
+│  ═══════════════════════════════════════════════════════════════════    │
+│  DATE RESOLUTION FROM EVENT DEFINITIONS                                  │
+│                                                                          │
+│  MAIN API:                                                               │
+│  ┌────────────────────────────────────────────────────────────────┐     │
+│  │ resolveEvent(event, profile, epochs, context) → JD             │     │
+│  │ resolveAllEvents(data, profile) → Map<eventId, resolvedEvent>  │     │
+│  └────────────────────────────────────────────────────────────────┘     │
+│                                                                          │
+│  DATE SPEC TYPES:                                                        │
+│  ┌────────────────────────────────────────────────────────────────┐     │
+│  │ { gregorian: { year, month, day } }                            │     │
+│  │ { lunar: { year, month, day } }                                │     │
+│  │ { relative: { to_event, offset: { days/lunar_years } } }       │     │
+│  │ { priestly_cycle: { course, after_event, offset } }       ◄────┼─┐   │
+│  └────────────────────────────────────────────────────────────────┘ │   │
+│                                                                      │   │
+│  PRIESTLY CYCLE RESOLUTION:                                          │   │
+│  ┌────────────────────────────────────────────────────────────────┐ │   │
+│  │ priestlyCycleToJulianDay(cycleSpec, profile, epochs, context)  │ │   │
+│  │   1. Resolve after_event → get referenceJD                     │ │   │
+│  │   2. Iterate day-by-day from referenceJD                       │ │   │
+│  │   3. Call getPriestlyCourse() for each day ◄───────────────────┼─┘   │
+│  │   4. Return JD when target course found                        │     │
+│  └────────────────────────────────────────────────────────────────┘     │
+│                                                                          │
+│  CONVERSION UTILITIES:                                                   │
+│  • julianDayToGregorian(jd) ↔ gregorianToJulianDay(y,m,d)               │
+│  • julianDayToLunar(jd, profile) - APPROXIMATE (±1 day)                 │
+│  • lunarToJulianDay(lunar, year, profile) - Uses calendar engine         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
-These functions currently fall back to `window.state` and should be refactored:
+## Data Flow Diagrams
 
-| Function | File | Problem |
-|----------|------|---------|
-| `findVirgoFeetFullMoon` | astronomy-utils.js | Falls back to `state?.lat`, `state?.lon` |
-| `getVirgoCalculation` | astronomy-utils.js | Falls back to AppStore or state |
-| `getSunriseTimestamp` | astronomy-utils.js | Uses `state.lat`, `state.lon` directly |
-| `getSunsetTimestamp` | astronomy-utils.js | Uses `state.lat`, `state.lon` directly |
-| `formatTimeInObserverTimezone` | astronomy-utils.js | Uses `state.lon` |
-| `getCurrentLocationName` | astronomy-utils.js | Uses `state?.lat`, `state?.lon` |
+### 1. Calendar Generation (User Changes Date/Location)
 
-**Fix**: All functions should require explicit parameters. No fallbacks.
+```
+User Action (change date/profile)
+        │
+        ▼
+┌──────────────────┐
+│ AppStore.dispatch│
+│ { type: 'SET_*' }│
+└────────┬─────────┘
+         │
+         ▼
+┌─────────────────────────┐
+│ AppStore._recomputeDerived()│
+│   • needsRegenerate?    │
+└────────┬────────────────┘
+         │ YES
+         ▼
+┌─────────────────────────────────────────┐
+│ AppStore._engine.generateYear(year, loc)│
+│   ┌─────────────────────────────────┐   │
+│   │ LunarCalendarEngine             │   │
+│   │  1. findMoonEvents(year)        │   │
+│   │  2. getYearStartPoint()         │   │
+│   │  3. Calculate month boundaries  │   │
+│   │  4. Generate day objects        │   │
+│   └─────────────────────────────────┘   │
+└────────┬────────────────────────────────┘
+         │
+         ▼
+┌─────────────────────────┐
+│ Store calendar in       │
+│ _derived.lunarMonths    │
+└────────┬────────────────┘
+         │
+         ▼
+┌─────────────────────────┐
+│ AppStore._populateDayData()│
+│   Add feasts, priestly  │
+│   courses to each day   │
+└────────┬────────────────┘
+         │
+         ▼
+┌─────────────────────────┐
+│ Notify UI subscribers   │
+│   Views re-render       │
+└─────────────────────────┘
+```
 
----
+### 2. Priestly Course for Calendar Day (UI Display)
 
-## Implementation Plan
+```
+Calendar day needs priestly course
+        │
+        ▼
+┌─────────────────────────────────────────┐
+│ getPriestlyCourseForDay(dayObj, month, profile)│
+│   Extract: date, lunarDay, lunarMonth    │
+└────────┬────────────────────────────────┘
+         │
+         ▼
+┌─────────────────────────────────────────┐
+│ getPriestlyCourse(date, lunarDay, lunarMonth, profile)│
+└────────┬────────────────────────────────┘
+         │
+         ├─────────────────┐
+         │                 │ Cache miss
+         ▼                 ▼
+┌───────────────┐  ┌──────────────────────────────┐
+│ getCachedRef  │  │ Calculate referenceJD        │
+│ erence JD()   │  │  • Create temp LunarCalendar │
+│               │  │  • Find 9th Av 70 AD (JD)    │
+│   Cache hit   │  │  • Store in cache            │
+└───────┬───────┘  └──────────────┬───────────────┘
+        │                         │
+        └────────────┬────────────┘
+                     │
+                     ▼
+        ┌─────────────────────────────┐
+        │ Calculate week index        │
+        │                             │
+        │ LUNAR:                      │
+        │   weeks = (month-1)*4       │
+        │         + weekInMonth       │
+        │                             │
+        │ SATURDAY:                   │
+        │   weeks = (JD - refJD) / 7  │
+        └────────────┬────────────────┘
+                     │
+                     ▼
+        ┌─────────────────────────────┐
+        │ course = weekIndex % 24 + 1 │
+        │ return PRIESTLY_DIVISIONS[i]│
+        └─────────────────────────────┘
+```
 
-### Phase 1: Move Virgo Cache to Engine Instance ✅ IMPLEMENTED
+### 3. Event Resolution (Historical Events)
 
+```
+Event: john-baptist-conception
+  start: {
+    priestly_cycle: {
+      course: "Abijah",           ─┐
+      after_event: "john-birth",   │ From JSON
+      offset: { days: -280 }      ─┘
+    }
+  }
+        │
+        ▼
+┌─────────────────────────────────────────┐
+│ resolveEvent(event, profile, ...)        │
+└────────┬────────────────────────────────┘
+         │
+         ▼
+┌─────────────────────────────────────────┐
+│ priestlyCycleToJulianDay(cycleSpec, ...)│
+│                                          │
+│  1. Resolve "john-birth" → JD            │
+│  2. Apply offset: -280 days → afterJD    │
+│  3. Find target course (Abijah = 8)      │
+└────────┬────────────────────────────────┘
+         │
+         ▼
+┌─────────────────────────────────────────┐
+│ Day-by-day search from afterJD          │
+│                                          │
+│  for (day = afterJD; day < afterJD+200) │
+│    getPriestlyCourse(day, null, null)───┼─► Uses JD-based
+│    if (course == 8) return day          │   calculation
+│                                          │
+└────────┬────────────────────────────────┘
+         │
+         ▼
+┌─────────────────────────────────────────┐
+│ Return: Conception JD = week_start + 8  │
+│   (end of service week + travel home)   │
+└─────────────────────────────────────────┘
+```
+
+## Key Design Principles
+
+### 1. Separation of Concerns
+- **app-store.js**: UI state, navigation, profile management
+- **lunar-calendar-engine.js**: Pure astronomical calculations
+- **priestly-divisions.js**: Priestly cycle logic only
+- **event-resolver.js**: Event → JD resolution
+
+### 2. Stateless Calculations
+- `LunarCalendarEngine` is a stateless class - you pass config, get results
+- Can create temporary instances for one-off calculations
+- Caches are per-instance, not global
+
+### 3. Profile-Based Configuration
+All calendar calculations depend on profile settings:
 ```javascript
-class LunarCalendarEngine {
-  constructor(astroEngine) {
-    this.astro = astroEngine;
-    this._virgoCache = {};      // Instance-owned Virgo cache
-    this._moonEventsCache = {}; // Instance-owned moon events cache
-    this.config = { ... };
-  }
-  
-  // Requires explicit location - no fallbacks to global state
-  generateYear(year, location) {
-    if (!location) throw new Error('location required');
-    // Uses instance caches
-  }
-  
-  getYearStartPoint(year, location) {
-    if (!location) throw new Error('location required');
-    if (this.config.yearStartRule === 'virgoFeet') {
-      return this._findVirgoFeetFullMoon(year, location);
-    }
-    // ...
-  }
-  
-  _findVirgoFeetFullMoon(year, location) {
-    const cacheKey = `${year}_${location.lat.toFixed(4)}_${location.lon.toFixed(4)}`;
-    if (this._virgoCache[cacheKey]) {
-      return new Date(this._virgoCache[cacheKey].selectedFullMoon);
-    }
-    // Calculate and store in instance cache
-    this._virgoCache[cacheKey] = result;
-    return result.date;
-  }
-  
-  getVirgoCalculation(year, location) {
-    const cacheKey = `${year}_${location.lat.toFixed(4)}_${location.lon.toFixed(4)}`;
-    return this._virgoCache[cacheKey] || null;
-  }
+profile = {
+  moonPhase: 'full' | 'new',           // When does month start?
+  dayStartTime: 'morning' | 'evening', // When does day start?
+  yearStartRule: 'equinox' | 'virgoFeet',
+  sabbathMode: 'lunar' | 'saturday',
+  priestlyCycleAnchor: 'destruction' | 'dedication'
 }
 ```
 
-### Deprecated Global Functions
+### 4. Anchor Points
+Priestly cycle uses historical anchor:
+- **Temple Destruction (70 AD)**: 9th of Av - Jehoiarib serving
+- **Temple Dedication (959 BC)**: 15th of Month 7 - Jehoiarib serving
+Both are validated to align (24 courses × weeks should match)
 
-The following global functions are now deprecated wrappers:
-- `findVirgoFeetFullMoon(year, location)` → delegates to `AppStore.getEngine()._findVirgoFeetFullMoon()`
-- `getVirgoCalculation(year, location)` → delegates to `AppStore.getEngine().getVirgoCalculation()`
+## File Dependencies
 
-### Removed Global State
-
-- `AstroEngines.virgoCache` - REMOVED (was global, now instance-owned)
-- `window.state` fallbacks - REMOVED from Virgo functions (location is now required)
-
-### Phase 2: Polymorphic Year Start Rules (Future)
-
-```javascript
-// Base interface
-class YearStartRule {
-  getYearStart(year, location, astroEngine) {
-    throw new Error('Abstract method');
-  }
-}
-
-// Implementations
-class EquinoxRule extends YearStartRule { ... }
-class VirgoFeetRule extends YearStartRule { ... }
-class ThirteenDaysBeforeRule extends YearStartRule { ... }
-
-// Usage
-const engine = new LunarCalendarEngine(getAstroEngine());
-engine.setYearStartRule(new VirgoFeetRule());
+```
+astronomy-engine-abstraction.js
+        │
+        │ provides astroEngine
+        ▼
+lunar-calendar-engine.js ◄───────────────────────┐
+        │                                         │
+        │ used by                                 │ creates temp instances
+        ▼                                         │
+app-store.js ─────────────────────────────────────┤
+        │                                         │
+        │ provides state                          │
+        ▼                                         │
+priestly-divisions.js ────────────────────────────┘
+        │
+        │ provides getPriestlyCourse()
+        ▼
+event-resolver.js
+        │
+        │ resolves events to JD
+        ▼
+biblical-timeline.js (UI rendering)
 ```
 
----
+## Common Mistakes to Avoid
 
-## Benefits of This Design
+1. **Don't bypass the calendar engine** - Always use `LunarCalendarEngine` for lunar date calculations, not hand-rolled formulas
 
-1. **True Isolation**: Each `LunarCalendarEngine` instance owns its caches
-2. **No Global Pollution**: Creating engines for timezone guide can't affect main calendar
-3. **Testable**: Each component can be tested in isolation
-4. **Memoization**: Caches are per-instance, results are reused within context
-5. **Polymorphic**: Easy to add new year start rules (e.g., Karaite, Hillel II)
-6. **Explicit Dependencies**: No hidden state, all inputs are parameters
+2. **Don't ignore the profile** - Calendar results depend on profile settings. Always pass profile to functions.
+
+3. **Don't assume month lengths** - Lunar months vary (29-30 days). Use the generated calendar.
+
+4. **Don't cache across profiles** - Different profiles produce different calendars. Clear caches when profile changes.
+
+5. **Don't mix coordinate systems** - JD (Julian Day) is the universal reference. Convert to/from Gregorian or Lunar through proper functions.

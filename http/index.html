@@ -95,6 +95,12 @@
         padding: 0 !important;
         overflow: hidden !important;
       }
+      /* About/tutorial page: allow scroll so content is not clipped */
+      body.view-tutorial .main-layout,
+      body.view-tutorial #content-area {
+        overflow: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
       
       /* Bible/Reader page fills content area */
       #bible-explorer-page,
@@ -678,7 +684,7 @@
               /^\/[^/]+\/[^/]+\/\d{4}-\d{2}-\d{2}\//.test(pathname)) {
             e.preventDefault();
             AppStore.dispatch({ type: 'URL_CHANGED', url: url });
-            if (window.history.pushState) window.history.pushState({}, '', url.pathname + url.search);
+            if (window.history.pushState) window.history.pushState({}, '', url.pathname + url.search + (url.hash || ''));
           }
         } catch (err) { /* ignore */ }
       }, true);

@@ -1,7 +1,38 @@
 // Day Detail Panel Functions
 // Extracted from index.html for Phase 4 refactoring
 
-// Note: julianCalendarToJDN, jdnToWeekday, isBeforeGregorianReform are defined in astronomy-utils.js
+// Check if a day is a Sabbath based on current sabbath mode
+function isSabbath(dayObj) {
+  if (!dayObj) return false;
+  const state = typeof AppStore !== 'undefined' ? AppStore.getState() : (window.state || {});
+  const sabbathMode = state.sabbathMode || 'lunar';
+  
+  if (sabbathMode === 'lunar') {
+    return [8, 15, 22, 29].includes(dayObj.lunarDay);
+  }
+  
+  // For non-lunar sabbaths, check weekday
+  const weekdayMap = { sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6 };
+  const targetDay = weekdayMap[sabbathMode] ?? 6; // default to Saturday
+  const weekday = dayObj.weekday !== undefined ? dayObj.weekday : dayObj.gregorianDate?.getUTCDay();
+  return weekday === targetDay;
+}
+
+// Calculate Julian Day Number from Julian calendar date (year, month 0-indexed, day)
+function julianCalendarToJDN(year, month, day) {
+  // Convert 0-indexed month to 1-indexed
+  const m = month + 1;
+  const a = Math.floor((14 - m) / 12);
+  const y = year + 4800 - a;
+  const mm = m + 12 * a - 3;
+  // Julian calendar formula
+  return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
+}
+
+// Calculate day of week from Julian Day Number (0 = Sunday, 6 = Saturday)
+function jdnToWeekday(jdn) {
+  return (jdn + 1) % 7;
+}
 
 // Get formatted date components (handles Julian calendar for pre-1582 dates)
 // Note: Dates from _jdToDate() already have Julian calendar components stored,
@@ -42,7 +73,7 @@ function getFormattedDateParts(date) {
     monthName: months[month],
     shortMonthName: shortMonths[month],
     isJulian,
-    calendarSuffix: ''  // NASA convention: no suffix, dates < 1582 are Julian
+    calendarSuffix: isJulian ? ' (Julian)' : ''
   };
 }
 
@@ -261,7 +292,7 @@ function showDayDetail(dayObj, month) {
         }
         
         const stellariumDate = stellariumDateTime.toISOString().split('.')[0] + 'Z';
-        stellariumLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link">🔭 View in Stellarium</a>`;
+        stellariumLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link"><img src="https://stellarium-web.org/favicon.ico" alt="" onerror="this.style.display='none'">View in Stellarium</a>`;
         
         // Build explanation based on moon phase type and day start settings
         // Stellarium link is stored separately to put in header
@@ -354,6 +385,23 @@ function showDayDetail(dayObj, month) {
       // For Renewed Moon on Day 1, include the Stellarium link in the header
       const showStellarium = feast.name === 'Renewed Moon' && dayObj.lunarDay === 1 && stellariumLink;
       
+      // Build feast chapter link if present
+      let feastChapterLink = '';
+      if (feast.chapter) {
+        let chapterPath = feast.chapter;
+        let section = null;
+        const hashIdx = chapterPath.indexOf('#');
+        if (hashIdx !== -1) {
+          section = chapterPath.slice(hashIdx + 1);
+          chapterPath = chapterPath.slice(0, hashIdx);
+        }
+        let chapterId = chapterPath.replace(/^\/chapters\//, '').replace(/\/$/, '');
+        // Convert dashes to underscores and fix title case: "18-appointed-times" -> "18_Appointed_Times"
+        chapterId = chapterId.split('-').map((part, i) => i === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1)).join('_');
+        const sectionParam = section ? `,section:'${section}'` : '';
+        feastChapterLink = `<a href="#" class="day-detail-feast-link" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${chapterId}'${sectionParam}}})">Learn more &rarr;</a>`;
+      }
+      
       const item = document.createElement('div');
       item.className = 'day-detail-feast-item';
       item.innerHTML = `
@@ -365,8 +413,7 @@ function showDayDetail(dayObj, month) {
           </div>
           <div class="day-detail-feast-desc">${feastDescription}</div>
           ${basisHtml}
-          ${feast.chapter ? `<a href="${feast.chapter}" class="day-detail-feast-link">Learn more &rarr;</a>` : ''}
-          ${feast.symbol ? `<button class="day-detail-symbol-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${feast.symbol.replace('/symbols/', '').toLowerCase()}'}})">📖 Symbol Study</button>` : ''}
+          ${feastChapterLink}
         </div>
       `;
       feastsContainer.appendChild(item);
@@ -402,7 +449,7 @@ function showDayDetail(dayObj, month) {
         <div class="feast-basis">
           The Spring Equinox ${verb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year} at ${timeStr}.
         </div>
-        <a href="/chapters/08-when-does-the-year-start/" class="day-detail-feast-link">Learn more &rarr;</a>
+        <a href="#" class="day-detail-feast-link" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'08_When_does_the_Year_Start'}})">Learn more &rarr;</a>
       </div>
     `;
     feastsContainer.appendChild(item);
@@ -430,7 +477,7 @@ function showDayDetail(dayObj, month) {
       const eclipseFormatted = formatTimeInObserverTimezone(eclipseTime);
       eclipseTimeStr = ` at ${eclipseFormatted.full}`;
       const stellariumDate = eclipseTime.toISOString().split('.')[0] + 'Z';
-      stellariumBloodMoonLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link">🔭 View in Stellarium</a>`;
+      stellariumBloodMoonLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link"><img src="https://stellarium-web.org/favicon.ico" alt="" onerror="this.style.display='none'">View in Stellarium</a>`;
     }
     
     const item = document.createElement('div');
@@ -542,10 +589,7 @@ function showDayDetail(dayObj, month) {
       
       // For Virgo rule, use shared methodology function
       if (state.yearStartRule === 'virgoFeet') {
-        // Get Virgo calculation from engine instance (no global state)
-        const engine = typeof AppStore !== 'undefined' ? AppStore.getEngine() : null;
-        const location = { lat: state.lat, lon: state.lon };
-        const virgoCalc = engine ? engine.getVirgoCalculation(state.year, location) : null;
+        const virgoCalc = getVirgoCalculation(state.year);
         if (virgoCalc) {
           // Use the shared methodology function with calculation details
           virgoExplanationHtml = getVirgoMethodologyHtml({ 
@@ -703,70 +747,26 @@ function showDayDetail(dayObj, month) {
         ? makeCitationClickable(verse, event.title)
         : verse;
       
-      // Add condition indicator for Sabbath/Jubilee year events or year-specific events
+      // Determine if viewing original year or anniversary
       let conditionBadge = '';
-      let eventClass = event.condition ? ' conditional-event' : '';
-      if (event.condition === 'sabbath_year') {
-        conditionBadge = '<span class="event-condition-badge sabbath-year-badge" title="This commandment applies during Sabbath Years (Year of Release)">🌾 Sabbath Year</span>';
-      } else if (event.condition === 'jubilee_year') {
-        conditionBadge = '<span class="event-condition-badge jubilee-year-badge" title="This commandment applies during Jubilee Years">🎺 Jubilee Year</span>';
-      } else if (event.condition && event.condition.startsWith('year_')) {
-        const eventYear = parseInt(event.condition.substring(5));
-        const yearDisplay = eventYear > 0 ? `${eventYear} AD` : `${Math.abs(eventYear)} BC`;
+      let eventClass = '';
+      const eventYear = event.originalYear;
+      
+      if (eventYear !== null && eventYear !== undefined) {
         const lunarMonth = month.monthNumber;
         const lunarDay = dayObj.lunarDay;
-        
-        // Check if this is the Temple Dedication event and if the profile uses it as the priestly cycle anchor
-        const isTempleDedication = eventYear === -958 && lunarMonth === 7 && lunarDay === 15;
-        const priestlyCycleAnchor = state.priestlyCycleAnchor || 'destruction';
-        const usesDedicationAnchor = priestlyCycleAnchor === 'dedication';
+        const yearDisplay = event.yearStr || (eventYear <= 0 ? `${1 - eventYear} BC` : `${eventYear} AD`);
         
         if (gregorianYear === eventYear) {
-          // Viewing the actual historical year - show "Original Event" badge
-          let badgeText = `🏛️ Original Event (${yearDisplay})`;
-          let badgeTitle = 'This is the year this event originally occurred';
-          
-          if (isTempleDedication) {
-            if (usesDedicationAnchor) {
-              badgeText = `🏛️ Original Event (${yearDisplay}) — Priestly Cycle Anchor`;
-              badgeTitle = 'This is the configured anchor for calculating the priestly course cycle';
-              eventClass = ' historical-event priestly-anchor-event';
-            } else {
-              badgeText = `🏛️ Original Event (${yearDisplay})`;
-              badgeTitle = 'This event occurred in this year. Your profile uses the 70 AD Temple Destruction as the priestly cycle anchor, not this date.';
-            }
-          }
-          
-          conditionBadge = `<span class="event-condition-badge historical-event-badge" title="${badgeTitle}">${badgeText}</span>`;
+          // Viewing the actual historical year
+          conditionBadge = `<span class="event-condition-badge historical-event-badge" title="This is the year this event originally occurred">🏛️ Original Event</span>`;
           eventClass = ' historical-event';
         } else {
-          // Viewing a different year - show anniversary with calendar link
+          // Viewing anniversary - add calendar link to original year
           const calendarLink = `<a href="#" class="event-year-calendar-link" onclick="navigateToCalendarDate(${eventYear}, ${lunarMonth}, ${lunarDay}); return false;" title="View this date in ${yearDisplay}">📅</a>`;
-          
-          let badgeText = `${calendarLink} Anniversary (${yearDisplay})`;
-          let badgeTitle = `Anniversary of event from ${yearDisplay}`;
-          
-          if (isTempleDedication) {
-            if (usesDedicationAnchor) {
-              badgeText = `${calendarLink} Anniversary (${yearDisplay}) — Priestly Cycle Anchor`;
-              badgeTitle = 'Anniversary of the Temple Dedication — this is the configured anchor for calculating the priestly course cycle';
-              eventClass = ' anniversary-event priestly-anchor-event';
-            } else {
-              badgeTitle = `Anniversary of the Temple Dedication. Your profile uses the 70 AD Temple Destruction as the priestly cycle anchor.`;
-            }
-          }
-          
-          conditionBadge = `<span class="event-condition-badge anniversary-event-badge" title="${badgeTitle}">${badgeText}</span>`;
-          eventClass = eventClass || ' anniversary-event';
+          conditionBadge = `<span class="event-condition-badge anniversary-event-badge" title="Anniversary of event from ${yearDisplay}">${calendarLink} Anniversary</span>`;
+          eventClass = ' anniversary-event';
         }
-      } else if (event.condition && event.condition.startsWith('moonPhase_')) {
-        const phase = event.condition.substring(10);
-        const phaseLabel = phase === 'full' ? 'Full Moon' : phase === 'dark' ? 'Dark Moon' : 'Crescent';
-        const phaseIcon = phase === 'full' ? '🌕' : phase === 'dark' ? '🌑' : '🌙';
-        const isCurrentPhase = state.moonPhase === phase;
-        const matchClass = isCurrentPhase ? ' moonphase-match' : ' moonphase-other';
-        conditionBadge = `<span class="event-condition-badge moonphase-event-badge${matchClass}" title="This event date is based on ${phaseLabel} calendar (Day ${dayObj.lunarDay})${isCurrentPhase ? ' — matches your current calendar' : ''}">${phaseIcon} ${phaseLabel} Calendar</span>`;
-        eventClass = ' moonphase-event';
       }
       
       // Extract context citation (book + chapter) from verse reference for "v. X" style references
@@ -797,7 +797,24 @@ function showDayDetail(dayObj, month) {
       // Add book chapter link if present
       let bookLinkHtml = '';
       if (event.bookChapter) {
-        bookLinkHtml = `<div class="bible-event-book-link"><a href="${event.bookChapter}" target="_blank" onclick="event.stopPropagation();">📖 Read more in the book chapter</a></div>`;
+        // Extract chapter ID from path like "/chapters/13_Herod_the_Great/" or "/chapters/extra/e03_Herods_Appointment/"
+        let articlePath = event.bookChapter;
+        let section = null;
+        
+        // Extract section anchor if present
+        const hashIdx = articlePath.indexOf('#');
+        if (hashIdx !== -1) {
+          section = articlePath.slice(hashIdx + 1);
+          articlePath = articlePath.slice(0, hashIdx);
+        }
+        
+        let chapterId = articlePath
+          .replace(/^\/chapters\//, '')  // Remove /chapters/ prefix
+          .replace(/\/$/, '');           // Remove trailing slash
+        
+        // Build the AppStore dispatch params
+        const sectionParam = section ? `,section:'${section}'` : '';
+        bookLinkHtml = `<div class="bible-event-book-link"><a href="#" onclick="event.preventDefault();event.stopPropagation();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${chapterId}'${sectionParam}}})">📖 Read more in the book chapter</a></div>`;
       }
       
       // Add expandable details section if present
@@ -844,10 +861,33 @@ function showDayDetail(dayObj, month) {
         ? `<div class="bible-event-verse">${verseLink}</div>` 
         : '';
       
+      // Build timeline link if this event has a historical event ID
+      let timelineLinkHtml = '';
+      const historicalEventId = event._historicalEvent?.id;
+      if (historicalEventId) {
+        timelineLinkHtml = `<a href="#" class="bible-event-timeline-link" onclick="viewEventOnTimeline('${historicalEventId}'); return false;" title="View on Timeline">📊</a>`;
+      }
+      
+      // Build display title with icon and year (for anniversary events)
+      let displayTitle = event.title || 'Untitled Event';
+      
+      // Prepend icon if present and not already in title
+      if (event.icon && !displayTitle.startsWith(event.icon)) {
+        displayTitle = `${event.icon} ${displayTitle}`;
+      }
+      
+      // Add year if available and not already in title
+      if (event.yearStr && !displayTitle.includes(event.yearStr)) {
+        displayTitle = `${displayTitle} (${event.yearStr})`;
+      }
+      
       eventsHtml += `
         <div class="bible-event-item${eventClass}">
           ${conditionBadge}
-          <div class="bible-event-title">${event.title || 'Untitled Event'}</div>
+          <div class="bible-event-title-row">
+            <div class="bible-event-title">${displayTitle}</div>
+            ${timelineLinkHtml}
+          </div>
           ${descriptionHtml}
           ${quoteHtml}
           ${imageHtml}
@@ -1297,6 +1337,17 @@ document.addEventListener('click', (e) => {
     hidePriestlyInfoPopup();
   }
 });
+
+// View an event on the timeline (navigates to timeline view and opens event detail)
+function viewEventOnTimeline(eventId) {
+  if (typeof AppStore !== 'undefined') {
+    // Switch to timeline view
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'timeline' });
+    // Then set the event to show (after view is set, so timeline state isn't cleared)
+    AppStore.dispatch({ type: 'SET_TIMELINE_EVENT', eventId: eventId });
+  }
+}
+window.viewEventOnTimeline = viewEventOnTimeline;
 
 // Navigate to a specific calendar date from day detail (for historical events)
 function navigateToCalendarDate(year, lunarMonth, lunarDay) {

@@ -224,10 +224,13 @@ async function loadHistoricalEvents() {
  * @returns {Promise<Array>} Array of resolved events with startJD, dates, etc.
  */
 async function getResolvedEvents() {
+  console.log('[EventsCache] getResolvedEvents called');
   const profile = typeof EventResolver !== 'undefined' ? EventResolver.DEFAULT_PROFILE : null;
+  console.log('[EventsCache] EventResolver available:', typeof EventResolver !== 'undefined', 'profile:', profile?.name || 'null');
   
   // Return RAM cache if available
   if (resolvedEventsCache) {
+    console.log('[EventsCache] Returning RAM cache:', resolvedEventsCache.length, 'events');
     return resolvedEventsCache;
   }
   
@@ -237,6 +240,7 @@ async function getResolvedEvents() {
   // Try localStorage cache (persists across page loads)
   const storedEvents = loadResolvedEventsFromStorage(profile);
   if (storedEvents) {
+    console.log('[EventsCache] Returning localStorage cache:', storedEvents.length, 'events');
     resolvedEventsCache = storedEvents;
     return storedEvents;
   }
@@ -245,11 +249,17 @@ async function getResolvedEvents() {
   clearOldEventCaches();
   
   // Load raw data (prefer v2)
+  console.log('[EventsCache] Loading raw data...');
   let data = await loadHistoricalEventsV2();
+  console.log('[EventsCache] loadHistoricalEventsV2 returned:', data ? (data.events?.length || 0) + ' events' : 'null');
   if (!data) {
     data = await loadHistoricalEvents();
+    console.log('[EventsCache] loadHistoricalEvents fallback returned:', data ? (data.events?.length || 0) + ' events' : 'null');
   }
-  if (!data) return [];
+  if (!data) {
+    console.warn('[EventsCache] No data available');
+    return [];
+  }
   
   // Resolve events using EventResolver
   if (typeof EventResolver === 'undefined') {
@@ -269,23 +279,36 @@ async function getResolvedEvents() {
         // Get gregorian date from resolved JD
         const gregorian = EventResolver.julianDayToGregorian(resolvedEvent.startJD);
         
-        // Start with original lunar data or empty object
-        let lunar = { ...(event.dates?.lunar || {}) };
+        // Start with original lunar data from source (v2 format uses start.lunar)
+        // Priority: resolver's _lunar fields > event.start.lunar > event.dates.lunar
+        let lunar = {};
         
-        // Try to get lunar date from resolver if available
-        if (typeof EventResolver.julianDayToLunar === 'function') {
+        // First, get original stipulated month/day from source data
+        const sourceLunar = event.start?.lunar || event.dates?.lunar || {};
+        if (sourceLunar.month) lunar.month = sourceLunar.month;
+        if (sourceLunar.day) lunar.day = sourceLunar.day;
+        
+        // Use resolver's calculated lunar values (which preserve original month/day)
+        if (resolvedEvent._lunarYear !== undefined) lunar.year = resolvedEvent._lunarYear;
+        if (resolvedEvent._lunarMonth !== undefined) lunar.month = resolvedEvent._lunarMonth;
+        if (resolvedEvent._lunarDay !== undefined) lunar.day = resolvedEvent._lunarDay;
+        
+        // Try to get full lunar date from JD if we're missing year
+        if (lunar.year === undefined && typeof EventResolver.julianDayToLunar === 'function') {
           try {
             const resolvedLunar = EventResolver.julianDayToLunar(resolvedEvent.startJD, profile);
             if (resolvedLunar) {
-              lunar = { ...lunar, ...resolvedLunar };
+              if (!lunar.year && resolvedLunar.year !== undefined) lunar.year = resolvedLunar.year;
+              if (!lunar.month && resolvedLunar.month !== undefined) lunar.month = resolvedLunar.month;
+              if (!lunar.day && resolvedLunar.day !== undefined) lunar.day = resolvedLunar.day;
             }
           } catch (e) {
-            // Keep original lunar date if conversion fails
+            // Keep what we have if conversion fails
           }
         }
         
-        // ALWAYS ensure year is set from gregorian if not in lunar
-        if (!lunar.year && gregorian && gregorian.year !== null) {
+        // Fallback: ensure year is set from gregorian if still missing
+        if (lunar.year === undefined && gregorian && gregorian.year !== null) {
           lunar.year = gregorian.year;
         }
         
@@ -1076,9 +1099,20 @@ async function openEventDetail(eventId) {
   // Article link - convert article path to reader dispatch
   const articleLink = document.getElementById('event-detail-article-link');
   if (normalizedEvent.article) {
-    // Extract chapter ID from article path (e.g., "/chapters/13_Herod/" -> "13_Herod")
+    // Extract chapter ID and optional section anchor from article path
+    // e.g., "/chapters/13_Herod_the_Great/#years-of-high-priests" -> chapterId: "13_Herod_the_Great", section: "years-of-high-priests"
     // or "/chapters/extra/e03_Herods_Appointment/" -> "extra/e03_Herods_Appointment"
-    let chapterId = normalizedEvent.article
+    let articlePath = normalizedEvent.article;
+    let section = null;
+    
+    // Extract section anchor if present
+    const hashIdx = articlePath.indexOf('#');
+    if (hashIdx !== -1) {
+      section = articlePath.slice(hashIdx + 1);
+      articlePath = articlePath.slice(0, hashIdx);
+    }
+    
+    let chapterId = articlePath
       .replace(/^\/chapters\//, '')  // Remove /chapters/ prefix
       .replace(/\/$/, '');           // Remove trailing slash
     
@@ -1089,7 +1123,7 @@ async function openEventDetail(eventId) {
         AppStore.dispatch({
           type: 'SET_VIEW',
           view: 'reader',
-          params: { contentType: 'timetested', chapterId: chapterId }
+          params: { contentType: 'timetested', chapterId: chapterId, section: section }
         });
       }
     };

@@ -20,6 +20,45 @@ const SYMBOL_DICTIONARY = {
     link: '/symbols/light/'
   },
   
+  'darkness': {
+    name: 'DARKNESS',
+    words: ['darkness', 'dark'],
+    strongs: ['H2822', 'G4655'],
+    is: 'Hidden',
+    is2: 'Concealed Disobedience',
+    does: 'Conceals',
+    does2: 'Blinds',
+    sentence: 'The state of concealing one\'s conduct from scrutiny—living in such a way that deeds are hidden, particularly lawless deeds that cannot bear the exposure of light (visible example)',
+    opposite: 'Light',
+    link: '/symbols/darkness/'
+  },
+  
+  'day': {
+    name: 'DAY',
+    words: ['day', 'days'],
+    strongs: ['H3117', 'G2250'],
+    is: 'Exposure',
+    is2: 'Time of Accountability',
+    does: 'Reveals',
+    does2: 'Judges',
+    sentence: 'The season of visibility and opportunity—the time when conduct is exposed to scrutiny, when work can be done, and when one must live as though being watched',
+    opposite: 'Night',
+    link: '/symbols/day/'
+  },
+  
+  'night': {
+    name: 'NIGHT',
+    words: ['night', 'nights'],
+    strongs: ['H3915', 'G3571'],
+    is: 'Hiddenness',
+    is2: 'Season of Unawareness',
+    does: 'Conceals',
+    does2: 'Closes Opportunity',
+    sentence: 'The season of hiddenness and closed opportunity—the time when conduct is concealed, when work cannot be done, and when spiritual sleep and drunkenness prevail',
+    opposite: 'Day',
+    link: '/symbols/night/'
+  },
+  
   'mountain': {
     name: 'MOUNTAIN',
     words: ['mountain', 'mountains', 'mount'],

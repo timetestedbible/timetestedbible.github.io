@@ -211,7 +211,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'events', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'feasts'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'events', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'feasts'],
   
   /**
    * Parse URL into state
@@ -247,6 +247,9 @@ const URLRouter = {
         interlinearVerse: null,
         timelineEventId: null,
         timelineDurationId: null,
+        timelineZoom: null,
+        timelineCenterYear: null,
+        timelineSearch: null,
         eventsSearch: null,
         eventsType: 'all',
         eventsEra: 'all',
@@ -359,8 +362,14 @@ const URLRouter = {
     if (searchParams.get('strongs')) {
       result.ui.strongsId = searchParams.get('strongs');
     }
+    // Parse 'search' param based on view context
     if (searchParams.get('search')) {
-      result.ui.searchQuery = searchParams.get('search');
+      if (result.content.view === 'timeline') {
+        result.ui.timelineSearch = searchParams.get('search');
+      } else if (result.content.view === 'reader') {
+        result.ui.searchQuery = searchParams.get('search');
+      }
+      // For other views, ignore 'search' param
     }
     if (searchParams.get('person')) {
       result.ui.personId = searchParams.get('person');
@@ -371,11 +380,26 @@ const URLRouter = {
     if (searchParams.get('il')) {
       result.ui.interlinearVerse = parseInt(searchParams.get('il'));
     }
-    if (searchParams.get('event')) {
-      result.ui.timelineEventId = searchParams.get('event');
-    }
-    if (searchParams.get('duration')) {
-      result.ui.timelineDurationId = searchParams.get('duration');
+    // Timeline-specific params (only parse on timeline view)
+    if (result.content.view === 'timeline') {
+      if (searchParams.get('event')) {
+        result.ui.timelineEventId = searchParams.get('event');
+      }
+      if (searchParams.get('duration')) {
+        result.ui.timelineDurationId = searchParams.get('duration');
+      }
+      if (searchParams.get('zoom')) {
+        const zoom = parseFloat(searchParams.get('zoom'));
+        if (!isNaN(zoom) && zoom > 0) {
+          result.ui.timelineZoom = zoom;
+        }
+      }
+      if (searchParams.get('year')) {
+        const year = parseInt(searchParams.get('year'));
+        if (!isNaN(year)) {
+          result.ui.timelineCenterYear = year;
+        }
+      }
     }
     // Events page filters
     if (searchParams.get('eq')) {
@@ -390,14 +414,24 @@ const URLRouter = {
     if (searchParams.get('ev')) {
       result.ui.eventsViewMode = searchParams.get('ev');
     }
-    // Time for calendar view (format: HHMM, e.g., 1430 for 2:30 PM)
+    // Time for calendar view (format: HHMM in local time, e.g., 1430 for 2:30 PM)
+    // URL time is displayed in local time, convert to UTC for storage
     if (searchParams.get('t')) {
       const timeStr = searchParams.get('t');
       if (timeStr.length === 4) {
         const hours = parseInt(timeStr.substring(0, 2));
         const minutes = parseInt(timeStr.substring(2, 4));
         if (!isNaN(hours) && !isNaN(minutes) && hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60) {
-          result.context.time = { hours, minutes };
+          const localTime = { hours, minutes };
+          // Convert local time to UTC using location from URL (or default)
+          const location = result.context.location || { lat: 31.7683, lon: 35.2137 };
+          if (typeof AppStore !== 'undefined' && AppStore.localToUtc) {
+            const now = new Date(); // Approximate date for timezone calc
+            result.context.utcTime = AppStore.localToUtc(localTime, now, location);
+          } else {
+            // Fallback: store as-is if AppStore not available yet
+            result.context.utcTime = localTime;
+          }
         }
       }
     }
@@ -481,6 +515,15 @@ const URLRouter = {
         } else if (contentType === 'symbols') {
           // Parse symbol: /reader/symbols/tree
           if (parts[1]) params.symbol = parts[1].toLowerCase();
+        } else if (contentType === 'symbols-article') {
+          // Parse symbol article: /reader/symbols-article/HOW-SCRIPTURE-TEACHES
+          if (parts[1]) params.article = parts[1];
+        } else if (contentType === 'words') {
+          // Parse word study: /reader/words/H2320
+          if (parts[1]) params.word = parts[1].toUpperCase();
+        } else if (contentType === 'numbers') {
+          // Parse number study: /reader/numbers/666 or /reader/numbers/GEMATRIA
+          if (parts[1]) params.number = parts[1].toUpperCase();
         } else if (contentType === 'timetested') {
           // Parse book chapter: /reader/timetested/chapter-slug
           if (parts[1]) params.chapterId = parts[1];
@@ -561,12 +604,19 @@ const URLRouter = {
     // Query params (UI state)
     const params = new URLSearchParams();
     if (ui.strongsId) params.set('strongs', ui.strongsId);
-    if (ui.searchQuery) params.set('search', ui.searchQuery);
+    // searchQuery is for reader/bible view only - don't serialize on other views
+    if (ui.searchQuery && content.view === 'reader') {
+      params.set('search', ui.searchQuery);
+    }
     if (ui.personId) params.set('person', ui.personId);
-    // Add time to URL for calendar view (format: HHMM, e.g., 1430 for 2:30 PM)
-    if (content.view === 'calendar' && context.time) {
-      const h = String(context.time.hours).padStart(2, '0');
-      const m = String(context.time.minutes).padStart(2, '0');
+    // Add time to URL for calendar view (format: HHMM in local time)
+    // Convert UTC time to local time for URL display
+    if (content.view === 'calendar' && context.utcTime) {
+      const localTime = typeof AppStore !== 'undefined' && AppStore.getLocalTime 
+        ? AppStore.getLocalTime() 
+        : context.utcTime;
+      const h = String(localTime.hours).padStart(2, '0');
+      const m = String(localTime.minutes).padStart(2, '0');
       params.set('t', `${h}${m}`);
     }
     // Add verse to query params for bible content (both 'bible' view and 'reader' view with bible content)
@@ -578,11 +628,27 @@ const URLRouter = {
     if (ui.interlinearVerse && content.view === 'bible') {
       params.set('il', ui.interlinearVerse);
     }
-    if (ui.timelineEventId && content.view === 'timeline') {
-      params.set('event', ui.timelineEventId);
-    }
-    if (ui.timelineDurationId && content.view === 'timeline') {
-      params.set('duration', ui.timelineDurationId);
+    // Timeline params - event/duration/search are mutually exclusive
+    // Only serialize ONE of them (priority: event > duration > search)
+    if (content.view === 'timeline') {
+      if (ui.timelineEventId) {
+        params.set('event', ui.timelineEventId);
+        // Don't serialize search or duration - they should be null if event is set
+      } else if (ui.timelineDurationId) {
+        params.set('duration', ui.timelineDurationId);
+        // Don't serialize search or event - they should be null if duration is set
+      } else if (ui.timelineSearch) {
+        params.set('search', ui.timelineSearch);
+        // Don't serialize event or duration - they should be null if search is set
+      }
+      
+      // Zoom and center year are independent of selection
+      if (ui.timelineZoom) {
+        params.set('zoom', Math.round(ui.timelineZoom * 100) / 100);
+      }
+      if (ui.timelineCenterYear !== null && ui.timelineCenterYear !== undefined) {
+        params.set('year', ui.timelineCenterYear);
+      }
     }
     // Events page filters
     if (content.view === 'events') {
@@ -623,7 +689,12 @@ const URLRouter = {
       
       case 'reader':
         // Build path based on content type
-        const contentType = params.contentType || 'bible';
+        // If no contentType, return empty string (just /reader)
+        if (!params.contentType) {
+          return '';
+        }
+        
+        const contentType = params.contentType;
         let readerPath = '/' + contentType;
         
         if (contentType === 'bible') {
@@ -632,6 +703,12 @@ const URLRouter = {
           if (params.chapter) readerPath += '/' + params.chapter;
         } else if (contentType === 'symbols') {
           if (params.symbol) readerPath += '/' + params.symbol;
+        } else if (contentType === 'symbols-article') {
+          if (params.article) readerPath += '/' + params.article;
+        } else if (contentType === 'words') {
+          if (params.word) readerPath += '/' + params.word;
+        } else if (contentType === 'numbers') {
+          if (params.number) readerPath += '/' + params.number;
         } else if (contentType === 'timetested') {
           if (params.chapterId) readerPath += '/' + params.chapterId;
         }

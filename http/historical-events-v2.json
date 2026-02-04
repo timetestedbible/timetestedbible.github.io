@@ -2345,19 +2345,20 @@
     },
     {
       "id": "suleiman-490-years",
-      "title": "490 Years: Suleiman's Decree to Restoration",
+      "title": "490 Lunar Years: Suleiman's Decree to Restoration",
       "from_event": "suleiman-jerusalem-decree",
       "to_event": "end-of-suleiman-490-years",
       "claimed": {
         "years": 490,
-        "notes": "70 weeks × 7 = 490 years from decree to restore Jerusalem"
+        "unit": "lunar",
+        "notes": "70 weeks × 7 = 490 lunar years from decree to restore Jerusalem"
       },
       "source": {
         "ref": "Daniel 9:24-25",
         "type": "scripture",
         "quote": "Seventy weeks are determined upon thy people and upon thy holy city... from the going forth of the commandment to restore and to build Jerusalem"
       },
-      "notes": "A second fulfillment of Daniel's 70 weeks prophecy. 1535 AD + 490 years = 2025 AD."
+      "notes": "A second fulfillment of Daniel's 70 weeks prophecy using lunar years. 490 lunar years from 1535 AD ends in spring 2026."
     },
     {
       "id": "daniel-70x70-covenant-to-end",
@@ -2709,7 +2710,8 @@
         "post-flood",
         "noah",
         "death"
-      ]
+      ],
+      "icon": "⚰️"
     },
     {
       "id": "methuselah-birth",
@@ -2742,7 +2744,8 @@
         "pre-flood",
         "methuselah",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "lamech-birth",
@@ -2776,7 +2779,8 @@
         "pre-flood",
         "lamech",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "noah-birth",
@@ -2811,7 +2815,8 @@
         "pre-flood",
         "noah",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "enoch-birth",
@@ -2840,7 +2845,8 @@
         "pre-flood",
         "enoch",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "jared-birth",
@@ -2869,7 +2875,8 @@
         "pre-flood",
         "jared",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "mahalaleel-birth",
@@ -2898,7 +2905,8 @@
         "pre-flood",
         "mahalaleel",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "cainan-birth",
@@ -2927,7 +2935,8 @@
         "pre-flood",
         "cainan",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "enos-birth",
@@ -2956,7 +2965,8 @@
         "pre-flood",
         "enos",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "seth-birth",
@@ -2985,7 +2995,8 @@
         "pre-flood",
         "seth",
         "birth"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "adam-creation",
@@ -3023,7 +3034,7 @@
     },
     {
       "id": "flood-begins",
-      "title": "🚢 Great Flood Begins",
+      "title": "Great Flood Begins",
       "type": "catastrophe",
       "description": "In Noah's 600th year, on the 17th day of the 2nd month, the fountains of the deep burst forth and the windows of heaven opened. Rain falls for 40 days and nights.",
       "start": {
@@ -3054,11 +3065,12 @@
         "judgment",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "noah-enters-ark",
-      "title": "🚢 Noah Enters the Ark",
+      "title": "Noah Enters the Ark",
       "type": "biblical-event",
       "description": "Noah enters the ark with his family and all the animals, 7 days before the flood begins. Noah was 600 years old when the flood waters came. God shut the door after 7 days of waiting.",
       "start": {
@@ -3093,11 +3105,12 @@
         "ark",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "rain-continues-40-days",
-      "title": "🚢 Rain Continues 40 Days",
+      "title": "Rain Continues 40 Days",
       "type": "catastrophe",
       "description": "Rain continues for 40 days and nights. Waters increase and lift the ark. Mountains are covered by 15 cubits as the floodwaters rise.",
       "start": {
@@ -3131,11 +3144,12 @@
         "rain",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "waters-prevail-150-days",
-      "title": "🚢 Waters Prevail 150 Days",
+      "title": "Waters Prevail 150 Days",
       "type": "catastrophe",
       "description": "The waters prevailed upon the earth for 150 days total from the start of the flood. This period includes the 40 days of rain plus the continued prevailing of the waters.",
       "start": {
@@ -3159,11 +3173,12 @@
         "waters",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "ark-rests-ararat",
-      "title": "🚢 Ark Rests on Mountains of Ararat",
+      "title": "Ark Rests on Mountains of Ararat",
       "type": "milestone",
       "description": "On the 17th day of the 7th month, after 150 days of prevailing waters (exactly 5 months later, assuming 30-day months), the ark comes to rest on the mountains of Ararat as floodwaters recede.",
       "start": {
@@ -3193,11 +3208,12 @@
         "ararat",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "mountain-tops-seen",
-      "title": "🚢 Tops of Mountains Seen",
+      "title": "Tops of Mountains Seen",
       "type": "milestone",
       "description": "On the 1st day of the 10th month, the tops of the mountains are seen. Waters continue to decrease.",
       "start": {
@@ -3227,13 +3243,14 @@
         "noah",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "noah-sends-raven",
-      "title": "🚢 Noah Sends Out the Raven",
+      "title": "Noah Sends Raven and Dove",
       "type": "biblical-event",
-      "description": "At the end of forty days after the mountain tops were seen, Noah opens the window of the ark and sends forth a raven. The raven went forth to and fro, until the waters were dried up, and did not return.",
+      "description": "At the end of forty days after the mountain tops were seen, Noah opens the window of the ark and sends forth a raven, which went forth to and fro. He also sends a dove, but it finds no rest and returns. The raven did not return.",
       "start": {
         "lunar": {
           "month": 11,
@@ -3261,26 +3278,27 @@
         "raven",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢🦅🕊️"
     },
     {
       "id": "dove-olive-leaf",
-      "title": "🕊️ Dove Returns with Olive Leaf",
+      "title": "Dove Returns with Olive Leaf",
       "type": "biblical-event",
       "description": "Noah sends a dove three times: first it returns with nothing (no rest), second it returns with an olive leaf (waters abated), third it doesn't return (earth ready).",
       "start": {
         "lunar": {
           "month": 11,
-          "day": 18
+          "day": 17
         },
         "relative": {
           "event": "noah-sends-raven",
           "offset": {
-            "days": 8
+            "days": 7
           },
           "direction": "after"
         },
-        "notes": "Day dove returns with olive leaf: raven + 1 day (first dove) + 7 days (second dove)"
+        "notes": "Genesis 8:8 'Also he sent forth a dove' - same day as raven. After 7 days (v10), second dove returns with olive leaf."
       },
       "certainty": "high",
       "sources": [
@@ -3295,11 +3313,12 @@
         "noah",
         "dove",
         "olive-leaf"
-      ]
+      ],
+      "icon": "🚢🕊️🌿"
     },
     {
       "id": "waters-dried-up",
-      "title": "🚢 Waters Dried Up - Noah Removes Ark Covering",
+      "title": "Waters Dried Up - Noah Removes Ark Covering",
       "type": "milestone",
       "description": "In the 601st year, on the 1st day of the 1st month, the waters were dried up from off the earth. Noah removes the covering of the ark and sees that the face of the ground was dry.",
       "start": {
@@ -3329,11 +3348,12 @@
         "noah",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "earth-dried",
-      "title": "🚢 Earth Completely Dry - Exit from Ark",
+      "title": "Earth Completely Dry - Exit from Ark",
       "type": "milestone",
       "description": "In the 601st year, on the 27th day of the 2nd month, the earth was completely dried. God commands Noah, his family, and all the animals to exit the ark.",
       "start": {
@@ -3368,11 +3388,12 @@
         "noah",
         "days-of-noah"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🚢"
     },
     {
       "id": "rain-ends",
-      "title": "🌧️ Rain Ends (40 Days Complete)",
+      "title": "Rain Ends (40 Days Complete)",
       "type": "milestone",
       "description": "After 40 days and 40 nights of continuous rain, the rain from heaven is stopped. Waters continue to prevail on the earth for 150 days total.",
       "start": {
@@ -3401,11 +3422,12 @@
         "flood",
         "noah",
         "days-of-noah"
-      ]
+      ],
+      "icon": "🚢🌧️"
     },
     {
       "id": "noahs-altar",
-      "title": "⛩️ Noah Builds Altar & Offers Sacrifice",
+      "title": "Noah Builds Altar & Offers Sacrifice",
       "type": "biblical-event",
       "description": "After exiting the ark, Noah builds an altar unto the LORD and offers burnt offerings. God smells the sweet savor and promises never to curse the ground again or destroy all living things with a flood.",
       "start": {
@@ -3431,11 +3453,12 @@
         "noah",
         "post-flood",
         "sacrifice"
-      ]
+      ],
+      "icon": "🚢⛩️"
     },
     {
       "id": "rainbow-covenant",
-      "title": "🌈 Rainbow Covenant",
+      "title": "Rainbow Covenant",
       "type": "biblical-event",
       "description": "God establishes His covenant with Noah and all living creatures - the rainbow is set as a sign that God will never again destroy the earth with a flood.",
       "start": {
@@ -3461,7 +3484,8 @@
         "noah",
         "post-flood",
         "covenant"
-      ]
+      ],
+      "icon": "🚢🌈"
     },
     {
       "id": "abraham-birth",
@@ -3498,7 +3522,8 @@
         "patriarch",
         "flood-calculation"
       ],
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "👶"
     },
     {
       "id": "abraham-departs-haran",
@@ -3660,7 +3685,7 @@
     },
     {
       "id": "isaac-birth",
-      "title": "👶 Isaac Born",
+      "title": "Isaac Born",
       "type": "birth",
       "priority": 1,
       "description": "Isaac is born to Abraham (100 years old) and Sarah (90 years old), fulfilling God's promise of a son. This is 25 years after Abraham left Haran at age 75.",
@@ -3686,11 +3711,18 @@
           "quote": "Shall a child be born unto him that is **an hundred years old**? and shall Sarah, that is **ninety years old**, bear?"
         }
       ],
-      "tags": ["isaac", "birth", "patriarch", "promise", "abraham"]
+      "tags": [
+        "isaac",
+        "birth",
+        "patriarch",
+        "promise",
+        "abraham"
+      ],
+      "icon": "👶"
     },
     {
       "id": "isaac-marries-rebekah",
-      "title": "💒 Isaac Marries Rebekah",
+      "title": "Isaac Marries Rebekah",
       "type": "biblical-event",
       "description": "Isaac marries Rebekah at age 40. Abraham's servant had been sent to find a wife for Isaac from Abraham's family in Mesopotamia.",
       "start": {
@@ -3710,11 +3742,17 @@
           "quote": "And **Isaac was forty years old** when he took Rebekah to wife."
         }
       ],
-      "tags": ["isaac", "rebekah", "marriage", "patriarch"]
+      "tags": [
+        "isaac",
+        "rebekah",
+        "marriage",
+        "patriarch"
+      ],
+      "icon": "💒"
     },
     {
       "id": "jacob-esau-birth",
-      "title": "👶👶 Jacob and Esau Born (Twins)",
+      "title": "Jacob and Esau Born (Twins)",
       "type": "birth",
       "priority": 1,
       "description": "Twin sons Jacob and Esau are born to Isaac (60 years old) and Rebekah after 20 years of marriage. Esau was born first, with Jacob grasping his heel.",
@@ -3735,11 +3773,19 @@
           "quote": "And after that came his brother out, and his hand took hold on Esau's heel; and his name was called Jacob: and **Isaac was threescore years old** when she bare them."
         }
       ],
-      "tags": ["jacob", "esau", "birth", "twins", "patriarch", "israel"]
+      "tags": [
+        "jacob",
+        "esau",
+        "birth",
+        "twins",
+        "patriarch",
+        "israel"
+      ],
+      "icon": "👶👶"
     },
     {
       "id": "abraham-death",
-      "title": "⚰️ Abraham Dies",
+      "title": "Abraham Dies",
       "type": "death",
       "description": "Abraham dies at age 175, 'in a good old age, an old man, and full of years.' Isaac and Ishmael bury him in the cave of Machpelah with Sarah.",
       "start": {
@@ -3759,11 +3805,16 @@
           "quote": "And these are the days of the years of Abraham's life which he lived, **an hundred threescore and fifteen years**. Then Abraham gave up the ghost, and died in a good old age."
         }
       ],
-      "tags": ["abraham", "death", "patriarch"]
+      "tags": [
+        "abraham",
+        "death",
+        "patriarch"
+      ],
+      "icon": "⚰️"
     },
     {
       "id": "jacob-flees-to-laban",
-      "title": "🏃 Jacob Flees to Laban",
+      "title": "Jacob Flees to Laban",
       "type": "biblical-event",
       "description": "After deceiving Isaac to receive Esau's blessing, Jacob flees to his uncle Laban in Haran. Jacob was about 77 years old (derived: 130 when entering Egypt - 39 years Joseph's age - 14 years working for wives = 77).",
       "start": {
@@ -3784,11 +3835,18 @@
         }
       ],
       "notes": "Age derived: Jacob was 130 when entering Egypt (Gen 47:9), Joseph was 39 at that time (30 + 7 + 2), Joseph born end of 14 years with Laban. So Jacob arrived at Laban at 130 - 39 - 14 = 77.",
-      "tags": ["jacob", "laban", "haran", "blessing", "esau"]
+      "tags": [
+        "jacob",
+        "laban",
+        "haran",
+        "blessing",
+        "esau"
+      ],
+      "icon": "🏃"
     },
     {
       "id": "jacob-marries-leah-rachel",
-      "title": "💒 Jacob Marries Leah and Rachel",
+      "title": "Jacob Marries Leah and Rachel",
       "type": "biblical-event",
       "description": "After working 7 years for Rachel, Jacob is deceived by Laban and given Leah instead. He then works another 7 years for Rachel, marrying her a week after Leah.",
       "start": {
@@ -3808,11 +3866,18 @@
           "quote": "And Jacob served **seven years** for Rachel... Fulfil her week, and we will give thee this also for the service which thou shalt serve with me yet **seven other years**."
         }
       ],
-      "tags": ["jacob", "leah", "rachel", "marriage", "laban"]
+      "tags": [
+        "jacob",
+        "leah",
+        "rachel",
+        "marriage",
+        "laban"
+      ],
+      "icon": "💒"
     },
     {
       "id": "joseph-birth",
-      "title": "👶 Joseph Born",
+      "title": "Joseph Born",
       "type": "birth",
       "priority": 1,
       "description": "Joseph is born to Jacob and Rachel at the end of Jacob's 14 years of service to Laban. Jacob was about 91 years old (77 + 14).",
@@ -3834,11 +3899,18 @@
         }
       ],
       "notes": "Joseph was born at end of 14 years service. Jacob entered Egypt at 130 when Joseph was 39, so Jacob was 91 when Joseph was born (130 - 39 = 91).",
-      "tags": ["joseph", "birth", "rachel", "jacob", "patriarch"]
+      "tags": [
+        "joseph",
+        "birth",
+        "rachel",
+        "jacob",
+        "patriarch"
+      ],
+      "icon": "👶"
     },
     {
       "id": "jacob-returns-to-canaan",
-      "title": "🏠 Jacob Returns to Canaan",
+      "title": "Jacob Returns to Canaan",
       "type": "biblical-event",
       "description": "After 20 years with Laban (14 for wives + 6 for flocks), Jacob returns to Canaan with his family, flocks, and possessions. On the way, he wrestles with God and is renamed Israel.",
       "start": {
@@ -3863,11 +3935,18 @@
           "quote": "Thy name shall be called no more Jacob, but **Israel**: for as a prince hast thou power with God and with men."
         }
       ],
-      "tags": ["jacob", "israel", "canaan", "wrestling", "laban"]
+      "tags": [
+        "jacob",
+        "israel",
+        "canaan",
+        "wrestling",
+        "laban"
+      ],
+      "icon": "🏠"
     },
     {
       "id": "isaac-death",
-      "title": "⚰️ Isaac Dies",
+      "title": "Isaac Dies",
       "type": "death",
       "description": "Isaac dies at age 180. Jacob and Esau together bury their father.",
       "start": {
@@ -3887,11 +3966,16 @@
           "quote": "And the days of Isaac were **an hundred and fourscore years**. And Isaac gave up the ghost, and died, and was gathered unto his people."
         }
       ],
-      "tags": ["isaac", "death", "patriarch"]
+      "tags": [
+        "isaac",
+        "death",
+        "patriarch"
+      ],
+      "icon": "⚰️"
     },
     {
       "id": "joseph-sold-into-slavery",
-      "title": "⛓️ Joseph Sold into Slavery",
+      "title": "Joseph Sold into Slavery",
       "type": "biblical-event",
       "description": "Joseph's brothers sell him to Midianite merchants at age 17. He is taken to Egypt and sold to Potiphar, an officer of Pharaoh.",
       "start": {
@@ -3916,11 +4000,17 @@
           "quote": "Then there passed by Midianites merchantmen... and they brought Joseph into Egypt."
         }
       ],
-      "tags": ["joseph", "slavery", "egypt", "brothers"]
+      "tags": [
+        "joseph",
+        "slavery",
+        "egypt",
+        "brothers"
+      ],
+      "icon": "⛓️"
     },
     {
       "id": "joseph-before-pharaoh",
-      "title": "👑 Joseph Before Pharaoh / 🌾 Years of Plenty Begin",
+      "title": "Joseph Before Pharaoh / 🌾 Years of Plenty Begin",
       "type": "biblical-event",
       "priority": 1,
       "description": "At age 30, Joseph interprets Pharaoh's dreams and is made second in command over all Egypt. This begins the 7 years of plenty, during which Joseph gathers grain throughout Egypt.",
@@ -3951,11 +4041,20 @@
           "quote": "And in the **seven plenteous years** the earth brought forth by handfuls. And he gathered up all the food of the seven years."
         }
       ],
-      "tags": ["joseph", "pharaoh", "dreams", "egypt", "ruler", "plenty", "abundance"]
+      "tags": [
+        "joseph",
+        "pharaoh",
+        "dreams",
+        "egypt",
+        "ruler",
+        "plenty",
+        "abundance"
+      ],
+      "icon": "👑"
     },
     {
       "id": "seven-years-famine-begin",
-      "title": "🏜️ Seven Years of Famine Begin",
+      "title": "Seven Years of Famine Begin",
       "type": "biblical-event",
       "priority": 1,
       "description": "The seven years of famine begin, as Joseph had prophesied. The famine was severe not only in Egypt but 'in all lands.' This famine would eventually bring Jacob's family to Egypt.",
@@ -3980,11 +4079,18 @@
           "quote": "And the **seven years of dearth began to come**, according as Joseph had said: and the dearth was in all lands... And the **famine was over all the face of the earth**."
         }
       ],
-      "tags": ["joseph", "egypt", "famine", "drought", "pharaoh"]
+      "tags": [
+        "joseph",
+        "egypt",
+        "famine",
+        "drought",
+        "pharaoh"
+      ],
+      "icon": "🏜️"
     },
     {
       "id": "seven-years-famine-end",
-      "title": "🌾 Seven Years of Famine End",
+      "title": "Seven Years of Famine End",
       "type": "biblical-event",
       "description": "The seven years of famine conclude. Egypt and the surrounding nations survived due to Joseph's wise administration during the years of plenty.",
       "start": {
@@ -4004,11 +4110,17 @@
           "quote": "And there shall arise after them **seven years of famine**; and all the plenty shall be forgotten in the land of Egypt."
         }
       ],
-      "tags": ["joseph", "egypt", "famine", "end"]
+      "tags": [
+        "joseph",
+        "egypt",
+        "famine",
+        "end"
+      ],
+      "icon": "🌾"
     },
     {
       "id": "jacob-enters-egypt",
-      "title": "🇪🇬 Jacob's Family Enters Egypt",
+      "title": "Jacob's Family Enters Egypt",
       "type": "biblical-event",
       "priority": 1,
       "description": "Jacob (Israel) and his entire family move to Egypt in the **2nd year of famine**, settling in Goshen. Jacob was 130 years old; Joseph was 39 (30 + 7 years plenty + 2 years famine). Five years of famine remained.",
@@ -4039,11 +4151,20 @@
           "quote": "And they took their cattle, and their goods... and came into Egypt, Jacob, and all his seed with him."
         }
       ],
-      "tags": ["jacob", "israel", "egypt", "goshen", "famine", "joseph", "2nd-year-famine"]
+      "tags": [
+        "jacob",
+        "israel",
+        "egypt",
+        "goshen",
+        "famine",
+        "joseph",
+        "2nd-year-famine"
+      ],
+      "icon": "🇪🇬"
     },
     {
       "id": "jacob-death",
-      "title": "⚰️ Jacob (Israel) Dies",
+      "title": "Jacob (Israel) Dies",
       "type": "death",
       "description": "Jacob dies in Egypt at age 147, after blessing his sons. His body is embalmed and carried back to Canaan for burial in the cave of Machpelah.",
       "start": {
@@ -4063,11 +4184,18 @@
           "quote": "And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was **an hundred forty and seven years**."
         }
       ],
-      "tags": ["jacob", "israel", "death", "patriarch", "egypt"]
+      "tags": [
+        "jacob",
+        "israel",
+        "death",
+        "patriarch",
+        "egypt"
+      ],
+      "icon": "⚰️"
     },
     {
       "id": "joseph-death",
-      "title": "⚰️ Joseph Dies",
+      "title": "Joseph Dies",
       "type": "death",
       "description": "Joseph dies in Egypt at age 110. Before dying, he makes the Israelites swear to carry his bones out of Egypt when God delivers them.",
       "start": {
@@ -4092,11 +4220,18 @@
           "quote": "And Joseph took an oath of the children of Israel, saying, God will surely visit you, and ye shall carry up my bones from hence."
         }
       ],
-      "tags": ["joseph", "death", "egypt", "bones", "exodus"]
+      "tags": [
+        "joseph",
+        "death",
+        "egypt",
+        "bones",
+        "exodus"
+      ],
+      "icon": "⚰️"
     },
     {
       "id": "thutmose-iii-reign",
-      "title": "👑 Thutmose III - Pharaoh of the Oppression",
+      "title": "Thutmose III - Pharaoh of the Oppression",
       "type": "reign",
       "description": "Thutmose III begins his sole reign over Egypt. He is the Pharaoh from whom Moses fled (Exodus 2:15), and who died after Moses had been in Midian for 40 years (Acts 7:30). His 54-year reign is the longest in the 18th Dynasty, matching the biblical requirement that the Pharaoh of the oppression reigned more than 40 years.",
       "start": {
@@ -4138,11 +4273,12 @@
         "oppression",
         "egyptian-chronology"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "👑"
     },
     {
       "id": "amenhotep-ii-reign",
-      "title": "👑 Amenhotep II - Pharaoh of the Exodus",
+      "title": "Amenhotep II - Pharaoh of the Exodus",
       "type": "reign",
       "description": "Amenhotep II becomes Pharaoh of Egypt. According to Manetho (quoted by Josephus), this is the 'Amenophis' during whose reign the Israelites left Egypt. The biblical date of 1446 BC falls within his reign. His firstborn son died mysteriously (matching the 10th plague), and his successor Thutmose IV was not the Crown Prince.",
       "start": {
@@ -4179,11 +4315,12 @@
         "exodus-pharaoh",
         "egyptian-chronology"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "👑"
     },
     {
       "id": "thutmose-iv-reign",
-      "title": "👑 Thutmose IV - Son Who Was Not Firstborn",
+      "title": "Thutmose IV - Son Who Was Not Firstborn",
       "type": "reign",
       "description": "Thutmose IV becomes Pharaoh of Egypt after his father Amenhotep II. He was NOT the firstborn son—his older brother (the Crown Prince) mysteriously died. Thutmose IV's Dream Stele at the Great Sphinx claims divine legitimacy through a dream, suggesting his succession was unexpected. This aligns with the biblical account that Pharaoh's firstborn son died in the 10th plague.",
       "start": {
@@ -4220,11 +4357,12 @@
         "dream-stele",
         "egyptian-chronology"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "👑"
     },
     {
       "id": "amenhotep-iii-reign",
-      "title": "👑 Amenhotep III - The Magnificent",
+      "title": "Amenhotep III - The Magnificent",
       "type": "reign",
       "description": "Amenhotep III becomes Pharaoh of Egypt, succeeding his father Thutmose IV. His 38-year reign is considered the zenith of Egyptian power and prosperity. He is the grandson of Amenhotep II (the Exodus Pharaoh).",
       "start": {
@@ -4254,11 +4392,12 @@
         "pharaoh",
         "18th-dynasty",
         "egyptian-chronology"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "avaris-palace-abandonment",
-      "title": "🏚️ 18th Dynasty Palace at Avaris Abandoned",
+      "title": "18th Dynasty Palace at Avaris Abandoned",
       "type": "archaeological",
       "description": "Archaeological excavations by Manfred Bietak at Tell el-Dab'a (ancient Avaris) revealed that the 18th Dynasty palace was suddenly and mysteriously abandoned during the reign of Amenhotep II. This palace had been continuously occupied from Ahmose through Thutmose III and Amenhotep II, then was inexplicably deserted—providing archaeological evidence consistent with the Exodus occurring during Amenhotep II's reign.",
       "start": {
@@ -4286,11 +4425,12 @@
         "18th-dynasty",
         "exodus-evidence"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "🏚️"
     },
     {
       "id": "moses-birth",
-      "title": "👶 Moses Born",
+      "title": "Moses Born",
       "type": "birth",
       "description": "Moses is born in Egypt during the period of Israelite oppression. He would live 120 years total: 40 years in Egypt, 40 years in Midian, and 40 years leading Israel through the wilderness. His birth occurs during the reign of a pharaoh who ordered Hebrew male infants to be killed.",
       "start": {
@@ -4327,11 +4467,12 @@
         "egypt",
         "oppression"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "👶"
     },
     {
       "id": "moses-flees-to-midian",
-      "title": "🏃 Moses Flees to Midian",
+      "title": "Moses Flees to Midian",
       "type": "milestone",
       "description": "At age 40, Moses kills an Egyptian who was beating a Hebrew slave. When Pharaoh (Thutmose III) hears of it, Moses flees to Midian where he will spend the next 40 years as a shepherd. The Pharaoh he fled from must reign more than 40 years—Thutmose III reigned 54 years, the longest reign in the 18th Dynasty.",
       "start": {
@@ -4364,11 +4505,12 @@
         "thutmose-iii",
         "flight"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "🏃"
     },
     {
       "id": "thutmose-iii-death",
-      "title": "⚰️ Thutmose III Dies - Pharaoh of Oppression",
+      "title": "Thutmose III Dies - Pharaoh of Oppression",
       "type": "death",
       "description": "Thutmose III, the Pharaoh from whom Moses fled, dies after a 54-year reign. Scripture records that Moses remained in Midian until this pharaoh's death: 'all the men are dead which sought thy life.' His son Amenhotep II succeeds him as the new Pharaoh of Egypt.",
       "start": {
@@ -4401,11 +4543,12 @@
         "thutmose-iii",
         "18th-dynasty"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "⚰️"
     },
     {
       "id": "burning-bush",
-      "title": "🔥 Burning Bush - God Calls Moses",
+      "title": "Burning Bush - God Calls Moses",
       "type": "theophany",
       "description": "After 40 years in Midian, God appears to Moses in a burning bush at Mount Horeb (Sinai) and commissions him to return to Egypt to deliver Israel. This occurs after the death of Thutmose III (the pharaoh who sought Moses' life), with Amenhotep II now on the throne.",
       "start": {
@@ -4443,11 +4586,12 @@
         "sinai",
         "calling"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "🔥"
     },
     {
       "id": "exodus-from-egypt",
-      "title": "🏃 Exodus from Egypt",
+      "title": "Exodus from Egypt",
       "type": "milestone",
       "description": "Israel departs Egypt on the 15th of Nisan, the day after the Passover lamb was slain. The Pharaoh of the Exodus was Amenhotep II (c. 1450–1423 BC), as identified by the Egyptian historian Manetho (via Josephus) and confirmed by 1 Kings 6:1 which places the Exodus 480 years before Solomon's Temple foundation (Spring 966 BC) = 1446 BC.",
       "pharaoh": "amenhotep-ii",
@@ -4499,7 +4643,8 @@
       "articles": [
         "/chapters/08_When_does_the_Year_Start/",
         "/extra/e06_Pharaoh_of_the_Exodus/"
-      ]
+      ],
+      "icon": "🏃"
     },
     {
       "id": "journey-ramses-succoth",
@@ -4767,7 +4912,7 @@
     },
     {
       "id": "moses-death",
-      "title": "⚰️ Moses Dies on Mount Nebo",
+      "title": "Moses Dies on Mount Nebo",
       "type": "death",
       "description": "Moses dies at 120 years old on Mount Nebo in Moab, within sight of the Promised Land but not permitted to enter because he struck the rock at Meribah. His life divides perfectly into three 40-year periods: 40 years in Egypt as a prince, 40 years in Midian as a shepherd, and 40 years in the wilderness as Israel's leader. God buried him in an unknown location.",
       "start": {
@@ -4803,7 +4948,8 @@
         "mount-nebo",
         "wilderness"
       ],
-      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/"
+      "article": "/chapters/extra/e06_Pharaoh_of_the_Exodus/",
+      "icon": "⚰️"
     },
     {
       "id": "jordan-crossing",
@@ -4842,27 +4988,65 @@
       "id": "joshua-long-day",
       "title": "Joshua's Long Day - Sun and Moon Stand Still",
       "type": "battle",
-      "description": "Joshua defeats the five Amorite kings at Gibeon in a battle marked by extraordinary celestial signs. Joshua prayed: 'Sun, stand still at Gibeon, and you, moon, over the Valley of Aijalon.' This was a natural celestial alignment where the sun and moon appeared in opposition (full moon phase), both visible simultaneously—interpreted in ANE omen practices as celestial bodies 'standing still.' More Amorites died from hailstones than from Israel's swords.",
+      "description": "Joshua defeats the five Amorite kings at Gibeon in a battle marked by extraordinary celestial signs. Joshua prayed: 'Sun, stand still at Gibeon, and you, moon, over the Valley of Aijalon.' This was a natural celestial alignment where the sun and moon appeared in opposition (full moon phase, ~90-99% illuminated), both visible simultaneously during daylight—interpreted in ANE omen practices as celestial bodies 'standing still' or 'being silent' (Hebrew damam), a divine sign. The biblical geometry precisely describes the locations: From Upper Beth Horon (observer: 31.87722°N, 35.11861°E), Gibeon (31.84750°N, 35.18639°E) was at ~118° azimuth (sun high in sky at dawn), while Aijalon (31.84028°N, 35.02250°E) was at ~296° azimuth (moon low on opposite horizon). The Book of Jasher (88:63-64) specifies this phenomenon lasted 36 moments (~36 minutes). More Amorites died from hailstones than from Israel's swords. The five kings hid in a cave at Makkedah—typological of the Day of the Lord when kings hide in caves (Revelation 6:15-17). The Gibeonites (Canaanites who made covenant with Israel) were spared—typological of nations seeking the LORD in the last days (Zechariah 8:20-23).",
       "start": {
         "fixed": {
-          "gregorian": {
+          "julian": {
             "year": -1404,
             "month": 1,
-            "day": 23
+            "day": 21
           },
-          "source": "Astronomically determined - full moon opposition, January 1405 BC"
+          "source": "Astronomically determined from celestial geometry at Gibeon. January 21, 1405 BC (Julian) around 5:00 PM local time. Sun azimuth ~118° (elevation ~2°), Moon azimuth ~296° (elevation 12-24°). Full moon phase (~90-99% illuminated)."
+        },
+        "lunar": {
+          "month": 10,
+          "day": 29,
+          "notes": "Full moon of 10th month. Sun and moon in opposition = full moon phase. Day 29-30 is full moon on a full-moon-start calendar."
         }
       },
+      "image": "/assets/img/LongDay.jpg",
+      "contentFile": "/data/notes/joshuas-long-day.txt",
       "certainty": "high",
       "sources": [
         {
           "ref": "Joshua 10:11-14",
           "type": "scripture",
-          "quote": "As they fled before Israel... the LORD hurled large hailstones down on them, and more of them died from the hail than were killed by the swords of the Israelites... 'Sun, stand still at Gibeon, and you, moon, over the Valley of Aijalon.'"
+          "quote": "As they fled before Israel... the LORD hurled large hailstones down on them, and more of them died from the hail than were killed by the swords of the Israelites... 'Sun, stand still at Gibeon, and you, moon, over the Valley of Aijalon.' So the sun stood still, and the moon stopped, until the nation avenged itself on its enemies"
         },
         {
           "ref": "Joshua 10:16-27",
-          "type": "scripture"
+          "type": "scripture",
+          "quote": "The five kings had fled and hidden in the cave at Makkedah... At sunset Joshua gave the order and they took them down from the poles and threw them into the cave where they had been hiding"
+        },
+        {
+          "ref": "Joshua 9:3-27",
+          "type": "scripture",
+          "quote": "The Gibeonites... made a covenant with them... So Joshua made peace with them and made a covenant with them, to let them live"
+        },
+        {
+          "ref": "Revelation 6:15-17",
+          "type": "scripture",
+          "quote": "The kings of the earth... hid in caves and among the rocks of the mountains. They called to the mountains and the rocks, 'Fall on us and hide us from the face of him who sits on the throne'"
+        },
+        {
+          "ref": "Revelation 16:21",
+          "type": "scripture",
+          "quote": "From the sky huge hailstones, each weighing about a hundred pounds, fell on people"
+        },
+        {
+          "ref": "Zechariah 14:7",
+          "type": "scripture",
+          "quote": "It will be a unique day—a day known only to the LORD—with no distinction between day and night. When evening comes, there will be light"
+        },
+        {
+          "ref": "Zechariah 8:20-23",
+          "type": "scripture",
+          "quote": "Many peoples and strong nations shall come to seek the LORD of hosts in Jerusalem... ten men from the nations of every tongue shall take hold of the robe of a Jew, saying, 'Let us go with you, for we have heard that God is with you'"
+        },
+        {
+          "ref": "Jasher 88:63-64",
+          "type": "extra-biblical",
+          "quote": "The phenomenon lasted about 36 moments"
         }
       ],
       "tags": [
@@ -4876,7 +5060,8 @@
         "watch-date",
         "typology"
       ],
-      "article": "/chapters/08_When_does_the_Year_Start/"
+      "article": "/chapters/08_When_does_the_Year_Start/",
+      "icon": "☀️🌕"
     },
     {
       "id": "manna-ceases",
@@ -4986,7 +5171,8 @@
         "birth"
       ],
       "article": "/chapters/13_Herod_the_Great/",
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "👶"
     },
     {
       "id": "herod-governor-galilee",
@@ -5066,7 +5252,7 @@
     },
     {
       "id": "herod-flees-to-rome",
-      "title": "🏃 Herod Flees Jerusalem for Rome",
+      "title": "Herod Flees Jerusalem for Rome",
       "type": "journey",
       "description": "Herod flees Jerusalem during the Parthian invasion at the feast Josephus calls 'Pentecost' (identified as the Feast of New Wine, month 5). He escapes overland to Masada (leaving his family), then travels through Idumea to Petra (where King Malchus refused aid), Egypt (meeting Cleopatra), and Rhodes (surviving a shipwreck and rebuilding a ship). The journey took approximately 9 months. Historians commonly assume he reached Rome in fall 40 BC, dating his first regal year to 39 BC. However, anchoring on the well-established date of Jerusalem's capture (36 BC = Year 3) and working backwards places his arrival AFTER Nisan 39 BC, making Year 1 begin Nisan 38 BC.",
       "start": {
@@ -5111,7 +5297,8 @@
         "chronology-contention"
       ],
       "article": "/chapters/extra/e03_Herods_Appointment/",
-      "anniversary_display": false
+      "anniversary_display": false,
+      "icon": "🏃"
     },
     {
       "id": "herod-takes-jerusalem",
@@ -5602,7 +5789,8 @@
         "david",
         "birth",
         "shavuot"
-      ]
+      ],
+      "icon": "👶"
     },
     {
       "id": "david-reign",
@@ -5869,7 +6057,7 @@
     },
     {
       "id": "bur-sagale-eclipse",
-      "title": "🌑 Bur-Sagale Eclipse",
+      "title": "Bur-Sagale Eclipse",
       "type": "astronomical",
       "description": "Total solar eclipse recorded in Assyrian Eponym Lists during the eponymate of Bur-Sagale. This is the ROOT CHRONOLOGICAL ANCHOR for all Ancient Near Eastern chronology. Modern astronomical calculation confirms June 15, 763 BCE. The continuous Assyrian Eponym Lists count backward from this astronomically-verified date to establish absolute dates for Assyrian-Israelite synchronisms.",
       "start": {
@@ -5918,11 +6106,12 @@
           "url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ession=-0762Jun15",
           "icon": "🛰️"
         }
-      ]
+      ],
+      "icon": "🌑"
     },
     {
       "id": "battle-of-qarqar",
-      "title": "⚔️ Battle of Qarqar",
+      "title": "Battle of Qarqar",
       "type": "battle",
       "description": "Major battle between Assyrian forces under Shalmaneser III and a coalition of Levantine states including 'Ahab the Israelite' who contributed 2,000 chariots and 10,000 soldiers. Recorded on the Kurkh Monolith, dated to Shalmaneser's 6th year, 90 eponym years before the Bur-Sagale eclipse. This is the first major Assyrian-Israelite synchronism.",
       "start": {
@@ -5950,11 +6139,12 @@
         "chronology-anchor",
         "shalmaneser",
         "divided-kingdom"
-      ]
+      ],
+      "icon": "⚔️"
     },
     {
       "id": "jehu-tribute",
-      "title": "👑 Jehu Pays Tribute to Shalmaneser III",
+      "title": "Jehu Pays Tribute to Shalmaneser III",
       "type": "milestone",
       "description": "King Jehu of Israel (or his representative) kneels before Shalmaneser III paying tribute. Depicted on the Black Obelisk, dated to Shalmaneser's 18th year, 78 eponym years before the Bur-Sagale eclipse. The inscription calls him 'Jehu son of Omri'. This is the second major Assyrian-Israelite synchronism.",
       "start": {
@@ -5982,11 +6172,12 @@
         "chronology-anchor",
         "shalmaneser",
         "divided-kingdom"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "rehoboam-reign",
-      "title": "👑 Rehoboam Begins to Reign",
+      "title": "Rehoboam Begins to Reign",
       "type": "reign",
       "description": "Rehoboam, son of Solomon, becomes king of Judah after the kingdom divides. He reigned 17 years in Jerusalem. The division occurred when Jeroboam led the northern tribes to secede.",
       "start": {
@@ -6014,11 +6205,12 @@
         "divided-kingdom",
         "chronology-anchor",
         "genealogy"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "shishak-invasion",
-      "title": "🏛️ Shishak (Shoshenq I) Invades Judah",
+      "title": "Shishak (Shoshenq I) Invades Judah",
       "type": "conquest",
       "description": "In the 5th year of Rehoboam, Pharaoh Shishak (Egyptian: Shoshenq I) invades Judah with 1,200 chariots, 60,000 horsemen, and innumerable troops. He takes the fortified cities and comes to Jerusalem, carrying away the treasures of the Temple and the king's house. This is the CRITICAL EGYPTIAN SYNCHRONISM: Shoshenq I's campaign is recorded on the Bubastite Portal at Karnak, listing over 150 conquered cities. Egyptian chronology dates Shoshenq I's campaign to ~925 BC, which aligns with Rehoboam's 5th year (~926-925 BC) calculated from Assyrian synchronisms—providing independent verification of biblical chronology.",
       "start": {
@@ -6074,11 +6266,12 @@
           "url": "https://en.wikipedia.org/wiki/Bubastite_Portal",
           "icon": "🏛️"
         }
-      ]
+      ],
+      "icon": "🏛️"
     },
     {
       "id": "shoshenq-i-reign",
-      "title": "👑 Shoshenq I - Founder of 22nd Dynasty",
+      "title": "Shoshenq I - Founder of 22nd Dynasty",
       "type": "reign",
       "description": "Shoshenq I (biblical Shishak) becomes Pharaoh of Egypt, founding the 22nd (Libyan) Dynasty. His reign is anchored by his campaign against Judah in Rehoboam's 5th year and recorded on the Bubastite Portal at Karnak. Egyptian chronology places his reign at ~943-922 BC. This pharaoh provides the critical link between Egyptian and biblical chronology for the Divided Kingdom period.",
       "start": {
@@ -6120,11 +6313,12 @@
         "22nd-dynasty",
         "chronology-anchor",
         "egyptian-chronology"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "abijah-reign",
-      "title": "👑 Abijah Begins to Reign",
+      "title": "Abijah Begins to Reign",
       "type": "reign",
       "description": "Abijah (also called Abijam), son of Rehoboam, becomes king of Judah. He reigned 3 years in Jerusalem, beginning in the 18th year of Jeroboam.",
       "start": {
@@ -6151,11 +6345,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "asa-reign",
-      "title": "👑 Asa Begins to Reign",
+      "title": "Asa Begins to Reign",
       "type": "reign",
       "description": "Asa, son of Abijah, becomes king of Judah. He reigned 41 years in Jerusalem. Ahab of Israel began to reign in Asa's 38th year, providing a key synchronism.",
       "start": {
@@ -6182,11 +6377,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "ahab-reign",
-      "title": "👑 Ahab Begins to Reign",
+      "title": "Ahab Begins to Reign",
       "type": "reign",
       "description": "Ahab, son of Omri, becomes king of Israel. He reigned 22 years in Samaria, beginning in the 38th year of Asa king of Judah. Ahab died at or near the Battle of Qarqar (853 BCE), providing the critical link to Assyrian chronology.",
       "start": {
@@ -6214,11 +6410,12 @@
         "divided-kingdom",
         "chronology-anchor",
         "assyrian-synchronism"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "jehu-reign",
-      "title": "👑 Jehu Begins to Reign",
+      "title": "Jehu Begins to Reign",
       "type": "reign",
       "description": "Jehu, anointed by a prophet sent by Elisha, becomes king of Israel after killing Joram and Ahaziah. He reigned 28 years in Samaria. His tribute to Shalmaneser III in 841 BCE (Black Obelisk) provides the second critical Assyrian synchronism.",
       "start": {
@@ -6246,11 +6443,12 @@
         "divided-kingdom",
         "chronology-anchor",
         "assyrian-synchronism"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "jehoshaphat-reign",
-      "title": "👑 Jehoshaphat Begins to Reign",
+      "title": "Jehoshaphat Begins to Reign",
       "type": "reign",
       "description": "Jehoshaphat, son of Asa, becomes king of Judah. He reigned 25 years in Jerusalem, beginning in the 4th year of Ahab king of Israel.",
       "start": {
@@ -6277,11 +6475,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "jehoram-judah-reign",
-      "title": "👑 Jehoram of Judah Begins to Reign",
+      "title": "Jehoram of Judah Begins to Reign",
       "type": "reign",
       "description": "Jehoram (Joram), son of Jehoshaphat, becomes king of Judah. He reigned 8 years in Jerusalem.",
       "start": {
@@ -6308,11 +6507,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "ahaziah-judah-reign",
-      "title": "👑 Ahaziah of Judah Begins to Reign",
+      "title": "Ahaziah of Judah Begins to Reign",
       "type": "reign",
       "description": "Ahaziah, son of Jehoram, becomes king of Judah. He reigned only 1 year before being killed by Jehu.",
       "start": {
@@ -6339,11 +6539,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "athaliah-reign",
-      "title": "👑 Athaliah Seizes the Throne",
+      "title": "Athaliah Seizes the Throne",
       "type": "reign",
       "description": "Athaliah, mother of Ahaziah, seizes the throne of Judah after her son's death. She reigned 6 years until overthrown by the priest Jehoiada.",
       "start": {
@@ -6369,11 +6570,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "joash-judah-reign",
-      "title": "👑 Joash of Judah Begins to Reign",
+      "title": "Joash of Judah Begins to Reign",
       "type": "reign",
       "description": "Joash (Jehoash), son of Ahaziah, becomes king of Judah at age 7 after Athaliah is overthrown. He reigned 40 years in Jerusalem.",
       "start": {
@@ -6400,11 +6602,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "amaziah-reign",
-      "title": "👑 Amaziah Begins to Reign",
+      "title": "Amaziah Begins to Reign",
       "type": "reign",
       "description": "Amaziah, son of Joash, becomes king of Judah. He reigned 29 years in Jerusalem.",
       "start": {
@@ -6431,11 +6634,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "uzziah-reign",
-      "title": "👑 Uzziah (Azariah) Begins to Reign",
+      "title": "Uzziah (Azariah) Begins to Reign",
       "type": "reign",
       "description": "Uzziah (also called Azariah), son of Amaziah, becomes king of Judah at age 16. He reigned 52 years in Jerusalem. Isaiah's call came in the year he died.",
       "start": {
@@ -6469,11 +6673,12 @@
         "divided-kingdom",
         "chronology-anchor",
         "isaiah"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "jotham-reign",
-      "title": "👑 Jotham Begins to Reign",
+      "title": "Jotham Begins to Reign",
       "type": "reign",
       "description": "Jotham, son of Uzziah, becomes king of Judah. He reigned 16 years in Jerusalem.",
       "start": {
@@ -6500,11 +6705,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "ahaz-reign",
-      "title": "👑 Ahaz Begins to Reign",
+      "title": "Ahaz Begins to Reign",
       "type": "reign",
       "description": "Ahaz, son of Jotham, becomes king of Judah. He reigned 16 years in Jerusalem. During his reign, the Syro-Ephraimite War occurred and Isaiah prophesied the virgin birth.",
       "start": {
@@ -6536,11 +6742,12 @@
         "divided-kingdom",
         "chronology-anchor",
         "isaiah"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "hezekiah-reign",
-      "title": "👑 Hezekiah Begins to Reign",
+      "title": "Hezekiah Begins to Reign",
       "type": "reign",
       "description": "Hezekiah, son of Ahaz, becomes king of Judah. He reigned 29 years in Jerusalem. His 6th year = Fall of Samaria (722 BC), establishing his accession at 728 BC.",
       "start": {
@@ -6580,11 +6787,12 @@
         "chronology-anchor",
         "isaiah",
         "assyria"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "fall-of-samaria",
-      "title": "🏛️ Fall of Samaria - Northern Kingdom Ends",
+      "title": "Fall of Samaria - Northern Kingdom Ends",
       "type": "conquest",
       "description": "The Assyrian siege of Samaria ends with the fall of the Northern Kingdom of Israel. This occurred in Hezekiah's 6th year = Hoshea's 9th year. Dated by Assyrian Eponym Lists anchored to the Bur-Sagale eclipse (763 BC).",
       "start": {
@@ -6633,11 +6841,12 @@
         "divided-kingdom",
         "hezekiah",
         "hoshea"
-      ]
+      ],
+      "icon": "🏛️"
     },
     {
       "id": "hezekiah-14th-year",
-      "title": "📅 Hezekiah's 14th Year - Sennacherib's Invasion",
+      "title": "Hezekiah's 14th Year - Sennacherib's Invasion",
       "type": "milestone",
       "description": "In Hezekiah's 14th year, Sennacherib king of Assyria invaded Judah. Hezekiah fell ill and was granted 15 more years. This date (715 BC) is 5 years into the 15th Jubilee cycle from Jordan crossing.",
       "start": {
@@ -6689,11 +6898,12 @@
         "miracle",
         "chronology-anchor",
         "jubilee"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "manasseh-coregency",
-      "title": "👑 Manasseh Begins Co-Regency",
+      "title": "Manasseh Begins Co-Regency",
       "type": "coregency",
       "description": "Manasseh begins co-regency with his father Hezekiah. This 5-year overlap reconciles the Assyrian anchor (Samaria 722 BC) with the Babylonian anchor (Temple 587 BC). Manasseh was 12 years old.",
       "start": {
@@ -6727,11 +6937,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "manasseh-reign",
-      "title": "👑 Manasseh Sole Reign Begins",
+      "title": "Manasseh Sole Reign Begins",
       "type": "reign",
       "description": "Manasseh becomes sole king of Judah after Hezekiah's death. His 55-year reign (including 5 years co-regency) is the longest of any Judean king.",
       "start": {
@@ -6764,11 +6975,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "amon-reign",
-      "title": "👑 Amon Begins to Reign",
+      "title": "Amon Begins to Reign",
       "type": "reign",
       "description": "Amon, son of Manasseh, becomes king of Judah. He reigned only 2 years before being assassinated.",
       "start": {
@@ -6795,11 +7007,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "josiah-reign",
-      "title": "👑 Josiah Begins to Reign",
+      "title": "Josiah Begins to Reign",
       "type": "reign",
       "description": "Josiah, son of Amon, becomes king of Judah at age 8. He reigned 31 years in Jerusalem (639-608 BC). His 18th year (622 BC) = 17th Jubilee, when the Book of the Law was found.",
       "start": {
@@ -6832,11 +7045,12 @@
         "judah",
         "divided-kingdom",
         "chronology-anchor"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "josiah-18th-year",
-      "title": "📖 Josiah's 18th Year - Book of the Law Found (17th Jubilee)",
+      "title": "Josiah's 18th Year - Book of the Law Found (17th Jubilee)",
       "type": "milestone",
       "description": "In Josiah's 18th year, the Book of the Law was found during Temple repairs. Josiah led the greatest Passover reformation since Samuel. This year (622/621 BC) aligns with the 17th Jubilee from Jordan crossing (1406 BC).",
       "start": {
@@ -6884,11 +7098,12 @@
         "jubilee",
         "chronology-anchor",
         "milestone"
-      ]
+      ],
+      "icon": "📖"
     },
     {
       "id": "jehoiakim-reign",
-      "title": "👑 Jehoiakim Begins to Reign",
+      "title": "Jehoiakim Begins to Reign",
       "type": "reign",
       "description": "Jehoiakim (Eliakim), son of Josiah, is placed on the throne by Pharaoh Necho. He reigned 11 years in Jerusalem. Jeremiah prophesied during his reign.",
       "start": {
@@ -6920,11 +7135,12 @@
         "divided-kingdom",
         "chronology-anchor",
         "jeremiah"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "jehoiachin-reign",
-      "title": "👑 Jehoiachin Begins to Reign",
+      "title": "Jehoiachin Begins to Reign",
       "type": "reign",
       "description": "Jehoiachin (Jeconiah/Coniah), son of Jehoiakim, becomes king of Judah. He reigned only 3 months before being taken captive to Babylon by Nebuchadnezzar.",
       "start": {
@@ -6957,11 +7173,12 @@
         "divided-kingdom",
         "chronology-anchor",
         "captivity"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "zedekiah-reign",
-      "title": "👑 Zedekiah Begins to Reign",
+      "title": "Zedekiah Begins to Reign",
       "type": "reign",
       "description": "Zedekiah (Mattaniah), son of Josiah, is placed on the throne by Nebuchadnezzar. He reigned 11 years as the last king of Judah before the destruction of Jerusalem.",
       "start": {
@@ -6994,11 +7211,12 @@
         "chronology-anchor",
         "captivity",
         "jeremiah"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "ezra-decree",
-      "title": "📜 Ezra's Decree to Restore Jerusalem",
+      "title": "Ezra's Decree to Restore Jerusalem",
       "type": "decree",
       "description": "In the 7th year of Artaxerxes I (spring 458 BC), Ezra receives the decree to restore and rebuild Jerusalem. Ezra left Babylon on Nisan 1 and arrived in Jerusalem in the 5th month (Av). This begins Daniel's 70 weeks (490 years) prophecy, ending at Passover 32 AD.",
       "start": {
@@ -7058,7 +7276,8 @@
         "artaxerxes"
       ],
       "notes": "458 BC is preferred over 457 BC because Ezra's context—operating under Persian authority—uses the imperial spring (Nisan-to-Nisan) calendar. The Cairo Stele's May-June 458 BC dating as Year 7 creates a 6-month discrepancy for any fall-reckoning theory.",
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "📜"
     },
     {
       "id": "first-captivity-daniel",
@@ -7317,7 +7536,7 @@
     },
     {
       "id": "ezekiel-40-vision",
-      "title": "📖 Ezekiel's Temple Vision (18th Jubilee)",
+      "title": "Ezekiel's Temple Vision (18th Jubilee)",
       "type": "vision",
       "description": "In the 25th year of captivity (14 years after the Temple's fall), Ezekiel receives the vision of the restored Temple (Ezekiel 40-48). This year (573 BC) is exactly the 18th Jubilee from Jordan crossing (1406 BC).",
       "start": {
@@ -7354,7 +7573,8 @@
         "jubilee",
         "chronology-anchor",
         "prophecy"
-      ]
+      ],
+      "icon": "📖"
     },
     {
       "id": "ezekiel-prophecy-tyre",
@@ -7400,6 +7620,42 @@
         "end-times",
         "typology",
         "jehoiachin-exile"
+      ],
+      "icon": "🔥",
+      "detailsTitle": "Why Tyre = Babylon the Great",
+      "details": [
+        {
+          "heading": "\"Never be rebuilt\" as permanent, end-times desolation",
+          "text": "Ezekiel 26:14 says Tyre 'shall never be rebuilt' and 'be no more forever' (cf. v. 21), yet modern Tyre exists as a city. This suggests the prophecy has a dual/typological layer: partial historical fulfillment (Nebuchadnezzar, Alexander), but ultimate total/irreversible ruin in the future—like Babylon the Great's final fall ('found no more forever,' Rev 18:21)."
+        },
+        {
+          "heading": "Symbolic 'bare rock' and fishing nets",
+          "text": "The site becomes a bare rock for nets (Ezek 26:4-5,14), symbolizing utter stripping of glory/power. Babylon the Great ends similarly—utterly desolate, mourned by merchants, never restored (Rev 18:17-19,21)."
+        },
+        {
+          "heading": "Commercial pride and global trade parallels",
+          "text": "Tyre's wealth from worldwide merchants (Ezek 27) mirrors Babylon the Great's luxury trade list (Rev 18:11-13). Both are proud empires judged for exploiting nations/God's people."
+        },
+        {
+          "heading": "Gloating over Jerusalem's fall",
+          "text": "Tyre rejoices at Jerusalem's ruin for gain (Ezek 26:2), typifying Babylon the Great's spiritual/economic opposition to saints (Rev 17:6; 18:24)."
+        },
+        {
+          "heading": "Multi-nation waves of judgment",
+          "text": "'Many nations' attack like sea waves (Ezek 26:3); Babylon the Great falls when kings/beast turn on her (Rev 17:16-17), fulfilling the 'many nations' in an end-times context."
+        },
+        {
+          "heading": "Satanic ruler behind the city",
+          "text": "Ezekiel 28 (tied to Tyre oracle) describes the king as a fallen cherub in Eden (v. 12-19), linking to satanic influence. Babylon the Great rides the beast (Satanic power, Rev 17:3-7), making Tyre a type of the final Antichrist system."
+        },
+        {
+          "heading": "Revelation's heavy borrowing from Ezekiel's Tyre oracles",
+          "text": "Rev 18 directly echoes Ezekiel 26–27 (merchants/kings weeping, sudden ruin, dust on heads, 'Who is like the great city?'). This intertextual link shows John applying Tyre's judgment as a foreshadowing of Babylon the Great's eschatological destruction."
+        },
+        {
+          "heading": "Prophecy's dual near/far application",
+          "text": "Biblical pattern (e.g., Antichrist types in history) allows partial fulfillment historically while reserving full 'never rebuilt' permanence for the end-times entity—ancient Tyre partially judged but 'rebuilt' modestly; Babylon the Great never recovers."
+        }
       ]
     },
     {
@@ -7453,7 +7709,7 @@
     },
     {
       "id": "cyrus-decree",
-      "title": "📜 Cyrus's Decree - Jews Return from Exile",
+      "title": "Cyrus's Decree - Jews Return from Exile",
       "type": "decree",
       "description": "Cyrus the Great issues a decree allowing Jews to return to Jerusalem and rebuild the Temple. This fulfills Isaiah's prophecy naming Cyrus 150 years before his birth.",
       "start": {
@@ -7492,11 +7748,12 @@
         "return",
         "chronology-anchor",
         "prophecy"
-      ]
+      ],
+      "icon": "📜"
     },
     {
       "id": "darius-i-reign",
-      "title": "👑 Darius I (the Great) Begins to Reign",
+      "title": "Darius I (the Great) Begins to Reign",
       "type": "reign",
       "description": "Darius I becomes king of Persia. He authorizes the completion of the Second Temple. Haggai and Zechariah prophesy during his reign.",
       "start": {
@@ -7534,11 +7791,12 @@
         "chronology-anchor",
         "second-temple"
       ],
-      "notes": "Haggai/Zechariah/Ezra use regnal (non-accession) year counting for foreign kings, as proven by comparing Jeremiah 52:28 (Neb's 7th year) with 2 Kings 24:12 (Neb's 8th year) for the same event."
+      "notes": "Haggai/Zechariah/Ezra use regnal (non-accession) year counting for foreign kings, as proven by comparing Jeremiah 52:28 (Neb's 7th year) with 2 Kings 24:12 (Neb's 8th year) for the same event.",
+      "icon": "👑"
     },
     {
       "id": "second-temple-completed",
-      "title": "🏛️ Second Temple Completed",
+      "title": "Second Temple Completed",
       "type": "construction",
       "description": "The Second Temple was completed on the 3rd day of Adar in Darius's 6th year (517 BC). This is exactly 70 years after the First Temple was destroyed (587 BC), fulfilling Jeremiah's prophecy. The people celebrated the dedication with joy.",
       "start": {
@@ -7579,7 +7837,8 @@
         "70-years",
         "chronology-anchor"
       ],
-      "notes": "587 BC - 517 BC = exactly 70 years of temple desolation, fulfilling Jeremiah 25:11-12. Verified using regnal year counting (Jeremiah 52:28 vs 2 Kings 24:12 proves this system)."
+      "notes": "587 BC - 517 BC = exactly 70 years of temple desolation, fulfilling Jeremiah 25:11-12. Verified using regnal year counting (Jeremiah 52:28 vs 2 Kings 24:12 proves this system).",
+      "icon": "🏛️"
     },
     {
       "id": "nehemiah-walls-completed",
@@ -7773,7 +8032,7 @@
     },
     {
       "id": "temple-destruction-second",
-      "title": "🏛️ Fall of the Second Temple (Tisha B'Av)",
+      "title": "Fall of the Second Temple (Tisha B'Av)",
       "type": "destruction",
       "description": "The Second Temple is destroyed by the Romans under Titus. Jewish tradition commemorates this as Tisha B'Av (9th of Av), though Josephus indicates the burning began on the 10th of Av—exactly 657 years after the First Temple's destruction on the same date. This is 107 years from 'the days of Herod' when he began appointing high priests. Josephus confirms Jehoiarib (Course 1) was serving—the same course as at the First Temple's fall—providing a critical anchor for reconstructing the priestly cycle.",
       "start": {
@@ -7816,7 +8075,8 @@
         "107-years",
         "herod"
       ],
-      "article": "/chapters/13_Herod_the_Great/#years-of-high-priests"
+      "article": "/chapters/13_Herod_the_Great/#years-of-high-priests",
+      "icon": "🏛️"
     },
     {
       "id": "abomination-setup",
@@ -7898,7 +8158,11 @@
           "quote": "Now in the fifteenth year of the reign of Tiberius Caesar"
         }
       ],
-      "tags": ["tiberius", "chronology", "anchor-point"]
+      "tags": [
+        "tiberius",
+        "chronology",
+        "anchor-point"
+      ]
     },
     {
       "id": "john-baptist-ministry",
@@ -8294,7 +8558,7 @@
     },
     {
       "id": "crucifixion-32ad",
-      "title": "✝️ Crucifixion of Yeshua",
+      "title": "Crucifixion of Yeshua",
       "type": "death",
       "description": "Yeshua is crucified on Passover (Nisan 14), fulfilling the 70 weeks prophecy of Daniel 9.",
       "start": {
@@ -8323,11 +8587,12 @@
         "jesus",
         "prophecy-fulfillment"
       ],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "✝️"
     },
     {
       "id": "resurrection-32ad",
-      "title": "✝️ Resurrection of Yeshua",
+      "title": "Resurrection of Yeshua",
       "type": "milestone",
       "description": "Yeshua rises from the dead on First Fruits (Nisan 16), three days and three nights after burial.",
       "start": {
@@ -8361,7 +8626,8 @@
         "yeshua",
         "jesus"
       ],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "✝️"
     },
     {
       "id": "pentecost-32ad",
@@ -8482,7 +8748,7 @@
     },
     {
       "id": "john-baptist-conception",
-      "title": "🍼 John the Baptist Conception (Earliest by Service)",
+      "title": "John the Baptist Conception (Earliest by Service)",
       "type": "conception",
       "description": "EARLIEST possible conception based on priestly cycle. Zechariah served in the course of Abijah (Course 8). This is the first day he could return home after his service. Actual conception could have been later.",
       "start": {
@@ -8523,11 +8789,12 @@
         "zechariah"
       ],
       "article": "/chapters/12_32_AD_Resurrection/",
-      "notes": "The priestly cycle calculation uses the earliest possible birth date (30 years before ministry start in Tiberius's 15th year) minus 280 days to find the earliest conception window, then finds the next Abijah service week."
+      "notes": "The priestly cycle calculation uses the earliest possible birth date (30 years before ministry start in Tiberius's 15th year) minus 280 days to find the earliest conception window, then finds the next Abijah service week.",
+      "icon": "🍼"
     },
     {
       "id": "john-baptist-birth",
-      "title": "🍼 John the Baptist Birth (Earliest by Service)",
+      "title": "John the Baptist Birth (Earliest by Service)",
       "type": "birth",
       "description": "EARLIEST possible birth of John the Baptist based on priestly cycle, calculated as 266 days after earliest conception. The actual birth could have been later if conception was delayed.",
       "start": {
@@ -8565,11 +8832,12 @@
         "passover"
       ],
       "article": "/chapters/12_32_AD_Resurrection/",
-      "notes": "Jewish tradition holds that Elijah will return at Passover (an extra cup is set at the Seder). Jesus said John was the Elijah who was to come (Matthew 11:14). A birth around Passover aligns with this prophetic connection."
+      "notes": "Jewish tradition holds that Elijah will return at Passover (an extra cup is set at the Seder). Jesus said John was the Elijah who was to come (Matthew 11:14). A birth around Passover aligns with this prophetic connection.",
+      "icon": "👶"
     },
     {
       "id": "yeshua-conception",
-      "title": "🍼 Yeshua's Conception (Earliest)",
+      "title": "Yeshua's Conception (Earliest)",
       "type": "conception",
       "description": "EARLIEST possible conception. Mary was visited by Gabriel in the 6th month of Elizabeth's pregnancy (Luke 1:26,36). Using 5 months minimum (6th month inclusive). Actual conception could have been later.",
       "start": {
@@ -8609,11 +8877,12 @@
         "gabriel"
       ],
       "article": "/chapters/12_32_AD_Resurrection/",
-      "notes": "The 6-month gap between John and Yeshua's conceptions is explicitly stated in Luke 1:26, 36. This timing connects to Hanukkah traditions (Feast of Dedication, 25th of Kislev) as a possible date for the Annunciation."
+      "notes": "The 6-month gap between John and Yeshua's conceptions is explicitly stated in Luke 1:26, 36. This timing connects to Hanukkah traditions (Feast of Dedication, 25th of Kislev) as a possible date for the Annunciation.",
+      "icon": "🍼"
     },
     {
       "id": "yeshua-birth",
-      "title": "🍼 Yeshua's Birth (Earliest)",
+      "title": "Yeshua's Birth (Earliest)",
       "type": "birth",
       "description": "EARLIEST possible birth, calculated as 266 days after earliest conception. Actual birth could have been later.",
       "start": {
@@ -8653,11 +8922,12 @@
         "tabernacles"
       ],
       "article": "/chapters/12_32_AD_Resurrection/",
-      "notes": "John 1:14 uses the Greek word 'skenoo' (to tabernacle/dwell in a tent), which many scholars see as a reference to the Feast of Tabernacles (Sukkot) as the time of Yeshua's birth. This aligns with the 6-month gap from John's birth (likely around Passover)."
+      "notes": "John 1:14 uses the Greek word 'skenoo' (to tabernacle/dwell in a tent), which many scholars see as a reference to the Feast of Tabernacles (Sukkot) as the time of Yeshua's birth. This aligns with the 6-month gap from John's birth (likely around Passover).",
+      "icon": "👶"
     },
     {
       "id": "yeshua-ministry-begins",
-      "title": "📜 Yeshua's Ministry Begins (Earliest)",
+      "title": "Yeshua's Ministry Begins (Earliest)",
       "type": "ministry",
       "description": "EARLIEST possible ministry start, calculated as 30 years from earliest birth. Actual ministry start could have been later. The 30-year calculation from birth is significant because priests began Temple service at age 30 (Numbers 4:3).",
       "start": {
@@ -8697,139 +8967,300 @@
         "tiberius"
       ],
       "article": "/chapters/12_32_AD_Resurrection/",
-      "notes": "The 30-year requirement for priestly service (Numbers 4:3) provides context for why Luke emphasizes Yeshua's age. Born in a 13-month leap year (Adar II), 30 lunar years later would still be 30 complete years but potentially in a different seasonal position."
+      "notes": "The 30-year requirement for priestly service (Numbers 4:3) provides context for why Luke emphasizes Yeshua's age. Born in a 13-month leap year (Adar II), 30 lunar years later would still be 30 complete years but potentially in a different seasonal position.",
+      "icon": "📜"
     },
     {
       "id": "zechariah-angel-visit-proposed",
-      "title": "🕎 Angel Appears to Zechariah (Proposed: Hanukkah)",
+      "title": "Angel Appears to Zechariah (Proposed: Hanukkah Atzeret)",
       "type": "biblical-event",
-      "description": "PROPOSED: Angel Gabriel appears to Zechariah in the Temple during Hanukkah (around Kislev 23-24), during his Abijah service week. He is struck mute until John's birth.",
+      "description": "PROPOSED: Angel Gabriel appears to Zechariah in the Temple on the Atzeret (8th day) of Hanukkah, Tevet 2 (10/2), during his Abijah service week. He is struck mute until John's birth. The Atzeret marks the completion of Hanukkah's dedication theme.",
       "start": {
-        "lunar": { "year": -3, "month": 10, "day": 23 }
+        "lunar": {
+          "year": -3,
+          "month": 10,
+          "day": 2
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 1:5-13", "type": "scripture", "quote": "There appeared unto him an angel of the Lord standing on the right side of the altar of incense" },
-        { "ref": "Luke 1:19-20", "type": "scripture", "quote": "I am Gabriel... thou shalt be dumb, and not able to speak, until the day that these things shall be performed" }
+        {
+          "ref": "Luke 1:5-13",
+          "type": "scripture",
+          "quote": "There appeared unto him an angel of the Lord standing on the right side of the altar of incense"
+        },
+        {
+          "ref": "Luke 1:19-20",
+          "type": "scripture",
+          "quote": "I am Gabriel... thou shalt be dumb, and not able to speak, until the day that these things shall be performed"
+        }
       ],
-      "tags": ["john-baptist", "zechariah", "angel", "proposed", "hanukkah", "appointed-time"],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "tags": [
+        "john-baptist",
+        "zechariah",
+        "angel",
+        "proposed",
+        "hanukkah",
+        "appointed-time"
+      ],
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "🕎"
     },
     {
       "id": "john-baptist-conception-proposed",
-      "title": "👶 John Conceived (Proposed: Spirit of Elijah)",
+      "title": "John Conceived (Proposed: Spirit of Elijah)",
       "type": "conception",
       "description": "PROPOSED: John conceived on Tevet 1 (11/1), the day associated with the Spirit of Elijah, Joshua's Long Day, and the Day of the Lord. John came 'in the spirit and power of Elijah' (Luke 1:17). 266 days to Trumpets birth aligns with Tiberius 15th year.",
       "start": {
-        "lunar": { "year": -3, "month": 11, "day": 1 }
+        "lunar": {
+          "year": -3,
+          "month": 11,
+          "day": 1
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 1:23-24", "type": "scripture", "quote": "As soon as the days of his ministration were accomplished, he departed to his own house. And after those days his wife Elisabeth conceived" },
-        { "ref": "Luke 1:17", "type": "scripture", "quote": "And he shall go before him in the spirit and power of Elias" },
-        { "ref": "Malachi 4:5", "type": "scripture", "quote": "Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the LORD" }
+        {
+          "ref": "Luke 1:23-24",
+          "type": "scripture",
+          "quote": "As soon as the days of his ministration were accomplished, he departed to his own house. And after those days his wife Elisabeth conceived"
+        },
+        {
+          "ref": "Luke 1:17",
+          "type": "scripture",
+          "quote": "And he shall go before him in the spirit and power of Elias"
+        },
+        {
+          "ref": "Malachi 4:5",
+          "type": "scripture",
+          "quote": "Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the LORD"
+        }
       ],
-      "tags": ["john-baptist", "conception", "proposed", "elijah", "spirit-of-elijah"],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "tags": [
+        "john-baptist",
+        "conception",
+        "proposed",
+        "elijah",
+        "spirit-of-elijah"
+      ],
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "👶"
     },
     {
       "id": "john-baptist-birth-proposed",
-      "title": "🎺 John Birth (Proposed: Trumpets)",
+      "title": "John Birth (Proposed: Trumpets)",
       "type": "birth",
       "description": "PROPOSED: John born on Tishri 1 (7/1), the Feast of Trumpets. Exactly 30 lunar years later = Tishri 1, 28 AD, which aligns with Tiberius 15th year (Sept 17, 28 AD). John turns 30 and becomes eligible for ministry precisely when Luke 3:1-2 says the word came to him.",
       "start": {
-        "lunar": { "year": -2, "month": 7, "day": 1 }
+        "lunar": {
+          "year": -2,
+          "month": 7,
+          "day": 1
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 1:57-66", "type": "scripture", "quote": "Now Elisabeth's full time came that she should be delivered" },
-        { "ref": "Luke 3:1-2", "type": "scripture", "quote": "Now in the fifteenth year of the reign of Tiberius Caesar... the word of God came unto John" },
-        { "ref": "Leviticus 23:24", "type": "scripture", "quote": "In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets" }
+        {
+          "ref": "Luke 1:57-66",
+          "type": "scripture",
+          "quote": "Now Elisabeth's full time came that she should be delivered"
+        },
+        {
+          "ref": "Luke 3:1-2",
+          "type": "scripture",
+          "quote": "Now in the fifteenth year of the reign of Tiberius Caesar... the word of God came unto John"
+        },
+        {
+          "ref": "Leviticus 23:24",
+          "type": "scripture",
+          "quote": "In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets"
+        }
       ],
-      "tags": ["john-baptist", "birth", "proposed", "trumpets", "appointed-time"],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "tags": [
+        "john-baptist",
+        "birth",
+        "proposed",
+        "trumpets",
+        "appointed-time"
+      ],
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "👶"
     },
     {
       "id": "john-baptist-circumcision-proposed",
-      "title": "🎺 John Circumcision (Proposed: Day 8)",
+      "title": "John Circumcision (Proposed: Day 8)",
       "type": "milestone",
       "description": "PROPOSED: John circumcised on Tishri 8 (7/8), the 8th day after Trumpets birth.",
       "start": {
-        "lunar": { "year": -2, "month": 7, "day": 8 }
+        "lunar": {
+          "year": -2,
+          "month": 7,
+          "day": 8
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 1:59", "type": "scripture", "quote": "on the eighth day they came to circumcise the child" }
+        {
+          "ref": "Luke 1:59",
+          "type": "scripture",
+          "quote": "on the eighth day they came to circumcise the child"
+        }
       ],
-      "tags": ["john-baptist", "circumcision", "proposed"]
+      "tags": [
+        "john-baptist",
+        "circumcision",
+        "proposed"
+      ],
+      "icon": "🎺"
     },
     {
       "id": "mary-angel-visit-proposed",
-      "title": "🕊️ Angel Visits Mary (Proposed: Shavuot)",
+      "title": "Angel Visits Mary (Proposed: Shavuot)",
       "type": "biblical-event",
       "description": "PROPOSED: Gabriel visits Mary at Shavuot (Sivan 16), in the 6th month of Elizabeth's pregnancy. Mary then goes 'with haste' to visit Elizabeth.",
       "start": {
-        "lunar": { "year": -2, "month": 3, "day": 16 }
+        "lunar": {
+          "year": -2,
+          "month": 3,
+          "day": 16
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 1:26-28", "type": "scripture", "quote": "And in the sixth month the angel Gabriel was sent from God unto a city of Galilee, named Nazareth, To a virgin espoused to a man whose name was Joseph" },
-        { "ref": "Luke 1:36", "type": "scripture", "quote": "this is the sixth month with her, who was called barren" }
+        {
+          "ref": "Luke 1:26-28",
+          "type": "scripture",
+          "quote": "And in the sixth month the angel Gabriel was sent from God unto a city of Galilee, named Nazareth, To a virgin espoused to a man whose name was Joseph"
+        },
+        {
+          "ref": "Luke 1:36",
+          "type": "scripture",
+          "quote": "this is the sixth month with her, who was called barren"
+        }
       ],
-      "tags": ["yeshua", "mary", "angel", "proposed", "shavuot", "appointed-time"],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "tags": [
+        "yeshua",
+        "mary",
+        "angel",
+        "proposed",
+        "shavuot",
+        "appointed-time"
+      ],
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "🕊️"
     },
     {
       "id": "yeshua-conception-proposed",
-      "title": "💫 Yeshua Conception (Proposed: 9th of Av)",
+      "title": "Yeshua Conception (Proposed: 9th of Av)",
       "type": "conception",
       "description": "PROPOSED: Mary conceives on the 9th of Av while visiting Elizabeth. The day of mourning becomes the day of hope - the Light enters the world. ~266 days to Passover birth (requires leap year).",
       "start": {
-        "lunar": { "year": -2, "month": 5, "day": 9 }
+        "lunar": {
+          "year": -2,
+          "month": 5,
+          "day": 9
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 1:39", "type": "scripture", "quote": "And Mary arose in those days, and went into the hill country with haste" },
-        { "ref": "Luke 1:56", "type": "scripture", "quote": "And Mary abode with her about three months" }
+        {
+          "ref": "Luke 1:39",
+          "type": "scripture",
+          "quote": "And Mary arose in those days, and went into the hill country with haste"
+        },
+        {
+          "ref": "Luke 1:56",
+          "type": "scripture",
+          "quote": "And Mary abode with her about three months"
+        }
       ],
-      "tags": ["yeshua", "conception", "proposed", "tisha-bav"],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "tags": [
+        "yeshua",
+        "conception",
+        "proposed",
+        "tisha-bav"
+      ],
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "💫"
     },
     {
       "id": "yeshua-birth-proposed",
-      "title": "🐑 Yeshua Birth (Proposed: Passover)",
+      "title": "Yeshua Birth (Proposed: Passover)",
       "type": "birth",
       "description": "PROPOSED: Yeshua born on Nisan 14 (1/14), Passover - the Lamb of God born when lambs are selected. ~266 days after conception.",
       "start": {
-        "lunar": { "year": -1, "month": 1, "day": 14 }
+        "lunar": {
+          "year": -1,
+          "month": 1,
+          "day": 14
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 2:6-7", "type": "scripture", "quote": "the days were accomplished that she should be delivered" },
-        { "ref": "John 1:29", "type": "scripture", "quote": "Behold the Lamb of God, which taketh away the sin of the world" },
-        { "ref": "Exodus 12:3-6", "type": "scripture", "quote": "In the tenth day of this month they shall take to them every man a lamb... keep it up until the fourteenth day" }
+        {
+          "ref": "Luke 2:6-7",
+          "type": "scripture",
+          "quote": "the days were accomplished that she should be delivered"
+        },
+        {
+          "ref": "John 1:29",
+          "type": "scripture",
+          "quote": "Behold the Lamb of God, which taketh away the sin of the world"
+        },
+        {
+          "ref": "Exodus 12:3-6",
+          "type": "scripture",
+          "quote": "In the tenth day of this month they shall take to them every man a lamb... keep it up until the fourteenth day"
+        }
       ],
-      "tags": ["yeshua", "birth", "proposed", "passover", "appointed-time", "lamb"],
-      "article": "/chapters/12_32_AD_Resurrection/"
+      "tags": [
+        "yeshua",
+        "birth",
+        "proposed",
+        "passover",
+        "appointed-time",
+        "lamb"
+      ],
+      "article": "/chapters/12_32_AD_Resurrection/",
+      "icon": "👶"
     },
     {
       "id": "yeshua-circumcision-proposed",
-      "title": "🐑 Yeshua Circumcision (Proposed: Atzeret of Passover)",
+      "title": "Yeshua Circumcision (Proposed: Atzeret of Passover)",
       "type": "milestone",
       "description": "PROPOSED: Yeshua circumcised on Nisan 21 (1/21), the 8th day after Passover birth. The Atzeret of Passover week.",
       "start": {
-        "lunar": { "year": -1, "month": 1, "day": 21 }
+        "lunar": {
+          "year": -1,
+          "month": 1,
+          "day": 21
+        }
       },
       "certainty": "proposed",
       "sources": [
-        { "ref": "Luke 2:21", "type": "scripture", "quote": "when eight days were accomplished for the circumcising of the child" },
-        { "ref": "Exodus 12:18", "type": "scripture", "quote": "In the first month, on the fourteenth day... until the one and twentieth day" }
+        {
+          "ref": "Luke 2:21",
+          "type": "scripture",
+          "quote": "when eight days were accomplished for the circumcising of the child"
+        },
+        {
+          "ref": "Exodus 12:18",
+          "type": "scripture",
+          "quote": "In the first month, on the fourteenth day... until the one and twentieth day"
+        }
       ],
-      "tags": ["yeshua", "circumcision", "proposed", "passover", "appointed-time"]
+      "tags": [
+        "yeshua",
+        "circumcision",
+        "proposed",
+        "passover",
+        "appointed-time"
+      ],
+      "icon": "🐑"
     },
     {
       "id": "john-baptist-birth-earliest",
-      "title": "🍼 John the Baptist Birth (Earliest Bound)",
+      "title": "John the Baptist Birth (Earliest Bound)",
       "type": "birth",
       "description": "The earliest possible date for John the Baptist's birth, calculated as 30 lunar years before the start of Tiberius's 15th year (Sep 17, 28 AD). Priests began service at age 30 (Numbers 4:3). This provides the earliest boundary for the priestly cycle calculation of his conception.",
       "start": {
@@ -8872,7 +9303,8 @@
       ],
       "article": "/chapters/12_32_AD_Resurrection/",
       "anniversary_display": false,
-      "timeline_only": true
+      "timeline_only": true,
+      "icon": "👶"
     },
     {
       "id": "john-baptist-conception-earliest",
@@ -9009,7 +9441,7 @@
     },
     {
       "id": "bad-report-spies",
-      "title": "📅 Bad Report of the Spies",
+      "title": "Bad Report of the Spies",
       "type": "biblical-date",
       "description": "The twelve spies returned from 40 days of scouting Canaan, bringing back first fruits of grapes (including the famous cluster from Eshcol). Ten gave a bad report, the people wept, and God decreed 40 years of wandering. This occurred at the Feast of New Wine in the 1st year of the Exodus (1446 BC).",
       "start": {
@@ -9059,11 +9491,12 @@
         "wilderness",
         "40-years"
       ],
-      "notes": "The spies returned with first fruits of grapes, confirming it was the Feast of New Wine (~10th of 5th month). Jewish tradition associates the weeping that night with Tisha B'Av (9th of Av)."
+      "notes": "The spies returned with first fruits of grapes, confirming it was the Feast of New Wine (~10th of 5th month). Jewish tradition associates the weeping that night with Tisha B'Av (9th of Av).",
+      "icon": "📅"
     },
     {
       "id": "date-ref-exodus-40-2",
-      "title": "📅 Tabernacle Erected",
+      "title": "Tabernacle Erected",
       "type": "biblical-date",
       "description": "On Nisan 1 in the 2nd year after the Exodus (1444 BC), the Tabernacle was erected for the first time. This is the anniversary of the day Aaron was ordained as priest.",
       "start": {
@@ -9105,11 +9538,12 @@
         "resolved",
         "tabernacle",
         "nisan-1"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-numbers-9-1",
-      "title": "📅 Passover Command in Wilderness",
+      "title": "Passover Command in Wilderness",
       "type": "biblical-date",
       "description": "In the 1st month of the 2nd year after the Exodus (Nisan 1445 BC), the LORD commanded Moses concerning the Passover observance in the wilderness of Sinai.",
       "start": {
@@ -9145,11 +9579,12 @@
         "resolved",
         "passover",
         "wilderness"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-numbers-9-11",
-      "title": "📅 Second Passover Institution",
+      "title": "Second Passover Institution",
       "type": "biblical-date",
       "description": "The LORD establishes the Second Passover (Pesach Sheni) on Iyyar 14 for those who were unclean or on a journey during the first Passover. This is the 2nd year after the Exodus (1445 BC).",
       "start": {
@@ -9187,11 +9622,12 @@
         "passover",
         "second-passover",
         "wilderness"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-1-kings-12-32",
-      "title": "📅 Jeroboam's Counterfeit Feast",
+      "title": "Jeroboam's Counterfeit Feast",
       "type": "biblical-date",
       "description": "Jeroboam I ordained a feast in the 8th month on the 15th day (one month after Tabernacles) - a counterfeit of God's appointed time. He made this feast to prevent Israel from going to Jerusalem. ~931 BC, his 1st year.",
       "start": {
@@ -9225,11 +9661,12 @@
         "resolved",
         "jeroboam",
         "counterfeit-feast"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-1-kings-12-33",
-      "title": "📅 Jeroboam Offers at Bethel",
+      "title": "Jeroboam Offers at Bethel",
       "type": "biblical-date",
       "description": "On the 15th day of the 8th month, Jeroboam offered upon the altar he made in Bethel, devising this feast 'of his own heart' rather than following God's appointed times.",
       "start": {
@@ -9263,11 +9700,12 @@
         "resolved",
         "jeroboam",
         "counterfeit-feast"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-2-kings-25-27",
-      "title": "📅 Jehoiachin Released from Prison",
+      "title": "Jehoiachin Released from Prison",
       "type": "biblical-date",
       "description": "In the 37th year of Jehoiachin's captivity (561 BC), on the 27th day of the 12th month (Adar 27), Evil-Merodach king of Babylon released Jehoiachin from prison and set his throne above the thrones of the other captive kings.",
       "start": {
@@ -9298,11 +9736,12 @@
         "jehoiachin",
         "babylon",
         "exile"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-2-chronicles-7-10",
-      "title": "📅 Solomon Dismisses Assembly",
+      "title": "Solomon Dismisses Assembly",
       "type": "biblical-date",
       "description": "On the 23rd day of the 7th month (Tishri 23), after the 7-day dedication of the Temple and the 7-day Feast of Tabernacles, Solomon dismissed the people. This was in Solomon's 11th year (~959 BC).",
       "start": {
@@ -9337,11 +9776,12 @@
         "temple",
         "solomon",
         "tabernacles"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-2-chronicles-15-10",
-      "title": "📅 Asa's Covenant Renewal",
+      "title": "Asa's Covenant Renewal",
       "type": "biblical-date",
       "description": "In the 3rd month of Asa's 15th year (~897 BC), the people gathered at Jerusalem and made a covenant to seek the LORD with all their heart.",
       "start": {
@@ -9374,11 +9814,12 @@
         "resolved",
         "asa",
         "covenant"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-2-chronicles-29-3",
-      "title": "📅 Hezekiah Opens Temple Doors",
+      "title": "Hezekiah Opens Temple Doors",
       "type": "biblical-date",
       "description": "In the 1st month of Hezekiah's 1st year (728 BC), he opened the doors of the house of the LORD and repaired them, beginning his religious reforms.",
       "start": {
@@ -9411,11 +9852,12 @@
         "resolved",
         "hezekiah",
         "temple"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-2-chronicles-29-17",
-      "title": "📅 Temple Sanctification Complete",
+      "title": "Temple Sanctification Complete",
       "type": "biblical-date",
       "description": "On the 16th day of the 1st month in Hezekiah's 1st year (728 BC), the priests finished sanctifying the Temple. They began on the 1st day and reached the porch on the 8th day.",
       "start": {
@@ -9450,11 +9892,12 @@
         "hezekiah",
         "temple",
         "sanctification"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-ezra-3-6",
-      "title": "📅 Altar Rebuilt - Offerings Resume",
+      "title": "Altar Rebuilt - Offerings Resume",
       "type": "biblical-date",
       "description": "On Tishri 1 (7th month, 1st day = Feast of Trumpets) in 536 BC, the returned exiles rebuilt the altar on its foundation and began offering burnt offerings to the LORD, though the Temple foundation was not yet laid.",
       "start": {
@@ -9485,11 +9928,12 @@
         "altar",
         "return",
         "trumpets"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-ezra-3-8",
-      "title": "📅 Temple Foundation Work Begins",
+      "title": "Temple Foundation Work Begins",
       "type": "biblical-date",
       "description": "In the 2nd year after returning from exile (536 BC), in the 2nd month (Iyyar), Zerubbabel and Joshua set the Levites to oversee the work of the Temple.",
       "start": {
@@ -9519,11 +9963,12 @@
         "temple",
         "zerubbabel",
         "return"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-ezra-7-8",
-      "title": "📅 Ezra Arrives in Jerusalem",
+      "title": "Ezra Arrives in Jerusalem",
       "type": "biblical-date",
       "description": "In the 5th month (Av) of Artaxerxes' 7th year (458 BC), Ezra arrived in Jerusalem. He had departed from Babylon on Nisan 1.",
       "start": {
@@ -9556,11 +10001,12 @@
         "resolved",
         "ezra",
         "return"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-ezra-10-16",
-      "title": "📅 Investigation of Mixed Marriages Begins",
+      "title": "Investigation of Mixed Marriages Begins",
       "type": "biblical-date",
       "description": "On the 1st day of the 10th month (Tevet 1), Ezra and the chief fathers began investigating the matter of foreign wives, in the 7th year of Artaxerxes (458/457 BC).",
       "start": {
@@ -9590,11 +10036,12 @@
         "resolved",
         "ezra",
         "mixed-marriages"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-ezra-10-17",
-      "title": "📅 Investigation of Mixed Marriages Complete",
+      "title": "Investigation of Mixed Marriages Complete",
       "type": "biblical-date",
       "description": "By the 1st day of the 1st month (Nisan 1), they had finished with all the men who had married foreign wives. This was the beginning of the next year after Ezra's arrival.",
       "start": {
@@ -9624,11 +10071,12 @@
         "resolved",
         "ezra",
         "mixed-marriages"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-nehemiah-2-1",
-      "title": "📅 Nehemiah Requests to Rebuild Jerusalem",
+      "title": "Nehemiah Requests to Rebuild Jerusalem",
       "type": "biblical-date",
       "description": "In the month Nisan, in Artaxerxes' 20th year (445 BC), Nehemiah requested permission to rebuild Jerusalem's walls. He arrived and completed the walls in 52 days by Elul 25.",
       "start": {
@@ -9661,11 +10109,12 @@
         "resolved",
         "nehemiah",
         "jerusalem"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-nehemiah-8-2",
-      "title": "📅 Ezra Reads the Law at Water Gate",
+      "title": "Ezra Reads the Law at Water Gate",
       "type": "biblical-date",
       "description": "On the 1st day of the 7th month (Tishri 1 = Feast of Trumpets), Ezra brought the law before the congregation, in Artaxerxes' 20th year (445 BC). The people wept when they heard the words of the law.",
       "start": {
@@ -9701,11 +10150,12 @@
         "ezra",
         "trumpets",
         "torah-reading"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-jeremiah-1-3",
-      "title": "📅 Jerusalem Carried Captive",
+      "title": "Jerusalem Carried Captive",
       "type": "biblical-date",
       "description": "Jeremiah's ministry spanned from Josiah's 13th year to Zedekiah's 11th year, ending with the carrying away of Jerusalem captive in the 5th month (Av 587 BC). This verse marks the end of Judah's kingdom.",
       "start": {
@@ -9739,11 +10189,12 @@
         "jeremiah",
         "captivity",
         "zedekiah"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-jeremiah-36-9",
-      "title": "📅 Scroll Read in Temple - Fast Proclaimed",
+      "title": "Scroll Read in Temple - Fast Proclaimed",
       "type": "biblical-date",
       "description": "In the 5th year of Jehoiakim (605 BC), in the 9th month (Chislev), a fast was proclaimed before the LORD. Baruch read Jeremiah's scroll in the temple. The king later burned the scroll piece by piece.",
       "start": {
@@ -9782,11 +10233,12 @@
         "jeremiah",
         "scroll",
         "jehoiakim"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-jeremiah-39-2",
-      "title": "📅 Jerusalem Breached",
+      "title": "Jerusalem Breached",
       "type": "biblical-date",
       "description": "In Zedekiah's 11th year (587 BC), on the 9th day of the 4th month (Tammuz 9), the city wall was breached after 18 months of siege. This is one month before the temple was burned.",
       "start": {
@@ -9828,11 +10280,12 @@
         "zedekiah",
         "17th-of-tammuz"
       ],
-      "notes": "Jewish tradition commemorates this as the 17th of Tammuz fast, though the text says 9th. The breach led to Zedekiah's flight, capture, and the temple's destruction one month later."
+      "notes": "Jewish tradition commemorates this as the 17th of Tammuz fast, though the text says 9th. The breach led to Zedekiah's flight, capture, and the temple's destruction one month later.",
+      "icon": "📅"
     },
     {
       "id": "date-ref-jeremiah-52-31",
-      "title": "📅 Jehoiachin Released (Jeremiah's Account)",
+      "title": "Jehoiachin Released (Jeremiah's Account)",
       "type": "biblical-date",
       "description": "Jeremiah's parallel account: In the 37th year of Jehoiachin's captivity (561 BC), on the 25th day of the 12th month (Adar 25), Evil-Merodach lifted up the head of Jehoiachin and brought him forth out of prison. (Note: 2 Kings says 27th day)",
       "start": {
@@ -9864,11 +10317,12 @@
         "babylon",
         "exile"
       ],
-      "notes": "Jeremiah 52:31 says 25th day, 2 Kings 25:27 says 27th day. Minor textual variance."
+      "notes": "Jeremiah 52:31 says 25th day, 2 Kings 25:27 says 27th day. Minor textual variance.",
+      "icon": "📅"
     },
     {
       "id": "date-ref-daniel-10-4",
-      "title": "📅 Daniel's Vision by the Tigris",
+      "title": "Daniel's Vision by the Tigris",
       "type": "biblical-date",
       "description": "On the 24th day of the 1st month (Nisan 24), in the 3rd year of Cyrus king of Persia (536 BC), Daniel received his final vision by the river Hiddekel (Tigris).",
       "start": {
@@ -9902,11 +10356,12 @@
         "daniel",
         "vision",
         "cyrus"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-haggai-1-1",
-      "title": "📅 Haggai's First Prophecy",
+      "title": "Haggai's First Prophecy",
       "type": "biblical-date",
       "description": "In the 6th month (Elul), 1st day, of Darius's 2nd year (521 BC), Haggai prophesied to Zerubbabel and Joshua about rebuilding the Temple.",
       "start": {
@@ -9940,11 +10395,12 @@
         "resolved",
         "haggai",
         "prophecy"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-haggai-1-15",
-      "title": "📅 Temple Work Resumes",
+      "title": "Temple Work Resumes",
       "type": "biblical-date",
       "description": "On the 24th day of the 6th month (Elul 24), in Darius's 2nd year (521 BC), the people responded to Haggai and began work on the Temple.",
       "start": {
@@ -9978,11 +10434,12 @@
         "resolved",
         "haggai",
         "temple"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-zechariah-1-1",
-      "title": "📅 Zechariah's First Prophecy",
+      "title": "Zechariah's First Prophecy",
       "type": "biblical-date",
       "description": "In the 8th month (Cheshvan) of Darius's 2nd year (521 BC), Zechariah called the people to repentance, two months after Haggai's first prophecy.",
       "start": {
@@ -10015,11 +10472,12 @@
         "resolved",
         "zechariah",
         "prophecy"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "date-ref-zechariah-1-7",
-      "title": "📅 Zechariah's Night Visions",
+      "title": "Zechariah's Night Visions",
       "type": "biblical-date",
       "description": "On the 24th day of the 11th month (Shebat 24), in Darius's 2nd year (520 BC), Zechariah received his famous night visions.",
       "start": {
@@ -10053,11 +10511,31 @@
         "resolved",
         "zechariah",
         "vision"
+      ],
+      "icon": "🔥",
+      "detailsTitle": "The 'Woman' in the Basket — Fire Offering?",
+      "details": [
+        {
+          "heading": "Hebrew Word Ambiguity: Woman or Fire?",
+          "text": "In Hebrew, 'woman' (אִשָּׁה, ishah) and 'fire offering' (אִשֶּׁה, isheh) are spelled identically without vowel points—vowels were added later by tradition. The consonantal text allows for an alternate reading: not a 'woman' but a 'fire/fire offering' in the basket."
+        },
+        {
+          "heading": "The Ephah's Dimensions",
+          "text": "The ephah (measuring basket) described has specific dimensions—a cylindrical container. With a talent of lead (approximately 70 pounds) as its covering/payload, the proportions remarkably match modern submarine-launched ballistic missiles."
+        },
+        {
+          "heading": "Flying Cylinder Carried by Wings",
+          "text": "Two figures with wings 'like the wings of a stork' lift the ephah between heaven and earth, carrying it to the land of Shinar (Babylon). This describes a flying cylindrical object with a heavy lead payload being delivered to bring destruction."
+        },
+        {
+          "heading": "Connection to Babylon's Destruction",
+          "text": "The destination is Shinar/Babylon, where a 'house' is built for it. Combined with Revelation's description of Babylon the Great's sudden destruction 'in one hour' by fire (Rev 18:8-10, 17-19), this vision may prophetically describe the weapon of that judgment—a fire that consumes everything."
+        }
       ]
     },
     {
       "id": "date-ref-zechariah-7-1",
-      "title": "📅 Question about Fasting",
+      "title": "Question about Fasting",
       "type": "biblical-date",
       "description": "In the 4th year of Darius (519 BC), on the 4th day of the 9th month (Chislev 4), men from Bethel came to ask about fasting.",
       "start": {
@@ -10091,11 +10569,12 @@
         "resolved",
         "zechariah",
         "fasting"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "end-of-israel-generation",
-      "title": "📅 End of One Generation from Israel's Rebirth",
+      "title": "End of One Generation from Israel's Rebirth",
       "type": "prophecy",
       "description": "The conclusion of 80 lunar years (one biblical generation per Psalm 90:10 - 'by reason of strength, fourscore years') from Israel's declaration of independence on May 14, 1948. In the luni-solar calendar with Metonic intercalation, 80 lunar years ≈ 80 solar years, placing this in 2028.",
       "start": {
@@ -10127,11 +10606,12 @@
         "80-years",
         "lunar",
         "psalm-90"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "israel-independence-1948",
-      "title": "🇮🇱 Israel Becomes a Nation",
+      "title": "Israel Becomes a Nation",
       "type": "historical-event",
       "priority": 1,
       "description": "The State of Israel declares independence on May 14, 1948. On Equinox/Full Moon calendars, this date falls on Atzeret (Shavuot) of Second Passover. On Spica Full Moon calendars, it falls on Atzeret of Passover. This remarkable coincidence links Israel's rebirth to the feast celebrating the giving of the Torah and the harvest of firstfruits.",
@@ -10173,22 +10653,22 @@
         "1948",
         "modern"
       ],
-      "notes": "May 14, 1948 = Atzeret of Second Passover (Equinox/Full Moon calendar) = Atzeret of Passover (Spica Full Moon calendar). The alignment with Shavuot/Atzeret connects Israel's rebirth to the feast of covenant renewal and firstfruits."
+      "notes": "May 14, 1948 = Atzeret of Second Passover (Equinox/Full Moon calendar) = Atzeret of Passover (Spica Full Moon calendar). The alignment with Shavuot/Atzeret connects Israel's rebirth to the feast of covenant renewal and firstfruits.",
+      "icon": "🇮🇱"
     },
     {
       "id": "end-of-suleiman-490-years",
-      "title": "📅 End of 490 Years from Suleiman's Decree",
+      "title": "End of 490 Lunar Years from Suleiman's Decree",
       "type": "prophecy",
       "priority": 1,
-      "description": "The conclusion of 490 years (70 weeks) from Sultan Suleiman's 1535 AD decree to rebuild Jerusalem's walls. 1535 + 490 = 2025 AD.",
+      "description": "The conclusion of 490 lunar years (70 weeks of years) from Sultan Suleiman's 1535 AD decree to rebuild Jerusalem's walls. The 490th lunar year ends on the last day of its last month, which falls in spring 2026 Gregorian (Adar 29/30 of lunar year 2025).",
       "start": {
-        "relative": {
-          "event": "suleiman-jerusalem-decree",
-          "offset": {
-            "years": 490
-          },
-          "direction": "after"
-        }
+        "lunar": {
+          "year": 2025,
+          "month": 12,
+          "day": 29
+        },
+        "notes": "Last day of lunar year 2025 (Adar 29). If leap year, would be Adar II 29. 1535 AD = lunar year 1535, + 490 = lunar year 2025."
       },
       "certainty": "prophetic",
       "sources": [
@@ -10205,11 +10685,12 @@
         "490-years",
         "jerusalem",
         "future"
-      ]
+      ],
+      "icon": "📅"
     },
     {
       "id": "suleiman-jerusalem-decree",
-      "title": "📜 Suleiman Orders Jerusalem Walls Rebuilt",
+      "title": "Suleiman Orders Jerusalem Walls Rebuilt",
       "type": "decree",
       "priority": 1,
       "description": "Sultan Suleiman the Magnificent of the Ottoman Empire orders the ruined walls of Jerusalem to be rebuilt. The walls were constructed between 1537 and 1541, as evidenced by inscriptions on the gates. This represents the second major 'decree to restore and rebuild Jerusalem' - paralleling the ancient decrees of Cyrus, Darius, and Artaxerxes.",
@@ -10245,11 +10726,12 @@
         "prophecy",
         "490-years"
       ],
-      "notes": "The walls built by Suleiman are the current Old City walls of Jerusalem that stand today. This decree may fulfill a prophetic pattern similar to Daniel's 70 weeks."
+      "notes": "The walls built by Suleiman are the current Old City walls of Jerusalem that stand today. This decree may fulfill a prophetic pattern similar to Daniel's 70 weeks.",
+      "icon": "📜"
     },
     {
       "id": "millennial-reign-begins",
-      "title": "👑 Millennial Reign of Christ Begins",
+      "title": "Millennial Reign of Christ Begins",
       "type": "prophecy",
       "priority": 1,
       "description": "The thousand-year reign of Christ begins. This is calculated as 1000 years before the end of the 4900-year (70×70) period from the Covenant with Abraham.",
@@ -10276,11 +10758,12 @@
         "christ",
         "revelation",
         "future"
-      ]
+      ],
+      "icon": "👑"
     },
     {
       "id": "end-of-70x70-years",
-      "title": "📅 End of 70×70 Years (4900 Years from Covenant)",
+      "title": "End of 70×70 Years (4900 Years from Covenant)",
       "type": "prophecy",
       "priority": 1,
       "description": "The conclusion of the 4900-year (70×70) period from the Covenant with Abraham. Daniel 9:24 states 'Seventy sevens are decreed for your people' - if interpreted as 70×70 years from the foundational covenant with Abraham, this marks the completion of God's plan for Abraham's seed.",
@@ -10309,7 +10792,8 @@
         "covenant",
         "future"
       ],
-      "notes": "The 70×70 interpretation extends Daniel's 70 weeks (490 years) to a grander scale of 4900 years, encompassing all of redemptive history from Abraham's covenant to the end of the millennial reign."
+      "notes": "The 70×70 interpretation extends Daniel's 70 weeks (490 years) to a grander scale of 4900 years, encompassing all of redemptive history from Abraham's covenant to the end of the millennial reign.",
+      "icon": "📅"
     }
   ]
 }

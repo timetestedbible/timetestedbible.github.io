@@ -624,32 +624,28 @@ const ReaderView = {
       if (!response.ok) throw new Error(`Number study not found: ${numberId}`);
       const markdown = await response.text();
       const html = this.renderMarkdown(markdown);
-      contentEl.innerHTML = `<div class="number-study-body">${html}</div>`;
+      // On index, put Available Number Studies at the top (dropdown in header; grid here)
+      if (numberId === 'index') {
+        const listHtml = this.getNumberStudyListHTML();
+        contentEl.innerHTML = `<div class="number-study-list">${listHtml}</div><div class="number-study-body">${html}</div>`;
+      } else {
+        contentEl.innerHTML = `<div class="number-study-body">${html}</div>`;
+      }
       this.linkifyScriptureRefs(contentEl);
       this.linkifyReaderLinks(contentEl);
-      
-      // If it's the index, add a list of available number studies
-      if (numberId === 'index') {
-        this.addNumberStudyList(contentEl);
-      }
     } catch (e) {
       console.error('[ReaderView] Error loading number study:', e);
       contentEl.innerHTML = `<div class="reader-error">Could not load number study: ${e.message}</div>`;
     }
   },
 
-  async addNumberStudyList(container) {
-    // Try to fetch a list of available number studies
-    // For now, we'll use a hardcoded list based on what we know exists
+  getNumberStudyListHTML() {
     const knownNumbers = [
       '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '17', '18',
       '20', '24', '30', '31', '40', '42', '49', '50', '70', '71', '77', '80',
       '100', '120', '144', '153', '490', '666', '1000', 'GEMATRIA'
     ];
-    
-    const listContainer = document.createElement('div');
-    listContainer.className = 'number-study-list';
-    listContainer.innerHTML = `
+    return `
       <h2>Available Number Studies</h2>
       <div class="number-study-grid">
         ${knownNumbers.map(num => `
@@ -659,12 +655,6 @@ const ReaderView = {
         `).join('')}
       </div>
     `;
-    
-    // Insert after the main content
-    const body = container.querySelector('.number-study-body');
-    if (body) {
-      body.appendChild(listContainer);
-    }
   },
 
   /**
@@ -865,7 +855,9 @@ const ReaderView = {
         // Build URL - if no verse, default to verse 1
         const targetVerse = verse || 1;
         const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${targetVerse}`;
-        return `<a href="${url}" class="scripture-ref" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
+        // id matches book-scripture-index anchor format (ref-book-chapter-verse) for scroll-from-Bible
+        const anchorId = 'ref-' + (book || '').toLowerCase().replace(/\s+/g, '-') + '-' + chapter + '-' + targetVerse;
+        return `<a id="${anchorId}" href="${url}" class="scripture-ref" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
       });
       node.parentNode.replaceChild(span, node);
     });
@@ -1138,6 +1130,7 @@ const ReaderView = {
           if (section) {
             setTimeout(() => this.scrollToSection(section, textArea), 100);
           }
+          setTimeout(() => this.scrollToVerseAnchor(textArea), 150);
         } else if (typeof BookView !== 'undefined' && typeof BookView.loadAndRenderChapter === 'function') {
           BookView.loadAndRenderChapter(chapterId, textArea, section);
         } else {
@@ -1446,6 +1439,8 @@ const ReaderView = {
           this.scrollToSection(section, container);
         }, 100);
       }
+      // Scroll to verse citation when opening from Bible book icon (e.g. #ref-genesis-10-8)
+      setTimeout(() => this.scrollToVerseAnchor(container), 150);
       
     } catch (e) {
       container.innerHTML = `<div class="reader-error">Error loading chapter: ${e.message}</div>`;
@@ -1518,6 +1513,21 @@ const ReaderView = {
       setTimeout(() => {
         el.style.backgroundColor = '';
       }, 2000);
+    }
+  },
+
+  /**
+   * Scroll to verse citation anchor (e.g. #ref-genesis-1-14) when opening chapter from Bible book icon
+   * @param {Element} container - Container to search within (e.g. #bible-explorer-text)
+   */
+  scrollToVerseAnchor(container) {
+    const hash = window.location.hash;
+    if (!hash || !container) return;
+    const id = hash.slice(1);
+    if (!id.startsWith('ref-')) return;
+    const el = container.querySelector(`#${CSS.escape(id)}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   },
 

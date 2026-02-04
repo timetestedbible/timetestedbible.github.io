@@ -171,7 +171,7 @@ If sexual adultery = death penalty, then:
 2. The marriage ends by **execution**, not paperwork
 3. Therefore Jesus' "except for fornication" (Matthew 5:32, 19:9) **cannot mean sexual sin**
 
-This is the **Redundancy Test**: If a proposed meaning creates legal redundancy with an existing law, the meaning must be wrong.
+This is the **Redundancy Test**: If a proposed meaning creates legal redundancy with an existing law, the meaning is likely wrong.
 
 ---
 

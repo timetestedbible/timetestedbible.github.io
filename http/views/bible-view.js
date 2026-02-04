@@ -262,22 +262,18 @@ const BibleView = {
     ].map(opt => `<option value="${opt.value}"${opt.value === contentType ? ' selected' : ''}>${opt.label}</option>`).join('');
     
     // Selector visibility based on contentType
-    // For 'words', 'numbers', 'people', and 'symbols-article', hide all selectors (they don't need any)
-    const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article'].includes(contentType);
+    // For 'words', 'people', and 'symbols-article', hide all selectors (numbers has its own dropdown)
+    const hideAllSelectors = ['words', 'people', 'symbols-article'].includes(contentType);
     const bibleDisplay = (contentType === 'bible' && !hideAllSelectors) ? '' : 'display:none;';
     const symbolsDisplay = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'display:none;';
     const ttDisplay = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'display:none;';
+    const numbersDisplay = (contentType === 'numbers') ? '' : 'display:none;';
     
     container.innerHTML = `
       <div id="bible-explorer-page" class="bible-explorer-page">
         <!-- Header -->
         <div class="bible-explorer-header">
           <div class="bible-explorer-header-inner">
-            <!-- Home button -->
-            <a href="/reader/bible" class="bible-home-link" onclick="goToBibleHome(); return false;" title="Bible Home">
-              📖
-            </a>
-            
             <!-- Content type selector -->
             <select id="reader-content-select" class="bible-explorer-select reader-content-select" 
                     onchange="onReaderContentChange(this.value)" title="Select content type">
@@ -316,6 +312,14 @@ const BibleView = {
             <span id="timetested-selectors" class="reader-selector-group" style="${ttDisplay}">
               <select id="timetested-chapter-select" class="bible-explorer-select" 
                       onchange="onTimeTestedSelect(this.value)" title="Select chapter">
+                <option value="">📚 Index</option>
+              </select>
+            </span>
+            
+            <!-- Number selector (shown when content=numbers) -->
+            <span id="number-selectors" class="reader-selector-group" style="${numbersDisplay}">
+              <select id="number-select" class="bible-explorer-select" 
+                      onchange="onNumberSelect(this.value)" title="Select number study">
                 <option value="">📚 Index</option>
               </select>
             </span>

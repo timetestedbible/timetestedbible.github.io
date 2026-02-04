@@ -1,0 +1,58 @@
+---
+description: Unidirectional data flow architecture - all UI renders from state
+alwaysApply: true
+---
+
+# Architecture: Unidirectional Data Flow
+
+This app uses a Redux-like pattern. **All UI must derive from state.**
+
+## The Pattern
+
+```
+URL → AppStore.dispatch() → State → Views render from state
+User Action → AppStore.dispatch() → State → Views re-render
+```
+
+## Rules
+
+### 1. Views Render FROM State
+```javascript
+// ✅ GOOD - derive UI from state at render time
+render(state, derived, container) {
+  const contentType = state.content.params.contentType;
+  const isActive = contentType === 'bible';
+  container.innerHTML = `<div style="${isActive ? '' : 'display:none'}">...`;
+}
+
+// ❌ BAD - imperative DOM manipulation after render
+setTimeout(() => {
+  document.getElementById('selector').style.display = 'none';
+}, 50);
+```
+
+### 2. Actions Dispatch Events
+```javascript
+// ✅ GOOD - dispatch to AppStore
+onclick="AppStore.dispatch({type:'SET_VIEW', view:'reader', params:{contentType:'timetested'}})"
+
+// ❌ BAD - directly manipulate DOM
+onclick="document.getElementById('panel').style.display = 'block'"
+```
+
+### 3. No Special-Case DOM Updates
+```javascript
+// ❌ BAD - function that imperatively updates UI
+function updateReaderContentSelector(contentType) {
+  document.getElementById('dropdown').value = contentType;
+  document.getElementById('selectors').style.display = 'none';
+}
+
+// ✅ GOOD - pass state to render, let it derive UI
+BibleView.renderStructure(container, state);  // state contains contentType
+```
+
+## Key Files
+- `app-store.js` - Central state, dispatch(), subscribe()
+- `content-manager.js` - Subscribes to state, calls view.render()
+- `views/*.js` - render(state, derived, container) methods

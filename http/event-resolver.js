@@ -1211,7 +1211,15 @@ function resolveEvent(event, profile, epochs, context = null) {
     tags: event.tags,
     anniversary_display: event.anniversary_display,
     description: event.description,
-    sources: event.sources
+    sources: event.sources,
+    
+    // Display metadata
+    icon: event.icon,
+    image: event.image,
+    article: event.article,
+    details: event.details,
+    detailsTitle: event.detailsTitle,
+    contentFile: event.contentFile
   };
   
   // Cache result

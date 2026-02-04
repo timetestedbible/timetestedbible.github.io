@@ -48,12 +48,17 @@
 }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: 'Georgia', serif;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
@@ -219,16 +224,19 @@ button {
   border-radius: 1px;
 }
 
-/* App Container */
+/* App Container - fills remaining space below sticky nav */
 .app-container {
+  flex: 1;
   display: flex;
-  min-height: calc(100vh - var(--top-nav-height));
+  flex-direction: column;
+  min-height: 0;
 }
 
 /* 3-Column Main Layout */
 .main-layout {
+  flex: 1;
   display: flex;
-  min-height: calc(100vh - var(--top-nav-height));
+  min-height: 0;
   width: 100%;
 }
 
@@ -298,9 +306,11 @@ button {
   flex: 1;
   padding: var(--spacing-md);
   min-width: 0;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
 }
 
 .content-area > .calendar-app {
@@ -1472,8 +1482,9 @@ body.desktop-layout .sidebar-header {
   bottom: auto !important;
   display: flex !important;
   flex-direction: column !important;
-  height: calc(100vh - var(--top-nav-height) - 20px);
-  max-height: calc(100vh - var(--top-nav-height) - 20px);
+  flex: 1 1 0% !important;
+  height: 100% !important;
+  min-height: 0 !important;
   width: 100% !important;
   z-index: auto !important;
   background: #0f0f23 !important;
@@ -1487,15 +1498,24 @@ body.desktop-layout .sidebar-header {
   display: flex !important;
 }
 
-/* Ensure Bible/Reader content fills available space - no page scroll */
+/* Ensure Bible/Reader fills available space */
+.view-bible .main-layout,
+.view-reader .main-layout {
+  height: 100% !important;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+}
+
 .view-bible .content-area,
 .view-reader .content-area {
   padding: 0 !important;
   max-width: none !important;
   width: 100% !important;
+  height: 100% !important;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
   margin: 0 !important;
-  height: calc(100vh - var(--top-nav-height));
-  max-height: calc(100vh - var(--top-nav-height));
+  align-items: stretch !important;
   overflow: hidden !important;
 }
 
@@ -1535,20 +1555,22 @@ body.view-reader {
 
 /* Bible explorer body fills width - contained height */
 .bible-explorer-body {
-  flex: 1;
-  display: flex;
+  flex: 1 1 0% !important;
+  display: flex !important;
   width: 100% !important;
-  min-height: 0;
+  min-height: 0 !important;
+  height: 100% !important;
   overflow: hidden;
 }
 
 /* Content wrapper takes full width minus sidebar - contained height */
 .bible-content-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  flex: 1 1 0% !important;
+  display: flex !important;
+  flex-direction: column !important;
   min-width: 0;
-  min-height: 0;
+  min-height: 0 !important;
+  height: 100% !important;
   width: 100%;
   overflow: hidden;
 }
@@ -1621,9 +1643,11 @@ body.view-reader {
   color: #999;
 }
 
-/* Bible text area fills remaining space */
+/* Bible text area fills remaining space - min-height: 0 allows flex shrink so it scrolls */
 .bible-explorer-text {
-  flex: 1;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  height: 100% !important;
   overflow-y: auto;
   padding: 20px 30px;
   line-height: 1.8;
@@ -1714,10 +1738,63 @@ body.view-reader {
   display: none !important;
 }
 
-/* Mobile adjustments for Bible */
+/* Mobile adjustments for Bible - use absolute positioning for guaranteed height */
 @media (max-width: 768px) {
-  .bible-explorer-body {
-    flex-direction: column;
+  /* Content area uses viewport height */
+  .view-bible .content-area,
+  .view-reader .content-area {
+    position: relative !important;
+    height: calc(100vh - var(--top-nav-height)) !important;
+    height: calc(100dvh - var(--top-nav-height)) !important;
+    overflow: hidden !important;
+  }
+  
+  /* Bible page fills content area absolutely */
+  .view-bible .bible-explorer-page,
+  .view-reader .bible-explorer-page {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Body fills remaining space after header */
+  .view-bible .bible-explorer-body,
+  .view-reader .bible-explorer-body {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Content wrapper fills body */
+  .view-bible .bible-content-wrapper,
+  .view-reader .bible-content-wrapper {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Text area fills content wrapper and scrolls */
+  .view-bible .bible-explorer-text {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    padding: 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Time-tested / reader: almost edge-to-edge on mobile */
+  .view-reader .bible-explorer-text {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    padding: 12px 10px;
+    -webkit-overflow-scrolling: touch;
   }
   
   .strongs-sidebar.open {
@@ -1727,15 +1804,12 @@ body.view-reader {
     bottom: 0;
     width: 100%;
     max-width: 400px;
+    z-index: 10300; /* Above word/hebrew/book-ref tooltips (10200) */
   }
   
   .bible-chapter-title {
     font-size: 0.95em;
     max-width: 200px;
-  }
-  
-  .bible-explorer-text {
-    padding: 16px;
   }
   
   .bible-nav-btn {
@@ -6006,7 +6080,7 @@ code {
 /* Symbol Tooltip (mouseover) */
 .symbol-tooltip {
   position: fixed;
-  z-index: 10000;
+  z-index: 10200;
   max-width: 350px;
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--color-surface, #1a1a2e);

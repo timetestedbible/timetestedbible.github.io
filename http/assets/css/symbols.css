@@ -231,6 +231,202 @@
   border-color: var(--color-accent);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   SYMBOLS LANDING PAGE - INTRO SECTIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Hero Section */
+.symbols-hero {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.15) 0%, rgba(42, 90, 140, 0.3) 100%);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 16px;
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.symbols-hero .hero-quote {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.symbols-hero .hero-quote blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-sm);
+  line-height: 1.6;
+}
+
+.symbols-hero .hero-quote cite {
+  color: var(--color-accent-gold);
+  font-size: 0.95rem;
+}
+
+.symbols-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.symbols-hero .hero-lead {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.symbols-hero .hero-content p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.symbols-hero .hero-content em {
+  color: var(--color-accent-gold);
+  font-style: italic;
+}
+
+.symbols-hero .symbols-caution {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  border-left: 3px solid rgba(126, 200, 227, 0.4);
+}
+
+/* Why Section */
+.symbols-why {
+  margin-bottom: var(--spacing-xl);
+}
+
+.symbols-why h2 {
+  text-align: center;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.5rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.why-card {
+  background: rgba(42, 90, 140, 0.3);
+  border: 1px solid rgba(126, 200, 227, 0.2);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+.why-card .why-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.why-card h3 {
+  color: var(--color-accent);
+  font-size: 1.05rem;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.why-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Learn More Section */
+.symbols-learn-more {
+  margin-bottom: var(--spacing-xl);
+}
+
+.symbols-learn-more h2 {
+  text-align: center;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.5rem;
+}
+
+.learn-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.learn-card {
+  display: block;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.1) 0%, rgba(42, 90, 140, 0.2) 100%);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.learn-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.2);
+}
+
+.learn-card .learn-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.learn-card h3 {
+  color: var(--color-accent-gold);
+  font-size: 1.1rem;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.learn-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Symbol Dictionary Section */
+.symbols-dictionary {
+  margin-bottom: var(--spacing-xl);
+}
+
+.symbols-dictionary h2 {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+.symbols-dictionary .symbol-count {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: normal;
+}
+
+.symbols-dictionary .dictionary-intro {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.5;
+}
+
+/* Updated Footer */
+.symbols-footer blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-text-muted);
+}
+
+.symbols-footer cite {
+  color: var(--color-accent-gold);
+  font-size: 0.9rem;
+}
+
 /* Responsive Symbols View */
 @media (max-width: 600px) {
   .symbols-grid {
@@ -248,5 +444,279 @@
   
   .meaning-label {
     min-width: auto;
+  }
+  
+  .symbols-hero {
+    padding: var(--spacing-md);
+  }
+  
+  .symbols-hero .hero-quote blockquote {
+    font-size: 1.05rem;
+  }
+  
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .learn-more-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SYMBOL ARTICLES (HOW-SCRIPTURE-TEACHES, WHY-PARABLES, etc.)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.reader-symbol-article {
+  padding: var(--spacing-md);
+}
+
+.symbol-article-content {
+  margin-top: var(--spacing-md);
+}
+
+.symbol-article-body {
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.symbol-article-body h1,
+.symbol-article-body h2,
+.symbol-article-body h3 {
+  color: var(--color-accent);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.symbol-article-body h1 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.3);
+  padding-bottom: var(--spacing-sm);
+}
+
+.symbol-article-body h2 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+  padding-bottom: var(--spacing-xs);
+}
+
+.symbol-article-body h3 {
+  font-size: 1.15rem;
+  color: var(--color-accent-gold);
+}
+
+.symbol-article-body p {
+  margin-bottom: var(--spacing-md);
+}
+
+.symbol-article-body blockquote {
+  border-left: 3px solid var(--color-accent-gold);
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(212, 160, 23, 0.1);
+  font-style: italic;
+}
+
+.symbol-article-body blockquote cite {
+  display: block;
+  text-align: right;
+  margin-top: var(--spacing-sm);
+  font-size: 0.9em;
+  color: var(--color-accent-gold);
+}
+
+.symbol-article-body ul,
+.symbol-article-body ol {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-lg);
+}
+
+.symbol-article-body li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.symbol-article-body strong {
+  color: var(--color-accent);
+}
+
+.symbol-article-body em {
+  color: var(--color-accent-gold);
+}
+
+.symbol-article-body code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.symbol-article-body pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.symbol-article-body .md-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+}
+
+.symbol-article-body .md-table th {
+  background: rgba(212, 160, 23, 0.2);
+  color: var(--color-accent-gold);
+  text-align: left;
+  padding: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-accent-gold);
+}
+
+.symbol-article-body .md-table td {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.symbol-article-body .md-table tr:hover {
+  background: rgba(126, 200, 227, 0.05);
+}
+
+.symbol-article-body hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: var(--spacing-xl) 0;
+}
+
+/* Scripture reference links in articles */
+.symbol-article-body .scripture-ref {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(126, 200, 227, 0.5);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.symbol-article-body .scripture-ref:hover {
+  color: #a8dcf0;
+  border-bottom-color: #a8dcf0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SYMBOL INDEX (in-reader version)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.reader-symbol-index {
+  padding: var(--spacing-md);
+}
+
+.symbol-index-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.symbol-index-header h1 {
+  font-size: 1.6rem;
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.symbol-index-header p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.symbol-index-intro {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.1) 0%, rgba(42, 90, 140, 0.2) 100%);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.symbol-index-intro p {
+  margin: 0 0 var(--spacing-md);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.symbol-index-intro em {
+  color: var(--color-accent-gold);
+}
+
+.symbol-intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.symbol-intro-link {
+  background: rgba(42, 90, 140, 0.5);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  color: var(--color-accent);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.symbol-intro-link:hover {
+  background: rgba(42, 90, 140, 0.7);
+  border-color: var(--color-accent);
+}
+
+.symbol-index-dictionary h2 {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.symbol-index-dictionary .symbol-count {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: normal;
+}
+
+.symbol-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.symbol-index-item {
+  background: rgba(42, 90, 140, 0.3);
+  border: 1px solid rgba(126, 200, 227, 0.2);
+  border-radius: 8px;
+  padding: var(--spacing-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text);
+}
+
+.symbol-index-item:hover {
+  background: rgba(42, 90, 140, 0.5);
+  border-color: var(--color-accent);
+}
+
+.symbol-index-name {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+.symbol-index-meaning {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .symbol-intro-links {
+    flex-direction: column;
+  }
+  
+  .symbol-index-grid {
+    grid-template-columns: 1fr;
   }
 }

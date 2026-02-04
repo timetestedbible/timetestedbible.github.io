@@ -8439,12 +8439,15 @@ body.biblical-timeline-open .top-nav-inner {
   .symbol-study-body blockquote,
   .word-study-body blockquote,
   .number-study-body blockquote {
-    margin: var(--spacing-md) var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-md);
+    margin-left: calc(var(--spacing-xl) * 0.5);
+    margin-right: calc(var(--spacing-xl) * 0.5);
+    padding: var(--spacing-md) calc(var(--spacing-lg) * 0.5);
   }
   .ttt-chapter-body blockquote {
-    margin: var(--spacing-md) 0;
-    padding: var(--spacing-sm) 0;
+    margin-left: calc(var(--spacing-md) * 0.5);
+    margin-right: calc(var(--spacing-md) * 0.5);
+    padding-left: calc(var(--spacing-md) * 0.5);
+    padding-right: calc(var(--spacing-md) * 0.5);
   }
   
   .ttt-chapter-nav {

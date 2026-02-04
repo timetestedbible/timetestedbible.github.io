@@ -123,19 +123,6 @@ const EventsView = {
           </div>
         </div>
       </div>
-      
-      <!-- Event Detail Modal -->
-      <div id="event-detail-overlay" class="event-detail-overlay">
-        <div class="event-detail-modal">
-          <div class="event-detail-header">
-            <h3 id="event-detail-title">Event Title</h3>
-            <button class="event-detail-close" onclick="EventsView.closeEventDetail()">✕</button>
-          </div>
-          <div id="event-detail-content" class="event-detail-content">
-            <!-- Populated by JavaScript -->
-          </div>
-        </div>
-      </div>
     `;
     
     // Load and render events
@@ -143,16 +130,16 @@ const EventsView = {
   },
   
   async loadAndRenderEvents(viewMode) {
-    // Use the existing loadHistoricalEvents from historical-events.js
-    if (typeof loadHistoricalEvents === 'function') {
-      await loadHistoricalEvents();
+    // Clear the resolved events cache to ensure fresh resolution
+    if (typeof clearResolvedEventsCache === 'function') {
+      clearResolvedEventsCache();
     }
     
-    // Render based on view mode from state
+    // Render based on view mode from state (await the async functions)
     if (viewMode === 'timeline') {
-      this.renderEventsTimeline();
+      await this.renderEventsTimeline();
     } else {
-      this.renderEventsList();
+      await this.renderEventsList();
     }
   },
   
@@ -403,9 +390,9 @@ const EventsView = {
   },
   
   // Format a combined date from lunar and gregorian info
-  // Returns { display: "Nisan 15, 1447 BC", lunarMonth, lunarDay, year }
+  // Returns { display: "Nisan 15, 1447 BC", displayHtml: "<span>...</span>", lunarMonth, lunarDay, year }
   formatCombinedDate(dates) {
-    if (!dates) return { display: '—' };
+    if (!dates) return { display: '—', displayHtml: '—' };
     
     const lunar = dates.lunar || {};
     const gregorian = dates.gregorian || {};
@@ -426,24 +413,35 @@ const EventsView = {
     const lunarDay = hasLunarDay ? lunar.day : null;
     
     const parts = [];
+    const htmlParts = [];
     
     if (hasLunarMonth) {
-      parts.push(lunarMonthNames[lunar.month - 1] || `Month ${lunar.month}`);
+      const monthName = lunarMonthNames[lunar.month - 1] || `Month ${lunar.month}`;
+      parts.push(monthName);
+      // Add tooltip with month number
+      htmlParts.push(`<span class="month-name" title="Month ${lunar.month}">${monthName}</span>`);
     }
     if (hasLunarDay) {
       parts.push(lunar.day);
+      htmlParts.push(lunar.day);
     }
     if (hasYear) {
-      if (parts.length > 0) parts.push(',');
-      parts.push(this.formatYear(year));
+      if (parts.length > 0) {
+        parts.push(',');
+        htmlParts.push(',');
+      }
+      const yearStr = this.formatYear(year);
+      parts.push(yearStr);
+      htmlParts.push(yearStr);
     }
     
-    if (parts.length === 0) return { display: '—' };
+    if (parts.length === 0) return { display: '—', displayHtml: '—' };
     
     // Clean up comma placement
     let display = parts.join(' ').replace(' ,', ',');
+    let displayHtml = htmlParts.join(' ').replace(' ,', ',');
     
-    return { display, lunarMonth, lunarDay, year };
+    return { display, displayHtml, lunarMonth, lunarDay, year };
   },
   
   // Navigate to a specific date in the calendar
@@ -528,23 +526,27 @@ const EventsView = {
     
     // Build calendar link data
     const canNavigate = dateInfo.year !== null && dateInfo.year !== undefined;
-    const calendarData = canNavigate ? 
-      `data-year="${dateInfo.year}" data-month="${dateInfo.lunarMonth || ''}" data-day="${dateInfo.lunarDay || ''}"` : '';
+    const yearDisplay = dateInfo.year !== null && dateInfo.year !== undefined ? this.formatYear(dateInfo.year) : '';
     
     return `
-      <div class="event-card" onclick="EventsView.openEventDetail('${event.id}')">
+      <div class="event-card" onclick="EventsView.openInTimeline('${event.id}')">
         <div class="event-card-header">
           <h4 class="event-card-title">${typeIcon} ${event.title}</h4>
           <span class="event-card-type">${event.type || 'event'}</span>
         </div>
         ${dateInfo.display !== '—' ? `
         <div class="event-card-date">
-          <span class="event-date-value">${dateInfo.display}</span>
-          ${canNavigate ? `
-          <button class="event-calendar-btn" ${calendarData} 
-                  onclick="event.stopPropagation(); EventsView.navigateToDate(${dateInfo.year}, ${dateInfo.lunarMonth || 'null'}, ${dateInfo.lunarDay || 'null'})"
-                  title="View in calendar">📅</button>
-          ` : ''}
+          <span class="event-date-value">${dateInfo.displayHtml || dateInfo.display}</span>
+          <div class="event-card-actions">
+            ${canNavigate ? `
+            <button class="event-action-btn event-action-calendar" 
+                    onclick="event.stopPropagation(); EventsView.navigateToDate(${dateInfo.year}, ${dateInfo.lunarMonth || 'null'}, ${dateInfo.lunarDay || 'null'})"
+                    title="View in calendar">📅</button>
+            ` : ''}
+            <button class="event-action-btn event-action-timeline" 
+                    onclick="event.stopPropagation(); EventsView.openInTimeline('${event.id}')"
+                    title="View on timeline">📊</button>
+          </div>
         </div>
         ` : ''}
         <p class="event-card-desc">${event.description || ''}</p>
@@ -553,53 +555,41 @@ const EventsView = {
     `;
   },
   
+  // Open the main timeline view centered on this event
+  openInTimeline(eventId) {
+    // Navigate to timeline view with the event ID in the URL
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'timeline'
+    });
+    
+    // Set the timeline event ID so it centers on this event
+    AppStore.dispatch({
+      type: 'SET_TIMELINE_EVENT',
+      eventId: eventId
+    });
+  },
+  
   async renderEventsList() {
     const container = document.getElementById('events-list-container');
     if (!container) return;
     
-    // Try to use existing historicalEventsData or load it
-    let data = window.historicalEventsData;
-    if (!data && typeof loadHistoricalEvents === 'function') {
-      data = await loadHistoricalEvents();
+    // Use the shared resolved events cache
+    let allEvents;
+    if (typeof getResolvedEvents === 'function') {
+      allEvents = await getResolvedEvents();
+    } else {
+      // Fallback to raw events
+      let data = window.historicalEventsData;
+      if (!data && typeof loadHistoricalEvents === 'function') {
+        data = await loadHistoricalEvents();
+      }
+      allEvents = data?.events || [];
     }
     
-    if (!data) {
+    if (!allEvents || allEvents.length === 0) {
       container.innerHTML = '<div class="events-loading">Failed to load events.</div>';
       return;
-    }
-    
-    // Resolve events using EventResolver to get proper years for relative dates
-    let allEvents = [...(data.events || [])];
-    if (typeof EventResolver !== 'undefined') {
-      try {
-        const profile = EventResolver.DEFAULT_PROFILE;
-        const resolvedEvents = EventResolver.resolveAllEvents(data, profile);
-        
-        // Merge resolved dates back into events
-        allEvents = allEvents.map(event => {
-          const resolved = resolvedEvents.find(r => r.id === event.id);
-          if (resolved && resolved.startJD) {
-            // Convert JD to gregorian and lunar dates
-            const gregorian = EventResolver.julianDayToGregorian(resolved.startJD);
-            const lunar = EventResolver.julianDayToLunar ? 
-              EventResolver.julianDayToLunar(resolved.startJD, profile) : null;
-            
-            // Create enriched event with resolved dates
-            return {
-              ...event,
-              resolvedStartJD: resolved.startJD,
-              dates: {
-                ...event.dates,
-                gregorian: gregorian,
-                lunar: lunar || event.dates?.lunar
-              }
-            };
-          }
-          return event;
-        });
-      } catch (e) {
-        console.warn('Error resolving events:', e);
-      }
     }
     
     const filteredEvents = this.getFilteredEvents(allEvents);
@@ -646,17 +636,24 @@ const EventsView = {
     const container = document.getElementById('events-timeline-container');
     if (!container) return;
     
-    let data = window.historicalEventsData;
-    if (!data && typeof loadHistoricalEvents === 'function') {
-      data = await loadHistoricalEvents();
+    // Use the shared resolved events cache
+    let allEvents;
+    if (typeof getResolvedEvents === 'function') {
+      allEvents = await getResolvedEvents();
+    } else {
+      let data = window.historicalEventsData;
+      if (!data && typeof loadHistoricalEvents === 'function') {
+        data = await loadHistoricalEvents();
+      }
+      allEvents = data?.events || [];
     }
     
-    if (!data) {
+    if (!allEvents || allEvents.length === 0) {
       container.innerHTML = '<div class="events-timeline-loading">Failed to load timeline.</div>';
       return;
     }
     
-    const filteredEvents = this.getFilteredEvents(data.events || []);
+    const filteredEvents = this.getFilteredEvents(allEvents);
     
     if (filteredEvents.length === 0) {
       container.innerHTML = '<div class="events-no-results">No events match your filters.</div>';
@@ -736,7 +733,7 @@ const EventsView = {
       const icon = this.getTypeIcon(event.type);
       
       html += `
-        <div class="timeline-item" onclick="EventsView.openEventDetail('${event.id}')">
+        <div class="timeline-item" onclick="EventsView.openInTimeline('${event.id}')">
           <div class="timeline-year">${yearDisplay}</div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -749,88 +746,6 @@ const EventsView = {
     
     html += '</div>';
     container.innerHTML = html;
-  },
-  
-  async openEventDetail(eventId) {
-    let data = window.historicalEventsData;
-    if (!data && typeof loadHistoricalEvents === 'function') {
-      data = await loadHistoricalEvents();
-    }
-    
-    const event = data?.events?.find(e => e.id === eventId);
-    if (!event) {
-      console.warn('Event not found:', eventId);
-      return;
-    }
-    
-    const overlay = document.getElementById('event-detail-overlay');
-    const titleEl = document.getElementById('event-detail-title');
-    const contentEl = document.getElementById('event-detail-content');
-    
-    if (!overlay || !titleEl || !contentEl) return;
-    
-    const typeIcon = this.getTypeIcon(event.type);
-    titleEl.innerHTML = `${typeIcon} ${event.title}`;
-    
-    const dates = event.dates || event.start || {};
-    const dateInfo = this.formatCombinedDate(dates);
-    const canNavigate = dateInfo.year !== null && dateInfo.year !== undefined;
-    
-    let html = `
-      <div class="event-detail-section">
-        <div class="event-detail-type">${event.type || 'event'}</div>
-        
-        ${dateInfo.display !== '—' ? `
-        <div class="event-detail-date-row">
-          <span class="event-detail-date-value">${dateInfo.display}</span>
-          ${canNavigate ? `
-          <button class="event-calendar-btn large" 
-                  onclick="EventsView.closeEventDetail(); EventsView.navigateToDate(${dateInfo.year}, ${dateInfo.lunarMonth || 'null'}, ${dateInfo.lunarDay || 'null'})"
-                  title="View in calendar">📅 View in Calendar</button>
-          ` : ''}
-        </div>
-        ` : ''}
-        
-        ${event.description ? `
-        <div class="event-detail-description">
-          <h4>Description</h4>
-          <p>${event.description}</p>
-        </div>
-        ` : ''}
-        
-        ${event.sources && event.sources.length > 0 ? `
-        <div class="event-detail-sources">
-          <h4>Sources</h4>
-          <ul>
-            ${event.sources.map(s => `<li>${s.ref}${s.note ? ` - ${s.note}` : ''}</li>`).join('')}
-          </ul>
-        </div>
-        ` : ''}
-        
-        ${event.tags && event.tags.length > 0 ? `
-        <div class="event-detail-tags">
-          ${event.tags.map(tag => `<span class="event-tag">${tag}</span>`).join('')}
-        </div>
-        ` : ''}
-      </div>
-    `;
-    
-    contentEl.innerHTML = html;
-    overlay.classList.add('visible');
-    
-    // Close on overlay click
-    overlay.onclick = (e) => {
-      if (e.target === overlay) {
-        this.closeEventDetail();
-      }
-    };
-  },
-  
-  closeEventDetail() {
-    const overlay = document.getElementById('event-detail-overlay');
-    if (overlay) {
-      overlay.classList.remove('visible');
-    }
   }
 };
 

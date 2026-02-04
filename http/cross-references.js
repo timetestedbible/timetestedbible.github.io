@@ -246,9 +246,8 @@ async function showCrossRefPanel(book, chapter, verse, event) {
   
   // Build sidebar content with loading state
   sidebar.innerHTML = `
-    <div class="strongs-sidebar-resize"></div>
+    <div class="strongs-sidebar-resize" onmousedown="startStrongsResize(event)"></div>
     <div class="strongs-sidebar-header">
-      <div class="strongs-nav-buttons"></div>
       <div class="strongs-sidebar-title">🔗 Cross References</div>
       <button class="strongs-sidebar-close" onclick="closeStrongsPanel()">✕</button>
     </div>
@@ -263,6 +262,11 @@ async function showCrossRefPanel(book, chapter, verse, event) {
       </div>
     </div>
   `;
+  
+  try {
+    const saved = localStorage.getItem('strongs-sidebar-width');
+    if (saved) sidebar.style.width = saved;
+  } catch (e) {}
   
   // Animate open
   requestAnimationFrame(() => {

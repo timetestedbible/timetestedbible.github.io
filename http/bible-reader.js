@@ -5161,15 +5161,17 @@ function updateReaderContentSelector(contentType) {
   }
   
   // Show/hide selector groups
-  // For 'words', 'numbers', 'people', and 'symbols-article', hide all selectors
-  const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article'].includes(contentType);
+  // For 'words', 'people', and 'symbols-article', hide all selectors (numbers has its own dropdown)
+  const hideAllSelectors = ['words', 'people', 'symbols-article'].includes(contentType);
   const bibleSelectors = document.getElementById('bible-selectors');
   const symbolSelectors = document.getElementById('symbol-selectors');
   const ttSelectors = document.getElementById('timetested-selectors');
+  const numberSelectors = document.getElementById('number-selectors');
   
   if (bibleSelectors) bibleSelectors.style.display = (contentType === 'bible' && !hideAllSelectors) ? '' : 'none';
   if (symbolSelectors) symbolSelectors.style.display = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'none';
   if (ttSelectors) ttSelectors.style.display = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'none';
+  if (numberSelectors) numberSelectors.style.display = (contentType === 'numbers') ? '' : 'none';
   
   // Populate symbol dropdown if switching to symbols
   if (contentType === 'symbols') {
@@ -5179,6 +5181,17 @@ function updateReaderContentSelector(contentType) {
   // Populate Time Tested dropdown if switching to timetested
   if (contentType === 'timetested') {
     populateTimeTestedDropdown();
+  }
+  
+  // Populate and sync number dropdown when content is numbers
+  if (contentType === 'numbers') {
+    populateNumberDropdown();
+    const numberSelect = document.getElementById('number-select');
+    const state = typeof AppStore !== 'undefined' ? AppStore.getState() : {};
+    const currentNumber = state?.content?.params?.number;
+    if (numberSelect) {
+      numberSelect.value = currentNumber || '';
+    }
   }
 }
 
@@ -5234,6 +5247,42 @@ function onTimeTestedSelect(chapterId) {
       params: { contentType: 'timetested', chapterId: chapterId || null }
     });
   }
+}
+
+/**
+ * Handle number study selection from dropdown
+ * @param {string} numberId - the number study ID (empty string shows index)
+ */
+function onNumberSelect(numberId) {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'reader',
+      params: { contentType: 'numbers', number: numberId || null }
+    });
+  }
+}
+
+/**
+ * Populate the number study dropdown (Index + available number studies)
+ */
+function populateNumberDropdown() {
+  const select = document.getElementById('number-select');
+  if (!select) return;
+  
+  const knownNumbers = [
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '17', '18',
+    '20', '24', '30', '31', '40', '42', '49', '50', '70', '71', '77', '80',
+    '100', '120', '144', '153', '490', '666', '1000', 'GEMATRIA'
+  ];
+  
+  let html = '<option value="">📚 Index</option>';
+  html += '<optgroup label="Number studies">';
+  for (const num of knownNumbers) {
+    html += `<option value="${num}">${num}</option>`;
+  }
+  html += '</optgroup>';
+  select.innerHTML = html;
 }
 
 /**

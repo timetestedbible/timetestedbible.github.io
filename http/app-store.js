@@ -21,6 +21,7 @@ const AppStore = {
       today: null,              // Real current JD (ticks every minute)
       selectedDate: null,       // User-selected JD for viewing (legacy, for compatibility)
       selectedLunarDate: null,  // User-selected lunar date { year, month, day } - SOURCE OF TRUTH
+      utcTime: { hours: 12, minutes: 0 },  // Time in UTC (internal representation)
       location: { lat: 31.7683, lon: 35.2137 },  // GPS coordinates (source of truth) - Default: Jerusalem
       profileId: 'timeTested'   // Active profile ID
     },
@@ -39,6 +40,9 @@ const AppStore = {
       interlinearVerse: null,   // Open interlinear for verse (e.g., 5)
       timelineEventId: null,    // Selected timeline event ID
       timelineDurationId: null, // Selected timeline duration ID
+      timelineZoom: null,       // Timeline zoom level (null = default from localStorage)
+      timelineCenterYear: null, // Timeline center year for scroll position
+      timelineSearch: null,     // Timeline search query
       eventsSearch: null,       // Events page search query
       eventsType: 'all',        // Events page type filter
       eventsEra: 'all',         // Events page era filter
@@ -127,22 +131,216 @@ const AppStore = {
   },
   
   /**
+   * Convert UTC time to local time at a given location
+   * @param {Object} utcTime - { hours, minutes } in UTC
+   * @param {Date} date - The date for timezone calculation (DST varies by date)
+   * @param {Object} location - { lat, lon }
+   * @returns {Object} { hours, minutes } in local time
+   */
+  utcToLocal(utcTime, date, location) {
+    if (!location) return utcTime;
+    
+    const tz = typeof TimezoneUtils !== 'undefined' 
+      ? TimezoneUtils.getTimezoneFromCoords(location.lat, location.lon)
+      : null;
+    
+    if (tz) {
+      // Create a UTC date with the specified time
+      const utcDate = new Date(Date.UTC(
+        date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+        utcTime.hours, utcTime.minutes, 0
+      ));
+      
+      // Format in the target timezone
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: tz,
+        hour: '2-digit', minute: '2-digit', hour12: false
+      });
+      
+      const parts = formatter.formatToParts(utcDate);
+      const getPart = (type) => {
+        const part = parts.find(p => p.type === type);
+        return part ? parseInt(part.value, 10) : 0;
+      };
+      
+      return { hours: getPart('hour'), minutes: getPart('minute') };
+    }
+    
+    // Fallback: solar time offset
+    const offsetHours = location.lon / 15;
+    let hours = utcTime.hours + offsetHours;
+    let minutes = utcTime.minutes;
+    
+    // Handle day overflow
+    if (hours >= 24) hours -= 24;
+    if (hours < 0) hours += 24;
+    
+    return { hours: Math.floor(hours), minutes };
+  },
+  
+  /**
+   * Convert local time at a location to UTC
+   * @param {Object} localTime - { hours, minutes } in local time
+   * @param {Date} date - The date for timezone calculation
+   * @param {Object} location - { lat, lon }
+   * @returns {Object} { hours, minutes } in UTC
+   */
+  localToUtc(localTime, date, location) {
+    if (!location) return localTime;
+    
+    const tz = typeof TimezoneUtils !== 'undefined'
+      ? TimezoneUtils.getTimezoneFromCoords(location.lat, location.lon)
+      : null;
+    
+    if (tz) {
+      // Create a date string in local time format
+      const year = date.getUTCFullYear();
+      const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(date.getUTCDate()).padStart(2, '0');
+      const hours = String(localTime.hours).padStart(2, '0');
+      const minutes = String(localTime.minutes).padStart(2, '0');
+      
+      // Parse as if in the target timezone by using toLocaleString trick
+      // Create date assuming local browser time
+      const localDateStr = `${year}-${month}-${day}T${hours}:${minutes}:00`;
+      const tempDate = new Date(localDateStr);
+      
+      // Get the offset between the target timezone and browser local
+      const targetFormatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: tz,
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+      });
+      
+      // Format browser's "now" in target timezone to get offset
+      const nowInTarget = targetFormatter.format(new Date());
+      const nowLocal = new Date().toLocaleString('en-US', {
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+      });
+      
+      // Calculate offset by comparing UTC times
+      const browserOffset = -new Date().getTimezoneOffset(); // in minutes, positive = east
+      const targetDate = new Date(tempDate.getTime());
+      
+      // Get UTC time by formatting in UTC
+      const utcFormatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'UTC',
+        hour: '2-digit', minute: '2-digit', hour12: false
+      });
+      
+      // We need to find what UTC time corresponds to localTime in the target timezone
+      // Try: create date at local time, then find its representation in target TZ
+      // If they match, we found the right UTC
+      
+      // Simpler approach: use the browser's timezone conversion
+      // Create a date at the local time, get its UTC
+      const utcMs = tempDate.getTime();
+      const utcDate = new Date(utcMs);
+      
+      // But this assumes browser local = target TZ, which is wrong
+      // Need to adjust for the difference
+      
+      // Get current offset of target timezone
+      const testDate = new Date(Date.UTC(year, date.getUTCMonth(), date.getUTCDate(), 12, 0, 0));
+      const inTarget = new Intl.DateTimeFormat('en-US', {
+        timeZone: tz,
+        hour: '2-digit', minute: '2-digit', hour12: false
+      }).formatToParts(testDate);
+      const targetHourAt12UTC = parseInt(inTarget.find(p => p.type === 'hour').value, 10);
+      const targetOffsetHours = targetHourAt12UTC - 12; // offset from UTC
+      
+      // Convert local to UTC by subtracting offset
+      let utcHours = localTime.hours - targetOffsetHours;
+      if (utcHours >= 24) utcHours -= 24;
+      if (utcHours < 0) utcHours += 24;
+      
+      return { hours: utcHours, minutes: localTime.minutes };
+    }
+    
+    // Fallback: solar time offset (reverse)
+    const offsetHours = location.lon / 15;
+    let hours = localTime.hours - offsetHours;
+    
+    if (hours >= 24) hours -= 24;
+    if (hours < 0) hours += 24;
+    
+    return { hours: Math.floor(hours), minutes: localTime.minutes };
+  },
+  
+  /**
+   * Get local time for display based on stored UTC time
+   * @returns {Object} { hours, minutes } in local time at current location
+   */
+  getLocalTime() {
+    const state = this._state;
+    const utcTime = state.context.utcTime || { hours: 12, minutes: 0 };
+    const location = state.context.location;
+    const selectedDate = state.context.selectedDate;
+    
+    if (!selectedDate) return utcTime;
+    
+    const gregDate = this._julianToGregorian(selectedDate);
+    const date = new Date(Date.UTC(gregDate.year, gregDate.month - 1, gregDate.day, 12, 0, 0));
+    
+    return this.utcToLocal(utcTime, date, location);
+  },
+  
+  /**
    * Get the current date/time at the user's location
-   * Uses the browser's actual local time (civil timezone, not solar time)
+   * Uses IANA timezone lookup for accurate civil time, falls back to solar time
    * Accounts for biblical day boundaries (first light for morning, sunset for evening)
-   * @param {Object} location - { lat, lon } coordinates (used for biblical day calculation)
-   * @returns {{ year, month, day, hours, minutes, biblicalDay }} - Local date/time
+   * @param {Object} location - { lat, lon } coordinates
+   * @returns {{ year, month, day, hours, minutes, timezone, biblicalDay }} - Local date/time at location
    */
   _getDateAtLocation(location) {
-    const now = new Date();
+    const now = new Date(); // Current time for astronomical calculations
     
-    // Use the browser's actual local time (civil timezone)
-    // This respects the user's timezone settings and DST
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1;  // 1-based
-    const day = now.getDate();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
+    // Use TimezoneUtils if available for proper IANA timezone lookup
+    let localTime;
+    if (typeof TimezoneUtils !== 'undefined') {
+      localTime = TimezoneUtils.getLocalTimeAtLocation(location);
+    } else {
+      // Fallback to simple solar time calculation
+      const lon = location?.lon || 0;
+      const utcHours = now.getUTCHours();
+      const utcMinutes = now.getUTCMinutes();
+      const lonOffsetHours = lon / 15;
+      
+      const utcTotalMinutes = utcHours * 60 + utcMinutes;
+      let localTotalMinutes = utcTotalMinutes + Math.round(lonOffsetHours * 60);
+      
+      let dayOffset = 0;
+      if (localTotalMinutes >= 1440) {
+        localTotalMinutes -= 1440;
+        dayOffset = 1;
+      } else if (localTotalMinutes < 0) {
+        localTotalMinutes += 1440;
+        dayOffset = -1;
+      }
+      
+      const utcDate = new Date(Date.UTC(
+        now.getUTCFullYear(),
+        now.getUTCMonth(),
+        now.getUTCDate() + dayOffset
+      ));
+      
+      localTime = {
+        year: utcDate.getUTCFullYear(),
+        month: utcDate.getUTCMonth() + 1,
+        day: utcDate.getUTCDate(),
+        hours: Math.floor(localTotalMinutes / 60),
+        minutes: localTotalMinutes % 60,
+        timezone: `UTC${lon >= 0 ? '+' : ''}${Math.round(lonOffsetHours)} (solar)`
+      };
+    }
+    
+    const year = localTime.year;
+    const month = localTime.month;
+    const day = localTime.day;
+    const hours = localTime.hours;
+    const minutes = localTime.minutes;
+    const timezone = localTime.timezone;
     
     // Biblical day adjustment based on profile settings
     // The Gregorian day (year, month, day) represents the calendar day
@@ -244,6 +442,34 @@ const AppStore = {
     return this._isDispatching;
   },
   
+  // UI-only event types that don't require calendar recomputation
+  _uiOnlyEvents: new Set([
+    'SET_TIMELINE_EVENT',
+    'SET_TIMELINE_DURATION', 
+    'CLEAR_TIMELINE_SELECTION',
+    'SET_TIMELINE_ZOOM',
+    'SET_TIMELINE_CENTER_YEAR',
+    'SET_TIMELINE_SEARCH',
+    'SET_EVENTS_FILTER',
+    'CLEAR_EVENTS_FILTER',
+    'TOGGLE_MENU',
+    'CLOSE_MENU',
+    'TOGGLE_PROFILE_PICKER',
+    'CLOSE_PROFILE_PICKER',
+    'TOGGLE_LOCATION_PICKER',
+    'CLOSE_ALL_PICKERS',
+    'OPEN_STRONGS',
+    'SET_STRONGS_ID',
+    'CLOSE_STRONGS',
+    'OPEN_SEARCH',
+    'SET_SEARCH_QUERY',
+    'CLOSE_SEARCH',
+    'SET_INTERLINEAR_VERSE',
+    'OPEN_PERSON',
+    'CLOSE_PERSON',
+    'NAV_PUSH'
+  ]),
+  
   dispatch(event) {
     if (window.DEBUG_STORE) {
       console.log('[AppStore] dispatch:', event.type, event);
@@ -253,7 +479,10 @@ const AppStore = {
     const changed = this._reduce(event);
     
     if (changed) {
-      this._recomputeDerived();
+      // Skip expensive calendar recomputation for UI-only state changes
+      if (!this._uiOnlyEvents.has(event.type)) {
+        this._recomputeDerived();
+      }
       
       if (this._urlSyncEnabled) {
         this._syncURL(event);
@@ -272,18 +501,26 @@ const AppStore = {
     console.log('[AppStore] dispatchBatch:', events.map(e => e.type));
     this._isDispatching = true;
     let anyChanged = false;
+    let needsDerivedRecompute = false;
     
     for (const event of events) {
       console.log('[AppStore] batch reduce:', event.type);
       if (this._reduce(event)) {
         anyChanged = true;
+        // Check if any event requires derived recomputation
+        if (!this._uiOnlyEvents.has(event.type)) {
+          needsDerivedRecompute = true;
+        }
       }
     }
     
     console.log('[AppStore] anyChanged:', anyChanged, 'urlSyncEnabled:', this._urlSyncEnabled);
     
     if (anyChanged) {
-      this._recomputeDerived();
+      // Only recompute derived state if needed
+      if (needsDerivedRecompute) {
+        this._recomputeDerived();
+      }
       if (this._urlSyncEnabled) {
         console.log('[AppStore] calling _syncURL');
         this._syncURL(events[events.length - 1]);
@@ -373,6 +610,7 @@ const AppStore = {
   /**
    * Detect user's location: GPS (if granted) > localStorage > IP geolocation
    * Only runs on empty/root URL - doesn't override URL-specified locations
+   * Respects user's location preference (GPS, city, or manual)
    */
   async _initUserLocation() {
     // Check if URL explicitly specifies a location (has city slug or coords after profile)
@@ -404,17 +642,39 @@ const AppStore = {
       }
     };
     
-    // 1. Try GPS if user has previously granted permission
-    const gpsLocation = await this._tryGPSLocation();
-    if (gpsLocation) {
-      console.log('[AppStore] Location from GPS:', gpsLocation.lat, gpsLocation.lon);
-      setLocationAndSync(gpsLocation.lat, gpsLocation.lon);
-      localStorage.setItem('userLocation', JSON.stringify(gpsLocation));
-      localStorage.setItem('userLocationSource', 'gps');
-      return;
+    // Get user's location preference
+    const locationMethod = localStorage.getItem('userLocationMethod') || 'gps';
+    
+    // 1. If preference is GPS, try GPS first (if user has previously granted permission)
+    if (locationMethod === 'gps') {
+      const gpsLocation = await this._tryGPSLocation();
+      if (gpsLocation) {
+        console.log('[AppStore] Location from GPS:', gpsLocation.lat, gpsLocation.lon);
+        setLocationAndSync(gpsLocation.lat, gpsLocation.lon);
+        localStorage.setItem('userLocation', JSON.stringify(gpsLocation));
+        localStorage.setItem('userLocationSource', 'gps');
+        return;
+      }
     }
     
-    // 2. Check localStorage for saved location (from GPS or user selection)
+    // 2. If preference is map (or city/manual from old settings), use saved location
+    if (locationMethod === 'map' || locationMethod === 'city' || locationMethod === 'manual') {
+      const savedLocation = localStorage.getItem('userLocation');
+      if (savedLocation) {
+        try {
+          const loc = JSON.parse(savedLocation);
+          if (loc.lat && loc.lon) {
+            console.log('[AppStore] Location from saved map/city/manual:', loc.lat, loc.lon);
+            setLocationAndSync(loc.lat, loc.lon);
+            return;
+          }
+        } catch (e) {
+          // Invalid saved location, continue to fallback
+        }
+      }
+    }
+    
+    // 4. Fallback: Check localStorage for saved location (from GPS or user selection)
     const savedSource = localStorage.getItem('userLocationSource');
     const savedLocation = localStorage.getItem('userLocation');
     if (savedLocation && (savedSource === 'gps' || savedSource === 'user')) {
@@ -517,9 +777,11 @@ const AppStore = {
           changed = true;
           console.log('[AppStore] selectedDate updated to:', event.jd);
         }
-        // Optionally update time as well
+        // Optionally update time as well (event.time is local, convert to UTC)
         if (event.time !== undefined) {
-          s.context.time = event.time;
+          const gregDate = this._julianToGregorian(s.context.selectedDate);
+          const date = new Date(Date.UTC(gregDate.year, gregDate.month - 1, gregDate.day, 12, 0, 0));
+          s.context.utcTime = this.localToUtc(event.time, date, s.context.location);
           changed = true;
         }
         return changed;
@@ -553,7 +815,10 @@ const AppStore = {
           // selectedDate (JD) will be computed in _recomputeDerived after calendar generation
         }
         if (event.time !== undefined) {
-          s.context.time = event.time;
+          // event.time is local, convert to UTC
+          // Use current date for conversion (lunar date not yet resolved to Gregorian)
+          const now = new Date();
+          s.context.utcTime = this.localToUtc(event.time, now, s.context.location);
           lunarChanged = true;
         }
         return lunarChanged;
@@ -581,26 +846,34 @@ const AppStore = {
           s.context.selectedLunarDate = null;
           gregChanged = true;
         }
-        const currentTime = s.context.time || { hours: 12, minutes: 0 };
+        // Handle time - convert local time to UTC for storage
+        const currentUtcTime = s.context.utcTime || { hours: 12, minutes: 0 };
         if (event.time !== undefined) {
-          if (currentTime.hours !== event.time.hours || 
-              currentTime.minutes !== event.time.minutes) {
-            s.context.time = event.time;
+          // event.time is local, convert to UTC
+          const newUtcTime = this.localToUtc(event.time, gregDate, s.context.location);
+          if (currentUtcTime.hours !== newUtcTime.hours || 
+              currentUtcTime.minutes !== newUtcTime.minutes) {
+            s.context.utcTime = newUtcTime;
             gregChanged = true;
           }
         } else if (event.hours !== undefined || event.date instanceof Date) {
-          // Extract time from the date or event
+          // Extract time from the date or event (assumed local)
           const hours = event.hours ?? (event.date ? event.date.getHours() : 12);
           const minutes = event.minutes ?? (event.date ? event.date.getMinutes() : 0);
-          if (currentTime.hours !== hours || currentTime.minutes !== minutes) {
-            s.context.time = { hours, minutes };
+          const localTime = { hours, minutes };
+          const newUtcTime = this.localToUtc(localTime, gregDate, s.context.location);
+          if (currentUtcTime.hours !== newUtcTime.hours || currentUtcTime.minutes !== newUtcTime.minutes) {
+            s.context.utcTime = newUtcTime;
             gregChanged = true;
           }
         }
         return gregChanged;
         
       case 'SET_TIME':
-        s.context.time = event.time;
+        // event.time is local, convert to UTC
+        const setTimeGreg = this._julianToGregorian(s.context.selectedDate);
+        const setTimeDate = new Date(Date.UTC(setTimeGreg.year, setTimeGreg.month - 1, setTimeGreg.day, 12, 0, 0));
+        s.context.utcTime = this.localToUtc(event.time, setTimeDate, s.context.location);
         return true;
         
       case 'SET_LOCATION': {
@@ -608,7 +881,13 @@ const AppStore = {
         const newLoc = event.location || { lat: event.lat, lon: event.lon };
         if (s.context.location.lat === newLoc.lat && 
             s.context.location.lon === newLoc.lon) return false;
+        
+        // UTC time stays unchanged - the same absolute moment
+        // Display will automatically show correct local time via getLocalTime()
+        
         s.context.location = newLoc;
+        // Clear lunar date so it re-resolves from the unchanged JD at the new location
+        s.context.selectedLunarDate = null;
         // Recalculate "today" for the new location (different timezone = different day)
         s.context.today = this._getTodayJD();
         // Save to localStorage so it persists across sessions/navigations
@@ -627,6 +906,14 @@ const AppStore = {
       case 'REFRESH':
         // Force recomputation of derived state (e.g., after data loads)
         return true;
+      
+      case 'REPOPULATE_DAY_DATA':
+        // Repopulate day data (feasts, events) without regenerating calendar
+        // Used after loadBibleEvents() completes
+        if (this._derived.lunarMonths && this._derived.lunarMonths.length > 0) {
+          this._populateDayData(this._derived.lunarMonths);
+        }
+        return true;
         
       case 'SET_ASTRO_ENGINE':
         // Update astronomy engine after async load completes
@@ -644,26 +931,17 @@ const AppStore = {
         return true;
         
       case 'GO_TO_TODAY': {
-        // Set date to today and time to current moment at the selected location
-        // Clear selectedLunarDate so the calendar uses today's JD
+        // Set date to today and time to current moment
+        // Store UTC time directly - display will convert to local
         const now = new Date();
         s.context.selectedDate = s.context.today;
         s.context.selectedLunarDate = null;  // Clear so JD-based lookup is used
         
-        // Calculate local time at the selected location (solar time based on longitude)
-        const location = s.context.location;
-        const utcHours = now.getUTCHours() + now.getUTCMinutes() / 60;
-        const locationOffsetHours = location.lon / 15;
-        let localHours = utcHours + locationOffsetHours;
-        
-        // Handle day wraparound
-        if (localHours >= 24) localHours -= 24;
-        if (localHours < 0) localHours += 24;
-        
-        const hours = Math.floor(localHours);
-        const minutes = Math.round((localHours - hours) * 60);
-        
-        s.context.time = { hours, minutes };
+        // Store current time in UTC
+        s.context.utcTime = { 
+          hours: now.getUTCHours(), 
+          minutes: now.getUTCMinutes() 
+        };
         return true;
       }
       
@@ -675,6 +953,26 @@ const AppStore = {
         // Clear Strong's panel unless explicitly preserved
         if (!event.preserveStrongs) {
           s.ui.strongsId = null;
+        }
+        // Clear view-specific state when leaving views
+        // Timeline state
+        if (event.view !== 'timeline') {
+          s.ui.timelineEventId = null;
+          s.ui.timelineDurationId = null;
+          s.ui.timelineSearch = null;
+          s.ui.timelineZoom = null;
+          s.ui.timelineCenterYear = null;
+        }
+        // Events page state
+        if (event.view !== 'events') {
+          s.ui.eventsSearch = null;
+          s.ui.eventsType = 'all';
+          s.ui.eventsEra = 'all';
+          s.ui.eventsViewMode = 'list';
+        }
+        // Reader-specific state
+        if (event.view !== 'reader') {
+          s.ui.interlinearVerse = null;
         }
         return true;
         
@@ -795,17 +1093,19 @@ const AppStore = {
         
       case 'SET_TIMELINE_EVENT': {
         const newEventId = event.eventId || null;
-        if (s.ui.timelineEventId === newEventId && s.ui.timelineDurationId === null) return false;
+        if (s.ui.timelineEventId === newEventId && s.ui.timelineDurationId === null && s.ui.timelineSearch === null) return false;
         s.ui.timelineEventId = newEventId;
         s.ui.timelineDurationId = null; // Clear duration when selecting event
+        s.ui.timelineSearch = null;     // Clear search when selecting event (mutually exclusive)
         return true;
       }
         
       case 'SET_TIMELINE_DURATION': {
         const newDurationId = event.durationId || null;
-        if (s.ui.timelineDurationId === newDurationId && s.ui.timelineEventId === null) return false;
+        if (s.ui.timelineDurationId === newDurationId && s.ui.timelineEventId === null && s.ui.timelineSearch === null) return false;
         s.ui.timelineDurationId = newDurationId;
-        s.ui.timelineEventId = null; // Clear event when selecting duration
+        s.ui.timelineEventId = null;    // Clear event when selecting duration
+        s.ui.timelineSearch = null;     // Clear search when selecting duration (mutually exclusive)
         return true;
       }
         
@@ -813,7 +1113,31 @@ const AppStore = {
         if (s.ui.timelineEventId === null && s.ui.timelineDurationId === null) return false;
         s.ui.timelineEventId = null;
         s.ui.timelineDurationId = null;
+        // NOTE: Does not clear search - use SET_TIMELINE_SEARCH for that
         return true;
+        
+      case 'SET_TIMELINE_ZOOM': {
+        const newZoom = event.zoom;
+        if (s.ui.timelineZoom === newZoom) return false;
+        s.ui.timelineZoom = newZoom;
+        return true;
+      }
+        
+      case 'SET_TIMELINE_CENTER_YEAR': {
+        const newYear = event.year;
+        if (s.ui.timelineCenterYear === newYear) return false;
+        s.ui.timelineCenterYear = newYear;
+        return true;
+      }
+      
+      case 'SET_TIMELINE_SEARCH': {
+        const newSearch = event.search || null;
+        if (s.ui.timelineSearch === newSearch && s.ui.timelineEventId === null && s.ui.timelineDurationId === null) return false;
+        s.ui.timelineSearch = newSearch;
+        s.ui.timelineEventId = null;    // Clear event when searching (mutually exclusive)
+        s.ui.timelineDurationId = null; // Clear duration when searching (mutually exclusive)
+        return true;
+      }
       
       // Events page filters
       case 'SET_EVENTS_FILTER': {
@@ -1171,10 +1495,10 @@ const AppStore = {
           this._derived.calendarLocation = { ...context.location };  // Store location used for this calendar
           this._derived.yearStartUncertainty = calendar.yearStartUncertainty;
           this._derived.springEquinox = calendar.springEquinox;
+          
+          // Populate feasts and events only when calendar is regenerated
+          this._populateDayData(this._derived.lunarMonths);
         }
-        
-        // Always populate feasts and events on each day (may have been loaded after calendar generation)
-        this._populateDayData(this._derived.lunarMonths);
         
         // Handle month = -1 (sentinel for "last month of year")
         // This is used when navigating backwards from month 1 to the previous year's last month
@@ -1411,7 +1735,12 @@ const AppStore = {
       shouldPush = true;   // Explicit push requested
     } else {
       // Default behavior based on event type
-      const pushEvents = ['SET_VIEW', 'SET_SELECTED_DATE', 'SET_PROFILE', 'SET_LOCATION', 'SELECT_DAY', 'SET_BIBLE_LOCATION', 'SET_GREGORIAN_DATETIME'];
+      // These events should create browser history entries (enable back/forward)
+      const pushEvents = [
+        'SET_VIEW', 'SET_SELECTED_DATE', 'SET_PROFILE', 'SET_LOCATION', 
+        'SELECT_DAY', 'SET_BIBLE_LOCATION', 'SET_GREGORIAN_DATETIME',
+        'SET_TIMELINE_EVENT', 'SET_TIMELINE_DURATION', 'SET_TIMELINE_SEARCH'
+      ];
       shouldPush = pushEvents.includes(event.type);
     }
     
