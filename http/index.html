@@ -62,7 +62,7 @@
   <link rel="manifest" href="/manifest.json">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/styles.css?v=122">
+  <link rel="stylesheet" href="/styles.css?v=131">
   <link rel="stylesheet" href="/components/world-map.css?v=1">
   <link rel="stylesheet" href="/components/dateline-map.css?v=5">
   <link rel="stylesheet" href="/assets/css/bible-styles.css?v=119">
@@ -92,10 +92,10 @@
     </div>
     
     <div class="top-nav-right">
-      <!-- Navigation History Buttons -->
+      <!-- Navigation History Buttons - use browser history directly -->
       <div class="nav-history-buttons">
-        <button id="nav-back-btn" class="nav-btn" onclick="AppStore.dispatch({type:'NAV_BACK'})" title="Go back" disabled>◀</button>
-        <button id="nav-forward-btn" class="nav-btn" onclick="AppStore.dispatch({type:'NAV_FORWARD'})" title="Go forward" disabled>▶</button>
+        <button id="nav-back-btn" class="nav-btn" onclick="history.back()" title="Go back">◀</button>
+        <button id="nav-forward-btn" class="nav-btn" onclick="history.forward()" title="Go forward">▶</button>
       </div>
       
       <!-- Today Button (calendar icon = changes calendar focus time) -->
@@ -151,13 +151,21 @@
       </div>
       
       <nav class="sidebar-nav">
+        <!-- Today button - visible only on mobile -->
+        <button class="menu-item menu-today-btn" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},AppStore.getTodayEvent(),{type:'SET_VIEW',view:'calendar'}])">
+          <span class="menu-icon">📅</span>
+          <span class="menu-label">Today</span>
+        </button>
+        
+        <div class="menu-divider menu-today-btn"></div>
+        
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'bible'}}])">
           <span class="menu-icon">📖</span>
           <span class="menu-label">Reader</span>
         </button>
         
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'timeline'}])">
-          <span class="menu-icon">⏱️</span>
+          <img src="/assets/img/timeline_icon.png" alt="" class="menu-icon-img">
           <span class="menu-label">Timeline</span>
         </button>
         
@@ -171,6 +179,11 @@
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'events'}])">
           <span class="menu-icon">📜</span>
           <span class="menu-label">Events</span>
+        </button>
+        
+        <button class="menu-item" onclick="AppStore.dispatch({type:'CLOSE_MENU'}); CalendarExport.showExportModal();">
+          <span class="menu-icon">📥</span>
+          <span class="menu-label">Export Calendar</span>
         </button>
         
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'sabbath-tester'}])">
@@ -189,7 +202,12 @@
           <span class="menu-icon">ℹ️</span>
           <span class="menu-label">About</span>
         </button>
-        
+
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'help'}])">
+          <span class="menu-icon">❓</span>
+          <span class="menu-label">Help</span>
+        </button>
+
         <div class="menu-divider"></div>
         
         <button class="menu-item" id="install-app-btn" style="display: none;" onclick="handleInstallClick()">
@@ -283,23 +301,28 @@
   
   <!-- External Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tz-lookup@6.1.25/tz.min.js"></script>
+  <script src="/lib/marked.min.js"></script>
+  
+  <!-- Timezone lookup utility -->
+  <script src="/timezone-utils.js?v=1"></script>
   
   <!-- Astronomy Engine Abstraction (loads Swiss Ephemeris, NASA Eclipse data) -->
-  <script src="/astronomy-engine-abstraction.js?v=1"></script>
-  <script src="/astronomy-utils.js?v=13"></script>
-  <script src="/lunar-calendar-engine.js?v=3"></script>
+  <script src="/astronomy-engine-abstraction.js?v=2"></script>
+  <script src="/astronomy-utils.js?v=14"></script>
+  <script src="/lunar-calendar-engine.js?v=4"></script>
   <script src="/jubilee-cycle.js?v=1"></script>
   <script src="/feasts.js?v=1"></script>
-  <script src="/bible-events-loader.js?v=1"></script>
+  <script src="/bible-events-loader.js?v=5"></script>
   <script src="/torah-portions.js?v=1"></script>
-  <script src="/priestly-divisions.js?v=2"></script>
+  <script src="/priestly-divisions.js?v=4"></script>
   
   <!-- Year utilities (BC/AD conversion) -->
   <script src="/year-utils.js?v=2"></script>
   
   <!-- Core (cache-bust with version) -->
-  <script src="/app-store.js?v=32"></script>
-  <script src="/url-router.js?v=17"></script>
+  <script src="/app-store.js?v=39"></script>
+  <script src="/url-router.js?v=18"></script>
   <script src="/layout.js?v=2"></script>
   <script src="/content-manager.js?v=2"></script>
   
@@ -307,31 +330,37 @@
   <script src="/components/world-map.js?v=1"></script>
   <script src="/components/dateline-map.js?v=21"></script>
   
+  <!-- Calendar Export -->
+  <script src="/calendar-export.js?v=1"></script>
+  
   <!-- Views -->
-  <script src="/views/calendar-view.js?v=82"></script>
+  <script src="/views/calendar-view.js?v=87"></script>
   
   <!-- Bible Reader and Strong's Dictionaries -->
   <script src="/strongs-hebrew-dictionary.js"></script>
   <script src="/strongs-greek-dictionary.js"></script>
   <script src="/symbol-dictionary.js?v=1"></script>
+  <script src="/word-study-dictionary.js?v=1"></script>
   <script src="/book-scripture-index.js?v=1"></script>
   <script src="/cross-references.js?v=1"></script>
   <script src="/bible-reader.js?v=17"></script>
   <script src="/views/bible-view.js?v=12"></script>
   <script src="/views/symbols-view.js?v=1"></script>
+  <script src="/timetested-chapters.js?v=1"></script>
   <script src="/views/reader-view.js?v=1"></script>
   
   <!-- Timeline and Historical Events -->
-  <script src="/historical-events.js?v=2"></script>
-  <script src="/event-resolver.js?v=1"></script>
-  <script src="/biblical-timeline.js?v=2"></script>
+  <script src="/event-resolver.js?v=55"></script>
+  <script src="/historical-events.js?v=4"></script>
+  <script src="/biblical-timeline.js?v=24"></script>
   <script src="/views/timeline-view.js?v=5"></script>
   
   <!-- Day Detail and World Clock -->
-  <script src="/day-detail.js?v=2"></script>
-  <script src="/world-clock.js?v=1"></script>
+  <script src="/day-detail.js?v=5"></script>
+  <script src="/world-clock.js?v=2"></script>
   <script src="/views/book-view.js?v=2"></script>
-  <script src="/views/tutorial-view.js?v=2"></script>
+  <script src="/views/tutorial-view.js?v=7"></script>
+  <script src="/views/help-view.js?v=1"></script>
   <script src="/views/events-view.js?v=6"></script>
   <script src="/views/priestly-view.js?v=2"></script>
   <script src="/views/sabbath-tester-view.js?v=2"></script>
@@ -470,10 +499,8 @@
       ContentManager.init();
       
       // Load supplementary data in parallel (don't block initial render)
+      // Note: loadBibleEvents is called AFTER timeline pre-resolution (needs resolved events)
       const dataPromises = [];
-      if (typeof loadBibleEvents === 'function') {
-        dataPromises.push(loadBibleEvents());
-      }
       if (typeof loadTorahPortions === 'function') {
         dataPromises.push(loadTorahPortions());
       }
@@ -490,6 +517,27 @@
           AppStore.dispatch({ type: 'SET_ASTRO_ENGINE', payload: readyEngine });
         }
         AppStore.dispatch({ type: 'REFRESH' });
+        
+        // Start background pre-resolution of timeline events (non-blocking)
+        // Uses requestIdleCallback to avoid impacting user experience
+        const schedulePreResolution = window.requestIdleCallback 
+          ? (cb) => window.requestIdleCallback(cb, { timeout: 5000 })
+          : (cb) => setTimeout(cb, 2000);
+        
+        schedulePreResolution(async () => {
+          if (typeof preResolveTimelineInBackground === 'function') {
+            console.log('[App] Starting background timeline pre-resolution...');
+            await preResolveTimelineInBackground();
+            
+            // Now load bible events (needs resolved events from timeline)
+            if (typeof loadBibleEvents === 'function') {
+              console.log('[App] Loading bible events after resolution...');
+              await loadBibleEvents();
+              // Repopulate day data to include events on calendar
+              AppStore.dispatch({ type: 'REPOPULATE_DAY_DATA' });
+            }
+          }
+        });
       });
       
       // Set up panel toggle handlers
@@ -510,6 +558,7 @@
       if (typeof TimelineView !== 'undefined') ContentManager.registerView('timeline', TimelineView);
       if (typeof BookView !== 'undefined') ContentManager.registerView('book', BookView);
       if (typeof TutorialView !== 'undefined') ContentManager.registerView('tutorial', TutorialView);
+      if (typeof HelpView !== 'undefined') ContentManager.registerView('help', HelpView);
       if (typeof EventsView !== 'undefined') ContentManager.registerView('events', EventsView);
       if (typeof PriestlyView !== 'undefined') ContentManager.registerView('priestly', PriestlyView);
       if (typeof SabbathTesterView !== 'undefined') ContentManager.registerView('sabbath-tester', SabbathTesterView);
@@ -525,20 +574,8 @@
       syncGlobalState();
       AppStore.subscribe(syncGlobalState);
       
-      // Update nav history button states
-      function updateNavButtons() {
-        const state = AppStore.getState();
-        const backBtn = document.getElementById('nav-back-btn');
-        const fwdBtn = document.getElementById('nav-forward-btn');
-        if (backBtn) {
-          backBtn.disabled = state.navHistory.index <= 0;
-        }
-        if (fwdBtn) {
-          fwdBtn.disabled = state.navHistory.index >= state.navHistory.entries.length - 1;
-        }
-      }
-      updateNavButtons();
-      AppStore.subscribe(updateNavButtons);
+      // Nav buttons now use browser history directly (history.back/forward)
+      // No need to track internal navigation state - browser handles it
       
       console.log('[App] Initialized successfully');
       

@@ -65,6 +65,11 @@ const CalendarView = {
     container.innerHTML = this.renderCalendar(state, derived, month, monthIndex, selectedDay);
     this.attachEventListeners(container, month);
     
+    // Populate world clock section if day detail is visible
+    if (selectedDay) {
+      this.populateWorldClock(container, derived, state.context);
+    }
+    
     // Update left panel with feast list and priestly cycles
     const profile = derived.config || {};
     this.updateLeftPanel(lunarMonths, profile);
@@ -117,7 +122,9 @@ const CalendarView = {
     const timeProgress = isThisMonthToday ? this.calculateTimeProgress(month, todayLunarDay, profile, context.location) : null;
     
     // Calculate selected time progress for the selected day (0-100%)
-    const selectedTimeProgress = this.calculateSelectedTimeProgress(month, selectedDay, profile, context.location, context.time);
+    // Use getLocalTime() to convert UTC time to local display time
+    const localTime = AppStore.getLocalTime();
+    const selectedTimeProgress = this.calculateSelectedTimeProgress(month, selectedDay, profile, context.location, localTime);
     
     // Display year from first month
     const firstDay1 = lunarMonths[0]?.days?.find(d => d.lunarDay === 1);
@@ -679,6 +686,7 @@ const CalendarView = {
           ${eventsHtml}
           ${noItemsHtml}
           ${datelineHtml}
+          <div class="day-detail-profile-compare"></div>
         </div>
       </div>
     `;
@@ -846,7 +854,19 @@ const CalendarView = {
     // Build links - can have chapter link, symbol link, or both
     let linksHtml = '';
     if (feast.chapter) {
-      linksHtml += `<a href="${feast.chapter}" class="feast-link">Learn more →</a>`;
+      // Convert feast chapter path to AppStore dispatch
+      let chapterPath = feast.chapter;
+      let section = null;
+      const hashIdx = chapterPath.indexOf('#');
+      if (hashIdx !== -1) {
+        section = chapterPath.slice(hashIdx + 1);
+        chapterPath = chapterPath.slice(0, hashIdx);
+      }
+      let chapterId = chapterPath.replace(/^\/chapters\//, '').replace(/\/$/, '');
+      // Convert dashes to underscores and fix title case: "18-appointed-times" -> "18_Appointed_Times"
+      chapterId = chapterId.split('-').map((part, i) => i === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1)).join('_');
+      const sectionParam = section ? `,section:'${section}'` : '';
+      linksHtml += `<a href="#" class="feast-link" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${chapterId}'${sectionParam}}})">Learn more →</a>`;
     }
     if (feast.symbol) {
       // Extract symbol key from path like '/symbols/TREE'
@@ -869,13 +889,39 @@ const CalendarView = {
       const moonEventTime = month.moonEvent;
       const moonEventDate = new Date(moonEventTime);
       
+      // Convert to JD for calendar system handling
+      const moonJD = (moonEventDate.getTime() / 86400000) + 2440587.5;
+      const GREGORIAN_START_JD = 2299161; // Oct 15, 1582
+      const useJulianCal = moonJD < GREGORIAN_START_JD;
+      
+      // Convert JD to appropriate calendar (Julian for ancient, Gregorian for modern)
+      let calYear, calMonth, calDay;
+      if (useJulianCal && typeof EventResolver !== 'undefined' && EventResolver.julianDayToJulianCalendar) {
+        const julian = EventResolver.julianDayToJulianCalendar(moonJD);
+        calYear = julian.year;
+        calMonth = julian.month;
+        calDay = julian.day;
+      } else {
+        calYear = moonEventDate.getUTCFullYear();
+        calMonth = moonEventDate.getUTCMonth() + 1;
+        calDay = moonEventDate.getUTCDate();
+      }
+      
       // Format moon event date/time
+      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       const moonParts = typeof getFormattedDateParts === 'function' 
         ? getFormattedDateParts(moonEventDate)
-        : { weekdayName: moonEventDate.toLocaleDateString('en-US', {weekday: 'long'}),
-            shortMonthName: moonEventDate.toLocaleDateString('en-US', {month: 'short'}),
-            day: moonEventDate.getUTCDate(),
-            yearStr: String(moonEventDate.getUTCFullYear()) };
+        : { weekdayName: weekdays[moonEventDate.getUTCDay()],
+            shortMonthName: monthNames[calMonth - 1],
+            day: calDay,
+            yearStr: this.formatYear(calYear) };
+      // Override with Julian calendar values for ancient dates
+      if (useJulianCal) {
+        moonParts.shortMonthName = monthNames[calMonth - 1];
+        moonParts.day = calDay;
+        moonParts.yearStr = this.formatYear(calYear);
+      }
       const dayOfWeek = moonParts.weekdayName;
       const monthName = moonParts.shortMonthName;
       const dayNum2 = moonParts.day;
@@ -1078,15 +1124,11 @@ const CalendarView = {
           ? '1 BC'
           : `${eventOriginalYear} AD`;
       
-      // Anniversary badge next to title
-      anniversaryBadgeHtml = `<span class="event-year-badge">(${displayYear})</span>`;
+      // Calendar icon link (clickable date badge)
+      anniversaryBadgeHtml = `<a href="${calendarUrl}" class="event-year-badge" title="View this date in ${displayYear}">📅 ${displayYear}</a>`;
       
-      // Calendar link in the links section
-      anniversaryLinkHtml = `
-        <a href="${calendarUrl}" class="event-anniversary-link" title="View this date in ${displayYear}">
-          📅 View in ${displayYear}
-        </a>
-      `;
+      // Remove anniversaryLinkHtml (no longer needed in links section)
+      anniversaryLinkHtml = '';
     }
     
     // Remove leading emoji from title if it matches the icon
@@ -1145,11 +1187,41 @@ const CalendarView = {
       `;
     }
     
+    // Build timeline link for title area - use the event's historical ID
+    let titleTimelineLinkHtml = '';
+    const eventId = event._historicalEvent?.id;
+    if (eventId) {
+      titleTimelineLinkHtml = `<a href="#" class="event-title-link event-timeline-link" onclick="event.preventDefault(); viewEventOnTimeline('${eventId}')" title="View on Timeline"><img src="/assets/img/timeline_icon.png" alt="Timeline" class="event-title-icon"></a>`;
+    }
+    
+    // Build book chapter link if present
+    let bookChapterLinkHtml = '';
+    if (event.bookChapter) {
+      let articlePath = event.bookChapter;
+      let section = null;
+      const hashIdx = articlePath.indexOf('#');
+      if (hashIdx !== -1) {
+        section = articlePath.slice(hashIdx + 1);
+        articlePath = articlePath.slice(0, hashIdx);
+      }
+      let chapterId = articlePath.replace(/^\/chapters\//, '').replace(/\/$/, '');
+      const sectionParam = section ? `,section:'${section}'` : '';
+      bookChapterLinkHtml = `<a href="#" class="event-link" onclick="event.preventDefault();event.stopPropagation();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${chapterId}'${sectionParam}}})">Learn more →</a>`;
+    }
+    
+    // Build title links container (right-justified: calendar + timeline)
+    const titleLinksHtml = (anniversaryBadgeHtml || titleTimelineLinkHtml) 
+      ? `<span class="event-title-links">${anniversaryBadgeHtml}${titleTimelineLinkHtml}</span>`
+      : '';
+    
     return `
       <div class="bible-event-item">
         <div class="event-icon">${eventIcon}</div>
         <div class="event-info">
-          <div class="event-title">${displayTitle} ${anniversaryBadgeHtml}</div>
+          <div class="event-title-row">
+            <span class="event-title">${displayTitle}</span>
+            ${titleLinksHtml}
+          </div>
           ${verseHtml}
           ${descHtml}
           ${historicalInfoHtml}
@@ -1157,9 +1229,8 @@ const CalendarView = {
           ${imageHtml}
           ${detailsHtml}
           <div class="event-links">
-            ${anniversaryLinkHtml}
             ${stellariumHtml}
-            ${event.bookChapter ? `<a href="${event.bookChapter}" class="event-link">Learn more →</a>` : ''}
+            ${bookChapterLinkHtml}
           </div>
         </div>
       </div>
@@ -1677,8 +1748,8 @@ const CalendarView = {
         });
       });
       
-      // Time
-      const currentTime = state.context.time || { hours: 12, minutes: 0 };
+      // Time - display in local time at selected location
+      const currentTime = AppStore.getLocalTime();
       let hours12 = currentTime.hours % 12;
       if (hours12 === 0) hours12 = 12;
       const isPM = currentTime.hours >= 12;
@@ -1759,7 +1830,7 @@ const CalendarView = {
       btn.addEventListener('click', () => {
         const state = AppStore.getState();
         const derived = AppStore.getDerived();
-        const currentTime = state.context.time || { hours: 12, minutes: 0 };
+        const currentTime = AppStore.getLocalTime();
         const field = btn.dataset.field;
         const delta = parseInt(btn.dataset.delta);
         
@@ -1786,7 +1857,7 @@ const CalendarView = {
     ampmToggle.addEventListener('click', () => {
       const state = AppStore.getState();
       const derived = AppStore.getDerived();
-      const currentTime = state.context.time || { hours: 12, minutes: 0 };
+      const currentTime = AppStore.getLocalTime();
       let hours = currentTime.hours;
       
       // Toggle AM/PM by adding/subtracting 12 hours
@@ -1987,7 +2058,7 @@ const CalendarView = {
     this.closePickers();
     
     const state = AppStore.getState();
-    const currentTime = state.context.time || { hours: 12, minutes: 0 };
+    const currentTime = AppStore.getLocalTime();
     // Convert 24h to 12h format
     let hours12 = currentTime.hours % 12;
     if (hours12 === 0) hours12 = 12;
@@ -2135,17 +2206,41 @@ const CalendarView = {
       <div class="location-map-slot"></div>
     `;
     
-    // Position as dropdown below trigger
+    // Position so picker stays fully on screen (especially on mobile)
     const rect = trigger.getBoundingClientRect();
     const pickerHeight = 400;
-    const spaceBelow = window.innerHeight - rect.bottom;
+    const gap = 10;
+    const isNarrow = window.innerWidth < 600;
+    const pickerWidthPx = Math.min(500, window.innerWidth * 0.9);
     
-    if (spaceBelow >= pickerHeight || spaceBelow > rect.top) {
-      picker.style.top = (rect.bottom + 5) + 'px';
+    if (isNarrow) {
+      // Mobile/narrow: center horizontally, fit vertically with scroll
+      picker.style.left = gap + 'px';
+      picker.style.right = gap + 'px';
+      picker.style.width = 'auto';
+      picker.style.maxHeight = (window.innerHeight - gap * 2) + 'px';
+      picker.style.overflowY = 'auto';
+      const spaceBelow = window.innerHeight - rect.bottom;
+      if (spaceBelow >= pickerHeight * 0.5 || spaceBelow > rect.top) {
+        picker.style.top = (rect.bottom + 5) + 'px';
+        picker.style.bottom = 'auto';
+      } else {
+        picker.style.bottom = gap + 'px';
+        picker.style.top = 'auto';
+      }
     } else {
-      picker.style.bottom = (window.innerHeight - rect.top + 5) + 'px';
+      const spaceBelow = window.innerHeight - rect.bottom;
+      if (spaceBelow >= pickerHeight || spaceBelow > rect.top) {
+        picker.style.top = (rect.bottom + 5) + 'px';
+        picker.style.bottom = 'auto';
+      } else {
+        picker.style.bottom = (window.innerHeight - rect.top + 5) + 'px';
+        picker.style.top = 'auto';
+      }
+      const leftPreferred = rect.left - 150;
+      const leftClamped = Math.max(gap, Math.min(leftPreferred, window.innerWidth - pickerWidthPx - gap));
+      picker.style.left = leftClamped + 'px';
     }
-    picker.style.left = Math.max(10, rect.left - 150) + 'px';
     
     overlay.appendChild(picker);
     document.body.appendChild(overlay);
@@ -2996,9 +3091,10 @@ const CalendarView = {
   },
 
   formatTime(context) {
-    // Time is user-set, stored in context.time as { hours, minutes }
-    if (context.time) {
-      const { hours, minutes } = context.time;
+    // Time is stored as UTC, display in local time at current location
+    const localTime = AppStore.getLocalTime();
+    if (localTime) {
+      const { hours, minutes } = localTime;
       const ampm = hours >= 12 ? 'PM' : 'AM';
       const h = hours % 12 || 12;
       return `${h}:${String(minutes).padStart(2, '0')} ${ampm}`;
@@ -3221,6 +3317,145 @@ const CalendarView = {
    */
   dateToJD(date) {
     return AppStore._dateToJulian(date);
+  },
+
+  /**
+   * Populate the world clock section showing the same moment on different calendars
+   */
+  populateWorldClock(container, derived, context) {
+    const compareContainer = container.querySelector('.day-detail-profile-compare');
+    if (!compareContainer) return;
+    
+    // Get world clock entries
+    if (typeof getWorldClockEntries !== 'function') {
+      compareContainer.innerHTML = '';
+      return;
+    }
+    
+    const entries = getWorldClockEntries();
+    if (!entries || entries.length === 0) {
+      compareContainer.innerHTML = '';
+      return;
+    }
+    
+    // Get current timestamp for comparison
+    const selectedJD = derived.currentJD || AppStore.getState()?.context?.selectedDate;
+    if (!selectedJD) {
+      compareContainer.innerHTML = '';
+      return;
+    }
+    
+    // Convert JD to timestamp
+    const viewDate = AppStore._julianToDate ? AppStore._julianToDate(selectedJD) : new Date();
+    const checkTimestamp = viewDate.getTime();
+    
+    let compareHtml = `
+      <div class="profile-compare-header">
+        <span class="profile-compare-title">📅 This Moment on Other Calendars</span>
+        <button class="world-clock-add-btn" onclick="showAddWorldClockModal()" title="Add Calendar">+</button>
+      </div>
+      <div class="profile-compare-grid">`;
+    
+    let hasResults = false;
+    const currentProfileId = context?.profileId || 'timeTested';
+    const currentLocationSlug = context?.locationSlug;
+    
+    entries.forEach((entry, index) => {
+      const profile = window.PROFILES?.[entry.profileId] || window.PRESET_PROFILES?.[entry.profileId];
+      if (!profile) return;
+      
+      // Get coordinates for this entry's location
+      const coords = window.CITY_SLUGS?.[entry.locationSlug];
+      if (!coords) return;
+      
+      // Create a temp profile with the entry's location
+      const tempProfile = {
+        ...profile,
+        lat: coords.lat,
+        lon: coords.lon
+      };
+      
+      // Get lunar day info for this profile/location combination
+      let lunarDayInfo;
+      if (typeof getLunarDayForTimestamp === 'function') {
+        lunarDayInfo = getLunarDayForTimestamp(checkTimestamp, tempProfile);
+      }
+      if (!lunarDayInfo) return;
+      
+      hasResults = true;
+      
+      // Check if this is the current view
+      const isCurrent = entry.profileId === currentProfileId && 
+                        entry.locationSlug === currentLocationSlug;
+      
+      // Get feast icons for this lunar day/month
+      let feastHtml = '';
+      if (typeof getFeastIconsForLunarDay === 'function') {
+        const feastIcons = getFeastIconsForLunarDay(lunarDayInfo.month, lunarDayInfo.day);
+        feastHtml = feastIcons.length > 0 ? `<div class="profile-compare-feasts">${feastIcons.join('')}</div>` : '';
+      }
+      
+      // Get local time for this location
+      let localTime = '';
+      if (typeof getLocalTimeForLocation === 'function') {
+        localTime = getLocalTimeForLocation(coords.lat, coords.lon);
+      }
+      
+      // Get priestly course for this calendar
+      let priestlyHtml = '';
+      if (typeof getPriestlyCourse === 'function' && window.PRIESTLY_DIVISIONS) {
+        // Skip Day 1 for lunar sabbath (New Moon day isn't part of a week)
+        const skipPriestly = lunarDayInfo.day === 1 && (profile.sabbathMode === 'lunar');
+        if (!skipPriestly) {
+          const courseInfo = getPriestlyCourse(
+            new Date(checkTimestamp),
+            lunarDayInfo.day,
+            lunarDayInfo.month,
+            { ...tempProfile, sabbathMode: profile.sabbathMode || 'lunar' }
+          );
+          if (courseInfo && !courseInfo.beforeDedication && courseInfo.course) {
+            priestlyHtml = `<span class="priest-icon">👨‍🦳</span><span title="${courseInfo.meaning || ''}">${courseInfo.course}</span>`;
+          }
+        }
+      }
+      
+      // Render profile icon
+      let iconHtml = '';
+      if (typeof renderProfileIcon === 'function') {
+        iconHtml = renderProfileIcon(profile);
+      } else if (profile.icon) {
+        iconHtml = profile.icon;
+      }
+      
+      compareHtml += `
+        <div class="profile-compare-item${isCurrent ? ' current' : ''}" onclick="navigateToWorldClockEntry('${entry.profileId}', '${entry.locationSlug}')">
+          <button class="world-clock-remove-btn" onclick="event.stopPropagation(); removeWorldClockEntryAndRefresh(${index})" title="Remove">×</button>
+          <span class="profile-compare-name">${iconHtml} ${profile.name}</span>
+          <span class="profile-compare-day">Day ${lunarDayInfo.day} of Month ${lunarDayInfo.month}</span>
+          <span class="profile-compare-location">${entry.locationName || this.formatCitySlug(entry.locationSlug)}${localTime ? ' · ' + localTime : ''}</span>
+          ${priestlyHtml ? `<span class="profile-compare-priest">${priestlyHtml}</span>` : ''}
+          ${feastHtml}
+        </div>
+      `;
+    });
+    
+    compareHtml += `</div>`;
+    
+    if (hasResults) {
+      compareContainer.innerHTML = compareHtml;
+    } else {
+      compareContainer.innerHTML = '';
+    }
+  },
+
+  /**
+   * Format city slug for display (e.g., "new-york" -> "New York")
+   */
+  formatCitySlug(slug) {
+    if (typeof formatCitySlug === 'function') {
+      return formatCitySlug(slug);
+    }
+    return slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
   }
 };
 
