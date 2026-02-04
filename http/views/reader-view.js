@@ -105,7 +105,7 @@ const ReaderView = {
         break;
         
       case 'timetested':
-        this.renderTimeTestedInBibleFrame(state, derived, container, params.chapterId);
+        this.renderTimeTestedInBibleFrame(state, derived, container, params.chapterId, params.section);
         // Sync UI state (Strong's panel) for non-Bible content
         this.syncUIState(state.ui);
         break;
@@ -311,187 +311,60 @@ const ReaderView = {
   },
 
   /**
-   * Render markdown to HTML
+   * Render markdown to HTML using marked.js library
    */
   renderMarkdown(markdown) {
     // Skip the first H1 title (we already show it in the header)
     let text = markdown.replace(/^# .+\n+/, '');
     
-    // Normalize line endings and clean up whitespace-only lines
-    text = text.replace(/\r\n/g, '\n');
-    text = text.replace(/^\s+$/gm, '');
-    
-    // Process blockquotes first (multi-line)
-    // Handle quotes that may have blank lines before citation
-    const lines = text.split('\n');
-    const processed = [];
-    let inBlockquote = false;
-    let blockquoteLines = [];
-    let pendingEmptyLines = 0;
-    
-    // Helper to check if a line is a citation (with or without > prefix)
-    const isCitationLine = (line) => {
-      const content = line.replace(/^>\s?/, '');
-      return content.match(/^[—–-]{1,2}\s*.+/);
-    };
-    
-    // Helper to extract anchor ID from citation text
-    // e.g., "— Genesis 1:14" -> "ref-genesis-1-14"
-    const extractCitationAnchor = (lines) => {
-      for (const line of lines) {
-        // Look for scripture reference pattern in citation
-        const citationMatch = line.match(/[—–-]{1,2}\s*(.+)/);
-        if (citationMatch) {
-          const citation = citationMatch[1];
-          // Try to parse as scripture reference (e.g., "Genesis 1:14" or "Exodus 12:3-6")
-          const scriptureMatch = citation.match(/^(\d?\s*[A-Za-z]+)\s+(\d+):(\d+)(?:-\d+)?/);
-          if (scriptureMatch) {
-            const book = scriptureMatch[1].toLowerCase().replace(/\s+/g, '');
-            const chapter = scriptureMatch[2];
-            const verse = scriptureMatch[3];
-            return `ref-${book}-${chapter}-${verse}`;
-          }
-        }
-      }
-      return null;
-    };
-    
-    // Helper to create blockquote HTML with optional anchor
-    const createBlockquoteHtml = (lines) => {
-      const anchor = extractCitationAnchor(lines);
-      const idAttr = anchor ? ` id="${anchor}"` : '';
-      return `<blockquote${idAttr}>${lines.join('<br>')}</blockquote>`;
-    };
-    
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      const isQuoteLine = line.startsWith('> ') || line === '>';
-      const isEmpty = line.trim() === '';
-      const isCitation = isCitationLine(line);
+    // Use marked.js if available, fallback to basic rendering
+    if (typeof marked !== 'undefined') {
+      // Configure marked for our needs
+      marked.setOptions({
+        breaks: true,      // Convert \n to <br>
+        gfm: true,         // GitHub Flavored Markdown (tables, code blocks, etc.)
+        headerIds: true,   // Add IDs to headers for linking
+        mangle: false      // Don't escape email addresses
+      });
       
-      if (isQuoteLine) {
-        if (!inBlockquote) {
-          inBlockquote = true;
-          blockquoteLines = [];
-          pendingEmptyLines = 0;
+      // Parse with marked
+      let html = marked.parse(text);
+      
+      // Post-process: wrap citation lines in blockquotes with <cite>
+      // Pattern: lines starting with em-dash followed by text (e.g., "— Genesis 1:14")
+      html = html.replace(/<p>([—–-]{1,2}\s*.+?)<\/p>/g, '<p><cite>$1</cite></p>');
+      
+      // Add anchor IDs to blockquotes that contain scripture citations
+      html = html.replace(/<blockquote>([\s\S]*?)<\/blockquote>/g, (match, content) => {
+        // Look for scripture reference in citation
+        const citationMatch = content.match(/[—–-]{1,2}\s*(\d?\s*[A-Za-z]+)\s+(\d+):(\d+)/);
+        if (citationMatch) {
+          const book = citationMatch[1].toLowerCase().replace(/\s+/g, '');
+          const chapter = citationMatch[2];
+          const verse = citationMatch[3];
+          const anchor = `ref-${book}-${chapter}-${verse}`;
+          return `<blockquote id="${anchor}">${content}</blockquote>`;
         }
-        // Remove the > prefix and add to quote
-        let content = line.replace(/^>\s?/, '');
-        // Check if it's a citation line
-        if (content.match(/^[—–-]{1,2}\s*.+/)) {
-          content = `<cite>${content}</cite>`;
-        }
-        blockquoteLines.push(content);
-        pendingEmptyLines = 0;
-      } else if (inBlockquote && isEmpty) {
-        // Empty line while in blockquote - might be before citation
-        pendingEmptyLines++;
-        // Look ahead to see if citation is coming
-        let foundCitation = false;
-        for (let j = i + 1; j < lines.length && j <= i + 3; j++) {
-          if (lines[j].trim() === '') continue;
-          if (isCitationLine(lines[j])) {
-            foundCitation = true;
-            break;
-          }
-          break; // Non-empty, non-citation line
-        }
-        if (!foundCitation && pendingEmptyLines > 1) {
-          // End the blockquote
-          processed.push(createBlockquoteHtml(blockquoteLines));
-          inBlockquote = false;
-          blockquoteLines = [];
-          pendingEmptyLines = 0;
-        }
-      } else if (inBlockquote && isCitation) {
-        // Citation line without > prefix - merge into blockquote
-        let content = line.replace(/^>\s?/, '');
-        content = `<cite>${content}</cite>`;
-        blockquoteLines.push(content);
-        pendingEmptyLines = 0;
-      } else {
-        if (inBlockquote) {
-          // End of blockquote
-          processed.push(createBlockquoteHtml(blockquoteLines));
-          inBlockquote = false;
-          blockquoteLines = [];
-          pendingEmptyLines = 0;
-        }
-        if (!isEmpty || processed.length === 0 || processed[processed.length - 1].trim() !== '') {
-          processed.push(line);
-        }
-      }
-    }
-    // Handle trailing blockquote
-    if (inBlockquote) {
-      processed.push(createBlockquoteHtml(blockquoteLines));
+        return match;
+      });
+      
+      // Add class to tables for styling
+      html = html.replace(/<table>/g, '<table class="md-table">');
+      
+      return html;
     }
     
-    text = processed.join('\n');
-    
-    // Tables
-    text = text.replace(/^\|(.+)\|$/gm, (match, content) => {
-      const cells = content.split('|').map(c => c.trim());
-      const isHeader = content.includes('---');
-      if (isHeader) return ''; // Skip separator row
-      return `<tr>${cells.map(c => `<td>${c}</td>`).join('')}</tr>`;
-    });
-    text = text.replace(/(<tr>.*<\/tr>\n?)+/g, '<table class="md-table">$&</table>');
-    
-    // Headers
-    text = text.replace(/^#### (.+)$/gm, '<h4>$1</h4>');
-    text = text.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-    text = text.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-    text = text.replace(/^# (.+)$/gm, '<h1>$1</h1>');
-    
-    // Horizontal rules
-    text = text.replace(/^---+$/gm, '<hr>');
-    
-    // Bold and italic with asterisks (handle nested: ***text*** = bold+italic)
-    text = text.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-    text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-    
-    // Bold and italic with underscores (handle nested: ___text___ = bold+italic)
-    text = text.replace(/___(.+?)___/g, '<strong><em>$1</em></strong>');
-    text = text.replace(/__(.+?)__/g, '<strong>$1</strong>');
-    text = text.replace(/\b_([^_]+)_\b/g, '<em>$1</em>');
-    
-    // Inline code
-    text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-    
-    // Links [text](url)
-    text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-    
-    // Numbered lists
-    text = text.replace(/^\d+\.\s+(.+)$/gm, '<li>$1</li>');
-    
-    // Unordered lists
-    text = text.replace(/^[-*]\s+(.+)$/gm, '<li>$1</li>');
-    
-    // Wrap consecutive list items
-    text = text.replace(/(<li>.*<\/li>\n?)+/g, match => {
-      return `<ul>${match}</ul>`;
-    });
-    
-    // Paragraphs - split on double newlines
-    const blocks = text.split(/\n\n+/);
-    text = blocks.map(block => {
-      block = block.trim();
-      if (!block) return '';
-      // Don't wrap if already a block element
-      if (block.match(/^<(h[1-6]|ul|ol|table|blockquote|hr|div)/)) {
-        return block;
-      }
-      // Wrap in paragraph, convert single newlines to <br>
-      return `<p>${block.replace(/\n/g, '<br>')}</p>`;
-    }).join('\n');
-    
-    // Clean up empty paragraphs
-    text = text.replace(/<p>\s*<\/p>/g, '');
-    text = text.replace(/<p><br><\/p>/g, '');
-    
-    return text;
+    // Fallback: very basic markdown (if marked.js fails to load)
+    console.warn('[ReaderView] marked.js not available, using basic fallback');
+    text = text
+      .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+      .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br>');
+    return `<p>${text}</p>`;
   },
 
   /**
@@ -547,17 +420,22 @@ const ReaderView = {
           link.dataset.symbolMeaning = symbol.is2 || symbol.is;
           link.dataset.symbolSentence = symbol.sentence;
           
-          // Convert href to app navigation
+          // On click, open Strong's panel for this symbol (which shows symbol details)
           link.onclick = (e) => {
             e.preventDefault();
-            AppStore.dispatch({
-              type: 'SET_VIEW',
-              view: 'reader',
-              params: { contentType: 'symbols', symbol: symbolKey }
-            });
+            if (symbol.strongs && symbol.strongs.length > 0 && typeof showStrongsPanel === 'function') {
+              showStrongsPanel(symbol.strongs[0], '', '', e);
+            } else {
+              // Fallback to symbol page if no strongs number
+              AppStore.dispatch({
+                type: 'SET_VIEW',
+                view: 'reader',
+                params: { contentType: 'symbols', symbol: symbolKey }
+              });
+            }
           };
           
-          // Add hover tooltip
+          // Add hover tooltip (first tap on mobile shows this, second tap triggers click)
           this.addSymbolTooltip(link, symbol);
         }
       }
@@ -601,13 +479,17 @@ const ReaderView = {
         );
         if (symbolKey) {
           const symbol = SYMBOL_DICTIONARY[symbolKey];
+          // On click, open Strong's panel if available, otherwise go to symbol page
+          const onclick = symbol.strongs && symbol.strongs.length > 0
+            ? `if(typeof showStrongsPanel==='function'){showStrongsPanel('${symbol.strongs[0]}','','',event);}else{AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${symbolKey}'}})} return false;`
+            : `AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${symbolKey}'}}); return false;`;
           return `<a href="/reader/symbols/${symbolKey}" 
             class="symbol-ref symbol-ref-inline" 
             data-symbol-key="${symbolKey}"
             data-symbol-name="${symbol.name}"
             data-symbol-meaning="${symbol.is2 || symbol.is}"
             data-symbol-sentence="${symbol.sentence.replace(/"/g, '&quot;')}"
-            onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${symbolKey}'}}); return false;"
+            onclick="${onclick}"
           >${match}</a>`;
         }
         return match;
@@ -678,8 +560,13 @@ const ReaderView = {
 
   /**
    * Render Time Tested within the Bible frame (uses same header)
+   * @param {object} state - App state
+   * @param {object} derived - Derived state
+   * @param {Element} container - Container element
+   * @param {string} chapterId - Chapter ID to load
+   * @param {string} section - Optional section anchor to scroll to
    */
-  renderTimeTestedInBibleFrame(state, derived, container, chapterId) {
+  renderTimeTestedInBibleFrame(state, derived, container, chapterId, section) {
     // First render the Bible structure if not already present
     const existingPage = container.querySelector('#bible-explorer-page');
     if (!existingPage) {
@@ -709,7 +596,7 @@ const ReaderView = {
       } else {
         // Render the chapter using BookView's logic
         if (typeof BookView !== 'undefined' && typeof BookView.loadAndRenderChapter === 'function') {
-          BookView.loadAndRenderChapter(chapterId, textArea);
+          BookView.loadAndRenderChapter(chapterId, textArea, section);
         } else {
           // Fallback: create a modified state and let BookView render
           const bookState = {
@@ -720,7 +607,7 @@ const ReaderView = {
             // BookView renders to the whole container, but we want just the text area
             // So we'll render a simplified version
             textArea.innerHTML = `<div class="loading">Loading chapter...</div>`;
-            this.loadTimeTestedChapter(chapterId, textArea);
+            this.loadTimeTestedChapter(chapterId, textArea, section);
           }
         }
       }
@@ -879,8 +766,11 @@ const ReaderView = {
 
   /**
    * Load Time Tested chapter content
+   * @param {string} chapterId - Chapter ID to load
+   * @param {Element} container - Container to render into
+   * @param {string} section - Optional section anchor to scroll to (e.g., "years-of-high-priests")
    */
-  async loadTimeTestedChapter(chapterId, container) {
+  async loadTimeTestedChapter(chapterId, container, section) {
     try {
       // Check if this is an extra chapter (stored in /extra/ folder)
       const chapter = TIME_TESTED_CHAPTERS?.find(c => c.id === chapterId);
@@ -917,8 +807,54 @@ const ReaderView = {
       // Make symbol references interactive (links + tooltips)
       this.linkifySymbolRefs(container);
       
+      // Scroll to section if specified
+      if (section) {
+        setTimeout(() => {
+          this.scrollToSection(section, container);
+        }, 100);
+      }
+      
     } catch (e) {
       container.innerHTML = `<div class="reader-error">Error loading chapter: ${e.message}</div>`;
+    }
+  },
+  
+  /**
+   * Scroll to a section by ID within a container
+   * Handles both exact ID match and heading text match
+   * @param {string} sectionId - Section ID or heading slug
+   * @param {Element} container - Container to search within
+   */
+  scrollToSection(sectionId, container) {
+    // First try exact ID match
+    let el = container.querySelector(`#${sectionId}`);
+    
+    // If not found, try to find a heading that matches the slug
+    if (!el) {
+      // Convert slug to regex pattern (e.g., "years-of-high-priests" -> /years\s+of\s+high\s+priests/i)
+      const pattern = sectionId.replace(/-/g, '\\s+');
+      const regex = new RegExp(pattern, 'i');
+      
+      // Search all headings
+      const headings = container.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      for (const heading of headings) {
+        const text = heading.textContent.trim();
+        // Also create a slug from the heading text
+        const headingSlug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        if (headingSlug === sectionId || regex.test(text)) {
+          el = heading;
+          break;
+        }
+      }
+    }
+    
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Highlight briefly
+      el.style.backgroundColor = 'rgba(212, 160, 23, 0.3)';
+      setTimeout(() => {
+        el.style.backgroundColor = '';
+      }, 2000);
     }
   },
 

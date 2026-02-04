@@ -12,10 +12,10 @@ const SYMBOL_DICTIONARY = {
     words: ['light', 'lights'],
     strongs: ['H216', 'G5457'],
     is: 'Example',
-    is2: 'Visible Example',
+    is2: 'Visible Obedience',
     does: null,
     does2: null,
-    sentence: 'Living in such a way that others can see and follow—being an example that demonstrates the right way',
+    sentence: 'Visible obedience to God\'s commandments—living in such a way that others can see righteousness (commandment-keeping) and follow',
     opposite: 'Darkness',
     link: '/symbols/light/'
   },
@@ -48,7 +48,7 @@ const SYMBOL_DICTIONARY = {
   
   'sea': {
     name: 'SEA',
-    words: ['sea', 'seas', 'waters'],
+    words: ['sea', 'seas', 'waters', 'waves', 'wave'],
     strongs: ['H3220', 'G2281'],
     is: 'Nations',
     is2: 'Chaotic Peoples',
@@ -115,13 +115,52 @@ const SYMBOL_DICTIONARY = {
     name: 'SAND',
     words: ['sand'],
     strongs: ['H2344', 'G285'],
-    is: 'Unreliable',
-    is2: 'Broken Covenant',
+    is: 'Multitudes',
+    is2: 'People at Covenant Boundary',
     does: null,
     does2: null,
-    sentence: 'That which shifts and changes—promises that fail, agreements that don\'t hold',
+    sentence: 'Countless people at the seashore (wings/coast)—the place where covenant is offered. Can be lost in the sea (nations) or bound to Christ the Rock, becoming living stones',
     opposite: 'Rock',
-    link: '/symbols/rock/'
+    link: '/symbols/sand/'
+  },
+  
+  'highway': {
+    name: 'HIGHWAY',
+    words: ['highway', 'highways'],
+    strongs: ['H4546'],
+    is: 'Covenant Path',
+    is2: 'Way of Faithfulness',
+    does: null,
+    does2: null,
+    sentence: 'The raised, prepared path where the covenant-faithful walk—distinct from the byways of the world, inaccessible to the unclean',
+    opposite: 'Byways',
+    link: '/symbols/highway/'
+  },
+  
+  'way': {
+    name: 'WAY',
+    words: ['way', 'ways'],
+    strongs: ['H1870', 'G3598'],
+    is: 'Conduct',
+    is2: 'Manner of Life',
+    does: null,
+    does2: null,
+    sentence: 'How one lives and acts—the pattern of behavior that defines one\'s path, whether leading to life or destruction',
+    opposite: 'Error/Transgression',
+    link: '/symbols/way/'
+  },
+  
+  'the way': {
+    name: 'THE WAY',
+    words: ['the way of the lord', 'the way of god', 'the way of righteousness', 'the way of truth', 'the way of life', 'the way of peace', 'the way of salvation'],
+    strongs: ['H1870', 'G3598'],
+    is: 'Torah',
+    is2: "God's Commandments",
+    does: null,
+    does2: null,
+    sentence: "The specific, singular, right conduct—obedience to God's instructions as revealed in Scripture and embodied in Messiah",
+    opposite: 'Lawlessness',
+    link: '/symbols/way/'
   },
   
   'fornication': {
@@ -282,13 +321,13 @@ const SYMBOL_DICTIONARY = {
   
   'wings': {
     name: 'WINGS',
-    words: ['wing', 'wings', 'skirt', 'skirts'],
+    words: ['wing', 'wings', 'skirt', 'skirts', 'borders', 'corners', 'quarters'],
     strongs: ['H3671', 'G4420'],
     is: 'Covenant',
-    is2: 'Covenant Covering',
+    is2: 'Torah Reminder',
     does: 'Covers',
-    does2: 'Protects',
-    sentence: 'The protective covering of covenant relationship—to come "under wings" is to enter covenant; to "spread wings/skirt over" is to take someone into covenant',
+    does2: 'Reminds',
+    sentence: 'Covenant covering and Torah reminder—tzitzit on the wings (kanaph) of garments remind us of commandments (Num 15:38-40); to come "under wings" is to enter covenant',
     opposite: 'Exposed/Uncovered',
     link: '/symbols/wings/'
   },
@@ -356,22 +395,99 @@ const SYMBOL_DICTIONARY = {
     sentence: 'The practice or observance that identifies which authority\'s covenant you follow—what you DO (hand) and THINK (forehead) that marks you as belonging to a particular master',
     opposite: 'Unmarked/Unidentified',
     link: '/symbols/mark/'
+  },
+  
+  'evening': {
+    name: 'EVENING',
+    words: ['evening', 'even', 'eventide'],
+    strongs: ['H6153'],
+    is: 'Sacrifice Time',
+    is2: 'Evening Sacrifice',
+    does: 'Cleanses',
+    does2: 'Restores',
+    sentence: 'The time of the evening offering (~3pm/9th hour), not nightfall. In uncleanness contexts, "until the even" likely means "until the evening sacrifice" rather than "until sunset."',
+    opposite: 'Morning',
+    link: '/symbols/evening/'
+  },
+  
+  'bread': {
+    name: 'BREAD',
+    words: ['bread', 'loaf', 'loaves', 'manna', 'shewbread'],
+    strongs: ['H3899', 'H4478', 'G740', 'G3131'],
+    is: 'Word',
+    is2: 'Covenant Terms',
+    does: 'Sustains',
+    does2: 'Covenants',
+    sentence: "God's instruction / covenant terms — man lives by every word from God's mouth (Deut 8:3). Breaking bread = cutting covenant; sharing the meal = ratifying the terms together",
+    opposite: 'Famine (of hearing God\'s words)',
+    link: '/symbols/bread/'
+  },
+  
+  'wine': {
+    name: 'WINE',
+    words: ['wine', 'wines', 'new wine', 'winepress'],
+    strongs: ['H3196', 'H8492', 'G3631'],
+    is: 'Blood',
+    is2: 'Covenant Blood',
+    does: 'Ratifies',
+    does2: 'Seals',
+    sentence: "The blood of grapes (Gen 49:11) — life poured out to ratify covenant. Brings joy in covenant, wrath when broken. 'This cup is the new covenant in my blood'",
+    opposite: 'Thirst / Water',
+    link: '/symbols/wine/'
+  },
+  
+  'wind': {
+    name: 'WIND',
+    words: ['wind', 'winds'],
+    strongs: ['H7307', 'H7308', 'G417', 'G4151'],
+    is: 'Spirit',
+    is2: 'Invisible Power',
+    does: 'Moves',
+    does2: 'Executes',
+    sentence: 'The invisible, powerful force that moves where God wills—spirit operating in the spiritual realm as wind operates in the natural',
+    opposite: 'Stillness',
+    link: '/symbols/wind/'
+  },
+  
+  'four winds': {
+    name: 'FOUR WINDS',
+    words: ['four winds', 'four spirits'],
+    strongs: ['H7307', 'G417'],
+    is: 'Spirits',
+    is2: "God's Executing Spirits",
+    does: 'Executes',
+    does2: 'Scatters/Gathers',
+    sentence: "The spirits God dispatches from His throne to execute His purposes throughout all the earth—scattering, gathering, stirring nations, and bringing judgment or restoration",
+    opposite: 'Stillness/Calm',
+    link: '/symbols/wind/'
   }
 };
 
 // Build a quick lookup index for word matching
 const SYMBOL_WORD_INDEX = {};
+// Also track multi-word phrases separately
+const SYMBOL_MULTI_WORD_PHRASES = [];
+
 for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
   for (const word of symbol.words) {
     SYMBOL_WORD_INDEX[word] = symbol;
+    // Track multi-word phrases (those containing spaces)
+    if (word.includes(' ')) {
+      SYMBOL_MULTI_WORD_PHRASES.push({
+        phrase: word,
+        symbol: symbol,
+        key: key
+      });
+    }
   }
 }
 
-// Build a Strong's number index (includes key for navigation)
+// Sort multi-word phrases by length (longest first) for proper matching
+SYMBOL_MULTI_WORD_PHRASES.sort((a, b) => b.phrase.length - a.phrase.length);
+
+// Build a Strong's number index
 const SYMBOL_STRONGS_INDEX = {};
 for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
-  // Attach the key to the symbol for easy lookup
-  symbol.key = key;
   if (symbol.strongs) {
     for (const strongs of symbol.strongs) {
       SYMBOL_STRONGS_INDEX[strongs] = symbol;
@@ -379,11 +495,16 @@ for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
   }
 }
 
-// Look up symbol by word (case-insensitive)
+// Look up symbol by word or phrase (case-insensitive)
 function lookupSymbolByWord(word) {
   if (!word) return null;
   const normalized = word.toLowerCase().replace(/[.,;:!?'"()]/g, '');
   return SYMBOL_WORD_INDEX[normalized] || null;
+}
+
+// Get all multi-word phrases for matching
+function getMultiWordSymbolPhrases() {
+  return SYMBOL_MULTI_WORD_PHRASES;
 }
 
 // Look up symbol by Strong's number
@@ -464,6 +585,17 @@ function closeSymbolPanel() {
   const panel = document.getElementById('symbol-panel');
   if (panel) {
     panel.classList.remove('visible');
+  }
+}
+
+// Open symbol study in reader view
+function openSymbolStudyInReader(symbolKey) {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'reader',
+      params: { contentType: 'symbols', symbol: symbolKey }
+    });
   }
 }
 

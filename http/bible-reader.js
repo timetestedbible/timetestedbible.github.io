@@ -19,6 +19,14 @@ const BIBLE_TRANSLATIONS = {
     file: '/asv.txt',
     separator: ' ',   // Space-separated (first space after reference)
     skipLines: 4      // Header lines to skip (includes blank lines)
+  },
+  lxx: {
+    id: 'lxx',
+    name: 'LXX',
+    fullName: 'Septuagint (Brenton)',
+    file: '/lxx.txt',
+    separator: '\t',  // Tab-separated
+    skipLines: 2      // Header lines to skip
   }
 };
 
@@ -236,6 +244,194 @@ function getStrongsDict() {
   };
 }
 
+// ============================================
+// GEMATRIA DATA AND FUNCTIONS
+// ============================================
+
+// Gematria data storage
+let gematriaData = null;        // { hebrew: {...}, greek: {...} }
+let gematriaIndex = null;       // { value: { hebrew: [...], greek: [...] }, ... }
+let gematriaLoading = null;     // Promise while loading
+
+// Load gematria data (lazy load on first use)
+async function loadGematriaData() {
+  if (gematriaData && gematriaIndex) return true;
+  if (gematriaLoading) return gematriaLoading;
+  
+  gematriaLoading = (async () => {
+    try {
+      // Load both compact data and index
+      const [compactRes, indexRes] = await Promise.all([
+        fetch('/data/gematria-compact.json'),
+        fetch('/data/gematria-index.json')
+      ]);
+      
+      if (compactRes.ok) {
+        gematriaData = await compactRes.json();
+      }
+      if (indexRes.ok) {
+        gematriaIndex = await indexRes.json();
+      }
+      
+      console.log('[Gematria] Loaded gematria data');
+      return true;
+    } catch (err) {
+      console.warn('[Gematria] Failed to load gematria data:', err);
+      return false;
+    }
+  })();
+  
+  return gematriaLoading;
+}
+
+// Get gematria value for a Strong's number
+function getGematriaValue(strongsNum) {
+  if (!gematriaData) return null;
+  const normalized = normalizeStrongsNum(strongsNum);
+  
+  if (normalized.startsWith('H') && gematriaData.hebrew) {
+    const entry = gematriaData.hebrew[normalized];
+    return entry ? entry[1] : null;  // [lemma, value]
+  }
+  if (normalized.startsWith('G') && gematriaData.greek) {
+    const entry = gematriaData.greek[normalized];
+    return entry ? entry[1] : null;
+  }
+  return null;
+}
+
+// Get all words with the same gematria value
+function getRelatedByGematria(strongsNum, limit = 20) {
+  if (!gematriaIndex) return null;
+  
+  const value = getGematriaValue(strongsNum);
+  if (!value) return null;
+  
+  const related = gematriaIndex[value];
+  if (!related) return null;
+  
+  const normalized = normalizeStrongsNum(strongsNum);
+  const isHebrew = normalized.startsWith('H');
+  
+  // Filter out the current word and limit results
+  const hebrewWords = (related.hebrew || [])
+    .filter(w => w.strongs !== normalized)
+    .slice(0, limit);
+  const greekWords = (related.greek || [])
+    .filter(w => w.strongs !== normalized)
+    .slice(0, limit);
+  
+  return {
+    value: value,
+    hebrew: hebrewWords,
+    greek: greekWords,
+    totalHebrew: (related.hebrew || []).length - (isHebrew ? 1 : 0),
+    totalGreek: (related.greek || []).length - (!isHebrew ? 1 : 0)
+  };
+}
+
+// Render gematria section HTML
+function renderGematriaSection(strongsNum) {
+  const value = getGematriaValue(strongsNum);
+  if (!value) return '';
+  
+  const related = getRelatedByGematria(strongsNum);
+  const hasRelated = related && (related.hebrew.length > 0 || related.greek.length > 0);
+  
+  let html = `
+    <div class="strongs-gematria-section">
+      <div class="strongs-gematria-header" onclick="toggleGematriaExpanded()">
+        <span class="strongs-gematria-icon">🔢</span>
+        <span class="strongs-gematria-title">Gematria</span>
+        <span class="strongs-gematria-value">${value}</span>
+        ${hasRelated ? '<span class="strongs-gematria-expand">▼</span>' : ''}
+      </div>
+  `;
+  
+  if (hasRelated) {
+    html += `<div class="strongs-gematria-related" id="gematria-related" style="display: none;">`;
+    
+    // Hebrew words with same value
+    if (related.hebrew.length > 0) {
+      html += `<div class="strongs-gematria-group">
+        <div class="strongs-gematria-group-title">Hebrew (${related.totalHebrew})</div>
+        <div class="strongs-gematria-words">`;
+      
+      for (const word of related.hebrew) {
+        const primaryWord = extractPrimaryWord(word.def);
+        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="event.stopPropagation(); showStrongsPanel('${word.strongs}', '', '', event)">${primaryWord}</span>`;
+      }
+      
+      html += `</div></div>`;
+    }
+    
+    // Greek words with same value
+    if (related.greek.length > 0) {
+      html += `<div class="strongs-gematria-group">
+        <div class="strongs-gematria-group-title">Greek (${related.totalGreek})</div>
+        <div class="strongs-gematria-words">`;
+      
+      for (const word of related.greek) {
+        const primaryWord = extractPrimaryWord(word.def);
+        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="event.stopPropagation(); showStrongsPanel('${word.strongs}', '', '', event)">${primaryWord}</span>`;
+      }
+      
+      html += `</div></div>`;
+    }
+    
+    html += `</div>`;
+  }
+  
+  html += `</div>`;
+  return html;
+}
+
+// Extract a clean primary word/phrase from a Strong's definition
+function extractPrimaryWord(def) {
+  if (!def) return '(unknown)';
+  
+  // Clean up the definition
+  let cleaned = def.trim();
+  
+  // Remove leading articles and common prefixes
+  cleaned = cleaned.replace(/^(a |an |the |to |properly[,:]? ?|i\.e\.[,:]? ?)/i, '');
+  
+  // Get the first meaningful word/phrase (up to comma, semicolon, or parenthesis)
+  const match = cleaned.match(/^([^,;(]+)/);
+  if (match) {
+    cleaned = match[1].trim();
+  }
+  
+  // Remove trailing articles/prepositions
+  cleaned = cleaned.replace(/\s+(of|the|a|an|in|to|for|by|as|or)$/i, '');
+  
+  // Limit length
+  if (cleaned.length > 25) {
+    cleaned = cleaned.substring(0, 22) + '...';
+  }
+  
+  // Capitalize first letter
+  if (cleaned.length > 0) {
+    cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  }
+  
+  return cleaned || '(unknown)';
+}
+
+// Toggle gematria expanded state
+function toggleGematriaExpanded() {
+  const relatedEl = document.getElementById('gematria-related');
+  const expandIcon = document.querySelector('.strongs-gematria-expand');
+  
+  if (relatedEl) {
+    const isVisible = relatedEl.style.display !== 'none';
+    relatedEl.style.display = isVisible ? 'none' : 'block';
+    if (expandIcon) {
+      expandIcon.textContent = isVisible ? '▼' : '▲';
+    }
+  }
+}
+
 // Get entry from Strong's dictionary (Hebrew or Greek)
 function getStrongsEntry(strongsNum) {
   const dict = getStrongsDict();
@@ -270,7 +466,9 @@ const HEBREW_ANNOTATIONS = {
   // Woman/Fire ambiguity: אִשָּׁה (ishah/woman) vs אִשֶּׁה (isheh/fire offering)
   'woman_fire': {
     emoji: '🔥',
-    tooltip: "Hebrew Word Ambiguity: Woman or Fire? (See Zechariah 5:5-11)\n\nIn Hebrew, 'woman' (אִשָּׁה, ishah) and 'fire offering' (אִשֶּׁה, isheh) are spelled identically without vowel points—vowels were added later by tradition. The consonantal text allows for an alternate reading."
+    tooltip: "Hebrew Word Ambiguity: Woman or Fire?\n\nIn Hebrew, 'woman' (אִשָּׁה, H802) and 'fire offering' (אִשָּׁה, H801) are spelled identically—same consonants, same vowel pointing. The distinction is purely contextual.",
+    strongs: 'H802',
+    wordStudy: '/reader/words/H802'
   },
   'lead_payload': {
     emoji: '☢️',
@@ -279,6 +477,50 @@ const HEBREW_ANNOTATIONS = {
   'shinar_babylon': {
     emoji: '🏛️',
     tooltip: "Shinar is the ancient name for Babylon/Mesopotamia (Genesis 10:10, 11:2). The 'fire offering' is being carried to Babylon—connecting to prophecies of Babylon the Great's destruction by fire (Revelation 18)."
+  },
+  'evening_sacrifice': {
+    emoji: '🐑',
+    tooltip: "Evening = Evening Sacrifice?\n\n'Unclean until the even' is traditionally read as 'until sunset.' But what cleanses—the passage of time, or atonement?\n\nScripture teaches that sacrifice makes atonement (Lev 17:11). The evening lamb offering (~3pm) provided daily atonement. Being 'unclean until the even' means waiting for the sacrifice that cleanses—not merely waiting for darkness.\n\nThis also explains why Jesus died at the 9th hour (3pm)—the time of the evening sacrifice.",
+    strongs: 'H6153',
+    wordStudy: '/reader/symbols/EVENING'
+  },
+  'evening_morning_sacrifices': {
+    emoji: '🐑',
+    tooltip: "Days = Evening-Morning Sacrifices?\n\nThe Hebrew is עֶרֶב בֹּקֶר (erev boqer)—literally 'evening morning,' not 'days.' The LXX confirms this, translating it as 'evening and morning.'\n\nContext: The vision concerns the daily sacrifice being removed (v.11-13). The 2300 'evening-mornings' counts sacrifices, not days. Two sacrifices per day = 1150 days (~3.5 years of desecration).",
+    strongs: 'H6153',
+    wordStudy: '/reader/symbols/EVENING'
+  },
+  
+  // ============================================================================
+  // NUMBER ANNOTATIONS - Significant numbers with symbolic meaning
+  // ============================================================================
+  
+  'number_276': {
+    emoji: '🔢',
+    tooltip: "276 = Strong's G276: ἀμετάθετος (ametathetos)\n\n'Unchangeable' or 'Immutable'\n\nThe number of souls saved in the shipwreck (276) matches G276 in Strong's Concordance—meaning 'unchangeable, immutable.' These souls were immutably secured by God's promise that none would be lost (Acts 27:22-24).\n\nThis 'coincidence' is a Hebrew literary device: the number itself encodes its meaning. God's promise to save all 276 was unchangeable.",
+    strongs: 'G276',
+    wordStudy: '/reader/words/G276'
+  },
+  'number_153': {
+    emoji: '🐟',
+    tooltip: "153 = The Complete Harvest\n\n153 is the 17th triangular number (1+2+3+...+17 = 153), connecting to VICTORY (17).\n\nMathematically unique: 153 = 1³ + 5³ + 3³\n\nAugustine noted ancient naturalists counted 153 species of fish—representing ALL nations gathered into Christ's net. The unbroken net (unlike Luke 5:6) shows none are lost from the complete catch.\n\nThis specific count was recorded for symbolic significance.",
+    wordStudy: '/help#number-153'
+  },
+  'number_20_fathoms': {
+    emoji: '⚓',
+    tooltip: "20 = Expectancy / Redemptive Waiting\n\nIn Scripture, 20 represents periods of waiting before deliverance:\n• Jacob waited 20 years with Laban\n• Israel endured 20 years under Jabin\n• The ark remained 20 years at Kirjath-jearim\n\nSounding 20 fathoms: They are in a period of expectancy, not yet at rest.\n\n📖 See also: Combined with 15, these numbers form 2015 (G2015).",
+    wordStudy: '/help#number-20'
+  },
+  'number_15_fathoms': {
+    emoji: '⚓',
+    tooltip: "15 = Rest / Gracious Rest\n\n15 = 5 (grace) × 3 (divine completeness)\n\nFeasts begin on the 15th:\n• Unleavened Bread (Lev 23:6)\n• Tabernacles (Lev 23:34)\n\nSounding 15 fathoms: Drawing closer to REST.\n\n📖 See also: Combined with 20, these numbers form 2015 (G2015).",
+    wordStudy: '/help#number-15'
+  },
+  'number_2015_combined': {
+    emoji: '✨',
+    tooltip: "20 + 15 = G2015: ἐπιφάνεια (epiphaneia)\n\n'Appearing, Brightness, Manifestation'\n\nStrong's G2015 specifically refers to THE ADVENT OF CHRIST—His appearing!\n\nThe sequence of soundings (20 fathoms, then 15 fathoms) encodes 2015—pointing to Christ's glorious appearing as their salvation draws near.\n\nUsed in:\n• 2 Tim 1:10 — 'the appearing of our Saviour'\n• Titus 2:13 — 'the glorious appearing of...Jesus Christ'\n• 2 Thes 2:8 — 'the brightness of his coming'\n\nAs they approach land (salvation), the depths spell out: APPEARING OF CHRIST.",
+    strongs: 'G2015',
+    wordStudy: '/reader/words/G2015'
   }
 };
 
@@ -305,7 +547,72 @@ const VERSE_ANNOTATIONS = {
   // Nahum 3:13 - thy people are women
   "Nahum 3:13": [
     { word: "women", annotation: "woman_fire" }
-  ]
+  ],
+  
+  // ============================================================================
+  // EVENING SACRIFICE ANNOTATIONS - "unclean until the even"
+  // In context of uncleanness, "even" likely refers to evening sacrifice (~3pm)
+  // ============================================================================
+  
+  // Leviticus 11 - Animal carcass uncleanness
+  "Leviticus 11:24": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 11:25": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 11:27": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 11:28": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 11:31": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 11:32": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 11:39": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 11:40": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  
+  // Leviticus 14 - House uncleanness
+  "Leviticus 14:46": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  
+  // Leviticus 15 - Bodily discharge uncleanness
+  "Leviticus 15:5": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:6": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:7": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:8": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:10": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:11": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:16": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:17": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:18": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:19": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:21": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:22": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:23": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Leviticus 15:27": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  
+  // Leviticus 17 - Eating carrion
+  "Leviticus 17:15": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  
+  // Leviticus 22 - Priestly uncleanness
+  "Leviticus 22:6": [{ word: "until even", annotation: "evening_sacrifice" }],
+  
+  // Numbers 19 - Red heifer purification
+  "Numbers 19:7": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Numbers 19:8": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Numbers 19:10": [{ word: "until the even", annotation: "evening_sacrifice" }],
+  "Numbers 19:21": [{ word: "until even", annotation: "evening_sacrifice" }],
+  "Numbers 19:22": [{ word: "until even", annotation: "evening_sacrifice" }],
+  
+  // Daniel 8 - The 2300 "days" prophecy (Hebrew: evening-morning)
+  "Daniel 8:14": [{ word: "days", annotation: "evening_morning_sacrifices" }],
+  
+  // ============================================================================
+  // NUMBER ANNOTATIONS - Significant numbers in narrative
+  // ============================================================================
+  
+  // Paul's Shipwreck - Acts 27
+  "Acts 27:37": [{ word: "two hundred threescore and sixteen", annotation: "number_276" }],
+  "Acts 27:28": [
+    { word: "twenty fathoms", annotation: "number_20_fathoms" },
+    { word: "fifteen fathoms", annotation: "number_15_fathoms" },
+    { word: "sounded", annotation: "number_2015_combined" }
+  ],
+  
+  // The 153 Fish - John 21
+  "John 21:11": [{ word: "an hundred and fifty and three", annotation: "number_153" }]
 };
 
 // Apply annotations to verse text
@@ -318,8 +625,13 @@ function applyVerseAnnotations(reference, text) {
     const info = HEBREW_ANNOTATIONS[ann.annotation];
     if (!info) continue;
     
+    // Build data attributes for tooltip
+    const dataAttrs = `data-tooltip="${info.tooltip.replace(/"/g, '&quot;')}"` +
+      (info.strongs ? ` data-strongs="${info.strongs}"` : '') +
+      (info.wordStudy ? ` data-wordstudy="${info.wordStudy}"` : '');
+    
     // Create clickable emoji that shows tooltip
-    const replacement = `${ann.word}<span class="hebrew-annotation" data-tooltip="${info.tooltip.replace(/"/g, '&quot;')}" onclick="showHebrewTooltip(event)">${info.emoji}</span>`;
+    const replacement = `${ann.word}<span class="hebrew-annotation" ${dataAttrs} onclick="showHebrewTooltip(event)">${info.emoji}</span>`;
     
     // Replace first occurrence (case-insensitive)
     const regex = new RegExp(`\\b${ann.word}\\b`, 'i');
@@ -334,6 +646,8 @@ function showHebrewTooltip(event) {
   event.stopPropagation();
   const el = event.target;
   const tooltip = el.dataset.tooltip;
+  const strongs = el.dataset.strongs;
+  const wordStudy = el.dataset.wordstudy;
   
   // Remove any existing tooltip
   const existing = document.querySelector('.hebrew-tooltip');
@@ -342,7 +656,23 @@ function showHebrewTooltip(event) {
   // Create tooltip
   const tooltipEl = document.createElement('div');
   tooltipEl.className = 'hebrew-tooltip';
-  tooltipEl.innerHTML = tooltip.replace(/\n/g, '<br>');
+  
+  // Build content
+  let html = tooltip.replace(/\n/g, '<br>');
+  
+  // Add links if available
+  if (strongs || wordStudy) {
+    html += '<div class="hebrew-tooltip-links">';
+    if (strongs) {
+      html += `<button class="hebrew-tooltip-btn" onclick="event.stopPropagation(); showStrongsPanel('${strongs}', '', '', event)">📖 ${strongs}</button>`;
+    }
+    if (wordStudy) {
+      html += `<button class="hebrew-tooltip-btn" onclick="event.stopPropagation(); openWordStudyInReader('${strongs}')">📚 Word Study</button>`;
+    }
+    html += '</div>';
+  }
+  
+  tooltipEl.innerHTML = html;
   document.body.appendChild(tooltipEl);
   
   // Position tooltip above the emoji
@@ -350,13 +680,75 @@ function showHebrewTooltip(event) {
   tooltipEl.style.left = Math.max(10, rect.left - 100) + 'px';
   tooltipEl.style.top = (rect.top - tooltipEl.offsetHeight - 10 + window.scrollY) + 'px';
   
-  // Close on click outside
+  // Close on click outside (but not on buttons)
   setTimeout(() => {
-    document.addEventListener('click', function closeTooltip() {
-      tooltipEl.remove();
-      document.removeEventListener('click', closeTooltip);
-    }, { once: true });
+    document.addEventListener('click', function closeTooltip(e) {
+      if (!tooltipEl.contains(e.target)) {
+        tooltipEl.remove();
+        document.removeEventListener('click', closeTooltip);
+      }
+    });
   }, 10);
+}
+
+// Show word tooltip on hover (definitions + symbol meaning)
+function showWordTooltip(event) {
+  const el = event.target;
+  const def = el.dataset.def;
+  const symbolMeaning = el.dataset.symbolMeaning;
+  
+  // Skip if no useful info to show
+  if (!def && !symbolMeaning) return;
+  
+  // Remove any existing tooltip
+  hideWordTooltip();
+  
+  // Create tooltip
+  const tooltip = document.createElement('div');
+  tooltip.id = 'word-hover-tooltip';
+  tooltip.className = 'word-hover-tooltip';
+  
+  let html = '';
+  
+  // Show definition (synonyms) if available
+  if (def) {
+    html += `<div class="word-tooltip-def">${def}</div>`;
+  }
+  
+  // Show symbol meaning if available
+  if (symbolMeaning) {
+    html += `<div class="word-tooltip-symbol">📖 ${symbolMeaning}</div>`;
+  }
+  
+  tooltip.innerHTML = html;
+  document.body.appendChild(tooltip);
+  
+  // Position tooltip below the word
+  const rect = el.getBoundingClientRect();
+  const tooltipRect = tooltip.getBoundingClientRect();
+  
+  let left = rect.left + window.scrollX;
+  let top = rect.bottom + window.scrollY + 5;
+  
+  // Keep within viewport
+  if (left + tooltipRect.width > window.innerWidth) {
+    left = window.innerWidth - tooltipRect.width - 10;
+  }
+  if (left < 10) left = 10;
+  
+  // If tooltip would go below viewport, show above
+  if (top + tooltipRect.height > window.innerHeight + window.scrollY) {
+    top = rect.top + window.scrollY - tooltipRect.height - 5;
+  }
+  
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+  tooltip.style.opacity = '1';
+}
+
+function hideWordTooltip() {
+  const tooltip = document.getElementById('word-hover-tooltip');
+  if (tooltip) tooltip.remove();
 }
 
 // Show/hide Bible loading dialog
@@ -440,9 +832,13 @@ async function loadAllTranslations() {
   // Load KJV first (primary translation)
   await loadTranslation('kjv', false);
   
-  // Then load ASV, Hebrew, and Interlinear in background
+  // Then load ASV, LXX, Hebrew, and Interlinear in background
   loadTranslation('asv', false).catch(err => 
     console.log('ASV loading deferred:', err.message)
+  );
+  
+  loadTranslation('lxx', false).catch(err => 
+    console.log('LXX loading deferred:', err.message)
   );
   
   loadHebrew().catch(err =>
@@ -599,9 +995,7 @@ async function loadTipnr() {
 }
 
 // Book name abbreviation to full name mapping for TIPNR references
-// Includes both TIPNR format (Gen, Mat) and common abbreviations (Matt, Phil)
 const TIPNR_BOOK_ABBREVS = {
-  // TIPNR format (3-letter)
   'Gen': 'Genesis', 'Exo': 'Exodus', 'Lev': 'Leviticus', 'Num': 'Numbers', 'Deu': 'Deuteronomy',
   'Jos': 'Joshua', 'Jdg': 'Judges', 'Rut': 'Ruth', 'Ruth': 'Ruth',
   '1Sa': '1 Samuel', '2Sa': '2 Samuel', '1Ki': '1 Kings', '2Ki': '2 Kings',
@@ -617,19 +1011,7 @@ const TIPNR_BOOK_ABBREVS = {
   '1Th': '1 Thessalonians', '2Th': '2 Thessalonians', '1Ti': '1 Timothy', '2Ti': '2 Timothy',
   'Tit': 'Titus', 'Phm': 'Philemon', 'Heb': 'Hebrews', 'Jam': 'James',
   '1Pe': '1 Peter', '2Pe': '2 Peter', '1Jo': '1 John', '2Jo': '2 John', '3Jo': '3 John',
-  'Jud': 'Jude', 'Rev': 'Revelation',
-  // Common abbreviations (for human-written text)
-  'Matt': 'Matthew', 'Mk': 'Mark', 'Mrk': 'Mark', 'Lk': 'Luke',
-  'Jn': 'John', 'Acts': 'Acts', 'Phil': 'Philippians', 'Phili': 'Philippians',
-  'Thess': 'Thessalonians', '1Thess': '1 Thessalonians', '2Thess': '2 Thessalonians',
-  'Tim': 'Timothy', '1Tim': '1 Timothy', '2Tim': '2 Timothy',
-  'Ps': 'Psalms', 'Psalm': 'Psalms', 'Prov': 'Proverbs', 'Eccl': 'Ecclesiastes',
-  'Song': 'Song of Solomon', 'Is': 'Isaiah', 'Jer': 'Jeremiah', 'Ezek': 'Ezekiel',
-  'Obad': 'Obadiah', 'Zech': 'Zechariah', 'Ex': 'Exodus', 'Dt': 'Deuteronomy', 'Deut': 'Deuteronomy',
-  'Josh': 'Joshua', 'Judg': 'Judges', '1Sam': '1 Samuel', '2Sam': '2 Samuel',
-  '1Kgs': '1 Kings', '2Kgs': '2 Kings', '1Chron': '1 Chronicles', '2Chron': '2 Chronicles',
-  '1Cor': '1 Corinthians', '2Cor': '2 Corinthians', '1Pet': '1 Peter', '2Pet': '2 Peter',
-  '1Jn': '1 John', '2Jn': '2 John', '3Jn': '3 John'
+  'Jud': 'Jude', 'Rev': 'Revelation'
 };
 
 // Linkify scripture refs and Strong's numbers in person info text
@@ -670,25 +1052,12 @@ function linkifyPersonText(text) {
     return `(<a href="#" class="strongs-link" onclick="navigateToStrongs('${strongsNum}'); return false;">${strongsNum}</a>)`;
   });
   
-  // Linkify scripture references like "Gen.1.1" or "Rut.4.19" or "Mat.1.1-16" (TIPNR format)
+  // Linkify scripture references like "Gen.1.1" or "Rut.4.19" or "Mat.1.1-16"
   text = text.replace(/\b([123]?[A-Z][a-z]{1,2})\.(\d+)\.(\d+)(?:-(\d+))?/g, (match, book, chapter, verse, endVerse) => {
     const fullBook = TIPNR_BOOK_ABBREVS[book];
     if (!fullBook) return match;
     
     const display = `${book} ${chapter}:${verse}${endVerse ? '-' + endVerse : ''}`;
-    const escapedBook = fullBook.replace(/'/g, "\\'");
-    return `<a href="#" class="scripture-link" onclick="goToScriptureFromSidebar('${escapedBook}', ${chapter}, ${verse}); return false;">${display}</a>`;
-  });
-  
-  // Linkify common scripture references like "Matt 1:21" or "Phil 2:9" or "Acts 4:12" or "1 Cor 15:3"
-  // Handles formats: "Book chapter:verse", "Book chapter:verse-verse"
-  text = text.replace(/\b([123]?\s?[A-Z][a-z]{1,5})\s+(\d+):(\d+)(?:-(\d+))?\b/g, (match, book, chapter, verse, endVerse) => {
-    // Normalize book name (remove space in "1 Cor" -> "1Cor")
-    const normalizedBook = book.replace(/\s+/g, '');
-    const fullBook = TIPNR_BOOK_ABBREVS[normalizedBook];
-    if (!fullBook) return match;
-    
-    const display = match;
     const escapedBook = fullBook.replace(/'/g, "\\'");
     return `<a href="#" class="scripture-link" onclick="goToScriptureFromSidebar('${escapedBook}', ${chapter}, ${verse}); return false;">${display}</a>`;
   });
@@ -725,39 +1094,24 @@ function linkifyPersonText(text) {
   return text;
 }
 
-// Pad Strong's number to match TIPNR format (H121 -> H0121)
-function padStrongsNum(strongsNum) {
-  if (!strongsNum) return strongsNum;
-  const match = strongsNum.match(/^([HG])(\d+)$/i);
-  if (match) {
-    return match[1].toUpperCase() + match[2].padStart(4, '0');
-  }
-  return strongsNum;
-}
-
 // Get person/place info for a Strong's number
 // Falls back to Hebrew origin for Greek names
 function getPersonInfo(strongsNum) {
   if (!tipnrData || !strongsNum) return null;
   
-  // Try both normalized and padded formats
-  const normalized = normalizeStrongsNum(strongsNum);
-  const padded = padStrongsNum(normalized);
-  
-  // Direct lookup - try both formats
-  let info = tipnrData[normalized] || tipnrData[padded];
+  // Direct lookup
+  let info = tipnrData[strongsNum];
   if (info) return info;
   
   // For Greek numbers, try to find Hebrew origin from dictionary
-  if (normalized.startsWith('G')) {
-    const entry = getStrongsEntry(normalized);
+  if (strongsNum.startsWith('G')) {
+    const entry = getStrongsEntry(strongsNum);
     if (entry && entry.derivation) {
       // Extract Hebrew origin like "of Hebrew origin (H07410);"
       const match = entry.derivation.match(/H0*(\d+)/);
       if (match) {
         const hebrewNum = 'H' + match[1];
-        const hebrewPadded = padStrongsNum(hebrewNum);
-        info = tipnrData[hebrewNum] || tipnrData[hebrewPadded];
+        info = tipnrData[hebrewNum];
         if (info) return info;
       }
     }
@@ -771,35 +1125,24 @@ function getAllPersonInfo(strongsNum) {
   if (!tipnrData || !strongsNum) return [];
   
   const results = [];
-  const normalized = normalizeStrongsNum(strongsNum);
-  const padded = padStrongsNum(normalized);
-  const baseNum = normalized.replace(/[A-Z]$/, ''); // Strip trailing letter suffix
-  const basePadded = padStrongsNum(baseNum);
+  const baseNum = strongsNum.replace(/[A-Z]$/, ''); // Strip trailing letter suffix
   
-  // Direct lookup first - try both formats
-  if (tipnrData[normalized]) {
-    results.push({ id: normalized, ...tipnrData[normalized] });
-  } else if (tipnrData[padded]) {
-    results.push({ id: padded, ...tipnrData[padded] });
+  // Direct lookup first
+  if (tipnrData[strongsNum]) {
+    results.push({ id: strongsNum, ...tipnrData[strongsNum] });
   }
   
   // Look for all entries with same base number plus letter suffix (A-Z)
-  // Try both padded and unpadded formats
   for (let i = 65; i <= 90; i++) { // A-Z
-    const suffix = String.fromCharCode(i);
-    const suffixedNum = baseNum + suffix;
-    const suffixedPadded = basePadded + suffix;
-    
-    if (suffixedNum !== normalized && tipnrData[suffixedNum]) {
+    const suffixedNum = baseNum + String.fromCharCode(i);
+    if (suffixedNum !== strongsNum && tipnrData[suffixedNum]) {
       results.push({ id: suffixedNum, ...tipnrData[suffixedNum] });
-    } else if (suffixedPadded !== padded && tipnrData[suffixedPadded]) {
-      results.push({ id: suffixedPadded, ...tipnrData[suffixedPadded] });
     }
   }
   
   // For Greek numbers, also check Hebrew derivation
-  if (normalized.startsWith('G') && results.length === 0) {
-    const entry = getStrongsEntry(normalized);
+  if (strongsNum.startsWith('G') && results.length === 0) {
+    const entry = getStrongsEntry(strongsNum);
     if (entry && entry.derivation) {
       const match = entry.derivation.match(/H0*(\d+)/);
       if (match) {
@@ -935,6 +1278,10 @@ async function showInterlinear(book, chapter, verse, event) {
     existing.classList.remove('expanded');
     setTimeout(() => existing.remove(), 200);
     verseEl.classList.remove('interlinear-expanded');
+    // Dispatch to AppStore for URL sync (unidirectional flow)
+    if (typeof AppStore !== 'undefined') {
+      AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: null });
+    }
     return;
   }
   
@@ -986,40 +1333,62 @@ async function showInterlinear(book, chapter, verse, event) {
   } else {
     let html = '';
     
-    // Show ONLY the original language line (English is already in the verse text with clickable words)
-    if (isNT) {
-      // Greek interlinear - word-for-word with gloss below
-      html += '<div class="interlinear-words-container">';
-      for (let i = 0; i < originalWords.length; i++) {
-        const word = originalWords[i];
-        const engWord = data.e[i];
-        const strongs = engWord?.s || '';
-        const gloss = engWord?.g || engWord?.e || '';
-        const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-        html += `<div class="il-word-block il-clickable" onclick="showStrongsPanel('${strongs}', '', '${escapedGloss}', event)">
-          <span class="il-original">${word.g}</span>
-          <span class="il-strongs">${strongs}</span>
-          <span class="il-gloss">${gloss}</span>
+    // Add translation comparison section FIRST (above the interlinear)
+    const ref = `${book} ${chapter}:${verse}`;
+    html += '<div class="interlinear-translations">';
+    
+    // Only show translations OTHER than the current one
+    // KJV
+    if (currentTranslation !== 'kjv') {
+      const kjvVerse = bibleIndexes['kjv']?.[ref];
+      if (kjvVerse) {
+        html += `<div class="interlinear-trans-row">
+          <span class="interlinear-trans-label">KJV</span>
+          <span class="interlinear-trans-text">${kjvVerse.text}</span>
         </div>`;
       }
-      html += '</div>';
-    } else {
-      // Hebrew interlinear - word-for-word with gloss below (RTL)
-      html += '<div class="interlinear-words-container il-hebrew">';
-      for (let i = 0; i < originalWords.length; i++) {
-        const word = originalWords[i];
-        const engWord = data.e[i];
-        const strongs = engWord?.s || '';
-        const gloss = engWord?.g || engWord?.e || '';
-        const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-        html += `<div class="il-word-block il-clickable" onclick="showStrongsPanel('${strongs}', '', '${escapedGloss}', event)">
-          <span class="il-original">${word.h}</span>
-          <span class="il-strongs">${strongs}</span>
-          <span class="il-gloss">${gloss}</span>
-        </div>`;
-      }
-      html += '</div>';
     }
+    
+    // ASV
+    if (currentTranslation !== 'asv') {
+      const asvVerse = bibleIndexes['asv']?.[ref];
+      if (asvVerse) {
+        html += `<div class="interlinear-trans-row">
+          <span class="interlinear-trans-label">ASV</span>
+          <span class="interlinear-trans-text">${asvVerse.text}</span>
+        </div>`;
+      }
+    }
+    
+    // LXX (Septuagint) for OT verses only
+    if (!isNT && currentTranslation !== 'lxx') {
+      const lxxVerse = bibleIndexes['lxx']?.[ref];
+      if (lxxVerse) {
+        html += `<div class="interlinear-trans-row interlinear-trans-greek">
+          <span class="interlinear-trans-label">LXX</span>
+          <span class="interlinear-trans-text">${lxxVerse.text}</span>
+        </div>`;
+      }
+    }
+    
+    html += '</div>';
+    
+    // Build the word-for-word interlinear section
+    const langClass = isNT ? '' : 'il-hebrew';
+    html += `<div class="interlinear-words-container ${langClass}">`;
+    for (let i = 0; i < originalWords.length; i++) {
+      const word = originalWords[i];
+      const engWord = data.e[i];
+      const strongs = engWord?.s || '';
+      const gloss = engWord?.g || engWord?.e || '';
+      const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+      const originalText = isNT ? word.g : word.h;
+      html += `<div class="il-word-block il-clickable" onclick="showStrongsPanel('${strongs}', '${escapedGloss}', '${escapedGloss}', event)">
+        <span class="il-original">${originalText}</span>
+        <span class="il-gloss">${gloss}</span>
+      </div>`;
+    }
+    html += '</div>';
     
     interlinear.innerHTML = html;
   }
@@ -1030,6 +1399,11 @@ async function showInterlinear(book, chapter, verse, event) {
   requestAnimationFrame(() => {
     interlinear.classList.add('expanded');
   });
+  
+  // Dispatch to AppStore for URL sync (unidirectional flow)
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: verse });
+  }
 }
 
 // Highlight all words with matching BHSA ID
@@ -1321,7 +1695,10 @@ function goToVerseFromSearch(ref) {
   const chapter = parseInt(match[2]);
   const verse = parseInt(match[3]);
   
-  // Navigate to the verse with highlighting (keep Strong's panel open)
+  // Close the Strong's panel
+  closeStrongsPanel();
+  
+  // Navigate to the verse with highlighting
   openBibleExplorerTo(book, chapter, verse);
 }
 
@@ -1454,13 +1831,22 @@ function getStrongsSummary(strongsNum) {
 }
 
 // Start a concept search
-function startConceptSearch(word) {
+// skipDispatch: if true, don't dispatch to AppStore (used when syncing FROM state)
+function startConceptSearch(word, skipDispatch = false) {
   if (!word || word.trim().length < 2) {
     alert('Please enter a word with at least 2 characters');
     return;
   }
   
   const searchWord = word.trim().toLowerCase();
+  
+  // Dispatch to AppStore for URL sync (unidirectional flow)
+  if (!skipDispatch && typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_SEARCH_QUERY', searchQuery: word.trim() });
+  }
+  
+  // Check if user might be trying to use regex (starts with / but incomplete)
+  const looksLikeIncompleteRegex = word.trim().startsWith('/') && !word.trim().match(/^\/.*\/[gimsuy]*$/);
   
   // Show results container
   const resultsContainer = document.getElementById('concept-search-results');
@@ -1474,13 +1860,57 @@ function startConceptSearch(word) {
     initSearchDivider();
   }
   
+  // If it looks like an incomplete regex, show a helpful hint
+  if (looksLikeIncompleteRegex) {
+    if (resultsContainer) {
+      resultsContainer.innerHTML = `
+        <div class="concept-search-header">
+          <strong>Did you mean to use regex?</strong>
+          <div class="search-header-actions">
+            <a href="/help#search-section" class="search-help-link" title="Search help" onclick="AppStore.dispatch({type:'SET_VIEW',view:'help'}); return false;">?</a>
+            <button class="concept-search-close" onclick="closeConceptSearch()">✕</button>
+          </div>
+        </div>
+        <div class="regex-hint">
+          <p>It looks like you're trying a regex search. Regex patterns need a closing slash:</p>
+          <div class="regex-hint-example">
+            <code>${escapeHtml(word)}<strong>/</strong></code>
+            <span>← Add closing slash</span>
+          </div>
+          <p>Examples:</p>
+          <ul>
+            <li><code>/hot/</code> — finds "hot" anywhere</li>
+            <li><code>/\\bhot\\b/</code> — finds "hot" as whole word only</li>
+            <li><code>/(?=.*hot)(?=.*cold)/</code> — finds verses with BOTH words</li>
+          </ul>
+          <a href="/help#search-section" class="regex-hint-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'help'}); return false;">
+            Learn more about regex search →
+          </a>
+        </div>`;
+    }
+    return;
+  }
+  
   // Find all Strong's numbers (this may take a moment)
   setTimeout(() => {
     const strongsNumbers = findStrongsForWord(searchWord);
     
     if (strongsNumbers.length === 0) {
       if (resultsContainer) {
-        resultsContainer.innerHTML = `<div class="concept-search-empty">No Strong's numbers found for "${word}"</div>`;
+        resultsContainer.innerHTML = `
+          <div class="concept-search-header">
+            <strong>Search: "${escapeHtml(word)}"</strong>
+            <div class="search-header-actions">
+              <a href="/help#search-section" class="search-help-link" title="Search help" onclick="AppStore.dispatch({type:'SET_VIEW',view:'help'}); return false;">?</a>
+              <button class="concept-search-close" onclick="closeConceptSearch()">✕</button>
+            </div>
+          </div>
+          <div class="concept-search-empty">
+            No results found for "<strong>${escapeHtml(word)}</strong>"
+            <p class="search-empty-tips">
+              Try a different spelling, or use <a href="/help#search-section" onclick="AppStore.dispatch({type:'SET_VIEW',view:'help'}); return false;">regex search</a> for advanced patterns.
+            </p>
+          </div>`;
       }
       return;
     }
@@ -1510,8 +1940,11 @@ function displayConceptSearchResults() {
   const searchWord = state.searchWord;
   
   let html = `<div class="concept-search-header">
-    <span class="concept-search-title">Search Results</span>
-    <button class="concept-search-close" onclick="closeConceptSearch()">✕</button>
+    <strong>Search: "${searchWord}"</strong>
+    <div class="search-header-actions">
+      <a href="/help#search-section" class="search-help-link" title="Search help" onclick="AppStore.dispatch({type:'SET_VIEW',view:'help'}); return false;">?</a>
+      <button class="concept-search-close" onclick="closeConceptSearch()">✕</button>
+    </div>
   </div>`;
   
   html += '<div id="concept-verse-results" class="concept-verse-results"><div class="concept-search-loading">Searching...</div></div>';
@@ -1566,6 +1999,7 @@ function displayConceptSearchResults() {
 }
 
 // Find verses by plain text search only (primary results)
+// Searches the currently selected translation
 function findTextMatchVerses() {
   const state = conceptSearchState;
   const verseResultsContainer = document.getElementById('concept-verse-results');
@@ -1579,16 +2013,14 @@ function findTextMatchVerses() {
   setTimeout(() => {
     const allVerses = new Map();
     
-    // Search all loaded translations
-    for (const transId in bibleTranslations) {
-      const transData = bibleTranslations[transId];
-      if (transData && transData.length > 0) {
-        for (const verse of transData) {
-          if (verse.text && wordPattern.test(verse.text)) {
-            const ref = `${verse.book} ${verse.chapter}:${verse.verse}`;
-            if (!allVerses.has(ref)) {
-              allVerses.set(ref, { words: [searchWord] });
-            }
+    // Search current translation only
+    const transData = bibleTranslations[currentTranslation];
+    if (transData && transData.length > 0) {
+      for (const verse of transData) {
+        if (verse.text && wordPattern.test(verse.text)) {
+          const ref = `${verse.book} ${verse.chapter}:${verse.verse}`;
+          if (!allVerses.has(ref)) {
+            allVerses.set(ref, { words: [searchWord], text: verse.text });
           }
         }
       }
@@ -1600,7 +2032,7 @@ function findTextMatchVerses() {
         ref,
         strongsNums: [],
         words: data.words,
-        text: getVerseText(ref) || '',
+        text: data.text || '',
         fromText: true
       }))
       .sort((a, b) => compareVerseRefs(a.ref, b.ref));
@@ -1662,17 +2094,15 @@ function expandConceptSearch() {
     const searchWord = state.searchWord;
     const wordPattern = searchWord ? new RegExp(`\\b${searchWord}\\b`, 'i') : null;
     
-    // First, add all text matches (these are primary)
+    // First, add all text matches from current translation (these are primary)
     if (wordPattern) {
-      for (const transId in bibleTranslations) {
-        const transData = bibleTranslations[transId];
-        if (transData && transData.length > 0) {
-          for (const verse of transData) {
-            if (verse.text && wordPattern.test(verse.text)) {
-              const ref = `${verse.book} ${verse.chapter}:${verse.verse}`;
-              if (!allVerses.has(ref)) {
-                allVerses.set(ref, { strongsNums: new Set(), words: [searchWord], fromText: true, fromConcept: false });
-              }
+      const transData = bibleTranslations[currentTranslation];
+      if (transData && transData.length > 0) {
+        for (const verse of transData) {
+          if (verse.text && wordPattern.test(verse.text)) {
+            const ref = `${verse.book} ${verse.chapter}:${verse.verse}`;
+            if (!allVerses.has(ref)) {
+              allVerses.set(ref, { strongsNums: new Set(), words: [searchWord], fromText: true, fromConcept: false, text: verse.text });
             }
           }
         }
@@ -1726,7 +2156,7 @@ function expandConceptSearch() {
         ref,
         strongsNums: Array.from(data.strongsNums),
         words: data.words,
-        text: getVerseText(ref) || '',
+        text: data.text || getVerseText(ref) || '',
         fromText: data.fromText,
         fromConcept: data.fromConcept
       }))
@@ -1959,7 +2389,8 @@ function highlightConceptWords(text, words, searchWord) {
 }
 
 // Close concept search results
-function closeConceptSearch() {
+// skipDispatch: if true, don't dispatch to AppStore (used when syncing FROM state)
+function closeConceptSearch(skipDispatch = false) {
   const resultsContainer = document.getElementById('concept-search-results');
   const divider = document.getElementById('search-divider');
   if (resultsContainer) {
@@ -1977,6 +2408,313 @@ function closeConceptSearch() {
     isSearching: false,
     isComplete: false
   };
+  
+  // Dispatch to AppStore for URL sync (unidirectional flow)
+  if (!skipDispatch && typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_SEARCH_QUERY', searchQuery: null });
+  }
+}
+
+// ============================================================================
+// REGEX SEARCH - Find verses using JavaScript regular expressions
+// ============================================================================
+
+// State for regex search
+let regexSearchState = {
+  pattern: null,
+  regex: null,
+  results: [],
+  isComplete: false
+};
+
+/**
+ * Start a regex search across all Bible verses
+ * @param {string} pattern - The regex pattern (without delimiters)
+ * @param {string} flags - Regex flags (default: 'i' for case-insensitive)
+ */
+function startRegexSearch(pattern, flags = 'i') {
+  // Show results container
+  const resultsContainer = document.getElementById('concept-search-results');
+  const divider = document.getElementById('search-divider');
+  if (resultsContainer) {
+    resultsContainer.style.display = 'block';
+    resultsContainer.innerHTML = '<div class="concept-search-loading">Compiling regex...</div>';
+  }
+  if (divider) {
+    divider.style.display = 'flex';
+    initSearchDivider();
+  }
+  
+  // Try to compile the regex
+  let regex;
+  try {
+    regex = new RegExp(pattern, flags);
+  } catch (e) {
+    if (resultsContainer) {
+      resultsContainer.innerHTML = `
+        <div class="concept-search-header">
+          <strong>Regex Error</strong>
+          <div class="search-header-actions">
+            <a href="/help#search-section" class="search-help-link" title="Search help" onclick="AppStore.dispatch({type:'SET_VIEW',view:'help'}); return false;">?</a>
+            <button class="concept-search-close" onclick="closeConceptSearch()">✕</button>
+          </div>
+        </div>
+        <div class="regex-error">
+          <p>Invalid regular expression:</p>
+          <code>/${pattern}/${flags}</code>
+          <p class="regex-error-msg">${escapeHtml(e.message)}</p>
+        </div>`;
+    }
+    return;
+  }
+  
+  // Initialize state
+  regexSearchState = {
+    pattern: pattern,
+    flags: flags,
+    regex: regex,
+    results: [],
+    isComplete: false
+  };
+  
+  // Update loading message
+  if (resultsContainer) {
+    resultsContainer.innerHTML = `
+      <div class="concept-search-header">
+        <strong>Regex: <code>/${escapeHtml(pattern)}/${flags}</code></strong>
+        <div class="search-header-actions">
+          <a href="/help#search-section" class="search-help-link" title="Search help" onclick="AppStore.dispatch({type:'SET_VIEW',view:'help'}); return false;">?</a>
+          <button class="concept-search-close" onclick="closeConceptSearch()">✕</button>
+        </div>
+      </div>
+      <div id="concept-verse-results" class="concept-verse-results">
+        <div class="concept-search-loading">Searching...</div>
+      </div>`;
+  }
+  
+  // Run the search asynchronously to avoid blocking UI
+  setTimeout(() => executeRegexSearch(), 10);
+}
+
+/**
+ * Execute the regex search across all verses
+ */
+function executeRegexSearch() {
+  const state = regexSearchState;
+  const regex = state.regex;
+  
+  if (!regex) return;
+  
+  const startTime = performance.now();
+  const results = [];
+  
+  // Search current translation
+  const transData = bibleTranslations[currentTranslation];
+  if (transData && transData.length > 0) {
+    for (const verse of transData) {
+      if (verse.text && regex.test(verse.text)) {
+        const ref = `${verse.book} ${verse.chapter}:${verse.verse}`;
+        
+        // Find all matches for highlighting
+        const matches = verse.text.match(new RegExp(state.pattern, state.flags + 'g')) || [];
+        
+        results.push({
+          ref,
+          text: verse.text,
+          matches: matches,
+          matchCount: matches.length
+        });
+      }
+    }
+  }
+  
+  const endTime = performance.now();
+  const searchTime = Math.round(endTime - startTime);
+  
+  // Sort by book order
+  results.sort((a, b) => compareVerseRefs(a.ref, b.ref));
+  
+  state.results = results;
+  state.isComplete = true;
+  state.searchTime = searchTime;
+  
+  // Display results
+  displayRegexResults(results, 0, 50, searchTime);
+}
+
+/**
+ * Display regex search results with pagination
+ */
+function displayRegexResults(results, startIndex, count, searchTime) {
+  const container = document.getElementById('concept-verse-results');
+  if (!container) return;
+  
+  const state = regexSearchState;
+  const endIndex = Math.min(startIndex + count, results.length);
+  const showing = results.slice(startIndex, endIndex);
+  
+  let html = `<div class="concept-verse-count">
+    Found ${results.length} verse${results.length !== 1 ? 's' : ''} 
+    <span class="regex-time">(${searchTime}ms)</span>
+  </div>`;
+  
+  for (const result of showing) {
+    const abbrevRef = abbreviateReference(result.ref);
+    const highlightedText = highlightRegexMatches(result.text, state.regex);
+    
+    html += `<div class="concept-verse-item regex-result">
+      <a href="#" class="concept-verse-ref" onclick="goToScriptureFromSidebar('${result.ref}'); return false;">${abbrevRef}</a>
+      <span class="concept-verse-text">${highlightedText}</span>
+      ${result.matchCount > 1 ? `<span class="regex-match-count">${result.matchCount} matches</span>` : ''}
+    </div>`;
+  }
+  
+  if (endIndex < results.length) {
+    html += `<div class="concept-load-more-sentinel" data-next-index="${endIndex}" data-search-type="regex"></div>`;
+    html += `<button class="concept-load-more-btn" onclick="loadMoreRegexResults(${endIndex})">
+      Load more (${results.length - endIndex} remaining)
+    </button>`;
+  }
+  
+  container.innerHTML = html;
+  
+  // Set up infinite scroll observer
+  const sentinel = container.querySelector('.concept-load-more-sentinel');
+  if (sentinel) {
+    setupRegexScrollObserver(sentinel, endIndex);
+  }
+}
+
+/**
+ * Load more regex results (pagination)
+ */
+function loadMoreRegexResults(startIndex) {
+  // Disconnect observer to prevent double-loading
+  if (regexScrollObserver) {
+    regexScrollObserver.disconnect();
+  }
+  
+  const results = regexSearchState.results;
+  if (!results || startIndex >= results.length) return;
+  
+  const container = document.getElementById('concept-verse-results');
+  if (!container) return;
+  
+  // Remove the sentinel and load more button
+  const sentinel = container.querySelector('.concept-load-more-sentinel');
+  const loadMoreBtn = container.querySelector('.concept-load-more-btn');
+  if (sentinel) sentinel.remove();
+  if (loadMoreBtn) loadMoreBtn.remove();
+  
+  // Append new results
+  const state = regexSearchState;
+  const endIndex = Math.min(startIndex + 50, results.length);
+  const showing = results.slice(startIndex, endIndex);
+  
+  let html = '';
+  for (const result of showing) {
+    const abbrevRef = abbreviateReference(result.ref);
+    const highlightedText = highlightRegexMatches(result.text, state.regex);
+    
+    html += `<div class="concept-verse-item regex-result">
+      <a href="#" class="concept-verse-ref" onclick="goToScriptureFromSidebar('${result.ref}'); return false;">${abbrevRef}</a>
+      <span class="concept-verse-text">${highlightedText}</span>
+      ${result.matchCount > 1 ? `<span class="regex-match-count">${result.matchCount} matches</span>` : ''}
+    </div>`;
+  }
+  
+  if (endIndex < results.length) {
+    html += `<div class="concept-load-more-sentinel" data-next-index="${endIndex}" data-search-type="regex"></div>`;
+    html += `<button class="concept-load-more-btn" onclick="loadMoreRegexResults(${endIndex})">
+      Load more (${results.length - endIndex} remaining)
+    </button>`;
+  }
+  
+  container.insertAdjacentHTML('beforeend', html);
+  
+  // Set up new observer for the new sentinel
+  const newSentinel = container.querySelector('.concept-load-more-sentinel');
+  if (newSentinel) {
+    setupRegexScrollObserver(newSentinel, endIndex);
+  }
+}
+
+// Observer for regex infinite scroll
+let regexScrollObserver = null;
+
+function setupRegexScrollObserver(sentinel, nextIndex) {
+  // Clean up previous observer
+  if (regexScrollObserver) {
+    regexScrollObserver.disconnect();
+  }
+  
+  regexScrollObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        loadMoreRegexResults(nextIndex);
+      }
+    }
+  }, {
+    root: document.getElementById('concept-search-results'),
+    rootMargin: '100px',
+    threshold: 0
+  });
+  
+  regexScrollObserver.observe(sentinel);
+}
+
+/**
+ * Highlight regex matches in text
+ */
+function highlightRegexMatches(text, regex) {
+  if (!text || !regex) return text;
+  
+  // Escape HTML first, then apply highlights
+  let escaped = escapeHtml(text);
+  
+  // Create a global version of the regex for replacement
+  const globalRegex = new RegExp(regex.source, regex.flags.includes('g') ? regex.flags : regex.flags + 'g');
+  
+  // Highlight matches - need to be careful with HTML escaping
+  // We'll use a placeholder approach to avoid issues
+  const matches = [];
+  let match;
+  while ((match = globalRegex.exec(text)) !== null) {
+    matches.push({
+      start: match.index,
+      end: match.index + match[0].length,
+      text: match[0]
+    });
+    // Prevent infinite loop for zero-length matches
+    if (match[0].length === 0) globalRegex.lastIndex++;
+  }
+  
+  // Apply highlights in reverse order to preserve indices
+  if (matches.length > 0) {
+    let result = text;
+    for (let i = matches.length - 1; i >= 0; i--) {
+      const m = matches[i];
+      result = result.slice(0, m.start) + 
+               '<mark>' + escapeHtml(m.text) + '</mark>' + 
+               result.slice(m.end);
+    }
+    return result;
+  }
+  
+  return escaped;
+}
+
+/**
+ * Escape HTML special characters
+ */
+function escapeHtml(text) {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 // Initialize the draggable search divider
@@ -2222,9 +2960,20 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
         </div>
         ` : ''}
         <div class="strongs-symbol-sentence">${symbol.sentence}</div>
-        <button class="strongs-symbol-link" onclick="openSymbolStudyInReader('${symbolKey}')">See Symbol Study →</button>
+        <button class="strongs-symbol-link" onclick="openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
       </div>
     `;
+  }
+  
+  // Add word study if available for this Strong's number
+  const wordStudy = (typeof lookupWordStudy === 'function') ? lookupWordStudy(strongsNum) : null;
+  if (wordStudy) {
+    html += renderWordStudyHtml(wordStudy);
+  }
+  
+  // Add gematria section (if data is loaded)
+  if (gematriaData) {
+    html += renderGematriaSection(strongsNum);
   }
   
   // Add verse search section
@@ -2236,16 +2985,28 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
   `;
   
   contentEl.innerHTML = html;
+  
+  // Load gematria data if not loaded, then update section
+  if (!gematriaData) {
+    loadGematriaData().then(() => {
+      // Guard: check if gematria section already exists (avoid duplicate)
+      if (contentEl.querySelector('.strongs-gematria-section')) return;
+      
+      const gematriaSection = renderGematriaSection(strongsNum);
+      if (gematriaSection) {
+        const verseSearch = contentEl.querySelector('.strongs-verse-search');
+        if (verseSearch) {
+          verseSearch.insertAdjacentHTML('beforebegin', gematriaSection);
+        }
+      }
+    });
+  }
 }
 
 // Show Strong's information slide-out for a word
-function showStrongsPanel(strongsNum, englishWord, gloss, event) {
+// skipDispatch: if true, don't dispatch to AppStore (used when syncing FROM state)
+function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = false) {
   if (event) event.stopPropagation();
-  
-  // Update URL state (this will be reflected in the URL bar)
-  if (typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: strongsNum });
-  }
   
   // Use the sidebar element from HTML
   const sidebar = document.getElementById('strongs-sidebar');
@@ -2312,15 +3073,14 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event) {
     html += `<div class="strongs-gloss">${gloss || 'No definition available'}</div>`;
   }
   
-  // Add person/place info if available (show all matching entries)
-  const allPersonInfo = getAllPersonInfo(strongsNum);
-  if (allPersonInfo.length > 0) {
-    html += renderPersonInfoHtml(allPersonInfo);
+  // Add symbolic meaning FIRST (before person info) if available
+  // Try lookup by Strong's number first, then by English word
+  let symbol = (typeof lookupSymbolByStrongs === 'function') ? lookupSymbolByStrongs(strongsNum) : null;
+  if (!symbol && englishWord && typeof lookupSymbolByWord === 'function') {
+    symbol = lookupSymbolByWord(englishWord);
   }
-  
-  // Add symbolic meaning if available for this Strong's number
-  const symbol = (typeof lookupSymbolByStrongs === 'function') ? lookupSymbolByStrongs(strongsNum) : null;
   if (symbol) {
+    const symbolKey = Object.keys(SYMBOL_DICTIONARY || {}).find(k => SYMBOL_DICTIONARY[k] === symbol) || '';
     html += `
       <div class="strongs-symbol-info">
         <div class="strongs-symbol-header">
@@ -2338,9 +3098,26 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event) {
         </div>
         ` : ''}
         <div class="strongs-symbol-sentence">${symbol.sentence}</div>
-        <button class="strongs-symbol-link" onclick="openSymbolStudyInReader('${symbol.key}')">See Symbol Study →</button>
+        <button class="strongs-symbol-link" onclick="openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
       </div>
     `;
+  }
+  
+  // Add person/place info if available (show all matching entries)
+  const allPersonInfo = getAllPersonInfo(strongsNum);
+  if (allPersonInfo.length > 0) {
+    html += renderPersonInfoHtml(allPersonInfo);
+  }
+  
+  // Add word study if available for this Strong's number
+  const wordStudy = (typeof lookupWordStudy === 'function') ? lookupWordStudy(strongsNum) : null;
+  if (wordStudy) {
+    html += renderWordStudyHtml(wordStudy);
+  }
+  
+  // Add gematria section (if data is loaded)
+  if (gematriaData) {
+    html += renderGematriaSection(strongsNum);
   }
   
   // Add verse search section
@@ -2352,6 +3129,22 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event) {
   `;
   
   contentEl.innerHTML = html;
+  
+  // Load gematria data if not loaded, then update section
+  if (!gematriaData) {
+    loadGematriaData().then(() => {
+      // Guard: check if gematria section already exists (avoid duplicate)
+      if (contentEl.querySelector('.strongs-gematria-section')) return;
+      
+      const gematriaSection = renderGematriaSection(strongsNum);
+      if (gematriaSection) {
+        const verseSearch = contentEl.querySelector('.strongs-verse-search');
+        if (verseSearch) {
+          verseSearch.insertAdjacentHTML('beforebegin', gematriaSection);
+        }
+      }
+    });
+  }
   
   // Reset verse search state for new Strong's number
   if (verseSearchState.strongsNum !== strongsNum) {
@@ -2371,6 +3164,11 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event) {
   const fwdBtn = sidebar.querySelector('.strongs-nav-forward');
   if (backBtn) backBtn.disabled = strongsHistoryIndex <= 0;
   if (fwdBtn) fwdBtn.disabled = strongsHistoryIndex >= strongsHistory.length - 1;
+  
+  // Dispatch to AppStore for URL sync (unidirectional flow)
+  if (!skipDispatch && typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: strongsNum });
+  }
 }
 
 // Close Strong's sidebar
@@ -2384,9 +3182,9 @@ function closeStrongsPanel(skipDispatch = false) {
   strongsHistory = [];
   strongsHistoryIndex = -1;
   
-  // Update URL state (skip when syncing from URL to avoid loops)
+  // Update state to remove strongsId from URL (unless called from URL sync)
   if (!skipDispatch && typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'CLOSE_STRONGS' });
+    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: null });
   }
 }
 
@@ -2502,10 +3300,19 @@ function renderVerseWithStrongs(bookName, chapter, verseNum, plainText) {
     
     if (classes.length > 0) {
       const dataAttrs = [];
-      if (entry) dataAttrs.push(`data-strongs="${entry.s}"`);
-      if (symbol) dataAttrs.push(`data-symbol="${symbol.name}"`);
+      if (entry) {
+        dataAttrs.push(`data-strongs="${entry.s}"`);
+        // Look up actual Strong's definition from dictionary
+        const strongsEntry = getStrongsEntry(entry.s);
+        const realDef = strongsEntry?.strongs_def || strongsEntry?.kjv_def || '';
+        dataAttrs.push(`data-def="${realDef.replace(/"/g, '&quot;')}"`);
+      }
+      if (symbol) {
+        dataAttrs.push(`data-symbol="${symbol.name}"`);
+        dataAttrs.push(`data-symbol-meaning="${(symbol.is2 || symbol.is || '').replace(/"/g, '&quot;')}"`);
+      }
       
-      return `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}">${match}</span>`;
+      return `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip()">${match}</span>`;
     }
     
     return match;
@@ -2518,8 +3325,26 @@ function renderVerseWithStrongs(bookName, chapter, verseNum, plainText) {
 function applySymbolHighlighting(text) {
   if (!text || typeof lookupSymbolByWord !== 'function') return text;
   
-  return text.replace(/(\S+)/g, (match) => {
-    // Skip if already wrapped in a span (from annotations)
+  let result = text;
+  
+  // First pass: Match multi-word phrases (longest first)
+  if (typeof getMultiWordSymbolPhrases === 'function') {
+    const multiWordPhrases = getMultiWordSymbolPhrases();
+    for (const { phrase, symbol, key } of multiWordPhrases) {
+      // Create case-insensitive regex for the phrase, matching word boundaries
+      const escapedPhrase = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`\\b(${escapedPhrase})\\b`, 'gi');
+      result = result.replace(regex, (match) => {
+        // Skip if already wrapped
+        if (match.includes('<span') || match.includes('</span>')) return match;
+        return `<span class="symbol-word" data-symbol="${symbol.name}" onclick="showSymbolPanel('${key}', '${phrase}', event)">${match}</span>`;
+      });
+    }
+  }
+  
+  // Second pass: Match single words (that aren't already wrapped)
+  result = result.replace(/(\S+)/g, (match) => {
+    // Skip if already wrapped in a span (from multi-word pass or annotations)
     if (match.includes('<span') || match.includes('</span>')) return match;
     
     const normalized = match.toLowerCase().replace(/[.,;:!?'"()]/g, '');
@@ -2532,6 +3357,8 @@ function applySymbolHighlighting(text) {
     
     return match;
   });
+  
+  return result;
 }
 
 // Show book reference popup when clicking the book icon
@@ -2552,7 +3379,7 @@ function showBookRefPopup(book, chapter, verse, event) {
   
   // Build popup content
   let html = `<div class="book-ref-popup-header">
-    <span>📚 Time-Tested Tradition</span>
+    <span>Referenced in:</span>
     <button class="book-ref-popup-close" onclick="closeBookRefPopup()">×</button>
   </div>
   <div class="book-ref-popup-content">`;
@@ -2565,7 +3392,7 @@ function showBookRefPopup(book, chapter, verse, event) {
     seen.add(key);
     
     const url = getChapterUrl(ref.chapter, ref.anchor);
-    html += `<a href="${url}" class="book-ref-link" onclick="navigateToBookChapter('${ref.chapter}', '${ref.anchor}'); closeBookRefPopup(); return false;">
+    html += `<a href="${url}" class="book-ref-link" onclick="closeBookRefPopup()">
       <span class="book-ref-chapter">Chapter ${parseInt(ref.chapter)}</span>
       <span class="book-ref-title">${ref.title}</span>
     </a>`;
@@ -2972,9 +3799,9 @@ function formatVersesForDisplay(verses, title = '') {
       currentChapter = verse.chapter;
       const bookEncoded = encodeURIComponent(verse.book);
       const trans = currentTranslation || 'kjv';
-    html += `<div class="bible-chapter-section">`;
-    html += `<div class="bible-chapter-header">
-        <a href="/reader/bible/${trans}/${bookEncoded}/${verse.chapter}"
+      html += `<div class="bible-chapter-section">`;
+      html += `<div class="bible-chapter-header">
+        <a href="/bible/${trans}/${bookEncoded}/${verse.chapter}" 
            onclick="openBibleExplorerFromModal('${verse.book}', ${verse.chapter}); return false;" 
            class="bible-chapter-link" title="Read full chapter in Bible Explorer">
           Chapter ${verse.chapter} →
@@ -2987,7 +3814,7 @@ function formatVersesForDisplay(verses, title = '') {
     const bookEncoded = encodeURIComponent(verse.book);
     const trans = currentTranslation || 'kjv';
     html += `<span class="bible-verse"><sup class="bible-verse-num">
-      <a href="/reader/bible/${trans}/${bookEncoded}/${verse.chapter}?verse=${verse.verse}" 
+      <a href="/bible/${trans}/${bookEncoded}/${verse.chapter}?verse=${verse.verse}" 
          onclick="openBibleExplorerFromModal('${verse.book}', ${verse.chapter}, ${verse.verse}); return false;"
          title="Open ${verse.book} ${verse.chapter}:${verse.verse} in Bible Explorer">${verse.verse}</a>
     </sup>${verse.text} </span>`;
@@ -3054,30 +3881,13 @@ function closeBibleReader() {
   }
 }
 
-// Handle click on citation link - navigate to Bible view
+// Handle click on citation link
 function handleCitationClick(event) {
   event.preventDefault();
   const citation = event.target.dataset.citation;
+  const title = event.target.dataset.title || '';
   if (citation) {
-    // Build the Bible URL and navigate
-    const url = buildBibleUrl(citation);
-    if (url && typeof AppStore !== 'undefined') {
-      // Parse the URL to get book and chapter
-      const match = citation.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
-      if (match) {
-        const book = match[1].trim();
-        const chapter = parseInt(match[2]);
-        const verse = match[3] ? parseInt(match[3]) : null;
-        const trans = localStorage.getItem('bible_translation_preference') || 'kjv';
-        
-        // Navigate to Reader view (Bible content)
-        AppStore.dispatch({ 
-          type: 'SET_VIEW', 
-          view: 'reader',
-          params: { contentType: 'bible', translation: trans, book, chapter, verse }
-        });
-      }
-    }
+    openBibleReader(citation, title);
   }
 }
 
@@ -3085,7 +3895,7 @@ function handleCitationClick(event) {
 function buildBibleUrl(citation, translation = null) {
   // Parse citation: "Book Chapter:Verse" or "Book Chapter"
   const match = citation.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
-  if (!match) return '/reader/bible/kjv/';
+  if (!match) return '/bible/kjv/';
   
   const book = match[1];
   const chapter = match[2];
@@ -3093,7 +3903,7 @@ function buildBibleUrl(citation, translation = null) {
   const trans = translation || currentTranslation || 'kjv';
   
   const bookEncoded = encodeURIComponent(book);
-  let url = `/reader/bible/${trans}/${bookEncoded}/${chapter}`;
+  let url = `/bible/${trans}/${bookEncoded}/${chapter}`;
   if (verse) {
     url += `?verse=${verse}`;
   }
@@ -3115,7 +3925,6 @@ function normalizeBookName(bookStr) {
 
 // Find and linkify scripture references in text
 // Handles patterns like: "Rev 18:21", "Ezek 26:4-5,14", "Revelation 17-18", "1 Kings 8:1-11", "v. 14"
-// Also handles semicolon-separated multiple references: "1 Kings 8:1-11; 2 Chronicles 5:2-14"
 // contextCitation should be like "Ezekiel 26" (book + chapter) for "v. X" style references
 function linkifyScriptureReferences(text, contextCitation = '') {
   if (!text) return text;
@@ -3148,19 +3957,12 @@ function linkifyScriptureReferences(text, contextCitation = '') {
   // Build regex pattern for book names (with optional numbers prefix)
   const bookPattern = bookPatterns.join('|');
   
-  // Single reference pattern: Book Chapter:Verse(s) or Book Chapter-Chapter
+  // Main pattern: Book Chapter:Verse(s) or Book Chapter-Chapter
   // Matches: "Rev 18:21", "Ezekiel 26:4-5,14", "Revelation 17-18", "1 Kings 8:1-11,65-66"
-  const singleRefPattern = `((?:1|2|3|I{1,3})?\\s*(?:${bookPattern})\\.?)\\s*(\\d+)(?::(\\d+(?:[-–]\\d+)?(?:,\\s*\\d+(?:[-–]\\d+)?)*))?(?:[-–](\\d+)(?::(\\d+))?)?`;
-  
-  // Pattern that matches semicolon-separated references
-  // This captures the whole group like "1 Kings 8:1-11,65-66; 2 Chronicles 5:2-14; ..."
-  const multiRefPattern = new RegExp(
-    `(${singleRefPattern}(?:\\s*;\\s*${singleRefPattern})*)`,
+  const mainPattern = new RegExp(
+    `((?:1|2|3|I{1,3})?\\s*(?:${bookPattern})\\.?)\\s*(\\d+)(?::(\\d+(?:[-–]\\d+)?(?:,\\s*\\d+(?:[-–]\\d+)?)*))?(?:[-–](\\d+)(?::(\\d+))?)?`,
     'gi'
   );
-  
-  // Single reference regex for splitting
-  const mainPattern = new RegExp(singleRefPattern, 'gi');
   
   // Pattern for "v. X" or "vv. X-Y" or "verse X" references (uses context book)
   const versePattern = /\b(vv?\.|verses?)\s*(\d+(?:[-–]\d+)?(?:,\s*\d+(?:[-–]\d+)?)*)/gi;
@@ -3168,14 +3970,16 @@ function linkifyScriptureReferences(text, contextCitation = '') {
   // Pattern for parenthetical references like "(cf. v. 21)" or "(v. 12-19)"
   const cfPattern = /\(cf\.\s*(v\.|vv\.)\s*(\d+(?:[-–]\d+)?)\)/gi;
   
-  // Helper to linkify a single reference
-  function linkifySingleRef(match, book, chapter, verses, endChapter, endVerse) {
+  // Replace main scripture references
+  let result = text.replace(mainPattern, (match, book, chapter, verses, endChapter, endVerse) => {
     // Normalize book name to KJV format
     const normalizedBook = normalizeBookName(book);
     
     // Build the citation string in format the parser expects
     let citation = normalizedBook + ' ' + chapter;
     if (verses) {
+      // Pass through the full verse spec (including commas)
+      // Parser now handles: "4-5,14", "4,5,6", etc.
       citation += ':' + verses.replace(/–/g, '-');
     }
     if (endChapter) {
@@ -3185,18 +3989,7 @@ function linkifyScriptureReferences(text, contextCitation = '') {
       }
     }
     const url = buildBibleUrl(citation);
-    return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match.trim()}</a>`;
-  }
-  
-  // First, find all multi-reference groups (semicolon-separated) and replace each reference within
-  let result = text.replace(multiRefPattern, (fullMatch) => {
-    // Split by semicolons and process each reference
-    const parts = fullMatch.split(/\s*;\s*/);
-    const linkedParts = parts.map(part => {
-      // Apply single reference pattern to each part
-      return part.replace(mainPattern, linkifySingleRef);
-    });
-    return linkedParts.join('; ');
+    return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match}</a>`;
   });
   
   // contextCitation should be like "Ezekiel 26" (book + chapter)
@@ -3287,40 +4080,39 @@ function navigateToBibleLocation(book, chapter, verse = null, addToHistory = tru
   
   // Navigate
   if (bibleExplorerState.bookChapterCounts[normalizedBook]) {
-    // Skip auto-chapter selection since we're navigating to a specific chapter
-    selectBibleBook(normalizedBook, true);
+    selectBibleBook(normalizedBook);
     populateBibleChapters(normalizedBook);
     bibleExplorerState.currentChapter = chapter;
     displayBibleChapter(normalizedBook, chapter, verse);
     updateChapterNavigation();
     updateBibleHistoryButtons();
-    
-    // Update chapter dropdown to match
-    const chapterSelect = document.getElementById('bible-chapter-select');
-    if (chapterSelect) {
-      chapterSelect.value = chapter;
-    }
   }
 }
 
-// Go back in browser history (works across all content types)
+// Go back in Bible history
 function bibleGoBack() {
-  history.back();
+  if (bibleExplorerState.historyIndex > 0) {
+    bibleExplorerState.historyIndex--;
+    const loc = bibleExplorerState.history[bibleExplorerState.historyIndex];
+    navigateToBibleLocation(loc.book, loc.chapter, loc.verse, false);
+  }
 }
 
-// Go forward in browser history (works across all content types)
+// Go forward in Bible history
 function bibleGoForward() {
-  history.forward();
+  if (bibleExplorerState.historyIndex < bibleExplorerState.history.length - 1) {
+    bibleExplorerState.historyIndex++;
+    const loc = bibleExplorerState.history[bibleExplorerState.historyIndex];
+    navigateToBibleLocation(loc.book, loc.chapter, loc.verse, false);
+  }
 }
 
 // Update back/forward button states
-// Note: With browser history, we can't easily check if there's history,
-// so we keep buttons enabled. The browser will handle no-op cases.
 function updateBibleHistoryButtons() {
   const backBtn = document.getElementById('bible-history-back');
   const fwdBtn = document.getElementById('bible-history-forward');
-  if (backBtn) backBtn.disabled = false;
-  if (fwdBtn) fwdBtn.disabled = false;
+  if (backBtn) backBtn.disabled = bibleExplorerState.historyIndex <= 0;
+  if (fwdBtn) fwdBtn.disabled = bibleExplorerState.historyIndex >= bibleExplorerState.history.length - 1;
 }
 
 // Handle scripture link click from Strong's sidebar
@@ -3380,212 +4172,17 @@ function populateTranslationDropdown() {
 // Handle translation dropdown change
 function onTranslationChange(translationId) {
   if (!translationId || translationId === currentTranslation) return;
+  
+  // Dispatch to AppStore to update URL (unidirectional flow)
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'UPDATE_VIEW_PARAMS',
+      params: { translation: translationId }
+    });
+  }
+  
+  // Also call switchTranslation directly to update local state and re-render
   switchTranslation(translationId);
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// READER CONTENT TYPE SWITCHING (Bible / Symbols / Time Tested)
-// ═══════════════════════════════════════════════════════════════════════════
-
-// Update the UI for a content type change (no navigation)
-function updateReaderContentUI(contentType) {
-  // Hide all selector groups
-  const bibleSelectors = document.getElementById('bible-selectors');
-  const symbolSelectors = document.getElementById('symbol-selectors');
-  const tttSelectors = document.getElementById('timetested-selectors');
-  
-  if (bibleSelectors) bibleSelectors.style.display = 'none';
-  if (symbolSelectors) symbolSelectors.style.display = 'none';
-  if (tttSelectors) tttSelectors.style.display = 'none';
-  
-  // Show the appropriate selector group and populate if needed
-  switch (contentType) {
-    case 'bible':
-      if (bibleSelectors) bibleSelectors.style.display = '';
-      break;
-    case 'symbols':
-      if (symbolSelectors) {
-        symbolSelectors.style.display = '';
-        populateSymbolSelect();
-      }
-      break;
-    case 'timetested':
-      if (tttSelectors) {
-        tttSelectors.style.display = '';
-        populateTimeTestedSelect();
-      }
-      break;
-  }
-}
-
-// Track last visited chapter and scroll position for each content type
-let lastTimeTestedChapter = null;
-let lastTimeTestedScroll = 0;
-let lastSymbol = null;
-let lastSymbolScroll = 0;
-let lastBibleScroll = 0;
-
-// Handle content type change from dropdown (user action - includes navigation)
-function onReaderContentChange(contentType) {
-  // Save current position and scroll before switching
-  const currentState = AppStore.getState();
-  const currentParams = currentState.content?.params || {};
-  const textArea = document.getElementById('bible-explorer-text');
-  const scrollPos = textArea ? textArea.scrollTop : 0;
-  
-  if (currentParams.contentType === 'timetested') {
-    if (currentParams.chapterId) lastTimeTestedChapter = currentParams.chapterId;
-    lastTimeTestedScroll = scrollPos;
-  } else if (currentParams.contentType === 'symbols') {
-    if (currentParams.symbol) lastSymbol = currentParams.symbol;
-    lastSymbolScroll = scrollPos;
-  } else if (currentParams.contentType === 'bible') {
-    lastBibleScroll = scrollPos;
-  }
-  
-  // Update the UI
-  updateReaderContentUI(contentType);
-  
-  // Navigate to the new content type, restoring last position if available
-  let scrollToRestore = 0;
-  
-  if (contentType === 'symbols') {
-    const params = { contentType: 'symbols' };
-    if (lastSymbol) params.symbol = lastSymbol;
-    scrollToRestore = lastSymbolScroll;
-    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params });
-  } else if (contentType === 'timetested') {
-    const params = { contentType: 'timetested' };
-    if (lastTimeTestedChapter) params.chapterId = lastTimeTestedChapter;
-    scrollToRestore = lastTimeTestedScroll;
-    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params });
-  } else if (contentType === 'bible') {
-    // Navigate to Bible (restore last location or go to Bible home)
-    const params = { contentType: 'bible', translation: currentTranslation };
-    if (bibleExplorerState.currentBook && bibleExplorerState.currentChapter) {
-      params.book = bibleExplorerState.currentBook;
-      params.chapter = bibleExplorerState.currentChapter;
-    }
-    scrollToRestore = lastBibleScroll;
-    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: params });
-  }
-  
-  // Restore scroll position after content renders
-  // Bible takes longer (200ms in openBibleExplorerTo + rendering time)
-  if (scrollToRestore > 0) {
-    const delay = contentType === 'bible' ? 500 : 300;
-    setTimeout(() => {
-      const textArea = document.getElementById('bible-explorer-text');
-      if (textArea) {
-        textArea.scrollTop = scrollToRestore;
-      }
-    }, delay);
-  }
-}
-
-// Populate the symbol select dropdown
-function populateSymbolSelect() {
-  const select = document.getElementById('symbol-select');
-  if (!select || typeof SYMBOL_DICTIONARY === 'undefined') return;
-  
-  let html = '<option value="">Symbol...</option>';
-  // Sort alphabetically by symbol name
-  const sortedSymbols = Object.entries(SYMBOL_DICTIONARY).sort((a, b) => a[1].name.localeCompare(b[1].name));
-  for (const [key, symbol] of sortedSymbols) {
-    html += `<option value="${key}">${symbol.name}</option>`;
-  }
-  select.innerHTML = html;
-}
-
-// Handle symbol selection
-function onSymbolSelect(symbolKey) {
-  if (!symbolKey) return;
-  AppStore.dispatch({ 
-    type: 'SET_VIEW', 
-    view: 'reader', 
-    params: { contentType: 'symbols', symbol: symbolKey } 
-  });
-}
-
-// Open symbol study in reader from Strong's panel (keeps panel open)
-function openSymbolStudyInReader(symbolKey) {
-  if (!symbolKey) return;
-  
-  // Dispatch the navigation but the Strong's panel will stay open
-  // because we're not triggering a full view change cleanup
-  AppStore.dispatch({ 
-    type: 'SET_VIEW', 
-    view: 'reader', 
-    params: { contentType: 'symbols', symbol: symbolKey } 
-  });
-  
-  // Note: The Strong's panel stays open because ReaderView.renderSymbolInBibleFrame
-  // doesn't call BibleView.cleanup() - it just updates the content area
-}
-
-// Time Tested chapters list
-const TIME_TESTED_CHAPTERS = [
-  { id: '01_Introduction', title: '1. Introduction' },
-  { id: '02_Inherited_Lies', title: '2. Inherited Lies' },
-  { id: '03_Principles_of_Evaluation', title: '3. Principles of Evaluation' },
-  { id: '04_Alleged_Authority_of_Sanhedrin', title: '4. Authority of Sanhedrin' },
-  { id: '05_Where_Does_the_Day_Start', title: '5. Where Day Starts' },
-  { id: '06_When_Does_the_Day_Start', title: '6. When Day Starts' },
-  { id: '07_When_Does_the_Month_Start', title: '7. When Month Starts' },
-  { id: '08_When_does_the_Year_Start', title: '8. When Year Starts' },
-  { id: '09_How_to_Observe_the_Signs', title: '9. Observing Signs' },
-  { id: '10_When_is_the_Sabbath', title: '10. When is Sabbath' },
-  { id: '11_The_Day_of_Saturn', title: '11. Day of Saturn' },
-  { id: '12_32_AD_Resurrection', title: '12. 32 AD Resurrection' },
-  { id: '13_Herod_the_Great', title: '13. Herod the Great' },
-  { id: '14_Passion_Week_-_3_Days_&_3_Nights', title: '14. Passion Week' },
-  { id: '15_Solar_Only_Calendars', title: '15. Solar Calendars' },
-  { id: '16_The_Path_to_Salvation', title: '16. Path to Salvation' },
-  { id: '17_Commands_to_Follow', title: '17. Commands to Follow' },
-  { id: '18_Appointed_Times', title: '18. Appointed Times' },
-  { id: '19_Miscellaneous_Commands', title: '19. Misc. Commands' },
-  // Extra chapters (appendices)
-  { id: 'e01_Herod_Regal_vs_Defacto', title: 'A1. Herod: Regal vs De Facto', folder: 'extra' },
-  { id: 'e02_Battle_of_Actium', title: 'A2. Battle of Actium', folder: 'extra' },
-  { id: 'e03_Herods_Appointment', title: 'A3. Herod\'s Appointment', folder: 'extra' },
-  { id: 'e04_StabilityOfAustronomy', title: 'A4. Stability of Astronomy', folder: 'extra' },
-  { id: 'e05_FirstFruitsNewWine', title: 'A5. First Fruits & New Wine', folder: 'extra' }
-];
-
-// Export to window for use by other modules
-if (typeof window !== 'undefined') {
-  window.TIME_TESTED_CHAPTERS = TIME_TESTED_CHAPTERS;
-}
-
-// Populate the Time Tested chapter select dropdown
-function populateTimeTestedSelect() {
-  const select = document.getElementById('timetested-chapter-select');
-  if (!select) return;
-  
-  let html = '<option value="">Chapter...</option>';
-  for (const ch of TIME_TESTED_CHAPTERS) {
-    html += `<option value="${ch.id}">${ch.title}</option>`;
-  }
-  select.innerHTML = html;
-}
-
-// Handle Time Tested chapter selection
-function onTimeTestedSelect(chapterId) {
-  if (!chapterId) return;
-  AppStore.dispatch({ 
-    type: 'SET_VIEW', 
-    view: 'reader', 
-    params: { contentType: 'timetested', chapterId: chapterId } 
-  });
-}
-
-// Update the content type selector based on current state (no navigation)
-function updateReaderContentSelector(contentType) {
-  const select = document.getElementById('reader-content-select');
-  if (select && contentType) {
-    select.value = contentType;
-    updateReaderContentUI(contentType);
-  }
 }
 
 // Select a translation from the welcome screen and open Genesis 1
@@ -3633,7 +4230,7 @@ function goToBibleHome() {
   if (nextBtn) nextBtn.disabled = true;
   
   // Update URL
-  window.history.replaceState({}, '', `/reader/bible/${currentTranslation}/`);
+  window.history.replaceState({}, '', `/bible/${currentTranslation}/`);
 }
 
 // Get the Bible welcome HTML
@@ -3669,6 +4266,20 @@ function getBibleWelcomeHTML() {
               <span class="trait">Literal</span>
               <span class="trait">Accurate</span>
               <span class="trait">Study</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bible-translation-card" onclick="selectTranslationAndStart('lxx')">
+          <div class="translation-card-icon">🏛️</div>
+          <div class="translation-card-content">
+            <h4>Septuagint (LXX)</h4>
+            <span class="translation-card-year">~250 BC</span>
+            <p>The ancient Greek translation of the Hebrew scriptures, quoted extensively by New Testament authors. Brenton's English translation includes the deuterocanonical books.</p>
+            <div class="translation-card-traits">
+              <span class="trait">Ancient</span>
+              <span class="trait">Greek OT</span>
+              <span class="trait">Apostolic</span>
             </div>
           </div>
         </div>
@@ -3781,9 +4392,10 @@ function switchBibleNavTab(tab) {
 }
 
 // Select a book
-// skipChapterSelect: if true, don't auto-select chapter 1 (used when navigating to specific chapter)
-function selectBibleBook(bookName, skipChapterSelect = false) {
+function selectBibleBook(bookName) {
+  // Update state FIRST (state before render)
   bibleExplorerState.currentBook = bookName;
+  bibleExplorerState.currentChapter = 1;  // Reset to chapter 1 when changing books
   
   // Update book dropdown selection
   const bookSelect = document.getElementById('bible-book-select');
@@ -3791,13 +4403,11 @@ function selectBibleBook(bookName, skipChapterSelect = false) {
     bookSelect.value = bookName;
   }
   
-  // Update chapter dropdown
+  // Update chapter dropdown (now uses currentChapter = 1)
   updateChapterDropdown(bookName);
   
-  // Auto-select chapter 1 and display it (unless skipped)
-  if (!skipChapterSelect) {
-    selectBibleChapter(1);
-  }
+  // Display chapter 1
+  selectBibleChapter(1);
 }
 
 // Populate chapter grid for selected book
@@ -3852,7 +4462,7 @@ function selectBibleChapter(chapter, addToHistory = true) {
   updateChapterNavigation();
   updateBibleHistoryButtons();
   
-  // Update URL - auto-detects push vs replace based on dispatch context
+  // Update URL
   updateBibleExplorerURL(bibleExplorerState.currentBook, chapter, null);
 }
 
@@ -3884,9 +4494,12 @@ async function displayBibleChapter(bookName, chapter, highlightVerse = null) {
     await loadInterlinear();
   }
   
-  // Build chapter HTML with inline title that scrolls with content
+  // Build chapter HTML
   let html = '<div class="bible-explorer-chapter">';
-  html += `<h2 class="bible-chapter-heading">${bookName} ${chapter}</h2>`;
+  html += `<div class="bible-explorer-chapter-header">
+    <h2>${bookName}</h2>
+    <div class="chapter-subtitle">Chapter ${chapter}</div>
+  </div>`;
   
   for (const verse of verses) {
     const highlighted = highlightVerse && verse.verse === highlightVerse ? ' highlighted' : '';
@@ -3909,13 +4522,13 @@ async function displayBibleChapter(bookName, chapter, highlightVerse = null) {
     // Check if this verse is referenced in the book
     const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
     const bookRefHtml = bookRefs && bookRefs.length > 0 
-      ? `<span class="verse-book-ref" onclick="showBookRefPopup('${bookName}', ${chapter}, ${verse.verse}, event)" title="Referenced in Time-Tested Tradition">📚</span>`
+      ? `<span class="verse-book-ref" onclick="showBookRefPopup('${bookName}', ${chapter}, ${verse.verse}, event)" title="Referenced in A Time Tested Tradition">📖</span>`
       : `<span class="verse-book-ref-spacer"></span>`;
     
-    // Cross-reference icon - only show if cross-references exist for this verse
-    const hasCrossRefs = (typeof hasCrossReferences === 'function') && hasCrossReferences(bookName, chapter, verse.verse);
+    // Check for cross-references (works for all translations with matching verse references)
+    const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(bookName, chapter, verse.verse) : false;
     const crossRefHtml = hasCrossRefs
-      ? `<span class="verse-cross-ref" onclick="showCrossRefPanel('${bookName}', ${chapter}, ${verse.verse}, event)" title="View cross-references">🔗</span>`
+      ? `<span class="verse-cross-ref" onclick="showCrossRefPanel('${bookName}', ${chapter}, ${verse.verse}, event)" title="Cross References">🔗</span>`
       : `<span class="verse-cross-ref-spacer"></span>`;
     
     html += `<div class="bible-explorer-verse${highlighted}${origLangClass}" id="verse-${verse.verse}">
@@ -3924,28 +4537,31 @@ async function displayBibleChapter(bookName, chapter, highlightVerse = null) {
     </div>`;
   }
   
-  html += '</div>';
+  // Prev/next chapter nav inside content (only visible when user scrolls to bottom)
+  html += `
+    <div class="bible-chapter-nav bible-chapter-nav-in-content">
+      <button type="button" id="bible-prev-chapter" class="bible-nav-btn" onclick="prevBibleChapter()" title="Previous chapter">◁ Prev</button>
+      <button type="button" id="bible-next-chapter" class="bible-nav-btn" onclick="nextBibleChapter()" title="Next chapter">Next ▷</button>
+    </div>
+  </div>`;
   textContainer.innerHTML = html;
   
-  // Scroll after DOM is ready - use requestAnimationFrame + setTimeout for reliability
-  requestAnimationFrame(() => {
+  // Update prev/next button states
+  if (typeof updateChapterNavigation === 'function') {
+    updateChapterNavigation();
+  }
+  
+  // Scroll to highlighted verse if specified
+  if (highlightVerse) {
     setTimeout(() => {
-      if (highlightVerse) {
-        // Scroll to highlighted verse - only scroll the Bible text container, not the whole page
-        const verseEl = document.getElementById(`verse-${highlightVerse}`);
-        if (verseEl && textContainer) {
-          // Calculate position relative to the container
-          const containerRect = textContainer.getBoundingClientRect();
-          const verseRect = verseEl.getBoundingClientRect();
-          const scrollTop = textContainer.scrollTop + (verseRect.top - containerRect.top) - (containerRect.height / 2);
-          textContainer.scrollTo({ top: Math.max(0, scrollTop), behavior: 'smooth' });
-        }
-      } else {
-        // Scroll to top of chapter
-        textContainer.scrollTop = 0;
+      const verseEl = document.getElementById(`verse-${highlightVerse}`);
+      if (verseEl) {
+        verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    }, 50);
-  });
+    }, 100);
+  } else {
+    textContainer.scrollTop = 0;
+  }
   
   // Update state
   bibleExplorerState.currentBook = bookName;
@@ -3984,7 +4600,7 @@ function navigateBibleChapter(direction) {
   }
 }
 
-// Smart search - handles both verse references and concept searches
+// Smart search - handles verse references, regex patterns, and concept searches
 function smartBibleSearch() {
   const input = document.getElementById('bible-explorer-search-input');
   if (!input) return;
@@ -4003,35 +4619,40 @@ function smartBibleSearch() {
     return;
   }
   
+  // Check if it's a regex pattern: /pattern/ or /pattern/flags
+  const regexMatch = searchText.match(/^\/(.+)\/([gimsuy]*)$/);
+  if (regexMatch) {
+    const pattern = regexMatch[1];
+    const flags = regexMatch[2] || 'i'; // Default to case-insensitive
+    startRegexSearch(pattern, flags);
+    return;
+  }
+  
   // Try to parse as a verse citation first
-  // Requires explicit chapter number to avoid confusion with names (Ruth, Job, Mark, etc.)
   const parsed = parseSearchCitation(searchText);
   
-  if (parsed.book && parsed.hasExplicitChapter) {
-    // It looks like a verse reference with chapter - try to navigate
+  if (parsed.book) {
+    // It looks like a verse reference - try to navigate
     const normalizedBook = normalizeBookName(parsed.book);
     
     // Verify book exists
     if (bibleExplorerState.bookChapterCounts[normalizedBook]) {
-      // Valid book with chapter - navigate to it
-      selectBibleBook(normalizedBook, true);
-      populateBibleChapters(normalizedBook);
-      bibleExplorerState.currentChapter = parsed.chapter;
-      displayBibleChapter(normalizedBook, parsed.chapter, parsed.verse);
-      updateChapterNavigation();
+      // Valid book - navigate to it
+      selectBibleBook(normalizedBook);
       
-      // Update chapter dropdown
-      const chapterSelect = document.getElementById('bible-chapter-select');
-      if (chapterSelect) {
-        chapterSelect.value = parsed.chapter;
+      if (parsed.chapter) {
+        populateBibleChapters(normalizedBook);
+        bibleExplorerState.currentChapter = parsed.chapter;
+        displayBibleChapter(normalizedBook, parsed.chapter, parsed.verse);
+        updateChapterNavigation();
+        
+        document.querySelectorAll('.bible-chapter-btn').forEach(el => {
+          el.classList.remove('active');
+          if (parseInt(el.textContent) === parsed.chapter) {
+            el.classList.add('active');
+          }
+        });
       }
-      
-      document.querySelectorAll('.bible-chapter-btn').forEach(el => {
-        el.classList.remove('active');
-        if (parseInt(el.textContent) === parsed.chapter) {
-          el.classList.add('active');
-        }
-      });
       
       input.value = '';
       return;
@@ -4042,7 +4663,7 @@ function smartBibleSearch() {
   if (searchText.length >= 2) {
     startConceptSearch(searchText);
   } else {
-    alert('Enter a verse (e.g., "John 3:16") or a word to search (2+ characters)');
+    alert('Enter a verse (e.g., "John 3:16"), a word, or a regex (e.g., "/pattern/i")');
   }
 }
 
@@ -4051,28 +4672,76 @@ function jumpToVerse() {
   smartBibleSearch();
 }
 
+// Toggle search expansion on mobile, or search if already expanded
+function toggleOrSearch() {
+  const container = document.getElementById('bible-search-container');
+  const input = document.getElementById('bible-explorer-search-input');
+  if (!container || !input) {
+    smartBibleSearch();
+    return;
+  }
+  
+  // Check if we're on a small screen where search collapses
+  const isCollapsible = window.innerWidth <= 480;
+  
+  if (!isCollapsible) {
+    // On larger screens, just search
+    smartBibleSearch();
+    return;
+  }
+  
+  // On small screens, toggle expansion
+  if (container.classList.contains('expanded')) {
+    // Already expanded - do the search
+    if (input.value.trim()) {
+      smartBibleSearch();
+    } else {
+      // Empty search, collapse it
+      container.classList.remove('expanded');
+    }
+  } else {
+    // Expand the search
+    container.classList.add('expanded');
+    input.focus();
+  }
+}
+
+// Collapse search if empty when losing focus
+function collapseSearchIfEmpty() {
+  const container = document.getElementById('bible-search-container');
+  const input = document.getElementById('bible-explorer-search-input');
+  if (!container || !input) return;
+  
+  // Small delay to allow click on button to register
+  setTimeout(() => {
+    if (!input.value.trim() && window.innerWidth <= 480) {
+      container.classList.remove('expanded');
+    }
+  }, 200);
+}
+
 // Parse a search citation string
-// Requires explicit chapter number to avoid confusion with names like Ruth, Job, Mark, etc.
+// Only returns a book if a chapter number is also present
+// (e.g., "John 3" or "John 3:16" is a citation, but "John" alone is a text search)
 function parseSearchCitation(str) {
-  // Pattern: Book Chapter:Verse or Book Chapter (chapter is REQUIRED)
+  // Pattern: Book Chapter:Verse or Book Chapter
+  // Requires at least a chapter number to be considered a scripture citation
   const match = str.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
   
   if (match) {
     return {
       book: match[1].trim(),
       chapter: parseInt(match[2]),
-      verse: match[3] ? parseInt(match[3]) : null,
-      hasExplicitChapter: true
+      verse: match[3] ? parseInt(match[3]) : null
     };
   }
   
-  // No chapter number - don't treat as a book reference
-  // This allows searching for names like "Ruth", "Job", "Mark", "Luke", "James"
-  return { book: null, chapter: null, verse: null, hasExplicitChapter: false };
+  // Just a book name without chapter = treat as text search, not citation
+  // This way "John" does a text search, but "John 1" goes to John chapter 1
+  return { book: null, chapter: null, verse: null };
 }
 
-// Open Bible Explorer to a specific location
-// Note: URL is managed by AppStore - this function just updates the UI/display
+// Open Bible Explorer to a specific location (URL/content-driven: set selectors and content directly)
 function openBibleExplorerTo(book, chapter, verse = null) {
   const normalizedBook = normalizeBookName(book);
   
@@ -4081,92 +4750,72 @@ function openBibleExplorerTo(book, chapter, verse = null) {
     navigateTo('bible-explorer');
   }
   
-  // Wait for initialization then navigate
+  // Wait for initialization then set book/chapter and dropdowns to match URL/content
   setTimeout(() => {
-    if (bibleExplorerState.bookChapterCounts[normalizedBook]) {
-      // Skip auto-chapter selection since we're navigating to a specific chapter
-      selectBibleBook(normalizedBook, true);
-      populateBibleChapters(normalizedBook);
-      bibleExplorerState.currentChapter = chapter;
-      displayBibleChapter(normalizedBook, chapter, verse);
-      updateChapterNavigation();
-      
-      // Update chapter dropdown to match current chapter
-      const chapterSelect = document.getElementById('bible-chapter-select');
-      if (chapterSelect) {
-        chapterSelect.value = chapter;
-      }
-      
-      // Update chapter grid buttons
-      document.querySelectorAll('.bible-chapter-btn').forEach(el => {
-        el.classList.remove('active');
-        if (parseInt(el.textContent) === chapter) {
-          el.classList.add('active');
-        }
-      });
-      
-      // Don't update URL here - AppStore already handles it via _syncURL
-      // Calling updateBibleExplorerURL here would create duplicate/conflicting history entries
+    if (!bibleExplorerState.bookChapterCounts[normalizedBook]) return;
+    
+    // Set state first so dropdowns reflect URL
+    bibleExplorerState.currentBook = normalizedBook;
+    bibleExplorerState.currentChapter = chapter;
+    bibleExplorerState.highlightedVerse = verse;
+    
+    // Ensure book dropdown is populated and selected to match URL
+    populateBibleBooks();
+    const bookSelect = document.getElementById('bible-book-select');
+    if (bookSelect) bookSelect.value = normalizedBook;
+    
+    // Populate and set chapter dropdown (uses currentChapter for selected)
+    updateChapterDropdown(normalizedBook);
+    const chapterSelect = document.getElementById('bible-chapter-select');
+    if (chapterSelect) {
+      chapterSelect.value = String(chapter);
+      chapterSelect.disabled = false;
     }
+    
+    // Push this location to history so in-view back/forward work
+    const current = bibleExplorerState.history[bibleExplorerState.historyIndex];
+    const isSame = current && current.book === normalizedBook && current.chapter === chapter;
+    if (!isSame) {
+      if (bibleExplorerState.historyIndex < bibleExplorerState.history.length - 1) {
+        bibleExplorerState.history = bibleExplorerState.history.slice(0, bibleExplorerState.historyIndex + 1);
+      }
+      bibleExplorerState.history.push({ book: normalizedBook, chapter, verse: null });
+      bibleExplorerState.historyIndex = bibleExplorerState.history.length - 1;
+    }
+    
+    // Show chapter content
+    displayBibleChapter(normalizedBook, chapter, verse);
+    updateChapterNavigation();
+    populateBibleChapters(normalizedBook);
+    document.querySelectorAll('.bible-chapter-btn').forEach(el => {
+      el.classList.remove('active');
+      if (parseInt(el.textContent) === chapter) el.classList.add('active');
+    });
+    if (typeof updateBibleHistoryButtons === 'function') updateBibleHistoryButtons();
+    
+    updateBibleExplorerURL(normalizedBook, chapter, verse);
   }, 200);
 }
 
-// Update browser URL for Bible Explorer
-// Automatically detects whether to push or replace based on dispatch context
-function updateBibleExplorerURL(book, chapter, verse = null, forcePush = null) {
-  // Build the URL
-  const bookEncoded = encodeURIComponent(book);
-  let url = `/reader/bible/${currentTranslation}/${bookEncoded}/${chapter}`;
-  if (verse) {
-    url += `?verse=${verse}`;
-  }
-  
-  // Check if URL is already the same - avoid duplicate history entries
-  const currentURL = window.location.pathname + window.location.search;
-  if (url === currentURL) {
-    return; // URL already matches, no update needed
-  }
-  
-  // Update AppStore state silently (without re-render) to keep in sync for back/forward
-  if (typeof AppStore !== 'undefined' && typeof AppStore.silentUpdate === 'function') {
-    AppStore.silentUpdate({
-      view: 'reader',
-      params: {
-        contentType: 'bible',
-        translation: currentTranslation,
-        book: book,
-        chapter: chapter,
-        verse: verse || null
-      }
+// Update browser URL for Bible Explorer - dispatches to AppStore for proper data flow
+function updateBibleExplorerURL(book, chapter, verse = null) {
+  // Dispatch to AppStore for URL sync (unidirectional flow)
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'SET_BIBLE_LOCATION',
+      translation: currentTranslation || 'kjv',
+      book: book,
+      chapter: chapter,
+      verse: verse
     });
-  }
-  
-  // Determine whether to push or replace:
-  // - If forcePush is explicitly set, use that
-  // - If AppStore is currently dispatching, it already pushed → use replace
-  // - Otherwise, this is direct user navigation → use push
-  let shouldPush;
-  if (forcePush !== null) {
-    shouldPush = forcePush;
-  } else if (typeof AppStore !== 'undefined' && typeof AppStore.isDispatching === 'function') {
-    shouldPush = !AppStore.isDispatching();
   } else {
-    shouldPush = true; // Default to push if we can't determine
-  }
-  
-  // Get current scroll position to save in history
-  const textArea = document.getElementById('bible-explorer-text');
-  const scrollTop = textArea ? textArea.scrollTop : 0;
-  
-  if (shouldPush) {
-    // Save scroll position of current page before pushing new entry
-    if (typeof URLRouter !== 'undefined' && URLRouter.saveScrollPosition) {
-      URLRouter.saveScrollPosition();
+    // Fallback for direct use without AppStore
+    const bookEncoded = encodeURIComponent(book);
+    let url = `/bible/${currentTranslation}/${bookEncoded}/${chapter}`;
+    if (verse) {
+      url += `?verse=${verse}`;
     }
-    window.history.pushState({}, '', url);
-  } else {
-    // For replace, preserve scroll in current state
-    window.history.replaceState({ scrollTop }, '', url);
+    window.history.replaceState({}, '', url);
   }
 }
 
@@ -4277,7 +4926,129 @@ function showHebrewInterlinear(verseEl, hebrewText, errorMessage) {
   });
 }
 
-// Expose functions globally for inline onclick handlers
-window.handleCitationClick = handleCitationClick;
-window.openBibleReader = openBibleReader;
-window.closeBibleReader = closeBibleReader;
+// ═══════════════════════════════════════════════════════════════════════════
+// READER CONTENT SELECTOR FUNCTIONS
+// ═══════════════════════════════════════════════════════════════════════════
+
+/**
+ * Update the reader content selector dropdown and show/hide appropriate selector groups
+ * @param {string} contentType - 'bible', 'symbols', or 'timetested'
+ */
+function updateReaderContentSelector(contentType) {
+  // Update dropdown value
+  const contentSelect = document.getElementById('reader-content-select');
+  if (contentSelect) {
+    contentSelect.value = contentType;
+  }
+  
+  // Show/hide selector groups
+  const bibleSelectors = document.getElementById('bible-selectors');
+  const symbolSelectors = document.getElementById('symbol-selectors');
+  const ttSelectors = document.getElementById('timetested-selectors');
+  
+  if (bibleSelectors) bibleSelectors.style.display = contentType === 'bible' ? '' : 'none';
+  if (symbolSelectors) symbolSelectors.style.display = contentType === 'symbols' ? '' : 'none';
+  if (ttSelectors) ttSelectors.style.display = contentType === 'timetested' ? '' : 'none';
+  
+  // Populate symbol dropdown if switching to symbols
+  if (contentType === 'symbols') {
+    populateSymbolDropdown();
+  }
+  
+  // Populate Time Tested dropdown if switching to timetested
+  if (contentType === 'timetested') {
+    populateTimeTestedDropdown();
+  }
+}
+
+/**
+ * Handle content type change from the dropdown
+ * @param {string} value - 'bible', 'symbols', or 'timetested'
+ */
+function onReaderContentChange(value) {
+  if (!value) return;
+  
+  // Navigate to the selected content type
+  if (typeof AppStore !== 'undefined') {
+    const params = { contentType: value };
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params });
+  }
+}
+
+/**
+ * Handle symbol selection from dropdown
+ * @param {string} symbolKey - the symbol key to navigate to
+ */
+function onSymbolSelect(symbolKey) {
+  if (!symbolKey) return;
+  
+  if (typeof AppStore !== 'undefined') {
+    // Special value for index page (no symbol selected)
+    if (symbolKey === '__index__') {
+      AppStore.dispatch({
+        type: 'SET_VIEW',
+        view: 'reader',
+        params: { contentType: 'symbols' }
+      });
+    } else {
+      AppStore.dispatch({
+        type: 'SET_VIEW',
+        view: 'reader',
+        params: { contentType: 'symbols', symbol: symbolKey }
+      });
+    }
+  }
+}
+
+/**
+ * Handle Time Tested chapter selection from dropdown
+ * @param {string} chapterId - the chapter ID to navigate to
+ */
+function onTimeTestedSelect(chapterId) {
+  if (!chapterId) return;
+  
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'reader',
+      params: { contentType: 'timetested', chapterId }
+    });
+  }
+}
+
+/**
+ * Populate the symbol dropdown with available symbols
+ */
+function populateSymbolDropdown() {
+  const select = document.getElementById('symbol-select');
+  if (!select) return;
+  
+  // Get symbols from dictionary
+  const symbols = typeof SYMBOL_DICTIONARY !== 'undefined' ? Object.entries(SYMBOL_DICTIONARY) : [];
+  
+  let html = '<option value="">Symbol...</option>';
+  html += '<option value="__index__">📚 Symbol Index</option>';
+  html += '<optgroup label="───────────">';
+  for (const [key, symbol] of symbols) {
+    html += `<option value="${key}">${symbol.name}</option>`;
+  }
+  html += '</optgroup>';
+  select.innerHTML = html;
+}
+
+/**
+ * Populate the Time Tested chapter dropdown
+ */
+function populateTimeTestedDropdown() {
+  const select = document.getElementById('timetested-chapter-select');
+  if (!select) return;
+  
+  // Get chapters from TIME_TESTED_CHAPTERS (defined in timetested-chapters.js)
+  const chapters = typeof TIME_TESTED_CHAPTERS !== 'undefined' ? TIME_TESTED_CHAPTERS : [];
+  
+  let html = '<option value="">Chapter...</option>';
+  for (const chapter of chapters) {
+    html += `<option value="${chapter.id}">${chapter.title}</option>`;
+  }
+  select.innerHTML = html;
+}
