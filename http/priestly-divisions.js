@@ -47,82 +47,50 @@ const TEMPLE_DEDICATION_YEAR = -958;
 // Some scholars date this to 586 BC, but 587 BC aligns with many chronologies
 const FIRST_TEMPLE_DESTRUCTION_YEAR = -586;
 
-// Get the year start point based on yearStartRule setting
-// Adapted for v2 - uses getAstroEngine and AppStore
-function getYearStartPoint(year) {
-  const engine = getAstroEngine();
-  const springEquinox = engine.getSeasons(year).mar_equinox.date;
-  
-  // Get yearStartRule from AppStore if available
-  let yearStartRule = 'equinox';
-  if (typeof AppStore !== 'undefined') {
-    const state = AppStore.getState();
-    yearStartRule = state.profile?.yearStartRule || 'equinox';
-  }
-  
-  if (yearStartRule === '13daysBefore') {
-    // Return 14 days before the equinox (Day 15 must be on or after equinox)
-    return new Date(springEquinox.getTime() - 14 * 24 * 60 * 60 * 1000);
-  }
-  
-  // Default to equinox
-  return springEquinox;
-}
-
-// Find moon events (full, dark, or crescent) for a given year
-// Adapted for v2 - uses getAstroEngine and AppStore
-function findMoonEvents(year, phaseType) {
-  const engine = getAstroEngine();
-  const events = [];
-  
-  // Get crescent threshold from AppStore if available
-  let crescentThreshold = 18; // Default
-  if (typeof AppStore !== 'undefined') {
-    const state = AppStore.getState();
-    crescentThreshold = state.profile?.crescentThreshold || 18;
-  }
-  
-  // Create dates with proper year handling for ancient dates
-  let searchDate = new Date(Date.UTC(2000, 11, 1));
-  searchDate.setUTCFullYear(year - 1);
-  
-  let endDate = new Date(Date.UTC(2000, 5, 1));
-  endDate.setUTCFullYear(year + 1);
-  
-  // Moon phase angles: 0 = new/dark, 90 = first quarter, 180 = full, 270 = last quarter
-  let targetPhase;
-  if (phaseType === 'full') {
-    targetPhase = 180;
-  } else if (phaseType === 'dark') {
-    targetPhase = 0;
-  } else if (phaseType === 'crescent') {
-    targetPhase = 0;
-  }
-  
-  while (searchDate < endDate) {
-    const result = engine.searchMoonPhase(targetPhase, searchDate, 40);
-    if (result) {
-      let eventDate = result.date;
-      
-      // For crescent, add offset to conjunction
-      if (phaseType === 'crescent') {
-        const conjunction = result.date;
-        eventDate = new Date(conjunction.getTime() + crescentThreshold * 60 * 60 * 1000);
-      }
-      
-      events.push(eventDate);
-      searchDate = new Date(result.date.getTime() + 20 * 24 * 60 * 60 * 1000);
-    } else break;
-  }
-  return events;
-}
-
 // Priestly divisions data (will be loaded from JSON)
 let PRIESTLY_DIVISIONS = null;
 let priestlyDivisionsLoadPromise = null;
 
 // Average synodic month length in days (high precision)
 const SYNODIC_MONTH = 29.530588853;
+
+// Shared LunarCalendarEngine for priestly calculations - avoids creating new engines repeatedly
+let _priestlyCalendarEngine = null;
+let _priestlyEngineConfigKey = null;
+
+function _getPriestlyEngineConfigKey(moonPhase) {
+  return `${moonPhase || 'full'}:${state?.dayStartTime || 'morning'}:${state?.dayStartAngle ?? 12}:${state?.yearStartRule || 'equinox'}:${state?.crescentThreshold ?? 18}`;
+}
+
+// Helper to get moon events using LunarCalendarEngine
+// This wraps the engine's findMoonEvents method for use in priestly calculations
+function findMoonEventsForYear(year, moonPhase) {
+  if (typeof LunarCalendarEngine === 'undefined' || typeof getAstroEngine !== 'function') {
+    console.warn('[PriestlyDivisions] LunarCalendarEngine not available for findMoonEvents');
+    return [];
+  }
+  const engine = getAstroEngine();
+  if (!engine) {
+    console.warn('[PriestlyDivisions] Astronomy engine not ready for findMoonEvents');
+    return [];
+  }
+  
+  // Reuse shared engine if config matches, otherwise create new one
+  const configKey = _getPriestlyEngineConfigKey(moonPhase);
+  if (!_priestlyCalendarEngine || _priestlyEngineConfigKey !== configKey) {
+    _priestlyCalendarEngine = new LunarCalendarEngine(engine);
+    _priestlyCalendarEngine.configure({
+      moonPhase: moonPhase || 'full',
+      dayStartTime: state?.dayStartTime || 'morning',
+      dayStartAngle: state?.dayStartAngle ?? 12,
+      yearStartRule: state?.yearStartRule || 'equinox',
+      crescentThreshold: state?.crescentThreshold ?? 18
+    });
+    _priestlyEngineConfigKey = configKey;
+  }
+  
+  return _priestlyCalendarEngine.findMoonEvents(year);
+}
 
 // Load priestly divisions from JSON file
 async function loadPriestlyDivisions() {
@@ -196,8 +164,7 @@ function getTempleDedicationReferenceJD(profile) {
   };
   
   // Get moon events for 959 BC using the current engine
-  const engine = getAstroEngine();
-  const moonEvents = findMoonEvents(TEMPLE_DEDICATION_YEAR, tempState.moonPhase);
+  const moonEvents = findMoonEventsForYear(TEMPLE_DEDICATION_YEAR, tempState.moonPhase);
   
   // Get year start point for 959 BC
   const yearStartPoint = getYearStartPoint(TEMPLE_DEDICATION_YEAR);
@@ -731,26 +698,45 @@ function showPriestlyPage() {
 }
 
 // Calculate all service dates for a given course in the current year
-function getServiceDatesForCourse(courseOrder) {
-  if (!state.lunarMonths || state.lunarMonths.length === 0) return [];
+// Optional parameters allow using a generated calendar instead of state.lunarMonths
+function getServiceDatesForCourse(courseOrderOrLunarMonths, courseOrderIfMonths, profileIfMonths) {
+  // Handle both signatures:
+  // 1. getServiceDatesForCourse(courseOrder) - uses state.lunarMonths
+  // 2. getServiceDatesForCourse(lunarMonths, courseOrder, profile) - uses provided months
+  let lunarMonths, courseOrder, profile;
   
+  if (Array.isArray(courseOrderOrLunarMonths)) {
+    // New signature: (lunarMonths, courseOrder, profile)
+    lunarMonths = courseOrderOrLunarMonths;
+    courseOrder = courseOrderIfMonths;
+    profile = profileIfMonths;
+  } else {
+    // Original signature: (courseOrder)
+    lunarMonths = state.lunarMonths;
+    courseOrder = courseOrderOrLunarMonths;
+    profile = null;
+  }
+  
+  if (!lunarMonths || lunarMonths.length === 0) return [];
+  
+  const sabbathMode = profile?.sabbathMode || state.sabbathMode;
   const serviceDates = [];
   
   // Iterate through all days in all months and find when this course serves
-  for (let m = 0; m < state.lunarMonths.length; m++) {
-    const month = state.lunarMonths[m];
+  for (let m = 0; m < lunarMonths.length; m++) {
+    const month = lunarMonths[m];
     
     // For lunar sabbath, check each week (days 2-8, 9-15, 16-22, 23-29/30)
     // For Saturday sabbath, check each day
     
-    if (state.sabbathMode === 'lunar') {
+    if (sabbathMode === 'lunar') {
       // Check each week in the month
       const weekStarts = [2, 9, 16, 23];
       for (const weekStart of weekStarts) {
         const dayObj = month.days.find(d => d.lunarDay === weekStart);
         if (!dayObj) continue;
         
-        const courseInfo = getPriestlyCourseForDay(dayObj, month);
+        const courseInfo = getPriestlyCourseForDay(dayObj, month, profile);
         if (courseInfo && !courseInfo.beforeDedication && courseInfo.order === courseOrder) {
           // Find the sabbath (end of this week)
           const sabbathDay = weekStart === 2 ? 8 : weekStart === 9 ? 15 : weekStart === 16 ? 22 : 29;
@@ -772,7 +758,7 @@ function getServiceDatesForCourse(courseOrder) {
       // Saturday sabbath - check every 7 days starting from first day
       for (let d = 0; d < month.days.length; d++) {
         const dayObj = month.days[d];
-        const courseInfo = getPriestlyCourseForDay(dayObj, month);
+        const courseInfo = getPriestlyCourseForDay(dayObj, month, profile);
         
         if (courseInfo && !courseInfo.beforeDedication && courseInfo.order === courseOrder) {
           // Check if this is the start of a week (Sunday)
@@ -816,7 +802,7 @@ function getNinthOfAvJD(year, profile) {
   };
   
   // Get moon events for the specified year
-  const moonEvents = findMoonEvents(year, tempState.moonPhase);
+  const moonEvents = findMoonEventsForYear(year, tempState.moonPhase);
   
   // Get year start point
   const yearStartPoint = getYearStartPoint(year);

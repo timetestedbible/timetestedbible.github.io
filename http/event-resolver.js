@@ -66,6 +66,17 @@ function julianDayToGregorian(jd) {
 }
 
 /**
+ * Convert Julian Day to JavaScript Date object
+ * @param {number} jd - Julian Day Number
+ * @returns {Date}
+ */
+function julianDayToDate(jd) {
+  // JD to Unix timestamp: (JD - 2440587.5) * 86400000
+  const unixMs = (jd - 2440587.5) * 86400000;
+  return new Date(unixMs);
+}
+
+/**
  * Convert Julian Day Number to Julian calendar date
  * Use this for historical dates before 1582
  * @param {number} jd - Julian Day Number
@@ -185,6 +196,85 @@ function lunationForJD(jd, profile) {
 let _resolverIterationCount = 0;
 const MAX_RESOLVER_ITERATIONS = 10000;
 
+// Shared LunarCalendarEngine instance - avoids creating new engines repeatedly
+// Key: profileConfigKey, Value: configured LunarCalendarEngine
+let _sharedLunarEngine = null;
+let _sharedEngineConfigKey = null;
+
+function _getEngineConfigKey(profile) {
+  return `${profile.moonPhase || 'full'}:${profile.yearStartRule || 'equinox'}:${profile.dayStartTime || 'morning'}:${profile.dayStartAngle ?? 12}:${profile.crescentThreshold ?? 18}`;
+}
+
+function _getSharedEngine(profile) {
+  const configKey = _getEngineConfigKey(profile);
+  
+  // Return cached engine if configuration matches
+  if (_sharedLunarEngine && _sharedEngineConfigKey === configKey) {
+    return _sharedLunarEngine;
+  }
+  
+  // Check if LunarCalendarEngine and astronomy engine are available
+  const hasLunarEngine = typeof LunarCalendarEngine !== 'undefined' && typeof getAstroEngine === 'function';
+  const astroEngine = hasLunarEngine ? getAstroEngine() : null;
+  
+  if (!hasLunarEngine || !astroEngine) {
+    return null;
+  }
+  
+  // Config changed - clear calendar cache too (uses engine internally)
+  if (_sharedEngineConfigKey !== null && _sharedEngineConfigKey !== configKey) {
+    _calendarCache.clear();
+  }
+  
+  // Create and configure new engine (old engine with stale caches will be GC'd)
+  _sharedLunarEngine = new LunarCalendarEngine(astroEngine);
+  _sharedLunarEngine.configure({
+    moonPhase: profile.moonPhase || 'full',
+    dayStartTime: profile.dayStartTime || 'morning',
+    dayStartAngle: profile.dayStartAngle ?? 12,
+    yearStartRule: profile.yearStartRule || 'equinox',
+    crescentThreshold: profile.crescentThreshold ?? 18
+  });
+  _sharedEngineConfigKey = configKey;
+  
+  return _sharedLunarEngine;
+}
+
+// Calendar cache for lunarToJulianDay - avoids regenerating calendars repeatedly
+// Key: "year:profileKey", Value: calendar object
+const _calendarCache = new Map();
+const MAX_CALENDAR_CACHE_SIZE = 20;
+
+function _getCalendarCacheKey(year, profile) {
+  return `${year}:${profile.moonPhase || 'full'}:${profile.yearStartRule || 'equinox'}:${profile.dayStartTime || 'morning'}`;
+}
+
+function _getCachedCalendar(year, profile, location) {
+  const cacheKey = _getCalendarCacheKey(year, profile);
+  
+  if (_calendarCache.has(cacheKey)) {
+    return _calendarCache.get(cacheKey);
+  }
+  
+  // Get shared engine (reuses existing if config matches)
+  const engine = _getSharedEngine(profile);
+  if (!engine) {
+    return null;
+  }
+  
+  // Generate calendar using shared engine
+  const calendar = engine.generateYear(year, location);
+  
+  // Evict oldest entries if cache is full
+  if (_calendarCache.size >= MAX_CALENDAR_CACHE_SIZE) {
+    const firstKey = _calendarCache.keys().next().value;
+    _calendarCache.delete(firstKey);
+  }
+  
+  _calendarCache.set(cacheKey, calendar);
+  return calendar;
+}
+
 /**
  * Convert lunar date to Julian Day
  * Uses astronomy engine for accurate calculations when available
@@ -202,6 +292,7 @@ function lunarToJulianDay(lunar, gregorianYear, profile) {
   
   const year = lunar.year !== undefined ? lunar.year : gregorianYear;
   
+  
   // Default month/day to 1 if not specified (year-only lunar date)
   const month = lunar.month !== undefined ? lunar.month : 1;
   const day = lunar.day !== undefined ? lunar.day : 1;
@@ -209,92 +300,38 @@ function lunarToJulianDay(lunar, gregorianYear, profile) {
   // Create normalized lunar object with defaults
   const normalizedLunar = { year, month, day };
   
-  // TEMPORARILY DISABLED: Astronomy engine is too slow for bulk resolution
-  // Skip directly to fallback calculation
-  const USE_ASTRONOMY_ENGINE = false;
+  // Use LunarCalendarEngine for accurate lunar date calculations
+  const USE_ASTRONOMY_ENGINE = true;
   
-  // Try to use the astronomy engine for accurate moon phase calculation
-  // Only for years within the Swiss Ephemeris range (~3000 BC to present)
-  const MIN_ASTRO_YEAR = -3000;
+  // Swiss Ephemeris Moshier range: JD 625000.50 to 2818000.50
+  // This corresponds roughly to years -1700 to 4300
+  // Only use astronomy engine for years within this range
+  const MIN_ASTRO_YEAR = -1700;
+  const MAX_ASTRO_YEAR = 4300;
+  const yearInRange = year >= MIN_ASTRO_YEAR && year <= MAX_ASTRO_YEAR;
   
-  if (USE_ASTRONOMY_ENGINE && year >= MIN_ASTRO_YEAR && typeof findMoonEvents === 'function' && typeof getYearStartPoint === 'function' && typeof state !== 'undefined') {
-    try {
-      // Map resolver profile to calendar state settings
-      const moonPhaseMap = {
-        'conjunction': 'dark',
-        'crescent': 'crescent', 
-        'full': 'full'
-      };
-      const dayStartMap = {
-        'sunset': 'evening',
-        'sunrise': 'morning'
-      };
-      const yearStartMap = {
-        'spring-equinox': 'equinox',
-        'fall-equinox': 'equinox',
-        'barley': 'barley'
-      };
-      
-      // Save and set ALL relevant state variables (matching getLunarDayForTimestamp)
-      const savedState = {
-        moonPhase: state.moonPhase,
-        dayStartTime: state.dayStartTime,
-        dayStartAngle: state.dayStartAngle,
-        yearStartRule: state.yearStartRule,
-        crescentThreshold: state.crescentThreshold,
-        lat: state.lat,
-        lon: state.lon
-      };
-      
-      // Apply profile settings
-      state.moonPhase = moonPhaseMap[profile.monthStart] || 'dark';
-      state.dayStartTime = dayStartMap[profile.dayStart] || 'evening';
-      state.dayStartAngle = profile.dayStart === 'sunset' ? 0 : 12;
-      state.yearStartRule = yearStartMap[profile.yearStart] || 'equinox';
-      state.crescentThreshold = 18;
-      state.lat = 31.7683;  // Jerusalem
-      state.lon = 35.2137;
-      
-      const moonPhase = state.moonPhase;
-      
-      // Find moon events for this year
-      const moonEvents = findMoonEvents(year, moonPhase);
-      
-      if (moonEvents && moonEvents.length > 0) {
-        const yearStartPoint = getYearStartPoint(year);
-        
-        // Find the first moon event on or after year start (this is Nisan)
-        let nissanMoon = moonEvents.find(m => m >= yearStartPoint);
-        if (!nissanMoon) nissanMoon = moonEvents[0];
-        
-        // Get the target month's moon event (month 1 = Nisan = index 0)
-        const monthIndex = normalizedLunar.month - 1;
-        const nissanIndex = moonEvents.indexOf(nissanMoon);
-        const targetMoonIndex = nissanIndex + monthIndex;
-        
-        if (targetMoonIndex < moonEvents.length) {
-          const monthStart = moonEvents[targetMoonIndex];
-          // monthStart is a Date object, convert to JD
-          const jd = dateToJulianDay(monthStart) + (normalizedLunar.day - 1);
-          
-          // Restore state
-          Object.assign(state, savedState);
-          return jd;
+  const location = { lat: profile.lat || 31.7683, lon: profile.lon || 35.2137 };
+  
+  if (USE_ASTRONOMY_ENGINE && yearInRange) {
+    // Use cached calendar (generates only once per year/profile combination)
+    const calendar = _getCachedCalendar(year, profile, location);
+  
+    if (calendar && calendar.months && calendar.months.length >= normalizedLunar.month) {
+      const targetMonth = calendar.months[normalizedLunar.month - 1];
+      if (targetMonth && targetMonth.days) {
+        const targetDay = targetMonth.days.find(d => d.lunarDay === normalizedLunar.day);
+        if (targetDay && targetDay.jd) {
+          return targetDay.jd;
         }
       }
-      
-      // Restore state if we didn't return early
-      Object.assign(state, savedState);
-    } catch (err) {
-      console.warn('Astronomy engine calculation failed, using fallback:', err);
     }
+    
   }
-  
-  // Fallback: use synodic month approximation
+  const yearStartRule = profile.yearStartRule || 'equinox';
   let yearStartApprox;
-  if (profile.yearStart === 'spring-equinox' || profile.yearStart === 'barley') {
+  if (yearStartRule === 'equinox' || yearStartRule === 'barley') {
     yearStartApprox = gregorianToJulianDay(year, 3, 20);
-  } else if (profile.yearStart === 'fall-equinox') {
+  } else if (yearStartRule === 'fall-equinox') {
     yearStartApprox = gregorianToJulianDay(year, 9, 22);
   } else {
     yearStartApprox = gregorianToJulianDay(year, 3, 20);
@@ -306,14 +343,15 @@ function lunarToJulianDay(lunar, gregorianYear, profile) {
   let jd = monthStartJD + (normalizedLunar.day - 1);
   
   // Adjust for time of day
+  const dayStartTime = profile.dayStartTime || 'evening';
   if (lunar.time_of_day) {
-    if (profile.dayStart === 'sunset') {
+    if (dayStartTime === 'evening') {
       if (lunar.time_of_day === 'evening' || lunar.time_of_day === 'night') {
         jd -= 0.25;
       } else if (lunar.time_of_day === 'morning' || lunar.time_of_day === 'afternoon') {
         jd += 0.25;
       }
-    } else if (profile.dayStart === 'sunrise') {
+    } else if (dayStartTime === 'morning') {
       if (lunar.time_of_day === 'morning') {
         jd += 0.0;
       } else if (lunar.time_of_day === 'evening' || lunar.time_of_day === 'night') {
@@ -341,6 +379,7 @@ function julianDayToLunar(jd, profile) {
     
     // Find when Nisan 1 starts for this lunar year
     const nisan1JD = lunarToJulianDay({ month: 1, day: 1 }, testYear, profile);
+    
     
     // If JD is before Nisan 1 of this year, try previous year
     if (jd < nisan1JD) continue;
@@ -474,6 +513,210 @@ function annoMundiToJulianDay(am, profile) {
   return gregorianToJulianDay(gregorianYear, 1, 1);
 }
 
+/**
+ * Find the next priestly course service date after a reference point
+ * @param {object} cycleSpec - { course, after_event, after_offset? }
+ *   - course: Course number (1-24) or name (e.g., "Abijah")
+ *   - after_event: Event ID to calculate from
+ *   - after_offset: Optional offset to add to the reference date
+ * @param {object} profile - Calendar profile
+ * @param {object} epochs - Epochs definitions
+ * @param {object} context - Resolution context
+ * @returns {number|null} Julian Day of the next course service
+ */
+function priestlyCycleToJulianDay(cycleSpec, profile, epochs, context) {
+  const { course, after_event, after_offset } = cycleSpec;
+  
+  
+  // Resolve the reference event
+  if (!after_event) {
+    console.warn('[PriestlyCycle] Error: requires after_event');
+    return null;
+  }
+  
+  const refEvent = context.allEvents?.find(e => e.id === after_event);
+  if (!refEvent) {
+    console.warn(`[PriestlyCycle] Error: referenced event not found: ${after_event}`);
+    return null;
+  }
+  
+  const refResolved = resolveEvent(refEvent, profile, epochs, context);
+  if (!refResolved?.startJD) {
+    console.warn(`[PriestlyCycle] Error: could not resolve referenced event: ${after_event}`);
+    return null;
+  }
+  
+  // Apply optional offset to get the "after this date" point
+  let afterJD = refResolved.startJD;
+  if (after_offset) {
+    if (after_offset.days) {
+      afterJD += after_offset.days;
+    }
+    if (after_offset.weeks) {
+      afterJD += after_offset.weeks * 7;
+    }
+  }
+  
+  // Determine target course number
+  let targetCourse = course;
+  if (typeof course === 'string') {
+    // Map course name to number
+    const courseNames = {
+      'jehoiarib': 1, 'jedaiah': 2, 'harim': 3, 'seorim': 4,
+      'malchijah': 5, 'mijamin': 6, 'hakkoz': 7, 'abijah': 8,
+      'jeshua': 9, 'shecaniah': 10, 'eliashib': 11, 'jakim': 12,
+      'huppah': 13, 'jeshebeab': 14, 'bilgah': 15, 'immer': 16,
+      'hezir': 17, 'happizzez': 18, 'pethahiah': 19, 'jehezkel': 20,
+      'jachin': 21, 'gamul': 22, 'delaiah': 23, 'maaziah': 24
+    };
+    targetCourse = courseNames[course.toLowerCase()] || 8; // Default to Abijah
+  }
+  
+  // Use the passed profile instead of building from global state
+  const calcProfile = {
+    sabbathMode: profile.sabbathMode || 'lunar',
+    moonPhase: profile.moonPhase || 'full',
+    dayStartTime: profile.dayStartTime || 'morning',
+    dayStartAngle: profile.dayStartAngle ?? 12,
+    yearStartRule: profile.yearStartRule || 'equinox',
+    crescentThreshold: profile.crescentThreshold ?? 18,
+    priestlyCycleAnchor: profile.priestlyCycleAnchor || 'destruction',
+    lat: profile.lat || 31.7683,
+    lon: profile.lon || 35.2137
+  };
+  
+  // Convert afterJD to Julian calendar for display
+  const afterJulian = julianDayToJulianCalendar(afterJD);
+  const afterLunar = julianDayToLunar(afterJD, calcProfile);
+  
+  // Helper to format year as BC/AD
+  const formatYear = (y) => y <= 0 ? (1 - y) + ' BC' : y + ' AD';
+  
+  
+  // Find the FIRST occurrence of target course AFTER afterJD
+  // Use same method as Day Detail: iterate through calendar days with actual lunarDay values
+  if (typeof getPriestlyCourse === 'function' && typeof LunarCalendarEngine !== 'undefined' && typeof getAstroEngine === 'function') {
+    // Use shared engine (avoids creating new engine on every call)
+    const calendarEngine = _getSharedEngine(calcProfile);
+    if (calendarEngine) {
+      const location = { lat: calcProfile.lat, lon: calcProfile.lon };
+      
+      // Get the LUNAR year for afterJD (not Gregorian year)
+      const afterLunarInfo = julianDayToLunar(afterJD, calcProfile);
+      if (!afterLunarInfo) {
+        console.warn('[PriestlyCycle] Could not determine lunar year for afterJD');
+        return null;
+      }
+      
+      
+      // Generate calendar for current lunar year and next year
+      for (let yearOffset = 0; yearOffset <= 1; yearOffset++) {
+        const lunarYear = afterLunarInfo.year + yearOffset;
+        const calendar = calendarEngine.generateYear(lunarYear, location);
+        if (!calendar?.months) continue;
+        
+        for (const month of calendar.months) {
+          if (!month.days) continue;
+          
+          for (const dayObj of month.days) {
+            if (!dayObj.jd || dayObj.jd <= afterJD) continue;
+            
+            // Call getPriestlyCourse with lunar day only (NOT month)
+            // If we pass month, it uses state.lunarMonths which is the CURRENT year, not this historical year
+            const courseInfo = getPriestlyCourse(
+              dayObj.gregorianDate,
+              dayObj.lunarDay,
+              null,  // Don't pass month - it would use wrong year's state.lunarMonths
+              calcProfile
+            );
+            
+            if (courseInfo && !courseInfo.beforeAnchor && !courseInfo.beforeDedication && courseInfo.order === targetCourse) {
+              // Found the target course (Abijah)
+              // Now find when the NEXT course starts - that's when Zechariah is done and home
+              const nextCourse = (targetCourse % 24) + 1; // Course 9 after Abijah (8)
+              
+              for (const nextMonth of calendar.months) {
+                if (!nextMonth.days) continue;
+                for (const nextDayObj of nextMonth.days) {
+                  if (!nextDayObj.jd || nextDayObj.jd <= dayObj.jd) continue;
+                  
+                  const nextCourseInfo = getPriestlyCourse(
+                    nextDayObj.gregorianDate,
+                    nextDayObj.lunarDay,
+                    null,
+                    calcProfile
+                  );
+                  
+                  if (nextCourseInfo && nextCourseInfo.order === nextCourse) {
+                    // Found the next course - return the start of this week
+                    let weekStartLunarDay;
+                    if (nextDayObj.lunarDay <= 8) weekStartLunarDay = 2; // Day 1 is New Moon
+                    else if (nextDayObj.lunarDay <= 15) weekStartLunarDay = 9;
+                    else if (nextDayObj.lunarDay <= 22) weekStartLunarDay = 16;
+                    else weekStartLunarDay = 23;
+                    
+                    const daysBack = nextDayObj.lunarDay - weekStartLunarDay;
+                    return nextDayObj.jd - daysBack;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    console.warn('[PriestlyCycle] Could not find course', targetCourse, 'in calendar');
+    return null;
+  }
+  
+  // Fallback: original calculation if LunarCalendarEngine is not available
+  console.log('[PriestlyCycle] Using fallback calculation (LunarCalendarEngine not available)');
+  
+  const sabbathMode = profile?.sabbathMode || 'lunar';
+  const TEMPLE_DESTRUCTION_JD = 1746839;
+  
+  if (sabbathMode === 'lunar') {
+    // Lunar sabbath: 4 weeks per lunar month
+    const deltaJD = afterJD - TEMPLE_DESTRUCTION_JD;
+    const deltaMonths = deltaJD / SYNODIC_MONTH;
+    const fullMonths = Math.floor(deltaMonths);
+    const totalWeeks = fullMonths * 4;
+    const currentCourseIndex = ((totalWeeks % 24) + 24) % 24;
+    
+    let weeksUntilTarget = (targetCourse - 1) - currentCourseIndex;
+    if (weeksUntilTarget <= 0) {
+      weeksUntilTarget += 24;
+    }
+    
+    const daysPerLunarWeek = SYNODIC_MONTH / 4;
+    const serviceWeekDuration = daysPerLunarWeek;
+    const travelHomeBuffer = 1;
+    const daysUntilConception = (weeksUntilTarget * daysPerLunarWeek) + serviceWeekDuration + travelHomeBuffer;
+    
+    const resultJD = afterJD + daysUntilConception;
+    return resultJD;
+    
+  } else {
+    // Saturday sabbath: continuous 7-day weeks
+    const deltaJD = afterJD - TEMPLE_DESTRUCTION_JD;
+    const deltaWeeks = Math.floor(deltaJD / 7);
+    const currentCourseIndex = ((deltaWeeks % 24) + 24) % 24;
+    
+    let weeksUntilTarget = (targetCourse - 1) - currentCourseIndex;
+    if (weeksUntilTarget <= 0) {
+      weeksUntilTarget += 24;
+    }
+    
+    const serviceWeekDuration = 7;
+    const travelHomeBuffer = 1;
+    const daysUntilConception = (weeksUntilTarget * 7) + serviceWeekDuration + travelHomeBuffer;
+    
+    const resultJD = afterJD + daysUntilConception;
+    return resultJD;
+  }
+}
+
 // ============================================================================
 // DURATION APPLICATION
 // ============================================================================
@@ -590,7 +833,9 @@ function resolveDateSpec(dateSpec, profile, epochs, context) {
   }
   
   // Priority 4: Regal year (requires epoch lookup)
-  if (dateSpec.regal) {
+  // BUT: Skip if there's also a relative reference (relative is the primary source,
+  // regal is just verification/reference in that case)
+  if (dateSpec.regal && !dateSpec.relative) {
     return regalToJulianDay(dateSpec.regal, epochs, profile, context);
   }
   
@@ -620,6 +865,73 @@ function resolveDateSpec(dateSpec, profile, epochs, context) {
     return annoMundiToJulianDay(dateSpec.anno_mundi, profile);
   }
   
+  // Priority 6.5: Priestly Cycle - find next service date for a course after reference
+  // Used for events like John the Baptist's conception (next Abijah service)
+  if (dateSpec.priestly_cycle) {
+    return priestlyCycleToJulianDay(dateSpec.priestly_cycle, profile, epochs, context);
+  }
+  
+  // Priority 6.6: Lunar Relative - use year from reference event, but specific month/day
+  // Used for events that need a specific month/day but derive year from another event
+  if (dateSpec.lunar_relative) {
+    const refEventId = dateSpec.lunar_relative.event;
+    
+    // Check for circular dependency
+    if (context.resolutionStack?.includes(refEventId)) {
+      console.warn(`Circular dependency detected in lunar_relative: ${refEventId}`);
+      return null;
+    }
+    
+    // Find and resolve the referenced event to get the year
+    const refEvent = context.allEvents?.find(e => e.id === refEventId);
+    if (!refEvent) {
+      console.warn(`Referenced event not found for lunar_relative: ${refEventId}`);
+      return null;
+    }
+    
+    const refResolved = resolveEvent(refEvent, profile, epochs, context);
+    if (!refResolved?.startJD) {
+      console.warn(`Could not resolve referenced event for lunar_relative: ${refEventId}`);
+      return null;
+    }
+    
+    // Get the lunar year from the resolved reference event
+    // Prefer _lunarYear from chain calculation (more accurate)
+    let refYear;
+    if (refResolved._lunarYear !== undefined) {
+      refYear = refResolved._lunarYear;
+    } else if (refEvent.start?.lunar?.year !== undefined) {
+      refYear = refEvent.start.lunar.year;
+    } else {
+      const refLunar = julianDayToLunar(refResolved.startJD, profile);
+      if (!refLunar) {
+        console.warn(`Could not convert reference event to lunar date`);
+        return null;
+      }
+      refYear = refLunar.year;
+    }
+    
+    // Use the reference year with the specified month/day
+    const targetLunar = {
+      month: dateSpec.lunar_relative.month,
+      day: dateSpec.lunar_relative.day
+    };
+    
+    let resultJD = lunarToJulianDay(targetLunar, refYear, profile);
+    
+    // If the proposed date is BEFORE the reference event, advance to next year
+    // This handles cases like: reference is month 7, proposed is month 1 (should be next year)
+    if (resultJD < refResolved.startJD) {
+      resultJD = lunarToJulianDay(targetLunar, refYear + 1, profile);
+      // Store the advanced year for chain propagation
+      context._lastCalculatedLunar = { year: refYear + 1, month: targetLunar.month, day: targetLunar.day };
+    } else {
+      context._lastCalculatedLunar = { year: refYear, month: targetLunar.month, day: targetLunar.day };
+    }
+    
+    return resultJD;
+  }
+  
   // Priority 7: Relative to another event (may also have lunar date for refinement)
   if (dateSpec.relative) {
     const refEventId = dateSpec.relative.event;
@@ -645,11 +957,90 @@ function resolveDateSpec(dateSpec, profile, epochs, context) {
     }
     
     // Apply offset
-    const offset = dateSpec.relative.offset;
+    const offset = dateSpec.relative.offset || {};
     const direction = dateSpec.relative.direction || 'after';
     
+    // YEAR OFFSETS: Always use integer year math (not fractional days)
+    // This ensures "80 years before 1446 BC" = 1526 BC, not 1527 BC
+    if (offset.years && !offset.solar_years) {
+      // First, try to get the reference event's lunar year from multiple sources
+      // Priority: 1) explicit source lunar.year, 2) previously calculated _lunarYear, 3) julianDayToLunar fallback
+      let refYear = null;
+      let refMonth = null;
+      let refDay = null;
+      
+      // Check if reference event has explicit lunar year in its source
+      if (refEvent.start?.lunar?.year !== undefined) {
+        refYear = refEvent.start.lunar.year;
+        refMonth = refEvent.start.lunar.month;
+        refDay = refEvent.start.lunar.day;
+      } 
+      // Check if resolved event has a previously calculated lunar year (from chain)
+      else if (refResolved._lunarYear !== undefined) {
+        refYear = refResolved._lunarYear;
+        refMonth = refResolved._lunarMonth;
+        refDay = refResolved._lunarDay;
+      }
+      // Fall back to deriving from resolved JD (least accurate due to boundary issues)
+      else {
+        const refLunar = julianDayToLunar(refResolved.startJD, profile);
+        if (refLunar) {
+          refYear = refLunar.year;
+          refMonth = refLunar.month;
+          refDay = refLunar.day;
+        }
+      }
+      
+      if (refYear !== null) {
+        const yearsOffset = direction === 'before' ? -offset.years : offset.years;
+        const targetYear = refYear + yearsOffset;
+        
+        // If lunar month/day specified in dateSpec, use those
+        // Otherwise, use the same month/day as the reference event
+        const targetMonth = dateSpec.lunar?.month ?? refMonth ?? 1;
+        const targetDay = dateSpec.lunar?.day ?? refDay ?? 1;
+        
+        let resultJD = lunarToJulianDay({ month: targetMonth, day: targetDay }, targetYear, profile);
+        
+        // Apply any sub-year offsets (months, weeks, days)
+        if (offset.months) resultJD += offset.months * SYNODIC_MONTH;
+        if (offset.weeks) resultJD += offset.weeks * 7;
+        if (offset.days) resultJD += offset.days;
+        
+        // Store calculated lunar date for subsequent chain events to use
+        // This is attached as a side-effect - caller will pick it up
+        context._lastCalculatedLunar = { year: targetYear, month: targetMonth, day: targetDay };
+        
+        return resultJD;
+      }
+    }
+    
+    // SOLAR YEAR OFFSETS: Use fractional days (for precise astronomical calculations)
+    // This is explicitly requested with offset.solar_years
+    // Note: Use absolute value and let 'direction' control the sign
+    // (handles legacy data where both negative value AND direction:"before" might exist)
+    if (offset.solar_years) {
+      let resultJD = refResolved.startJD;
+      const solarYears = Math.abs(offset.solar_years);
+      const sign = direction === 'before' ? -1 : 1;
+      resultJD += sign * solarYears * 365.2422;
+      
+      // Apply sub-year offsets
+      if (offset.months) resultJD += sign * offset.months * SYNODIC_MONTH;
+      if (offset.weeks) resultJD += sign * offset.weeks * 7;
+      if (offset.days) resultJD += sign * offset.days;
+      
+      // If lunar date refinement specified, apply it
+      if (dateSpec.lunar) {
+        const approxGregorian = julianDayToGregorian(resultJD);
+        return lunarToJulianDay(dateSpec.lunar, approxGregorian.year, profile);
+      }
+      
+      return resultJD;
+    }
+    
+    // SUB-YEAR OFFSETS ONLY (months, weeks, days - no year component)
     let offsetDays = 0;
-    if (offset.years) offsetDays += offset.years * 365.2422;
     if (offset.months) offsetDays += offset.months * SYNODIC_MONTH;
     if (offset.weeks) offsetDays += offset.weeks * 7;
     if (offset.days) offsetDays += offset.days;
@@ -661,25 +1052,10 @@ function resolveDateSpec(dateSpec, profile, epochs, context) {
       resultJD = refResolved.startJD + offsetDays;
     }
     
-    // If there's also a lunar date specified, use it to refine the result
-    // (e.g., get the exact Nisan 1 of the calculated year)
+    // If lunar date refinement specified, apply it
     if (dateSpec.lunar) {
-      // If the reference event has a lunar year, calculate target year from that
-      // This is more accurate than deriving from approximate JD
-      const refLunar = refEvent.start?.lunar;
-      let targetYear;
-      
-      if (refLunar?.year !== undefined && offset.years) {
-        // Calculate lunar year directly from reference lunar year
-        const yearsOffset = direction === 'before' ? -offset.years : offset.years;
-        targetYear = refLunar.year + yearsOffset;
-      } else {
-        // Fall back to deriving from approximate Gregorian
-        const approxGregorian = julianDayToGregorian(resultJD);
-        targetYear = approxGregorian.year;
-      }
-      
-      return lunarToJulianDay(dateSpec.lunar, targetYear, profile);
+      const approxGregorian = julianDayToGregorian(resultJD);
+      return lunarToJulianDay(dateSpec.lunar, approxGregorian.year, profile);
     }
     
     return resultJD;
@@ -746,6 +1122,11 @@ function resolveEvent(event, profile, epochs, context = null) {
   let endSpec = event.end || null;
   
   let startJD = startSpec ? resolveDateSpec(startSpec, profile, epochs, newContext) : null;
+  
+  // Capture calculated lunar date from year offset resolution (if any)
+  const calculatedLunar = newContext._lastCalculatedLunar;
+  newContext._lastCalculatedLunar = null; // Clear for next resolution
+  
   let endJD = endSpec ? resolveDateSpec(endSpec, profile, epochs, newContext) : null;
   
   // If we have start but no end, and there's a duration, calculate end
@@ -798,6 +1179,12 @@ function resolveEvent(event, profile, epochs, context = null) {
     // TOP-LEVEL JD values for backward compatibility with resolver chain
     startJD,
     endJD,
+    
+    // Calculated lunar year/month/day (for chain propagation)
+    // These are used when subsequent events reference this one via year offset
+    _lunarYear: calculatedLunar?.year ?? (event.start?.lunar?.year),
+    _lunarMonth: calculatedLunar?.month ?? (event.start?.lunar?.month),
+    _lunarDay: calculatedLunar?.day ?? (event.start?.lunar?.day),
     
     // SOURCE DATA (stipulated - exactly as provided in JSON)
     source: {
@@ -883,6 +1270,80 @@ function resolveAllEvents(data, profile) {
 }
 
 /**
+ * Async version of resolveAllEvents with progress updates
+ * Yields to UI periodically for smooth progress bar updates
+ * @param {object} data - Full data object with events and epochs
+ * @param {object} profile - Calendar profile settings
+ * @param {function} onProgress - Progress callback (percent, message)
+ * @returns {Promise<object[]>} Array of resolved events
+ */
+async function resolveAllEventsAsync(data, profile, onProgress) {
+  // Reset iteration counter
+  _resolverIterationCount = 0;
+  
+  const epochs = data.epochs || {};
+  const events = data.events || [];
+  
+  // Create resolution context
+  const context = {
+    allEvents: events,
+    resolvedEvents: new Map(),
+    resolutionStack: []
+  };
+  
+  // Resolve all events with periodic UI yields
+  const resolved = [];
+  const total = events.length;
+  const batchSize = 20; // Process 20 events, then yield to UI
+  
+  for (let i = 0; i < events.length; i++) {
+    resolved.push(resolveEvent(events[i], profile, epochs, context));
+    
+    // Report progress and yield to UI every batch
+    if (i % batchSize === 0) {
+      const percent = Math.round((i / total) * 90); // 0-90% for resolution
+      if (onProgress) {
+        onProgress(percent, `Resolving ${i + 1} of ${total} events...`);
+      }
+      // Yield to UI
+      await new Promise(resolve => setTimeout(resolve, 0));
+    }
+  }
+  
+  if (onProgress) {
+    onProgress(95, 'Finalizing...');
+  }
+  await new Promise(resolve => setTimeout(resolve, 0));
+  
+  // Expand prophecies into separate timeline events
+  const expanded = [];
+  resolved.forEach(r => {
+    // Add main event
+    expanded.push(r);
+    
+    // Add prophecy durations as separate events
+    r.prophecies?.forEach(p => {
+      expanded.push({
+        id: p.id,
+        title: p.title,
+        type: 'prophecy-duration',
+        startJD: p.startJD,
+        endJD: p.endJD,
+        source: p.source,
+        duration: p.duration,
+        _parentEvent: r.id
+      });
+    });
+  });
+  
+  if (onProgress) {
+    onProgress(100, 'Done');
+  }
+  
+  return expanded;
+}
+
+/**
  * Convert resolved events to timeline-friendly format
  * @param {object[]} resolvedEvents - Array from resolveAllEvents
  * @returns {object[]} Events with pixel positions (requires additional timeline params)
@@ -934,6 +1395,7 @@ if (typeof window !== 'undefined') {
     // Main resolver functions
     resolveEvent,
     resolveAllEvents,
+    resolveAllEventsAsync,
     resolveDateSpec,
     
     // Timeline helpers
@@ -1054,6 +1516,7 @@ if (typeof window !== 'undefined') {
     // Main resolver functions
     resolveEvent,
     resolveAllEvents,
+    resolveAllEventsAsync,
     resolveDateSpec,
     
     // Timeline helpers
@@ -1087,6 +1550,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     resolveEvent,
     resolveAllEvents,
+    resolveAllEventsAsync,
     resolveDateSpec,
     resolvedEventsToTimeline,
     gregorianToJulianDay,

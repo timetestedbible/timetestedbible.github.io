@@ -17,6 +17,26 @@ let biblicalTimelineUseV2 = true; // Use v2 data format with resolver
 let biblicalTimelineResolvedCache = null;
 let biblicalTimelineCacheKey = null;
 
+/**
+ * Generate a stable cache key from profile and data.
+ * Rounds floating point values to avoid precision issues.
+ */
+function _generateStableCacheKey(profile, data) {
+  const dataContentHash = JSON.stringify(data?.events || []).length;
+  // Round floats to avoid floating point precision issues causing cache misses
+  const stableProfile = {
+    moonPhase: profile.moonPhase,
+    dayStartTime: profile.dayStartTime,
+    dayStartAngle: Math.round((profile.dayStartAngle || 0) * 1000) / 1000,
+    yearStartRule: profile.yearStartRule,
+    crescentThreshold: Math.round((profile.crescentThreshold || 0) * 1000) / 1000,
+    lat: Math.round((profile.lat || 0) * 10000) / 10000,
+    lon: Math.round((profile.lon || 0) * 10000) / 10000,
+    amEpoch: profile.amEpoch
+  };
+  return JSON.stringify(stableProfile) + ':' + dataContentHash;
+}
+
 // ============================================================================
 // LOCALSTORAGE CACHE UTILITIES FOR TIMELINE
 // Uses getSWVersion() and getProfileHash() from historical-events.js
@@ -183,6 +203,11 @@ window.clearTimelineResolvedCaches = clearTimelineResolvedCaches;
 // Background pre-resolution state
 let backgroundResolutionInProgress = false;
 let backgroundResolutionProgress = 0;
+let globalProgressFloor = 0; // Ensures progress never goes backward within a render cycle
+
+// Render lock to prevent concurrent renders
+let renderInProgress = false;
+let renderPending = false;
 
 /**
  * Pre-resolve timeline events in the background after site loads.
@@ -214,8 +239,7 @@ async function preResolveTimelineInBackground(data, profile) {
   }
   
   // Check if cache is already valid (RAM)
-  const dataContentHash = JSON.stringify(data.events || []).length;
-  const cacheKey = JSON.stringify(profile) + ':' + dataContentHash;
+  const cacheKey = _generateStableCacheKey(profile, data);
   
   if (biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey) {
     console.log('[Timeline Background] RAM cache already valid, skipping');
@@ -250,14 +274,20 @@ async function preResolveTimelineInBackground(data, profile) {
   try {
     // Check if async resolver is available
     if (typeof EventResolver.resolveAllEventsAsync === 'function') {
-      // Use async resolver with progress tracking
+      // Use async resolver with progress tracking (only allows increasing progress)
       const resolved = await EventResolver.resolveAllEventsAsync(data, profile, (percent, message) => {
+        // Only update if progress increased (prevents backward jumps)
+        // Never allow going backward, even to 0
+        if (percent < backgroundResolutionProgress || percent < globalProgressFloor) {
+          return;
+        }
         backgroundResolutionProgress = percent;
+        globalProgressFloor = Math.max(globalProgressFloor, percent);
         // Update progress bar if timeline is showing
         const fill = document.querySelector('.timeline-progress-fill');
-        const text = document.querySelector('.timeline-loading-text');
+        const subtext = document.querySelector('.timeline-loading-subtext');
         if (fill) fill.style.width = percent + '%';
-        if (text) text.textContent = message || `Pre-resolving events... ${percent}%`;
+        if (subtext) subtext.textContent = message || `${percent}% complete`;
       });
       
       // Store in RAM cache
@@ -325,11 +355,19 @@ window.getBackgroundResolutionProgress = getBackgroundResolutionProgress;
  */
 function isTimelineCacheValid(data, profile) {
   if (!data || !profile || typeof EventResolver === 'undefined') {
-    return !!biblicalTimelineResolvedCache;
+    const result = !!biblicalTimelineResolvedCache;
+    console.log(`[CacheCheck] No data/profile/resolver, returning ${result}`);
+    return result;
   }
-  const dataContentHash = JSON.stringify(data.events || []).length;
-  const cacheKey = JSON.stringify(profile) + ':' + dataContentHash;
-  return biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey;
+  const cacheKey = _generateStableCacheKey(profile, data);
+  const cacheExists = !!biblicalTimelineResolvedCache;
+  const keyMatches = biblicalTimelineCacheKey === cacheKey;
+  const isValid = cacheExists && keyMatches;
+  console.log(`[CacheCheck] cacheExists=${cacheExists}, keyMatches=${keyMatches}, isValid=${isValid}`);
+  if (!keyMatches && biblicalTimelineCacheKey) {
+    console.log(`[CacheCheck] Key mismatch: stored="${biblicalTimelineCacheKey?.substring(0, 50)}..." vs new="${cacheKey.substring(0, 50)}..."`);
+  }
+  return isValid;
 }
 
 /**
@@ -346,8 +384,7 @@ function getResolvedEvents(data, profile) {
   }
   
   // Create cache key from profile and data content
-  const dataContentHash = JSON.stringify(data.events || []).length;
-  const cacheKey = JSON.stringify(profile) + ':' + dataContentHash;
+  const cacheKey = _generateStableCacheKey(profile, data);
   
   // Return RAM cached if valid
   if (biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey) {
@@ -403,8 +440,7 @@ async function getResolvedEventsWithProgress(data, profile) {
   }
   
   // Create cache key from profile and data content
-  const dataContentHash = JSON.stringify(data.events || []).length;
-  const cacheKey = JSON.stringify(profile) + ':' + dataContentHash;
+  const cacheKey = _generateStableCacheKey(profile, data);
   
   // Return RAM cached if valid
   if (biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey) {
@@ -426,16 +462,30 @@ async function getResolvedEventsWithProgress(data, profile) {
   // Clear old version caches
   clearOldTimelineCaches();
   
-  // Progress callback - updates the UI
+  // Track last progress to ensure monotonic increase
+  let lastProgressPercent = globalProgressFloor;
+  
+  // Progress callback - updates the UI (only allows increasing progress)
   const onProgress = (percent, message) => {
+    // Only update if progress increased (prevents backward jumps)
+    // Never allow going backward, even to 0
+    if (percent < lastProgressPercent) {
+      return;
+    }
+    if (percent < globalProgressFloor) {
+      return;
+    }
+    lastProgressPercent = percent;
+    globalProgressFloor = Math.max(globalProgressFloor, percent);
+    
     const fill = document.querySelector('.timeline-progress-fill');
-    const text = document.querySelector('.timeline-loading-subtext');
+    const subtext = document.querySelector('.timeline-loading-subtext');
     if (fill) {
       fill.style.animation = 'none'; // Stop the shimmer animation
       fill.style.width = percent + '%';
     }
-    if (text) {
-      text.textContent = message;
+    if (subtext) {
+      subtext.textContent = message || `${percent}% complete`;
     }
   };
   
@@ -471,25 +521,86 @@ let timelineFilters = {
   dates: true  // Biblical-date events (specific verse date references)
 };
 
-// Simple markdown to HTML converter for descriptions and quotes
-function renderMarkdown(text) {
+// Markdown to HTML converter using marked.js library
+function renderMarkdown(text, linkifyEvents = true) {
   if (!text) return '';
-  return text
-    // Bold: **text** or __text__
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/__(.+?)__/g, '<strong>$1</strong>')
-    // Italic: *text* or _text_
-    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-    .replace(/_([^_]+)_/g, '<em>$1</em>')
-    // Line breaks
-    .replace(/\n/g, '<br>');
+  
+  let html;
+  
+  // Use marked.js if available
+  if (typeof marked !== 'undefined') {
+    try {
+      marked.setOptions({
+        breaks: true,
+        gfm: true,
+        headerIds: false
+      });
+      html = marked.parse(text);
+      html = html.replace(/<table>/g, '<table class="md-table">');
+    } catch (e) {
+      console.warn('[Timeline] marked.js error:', e);
+      html = text
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+    }
+  } else {
+    // Fallback to basic regex if marked.js not available
+    html = text
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+  }
+  
+  // Linkify event references if requested
+  if (linkifyEvents) {
+    // First handle [[event-id]] syntax
+    html = linkifyEventRefs(html);
+    // Then handle bare event IDs
+    html = linkifyBareEventIds(html);
+  }
+  
+  return html;
 }
 
-// Convert [[event-id]] references to clickable links
+// Get event title by ID (pretty name)
+function getEventTitle(eventId) {
+  const event = biblicalTimelineEventLookup.get(eventId);
+  return event ? event.title : eventId;
+}
+
+// Convert [[event-id]] references to clickable links with pretty names
 function linkifyEventRefs(html) {
   return html.replace(/\[\[([a-z0-9-]+)\]\]/g, (match, eventId) => {
-    return `<a href="#" onclick="openEventDetail('${eventId}'); return false;" class="event-ref-link" style="color: #d4a017; text-decoration: none; border-bottom: 1px dotted #d4a017;">${eventId}</a>`;
+    const title = getEventTitle(eventId);
+    return `<a href="#" onclick="openEventDetail('${eventId}'); return false;" class="event-ref-link" title="${eventId}">${title}</a>`;
   });
+}
+
+// Linkify bare event IDs in markdown (matches kebab-case IDs that exist in our data)
+// Only processes text content, not inside HTML tags/attributes
+function linkifyBareEventIds(html) {
+  // Split HTML into text segments and tag segments
+  // This ensures we don't match event IDs inside HTML attributes
+  const parts = html.split(/(<[^>]+>)/g);
+  
+  return parts.map(part => {
+    // If this part is an HTML tag (starts with <), leave it unchanged
+    if (part.startsWith('<')) {
+      return part;
+    }
+    
+    // Process text content only
+    // Pattern: word boundary + kebab-case ID + word boundary
+    return part.replace(/\b([a-z][a-z0-9]*(?:-[a-z0-9]+)+)\b/g, (match, eventId) => {
+      // Check if this is a known event
+      if (biblicalTimelineEventLookup.has(eventId)) {
+        const title = getEventTitle(eventId);
+        return `<a href="#" onclick="openEventDetail('${eventId}'); return false;" class="event-ref-link" title="${eventId}">${title}</a>`;
+      }
+      return match; // Not a known event, return unchanged
+    });
+  }).join('');
 }
 
 // Load and render markdown documentation for an event
@@ -506,51 +617,40 @@ async function loadEventDocumentation(docPath, containerId) {
     
     const markdown = await response.text();
     
-    // Convert markdown to HTML (simple conversion)
-    let html = markdown
-      // Headers
-      .replace(/^### (.+)$/gm, '<h5 style="color: #7ec8e3; margin: 20px 0 10px 0;">$1</h5>')
-      .replace(/^## (.+)$/gm, '<h4 style="color: #7ec8e3; margin: 24px 0 12px 0; border-bottom: 1px solid rgba(126,200,227,0.2); padding-bottom: 8px;">$1</h4>')
-      .replace(/^# (.+)$/gm, '<h3 style="color: #7ec8e3; margin: 0 0 16px 0;">$1</h3>')
-      // Horizontal rules
-      .replace(/^---$/gm, '<hr style="border: none; border-top: 1px solid rgba(126,200,227,0.2); margin: 24px 0;">')
-      // Bold
-      .replace(/\*\*(.+?)\*\*/g, '<strong style="color: #fff;">$1</strong>')
-      // Italic
-      .replace(/\*([^*\n]+)\*/g, '<em>$1</em>')
-      // Blockquotes
-      .replace(/^> (.+)$/gm, '<blockquote style="border-left: 3px solid #d4a017; margin: 12px 0; padding: 8px 16px; background: rgba(212,160,23,0.1); color: #ccc; font-style: italic;">$1</blockquote>')
-      // Event references [[event-id]]
-      .replace(/→ \[\[([a-z0-9-]+)\]\]/g, (match, eventId) => {
-        return `<div style="margin: 8px 0 8px 20px;"><a href="#" onclick="openEventDetail('${eventId}'); return false;" style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(212, 160, 23, 0.1); border: 1px solid rgba(212, 160, 23, 0.3); border-radius: 4px; text-decoration: none; color: #d4a017; font-size: 0.9em;">→ ${eventId}</a></div>`;
-      })
-      // Inline event references
-      .replace(/\[\[([a-z0-9-]+)\]\]/g, (match, eventId) => {
-        return `<a href="#" onclick="openEventDetail('${eventId}'); return false;" style="color: #d4a017; text-decoration: none; border-bottom: 1px dotted #d4a017;">${eventId}</a>`;
-      })
-      // Tables (simple)
-      .replace(/\|(.+)\|/g, (match, content) => {
-        const cells = content.split('|').map(c => c.trim());
-        if (cells.every(c => c.match(/^-+$/))) {
-          return ''; // Skip separator row
-        }
-        const isHeader = content.includes('**');
-        const cellTag = isHeader ? 'th' : 'td';
-        const style = isHeader ? 'style="text-align: left; padding: 8px; border-bottom: 2px solid rgba(126,200,227,0.3); color: #7ec8e3;"' : 'style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);"';
-        return `<tr>${cells.map(c => `<${cellTag} ${style}>${c}</${cellTag}>`).join('')}</tr>`;
-      })
-      // Wrap tables
-      .replace(/(<tr>.*<\/tr>\n?)+/g, '<table style="width: 100%; border-collapse: collapse; margin: 16px 0;">$&</table>')
-      // Paragraphs (double newlines)
-      .replace(/\n\n/g, '</p><p style="margin: 12px 0;">')
-      // Single newlines in certain contexts
-      .replace(/\n(?!<)/g, '<br>');
+    // Use marked.js for proper markdown rendering
+    let html;
+    if (typeof marked !== 'undefined') {
+      try {
+        marked.setOptions({
+          breaks: true,
+          gfm: true,
+          headerIds: false
+        });
+        html = marked.parse(markdown);
+        
+        // Add class to tables for styling
+        html = html.replace(/<table>/g, '<table class="md-table">');
+      } catch (e) {
+        console.warn('[Timeline] marked.js error:', e);
+        html = `<pre>${markdown}</pre>`;
+      }
+    } else {
+      // Fallback: show as preformatted text
+      html = `<pre>${markdown}</pre>`;
+    }
     
-    // Wrap in paragraph tags
-    html = `<p style="margin: 12px 0;">${html}</p>`;
+    // Post-process: Convert [[event-id]] references to clickable links with pretty names
+    html = html.replace(/→ \[\[([a-z0-9-]+)\]\]/g, (match, eventId) => {
+      const title = getEventTitle(eventId);
+      return `<a href="#" onclick="openEventDetail('${eventId}'); return false;" class="event-ref-link event-ref-arrow" title="${eventId}">→ ${title}</a>`;
+    });
+    html = html.replace(/\[\[([a-z0-9-]+)\]\]/g, (match, eventId) => {
+      const title = getEventTitle(eventId);
+      return `<a href="#" onclick="openEventDetail('${eventId}'); return false;" class="event-ref-link" title="${eventId}">${title}</a>`;
+    });
     
-    // Clean up empty paragraphs
-    html = html.replace(/<p[^>]*>\s*<\/p>/g, '');
+    // Also linkify bare event IDs (kebab-case) that match known events
+    html = linkifyBareEventIds(html);
     
     // Set initial collapsed state (show first section only)
     container.innerHTML = html;
@@ -1016,7 +1116,8 @@ function displaySearchResults(fromCache) {
   // Fresh search: apply zoom and re-render with search results only
   if (!fromCache) {
     if (targetZoom) {
-      biblicalTimelineZoom = targetZoom;
+      // Clamp zoom to valid range (0.1 to 500)
+      biblicalTimelineZoom = Math.max(0.1, Math.min(500, targetZoom));
     }
     // Re-render to show only search results with correct slot positions
     renderBiblicalTimeline();
@@ -1154,6 +1255,27 @@ function timelineClearSearch() {
   }
 }
 
+// Combined action - clear search AND close detail panel
+function timelineClearAndClose() {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatchBatch([
+      { type: 'SET_TIMELINE_SEARCH', search: null },
+      { type: 'SET_TIMELINE_EVENT', eventId: null },
+      { type: 'SET_TIMELINE_DURATION', durationId: null }
+    ]);
+  }
+}
+
+// Close event detail panel only (keep search)
+function timelineCloseEventDetail() {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatchBatch([
+      { type: 'SET_TIMELINE_EVENT', eventId: null },
+      { type: 'SET_TIMELINE_DURATION', durationId: null }
+    ]);
+  }
+}
+
 // State-driven close panel (called by TimelineView.syncPanelFromState)
 function closeDetailPanelFromState() {
   const panel = document.getElementById('detail-slideout-panel');
@@ -1162,6 +1284,12 @@ function closeDetailPanelFromState() {
   }
   document.body.classList.remove('detail-panel-open');
   highlightDurationBar(null);
+  
+  // Reset timeline width when panel closes
+  const timeline = document.querySelector('.ruler-timeline-container');
+  if (timeline) {
+    timeline.style.width = '100%';
+  }
   
   // Clear search filter and re-render to show all events with correct slots
   if (activeSearchResultIds !== null) {
@@ -1174,6 +1302,8 @@ function closeDetailPanelFromState() {
 // Make search functions globally available
 window.timelineSearchAndZoom = timelineSearchAndZoom;
 window.timelineClearSearch = timelineClearSearch;
+window.timelineClearAndClose = timelineClearAndClose;
+window.timelineCloseEventDetail = timelineCloseEventDetail;
 
 // Calculate the center year from current scroll position
 function getTimelineCenterYear() {
@@ -1890,7 +2020,7 @@ function getEraOrder(era) {
 }
 
 // Debug mode - set to true to show diagnostic table instead of rendering timeline
-const TIMELINE_DEBUG_MODE = true;
+const TIMELINE_DEBUG_MODE = false;
 let currentTimelineTab = 'graph'; // 'table', 'graph', or 'durations' - default to graph
 
 // Function to switch timeline tabs
@@ -1908,8 +2038,488 @@ function switchTimelineTab(tab) {
 // NOTE: Detail panel navigation is now handled by browser history via URL
 // The old manual detailPanelHistory has been removed in favor of unidirectional flow
 
-// Initialize the slide-out panel (creates as sibling of timeline container to survive re-renders)
+// Panel width preference key
+const PANEL_WIDTH_KEY = 'timeline_panel_width';
+const DEFAULT_PANEL_WIDTH = 50; // percent
+const MIN_PANEL_WIDTH = 20; // percent
+const MAX_PANEL_WIDTH = 80; // percent
+
+// Get/set panel width
+function getPanelWidth() {
+  const stored = localStorage.getItem(PANEL_WIDTH_KEY);
+  return stored ? parseFloat(stored) : DEFAULT_PANEL_WIDTH;
+}
+
+function setPanelWidth(percent) {
+  const clamped = Math.max(MIN_PANEL_WIDTH, Math.min(MAX_PANEL_WIDTH, percent));
+  localStorage.setItem(PANEL_WIDTH_KEY, clamped.toString());
+  applyPanelWidth(clamped);
+  return clamped;
+}
+
+function applyPanelWidth(percent) {
+  const panel = document.getElementById('detail-slideout-panel');
+  const timeline = document.querySelector('.ruler-timeline-container');
+  
+  if (panel) {
+    panel.style.width = percent + '%';
+  }
+  if (timeline && document.body.classList.contains('detail-panel-open')) {
+    timeline.style.width = (100 - percent) + '%';
+  }
+}
+
+// Initialize resize handle drag behavior
+function initResizeHandle() {
+  const handle = document.getElementById('detail-resize-handle');
+  if (!handle) return;
+  
+  let isDragging = false;
+  let startX, startWidth;
+  
+  handle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startWidth = getPanelWidth();
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+  
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    const timelinePage = document.getElementById('biblical-timeline-page') ||
+                         document.querySelector('.biblical-timeline-page');
+    if (!timelinePage) return;
+    
+    const containerWidth = timelinePage.offsetWidth;
+    const deltaX = startX - e.clientX; // Moving left = bigger panel
+    const deltaPercent = (deltaX / containerWidth) * 100;
+    const newWidth = startWidth + deltaPercent;
+    
+    setPanelWidth(newWidth);
+  });
+  
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+  });
+  
+  // Touch support for mobile
+  handle.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    startWidth = getPanelWidth();
+    e.preventDefault();
+  }, { passive: false });
+  
+  document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    
+    const timelinePage = document.getElementById('biblical-timeline-page') ||
+                         document.querySelector('.biblical-timeline-page');
+    if (!timelinePage) return;
+    
+    const containerWidth = timelinePage.offsetWidth;
+    const deltaX = startX - e.touches[0].clientX;
+    const deltaPercent = (deltaX / containerWidth) * 100;
+    const newWidth = startWidth + deltaPercent;
+    
+    setPanelWidth(newWidth);
+  }, { passive: true });
+  
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+  
+  // Apply stored width on init
+  applyPanelWidth(getPanelWidth());
+}
+
+// Inject timeline styles early (called on first render, before any interactions)
+function injectTimelineStyles() {
+  if (document.getElementById('detail-slideout-styles')) return;
+  
+  const style = document.createElement('style');
+  style.id = 'detail-slideout-styles';
+  style.textContent = `
+    /* Detail panel positioned within timeline page - below search bar (36px) */
+    .detail-slideout {
+      position: absolute;
+      top: 36px;
+      bottom: 0;
+      right: -600px;
+      width: 500px;
+      background: #1a1a2e;
+      border-left: 1px solid rgba(126, 200, 227, 0.2);
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      z-index: 9500;
+      color: #e0e0e0;
+    }
+    .detail-slideout.open {
+      right: 0;
+    }
+    
+    .detail-resize-handle {
+      width: 6px;
+      cursor: ew-resize;
+      background: linear-gradient(180deg, rgba(126, 200, 227, 0.2), rgba(126, 200, 227, 0.4), rgba(126, 200, 227, 0.2));
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .detail-resize-handle:hover {
+      background: linear-gradient(180deg, rgba(126, 200, 227, 0.4), rgba(126, 200, 227, 0.6), rgba(126, 200, 227, 0.4));
+    }
+    
+    .detail-slideout-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      color: #e0e0e0;
+    }
+    
+    /* Mobile: full screen overlay below search bar (36px) */
+    @media (max-width: 768px) {
+      .detail-slideout {
+        position: absolute;
+        top: 36px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100% !important;
+        border-left: none;
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        flex-direction: column;
+      }
+      .detail-slideout.open {
+        transform: translateX(0);
+      }
+      .detail-resize-handle {
+        display: none;
+      }
+    }
+    
+    /* Event hover tooltip (mobile) - positioned inside scroll content */
+    .event-hover-tooltip {
+      position: absolute;
+      z-index: 9000;
+      background: linear-gradient(180deg, #1a3a5c 0%, #0d2840 100%);
+      border: 1px solid rgba(126, 200, 227, 0.4);
+      border-radius: 10px;
+      padding: 12px 16px;
+      max-width: 280px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      animation: tooltipFadeIn 0.2s ease-out;
+      pointer-events: none; /* Don't block touches on events below */
+    }
+    @keyframes tooltipFadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tooltip-title {
+      color: #7ec8e3;
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .tooltip-date {
+      color: #6bc46b;
+      font-size: 0.9em;
+      margin-bottom: 8px;
+    }
+    .tooltip-desc {
+      color: #ccc;
+      font-size: 0.85em;
+      line-height: 1.4;
+    }
+    .tooltip-link {
+      display: block;
+      color: #7ec8e3;
+      font-size: 0.85em;
+      margin-top: 10px;
+      text-decoration: none;
+      pointer-events: auto;
+      cursor: pointer;
+      padding: 6px 10px;
+      background: rgba(126, 200, 227, 0.15);
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .tooltip-link:hover {
+      background: rgba(126, 200, 227, 0.3);
+    }
+    
+    /* Detail panel sections and content styling */
+    .detail-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px 0;
+      color: #7ec8e3;
+      font-size: 1.4em;
+    }
+    .detail-title-icon {
+      font-size: 1.2em;
+    }
+    .detail-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .detail-section h4 {
+      color: #7ec8e3;
+      margin: 0 0 10px 0;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .detail-section p {
+      margin: 0;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    .detail-date-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .detail-date-item {
+      flex: 1;
+      min-width: 120px;
+    }
+    .detail-date-label {
+      color: #888;
+      font-size: 0.8em;
+      margin-bottom: 4px;
+    }
+    .detail-date-value {
+      color: #7ec8e3;
+      font-size: 1em;
+    }
+    .source-item {
+      background: rgba(20, 40, 60, 0.5);
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .source-ref {
+      color: #d4a017;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .source-quote {
+      color: #aaa;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-item {
+      background: rgba(126, 200, 227, 0.15);
+      color: #7ec8e3;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.85em;
+    }
+    
+    /* Search results styling */
+    .timeline-search-results {
+      padding: 10px;
+    }
+    .search-results-header {
+      color: #7ec8e3;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      background: rgba(20, 40, 60, 0.5);
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .search-result-item:hover {
+      background: rgba(126, 200, 227, 0.2);
+    }
+    .search-result-icon {
+      font-size: 1.2em;
+      flex-shrink: 0;
+    }
+    .search-result-title {
+      flex: 1;
+      color: #e0e0e0;
+    }
+    .search-result-year {
+      color: #7ec8e3;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+    
+    /* Lunar date link styling */
+    .lunar-date-link {
+      color: #6bc46b;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(107, 196, 107, 0.1);
+      display: inline-block;
+    }
+    .lunar-date-link:hover {
+      background: rgba(107, 196, 107, 0.2);
+      color: #8fd68f;
+    }
+    
+    /* Detail source styling */
+    .detail-source-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .detail-source-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .detail-source-ref {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 5px;
+    }
+    .detail-source-quote {
+      font-style: italic;
+      border-left: 3px solid #7ec8e3;
+      padding-left: 15px;
+      margin: 8px 0;
+      color: #c0c0c0;
+    }
+    .detail-source-quote strong {
+      color: #7ec8e3;
+      font-style: normal;
+    }
+    
+    /* Collapsible description */
+    .detail-description-wrapper {
+      position: relative;
+    }
+    .detail-description-wrapper.truncated {
+      cursor: pointer;
+    }
+    .detail-description-text {
+      max-height: 100px;
+      overflow: hidden;
+    }
+    .detail-description-wrapper.expanded .detail-description-text {
+      max-height: none;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .detail-description-wrapper.truncated .detail-description-text {
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    }
+    .detail-expand-chevron {
+      display: none;
+      justify-content: center;
+      padding: 4px 0;
+      color: #7ec8e3;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+    .detail-description-wrapper.truncated .detail-expand-chevron {
+      display: flex;
+    }
+    
+    /* Prev/Next navigation */
+    .detail-nav-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(126, 200, 227, 0.2);
+    }
+    .detail-prev-next {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+    }
+    .detail-nav-event {
+      flex: 1;
+      background: rgba(126, 200, 227, 0.1);
+      border: 1px solid rgba(126, 200, 227, 0.2);
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .detail-nav-event:hover {
+      background: rgba(126, 200, 227, 0.2);
+      border-color: rgba(126, 200, 227, 0.4);
+    }
+    .detail-nav-placeholder {
+      background: transparent;
+      border: none;
+      cursor: default;
+    }
+    .detail-nav-label {
+      font-size: 0.75em;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .detail-nav-event-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #7ec8e3;
+      font-weight: 500;
+    }
+    .detail-nav-year {
+      font-size: 0.85em;
+      color: #6bc46b;
+      margin-top: 4px;
+    }
+    
+    /* Event links in details */
+    .detail-event-link {
+      background: rgba(126, 200, 227, 0.1);
+      border: 1px solid rgba(126, 200, 227, 0.3);
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .detail-event-link:hover {
+      background: rgba(126, 200, 227, 0.2);
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// Initialize the slide-out panel (creates as sibling of vis-container to survive re-renders)
 function initDetailPanel() {
+  // Ensure styles are injected first
+  injectTimelineStyles();
+  
   if (document.getElementById('detail-slideout-panel')) return;
   
   // Find the timeline page wrapper - panel should be sibling of vis container
@@ -1925,371 +2535,30 @@ function initDetailPanel() {
   panel.id = 'detail-slideout-panel';
   panel.className = 'detail-slideout';
   panel.innerHTML = `
+    <div class="detail-resize-handle" id="detail-resize-handle"></div>
     <div class="detail-slideout-content" id="detail-slideout-content"></div>
   `;
   timelinePage.appendChild(panel);
   
-  // Add styles
-  if (!document.getElementById('detail-slideout-styles')) {
-    const style = document.createElement('style');
-    style.id = 'detail-slideout-styles';
-    style.textContent = `
-      /* Detail panel positioned within timeline container */
-      .detail-slideout {
-        position: absolute;
-        top: 36px; /* Directly below search bar (input ~26px + padding) */
-        right: -100%;
-        width: 50%;
-        height: calc(100% - 36px);
-        background: #1a1a2e;
-        border-left: 2px solid rgba(126, 200, 227, 0.3);
-        z-index: 9400; /* Below tabs (9500) and search bar (9600) */
-        transition: right 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      }
-      .detail-slideout.open {
-        right: 0;
-      }
-      
-      /* Ensure timeline page is positioned for absolute child */
-      .biblical-timeline-page {
-        position: relative;
-      }
-      
-      /* Mobile: slide DOWN from top, full width */
-      @media (max-width: 768px) {
-        .detail-slideout {
-          top: -100%;
-          right: 0;
-          left: 0;
-          width: 100%;
-          height: 70vh;
-          max-height: 70vh;
-          border-left: none;
-          border-bottom: 2px solid rgba(126, 200, 227, 0.3);
-          transition: top 0.3s ease;
-        }
-        .detail-slideout.open {
-          top: 36px; /* Below search bar on mobile too */
-          height: calc(70vh - 36px);
-        }
-      }
-      
-      .detail-slideout-content {
-        flex: 1;
-        overflow-y: auto;
-        padding: 20px;
-        color: #e0e0e0;
-      }
-      
-      /* When panel is open, adjust main content on desktop only */
-      @media (min-width: 769px) {
-        body.detail-panel-open .ruler-timeline-container {
-          width: 50%;
-        }
-      }
-      /* On mobile, timeline stays full width and panel overlays */
-      
-      /* Detail content styles */
-      .detail-title {
-        font-size: 1.5em;
-        color: #7ec8e3;
-        margin: 0 0 20px 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .detail-title-icon {
-        font-size: 1.2em;
-      }
-      
-      .detail-section {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 15px;
-      }
-      .detail-section h4 {
-        color: #7ec8e3;
-        margin: 0 0 10px 0;
-        font-size: 0.85em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      
-      .detail-claimed {
-        font-size: 1.4em;
-        color: #6bc46b;
-        font-weight: bold;
-      }
-      
-      .detail-events-row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-      .detail-event-link {
-        background: rgba(126, 200, 227, 0.1);
-        border: 1px solid rgba(126, 200, 227, 0.3);
-        border-radius: 6px;
-        padding: 8px 12px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .detail-event-link:hover {
-        background: rgba(126, 200, 227, 0.2);
-      }
-      .detail-arrow {
-        color: #7ec8e3;
-        font-size: 1.3em;
-      }
-      
-      .detail-source-item {
-        margin-bottom: 15px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
-      .detail-source-item:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-      }
-      .detail-source-ref {
-        font-size: 0.9em;
-        color: #888;
-        margin-bottom: 5px;
-      }
-      .detail-source-quote {
-        font-style: italic;
-        border-left: 3px solid #7ec8e3;
-        padding-left: 15px;
-        margin: 8px 0;
-        color: #c0c0c0;
-      }
-      .detail-source-quote strong {
-        color: #7ec8e3;
-        font-style: normal;
-      }
-      
-      .detail-notes {
-        font-size: 0.95em;
-        line-height: 1.6;
-        color: #b0b0b0;
-      }
-      .detail-notes strong {
-        color: #7ec8e3;
-      }
-      
-      /* Collapsible description box */
-      .detail-description-wrapper {
-        position: relative;
-      }
-      .detail-description-wrapper.truncated {
-        cursor: pointer;
-      }
-      .detail-description-text {
-        max-height: 100px;
-        overflow: hidden;
-      }
-      .detail-description-wrapper.expanded .detail-description-text {
-        max-height: none;
-        -webkit-mask-image: none;
-        mask-image: none;
-      }
-      /* Text fade using CSS mask - only when truncated */
-      .detail-description-wrapper.truncated .detail-description-text {
-        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-      }
-      /* Centered chevron indicator - only shown when truncated */
-      .detail-expand-chevron {
-        display: none;
-        justify-content: center;
-        padding: 4px 0;
-        color: #7ec8e3;
-        font-size: 12px;
-        opacity: 0.7;
-        transition: opacity 0.2s;
-      }
-      .detail-description-wrapper.truncated .detail-expand-chevron {
-        display: flex;
-      }
-      .detail-description-wrapper.truncated:hover .detail-expand-chevron {
-        opacity: 1;
-      }
-      .detail-description-wrapper.expanded .detail-expand-chevron {
-        display: none;
-      }
-      
-      /* Prev/Next Event Navigation */
-      .detail-nav-section {
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(126, 200, 227, 0.2);
-      }
-      .detail-prev-next {
-        display: flex;
-        gap: 12px;
-        justify-content: space-between;
-      }
-      .detail-nav-event {
-        flex: 1;
-        background: rgba(126, 200, 227, 0.1);
-        border: 1px solid rgba(126, 200, 227, 0.2);
-        border-radius: 8px;
-        padding: 12px;
-        cursor: pointer;
-        transition: background 0.2s, border-color 0.2s;
-      }
-      .detail-nav-event:hover {
-        background: rgba(126, 200, 227, 0.2);
-        border-color: rgba(126, 200, 227, 0.4);
-      }
-      .detail-nav-placeholder {
-        background: transparent;
-        border: none;
-        cursor: default;
-      }
-      .detail-nav-label {
-        font-size: 0.75em;
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 6px;
-      }
-      .detail-prev-event .detail-nav-label {
-        text-align: left;
-      }
-      .detail-next-event .detail-nav-label {
-        text-align: right;
-      }
-      .detail-nav-event-info {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: #7ec8e3;
-        font-weight: 500;
-      }
-      .detail-next-event .detail-nav-event-info {
-        justify-content: flex-end;
-      }
-      .detail-nav-year {
-        font-size: 0.85em;
-        color: #6bc46b;
-        margin-top: 4px;
-      }
-      .detail-next-event .detail-nav-year {
-        text-align: right;
-      }
-      
-      .detail-doc-content {
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 8px;
-        padding: 15px;
-        margin-top: 10px;
-        line-height: 1.6;
-      }
-      .detail-doc-content h1, .detail-doc-content h2, .detail-doc-content h3 {
-        color: #7ec8e3;
-        margin-top: 15px;
-      }
-      .detail-doc-content blockquote {
-        border-left: 3px solid #7ec8e3;
-        padding-left: 15px;
-        margin: 10px 0;
-        color: #c0c0c0;
-        font-style: italic;
-      }
-      
-      /* Date display */
-      .detail-date-row {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .detail-date-item {
-        flex: 1;
-        min-width: 150px;
-      }
-      .detail-date-label {
-        font-size: 0.8em;
-        color: #888;
-        text-transform: uppercase;
-      }
-      .detail-date-value {
-        font-size: 1.1em;
-        color: #e0e0e0;
-      }
-      .lunar-calendar-link {
-        text-decoration: none;
-        cursor: pointer;
-        opacity: 0.8;
-        transition: opacity 0.2s;
-      }
-      .lunar-calendar-link:hover {
-        opacity: 1;
-      }
-      .lunar-date-link {
-        color: #6bc46b;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.2s;
-        padding: 4px 8px;
-        border-radius: 4px;
-        background: rgba(107, 196, 107, 0.1);
-        display: inline-block;
-      }
-      .lunar-date-link:hover {
-        background: rgba(107, 196, 107, 0.2);
-        color: #8fd68f;
-      }
-      .detail-reckoning-note {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      
-      /* Search results list styles */
-      .search-results-list {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .search-result-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 12px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.2s;
-      }
-      .search-result-item:hover {
-        background: rgba(126, 200, 227, 0.2);
-      }
-      .search-result-icon {
-        font-size: 1.2em;
-        flex-shrink: 0;
-      }
-      .search-result-title {
-        flex: 1;
-        color: #e0e0e0;
-      }
-      .search-result-year {
-        color: #7ec8e3;
-        font-size: 0.9em;
-        white-space: nowrap;
-      }
-    `;
-    document.head.appendChild(style);
-  }
+  // Initialize resize handle
+  initResizeHandle();
+  
+  // Styles already injected by injectTimelineStyles()
+  // No need to add styles here anymore
 }
+
+// Additional CSS injected in injectTimelineStyles():
+// - .detail-description-wrapper, .detail-expand-chevron (collapsible description)
+// - .detail-nav-section, .detail-prev-next, .detail-nav-event (prev/next navigation)
+// See injectTimelineStyles() for full CSS
+
+// This placeholder function ensures CSS needed for descriptions is applied
+function ensureDescriptionStyles() {
+  // All styles are now in injectTimelineStyles() - this is a no-op
+  // Kept for backwards compatibility
+}
+
+// CSS for detail panel, tooltips, etc. is now injected by injectTimelineStyles()
 
 // NOTE: Manual history navigation removed - use browser back/forward buttons instead
 // Navigation is now handled through URL state changes
@@ -2377,6 +2646,11 @@ function showDetailPanel(html) {
   if (content) content.innerHTML = html;
   if (panel) panel.classList.add('open');
   document.body.classList.add('detail-panel-open');
+  
+  // Apply stored panel width (desktop only)
+  if (window.innerWidth > 768) {
+    applyPanelWidth(getPanelWidth());
+  }
 }
 
 // Make functions globally available
@@ -2505,13 +2779,13 @@ async function openDurationDetailInternal(durationId, addHistory = true) {
           return `
             <div class="detail-source-item">
               <div class="detail-source-ref">${srcIcon} ${refHtml}</div>
-              ${src.quote ? `<div class="detail-source-quote">"${renderMarkdown(src.quote)}"</div>` : ''}
+              ${src.quote ? `<div class="detail-source-quote">${renderMarkdown(src.quote)}</div>` : ''}
             </div>
           `;
         }).join('') :
         `<div class="detail-source-item">
           <div class="detail-source-ref">${sourceIcon} ${duration.source?.ref || 'Unknown'}</div>
-          ${duration.source?.quote ? `<div class="detail-source-quote">"${renderMarkdown(duration.source.quote)}"</div>` : ''}
+          ${duration.source?.quote ? `<div class="detail-source-quote">${renderMarkdown(duration.source.quote)}</div>` : ''}
         </div>`
       }
     </div>
@@ -2562,17 +2836,28 @@ async function openDurationDetailInternal(durationId, addHistory = true) {
       const docEl = document.getElementById('detail-doc-content');
       if (response.ok) {
         const markdown = await response.text();
-        let docHtml = markdown
-          .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-          .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-          .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-          .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-          .replace(/\*(.+?)\*/g, '<em>$1</em>')
-          .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
-          .replace(/^- (.+)$/gm, '<li>$1</li>')
-          .replace(/\n\n/g, '</p><p>')
-          .replace(/\n/g, '<br>');
-        if (docEl) docEl.innerHTML = '<p>' + docHtml + '</p>';
+        let docHtml;
+        
+        // Use marked.js if available
+        if (typeof marked !== 'undefined') {
+          marked.setOptions({ breaks: true, gfm: true, headerIds: false });
+          docHtml = marked.parse(markdown);
+          docHtml = docHtml.replace(/<table>/g, '<table class="md-table">');
+        } else {
+          // Fallback
+          docHtml = `<pre>${markdown}</pre>`;
+        }
+        
+        // Convert event references with pretty names
+        docHtml = docHtml.replace(/\[\[([a-z0-9-]+)\]\]/g, (match, eventId) => {
+          const title = getEventTitle(eventId);
+          return `<a href="#" onclick="openEventDetail('${eventId}'); return false;" class="event-ref-link" title="${eventId}">${title}</a>`;
+        });
+        
+        // Also linkify bare event IDs
+        docHtml = linkifyBareEventIds(docHtml);
+        
+        if (docEl) docEl.innerHTML = docHtml;
       } else {
         // Doc file not found - show placeholder
         if (docEl) docEl.innerHTML = '<em style="color: #888;">Documentation not yet available</em>';
@@ -2669,7 +2954,10 @@ async function openEventDetailInternal(eventId, addHistory = true) {
   // Track if source lunar has year - we'll need resolved year if not
   let sourceLunarHasYear = eventLunar?.year !== undefined;
   
-  if (eventLunar) {
+  // Check if this is a pre-flood event (year-only precision - no scriptural month/day data)
+  const isPreFlood = event.tags?.includes('pre-flood');
+  
+  if (eventLunar && !isPreFlood) {
     const l = eventLunar;
     // Astronomical year: 0 = 1 BC, -1 = 2 BC, -N = (N+1) BC
     const yearStr = l.year !== undefined ? (l.year > 0 ? l.year + ' AD' : (1 - l.year) + ' BC') : '';
@@ -2717,12 +3005,18 @@ async function openEventDetailInternal(eventId, addHistory = true) {
         const displayYear = resolvedEvent._lunarYear !== undefined ? resolvedEvent._lunarYear : resolvedLunar.year;
         // Astronomical year: 0 = 1 BC, -1 = 2 BC, -N = (N+1) BC
         const yearStr = displayYear > 0 ? displayYear + ' AD' : (1 - displayYear) + ' BC';
-        // Hebrew month names
-        const hebrewMonths = ['', 'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul', 
-                              'Tishri', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar', 'Adar II'];
-        const monthName = hebrewMonths[resolvedLunar.month] || `Month ${resolvedLunar.month}`;
-        // Format as "Tishri(7) 10, 29 AD"
-        lunarDateStr = `${monthName}(${resolvedLunar.month}) ${resolvedLunar.day}, ${yearStr}`;
+        
+        // For pre-flood events, only show year (no scriptural month/day data)
+        if (isPreFlood) {
+          lunarDateStr = yearStr;
+        } else {
+          // Hebrew month names
+          const hebrewMonths = ['', 'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul', 
+                                'Tishri', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar', 'Adar II'];
+          const monthName = hebrewMonths[resolvedLunar.month] || `Month ${resolvedLunar.month}`;
+          // Format as "Tishri(7) 10, 29 AD"
+          lunarDateStr = `${monthName}(${resolvedLunar.month}) ${resolvedLunar.day}, ${yearStr}`;
+        }
       }
       // If source lunar had month/day but no year, append the resolved year
       else if (!sourceLunarHasYear && resolvedLunar && lunarDateStr !== '—') {
@@ -2736,8 +3030,9 @@ async function openEventDetailInternal(eventId, addHistory = true) {
   }
   
   // Build clickable lunar date (navigates to calendar)
+  // For pre-flood events, just display year without calendar link (no scriptural month/day)
   let lunarDateHtml = lunarDateStr;
-  if (lunarDateStr !== '—' && resolvedGregorian) {
+  if (lunarDateStr !== '—' && resolvedGregorian && !isPreFlood) {
     const l = eventLunar || resolvedLunar || {};
     const lunarMonth = l.month || 1;
     const lunarDay = l.day || 1;
@@ -2907,7 +3202,7 @@ async function openEventDetailInternal(eventId, addHistory = true) {
           return `
             <div class="detail-source-item">
               <div class="detail-source-ref">${srcIcon} ${refHtml}</div>
-              ${src.quote ? `<div class="detail-source-quote">"${renderMarkdown(src.quote)}"</div>` : ''}
+              ${src.quote ? `<div class="detail-source-quote">${renderMarkdown(src.quote)}</div>` : ''}
             </div>
           `;
         }).join('')}
@@ -3015,40 +3310,91 @@ async function openEventDetailInternal(eventId, addHistory = true) {
     }
   }
   
-  // Show related durations
+  // Show related durations (this event is a from or to endpoint)
   const durations = data?.durations || [];
   const relatedDurations = durations.filter(d => d.from_event === eventId || d.to_event === eventId);
   
   if (relatedDurations.length > 0) {
+    // Separate into "from this event" and "to this event"
+    const fromThis = relatedDurations.filter(d => d.from_event === eventId);
+    const toThis = relatedDurations.filter(d => d.to_event === eventId);
+    
     html += `
       <div class="detail-section">
-        <h4>Related Durations</h4>
-        ${relatedDurations.map(dur => {
-          const isFrom = dur.from_event === eventId;
-          const otherEventId = isFrom ? dur.to_event : dur.from_event;
-          const otherEvent = data?.events?.find(e => e.id === otherEventId);
-          const otherTitle = otherEvent?.title || otherEventId;
-          const otherIcon = otherEvent ? getTypeIcon(otherEvent.type) : '📍';
-          
-          let claimedStr = '';
-          if (dur.claimed) {
-            if (dur.claimed.years !== undefined) claimedStr = `${dur.claimed.years} years`;
-            else if (dur.claimed.months !== undefined) claimedStr = `${dur.claimed.months} months`;
-            else if (dur.claimed.days !== undefined) claimedStr = `${dur.claimed.days} days`;
-          }
-          
-          return `
-            <div class="detail-duration-item" onclick="openDurationDetail('${dur.id}')" style="cursor: pointer; padding: 8px; margin: 4px 0; background: rgba(255,255,255,0.03); border-radius: 6px;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span>⏱️</span>
-                <span style="color: #6bc46b; font-weight: bold;">${claimedStr}</span>
-                <span class="detail-arrow">${isFrom ? '→' : '←'}</span>
-                <span>${otherIcon} ${otherTitle}</span>
-              </div>
-              <div style="font-size: 0.85em; color: #888; margin-top: 4px;">${dur.title}</div>
+        <h4>⏱️ Related Durations (${relatedDurations.length})</h4>
+        <div class="related-durations-list">
+    `;
+    
+    // Durations starting FROM this event
+    if (fromThis.length > 0) {
+      html += `<div class="duration-group-label" style="font-size: 0.85em; color: #7ec8e3; margin: 8px 0 4px 0;">From this event →</div>`;
+      fromThis.forEach(dur => {
+        const toEvent = data?.events?.find(e => e.id === dur.to_event);
+        const toTitle = toEvent?.title || dur.to_event;
+        const toIcon = toEvent ? getTypeIcon(toEvent.type) : '📍';
+        
+        let claimedStr = '';
+        if (dur.claimed) {
+          const parts = [];
+          if (dur.claimed.years !== undefined) parts.push(`${dur.claimed.years} years`);
+          if (dur.claimed.months !== undefined) parts.push(`${dur.claimed.months} months`);
+          if (dur.claimed.days !== undefined) parts.push(`${dur.claimed.days} days`);
+          claimedStr = parts.join(', ');
+        }
+        
+        const sourceRef = dur.source?.ref || '';
+        const sourceIcon = dur.source?.type === 'scripture' ? '📖' : dur.source?.type === 'historical' ? '📜' : '';
+        
+        html += `
+          <div class="detail-duration-item" onclick="openDurationDetail('${dur.id}')" style="cursor: pointer; padding: 10px; margin: 4px 0; background: rgba(107, 196, 107, 0.08); border-left: 3px solid #6bc46b; border-radius: 0 6px 6px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span style="color: #6bc46b; font-weight: 600;">+${claimedStr}</span>
+              <span style="color: #888;">→</span>
+              <span class="event-ref-link" onclick="event.stopPropagation(); openEventDetail('${dur.to_event}')" style="display: inline-flex; align-items: center; gap: 4px; cursor: pointer;">${toIcon} ${toTitle}</span>
             </div>
-          `;
-        }).join('')}
+            <div style="font-size: 0.85em; color: #aaa; margin-top: 4px;">${dur.title}</div>
+            ${sourceRef ? `<div style="font-size: 0.8em; color: #888; margin-top: 2px;">${sourceIcon} ${sourceRef}</div>` : ''}
+          </div>
+        `;
+      });
+    }
+    
+    // Durations ending AT this event
+    if (toThis.length > 0) {
+      html += `<div class="duration-group-label" style="font-size: 0.85em; color: #7ec8e3; margin: 12px 0 4px 0;">← To this event</div>`;
+      toThis.forEach(dur => {
+        const fromEvent = data?.events?.find(e => e.id === dur.from_event);
+        const fromTitle = fromEvent?.title || dur.from_event;
+        const fromIcon = fromEvent ? getTypeIcon(fromEvent.type) : '📍';
+        
+        let claimedStr = '';
+        if (dur.claimed) {
+          const parts = [];
+          if (dur.claimed.years !== undefined) parts.push(`${dur.claimed.years} years`);
+          if (dur.claimed.months !== undefined) parts.push(`${dur.claimed.months} months`);
+          if (dur.claimed.days !== undefined) parts.push(`${dur.claimed.days} days`);
+          claimedStr = parts.join(', ');
+        }
+        
+        const sourceRef = dur.source?.ref || '';
+        const sourceIcon = dur.source?.type === 'scripture' ? '📖' : dur.source?.type === 'historical' ? '📜' : '';
+        
+        html += `
+          <div class="detail-duration-item" onclick="openDurationDetail('${dur.id}')" style="cursor: pointer; padding: 10px; margin: 4px 0; background: rgba(212, 160, 23, 0.08); border-left: 3px solid #d4a017; border-radius: 0 6px 6px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span class="event-ref-link" onclick="event.stopPropagation(); openEventDetail('${dur.from_event}')" style="display: inline-flex; align-items: center; gap: 4px; cursor: pointer;">${fromIcon} ${fromTitle}</span>
+              <span style="color: #888;">→</span>
+              <span style="color: #d4a017; font-weight: 600;">+${claimedStr}</span>
+            </div>
+            <div style="font-size: 0.85em; color: #aaa; margin-top: 4px;">${dur.title}</div>
+            ${sourceRef ? `<div style="font-size: 0.8em; color: #888; margin-top: 2px;">${sourceIcon} ${sourceRef}</div>` : ''}
+          </div>
+        `;
+      });
+    }
+    
+    html += `
+        </div>
       </div>
     `;
   }
@@ -3136,14 +3482,29 @@ function openEventDetail(eventId) {
 // State-driven render function (called by TimelineView)
 async function showEventDetailFromState(eventId) {
   // Clear search filter when viewing an event (so selected event can be shown)
-  const needsRerender = activeSearchResultIds !== null;
-  if (needsRerender) {
+  const hadSearchFilter = activeSearchResultIds !== null;
+  if (hadSearchFilter) {
     activeSearchResultIds = null;
     activeSearchDurationIds = null;
+  }
+  
+  // Only re-render if the selected event isn't already visible on the timeline
+  // This avoids unnecessary double-renders when navigating back to a previous state
+  const eventEl = document.querySelector(`[data-event-id="${eventId}"]`);
+  if (!eventEl && document.getElementById('timeline-scroll-container')) {
+    // Event not visible but timeline exists - need to re-render to show it
     renderBiblicalTimeline();
   }
   
   await openEventDetailInternal(eventId, false);
+  
+  // Apply hover/focus highlighting to the selected event (same as mouse-over)
+  // Use setTimeout to ensure DOM is ready after any re-render
+  setTimeout(() => {
+    if (typeof handleEventHoverEnter === 'function') {
+      handleEventHoverEnter(eventId);
+    }
+  }, 100);
 }
 
 // Scroll the timeline to center on a specific year with animation
@@ -3277,12 +3638,14 @@ window.syncTimelineZoomAndPosition = function(targetZoom, targetYear) {
   const scrollContainer = document.getElementById('timeline-scroll-container');
   if (!scrollContainer) return;
   
-  const zoomChanged = targetZoom !== null && targetZoom !== biblicalTimelineZoom;
+  // Clamp zoom to valid range (0.1 to 500)
+  const clampedZoom = targetZoom !== null ? Math.max(0.1, Math.min(500, targetZoom)) : null;
+  const zoomChanged = clampedZoom !== null && clampedZoom !== biblicalTimelineZoom;
   const yearChanged = targetYear !== null;
   
   if (zoomChanged) {
     // Apply zoom and re-render
-    biblicalTimelineZoom = targetZoom;
+    biblicalTimelineZoom = clampedZoom;
     renderBiblicalTimeline();
     
     // After render, scroll to year if provided
@@ -3302,6 +3665,35 @@ async function renderBiblicalTimeline() {
   const container = document.getElementById('biblical-timeline-vis-container');
   if (!container) return;
   
+  // Prevent concurrent renders - queue a pending render instead
+  if (renderInProgress) {
+    console.log('[renderBiblicalTimeline] Render already in progress, queuing pending render');
+    renderPending = true;
+    return;
+  }
+  
+  renderInProgress = true;
+  renderPending = false;
+  
+  try {
+    await renderBiblicalTimelineInternal(container);
+  } finally {
+    renderInProgress = false;
+    
+    // If a render was requested while we were rendering, do it now
+    if (renderPending) {
+      console.log('[renderBiblicalTimeline] Processing pending render');
+      renderPending = false;
+      setTimeout(() => renderBiblicalTimeline(), 50);
+    }
+  }
+}
+
+// Internal render function (called by renderBiblicalTimeline with lock held)
+async function renderBiblicalTimelineInternal(container) {
+  // Inject styles early (before any UI interactions)
+  injectTimelineStyles();
+  
   const data = await loadBiblicalTimelineData();
   if (!data) {
     container.innerHTML = '<div class="biblical-timeline-error">Failed to load events.</div>';
@@ -3311,8 +3703,12 @@ async function renderBiblicalTimeline() {
   // Get calendar profile for resolution
   const profile = getTimelineProfile();
   
+  console.log('[renderBiblicalTimeline] Checking cache validity...');
+  console.log(`[renderBiblicalTimeline] RAM cache exists: ${!!biblicalTimelineResolvedCache}, cache key exists: ${!!biblicalTimelineCacheKey}`);
+  
   // Check if we need to calculate (not cached) - show progress bar
-  const needsCalculation = !isTimelineCacheValid(data, profile);
+  let needsCalculation = !isTimelineCacheValid(data, profile);
+  console.log(`[renderBiblicalTimeline] needsCalculation=${needsCalculation}`);
   
   // Check if background resolution is in progress
   const bgInProgress = backgroundResolutionInProgress;
@@ -3324,13 +3720,16 @@ async function renderBiblicalTimeline() {
       : 'Calculating biblical timeline...';
     const initialProgress = bgInProgress ? backgroundResolutionProgress : 0;
     
+    // Reset global progress floor to current state (prevents backward jumps)
+    globalProgressFloor = initialProgress;
+    
     container.innerHTML = `
       <div class="timeline-loading-container">
         <div class="timeline-loading-text">${statusText}</div>
         <div class="timeline-progress-bar">
           <div class="timeline-progress-fill" style="width: ${initialProgress}%"></div>
         </div>
-        <div class="timeline-loading-subtext">Resolving event dates across 6,000+ years</div>
+        <div class="timeline-loading-subtext">${initialProgress > 0 ? `${initialProgress}% complete` : 'Preparing...'}</div>
       </div>
     `;
     
@@ -3348,6 +3747,11 @@ async function renderBiblicalTimeline() {
         }, 100);
       });
       console.log('[Timeline] Background resolution complete, proceeding...');
+      // Re-check cache validity - background should have populated it
+      needsCalculation = !isTimelineCacheValid(data, profile);
+      if (!needsCalculation) {
+        console.log('[Timeline] Cache now valid from background resolution');
+      }
     } else {
       // Allow UI to paint before heavy calculation
       await new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 50)));
@@ -4096,11 +4500,13 @@ async function renderBiblicalTimeline() {
   // =====================================================
   // LAYOUT CONSTANTS - used throughout rendering
   // All positions derive from these values
+  // Reduce dimensions on narrow mobile screens
   // =====================================================
-  const RULER_WIDTH = 35;
-  const LUNAR_BARS_WIDTH = 10; // 5px years + 5px months
+  const isMobileNarrowLayout = window.innerWidth <= 480;
+  const RULER_WIDTH = isMobileNarrowLayout ? 38 : 45; // +10px gap between year labels and axis
+  const LUNAR_BARS_WIDTH = isMobileNarrowLayout ? 6 : 10; // years + months
   const AXIS_LINE_WIDTH = 2;
-  const DURATION_GAP = 8;
+  const DURATION_GAP = isMobileNarrowLayout ? 4 : 8;
   
   // Calculate pixelPerYear to fit the full range in the available space
   // Base timeline is 3x the container height at zoom 1.0, so there's always something to scroll
@@ -4187,8 +4593,9 @@ async function renderBiblicalTimeline() {
   // Never hide an event just because of zoom level - try to show ALL events
   // If space is tight, higher priority events get slots first, lower priority may be displaced
   
-  // Each event label is ~32px tall + 8px spacing = 40px slot
-  const eventHeight = 40;
+  // Each event label is ~32px tall + 8px spacing = 40px slot (24px + 6px on narrow mobile)
+  // Use isMobileNarrowLayout from layout constants above
+  const eventHeight = isMobileNarrowLayout ? 30 : 40;
   const yearsPerSlot = eventHeight / pixelPerYear;
   
   // Max slots an event can be displaced from its natural position before being hidden
@@ -4202,8 +4609,20 @@ async function renderBiblicalTimeline() {
   const durationEventsToKeep = allEvents.filter(e => hasDuration(e));
   const pointEventsForAlloc = allEvents.filter(e => !hasDuration(e) && e.startJD !== null);
   
+  // Get selected event ID from state - this event MUST always be shown
+  let selectedEventIdForSlots = null;
+  if (typeof AppStore !== 'undefined') {
+    const state = AppStore.getState();
+    selectedEventIdForSlots = state?.ui?.timelineEventId;
+  }
+  
   // Sort point events by priority (highest priority = lowest number = first)
+  // Selected event gets absolute priority (0)
   const sortedPointEvents = [...pointEventsForAlloc].sort((a, b) => {
+    // Selected event always comes first
+    if (a.id === selectedEventIdForSlots) return -1;
+    if (b.id === selectedEventIdForSlots) return 1;
+    
     const aPri = getEventPriority(a);
     const bPri = getEventPriority(b);
     if (aPri !== bPri) return aPri - bPri;
@@ -4248,6 +4667,24 @@ async function renderBiblicalTimeline() {
       if (assignedSlot !== null) break;
     }
     
+    // If no slot found within normal range, but this is the selected event, force a slot
+    if (assignedSlot === null && event.id === selectedEventIdForSlots) {
+      // Selected event MUST be shown - find any free slot or create one
+      for (let off = maxDisplacementSlots + 1; off <= maxDisplacementSlots * 4; off++) {
+        for (const trySlot of [naturalSlot + off, naturalSlot - off]) {
+          if (trySlot >= 0 && !allocatedSlots.has(trySlot)) {
+            assignedSlot = trySlot;
+            break;
+          }
+        }
+        if (assignedSlot !== null) break;
+      }
+      // Last resort: just use the natural slot and evict whoever is there
+      if (assignedSlot === null) {
+        assignedSlot = naturalSlot;
+      }
+    }
+    
     if (assignedSlot !== null) {
       // Check if we're evicting someone
       const evicted = allocatedSlots.get(assignedSlot);
@@ -4284,24 +4721,26 @@ async function renderBiblicalTimeline() {
   // Extract just the events for rendering
   let eventsToShow = [...durationEventsToKeep, ...eventsWithSlots.map(e => e.event)];
   
-  // Build HTML - with tab navigation and filter toggles (z-index higher than slideout so filters stay visible)
-  let html = '<div style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; background: #1a1a2e; flex-wrap: wrap; gap: 8px; position: relative; z-index: 9500;">';
-  html += '<div style="display: flex; align-items: center; gap: 4px;">';
-  html += '<button onclick="switchTimelineTab(\'table\')" style="padding: 6px 12px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">📊 Table</button>';
-  html += '<button style="padding: 6px 12px; background: #4a9eff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">📈 Graph</button>';
-  html += '<button onclick="switchTimelineTab(\'durations\')" style="padding: 6px 12px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">🔗 Durations</button>';
-  html += '</div>';
+  // Build HTML - clean header with search bar and close button
+  // Get current state to determine if detail panel is open
+  const hasDetailOpen = typeof AppStore !== 'undefined' && 
+    (AppStore.getState()?.ui?.timelineEventId || AppStore.getState()?.ui?.timelineDurationId);
   
-  // Search bar - far right
-  // Get search value from state (unidirectional flow)
+  let html = '<div class="timeline-header-bar" id="timeline-header-bar" style="display: flex; justify-content: space-between; align-items: center; height: 36px; padding: 0 10px; background: #1a1a2e; gap: 8px; position: relative; z-index: 9500;">';
+  
+  // Left side: timeline icon - clicking closes event detail and shows full timeline
+  html += `<img src="/assets/img/timeline_icon.png" alt="Timeline" class="menu-icon-img" title="Close event detail and show timeline" style="width: 24px; height: 24px; cursor: pointer;" onclick="timelineCloseEventDetail()">`;
+  
+  // Right side: search bar and X button
   const currentSearch = getTimelineSearchFromState();
-  html += `<div class="timeline-search-bar" style="margin-left: auto;">
+  html += `<div class="timeline-search-bar" style="display: flex; align-items: center; gap: 6px;">
     <input type="text" id="biblical-timeline-search" placeholder="Search events..." 
       value="${currentSearch ? currentSearch.replace(/"/g, '&quot;') : ''}"
       onkeyup="if(event.key==='Enter')timelineSearchAndZoom()">
     <button class="timeline-search-btn" onclick="timelineSearchAndZoom()" title="Search">🔍</button>
-    <button class="timeline-search-btn" onclick="timelineClearSearch()" title="Clear & Close">✕</button>
+    <button class="timeline-search-btn" onclick="timelineClearAndClose()" title="Clear search & close detail">✕</button>
   </div>`;
+  
   html += '</div>';
   
   // Zoom and filter controls - fixed bottom left
@@ -4901,8 +5340,9 @@ async function renderBiblicalTimeline() {
   
   // Process durations array into renderable bars
   const durationBars = [];
-  const barWidth = 8;
-  const barGap = 2;
+  // Reduce bar width and gap on narrow mobile screens (reuse isMobileNarrowLayout from above)
+  const barWidth = isMobileNarrowLayout ? 4 : 8;
+  const barGap = isMobileNarrowLayout ? 1 : 2;
   
   // Create lookup map for event ID -> title and date
   const eventLookup = {};
@@ -5182,7 +5622,10 @@ async function renderBiblicalTimeline() {
            data-event-color="${pointEvent.color}"
            data-event-left="${eventLeft}"
            title="${eventTooltip}"
-           onclick="openEventDetail('${pointEvent.event.id}')">
+           onclick="handleEventClick('${pointEvent.event.id}', event)"
+           ontouchend="handleEventTouchEnd('${pointEvent.event.id}', event)"
+           onmouseenter="handleEventHoverEnter('${pointEvent.event.id}')"
+           onmouseleave="handleEventHoverLeave()">
         <span class="stacked-event-icon">${pointEvent.icon}</span>
         <span class="stacked-event-title">${pointEvent.event.title}</span>
         ${clusterBadge}
@@ -5210,6 +5653,10 @@ async function renderBiblicalTimeline() {
   
   // Set up drag-to-pan (only once)
   setupTimelineDragHandlers();
+  
+  // Reset progress floor now that timeline is fully rendered
+  // (allows fresh progress tracking on next navigation)
+  globalProgressFloor = 0;
 }
 
 // Draw connecting lines from point events to timeline
@@ -5334,6 +5781,414 @@ function setupCanvasScrollHandler(eventsStackLeft, timelineHeight) {
   scrollContainer.addEventListener('scroll', scrollContainer._canvasScrollHandler);
 }
 
+// =====================================================
+// EVENT HOVER FOCUS MODE
+// =====================================================
+
+let currentHoveredEventId = null;
+let hoverFocusTimeout = null;
+let lastInputWasTouch = false; // Track actual input type, not device capability
+let lastTouchTime = 0; // Timestamp of last touch event
+
+// Detect actual touch input - use timestamp to ignore synthetic mouse events after touch
+document.addEventListener('touchstart', () => { 
+  lastInputWasTouch = true; 
+  lastTouchTime = Date.now();
+}, { passive: true });
+
+document.addEventListener('mousedown', () => { 
+  // Only count as mouse if it's been >500ms since last touch
+  // (synthetic mouse events fire within ~300ms of touch)
+  if (Date.now() - lastTouchTime > 500) {
+    lastInputWasTouch = false;
+  }
+}, { passive: true });
+
+// Find all events related to a given event via durations
+function findRelatedEvents(eventId) {
+  const data = biblicalTimelineDataV2;
+  if (!data) {
+    console.log('[findRelatedEvents] No data available');
+    return { events: [], durations: [] };
+  }
+  
+  const durations = data.durations || [];
+  const relatedEventIds = new Set();
+  const relatedDurationIds = new Set();
+  
+  // Find durations that reference this event
+  durations.forEach(dur => {
+    if (dur.from_event === eventId || dur.to_event === eventId) {
+      relatedDurationIds.add(dur.id);
+      if (dur.from_event && dur.from_event !== eventId) relatedEventIds.add(dur.from_event);
+      if (dur.to_event && dur.to_event !== eventId) relatedEventIds.add(dur.to_event);
+    }
+  });
+  
+  // Also check for events that derive from this one (relative dates)
+  const events = data.events || [];
+  events.forEach(ev => {
+    const startSpec = ev.start || ev.dates;
+    if (startSpec?.relative?.event === eventId) {
+      relatedEventIds.add(ev.id);
+    }
+    // Check if this event is the derivation source
+    if (ev.id === eventId && startSpec?.relative?.event) {
+      relatedEventIds.add(startSpec.relative.event);
+    }
+  });
+  
+  console.log(`[findRelatedEvents] For "${eventId}": found ${relatedEventIds.size} related events, ${relatedDurationIds.size} durations`);
+  if (relatedEventIds.size > 0) {
+    console.log('  Related events:', Array.from(relatedEventIds));
+  }
+  if (relatedDurationIds.size > 0) {
+    console.log('  Related durations:', Array.from(relatedDurationIds));
+  }
+  
+  return {
+    events: Array.from(relatedEventIds),
+    durations: Array.from(relatedDurationIds)
+  };
+}
+
+// Show tooltip with event summary
+function showEventTooltip(eventId, anchorEl) {
+  // Remove any existing tooltip
+  hideEventTooltip();
+  
+  // Get event data from cache
+  const event = biblicalTimelineResolvedCache?.find(e => e.id === eventId);
+  if (!event) return;
+  
+  // Format the date
+  let dateStr = '';
+  if (event.startJD && typeof EventResolver !== 'undefined') {
+    const greg = EventResolver.julianDayToGregorian(event.startJD);
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const yearStr = greg.year <= 0 ? `${1 - greg.year} BC` : `${greg.year} AD`;
+    dateStr = `${monthNames[greg.month - 1]} ${greg.day}, ${yearStr}`;
+  }
+  
+  // Get brief description (first sentence or first 100 chars)
+  let briefDesc = '';
+  if (event.description) {
+    const firstSentence = event.description.split(/[.!?]/)[0];
+    briefDesc = firstSentence.length > 120 ? firstSentence.substring(0, 117) + '...' : firstSentence;
+  }
+  
+  // Create tooltip element
+  const tooltip = document.createElement('div');
+  tooltip.id = 'event-hover-tooltip';
+  tooltip.className = 'event-hover-tooltip';
+  tooltip.innerHTML = `
+    <div class="tooltip-title">${event.title || eventId}</div>
+    <div class="tooltip-date">${dateStr}</div>
+    ${briefDesc ? `<div class="tooltip-desc">${briefDesc}</div>` : ''}
+    <a href="#" class="tooltip-link" onclick="hideEventTooltip(); openEventDetail('${eventId}'); return false;">View Details →</a>
+  `;
+  
+  // Position tooltip inside the scroll content so it scrolls with timeline
+  const scrollContent = document.getElementById('biblical-timeline-scroll');
+  if (scrollContent && anchorEl) {
+    // Get anchor position relative to scroll content
+    const anchorRect = anchorEl.getBoundingClientRect();
+    const contentRect = scrollContent.getBoundingClientRect();
+    
+    // Calculate position relative to scroll content (not viewport)
+    const relativeTop = anchorRect.top - contentRect.top + anchorEl.offsetHeight + 8;
+    const relativeLeft = anchorRect.left - contentRect.left;
+    
+    // Position inside the scroll content with absolute positioning
+    tooltip.style.position = 'absolute';
+    tooltip.style.left = `${Math.max(10, Math.min(relativeLeft, scrollContent.offsetWidth - 290))}px`;
+    tooltip.style.top = `${relativeTop}px`;
+    
+    scrollContent.appendChild(tooltip);
+  } else {
+    // Fallback to body if scroll content not found
+    document.body.appendChild(tooltip);
+  }
+}
+
+// Hide the event tooltip
+function hideEventTooltip() {
+  const tooltip = document.getElementById('event-hover-tooltip');
+  if (tooltip) tooltip.remove();
+}
+
+// Handle mouse enter on an event
+function handleEventHoverEnter(eventId) {
+  // Clear any pending timeout
+  if (hoverFocusTimeout) {
+    clearTimeout(hoverFocusTimeout);
+    hoverFocusTimeout = null;
+  }
+  
+  currentHoveredEventId = eventId;
+  
+  const wrapper = document.getElementById('biblical-timeline-scroll');
+  if (!wrapper) return;
+  
+  // Clear previous focus classes before applying new ones
+  wrapper.querySelectorAll('.event-focused').forEach(el => el.classList.remove('event-focused'));
+  wrapper.querySelectorAll('.event-related').forEach(el => el.classList.remove('event-related'));
+  wrapper.querySelectorAll('.duration-related').forEach(el => el.classList.remove('duration-related'));
+  
+  // Find related events and durations
+  const related = findRelatedEvents(eventId);
+  
+  // Add focus mode class to wrapper
+  wrapper.classList.add('timeline-focus-mode');
+  
+  // Mark the focused event and show tooltip
+  const focusedEl = wrapper.querySelector(`[data-event-id="${eventId}"]`);
+  if (focusedEl) {
+    focusedEl.classList.add('event-focused');
+    // Show tooltip on mobile (touch device) only
+    if (lastInputWasTouch || (Date.now() - lastTouchTime < 1000)) {
+      showEventTooltip(eventId, focusedEl);
+    }
+  }
+  
+  // Mark related events
+  let foundRelatedEvents = 0;
+  related.events.forEach(relId => {
+    const relEl = wrapper.querySelector(`[data-event-id="${relId}"]`);
+    if (relEl) {
+      relEl.classList.add('event-related');
+      foundRelatedEvents++;
+    } else {
+      console.log(`[handleEventHoverEnter] Related event NOT in DOM: "${relId}"`);
+    }
+  });
+  
+  // Mark related duration bars
+  let foundRelatedDurations = 0;
+  related.durations.forEach(durId => {
+    const durEl = wrapper.querySelector(`[data-duration-id="${durId}"]`);
+    if (durEl) {
+      durEl.classList.add('duration-related');
+      foundRelatedDurations++;
+    } else {
+      console.log(`[handleEventHoverEnter] Related duration NOT in DOM: "${durId}"`);
+    }
+  });
+  
+  console.log(`[handleEventHoverEnter] Highlighted ${foundRelatedEvents}/${related.events.length} events, ${foundRelatedDurations}/${related.durations.length} durations`);
+  
+  // Redraw connecting lines with highlight
+  redrawLinesWithHighlight(eventId, related.events);
+}
+
+// Handle mouse leave on an event
+// Focus is now "sticky" - it persists until user hovers a new event or clicks elsewhere
+function handleEventHoverLeave() {
+  // Do nothing - focus remains until user hovers a different event or clicks away
+  // This reduces visual clutter by keeping focus locked
+}
+
+// Clear all focus mode styling
+function clearEventHoverFocus() {
+  currentHoveredEventId = null;
+  
+  // Hide tooltip
+  hideEventTooltip();
+  
+  const wrapper = document.getElementById('biblical-timeline-scroll');
+  if (!wrapper) return;
+  
+  // Remove focus mode
+  wrapper.classList.remove('timeline-focus-mode');
+  
+  // Remove all focused/related classes
+  wrapper.querySelectorAll('.event-focused').forEach(el => el.classList.remove('event-focused'));
+  wrapper.querySelectorAll('.event-related').forEach(el => el.classList.remove('event-related'));
+  wrapper.querySelectorAll('.duration-related').forEach(el => el.classList.remove('duration-related'));
+  
+  // Redraw lines normally
+  const layout = window._timelineLayout || { axisLineLeft: 35, eventsStackLeft: 100 };
+  const timelineHeight = wrapper.offsetHeight;
+  drawEventConnectingLines(layout.eventsStackLeft, timelineHeight);
+}
+
+// Redraw connecting lines with specific events highlighted
+function redrawLinesWithHighlight(focusedEventId, relatedEventIds) {
+  const scrollContainer = document.getElementById('timeline-scroll-container');
+  const wrapper = document.getElementById('biblical-timeline-scroll');
+  if (!wrapper || !scrollContainer) return;
+  
+  // Remove existing canvas
+  const existingCanvas = wrapper.querySelector('.event-lines-canvas');
+  if (existingCanvas) existingCanvas.remove();
+  
+  const stackedEvents = document.querySelectorAll('.stacked-event');
+  if (stackedEvents.length === 0) return;
+  
+  const viewportHeight = scrollContainer.clientHeight;
+  const scrollTop = scrollContainer.scrollTop;
+  const viewportBottom = scrollTop + viewportHeight;
+  const timelineHeight = wrapper.offsetHeight;
+  
+  const canvasHeight = Math.min(viewportHeight + 200, timelineHeight);
+  const canvasTop = Math.max(0, scrollTop - 100);
+  
+  const canvas = document.createElement('canvas');
+  canvas.className = 'event-lines-canvas';
+  
+  const layout = window._timelineLayout || { axisLineLeft: 35, eventsStackLeft: 100 };
+  const canvasLeft = layout.axisLineLeft + 2;
+  const canvasWidth = layout.eventsStackLeft - canvasLeft + 50;
+  canvas.width = canvasWidth;
+  canvas.height = canvasHeight;
+  canvas.style.cssText = `
+    position: absolute;
+    left: ${canvasLeft}px;
+    top: ${canvasTop}px;
+    width: ${canvasWidth}px;
+    height: ${canvasHeight}px;
+    pointer-events: none;
+    z-index: 1;
+    background-color: transparent;
+  `;
+  
+  wrapper.appendChild(canvas);
+  
+  const ctx = canvas.getContext('2d', { alpha: true });
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const timelineX = 0;
+  
+  const highlightedIds = new Set([focusedEventId, ...relatedEventIds]);
+  
+  // Draw non-highlighted lines first (very faint)
+  stackedEvents.forEach(eventEl => {
+    const eventId = eventEl.dataset.eventId;
+    if (highlightedIds.has(eventId)) return; // Skip, will draw later
+    
+    const timelinePos = parseFloat(eventEl.dataset.eventTimelinePos);
+    const displayPos = parseFloat(eventEl.dataset.eventDisplayPos);
+    const eventLeft = parseFloat(eventEl.dataset.eventLeft) || layout.eventsStackLeft;
+    
+    if (isNaN(timelinePos) || isNaN(displayPos)) return;
+    
+    const minPos = Math.min(timelinePos, displayPos);
+    const maxPos = Math.max(timelinePos, displayPos);
+    if (maxPos < scrollTop - 100 || minPos > viewportBottom + 100) return;
+    
+    const adjustedTimelinePos = timelinePos - canvasTop;
+    const adjustedDisplayPos = displayPos - canvasTop;
+    const eventX = eventLeft - canvasLeft;
+    
+    ctx.strokeStyle = 'rgba(126, 200, 227, 0.15)';
+    ctx.lineWidth = 1;
+    ctx.globalAlpha = 0.3;
+    
+    ctx.beginPath();
+    ctx.moveTo(timelineX, adjustedTimelinePos);
+    ctx.bezierCurveTo(
+      eventX * 0.3, adjustedTimelinePos,
+      eventX * 0.7, adjustedDisplayPos,
+      eventX, adjustedDisplayPos
+    );
+    ctx.stroke();
+  });
+  
+  // Draw highlighted lines on top (bright)
+  stackedEvents.forEach(eventEl => {
+    const eventId = eventEl.dataset.eventId;
+    if (!highlightedIds.has(eventId)) return;
+    
+    const timelinePos = parseFloat(eventEl.dataset.eventTimelinePos);
+    const displayPos = parseFloat(eventEl.dataset.eventDisplayPos);
+    const eventLeft = parseFloat(eventEl.dataset.eventLeft) || layout.eventsStackLeft;
+    const color = eventEl.dataset.eventColor || 'rgba(126, 200, 227, 0.5)';
+    
+    if (isNaN(timelinePos) || isNaN(displayPos)) return;
+    
+    const minPos = Math.min(timelinePos, displayPos);
+    const maxPos = Math.max(timelinePos, displayPos);
+    if (maxPos < scrollTop - 100 || minPos > viewportBottom + 100) return;
+    
+    const adjustedTimelinePos = timelinePos - canvasTop;
+    const adjustedDisplayPos = displayPos - canvasTop;
+    const eventX = eventLeft - canvasLeft;
+    
+    // Use different style for focused vs related
+    const isFocused = eventId === focusedEventId;
+    ctx.strokeStyle = isFocused ? '#7ec8e3' : '#d4a017';
+    ctx.lineWidth = isFocused ? 3 : 2;
+    ctx.globalAlpha = 1;
+    
+    ctx.beginPath();
+    ctx.moveTo(timelineX, adjustedTimelinePos);
+    ctx.bezierCurveTo(
+      eventX * 0.3, adjustedTimelinePos,
+      eventX * 0.7, adjustedDisplayPos,
+      eventX, adjustedDisplayPos
+    );
+    ctx.stroke();
+    
+    // Add glow effect for focused event
+    if (isFocused) {
+      ctx.strokeStyle = 'rgba(126, 200, 227, 0.3)';
+      ctx.lineWidth = 6;
+      ctx.stroke();
+    }
+  });
+  
+  ctx.globalAlpha = 1.0;
+}
+
+// Track if touch was handled (to prevent click from also firing)
+let touchHandledForEvent = null;
+
+// Handle touch end on event - implements tap-to-focus, tap-again-to-open
+function handleEventTouchEnd(eventId, evt) {
+  console.log(`[handleEventTouchEnd] eventId=${eventId}, currentHoveredEventId=${currentHoveredEventId}`);
+  
+  // Mark that we handled this touch (so click can be ignored)
+  touchHandledForEvent = eventId;
+  
+  // Prevent default to stop the synthetic click
+  evt.preventDefault();
+  
+  if (currentHoveredEventId === eventId) {
+    // Already focused - open the detail (hide tooltip first)
+    console.log('[handleEventTouchEnd] Already focused, opening detail');
+    hideEventTooltip();
+    openEventDetail(eventId);
+  } else {
+    // Not focused - focus this event (will show tooltip)
+    console.log('[handleEventTouchEnd] Focusing event');
+    handleEventHoverEnter(eventId);
+  }
+}
+
+// Handle event click - for mouse only (touch handled by touchend)
+function handleEventClick(eventId, evt) {
+  console.log(`[handleEventClick] eventId=${eventId}, touchHandledForEvent=${touchHandledForEvent}`);
+  
+  // If touch already handled this, ignore the click
+  if (touchHandledForEvent === eventId) {
+    console.log('[handleEventClick] Ignoring - already handled by touch');
+    touchHandledForEvent = null;
+    evt.preventDefault();
+    return;
+  }
+  touchHandledForEvent = null;
+  
+  // Mouse click: always open directly
+  console.log('[handleEventClick] Mouse: opening detail directly');
+  openEventDetail(eventId);
+}
+
+// Make hover and click functions globally available
+window.handleEventClick = handleEventClick;
+window.handleEventTouchEnd = handleEventTouchEnd;
+window.handleEventHoverEnter = handleEventHoverEnter;
+window.handleEventHoverLeave = handleEventHoverLeave;
+window.clearEventHoverFocus = clearEventHoverFocus;
+
 // Global drag state
 let timelineDragState = {
   isDragging: false,
@@ -5382,6 +6237,16 @@ function setupTimelineDragHandlers() {
     e.preventDefault();
   };
   
+  // Click handler to clear focus when clicking empty space (not on events or durations)
+  scrollContainer.onclick = (e) => {
+    // If click is on a stacked event or duration bar, don't clear focus
+    // (the event's own onclick or the hover will handle it)
+    if (e.target.closest('.stacked-event') || e.target.closest('.duration-event-bar')) return;
+    
+    // Clear focus mode when clicking empty timeline space
+    clearEventHoverFocus();
+  };
+  
   // Touch support
   scrollContainer.ontouchstart = (e) => {
     if (e.target.closest('.stacked-event') || e.target.closest('.duration-event-bar')) return;
@@ -5425,7 +6290,7 @@ function zoomTimelineWithCenter(zoomFactor) {
   
   if (!scrollContainer || !scrollContent) {
     // Fallback if elements not found
-    biblicalTimelineZoom = Math.max(0.1, Math.min(5000, biblicalTimelineZoom * zoomFactor));
+    biblicalTimelineZoom = Math.max(0.1, Math.min(500, (biblicalTimelineZoom || 1.0) * zoomFactor));
     renderBiblicalTimeline();
     return;
   }
@@ -5435,13 +6300,18 @@ function zoomTimelineWithCenter(zoomFactor) {
   const viewportHeight = scrollContainer.clientHeight;
   const oldContentHeight = scrollContent.clientHeight;
   
-  // Calculate the center point as a ratio of total content
-  const centerOffset = oldScrollTop + (viewportHeight / 2);
-  const centerRatio = centerOffset / oldContentHeight;
+  // Guard against invalid content height
+  if (!oldContentHeight || oldContentHeight <= 0) {
+    console.warn('[Zoom] Invalid content height, skipping zoom');
+    return;
+  }
   
-  // Apply zoom - allow zooming out to 0.1 (very zoomed out) and in to 5000 (day-level)
-  const oldZoom = biblicalTimelineZoom;
-  biblicalTimelineZoom = Math.max(0.1, Math.min(5000, biblicalTimelineZoom * zoomFactor));
+  // Calculate center year instead of ratio to avoid precision issues at extreme zoom
+  const centerYear = getTimelineCenterYear();
+  
+  // Apply zoom - limit to 500 to avoid browser rendering issues with multi-million pixel heights
+  const oldZoom = biblicalTimelineZoom || 1.0;
+  biblicalTimelineZoom = Math.max(0.1, Math.min(500, oldZoom * zoomFactor));
   
   // If zoom didn't change, don't re-render
   if (biblicalTimelineZoom === oldZoom) return;
@@ -5449,18 +6319,13 @@ function zoomTimelineWithCenter(zoomFactor) {
   // Re-render the timeline
   renderBiblicalTimeline();
   
-  // After render, restore scroll position to keep center point
+  // After render, restore scroll position to keep center year visible
   requestAnimationFrame(() => {
-    const newScrollContainer = document.getElementById('timeline-scroll-container');
-    const newScrollContent = document.getElementById('biblical-timeline-scroll');
-    if (newScrollContainer && newScrollContent) {
-      const newContentHeight = newScrollContent.clientHeight;
-      const newCenterOffset = centerRatio * newContentHeight;
-      const newScrollTop = newCenterOffset - (viewportHeight / 2);
-      newScrollContainer.scrollTop = Math.max(0, newScrollTop);
-      // Save state after zoom
-      saveTimelineState();
+    if (centerYear !== null) {
+      scrollToTimelineYear(centerYear);
     }
+    // Save state after zoom
+    saveTimelineState();
   });
 }
 
@@ -5477,14 +6342,24 @@ function zoomTimelineAtPoint(zoomFactor, clientY, container) {
   const containerRect = container.getBoundingClientRect();
   const oldContentHeight = scrollContent.clientHeight;
   
-  // Calculate where the mouse is pointing in the content
+  // Guard against invalid content height
+  if (!oldContentHeight || oldContentHeight <= 0) {
+    console.warn('[Zoom] Invalid content height, skipping zoom');
+    return;
+  }
+  
+  // Calculate where the mouse is pointing in terms of year
+  // This is more stable than pixel ratios at extreme zoom levels
   const mouseOffsetInViewport = clientY - containerRect.top;
   const mouseOffsetInContent = oldScrollTop + mouseOffsetInViewport;
-  const mouseRatio = mouseOffsetInContent / oldContentHeight;
   
-  // Apply zoom - allow zooming out to 0.1 (very zoomed out) and in to 5000 (day-level)
-  const oldZoom = biblicalTimelineZoom;
-  biblicalTimelineZoom = Math.max(0.1, Math.min(5000, biblicalTimelineZoom * zoomFactor));
+  // Convert mouse position to year
+  const yearRange = (biblicalTimelineMaxYear || 3500) - (biblicalTimelineMinYear || -4050);
+  const mouseYear = (biblicalTimelineMinYear || -4050) + (mouseOffsetInContent / oldContentHeight) * yearRange;
+  
+  // Apply zoom - limit to 500 to avoid browser rendering issues with multi-million pixel heights
+  const oldZoom = biblicalTimelineZoom || 1.0;
+  biblicalTimelineZoom = Math.max(0.1, Math.min(500, oldZoom * zoomFactor));
   
   // If zoom didn't change, don't re-render
   if (biblicalTimelineZoom === oldZoom) return;
@@ -5498,9 +6373,15 @@ function zoomTimelineAtPoint(zoomFactor, clientY, container) {
     const newScrollContent = document.getElementById('biblical-timeline-scroll');
     if (newScrollContainer && newScrollContent) {
       const newContentHeight = newScrollContent.clientHeight;
-      const newMouseOffsetInContent = mouseRatio * newContentHeight;
+      
+      // Convert year back to pixel position in new timeline
+      const newMouseOffsetInContent = ((mouseYear - (biblicalTimelineMinYear || -4050)) / yearRange) * newContentHeight;
       const newScrollTop = newMouseOffsetInContent - mouseOffsetInViewport;
-      newScrollContainer.scrollTop = Math.max(0, newScrollTop);
+      
+      // Clamp scroll position to valid range
+      const maxScroll = newContentHeight - newScrollContainer.clientHeight;
+      newScrollContainer.scrollTop = Math.max(0, Math.min(newScrollTop, maxScroll));
+      
       // Save state after zoom
       saveTimelineState();
     }
@@ -5546,10 +6427,11 @@ function initBiblicalTimelinePage() {
   const savedState = loadTimelineState();
   
   if (zoomFromURL !== null) {
-    // Use zoom from URL
-    biblicalTimelineZoom = zoomFromURL;
+    // Use zoom from URL (clamped to valid range)
+    biblicalTimelineZoom = Math.max(0.1, Math.min(500, zoomFromURL));
   } else if (savedState) {
-    biblicalTimelineZoom = savedState.zoom || 1.0;
+    // Use saved zoom (clamped to valid range)
+    biblicalTimelineZoom = Math.max(0.1, Math.min(500, savedState.zoom || 1.0));
   }
   
   // Render timeline

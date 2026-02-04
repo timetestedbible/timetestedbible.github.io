@@ -1308,21 +1308,6 @@
       }
     },
     {
-      "id": "methuselah-death-to-methuselah-birth",
-      "title": "Methuselah's Lifespan: 969 Years",
-      "from_event": "methuselah-death",
-      "to_event": "methuselah-birth",
-      "claimed": {
-        "years": 969,
-        "direction": "before"
-      },
-      "source": {
-        "ref": "Genesis 5:27",
-        "type": "scripture",
-        "quote": "And all the days of Methuselah were **nine hundred sixty and nine years**: and he died."
-      }
-    },
-    {
       "id": "methuselah-birth-to-lamech-birth",
       "title": "Methuselah Begets Lamech: 187 Years",
       "from_event": "methuselah-birth",
@@ -1674,6 +1659,236 @@
       }
     },
     {
+      "id": "abraham-birth-to-isaac-birth",
+      "title": "Abraham's Age at Isaac's Birth: 100 Years",
+      "from_event": "abraham-birth",
+      "to_event": "isaac-birth",
+      "claimed": {
+        "years": 100
+      },
+      "source": {
+        "ref": "Genesis 21:5",
+        "type": "scripture",
+        "quote": "And **Abraham was an hundred years old**, when his son Isaac was born unto him."
+      }
+    },
+    {
+      "id": "isaac-birth-to-jacob-birth",
+      "title": "Isaac's Age at Jacob's Birth: 60 Years",
+      "from_event": "isaac-birth",
+      "to_event": "jacob-esau-birth",
+      "claimed": {
+        "years": 60
+      },
+      "source": {
+        "ref": "Genesis 25:26",
+        "type": "scripture",
+        "quote": "And **Isaac was threescore years old** when she bare them."
+      }
+    },
+    {
+      "id": "jacob-7-years-for-rachel",
+      "title": "Jacob Works 7 Years for Rachel",
+      "description": "Jacob agrees to work 7 years for Laban in exchange for Rachel's hand in marriage.",
+      "from_event": "jacob-flees-to-laban",
+      "to_event": "jacob-marries-leah-rachel",
+      "claimed": {
+        "years": 7
+      },
+      "source": {
+        "ref": "Genesis 29:18-20",
+        "type": "scripture",
+        "quote": "And Jacob loved Rachel; and said, **I will serve thee seven years for Rachel** thy younger daughter... And Jacob served **seven years** for Rachel; and they seemed unto him but a few days, for the love he had to her."
+      }
+    },
+    {
+      "id": "jacob-another-7-years-for-rachel",
+      "title": "Jacob Works Another 7 Years for Rachel",
+      "description": "After being deceived with Leah, Jacob works another 7 years to truly have Rachel as his wife.",
+      "from_event": "jacob-marries-leah-rachel",
+      "to_event": "joseph-birth",
+      "claimed": {
+        "years": 7
+      },
+      "source": {
+        "ref": "Genesis 29:27-30",
+        "type": "scripture",
+        "quote": "Fulfil her week, and we will give thee this also for the service which thou shalt serve with me yet **seven other years**. And Jacob did so... and served with him yet **seven other years**."
+      },
+      "notes": "Joseph was born at the end of the second 7-year period, prompting Jacob to ask Laban to let him return home."
+    },
+    {
+      "id": "jacob-6-years-for-flocks",
+      "title": "Jacob Works 6 Years for Flocks",
+      "description": "After Joseph's birth, Jacob works another 6 years for Laban in exchange for spotted and speckled livestock.",
+      "from_event": "joseph-birth",
+      "to_event": "jacob-returns-to-canaan",
+      "claimed": {
+        "years": 6
+      },
+      "source": {
+        "ref": "Genesis 31:41",
+        "type": "scripture",
+        "quote": "Thus have I been **twenty years in thy house**; I served thee fourteen years for thy two daughters, and **six years for thy cattle**."
+      }
+    },
+    {
+      "id": "jacob-20-years-with-laban",
+      "title": "Jacob's Total Time with Laban: 20 Years",
+      "description": "Jacob spent 20 years total with Laban: 7 years for Leah, 7 years for Rachel, and 6 years for flocks.",
+      "from_event": "jacob-flees-to-laban",
+      "to_event": "jacob-returns-to-canaan",
+      "claimed": {
+        "years": 20
+      },
+      "source": {
+        "ref": "Genesis 31:38,41",
+        "type": "scripture",
+        "quote": "This **twenty years have I been with thee**... I served thee **fourteen years for thy two daughters**, and **six years for thy cattle**."
+      }
+    },
+    {
+      "id": "joseph-sold-at-17",
+      "title": "Joseph Sold into Slavery at 17",
+      "from_event": "joseph-birth",
+      "to_event": "joseph-sold-into-slavery",
+      "claimed": {
+        "years": 17
+      },
+      "source": {
+        "ref": "Genesis 37:2",
+        "type": "scripture",
+        "quote": "Joseph, being **seventeen years old**, was feeding the flock with his brethren."
+      }
+    },
+    {
+      "id": "joseph-before-pharaoh-at-30",
+      "title": "Joseph Before Pharaoh at 30",
+      "from_event": "joseph-birth",
+      "to_event": "joseph-before-pharaoh",
+      "claimed": {
+        "years": 30
+      },
+      "source": {
+        "ref": "Genesis 41:46",
+        "type": "scripture",
+        "quote": "And Joseph was **thirty years old** when he stood before Pharaoh king of Egypt."
+      }
+    },
+    {
+      "id": "jacob-age-entering-egypt",
+      "title": "Jacob's Age Entering Egypt: 130 Years",
+      "from_event": "jacob-esau-birth",
+      "to_event": "jacob-enters-egypt",
+      "claimed": {
+        "years": 130
+      },
+      "source": {
+        "ref": "Genesis 47:9",
+        "type": "scripture",
+        "quote": "And Jacob said unto Pharaoh, The days of the years of my pilgrimage are **an hundred and thirty years**."
+      }
+    },
+    {
+      "id": "jacob-lifespan",
+      "title": "Jacob's Lifespan: 147 Years",
+      "from_event": "jacob-esau-birth",
+      "to_event": "jacob-death",
+      "claimed": {
+        "years": 147
+      },
+      "source": {
+        "ref": "Genesis 47:28",
+        "type": "scripture",
+        "quote": "And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was **an hundred forty and seven years**."
+      }
+    },
+    {
+      "id": "joseph-lifespan",
+      "title": "Joseph's Lifespan: 110 Years",
+      "from_event": "joseph-birth",
+      "to_event": "joseph-death",
+      "claimed": {
+        "years": 110
+      },
+      "source": {
+        "ref": "Genesis 50:26",
+        "type": "scripture",
+        "quote": "So Joseph died, being **an hundred and ten years old**."
+      }
+    },
+    {
+      "id": "abraham-lifespan",
+      "title": "Abraham's Lifespan: 175 Years",
+      "from_event": "abraham-birth",
+      "to_event": "abraham-death",
+      "claimed": {
+        "years": 175
+      },
+      "source": {
+        "ref": "Genesis 25:7",
+        "type": "scripture",
+        "quote": "And these are the days of the years of Abraham's life which he lived, **an hundred threescore and fifteen years**."
+      }
+    },
+    {
+      "id": "isaac-lifespan",
+      "title": "Isaac's Lifespan: 180 Years",
+      "from_event": "isaac-birth",
+      "to_event": "isaac-death",
+      "claimed": {
+        "years": 180
+      },
+      "source": {
+        "ref": "Genesis 35:28",
+        "type": "scripture",
+        "quote": "And the days of Isaac were **an hundred and fourscore years**."
+      }
+    },
+    {
+      "id": "seven-years-plenty",
+      "title": "Seven Years of Plenty",
+      "from_event": "joseph-before-pharaoh",
+      "to_event": "seven-years-famine-begin",
+      "claimed": {
+        "years": 7
+      },
+      "source": {
+        "ref": "Genesis 41:47-53",
+        "type": "scripture",
+        "quote": "And in the **seven plenteous years** the earth brought forth by handfuls... And the **seven years of plenteousness**, that was in the land of Egypt, **were ended**."
+      }
+    },
+    {
+      "id": "seven-years-famine",
+      "title": "Seven Years of Famine",
+      "from_event": "seven-years-famine-begin",
+      "to_event": "seven-years-famine-end",
+      "claimed": {
+        "years": 7
+      },
+      "source": {
+        "ref": "Genesis 41:30,54",
+        "type": "scripture",
+        "quote": "And there shall arise after them **seven years of famine**... And the **seven years of dearth began to come**, according as Joseph had said."
+      },
+      "notes": "The famine affected not only Egypt but 'all lands' (Gen 41:57). Jacob's family came to Egypt in the 2nd year of famine (Gen 45:6)."
+    },
+    {
+      "id": "famine-to-jacob-enters-egypt",
+      "title": "Jacob Enters Egypt: 2nd Year of Famine",
+      "from_event": "seven-years-famine-begin",
+      "to_event": "jacob-enters-egypt",
+      "claimed": {
+        "years": 2
+      },
+      "source": {
+        "ref": "Genesis 45:6",
+        "type": "scripture",
+        "quote": "For these **two years hath the famine been in the land**: and yet there are **five years**, in the which there shall neither be earing nor harvest."
+      }
+    },
+    {
       "id": "exodus-from-egypt-to-journey-ramses-succoth",
       "title": "Exodus to Ramses-Succoth Journey: 1 Day",
       "from_event": "exodus-from-egypt",
@@ -1766,37 +1981,6 @@
       ]
     },
     {
-      "id": "herod-death-to-herod-birth",
-      "title": "Herod the Great Lived 70 Years",
-      "from_event": "herod-death",
-      "to_event": "herod-birth",
-      "claimed": {
-        "years": 70,
-        "direction": "before"
-      },
-      "source": {
-        "ref": "Josephus",
-        "type": "historical",
-        "quote": "Herod chronology"
-      }
-    },
-    {
-      "id": "herod-takes-jerusalem-to-herod-senate-appointment",
-      "title": "2 Years: Senate Appointment to Taking Jerusalem (Inclusive 3rd Year)",
-      "from_event": "herod-takes-jerusalem",
-      "to_event": "herod-senate-appointment",
-      "claimed": {
-        "years": 2,
-        "direction": "before",
-        "notes": "Inclusive counting: Year 3 (Jerusalem) - Year 1 (appointment) = 2 years difference"
-      },
-      "source": {
-        "ref": "Josephus",
-        "type": "historical",
-        "quote": "Herod chronology"
-      }
-    },
-    {
       "id": "herod-takes-jerusalem-to-regal-year-1",
       "title": "2 Years: Year 1 to Year 3 (Taking Jerusalem)",
       "from_event": "herod-takes-jerusalem",
@@ -1821,19 +2005,64 @@
       "doc": "_durations/herod-chain.md"
     },
     {
-      "id": "david-death-to-david-reign",
-      "title": "David Reigned 40 Years (Backward)",
-      "from_event": "david-death",
-      "to_event": "david-reign",
+      "id": "scripture-david-life-70-years",
+      "title": "David Lived 70 Years",
+      "from_event": "david-birth",
+      "to_event": "david-death",
       "claimed": {
-        "years": 40,
-        "direction": "before"
+        "years": 70
       },
-      "source": {
-        "ref": "1 Kings 2:11",
-        "type": "scripture",
-        "quote": "And the days that David reigned over Israel were **forty years**"
-      }
+      "source": [
+        {
+          "ref": "2 Samuel 5:4",
+          "type": "scripture",
+          "quote": "David was **thirty years old** when he began to reign, and he reigned **forty years**"
+        },
+        {
+          "ref": "1 Chronicles 29:27",
+          "type": "scripture",
+          "quote": "And the time that he reigned over Israel was **forty years**; seven years reigned he in Hebron, and thirty and three years reigned he in Jerusalem"
+        },
+        {
+          "ref": "1 Kings 1:1, 32-35",
+          "type": "scripture",
+          "quote": "Now king David was old... And king David said, Call me Zadok the priest, and Nathan the prophet... and cause Solomon my son to ride upon mine own mule... and anoint him there king over Israel"
+        },
+        {
+          "ref": "1 Chronicles 23:1",
+          "type": "scripture",
+          "quote": "So when David was old and full of days, **he made Solomon his son king over Israel**"
+        }
+      ],
+      "notes": "David was 30 years old when he began to reign (2 Sam 5:4) and reigned 40 years (1 Kings 2:11), making him 70 at death. Scripture confirms Solomon was anointed king while David was still alive (1 Kings 1), making Solomon's first year overlap with David's final year. Jewish tradition (Talmud Shabbat 30a) holds David died on Shavuot, his 70th birthday."
+    },
+    {
+      "id": "scripture-solomon-appointed-david-alive",
+      "title": "Solomon Appointed King While David Alive",
+      "from_event": "solomon-reign",
+      "to_event": "david-death",
+      "claimed": {
+        "years": 0,
+        "notes": "Same year - co-regency"
+      },
+      "source": [
+        {
+          "ref": "1 Kings 1:32-35",
+          "type": "scripture",
+          "quote": "And king David said, Call me Zadok the priest, and Nathan the prophet, and Benaiah... cause **Solomon my son** to ride upon mine own mule, and bring him down to Gihon: And let Zadok the priest and Nathan the prophet **anoint him there king over Israel**"
+        },
+        {
+          "ref": "1 Chronicles 23:1",
+          "type": "scripture",
+          "quote": "So when David was old and full of days, **he made Solomon his son king over Israel**"
+        },
+        {
+          "ref": "1 Chronicles 29:22-23",
+          "type": "scripture",
+          "quote": "And they made Solomon the son of David king the second time, and anointed him unto the LORD to be the chief governor... Then **Solomon sat on the throne of the LORD as king instead of David his father**"
+        }
+      ],
+      "notes": "Scripture explicitly states David appointed Solomon as king while still alive. Solomon was anointed 'the second time' (1 Chr 29:22), indicating a brief co-regency. David died in Solomon's first year (likely on Shavuot), making their reigns overlap by several months."
     },
     {
       "id": "philip-death-to-philip-reign",
@@ -2072,6 +2301,94 @@
         "quote": "Jeremiah: 'in the seventh year' vs Kings: 'in the eighth year of his reign'"
       },
       "notes": "The same captivity event is dated to Nebuchadnezzar's 7th year (Jeremiah, regnal) and 8th year (Kings, accession-year). This 1-year difference proves Jeremiah uses regnal (non-accession) counting, which applies to all prophetic books including Haggai, Zechariah, and Ezra."
+    },
+    {
+      "id": "josephus-herod-to-temple-fall-107y",
+      "title": "Herod to Temple Fall: 107 Years of High Priests",
+      "from_event": "herod-senate-appointment",
+      "to_event": "temple-destruction-second",
+      "claimed": {
+        "years": 107,
+        "notes": "28 high priests served during this period"
+      },
+      "source": {
+        "ref": "Josephus, Antiquities 20.10.2",
+        "type": "historical",
+        "quote": "Accordingly, the number of the high priests, from the days of Herod until the day when Titus took the temple and the city, and burnt them, were in all 28; the time also that belonged to them was **107 years**."
+      },
+      "article": "/chapters/13_Herod_the_Great/#years-of-high-priests",
+      "notes": "From Herod's 'days' (his first regnal year after Roman appointment, 38 BC) to the fall of the Temple (70 AD) = ~107 years. This duration confirms Herod's reign beginning in 38 BC and provides a sixth independent line of evidence for the 1 BC death date."
+    },
+    {
+      "id": "israel-generation-80-lunar-years",
+      "title": "One Generation: 80 Lunar Years from Israel's Rebirth",
+      "from_event": "israel-independence-1948",
+      "to_event": "end-of-israel-generation",
+      "claimed": {
+        "years": 80,
+        "unit": "lunar_years",
+        "notes": "A biblical generation (80 years - Psalm 90:10 'by reason of strength') in lunar years from Israel becoming a nation"
+      },
+      "source": {
+        "ref": "Matthew 24:34",
+        "type": "scripture",
+        "quote": "Verily I say unto you, This generation shall not pass, till all these things be fulfilled."
+      },
+      "sources": [
+        {
+          "ref": "Psalm 90:10",
+          "type": "scripture",
+          "quote": "The days of our years are threescore years and ten; and if by reason of strength they be fourscore years, yet is their strength labour and sorrow; for it is soon cut off, and we fly away."
+        }
+      ],
+      "notes": "80 lunar years in the luni-solar calendar (Metonic intercalation) ≈ 80 solar years. From May 14, 1948 + 80 lunar years = 2028."
+    },
+    {
+      "id": "suleiman-490-years",
+      "title": "490 Years: Suleiman's Decree to Restoration",
+      "from_event": "suleiman-jerusalem-decree",
+      "to_event": "end-of-suleiman-490-years",
+      "claimed": {
+        "years": 490,
+        "notes": "70 weeks × 7 = 490 years from decree to restore Jerusalem"
+      },
+      "source": {
+        "ref": "Daniel 9:24-25",
+        "type": "scripture",
+        "quote": "Seventy weeks are determined upon thy people and upon thy holy city... from the going forth of the commandment to restore and to build Jerusalem"
+      },
+      "notes": "A second fulfillment of Daniel's 70 weeks prophecy. 1535 AD + 490 years = 2025 AD."
+    },
+    {
+      "id": "daniel-70x70-covenant-to-end",
+      "title": "70×70 Years: Covenant with Abraham to End of Age (4900 Years)",
+      "from_event": "covenant-with-abraham",
+      "to_event": "end-of-70x70-years",
+      "claimed": {
+        "years": 4900,
+        "notes": "70 × 70 = 4900 years, from covenant with Abraham to the end of the age"
+      },
+      "source": {
+        "ref": "Daniel 9:24",
+        "type": "scripture",
+        "quote": "Seventy weeks [70×7] are determined upon thy people and upon thy holy city"
+      },
+      "notes": "The 70 weeks (490 years) of Daniel 9 may be a subset of a larger 70×70 pattern. From the covenant with Abraham (~1876 BC) + 4900 years = ~3024 AD."
+    },
+    {
+      "id": "millennial-reign-1000-years",
+      "title": "1000 Year Reign of Christ",
+      "from_event": "millennial-reign-begins",
+      "to_event": "end-of-70x70-years",
+      "claimed": {
+        "years": 1000
+      },
+      "source": {
+        "ref": "Revelation 20:4-6",
+        "type": "scripture",
+        "quote": "And I saw thrones, and they sat upon them, and judgment was given unto them... and they lived and reigned with Christ a **thousand years**."
+      },
+      "notes": "The 1000-year reign of Christ ends at the conclusion of the 4900 years from the covenant with Abraham."
     }
   ],
   "events": [
@@ -2082,9 +2399,7 @@
       "description": "God creates the heavens and the earth in six days.",
       "start": {
         "anno_mundi": {
-          "year": 1,
-          "month": 1,
-          "day": 1
+          "year": 1
         }
       },
       "certainty": "theological",
@@ -2096,7 +2411,8 @@
       ],
       "tags": [
         "creation",
-        "beginning"
+        "beginning",
+        "pre-flood"
       ]
     },
     {
@@ -3341,6 +3657,442 @@
         "calendar-evidence"
       ],
       "article": "/chapters/07-when-does-the-month-start/"
+    },
+    {
+      "id": "isaac-birth",
+      "title": "👶 Isaac Born",
+      "type": "birth",
+      "priority": 1,
+      "description": "Isaac is born to Abraham (100 years old) and Sarah (90 years old), fulfilling God's promise of a son. This is 25 years after Abraham left Haran at age 75.",
+      "start": {
+        "relative": {
+          "event": "abraham-birth",
+          "offset": {
+            "years": 100
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 21:5",
+          "type": "scripture",
+          "quote": "And **Abraham was an hundred years old**, when his son Isaac was born unto him."
+        },
+        {
+          "ref": "Genesis 17:17",
+          "type": "scripture",
+          "quote": "Shall a child be born unto him that is **an hundred years old**? and shall Sarah, that is **ninety years old**, bear?"
+        }
+      ],
+      "tags": ["isaac", "birth", "patriarch", "promise", "abraham"]
+    },
+    {
+      "id": "isaac-marries-rebekah",
+      "title": "💒 Isaac Marries Rebekah",
+      "type": "biblical-event",
+      "description": "Isaac marries Rebekah at age 40. Abraham's servant had been sent to find a wife for Isaac from Abraham's family in Mesopotamia.",
+      "start": {
+        "relative": {
+          "event": "isaac-birth",
+          "offset": {
+            "years": 40
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 25:20",
+          "type": "scripture",
+          "quote": "And **Isaac was forty years old** when he took Rebekah to wife."
+        }
+      ],
+      "tags": ["isaac", "rebekah", "marriage", "patriarch"]
+    },
+    {
+      "id": "jacob-esau-birth",
+      "title": "👶👶 Jacob and Esau Born (Twins)",
+      "type": "birth",
+      "priority": 1,
+      "description": "Twin sons Jacob and Esau are born to Isaac (60 years old) and Rebekah after 20 years of marriage. Esau was born first, with Jacob grasping his heel.",
+      "start": {
+        "relative": {
+          "event": "isaac-birth",
+          "offset": {
+            "years": 60
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 25:26",
+          "type": "scripture",
+          "quote": "And after that came his brother out, and his hand took hold on Esau's heel; and his name was called Jacob: and **Isaac was threescore years old** when she bare them."
+        }
+      ],
+      "tags": ["jacob", "esau", "birth", "twins", "patriarch", "israel"]
+    },
+    {
+      "id": "abraham-death",
+      "title": "⚰️ Abraham Dies",
+      "type": "death",
+      "description": "Abraham dies at age 175, 'in a good old age, an old man, and full of years.' Isaac and Ishmael bury him in the cave of Machpelah with Sarah.",
+      "start": {
+        "relative": {
+          "event": "abraham-birth",
+          "offset": {
+            "years": 175
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 25:7-8",
+          "type": "scripture",
+          "quote": "And these are the days of the years of Abraham's life which he lived, **an hundred threescore and fifteen years**. Then Abraham gave up the ghost, and died in a good old age."
+        }
+      ],
+      "tags": ["abraham", "death", "patriarch"]
+    },
+    {
+      "id": "jacob-flees-to-laban",
+      "title": "🏃 Jacob Flees to Laban",
+      "type": "biblical-event",
+      "description": "After deceiving Isaac to receive Esau's blessing, Jacob flees to his uncle Laban in Haran. Jacob was about 77 years old (derived: 130 when entering Egypt - 39 years Joseph's age - 14 years working for wives = 77).",
+      "start": {
+        "relative": {
+          "event": "jacob-esau-birth",
+          "offset": {
+            "years": 77
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Genesis 27:41-28:5",
+          "type": "scripture",
+          "quote": "And Esau hated Jacob because of the blessing... flee thou to Laban my brother to Haran."
+        }
+      ],
+      "notes": "Age derived: Jacob was 130 when entering Egypt (Gen 47:9), Joseph was 39 at that time (30 + 7 + 2), Joseph born end of 14 years with Laban. So Jacob arrived at Laban at 130 - 39 - 14 = 77.",
+      "tags": ["jacob", "laban", "haran", "blessing", "esau"]
+    },
+    {
+      "id": "jacob-marries-leah-rachel",
+      "title": "💒 Jacob Marries Leah and Rachel",
+      "type": "biblical-event",
+      "description": "After working 7 years for Rachel, Jacob is deceived by Laban and given Leah instead. He then works another 7 years for Rachel, marrying her a week after Leah.",
+      "start": {
+        "relative": {
+          "event": "jacob-flees-to-laban",
+          "offset": {
+            "years": 7
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 29:20-28",
+          "type": "scripture",
+          "quote": "And Jacob served **seven years** for Rachel... Fulfil her week, and we will give thee this also for the service which thou shalt serve with me yet **seven other years**."
+        }
+      ],
+      "tags": ["jacob", "leah", "rachel", "marriage", "laban"]
+    },
+    {
+      "id": "joseph-birth",
+      "title": "👶 Joseph Born",
+      "type": "birth",
+      "priority": 1,
+      "description": "Joseph is born to Jacob and Rachel at the end of Jacob's 14 years of service to Laban. Jacob was about 91 years old (77 + 14).",
+      "start": {
+        "relative": {
+          "event": "jacob-flees-to-laban",
+          "offset": {
+            "years": 14
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 30:22-25",
+          "type": "scripture",
+          "quote": "And God remembered Rachel... and she conceived, and bare a son... And it came to pass, when Rachel had born Joseph, that Jacob said unto Laban, Send me away."
+        }
+      ],
+      "notes": "Joseph was born at end of 14 years service. Jacob entered Egypt at 130 when Joseph was 39, so Jacob was 91 when Joseph was born (130 - 39 = 91).",
+      "tags": ["joseph", "birth", "rachel", "jacob", "patriarch"]
+    },
+    {
+      "id": "jacob-returns-to-canaan",
+      "title": "🏠 Jacob Returns to Canaan",
+      "type": "biblical-event",
+      "description": "After 20 years with Laban (14 for wives + 6 for flocks), Jacob returns to Canaan with his family, flocks, and possessions. On the way, he wrestles with God and is renamed Israel.",
+      "start": {
+        "relative": {
+          "event": "jacob-flees-to-laban",
+          "offset": {
+            "years": 20
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 31:38-41",
+          "type": "scripture",
+          "quote": "This **twenty years** have I been with thee... I served thee **fourteen years for thy two daughters**, and **six years for thy cattle**."
+        },
+        {
+          "ref": "Genesis 32:28",
+          "type": "scripture",
+          "quote": "Thy name shall be called no more Jacob, but **Israel**: for as a prince hast thou power with God and with men."
+        }
+      ],
+      "tags": ["jacob", "israel", "canaan", "wrestling", "laban"]
+    },
+    {
+      "id": "isaac-death",
+      "title": "⚰️ Isaac Dies",
+      "type": "death",
+      "description": "Isaac dies at age 180. Jacob and Esau together bury their father.",
+      "start": {
+        "relative": {
+          "event": "isaac-birth",
+          "offset": {
+            "years": 180
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 35:28-29",
+          "type": "scripture",
+          "quote": "And the days of Isaac were **an hundred and fourscore years**. And Isaac gave up the ghost, and died, and was gathered unto his people."
+        }
+      ],
+      "tags": ["isaac", "death", "patriarch"]
+    },
+    {
+      "id": "joseph-sold-into-slavery",
+      "title": "⛓️ Joseph Sold into Slavery",
+      "type": "biblical-event",
+      "description": "Joseph's brothers sell him to Midianite merchants at age 17. He is taken to Egypt and sold to Potiphar, an officer of Pharaoh.",
+      "start": {
+        "relative": {
+          "event": "joseph-birth",
+          "offset": {
+            "years": 17
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 37:2",
+          "type": "scripture",
+          "quote": "Joseph, being **seventeen years old**, was feeding the flock with his brethren."
+        },
+        {
+          "ref": "Genesis 37:28",
+          "type": "scripture",
+          "quote": "Then there passed by Midianites merchantmen... and they brought Joseph into Egypt."
+        }
+      ],
+      "tags": ["joseph", "slavery", "egypt", "brothers"]
+    },
+    {
+      "id": "joseph-before-pharaoh",
+      "title": "👑 Joseph Before Pharaoh / 🌾 Years of Plenty Begin",
+      "type": "biblical-event",
+      "priority": 1,
+      "description": "At age 30, Joseph interprets Pharaoh's dreams and is made second in command over all Egypt. This begins the 7 years of plenty, during which Joseph gathers grain throughout Egypt.",
+      "start": {
+        "relative": {
+          "event": "joseph-birth",
+          "offset": {
+            "years": 30
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 41:46",
+          "type": "scripture",
+          "quote": "And Joseph was **thirty years old** when he stood before Pharaoh king of Egypt."
+        },
+        {
+          "ref": "Genesis 41:29-30",
+          "type": "scripture",
+          "quote": "Behold, there come **seven years of great plenty** throughout all the land of Egypt: And there shall arise after them **seven years of famine**."
+        },
+        {
+          "ref": "Genesis 41:47-49",
+          "type": "scripture",
+          "quote": "And in the **seven plenteous years** the earth brought forth by handfuls. And he gathered up all the food of the seven years."
+        }
+      ],
+      "tags": ["joseph", "pharaoh", "dreams", "egypt", "ruler", "plenty", "abundance"]
+    },
+    {
+      "id": "seven-years-famine-begin",
+      "title": "🏜️ Seven Years of Famine Begin",
+      "type": "biblical-event",
+      "priority": 1,
+      "description": "The seven years of famine begin, as Joseph had prophesied. The famine was severe not only in Egypt but 'in all lands.' This famine would eventually bring Jacob's family to Egypt.",
+      "start": {
+        "relative": {
+          "event": "joseph-before-pharaoh",
+          "offset": {
+            "years": 7
+          },
+          "direction": "after"
+        }
+      },
+      "duration": {
+        "value": 7,
+        "unit": "years"
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 41:54-57",
+          "type": "scripture",
+          "quote": "And the **seven years of dearth began to come**, according as Joseph had said: and the dearth was in all lands... And the **famine was over all the face of the earth**."
+        }
+      ],
+      "tags": ["joseph", "egypt", "famine", "drought", "pharaoh"]
+    },
+    {
+      "id": "seven-years-famine-end",
+      "title": "🌾 Seven Years of Famine End",
+      "type": "biblical-event",
+      "description": "The seven years of famine conclude. Egypt and the surrounding nations survived due to Joseph's wise administration during the years of plenty.",
+      "start": {
+        "relative": {
+          "event": "seven-years-famine-begin",
+          "offset": {
+            "years": 7
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 41:30",
+          "type": "scripture",
+          "quote": "And there shall arise after them **seven years of famine**; and all the plenty shall be forgotten in the land of Egypt."
+        }
+      ],
+      "tags": ["joseph", "egypt", "famine", "end"]
+    },
+    {
+      "id": "jacob-enters-egypt",
+      "title": "🇪🇬 Jacob's Family Enters Egypt",
+      "type": "biblical-event",
+      "priority": 1,
+      "description": "Jacob (Israel) and his entire family move to Egypt in the **2nd year of famine**, settling in Goshen. Jacob was 130 years old; Joseph was 39 (30 + 7 years plenty + 2 years famine). Five years of famine remained.",
+      "start": {
+        "relative": {
+          "event": "seven-years-famine-begin",
+          "offset": {
+            "years": 2
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 45:6",
+          "type": "scripture",
+          "quote": "For these **two years hath the famine been in the land**: and yet there are **five years**, in the which there shall neither be earing nor harvest."
+        },
+        {
+          "ref": "Genesis 47:9",
+          "type": "scripture",
+          "quote": "And Jacob said unto Pharaoh, The days of the years of my pilgrimage are **an hundred and thirty years**."
+        },
+        {
+          "ref": "Genesis 46:6-7",
+          "type": "scripture",
+          "quote": "And they took their cattle, and their goods... and came into Egypt, Jacob, and all his seed with him."
+        }
+      ],
+      "tags": ["jacob", "israel", "egypt", "goshen", "famine", "joseph", "2nd-year-famine"]
+    },
+    {
+      "id": "jacob-death",
+      "title": "⚰️ Jacob (Israel) Dies",
+      "type": "death",
+      "description": "Jacob dies in Egypt at age 147, after blessing his sons. His body is embalmed and carried back to Canaan for burial in the cave of Machpelah.",
+      "start": {
+        "relative": {
+          "event": "jacob-esau-birth",
+          "offset": {
+            "years": 147
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 47:28",
+          "type": "scripture",
+          "quote": "And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was **an hundred forty and seven years**."
+        }
+      ],
+      "tags": ["jacob", "israel", "death", "patriarch", "egypt"]
+    },
+    {
+      "id": "joseph-death",
+      "title": "⚰️ Joseph Dies",
+      "type": "death",
+      "description": "Joseph dies in Egypt at age 110. Before dying, he makes the Israelites swear to carry his bones out of Egypt when God delivers them.",
+      "start": {
+        "relative": {
+          "event": "joseph-birth",
+          "offset": {
+            "years": 110
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 50:26",
+          "type": "scripture",
+          "quote": "So Joseph died, being **an hundred and ten years old**: and they embalmed him, and he was put in a coffin in Egypt."
+        },
+        {
+          "ref": "Genesis 50:25",
+          "type": "scripture",
+          "quote": "And Joseph took an oath of the children of Israel, saying, God will surely visit you, and ye shall carry up my bones from hence."
+        }
+      ],
+      "tags": ["joseph", "death", "egypt", "bones", "exodus"]
     },
     {
       "id": "thutmose-iii-reign",
@@ -7021,16 +7773,16 @@
     },
     {
       "id": "temple-destruction-second",
-      "title": "Destruction of the Second Temple",
+      "title": "🏛️ Fall of the Second Temple (Tisha B'Av)",
       "type": "destruction",
-      "description": "The Second Temple is destroyed by the Romans under Titus on the 10th of Av, exactly 657 years after the First Temple's destruction on the same day. Josephus confirms Jehoiarib (Course 1) was serving—the same course as at the First Temple's fall—providing a critical anchor for reconstructing the priestly cycle.",
+      "description": "The Second Temple is destroyed by the Romans under Titus. Jewish tradition commemorates this as Tisha B'Av (9th of Av), though Josephus indicates the burning began on the 10th of Av—exactly 657 years after the First Temple's destruction on the same date. This is 107 years from 'the days of Herod' when he began appointing high priests. Josephus confirms Jehoiarib (Course 1) was serving—the same course as at the First Temple's fall—providing a critical anchor for reconstructing the priestly cycle.",
       "start": {
         "lunar": {
           "year": 70,
           "month": 5,
-          "day": 10
+          "day": 9
         },
-        "notes": "Av 10, 70 AD - same date as First Temple destruction"
+        "notes": "Tisha B'Av (9th of Av), 70 AD - the day of mourning for both Temples. Josephus records the burning on the 10th, but Jewish tradition commemorates the 9th when the destruction began."
       },
       "validation": {
         "priestly_course": 1,
@@ -7057,10 +7809,14 @@
         "temple",
         "destruction",
         "rome",
-        "10th-of-av",
+        "tisha-bav",
+        "9th-of-av",
         "priestly-anchor",
-        "657-years"
-      ]
+        "657-years",
+        "107-years",
+        "herod"
+      ],
+      "article": "/chapters/13_Herod_the_Great/#years-of-high-priests"
     },
     {
       "id": "abomination-setup",
@@ -9336,6 +10092,224 @@
         "zechariah",
         "fasting"
       ]
+    },
+    {
+      "id": "end-of-israel-generation",
+      "title": "📅 End of One Generation from Israel's Rebirth",
+      "type": "prophecy",
+      "description": "The conclusion of 80 lunar years (one biblical generation per Psalm 90:10 - 'by reason of strength, fourscore years') from Israel's declaration of independence on May 14, 1948. In the luni-solar calendar with Metonic intercalation, 80 lunar years ≈ 80 solar years, placing this in 2028.",
+      "start": {
+        "relative": {
+          "event": "israel-independence-1948",
+          "offset": {
+            "lunar_years": 80
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "prophetic",
+      "sources": [
+        {
+          "ref": "Matthew 24:34",
+          "type": "scripture",
+          "quote": "This generation shall not pass, till all these things be fulfilled."
+        },
+        {
+          "ref": "Psalm 90:10",
+          "type": "scripture",
+          "quote": "The days of our years are threescore years and ten; and if by reason of strength they be fourscore years"
+        }
+      ],
+      "tags": [
+        "prophecy",
+        "israel",
+        "generation",
+        "80-years",
+        "lunar",
+        "psalm-90"
+      ]
+    },
+    {
+      "id": "israel-independence-1948",
+      "title": "🇮🇱 Israel Becomes a Nation",
+      "type": "historical-event",
+      "priority": 1,
+      "description": "The State of Israel declares independence on May 14, 1948. On Equinox/Full Moon calendars, this date falls on Atzeret (Shavuot) of Second Passover. On Spica Full Moon calendars, it falls on Atzeret of Passover. This remarkable coincidence links Israel's rebirth to the feast celebrating the giving of the Torah and the harvest of firstfruits.",
+      "start": {
+        "fixed": {
+          "source": "Historical record - Israeli Declaration of Independence",
+          "gregorian": {
+            "year": 1948,
+            "month": 5,
+            "day": 14
+          }
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Israeli Declaration of Independence",
+          "type": "historical",
+          "quote": "We hereby declare the establishment of a Jewish state in Eretz-Israel, to be known as the State of Israel."
+        },
+        {
+          "ref": "Isaiah 66:8",
+          "type": "scripture",
+          "quote": "Who hath heard such a thing? who hath seen such things? Shall the earth be made to bring forth in one day? or shall a nation be born at once? for as soon as Zion travailed, she brought forth her children."
+        },
+        {
+          "ref": "Ezekiel 37:21-22",
+          "type": "scripture",
+          "quote": "Thus saith the Lord GOD; Behold, I will take the children of Israel from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land: And I will make them one nation in the land upon the mountains of Israel"
+        }
+      ],
+      "tags": [
+        "israel",
+        "independence",
+        "prophecy",
+        "atzeret",
+        "shavuot",
+        "second-passover",
+        "1948",
+        "modern"
+      ],
+      "notes": "May 14, 1948 = Atzeret of Second Passover (Equinox/Full Moon calendar) = Atzeret of Passover (Spica Full Moon calendar). The alignment with Shavuot/Atzeret connects Israel's rebirth to the feast of covenant renewal and firstfruits."
+    },
+    {
+      "id": "end-of-suleiman-490-years",
+      "title": "📅 End of 490 Years from Suleiman's Decree",
+      "type": "prophecy",
+      "priority": 1,
+      "description": "The conclusion of 490 years (70 weeks) from Sultan Suleiman's 1535 AD decree to rebuild Jerusalem's walls. 1535 + 490 = 2025 AD.",
+      "start": {
+        "relative": {
+          "event": "suleiman-jerusalem-decree",
+          "offset": {
+            "years": 490
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "prophetic",
+      "sources": [
+        {
+          "ref": "Daniel 9:24-25",
+          "type": "scripture",
+          "quote": "Seventy weeks are determined upon thy people and upon thy holy city"
+        }
+      ],
+      "tags": [
+        "prophecy",
+        "daniel",
+        "70-weeks",
+        "490-years",
+        "jerusalem",
+        "future"
+      ]
+    },
+    {
+      "id": "suleiman-jerusalem-decree",
+      "title": "📜 Suleiman Orders Jerusalem Walls Rebuilt",
+      "type": "decree",
+      "priority": 1,
+      "description": "Sultan Suleiman the Magnificent of the Ottoman Empire orders the ruined walls of Jerusalem to be rebuilt. The walls were constructed between 1537 and 1541, as evidenced by inscriptions on the gates. This represents the second major 'decree to restore and rebuild Jerusalem' - paralleling the ancient decrees of Cyrus, Darius, and Artaxerxes.",
+      "start": {
+        "fixed": {
+          "source": "Ottoman historical records and inscriptions on Jerusalem's gates",
+          "gregorian": {
+            "year": 1535,
+            "month": 1,
+            "day": 1
+          }
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Inscriptions on Jerusalem Gates",
+          "type": "historical",
+          "quote": "Inscriptions on Damascus Gate, Jaffa Gate, and other gates date the construction to 1537-1541 during Suleiman's reign"
+        },
+        {
+          "ref": "Ottoman Imperial Records",
+          "type": "historical",
+          "quote": "Suleiman I (r. 1520-1566) ordered the restoration of Jerusalem as part of his broader building program throughout the empire"
+        }
+      ],
+      "tags": [
+        "decree",
+        "jerusalem",
+        "ottoman",
+        "suleiman",
+        "walls",
+        "prophecy",
+        "490-years"
+      ],
+      "notes": "The walls built by Suleiman are the current Old City walls of Jerusalem that stand today. This decree may fulfill a prophetic pattern similar to Daniel's 70 weeks."
+    },
+    {
+      "id": "millennial-reign-begins",
+      "title": "👑 Millennial Reign of Christ Begins",
+      "type": "prophecy",
+      "priority": 1,
+      "description": "The thousand-year reign of Christ begins. This is calculated as 1000 years before the end of the 4900-year (70×70) period from the Covenant with Abraham.",
+      "start": {
+        "relative": {
+          "event": "end-of-70x70-years",
+          "offset": {
+            "years": 1000
+          },
+          "direction": "before"
+        }
+      },
+      "certainty": "prophetic",
+      "sources": [
+        {
+          "ref": "Revelation 20:4-6",
+          "type": "scripture",
+          "quote": "And I saw thrones, and they sat upon them, and judgment was given unto them... and they lived and reigned with Christ a **thousand years**. But the rest of the dead lived not again until the thousand years were finished. This is the first resurrection."
+        }
+      ],
+      "tags": [
+        "prophecy",
+        "millennium",
+        "christ",
+        "revelation",
+        "future"
+      ]
+    },
+    {
+      "id": "end-of-70x70-years",
+      "title": "📅 End of 70×70 Years (4900 Years from Covenant)",
+      "type": "prophecy",
+      "priority": 1,
+      "description": "The conclusion of the 4900-year (70×70) period from the Covenant with Abraham. Daniel 9:24 states 'Seventy sevens are decreed for your people' - if interpreted as 70×70 years from the foundational covenant with Abraham, this marks the completion of God's plan for Abraham's seed.",
+      "start": {
+        "relative": {
+          "event": "covenant-with-abraham",
+          "offset": {
+            "years": 4900
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "prophetic",
+      "sources": [
+        {
+          "ref": "Daniel 9:24",
+          "type": "scripture",
+          "quote": "Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy."
+        }
+      ],
+      "tags": [
+        "prophecy",
+        "daniel",
+        "70-weeks",
+        "abraham",
+        "covenant",
+        "future"
+      ],
+      "notes": "The 70×70 interpretation extends Daniel's 70 weeks (490 years) to a grander scale of 4900 years, encompassing all of redemptive history from Abraham's covenant to the end of the millennial reign."
     }
   ]
 }

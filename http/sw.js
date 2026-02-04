@@ -1,5 +1,5 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v768';
+const CACHE_NAME = 'lunar-sabbath-v771';
 
 // Core app files
 const CORE_ASSETS = [
@@ -34,7 +34,8 @@ const CORE_ASSETS = [
   '/word-study-dictionary.js',
   '/strongs-hebrew-dictionary.js',
   '/strongs-greek-dictionary.js',
-  '/calendar-export.js'
+  '/calendar-export.js',
+  '/lib/marked.min.js'
 ];
 
 // CDN assets (external libraries - cached separately via fetch)
@@ -74,6 +75,71 @@ const EVENT_ASSETS = [
   '/data/notes/joshuas-long-day.txt'
 ];
 
+// Chapter markdown files (Time-Tested book)
+const CHAPTER_ASSETS = [
+  '/chapters/01_Introduction.md',
+  '/chapters/02_Inherited_Lies.md',
+  '/chapters/03_Principles_of_Evaluation.md',
+  '/chapters/04_Alleged_Authority_of_Sanhedrin.md',
+  '/chapters/05_Where_Does_the_Day_Start.md',
+  '/chapters/06_When_Does_the_Day_Start.md',
+  '/chapters/07_When_Does_the_Month_Start.md',
+  '/chapters/08_When_does_the_Year_Start.md',
+  '/chapters/09_How_to_Observe_the_Signs.md',
+  '/chapters/10_When_is_the_Sabbath.md',
+  '/chapters/11_The_Day_of_Saturn.md',
+  '/chapters/12_32_AD_Resurrection.md',
+  '/chapters/13_Herod_the_Great.md',
+  '/chapters/14_Passion_Week_-_3_Days_&_3_Nights.md',
+  '/chapters/15_Solar_Only_Calendars.md',
+  '/chapters/16_The_Path_to_Salvation.md',
+  '/chapters/17_Commands_to_Follow.md',
+  '/chapters/18_Appointed_Times.md',
+  '/chapters/19_Miscellaneous_Commands.md'
+];
+
+// Symbol study files
+const SYMBOL_ASSETS = [
+  '/symbols/ANIMAL.md',
+  '/symbols/BABYLON.md',
+  '/symbols/BELIEVE.md',
+  '/symbols/BREAD.md',
+  '/symbols/EAGLE.md',
+  '/symbols/EVENING.md',
+  '/symbols/FAITH.md',
+  '/symbols/FOOL.md',
+  '/symbols/FORNICATION.md',
+  '/symbols/FRUIT.md',
+  '/symbols/HIGHWAY.md',
+  '/symbols/HOW-SCRIPTURE-TEACHES.md',
+  '/symbols/IDOLATRY.md',
+  '/symbols/ISLAND.md',
+  '/symbols/LAMP.md',
+  '/symbols/LIGHT.md',
+  '/symbols/MARK.md',
+  '/symbols/MARRIAGE.md',
+  '/symbols/MOMENT.md',
+  '/symbols/MOUNTAIN.md',
+  '/symbols/NAME.md',
+  '/symbols/OIL.md',
+  '/symbols/ROCK.md',
+  '/symbols/SAND.md',
+  '/symbols/SEA.md',
+  '/symbols/SLEEP.md',
+  '/symbols/THORNS.md',
+  '/symbols/TREE.md',
+  '/symbols/TRUTH.md',
+  '/symbols/VIRGIN.md',
+  '/symbols/WAY.md',
+  '/symbols/WHY-PARABLES.md',
+  '/symbols/WICKEDNESS.md',
+  '/symbols/WIND.md',
+  '/symbols/WINE.md',
+  '/symbols/WINGS.md',
+  '/symbols/WISE.md',
+  '/symbols/index.md'
+];
+
 // Icons and images
 const IMAGE_ASSETS = [
   '/icons/icon-16.png',
@@ -99,6 +165,7 @@ const VIEW_ASSETS = [
   '/views/book-view.js',
   '/views/calendar-view.js',
   '/views/events-view.js',
+  '/views/help-view.js',
   '/views/priestly-view.js',
   '/views/reader-view.js',
   '/views/sabbath-tester-view.js',
@@ -110,16 +177,27 @@ const VIEW_ASSETS = [
 
 // CSS assets
 const CSS_ASSETS = [
-  '/assets/css/bible-styles.css'
+  '/assets/css/bible-styles.css',
+  '/components/world-map.css',
+  '/components/dateline-map.css'
+];
+
+// Component JS files
+const COMPONENT_ASSETS = [
+  '/components/world-map.js',
+  '/components/dateline-map.js'
 ];
 
 // Combine all local assets (no external URLs)
 const ASSETS_TO_CACHE = [
   ...CORE_ASSETS,
   ...VIEW_ASSETS,
+  ...COMPONENT_ASSETS,
   ...DATA_ASSETS,
   ...CONTENT_ASSETS,
   ...EVENT_ASSETS,
+  ...CHAPTER_ASSETS,
+  ...SYMBOL_ASSETS,
   ...IMAGE_ASSETS,
   ...LIB_ASSETS,
   ...CSS_ASSETS
@@ -131,8 +209,22 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Caching app assets');
-        // Cache local assets
-        return cache.addAll(ASSETS_TO_CACHE);
+        // Cache local assets individually (more resilient than addAll)
+        return Promise.all(
+          ASSETS_TO_CACHE.map((url) => {
+            return fetch(url)
+              .then((response) => {
+                if (response.ok) {
+                  return cache.put(url, response);
+                } else {
+                  console.warn(`Failed to cache (${response.status}):`, url);
+                }
+              })
+              .catch((err) => {
+                console.warn('Failed to cache asset:', url, err.message);
+              });
+          })
+        );
       })
       .then(() => {
         // Cache CDN assets separately (may fail due to CORS)
