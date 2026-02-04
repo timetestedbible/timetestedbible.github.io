@@ -3,8 +3,10 @@
  * 
  * URL Structure:
  *   /reader/bible/kjv/Genesis/1     → Bible chapter
- *   /reader/symbols/tree            → Symbol word study
- *   /reader/timetested/chapter-slug → Time Tested book chapter
+ *   /reader/symbols/tree            → Symbol study
+ *   /reader/words/H2320             → Word study (lexical)
+ *   /reader/numbers/666              → Number study (symbolic meaning of numbers)
+ *   /reader/timetested/chapter-slug  → Time Tested book chapter
  * 
  * This view delegates to the appropriate renderer based on contentType.
  */
@@ -18,6 +20,8 @@ const ReaderView = {
   _renderedSymbol: null,
   _renderedChapter: null,
   _renderedBibleKey: null,
+  /** Cache of Time Tested chapter HTML by chapterId to avoid "Loading chapter..." on revisit */
+  _chapterCache: new Map(),
 
   init() {
     console.log('[ReaderView] init');
@@ -48,7 +52,22 @@ const ReaderView = {
     this.container = container;
     
     const params = state.content?.params || {};
-    const contentType = params.contentType || 'bible';
+    const contentType = params.contentType;
+    
+    // If no contentType specified, show landing page
+    if (!contentType) {
+      const landingKey = 'reader:landing';
+      const uiKey = `${state.ui?.strongsId || ''}`;
+      const fullKey = `${landingKey}:ui:${uiKey}`;
+      
+      if (this._lastRenderKey === fullKey && container.querySelector('.reader-landing-page')) {
+        return; // Already rendered
+      }
+      this._lastRenderKey = fullKey;
+      
+      this.renderLandingPage(state, derived, container);
+      return;
+    }
     
     // Build a key for the current content to detect if we need to re-render
     let currentKey;
@@ -58,6 +77,15 @@ const ReaderView = {
         break;
       case 'symbols':
         currentKey = `symbols:${params.symbol || 'index'}`;
+        break;
+      case 'symbols-article':
+        currentKey = `symbols-article:${params.article || 'index'}`;
+        break;
+      case 'words':
+        currentKey = `words:${params.word || 'index'}`;
+        break;
+      case 'numbers':
+        currentKey = `numbers:${params.number || 'index'}`;
         break;
       case 'timetested':
         currentKey = `timetested:${params.chapterId || 'index'}`;
@@ -102,17 +130,162 @@ const ReaderView = {
         this.renderSymbolInBibleFrame(state, derived, container, params.symbol);
         // Sync UI state (Strong's panel) for non-Bible content
         this.syncUIState(state.ui);
+        setTimeout(() => {
+          if (typeof updateReaderContentSelector === 'function') {
+            updateReaderContentSelector('symbols');
+          }
+        }, 50);
+        break;
+        
+      case 'symbols-article':
+        this.renderSymbolArticleInBibleFrame(state, derived, container, params.article);
+        break;
+        
+      case 'words':
+        this.renderWordStudyInBibleFrame(state, derived, container, params.word);
+        setTimeout(() => {
+          if (typeof updateReaderContentSelector === 'function') {
+            updateReaderContentSelector('words');
+          }
+        }, 50);
+        break;
+        
+      case 'numbers':
+        this.renderNumberStudyInBibleFrame(state, derived, container, params.number);
+        setTimeout(() => {
+          if (typeof updateReaderContentSelector === 'function') {
+            updateReaderContentSelector('numbers');
+          }
+        }, 50);
         break;
         
       case 'timetested':
         this.renderTimeTestedInBibleFrame(state, derived, container, params.chapterId, params.section);
         // Sync UI state (Strong's panel) for non-Bible content
         this.syncUIState(state.ui);
+        setTimeout(() => {
+          if (typeof updateReaderContentSelector === 'function') {
+            updateReaderContentSelector('timetested');
+          }
+        }, 50);
+        break;
+        
+      case 'people':
+        // Future: People studies - for now, show landing page
+        this.renderLandingPage(state, derived, container);
+        setTimeout(() => {
+          if (typeof updateReaderContentSelector === 'function') {
+            updateReaderContentSelector('people');
+          }
+        }, 50);
         break;
         
       default:
         this.renderBible(state, derived, container);
     }
+  },
+
+  /**
+   * Render landing page for /reader showing all available content types
+   */
+  renderLandingPage(state, derived, container) {
+    // Use BibleView's structure but show landing page content
+    if (typeof BibleView !== 'undefined') {
+      BibleView.renderStructure(container, { content: { params: { contentType: null } } });
+    }
+    
+    const textArea = container.querySelector('#bible-explorer-text');
+    if (!textArea) {
+      container.innerHTML = '<div class="reader-error">Reader structure not available</div>';
+      return;
+    }
+    
+    // Get counts for each content type
+    const symbolCount = typeof SYMBOL_DICTIONARY !== 'undefined' ? Object.keys(SYMBOL_DICTIONARY).length : 0;
+    const wordStudyCount = typeof WORD_STUDY_DICTIONARY !== 'undefined' ? Object.keys(WORD_STUDY_DICTIONARY).length : 0;
+    const numberStudyFiles = ['GEMATRIA', '666', '7', '40', '12', '3', '6', '10', '70', '1000']; // Common ones
+    const chapterCount = typeof TIME_TESTED_CHAPTERS !== 'undefined' ? TIME_TESTED_CHAPTERS.length : 0;
+    
+    textArea.innerHTML = `
+      <div class="reader-landing-page">
+        <header class="reader-landing-header">
+          <h1>📖 Reader</h1>
+          <p class="reader-landing-subtitle">Explore Scripture through multiple lenses</p>
+        </header>
+        
+        <div class="reader-content-grid">
+          <!-- Bible -->
+          <div class="reader-content-card">
+            <div class="reader-card-icon">📜</div>
+            <h2>Bible</h2>
+            <p>Read Scripture with interlinear data, Strong's numbers, and symbol highlighting. Multiple translations available.</p>
+            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Genesis',chapter:1}})">
+              Open Bible →
+            </button>
+          </div>
+          
+          <!-- Symbols -->
+          <div class="reader-content-card">
+            <div class="reader-card-icon">🔑</div>
+            <h2>Symbol Studies</h2>
+            <p>Discover the symbolic meaning of words in Scripture. Scripture declares it teaches through symbols—unlock the hidden language.</p>
+            <div class="reader-card-meta">${symbolCount} symbols</div>
+            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols'}})">
+              Browse Symbols →
+            </button>
+          </div>
+          
+          <!-- Word Studies -->
+          <div class="reader-content-card">
+            <div class="reader-card-icon">📚</div>
+            <h2>Word Studies</h2>
+            <p>Lexical and etymological studies of Hebrew/Greek words (Strong's). Understand the root meanings and usage patterns.</p>
+            <div class="reader-card-meta">${wordStudyCount} studies</div>
+            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'words'}})">
+              Browse Word Studies →
+            </button>
+          </div>
+          
+          <!-- Number Studies -->
+          <div class="reader-content-card">
+            <div class="reader-card-icon">🔢</div>
+            <h2>Number Studies</h2>
+            <p>Symbolic meaning of numbers in Scripture—an extension of symbol studies. Explore gematria and numerical patterns.</p>
+            <div class="reader-card-meta">Multiple studies</div>
+            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'numbers'}})">
+              Browse Number Studies →
+            </button>
+          </div>
+          
+          <!-- Time Tested Tradition -->
+          <div class="reader-content-card">
+            <div class="reader-card-icon">📘</div>
+            <h2>Time-Tested Tradition</h2>
+            <p>The Renewed Biblical Calendar. A comprehensive study of biblical timekeeping, appointed times, and calendar principles.</p>
+            <div class="reader-card-meta">${chapterCount} chapters</div>
+            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
+              Read Book →
+            </button>
+          </div>
+        </div>
+        
+        <section class="reader-landing-features">
+          <h2>Features</h2>
+          <ul class="reader-features-list">
+            <li>📖 <strong>Interlinear Bible</strong> with Strong's numbers and original language text</li>
+            <li>🔍 <strong>Symbol highlighting</strong> - words with symbolic meaning are automatically highlighted</li>
+            <li>📚 <strong>Integrated studies</strong> - click symbols, Strong's numbers, or scripture references to explore</li>
+            <li>🔢 <strong>Gematria calculator</strong> - explore numerical values of Hebrew and Greek words</li>
+            <li>🔗 <strong>Cross-references</strong> - seamless navigation between Bible, symbols, words, and chapters</li>
+          </ul>
+        </section>
+      </div>
+    `;
+    
+    // Update title
+    const titleEl = container.querySelector('#bible-chapter-title');
+    if (titleEl) titleEl.textContent = 'Reader';
+    this.hideChapterNav(container);
   },
 
   /**
@@ -216,6 +389,285 @@ const ReaderView = {
   },
 
   /**
+   * Render Symbol Article (like HOW-SCRIPTURE-TEACHES.md) within the Bible frame
+   */
+  renderSymbolArticleInBibleFrame(state, derived, container, articleName) {
+    // First render the Bible structure if not already present
+    const existingPage = container.querySelector('#bible-explorer-page');
+    if (!existingPage) {
+      if (typeof BibleView !== 'undefined') {
+        BibleView.renderStructure(container);
+      }
+    }
+    
+    // Update the content selector to show symbols
+    setTimeout(() => {
+      if (typeof updateReaderContentSelector === 'function') {
+        updateReaderContentSelector('symbols');
+      }
+    }, 50);
+    
+    // Render article content into the text area
+    const textArea = container.querySelector('#bible-explorer-text');
+    if (textArea) {
+      // Show loading state
+      const articleTitles = {
+        'HOW-SCRIPTURE-TEACHES': 'How Scripture Teaches',
+        'WHY-PARABLES': 'Why Parables?',
+        'METHODOLOGY': 'Human Study Methodology',
+        'AI-METHODOLOGY': 'AI-Assisted Study Methodology'
+      };
+      const displayTitle = articleTitles[articleName] || articleName;
+      
+      textArea.innerHTML = `
+        <div class="reader-symbol-article">
+          <nav class="reader-symbol-nav">
+            <button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols'}})">
+              ← Back to Symbol Dictionary
+            </button>
+          </nav>
+          <div id="symbol-article-content" class="symbol-article-content">
+            <div class="symbol-study-loading">Loading article...</div>
+          </div>
+        </div>
+      `;
+      
+      this.loadSymbolArticle(articleName, textArea);
+    }
+    
+    // Update the chapter title
+    const titleEl = container.querySelector('#bible-chapter-title');
+    if (titleEl) {
+      const articleTitles = {
+        'HOW-SCRIPTURE-TEACHES': 'How Scripture Teaches',
+        'WHY-PARABLES': 'Why Parables?',
+        'METHODOLOGY': 'Human Study Methodology',
+        'AI-METHODOLOGY': 'AI-Assisted Study Methodology'
+      };
+      titleEl.textContent = articleTitles[articleName] || articleName;
+    }
+    
+    // Hide chapter navigation
+    this.hideChapterNav(container);
+  },
+
+  /**
+   * Load and render a symbol article markdown file
+   */
+  async loadSymbolArticle(articleName, container) {
+    const articleContainer = container.querySelector('#symbol-article-content');
+    if (!articleContainer) return;
+    
+    try {
+      // All symbol articles are now in /symbols/ folder
+      const response = await fetch(`/symbols/${articleName}.md`);
+      
+      if (!response.ok) {
+        throw new Error(`Article not found: ${articleName}`);
+      }
+      
+      const markdown = await response.text();
+      const html = this.renderMarkdown(markdown);
+      
+      articleContainer.innerHTML = `<div class="symbol-article-body">${html}</div>`;
+      
+      // Make scripture references clickable
+      this.linkifyScriptureRefs(articleContainer);
+      
+      // Make symbol references interactive
+      this.linkifySymbolRefs(articleContainer);
+      
+      // Intercept internal reader links (symbols-article, symbols) so they use SPA navigation
+      this.linkifyReaderLinks(articleContainer);
+      
+    } catch (e) {
+      console.error('[ReaderView] Error loading symbol article:', e);
+      articleContainer.innerHTML = `<div class="reader-error">Could not load article: ${e.message}</div>`;
+    }
+  },
+
+  /**
+   * Render Word Study (lexical/etymological study of a Hebrew/Greek word) in the reader frame.
+   * Distinct from symbol studies: word studies cover root, usage, translation; symbol studies cover what a term represents.
+   */
+  renderWordStudyInBibleFrame(state, derived, container, wordId) {
+    const existingPage = container.querySelector('#bible-explorer-page');
+    if (!existingPage && typeof BibleView !== 'undefined') {
+      // Pass state with contentType: 'words' so selectors are hidden
+      BibleView.renderStructure(container, { content: { params: { contentType: 'words' } } });
+    } else if (existingPage && typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      // Sync selector visibility if structure already exists
+      BibleView.syncSelectorVisibility({ content: { params: { contentType: 'words' } } });
+    }
+    const textArea = container.querySelector('#bible-explorer-text');
+    if (!textArea) return;
+    if (!wordId) {
+      // Index: list all word studies (from WORD_STUDY_DICTIONARY if available)
+      const studies = typeof WORD_STUDY_DICTIONARY !== 'undefined'
+        ? Object.values(WORD_STUDY_DICTIONARY).filter((s, i, a) => a.findIndex(x => x.strongs === s.strongs) === i)
+        : [];
+      textArea.innerHTML = `
+        <div class="reader-word-study-index">
+          <nav class="reader-symbol-nav">
+            <button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{}})">
+              ← Back to Reader
+            </button>
+          </nav>
+          <h1>📚 Word Studies</h1>
+          <p class="word-study-index-intro">Lexical and etymological studies of Hebrew/Greek words (Strong's). Distinct from <strong>symbol studies</strong>, which ask what a term <em>represents</em> in Scripture.</p>
+          <div class="word-study-index-list">
+            ${studies.length ? studies.sort((a, b) => (a.strongs || '').localeCompare(b.strongs || '')).map(s => `
+              <button class="word-study-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'words',word:'${s.strongs}'}})">
+                <span class="word-study-strongs">${s.strongs}</span>
+                <span class="word-study-lemma">${s.lemma || ''}</span>
+                <span class="word-study-summary">${(s.summary || '').slice(0, 80)}…</span>
+              </button>
+            `).join('') : '<p>No word studies in dictionary yet. Word studies are opened from the Bible when you click a Strong\'s number that has an associated study.</p>'}
+          </div>
+        </div>
+      `;
+    } else {
+      textArea.innerHTML = `
+        <div class="reader-word-study">
+          <nav class="reader-symbol-nav">
+            <button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'words'}})">
+              ← Back to Word Studies
+            </button>
+          </nav>
+          <div id="word-study-content" class="word-study-content">
+            <div class="symbol-study-loading">Loading word study...</div>
+          </div>
+        </div>
+      `;
+      this.loadWordStudy(wordId, textArea);
+    }
+    const titleEl = container.querySelector('#bible-chapter-title');
+    if (titleEl) titleEl.textContent = wordId ? `Word: ${wordId}` : 'Word Studies';
+    this.hideChapterNav(container);
+  },
+
+  async loadWordStudy(wordId, container) {
+    const contentEl = container.querySelector('#word-study-content');
+    if (!contentEl) return;
+    try {
+      const response = await fetch(`/words/${wordId}.md`);
+      if (!response.ok) throw new Error(`Word study not found: ${wordId}`);
+      const markdown = await response.text();
+      const html = this.renderMarkdown(markdown);
+      contentEl.innerHTML = `<div class="word-study-body">${html}</div>`;
+      this.linkifyScriptureRefs(contentEl);
+      this.linkifyReaderLinks(contentEl);
+    } catch (e) {
+      console.error('[ReaderView] Error loading word study:', e);
+      contentEl.innerHTML = `<div class="reader-error">Could not load word study: ${e.message}</div>`;
+    }
+  },
+
+  /**
+   * Render number study in Bible frame (similar to word studies)
+   */
+  renderNumberStudyInBibleFrame(state, derived, container, numberId) {
+    const existingPage = container.querySelector('#bible-explorer-page');
+    if (!existingPage && typeof BibleView !== 'undefined') {
+      // Pass state with contentType: 'numbers' so selectors are hidden
+      BibleView.renderStructure(container, { content: { params: { contentType: 'numbers' } } });
+    } else if (existingPage && typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      // Sync selector visibility if structure already exists
+      BibleView.syncSelectorVisibility({ content: { params: { contentType: 'numbers' } } });
+    }
+    const textArea = container.querySelector('#bible-explorer-text');
+    if (!textArea) return;
+    
+    if (!numberId) {
+      // Index: list all number studies
+      // We'll fetch the list dynamically, but for now show the landing page
+      textArea.innerHTML = `
+        <div class="reader-number-study-index">
+          <nav class="reader-symbol-nav">
+            <button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{}})">
+              ← Back to Reader
+            </button>
+          </nav>
+          <div id="number-study-content" class="number-study-content">
+            <div class="symbol-study-loading">Loading number studies...</div>
+          </div>
+        </div>
+      `;
+      this.loadNumberStudy('index', textArea);
+    } else {
+      textArea.innerHTML = `
+        <div class="reader-number-study">
+          <nav class="reader-symbol-nav">
+            <button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'numbers'}})">
+              ← Back to Number Studies
+            </button>
+          </nav>
+          <div id="number-study-content" class="number-study-content">
+            <div class="symbol-study-loading">Loading number study...</div>
+          </div>
+        </div>
+      `;
+      this.loadNumberStudy(numberId, textArea);
+    }
+    const titleEl = container.querySelector('#bible-chapter-title');
+    if (titleEl) titleEl.textContent = numberId && numberId !== 'index' ? `Number: ${numberId}` : 'Number Studies';
+    this.hideChapterNav(container);
+  },
+
+  async loadNumberStudy(numberId, container) {
+    const contentEl = container.querySelector('#number-study-content');
+    if (!contentEl) return;
+    try {
+      // For index, load numbers/index.md, otherwise load numbers/{numberId}.md
+      const filename = numberId === 'index' ? 'index.md' : `${numberId}.md`;
+      const response = await fetch(`/numbers/${filename}`);
+      if (!response.ok) throw new Error(`Number study not found: ${numberId}`);
+      const markdown = await response.text();
+      const html = this.renderMarkdown(markdown);
+      contentEl.innerHTML = `<div class="number-study-body">${html}</div>`;
+      this.linkifyScriptureRefs(contentEl);
+      this.linkifyReaderLinks(contentEl);
+      
+      // If it's the index, add a list of available number studies
+      if (numberId === 'index') {
+        this.addNumberStudyList(contentEl);
+      }
+    } catch (e) {
+      console.error('[ReaderView] Error loading number study:', e);
+      contentEl.innerHTML = `<div class="reader-error">Could not load number study: ${e.message}</div>`;
+    }
+  },
+
+  async addNumberStudyList(container) {
+    // Try to fetch a list of available number studies
+    // For now, we'll use a hardcoded list based on what we know exists
+    const knownNumbers = [
+      '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '17', '18',
+      '20', '24', '30', '31', '40', '42', '49', '50', '70', '71', '77', '80',
+      '100', '120', '144', '153', '490', '666', '1000', 'GEMATRIA'
+    ];
+    
+    const listContainer = document.createElement('div');
+    listContainer.className = 'number-study-list';
+    listContainer.innerHTML = `
+      <h2>Available Number Studies</h2>
+      <div class="number-study-grid">
+        ${knownNumbers.map(num => `
+          <button class="number-study-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'numbers',number:'${num}'}})">
+            <span class="number-study-value">${num}</span>
+          </button>
+        `).join('')}
+      </div>
+    `;
+    
+    // Insert after the main content
+    const body = container.querySelector('.number-study-body');
+    if (body) {
+      body.appendChild(listContainer);
+    }
+  },
+
+  /**
    * Build summary HTML for a symbol (shown at top before full study)
    */
   buildSymbolSummaryHTML(symbol, symbolKey) {
@@ -275,6 +727,9 @@ const ReaderView = {
       // Make symbol references interactive (links + tooltips)
       this.linkifySymbolRefs(studyContainer);
       
+      // Intercept internal reader links so they use SPA navigation
+      this.linkifyReaderLinks(studyContainer);
+      
     } catch (e) {
       console.error('[ReaderView] Error loading symbol study:', e);
       // Show the basic symbol info as fallback
@@ -330,8 +785,16 @@ const ReaderView = {
       // Parse with marked
       let html = marked.parse(text);
       
-      // Post-process: wrap citation lines in blockquotes with <cite>
-      // Pattern: lines starting with em-dash followed by text (e.g., "— Genesis 1:14")
+      // Post-process: wrap citation lines in blockquotes with <cite> so CSS (e.g. text-align: right) applies
+      // 1) When quote and citation are on consecutive lines, marked puts them in one <p>; split so citation gets <cite>
+      html = html.replace(/<blockquote>([\s\S]*?)<\/blockquote>/g, (match, content) => {
+        const withCite = content.replace(
+          /<p>([\s\S]*?)(?:\n|<br>\s*)([—–-]{1,2}\s*.+?)<\/p>/g,
+          '<p>$1</p><p><cite>$2</cite></p>'
+        );
+        return '<blockquote>' + withCite + '</blockquote>';
+      });
+      // 2) Citation-only paragraph (e.g. blank line between quote and citation in markdown)
       html = html.replace(/<p>([—–-]{1,2}\s*.+?)<\/p>/g, '<p><cite>$1</cite></p>');
       
       // Add anchor IDs to blockquotes that contain scripture citations
@@ -371,8 +834,14 @@ const ReaderView = {
    * Make scripture references clickable
    */
   linkifyScriptureRefs(container) {
-    // Pattern for scripture references like "Isaiah 5:7" or "Romans 11:17-24"
-    const pattern = /\b(Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude|Revelation)\s+(\d+):(\d+)(?:-(\d+))?\b/g;
+    // Pattern for scripture references:
+    // - "Isaiah 5:7" or "Romans 11:17-24" (chapter:verse or verse range)
+    // - "Matthew 13" (chapter only)
+    // - "Psalm 78:2" or "Psalms 78:2" (handles both singular/plural)
+    const books = 'Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude|Revelation';
+    
+    // Match: Book Chapter:Verse(-|–|—EndVerse)? OR Book Chapter (chapter only)
+    const pattern = new RegExp(`\\b(${books})\\s+(\\d+)(?::(\\d+)(?:[-–—](\\d+))?)?\\b`, 'g');
     
     const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
     const textNodes = [];
@@ -390,9 +859,13 @@ const ReaderView = {
     
     textNodes.forEach(node => {
       const span = document.createElement('span');
+      // Reset lastIndex since we reuse the regex
+      pattern.lastIndex = 0;
       span.innerHTML = node.nodeValue.replace(pattern, (match, book, chapter, verse, endVerse) => {
-        const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${verse}`;
-        return `<a href="${url}" class="scripture-ref" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${verse}}}); return false;">${match}</a>`;
+        // Build URL - if no verse, default to verse 1
+        const targetVerse = verse || 1;
+        const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${targetVerse}`;
+        return `<a href="${url}" class="scripture-ref" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
       });
       node.parentNode.replaceChild(span, node);
     });
@@ -508,6 +981,50 @@ const ReaderView = {
   },
 
   /**
+   * Make internal reader links (symbols-article, symbols) use SPA navigation instead of full page load.
+   * Fixes broken "See also" and other /reader/... links inside markdown content.
+   */
+  linkifyReaderLinks(container) {
+    if (!container) return;
+    const links = container.querySelectorAll('a[href*="/reader/symbols-article/"], a[href*="/reader/symbols/"], a[href*="/reader/words/"], a[href*="/reader/numbers/"]');
+    links.forEach(link => {
+      const href = link.getAttribute('href') || '';
+      const articleMatch = href.match(/\/reader\/symbols-article\/([^/?#]+)/);
+      const symbolMatch = href.match(/\/reader\/symbols\/([^/?#]+)/);
+      const wordMatch = href.match(/\/reader\/words\/([^/?#]+)/);
+      const numberMatch = href.match(/\/reader\/numbers\/([^/?#]+)/);
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (articleMatch) {
+          AppStore.dispatch({
+            type: 'SET_VIEW',
+            view: 'reader',
+            params: { contentType: 'symbols-article', article: articleMatch[1] }
+          });
+        } else if (symbolMatch) {
+          AppStore.dispatch({
+            type: 'SET_VIEW',
+            view: 'reader',
+            params: { contentType: 'symbols', symbol: symbolMatch[1].toLowerCase() }
+          });
+        } else if (wordMatch) {
+          AppStore.dispatch({
+            type: 'SET_VIEW',
+            view: 'reader',
+            params: { contentType: 'words', word: wordMatch[1].toUpperCase() }
+          });
+        } else if (numberMatch) {
+          AppStore.dispatch({
+            type: 'SET_VIEW',
+            view: 'reader',
+            params: { contentType: 'numbers', number: numberMatch[1].toUpperCase() }
+          });
+        }
+      });
+    });
+  },
+
+  /**
    * Add mouseover tooltip to a symbol reference
    */
   addSymbolTooltip(element, symbol) {
@@ -579,12 +1096,27 @@ const ReaderView = {
     setTimeout(() => {
       if (typeof updateReaderContentSelector === 'function') {
         updateReaderContentSelector('timetested');
+        // updateReaderContentSelector calls populateTimeTestedDropdown(), so we need to set the value after it
       }
-      // Update chapter selector if a chapter is selected
-      if (chapterId) {
+      // Set the chapter dropdown value after updateReaderContentSelector has populated it
+      // Use a small delay to ensure the dropdown is fully rendered
+      setTimeout(() => {
         const chapterSelect = document.getElementById('timetested-chapter-select');
-        if (chapterSelect) chapterSelect.value = chapterId;
-      }
+        if (chapterSelect) {
+          if (chapterId) {
+            // Verify the option exists before setting
+            const optionExists = Array.from(chapterSelect.options).some(opt => opt.value === chapterId);
+            if (optionExists) {
+              chapterSelect.value = chapterId;
+            } else {
+              console.warn(`Chapter ID "${chapterId}" not found in dropdown`);
+            }
+          } else {
+            // Show Index as selected when viewing index
+            chapterSelect.value = '';
+          }
+        }
+      }, 10);
     }, 50);
     
     // Delegate to BookView for the actual content rendering
@@ -593,22 +1125,24 @@ const ReaderView = {
       if (!chapterId) {
         // Show chapter index
         textArea.innerHTML = this.buildTimeTestedIndexHTML();
+      } else if (chapterId === '__reviews__') {
+        // Load AI Reviews page (separate section, not a chapter)
+        textArea.innerHTML = `<div class="loading">Loading...</div>`;
+        this.loadTimeTestedReviewsPage(textArea);
       } else {
-        // Render the chapter using BookView's logic
-        if (typeof BookView !== 'undefined' && typeof BookView.loadAndRenderChapter === 'function') {
+        // Render the chapter: use cache if available so we don't show "Loading chapter..." on revisit
+        if (this._chapterCache && this._chapterCache.has(chapterId)) {
+          textArea.innerHTML = this._chapterCache.get(chapterId);
+          this.linkifyScriptureRefs(textArea);
+          this.linkifySymbolRefs(textArea);
+          if (section) {
+            setTimeout(() => this.scrollToSection(section, textArea), 100);
+          }
+        } else if (typeof BookView !== 'undefined' && typeof BookView.loadAndRenderChapter === 'function') {
           BookView.loadAndRenderChapter(chapterId, textArea, section);
         } else {
-          // Fallback: create a modified state and let BookView render
-          const bookState = {
-            ...state,
-            content: { ...state.content, params: { chapterId } }
-          };
-          if (typeof BookView !== 'undefined') {
-            // BookView renders to the whole container, but we want just the text area
-            // So we'll render a simplified version
-            textArea.innerHTML = `<div class="loading">Loading chapter...</div>`;
-            this.loadTimeTestedChapter(chapterId, textArea, section);
-          }
+          textArea.innerHTML = `<div class="loading">Loading chapter...</div>`;
+          this.loadTimeTestedChapter(chapterId, textArea, section);
         }
       }
     }
@@ -616,8 +1150,12 @@ const ReaderView = {
     // Update the chapter title
     const titleEl = container.querySelector('#bible-chapter-title');
     if (titleEl) {
-      const chapter = TIME_TESTED_CHAPTERS?.find(c => c.id === chapterId);
-      titleEl.textContent = chapter ? chapter.title : 'Time-Tested Tradition';
+      if (chapterId === '__reviews__') {
+        titleEl.textContent = 'AI Reviews';
+      } else {
+        const chapter = TIME_TESTED_CHAPTERS?.find(c => c.id === chapterId);
+        titleEl.textContent = chapter ? chapter.title : 'Time-Tested Tradition';
+      }
     }
     
     // Hide chapter navigation for TTT (or could add prev/next chapter)
@@ -645,25 +1183,55 @@ const ReaderView = {
   },
 
   /**
-   * Build HTML for symbol index
+   * Build HTML for symbol index (within reader context)
+   * Dynamically populated from SYMBOL_DICTIONARY
    */
   buildSymbolIndexHTML() {
-    const symbols = Object.entries(SYMBOL_DICTIONARY || {});
+    const symbols = Object.entries(SYMBOL_DICTIONARY || {}).sort((a, b) => 
+      a[1].name.localeCompare(b[1].name)
+    );
+    const symbolCount = symbols.length;
+    
     return `
       <div class="reader-symbol-index">
         <header class="symbol-index-header">
-          <h1>📖 Biblical Symbols</h1>
-          <p>Understanding the symbolic language of Scripture</p>
+          <h1>🔑 Biblical Symbol Dictionary</h1>
+          <p>Unlocking the Hidden Language of Scripture</p>
         </header>
         
-        <div class="symbol-index-grid">
-          ${symbols.map(([key, symbol]) => `
-            <button class="symbol-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${key}'}})">
-              <div class="symbol-index-name">${symbol.name}</div>
-              <div class="symbol-index-meaning">${symbol.is2 || symbol.is}</div>
+        <section class="symbol-index-intro">
+          <p>
+            <strong>Scripture declares it teaches through symbols.</strong>
+            God says: <em>"I have multiplied visions, and used similitudes"</em> (Hosea 12:10).
+            Jesus spoke to the multitudes <strong>only</strong> in parables (Matthew 13:34).
+          </p>
+          <div class="symbol-intro-links">
+            <button class="symbol-intro-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols-article',article:'HOW-SCRIPTURE-TEACHES'}})">
+              📜 How Scripture Teaches
             </button>
-          `).join('')}
-        </div>
+            <button class="symbol-intro-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols-article',article:'WHY-PARABLES'}})">
+              🧠 Why Parables?
+            </button>
+            <button class="symbol-intro-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols-article',article:'METHODOLOGY'}})">
+              🔬 Human Study Guide
+            </button>
+            <button class="symbol-intro-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols-article',article:'AI-METHODOLOGY'}})">
+              🤖 AI-Assisted Study
+            </button>
+          </div>
+        </section>
+        
+        <section class="symbol-index-dictionary">
+          <h2>Symbol Dictionary <span class="symbol-count">(${symbolCount} symbols)</span></h2>
+          <div class="symbol-index-grid">
+            ${symbols.map(([key, symbol]) => `
+              <button class="symbol-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${key}'}})">
+                <div class="symbol-index-name">${symbol.name}</div>
+                <div class="symbol-index-meaning">${symbol.is2 || symbol.is}</div>
+              </button>
+            `).join('')}
+          </div>
+        </section>
       </div>
     `;
   },
@@ -729,12 +1297,58 @@ const ReaderView = {
    */
   buildTimeTestedIndexHTML() {
     const chapters = typeof TIME_TESTED_CHAPTERS !== 'undefined' ? TIME_TESTED_CHAPTERS : [];
+    const mainChapters = chapters.filter(ch => ch.folder === 'chapters');
+    const extraChapters = chapters.filter(ch => ch.folder === 'extra');
+    
     return `
       <div class="reader-ttt-index">
         <header class="ttt-index-header">
-          <h1>📚 Time-Tested Tradition</h1>
-          <p>The Renewed Biblical Calendar</p>
-          <p class="ttt-author">By Daniel Larimer</p>
+          <div class="ttt-hero">
+            <div class="ttt-hero-title-block">
+              <span class="ttt-hero-line ttt-hero-line-1">TIME</span>
+              <span class="ttt-hero-line ttt-hero-line-2">Tested Tradition</span>
+              <span class="ttt-hero-line ttt-hero-line-3">The Renewed Biblical Calendar</span>
+            </div>
+            <p class="ttt-hero-tagline">Scripture-first. Tradition tested. A full-moon calendar that fits the text—and the heavens.</p>
+            <p class="ttt-author">By Daniel Larimer</p>
+          </div>
+
+          <div class="ttt-index-reviews-blurb">
+            <p class="ttt-reviews-intro">Three independent AI systems reviewed the full book using the same prompt. No incentive for positive reviews—read the exact prompt and their full assessments below.</p>
+            <div class="ttt-review-cards">
+              <div class="ttt-review-card" title="GPT-5.2">
+                <span class="ttt-review-logo-wrap">
+                  <img class="ttt-review-logo ttt-review-logo-invert ttt-review-logo-zoom" src="/assets/img/reviews/openai.png" alt="OpenAI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <span class="ttt-review-logo-fallback" style="display:none;">GPT</span>
+                </span>
+                <span class="ttt-review-name">GPT-5.2</span>
+                <span class="ttt-phrase">Provocative and rigorous</span>
+              </div>
+              <div class="ttt-review-card" title="Grok">
+                <span class="ttt-review-logo-wrap">
+                  <img class="ttt-review-logo ttt-review-logo-invert" src="/assets/img/reviews/xai.svg" alt="xAI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <span class="ttt-review-logo-fallback" style="display:none;">Grok</span>
+                </span>
+                <span class="ttt-review-name">Grok</span>
+                <span class="ttt-phrase">Rigorous but dense</span>
+              </div>
+              <div class="ttt-review-card" title="Claude">
+                <span class="ttt-review-logo-wrap">
+                  <img class="ttt-review-logo" src="/assets/img/reviews/anthropic.svg" alt="Anthropic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <span class="ttt-review-logo-fallback" style="display:none;">Claude</span>
+                </span>
+                <span class="ttt-review-name">Claude</span>
+                <span class="ttt-phrase">Ambitious biblical calendar revisionism demanding critical engagement</span>
+              </div>
+            </div>
+            <div class="ttt-reviews-cta-wrap">
+              <a class="ttt-reviews-cta-link" href="#" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'__reviews__'}}); return false;">
+                <span class="ttt-cta-text">Read full reviews &amp; methodology</span>
+                <span class="ttt-cta-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
           <a class="ttt-pdf-download" href="/media/time-tested-tradition.pdf" download>
             <span class="icon">📥</span>
             <span>Download PDF</span>
@@ -742,12 +1356,29 @@ const ReaderView = {
         </header>
         
         <div class="ttt-index-list">
-          ${chapters.map(ch => `
+          ${mainChapters.map(ch => `
             <button class="ttt-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${ch.id}'}})">
-              <span class="ttt-chapter-title">${ch.title}</span>
+              <div class="ttt-index-item-header">
+                <span class="ttt-chapter-title">${ch.title}</span>
+              </div>
+              ${ch.summary ? `<div class="ttt-chapter-summary">${ch.summary}</div>` : ''}
             </button>
           `).join('')}
         </div>
+        
+        ${extraChapters.length > 0 ? `
+          <h2 class="ttt-index-section-header">Extra Chapters</h2>
+          <div class="ttt-index-list">
+            ${extraChapters.map(ch => `
+              <button class="ttt-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${ch.id}'}})">
+                <div class="ttt-index-item-header">
+                  <span class="ttt-chapter-title">${ch.title}</span>
+                </div>
+                ${ch.summary ? `<div class="ttt-chapter-summary">${ch.summary}</div>` : ''}
+              </button>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
     `;
   },
@@ -801,6 +1432,8 @@ const ReaderView = {
         </div>
       `;
       
+      if (this._chapterCache) this._chapterCache.set(chapterId, container.innerHTML);
+      
       // Make scripture references clickable (links to Bible reader)
       this.linkifyScriptureRefs(container);
       
@@ -816,6 +1449,36 @@ const ReaderView = {
       
     } catch (e) {
       container.innerHTML = `<div class="reader-error">Error loading chapter: ${e.message}</div>`;
+    }
+  },
+
+  /**
+   * Load the AI Reviews page (not a chapter; content from /extra/AI_REVIEWS_PAGE.md)
+   */
+  async loadTimeTestedReviewsPage(container) {
+    try {
+      const response = await fetch('/extra/AI_REVIEWS_PAGE.md');
+      if (!response.ok) throw new Error('Reviews page not found');
+      const markdown = await response.text();
+      const html = this.renderMarkdown(markdown);
+      const chapters = typeof TIME_TESTED_CHAPTERS !== 'undefined' ? TIME_TESTED_CHAPTERS : [];
+      const lastChapter = chapters.length > 0 ? chapters[chapters.length - 1] : null;
+      container.innerHTML = `
+        <div class="ttt-chapter-content">
+          <h2 class="ttt-chapter-heading">What Reviewers Say</h2>
+          <article class="ttt-chapter-body">
+            ${html}
+          </article>
+          <nav class="ttt-chapter-nav ttt-chapter-nav-bottom">
+            ${lastChapter ? `<button class="ttt-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${lastChapter.id}'}})">◀ ${lastChapter.title}</button>` : '<span></span>'}
+            <button class="ttt-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">📚 Index</button>
+          </nav>
+        </div>
+      `;
+      this.linkifyScriptureRefs(container);
+      this.linkifySymbolRefs(container);
+    } catch (e) {
+      container.innerHTML = `<div class="reader-error">Error loading reviews: ${e.message}</div>`;
     }
   },
   

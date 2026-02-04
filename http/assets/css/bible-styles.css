@@ -7905,14 +7905,17 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .bible-explorer-page {
-  position: fixed;
-  top: 55px;
+  /* Do not use position:fixed + top/bottom: nav is in flow, so that would make content fill viewport and create a nav-sized gap at bottom. Use relative + flex so height comes from parent. */
+  position: relative;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: #0f0f23;
+  bottom: auto;
   display: none;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: #0f0f23;
   z-index: 100;
 }
 
@@ -7984,7 +7987,7 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Reader Content Selector (Bible / SYM / TTT) */
 .reader-content-select {
-  min-width: 80px !important;
+  min-width: 120px !important;
   font-weight: 700;
   background: linear-gradient(135deg, #2a5a7a 0%, #1a3a5c 100%) !important;
   border-color: rgba(126, 200, 227, 0.5) !important;
@@ -8030,44 +8033,44 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Word Study Styles */
 .reader-word-study-content {
-  padding: 20px;
-  max-width: 800px;
+  padding: var(--spacing-lg);
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .word-study-header {
-  margin-bottom: 24px;
-  padding-bottom: 16px;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .word-study-header h1 {
-  font-size: 1.6rem;
-  color: #7ec8e3;
-  margin: 0 0 8px;
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-sm);
 }
 
 .word-study-meta {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-muted);
   font-size: 1rem;
 }
 
 .word-study-translit {
   font-style: italic;
-  color: #d4a017;
-  margin-right: 8px;
+  color: var(--color-accent-gold);
+  margin-right: var(--spacing-sm);
 }
 
 .word-study-pron {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
 }
 
 .word-study-summary-box {
   background: rgba(42, 90, 140, 0.3);
-  border-left: 3px solid #7ec8e3;
-  padding: 16px;
+  border-left: 3px solid var(--color-accent);
+  padding: var(--spacing-md);
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-lg);
   line-height: 1.6;
 }
 
@@ -8075,58 +8078,58 @@ body.biblical-timeline-open .top-nav-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-  padding: 12px;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
   background: rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 }
 
 .word-study-label {
-  color: #7ec8e3;
+  color: var(--color-accent);
   font-weight: 600;
 }
 
 .word-study-root-btn {
   background: rgba(212, 160, 23, 0.2);
   border: 1px solid rgba(212, 160, 23, 0.4);
-  color: #d4a017;
-  padding: 4px 10px;
+  color: var(--color-accent-gold);
+  padding: 4px var(--spacing-sm);
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.95em;
-  transition: all 0.2s;
+  transition: all var(--transition-fast);
 }
 
 .word-study-root-btn:hover {
   background: rgba(212, 160, 23, 0.35);
-  border-color: #d4a017;
+  border-color: var(--color-accent-gold);
 }
 
 .word-study-root-def {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
 .word-study-book-link {
-  margin: 20px 0;
+  margin: var(--spacing-lg) 0;
 }
 
 .word-study-chapter-btn {
   display: inline-block;
   background: rgba(126, 200, 227, 0.15);
   border: 1px solid rgba(126, 200, 227, 0.4);
-  color: #7ec8e3;
-  padding: 12px 20px;
+  color: var(--color-accent);
+  padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: 6px;
   text-decoration: none;
   font-size: 1rem;
-  transition: all 0.2s;
+  transition: all var(--transition-fast);
 }
 
 .word-study-chapter-btn:hover {
   background: rgba(126, 200, 227, 0.25);
-  border-color: #7ec8e3;
+  border-color: var(--color-accent);
 }
 
 .word-study-markdown-content {
@@ -8217,13 +8220,13 @@ body.biblical-timeline-open .top-nav-inner {
 /* Time Tested index styling */
 .reader-ttt-index {
   padding: 20px;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .ttt-index-header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .ttt-index-header h1 {
@@ -8236,30 +8239,57 @@ body.biblical-timeline-open .top-nav-inner {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.ttt-index-section-header {
+  font-size: 1.3rem;
+  color: #7ec8e3;
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.3);
+}
+
 .ttt-index-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .ttt-index-item {
   background: rgba(42, 90, 140, 0.3);
   border: 1px solid rgba(126, 200, 227, 0.3);
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 16px;
   text-align: left;
   color: #e8e8e8;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .ttt-index-item:hover {
   background: rgba(42, 90, 140, 0.5);
-  border-color: rgba(126, 200, 227, 0.5);
+  border-color: rgba(126, 200, 227, 0.6);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(126, 200, 227, 0.2);
+}
+
+.ttt-index-item-header {
+  display: flex;
+  align-items: center;
 }
 
 .ttt-chapter-title {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7ec8e3;
+}
+
+.ttt-chapter-summary {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 4px;
 }
 
 /* Time Tested chapter content */
@@ -8300,11 +8330,22 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .ttt-chapter-content blockquote {
-  border-left: 3px solid #d4a017;
-  padding-left: 16px;
-  margin: 16px 0;
+  border-left: 3px solid var(--color-accent-gold);
+  padding-left: var(--spacing-md);
+  margin: var(--spacing-md) 0;
   color: rgba(255, 255, 255, 0.8);
   font-style: italic;
+}
+
+/* Citation line (— Book ref) right-justified below the quote */
+.ttt-chapter-content blockquote cite,
+.ttt-chapter-body blockquote cite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  color: var(--color-accent-gold, #d4a017);
+  margin-top: 0.5em;
+  font-size: 0.9em;
 }
 
 /* Time Tested chapter navigation */
@@ -8312,29 +8353,29 @@ body.biblical-timeline-open .top-nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  padding: 12px 0;
-  margin-bottom: 20px;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+  margin-bottom: var(--spacing-lg);
   border-bottom: 1px solid rgba(126, 200, 227, 0.2);
 }
 
 .ttt-chapter-nav-bottom {
-  margin-top: 40px;
+  margin-top: var(--spacing-xl);
   margin-bottom: 0;
   border-bottom: none;
   border-top: 1px solid rgba(126, 200, 227, 0.2);
-  padding-top: 20px;
+  padding-top: var(--spacing-lg);
 }
 
 .ttt-nav-btn {
   background: rgba(42, 90, 140, 0.3);
   border: 1px solid rgba(126, 200, 227, 0.3);
   border-radius: 6px;
-  padding: 8px 14px;
-  color: #7ec8e3;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-accent);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all var(--transition-fast);
   max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -8349,107 +8390,22 @@ body.biblical-timeline-open .top-nav-inner {
 .ttt-nav-home {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   cursor: pointer;
-  padding: 8px 12px;
+  padding: var(--spacing-sm) var(--spacing-md);
 }
 
 .ttt-nav-home:hover {
-  color: #7ec8e3;
+  color: var(--color-accent);
 }
 
-/* Time Tested chapter body */
+/* Time Tested chapter body - now uses unified base styles from reader.css */
+/* Additional specific styles */
 .ttt-chapter-body {
-  line-height: 1.8;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
-}
-
-.ttt-chapter-body h1 {
-  font-size: 1.6rem;
-  color: #7ec8e3;
-  margin: 0 0 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(126, 200, 227, 0.3);
-}
-
-.ttt-chapter-body h2 {
-  font-size: 1.3rem;
-  color: #7ec8e3;
-  margin: 32px 0 16px;
-}
-
-.ttt-chapter-body h3 {
-  font-size: 1.1rem;
-  color: #d4a017;
-  margin: 24px 0 12px;
-}
-
-.ttt-chapter-body p {
-  margin: 0 0 16px;
-}
-
-.ttt-chapter-body strong,
-.ttt-chapter-body b {
-  color: #7ec8e3;
-  font-weight: 600;
-}
-
-.ttt-chapter-body ul,
-.ttt-chapter-body ol {
-  margin: 16px 0;
-  padding-left: 24px;
-}
-
-.ttt-chapter-body li {
-  margin: 8px 0;
-}
-
-.ttt-chapter-body blockquote {
-  border-left: 3px solid #d4a017;
-  padding: 16px 24px;
-  margin: 24px 32px;
-  color: rgba(255, 255, 255, 0.85);
-  font-style: italic;
-  background: rgba(212, 160, 23, 0.05);
-  border-radius: 0 6px 6px 0;
-}
-
-.ttt-chapter-body blockquote cite {
-  display: block;
-  font-style: normal;
-  color: #d4a017;
-  margin-top: 8px;
-  font-size: 0.9em;
-  text-align: right;
-}
-
-.ttt-chapter-body code {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 0.9em;
-}
-
-.ttt-chapter-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
-
-.ttt-chapter-body th,
-.ttt-chapter-body td {
-  border: 1px solid rgba(126, 200, 227, 0.3);
-  padding: 10px 12px;
-  text-align: left;
-}
-
-.ttt-chapter-body th {
-  background: rgba(42, 90, 140, 0.3);
-  color: #7ec8e3;
 }
 
 /* Scripture reference links */
@@ -8467,110 +8423,55 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Responsive adjustments for Time-Tested content */
 @media (max-width: 768px) {
+  .symbol-study-body,
+  .word-study-body,
+  .number-study-body {
+    padding: var(--spacing-md);
+  }
+  /* Time-tested chapter: minimal padding on mobile (override reader.css padding) */
+  .ttt-chapter-content {
+    padding: 5px;
+  }
+  body.view-reader .ttt-chapter-body {
+    padding: 5px !important;
+  }
+  
+  .symbol-study-body blockquote,
+  .word-study-body blockquote,
+  .number-study-body blockquote {
+    margin: var(--spacing-md) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
   .ttt-chapter-body blockquote {
-    margin: 20px 16px;
-    padding: 12px 16px;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
   }
   
   .ttt-chapter-nav {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--spacing-sm);
   }
   
   .ttt-nav-btn {
     max-width: none;
     font-size: 0.8rem;
-    padding: 6px 10px;
+    padding: 6px var(--spacing-sm);
   }
 }
 
 /* Symbol Study Content */
 .symbol-study-content {
-  margin-top: 20px;
+  margin-top: var(--spacing-lg);
 }
 
 .symbol-study-loading {
-  color: rgba(255, 255, 255, 0.6);
-  padding: 20px;
+  color: var(--color-text-muted);
+  padding: var(--spacing-lg);
   text-align: center;
 }
 
-.symbol-study-body {
-  line-height: 1.7;
-  color: #e0e0e0;
-}
-
-.symbol-study-body h2 {
-  font-size: 1.3rem;
-  color: #7ec8e3;
-  margin: 28px 0 14px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
-}
-
-.symbol-study-body h3 {
-  font-size: 1.1rem;
-  color: #d4a017;
-  margin: 20px 0 10px;
-}
-
-.symbol-study-body h4 {
-  font-size: 1rem;
-  color: #90c090;
-  margin: 16px 0 8px;
-}
-
-.symbol-study-body p {
-  margin: 12px 0;
-}
-
-.symbol-study-body strong,
-.symbol-study-body b {
-  color: #7ec8e3;
-  font-weight: 600;
-}
-
-.symbol-study-body blockquote {
-  border-left: 3px solid #d4a017;
-  padding: 10px 16px;
-  margin: 16px 0;
-  background: rgba(212, 160, 23, 0.08);
-  color: rgba(255, 255, 255, 0.9);
-  font-style: italic;
-  border-radius: 0 6px 6px 0;
-}
-
-.symbol-study-body blockquote cite {
-  display: block;
-  font-style: normal;
-  color: #d4a017;
-  margin-top: 8px;
-  font-size: 0.9em;
-  text-align: right;
-}
-
-.symbol-study-body code {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 0.9em;
-}
-
-.symbol-study-body ul {
-  margin: 12px 0;
-  padding-left: 24px;
-}
-
-.symbol-study-body li {
-  margin: 6px 0;
-}
-
-.symbol-study-body hr {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 24px 0;
-}
+/* Symbol study body styles are now unified in reader.css */
+/* This section kept for backward compatibility but styles moved to unified base */
 
 .symbol-study-body .md-table {
   width: 100%;
@@ -9013,6 +8914,7 @@ body.biblical-timeline-open .top-nav-inner {
 
 .bible-explorer-text {
   flex: 1;
+  min-height: 0;
   padding: 20px 30px;
   overflow-y: auto;
   line-height: 1.8;
@@ -9023,7 +8925,7 @@ body.biblical-timeline-open .top-nav-inner {
 /* Welcome Screen */
 .bible-explorer-welcome {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 16px;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -9041,16 +8943,22 @@ body.biblical-timeline-open .top-nav-inner {
 
 .bible-explorer-welcome p {
   color: #888;
-  margin-bottom: 25px;
+  margin-bottom: 16px;
 }
 
-/* Translation Cards */
+/* Translation Cards — one row on desktop when space available */
 .bible-translation-cards {
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
+}
+
+@media (min-width: 920px) {
+  .bible-translation-cards {
+    flex-wrap: nowrap;
+  }
 }
 
 .bible-translation-card {
@@ -9059,11 +8967,21 @@ body.biblical-timeline-open .top-nav-inner {
   border-radius: 12px;
   padding: 20px;
   width: 280px;
+  min-width: 0;
+  flex: 1 1 260px;
+  max-width: 320px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: left;
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 920px) {
+  .bible-translation-card {
+    flex: 1 1 0;
+    max-width: none;
+  }
 }
 
 .bible-translation-card::before {
@@ -9146,35 +9064,6 @@ body.biblical-timeline-open .top-nav-inner {
   }
 }
 
-.bible-quick-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.bible-quick-label {
-  color: #666;
-  font-size: 0.9em;
-}
-
-.bible-quick-links button {
-  background: rgba(126, 200, 227, 0.1);
-  border: 1px solid rgba(126, 200, 227, 0.3);
-  color: #7ec8e3;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: all 0.2s;
-}
-
-.bible-quick-links button:hover {
-  background: rgba(126, 200, 227, 0.2);
-  border-color: #7ec8e3;
-}
-
 /* Chapter Text Display */
 .bible-explorer-chapter {
   max-width: 800px;
@@ -9198,17 +9087,62 @@ body.biblical-timeline-open .top-nav-inner {
   scroll-margin-top: 80px;
 }
 
-.bible-explorer-verse .verse-book-ref,
-.bible-explorer-verse .verse-book-ref-spacer,
-.bible-explorer-verse .verse-cross-ref,
-.bible-explorer-verse .verse-cross-ref-spacer,
-.bible-explorer-verse .bible-verse-number {
+/* Desktop: meta (book, link, verse#) inline before text */
+.verse-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-shrink: 0;
+}
+
+.bible-explorer-verse .verse-meta .verse-book-ref,
+.bible-explorer-verse .verse-meta .verse-book-ref-spacer,
+.bible-explorer-verse .verse-meta .verse-cross-ref,
+.bible-explorer-verse .verse-meta .verse-cross-ref-spacer,
+.bible-explorer-verse .verse-meta .bible-verse-number {
   flex-shrink: 0;
 }
 
 .bible-explorer-verse .bible-verse-text {
   flex: 1;
   min-width: 0;
+}
+
+/* Mobile: verse number + icons stacked on left (number on top), text on right — number next to first word */
+@media (max-width: 768px) {
+  .bible-explorer-verse {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .bible-explorer-verse .verse-meta {
+    order: 1;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 2px;
+    margin-right: 6px;
+  }
+  .bible-explorer-verse .verse-meta .bible-verse-number {
+    order: 1;
+  }
+  .bible-explorer-verse .verse-meta .verse-book-ref,
+  .bible-explorer-verse .verse-meta .verse-book-ref-spacer {
+    order: 2;
+  }
+  .bible-explorer-verse .verse-meta .verse-cross-ref,
+  .bible-explorer-verse .verse-meta .verse-cross-ref-spacer {
+    order: 3;
+  }
+  .bible-explorer-verse .verse-meta .verse-book-ref-spacer,
+  .bible-explorer-verse .verse-meta .verse-cross-ref-spacer {
+    display: none;
+  }
+  .bible-explorer-verse .bible-verse-text {
+    order: 2;
+    flex: 1;
+    min-width: 0;
+    padding-left: 0;
+  }
 }
 
 .bible-explorer-verse.highlighted {
@@ -9252,9 +9186,10 @@ body.biblical-timeline-open .top-nav-inner {
   transform: scale(1.2);
 }
 
+/* Above main-layout when body.strongs-sidebar-open (10100) */
 .hebrew-tooltip {
   position: absolute;
-  z-index: 10001;
+  z-index: 10200;
   max-width: 350px;
   padding: 16px 20px;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -9313,12 +9248,18 @@ body.biblical-timeline-open .top-nav-inner {
   padding: 8px;
 }
 
-/* Keep verse number and text inline when expanded */
-.bible-explorer-verse.interlinear-expanded > .bible-verse-number,
-.bible-explorer-verse.interlinear-expanded > .verse-cross-ref,
-.bible-explorer-verse.interlinear-expanded > .verse-cross-ref-spacer,
-.bible-explorer-verse.interlinear-expanded > .verse-book-ref,
-.bible-explorer-verse.interlinear-expanded > .verse-book-ref-spacer {
+/* Keep verse meta and text inline when expanded */
+.bible-explorer-verse.interlinear-expanded > .verse-meta {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: top;
+}
+
+.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-book-ref,
+.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-book-ref-spacer,
+.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-cross-ref,
+.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-cross-ref-spacer,
+.bible-explorer-verse.interlinear-expanded > .verse-meta .bible-verse-number {
   display: inline;
   margin-right: 4px;
 }
@@ -9576,10 +9517,11 @@ body.biblical-timeline-open .top-nav-inner {
   background: linear-gradient(135deg, rgba(212, 160, 23, 0.2), rgba(126, 200, 227, 0.15));
 }
 
-/* Word Hover Tooltip */
+/* Word Hover Tooltip - fixed so it stays in viewport; above main-layout when Strong's closed.
+   pointer-events: auto so clicking the tooltip opens Strong's (same as clicking the word). */
 .word-hover-tooltip {
-  position: absolute;
-  z-index: 10000;
+  position: fixed;
+  z-index: 10200;
   max-width: 280px;
   padding: 8px 12px;
   background: rgba(13, 40, 64, 0.98);
@@ -9588,7 +9530,8 @@ body.biblical-timeline-open .top-nav-inner {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: opacity 0.15s ease;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .word-tooltip-def {
@@ -9815,19 +9758,28 @@ body.biblical-timeline-open .top-nav-inner {
   margin-right: 2px;
 }
 
-/* Book Reference Popup */
+/* Portal for Bible tooltips and popups - ensures they paint above main content; pointer-events: none so content under stays clickable */
+.bible-tooltip-portal {
+  position: fixed;
+  inset: 0;
+  z-index: 10200;
+  pointer-events: none;
+}
+
+/* Book Reference Popup - in portal so it paints on top; needs pointer-events: auto for clicks */
 .book-ref-popup {
-  position: absolute;
+  position: fixed;
+  pointer-events: auto;
   width: 280px;
   background: linear-gradient(180deg, #0d2840 0%, #1a3a5c 100%);
   border: 1px solid rgba(212, 160, 23, 0.3);
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  z-index: 2000;
+  z-index: 10200;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.2s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
 }
 
 .book-ref-popup.visible {
@@ -10063,6 +10015,7 @@ body.biblical-timeline-open .top-nav-inner {
 /* Bible content wrapper - flex container for text and sidebar */
 .bible-content-wrapper {
   display: flex;
+  flex-direction: column;
   flex: 1;
   min-height: 0;
   overflow: hidden;
@@ -10070,12 +10023,14 @@ body.biblical-timeline-open .top-nav-inner {
 
 .bible-content-wrapper .bible-explorer-text {
   flex: 1;
-  overflow-y: auto;
+  min-height: 0;
   min-width: 0;
+  overflow-y: auto;
 }
 
-/* Strong's Sidebar - simple flex sibling */
+/* Strong's Sidebar - simple flex sibling; position: relative so resize handle is anchored to left edge */
 .strongs-sidebar {
+  position: relative;
   width: 0;
   overflow: hidden;
   transition: width 0.3s ease;
@@ -10090,6 +10045,13 @@ body.biblical-timeline-open .top-nav-inner {
   min-width: 280px;
 }
 
+/* Disable width transition during drag so resize follows cursor */
+.strongs-sidebar.resizing {
+  transition: none;
+}
+
+/* Desktop: Strong's is a side panel, so tooltips (10200) stay visible over main text. No z-index raise. */
+/* Mobile: we raise main-layout only in the @media block below so the full-screen Strong's overlay is on top. */
 
 /* Resize handle on left edge */
 .strongs-sidebar-resize {
@@ -10108,12 +10070,56 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 
-/* Mobile: sidebar becomes full-width slide-out overlay */
+/* Mobile: full-height content + sidebar becomes full-width overlay */
 @media (max-width: 768px) {
+  /* Give content area a fixed height so 100% children work */
+  body.view-bible .main-layout,
+  body.view-reader .main-layout {
+    height: calc(100dvh - var(--top-nav-height, 56px)) !important;
+    min-height: 0 !important;
+  }
+  body.view-bible #content-area,
+  body.view-reader #content-area {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  /* Force bible explorer page to fill available height */
+  #bible-explorer-page {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+
+  .bible-explorer-body {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
   .bible-content-wrapper {
     flex-direction: column;
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    display: flex !important;
   }
-  
+
+  .bible-content-wrapper .bible-explorer-text {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* On mobile, Strong's is full-screen overlay: raise it above tooltips (10200) */
+  body.strongs-sidebar-open .main-layout {
+    z-index: 10300;
+    position: relative;
+  }
+
   .strongs-sidebar.open {
     position: fixed;
     top: var(--top-nav-height, 56px);
@@ -10126,9 +10132,9 @@ body.biblical-timeline-open .top-nav-inner {
     height: calc(100vh - var(--top-nav-height, 56px));
     border-left: none;
     border-top: 1px solid rgba(212, 160, 23, 0.3);
-    z-index: 1000;
+    z-index: 10300;
   }
-  
+
   .strongs-sidebar-resize {
     display: none;
   }
@@ -10143,35 +10149,6 @@ body.biblical-timeline-open .top-nav-inner {
   background: rgba(0, 0, 0, 0.2);
   gap: 12px;
   flex-shrink: 0;
-}
-
-.strongs-nav-buttons {
-  display: flex;
-  gap: 4px;
-}
-
-.strongs-nav-back,
-.strongs-nav-forward {
-  background: rgba(126, 200, 227, 0.1);
-  border: 1px solid rgba(126, 200, 227, 0.3);
-  color: #7ec8e3;
-  font-size: 0.9em;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-.strongs-nav-back:hover:not(:disabled),
-.strongs-nav-forward:hover:not(:disabled) {
-  background: rgba(126, 200, 227, 0.2);
-  color: #fff;
-}
-
-.strongs-nav-back:disabled,
-.strongs-nav-forward:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
 }
 
 .strongs-sidebar-title {
@@ -10727,8 +10704,8 @@ body.biblical-timeline-open .top-nav-inner {
   
   .reader-content-select {
     flex: 0 0 auto;
-    min-width: 70px !important;
-    max-width: 80px;
+    min-width: 100px !important;
+    max-width: 140px;
   }
   
   .bible-translation-select {
@@ -10801,8 +10778,8 @@ body.biblical-timeline-open .top-nav-inner {
   }
   
   .reader-content-select {
-    min-width: 60px !important;
-    max-width: 70px;
+    min-width: 90px !important;
+    max-width: 120px;
   }
   
   .bible-translation-select {
@@ -10878,8 +10855,8 @@ body.biblical-timeline-open .top-nav-inner {
   }
   
   .reader-content-select {
-    min-width: 50px !important;
-    max-width: 60px;
+    min-width: 80px !important;
+    max-width: 100px;
   }
   
   .bible-translation-select {

@@ -21,7 +21,12 @@ const BookView = {
       return;
     }
     
-    // Show loading state
+    // Use cache if available so we don't show "Loading chapter..." on revisit
+    if (this.cache.has(chapterId)) {
+      this.renderChapter(container, chapterId, this.cache.get(chapterId));
+      return;
+    }
+    
     container.innerHTML = `
       <div class="book-view loading">
         <div class="loading-spinner"></div>
@@ -30,7 +35,6 @@ const BookView = {
     `;
     
     try {
-      // Fetch chapter content
       const html = await this.loadChapter(chapterId);
       this.renderChapter(container, chapterId, html);
     } catch (error) {

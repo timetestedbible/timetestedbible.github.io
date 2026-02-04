@@ -9,24 +9,27 @@ const BIBLE_TRANSLATIONS = {
     name: 'KJV',
     fullName: 'King James Version',
     file: '/kjv.txt',
-    separator: '\t',  // Tab-separated
-    skipLines: 2      // Header lines to skip
+    jsonFile: '/kjv.json',  // Pre-processed: faster load (no runtime parsing)
+    separator: '\t',
+    skipLines: 2
   },
   asv: {
     id: 'asv',
     name: 'ASV',
     fullName: 'American Standard Version',
     file: '/asv.txt',
-    separator: ' ',   // Space-separated (first space after reference)
-    skipLines: 4      // Header lines to skip (includes blank lines)
+    jsonFile: '/asv.json',
+    separator: ' ',
+    skipLines: 4
   },
   lxx: {
     id: 'lxx',
     name: 'LXX',
     fullName: 'Septuagint (Brenton)',
     file: '/lxx.txt',
-    separator: '\t',  // Tab-separated
-    skipLines: 2      // Header lines to skip
+    jsonFile: '/lxx.json',
+    separator: '\t',
+    skipLines: 2
   }
 };
 
@@ -673,12 +676,12 @@ function showHebrewTooltip(event) {
   }
   
   tooltipEl.innerHTML = html;
-  document.body.appendChild(tooltipEl);
+  getBibleTooltipPortal().appendChild(tooltipEl);
   
-  // Position tooltip above the emoji
+  // Position tooltip above the emoji (viewport coords - portal is fixed)
   const rect = el.getBoundingClientRect();
   tooltipEl.style.left = Math.max(10, rect.left - 100) + 'px';
-  tooltipEl.style.top = (rect.top - tooltipEl.offsetHeight - 10 + window.scrollY) + 'px';
+  tooltipEl.style.top = (rect.top - tooltipEl.offsetHeight - 10) + 'px';
   
   // Close on click outside (but not on buttons)
   setTimeout(() => {
@@ -689,6 +692,39 @@ function showHebrewTooltip(event) {
       }
     });
   }, 10);
+}
+
+// Portal for tooltips/popups so they always paint on top of Bible content
+function getBibleTooltipPortal() {
+  return document.getElementById('bible-tooltip-portal') || document.body;
+}
+
+// Mobile: first tap = tooltip, second tap = Strong's panel. Desktop: hover = tooltip, click = panel.
+function isBibleReaderMobile() {
+  return window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 768;
+}
+
+let lastTappedStrongsKey = null;
+let lastTappedStrongsWord = '';
+let lastTappedStrongsGloss = '';
+
+function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
+  if (event) event.stopPropagation();
+  if (isBibleReaderMobile()) {
+    if (lastTappedStrongsKey === strongsNum) {
+      lastTappedStrongsKey = null;
+      lastTappedStrongsWord = '';
+      lastTappedStrongsGloss = '';
+      showStrongsPanel(strongsNum, englishWord, gloss, event);
+      return;
+    }
+    lastTappedStrongsWord = englishWord || '';
+    lastTappedStrongsGloss = gloss || '';
+    showWordTooltip(event);
+    lastTappedStrongsKey = strongsNum;
+    return;
+  }
+  showStrongsPanel(strongsNum, englishWord, gloss, event);
 }
 
 // Show word tooltip on hover (definitions + symbol meaning)
@@ -721,32 +757,61 @@ function showWordTooltip(event) {
   }
   
   tooltip.innerHTML = html;
-  document.body.appendChild(tooltip);
+  getBibleTooltipPortal().appendChild(tooltip);
   
-  // Position tooltip below the word
+  // Position tooltip below the word (viewport coords for position:fixed)
   const rect = el.getBoundingClientRect();
   const tooltipRect = tooltip.getBoundingClientRect();
   
-  let left = rect.left + window.scrollX;
-  let top = rect.bottom + window.scrollY + 5;
+  let left = rect.left;
+  let top = rect.bottom + 5;
   
   // Keep within viewport
-  if (left + tooltipRect.width > window.innerWidth) {
+  if (left + tooltipRect.width > window.innerWidth - 10) {
     left = window.innerWidth - tooltipRect.width - 10;
   }
   if (left < 10) left = 10;
-  
-  // If tooltip would go below viewport, show above
-  if (top + tooltipRect.height > window.innerHeight + window.scrollY) {
-    top = rect.top + window.scrollY - tooltipRect.height - 5;
+  if (top + tooltipRect.height > window.innerHeight - 10) {
+    top = rect.top - tooltipRect.height - 5;
   }
+  if (top < 10) top = 10;
   
   tooltip.style.left = left + 'px';
   tooltip.style.top = top + 'px';
   tooltip.style.opacity = '1';
+
+  // Click on tooltip = same as clicking the word: open Strong's panel
+  tooltip.addEventListener('click', function onTooltipClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const key = isBibleReaderMobile() && lastTappedStrongsKey ? lastTappedStrongsKey : (el.dataset.strongs || null);
+    const word = isBibleReaderMobile() && lastTappedStrongsKey ? lastTappedStrongsWord : ((el.textContent || '').trim());
+    const gloss = isBibleReaderMobile() && lastTappedStrongsKey ? lastTappedStrongsGloss : (el.dataset.def || '');
+    hideWordTooltip();
+    if (key) showStrongsPanel(key, word, gloss, e);
+  });
+  
+  // Hide tooltip when mouse leaves it (unless returning to the word)
+  tooltip.addEventListener('mouseleave', function onTooltipLeave(e) {
+    // Check if mouse is going back to a strongs-word or symbol-word
+    if (e.relatedTarget && (e.relatedTarget.classList?.contains('strongs-word') || e.relatedTarget.classList?.contains('symbol-word'))) {
+      return; // Mouse is going back to a word, that word's mouseenter will show new tooltip
+    }
+    hideWordTooltip();
+  });
 }
 
-function hideWordTooltip() {
+function hideWordTooltip(event) {
+  // If mouse is moving to the tooltip, don't hide it
+  if (event && event.relatedTarget) {
+    const tooltip = document.getElementById('word-hover-tooltip');
+    if (tooltip && (tooltip === event.relatedTarget || tooltip.contains(event.relatedTarget))) {
+      return; // Mouse is moving to tooltip, keep it visible
+    }
+  }
+  lastTappedStrongsKey = null;
+  lastTappedStrongsWord = '';
+  lastTappedStrongsGloss = '';
   const tooltip = document.getElementById('word-hover-tooltip');
   if (tooltip) tooltip.remove();
 }
@@ -784,8 +849,11 @@ async function loadTranslation(translationId, showDialog = false) {
     return translationsLoading[translationId];
   }
   
-  // Show loading dialog only if requested
+  // Show loading dialog only if requested and we still don't have it (avoid flash on back)
   if (showDialog) {
+    if (bibleTranslations[translationId]) {
+      return true;
+    }
     showBibleLoadingDialog();
     updateLoadingDialogText(`Loading ${config.name}...`);
   }
@@ -793,19 +861,39 @@ async function loadTranslation(translationId, showDialog = false) {
   // Create loading promise
   translationsLoading[translationId] = (async () => {
     try {
-      const response = await fetch(config.file);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const text = await response.text();
-      
-      const data = await parseBibleText(text, config);
-      bibleTranslations[translationId] = data;
+      let data;
+      if (config.jsonFile) {
+        if (showDialog) updateLoadingDialogText(`Downloading ${config.name}...`);
+        const response = await fetch(config.jsonFile);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const raw = await response.json();
+        // Pre-processed JSON: array of { book, chapter, verse, text }; add reference
+        data = raw.map((v) => ({
+          book: v.book,
+          chapter: v.chapter,
+          verse: v.verse,
+          text: v.text,
+          reference: `${v.book} ${v.chapter}:${v.verse}`
+        }));
+        bibleTranslations[translationId] = data;
+      } else {
+        if (showDialog) updateLoadingDialogText(`Downloading ${config.name}...`);
+        const response = await fetch(config.file);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        if (showDialog) updateLoadingDialogText(`Parsing ${config.name}...`);
+        data = await parseBibleText(text, config);
+        bibleTranslations[translationId] = data;
+      }
+
+      if (showDialog) updateLoadingDialogText(`Building index...`);
       rebuildTranslationIndex(translationId);
       syncLegacyVariables();
-      
+
       if (showDialog) {
         hideBibleLoadingDialog();
       }
-      
+
       console.log(`${config.name} loaded: ${data.length} verses`);
       return true;
     } catch (err) {
@@ -2826,6 +2914,76 @@ function abbreviateReference(ref) {
 let strongsHistory = [];
 let strongsHistoryIndex = -1;
 
+// Single source of truth: find symbol for a Strong's entry so panel always shows symbol when associated
+function getSymbolForStrongsEntry(strongsNum, entry, englishWord) {
+  let symbol = (typeof lookupSymbolByStrongs === 'function') ? lookupSymbolByStrongs(strongsNum) : null;
+
+  if (!symbol && typeof SYMBOL_DICTIONARY !== 'undefined' && typeof getStrongsEntry === 'function') {
+    for (const [symbolKey, sym] of Object.entries(SYMBOL_DICTIONARY)) {
+      if (sym.strongs) {
+        for (const symStrongs of sym.strongs) {
+          const symEntry = getStrongsEntry(symStrongs);
+          if (symEntry && symEntry.derivation) {
+            const normalized = normalizeStrongsNum(strongsNum);
+            if (symEntry.derivation.includes(normalized) || symEntry.derivation.includes(strongsNum)) {
+              symbol = sym;
+              break;
+            }
+          }
+        }
+        if (symbol) break;
+      }
+    }
+  }
+
+  if (!symbol && entry && entry.derivation && typeof lookupSymbolByStrongs === 'function') {
+    const derivationMatch = entry.derivation.match(/H\d+|G\d+/g);
+    if (derivationMatch) {
+      for (const derivedStrongs of derivationMatch) {
+        symbol = lookupSymbolByStrongs(derivedStrongs);
+        if (symbol) break;
+      }
+    }
+  }
+
+  if (!symbol && typeof lookupSymbolByWord !== 'function') return symbol;
+
+  // Collect all candidate words (passed word, lemma, KJV def words) and try each + variations
+  const candidates = new Set();
+  if (englishWord) {
+    const w = String(englishWord).toLowerCase().replace(/[.,;:!?'"()]/g, '');
+    if (w.length > 1) candidates.add(w);
+  }
+  if (entry && entry.lemma) {
+    const w = String(entry.lemma).toLowerCase().replace(/[.,;:!?'"()]/g, '');
+    if (w.length > 1) candidates.add(w);
+  }
+  if (entry && entry.kjv_def) {
+    const kjvDefLower = entry.kjv_def.toLowerCase();
+    const words = kjvDefLower.replace(/[^\w\s-]/g, ' ').split(/[\s-]+/).filter(w => w.length > 2);
+    words.forEach(w => candidates.add(w));
+  }
+
+  for (const word of candidates) {
+    symbol = lookupSymbolByWord(word);
+    if (symbol) return symbol;
+    const base = word.replace(/(ful|less|ly|ing|ed|s)$/, '');
+    if (base.length > 2 && base !== word) {
+      symbol = lookupSymbolByWord(base);
+      if (symbol) return symbol;
+    }
+    if (word.endsWith('s') && word.length > 3) {
+      symbol = lookupSymbolByWord(word.slice(0, -1));
+      if (symbol) return symbol;
+    }
+    if (!word.endsWith('s') && word.length > 2) {
+      symbol = lookupSymbolByWord(word + 's');
+      if (symbol) return symbol;
+    }
+  }
+  return symbol;
+}
+
 // Linkify Strong's references in text (H#### or G####)
 function linkifyStrongsRefs(text) {
   if (!text) return '';
@@ -2905,12 +3063,6 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
   
   const entry = getStrongsEntry(strongsNum);
   
-  // Update navigation buttons
-  const backBtn = sidebar.querySelector('.strongs-nav-back');
-  const fwdBtn = sidebar.querySelector('.strongs-nav-forward');
-  if (backBtn) backBtn.disabled = strongsHistoryIndex <= 0;
-  if (fwdBtn) fwdBtn.disabled = strongsHistoryIndex >= strongsHistory.length - 1;
-  
   // Update title
   const titleEl = sidebar.querySelector('.strongs-sidebar-title');
   if (titleEl) titleEl.textContent = strongsNum;
@@ -2939,8 +3091,8 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
     html += renderPersonInfoHtml(allPersonInfo);
   }
   
-  // Add symbolic meaning if available for this Strong's number
-  const symbol = (typeof lookupSymbolByStrongs === 'function') ? lookupSymbolByStrongs(strongsNum) : null;
+  // Use same symbol lookup as main panel so symbol always shows when associated
+  const symbol = getSymbolForStrongsEntry(strongsNum, entry, null);
   if (symbol) {
     const symbolKey = Object.keys(SYMBOL_DICTIONARY || {}).find(k => SYMBOL_DICTIONARY[k] === symbol) || '';
     html += `
@@ -3019,23 +3171,26 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     strongsHistory = [strongsNum];
     strongsHistoryIndex = 0;
     
-    // Build sidebar content
+    // Build sidebar content (no back/forward here — use top header)
     sidebar.innerHTML = `
       <div class="strongs-sidebar-resize" onmousedown="startStrongsResize(event)"></div>
       <div class="strongs-sidebar-header">
-        <div class="strongs-nav-buttons">
-          <button class="strongs-nav-back" onclick="strongsGoBack()" disabled title="Back">◀</button>
-          <button class="strongs-nav-forward" onclick="strongsGoForward()" disabled title="Forward">▶</button>
-        </div>
         <div class="strongs-sidebar-title">${strongsNum}</div>
         <button class="strongs-sidebar-close" onclick="closeStrongsPanel()">✕</button>
       </div>
       <div class="strongs-sidebar-content"></div>
     `;
     
-    // Animate open
+    // Restore user's saved width if any
+    try {
+      const saved = localStorage.getItem('strongs-sidebar-width');
+      if (saved) sidebar.style.width = saved;
+    } catch (e) {}
+    
+    // Animate open (body class raises stacking context so overlay is above word/hebrew tooltips)
     requestAnimationFrame(() => {
       sidebar.classList.add('open');
+      document.body.classList.add('strongs-sidebar-open');
     });
   } else {
     // Sidebar already open, add to history
@@ -3073,12 +3228,8 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     html += `<div class="strongs-gloss">${gloss || 'No definition available'}</div>`;
   }
   
-  // Add symbolic meaning FIRST (before person info) if available
-  // Try lookup by Strong's number first, then by English word
-  let symbol = (typeof lookupSymbolByStrongs === 'function') ? lookupSymbolByStrongs(strongsNum) : null;
-  if (!symbol && englishWord && typeof lookupSymbolByWord === 'function') {
-    symbol = lookupSymbolByWord(englishWord);
-  }
+  // Add symbolic meaning when this Strong's is associated with a symbol (same logic for all entry paths)
+  const symbol = getSymbolForStrongsEntry(strongsNum, entry, englishWord);
   if (symbol) {
     const symbolKey = Object.keys(SYMBOL_DICTIONARY || {}).find(k => SYMBOL_DICTIONARY[k] === symbol) || '';
     html += `
@@ -3159,12 +3310,6 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     };
   }
   
-  // Update nav buttons
-  const backBtn = sidebar.querySelector('.strongs-nav-back');
-  const fwdBtn = sidebar.querySelector('.strongs-nav-forward');
-  if (backBtn) backBtn.disabled = strongsHistoryIndex <= 0;
-  if (fwdBtn) fwdBtn.disabled = strongsHistoryIndex >= strongsHistory.length - 1;
-  
   // Dispatch to AppStore for URL sync (unidirectional flow)
   if (!skipDispatch && typeof AppStore !== 'undefined') {
     AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: strongsNum });
@@ -3177,6 +3322,7 @@ function closeStrongsPanel(skipDispatch = false) {
   if (sidebar) {
     sidebar.classList.remove('open', 'collapsed');
     sidebar.innerHTML = '';
+    document.body.classList.remove('strongs-sidebar-open');
   }
   // Reset history
   strongsHistory = [];
@@ -3194,6 +3340,8 @@ let isResizing = false;
 function startStrongsResize(event) {
   event.preventDefault();
   isResizing = true;
+  const sidebar = document.getElementById('strongs-sidebar');
+  if (sidebar) sidebar.classList.add('resizing');
   document.body.style.cursor = 'ew-resize';
   document.body.style.userSelect = 'none';
   
@@ -3220,14 +3368,13 @@ function doStrongsResize(event) {
 
 function stopStrongsResize() {
   isResizing = false;
-  document.body.style.cursor = '';
-  document.body.style.userSelect = '';
-  
-  // Save the width
   const sidebar = document.getElementById('strongs-sidebar');
   if (sidebar) {
+    sidebar.classList.remove('resizing');
     localStorage.setItem('strongs-sidebar-width', sidebar.style.width);
   }
+  document.body.style.cursor = '';
+  document.body.style.userSelect = '';
   
   document.removeEventListener('mousemove', doStrongsResize);
   document.removeEventListener('mouseup', stopStrongsResize);
@@ -3285,7 +3432,7 @@ function renderVerseWithStrongs(bookName, chapter, verseNum, plainText) {
       classes.push('strongs-word');
       const escapedWord = match.replace(/'/g, "\\'").replace(/"/g, '&quot;');
       const escapedGloss = (entry.g || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-      onclick = `showStrongsPanel('${entry.s}', '${escapedWord}', '${escapedGloss}', event)`;
+      onclick = `handleStrongsWordClick('${entry.s}', '${escapedWord}', '${escapedGloss}', event)`;
     }
     
     if (symbol) {
@@ -3312,7 +3459,7 @@ function renderVerseWithStrongs(bookName, chapter, verseNum, plainText) {
         dataAttrs.push(`data-symbol-meaning="${(symbol.is2 || symbol.is || '').replace(/"/g, '&quot;')}"`);
       }
       
-      return `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip()">${match}</span>`;
+      return `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip(event)">${match}</span>`;
     }
     
     return match;
@@ -3374,7 +3521,7 @@ function showBookRefPopup(book, chapter, verse, event) {
     popup = document.createElement('div');
     popup.id = 'book-ref-popup';
     popup.className = 'book-ref-popup';
-    document.body.appendChild(popup);
+    getBibleTooltipPortal().appendChild(popup);
   }
   
   // Build popup content
@@ -3400,23 +3547,21 @@ function showBookRefPopup(book, chapter, verse, event) {
   
   html += '</div>';
   popup.innerHTML = html;
-  popup.classList.add('visible');
   
-  // Position near the clicked icon
+  // Position near the clicked icon first so it drops down in place (no sliding across screen)
   if (event && event.target) {
     const rect = event.target.getBoundingClientRect();
-    let left = rect.left + window.scrollX;
-    let top = rect.bottom + window.scrollY + 5;
-    
-    // Keep within viewport
+    let left = rect.left;
+    let top = rect.bottom + 5;
     const popupWidth = 280;
-    if (left + popupWidth > window.innerWidth) {
+    if (left + popupWidth > window.innerWidth - 10) {
       left = window.innerWidth - popupWidth - 10;
     }
-    
+    if (left < 10) left = 10;
     popup.style.left = left + 'px';
     popup.style.top = top + 'px';
   }
+  popup.classList.add('visible');
 }
 
 function closeBookRefPopup() {
@@ -3455,8 +3600,8 @@ async function parseBibleText(text, config = BIBLE_TRANSLATIONS.kjv) {
   const skipLines = config.skipLines || 2;
   const useTabSeparator = config.separator === '\t';
   
-  // Process in chunks to yield to main thread
-  const CHUNK_SIZE = 2000;
+  // Yield to main thread occasionally so UI stays responsive (fewer yields = faster total parse)
+  const CHUNK_SIZE = 8000;
   
   for (let i = skipLines; i < totalLines; i++) {
     const line = lines[i].trim();
@@ -3532,29 +3677,38 @@ function updateLoadingDialogText(text) {
 
 // Switch to a different translation
 async function switchTranslation(translationId) {
-  const config = BIBLE_TRANSLATIONS[translationId];
+  // Normalize to canonical id so we always hit the same cache key (e.g. 'KJV' -> 'kjv')
+  const id = (translationId || '').toLowerCase();
+  let config = BIBLE_TRANSLATIONS[id];
+  if (!config) {
+    config = Object.values(BIBLE_TRANSLATIONS).find(c => c.name === (translationId || '').toUpperCase() || c.id === id);
+  }
   if (!config) {
     console.warn(`Unknown translation: ${translationId}`);
     return false;
   }
+  const canonicalId = config.id;
   
-  // Load if not already loaded
-  if (!bibleTranslations[translationId]) {
-    await loadTranslation(translationId, true);
+  // Sync so we see latest cache (e.g. from loadAllTranslations or previous load)
+  syncLegacyVariables();
+  
+  // Load if not in cache; never show overlay when switching/back (only initBibleExplorer shows it)
+  if (!bibleTranslations[canonicalId]) {
+    await loadTranslation(canonicalId, false);
   }
   
-  if (!bibleTranslations[translationId]) {
+  if (!bibleTranslations[canonicalId]) {
     console.warn(`Failed to load ${config.name}`);
     return false;
   }
   
   // Switch current translation
-  currentTranslation = translationId;
+  currentTranslation = canonicalId;
   syncLegacyVariables();
   
   // Save preference
   try {
-    localStorage.setItem('bible_translation_preference', translationId);
+    localStorage.setItem('bible_translation_preference', canonicalId);
   } catch (e) {}
   
   // Update UI
@@ -4058,6 +4212,10 @@ let bibleExplorerState = {
   historyIndex: -1
 };
 
+// Cache for rendered chapter HTML to avoid re-generating on back navigation
+// Key format: "translation:book:chapter" -> HTML string
+const chapterHTMLCache = new Map();
+
 // Navigate to a Bible location and push to history
 function navigateToBibleLocation(book, chapter, verse = null, addToHistory = true) {
   const normalizedBook = normalizeBookName(book);
@@ -4139,12 +4297,18 @@ function initBibleExplorer() {
     currentTranslation = savedTranslation;
   }
   
+  // Sync from cache so we don't reload or show "Downloading..." if already loaded
+  syncLegacyVariables();
+  
   // Populate translation dropdown
   populateTranslationDropdown();
   
   if (!bibleData) {
-    // User is actively waiting, so show loading dialog
-    loadTranslation(currentTranslation, true).then(() => {
+    // Only show loading dialog when user is actually viewing Bible; else load in background
+    const state = typeof AppStore !== 'undefined' ? AppStore.getState() : {};
+    const contentType = state?.content?.params?.contentType || 'bible';
+    const showDialog = contentType === 'bible';
+    loadTranslation(currentTranslation, showDialog).then(() => {
       buildBookChapterCounts();
       populateBibleBooks();
       updateTranslationUI();
@@ -4283,14 +4447,6 @@ function getBibleWelcomeHTML() {
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="bible-quick-links">
-        <span class="bible-quick-label">Quick Start:</span>
-        <button onclick="openBibleExplorerTo('Genesis', 1)">Genesis 1</button>
-        <button onclick="openBibleExplorerTo('Psalms', 23)">Psalm 23</button>
-        <button onclick="openBibleExplorerTo('John', 1)">John 1</button>
-        <button onclick="openBibleExplorerTo('Revelation', 1)">Revelation 1</button>
       </div>
     </div>
   `;
@@ -4466,6 +4622,49 @@ function selectBibleChapter(chapter, addToHistory = true) {
   updateBibleExplorerURL(bibleExplorerState.currentBook, chapter, null);
 }
 
+// Build chapter HTML (sync, for LCP: call with useInterlinear=false to paint immediately)
+function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
+  const isNT = isNTBook(bookName);
+  const hasInterlinearData = useInterlinear && (isNT ? ntInterlinearData : interlinearData);
+  const hasOriginalLang = hasInterlinear(bookName);
+  const origLangClass = hasOriginalLang ? ' has-hebrew' : '';
+  const interlinearTitle = isNTBook(bookName) ? 'Click to show interlinear Greek' : 'Click to show interlinear Hebrew';
+  let html = '<div class="bible-explorer-chapter">';
+  html += `<div class="bible-explorer-chapter-header">
+    <h2>${bookName}</h2>
+    <div class="chapter-subtitle">Chapter ${chapter}</div>
+  </div>`;
+  for (const verse of verses) {
+    const reference = `${bookName} ${chapter}:${verse.verse}`;
+    let verseText;
+    if (hasOriginalLang && hasInterlinearData) {
+      verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, verse.text);
+    } else {
+      verseText = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+    }
+    const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
+    const bookRefHtml = bookRefs && bookRefs.length > 0
+      ? `<span class="verse-book-ref" onclick="showBookRefPopup('${bookName}', ${chapter}, ${verse.verse}, event)" title="Referenced in A Time Tested Tradition">📖</span>`
+      : `<span class="verse-book-ref-spacer"></span>`;
+    const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(bookName, chapter, verse.verse) : false;
+    const crossRefHtml = hasCrossRefs
+      ? `<span class="verse-cross-ref" onclick="showCrossRefPanel('${bookName}', ${chapter}, ${verse.verse}, event)" title="Cross References">🔗</span>`
+      : `<span class="verse-cross-ref-spacer"></span>`;
+    const verseNumSpan = `<span class="bible-verse-number${hasOriginalLang ? ' clickable-hebrew' : ''}" onclick="${hasOriginalLang ? `showInterlinear('${bookName}', ${chapter}, ${verse.verse}, event)` : `copyVerseReference('${bookName}', ${chapter}, ${verse.verse})`}" title="${hasOriginalLang ? interlinearTitle : 'Click to copy reference'}">${verse.verse}</span>`;
+    html += `<div class="bible-explorer-verse${origLangClass}" id="verse-${verse.verse}">
+      <div class="verse-meta">${bookRefHtml}${crossRefHtml}${verseNumSpan}</div>
+      <span class="bible-verse-text">${verseText}</span>
+    </div>`;
+  }
+  html += `
+    <div class="bible-chapter-nav bible-chapter-nav-in-content">
+      <button type="button" id="bible-prev-chapter" class="bible-nav-btn" onclick="prevBibleChapter()" title="Previous chapter">◁ Prev</button>
+      <button type="button" id="bible-next-chapter" class="bible-nav-btn" onclick="nextBibleChapter()" title="Next chapter">Next ▷</button>
+    </div>
+  </div>`;
+  return html;
+}
+
 // Display a chapter
 async function displayBibleChapter(bookName, chapter, highlightVerse = null) {
   const textContainer = document.getElementById('bible-explorer-text');
@@ -4486,65 +4685,62 @@ async function displayBibleChapter(bookName, chapter, highlightVerse = null) {
     return;
   }
   
-  // Ensure interlinear data is loaded for this testament
+  // Check cache first - key is translation:book:chapter
+  const cacheKey = `${currentTranslation}:${bookName}:${chapter}`;
+  let html = chapterHTMLCache.get(cacheKey);
   const isNT = isNTBook(bookName);
-  if (isNT && !ntInterlinearData) {
-    await loadNTInterlinear();
-  } else if (!isNT && hasHebrewText(bookName) && !interlinearData) {
-    await loadInterlinear();
-  }
+  const hasInterlinearData = isNT ? ntInterlinearData : interlinearData;
+  const needsInterlinear = (isNT && !ntInterlinearData) || (!isNT && hasHebrewText(bookName) && !interlinearData);
   
-  // Build chapter HTML
-  let html = '<div class="bible-explorer-chapter">';
-  html += `<div class="bible-explorer-chapter-header">
-    <h2>${bookName}</h2>
-    <div class="chapter-subtitle">Chapter ${chapter}</div>
-  </div>`;
-  
-  for (const verse of verses) {
-    const highlighted = highlightVerse && verse.verse === highlightVerse ? ' highlighted' : '';
-    const reference = `${bookName} ${chapter}:${verse.verse}`;
-    const hasOriginalLang = hasInterlinear(bookName);
-    const origLangClass = hasOriginalLang ? ' has-hebrew' : '';  // Reuse class for both Hebrew and Greek
-    
-    // Use Strong's clickable words if interlinear data is loaded for this testament
-    const hasInterlinearData = isNT ? ntInterlinearData : interlinearData;
-    let verseText;
-    if (hasOriginalLang && hasInterlinearData) {
-      verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, verse.text);
-    } else {
-      // Apply symbol highlighting even without interlinear data
-      verseText = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+  if (!html) {
+    // Paint immediately for LCP: build with or without Strong's based on what we have (do not await interlinear)
+    html = buildChapterHTML(bookName, chapter, verses, !!hasInterlinearData);
+    textContainer.innerHTML = html;
+    // If interlinear is needed but not loaded, load in background and re-render when ready
+    if (needsInterlinear) {
+      if (highlightVerse) {
+        const verseEl = document.getElementById(`verse-${highlightVerse}`);
+        if (verseEl) verseEl.classList.add('highlighted');
+      }
+      if (typeof updateChapterNavigation === 'function') updateChapterNavigation();
+      if (highlightVerse) {
+        setTimeout(() => {
+          const verseEl = document.getElementById(`verse-${highlightVerse}`);
+          if (verseEl) verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      } else {
+        textContainer.scrollTop = 0;
+      }
+      bibleExplorerState.currentBook = bookName;
+      bibleExplorerState.currentChapter = chapter;
+      bibleExplorerState.highlightedVerse = highlightVerse;
+      const loadPromise = isNT ? loadNTInterlinear() : loadInterlinear();
+      loadPromise.then(() => {
+        if (bibleExplorerState.currentBook !== bookName || bibleExplorerState.currentChapter !== chapter) return;
+        const fullHtml = buildChapterHTML(bookName, chapter, verses, true);
+        chapterHTMLCache.set(cacheKey, fullHtml);
+        const el = document.getElementById('bible-explorer-text');
+        if (el) el.innerHTML = fullHtml;
+        if (highlightVerse) {
+          const verseEl = document.getElementById(`verse-${highlightVerse}`);
+          if (verseEl) verseEl.classList.add('highlighted');
+        }
+        if (typeof updateChapterNavigation === 'function') updateChapterNavigation();
+      }).catch(() => {});
+      return;
     }
-    
-    const interlinearTitle = isNTBook(bookName) ? 'Click to show interlinear Greek' : 'Click to show interlinear Hebrew';
-    
-    // Check if this verse is referenced in the book
-    const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
-    const bookRefHtml = bookRefs && bookRefs.length > 0 
-      ? `<span class="verse-book-ref" onclick="showBookRefPopup('${bookName}', ${chapter}, ${verse.verse}, event)" title="Referenced in A Time Tested Tradition">📖</span>`
-      : `<span class="verse-book-ref-spacer"></span>`;
-    
-    // Check for cross-references (works for all translations with matching verse references)
-    const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(bookName, chapter, verse.verse) : false;
-    const crossRefHtml = hasCrossRefs
-      ? `<span class="verse-cross-ref" onclick="showCrossRefPanel('${bookName}', ${chapter}, ${verse.verse}, event)" title="Cross References">🔗</span>`
-      : `<span class="verse-cross-ref-spacer"></span>`;
-    
-    html += `<div class="bible-explorer-verse${highlighted}${origLangClass}" id="verse-${verse.verse}">
-      ${bookRefHtml}${crossRefHtml}<span class="bible-verse-number${hasOriginalLang ? ' clickable-hebrew' : ''}" onclick="${hasOriginalLang ? `showInterlinear('${bookName}', ${chapter}, ${verse.verse}, event)` : `copyVerseReference('${bookName}', ${chapter}, ${verse.verse})`}" title="${hasOriginalLang ? interlinearTitle : 'Click to copy reference'}">${verse.verse}</span>
-      <span class="bible-verse-text">${verseText}</span>
-    </div>`;
+    chapterHTMLCache.set(cacheKey, html);
+  } else {
+    textContainer.innerHTML = html;
   }
   
-  // Prev/next chapter nav inside content (only visible when user scrolls to bottom)
-  html += `
-    <div class="bible-chapter-nav bible-chapter-nav-in-content">
-      <button type="button" id="bible-prev-chapter" class="bible-nav-btn" onclick="prevBibleChapter()" title="Previous chapter">◁ Prev</button>
-      <button type="button" id="bible-next-chapter" class="bible-nav-btn" onclick="nextBibleChapter()" title="Next chapter">Next ▷</button>
-    </div>
-  </div>`;
-  textContainer.innerHTML = html;
+  // Apply verse highlighting after inserting HTML (since highlight can change without re-render)
+  if (highlightVerse) {
+    const verseEl = document.getElementById(`verse-${highlightVerse}`);
+    if (verseEl) {
+      verseEl.classList.add('highlighted');
+    }
+  }
   
   // Update prev/next button states
   if (typeof updateChapterNavigation === 'function') {
@@ -4750,7 +4946,8 @@ function openBibleExplorerTo(book, chapter, verse = null) {
     navigateTo('bible-explorer');
   }
   
-  // Wait for initialization then set book/chapter and dropdowns to match URL/content
+  // No delay when already initialized (book in counts); 200ms only to wait for init
+  const delay = bibleExplorerState.bookChapterCounts && bibleExplorerState.bookChapterCounts[normalizedBook] ? 0 : 200;
   setTimeout(() => {
     if (!bibleExplorerState.bookChapterCounts[normalizedBook]) return;
     
@@ -4783,8 +4980,30 @@ function openBibleExplorerTo(book, chapter, verse = null) {
       bibleExplorerState.historyIndex = bibleExplorerState.history.length - 1;
     }
     
-    // Show chapter content
-    displayBibleChapter(normalizedBook, chapter, verse);
+    // Show chapter content (cache hit = instant; no cache = build then store)
+    const cacheKey = `${currentTranslation}:${normalizedBook}:${chapter}`;
+    const cachedHtml = chapterHTMLCache.get(cacheKey);
+    if (cachedHtml) {
+      const textContainer = document.getElementById('bible-explorer-text');
+      const titleEl = document.getElementById('bible-chapter-title');
+      if (textContainer) textContainer.innerHTML = cachedHtml;
+      if (titleEl) titleEl.textContent = `${normalizedBook} ${chapter}`;
+      if (verse) {
+        const verseEl = document.getElementById(`verse-${verse}`);
+        if (verseEl) verseEl.classList.add('highlighted');
+      }
+      if (typeof updateChapterNavigation === 'function') updateChapterNavigation();
+      if (verse) {
+        setTimeout(() => {
+          const verseEl = document.getElementById(`verse-${verse}`);
+          if (verseEl) verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      } else {
+        if (textContainer) textContainer.scrollTop = 0;
+      }
+    } else {
+      displayBibleChapter(normalizedBook, chapter, verse);
+    }
     updateChapterNavigation();
     populateBibleChapters(normalizedBook);
     document.querySelectorAll('.bible-chapter-btn').forEach(el => {
@@ -4794,7 +5013,7 @@ function openBibleExplorerTo(book, chapter, verse = null) {
     if (typeof updateBibleHistoryButtons === 'function') updateBibleHistoryButtons();
     
     updateBibleExplorerURL(normalizedBook, chapter, verse);
-  }, 200);
+  }, delay);
 }
 
 // Update browser URL for Bible Explorer - dispatches to AppStore for proper data flow
@@ -4932,7 +5151,7 @@ function showHebrewInterlinear(verseEl, hebrewText, errorMessage) {
 
 /**
  * Update the reader content selector dropdown and show/hide appropriate selector groups
- * @param {string} contentType - 'bible', 'symbols', or 'timetested'
+ * @param {string} contentType - 'bible', 'symbols', 'words', 'numbers', 'timetested', or 'people'
  */
 function updateReaderContentSelector(contentType) {
   // Update dropdown value
@@ -4942,13 +5161,15 @@ function updateReaderContentSelector(contentType) {
   }
   
   // Show/hide selector groups
+  // For 'words', 'numbers', 'people', and 'symbols-article', hide all selectors
+  const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article'].includes(contentType);
   const bibleSelectors = document.getElementById('bible-selectors');
   const symbolSelectors = document.getElementById('symbol-selectors');
   const ttSelectors = document.getElementById('timetested-selectors');
   
-  if (bibleSelectors) bibleSelectors.style.display = contentType === 'bible' ? '' : 'none';
-  if (symbolSelectors) symbolSelectors.style.display = contentType === 'symbols' ? '' : 'none';
-  if (ttSelectors) ttSelectors.style.display = contentType === 'timetested' ? '' : 'none';
+  if (bibleSelectors) bibleSelectors.style.display = (contentType === 'bible' && !hideAllSelectors) ? '' : 'none';
+  if (symbolSelectors) symbolSelectors.style.display = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'none';
+  if (ttSelectors) ttSelectors.style.display = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'none';
   
   // Populate symbol dropdown if switching to symbols
   if (contentType === 'symbols') {
@@ -4963,7 +5184,7 @@ function updateReaderContentSelector(contentType) {
 
 /**
  * Handle content type change from the dropdown
- * @param {string} value - 'bible', 'symbols', or 'timetested'
+ * @param {string} value - 'bible', 'symbols', 'words', 'numbers', 'timetested', or 'people'
  */
 function onReaderContentChange(value) {
   if (!value) return;
@@ -4971,6 +5192,7 @@ function onReaderContentChange(value) {
   // Navigate to the selected content type
   if (typeof AppStore !== 'undefined') {
     const params = { contentType: value };
+    // For content types without selectors, go to their index/landing page
     AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params });
   }
 }
@@ -5002,16 +5224,14 @@ function onSymbolSelect(symbolKey) {
 
 /**
  * Handle Time Tested chapter selection from dropdown
- * @param {string} chapterId - the chapter ID to navigate to
+ * @param {string} chapterId - the chapter ID to navigate to (empty string shows index)
  */
 function onTimeTestedSelect(chapterId) {
-  if (!chapterId) return;
-  
   if (typeof AppStore !== 'undefined') {
     AppStore.dispatch({
       type: 'SET_VIEW',
       view: 'reader',
-      params: { contentType: 'timetested', chapterId }
+      params: { contentType: 'timetested', chapterId: chapterId || null }
     });
   }
 }
@@ -5038,17 +5258,29 @@ function populateSymbolDropdown() {
 
 /**
  * Populate the Time Tested chapter dropdown
+ * Index is first; Chapters in an optgroup; Reviews in a separate optgroup.
  */
 function populateTimeTestedDropdown() {
   const select = document.getElementById('timetested-chapter-select');
   if (!select) return;
   
-  // Get chapters from TIME_TESTED_CHAPTERS (defined in timetested-chapters.js)
   const chapters = typeof TIME_TESTED_CHAPTERS !== 'undefined' ? TIME_TESTED_CHAPTERS : [];
+  const mainChapters = chapters.filter(ch => ch.folder === 'chapters');
+  const extraChapters = chapters.filter(ch => ch.folder === 'extra');
   
-  let html = '<option value="">Chapter...</option>';
-  for (const chapter of chapters) {
-    html += `<option value="${chapter.id}">${chapter.title}</option>`;
+  let html = '<option value="">📚 Index</option>';
+  html += '<optgroup label="Chapters">';
+  for (const ch of mainChapters) {
+    html += `<option value="${ch.id}">${ch.title}</option>`;
   }
+  if (extraChapters.length > 0) {
+    for (const ch of extraChapters) {
+      html += `<option value="${ch.id}">${ch.title}</option>`;
+    }
+  }
+  html += '</optgroup>';
+  html += '<optgroup label="Reviews">';
+  html += '<option value="__reviews__">⭐ AI Reviews</option>';
+  html += '</optgroup>';
   select.innerHTML = html;
 }

@@ -62,16 +62,97 @@
   <link rel="manifest" href="/manifest.json">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/styles.css?v=133">
+  <link rel="stylesheet" href="/styles.css?v=134">
   <link rel="stylesheet" href="/components/world-map.css?v=1">
   <link rel="stylesheet" href="/components/dateline-map.css?v=5">
-  <link rel="stylesheet" href="/assets/css/bible-styles.css?v=124">
+  <link rel="stylesheet" href="/assets/css/bible-styles.css?v=125">
   <link rel="stylesheet" href="/assets/css/tutorial.css?v=1">
   <link rel="stylesheet" href="/assets/css/settings.css?v=1">
   <link rel="stylesheet" href="/assets/css/events.css?v=1">
   <link rel="stylesheet" href="/assets/css/symbols.css?v=1">
   <link rel="stylesheet" href="/assets/css/reader.css?v=1">
   <link rel="stylesheet" href="/assets/css/components.css?v=1">
+  <link rel="stylesheet" href="/assets/css/sabbath-tester.css?v=1">
+  
+  <!-- CRITICAL MOBILE FIX: Inline to bypass cache issues and body class dependencies -->
+  <style>
+    @media (max-width: 768px) {
+      /* GENERIC FIX: Enforce layout height for all views on mobile */
+      /* This ensures the container fits exactly under the 56px header */
+      
+      /* Main layout must fill remaining space, not exceed it */
+      .main-layout {
+        height: calc(100vh - 56px) !important;
+        height: calc(100dvh - 56px) !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+      }
+      
+      /* Content area fills main layout */
+      #content-area {
+        height: 100% !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+      }
+      
+      /* Bible/Reader page fills content area */
+      #bible-explorer-page,
+      .bible-explorer-page {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: auto !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: #0f0f23 !important; /* Ensure background covers */
+      }
+      
+      /* Flex chain for inner content */
+      .bible-explorer-body {
+        flex: 1 1 0% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        position: relative !important;
+      }
+      
+      /* When closed, Strong's sidebar must not participate in flex (so content wrapper gets full height) */
+      .strongs-sidebar:not(.open) {
+        position: absolute !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+      
+      .bible-content-wrapper {
+        flex: 1 1 0% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+      }
+      
+      /* The text area itself scrolls */
+      .bible-content-wrapper .bible-explorer-text {
+        flex: 1 1 0% !important;
+        min-height: 0 !important;
+        height: auto !important; /* Let flex handle height */
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 20px !important; /* Add padding to ensure bottom text is readable */
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- ═══════════════════════════════════════════════════════════════════ -->
@@ -165,7 +246,7 @@
         
         <div class="menu-divider menu-today-btn"></div>
         
-        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'bible'}}])">
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{}}])">
           <span class="menu-icon">📖</span>
           <span class="menu-label">Reader</span>
         </button>
@@ -300,6 +381,9 @@
       <!-- Populated by JavaScript -->
     </div>
   </div>
+  
+  <!-- Bible tooltips & popups: fixed overlay so they always paint on top -->
+  <div id="bible-tooltip-portal" class="bible-tooltip-portal" aria-hidden="true"></div>
   
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- SCRIPTS -->
@@ -575,6 +659,29 @@
       
       // Add initial URL to navigation history
       AppStore.dispatch({ type: 'NAV_PUSH', url: window.location.pathname + window.location.search });
+      
+      // Intercept in-app links so they never cause a full page reload (keeps RAM cache)
+      document.addEventListener('click', function interceptInAppLinks(e) {
+        const a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a || !a.href) return;
+        try {
+          const url = new URL(a.href);
+          if (url.origin !== window.location.origin) return;
+          if (a.hasAttribute('download') || a.target === '_blank') return;
+          const pathname = url.pathname;
+          if (/\.(pdf|json|css|js|png|jpg|jpeg|gif|ico|svg|txt|woff2?)(\?|$)/i.test(pathname)) return;
+          if (pathname === '/' || pathname.startsWith('/reader') || pathname.startsWith('/calendar') ||
+              pathname.startsWith('/bible') || pathname.startsWith('/timeline') || pathname.startsWith('/events') ||
+              pathname.startsWith('/symbols') || pathname.startsWith('/book') || pathname.startsWith('/settings') ||
+              pathname.startsWith('/tutorial') || pathname.startsWith('/help') || pathname.startsWith('/feasts') ||
+              pathname.startsWith('/priestly') || pathname.startsWith('/sabbath-tester') ||
+              /^\/[^/]+\/[^/]+\/\d{4}-\d{2}-\d{2}\//.test(pathname)) {
+            e.preventDefault();
+            AppStore.dispatch({ type: 'URL_CHANGED', url: url });
+            if (window.history.pushState) window.history.pushState({}, '', url.pathname + url.search);
+          }
+        } catch (err) { /* ignore */ }
+      }, true);
       
       // Sync global state for ported modules
       syncGlobalState();

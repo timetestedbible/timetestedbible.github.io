@@ -22,6 +22,10 @@ const BibleView = {
   cleanup() {
     // Called when view is deactivated
     console.log('[BibleView] cleanup');
+    if (this._mobileHeightCleanup && typeof this._mobileHeightCleanup === 'function') {
+      this._mobileHeightCleanup();
+      this._mobileHeightCleanup = null;
+    }
     if (typeof closeStrongsPanel === 'function') closeStrongsPanel();
     if (typeof closeBibleReader === 'function') closeBibleReader();
     if (typeof closeConceptSearch === 'function') closeConceptSearch();
@@ -46,7 +50,11 @@ const BibleView = {
     const switchingBack = !hasBibleContent && book && chapter;
     
     if (needsFullRender) {
-      this.renderStructure(container);
+      this.renderStructure(container, state);
+    } else {
+      // Page exists - ensure selector visibility reflects state (switching back to Bible)
+      this.syncSelectorVisibility(state);
+      this.applyMobileReaderHeight();
     }
     
     // Navigate if params changed OR if switching back to Bible from another content type
@@ -66,52 +74,102 @@ const BibleView = {
   },
   
   // Restore UI state from URL parameters (syncs panel state with URL)
+  // This follows unidirectional flow: state -> UI, not UI -> state
   restoreUIState(ui) {
     if (!ui) return;
     
     // Sync Strong's panel with URL state
-    const currentStrongsOpen = document.getElementById('strongs-sidebar')?.classList.contains('open');
-    const currentStrongsId = this._currentStrongsId;
+    const sidebar = document.getElementById('strongs-sidebar');
+    const currentStrongsOpen = sidebar?.classList.contains('open');
     
-    if (ui.strongsId && ui.strongsId !== currentStrongsId) {
+    if (ui.strongsId && ui.strongsId !== this._currentStrongsId) {
       // URL has a Strong's ID different from what we're showing - open/update panel
       this._currentStrongsId = ui.strongsId;
-      setTimeout(() => {
+      // Use requestAnimationFrame for proper DOM timing instead of arbitrary setTimeout
+      requestAnimationFrame(() => {
         if (typeof showStrongsPanel === 'function') {
-          showStrongsPanel(ui.strongsId, '', '', null);
+          // Pass skipDispatch=true to prevent re-dispatching to AppStore (we're syncing FROM state)
+          showStrongsPanel(ui.strongsId, '', '', null, true);
         }
-      }, 100);
+      });
     } else if (!ui.strongsId && currentStrongsOpen) {
       // URL has no Strong's ID but panel is open - close it
-      // Pass true to skip dispatch since we're syncing from URL
       this._currentStrongsId = null;
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         if (typeof closeStrongsPanel === 'function') {
-          closeStrongsPanel(true);
+          closeStrongsPanel(true); // skipDispatch=true since we're syncing from URL
         }
-      }, 100);
+      });
     }
     
-    // Restore search if specified in URL (only once per unique query)
-    if (ui.searchQuery && ui.searchQuery !== this._lastSearchQuery) {
+    // Sync search state
+    if (ui.searchQuery !== this._lastSearchQuery) {
       this._lastSearchQuery = ui.searchQuery;
-      setTimeout(() => {
-        if (typeof startConceptSearch === 'function') {
-          startConceptSearch(ui.searchQuery);
+      if (ui.searchQuery) {
+        // Need to show search results - but wait for interlinear data to be loaded first
+        // Search requires interlinear data to find Strong's numbers
+        const performSearch = async () => {
+          // Ensure both OT and NT interlinear data are loaded before searching
+          try {
+            if (typeof loadInterlinear === 'function') {
+              await loadInterlinear();
+            }
+            if (typeof loadNTInterlinear === 'function') {
+              await loadNTInterlinear();
+            }
+          } catch (err) {
+            console.warn('Failed to load interlinear data for search:', err);
+          }
+          
+          // Small delay to ensure DOM is ready
+          requestAnimationFrame(() => {
+            if (typeof startConceptSearch === 'function') {
+              startConceptSearch(ui.searchQuery, true);
+            }
+          });
+        };
+        
+        performSearch();
+      } else {
+        // Need to close search if open - skipDispatch=true since we're syncing FROM state
+        const resultsContainer = document.getElementById('concept-search-results');
+        if (resultsContainer && resultsContainer.style.display !== 'none') {
+          requestAnimationFrame(() => {
+            if (typeof closeConceptSearch === 'function') {
+              closeConceptSearch(true);
+            }
+          });
         }
-      }, 200);
+      }
     }
     
-    // Restore interlinear if specified in URL (only once per unique verse)
-    if (ui.interlinearVerse && ui.interlinearVerse !== this._lastInterlinearVerse) {
+    // Sync interlinear state
+    if (ui.interlinearVerse !== this._lastInterlinearVerse) {
+      const prevVerse = this._lastInterlinearVerse;
       this._lastInterlinearVerse = ui.interlinearVerse;
-      setTimeout(() => {
+      
+      requestAnimationFrame(() => {
         const state = AppStore.getState();
         const params = state.content?.params || {};
-        if (typeof showInterlinear === 'function' && params.book && params.chapter) {
-          showInterlinear(params.book, params.chapter, ui.interlinearVerse, null);
+        
+        if (ui.interlinearVerse && params.book && params.chapter) {
+          // Need to show interlinear for this verse
+          const verseEl = document.getElementById(`verse-${ui.interlinearVerse}`);
+          const isAlreadyExpanded = verseEl?.classList.contains('interlinear-expanded');
+          if (!isAlreadyExpanded && typeof showInterlinear === 'function') {
+            showInterlinear(params.book, params.chapter, ui.interlinearVerse, null);
+          }
+        } else if (prevVerse) {
+          // Need to collapse previous interlinear
+          const prevVerseEl = document.getElementById(`verse-${prevVerse}`);
+          const existing = prevVerseEl?.querySelector('.interlinear-display');
+          if (existing) {
+            existing.classList.remove('expanded');
+            setTimeout(() => existing.remove(), 200);
+            prevVerseEl.classList.remove('interlinear-expanded');
+          }
         }
-      }, 300);
+      });
     }
     
     // Update history button states
@@ -129,8 +187,30 @@ const BibleView = {
     if (fwdBtn) fwdBtn.disabled = false;
   },
   
+  // Sync selector visibility from state (when page structure already exists)
+  syncSelectorVisibility(state) {
+    const contentType = state?.content?.params?.contentType || 'bible';
+    
+    // Update content type dropdown
+    const contentSelect = document.getElementById('reader-content-select');
+    if (contentSelect) {
+      contentSelect.value = contentType;
+    }
+    
+    // Show/hide selector groups based on contentType
+    // For 'words', 'numbers', 'people', and 'symbols-article', hide all selectors (they don't need any)
+    const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article'].includes(contentType);
+    const bibleSelectors = document.getElementById('bible-selectors');
+    const symbolSelectors = document.getElementById('symbol-selectors');
+    const ttSelectors = document.getElementById('timetested-selectors');
+    
+    if (bibleSelectors) bibleSelectors.style.display = (contentType === 'bible' && !hideAllSelectors) ? '' : 'none';
+    if (symbolSelectors) symbolSelectors.style.display = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'none';
+    if (ttSelectors) ttSelectors.style.display = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'none';
+  },
+  
   // Navigate to Bible location once data is loaded
-  navigateWhenReady(translation, book, chapter, verse, retries = 0) {
+  async navigateWhenReady(translation, book, chapter, verse, retries = 0) {
     const maxRetries = 20;
     const retryDelay = 200;
     
@@ -148,9 +228,9 @@ const BibleView = {
       console.warn('[BibleView] Bible data not loaded after retries');
     }
     
-    // Set translation if specified
+    // Set translation first so dropdown and content match URL
     if (translation && typeof switchTranslation === 'function') {
-      switchTranslation(translation);
+      await switchTranslation(translation);
     }
     
     if (book && chapter) {
@@ -166,7 +246,27 @@ const BibleView = {
     }
   },
 
-  renderStructure(container) {
+  // Render the reader structure with correct state from the start (unidirectional data flow)
+  renderStructure(container, state = null) {
+    // Get contentType from state - this determines which selectors are visible
+    const contentType = state?.content?.params?.contentType || 'bible';
+    
+    // Build content type dropdown with correct selection
+    const contentTypeOptions = [
+      { value: 'bible', label: 'Bible' },
+      { value: 'symbols', label: 'Symbols' },
+      { value: 'words', label: 'Words' },
+      { value: 'numbers', label: 'Numbers' },
+      { value: 'timetested', label: 'Time Tested Tradition' },
+      { value: 'people', label: 'People' } // Future: People studies
+    ].map(opt => `<option value="${opt.value}"${opt.value === contentType ? ' selected' : ''}>${opt.label}</option>`).join('');
+    
+    // Selector visibility based on contentType
+    // For 'words', 'numbers', 'people', and 'symbols-article', hide all selectors (they don't need any)
+    const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article'].includes(contentType);
+    const bibleDisplay = (contentType === 'bible' && !hideAllSelectors) ? '' : 'display:none;';
+    const symbolsDisplay = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'display:none;';
+    const ttDisplay = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'display:none;';
     
     container.innerHTML = `
       <div id="bible-explorer-page" class="bible-explorer-page">
@@ -181,17 +281,16 @@ const BibleView = {
             <!-- Content type selector -->
             <select id="reader-content-select" class="bible-explorer-select reader-content-select" 
                     onchange="onReaderContentChange(this.value)" title="Select content type">
-              <option value="bible">Bible</option>
-              <option value="symbols">SYM</option>
-              <option value="timetested">TTT</option>
+              ${contentTypeOptions}
             </select>
             
             <!-- Bible selectors (shown when content=bible) -->
-            <span id="bible-selectors" class="reader-selector-group">
+            <span id="bible-selectors" class="reader-selector-group" style="${bibleDisplay}">
               <select id="bible-translation-select" class="bible-explorer-select bible-translation-select" 
                       onchange="onTranslationChange(this.value)" title="Select translation">
                 <option value="kjv">KJV</option>
                 <option value="asv">ASV</option>
+                <option value="lxx">LXX</option>
               </select>
               
               <select id="bible-book-select" class="bible-explorer-select" 
@@ -206,7 +305,7 @@ const BibleView = {
             </span>
             
             <!-- Symbol selector (shown when content=symbols) -->
-            <span id="symbol-selectors" class="reader-selector-group" style="display:none;">
+            <span id="symbol-selectors" class="reader-selector-group" style="${symbolsDisplay}">
               <select id="symbol-select" class="bible-explorer-select" 
                       onchange="onSymbolSelect(this.value)" title="Select symbol">
                 <option value="">Symbol...</option>
@@ -214,19 +313,20 @@ const BibleView = {
             </span>
             
             <!-- Time Tested selector (shown when content=timetested) -->
-            <span id="timetested-selectors" class="reader-selector-group" style="display:none;">
+            <span id="timetested-selectors" class="reader-selector-group" style="${ttDisplay}">
               <select id="timetested-chapter-select" class="bible-explorer-select" 
                       onchange="onTimeTestedSelect(this.value)" title="Select chapter">
-                <option value="">Chapter...</option>
+                <option value="">📚 Index</option>
               </select>
             </span>
             
             <!-- Search -->
-            <div class="bible-explorer-search-inline">
+            <div class="bible-explorer-search-inline" id="bible-search-container">
               <input type="text" id="bible-explorer-search-input" 
-                     placeholder="John 3:16 or 'faith'" 
-                     onkeydown="if(event.key==='Enter') smartBibleSearch()">
-              <button class="bible-explorer-search-btn" onclick="smartBibleSearch()" title="Search">🔍</button>
+                     placeholder="Search..." 
+                     onkeydown="if(event.key==='Enter') smartBibleSearch()"
+                     onblur="collapseSearchIfEmpty()">
+              <button class="bible-explorer-search-btn" onclick="toggleOrSearch()" title="Search">🔍</button>
             </div>
           </div>
         </div>
@@ -243,30 +343,20 @@ const BibleView = {
             <!-- Hidden element to track chapter title (for syncing with content) -->
             <span id="bible-chapter-title" style="display:none;">Select a book and chapter</span>
             
-            <!-- Main text area -->
+            <!-- Main text area (prev/next nav is rendered inside content when viewing a chapter) -->
             <div id="bible-explorer-text" class="bible-explorer-text">
               <!-- Welcome content or chapter content rendered here -->
             </div>
-            
-            <!-- Bottom Chapter Navigation (compact) -->
-            <div class="bible-chapter-nav bible-chapter-nav-bottom">
-              <button class="bible-nav-btn" onclick="prevBibleChapter()" title="Previous chapter">◁ Prev</button>
-              <button class="bible-nav-btn" onclick="nextBibleChapter()" title="Next chapter">Next ▷</button>
-            </div>
           </div>
           
-          <!-- Strong's Sidebar -->
+          <!-- Strong's Sidebar (back/forward use top header; width user-resizable) -->
           <div id="strongs-sidebar" class="strongs-sidebar">
+            <div class="strongs-sidebar-resize" onmousedown="startStrongsResize(event)"></div>
             <div class="strongs-sidebar-header">
-              <div class="strongs-nav-buttons">
-                <button id="strongs-nav-back" class="strongs-nav-back" onclick="strongsGoBack()" disabled title="Back">◀</button>
-                <button id="strongs-nav-forward" class="strongs-nav-forward" onclick="strongsGoForward()" disabled title="Forward">▶</button>
-              </div>
               <span id="strongs-sidebar-title" class="strongs-sidebar-title"></span>
               <button class="strongs-sidebar-close" onclick="closeStrongsPanel()">✕</button>
             </div>
             <div id="strongs-sidebar-content" class="strongs-sidebar-content"></div>
-            <div class="strongs-sidebar-resize"></div>
           </div>
         </div>
       </div>
@@ -312,6 +402,55 @@ const BibleView = {
     }
     
     this.initialized = true;
+    this.applyMobileReaderHeight();
+    this._mobileHeightCleanup = this.setupMobileHeightListener();
+  },
+
+  /**
+   * On mobile, set reader height to viewport minus nav so we don't get a symmetric gap at the bottom.
+   * (Content was effectively 100vh while nav sits on top, so bottom gap = nav height.)
+   */
+  applyMobileReaderHeight() {
+    const page = document.getElementById('bible-explorer-page');
+    const contentArea = document.getElementById('content-area');
+    if (!page || !contentArea) return;
+    const isMobile = window.innerWidth <= 768;
+    const nav = document.getElementById('top-nav');
+    const navHeight = nav ? nav.offsetHeight : 56;
+    const availableHeight = window.innerHeight - navHeight;
+    if (isMobile && availableHeight > 0) {
+      contentArea.style.height = availableHeight + 'px';
+      contentArea.style.minHeight = availableHeight + 'px';
+      contentArea.style.maxHeight = availableHeight + 'px';
+      page.style.height = availableHeight + 'px';
+      page.style.minHeight = '0';
+      page.style.maxHeight = availableHeight + 'px';
+    } else {
+      contentArea.style.height = '';
+      contentArea.style.minHeight = '';
+      contentArea.style.maxHeight = '';
+      page.style.height = '';
+      page.style.minHeight = '';
+      page.style.maxHeight = '';
+    }
+  },
+
+  setupMobileHeightListener() {
+    const onResize = () => {
+      if (this.container && this.container.querySelector('#bible-explorer-page')) {
+        this.applyMobileReaderHeight();
+      }
+    };
+    window.addEventListener('resize', onResize);
+    if (typeof window.visualViewport !== 'undefined') {
+      window.visualViewport.addEventListener('resize', onResize);
+    }
+    return () => {
+      window.removeEventListener('resize', onResize);
+      if (typeof window.visualViewport !== 'undefined') {
+        window.visualViewport.removeEventListener('resize', onResize);
+      }
+    };
   }
 };
 
@@ -333,15 +472,10 @@ function getBibleWelcomeHTML() {
           <p>A literal 1901 translation known for accuracy.</p>
           <span class="bible-translation-start">Start Reading →</span>
         </div>
-      </div>
-      
-      <div class="bible-quick-links">
-        <h4>Quick Links</h4>
-        <div class="bible-quick-link-grid">
-          <a href="/reader/bible/kjv/Genesis/1" onclick="openBibleExplorerTo('Genesis', 1); return false;">Genesis 1</a>
-          <a href="/reader/bible/kjv/Psalms/23" onclick="openBibleExplorerTo('Psalms', 23); return false;">Psalm 23</a>
-          <a href="/reader/bible/kjv/John/1" onclick="openBibleExplorerTo('John', 1); return false;">John 1</a>
-          <a href="/reader/bible/kjv/Revelation/1" onclick="openBibleExplorerTo('Revelation', 1); return false;">Revelation 1</a>
+        <div class="bible-translation-card" onclick="selectTranslationAndStart('lxx')">
+          <h3>Septuagint (LXX)</h3>
+          <p>Ancient Greek OT translation quoted by NT authors.</p>
+          <span class="bible-translation-start">Start Reading →</span>
         </div>
       </div>
     </div>
@@ -387,105 +521,6 @@ function canBibleGoForward() {
   return false;
 }
 
-// Override updateBibleExplorerURL to sync with AppStore
-(function() {
-  // Wait for bible-reader.js to define the original function
-  const checkAndOverride = () => {
-    if (typeof window.updateBibleExplorerURL === 'function' && !window._bibleUrlOverridden) {
-      const originalUpdateURL = window.updateBibleExplorerURL;
-      window.updateBibleExplorerURL = function(book, chapter, verse = null) {
-        // Call original to update history
-        originalUpdateURL(book, chapter, verse);
-        
-        // Also update AppStore
-        if (typeof AppStore !== 'undefined') {
-          const translation = window.currentTranslation || 'kjv';
-          AppStore.dispatch({
-            type: 'SET_BIBLE_LOCATION',
-            translation: translation,
-            book: book,
-            chapter: chapter,
-            verse: verse
-          });
-        }
-      };
-      window._bibleUrlOverridden = true;
-    }
-    
-    // Override showStrongsPanel to update URL
-    if (typeof window.showStrongsPanel === 'function' && !window._strongsUrlOverridden) {
-      const originalShowStrongs = window.showStrongsPanel;
-      window.showStrongsPanel = function(strongsNum, englishWord, gloss, event) {
-        originalShowStrongs(strongsNum, englishWord, gloss, event);
-        // Update URL with Strong's number
-        if (typeof AppStore !== 'undefined') {
-          AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: strongsNum });
-        }
-      };
-      window._strongsUrlOverridden = true;
-    }
-    
-    // Override closeStrongsPanel to clear URL
-    if (typeof window.closeStrongsPanel === 'function' && !window._strongsCloseOverridden) {
-      const originalCloseStrongs = window.closeStrongsPanel;
-      window.closeStrongsPanel = function() {
-        originalCloseStrongs();
-        // Clear Strong's from URL
-        if (typeof AppStore !== 'undefined') {
-          AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: null });
-        }
-      };
-      window._strongsCloseOverridden = true;
-    }
-    
-    // Override startConceptSearch to update URL
-    if (typeof window.startConceptSearch === 'function' && !window._searchUrlOverridden) {
-      const originalSearch = window.startConceptSearch;
-      window.startConceptSearch = function(word) {
-        originalSearch(word);
-        // Update URL with search query
-        if (typeof AppStore !== 'undefined') {
-          AppStore.dispatch({ type: 'SET_SEARCH_QUERY', searchQuery: word });
-        }
-      };
-      window._searchUrlOverridden = true;
-    }
-    
-    // Override closeConceptSearch to clear URL
-    if (typeof window.closeConceptSearch === 'function' && !window._searchCloseOverridden) {
-      const originalCloseSearch = window.closeConceptSearch;
-      window.closeConceptSearch = function() {
-        originalCloseSearch();
-        // Clear search from URL
-        if (typeof AppStore !== 'undefined') {
-          AppStore.dispatch({ type: 'SET_SEARCH_QUERY', searchQuery: null });
-        }
-      };
-      window._searchCloseOverridden = true;
-    }
-    
-    // Override showInterlinear to track open state in URL
-    if (typeof window.showInterlinear === 'function' && !window._interlinearOverridden) {
-      const originalShowInterlinear = window.showInterlinear;
-      window.showInterlinear = async function(book, chapter, verse, event) {
-        await originalShowInterlinear(book, chapter, verse, event);
-        // Check if interlinear is now expanded (toggle behavior)
-        const verseEl = document.getElementById(`verse-${verse}`);
-        const isExpanded = verseEl && verseEl.classList.contains('interlinear-expanded');
-        if (typeof AppStore !== 'undefined') {
-          AppStore.dispatch({ 
-            type: 'SET_INTERLINEAR_VERSE', 
-            verse: isExpanded ? verse : null 
-          });
-        }
-      };
-      window._interlinearOverridden = true;
-    }
-  };
-  
-  // Check immediately and after delays
-  checkAndOverride();
-  setTimeout(checkAndOverride, 500);
-  setTimeout(checkAndOverride, 1000);
-  setTimeout(checkAndOverride, 2000);
-})();
+// NOTE: All reader functions (showStrongsPanel, closeStrongsPanel, startConceptSearch,
+// closeConceptSearch, showInterlinear, updateBibleExplorerURL) now dispatch to AppStore
+// directly in bible-reader.js. No monkey-patching needed.
