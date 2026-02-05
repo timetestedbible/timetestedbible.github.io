@@ -321,7 +321,7 @@
           <a href="#" class="menu-book-link" onclick="event.preventDefault(); AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}}])">
             <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="menu-book-cover">
           </a>
-          <a class="menu-book-download" href="/media/time-tested-tradition.pdf" download>
+          <a class="menu-book-download" href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">
             <span class="icon">📥</span>
             <span>Download PDF</span>
           </a>
@@ -486,7 +486,7 @@
   <script src="/views/bible-view.js?v=13"></script>
   <script src="/views/symbols-view.js?v=1"></script>
   <script src="/timetested-chapters.js?v=1"></script>
-  <script src="/views/reader-view.js?v=2"></script>
+  <script src="/views/reader-view.js?v=3"></script>
   
   <!-- Timeline and Historical Events -->
   <script src="/event-resolver.js?v=55"></script>
@@ -498,7 +498,7 @@
   <script src="/day-detail.js?v=5"></script>
   <script src="/world-clock.js?v=2"></script>
   <script src="/views/book-view.js?v=2"></script>
-  <script src="/views/tutorial-view.js?v=7"></script>
+  <script src="/views/tutorial-view.js?v=8"></script>
   <script src="/views/help-view.js?v=1"></script>
   <script src="/views/priestly-view.js?v=2"></script>
   <script src="/views/sabbath-tester-view.js?v=2"></script>
@@ -800,6 +800,9 @@
     }
     
     function handleInstallClick() {
+      // Track install button click
+      trackInstallClick();
+      
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
       
       if (isIOS) {
@@ -811,6 +814,7 @@
         deferredInstallPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === 'accepted') {
             console.log('[PWA] User accepted install prompt');
+            trackInstallAccepted();
           }
           deferredInstallPrompt = null;
           const installBtn = document.getElementById('install-app-btn');
@@ -836,6 +840,56 @@
         overlay.classList.remove('visible');
       }
     }
+    
+    // ═══════════════════════════════════════════════════════════════════
+    // GOATCOUNTER ANALYTICS TRACKING
+    // ═══════════════════════════════════════════════════════════════════
+    
+    // Track book PDF download with GoatCounter
+    function trackBookDownload() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/download/book-pdf',
+          title: 'Book PDF Download',
+          event: true
+        });
+      }
+    }
+    
+    // Track install app button click
+    function trackInstallClick() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/event/install-app-click',
+          title: 'Install App Button Click',
+          event: true
+        });
+      }
+    }
+    
+    // Track successful app install
+    function trackInstallAccepted() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/event/install-app-accepted',
+          title: 'Install App Accepted',
+          event: true
+        });
+      }
+    }
   </script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D289E4L6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D289E4L6SV');
+  </script>
+  
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://lunarsabbath.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

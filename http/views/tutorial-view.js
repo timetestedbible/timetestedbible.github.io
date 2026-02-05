@@ -183,7 +183,7 @@ const TutorialView = {
                 or read online chapter by chapter.
               </p>
               <div class="book-actions">
-                <a href="/media/time-tested-tradition.pdf" class="book-btn primary" download>
+                <a href="/media/time-tested-tradition.pdf" class="book-btn primary" download onclick="trackBookDownload()">
                   <span>⬇️</span> Download PDF
                 </a>
                 <button class="book-btn secondary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
@@ -282,7 +282,7 @@ const TutorialView = {
           <div class="footer-links">
             <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'settings'})">Settings</button>
             <span>•</span>
-            <a href="/media/time-tested-tradition.pdf" download>Download Book</a>
+            <a href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">Download Book</a>
           </div>
         </footer>
       </div>

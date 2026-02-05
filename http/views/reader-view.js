@@ -1293,7 +1293,7 @@ const ReaderView = {
         <header class="ttt-index-header">
           <div class="ttt-hero">
             <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="ttt-hero-cover">
-            <a class="ttt-hero-download" href="/media/time-tested-tradition.pdf" download>
+            <a class="ttt-hero-download" href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">
               <span class="icon">📥</span>
               <span>Download PDF</span>
             </a>
