@@ -378,6 +378,7 @@ window.preResolveTimelineInBackground = preResolveTimelineInBackground;
 window.isBackgroundResolutionInProgress = isBackgroundResolutionInProgress;
 window.getBackgroundResolutionProgress = getBackgroundResolutionProgress;
 window.getTimelineResolvedEvents = getTimelineResolvedEvents;
+window.loadBiblicalTimelineData = loadBiblicalTimelineData;
 
 /**
  * Check if timeline cache is valid for the current profile
@@ -2179,10 +2180,10 @@ function injectTimelineStyles() {
   const style = document.createElement('style');
   style.id = 'detail-slideout-styles';
   style.textContent = `
-    /* Detail panel positioned within timeline page - below search bar (36px) */
+    /* Detail panel positioned within timeline page */
     .detail-slideout {
       position: absolute;
-      top: 36px;
+      top: 0;
       bottom: 0;
       right: -600px;
       width: 500px;
@@ -2213,15 +2214,39 @@ function injectTimelineStyles() {
     .detail-slideout-content {
       flex: 1;
       overflow-y: auto;
-      padding: 20px;
+      padding: 48px 20px 20px 20px;  /* Extra top padding for close button */
       color: #e0e0e0;
     }
     
-    /* Mobile: full screen overlay below search bar (36px) */
+    .detail-close-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: #e0e0e0;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .detail-close-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+    
+    /* Mobile: full screen overlay */
     @media (max-width: 768px) {
       .detail-slideout {
         position: absolute;
-        top: 36px;
+        top: 0;
         right: 0;
         left: 0;
         bottom: 0;
@@ -2567,6 +2592,7 @@ function initDetailPanel() {
   panel.id = 'detail-slideout-panel';
   panel.className = 'detail-slideout';
   panel.innerHTML = `
+    <button class="detail-close-btn" onclick="timelineCloseEventDetail()" title="Close">&times;</button>
     <div class="detail-resize-handle" id="detail-resize-handle"></div>
     <div class="detail-slideout-content" id="detail-slideout-content"></div>
   `;
@@ -3503,16 +3529,20 @@ function updateTimelineURL(type, id) {
 // Public function - dispatches to AppStore (unidirectional flow)
 // Actual rendering happens via TimelineView.syncPanelFromState
 function openEventDetail(eventId) {
+  console.log('[Timeline] openEventDetail called with eventId:', eventId, 'AppStore defined:', typeof AppStore !== 'undefined');
   if (typeof AppStore !== 'undefined') {
+    console.log('[Timeline] Dispatching SET_TIMELINE_EVENT');
     AppStore.dispatch({ type: 'SET_TIMELINE_EVENT', eventId: eventId });
   } else {
     // Fallback for direct calls
+    console.log('[Timeline] AppStore not defined, falling back to showEventDetailFromState');
     showEventDetailFromState(eventId);
   }
 }
 
 // State-driven render function (called by TimelineView)
 async function showEventDetailFromState(eventId) {
+  console.log('[Timeline] showEventDetailFromState called with eventId:', eventId);
   // Clear search filter when viewing an event (so selected event can be shown)
   const hadSearchFilter = activeSearchResultIds !== null;
   if (hadSearchFilter) {
@@ -3540,7 +3570,7 @@ async function showEventDetailFromState(eventId) {
 }
 
 // Scroll the timeline to center on a specific year with animation
-function scrollTimelineToYear(year) {
+function scrollTimelineToYear(year, accountForSearchPanel = false) {
   const scrollContainer = document.getElementById('timeline-scroll-container');
   if (!scrollContainer) return;
   
@@ -3561,10 +3591,23 @@ function scrollTimelineToYear(year) {
   
   // Calculate scroll position to center the year in the viewport
   const containerHeight = scrollContainer.clientHeight;
-  const targetScroll = yearPos - (containerHeight / 2);
+  
+  // Account for search results panel if open (overlays top of viewport)
+  let searchPanelOffset = 0;
+  if (accountForSearchPanel) {
+    const searchResults = document.getElementById('global-search-results');
+    if (searchResults && searchResults.classList.contains('open')) {
+      // Search panel covers top of viewport, so we need to scroll further
+      // to center the event in the visible area below the panel
+      searchPanelOffset = searchResults.offsetHeight / 2;
+    }
+  }
+  
+  // Center in viewport, then offset down by half the search panel height
+  const targetScroll = yearPos - (containerHeight / 2) + searchPanelOffset;
   
   // Clamp to valid scroll range
-  const maxScroll = scrollContainer.scrollHeight - containerHeight;
+  const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
   const finalScroll = Math.max(0, Math.min(maxScroll, targetScroll));
   
   // Animate the scroll
@@ -3663,6 +3706,64 @@ window.showEventDetailFromState = showEventDetailFromState;
 window.showDurationDetailFromState = showDurationDetailFromState;
 window.showSearchResultsFromState = showSearchResultsFromState;
 window.closeDetailPanelFromState = closeDetailPanelFromState;
+
+// Focus on a timeline event (scroll to it and highlight) without opening details
+// This dispatches to AppStore - actual rendering is handled by state subscriber
+window.focusTimelineEvent = function(eventId) {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'SET_TIMELINE_FOCUSED_EVENT',
+      eventId: eventId
+    });
+  }
+};
+
+// State-driven focus handler - called when timelineFocusedEventId changes
+window.focusTimelineEventFromState = async function(eventId) {
+  if (!eventId) return;
+  
+  // Check if event already has a slot (DOM element exists)
+  const wrapper = document.getElementById('biblical-timeline-scroll');
+  let eventEl = wrapper?.querySelector(`[data-event-id="${eventId}"]`);
+  
+  // Only re-render if the focused event doesn't have a visible slot
+  if (!eventEl) {
+    // Re-render timeline so slot allocation gives priority to focused event
+    await renderBiblicalTimeline();
+    // Re-query after render
+    eventEl = wrapper?.querySelector(`[data-event-id="${eventId}"]`);
+  }
+  
+  // Get the event's resolved data to find its year
+  const events = getTimelineResolvedEvents();
+  const event = events.find(e => e.id === eventId);
+  
+  if (event && event.startJD) {
+    // Convert Julian Day to year
+    const year = Math.floor((event.startJD - 1721425.5) / 365.25);
+    
+    // Scroll timeline to center on this event's year
+    // Account for search results panel if open
+    scrollTimelineToYear(year, true);
+    
+    // Apply focus highlighting and show tooltip
+    setTimeout(() => {
+      // Clear any existing tooltip first
+      hideEventTooltip();
+      
+      // Apply focus highlighting
+      if (typeof handleEventHoverEnter === 'function') {
+        handleEventHoverEnter(eventId);
+      }
+      
+      // Force show tooltip (even on desktop) since user explicitly navigated here
+      const focusedEl = wrapper?.querySelector(`[data-event-id="${eventId}"]`);
+      if (focusedEl) {
+        showEventTooltip(eventId, focusedEl);
+      }
+    }, 300);
+  }
+};
 
 // Sync timeline zoom and position from state (for back/forward navigation)
 // This is called when state changes to update the view without full re-render
@@ -4646,19 +4747,26 @@ async function renderBiblicalTimelineInternal(container) {
   const durationEventsToKeep = allEvents.filter(e => hasDuration(e));
   const pointEventsForAlloc = allEvents.filter(e => !hasDuration(e) && e.startJD !== null);
   
-  // Get selected event ID from state - this event MUST always be shown
+  // Get selected/focused event ID from state - these events MUST always be shown
   let selectedEventIdForSlots = null;
+  let focusedEventIdForSlots = null;
   if (typeof AppStore !== 'undefined') {
     const state = AppStore.getState();
     selectedEventIdForSlots = state?.ui?.timelineEventId;
+    focusedEventIdForSlots = state?.ui?.timelineFocusedEventId;
   }
   
+  // Helper to check if event is selected or focused
+  const isPriorityEvent = (eventId) => {
+    return eventId === selectedEventIdForSlots || eventId === focusedEventIdForSlots;
+  };
+  
   // Sort point events by priority (highest priority = lowest number = first)
-  // Selected event gets absolute priority (0)
+  // Selected/focused events get absolute priority (0)
   const sortedPointEvents = [...pointEventsForAlloc].sort((a, b) => {
-    // Selected event always comes first
-    if (a.id === selectedEventIdForSlots) return -1;
-    if (b.id === selectedEventIdForSlots) return 1;
+    // Selected/focused events always come first
+    if (isPriorityEvent(a.id)) return -1;
+    if (isPriorityEvent(b.id)) return 1;
     
     const aPri = getEventPriority(a);
     const bPri = getEventPriority(b);
@@ -4704,9 +4812,9 @@ async function renderBiblicalTimelineInternal(container) {
       if (assignedSlot !== null) break;
     }
     
-    // If no slot found within normal range, but this is the selected event, force a slot
-    if (assignedSlot === null && event.id === selectedEventIdForSlots) {
-      // Selected event MUST be shown - find any free slot or create one
+    // If no slot found within normal range, but this is the selected/focused event, force a slot
+    if (assignedSlot === null && isPriorityEvent(event.id)) {
+      // Selected/focused event MUST be shown - find any free slot or create one
       for (let off = maxDisplacementSlots + 1; off <= maxDisplacementSlots * 4; off++) {
         for (const trySlot of [naturalSlot + off, naturalSlot - off]) {
           if (trySlot >= 0 && !allocatedSlots.has(trySlot)) {
@@ -4758,27 +4866,9 @@ async function renderBiblicalTimelineInternal(container) {
   // Extract just the events for rendering
   let eventsToShow = [...durationEventsToKeep, ...eventsWithSlots.map(e => e.event)];
   
-  // Build HTML - clean header with search bar and close button
-  // Get current state to determine if detail panel is open
-  const hasDetailOpen = typeof AppStore !== 'undefined' && 
-    (AppStore.getState()?.ui?.timelineEventId || AppStore.getState()?.ui?.timelineDurationId);
-  
-  let html = '<div class="timeline-header-bar" id="timeline-header-bar" style="display: flex; justify-content: space-between; align-items: center; height: 36px; padding: 0 10px; background: #1a1a2e; gap: 8px; position: relative; z-index: 9500;">';
-  
-  // Left side: timeline icon - clicking closes event detail and shows full timeline
-  html += `<img src="/assets/img/timeline_icon.png" alt="Timeline" class="menu-icon-img" title="Close event detail and show timeline" style="width: 24px; height: 24px; cursor: pointer;" onclick="timelineCloseEventDetail()">`;
-  
-  // Right side: search bar and X button
-  const currentSearch = getTimelineSearchFromState();
-  html += `<div class="timeline-search-bar" style="display: flex; align-items: center; gap: 6px;">
-    <input type="text" id="biblical-timeline-search" placeholder="Search events..." 
-      value="${currentSearch ? currentSearch.replace(/"/g, '&quot;') : ''}"
-      onkeyup="if(event.key==='Enter')timelineSearchAndZoom()">
-    <button class="timeline-search-btn" onclick="timelineSearchAndZoom()" title="Search">🔍</button>
-    <button class="timeline-search-btn" onclick="timelineClearAndClose()" title="Clear search & close detail">✕</button>
-  </div>`;
-  
-  html += '</div>';
+  // Timeline header removed - using global search in main header
+  // Detail panel has its own close button
+  let html = '';
   
   // Zoom and filter controls - fixed bottom left
   html += `<div class="timeline-controls-panel">

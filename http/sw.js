@@ -1,5 +1,5 @@
 // Lunar Sabbath Calendar Service Worker
-const CACHE_NAME = 'lunar-sabbath-v773';
+const CACHE_NAME = 'lunar-sabbath-v810';
 
 // Core app files
 const CORE_ASSETS = [
@@ -35,6 +35,7 @@ const CORE_ASSETS = [
   '/strongs-hebrew-dictionary.js',
   '/strongs-greek-dictionary.js',
   '/calendar-export.js',
+  '/global-search.js',
   '/lib/marked.min.js'
 ];
 

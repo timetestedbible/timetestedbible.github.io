@@ -13,6 +13,7 @@ const TimelineView = {
   lastRenderedEventId: null,
   lastRenderedDurationId: null,
   lastRenderedSearch: null,
+  lastRenderedFocusedEventId: null,
   lastRenderedZoom: null,
   lastRenderedYear: null,
   
@@ -29,6 +30,7 @@ const TimelineView = {
     this.lastRenderedEventId = null;
     this.lastRenderedDurationId = null;
     this.lastRenderedSearch = null;
+    this.lastRenderedFocusedEventId = null;
     this.lastRenderedZoom = null;
     this.lastRenderedYear = null;
     
@@ -77,7 +79,18 @@ const TimelineView = {
           }
           
           // Sync panel state from URL after render completes
-          setTimeout(() => this.syncPanelFromState(state.ui), 300);
+          console.log('[TimelineView] Full render complete, scheduling syncPanelFromState in 300ms with state.ui:', {
+            timelineEventId: state.ui?.timelineEventId,
+            timelineDurationId: state.ui?.timelineDurationId
+          });
+          setTimeout(() => {
+            console.log('[TimelineView] setTimeout fired, calling syncPanelFromState');
+            this.syncPanelFromState(state.ui);
+            // Also handle focused event from URL on initial load
+            if (state.ui.timelineFocusedEventId && typeof focusTimelineEventFromState === 'function') {
+              focusTimelineEventFromState(state.ui.timelineFocusedEventId);
+            }
+          }, 300);
         }
       };
       
@@ -92,6 +105,7 @@ const TimelineView = {
       this.lastRenderedEventId = state.ui.timelineEventId;
       this.lastRenderedDurationId = state.ui.timelineDurationId;
       this.lastRenderedSearch = state.ui.timelineSearch;
+      this.lastRenderedFocusedEventId = state.ui.timelineFocusedEventId;
       this.lastRenderedZoom = state.ui.timelineZoom;
       this.lastRenderedYear = state.ui.timelineCenterYear;
       
@@ -100,6 +114,7 @@ const TimelineView = {
       const eventChanged = state.ui.timelineEventId !== this.lastRenderedEventId;
       const durationChanged = state.ui.timelineDurationId !== this.lastRenderedDurationId;
       const searchChanged = state.ui.timelineSearch !== this.lastRenderedSearch;
+      const focusedChanged = state.ui.timelineFocusedEventId !== this.lastRenderedFocusedEventId;
       const zoomChanged = state.ui.timelineZoom !== this.lastRenderedZoom;
       const yearChanged = state.ui.timelineCenterYear !== this.lastRenderedYear;
       
@@ -125,6 +140,16 @@ const TimelineView = {
           this.lastRenderedYear = state.ui.timelineCenterYear;
         }
       }
+      
+      // Handle focused event (scroll and highlight without opening detail panel)
+      if (focusedChanged && state.ui.timelineFocusedEventId) {
+        if (typeof focusTimelineEventFromState === 'function') {
+          focusTimelineEventFromState(state.ui.timelineFocusedEventId);
+        }
+        this.lastRenderedFocusedEventId = state.ui.timelineFocusedEventId;
+      } else if (focusedChanged) {
+        this.lastRenderedFocusedEventId = state.ui.timelineFocusedEventId;
+      }
     }
   },
   
@@ -133,6 +158,11 @@ const TimelineView = {
    * ALL UI reads from state - no imperative manipulation elsewhere
    */
   syncPanelFromState(ui) {
+    console.log('[TimelineView] syncPanelFromState called with:', {
+      timelineEventId: ui?.timelineEventId,
+      timelineDurationId: ui?.timelineDurationId,
+      timelineSearch: ui?.timelineSearch
+    });
     if (!ui) return;
     
     // 1. Sync search input value from state
@@ -147,8 +177,11 @@ const TimelineView = {
     // 2. Determine panel content from state (mutually exclusive)
     // Priority: eventId > durationId > search > nothing
     if (ui.timelineEventId) {
+      console.log('[TimelineView] syncPanelFromState: ui.timelineEventId is set, calling showEventDetailFromState');
       if (typeof showEventDetailFromState === 'function') {
         showEventDetailFromState(ui.timelineEventId);
+      } else {
+        console.warn('[TimelineView] showEventDetailFromState function not available!');
       }
     } else if (ui.timelineDurationId) {
       if (typeof showDurationDetailFromState === 'function') {

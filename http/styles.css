@@ -201,6 +201,251 @@ button {
   cursor: not-allowed;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLOBAL SEARCH
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Search container in top nav */
+.global-search {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.global-search input {
+  width: 200px;
+  padding: 6px 12px;
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 0.9em;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.global-search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.global-search input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.global-search-btn {
+  background: rgba(42, 90, 122, 0.5);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  color: var(--color-accent);
+  font-size: 1em;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.global-search-btn:hover {
+  background: rgba(58, 106, 138, 0.7);
+  border-color: rgba(126, 200, 227, 0.5);
+}
+
+.global-search-close {
+  display: none;
+  background: rgba(255, 100, 100, 0.3);
+  border: 1px solid rgba(255, 100, 100, 0.4);
+  color: #ff8888;
+  font-size: 1em;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.global-search-close:hover {
+  background: rgba(255, 100, 100, 0.5);
+}
+
+/* Show close button on desktop when there's an active search query */
+.global-search.has-query .global-search-close {
+  display: block;
+}
+
+/* Search Results Region */
+.global-search-results {
+  display: none;
+  background: linear-gradient(180deg, var(--color-bg-dark) 0%, #0a1f30 100%);
+  border-bottom: 2px solid var(--color-accent-gold);
+  max-height: 50vh;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+}
+
+.global-search-results.open {
+  display: flex;
+}
+
+.search-results-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+}
+
+/* Search result items */
+.search-result-item {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-result-item:hover {
+  background: rgba(126, 200, 227, 0.15);
+}
+
+.search-result-item:last-child {
+  margin-bottom: 0;
+}
+
+.search-result-ref {
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.search-result-text {
+  font-size: 0.9em;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Inline/dense result layout for Bible verses */
+.search-result-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 10px;
+  margin-bottom: 4px;
+}
+
+.search-result-inline .search-result-ref {
+  margin-bottom: 0;
+  flex-shrink: 0;
+  font-size: 0.85em;
+  min-width: 70px;
+}
+
+.search-result-inline .search-result-text {
+  flex: 1;
+  font-size: 0.85em;
+  min-width: 0;
+}
+
+.search-result-text mark {
+  background: rgba(212, 160, 23, 0.4);
+  color: #fff;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Resize handle */
+.search-results-handle {
+  height: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: ns-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.search-results-handle:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.search-results-handle .handle-bar {
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+/* Mobile: Collapse search to button, expand on tap */
+@media (max-width: 600px) {
+  .global-search {
+    position: static;
+  }
+  
+  .global-search input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    padding: 0;
+    border: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* When expanded, use flex to grow between other elements */
+  .global-search.expanded {
+    position: static;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .global-search.expanded input {
+    position: static;
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(126, 200, 227, 0.4);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .global-search.expanded .global-search-btn {
+    display: none;
+  }
+  
+  .global-search.expanded .global-search-close {
+    display: block;
+    flex-shrink: 0;
+  }
+  
+  /* Hide brand when search is expanded on mobile */
+  .top-nav:has(.global-search.expanded) .brand {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Let top-nav-right grow to fill space when search expanded */
+  .top-nav:has(.global-search.expanded) .top-nav-right {
+    flex: 1;
+  }
+  
+  /* Shrink top-nav-left when search expanded */
+  .top-nav:has(.global-search.expanded) .top-nav-left {
+    flex: 0;
+    min-width: 0;
+  }
+  
+  /* Keep nav buttons and hamburger visible when search expanded */
+  .top-nav:has(.global-search.expanded) .nav-history-buttons,
+  .top-nav:has(.global-search.expanded) .hamburger-btn {
+    flex-shrink: 0;
+  }
+  
+  /* Search results take more space on mobile */
+  .global-search-results {
+    max-height: 70vh;
+  }
+}
+
 .hamburger-btn {
   display: flex;
   flex-direction: column;
@@ -600,9 +845,7 @@ body.desktop-layout .content-area {
   margin-right: 0;
   margin-left: 0;
   max-width: none;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  /* Keep flex-direction: column from base, don't center vertically */
 }
 
 body.desktop-layout .hamburger-btn {
@@ -5343,6 +5586,7 @@ body.view-reader:not(.reader-landing) {
 
 .view-timeline .content-area {
   overflow: hidden;
+  padding: 0;
 }
 
 /* =====================================================

@@ -323,27 +323,12 @@ const BibleView = {
                 <option value="">📚 Index</option>
               </select>
             </span>
-            
-            <!-- Search -->
-            <div class="bible-explorer-search-inline" id="bible-search-container">
-              <input type="text" id="bible-explorer-search-input" 
-                     placeholder="Search..." 
-                     onkeydown="if(event.key==='Enter') smartBibleSearch()"
-                     onblur="collapseSearchIfEmpty()">
-              <button class="bible-explorer-search-btn" onclick="toggleOrSearch()" title="Search">🔍</button>
-            </div>
           </div>
         </div>
         
         <!-- Body -->
         <div class="bible-explorer-body">
           <div class="bible-content-wrapper">
-            <!-- Concept search results (hidden by default, appears at top) -->
-            <div id="concept-search-results" class="concept-search-results" style="display: none;"></div>
-            <div id="search-divider" class="search-divider" style="display: none;">
-              <div class="search-divider-handle"></div>
-            </div>
-            
             <!-- Hidden element to track chapter title (for syncing with content) -->
             <span id="bible-chapter-title" style="display:none;">Select a book and chapter</span>
             

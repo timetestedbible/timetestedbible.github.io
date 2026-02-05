@@ -247,13 +247,16 @@ const URLRouter = {
         interlinearVerse: null,
         timelineEventId: null,
         timelineDurationId: null,
+        timelineFocusedEventId: null,
         timelineZoom: null,
         timelineCenterYear: null,
         timelineSearch: null,
         eventsSearch: null,
         eventsType: 'all',
         eventsEra: 'all',
-        eventsViewMode: 'list'
+        eventsViewMode: 'list',
+        globalSearchQuery: null,
+        globalSearchCollapsed: { events: false, bible: false }
       }
     };
     
@@ -362,6 +365,18 @@ const URLRouter = {
     if (searchParams.get('strongs')) {
       result.ui.strongsId = searchParams.get('strongs');
     }
+    // Global search query
+    if (searchParams.get('q')) {
+      result.ui.globalSearchQuery = searchParams.get('q');
+    }
+    // Global search collapsed sections (e.g., "events" or "events,bible")
+    if (searchParams.get('collapsed')) {
+      const collapsedSections = searchParams.get('collapsed').split(',');
+      result.ui.globalSearchCollapsed = {
+        events: collapsedSections.includes('events'),
+        bible: collapsedSections.includes('bible')
+      };
+    }
     // Parse 'search' param based on view context
     if (searchParams.get('search')) {
       if (result.content.view === 'timeline') {
@@ -387,6 +402,9 @@ const URLRouter = {
       }
       if (searchParams.get('duration')) {
         result.ui.timelineDurationId = searchParams.get('duration');
+      }
+      if (searchParams.get('focus')) {
+        result.ui.timelineFocusedEventId = searchParams.get('focus');
       }
       if (searchParams.get('zoom')) {
         const zoom = parseFloat(searchParams.get('zoom'));
@@ -609,6 +627,17 @@ const URLRouter = {
     // Query params (UI state)
     const params = new URLSearchParams();
     if (ui.strongsId) params.set('strongs', ui.strongsId);
+    // Global search query (appears on any view when results are open)
+    if (ui.globalSearchQuery) {
+      params.set('q', ui.globalSearchQuery);
+      // Also save collapsed state if any sections are collapsed
+      const collapsedSections = [];
+      if (ui.globalSearchCollapsed?.events) collapsedSections.push('events');
+      if (ui.globalSearchCollapsed?.bible) collapsedSections.push('bible');
+      if (collapsedSections.length > 0) {
+        params.set('collapsed', collapsedSections.join(','));
+      }
+    }
     // searchQuery is for reader/bible view only - don't serialize on other views
     if (ui.searchQuery && content.view === 'reader') {
       params.set('search', ui.searchQuery);
@@ -638,9 +667,12 @@ const URLRouter = {
     if (ui.interlinearVerse && content.view === 'bible') {
       params.set('il', ui.interlinearVerse);
     }
-    // Timeline params - event/duration/search are mutually exclusive
-    // Only serialize ONE of them (priority: event > duration > search)
+    // Timeline params - event/duration/search are mutually exclusive for detail panel
+    // Focused event can exist alongside others (it's just highlighting)
     if (content.view === 'timeline') {
+      if (ui.timelineFocusedEventId) {
+        params.set('focus', ui.timelineFocusedEventId);
+      }
       if (ui.timelineEventId) {
         params.set('event', ui.timelineEventId);
         // Don't serialize search or duration - they should be null if event is set
@@ -739,7 +771,15 @@ const URLRouter = {
       console.log('[URLRouter] syncURL:', { newURL, currentURL, push, view: state.content.view });
       
       if (newURL !== currentURL) {
-        if (push) {
+        // Check if this is just URL normalization (adding default params like translation)
+        // If the URLs are logically equivalent, use replaceState to avoid back-button loops
+        let shouldPush = push;
+        if (push && this._isUrlNormalization(currentURL, newURL)) {
+          console.log('[URLRouter] Detected URL normalization, using replaceState');
+          shouldPush = false;
+        }
+        
+        if (shouldPush) {
           // Save scroll position of current page before pushing new entry
           this.saveScrollPosition();
           history.pushState({}, '', newURL);
@@ -755,6 +795,44 @@ const URLRouter = {
       }
     } catch (e) {
       console.error('[URLRouter] syncURL error:', e);
+    }
+  },
+  
+  /**
+   * Check if URL change is just normalization (adding defaults)
+   * Returns true if both URLs resolve to the same logical destination
+   */
+  _isUrlNormalization(currentURL, newURL) {
+    try {
+      // Parse both URLs to get their logical state
+      const currentParsed = this.parseURL(new URL(currentURL, window.location.origin));
+      const newParsed = this.parseURL(new URL(newURL, window.location.origin));
+      
+      if (!currentParsed || !newParsed) return false;
+      
+      // Must be same view
+      if (currentParsed.content.view !== newParsed.content.view) return false;
+      
+      // For bible/reader views, check if book/chapter/verse are the same
+      // (translation being added is normalization)
+      const view = currentParsed.content.view;
+      if (view === 'bible' || view === 'reader') {
+        const cp = currentParsed.content.params;
+        const np = newParsed.content.params;
+        
+        // Same book, chapter, verse means this is just adding translation
+        if (cp.book === np.book && 
+            cp.chapter === np.chapter && 
+            cp.verse === np.verse &&
+            cp.contentType === np.contentType) {
+          return true;
+        }
+      }
+      
+      return false;
+    } catch (e) {
+      console.error('[URLRouter] _isUrlNormalization error:', e);
+      return false;
     }
   },
   

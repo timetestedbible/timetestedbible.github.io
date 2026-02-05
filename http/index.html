@@ -62,7 +62,7 @@
   <link rel="manifest" href="/manifest.json">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/styles.css?v=134">
+  <link rel="stylesheet" href="/styles.css?v=141">
   <link rel="stylesheet" href="/components/world-map.css?v=1">
   <link rel="stylesheet" href="/components/dateline-map.css?v=5">
   <link rel="stylesheet" href="/assets/css/bible-styles.css?v=125">
@@ -201,6 +201,19 @@
     </div>
     
     <div class="top-nav-right">
+      <!-- Global Search -->
+      <div id="global-search-container" class="global-search">
+        <input type="text" id="global-search-input" 
+               placeholder="Search Bible..." 
+               autocomplete="off"
+               onkeydown="if(event.key==='Enter') GlobalSearch.search(this.value)"
+               onfocus="GlobalSearch.onFocus()"
+               onblur="GlobalSearch.onBlur(event)"
+               ondblclick="this.select()">
+        <button class="global-search-btn" onclick="GlobalSearch.toggle()" title="Search">🔍</button>
+        <button class="global-search-close" onclick="GlobalSearch.close()" title="Close search">✕</button>
+      </div>
+      
       <!-- Navigation History Buttons - use browser history directly -->
       <div class="nav-history-buttons">
         <button id="nav-back-btn" class="nav-btn" onclick="history.back()" title="Go back">◀</button>
@@ -220,6 +233,18 @@
       </button>
     </div>
   </header>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- GLOBAL SEARCH RESULTS (collapsible region) -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div id="global-search-results" class="global-search-results">
+    <div class="search-results-content" id="search-results-content">
+      <!-- Results rendered here -->
+    </div>
+    <div class="search-results-handle" id="search-results-handle" title="Drag to resize">
+      <div class="handle-bar"></div>
+    </div>
+  </div>
   
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- MAIN LAYOUT -->
@@ -432,8 +457,8 @@
   <script src="/year-utils.js?v=2"></script>
   
   <!-- Core (cache-bust with version) -->
-  <script src="/app-store.js?v=39"></script>
-  <script src="/url-router.js?v=18"></script>
+  <script src="/app-store.js?v=45"></script>
+  <script src="/url-router.js?v=22"></script>
   <script src="/layout.js?v=2"></script>
   <script src="/content-manager.js?v=2"></script>
   
@@ -443,6 +468,9 @@
   
   <!-- Calendar Export -->
   <script src="/calendar-export.js?v=1"></script>
+  
+  <!-- Global Search -->
+  <script src="/global-search.js?v=18"></script>
   
   <!-- Views -->
   <script src="/views/calendar-view.js?v=87"></script>
@@ -455,7 +483,7 @@
   <script src="/book-scripture-index.js?v=1"></script>
   <script src="/cross-references.js?v=1"></script>
   <script src="/bible-reader.js?v=23"></script>
-  <script src="/views/bible-view.js?v=12"></script>
+  <script src="/views/bible-view.js?v=13"></script>
   <script src="/views/symbols-view.js?v=1"></script>
   <script src="/timetested-chapters.js?v=1"></script>
   <script src="/views/reader-view.js?v=2"></script>
@@ -463,8 +491,8 @@
   <!-- Timeline and Historical Events -->
   <script src="/event-resolver.js?v=55"></script>
   <script src="/historical-events.js?v=4"></script>
-  <script src="/biblical-timeline.js?v=24"></script>
-  <script src="/views/timeline-view.js?v=5"></script>
+  <script src="/biblical-timeline.js?v=32"></script>
+  <script src="/views/timeline-view.js?v=7"></script>
   
   <!-- Day Detail and World Clock -->
   <script src="/day-detail.js?v=5"></script>

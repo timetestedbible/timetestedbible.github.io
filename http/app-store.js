@@ -38,8 +38,9 @@ const AppStore = {
       searchQuery: null,        // Search query string
       personId: null,           // Open person card
       interlinearVerse: null,   // Open interlinear for verse (e.g., 5)
-      timelineEventId: null,    // Selected timeline event ID
+      timelineEventId: null,    // Selected timeline event ID (opens detail panel)
       timelineDurationId: null, // Selected timeline duration ID
+      timelineFocusedEventId: null, // Focused/highlighted event (no detail panel)
       timelineZoom: null,       // Timeline zoom level (null = default from localStorage)
       timelineCenterYear: null, // Timeline center year for scroll position
       timelineSearch: null,     // Timeline search query
@@ -54,7 +55,9 @@ const AppStore = {
       monthPickerOpen: false,
       timePickerOpen: false,
       feastsPanel: false,       // Feasts slideout panel state
-      priestlyPanel: false      // Priestly cycles slideout panel state
+      priestlyPanel: false,     // Priestly cycles slideout panel state
+      globalSearchQuery: null,  // Global search query (in top nav)
+      globalSearchCollapsed: { events: false, bible: false }  // Collapsed sections in search results
     },
     
     // Bible navigation history (for PWA/desktop where browser history may not work)
@@ -448,6 +451,7 @@ const AppStore = {
   _uiOnlyEvents: new Set([
     'SET_TIMELINE_EVENT',
     'SET_TIMELINE_DURATION', 
+    'SET_TIMELINE_FOCUSED_EVENT',
     'CLEAR_TIMELINE_SELECTION',
     'SET_TIMELINE_ZOOM',
     'SET_TIMELINE_CENTER_YEAR',
@@ -469,7 +473,10 @@ const AppStore = {
     'SET_INTERLINEAR_VERSE',
     'OPEN_PERSON',
     'CLOSE_PERSON',
-    'NAV_PUSH'
+    'NAV_PUSH',
+    'SET_GLOBAL_SEARCH',
+    'CLOSE_GLOBAL_SEARCH',
+    'SET_SEARCH_COLLAPSED'
   ]),
   
   dispatch(event) {
@@ -567,6 +574,7 @@ const AppStore = {
       this._state.content.view = parsed.content.view;
       this._state.content.params = parsed.content.params;
       Object.assign(this._state.ui, parsed.ui);
+      console.log('[AppStore] init: Applied parsed.ui, timelineEventId is now:', this._state.ui.timelineEventId);
     }
     
     // STEP 2: Now set "today" based on the actual location (from URL or default)
@@ -961,6 +969,7 @@ const AppStore = {
         if (event.view !== 'timeline') {
           s.ui.timelineEventId = null;
           s.ui.timelineDurationId = null;
+          s.ui.timelineFocusedEventId = null;
           s.ui.timelineSearch = null;
           s.ui.timelineZoom = null;
           s.ui.timelineCenterYear = null;
@@ -1113,6 +1122,14 @@ const AppStore = {
         s.ui.timelineDurationId = newDurationId;
         s.ui.timelineEventId = null;    // Clear event when selecting duration
         s.ui.timelineSearch = null;     // Clear search when selecting duration (mutually exclusive)
+        return true;
+      }
+      
+      case 'SET_TIMELINE_FOCUSED_EVENT': {
+        const newEventId = event.eventId || null;
+        if (s.ui.timelineFocusedEventId === newEventId) return false;
+        s.ui.timelineFocusedEventId = newEventId;
+        // Don't clear detail panel state - this is independent
         return true;
       }
         
@@ -1305,6 +1322,25 @@ const AppStore = {
         if (!s.ui.priestlyPanel) return false;
         s.ui.priestlyPanel = false;
         return true;
+      
+      // ─── Global Search Actions ───
+      case 'SET_GLOBAL_SEARCH':
+        if (s.ui.globalSearchQuery === event.query) return false;
+        s.ui.globalSearchQuery = event.query;
+        return true;
+        
+      case 'CLOSE_GLOBAL_SEARCH':
+        if (s.ui.globalSearchQuery === null) return false;
+        s.ui.globalSearchQuery = null;
+        return true;
+      
+      case 'SET_SEARCH_COLLAPSED': {
+        const section = event.section; // 'events' or 'bible'
+        const collapsed = event.collapsed;
+        if (s.ui.globalSearchCollapsed[section] === collapsed) return false;
+        s.ui.globalSearchCollapsed = { ...s.ui.globalSearchCollapsed, [section]: collapsed };
+        return true;
+      }
       
       // ─── URL Events ───
       case 'INIT_FROM_URL':
@@ -1781,7 +1817,8 @@ const AppStore = {
       const pushEvents = [
         'SET_VIEW', 'SET_SELECTED_DATE', 'SET_PROFILE', 'SET_LOCATION', 
         'SELECT_DAY', 'SET_BIBLE_LOCATION', 'SET_GREGORIAN_DATETIME',
-        'SET_TIMELINE_EVENT', 'SET_TIMELINE_DURATION', 'SET_TIMELINE_SEARCH'
+        'SET_TIMELINE_EVENT', 'SET_TIMELINE_DURATION', 'SET_TIMELINE_SEARCH',
+        'SET_TIMELINE_FOCUSED_EVENT', 'SET_GLOBAL_SEARCH', 'CLOSE_GLOBAL_SEARCH'
       ];
       // Panel state uses replaceState (updates URL but doesn't create history entry)
       // This way sharing a URL preserves panel state, but toggling doesn't pollute history
