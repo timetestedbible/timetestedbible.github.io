@@ -165,7 +165,6 @@ const VIEW_ASSETS = [
   '/views/bible-view.js',
   '/views/book-view.js',
   '/views/calendar-view.js',
-  '/views/events-view.js',
   '/views/help-view.js',
   '/views/priestly-view.js',
   '/views/reader-view.js',

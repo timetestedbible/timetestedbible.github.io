@@ -211,7 +211,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'events', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'feasts'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'feasts'],
   
   /**
    * Parse URL into state
@@ -534,10 +534,6 @@ const URLRouter = {
         // event or duration ID from query params
         break;
         
-      case 'events':
-        if (parts[0]) params.eventId = parts[0];
-        break;
-        
       case 'priestly':
         // No additional params
         break;
@@ -650,13 +646,6 @@ const URLRouter = {
         params.set('year', ui.timelineCenterYear);
       }
     }
-    // Events page filters
-    if (content.view === 'events') {
-      if (ui.eventsSearch) params.set('eq', ui.eventsSearch);
-      if (ui.eventsType && ui.eventsType !== 'all') params.set('et', ui.eventsType);
-      if (ui.eventsEra && ui.eventsEra !== 'all') params.set('ee', ui.eventsEra);
-      if (ui.eventsViewMode && ui.eventsViewMode !== 'list') params.set('ev', ui.eventsViewMode);
-    }
     
     const queryString = params.toString();
     return path + (queryString ? '?' + queryString : '');
@@ -713,10 +702,6 @@ const URLRouter = {
           if (params.chapterId) readerPath += '/' + params.chapterId;
         }
         return readerPath;
-        
-      case 'events':
-        if (params.eventId) return '/' + params.eventId;
-        return '';
         
       case 'settings':
         if (params.tab) return '/' + params.tab;

@@ -614,6 +614,46 @@
       "article": "/chapters/08_When_does_the_Year_Start/"
     },
     {
+      "id": "joshua-five-years-war",
+      "title": "⚔️ Joshua's Five Years of War",
+      "type": "duration",
+      "description": "After the Gibeonite covenant and the long day battle, Joshua carries on war with the Canaanite kings for five years, conducting the southern and northern campaigns to conquer the Promised Land. Jasher records: 'For five years did Joshua carry on the war with these kings.' This period encompasses the systematic conquest of Canaan until the land finally rested from war.",
+      "dates": {
+        "lunar": { "month": 11, "day": 1 },
+        "gregorian": { "year": -1406 }
+      },
+      "duration": { "years": 5 },
+      "end_dates": {
+        "event_id": "land-rested-from-war"
+      },
+      "certainty": "high",
+      "sources": [
+        { "ref": "Jasher 89:54", "type": "historical", "quote": "For five years did Joshua carry on the war with these kings" },
+        { "ref": "Joshua 11:18", "type": "scripture", "quote": "Joshua made war a long time with all those kings" },
+        { "ref": "Joshua 14:10", "type": "scripture", "quote": "The LORD hath kept me alive, as he said, these forty and five years, even since the LORD spake this word unto Moses, while the children of Israel wandered in the wilderness" }
+      ],
+      "tags": ["joshua", "conquest", "war", "canaan"],
+      "anniversary_display": false
+    },
+    {
+      "id": "land-rested-from-war",
+      "title": "🕊️ The Land Rested from War",
+      "type": "milestone",
+      "description": "After five years of conquest under Joshua, the land finally rests from war. This marks the completion of the major military campaigns and the beginning of the division of the land among the tribes of Israel.",
+      "dates": {
+        "lunar": { "month": 1, "day": 1 },
+        "gregorian": { "year": -1400 }
+      },
+      "relative_to": [{ "event_id": "joshua-five-years-war", "offset": { "years": 5 }, "relation": "after" }],
+      "certainty": "high",
+      "sources": [
+        { "ref": "Joshua 11:23", "type": "scripture", "quote": "So Joshua took the whole land, according to all that the LORD said unto Moses; and Joshua gave it for an inheritance unto Israel according to their divisions by their tribes. And the land rested from war." },
+        { "ref": "Joshua 14:15", "type": "scripture", "quote": "And the name of Hebron before was Kirjatharba; which Arba was a great man among the Anakims. And the land had rest from war." }
+      ],
+      "tags": ["joshua", "conquest", "rest", "inheritance", "canaan"],
+      "anniversary_display": false
+    },
+    {
       "id": "tabernacle-erected",
       "title": "Erection of the Tabernacle",
       "type": "construction",

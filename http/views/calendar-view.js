@@ -507,28 +507,21 @@ const CalendarView = {
     if (typeof getAstronomicalTimes === 'function' && day.gregorianDate) {
       const astroTimes = getAstronomicalTimes(day.gregorianDate, location);
       if (astroTimes) {
-        // Calculate daylight hours
-        let daylightStr = '';
-        if (astroTimes.sunriseTs && astroTimes.sunsetTs) {
-          const daylightMs = astroTimes.sunsetTs - astroTimes.sunriseTs;
-          const daylightHours = Math.floor(daylightMs / (1000 * 60 * 60));
-          const daylightMins = Math.round((daylightMs % (1000 * 60 * 60)) / (1000 * 60));
-          daylightStr = `${daylightHours}h ${daylightMins}m`;
-        }
-        
         astroTimesHtml = `
           <div class="day-detail-astro-times">
-            <div class="astro-times-title">☀️ Daylight: ${daylightStr}</div>
+            <div class="astro-times-title">☀️ Sun & 🌙 Moon</div>
             <div class="astro-times-row">
               <div class="astro-times-group">
                 <div class="astro-time"><span class="astro-label">Dark ends:</span> <span class="astro-value">${astroTimes.morningDark}</span></div>
                 <div class="astro-time"><span class="astro-label">Dawn:</span> <span class="astro-value">${astroTimes.firstLight}</span></div>
                 <div class="astro-time"><span class="astro-label">Sunrise:</span> <span class="astro-value">${astroTimes.sunrise}</span></div>
+                <div class="astro-time"><span class="astro-label">Moonset:</span> <span class="astro-value">${astroTimes.moonset}</span></div>
               </div>
               <div class="astro-times-group">
                 <div class="astro-time"><span class="astro-label">Sunset:</span> <span class="astro-value">${astroTimes.sunset}</span></div>
                 <div class="astro-time"><span class="astro-label">Twilight:</span> <span class="astro-value">${astroTimes.civilTwilight}</span></div>
                 <div class="astro-time"><span class="astro-label">Dark:</span> <span class="astro-value">${astroTimes.nauticalTwilight}</span></div>
+                <div class="astro-time"><span class="astro-label">Moonrise:</span> <span class="astro-value">${astroTimes.moonrise}</span></div>
               </div>
             </div>
           </div>

@@ -206,6 +206,20 @@ function getAstronomicalTimes(date, location) {
       }
     }
     
+    // Moonrise - search from midnight
+    let moonriseTs = null;
+    const moonriseResult = engine.searchRiseSet('moon', observer, +1, midnightUTC, 1);
+    if (moonriseResult) {
+      moonriseTs = moonriseResult.date.getTime();
+    }
+    
+    // Moonset - search from midnight (moon can set at any time of day)
+    let moonsetTs = null;
+    const moonsetResult = engine.searchRiseSet('moon', observer, -1, midnightUTC, 1);
+    if (moonsetResult) {
+      moonsetTs = moonsetResult.date.getTime();
+    }
+    
     // Format times in observer's local time
     const formatTime = (ts) => {
       if (!ts) return '--:--';
@@ -224,13 +238,17 @@ function getAstronomicalTimes(date, location) {
       sunset: formatTime(sunsetTs),
       civilTwilight: formatTime(civilTwilightTs),
       nauticalTwilight: formatTime(nauticalTwilightTs),
+      moonrise: formatTime(moonriseTs),
+      moonset: formatTime(moonsetTs),
       // Also return raw timestamps for further calculations
       morningDarkTs,
       sunriseTs,
       sunsetTs,
       firstLightTs,
       civilTwilightTs,
-      nauticalTwilightTs
+      nauticalTwilightTs,
+      moonriseTs,
+      moonsetTs
     };
   } catch (err) {
     console.warn('Error calculating astronomical times:', err);

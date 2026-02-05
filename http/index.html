@@ -68,7 +68,6 @@
   <link rel="stylesheet" href="/assets/css/bible-styles.css?v=125">
   <link rel="stylesheet" href="/assets/css/tutorial.css?v=1">
   <link rel="stylesheet" href="/assets/css/settings.css?v=1">
-  <link rel="stylesheet" href="/assets/css/events.css?v=1">
   <link rel="stylesheet" href="/assets/css/symbols.css?v=1">
   <link rel="stylesheet" href="/assets/css/reader.css?v=1">
   <link rel="stylesheet" href="/assets/css/components.css?v=1">
@@ -279,17 +278,17 @@
           <span class="menu-label">Timeline</span>
         </button>
         
-        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}}])">
-          <span class="menu-icon">📚</span>
-          <span class="menu-label">Time-Tested</span>
-        </button>
+        <div class="menu-book-promo">
+          <a href="#" class="menu-book-link" onclick="event.preventDefault(); AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}}])">
+            <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="menu-book-cover">
+          </a>
+          <a class="menu-book-download" href="/media/time-tested-tradition.pdf" download>
+            <span class="icon">📥</span>
+            <span>Download PDF</span>
+          </a>
+        </div>
         
         <div class="menu-divider"></div>
-        
-        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'events'}])">
-          <span class="menu-icon">📜</span>
-          <span class="menu-label">Events</span>
-        </button>
         
         <button class="menu-item" onclick="AppStore.dispatch({type:'CLOSE_MENU'}); CalendarExport.showExportModal();">
           <span class="menu-icon">📥</span>
@@ -324,16 +323,6 @@
           <span class="menu-icon">📲</span>
           <span class="menu-label">Install App</span>
         </button>
-        
-        <div class="book-ad">
-          <a href="/media/time-tested-tradition.pdf" download class="book-ad-link">
-            <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="book-ad-cover">
-          </a>
-          <a class="book-ad-download" href="/media/time-tested-tradition.pdf" download>
-            <span class="icon">📥</span>
-            <span>Download PDF</span>
-          </a>
-        </div>
         
       </nav>
       
@@ -469,7 +458,6 @@
   <script src="/views/book-view.js?v=2"></script>
   <script src="/views/tutorial-view.js?v=7"></script>
   <script src="/views/help-view.js?v=1"></script>
-  <script src="/views/events-view.js?v=6"></script>
   <script src="/views/priestly-view.js?v=2"></script>
   <script src="/views/sabbath-tester-view.js?v=2"></script>
   <script src="/views/settings-view.js?v=2"></script>
@@ -667,7 +655,6 @@
       if (typeof BookView !== 'undefined') ContentManager.registerView('book', BookView);
       if (typeof TutorialView !== 'undefined') ContentManager.registerView('tutorial', TutorialView);
       if (typeof HelpView !== 'undefined') ContentManager.registerView('help', HelpView);
-      if (typeof EventsView !== 'undefined') ContentManager.registerView('events', EventsView);
       if (typeof PriestlyView !== 'undefined') ContentManager.registerView('priestly', PriestlyView);
       if (typeof SabbathTesterView !== 'undefined') ContentManager.registerView('sabbath-tester', SabbathTesterView);
       if (typeof SettingsView !== 'undefined') ContentManager.registerView('settings', SettingsView);
@@ -689,7 +676,7 @@
           const pathname = url.pathname;
           if (/\.(pdf|json|css|js|png|jpg|jpeg|gif|ico|svg|txt|woff2?)(\?|$)/i.test(pathname)) return;
           if (pathname === '/' || pathname.startsWith('/reader') || pathname.startsWith('/calendar') ||
-              pathname.startsWith('/bible') || pathname.startsWith('/timeline') || pathname.startsWith('/events') ||
+              pathname.startsWith('/bible') || pathname.startsWith('/timeline') ||
               pathname.startsWith('/symbols') || pathname.startsWith('/book') || pathname.startsWith('/settings') ||
               pathname.startsWith('/tutorial') || pathname.startsWith('/help') || pathname.startsWith('/feasts') ||
               pathname.startsWith('/priestly') || pathname.startsWith('/sabbath-tester') ||
