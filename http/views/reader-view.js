@@ -69,6 +69,11 @@ const ReaderView = {
       return;
     }
     
+    // Not landing page - remove landing page class and reset html/body height
+    document.body.classList.remove('reader-landing');
+    document.documentElement.style.removeProperty('height');
+    document.body.style.removeProperty('height');
+    
     // Build a key for the current content to detect if we need to re-render
     let currentKey;
     switch (contentType) {
@@ -187,18 +192,16 @@ const ReaderView = {
 
   /**
    * Render landing page for /reader showing all available content types
+   * Uses same pattern as TutorialView - just set innerHTML, let CSS handle scrolling
    */
   renderLandingPage(state, derived, container) {
-    // Use BibleView's structure but show landing page content
-    if (typeof BibleView !== 'undefined') {
-      BibleView.renderStructure(container, { content: { params: { contentType: null } } });
-    }
+    // Add body class for CSS scrolling rules (same pattern as view-tutorial)
+    document.body.classList.add('reader-landing');
     
-    const textArea = container.querySelector('#bible-explorer-text');
-    if (!textArea) {
-      container.innerHTML = '<div class="reader-error">Reader structure not available</div>';
-      return;
-    }
+    // Override html/body height constraint to allow body scrolling
+    // This is necessary because base CSS sets html, body { height: 100% }
+    document.documentElement.style.setProperty('height', 'auto', 'important');
+    document.body.style.setProperty('height', 'auto', 'important');
     
     // Get counts for each content type
     const symbolCount = typeof SYMBOL_DICTIONARY !== 'undefined' ? Object.keys(SYMBOL_DICTIONARY).length : 0;
@@ -206,7 +209,8 @@ const ReaderView = {
     const numberStudyFiles = ['GEMATRIA', '666', '7', '40', '12', '3', '6', '10', '70', '1000']; // Common ones
     const chapterCount = typeof TIME_TESTED_CHAPTERS !== 'undefined' ? TIME_TESTED_CHAPTERS.length : 0;
     
-    textArea.innerHTML = `
+    // Render directly to container - CSS handles scrolling
+    container.innerHTML = `
       <div class="reader-landing-page">
         <header class="reader-landing-header">
           <h1>📖 Reader</h1>
@@ -362,16 +366,7 @@ const ReaderView = {
           textArea.innerHTML = this.buildSymbolSummaryHTML(symbol, symbolKey);
           this.loadSymbolStudy(symbolKey, textArea);
           
-          // Auto-open Strong's panel for the primary Strong's number
-          // (only if URL doesn't already have a different strongs param)
-          const urlStrongsId = state.ui?.strongsId;
-          if (symbol.strongs && symbol.strongs.length > 0 && !urlStrongsId) {
-            setTimeout(() => {
-              if (typeof showStrongsPanel === 'function') {
-                showStrongsPanel(symbol.strongs[0], '', '', null);
-              }
-            }, 200);
-          }
+          // Strong's panel only opens when user clicks a Strong's button
         } else {
           textArea.innerHTML = `<div class="reader-error">Symbol "${symbolKey}" not found</div>`;
         }
@@ -1547,15 +1542,7 @@ const ReaderView = {
       return;
     }
     
-    // Auto-open Strong's panel for the primary Strong's number
-    if (symbol.strongs && symbol.strongs.length > 0) {
-      const primaryStrongs = symbol.strongs[0];
-      setTimeout(() => {
-        if (typeof showStrongsPanel === 'function') {
-          showStrongsPanel(primaryStrongs, '', '', null);
-        }
-      }, 100);
-    }
+    // Strong's panel only opens when user clicks a Strong's button
     
     container.innerHTML = this.buildSymbolHTML(symbol, symbolKey);
     

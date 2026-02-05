@@ -341,6 +341,12 @@ const CalendarExport = {
    * Show export options modal
    */
   showExportModal() {
+    // Remove existing modal if present
+    const existing = document.getElementById('export-modal-overlay');
+    if (existing) {
+      existing.remove();
+    }
+    
     const derived = AppStore.getDerived();
     const yearLabel = this.formatYear(derived.year);
     

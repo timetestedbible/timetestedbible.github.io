@@ -48,12 +48,17 @@
 }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: 'Georgia', serif;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
@@ -219,16 +224,19 @@ button {
   border-radius: 1px;
 }
 
-/* App Container */
+/* App Container - fills remaining space below sticky nav */
 .app-container {
+  flex: 1;
   display: flex;
-  min-height: calc(100vh - var(--top-nav-height));
+  flex-direction: column;
+  min-height: 0;
 }
 
 /* 3-Column Main Layout */
 .main-layout {
+  flex: 1;
   display: flex;
-  min-height: calc(100vh - var(--top-nav-height));
+  min-height: 0;
   width: 100%;
 }
 
@@ -476,6 +484,21 @@ body.desktop-layout .sidebar-header {
 /* ═══════════════════════════════════════════════════════════════════════════
    4. CALENDAR VIEW
    ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Calendar view - body scrolls, not content-area */
+body.view-calendar {
+  overflow-y: auto;
+}
+
+body.view-calendar .main-layout {
+  min-height: auto;
+  overflow: visible;
+}
+
+body.view-calendar .content-area {
+  overflow: visible;
+  padding-top: var(--spacing-sm);
+}
 
 .calendar-app {
   width: 100%;
@@ -820,15 +843,16 @@ body.desktop-layout .sidebar-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 4px;
+  gap: 2px;
+  padding: 4px 2px;
   background: #2a5a8c;
+  min-width: 0;
 }
 
 .nav-arrow {
-  font-size: 1.5em;
+  font-size: 1.2em;
   cursor: pointer;
-  padding: var(--spacing-xs);
+  padding: 2px;
   border-radius: 4px;
   transition: background var(--transition-fast);
 }
@@ -1402,6 +1426,44 @@ body.desktop-layout .sidebar-header {
   }
 }
 
+/* iPhone SE and similar small phones (375px) */
+@media (max-width: 375px) {
+  .month-calendar {
+    font-size: 0.78em;
+  }
+  
+  .day-cell .lunar-day,
+  .new-moon-box .lunar-day {
+    font-size: 1.0em;
+  }
+  
+  .day-cell .gregorian,
+  .new-moon-box .gregorian {
+    font-size: 0.45em;
+  }
+  
+  .day-cell .day-icons-left,
+  .day-cell .day-icons-right,
+  .new-moon-box .day-icons-left,
+  .new-moon-box .day-icons-right {
+    font-size: 0.5em;
+  }
+  
+  .day-cell .moon-phase {
+    font-size: 0.85em;
+  }
+  
+  .nav-arrow {
+    font-size: 1em;
+    padding: 1px;
+  }
+  
+  .month-nav-cell {
+    gap: 1px;
+    padding: 2px 1px;
+  }
+}
+
 @media (max-width: 360px) {
   .month-calendar {
     font-size: 0.75em;
@@ -1443,12 +1505,29 @@ body.desktop-layout .sidebar-header {
     font-size: 0.45em;
   }
   
+  .day-cell .day-icons-left,
+  .day-cell .day-icons-right,
+  .new-moon-box .day-icons-left,
+  .new-moon-box .day-icons-right {
+    font-size: 0.45em;
+  }
+  
   .day-cell .moon-phase {
     display: none;
   }
   
   .new-moon-box .moon-phase {
     display: none;
+  }
+  
+  .nav-arrow {
+    font-size: 0.9em;
+    padding: 0;
+  }
+  
+  .month-nav-cell {
+    gap: 0;
+    padding: 2px 0;
   }
 }
 
@@ -3753,6 +3832,7 @@ body.view-reader {
   gap: 8px;
   background: #2a5a8c;
   padding: 8px;
+  min-width: 0;
 }
 
 .profile-nav-cell .profile-display {

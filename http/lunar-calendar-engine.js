@@ -469,11 +469,15 @@ class LunarCalendarEngine {
     const midnight = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
     midnight.setUTCFullYear(date.getUTCFullYear());
     
-    const direction = this.config.dayStartTime === 'evening' ? -1 : +1;
-    
-    let searchStart = midnight;
+    let searchStart, direction;
     if (this.config.dayStartTime === 'evening') {
-      searchStart = new Date(midnight.getTime() - 12 * 60 * 60 * 1000);
+      // Search FORWARD from noon to find THIS day's sunset
+      // (not backward from midnight which finds previous day's sunset)
+      searchStart = new Date(midnight.getTime() + 12 * 60 * 60 * 1000); // noon
+      direction = -1; // sunset
+    } else {
+      searchStart = midnight;
+      direction = +1; // sunrise
     }
     
     let result;
@@ -489,7 +493,7 @@ class LunarCalendarEngine {
     
     // Fallback
     if (this.config.dayStartTime === 'evening') {
-      return midnight.getTime() - 6 * 60 * 60 * 1000; // 6pm previous day
+      return midnight.getTime() + 18 * 60 * 60 * 1000; // 6pm same day
     } else {
       return midnight.getTime() + 6 * 60 * 60 * 1000; // 6am
     }
@@ -700,12 +704,16 @@ class LunarCalendarEngine {
           }
         }
         
+        // Calculate weekday directly from JD (avoid Date object round-trip errors)
+        const weekday = this.jdnToWeekday(Math.floor(dayStartJD));
+        const weekdayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        
         days.push({
           lunarDay: d,
           gregorianDate: dayDate,  // Now uses Julian calendar for ancient dates
           jd: dayStartJD,  // JD of day start (sunrise/sunset based on config)
-          weekday: this.getWeekday(dayDate),
-          weekdayName: this.getWeekdayName(dayDate),
+          weekday: weekday,
+          weekdayName: weekdayNames[weekday],
           isUncertain: isUncertain,
           uncertaintyDirection: isUncertain ? monthUncertainty.direction : null,
           uncertaintyProbability: isUncertain ? monthUncertainty.probability : 0,
@@ -770,6 +778,7 @@ class LunarCalendarEngine {
       lunarMonth: month,
       lunarDay: day,
       gregorianDate: dayData.gregorianDate,
+      jd: dayData.jd,
       weekday: dayData.weekday,
       weekdayName: dayData.weekdayName,
       monthData: monthData,
@@ -838,11 +847,14 @@ class LunarCalendarEngine {
 
   /**
    * Get weekday from Julian Day Number
+   * JDN 0 = Monday (weekday 1)
    * @param {number} jdn 
    * @returns {number} 0 = Sunday, 6 = Saturday
    */
   jdnToWeekday(jdn) {
-    return (jdn + 1) % 7;
+    // weekday = (jdn + 1) mod 7
+    // JavaScript % can return negative for negative jdn, so fix it
+    return ((jdn + 1) % 7 + 7) % 7;
   }
 
   /**

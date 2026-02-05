@@ -494,6 +494,71 @@ body.desktop-layout .sidebar-header {
    4. CALENDAR VIEW
    ═══════════════════════════════════════════════════════════════════════════ */
 
+/* Calendar view - body scrolls, not content-area */
+body.view-calendar {
+  overflow-y: auto;
+}
+
+body.view-calendar .main-layout {
+  min-height: auto;
+  overflow: visible;
+}
+
+body.view-calendar .content-area {
+  overflow: visible;
+  padding-top: var(--spacing-sm);
+}
+
+/* Tutorial/About view - body scrolls, not content-area (same as calendar) */
+html:has(body.view-tutorial),
+html:has(body.view-tutorial) body.view-tutorial {
+  height: auto !important;
+  min-height: 100%;
+}
+
+body.view-tutorial {
+  overflow-y: auto !important;
+}
+
+body.view-tutorial .app-container {
+  flex: none !important;
+  height: auto !important;
+}
+
+body.view-tutorial .main-layout {
+  min-height: auto !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+body.view-tutorial .content-area {
+  overflow: visible !important;
+  height: auto !important;
+  padding-top: var(--spacing-sm);
+}
+
+/* Reader landing page - body scrolls, not content-area (same as calendar) */
+body.view-reader.reader-landing {
+  overflow-y: auto !important;
+}
+
+body.view-reader.reader-landing .app-container {
+  flex: none !important;
+  height: auto !important;
+}
+
+body.view-reader.reader-landing .main-layout {
+  min-height: auto !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+body.view-reader.reader-landing .content-area {
+  overflow: visible !important;
+  height: auto !important;
+  padding-top: var(--spacing-sm);
+}
+
 .calendar-app {
   width: 100%;
   max-width: var(--content-max-width);
@@ -837,15 +902,16 @@ body.desktop-layout .sidebar-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 4px;
+  gap: 2px;
+  padding: 4px 2px;
   background: #2a5a8c;
+  min-width: 0;
 }
 
 .nav-arrow {
-  font-size: 1.5em;
+  font-size: 1.2em;
   cursor: pointer;
-  padding: var(--spacing-xs);
+  padding: 2px;
   border-radius: 4px;
   transition: background var(--transition-fast);
 }
@@ -1419,6 +1485,44 @@ body.desktop-layout .sidebar-header {
   }
 }
 
+/* iPhone SE and similar small phones (375px) */
+@media (max-width: 375px) {
+  .month-calendar {
+    font-size: 0.78em;
+  }
+  
+  .day-cell .lunar-day,
+  .new-moon-box .lunar-day {
+    font-size: 1.0em;
+  }
+  
+  .day-cell .gregorian,
+  .new-moon-box .gregorian {
+    font-size: 0.45em;
+  }
+  
+  .day-cell .day-icons-left,
+  .day-cell .day-icons-right,
+  .new-moon-box .day-icons-left,
+  .new-moon-box .day-icons-right {
+    font-size: 0.5em;
+  }
+  
+  .day-cell .moon-phase {
+    font-size: 0.85em;
+  }
+  
+  .nav-arrow {
+    font-size: 1em;
+    padding: 1px;
+  }
+  
+  .month-nav-cell {
+    gap: 1px;
+    padding: 2px 1px;
+  }
+}
+
 @media (max-width: 360px) {
   .month-calendar {
     font-size: 0.75em;
@@ -1460,12 +1564,29 @@ body.desktop-layout .sidebar-header {
     font-size: 0.45em;
   }
   
+  .day-cell .day-icons-left,
+  .day-cell .day-icons-right,
+  .new-moon-box .day-icons-left,
+  .new-moon-box .day-icons-right {
+    font-size: 0.45em;
+  }
+  
   .day-cell .moon-phase {
     display: none;
   }
   
   .new-moon-box .moon-phase {
     display: none;
+  }
+  
+  .nav-arrow {
+    font-size: 0.9em;
+    padding: 0;
+  }
+  
+  .month-nav-cell {
+    gap: 0;
+    padding: 2px 0;
   }
 }
 
@@ -1498,16 +1619,21 @@ body.desktop-layout .sidebar-header {
   display: flex !important;
 }
 
-/* Ensure Bible/Reader fills available space */
-.view-bible .main-layout,
-.view-reader .main-layout {
+/* Ensure Bible/Reader fills available space (except landing pages) */
+.view-bible .main-layout {
+  height: 100% !important;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+}
+
+body.view-reader:not(.reader-landing) .main-layout {
   height: 100% !important;
   flex: 1 1 0% !important;
   min-height: 0 !important;
 }
 
 .view-bible .content-area,
-.view-reader .content-area {
+body.view-reader:not(.reader-landing) .content-area {
   padding: 0 !important;
   max-width: none !important;
   width: 100% !important;
@@ -1519,9 +1645,9 @@ body.desktop-layout .sidebar-header {
   overflow: hidden !important;
 }
 
-/* Prevent body scroll when viewing Bible/Reader */
+/* Prevent body scroll when viewing Bible/Reader (except landing pages) */
 body.view-bible,
-body.view-reader {
+body.view-reader:not(.reader-landing) {
   overflow: hidden !important;
 }
 
@@ -1740,9 +1866,9 @@ body.view-reader {
 
 /* Mobile adjustments for Bible - use absolute positioning for guaranteed height */
 @media (max-width: 768px) {
-  /* Content area uses viewport height */
+  /* Content area uses viewport height (except landing pages which scroll) */
   .view-bible .content-area,
-  .view-reader .content-area {
+  body.view-reader:not(.reader-landing) .content-area {
     position: relative !important;
     height: calc(100vh - var(--top-nav-height)) !important;
     height: calc(100dvh - var(--top-nav-height)) !important;
@@ -3920,6 +4046,7 @@ body.view-reader {
   gap: 8px;
   background: #2a5a8c;
   padding: 8px;
+  min-width: 0;
 }
 
 .profile-nav-cell .profile-display {
@@ -4509,6 +4636,151 @@ body.view-reader {
 
 .feast-basis strong {
   color: #d4a017;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CALENDAR EXPORT MODAL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.export-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.export-modal-overlay.visible {
+  opacity: 1;
+}
+
+.export-modal {
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d2840 100%);
+  border-radius: 16px;
+  padding: 0;
+  min-width: 320px;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.export-modal-overlay.visible .export-modal {
+  transform: scale(1);
+}
+
+.export-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.export-modal-header h3 {
+  margin: 0;
+  color: #d4a574;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.export-modal-close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.3em;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.export-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.export-modal-content {
+  padding: 20px;
+}
+
+.export-modal-year {
+  text-align: center;
+  color: #aaa;
+  margin: 0 0 20px;
+  font-size: 0.95em;
+}
+
+.export-modal-year strong {
+  color: #7ec8e3;
+}
+
+.export-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(212, 165, 116, 0.4);
+  transform: translateX(3px);
+}
+
+.export-option:last-of-type {
+  margin-bottom: 0;
+}
+
+.export-option-icon {
+  font-size: 2em;
+  flex-shrink: 0;
+}
+
+.export-option-info {
+  flex: 1;
+}
+
+.export-option-title {
+  color: #f0e6d3;
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 4px;
+}
+
+.export-option-desc {
+  color: #888;
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+.export-note {
+  margin-top: 20px;
+  padding: 12px 14px;
+  background: rgba(126, 200, 227, 0.1);
+  border: 1px solid rgba(126, 200, 227, 0.2);
+  border-radius: 8px;
+}
+
+.export-note p {
+  margin: 0;
+  color: #7ec8e3;
+  font-size: 0.85em;
+  line-height: 1.5;
 }
 
 .feast-basis.virgo-rule-basis {

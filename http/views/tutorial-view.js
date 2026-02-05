@@ -172,11 +172,7 @@ const TutorialView = {
         <section class="book-section">
           <div class="book-card">
             <div class="book-cover">
-              <div class="book-spine"></div>
-              <div class="book-front">
-                <span class="book-icon">📚</span>
-                <span class="book-title-small">Time-Tested<br>Tradition</span>
-              </div>
+              <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="book-cover-img">
             </div>
             <div class="book-info">
               <h3>The Complete Book</h3>

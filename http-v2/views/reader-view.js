@@ -189,16 +189,7 @@ const ReaderView = {
           textArea.innerHTML = this.buildSymbolSummaryHTML(symbol, symbolKey);
           this.loadSymbolStudy(symbolKey, textArea);
           
-          // Auto-open Strong's panel for the primary Strong's number
-          // (only if URL doesn't already have a different strongs param)
-          const urlStrongsId = state.ui?.strongsId;
-          if (symbol.strongs && symbol.strongs.length > 0 && !urlStrongsId) {
-            setTimeout(() => {
-              if (typeof showStrongsPanel === 'function') {
-                showStrongsPanel(symbol.strongs[0], '', '', null);
-              }
-            }, 200);
-          }
+          // Strong's panel only opens when user clicks a Strong's button
         } else {
           textArea.innerHTML = `<div class="reader-error">Symbol "${symbolKey}" not found</div>`;
         }
@@ -938,15 +929,7 @@ const ReaderView = {
       return;
     }
     
-    // Auto-open Strong's panel for the primary Strong's number
-    if (symbol.strongs && symbol.strongs.length > 0) {
-      const primaryStrongs = symbol.strongs[0];
-      setTimeout(() => {
-        if (typeof showStrongsPanel === 'function') {
-          showStrongsPanel(primaryStrongs, '', '', null);
-        }
-      }, 100);
-    }
+    // Strong's panel only opens when user clicks a Strong's button
     
     container.innerHTML = this.buildSymbolHTML(symbol, symbolKey);
     

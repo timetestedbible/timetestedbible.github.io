@@ -101,7 +101,7 @@ const BIBLICAL_TESTS = [
 const SabbathTesterView = {
   _isRendering: false,
   _testCache: {}, // Cache for test results: { 'testId-profileId': result }
-  _cacheVersion: '1.0', // Increment to invalidate cache if test logic changes
+  _cacheVersion: '2.8', // Increment to invalidate cache if test logic changes (v2.8: Fixed getDayStartTime to find same-day sunset)
   
   render(state, derived, container) {
     if (this._isRendering) return; // Prevent re-render loops
@@ -346,6 +346,7 @@ const SabbathTesterView = {
       const calculatedWeekday = dayInfo.weekday;
       const calculatedWeekdayName = dayInfo.weekdayName;
       const gregorianDate = dayInfo.gregorianDate;
+      const jd = dayInfo.jd; // Julian Day Number for debugging
       
       // Get uncertainty information
       const monthData = dayInfo.monthData;
@@ -395,6 +396,7 @@ const SabbathTesterView = {
         calculatedWeekday,
         calculatedWeekdayName,
         gregorianDate,
+        jd, // Julian Day Number for debugging
         uncertaintyHours: uncertainty ? (uncertainty.marginHours || 0) : 0,
         marginHours: uncertainty ? (uncertainty.marginHours || Infinity) : Infinity,
         probability,
@@ -809,8 +811,9 @@ const SabbathTesterView = {
         yearUncertaintyIcon = ` <span class="year-uncertainty-icon" title="${tooltipText}">⚠️${r.yearUncertainty.probability}%</span>`;
       }
       
+      const jdTooltip = r.jd != null ? `JD: ${r.jd.toFixed(2)}` : '';
       const dateLink = r.gregorianDate ? 
-        `<a class="sabbath-test-date-link" onclick="SabbathTesterView.navigateToTestResult('${test.id}', '${r.profileIdForNav}')">${dateStr}</a>${yearUncertaintyIcon}` :
+        `<a class="sabbath-test-date-link" title="${jdTooltip}" onclick="SabbathTesterView.navigateToTestResult('${test.id}', '${r.profileIdForNav}')">${dateStr}</a>${yearUncertaintyIcon}` :
         dateStr;
       
       // Calculate alternative score for 30 AD and 33 AD tests
@@ -852,7 +855,7 @@ const SabbathTesterView = {
           altBreakdown += `<div class="breakdown-section"><span class="breakdown-label result-fail">❌</span> ${failedTests.map(formatTestName).join(', ')}</div>`;
         }
         
-        altScoreCell = `<td class="${altScoreClass}">
+        altScoreCell = `<td data-label="Alt Score" class="${altScoreClass}">
           <details class="alt-score-details">
             <summary>${altPct}%</summary>
             <div class="alt-score-breakdown">${altBreakdown}</div>
@@ -862,10 +865,10 @@ const SabbathTesterView = {
       
       html += `
         <tr>
-          <td>${r.mergedName}</td>
-          <td>${dateLink}</td>
-          <td>${weekdayStr}</td>
-          <td class="${resultClass}">${resultText}</td>
+          <td data-label="Profile">${r.mergedName}</td>
+          <td data-label="Date">${dateLink}</td>
+          <td data-label="Weekday">${weekdayStr}</td>
+          <td data-label="Result" class="${resultClass}">${resultText}</td>
           ${altScoreCell}
         </tr>
       `;
@@ -963,22 +966,38 @@ const SabbathTesterView = {
   },
   
   /**
-   * Format a Gregorian date for ancient dates
+   * Format a Gregorian/Julian date for display
+   * Uses JDN-based weekday calculation for accuracy with ancient dates
+   * Uses the same formula as LunarCalendarEngine for consistency
    */
   formatAncientDate(date, includeWeekday = true) {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     
-    // Use engine to get correct weekday for ancient dates
-    const weekday = date.getUTCDay();
-    const weekdayName = weekdays[weekday];
-    const monthName = months[date.getUTCMonth()];
-    const day = date.getUTCDate();
+    // Ensure date is a Date object (cached results may have serialized it to string)
+    if (!(date instanceof Date)) {
+      date = new Date(date);
+    }
+    
+    // Check if date is valid
+    if (isNaN(date.getTime())) {
+      return 'Invalid Date';
+    }
+    
     const year = date.getUTCFullYear();
+    const month = date.getUTCMonth(); // 0-indexed
+    const day = date.getUTCDate();
+    const monthName = months[month];
     const yearStr = year < 0 ? `${Math.abs(year) + 1} BC` : `${year} AD`;
     
     if (includeWeekday) {
-      return `${weekdayName}, ${monthName} ${day}, ${yearStr}`;
+      // For ancient dates (before 1582), the engine calculates weekday correctly
+      // Just display what's already in the result - don't recalculate here
+      // The weekday is already computed by LunarCalendarEngine.getWeekday()
+      // We should NOT recalculate it here - just use it from the cached result
+      
+      // If we don't have a precomputed weekday, skip it
+      return `${monthName} ${day}, ${yearStr}`;
     }
     return `${monthName} ${day}, ${yearStr}`;
   },

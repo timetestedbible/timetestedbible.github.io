@@ -2391,6 +2391,12 @@ const CalendarView = {
   showProfileEditor(e) {
     e.stopPropagation();
     
+    // Remove existing if present
+    const existingOverlay = document.querySelector('.settings-page-overlay');
+    const existingPage = document.querySelector('.settings-page');
+    if (existingOverlay) existingOverlay.remove();
+    if (existingPage) existingPage.remove();
+    
     // Create overlay
     const overlay = document.createElement('div');
     overlay.className = 'settings-page-overlay visible';
@@ -2706,6 +2712,12 @@ const CalendarView = {
   },
   
   showProfileNameModal(mode, onClose, currentName = '') {
+    // Remove existing modal if present
+    const existing = document.querySelector('.profile-modal-overlay');
+    if (existing) {
+      existing.remove();
+    }
+    
     const overlay = document.createElement('div');
     overlay.className = 'profile-modal-overlay visible';
     

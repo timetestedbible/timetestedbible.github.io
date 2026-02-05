@@ -435,6 +435,208 @@
   background: linear-gradient(135deg, #e4b584 0%, #d4a574 100%);
 }
 
+/* Quick Start Section */
+.quickstart-section {
+  margin-bottom: 50px;
+}
+
+.quickstart-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  counter-reset: step-counter;
+}
+
+.step-card {
+  background: linear-gradient(145deg, rgba(30, 55, 80, 0.8) 0%, rgba(20, 40, 60, 0.9) 100%);
+  border: 1px solid rgba(126, 200, 227, 0.2);
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(126, 200, 227, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.step-card .step-number {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #7ec8e3 0%, #5ba8c8 100%);
+  color: #0f1f30;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  box-shadow: 0 4px 12px rgba(126, 200, 227, 0.4);
+}
+
+.step-card h4 {
+  color: #f0e6d3;
+  font-size: 1.15em;
+  margin: 8px 0 12px;
+  font-weight: 600;
+}
+
+.step-card p {
+  color: #a8b8c8;
+  font-size: 0.92em;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.step-card .step-btn {
+  background: rgba(126, 200, 227, 0.12);
+  border: 1px solid rgba(126, 200, 227, 0.35);
+  color: #7ec8e3;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.step-card .step-btn:hover {
+  background: rgba(126, 200, 227, 0.22);
+  border-color: #7ec8e3;
+  transform: translateY(-1px);
+}
+
+/* Book Section */
+.book-section {
+  margin-bottom: 50px;
+}
+
+.book-card {
+  display: flex;
+  gap: 40px;
+  background: linear-gradient(135deg, rgba(35, 60, 85, 0.9) 0%, rgba(25, 45, 65, 0.95) 100%);
+  border: 1px solid rgba(212, 165, 116, 0.25);
+  border-radius: 20px;
+  padding: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.book-cover {
+  flex-shrink: 0;
+  width: 160px;
+  perspective: 800px;
+  position: relative;
+}
+
+.book-cover-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px 12px 12px 4px;
+  box-shadow: 
+    8px 8px 24px rgba(0, 0, 0, 0.5),
+    4px 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  transform: rotateY(-8deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover .book-cover-img {
+  transform: rotateY(-3deg);
+  box-shadow: 
+    12px 12px 32px rgba(0, 0, 0, 0.5),
+    6px 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.book-info {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.book-info h3 {
+  color: #f0e6d3;
+  font-size: 1.8em;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.book-info .book-author {
+  color: #d4a574;
+  font-size: 1.05em;
+  margin: 0 0 16px;
+  font-style: italic;
+}
+
+.book-info .book-description {
+  color: #a8b8c8;
+  font-size: 1em;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.book-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.book-btn.primary {
+  background: linear-gradient(135deg, #d4a574 0%, #c49464 100%);
+  border: none;
+  color: #1a2a3a;
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.3);
+}
+
+.book-btn.primary:hover {
+  background: linear-gradient(135deg, #e4b584 0%, #d4a574 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+.book-btn.secondary {
+  background: rgba(126, 200, 227, 0.12);
+  border: 1px solid rgba(126, 200, 227, 0.35);
+  color: #7ec8e3;
+}
+
+.book-btn.secondary:hover {
+  background: rgba(126, 200, 227, 0.22);
+  border-color: #7ec8e3;
+  transform: translateY(-2px);
+}
+
 /* Footer */
 .tutorial-footer {
   text-align: center;
@@ -527,5 +729,41 @@
   
   .chapters-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .quickstart-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .book-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 24px;
+    gap: 24px;
+  }
+  
+  .book-cover {
+    width: 140px;
+  }
+  
+  .book-cover-img {
+    transform: none;
+  }
+  
+  .book-card:hover .book-cover-img {
+    transform: none;
+  }
+  
+  .book-info h3 {
+    font-size: 1.5em;
+  }
+  
+  .book-actions {
+    justify-content: center;
+  }
+  
+  .book-btn {
+    padding: 12px 20px;
+    font-size: 0.95em;
   }
 }

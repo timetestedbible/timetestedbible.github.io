@@ -237,18 +237,13 @@
 
 /* Book advertisement in nav menu */
 .book-ad {
-  margin: 15px 40px;
-  padding: 12px 8px;
-  background: linear-gradient(135deg, #f8f4e8 0%, #fff 50%, #f8f4e8 100%);
-  border-radius: 8px;
+  margin: 15px 20px;
+  padding: 0;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  border: 1px solid rgba(212, 160, 23, 0.3);
-  aspect-ratio: 5 / 7;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  gap: 10px;
 }
 
 .book-ad-text {
@@ -335,6 +330,25 @@
 
 .book-ad-download .icon {
   font-size: 1.1em;
+}
+
+.book-ad-link {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.book-ad-cover {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-ad-cover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .calendar-app {
@@ -8224,6 +8238,15 @@ body.biblical-timeline-open .top-nav-inner {
   margin: 0 auto;
 }
 
+/* Background for timetested landing page */
+.bible-explorer-text:has(.reader-ttt-index) {
+  background-image: url('../img/BookBackground.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0;
+}
+
 .ttt-index-header {
   text-align: center;
   margin-bottom: 32px;
@@ -10075,14 +10098,14 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Mobile: full-height content + sidebar becomes full-width overlay */
 @media (max-width: 768px) {
-  /* Give content area a fixed height so 100% children work */
+  /* Give content area a fixed height so 100% children work (except landing pages) */
   body.view-bible .main-layout,
-  body.view-reader .main-layout {
+  body.view-reader:not(.reader-landing) .main-layout {
     height: calc(100dvh - var(--top-nav-height, 56px)) !important;
     min-height: 0 !important;
   }
   body.view-bible #content-area,
-  body.view-reader #content-area {
+  body.view-reader:not(.reader-landing) #content-area {
     height: 100% !important;
     min-height: 0 !important;
   }

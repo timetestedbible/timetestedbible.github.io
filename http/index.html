@@ -95,11 +95,28 @@
         padding: 0 !important;
         overflow: hidden !important;
       }
-      /* About/tutorial page: allow scroll so content is not clipped */
+      /* Calendar, Tutorial views: allow scroll so content is not clipped */
+      body.view-calendar .main-layout,
+      body.view-calendar #content-area,
       body.view-tutorial .main-layout,
       body.view-tutorial #content-area {
         overflow: auto !important;
         -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Reader landing page: body scrolls */
+      body.view-reader.reader-landing .main-layout,
+      body.view-reader.reader-landing #content-area {
+        overflow: visible !important;
+        height: auto !important;
+      }
+      body.view-reader.reader-landing {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      body.view-reader.reader-landing .app-container {
+        flex: none !important;
+        height: auto !important;
       }
       
       /* Bible/Reader page fills content area */
@@ -309,18 +326,13 @@
         </button>
         
         <div class="book-ad">
-          <div class="book-ad-top">
-            <div class="book-ad-title">TIME</div>
-            <div class="book-ad-subtitle">Tested Tradition</div>
-            <div class="book-ad-tagline">The Renewed Biblical Calendar</div>
-          </div>
-          <div class="book-ad-bottom">
-            <div class="book-ad-author">By Daniel Larimer</div>
-            <a class="book-ad-download" href="/media/time-tested-tradition.pdf" download>
-              <span class="icon">📥</span>
-              <span>Download PDF</span>
-            </a>
-          </div>
+          <a href="/media/time-tested-tradition.pdf" download class="book-ad-link">
+            <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="book-ad-cover">
+          </a>
+          <a class="book-ad-download" href="/media/time-tested-tradition.pdf" download>
+            <span class="icon">📥</span>
+            <span>Download PDF</span>
+          </a>
         </div>
         
       </nav>
@@ -711,6 +723,13 @@
       
       // PWA Install handling
       setupInstallPrompt();
+      
+      // Hide tooltips when scrolling (they use position: fixed so they don't move with content)
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        // Remove tooltips immediately on scroll
+        document.querySelectorAll('.symbol-tooltip, .word-hover-tooltip, .hebrew-tooltip, .book-ref-popup').forEach(el => el.remove());
+      }, { passive: true });
     });
     
     // ═══════════════════════════════════════════════════════════════════

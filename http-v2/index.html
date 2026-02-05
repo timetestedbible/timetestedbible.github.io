@@ -89,6 +89,15 @@
         overflow: hidden !important;
       }
       
+      /* Calendar and Tutorial views: allow scroll so content is not clipped */
+      body.view-calendar .main-layout,
+      body.view-calendar #content-area,
+      body.view-tutorial .main-layout,
+      body.view-tutorial #content-area {
+        overflow: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      
       /* Bible/Reader page fills content area */
       #bible-explorer-page,
       .bible-explorer-page {
@@ -264,18 +273,13 @@
         </button>
         
         <div class="book-ad">
-          <div class="book-ad-top">
-            <div class="book-ad-title">TIME</div>
-            <div class="book-ad-subtitle">Tested Tradition</div>
-            <div class="book-ad-tagline">The Renewed Biblical Calendar</div>
-          </div>
-          <div class="book-ad-bottom">
-            <div class="book-ad-author">By Daniel Larimer</div>
-            <a class="book-ad-download" href="/media/time-tested-tradition.pdf" download>
-              <span class="icon">📥</span>
-              <span>Download PDF</span>
-            </a>
-          </div>
+          <a href="/media/time-tested-tradition.pdf" download class="book-ad-cover-link">
+            <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="book-ad-cover">
+          </a>
+          <a class="book-ad-download" href="/media/time-tested-tradition.pdf" download>
+            <span class="icon">📥</span>
+            <span>Download PDF</span>
+          </a>
         </div>
         
       </nav>
