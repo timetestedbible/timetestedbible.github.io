@@ -10,12 +10,37 @@
 const SettingsView = {
   _mapInitialized: false,
   
+  /**
+   * Close settings and return to previous page
+   */
+  close() {
+    // Use browser back if there's history, otherwise go to calendar
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      AppStore.dispatch({ type: 'SET_VIEW', view: 'calendar' });
+    }
+  },
+  
   render(state, derived, container) {
     // Load current preferences
     const translation = this.getTranslationPreference();
     const locationPref = this.getLocationPreference();
     const theme = this.getThemePreference();
+    const namePrefs = this.getNamePreferences();
     const currentLocation = state.context.location;
+    const currentProfileId = state.context.profileId || 'timeTested';
+    
+    // Build profile options from available profiles
+    const profiles = window.PROFILES || {};
+    const profileOptions = Object.entries(profiles)
+      .map(([id, profile]) => {
+        const icon = profile.icon || '📅';
+        const name = profile.name || id;
+        const selected = id === currentProfileId ? 'selected' : '';
+        return `<option value="${id}" ${selected}>${icon} ${name}</option>`;
+      })
+      .join('');
     
     // Reset map initialization flag when rendering fresh
     this._mapInitialized = false;
@@ -24,7 +49,17 @@ const SettingsView = {
       <div class="settings-view">
         <header class="settings-page-header">
           <h2>⚙️ Settings</h2>
+          <button class="settings-close-btn" onclick="SettingsView.close()" title="Close">✕</button>
         </header>
+        
+        <!-- Default Calendar Profile -->
+        <section class="settings-section">
+          <h3>📅 Default Calendar Profile</h3>
+          <p class="settings-description">Choose the calendar profile used for Sabbath and feast day calculations.</p>
+          <select id="settings-profile-select" class="settings-select" onchange="SettingsView.saveProfilePreference(this.value)">
+            ${profileOptions}
+          </select>
+        </section>
         
         <!-- Default Scripture Translation -->
         <section class="settings-section">
@@ -35,6 +70,46 @@ const SettingsView = {
             <option value="asv" ${translation === 'asv' ? 'selected' : ''}>ASV - American Standard Version</option>
             <option value="lxx" ${translation === 'lxx' ? 'selected' : ''}>LXX - Septuagint</option>
           </select>
+        </section>
+        
+        <!-- Name Preferences -->
+        <section class="settings-section">
+          <h3>✡️ Name Preferences</h3>
+          <p class="settings-description">Choose how divine names are displayed throughout the app.</p>
+          
+          <div class="settings-name-prefs">
+            <div class="settings-name-row">
+              <label class="settings-name-label">Messiah:</label>
+              <div class="settings-name-options">
+                <button class="settings-name-btn ${namePrefs.messiah === 'jesus' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('messiah', 'jesus')">Jesus</button>
+                <button class="settings-name-btn ${namePrefs.messiah === 'yeshua' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('messiah', 'yeshua')">Yeshua</button>
+              </div>
+            </div>
+            
+            <div class="settings-name-row">
+              <label class="settings-name-label">Divine Name:</label>
+              <div class="settings-name-options">
+                <button class="settings-name-btn ${namePrefs.divineName === 'lord' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('divineName', 'lord')">the LORD</button>
+                <button class="settings-name-btn ${namePrefs.divineName === 'yhwh' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('divineName', 'yhwh')">𐤉𐤄𐤅𐤄</button>
+                <button class="settings-name-btn ${namePrefs.divineName === 'yahweh' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('divineName', 'yahweh')">Yahweh</button>
+              </div>
+            </div>
+            
+            <div class="settings-name-row">
+              <label class="settings-name-label">Creator:</label>
+              <div class="settings-name-options">
+                <button class="settings-name-btn ${namePrefs.god === 'god' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('god', 'god')">God</button>
+                <button class="settings-name-btn ${namePrefs.god === 'elohim' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('god', 'elohim')">Elohim</button>
+              </div>
+            </div>
+          </div>
         </section>
         
         <!-- Default Home Location -->
@@ -127,6 +202,95 @@ const SettingsView = {
       mapContainer.appendChild(mapComponent);
     } else {
       mapContainer.innerHTML = '<p style="color: rgba(255,255,255,0.6);">Map component not available</p>';
+    }
+  },
+  
+  /**
+   * Save profile preference
+   */
+  saveProfilePreference(profileId) {
+    try {
+      localStorage.setItem('defaultCalendarProfile', profileId);
+      // Update current profile in AppStore
+      if (typeof AppStore !== 'undefined') {
+        AppStore.dispatch({ type: 'SET_PROFILE', profileId });
+      }
+    } catch (e) {
+      console.error('Failed to save profile preference:', e);
+    }
+  },
+  
+  /**
+   * Get profile preference from localStorage
+   */
+  getProfilePreference() {
+    try {
+      return localStorage.getItem('defaultCalendarProfile') || 'timeTested';
+    } catch (e) {
+      return 'timeTested';
+    }
+  },
+  
+  /**
+   * Get name preferences from localStorage
+   */
+  getNamePreferences() {
+    try {
+      const saved = localStorage.getItem('namePreferences');
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch (e) {}
+    // Defaults
+    return {
+      messiah: 'jesus',      // 'jesus' or 'yeshua'
+      divineName: 'lord',    // 'lord', 'yhwh', or 'yahweh'
+      god: 'god'             // 'god' or 'elohim'
+    };
+  },
+  
+  /**
+   * Save a single name preference
+   */
+  saveNamePreference(key, value) {
+    try {
+      const prefs = this.getNamePreferences();
+      prefs[key] = value;
+      localStorage.setItem('namePreferences', JSON.stringify(prefs));
+      
+      // Update button states without full re-render
+      const container = document.querySelector('.settings-name-prefs');
+      if (container) {
+        // Find all buttons in the row for this key
+        const rows = container.querySelectorAll('.settings-name-row');
+        rows.forEach(row => {
+          const label = row.querySelector('.settings-name-label');
+          if (label) {
+            const labelText = label.textContent.toLowerCase();
+            const keyMap = { 'messiah:': 'messiah', 'divine name:': 'divineName', 'creator:': 'god' };
+            const rowKey = keyMap[labelText];
+            if (rowKey === key) {
+              row.querySelectorAll('.settings-name-btn').forEach(btn => {
+                const btnValue = btn.textContent.trim();
+                const valueMap = {
+                  'Jesus': 'jesus', 'Yeshua': 'yeshua',
+                  'the LORD': 'lord', '𐤉𐤄𐤅𐤄': 'yhwh', 'Yahweh': 'yahweh',
+                  'God': 'god', 'Elohim': 'elohim'
+                };
+                const mappedValue = valueMap[btnValue];
+                btn.classList.toggle('selected', mappedValue === value);
+              });
+            }
+          }
+        });
+      }
+      
+      // Notify that preferences changed (for any listeners)
+      if (typeof window.dispatchEvent === 'function') {
+        window.dispatchEvent(new CustomEvent('namePreferencesChanged', { detail: prefs }));
+      }
+    } catch (e) {
+      console.error('Failed to save name preference:', e);
     }
   },
   
@@ -357,8 +521,53 @@ const SettingsView = {
   }
 };
 
+/**
+ * Apply name preferences to a string of text
+ * Call this when rendering text that may contain divine names
+ * @param {string} text - The text to transform
+ * @returns {string} - Text with name substitutions applied
+ */
+function applyNamePreferences(text) {
+  if (!text) return text;
+  
+  const prefs = SettingsView.getNamePreferences();
+  let result = text;
+  
+  // Messiah name
+  if (prefs.messiah === 'yeshua') {
+    result = result.replace(/\bJesus\b/g, 'Yeshua');
+    result = result.replace(/\bJESUS\b/g, 'YESHUA');
+  } else {
+    result = result.replace(/\bYeshua\b/g, 'Jesus');
+    result = result.replace(/\bYESHUA\b/g, 'JESUS');
+  }
+  
+  // Divine name (LORD -> YHWH or Yahweh)
+  if (prefs.divineName === 'yhwh') {
+    result = result.replace(/\bthe LORD\b/g, '𐤉𐤄𐤅𐤄');
+    result = result.replace(/\bTHE LORD\b/g, '𐤉𐤄𐤅𐤄');
+    result = result.replace(/\bLORD\b/g, '𐤉𐤄𐤅𐤄');
+  } else if (prefs.divineName === 'yahweh') {
+    result = result.replace(/\bthe LORD\b/g, 'Yahweh');
+    result = result.replace(/\bTHE LORD\b/g, 'YAHWEH');
+    result = result.replace(/\bLORD\b/g, 'Yahweh');
+  }
+  // If 'lord', keep as-is (default in most translations)
+  
+  // God/Elohim
+  if (prefs.god === 'elohim') {
+    // Only replace standalone "God" not "gods" or "godly" etc.
+    result = result.replace(/\bGod\b/g, 'Elohim');
+    result = result.replace(/\bGOD\b/g, 'ELOHIM');
+  }
+  // If 'god', keep as-is (default)
+  
+  return result;
+}
+
 // Make available globally
 window.SettingsView = SettingsView;
+window.applyNamePreferences = applyNamePreferences;
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = SettingsView;

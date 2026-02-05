@@ -907,6 +907,96 @@ body.view-tutorial .content-area {
   padding-top: var(--spacing-sm);
 }
 
+/* Settings view - body scrolls, not content-area (same as calendar/tutorial) */
+body.view-settings {
+  overflow-y: auto !important;
+}
+
+body.view-settings .app-container {
+  flex: none !important;
+  height: auto !important;
+}
+
+body.view-settings .main-layout {
+  min-height: auto !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+body.view-settings .content-area {
+  overflow: visible !important;
+  height: auto !important;
+  padding-top: var(--spacing-sm);
+}
+
+/* Sabbath Tester view - body scrolls, not content-area */
+body.view-sabbath-tester {
+  overflow-y: auto !important;
+}
+
+body.view-sabbath-tester .app-container {
+  flex: none !important;
+  height: auto !important;
+}
+
+body.view-sabbath-tester .main-layout {
+  min-height: auto !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+body.view-sabbath-tester .content-area {
+  overflow: visible !important;
+  height: auto !important;
+  padding-top: var(--spacing-sm);
+}
+
+.settings-view {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.settings-view .settings-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: linear-gradient(180deg, #0d2840 0%, #1a3a5c 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: calc(-1 * var(--spacing-sm)) calc(-1 * var(--spacing-md)) 0;
+  width: calc(100% + 2 * var(--spacing-md));
+}
+
+.settings-view .settings-page-header h2 {
+  margin: 0;
+  color: var(--color-accent-gold);
+  font-size: 1.3em;
+}
+
+.settings-close-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #ccc;
+  font-size: 1.2em;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.settings-close-btn:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
 /* Reader landing page - body scrolls, not content-area (same as calendar) */
 body.view-reader.reader-landing {
   overflow-y: auto !important;
@@ -2416,6 +2506,75 @@ body.view-reader:not(.reader-landing) {
   color: rgba(255,255,255,0.6);
   font-size: 0.9em;
   line-height: 1.4;
+}
+
+/* Settings Select */
+.settings-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1em;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a5a8c;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.settings-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.settings-select-inline {
+  width: auto;
+  min-width: 140px;
+}
+
+/* Name Preferences */
+.settings-name-prefs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.settings-name-label {
+  min-width: 100px;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95em;
+}
+
+.settings-name-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.settings-name-btn {
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: all 0.2s;
+}
+
+.settings-name-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.settings-name-btn.selected {
+  border-color: #d4a017;
+  background: rgba(212, 160, 23, 0.25);
+  color: #fff;
 }
 
 /* Profile Row */

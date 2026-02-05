@@ -229,10 +229,19 @@ const URLRouter = {
     // Split path into segments
     const parts = pathname.split('/').filter(Boolean);
     
+    // Get saved profile preference (default to timeTested)
+    let defaultProfileId = 'timeTested';
+    try {
+      const savedProfile = localStorage.getItem('defaultCalendarProfile');
+      if (savedProfile && window.PROFILES?.[savedProfile]) {
+        defaultProfileId = savedProfile;
+      }
+    } catch (e) {}
+    
     // Default state
     const result = {
       context: {
-        profileId: 'timeTested',
+        profileId: defaultProfileId,
         location: { lat: 31.7683, lon: 35.2137 },  // Jerusalem coordinates
         selectedDate: this._todayJD()
       },
