@@ -262,6 +262,37 @@ button {
   width: 260px;
 }
 
+/* Priestly Panel (separate from left panel) */
+.priestly-panel {
+  width: 280px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #1a1a0d 0%, #2d2a1a 100%);
+  border-right: 2px solid #8b5a2b;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, margin-left 0.3s ease;
+  overflow: hidden;
+}
+
+.priestly-panel.collapsed {
+  width: 0;
+  border-right: none;
+  margin-left: 0;
+}
+
+.priestly-panel.open {
+  width: 280px;
+}
+
+.priestly-panel .panel-header {
+  background: rgba(139, 90, 43, 0.2);
+  border-bottom: 1px solid rgba(139, 90, 43, 0.4);
+}
+
+.priestly-panel .panel-title {
+  color: #d4a574;
+}
+
 .panel-header {
   display: flex;
   justify-content: space-between;
@@ -277,6 +308,28 @@ button {
   font-weight: bold;
   color: var(--color-accent-gold);
   font-size: 1.1em;
+}
+
+.panel-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-export-btn {
+  background: none;
+  border: none;
+  color: #7ec8e3;
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.panel-export-btn:hover {
+  background: rgba(126, 200, 227, 0.2);
+  color: #fff;
 }
 
 .panel-close {
@@ -346,6 +399,28 @@ button {
   }
   
   .left-panel.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .priestly-panel {
+    position: fixed;
+    top: var(--top-nav-height);
+    left: 0;
+    height: calc(100vh - var(--top-nav-height));
+    z-index: 1001;
+    width: 280px;
+    max-width: 85vw;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .priestly-panel.collapsed {
+    width: 280px;
+    transform: translateX(-100%);
+  }
+  
+  .priestly-panel.open {
     transform: translateX(0);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
   }
@@ -503,7 +578,8 @@ body.menu-open {
 
 /* Disable transitions during resize to prevent "pop open then close" effect */
 body.resizing .sidebar-menu,
-body.resizing .left-panel {
+body.resizing .left-panel,
+body.resizing .priestly-panel {
   transition: none !important;
 }
 
@@ -3979,6 +4055,11 @@ body.view-reader:not(.reader-landing) {
   background: rgba(139, 90, 43, 0.2);
   border-radius: 4px;
   font-size: 0.85em;
+  transition: background 0.2s ease;
+}
+
+.day-detail-priestly:hover {
+  background: rgba(139, 90, 43, 0.35);
 }
 
 .day-detail-priestly .priestly-icon {
@@ -4243,6 +4324,11 @@ body.view-reader:not(.reader-landing) {
 }
 
 .left-panel-content-area {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.priestly-panel-content-area {
   flex: 1;
   overflow-y: auto;
 }

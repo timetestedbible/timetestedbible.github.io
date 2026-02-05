@@ -233,14 +233,28 @@
     <!-- 3-COLUMN LAYOUT -->
     <!-- ─────────────────────────────────────────────────────────────────── -->
     <div class="main-layout">
-      <!-- Left Panel (Feasts & Priestly - inline on desktop, overlay on mobile) -->
+      <!-- Left Panel (Feasts - inline on desktop, overlay on mobile) -->
       <aside id="left-panel" class="side-panel left-panel collapsed">
         <div class="panel-header">
-          <span class="panel-title">📅 Year Overview</span>
-          <button class="panel-close" data-panel="left">✕</button>
+          <span class="panel-title">🎉 Feasts</span>
+          <div class="panel-header-actions">
+            <button class="panel-export-btn" onclick="CalendarExport.showExportModal()" title="Export Calendar">📤</button>
+            <button class="panel-close" data-panel="left">✕</button>
+          </div>
         </div>
         <div class="panel-content" id="left-panel-content">
           <!-- Feast list rendered by CalendarView -->
+        </div>
+      </aside>
+      
+      <!-- Priestly Panel (independent slideout) -->
+      <aside id="priestly-panel" class="side-panel priestly-panel collapsed">
+        <div class="panel-header">
+          <span class="panel-title">👨‍🦳 Priestly Courses</span>
+          <button class="panel-close" data-panel="priestly">✕</button>
+        </div>
+        <div class="panel-content" id="priestly-panel-content">
+          <!-- Priestly cycle list rendered by CalendarView -->
         </div>
       </aside>
       
@@ -640,12 +654,19 @@
       document.querySelectorAll('.panel-close').forEach(btn => {
         btn.addEventListener('click', () => {
           const panelId = btn.dataset.panel;
-          const panel = document.getElementById(panelId + '-panel');
-          if (panel) {
-            panel.classList.add('collapsed');
-            panel.classList.remove('open');
+          if (panelId === 'left') {
+            AppStore.dispatch({ type: 'CLOSE_FEASTS_PANEL' });
+          } else if (panelId === 'priestly') {
+            AppStore.dispatch({ type: 'CLOSE_PRIESTLY_PANEL' });
           }
         });
+      });
+      
+      // Subscribe to panel state changes (sync DOM with state)
+      AppStore.subscribe((state) => {
+        if (typeof CalendarView !== 'undefined' && CalendarView.syncPanelState) {
+          CalendarView.syncPanelState(state);
+        }
       });
       
       // Register views

@@ -414,6 +414,15 @@ const URLRouter = {
     if (searchParams.get('ev')) {
       result.ui.eventsViewMode = searchParams.get('ev');
     }
+    // Calendar panel state (only on calendar view)
+    if (searchParams.get('panel')) {
+      const panel = searchParams.get('panel');
+      if (panel === 'feasts') {
+        result.ui.feastsPanel = true;
+      } else if (panel === 'priestly') {
+        result.ui.priestlyPanel = true;
+      }
+    }
     // Time for calendar view (format: HHMM in local time, e.g., 1430 for 2:30 PM)
     // URL time is displayed in local time, convert to UTC for storage
     if (searchParams.get('t')) {
@@ -614,6 +623,11 @@ const URLRouter = {
       const h = String(localTime.hours).padStart(2, '0');
       const m = String(localTime.minutes).padStart(2, '0');
       params.set('t', `${h}${m}`);
+    }
+    // Calendar panel state
+    if (content.view === 'calendar') {
+      if (ui.feastsPanel) params.set('panel', 'feasts');
+      else if (ui.priestlyPanel) params.set('panel', 'priestly');
     }
     // Add verse to query params for bible content (both 'bible' view and 'reader' view with bible content)
     const isBibleContent = content.view === 'bible' || 

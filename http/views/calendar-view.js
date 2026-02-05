@@ -74,6 +74,9 @@ const CalendarView = {
     const profile = derived.config || {};
     this.updateLeftPanel(lunarMonths, profile);
     
+    // Sync panel open/close state with app state
+    this.syncPanelState(state);
+    
     // Set up resize listener (once) to close sidebar when entering mobile mode
     this.setupResizeListener();
   },
@@ -85,9 +88,10 @@ const CalendarView = {
     
     window.addEventListener('resize', () => {
       const isMobile = this.isMobileMode();
-      // Close sidebar when transitioning from desktop to mobile
+      // Close sidebars when transitioning from desktop to mobile
       if (isMobile && !this._lastWasMobile) {
         this.closeFeastSidebar();
+        this.closePriestlyPanel();
       }
       this._lastWasMobile = isMobile;
     });
@@ -326,8 +330,11 @@ const CalendarView = {
           <span class="profile-icon">${profile.icon || '🌕'}</span>
           <span class="profile-name">${profileName}</span>
         </div>
-        <button class="feast-toggle-btn" data-action="toggle-feasts" title="Show Appointed Times & Priestly Courses">
+        <button class="feast-toggle-btn" data-action="toggle-feasts" title="Show Appointed Times">
           🎉 <span class="feast-btn-label">Feasts</span>
+        </button>
+        <button class="priestly-toggle-btn" data-action="toggle-priestly" title="Show Priestly Courses">
+          👨‍🦳
         </button>
       </div>
       <div class="month-nav-cell nav-group">
@@ -538,7 +545,7 @@ const CalendarView = {
         const courseInfo = getPriestlyCourseForDay(day, month);
         if (courseInfo && !courseInfo.beforeDedication) {
           priestlyHtml = `
-            <div class="day-detail-priestly">
+            <div class="day-detail-priestly" onclick="CalendarView.openPriestlyPanel()" style="cursor: pointer;" title="View all priestly courses">
               <span class="priestly-icon">👨‍🦳</span>
               <span class="priestly-course">${courseInfo.course}</span>
               <span class="priestly-order">(${courseInfo.order})</span>
@@ -1530,6 +1537,7 @@ const CalendarView = {
         else if (action === 'date-picker') this.showDatePicker(e, el);
         else if (action === 'profile-editor') this.showProfileEditor(e);
         else if (action === 'toggle-feasts') this.toggleFeastSidebar();
+        else if (action === 'toggle-priestly') this.togglePriestlyPanel();
         else if (action === 'show-priestly') this.showPriestlyView();
       });
     });
@@ -1537,11 +1545,7 @@ const CalendarView = {
   },
   
   toggleFeastSidebar() {
-    const leftPanel = document.getElementById('left-panel');
-    if (leftPanel) {
-      leftPanel.classList.toggle('collapsed');
-      leftPanel.classList.toggle('open');
-    }
+    AppStore.dispatch({ type: 'TOGGLE_FEASTS_PANEL' });
   },
   
   showPriestlyView() {
@@ -1549,64 +1553,66 @@ const CalendarView = {
     AppStore.dispatch({ type: 'SET_VIEW', view: 'priestly' });
   },
   
+  openPriestlyPanel() {
+    AppStore.dispatch({ type: 'OPEN_PRIESTLY_PANEL' });
+  },
+  
+  closePriestlyPanel() {
+    AppStore.dispatch({ type: 'CLOSE_PRIESTLY_PANEL' });
+  },
+  
+  togglePriestlyPanel() {
+    AppStore.dispatch({ type: 'TOGGLE_PRIESTLY_PANEL' });
+  },
+  
   closeFeastSidebar() {
-    const leftPanel = document.getElementById('left-panel');
-    if (leftPanel) {
-      leftPanel.classList.add('collapsed');
-      leftPanel.classList.remove('open');
-    }
+    AppStore.dispatch({ type: 'CLOSE_FEASTS_PANEL' });
   },
   
   isMobileMode() {
     return window.innerWidth < 900;
   },
   
-  // Track which tab is active in the left panel
-  _leftPanelTab: 'feasts',
+  // Sync panel DOM state with app state
+  syncPanelState(state) {
+    const ui = state?.ui || AppStore.getState().ui;
+    
+    // Sync feasts panel
+    const leftPanel = document.getElementById('left-panel');
+    if (leftPanel) {
+      if (ui.feastsPanel) {
+        leftPanel.classList.remove('collapsed');
+        leftPanel.classList.add('open');
+      } else {
+        leftPanel.classList.add('collapsed');
+        leftPanel.classList.remove('open');
+      }
+    }
+    
+    // Sync priestly panel
+    const priestlyPanel = document.getElementById('priestly-panel');
+    if (priestlyPanel) {
+      if (ui.priestlyPanel) {
+        priestlyPanel.classList.remove('collapsed');
+        priestlyPanel.classList.add('open');
+      } else {
+        priestlyPanel.classList.add('collapsed');
+        priestlyPanel.classList.remove('open');
+      }
+    }
+  },
   
   updateLeftPanel(lunarMonths, profile) {
     const leftPanelContent = document.getElementById('left-panel-content');
     if (leftPanelContent && lunarMonths) {
-      // Build tab toggle and content
+      // Feasts only (priestly is now separate panel)
       const feastsHtml = this.renderFeastList(lunarMonths);
-      const priestlyHtml = this.renderPriestlyCycleList(lunarMonths, profile);
-      
-      const activeTab = this._leftPanelTab || 'feasts';
       
       leftPanelContent.innerHTML = `
-        <div class="left-panel-tabs">
-          <button class="left-panel-tab ${activeTab === 'feasts' ? 'active' : ''}" data-tab="feasts">
-            🎉 Feasts
-          </button>
-          <button class="left-panel-tab ${activeTab === 'priestly' ? 'active' : ''}" data-tab="priestly">
-            👨‍🦳 Priestly
-          </button>
-        </div>
         <div class="left-panel-content-area">
-          <div class="tab-content ${activeTab === 'feasts' ? 'active' : ''}" data-content="feasts">
-            ${feastsHtml}
-          </div>
-          <div class="tab-content ${activeTab === 'priestly' ? 'active' : ''}" data-content="priestly">
-            ${priestlyHtml}
-          </div>
+          ${feastsHtml}
         </div>
       `;
-      
-      // Attach tab click handlers
-      leftPanelContent.querySelectorAll('.left-panel-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          const tabName = tab.dataset.tab;
-          this._leftPanelTab = tabName;
-          
-          // Update active states
-          leftPanelContent.querySelectorAll('.left-panel-tab').forEach(t => {
-            t.classList.toggle('active', t.dataset.tab === tabName);
-          });
-          leftPanelContent.querySelectorAll('.tab-content').forEach(c => {
-            c.classList.toggle('active', c.dataset.content === tabName);
-          });
-        });
-      });
       
       // Attach click handlers for feast items
       leftPanelContent.querySelectorAll('.feast-list-item').forEach(el => {
@@ -1628,9 +1634,25 @@ const CalendarView = {
           });
         });
       });
+    }
+    
+    // Update priestly panel separately
+    this.updatePriestlyPanel(lunarMonths, profile);
+  },
+  
+  updatePriestlyPanel(lunarMonths, profile) {
+    const priestlyPanelContent = document.getElementById('priestly-panel-content');
+    if (priestlyPanelContent && lunarMonths) {
+      const priestlyHtml = this.renderPriestlyCycleList(lunarMonths, profile);
+      
+      priestlyPanelContent.innerHTML = `
+        <div class="priestly-panel-content-area">
+          ${priestlyHtml}
+        </div>
+      `;
       
       // Attach click handlers for priestly items
-      leftPanelContent.querySelectorAll('.priestly-list-item').forEach(el => {
+      priestlyPanelContent.querySelectorAll('.priestly-list-item').forEach(el => {
         el.addEventListener('click', () => {
           const monthIdx = parseInt(el.dataset.month);
           const lunarDay = parseInt(el.dataset.day);
@@ -1638,7 +1660,7 @@ const CalendarView = {
           
           // Close sidebar on mobile after selection
           if (this.isMobileMode()) {
-            this.closeFeastSidebar();
+            this.closePriestlyPanel();
           }
           
           AppStore.dispatch({ 

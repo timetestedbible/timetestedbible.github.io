@@ -350,6 +350,21 @@ const CalendarExport = {
     const derived = AppStore.getDerived();
     const yearLabel = this.formatYear(derived.year);
     
+    // Get Gregorian date range from lunar months
+    const lunarMonths = derived.lunarMonths || [];
+    let dateRangeStr = '';
+    if (lunarMonths.length > 0) {
+      const firstMonth = lunarMonths[0];
+      const lastMonth = lunarMonths[lunarMonths.length - 1];
+      const firstDay = firstMonth?.days?.[0]?.gregorianDate;
+      const lastDay = lastMonth?.days?.[lastMonth.days.length - 1]?.gregorianDate;
+      if (firstDay && lastDay) {
+        const startMonth = firstDay.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        const endMonth = lastDay.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        dateRangeStr = ` (${startMonth} – ${endMonth})`;
+      }
+    }
+    
     // Create modal overlay
     const overlay = document.createElement('div');
     overlay.id = 'export-modal-overlay';
@@ -365,7 +380,7 @@ const CalendarExport = {
           <button class="export-modal-close" onclick="CalendarExport.closeExportModal()">✕</button>
         </div>
         <div class="export-modal-content">
-          <p class="export-modal-year">Export events for <strong>${yearLabel}</strong></p>
+          <p class="export-modal-year">Export events for <strong>${yearLabel}</strong>${dateRangeStr}</p>
           
           <div class="export-option" onclick="CalendarExport.exportFeasts(); CalendarExport.closeExportModal();">
             <div class="export-option-icon">🎺</div>

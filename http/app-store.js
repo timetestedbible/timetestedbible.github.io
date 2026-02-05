@@ -52,7 +52,9 @@ const AppStore = {
       locationPickerOpen: false,
       yearPickerOpen: false,
       monthPickerOpen: false,
-      timePickerOpen: false
+      timePickerOpen: false,
+      feastsPanel: false,       // Feasts slideout panel state
+      priestlyPanel: false      // Priestly cycles slideout panel state
     },
     
     // Bible navigation history (for PWA/desktop where browser history may not work)
@@ -974,6 +976,11 @@ const AppStore = {
         if (event.view !== 'reader') {
           s.ui.interlinearVerse = null;
         }
+        // Calendar panel state
+        if (event.view !== 'calendar') {
+          s.ui.feastsPanel = false;
+          s.ui.priestlyPanel = false;
+        }
         return true;
         
       case 'UPDATE_VIEW_PARAMS':
@@ -1263,6 +1270,41 @@ const AppStore = {
         if (s.ui.monthPickerOpen) { s.ui.monthPickerOpen = false; closedAny = true; }
         if (s.ui.timePickerOpen) { s.ui.timePickerOpen = false; closedAny = true; }
         return closedAny;
+        
+      // ─── Calendar Panel Actions ───
+      case 'TOGGLE_FEASTS_PANEL':
+        // Close priestly panel when opening feasts
+        if (!s.ui.feastsPanel) s.ui.priestlyPanel = false;
+        s.ui.feastsPanel = !s.ui.feastsPanel;
+        return true;
+        
+      case 'OPEN_FEASTS_PANEL':
+        if (s.ui.feastsPanel) return false;
+        s.ui.feastsPanel = true;
+        s.ui.priestlyPanel = false; // Close priestly
+        return true;
+        
+      case 'CLOSE_FEASTS_PANEL':
+        if (!s.ui.feastsPanel) return false;
+        s.ui.feastsPanel = false;
+        return true;
+        
+      case 'TOGGLE_PRIESTLY_PANEL':
+        // Close feasts panel when opening priestly
+        if (!s.ui.priestlyPanel) s.ui.feastsPanel = false;
+        s.ui.priestlyPanel = !s.ui.priestlyPanel;
+        return true;
+        
+      case 'OPEN_PRIESTLY_PANEL':
+        if (s.ui.priestlyPanel) return false;
+        s.ui.priestlyPanel = true;
+        s.ui.feastsPanel = false; // Close feasts
+        return true;
+        
+      case 'CLOSE_PRIESTLY_PANEL':
+        if (!s.ui.priestlyPanel) return false;
+        s.ui.priestlyPanel = false;
+        return true;
       
       // ─── URL Events ───
       case 'INIT_FROM_URL':
@@ -1741,6 +1783,8 @@ const AppStore = {
         'SELECT_DAY', 'SET_BIBLE_LOCATION', 'SET_GREGORIAN_DATETIME',
         'SET_TIMELINE_EVENT', 'SET_TIMELINE_DURATION', 'SET_TIMELINE_SEARCH'
       ];
+      // Panel state uses replaceState (updates URL but doesn't create history entry)
+      // This way sharing a URL preserves panel state, but toggling doesn't pollute history
       shouldPush = pushEvents.includes(event.type);
     }
     
