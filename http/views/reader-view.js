@@ -316,7 +316,8 @@ const ReaderView = {
       this._currentStrongsId = ui.strongsId;
       setTimeout(() => {
         if (typeof showStrongsPanel === 'function') {
-          showStrongsPanel(ui.strongsId, '', '', null);
+          // Pass skipDispatch=true to prevent re-dispatching to AppStore (we're syncing FROM state)
+          showStrongsPanel(ui.strongsId, '', '', null, true);
         }
       }, 100);
     } else if (!ui.strongsId && currentStrongsOpen) {

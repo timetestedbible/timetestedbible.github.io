@@ -427,6 +427,23 @@ const GlobalSearch = {
     }
   },
   
+  // List of valid Bible book names for validation (canonical names from KJV)
+  VALID_BOOKS: new Set([
+    'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy',
+    'Joshua', 'Judges', 'Ruth', '1 Samuel', '2 Samuel', '1 Kings', '2 Kings',
+    '1 Chronicles', '2 Chronicles', 'Ezra', 'Nehemiah', 'Esther',
+    'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon',
+    'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel',
+    'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah',
+    'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi',
+    'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans',
+    '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians',
+    'Colossians', '1 Thessalonians', '2 Thessalonians',
+    '1 Timothy', '2 Timothy', 'Titus', 'Philemon',
+    'Hebrews', 'James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John',
+    'Jude', 'Revelation'
+  ]),
+  
   /**
    * Parse a verse reference from query
    * Returns { book, chapter, verse } or null
@@ -441,13 +458,15 @@ const GlobalSearch = {
       const chapter = parseInt(match[2]);
       const verse = match[3] ? parseInt(match[3]) : null;
       
-      // Verify book exists
+      // Normalize book name (handles abbreviations like "Gen", "Jn", etc.)
+      let normalized = book;
       if (typeof normalizeBookName === 'function') {
-        const normalized = normalizeBookName(book);
-        if (normalized && typeof bibleExplorerState !== 'undefined' && 
-            bibleExplorerState.bookChapterCounts?.[normalized]) {
-          return { book: normalized, chapter, verse };
-        }
+        normalized = normalizeBookName(book);
+      }
+      
+      // Verify it's a valid Bible book
+      if (normalized && this.VALID_BOOKS.has(normalized)) {
+        return { book: normalized, chapter, verse };
       }
     }
     

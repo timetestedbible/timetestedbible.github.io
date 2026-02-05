@@ -362,7 +362,7 @@ function renderGematriaSection(strongsNum) {
       
       for (const word of related.hebrew) {
         const primaryWord = extractPrimaryWord(word.def);
-        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="event.stopPropagation(); showStrongsPanel('${word.strongs}', '', '', event)">${primaryWord}</span>`;
+        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="navigateToStrongs('${word.strongs}', event)">${primaryWord}</span>`;
       }
       
       html += `</div></div>`;
@@ -376,7 +376,7 @@ function renderGematriaSection(strongsNum) {
       
       for (const word of related.greek) {
         const primaryWord = extractPrimaryWord(word.def);
-        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="event.stopPropagation(); showStrongsPanel('${word.strongs}', '', '', event)">${primaryWord}</span>`;
+        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="navigateToStrongs('${word.strongs}', event)">${primaryWord}</span>`;
       }
       
       html += `</div></div>`;
@@ -3024,20 +3024,20 @@ function expandDerivation(text) {
 }
 
 // Navigate to a Strong's entry (from link click)
+// Uses AppStore for unidirectional flow - URL updates and browser back works
 function navigateToStrongs(strongsNum, event) {
   if (event) {
     event.preventDefault();
     event.stopPropagation();
   }
   
-  // Add to history (truncate forward history if we're not at the end)
-  if (strongsHistoryIndex < strongsHistory.length - 1) {
-    strongsHistory = strongsHistory.slice(0, strongsHistoryIndex + 1);
+  // Dispatch to AppStore - this updates state, which triggers URL update
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: strongsNum });
+  } else {
+    // Fallback for when AppStore isn't available (shouldn't happen)
+    updateStrongsPanelContent(strongsNum);
   }
-  strongsHistory.push(strongsNum);
-  strongsHistoryIndex = strongsHistory.length - 1;
-  
-  updateStrongsPanelContent(strongsNum);
 }
 
 // Go back in Strong's history
