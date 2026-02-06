@@ -3421,6 +3421,9 @@ body.view-reader:not(.reader-landing) {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 .cluster-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 8px 12px 6px;
   font-size: 0.75em;
   font-weight: 600;
@@ -3428,6 +3431,10 @@ body.view-reader:not(.reader-landing) {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border-bottom: 1px solid rgba(126, 200, 227, 0.15);
+  position: sticky;
+  top: 0;
+  background: rgba(20, 28, 38, 0.98);
+  z-index: 1;
 }
 .cluster-dropdown-item {
   display: flex;
@@ -3472,20 +3479,89 @@ body.view-reader:not(.reader-landing) {
   margin: 2px 0;
 }
 .cluster-dropdown-zoom {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 12px;
+  gap: 4px;
+  padding: 2px 8px;
   cursor: pointer;
-  font-size: 0.8em;
+  font-size: 1em;
   color: rgba(126, 200, 227, 0.8);
   font-weight: 500;
+  border-radius: 4px;
   transition: background 0.12s ease, color 0.12s ease;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 .cluster-dropdown-zoom:hover {
-  background: rgba(126, 200, 227, 0.15);
+  background: rgba(126, 200, 227, 0.2);
   color: #7ec8e3;
+}
+
+/* Recursive cluster tree nodes */
+.cluster-tree-node {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  min-height: 28px;
+  transition: background 0.12s ease;
+}
+.cluster-tree-node:hover {
+  background: rgba(126, 200, 227, 0.08);
+}
+.cluster-tree-leaf {
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+.cluster-tree-leaf:hover {
+  background: rgba(126, 200, 227, 0.12);
+  border-left-color: rgba(126, 200, 227, 0.5);
+}
+.cluster-tree-arrow {
+  flex-shrink: 0;
+  width: 14px;
+  font-size: 0.8em;
+  color: rgba(126, 200, 227, 0.5);
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+.cluster-tree-arrow:hover {
+  color: rgba(126, 200, 227, 0.9);
+}
+.cluster-tree-event {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+.cluster-tree-event:hover .cluster-dropdown-title {
+  color: #7ec8e3;
+}
+.cluster-tree-count {
+  flex-shrink: 0;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgba(126, 200, 227, 0.5);
+  background: rgba(126, 200, 227, 0.12);
+  padding: 1px 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.cluster-tree-count:hover {
+  background: rgba(126, 200, 227, 0.25);
+  color: rgba(126, 200, 227, 0.8);
+}
+.cluster-tree-children {
+  border-left: 1px solid rgba(126, 200, 227, 0.1);
+  margin-left: 20px;
+}
+.cluster-tree-child {
+  font-size: 0.95em;
 }
 
 /* Removed - date now in tooltip only */

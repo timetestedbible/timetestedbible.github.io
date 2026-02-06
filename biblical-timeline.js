@@ -1185,7 +1185,15 @@ function getEventEraGroup(event) {
 }
 
 // Get type icon
-function getTypeIcon(type) {
+function getTypeIcon(typeOrEvent, customIcon) {
+  // If passed an event object, extract type and icon
+  if (typeOrEvent && typeof typeOrEvent === 'object') {
+    customIcon = typeOrEvent.icon;
+    typeOrEvent = typeOrEvent.type;
+  }
+  // Use the event's own icon if available (matches calendar view)
+  if (customIcon) return customIcon;
+  
   const icons = {
     'milestone': '🏛️',
     'reign': '👑',
@@ -1202,9 +1210,19 @@ function getTypeIcon(type) {
     'decree': '📋',
     'battle': '⚔️',
     'catastrophe': '🌊',
-    'life': '👤' // Person icon for life spans
+    'theophany': '🔥',
+    'creation': '✨',
+    'historical-event': '📰',
+    'journey': '🚶',
+    'provision': '🍞',
+    'invasion': '⚔️',
+    'captivity': '⛓️',
+    'vision': '👁️',
+    'conception': '💫',
+    'observance': '📅',
+    'life': '👤'
   };
-  return icons[type] || '📌';
+  return icons[typeOrEvent] || '📌';
 }
 
 // Get event color based on type
@@ -2458,7 +2476,7 @@ async function openEventDetailInternal(eventId, addHistory = true) {
   // Clear duration highlight when viewing an event
   highlightDurationBar(null);
   
-  const icon = getTypeIcon(event.type);
+  const icon = getTypeIcon(event.type, event.icon);
   
   // Format dates
   let lunarDateStr = '—';
@@ -3194,8 +3212,66 @@ window.showJubileeInfo = showJubileeInfo;
 // ── CLUSTER DROPDOWN FUNCTIONS ──
 
 /**
+ * Build a recursive cluster tree from a flat list of events.
+ * Picks the top `maxRoots` events by priority as root nodes,
+ * distributes remaining events to the nearest root by time,
+ * then recurses for any root with >maxRoots children.
+ */
+function buildClusterTree(events, maxRoots = 7) {
+  if (events.length <= maxRoots) {
+    // Few enough events to show flat — each is a leaf node
+    return events
+      .sort((a, b) => (a.startJD || 0) - (b.startJD || 0))
+      .map(e => ({ ...e, children: [] }));
+  }
+  
+  const sorted = [...events].sort((a, b) => (a.priority || 999) - (b.priority || 999));
+  const roots = sorted.slice(0, maxRoots).map(e => ({ ...e, children: [] }));
+  const remaining = sorted.slice(maxRoots);
+  
+  // Assign each remaining event to the nearest root by time
+  remaining.forEach(ev => {
+    let nearest = roots[0];
+    let minDist = Infinity;
+    roots.forEach(r => {
+      const d = Math.abs((ev.startJD || 0) - (r.startJD || 0));
+      if (d < minDist) { minDist = d; nearest = r; }
+    });
+    nearest.children.push(ev);
+  });
+  
+  // Recurse for roots with >maxRoots children
+  roots.forEach(r => {
+    if (r.children.length > maxRoots) {
+      r.children = buildClusterTree(r.children, maxRoots);
+    } else {
+      // Sort leaf children chronologically
+      r.children.sort((a, b) => (a.startJD || 0) - (b.startJD || 0));
+      // Wrap as tree nodes with empty children
+      r.children = r.children.map(c => ({ ...c, children: c.children || [] }));
+    }
+  });
+  
+  // Sort roots chronologically for display
+  roots.sort((a, b) => (a.startJD || 0) - (b.startJD || 0));
+  return roots;
+}
+
+/**
+ * Count total descendants in a tree node (recursive).
+ */
+function countTreeDescendants(node) {
+  let count = 0;
+  if (node.children) {
+    count += node.children.length;
+    node.children.forEach(c => { count += countTreeDescendants(c); });
+  }
+  return count;
+}
+
+/**
  * Toggle the cluster dropdown for a given parent event.
- * Shows/hides a floating dropdown listing all hidden events in the cluster.
+ * Uses recursive 7-way tree clustering for hierarchical display.
  */
 function toggleClusterDropdown(parentEventId, badgeEl) {
   // Close any existing dropdown
@@ -3214,54 +3290,95 @@ function toggleClusterDropdown(parentEventId, badgeEl) {
   dropdown.className = 'cluster-dropdown';
   dropdown.dataset.clusterParent = parentEventId;
   
-  // Helper to format year from JD
+  // Helper to format year from JD (precise Gregorian conversion)
   const jdToYearDisplay = (jd) => {
-    const year = Math.floor((jd - 1721425.5) / 365.25);
+    const Z = Math.floor(jd + 0.5);
+    let A = Z < 2299161 ? Z : Z + 1 + Math.floor((Z - 1867216.25) / 36524.25) - Math.floor(Math.floor((Z - 1867216.25) / 36524.25) / 4);
+    const B = A + 1524;
+    const C = Math.floor((B - 122.1) / 365.25);
+    const E = Math.floor((B - Math.floor(365.25 * C)) / 30.6001);
+    const month = E < 14 ? E - 1 : E - 13;
+    const year = month > 2 ? C - 4716 : C - 4715;
     if (year <= 0) return `${1 - year} BC`;
     return `${year} AD`;
   };
   
-  let itemsHtml = '';
-  
-  // Show the parent event first
+  // Combine parent + children into a flat list for tree building
+  const allEvents = [];
   if (clusterData.parent) {
-    const parentYear = jdToYearDisplay(clusterData.parent.startJD);
-    itemsHtml += `
-      <div class="cluster-dropdown-item cluster-dropdown-parent" onclick="event.stopPropagation(); closeClusterDropdown(); openEventDetail('${clusterData.parent.id}')">
-        <span class="cluster-dropdown-icon">${getTypeIcon(clusterData.parent.type)}</span>
-        <span class="cluster-dropdown-title">${clusterData.parent.title}</span>
-        <span class="cluster-dropdown-year">${parentYear}</span>
-      </div>
-    `;
+    allEvents.push({
+      id: clusterData.parent.id,
+      title: clusterData.parent.title,
+      type: clusterData.parent.type,
+      startJD: clusterData.parent.startJD,
+      priority: clusterData.parent.priority || 0,
+      icon: getTypeIcon(clusterData.parent.type, clusterData.parent.icon),
+    });
   }
-  
-  // Separator
-  itemsHtml += '<div class="cluster-dropdown-separator"></div>';
-  
-  // Child events sorted by date
-  const sortedChildren = [...clusterData.children].sort((a, b) => (a.startJD || 0) - (b.startJD || 0));
-  sortedChildren.forEach(child => {
-    const childYear = jdToYearDisplay(child.startJD);
-    itemsHtml += `
-      <div class="cluster-dropdown-item" onclick="event.stopPropagation(); closeClusterDropdown(); openEventDetail('${child.id}')">
-        <span class="cluster-dropdown-icon">${child.icon}</span>
-        <span class="cluster-dropdown-title">${child.title}</span>
-        <span class="cluster-dropdown-year">${childYear}</span>
-      </div>
-    `;
+  clusterData.children.forEach(c => {
+    allEvents.push({ ...c });
   });
   
-  // Zoom-to-fit button
-  itemsHtml += '<div class="cluster-dropdown-separator"></div>';
-  itemsHtml += `
-    <div class="cluster-dropdown-zoom" onclick="event.stopPropagation(); closeClusterDropdown(); zoomToCluster('${parentEventId}')">
-      🔍 Zoom to expand
-    </div>
-  `;
+  const totalCount = allEvents.length;
   
+  // Build recursive tree
+  const tree = buildClusterTree(allEvents, 7);
+  
+  // Generate unique IDs for expand/collapse
+  let nodeIdCounter = 0;
+  
+  // Recursive renderer
+  const renderTreeNode = (node, depth) => {
+    const yr = jdToYearDisplay(node.startJD);
+    const hasChildren = node.children && node.children.length > 0;
+    const descendantCount = hasChildren ? countTreeDescendants(node) : 0;
+    const nodeId = `ctn-${parentEventId.replace(/[^a-z0-9]/gi, '')}-${nodeIdCounter++}`;
+    const depthClass = depth > 0 ? ' cluster-tree-child' : '';
+    const indent = depth * 16;
+    
+    let html = '';
+    
+    if (hasChildren) {
+      // Node with children: clickable row + expand toggle
+      html += `
+        <div class="cluster-tree-node${depthClass}" style="padding-left: ${12 + indent}px;">
+          <span class="cluster-tree-arrow" id="${nodeId}-arrow" onclick="event.stopPropagation(); toggleClusterTreeNode('${nodeId}')">▸</span>
+          <span class="cluster-tree-event" onclick="event.stopPropagation(); closeClusterDropdown(); openEventDetail('${node.id}')">
+            <span class="cluster-dropdown-icon">${node.icon}</span>
+            <span class="cluster-dropdown-title">${node.title}</span>
+          </span>
+          <span class="cluster-tree-count" onclick="event.stopPropagation(); toggleClusterTreeNode('${nodeId}')">${descendantCount}</span>
+          <span class="cluster-dropdown-year">${yr}</span>
+        </div>
+        <div class="cluster-tree-children" id="${nodeId}" style="display: none;">`;
+      node.children.forEach(child => {
+        html += renderTreeNode(child, depth + 1);
+      });
+      html += '</div>';
+    } else {
+      // Leaf node: simple clickable row
+      html += `
+        <div class="cluster-tree-node cluster-tree-leaf${depthClass}" style="padding-left: ${12 + indent + 18}px;"
+             onclick="event.stopPropagation(); closeClusterDropdown(); openEventDetail('${node.id}')">
+          <span class="cluster-dropdown-icon">${node.icon}</span>
+          <span class="cluster-dropdown-title">${node.title}</span>
+          <span class="cluster-dropdown-year">${yr}</span>
+        </div>`;
+    }
+    
+    return html;
+  };
+  
+  let itemsHtml = '';
+  tree.forEach(rootNode => {
+    itemsHtml += renderTreeNode(rootNode, 0);
+  });
+  
+  // Header with zoom button inline
   dropdown.innerHTML = `
     <div class="cluster-dropdown-header">
-      ${clusterData.children.length + 1} events in this area
+      <span>${totalCount} events in this area</span>
+      <span class="cluster-dropdown-zoom" onclick="event.stopPropagation(); closeClusterDropdown(); zoomToCluster('${parentEventId}')" title="Zoom in to show all events separately">🔍 Zoom</span>
     </div>
     ${itemsHtml}
   `;
@@ -3341,6 +3458,15 @@ function closeClusterDropdown() {
   document.removeEventListener('click', _clusterOutsideClickHandler, { capture: true });
 }
 
+function toggleClusterTreeNode(nodeId) {
+  const children = document.getElementById(nodeId);
+  const arrow = document.getElementById(nodeId + '-arrow');
+  if (!children) return;
+  const isOpen = children.style.display !== 'none';
+  children.style.display = isOpen ? 'none' : 'block';
+  if (arrow) arrow.textContent = isOpen ? '▸' : '▾';
+}
+
 /**
  * Zoom the timeline to a level where all events in a cluster would each have their own slot.
  */
@@ -3348,35 +3474,32 @@ function zoomToCluster(parentEventId) {
   const clusterData = window._timelineClusterData?.get(parentEventId);
   if (!clusterData) return;
   
-  const allEvents = [clusterData.parent, ...clusterData.children].filter(Boolean);
-  if (allEvents.length < 2) return;
+  // Zoom to fit the top 7 children (by priority), not all events
+  const allChildren = [...clusterData.children].filter(Boolean);
+  if (allChildren.length === 0) return;
   
-  // Calculate year range of cluster events
-  const years = allEvents.map(e => Math.floor((e.startJD - 1721425.5) / 365.25));
+  allChildren.sort((a, b) => (a.priority || 999) - (b.priority || 999));
+  const top7 = allChildren.slice(0, 7);
+  
+  // Include parent in year range calculation
+  const eventsForRange = [clusterData.parent, ...top7].filter(Boolean);
+  const years = eventsForRange.map(e => Math.floor((e.startJD - 1721425.5) / 365.25));
   const minClusterYear = Math.min(...years);
   const maxClusterYear = Math.max(...years);
-  const clusterYearSpan = Math.max(maxClusterYear - minClusterYear, 1); // at least 1 year
+  const clusterYearSpan = Math.max(maxClusterYear - minClusterYear, 1);
   const centerYear = Math.round((minClusterYear + maxClusterYear) / 2);
   
-  // We need pixelPerYear such that each event gets its own ~40px slot
-  // Total pixel space needed: allEvents.length * eventHeight
-  // That space must cover clusterYearSpan years
-  // So: pixelPerYear >= (allEvents.length * eventHeight) / clusterYearSpan
+  // Need enough zoom for top7 + parent (8 events) to each get their own slot
   const isMobileNarrow = window.innerWidth <= 480;
   const eventHeight = isMobileNarrow ? 30 : 40;
-  const neededPixelPerYear = (allEvents.length * eventHeight * 1.5) / clusterYearSpan;
+  const eventsToFit = eventsForRange.length;
+  const neededPixelPerYear = (eventsToFit * eventHeight * 1.5) / clusterYearSpan;
   
-  // Current pixelPerYear = timelineHeight / yearRange
-  // timelineHeight = containerHeight * 3 * zoom (approximately)
-  // So pixelPerYear = containerHeight * 3 * zoom / yearRange
-  // We need: containerHeight * 3 * zoom / yearRange >= neededPixelPerYear
-  // zoom >= neededPixelPerYear * yearRange / (containerHeight * 3)
   const viewportHeight = window.innerHeight;
   const containerHeight = Math.max(400, viewportHeight - 145);
-  const yearRange = 7551; // maxYear - minYear + 1 (3500 - (-4050) + 1)
+  const yearRange = 7551;
   const neededZoom = (neededPixelPerYear * yearRange) / (containerHeight * 3);
   
-  // Clamp zoom to valid range and ensure it's an increase
   const targetZoom = Math.min(500, Math.max(neededZoom, (biblicalTimelineZoom || 1.0) * 1.1));
   
   // Dispatch zoom and center year
@@ -3392,6 +3515,7 @@ function zoomToCluster(parentEventId) {
 window.toggleClusterDropdown = toggleClusterDropdown;
 window.closeClusterDropdown = closeClusterDropdown;
 window.zoomToCluster = zoomToCluster;
+window.toggleClusterTreeNode = toggleClusterTreeNode;
 
 // State-driven render functions (called by TimelineView)
 window.showEventDetailFromState = showEventDetailFromState;
@@ -4412,66 +4536,63 @@ async function renderBiblicalTimelineInternal(container) {
     labelFormat = 'decade';
   }
   
-  // Event Classification System:
-  // Events are classified by importance/type to show/hide based on zoom level
-  // 
-  // MAJOR EVENTS (always shown when zoomed out):
-  //   - Type: "milestone" (e.g., Creation, Exodus, Crucifixion)
-  //   - Type: "biblical-event" (significant biblical occurrences)
-  //   - Tags: "prophecy", "resurrection", "crucifixion", "creation", "flood", "exodus"
-  //   - Important deaths/births: Jesus' death/birth, David's birth
+  // Event Priority System (1-1000 continuous scale)
+  // Every event in historical-events-v2.json has a unique "priority" field.
+  // Lower number = more important = wins the slot when events compete.
   //
-  // DETAIL EVENTS (shown only when zoomed in):
-  //   - All other events (reigns, constructions, minor biblical events, etc.)
+  // Tiers:
+  //   1-50:    Era anchors (Creation, Flood, Exodus, Crucifixion, etc.)
+  //   51-120:  Sub-anchors (Abraham, Moses, David, Resurrection, etc.)
+  //   121-250: Key narrative (Covenant, Burning Bush, Golden Calf, etc.)
+  //   251-450: Supporting narrative (patriarch events, kings, sieges)
+  //   451-700: Scholarly detail (genealogy, divided monarchy, astronomical)
+  //   701-1000: Deep detail (date references, sub-events, proposed dates)
   //
-  // Zoom Thresholds:
-  //   - < 5 px/year: Only major milestones (very zoomed out)
-  //   - 5-20 px/year: Major events + high-certainty biblical events (medium zoom)
-  //   - >= 20 px/year: All events (zoomed in)
-  
-  // Event priority system - uses "priority" field from JSON
-  // Priority levels: 1 = highest (always show), 2 = high, 3 = medium, 4 = low (only when zoomed in)
-  // Events without priority field get auto-assigned based on type/tags
+  // Fallback auto-assignment for events without an explicit priority field:
   const getEventPriority = (event) => {
-    // If event has explicit priority, use it
+    // All events should have explicit priority — this is only a fallback
     if (event.priority !== undefined) return event.priority;
     
-    // Auto-assign priority based on type and tags
-    const majorTypes = ['milestone', 'creation', 'catastrophe', 'astronomical', 'battle', 'reign'];
-    const highTypes = ['biblical-event'];
-    const majorTags = ['prophecy', 'resurrection', 'crucifixion', 'creation', 'flood', 'exodus', 'patriarch', 'genealogy', 'pre-flood', 'chronology-anchor', 'astronomical', 'assyrian', 'yeshua', 'jesus', 'john-baptist', 'nativity', 'annunciation'];
+    // Auto-assign on the 1-1000 scale based on type and tags
+    const type = event.type || '';
+    const tags = event.tags || [];
+    const hasTag = (...t) => t.some(tag => tags.includes(tag));
     
-    if (majorTypes.includes(event.type)) return 1;
-    if (event.tags && event.tags.some(tag => majorTags.includes(tag))) return 1;
-    if (highTypes.includes(event.type)) return 2;
-    if (event.type === 'birth' || event.type === 'death') return 3;
-    return 4;
+    // Tier A fallback (~50): creation, catastrophe
+    if (type === 'creation' || type === 'catastrophe') return 50;
+    // Tier B fallback (~100): milestones, exodus/crucifixion/resurrection tags
+    if (type === 'milestone') return 120;
+    if (hasTag('exodus', 'crucifixion', 'resurrection')) return 100;
+    // Tier C fallback (~200): battles, conquests, destructions, patriarch/Jesus tags
+    if (['battle', 'conquest', 'destruction'].includes(type)) return 200;
+    if (hasTag('patriarch', 'yeshua', 'jesus')) return 200;
+    // Tier D fallback (~350): reigns, biblical events, john-baptist, prophecy
+    if (type === 'reign' || type === 'biblical-event') return 350;
+    if (hasTag('john-baptist', 'prophecy')) return 350;
+    // Tier E fallback (~550): births, deaths, astronomical
+    if (type === 'birth' || type === 'death' || type === 'astronomical') return 550;
+    // Tier F fallback (~800): everything else
+    return 800;
   };
   
   const isMajorEvent = (event) => {
-    return getEventPriority(event) <= 2;
+    return getEventPriority(event) <= 120;
   };
   
   // Helper to check if event has duration (use Math.abs for negative durations)
   const hasDuration = (e) => e.endJD && Math.abs(e.endJD - e.startJD) >= 30;
   
-  // BEST-EFFORT PRIORITY-BASED SLOT ALLOCATION
-  // Never hide an event just because of zoom level - try to show ALL events
-  // If space is tight, higher priority events get slots first, lower priority may be displaced
+  // ═══════════════════════════════════════════════════════════════
+  // RECURSIVE SLOT ALLOCATION
+  // Events never leave their true time position. At each zoom level,
+  // divide the timeline into slots, pick the highest-priority winner
+  // per slot, and cluster the rest as children.
+  // ═══════════════════════════════════════════════════════════════
   
-  // Each event label is ~32px tall + 8px spacing = 40px slot (24px + 6px on narrow mobile)
-  // Use isMobileNarrowLayout from layout constants above
   const eventHeight = isMobileNarrowLayout ? 30 : 40;
-  const yearsPerSlot = eventHeight / pixelPerYear;
-  
-  // Max slots an event can be displaced from its natural position before being hidden
-  // At low zoom, allow more displacement; at high zoom, less needed
-  const maxDisplacementSlots = Math.max(2, Math.ceil(10 / yearsPerSlot));
-  
-  // Helper to get year from JD
   const jdToYear = (jd) => Math.floor((jd - 1721425.5) / 365.25);
   
-  // Get selected/focused event ID from state - these events MUST always be shown
+  // Get selected/focused event ID from state - these get boosted priority
   let selectedEventIdForSlots = null;
   let focusedEventIdForSlots = null;
   if (typeof AppStore !== 'undefined') {
@@ -4479,8 +4600,6 @@ async function renderBiblicalTimelineInternal(container) {
     selectedEventIdForSlots = state?.ui?.timelineEventId;
     focusedEventIdForSlots = state?.ui?.timelineFocusedEventId;
   }
-  
-  // Helper to check if event is selected or focused
   const isPriorityEvent = (eventId) => {
     return eventId === selectedEventIdForSlots || eventId === focusedEventIdForSlots;
   };
@@ -4489,152 +4608,69 @@ async function renderBiblicalTimelineInternal(container) {
   const durationEventsToKeep = allEvents.filter(e => hasDuration(e));
   const pointEventsForAlloc = allEvents.filter(e => !hasDuration(e) && e.startJD !== null);
   
-  // Sort point events by priority (highest priority = lowest number = first)
-  // Selected/focused events get absolute priority (0)
-  const sortedPointEvents = [...pointEventsForAlloc].sort((a, b) => {
-    // Selected/focused events always come first
-    if (isPriorityEvent(a.id)) return -1;
-    if (isPriorityEvent(b.id)) return 1;
-    
-    const aPri = getEventPriority(a);
-    const bPri = getEventPriority(b);
-    if (aPri !== bPri) return aPri - bPri;
-    // Secondary sort by date for determinism
-    return (a.startJD || 0) - (b.startJD || 0);
+  // Step 1: Compute visible slots
+  const slotCount = Math.max(1, Math.floor(timelineHeight / eventHeight));
+  const slotHeight = timelineHeight / slotCount;
+  
+  // Step 2: Bucket events into slots by their true timeline position
+  const slotBuckets = new Map(); // slotIndex → [event, ...]
+  
+  // Convert JD to pixel position (same function used later for rendering)
+  const jdToPixelPosForAlloc = (jd) => ((jd - minJD) / (maxJD - minJD)) * timelineHeight;
+  
+  pointEventsForAlloc.forEach(event => {
+    const pos = jdToPixelPosForAlloc(event.startJD);
+    const slotIdx = Math.min(slotCount - 1, Math.max(0, Math.floor(pos / slotHeight)));
+    if (!slotBuckets.has(slotIdx)) slotBuckets.set(slotIdx, []);
+    slotBuckets.get(slotIdx).push(event);
   });
   
-  // Slot allocation: map from slotIndex -> { event, priority }
-  const allocatedSlots = new Map();
-  const eventsWithSlots = []; // Events that got a slot
+  // Step 3: Pick winner per slot, collect children
+  const slotWinners = []; // { event, displayPos, children[] }
+  const clusterMap = new Map(); // winnerId → [childEvent, ...]
   
-  sortedPointEvents.forEach(event => {
-    const eventYear = jdToYear(event.startJD);
-    const naturalSlot = Math.floor((eventYear - minYear) / yearsPerSlot);
-    const eventPriority = getEventPriority(event);
-    
-    // Try to find a slot: natural slot first, then adjacent slots up to maxDisplacement
-    let assignedSlot = null;
-    
-    for (let offset = 0; offset <= maxDisplacementSlots; offset++) {
-      // Try both directions: natural, +1, -1, +2, -2, etc.
-      const slotsToTry = offset === 0 ? [naturalSlot] : [naturalSlot + offset, naturalSlot - offset];
-      
-      for (const trySlot of slotsToTry) {
-        if (trySlot < 0) continue; // Skip negative slots
-        
-        const existing = allocatedSlots.get(trySlot);
-        
-        if (!existing) {
-          // Slot is free - take it
-          assignedSlot = trySlot;
-          break;
-        } else if (eventPriority < existing.priority) {
-          // Current event has higher priority - evict the existing one
-          // The evicted event will try to find another slot in a later pass (or be hidden)
-          assignedSlot = trySlot;
-          break;
-        }
-        // Slot taken by higher or equal priority - try next slot
-      }
-      
-      if (assignedSlot !== null) break;
-    }
-    
-    // If no slot found within normal range, but this is the selected/focused event, force a slot
-    if (assignedSlot === null && isPriorityEvent(event.id)) {
-      // Selected/focused event MUST be shown - find any free slot or create one
-      for (let off = maxDisplacementSlots + 1; off <= maxDisplacementSlots * 4; off++) {
-        for (const trySlot of [naturalSlot + off, naturalSlot - off]) {
-          if (trySlot >= 0 && !allocatedSlots.has(trySlot)) {
-            assignedSlot = trySlot;
-            break;
-          }
-        }
-        if (assignedSlot !== null) break;
-      }
-      // Last resort: just use the natural slot and evict whoever is there
-      if (assignedSlot === null) {
-        assignedSlot = naturalSlot;
-      }
-    }
-    
-    if (assignedSlot !== null) {
-      // Check if we're evicting someone
-      const evicted = allocatedSlots.get(assignedSlot);
-      if (evicted) {
-        // Remove evicted event from our results (it will try to get another slot)
-        const evictIdx = eventsWithSlots.findIndex(e => e.event.id === evicted.event.id);
-        if (evictIdx >= 0) {
-          // Try to reallocate evicted event to a different slot
-          const evictedEvent = eventsWithSlots[evictIdx].event;
-          eventsWithSlots.splice(evictIdx, 1);
-          
-          // Simple reallocation: find nearest free slot
-          const evictedYear = jdToYear(evictedEvent.startJD);
-          const evictedNatural = Math.floor((evictedYear - minYear) / yearsPerSlot);
-          for (let off = 1; off <= maxDisplacementSlots * 2; off++) {
-            for (const tryS of [evictedNatural + off, evictedNatural - off]) {
-              if (tryS >= 0 && !allocatedSlots.has(tryS) && tryS !== assignedSlot) {
-                allocatedSlots.set(tryS, { event: evictedEvent, priority: evicted.priority });
-                eventsWithSlots.push({ event: evictedEvent, slot: tryS, displaced: Math.abs(tryS - evictedNatural) });
-                break;
-              }
-            }
-            if (eventsWithSlots.find(e => e.event.id === evictedEvent.id)) break;
-          }
-        }
-      }
-      
-      allocatedSlots.set(assignedSlot, { event, priority: eventPriority });
-      eventsWithSlots.push({ event, slot: assignedSlot, displaced: Math.abs(assignedSlot - naturalSlot) });
-    }
-    // If no slot found within displacement limit, event is hidden (will show when zoomed in)
-  });
-  
-  // ── CLUSTER MAP: attach hidden events to nearest visible event ──
-  const visibleEventIds = new Set(eventsWithSlots.map(e => e.event.id));
-  const hiddenPointEvents = sortedPointEvents.filter(e => !visibleEventIds.has(e.id));
-  const clusterMap = new Map(); // visibleEventId → [hiddenEvent, ...]
-  
-  hiddenPointEvents.forEach(hiddenEvent => {
-    const hiddenYear = jdToYear(hiddenEvent.startJD);
-    let nearestVisible = null;
-    let nearestDist = Infinity;
-    
-    eventsWithSlots.forEach(({ event }) => {
-      const dist = Math.abs(jdToYear(event.startJD) - hiddenYear);
-      if (dist < nearestDist) {
-        nearestDist = dist;
-        nearestVisible = event;
-      }
+  slotBuckets.forEach((events, slotIdx) => {
+    // Sort by priority: selected/focused first, then by priority number, then date
+    events.sort((a, b) => {
+      if (isPriorityEvent(a.id) && !isPriorityEvent(b.id)) return -1;
+      if (!isPriorityEvent(a.id) && isPriorityEvent(b.id)) return 1;
+      const pa = getEventPriority(a);
+      const pb = getEventPriority(b);
+      if (pa !== pb) return pa - pb;
+      return (a.startJD || 0) - (b.startJD || 0);
     });
     
-    if (nearestVisible) {
-      if (!clusterMap.has(nearestVisible.id)) {
-        clusterMap.set(nearestVisible.id, []);
-      }
-      clusterMap.get(nearestVisible.id).push(hiddenEvent);
+    const winner = events[0];
+    const children = events.slice(1);
+    const displayPos = slotIdx * slotHeight + slotHeight / 2;
+    
+    slotWinners.push({ event: winner, displayPos, slotIdx });
+    
+    if (children.length > 0) {
+      clusterMap.set(winner.id, children);
     }
   });
   
   // Store cluster data globally for dropdown handlers
   window._timelineClusterData = new Map();
   clusterMap.forEach((children, parentId) => {
-    const parentEvent = eventsWithSlots.find(e => e.event.id === parentId)?.event;
+    const winner = slotWinners.find(w => w.event.id === parentId);
+    if (!winner) return;
     window._timelineClusterData.set(parentId, {
-      parent: parentEvent,
+      parent: winner.event,
       children: children.map(e => ({
         id: e.id,
         title: e.title,
         type: e.type,
         startJD: e.startJD,
-        icon: getTypeIcon(e.type)
+        priority: getEventPriority(e),
+        icon: getTypeIcon(e.type, e.icon)
       }))
     });
   });
   
-  // Extract just the events for rendering
-  let eventsToShow = [...durationEventsToKeep, ...eventsWithSlots.map(e => e.event)];
+  // Extract events for rendering: duration bars + slot winners
+  let eventsToShow = [...durationEventsToKeep, ...slotWinners.map(w => w.event)];
   
   // Timeline header removed - using global search in main header
   // Detail panel has its own close button
@@ -5081,142 +5117,70 @@ async function renderBiblicalTimelineInternal(container) {
         return { year, month, day: Math.floor(day) };
       };
   
-  // Separate duration events for bar rendering, point events for stack
+  // Separate duration events for bar rendering, point events use slotWinners
   const durationEventsForLines = [];
   const pointEventsForStack = [];
   // monthNames already declared above for tick labels
   
-  // First pass: collect all point events with their natural positions
-  const pendingPointEvents = [];
-  
-  // Process events using resolved Julian Day positions
+  // Process duration events from eventsToShow
   eventsToShow.forEach((event) => {
     if (event.startJD === null) return;
+    const isDuration = event.endJD && Math.abs(event.endJD - event.startJD) >= 30;
+    if (!isDuration) return; // Point events handled via slotWinners below
     
     const eventTimelinePos = jdToPixelPos(event.startJD);
-    
-    // Get display date from resolved event
     const startDate = jdToGregorian(event.startJD);
     const year = startDate.year;
     const dateStr = `${formatYear(year)} ${monthNames[startDate.month - 1]} ${startDate.day}`;
-    
-    const icon = getTypeIcon(event.type);
     const color = getEventColor(event.type);
+    const endTimelinePos = jdToPixelPos(event.endJD);
+    const isNegativeDuration = event.endJD < event.startJD;
+    const barStartPos = isNegativeDuration ? endTimelinePos : eventTimelinePos;
+    const barEndPos = isNegativeDuration ? eventTimelinePos : endTimelinePos;
+    const durationHeight = Math.abs(endTimelinePos - eventTimelinePos);
     
-    // Check if this is a duration event (has endJD more than 30 days from start)
-    const isDuration = event.endJD && Math.abs(event.endJD - event.startJD) >= 30;
-    
-    if (isDuration) {
-      // Duration events: render as vertical bars on timeline
-      const endTimelinePos = jdToPixelPos(event.endJD);
-      
-      // Handle negative durations (endJD < startJD means duration goes backward)
-      const isNegativeDuration = event.endJD < event.startJD;
-      const barStartPos = isNegativeDuration ? endTimelinePos : eventTimelinePos;
-      const barEndPos = isNegativeDuration ? eventTimelinePos : endTimelinePos;
-      const durationHeight = Math.abs(endTimelinePos - eventTimelinePos);
-      
-      // Format duration string from event data
-      let durationStr = '';
-      if (event.duration) {
-        const dur = event.duration;
-        const unitLabels = {
-          'days': 'days',
-          'weeks': 'weeks',
-          'lunar_weeks': 'lunar weeks',
-          'months': 'months',
-          'solar_years': 'solar years',
-          'lunar_years': 'lunar years',
-          'regal_years': 'regal years'
-        };
-        const unit = unitLabels[dur.unit] || dur.unit || 'years';
-        // Use absolute value for display
-        durationStr = `${Math.abs(dur.value)} ${unit}`;
-        if (dur.reckoning) {
-          durationStr += ` (${dur.reckoning})`;
-        }
-      }
-      
-      durationEventsForLines.push({
-        id: event.id,
-        startPos: barStartPos,
-        endPos: barEndPos,
-        startJD: isNegativeDuration ? event.endJD : event.startJD,
-        endJD: isNegativeDuration ? event.startJD : event.endJD,
-        height: durationHeight,
-        color: color,
-        title: event.title,
-        dateStr: dateStr,
-        durationStr: durationStr,
-        eventIndex: durationEventsForLines.length
-      });
-    } else {
-      // Collect point events for smart positioning
-      pendingPointEvents.push({
-        event: event,
-        eventTimelinePos: eventTimelinePos,
-        year: year,
-        icon: icon,
-        color: color
-      });
-      
-      // Debug: log yeshua/john events
-      if (event.id && (event.id.includes('yeshua') || event.id.includes('john-baptist'))) {
-        console.log(`[Render] Added to pendingPointEvents: ${event.id}, pos=${eventTimelinePos}, year=${year}`);
-      }
+    let durationStr = '';
+    if (event.duration) {
+      const dur = event.duration;
+      const unitLabels = { 'days': 'days', 'weeks': 'weeks', 'lunar_weeks': 'lunar weeks', 'months': 'months', 'solar_years': 'solar years', 'lunar_years': 'lunar years', 'regal_years': 'regal years' };
+      const unit = unitLabels[dur.unit] || dur.unit || 'years';
+      durationStr = `${Math.abs(dur.value)} ${unit}`;
+      if (dur.reckoning) durationStr += ` (${dur.reckoning})`;
     }
+    
+    durationEventsForLines.push({
+      id: event.id, startPos: barStartPos, endPos: barEndPos,
+      startJD: isNegativeDuration ? event.endJD : event.startJD,
+      endJD: isNegativeDuration ? event.startJD : event.endJD,
+      height: durationHeight, color, title: event.title, dateStr, durationStr,
+      eventIndex: durationEventsForLines.length
+    });
   });
   
-  // Debug: Check if yeshua/john events are in pendingPointEvents
-  const yeshuaJohnPending = pendingPointEvents.filter(pe => 
-    pe.event.id && (pe.event.id.includes('yeshua') || pe.event.id.includes('john-baptist'))
-  );
-  console.log('[Render] Yeshua/John events in pendingPointEvents:', yeshuaJohnPending.length, 
-    yeshuaJohnPending.map(pe => pe.event.id));
+  // Build pointEventsForStack directly from slotWinners (no cascade stacking)
+  // Each winner is positioned at the center of its slot — guaranteed no overlap
+  slotWinners.sort((a, b) => a.slotIdx - b.slotIdx);
   
-  // Smart positioning: sort by timeline position, then resolve overlaps
-  pendingPointEvents.sort((a, b) => a.eventTimelinePos - b.eventTimelinePos);
-  
-  let lastEventBottom = -Infinity; // Track bottom edge of last placed event
-  
-  pendingPointEvents.forEach((pe) => {
-    // Event is centered on displayPos, so top edge is displayPos - height/2
-    let displayPos = pe.eventTimelinePos;
-    const topEdge = displayPos - (eventLabelHeight / 2);
+  slotWinners.forEach((winner) => {
+    const event = winner.event;
+    const eventTimelinePos = jdToPixelPos(event.startJD);
+    const startDate = jdToGregorian(event.startJD);
+    const year = startDate.year;
+    const icon = getTypeIcon(event.type, event.icon);
+    const color = getEventColor(event.type);
+    const children = clusterMap.get(event.id);
     
-    // Check if natural position overlaps with previous event
-    if (topEdge < lastEventBottom + minEventGap) {
-      // Overlap detected - push down just enough to clear
-      displayPos = lastEventBottom + minEventGap + (eventLabelHeight / 2);
-    }
-    
-    // Update last event bottom edge
-    lastEventBottom = displayPos + (eventLabelHeight / 2);
-    
-    const children = clusterMap.get(pe.event.id);
     pointEventsForStack.push({
-      event: pe.event,
-      eventTimelinePos: pe.eventTimelinePos,
-      eventDisplayPos: displayPos,
-      year: pe.year,
-      icon: pe.icon,
-      color: pe.color,
+      event: event,
+      eventTimelinePos: eventTimelinePos,
+      eventDisplayPos: winner.displayPos,
+      year: year,
+      icon: icon,
+      color: color,
       clusterCount: children ? children.length + 1 : null,
       clusterChildren: children || null
     });
-    
-    // Debug: log yeshua/john events
-    if (pe.event.id && (pe.event.id.includes('yeshua') || pe.event.id.includes('john-baptist'))) {
-      console.log(`[Render] Added to pointEventsForStack: ${pe.event.id}, displayPos=${displayPos}`);
-    }
   });
-  
-  // Debug: Check if yeshua/john events are in pointEventsForStack
-  const yeshuaJohnStack = pointEventsForStack.filter(pe => 
-    pe.event.id && (pe.event.id.includes('yeshua') || pe.event.id.includes('john-baptist'))
-  );
-  console.log('[Render] Yeshua/John events in pointEventsForStack:', yeshuaJohnStack.length,
-    yeshuaJohnStack.map(pe => `${pe.event.id}@${pe.eventDisplayPos}`));
   
   // =====================================================
   // DURATION BARS - Render ONLY from explicit durations array

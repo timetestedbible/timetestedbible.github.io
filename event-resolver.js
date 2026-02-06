@@ -1257,6 +1257,7 @@ function resolveEvent(event, profile, epochs, context = null) {
     prophecies,
     
     // Metadata (passed through from source)
+    priority: event.priority,
     certainty: event.certainty,
     tags: event.tags,
     anniversary_display: event.anniversary_display,
