@@ -272,7 +272,9 @@ class LunarCalendarEngine {
     const spicaRA = spicaRA_J2000 + (yearsFromJ2000 * PRECESSION_RATE);
     
     const observer = this.astro.createObserver(location.lat, location.lon, 0);
-    const searchStart = new Date(Date.UTC(year, 0, 20)); // January 20
+    // Use setUTCFullYear to avoid JS Date treating years 0-99 as 1900-based
+    const searchStart = new Date(Date.UTC(2000, 0, 20));
+    searchStart.setUTCFullYear(year);
     
     let searchDate = new Date(searchStart.getTime());
     const attempts = [];
