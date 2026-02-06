@@ -25,15 +25,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       
-      - name: Copy chapters to http folder
-        run: |
-          cp -r chapters http/chapters
-          echo "Chapters copied successfully"
-      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: http
+          path: .
+          exclude: _dev/**
 
   deploy:
     environment:

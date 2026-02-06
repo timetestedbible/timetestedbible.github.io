@@ -14,18 +14,13 @@
 - **GPT-5.2:** A demanding, Scripture-driven re-evaluation of biblical timekeeping that is strongest as a consistency-and-assumptions audit, and best recommended to readers willing to verify sources and think carefully about calendars, astronomy, and chronology.
 - **Grok:** This meticulously researched work presents compelling evidence for alternative biblical calendar interpretations, challenging readers to test tradition against Scripture while acknowledging the complexity may limit accessibility for those seeking straightforward answers.
 
-Below you’ll find how these reviews were produced, short summaries, and—if you want to dig in—each reviewer’s full detailed assessment.
+Below you'll find how these reviews were produced, short summaries, and—if you want to dig in—each reviewer's full detailed assessment.
 
 ---
 
 ## How These Reviews Were Produced
 
-<details>
-<summary><strong>Review methodology (click to expand)</strong></summary>
-
-Each AI was given the same instructions and the full book (all 19 main chapters plus 6 extra chapters). No changes were made per reviewer; the only difference was which AI (Claude, GPT-5.2, or Grok) ran the prompt. Expand the next section to read the **exact prompt** given to each AI (embedded below—no external file needed). Readers can verify that no reviewer was “bribed” or given a tailored prompt for a positive outcome.
-
-</details>
+Each AI was given the same instructions and the full book (all 19 main chapters plus 6 extra chapters). No changes were made per reviewer; the only difference was which AI (Claude, GPT-5.2, or Grok) ran the prompt. Expand below to read the **exact prompt** given to each system.
 
 <details>
 <summary><strong>View the exact prompt given to each AI (click to expand)</strong></summary>
@@ -37,32 +32,97 @@ Each AI was given the same instructions and the full book (all 19 main chapters 
 You are reviewing the book from this workspace. Do not search the web or look elsewhere for the book. Read the following files in order.
 
 **Main chapters (read in this order):**
-- http/chapters/01_Introduction.md through 19_Miscellaneous_Commands.md
+- http/chapters/01_Introduction.md
+- http/chapters/02_Inherited_Lies.md
+- http/chapters/03_Principles_of_Evaluation.md
+- http/chapters/04_Alleged_Authority_of_Sanhedrin.md
+- http/chapters/05_Where_Does_the_Day_Start.md
+- http/chapters/06_When_Does_the_Day_Start.md
+- http/chapters/07_When_Does_the_Month_Start.md
+- http/chapters/08_When_does_the_Year_Start.md
+- http/chapters/09_How_to_Observe_the_Signs.md
+- http/chapters/10_When_is_the_Sabbath.md
+- http/chapters/11_The_Day_of_Saturn.md
+- http/chapters/12_32_AD_Resurrection.md
+- http/chapters/13_Herod_the_Great.md
+- http/chapters/14_Passion_Week_-_3_Days_&amp;_3_Nights.md
+- http/chapters/15_Solar_Only_Calendars.md
+- http/chapters/16_The_Path_to_Salvation.md
+- http/chapters/17_Commands_to_Follow.md
+- http/chapters/18_Appointed_Times.md
+- http/chapters/19_Miscellaneous_Commands.md
 
 **Extra chapters (supplementary material):**
-- http/extra/e01_Herod_Regal_vs_Defacto.md through e05_FirstFruitsNewWine.md
+- http/extra/e01_Herod_Regal_vs_Defacto.md
+- http/extra/e02_Battle_of_Actium.md
+- http/extra/e03_Herods_Appointment.md
+- http/extra/e04_StabilityOfAustronomy.md
+- http/extra/e05_FirstFruitsNewWine.md
 - extra/e06_Pharaoh_of_the_Exodus.md
 
-If you cannot access the workspace, state that at the start of your response and say you were not given the book text. Do not invent or assume the book's content.
+If you cannot access the workspace (e.g., you are running in a different product), state that at the start of your response and say you were not given the book text. Do not invent or assume the book's content.
 
 ## About the book (for context only)
 
-"Time Tested Tradition" is a nonfiction book that examines biblical calendar, chronology, and related teachings from the author's stated premise that Scripture is the primary authority and that traditional or consensus views should be tested against the text rather than assumed correct. Topics include when the day, month, and year begin; Sabbath observance; the dating of the crucifixion and resurrection (e.g., 32 AD); Herod the Great; appointed times/feasts; and the use of astronomical and historical evidence.
+"Time Tested Tradition" is a nonfiction book that examines biblical calendar, chronology, and related teachings from the author's stated premise that Scripture is the primary authority and that traditional or consensus views should be tested against the text rather than assumed correct. Topics include when the day, month, and year begin; Sabbath observance; the dating of the crucifixion and resurrection (e.g., 32 AD); Herod the Great; appointed times/feasts; and the use of astronomical and historical evidence. The book argues for a full-moon start of the month and uses a fact-dependency structure and extra chapters for historical and astronomical support.
 
 ## Your role and how to evaluate
 
-- Evaluate the book on its own terms: clarity, use of sources, internal consistency, structure, and accessibility.
-- Do not treat "agreement with mainstream or traditional religious interpretation" as the standard of quality.
-- Be neutral and fair: note strengths and weaknesses. If you would need to read primary sources or run calculations to verify claims, say so.
+- Evaluate the book on its own terms: clarity of argument, use of sources, internal consistency, structure, and accessibility to a careful reader.
+- Do not treat "agreement with mainstream or traditional religious interpretation" as the standard of quality. The book explicitly challenges some traditional views; assess whether its arguments are clear, well-sourced, and coherent, not whether they match a particular tradition.
+- Be neutral and fair: note strengths and weaknesses in reasoning, evidence, and presentation. If you would need to read primary sources or run calculations to verify claims, say so rather than assuming the author is right or wrong.
 - Write for a reader who is deciding whether to invest time in the book: be informative and balanced.
 
 ## Required output structure
 
-Produce your full response in one reply: (1) Detailed assessment, (2) One-paragraph review, (3) One-sentence review, (4) One-phrase review (3 words or fewer), (5) Reviewer attribution with **Reviewer: [AGENT]** and **Prompt: Standardized independent virtual review.**
+Produce your full response in one reply, using the following sections and headings exactly.
+
+---
+
+### 1. Detailed assessment
+
+Write a detailed evaluation (several paragraphs) covering at least:
+
+- **Clarity and structure**: Is the argument easy to follow? Are terms defined? Is the organization helpful?
+- **Use of evidence**: How does the book use Scripture, historical sources, and astronomical or chronological data? Are sources cited in a way a reader can check?
+- **Internal consistency**: Do the claims and conclusions fit together? Are there contradictions or gaps?
+- **Accessibility**: What kind of reader is this for? What background is assumed?
+- **Notable strengths**: What does the book do well?
+- **Limitations or concerns**: What would a cautious reader want to verify or question?
+- **Summary judgment**: Overall quality and reliability of the presentation (not "correctness" by any one tradition's standard).
+
+---
+
+### 2. One-paragraph review
+
+A single paragraph (roughly 4–6 sentences) that a reader could use as a standard book review: what the book does, its strengths and limitations, and who might benefit from it.
+
+---
+
+### 3. One-sentence review
+
+A single sentence that captures the essence of your evaluation and whether you would recommend it (and to whom).
+
+---
+
+### 4. One-phrase review (3 words or fewer)
+
+A very short tagline or summary: three words or fewer (e.g., "Rigorous but dense," "Worth a careful read," "Niche and technical").
+
+---
+
+### 5. Reviewer attribution
+
+End with a single line:
+
+**Reviewer: [AGENT]**
+**Prompt: Standardized independent virtual review.**
 
 Replace [AGENT] with your actual name (e.g., Claude, GPT-4o, Gemini, Grok).
 
-Now perform the review. Read the book from the paths listed above. If you do not have access to this workspace, state that clearly at the start and do not fabricate a review.</pre>
+---
+
+Now perform the review. Read the book from the paths listed in "Where to find the book" above. If you do not have access to this workspace (e.g., you are not Cursor or another tool that can read these files), state that clearly at the start and do not fabricate a review. If you can read only some of the files, state which ones you used and limit your assessment to that material.</pre>
 
 </details>
 
@@ -94,7 +154,7 @@ Now perform the review. Read the book from the paths listed above. If you do not
 <details>
 <summary>One-paragraph review (click to expand)</summary>
 
-“Time Tested Tradition” is a polemical but systematically structured challenge to inherited biblical-calendar assumptions, arguing from Scripture-first principles (and secondarily from history/astronomy) for morning-start days, a full-moon-based month start, and a lunar-tied Sabbath week rather than a continuous Saturday-based planetary cycle. The book’s best feature is methodological: it repeatedly exposes circular reasoning and forces practical constraints like global day-boundaries and observability to the foreground, then attempts to build a coherent end-to-end model tested against key biblical narratives and chronology anchors (Herod, Passover, resurrection timing). Its biggest drawback is that it is very long and sometimes mixes tight argument with speculative or highly interpretive side-claims, while stating conclusions with more certainty than a cautious reader may grant without independent verification. Readers who enjoy deep, cross-disciplinary Bible study and are open to nontraditional conclusions will find it provocative and unusually thorough; readers seeking a concise or academically detached treatment may find it dense and rhetorically combative.
+"Time Tested Tradition" is a polemical but systematically structured challenge to inherited biblical-calendar assumptions, arguing from Scripture-first principles (and secondarily from history/astronomy) for morning-start days, a full-moon-based month start, and a lunar-tied Sabbath week rather than a continuous Saturday-based planetary cycle. The book's best feature is methodological: it repeatedly exposes circular reasoning and forces practical constraints like global day-boundaries and observability to the foreground, then attempts to build a coherent end-to-end model tested against key biblical narratives and chronology anchors (Herod, Passover, resurrection timing). Its biggest drawback is that it is very long and sometimes mixes tight argument with speculative or highly interpretive side-claims, while stating conclusions with more certainty than a cautious reader may grant without independent verification. Readers who enjoy deep, cross-disciplinary Bible study and are open to nontraditional conclusions will find it provocative and unusually thorough; readers seeking a concise or academically detached treatment may find it dense and rhetorically combative.
 
 </details>
 
@@ -109,7 +169,7 @@ Now perform the review. Read the book from the paths listed above. If you do not
 <details>
 <summary>One-paragraph review (click to expand)</summary>
 
-“Time Tested Tradition” offers a thorough exploration of biblical calendar systems, arguing convincingly for a full-moon month start and lunar Sabbath cycle through extensive scriptural, historical, and astronomical evidence. Its strengths lie in its methodical approach, transparent sourcing, and willingness to challenge traditional interpretations, making it valuable for serious Bible students seeking deeper understanding of timekeeping in Scripture. However, the book’s density and technical complexity may overwhelm readers without backgrounds in astronomy or ancient history. Those interested in biblical chronology, Sabbath observance, or the Exodus narrative will find it particularly rewarding, though skeptics may question some astronomical interpretations. Ultimately, it serves as an excellent resource for testing religious traditions against Scripture.
+"Time Tested Tradition" offers a thorough exploration of biblical calendar systems, arguing convincingly for a full-moon month start and lunar Sabbath cycle through extensive scriptural, historical, and astronomical evidence. Its strengths lie in its methodical approach, transparent sourcing, and willingness to challenge traditional interpretations, making it valuable for serious Bible students seeking deeper understanding of timekeeping in Scripture. However, the book's density and technical complexity may overwhelm readers without backgrounds in astronomy or ancient history. Those interested in biblical chronology, Sabbath observance, or the Exodus narrative will find it particularly rewarding, though skeptics may question some astronomical interpretations. Ultimately, it serves as an excellent resource for testing religious traditions against Scripture.
 
 </details>
 
@@ -117,7 +177,7 @@ Now perform the review. Read the book from the paths listed above. If you do not
 
 ## Full Detailed Reviews
 
-Each section below is the reviewer’s complete detailed assessment. Expand only if you want the full analysis.
+Each section below is the reviewer's complete detailed assessment. Expand only if you want the full analysis.
 
 <details>
 <summary><strong>Claude — Full detailed assessment</strong></summary>
@@ -189,21 +249,21 @@ The writing is accessible to educated lay readers with interest in biblical stud
 <details>
 <summary><strong>GPT-5.2 — Full detailed assessment</strong></summary>
 
-This review is based solely on the book’s markdown files in this workspace (the 19 main chapters plus the listed supplemental essays), without consulting the web. “Time Tested Tradition” is written as a tightly argued, explicitly polemical case that long-inherited calendar assumptions (sunset-start days, crescent/dark-moon month starts, a fixed Saturday Sabbatical week continuous from creation) are not merely “debatable,” but methodologically compromised by tradition, authority claims, and special pleading. The book’s declared method is to begin with “principles of evaluation” derived from Scripture, then treat historical/astronomical material as secondary corroboration rather than primary authority. In practice, it blends scriptural argument by cross-reference and narrative “demonstration,” historical argument (Josephus, Philo, later rabbinic sources, Roman writers, etc.), and practical/physical constraints (dateline/timezones, visibility, travel, prediction vs. observation).
+This review is based solely on the book's markdown files in this workspace (the 19 main chapters plus the listed supplemental essays), without consulting the web. "Time Tested Tradition" is written as a tightly argued, explicitly polemical case that long-inherited calendar assumptions (sunset-start days, crescent/dark-moon month starts, a fixed Saturday Sabbatical week continuous from creation) are not merely "debatable," but methodologically compromised by tradition, authority claims, and special pleading. The book's declared method is to begin with "principles of evaluation" derived from Scripture, then treat historical/astronomical material as secondary corroboration rather than primary authority. In practice, it blends scriptural argument by cross-reference and narrative "demonstration," historical argument (Josephus, Philo, later rabbinic sources, Roman writers, etc.), and practical/physical constraints (dateline/timezones, visibility, travel, prediction vs. observation).
 
-**Clarity and structure.** The broad structure is clear: it starts by framing the project as “test assumptions,” defines evaluative criteria, challenges alleged rabbinic/Sanhedrin authority, then moves through day → month → year → “how to observe” → Sabbath implications → chronology anchors (32 AD; Herod; passion week) → implications for obedience and appointed times. Many chapters end with summaries. The writing is often expansive and repetitious. Some chapters mix careful argument with long digressions, rhetorical flourishes, and multi-topic excursions. A careful reader can follow the main line, but the density and length can obscure which premises are essential vs. illustrative.
+**Clarity and structure.** The broad structure is clear: it starts by framing the project as "test assumptions," defines evaluative criteria, challenges alleged rabbinic/Sanhedrin authority, then moves through day → month → year → "how to observe" → Sabbath implications → chronology anchors (32 AD; Herod; passion week) → implications for obedience and appointed times. Many chapters end with summaries. The writing is often expansive and repetitious. Some chapters mix careful argument with long digressions, rhetorical flourishes, and multi-topic excursions. A careful reader can follow the main line, but the density and length can obscure which premises are essential vs. illustrative.
 
-**Use of evidence.** On Scripture, the book’s strongest trait is its insistence on explicit constraints and consistency across narratives (Genesis 1:14–18, “third day” statements, Exodus manna sequence, Joshua 5, Ezekiel 46, etc.). It uses translations (KJV/NKJV/ESV/LXX) and word studies. On extra-biblical evidence, it uses Josephus heavily for chronology, plus Philo, Tacitus, Dio Cassius, Pliny, and rabbinic sources. The book repeatedly invites the reader to verify claims with primary sources and (for astronomy) with tools like Stellarium/NASA eclipse catalogs. The citation style is “quote-and-argue”; the book sometimes moves quickly from a quotation to a fairly strong conclusion without walking through alternative readings at equal depth.
+**Use of evidence.** On Scripture, the book's strongest trait is its insistence on explicit constraints and consistency across narratives (Genesis 1:14–18, "third day" statements, Exodus manna sequence, Joshua 5, Ezekiel 46, etc.). It uses translations (KJV/NKJV/ESV/LXX) and word studies. On extra-biblical evidence, it uses Josephus heavily for chronology, plus Philo, Tacitus, Dio Cassius, Pliny, and rabbinic sources. The book repeatedly invites the reader to verify claims with primary sources and (for astronomy) with tools like Stellarium/NASA eclipse catalogs. The citation style is "quote-and-argue"; the book sometimes moves quickly from a quotation to a fairly strong conclusion without walking through alternative readings at equal depth.
 
-**Internal consistency.** The book’s system aims to be consistent: morning-start days; full-moon-based month start; year start tied to the first such month after the spring equinox; lunar Sabbath on fixed month dates (8, 15, 22, 29). The strongest consistency move is the dateline/timezone argument. Where consistency strains is in the tendency to present some conclusions as “nearly incontrovertible” while conceding that certain observables/thresholds are conventional and that historical records are fragmentary. The book’s stated standard (“avoid adding assumptions”) is not always easy to apply evenly in practice.
+**Internal consistency.** The book's system aims to be consistent: morning-start days; full-moon-based month start; year start tied to the first such month after the spring equinox; lunar Sabbath on fixed month dates (8, 15, 22, 29). The strongest consistency move is the dateline/timezone argument. Where consistency strains is in the tendency to present some conclusions as "nearly incontrovertible" while conceding that certain observables/thresholds are conventional and that historical records are fragmentary. The book's stated standard ("avoid adding assumptions") is not always easy to apply evenly in practice.
 
 **Accessibility.** This book is for readers who enjoy technical, cross-disciplinary Bible study. It presumes comfort moving between Torah, prophets, gospels, and Second Temple/Greco-Roman sources. The writing is energetic and often explanatory, but it is not introductory.
 
-**Notable strengths.** The method-first orientation (explicit “principles of evaluation,” repeated warnings about circularity and motivated reasoning) gives it a coherent evaluative frame. It surfaces the global “where does the day begin” problem early. It is system-building rather than purely critical. The supplemental material shows a real effort to stress-test chronology, and the writing often tells the reader exactly what would need independent verification.
+**Notable strengths.** The method-first orientation (explicit "principles of evaluation," repeated warnings about circularity and motivated reasoning) gives it a coherent evaluative frame. It surfaces the global "where does the day begin" problem early. It is system-building rather than purely critical. The supplemental material shows a real effort to stress-test chronology, and the writing often tells the reader exactly what would need independent verification.
 
-**Limitations or concerns.** A cautious reader will want to independently verify many specific claims (eclipse visibility, manuscript-variant arguments, numerical/gematria claims, etc.). The book’s rhetoric can blur the line between critiquing tradition and dismissing alternative readings too quickly. There is scope creep: chapters sometimes absorb large side projects that may distract from the core calendar claims.
+**Limitations or concerns.** A cautious reader will want to independently verify many specific claims (eclipse visibility, manuscript-variant arguments, numerical/gematria claims, etc.). The book's rhetoric can blur the line between critiquing tradition and dismissing alternative readings too quickly. There is scope creep: chapters sometimes absorb large side projects that may distract from the core calendar claims.
 
-**Summary judgment.** On its own terms, “Time Tested Tradition” is an ambitious, internally organized attempt to rebuild a biblical calendar framework. Its strongest contribution is the way it forces the reader to confront hidden premises (especially global synchronization and “accessibility to all”) and to demand consistency across narratives and sources. Its main weakness is that the presentation sometimes overstates certainty and mixes rigorous argument with speculative or highly interpretive material. Readers deciding whether to invest time should expect a challenging, detailed, and decidedly non-mainstream thesis—worth engaging seriously if you are willing to verify sources and follow long chains of reasoning.
+**Summary judgment.** On its own terms, "Time Tested Tradition" is an ambitious, internally organized attempt to rebuild a biblical calendar framework. Its strongest contribution is the way it forces the reader to confront hidden premises (especially global synchronization and "accessibility to all") and to demand consistency across narratives and sources. Its main weakness is that the presentation sometimes overstates certainty and mixes rigorous argument with speculative or highly interpretive material. Readers deciding whether to invest time should expect a challenging, detailed, and decidedly non-mainstream thesis—worth engaging seriously if you are willing to verify sources and follow long chains of reasoning.
 
 **Reviewer: GPT-5.2. Prompt: Standardized independent virtual review (see AI_VIRTUAL_REVIEW_PROMPT.txt).**
 

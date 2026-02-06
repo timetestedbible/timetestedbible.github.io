@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Time Tested - Biblical Lunar Calendar</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore the biblical lunar calendar with Full Moon, Dark Moon, and Crescent Moon options. Track Sabbaths, feast days, priestly courses, and historical biblical events with precise astronomical calculations.">
+  <meta name="keywords" content="lunar sabbath, biblical calendar, hebrew calendar, feast days, sabbath calendar, moon phases, priestly divisions, biblical timeline, Bible reader, appointed times, torah portions">
+  <meta name="author" content="LunarSabbath.net">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lunarsabbath.net/time-tested/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lunarsabbath.net/time-tested/">
+  <meta property="og:title" content="Time Tested - Biblical Lunar Calendar">
+  <meta property="og:description" content="Explore the biblical lunar calendar with Full Moon, Dark Moon, and Crescent Moon options. Track Sabbaths, feast days, priestly courses, and historical biblical events.">
+  <meta property="og:image" content="https://lunarsabbath.net/icons/icon-512.png">
+  <meta property="og:site_name" content="LunarSabbath.net">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://lunarsabbath.net/time-tested/">
+  <meta name="twitter:title" content="Time Tested - Biblical Lunar Calendar">
+  <meta name="twitter:description" content="Explore the biblical lunar calendar with Full Moon, Dark Moon, and Crescent Moon options. Track Sabbaths, feast days, and historical biblical events.">
+  <meta name="twitter:image" content="https://lunarsabbath.net/icons/icon-512.png">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Time Tested - Biblical Lunar Calendar",
+    "description": "A biblical lunar calendar application for tracking Sabbaths, feast days, priestly courses, and historical events based on moon phases. Compare multiple calendar theories against Scripture with precise astronomical calculations.",
+    "url": "https://lunarsabbath.net/",
+    "applicationCategory": "ReferenceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "softwareVersion": "2.0",
+    "author": {
+      "@type": "Organization",
+      "name": "LunarSabbath.net",
+      "url": "https://lunarsabbath.net"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Lunar Calendar, Biblical Timeline, Sabbath Tester, Bible Reader with Strong's Concordance, Priestly Courses, Torah Portions, Date Calculator, World Clock",
+    "screenshot": "https://lunarsabbath.net/icons/icon-512.png"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "A Time Tested Tradition",
+    "description": "An exploration of biblical calendar methodology using first-principles physics, astronomical calculations, and Scripture to determine when the day, month, year, and Sabbath begin.",
+    "url": "https://lunarsabbath.net/reader/timetested/01_Introduction",
+    "author": {
+      "@type": "Person",
+      "name": "Daniel Larimer"
+    },
+    "inLanguage": "en",
+    "genre": "Religion",
+    "about": [
+      {"@type": "Thing", "name": "Biblical calendar"},
+      {"@type": "Thing", "name": "Lunar Sabbath"},
+      {"@type": "Thing", "name": "Biblical chronology"}
+    ],
+    "isAccessibleForFree": true
+  }]
+  </script>
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#1a3a5c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Time Tested">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles.css?v=146">
+  <link rel="stylesheet" href="/components/world-map.css?v=1">
+  <link rel="stylesheet" href="/components/dateline-map.css?v=5">
+  <link rel="stylesheet" href="/assets/css/bible-styles.css?v=125">
+  <link rel="stylesheet" href="/assets/css/tutorial.css?v=1">
+  <link rel="stylesheet" href="/assets/css/settings.css?v=1">
+  <link rel="stylesheet" href="/assets/css/symbols.css?v=1">
+  <link rel="stylesheet" href="/assets/css/reader.css?v=1">
+  <link rel="stylesheet" href="/assets/css/components.css?v=1">
+  <link rel="stylesheet" href="/assets/css/sabbath-tester.css?v=3">
+  
+  <!-- CRITICAL MOBILE FIX: Inline to bypass cache issues and body class dependencies -->
+  <style>
+    @media (max-width: 768px) {
+      /* GENERIC FIX: Enforce layout height for all views on mobile */
+      /* This ensures the container fits exactly under the 56px header */
+      
+      /* Main layout must fill remaining space, not exceed it */
+      .main-layout {
+        height: calc(100vh - 56px) !important;
+        height: calc(100dvh - 56px) !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+      }
+      
+      /* Content area fills main layout */
+      #content-area {
+        height: 100% !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+      }
+      /* Calendar, Tutorial views: allow scroll so content is not clipped */
+      body.view-calendar .main-layout,
+      body.view-calendar #content-area,
+      body.view-tutorial .main-layout,
+      body.view-tutorial #content-area {
+        overflow: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Reader landing page: body scrolls */
+      body.view-reader.reader-landing .main-layout,
+      body.view-reader.reader-landing #content-area {
+        overflow: visible !important;
+        height: auto !important;
+      }
+      body.view-reader.reader-landing {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      body.view-reader.reader-landing .app-container {
+        flex: none !important;
+        height: auto !important;
+      }
+      
+      /* Bible/Reader page fills content area */
+      #bible-explorer-page,
+      .bible-explorer-page {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: auto !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: #0f0f23 !important; /* Ensure background covers */
+      }
+      
+      /* Flex chain for inner content */
+      .bible-explorer-body {
+        flex: 1 1 0% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        position: relative !important;
+      }
+      
+      /* When closed, Strong's sidebar must not participate in flex (so content wrapper gets full height) */
+      .strongs-sidebar:not(.open) {
+        position: absolute !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+      
+      .bible-content-wrapper {
+        flex: 1 1 0% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+      }
+      
+      /* The text area itself scrolls */
+      .bible-content-wrapper .bible-explorer-text {
+        flex: 1 1 0% !important;
+        min-height: 0 !important;
+        height: auto !important; /* Let flex handle height */
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 20px !important; /* Add padding to ensure bottom text is readable */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- TOP NAVIGATION -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <header id="top-nav" class="top-nav">
+    <div class="top-nav-left">
+      <!-- Logo / Brand -->
+      <div class="brand" onclick="AppStore.dispatch({type:'SET_VIEW',view:'tutorial'})">
+        <span class="brand-icon">🌕</span>
+        <div class="brand-text">
+          <div class="brand-title">Lunar Sabbath</div>
+          <div class="brand-subtitle">a time tested tradition</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="top-nav-center">
+      <!-- PWA Navigation Buttons (hidden by default) -->
+      <div id="pwa-nav-buttons" class="pwa-nav-buttons" style="display: none;">
+        <button id="pwa-back-btn" class="pwa-nav-btn" title="Go back">◀</button>
+        <button id="pwa-forward-btn" class="pwa-nav-btn" title="Go forward">▶</button>
+      </div>
+    </div>
+    
+    <div class="top-nav-right">
+      <!-- Global Search -->
+      <div id="global-search-container" class="global-search">
+        <input type="text" id="global-search-input" 
+               placeholder="Search Bible..." 
+               autocomplete="off"
+               onkeydown="if(event.key==='Enter') GlobalSearch.search(this.value)"
+               onfocus="GlobalSearch.onFocus()"
+               onblur="GlobalSearch.onBlur(event)"
+               ondblclick="this.select()">
+        <button class="global-search-btn" onclick="GlobalSearch.toggle()" title="Search">🔍</button>
+        <button class="global-search-close" onclick="GlobalSearch.close()" title="Close search">✕</button>
+      </div>
+      
+      <!-- Navigation History Buttons - use browser history directly -->
+      <div class="nav-history-buttons">
+        <button id="nav-back-btn" class="nav-btn" onclick="history.back()" title="Go back">◀</button>
+        <button id="nav-forward-btn" class="nav-btn" onclick="history.forward()" title="Go forward">▶</button>
+      </div>
+      
+      <!-- Today Button (calendar icon = changes calendar focus time) -->
+      <button id="today-btn" class="today-btn" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},AppStore.getTodayEvent(),{type:'SET_VIEW',view:'calendar'}])">
+        <span class="today-icon">📅</span> Today
+      </button>
+      
+      <!-- Hamburger Menu Button (mobile only, iOS style - right side) -->
+      <button id="hamburger-btn" class="hamburger-btn" aria-label="Open menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- GLOBAL SEARCH RESULTS (collapsible region) -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div id="global-search-results" class="global-search-results">
+    <div class="search-results-content" id="search-results-content">
+      <!-- Results rendered here -->
+    </div>
+    <div class="search-results-handle" id="search-results-handle" title="Drag to resize">
+      <div class="handle-bar"></div>
+    </div>
+  </div>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- MAIN LAYOUT -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div id="app-container" class="app-container">
+    
+    <!-- Menu Overlay (mobile) -->
+    <div id="menu-overlay" class="menu-overlay"></div>
+    
+    <!-- ─────────────────────────────────────────────────────────────────── -->
+    <!-- 3-COLUMN LAYOUT -->
+    <!-- ─────────────────────────────────────────────────────────────────── -->
+    <div class="main-layout">
+      <!-- Left Panel (Feasts - inline on desktop, overlay on mobile) -->
+      <aside id="left-panel" class="side-panel left-panel collapsed">
+        <div class="panel-header">
+          <span class="panel-title">🎉 Feasts</span>
+          <div class="panel-header-actions">
+            <button class="panel-export-btn" onclick="CalendarExport.showExportModal()" title="Export Calendar">📤</button>
+            <button class="panel-close" data-panel="left">✕</button>
+          </div>
+        </div>
+        <div class="panel-content" id="left-panel-content">
+          <!-- Feast list rendered by CalendarView -->
+        </div>
+      </aside>
+      
+      <!-- Priestly Panel (independent slideout) -->
+      <aside id="priestly-panel" class="side-panel priestly-panel collapsed">
+        <div class="panel-header">
+          <span class="panel-title">👨‍🦳 Priestly Courses</span>
+          <button class="panel-close" data-panel="priestly">✕</button>
+        </div>
+        <div class="panel-content" id="priestly-panel-content">
+          <!-- Priestly cycle list rendered by CalendarView -->
+        </div>
+      </aside>
+      
+      <!-- Center Content Area (expands to fill) -->
+      <main id="content-area" class="content-area">
+        <!-- Content rendered by ContentManager -->
+        <div class="loading">Loading...</div>
+        <noscript>
+          <div style="padding: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            <h1>Time Tested - Biblical Lunar Calendar</h1>
+            <p>A comprehensive biblical calendar application that uses precise astronomical calculations to compute lunar Sabbaths, feast days, priestly courses, and historical biblical events. Compare multiple calendar theories against Scripture and astronomical data.</p>
+
+            <h2>Features</h2>
+            <ul>
+              <li><strong>Lunar Calendar</strong> — Full Moon, Dark Moon, and Crescent Moon month-start options with configurable day-start (morning or evening) and year-start rules</li>
+              <li><strong>Biblical Timeline</strong> — Interactive timeline spanning 4050 BC to 3500 AD with over 500 historical and prophetic events</li>
+              <li><strong>Sabbath Tester</strong> — Tests calendar configurations against 7 biblical events where specific weekdays are mentioned in Scripture</li>
+              <li><strong>Bible Reader</strong> — KJV, ASV, and Septuagint translations with Strong's Hebrew/Greek dictionaries and interlinear display</li>
+              <li><strong>Priestly Courses</strong> — 24 Mishmarot divisions calculated from Temple dedication and destruction anchors</li>
+              <li><strong>Torah Portions</strong> — Weekly Torah readings for both Lunar Sabbath and Saturday Sabbath observance</li>
+              <li><strong>Date Calculator</strong> — Add/subtract years, months, weeks, and days in both lunar and Gregorian modes</li>
+              <li><strong>World Clock</strong> — Compare the same moment across different calendar profiles and locations</li>
+            </ul>
+
+            <h2>Book: A Time Tested Tradition</h2>
+            <p>This app is the interactive companion to the book exploring biblical calendar methodology. Chapters include:</p>
+            <ul>
+              <li>When Does the Day Start? — Evidence for morning vs evening</li>
+              <li>When Does the Month Start? — Full moon, dark moon, or crescent?</li>
+              <li>When is the Sabbath? — The case for Lunar Sabbath from Scripture, history, and physics</li>
+              <li>32 AD Resurrection — Multiple independent proofs for the crucifixion year</li>
+              <li>Passion Week — 3 Days and 3 Nights reconciled</li>
+              <li>Appointed Times — Feast days and their prophetic significance</li>
+            </ul>
+
+            <h2>Calendar Profiles</h2>
+            <p>Compare five preset calendar configurations or create your own:</p>
+            <ul>
+              <li><strong>Time-Tested</strong> — Full Moon, Morning start, Equinox year, Lunar Sabbath</li>
+              <li><strong>Ancient Traditional</strong> — Crescent Moon, Evening start, Saturday Sabbath</li>
+              <li><strong>119 Ministries</strong> — Dark Moon, Evening start, Saturday Sabbath</li>
+              <li><strong>Creator's Calendar</strong> — Full Moon, Morning start, Virgo year rule</li>
+              <li><strong>Traditional Lunar</strong> — Crescent Moon, Evening start, Lunar Sabbath</li>
+            </ul>
+
+            <p>This application requires JavaScript to run. Please enable JavaScript in your browser to use the interactive calendar, timeline, and Bible reader.</p>
+          </div>
+        </noscript>
+      </main>
+    </div>
+    
+    <!-- ─────────────────────────────────────────────────────────────────── -->
+    <!-- SIDEBAR MENU (Desktop: fixed right, Mobile: slide-in) -->
+    <!-- ─────────────────────────────────────────────────────────────────── -->
+    <aside id="sidebar-menu" class="sidebar-menu">
+      <div class="sidebar-header">
+        <button class="sidebar-close-btn" onclick="AppStore.dispatch({type:'CLOSE_MENU'})">✕</button>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <!-- Today button - visible only on mobile -->
+        <button class="menu-item menu-today-btn" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},AppStore.getTodayEvent(),{type:'SET_VIEW',view:'calendar'}])">
+          <span class="menu-icon">📅</span>
+          <span class="menu-label">Today</span>
+        </button>
+        
+        <div class="menu-divider menu-today-btn"></div>
+        
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{}}])">
+          <span class="menu-icon">📖</span>
+          <span class="menu-label">Reader</span>
+        </button>
+        
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'timeline'}])">
+          <img src="/assets/img/timeline_icon.png" alt="" class="menu-icon-img">
+          <span class="menu-label">Timeline</span>
+        </button>
+        
+        <div class="menu-book-promo">
+          <a href="#" class="menu-book-link" onclick="event.preventDefault(); AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}}])">
+            <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="menu-book-cover">
+          </a>
+          <a class="menu-book-download" href="/assets/img/Renewed Biblical Calendar - Feb5c.pdf" download onclick="trackBookDownload()">
+            <span class="icon">📥</span>
+            <span>Download PDF</span>
+          </a>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'sabbath-tester'}])">
+          <span class="menu-icon">🔬</span>
+          <span class="menu-label">Sabbath Tester</span>
+        </button>
+        
+        <div class="menu-divider"></div>
+        
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'settings'}])">
+          <span class="menu-icon">⚙️</span>
+          <span class="menu-label">Settings</span>
+        </button>
+        
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'tutorial'}])">
+          <span class="menu-icon">ℹ️</span>
+          <span class="menu-label">About</span>
+        </button>
+
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'help'}])">
+          <span class="menu-icon">❓</span>
+          <span class="menu-label">Help</span>
+        </button>
+
+        <div class="menu-divider"></div>
+        
+        <button class="menu-item" id="install-app-btn" style="display: none;" onclick="handleInstallClick()">
+          <span class="menu-icon">📲</span>
+          <span class="menu-label">Install App</span>
+        </button>
+        
+      </nav>
+      
+      </aside>
+  </div>
+  
+  <!-- iOS Install Instructions Modal -->
+  <div id="ios-install-overlay" class="ios-install-overlay" onclick="closeIOSInstallModal(event)">
+    <div class="ios-install-modal" onclick="event.stopPropagation()">
+      <button class="ios-install-close" onclick="closeIOSInstallModal()">✕</button>
+      <div class="ios-install-header">
+        <span class="ios-install-icon">📲</span>
+        <h3>Install Time Tested</h3>
+      </div>
+      <p class="ios-install-intro">Add this app to your home screen for quick access and an app-like experience.</p>
+      <div class="ios-install-steps">
+        <div class="ios-install-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <p>Tap the <strong>Share</strong> button <span class="ios-share-icon">⬆️</span> in Safari's toolbar</p>
+          </div>
+        </div>
+        <div class="ios-install-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <p>Scroll down and tap <strong>"Add to Home Screen"</strong></p>
+          </div>
+        </div>
+        <div class="ios-install-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <p>Tap <strong>"Add"</strong> in the top right corner</p>
+          </div>
+        </div>
+      </div>
+      <button class="ios-install-done-btn" onclick="closeIOSInstallModal()">Got it!</button>
+    </div>
+  </div>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- MODALS / OVERLAYS -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Profile Picker Popup -->
+  <div id="profile-picker" class="profile-picker" style="display: none;">
+    <div class="profile-picker-header">
+      <h3>Select Profile</h3>
+      <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'settings'}); AppStore.dispatch({type:'CLOSE_PROFILE_PICKER'});">⚙️</button>
+    </div>
+    <div id="profile-picker-list" class="profile-picker-list">
+      <!-- Populated by JavaScript -->
+    </div>
+  </div>
+  
+  <!-- Strongs Panel (slide-in from right) -->
+  <div id="strongs-panel" class="strongs-panel" style="display: none;">
+    <div class="strongs-header">
+      <button class="strongs-back" onclick="StrongsPanel.back()">◀</button>
+      <h3 id="strongs-title">Strong's</h3>
+      <button class="strongs-close" onclick="AppStore.dispatch({type:'CLOSE_STRONGS'})">✕</button>
+    </div>
+    <div id="strongs-content" class="strongs-content">
+      <!-- Populated by JavaScript -->
+    </div>
+  </div>
+  
+  <!-- Bible tooltips & popups: fixed overlay so they always paint on top -->
+  <div id="bible-tooltip-portal" class="bible-tooltip-portal" aria-hidden="true"></div>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SCRIPTS -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tz-lookup@6.1.25/tz.min.js"></script>
+  <script src="/lib/marked.min.js"></script>
+  
+  <!-- Timezone lookup utility -->
+  <script src="/timezone-utils.js?v=1"></script>
+  
+  <!-- Astronomy Engine Abstraction (loads Swiss Ephemeris, NASA Eclipse data) -->
+  <script src="/astronomy-engine-abstraction.js?v=2"></script>
+  <script src="/astronomy-utils.js?v=14"></script>
+  <script src="/lunar-calendar-engine.js?v=4"></script>
+  <script src="/jubilee-cycle.js?v=1"></script>
+  <script src="/feasts.js?v=1"></script>
+  <script src="/bible-events-loader.js?v=5"></script>
+  <script src="/torah-portions.js?v=1"></script>
+  <script src="/priestly-divisions.js?v=4"></script>
+  
+  <!-- Year utilities (BC/AD conversion) -->
+  <script src="/year-utils.js?v=2"></script>
+  
+  <!-- Core (cache-bust with version) -->
+  <script src="/app-store.js?v=46"></script>
+  <script src="/url-router.js?v=25"></script>
+  <script src="/layout.js?v=2"></script>
+  <script src="/content-manager.js?v=2"></script>
+  
+  <!-- Components -->
+  <script src="/components/world-map.js?v=1"></script>
+  <script src="/components/dateline-map.js?v=21"></script>
+  
+  <!-- Calendar Export -->
+  <script src="/calendar-export.js?v=1"></script>
+  
+  <!-- Global Search -->
+  <script src="/global-search.js?v=22"></script>
+  
+  <!-- Views -->
+  <script src="/views/calendar-view.js?v=87"></script>
+  
+  <!-- Bible Reader and Strong's Dictionaries -->
+  <script src="/strongs-hebrew-dictionary.js"></script>
+  <script src="/strongs-greek-dictionary.js"></script>
+  <script src="/symbol-dictionary.js?v=1"></script>
+  <script src="/word-study-dictionary.js?v=1"></script>
+  <script src="/book-scripture-index.js?v=1"></script>
+  <script src="/cross-references.js?v=1"></script>
+  <script src="/verse-event-links.js?v=1"></script>
+  <script src="/bible-reader.js?v=26"></script>
+  <script src="/views/bible-view.js?v=13"></script>
+  <script src="/views/symbols-view.js?v=1"></script>
+  <script src="/timetested-chapters.js?v=1"></script>
+  <script src="/views/reader-view.js?v=4"></script>
+  
+  <!-- Timeline and Historical Events -->
+  <script src="/event-resolver.js?v=55"></script>
+  <script src="/resolved-events-cache.js?v=2"></script>
+  <script src="/biblical-timeline.js?v=35"></script>
+  <script src="/views/timeline-view.js?v=7"></script>
+  
+  <!-- Day Detail and World Clock -->
+  <script src="/day-detail.js?v=6"></script>
+  <script src="/world-clock.js?v=3"></script>
+  <script src="/views/book-view.js?v=2"></script>
+  <script src="/views/tutorial-view.js?v=8"></script>
+  <script src="/views/help-view.js?v=1"></script>
+  <script src="/views/priestly-view.js?v=2"></script>
+  <script src="/views/sabbath-tester-view.js?v=4"></script>
+  <script src="/views/settings-view.js?v=6"></script>
+  
+  <!-- Initialize App -->
+  <script>
+    // FEASTS is now loaded from /feasts.js
+    
+    // Global state object - syncs with AppStore for compatibility with ported modules
+    window.state = {
+      lat: 31.7683,
+      lon: 35.2137,
+      year: new Date().getFullYear(),
+      moonPhase: 'full',
+      dayStartTime: 'morning',
+      dayStartAngle: 12,
+      yearStartRule: 'equinox',
+      crescentThreshold: 18,
+      sabbathMode: 'lunar',
+      selectedProfile: 'timeTested',
+      lunarMonths: [],
+      currentMonthIndex: 0,
+      highlightedLunarDay: 1
+    };
+    
+    // Sync global state from AppStore (for ported modules)
+    function syncGlobalState() {
+      if (typeof AppStore === 'undefined') return;
+      const s = AppStore.getState();
+      const d = AppStore.getDerived();
+      const profile = window.PROFILES?.[s.context.profileId] || {};
+      
+      window.state.lat = s.context.location.lat;
+      window.state.lon = s.context.location.lon;
+      window.state.year = d.year;
+      window.state.moonPhase = profile.moonPhase || 'full';
+      window.state.dayStartTime = profile.dayStartTime || 'morning';
+      window.state.dayStartAngle = profile.dayStartAngle || 12;
+      window.state.yearStartRule = profile.yearStartRule || 'equinox';
+      window.state.crescentThreshold = profile.crescentThreshold || 18;
+      window.state.sabbathMode = profile.sabbathMode || 'lunar';
+      window.state.selectedProfile = s.context.profileId;
+      window.state.lunarMonths = d.lunarMonths || [];
+      window.state.currentMonthIndex = d.currentMonthIndex || 0;
+      window.state.highlightedLunarDay = d.currentLunarDay || 1;
+    }
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+      console.log('[App] Starting initialization...');
+      
+      // Profile definitions (needed for AppStore)
+      const defaultProfiles = {
+        timeTested: {
+          name: 'Time-Tested',
+          icon: '🌕',
+          moonPhase: 'full',
+          dayStartTime: 'morning',
+          dayStartAngle: 12,
+          yearStartRule: 'equinox',
+          crescentThreshold: 18,
+          sabbathMode: 'lunar'
+        },
+        ancientTraditional: {
+          name: 'Ancient Traditional',
+          icon: '🌒',
+          moonPhase: 'crescent',
+          dayStartTime: 'evening',
+          dayStartAngle: 0,
+          yearStartRule: '13daysBefore',
+          crescentThreshold: 18,
+          sabbathMode: 'saturday'
+        },
+        ministries119: {
+          name: '119 Ministries',
+          icon: '🌑',
+          moonPhase: 'dark',
+          dayStartTime: 'evening',
+          dayStartAngle: 0,
+          yearStartRule: 'equinox',
+          crescentThreshold: 18,
+          sabbathMode: 'saturday'
+        },
+        creatorsCalendar: {
+          name: "Creator's Calendar",
+          icon: '🌕',
+          moonPhase: 'full',
+          dayStartTime: 'morning',
+          dayStartAngle: 0,
+          yearStartRule: 'virgoFeet',
+          crescentThreshold: 18,
+          sabbathMode: 'lunar'
+        },
+        traditionalLunar: {
+          name: 'Traditional Lunar',
+          icon: '🌒',
+          moonPhase: 'crescent',
+          dayStartTime: 'evening',
+          dayStartAngle: 0,
+          yearStartRule: 'equinox',
+          crescentThreshold: 18,
+          sabbathMode: 'lunar'
+        }
+      };
+      
+      window.PROFILES = defaultProfiles;
+      
+      // Initialize URL router first (synchronous, fast)
+      URLRouter.init();
+      
+      // Start astronomy engine loading in background (don't block UI)
+      const astroEnginePromise = (async () => {
+        if (typeof initializeAstroEngine === 'function') {
+          console.log('[App] Loading astronomy engine in background...');
+          await initializeAstroEngine();
+          console.log('[App] Astronomy engine ready:', getAstroEngine().name);
+          return getAstroEngine();
+        }
+        return null;
+      })();
+      
+      // Get the astronomy engine (may be null if still loading)
+      const astroEngine = typeof getAstroEngine === 'function' ? getAstroEngine() : null;
+      
+      // Initialize AppStore with profiles (will use fallback if engine not ready)
+      // Must be before Layout.init() since Layout subscribes to AppStore
+      AppStore.init({
+        profiles: defaultProfiles,
+        astroEngine: astroEngine
+      });
+      
+      // Initialize layout (subscribes to AppStore for menu state)
+      Layout.init();
+      
+      // Initialize content manager (subscribes to AppStore for view changes)
+      ContentManager.init();
+      
+      // Load supplementary data in parallel (don't block initial render)
+      // Note: loadBibleEvents is called AFTER timeline pre-resolution (needs resolved events)
+      const dataPromises = [];
+      if (typeof loadTorahPortions === 'function') {
+        dataPromises.push(loadTorahPortions());
+      }
+      if (typeof loadPriestlyDivisions === 'function') {
+        dataPromises.push(loadPriestlyDivisions());
+      }
+      
+      // Wait for all data to load, then refresh calendar with complete data
+      Promise.all([astroEnginePromise, ...dataPromises]).then(() => {
+        console.log('[App] All data loaded, refreshing calendar...');
+        // Update AppStore with the now-ready astronomy engine
+        const readyEngine = typeof getAstroEngine === 'function' ? getAstroEngine() : null;
+        if (readyEngine) {
+          AppStore.dispatch({ type: 'SET_ASTRO_ENGINE', payload: readyEngine });
+        }
+        AppStore.dispatch({ type: 'REFRESH' });
+        
+        // Load resolved events + bible events.
+        // If cached (normal case): runs instantly, no delay.
+        // If not cached (first visit): defers to idle callback to avoid blocking UI.
+        const loadEventsAndPopulate = async () => {
+          if (typeof ResolvedEventsCache === 'undefined') return;
+          const appState = AppStore.getState();
+          const profileId = appState.context?.profileId || 'timeTested';
+          const profileObj = window.PROFILES?.[profileId] || {};
+          const profile = {
+            moonPhase: profileObj.moonPhase || 'full',
+            dayStartTime: profileObj.dayStartTime || 'morning',
+            dayStartAngle: profileObj.dayStartAngle ?? 12,
+            yearStartRule: profileObj.yearStartRule || 'equinox',
+            crescentThreshold: profileObj.crescentThreshold ?? 18,
+            lat: appState.context?.location?.lat || 31.7683,
+            lon: appState.context?.location?.lon || 35.2137,
+            amEpoch: -4000
+          };
+          
+          await ResolvedEventsCache.preload(profile);
+          
+          if (typeof loadBibleEvents === 'function') {
+            await loadBibleEvents();
+            AppStore.dispatch({ type: 'REPOPULATE_DAY_DATA' });
+          }
+        };
+        
+        // Try synchronous cache check — if cached, load immediately
+        if (typeof ResolvedEventsCache !== 'undefined') {
+          const appState = AppStore.getState();
+          const profileId = appState.context?.profileId || 'timeTested';
+          const profileObj = window.PROFILES?.[profileId] || {};
+          const profile = {
+            moonPhase: profileObj.moonPhase || 'full',
+            dayStartTime: profileObj.dayStartTime || 'morning',
+            dayStartAngle: profileObj.dayStartAngle ?? 12,
+            yearStartRule: profileObj.yearStartRule || 'equinox',
+            crescentThreshold: profileObj.crescentThreshold ?? 18,
+            lat: appState.context?.location?.lat || 31.7683,
+            lon: appState.context?.location?.lon || 35.2137,
+            amEpoch: -4000
+          };
+          
+          if (ResolvedEventsCache.isCached(profile)) {
+            // Cached — load immediately (no delay)
+            console.log('[App] Resolved events cached — loading bible events immediately');
+            loadEventsAndPopulate();
+          } else {
+            // Not cached — defer to avoid blocking initial render
+            console.log('[App] Resolved events not cached — deferring to idle callback');
+            const schedulePreResolution = window.requestIdleCallback 
+              ? (cb) => window.requestIdleCallback(cb, { timeout: 5000 })
+              : (cb) => setTimeout(cb, 2000);
+            schedulePreResolution(loadEventsAndPopulate);
+          }
+        }
+      });
+      
+      // Set up panel toggle handlers
+      document.querySelectorAll('.panel-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const panelId = btn.dataset.panel;
+          if (panelId === 'left') {
+            AppStore.dispatch({ type: 'CLOSE_FEASTS_PANEL' });
+          } else if (panelId === 'priestly') {
+            AppStore.dispatch({ type: 'CLOSE_PRIESTLY_PANEL' });
+          }
+        });
+      });
+      
+      // Subscribe to panel state changes (sync DOM with state)
+      AppStore.subscribe((state) => {
+        if (typeof CalendarView !== 'undefined' && CalendarView.syncPanelState) {
+          CalendarView.syncPanelState(state);
+        }
+      });
+      
+      // Register views
+      if (typeof CalendarView !== 'undefined') ContentManager.registerView('calendar', CalendarView);
+      if (typeof BibleView !== 'undefined') ContentManager.registerView('bible', BibleView);
+      if (typeof TimelineView !== 'undefined') ContentManager.registerView('timeline', TimelineView);
+      if (typeof BookView !== 'undefined') ContentManager.registerView('book', BookView);
+      if (typeof TutorialView !== 'undefined') ContentManager.registerView('tutorial', TutorialView);
+      if (typeof HelpView !== 'undefined') ContentManager.registerView('help', HelpView);
+      if (typeof PriestlyView !== 'undefined') ContentManager.registerView('priestly', PriestlyView);
+      if (typeof SabbathTesterView !== 'undefined') ContentManager.registerView('sabbath-tester', SabbathTesterView);
+      if (typeof SettingsView !== 'undefined') ContentManager.registerView('settings', SettingsView);
+      // EventsView removed — was unreachable (no menu entry)
+      
+      // GitHub Pages SPA redirect: if 404.html stored a path, restore it
+      const spaRedirect = sessionStorage.getItem('spa-redirect');
+      if (spaRedirect) {
+        sessionStorage.removeItem('spa-redirect');
+        history.replaceState({}, '', spaRedirect);
+      }
+      
+      // Load initial state from URL
+      AppStore.dispatch({ type: 'INIT_FROM_URL', url: window.location });
+      
+      // Add initial URL to navigation history
+      AppStore.dispatch({ type: 'NAV_PUSH', url: window.location.pathname + window.location.search });
+      
+      // Intercept in-app links so they never cause a full page reload (keeps RAM cache)
+      document.addEventListener('click', function interceptInAppLinks(e) {
+        const a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a || !a.href) return;
+        try {
+          const url = new URL(a.href);
+          if (url.origin !== window.location.origin) return;
+          if (a.hasAttribute('download') || a.target === '_blank') return;
+          const pathname = url.pathname;
+          if (/\.(pdf|json|css|js|png|jpg|jpeg|gif|ico|svg|txt|woff2?)(\?|$)/i.test(pathname)) return;
+          if (pathname === '/' || pathname.startsWith('/reader') || pathname.startsWith('/calendar') ||
+              pathname.startsWith('/bible') || pathname.startsWith('/timeline') ||
+              pathname.startsWith('/symbols') || pathname.startsWith('/book') || pathname.startsWith('/settings') ||
+              pathname.startsWith('/tutorial') || pathname.startsWith('/help') || pathname.startsWith('/feasts') ||
+              pathname.startsWith('/priestly') || pathname.startsWith('/sabbath-tester') ||
+              /^\/[^/]+\/[^/]+\/\d{4}-\d{2}-\d{2}\//.test(pathname)) {
+            e.preventDefault();
+            AppStore.dispatch({ type: 'URL_CHANGED', url: url });
+            if (window.history.pushState) window.history.pushState({}, '', url.pathname + url.search + (url.hash || ''));
+          }
+        } catch (err) { /* ignore */ }
+      }, true);
+      
+      // Sync global state for ported modules
+      syncGlobalState();
+      AppStore.subscribe(syncGlobalState);
+      
+      // Nav buttons now use browser history directly (history.back/forward)
+      // No need to track internal navigation state - browser handles it
+      
+      console.log('[App] Initialized successfully');
+      
+      // Register service worker for PWA
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('[PWA] Service worker registered:', registration.scope);
+          })
+          .catch((error) => {
+            console.warn('[PWA] Service worker registration failed:', error);
+          });
+      }
+      
+      // PWA Install handling
+      setupInstallPrompt();
+      
+      // Hide tooltips when scrolling (they use position: fixed so they don't move with content)
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        // Remove tooltips immediately on scroll
+        document.querySelectorAll('.symbol-tooltip, .word-hover-tooltip, .hebrew-tooltip, .book-ref-popup').forEach(el => el.remove());
+      }, { passive: true });
+    });
+    
+    // ═══════════════════════════════════════════════════════════════════
+    // PWA INSTALL FUNCTIONALITY
+    // ═══════════════════════════════════════════════════════════════════
+    
+    let deferredInstallPrompt = null;
+    
+    function setupInstallPrompt() {
+      const installBtn = document.getElementById('install-app-btn');
+      
+      // Check if already installed as PWA
+      if (window.matchMedia('(display-mode: standalone)').matches || 
+          window.navigator.standalone === true) {
+        // Already installed, hide install button
+        return;
+      }
+      
+      // Listen for beforeinstallprompt (Chrome, Edge, etc.)
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredInstallPrompt = e;
+        if (installBtn) installBtn.style.display = 'flex';
+      });
+      
+      // On iOS, show the button with instructions
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+      if (isIOS && isSafari && installBtn) {
+        installBtn.style.display = 'flex';
+      }
+    }
+    
+    function handleInstallClick() {
+      // Track install button click
+      trackInstallClick();
+      
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      
+      if (isIOS) {
+        // Show iOS install instructions modal
+        showIOSInstallModal();
+      } else if (deferredInstallPrompt) {
+        // Use the native install prompt
+        deferredInstallPrompt.prompt();
+        deferredInstallPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('[PWA] User accepted install prompt');
+            trackInstallAccepted();
+          }
+          deferredInstallPrompt = null;
+          const installBtn = document.getElementById('install-app-btn');
+          if (installBtn) installBtn.style.display = 'none';
+        });
+      }
+      
+      // Close sidebar menu
+      AppStore.dispatch({type: 'CLOSE_MENU'});
+    }
+    
+    function showIOSInstallModal() {
+      const overlay = document.getElementById('ios-install-overlay');
+      if (overlay) {
+        overlay.classList.add('visible');
+      }
+    }
+    
+    function closeIOSInstallModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      const overlay = document.getElementById('ios-install-overlay');
+      if (overlay) {
+        overlay.classList.remove('visible');
+      }
+    }
+    
+    // ═══════════════════════════════════════════════════════════════════
+    // GOATCOUNTER ANALYTICS TRACKING
+    // ═══════════════════════════════════════════════════════════════════
+    
+    // Track book PDF download with GoatCounter
+    function trackBookDownload() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/download/book-pdf',
+          title: 'Book PDF Download',
+          event: true
+        });
+      }
+    }
+    
+    // Track install app button click
+    function trackInstallClick() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/event/install-app-click',
+          title: 'Install App Button Click',
+          event: true
+        });
+      }
+    }
+    
+    // Track successful app install
+    function trackInstallAccepted() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/event/install-app-accepted',
+          title: 'Install App Accepted',
+          event: true
+        });
+      }
+    }
+  </script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D289E4L6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D289E4L6SV');
+  </script>
+  
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://lunarsabbath.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

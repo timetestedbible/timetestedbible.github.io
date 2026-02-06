@@ -1,0 +1,720 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   SABBATH TESTER VIEW STYLES
+   Organized into logical sections for maintainability
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   1. LAYOUT & CONTAINER
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.sabbath-tester-view {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d2840 100%);
+  min-height: 100vh;
+  padding: 0;
+}
+
+.sabbath-tester-header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d1f33 100%);
+  z-index: 10;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+  padding: 20px 24px;
+}
+
+.sabbath-tester-header h2 {
+  margin: 0;
+  font-size: 1.6em;
+  color: #7ec8e3;
+  font-weight: 600;
+}
+
+.sabbath-tester-content {
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2. INTRO SECTION
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.sabbath-tester-intro {
+  background: linear-gradient(135deg, rgba(25, 50, 75, 0.8) 0%, rgba(15, 35, 55, 0.9) 100%);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  border: 1px solid rgba(126, 200, 227, 0.15);
+}
+
+.sabbath-tester-intro p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin: 0 0 14px 0;
+  font-size: 0.95em;
+}
+
+.sabbath-tester-intro p:last-of-type {
+  margin-bottom: 0;
+}
+
+.sabbath-tester-intro strong {
+  color: #7ec8e3;
+}
+
+/* Legend */
+.sabbath-tester-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(126, 200, 227, 0.15);
+  margin-top: 18px;
+}
+
+.sabbath-tester-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sabbath-tester-legend span {
+  font-size: 1.3em;
+}
+
+.sabbath-tester-legend strong {
+  color: #d4a574;
+}
+
+/* Loading State */
+.sabbath-test-loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   3. SCOREBOARD
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.sabbath-scoreboard {
+  background: linear-gradient(135deg, rgba(25, 50, 75, 0.8) 0%, rgba(15, 35, 55, 0.9) 100%);
+  border: 1px solid rgba(126, 200, 227, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 36px;
+}
+
+.sabbath-scoreboard-title {
+  font-size: 1.5em;
+  color: #7ec8e3;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.sabbath-scoreboard-intro {
+  margin-bottom: 24px;
+}
+
+.sabbath-scoreboard-intro p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 0 0 14px 0;
+  font-size: 0.95em;
+}
+
+/* Conclusion Box */
+.scoreboard-conclusion {
+  background: rgba(126, 200, 227, 0.08);
+  border-left: 4px solid #7ec8e3;
+  padding: 18px 20px;
+  margin-top: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.scoreboard-conclusion p {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.scoreboard-conclusion p:last-child {
+  margin-bottom: 0;
+}
+
+/* Scoreboard Table */
+.sabbath-scoreboard-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+.sabbath-scoreboard-table thead {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.sabbath-scoreboard-table th {
+  padding: 14px 18px;
+  text-align: left;
+  color: #7ec8e3;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(126, 200, 227, 0.25);
+}
+
+.sabbath-scoreboard-table th:last-child {
+  text-align: right;
+  width: 100px;
+}
+
+.sabbath-scoreboard-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.95em;
+}
+
+.sabbath-scoreboard-table td:last-child {
+  text-align: right;
+}
+
+/* Expandable Rows */
+.scoreboard-expandable {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.scoreboard-expandable:hover {
+  background: rgba(126, 200, 227, 0.06);
+}
+
+.scoreboard-expandable.expanded {
+  background: rgba(126, 200, 227, 0.08);
+}
+
+.expand-arrow {
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.2s;
+  color: #7ec8e3;
+  font-size: 0.8em;
+}
+
+.scoreboard-expandable.expanded .expand-arrow {
+  transform: rotate(90deg);
+}
+
+/* Score Details Row */
+.scoreboard-details {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.scoreboard-details td {
+  padding: 18px 18px 18px 44px;
+}
+
+/* Score Breakdown */
+.score-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breakdown-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+.breakdown-label {
+  font-weight: 600;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   4. SCORE CLASSES
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.score-perfect {
+  color: #4caf50;
+  font-weight: 700;
+}
+
+.score-good {
+  color: #8bc34a;
+  font-weight: 600;
+}
+
+.score-medium {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.score-poor {
+  color: #f44336;
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   5. TEST CARDS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.sabbath-test-card {
+  background: linear-gradient(135deg, rgba(25, 50, 75, 0.8) 0%, rgba(15, 35, 55, 0.9) 100%);
+  border: 1px solid rgba(126, 200, 227, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.sabbath-test-title {
+  font-size: 1.35em;
+  color: #7ec8e3;
+  margin-bottom: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sabbath-test-date {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.sabbath-test-scripture {
+  color: #d4a574;
+  font-style: italic;
+  margin-bottom: 14px;
+  font-size: 0.95em;
+}
+
+.sabbath-test-description {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 0.95em;
+}
+
+/* Expected Result Box */
+.sabbath-test-expected {
+  background: rgba(126, 200, 227, 0.08);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  border-left: 4px solid #7ec8e3;
+  font-size: 0.95em;
+}
+
+.sabbath-test-expected strong {
+  color: #7ec8e3;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   6. EVIDENCE ACCORDION
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.test-evidence-accordion {
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.test-evidence-accordion summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  color: #7ec8e3;
+  font-weight: 600;
+  list-style: none;
+  transition: background 0.2s;
+  font-size: 0.95em;
+}
+
+.test-evidence-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.test-evidence-accordion summary::before {
+  content: '▶ ';
+  font-size: 0.75em;
+  margin-right: 8px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.test-evidence-accordion[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.test-evidence-accordion summary:hover {
+  background: rgba(126, 200, 227, 0.08);
+}
+
+.test-evidence-content {
+  padding: 18px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 0.92em;
+}
+
+.test-evidence-content p {
+  margin: 0 0 14px 0;
+}
+
+.test-evidence-content ul {
+  margin: 14px 0;
+  padding-left: 24px;
+}
+
+.test-evidence-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.test-evidence-content a {
+  color: #7ec8e3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.test-evidence-content a:hover {
+  color: #a8dcf0;
+  text-decoration: underline;
+}
+
+/* Interpretation Box */
+.test-interpretation {
+  background: rgba(212, 165, 116, 0.08);
+  border-left: 4px solid #d4a574;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  border-radius: 0 8px 8px 0;
+}
+
+.test-interpretation p {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  font-size: 0.92em;
+}
+
+.test-interpretation ul {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.test-interpretation li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 0.92em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   7. RESULTS TABLE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Table wrapper for horizontal scroll on small screens */
+.sabbath-test-card {
+  overflow-x: auto;
+}
+
+.sabbath-test-results-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 18px;
+  font-size: 0.9em;
+  min-width: 400px; /* Ensures table doesn't get too squished */
+}
+
+/* Weekday column - keep narrow */
+.weekday-cell {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.sabbath-test-results-table thead {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.sabbath-test-results-table th {
+  padding: 12px 14px;
+  text-align: left;
+  color: #7ec8e3;
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(126, 200, 227, 0.25);
+}
+
+.sabbath-test-results-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  vertical-align: middle;
+}
+
+.sabbath-test-results-table tbody tr {
+  transition: background 0.15s;
+}
+
+.sabbath-test-results-table tbody tr:hover {
+  background: rgba(126, 200, 227, 0.04);
+}
+
+/* Result Classes */
+.result-pass {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.result-uncertain {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.result-fail {
+  color: #f44336;
+  font-weight: 600;
+}
+
+/* Date Links */
+.sabbath-test-date-link {
+  color: #7ec8e3;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.sabbath-test-date-link:hover {
+  color: #a8dcf0;
+  text-decoration: underline;
+}
+
+/* Year Uncertainty Icon */
+.year-uncertainty-icon {
+  color: #ffc107;
+  font-size: 0.8em;
+  margin-left: 6px;
+  cursor: help;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   8. ALTERNATIVE SCORE DETAILS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.alt-score-details {
+  cursor: pointer;
+}
+
+.alt-score-details summary {
+  list-style: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.alt-score-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.alt-score-breakdown {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85em;
+  text-align: left;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   9. RESPONSIVE DATE COLUMNS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Default: show full date, hide compact date */
+.date-cell-full {
+  display: table-cell;
+}
+
+.date-cell-compact {
+  display: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   10. MOBILE RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .sabbath-tester-content {
+    padding: 16px;
+  }
+  
+  .sabbath-tester-header {
+    padding: 16px;
+  }
+  
+  .sabbath-tester-header h2 {
+    font-size: 1.3em;
+  }
+  
+  .sabbath-tester-intro,
+  .sabbath-scoreboard,
+  .sabbath-test-card {
+    padding: 18px;
+    border-radius: 10px;
+  }
+  
+  .sabbath-tester-legend {
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  /* Scoreboard table - keep as table, reduce padding */
+  .sabbath-scoreboard-table {
+    font-size: 0.9em;
+  }
+  
+  .sabbath-scoreboard-table th,
+  .sabbath-scoreboard-table td {
+    padding: 10px 12px;
+  }
+  
+  .scoreboard-details td {
+    padding: 14px 12px 14px 32px;
+  }
+  
+  /* Results table - keep as table with abbreviated data */
+  .sabbath-test-results-table {
+    font-size: 0.8em;
+  }
+  
+  .sabbath-test-results-table th,
+  .sabbath-test-results-table td {
+    padding: 8px 6px;
+  }
+  
+  /* Switch to compact date column on mobile */
+  .date-cell-full {
+    display: none;
+  }
+  
+  .date-cell-compact {
+    display: table-cell;
+  }
+  
+  /* Profile column - allow wrapping */
+  .profile-cell {
+    max-width: 120px;
+    word-break: break-word;
+    line-height: 1.3;
+  }
+  
+  .test-evidence-content {
+    padding: 14px 16px;
+  }
+  
+  .test-evidence-content ul {
+    padding-left: 20px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   11. EXTRA SMALL SCREENS (< 480px)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .sabbath-tester-content {
+    padding: 10px;
+  }
+  
+  .sabbath-tester-intro,
+  .sabbath-scoreboard,
+  .sabbath-test-card {
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .sabbath-scoreboard-title {
+    font-size: 1.2em;
+  }
+  
+  .sabbath-test-title {
+    font-size: 1.1em;
+  }
+  
+  .sabbath-scoreboard-table {
+    font-size: 0.8em;
+  }
+  
+  .sabbath-scoreboard-table th,
+  .sabbath-scoreboard-table td {
+    padding: 8px 6px;
+  }
+  
+  /* Results table - even more compact */
+  .sabbath-test-results-table {
+    font-size: 0.75em;
+  }
+  
+  .sabbath-test-results-table th,
+  .sabbath-test-results-table td {
+    padding: 6px 4px;
+  }
+  
+  .profile-cell {
+    max-width: 90px;
+  }
+  
+  .test-evidence-content,
+  .test-interpretation {
+    padding: 12px;
+    font-size: 0.88em;
+  }
+  
+  .test-evidence-content ul,
+  .test-interpretation ul {
+    padding-left: 16px;
+  }
+  
+  .scoreboard-conclusion {
+    padding: 12px 14px;
+  }
+  
+  .scoreboard-conclusion p {
+    font-size: 0.88em;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   12. DESKTOP SIDEBAR ADJUSTMENT
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media (min-width: 1200px) {
+  .sabbath-tester-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .sabbath-tester-header {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

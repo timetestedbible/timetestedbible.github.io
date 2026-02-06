@@ -1,0 +1,18 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "Snapshot tests for LunarCalendarEngine",
+  "main": "snapshot-verify.js",
+  "scripts": {
+    "test": "node snapshot-verify.js",
+    "snapshot:generate": "node snapshot-generate.js",
+    "snapshot:update": "node snapshot-generate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "astronomy-engine": "^2.1.19"
+  }
+}
