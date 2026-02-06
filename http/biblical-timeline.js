@@ -1656,11 +1656,13 @@ function injectTimelineStyles() {
       position: absolute;
       top: 0;
       bottom: 0;
-      right: -600px;
+      right: 0;
       width: 500px;
       background: #1a1a2e;
       border-left: 1px solid rgba(126, 200, 227, 0.2);
-      transition: right 0.3s ease;
+      transition: transform 0.3s ease, visibility 0.3s;
+      transform: translateX(100%);
+      visibility: hidden;
       display: flex;
       flex-direction: row;
       overflow: hidden;
@@ -1668,7 +1670,8 @@ function injectTimelineStyles() {
       color: #e0e0e0;
     }
     .detail-slideout.open {
-      right: 0;
+      transform: translateX(0);
+      visibility: visible;
     }
     
     .detail-resize-handle {
