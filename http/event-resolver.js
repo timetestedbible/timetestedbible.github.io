@@ -854,7 +854,13 @@ function resolveDateSpec(dateSpec, profile, epochs, context) {
     }
     
     if (year !== null) {
-      return lunarToJulianDay(dateSpec.lunar, year, profile);
+      if (dateSpec.lunar.month != null) {
+        // Has at least month precision — use full lunar calendar
+        return lunarToJulianDay(dateSpec.lunar, year, profile);
+      } else {
+        // Year-only — cheap Gregorian approximation (skip lunar engine)
+        return gregorianToJulianDay(year, 1, 1);
+      }
     }
     // Can't resolve without year context
     return null;
@@ -995,23 +1001,38 @@ function resolveDateSpec(dateSpec, profile, epochs, context) {
         const yearsOffset = direction === 'before' ? -offset.years : offset.years;
         const targetYear = refYear + yearsOffset;
         
-        // If lunar month/day specified in dateSpec, use those
-        // Otherwise, use the same month/day as the reference event
-        const targetMonth = dateSpec.lunar?.month ?? refMonth ?? 1;
-        const targetDay = dateSpec.lunar?.day ?? refDay ?? 1;
+        // Does THIS event specify its own month/day?
+        const hasExplicitMonthDay = dateSpec.lunar?.month != null;
         
-        let resultJD = lunarToJulianDay({ month: targetMonth, day: targetDay }, targetYear, profile);
-        
-        // Apply any sub-year offsets (months, weeks, days)
-        if (offset.months) resultJD += offset.months * SYNODIC_MONTH;
-        if (offset.weeks) resultJD += offset.weeks * 7;
-        if (offset.days) resultJD += offset.days;
-        
-        // Store calculated lunar date for subsequent chain events to use
-        // This is attached as a side-effect - caller will pick it up
-        context._lastCalculatedLunar = { year: targetYear, month: targetMonth, day: targetDay };
-        
-        return resultJD;
+        if (hasExplicitMonthDay) {
+          // Event stipulates its own month/day — full lunar computation (day precision)
+          const targetMonth = dateSpec.lunar.month;
+          const targetDay = dateSpec.lunar.day ?? 1;
+          
+          let resultJD = lunarToJulianDay({ month: targetMonth, day: targetDay }, targetYear, profile);
+          
+          // Apply any sub-year offsets (months, weeks, days)
+          if (offset.months) resultJD += offset.months * SYNODIC_MONTH;
+          if (offset.weeks) resultJD += offset.weeks * 7;
+          if (offset.days) resultJD += offset.days;
+          
+          // Store calculated lunar date for chain propagation
+          context._lastCalculatedLunar = { year: targetYear, month: targetMonth, day: targetDay };
+          return resultJD;
+        } else {
+          // Year-only precision — fast arithmetic, skip lunar engine entirely.
+          // We only know the year; no need to compute new moons / equinoxes.
+          let resultJD = refResolved.startJD + (yearsOffset * 365.2422);
+          
+          // Apply any sub-year offsets (months, weeks, days)
+          if (offset.months) resultJD += offset.months * SYNODIC_MONTH;
+          if (offset.weeks) resultJD += offset.weeks * 7;
+          if (offset.days) resultJD += offset.days;
+          
+          // Store year for chain propagation, but month/day are null (unknown)
+          context._lastCalculatedLunar = { year: targetYear, month: null, day: null };
+          return resultJD;
+        }
       }
     }
     
@@ -1121,6 +1142,25 @@ function resolveEvent(event, profile, epochs, context = null) {
   let startSpec = event.start || event.dates || null;
   let endSpec = event.end || null;
   
+  // Determine date precision from the event's own dateSpec.
+  // This records how precisely the SOURCE DATA specifies the date —
+  // not how precisely the resolver computed it.
+  let datePrecision = 'year'; // default: only year-level knowledge
+  if (startSpec) {
+    const _lu = startSpec.lunar;
+    const _fg = startSpec.fixed?.gregorian;
+    const _gr = startSpec.gregorian;
+    if (_lu?.month != null && _lu?.day != null) datePrecision = 'day';
+    else if (_lu?.month != null) datePrecision = 'month';
+    else if (startSpec.lunar_relative) datePrecision = 'day';
+    else if (startSpec.priestly_cycle) datePrecision = 'day';
+    else if (_fg?.month != null && _fg?.day != null) datePrecision = 'day';
+    else if (_fg?.month != null) datePrecision = 'month';
+    else if (_gr?.month != null && _gr?.day != null) datePrecision = 'day';
+    else if (_gr?.month != null) datePrecision = 'month';
+    else if (startSpec.anno_mundi?.month != null) datePrecision = 'month';
+  }
+  
   let startJD = startSpec ? resolveDateSpec(startSpec, profile, epochs, newContext) : null;
   
   // Capture calculated lunar date from year offset resolution (if any)
@@ -1180,11 +1220,21 @@ function resolveEvent(event, profile, epochs, context = null) {
     startJD,
     endJD,
     
+    // Date precision: 'day', 'month', or 'year' — how precisely the source data
+    // specifies this event's date. Consumers use this to avoid false precision
+    // (e.g., bible-events-loader skips year-only events for calendar anniversaries).
+    _datePrecision: datePrecision,
+    
     // Calculated lunar year/month/day (for chain propagation)
-    // These are used when subsequent events reference this one via year offset
+    // _lunarYear is always set (downstream events need it for year offsets).
+    // _lunarMonth/_lunarDay are null for year-only events to prevent false anniversaries.
     _lunarYear: calculatedLunar?.year ?? (event.start?.lunar?.year),
-    _lunarMonth: calculatedLunar?.month ?? (event.start?.lunar?.month),
-    _lunarDay: calculatedLunar?.day ?? (event.start?.lunar?.day),
+    _lunarMonth: datePrecision !== 'year'
+      ? (calculatedLunar?.month ?? (event.start?.lunar?.month))
+      : null,
+    _lunarDay: datePrecision !== 'year'
+      ? (calculatedLunar?.day ?? (event.start?.lunar?.day))
+      : null,
     
     // SOURCE DATA (stipulated - exactly as provided in JSON)
     source: {

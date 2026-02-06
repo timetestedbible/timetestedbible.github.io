@@ -20,7 +20,7 @@
 const ResolvedEventsCache = (() => {
   // ── Configuration ──────────────────────────────────────────────────────
   // Bump when event-resolver.js logic, data schema, or historical-events JSON changes.
-  const CACHE_VERSION = '11.0';
+  const CACHE_VERSION = '12.0';
   const STORAGE_PREFIX = 'rev_cache_v';
 
   // ── Internal State ─────────────────────────────────────────────────────
