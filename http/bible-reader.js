@@ -4028,13 +4028,27 @@ function closeBibleReader() {
   }
 }
 
-// Handle click on citation link
+// Handle click on citation link — navigate via SPA router
 function handleCitationClick(event) {
   event.preventDefault();
-  const citation = event.target.dataset.citation;
-  const title = event.target.dataset.title || '';
-  if (citation) {
-    openBibleReader(citation, title);
+  event.stopPropagation();
+  const el = event.target.closest('[data-citation]');
+  const citation = el?.dataset.citation;
+  if (!citation) return;
+  
+  // Parse citation to get book, chapter, verse
+  const match = citation.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
+  if (!match) return;
+  
+  const book = match[1];
+  const chapter = parseInt(match[2]);
+  const verse = match[3] ? parseInt(match[3]) : undefined;
+  const translation = (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+  
+  if (typeof AppStore !== 'undefined') {
+    const params = { contentType: 'bible', translation, book, chapter };
+    if (verse) params.verse = verse;
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params });
   }
 }
 
@@ -4643,9 +4657,20 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
     const crossRefHtml = hasCrossRefs
       ? `<span class="verse-cross-ref" onclick="showCrossRefPanel('${bookName}', ${chapter}, ${verse.verse}, event)" title="Cross References">🔗</span>`
       : `<span class="verse-cross-ref-spacer"></span>`;
+    const tlData = (typeof getVerseTimelineEvents === 'function') ? getVerseTimelineEvents(bookName, chapter, verse.verse) : null;
+    let timelineHtml;
+    if (tlData && tlData.events.length > 0) {
+      const ev = tlData.events[0];
+      const title = (ev.title || '').replace(/📅\s*/g, '');
+      const dateStr = (typeof _formatEventDate === 'function' && tlData.date) ? _formatEventDate(tlData.date) : '';
+      const tipText = dateStr ? `${title} — ${dateStr}` : title;
+      timelineHtml = `<span class="verse-timeline-ref" data-tip="${tipText.replace(/"/g, '&quot;')}" onclick="navigateToVerseEvent('${ev.id}', event)"><img src="/assets/img/timeline_icon.png" alt="Timeline" class="verse-timeline-icon"></span>`;
+    } else {
+      timelineHtml = `<span class="verse-timeline-ref-spacer"></span>`;
+    }
     const verseNumSpan = `<span class="bible-verse-number${hasOriginalLang ? ' clickable-hebrew' : ''}" onclick="${hasOriginalLang ? `showInterlinear('${bookName}', ${chapter}, ${verse.verse}, event)` : `copyVerseReference('${bookName}', ${chapter}, ${verse.verse})`}" title="${hasOriginalLang ? interlinearTitle : 'Click to copy reference'}">${verse.verse}</span>`;
     html += `<div class="bible-explorer-verse${origLangClass}" id="verse-${verse.verse}">
-      <div class="verse-meta">${bookRefHtml}${crossRefHtml}${verseNumSpan}</div>
+      <div class="verse-meta">${bookRefHtml}${crossRefHtml}${timelineHtml}${verseNumSpan}</div>
       <span class="bible-verse-text">${verseText}</span>
     </div>`;
   }

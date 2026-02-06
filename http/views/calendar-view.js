@@ -1067,12 +1067,12 @@ const CalendarView = {
       }
     }
     
-    // Make verse clickable if present
+    // Make verse clickable if present — use SPA dispatch
     let verseHtml = '';
     if (event.verse) {
       const bibleLink = this.parseCitationToLink(event.verse);
       if (bibleLink) {
-        verseHtml = `<a href="${bibleLink}" class="event-verse-link">${event.verse}</a>`;
+        verseHtml = `<a href="${bibleLink}" class="event-verse-link" data-citation="${event.verse}" onclick="handleCitationClick(event)">${event.verse}</a>`;
       } else {
         verseHtml = `<span class="event-verse">${event.verse}</span>`;
       }
@@ -3382,12 +3382,14 @@ const CalendarView = {
       return;
     }
     
+    const isCollapsed = localStorage.getItem('worldClockCollapsed') === '1';
     let compareHtml = `
-      <div class="profile-compare-header">
+      <div class="profile-compare-header" onclick="CalendarView.toggleWorldClock(event)">
+        <span class="profile-compare-arrow">${isCollapsed ? '▶' : '▼'}</span>
         <span class="profile-compare-title">📅 This Moment on Other Calendars</span>
-        <button class="world-clock-add-btn" onclick="showAddWorldClockModal()" title="Add Calendar">+</button>
+        <button class="world-clock-add-btn" onclick="event.stopPropagation(); showAddWorldClockModal()" title="Add Calendar">+</button>
       </div>
-      <div class="profile-compare-grid">`;
+      <div class="profile-compare-grid" style="${isCollapsed ? 'display:none' : ''}">`;
     
     let hasResults = false;
     const currentProfileId = context?.profileId || 'timeTested';
@@ -3484,6 +3486,17 @@ const CalendarView = {
       compareContainer.innerHTML = '';
     }
     
+  },
+
+  toggleWorldClock(e) {
+    e.stopPropagation();
+    const grid = document.querySelector('.profile-compare-grid');
+    const arrow = document.querySelector('.profile-compare-arrow');
+    if (!grid) return;
+    const isHidden = grid.style.display === 'none';
+    grid.style.display = isHidden ? '' : 'none';
+    if (arrow) arrow.textContent = isHidden ? '▼' : '▶';
+    localStorage.setItem('worldClockCollapsed', isHidden ? '0' : '1');
   },
 
   /**

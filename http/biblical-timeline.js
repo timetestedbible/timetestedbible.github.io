@@ -2303,7 +2303,7 @@ async function openDurationDetailInternal(durationId, addHistory = true) {
         duration.sources.map(src => {
           const srcIcon = src.type === 'scripture' ? '📖' : src.type === 'historical' ? '📜' : '📋';
           const refHtml = src.type === 'scripture' && src.ref
-            ? `<a href="#" class="scripture-link" onclick="if(typeof openBibleReader==='function'){openBibleReader('${src.ref.replace(/'/g, "\\'")}');} return false;">${src.ref}</a>`
+            ? `<a href="#" class="scripture-link" data-citation="${src.ref.replace(/"/g, '&quot;')}" onclick="if(typeof handleCitationClick==='function'){handleCitationClick(event);}else if(typeof openBibleReader==='function'){openBibleReader('${src.ref.replace(/'/g, "\\'")}');} return false;">${src.ref}</a>`
             : (src.ref || 'Unknown');
           return `
             <div class="detail-source-item">
@@ -2731,7 +2731,7 @@ async function openEventDetailInternal(eventId, addHistory = true) {
         ${event.sources.map(src => {
           const srcIcon = src.type === 'scripture' ? '📖' : src.type === 'historical' ? '📜' : '📋';
           const refHtml = src.type === 'scripture' && src.ref
-            ? `<a href="#" class="scripture-link" onclick="if(typeof openBibleReader==='function'){openBibleReader('${src.ref.replace(/'/g, "\\'")}');} return false;">${src.ref}</a>`
+            ? `<a href="#" class="scripture-link" data-citation="${src.ref.replace(/"/g, '&quot;')}" onclick="if(typeof handleCitationClick==='function'){handleCitationClick(event);}else if(typeof openBibleReader==='function'){openBibleReader('${src.ref.replace(/'/g, "\\'")}');} return false;">${src.ref}</a>`
             : (src.ref || 'Unknown');
           return `
             <div class="detail-source-item">

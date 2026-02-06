@@ -9169,6 +9169,8 @@ body.biblical-timeline-open .top-nav-inner {
 .bible-explorer-verse .verse-meta .verse-book-ref-spacer,
 .bible-explorer-verse .verse-meta .verse-cross-ref,
 .bible-explorer-verse .verse-meta .verse-cross-ref-spacer,
+.bible-explorer-verse .verse-meta .verse-timeline-ref,
+.bible-explorer-verse .verse-meta .verse-timeline-ref-spacer,
 .bible-explorer-verse .verse-meta .bible-verse-number {
   flex-shrink: 0;
 }
@@ -9203,8 +9205,13 @@ body.biblical-timeline-open .top-nav-inner {
   .bible-explorer-verse .verse-meta .verse-cross-ref-spacer {
     order: 3;
   }
+  .bible-explorer-verse .verse-meta .verse-timeline-ref,
+  .bible-explorer-verse .verse-meta .verse-timeline-ref-spacer {
+    order: 4;
+  }
   .bible-explorer-verse .verse-meta .verse-book-ref-spacer,
-  .bible-explorer-verse .verse-meta .verse-cross-ref-spacer {
+  .bible-explorer-verse .verse-meta .verse-cross-ref-spacer,
+  .bible-explorer-verse .verse-meta .verse-timeline-ref-spacer {
     display: none;
   }
   .bible-explorer-verse .bible-verse-text {
@@ -9329,6 +9336,8 @@ body.biblical-timeline-open .top-nav-inner {
 .bible-explorer-verse.interlinear-expanded > .verse-meta .verse-book-ref-spacer,
 .bible-explorer-verse.interlinear-expanded > .verse-meta .verse-cross-ref,
 .bible-explorer-verse.interlinear-expanded > .verse-meta .verse-cross-ref-spacer,
+.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-timeline-ref,
+.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-timeline-ref-spacer,
 .bible-explorer-verse.interlinear-expanded > .verse-meta .bible-verse-number {
   display: inline;
   margin-right: 4px;
@@ -9956,6 +9965,66 @@ body.biblical-timeline-open .top-nav-inner {
   display: inline-block;
   width: 24px;
   margin-right: 2px;
+}
+
+/* Timeline Event Icon with CSS Tooltip */
+.verse-timeline-ref {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.5;
+  vertical-align: baseline;
+  margin-right: 4px;
+  -webkit-tap-highlight-color: rgba(126, 200, 227, 0.3);
+}
+
+.verse-timeline-ref:hover,
+.verse-timeline-ref:active,
+.verse-timeline-ref.tip-visible {
+  opacity: 1;
+}
+
+.verse-timeline-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+/* CSS tooltip via data-tip attribute */
+.verse-timeline-ref[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  background: #1a1a2e;
+  color: #ddd;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 100;
+}
+
+/* Show on hover (desktop) — instant */
+.verse-timeline-ref[data-tip]:hover::after,
+.verse-timeline-ref[data-tip].tip-visible::after {
+  opacity: 1;
+}
+
+/* Spacer for verses without timeline events (keeps alignment) */
+.verse-timeline-ref-spacer {
+  display: inline-block;
+  width: 18px;
+  margin-right: 4px;
 }
 
 /* Cross Reference Panel (shown in Strong's panel area) */

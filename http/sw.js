@@ -30,6 +30,8 @@ const CORE_ASSETS = [
   '/feasts.js',
   '/year-utils.js',
   '/cross-references.js',
+  '/verse-event-links.js',
+  '/data/verse-event-index.json',
   '/symbol-dictionary.js',
   '/word-study-dictionary.js',
   '/strongs-hebrew-dictionary.js',

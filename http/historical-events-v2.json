@@ -7428,37 +7428,6 @@
       ]
     },
     {
-      "id": "jerusalem-walls-breached",
-      "title": "Jerusalem's Walls Breached",
-      "type": "conquest",
-      "description": "On the 9th day of the 4th month in Zedekiah's 11th year, after 18 months of siege, the famine-stricken city of Jerusalem is breached by the Babylonians. Zedekiah and his army fled by night but were captured near Jericho.",
-      "start": {
-        "lunar": {
-          "month": 4,
-          "day": 9,
-          "year": -585
-        }
-      },
-      "certainty": "high",
-      "sources": [
-        {
-          "ref": "Jeremiah 52:6-7",
-          "type": "scripture",
-          "quote": "In the fourth month, in the ninth day of the month, the famine was sore in the city... Then the city was broken up"
-        },
-        {
-          "ref": "2 Kings 25:2-4",
-          "type": "scripture"
-        }
-      ],
-      "tags": [
-        "babylon",
-        "jerusalem",
-        "conquest",
-        "zedekiah"
-      ]
-    },
-    {
       "id": "temple-destruction-first",
       "title": "Destruction of the First Temple",
       "type": "destruction",
@@ -10215,9 +10184,9 @@
     },
     {
       "id": "date-ref-jeremiah-39-2",
-      "title": "Jerusalem Breached",
-      "type": "biblical-date",
-      "description": "In Zedekiah's 11th year (587 BC), on the 9th day of the 4th month (Tammuz 9), the city wall was breached after 18 months of siege. This is one month before the temple was burned.",
+      "title": "Jerusalem's Walls Breached",
+      "type": "conquest",
+      "description": "On the 9th day of the 4th month in Zedekiah's 11th year (587 BC), after 18 months of siege, the famine-stricken city of Jerusalem is breached by the Babylonians. Zedekiah and his army fled by night but were captured near Jericho. One month later the temple was burned.",
       "start": {
         "lunar": {
           "year": -586,
@@ -10247,18 +10216,21 @@
           "ref": "Jeremiah 52:6-7",
           "type": "scripture",
           "quote": "And in the fourth month, in the ninth day of the month, the famine was sore in the city... Then the city was broken up"
+        },
+        {
+          "ref": "2 Kings 25:2-4",
+          "type": "scripture",
+          "quote": "And the city was besieged unto the eleventh year of king Zedekiah. And on the ninth day of the fourth month the famine prevailed in the city... And the city was broken up, and all the men of war fled by night"
         }
       ],
       "tags": [
-        "biblical-date",
-        "resolved",
-        "jeremiah",
-        "siege",
+        "babylon",
+        "jerusalem",
+        "conquest",
         "zedekiah",
         "17th-of-tammuz"
       ],
-      "notes": "Jewish tradition commemorates this as the 17th of Tammuz fast, though the text says 9th. The breach led to Zedekiah's flight, capture, and the temple's destruction one month later.",
-      "icon": "📅"
+      "notes": "Jewish tradition commemorates this as the 17th of Tammuz fast, though the text says 9th. The breach led to Zedekiah's flight, capture, and the temple's destruction one month later."
     },
     {
       "id": "date-ref-jeremiah-52-31",

@@ -5225,9 +5225,20 @@ body.view-reader:not(.reader-landing) {
 
 .profile-compare-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.profile-compare-header .profile-compare-title {
+  flex: 1;
+}
+
+.profile-compare-arrow {
+  font-size: 0.7em;
+  color: rgba(255, 255, 255, 0.4);
+  width: 12px;
 }
 
 .world-clock-add-btn {
