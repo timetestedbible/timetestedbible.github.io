@@ -219,55 +219,55 @@ const ReaderView = {
         
         <div class="reader-content-grid">
           <!-- Bible -->
-          <div class="reader-content-card">
+          <div class="reader-content-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Genesis',chapter:1}})">
             <div class="reader-card-icon">📜</div>
             <h2>Bible</h2>
             <p>Read Scripture with interlinear data, Strong's numbers, and symbol highlighting. Multiple translations available.</p>
-            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Genesis',chapter:1}})">
+            <button class="reader-card-btn">
               Open Bible →
             </button>
           </div>
           
           <!-- Symbols -->
-          <div class="reader-content-card">
+          <div class="reader-content-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols'}})">
             <div class="reader-card-icon">🔑</div>
             <h2>Symbol Studies</h2>
             <p>Discover the symbolic meaning of words in Scripture. Scripture declares it teaches through symbols—unlock the hidden language.</p>
             <div class="reader-card-meta">${symbolCount} symbols</div>
-            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols'}})">
+            <button class="reader-card-btn">
               Browse Symbols →
             </button>
           </div>
           
           <!-- Word Studies -->
-          <div class="reader-content-card">
+          <div class="reader-content-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'words'}})">
             <div class="reader-card-icon">📚</div>
             <h2>Word Studies</h2>
             <p>Lexical and etymological studies of Hebrew/Greek words (Strong's). Understand the root meanings and usage patterns.</p>
             <div class="reader-card-meta">${wordStudyCount} studies</div>
-            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'words'}})">
+            <button class="reader-card-btn">
               Browse Word Studies →
             </button>
           </div>
           
           <!-- Number Studies -->
-          <div class="reader-content-card">
+          <div class="reader-content-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'numbers'}})">
             <div class="reader-card-icon">🔢</div>
             <h2>Number Studies</h2>
             <p>Symbolic meaning of numbers in Scripture—an extension of symbol studies. Explore gematria and numerical patterns.</p>
             <div class="reader-card-meta">Multiple studies</div>
-            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'numbers'}})">
+            <button class="reader-card-btn">
               Browse Number Studies →
             </button>
           </div>
           
           <!-- Time Tested Tradition -->
-          <div class="reader-content-card">
+          <div class="reader-content-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
             <div class="reader-card-icon">📘</div>
             <h2>Time-Tested Tradition</h2>
             <p>The Renewed Biblical Calendar. A comprehensive study of biblical timekeeping, appointed times, and calendar principles.</p>
             <div class="reader-card-meta">${chapterCount} chapters</div>
-            <button class="reader-card-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
+            <button class="reader-card-btn">
               Read Book →
             </button>
           </div>

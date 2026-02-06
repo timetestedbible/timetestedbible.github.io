@@ -1080,27 +1080,25 @@ const GlobalSearch = {
    * Returns a promise that resolves when events are available
    */
   async waitForTimelineEvents(maxWaitMs = 10000) {
-    // Check if already loaded
-    if (typeof getTimelineResolvedEvents === 'function') {
-      const events = getTimelineResolvedEvents();
+    // Use ResolvedEventsCache singleton — simple and direct
+    if (typeof ResolvedEventsCache !== 'undefined') {
+      const profile = (typeof getTimelineProfile === 'function') ? getTimelineProfile() :
+                      (typeof EventResolver !== 'undefined' ? EventResolver.DEFAULT_PROFILE : null);
+      // Sync check first
+      let events = ResolvedEventsCache.getEvents(profile);
       if (events && events.length > 0) {
-        console.log('[GlobalSearch] Timeline events already loaded:', events.length);
+        console.log('[GlobalSearch] Timeline events from cache:', events.length);
+        return events;
+      }
+      // Async load/compute
+      events = await ResolvedEventsCache.getEventsAsync(profile);
+      if (events && events.length > 0) {
+        console.log('[GlobalSearch] Timeline events resolved:', events.length);
         return events;
       }
     }
     
-    // Try to trigger loading
-    if (typeof loadBiblicalTimelineData === 'function') {
-      console.log('[GlobalSearch] Loading timeline data...');
-      const data = await loadBiblicalTimelineData();
-      
-      if (data && typeof preResolveTimelineInBackground === 'function') {
-        console.log('[GlobalSearch] Triggering timeline resolution...');
-        await preResolveTimelineInBackground(data);
-      }
-    }
-    
-    // Poll for events to be available (in case resolution is async)
+    // Fallback: poll for events (legacy path)
     const startTime = Date.now();
     const pollInterval = 100;
     

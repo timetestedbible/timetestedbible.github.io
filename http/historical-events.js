@@ -1,213 +1,36 @@
 // Historical Events Module
 // Handles loading, rendering, and filtering of historical events
-
-// ============================================================================
-// VERSION MANAGEMENT - Gets version from service worker
-// ============================================================================
-let _cachedSWVersion = null;
-
-/**
- * Get the service worker version (cached after first call)
- * Falls back to a timestamp-based version if SW not available
- */
-async function getSWVersion() {
-  if (_cachedSWVersion) return _cachedSWVersion;
-  
-  try {
-    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-      const messageChannel = new MessageChannel();
-      const response = await new Promise((resolve, reject) => {
-        messageChannel.port1.onmessage = (event) => resolve(event.data);
-        setTimeout(() => reject(new Error('SW timeout')), 1000);
-        navigator.serviceWorker.controller.postMessage(
-          { type: 'GET_VERSION' },
-          [messageChannel.port2]
-        );
-      });
-      _cachedSWVersion = response.version || 'unknown';
-    } else {
-      // No SW controller yet - use fallback
-      _cachedSWVersion = 'no-sw';
-    }
-  } catch (e) {
-    console.warn('[EventsCache] Could not get SW version:', e);
-    _cachedSWVersion = 'fallback';
-  }
-  
-  return _cachedSWVersion;
-}
-
-// Sync version getter (uses cached value or fallback)
-function getSWVersionSync() {
-  return _cachedSWVersion || 'pending';
-}
+// Uses ResolvedEventsCache singleton for all event resolution/caching.
 
 let historicalEventsData = null;
-let resolvedEventsCache = null;  // Cache for resolved events (avoids duplicate resolution)
 let currentEventView = 'list';
 let selectedEventId = null;
 
 // ============================================================================
-// LOCALSTORAGE CACHE UTILITIES
+// Legacy compatibility wrappers — delegate to ResolvedEventsCache singleton
 // ============================================================================
+async function getSWVersion() { return ResolvedEventsCache.CACHE_VERSION; }
+function getSWVersionSync() { return ResolvedEventsCache.CACHE_VERSION; }
 
-/**
- * Generate a unique profile hash from all relevant settings
- * This ensures each profile configuration gets its own cache
- */
 function getProfileHash(profile) {
-  if (!profile) return 'default';
-  
-  // Include all settings that affect event resolution
-  const settings = {
-    moonPhase: profile.moonPhase || 'full',
-    yearStartRule: profile.yearStartRule || 'equinox',
-    dayStartTime: profile.dayStartTime || 'morning',
-    dayStartAngle: profile.dayStartAngle ?? 12,
-    crescentThreshold: profile.crescentThreshold ?? 18,
-    sabbathMode: profile.sabbathMode || 'lunar',
-    priestlyCycleAnchor: profile.priestlyCycleAnchor || 'destruction'
-  };
-  
-  // Create a short hash from the settings
-  const str = JSON.stringify(settings);
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = ((hash << 5) - hash) + str.charCodeAt(i);
-    hash |= 0; // Convert to 32-bit integer
-  }
-  return Math.abs(hash).toString(36);
+  return ResolvedEventsCache.profileKey(profile);
 }
-
-/**
- * Generate a cache key based on version and profile settings
- * Different profiles produce different resolved dates, so each needs its own cache
- */
 function getResolvedEventsCacheKey(profile) {
-  const version = getSWVersionSync();
-  const profileHash = getProfileHash(profile);
-  return `resolved_events_${version}_${profileHash}`;
+  return 'legacy_' + ResolvedEventsCache.profileKey(profile);
 }
+function loadResolvedEventsFromStorage() { return null; } // no-op, singleton handles it
+function saveResolvedEventsToStorage() {} // no-op
+function clearOldEventCaches() {} // no-op
+function clearAllEventCaches() { ResolvedEventsCache.invalidate(); }
+function clearResolvedEventsCache() { ResolvedEventsCache.invalidate(); }
 
-/**
- * Try to load resolved events from localStorage
- * Returns null if not found or version mismatch
- */
-function loadResolvedEventsFromStorage(profile) {
-  try {
-    const key = getResolvedEventsCacheKey(profile);
-    const stored = localStorage.getItem(key);
-    if (!stored) return null;
-    
-    const parsed = JSON.parse(stored);
-    
-    // Validate structure
-    if (!parsed.version || !parsed.events || !Array.isArray(parsed.events)) {
-      console.log('[EventsCache] Invalid cache structure, clearing');
-      localStorage.removeItem(key);
-      return null;
-    }
-    
-    // Check version match (stored version must match current SW version)
-    const currentVersion = getSWVersionSync();
-    if (parsed.version !== currentVersion) {
-      console.log(`[EventsCache] Version mismatch: stored ${parsed.version}, current ${currentVersion}`);
-      localStorage.removeItem(key);
-      return null;
-    }
-    
-    console.log(`[EventsCache] Loaded ${parsed.events.length} events from localStorage (profile: ${getProfileHash(profile)})`);
-    return parsed.events;
-    
-  } catch (e) {
-    console.warn('[EventsCache] Failed to load from localStorage:', e);
-    return null;
-  }
-}
+// Kept for backward compat but no longer used internally
+const EVENTS_CACHE_VERSION = ResolvedEventsCache.CACHE_VERSION;
+let _cachedSWVersion = EVENTS_CACHE_VERSION;
 
-/**
- * Save resolved events to localStorage
- */
-function saveResolvedEventsToStorage(events, profile) {
-  try {
-    const version = getSWVersionSync();
-    const key = getResolvedEventsCacheKey(profile);
-    const data = {
-      version: version,
-      profileHash: getProfileHash(profile),
-      timestamp: Date.now(),
-      events: events
-    };
-    
-    const json = JSON.stringify(data);
-    localStorage.setItem(key, json);
-    console.log(`[EventsCache] Saved ${events.length} events to localStorage (${(json.length / 1024).toFixed(1)} KB, profile: ${data.profileHash})`);
-    
-  } catch (e) {
-    // localStorage might be full or disabled
-    console.warn('[EventsCache] Failed to save to localStorage:', e);
-    // Try to clear old caches to make room
-    clearOldEventCaches();
-  }
-}
-
-/**
- * Clear old event caches (different versions)
- * Called when version changes to clean up stale data
- */
-function clearOldEventCaches() {
-  try {
-    const currentVersion = getSWVersionSync();
-    const keysToRemove = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith('resolved_events_')) {
-        // Extract version from key (format: resolved_events_VERSION_HASH)
-        const parts = key.split('_');
-        if (parts.length >= 3) {
-          const storedVersion = parts[2];
-          if (storedVersion !== currentVersion && currentVersion !== 'pending') {
-            keysToRemove.push(key);
-          }
-        }
-      }
-    }
-    keysToRemove.forEach(key => {
-      localStorage.removeItem(key);
-      console.log(`[EventsCache] Cleared old cache: ${key}`);
-    });
-    if (keysToRemove.length > 0) {
-      console.log(`[EventsCache] Cleared ${keysToRemove.length} old cache entries`);
-    }
-  } catch (e) {
-    console.warn('[EventsCache] Failed to clear old caches:', e);
-  }
-}
-
-/**
- * Clear all event caches (for manual invalidation)
- */
-function clearAllEventCaches() {
-  try {
-    const keysToRemove = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith('resolved_events_')) {
-        keysToRemove.push(key);
-      }
-    }
-    keysToRemove.forEach(key => localStorage.removeItem(key));
-    console.log(`[EventsCache] Cleared ${keysToRemove.length} cache entries`);
-    resolvedEventsCache = null;
-  } catch (e) {
-    console.warn('[EventsCache] Failed to clear caches:', e);
-  }
-}
-
-// Load historical events data
+// Load historical events data (v1 format)
 async function loadHistoricalEvents() {
   if (historicalEventsData) return historicalEventsData;
-  
   try {
     const response = await fetch('/historical-events.json');
     historicalEventsData = await response.json();
@@ -219,137 +42,71 @@ async function loadHistoricalEvents() {
 }
 
 /**
- * Get resolved events with proper dates calculated from the event resolver.
- * This caches the result in both RAM and localStorage for fast subsequent loads.
+ * Get resolved events with proper dates calculated.
+ * Delegates to ResolvedEventsCache singleton, then enriches with display dates.
  * @returns {Promise<Array>} Array of resolved events with startJD, dates, etc.
  */
 async function getResolvedEvents() {
-  console.log('[EventsCache] getResolvedEvents called');
   const profile = typeof EventResolver !== 'undefined' ? EventResolver.DEFAULT_PROFILE : null;
-  console.log('[EventsCache] EventResolver available:', typeof EventResolver !== 'undefined', 'profile:', profile?.name || 'null');
   
-  // Return RAM cache if available
-  if (resolvedEventsCache) {
-    console.log('[EventsCache] Returning RAM cache:', resolvedEventsCache.length, 'events');
-    return resolvedEventsCache;
+  // Get resolved events from singleton
+  let resolved = ResolvedEventsCache.getEvents(profile);
+  if (!resolved) {
+    resolved = await ResolvedEventsCache.getEventsAsync(profile);
   }
+  if (!resolved || resolved.length === 0) return [];
   
-  // Ensure we have the SW version before checking localStorage
-  await getSWVersion();
+  // Load raw data for enrichment (original event fields like description, sources, etc.)
+  const data = await ResolvedEventsCache.getData();
+  if (!data || typeof EventResolver === 'undefined') return resolved;
   
-  // Try localStorage cache (persists across page loads)
-  const storedEvents = loadResolvedEventsFromStorage(profile);
-  if (storedEvents) {
-    console.log('[EventsCache] Returning localStorage cache:', storedEvents.length, 'events');
-    resolvedEventsCache = storedEvents;
-    return storedEvents;
-  }
-  
-  // Clear old version caches
-  clearOldEventCaches();
-  
-  // Load raw data (prefer v2)
-  console.log('[EventsCache] Loading raw data...');
-  let data = await loadHistoricalEventsV2();
-  console.log('[EventsCache] loadHistoricalEventsV2 returned:', data ? (data.events?.length || 0) + ' events' : 'null');
-  if (!data) {
-    data = await loadHistoricalEvents();
-    console.log('[EventsCache] loadHistoricalEvents fallback returned:', data ? (data.events?.length || 0) + ' events' : 'null');
-  }
-  if (!data) {
-    console.warn('[EventsCache] No data available');
-    return [];
-  }
-  
-  // Resolve events using EventResolver
-  if (typeof EventResolver === 'undefined') {
-    console.warn('EventResolver not available, returning raw events');
-    return data.events || [];
-  }
-  
-  console.time('[EventsCache] Resolution');
-  try {
-    const resolved = EventResolver.resolveAllEvents(data, profile);
+  // Enrich original events with resolved dates for display
+  const enrichedEvents = (data.events || []).map(event => {
+    const resolvedEvent = resolved.find(r => r.id === event.id);
     
-    // Enrich original events with resolved dates
-    const enrichedEvents = (data.events || []).map(event => {
-      const resolvedEvent = resolved.find(r => r.id === event.id);
+    if (resolvedEvent && resolvedEvent.startJD !== null) {
+      const gregorian = EventResolver.julianDayToGregorian(resolvedEvent.startJD);
+      let lunar = {};
       
-      if (resolvedEvent && resolvedEvent.startJD !== null) {
-        // Get gregorian date from resolved JD
-        const gregorian = EventResolver.julianDayToGregorian(resolvedEvent.startJD);
-        
-        // Start with original lunar data from source (v2 format uses start.lunar)
-        // Priority: resolver's _lunar fields > event.start.lunar > event.dates.lunar
-        let lunar = {};
-        
-        // First, get original stipulated month/day from source data
-        const sourceLunar = event.start?.lunar || event.dates?.lunar || {};
-        if (sourceLunar.month) lunar.month = sourceLunar.month;
-        if (sourceLunar.day) lunar.day = sourceLunar.day;
-        
-        // Use resolver's calculated lunar values (which preserve original month/day)
-        if (resolvedEvent._lunarYear !== undefined) lunar.year = resolvedEvent._lunarYear;
-        if (resolvedEvent._lunarMonth !== undefined) lunar.month = resolvedEvent._lunarMonth;
-        if (resolvedEvent._lunarDay !== undefined) lunar.day = resolvedEvent._lunarDay;
-        
-        // Try to get full lunar date from JD if we're missing year
-        if (lunar.year === undefined && typeof EventResolver.julianDayToLunar === 'function') {
-          try {
-            const resolvedLunar = EventResolver.julianDayToLunar(resolvedEvent.startJD, profile);
-            if (resolvedLunar) {
-              if (!lunar.year && resolvedLunar.year !== undefined) lunar.year = resolvedLunar.year;
-              if (!lunar.month && resolvedLunar.month !== undefined) lunar.month = resolvedLunar.month;
-              if (!lunar.day && resolvedLunar.day !== undefined) lunar.day = resolvedLunar.day;
-            }
-          } catch (e) {
-            // Keep what we have if conversion fails
+      // Get original stipulated month/day from source data
+      const sourceLunar = event.start?.lunar || event.dates?.lunar || {};
+      if (sourceLunar.month) lunar.month = sourceLunar.month;
+      if (sourceLunar.day) lunar.day = sourceLunar.day;
+      
+      // Use resolver's calculated lunar values
+      if (resolvedEvent._lunarYear !== undefined) lunar.year = resolvedEvent._lunarYear;
+      if (resolvedEvent._lunarMonth !== undefined) lunar.month = resolvedEvent._lunarMonth;
+      if (resolvedEvent._lunarDay !== undefined) lunar.day = resolvedEvent._lunarDay;
+      
+      // Try to get full lunar date from JD if we're missing year
+      if (lunar.year === undefined && typeof EventResolver.julianDayToLunar === 'function') {
+        try {
+          const resolvedLunar = EventResolver.julianDayToLunar(resolvedEvent.startJD, profile);
+          if (resolvedLunar) {
+            if (!lunar.year && resolvedLunar.year !== undefined) lunar.year = resolvedLunar.year;
+            if (!lunar.month && resolvedLunar.month !== undefined) lunar.month = resolvedLunar.month;
+            if (!lunar.day && resolvedLunar.day !== undefined) lunar.day = resolvedLunar.day;
           }
-        }
-        
-        // Fallback: ensure year is set from gregorian if still missing
-        if (lunar.year === undefined && gregorian && gregorian.year !== null) {
-          lunar.year = gregorian.year;
-        }
-        
-        return {
-          ...event,
-          resolvedStartJD: resolvedEvent.startJD,
-          resolvedEndJD: resolvedEvent.endJD || null,
-          dates: {
-            ...event.dates,
-            gregorian: gregorian,
-            lunar: lunar
-          }
-        };
+        } catch (e) { /* keep what we have */ }
       }
       
-      return event;
-    });
+      // Fallback: ensure year is set from gregorian if still missing
+      if (lunar.year === undefined && gregorian && gregorian.year !== null) {
+        lunar.year = gregorian.year;
+      }
+      
+      return {
+        ...event,
+        resolvedStartJD: resolvedEvent.startJD,
+        resolvedEndJD: resolvedEvent.endJD || null,
+        dates: { ...event.dates, gregorian, lunar }
+      };
+    }
     
-    console.timeEnd('[EventsCache] Resolution');
-    
-    // Cache in RAM
-    resolvedEventsCache = enrichedEvents;
-    
-    // Cache in localStorage for persistence across page loads
-    saveResolvedEventsToStorage(enrichedEvents, profile);
-    
-    return enrichedEvents;
-    
-  } catch (e) {
-    console.error('Error resolving events:', e);
-    return data.events || [];
-  }
-}
-
-/**
- * Clear the resolved events cache (e.g., when profile changes)
- * Clears both RAM and localStorage caches
- */
-function clearResolvedEventsCache() {
-  resolvedEventsCache = null;
-  clearAllEventCaches();
+    return event;
+  });
+  
+  return enrichedEvents;
 }
 
 // Make cache functions available globally

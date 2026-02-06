@@ -11,25 +11,17 @@ async function loadBibleEvents() {
   let totalEvents = 0;
   
   console.log('[BibleEvents] loadBibleEvents starting...');
-  console.log('[BibleEvents] getTimelineResolvedEvents available:', typeof getTimelineResolvedEvents === 'function');
-  console.log('[BibleEvents] getResolvedEvents available:', typeof getResolvedEvents === 'function');
   
-  // Get resolved events from timeline cache (populated by preResolveTimelineInBackground)
+  // Get resolved events from ResolvedEventsCache singleton
   let resolvedEvents = [];
-  
-  // First try timeline's cache (populated by background pre-resolution)
-  if (typeof getTimelineResolvedEvents === 'function') {
-    resolvedEvents = getTimelineResolvedEvents();
-    console.log('[BibleEvents] Got', resolvedEvents?.length || 0, 'events from timeline cache');
-  } else {
-    console.warn('[BibleEvents] getTimelineResolvedEvents not available');
-  }
-  
-  // Fallback to historical-events.js getResolvedEvents
-  if ((!resolvedEvents || resolvedEvents.length === 0) && typeof getResolvedEvents === 'function') {
-    console.log('[BibleEvents] Timeline cache empty, trying getResolvedEvents...');
-    resolvedEvents = await getResolvedEvents();
-    console.log('[BibleEvents] Got', resolvedEvents?.length || 0, 'events from getResolvedEvents');
+  if (typeof ResolvedEventsCache !== 'undefined') {
+    const profile = (typeof getTimelineProfile === 'function') ? getTimelineProfile() : 
+                    (typeof EventResolver !== 'undefined' ? EventResolver.DEFAULT_PROFILE : null);
+    resolvedEvents = ResolvedEventsCache.getEvents(profile);
+    if (!resolvedEvents) {
+      resolvedEvents = await ResolvedEventsCache.getEventsAsync(profile);
+    }
+    console.log('[BibleEvents] Got', resolvedEvents?.length || 0, 'events from ResolvedEventsCache');
   }
   
   if (!resolvedEvents || resolvedEvents.length === 0) {

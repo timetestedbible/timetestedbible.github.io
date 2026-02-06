@@ -1,11 +1,7 @@
 // Biblical Timeline Module
 // Renders timeline using EventResolver for profile-aware date calculations
-// Version: 11.0 - Uses EventResolver with v2 schema
+// Version: 12.0 - Uses ResolvedEventsCache singleton for all data/caching
 
-const TIMELINE_RESOLVED_CACHE_KEY = 'timeline_resolved_events';
-
-let biblicalTimelineData = null;
-let biblicalTimelineDataV2 = null;
 let biblicalTimelineEventLookup = new Map();
 let biblicalTimelineZoom = null;
 let biblicalTimelinePan = 0;
@@ -13,532 +9,79 @@ let biblicalTimelineMinYear = null;
 let biblicalTimelineMaxYear = null;
 let biblicalTimelineUseV2 = true; // Use v2 data format with resolver
 
-// Cache for resolved events - only recalculate when profile changes
-let biblicalTimelineResolvedCache = null;
-let biblicalTimelineCacheKey = null;
-
-/**
- * Generate a stable cache key from profile and data.
- * Rounds floating point values to avoid precision issues.
- */
-function _generateStableCacheKey(profile, data) {
-  const dataContentHash = JSON.stringify(data?.events || []).length;
-  // Round floats to avoid floating point precision issues causing cache misses
-  const stableProfile = {
-    moonPhase: profile.moonPhase,
-    dayStartTime: profile.dayStartTime,
-    dayStartAngle: Math.round((profile.dayStartAngle || 0) * 1000) / 1000,
-    yearStartRule: profile.yearStartRule,
-    crescentThreshold: Math.round((profile.crescentThreshold || 0) * 1000) / 1000,
-    lat: Math.round((profile.lat || 0) * 10000) / 10000,
-    lon: Math.round((profile.lon || 0) * 10000) / 10000,
-    amEpoch: profile.amEpoch
-  };
-  return JSON.stringify(stableProfile) + ':' + dataContentHash;
-}
-
 // ============================================================================
-// LOCALSTORAGE CACHE UTILITIES FOR TIMELINE
-// Uses getSWVersion() and getProfileHash() from historical-events.js
+// DATA ACCESS — All caching delegated to ResolvedEventsCache singleton
 // ============================================================================
-
-/**
- * Get the SW version - delegates to historical-events.js
- */
-function _getTimelineSWVersion() {
-  return typeof getSWVersion === 'function' ? window.getSWVersion() : Promise.resolve('unknown');
-}
-
-function _getTimelineSWVersionSync() {
-  return typeof window._cachedSWVersion !== 'undefined' ? window._cachedSWVersion : 
-         (typeof getSWVersionSync === 'function' ? getSWVersionSync() : 'pending');
-}
-
-/**
- * Get profile hash - delegates to historical-events.js or generates locally
- */
-function _getTimelineProfileHash(profile) {
-  if (typeof getProfileHash === 'function') {
-    return getProfileHash(profile);
-  }
-  // Fallback if historical-events.js not loaded
-  if (!profile) return 'default';
-  const settings = {
-    moonPhase: profile.moonPhase || 'full',
-    yearStartRule: profile.yearStartRule || 'equinox',
-    dayStartTime: profile.dayStartTime || 'morning',
-    dayStartAngle: profile.dayStartAngle ?? 12,
-    crescentThreshold: profile.crescentThreshold ?? 18,
-    sabbathMode: profile.sabbathMode || 'lunar',
-    priestlyCycleAnchor: profile.priestlyCycleAnchor || 'destruction'
-  };
-  const str = JSON.stringify(settings);
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = ((hash << 5) - hash) + str.charCodeAt(i);
-    hash |= 0;
-  }
-  return Math.abs(hash).toString(36);
-}
-
-/**
- * Generate a localStorage key based on version and profile
- */
-function getTimelineCacheStorageKey(profile) {
-  const version = _getTimelineSWVersionSync();
-  const profileHash = _getTimelineProfileHash(profile);
-  return `${TIMELINE_RESOLVED_CACHE_KEY}_${version}_${profileHash}`;
-}
-
-/**
- * Load resolved timeline events from localStorage
- */
-function loadTimelineResolvedFromStorage(profile) {
-  try {
-    const key = getTimelineCacheStorageKey(profile);
-    const stored = localStorage.getItem(key);
-    if (!stored) return null;
-    
-    const parsed = JSON.parse(stored);
-    const currentVersion = _getTimelineSWVersionSync();
-    
-    // Validate structure and version
-    if (!parsed.version || !parsed.events || parsed.version !== currentVersion) {
-      console.log(`[TimelineCache] Version mismatch: stored ${parsed.version}, current ${currentVersion}`);
-      localStorage.removeItem(key);
-      return null;
-    }
-    
-    console.log(`[TimelineCache] Loaded ${parsed.events.length} events from localStorage (profile: ${_getTimelineProfileHash(profile)})`);
-    return { events: parsed.events, cacheKey: parsed.cacheKey };
-    
-  } catch (e) {
-    console.warn('[TimelineCache] Failed to load from localStorage:', e);
-    return null;
-  }
-}
-
-/**
- * Save resolved timeline events to localStorage
- */
-function saveTimelineResolvedToStorage(events, profile, cacheKey) {
-  try {
-    const version = _getTimelineSWVersionSync();
-    const key = getTimelineCacheStorageKey(profile);
-    const data = {
-      version: version,
-      profileHash: _getTimelineProfileHash(profile),
-      timestamp: Date.now(),
-      cacheKey: cacheKey,
-      events: events
-    };
-    
-    const json = JSON.stringify(data);
-    localStorage.setItem(key, json);
-    console.log(`[TimelineCache] Saved ${events.length} events to localStorage (${(json.length / 1024).toFixed(1)} KB, profile: ${data.profileHash})`);
-    
-  } catch (e) {
-    console.warn('[TimelineCache] Failed to save to localStorage:', e);
-    // Try to clear old caches to make room
-    clearOldTimelineCaches();
-  }
-}
-
-/**
- * Clear old timeline caches (different versions)
- */
-function clearOldTimelineCaches() {
-  try {
-    const currentVersion = _getTimelineSWVersionSync();
-    const keysToRemove = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith(TIMELINE_RESOLVED_CACHE_KEY)) {
-        // Extract version from key (format: timeline_resolved_events_VERSION_HASH)
-        const parts = key.split('_');
-        if (parts.length >= 4) {
-          const storedVersion = parts[3];
-          if (storedVersion !== currentVersion && currentVersion !== 'pending') {
-            keysToRemove.push(key);
-          }
-        }
-      }
-    }
-    keysToRemove.forEach(key => {
-      localStorage.removeItem(key);
-      console.log(`[TimelineCache] Cleared old cache: ${key}`);
-    });
-    if (keysToRemove.length > 0) {
-      console.log(`[TimelineCache] Cleared ${keysToRemove.length} old cache entries`);
-    }
-  } catch (e) {
-    console.warn('[TimelineCache] Failed to clear old caches:', e);
-  }
-}
-
-/**
- * Clear all timeline resolved caches
- */
-function clearTimelineResolvedCaches() {
-  try {
-    const keysToRemove = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith(TIMELINE_RESOLVED_CACHE_KEY)) {
-        keysToRemove.push(key);
-      }
-    }
-    keysToRemove.forEach(key => localStorage.removeItem(key));
-    console.log(`[TimelineCache] Cleared ${keysToRemove.length} resolved cache entries`);
-    biblicalTimelineResolvedCache = null;
-    biblicalTimelineCacheKey = null;
-  } catch (e) {
-    console.warn('[TimelineCache] Failed to clear caches:', e);
-  }
-}
-
-// Make cache clearing available globally
-window.clearTimelineResolvedCaches = clearTimelineResolvedCaches;
-
-// Background pre-resolution state
-let backgroundResolutionInProgress = false;
-let backgroundResolutionProgress = 0;
-let globalProgressFloor = 0; // Ensures progress never goes backward within a render cycle
 
 // Render lock to prevent concurrent renders
 let renderInProgress = false;
 let renderPending = false;
 
-/**
- * Pre-resolve timeline events in the background after site loads.
- * Uses requestIdleCallback to avoid impacting user experience.
- * First checks localStorage cache for instant availability.
- * @param {object} data - The events data object (optional, will load if not provided)
- * @param {object} profile - The calendar profile (optional, will get current)
- */
-// Promise to track in-progress resolution
-let _resolutionPromise = null;
+// Flag: true when the initial render pre-applied the URL search filter,
+// so displaySearchResults() can skip the redundant re-render.
+let _searchPreAppliedDuringRender = false;
 
-async function preResolveTimelineInBackground(data, profile) {
-  // If resolution is already in progress, wait for it to complete
-  if (backgroundResolutionInProgress && _resolutionPromise) {
-    console.log('[Timeline Background] Already in progress, waiting for completion...');
-    await _resolutionPromise;
-    console.log('[Timeline Background] Previous resolution completed, cache should be ready');
-    return;
-  }
-  
-  // Load data if not provided
-  if (!data && typeof loadBiblicalTimelineData === 'function') {
-    console.log('[Timeline Background] Loading timeline data...');
-    data = await loadBiblicalTimelineData();
-    console.log('[Timeline Background] Loaded data:', data ? (data.events?.length || 0) + ' events' : 'null');
-  }
-  
-  // Get profile if not provided
-  if (!profile && typeof getTimelineProfile === 'function') {
-    profile = getTimelineProfile();
-    console.log('[Timeline Background] Got profile:', profile?.moonPhase, profile?.yearStartRule);
-  }
-  
-  if (!data || !profile || typeof EventResolver === 'undefined') {
-    console.log('[Timeline Background] Missing dependencies, skipping pre-resolution');
-    console.log('[Timeline Background] data:', !!data, 'profile:', !!profile, 'EventResolver:', typeof EventResolver !== 'undefined');
-    return;
-  }
-  
-  // Check if cache is already valid (RAM)
-  const cacheKey = _generateStableCacheKey(profile, data);
-  
-  if (biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey) {
-    console.log('[Timeline Background] RAM cache already valid, skipping');
-    return;
-  }
-  
-  // Ensure we have the SW version before checking localStorage
-  await _getTimelineSWVersion();
-  
-  // Check localStorage cache first (instant load)
-  const stored = loadTimelineResolvedFromStorage(profile);
-  if (stored && stored.cacheKey === cacheKey) {
-    console.log(`[Timeline Background] Using localStorage cache (instant, profile: ${_getTimelineProfileHash(profile)})`);
-    biblicalTimelineResolvedCache = stored.events;
-    biblicalTimelineCacheKey = cacheKey;
-    backgroundResolutionProgress = 100;
-    return;
-  }
-  
-  // Clear old version caches
-  clearOldTimelineCaches();
-  
-  console.log('[Timeline Background] Starting pre-resolution...');
-  backgroundResolutionInProgress = true;
-  backgroundResolutionProgress = 0;
-  
-  // Use requestIdleCallback if available, otherwise setTimeout
-  const scheduleWork = window.requestIdleCallback 
-    ? (cb) => window.requestIdleCallback(cb, { timeout: 2000 })
-    : (cb) => setTimeout(cb, 50);
-  
-  // Create a promise that other callers can wait for
-  _resolutionPromise = (async () => {
-    try {
-      console.log('[Timeline Background] Starting resolution, async available:', typeof EventResolver.resolveAllEventsAsync === 'function');
-      
-      // Check if async resolver is available
-      if (typeof EventResolver.resolveAllEventsAsync === 'function') {
-        // Use async resolver with progress tracking (only allows increasing progress)
-        const resolved = await EventResolver.resolveAllEventsAsync(data, profile, (percent, message) => {
-          // Only update if progress increased (prevents backward jumps)
-          // Never allow going backward, even to 0
-          if (percent < backgroundResolutionProgress || percent < globalProgressFloor) {
-            return;
-          }
-          backgroundResolutionProgress = percent;
-          globalProgressFloor = Math.max(globalProgressFloor, percent);
-          // Update progress bar if timeline is showing
-          const fill = document.querySelector('.timeline-progress-fill');
-          const subtext = document.querySelector('.timeline-loading-subtext');
-          if (fill) fill.style.width = percent + '%';
-          if (subtext) subtext.textContent = message || `${percent}% complete`;
-        });
-        
-        console.log('[Timeline Background] Resolution returned:', resolved?.length || 0, 'events');
-        
-        // Store in RAM cache
-        biblicalTimelineResolvedCache = resolved;
-        biblicalTimelineCacheKey = cacheKey;
-        
-        console.log('[Timeline Background] Cache updated, biblicalTimelineResolvedCache now has:', biblicalTimelineResolvedCache?.length || 0, 'events');
-        
-        // Save to localStorage for future page loads
-        saveTimelineResolvedToStorage(resolved, profile, cacheKey);
-        
-        console.log('[Timeline Background] Pre-resolution complete:', resolved.length, 'events');
-      } else {
-        // Fall back to sync resolver in idle chunks
-        await new Promise((resolve) => {
-          scheduleWork(() => {
-            try {
-              const resolved = EventResolver.resolveAllEvents(data, profile);
-              biblicalTimelineResolvedCache = resolved;
-              biblicalTimelineCacheKey = cacheKey;
-              
-              // Save to localStorage
-              saveTimelineResolvedToStorage(resolved, profile, cacheKey);
-              
-              console.log('[Timeline Background] Pre-resolution complete (sync):', resolved.length, 'events');
-            } catch (e) {
-              console.warn('[Timeline Background] Error during pre-resolution:', e);
-            }
-            resolve();
-          });
-        });
-      }
-    } catch (e) {
-      console.warn('[Timeline Background] Pre-resolution failed:', e);
-    } finally {
-      backgroundResolutionInProgress = false;
-      backgroundResolutionProgress = 100;
-      _resolutionPromise = null;
-    }
-  })();
-  
-  // Wait for our own resolution to complete
-  await _resolutionPromise;
+/** Load raw event data (delegates to singleton). */
+async function loadBiblicalTimelineData() {
+  return ResolvedEventsCache.getData();
 }
 
-/**
- * Check if background resolution is in progress
- * @returns {boolean} True if background resolution is running
- */
-function isBackgroundResolutionInProgress() {
-  return backgroundResolutionInProgress;
-}
-
-/**
- * Get background resolution progress (0-100)
- * @returns {number} Progress percentage
- */
-function getBackgroundResolutionProgress() {
-  return backgroundResolutionProgress;
-}
-
-/**
- * Get the cached resolved timeline events
- * Returns the pre-resolved events if available, otherwise empty array
- * @returns {Array} Array of resolved events
- */
-function getTimelineResolvedEvents() {
-  return biblicalTimelineResolvedCache || [];
-}
-
-// Make background functions globally available
-window.preResolveTimelineInBackground = preResolveTimelineInBackground;
-window.isBackgroundResolutionInProgress = isBackgroundResolutionInProgress;
-window.getBackgroundResolutionProgress = getBackgroundResolutionProgress;
-window.getTimelineResolvedEvents = getTimelineResolvedEvents;
-window.loadBiblicalTimelineData = loadBiblicalTimelineData;
-
-/**
- * Check if timeline cache is valid for the current profile
- * @param {object} data - The events data object
- * @param {object} profile - The calendar profile
- * @returns {boolean} True if cache is valid
- */
-function isTimelineCacheValid(data, profile) {
-  if (!data || !profile || typeof EventResolver === 'undefined') {
-    const result = !!biblicalTimelineResolvedCache;
-    console.log(`[CacheCheck] No data/profile/resolver, returning ${result}`);
-    return result;
-  }
-  const cacheKey = _generateStableCacheKey(profile, data);
-  const cacheExists = !!biblicalTimelineResolvedCache;
-  const keyMatches = biblicalTimelineCacheKey === cacheKey;
-  const isValid = cacheExists && keyMatches;
-  console.log(`[CacheCheck] cacheExists=${cacheExists}, keyMatches=${keyMatches}, isValid=${isValid}`);
-  if (!keyMatches && biblicalTimelineCacheKey) {
-    console.log(`[CacheCheck] Key mismatch: stored="${biblicalTimelineCacheKey?.substring(0, 50)}..." vs new="${cacheKey.substring(0, 50)}..."`);
-  }
-  return isValid;
-}
-
-/**
- * Get resolved events, using cache if available (sync version for non-initial loads).
- * Checks RAM cache first, then localStorage, then resolves fresh.
- * Note: Uses sync version check - caller should ensure SW version is initialized
- * @param {object} data - The events data object
- * @param {object} profile - The calendar profile
- * @returns {Array} Resolved events array
- */
+/** Get resolved events synchronously (delegates to singleton). */
 function getResolvedEvents(data, profile) {
-  if (!data || !profile || typeof EventResolver === 'undefined') {
-    return biblicalTimelineResolvedCache || [];
-  }
-  
-  // Create cache key from profile and data content
-  const cacheKey = _generateStableCacheKey(profile, data);
-  
-  // Return RAM cached if valid
-  if (biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey) {
-    return biblicalTimelineResolvedCache;
-  }
-  
-  // Try localStorage cache (only if SW version is known)
-  const version = _getTimelineSWVersionSync();
-  if (version && version !== 'pending') {
-    const stored = loadTimelineResolvedFromStorage(profile);
-    if (stored && stored.cacheKey === cacheKey) {
-      console.log(`[TimelineCache] Using localStorage cache (profile: ${_getTimelineProfileHash(profile)})`);
-      biblicalTimelineResolvedCache = stored.events;
-      biblicalTimelineCacheKey = cacheKey;
-      return stored.events;
-    }
-    
-    // Clear old version caches
-    clearOldTimelineCaches();
-  }
-  
-  // Resolve and cache (sync fallback)
-  console.time('[TimelineCache] Resolution');
-  try {
-    const resolved = EventResolver.resolveAllEvents(data, profile);
-    biblicalTimelineResolvedCache = resolved;
-    biblicalTimelineCacheKey = cacheKey;
-    console.timeEnd('[TimelineCache] Resolution');
-    
-    // Save to localStorage for persistence (only if version is known)
-    if (version && version !== 'pending') {
-      saveTimelineResolvedToStorage(resolved, profile, cacheKey);
-    }
-    
-    return resolved;
-  } catch (e) {
-    console.warn('Error resolving events:', e);
-    return biblicalTimelineResolvedCache || [];
-  }
+  const events = ResolvedEventsCache.getEvents(profile);
+  return events || [];
 }
 
-/**
- * Get resolved events with progress updates (async version).
- * Shows progress bar during initial calculation.
- * Checks localStorage first for fast startup.
- * @param {object} data - The events data object
- * @param {object} profile - The calendar profile
- * @returns {Promise<Array>} Resolved events array
- */
+/** Get resolved events, computing with progress if needed (delegates to singleton). */
 async function getResolvedEventsWithProgress(data, profile) {
-  if (!data || !profile || typeof EventResolver === 'undefined') {
-    return biblicalTimelineResolvedCache || [];
-  }
-  
-  // Create cache key from profile and data content
-  const cacheKey = _generateStableCacheKey(profile, data);
-  
-  // Return RAM cached if valid
-  if (biblicalTimelineResolvedCache && biblicalTimelineCacheKey === cacheKey) {
-    return biblicalTimelineResolvedCache;
-  }
-  
-  // Ensure we have the SW version before checking localStorage
-  await _getTimelineSWVersion();
-  
-  // Try localStorage cache (instant load)
-  const stored = loadTimelineResolvedFromStorage(profile);
-  if (stored && stored.cacheKey === cacheKey) {
-    console.log('[TimelineCache] Using localStorage cache (instant load)');
-    biblicalTimelineResolvedCache = stored.events;
-    biblicalTimelineCacheKey = cacheKey;
-    return stored.events;
-  }
-  
-  // Clear old version caches
-  clearOldTimelineCaches();
-  
-  // Track last progress to ensure monotonic increase
-  let lastProgressPercent = globalProgressFloor;
-  
-  // Progress callback - updates the UI (only allows increasing progress)
+  // Progress callback — updates the loading bar UI
   const onProgress = (percent, message) => {
-    // Only update if progress increased (prevents backward jumps)
-    // Never allow going backward, even to 0
-    if (percent < lastProgressPercent) {
-      return;
-    }
-    if (percent < globalProgressFloor) {
-      return;
-    }
-    lastProgressPercent = percent;
-    globalProgressFloor = Math.max(globalProgressFloor, percent);
-    
     const fill = document.querySelector('.timeline-progress-fill');
     const subtext = document.querySelector('.timeline-loading-subtext');
     if (fill) {
-      fill.style.animation = 'none'; // Stop the shimmer animation
+      fill.style.animation = 'none';
       fill.style.width = percent + '%';
     }
     if (subtext) {
       subtext.textContent = message || `${percent}% complete`;
     }
   };
-  
-  // Resolve and cache with progress updates
-  console.time('[TimelineCache] Async Resolution');
-  try {
-    const resolved = await EventResolver.resolveAllEventsAsync(data, profile, onProgress);
-    biblicalTimelineResolvedCache = resolved;
-    biblicalTimelineCacheKey = cacheKey;
-    console.timeEnd('[TimelineCache] Async Resolution');
-    
-    // Save to localStorage for persistence
-    saveTimelineResolvedToStorage(resolved, profile, cacheKey);
-    
-    return resolved;
-  } catch (e) {
-    console.warn('Error resolving events:', e);
-    return biblicalTimelineResolvedCache || [];
-  }
+  return ResolvedEventsCache.getEventsAsync(profile, onProgress);
 }
+
+/** Check if events are cached for this profile. */
+function isTimelineCacheValid(data, profile) {
+  return ResolvedEventsCache.isCached(profile);
+}
+
+/** Get cached resolved events (sync, for consumers like bible-events-loader). */
+function getTimelineResolvedEvents() {
+  const profile = (typeof getTimelineProfile === 'function') ? getTimelineProfile() : null;
+  return profile ? (ResolvedEventsCache.getEvents(profile) || []) : [];
+}
+
+/** Pre-warm cache (delegates to singleton). */
+async function preResolveTimelineInBackground(data, profile) {
+  if (!profile && typeof getTimelineProfile === 'function') {
+    profile = getTimelineProfile();
+  }
+  if (!profile) return;
+  return ResolvedEventsCache.preload(profile);
+}
+
+/** Invalidate cache (delegates to singleton). */
+function invalidateBiblicalTimelineCacheInternal() {
+  const profile = (typeof getTimelineProfile === 'function') ? getTimelineProfile() : null;
+  ResolvedEventsCache.invalidate(profile);
+}
+
+// Backward-compatible global exports
+window.preResolveTimelineInBackground = preResolveTimelineInBackground;
+window.isBackgroundResolutionInProgress = () => false; // No more background state
+window.getBackgroundResolutionProgress = () => 100;
+window.getTimelineResolvedEvents = getTimelineResolvedEvents;
+window.loadBiblicalTimelineData = loadBiblicalTimelineData;
+window.clearTimelineResolvedCaches = () => ResolvedEventsCache.invalidate();
 
 // LocalStorage keys for persisting state
 const TIMELINE_STORAGE_KEY = 'biblicalTimelineState';
@@ -1019,7 +562,7 @@ function showSearchResultsFromState(searchText) {
   console.log('[Search] CACHE MISS - computing results for:', searchText);
   
   // Get all resolved events and raw durations
-  const data = biblicalTimelineDataV2;
+  const data = ResolvedEventsCache.getDataSync();
   const profile = (typeof getTimelineProfile === 'function') ? getTimelineProfile() : null;
   const allEvents = getResolvedEvents(data, profile);
   const allDurations = data?.durations || [];
@@ -1146,8 +689,17 @@ function displaySearchResults(fromCache) {
   activeSearchResultIds = new Set(matchingEvents.map(e => e.id));
   activeSearchDurationIds = new Set(matchingDurations.map(d => d.id));
   
+  // If the search filter was already pre-applied during the initial render,
+  // skip the redundant re-render — just show the results panel + highlights.
+  const wasPreApplied = _searchPreAppliedDuringRender;
+  if (_searchPreAppliedDuringRender) {
+    console.log('[Timeline] Skipping re-render — search was pre-applied during initial render');
+    _searchPreAppliedDuringRender = false;
+    fromCache = false; // Treat as fresh so highlights + scroll still apply
+    // Fall through to show panel below
+  }
   // Fresh search: apply zoom and re-render with search results only
-  if (!fromCache) {
+  else if (!fromCache) {
     if (targetZoom) {
       // Clamp zoom to valid range (0.1 to 500)
       biblicalTimelineZoom = Math.max(0.1, Math.min(500, targetZoom));
@@ -1167,7 +719,8 @@ function displaySearchResults(fromCache) {
     renderSearchResultsInternal(searchText, matchingEvents, matchingDurations, true);
     
     // Scroll to center the range (smooth scroll) - only if not from cache
-    if (!fromCache && centerYear !== null) {
+    // Skip scroll if pre-applied from URL (URL already specifies position)
+    if (!fromCache && !wasPreApplied && centerYear !== null) {
       scrollTimelineToYear(centerYear);
     }
     
@@ -1204,7 +757,7 @@ function renderSearchResultsInternal(searchText, matchingEvents, matchingDuratio
   const totalMatches = matchingEvents.length + matchingDurations.length;
   
   // Build event JD lookup for duration year display
-  const data = biblicalTimelineDataV2;
+  const data = ResolvedEventsCache.getDataSync();
   const profile = (typeof getTimelineProfile === 'function') ? getTimelineProfile() : null;
   const allEvents = getResolvedEvents(data, profile) || [];
   const eventJDMap = {};
@@ -1678,35 +1231,9 @@ function getEventColor(type) {
   return colors[type] || '#7ec8e3';
 }
 
-// Load and prepare timeline data
+// Load and prepare timeline data (delegates to ResolvedEventsCache singleton)
 async function loadBiblicalTimelineData() {
-  // Try v2 format first
-  if (biblicalTimelineUseV2) {
-    if (biblicalTimelineDataV2) return biblicalTimelineDataV2;
-    
-    try {
-      const response = await fetch('/historical-events-v2.json');
-      if (response.ok) {
-        biblicalTimelineDataV2 = await response.json();
-        return biblicalTimelineDataV2;
-      }
-    } catch (error) {
-      console.warn('Failed to load v2 events, falling back to v1:', error);
-    }
-  }
-  
-  // Fallback to v1 format
-  if (biblicalTimelineData) return biblicalTimelineData;
-  
-  try {
-    const response = await fetch('/historical-events.json');
-    biblicalTimelineData = await response.json();
-    biblicalTimelineUseV2 = false;
-    return biblicalTimelineData;
-  } catch (error) {
-    console.error('Failed to load historical events:', error);
-    return null;
-  }
+  return ResolvedEventsCache.getData();
 }
 
 // Get current calendar profile for event resolution
@@ -3827,69 +3354,32 @@ async function renderBiblicalTimelineInternal(container) {
   // Inject styles early (before any UI interactions)
   injectTimelineStyles();
   
+  // Get calendar profile for resolution
+  const profile = getTimelineProfile();
+  
+  // Try synchronous cache first (instant — no loading spinner)
+  let needsCalculation = !ResolvedEventsCache.isCached(profile);
+  
+  if (needsCalculation) {
+    // Show progress bar while computing
+    container.innerHTML = `
+      <div class="timeline-loading-container">
+        <div class="timeline-loading-text">Loading timeline...</div>
+        <div class="timeline-progress-bar">
+          <div class="timeline-progress-fill" style="width: 0%"></div>
+        </div>
+        <div class="timeline-loading-subtext">Preparing...</div>
+      </div>
+    `;
+    // Allow UI to paint before heavy calculation
+    await new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 50)));
+  }
+  
+  // Load raw data (for durations, epochs, etc. — needed even with cached events)
   const data = await loadBiblicalTimelineData();
   if (!data) {
     container.innerHTML = '<div class="biblical-timeline-error">Failed to load events.</div>';
     return;
-  }
-  
-  // Get calendar profile for resolution
-  const profile = getTimelineProfile();
-  
-  console.log('[renderBiblicalTimeline] Checking cache validity...');
-  console.log(`[renderBiblicalTimeline] RAM cache exists: ${!!biblicalTimelineResolvedCache}, cache key exists: ${!!biblicalTimelineCacheKey}`);
-  
-  // Check if we need to calculate (not cached) - show progress bar
-  let needsCalculation = !isTimelineCacheValid(data, profile);
-  console.log(`[renderBiblicalTimeline] needsCalculation=${needsCalculation}`);
-  
-  // Check if background resolution is in progress
-  const bgInProgress = backgroundResolutionInProgress;
-  
-  if (needsCalculation || bgInProgress) {
-    // Show progress bar - use consistent message regardless of background/foreground
-    const statusText = 'Loading timeline...';
-    const initialProgress = bgInProgress ? backgroundResolutionProgress : 0;
-    
-    // Reset global progress floor to current state (prevents backward jumps)
-    globalProgressFloor = initialProgress;
-    
-    container.innerHTML = `
-      <div class="timeline-loading-container">
-        <div class="timeline-loading-text">${statusText}</div>
-        <div class="timeline-progress-bar">
-          <div class="timeline-progress-fill" style="width: ${initialProgress}%"></div>
-        </div>
-        <div class="timeline-loading-subtext">${initialProgress > 0 ? `${initialProgress}% complete` : 'Preparing...'}</div>
-      </div>
-    `;
-    
-    // If background resolution is in progress, wait for it to complete
-    // Note: The background resolver callback updates the progress bar directly,
-    // we just poll for completion here (no duplicate progress bar updates)
-    if (bgInProgress) {
-      console.log('[Timeline] Waiting for background resolution to complete...');
-      await new Promise(resolve => {
-        const checkInterval = setInterval(() => {
-          if (!backgroundResolutionInProgress) {
-            clearInterval(checkInterval);
-            resolve();
-          }
-        }, 100);
-      });
-      console.log('[Timeline] Background resolution complete, proceeding...');
-      // Background just completed - trust that it populated the cache
-      // Don't re-validate with potentially different cache key (causes double-load)
-      if (biblicalTimelineResolvedCache) {
-        needsCalculation = false;
-        console.log('[Timeline] Using background resolution result directly');
-      } else {
-        console.warn('[Timeline] Background completed but cache is empty - will recalculate');
-      }
-    } else {
-      // Allow UI to paint before heavy calculation
-      await new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 50)));
-    }
   }
   
   // TABBED DEBUG MODE: Show tabs for table, graph, and durations
@@ -4515,24 +4005,99 @@ async function renderBiblicalTimelineInternal(container) {
     return;
   }
   
-  // Get resolved events (uses cache, or async with progress if calculating)
+  // Get resolved events via singleton (cached or computed with progress)
   let resolvedEvents;
   if (biblicalTimelineUseV2 && data.meta?.version === '2.0') {
     if (needsCalculation) {
-      // Use async version with progress updates
       resolvedEvents = await getResolvedEventsWithProgress(data, profile);
-    } else if (biblicalTimelineResolvedCache) {
-      // Use RAM cache directly (trusted from background resolution)
-      console.log('[Timeline] Using RAM cache directly:', biblicalTimelineResolvedCache.length, 'events');
-      resolvedEvents = biblicalTimelineResolvedCache;
     } else {
-      // Fallback to sync version (will check localStorage, then resolve if needed)
       resolvedEvents = getResolvedEvents(data, profile);
     }
   } else {
-    // Fallback: use old normalization for v1 data
     biblicalTimelineUseV2 = false;
     resolvedEvents = normalizeEventsLegacy(data.events || []);
+  }
+  
+  // Pre-apply URL search filter during initial render to avoid a second render cycle.
+  // When the URL has ?q=..., syncPanelFromState would normally trigger showSearchResultsFromState
+  // which calls renderBiblicalTimeline() again. By pre-computing the search filter here,
+  // the first render already shows filtered results and the second render is skipped.
+  _searchPreAppliedDuringRender = false;
+  if (typeof AppStore !== 'undefined') {
+    const _urlState = AppStore.getState();
+    const _urlSearch = _urlState?.ui?.timelineSearch;
+    if (_urlSearch && !activeSearchResultIds) {
+      const searchText = _urlSearch.toLowerCase().trim();
+      const allEvents = resolvedEvents;
+      const allDurations = data?.durations || [];
+      
+      // Build event JD lookup for durations
+      const eventJDMap = {};
+      (allEvents || []).forEach(e => { if (e.id && e.startJD) eventJDMap[e.id] = e.startJD; });
+      
+      // Filter events by search term
+      const matchingEvents = (allEvents || []).filter(event => {
+        if (event.startJD === null) return false;
+        const searchable = [event.title || '', event.description || '', event.id || '', ...(event.tags || [])].join(' ').toLowerCase();
+        return searchable.includes(searchText);
+      });
+      
+      // Filter durations by search term
+      const matchingDurations = allDurations.filter(duration => {
+        if (!eventJDMap[duration.from_event] && !eventJDMap[duration.to_event]) return false;
+        const searchable = [duration.title || '', duration.description || '', duration.id || '', ...(duration.tags || [])].join(' ').toLowerCase();
+        return searchable.includes(searchText);
+      });
+      
+      if (matchingEvents.length + matchingDurations.length > 0) {
+        // Set the search filter so filterResolvedEvents uses it
+        activeSearchResultIds = new Set(matchingEvents.map(e => e.id));
+        activeSearchDurationIds = new Set(matchingDurations.map(d => d.id));
+        
+        // Populate searchResultsCache so showSearchResultsFromState hits cache
+        let minYear = Infinity, maxYear = -Infinity;
+        matchingEvents.forEach(event => {
+          if (event.startJD && typeof EventResolver !== 'undefined') {
+            const greg = EventResolver.julianDayToGregorian(event.startJD);
+            if (greg.year < minYear) minYear = greg.year;
+            if (greg.year > maxYear) maxYear = greg.year;
+          }
+        });
+        matchingDurations.forEach(duration => {
+          if (typeof EventResolver !== 'undefined') {
+            const fromJD = eventJDMap[duration.from_event];
+            const toJD = eventJDMap[duration.to_event];
+            if (fromJD) { const g = EventResolver.julianDayToGregorian(fromJD); if (g.year < minYear) minYear = g.year; if (g.year > maxYear) maxYear = g.year; }
+            if (toJD) { const g = EventResolver.julianDayToGregorian(toJD); if (g.year < minYear) minYear = g.year; if (g.year > maxYear) maxYear = g.year; }
+          }
+        });
+        
+        const range = maxYear - minYear;
+        const margin = Math.min(5, Math.max(1, Math.ceil(range * 0.02)));
+        if (minYear !== Infinity) minYear -= margin;
+        if (maxYear !== -Infinity) maxYear += margin;
+        
+        const scrollContainer = document.getElementById('timeline-scroll-container');
+        let targetZoom = biblicalTimelineZoom;
+        if (minYear !== Infinity && maxYear !== -Infinity && scrollContainer) {
+          targetZoom = scrollContainer.clientHeight / (maxYear - minYear);
+        }
+        const centerYear = Math.round((minYear + maxYear) / 2);
+        
+        searchResultsCache = { searchText, matchingEvents, matchingDurations, minYear, maxYear, centerYear, targetZoom };
+        _searchPreAppliedDuringRender = true;
+        
+        // Use URL zoom/year if explicitly set (user-specified takes priority)
+        const urlZoom = _urlState?.ui?.timelineZoom;
+        const urlYear = _urlState?.ui?.timelineCenterYear;
+        if (urlZoom != null) biblicalTimelineZoom = urlZoom;
+        if (urlYear == null && centerYear != null) {
+          // No explicit year in URL, use search center
+        }
+        
+        console.log(`[Timeline] Pre-applied URL search filter: "${searchText}" → ${matchingEvents.length} events, ${matchingDurations.length} durations`);
+      }
+    }
   }
   
   // Filter events (apply search/type/era filters) - apply fresh each time
@@ -4555,7 +4120,7 @@ async function renderBiblicalTimelineInternal(container) {
   console.log('Historical filter:', timelineFilters.historical);
   templeEvents.forEach(id => {
     const eventFiltered = resolvedEvents.find(e => e.id === id);
-    const eventFull = biblicalTimelineResolvedCache?.find(e => e.id === id);
+    const eventFull = getTimelineResolvedEvents()?.find(e => e.id === id);
     
     if (eventFull) {
       const year = eventFull.startJD ? Math.floor((eventFull.startJD - 1721425.5) / 365.25) : 'null';
@@ -4569,11 +4134,11 @@ async function renderBiblicalTimelineInternal(container) {
   const preFloodDeaths = ['methuselah-death', 'lamech-death', 'noah-death', 'jared-death', 'enoch-translation', 'methuselah-birth', 'lamech-birth'];
   console.log('=== PRE-FLOOD EVENT DEBUG ===');
   console.log('Filtered resolvedEvents count:', resolvedEvents.length);
-  console.log('Full cache count:', biblicalTimelineResolvedCache?.length || 0);
+  console.log('Full cache count:', getTimelineResolvedEvents()?.length || 0);
   
   preFloodDeaths.forEach(id => {
     const eventFiltered = resolvedEvents.find(e => e.id === id);
-    const eventFull = biblicalTimelineResolvedCache?.find(e => e.id === id);
+    const eventFull = getTimelineResolvedEvents()?.find(e => e.id === id);
     
     if (eventFull) {
       const year = eventFull.startJD ? Math.floor((eventFull.startJD - 1721425.5) / 365.25) : 'null';
@@ -4588,7 +4153,7 @@ async function renderBiblicalTimelineInternal(container) {
   console.log('=== YESHUA/JOHN BIRTH EVENTS DEBUG ===');
   birthEvents.forEach(id => {
     const eventFiltered = resolvedEvents.find(e => e.id === id);
-    const eventFull = biblicalTimelineResolvedCache?.find(e => e.id === id);
+    const eventFull = getTimelineResolvedEvents()?.find(e => e.id === id);
     
     if (eventFull) {
       const year = eventFull.startJD ? Math.floor((eventFull.startJD - 1721425.5) / 365.25) : 'null';
@@ -5454,7 +5019,7 @@ async function renderBiblicalTimelineInternal(container) {
   // Build event Julian Day lookup from ALL resolved events
   // Store raw JD values - scaling happens at render time
   const eventJulianDays = {};
-  const allResolvedEvents = biblicalTimelineResolvedCache || [];
+  const allResolvedEvents = getTimelineResolvedEvents() || [];
   
   allResolvedEvents.forEach(event => {
     if (event.startJD !== null) {
@@ -5781,9 +5346,7 @@ async function renderBiblicalTimelineInternal(container) {
   // Set up drag-to-pan (only once)
   setupTimelineDragHandlers();
   
-  // Reset progress floor now that timeline is fully rendered
-  // (allows fresh progress tracking on next navigation)
-  globalProgressFloor = 0;
+  // Timeline fully rendered
 }
 
 // Draw connecting lines from point events to timeline
@@ -5933,7 +5496,7 @@ document.addEventListener('mousedown', () => {
 
 // Find all events related to a given event via durations
 function findRelatedEvents(eventId) {
-  const data = biblicalTimelineDataV2;
+  const data = ResolvedEventsCache.getDataSync();
   if (!data) {
     console.log('[findRelatedEvents] No data available');
     return { events: [], durations: [] };
@@ -5985,7 +5548,7 @@ function showEventTooltip(eventId, anchorEl) {
   hideEventTooltip();
   
   // Get event data from cache
-  const event = biblicalTimelineResolvedCache?.find(e => e.id === eventId);
+  const event = getTimelineResolvedEvents()?.find(e => e.id === eventId);
   if (!event) return;
   
   // Format the date
@@ -6584,8 +6147,7 @@ function initBiblicalTimelinePage() {
 
 // Clear the resolved events cache (call when profile changes)
 function invalidateBiblicalTimelineCache() {
-  biblicalTimelineResolvedCache = null;
-  biblicalTimelineCacheKey = null;
+  invalidateBiblicalTimelineCacheInternal();
 }
 
 // Cleanup on page hide
@@ -6622,8 +6184,7 @@ async function testAsyncResolver() {
   console.log('Events to resolve:', data.events?.length || 0);
   
   // Clear cache to force fresh resolution
-  biblicalTimelineResolvedCache = null;
-  biblicalTimelineCacheKey = null;
+  ResolvedEventsCache.invalidate();
   
   // Run sync version
   console.time('Sync resolution');
@@ -6632,8 +6193,7 @@ async function testAsyncResolver() {
   console.log('Sync result count:', syncResult.length);
   
   // Clear cache again
-  biblicalTimelineResolvedCache = null;
-  biblicalTimelineCacheKey = null;
+  ResolvedEventsCache.invalidate();
   
   // Run async version
   let progressUpdates = 0;
@@ -6723,8 +6283,7 @@ async function handleProfileChange(newProfile) {
   _lastProfileHash = newHash;
   
   // Clear RAM cache to force re-resolution
-  biblicalTimelineResolvedCache = null;
-  biblicalTimelineCacheKey = null;
+  ResolvedEventsCache.invalidate();
   
   // Also clear historical-events.js RAM cache if available
   if (typeof clearResolvedEventsCache === 'function') {

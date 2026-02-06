@@ -485,8 +485,9 @@
   
   <!-- Timeline and Historical Events -->
   <script src="/event-resolver.js?v=55"></script>
-  <script src="/historical-events.js?v=4"></script>
-  <script src="/biblical-timeline.js?v=32"></script>
+  <script src="/resolved-events-cache.js?v=1"></script>
+  <script src="/historical-events.js?v=5"></script>
+  <script src="/biblical-timeline.js?v=33"></script>
   <script src="/views/timeline-view.js?v=7"></script>
   
   <!-- Day Detail and World Clock -->
@@ -652,22 +653,34 @@
         }
         AppStore.dispatch({ type: 'REFRESH' });
         
-        // Start background pre-resolution of timeline events (non-blocking)
-        // Uses requestIdleCallback to avoid impacting user experience
+        // Pre-warm the resolved events cache (non-blocking).
+        // Uses the singleton ResolvedEventsCache so all consumers share one cache.
         const schedulePreResolution = window.requestIdleCallback 
           ? (cb) => window.requestIdleCallback(cb, { timeout: 5000 })
           : (cb) => setTimeout(cb, 2000);
         
         schedulePreResolution(async () => {
-          if (typeof preResolveTimelineInBackground === 'function') {
-            console.log('[App] Starting background timeline pre-resolution...');
-            await preResolveTimelineInBackground();
+          if (typeof ResolvedEventsCache !== 'undefined') {
+            const appState = AppStore.getState();
+            const profileId = appState.context?.profileId || 'timeTested';
+            const profileObj = window.PROFILES?.[profileId] || {};
+            const profile = {
+              moonPhase: profileObj.moonPhase || 'full',
+              dayStartTime: profileObj.dayStartTime || 'morning',
+              dayStartAngle: profileObj.dayStartAngle ?? 12,
+              yearStartRule: profileObj.yearStartRule || 'equinox',
+              crescentThreshold: profileObj.crescentThreshold ?? 18,
+              lat: appState.context?.location?.lat || 31.7683,
+              lon: appState.context?.location?.lon || 35.2137,
+              amEpoch: -4000
+            };
+            console.log('[App] Pre-warming resolved events cache...');
+            await ResolvedEventsCache.preload(profile);
             
-            // Now load bible events (needs resolved events from timeline)
+            // Now load bible events (needs resolved events)
             if (typeof loadBibleEvents === 'function') {
               console.log('[App] Loading bible events after resolution...');
               await loadBibleEvents();
-              // Repopulate day data to include events on calendar
               AppStore.dispatch({ type: 'REPOPULATE_DAY_DATA' });
             }
           }

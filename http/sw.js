@@ -20,6 +20,7 @@ const CORE_ASSETS = [
   '/astronomy-engine-abstraction.js',
   '/priestly-divisions.js',
   '/historical-events.js',
+  '/resolved-events-cache.js',
   '/event-resolver.js',
   '/biblical-timeline.js',
   '/bible-reader.js',
