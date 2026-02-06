@@ -6237,8 +6237,8 @@ async function handleProfileChange(newProfile) {
   console.log(`[ProfileChange] Profile changed: ${_lastProfileHash} -> ${newHash}`);
   _lastProfileHash = newHash;
   
-  // Clear RAM cache to force re-resolution
-  ResolvedEventsCache.invalidate();
+  // Don't invalidate — each profile has its own cache entry.
+  // Just preload the new profile below (it'll hit localStorage or compute fresh).
   
   // Trigger background re-resolution with the new profile
   // This will either load from localStorage cache (if exists for this profile)

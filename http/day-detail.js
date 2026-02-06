@@ -90,11 +90,31 @@ function getOrdinalSuffix(n) {
   return s[(v - 20) % 10] || s[v] || s[0];
 }
 
-// Refresh day detail panel if one is currently visible
+// Refresh day detail panel if one is currently visible.
+// Looks for both CalendarView's panel (id="day-detail") and standalone (id="day-detail-panel").
 function refreshDayDetailIfVisible() {
-  if (state.highlightedLunarDay !== null && state.lunarMonths[state.currentMonthIndex]) {
-    const month = state.lunarMonths[state.currentMonthIndex];
-    const dayObj = month.days.find(d => d.lunarDay === state.highlightedLunarDay);
+  const panel = document.getElementById('day-detail') || document.getElementById('day-detail-panel');
+  if (!panel || panel.classList.contains('hidden')) return;
+  
+  // Fast path: just re-render the world clock section without rebuilding the entire panel
+  const compareContainer = panel.querySelector('.day-detail-profile-compare');
+  if (compareContainer && typeof CalendarView !== 'undefined' && CalendarView.populateWorldClock) {
+    const state = AppStore.getState();
+    const derived = AppStore.getDerived();
+    CalendarView.populateWorldClock(panel.closest('.calendar-content') || panel.parentElement, derived, state.context);
+    return;
+  }
+  
+  // Fallback: full panel re-render via showDayDetail
+  if (typeof AppStore === 'undefined') return;
+  const derived = AppStore.getDerived();
+  const months = derived.lunarMonths || derived.calendar?.months || [];
+  const monthIdx = derived.currentMonthIndex || 0;
+  const lunarDay = derived.currentLunarDay || null;
+  
+  if (lunarDay !== null && months[monthIdx]) {
+    const month = months[monthIdx];
+    const dayObj = month.days?.find(d => d.lunarDay === lunarDay);
     if (dayObj) {
       showDayDetail(dayObj, month);
     }
@@ -1027,9 +1047,8 @@ function showDayDetail(dayObj, month) {
   
   // Populate profile comparison section (World Clock style)
   const compareContainer = panel.querySelector('.day-detail-profile-compare');
-  // Use selectedTimestamp if available (when a specific day is selected), otherwise use viewTime
-  const viewTime = state.selectedTimestamp ? new Date(state.selectedTimestamp) : getViewTime();
-  const checkTimestamp = viewTime.getTime();
+  // Get the selected Julian Day from AppStore
+  const selectedJD = (typeof AppStore !== 'undefined') ? AppStore.getState()?.context?.selectedDate : null;
   
   const entries = getWorldClockEntries();
   
@@ -1043,11 +1062,11 @@ function showDayDetail(dayObj, month) {
     
     let hasResults = false;
     entries.forEach((entry, index) => {
-      const profile = PROFILES[entry.profileId] || PRESET_PROFILES[entry.profileId];
+      const profile = window.PROFILES?.[entry.profileId];
       if (!profile) return;
       
       // Create a temp profile with the entry's location
-      const coords = CITY_SLUGS[entry.locationSlug];
+      const coords = URLRouter.CITY_SLUGS?.[entry.locationSlug];
       if (!coords) return;
       
       const tempProfile = {
@@ -1056,14 +1075,17 @@ function showDayDetail(dayObj, month) {
         lon: coords.lon
       };
       
-      const lunarDayInfo = getLunarDayForTimestamp(checkTimestamp, tempProfile);
+      const lunarDayInfo = (typeof getLunarDayForJD === 'function' && selectedJD) 
+        ? getLunarDayForJD(selectedJD, tempProfile) : null;
       if (!lunarDayInfo) return;
       
       hasResults = true;
       
       // Check if this is the current view
-      const currentLocSlug = getLocationSlug();
-      const isCurrent = entry.profileId === (state.selectedProfile || 'timeTested') && 
+      const appState = typeof AppStore !== 'undefined' ? AppStore.getState() : {};
+      const currentLocSlug = (typeof URLRouter !== 'undefined' && URLRouter._getLocationSlug) 
+        ? URLRouter._getLocationSlug(appState.context?.location || {}) : 'jerusalem';
+      const isCurrent = entry.profileId === (appState.context?.profileId || 'timeTested') && 
                         entry.locationSlug === currentLocSlug;
       
       // Get feast icons for this lunar day/month

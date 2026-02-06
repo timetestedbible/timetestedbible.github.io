@@ -910,10 +910,20 @@ const AppStore = {
         return true;
       }
         
-      case 'SET_PROFILE':
-        if (s.context.profileId === event.profileId) return false;
-        s.context.profileId = event.profileId;
-        return true;
+      case 'SET_PROFILE': {
+        let changed = false;
+        if (event.profileId && s.context.profileId !== event.profileId) {
+          s.context.profileId = event.profileId;
+          changed = true;
+        }
+        // Optional: update location in the same atomic dispatch
+        const newLoc = event.location || (event.lat != null ? { lat: event.lat, lon: event.lon } : null);
+        if (newLoc && (s.context.location.lat !== newLoc.lat || s.context.location.lon !== newLoc.lon)) {
+          s.context.location = newLoc;
+          changed = true;
+        }
+        return changed;
+      }
         
       case 'REFRESH':
         // Force recomputation of derived state (e.g., after data loads)

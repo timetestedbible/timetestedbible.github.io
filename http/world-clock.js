@@ -122,164 +122,90 @@ function getFeastIconsForLunarDay(month, day) {
   return icons;
 }
 
-// Calculate what lunar day a timestamp falls on for a given profile's settings
-// Returns { day: number, month: number } or null if unable to calculate
-function getLunarDayForTimestamp(timestamp, profile) {
+// Find the lunar day/month for a given Julian Day on a given profile's calendar.
+// Returns { day: number, month: number } or null if unable to calculate.
+// Uses JD throughout — no JS Date objects.
+function getLunarDayForJD(jd, profile) {
+  if (!jd || !isFinite(jd)) return null;
+  
   try {
-    const date = new Date(timestamp);
-    let year = date.getFullYear();
-    
-    // Make sure we have the required functions and state
-    if (typeof state === 'undefined' || typeof getAstroEngine === 'undefined' || typeof findMoonEventsForYear === 'undefined') {
-      return null;
-    }
-    
-    // Temporarily store current state and apply profile settings
-    const savedState = {
-      moonPhase: state.moonPhase,
-      dayStartTime: state.dayStartTime,
-      dayStartAngle: state.dayStartAngle,
-      yearStartRule: state.yearStartRule,
-      crescentThreshold: state.crescentThreshold,
-      lat: state.lat,
-      lon: state.lon
-    };
-    
-    // Apply profile settings temporarily (with defaults for undefined values)
-    state.moonPhase = profile.moonPhase || 'full';
-    state.dayStartTime = profile.dayStartTime || 'morning';
-    state.dayStartAngle = profile.dayStartAngle ?? 12;
-    state.yearStartRule = profile.yearStartRule || 'equinox';
-    state.crescentThreshold = profile.crescentThreshold ?? 18;
-    state.lat = profile.lat ?? 31.7683;
-    state.lon = profile.lon ?? 35.2137;
-    
-    const engine = getAstroEngine();
-    
-    // Check if timestamp is before this year's spring equinox - if so, use previous year
-    const thisYearEquinox = engine.getSeasons(year).mar_equinox.date;
-    if (date < thisYearEquinox) {
-      year = year - 1;
-    }
-    
-    // Find moon events for the year (need events spanning into next year)
-    const moonEvents = findMoonEventsForYear(year, profile.moonPhase);
-    if (!moonEvents || moonEvents.length === 0) {
-      Object.assign(state, savedState);
-      return null;
-    }
-    
-    // Find the spring equinox for the lunar year
-    const springEquinox = engine.getSeasons(year).mar_equinox.date;
-    
-    // Find the first moon event on or after the spring equinox for Nisan
-    let nissanMoon = null;
-    for (const event of moonEvents) {
-      if (event >= springEquinox) {
-        nissanMoon = event;
-        break;
+    // Fast path: search the already-computed calendar from AppStore
+    if (typeof AppStore !== 'undefined') {
+      const appState = AppStore.getState();
+      const derived = AppStore.getDerived();
+      const currentProfile = window.PROFILES?.[appState.context?.profileId] || {};
+      
+      const sameProfile = profile.moonPhase === (currentProfile.moonPhase || 'full') &&
+                          profile.dayStartTime === (currentProfile.dayStartTime || 'morning') &&
+                          profile.yearStartRule === (currentProfile.yearStartRule || 'equinox') &&
+                          Math.abs((profile.dayStartAngle ?? 12) - (currentProfile.dayStartAngle ?? 12)) < 0.01 &&
+                          Math.abs((profile.crescentThreshold ?? 18) - (currentProfile.crescentThreshold ?? 18)) < 0.01;
+      
+      if (sameProfile && derived.lunarMonths && derived.lunarMonths.length > 0) {
+        const result = _findDayInMonths(derived.lunarMonths, jd);
+        if (result) return result;
       }
     }
     
-    // If no moon event after equinox, check the last one before
-    if (!nissanMoon && moonEvents.length > 0) {
-      for (let i = moonEvents.length - 1; i >= 0; i--) {
-        if (moonEvents[i] < springEquinox) {
-          nissanMoon = moonEvents[i];
-          break;
-        }
-      }
+    // Slow path: generate calendar via shared LunarCalendarEngine
+    if (typeof LunarCalendarEngine === 'undefined') return null;
+    const astroEngine = typeof getAstroEngine === 'function' ? getAstroEngine() : null;
+    if (!astroEngine) return null;
+    
+    if (!getLunarDayForJD._engine) {
+      getLunarDayForJD._engine = new LunarCalendarEngine(astroEngine);
+    }
+    const calEngine = getLunarDayForJD._engine;
+    
+    calEngine.configure({
+      moonPhase: profile.moonPhase || 'full',
+      dayStartTime: profile.dayStartTime || 'morning',
+      dayStartAngle: profile.dayStartAngle ?? 12,
+      yearStartRule: profile.yearStartRule || 'equinox',
+      crescentThreshold: profile.crescentThreshold ?? 18
+    });
+    
+    const location = { lat: profile.lat ?? 31.7683, lon: profile.lon ?? 35.2137 };
+    
+    // Convert JD to approximate gregorian year, try that year and previous
+    // (dates before spring equinox belong to the previous biblical year)
+    const approxYear = Math.floor((jd - 1721425.5) / 365.25);
+    for (const year of [approxYear, approxYear - 1]) {
+      const calendar = calEngine.generateYear(year, location);
+      if (!calendar || !calendar.months) continue;
+      
+      const result = _findDayInMonths(calendar.months, jd);
+      if (result) return result;
     }
     
-    if (!nissanMoon) {
-      Object.assign(state, savedState);
-      return null;
-    }
-    
-    // Build simplified lunar months to find the day
-    const observerLon = profile.lon;
-    let currentMoonIdx = moonEvents.findIndex(m => Math.abs(m.getTime() - nissanMoon.getTime()) < 1000);
-    if (currentMoonIdx === -1) currentMoonIdx = moonEvents.findIndex(m => m >= nissanMoon);
-    
-    // Iterate through months to find where the timestamp falls
-    for (let m = 0; m < 13 && currentMoonIdx < moonEvents.length - 1; m++) {
-      const moonEvent = moonEvents[currentMoonIdx];
-      const nextMoonEvent = moonEvents[currentMoonIdx + 1];
-      
-      // Calculate month start date (similar to buildLunarMonths)
-      const moonEventLocalDate = new Date(moonEvent.getTime());
-      const monthStartDate = new Date(Date.UTC(
-        moonEventLocalDate.getUTCFullYear(),
-        moonEventLocalDate.getUTCMonth(),
-        moonEventLocalDate.getUTCDate(),
-        0, 0, 0
-      ));
-      
-      // Apply day offset based on settings
-      if ((profile.moonPhase === 'dark' || profile.moonPhase === 'full' || profile.moonPhase === 'crescent') && profile.dayStartTime === 'evening') {
-        if (typeof getSunsetTimestamp === 'function') {
-          const sunsetOnMoonDate = getSunsetTimestamp(moonEventLocalDate);
-          if (sunsetOnMoonDate != null) {
-            const moonEventLocalTime = moonEvent.getTime() + (observerLon / 15) * 60 * 60 * 1000;
-            const sunsetLocalTime = sunsetOnMoonDate + (observerLon / 15) * 60 * 60 * 1000;
-            if (moonEventLocalTime > sunsetLocalTime) {
-              monthStartDate.setUTCDate(monthStartDate.getUTCDate() + 1);
-            }
-          }
-        }
-      }
-      
-      // Calculate next month start
-      const nextMoonEventLocalDate = new Date(nextMoonEvent.getTime());
-      const nextMonthStart = new Date(Date.UTC(
-        nextMoonEventLocalDate.getUTCFullYear(),
-        nextMoonEventLocalDate.getUTCMonth(),
-        nextMoonEventLocalDate.getUTCDate(),
-        0, 0, 0
-      ));
-      
-      if ((profile.moonPhase === 'dark' || profile.moonPhase === 'full' || profile.moonPhase === 'crescent') && profile.dayStartTime === 'evening') {
-        if (typeof getSunsetTimestamp === 'function') {
-          const sunsetOnNextMoonDate = getSunsetTimestamp(nextMoonEventLocalDate);
-          if (sunsetOnNextMoonDate != null) {
-            const nextMoonEventLocalTime = nextMoonEvent.getTime() + (observerLon / 15) * 60 * 60 * 1000;
-            const nextSunsetLocalTime = sunsetOnNextMoonDate + (observerLon / 15) * 60 * 60 * 1000;
-            if (nextMoonEventLocalTime > nextSunsetLocalTime) {
-              nextMonthStart.setUTCDate(nextMonthStart.getUTCDate() + 1);
-            }
-          }
-        }
-      }
-      
-      // Check if timestamp falls in this month
-      const timestampDate = new Date(timestamp);
-      const timestampDayStart = new Date(Date.UTC(
-        timestampDate.getUTCFullYear(),
-        timestampDate.getUTCMonth(),
-        timestampDate.getUTCDate(),
-        0, 0, 0
-      ));
-      
-      if (timestampDayStart >= monthStartDate && timestampDayStart < nextMonthStart) {
-        // Found the month - calculate the day
-        const dayOffset = Math.floor((timestampDayStart - monthStartDate) / (24 * 60 * 60 * 1000));
-        const lunarDay = dayOffset + 1;
-        
-        // Restore state
-        Object.assign(state, savedState);
-        return { day: lunarDay, month: m + 1 };
-      }
-      
-      currentMoonIdx++;
-    }
-    
-    // Restore state
-    Object.assign(state, savedState);
     return null;
   } catch (e) {
     console.warn('Error calculating lunar day for profile:', e);
     return null;
   }
+}
+
+// Search an array of lunar months for the day containing a given JD.
+// Each day has a .jd field (day start in JD). We find the day whose JD
+// is closest to (but not after) the target JD.
+function _findDayInMonths(months, targetJD) {
+  const jdFloor = Math.floor(targetJD);
+  for (const month of months) {
+    if (!month.days || month.days.length === 0) continue;
+    for (const day of month.days) {
+      if (day.jd != null && Math.floor(day.jd) === jdFloor) {
+        return { day: day.lunarDay, month: month.monthNumber };
+      }
+    }
+  }
+  return null;
+}
+
+// Legacy wrapper for callers still passing timestamps
+function getLunarDayForTimestamp(timestamp, profile) {
+  // Convert timestamp to JD: JD = (ms / 86400000) + 2440587.5
+  const jd = (timestamp / 86400000) + 2440587.5;
+  return getLunarDayForJD(jd, profile);
 }
 
 // Get default world clock entries (used when no saved entries exist)
@@ -304,8 +230,8 @@ function getDefaultWorldClockEntries() {
     addEntry('timeTested', savedSlug, savedName);
   }
   
-  // All presets in Jerusalem (use window.PROFILES or PRESET_PROFILES if available)
-  const allProfiles = window.PROFILES || (typeof PRESET_PROFILES !== 'undefined' ? PRESET_PROFILES : {});
+  // All presets in Jerusalem
+  const allProfiles = window.PROFILES || {};
   for (const [profileId, profile] of Object.entries(allProfiles)) {
     addEntry(profileId, 'jerusalem', 'Jerusalem');
   }
@@ -382,117 +308,149 @@ function removeWorldClockEntryAndRefresh(index) {
   refreshDayDetailIfVisible();
 }
 
-// Open location picker for World Clock (adds new entry)
-function openLocationPickerForWorldClock() {
-  locationPickerMode = 'worldclock';
-  locationPickerCallback = (locationSlug, locationName, coords, profileId) => {
-    if (addWorldClockEntry(profileId, locationSlug, locationName)) {
-      refreshDayDetailIfVisible();
+// Show modal to add a new World Clock entry (profile selector + interactive map)
+function showAddWorldClockModal() {
+  // Build profile options
+  const allProfiles = window.PROFILES || {};
+  const currentProfileId = (typeof AppStore !== 'undefined') ? (AppStore.getState().context?.profileId || 'timeTested') : 'timeTested';
+  let profileOptionsHtml = '';
+  for (const [id, profile] of Object.entries(allProfiles)) {
+    const selected = id === currentProfileId ? ' selected' : '';
+    profileOptionsHtml += `<option value="${id}"${selected}>${renderProfileIconText(profile)} ${profile.name}</option>`;
+  }
+  
+  // Get current profile settings for the map
+  const appState = (typeof AppStore !== 'undefined') ? AppStore.getState() : {};
+  const profile = window.PROFILES?.[currentProfileId] || {};
+  const defaultLat = 31.7683;
+  const defaultLon = 35.2137;
+  
+  // Track selected location (starts at Jerusalem)
+  let selectedSlug = 'jerusalem';
+  let selectedLat = defaultLat;
+  let selectedLon = defaultLon;
+  
+  // Create overlay + modal
+  const overlay = document.createElement('div');
+  overlay.className = 'picker-overlay';
+  
+  const modal = document.createElement('div');
+  modal.className = 'location-picker';
+  modal.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; max-width: 90vw; z-index: 10001;';
+  modal.onclick = (e) => e.stopPropagation();
+  
+  modal.innerHTML = `
+    <div class="location-picker-header">
+      <h3>Add Calendar</h3>
+      <button class="picker-close-btn" title="Close">&#10005;</button>
+    </div>
+    <div class="location-picker-controls" style="display: flex; flex-direction: column; gap: 10px; padding: 12px 16px 8px;">
+      <label style="color: #aaa; font-size: 0.85em;">Profile</label>
+      <select id="wc-add-profile" class="location-select">${profileOptionsHtml}</select>
+      <label style="color: #aaa; font-size: 0.85em;">Location (click map or select below)</label>
+    </div>
+    <div id="wc-map-slot" style="padding: 0 16px;"></div>
+    <div style="padding: 8px 16px 16px; display: flex; gap: 8px;">
+      <select id="wc-add-city" class="location-select" style="flex: 1;"></select>
+      <button id="wc-add-confirm" style="padding: 8px 16px; background: var(--color-accent, #7ec8e3); color: #0d2840; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; white-space: nowrap;">Add</button>
+    </div>
+  `;
+  
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+  
+  // Build city dropdown (same grouped layout as CalendarView)
+  const citySelect = modal.querySelector('#wc-add-city');
+  const CITY_GROUPS = {
+    'Biblical': ['jerusalem', 'bethlehem', 'nazareth', 'jericho', 'hebron', 'cairo', 'alexandria'],
+    'Middle East': ['tel-aviv', 'dubai', 'amman', 'baghdad', 'tehran', 'riyadh', 'istanbul', 'damascus', 'beirut'],
+    'Americas': ['new-york', 'los-angeles', 'chicago', 'houston', 'denver', 'miami', 'seattle', 'toronto', 'mexico-city', 'sao-paulo'],
+    'Europe': ['london', 'paris', 'berlin', 'rome', 'madrid', 'amsterdam', 'moscow', 'athens', 'zurich'],
+    'Asia': ['tokyo', 'beijing', 'shanghai', 'hong-kong', 'singapore', 'mumbai', 'delhi', 'seoul', 'bangkok'],
+    'Africa': ['johannesburg', 'lagos', 'nairobi', 'cape-town'],
+    'Oceania': ['sydney', 'melbourne', 'auckland', 'perth']
+  };
+  let cityHtml = '';
+  for (const [region, cities] of Object.entries(CITY_GROUPS)) {
+    cityHtml += `<optgroup label="${region}">`;
+    for (const slug of cities) {
+      const sel = slug === 'jerusalem' ? ' selected' : '';
+      cityHtml += `<option value="${slug}"${sel}>${formatCitySlug(slug)}</option>`;
+    }
+    cityHtml += '</optgroup>';
+  }
+  citySelect.innerHTML = cityHtml;
+  
+  // Create the DatelineMap
+  const mapSlot = modal.querySelector('#wc-map-slot');
+  if (typeof DatelineMap !== 'undefined') {
+    const mapEl = DatelineMap.create({
+      moonEventDate: new Date(),
+      lat: defaultLat,
+      lon: defaultLon,
+      moonPhase: profile.moonPhase || 'full',
+      dayStartTime: profile.dayStartTime || 'morning',
+      dayStartAngle: profile.dayStartAngle || -12,
+      onLocationSelect: (lat, lon, citySlug) => {
+        selectedLat = lat;
+        selectedLon = lon;
+        selectedSlug = citySlug || (typeof URLRouter !== 'undefined' ? URLRouter._getLocationSlug({ lat, lon }) : 'jerusalem');
+        // Sync the dropdown
+        if (citySelect.querySelector(`option[value="${selectedSlug}"]`)) {
+          citySelect.value = selectedSlug;
+        }
+        DatelineMap.updateLocation(mapEl, lat, lon);
+      }
+    });
+    mapSlot.appendChild(mapEl);
+  }
+  
+  // Sync map when dropdown changes
+  citySelect.addEventListener('change', () => {
+    const slug = citySelect.value;
+    const coords = (typeof URLRouter !== 'undefined') ? URLRouter.CITY_SLUGS?.[slug] : null;
+    if (coords && mapSlot.firstChild) {
+      selectedSlug = slug;
+      selectedLat = coords.lat;
+      selectedLon = coords.lon;
+      DatelineMap.updateLocation(mapSlot.firstChild, coords.lat, coords.lon);
+    }
+  });
+  
+  // Close handler
+  const close = () => overlay.remove();
+  overlay.onclick = close;
+  modal.querySelector('.picker-close-btn').addEventListener('click', close);
+  
+  // Add button
+  modal.querySelector('#wc-add-confirm').addEventListener('click', () => {
+    const profileId = modal.querySelector('#wc-add-profile').value;
+    if (!profileId || !selectedSlug) return;
+    
+    const locationName = formatCitySlug(selectedSlug);
+    if (addWorldClockEntry(profileId, selectedSlug, locationName)) {
+      close();
+      if (typeof refreshDayDetailIfVisible === 'function') {
+        refreshDayDetailIfVisible();
+      }
     } else {
       alert('This calendar is already in your list.');
     }
-  };
-  showUnifiedLocationPicker('Add Calendar', true);
-}
-
-// Populate profile selector in location picker (for World Clock mode)
-function populatePickerProfileSelect() {
-  const select = document.getElementById('city-picker-profile-select');
-  if (!select) return;
-  
-  const allProfiles = window.PROFILES || {};
-  const selectedProfileId = typeof state !== 'undefined' ? (state.selectedProfile || 'timeTested') : 'timeTested';
-  
-  select.innerHTML = '';
-  for (const [id, profile] of Object.entries(allProfiles)) {
-    const opt = document.createElement('option');
-    opt.value = id;
-    opt.textContent = `${renderProfileIconText(profile)} ${profile.name}`;
-    if (id === selectedProfileId) {
-      opt.selected = true;
-    }
-    select.appendChild(opt);
-  }
-}
-
-// Get currently selected profile in picker (for World Clock mode)
-function getPickerSelectedProfile() {
-  const select = document.getElementById('city-picker-profile-select');
-  const defaultProfile = typeof state !== 'undefined' ? (state.selectedProfile || 'timeTested') : 'timeTested';
-  return select ? select.value : defaultProfile;
-}
-
-// Confirm adding a World Clock entry
-function confirmWorldClockAdd() {
-  // Use the previewed location, or current selection from dropdown
-  let slug = previewedLocationSlug;
-  let coords = previewedLocationCoords;
-  
-  if (!slug) {
-    // Fallback to dropdown selection
-    const select = document.getElementById('city-picker-select');
-    slug = select ? select.value : null;
-    coords = slug ? CITY_SLUGS[slug] : null;
-  }
-  
-  if (!slug || !coords) {
-    alert('Please select a location first.');
-    return;
-  }
-  
-  const locationName = formatCitySlug(slug);
-  confirmLocationSelection(slug, locationName, coords);
-}
-
-// Show modal to add new world clock entry (now uses unified picker)
-function showAddWorldClockModal() {
-  openLocationPickerForWorldClock();
-}
-
-// Legacy function for compatibility
-function hideAddWorldClockModal() {
-  toggleCityPicker();
-}
-
-// Legacy function kept for old modal (no longer used but kept for safety)
-function addWorldClockFromModal() {
-  // Now handled by confirmLocationSelection
+  });
 }
 
 // Navigate to a world clock entry (switch profile and location)
 function navigateToWorldClockEntry(profileId, locationSlug) {
-  const profile = window.PROFILES?.[profileId] || (typeof PRESET_PROFILES !== 'undefined' ? PRESET_PROFILES[profileId] : null);
-  const coords = typeof CITY_SLUGS !== 'undefined' ? CITY_SLUGS[locationSlug] : null;
+  const profile = window.PROFILES?.[profileId];
+  const coords = (typeof URLRouter !== 'undefined') ? URLRouter.CITY_SLUGS?.[locationSlug] : null;
   if (!profile || !coords) return;
   
-  // Apply profile settings
-  if (typeof state !== 'undefined') {
-    state.moonPhase = profile.moonPhase;
-    state.dayStartTime = profile.dayStartTime;
-    state.dayStartAngle = profile.dayStartAngle;
-    state.yearStartRule = profile.yearStartRule;
-    state.crescentThreshold = profile.crescentThreshold ?? 18;
-    state.sabbathMode = profile.sabbathMode;
-    state.selectedProfile = profileId;
-    
-    // Apply location
-    state.lat = coords.lat;
-    state.lon = coords.lon;
-    
-    // Regenerate calendar with new settings
-    if (typeof saveState === 'function') saveState();
-    if (typeof regenerateCalendarPreservingScroll === 'function') {
-      regenerateCalendarPreservingScroll();
-    } else if (typeof CalendarView !== 'undefined' && typeof CalendarView.render === 'function') {
-      CalendarView.render(document.getElementById('app-content'));
-    }
-  } else if (typeof AppStore !== 'undefined') {
-    // Use AppStore if state is not directly available
+  if (typeof AppStore !== 'undefined') {
+    // Single atomic dispatch: profile + location together = one recompute, one URL push
     AppStore.dispatch({
       type: 'SET_PROFILE',
-      profileId: profileId,
-      lat: coords.lat,
-      lon: coords.lon
+      profileId,
+      location: { lat: coords.lat, lon: coords.lon }
     });
   }
 }

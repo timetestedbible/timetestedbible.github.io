@@ -65,9 +65,13 @@ const CalendarView = {
     container.innerHTML = this.renderCalendar(state, derived, month, monthIndex, selectedDay);
     this.attachEventListeners(container, month);
     
-    // Populate world clock section if day detail is visible
+    // Populate world clock section after main render (non-blocking)
     if (selectedDay) {
-      this.populateWorldClock(container, derived, state.context);
+      const _derived = derived;
+      const _context = state.context;
+      requestAnimationFrame(() => {
+        this.populateWorldClock(container, _derived, _context);
+      });
     }
     
     // Update left panel with feast list and priestly cycles
@@ -681,12 +685,12 @@ const CalendarView = {
         </div>
         <div class="day-detail-body">
           ${yearInfoHtml}
+          <div class="day-detail-profile-compare"></div>
           ${feastsHtml}
           ${torahHtml}
           ${eventsHtml}
           ${noItemsHtml}
           ${datelineHtml}
-          <div class="day-detail-profile-compare"></div>
         </div>
       </div>
     `;
@@ -3365,16 +3369,12 @@ const CalendarView = {
       return;
     }
     
-    // Get current timestamp for comparison
+    // Get the selected Julian Day
     const selectedJD = derived.currentJD || AppStore.getState()?.context?.selectedDate;
     if (!selectedJD) {
       compareContainer.innerHTML = '';
       return;
     }
-    
-    // Convert JD to timestamp
-    const viewDate = AppStore._julianToDate ? AppStore._julianToDate(selectedJD) : new Date();
-    const checkTimestamp = viewDate.getTime();
     
     let compareHtml = `
       <div class="profile-compare-header">
@@ -3385,14 +3385,15 @@ const CalendarView = {
     
     let hasResults = false;
     const currentProfileId = context?.profileId || 'timeTested';
-    const currentLocationSlug = context?.locationSlug;
+    const currentLocationSlug = (typeof URLRouter !== 'undefined' && URLRouter._getLocationSlug && context?.location)
+      ? URLRouter._getLocationSlug(context.location) : 'jerusalem';
     
     entries.forEach((entry, index) => {
-      const profile = window.PROFILES?.[entry.profileId] || window.PRESET_PROFILES?.[entry.profileId];
+      const profile = window.PROFILES?.[entry.profileId];
       if (!profile) return;
       
       // Get coordinates for this entry's location
-      const coords = window.CITY_SLUGS?.[entry.locationSlug];
+      const coords = (typeof URLRouter !== 'undefined') ? URLRouter.CITY_SLUGS?.[entry.locationSlug] : null;
       if (!coords) return;
       
       // Create a temp profile with the entry's location
@@ -3404,8 +3405,11 @@ const CalendarView = {
       
       // Get lunar day info for this profile/location combination
       let lunarDayInfo;
-      if (typeof getLunarDayForTimestamp === 'function') {
-        lunarDayInfo = getLunarDayForTimestamp(checkTimestamp, tempProfile);
+      if (typeof getLunarDayForJD === 'function') {
+        lunarDayInfo = getLunarDayForJD(selectedJD, tempProfile);
+      } else if (typeof getLunarDayForTimestamp === 'function') {
+        const viewDate = AppStore._julianToDate ? AppStore._julianToDate(selectedJD) : new Date();
+        lunarDayInfo = getLunarDayForTimestamp(viewDate.getTime(), tempProfile);
       }
       if (!lunarDayInfo) return;
       
@@ -3473,6 +3477,7 @@ const CalendarView = {
     } else {
       compareContainer.innerHTML = '';
     }
+    
   },
 
   /**

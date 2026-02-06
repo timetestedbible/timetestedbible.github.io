@@ -1300,8 +1300,15 @@ function resolveAllEvents(data, profile) {
     resolutionStack: []
   };
   
-  // Resolve all events
-  const resolved = events.map(event => resolveEvent(event, profile, epochs, context));
+  // Resolve all events (catch per-event errors so one bad event doesn't crash the batch)
+  const resolved = events.map(event => {
+    try {
+      return resolveEvent(event, profile, epochs, context);
+    } catch (e) {
+      console.warn(`[EventResolver] Failed to resolve event "${event.id}":`, e.message);
+      return { id: event.id, title: event.title, type: event.type, startJD: null, endJD: null, _error: e.message };
+    }
+  });
   
   // Expand prophecies into separate timeline events
   const expanded = [];
@@ -1355,7 +1362,12 @@ async function resolveAllEventsAsync(data, profile, onProgress) {
   const batchSize = 20; // Process 20 events, then yield to UI
   
   for (let i = 0; i < events.length; i++) {
-    resolved.push(resolveEvent(events[i], profile, epochs, context));
+    try {
+      resolved.push(resolveEvent(events[i], profile, epochs, context));
+    } catch (e) {
+      console.warn(`[EventResolver] Failed to resolve event "${events[i].id}":`, e.message);
+      resolved.push({ id: events[i].id, title: events[i].title, type: events[i].type, startJD: null, endJD: null, _error: e.message });
+    }
     
     // Report progress and yield to UI every batch
     if (i % batchSize === 0) {
