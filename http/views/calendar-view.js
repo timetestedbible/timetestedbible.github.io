@@ -1876,18 +1876,20 @@ const CalendarView = {
       });
     });
     
-    // AM/PM toggle
+    // AM/PM toggle — just flip the period, keep displayed hour and minutes
     ampmToggle.addEventListener('click', () => {
-      const state = AppStore.getState();
       const derived = AppStore.getDerived();
-      const currentTime = AppStore.getLocalTime();
-      let hours = currentTime.hours;
+      const isPM = ampmToggle.dataset.pm === 'true';
+      const displayedHour = parseInt(hoursDisplay.textContent) || 12;
+      const displayedMinutes = parseInt(minutesDisplay.textContent) || 0;
       
-      // Toggle AM/PM by adding/subtracting 12 hours
-      if (hours >= 12) {
-        hours -= 12;
+      // Convert displayed 12h + flipped period to 24h
+      const newPM = !isPM;
+      let hours24;
+      if (displayedHour === 12) {
+        hours24 = newPM ? 12 : 0;
       } else {
-        hours += 12;
+        hours24 = newPM ? displayedHour + 12 : displayedHour;
       }
       
       AppStore.dispatch({ 
@@ -1895,7 +1897,7 @@ const CalendarView = {
         year: derived.year,
         month: (derived.currentMonthIndex ?? 0) + 1,
         day: derived.currentLunarDay ?? 1,
-        time: { hours, minutes: currentTime.minutes } 
+        time: { hours: hours24, minutes: displayedMinutes } 
       });
     });
   },

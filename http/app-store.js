@@ -179,16 +179,15 @@ const AppStore = {
       return { hours: getPart('hour'), minutes: getPart('minute') };
     }
     
-    // Fallback: solar time offset
+    // Fallback: solar time offset (carry fractional hours into minutes)
     const offsetHours = location.lon / 15;
-    let hours = utcTime.hours + offsetHours;
-    let minutes = utcTime.minutes;
+    let totalMinutes = (utcTime.hours * 60 + utcTime.minutes) + Math.round(offsetHours * 60);
     
     // Handle day overflow
-    if (hours >= 24) hours -= 24;
-    if (hours < 0) hours += 24;
+    if (totalMinutes >= 1440) totalMinutes -= 1440;
+    if (totalMinutes < 0) totalMinutes += 1440;
     
-    return { hours: Math.floor(hours), minutes };
+    return { hours: Math.floor(totalMinutes / 60), minutes: totalMinutes % 60 };
   },
   
   /**
@@ -271,14 +270,14 @@ const AppStore = {
       return { hours: utcHours, minutes: localTime.minutes };
     }
     
-    // Fallback: solar time offset (reverse)
+    // Fallback: solar time offset reversed (carry fractional hours into minutes)
     const offsetHours = location.lon / 15;
-    let hours = localTime.hours - offsetHours;
+    let totalMinutes = (localTime.hours * 60 + localTime.minutes) - Math.round(offsetHours * 60);
     
-    if (hours >= 24) hours -= 24;
-    if (hours < 0) hours += 24;
+    if (totalMinutes >= 1440) totalMinutes -= 1440;
+    if (totalMinutes < 0) totalMinutes += 1440;
     
-    return { hours: Math.floor(hours), minutes: localTime.minutes };
+    return { hours: Math.floor(totalMinutes / 60), minutes: totalMinutes % 60 };
   },
   
   /**
@@ -836,9 +835,16 @@ const AppStore = {
         }
         if (event.time !== undefined) {
           // event.time is local, convert to UTC
-          // Use current date for conversion (lunar date not yet resolved to Gregorian)
-          const now = new Date();
-          s.context.utcTime = this.localToUtc(event.time, now, s.context.location);
+          // Use the selected date (not now) so DST offset matches getLocalTime() round-trip
+          let convDate;
+          if (s.context.selectedDate) {
+            const greg = this._julianToGregorian(s.context.selectedDate);
+            convDate = new Date(Date.UTC(2000, greg.month - 1, greg.day, 12, 0, 0));
+            convDate.setUTCFullYear(greg.year);
+          } else {
+            convDate = new Date();
+          }
+          s.context.utcTime = this.localToUtc(event.time, convDate, s.context.location);
           lunarChanged = true;
         }
         return lunarChanged;
