@@ -3191,6 +3191,208 @@ window.openDurationDetail_openEvent = openDurationDetail_openEvent;
 window.toggleDescriptionExpand = toggleDescriptionExpand;
 window.showJubileeInfo = showJubileeInfo;
 
+// ── CLUSTER DROPDOWN FUNCTIONS ──
+
+/**
+ * Toggle the cluster dropdown for a given parent event.
+ * Shows/hides a floating dropdown listing all hidden events in the cluster.
+ */
+function toggleClusterDropdown(parentEventId, badgeEl) {
+  // Close any existing dropdown
+  const existing = document.querySelector('.cluster-dropdown');
+  if (existing) {
+    const wasForSameParent = existing.dataset.clusterParent === parentEventId;
+    existing.remove();
+    if (wasForSameParent) return; // Toggle off
+  }
+  
+  const clusterData = window._timelineClusterData?.get(parentEventId);
+  if (!clusterData || !clusterData.children.length) return;
+  
+  // Build dropdown HTML
+  const dropdown = document.createElement('div');
+  dropdown.className = 'cluster-dropdown';
+  dropdown.dataset.clusterParent = parentEventId;
+  
+  // Helper to format year from JD
+  const jdToYearDisplay = (jd) => {
+    const year = Math.floor((jd - 1721425.5) / 365.25);
+    if (year <= 0) return `${1 - year} BC`;
+    return `${year} AD`;
+  };
+  
+  let itemsHtml = '';
+  
+  // Show the parent event first
+  if (clusterData.parent) {
+    const parentYear = jdToYearDisplay(clusterData.parent.startJD);
+    itemsHtml += `
+      <div class="cluster-dropdown-item cluster-dropdown-parent" onclick="event.stopPropagation(); closeClusterDropdown(); openEventDetail('${clusterData.parent.id}')">
+        <span class="cluster-dropdown-icon">${getTypeIcon(clusterData.parent.type)}</span>
+        <span class="cluster-dropdown-title">${clusterData.parent.title}</span>
+        <span class="cluster-dropdown-year">${parentYear}</span>
+      </div>
+    `;
+  }
+  
+  // Separator
+  itemsHtml += '<div class="cluster-dropdown-separator"></div>';
+  
+  // Child events sorted by date
+  const sortedChildren = [...clusterData.children].sort((a, b) => (a.startJD || 0) - (b.startJD || 0));
+  sortedChildren.forEach(child => {
+    const childYear = jdToYearDisplay(child.startJD);
+    itemsHtml += `
+      <div class="cluster-dropdown-item" onclick="event.stopPropagation(); closeClusterDropdown(); openEventDetail('${child.id}')">
+        <span class="cluster-dropdown-icon">${child.icon}</span>
+        <span class="cluster-dropdown-title">${child.title}</span>
+        <span class="cluster-dropdown-year">${childYear}</span>
+      </div>
+    `;
+  });
+  
+  // Zoom-to-fit button
+  itemsHtml += '<div class="cluster-dropdown-separator"></div>';
+  itemsHtml += `
+    <div class="cluster-dropdown-zoom" onclick="event.stopPropagation(); closeClusterDropdown(); zoomToCluster('${parentEventId}')">
+      🔍 Zoom to expand
+    </div>
+  `;
+  
+  dropdown.innerHTML = `
+    <div class="cluster-dropdown-header">
+      ${clusterData.children.length + 1} events in this area
+    </div>
+    ${itemsHtml}
+  `;
+  
+  // Position dropdown near the badge — smart placement based on available space
+  const eventEl = badgeEl.closest('.stacked-event');
+  dropdown.style.position = 'fixed';
+  document.body.appendChild(dropdown);
+  
+  if (eventEl) {
+    const eventRect = eventEl.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const dropdownRect = dropdown.getBoundingClientRect();
+    const dw = dropdownRect.width;
+    const dh = dropdownRect.height;
+    
+    const spaceRight = vw - eventRect.right;
+    const spaceLeft = eventRect.left;
+    const spaceBelow = vh - eventRect.bottom;
+    const spaceAbove = eventRect.top;
+    const isMobile = vw <= 600;
+    
+    let left, top;
+    
+    if (!isMobile && spaceRight >= dw + 12) {
+      // Desktop with enough room to the right: place right of event
+      left = eventRect.right + 8;
+      top = eventRect.top;
+    } else if (!isMobile && spaceLeft >= dw + 12) {
+      // Desktop with room to the left
+      left = eventRect.left - dw - 8;
+      top = eventRect.top;
+    } else if (spaceBelow >= dh + 12) {
+      // Below the event (mobile default or desktop fallback)
+      left = Math.max(10, Math.min(eventRect.left, vw - dw - 10));
+      top = eventRect.bottom + 6;
+    } else if (spaceAbove >= dh + 12) {
+      // Above the event
+      left = Math.max(10, Math.min(eventRect.left, vw - dw - 10));
+      top = eventRect.top - dh - 6;
+    } else {
+      // Last resort: center in viewport
+      left = Math.max(10, (vw - dw) / 2);
+      top = Math.max(10, (vh - dh) / 2);
+    }
+    
+    // Final clamp to viewport
+    left = Math.max(10, Math.min(left, vw - dw - 10));
+    top = Math.max(10, Math.min(top, vh - dh - 10));
+    
+    dropdown.style.left = left + 'px';
+    dropdown.style.top = top + 'px';
+  }
+  
+  // Close on outside click (delayed to avoid closing immediately)
+  setTimeout(() => {
+    document.addEventListener('click', _clusterOutsideClickHandler, { once: true, capture: true });
+  }, 10);
+}
+
+function _clusterOutsideClickHandler(evt) {
+  const dropdown = document.querySelector('.cluster-dropdown');
+  if (dropdown && !dropdown.contains(evt.target) && !evt.target.closest('.cluster-badge')) {
+    closeClusterDropdown();
+  } else if (dropdown) {
+    // Re-attach listener if click was inside dropdown (it will handle its own closing)
+    setTimeout(() => {
+      document.addEventListener('click', _clusterOutsideClickHandler, { once: true, capture: true });
+    }, 10);
+  }
+}
+
+function closeClusterDropdown() {
+  const dropdown = document.querySelector('.cluster-dropdown');
+  if (dropdown) dropdown.remove();
+  document.removeEventListener('click', _clusterOutsideClickHandler, { capture: true });
+}
+
+/**
+ * Zoom the timeline to a level where all events in a cluster would each have their own slot.
+ */
+function zoomToCluster(parentEventId) {
+  const clusterData = window._timelineClusterData?.get(parentEventId);
+  if (!clusterData) return;
+  
+  const allEvents = [clusterData.parent, ...clusterData.children].filter(Boolean);
+  if (allEvents.length < 2) return;
+  
+  // Calculate year range of cluster events
+  const years = allEvents.map(e => Math.floor((e.startJD - 1721425.5) / 365.25));
+  const minClusterYear = Math.min(...years);
+  const maxClusterYear = Math.max(...years);
+  const clusterYearSpan = Math.max(maxClusterYear - minClusterYear, 1); // at least 1 year
+  const centerYear = Math.round((minClusterYear + maxClusterYear) / 2);
+  
+  // We need pixelPerYear such that each event gets its own ~40px slot
+  // Total pixel space needed: allEvents.length * eventHeight
+  // That space must cover clusterYearSpan years
+  // So: pixelPerYear >= (allEvents.length * eventHeight) / clusterYearSpan
+  const isMobileNarrow = window.innerWidth <= 480;
+  const eventHeight = isMobileNarrow ? 30 : 40;
+  const neededPixelPerYear = (allEvents.length * eventHeight * 1.5) / clusterYearSpan;
+  
+  // Current pixelPerYear = timelineHeight / yearRange
+  // timelineHeight = containerHeight * 3 * zoom (approximately)
+  // So pixelPerYear = containerHeight * 3 * zoom / yearRange
+  // We need: containerHeight * 3 * zoom / yearRange >= neededPixelPerYear
+  // zoom >= neededPixelPerYear * yearRange / (containerHeight * 3)
+  const viewportHeight = window.innerHeight;
+  const containerHeight = Math.max(400, viewportHeight - 145);
+  const yearRange = 7551; // maxYear - minYear + 1 (3500 - (-4050) + 1)
+  const neededZoom = (neededPixelPerYear * yearRange) / (containerHeight * 3);
+  
+  // Clamp zoom to valid range and ensure it's an increase
+  const targetZoom = Math.min(500, Math.max(neededZoom, (biblicalTimelineZoom || 1.0) * 1.1));
+  
+  // Dispatch zoom and center year
+  biblicalTimelineZoom = targetZoom;
+  renderBiblicalTimeline();
+  
+  requestAnimationFrame(() => {
+    scrollToTimelineYear(centerYear);
+    saveTimelineState();
+  });
+}
+
+window.toggleClusterDropdown = toggleClusterDropdown;
+window.closeClusterDropdown = closeClusterDropdown;
+window.zoomToCluster = zoomToCluster;
+
 // State-driven render functions (called by TimelineView)
 window.showEventDetailFromState = showEventDetailFromState;
 window.showDurationDetailFromState = showDurationDetailFromState;
@@ -3314,6 +3516,9 @@ async function renderBiblicalTimeline() {
 
 // Internal render function (called by renderBiblicalTimeline with lock held)
 async function renderBiblicalTimelineInternal(container) {
+  // Close any open cluster dropdown before re-render
+  closeClusterDropdown();
+  
   // Inject styles early (before any UI interactions)
   injectTimelineStyles();
   
@@ -4386,6 +4591,48 @@ async function renderBiblicalTimelineInternal(container) {
     // If no slot found within displacement limit, event is hidden (will show when zoomed in)
   });
   
+  // ── CLUSTER MAP: attach hidden events to nearest visible event ──
+  const visibleEventIds = new Set(eventsWithSlots.map(e => e.event.id));
+  const hiddenPointEvents = sortedPointEvents.filter(e => !visibleEventIds.has(e.id));
+  const clusterMap = new Map(); // visibleEventId → [hiddenEvent, ...]
+  
+  hiddenPointEvents.forEach(hiddenEvent => {
+    const hiddenYear = jdToYear(hiddenEvent.startJD);
+    let nearestVisible = null;
+    let nearestDist = Infinity;
+    
+    eventsWithSlots.forEach(({ event }) => {
+      const dist = Math.abs(jdToYear(event.startJD) - hiddenYear);
+      if (dist < nearestDist) {
+        nearestDist = dist;
+        nearestVisible = event;
+      }
+    });
+    
+    if (nearestVisible) {
+      if (!clusterMap.has(nearestVisible.id)) {
+        clusterMap.set(nearestVisible.id, []);
+      }
+      clusterMap.get(nearestVisible.id).push(hiddenEvent);
+    }
+  });
+  
+  // Store cluster data globally for dropdown handlers
+  window._timelineClusterData = new Map();
+  clusterMap.forEach((children, parentId) => {
+    const parentEvent = eventsWithSlots.find(e => e.event.id === parentId)?.event;
+    window._timelineClusterData.set(parentId, {
+      parent: parentEvent,
+      children: children.map(e => ({
+        id: e.id,
+        title: e.title,
+        type: e.type,
+        startJD: e.startJD,
+        icon: getTypeIcon(e.type)
+      }))
+    });
+  });
+  
   // Extract just the events for rendering
   let eventsToShow = [...durationEventsToKeep, ...eventsWithSlots.map(e => e.event)];
   
@@ -4946,6 +5193,7 @@ async function renderBiblicalTimelineInternal(container) {
     // Update last event bottom edge
     lastEventBottom = displayPos + (eventLabelHeight / 2);
     
+    const children = clusterMap.get(pe.event.id);
     pointEventsForStack.push({
       event: pe.event,
       eventTimelinePos: pe.eventTimelinePos,
@@ -4953,7 +5201,8 @@ async function renderBiblicalTimelineInternal(container) {
       year: pe.year,
       icon: pe.icon,
       color: pe.color,
-      clusterCount: null
+      clusterCount: children ? children.length + 1 : null,
+      clusterChildren: children || null
     });
     
     // Debug: log yeshua/john events
@@ -5216,7 +5465,7 @@ async function renderBiblicalTimelineInternal(container) {
   // Render point events - position each based on overlapping durations
   pointEventsForStack.forEach((pointEvent) => {
     const clusterBadge = pointEvent.clusterCount ? 
-      `<span class="cluster-badge">+${pointEvent.clusterCount - 1}</span>` : '';
+      `<span class="cluster-badge" onclick="event.stopPropagation(); toggleClusterDropdown('${pointEvent.event.id}', this)" ontouchend="event.stopPropagation(); event.preventDefault(); toggleClusterDropdown('${pointEvent.event.id}', this)" data-cluster-parent="${pointEvent.event.id}">+${pointEvent.clusterCount - 1} ▾</span>` : '';
     
     // Find max lane of duration bars that overlap this event's vertical position
     // Event height is ~32px centered on eventDisplayPos

@@ -7581,15 +7581,28 @@ body.biblical-timeline-open .top-nav-inner {
   max-width: 250px;
 }
 
-/* Cluster badge - shows number of grouped events */
+/* Cluster badge - end cap on the right side of the event */
 .cluster-badge {
-  background: rgba(126, 200, 227, 0.4);
+  background: rgba(126, 200, 227, 0.2);
   color: #7ec8e3;
   font-size: 0.75em;
   font-weight: 600;
-  padding: 1px 5px;
-  border-radius: 8px;
+  padding: 0 8px;
+  margin-left: auto;
+  margin-right: -12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(126, 200, 227, 0.2);
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
   flex-shrink: 0;
+}
+.cluster-badge:hover {
+  background: rgba(126, 200, 227, 0.4);
 }
 
 /* Removed - date now in tooltip only */

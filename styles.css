@@ -3376,15 +3376,116 @@ body.view-reader:not(.reader-landing) {
   max-width: 250px;
 }
 
-/* Cluster badge - shows number of grouped events */
+/* Cluster badge - end cap on the right side of the event */
 .cluster-badge {
-  background: rgba(126, 200, 227, 0.4);
+  background: rgba(126, 200, 227, 0.2);
   color: #7ec8e3;
   font-size: 0.75em;
   font-weight: 600;
-  padding: 1px 5px;
-  border-radius: 8px;
+  padding: 0 8px;
+  margin-left: auto;
+  margin-right: -12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(126, 200, 227, 0.2);
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
   flex-shrink: 0;
+}
+.cluster-badge:hover {
+  background: rgba(126, 200, 227, 0.4);
+}
+
+/* Cluster dropdown overlay */
+.cluster-dropdown {
+  position: fixed;
+  z-index: 10000;
+  min-width: 220px;
+  max-width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(20, 28, 38, 0.97);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(126, 200, 227, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: clusterDropdownIn 0.15s ease-out;
+}
+@keyframes clusterDropdownIn {
+  from { opacity: 0; transform: translateY(-4px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.cluster-dropdown-header {
+  padding: 8px 12px 6px;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: rgba(126, 200, 227, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.15);
+}
+.cluster-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  border-left: 3px solid transparent;
+}
+.cluster-dropdown-item:hover {
+  background: rgba(126, 200, 227, 0.12);
+  border-left-color: rgba(126, 200, 227, 0.5);
+}
+.cluster-dropdown-parent {
+  border-left-color: rgba(126, 200, 227, 0.3);
+  background: rgba(126, 200, 227, 0.06);
+}
+.cluster-dropdown-icon {
+  flex-shrink: 0;
+  font-size: 0.9em;
+  width: 18px;
+  text-align: center;
+}
+.cluster-dropdown-title {
+  flex: 1;
+  font-size: 0.85em;
+  color: #d8e8f0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cluster-dropdown-year {
+  flex-shrink: 0;
+  font-size: 0.7em;
+  color: rgba(126, 200, 227, 0.6);
+  font-variant-numeric: tabular-nums;
+}
+.cluster-dropdown-separator {
+  height: 1px;
+  background: rgba(126, 200, 227, 0.12);
+  margin: 2px 0;
+}
+.cluster-dropdown-zoom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.8em;
+  color: rgba(126, 200, 227, 0.8);
+  font-weight: 500;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.cluster-dropdown-zoom:hover {
+  background: rgba(126, 200, 227, 0.15);
+  color: #7ec8e3;
 }
 
 /* Removed - date now in tooltip only */
@@ -7162,6 +7263,19 @@ code {
   /* Move stacked events area closer to left edge */
   .stacked-events-area {
     right: 5px;
+  }
+  
+  /* Compact cluster badge on narrow mobile */
+  .cluster-badge {
+    padding: 0 5px;
+    margin-right: -6px;
+    font-size: 0.7em;
+  }
+  
+  /* Dropdown adapts to mobile */
+  .cluster-dropdown {
+    min-width: 180px;
+    max-width: calc(100vw - 20px);
   }
 }
 
