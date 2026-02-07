@@ -47,7 +47,7 @@ const TutorialView = {
               'calendar', null)}
             
             ${this.renderFeatureCard('📖', 'Bible Reader', 
-              'Study Scripture with KJV, ASV, and LXX (Septuagint) translations, Strong\'s concordance, Hebrew/Greek interlinear, and word studies.',
+              'Study Scripture with 10 English translations (KJV, ASV, AKJV, YLT, and more), Strong\'s concordance, Hebrew/Greek interlinear, symbol studies, and word studies.',
               'reader', {contentType:'bible'})}
             
             ${this.renderFeatureCard('assets/img/timeline_icon.png', 'Historical Timeline', 
@@ -64,7 +64,7 @@ const TutorialView = {
             
             ${this.renderFeatureCard('🎺', 'Feast Days', 
               'View all biblical appointed times for any year with explanations and Scripture references.',
-              'events', null)}
+              'calendar', null)}
           </div>
         </section>
 

@@ -4452,11 +4452,14 @@ function onTranslationChange(translationId) {
 async function selectTranslationAndStart(translationId) {
   if (!translationId) return;
 
-  // Switch to the selected translation
-  await switchTranslation(translationId);
-
-  // Show book index so user can pick a book
-  goToBookIndex();
+  // Navigate via URL: /reader/bible/translationId → shows book index
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'reader',
+      params: { contentType: 'bible', translation: translationId }
+    });
+  }
 }
 
 // Show the book index page (all 66 books with descriptions)
@@ -4561,13 +4564,7 @@ function buildBookIndexHTML() {
 
 // Go to Bible home page — show book index if a translation is loaded, else translation picker
 function goToBibleHome() {
-  // If we have a translation loaded, show the book index instead of the translation picker
-  if (Bible.isLoaded(currentTranslation)) {
-    goToBookIndex();
-    return;
-  }
-
-  // No translation loaded yet — show the translation picker welcome
+  // Always show the translation picker (URL-driven: /reader/bible with no translation)
   bibleExplorerState.currentBook = null;
   bibleExplorerState.currentChapter = null;
   bibleExplorerState.highlightedVerse = null;

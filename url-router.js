@@ -570,14 +570,8 @@ const URLRouter = {
         if (parts[0] && knownTranslations.includes(parts[0].toLowerCase())) {
           params.translation = parts[0].toLowerCase();
           partIndex = 1;
-        } else {
-          // First part is a book name, not a translation - use saved preference
-          try {
-            params.translation = localStorage.getItem('bible_translation_preference') || 'kjv';
-          } catch (e) {
-            params.translation = 'kjv';
-          }
         }
+        // No localStorage fallback — URL is source of truth
         
         if (parts[partIndex]) params.book = decodeURIComponent(parts[partIndex]);
         if (parts[partIndex + 1]) params.chapter = parseInt(parts[partIndex + 1]);
@@ -605,23 +599,23 @@ const URLRouter = {
         
         if (contentType === 'bible') {
           // Parse bible params: /reader/bible/kjv/Genesis/1
-          const bibleParts = parts.slice(1);
+          // URL is source of truth — no localStorage fallback for translation.
+          // /reader/bible → translation picker (no translation set)
+          // /reader/bible/kjv → book index (translation set, no book)
+          // /reader/bible/kjv/Genesis/1 → chapter view
+          const bibleParts = parts.slice(1).filter(Boolean);
           const knownTranslationsReader = typeof Bible !== 'undefined'
             ? Bible.getTranslations().map(t => t.id)
             : ['kjv', 'asv', 'akjv', 'ylt', 'dbt', 'drb', 'jps', 'slt', 'wbt', 'lxx'];
           let bibleIdx = 0;
 
-          if (bibleParts[0] && knownTranslationsReader.includes(bibleParts[0].toLowerCase())) {
+          if (bibleParts.length > 0 && knownTranslationsReader.includes(bibleParts[0].toLowerCase())) {
             params.translation = bibleParts[0].toLowerCase();
             bibleIdx = 1;
-          } else {
-            try {
-              params.translation = localStorage.getItem('bible_translation_preference') || 'kjv';
-            } catch (e) {
-              params.translation = 'kjv';
-            }
           }
-          
+          // If first part is not a known translation and there are parts, treat as book name
+          // with no translation → will show translation picker since params.translation is undefined
+
           if (bibleParts[bibleIdx]) params.book = decodeURIComponent(bibleParts[bibleIdx]);
           if (bibleParts[bibleIdx + 1]) params.chapter = parseInt(bibleParts[bibleIdx + 1]);
           if (bibleParts[bibleIdx + 2]) params.verse = parseInt(bibleParts[bibleIdx + 2]);

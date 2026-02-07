@@ -263,37 +263,44 @@ const BibleView = {
   
   // Navigate to Bible location once data is loaded
   async navigateWhenReady(translation, book, chapter, verse, retries = 0) {
+    // No translation → show translation picker immediately (no data needed)
+    if (!translation) {
+      if (typeof goToBibleHome === 'function') {
+        goToBibleHome();
+      }
+      return;
+    }
+
+    // Load translation if needed
+    if (translation && typeof switchTranslation === 'function') {
+      await switchTranslation(translation);
+    }
+
+    // Translation set but no book → show book index
+    if (!book) {
+      if (typeof goToBookIndex === 'function') {
+        goToBookIndex();
+      }
+      return;
+    }
+
+    // Wait for Bible data to be ready (needed for chapter display)
     const maxRetries = 20;
     const retryDelay = 200;
-    
-    // Check if Bible data is loaded
-    const isReady = typeof bibleExplorerState !== 'undefined' && 
-                    bibleExplorerState.bookChapterCounts && 
+    const isReady = typeof bibleExplorerState !== 'undefined' &&
+                    bibleExplorerState.bookChapterCounts &&
                     Object.keys(bibleExplorerState.bookChapterCounts).length > 0;
-    
+
     if (!isReady && retries < maxRetries) {
       setTimeout(() => this.navigateWhenReady(translation, book, chapter, verse, retries + 1), retryDelay);
       return;
     }
-    
-    if (!isReady) {
-      console.warn('[BibleView] Bible data not loaded after retries');
-    }
-    
-    // Set translation first so dropdown and content match URL
-    if (translation && typeof switchTranslation === 'function') {
-      await switchTranslation(translation);
-    }
-    
+
+    // Navigate to book/chapter
     if (book && chapter) {
       if (typeof openBibleExplorerTo === 'function') {
         console.log('[BibleView] Calling openBibleExplorerTo:', book, chapter, verse);
         openBibleExplorerTo(book, parseInt(chapter), verse ? parseInt(verse) : null);
-      }
-    } else if (!book) {
-      // Go to Bible home
-      if (typeof goToBibleHome === 'function') {
-        goToBibleHome();
       }
     }
   },
