@@ -65,9 +65,29 @@ self.onmessage = async function(e) {
     hasStrongs = msg.hasStrongs || false;
 
     try {
-      const response = await fetch(msg.file);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const text = await response.text();
+      let text;
+      const gzPath = msg.file + '.gz';
+      const hasDecompress = typeof DecompressionStream !== 'undefined';
+
+      // Try .gz first (smaller cache)
+      if (hasDecompress) {
+        try {
+          const gzResponse = await fetch(gzPath);
+          if (gzResponse.ok) {
+            const ds = new DecompressionStream('gzip');
+            const decompressed = gzResponse.body.pipeThrough(ds);
+            text = await new Response(decompressed).text();
+          }
+        } catch (e) { /* fall through */ }
+      }
+
+      // Fallback: raw .txt
+      if (!text) {
+        const response = await fetch(msg.file);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        text = await response.text();
+      }
+
       const count = parseAndStore(text);
       self.postMessage({ type: 'loaded', translationId, verseCount: count });
     } catch (err) {

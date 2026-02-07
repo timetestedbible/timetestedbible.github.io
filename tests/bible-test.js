@@ -11,6 +11,7 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 // Load bible.js
 const {
@@ -22,13 +23,42 @@ const {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-/** Simulate fetch() for Node.js by reading local files. */
+/** Simulate fetch() for Node.js by reading local files.
+ *  For .gz files, decompresses and returns as if it were a plain text response
+ *  piped through DecompressionStream (simulates the browser flow). */
 function mockFetch(basePath) {
+  // Mock DecompressionStream for Node.js (the real one exists in browsers)
+  if (typeof global.DecompressionStream === 'undefined') {
+    global.DecompressionStream = class DecompressionStream {
+      constructor(format) { this.format = format; }
+    };
+  }
+
   global.fetch = async (url) => {
     const filePath = path.join(basePath, url);
     if (!fs.existsSync(filePath)) {
       return { ok: false, status: 404 };
     }
+
+    // For .gz files: simulate the browser flow where
+    // response.body.pipeThrough(new DecompressionStream('gzip'))
+    // produces a stream that new Response(stream).text() can read.
+    if (url.endsWith('.gz')) {
+      const buffer = fs.readFileSync(filePath);
+      const decompressedText = zlib.gunzipSync(buffer).toString('utf8');
+      return {
+        ok: true,
+        status: 200,
+        body: {
+          pipeThrough(_ds) {
+            // Return a ReadableStream-like that Response can consume
+            // In Node 18+, we can use the real Response with a string
+            return new Blob([decompressedText]).stream();
+          }
+        }
+      };
+    }
+
     const content = fs.readFileSync(filePath, 'utf8');
     return {
       ok: true,
@@ -505,6 +535,74 @@ async function main() {
   await testAsync('loadTranslation returns false for unknown', async () => {
     const ok = await Bible.loadTranslation('nonexistent');
     assert.strictEqual(ok, false);
+  });
+
+  // ── Gzip Loading Tests ──
+
+  console.log('\n=== Gzip Loading Tests ===\n');
+
+  // Reset KJV to test gz path
+  delete Bible._blobs['kjv'];
+  delete Bible._indexes['kjv'];
+
+  await testAsync('loadTranslation prefers .gz when available', async () => {
+    // Our mock fetch serves .txt.gz files and we have DecompressionStream mocked
+    const gzPath = path.join(__dirname, '..', 'bibles', 'kjv_strongs.txt.gz');
+    const gzExists = fs.existsSync(gzPath);
+    assert.ok(gzExists, 'kjv_strongs.txt.gz should exist (run scripts/build-bible-gz.js)');
+
+    const ok = await Bible.loadTranslation('kjv');
+    assert.strictEqual(ok, true);
+    assert.strictEqual(Bible.isLoaded('kjv'), true);
+
+    // Verify the data is correct (decompressed properly)
+    const v = Bible.getVerse('kjv', 'Genesis', 1, 1);
+    assert.ok(v, 'Should get Genesis 1:1');
+    assert.ok(v.text.includes('In the beginning'), `Text should be correct, got: ${v.text.slice(0, 40)}`);
+    assert.ok(v.strongsText.includes('{H7225}'), 'Should have Strong\'s tags');
+  });
+
+  await testAsync('gz-loaded data matches raw-loaded data', async () => {
+    // Compare a verse loaded via gz with the raw file content
+    const v = Bible.getVerse('kjv', 'John', 1, 1);
+    assert.ok(v);
+    assert.ok(v.text.includes('In the beginning was the Word'));
+    assert.ok(v.strongsText.includes('{G'));
+
+    // Last verse
+    const last = Bible.getVerse('kjv', 'Revelation', 22, 21);
+    assert.ok(last);
+    assert.ok(last.text.length > 20);
+  });
+
+  await testAsync('gz loading: verse count matches raw loading', async () => {
+    const count = Object.keys(Bible._indexes['kjv']).length;
+    assert.strictEqual(count, 31102, `Expected 31102 verses, got ${count}`);
+  });
+
+  // Test fallback: if .gz is missing, falls back to .txt
+  delete Bible._blobs['kjv'];
+  delete Bible._indexes['kjv'];
+
+  await testAsync('loadTranslation falls back to .txt if .gz missing', async () => {
+    // Temporarily make fetch return 404 for .gz
+    const origFetch = global.fetch;
+    global.fetch = async (url) => {
+      if (url.endsWith('.gz')) {
+        return { ok: false, status: 404 };
+      }
+      return origFetch(url);
+    };
+
+    const ok = await Bible.loadTranslation('kjv');
+    assert.strictEqual(ok, true);
+    assert.strictEqual(Bible.isLoaded('kjv'), true);
+
+    const v = Bible.getVerse('kjv', 'Genesis', 1, 1);
+    assert.ok(v.text.includes('In the beginning'));
+
+    // Restore fetch
+    global.fetch = origFetch;
   });
 
   // ── Book Name & Abbreviation Tests ──

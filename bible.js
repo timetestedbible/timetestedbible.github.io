@@ -717,8 +717,41 @@ const Bible = {
   },
 
   /**
+   * Fetch a Bible text file, preferring .gz (compressed) with fallback to raw .txt.
+   * Uses DecompressionStream when available (all modern browsers).
+   * In Node.js (tests), falls back directly to raw .txt.
+   * @private
+   * @param {string} filePath - e.g. "/bibles/kjv_strongs.txt"
+   * @returns {Promise<string>} decompressed text content
+   */
+  async _fetchAndDecompress(filePath) {
+    // Try .gz first (smaller cache footprint)
+    const gzPath = filePath + '.gz';
+    const hasDecompress = typeof DecompressionStream !== 'undefined';
+
+    if (hasDecompress) {
+      try {
+        const response = await fetch(gzPath);
+        if (response.ok) {
+          const ds = new DecompressionStream('gzip');
+          const decompressed = response.body.pipeThrough(ds);
+          return await new Response(decompressed).text();
+        }
+      } catch (e) {
+        // .gz not available or decompression failed — fall through to raw
+      }
+    }
+
+    // Fallback: fetch raw .txt
+    const response = await fetch(filePath);
+    if (!response.ok) throw new Error(`HTTP ${response.status} for ${filePath}`);
+    return await response.text();
+  },
+
+  /**
    * Load a translation into memory.
-   * Fetches the .txt file, stores as blob, builds the offset index.
+   * Fetches the .gz file (compressed, smaller cache) with fallback to raw .txt.
+   * Stores as blob, builds the offset index.
    * @param {string} translationId
    * @returns {Promise<boolean>} true if loaded successfully
    */
@@ -735,9 +768,7 @@ const Bible = {
 
     this._loading[translationId] = (async () => {
       try {
-        const response = await fetch(reg.file);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const text = await response.text();
+        const text = await this._fetchAndDecompress(reg.file);
         this._parseAndStore(translationId, text);
         console.log(`[Bible] ${reg.name} loaded: ${Object.keys(this._indexes[translationId]).length} verses`);
         return true;
