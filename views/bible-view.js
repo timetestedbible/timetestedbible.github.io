@@ -87,6 +87,7 @@ const BibleView = {
   async renderMultiverseContent(citationStr, translation) {
     const textContainer = document.getElementById('bible-explorer-text');
     if (!textContainer) return;
+    const requestedTranslation = translation || 'kjv';
     // Ensure Bible data is loaded
     const isReady = typeof bibleExplorerState !== 'undefined' &&
                     bibleExplorerState.bookChapterCounts &&
@@ -97,14 +98,24 @@ const BibleView = {
         await loadBible(false);
       }
     }
-    if (translation && typeof switchTranslation === 'function') {
-      await switchTranslation(translation);
+    if (requestedTranslation && typeof switchTranslation === 'function') {
+      await switchTranslation(requestedTranslation);
     }
+    // Only skip if we're no longer in multiverse or the citation changed
+    const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
+    const p = state?.content?.params || {};
+    if (p.contentType !== 'multiverse') return;
+    const stateCitation = (p.multiverse || '').trim();
+    const citationNorm = (citationStr || '').trim();
+    if (stateCitation !== citationNorm) return;
+    // Use the translation we were invoked with (from state at render time)
     if (typeof buildMultiverseHTML === 'function') {
-      textContainer.innerHTML = buildMultiverseHTML(citationStr);
+      textContainer.innerHTML = buildMultiverseHTML(citationStr, requestedTranslation);
     } else {
       textContainer.innerHTML = '<div class="bible-explorer-welcome"><p>Multi-verse view not available.</p></div>';
     }
+    // Keep dropdown in sync with what we rendered (state is source of truth)
+    if (typeof updateTranslationUI === 'function') updateTranslationUI();
   },
   
   // Restore UI state from URL parameters (syncs panel state with URL)

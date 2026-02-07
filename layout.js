@@ -75,9 +75,9 @@ const Layout = {
     this.elements.body.classList.toggle('mobile-layout', !isDesktop);
     this.elements.body.classList.toggle('pwa-mode', isPWA);
     
-    // Show/hide PWA navigation
+    // PWA nav buttons removed: keep only the right-side nav (nav-back-btn / nav-forward-btn) to avoid duplicate back/forward in install mode
     if (this.elements.pwaNavButtons) {
-      this.elements.pwaNavButtons.style.display = isPWA ? 'flex' : 'none';
+      this.elements.pwaNavButtons.style.display = 'none';
     }
     
     // On desktop, always show sidebar, hide hamburger

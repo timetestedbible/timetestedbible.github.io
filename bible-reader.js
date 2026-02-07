@@ -3714,9 +3714,11 @@ async function switchTranslation(translationId) {
   // Update UI
   updateTranslationUI();
   
-  // Rebuild chapter counts and redisplay current chapter
+  // Rebuild chapter counts and redisplay current chapter (skip when in multiverse — state-driven re-render will refresh multiverse content)
   buildBookChapterCounts();
-  if (bibleExplorerState.currentBook && bibleExplorerState.currentChapter) {
+  const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
+  const isMultiverse = state?.content?.params?.contentType === 'multiverse';
+  if (!isMultiverse && bibleExplorerState.currentBook && bibleExplorerState.currentChapter) {
     displayBibleChapter(bibleExplorerState.currentBook, bibleExplorerState.currentChapter, bibleExplorerState.highlightedVerse);
   }
   
@@ -3869,13 +3871,17 @@ function isMultiVerseCitation(citationStr) {
 }
 
 // Build HTML for multiverse view: selected verses with Strongs, symbols, and verse numbers that link to full chapter
-function buildMultiverseHTML(citationStr) {
-  if (!bibleData) return '<div class="bible-explorer-welcome"><p>Bible data not loaded.</p></div>';
-  const verses = getVersesForCitationString(citationStr);
+// translationId: optional; when set, use that translation's verses (avoids race with global bibleData when toggling KJV/ASV)
+function buildMultiverseHTML(citationStr, translationId) {
+  const dataSource = translationId && typeof bibleTranslations !== 'undefined' && bibleTranslations[translationId]
+    ? bibleTranslations[translationId]
+    : bibleData;
+  if (!dataSource) return '<div class="bible-explorer-welcome"><p>Bible data not loaded.</p></div>';
+  const verses = getVersesForCitationString(citationStr, translationId || undefined);
   if (!verses || verses.length === 0) {
     return '<div class="bible-explorer-welcome"><p>No verses found for this reference.</p></div>';
   }
-  const trans = (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+  const trans = translationId || (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
   let html = '<div class="bible-explorer-chapter bible-multiverse">';
   html += `<div class="bible-explorer-chapter-header">
     <h2>Multi-verse</h2>
@@ -3905,8 +3911,10 @@ function buildMultiverseHTML(citationStr) {
     const hasOriginalLang = hasInterlinear(bookName);
     const origLangClass = hasOriginalLang ? ' has-hebrew' : '';
     let verseText;
-    if (hasOriginalLang && hasInterlinearData) {
-      verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, verse.text);
+    if (hasOriginalLang && hasInterlinearData && trans === 'kjv') {
+      // Interlinear word map is keyed by KJV; only use KJV text for Strong's matching
+      const kjvText = (typeof bibleIndexes !== 'undefined' && bibleIndexes['kjv']?.[reference]?.text) || verse.text;
+      verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, kjvText);
     } else {
       verseText = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
     }
@@ -3965,13 +3973,17 @@ function goToChapterFromMultiverse(bookName, chapter, verse) {
 }
 
 // Get verses for a parsed citation
-function getVersesForCitation(citation) {
-  if (!bibleData) return [];
+// translationId: optional; when set, use that translation's data instead of global bibleData (for multiverse so requested translation wins)
+function getVersesForCitation(citation, translationId) {
+  const data = translationId && typeof bibleTranslations !== 'undefined' && bibleTranslations[translationId]
+    ? bibleTranslations[translationId]
+    : bibleData;
+  if (!data) return [];
   
   const verses = [];
   let inRange = false;
   
-  for (const entry of bibleData) {
+  for (const entry of data) {
     if (entry.book !== citation.book) {
       if (inRange) break; // We've passed the range
       continue;
@@ -3998,12 +4010,13 @@ function getVersesForCitation(citation) {
 }
 
 // Get all verses for a citation string (handles multiple citations)
-function getVersesForCitationString(citationStr) {
+// translationId: optional; when set, use that translation's data (for multiverse)
+function getVersesForCitationString(citationStr, translationId) {
   const citations = parseCitation(citationStr);
   const allVerses = [];
   
   for (const citation of citations) {
-    const verses = getVersesForCitation(citation);
+    const verses = getVersesForCitation(citation, translationId);
     if (allVerses.length > 0 && verses.length > 0) {
       // Add a separator between different citation ranges
       allVerses.push({ isSeparator: true, book: verses[0].book });
@@ -5080,6 +5093,7 @@ function parseSearchCitation(str) {
 }
 
 // Open Bible Explorer to a specific location (URL/content-driven: set selectors and content directly)
+// Display always respects URL/state: when the callback runs it reads state.content.params.translation and uses that.
 function openBibleExplorerTo(book, chapter, verse = null) {
   const normalizedBook = normalizeBookName(book);
   
@@ -5090,8 +5104,15 @@ function openBibleExplorerTo(book, chapter, verse = null) {
   
   // No delay when already initialized (book in counts); 200ms only to wait for init
   const delay = bibleExplorerState.bookChapterCounts && bibleExplorerState.bookChapterCounts[normalizedBook] ? 0 : 200;
-  setTimeout(() => {
+  setTimeout(async () => {
     if (!bibleExplorerState.bookChapterCounts[normalizedBook]) return;
+    
+    // State/URL is source of truth: use whatever translation the URL says (avoids stale display when toggling ASV/KJV)
+    const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
+    const trans = state?.content?.params?.translation || currentTranslation || 'kjv';
+    if (trans && currentTranslation !== trans && typeof switchTranslation === 'function') {
+      await switchTranslation(trans);
+    }
     
     // Set state first so dropdowns reflect URL
     bibleExplorerState.currentBook = normalizedBook;
@@ -5122,8 +5143,7 @@ function openBibleExplorerTo(book, chapter, verse = null) {
       bibleExplorerState.historyIndex = bibleExplorerState.history.length - 1;
     }
     
-    // Show chapter content (cache hit = instant; no cache = build then store)
-    const cacheKey = `${currentTranslation}:${normalizedBook}:${chapter}`;
+    const cacheKey = `${trans}:${normalizedBook}:${chapter}`;
     const cachedHtml = chapterHTMLCache.get(cacheKey);
     if (cachedHtml) {
       const textContainer = document.getElementById('bible-explorer-text');
