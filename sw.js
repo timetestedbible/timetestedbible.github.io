@@ -1,4 +1,4 @@
-// Lunar Sabbath Calendar Service Worker
+// Lunar Sabbath Calendar Service Worker — v13
 importScripts('/version.js');
 const CACHE_NAME = 'lunar-sabbath-v' + APP_VERSION;
 

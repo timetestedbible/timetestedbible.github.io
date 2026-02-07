@@ -2062,7 +2062,23 @@
           "quote": "And they made Solomon the son of David king the second time, and anointed him unto the LORD to be the chief governor... Then **Solomon sat on the throne of the LORD as king instead of David his father**"
         }
       ],
-      "notes": "Scripture explicitly states David appointed Solomon as king while still alive. Solomon was anointed 'the second time' (1 Chr 29:22), indicating a brief co-regency. David died in Solomon's first year (likely on Shavuot), making their reigns overlap by several months."
+      "notes": "Scripture explicitly states David appointed Solomon as king while still alive. Solomon was anointed 'the second time' (1 Chr 29:22), indicating a brief co-regency. David died in Solomon's first year (on Shavuot), making their reigns overlap by several months."
+    },
+    {
+      "id": "david-death-to-crucifixion-1000-years",
+      "title": "1000 Years: David's Death to Christ's Death",
+      "from_event": "david-death",
+      "to_event": "crucifixion-32ad",
+      "claimed": {
+        "years": 1000,
+        "notes": "1000 years inclusive from David's death on Shavuot to the Crucifixion of Yeshua"
+      },
+      "source": {
+        "ref": "Acts 2:29-31",
+        "type": "scripture",
+        "quote": "Men and brethren, let me freely speak unto you of the patriarch David, that he is both dead and buried, and his sepulchre is with us unto this day. Therefore being a prophet, and knowing that God had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Christ to sit on his throne; He seeing this before spake of the resurrection of Christ."
+      },
+      "notes": "David dies 969 BC, Yeshua crucified 32 AD = exactly 1000 years (inclusive counting). Peter explicitly connects David's death with Christ's resurrection on the day of Shavuot."
     },
     {
       "id": "philip-death-to-philip-reign",
@@ -4630,17 +4646,18 @@
       "pharaoh": "amenhotep-ii",
       "start": {
         "relative": {
-          "event": "solomon-temple-construction",
+          "event": "solomon-4th-year",
           "direction": "before",
+          "inclusive": true,
           "offset": {
-            "years": 480
+            "years": 479
           }
         },
         "lunar": {
           "month": 1,
           "day": 15
         },
-        "notes": "480 years before Temple foundation (1 Kings 6:1), Nisan 15 Passover"
+        "notes": "1 Kings 6:1: 480th year after Exodus = 4th year of Solomon. Inclusive counting: 480th year = 479 complete years."
       },
       "certainty": "high",
       "sources": [
@@ -4959,15 +4976,16 @@
         "relative": {
           "event": "exodus-from-egypt",
           "direction": "after",
+          "inclusive": true,
           "offset": {
-            "years": 40
+            "years": 39
           }
         },
         "lunar": {
           "month": 12,
           "day": 1
         },
-        "notes": "Died in year 40 after the Exodus, shortly before the Jordan crossing on Nisan 10"
+        "notes": "Died in the 40th year (Adar 1), shortly before Jordan crossing on Nisan 10. The 40th year = 39 complete years after Exodus."
       },
       "certainty": "high",
       "sources": [
@@ -5907,12 +5925,12 @@
       "id": "david-death",
       "title": "Death of King David",
       "type": "death",
-      "description": "David dies on Shavuot (Pentecost), the 16th day of the 3rd month, in Solomon's 1st year at age 70. The Talmud states: 'David died on Shavuot'. This is exactly 1000 years before Pentecost 32 AD when the Holy Spirit was poured out.",
+      "description": "David dies on Shavuot, the 16th day of the 3rd month, in Solomon's 1st regal year at age 70. The Talmud states: 'David died on Shavuot' (Shabbat 30a). This is exactly 1000 years (inclusive) before the Crucifixion of Yeshua in 32 AD. Solomon was anointed king in the Fall; David died the following Shavuot (Spring).",
       "start": {
         "relative": {
           "event": "solomon-reign",
           "offset": {
-            "years": 0
+            "years": 1
           }
         },
         "lunar": {
@@ -5923,7 +5941,7 @@
           "epoch": "solomon",
           "year": 1
         },
-        "notes": "David dies in Solomon's 1st year, on Shavuot (Sivan 16)"
+        "notes": "Solomon anointed Fall 970 BC; David dies Shavuot Spring 969 BC (within Solomon's 1st regal year but next Spring-to-Spring year). Exactly 1000 years (inclusive) before the Crucifixion 32 AD."
       },
       "certainty": "medium",
       "sources": [
@@ -5955,11 +5973,12 @@
       "id": "solomon-reign",
       "title": "Reign of King Solomon",
       "type": "reign",
-      "description": "Solomon becomes king of Israel, succeeding his father David. His reign dates are derived from the Temple chronology: Scripture states the Temple foundation was laid in Solomon's 4th year (2 Chr 3:2: Iyyar 2), 480 years after the Exodus. With the Exodus in 1446 BC, this places Solomon's 4th regal year at Fall 967 - Fall 966 BC (foundation Spring 966 BC). Solomon reigned 40 years over all Israel.",
+      "description": "Solomon becomes king of Israel, succeeding his father David. His 4th regal year is when the Temple foundation was laid (1 Kings 6:1, 2 Chronicles 3:2), 480 years after the Exodus. Solomon reigned 40 years over all Israel.",
       "start": {
         "relative": {
-          "event": "solomon-temple-construction",
+          "event": "solomon-4th-year",
           "direction": "before",
+          "inclusive": true,
           "offset": {
             "years": 3
           }
@@ -5968,7 +5987,7 @@
           "month": 1,
           "day": 1
         },
-        "notes": "Temple laid in 4th year = 3 years after accession (Nisan 1)"
+        "notes": "4th year of Solomon = 3 complete years after accession (inclusive counting)"
       },
       "duration": {
         "value": 40,
@@ -6044,18 +6063,52 @@
       "priority": 400
     },
     {
+      "id": "solomon-4th-year",
+      "title": "4th Year of Solomon's Reign",
+      "type": "chronology",
+      "priority": 400,
+      "description": "The 4th regal year of Solomon's reign (Fall 967 to Fall 966 BC). This is the year in which the Temple foundation was laid (1 Kings 6:1) and the 480th year after the Exodus. The regal year (Fall-to-Fall) spans two Spring-to-Spring calendar years: 967 BC and 966 BC. The temple foundation (Iyyar 2) falls in the Spring 966 BC portion.",
+      "start": {
+        "relative": {
+          "event": "solomon-temple-construction",
+          "direction": "before",
+          "offset": {
+            "years": 1
+          }
+        },
+        "lunar": {
+          "month": 1,
+          "day": 1
+        },
+        "notes": "Derives from temple foundation (the anchor). Temple is Iyyar 2, 966 BC (Spring); 4th regal year starts the previous Spring-to-Spring year (Nisan 1, 967 BC)."
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "1 Kings 6:1",
+          "type": "scripture",
+          "quote": "in the fourth year of Solomon's reign over Israel, in the month Zif, which is the second month, that he began to build the house of the LORD."
+        }
+      ],
+      "tags": [
+        "solomon",
+        "chronology-anchor",
+        "480-years"
+      ]
+    },
+    {
       "id": "solomon-temple-construction",
       "title": "Solomon's Temple Foundation Laid",
       "type": "milestone",
       "priority": 15,
-      "description": "In the 4th year of Solomon's reign (regal year Fall 967 to Fall 966 BC), on the 2nd day of the 2nd month (Iyyar 2, Spring 966 BC), construction of the First Temple begins. 2 Chronicles 3:2 gives the exact day. 1 Kings 6:1 states this is 480 years after the Exodus.",
+      "description": "On the 2nd day of the 2nd month (Iyyar 2) in the 4th year of Solomon's reign, construction of the First Temple begins. This is 480 years after the Exodus (1 Kings 6:1). This is the chronological ANCHOR — its date is fixed from Assyrian cross-checks and all other dates derive from it.",
       "start": {
         "lunar": {
           "year": -965,
           "month": 2,
           "day": 2
         },
-        "notes": "Solomon's 4th regal year (Fall 967 - Fall 966 BC), foundation laid Spring 966 BC (Iyyar 2). Regal ref removed to avoid circular dependency with solomon-reign."
+        "notes": "ANCHOR: Iyyar 2, Spring 966 BC. Fixed date verified by Assyrian synchronisms. Solomon's 4th regal year (Fall 967 to Fall 966 BC)."
       },
       "certainty": "high",
       "sources": [
@@ -7934,17 +7987,19 @@
       "type": "death",
       "description": "Aaron ascends Mount Hor and dies on the 1st day of the 5th month in the 40th year after the exodus, marking the end of his priestly service.",
       "start": {
+        "relative": {
+          "event": "exodus-from-egypt",
+          "offset": {
+            "years": 39
+          },
+          "direction": "after",
+          "inclusive": true
+        },
         "lunar": {
           "month": 5,
           "day": 1
         },
-        "relative": {
-          "event": "exodus-from-egypt",
-          "offset": {
-            "years": 40
-          },
-          "direction": "after"
-        }
+        "notes": "Numbers 33:38 — 40th year, 5th month, 1st day. The 40th year = 39 complete years after Exodus."
       },
       "certainty": "high",
       "sources": [

@@ -89,6 +89,11 @@
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
   
+  <!-- Preload critical resources that JS will need after init -->
+  <link rel="preload" href="/lib/swisseph/swisseph.wasm" as="fetch" crossorigin>
+  <link rel="preload" href="/data/eclipses.json" as="fetch" crossorigin>
+  <link rel="preload" href="/lib/swisseph/swisseph-browser.js" as="script">
+  
   <!-- Stylesheets (cache busting via SW cache name keyed to APP_VERSION) -->
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/components/world-map.css">
@@ -232,14 +237,24 @@
       <!-- Global Search -->
       <div id="global-search-container" class="global-search">
         <input type="text" id="global-search-input" 
-               placeholder="Search Bible..." 
+               placeholder="Search..." 
                autocomplete="off"
-               onkeydown="if(event.key==='Enter') GlobalSearch.search(this.value)"
+               onkeydown="if(event.key==='Enter') { GlobalSearch.hideHints(); GlobalSearch.search(this.value); }"
+               oninput="GlobalSearch.onInput(this.value)"
                onfocus="GlobalSearch.onFocus()"
                onblur="GlobalSearch.onBlur(event)"
                ondblclick="this.select()">
         <button class="global-search-btn" onclick="GlobalSearch.toggle()" title="Search">🔍</button>
         <button class="global-search-close" onclick="GlobalSearch.close()" title="Close search">✕</button>
+        <div id="search-hints" class="search-hints" style="display: none;">
+          <div class="search-hints-title">Try searching for...</div>
+          <div class="search-hint-item" onclick="GlobalSearch.useHint('Genesis 1:1')"><span class="search-hint-type">Verse</span> Genesis 1:1</div>
+          <div class="search-hint-item" onclick="GlobalSearch.useHint('Solomon Temple')"><span class="search-hint-type">Event</span> Solomon Temple</div>
+          <div class="search-hint-item" onclick="GlobalSearch.useHint('H430')"><span class="search-hint-type">Strongs</span> H430</div>
+          <div class="search-hint-item" onclick="GlobalSearch.useHint('March 11, 1446 BC')"><span class="search-hint-type">Date</span> March 11, 1446 BC</div>
+          <div class="search-hint-item" onclick="GlobalSearch.useHint('Nisan 14, 32 AD')"><span class="search-hint-type">Lunar</span> Nisan 14, 32 AD</div>
+          <div class="search-hint-footer" onclick="GlobalSearch.hideHints(); AppStore.dispatch({type:'SET_VIEW', view:'help'}); setTimeout(() => HelpView.scrollToSection('search-section'), 300);">Learn more about searching</div>
+        </div>
       </div>
       
       <!-- Navigation History Buttons - use browser history directly -->
@@ -559,7 +574,7 @@
   <!-- Timeline and Historical Events -->
   <script src="/event-resolver.js"></script>
   <script src="/resolved-events-cache.js"></script>
-  <script src="/biblical-timeline.js"></script>
+  <script src="/biblical-timeline.js?v=34"></script>
   <script src="/views/timeline-view.js"></script>
   
   <!-- Day Detail and World Clock -->

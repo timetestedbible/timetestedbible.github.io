@@ -128,21 +128,58 @@ const GlobalSearch = {
     if (window.innerWidth <= 600) {
       this.expandInput();
     }
+    // Show hints if input is empty
+    const input = document.getElementById('global-search-input');
+    if (!input?.value.trim()) {
+      this.showHints();
+    }
+  },
+  
+  onInput(value) {
+    // Hide hints as soon as user starts typing
+    if (value.trim()) {
+      this.hideHints();
+    } else {
+      this.showHints();
+    }
+  },
+  
+  showHints() {
+    const hints = document.getElementById('search-hints');
+    if (hints) hints.style.display = 'block';
+  },
+  
+  hideHints() {
+    const hints = document.getElementById('search-hints');
+    if (hints) hints.style.display = 'none';
+  },
+  
+  useHint(query) {
+    const input = document.getElementById('global-search-input');
+    if (input) {
+      input.value = query;
+      input.focus();
+    }
+    this.hideHints();
+    this.search(query);
   },
   
   /**
    * Handle blur event
    */
   onBlur(event) {
-    // Small delay to allow clicks on buttons/results
+    // Small delay to allow clicks on hints/buttons/results
     setTimeout(() => {
       const container = document.getElementById('global-search-container');
       const input = document.getElementById('global-search-input');
       const results = document.getElementById('global-search-results');
       
-      // Don't collapse if focus moved to results
+      // Don't collapse if focus moved to results or hints
       if (results?.contains(document.activeElement)) return;
       if (container?.contains(document.activeElement)) return;
+      
+      // Hide hints
+      this.hideHints();
       
       // On mobile, collapse if empty
       if (window.innerWidth <= 600 && !input?.value.trim()) {
@@ -893,11 +930,14 @@ const GlobalSearch = {
    */
   formatEventYear(jd) {
     if (!jd) return '';
-    // Convert JD to Gregorian year (approximate)
-    const year = Math.floor((jd - 1721425.5) / 365.25);
-    if (year <= 0) {
-      return `${1 - year} BC`;
+    // Use proper JD-to-Gregorian conversion if available
+    if (typeof EventResolver !== 'undefined') {
+      const greg = EventResolver.julianDayToGregorian(jd);
+      return greg.year <= 0 ? `${1 - greg.year} BC` : `${greg.year} AD`;
     }
+    // Fallback: approximate
+    const year = Math.floor((jd - 1721425.5) / 365.25);
+    if (year <= 0) return `${1 - year} BC`;
     return `${year} AD`;
   },
   
@@ -1055,7 +1095,11 @@ const GlobalSearch = {
       const isMobile = window.innerWidth < 768;
       
       if (isOnTimeline) {
-        // Already on timeline - dispatch focus (and event detail on desktop)
+        // Already on timeline - always scroll to the event, even if already focused
+        // Clear first to force state change if same event is re-clicked
+        if (state.ui?.timelineFocusedEventId === eventId) {
+          AppStore.dispatch({ type: 'SET_TIMELINE_FOCUSED_EVENT', eventId: null });
+        }
         AppStore.dispatch({ type: 'SET_TIMELINE_FOCUSED_EVENT', eventId });
         if (!isMobile) {
           AppStore.dispatch({ type: 'SET_TIMELINE_EVENT', eventId });

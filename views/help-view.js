@@ -350,37 +350,11 @@ const HelpView = {
           </div>
         </section>
 
-        <!-- Keyboard Shortcuts -->
+        <!-- Keyboard Shortcuts (Coming Soon) -->
         <section id="keyboard-section" class="help-section">
           <h2>⌨️ Keyboard Shortcuts</h2>
-          
           <div class="help-card">
-            <h3>Calendar</h3>
-            <table class="shortcuts-table">
-              <tr><td><kbd>T</kbd></td><td>Go to today</td></tr>
-              <tr><td><kbd>N</kbd> or <kbd>→</kbd></td><td>Next day</td></tr>
-              <tr><td><kbd>P</kbd> or <kbd>←</kbd></td><td>Previous day</td></tr>
-              <tr><td><kbd>]</kbd></td><td>Next month</td></tr>
-              <tr><td><kbd>[</kbd></td><td>Previous month</td></tr>
-              <tr><td><kbd>Esc</kbd></td><td>Close popups/pickers</td></tr>
-            </table>
-          </div>
-
-          <div class="help-card">
-            <h3>Bible Reader</h3>
-            <table class="shortcuts-table">
-              <tr><td><kbd>→</kbd></td><td>Next chapter</td></tr>
-              <tr><td><kbd>←</kbd></td><td>Previous chapter</td></tr>
-              <tr><td><kbd>Enter</kbd></td><td>Execute search (when in search box)</td></tr>
-              <tr><td><kbd>Esc</kbd></td><td>Close Strong's panel and search results</td></tr>
-            </table>
-          </div>
-
-          <div class="help-card">
-            <h3>Global</h3>
-            <table class="shortcuts-table">
-              <tr><td><kbd>Esc</kbd></td><td>Close menus, popups, and panels</td></tr>
-            </table>
+            <p style="color: rgba(212, 160, 23, 0.8); font-style: italic;">Coming soon — keyboard shortcuts for calendar navigation, Bible reader, and timeline are planned for a future update.</p>
           </div>
         </section>
 

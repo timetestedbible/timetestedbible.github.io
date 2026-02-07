@@ -1000,21 +1000,17 @@ function selectAstroEngine(engineId) {
 
 // Initialize astronomy engine - Hybrid approach combines Swiss Ephemeris precision with NASA eclipse calibration
 async function initializeAstroEngine() {
-  // Load Swiss Ephemeris for precise calculations
-  let sweLoaded = false;
-  try {
-    sweLoaded = await AstroEngines.swissEphemeris.load();
-  } catch (err) {
-    console.warn('Swiss Ephemeris not available:', err.message);
-  }
-  
-  // Load NASA Eclipse data for ΔT calibration
-  let nasaLoaded = false;
-  try {
-    nasaLoaded = await AstroEngines.nasaEclipse.load();
-  } catch (err) {
-    console.warn('NASA Eclipse data not available:', err.message);
-  }
+  // Load Swiss Ephemeris and NASA Eclipse data in parallel
+  const [sweLoaded, nasaLoaded] = await Promise.all([
+    AstroEngines.swissEphemeris.load().catch(err => {
+      console.warn('Swiss Ephemeris not available:', err.message);
+      return false;
+    }),
+    AstroEngines.nasaEclipse.load().catch(err => {
+      console.warn('NASA Eclipse data not available:', err.message);
+      return false;
+    })
+  ]);
   
   // Choose the best available engine configuration
   if (nasaLoaded && sweLoaded) {

@@ -222,7 +222,7 @@ button {
   color: #fff;
   font-size: 0.9em;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .global-search input::placeholder {
@@ -270,6 +270,71 @@ button {
 /* Show close button on desktop when there's an active search query */
 .global-search.has-query .global-search-close {
   display: block;
+}
+
+/* Search hints tooltip - appears below input on focus when empty */
+.search-hints {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: rgba(15, 25, 40, 0.97);
+  border: 1px solid rgba(126, 200, 227, 0.25);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10001;
+  padding: 8px 0;
+  min-width: 220px;
+}
+.search-hints-title {
+  padding: 4px 12px 6px;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgba(126, 200, 227, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.search-hint-item {
+  padding: 7px 12px;
+  font-size: 0.85em;
+  color: #d8e8f0;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.search-hint-item:hover {
+  background: rgba(126, 200, 227, 0.12);
+}
+.search-hint-type {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgba(212, 160, 23, 0.8);
+  background: rgba(212, 160, 23, 0.12);
+  padding: 1px 6px;
+  border-radius: 3px;
+  min-width: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.search-hint-footer {
+  padding: 8px 12px 6px;
+  font-size: 0.75em;
+  color: rgba(126, 200, 227, 0.6);
+  cursor: pointer;
+  text-align: center;
+  border-top: 1px solid rgba(126, 200, 227, 0.12);
+  margin-top: 4px;
+  transition: color 0.1s ease;
+}
+.search-hint-footer:hover {
+  color: #7ec8e3;
 }
 
 /* Search Results Region */
@@ -905,6 +970,263 @@ body.view-tutorial .content-area {
   overflow: visible !important;
   height: auto !important;
   padding-top: var(--spacing-sm);
+}
+
+/* Help view - body scrolls, not content-area (same as tutorial) */
+html:has(body.view-help),
+html:has(body.view-help) body.view-help {
+  height: auto !important;
+  min-height: 100%;
+}
+body.view-help {
+  overflow-y: auto !important;
+}
+body.view-help .app-container {
+  flex: none !important;
+  height: auto !important;
+}
+body.view-help .main-layout {
+  min-height: auto !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+body.view-help .content-area {
+  overflow: visible !important;
+  height: auto !important;
+  padding-top: var(--spacing-sm);
+}
+
+/* Help view component styles */
+.help-view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+  color: #d8e8f0;
+}
+.help-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+}
+.help-header h1 {
+  font-size: 1.6em;
+  color: #7ec8e3;
+  margin: 0 0 8px;
+}
+.help-subtitle {
+  color: rgba(216, 232, 240, 0.6);
+  font-size: 0.95em;
+  margin: 0;
+}
+.help-toc {
+  background: rgba(126, 200, 227, 0.06);
+  border: 1px solid rgba(126, 200, 227, 0.15);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.help-toc h2 {
+  font-size: 1em;
+  color: #7ec8e3;
+  margin: 0 0 10px;
+}
+.help-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.help-toc li a {
+  color: #d8e8f0;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(126, 200, 227, 0.08);
+  font-size: 0.85em;
+  transition: background 0.15s;
+}
+.help-toc li a:hover {
+  background: rgba(126, 200, 227, 0.2);
+}
+.help-section {
+  margin-bottom: 32px;
+}
+.help-section h2 {
+  font-size: 1.3em;
+  color: #7ec8e3;
+  margin: 0 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.15);
+}
+.section-intro {
+  color: rgba(216, 232, 240, 0.7);
+  margin-bottom: 16px;
+}
+.help-card {
+  background: rgba(126, 200, 227, 0.04);
+  border: 1px solid rgba(126, 200, 227, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.help-card h3 {
+  font-size: 1.05em;
+  color: #d8e8f0;
+  margin: 0 0 8px;
+}
+.help-card p {
+  color: rgba(216, 232, 240, 0.7);
+  margin: 0 0 10px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.help-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+}
+.help-example {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85em;
+}
+.help-example code {
+  background: rgba(0, 0, 0, 0.3);
+  color: #7ec8e3;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+.help-example span {
+  color: rgba(216, 232, 240, 0.6);
+}
+.help-note, .help-tip {
+  font-size: 0.85em;
+  color: rgba(212, 160, 23, 0.8);
+  margin: 8px 0 0;
+}
+.help-list {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+.help-list li {
+  font-size: 0.9em;
+  color: rgba(216, 232, 240, 0.7);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.regex-card {
+  border-color: rgba(155, 89, 182, 0.2);
+}
+.regex-intro {
+  background: rgba(155, 89, 182, 0.08);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.regex-intro h4 {
+  color: #bb86fc;
+  margin: 0 0 6px;
+  font-size: 0.95em;
+}
+.regex-intro p {
+  margin: 0;
+}
+.regex-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85em;
+  margin: 10px 0;
+}
+.regex-table th {
+  text-align: left;
+  color: #7ec8e3;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.2);
+  font-weight: 600;
+}
+.regex-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.06);
+  color: rgba(216, 232, 240, 0.7);
+}
+.regex-table code {
+  background: rgba(0, 0, 0, 0.3);
+  color: #bb86fc;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+.regex-usecase {
+  margin: 12px 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.regex-usecase h5 {
+  color: #d8e8f0;
+  margin: 0 0 6px;
+  font-size: 0.9em;
+}
+.regex-usecase p {
+  font-size: 0.85em;
+}
+.regex-tips ul {
+  padding-left: 20px;
+}
+.regex-tips li {
+  font-size: 0.85em;
+  color: rgba(216, 232, 240, 0.7);
+  margin-bottom: 4px;
+}
+.shortcuts-table {
+  width: 100%;
+  font-size: 0.9em;
+}
+.shortcuts-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(126, 200, 227, 0.06);
+  color: rgba(216, 232, 240, 0.7);
+}
+.shortcuts-table kbd {
+  background: rgba(126, 200, 227, 0.15);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-family: monospace;
+  font-size: 0.9em;
+  color: #7ec8e3;
+}
+.help-footer {
+  text-align: center;
+  padding: 24px 0;
+  border-top: 1px solid rgba(126, 200, 227, 0.15);
+  margin-top: 32px;
+}
+.help-footer p {
+  color: rgba(216, 232, 240, 0.5);
+  margin: 0 0 12px;
+  font-size: 0.9em;
+}
+.help-footer-btn {
+  background: rgba(126, 200, 227, 0.15);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  color: #7ec8e3;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.help-footer-btn:hover {
+  background: rgba(126, 200, 227, 0.25);
 }
 
 /* Settings view - body scrolls, not content-area (same as calendar/tutorial) */
@@ -2891,10 +3213,10 @@ body.view-reader:not(.reader-landing) {
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: 100vh;
+  /* height derives from top + bottom: 0 — no 100vh which would overflow past bottom */
   background: linear-gradient(180deg, #1a3a5c 0%, #0d2840 100%);
   overflow: hidden;
-  z-index: 1000; /* Higher z-index to ensure it covers everything */
+  z-index: 1000;
   display: flex;
   flex-direction: column;
 }
@@ -3186,6 +3508,44 @@ body.view-reader:not(.reader-landing) {
 
 .lunar-month-bar.even {
   background: rgba(100, 70, 10, 0.4);
+}
+
+/* Sabbath year bands (every 7th year from Jordan Crossing) */
+.sabbath-year-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgba(100, 180, 100, 0.06);
+  pointer-events: none;
+}
+
+/* Jubilee year bands (every 49th year from Jordan Crossing) */
+.jubilee-year-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgba(212, 160, 23, 0.12);
+  pointer-events: none;
+  border-top: 1px solid rgba(212, 160, 23, 0.3);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.3);
+}
+
+/* Labels on right side of sabbath/jubilee bands */
+.sabbath-year-label {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.65em;
+  font-weight: 600;
+  color: rgba(100, 180, 100, 0.5);
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.jubilee-label {
+  color: rgba(212, 160, 23, 0.7);
+  font-size: 0.7em;
 }
 
 /* Canvas for event connecting lines */
@@ -6105,6 +6465,21 @@ body.view-reader:not(.reader-landing) {
 
 
 /* Timeline adjustments for content area */
+.view-timeline .main-layout {
+  height: calc(100vh - var(--top-nav-height)) !important;
+  height: calc(100dvh - var(--top-nav-height)) !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.view-timeline .content-area {
+  overflow: hidden !important;
+  padding: 0 !important;
+  height: 100% !important;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+}
+
 .view-timeline .biblical-timeline-page {
   position: relative !important;
   top: 0 !important;
@@ -6112,11 +6487,6 @@ body.view-reader:not(.reader-landing) {
   height: 100% !important;
   width: 100% !important;
   z-index: 1 !important;
-}
-
-.view-timeline .content-area {
-  overflow: hidden;
-  padding: 0;
 }
 
 /* =====================================================

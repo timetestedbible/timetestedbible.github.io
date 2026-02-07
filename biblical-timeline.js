@@ -368,8 +368,12 @@ function buildDerivationChain(event, data, resolved) {
     if (start.relative) {
       nextEventId = start.relative.event;
       const offset = start.relative.offset || {};
+      const inclusive = start.relative.inclusive === true; // Only add +1 when explicitly marked
       const parts = [];
-      if (offset.years) parts.push(`${Math.abs(offset.years)} year${Math.abs(offset.years) !== 1 ? 's' : ''}`);
+      if (offset.years) {
+        const displayYears = inclusive ? Math.abs(offset.years) + 1 : Math.abs(offset.years);
+        parts.push(`${displayYears} year${displayYears !== 1 ? 's' : ''}${inclusive ? ' (inclusive)' : ''}`);
+      }
       if (offset.months) parts.push(`${Math.abs(offset.months)} month${Math.abs(offset.months) !== 1 ? 's' : ''}`);
       if (offset.weeks) parts.push(`${Math.abs(offset.weeks)} week${Math.abs(offset.weeks) !== 1 ? 's' : ''}`);
       if (offset.days) parts.push(`${Math.abs(offset.days)} day${Math.abs(offset.days) !== 1 ? 's' : ''}`);
@@ -3026,13 +3030,17 @@ function updateTimelineURL(type, id) {
 // Public function - dispatches to AppStore (unidirectional flow)
 // Actual rendering happens via TimelineView.syncPanelFromState
 function openEventDetail(eventId) {
-  console.log('[Timeline] openEventDetail called with eventId:', eventId, 'AppStore defined:', typeof AppStore !== 'undefined');
+  console.log('[Timeline] openEventDetail called with eventId:', eventId);
   if (typeof AppStore !== 'undefined') {
-    console.log('[Timeline] Dispatching SET_TIMELINE_EVENT');
-    AppStore.dispatch({ type: 'SET_TIMELINE_EVENT', eventId: eventId });
+    const state = AppStore.getState();
+    if (state.ui?.timelineEventId === eventId) {
+      // Same event already selected — just ensure panel is visible
+      // (don't re-dispatch, which would cause a re-render cycle)
+      showEventDetailFromState(eventId);
+    } else {
+      AppStore.dispatch({ type: 'SET_TIMELINE_EVENT', eventId: eventId });
+    }
   } else {
-    // Fallback for direct calls
-    console.log('[Timeline] AppStore not defined, falling back to showEventDetailFromState');
     showEventDetailFromState(eventId);
   }
 }
@@ -3056,16 +3064,13 @@ async function showEventDetailFromState(eventId) {
   if (hadSearchFilter) {
     activeSearchResultIds = null;
     activeSearchDurationIds = null;
+    // Only re-render if we had a search filter active (changes visible events)
+    if (document.getElementById('timeline-scroll-container')) {
+      renderBiblicalTimeline();
+    }
   }
   
-  // Only re-render if the selected event isn't already visible on the timeline
-  // This avoids unnecessary double-renders when navigating back to a previous state
-  const eventEl = document.querySelector(`[data-event-id="${eventId}"]`);
-  if (!eventEl && document.getElementById('timeline-scroll-container')) {
-    // Event not visible but timeline exists - need to re-render to show it
-    renderBiblicalTimeline();
-  }
-  
+  // No full re-render needed just to open the detail panel — it loads from raw data
   await openEventDetailInternal(eventId, false);
   
   // Apply hover/focus highlighting to the selected event (same as mouse-over)
@@ -4401,55 +4406,6 @@ async function renderBiblicalTimelineInternal(container) {
     console.log('UNRESOLVED EVENTS (' + unresolvedEvents.length + '):', unresolvedEvents.map(e => e.id));
   }
   
-  // DEBUG: Check specific temple/monarchy events
-  const templeEvents = ['bur-sagale-eclipse', 'battle-of-qarqar', 'jehu-tribute', 'rehoboam-reign', 'ahab-reign', 'jehu-reign', 'david-reign', 'solomon-reign', 'solomon-temple-construction'];
-  console.log('=== TEMPLE CHRONOLOGY EVENT DEBUG ===');
-  console.log('Historical filter:', timelineFilters.historical);
-  templeEvents.forEach(id => {
-    const eventFiltered = resolvedEvents.find(e => e.id === id);
-    const eventFull = getTimelineResolvedEvents()?.find(e => e.id === id);
-    
-    if (eventFull) {
-      const year = eventFull.startJD ? Math.floor((eventFull.startJD - 1721425.5) / 365.25) : 'null';
-      console.log(`${id}: startJD=${eventFull.startJD}, year=${year}, inFiltered=${!!eventFiltered}, type=${eventFull.type}`);
-    } else {
-      console.log(`${id}: NOT FOUND in cache`);
-    }
-  });
-  
-  // DEBUG: Check specific pre-flood events (check both filtered and full cache)
-  const preFloodDeaths = ['methuselah-death', 'lamech-death', 'noah-death', 'jared-death', 'enoch-translation', 'methuselah-birth', 'lamech-birth'];
-  console.log('=== PRE-FLOOD EVENT DEBUG ===');
-  console.log('Filtered resolvedEvents count:', resolvedEvents.length);
-  console.log('Full cache count:', getTimelineResolvedEvents()?.length || 0);
-  
-  preFloodDeaths.forEach(id => {
-    const eventFiltered = resolvedEvents.find(e => e.id === id);
-    const eventFull = getTimelineResolvedEvents()?.find(e => e.id === id);
-    
-    if (eventFull) {
-      const year = eventFull.startJD ? Math.floor((eventFull.startJD - 1721425.5) / 365.25) : 'null';
-      console.log(`${id}: startJD=${eventFull.startJD}, year=${year}, inFiltered=${!!eventFiltered}`);
-    } else {
-      console.log(`${id}: NOT FOUND in full cache`);
-    }
-  });
-  
-  // DEBUG: Check Yeshua/John birth events
-  const birthEvents = ['john-baptist-conception', 'john-baptist-birth', 'yeshua-conception', 'yeshua-birth'];
-  console.log('=== YESHUA/JOHN BIRTH EVENTS DEBUG ===');
-  birthEvents.forEach(id => {
-    const eventFiltered = resolvedEvents.find(e => e.id === id);
-    const eventFull = getTimelineResolvedEvents()?.find(e => e.id === id);
-    
-    if (eventFull) {
-      const year = eventFull.startJD ? Math.floor((eventFull.startJD - 1721425.5) / 365.25) : 'null';
-      console.log(`${id}: startJD=${eventFull.startJD}, year=${year}, type=${eventFull.type}, inFiltered=${!!eventFiltered}`);
-    } else {
-      console.log(`${id}: NOT FOUND in full cache`);
-    }
-  });
-  
   // Separate point events and duration events (use Math.abs for negative durations)
   const pointEvents = resolvedEvents.filter(e => !e.endJD || Math.abs(e.endJD - e.startJD) < 30);
   const durationEvents = resolvedEvents.filter(e => e.endJD && Math.abs(e.endJD - e.startJD) >= 30);
@@ -4481,11 +4437,11 @@ async function renderBiblicalTimelineInternal(container) {
   biblicalTimelineMaxYear = maxYear;
   
   // Get available height for timeline
-  // Use viewport height minus header (~50px) and controls (~50px)
+  // Use the actual vis-container height (the element we render into)
   const viewportHeight = window.innerHeight;
-  const availableHeight = Math.max(400, viewportHeight - 100);
-  // Container height is available height minus controls bar (~45px)
-  const containerHeight = availableHeight - 45;
+  const visContainer = document.getElementById('biblical-timeline-vis-container') 
+    || document.querySelector('.biblical-timeline-vis-container');
+  const containerHeight = Math.max(400, visContainer ? visContainer.clientHeight : (viewportHeight - 56));
   
   // =====================================================
   // LAYOUT CONSTANTS - used throughout rendering
@@ -4515,7 +4471,7 @@ async function renderBiblicalTimelineInternal(container) {
   // Recalculate pixelPerYear based on actual timeline height to keep positions consistent
   const pixelPerYear = timelineHeight / yearRange;
   
-  console.log('Timeline sizing:', { viewportHeight, availableHeight, containerHeight, timelineHeight, pixelPerYear, zoom: biblicalTimelineZoom });
+  console.log('Timeline sizing:', { viewportHeight, containerHeight, timelineHeight, pixelPerYear, zoom: biblicalTimelineZoom });
   
   // Determine label interval to show labels approximately every 100 pixels
   // Calculate years needed for ~100 pixel spacing
@@ -4590,6 +4546,8 @@ async function renderBiblicalTimelineInternal(container) {
   // ═══════════════════════════════════════════════════════════════
   
   const eventHeight = isMobileNarrowLayout ? 30 : 40;
+  const slotGap = 3; // Breathing room between events
+  const slotSize = eventHeight + slotGap;
   const jdToYear = (jd) => Math.floor((jd - 1721425.5) / 365.25);
   
   // Get selected/focused event ID from state - these get boosted priority
@@ -4604,12 +4562,11 @@ async function renderBiblicalTimelineInternal(container) {
     return eventId === selectedEventIdForSlots || eventId === focusedEventIdForSlots;
   };
   
-  // Separate duration events (always shown as bars) from point events (need slot allocation)
-  const durationEventsToKeep = allEvents.filter(e => hasDuration(e));
+  // Point events need slot allocation; duration bars come from data.durations separately
   const pointEventsForAlloc = allEvents.filter(e => !hasDuration(e) && e.startJD !== null);
   
-  // Step 1: Compute visible slots
-  const slotCount = Math.max(1, Math.floor(timelineHeight / eventHeight));
+  // Step 1: Compute visible slots (eventHeight + gap for breathing room)
+  const slotCount = Math.max(1, Math.floor(timelineHeight / slotSize));
   const slotHeight = timelineHeight / slotCount;
   
   // Step 2: Bucket events into slots by their true timeline position
@@ -4642,6 +4599,8 @@ async function renderBiblicalTimelineInternal(container) {
     
     const winner = events[0];
     const children = events.slice(1);
+    // Use slot center to guarantee no overlaps between adjacent winners
+    // At high zoom, slots are narrow so this is close to actual position anyway
     const displayPos = slotIdx * slotHeight + slotHeight / 2;
     
     slotWinners.push({ event: winner, displayPos, slotIdx });
@@ -4669,32 +4628,25 @@ async function renderBiblicalTimelineInternal(container) {
     });
   });
   
-  // Extract events for rendering: duration bars + slot winners
-  let eventsToShow = [...durationEventsToKeep, ...slotWinners.map(w => w.event)];
+  // Extract events for rendering: slot winners only
+  // Duration bars are rendered separately from data.durations (not from events with endJD)
+  let eventsToShow = slotWinners.map(w => w.event);
   
   // Timeline header removed - using global search in main header
   // Detail panel has its own close button
   let html = '';
   
-  // Zoom and filter controls - fixed bottom left
+  // Zoom controls - fixed bottom left (type filters removed — clustering handles visibility)
   html += `<div class="timeline-controls-panel">
     <div class="timeline-zoom-controls">
       <button class="timeline-zoom-btn" onclick="biblicalTimelineZoomIn()" title="Zoom In">+</button>
       <button class="timeline-zoom-btn" onclick="biblicalTimelineZoomOut()" title="Zoom Out">−</button>
       <button class="timeline-zoom-btn" onclick="biblicalTimelineResetZoom()" title="Reset Zoom">⌂</button>
     </div>
-    <div class="timeline-filter-controls">
-      <button class="timeline-filter-btn ${timelineFilters.births ? 'active' : ''}" onclick="toggleTimelineFilter('births')" title="Births">👶</button>
-      <button class="timeline-filter-btn ${timelineFilters.deaths ? 'active' : ''}" onclick="toggleTimelineFilter('deaths')" title="Deaths">💀</button>
-      <button class="timeline-filter-btn ${timelineFilters.biblical ? 'active' : ''}" onclick="toggleTimelineFilter('biblical')" title="Biblical">📖</button>
-      <button class="timeline-filter-btn ${timelineFilters.historical ? 'active' : ''}" onclick="toggleTimelineFilter('historical')" title="Historical">📜</button>
-      <button class="timeline-filter-btn ${timelineFilters.prophecy ? 'active' : ''}" onclick="toggleTimelineFilter('prophecy')" title="Prophecy">🔮</button>
-      <button class="timeline-filter-btn ${timelineFilters.dates ? 'active' : ''}" onclick="toggleTimelineFilter('dates')" title="Date References">📅</button>
-    </div>
   </div>`;
   
-  // containerHeight already calculated above
-  html += '<div class="ruler-timeline-container" id="timeline-scroll-container" style="height: ' + containerHeight + 'px;">';
+  // Use 100% height — CSS chain ensures this fills to bottom of screen
+  html += '<div class="ruler-timeline-container" id="timeline-scroll-container" style="height: 100%;">';
   html += '<div class="ruler-timeline-wrapper" id="biblical-timeline-scroll" style="height: ' + timelineHeight + 'px;">';
   
   // Timeline ruler on the left with multi-level tick marks
@@ -5092,6 +5044,79 @@ async function renderBiblicalTimelineInternal(container) {
     html += '</div>'; // lunar-bars-container
   }
   
+  // =====================================================
+  // SABBATH & JUBILEE YEAR BANDS
+  // Background shading for every 7th year (sabbath) and 49th year (jubilee)
+  // Anchored to Jordan Crossing (Year 1 of the cycle)
+  // =====================================================
+  const showSabbathBands = pixelPerYear >= 1; // Only when bands are at least 1px tall
+  if (showSabbathBands) {
+    // Get Jordan Crossing's resolved JD to determine the anchor year
+    const sabbathResolvedEvents = getTimelineResolvedEvents() || [];
+    const jordanEvent = sabbathResolvedEvents.find(e => e.id === 'jordan-crossing');
+    const jordanJD = jordanEvent?.startJD;
+    
+    if (jordanJD) {
+      // Convert Jordan Crossing JD to Gregorian year (astronomical)
+      const jordanGreg = (typeof EventResolver !== 'undefined')
+        ? EventResolver.julianDayToGregorian(jordanJD)
+        : { year: Math.floor((jordanJD - 1721425.5) / 365.25) };
+      const jordanYear = jordanGreg.year;
+      
+      html += '<div class="sabbath-jubilee-container" style="position: absolute; left: 0; right: 0; top: 0; height: ' + timelineHeight + 'px; pointer-events: none; z-index: 0;">';
+      
+      // Sabbath and Jubilee years use fixed anchor years (Spring-to-Spring / Nisan):
+      // Sabbath years: (year - 1407 BC) % 7 === 0  →  astronomical: (year + 1406) % 7 === 0
+      // Jubilee years: (year - 1406 BC) % 49 === 0  →  astronomical: (year + 1405) % 49 === 0
+      // These are mutually exclusive — a year cannot be both sabbath and jubilee.
+      // Bands are offset ~0.25 years to approximate Spring (Nisan) start.
+      // 1406 BC is the 50th Jubilee from Creation, so anchor (J0) is 49*50=2450 years earlier
+      // 1406 BC = astronomical -1405, minus 2450 = -3855 (3856 BC)
+      // Sabbath years count from the same anchor: S1 = 7th year from anchor
+      const jubileeAnchor = -1405 - (49 * 50); // -3855 (3856 BC) — Jubilee #0 near Creation
+      const sabbathAnchor = jubileeAnchor - 1;   // -3856 (3857 BC) — Sabbath always 1 year before Jubilee
+      const springOffset = 0.25;   // ~3 months offset for Spring-to-Spring year
+      
+      // Helper: true modulo that works for negative numbers (JS % can return negative)
+      const mod = (n, m) => ((n % m) + m) % m;
+      
+      for (let year = Math.ceil(minYear); year <= Math.floor(maxYear); year++) {
+        const sabbathOffset = year - sabbathAnchor;
+        const jubileeOffset = year - jubileeAnchor;
+        
+        // Cycles extend backward (before Jordan) and forward
+        // jubileeOffset === 0 is the anchor year (1406 BC) — also a jubilee
+        const isJubilee = mod(jubileeOffset, 49) === 0;
+        const isSabbath = !isJubilee && mod(sabbathOffset, 7) === 0;
+        
+        if (!isSabbath && !isJubilee) continue;
+        
+        // Spring-to-Spring: band starts ~March/April of this year
+        const topPos = (year + springOffset - minYear) * pixelPerYear;
+        const height = Math.max(1, pixelPerYear); // 1 year band
+        
+        if (topPos + height < 0 || topPos > timelineHeight) continue;
+        
+        const showLabel = height >= 12; // Show labels when band is tall enough to read
+        
+        if (isJubilee) {
+          const jubNum = jubileeOffset / 49;
+          html += `<div class="jubilee-year-bar" style="top:${topPos}px; height:${height}px;" title="Jubilee ${jubNum} from Jordan River">`;
+          if (showLabel) html += `<span class="sabbath-year-label jubilee-label">J${jubNum}</span>`;
+          html += `</div>`;
+        } else {
+          const sabbNum = sabbathOffset / 7;
+          html += `<div class="sabbath-year-bar" style="top:${topPos}px; height:${height}px;" title="Sabbath ${sabbNum} from Jordan River">`;
+          if (showLabel) html += `<span class="sabbath-year-label">S${sabbNum}</span>`;
+          html += `</div>`;
+        }
+      }
+      
+      html += '</div>';
+      console.log(`[Timeline] Sabbath/Jubilee bands rendered from Jordan Crossing (${jordanYear} = ${jordanYear <= 0 ? (1-jordanYear) + ' BC' : jordanYear + ' AD'})`);
+    }
+  }
+  
   const eventLabelHeight = 32; // Actual height of event label element
   const minEventGap = 8; // Minimum gap between events
   
@@ -5117,47 +5142,8 @@ async function renderBiblicalTimelineInternal(container) {
         return { year, month, day: Math.floor(day) };
       };
   
-  // Separate duration events for bar rendering, point events use slotWinners
-  const durationEventsForLines = [];
-  const pointEventsForStack = [];
-  // monthNames already declared above for tick labels
-  
-  // Process duration events from eventsToShow
-  eventsToShow.forEach((event) => {
-    if (event.startJD === null) return;
-    const isDuration = event.endJD && Math.abs(event.endJD - event.startJD) >= 30;
-    if (!isDuration) return; // Point events handled via slotWinners below
-    
-    const eventTimelinePos = jdToPixelPos(event.startJD);
-    const startDate = jdToGregorian(event.startJD);
-    const year = startDate.year;
-    const dateStr = `${formatYear(year)} ${monthNames[startDate.month - 1]} ${startDate.day}`;
-    const color = getEventColor(event.type);
-    const endTimelinePos = jdToPixelPos(event.endJD);
-    const isNegativeDuration = event.endJD < event.startJD;
-    const barStartPos = isNegativeDuration ? endTimelinePos : eventTimelinePos;
-    const barEndPos = isNegativeDuration ? eventTimelinePos : endTimelinePos;
-    const durationHeight = Math.abs(endTimelinePos - eventTimelinePos);
-    
-    let durationStr = '';
-    if (event.duration) {
-      const dur = event.duration;
-      const unitLabels = { 'days': 'days', 'weeks': 'weeks', 'lunar_weeks': 'lunar weeks', 'months': 'months', 'solar_years': 'solar years', 'lunar_years': 'lunar years', 'regal_years': 'regal years' };
-      const unit = unitLabels[dur.unit] || dur.unit || 'years';
-      durationStr = `${Math.abs(dur.value)} ${unit}`;
-      if (dur.reckoning) durationStr += ` (${dur.reckoning})`;
-    }
-    
-    durationEventsForLines.push({
-      id: event.id, startPos: barStartPos, endPos: barEndPos,
-      startJD: isNegativeDuration ? event.endJD : event.startJD,
-      endJD: isNegativeDuration ? event.startJD : event.endJD,
-      height: durationHeight, color, title: event.title, dateStr, durationStr,
-      eventIndex: durationEventsForLines.length
-    });
-  });
-  
   // Build pointEventsForStack directly from slotWinners (no cascade stacking)
+  const pointEventsForStack = [];
   // Each winner is positioned at the center of its slot — guaranteed no overlap
   slotWinners.sort((a, b) => a.slotIdx - b.slotIdx);
   
@@ -5218,79 +5204,34 @@ async function renderBiblicalTimelineInternal(container) {
     };
   });
   
-  // DEBUG: Log JD-based positions for key events
-  console.log('=== EVENT POSITIONS DEBUG (JD-based) ===');
-  console.log(`minJD=${minJD.toFixed(2)}, maxJD=${maxJD.toFixed(2)}, timelineHeight=${timelineHeight}`);
-  const keyEvents = ['methuselah-birth', 'methuselah-death', 'lamech-birth', 'lamech-death', 'noah-birth', 'noah-death', 'flood-begins', 'waters-dried-up', 'earth-dried'];
-  keyEvents.forEach(id => {
-    const jd = eventJulianDays[id];
-    if (jd !== undefined) {
-      const year = Math.floor((jd - 1721425.5) / 365.25);
-      // Astronomical year: 0 = 1 BC, -1 = 2 BC, -N = (N+1) BC
-      const yearStr = year > 0 ? `${year} AD` : `${1 - year} BC`;
-      const pos = jdToPixelPos(jd);
-      console.log(`${id}: JD=${jd.toFixed(2)}, year=${yearStr}, pixelPos=${pos.toFixed(2)}`);
-    } else {
-      console.log(`${id}: NOT FOUND`);
-    }
-  });
-  
   if (data.durations && data.durations.length > 0) {
-    // DEBUG: Check lifespan durations AND short durations
-    const debugDurations = data.durations.filter(d => 
-      d.id.includes('lifespan') || 
-      d.id.includes('waters-dried') || 
-      d.id.includes('earth-dried') ||
-      d.id.includes('flood')
-    );
-    console.log('=== DURATIONS DEBUG (JD-based) ===');
-    debugDurations.forEach(dur => {
-      const fromJD = eventJulianDays[dur.from_event];
-      const toJD = eventJulianDays[dur.to_event];
-      if (fromJD !== undefined && toJD !== undefined) {
-        const fromPos = jdToPixelPos(fromJD);
-        const toPos = jdToPixelPos(toJD);
-        const height = Math.abs(toPos - fromPos);
-        const daysDiff = Math.abs(toJD - fromJD);
-        console.log(`${dur.id}: ${daysDiff.toFixed(1)} days, height=${height.toFixed(2)}px`);
-      } else {
-        console.log(`${dur.id}: fromJD=${fromJD !== undefined ? 'OK' : 'MISSING'}, toJD=${toJD !== undefined ? 'OK' : 'MISSING'}`);
-      }
-    });
-    
+    // Duration bar rendering DISABLED — too much visual clutter without labels.
+    // Logic kept intact for detail panels and data access.
+    // To re-enable, uncomment the forEach block below.
+    /*
+    const focusedId = selectedEventIdForSlots || focusedEventIdForSlots;
     data.durations.forEach(dur => {
       const fromJD = eventJulianDays[dur.from_event];
       const toJD = eventJulianDays[dur.to_event];
-      
       if (fromJD !== undefined && toJD !== undefined) {
-        // Convert JD to pixel positions at render time
+        if (!focusedId) return;
+        if (dur.from_event !== focusedId && dur.to_event !== focusedId) return;
         const fromPos = jdToPixelPos(fromJD);
         const toPos = jdToPixelPos(toJD);
         const startPos = Math.min(fromPos, toPos);
         const endPos = Math.max(fromPos, toPos);
         const height = endPos - startPos;
-        
-        // Include all durations with any height (minimum 0.1px)
         if (height >= 0.1) {
-          durationBars.push({
-            id: dur.id,
-            title: dur.title || dur.id,
-            startPos: startPos,
-            endPos: endPos,
-            height: height,
-            fromEvent: dur.from_event,
-            toEvent: dur.to_event,
-            claimed: dur.claimed,
-            source: dur.source,
-            doc: dur.doc,
-            notes: dur.notes,
-            validates: dur.validates,
-            isScripture: dur.source?.type === 'scripture'
-          });
+          durationBars.push({ id: dur.id, title: dur.title || dur.id, startPos, endPos, height,
+            fromEvent: dur.from_event, toEvent: dur.to_event, claimed: dur.claimed, source: dur.source,
+            doc: dur.doc, notes: dur.notes, validates: dur.validates, isScripture: dur.source?.type === 'scripture' });
         }
       }
     });
+    */
   }
+  
+  console.log(`[Durations] ${durationBars.length} duration bars passed filter (from ${data.durations?.length || 0} total)`);
   
   // Store durations globally for the detail function
   window._timelineDurations = data.durations || [];
