@@ -665,14 +665,15 @@ function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
   showStrongsPanel(strongsNum, englishWord, gloss, event);
 }
 
-// Show word tooltip on hover (definitions + symbol meaning)
+// Show word tooltip on hover (definitions + symbol meaning + name substitution info)
 function showWordTooltip(event) {
-  const el = event.target;
+  const el = event.target.closest('.strongs-word, .name-sub') || event.target;
   const def = el.dataset.def;
   const symbolMeaning = el.dataset.symbolMeaning;
+  const originalName = el.dataset.original;
   
   // Skip if no useful info to show
-  if (!def && !symbolMeaning) return;
+  if (!def && !symbolMeaning && !originalName) return;
   
   // Remove any existing tooltip
   hideWordTooltip();
@@ -683,6 +684,11 @@ function showWordTooltip(event) {
   tooltip.className = 'word-hover-tooltip';
   
   let html = '';
+  
+  // Show original name if this is a name substitution
+  if (originalName) {
+    html += `<div class="word-tooltip-original">Original: <strong>${originalName}</strong> <span class="word-tooltip-settings" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW', view:'settings'})" title="Name Settings">⚙</span></div>`;
+  }
   
   // Show definition (synonyms) if available
   if (def) {
@@ -3371,6 +3377,22 @@ function renderInlineStrongs(taggedText, reference) {
       word = textBefore.slice(splitIdx + 1);
     }
 
+    // Check for name substitution BEFORE rendering leading text
+    // (divine name H3068 needs "the " stripped from leading text)
+    let displayWord = word;
+    let nameSub = null;
+    if (word && typeof getNameSubstitution === 'function') {
+      nameSub = getNameSubstitution(strongsNum, word);
+      if (nameSub) {
+        displayWord = nameSub;
+        // For divine name (H3068/H3069), strip trailing "the " from leading text
+        // so we don't get "the Yahweh" — the replacement already includes the full form
+        if ((strongsNum === 'H3068' || strongsNum === 'H3069') && leadingText && /\bthe\s$/.test(leadingText)) {
+          leadingText = leadingText.replace(/\bthe\s$/, '');
+        }
+      }
+    }
+
     // Render leading text as plain
     if (leadingText) {
       result += _renderPlainSegment(leadingText, reference);
@@ -3389,6 +3411,12 @@ function renderInlineStrongs(taggedText, reference) {
       const realDef = strongsEntry?.strongs_def || strongsEntry?.kjv_def || '';
       dataAttrs.push(`data-def="${realDef.replace(/"/g, '&quot;')}"`);
 
+      // Name substitution: add original word and name-sub class
+      if (nameSub) {
+        classes.push('name-sub');
+        dataAttrs.push(`data-original="${word.replace(/"/g, '&quot;')}"`);
+      }
+
       const escapedWord = word.replace(/'/g, "\\'").replace(/"/g, '&quot;');
       const escapedGloss = (strongsEntry?.translit || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
       let onclick = `handleStrongsWordClick('${strongsNum}', '${escapedWord}', '${escapedGloss}', event)`;
@@ -3399,7 +3427,7 @@ function renderInlineStrongs(taggedText, reference) {
         dataAttrs.push(`data-symbol-meaning="${(symbol.is2 || symbol.is || '').replace(/"/g, '&quot;')}"`);
       }
 
-      result += `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip(event)">${word}</span>`;
+      result += `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip(event)">${displayWord}</span>`;
     }
 
     // Check for consecutive tags on the same word (e.g. word{H1254}{H853})
@@ -3416,13 +3444,21 @@ function renderInlineStrongs(taggedText, reference) {
   return result;
 }
 
-// Helper: render a plain text segment with symbol highlighting and verse annotations
+// Helper: render a plain text segment with symbol highlighting, verse annotations, and name substitution
 function _renderPlainSegment(text, reference) {
   if (!text) return '';
+  let html;
   if (reference) {
-    return applySymbolHighlighting(applyVerseAnnotations(reference, text));
+    html = applySymbolHighlighting(applyVerseAnnotations(reference, text));
+  } else {
+    html = applySymbolHighlighting(text);
   }
-  return applySymbolHighlighting(text);
+  // Apply regex-based name substitution (for non-Strong's translations)
+  // This runs AFTER symbol/annotation HTML is built, and only touches text content (not tags)
+  if (typeof applyNamePreferencesHTML === 'function') {
+    html = applyNamePreferencesHTML(html);
+  }
+  return html;
 }
 
 // Render verse text with clickable Strong's words (for OT) — LEGACY
@@ -3893,7 +3929,11 @@ function buildMultiverseHTML(citationStr, translationId) {
       const kjvText = kjvVerse ? kjvVerse.text : verse.text;
       verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, kjvText);
     } else {
-      verseText = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+      let plainHtml = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+      if (typeof applyNamePreferencesHTML === 'function') {
+        plainHtml = applyNamePreferencesHTML(plainHtml);
+      }
+      verseText = plainHtml;
     }
     const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
     const bookRefHtml = bookRefs && bookRefs.length > 0
@@ -4309,6 +4349,15 @@ let bibleExplorerState = {
 // Cache for rendered chapter HTML to avoid re-generating on back navigation
 // Key format: "translation:book:chapter" -> HTML string
 const chapterHTMLCache = new Map();
+
+// Clear chapter cache and re-render when name preferences change
+window.addEventListener('namePreferencesChanged', () => {
+  chapterHTMLCache.clear();
+  // Re-render current chapter if we're viewing one
+  if (bibleExplorerState.currentBook && bibleExplorerState.currentChapter) {
+    displayBibleChapter(bibleExplorerState.currentBook, bibleExplorerState.currentChapter, bibleExplorerState.highlightedVerse);
+  }
+});
 
 // Navigate to a Bible location and push to history
 function navigateToBibleLocation(book, chapter, verse = null, addToHistory = true) {
@@ -4832,7 +4881,12 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
       // Fallback: KJV-style interlinear word matching (legacy path)
       verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, verse.text);
     } else {
-      verseText = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+      let plainHtml = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+      // Apply name preferences (regex path for non-Strong's translations)
+      if (typeof applyNamePreferencesHTML === 'function') {
+        plainHtml = applyNamePreferencesHTML(plainHtml);
+      }
+      verseText = plainHtml;
     }
     const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
     const bookRefHtml = bookRefs && bookRefs.length > 0
@@ -5618,40 +5672,23 @@ document.addEventListener('click', (e) => {
   }
 });
 
+/**
+ * Handle section jump from classics dropdown.
+ * Always dispatches through AppStore so history entries are created (back/forward works).
+ */
 function onClassicsSectionJump(value) {
-  if (!value) return;
-  const state = typeof AppStore !== 'undefined' ? AppStore.getState() : {};
+  if (!value || typeof AppStore === 'undefined') return;
+  const state = AppStore.getState();
   const params = state?.content?.params || {};
   const contentType = params.contentType;
 
   if (contentType === 'philo') {
-    // Scroll to section anchor within the current work
-    const anchor = document.getElementById('section-' + value);
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Update URL without full re-render
-      if (typeof AppStore !== 'undefined') {
-        const newParams = { ...params, section: value };
-        const url = '/reader/philo/' + params.work + '/' + value;
-        history.replaceState({}, '', url);
-      }
-    } else {
-      // Section not in current view — navigate
-      AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'philo', work: params.work, section: value } });
-    }
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'philo', work: params.work, section: value } });
   } else if (contentType === 'josephus') {
-    // Value is "book.chapter.section" or just "book"
     const parts = value.split('.');
     if (parts.length === 3) {
       const [b, c, s] = parts.map(Number);
-      const anchor = document.getElementById('section-' + b + '-' + c + '-' + s);
-      if (anchor) {
-        anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const url = '/reader/josephus/' + params.work + '/' + b + '/' + c + '/' + s;
-        history.replaceState({}, '', url);
-      } else {
-        AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'josephus', work: params.work, book: b, chapter: c, section: s } });
-      }
+      AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'josephus', work: params.work, book: b, chapter: c, section: s } });
     } else {
       // Just a book number — navigate to that book
       const b = parseInt(value);

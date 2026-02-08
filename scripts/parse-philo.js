@@ -6,7 +6,7 @@
  * Section numbers come from the Loeb-style (N) or (N.M) in "Roman. (N)" lines.
  *
  * Usage: node scripts/parse-philo.js
- * Input: philo-complete-works.txt (project root)
+ * Input: source/classics/philo-complete-works.txt
  * Output: classics/philo.txt
  */
 
@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const INPUT = path.join(ROOT, 'philo-complete-works.txt');
+const INPUT = path.join(ROOT, 'source/classics/philo-complete-works.txt');
 const OUT_DIR = path.join(ROOT, 'classics');
 const OUTPUT = path.join(OUT_DIR, 'philo.txt');
 
@@ -162,13 +162,29 @@ function main() {
 
       // Clean stray OCR junk before parenthesized refs: "2Y (Genesis" → "(Genesis"
       text = text.replace(/\d+[Y%]\s*(\([A-Z])/g, '$1');
-      // Clean stray numbers before clean refs: "577 (Leviticus" → "(Leviticus"
-      text = text.replace(/"\d+\s+(\([12]? ?[A-Z])/g, ' $1');
-      // Clean stray trailing footnote numbers between punctuation and (N) section markers
-      // e.g. 'weak."7 (11)' → 'weak." (11)'   or   'farmer;35 (Genesis' → 'farmer; (Genesis'
-      text = text.replace(/([.;,\"'])\d{1,3}(\s+\()/g, '$1$2');
-      // Clean remaining stray ¿ characters
+
+      // Clean remaining stray ¿ characters FIRST so footnote stripping can see clean text
       text = text.replace(/¿/g, '');
+
+      // Strip bare footnote numbers between quote mark and parenthesized scripture ref
+      // After ¿ cleanup: '. "577  (Leviticus' → '. " (Leviticus'
+      text = text.replace(/([".;,])\s*\d{1,4}\s+(\([12]? ?[A-Z])/g, '$1 $2');
+      // Also: 'requires."64  (Deut' or 'grapes."95  (Gen' — no space between . and "
+      text = text.replace(/(["'\u201c\u201d])\d{1,4}\s+(\([12]? ?[A-Z])/g, '$1 $2');
+
+      // ── Strip Loeb footnote numbers ──
+      // The source has inline footnote reference numbers like:
+      //   '. "577  (Leviticus 7:34)' or  '."226 (Exodus 4:3)'
+      //   '"Having bound,"3 as the' or  'unto me.\u201d6 (7) For'
+      // Strategy: strip digits (1-4) immediately after quote chars (straight or curly)
+      // and after common punctuation, keeping the punctuation/quote intact.
+      //
+      // Pass 1: quote chars first (so ."577 matches " before . can consume it)
+      text = text.replace(/(["\u201c\u201d\u2018\u2019'])\d{1,4}([/f]\d*)?(?=[\s(])/g, '$1');
+      // Pass 2: after other sentence-ending punctuation
+      text = text.replace(/([.;,!?])\d{1,4}(?=\s)/g, '$1');
+
+      // (¿ already cleaned above, before footnote stripping)
 
       if (text) {
         const ref = `${currentWork}|${currentSectionNum}`;

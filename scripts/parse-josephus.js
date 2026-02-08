@@ -7,7 +7,7 @@
  * Structure: "Back To The Table Of Contents" then work title then "Book N", "CHAPTER N.", "1.", "2." ...
  *
  * Usage: node scripts/parse-josephus.js
- * Input: josephus-complete-works.txt (project root)
+ * Input: source/classics/josephus-complete-works.txt
  * Output: classics/josephus.txt
  */
 
@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const INPUT = path.join(ROOT, 'josephus-complete-works.txt');
+const INPUT = path.join(ROOT, 'source/classics/josephus-complete-works.txt');
 const OUT_DIR = path.join(ROOT, 'classics');
 const OUTPUT = path.join(OUT_DIR, 'josephus.txt');
 

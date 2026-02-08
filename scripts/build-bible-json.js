@@ -2,7 +2,7 @@
 /**
  * Build pre-processed JSON from Bible .txt files (KJV, ASV, LXX).
  * JSON loads faster: no runtime parsing, just JSON.parse + one index pass.
- * Run from http/: node scripts/build-bible-json.js
+ * Usage: node scripts/build-bible-json.js
  */
 
 const fs = require('fs');
@@ -11,9 +11,9 @@ const path = require('path');
 const HTTP_DIR = path.join(__dirname, '..');
 
 const TRANSLATIONS = [
-  { file: 'kjv.txt', out: 'kjv.json', skipLines: 2, separator: '\t' },
-  { file: 'asv.txt', out: 'asv.json', skipLines: 4, separator: ' ' },
-  { file: 'lxx.txt', out: 'lxx.json', skipLines: 2, separator: '\t' }
+  { file: 'source/bibles/kjv.txt', out: 'kjv.json', skipLines: 2, separator: '\t' },
+  { file: 'source/bibles/asv.txt', out: 'asv.json', skipLines: 4, separator: ' ' },
+  { file: 'source/bibles/lxx.txt', out: 'lxx.json', skipLines: 2, separator: '\t' }
 ];
 
 function normalizeBookName(book) {

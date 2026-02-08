@@ -35,7 +35,7 @@ We know **there were a half dozen different calendars in use at the time** of Ye
 Given how few documents have survived that document the majority position, even if a large minority calendar was officially observed by the Temple priests, we would not expect to see much evidence of it. This is especially true when the majority is actively hostile to minority positions. They either passively neglect reproducing or actively destroy opposing records. It is therefore a logical fallacy to assert that absence of explicit evidence is evidence of absence in this situation.
 
 > *"The doctrine of the Sadducees is this: That souls die with the bodies; nor do they regard the observation of anything besides what the law enjoins them... But this doctrine is received but by a few, yet by those still of the greatest dignity. But they are able to do almost nothing of themselves; for when they become magistrates, as they are unwillingly and by force sometimes obliged to be, they addict themselves to the notions of the Pharisees, because the multitude would not otherwise bear them."*
-> — Antiquities of the Jews (Book 18, 1:4)
+> — Antiquities 18.1.4
 
 All of that said, the Bible provides all the evidence we need to determine the true calendar when one reads it carefully and without the tainted traditions inherited by the Jews. This literal reading that relies only on the Bible is therefore the most likely reading supported by elite Sadducees (those of greatest dignity) that do not regard anything but what scripture requires of them (according to Josephus). Thus, rather than a "_lack of evidence_" we actually have the strongest possible evidence of an alternative calendar straight from scripture.
 

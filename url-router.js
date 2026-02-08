@@ -613,8 +613,13 @@ const URLRouter = {
             params.translation = bibleParts[0].toLowerCase();
             bibleIdx = 1;
           }
-          // If first part is not a known translation and there are parts, treat as book name
-          // with no translation → will show translation picker since params.translation is undefined
+          // If first part is not a known translation but there are parts (book/chapter),
+          // use the configured default translation instead of showing the picker
+          if (!params.translation && bibleParts.length > 0) {
+            params.translation = typeof Bible !== 'undefined'
+              ? Bible.getDefaultTranslation()
+              : 'kjv';
+          }
 
           if (bibleParts[bibleIdx]) params.book = decodeURIComponent(bibleParts[bibleIdx]);
           if (bibleParts[bibleIdx + 1]) params.chapter = parseInt(bibleParts[bibleIdx + 1]);
@@ -956,6 +961,10 @@ const URLRouter = {
             cp.chapter === np.chapter && 
             cp.verse === np.verse &&
             cp.contentType === np.contentType) {
+          // For classics, section changes are real navigation, not normalization
+          if (cp.contentType === 'philo' || cp.contentType === 'josephus') {
+            if (cp.section !== np.section || cp.work !== np.work) return false;
+          }
           return true;
         }
       }

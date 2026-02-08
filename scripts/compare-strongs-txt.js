@@ -10,7 +10,7 @@
  * number (e.g. {(H8804)} counts as H8804).
  *
  * Usage: node scripts/compare-strongs-txt.js <file1.txt> <file2.txt>
- *   e.g. node scripts/compare-strongs-txt.js kjv_strongs.txt http/bibles/akjv_strongs.txt
+ *   e.g. node scripts/compare-strongs-txt.js bibles/kjv_strongs.txt source/bibles/akjv_strongs.txt
  */
 
 const fs = require('fs');

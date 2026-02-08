@@ -171,7 +171,7 @@ The next point of reference scripture gives us to the timing of Yeshua’s birth
 In 3–2 BC Augustus organized an empire-wide act of allegiance to celebrate the twenty-fifth anniversary of his rule and the granting of the title Pater Patriae (“Father of the Fatherland”) in February 2 BC. The event was called an ἀπογραφή / apographē (the exact word Luke uses in Luke 2:2 and that is normally translated “census”) because, in the official Roman administrative language of the time, any formal registration of persons that produced a written list of names was labelled an apographē — regardless of whether the ultimate purpose was taxation, military service, or a loyalty oath.
 
 > “There was also a great disturbance among the people because of a command that the king gave to swear allegiance to Caesar and to himself. For there were certain men among the Jews who valued the laws of their country above all things… Accordingly, when all the people of the Jews gave assurance of their good-will to Caesar, and to the king’s government, these very men [the Pharisees] did not swear, being above six thousand; and when the king imposed a fine upon them, Pheroras’ wife paid the money for them.” 
-> — Josephus, Antiquities of the Jews 17.2.4
+> — Josephus, Antiquities 17.2.4
 
 
 The primary evidence is the Res Gestae Divi Augusti itself (chapter 35) together with a surviving oath-text found on a Greek inscription from Paphlagonia (OGIS 532) that was sworn “by all the people in the land” in early 2 BC. The inscription (OGIS 532, found at Gangra/Germanicopolis in Paphlagonia, modern Turkey) records a loyalty oath to Augustus and his family. Its opening lines date it explicitly to:
@@ -196,14 +196,14 @@ John gives us a very clear time marker for the first Passover — it had taken 4
 The only question we need to figure out is when did they start building the temple:
 
 > In the eighteenth year of his (Herod the Great) reign… he undertook to rebuild the Temple.”  
-> — Josephus Ant. 15.380
+> — Josephus, Antiquities 15.380
 
 - **Josephus** writes this immediately after describing Herod’s final consolidation of power in 36 BC (see chapter on Herod the Great). The eighteenth year of Herod’s reign, in the sense required by the context of Antiquities 15.380, is most likely the eighteenth year after he seized Jerusalem — not the eighteenth year after the Senate’s decree in Rome.
 
 This places the intent to rebuild the temple in 18 BC, because his first effective year started spring 35 BC, 6 months after capturing the city in 36 BC. However, the Jews did not trust Herod and wouldn’t let him start construction immediately.
 
 > But Herod himself went about the work with great zeal, because he hoped that this would be the most illustrious monument of his reign. The people, however, were afraid that, even if he should collect the materials, he might not carry out the rebuilding, but that, having pulled down the whole temple, he might leave it in that condition and not be able to complete the new one. And this danger appeared probable, because the undertaking was so vast. Therefore Herod, in order to remove this suspicion and to prove that he was in earnest, prepared all the materials beforehand, and collected a thousand wagons to carry the stones, and selected ten thousand of the most skilled workmen, and purchased priestly garments for a thousand priests, and trained a thousand priests in the arts of masonry and carpentry, and only then, when everything was ready, did he begin the reconstruction. And so he pulled down the old foundations and laid others, and upon them he erected a new temple.”   
-> — Antiquities of the Jews 15.11.2–3 
+> — Antiquities 15.11.2
 
 If we date purely from the 18th year, then the 46th year would be spring 29 to spring 30; however, we have already established that he would have been in the wilderness for 40 days this particular year. The prep work was extensive (training 1000 priests, gathering materials) so the earliest they could start would be the following year: spring 17 BC. Add 46 construction years later brings us to the spring of 30 AD, the very first Passover at which it could be said 46 years. Construction on the temple was on going through 65 AD just a few short years before the temple was destroyed. If 30 AD was the first passover, then the second was 31 AD and the final would be 32 AD. At the time this was said Jesus also said:
 

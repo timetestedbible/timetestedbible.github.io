@@ -573,8 +573,12 @@ const GlobalSearch = {
     
     // Navigate using AppStore
     if (typeof AppStore !== 'undefined') {
+      const translation = typeof Bible !== 'undefined' 
+        ? Bible.getDefaultTranslation() 
+        : 'kjv';
       const params = {
         contentType: 'bible',
+        translation,
         book: ref.book,
         chapter: ref.chapter
       };

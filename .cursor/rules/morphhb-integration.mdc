@@ -1,0 +1,64 @@
+---
+description: MorphHB Hebrew morphology data pipeline — design decisions, file locations, and integration plan
+alwaysApply: false
+---
+
+# MorphHB Hebrew Morphology Integration
+
+## What Was Built (committed, tested, ready)
+
+### Data Pipeline (scripts/)
+- `scripts/build-morphhb.js` — Parses 39 OSIS XML files from `morphhb-source/wlc/` → `data/morphhb.json`
+  - Strips cantillation marks, preserves vowel points
+  - Strips inner `<seg>` tags (large/small letter markers)
+  - Captures qere (read) forms, skips ketiv (written) forms
+  - Applies 1,971 WLC→KJV verse remappings from VerseMap.xml
+  - Requires: `git clone https://github.com/openscriptures/morphhb.git morphhb-source`
+
+- `scripts/morphology-decoder.js` — Pure data module, no I/O, decodes OSHB morph codes
+  - `decodeMorphology("HC/Vqw3ms")` → structured object with parts, roles, descriptions
+  - Handles all Hebrew/Aramaic verb stems, POS, conjugation types, person/gender/number/state
+  - `parseLemma("b/7225", "H")` → `["H7225"]` (strips prefix markers, `+` construct markers)
+  - `stripCantillation()` / `stripAllDiacritics()` for Hebrew text processing
+  - **This module will be included in the browser app** for runtime decoding
+
+- `scripts/morphhb-gloss.js` — Derives English glosses from Strong's dictionary at runtime
+  - `getWordGloss(lemma, lang, dictionary)` — gets short English gloss for a word
+  - `getPrefixMeanings(lemma)` — translates prefix markers (b="in", c="and", d="the", etc.)
+  - `extractGloss(entry)` — extracts first meaningful word from Strong's definition
+  - **This module will be included in the browser app** for runtime gloss derivation
+
+- `scripts/test-morphhb.js` — 272 unit tests. Run: `node scripts/test-morphhb.js`
+
+### Build Output
+- `data/morphhb.json` (11 MB, ~2 MB gzipped) — 305,106 words across 39 OT books
+  - Format: `{ "Genesis": [null, [null, [[word, lemma, morph], ...], ...], ...], ... }`
+  - Access: `data["Genesis"][1][1]` → Genesis 1:1 words (1-indexed chapters and verses)
+  - Each word: `["בְּ/רֵאשִׁית", "b/7225", "HR/Ncfsa"]` — [Hebrew text, lemma, morph code]
+  - "/" in text/lemma/morph shows prefix decomposition
+
+## Integration Plan (NOT YET DONE)
+
+### Phase 1: Replace interlinear.json + wlc/verses.txt
+- `data/morphhb.json` replaces both files (saves ~19 MB)
+- Load morphhb.json via the same pattern as Bible.loadTranslation()
+- Pre-cache in service worker on PWA install (single file, not lazy per-book)
+- Derive Hebrew verse text by joining words and stripping "/" delimiters
+- Derive English glosses at runtime from `strongsHebrewDictionary` (already loaded)
+
+### Phase 2: Enrich interlinear display
+- Update `showInterlinear()` in bible-reader.js to read from morphhb data
+- Each Hebrew word block becomes tappable for morphology parsing
+- Word blocks show: Hebrew text + gloss derived from Strong's
+
+### Phase 3: Morphology parsing panel (BLB-style)
+- Add "Hebrew Parsing" section to existing `strongs-sidebar`
+- Shows: inflected form, root form, Strong's link, morph code breakdown
+- Parsed components: Part of Speech, Type, Stem, Person, Gender, Number, State
+- Prefix decomposition displayed visually (conjunction, article, preposition identified)
+
+### Key Architecture Notes
+- All data processing is in standalone modules (no DOM, no I/O) — testable separately
+- Browser app includes morphology-decoder.js and morphhb-gloss.js for runtime use
+- morphhb.json is the ONLY data file needed — everything else derived from it + Strong's dict
+- Offline-first: entire dataset pre-cached by service worker, no lazy fetching

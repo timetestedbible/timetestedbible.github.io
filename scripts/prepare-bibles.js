@@ -197,7 +197,7 @@ function generateGreekNT() {
  * Convert LXX file (tab-separated with header lines)
  */
 function convertLXX() {
-  const src = path.join(ROOT, 'lxx.txt');
+  const src = path.join(ROOT, 'source/bibles/lxx.txt');
   const dest = path.join(BIBLES_DIR, 'lxx.txt');
   if (!fs.existsSync(src)) {
     console.warn('  SKIP (not found): lxx.txt');
@@ -240,19 +240,9 @@ function main() {
 
   // Strong's-tagged files (space-separated → tab-separated)
   console.log('Strong\'s tagged translations:');
-  total += convertStrongsFile('kjv_strongs.txt', 'kjv_strongs.txt', 'KJV', 'King James Version with Strong\'s');
-  total += convertStrongsFile('http-v1/asvs.txt', 'asv_strongs.txt', 'ASV', 'American Standard Version with Strong\'s');
-  total += convertStrongsFile('http/bibles/akjv_strongs.txt', 'akjv_strongs.txt', 'AKJV', 'American King James Version with Strong\'s');
-  console.log();
-
-  // Tab-separated translations (copy as-is)
-  console.log('Plain text translations:');
-  total += copyTabFile('http/bibles/ylt.txt', 'ylt.txt');
-  total += copyTabFile('http/bibles/dbt.txt', 'dbt.txt');
-  total += copyTabFile('http/bibles/drb.txt', 'drb.txt');
-  total += copyTabFile('http/bibles/jps.txt', 'jps.txt');
-  total += copyTabFile('http/bibles/slt.txt', 'slt.txt');
-  total += copyTabFile('http/bibles/wbt.txt', 'wbt.txt');
+  total += convertStrongsFile('source/bibles/kjv_strongs.txt', 'kjv_strongs.txt', 'KJV', 'King James Version with Strong\'s');
+  total += convertStrongsFile('source/bibles/asv_strongs.txt', 'asv_strongs.txt', 'ASV', 'American Standard Version with Strong\'s');
+  total += convertStrongsFile('source/bibles/akjv_strongs.txt', 'akjv_strongs.txt', 'AKJV', 'American King James Version with Strong\'s');
   console.log();
 
   // LXX (tab-separated with different header)

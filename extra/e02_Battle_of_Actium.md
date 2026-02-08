@@ -20,7 +20,7 @@ Josephus records a major earthquake in Judea that occurred during the Battle of 
 
 > "Now at this time it was that the fight happened at Actium, between Octavius Caesar and Antony, in the seventh year of the reign of Herod..."
 > 
-> — Josephus, Antiquities of the Jews 15.5.2
+> — Josephus, Antiquities 15.5.2
 
 The earthquake caused significant destruction:
 - Approximately 10,000 casualties (Antiquities) or 30,000 (Jewish War)

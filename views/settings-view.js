@@ -130,12 +130,28 @@ const SettingsView = {
                 <select class="settings-name-more ${!['god','elohim'].includes(namePrefs.god) ? 'selected' : ''}"
                         onchange="if(this.value) SettingsView.saveNamePreference('god', this.value)">
                   <option value="">More...</option>
-                  <option value="eloah" ${namePrefs.god === 'eloah' ? 'selected' : ''}>Eloah</option>
-                  <option value="elyon" ${namePrefs.god === 'elyon' ? 'selected' : ''}>El Elyon</option>
-                  <option value="shaddai" ${namePrefs.god === 'shaddai' ? 'selected' : ''}>El Shaddai</option>
+                  <option value="hebrew" ${namePrefs.god === 'hebrew' ? 'selected' : ''}>Hebrew Names (Elohim / El / Eloah per Strong's)</option>
                 </select>
               </div>
             </div>
+            
+            <div class="settings-name-row">
+              <label class="settings-name-label">Christ:</label>
+              <div class="settings-name-options">
+                <button class="settings-name-btn ${namePrefs.christ === 'christ' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('christ', 'christ')">Christ</button>
+                <button class="settings-name-btn ${namePrefs.christ === 'messiah' ? 'selected' : ''}" 
+                        onclick="SettingsView.saveNamePreference('christ', 'messiah')">Messiah</button>
+                <select class="settings-name-more ${!['christ','messiah'].includes(namePrefs.christ) ? 'selected' : ''}"
+                        onchange="if(this.value) SettingsView.saveNamePreference('christ', this.value)">
+                  <option value="">More...</option>
+                  <option value="mashiach" ${namePrefs.christ === 'mashiach' ? 'selected' : ''}>Mashiach</option>
+                  <option value="anointed" ${namePrefs.christ === 'anointed' ? 'selected' : ''}>Anointed One</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="settings-name-status" id="name-prefs-status"></div>
           </div>
         </section>
         
@@ -278,11 +294,12 @@ const SettingsView = {
         return JSON.parse(saved);
       }
     } catch (e) {}
-    // Defaults
+    // Defaults — when all are default, name substitution is completely disabled (zero overhead)
     return {
-      messiah: 'jesus',      // 'jesus' or 'yeshua'
-      divineName: 'lord',    // 'lord', 'yhwh', or 'yahweh'
-      god: 'god'             // 'god' or 'elohim'
+      messiah: 'jesus',      // 'jesus', 'yeshua', etc.
+      divineName: 'lord',    // 'lord', 'yhwh', 'yahweh', etc.
+      god: 'god',            // 'god', 'elohim', 'hebrew'
+      christ: 'christ'       // 'christ', 'messiah', 'mashiach', 'anointed'
     };
   },
   
@@ -303,14 +320,15 @@ const SettingsView = {
           const label = row.querySelector('.settings-name-label');
           if (label) {
             const labelText = label.textContent.toLowerCase();
-            const keyMap = { 'messiah:': 'messiah', 'divine name:': 'divineName', 'creator:': 'god' };
+            const keyMap = { 'messiah:': 'messiah', 'divine name:': 'divineName', 'creator:': 'god', 'christ:': 'christ' };
             const rowKey = keyMap[labelText];
             if (rowKey === key) {
               // Map button text to values
               const valueMap = {
                 'Jesus': 'jesus', 'Yeshua': 'yeshua',
                 'the LORD': 'lord', 'Yahweh': 'yahweh', 'Jehovah': 'jehovah', 'YHWH': 'yhwh',
-                'God': 'god', 'Elohim': 'elohim'
+                'God': 'god', 'Elohim': 'elohim',
+                'Christ': 'christ', 'Messiah': 'messiah'
               };
               let matchedButton = false;
               row.querySelectorAll('.settings-name-btn').forEach(btn => {
@@ -334,6 +352,9 @@ const SettingsView = {
           }
         });
       }
+      
+      // Update the active flag for the substitution engine
+      updateNameSubsActive();
       
       // Notify that preferences changed (for any listeners)
       if (typeof window.dispatchEvent === 'function') {
@@ -895,56 +916,266 @@ const MESSIAH_NAME_MAP = {
 const GOD_NAME_MAP = {
   'god': { display: 'God', upper: 'GOD' },
   'elohim': { display: 'Elohim', upper: 'ELOHIM' },
-  'eloah': { display: 'Eloah', upper: 'ELOAH' },
-  'elyon': { display: 'El Elyon', upper: 'EL ELYON' },
-  'shaddai': { display: 'El Shaddai', upper: 'EL SHADDAI' }
+  'hebrew': { display: null, upper: null } // Special: uses actual Hebrew per Strong's number
 };
 
-function applyNamePreferences(text) {
-  if (!text) return text;
+// Per-Strong's Hebrew name map for 'hebrew' mode
+const GOD_HEBREW_MAP = {
+  'H430': { display: 'Elohim', upper: 'ELOHIM' },
+  'H410': { display: 'El', upper: 'EL' },
+  'H433': { display: 'Eloah', upper: 'ELOAH' },
+  'G2316': { display: 'Theos', upper: 'THEOS' }
+};
 
+const CHRIST_NAME_MAP = {
+  'christ': { display: 'Christ', upper: 'CHRIST' },
+  'messiah': { display: 'Messiah', upper: 'MESSIAH' },
+  'mashiach': { display: 'Mashiach', upper: 'MASHIACH' },
+  'anointed': { display: 'Anointed One', upper: 'ANOINTED ONE' }
+};
+
+// ── Name Substitution Engine ──
+// When all preferences are at defaults, the entire system is skipped (zero overhead).
+// For Strong's translations: precise identification via Strong's number + word text.
+// For other translations: careful regex on text content only (skips HTML tags).
+
+let nameSubsActive = false;
+
+function updateNameSubsActive() {
+  const p = SettingsView.getNamePreferences();
+  nameSubsActive = (p.divineName !== 'lord' || p.messiah !== 'jesus' || p.god !== 'god' || p.christ !== 'christ');
+  // Update status hint in settings UI
+  const statusEl = document.getElementById('name-prefs-status');
+  if (statusEl) {
+    statusEl.textContent = nameSubsActive ? '' : 'Using native translation text. Select an alternative above to enable name substitution.';
+  }
+}
+
+// Initialize on load
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', updateNameSubsActive);
+}
+
+/**
+ * Strong's-based name substitution.
+ * Called from renderInlineStrongs() for each tagged word.
+ * Returns the replacement display text, or null if no substitution needed.
+ * @param {string} strongsNum - e.g. "H3068", "G2424"
+ * @param {string} word - the rendered English word from the translation
+ * @returns {string|null} replacement text, or null
+ */
+function getNameSubstitution(strongsNum, word) {
+  if (!nameSubsActive) return null;
   const prefs = SettingsView.getNamePreferences();
-  let result = text;
 
-  // Messiah name
-  const messiah = MESSIAH_NAME_MAP[prefs.messiah];
-  if (messiah && prefs.messiah !== 'jesus') {
-    result = result.replace(/\bJesus\b/g, messiah.display);
-    result = result.replace(/\bJESUS\b/g, messiah.upper);
-  } else if (prefs.messiah === 'jesus') {
-    // Normalize any non-standard back to Jesus
-    result = result.replace(/\bYeshua\b/g, 'Jesus');
-    result = result.replace(/\bYESHUA\b/g, 'JESUS');
+  // ── Divine Name: H3068 (YHWH), H3069 (YHWH variant in "Lord GOD"), H3050 (Yah) ──
+  if (strongsNum === 'H3068' || strongsNum === 'H3069') {
+    if (prefs.divineName === 'lord') return null;
+    const divine = DIVINE_NAME_MAP[prefs.divineName];
+    if (!divine) return null;
+    if (word === 'GOD') return divine.bare;           // "Lord GOD" context (H3069)
+    if (word === 'Jehovah' || word === 'JEHOVAH') return word === 'JEHOVAH' ? divine.upper : divine.display;
+    // Default: "LORD" → bare form (leading "the" handled separately)
+    return divine.bare;
+  }
+  if (strongsNum === 'H3050') {
+    if (prefs.divineName === 'lord') return null;
+    // Short form "Yah"/"JAH" — use the preference's bare form
+    const divine = DIVINE_NAME_MAP[prefs.divineName];
+    if (!divine) return null;
+    return divine.bare;
   }
 
-  // Divine name (LORD → user's preference)
-  const divine = DIVINE_NAME_MAP[prefs.divineName];
-  if (divine && prefs.divineName !== 'lord') {
-    result = result.replace(/\bthe LORD\b/g, divine.display);
-    result = result.replace(/\bTHE LORD\b/g, divine.upper);
-    result = result.replace(/\bLORD\b/g, divine.bare);
-    // Also handle "Jehovah" in ASV → user's preference
-    if (prefs.divineName !== 'jehovah') {
-      result = result.replace(/\bJehovah\b/g, divine.display);
-      result = result.replace(/\bJEHOVAH\b/g, divine.upper);
+  // ── Creator/God: H430 (Elohim), H410 (El), H433 (Eloah), G2316 (Theos) ──
+  if (strongsNum === 'H430' || strongsNum === 'H410' || strongsNum === 'H433' || strongsNum === 'G2316') {
+    if (prefs.god === 'god') return null;
+    // Only replace capitalized "God" / "GOD", not lowercase "gods"
+    if (word !== 'God' && word !== 'GOD') return null;
+    if (prefs.god === 'hebrew') {
+      const heb = GOD_HEBREW_MAP[strongsNum];
+      if (!heb) return null;
+      return word === 'GOD' ? heb.upper : heb.display;
+    }
+    const god = GOD_NAME_MAP[prefs.god];
+    if (!god || !god.display) return null;
+    return word === 'GOD' ? god.upper : god.display;
+  }
+
+  // ── Messiah: G2424 (Iesous) ──
+  if (strongsNum === 'G2424') {
+    if (prefs.messiah === 'jesus') return null;
+    // Only replace "Jesus"/"JESUS", NOT "Joshua" (same Strong's, different anglicization)
+    if (word !== 'Jesus' && word !== 'JESUS') return null;
+    const messiah = MESSIAH_NAME_MAP[prefs.messiah];
+    if (!messiah) return null;
+    return word === 'JESUS' ? messiah.upper : messiah.display;
+  }
+
+  // ── Christ: G5547 (Christos) ──
+  if (strongsNum === 'G5547') {
+    if (prefs.christ === 'christ') return null;
+    if (word !== 'Christ' && word !== 'CHRIST' && word !== "Christ's") return null;
+    const christ = CHRIST_NAME_MAP[prefs.christ];
+    if (!christ) return null;
+    if (word === "Christ's") return christ.display + "'s";
+    return word === 'CHRIST' ? christ.upper : christ.display;
+  }
+
+  return null;
+}
+
+/**
+ * Regex-based name substitution for non-Strong's translations.
+ * Operates on an HTML string, only replacing text content (not inside tags).
+ * Wraps substituted names in <span class="name-sub"> with data-original.
+ * @param {string} html - HTML string (may contain tags from annotations/symbols)
+ * @returns {string} HTML with name substitutions applied
+ */
+function applyNamePreferencesHTML(html) {
+  if (!nameSubsActive || !html) return html;
+  const prefs = SettingsView.getNamePreferences();
+
+  // Split HTML into tag portions and text portions; only replace in text
+  return html.replace(/(<[^>]+>)|([^<]+)/g, (match, tag, text) => {
+    if (tag) return tag;
+    if (!text) return match;
+    return _replaceNamesInText(text, prefs);
+  });
+}
+
+// Collect substitutions as [index, original, replacement] tuples during regex pass,
+// then apply them in reverse order to avoid offset shifting.
+// This avoids chained-regex matching inside previously-inserted HTML.
+function _replaceNamesInText(text, prefs) {
+  const subs = []; // {start, end, original, replacement}
+
+  function collectMatches(regex, replacement, original) {
+    let m;
+    while ((m = regex.exec(text)) !== null) {
+      // Skip if this range overlaps with an already-collected substitution
+      const overlaps = subs.some(s => m.index < s.end && (m.index + m[0].length) > s.start);
+      if (!overlaps) {
+        subs.push({ start: m.index, end: m.index + m[0].length, original: original || m[0], replacement });
+      }
     }
   }
-  // If 'lord', keep as-is
 
-  // God/Creator name
-  const god = GOD_NAME_MAP[prefs.god];
-  if (god && prefs.god !== 'god') {
-    result = result.replace(/\bGod\b/g, god.display);
-    result = result.replace(/\bGOD\b/g, god.upper);
+  // Divine name — "the LORD" / "LORD" / "Jehovah" (longer patterns first)
+  if (prefs.divineName !== 'lord') {
+    const divine = DIVINE_NAME_MAP[prefs.divineName];
+    if (divine) {
+      collectMatches(/\bthe LORD\b/g, divine.display, 'the LORD');
+      collectMatches(/\bTHE LORD\b/g, divine.upper, 'THE LORD');
+      collectMatches(/\bLORD\b/g, divine.bare, 'LORD');
+      if (prefs.divineName !== 'jehovah') {
+        collectMatches(/\bJehovah\b/g, divine.display, 'Jehovah');
+        collectMatches(/\bJEHOVAH\b/g, divine.upper, 'JEHOVAH');
+      }
+    }
   }
-  // If 'god', keep as-is
 
+  // Messiah — "Jesus"
+  if (prefs.messiah !== 'jesus') {
+    const messiah = MESSIAH_NAME_MAP[prefs.messiah];
+    if (messiah) {
+      collectMatches(/\bJesus\b/g, messiah.display, 'Jesus');
+      collectMatches(/\bJESUS\b/g, messiah.upper, 'JESUS');
+    }
+  }
+
+  // Creator — "God" (not "gods", "godly", etc.)
+  if (prefs.god !== 'god') {
+    const god = GOD_NAME_MAP[prefs.god];
+    if (god && god.display) {
+      collectMatches(/\bGod\b/g, god.display, 'God');
+      collectMatches(/\bGOD\b/g, god.upper, 'GOD');
+    } else if (prefs.god === 'hebrew') {
+      collectMatches(/\bGod\b/g, 'Elohim', 'God');
+      collectMatches(/\bGOD\b/g, 'ELOHIM', 'GOD');
+    }
+  }
+
+  // Christ
+  if (prefs.christ !== 'christ') {
+    const christ = CHRIST_NAME_MAP[prefs.christ];
+    if (christ) {
+      collectMatches(/\bChrist\b/g, christ.display, 'Christ');
+      collectMatches(/\bCHRIST\b/g, christ.upper, 'CHRIST');
+    }
+  }
+
+  if (subs.length === 0) return text;
+
+  // Sort by position (reverse order) so we can splice from the end without shifting offsets
+  subs.sort((a, b) => b.start - a.start);
+
+  let result = text;
+  for (const sub of subs) {
+    const escaped = sub.original.replace(/"/g, '&quot;');
+    const span = `<span class="name-sub" data-original="${escaped}" onmouseenter="if(typeof showWordTooltip==='function')showWordTooltip(event)" onmouseleave="if(typeof hideWordTooltip==='function')hideWordTooltip(event)">${sub.replacement}</span>`;
+    result = result.slice(0, sub.start) + span + result.slice(sub.end);
+  }
+
+  return result;
+}
+
+// Legacy plain-text version (no HTML wrapping) for non-rendering contexts
+function applyNamePreferences(text) {
+  if (!nameSubsActive || !text) return text;
+  const prefs = SettingsView.getNamePreferences();
+
+  let result = text;
+  if (prefs.divineName !== 'lord') {
+    const divine = DIVINE_NAME_MAP[prefs.divineName];
+    if (divine) {
+      result = result.replace(/\bthe LORD\b/g, divine.display);
+      result = result.replace(/\bTHE LORD\b/g, divine.upper);
+      result = result.replace(/\bLORD\b/g, divine.bare);
+      if (prefs.divineName !== 'jehovah') {
+        result = result.replace(/\bJehovah\b/g, divine.display);
+        result = result.replace(/\bJEHOVAH\b/g, divine.upper);
+      }
+    }
+  }
+  if (prefs.messiah !== 'jesus') {
+    const messiah = MESSIAH_NAME_MAP[prefs.messiah];
+    if (messiah) {
+      result = result.replace(/\bJesus\b/g, messiah.display);
+      result = result.replace(/\bJESUS\b/g, messiah.upper);
+    }
+  }
+  if (prefs.god !== 'god') {
+    const god = GOD_NAME_MAP[prefs.god];
+    if (god && god.display) {
+      result = result.replace(/\bGod\b/g, god.display);
+      result = result.replace(/\bGOD\b/g, god.upper);
+    } else if (prefs.god === 'hebrew') {
+      result = result.replace(/\bGod\b/g, 'Elohim');
+      result = result.replace(/\bGOD\b/g, 'ELOHIM');
+    }
+  }
+  if (prefs.christ !== 'christ') {
+    const christ = CHRIST_NAME_MAP[prefs.christ];
+    if (christ) {
+      result = result.replace(/\bChrist\b/g, christ.display);
+      result = result.replace(/\bCHRIST\b/g, christ.upper);
+    }
+  }
   return result;
 }
 
 // Make available globally
 window.SettingsView = SettingsView;
 window.applyNamePreferences = applyNamePreferences;
+window.applyNamePreferencesHTML = applyNamePreferencesHTML;
+window.getNameSubstitution = getNameSubstitution;
+window.nameSubsActive = false; // Will be updated by updateNameSubsActive
+
+// Re-export nameSubsActive as a getter so bible-reader.js can check it
+Object.defineProperty(window, 'nameSubsActive', {
+  get() { return nameSubsActive; },
+  configurable: true
+});
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = SettingsView;

@@ -9881,6 +9881,47 @@ body.biblical-timeline-open .top-nav-inner {
   border-top: 1px solid rgba(126, 200, 227, 0.2);
 }
 
+/* Name substitution: original name display in tooltip */
+.word-tooltip-original {
+  color: #ccc;
+  font-size: 0.85em;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.word-tooltip-original strong {
+  color: #fff;
+}
+
+.word-tooltip-settings {
+  cursor: pointer;
+  opacity: 0.6;
+  margin-left: 6px;
+  font-size: 1.1em;
+  transition: opacity 0.15s;
+}
+
+.word-tooltip-settings:hover {
+  opacity: 1;
+}
+
+/* Name substitution indicator on words */
+.name-sub {
+  border-bottom: 1px dotted rgba(212, 160, 23, 0.45);
+  cursor: help;
+  transition: border-color 0.15s;
+}
+
+.name-sub:hover {
+  border-bottom-color: #d4a017;
+}
+
+/* Name-sub inside Strong's words: inherit the strongs-word cursor */
+.strongs-word.name-sub {
+  cursor: pointer;
+}
+
 /* Symbol Panel - floating popup */
 .symbol-panel {
   position: absolute;

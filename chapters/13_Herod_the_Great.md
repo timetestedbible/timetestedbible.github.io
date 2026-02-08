@@ -41,7 +41,7 @@ The consulship of Marcus Agrippa and Caninius Gallus ran from January to Decembe
 The last bit of testimony we have from Josephus is that this event occurred on a Sabbath Year. 
 
 > This calamity befell Jerusalem in a sabbatical year, just as it had previously under Pompey.
-> — Antiquities of the Jews 14.16.2
+> — Antiquities 14.16.2
 
 Sabbath years start in the Fall with the first season seeds are not planted because no harvesting would be allowed in the spring. Assuming 1406 BC Jordan river crossing started the cycle then spring 35 BC would be the 7th year of the cycle and the timing would fit perfectly.
 I’ve presented extensive evidence on this event due to the apparent internal contradictions in Josephus’s own statements, so let’s organize it into a helpful table to reveal the big picture. What the table demonstrates is that a 37 BC date forces Josephus to appear inconsistent or erroneous on key details, while 36 BC requires only minor adjustments—such as referencing the start of the siege or decree rather than its end. The consequence of assuming Josephus deviated to non-standard regnal-year reckoning or was outright wrong about the 27 years 'to the day' from Pompey is that it undermines his testimony on all other matters.
@@ -123,8 +123,8 @@ Herod's son Philip’s Reign
 One of primary arguments for Herod’s death in 4 BC is derived from the documentation of the reigns of his children. We will address each child in turn, starting with Philip. 
 According to all early copies of Josephus Antiquities of the Jews, Philip dies 22nd Tiberius after 37 years.
 
-> Josephus’ Antiquities of the Jews 18.4.6 states that Philip the Tetrarch (Herod’s son) “departed this life in the 22nd year of the reign of Tiberius after he had been tetrarch of the region of Batanea, Trachonitis, Auranitis, Gaulanitis, and Paneas for thirty-seven years.
-> — Antiquities of the Jews 18.4.6
+> Josephus’ Antiquities 18.4.6 states that Philip the Tetrarch (Herod’s son) “departed this life in the 22nd year of the reign of Tiberius after he had been tetrarch of the region of Batanea, Trachonitis, Auranitis, Gaulanitis, and Paneas for thirty-seven years.
+> — Antiquities 18.4.6
 
 If this were the only variation then there would be no dispute as 37 years back from Tiberius’ 22nd year places the first year of Philip’s reign as there year of Herod’s death in 1 BC. The issue is that the majority of the newer manuscripts claim the 20th year. This would put the first year of his reign starting the year after the alleged 4 BC death of Herod.
 It is not uncommon for scribes to “correct” texts to align with scholarly consensus, and I submit that this is exactly what happened with the later manuscripts. Here are the two variations:

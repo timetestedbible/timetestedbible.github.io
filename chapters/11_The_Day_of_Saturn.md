@@ -11,7 +11,7 @@ What is casually left out is that this was written toward the end of Josephus’
 Any competing calendars potentially observed by the temple priests were lost in the ashes and downfall of the levitical priesthood’s power and the popular Rabbinic calendar took over. Consider what Josephus says about the competing doctrines of the day:
 
 > What I would now explain is this, that the Pharisees have delivered to the people a great many observances by succession from their fathers, which are not written in the laws of Moses; and for that reason it is that the Sadducees reject them, and say that we are to esteem those observances to be obligatory which are in the written word, but are not to observe what are derived from the tradition of our forefathers. And concerning these things it is that great disputes and differences have arisen among them, while the Sadducees are able to persuade none but the rich, and have not the populace obsequious to them, but the Pharisees have the multitude on their side.
-> — Josephus, Antiquities of the Jews 13.297 (~93 AD)
+> — Josephus, Antiquities 13.297 (~93 AD)
 
 The high priests controlled the Temple, sacrifices, calendar decisions (including intercalation for festivals), and day-to-day Temple operations. This made the Sadducees the de facto religious authorities in practice, even if the Pharisees had greater popular sway. Caiaphas (high priest c. 18–36 CE), the one who presided over Jesus' trial (John 11:49–53; 18:13–24) was identified as a Sadducee by Josephus.
 

@@ -147,7 +147,7 @@ In 6 out of 7 years you will not land on first day of the week if you use the co
 We can gain some more insight into the nature of this count by looking at how Josephus describes it. He notes it is called the feast of weeks and the unit of what is being counted is a week.
 
 > *“When a week of weeks has passed over after this sacrifice, (***which weeks (sevens) contain forty and nine days***) on the fiftieth day, which is Pentecost, but is called by the Hebrews Asartha, which signifies Pentecost, they bring to God a loaf, made of wheat flour…”*
-> — Antiquities of the Jews (Book 3, Ch 10, Section 6; 3.252 in Whiston’s numbering).
+> — Antiquities 3.10.6
 
 This aligns with what scripture strongly implies. The Sabbath is defined as six days of work followed by a day of rest. This structure of the sabbath is demonstrated in Genesis and referenced multiple times. There are over 20 occasions in scripture where the word "Sabbath" is used as a synonym for week and not just a reference to a single day of rest.
 
@@ -191,12 +191,12 @@ Now that I have made my case, here is the supporting primary evidence for First 
 **Josephus** describes the First Fruits offering as occurring on the 16th of the first month (the second day of the Feast of Unleavened Bread). As a first-century Jewish historian who lived through the period leading up to the Temple's destruction in 70 AD, his account reflects the Pharisaic practice observed in the Temple during that era:
 
 > *But **on the second day of unleavened bread, which is the sixteenth day of the month, they first partake of the fruits***of the earth: for before that day they do not touch them. And while they suppose it proper to honour God, from whom they obtain this plentiful provision, in the first place, they offer the first-fruits of their barley, and that in the manner following. They take an handful of the ears, and dry them: then beat them small, and purge the barley from the bran: they then bring one tenth deal to the altar, to God; and casting one handful of it upon the fire, they leave the rest for the use of the Priests.*
-> — Antiquities of the Jews (Book 3, Ch 10, Section 5)
+> — Antiquities 3.10.5
 
 **Philo of Alexandria** describes the sheaf offering (First Fruits) as a festival succeeding the first day of the paschal feast (implying the 16th of the first month, the day after the 15th):
 
 > *And **there is also a festival on the day of the paschal feast, which succeeds the first day,***and this is named the sheaf, from what takes place on it; for the sheaf is brought to the altar as a first fruit both of the country which the nation has received for its own, and also of the whole land.*
-> — On the Special Laws (Book 2, Section XXVIII, 162)
+> — Philo, Special Laws II, XXVIII
 
 Philo gives a another witness supporting Lunar weeks even though he starts the month with the dark moon per Babylonian and Egyptian tradition:
 
@@ -221,10 +221,10 @@ Another way of testing the Sabbath is the documented claim that the 9th of Av wa
 > — Babylonian Talmud, Arakhin 11b 
 
 > But the tenth day of the month Lous [Av] was come, which is the day that had been fatal to the temple of old, when it was burnt by the king of Babylon; for the same day it was now burnt by this present Roman general.
-> — Flavius Josephus, The Jewish War 6.4.5
+> — Josephus, Jewish War 6.4.5
 
 > The flames took their way as far as the rooms that joined to the holy house, and which were situated the upper height of them; at which time one might guess at the vast riches of what was in those rooms... But as for the holy house itself, it was burnt down in the month Lous, on the tenth day of the month, the same day and month wherein it had been burnt formerly by the king of Babylon.
-> — Flavius Josephus, The Jewish War 6.4.8
+> — Josephus, Jewish War 6.4.8
 
 As you can see from these quotes there is some disagreement on whether the temple fell on the 9th or 10th of Av and the consequence is to give some wiggle room by selectively trusting some sources and not others. 
 
@@ -237,15 +237,15 @@ If you only consider the 10th of Av, then the Talmudic claims work in 70 AD and 
 Josephus records that the Romans learned that the Jews refused to pro-actively fight on the Sabbath though they would defend if directly attacked.  
 
 > And indeed it was a hard thing to fill up that valley, by reason of its immense depth, especially as the Jews used all the means possible to repel them from their superior situation; nor had the Romans succeeded in their endeavors, had not Pompey taken notice of the seventh days, on which the Jews abstain from all sorts of work on a religious account, and raised his bank, but restrained his soldiers from fighting on those days; for the Jews only acted defensively on Sabbath days.
-> — Josephus, The Jewish War
+> — Josephus, Jewish War
 
 > Which thing when the Romans understood, on those days which we call Sabbaths they threw nothing at the Jews, nor came to any pitched battle with them; but raised up their earthen banks, and brought their engines into such forwardness, that they might do execution the next day.
-> — Josephus, Antiquities of the Jews, Book 14, Ch 4, S3
+> — Josephus, Antiquities 14.4.3
 
 A consequence of this strategy is that Jerusalem would tend to fall a day or two after the Sabbath. Enemies would build the ramps on the Sabbath but not attack, so as not to give the Jews license to break their rest. Then the very next day they would be ready to attack with full force. 
 Josephus records that the ramps were completed on the 8th of Av, which, according to Josephus' other testimony, implies that the 8th of Av was a Sabbath day being observed and this would be 100% compatible with the Lunar Sabbath theory.
 > And now two of the legions had completed their banks, on the 8th day of the month Lous [Ab].  Whereupon Titus gave orders that the battering rams should be brought, and set over against the western edifice of the inner temple.
-> — The Jewish War (Wars of the Jews), Book 6, Ch 4
+> — Jewish War 6.4
 
 Putting everything together, the Rabbinic tradition is internally self-contradictory by simultaneously claiming Saturday was the sabbath, that the month started by seeing the crescent, and that both temples fell the day after the sabbath. They also contradict scripture and Josephus which claims the 10th was the fall. The only way to start to save them is to adopt a month starting "first sunset after dark conjunction" and the 10th of the month for the fall. This resolves many contradictions but remains incompatible with claiming 1406 BC First Fruits falling on Sunday. 
 The real tell is Josephus saying the ramps were built on the sabbath (while the Jews rested) and that they were completed on the 8th day of the month. Josephus has generally proven to be far more reliable a witness than the Rabbinic Jews who frequently demonstrate their willingness to bend facts to support their "high moral principles". 
