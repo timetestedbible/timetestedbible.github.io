@@ -161,10 +161,12 @@ function main() {
       });
 
       // Clean stray OCR junk before parenthesized refs: "2Y (Genesis" → "(Genesis"
-      // Matches: digits + OCR junk (Y, %, etc.) + optional space before a clean (Book ref)
       text = text.replace(/\d+[Y%]\s*(\([A-Z])/g, '$1');
       // Clean stray numbers before clean refs: "577 (Leviticus" → "(Leviticus"
       text = text.replace(/"\d+\s+(\([12]? ?[A-Z])/g, ' $1');
+      // Clean stray trailing footnote numbers between punctuation and (N) section markers
+      // e.g. 'weak."7 (11)' → 'weak." (11)'   or   'farmer;35 (Genesis' → 'farmer; (Genesis'
+      text = text.replace(/([.;,\"'])\d{1,3}(\s+\()/g, '$1$2');
       // Clean remaining stray ¿ characters
       text = text.replace(/¿/g, '');
 
