@@ -235,6 +235,13 @@ const URLRouter = {
           if (textArea) {
             textArea.scrollTop = event.state.scrollTop;
           }
+          // Restore Strong's sidebar scroll position too
+          if (event.state.strongsScrollTop !== undefined) {
+            const strongsSidebar = document.querySelector('#strongs-sidebar .strongs-sidebar-content');
+            if (strongsSidebar) {
+              strongsSidebar.scrollTop = event.state.strongsScrollTop;
+            }
+          }
         }, 300); // Wait for content to render
       }
     });
@@ -245,12 +252,14 @@ const URLRouter = {
     });
   },
   
-  // Save current scroll position to history state
+  // Save current scroll position to history state (both reader pane and Strong's sidebar)
   saveScrollPosition() {
     const textArea = document.getElementById('bible-explorer-text');
     if (textArea) {
       const scrollTop = textArea.scrollTop;
-      const state = { ...history.state, scrollTop };
+      const strongsSidebar = document.querySelector('#strongs-sidebar .strongs-sidebar-content');
+      const strongsScrollTop = strongsSidebar ? strongsSidebar.scrollTop : 0;
+      const state = { ...history.state, scrollTop, strongsScrollTop };
       history.replaceState(state, '', window.location.href);
     }
   },
@@ -638,6 +647,9 @@ const URLRouter = {
         } else if (contentType === 'numbers') {
           // Parse number study: /reader/numbers/666 or /reader/numbers/GEMATRIA
           if (parts[1]) params.number = parts[1].toUpperCase();
+        } else if (contentType === 'verse-studies') {
+          // Parse verse study: /reader/verse-studies/DANIEL-9
+          if (parts[1]) params.study = parts[1];
         } else if (contentType === 'timetested') {
           // Parse book chapter: /reader/timetested/chapter-slug
           if (parts[1]) params.chapterId = parts[1];
@@ -870,6 +882,8 @@ const URLRouter = {
           if (params.word) readerPath += '/' + params.word;
         } else if (contentType === 'numbers') {
           if (params.number) readerPath += '/' + params.number;
+        } else if (contentType === 'verse-studies') {
+          if (params.study) readerPath += '/' + params.study;
         } else if (contentType === 'timetested') {
           if (params.chapterId) readerPath += '/' + params.chapterId;
         } else if (contentType === 'philo') {
@@ -924,10 +938,12 @@ const URLRouter = {
           // Add to navigation history for back/forward buttons
           AppStore.dispatch({ type: 'NAV_PUSH', url: newURL });
         } else {
-          // For replace, preserve scroll in current state
+          // For replace, preserve scroll in current state (both panes)
           const textArea = document.getElementById('bible-explorer-text');
           const scrollTop = textArea ? textArea.scrollTop : 0;
-          history.replaceState({ scrollTop }, '', newURL);
+          const strongsSidebar = document.querySelector('#strongs-sidebar .strongs-sidebar-content');
+          const strongsScrollTop = strongsSidebar ? strongsSidebar.scrollTop : 0;
+          history.replaceState({ scrollTop, strongsScrollTop }, '', newURL);
         }
         console.log('[URLRouter] URL updated to:', newURL);
       }

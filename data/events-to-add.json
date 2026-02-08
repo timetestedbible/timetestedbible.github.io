@@ -47,24 +47,31 @@
       "id": "darius-i-reign",
       "title": "\ud83d\udc51 Darius I (the Great) Begins to Reign",
       "type": "reign",
-      "description": "Darius I becomes king of Persia. He authorizes the completion of the Second Temple. Haggai and Zechariah prophesy during his reign.",
+      "description": "Darius I becomes king of Persia (~522 BC). He authorizes the completion of the Second Temple. Daniel's prayer (Daniel 9) and Gabriel's visit occur in his first year — approximately 75 years after Daniel was taken captive. Haggai and Zechariah prophesy during his reign.",
       "start": {
+        "relative": {
+          "event": "first-captivity-daniel",
+          "offset": {
+            "years": 75
+          },
+          "direction": "after"
+        },
         "fixed": {
-          "source": "Darius I began to reign in 522 BC after the death of Cambyses and defeat of the usurper Gaumata.",
+          "source": "Derived: first-captivity-daniel (Neb year 7 = 597 BC, per Jer 52:28) + 75 years = 522 BC. Confirmed by Persian records and VAT 4956 chain (Neb year 1 = 604 BC → Neb year 7 = 597 BC → +75 years = 522 BC).",
           "gregorian": {
             "year": -521,
             "month": 1,
             "day": 1
           }
-        },
-        "lunar": {
-          "year": -521,
-          "month": 1,
-          "day": 1
         }
       },
       "certainty": "high",
       "sources": [
+        {
+          "ref": "Daniel 9:1",
+          "type": "scripture",
+          "quote": "In the first year of Darius the son of Ahasuerus, of the seed of the Medes, which was made king over the realm of the Chaldeans"
+        },
         {
           "ref": "Ezra 4:24",
           "type": "scripture",
@@ -81,7 +88,8 @@
         "persia",
         "reign",
         "chronology-anchor",
-        "second-temple"
+        "second-temple",
+        "daniel"
       ]
     }
   ],
@@ -865,24 +873,31 @@
       "id": "darius-i-reign",
       "title": "\ud83d\udc51 Darius I (the Great) Begins to Reign",
       "type": "reign",
-      "description": "Darius I becomes king of Persia. He authorizes the completion of the Second Temple. Haggai and Zechariah prophesy during his reign.",
+      "description": "Darius I becomes king of Persia (~522 BC). He authorizes the completion of the Second Temple. Daniel's prayer (Daniel 9) and Gabriel's visit occur in his first year — approximately 75 years after Daniel was taken captive. Haggai and Zechariah prophesy during his reign.",
       "start": {
+        "relative": {
+          "event": "first-captivity-daniel",
+          "offset": {
+            "years": 75
+          },
+          "direction": "after"
+        },
         "fixed": {
-          "source": "Darius I began to reign in 522 BC after the death of Cambyses and defeat of the usurper Gaumata.",
+          "source": "Derived: first-captivity-daniel (Neb year 7 = 597 BC, per Jer 52:28) + 75 years = 522 BC. Confirmed by Persian records and VAT 4956 chain (Neb year 1 = 604 BC → Neb year 7 = 597 BC → +75 years = 522 BC).",
           "gregorian": {
             "year": -521,
             "month": 1,
             "day": 1
           }
-        },
-        "lunar": {
-          "year": -521,
-          "month": 1,
-          "day": 1
         }
       },
       "certainty": "high",
       "sources": [
+        {
+          "ref": "Daniel 9:1",
+          "type": "scripture",
+          "quote": "In the first year of Darius the son of Ahasuerus, of the seed of the Medes, which was made king over the realm of the Chaldeans"
+        },
         {
           "ref": "Ezra 4:24",
           "type": "scripture",
@@ -899,6 +914,7 @@
         "persia",
         "reign",
         "chronology-anchor",
+        "daniel",
         "second-temple"
       ]
     },

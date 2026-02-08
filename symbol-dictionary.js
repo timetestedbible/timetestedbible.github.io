@@ -512,6 +512,32 @@ const SYMBOL_DICTIONARY = {
     sentence: "The covenant nation/kingdom community that God brings forth from Zion—collectively authorized to rule over nations with divine mandate",
     opposite: 'Barrenness/Childlessness',
     link: '/symbols/man-child/'
+  },
+  
+  'grass': {
+    name: 'GRASS',
+    words: ['grass', 'grasses'],
+    strongs: ['H2682'],
+    is: 'People',
+    is2: 'Mortal People',
+    does: 'Flourishes briefly, withers',
+    does2: 'Subject to the wind/Spirit',
+    sentence: 'Human beings in their transience and mortality — flesh that flourishes briefly and then is gone, subject to the wind/Spirit of God',
+    opposite: 'Word of God (eternal)',
+    link: '/symbols/grass/'
+  },
+  
+  'jerusalem': {
+    name: 'JERUSALEM',
+    words: ['jerusalem', 'zion'],
+    strongs: ['H3389', 'H6726'],
+    is: 'Bride',
+    is2: 'Covenant Community',
+    does: 'Gathers God\'s people',
+    does2: 'Dwells with God',
+    sentence: 'The gathered people of God — those in covenant relationship with Him, dwelling together under His rule and in His presence',
+    opposite: 'Babylon',
+    link: '/symbols/jerusalem/'
   }
 };
 

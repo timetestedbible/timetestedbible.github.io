@@ -1008,6 +1008,24 @@ code {
   pointer-events: auto;
 }
 
+/* Study article link styling — visible links inside study bodies */
+.word-study-body a,
+.symbol-study-body a,
+.symbol-article-body a,
+.number-study-body a {
+  color: var(--accent-color, #4a90d9);
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 144, 217, 0.4);
+  text-underline-offset: 2px;
+}
+
+.word-study-body a:hover,
+.symbol-study-body a:hover,
+.symbol-article-body a:hover,
+.number-study-body a:hover {
+  text-decoration-color: currentColor;
+}
+
 @media (max-width: 768px) {
   .classics-reader,
   .classics-index {

@@ -107,6 +107,12 @@ const CHAPTER_ASSETS = [
   '/chapters/19_Miscellaneous_Commands.md'
 ];
 
+// Word / verse study files
+const WORD_ASSETS = [
+  '/words/DANIEL-9.md',
+  '/words/H369.md'
+];
+
 // Symbol study files
 const SYMBOL_ASSETS = [
   '/symbols/ANIMAL.md',
@@ -142,6 +148,8 @@ const SYMBOL_ASSETS = [
   '/symbols/WAY.md',
   '/symbols/WHY-PARABLES.md',
   '/symbols/WICKEDNESS.md',
+  '/symbols/GRASS.md',
+  '/symbols/JERUSALEM.md',
   '/symbols/WIND.md',
   '/symbols/WINE.md',
   '/symbols/WINGS.md',
@@ -211,6 +219,7 @@ const ASSETS_TO_CACHE = [
   ...CONTENT_ASSETS,
   ...EVENT_ASSETS,
   ...CHAPTER_ASSETS,
+  ...WORD_ASSETS,
   ...SYMBOL_ASSETS,
   ...IMAGE_ASSETS,
   ...LIB_ASSETS,

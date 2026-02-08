@@ -123,7 +123,7 @@ If GRASS = PEOPLE and TREES = NATIONS (see [TREE study](/reader/symbols/TREE)), 
 
 This verse distinguishes between "grass" and "those men" — but the instruction is: don't hurt the grass/trees, only hurt the unsealed men. If grass symbolically represents people, then "don't hurt the grass" = "don't hurt [God's] people" — hurt only the unsealed. This parallels the marking in Ezekiel 9:4-6 where those with the mark are spared.
 
-### 5. Daniel 4:25,32-33 — Nebuchadnezzar Eating Grass
+### 5. Daniel 4:25-33 — Nebuchadnezzar Eating Grass
 
 > "they shall make thee to **eat grass as oxen**"
 

@@ -30,7 +30,7 @@ A single JSON file defines all patches: `data/translation-patches.json`
     "daniel-9-24-27": {
       "name": "Daniel 9:24-27 — The Seventy Sevens",
       "description": "Alternative reading based on consonantal text analysis",
-      "study": "/reader/words/DANIEL-9-26",
+      "study": "/reader/words/DANIEL-9",
       "default": false
     },
     "chodesh-renewed": {
@@ -119,7 +119,7 @@ Full study articles live in the existing directories:
 
 ```
 words/
-  DANIEL-9-26.md       # Daniel 9:24-27 consonantal analysis (already written)
+  DANIEL-9.md          # Daniel 9:24-27 consonantal analysis (already written)
   H369.md              # The אַיִן pattern study (already written)
   H2320.md             # Renewed moon word study (already exists)
 
@@ -133,19 +133,26 @@ No new file structure needed for the articles — they already exist as word stu
 
 ## UX Design
 
-### Visual Language
+### Visual Language — Three States
 
-| State | Appearance | Meaning |
-|-------|------------|---------|
-| **Orange dotted underline** | Subtle amber underline on phrase | "There's a translation question here" — tap/hover to learn more |
-| **Blue text** | Alternative reading shown in blue | "Study reading is active" — tap to see original or revert |
-| **No highlight** | Normal text | No patch, or user dismissed |
+| State | Visual | Text Shown | Meaning |
+|-------|--------|-----------|---------|
+| **Proposed** (not applied) | Subtle orange **dotted** underline | Original translation | "There's a question about this translation — tap to explore" |
+| **Applied, unapproved** (default-on, user hasn't reviewed) | **Solid orange** text | Alternative reading | "We applied a study reading here — please review" |
+| **Applied, approved** (user explicitly accepted) | **Blue** text | Alternative reading | "You reviewed and accepted this reading" |
+| **Dismissed** | No highlight | Original translation | User chose to hide all indicators for this group |
 
-### User Flow
+The three colors escalate in confidence:
+- **Dotted orange** = whisper ("psst, look at this")
+- **Solid orange** = alert ("we changed something, heads up")
+- **Blue** = resolved ("you reviewed this, it's your choice")
+
+### User Flow — Proposed Patch (default-off, e.g., Daniel 9:24-27)
 
 ```
 1. User reads Daniel 9:26 in KJV
-2. Sees "be cut off, but not for himself" with orange dotted underline
+2. Sees "be cut off, but not for himself" with orange DOTTED underline
+   (original text shown — nothing replaced yet)
 3. Hovers/taps → tooltip appears:
    ┌──────────────────────────────────┐
    │ Translation Question             │
@@ -157,15 +164,15 @@ No new file structure needed for the articles — they already exist as word stu
    │ verb (78x in the OT).            │
    │                                  │
    │ Study: Daniel 9:24-27 →          │
-   │ [Accept study reading]           │
+   │ [Apply study reading]            │
    └──────────────────────────────────┘
 4a. User taps "Study" → reads full article → decides
-4b. User taps "Accept" → phrase changes to blue:
+4b. User taps "Apply" → phrase changes to BLUE:
     "cut [a covenant] and vanish to himself"
-    (all Daniel 9:24-27 patches activate together)
+    (all Daniel 9:24-27 patches apply + approve together)
 5. Blue text tooltip shows:
    ┌──────────────────────────────────┐
-   │ Study Reading Active             │
+   │ Study Reading (approved)         │
    │                                  │
    │ Original: "be cut off, but not   │
    │ for himself"                     │
@@ -174,25 +181,53 @@ No new file structure needed for the articles — they already exist as word stu
    └──────────────────────────────────┘
 ```
 
-### Default-On Patches (e.g., "renewed moon")
-
-These start in blue with a subtle indicator that this is a study reading:
+### User Flow — Default-On Patch (e.g., "renewed moon")
 
 ```
-1. User reads a verse with "renewed moon 🌕" (blue text)
+1. User reads a verse — sees "renewed moon 🌕" in SOLID ORANGE
+   (alternative applied but not yet reviewed by user)
 2. Hovers/taps → tooltip:
    ┌──────────────────────────────────┐
-   │ Study Reading Active             │
+   │ Study Reading (review needed)    │
    │                                  │
    │ Original: "new moon"             │
    │ H2320 chodesh = 'to renew'      │
    │                                  │
    │ Study: Renewed Moon (H2320) →    │
-   │ [Show original] [Revert]         │
+   │ [Approve] [Revert to original]   │
    └──────────────────────────────────┘
-3. If user reverts → text changes to orange underlined "new moon"
-   with tooltip inviting them to reconsider
+3a. User taps "Approve" → text changes to BLUE
+    (user has reviewed and accepted — settled)
+3b. User taps "Revert" → text changes to original with
+    orange DOTTED underline (proposed but not applied)
 ```
+
+### State Transitions
+
+```
+              ┌─────────────┐
+              │  Proposed    │ (dotted orange, original text)
+              │  (default    │
+              │   off)       │
+              └──────┬───────┘
+                     │ User taps "Apply"
+                     ▼
+              ┌─────────────┐         ┌─────────────┐
+              │  Applied     │         │  Applied     │
+              │  Unapproved  │────────▶│  Approved    │
+              │  (solid      │ Approve │  (blue text) │
+              │   orange)    │         └──────┬───────┘
+              └──────┬───────┘                │
+                     │ Revert                 │ Revert
+                     ▼                        ▼
+              ┌─────────────┐         ┌─────────────┐
+              │  Proposed    │         │  Proposed    │
+              │  (dotted     │         │  (dotted     │
+              │   orange)    │         │   orange)    │
+              └─────────────┘         └─────────────┘
+```
+
+Default-on patches start at "Applied, Unapproved" (solid orange). Default-off patches start at "Proposed" (dotted orange). Both can reach "Applied, Approved" (blue) through user action.
 
 ### Settings Page
 
@@ -280,23 +315,34 @@ Low persuasion rate on a specific patch = the argument needs strengthening or th
 
 ## Persistence
 
-User's accepted/rejected patches stored in localStorage:
+User's patch states stored in localStorage:
 
 ```json
 {
-  "patchOverrides": {
-    "daniel-9-24-27": "accepted",
-    "chodesh-renewed": "reverted",
-    "zechariah-5-fire": "dismissed"
+  "patchStates": {
+    "daniel-9-24-27": "approved",
+    "chodesh-renewed": "approved",
+    "zechariah-5-fire": "reverted",
+    "evening-sacrifice": "dismissed"
   }
 }
 ```
 
-States:
-- **not present** = use the group's `default` setting
-- `"accepted"` = patches active (blue)
-- `"reverted"` = patches inactive (orange)
-- `"dismissed"` = no highlight at all (user chose to hide)
+How states resolve:
+
+| localStorage value | Group default: true | Group default: false |
+|-------------------|--------------------|--------------------|
+| **not present** | Applied, unapproved (solid orange) | Proposed (dotted orange) |
+| `"approved"` | Applied, approved (blue) | Applied, approved (blue) |
+| `"reverted"` | Proposed (dotted orange) | Proposed (dotted orange) |
+| `"dismissed"` | No highlight | No highlight |
+
+Key behaviors:
+- Default-on groups start as **solid orange** (applied but unapproved) until the user approves or reverts
+- Default-off groups start as **dotted orange** (proposed) until the user applies
+- Once a user approves, the state is **blue** regardless of the group default
+- Reverting always returns to **dotted orange** (proposed) — never removes the indicator entirely
+- Dismissing removes all visual indicators for that group
 
 ---
 
@@ -331,8 +377,8 @@ States:
 **Goal:** Users can browse and read verse studies alongside existing symbol/word/number studies. No interactive patching yet — just the articles.
 
 - Add "Verse Studies" (or "Translation Studies") as a new section in the reader nav
-- Route: `/reader/verse-studies/{slug}` (e.g., `/reader/verse-studies/daniel-9-26`)
-- Render the existing MD files (DANIEL-9-26.md, H369.md, GRASS.md) in the study reader
+- Route: `/reader/verse-studies/{slug}` (e.g., `/reader/verse-studies/DANIEL-9`)
+- Render the existing MD files (DANIEL-9.md, H369.md, GRASS.md) in the study reader
 - Add an index page listing all available verse studies
 - No JSON patches, no orange/blue highlighting, no tooltips — just readable articles
 

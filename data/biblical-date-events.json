@@ -732,6 +732,124 @@
         "biblical-date",
         "resolvable"
       ]
+    },
+    {
+      "id": "date-ref-daniel-1-1",
+      "title": "📅 Daniel Taken Captive to Babylon",
+      "type": "biblical-date",
+      "description": "In the third year of Jehoiakim king of Judah, Nebuchadnezzar besieged Jerusalem and Daniel was taken captive to Babylon. This marks the beginning of Daniel's exile (~598 BC).",
+      "start": {
+        "relative": {
+          "event": "first-captivity-daniel",
+          "offset": {},
+          "direction": "after"
+        }
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Daniel 1:1-6",
+          "type": "scripture",
+          "quote": "In the third year of the reign of Jehoiakim king of Judah came Nebuchadnezzar king of Babylon unto Jerusalem, and besieged it."
+        }
+      ],
+      "tags": [
+        "biblical-date",
+        "exile",
+        "daniel"
+      ]
+    },
+    {
+      "id": "date-ref-daniel-9-1",
+      "title": "📅 Daniel's Prayer — Reading Jeremiah's 70 Years",
+      "type": "biblical-date",
+      "description": "In the first year of Darius the Mede (~522 BC), Daniel reads Jeremiah's prophecy of 70 years and prays for Jerusalem's restoration. Approximately 77 years after his captivity began. Gabriel appears with the 'Seventy Sevens' prophecy (Daniel 9:24-27).",
+      "start": {
+        "relative": {
+          "event": "darius-i-reign",
+          "offset": {
+            "years": 1
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Daniel 9:1-2",
+          "type": "scripture",
+          "quote": "In the first year of Darius the son of Ahasuerus, of the seed of the Medes... I Daniel understood by books the number of the years, whereof the word of the LORD came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem."
+        }
+      ],
+      "tags": [
+        "biblical-date",
+        "prophecy",
+        "daniel",
+        "resolvable"
+      ]
+    },
+    {
+      "id": "date-ref-ezra-6-15",
+      "title": "📅 Second Temple Completed",
+      "type": "biblical-date",
+      "description": "The Second Temple was completed on the 3rd day of the month Adar, in the 6th year of Darius (~516 BC). This is exactly 70 years after the First Temple was destroyed (~586 BC), fulfilling Jeremiah's prophecy of 70 years of desolation.",
+      "start": {
+        "lunar": {
+          "month": 12,
+          "day": 3
+        },
+        "relative": {
+          "event": "darius-i-reign",
+          "offset": {
+            "years": 6
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "medium",
+      "sources": [
+        {
+          "ref": "Ezra 6:15",
+          "type": "scripture",
+          "quote": "And this house was finished on the third day of the month Adar, which was in the sixth year of the reign of Darius the king."
+        }
+      ],
+      "tags": [
+        "biblical-date",
+        "temple",
+        "resolvable"
+      ]
+    },
+    {
+      "id": "date-ref-genesis-12-1",
+      "title": "📅 God's Covenant with Abraham — Call and Promise",
+      "type": "biblical-date",
+      "description": "God calls Abram to leave his country and promises to make him a great nation. 'In thee shall all families of the earth be blessed.' This is the beginning of the covenant with the seed of Abraham — the starting point for Daniel's 'thy people.'",
+      "start": {
+        "relative": {
+          "event": "abrahams-call",
+          "offset": {},
+          "direction": "after"
+        }
+      },
+      "certainty": "low",
+      "sources": [
+        {
+          "ref": "Genesis 12:1-3",
+          "type": "scripture",
+          "quote": "Now the LORD had said unto Abram, Get thee out of thy country... and I will make of thee a great nation... and in thee shall all families of the earth be blessed."
+        },
+        {
+          "ref": "Genesis 17:7",
+          "type": "scripture",
+          "quote": "And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant."
+        }
+      ],
+      "tags": [
+        "biblical-date",
+        "covenant",
+        "abraham"
+      ]
     }
   ]
 }

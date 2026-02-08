@@ -253,7 +253,7 @@ const BibleView = {
     }
     
     // Show/hide selector groups (multiverse shows Bible selectors e.g. translation)
-    const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article', 'philo', 'josephus'].includes(displayContentType);
+    const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
     const bibleSelectors = document.getElementById('bible-selectors');
     const symbolSelectors = document.getElementById('symbol-selectors');
     const ttSelectors = document.getElementById('timetested-selectors');
@@ -330,6 +330,7 @@ const BibleView = {
       { value: 'symbols', label: 'Symbols' },
       { value: 'words', label: 'Words' },
       { value: 'numbers', label: 'Numbers' },
+      { value: 'verse-studies', label: 'Verse Studies' },
       { value: 'timetested', label: 'Time Tested Tradition' },
       { value: 'philo', label: 'Philo' },
       { value: 'josephus', label: 'Josephus' },
@@ -337,7 +338,7 @@ const BibleView = {
     ].map(opt => `<option value="${opt.value}"${opt.value === displayContentType ? ' selected' : ''}>${opt.label}</option>`).join('');
     
     // Selector visibility based on contentType (multiverse shows Bible selectors for translation)
-    const hideAllSelectors = ['words', 'people', 'symbols-article', 'philo', 'josephus'].includes(displayContentType);
+    const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
     const bibleDisplay = ((contentType === 'bible' || contentType === 'multiverse') && !hideAllSelectors) ? '' : 'display:none;';
     const symbolsDisplay = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'display:none;';
     const ttDisplay = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'display:none;';

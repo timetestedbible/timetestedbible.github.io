@@ -35,6 +35,9 @@ const ReaderView = {
   cleanup() {
     console.log('[ReaderView] cleanup');
     
+    // Disconnect scroll spy observer
+    this.teardownScrollSpy();
+    
     // Reset render tracking
     this._lastRenderKey = null;
     this._renderedContentType = null;
@@ -92,6 +95,9 @@ const ReaderView = {
       case 'words':
         currentKey = `words:${params.word || 'index'}`;
         break;
+      case 'verse-studies':
+        currentKey = `verse-studies:${params.study || 'index'}`;
+        break;
       case 'numbers':
         currentKey = `numbers:${params.number || 'index'}`;
         break;
@@ -142,6 +148,8 @@ const ReaderView = {
     
     // Track content type changes (but don't cleanup - we want Strong's panel to stay open)
     if (this.currentContentType !== contentType) {
+      // Disconnect scroll spy when switching content types
+      this.teardownScrollSpy();
       // Just track the change, don't call cleanup here
       // Cleanup only happens when leaving the reader view entirely (via ReaderView.cleanup)
       this.currentContentType = contentType;
@@ -188,6 +196,15 @@ const ReaderView = {
         setTimeout(() => {
           if (typeof updateReaderContentSelector === 'function') {
             updateReaderContentSelector('words');
+          }
+        }, 50);
+        break;
+        
+      case 'verse-studies':
+        this.renderVerseStudyInBibleFrame(state, derived, container, params.study);
+        setTimeout(() => {
+          if (typeof updateReaderContentSelector === 'function') {
+            updateReaderContentSelector('verse-studies');
           }
         }, 50);
         break;
@@ -304,6 +321,17 @@ const ReaderView = {
             <div class="reader-card-meta">${wordStudyCount} studies</div>
             <button class="reader-card-btn">
               Browse Word Studies →
+            </button>
+          </div>
+          
+          <!-- Verse Studies -->
+          <div class="reader-content-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies'}})">
+            <div class="reader-card-icon">📖</div>
+            <h2>Verse Studies</h2>
+            <p>In-depth studies of specific verses — translation analysis, consonantal ambiguities, and patterns that connect across Scripture.</p>
+            <div class="reader-card-meta">2 studies</div>
+            <button class="reader-card-btn">
+              Browse Verse Studies →
             </button>
           </div>
           
@@ -570,6 +598,11 @@ const ReaderView = {
       // Intercept internal reader links (symbols-article, symbols) so they use SPA navigation
       this.linkifyReaderLinks(articleContainer);
       
+      // Scroll spy + deep-link into hash heading
+      const scrollRoot = container.closest('#bible-explorer-text') || container;
+      this.setupScrollSpy(scrollRoot);
+      this.scrollToHashHeading(scrollRoot);
+      
     } catch (e) {
       console.error('[ReaderView] Error loading symbol article:', e);
       articleContainer.innerHTML = `<div class="reader-error">Could not load article: ${e.message}</div>`;
@@ -647,9 +680,98 @@ const ReaderView = {
       contentEl.innerHTML = `<div class="word-study-body">${html}</div>`;
       this.linkifyScriptureRefs(contentEl);
       this.linkifyReaderLinks(contentEl);
+      // Scroll spy + deep-link into hash heading
+      const scrollRoot = container.closest('#bible-explorer-text') || container;
+      this.setupScrollSpy(scrollRoot);
+      this.scrollToHashHeading(scrollRoot);
     } catch (e) {
       console.error('[ReaderView] Error loading word study:', e);
       contentEl.innerHTML = `<div class="reader-error">Could not load word study: ${e.message}</div>`;
+    }
+  },
+
+  /**
+   * Render verse study in Bible frame (same pattern as word studies)
+   * Verse studies are in-depth articles attached to specific verses,
+   * with optional alternative translations.
+   */
+  renderVerseStudyInBibleFrame(state, derived, container, studyId) {
+    const existingPage = container.querySelector('#bible-explorer-page');
+    if (!existingPage && typeof BibleView !== 'undefined') {
+      BibleView.renderStructure(container, { content: { params: { contentType: 'verse-studies' } } });
+    } else if (existingPage && typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      BibleView.syncSelectorVisibility({ content: { params: { contentType: 'verse-studies' } } });
+    }
+    const textArea = container.querySelector('#bible-explorer-text');
+    if (!textArea) return;
+    if (!studyId) {
+      // Index: list all verse studies
+      const studies = [
+        { id: 'H369', title: 'H369 אַיִן — The Divine Removal Pattern', desc: 'How Scripture uses "is not" (אַיִן) as a keyword for persons taken by God — from Enoch to the empty tomb.' },
+        { id: 'DANIEL-9', title: 'Daniel 9:24-27 — A Fresh Look at the Hebrew', desc: 'Walking through Daniel\'s prophecy one word at a time. Covenant-cutting, vanishing, the marriage pattern, and who the "he" really is.' },
+      ];
+      textArea.innerHTML = `
+        <div class="reader-word-study-index">
+          <nav class="reader-symbol-nav">
+            <button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{}})">
+              ← Back to Reader
+            </button>
+          </nav>
+          <h1>📖 Verse Studies</h1>
+          <p class="word-study-index-intro">In-depth studies attached to specific verses — examining translation choices, consonantal ambiguities, and patterns that cross-reference multiple passages. Distinct from <strong>word studies</strong> (lexical) and <strong>symbol studies</strong> (what a term represents).</p>
+          <div class="word-study-index-list">
+            ${studies.map(s => `
+              <button class="word-study-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${s.id}'}})">
+                <span class="word-study-strongs">${s.id}</span>
+                <span class="word-study-summary">${s.title}</span>
+                <span class="word-study-summary" style="opacity:0.7;font-size:0.85em;margin-top:4px;">${s.desc}</span>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    } else {
+      textArea.innerHTML = `
+        <div class="reader-word-study">
+          <nav class="reader-symbol-nav">
+            <button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies'}})">
+              ← Back to Verse Studies
+            </button>
+          </nav>
+          <div id="verse-study-content" class="word-study-content">
+            <div class="symbol-study-loading">Loading verse study...</div>
+          </div>
+        </div>
+      `;
+      this.loadVerseStudy(studyId, textArea);
+    }
+    const titleEl = container.querySelector('#bible-chapter-title');
+    if (titleEl) titleEl.textContent = studyId ? `Verse Study: ${studyId}` : 'Verse Studies';
+    this.hideChapterNav(container);
+  },
+
+  async loadVerseStudy(studyId, container) {
+    const contentEl = container.querySelector('#verse-study-content');
+    if (!contentEl) return;
+    try {
+      // Try words/ directory first (where H369 and DANIEL-9 live), then symbols/
+      let response = await fetch(`/words/${studyId}.md`);
+      if (!response.ok) {
+        response = await fetch(`/symbols/${studyId}.md`);
+      }
+      if (!response.ok) throw new Error(`Verse study not found: ${studyId}`);
+      const markdown = await response.text();
+      const html = this.renderMarkdown(markdown);
+      contentEl.innerHTML = `<div class="word-study-body">${html}</div>`;
+      this.linkifyScriptureRefs(contentEl);
+      this.linkifyReaderLinks(contentEl);
+      // Scroll spy + deep-link into hash heading
+      const scrollRoot = container.closest('#bible-explorer-text') || container;
+      this.setupScrollSpy(scrollRoot);
+      this.scrollToHashHeading(scrollRoot);
+    } catch (e) {
+      console.error('[ReaderView] Error loading verse study:', e);
+      contentEl.innerHTML = `<div class="reader-error">Could not load verse study: ${e.message}</div>`;
     }
   },
 
@@ -723,6 +845,10 @@ const ReaderView = {
       }
       this.linkifyScriptureRefs(contentEl);
       this.linkifyReaderLinks(contentEl);
+      // Scroll spy + deep-link into hash heading
+      const scrollRoot = container.closest('#bible-explorer-text') || container;
+      this.setupScrollSpy(scrollRoot);
+      this.scrollToHashHeading(scrollRoot);
     } catch (e) {
       console.error('[ReaderView] Error loading number study:', e);
       contentEl.innerHTML = `<div class="reader-error">Could not load number study: ${e.message}</div>`;
@@ -810,6 +936,11 @@ const ReaderView = {
       // Intercept internal reader links so they use SPA navigation
       this.linkifyReaderLinks(studyContainer);
       
+      // Scroll spy + deep-link into hash heading
+      const scrollRoot = container.closest('#bible-explorer-text') || container;
+      this.setupScrollSpy(scrollRoot);
+      this.scrollToHashHeading(scrollRoot);
+      
     } catch (e) {
       console.error('[ReaderView] Error loading symbol study:', e);
       // Show the basic symbol info as fallback
@@ -864,6 +995,9 @@ const ReaderView = {
       
       // Parse with marked
       let html = marked.parse(text);
+      
+      // Support {#anchor-name} syntax in headings — strip from display, use as id
+      html = html.replace(/<(h[1-6])([^>]*)>(.*?)\s*\{#([\w-]+)\}\s*<\/(h[1-6])>/g, '<$1$2 id="$4">$3</$5>');
       
       // Post-process: wrap citation lines in blockquotes with <cite> so CSS (e.g. text-align: right) applies
       // 1) When quote and citation are on consecutive lines, marked puts them in one <p>; split so citation gets <cite>
@@ -920,8 +1054,9 @@ const ReaderView = {
     // - "Psalm 78:2" or "Psalms 78:2" (handles both singular/plural)
     const books = 'Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude|Revelation';
     
-    // Match: Book Chapter:Verse(-|–|—EndVerse)? OR Book Chapter (chapter only)
-    const pattern = new RegExp(`\\b(${books})\\s+(\\d+)(?::(\\d+)(?:[-–—](\\d+))?)?\\b`, 'g');
+    // Match: Book Chapter:Verse(,Verse)*(-EndVerse)? OR Book Chapter (chapter only)
+    // Supports comma-separated verses like Deuteronomy 16:9,10,16
+    const pattern = new RegExp(`\\b(${books})\\s+(\\d+)(?::(\\d+(?:[-–—]\\d+)?(?:,\\s*\\d+(?:[-–—]\\d+)?)*))?\\b`, 'g');
     
     const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
     const textNodes = [];
@@ -941,9 +1076,11 @@ const ReaderView = {
       const span = document.createElement('span');
       // Reset lastIndex since we reuse the regex
       pattern.lastIndex = 0;
-      span.innerHTML = node.nodeValue.replace(pattern, (match, book, chapter, verse, endVerse) => {
+      span.innerHTML = node.nodeValue.replace(pattern, (match, book, chapter, verseStr) => {
         // Build URL - if no verse, default to verse 1
-        const targetVerse = verse || 1;
+        // Extract first verse number from potentially comma-separated string
+        const firstVerse = verseStr ? verseStr.split(/[,]/)[0].split(/[-–—]/)[0].trim() : '1';
+        const targetVerse = parseInt(firstVerse, 10);
         const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${targetVerse}`;
         // id matches book-scripture-index anchor format (ref-book-chapter-verse) for scroll-from-Bible
         const anchorId = 'ref-' + (book || '').toLowerCase().replace(/\s+/g, '-') + '-' + chapter + '-' + targetVerse;
@@ -1591,6 +1728,75 @@ const ReaderView = {
     const el = container.querySelector(`#${CSS.escape(id)}`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  },
+
+  /**
+   * Set up IntersectionObserver scroll spy that updates URL hash as user scrolls past headings.
+   * Uses replaceState (not pushState) to avoid polluting browser history.
+   * @param {Element} container - Scrollable container with heading elements
+   */
+  setupScrollSpy(container) {
+    // Clean up any previous observer
+    this.teardownScrollSpy();
+
+    const headings = container.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+    if (!headings.length) return;
+
+    const visibleHeadings = new Set();
+
+    this._scrollSpyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          visibleHeadings.add(entry.target);
+        } else {
+          visibleHeadings.delete(entry.target);
+        }
+      });
+
+      // Pick the topmost visible heading (by DOM order)
+      let topHeading = null;
+      for (const h of headings) {
+        if (visibleHeadings.has(h)) { topHeading = h; break; }
+      }
+      if (topHeading) {
+        const newHash = '#' + topHeading.id;
+        if (window.location.hash !== newHash) {
+          history.replaceState(history.state, '', newHash);
+        }
+      }
+    }, {
+      root: container,
+      rootMargin: '0px 0px -80% 0px'
+    });
+
+    headings.forEach(h => this._scrollSpyObserver.observe(h));
+  },
+
+  /**
+   * Disconnect the scroll spy observer (call on navigation away or new content)
+   */
+  teardownScrollSpy() {
+    if (this._scrollSpyObserver) {
+      this._scrollSpyObserver.disconnect();
+      this._scrollSpyObserver = null;
+    }
+  },
+
+  /**
+   * Scroll to a heading matching the current URL hash (for deep-linking into study sections).
+   * Handles any heading with an id, complementing scrollToVerseAnchor which only handles ref-* anchors.
+   * @param {Element} container - Container to search within
+   */
+  scrollToHashHeading(container) {
+    const hash = window.location.hash;
+    if (!hash || !container) return;
+    const id = hash.slice(1);
+    // Skip ref-* anchors — those are handled by scrollToVerseAnchor
+    if (id.startsWith('ref-')) return;
+    const el = container.querySelector(`#${CSS.escape(id)}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   },
 

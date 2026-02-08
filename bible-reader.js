@@ -6496,8 +6496,8 @@ function updateReaderContentSelector(contentType) {
   }
   
   // Show/hide selector groups
-  // For 'words', 'people', and 'symbols-article', hide all selectors (numbers has its own dropdown)
-  const hideAllSelectors = ['words', 'people', 'symbols-article'].includes(contentType);
+  // For 'words', 'people', 'verse-studies', and 'symbols-article', hide all selectors (numbers has its own dropdown)
+  const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies'].includes(contentType);
   const bibleSelectors = document.getElementById('bible-selectors');
   const symbolSelectors = document.getElementById('symbol-selectors');
   const ttSelectors = document.getElementById('timetested-selectors');
