@@ -262,7 +262,7 @@ function renderGematriaSection(strongsNum, expanded = false) {
   
   let html = `
     <div class="strongs-gematria-section">
-      <div class="strongs-gematria-header" onclick="AppStore.dispatch({type:'TOGGLE_GEMATRIA'})">
+      <div class="strongs-gematria-header${hasRelated ? ' strongs-gematria-clickable' : ''}"${hasRelated ? ` onclick="AppStore.dispatch({type:'TOGGLE_GEMATRIA'})"` : ''}>
         <span class="strongs-gematria-icon">🔢</span>
         <span class="strongs-gematria-title">Gematria</span>
         <span class="strongs-gematria-value">${value}</span>
@@ -877,19 +877,54 @@ function hideMorphTooltip() {
   if (tooltip) tooltip.remove();
 }
 
-// Close morph tooltip when tapping outside (mobile)
+// Close morph tooltip when tapping outside (mobile) and reset two-tap state
 document.addEventListener('click', function(e) {
   const tooltip = document.getElementById('morph-hover-tooltip');
-  if (!tooltip) return;
+  if (!tooltip && !lastTappedInterlinearEl) return;
   // Don't close if tapping the tooltip itself or an interlinear word block
-  if (tooltip.contains(e.target) || e.target.closest('.il-word-block')) return;
+  if (e.target.closest('.il-word-block')) return;
+  if (tooltip && tooltip.contains(e.target)) return;
   hideMorphTooltip();
+  lastTappedInterlinearEl = null;
 }, true);
+
+// Tap to expand/collapse overflowed gloss text in root connections
+document.addEventListener('click', function(e) {
+  const glossEl = e.target.closest('.root-connection-gloss');
+  if (glossEl) {
+    glossEl.classList.toggle('expanded');
+  }
+}, false);
+
+// Track which interlinear word was last tapped (mobile two-tap pattern)
+let lastTappedInterlinearEl = null;
+
+// Handle interlinear word tap: mobile = two-tap (tooltip then panel), desktop = direct panel open
+function handleInterlinearTap(el, event) {
+  if (event) event.stopPropagation();
+  
+  if (isBibleReaderMobile()) {
+    // Second tap on same element → open Strong's panel
+    if (lastTappedInterlinearEl === el) {
+      lastTappedInterlinearEl = null;
+      showStrongsPanelFromMorphhb(el, event);
+      return;
+    }
+    // First tap → show tooltip
+    lastTappedInterlinearEl = el;
+    showMorphTooltip(el, event);
+    return;
+  }
+  
+  // Desktop: click opens panel directly (hover already showed tooltip)
+  showStrongsPanelFromMorphhb(el, event);
+}
 
 // Open Strong's panel with morphology context from a morphhb interlinear word block
 function showStrongsPanelFromMorphhb(el, event) {
-  event.stopPropagation();
+  if (event) event.stopPropagation();
   hideMorphTooltip();
+  lastTappedInterlinearEl = null;
   
   const strongs = el.dataset.strongs || '';
   const gloss = (el.querySelector('.il-gloss')?.textContent || '').trim();
@@ -905,6 +940,9 @@ function showStrongsPanelFromMorphhb(el, event) {
     morphCode: morphCode,
     lemma: lemma
   };
+  
+  // Highlight this word in the interlinear
+  highlightInterlinearWord(strongs);
   
   showStrongsPanel(strongs, gloss, gloss, event);
 }
@@ -1490,8 +1528,9 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     setTimeout(() => existing.remove(), 200);
     verseEl.classList.remove('interlinear-expanded');
     // Dispatch to AppStore for URL sync (unidirectional flow)
+    // Use replace — closing interlinear removes the ?il= param without adding a history entry
     if (typeof AppStore !== 'undefined') {
-      AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: null });
+      AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: null, replace: true });
     }
     return;
   }
@@ -1541,70 +1580,24 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   const ref = `${book} ${chapter}:${verse}`;
   let html = '';
 
-  // ── Translation comparison section ──
-  // Show primary translations (loaded, not current), then a "More" button for the rest
-  // Use user-ordered translations: visible = primary, hidden = "more"
-  const { visible: visibleTranslations, hidden: hiddenTranslations, notLoaded: notLoadedTranslations } = Bible.getOrderedTranslations();
-  const primaryIds = visibleTranslations.map(t => t.id);
-  const moreIds = [...hiddenTranslations, ...notLoadedTranslations].map(t => t.id).filter(id => id !== currentTranslation);
-
-  html += '<div class="interlinear-translations">';
-  for (const tid of primaryIds) {
-    if (tid === currentTranslation) continue;
-    if (isNT && tid === 'lxx') continue;
-    const otherVerse = Bible.getVerse(tid, book, chapter, verse);
-    if (!otherVerse) continue;
-    const reg = Bible.getTranslation(tid);
-    const isGreekTrans = tid === 'lxx';
-    html += `<div class="interlinear-trans-row${isGreekTrans ? ' interlinear-trans-greek' : ''}">
-      <span class="interlinear-trans-label">${reg ? reg.name : tid.toUpperCase()}</span>
-      <span class="interlinear-trans-text">${otherVerse.text}</span>
-    </div>`;
-  }
-
-  // "More translations" expandable section — loads all at once on expand
-  if (moreIds.length > 0) {
-    html += `<div class="interlinear-more-section">
-      <button class="interlinear-more-btn" onclick="expandMoreTranslations(this, '${book.replace(/'/g, "\\'")}', ${chapter}, ${verse})">+ ${moreIds.length} more translations</button>
-      <div class="interlinear-more-content" data-translation-ids="${moreIds.join(',')}">
-        <div class="interlinear-more-loading" style="display:none;">Loading translations...</div>
-      </div>
-    </div>`;
-  }
-  html += '</div>';
-
-  // ── Interlinear (Hebrew/Greek) — collapsible ──
+  // ── Tabbed layout: Translations | Hebrew/Greek ──
   const hasOTInterlinear = !isNT && otWords && otWords.length > 0;
   const hasNTInterlinear = isNT && ntData && ntData.g;
   const hasInterlinearWords = hasOTInterlinear || hasNTInterlinear;
   const langLabel = isNT ? 'Greek' : 'Hebrew';
-
-  html += `<div class="interlinear-original-section expanded">
-    <button class="interlinear-original-btn" onclick="toggleInterlinearOriginal(this)">Hide ${langLabel} interlinear</button>
-    <div class="interlinear-original-content">`;
-
-  // Read vowel pointing preference (used for OT toggle and word rendering)
   const showVowels = getVowelPointingSetting();
-  
-  // Source text row: OT shows vowel toggle only (word blocks ARE the Hebrew text);
-  // NT shows full Greek source text
+
+  // Tab bar
+  html += '<div class="il-tabs">';
+  html += `<button class="il-tab active" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">${langLabel}</button>`;
+  html += `<button class="il-tab" data-tab="translations" onclick="switchInterlinearTab(this, 'translations')">Translations</button>`;
   if (!isNT) {
-    html += `<div class="il-vowel-toggle-bar">
-      <label class="il-vowel-toggle"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowel pointing</label>
-    </div>`;
-  } else {
-    // Greek NT source text
-    const greekVerse = Bible.isLoaded('greek_nt') ? Bible.getVerse('greek_nt', book, chapter, verse) : null;
-    html += `<div class="interlinear-source-text" id="il-greek-${book.replace(/\s/g,'-')}-${chapter}-${verse}">
-      <div class="il-source-header">
-        <span class="il-source-label">Greek NT</span>
-      </div>
-      <div class="il-source-text-content">${greekVerse ? greekVerse.text : '<span style="color:#666;font-style:italic;">Loading Greek NT...</span>'}</div>
-    </div>`;
-    if (!greekVerse) {
-      setTimeout(() => loadAndShowGreekNT(book, chapter, verse), 0);
-    }
+    html += `<label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowels</label>`;
   }
+  html += '</div>';
+
+  // ── Hebrew/Greek tab pane (shown by default) ──
+  html += '<div class="il-tab-pane il-pane-hebrew active">';
 
   // Word-for-word interlinear
   if (hasOTInterlinear) {
@@ -1690,9 +1683,9 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
         data-morph-code="${escapedMorphCode}"
         data-lemma="${escapedLemma}"
         data-hebrew="${escapedHebrew}"
-        onclick="showStrongsPanelFromMorphhb(this, event)"
-        onmouseenter="showMorphTooltip(this, event)"
-        onmouseleave="hideMorphTooltip()">
+        onclick="handleInterlinearTap(this, event)"
+        onmouseenter="if(!isBibleReaderMobile())showMorphTooltip(this, event)"
+        onmouseleave="if(!isBibleReaderMobile())hideMorphTooltip()">
         <span class="il-original" data-voweled="${displayHebrew.replace(/"/g, '&quot;')}">${renderedHebrew}</span>
         <span class="il-gloss">${displayGloss}</span>
       </div>`;
@@ -1719,7 +1712,48 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     html += '<div class="interlinear-no-data">Word-for-word interlinear data not available for this verse.</div>';
   }
 
-  html += '</div></div>';
+  // NT: Greek source text inside the Hebrew/Greek pane
+  if (isNT) {
+    const greekVerse = Bible.isLoaded('greek_nt') ? Bible.getVerse('greek_nt', book, chapter, verse) : null;
+    html += `<div class="interlinear-source-text" id="il-greek-${book.replace(/\s/g,'-')}-${chapter}-${verse}">
+      <div class="il-source-header"><span class="il-source-label">Greek NT</span></div>
+      <div class="il-source-text-content">${greekVerse ? greekVerse.text : '<span style="color:#666;font-style:italic;">Loading Greek NT...</span>'}</div>
+    </div>`;
+    if (!greekVerse) setTimeout(() => loadAndShowGreekNT(book, chapter, verse), 0);
+  }
+
+  html += '</div>'; // close Hebrew/Greek tab pane
+
+  // ── Translations tab pane (hidden by default) ──
+  html += '<div class="il-tab-pane il-pane-translations">';
+  
+  const { visible: visibleTranslations, hidden: hiddenTranslations, notLoaded: notLoadedTranslations } = Bible.getOrderedTranslations();
+  const primaryIds = visibleTranslations.map(t => t.id);
+  const moreIds = [...hiddenTranslations, ...notLoadedTranslations].map(t => t.id).filter(id => id !== currentTranslation);
+
+  html += '<div class="interlinear-translations">';
+  for (const tid of primaryIds) {
+    if (tid === currentTranslation) continue;
+    if (isNT && tid === 'lxx') continue;
+    const otherVerse = Bible.getVerse(tid, book, chapter, verse);
+    if (!otherVerse) continue;
+    const reg = Bible.getTranslation(tid);
+    const isGreekTrans = tid === 'lxx';
+    html += `<div class="interlinear-trans-row${isGreekTrans ? ' interlinear-trans-greek' : ''}">
+      <span class="interlinear-trans-label">${reg ? reg.name : tid.toUpperCase()}</span>
+      <span class="interlinear-trans-text">${otherVerse.text}</span>
+    </div>`;
+  }
+  if (moreIds.length > 0) {
+    html += `<div class="interlinear-more-section">
+      <button class="interlinear-more-btn" onclick="expandMoreTranslations(this, '${book.replace(/'/g, "\\'")}', ${chapter}, ${verse})">+ ${moreIds.length} more translations</button>
+      <div class="interlinear-more-content" data-translation-ids="${moreIds.join(',')}">
+        <div class="interlinear-more-loading" style="display:none;">Loading translations...</div>
+      </div>
+    </div>`;
+  }
+  html += '</div>';
+  html += '</div>'; // close translations tab pane
 
   interlinear.innerHTML = html;
   
@@ -1731,9 +1765,13 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   });
   
   // Dispatch to AppStore for URL sync only when in chapter view (not multiverse)
+  // Also select the verse (so URL shows ?verse=N&il=N) and push to history
   const isMultiverse = typeof verseElOrId === 'string' && verseElOrId.startsWith('mv-');
   if (!isMultiverse && typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: verse });
+    AppStore.dispatchBatch([
+      { type: 'UPDATE_VIEW_PARAMS', params: { verse: verse } },
+      { type: 'SET_INTERLINEAR_VERSE', verse: verse, replace: false }
+    ]);
   }
 }
 
@@ -1798,6 +1836,34 @@ function toggleInterlinearOriginal(btnEl) {
   const isNT = section.querySelector('.interlinear-words-container:not(.il-hebrew)') !== null;
   const lang = isNT ? 'Greek' : 'Hebrew';
   btnEl.textContent = section.classList.contains('expanded') ? `Hide ${lang} interlinear` : `${lang} interlinear`;
+}
+
+// Switch between interlinear tabs (Hebrew/Greek vs Translations)
+function switchInterlinearTab(btnEl, tabName) {
+  const display = btnEl.closest('.interlinear-display');
+  if (!display) return;
+  
+  // Update tab buttons
+  display.querySelectorAll('.il-tab').forEach(t => t.classList.remove('active'));
+  btnEl.classList.add('active');
+  
+  // Update tab panes
+  display.querySelectorAll('.il-tab-pane').forEach(p => p.classList.remove('active'));
+  const targetPane = display.querySelector(`.il-pane-${tabName}`);
+  if (targetPane) targetPane.classList.add('active');
+}
+
+// Highlight the Hebrew word in interlinear that matches the open Strong's panel
+function highlightInterlinearWord(strongsNum) {
+  // Remove previous highlights
+  document.querySelectorAll('.il-word-block.il-word-active').forEach(el => el.classList.remove('il-word-active'));
+  if (!strongsNum) return;
+  // Find and highlight the matching word block
+  document.querySelectorAll('.il-word-block').forEach(el => {
+    if (el.dataset.strongs === strongsNum) {
+      el.classList.add('il-word-active');
+    }
+  });
 }
 
 // Regex to strip Hebrew vowel pointing and cantillation marks
@@ -2031,11 +2097,13 @@ function findNextBatch() {
     }
     
     if (matchingWords.length > 0) {
-      const verseText = getVerseText(ref);
+      const verseData = getVerseData(ref);
       state.results.push({
         ref: ref,
         matchingWords: matchingWords,
-        text: verseText || '(verse text not loaded)'
+        targetStrongs: targetStrongs,
+        text: verseData ? verseData.text : '(verse text not loaded)',
+        strongsText: verseData ? verseData.strongsText : null
       });
       foundCount++;
     }
@@ -2059,48 +2127,163 @@ function findNextBatch() {
 }
 
 // Get verse text from current Bible translation
-function getVerseText(ref) {
-  // Parse reference like "Genesis 1:5"
+// Returns { text, strongsText } — strongsText has inline {H####} tags for highlighting
+function getVerseData(ref) {
   const match = ref.match(/^(.+)\s+(\d+):(\d+)$/);
   if (!match) return null;
-
   const v = Bible.getVerse(currentTranslation, match[1], parseInt(match[2]), parseInt(match[3]));
-  return v ? v.text : null;
+  return v || null;
 }
 
-// Highlight matching words in verse text
-// Reverse mapping: modern name -> KJV name
-const MODERN_TO_KJV_VARIANTS = Object.fromEntries(
-  Object.entries(KJV_NAME_VARIANTS).map(([kjv, modern]) => [modern, kjv])
-);
+// Legacy wrapper (returns plain text only)
+function getVerseText(ref) {
+  const d = getVerseData(ref);
+  return d ? d.text : null;
+}
 
-function highlightMatchingWords(text, matchingWords) {
-  if (!text || !matchingWords || matchingWords.length === 0) return text;
+// Highlight words in verse text that are tagged with the target Strong's number.
+// Uses the Strong's-tagged text (e.g., "God{H430} created{H1254}") for precise matching.
+// Falls back to gloss-based matching if no tagged text is available.
+function highlightMatchingWords(text, matchingWords, strongsText, targetStrongs) {
+  if (!text) return text;
   
-  // Expand matching words to include KJV variants
+  // Preferred: use Strong's tagged text for precise word highlighting
+  if (strongsText && targetStrongs) {
+    const highlighted = highlightFromStrongsText(strongsText, targetStrongs);
+    if (highlighted) return highlighted;
+  }
+  
+  // Fallback: gloss-based matching (for translations without Strong's tags)
+  if (!matchingWords || matchingWords.length === 0) return text;
+  
   const expandedWords = [];
   for (const word of matchingWords) {
     if (!word) continue;
     expandedWords.push(word);
-    // Add KJV variant if it exists (e.g., "ram" -> "aram")
-    const kjvVariant = MODERN_TO_KJV_VARIANTS[word.toLowerCase()];
+    const kjvVariant = MODERN_TO_KJV_VARIANTS ? MODERN_TO_KJV_VARIANTS[word.toLowerCase()] : null;
     if (kjvVariant && !expandedWords.includes(kjvVariant)) {
       expandedWords.push(kjvVariant);
     }
   }
   
   let result = text;
-  
   for (const word of expandedWords) {
     if (!word) continue;
-    // Escape regex special characters
     const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    // Match word with optional punctuation
-    const pattern = new RegExp(`(\\b${escaped}\\b)`, 'gi');
+    const pattern = new RegExp(`(\\b${escaped})`, 'gi');
     result = result.replace(pattern, '<mark class="strongs-match">$1</mark>');
   }
-  
   return result;
+}
+
+// Reverse mapping: modern name -> KJV name
+const MODERN_TO_KJV_VARIANTS = Object.fromEntries(
+  Object.entries(KJV_NAME_VARIANTS).map(([kjv, modern]) => [modern, kjv])
+);
+
+// Produce highlighted HTML from Strong's-tagged text.
+// Input: "God{H430} created{H1254}{(H8804)}{H853} the heaven{H8064}"
+// With target H430 → "**God** created the heaven" (God wrapped in <mark>)
+function highlightFromStrongsText(strongsText, targetStrongs) {
+  if (!strongsText || !targetStrongs) return null;
+  
+  const normalized = normalizeStrongsNum(targetStrongs);
+  if (!normalized) return null;
+  
+  // Find all tag clusters: text followed by one or more {H####} or {(H####)} tags
+  // We scan for sequences of tags and identify the text chunk preceding them
+  const tagPattern = /(\{\(?[HG]\d+\)?\})/g;
+  
+  // Build a map of character ranges that should be highlighted
+  const highlights = new Set(); // set of character positions to highlight
+  
+  // Collect all tags with their positions
+  let prevTagEnd = 0;
+  const tags = [];
+  let m;
+  while ((m = tagPattern.exec(strongsText)) !== null) {
+    tags.push({ start: m.index, end: m.index + m[0].length, tag: m[0] });
+  }
+  
+  if (tags.length === 0) return null; // no tags found
+  
+  // Group consecutive tags (no text between them) and find the text word before each group
+  let i = 0;
+  while (i < tags.length) {
+    // Find the start of this tag group
+    const groupStart = tags[i].start;
+    
+    // Collect all consecutive tags (no text gap between them)
+    let groupEnd = tags[i].end;
+    const groupTags = [tags[i].tag];
+    while (i + 1 < tags.length && tags[i + 1].start === groupEnd) {
+      i++;
+      groupEnd = tags[i].end;
+      groupTags.push(tags[i].tag);
+    }
+    
+    // Check if any tag in this group matches the target Strong's number
+    const isMatch = groupTags.some(t => {
+      const numMatch = t.match(/[HG]\d+/);
+      if (!numMatch) return false;
+      return normalizeStrongsNum(numMatch[0]) === normalized;
+    });
+    
+    if (isMatch) {
+      // Find the text word before this tag group
+      // The word is the text between the previous tag group end and this tag group start
+      const textBefore = strongsText.slice(prevTagEnd, groupStart);
+      // The word is the last word-like chunk (trim leading spaces/punctuation)
+      const wordMatch = textBefore.match(/(\S+)\s*$/);
+      if (wordMatch) {
+        const wordStart = prevTagEnd + textBefore.lastIndexOf(wordMatch[1]);
+        const wordEnd = wordStart + wordMatch[1].length;
+        for (let c = wordStart; c < wordEnd; c++) highlights.add(c);
+      }
+    }
+    
+    prevTagEnd = groupEnd;
+    i++;
+  }
+  
+  if (highlights.size === 0) return null;
+  
+  // Build the output: strip all tags and wrap highlighted ranges in <mark>
+  let output = '';
+  let inHighlight = false;
+  let ti = 0; // tag index
+  
+  for (let pos = 0; pos < strongsText.length; ) {
+    // Check if we're at a tag - skip it
+    if (ti < tags.length && pos === tags[ti].start) {
+      pos = tags[ti].end;
+      ti++;
+      continue;
+    }
+    
+    const ch = strongsText[pos];
+    const shouldHighlight = highlights.has(pos);
+    
+    if (shouldHighlight && !inHighlight) {
+      output += '<mark class="strongs-match">';
+      inHighlight = true;
+    } else if (!shouldHighlight && inHighlight) {
+      output += '</mark>';
+      inHighlight = false;
+    }
+    
+    // Escape HTML entities
+    if (ch === '<') output += '&lt;';
+    else if (ch === '>') output += '&gt;';
+    else if (ch === '&') output += '&amp;';
+    else output += ch;
+    
+    pos++;
+  }
+  
+  if (inHighlight) output += '</mark>';
+  
+  return output;
 }
 
 // Update the verse search results in the UI
@@ -2120,7 +2303,7 @@ function updateVerseSearchResults() {
   for (const result of state.results) {
     const escapedRef = result.ref.replace(/'/g, "\\'");
     const abbrevRef = abbreviateRef(result.ref);
-    const highlightedText = highlightMatchingWords(result.text, result.matchingWords);
+    const highlightedText = highlightMatchingWords(result.text, result.matchingWords, result.strongsText, result.targetStrongs);
     
     html += `<div class="verse-search-item" onclick="goToVerseFromSearch('${escapedRef}')">
       <span class="verse-search-ref">${abbrevRef}</span> ${highlightedText}
@@ -3550,13 +3733,20 @@ function renderConsonantalRootSection(strongsNum) {
       ? matchEntry.strongs_def.replace(/<[^>]*>/g, '').substring(0, 80)
       : '';
     
-    html += `<div class="root-connection-entry${isCurrent ? ' root-connection-current' : ''}">`;
-    html += `<a href="#" class="root-connection-link" onclick="navigateToStrongs('${matchNum}', event)">`;
-    html += `<span class="root-connection-num">${matchNum}</span>`;
-    html += `<span class="root-connection-lemma">${matchEntry.lemma || ''}</span>`;
-    html += `<span class="root-connection-gloss">${gloss}</span>`;
-    html += '</a>';
-    if (isCurrent) html += '<span class="root-connection-marker">current</span>';
+    html += `<div class="root-connection-entry${isCurrent ? ' root-connection-current' : ''}" title="${matchNum}">`;
+    if (isCurrent) {
+      // Current entry: lemma + gloss + [current] marker on right (no Strong's num — it's in the pane title)
+      html += `<span class="root-connection-lemma">${matchEntry.lemma || ''}</span>`;
+      html += `<span class="root-connection-gloss">${gloss}</span>`;
+      html += `<span class="root-connection-marker">current</span>`;
+    } else {
+      // Other entries: clickable link, Strong's number right-justified (hidden on mobile)
+      html += `<a href="#" class="root-connection-link" onclick="navigateToStrongs('${matchNum}', event)">`;
+      html += `<span class="root-connection-lemma">${matchEntry.lemma || ''}</span>`;
+      html += `<span class="root-connection-gloss">${gloss}</span>`;
+      html += `<span class="root-connection-num">${matchNum}</span>`;
+      html += '</a>';
+    }
     html += '</div>';
   }
   
@@ -3567,14 +3757,15 @@ function renderConsonantalRootSection(strongsNum) {
 }
 
 // Render a single ref chip (verse + stem badge + translation + Strong's links)
-function renderBDBRef(ref) {
+// skipStem: true when rendering inside a stem section (stem is already in the header)
+function renderBDBRef(ref, skipStem) {
   if (!ref) return '';
   const parts = [];
   if (ref.verse) {
     const escaped = ref.verse.replace(/'/g, "\\'");
     parts.push(`<span class="bdb-verse-ref" onclick="navigateToBDBVerse('${escaped}', event)">${ref.verse}</span>`);
   }
-  if (ref.stem) parts.push(`<span class="bdb-stem-badge">${ref.stem}</span>`);
+  if (ref.stem && !skipStem) parts.push(`<span class="bdb-stem-badge">${ref.stem}</span>`);
   if (ref.translation) parts.push(`<span class="bdb-trans-word">"${ref.translation}"</span>`);
   if (ref.strongs && ref.strongs.length) {
     for (const sn of ref.strongs) {
@@ -3655,21 +3846,50 @@ function renderBDBSection(strongsNum) {
   let html = '<div class="strongs-bdb-section">';
   html += '<div class="bdb-header">Hebrew Lexicon</div>';
   
-  // Stems (for verbs) — auto-expand matching stem, collapse others
+  // Stems (for verbs) — active stem first and expanded, others behind "See all stems"
   if (e.stems && e.stems.length > 0) {
+    // Sort: active stem first, then rest in original order
+    const sortedStems = activeStem
+      ? [
+          ...e.stems.filter(s => s.stem === activeStem),
+          ...e.stems.filter(s => s.stem !== activeStem)
+        ]
+      : e.stems;
+    
+    const activeEntry = activeStem ? sortedStems[0] : null;
+    const otherStems = activeStem ? sortedStems.slice(1) : sortedStems;
+    
     html += '<div class="bdb-stems">';
-    html += '<div class="bdb-sub-header">Verb Stems</div>';
-    for (const s of e.stems) {
-      const isActive = activeStem && s.stem === activeStem;
-      const collapsed = activeStem && !isActive;
-      html += `<div class="bdb-sense ${isActive ? 'bdb-sense-active' : ''} ${collapsed ? 'bdb-sense-collapsed' : ''}" ${collapsed ? 'onclick="this.classList.remove(\'bdb-sense-collapsed\')"' : ''}>`;
-      html += `<div class="bdb-sense-head"><span class="bdb-stem-badge">${s.stem}</span> <span class="bdb-sense-meaning">${s.meaning || ''}</span>${collapsed ? '<span class="bdb-expand-hint">tap to expand</span>' : ''}</div>`;
-      if (s.detail) html += `<div class="bdb-sense-detail">${s.detail}</div>`;
-      if (s.refs && s.refs.length) {
-        html += `<div class="bdb-refs">${s.refs.map(renderBDBRef).join('')}</div>`;
+    
+    // Render active stem (or first stem if no context) — always visible
+    const firstStem = activeEntry || sortedStems[0];
+    if (firstStem) {
+      html += '<div class="bdb-sense bdb-sense-active">';
+      html += `<div class="bdb-sense-head"><span class="bdb-stem-badge">${firstStem.stem}</span> <span class="bdb-sense-meaning">${firstStem.meaning || ''}</span></div>`;
+      if (firstStem.detail) html += `<div class="bdb-sense-detail">${firstStem.detail}</div>`;
+      if (firstStem.refs && firstStem.refs.length) {
+        html += `<div class="bdb-refs">${firstStem.refs.map(r => renderBDBRef(r, true)).join('')}</div>`;
       }
       html += '</div>';
     }
+    
+    // Other stems behind expandable
+    const stemsToHide = activeEntry ? otherStems : sortedStems.slice(1);
+    if (stemsToHide.length > 0) {
+      html += `<div class="bdb-other-stems-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><span class="bdb-chevron">›</span> See all ${e.stems.length} stems</div>`;
+      html += '<div class="bdb-other-stems">';
+      for (const s of stemsToHide) {
+        html += '<div class="bdb-sense">';
+        html += `<div class="bdb-sense-head"><span class="bdb-stem-badge">${s.stem}</span> <span class="bdb-sense-meaning">${s.meaning || ''}</span></div>`;
+        if (s.detail) html += `<div class="bdb-sense-detail">${s.detail}</div>`;
+        if (s.refs && s.refs.length) {
+          html += `<div class="bdb-refs">${s.refs.map(r => renderBDBRef(r, true)).join('')}</div>`;
+        }
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+    
     html += '</div>';
   }
   
@@ -4077,8 +4297,10 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
   }
   
   // Dispatch to AppStore for URL sync (unidirectional flow)
+  // Push to history when first opening the panel so mobile back button closes it.
+  // Navigation within the already-open panel uses replace (default) to avoid polluting history.
   if (!skipDispatch && typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: strongsNum });
+    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: strongsNum, replace: !isNewPanel });
   }
 }
 
@@ -4090,13 +4312,17 @@ function closeStrongsPanel(skipDispatch = false) {
     sidebar.innerHTML = '';
     document.body.classList.remove('strongs-sidebar-open');
   }
+  // Clear interlinear word highlight
+  highlightInterlinearWord(null);
   // Reset history
   strongsHistory = [];
   strongsHistoryIndex = -1;
   
   // Update state to remove strongsId from URL (unless called from URL sync)
+  // Use replace — closing the panel removes the ?strongs= param without adding a new history entry.
+  // The back button already handles this via the pushed entry from when the panel opened.
   if (!skipDispatch && typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: null });
+    AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: null, replace: true });
   }
 }
 

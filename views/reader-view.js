@@ -116,7 +116,10 @@ const ReaderView = {
     const fullKey = `${currentKey}:ui:${uiKey}`;
     
     if (this._lastRenderKey === fullKey && container.querySelector('#bible-explorer-page')) {
-      // Content hasn't changed — but for classics, check if section changed (scroll to it)
+      // Content hasn't changed — but sync UI-only state (gematria, panels)
+      this._syncGematriaState(state.ui);
+      
+      // For classics, check if section changed (scroll to it)
       if (contentType === 'philo' && params.work && params.section) {
         const anchor = container.querySelector('#section-' + params.section);
         if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -402,6 +405,23 @@ const ReaderView = {
           closeStrongsPanel(true);
         }
       }, 100);
+    }
+    
+    // Sync gematria expanded state
+    this._syncGematriaState(ui);
+  },
+  
+  /**
+   * Sync gematria expanded state with DOM (runs on every state change, even early returns)
+   */
+  _syncGematriaState(ui) {
+    if (!ui) return;
+    const gematriaRelated = document.getElementById('gematria-related');
+    if (gematriaRelated) {
+      const expanded = !!ui.gematriaExpanded;
+      gematriaRelated.style.display = expanded ? 'block' : 'none';
+      const expandIcon = gematriaRelated.closest('.strongs-gematria-section')?.querySelector('.strongs-gematria-expand');
+      if (expandIcon) expandIcon.textContent = expanded ? '▲' : '▼';
     }
   },
 

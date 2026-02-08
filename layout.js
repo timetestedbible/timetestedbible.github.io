@@ -46,6 +46,21 @@ const Layout = {
     AppStore.subscribe((state) => {
       this.updateMenuState(state.ui.menuOpen);
     });
+    
+    // Mobile: handle popstate for menu history management
+    window.addEventListener('popstate', () => {
+      if (this._menuBackInProgress) {
+        // This popstate is from our programmatic history.back() (overlay/escape close)
+        // Just clean up — URL hasn't changed, url-router's handler will be a no-op
+        this._menuBackInProgress = false;
+        return;
+      }
+      if (this._menuHistoryPushed && AppStore.getState().ui.menuOpen) {
+        // User pressed back while menu was open — close it
+        this._menuHistoryPushed = false;
+        AppStore.dispatch({ type: 'CLOSE_MENU' });
+      }
+    });
   },
   
   /**
@@ -103,6 +118,11 @@ const Layout = {
     }
   },
   
+  // Track whether we pushed a history entry for the mobile menu
+  _menuHistoryPushed: false,
+  _menuBackInProgress: false,
+  _menuClosingForNav: false,
+  
   /**
    * Update menu state based on store
    */
@@ -119,6 +139,23 @@ const Layout = {
     
     // Prevent body scroll when menu is open
     this.elements.body.classList.toggle('menu-open', isOpen);
+    
+    // Mobile: push history state when menu opens so back button closes it
+    if (isOpen && !this._menuHistoryPushed) {
+      this._menuHistoryPushed = true;
+      history.pushState({ menuOpen: true }, '', window.location.href);
+    } else if (!isOpen && this._menuHistoryPushed) {
+      this._menuHistoryPushed = false;
+      if (this._menuClosingForNav) {
+        // Navigating via menu item — don't pop history, navigation will push on top.
+        // The stale entry has the same URL, just one extra harmless back step.
+        this._menuClosingForNav = false;
+      } else {
+        // Closed without navigation (overlay, escape) — pop our history entry
+        this._menuBackInProgress = true;
+        history.back();
+      }
+    }
   },
   
   /**
@@ -166,11 +203,13 @@ const Layout = {
       });
     }
     
-    // Close menu when clicking a menu item
+    // Close menu when clicking a menu item (navigation)
     if (this.elements.sidebar) {
       this.elements.sidebar.addEventListener('click', (e) => {
         const menuItem = e.target.closest('.menu-item');
         if (menuItem && !this.isDesktop()) {
+          // Flag that we're closing for navigation so updateMenuState doesn't history.back()
+          this._menuClosingForNav = true;
           AppStore.dispatch({ type: 'CLOSE_MENU' });
         }
       });

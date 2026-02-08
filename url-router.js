@@ -226,8 +226,10 @@ const URLRouter = {
     window.addEventListener('popstate', (event) => {
       AppStore.dispatch({ type: 'URL_CHANGED', url: window.location.href });
       
-      // Restore scroll position from history state
-      if (event.state && event.state.scrollTop !== undefined) {
+      // Restore scroll position from history state — but NOT if the URL targets a specific verse,
+      // because the verse-scroll in openBibleExplorerTo should take priority
+      const hasVerseTarget = new URLSearchParams(window.location.search).has('verse');
+      if (!hasVerseTarget && event.state && event.state.scrollTop !== undefined) {
         setTimeout(() => {
           const textArea = document.getElementById('bible-explorer-text');
           if (textArea) {
@@ -788,7 +790,7 @@ const URLRouter = {
     if (content.params.verse && isBibleContent) {
       params.set('verse', content.params.verse);
     }
-    if (ui.interlinearVerse && content.view === 'bible') {
+    if (ui.interlinearVerse && isBibleContent) {
       params.set('il', ui.interlinearVerse);
     }
     // Timeline params - event/duration/search are mutually exclusive for detail panel
@@ -935,33 +937,41 @@ const URLRouter = {
   },
   
   /**
-   * Check if URL change is just normalization (adding defaults)
-   * Returns true if both URLs resolve to the same logical destination
+   * Check if URL change is just normalization (adding defaults like translation).
+   * Returns true ONLY when the path changed but the query string is identical,
+   * and the parsed state resolves to the same book/chapter/verse/contentType.
+   * This prevents back-button loops when e.g. /bible/Genesis/1 normalizes to /bible/kjv/Genesis/1.
+   * Any query-param change (strongs, il, verse, gematria, etc.) is a real state change, not normalization.
    */
   _isUrlNormalization(currentURL, newURL) {
     try {
-      // Parse both URLs to get their logical state
-      const currentParsed = this.parseURL(new URL(currentURL, window.location.origin));
-      const newParsed = this.parseURL(new URL(newURL, window.location.origin));
+      const curUrl = new URL(currentURL, window.location.origin);
+      const newUrl = new URL(newURL, window.location.origin);
+      
+      // If query strings differ at all, it's NOT normalization
+      if (curUrl.search !== newUrl.search) return false;
+      
+      // If paths are identical, URLs are the same (no change at all)
+      if (curUrl.pathname === newUrl.pathname) return false;
+      
+      // Paths differ but query strings are the same — check if it's just adding translation
+      const currentParsed = this.parseURL(curUrl);
+      const newParsed = this.parseURL(newUrl);
       
       if (!currentParsed || !newParsed) return false;
-      
-      // Must be same view
       if (currentParsed.content.view !== newParsed.content.view) return false;
       
-      // For bible/reader views, check if book/chapter/verse are the same
-      // (translation being added is normalization)
       const view = currentParsed.content.view;
       if (view === 'bible' || view === 'reader') {
         const cp = currentParsed.content.params;
         const np = newParsed.content.params;
         
-        // Same book, chapter, verse means this is just adding translation
+        // Same destination, just path format changed (e.g., translation added)
         if (cp.book === np.book && 
             cp.chapter === np.chapter && 
             cp.verse === np.verse &&
             cp.contentType === np.contentType) {
-          // For classics, section changes are real navigation, not normalization
+          // For classics, section/work changes are real navigation
           if (cp.contentType === 'philo' || cp.contentType === 'josephus') {
             if (cp.section !== np.section || cp.work !== np.work) return false;
           }

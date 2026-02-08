@@ -9621,6 +9621,71 @@ body.biblical-timeline-open .top-nav-inner {
   color: #7ec8e3;
 }
 
+/* ── Interlinear Tab Layout ── */
+
+.il-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid rgba(100, 140, 200, 0.2);
+  margin-bottom: 8px;
+}
+
+.il-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #668;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.il-tab:first-child {
+  border-radius: 0;
+}
+
+.il-tab:hover {
+  color: #aac;
+}
+
+.il-tab.active {
+  color: #d4a017;
+  border-bottom-color: #d4a017;
+}
+
+.il-vowel-toggle-inline {
+  font-size: 0.75em;
+  color: #556;
+  padding: 4px 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.il-vowel-toggle-inline input {
+  margin-right: 3px;
+}
+
+.il-tab-pane {
+  display: none;
+}
+
+.il-tab-pane.active {
+  display: block;
+}
+
+/* Selected word highlight in interlinear */
+.il-word-block.il-word-active {
+  background: rgba(212, 160, 23, 0.25);
+  box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.5);
+  border-radius: 4px;
+}
+
 .il-vowel-toggle-bar {
   display: flex;
   justify-content: flex-end;
@@ -11080,10 +11145,9 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .verse-search-item .strongs-match {
-  background: rgba(212, 160, 23, 0.3);
-  color: #fff;
-  padding: 1px 3px;
-  border-radius: 2px;
+  color: #f0c040;
+  background: none;
+  padding: 0;
 }
 
 .verse-search-more {
@@ -11864,11 +11928,14 @@ details.concept-strongs-section[open] .concept-expand-icon {
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
   padding: 4px 0;
 }
 
-.strongs-gematria-header:hover {
+.strongs-gematria-clickable {
+  cursor: pointer;
+}
+
+.strongs-gematria-clickable:hover {
   background: rgba(138, 43, 226, 0.1);
   border-radius: 4px;
   margin: -4px -4px;
@@ -12197,6 +12264,8 @@ details.concept-strongs-section[open] .concept-expand-icon {
   align-items: center;
   border-radius: 4px;
   transition: background 0.15s;
+  padding: 5px 6px;
+  gap: 8px;
 }
 
 .root-connection-entry:hover {
@@ -12212,19 +12281,24 @@ details.concept-strongs-section[open] .concept-expand-icon {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  padding: 5px 6px;
   text-decoration: none;
   color: inherit;
   flex: 1;
   min-width: 0;
 }
 
+/* Strong's number: right-justified, hidden on mobile (visible on hover via title attr) */
 .root-connection-num {
-  font-size: 0.78em;
-  color: #7ec8e3;
-  font-weight: 600;
+  font-size: 0.72em;
+  color: rgba(126, 200, 227, 0.6);
+  font-weight: 500;
   flex-shrink: 0;
-  min-width: 48px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.root-connection-link:hover .root-connection-num {
+  color: #7ec8e3;
 }
 
 .root-connection-lemma {
@@ -12243,6 +12317,15 @@ details.concept-strongs-section[open] .concept-expand-icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Tap to expand overflowed gloss text */
+.root-connection-gloss.expanded {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .root-connection-marker {
@@ -12252,7 +12335,15 @@ details.concept-strongs-section[open] .concept-expand-icon {
   padding: 1px 6px;
   border-radius: 3px;
   flex-shrink: 0;
-  margin-left: 4px;
+  margin-left: auto;
+}
+
+/* Mobile: hide Strong's numbers and [current] marker in root connections (available via title tooltip) */
+@media (max-width: 768px) {
+  .root-connection-num,
+  .root-connection-marker {
+    display: none;
+  }
 }
 
 .root-connections-footer {
@@ -12498,32 +12589,41 @@ details.concept-strongs-section[open] .concept-expand-icon {
   font-size: 0.9em;
 }
 
-/* Active/collapsed stem filtering */
+/* Active stem highlight */
 .bdb-sense-active {
   border-left-color: #d4a017;
   background: rgba(212, 160, 23, 0.05);
 }
 
-.bdb-sense-collapsed .bdb-sense-detail,
-.bdb-sense-collapsed .bdb-refs {
+/* "See all stems" toggle */
+.bdb-other-stems-toggle {
+  padding: 6px 10px;
+  color: #6db3f2;
+  font-size: 0.84em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bdb-other-stems-toggle:hover {
+  color: #8ac8ff;
+}
+
+.bdb-chevron {
+  display: inline-block;
+  transition: transform 0.2s;
+  font-size: 1.1em;
+}
+
+.bdb-other-stems-toggle.open .bdb-chevron {
+  transform: rotate(90deg);
+}
+
+.bdb-other-stems {
   display: none;
 }
 
-.bdb-sense-collapsed {
-  cursor: pointer;
-  opacity: 0.6;
-  border-left-color: rgba(100, 140, 200, 0.15);
-}
-
-.bdb-sense-collapsed:hover {
-  opacity: 0.85;
-}
-
-.bdb-expand-hint {
-  font-size: 0.72em;
-  color: #556;
-  font-style: italic;
-  margin-left: 8px;
+.bdb-other-stems.open {
+  display: block;
 }
 
 .bdb-form-label {
