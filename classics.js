@@ -370,6 +370,54 @@ function _injectForTest(authorId, blobText) {
   _works[authorId] = works;
 }
 
+// ── Footnotes ──
+
+let _footnotes = {};  // { josephus: { "Work|Book|Chapter": { N: "text" } } }
+
+/**
+ * Load footnotes for an author (lazy, from JSON file).
+ */
+async function loadFootnotes(authorId) {
+  if (_footnotes[authorId]) return _footnotes[authorId];
+  try {
+    const response = await fetch(`/classics/${authorId}-footnotes.json`);
+    if (!response.ok) return {};
+    _footnotes[authorId] = await response.json();
+    return _footnotes[authorId];
+  } catch (e) {
+    return {};
+  }
+}
+
+/**
+ * Get footnotes for a specific chapter (synchronous — returns cached or empty).
+ * Key format: "Work|Book|Chapter" → { num: text }
+ * Tries multiple key patterns since footnotes may be per-book or per-chapter.
+ */
+function getFootnotes(authorId, workName, book, chapter) {
+  const data = _footnotes[authorId];
+  if (!data) {
+    // Trigger async load for next time
+    loadFootnotes(authorId);
+    return null;
+  }
+  // Try exact match first, then broader patterns
+  if (chapter != null) {
+    const key = `${workName}|${book}|${chapter}`;
+    if (data[key]) return data[key];
+  }
+  // Try book-level (some endnotes are per-book, not per-chapter)
+  // Merge all chapters for this book
+  const bookPrefix = `${workName}|${book}|`;
+  const merged = {};
+  for (const [key, notes] of Object.entries(data)) {
+    if (key.startsWith(bookPrefix)) {
+      Object.assign(merged, notes);
+    }
+  }
+  return Object.keys(merged).length > 0 ? merged : null;
+}
+
 const Classics = {
   SEP,
   CLASSICS_REGISTRY,
@@ -393,6 +441,8 @@ const Classics = {
   getWorkSlug,
   getWorkBySlug,
   getAuthors,
+  loadFootnotes,
+  getFootnotes,
   _injectForTest,
 };
 

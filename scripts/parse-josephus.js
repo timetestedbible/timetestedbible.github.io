@@ -42,13 +42,17 @@ function main() {
   const lines = raw.split(/\r?\n/);
 
   const records = [];
+  const footnotes = {};  // Key: "Work|Book|Chapter" → { num: text }
   let currentWork = null;
   let currentBook = 0;
   let currentChapter = 0;
   let currentSection = 0;
   let currentText = [];
   let afterTOC = false;
-  let pendingBookFromNextLine = null; // "Antiquities of the Jews - Book" then next line "XX"
+  let pendingBookFromNextLine = null;
+  let inEndnotes = false;
+  let currentFootnoteNum = null;
+  let currentFootnoteLines = [];
 
   function flushSection() {
     if (currentWork != null && currentBook > 0 && currentChapter > 0 && currentSection > 0 && currentText.length > 0) {
@@ -76,13 +80,47 @@ function main() {
     currentText = [];
   }
 
+  function flushFootnote() {
+    if (currentFootnoteNum != null && currentFootnoteLines.length > 0 && currentWork && currentBook > 0 && currentChapter > 0) {
+      const key = `${currentWork}|${currentBook}|${currentChapter}`;
+      if (!footnotes[key]) footnotes[key] = {};
+      footnotes[key][currentFootnoteNum] = currentFootnoteLines.join(' ').trim();
+    }
+    currentFootnoteNum = null;
+    currentFootnoteLines = [];
+  }
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const trimmed = line.trim();
 
+    // Detect ENDNOTES block
+    if (trimmed === 'ENDNOTES' || trimmed === 'Endnotes') {
+      flushSection();
+      flushFootnote();
+      inEndnotes = true;
+      continue;
+    }
+
     if (trimmed === 'Back To The Table Of Contents') {
       flushSection();
+      flushFootnote();
+      inEndnotes = false;
       afterTOC = true;
+      continue;
+    }
+
+    // Parse footnotes when in ENDNOTES block
+    if (inEndnotes) {
+      const fnMatch = trimmed.match(/^\((\d+)\)\s+(.*)/);
+      if (fnMatch) {
+        flushFootnote();
+        currentFootnoteNum = parseInt(fnMatch[1]);
+        currentFootnoteLines = [fnMatch[2]];
+      } else if (trimmed && currentFootnoteNum != null) {
+        // Continuation line of current footnote
+        currentFootnoteLines.push(trimmed);
+      }
       continue;
     }
 
@@ -233,11 +271,21 @@ function main() {
   }
 
   flushSection();
+  flushFootnote();
 
   if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
+  // Write sections blob
   const blob = records.map(r => r.ref + SEP + r.text + SEP).join('');
+
+  // Write footnotes as a separate JSON file
+  const fnFile = path.join(OUT_DIR, 'josephus-footnotes.json');
+  fs.writeFileSync(fnFile, JSON.stringify(footnotes), 'utf8');
+
   fs.writeFileSync(OUTPUT, blob, 'utf8');
+
+  const fnCount = Object.values(footnotes).reduce((sum, ch) => sum + Object.keys(ch).length, 0);
+  console.log(`Wrote ${fnCount} footnotes to ${fnFile}`);
 
   console.log(`Wrote ${records.length} sections to ${OUTPUT}`);
   const byWork = {};

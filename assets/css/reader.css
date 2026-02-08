@@ -971,6 +971,43 @@ code {
   border-bottom-style: solid;
 }
 
+/* Footnote markers */
+.classics-fn {
+  font-size: 0.7em;
+  color: #7ec8e3;
+  cursor: default;
+  vertical-align: super;
+  line-height: 0;
+  padding: 0 1px;
+}
+
+.classics-fn.has-footnote {
+  cursor: pointer;
+  color: #d4a017;
+}
+
+.classics-fn.has-footnote:hover {
+  text-decoration: underline;
+}
+
+/* Footnote tooltip popup */
+.footnote-tooltip {
+  position: absolute;
+  z-index: 9999;
+  max-width: 320px;
+  padding: 10px 14px;
+  background: rgba(20, 30, 50, 0.97);
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: 8px;
+  color: #ccc;
+  font-size: 0.85em;
+  line-height: 1.5;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: auto;
+}
+
 @media (max-width: 768px) {
   .classics-reader,
   .classics-index {
@@ -981,5 +1018,8 @@ code {
   }
   .classics-reader-body {
     font-size: 1rem;
+  }
+  .footnote-tooltip {
+    max-width: calc(100vw - 40px);
   }
 }

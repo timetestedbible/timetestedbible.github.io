@@ -5580,6 +5580,44 @@ function onClassicsWorkChange(workSlug) {
 /**
  * Handle section jump from classics dropdown — scrolls to anchor within the page
  */
+// Show/hide footnote tooltip on hover/tap
+function showFootnoteTooltip(event) {
+  event.stopPropagation();
+  hideFootnoteTooltip();
+  const el = event.target.closest('.has-footnote');
+  if (!el) return;
+  const text = el.dataset.footnote;
+  if (!text) return;
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'footnote-tooltip';
+  tooltip.textContent = text;
+  document.body.appendChild(tooltip);
+
+  const rect = el.getBoundingClientRect();
+  let left = rect.left + window.scrollX;
+  let top = rect.bottom + window.scrollY + 5;
+  if (left + 320 > window.innerWidth) left = window.innerWidth - 330;
+  if (left < 10) left = 10;
+  if (top + 150 > window.innerHeight + window.scrollY) {
+    top = rect.top + window.scrollY - tooltip.offsetHeight - 5;
+  }
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+  tooltip.style.opacity = '1';
+}
+
+function hideFootnoteTooltip() {
+  document.querySelectorAll('.footnote-tooltip').forEach(el => el.remove());
+}
+
+// Close footnote tooltip on click outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.has-footnote') && !e.target.closest('.footnote-tooltip')) {
+    hideFootnoteTooltip();
+  }
+});
+
 function onClassicsSectionJump(value) {
   if (!value) return;
   const state = typeof AppStore !== 'undefined' ? AppStore.getState() : {};

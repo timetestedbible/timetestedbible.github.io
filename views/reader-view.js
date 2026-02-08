@@ -1927,6 +1927,7 @@ const ReaderView = {
 
     textArea.innerHTML = html;
     this.linkifyScriptureRefs(textArea);
+    this._linkifyFootnoteMarkers(textArea, workName, book);
 
     // Scroll to specific section if requested
     if (scrollChapter != null && scrollSection != null) {
@@ -1990,6 +1991,50 @@ const ReaderView = {
         span.innerHTML = html;
         node.parentNode.replaceChild(span, node);
       }
+    });
+  },
+
+  /**
+   * Convert inline (N) and [N] footnote markers to superscript elements with tooltips.
+   * Loads footnotes from Classics.getFootnotes() if available.
+   */
+  _linkifyFootnoteMarkers(container, workName, book) {
+    if (!container) return;
+
+    // Load footnotes data
+    let footnoteData = null;
+    if (typeof Classics !== 'undefined' && Classics.getFootnotes) {
+      footnoteData = Classics.getFootnotes('josephus', workName, book);
+    }
+
+    // Walk text nodes and replace (N) patterns with superscript elements
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    const textNodes = [];
+    const pattern = /\((\d+)\)|\[(\d+)\]/g;
+    while (walker.nextNode()) {
+      const parent = walker.currentNode.parentNode;
+      if (parent && (parent.tagName === 'A' || parent.tagName === 'SUP' || parent.classList?.contains('classics-section-num'))) continue;
+      if (pattern.test(walker.currentNode.nodeValue)) {
+        textNodes.push(walker.currentNode);
+      }
+      pattern.lastIndex = 0;
+    }
+
+    textNodes.forEach(node => {
+      const span = document.createElement('span');
+      span.innerHTML = node.nodeValue.replace(pattern, (match, parenNum, bracketNum) => {
+        const num = parenNum || bracketNum;
+        const type = parenNum ? 'fn' : 'note';
+        const footnoteText = (type === 'fn' && footnoteData && footnoteData[num])
+          ? footnoteData[num].replace(/"/g, '&quot;').replace(/</g, '&lt;')
+          : null;
+        const tooltip = footnoteText
+          ? ` data-footnote="${footnoteText}" onclick="showFootnoteTooltip(event)" onmouseenter="showFootnoteTooltip(event)" onmouseleave="hideFootnoteTooltip()"`
+          : '';
+        const cls = footnoteText ? 'classics-fn has-footnote' : 'classics-fn';
+        return `<sup class="${cls}"${tooltip}>${match}</sup>`;
+      });
+      node.parentNode.replaceChild(span, node);
     });
   }
 };
