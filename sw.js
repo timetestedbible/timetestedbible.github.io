@@ -66,7 +66,7 @@ const DATA_ASSETS = [
   '/data/nt-interlinear.json',
   '/data/tipnr.json',
   '/data/bdb-ai.json',
-  '/data/bdb-formatted.json',
+  '/data/bdb-formatted.json.gz',
   '/data/bdb.json',
   '/docs/temple-chronology-verification.md'
 ];

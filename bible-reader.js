@@ -4226,9 +4226,13 @@ async function loadBDBFormatted() {
   
   bdbFormattedLoading = (async () => {
     try {
-      const response = await fetch('/data/bdb-formatted.json');
+      const response = await fetch('/data/bdb-formatted.json.gz');
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      bdbFormattedData = await response.json();
+      // Decompress gzipped data using DecompressionStream API
+      const ds = new DecompressionStream('gzip');
+      const decompressed = response.body.pipeThrough(ds);
+      const text = await new Response(decompressed).text();
+      bdbFormattedData = JSON.parse(text);
       console.log(`BDB formatted lexicon loaded: ${Object.keys(bdbFormattedData).length} entries`);
       return true;
     } catch (err) {
