@@ -669,6 +669,10 @@ let lastTappedStrongsGloss = '';
 
 function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
   if (event) event.stopPropagation();
+  
+  // Look up morphology context from morphhb data so the Strong's panel can show parsing info
+  _setMorphContextFromVerse(strongsNum, event);
+  
   if (isBibleReaderMobile()) {
     if (lastTappedStrongsKey === strongsNum) {
       lastTappedStrongsKey = null;
@@ -684,6 +688,51 @@ function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
     return;
   }
   showStrongsPanel(strongsNum, englishWord, gloss, event);
+}
+
+// Look up morphhb data for the verse containing the clicked word and set currentMorphContext.
+// This enables the Strong's panel to show Hebrew parsing even when opened from the main text.
+function _setMorphContextFromVerse(strongsNum, event) {
+  currentMorphContext = null;
+  if (!strongsNum || !event || !morphhbData) return;
+  
+  // Find the verse element containing the clicked word
+  const el = event.target;
+  const verseEl = el?.closest('.bible-explorer-verse');
+  if (!verseEl) return;
+  
+  // Get book/chapter/verse — multiverse view stores them as data attributes,
+  // chapter view uses bibleExplorerState + the element's id
+  let book, chapter, verse;
+  if (verseEl.dataset.book) {
+    book = verseEl.dataset.book;
+    chapter = parseInt(verseEl.dataset.chapter);
+    verse = parseInt(verseEl.dataset.verse);
+  } else {
+    book = bibleExplorerState.currentBook;
+    chapter = bibleExplorerState.currentChapter;
+    const verseId = verseEl.id; // "verse-7"
+    verse = verseId ? parseInt(verseId.replace('verse-', '')) : null;
+  }
+  if (!book || !chapter || !verse) return;
+  
+  // Only OT has morphhb data
+  if (typeof isNTBook === 'function' && isNTBook(book)) return;
+  
+  const words = getMorphhbVerse(book, chapter, verse);
+  if (!words || words.length === 0) return;
+  
+  // Find the word whose lemma resolves to this Strong's number
+  // Strip trailing variant letter for matching (e.g., H1254a → H1254)
+  const baseStrongs = strongsNum.replace(/[a-z]$/, '');
+  for (const [hebrewText, lemma, morphCode] of words) {
+    const lang = getMorphhbLang(morphCode);
+    const sn = typeof primaryStrongsFromLemma === 'function' ? primaryStrongsFromLemma(lemma, lang) : null;
+    if (sn === strongsNum || sn === baseStrongs || (sn && sn.replace(/[a-z]$/, '') === baseStrongs)) {
+      currentMorphContext = { hebrewText, morphCode, lemma };
+      return;
+    }
+  }
 }
 
 // Show word tooltip on hover (definitions + symbol meaning + name substitution info)
@@ -1535,10 +1584,9 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     return;
   }
   
-  // Collapse any other expanded interlinear
-  document.querySelectorAll('.interlinear-display.expanded').forEach(el => {
-    el.classList.remove('expanded');
-    setTimeout(() => el.remove(), 200);
+  // Collapse any other expanded interlinear (immediate removal — no animation delay)
+  document.querySelectorAll('.interlinear-display').forEach(el => {
+    el.remove();
   });
   document.querySelectorAll('.bible-explorer-verse.interlinear-expanded').forEach(el => {
     el.classList.remove('interlinear-expanded');
@@ -1587,17 +1635,30 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   const langLabel = isNT ? 'Greek' : 'Hebrew';
   const showVowels = getVowelPointingSetting();
 
-  // Tab bar
-  html += '<div class="il-tabs">';
-  html += `<button class="il-tab active" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">${langLabel}</button>`;
-  html += `<button class="il-tab" data-tab="translations" onclick="switchInterlinearTab(this, 'translations')">Translations</button>`;
-  if (!isNT) {
-    html += `<label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowels</label>`;
+  // Check for translation patches on this verse
+  const hasPatches = typeof TranslationPatches !== 'undefined' && TranslationPatches.hasPatchesForVerse && TranslationPatches.hasPatchesForVerse(ref);
+
+  // ── Translation patch note (above tabs) ──
+  if (hasPatches && TranslationPatches.getInterlinearNote) {
+    const patchNote = TranslationPatches.getInterlinearNote(ref);
+    if (patchNote) html += patchNote;
   }
+
+  // Default to translations tab when patches exist
+  const defaultTab = hasPatches ? 'translations' : 'hebrew';
+
+  // Tab bar (vowel toggle moved inside Hebrew pane)
+  html += '<div class="il-tabs">';
+  html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">${langLabel}</button>`;
+  html += `<button class="il-tab${defaultTab === 'translations' ? ' active' : ''}" data-tab="translations" onclick="switchInterlinearTab(this, 'translations')">Translations</button>`;
   html += '</div>';
 
-  // ── Hebrew/Greek tab pane (shown by default) ──
-  html += '<div class="il-tab-pane il-pane-hebrew active">';
+  // ── Hebrew/Greek tab pane ──
+  html += `<div class="il-tab-pane il-pane-hebrew${defaultTab === 'hebrew' ? ' active' : ''}">`;
+  // Vowel toggle inside the Hebrew pane (OT only)
+  if (!isNT) {
+    html += `<div class="il-vowel-toggle-container"><label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowels</label></div>`;
+  }
 
   // Word-for-word interlinear
   if (hasOTInterlinear) {
@@ -1724,8 +1785,8 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
 
   html += '</div>'; // close Hebrew/Greek tab pane
 
-  // ── Translations tab pane (hidden by default) ──
-  html += '<div class="il-tab-pane il-pane-translations">';
+  // ── Translations tab pane ──
+  html += `<div class="il-tab-pane il-pane-translations${defaultTab === 'translations' ? ' active' : ''}">`;
   
   const { visible: visibleTranslations, hidden: hiddenTranslations, notLoaded: notLoadedTranslations } = Bible.getOrderedTranslations();
   const primaryIds = visibleTranslations.map(t => t.id);
@@ -1739,9 +1800,14 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     if (!otherVerse) continue;
     const reg = Bible.getTranslation(tid);
     const isGreekTrans = tid === 'lxx';
+    // Highlight patched phrases in comparison translations
+    let compText = otherVerse.text;
+    if (typeof TranslationPatches !== 'undefined' && TranslationPatches.highlightComparison) {
+      compText = TranslationPatches.highlightComparison(ref, compText, tid);
+    }
     html += `<div class="interlinear-trans-row${isGreekTrans ? ' interlinear-trans-greek' : ''}">
       <span class="interlinear-trans-label">${reg ? reg.name : tid.toUpperCase()}</span>
-      <span class="interlinear-trans-text">${otherVerse.text}</span>
+      <span class="interlinear-trans-text">${compText}</span>
     </div>`;
   }
   if (moreIds.length > 0) {
@@ -1765,13 +1831,11 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   });
   
   // Dispatch to AppStore for URL sync only when in chapter view (not multiverse)
-  // Also select the verse (so URL shows ?verse=N&il=N) and push to history
+  // Only update interlinear state — do NOT update verse param, as that triggers
+  // a full chapter re-render which destroys the interlinear we just created.
   const isMultiverse = typeof verseElOrId === 'string' && verseElOrId.startsWith('mv-');
   if (!isMultiverse && typeof AppStore !== 'undefined') {
-    AppStore.dispatchBatch([
-      { type: 'UPDATE_VIEW_PARAMS', params: { verse: verse } },
-      { type: 'SET_INTERLINEAR_VERSE', verse: verse, replace: false }
-    ]);
+    AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: verse, replace: false });
   }
 }
 
@@ -1805,15 +1869,21 @@ async function expandMoreTranslations(btnEl, book, chapter, verse) {
   if (loadingEl) loadingEl.style.display = 'none';
 
   // Build rows for all translations
+  const moreReference = `${book} ${chapter}:${verse}`;
   let rowsHtml = '';
   for (const tid of ids) {
     const v = Bible.getVerse(tid, book, chapter, verse);
     const reg = Bible.getTranslation(tid);
     const label = reg ? reg.name : tid.toUpperCase();
     if (v) {
+      // Highlight patched phrases in comparison translations
+      let compText = v.text;
+      if (typeof TranslationPatches !== 'undefined' && TranslationPatches.highlightComparison) {
+        compText = TranslationPatches.highlightComparison(moreReference, compText, tid);
+      }
       rowsHtml += `<div class="interlinear-trans-row">
         <span class="interlinear-trans-label">${label}</span>
-        <span class="interlinear-trans-text">${v.text}</span>
+        <span class="interlinear-trans-text">${compText}</span>
       </div>`;
     } else {
       rowsHtml += `<div class="interlinear-trans-row interlinear-trans-unloaded">
@@ -2363,7 +2433,19 @@ function goToVerseFromSearch(ref) {
   openBibleExplorerTo(book, chapter, verse);
 }
 
-// Toggle verse search visibility
+// Populate the global search bar with a Strong's number and trigger a search.
+// Keeps the Strong's panel open so it acts as a quick "find all verses" link.
+function searchStrongsInGlobal(strongsNum) {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_GLOBAL_SEARCH', query: strongsNum });
+  }
+  // Expand the search input (for mobile)
+  if (typeof GlobalSearch !== 'undefined' && GlobalSearch.expandInput) {
+    GlobalSearch.expandInput();
+  }
+}
+
+// Toggle verse search visibility (legacy — now replaced by searchStrongsInGlobal)
 function toggleVerseSearch(strongsNum) {
   const container = document.getElementById('strongs-verse-results');
   const btn = document.getElementById('strongs-find-verses-btn');
@@ -3594,7 +3676,7 @@ function strongsGoForward() {
 }
 
 // Render Hebrew Parsing section for the Strong's sidebar
-// Uses currentMorphContext (set when clicking from interlinear, cleared on navigation)
+// Uses currentMorphContext (set when clicking from interlinear or main text, cleared on panel navigation)
 function renderMorphParsingHtml() {
   if (!currentMorphContext) return '';
   const { hebrewText, morphCode, lemma } = currentMorphContext;
@@ -4022,7 +4104,7 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
     html += `<div class="strongs-gloss">No definition available for ${strongsNum}</div>`;
   }
   
-  // Add Hebrew morphology parsing (only present when opened from interlinear word)
+  // Add Hebrew morphology parsing (from interlinear click or main text click)
   html += renderMorphParsingHtml();
   
   // Add consonantal root connections (Hebrew words sharing the same consonants)
@@ -4075,11 +4157,10 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
     html += renderGematriaSection(strongsNum, gematriaExp1);
   }
   
-  // Add verse search section
+  // Add verse search link — populates the global search bar with this Strong's number
   html += `
     <div class="strongs-verse-search">
-      <button id="strongs-find-verses-btn" class="strongs-find-verses-btn" onclick="toggleVerseSearch('${strongsNum}')">Find all verses →</button>
-      <div id="strongs-verse-results" class="strongs-verse-results" style="display: none;"></div>
+      <button id="strongs-find-verses-btn" class="strongs-find-verses-btn" onclick="searchStrongsInGlobal('${strongsNum}')">Find all verses →</button>
     </div>
   `;
   
@@ -4189,7 +4270,7 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     html += `<div class="strongs-gloss">${gloss || 'No definition available'}</div>`;
   }
   
-  // Add Hebrew morphology parsing (only present when opened from interlinear word)
+  // Add Hebrew morphology parsing (from interlinear click or main text click)
   html += renderMorphParsingHtml();
   
   // Add consonantal root connections (Hebrew words sharing the same consonants)
@@ -4242,11 +4323,10 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     html += renderGematriaSection(strongsNum, gematriaExp2);
   }
   
-  // Add verse search section
+  // Add verse search link — populates the global search bar with this Strong's number
   html += `
     <div class="strongs-verse-search">
-      <button id="strongs-find-verses-btn" class="strongs-find-verses-btn" onclick="toggleVerseSearch('${strongsNum}')">Find all verses →</button>
-      <div id="strongs-verse-results" class="strongs-verse-results" style="display: none;"></div>
+      <button id="strongs-find-verses-btn" class="strongs-find-verses-btn" onclick="searchStrongsInGlobal('${strongsNum}')">Find all verses →</button>
     </div>
   `;
   
@@ -4375,36 +4455,96 @@ function stopStrongsResize() {
 // Render verse text with inline Strong's tags: word{H####} / word{G####}
 // Parses tags and wraps words in clickable spans — works for ANY translation with Strong's tags.
 // Also applies symbol highlighting for words matching the symbol dictionary.
+// Handles translation patch markers: extracts indexed PUA markers first, then applies
+// CSS classes + data-patch-idx to elements that fall within patched character ranges.
 function renderInlineStrongs(taggedText, reference) {
   if (!taggedText) return '';
 
-  // Split text into segments: "word{H####}" and plain text
-  // Pattern matches: text{H1234} or text{G5678} or text{(H8804)} (morphology — skip)
+  // ── Extract indexed patch markers (if any) to get clean text + patch ranges ──
+  let text = taggedText;
+  let patchRanges = null;
+  let patchInfo = null;
+
+  if (typeof TranslationPatches !== 'undefined') {
+    const extracted = TranslationPatches.extractMarkers(taggedText);
+    if (extracted.patchRanges.length > 0) {
+      text = extracted.cleanText;
+      patchRanges = extracted.patchRanges;
+      patchInfo = TranslationPatches.getPatchRegionInfo(reference);
+    }
+  }
+
+  // Helper: get the patch index at a character position (-1 if not in any patch)
+  function getPatchIdx(charPos) {
+    if (!patchRanges) return -1;
+    for (const r of patchRanges) {
+      if (charPos >= r.start && charPos < r.end) return r.patchIdx;
+    }
+    return -1;
+  }
+
+  // Helper: render plain text with patch-awareness — splits at range boundaries
+  // and wraps patched segments in styled spans with data-patch-idx
+  function renderPlain(plainText, textPos) {
+    if (!plainText) return '';
+    if (!patchInfo) return _renderPlainSegment(plainText, reference);
+
+    // Check if the entire segment is uniformly in/out of the same patch
+    const startIdx = getPatchIdx(textPos);
+    const endIdx = getPatchIdx(textPos + plainText.length - 1);
+    if (startIdx === endIdx) {
+      const html = _renderPlainSegment(plainText, reference);
+      if (startIdx >= 0) {
+        return `<span class="${patchInfo.patchClass}"${patchInfo.verseAttr} data-patch-idx="${startIdx}">${html}</span>`;
+      }
+      return html;
+    }
+
+    // Mixed — split at patch range boundaries
+    let result = '';
+    let i = 0;
+    while (i < plainText.length) {
+      const curIdx = getPatchIdx(textPos + i);
+      let j = i + 1;
+      while (j < plainText.length && getPatchIdx(textPos + j) === curIdx) j++;
+      const segment = plainText.slice(i, j);
+      const html = _renderPlainSegment(segment, reference);
+      if (curIdx >= 0) {
+        result += `<span class="${patchInfo.patchClass}"${patchInfo.verseAttr} data-patch-idx="${curIdx}">${html}</span>`;
+      } else {
+        result += html;
+      }
+      i = j;
+    }
+    return result;
+  }
+
+  // ── Main parser: iterate through Strong's tags ──
   let result = '';
   let pos = 0;
-  const len = taggedText.length;
+  const len = text.length;
 
   while (pos < len) {
-    const braceIdx = taggedText.indexOf('{', pos);
+    const braceIdx = text.indexOf('{', pos);
     if (braceIdx === -1) {
       // No more tags — rest is plain text
-      result += _renderPlainSegment(taggedText.slice(pos), reference);
+      result += renderPlain(text.slice(pos), pos);
       break;
     }
 
-    const closeBrace = taggedText.indexOf('}', braceIdx);
+    const closeBrace = text.indexOf('}', braceIdx);
     if (closeBrace === -1) {
-      result += _renderPlainSegment(taggedText.slice(pos), reference);
+      result += renderPlain(text.slice(pos), pos);
       break;
     }
 
-    const tagContent = taggedText.slice(braceIdx + 1, closeBrace);
+    const tagContent = text.slice(braceIdx + 1, closeBrace);
 
     // Skip morphology codes like (H8804)
     if (tagContent.startsWith('(')) {
       // Include any text before this brace as plain, skip the tag
       if (braceIdx > pos) {
-        result += _renderPlainSegment(taggedText.slice(pos, braceIdx), reference);
+        result += renderPlain(text.slice(pos, braceIdx), pos);
       }
       pos = closeBrace + 1;
       continue;
@@ -4414,7 +4554,7 @@ function renderInlineStrongs(taggedText, reference) {
     const strongsMatch = tagContent.match(/^([HG]\d+)$/);
     if (!strongsMatch) {
       // Not a Strong's tag — include as plain text
-      result += _renderPlainSegment(taggedText.slice(pos, closeBrace + 1), reference);
+      result += renderPlain(text.slice(pos, closeBrace + 1), pos);
       pos = closeBrace + 1;
       continue;
     }
@@ -4423,7 +4563,7 @@ function renderInlineStrongs(taggedText, reference) {
 
     // Find the word before the tag by scanning back from braceIdx
     // The word is the text segment between the previous tag/start and this brace
-    const textBefore = taggedText.slice(pos, braceIdx);
+    const textBefore = text.slice(pos, braceIdx);
 
     // Split into "leading text" + "word" (the last whitespace-delimited token is the word)
     const lastSpaceIdx = textBefore.lastIndexOf(' ');
@@ -4455,9 +4595,9 @@ function renderInlineStrongs(taggedText, reference) {
       }
     }
 
-    // Render leading text as plain
+    // Render leading text as plain (with patch awareness)
     if (leadingText) {
-      result += _renderPlainSegment(leadingText, reference);
+      result += renderPlain(leadingText, pos);
     }
 
     // Render the Strong's-tagged word
@@ -4467,6 +4607,17 @@ function renderInlineStrongs(taggedText, reference) {
 
       const classes = ['strongs-word'];
       const dataAttrs = [`data-strongs="${strongsNum}"`];
+
+      // Add patch class and data attributes if word is inside a patched range
+      const wordPos = pos + (leadingText ? leadingText.length : 0);
+      const wordPatchIdx = patchInfo ? getPatchIdx(wordPos) : -1;
+      if (wordPatchIdx >= 0) {
+        classes.push(patchInfo.patchClass);
+        if (patchInfo.verseAttr) {
+          dataAttrs.push(patchInfo.verseAttr.trim());
+        }
+        dataAttrs.push(`data-patch-idx="${wordPatchIdx}"`);
+      }
 
       // Look up Strong's definition
       const strongsEntry = (typeof getStrongsEntry === 'function') ? getStrongsEntry(strongsNum) : null;
@@ -4496,8 +4647,8 @@ function renderInlineStrongs(taggedText, reference) {
     pos = closeBrace + 1;
 
     // Skip consecutive Strong's tags that apply to the same word position
-    while (pos < len && taggedText[pos] === '{') {
-      const nextClose = taggedText.indexOf('}', pos);
+    while (pos < len && text[pos] === '{') {
+      const nextClose = text.indexOf('}', pos);
       if (nextClose === -1) break;
       pos = nextClose + 1;
     }
@@ -4507,6 +4658,8 @@ function renderInlineStrongs(taggedText, reference) {
 }
 
 // Helper: render a plain text segment with symbol highlighting, verse annotations, and name substitution
+// Note: translation patches are applied at the verse level BEFORE entering renderInlineStrongs(),
+// so this function just handles symbol/annotation/name processing on the already-patched text.
 function _renderPlainSegment(text, reference) {
   if (!text) return '';
   let html;
@@ -4980,21 +5133,37 @@ function buildMultiverseHTML(citationStr, translationId) {
     const hasOrigLangData = (isNT ? ntInterlinearData : morphhbData);
     const hasOriginalLang = hasInterlinear(bookName);
     const origLangClass = hasOriginalLang ? ' has-hebrew' : '';
+    // Apply translation patches to the raw text before rendering
+    let patchedStrongsText = verse.strongsText;
+    let patchedPlainText = verse.text;
+    if (typeof TranslationPatches !== 'undefined' && TranslationPatches.applyPatches) {
+      if (patchedStrongsText) {
+        patchedStrongsText = TranslationPatches.applyPatches(reference, patchedStrongsText, trans);
+      }
+      if (patchedPlainText) {
+        patchedPlainText = TranslationPatches.applyPatches(reference, patchedPlainText, trans);
+      }
+    }
+
     let verseText;
-    if (verse.strongsText) {
+    if (patchedStrongsText) {
       // Translation has inline Strong's tags — render as clickable links
-      verseText = renderInlineStrongs(verse.strongsText, reference);
+      verseText = renderInlineStrongs(patchedStrongsText, reference);
     } else if (hasOriginalLang && hasOrigLangData && trans === 'kjv') {
       // Legacy fallback: KJV interlinear word matching (NT only — OT uses inline tags)
       const kjvVerse = Bible.getVerse('kjv', bookName, chapter, verse.verse);
       const kjvText = kjvVerse ? kjvVerse.text : verse.text;
       verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, kjvText);
     } else {
-      let plainHtml = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+      let plainHtml = applySymbolHighlighting(applyVerseAnnotations(reference, patchedPlainText));
       if (typeof applyNamePreferencesHTML === 'function') {
         plainHtml = applyNamePreferencesHTML(plainHtml);
       }
       verseText = plainHtml;
+    }
+    // Convert patch markers to styled spans (after all rendering pipelines)
+    if (typeof TranslationPatches !== 'undefined' && TranslationPatches.applyPatchMarkers) {
+      verseText = TranslationPatches.applyPatchMarkers(verseText, reference);
     }
     const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
     const bookRefHtml = bookRefs && bookRefs.length > 0
@@ -5418,6 +5587,11 @@ window.addEventListener('namePreferencesChanged', () => {
   if (bibleExplorerState.currentBook && bibleExplorerState.currentChapter) {
     displayBibleChapter(bibleExplorerState.currentBook, bibleExplorerState.currentChapter, bibleExplorerState.highlightedVerse);
   }
+});
+
+// Clear chapter cache when translation patches change (accept/reject)
+window.addEventListener('patchesChanged', () => {
+  chapterHTMLCache.clear();
 });
 
 // Navigate to a Bible location and push to history
@@ -5934,20 +6108,38 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
   </div>`;
   for (const verse of verses) {
     const reference = `${bookName} ${chapter}:${verse.verse}`;
+
+    // Apply translation patches to the raw text before rendering
+    let patchedStrongsText = verse.strongsText;
+    let patchedPlainText = verse.text;
+    if (typeof TranslationPatches !== 'undefined' && TranslationPatches.applyPatches) {
+      const trans = currentTranslation || 'kjv';
+      if (patchedStrongsText) {
+        patchedStrongsText = TranslationPatches.applyPatches(reference, patchedStrongsText, trans);
+      }
+      if (patchedPlainText) {
+        patchedPlainText = TranslationPatches.applyPatches(reference, patchedPlainText, trans);
+      }
+    }
+
     let verseText;
-    if (verse.strongsText) {
+    if (patchedStrongsText) {
       // Translation has inline Strong's tags — render them as clickable links
-      verseText = renderInlineStrongs(verse.strongsText, reference);
+      verseText = renderInlineStrongs(patchedStrongsText, reference);
     } else if (hasOriginalLang && hasInterlinearData) {
       // Fallback: KJV-style interlinear word matching (legacy path)
       verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, verse.text);
     } else {
-      let plainHtml = applySymbolHighlighting(applyVerseAnnotations(reference, verse.text));
+      let plainHtml = applySymbolHighlighting(applyVerseAnnotations(reference, patchedPlainText));
       // Apply name preferences (regex path for non-Strong's translations)
       if (typeof applyNamePreferencesHTML === 'function') {
         plainHtml = applyNamePreferencesHTML(plainHtml);
       }
       verseText = plainHtml;
+    }
+    // Convert patch markers to styled spans (after all rendering pipelines)
+    if (typeof TranslationPatches !== 'undefined' && TranslationPatches.applyPatchMarkers) {
+      verseText = TranslationPatches.applyPatchMarkers(verseText, reference);
     }
     const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
     const bookRefHtml = bookRefs && bookRefs.length > 0

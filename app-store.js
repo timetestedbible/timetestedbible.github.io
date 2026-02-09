@@ -979,6 +979,10 @@ const AppStore = {
         // Force recomputation of derived state (e.g., after data loads)
         return true;
       
+      case 'PATCHES_CHANGED':
+        // Translation patch state changed — force re-render of current view
+        return true;
+      
       case 'REPOPULATE_DAY_DATA':
         // Repopulate day data (feasts, events) without regenerating calendar
         // Used after loadBibleEvents() completes

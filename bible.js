@@ -1281,6 +1281,40 @@ const Bible = {
   },
 
   /**
+   * Search for verses containing a Strong's number (e.g. H1254, G3056).
+   * Searches the raw tagged text for {H1254} or {(H1254)} patterns.
+   * @param {string} translationId
+   * @param {string} strongsNum - e.g. "H1254" or "G3056"
+   * @returns {Array<{ ref: string, text: string, matches: string[] }>}
+   */
+  searchStrongs(translationId, strongsNum) {
+    const blob = this._blobs[translationId];
+    const index = this._indexes[translationId];
+    if (!blob || !index) return [];
+
+    const reg = this._registryMap[translationId];
+    const hasStrongsData = reg && reg.hasStrongs;
+    if (!hasStrongsData) return [];
+
+    // Match {H1254} or {(H1254)} in raw tagged text
+    const escapedNum = strongsNum.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = new RegExp(`\\{\\(?${escapedNum}\\)?\\}`);
+    const results = [];
+
+    for (const ref of Object.keys(index)) {
+      const offsets = index[ref];
+      const rawText = blob.slice(offsets[0], offsets[1]);
+      pattern.lastIndex = 0;
+      if (pattern.test(rawText)) {
+        const plainText = this._stripStrongsTags(rawText);
+        results.push({ ref, text: plainText, matches: [strongsNum] });
+      }
+    }
+
+    return results;
+  },
+
+  /**
    * Search all searchable (English) translations.
    * @param {string|RegExp} pattern
    * @returns {Object<string, Array<{ ref: string, text: string, matches: string[] }>>}

@@ -171,6 +171,8 @@ The Leviticus connection is symbolically rich: throughout Scripture, Jerusalem a
 
 If Daniel meant ordinary "weeks," why use a unique plural form — one that happens to produce the exact same consonants as the word "seventy"?
 
+**Independent witness:** Smith's Literal Translation (SLT) already reads this as **"Seventy seventy"** — not "seventy weeks." This is not a new invention; at least one established English translation saw the same thing in the Hebrew.
+
 ### What the Word Actually Means
 
 Strong's defines H7620 not as "week" but as: **"literally, sevened"** — a passive participle from H7650 שָׁבַע (*shava*, "to seven oneself / to swear an oath"). The word literally means "a thing that has been sevened" — a completed seven-cycle.

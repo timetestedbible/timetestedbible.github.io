@@ -197,14 +197,14 @@ const GlobalSearch = {
     
     query = query.trim();
     
-    // Check for Strong's number (H1234, G5678) - navigate directly, don't use global search state
+    // Strong's numbers (H1234, G5678) — open the Strong's panel AND search for all verses
     const strongsMatch = query.match(/^([HGhg])0*(\d+)$/);
     if (strongsMatch) {
-      const prefix = strongsMatch[1].toUpperCase();
-      const num = strongsMatch[2];
-      const strongsNum = prefix + num;
-      this.navigateToStrongs(strongsNum);
-      return;
+      const strongsNum = strongsMatch[1].toUpperCase() + strongsMatch[2];
+      // Open Strong's detail panel (don't return — let the search continue below)
+      if (typeof showStrongsPanel === 'function') {
+        showStrongsPanel(strongsNum, '', '', null);
+      }
     }
     
     // Check for multi-verse reference (e.g. "Jer 52:12-13; 2 Kings 25:8-9") - open multiverse view
@@ -739,7 +739,15 @@ const GlobalSearch = {
     let allMatches = this.allMatchesCache?.query === query ? this.allMatchesCache.matches : null;
 
     if (!allMatches) {
-      const apiResults = Bible.searchText(translation, wordPattern);
+      // Detect Strong's number queries (H1234, G5678) — search tagged text for the Strong's tag
+      const strongsMatch = query.match(/^([HGhg])0*(\d+)$/);
+      let apiResults;
+      if (strongsMatch && typeof Bible.searchStrongs === 'function') {
+        const strongsNum = strongsMatch[1].toUpperCase() + strongsMatch[2];
+        apiResults = Bible.searchStrongs(translation, strongsNum);
+      } else {
+        apiResults = Bible.searchText(translation, wordPattern);
+      }
       allMatches = apiResults.map(r => {
         const m = r.ref.match(/^(.+?)\s+(\d+):(\d+)$/);
         return {
@@ -1133,11 +1141,15 @@ const GlobalSearch = {
   goToResult(book, chapter, verse) {
     // Navigate to verse (keep search results open - user can close with X)
     if (typeof AppStore !== 'undefined') {
+      // Preserve current translation so navigateWhenReady doesn't fall back to bible home
+      const state = AppStore.getState();
+      const translation = state.content?.params?.translation || 'kjv';
       AppStore.dispatch({
         type: 'SET_VIEW',
         view: 'reader',
         params: {
           contentType: 'bible',
+          translation: translation,
           book: book,
           chapter: chapter,
           verse: verse

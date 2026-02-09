@@ -574,6 +574,7 @@
   <script src="/classics.js"></script>
   <script src="/morphology-decoder.js"></script>
   <script src="/morphhb-gloss.js"></script>
+  <script src="/translation-patches.js"></script>
   <script src="/bible-reader.js"></script>
   <script src="/views/bible-view.js"></script>
   <script src="/views/symbols-view.js"></script>
@@ -758,6 +759,11 @@
       
       // Initialize content manager (subscribes to AppStore for view changes)
       ContentManager.init();
+      
+      // Initialize translation patches (async, non-blocking)
+      if (typeof TranslationPatches !== 'undefined') {
+        TranslationPatches.init();
+      }
       
       // Load supplementary data in parallel (don't block initial render)
       // Note: loadBibleEvents is called AFTER timeline pre-resolution (needs resolved events)

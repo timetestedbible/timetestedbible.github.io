@@ -12677,3 +12677,258 @@ details.concept-strongs-section[open] .concept-expand-icon {
   text-align: center;
   font-style: italic;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   TRANSLATION PATCHES — Three visual states
+   ═══════════════════════════════════════════════════════════════ */
+
+/* State 1: Proposed — dotted orange underline on original text */
+/* ═══════════════════════════════════════════════════════════════
+   Translation Patch System — Phrase-level highlighting
+   
+   Two states for patched regions:
+   - Pending (orange): replacement shown, user hasn't reviewed
+   - Accepted (blue): user accepted the patch
+   
+   Pending regions override inner Strong's tooltips via pointer-events.
+   Accepted regions let Strong's tooltips work normally.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Pending patch region: solid orange text only (no underline) ── */
+.patch-region-pending {
+  color: #d4870a;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.patch-region-pending:hover {
+  color: #f0a020;
+}
+
+/* Pending: override inner Strong's/symbol interactivity — patch tooltip takes priority */
+/* For nested case (plain text path: patch span wraps strongs/symbol spans) */
+.patch-region-pending .strongs-word,
+.patch-region-pending .symbol-word {
+  pointer-events: none;
+  color: inherit;
+}
+.patch-region-pending .symbol-word {
+  background: none;
+  text-decoration: none;
+}
+/* For same-element case (Strong's path: strongs-word also has patch class) */
+.strongs-word.patch-region-pending {
+  color: #d4870a;
+  cursor: pointer;
+}
+.strongs-word.patch-region-pending:hover {
+  color: #f0a020;
+}
+.strongs-word.patch-region-accepted {
+  color: #8ab0d0;
+}
+
+/* ── Accepted patch region: subtle muted blue — settled, not distracting ── */
+.patch-region-accepted {
+  color: #8ab0d0;
+  transition: color 0.2s;
+}
+
+/* ── Rejected patch region: very subtle hint that a patch is available ── */
+.patch-region-rejected {
+  color: #a0a8b8;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.patch-region-rejected:hover {
+  color: #c0a870;
+}
+.strongs-word.patch-region-rejected {
+  color: #a0a8b8;
+  cursor: pointer;
+}
+.strongs-word.patch-region-rejected:hover {
+  color: #c0a870;
+}
+/* Don't override children — Strong's/symbol interactivity is active */
+
+/* ── Tooltip container ── */
+.patch-tooltip-container {
+  animation: patchTooltipFadeIn 0.15s ease-out;
+}
+@keyframes patchTooltipFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tooltip panel ── */
+.patch-tooltip {
+  background: #1a2030;
+  border: 1px solid rgba(100, 140, 200, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  max-width: 380px;
+  min-width: 260px;
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: #c0c8d8;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.patch-tooltip-header {
+  font-weight: 600;
+  color: #e0e8f0;
+  margin-bottom: 4px;
+  font-size: 0.95em;
+}
+
+.patch-tooltip-group {
+  color: #d4870a;
+  font-size: 0.85em;
+  margin-bottom: 8px;
+}
+
+.patch-tooltip-original {
+  color: #8a9ab0;
+  font-style: italic;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.patch-tooltip-body {
+  margin-bottom: 10px;
+}
+.patch-tooltip-body p {
+  margin: 0 0 8px 0;
+}
+.patch-tooltip-body p:last-child {
+  margin-bottom: 0;
+}
+
+.patch-tooltip-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(100, 140, 200, 0.15);
+}
+
+.patch-tooltip-btn {
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(100, 140, 200, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #c0c8d8;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.patch-tooltip-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(100, 140, 200, 0.5);
+}
+
+.patch-tooltip-study {
+  color: #4a90d9;
+  border-color: rgba(74, 144, 217, 0.4);
+}
+.patch-tooltip-study:hover {
+  background: rgba(74, 144, 217, 0.15);
+}
+
+.patch-tooltip-accept {
+  color: #4a90d9;
+  border-color: rgba(74, 144, 217, 0.4);
+  font-weight: 600;
+}
+.patch-tooltip-accept:hover {
+  background: rgba(74, 144, 217, 0.2);
+}
+
+.patch-tooltip-reject {
+  color: #d4870a;
+  border-color: rgba(212, 135, 10, 0.3);
+}
+.patch-tooltip-reject:hover {
+  background: rgba(212, 135, 10, 0.15);
+}
+
+/* ── Comparison translation highlighting ── */
+.patch-comparison-highlight {
+  color: #d4870a;
+}
+
+/* ── Interlinear patch note (above tabs) ── */
+.patch-interlinear-note {
+  margin: 4px 0 8px 0;
+  padding: 10px 14px;
+  background: rgba(212, 135, 10, 0.08);
+  border: 1px solid rgba(212, 135, 10, 0.25);
+  border-radius: 6px;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+.patch-note-header {
+  font-weight: 600;
+  color: #d4870a;
+  margin-bottom: 4px;
+  font-size: 0.95em;
+}
+.patch-note-header-accepted {
+  color: #4a90d9;
+}
+.patch-note-header-available {
+  color: #8a9ab0;
+}
+.patch-note-group {
+  color: #b0b8c8;
+  font-size: 0.9em;
+  margin-bottom: 6px;
+}
+.patch-note-comparison {
+  margin: 6px 0;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+.patch-note-original {
+  color: #8a9ab0;
+}
+.patch-note-original del {
+  text-decoration: line-through;
+  text-decoration-color: rgba(212, 135, 10, 0.5);
+}
+.patch-note-replacement {
+  color: #d4870a;
+  margin-top: 2px;
+}
+.patch-note-replacement em {
+  font-style: normal;
+  color: #d4870a;
+}
+.patch-note-body {
+  color: #b0b8c8;
+  margin-bottom: 8px;
+}
+.patch-note-body p {
+  margin: 0 0 6px 0;
+}
+.patch-note-body p:last-child {
+  margin-bottom: 0;
+}
+.patch-note-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(212, 135, 10, 0.15);
+}
+
+/* ── Vowel toggle container inside Hebrew pane ── */
+.il-vowel-toggle-container {
+  text-align: right;
+  margin-bottom: 6px;
+}

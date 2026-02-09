@@ -46,7 +46,7 @@ const args = process.argv.slice(2);
 const isTest = args.includes('--test');
 const concurrencyArg = args.find(a => a.startsWith('--concurrency='));
 const CONCURRENCY = concurrencyArg ? parseInt(concurrencyArg.split('=')[1]) : 10;
-const MODEL = 'claude-3-5-haiku-20241022'; // Haiku is sufficient for formatting
+const MODEL = 'claude-haiku-4-5-20251001'; // Fast, cheap, near-Sonnet quality
 
 const TEST_ENTRIES = ['H1254', 'H7843', 'H430', 'H4899', 'H7620', 'H369', 'H7965', 'H8451'];
 

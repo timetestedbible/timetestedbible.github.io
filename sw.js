@@ -42,6 +42,8 @@ const CORE_ASSETS = [
   '/global-search.js',
   '/morphology-decoder.js',
   '/morphhb-gloss.js',
+  '/translation-patches.js',
+  '/data/translation-patches.json',
   '/lib/marked.min.js'
 ];
 
@@ -73,9 +75,9 @@ const CONTENT_ASSETS = [
   '/kjv.json',
   '/asv.json',
   '/lxx.json',
-  '/kjv.txt',
-  '/asv.txt',
-  '/lxx.txt',
+  '/bibles/kjv_strongs.txt',
+  '/bibles/asv_strongs.txt',
+  '/bibles/lxx.txt',
   '/media/time-tested-tradition.pdf'
 ];
 
