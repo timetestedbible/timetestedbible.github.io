@@ -73,7 +73,7 @@ const SettingsView = {
         
         <!-- Name Preferences -->
         <section class="settings-section">
-          <h3>✡️ Name Preferences</h3>
+          <h3>🕊️ Name Preferences</h3>
           <p class="settings-description">Choose how divine names are displayed throughout the app.</p>
           
           <div class="settings-name-prefs">

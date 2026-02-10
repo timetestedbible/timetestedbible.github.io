@@ -50,8 +50,9 @@ const BlogView = {
             <img src="/assets/img/TimeTestedBookFront.jpg" alt="The Renewed Biblical Calendar Book Cover">
           </div>
           <div class="blog-book-details">
-            <p><strong><em>A Time-Tested Tradition: The Renewed Biblical Calendar</em></strong> is now in its final form. The complete book is available to read online or download as a free PDF. Physical copies will be available for purchase soon.</p>
+            <p><strong><em>A Time-Tested Tradition: The Renewed Biblical Calendar</em></strong> is now in its final form. Read the complete book online for free, download the PDF, or order a physical copy.</p>
             <p class="blog-nav-link">
+              <a href="https://store.bookbaby.com/book/time-tested-tradition" class="blog-inline-btn" target="_blank" rel="noopener">Buy Physical Copy →</a>
               <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">Read Online →</button>
               <a href="/media/time-tested-tradition.pdf" class="blog-inline-btn" download>Download PDF →</a>
             </p>

@@ -163,7 +163,7 @@ const SymbolsView = {
       'sand': '⏳',
       'highway': '🛤️',
       'way': '🚶',
-      'the way': '✡️',
+      'the way': '🛤️',
       'fornication': '💔',
       'idolatry': '🗿',
       'virgin': '👰',

@@ -1535,6 +1535,10 @@ const ReaderView = {
         <header class="ttt-index-header">
           <div class="ttt-hero">
             <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="ttt-hero-cover">
+            <a class="ttt-hero-download" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener">
+              <span class="icon">📕</span>
+              <span>Buy Physical Copy</span>
+            </a>
             <a class="ttt-hero-download" href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">
               <span class="icon">📥</span>
               <span>Download PDF</span>
