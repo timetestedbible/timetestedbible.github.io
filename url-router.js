@@ -269,7 +269,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'feasts', 'events', 'blog'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog'],
   
   /**
    * Parse URL into state

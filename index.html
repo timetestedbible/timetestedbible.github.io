@@ -135,6 +135,7 @@
   <link rel="stylesheet" href="/components/dateline-map.css">
   <link rel="stylesheet" href="/assets/css/bible-styles.css">
   <link rel="stylesheet" href="/assets/css/tutorial.css">
+  <link rel="stylesheet" href="/assets/css/methodology.css">
   <link rel="stylesheet" href="/assets/css/settings.css">
   <link rel="stylesheet" href="/assets/css/symbols.css">
   <link rel="stylesheet" href="/assets/css/reader.css">
@@ -423,7 +424,7 @@
               <li><strong>Ancient Traditional</strong> — Crescent Moon, Evening start, Saturday Sabbath</li>
               <li><strong>119 Ministries</strong> — Dark Moon, Evening start, Saturday Sabbath</li>
               <li><strong>Creator's Calendar</strong> — Full Moon, Morning start, Virgo year rule</li>
-              <li><strong>Traditional Lunar</strong> — Crescent Moon, Evening start, Lunar Sabbath</li>
+              <li><strong>Traditional Lunar Sabbath</strong> — Crescent Moon, Evening start, Lunar Sabbath</li>
             </ul>
 
             <p>This application requires JavaScript to run. Please enable JavaScript in your browser to use the interactive calendar, timeline, and Bible reader.</p>
@@ -509,6 +510,11 @@
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'settings'}])">
           <span class="menu-icon">⚙️</span>
           <span class="menu-label">Settings</span>
+        </button>
+        
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'methodology'}])">
+          <span class="menu-icon">📜</span>
+          <span class="menu-label">How We Study</span>
         </button>
         
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'help'}])">
@@ -682,6 +688,7 @@
   <script src="/views/book-view.js"></script>
   <script src="/views/tutorial-view.js"></script>
   <script src="/views/help-view.js"></script>
+  <script src="/views/methodology-view.js"></script>
   <script src="/views/priestly-view.js"></script>
   <script src="/views/sabbath-tester-view.js"></script>
   <script src="/views/blog-view.js"></script>
@@ -786,7 +793,7 @@
           sabbathMode: 'lunar'
         },
         traditionalLunar: {
-          name: 'Traditional Lunar',
+          name: 'Traditional Lunar Sabbath',
           icon: '🌒',
           moonPhase: 'crescent',
           dayStartTime: 'evening',
@@ -960,6 +967,7 @@
       if (typeof BookView !== 'undefined') ContentManager.registerView('book', BookView);
       if (typeof TutorialView !== 'undefined') ContentManager.registerView('tutorial', TutorialView);
       if (typeof HelpView !== 'undefined') ContentManager.registerView('help', HelpView);
+      if (typeof MethodologyView !== 'undefined') ContentManager.registerView('methodology', MethodologyView);
       if (typeof PriestlyView !== 'undefined') ContentManager.registerView('priestly', PriestlyView);
       if (typeof SabbathTesterView !== 'undefined') ContentManager.registerView('sabbath-tester', SabbathTesterView);
       if (typeof BlogView !== 'undefined') ContentManager.registerView('blog', BlogView);
@@ -1151,6 +1159,28 @@
         goatcounter.count({
           path: '/event/install-app-accepted',
           title: 'Install App Accepted',
+          event: true
+        });
+      }
+    }
+    
+    // Track physical book purchase click
+    function trackBuyBook() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/event/buy-physical-book',
+          title: 'Buy Physical Book Click',
+          event: true
+        });
+      }
+    }
+    
+    // Track desktop app download click
+    function trackDesktopDownload() {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/download/desktop-app',
+          title: 'Desktop App Download',
           event: true
         });
       }

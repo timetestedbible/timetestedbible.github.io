@@ -16,7 +16,7 @@ const TutorialView = {
         <section class="hero-section" style="margin-top: 30px;">
           <div class="hero-card">
             <h1 class="hero-headline">"Test everything. Hold fast what is good."</h1>
-            <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
+            <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
             <p class="hero-description">
               Deep Bible study tools with enhanced Strong's/BDB lexicon, interlinear Hebrew and Greek, 
               and flexible calendar profiles that let you test any theory against 2,000+ years of history.
@@ -41,7 +41,30 @@ const TutorialView = {
           </div>
         </section>
 
-        <!-- 2. FEATURES GRID -->
+        <!-- 2. WHY DIG DEEPER -->
+        <section class="why-deeper-section">
+          <h2 class="section-title">Why a Study Tool?</h2>
+          <p class="section-intro">Scripture is intentionally written in parables, dark sayings, and symbolic language — not plainly. The deeper meaning is there for those willing to search it out.</p>
+          <div class="why-deeper-verses">
+            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Psalms',chapter:78}})">
+              "I will open my mouth in a parable; I will utter dark sayings of old."
+              <cite>— Psalm 78:2</cite>
+            </blockquote>
+            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Matthew',chapter:13}})">
+              "All these things spake Jesus unto the multitude in parables; and without a parable spake he not unto them."
+              <cite>— Matthew 13:34</cite>
+            </blockquote>
+            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
+              "It is the glory of God to conceal a matter, but the glory of kings is to search it out."
+              <cite>— Proverbs 25:2</cite>
+            </blockquote>
+          </div>
+          <p class="why-deeper-cta">
+            <a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'methodology'})">Learn Our Methodology →</a>
+          </p>
+        </section>
+
+        <!-- 3. FEATURES GRID -->
         <section class="features-section">
           <h2 class="section-title">Powerful Study Tools</h2>
           <div class="features-grid">
@@ -90,7 +113,7 @@ const TutorialView = {
                 Physical copies now available.
               </p>
               <div class="book-actions">
-                <a href="https://store.bookbaby.com/book/time-tested-tradition" class="book-btn primary" target="_blank" rel="noopener">
+                <a href="https://store.bookbaby.com/book/time-tested-tradition" class="book-btn primary" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
                   <span>📕</span> Buy Physical Copy
                 </a>
                 <button class="book-btn secondary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
@@ -112,66 +135,57 @@ const TutorialView = {
           </p>
           
           <div class="principles-grid">
-            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible'}})">
-              <div class="principle-header">
-                <span class="principle-icon">🔍</span>
-                <h3>Symbol Studies</h3>
-              </div>
-              <p>Scripture uses consistent symbolic language — trees, mountains, water, fire — that mean the same thing everywhere they appear. Identify each symbol's meaning from clear passages, then test it across all of Scripture.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',book:'Proverbs',chapter:25}})">
-                "It is the glory of God to conceal a matter, but the glory of kings is to search out a matter." — Proverbs 25:2
-              </div>
-              <span class="learn-link">Explore Symbols →</span>
-            </div>
-            
-            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible'}})">
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'methodology'})">
               <div class="principle-header">
                 <span class="principle-icon">📜</span>
                 <h3>Word Studies</h3>
               </div>
-              <p>English translations obscure the original text. Trace every word back to its Strong's/BDB entry, examine every occurrence in Hebrew or Greek, and see where translators made different choices for the same word.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',book:'Proverbs',chapter:30}})">
-                "Every word of God is pure; He is a shield to those who put their trust in Him." — Proverbs 30:5
+              <p>Trace every word back to its Strong's/BDB entry, examine every occurrence in Hebrew or Greek, and see where translators made different choices for the same word.</p>
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:30}})">
+                "Every word of God is pure." — Proverbs 30:5
               </div>
-              <span class="learn-link">Open Bible Reader →</span>
+              <span class="learn-link">Learn More →</span>
             </div>
             
-            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible'}})">
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'methodology'})">
+              <div class="principle-header">
+                <span class="principle-icon">🔍</span>
+                <h3>Symbol Studies</h3>
+              </div>
+              <p>Scripture uses consistent symbolic language. Identify each symbol's meaning from clear passages, then test it across all of Scripture using the substitution method.</p>
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
+                "It is the glory of God to conceal a matter." — Proverbs 25:2
+              </div>
+              <span class="learn-link">Learn More →</span>
+            </div>
+            
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'methodology'})">
               <div class="principle-header">
                 <span class="principle-icon">🔗</span>
                 <h3>Verse Studies</h3>
               </div>
-              <p>Compare every verse across 10 translations side by side, layer annotations, and examine interlinear Hebrew/Greek to see exactly what the original text says — no commentary needed.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',book:'Isaiah',chapter:28}})">
-                "Precept upon precept, precept upon precept; line upon line, line upon line." — Isaiah 28:10
+              <p>Compare across 10 translations, examine interlinear Hebrew/Greek, and layer annotations to follow threads across books.</p>
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Isaiah',chapter:28}})">
+                "Precept upon precept; line upon line." — Isaiah 28:10
               </div>
-              <span class="learn-link">Study Scripture →</span>
+              <span class="learn-link">Learn More →</span>
             </div>
             
-            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'philo'}})">
+            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'methodology'})">
               <div class="principle-header">
                 <span class="principle-icon">🏛️</span>
                 <h3>Primary Sources</h3>
               </div>
-              <p>Read Philo of Alexandria and Josephus in full — the most important extra-biblical witnesses to Second Temple period practices. Inline citation linking lets you jump between references and the source text.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',book:'Acts',chapter:17}})">
-                "They searched the Scriptures daily to see whether those things were so." — Acts 17:11
+              <p>Full text of Philo and Josephus — the most important extra-biblical witnesses. Inline citations let you verify any claim against the source.</p>
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Acts',chapter:17}})">
+                "They searched the Scriptures daily." — Acts 17:11
               </div>
-              <span class="learn-link">Browse Primary Sources →</span>
-            </div>
-            
-            <div class="principle-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'sabbath-tester'})">
-              <div class="principle-header">
-                <span class="principle-icon">⚖️</span>
-                <h3>Test the Calendar</h3>
-              </div>
-              <p>Don't assume any calendar tradition is correct. Configure any combination of month start, day start, Sabbath pattern, and year start — then test it against astronomically dated biblical events.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',book:'1Thessalonians',chapter:5}})">
-                "Test everything; hold fast what is good." — 1 Thessalonians 5:21
-              </div>
-              <span class="learn-link">Run Sabbath Tester →</span>
+              <span class="learn-link">Learn More →</span>
             </div>
           </div>
+          <p style="text-align:center; margin-top: 20px;">
+            <a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'methodology'})" style="color:var(--accent-primary); font-weight:600; text-decoration:none;">Learn Our Full Methodology →</a>
+          </p>
         </section>
 
         <!-- 6. QUICK START -->
@@ -254,7 +268,7 @@ const TutorialView = {
             
             <div class="compare-card">
               <div class="compare-icon-main">🌒</div>
-              <h4>Traditional Lunar</h4>
+              <h4>Traditional Lunar Sabbath</h4>
               <ul>
                 <li>Crescent Moon start</li>
                 <li>Evening day start</li>
@@ -298,7 +312,7 @@ const TutorialView = {
 
         <!-- 8. FOOTER -->
         <footer class="tutorial-footer">
-          <div class="footer-verse" style="cursor:pointer" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',book:'Proverbs',chapter:25}})">
+          <div class="footer-verse" style="cursor:pointer" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
             <p>"It is the glory of God to conceal a matter, but the glory of kings is to search out a matter."</p>
             <cite>— Proverbs 25:2</cite>
           </div>
@@ -307,7 +321,7 @@ const TutorialView = {
             <span>•</span>
             <a href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">Download Book PDF</a>
             <span>•</span>
-            <a href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener">Buy Physical Copy</a>
+            <a href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Buy Physical Copy</a>
           </div>
         </footer>
       </div>
@@ -515,7 +529,7 @@ const TutorialView = {
               <span class="install-con">Manual update for new releases</span>
             </div>
             <div class="install-option-actions">
-              <a href="${dlHref}" class="install-option-btn desktop-btn">
+              <a href="${dlHref}" class="install-option-btn desktop-btn" onclick="if(typeof trackDesktopDownload==='function')trackDesktopDownload()">
                 ${osIcon} ${primaryLabel}
               </a>
               ${primaryNote ? `<span class="install-option-note">${primaryNote}</span>` : ''}
@@ -545,10 +559,12 @@ const TutorialView = {
    * Handle PWA install button click
    */
   installApp() {
+    if (typeof trackInstallClick === 'function') trackInstallClick();
     if (TutorialView._deferredInstallPrompt) {
       TutorialView._deferredInstallPrompt.prompt();
       TutorialView._deferredInstallPrompt.userChoice.then(choice => {
         if (choice.outcome === 'accepted') {
+          if (typeof trackInstallAccepted === 'function') trackInstallAccepted();
           const btn = document.getElementById('install-btn');
           if (btn) btn.style.display = 'none';
           const hint = document.getElementById('install-hint');

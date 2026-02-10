@@ -256,6 +256,63 @@
   text-align: center;
 }
 
+/* Why Dig Deeper Section */
+.why-deeper-section {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.why-deeper-verses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.why-verse {
+  background: var(--accent-gold-subtle);
+  border-left: 3px solid var(--accent-gold);
+  padding: 16px 20px;
+  margin: 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  line-height: 1.6;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+}
+
+.why-verse:hover {
+  border-color: var(--accent-primary);
+  background: var(--accent-gold-subtle);
+}
+
+.why-verse cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--accent-primary);
+  font-size: 0.9em;
+}
+
+.why-deeper-cta {
+  margin-top: 16px;
+}
+
+.why-deeper-cta a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.why-deeper-cta a:hover {
+  text-decoration: underline;
+}
+
 /* Features Section */
 .features-section {
   margin-bottom: 50px;
@@ -274,6 +331,8 @@
   padding: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card:hover {
@@ -310,6 +369,7 @@
   color: var(--accent-primary);
   font-size: 0.9em;
   font-weight: 500;
+  margin-top: auto;
 }
 
 .feature-card:hover .feature-link {
@@ -1106,6 +1166,58 @@
   .principles-grid,
   .compare-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Compact calendar option cards on mobile: icon left, settings right */
+  .compare-card {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 4px 12px;
+    padding: 16px;
+    text-align: left;
+  }
+
+  /* Badge inline next to title on mobile instead of floating above card */
+  .compare-card .compare-badge {
+    position: static;
+    transform: none;
+    grid-column: 2;
+    justify-self: start;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.65em;
+    margin: 0;
+  }
+
+  .compare-card .compare-icon-main {
+    grid-column: 1;
+    font-size: 2em;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .compare-card h4 {
+    grid-column: 2;
+    margin: 0;
+    align-self: center;
+  }
+
+  .compare-card ul {
+    grid-column: 1 / -1;
+    margin: 4px 0 8px;
+    columns: 2;
+    column-gap: 8px;
+  }
+
+  .compare-card ul li {
+    padding: 3px 0;
+    font-size: 0.85em;
+    break-inside: avoid;
+  }
+
+  .compare-card .compare-btn {
+    grid-column: 1 / -1;
+    margin-top: 0;
   }
 
   /* Compact feature cards on mobile: icon + title on one line, description below */

@@ -345,7 +345,7 @@ const HelpView = {
             <ul class="help-list">
               <li><strong>Time-Tested:</strong> Full moon months, morning day start, lunar sabbaths</li>
               <li><strong>Ancient Traditional:</strong> Crescent moon, evening start, Saturday sabbath</li>
-              <li><strong>Traditional Lunar:</strong> Crescent moon, evening start, lunar sabbaths</li>
+              <li><strong>Traditional Lunar Sabbath:</strong> Crescent moon, evening start, lunar sabbaths</li>
               <li><strong>Custom:</strong> Configure your own settings</li>
             </ul>
           </div>

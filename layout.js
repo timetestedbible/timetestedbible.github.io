@@ -42,6 +42,13 @@ const Layout = {
     this.elements.pwaNavButtons = document.getElementById('pwa-nav-buttons');
     this.elements.contentArea = document.getElementById('content-area');
     
+    // Cache PWA/Electron status once — doesn't change during a session
+    this._isPWA = this.isPWA();
+    this._isElectron = !!(window.electronAPI && window.electronAPI.isElectron);
+    if (this._isElectron) {
+      this.elements.body.classList.add('electron-mode');
+    }
+    
     // Setup event handlers
     this.setupResizeHandler();
     this.setupMenuHandlers();
@@ -91,12 +98,11 @@ const Layout = {
    */
   updateLayout() {
     const isDesktop = this.isDesktop();
-    const isPWA = this.isPWA();
     
-    // Update body classes
+    // Update body classes (use cached _isPWA — doesn't change mid-session)
     this.elements.body.classList.toggle('desktop-layout', isDesktop);
     this.elements.body.classList.toggle('mobile-layout', !isDesktop);
-    this.elements.body.classList.toggle('pwa-mode', isPWA);
+    this.elements.body.classList.toggle('pwa-mode', this._isPWA);
     
     // Hamburger is always the menu trigger now (hidden on desktop via CSS, 
     // but becomes visible when viewport narrows)

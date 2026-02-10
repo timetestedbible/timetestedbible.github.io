@@ -52,7 +52,7 @@ const BlogView = {
           <div class="blog-book-details">
             <p><strong><em>A Time-Tested Tradition: The Renewed Biblical Calendar</em></strong> is now in its final form. Read the complete book online for free, download the PDF, or order a physical copy.</p>
             <p class="blog-nav-link">
-              <a href="https://store.bookbaby.com/book/time-tested-tradition" class="blog-inline-btn" target="_blank" rel="noopener">Buy Physical Copy →</a>
+              <a href="https://store.bookbaby.com/book/time-tested-tradition" class="blog-inline-btn" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Buy Physical Copy →</a>
               <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">Read Online →</button>
               <a href="/media/time-tested-tradition.pdf" class="blog-inline-btn" download>Download PDF →</a>
             </p>
@@ -165,7 +165,7 @@ const BlogView = {
         <p>The day detail panel includes a <strong>world clock</strong> that compares the same moment across different calendar profiles and locations, showing lunar dates, feast icons, priestly courses, and local times.</p>
 
         <h3>Multiple Calendar Profiles</h3>
-        <p>Compare different calendar theories side by side — <strong>Time-Tested</strong> (full moon, morning day), <strong>Ancient Traditional</strong> (crescent, evening), <strong>Traditional Lunar</strong>, <strong>Modern Hebrew Calendar</strong>, and more. Create custom profiles with your own settings.</p>
+        <p>Compare different calendar theories side by side — <strong>Time-Tested</strong> (full moon, morning day), <strong>Ancient Traditional</strong> (crescent, evening), <strong>Traditional Lunar Sabbath</strong>, <strong>Modern Hebrew Calendar</strong>, and more. Create custom profiles with your own settings.</p>
 
         <h3>Works Offline — Install the App</h3>
         <p>Unlike most Bible and calendar websites, this entire app <strong>runs on your device</strong>. All 10 Bible translations, the Hebrew lexicon, the historical timeline, calendar calculations, and Josephus and Philo are stored locally after first load. There is no server, no database, and no internet connection required after installation.</p>
