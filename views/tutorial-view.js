@@ -355,7 +355,8 @@ const TutorialView = {
    */
   renderInstallSection() {
     const isPWA = window.matchMedia('(display-mode: standalone)').matches ||
-                  window.navigator.standalone === true;
+                  window.navigator.standalone === true ||
+                  (window.electronAPI && window.electronAPI.isElectron);
 
     // Already installed — show a brief confirmation instead of the full pitch
     if (isPWA) {

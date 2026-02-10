@@ -44,15 +44,9 @@ const CORE_ASSETS = [
   '/morphhb-gloss.js',
   '/translation-patches.js',
   '/data/translation-patches.json',
-  '/lib/marked.min.js'
-];
-
-// CDN assets (external libraries - cached separately via fetch)
-const CDN_ASSETS = [
-  'https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js',
-  'https://cdn.jsdelivr.net/npm/tz-lookup@6.1.25/tz.min.js',
-  'https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js',
-  'https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css'
+  '/lib/marked.min.js',
+  '/lib/astronomy.browser.min.js',
+  '/lib/tz.min.js'
 ];
 
 // Data files (JSON)
@@ -259,24 +253,6 @@ self.addEventListener('install', (event) => {
               });
           })
         );
-      })
-      .then(() => {
-        // Cache CDN assets separately (may fail due to CORS)
-        return caches.open(CACHE_NAME).then((cache) => {
-          return Promise.all(
-            CDN_ASSETS.map((url) => {
-              return fetch(url, { mode: 'cors' })
-                .then((response) => {
-                  if (response.ok) {
-                    return cache.put(url, response);
-                  }
-                })
-                .catch((err) => {
-                  console.warn('Failed to cache CDN asset:', url, err);
-                });
-            })
-          );
-        });
       })
       .then(() => self.skipWaiting())
   );

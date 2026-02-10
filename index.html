@@ -184,22 +184,16 @@
         background: var(--surface-raised, #0d2840) !important;
       }
       
-      /* Sticky header: sits below the top-nav (which is also sticky).
-         When nav auto-hides on scroll-down, header slides up to top: 0. */
+      /* Sticky header: sits at top of viewport.
+         The top-nav auto-hides on scroll-down, revealing this header at top: 0. */
       body.view-bible .bible-explorer-header,
       body.view-reader:not(.reader-landing) .bible-explorer-header {
         position: sticky !important;
-        top: var(--top-nav-height) !important;
+        top: 0 !important;
         z-index: 100 !important;
         margin: 0 !important;
         padding: 6px 10px !important;
         background: var(--gradient-nav, #0d2840) !important;
-        transition: top 0.25s ease !important;
-      }
-      /* When nav is hidden, header slides up to the very top */
-      body.nav-hidden.view-bible .bible-explorer-header,
-      body.nav-hidden.view-reader:not(.reader-landing) .bible-explorer-header {
-        top: 0 !important;
       }
       
       /* Text area: NO contained scroll — body handles scrolling */
@@ -614,9 +608,9 @@
   <!-- App version (single source of truth for all cache busting) -->
   <script src="/version.js"></script>
   
-  <!-- External Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tz-lookup@6.1.25/tz.min.js"></script>
+  <!-- External Libraries (bundled locally) -->
+  <script src="/lib/astronomy.browser.min.js"></script>
+  <script src="/lib/tz.min.js"></script>
   <script src="/lib/marked.min.js"></script>
   
   <!-- Timezone lookup utility -->
@@ -1026,8 +1020,8 @@
       
       console.log('[App] Initialized successfully');
       
-      // Register service worker for PWA
-      if ('serviceWorker' in navigator) {
+      // Register service worker for PWA (skip in Electron — all files are local)
+      if ('serviceWorker' in navigator && !(window.electronAPI && window.electronAPI.isElectron)) {
         navigator.serviceWorker.register('/sw.js')
           .then((registration) => {
             console.log('[PWA] Service worker registered:', registration.scope);
@@ -1037,8 +1031,10 @@
           });
       }
       
-      // PWA Install handling
-      setupInstallPrompt();
+      // PWA Install handling (skip in Electron — already installed as desktop app)
+      if (!(window.electronAPI && window.electronAPI.isElectron)) {
+        setupInstallPrompt();
+      }
       
       // Hide fixed-position tooltips when scrolling (they don't move with content).
       // On mobile (touch devices), skip — user taps to open and scrolls to read.
@@ -1059,9 +1055,10 @@
     function setupInstallPrompt() {
       const installBtn = document.getElementById('install-app-btn');
       
-      // Check if already installed as PWA
+      // Check if already installed as PWA or running in Electron
       if (window.matchMedia('(display-mode: standalone)').matches || 
-          window.navigator.standalone === true) {
+          window.navigator.standalone === true ||
+          (window.electronAPI && window.electronAPI.isElectron)) {
         // Already installed, hide install button
         return;
       }
@@ -1161,17 +1158,26 @@
     }
   </script>
   
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D289E4L6SV"></script>
+  <!-- Analytics (disabled in Electron desktop app) -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D289E4L6SV');
+    if (!(window.electronAPI && window.electronAPI.isElectron)) {
+      // Google Analytics
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D289E4L6SV';
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D289E4L6SV');
+
+      // GoatCounter Analytics
+      var gcScript = document.createElement('script');
+      gcScript.async = true;
+      gcScript.dataset.goatcounter = 'https://lunarsabbath.goatcounter.com/count';
+      gcScript.src = '//gc.zgo.at/count.js';
+      document.head.appendChild(gcScript);
+    }
   </script>
-  
-  <!-- GoatCounter Analytics -->
-  <script data-goatcounter="https://lunarsabbath.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

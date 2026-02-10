@@ -78,11 +78,12 @@ const Layout = {
   },
   
   /**
-   * Check if running as installed PWA
+   * Check if running as installed PWA or Electron desktop app
    */
   isPWA() {
     return window.matchMedia('(display-mode: standalone)').matches ||
-           window.navigator.standalone === true;
+           window.navigator.standalone === true ||
+           (window.electronAPI && window.electronAPI.isElectron);
   },
   
   /**
