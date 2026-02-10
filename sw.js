@@ -1,6 +1,6 @@
-// Lunar Sabbath Calendar Service Worker — v13
+// Time Tested Bible Service Worker
 importScripts('/version.js');
-const CACHE_NAME = 'lunar-sabbath-v' + APP_VERSION;
+const CACHE_NAME = 'timetested-bible-v' + APP_VERSION;
 
 // Core app files
 const CORE_ASSETS = [

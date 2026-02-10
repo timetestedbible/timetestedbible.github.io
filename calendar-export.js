@@ -230,7 +230,7 @@ const CalendarExport = {
     const lines = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//LunarSabbath.net//Lunar Sabbath Calendar//EN',
+      'PRODID:-//TimeTested.Bible//Time Tested Bible Calendar//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       `X-WR-CALNAME:${this.escapeICS(calendarName)}`
@@ -238,7 +238,7 @@ const CalendarExport = {
     
     for (const event of events) {
       const dateStr = this.formatICSDate(event.date);
-      const uid = `${dateStr}-${event.title.replace(/\s+/g, '-').substring(0, 50)}@lunarsabbath.net`;
+      const uid = `${dateStr}-${event.title.replace(/\s+/g, '-').substring(0, 50)}@timetested.bible`;
       
       lines.push('BEGIN:VEVENT');
       lines.push(`UID:${uid}`);

@@ -11,7 +11,11 @@
     "build:win": "electron-builder --win",
     "build:linux": "electron-builder --linux"
   },
-  "author": "Time Tested",
+  "author": {
+    "name": "Time Tested",
+    "email": "app@timetested.bible"
+  },
+  "homepage": "https://timetested.bible",
   "license": "MIT",
   "devDependencies": {
     "electron": "^33.0.0",
@@ -52,7 +56,8 @@
     "mac": {
       "category": "public.app-category.reference",
       "icon": "../../icons/icon-512.png",
-      "target": ["dmg", "zip"]
+      "target": ["dmg", "zip"],
+      "identity": null
     },
     "win": {
       "icon": "../../icons/icon-512.png",
