@@ -2428,8 +2428,11 @@ function goToVerseFromSearch(ref) {
   const chapter = parseInt(match[2]);
   const verse = parseInt(match[3]);
   
-  // Close the Strong's panel
-  closeStrongsPanel();
+  // On narrow screens, close the Strong's panel (no room for side-by-side).
+  // On wide screens (including iPads), keep it open alongside the verse.
+  if (window.innerWidth <= 768) {
+    closeStrongsPanel();
+  }
   
   // Navigate to the verse with highlighting
   openBibleExplorerTo(book, chapter, verse);
@@ -4565,16 +4568,24 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
       <div class="strongs-sidebar-content"></div>
     `;
     
-    // Restore user's saved width if any
-    try {
-      const saved = localStorage.getItem('strongs-sidebar-width');
-      if (saved) sidebar.style.width = saved;
-    } catch (e) {}
+    // Restore user's saved width on desktop only (mobile uses full-width CSS)
+    if (window.innerWidth > 768) {
+      try {
+        const saved = localStorage.getItem('strongs-sidebar-width');
+        if (saved) sidebar.style.width = saved;
+      } catch (e) {}
+    } else {
+      sidebar.style.width = '';  // Clear any inline width so CSS 100% applies
+    }
     
     // Animate open (body class raises stacking context so overlay is above word/hebrew tooltips)
     requestAnimationFrame(() => {
       sidebar.classList.add('open');
       document.body.classList.add('strongs-sidebar-open');
+      // On mobile, scroll to top so user sees strongs content from the start
+      if (window.innerWidth <= 768) {
+        window.scrollTo(0, 0);
+      }
     });
   } else {
     // Sidebar already open, add to history

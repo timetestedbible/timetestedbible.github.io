@@ -5861,7 +5861,7 @@ body.torah-info-open {
 }
 
 .sabbath-scoreboard-table .score-good {
-  color: #a3e635;
+  color: var(--color-success);
   font-weight: 600;
 }
 
@@ -7015,7 +7015,7 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .event-detail-sources .scripture-link:hover {
-  color: #a8e0f3;
+  color: var(--accent-primary-hover);
   text-decoration: underline;
 }
 
@@ -9863,7 +9863,7 @@ body.biblical-timeline-open .top-nav-inner {
   font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
   font-size: 1.3em;
   line-height: 1.8;
-  color: #e8d5a0;
+  color: var(--accent-gold);
   word-spacing: 4px;
 }
 
@@ -10652,25 +10652,40 @@ body.biblical-timeline-open .top-nav-inner {
     height: auto !important;
   }
 
-  /* On mobile, Strong's is full-screen overlay: raise it above tooltips (10200) */
-  body.strongs-sidebar-open .main-layout {
-    z-index: 10300;
-    position: relative;
+  /* On mobile, when Strong's is open hide the bible text and chapter selectors
+     so the strongs panel IS the full body content */
+  body.strongs-sidebar-open .bible-content-wrapper {
+    display: none !important;
+  }
+  body.strongs-sidebar-open .bible-explorer-header {
+    display: none !important;
   }
 
+  /* Strong's becomes a normal-flow full-width block; body handles scrolling */
   .strongs-sidebar.open {
-    position: fixed;
-    top: var(--top-nav-height, 56px);
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    max-width: 100%;
-    max-height: none;
-    height: calc(100vh - var(--top-nav-height, 56px));
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: calc(100vh - var(--top-nav-height, 56px));
+    overflow: visible !important;
     border-left: none;
-    border-top: 1px solid var(--accent-gold-muted);
-    z-index: 10300;
+    border-top: none;
+    z-index: auto;
+    transition: none !important; /* No width animation on mobile — appears instantly */
+  }
+
+  /* Sticky header so close button stays reachable while scrolling */
+  .strongs-sidebar.open .strongs-sidebar-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  /* Let the content flow; body scrolls it */
+  .strongs-sidebar.open .strongs-sidebar-content {
+    overflow: visible !important;
+    flex: none;
   }
 
   .strongs-sidebar-resize {
@@ -10848,7 +10863,7 @@ body.biblical-timeline-open .top-nav-inner {
   line-height: 1.5;
 }
 .person-info-meaning strong {
-  color: #e8b828;
+  color: var(--accent-gold);
 }
 .person-info-significance {
   font-size: 0.9em;
@@ -10857,7 +10872,7 @@ body.biblical-timeline-open .top-nav-inner {
   line-height: 1.5;
 }
 .person-info-significance strong {
-  color: #a8d8a8;
+  color: var(--color-success);
 }
 
 /* Links in person info */
@@ -11579,7 +11594,7 @@ body.biblical-timeline-open .top-nav-inner {
 
 .concept-strongs-lemma {
   font-size: 1.2em;
-  color: #a0c4ff;
+  color: var(--accent-primary);
 }
 
 .concept-strongs-def {
@@ -11940,7 +11955,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .strongs-gematria-clickable:hover {
-  background: rgba(138, 43, 226, 0.1);
+  background: var(--color-purple-muted);
   border-radius: 4px;
   margin: -4px -4px;
   padding: 8px 4px;
@@ -12024,7 +12039,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 .strongs-gematria-word::after {
   content: " · ";
-  color: rgba(138, 43, 226, 0.4);
+  color: var(--color-purple-muted);
   text-decoration: none;
 }
 
@@ -12044,7 +12059,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
   border: 1px solid var(--accent-gold-strong);
   border-radius: 8px;
   padding: 10px 14px;
-  color: #e8e0d0;
+  color: var(--text-primary);
   font-size: 0.85em;
   line-height: 1.5;
   pointer-events: auto;
@@ -12059,14 +12074,14 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .morph-tip-def {
-  color: #c8d8e8;
+  color: var(--text-secondary);
   font-size: 0.9em;
   margin-bottom: 4px;
   line-height: 1.4;
 }
 
 .morph-tip-kjv {
-  color: #a0b0c0;
+  color: var(--text-secondary);
   font-size: 0.85em;
   margin-bottom: 4px;
 }
@@ -12101,7 +12116,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
   margin-top: 16px;
   padding: 12px;
   background: var(--surface-sunken);
-  border: 1px solid rgba(100, 140, 200, 0.25);
+  border: 1px solid var(--accent-primary-strong);
   border-radius: 8px;
 }
 
@@ -12124,14 +12139,14 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .morph-label {
-  color: #8aa8c8;
+  color: var(--accent-primary);
   font-size: 0.82em;
   flex-shrink: 0;
   margin-right: 12px;
 }
 
 .morph-value {
-  color: #e0d8c8;
+  color: var(--text-primary);
   text-align: right;
 }
 
@@ -12146,7 +12161,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
   align-items: baseline;
   gap: 8px;
   padding: 5px 0;
-  border-top: 1px solid rgba(100, 140, 200, 0.1);
+  border-top: 1px solid var(--accent-primary-subtle);
 }
 
 .morph-parsing-part:first-of-type {
@@ -12175,7 +12190,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 .morph-role-prefix .morph-part-role {
   color: var(--accent-primary);
-  background: rgba(100, 180, 220, 0.15);
+  background: var(--accent-primary-muted);
 }
 
 .morph-role-root .morph-part-role {
@@ -12184,12 +12199,12 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .morph-role-suffix .morph-part-role {
-  color: #c084fc;
-  background: rgba(168, 85, 247, 0.15);
+  color: var(--color-purple-light);
+  background: var(--color-purple-muted);
 }
 
 .morph-part-detail {
-  color: #b8c8d8;
+  color: var(--text-secondary);
   font-size: 0.88em;
   line-height: 1.4;
 }
@@ -12198,13 +12213,13 @@ details.concept-strongs-section[open] .concept-expand-icon {
   width: 100%;
   padding: 3px 0 2px 30px;
   font-size: 0.82em;
-  color: #8a9ab0;
+  color: var(--text-tertiary);
   font-style: italic;
   line-height: 1.4;
 }
 
 .morph-tip-help {
-  color: #8a9ab0;
+  color: var(--text-tertiary);
   font-style: italic;
   font-size: 0.9em;
 }
@@ -12234,7 +12249,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 .root-connections-consonants {
   font-size: 0.9em;
-  color: #c8d0e0;
+  color: var(--text-secondary);
   margin-bottom: 6px;
 }
 
@@ -12247,13 +12262,13 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 .root-connections-note {
   font-size: 0.8em;
-  color: #6a7a8a;
+  color: var(--text-tertiary);
   font-style: italic;
 }
 
 .root-connections-subtitle {
   font-size: 0.82em;
-  color: #8aa8c8;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
@@ -12273,11 +12288,11 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .root-connection-entry:hover {
-  background: rgba(100, 140, 200, 0.1);
+  background: var(--accent-primary-subtle);
 }
 
 .root-connection-current {
-  background: rgba(100, 160, 220, 0.1);
+  background: var(--accent-primary-subtle);
   border-left: 2px solid var(--accent-primary);
 }
 
@@ -12309,7 +12324,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
   font-size: 1.15em;
   direction: rtl;
   font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
-  color: #e0d8c8;
+  color: var(--text-primary);
   flex-shrink: 0;
   min-width: 40px;
   text-align: center;
@@ -12317,7 +12332,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 .root-connection-gloss {
   font-size: 0.82em;
-  color: #8aa8c8;
+  color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -12353,9 +12368,9 @@ details.concept-strongs-section[open] .concept-expand-icon {
 .root-connections-footer {
   margin-top: 10px;
   padding-top: 8px;
-  border-top: 1px solid rgba(100, 140, 200, 0.1);
+  border-top: 1px solid var(--accent-primary-subtle);
   font-size: 0.75em;
-  color: #6a7a8a;
+  color: var(--text-tertiary);
   line-height: 1.4;
   font-style: italic;
 }
@@ -12410,16 +12425,16 @@ details.concept-strongs-section[open] .concept-expand-icon {
 /* Original BDB formatted content */
 .bdb-original-content {
   font-size: 0.88em;
-  color: #c8d0e0;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .bdb-original-intro {
   margin-bottom: 10px;
   padding: 6px 8px;
-  background: rgba(100, 140, 200, 0.06);
+  background: var(--accent-primary-subtle);
   border-radius: 4px;
-  color: #b0c0d0;
+  color: var(--text-secondary);
   font-style: italic;
 }
 
@@ -12451,7 +12466,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 .bdb-content-raw {
   font-size: 0.88em;
-  color: #c8d0e0;
+  color: var(--text-secondary);
   line-height: 1.5;
   word-wrap: break-word;
 }
@@ -12459,7 +12474,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 .bdb-sub-header {
   font-size: 0.78em;
   font-weight: 600;
-  color: #8aa8c8;
+  color: var(--accent-primary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 10px 0 6px;
@@ -12468,7 +12483,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 .bdb-sense {
   margin-bottom: 12px;
   padding-left: 10px;
-  border-left: 2px solid rgba(100, 140, 200, 0.25);
+  border-left: 2px solid var(--accent-primary-strong);
 }
 
 .bdb-sense-head {
@@ -12484,13 +12499,13 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .bdb-sense-meaning {
-  color: #e0d8c8;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.92em;
 }
 
 .bdb-sense-detail {
-  color: #b0b8c8;
+  color: var(--text-secondary);
   font-size: 0.88em;
   margin-top: 3px;
   line-height: 1.5;
@@ -12552,13 +12567,13 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .verse-tooltip-text {
-  color: #c5cdd8;
+  color: var(--text-primary);
   font-size: 0.88em;
   line-height: 1.5;
 }
 
 .verse-tooltip-unavailable {
-  color: #6a7a8a;
+  color: var(--text-tertiary);
   font-style: italic;
 }
 
@@ -12578,7 +12593,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .bdb-trans-word {
-  color: #a0b0c0;
+  color: var(--text-secondary);
   font-style: italic;
   font-size: 0.92em;
 }
@@ -12588,7 +12603,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
   font-size: 0.85em;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: rgba(100, 140, 200, 0.3);
+  text-decoration-color: var(--accent-primary-strong);
 }
 
 .bdb-strongs-link:hover {
@@ -12612,19 +12627,19 @@ details.concept-strongs-section[open] .concept-expand-icon {
 .bdb-callout-translation {
   background: var(--accent-primary-subtle);
   border-left: 3px solid var(--accent-primary);
-  color: #b0c8d8;
+  color: var(--text-secondary);
 }
 
 .bdb-callout-insight {
-  background: rgba(168, 85, 247, 0.06);
+  background: var(--color-purple-subtle);
   border-left: 3px solid var(--color-purple);
-  color: #c8b0e0;
+  color: var(--text-secondary);
 }
 
 .bdb-callout-root {
-  background: rgba(100, 200, 150, 0.06);
-  border-left: 3px solid #5cb885;
-  color: #b0d8c0;
+  background: var(--color-success-muted);
+  border-left: 3px solid var(--color-success);
+  color: var(--text-secondary);
 }
 
 .bdb-callout-label {
@@ -12640,8 +12655,8 @@ details.concept-strongs-section[open] .concept-expand-icon {
 .bdb-evidence-btn {
   display: block;
   margin-top: 10px;
-  background: rgba(100, 140, 200, 0.1);
-  border: 1px solid rgba(100, 140, 200, 0.25);
+  background: var(--accent-primary-subtle);
+  border: 1px solid var(--accent-primary-strong);
   color: var(--accent-primary);
   padding: 5px 12px;
   border-radius: 6px;
@@ -12653,7 +12668,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .bdb-evidence-btn:hover {
-  background: rgba(100, 140, 200, 0.25);
+  background: var(--accent-primary-muted);
 }
 
 .bdb-evidence {
@@ -12673,7 +12688,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .bdb-evidence-text {
-  color: #b0b8c8;
+  color: var(--text-secondary);
   font-size: 0.88em;
   line-height: 1.6;
 }
@@ -12698,14 +12713,14 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 
 .bdb-kv-note {
-  color: #8a9ab0;
+  color: var(--text-secondary);
   font-size: 0.9em;
 }
 
 /* Active stem highlight */
 .bdb-sense-active {
   border-left-color: var(--accent-gold);
-  background: rgba(212, 160, 23, 0.05);
+  background: var(--accent-gold-subtle);
 }
 
 /* "See all stems" toggle */
@@ -12761,7 +12776,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 .bdb-raw-btn:hover {
   color: var(--accent-primary);
-  border-color: rgba(100, 140, 200, 0.3);
+  border-color: var(--accent-primary-strong);
 }
 
 .bdb-raw-content {
@@ -12771,7 +12786,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
   background: var(--surface-sunken);
   border-radius: 6px;
   font-size: 0.82em;
-  color: #8a9ab0;
+  color: var(--text-secondary);
   line-height: 1.5;
   max-height: 400px;
   overflow-y: auto;
@@ -12809,12 +12824,13 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 /* ── Pending patch region: solid orange text only (no underline) ── */
 .patch-region-pending {
-  color: #d4870a;
+  color: var(--color-warning);
   cursor: pointer;
   transition: color 0.2s;
 }
 .patch-region-pending:hover {
-  color: #f0a020;
+  color: var(--color-warning);
+  filter: brightness(1.2);
 }
 
 /* Pending: override inner Strong's/symbol interactivity — patch tooltip takes priority */
@@ -12830,37 +12846,38 @@ details.concept-strongs-section[open] .concept-expand-icon {
 }
 /* For same-element case (Strong's path: strongs-word also has patch class) */
 .strongs-word.patch-region-pending {
-  color: #d4870a;
+  color: var(--color-warning);
   cursor: pointer;
 }
 .strongs-word.patch-region-pending:hover {
-  color: #f0a020;
+  color: var(--color-warning);
+  filter: brightness(1.2);
 }
 .strongs-word.patch-region-accepted {
-  color: #8ab0d0;
+  color: var(--accent-primary);
 }
 
 /* ── Accepted patch region: subtle muted blue — settled, not distracting ── */
 .patch-region-accepted {
-  color: #8ab0d0;
+  color: var(--accent-primary);
   transition: color 0.2s;
 }
 
 /* ── Rejected patch region: very subtle hint that a patch is available ── */
 .patch-region-rejected {
-  color: #a0a8b8;
+  color: var(--text-tertiary);
   cursor: pointer;
   transition: color 0.2s;
 }
 .patch-region-rejected:hover {
-  color: #c0a870;
+  color: var(--accent-gold);
 }
 .strongs-word.patch-region-rejected {
-  color: #a0a8b8;
+  color: var(--text-tertiary);
   cursor: pointer;
 }
 .strongs-word.patch-region-rejected:hover {
-  color: #c0a870;
+  color: var(--accent-gold);
 }
 /* Don't override children — Strong's/symbol interactivity is active */
 
@@ -12875,33 +12892,33 @@ details.concept-strongs-section[open] .concept-expand-icon {
 
 /* ── Tooltip panel ── */
 .patch-tooltip {
-  background: #1a2030;
-  border: 1px solid rgba(100, 140, 200, 0.3);
+  background: var(--surface-overlay);
+  border: 1px solid var(--accent-primary-strong);
   border-radius: 8px;
   padding: 12px 16px;
   max-width: 380px;
   min-width: 260px;
   font-size: 0.85em;
   line-height: 1.5;
-  color: #c0c8d8;
+  color: var(--text-secondary);
   box-shadow: 0 8px 24px var(--shadow-lg);
 }
 
 .patch-tooltip-header {
   font-weight: 600;
-  color: #e0e8f0;
+  color: var(--text-primary);
   margin-bottom: 4px;
   font-size: 0.95em;
 }
 
 .patch-tooltip-group {
-  color: #d4870a;
+  color: var(--color-warning);
   font-size: 0.85em;
   margin-bottom: 8px;
 }
 
 .patch-tooltip-original {
-  color: #8a9ab0;
+  color: var(--text-tertiary);
   font-style: italic;
   font-size: 0.9em;
   margin-bottom: 8px;
@@ -12929,72 +12946,72 @@ details.concept-strongs-section[open] .concept-expand-icon {
 .patch-tooltip-btn {
   padding: 5px 12px;
   border-radius: 4px;
-  border: 1px solid rgba(100, 140, 200, 0.3);
+  border: 1px solid var(--accent-primary-strong);
   background: var(--surface-hover);
-  color: #c0c8d8;
+  color: var(--text-secondary);
   font-size: 0.85em;
   cursor: pointer;
   transition: all 0.15s;
 }
 .patch-tooltip-btn:hover {
   background: var(--border-subtle);
-  border-color: rgba(100, 140, 200, 0.5);
+  border-color: var(--accent-primary);
 }
 
 .patch-tooltip-study {
-  color: #4a90d9;
-  border-color: rgba(74, 144, 217, 0.4);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary-strong);
 }
 .patch-tooltip-study:hover {
-  background: rgba(74, 144, 217, 0.15);
+  background: var(--accent-primary-subtle);
 }
 
 .patch-tooltip-accept {
-  color: #4a90d9;
-  border-color: rgba(74, 144, 217, 0.4);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary-strong);
   font-weight: 600;
 }
 .patch-tooltip-accept:hover {
-  background: rgba(74, 144, 217, 0.2);
+  background: var(--accent-primary-muted);
 }
 
 .patch-tooltip-reject {
-  color: #d4870a;
-  border-color: rgba(212, 135, 10, 0.3);
+  color: var(--color-warning);
+  border-color: var(--color-warning-muted);
 }
 .patch-tooltip-reject:hover {
-  background: rgba(212, 135, 10, 0.15);
+  background: var(--color-warning-muted);
 }
 
 /* ── Comparison translation highlighting ── */
 .patch-comparison-highlight {
-  color: #d4870a;
+  color: var(--color-warning);
 }
 
 /* ── Interlinear patch note (above tabs) ── */
 .patch-interlinear-note {
   margin: 4px 0 8px 0;
   padding: 10px 14px;
-  background: rgba(212, 135, 10, 0.08);
-  border: 1px solid rgba(212, 135, 10, 0.25);
+  background: var(--color-warning-muted);
+  border: 1px solid var(--color-warning-muted);
   border-radius: 6px;
   font-size: 0.85em;
   line-height: 1.5;
 }
 .patch-note-header {
   font-weight: 600;
-  color: #d4870a;
+  color: var(--color-warning);
   margin-bottom: 4px;
   font-size: 0.95em;
 }
 .patch-note-header-accepted {
-  color: #4a90d9;
+  color: var(--accent-primary);
 }
 .patch-note-header-available {
-  color: #8a9ab0;
+  color: var(--text-tertiary);
 }
 .patch-note-group {
-  color: #b0b8c8;
+  color: var(--text-secondary);
   font-size: 0.9em;
   margin-bottom: 6px;
 }
@@ -13007,22 +13024,22 @@ details.concept-strongs-section[open] .concept-expand-icon {
   line-height: 1.6;
 }
 .patch-note-original {
-  color: #8a9ab0;
+  color: var(--text-tertiary);
 }
 .patch-note-original del {
   text-decoration: line-through;
-  text-decoration-color: rgba(212, 135, 10, 0.5);
+  text-decoration-color: var(--color-warning-muted);
 }
 .patch-note-replacement {
-  color: #d4870a;
+  color: var(--color-warning);
   margin-top: 2px;
 }
 .patch-note-replacement em {
   font-style: normal;
-  color: #d4870a;
+  color: var(--color-warning);
 }
 .patch-note-body {
-  color: #b0b8c8;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 .patch-note-body p {
@@ -13037,7 +13054,7 @@ details.concept-strongs-section[open] .concept-expand-icon {
   flex-wrap: wrap;
   margin-top: 8px;
   padding-top: 8px;
-  border-top: 1px solid rgba(212, 135, 10, 0.15);
+  border-top: 1px solid var(--color-warning-muted);
 }
 
 /* ── Vowel toggle container inside Hebrew pane ── */

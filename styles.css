@@ -2824,15 +2824,7 @@ body.view-reader:not(.reader-landing) .content-area {
     padding: 12px 10px;
   }
   
-  .strongs-sidebar.open {
-    position: fixed;
-    top: var(--top-nav-height);
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 400px;
-    z-index: 10300; /* Above word/hebrew/book-ref tooltips (10200) */
-  }
+  /* Mobile Strong's: handled fully in bible-styles.css mobile block */
   
   .bible-chapter-title {
     font-size: 0.95em;
