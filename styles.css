@@ -2531,12 +2531,15 @@ body.view-reader.reader-landing .content-area {
 }
 
 /* Ensure Bible/Reader fills available space (except landing pages) */
-.view-bible .main-layout {
-  height: 100% !important;
+/* On desktop, flex:1 works fine. On mobile, bible-styles.css & inline <style>
+   set explicit viewport-unit heights on .app-container → .main-layout chain. */
+.view-bible .app-container,
+body.view-reader:not(.reader-landing) .app-container {
   flex: 1 1 0% !important;
   min-height: 0 !important;
 }
 
+.view-bible .main-layout,
 body.view-reader:not(.reader-landing) .main-layout {
   height: 100% !important;
   flex: 1 1 0% !important;
@@ -2775,14 +2778,23 @@ body.view-reader:not(.reader-landing) {
   display: none !important;
 }
 
-/* Mobile adjustments for Bible - use absolute positioning for guaranteed height */
+/* Mobile adjustments for Bible - explicit viewport heights for iOS */
 @media (max-width: 768px) {
-  /* Content area uses viewport height (except landing pages which scroll) */
+  /* App container: explicit viewport height so percentage children resolve correctly on iOS.
+     100vh fallback, then 100dvh for dynamic iOS Safari viewport. */
+  .view-bible .app-container,
+  body.view-reader:not(.reader-landing) .app-container {
+    height: calc(100vh - var(--top-nav-height)) !important;
+    height: calc(100dvh - var(--top-nav-height)) !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  /* Content area fills app-container via 100% */
   .view-bible .content-area,
   body.view-reader:not(.reader-landing) .content-area {
     position: relative !important;
-    height: calc(100vh - var(--top-nav-height)) !important;
-    height: calc(100dvh - var(--top-nav-height)) !important;
+    height: 100% !important;
     overflow: hidden !important;
   }
   

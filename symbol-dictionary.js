@@ -17,7 +17,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'Visible obedience to God\'s commandments—living in such a way that others can see righteousness (commandment-keeping) and follow',
     opposite: 'Darkness',
-    link: '/symbols/light/'
+    link: '/reader/symbols/light/'
   },
   
   'darkness': {
@@ -30,7 +30,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Blinds',
     sentence: 'The state of concealing one\'s conduct from scrutiny—living in such a way that deeds are hidden, particularly lawless deeds that cannot bear the exposure of light (visible example)',
     opposite: 'Light',
-    link: '/symbols/darkness/'
+    link: '/reader/symbols/darkness/'
   },
   
   'day': {
@@ -43,7 +43,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Judges',
     sentence: 'The season of visibility and opportunity—the time when conduct is exposed to scrutiny, when work can be done, and when one must live as though being watched',
     opposite: 'Night',
-    link: '/symbols/day/'
+    link: '/reader/symbols/day/'
   },
   
   'night': {
@@ -56,7 +56,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Closes Opportunity',
     sentence: 'The season of hiddenness and closed opportunity—the time when conduct is concealed, when work cannot be done, and when spiritual sleep and drunkenness prevail',
     opposite: 'Day',
-    link: '/symbols/night/'
+    link: '/reader/symbols/night/'
   },
   
   'mountain': {
@@ -69,7 +69,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'An established, elevated seat of governmental power from which law and authority are exercised over a territory',
     opposite: 'Valley/Sea',
-    link: '/symbols/mountain/'
+    link: '/reader/symbols/mountain/'
   },
   
   'truth': {
@@ -82,7 +82,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: "God's word, law, and instructions that define how things actually are and ought to be",
     opposite: 'Lie',
-    link: '/symbols/truth/'
+    link: '/reader/symbols/truth/'
   },
   
   'sea': {
@@ -95,7 +95,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'The mass of humanity—peoples, multitudes, nations in their unsanctified, turbulent state',
     opposite: 'Dry Land/Island',
-    link: '/symbols/sea/'
+    link: '/reader/symbols/sea/'
   },
   
   'island': {
@@ -108,7 +108,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'A people distinguished and separated from the chaotic mass of nations—those set apart (holy/sanctified)',
     opposite: 'Sea',
-    link: '/symbols/island/'
+    link: '/reader/symbols/island/'
   },
   
   'faith': {
@@ -121,7 +121,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'Acting on what you believe to be true—trust that produces obedient action, not mere mental assent',
     opposite: 'Unbelief/Disobedience',
-    link: '/symbols/faith/'
+    link: '/reader/symbols/faith/'
   },
   
   'believe': {
@@ -134,7 +134,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'To entrust oneself through obedient action—not mere mental assent, but committing to act',
     opposite: 'Disobey',
-    link: '/symbols/believe/'
+    link: '/reader/symbols/believe/'
   },
   
   'rock': {
@@ -147,7 +147,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'The binding, unchanging promise/agreement between God and man—the everlasting covenant',
     opposite: 'Sand',
-    link: '/symbols/rock/'
+    link: '/reader/symbols/rock/'
   },
   
   'sand': {
@@ -160,7 +160,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'Countless people at the seashore (wings/coast)—the place where covenant is offered. Can be lost in the sea (nations) or bound to Christ the Rock, becoming living stones',
     opposite: 'Rock',
-    link: '/symbols/sand/'
+    link: '/reader/symbols/sand/'
   },
   
   'highway': {
@@ -173,7 +173,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'The raised, prepared path where the covenant-faithful walk—distinct from the byways of the world, inaccessible to the unclean',
     opposite: 'Byways',
-    link: '/symbols/highway/'
+    link: '/reader/symbols/highway/'
   },
   
   'way': {
@@ -186,7 +186,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'How one lives and acts—the pattern of behavior that defines one\'s path, whether leading to life or destruction',
     opposite: 'Error/Transgression',
-    link: '/symbols/way/'
+    link: '/reader/symbols/way/'
   },
   
   'the way': {
@@ -199,7 +199,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: "The specific, singular, right conduct—obedience to God's instructions as revealed in Scripture and embodied in Messiah",
     opposite: 'Lawlessness',
-    link: '/symbols/way/'
+    link: '/reader/symbols/way/'
   },
   
   'fornication': {
@@ -212,7 +212,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'Giving devotion, service, or allegiance to anyone other than the true God—breaking the first commandment',
     opposite: 'Faithfulness',
-    link: '/symbols/fornication/'
+    link: '/reader/symbols/fornication/'
   },
   
   'idolatry': {
@@ -225,7 +225,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: "Replacing God's standard/word with your own—putting self or anything else in God's place",
     opposite: 'Submission to God',
-    link: '/symbols/idolatry/'
+    link: '/reader/symbols/idolatry/'
   },
   
   'virgin': {
@@ -238,7 +238,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'One who has maintained exclusive devotion to one master—pure covenant faithfulness',
     opposite: 'Harlot',
-    link: '/symbols/virgin/'
+    link: '/reader/symbols/virgin/'
   },
   
   'harlot': {
@@ -251,7 +251,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'One who has committed spiritual fornication—serving other gods/masters instead of the true God',
     opposite: 'Virgin',
-    link: '/symbols/virgin/'
+    link: '/reader/symbols/virgin/'
   },
   
   'sleep': {
@@ -264,7 +264,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'A state of unconsciousness to spiritual reality—unaware of and unresponsive to God\'s truth',
     opposite: 'Awake/Watch',
-    link: '/symbols/sleep/'
+    link: '/reader/symbols/sleep/'
   },
   
   'moment': {
@@ -277,7 +277,7 @@ const SYMBOL_DICTIONARY = {
     does2: null,
     sentence: 'The sudden falling of judgment or destruction—the moment when God\'s evaluation results in swift action',
     opposite: 'Everlasting',
-    link: '/symbols/moment/'
+    link: '/reader/symbols/moment/'
   },
   
   'wickedness': {
@@ -290,7 +290,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Consumes Self',
     sentence: 'The state of lawlessness (rejecting God\'s standard) which burns like fire—self-destructive rebellion',
     opposite: 'Righteousness',
-    link: '/symbols/wickedness/'
+    link: '/reader/symbols/wickedness/'
   },
   
   'tree': {
@@ -303,7 +303,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Bears Fruit / Shelters',
     sentence: 'A nation or people group—can be God\'s nation or foreign nations, characterized by what fruit it produces',
     opposite: 'Cut down tree',
-    link: '/symbols/tree/'
+    link: '/reader/symbols/tree/'
   },
   
   'thorns': {
@@ -316,7 +316,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Prevents Fruitfulness',
     sentence: 'A type of people/nation characterized by worldly cares, riches, and pleasures—they choke out and prevent fruitfulness',
     opposite: 'Good ground',
-    link: '/symbols/thorns/'
+    link: '/reader/symbols/thorns/'
   },
   
   'animal': {
@@ -329,7 +329,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Acts According to Nature',
     sentence: 'A people-group or tribe characterized by its nature—subordinate to empires (trees)',
     opposite: null,
-    link: '/symbols/animal/'
+    link: '/reader/symbols/animal/'
   },
   
   'babylon': {
@@ -342,7 +342,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Counterfeits',
     sentence: 'The worldly kingdom system built on human authority and effort—man\'s substitute for God\'s covenant, using brick (man-made) instead of stone (God-given), the "mother of harlots" because all idolatry flows from rejecting God\'s Kingdom for man\'s',
     opposite: 'Jerusalem/Zion (Heavenly Kingdom)',
-    link: '/symbols/babylon/'
+    link: '/reader/symbols/babylon/'
   },
   
   'name': {
@@ -355,7 +355,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Identifies',
     sentence: 'The binding covenant relationship and its associated promises—to invoke "the name" is to invoke the covenant and all it entails',
     opposite: 'Nameless/Covenant-less',
-    link: '/symbols/name/'
+    link: '/reader/symbols/name/'
   },
   
   'wings': {
@@ -368,7 +368,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Reminds',
     sentence: 'Covenant covering and Torah reminder—tzitzit on the wings (kanaph) of garments remind us of commandments (Num 15:38-40); to come "under wings" is to enter covenant',
     opposite: 'Exposed/Uncovered',
-    link: '/symbols/wings/'
+    link: '/reader/symbols/wings/'
   },
   
   'eagle': {
@@ -381,7 +381,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Carries',
     sentence: 'A messenger or agent sent under covenant authority—angels have wings, cherubim have eagle faces, and empires act as God\'s messengers of judgment',
     opposite: 'Unsent/Unauthorized',
-    link: '/symbols/eagle/'
+    link: '/reader/symbols/eagle/'
   },
   
   'marriage': {
@@ -394,7 +394,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Pictures',
     sentence: 'The covenant relationship between God and His people pictured in human marriage—husband represents God/Christ, wife represents Israel/Church, faithfulness represents covenant obedience',
     opposite: 'Divorce/Covenant Breaking',
-    link: '/symbols/marriage/'
+    link: '/reader/symbols/marriage/'
   },
   
   'fruit': {
@@ -407,7 +407,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Results From',
     sentence: 'The visible works, deeds, and actions that result from and reveal the nature of their source—as a tree is known by its fruit, so people are known by their works',
     opposite: 'Barren/Fruitless',
-    link: '/symbols/fruit/'
+    link: '/reader/symbols/fruit/'
   },
   
   'oil': {
@@ -420,7 +420,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Fuels',
     sentence: 'Works that have been tested and proven through trials—as oil is produced by pressing/crushing olives (fruit of the covenant tree), so proven works result from tested faithfulness',
     opposite: 'Untested/Unproven',
-    link: '/symbols/oil/'
+    link: '/reader/symbols/oil/'
   },
   
   'mark': {
@@ -433,7 +433,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Shows Allegiance',
     sentence: 'The practice or observance that identifies which authority\'s covenant you follow—what you DO (hand) and THINK (forehead) that marks you as belonging to a particular master',
     opposite: 'Unmarked/Unidentified',
-    link: '/symbols/mark/'
+    link: '/reader/symbols/mark/'
   },
   
   'evening': {
@@ -446,7 +446,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Restores',
     sentence: 'The time of the evening offering (~3pm/9th hour), not nightfall. In uncleanness contexts, "until the even" likely means "until the evening sacrifice" rather than "until sunset."',
     opposite: 'Morning',
-    link: '/symbols/evening/'
+    link: '/reader/symbols/evening/'
   },
   
   'bread': {
@@ -459,7 +459,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Covenants',
     sentence: "God's instruction / covenant terms — man lives by every word from God's mouth (Deut 8:3). Breaking bread = cutting covenant; sharing the meal = ratifying the terms together",
     opposite: 'Famine (of hearing God\'s words)',
-    link: '/symbols/bread/'
+    link: '/reader/symbols/bread/'
   },
   
   'wine': {
@@ -472,7 +472,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Seals',
     sentence: "The blood of grapes (Gen 49:11) — life poured out to ratify covenant. Brings joy in covenant, wrath when broken. 'This cup is the new covenant in my blood'",
     opposite: 'Thirst / Water',
-    link: '/symbols/wine/'
+    link: '/reader/symbols/wine/'
   },
   
   'wind': {
@@ -485,7 +485,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Executes',
     sentence: 'The invisible, powerful force that moves where God wills—spirit operating in the spiritual realm as wind operates in the natural',
     opposite: 'Stillness',
-    link: '/symbols/wind/'
+    link: '/reader/symbols/wind/'
   },
   
   'four winds': {
@@ -498,7 +498,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Scatters/Gathers',
     sentence: "The spirits God dispatches from His throne to execute His purposes throughout all the earth—scattering, gathering, stirring nations, and bringing judgment or restoration",
     opposite: 'Stillness/Calm',
-    link: '/symbols/wind/'
+    link: '/reader/symbols/wind/'
   },
   
   'man child': {
@@ -511,7 +511,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Governs Nations',
     sentence: "The covenant nation/kingdom community that God brings forth from Zion—collectively authorized to rule over nations with divine mandate",
     opposite: 'Barrenness/Childlessness',
-    link: '/symbols/man-child/'
+    link: '/reader/symbols/man-child/'
   },
   
   'grass': {
@@ -524,7 +524,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Subject to the wind/Spirit',
     sentence: 'Human beings in their transience and mortality — flesh that flourishes briefly and then is gone, subject to the wind/Spirit of God',
     opposite: 'Word of God (eternal)',
-    link: '/symbols/grass/'
+    link: '/reader/symbols/grass/'
   },
   
   'jerusalem': {
@@ -537,7 +537,7 @@ const SYMBOL_DICTIONARY = {
     does2: 'Dwells with God',
     sentence: 'The gathered people of God — those in covenant relationship with Him, dwelling together under His rule and in His presence',
     opposite: 'Babylon',
-    link: '/symbols/jerusalem/'
+    link: '/reader/symbols/jerusalem/'
   }
 };
 
@@ -593,7 +593,9 @@ function lookupSymbolByStrongs(strongsNum) {
   return SYMBOL_STRONGS_INDEX[normalized] || null;
 }
 
-// Show the symbol panel (similar to Strong's panel)
+// Show the symbol panel — if the symbol has an associated Strong's number,
+// open the full Strong's sidebar (which already includes symbolic meaning);
+// otherwise fall back to the floating symbol popup.
 function showSymbolPanel(symbolKey, word, event) {
   if (event) {
     event.stopPropagation();
@@ -602,7 +604,15 @@ function showSymbolPanel(symbolKey, word, event) {
   const symbol = SYMBOL_DICTIONARY[symbolKey] || lookupSymbolByWord(word);
   if (!symbol) return;
   
-  // Create or get the symbol panel
+  // If the symbol has associated Strong's numbers and showStrongsPanel is available,
+  // open the Strong's sidebar instead — it shows the full definition + symbolic meaning.
+  if (symbol.strongs && symbol.strongs.length > 0 && typeof showStrongsPanel === 'function') {
+    const strongsNum = symbol.strongs[0]; // Use first associated Strong's number
+    showStrongsPanel(strongsNum, word, '', event);
+    return;
+  }
+  
+  // Fallback: floating symbol panel for symbols without Strong's numbers
   let panel = document.getElementById('symbol-panel');
   if (!panel) {
     panel = document.createElement('div');
@@ -630,7 +640,7 @@ function showSymbolPanel(symbolKey, word, event) {
       ` : ''}
       <div class="symbol-sentence">${symbol.sentence}</div>
       ${symbol.opposite ? `<div class="symbol-opposite"><strong>Opposite:</strong> ${symbol.opposite}</div>` : ''}
-      <a href="${symbol.link}" class="symbol-study-link">Full Word Study →</a>
+      <button class="symbol-study-link" onclick="closeSymbolPanel(); openSymbolStudyInReader('${symbolKey}')">Full Word Study →</button>
     </div>
   `;
   

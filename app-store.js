@@ -1019,13 +1019,30 @@ const AppStore = {
         return true;
         
       case 'GO_TO_TODAY': {
-        // Set date to today and time to current moment
-        // Store UTC time directly - display will convert to local
-        const now = new Date();
+        // Return to user's local location AND set date/time to now
+        // 1. Restore saved local location (GPS or user-selected home)
+        try {
+          const savedLocation = localStorage.getItem('userLocation');
+          if (savedLocation) {
+            const loc = JSON.parse(savedLocation);
+            if (loc.lat != null && loc.lon != null) {
+              if (s.context.location.lat !== loc.lat || s.context.location.lon !== loc.lon) {
+                s.context.location = { lat: loc.lat, lon: loc.lon };
+                s.context.selectedLunarDate = null;  // Re-resolve from JD at new location
+              }
+            }
+          }
+        } catch (e) {
+          // If localStorage read fails, keep current location
+        }
+        
+        // 2. Recalculate "today" JD for the (possibly restored) location
+        s.context.today = this._getTodayJD();
         s.context.selectedDate = s.context.today;
         s.context.selectedLunarDate = null;  // Clear so JD-based lookup is used
         
-        // Store current time in UTC
+        // 3. Store current time in UTC
+        const now = new Date();
         s.context.utcTime = { 
           hours: now.getUTCHours(), 
           minutes: now.getUTCMinutes() 

@@ -10613,10 +10613,18 @@ body.biblical-timeline-open .top-nav-inner {
 /* Mobile: full-height content + sidebar becomes full-width overlay */
 @media (max-width: 768px) {
   /* Give content area a fixed height so 100% children work (except landing pages) */
-  body.view-bible .main-layout,
-  body.view-reader:not(.reader-landing) .main-layout {
+  body.view-bible .app-container,
+  body.view-reader:not(.reader-landing) .app-container {
+    height: calc(100vh - var(--top-nav-height, 56px)) !important;
     height: calc(100dvh - var(--top-nav-height, 56px)) !important;
     min-height: 0 !important;
+    flex: none !important;
+  }
+  body.view-bible .main-layout,
+  body.view-reader:not(.reader-landing) .main-layout {
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
   }
   body.view-bible #content-area,
   body.view-reader:not(.reader-landing) #content-area {

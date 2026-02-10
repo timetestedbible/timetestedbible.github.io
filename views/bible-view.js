@@ -485,26 +485,46 @@ const BibleView = {
     }
     
     this.initialized = true;
+    // Apply height immediately, then re-apply after a frame to catch iOS viewport settling
     this.applyMobileReaderHeight();
+    requestAnimationFrame(() => this.applyMobileReaderHeight());
     this._mobileHeightCleanup = this.setupMobileHeightListener();
   },
 
   /**
-   * On mobile, set reader height to viewport minus nav so we don't get a symmetric gap at the bottom.
-   * (Content was effectively 100vh while nav sits on top, so bottom gap = nav height.)
+   * On mobile, set reader height to viewport minus nav so we don't get a gap at the bottom.
+   * Uses visualViewport.height (more reliable on iOS) with window.innerHeight fallback.
+   * Applies to app-container, main-layout, content-area, and bible-explorer-page.
    */
   applyMobileReaderHeight() {
     const page = document.getElementById('bible-explorer-page');
     const contentArea = document.getElementById('content-area');
+    const appContainer = document.getElementById('app-container');
     const mainLayout = contentArea?.closest('.main-layout');
     if (!page || !contentArea) return;
     const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+      // Desktop: remove all inline overrides
+      [appContainer, mainLayout, contentArea, page].forEach(el => {
+        if (!el) return;
+        el.style.removeProperty('height');
+        el.style.removeProperty('min-height');
+        el.style.removeProperty('max-height');
+      });
+      return;
+    }
     const nav = document.getElementById('top-nav');
     const navHeight = nav ? nav.offsetHeight : 56;
-    const availableHeight = window.innerHeight - navHeight;
-    if (isMobile && availableHeight > 0) {
+    // visualViewport.height is more reliable on iOS Safari (tracks dynamic viewport)
+    const vpHeight = window.visualViewport?.height || window.innerHeight;
+    const availableHeight = vpHeight - navHeight;
+    if (availableHeight > 0) {
       const h = availableHeight + 'px';
-      // Use setProperty with !important to override CSS !important rules
+      // Set explicit pixel heights down the entire chain with !important
+      if (appContainer) {
+        appContainer.style.setProperty('height', h, 'important');
+        appContainer.style.setProperty('min-height', '0', 'important');
+      }
       if (mainLayout) {
         mainLayout.style.setProperty('height', h, 'important');
       }
@@ -514,16 +534,6 @@ const BibleView = {
       page.style.setProperty('height', h, 'important');
       page.style.setProperty('min-height', '0', 'important');
       page.style.setProperty('max-height', h, 'important');
-    } else {
-      if (mainLayout) {
-        mainLayout.style.removeProperty('height');
-      }
-      contentArea.style.removeProperty('height');
-      contentArea.style.removeProperty('min-height');
-      contentArea.style.removeProperty('max-height');
-      page.style.removeProperty('height');
-      page.style.removeProperty('min-height');
-      page.style.removeProperty('max-height');
     }
   },
 
@@ -534,12 +544,13 @@ const BibleView = {
       }
     };
     window.addEventListener('resize', onResize);
-    if (typeof window.visualViewport !== 'undefined') {
+    // visualViewport fires on iOS when URL bar collapses/expands
+    if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', onResize);
     }
     return () => {
       window.removeEventListener('resize', onResize);
-      if (typeof window.visualViewport !== 'undefined') {
+      if (window.visualViewport) {
         window.visualViewport.removeEventListener('resize', onResize);
       }
     };

@@ -130,10 +130,18 @@
       /* GENERIC FIX: Enforce layout height for all views on mobile */
       /* This ensures the container fits exactly under the 56px header */
       
-      /* Main layout must fill remaining space, not exceed it */
-      .main-layout {
+      /* App container: explicit viewport height so children can use height:100%.
+         Use 100vh fallback then 100dvh for iOS dynamic viewport. */
+      .app-container {
         height: calc(100vh - 56px) !important;
         height: calc(100dvh - 56px) !important;
+        min-height: 0 !important;
+        flex: none !important;
+      }
+      
+      /* Main layout fills app-container */
+      .main-layout {
+        height: 100% !important;
         min-height: 0 !important;
         overflow: hidden !important;
       }
@@ -145,14 +153,31 @@
         padding: 0 !important;
         overflow: hidden !important;
       }
-      /* Calendar, Tutorial views: allow scroll so content is not clipped */
+      /* Body-scrolling views: undo fixed viewport height on app-container */
+      body.view-calendar .app-container,
+      body.view-tutorial .app-container,
+      body.view-blog .app-container,
+      body.view-settings .app-container,
+      body.view-sabbath-tester .app-container,
+      body.view-help .app-container {
+        height: auto !important;
+        flex: none !important;
+        -webkit-overflow-scrolling: touch;
+      }
       body.view-calendar .main-layout,
       body.view-calendar #content-area,
       body.view-tutorial .main-layout,
       body.view-tutorial #content-area,
       body.view-blog .main-layout,
-      body.view-blog #content-area {
-        overflow: auto !important;
+      body.view-blog #content-area,
+      body.view-settings .main-layout,
+      body.view-settings #content-area,
+      body.view-sabbath-tester .main-layout,
+      body.view-sabbath-tester #content-area,
+      body.view-help .main-layout,
+      body.view-help #content-area {
+        overflow: visible !important;
+        height: auto !important;
         -webkit-overflow-scrolling: touch;
       }
       
@@ -183,7 +208,6 @@
         min-height: 0 !important;
         display: flex !important;
         flex-direction: column !important;
-        background: #0f0f23 !important; /* Ensure background covers */
       }
       
       /* Flex chain for inner content */
@@ -287,7 +311,7 @@
       </div>
       
       <!-- Today Button (calendar icon = changes calendar focus time) -->
-      <button id="today-btn" class="today-btn" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},AppStore.getTodayEvent(),{type:'SET_VIEW',view:'calendar'}])">
+      <button id="today-btn" class="today-btn" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'GO_TO_TODAY'},{type:'SET_VIEW',view:'calendar'}])">
         <span class="today-icon">📅</span> Today
       </button>
       
@@ -407,7 +431,7 @@
       
       <nav class="sidebar-nav">
         <!-- Today button - visible only on mobile -->
-        <button class="menu-item menu-today-btn" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},AppStore.getTodayEvent(),{type:'SET_VIEW',view:'calendar'}])">
+        <button class="menu-item menu-today-btn" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'GO_TO_TODAY'},{type:'SET_VIEW',view:'calendar'}])">
           <span class="menu-icon">📅</span>
           <span class="menu-label">Today</span>
         </button>
