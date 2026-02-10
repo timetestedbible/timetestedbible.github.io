@@ -127,128 +127,86 @@
   <!-- CRITICAL MOBILE FIX: Inline to bypass cache issues and body class dependencies -->
   <style>
     @media (max-width: 768px) {
-      /* GENERIC FIX: Enforce layout height for all views on mobile */
-      /* This ensures the container fits exactly under the 56px header */
-      
-      /* App container: explicit viewport height so children can use height:100%.
-         Use 100vh fallback then 100dvh for iOS dynamic viewport. */
-      .app-container {
-        height: calc(100vh - 56px) !important;
-        height: calc(100dvh - 56px) !important;
-        min-height: 0 !important;
-        flex: none !important;
-      }
-      
-      /* Main layout fills app-container */
-      .main-layout {
-        height: 100% !important;
-        min-height: 0 !important;
-        overflow: hidden !important;
-      }
-      
-      /* Content area fills main layout */
-      #content-area {
-        height: 100% !important;
-        min-height: 0 !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-      }
-      /* Body-scrolling views: undo fixed viewport height on app-container */
-      body.view-calendar .app-container,
-      body.view-tutorial .app-container,
-      body.view-blog .app-container,
-      body.view-settings .app-container,
-      body.view-sabbath-tester .app-container,
-      body.view-help .app-container {
-        height: auto !important;
-        flex: none !important;
-        -webkit-overflow-scrolling: touch;
-      }
-      body.view-calendar .main-layout,
-      body.view-calendar #content-area,
-      body.view-tutorial .main-layout,
-      body.view-tutorial #content-area,
-      body.view-blog .main-layout,
-      body.view-blog #content-area,
-      body.view-settings .main-layout,
-      body.view-settings #content-area,
-      body.view-sabbath-tester .main-layout,
-      body.view-sabbath-tester #content-area,
-      body.view-help .main-layout,
-      body.view-help #content-area {
-        overflow: visible !important;
-        height: auto !important;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      /* Reader landing page: body scrolls */
-      body.view-reader.reader-landing .main-layout,
-      body.view-reader.reader-landing #content-area {
-        overflow: visible !important;
-        height: auto !important;
-      }
-      body.view-reader.reader-landing {
+      /* ═══ BIBLE / READER SUB-PAGES (not landing) ═══
+         Use BODY SCROLL — same as the reader landing page.
+         iOS Safari extends body-scrolled content behind the bottom bar;
+         contained scroll (overflow/fixed) does not. */
+      body.view-bible,
+      body.view-reader:not(.reader-landing) {
         overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch !important;
       }
-      body.view-reader.reader-landing .app-container {
+      body.view-bible .app-container,
+      body.view-reader:not(.reader-landing) .app-container {
         flex: none !important;
         height: auto !important;
       }
+      body.view-bible .main-layout,
+      body.view-reader:not(.reader-landing) .main-layout {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      body.view-bible #content-area,
+      body.view-reader:not(.reader-landing) #content-area {
+        height: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
+      }
       
-      /* Bible/Reader page fills content area */
-      #bible-explorer-page,
-      .bible-explorer-page {
+      /* Page flows in document — no fixed/absolute positioning */
+      body.view-bible #bible-explorer-page,
+      body.view-reader:not(.reader-landing) #bible-explorer-page {
         position: relative !important;
         top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: auto !important;
-        height: 100% !important;
-        min-height: 0 !important;
+        height: auto !important;
         display: flex !important;
         flex-direction: column !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: var(--surface-raised, #0d2840) !important;
       }
       
-      /* Flex chain for inner content */
-      .bible-explorer-body {
-        flex: 1 1 0% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: 0 !important;
-        overflow: hidden !important;
-        position: relative !important;
+      /* Sticky header: top:0 works because the nav is also sticky and covers it */
+      body.view-bible .bible-explorer-header,
+      body.view-reader:not(.reader-landing) .bible-explorer-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 100 !important;
+        margin: 0 !important;
+        padding: 6px 10px !important;
+        background: var(--gradient-nav, #0d2840) !important;
       }
       
-      /* When closed, Strong's sidebar must not participate in flex (so content wrapper gets full height) */
+      /* Text area: NO contained scroll — body handles scrolling */
+      body.view-bible .bible-explorer-text,
+      body.view-reader:not(.reader-landing) .bible-explorer-text {
+        overflow: visible !important;
+        height: auto !important;
+        flex: none !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      
+      /* Body and content wrapper: no overflow clipping */
+      body.view-bible .bible-explorer-body,
+      body.view-reader:not(.reader-landing) .bible-explorer-body {
+        overflow: visible !important;
+        height: auto !important;
+        flex: none !important;
+      }
+      body.view-bible .bible-content-wrapper,
+      body.view-reader:not(.reader-landing) .bible-content-wrapper {
+        overflow: visible !important;
+        height: auto !important;
+        flex: none !important;
+      }
+      
       .strongs-sidebar:not(.open) {
         position: absolute !important;
-        right: 0 !important;
-        top: 0 !important;
-        bottom: 0 !important;
         width: 0 !important;
         min-width: 0 !important;
         overflow: hidden !important;
         pointer-events: none !important;
         visibility: hidden !important;
-      }
-      
-      .bible-content-wrapper {
-        flex: 1 1 0% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: 0 !important;
-        overflow: hidden !important;
-      }
-      
-      /* The text area itself scrolls */
-      .bible-content-wrapper .bible-explorer-text {
-        flex: 1 1 0% !important;
-        min-height: 0 !important;
-        height: auto !important; /* Let flex handle height */
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        padding-bottom: 20px !important; /* Add padding to ensure bottom text is readable */
       }
     }
   </style>

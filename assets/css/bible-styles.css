@@ -10612,54 +10612,44 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Mobile: full-height content + sidebar becomes full-width overlay */
 @media (max-width: 768px) {
-  /* Give content area a fixed height so 100% children work (except landing pages) */
-  body.view-bible .app-container,
-  body.view-reader:not(.reader-landing) .app-container {
-    height: calc(100vh - var(--top-nav-height, 56px)) !important;
-    height: calc(100dvh - var(--top-nav-height, 56px)) !important;
-    min-height: 0 !important;
-    flex: none !important;
-  }
+  /* Mobile: body scroll approach — inner containers flow naturally.
+     Sticky header + overflow:visible so iOS extends behind bottom bar. */
   body.view-bible .main-layout,
   body.view-reader:not(.reader-landing) .main-layout {
-    height: 100% !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
-  }
-  body.view-bible #content-area,
-  body.view-reader:not(.reader-landing) #content-area {
-    height: 100% !important;
-    min-height: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
   }
 
-  /* Force bible explorer page to fill available height */
   #bible-explorer-page {
     display: flex !important;
     flex-direction: column !important;
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    height: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    top: 0 !important; /* Override any legacy top offset */
+  }
+
+  .bible-explorer-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    padding: 6px 10px !important;
+    background: var(--gradient-nav) !important;
   }
 
   .bible-explorer-body {
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    overflow: visible !important;
+    height: auto !important;
+    display: block !important;
   }
 
   .bible-content-wrapper {
-    flex-direction: column;
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    display: flex !important;
+    overflow: visible !important;
+    height: auto !important;
   }
 
   .bible-content-wrapper .bible-explorer-text {
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible !important;
+    height: auto !important;
   }
 
   /* On mobile, Strong's is full-screen overlay: raise it above tooltips (10200) */
@@ -11300,11 +11290,11 @@ body.biblical-timeline-open .top-nav-inner {
 
 @media (max-width: 480px) {
   .bible-explorer-page {
-    top: 48px;
+    top: 0; /* Was 48px for old absolute layout — now relative, so must be 0 */
   }
   
   .bible-explorer-header {
-    padding: 12px 10px 10px 10px;
+    padding: 6px 10px;
   }
   
   .bible-explorer-header-inner {

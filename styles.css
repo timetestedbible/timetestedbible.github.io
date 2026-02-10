@@ -210,10 +210,14 @@ button {
   border-color: var(--accent-primary-strong);
 }
 
-/* Navigation History Buttons */
+/* Navigation History Buttons — only visible in PWA mode (no browser chrome) */
 .nav-history-buttons {
-  display: flex;
+  display: none;
   gap: 2px;
+}
+
+body.pwa-mode .nav-history-buttons {
+  display: flex;
 }
 
 .nav-btn {
@@ -2531,14 +2535,6 @@ body.view-reader.reader-landing .content-area {
 }
 
 /* Ensure Bible/Reader fills available space (except landing pages) */
-/* On desktop, flex:1 works fine. On mobile, bible-styles.css & inline <style>
-   set explicit viewport-unit heights on .app-container → .main-layout chain. */
-.view-bible .app-container,
-body.view-reader:not(.reader-landing) .app-container {
-  flex: 1 1 0% !important;
-  min-height: 0 !important;
-}
-
 .view-bible .main-layout,
 body.view-reader:not(.reader-landing) .main-layout {
   height: 100% !important;
@@ -2559,10 +2555,13 @@ body.view-reader:not(.reader-landing) .content-area {
   overflow: hidden !important;
 }
 
-/* Prevent body scroll when viewing Bible/Reader (except landing pages) */
-body.view-bible,
-body.view-reader:not(.reader-landing) {
-  overflow: hidden !important;
+/* On desktop, prevent body scroll for Bible/Reader (contained layout).
+   On mobile, body scrolls — see inline <style> in index.html. */
+@media (min-width: 769px) {
+  body.view-bible,
+  body.view-reader:not(.reader-landing) {
+    overflow: hidden !important;
+  }
 }
 
 /* Override old fixed positioning */
@@ -2778,72 +2777,51 @@ body.view-reader:not(.reader-landing) {
   display: none !important;
 }
 
-/* Mobile adjustments for Bible - explicit viewport heights for iOS */
+/* Mobile adjustments for Bible — body scroll with sticky header */
 @media (max-width: 768px) {
-  /* App container: explicit viewport height so percentage children resolve correctly on iOS.
-     100vh fallback, then 100dvh for dynamic iOS Safari viewport. */
-  .view-bible .app-container,
-  body.view-reader:not(.reader-landing) .app-container {
-    height: calc(100vh - var(--top-nav-height)) !important;
-    height: calc(100dvh - var(--top-nav-height)) !important;
-    min-height: 0 !important;
-    flex: none !important;
-  }
-
-  /* Content area fills app-container via 100% */
-  .view-bible .content-area,
-  body.view-reader:not(.reader-landing) .content-area {
-    position: relative !important;
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-  
-  /* Bible page fills content area absolutely */
+  /* Bible/Reader sub-pages: body scrolls (like landing page).
+     iOS Safari extends body-scrolled content behind the toolbar. */
   .view-bible .bible-explorer-page,
-  .view-reader .bible-explorer-page {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
+  body.view-reader:not(.reader-landing) .bible-explorer-page {
+    position: relative !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
+    background: var(--surface-raised) !important;
   }
   
-  /* Body fills remaining space after header */
+  /* Sticky dropdown header — top:0 works because the nav is also sticky above */
+  .view-bible .bible-explorer-header,
+  body.view-reader:not(.reader-landing) .bible-explorer-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+  }
+  
+  /* Body scroll: inner containers flow naturally */
   .view-bible .bible-explorer-body,
   .view-reader .bible-explorer-body {
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    overflow: visible !important;
+    height: auto !important;
+    display: block !important;
   }
   
-  /* Content wrapper fills body */
   .view-bible .bible-content-wrapper,
   .view-reader .bible-content-wrapper {
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    overflow: visible !important;
+    height: auto !important;
   }
   
-  /* Text area fills content wrapper and scrolls */
+  /* Text area: body handles scrolling, not this element */
   .view-bible .bible-explorer-text {
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    overflow-y: auto !important;
+    overflow: visible !important;
+    height: auto !important;
     padding: 16px;
-    -webkit-overflow-scrolling: touch;
   }
-  /* Time-tested / reader: almost edge-to-edge on mobile */
   .view-reader .bible-explorer-text {
-    flex: 1 1 0% !important;
-    min-height: 0 !important;
-    overflow-y: auto !important;
+    overflow: visible !important;
+    height: auto !important;
     padding: 12px 10px;
-    -webkit-overflow-scrolling: touch;
   }
   
   .strongs-sidebar.open {
