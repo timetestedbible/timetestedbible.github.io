@@ -51,7 +51,7 @@ The great tree = NEBUCHADNEZZAR'S KINGDOM (Babylon)
 |-----------|---------|
 | **Olive Tree** | Israel — the covenant community |
 | **Root** | The patriarchs/covenant foundation |
-| **Natural Branches** | Jewish people (can be broken off) |
+| **Natural Branches** | Native-born Israel and the House of Judah (can be broken off) |
 | **Wild Branches** | Gentiles (can be grafted in) |
 
 ---

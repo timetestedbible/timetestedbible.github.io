@@ -725,9 +725,9 @@ Notice that Daniel 9:27 uses a **different verb** for the covenant than 9:26:
 
 He does not cut a *new* covenant in verse 27. He **strengthens** the one already cut in verse 26. These are two stages of one covenant.
 
-### The Jewish Marriage Pattern {#marriage-pattern}
+### The Biblical Marriage Pattern {#marriage-pattern}
 
-This two-stage covenant matches the ancient Jewish marriage exactly:
+This two-stage covenant matches the ancient Hebrew marriage exactly:
 
 **Stage 1 — Betrothal (*erusin*):** The groom initiates the covenant by offering a cup of wine. If the bride accepts, the covenant is sealed. The bride price is paid. They are legally bound, but the marriage is not yet consummated.
 
@@ -737,7 +737,7 @@ This two-stage covenant matches the ancient Jewish marriage exactly:
 
 ### How Jesus Enacted This Pattern
 
-At the Last Supper, Jesus followed the Jewish betrothal sequence precisely:
+At the Last Supper, Jesus followed the biblical betrothal sequence precisely:
 
 1. **He offered the cup** — "This cup is the new covenant in my blood" (Luke 22:20). This is the betrothal proposal. The cup of wine is the covenant offer.
 
@@ -747,13 +747,13 @@ At the Last Supper, Jesus followed the Jewish betrothal sequence precisely:
 
 4. **He vanished** — The ascension. From the bride's perspective, the groom is אַיִן (gone). She waits.
 
-5. **"No one knows the day or hour"** — (Matthew 24:36). The bride does not know when the groom will return. This is a standard feature of Jewish betrothal — the father decides when the son may go collect his bride.
+5. **"No one knows the day or hour"** — (Matthew 24:36). The bride does not know when the groom will return. This is a standard feature of Hebrew betrothal — the father decides when the son may go collect his bride.
 
 6. **"One is taken"** — The word "receive" in John 14:3 is παραλαμβάνω (G3880) — the **same Greek word** used in Matthew 24:40: "one is **taken**, and the other left." The groom takes the bride to himself.
 
 ### Daniel 9:26-27 Maps to This Sequence
 
-| Stage | Jewish Marriage | Daniel | Fulfillment |
+| Stage | Biblical Marriage | Daniel | Fulfillment |
 |-------|---------------|--------|-------------|
 | **Cut the covenant** | Groom offers the cup | v.26: Messiah cuts a covenant | Last Supper: "This cup is the new covenant" |
 | **Vanish** | Groom departs to prepare a place | v.26: Messiah is אַיִן to himself | "I go to prepare a place for you"; the ascension |
