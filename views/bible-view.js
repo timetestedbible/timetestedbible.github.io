@@ -53,6 +53,14 @@ const BibleView = {
     
     if (needsFullRender) {
       this.renderStructure(container, state);
+      // Restore saved research panel width on desktop
+      if (window.innerWidth > 768) {
+        try {
+          const saved = localStorage.getItem('research-panel-width');
+          const panel = document.getElementById('research-panel');
+          if (saved && panel) panel.style.width = saved;
+        } catch (e) {}
+      }
     } else {
       this.applyMobileReaderHeight();
     }
@@ -124,7 +132,7 @@ const BibleView = {
     if (!ui) return;
     
     // Sync Strong's panel with URL state
-    const sidebar = document.getElementById('strongs-sidebar');
+    const sidebar = document.getElementById('research-panel');
     const currentStrongsOpen = sidebar?.classList.contains('open');
     
     if (ui.strongsId && ui.strongsId !== this._currentStrongsId) {
@@ -246,12 +254,6 @@ const BibleView = {
     const contentType = state?.content?.params?.contentType || 'bible';
     const displayContentType = (contentType === 'multiverse') ? 'bible' : contentType;
     
-    // Update content type dropdown (multiverse displays as Bible)
-    const contentSelect = document.getElementById('reader-content-select');
-    if (contentSelect) {
-      contentSelect.value = displayContentType;
-    }
-    
     // Show/hide selector groups (multiverse shows Bible selectors e.g. translation)
     const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
     const bibleSelectors = document.getElementById('bible-selectors');
@@ -324,18 +326,7 @@ const BibleView = {
     // Multiverse uses Bible selectors (e.g. translation) and shows as Bible in dropdown
     const displayContentType = (contentType === 'multiverse') ? 'bible' : contentType;
     
-    // Build content type dropdown with correct selection
-    const contentTypeOptions = [
-      { value: 'bible', label: 'Bible' },
-      { value: 'symbols', label: 'Symbols' },
-      { value: 'words', label: 'Words' },
-      { value: 'numbers', label: 'Numbers' },
-      { value: 'verse-studies', label: 'Verse Studies' },
-      { value: 'timetested', label: 'Time Tested Tradition' },
-      { value: 'philo', label: 'Philo' },
-      { value: 'josephus', label: 'Josephus' },
-      { value: 'people', label: 'People' } // Future: People studies
-    ].map(opt => `<option value="${opt.value}"${opt.value === displayContentType ? ' selected' : ''}>${opt.label}</option>`).join('');
+    // Content type dropdown removed — users switch content types via hamburger menu
     
     // Selector visibility based on contentType (multiverse shows Bible selectors for translation)
     const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
@@ -350,12 +341,6 @@ const BibleView = {
         <!-- Header -->
         <div class="bible-explorer-header">
           <div class="bible-explorer-header-inner">
-            <!-- Content type selector -->
-            <select id="reader-content-select" class="bible-explorer-select reader-content-select" 
-                    onchange="onReaderContentChange(this.value)" title="Select content type">
-              ${contentTypeOptions}
-            </select>
-            
             <!-- Bible selectors (shown when content=bible) -->
             <span id="bible-selectors" class="reader-selector-group" style="${bibleDisplay}">
               <select id="bible-translation-select" class="bible-explorer-select bible-translation-select" 
@@ -418,6 +403,10 @@ const BibleView = {
                      style="width:80px;">
             </span>
           </div>
+          <!-- Research panel header zone (desktop: shares row with selectors) -->
+          <div class="research-header-inline" id="research-header-inline">
+            <span class="research-id-badge" id="research-id-badge"></span>
+          </div>
         </div>
         
         <!-- Body -->
@@ -432,14 +421,12 @@ const BibleView = {
             </div>
           </div>
           
-          <!-- Strong's Sidebar (back/forward use top header; width user-resizable) -->
-          <div id="strongs-sidebar" class="strongs-sidebar">
-            <div class="strongs-sidebar-resize" onmousedown="startStrongsResize(event)"></div>
-            <div class="strongs-sidebar-header">
-              <span id="strongs-sidebar-title" class="strongs-sidebar-title"></span>
-              <button class="strongs-sidebar-close" onclick="closeStrongsPanel()">✕</button>
+          <!-- Research Panel (always visible on desktop; word studies, lexicon, parsing, etc.) -->
+          <div id="research-panel" class="research-panel">
+            <div class="research-panel-resize" onmousedown="startStrongsResize(event)"></div>
+            <div id="research-panel-content" class="research-panel-content">
+              <div class="research-panel-welcome">Click on words to dig deeper</div>
             </div>
-            <div id="strongs-sidebar-content" class="strongs-sidebar-content"></div>
           </div>
         </div>
       </div>

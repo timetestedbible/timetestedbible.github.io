@@ -385,6 +385,48 @@ body.pwa-mode .nav-history-buttons {
   color: var(--accent-primary);
 }
 
+/* Search Filter Bar */
+.search-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface-sunken);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.search-filter-btn {
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-accent);
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.search-filter-btn:hover {
+  background: var(--accent-primary-subtle);
+  color: var(--text-secondary);
+}
+
+.search-filter-btn.active {
+  background: var(--accent-primary-subtle);
+  border-color: var(--accent-primary-strong);
+  color: var(--accent-primary-strong);
+}
+
+.search-filter-btn.active:hover {
+  background: var(--accent-primary-muted);
+}
+
 /* Search Results Region */
 .global-search-results {
   display: none;
@@ -394,6 +436,7 @@ body.pwa-mode .nav-history-buttons {
   overflow: hidden;
   position: relative;
   flex-direction: column;
+  flex-shrink: 0;  /* Prevent flexbox from collapsing when body content exceeds viewport */
 }
 
 .global-search-results.open {
@@ -2693,21 +2736,8 @@ body.view-reader:not(.reader-landing) .content-area {
   font-size: 1.1em;
 }
 
-/* Strong's sidebar positioning - isolated scroll context */
-.strongs-sidebar {
-  z-index: 100;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.strongs-sidebar.open {
-  width: 350px;
-  min-width: 280px;
-}
-
-.strongs-sidebar-content {
+/* Research panel — isolated scroll context (main layout in bible-styles.css) */
+.research-panel-content {
   overflow-y: auto;
   flex: 1;
   min-height: 0;

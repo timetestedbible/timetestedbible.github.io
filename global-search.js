@@ -154,6 +154,46 @@ const GlobalSearch = {
     if (hints) hints.style.display = 'none';
   },
   
+  /**
+   * Toggle a search filter on/off and re-execute search
+   */
+  toggleFilter(filter) {
+    if (typeof AppStore !== 'undefined') {
+      AppStore.dispatch({ type: 'TOGGLE_SEARCH_FILTER', filter });
+      // Sync filter bar UI immediately
+      this.syncFilterBar();
+      // Clear cache and re-execute if we have a query
+      if (this.currentQuery) {
+        this.cachedResults.delete(this.currentQuery);
+        this.allMatchesCache = null;
+        this.allEventsCache = null;
+        this.executeSearch(this.currentQuery);
+      }
+    }
+  },
+  
+  /**
+   * Sync filter bar button states from AppStore
+   */
+  syncFilterBar() {
+    if (typeof AppStore === 'undefined') return;
+    const filters = AppStore.getState().ui?.globalSearchFilters || {};
+    document.querySelectorAll('.search-filter-btn[data-filter]').forEach(btn => {
+      const filter = btn.dataset.filter;
+      btn.classList.toggle('active', !!filters[filter]);
+    });
+  },
+  
+  /**
+   * Get current filter state
+   */
+  _getFilters() {
+    if (typeof AppStore !== 'undefined') {
+      return AppStore.getState().ui?.globalSearchFilters || {};
+    }
+    return { events: true, bible: true, studies: true, strongs: true };
+  },
+  
   useHint(query) {
     const input = document.getElementById('global-search-input');
     if (input) {
@@ -197,12 +237,14 @@ const GlobalSearch = {
     
     query = query.trim();
     
-    // Strong's numbers (H1234, G5678) — open the Strong's panel AND search for all verses
+    // Strong's numbers (H1234, G5678) — open the Research Panel AND search for all verses
     const strongsMatch = query.match(/^([HGhg])0*(\d+)$/);
     if (strongsMatch) {
       const strongsNum = strongsMatch[1].toUpperCase() + strongsMatch[2];
-      // Open Strong's detail panel (don't return — let the search continue below)
-      if (typeof showStrongsPanel === 'function') {
+      // Open research panel only if not already showing this strongs entry
+      const panel = document.getElementById('research-panel');
+      const alreadyOpen = panel && panel.classList.contains('open');
+      if (!alreadyOpen && typeof showStrongsPanel === 'function') {
         showStrongsPanel(strongsNum, '', '', null);
       }
     }
@@ -636,6 +678,10 @@ const GlobalSearch = {
   async executeSearch(query) {
     console.log('[GlobalSearch] executeSearch called with:', query);
     
+    // Sync filter bar UI
+    this.syncFilterBar();
+    const filters = this._getFilters();
+    
     // Check cache first
     if (this.cachedResults.has(query)) {
       console.log('[GlobalSearch] Using cached results for:', query);
@@ -650,10 +696,10 @@ const GlobalSearch = {
       content.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--color-text-muted);">Searching...</div>';
     }
     
-    // Ensure Bible data is loaded — use state translation if available, else global
+    // Ensure Bible data is loaded (needed for Bible and Strongs searches)
     const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
     const translation = state?.content?.params?.translation || (typeof currentTranslation !== 'undefined' ? currentTranslation : 'kjv');
-    if (!Bible.isLoaded(translation)) {
+    if ((filters.bible || filters.strongs) && !Bible.isLoaded(translation)) {
       if (content) {
         content.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--color-text-muted);">Loading Bible...</div>';
       }
@@ -661,21 +707,6 @@ const GlobalSearch = {
         await Bible.loadTranslation(translation);
       } catch (e) {
         console.error('[GlobalSearch] Failed to load Bible:', e);
-      }
-    }
-    
-    // Check if timeline events are loaded, if not wait for them
-    let timelineEvents = typeof getTimelineResolvedEvents === 'function' ? getTimelineResolvedEvents() : [];
-    if (timelineEvents.length === 0) {
-      if (content) {
-        content.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--color-text-muted);">Loading Timeline...</div>';
-      }
-      
-      // Try to trigger timeline loading and wait for it
-      try {
-        await this.waitForTimelineEvents();
-      } catch (e) {
-        console.error('[GlobalSearch] Failed to load timeline events:', e);
       }
     }
     
@@ -692,29 +723,364 @@ const GlobalSearch = {
       this.allEventsCache = null;
     }
     
-    // Perform searches (first page of each)
-    const bibleResults = this.performTextSearch(query, 0, 50);
+    // Perform instant searches based on active filters
+    const bibleResults = filters.bible ? this.performTextSearch(query, 0, 50) : { results: [], total: 0, hasMore: false };
+    const studiesResults = filters.studies ? this.performStudiesSearch(query) : { results: [], total: 0 };
+    const strongsResults = filters.strongs ? this.performStrongsSearch(query) : { results: [], total: 0 };
+    
+    // Check if timeline events are already available (sync — instant if cached)
+    let timelineEvents = filters.events && typeof getTimelineResolvedEvents === 'function' ? getTimelineResolvedEvents() : [];
+    
+    // Determine if any instant results exist (across all active filters)
+    const hasInstantResults = bibleResults.total > 0 || studiesResults.total > 0 || strongsResults.total > 0;
+    
+    if (timelineEvents.length > 0 || !filters.events) {
+      // Timeline already loaded or events filter off — show everything at once
+      const eventResults = filters.events ? this.performEventSearch(query) : { events: [], total: 0 };
+      const combinedResults = {
+        query, bible: bibleResults, events: eventResults,
+        studies: studiesResults, strongs: strongsResults,
+        error: null
+      };
+      this._cacheResult(query, combinedResults);
+      this.showResults(combinedResults);
+    } else {
+      // Show instant results NOW, load timeline in background
+      const partialResults = {
+        query, bible: bibleResults, events: { events: [], total: 0 },
+        studies: studiesResults, strongs: strongsResults,
+        _timelinePending: true, error: null
+      };
+      this.showResults(partialResults);
+      
+      // Load timeline async and insert results when ready
+      this._searchGeneration = (this._searchGeneration || 0) + 1;
+      this._loadTimelineAndInsert(query, this._searchGeneration);
+    }
+  },
+  
+  /**
+   * Load timeline events in background and insert into existing search results.
+   * Uses a generation counter to avoid stale updates if user starts a new search.
+   * @private
+   */
+  async _loadTimelineAndInsert(query, generation) {
+    try {
+      await this.waitForTimelineEvents();
+    } catch (e) {
+      console.error('[GlobalSearch] Timeline load failed:', e);
+    }
+    
+    // Bail if a newer search has started
+    if (this._searchGeneration !== generation) return;
+    if (this.currentQuery !== query) return;
+    
+    // Perform event search now that timeline is loaded
     const eventResults = this.performEventSearch(query);
+    const content = document.getElementById('search-results-content');
     
-    // Combine results
-    const combinedResults = {
-      query: query,
-      bible: bibleResults,
-      events: eventResults,
-      error: bibleResults.error && eventResults.events.length === 0 ? bibleResults.error : null
-    };
+    // Remove the "loading timeline" placeholder
+    const placeholder = document.getElementById('timeline-pending-placeholder');
+    if (placeholder) placeholder.remove();
     
-    // Cache results
-    if (!combinedResults.error) {
-      this.cachedResults.set(query, combinedResults);
-      // Limit cache size
-      if (this.cachedResults.size > 20) {
-        const firstKey = this.cachedResults.keys().next().value;
-        this.cachedResults.delete(firstKey);
+    if (eventResults.events.length > 0 && content) {
+      const eventsHtml = this._buildEventsSectionHtml(eventResults);
+      
+      // Insert events above Bible results (or replace empty-state message)
+      const bibleSection = content.querySelector('.search-bible-section');
+      if (bibleSection) {
+        bibleSection.insertAdjacentHTML('beforebegin', eventsHtml);
+      } else {
+        // No Bible results — prepend events (may replace "searching timeline" message)
+        content.innerHTML = eventsHtml;
+      }
+      
+      this.displayedEventCount = eventResults.events.length;
+    } else if (!content?.querySelector('.search-bible-section') && content) {
+      // No events AND no Bible results — show "no results"
+      content.innerHTML = `<div style="text-align: center; padding: 20px; color: var(--color-text-muted);">No results found for "${this.escapeHtml(query)}"</div>`;
+    }
+    
+    // Apply collapsed state from AppStore
+    const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
+    this.applyCollapsedState(state?.ui?.globalSearchCollapsed);
+    
+    // Update cache with complete results (so back-navigation shows full results)
+    const cached = this.cachedResults.get(query);
+    if (cached) {
+      cached.events = eventResults;
+      delete cached._timelinePending;
+    } else {
+      const combinedResults = {
+        query: query,
+        bible: this.performTextSearch(query, 0, 50),
+        events: eventResults,
+        error: null
+      };
+      this._cacheResult(query, combinedResults);
+    }
+  },
+  
+  /**
+   * Build HTML for the timeline events section (used by incremental insert).
+   * @private
+   */
+  _buildEventsSectionHtml(eventResults) {
+    const eventTotal = eventResults.total || 0;
+    let html = `<div class="search-section search-events-section">
+      <div class="search-section-header" onclick="GlobalSearch.toggleSection('events')" style="padding: 8px 12px; background: var(--surface-hover); font-weight: 600; color: var(--accent-gold); border-bottom: 1px solid var(--border-subtle); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+        <span>📅 Timeline Events (${eventTotal})</span>
+        <span class="section-toggle" id="events-toggle">▼</span>
+      </div>
+      <div id="events-results-list" class="section-content">`;
+    
+    html += eventResults.events.map(event => {
+      const year = this.formatEventYear(event.startJD);
+      const icon = this.getEventTypeIcon(event.type);
+      return `
+        <div class="search-result-item search-event-item" onclick="GlobalSearch.goToEvent('${event.id}')" style="border-left: 3px solid var(--color-accent-gold);">
+          <div class="search-result-ref"><span style="margin-right: 6px;">${icon}</span>${this.escapeHtml(event.title || event.id)}</div>
+          <div class="search-result-text" style="color: var(--color-text-muted); font-size: 0.85em;">${year}</div>
+        </div>
+      `;
+    }).join('');
+    
+    html += `</div></div>`;
+    return html;
+  },
+  
+  /**
+   * Build HTML for the studies section (symbols, word studies, numbers).
+   * @private
+   */
+  _buildStudiesSectionHtml(studiesResults) {
+    const total = studiesResults.total || 0;
+    let html = `<div class="search-section search-studies-section">
+      <div class="search-section-header" onclick="GlobalSearch.toggleSection('studies')" style="padding: 8px 12px; background: var(--surface-hover); font-weight: 600; color: var(--accent-gold); border-bottom: 1px solid var(--border-subtle); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+        <span>📚 Studies (${total})</span>
+        <span class="section-toggle" id="studies-toggle">▼</span>
+      </div>
+      <div id="studies-results-list" class="section-content">`;
+    
+    html += studiesResults.results.map(study => {
+      const escapedLink = this.escapeHtml(study.link || '');
+      return `
+        <div class="search-result-item search-study-item" onclick="GlobalSearch.goToStudy('${escapedLink}')" style="border-left: 3px solid var(--color-accent-gold);">
+          <div class="search-result-ref"><span style="margin-right: 6px;">${study.icon}</span>${this.escapeHtml(study.title)}<span style="margin-left: 8px; font-size: 0.7em; color: var(--text-tertiary); text-transform: uppercase;">${study.type}</span></div>
+          <div class="search-result-text" style="color: var(--color-text-muted); font-size: 0.85em;">${this.escapeHtml(study.description)}</div>
+        </div>
+      `;
+    }).join('');
+    
+    html += `</div></div>`;
+    return html;
+  },
+  
+  /**
+   * Build HTML for the Strong's dictionary section.
+   * @private
+   */
+  _buildStrongsSectionHtml(strongsResults) {
+    const total = strongsResults.total || 0;
+    let html = `<div class="search-section search-strongs-section">
+      <div class="search-section-header" onclick="GlobalSearch.toggleSection('strongs')" style="padding: 8px 12px; background: var(--surface-hover); font-weight: 600; color: var(--accent-gold); border-bottom: 1px solid var(--border-subtle); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+        <span>📗 Strong's Dictionary (${total})</span>
+        <span class="section-toggle" id="strongs-toggle">▼</span>
+      </div>
+      <div id="strongs-results-list" class="section-content">`;
+    
+    html += strongsResults.results.map(entry => {
+      const langBadge = entry.lang === 'Hebrew' ? 'H' : 'G';
+      const defText = entry.definition ? entry.definition.replace(/^\{|\}$/g, '') : '';
+      const shortDef = defText.length > 100 ? defText.slice(0, 100) + '...' : defText;
+      return `
+        <div class="search-result-item search-strongs-item" onclick="GlobalSearch.goToStrongs('${this.escapeHtml(entry.id)}')" style="border-left: 3px solid var(--accent-primary-strong);">
+          <div class="search-result-ref"><span style="font-weight: 700; margin-right: 6px;">${entry.id}</span><span style="font-family: serif;">${entry.lemma}</span> <span style="color: var(--text-tertiary); font-style: italic;">${this.escapeHtml(entry.xlit)}</span></div>
+          <div class="search-result-text" style="color: var(--color-text-muted); font-size: 0.85em;">${this.escapeHtml(shortDef)}</div>
+        </div>
+      `;
+    }).join('');
+    
+    html += `</div></div>`;
+    return html;
+  },
+  
+  /**
+   * Navigate to a study page (symbol, word, or number)
+   */
+  goToStudy(link) {
+    if (!link) return;
+    if (typeof AppStore !== 'undefined') {
+      AppStore.dispatch({ type: 'URL_CHANGED', url: link });
+    }
+  },
+  
+  /**
+   * Navigate to Strong's entry (open research panel)
+   */
+  goToStrongs(strongsId) {
+    if (!strongsId) return;
+    if (typeof showStrongsPanel === 'function') {
+      showStrongsPanel(strongsId, '', '', null);
+    }
+  },
+  
+  /**
+   * Cache a search result with LRU eviction.
+   * @private
+   */
+  _cacheResult(query, result) {
+    this.cachedResults.set(query, result);
+    if (this.cachedResults.size > 20) {
+      const firstKey = this.cachedResults.keys().next().value;
+      this.cachedResults.delete(firstKey);
+    }
+  },
+  
+  // ─── Available number studies (derived from /numbers/*.md files) ────────────
+  _numberStudies: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,20,24,30,31,40,42,49,50,70,71,77,80,100,120,144,153,490,666,1000],
+  
+  /**
+   * Search symbol, word, and number studies
+   * @returns {{ results: Array, total: number }}
+   */
+  performStudiesSearch(query) {
+    const results = [];
+    const searchLower = query.toLowerCase().trim();
+    const wordPattern = new RegExp(`\\b${this.escapeRegex(query)}\\b`, 'i');
+    const strongsMatch = query.match(/^([HGhg])0*(\d+)$/);
+    const strongsNum = strongsMatch ? strongsMatch[1].toUpperCase() + strongsMatch[2] : null;
+    
+    // Search SYMBOL_DICTIONARY
+    if (typeof SYMBOL_DICTIONARY !== 'undefined') {
+      for (const [key, sym] of Object.entries(SYMBOL_DICTIONARY)) {
+        let matched = false;
+        // Match by name or trigger words
+        if (sym.name && sym.name.toLowerCase().includes(searchLower)) matched = true;
+        if (!matched && sym.words?.some(w => w.toLowerCase().includes(searchLower))) matched = true;
+        // Match by Strong's number
+        if (!matched && strongsNum && sym.strongs?.includes(strongsNum)) matched = true;
+        // Match by description (broader search)
+        if (!matched && sym.sentence && wordPattern.test(sym.sentence)) matched = true;
+        
+        if (matched) {
+          results.push({
+            type: 'symbol',
+            id: key,
+            title: sym.name,
+            description: sym.sentence || [sym.is, sym.is2].filter(Boolean).join(' — '),
+            link: sym.link,
+            icon: '🔣'
+          });
+        }
       }
     }
     
-    this.showResults(combinedResults);
+    // Search WORD_STUDY_DICTIONARY
+    if (typeof WORD_STUDY_DICTIONARY !== 'undefined') {
+      for (const [key, ws] of Object.entries(WORD_STUDY_DICTIONARY)) {
+        let matched = false;
+        // Match by Strong's number
+        if (strongsNum && ws.strongs === strongsNum) matched = true;
+        // Match by lemma or transliteration
+        if (!matched && ws.transliteration && wordPattern.test(ws.transliteration)) matched = true;
+        // Match by summary
+        if (!matched && ws.summary && wordPattern.test(ws.summary)) matched = true;
+        // Match by root meaning
+        if (!matched && ws.rootMeaning && wordPattern.test(ws.rootMeaning)) matched = true;
+        
+        if (matched) {
+          results.push({
+            type: 'word',
+            id: key,
+            title: `${ws.strongs} (${ws.lemma}, ${ws.transliteration})`,
+            description: ws.summary ? (ws.summary.length > 120 ? ws.summary.slice(0, 120) + '...' : ws.summary) : '',
+            link: ws.link,
+            icon: '📖'
+          });
+        }
+      }
+    }
+    
+    // Search number studies (match numeric queries)
+    const numericMatch = query.match(/^\d+$/);
+    if (numericMatch) {
+      const num = parseInt(numericMatch[0]);
+      if (this._numberStudies.includes(num)) {
+        results.push({
+          type: 'number',
+          id: String(num),
+          title: `Number Study: ${num}`,
+          description: 'Explore the biblical significance and symbolism of this number',
+          link: `/reader/numbers/${num}`,
+          icon: '🔢'
+        });
+      }
+    }
+    
+    return { results, total: results.length };
+  },
+  
+  /**
+   * Search Strong's Hebrew and Greek dictionaries
+   * @returns {{ results: Array, total: number }}
+   */
+  performStrongsSearch(query) {
+    const results = [];
+    const searchLower = query.toLowerCase().trim();
+    const wordPattern = new RegExp(`\\b${this.escapeRegex(query)}\\b`, 'i');
+    const strongsMatch = query.match(/^([HGhg])0*(\d+)$/);
+    const MAX_RESULTS = 25;
+    
+    // Direct Strong's number lookup
+    if (strongsMatch) {
+      const prefix = strongsMatch[1].toUpperCase();
+      const num = strongsMatch[2];
+      const key = prefix + num;
+      const dict = prefix === 'H' 
+        ? (typeof strongsHebrewDictionary !== 'undefined' ? strongsHebrewDictionary : null)
+        : (typeof strongsGreekDictionary !== 'undefined' ? strongsGreekDictionary : null);
+      if (dict && dict[key]) {
+        const entry = dict[key];
+        results.push({
+          id: key,
+          lang: prefix === 'H' ? 'Hebrew' : 'Greek',
+          lemma: entry.lemma || '',
+          xlit: entry.xlit || entry.translit || '',
+          definition: entry.strongs_def || '',
+          kjvDef: entry.kjv_def || ''
+        });
+      }
+      return { results, total: results.length };
+    }
+    
+    // Text search across both dictionaries (search definitions)
+    const searchDictionary = (dict, lang, prefix) => {
+      if (!dict) return;
+      for (const [key, entry] of Object.entries(dict)) {
+        if (results.length >= MAX_RESULTS) break;
+        const def = (entry.strongs_def || '') + ' ' + (entry.kjv_def || '');
+        if (wordPattern.test(def)) {
+          results.push({
+            id: key,
+            lang,
+            lemma: entry.lemma || '',
+            xlit: entry.xlit || entry.translit || '',
+            definition: entry.strongs_def || '',
+            kjvDef: entry.kjv_def || ''
+          });
+        }
+      }
+    };
+    
+    if (typeof strongsHebrewDictionary !== 'undefined') {
+      searchDictionary(strongsHebrewDictionary, 'Hebrew', 'H');
+    }
+    if (typeof strongsGreekDictionary !== 'undefined') {
+      searchDictionary(strongsGreekDictionary, 'Greek', 'G');
+    }
+    
+    return { results, total: results.length };
   },
   
   /**
@@ -861,7 +1227,9 @@ const GlobalSearch = {
     // Calculate totals
     const bibleTotal = data.bible?.total || 0;
     const eventTotal = data.events?.total || 0;
-    const totalResults = bibleTotal + eventTotal;
+    const studiesTotal = data.studies?.total || 0;
+    const strongsTotal = data.strongs?.total || 0;
+    const totalResults = bibleTotal + eventTotal + studiesTotal + strongsTotal;
     
     // Update displayed counts
     if (appendBible) {
@@ -874,7 +1242,12 @@ const GlobalSearch = {
     if (!content) return;
     
     if (totalResults === 0 && !appendBible) {
-      content.innerHTML = `<div style="text-align: center; padding: 20px; color: var(--color-text-muted);">No results found for "${this.escapeHtml(data.query)}"</div>`;
+      if (data._timelinePending) {
+        // No instant results but timeline is still loading — show placeholder
+        content.innerHTML = '<div id="timeline-pending-placeholder" style="text-align: center; padding: 20px; color: var(--color-text-muted);">Searching timeline events...</div>';
+      } else {
+        content.innerHTML = `<div style="text-align: center; padding: 20px; color: var(--color-text-muted);">No results found for "${this.escapeHtml(data.query)}"</div>`;
+      }
       return;
     }
     
@@ -905,6 +1278,21 @@ const GlobalSearch = {
         }).join('');
         
         html += `</div></div>`;
+      }
+      
+      // Timeline loading placeholder (events still loading in background)
+      if (data._timelinePending && (!data.events?.events?.length)) {
+        html += `<div id="timeline-pending-placeholder" style="padding: 8px 12px; color: var(--color-text-muted); font-size: 0.85em; text-align: center; border-bottom: 1px solid var(--border-subtle);">Loading timeline events...</div>`;
+      }
+      
+      // Studies results section (symbols, word studies, numbers — collapsible)
+      if (data.studies?.results?.length > 0) {
+        html += this._buildStudiesSectionHtml(data.studies);
+      }
+      
+      // Strong's dictionary results section (collapsible)
+      if (data.strongs?.results?.length > 0) {
+        html += this._buildStrongsSectionHtml(data.strongs);
       }
       
       // Bible results section (collapsible)
@@ -1139,23 +1527,30 @@ const GlobalSearch = {
    * Navigate to a Bible search result
    */
   goToResult(book, chapter, verse) {
-    // Navigate to verse (keep search results open - user can close with X)
-    if (typeof AppStore !== 'undefined') {
-      // Preserve current translation so navigateWhenReady doesn't fall back to bible home
-      const state = AppStore.getState();
-      const translation = state.content?.params?.translation || 'kjv';
-      AppStore.dispatch({
-        type: 'SET_VIEW',
-        view: 'reader',
-        params: {
-          contentType: 'bible',
-          translation: translation,
-          book: book,
-          chapter: chapter,
-          verse: verse
-        }
-      });
+    if (typeof AppStore === 'undefined') return;
+    
+    // Preserve current translation so navigateWhenReady doesn't fall back to bible home
+    const state = AppStore.getState();
+    const translation = state.content?.params?.translation || 'kjv';
+    
+    // On mobile: close the research panel so the bible verse is visible
+    // (no room for side-by-side; user can tap a word to re-open strongs)
+    if (window.innerWidth <= 768 && typeof closeStrongsPanel === 'function') {
+      closeStrongsPanel();
     }
+    
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'reader',
+      params: {
+        contentType: 'bible',
+        translation: translation,
+        book: book,
+        chapter: chapter,
+        verse: verse
+      },
+      preserveStrongs: window.innerWidth > 768  // Desktop: keep panel; Mobile: already closed above
+    });
   },
   
   /**
@@ -1202,8 +1597,8 @@ const GlobalSearch = {
         console.log('[GlobalSearch] Timeline events from cache:', events.length);
         return events;
       }
-      // Async load/compute
-      events = await ResolvedEventsCache.getEventsAsync(profile);
+      // Async load/compute — pass onProgress so resolveAllEventsAsync is used (yields to event loop)
+      events = await ResolvedEventsCache.getEventsAsync(profile, () => {});
       if (events && events.length > 0) {
         console.log('[GlobalSearch] Timeline events resolved:', events.length);
         return events;
@@ -1280,6 +1675,11 @@ const GlobalSearch = {
     if (container) {
       container.classList.add('open');
       container.style.height = this.resultsHeight + 'px';
+      // On mobile, if the research panel is also open, scroll to top so both are visible
+      // (search results sit above the research panel in the DOM)
+      if (window.innerWidth <= 768 && document.body.classList.contains('research-panel-open')) {
+        requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
     }
   },
   
@@ -1320,13 +1720,24 @@ const GlobalSearch = {
       
       console.log('[GlobalSearch] Checking initial state, query:', query, 'collapsed:', collapsedState);
       
-      if (query && query !== this.currentQuery) {
-        this.currentQuery = query;
+      if (query) {
         const input = document.getElementById('global-search-input');
         if (input) input.value = query;
-        this.executeSearch(query);
-        // Apply collapsed state after search renders
-        setTimeout(() => this.applyCollapsedState(collapsedState), 100);
+        
+        // Check if results are already visible (subscriber may have handled it)
+        const resultsContainer = document.getElementById('global-search-results');
+        const alreadyOpen = resultsContainer?.classList.contains('open');
+        
+        if (!alreadyOpen || this.currentQuery !== query) {
+          // Results not visible yet or query changed — execute search
+          this.currentQuery = query;
+          this.executeSearch(query);
+          // Apply collapsed state after search renders
+          setTimeout(() => this.applyCollapsedState(collapsedState), 100);
+        } else {
+          // Results already open — just apply collapsed state
+          this.applyCollapsedState(collapsedState);
+        }
       }
     }, 500);
   },
@@ -1409,7 +1820,7 @@ const GlobalSearch = {
         height: this.resultsHeight
       };
       
-      document.addEventListener('touchmove', this.onResizeTouchMove);
+      document.addEventListener('touchmove', this.onResizeTouchMove, { passive: false });
       document.addEventListener('touchend', this.onResizeEnd);
     });
   },
@@ -1432,6 +1843,7 @@ const GlobalSearch = {
   
   onResizeTouchMove: function(e) {
     if (!GlobalSearch.resizeStart) return;
+    e.preventDefault(); // Prevent body scroll during resize drag
     const touch = e.touches[0];
     GlobalSearch.onResizeMove({ clientY: touch.clientY });
   },

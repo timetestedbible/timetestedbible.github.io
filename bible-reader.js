@@ -2418,7 +2418,7 @@ function abbreviateRef(ref) {
   return `${abbrev} ${match[2]}`;
 }
 
-// Navigate to a verse from search results
+// Navigate to a verse from search results (keeps research panel open)
 function goToVerseFromSearch(ref) {
   // Parse reference like "Genesis 1:5"
   const match = ref.match(/^(.+)\s+(\d+):(\d+)$/);
@@ -2428,25 +2428,37 @@ function goToVerseFromSearch(ref) {
   const chapter = parseInt(match[2]);
   const verse = parseInt(match[3]);
   
-  // On narrow screens, close the Strong's panel (no room for side-by-side).
-  // On wide screens (including iPads), keep it open alongside the verse.
-  if (window.innerWidth <= 768) {
-    closeStrongsPanel();
-  }
-  
-  // Navigate to the verse with highlighting
+  // Navigate to the verse with highlighting (research panel stays open)
   openBibleExplorerTo(book, chapter, verse);
 }
 
-// Populate the global search bar with a Strong's number and trigger a search.
-// Keeps the Strong's panel open so it acts as a quick "find all verses" link.
+// Trigger a global search for all verses containing a Strong's number.
+// Keeps the research panel open; search results appear above it (via #global-search-results).
 function searchStrongsInGlobal(strongsNum) {
-  if (typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_GLOBAL_SEARCH', query: strongsNum });
-  }
+  if (typeof GlobalSearch === 'undefined') return;
+  
   // Expand the search input (for mobile)
-  if (typeof GlobalSearch !== 'undefined' && GlobalSearch.expandInput) {
-    GlobalSearch.expandInput();
+  if (GlobalSearch.expandInput) GlobalSearch.expandInput();
+  
+  // Set the input value
+  const input = document.getElementById('global-search-input');
+  if (input) input.value = strongsNum;
+  
+  // If the same query is already in state, the reducer won't fire the subscriber.
+  // Force-execute the search directly in that case.
+  const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
+  if (state?.ui?.globalSearchQuery === strongsNum) {
+    // Same query already in state — execute directly and show results
+    GlobalSearch.currentQuery = null; // Reset so executeSearch runs
+    GlobalSearch.executeSearch(strongsNum);
+  } else {
+    // New query — dispatch to state, subscriber will fire executeSearch
+    GlobalSearch.search(strongsNum);
+  }
+  
+  // On mobile, scroll to top so user sees the search results above the strongs content
+  if (window.innerWidth <= 768) {
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 }
 
@@ -3898,7 +3910,7 @@ function navigateToBDBVerse(verseRef, event) {
   const book = abbrevMap[bookAbbr] || bookAbbr;
   const chapter = parseInt(match[2]);
   const verse = parseInt(match[3]);
-  closeStrongsPanel();
+  // Navigate to verse (keep research panel open — user is studying a word)
   if (typeof openBibleExplorerTo === 'function') {
     openBibleExplorerTo(book, chapter, verse);
   }
@@ -4419,7 +4431,7 @@ async function loadBDBFormatted() {
 
 // Update Strong's panel content (without adding to history)
 function updateStrongsPanelContent(strongsNum, isNavigation = false) {
-  const sidebar = document.getElementById('strongs-sidebar');
+  const sidebar = document.getElementById('research-panel');
   if (!sidebar) return;
   
   // Clear morph context when navigating within the panel (it was specific to the tapped word)
@@ -4427,15 +4439,18 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
   
   const entry = getStrongsEntry(strongsNum);
   
-  // Update title
-  const titleEl = sidebar.querySelector('.strongs-sidebar-title');
-  if (titleEl) titleEl.textContent = strongsNum;
+  // Update inline header badge
+  const badge = document.getElementById('research-id-badge');
+  if (badge) badge.textContent = strongsNum;
   
   // Update content
-  const contentEl = sidebar.querySelector('.strongs-sidebar-content');
+  const contentEl = sidebar.querySelector('.research-panel-content');
   if (!contentEl) return;
   
   let html = '';
+  
+  // Subtle strongs ID label (visible on mobile)
+  html += `<div class="research-id-mobile">${strongsNum}</div>`;
   
   if (entry) {
     html += `
@@ -4547,48 +4562,33 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
 function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = false) {
   if (event) event.stopPropagation();
   
-  // Use the sidebar element from HTML
-  const sidebar = document.getElementById('strongs-sidebar');
-  if (!sidebar) return;
+  // Use the research panel element from HTML
+  const panel = document.getElementById('research-panel');
+  if (!panel) return;
   
-  const isNewPanel = !sidebar.classList.contains('open');
+  const isNewPanel = !panel.classList.contains('open');
   
   if (isNewPanel) {
     // Reset history for new panel
     strongsHistory = [strongsNum];
     strongsHistoryIndex = 0;
     
-    // Build sidebar content (no back/forward here — use top header)
-    sidebar.innerHTML = `
-      <div class="strongs-sidebar-resize" onmousedown="startStrongsResize(event)"></div>
-      <div class="strongs-sidebar-header">
-        <div class="strongs-sidebar-title">${strongsNum}</div>
-        <button class="strongs-sidebar-close" onclick="closeStrongsPanel()">✕</button>
-      </div>
-      <div class="strongs-sidebar-content"></div>
-    `;
-    
-    // Restore user's saved width on desktop only (mobile uses full-width CSS)
-    if (window.innerWidth > 768) {
-      try {
-        const saved = localStorage.getItem('strongs-sidebar-width');
-        if (saved) sidebar.style.width = saved;
-      } catch (e) {}
-    } else {
-      sidebar.style.width = '';  // Clear any inline width so CSS 100% applies
+    // On mobile, clear any inline width so CSS 100% applies
+    if (window.innerWidth <= 768) {
+      panel.style.width = '';
     }
     
-    // Animate open (body class raises stacking context so overlay is above word/hebrew tooltips)
+    // Mark panel as active (body class for CSS hooks)
     requestAnimationFrame(() => {
-      sidebar.classList.add('open');
-      document.body.classList.add('strongs-sidebar-open');
-      // On mobile, scroll to top so user sees strongs content from the start
+      panel.classList.add('open');
+      document.body.classList.add('research-panel-open');
+      // On mobile, scroll to top so user sees content from the start
       if (window.innerWidth <= 768) {
         window.scrollTo(0, 0);
       }
     });
   } else {
-    // Sidebar already open, add to history
+    // Panel already open, add to history
     if (strongsHistoryIndex < strongsHistory.length - 1) {
       strongsHistory = strongsHistory.slice(0, strongsHistoryIndex + 1);
     }
@@ -4596,16 +4596,19 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     strongsHistoryIndex = strongsHistory.length - 1;
   }
   
+  // Update the inline header badge (desktop: visible in bible-explorer-header row)
+  const badge = document.getElementById('research-id-badge');
+  if (badge) badge.textContent = strongsNum;
+  
   // Update content
   const entry = getStrongsEntry(strongsNum);
   const personInfo = getPersonInfo(strongsNum);
   
-  // Update title
-  const titleEl = sidebar.querySelector('.strongs-sidebar-title');
-  if (titleEl) titleEl.textContent = strongsNum;
-  
-  const contentEl = sidebar.querySelector('.strongs-sidebar-content');
+  const contentEl = panel.querySelector('.research-panel-content');
   let html = '';
+  
+  // Subtle strongs ID label (visible on mobile where header badge is hidden)
+  html += `<div class="research-id-mobile">${strongsNum}</div>`;
   
   if (englishWord) {
     html += `<div class="strongs-word-english">"${englishWord}"</div>`;
@@ -4737,14 +4740,21 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
   }
 }
 
-// Close Strong's sidebar
+// Close Research Panel (clear content back to default welcome state)
 function closeStrongsPanel(skipDispatch = false) {
-  const sidebar = document.getElementById('strongs-sidebar');
-  if (sidebar) {
-    sidebar.classList.remove('open', 'collapsed');
-    sidebar.innerHTML = '';
-    document.body.classList.remove('strongs-sidebar-open');
+  const panel = document.getElementById('research-panel');
+  if (panel) {
+    panel.classList.remove('open', 'collapsed');
+    document.body.classList.remove('research-panel-open');
+    // Reset to welcome state (keep resize handle from HTML, reset content)
+    const contentEl = panel.querySelector('.research-panel-content');
+    if (contentEl) {
+      contentEl.innerHTML = '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+    }
   }
+  // Clear inline header badge
+  const badge = document.getElementById('research-id-badge');
+  if (badge) badge.textContent = '';
   // Clear interlinear word highlight
   highlightInterlinearWord(null);
   // Reset history
@@ -4765,7 +4775,7 @@ let isResizing = false;
 function startStrongsResize(event) {
   event.preventDefault();
   isResizing = true;
-  const sidebar = document.getElementById('strongs-sidebar');
+  const sidebar = document.getElementById('research-panel');
   if (sidebar) sidebar.classList.add('resizing');
   document.body.style.cursor = 'ew-resize';
   document.body.style.userSelect = 'none';
@@ -4777,7 +4787,7 @@ function startStrongsResize(event) {
 function doStrongsResize(event) {
   if (!isResizing) return;
   
-  const sidebar = document.getElementById('strongs-sidebar');
+  const sidebar = document.getElementById('research-panel');
   if (!sidebar) return;
   
   // Calculate new width from right edge of content wrapper
@@ -4786,17 +4796,17 @@ function doStrongsResize(event) {
   
   const wrapperRect = wrapper.getBoundingClientRect();
   const newWidth = wrapperRect.right - event.clientX;
-  const clampedWidth = Math.max(280, Math.min(newWidth, wrapperRect.width * 0.6));
+  const clampedWidth = Math.max(200, Math.min(newWidth, wrapperRect.width * 0.6));
   
   sidebar.style.width = clampedWidth + 'px';
 }
 
 function stopStrongsResize() {
   isResizing = false;
-  const sidebar = document.getElementById('strongs-sidebar');
+  const sidebar = document.getElementById('research-panel');
   if (sidebar) {
     sidebar.classList.remove('resizing');
-    localStorage.setItem('strongs-sidebar-width', sidebar.style.width);
+    localStorage.setItem('research-panel-width', sidebar.style.width);
   }
   document.body.style.cursor = '';
   document.body.style.userSelect = '';
@@ -7034,13 +7044,7 @@ function showHebrewInterlinear(verseEl, hebrewText, errorMessage) {
  * @param {string} contentType - 'bible', 'symbols', 'words', 'numbers', 'timetested', or 'people'
  */
 function updateReaderContentSelector(contentType) {
-  // Update dropdown value
-  const contentSelect = document.getElementById('reader-content-select');
-  if (contentSelect) {
-    contentSelect.value = contentType;
-  }
-  
-  // Show/hide selector groups
+  // Show/hide selector groups (content-type dropdown removed; users switch via hamburger menu)
   // For 'words', 'people', 'verse-studies', and 'symbols-article', hide all selectors (numbers has its own dropdown)
   const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies'].includes(contentType);
   const bibleSelectors = document.getElementById('bible-selectors');

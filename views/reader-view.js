@@ -414,7 +414,7 @@ const ReaderView = {
   syncUIState(ui) {
     if (!ui) return;
     
-    const currentStrongsOpen = document.getElementById('strongs-sidebar')?.classList.contains('open');
+    const currentStrongsOpen = document.getElementById('research-panel')?.classList.contains('open');
     
     // If URL has strongsId and panel isn't showing it, open it
     if (ui.strongsId && this._currentStrongsId !== ui.strongsId) {

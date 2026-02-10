@@ -200,7 +200,7 @@
         flex: none !important;
       }
       
-      .strongs-sidebar:not(.open) {
+      .research-panel:not(.open) {
         position: absolute !important;
         width: 0 !important;
         min-width: 0 !important;
@@ -286,6 +286,12 @@
   <!-- GLOBAL SEARCH RESULTS (collapsible region) -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <div id="global-search-results" class="global-search-results">
+    <div id="search-filter-bar" class="search-filter-bar">
+      <button class="search-filter-btn active" data-filter="events" onclick="GlobalSearch.toggleFilter('events')">Events</button>
+      <button class="search-filter-btn active" data-filter="bible" onclick="GlobalSearch.toggleFilter('bible')">Bible</button>
+      <button class="search-filter-btn active" data-filter="studies" onclick="GlobalSearch.toggleFilter('studies')">Studies</button>
+      <button class="search-filter-btn active" data-filter="strongs" onclick="GlobalSearch.toggleFilter('strongs')">Strongs</button>
+    </div>
     <div class="search-results-content" id="search-results-content">
       <!-- Results rendered here -->
     </div>
@@ -838,9 +844,10 @@
             amEpoch: -4000
           };
           
-          if (ResolvedEventsCache.isCached(profile)) {
-            // Cached — load immediately (no delay)
-            console.log('[App] Resolved events cached — loading bible events immediately');
+          const hasSearchQuery = new URLSearchParams(window.location.search).has('q');
+          if (ResolvedEventsCache.isCached(profile) || hasSearchQuery) {
+            // Cached or search query present — load immediately (search needs timeline data)
+            console.log('[App] Resolved events:', ResolvedEventsCache.isCached(profile) ? 'cached' : 'search query present', '— loading immediately');
             loadEventsAndPopulate();
           } else {
             // Not cached — defer to avoid blocking initial render
@@ -897,6 +904,14 @@
       
       // Add initial URL to navigation history
       AppStore.dispatch({ type: 'NAV_PUSH', url: window.location.pathname + window.location.search });
+      
+      // Proactively preload primary Bible translation so it's ready before user interacts with search.
+      // Bible.loadTranslation deduplicates, so this is safe even if BibleView loads it too.
+      if (typeof Bible !== 'undefined') {
+        const initState = AppStore.getState();
+        const preloadTranslation = initState?.content?.params?.translation || 'akjv';
+        Bible.loadTranslation(preloadTranslation).catch(() => {});
+      }
       
       // Intercept in-app links so they never cause a full page reload (keeps RAM cache)
       document.addEventListener('click', function interceptInAppLinks(e) {

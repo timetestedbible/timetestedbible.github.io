@@ -236,7 +236,7 @@ async function showCrossRefPanel(book, chapter, verse, event) {
   if (event) event.stopPropagation();
   
   // Use the same sidebar as Strong's panel
-  const sidebar = document.getElementById('strongs-sidebar');
+  const sidebar = document.getElementById('research-panel');
   if (!sidebar) {
     console.error('[CrossRef] Sidebar element not found!');
     return;
@@ -244,14 +244,14 @@ async function showCrossRefPanel(book, chapter, verse, event) {
   
   console.log('[CrossRef] Opening panel for', book, chapter, verse);
   
-  // Build sidebar content with loading state
-  sidebar.innerHTML = `
-    <div class="strongs-sidebar-resize" onmousedown="startStrongsResize(event)"></div>
-    <div class="strongs-sidebar-header">
-      <div class="strongs-sidebar-title">🔗 Cross References</div>
-      <button class="strongs-sidebar-close" onclick="closeStrongsPanel()">✕</button>
-    </div>
-    <div class="strongs-sidebar-content">
+  // Build panel content (no header — badge is inline in bible-explorer-header)
+  const badge = document.getElementById('research-id-badge');
+  if (badge) badge.textContent = `🔗 ${book} ${chapter}:${verse}`;
+  
+  const contentEl = sidebar.querySelector('.research-panel-content');
+  if (contentEl) {
+    contentEl.innerHTML = `
+      <div class="research-id-mobile">🔗 Cross References</div>
       <div class="cross-ref-panel">
         <div class="cross-ref-source">
           <span class="cross-ref-verse">${book} ${chapter}:${verse}</span>
@@ -260,24 +260,25 @@ async function showCrossRefPanel(book, chapter, verse, event) {
           Loading cross-references...
         </div>
       </div>
-    </div>
-  `;
+    `;
+  }
   
   try {
-    const saved = localStorage.getItem('strongs-sidebar-width');
+    const saved = localStorage.getItem('research-panel-width');
     if (saved) sidebar.style.width = saved;
   } catch (e) {}
   
-  // Animate open
+  // Mark panel as active
   requestAnimationFrame(() => {
     sidebar.classList.add('open');
+    document.body.classList.add('research-panel-open');
   });
   
   // Ensure data is loaded
   await loadCrossReferences();
   
   const refs = getCrossReferencesSync(book, chapter, verse);
-  const contentEl = sidebar.querySelector('.strongs-sidebar-content');
+  const contentEl = sidebar.querySelector('.research-panel-content');
   
   if (refs.length === 0) {
     if (contentEl) {
@@ -355,7 +356,7 @@ function navigateToCrossRef(book, chapter, verse) {
   console.log('[CrossRef] Navigating to:', book, chapter, verse);
   
   // Close the sidebar first
-  const sidebar = document.getElementById('strongs-sidebar');
+  const sidebar = document.getElementById('research-panel');
   if (sidebar) sidebar.classList.remove('open');
   
   // Get current translation

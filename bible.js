@@ -850,7 +850,7 @@ const Bible = {
     this._loading[translationId] = (async () => {
       try {
         const text = await this._fetchAndDecompress(reg.file);
-        this._parseAndStore(translationId, text);
+        await this._parseAndStoreAsync(translationId, text);
         console.log(`[Bible] ${reg.name} loaded: ${Object.keys(this._indexes[translationId]).length} verses`);
         return true;
       } catch (err) {
@@ -867,9 +867,11 @@ const Bible = {
   /**
    * Parse a standardized .txt file and store as blob + offset index.
    * Format: Line1=ID, Line2=FullName, Line3+= "BookName Ch:V\tText"
+   * Yields to event loop every CHUNK_SIZE lines to avoid blocking UI.
    * @private
    */
-  _parseAndStore(translationId, rawText) {
+  async _parseAndStoreAsync(translationId, rawText) {
+    const CHUNK_SIZE = 5000;
     // We store the raw text as the blob (we'll slice from it).
     // Build an index: ref → [start, end] character offsets into the blob.
     const offsets = {};  // "Genesis 1:1" → [startChar, endChar]
@@ -881,35 +883,42 @@ const Bible = {
     const len = rawText.length;
 
     while (pos < len) {
-      const nlIdx = rawText.indexOf('\n', pos);
-      const lineEnd = nlIdx === -1 ? len : nlIdx;
-      lineNum++;
+      // Process a chunk of lines before yielding
+      const chunkEnd = lineNum + CHUNK_SIZE;
+      while (pos < len && lineNum < chunkEnd) {
+        const nlIdx = rawText.indexOf('\n', pos);
+        const lineEnd = nlIdx === -1 ? len : nlIdx;
+        lineNum++;
 
-      // Skip header lines (first 2 lines: ID and FullName)
-      if (lineNum > 2) {
-        const tabIdx = rawText.indexOf('\t', pos);
-        if (tabIdx !== -1 && tabIdx < lineEnd) {
-          const ref = rawText.slice(pos, tabIdx);
-          const textStart = tabIdx + 1;
-          const textEnd = lineEnd;
-          offsets[ref] = [textStart, textEnd];
+        // Skip header lines (first 2 lines: ID and FullName)
+        if (lineNum > 2) {
+          const tabIdx = rawText.indexOf('\t', pos);
+          if (tabIdx !== -1 && tabIdx < lineEnd) {
+            const ref = rawText.slice(pos, tabIdx);
+            offsets[ref] = [tabIdx + 1, lineEnd];
 
-          // Track book/chapter structure
-          const spaceBeforeChapter = ref.lastIndexOf(' ');
-          if (spaceBeforeChapter > 0) {
-            const book = ref.slice(0, spaceBeforeChapter);
-            const chVerse = ref.slice(spaceBeforeChapter + 1);
-            const colonIdx = chVerse.indexOf(':');
-            if (colonIdx > 0) {
-              const ch = parseInt(chVerse.slice(0, colonIdx));
-              if (!bookChapters[book]) bookChapters[book] = new Set();
-              bookChapters[book].add(ch);
+            // Track book/chapter structure
+            const spaceBeforeChapter = ref.lastIndexOf(' ');
+            if (spaceBeforeChapter > 0) {
+              const book = ref.slice(0, spaceBeforeChapter);
+              const chVerse = ref.slice(spaceBeforeChapter + 1);
+              const colonIdx = chVerse.indexOf(':');
+              if (colonIdx > 0) {
+                const ch = parseInt(chVerse.slice(0, colonIdx));
+                if (!bookChapters[book]) bookChapters[book] = new Set();
+                bookChapters[book].add(ch);
+              }
             }
           }
         }
+
+        pos = lineEnd + 1;
       }
 
-      pos = lineEnd + 1;
+      // Yield to event loop between chunks so clicks/focus events aren't blocked
+      if (pos < len) {
+        await new Promise(r => setTimeout(r, 0));
+      }
     }
 
     this._blobs[translationId] = rawText;

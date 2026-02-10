@@ -237,7 +237,7 @@ const URLRouter = {
           }
           // Restore Strong's sidebar scroll position too
           if (event.state.strongsScrollTop !== undefined) {
-            const strongsSidebar = document.querySelector('#strongs-sidebar .strongs-sidebar-content');
+            const strongsSidebar = document.querySelector('#research-panel .research-panel-content');
             if (strongsSidebar) {
               strongsSidebar.scrollTop = event.state.strongsScrollTop;
             }
@@ -257,7 +257,7 @@ const URLRouter = {
     const textArea = document.getElementById('bible-explorer-text');
     if (textArea) {
       const scrollTop = textArea.scrollTop;
-      const strongsSidebar = document.querySelector('#strongs-sidebar .strongs-sidebar-content');
+      const strongsSidebar = document.querySelector('#research-panel .research-panel-content');
       const strongsScrollTop = strongsSidebar ? strongsSidebar.scrollTop : 0;
       const state = { ...history.state, scrollTop, strongsScrollTop };
       history.replaceState(state, '', window.location.href);
@@ -328,7 +328,8 @@ const URLRouter = {
         eventsEra: 'all',
         eventsViewMode: 'list',
         globalSearchQuery: null,
-        globalSearchCollapsed: { events: false, bible: false }
+        globalSearchCollapsed: { events: false, bible: false, studies: false, strongs: false },
+        globalSearchFilters: { events: true, bible: true, studies: true, strongs: true }
       }
     };
     
@@ -454,7 +455,19 @@ const URLRouter = {
       const collapsedSections = searchParams.get('collapsed').split(',');
       result.ui.globalSearchCollapsed = {
         events: collapsedSections.includes('events'),
-        bible: collapsedSections.includes('bible')
+        bible: collapsedSections.includes('bible'),
+        studies: collapsedSections.includes('studies'),
+        strongs: collapsedSections.includes('strongs')
+      };
+    }
+    // Global search filters (e.g., "events,bible" = only those enabled; absent = all enabled)
+    if (searchParams.get('sf')) {
+      const enabledFilters = searchParams.get('sf').split(',');
+      result.ui.globalSearchFilters = {
+        events: enabledFilters.includes('events'),
+        bible: enabledFilters.includes('bible'),
+        studies: enabledFilters.includes('studies'),
+        strongs: enabledFilters.includes('strongs')
       };
     }
     // Parse 'search' param based on view context
@@ -787,8 +800,20 @@ const URLRouter = {
       const collapsedSections = [];
       if (ui.globalSearchCollapsed?.events) collapsedSections.push('events');
       if (ui.globalSearchCollapsed?.bible) collapsedSections.push('bible');
+      if (ui.globalSearchCollapsed?.studies) collapsedSections.push('studies');
+      if (ui.globalSearchCollapsed?.strongs) collapsedSections.push('strongs');
       if (collapsedSections.length > 0) {
         params.set('collapsed', collapsedSections.join(','));
+      }
+      // Save search filters if not all enabled (omit param when all on = default)
+      const filters = ui.globalSearchFilters;
+      if (filters && !(filters.events && filters.bible && filters.studies && filters.strongs)) {
+        const enabled = [];
+        if (filters.events) enabled.push('events');
+        if (filters.bible) enabled.push('bible');
+        if (filters.studies) enabled.push('studies');
+        if (filters.strongs) enabled.push('strongs');
+        if (enabled.length > 0) params.set('sf', enabled.join(','));
       }
     }
     // searchQuery is for reader/bible view only - don't serialize on other views
@@ -971,7 +996,7 @@ const URLRouter = {
           // For replace, preserve scroll in current state (both panes)
           const textArea = document.getElementById('bible-explorer-text');
           const scrollTop = textArea ? textArea.scrollTop : 0;
-          const strongsSidebar = document.querySelector('#strongs-sidebar .strongs-sidebar-content');
+          const strongsSidebar = document.querySelector('#research-panel .research-panel-content');
           const strongsScrollTop = strongsSidebar ? strongsSidebar.scrollTop : 0;
           history.replaceState({ scrollTop, strongsScrollTop }, '', newURL);
         }

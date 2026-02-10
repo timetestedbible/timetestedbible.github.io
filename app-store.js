@@ -59,7 +59,8 @@ const AppStore = {
       feastsPanel: false,       // Feasts slideout panel state
       priestlyPanel: false,     // Priestly cycles slideout panel state
       globalSearchQuery: null,  // Global search query (in top nav)
-      globalSearchCollapsed: { events: false, bible: false },  // Collapsed sections in search results
+      globalSearchCollapsed: { events: false, bible: false, studies: false, strongs: false },  // Collapsed sections in search results
+      globalSearchFilters: { events: true, bible: true, studies: true, strongs: true },  // Search domain filters
       calcOpen: false,          // Date calculator open state
       calcDir: 'add',           // Calculator direction: 'add' or 'sub'
       calcMode: null,           // Calculator mode: null=auto, 'lunar', 'gregorian'
@@ -1475,10 +1476,17 @@ const AppStore = {
         return true;
       
       case 'SET_SEARCH_COLLAPSED': {
-        const section = event.section; // 'events' or 'bible'
+        const section = event.section; // 'events', 'bible', 'studies', 'strongs'
         const collapsed = event.collapsed;
         if (s.ui.globalSearchCollapsed[section] === collapsed) return false;
         s.ui.globalSearchCollapsed = { ...s.ui.globalSearchCollapsed, [section]: collapsed };
+        return true;
+      }
+      
+      case 'TOGGLE_SEARCH_FILTER': {
+        const filter = event.filter; // 'events', 'bible', 'studies', 'strongs'
+        if (s.ui.globalSearchFilters[filter] === undefined) return false;
+        s.ui.globalSearchFilters = { ...s.ui.globalSearchFilters, [filter]: !s.ui.globalSearchFilters[filter] };
         return true;
       }
       
