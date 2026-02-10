@@ -441,7 +441,8 @@
   align-items: center;
   gap: 8px;
   padding: 16px;
-  background: rgba(20, 40, 70, 0.8);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
 }
 
@@ -455,8 +456,11 @@
   width: 32px;
   height: 32px;
   object-fit: contain;
-  filter: invert(1) brightness(0.9);
   opacity: 0.9;
+}
+
+[data-theme="dark"] .ttt-review-icon {
+  filter: invert(1) brightness(0.9);
 }
 
 .ttt-review-icon:first-child {
@@ -464,15 +468,14 @@
   height: 38px;
 }
 
-.ttt-review-icon:last-child {
+[data-theme="dark"] .ttt-review-icon:last-child {
   filter: none;
-  opacity: 0.9;
 }
 
 .ttt-reviews-summary {
   font-size: 0.9em;
   font-style: italic;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   text-align: center;
   margin: 0;
   line-height: 1.4;

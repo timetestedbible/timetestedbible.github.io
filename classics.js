@@ -250,10 +250,29 @@ function parseJosephusCitation(str) {
   const work = JOSEPHUS_WORK_MAP[workInput] || workInput.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   const workKey = work.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
   const book = parseInt(match[2], 10);
-  const chapter = match[3] != null ? parseInt(match[3], 10) : undefined;
-  const section = match[4] != null ? parseInt(match[4], 10) : (chapter != null ? chapter : book);
   const hasThreeParts = match[4] != null;
-  return { author: 'josephus', work, workKey, book, chapter: chapter ?? section, section: match[4] != null ? parseInt(match[4], 10) : section, hasThreeParts };
+  // Against Apion and Life have no chapter divisions — 2-part citations are book.section (chapter is always 1)
+  const chapterlessWorks = ['Against Apion', 'Life'];
+  const isChapterless = chapterlessWorks.includes(work);
+  let chapter, section;
+  if (hasThreeParts) {
+    chapter = parseInt(match[3], 10);
+    section = parseInt(match[4], 10);
+  } else if (match[3] != null) {
+    if (isChapterless) {
+      // "Against Apion 2.282" → book=2, chapter=1, section=282
+      chapter = 1;
+      section = parseInt(match[3], 10);
+    } else {
+      // "Antiquities 18.2" → book=18, chapter=2, section=2 (ambiguous, default section=chapter)
+      chapter = parseInt(match[3], 10);
+      section = chapter;
+    }
+  } else {
+    chapter = undefined;
+    section = book;
+  }
+  return { author: 'josephus', work, workKey, book, chapter: chapter ?? section, section, hasThreeParts };
 }
 
 /**

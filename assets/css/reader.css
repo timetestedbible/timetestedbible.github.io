@@ -500,7 +500,7 @@
   border-left: 3px solid var(--color-accent-gold);
   padding: var(--spacing-md) var(--spacing-lg);
   margin: var(--spacing-md) var(--spacing-xl);
-  background: rgba(212, 160, 23, 0.05);
+  background: var(--accent-gold-subtle);
   color: var(--text-primary);
   font-style: italic;
   border-radius: 0 6px 6px 0;
@@ -592,7 +592,7 @@
 }
 .ttt-chapter-body details summary {
   padding: var(--spacing-sm) var(--spacing-md);
-  background: rgba(42, 90, 140, 0.25);
+  background: var(--accent-primary-muted);
   cursor: pointer;
   font-weight: 600;
   color: var(--accent-primary);
@@ -603,7 +603,7 @@
   display: none;
 }
 .ttt-chapter-body details summary:hover {
-  background: rgba(42, 90, 140, 0.4);
+  background: var(--accent-primary-strong);
 }
 .ttt-chapter-body details pre {
   margin: 0;
@@ -1013,9 +1013,9 @@ code {
 .symbol-study-body a,
 .symbol-article-body a,
 .number-study-body a {
-  color: var(--accent-color, #4a90d9);
+  color: var(--accent-primary);
   text-decoration: underline;
-  text-decoration-color: rgba(74, 144, 217, 0.4);
+  text-decoration-color: var(--accent-primary-strong);
   text-underline-offset: 2px;
 }
 

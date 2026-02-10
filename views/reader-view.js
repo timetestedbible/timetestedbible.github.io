@@ -458,11 +458,14 @@ const ReaderView = {
    */
   renderSymbolInBibleFrame(state, derived, container, symbolKey) {
     // First render the Bible structure if not already present
+    const symbolState = { content: { params: { contentType: 'symbols' } } };
     const existingPage = container.querySelector('#bible-explorer-page');
     if (!existingPage) {
       if (typeof BibleView !== 'undefined') {
-        BibleView.renderStructure(container);
+        BibleView.renderStructure(container, symbolState);
       }
+    } else if (typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      BibleView.syncSelectorVisibility(symbolState);
     }
     
     // Update the content selector
@@ -511,11 +514,14 @@ const ReaderView = {
    */
   renderSymbolArticleInBibleFrame(state, derived, container, articleName) {
     // First render the Bible structure if not already present
+    const symbolState = { content: { params: { contentType: 'symbols-article' } } };
     const existingPage = container.querySelector('#bible-explorer-page');
     if (!existingPage) {
       if (typeof BibleView !== 'undefined') {
-        BibleView.renderStructure(container);
+        BibleView.renderStructure(container, symbolState);
       }
+    } else if (typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      BibleView.syncSelectorVisibility(symbolState);
     }
     
     // Update the content selector to show symbols
@@ -1304,11 +1310,14 @@ const ReaderView = {
    */
   renderTimeTestedInBibleFrame(state, derived, container, chapterId, section) {
     // First render the Bible structure if not already present
+    const tttState = { content: { params: { contentType: 'timetested' } } };
     const existingPage = container.querySelector('#bible-explorer-page');
     if (!existingPage) {
       if (typeof BibleView !== 'undefined') {
-        BibleView.renderStructure(container);
+        BibleView.renderStructure(container, tttState);
       }
+    } else if (typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      BibleView.syncSelectorVisibility(tttState);
     }
     
     // Update the content selector

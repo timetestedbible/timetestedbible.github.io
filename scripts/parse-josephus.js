@@ -228,11 +228,11 @@ function main() {
       continue;
     }
 
-    if (currentWork === 'Against Apion' && /^BOOK\s+([12])\s*$/i.test(trimmed)) {
-      const m = trimmed.match(/^BOOK\s+([12])/i);
+    if (currentWork === 'Against Apion' && /^BOOK\s+(\d+|[IVXLCDM]+)\s*$/i.test(trimmed)) {
+      const m = trimmed.match(/^BOOK\s+(\d+|[IVXLCDM]+)/i);
       if (m) {
         flushSection();
-        currentBook = parseInt(m[1], 10);
+        currentBook = /^\d+$/.test(m[1]) ? parseInt(m[1], 10) : parseRoman(m[1]);
         currentChapter = 1;
       }
       continue;

@@ -254,6 +254,10 @@ const BibleView = {
     const contentType = state?.content?.params?.contentType || 'bible';
     const displayContentType = (contentType === 'multiverse') ? 'bible' : contentType;
     
+    // Update data attribute for CSS-driven panel visibility
+    const page = document.getElementById('bible-explorer-page');
+    if (page) page.dataset.contentType = contentType;
+    
     // Show/hide selector groups (multiverse shows Bible selectors e.g. translation)
     const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
     const bibleSelectors = document.getElementById('bible-selectors');
@@ -337,7 +341,7 @@ const BibleView = {
     const classicsDisplay = (contentType === 'philo' || contentType === 'josephus') ? '' : 'display:none;';
     
     container.innerHTML = `
-      <div id="bible-explorer-page" class="bible-explorer-page">
+      <div id="bible-explorer-page" class="bible-explorer-page" data-content-type="${contentType}">
         <!-- Header -->
         <div class="bible-explorer-header">
           <div class="bible-explorer-header-inner">

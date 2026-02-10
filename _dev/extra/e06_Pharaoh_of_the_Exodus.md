@@ -16,8 +16,8 @@ Manetho was an Egyptian priest who served at Heliopolis in the 4th and 3rd centu
 
 Josephus wrote of Manetho:
 
-> "I will set down his very words as if I were to bring the very man himself into a court for a witness."
-> — Josephus, *Against Apion*
+> "I will set down his very words, as if I were to bring the very man himself into a court for a witness."
+> — Josephus, Against Apion 1.1.14
 
 ### Manetho's Identification
 

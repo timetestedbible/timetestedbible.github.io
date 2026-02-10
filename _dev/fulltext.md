@@ -3361,8 +3361,8 @@ If you are still not convinced by the argument for a Lunar Sabbath, lets take a 
 The seven day cycle is inherently a tradition of men because it is only knowable on the basis of the testimony of our fathers. Most sabbath debates focus on Saturday vs Sunday and whether man has authority to change it. There is no real dispute that there was a change from Saturday to Sunday, what most people dispute is mans right to change it and I have already throughly covered that the space-time of the Sabbath has been declared holy. All of the energy spent on the Saturday vs Sunday debate takes the focus off of the real issue, the unquestionable assumption that Saturday has always been the seventh day of the week and the Yeshua confirmed Saturday by virtue of not explicitly speaking against it in the Bible.
 This argument from silence is built off of the following quote from Josephus that states everyone, Jew, Greek, and barbarian rests on the seventh day.
 
-There is no city, Greek or barbarian, nor any nation to which the custom of abstaining from work on the seventh day has not penetrated—not even the remotest parts of the earth.
-— Josephus, Against Apion 2.282 (Loeb Classical Library translation)
+There is not any city of the Grecians, nor any of the barbarians, nor any nation whatsoever, whither our custom of resting on the seventh day hath not come, and by which our fasts and lighting up lamps, and many of our prohibitions as to our food, are not observed.
+— Josephus, Against Apion 2.1.40
 What is casually left out is that this was written toward the end of Josephus’ life around 93 AD, over 20 years after the temple fell and 60 years after Yeshua’s death. Twenty years is enough for an entire new generation to be born and raised with no memory of how things were before them. 
 Any competing calendars potentially observed by the temple priests were lost in the ashes and downfall of the levitical priesthood’s power and the popular Rabbinic calendar took over. Consider what Josephus says about the competing doctrines of the day:
 

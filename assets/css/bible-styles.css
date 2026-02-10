@@ -8597,18 +8597,18 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .symbol-study-body .md-table th {
-  background: rgba(42, 90, 140, 0.4);
+  background: var(--accent-primary-strong);
   font-weight: 600;
   color: var(--accent-primary);
   white-space: nowrap;
 }
 
 .symbol-study-body .md-table tbody tr:nth-child(even) {
-  background: rgba(42, 90, 140, 0.1);
+  background: var(--accent-primary-subtle);
 }
 
 .symbol-study-body .md-table tbody tr:hover {
-  background: rgba(42, 90, 140, 0.2);
+  background: var(--accent-primary-muted);
 }
 
 .symbol-study-body .scripture-ref {
@@ -8627,7 +8627,7 @@ body.biblical-timeline-open .top-nav-inner {
 .strongs-ref {
   color: var(--color-purple);
   text-decoration: none;
-  border-bottom: 1px dotted rgba(184, 160, 216, 0.5);
+  border-bottom: 1px dotted var(--color-purple-muted);
   cursor: pointer;
   font-family: monospace;
   font-size: 0.95em;
@@ -10570,6 +10570,11 @@ body.biblical-timeline-open .top-nav-inner {
 /* ═══════════════════════════════════════════════════════════════
    RESEARCH PANEL — always-visible on desktop, resizable
    ═══════════════════════════════════════════════════════════════ */
+
+/* Hide research panel for non-Bible content types (no clickable words to study) */
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]) .research-panel {
+  display: none !important;
+}
 
 /* Desktop: Research panel is always visible as a flex sibling of bible-content-wrapper.
    Width comes from saved localStorage or default. No close button — user resizes via drag handle. */
