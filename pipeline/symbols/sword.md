@@ -15,29 +15,29 @@ inputs: {symbols/babylon: [2, 1.60], symbols/fire: [1, 1.00], symbols/flying-scr
 dependents: [contexts/Mat/24.004-008, symbols/earthquake, symbols/fire, symbols/flying-scroll]
 ---
 
-**H2719 chereb** = drought + cutting instrument. Root **H2717 charab** = parch, desolate, destroy
+**H2719 chereb** = drought + cutting. Root **H2717 charab** = parch/desolate/destroy
 **H2722 Choreb** = Horeb/Sinai (same root). Covenant-place → judgment-instrument share etymology
 Sword's name = desolation-maker. Not just cuts — WASTES
 
-Isa 34:5 — Sword **bathed** (H7301 ravah) in **heaven** (H8064 shamayim) → comes down on **cherem** people
-H7301 = saturate, soak, DWELL IN. Not pass through — bathed/soaked in sky
+Isa 34:5 — Sword **bathed** [H7301 ravah] in **heaven** [H8064 shamayim] → down on **cherem** people
+H7301 = saturate/soak/DWELL IN. Not pass through — soaked in sky
 H8064 = sky/atmosphere/space. Physical dimension
 H2764 cherem = devoted to utter destruction. Most severe covenant judgment
 
-Trajectory: UP → saturated in space → DOWN. Only ICBMs/hypersonics match this profile
-Ancient weapons don't "dwell" in sky. Modern ballistic missiles spend majority of flight in space
-Isa 34:4 — heavens roll up like scroll THEN sword descends (atmospheric displacement → impact)
+Trajectory: UP → saturated in space → DOWN. Only ICBMs/hypersonics match profile
+Ancient weapons ≠ "dwell" in sky. Modern ballistics spend majority flight in space
+Isa 34:4 — heavens roll like scroll THEN sword descends (atmospheric displacement → impact)
 
 **Cherem protocol:** Josh 6:17 Jericho || 1 Sam 15:3 Amalekites || Deut 7:2 Canaanites
-Mal 4:6 — threatens EARTH with cherem (OT's final word)
+Mal 4:6 — threatens EARTH with cherem (OT final word)
 Zech 14:11 — "no more cherem" in restored Jerusalem
 Chain: Mal 4:6 → Isa 34:5 → Zech 5:3 → Rev 18 total destruction
 
-Gen 3:24 — **Flaming sword** H3858 lahat (blaze + enwrapping) + H2015 haphak (transform/overturn)
+Gen 3:24 — **Flaming sword** H3858 lahat (blaze + enwrap) + H2015 haphak (transform/overturn)
 First weapon: fire-wrapped + desolation-making + overturning. Blocks self-salvation
 
-Sword + Fire co-occurrences: Josh 11:11 || Judg 1:8 || Judg 18:27 || Judg 20:48 || Ezek 23:25,47
-Sword doesn't just cut — BURNS. Produces fire consistently
+Sword + Fire co-occur: Josh 11:11 || Judg 1:8 || Judg 18:27 || Judg 20:48 || Ezek 23:25,47
+Sword ≠ just cut — BURNS. Produces fire consistently
 
 Rev 19:15 — Sword from mouth = Word executing judgment (cf. Heb 4:12)
 Rev 19:13 — "Word of God" + v15 winepress = Word = sword = fire

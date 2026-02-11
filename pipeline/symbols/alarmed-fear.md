@@ -54,6 +54,4 @@ H3420 (paleness) → Lk 21:26 face-change implied
 
 **ANOMALY**: Jn 14:1,27 uses G5015 (general agitation) not G2360 (specific eschatological panic) → Different trigger, same prohibition, same peace antidote || Jesus Himself was G5015-troubled (Jn 12:27,13:21) → He absorbed the response to spare disciples
 
-**MEANING**: Do not respond with covenant-breaker's panic to covenant-judgment signs → Recognize known prophetic pattern → These are birth-pains preceding deliverance, not destruction
-
 **PATTERN SUMMARY**: Wars/armies → Birth-pains → Fear-response → Earth-shaking || In ALL God's-people passages: fear-response PROHIBITED || Fear-response = diagnostic separating covenant-keeper from covenant-breaker in same event
