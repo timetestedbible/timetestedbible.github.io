@@ -197,26 +197,58 @@ ${existingStudy}
 ## KNOWN SYMBOLS (for co-occurrence detection)
 ${symbolList}
 
-## TASK
-Analyze EVERY occurrence of this word/phrase across Scripture. For each occurrence, note (compressed, NOT prose):
+## METHODOLOGY — FOLLOW THIS PROCESS IN ORDER
 
+### Step 1: EXHAUSTIVE SEARCH
+Search by Strong's numbers (${strongs}) to find EVERY occurrence — not English words which miss
+translation variants. Count total occurrences. List definitional verses ("X IS Y"), antithetical
+verses (contrasted with opposite), what it DOES (verbs), behavioral commands ("walk in X").
+
+### Step 2: GENERATE 7 CANDIDATES
+Before evaluating, brainstorm at least 7 candidate meanings. Write each down.
+- Candidate #1 (first intuition)
+- Assume #1 is WRONG → Candidate #2 (meaningfully different)
+- Assume #2 is WRONG → Candidate #3
+- Continue to at least 7
+REJECT any candidate that is a dictionary synonym (would a secular reader arrive at it?).
+
+### Step 3: TEST EACH CANDIDATE — SUBSTITUTION
+For each surviving candidate, substitute it into 5+ diverse verses (different books, genres).
+Write out the before/after. Does it produce coherent meaning in ALL of them?
+A meaning that fails in ANY context is wrong or incomplete.
+
+### Step 4: RESOLVE SYMBOLIC RECURSION
+If the meaning contains another symbol (e.g., "Word of God"), trace the chain to a CONCRETE concept.
+TRUTH→Word→Law→God's Commandments. The recursion must terminate in something actionable.
+
+### Step 5: ADDITIONAL TESTS
+- PRODUCTION CHAIN: How is this thing physically made? (olive→press→oil = fruit→trials→proven works)
+- LEGAL REDUNDANCY: Would this meaning create a contradiction with Torah?
+- OPPOSITE: Does it pair correctly with the known opposite?
+- PARABLES: In any parable where this symbol appears, does the meaning work with the other symbols?
+- WHO: Who does Scripture apply this to? God only? Humans? Both?
+- WHEN: Does this symbol appear in multiple historical eras? Track EVERY era.
+
+### Step 6: FOR EACH OCCURRENCE, NOTE (compressed):
 1. SUBJECT — What is the passage about?
 2. LITERAL SCENE — What is physically happening?
-3. CO-OCCURRING SYMBOLS — What known symbols appear in the same paragraph?
-4. ROLE — Is this symbol the subject, action, or descriptor?
+3. CO-OCCURRING SYMBOLS — What known symbols appear nearby?
+4. ROLE — Subject, action, or descriptor?
 5. CONTEXT TYPE — prophetic oracle, narrative, law, wisdom, psalm, apocalyptic, discourse
 6. PASSAGE HEADER — If prophetic, what does the oracle header say?
 7. SPEAKER — Who is speaking?
-8. INCIDENTAL DETAILS — Feasts, seasons, places, materials, numbers that seem "random" but are clues
+8. INCIDENTAL DETAILS — Feasts, seasons, places, materials, numbers
 9. HISTORICAL CYCLE — Creation, Flood, Exodus, Wilderness, Conquest, Judges, Kingdom, Babylon/Exile, Return, Rome
 
-AFTER ALL OCCURRENCES:
+### Step 7: SYNTHESIZE
 - CLUSTER: Do occurrences cluster around a particular subject?
-- CONSISTENT READING: What meaning fits ALL occurrences? (literal first)
+- CONSISTENT READING: Which candidate survived ALL tests? (physical/literal first)
 - ANOMALIES: Which occurrences don't fit? Why?
 - CROSS-TESTAMENT: Hebrew root → LXX Greek → NT Greek connections
-- TRIPLE-LANGUAGE: Any connections visible only in Hebrew, or only in Greek?
-- IGNORE TRADITION: Follow the text's own connections, not commentaries.
+- TRIPLE-LANGUAGE: Connections visible only in one language?
+
+SHOW YOUR WORK. Mental math = failure. If it's not written, it didn't happen.
+Do NOT assume tradition or consensus. Follow the text's own connections.
 
 ## OUTPUT FORMAT
 Output a complete pipeline symbol study file in this exact format:
@@ -227,21 +259,27 @@ name: {NAME}
 strongs: [{strongs}]
 words: [{words}]
 role: {noun-symbol / verb-symbol / adjective-symbol}
-meaning: {one-line meaning}
+meaning: {one-line meaning — must NOT be a dictionary synonym}
 opposite: {opposite symbol}
 defining_verses: [{7 best verses, comma-separated}]
 co_occurring: [{co-occurring symbols}]
 context_types: [{types found}]
+candidates_tested: [{list all 7 candidates, mark winner}]
+all_verses: [{EVERY verse checked}]
 rev: 1
 churn: 1.00
 inputs: {}
 dependents: []
 ---
 
-## Context Bag
-{compressed notes, max 500 words, using shorthand notation}
+## Candidates & Tests
+{List all 7 candidates. For each: 1-line definition, then substitution test results (pass/fail with verse refs). Mark the winner and WHY the others failed.}
 
-Keep under 500 words. Compress aggressively. Cite verses by reference only. Every word must earn its place.`;
+## Context Bag
+{Compressed notes of all occurrences + synthesis. Max 700 words. Shorthand notation.
+Cite every verse by reference. Preserve the logic chain. Include production chain if applicable.}
+
+Show your work. Compress aggressively. Every word must earn its place.`;
 }
 
 function buildContextIntegrationPrompt(verseRange, symbolFiles) {

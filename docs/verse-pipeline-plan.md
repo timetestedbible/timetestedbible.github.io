@@ -424,23 +424,35 @@ If you notice a pattern, follow it. Search for related roots, check
 the LXX translation choice, look at surrounding verses. Your research
 is not limited to the inputs above.
 
-TASK:
-Analyze every occurrence of this word/phrase across Scripture. For each occurrence,
-note (compressed, not prose):
+TASK — FOLLOW THIS PROCESS IN ORDER:
 
-PATTERNS TO LOOK FOR:
-1. SUBJECT — What is the passage about? Who is being addressed?
-   e.g., "Jer 50:43 — subject: Babylon's king"
-2. LITERAL SCENE — What is physically/literally happening?
-   e.g., "woman in labor" or "ground shaking" or "army approaching"
-3. CO-OCCURRING SYMBOLS — What other known symbols appear within the same paragraph?
-   e.g., "paired with: fear, rumors, day-of-YHWH"
-4. ROLE — Is this symbol the subject (thing described), the action (what happens),
-   or the descriptor (quality/attribute)?
-   e.g., "birth-pains = descriptor of Babylon's king's reaction"
+STEP 1: EXHAUSTIVE SEARCH by Strong's numbers (not English words — English misses
+  translation variants). Count total occurrences. Find: definitional ("X IS Y"),
+  antithetical (contrasted with opposite), functional (what it DOES), behavioral
+  (commands to "walk in X"), who it's applied to (God? humans? both?).
+
+STEP 2: GENERATE 7+ CANDIDATES before evaluating. Write each down.
+  Assume #1 is WRONG → #2. Assume #2 is WRONG → #3. Continue to 7+.
+  REJECT dictionary synonyms (would a secular reader arrive at this meaning?).
+
+STEP 3: SUBSTITUTION TEST each candidate in 5+ diverse verses.
+  Write before/after. Must work in EVERY context (Genesis AND Revelation,
+  narrative AND prophetic AND wisdom). Fails in ANY = wrong.
+
+STEP 4: RESOLVE SYMBOLIC RECURSION to concrete concepts.
+  If meaning contains another symbol, trace the chain until it terminates.
+
+STEP 5: ADDITIONAL TESTS — production chain (how is it physically made?),
+  legal redundancy (Torah contradiction?), opposite pairing, parable contexts,
+  who is it applied to, WHEN does it appear (track every historical era).
+
+STEP 6: FOR EACH OCCURRENCE, note (compressed):
+1. SUBJECT — What is the passage about?
+2. LITERAL SCENE — What is physically happening?
+3. CO-OCCURRING SYMBOLS — What known symbols appear nearby?
+4. ROLE — Subject, action, or descriptor?
 5. CONTEXT TYPE — prophetic oracle, narrative, law, wisdom, psalm, apocalyptic, discourse
 6. PASSAGE HEADER — If prophetic, what does the oracle header say?
-   e.g., "Oracle concerning Babylon" (Isa 13:1)
 7. SPEAKER — Who is speaking? YHWH, prophet, Jesus, narrator?
 8. INCIDENTAL DETAILS — What "random" details surround this symbol in each passage?
    Scripture is maximally compressed — nothing is accidental. Note:
