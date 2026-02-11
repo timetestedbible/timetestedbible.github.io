@@ -9,10 +9,10 @@ opposite: NIGHT / SLEEP (hiddenness, unawareness)
 defining_verses: [Matt 24:27, 1Thess 4:15, 2Thess 2:8, 1Cor 15:23, 1Pet 1:7, Titus 2:13, Rev 1:7]
 co_occurring: [DAY, LIGHT, DARKNESS, SLEEP, MOMENT, EARTHQUAKE, BIRTH_PAINS, SUDDEN_DESTRUCTION, FALL_OF_BABYLON, THE_END, FAITH, FRUIT, OIL, VIRGIN, HARLOT, MOUNTAIN, CLOUDS, TRUMPET, GATHERING, WARS_AND_RUMORS, DAYS_OF_NOAH, WICKEDNESS]
 context_types: [discourse, apocalyptic, epistle-exhortation, prophetic oracle]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.25
 inputs: {}
-dependents: [RAPTURE_GATHERING, SUDDEN_DESTRUCTION, THE_END, DAYS_OF_NOAH]
+dependents: [RAPTURE_GATHERING, SUDDEN_DESTRUCTION, THE_END, DAYS_OF_NOAH, contexts/Mat/24.029-031]
 ---
 
 ## Context Bag
@@ -38,6 +38,8 @@ dependents: [RAPTURE_GATHERING, SUDDEN_DESTRUCTION, THE_END, DAYS_OF_NOAH]
 **CONSISTENT READING:** Covenant King's decisive arrival-as-exposure. Every use demands covenant faithfulness NOW because this event = total accountability. Not merely "second coming" as future escape—it is the covenant mechanism that separates VIRGIN from HARLOT, LIGHT from DARKNESS, FAITH from WICKEDNESS. The "coming" IS the judgment.
 
 **ANOMALIES:** 2Thess2:9 parousia of lawless one—counterfeit arrival; confirms parousia=royal-visit pattern (Satan mimics). 2Tim1:10 epiphaneia of incarnation—first appearing; shows epiphaneia spans both advents.
+
+**7TH TRUMPET = PAROUSIA ANCHOR.** Rev 11:15 "kingdoms become the Lord's" = Dan 7:14 "given him dominion, glory, kingdom" = 1Cor 15:24 "delivers the kingdom." The 7th trumpet IS the "last trump" (1Cor 15:52) = "trump of God" (1Th 4:16) = "great trumpet" (Mat 24:31, Isa 27:13). At this trumpet: kingdom transferred (Rev 11:15), dead judged (11:18), saints rewarded (11:18), destroyers destroyed (11:18), ark/covenant revealed (11:19), earthquake (11:19). The TRUMPET symbol anchors the parousia — not chapter sequence in Revelation but symbolic convergence. Rev 11:15 + 1Cor 15:52 + 1Th 4:16 + Mat 24:31 + Isa 27:13 = ALL the same event from different vantage points.
 
 **CROSS-TESTAMENT:** Mal3:1-2 (YHWH suddenly comes to temple+refiner's fire)→Matt24; Zech14:4-5 (feet on Olives+EARTHQUAKE)→Acts1:11; Dan7:13-14 (Son of Man+CLOUDS+MOUNTAIN/kingdom)→Rev1:7. Hebrew בּוֹא+גָּלָה→Greek παρουσία+ἀποκάλυψις.
 

@@ -9,10 +9,10 @@ opposite: JERUSALEM
 defining_verses: [Gen 11:9, Isa 21:9, Jer 51:6-8, Rev 14:8, Rev 17:5, Rev 18:2-4, Rev 18:21]
 co_occurring: [WINE, FORNICATION, HARLOT, MOUNTAIN, SEA, NATIONS, FAMINE, EARTHQUAKE, MOMENT, WICKEDNESS]
 context_types: [narrative, prophetic oracle, apocalyptic]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.30
 inputs: {BABYLON, HARLOT, WINE, FORNICATION, MOMENT}
-dependents: [RETURN_OF_CHRIST, SUDDEN_DESTRUCTION]
+dependents: [RETURN_OF_CHRIST, SUDDEN_DESTRUCTION, SUN_MOON_STARS, contexts/Mat/24.029-031]
 ---
 
 ## Context Bag
@@ -39,6 +39,10 @@ Rev18:1-24 — SUBJ: Final fall. SCENE: "Fallen, fallen" (v2); "Come out of her 
 
 **ANOMALIES:** Gen11 has no "fall"—it's the origin. But scattering IS the first judgment on Babel-principle. Pattern set: God disrupts unified rebellion.
 
+**7TH TRUMPET — "DESTROY THEM WHICH DESTROY THE EARTH."** Rev 11:18 at the 7th trumpet: "shouldest destroy them which destroy the earth." This = Babylon judged. Jer 51:25 calls Babylon the "destroying mountain, which destroyest all the earth." The 7th trumpet simultaneously: transfers the kingdom (11:15), judges the dead (11:18), rewards the prophets/witnesses (11:18), and destroys the destroyer (11:18). Babylon's fall IS announced at the trumpet. The SMOKE of Babylon's burning (Rev 18:9,18; 19:3) = the sackcloth covering the sun (Rev 6:12) = the cloud through which the Son of Man comes (Mat 24:30). The burning produces the smoke; the smoke darkens the authority structure; through the smoke the King appears; at the trumpet the kingdom transfers.
+
 **CROSS-TESTAMENT:** H894→LXX Βαβυλών→NT G897. Unbroken chain. Isa21:9 πέπτωκεν πέπτωκεν = Rev14:8/18:2 exact quote.
 
 **TRIPLE-LANGUAGE:** Hebrew bālal (confusion) lost in Greek transliteration. Meaning preserved only via Hebrew root—fall of Babylon = end of confusion, restoration of unified covenant speech (cf. Zeph3:9).
+
+**NOTE:** Rev 18:5 "her sins have reached unto HEAVEN (G3772/H8064)" — שָׁמַיִם in BDB covers BOTH the physical sky/space AND God's dwelling. Literal reading: lawlessness extending physically into the atmosphere and beyond (air travel, weapons of war, space). The tower of Babel literally reached toward the sky; Babylon's sins literally reach into space. Don't spiritualize away the physical dimension.

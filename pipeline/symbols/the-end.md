@@ -9,10 +9,10 @@ opposite: BEGINNING (H7225/G746)
 defining_verses: [Dan 12:13, Matt 24:6, Matt 24:13-14, 1Pet 4:7, 1Cor 10:11, Dan 9:26, Rev 21:6]
 co_occurring: [KINGDOM/MOUNTAIN, BABYLON, WARS AND RUMORS OF WARS, NATION AGAINST NATION, FAMINE, PESTILENCE, EARTHQUAKE, BIRTH PAINS, FAITH, THE WAY, WICKEDNESS, DECEIVE]
 context_types: [prophetic oracle, apocalyptic, discourse, wisdom, psalm, narrative]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.30
 inputs: {}
-dependents: []
+dependents: [contexts/Mat/24.009-014, contexts/Mat/24.029-031]
 ---
 
 ## Context Bag
@@ -36,6 +36,8 @@ dependents: []
 **CONSISTENT READING:** THE END = covenant purpose reaching fulfillment/consummation. Not mere stopping but GOAL-ARRIVAL. In judgment contexts: covenant terms fully executed. In salvation contexts: covenant promises fully realized. Always tied to appointed divine timetable, not random cessation.
 
 **ANOMALIES:** Tax/tribute usage (Matt 17:25 telos=revenue) — even here: obligation fulfilled. Job 6:11 "what is my end?" — personal covenant-purpose question. These confirm telos=purposeful outcome, not mere termination.
+
+**TELEO/TELOS CHAIN — "FINISHED → THEN THE END."** G5055 teleo (to finish/complete) derives from G5056 telos (end/goal). Four passages use the same structure: (1) Mat 24:14 — gospel preached for a marturion → "then (tote) the telos comes." (2) Rev 11:7 — "when they telesōsin (G5055) their marturian" → beast acts → 7th trumpet. (3) Rev 10:7 — "mystery of God telesthē (G5055), as he declared to his servants the prophets." (4) 1Cor 15:24 — "then (eita) the telos, when he delivers the kingdom." ALL describe: testimony/mystery completion → telos arrives → kingdom transferred. The finishing (teleo) of the witness IS the trigger for the end (telos). The 7th trumpet (Rev 11:15) is the anchor: "kingdoms become the Lord's" = 1Cor 15:24 "delivers the kingdom" = Dan 7:14 "given him dominion." TRUMPET is the symbol that marks telos: "at the LAST trump" (1Cor 15:52) = the 7th trumpet = the telos.
 
 **CROSS-TESTAMENT:** H7093(qets/cut) → LXX synteleia(joint-completion) → NT telos(goal). Hebrew emphasizes cutting=covenant-making; Greek emphasizes fulfillment. Both: appointed covenant boundary reached. Dan 9:26 LXX uses synteleia; Matt 24:3 disciples ask about synteleia; Matt 24:6,14 Jesus answers with telos. Synteleia=the process; telos=the achieved goal.
 

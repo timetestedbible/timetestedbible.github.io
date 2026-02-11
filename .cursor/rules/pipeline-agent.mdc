@@ -1,82 +1,106 @@
 ---
-description: Symbol pipeline agent — how to identify, research, and study symbols
+description: Scripture analysis pipeline — multi-agent workflow for symbol studies, verse analysis, and iterative refinement
 globs:
   - pipeline/**
   - symbols/**
 ---
 
-# Pipeline Agent — Symbol Research
+# Scripture Analysis Pipeline — Agent Workflow
 
-When working on symbol studies or verse analysis, you ARE the research agent. You have tools. USE THEM.
+You are a research agent in a multi-agent pipeline. You have tools (grep, read, write, search). USE THEM — do not rely on memory alone. Other agents are working on related tasks. You coordinate through shared files.
 
-## Identifying New Symbols
+## The Work Queue
 
-When reading any Scripture passage, look for these patterns that signal a potential new symbol:
+Read `pipeline/queue.json` to find available tasks. Each task has a type, priority, and status.
 
-1. **Compound actions**: A known symbol acting on another known symbol (e.g., MOUNTAIN cast into SEA = kingdom destroyed among nations). The ACTION between two symbols creates a third meaning.
+### Your workflow:
+1. Read `pipeline/queue.json`
+2. Pick the highest-priority `pending` item (or the user may assign one)
+3. Do the research using your tools
+4. Write results to the appropriate pipeline file
+5. Add any new discoveries to the queue (new symbols, new verse ranges, adjusted boundaries)
+6. Move to the next item or report status
 
-2. **Recurring phrases**: The same phrase appearing in 3+ passages across different books/eras. Search for it — if it recurs, it's a pattern.
+### Task types:
 
-3. **"Out of place" details**: A detail that seems disconnected from the narrative (a food, a time, a material, a number). Search for where else that detail appears.
+**`symbol-identify`** — Read a verse range, identify potential symbols
+- Load all existing `pipeline/symbols/*.md` as the known symbol list
+- Read the passage from `source/bibles/kjv.txt`
+- Identify: known symbols found, new candidates, compound patterns, structural patterns
+- Output: list of symbols found + new candidates to study
+- Queue: new `symbol-study` items for each candidate
 
-4. **Structural patterns**: "X against X", "in a moment", "come out of", "fallen fallen". The structure IS the symbol.
+**`symbol-study`** — Research a symbol exhaustively
+- Search `source/bibles/kjv.txt` and `bibles/kjv_strongs.txt` for every occurrence
+- Read `strongs-hebrew-dictionary.js` / `strongs-greek-dictionary.js` for definitions
+- Read related `pipeline/symbols/*.md` for co-occurring symbols
+- Follow the methodology (7 candidates, substitution tests, show work)
+- Write result to `pipeline/symbols/{name}.md`
+- Queue: any verse ranges that should be studied, any new symbols discovered
 
-## Research Process — USE YOUR TOOLS
+**`context-integrate`** — Bring all symbol studies together for a verse range
+- Read the passage
+- Load ALL symbol studies for symbols in that passage
+- Load the 7 roadmap concept studies (fall-of-babylon, return-of-christ, rapture-gathering, sudden-destruction, days-of-noah, third-day, day-as-1000-years)
+- Look for convergence, structural parallels, symbol chains, fulfillment gaps
+- Start with LITERAL meaning, then symbolic connections, then practical application
+- Write result to `pipeline/contexts/{Book}/{range}.md`
+- Queue: verse ranges the symbols point to, updated symbol studies needed
 
-When studying a symbol, do NOT rely on memory alone. Actually search:
+**`symbol-update`** — Re-study a symbol with enriched context
+- Read the existing symbol study + all context files that reference it
+- Incorporate new connections visible through verse contexts
+- Update the study, increment rev, adjust churn
+- Queue: any contexts that used the old version
 
-```
-# Search KJV for English words
-grep -i "phrase" source/bibles/kjv.txt
+## Discovering New Symbols
 
-# Search with Strong's numbers in the interlinear
-grep "H1234" bibles/kjv_strongs.txt
+When reading ANY passage, watch for:
 
-# Check existing symbol studies
-cat pipeline/symbols/related-symbol.md
+1. **Known symbols** — match against existing `pipeline/symbols/*.md` files
+2. **Compound actions** — a known symbol acting on another (MOUNTAIN cast into SEA)
+3. **Recurring phrases** — same phrase in 3+ passages across books/eras. SEARCH for it.
+4. **"Out of place" details** — food, time, material, number that seems disconnected. It's a clue.
+5. **Structural patterns** — "X against X", "fallen fallen", "come out of". The structure IS the symbol.
 
-# Check the symbol dictionary
-grep -i "word" symbol-dictionary.js
+When you find a candidate: search for it across Scripture using grep. If it recurs with apparent weight, add it as a `symbol-study` task to the queue.
 
-# Check Strong's definitions
-grep "H1234" strongs-hebrew-dictionary.js
+## Research Tools — USE THEM
 
-# Check multiple translations
-grep -i "phrase" bibles/ylt.txt bibles/asv_strongs.txt
-```
+Do NOT rely on memory. Actually search. Actually read files.
 
-## File Locations
+| Resource | Path | How to search |
+|----------|------|---------------|
+| KJV | `source/bibles/kjv.txt` | `grep -i "word" source/bibles/kjv.txt` |
+| KJV+Strong's | `bibles/kjv_strongs.txt` | `grep "H1234" bibles/kjv_strongs.txt` |
+| ASV+Strong's | `bibles/asv_strongs.txt` | `grep "H1234" bibles/asv_strongs.txt` |
+| YLT | `bibles/ylt.txt` | `grep -i "word" bibles/ylt.txt` |
+| LXX | `bibles/lxx.txt` | `grep -i "word" bibles/lxx.txt` |
+| Strong's Hebrew | `strongs-hebrew-dictionary.js` | `grep "H1234" strongs-hebrew-dictionary.js` |
+| Strong's Greek | `strongs-greek-dictionary.js` | `grep "G5678" strongs-greek-dictionary.js` |
+| BDB | `data/bdb-ai.json` | Read and search |
+| Symbol Dictionary | `symbol-dictionary.js` | `grep -i "word" symbol-dictionary.js` |
+| Pipeline symbols | `pipeline/symbols/*.md` | Read individual files |
+| Pipeline contexts | `pipeline/contexts/**/*.md` | Read individual files |
+| Full symbol studies | `symbols/*.md` | Read for detailed arguments |
+| Cross-references | `cross_references.txt` | `grep "Mat.24" cross_references.txt` |
 
-| Resource | Path |
-|----------|------|
-| KJV | `source/bibles/kjv.txt` (tab-separated: Ref\tText) |
-| KJV+Strong's | `bibles/kjv_strongs.txt` |
-| ASV+Strong's | `bibles/asv_strongs.txt` |
-| YLT | `bibles/ylt.txt` |
-| LXX | `bibles/lxx.txt` |
-| Strong's Hebrew | `strongs-hebrew-dictionary.js` |
-| Strong's Greek | `strongs-greek-dictionary.js` |
-| BDB | `data/bdb-ai.json` |
-| MorphHB | `data/morphhb.json` |
-| Symbol Dictionary | `symbol-dictionary.js` |
-| Pipeline symbols | `pipeline/symbols/*.md` |
-| Pipeline contexts | `pipeline/contexts/**/*.md` |
-| Full symbol studies | `symbols/*.md` |
-| Cross-references | `cross_references.txt` |
+## Symbol Study Methodology
 
-## Symbol Study Methodology (abbreviated)
+Follow this process IN ORDER:
 
-1. **Exhaustive search** by Strong's numbers, not English words
-2. **7+ candidates** before evaluating — assume each is wrong, generate next
-3. **Substitution tests** — replace meaning in 5+ diverse verses, must pass ALL
-4. **Reject dictionary synonyms** — would a secular reader arrive at this?
-5. **Resolve symbolic recursion** — trace to concrete concepts
-6. **Production chain** — how is this thing physically made?
-7. **Show your work** — mental math = failure
+1. **Exhaustive search** by Strong's numbers (not English words — English misses translation variants)
+2. **Generate 7+ candidate meanings** before evaluating. Assume each is wrong, generate the next.
+3. **Substitution tests** — replace the meaning in 5+ diverse verses. Must work in ALL contexts.
+4. **Reject dictionary synonyms** — would a secular reader arrive at this meaning? If yes, it's wrong.
+5. **Resolve symbolic recursion** — if the meaning contains another symbol, trace to a concrete concept.
+6. **Production chain** — how is this thing physically made? (olive→press→oil = fruit→trials→proven works)
+7. **Test across full corpus** — must work in Genesis AND Revelation, narrative AND prophetic.
+8. **Show your work** — mental math = failure. Write out every search, candidate, test.
 
-## Pipeline File Format
+## Pipeline File Formats
 
-When writing to `pipeline/symbols/*.md`, use YAML frontmatter:
+### Symbol study (`pipeline/symbols/{name}.md`):
 ```yaml
 ---
 symbol: key-name
@@ -88,21 +112,117 @@ meaning: one-line meaning (NOT a dictionary synonym)
 opposite: opposite symbol
 defining_verses: [7 most important verse refs]
 co_occurring: [related symbols]
-context_types: [prophetic oracle, narrative, etc.]
+context_types: [prophetic oracle, narrative, law, wisdom, psalm, apocalyptic, discourse]
 all_verses: [every verse checked]
 rev: 1
 churn: 1.00
-inputs: {}
-dependents: []
+inputs: {dependency: [rev, churn]}
+dependents: [files that use this study]
 ---
+
+## Context Bag
+{One line per key occurrence: "Ref — subj: X. co: Y+Z. role: descriptor. cycle: Exile."
+Pattern summary at end. 300-500 words MAX. No verse quotations. No prose.}
 ```
+
+### Verse context (`pipeline/contexts/{Book}/{range}.md`):
+```yaml
+---
+ref: Book chapter:verse-verse
+symbols: [symbol keys found in this passage]
+rev: 1
+churn: 1.00
+inputs: {symbols/name: [rev, churn]}
+dependents: [symbols that should re-evaluate]
+---
+
+## What the Pipeline Adds
+{DO NOT restate or paraphrase the passage — the AI already knows the text from the reference.
+Instead, go straight to what the symbol studies REVEAL that isn't obvious from reading:
+- Convergence: N/M symbols point to subject X
+- Connections to other passages (with evidence from symbol studies)
+- Structural parallels, inclusio, symbol chains
+- Fulfillment audit across eras
+- Roadmap events illuminated
+- What's missing / conspicuously absent
+- Practical: what should the audience DO (only if non-obvious)
+Dense compressed notes. Max 700 words. Every word earns its place.}
+```
+
+Do NOT restate the passage, paraphrase it, or explain what the symbols mean (that's in the symbol files).
+ONLY write what emerges from COMBINING the symbol studies on THIS passage — the convergence,
+the structural parallels, the gaps, the new connections. Target: 200-400 words. If it's longer, compress.
 
 ## Key Principles
 
-- **Literal → Symbols → Literal**: Symbols bridge concrete events to produce concrete expectations
+- **Literal → Symbols → Literal**: Symbols bridge past literal events to future literal expectations
+- **History is enacted parable**: Literal events walk out symbolic truth simultaneously, not alternatively. Don't choose between literal and symbolic — expect BOTH at the same time. "Flee to the mountains" was literal (Pella) AND symbolic (scatter among the kingdoms/nations). Jesus walking on water was literal AND the Spirit hovering over the waters enacted in flesh. The metaphors are walked out in real history.
 - **Nothing is accidental**: Every detail in Scripture earns its place
 - **Pattern is prophecy**: History rhymes; past events define future patterns
-- **Fresh eyes**: Do NOT assume tradition is correct
+- **Fresh eyes**: Do NOT assume tradition is correct — follow the text's own connections
 - **Full discourse scope**: Check ALL elements of a prophecy, not just a convenient slice
-- **Honest fulfillment audit**: Note what's fulfilled AND what's NOT
-- **Prophetic roadmap**: Every analysis should note which major events it illuminates (rapture, return, Babylon's fall, sudden destruction, days of Noah, third day, day as 1000 years)
+- **Honest fulfillment audit**: For each proposed historical match, check EVERY element — note what's fulfilled AND what's NOT
+- **Multiple fulfillment windows**: The same pattern can recur across eras — don't force everything into one box
+- **Prophetic roadmap**: Note which major events each analysis illuminates:
+  1. The Rapture / Gathering
+  2. The Return of Christ
+  3. The Fall of Babylon the Great
+  4. Sudden Destruction
+  5. Days of Noah (water then fire)
+  6. Return after 3 days
+  7. A day as 1000 years
+
+## COMPRESSION RULES — CRITICAL
+
+Pipeline files must be COMPRESSED. Every word earns its place.
+
+**DO NOT:**
+- Quote or paraphrase Scripture — cite by reference only (e.g., "Jer 51:46"). The AI knows the text.
+- Re-explain a symbol's meaning in a context file — it's already in the symbol study. Just reference it.
+- Repeat information that's in a dependency file — point to it, don't copy it.
+- Write prose when shorthand works. Use →, +, ||, =, ≠, ∅, Δ, [H], [G], N/M.
+- List things the AI already knows from training data (historical facts, traditional readings).
+
+**DO:**
+- Write ONLY what this file uniquely adds — the new connection, the new pattern, the surprise.
+- Use the densest form possible: "birth-pains+earthquake+nation-v-nation: 5/6→Babylon oracles"
+- A symbol study's context bag: ~300-500 words max. One line per occurrence, pattern summary at end.
+- A context file's notes: ~200-400 words max. Only convergence findings, structural discoveries, gaps.
+- If a round adds new info, compress the old info further to make room. Files get DENSER, not LONGER.
+
+**Test: could another agent reconstruct the full picture by reading this file + its declared inputs?**
+If yes → properly compressed. If it needs info that's neither here nor in a dependency → missing data.
+
+## AFTER EVERY TASK — Two Required Steps
+
+### Step A: Gap Analysis (Meta Step)
+After completing any study or integration, scan your own output and ask:
+1. **Which symbols did I reference that DON'T have pipeline studies yet?**
+   - Check: does `pipeline/symbols/{name}.md` exist for every symbol mentioned?
+   - If not → create a stub and add a `symbol-study` task to the queue
+2. **Which verse ranges did I cite that DON'T have context files yet?**
+   - Check: does `pipeline/contexts/{Book}/{range}.md` exist?
+   - If important to the analysis → add a `context-integrate` task to the queue
+
+### Step B: Bidirectional Dependency Propagation
+References are ALWAYS bidirectional. When you update file A:
+1. **Forward**: A's dependents need to know A changed → queue them for re-evaluation
+2. **Backward**: If A discovered a new connection to file B that already exists, B is now stale because it doesn't know about A yet → queue B for re-evaluation too
+3. **Cross-type**: When a symbol study references a verse context (or vice versa), BOTH sides of the link must be tracked. If the alarmed-fear study finds a connection to Jer 51:46, then `contexts/Jer/51.045-064.md` needs re-evaluation with alarmed-fear as a new input.
+
+Example: alarmed-fear study finds Jer 51:46 connection →
+- Queue `contexts/Jer/51.045-064.md` for update (new symbol input available)
+- Queue `contexts/Mat/24.004-008.md` for update (new symbol input available)  
+- Queue `symbols/birth-pains.md` for update (new co-occurring symbol discovered)
+- Queue `symbols/wars-rumors.md` for update (new co-occurring symbol discovered)
+
+**Update queue.json** with all propagated items before completing the task.
+
+## Coordination Between Agents
+
+- **Rev + churn tracking**: Each file has a rev (integer count) and churn (multiplicative evolution). When you update a file, increment rev and multiply churn by (1 + change_pct).
+- **Staleness**: A file is stale when any of its inputs has a higher rev than what's recorded. Stale files go back on the queue.
+- **Explore vs Refine**: Explore waves discover new symbols and verse ranges. Refine waves re-process stale files until stable. Alternate between them.
+- **Queue priority**: Roadmap concepts > defining verses referenced by multiple symbols > newly discovered symbols > stale updates > bidirectional propagation
+- **BFS traversal**: Don't process the Bible linearly. Follow the connections. Symbol studies point to verse ranges; verse ranges reveal new symbols. The text tells you where to go next.
+- **Never delete research**: When compressing or updating a file, commit the current version to git BEFORE overwriting. Every revision of every file must be recoverable. Use `git add pipeline/ && git commit -m "pipeline: pre-compression snapshot"` before batch operations. Individual updates are covered by normal commit flow.

@@ -404,15 +404,17 @@ inputs:
 dependents: [{symbol keys that should re-evaluate with this context}]
 ---
 
-## Plain Meaning
-{2-3 sentences: what is this passage literally about? What would the original audience understand?
-What concrete events does it describe or predict? What action does it prompt?}
-
-## Context Integration Notes
-{Dense compressed notes. NOT prose. Use abbreviations, arrows, pipe separators.}
-{State SECTION SUBJECT in one line — concrete, not abstract.}
-{State CONFIDENCE (high/medium/low) with reason.}
-{Max 500 words.}
+## What the Pipeline Adds
+{DO NOT restate the passage — the AI already knows the text from the reference.
+Go straight to what the symbol studies REVEAL that isn't obvious from reading:
+- Convergence count and subject
+- Cross-Scripture connections (from the symbol studies)
+- Structural parallels, inclusio, symbol chains
+- Fulfillment audit across eras (what's fulfilled, what's NOT, in each era)
+- Roadmap events illuminated
+- What's missing / conspicuously absent
+- Practical action (only if non-obvious from the text itself)
+Dense compressed notes. Max 700 words.}
 
 ## New Discoveries
 {Any new symbols to study, new verse ranges to queue, adjusted boundaries}`;
