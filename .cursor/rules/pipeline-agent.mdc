@@ -1,0 +1,108 @@
+---
+description: Symbol pipeline agent — how to identify, research, and study symbols
+globs:
+  - pipeline/**
+  - symbols/**
+---
+
+# Pipeline Agent — Symbol Research
+
+When working on symbol studies or verse analysis, you ARE the research agent. You have tools. USE THEM.
+
+## Identifying New Symbols
+
+When reading any Scripture passage, look for these patterns that signal a potential new symbol:
+
+1. **Compound actions**: A known symbol acting on another known symbol (e.g., MOUNTAIN cast into SEA = kingdom destroyed among nations). The ACTION between two symbols creates a third meaning.
+
+2. **Recurring phrases**: The same phrase appearing in 3+ passages across different books/eras. Search for it — if it recurs, it's a pattern.
+
+3. **"Out of place" details**: A detail that seems disconnected from the narrative (a food, a time, a material, a number). Search for where else that detail appears.
+
+4. **Structural patterns**: "X against X", "in a moment", "come out of", "fallen fallen". The structure IS the symbol.
+
+## Research Process — USE YOUR TOOLS
+
+When studying a symbol, do NOT rely on memory alone. Actually search:
+
+```
+# Search KJV for English words
+grep -i "phrase" source/bibles/kjv.txt
+
+# Search with Strong's numbers in the interlinear
+grep "H1234" bibles/kjv_strongs.txt
+
+# Check existing symbol studies
+cat pipeline/symbols/related-symbol.md
+
+# Check the symbol dictionary
+grep -i "word" symbol-dictionary.js
+
+# Check Strong's definitions
+grep "H1234" strongs-hebrew-dictionary.js
+
+# Check multiple translations
+grep -i "phrase" bibles/ylt.txt bibles/asv_strongs.txt
+```
+
+## File Locations
+
+| Resource | Path |
+|----------|------|
+| KJV | `source/bibles/kjv.txt` (tab-separated: Ref\tText) |
+| KJV+Strong's | `bibles/kjv_strongs.txt` |
+| ASV+Strong's | `bibles/asv_strongs.txt` |
+| YLT | `bibles/ylt.txt` |
+| LXX | `bibles/lxx.txt` |
+| Strong's Hebrew | `strongs-hebrew-dictionary.js` |
+| Strong's Greek | `strongs-greek-dictionary.js` |
+| BDB | `data/bdb-ai.json` |
+| MorphHB | `data/morphhb.json` |
+| Symbol Dictionary | `symbol-dictionary.js` |
+| Pipeline symbols | `pipeline/symbols/*.md` |
+| Pipeline contexts | `pipeline/contexts/**/*.md` |
+| Full symbol studies | `symbols/*.md` |
+| Cross-references | `cross_references.txt` |
+
+## Symbol Study Methodology (abbreviated)
+
+1. **Exhaustive search** by Strong's numbers, not English words
+2. **7+ candidates** before evaluating — assume each is wrong, generate next
+3. **Substitution tests** — replace meaning in 5+ diverse verses, must pass ALL
+4. **Reject dictionary synonyms** — would a secular reader arrive at this?
+5. **Resolve symbolic recursion** — trace to concrete concepts
+6. **Production chain** — how is this thing physically made?
+7. **Show your work** — mental math = failure
+
+## Pipeline File Format
+
+When writing to `pipeline/symbols/*.md`, use YAML frontmatter:
+```yaml
+---
+symbol: key-name
+name: DISPLAY NAME
+strongs: [H1234, G5678]
+words: ["word1", "word2"]
+role: noun-symbol / verb-symbol / structural-pattern
+meaning: one-line meaning (NOT a dictionary synonym)
+opposite: opposite symbol
+defining_verses: [7 most important verse refs]
+co_occurring: [related symbols]
+context_types: [prophetic oracle, narrative, etc.]
+all_verses: [every verse checked]
+rev: 1
+churn: 1.00
+inputs: {}
+dependents: []
+---
+```
+
+## Key Principles
+
+- **Literal → Symbols → Literal**: Symbols bridge concrete events to produce concrete expectations
+- **Nothing is accidental**: Every detail in Scripture earns its place
+- **Pattern is prophecy**: History rhymes; past events define future patterns
+- **Fresh eyes**: Do NOT assume tradition is correct
+- **Full discourse scope**: Check ALL elements of a prophecy, not just a convenient slice
+- **Honest fulfillment audit**: Note what's fulfilled AND what's NOT
+- **Prophetic roadmap**: Every analysis should note which major events it illuminates (rapture, return, Babylon's fall, sudden destruction, days of Noah, third day, day as 1000 years)
