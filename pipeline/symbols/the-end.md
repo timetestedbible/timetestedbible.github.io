@@ -9,17 +9,28 @@ opposite: BEGINNING (H7225/G746)
 defining_verses: [Dan 12:13, Matt 24:6, Matt 24:13-14, 1Pet 4:7, 1Cor 10:11, Dan 9:26, Rev 21:6]
 co_occurring: [KINGDOM/MOUNTAIN, BABYLON, WARS AND RUMORS OF WARS, NATION AGAINST NATION, FAMINE, PESTILENCE, EARTHQUAKE, BIRTH PAINS, FAITH, THE WAY, WICKEDNESS, DECEIVE]
 context_types: [prophetic oracle, apocalyptic, discourse, wisdom, psalm, narrative]
-rev: 2
-churn: 1.30
+rev: 3
+churn: 1.55
 inputs: {}
-dependents: [contexts/Mat/24.009-014, contexts/Mat/24.029-031]
+dependents: [contexts/Mat/24.009-014, contexts/Mat/24.029-031, symbols/gospel-of-kingdom, contexts/Amos/8.001-014]
 ---
 
 ## Context Bag
 
 **H7093 (qets):** BDB: "end, limit of time/space." From H7112 (qatsats=cut off). Semantic domain: cutting, termination, boundary. LXX renders → G4930 (synteleia=consummation), G5056 (telos), G2078 (eschatos). Key: cutting implies covenant-cutting; end = covenant completion point.
 
-**G5056 (telos):** Goal, completion, revenue/tax, outcome. NOT mere cessation — fulfillment of purpose. Compare G4930 (synteleia=joint-completion, Matt 24:3). See G5055 (teleō=finish/complete, Jn 19:30).
+**G5056 (telos):** "The point aimed at as a limit" — GOAL, completion, revenue/tax, outcome. NOT cessation, NOT "the tribulation," NOT "the end of the world." Telos = the PURPOSE ARRIVING. Rom 10:4 "Christ is the telos of the Torah" = Christ is the GOAL of Torah, not its abolition. 1Tim 1:5 "the telos of the commandment is love" = love is the PURPOSE of the commandment. Mat 24:14 "then shall the telos come" = then shall the PURPOSE/GOAL arrive — the completion of testimony achieves the covenant purpose. Mat 24:6 "the telos is not yet" = the goal hasn't arrived yet — wars/rumors are NOT the goal.
+
+**DISTINCT "END" WORDS — do NOT collapse:**
+- **G5056 telos** = goal, purpose, completion, outcome. POSITIVE: the aimed-at thing arrives.
+- **G4930 synteleia** = joint-completion, consummation. Mat 24:3 disciples ask "what is the sign of the synteleia of the age?" = the CONSUMMATION of the age-process, not mere stoppage. From G4931 synteleo = complete together.
+- **G2078 eschatos** = last, uttermost, extreme. Rev 1:17 "I am the first and the eschatos." Temporal extremity.
+- **G4009 peras** = extremity, limit, boundary. Rom 10:18 "their words unto the peras of the world." Geographic limit.
+- **H7093 qets** = cut, boundary, termination. From H7112 qatsats = cut off. The CUTTING point — covenant-cutting emphasis.
+- **H319 achariyth** = latter end, aftermath, posterity, future. Jer 29:11 "give you an achariyth and a hope." Even the ending has a FUTURE.
+- **H8503 takliyth** = completeness, perfection, purpose. Job 26:10 "until the takliyth of light with darkness." The completion-point.
+
+These are NOT synonyms. Telos = purpose arriving. Qets = cutting point. Synteleia = consummation process. Achariyth = what comes after. Collapsing them into one "the end = tribulation" loses the meaning. When Jesus says "the telos is not yet" (Mat 24:6) he means "the PURPOSE hasn't arrived yet" — not "the tribulation hasn't started yet."
 
 **OCCURRENCE CLUSTERS:**
 

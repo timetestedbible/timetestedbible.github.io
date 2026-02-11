@@ -9,9 +9,9 @@ opposite: DECEIVE (false gospel / false prophets)
 defining_verses: [Mat 24:14, Mat 4:23, Mat 9:35, Mk 1:14-15, Rev 11:7, Rev 14:6, Acts 28:31]
 co_occurring: [THE_END, NAME, FAITH, SKANDALIZO, DECEIVE, KINGDOM, BIRTH_PAINS, WICKEDNESS]
 context_types: [discourse, narrative, apocalyptic, epistle]
-all_verses: [Mat 4:23, Mat 9:35, Mat 24:14, Mk 1:14, Mk 1:15, Lk 4:43, Lk 8:1, Lk 9:2, Lk 9:60, Acts 8:12, Acts 20:25, Acts 28:31, Rev 14:6, Mat 8:4, Mat 10:18, Mk 1:44, Mk 6:11, Mk 13:9, Lk 5:14, Lk 9:5, Lk 21:13, Acts 4:33, Acts 7:44, 1Cor 1:6, 1Cor 2:1, 2Cor 1:12, 2Th 1:10, 1Tim 2:6, 2Tim 1:8, Heb 3:5, Jas 5:3, Rev 15:5, Rev 1:2, Rev 1:9, Rev 6:9, Rev 11:7, Rev 12:11, Rev 12:17, Rev 19:10, Rev 20:4, Rev 10:7]
-rev: 1
-churn: 1.00
+all_verses: [Gen 12:3, Ex 19:5-6, Mat 4:23, Mat 9:35, Mat 24:14, Mk 1:14, Mk 1:15, Lk 4:43, Lk 8:1, Lk 9:2, Lk 9:60, Acts 8:12, Acts 20:25, Acts 28:31, Rev 14:6, Mat 8:4, Mat 10:18, Mk 1:44, Mk 6:11, Mk 13:9, Lk 5:14, Lk 9:5, Lk 21:13, Acts 4:33, Acts 7:44, 1Cor 1:6, 1Cor 2:1, 2Cor 1:12, 2Th 1:10, 1Tim 2:6, 2Tim 1:8, Gal 3:8, Heb 3:5, Heb 3:18-19, Heb 4:2, Heb 4:6, Jas 5:3, Rev 15:5, Rev 1:2, Rev 1:9, Rev 6:9, Rev 11:7, Rev 12:11, Rev 12:17, Rev 19:10, Rev 20:4, Rev 10:7]
+rev: 2
+churn: 1.40
 inputs: {}
 dependents: [contexts/Mat/24.009-014, contexts/Mat/24.004-031]
 ---
@@ -78,11 +78,19 @@ Acts 20:25 — Paul: "ye all among whom I have gone preaching the kingdom of God
 **Acts 28:31** — Paul preaching kingdom of God in Rome, "with all confidence, no man forbidding." FINAL VERSE OF ACTS. Paul in Rome = gospel reached the capital of the oikoumene. Luke's narrative arc: Jerusalem → Rome = marturion-to-oikoumene progression.
 **Rev 14:6** — angel with everlasting (aionios G166) gospel (euangelion) to preach to every nation+kindred+tongue+people. co: ANGEL, every ethnic unit. The final-scope gospel: angelic herald ensures every ethnos receives testimony. Parallels Mat 24:14 scope.
 
+## THE GOSPEL PREACHED AT SINAI — AND BEFORE
+
+**Heb 4:2** — "unto us was the gospel preached (G2097 euangelizo), AS WELL AS UNTO THEM (the Exodus generation)." The SAME verb (euangelizo) used for what happened at Sinai. What was preached? Ex 19:5-6 "ye shall be unto me a kingdom (H4467 mamlakah) of priests and a holy nation." The gospel of the KINGDOM — the announcement that God's covenant reign has arrived and you can be part of it — was preached at Sinai. Heb 4:2 continues: "the word preached did not profit them, not being mixed with FAITH (G4102 pistis)" — and Heb 3:18-19 equates unbelief with disobedience. Same gospel, same response required (faith-as-obedience), same failure mode (unbelief).
+
+**Gal 3:8** — "the scripture, foreseeing that God would justify the nations through faith, preached before the gospel (G4283 proeuangelizo = PRE-GOSPELED) unto Abraham, saying, In thee shall all nations be blessed." Abraham received the gospel BEFORE Sinai. The content: "in thee shall all nations be blessed" = the kingdom will extend to ALL NATIONS. Same scope as Mat 24:14 "all nations."
+
+**This is NOT the post-cross "gospel about Jesus."** Jesus preached the gospel of the kingdom BEFORE his death, burial, and resurrection (Mat 4:23, 9:35, Mk 1:14-15). It was preached at Sinai (Heb 4:2). It was preached to Abraham (Gal 3:8). The gospel of the kingdom = the herald-announcement that God's covenant reign has arrived. The death/burial/resurrection is the MECHANISM by which the kingdom is secured (Jn 19:30 "tetelestai" = the prototype teleo), but the GOSPEL is the kingdom announcement itself. The modern "gospel about Jesus" (believe in substitutionary atonement and go to heaven) is a SUBSET, not the whole. The whole gospel = God's kingdom has arrived, repent, believe, obey (Mk 1:15).
+
 ## Pattern Summary
 
-**The gospel of the kingdom is not generic "good news" — it is the specific herald-announcement that God's covenant reign (basileia) has arrived, delivered as legal testimony (marturion) to the nations.**
+**The gospel of the kingdom is not generic "good news" — it is the specific herald-announcement that God's covenant reign (basileia) has arrived, delivered as legal testimony (marturion) to the nations. It is the SAME gospel preached to Abraham (Gal 3:8), preached at Sinai (Heb 4:2), preached by Jesus before the cross (Mat 4:23), and preached to all nations before the end (Mat 24:14).**
 
-**Five structural findings:**
+**Six structural findings:**
 1. **Trigger-condition for the end:** Mat 24:14 is not a prediction but a CONDITION. Telos cannot come UNTIL the marturion reaches all nations. The witness-completion IS the end-trigger. This inverts common reading: the gospel isn't racing against the clock — the clock doesn't START until the gospel finishes.
 2. **Teleo→telos chain:** G5055 teleo (finish) derives from G5056 telos (end). Rev 11:7 "finished (teleo) their testimony" → Rev 10:7 "mystery of God finished (teleo)" → Mat 24:14 "then shall the end (telos) come." Three links: testimony-completion → mystery-completion → age-completion. Jn 19:30 "tetelestai" is the prototype: Jesus finished his testimony, died, rose. The witnesses repeat the pattern.
 3. **Marturion→marturia→martus→martyr:** G3142 marturion (evidence-object) → G3141 marturia (evidence-given) → G3144 martus (the one giving evidence) → English "martyr." The semantic drift IS the theology: giving testimony costs your life. Mat 10:18 + Mk 13:9: persecution before rulers = testimony-context. Rev 6:9: slain for testimony held. Rev 12:11: overcame by testimony + loved not lives unto death. Rev 20:4: beheaded for testimony → reign with Christ. The witness IS the martyr. The death IS the delivery.
