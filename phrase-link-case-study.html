@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phrase Link Case Study — Thematic Pattern Matching</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-hover: #1a2744;
+    --text: #e0e0e0;
+    --text-dim: #8890a8;
+    --border: #2a2a4a;
+    --accent: #e94560;
+
+    /* Phrase theme colors */
+    --birth-pains: #e94560;
+    --birth-pains-bg: #e9456025;
+    --rumors: #4a9eff;
+    --rumors-bg: #4a9eff25;
+    --nation-v-nation: #fb923c;
+    --nation-v-nation-bg: #fb923c25;
+    --earth-shaken: #50c878;
+    --earth-shaken-bg: #50c87825;
+    --fear: #c084fc;
+    --fear-bg: #c084fc25;
+    --celestial: #fbbf24;
+    --celestial-bg: #fbbf2425;
+    --wrath: #f43f5e;
+    --wrath-bg: #f43f5e20;
+    --come-out: #2dd4bf;
+    --come-out-bg: #2dd4bf25;
+    --sound-cry: #38bdf8;
+    --sound-cry-bg: #38bdf825;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 22px;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  /* ── Legend ── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-bottom: 28px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .legend-title {
+    width: 100%;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 3px 10px 3px 6px;
+    border-radius: 6px;
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .legend-item:hover {
+    background: var(--bg-hover);
+  }
+  .legend-item.dimmed .legend-swatch {
+    opacity: 0.2;
+  }
+  .legend-item.dimmed {
+    opacity: 0.4;
+  }
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-count {
+    color: var(--text-dim);
+    font-size: 11px;
+  }
+
+  /* ── Passage cards ── */
+  .passage {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: opacity 0.2s;
+  }
+  .passage.dimmed {
+    opacity: 0.3;
+  }
+  .passage-header {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .passage-ref {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .passage-book {
+    font-size: 12px;
+    color: var(--text-dim);
+    background: #2a2a4a;
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+  .passage-text {
+    padding: 16px 20px;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  /* ── Phrase highlights ── */
+  .ph {
+    padding: 1px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+    border-bottom: 2px solid transparent;
+  }
+  .ph:hover {
+    filter: brightness(1.3);
+  }
+  .ph.active {
+    filter: brightness(1.4);
+    box-shadow: 0 0 8px rgba(255,255,255,0.15);
+  }
+  .ph.dimmed-phrase {
+    opacity: 0.2 !important;
+    filter: none !important;
+  }
+
+  /* Theme-specific colors — underline hidden by default, shown on hover/active */
+  .ph-birth-pains        { color: var(--birth-pains);    background: var(--birth-pains-bg); }
+  .ph-rumors             { color: var(--rumors);         background: var(--rumors-bg); }
+  .ph-nation-v-nation    { color: var(--nation-v-nation); background: var(--nation-v-nation-bg); }
+  .ph-earth-shaken       { color: var(--earth-shaken);   background: var(--earth-shaken-bg); }
+  .ph-fear               { color: var(--fear);           background: var(--fear-bg); }
+  .ph-celestial          { color: var(--celestial);      background: var(--celestial-bg); }
+  .ph-wrath              { color: var(--wrath);          background: var(--wrath-bg); }
+  .ph-come-out           { color: var(--come-out);       background: var(--come-out-bg); }
+  .ph-sound-cry          { color: var(--sound-cry);      background: var(--sound-cry-bg); }
+
+  /* Underline only when this phrase's theme is active (hovered or clicked) */
+  .ph.active.ph-birth-pains     { border-bottom-color: var(--birth-pains); }
+  .ph.active.ph-rumors          { border-bottom-color: var(--rumors); }
+  .ph.active.ph-nation-v-nation { border-bottom-color: var(--nation-v-nation); }
+  .ph.active.ph-earth-shaken    { border-bottom-color: var(--earth-shaken); }
+  .ph.active.ph-fear            { border-bottom-color: var(--fear); }
+  .ph.active.ph-celestial       { border-bottom-color: var(--celestial); }
+  .ph.active.ph-wrath           { border-bottom-color: var(--wrath); }
+  .ph.active.ph-come-out        { border-bottom-color: var(--come-out); }
+  .ph.active.ph-sound-cry       { border-bottom-color: var(--sound-cry); }
+
+  /* ── Connection graph ── */
+  .graph-section {
+    margin-top: 36px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .graph-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+  .graph-theme {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid;
+  }
+  .graph-theme-name {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .graph-theme-count {
+    font-size: 11px;
+    background: #2a2a4a;
+    padding: 1px 8px;
+    border-radius: 8px;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+  .graph-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .graph-link {
+    font-size: 12px;
+    background: #0f0f2a;
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .graph-link:hover {
+    background: var(--bg-hover);
+    color: var(--text);
+  }
+  .graph-link .ref {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Theme borders for graph items */
+  .gt-birth-pains     { border-color: var(--birth-pains);    background: var(--birth-pains-bg); }
+  .gt-rumors          { border-color: var(--rumors);         background: var(--rumors-bg); }
+  .gt-nation-v-nation { border-color: var(--nation-v-nation); background: var(--nation-v-nation-bg); }
+  .gt-earth-shaken    { border-color: var(--earth-shaken);   background: var(--earth-shaken-bg); }
+  .gt-fear            { border-color: var(--fear);           background: var(--fear-bg); }
+  .gt-celestial       { border-color: var(--celestial);      background: var(--celestial-bg); }
+  .gt-wrath           { border-color: var(--wrath);          background: var(--wrath-bg); }
+  .gt-come-out        { border-color: var(--come-out);       background: var(--come-out-bg); }
+  .gt-birth-pains .graph-theme-name     { color: var(--birth-pains); }
+  .gt-rumors .graph-theme-name          { color: var(--rumors); }
+  .gt-nation-v-nation .graph-theme-name { color: var(--nation-v-nation); }
+  .gt-earth-shaken .graph-theme-name    { color: var(--earth-shaken); }
+  .gt-fear .graph-theme-name            { color: var(--fear); }
+  .gt-celestial .graph-theme-name       { color: var(--celestial); }
+  .gt-wrath .graph-theme-name           { color: var(--wrath); }
+  .gt-come-out .graph-theme-name        { color: var(--come-out); }
+
+  /* ── Data output section ── */
+  .data-section {
+    margin-top: 36px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .data-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--accent);
+  }
+  .data-subtitle {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+  pre.data-output {
+    background: #0a0a1a;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-x: auto;
+    color: #a8b4cc;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    white-space: pre;
+    tab-size: 2;
+  }
+  pre .key { color: #4a9eff; }
+  pre .str { color: #50c878; }
+  pre .num { color: #fbbf24; }
+  pre .comment { color: #555; font-style: italic; }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    body { padding: 12px; }
+    .passage-text { font-size: 14px; padding: 12px 16px; }
+    .legend { gap: 4px 10px; }
+    .legend-item { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Phrase Link Case Study — Thematic Pattern Matching</h1>
+<p class="subtitle">
+  AI identifies shared thematic phrases across passages — not just identical words, but the same <em>imagery, pattern, and concept</em>.
+  Click any highlighted phrase to see all its connections. Click a legend item to isolate that theme.
+</p>
+
+<!-- ════ LEGEND ════ -->
+<div class="legend" id="legend">
+  <div class="legend-title">Thematic Phrase Groups</div>
+  <div class="legend-item" data-theme="birth-pains" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--birth-pains)"></div>
+    Birth Pains / Travail <span class="legend-count">5</span>
+  </div>
+  <div class="legend-item" data-theme="rumors" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--rumors)"></div>
+    Rumors / Reports <span class="legend-count">3</span>
+  </div>
+  <div class="legend-item" data-theme="sound-cry" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--sound-cry)"></div>
+    Sound / Cry (קוֹל) <span class="legend-count">3</span>
+  </div>
+  <div class="legend-item" data-theme="nation-v-nation" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--nation-v-nation)"></div>
+    Nation Against Nation <span class="legend-count">2</span>
+  </div>
+  <div class="legend-item" data-theme="earth-shaken" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--earth-shaken)"></div>
+    Earth Shaken / Trembles <span class="legend-count">4</span>
+  </div>
+  <div class="legend-item" data-theme="fear" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--fear)"></div>
+    Fear / Anguish / Alarm <span class="legend-count">5</span>
+  </div>
+  <div class="legend-item" data-theme="celestial" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--celestial)"></div>
+    Sun / Moon / Stars Darkened <span class="legend-count">3</span>
+  </div>
+  <div class="legend-item" data-theme="wrath" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--wrath)"></div>
+    Day of YHWH / Wrath <span class="legend-count">4</span>
+  </div>
+  <div class="legend-item" data-theme="come-out" onclick="toggleTheme(this)">
+    <div class="legend-swatch" style="background:var(--come-out)"></div>
+    Come Out / Flee <span class="legend-count">1</span>
+  </div>
+</div>
+
+<!-- ════ PASSAGES ════ -->
+
+<div class="passage" id="p-mat24" data-themes="birth-pains rumors nation-v-nation earth-shaken fear">
+  <div class="passage-header">
+    <span class="passage-ref">Matthew 24:6–8</span>
+    <span class="passage-book">New Testament — Olivet Discourse</span>
+  </div>
+  <div class="passage-text">
+    And you will <span class="ph ph-rumors" data-theme="rumors" data-id="r1">hear of wars and rumors of wars</span>.
+    <span class="ph ph-fear" data-theme="fear" data-id="f1">See that you are not alarmed</span>,
+    for this must take place, but the end is not yet.
+    For <span class="ph ph-nation-v-nation" data-theme="nation-v-nation" data-id="n1">nation will rise against nation, and kingdom against kingdom</span>,
+    and there will be famines and <span class="ph ph-earth-shaken" data-theme="earth-shaken" data-id="e1">earthquakes</span> according to places.
+    All these are but <span class="ph ph-birth-pains" data-theme="birth-pains" data-id="b1">the beginning of the birth pains</span>.
+  </div>
+</div>
+
+<div class="passage" id="p-jer51" data-themes="come-out wrath rumors nation-v-nation fear sound-cry">
+  <div class="passage-header">
+    <span class="passage-ref">Jeremiah 51:45–48</span>
+    <span class="passage-book">Prophecy — Fall of Babylon</span>
+  </div>
+  <div class="passage-text">
+    <span class="ph ph-come-out" data-theme="come-out" data-id="c1">Come out of her My people, save your lives</span>,
+    each of you, from <span class="ph ph-wrath" data-theme="wrath" data-id="w1">the fierce Anger of YHWH</span>.
+    <span class="ph ph-fear" data-theme="fear" data-id="f2">Do not let your heart grow faint and do not be afraid</span>
+    when <span class="ph ph-rumors" data-theme="rumors" data-id="r2">rumor is heard in the land; for a rumor will come one year and then another the next year</span>
+    of violence in the land and of
+    <span class="ph ph-nation-v-nation" data-theme="nation-v-nation" data-id="n2">ruler against ruler</span>.
+    Therefore, behold the days are coming when
+    <span class="ph ph-wrath" data-theme="wrath" data-id="w2">I will punish the idols of Babylon</span>.
+    Her entire land will suffer shame, and all her slain will lie fallen within her.
+    Then heaven and earth and all that is in them will <span class="ph ph-sound-cry" data-theme="sound-cry" data-id="sc1">shout for joy over Babylon</span>
+    because the destroyers from the north will come against her.
+  </div>
+</div>
+
+<div class="passage" id="p-jer5046" data-themes="earth-shaken sound-cry">
+  <div class="passage-header">
+    <span class="passage-ref">Jeremiah 50:46</span>
+    <span class="passage-book">Prophecy — Fall of Babylon</span>
+  </div>
+  <div class="passage-text">
+    At <span class="ph ph-sound-cry" data-theme="sound-cry" data-id="sc2">the noise of the taking of Babylon</span>
+    <span class="ph ph-earth-shaken" data-theme="earth-shaken" data-id="e2">the earth is shaken</span>
+    and <span class="ph ph-sound-cry" data-theme="sound-cry" data-id="sc3">the crying is heard among the nations</span>.
+  </div>
+</div>
+
+<div class="passage" id="p-jer5043" data-themes="birth-pains fear rumors sound-cry">
+  <div class="passage-header">
+    <span class="passage-ref">Jeremiah 50:43</span>
+    <span class="passage-book">Prophecy — Fall of Babylon</span>
+  </div>
+  <div class="passage-text">
+    The king of Babylon has
+    <span class="ph ph-rumors" data-theme="rumors" data-id="r4">heard the report of them</span>,
+    and <span class="ph ph-fear" data-theme="fear" data-id="f3">his hands waxed feeble</span>:
+    <span class="ph ph-fear" data-theme="fear" data-id="f4">anguish took hold of him</span>,
+    and <span class="ph ph-birth-pains" data-theme="birth-pains" data-id="b2">pangs as of a woman in travail</span>.
+  </div>
+</div>
+
+<div class="passage" id="p-jer30" data-themes="birth-pains fear wrath">
+  <div class="passage-header">
+    <span class="passage-ref">Jeremiah 30:6–7</span>
+    <span class="passage-book">Prophecy — Jacob's Trouble</span>
+  </div>
+  <div class="passage-text">
+    Ask you now, and see whether
+    <span class="ph ph-birth-pains" data-theme="birth-pains" data-id="b3">a man does travail with child</span>?
+    Wherefore do I see every man with his hands on his loins,
+    <span class="ph ph-birth-pains" data-theme="birth-pains" data-id="b4">as a woman in travail</span>,
+    and <span class="ph ph-fear" data-theme="fear" data-id="f5">all faces are turned into paleness</span>?
+    Alas for <span class="ph ph-wrath" data-theme="wrath" data-id="w3">that day is great, so that none is like it</span>:
+    it is even the time of Jacob's trouble; but he shall be saved out of it.
+  </div>
+</div>
+
+<div class="passage" id="p-isa13" data-themes="wrath celestial earth-shaken">
+  <div class="passage-header">
+    <span class="passage-ref">Isaiah 13:9–13</span>
+    <span class="passage-book">Prophecy — Day of YHWH</span>
+  </div>
+  <div class="passage-text">
+    Behold, <span class="ph ph-wrath" data-theme="wrath" data-id="w4">the Day of YHWH is coming — cruel with fury and burning Anger</span>
+    to make the earth a desolation...
+    For <span class="ph ph-celestial" data-theme="celestial" data-id="s1">the stars of heaven and their constellations will not give their light</span>.
+    <span class="ph ph-celestial" data-theme="celestial" data-id="s2">The rising sun will be darkened</span>,
+    and <span class="ph ph-celestial" data-theme="celestial" data-id="s3">the moon will not give its light</span>.
+    <span class="ph ph-earth-shaken" data-theme="earth-shaken" data-id="e3">I will make the heavens tremble</span>,
+    and <span class="ph ph-earth-shaken" data-theme="earth-shaken" data-id="e4">the earth will be shaken in its places</span>
+    at <span class="ph ph-wrath" data-theme="wrath" data-id="w5">the wrath of YHWH of Hosts on the day of his burning anger</span>.
+  </div>
+</div>
+
+
+<!-- ════ CONNECTION GRAPH ════ -->
+<div class="graph-section">
+  <div class="graph-title">Phrase Link Graph — What AI Would Output</div>
+
+  <div class="graph-theme gt-birth-pains">
+    <div class="graph-theme-name">Birth Pains / Travail <span class="graph-theme-count">5 matches across 3 passages</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Mat 24:8</span> "beginning of the birth pains"</div>
+      <div class="graph-link"><span class="ref">Jer 50:43</span> "pangs as of a woman in travail"</div>
+      <div class="graph-link"><span class="ref">Jer 30:6</span> "a man does travail with child"</div>
+      <div class="graph-link"><span class="ref">Jer 30:6</span> "as a woman in travail"</div>
+    </div>
+  </div>
+
+  <div class="graph-theme gt-rumors">
+    <div class="graph-theme-name">Rumors / Reports Heard <span class="graph-theme-count">4 matches across 4 passages</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Mat 24:6</span> "hear of wars and rumors of wars"</div>
+      <div class="graph-link"><span class="ref">Jer 51:46</span> "rumor is heard in the land; for a rumor will come..."</div>
+      <div class="graph-link"><span class="ref">Jer 50:46</span> "the noise of the taking of Babylon"</div>
+      <div class="graph-link"><span class="ref">Jer 50:43</span> "heard the report of them"</div>
+    </div>
+  </div>
+
+  <div class="graph-theme gt-nation-v-nation">
+    <div class="graph-theme-name">Nation Against Nation / Ruler Against Ruler <span class="graph-theme-count">2 matches across 2 passages</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Mat 24:7</span> "nation will rise against nation, and kingdom against kingdom"</div>
+      <div class="graph-link"><span class="ref">Jer 51:46</span> "ruler against ruler"</div>
+    </div>
+  </div>
+
+  <div class="graph-theme gt-earth-shaken">
+    <div class="graph-theme-name">Earth Shaken / Trembles <span class="graph-theme-count">4 matches across 3 passages</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Mat 24:7</span> "earthquakes"</div>
+      <div class="graph-link"><span class="ref">Jer 50:46</span> "the earth is shaken"</div>
+      <div class="graph-link"><span class="ref">Isa 13:13</span> "I will make the heavens tremble"</div>
+      <div class="graph-link"><span class="ref">Isa 13:13</span> "the earth will be shaken in its places"</div>
+    </div>
+  </div>
+
+  <div class="graph-theme gt-fear">
+    <div class="graph-theme-name">Fear / Anguish / Alarm <span class="graph-theme-count">5 matches across 4 passages</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Mat 24:6</span> "See that you are not alarmed"</div>
+      <div class="graph-link"><span class="ref">Jer 51:46</span> "Do not let your heart grow faint and do not be afraid"</div>
+      <div class="graph-link"><span class="ref">Jer 50:43</span> "his hands waxed feeble" + "anguish took hold of him"</div>
+      <div class="graph-link"><span class="ref">Jer 30:6</span> "all faces are turned into paleness"</div>
+    </div>
+  </div>
+
+  <div class="graph-theme gt-celestial">
+    <div class="graph-theme-name">Sun / Moon / Stars Darkened <span class="graph-theme-count">3 matches in Isaiah 13</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Isa 13:10</span> "stars...will not give their light"</div>
+      <div class="graph-link"><span class="ref">Isa 13:10</span> "the rising sun will be darkened"</div>
+      <div class="graph-link"><span class="ref">Isa 13:10</span> "the moon will not give its light"</div>
+      <div class="graph-link" style="border: 1px dashed #fbbf2444;"><span class="ref" style="color:#fbbf24">Mat 24:29</span> "the sun will be darkened, and the moon..." (not shown above but linked)</div>
+    </div>
+  </div>
+
+  <div class="graph-theme gt-wrath">
+    <div class="graph-theme-name">Day of YHWH / Wrath / Anger <span class="graph-theme-count">4 matches across 3 passages</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Jer 51:45</span> "the fierce Anger of YHWH"</div>
+      <div class="graph-link"><span class="ref">Jer 30:7</span> "that day is great, so that none is like it"</div>
+      <div class="graph-link"><span class="ref">Isa 13:9</span> "the Day of YHWH is coming — cruel with fury and burning Anger"</div>
+      <div class="graph-link"><span class="ref">Isa 13:13</span> "the wrath of YHWH of Hosts on the day of his burning anger"</div>
+    </div>
+  </div>
+
+  <div class="graph-theme gt-come-out">
+    <div class="graph-theme-name">Come Out / Flee <span class="graph-theme-count">1 match + external links</span></div>
+    <div class="graph-links">
+      <div class="graph-link"><span class="ref">Jer 51:45</span> "Come out of her My people, save your lives"</div>
+      <div class="graph-link" style="border: 1px dashed #2dd4bf44;"><span class="ref" style="color:#2dd4bf">Rev 18:4</span> "Come out of her, my people" (external link)</div>
+      <div class="graph-link" style="border: 1px dashed #2dd4bf44;"><span class="ref" style="color:#2dd4bf">Isa 52:11</span> "Depart, depart, go out from there" (external link)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ WHAT AI WOULD OUTPUT ════ -->
+<div class="data-section">
+  <div class="data-title">Example AI Output — Compact Phrase Link Format</div>
+  <div class="data-subtitle">Not JSON — a purpose-built format optimized for this task. Each line is a phrase link instance.</div>
+  <pre class="data-output"><span class="comment"># PHRASE LINKS — thematic phrase connections across passages
+# Format: THEME | VERSE_REF | PHRASE_TEXT | HEBREW_ROOTS (or GREEK)
+# Hebrew roots ground the link in source language, enabling translation-agnostic matching</span>
+
+<span class="key">birth-pains</span>  | Mat.24.8    | the beginning of the birth pains     | G5604 ωδιν (birth-pang)
+<span class="key">birth-pains</span>  | Jer.50.43   | pangs as of a woman in travail        | H2256 חבל (writhe) + H3205 ילד (give-birth)
+<span class="key">birth-pains</span>  | Jer.30.6    | a man does travail with child         | H3205 ילד (give-birth)
+<span class="key">birth-pains</span>  | Jer.30.6    | as a woman in travail                 | H3205 ילד (give-birth)
+
+<span class="key">rumors</span>       | Mat.24.6    | hear of wars and rumors of wars       | G189 ακοη (hearing/report)
+<span class="key">rumors</span>       | Jer.51.46   | rumor is heard in the land            | H8052 שמועה (report/rumor)
+<span class="key">rumors</span>       | Jer.50.46   | the noise of the taking of Babylon    | H6963 קול (voice/sound) + H8088 שמע (report)
+<span class="key">rumors</span>       | Jer.50.43   | heard the report of them              | H8088 שמע (report)
+
+<span class="key">X-against-X</span>  | Mat.24.7    | nation...against nation, kingdom...kingdom | G1484 εθνος + G932 βασιλεια
+<span class="key">X-against-X</span>  | Jer.51.46   | ruler against ruler                   | H4910 משל (ruler)
+
+<span class="key">earth-shaken</span> | Mat.24.7    | earthquakes                           | G4578 σεισμος (shaking)
+<span class="key">earth-shaken</span> | Jer.50.46   | the earth is shaken                   | H7493 רעש (quake/shake)
+<span class="key">earth-shaken</span> | Isa.13.13   | I will make the heavens tremble       | H7264 רגז (tremble)
+<span class="key">earth-shaken</span> | Isa.13.13   | the earth will be shaken in its places| H7493 רעש (quake/shake)
+
+<span class="key">fear</span>         | Mat.24.6    | See that you are not alarmed          | G2360 θροεω (be-alarmed)
+<span class="key">fear</span>         | Jer.51.46   | do not let your heart grow faint...afraid | H3824 לבב (heart) + H3372 ירא (fear)
+<span class="key">fear</span>         | Jer.50.43   | his hands waxed feeble                | H7503 רפה (sink/relax)
+<span class="key">fear</span>         | Jer.50.43   | anguish took hold of him              | H6869 צרה (distress)
+<span class="key">fear</span>         | Jer.30.6    | all faces are turned into paleness    | H3420 ירקון (paleness)
+
+<span class="key">celestial</span>    | Isa.13.10   | stars...will not give their light     | H3556 כוכב (star) + H215 אור (light)
+<span class="key">celestial</span>    | Isa.13.10   | the rising sun will be darkened       | H8121 שמש (sun) + H2821 חשך (darken)
+<span class="key">celestial</span>    | Isa.13.10   | the moon will not give its light      | H3394 ירח (moon) + H215 אור (light)
+
+<span class="key">day-of-yhwh</span>  | Jer.51.45   | the fierce Anger of YHWH              | H2740 חרון (burning) + H639 אף (anger)
+<span class="key">day-of-yhwh</span>  | Jer.30.7    | that day is great, none is like it    | H3117 יום (day) + H1419 גדול (great)
+<span class="key">day-of-yhwh</span>  | Isa.13.9    | the Day of YHWH...cruel with fury     | H3117 יום + H5678 עברה (wrath)
+<span class="key">day-of-yhwh</span>  | Isa.13.13   | the wrath of YHWH...burning anger     | H5678 עברה (wrath) + H639 אף (anger)
+
+<span class="key">come-out</span>     | Jer.51.45   | Come out of her My people             | H3318 יצא (go-out) + H5971 עם (people)
+</pre>
+</div>
+
+<div class="data-section" style="margin-top: 16px;">
+  <div class="data-title">Key Observations</div>
+  <div class="data-subtitle">What makes this thematic, not just lexical</div>
+  <pre class="data-output"><span class="comment"># The AI identifies connections that pure word-matching would MISS:</span>
+
+<span class="str">1. "birth pains" (Mat) ↔ "pangs...woman in travail" (Jer)</span>
+   Different words, same imagery. Greek ωδιν ≠ Hebrew חבל/ילד
+   but they express the same prophetic metaphor.
+
+<span class="str">2. "nation against nation" (Mat) ↔ "ruler against ruler" (Jer)</span>
+   The PATTERN "X against X" is the link, not the specific nouns.
+   No shared root words at all — purely structural parallel.
+
+<span class="str">3. "earthquakes" (Mat) ↔ "the earth is shaken" (Jer/Isa)</span>
+   Greek σεισμος (noun) ↔ Hebrew רעש (verb) — different languages,
+   different parts of speech, same concept.
+
+<span class="str">4. "not alarmed" (Mat) ↔ "heart grow faint" (Jer) ↔ "hands feeble" (Jer) ↔ "paleness" (Jer)</span>
+   FOUR different Hebrew/Greek words all expressing the same theme: fear-response.
+   θροεω ≠ לבב ≠ רפה ≠ ירקון — but AI recognizes the thematic unity.
+
+<span class="str">5. Stars/sun/moon (Isa 13) → Mat 24:29 (not in our passages but AI would link it)</span>
+   AI knows Mat 24:29 continues the Olivet Discourse with identical celestial imagery.
+   The phrase link graph extends BEYOND the passages we're analyzing.
+
+<span class="comment"># This is why AI is needed — mechanical word-matching catches maybe 30% of these.
+# Thematic pattern recognition catches the other 70%.</span>
+</pre>
+</div>
+
+<script>
+  // ── Interactive highlighting ──
+  let lockedTheme = null;  // clicked / pinned theme
+  let hoverTheme = null;   // transient hover theme
+
+  // Hover a phrase → transiently highlight its theme
+  document.querySelectorAll('.ph').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (lockedTheme) return; // don't override a pinned theme
+      hoverTheme = el.dataset.theme;
+      applyHighlight(hoverTheme);
+    });
+    el.addEventListener('mouseleave', () => {
+      if (lockedTheme) return;
+      hoverTheme = null;
+      clearHighlight();
+    });
+    // Click a phrase → pin/unpin that theme
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const theme = el.dataset.theme;
+      if (lockedTheme === theme) {
+        lockedTheme = null;
+        clearHighlight();
+      } else {
+        lockedTheme = theme;
+        applyHighlight(theme);
+      }
+    });
+  });
+
+  // Hover legend items too
+  document.querySelectorAll('.legend-item').forEach(li => {
+    li.addEventListener('mouseenter', () => {
+      if (lockedTheme) return;
+      hoverTheme = li.dataset.theme;
+      applyHighlight(hoverTheme);
+    });
+    li.addEventListener('mouseleave', () => {
+      if (lockedTheme) return;
+      hoverTheme = null;
+      clearHighlight();
+    });
+  });
+
+  function applyHighlight(theme) {
+    // Underline + brighten matching phrases, dim others
+    document.querySelectorAll('.ph').forEach(ph => {
+      if (ph.dataset.theme === theme) {
+        ph.classList.add('active');
+        ph.classList.remove('dimmed-phrase');
+      } else {
+        ph.classList.remove('active');
+        ph.classList.add('dimmed-phrase');
+      }
+    });
+
+    // Dim passages that don't contain this theme
+    document.querySelectorAll('.passage').forEach(p => {
+      const themes = p.dataset.themes || '';
+      if (themes.includes(theme)) {
+        p.classList.remove('dimmed');
+      } else {
+        p.classList.add('dimmed');
+      }
+    });
+
+    // Update legend
+    document.querySelectorAll('.legend-item').forEach(li => {
+      if (li.dataset.theme === theme) {
+        li.classList.remove('dimmed');
+      } else {
+        li.classList.add('dimmed');
+      }
+    });
+  }
+
+  function clearHighlight() {
+    document.querySelectorAll('.ph').forEach(ph => {
+      ph.classList.remove('active', 'dimmed-phrase');
+    });
+    document.querySelectorAll('.passage').forEach(p => {
+      p.classList.remove('dimmed');
+    });
+    document.querySelectorAll('.legend-item').forEach(li => {
+      li.classList.remove('dimmed');
+    });
+  }
+
+  function toggleTheme(legendItem) {
+    const theme = legendItem.dataset.theme;
+    if (lockedTheme === theme) {
+      lockedTheme = null;
+      clearHighlight();
+    } else {
+      lockedTheme = theme;
+      applyHighlight(theme);
+    }
+  }
+
+  // Click on empty space to unpin
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.ph') && !e.target.closest('.legend-item')) {
+      lockedTheme = null;
+      clearHighlight();
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross-Reference Summary — Feature Mockup</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-card-hover: #1a2744;
+    --bg-group: #0f3460;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0b8;
+    --text-verse: #c8c8d8;
+    --accent: #e94560;
+    --accent-soft: #e9456033;
+    --accent-gold: #d4a843;
+    --accent-gold-soft: #d4a84333;
+    --link: #53a8ff;
+    --border: #2a2a4a;
+    --badge-bg: #2a2a4a;
+    --group-1: #4a9eff;
+    --group-2: #e94560;
+    --group-3: #50c878;
+    --group-4: #d4a843;
+    --group-5: #c084fc;
+    --group-6: #fb923c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  .mockup-header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mockup-header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .mockup-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .panels {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Research panel simulation */
+  .research-panel {
+    width: 420px;
+    max-width: 100%;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .panel-header {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--bg-group), var(--bg-card));
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .panel-header .verse-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-header .icon {
+    font-size: 18px;
+  }
+  .panel-header .verse-ref {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .panel-header .ref-count {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--badge-bg);
+    padding: 2px 10px;
+    border-radius: 12px;
+  }
+
+  .source-verse {
+    padding: 14px 20px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    margin: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text-verse);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .panel-body {
+    padding: 0 0 16px 0;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* Theme group */
+  .theme-group {
+    margin: 12px 16px;
+  }
+
+  .theme-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .theme-header:hover {
+    background: var(--bg-card-hover);
+  }
+  .theme-icon {
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .theme-name {
+    font-weight: 600;
+    font-size: 14px;
+    flex: 1;
+  }
+  .theme-count {
+    font-size: 11px;
+    color: var(--text-secondary);
+    background: var(--badge-bg);
+    padding: 1px 8px;
+    border-radius: 10px;
+  }
+  .theme-chevron {
+    color: var(--text-secondary);
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+  .theme-group.collapsed .theme-chevron {
+    transform: rotate(-90deg);
+  }
+  .theme-group.collapsed .theme-refs {
+    display: none;
+  }
+
+  .theme-summary {
+    padding: 4px 12px 8px 48px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* Reference items */
+  .theme-refs {
+    padding: 0 0 4px 0;
+  }
+
+  .ref-item {
+    padding: 10px 12px 10px 48px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .ref-item:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .ref-link {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--link);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ref-votes {
+    font-size: 10px;
+    color: var(--text-secondary);
+    background: var(--badge-bg);
+    padding: 0 6px;
+    border-radius: 8px;
+    font-weight: 400;
+  }
+  .ref-text {
+    font-size: 13px;
+    color: var(--text-verse);
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Color variants for groups */
+  .group-1 .theme-icon { background: #4a9eff22; color: var(--group-1); }
+  .group-1 .theme-name { color: var(--group-1); }
+  .group-2 .theme-icon { background: #e9456022; color: var(--group-2); }
+  .group-2 .theme-name { color: var(--group-2); }
+  .group-3 .theme-icon { background: #50c87822; color: var(--group-3); }
+  .group-3 .theme-name { color: var(--group-3); }
+  .group-4 .theme-icon { background: #d4a84322; color: var(--group-4); }
+  .group-4 .theme-name { color: var(--group-4); }
+  .group-5 .theme-icon { background: #c084fc22; color: var(--group-5); }
+  .group-5 .theme-name { color: var(--group-5); }
+  .group-6 .theme-icon { background: #fb923c22; color: var(--group-6); }
+  .group-6 .theme-name { color: var(--group-6); }
+
+  /* Attribution */
+  .attribution {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+  .attribution a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  .attribution a:hover {
+    text-decoration: underline;
+  }
+
+  /* Comparison label */
+  .comparison-label {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    width: 100%;
+  }
+  .comparison-label span {
+    background: var(--badge-bg);
+    color: var(--text-secondary);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* Scrollbar styling */
+  .panel-body::-webkit-scrollbar { width: 6px; }
+  .panel-body::-webkit-scrollbar-track { background: transparent; }
+  .panel-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .panel-body::-webkit-scrollbar-thumb:hover { background: #444; }
+</style>
+</head>
+<body>
+
+<div class="mockup-header">
+  <h1>Cross-Reference Summary — Feature Exploration</h1>
+  <p>Automatically organized cross-references grouped by theme, with AI-generated summaries. Each group is collapsible for quick navigation. Two example verses shown below.</p>
+</div>
+
+<div class="panels">
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- ROMANS 8:28 -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="research-panel">
+  <div class="panel-header">
+    <div class="verse-badge">
+      <span class="icon">🔗</span>
+      <span class="verse-ref">Romans 8:28</span>
+    </div>
+    <span class="ref-count">42 cross-references</span>
+  </div>
+
+  <div class="source-verse">
+    "And we know that all things work together for good to them that love God, to them who are the called according to his purpose."
+  </div>
+
+  <div class="panel-body">
+
+    <!-- GROUP 1: Suffering & Trials Produce Good -->
+    <div class="theme-group group-2">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">⚒</div>
+        <span class="theme-name">Suffering & Trials Produce Good</span>
+        <span class="theme-count">12</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        Trials refine faith like gold in fire. Patience through tribulation produces hope, character, and eternal glory far outweighing present suffering.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">1 Peter 5:10 <span class="ref-votes">556</span></div>
+          <div class="ref-text">But the God of all grace, who hath called us unto his eternal glory by Christ Jesus, after that ye have suffered a while, make you perfect, stablish, strengthen, settle you.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">James 1:12 <span class="ref-votes">449</span></div>
+          <div class="ref-text">Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Genesis 50:20 <span class="ref-votes">375</span></div>
+          <div class="ref-text">But as for you, ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Romans 5:3–5 <span class="ref-votes">298</span></div>
+          <div class="ref-text">And not only so, but we glory in tribulations also: knowing that tribulation worketh patience; and patience, experience; and experience, hope.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">James 1:3–4 <span class="ref-votes">207</span></div>
+          <div class="ref-text">Knowing this, that the trying of your faith worketh patience. But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 Peter 1:7–8 <span class="ref-votes">130</span></div>
+          <div class="ref-text">That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Hebrews 12:6–12 <span class="ref-votes">94</span></div>
+          <div class="ref-text">For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth. If ye endure chastening, God dealeth with you as with sons…</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">2 Corinthians 4:15–17 <span class="ref-votes">88</span></div>
+          <div class="ref-text">For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Zechariah 13:9 <span class="ref-votes">76</span></div>
+          <div class="ref-text">And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Revelation 3:19 <span class="ref-votes">103</span></div>
+          <div class="ref-text">As many as I love, I rebuke and chasten: be zealous therefore, and repent.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Deuteronomy 8:2–3 <span class="ref-votes">111</span></div>
+          <div class="ref-text">And thou shalt remember all the way which the LORD thy God led thee these forty years in the wilderness, to humble thee, and to prove thee, to know what was in thine heart…</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Deuteronomy 8:16 <span class="ref-votes">56</span></div>
+          <div class="ref-text">Who fed thee in the wilderness with manna, which thy fathers knew not, that he might humble thee, and that he might prove thee, to do thee good at thy latter end.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 2: God's Sovereign Purpose & Calling -->
+    <div class="theme-group group-1">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">👑</div>
+        <span class="theme-name">God's Sovereign Purpose & Calling</span>
+        <span class="theme-count">12</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        God's calling is according to His eternal purpose — not works, but grace. He predestined, called, justified, and glorified those He chose before the world began.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">Romans 8:30 <span class="ref-votes">160</span></div>
+          <div class="ref-text">Moreover whom he did predestinate, them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">2 Timothy 1:9 <span class="ref-votes">160</span></div>
+          <div class="ref-text">Who hath saved us, and called us with an holy calling, not according to our works, but according to his own purpose and grace, which was given us in Christ Jesus before the world began.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 Corinthians 1:9 <span class="ref-votes">127</span></div>
+          <div class="ref-text">God is faithful, by whom ye were called unto the fellowship of his Son Jesus Christ our Lord.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Ephesians 1:9–11 <span class="ref-votes">99</span></div>
+          <div class="ref-text">In whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things after the counsel of his own will.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Galatians 1:15 <span class="ref-votes">82</span></div>
+          <div class="ref-text">But when it pleased God, who separated me from my mother's womb, and called me by his grace.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Ephesians 3:11 <span class="ref-votes">59</span></div>
+          <div class="ref-text">According to the eternal purpose which he purposed in Christ Jesus our Lord.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Romans 9:11 <span class="ref-votes">50</span></div>
+          <div class="ref-text">For the children being not yet born, neither having done any good or evil, that the purpose of God according to election might stand, not of works, but of him that calleth.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Romans 9:23–24 <span class="ref-votes">50</span></div>
+          <div class="ref-text">And that he might make known the riches of his glory on the vessels of mercy, which he had afore prepared unto glory, even us, whom he hath called.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">2 Thessalonians 2:13–14 <span class="ref-votes">45</span></div>
+          <div class="ref-text">God hath from the beginning chosen you to salvation through sanctification of the Spirit and belief of the truth: whereunto he called you by our gospel.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Romans 1:6–7 <span class="ref-votes">46</span></div>
+          <div class="ref-text">Among whom are ye also the called of Jesus Christ: To all that be in Rome, beloved of God, called to be saints.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Acts 13:48 <span class="ref-votes">30</span></div>
+          <div class="ref-text">And as many as were ordained to eternal life believed.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 Thessalonians 5:9 <span class="ref-votes">69</span></div>
+          <div class="ref-text">For God hath not appointed us to wrath, but to obtain salvation by our Lord Jesus Christ.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 3: Nothing Can Separate Us from God's Love -->
+    <div class="theme-group group-3">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">🛡</div>
+        <span class="theme-name">Inseparable from God's Love</span>
+        <span class="theme-count">6</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        Neither tribulation, distress, nor any power can separate believers from God's love. He who gave His Son freely gives all things, and His foundation stands sure.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">Romans 8:35–39 <span class="ref-votes">209</span></div>
+          <div class="ref-text">Who shall separate us from the love of Christ? …Nay, in all these things we are more than conquerors through him that loved us. For I am persuaded, that neither death, nor life… shall be able to separate us from the love of God.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 John 4:9–10 <span class="ref-votes">48</span></div>
+          <div class="ref-text">Herein is love, not that we loved God, but that he loved us, and sent his Son to be the propitiation for our sins.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 John 4:19 <span class="ref-votes">57</span></div>
+          <div class="ref-text">We love him, because he first loved us.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">2 Timothy 2:19 <span class="ref-votes">50</span></div>
+          <div class="ref-text">Nevertheless the foundation of God standeth sure, having this seal, The Lord knoweth them that are his.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">2 Corinthians 5:1 <span class="ref-votes">39</span></div>
+          <div class="ref-text">For we know that if our earthly house of this tabernacle were dissolved, we have a building of God, an house not made with hands, eternal in the heavens.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Philippians 1:19–23 <span class="ref-votes">45</span></div>
+          <div class="ref-text">For to me to live is Christ, and to die is gain… having a desire to depart, and to be with Christ; which is far better.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 4: What God Promises Those Who Love Him -->
+    <div class="theme-group group-4">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">💛</div>
+        <span class="theme-name">Promises to Those Who Love God</span>
+        <span class="theme-count">8</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        Eye has not seen what God has prepared for those who love Him. Loving God means keeping His commandments — and His mercy extends to thousands of generations.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">1 Corinthians 2:9 <span class="ref-votes">256</span></div>
+          <div class="ref-text">But as it is written, Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which God hath prepared for them that love him.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">James 2:5 <span class="ref-votes">60</span></div>
+          <div class="ref-text">Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him?</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Exodus 20:6 <span class="ref-votes">81</span></div>
+          <div class="ref-text">And shewing mercy unto thousands of them that love me, and keep my commandments.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Mark 12:30 <span class="ref-votes">61</span></div>
+          <div class="ref-text">And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Deuteronomy 6:5 <span class="ref-votes">61</span></div>
+          <div class="ref-text">And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Nehemiah 1:5 <span class="ref-votes">65</span></div>
+          <div class="ref-text">I beseech thee, O LORD God of heaven, the great and terrible God, that keepeth covenant and mercy for them that love him and observe his commandments.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 John 5:2–3 <span class="ref-votes">53</span></div>
+          <div class="ref-text">For this is the love of God, that we keep his commandments: and his commandments are not grievous.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Psalms 69:36 <span class="ref-votes">50</span></div>
+          <div class="ref-text">The seed also of his servants shall inherit it: and they that love his name shall dwell therein.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 5: God's Providence Over History -->
+    <div class="theme-group group-5">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">🌍</div>
+        <span class="theme-name">God's Providence Over History</span>
+        <span class="theme-count">4</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        God uses even exile and judgment for the ultimate good of His people — turning captivity into restoration and evil intentions into instruments of salvation.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">Jeremiah 24:5–7 <span class="ref-votes">42</span></div>
+          <div class="ref-text">Like these good figs, so will I acknowledge them that are carried away captive of Judah, whom I have sent out of this place into the land of the Chaldeans for their good.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Psalms 46:1–2 <span class="ref-votes">69</span></div>
+          <div class="ref-text">God is our refuge and strength, a very present help in trouble. Therefore will not we fear, though the earth be removed.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">2 Thessalonians 1:5–7 <span class="ref-votes">39</span></div>
+          <div class="ref-text">Which is a manifest token of the righteous judgment of God, that ye may be counted worthy of the kingdom of God, for which ye also suffer.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Jeremiah 51:29 <span class="ref-votes">19</span></div>
+          <div class="ref-text">And the land shall tremble and sorrow: for every purpose of the LORD shall be performed against Babylon.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- panel-body -->
+
+  <div class="attribution">
+    Cross-references from <a href="https://www.openbible.info/labs/cross-references/">OpenBible.info</a> · Themes organized by AI
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- PSALM 23:1 -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="research-panel">
+  <div class="panel-header">
+    <div class="verse-badge">
+      <span class="icon">🔗</span>
+      <span class="verse-ref">Psalms 23:1</span>
+    </div>
+    <span class="ref-count">23 cross-references</span>
+  </div>
+
+  <div class="source-verse">
+    "A Psalm of David. The LORD is my shepherd; I shall not want."
+  </div>
+
+  <div class="panel-body">
+
+    <!-- GROUP 1: Jesus the Good Shepherd -->
+    <div class="theme-group group-1">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">✝</div>
+        <span class="theme-name">Jesus the Good Shepherd</span>
+        <span class="theme-count">6</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        Christ is the Good Shepherd who lays down His life for the sheep. He knows His own and gives them eternal life — no one can snatch them from His hand.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">John 10:11 <span class="ref-votes">361</span></div>
+          <div class="ref-text">I am the good shepherd: the good shepherd giveth his life for the sheep.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">John 10:27–30 <span class="ref-votes">261</span></div>
+          <div class="ref-text">My sheep hear my voice, and I know them, and they follow me: And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">John 10:14 <span class="ref-votes">220</span></div>
+          <div class="ref-text">I am the good shepherd, and know my sheep, and am known of mine.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 Peter 2:25 <span class="ref-votes">140</span></div>
+          <div class="ref-text">For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">1 Peter 5:4 <span class="ref-votes">108</span></div>
+          <div class="ref-text">And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Hebrews 13:20 <span class="ref-votes">85</span></div>
+          <div class="ref-text">Now the God of peace, that brought again from the dead our Lord Jesus, that great shepherd of the sheep, through the blood of the everlasting covenant.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 2: God Tenderly Feeds & Gathers His Flock -->
+    <div class="theme-group group-3">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">🐑</div>
+        <span class="theme-name">God Feeds & Gathers His Flock</span>
+        <span class="theme-count">8</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        The Lord seeks out His scattered sheep, gathers them from all lands, carries the lambs in His bosom, and leads them to living fountains of water.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">Isaiah 40:11 <span class="ref-votes">265</span></div>
+          <div class="ref-text">He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom, and shall gently lead those that are with young.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Revelation 7:17 <span class="ref-votes">192</span></div>
+          <div class="ref-text">For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and God shall wipe away all tears from their eyes.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Ezekiel 34:11–12 <span class="ref-votes">131</span></div>
+          <div class="ref-text">Behold, I, even I, will both search my sheep, and seek them out. As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Ezekiel 34:23–24 <span class="ref-votes">107</span></div>
+          <div class="ref-text">And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Micah 5:4 <span class="ref-votes">81</span></div>
+          <div class="ref-text">And he shall stand and feed in the strength of the LORD, in the majesty of the name of the LORD his God; and they shall abide.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Psalms 78:52 <span class="ref-votes">70</span></div>
+          <div class="ref-text">But made his own people to go forth like sheep, and guided them in the wilderness like a flock.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Jeremiah 23:3–4 <span class="ref-votes">67</span></div>
+          <div class="ref-text">And I will gather the remnant of my flock out of all countries whither I have driven them… And I will set up shepherds over them which shall feed them.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Jeremiah 31:10 <span class="ref-votes">64</span></div>
+          <div class="ref-text">He that scattered Israel will gather him, and keep him, as a shepherd doth his flock.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 3: "I Shall Not Want" — God Supplies Every Need -->
+    <div class="theme-group group-4">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">✨</div>
+        <span class="theme-name">"I Shall Not Want" — God Supplies Every Need</span>
+        <span class="theme-count">6</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        God withholds no good thing from those who walk uprightly. He supplies all needs according to His riches in glory and freely gives all things through Christ.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">Philippians 4:19 <span class="ref-votes">419</span></div>
+          <div class="ref-text">But my God shall supply all your need according to his riches in glory by Christ Jesus.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Matthew 6:33 <span class="ref-votes">182</span></div>
+          <div class="ref-text">But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Psalms 34:9–10 <span class="ref-votes">110</span></div>
+          <div class="ref-text">O fear the LORD, ye his saints: for there is no want to them that fear him. The young lions do lack, and suffer hunger: but they that seek the LORD shall not want any good thing.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Psalms 84:11 <span class="ref-votes">103</span></div>
+          <div class="ref-text">For the LORD God is a sun and shield: the LORD will give grace and glory: no good thing will he withhold from them that walk uprightly.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Romans 8:32 <span class="ref-votes">92</span></div>
+          <div class="ref-text">He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Luke 12:30–32 <span class="ref-votes">88</span></div>
+          <div class="ref-text">Fear not, little flock; for it is your Father's good pleasure to give you the kingdom.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 4: God's Faithful Presence & Protection -->
+    <div class="theme-group group-5">
+      <div class="theme-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="theme-icon">🏛</div>
+        <span class="theme-name">God's Faithful Presence & Protection</span>
+        <span class="theme-count">2</span>
+        <span class="theme-chevron">▼</span>
+      </div>
+      <div class="theme-summary">
+        God promises never to leave or forsake His people. The ruler of Israel whose origins are from eternity will stand and shepherd in divine strength.
+      </div>
+      <div class="theme-refs">
+        <div class="ref-item">
+          <div class="ref-link">Hebrews 13:5–6 <span class="ref-votes">128</span></div>
+          <div class="ref-text">Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee. So that we may boldly say, The Lord is my helper.</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-link">Micah 5:2 <span class="ref-votes">39</span></div>
+          <div class="ref-text">But thou, Bethlehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- panel-body -->
+
+  <div class="attribution">
+    Cross-references from <a href="https://www.openbible.info/labs/cross-references/">OpenBible.info</a> · Themes organized by AI
+  </div>
+</div>
+
+</div><!-- panels -->
+
+<script>
+  // Optional: start with some groups collapsed to show the interaction
+  // document.querySelectorAll('.theme-group:nth-child(n+3)').forEach(g => g.classList.add('collapsed'));
+</script>
+
+</body>
+</html>

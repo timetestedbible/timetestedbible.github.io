@@ -41,6 +41,9 @@ Symbols identified for study, organized by priority and theological significance
 | FOUR WINDS | God's Executing Spirits | H7307/G417 |
 | BREAD | Word of God | H3899/G740 |
 | WINE | Covenant Blood | H3196/G3631 |
+| SHEPHERD | Covenant Caretaker | H7462/G4166 |
+| SHEEP | Covenant People | H6629/G4263 |
+| GOAT | Self-Willed | H5795/H8163/G2055 |
 
 ---
 
@@ -58,7 +61,7 @@ High frequency, clearly symbolic, central to covenant theology
 | ~~BREAD~~ | H3899/G740 | 350+ | ✓ Completed — Word of God |
 | ~~WINE~~ | H3196/G3631 | 200+ | ✓ Completed — Covenant Blood |
 | **SEED** | H2233/G4690 | 250+ | Offspring, Word, descendants |
-| **LAMB/SHEEP** | H3532/G721 | 200+ | Christ, believers, sacrifice |
+| ~~LAMB/SHEEP~~ | H3532/G721 | 200+ | ✓ Completed — SHEEP = Covenant People; GOAT = Self-Willed |
 
 ---
 
