@@ -70,6 +70,59 @@ const ReaderView = {
     
     const params = state.content?.params || {};
     const contentType = params.contentType;
+
+    // Restore default OG meta tags when navigating away from blog
+    if (contentType !== 'blog' && this._blogMetaActive) {
+      const defaultDesc = 'Bible study app with lunar calendar, Strong\'s concordance, interlinear Hebrew/Greek, word studies, and historical timeline.';
+      const resetMeta = (prop, content) => {
+        let el = document.querySelector(`meta[property="${prop}"]`) || document.querySelector(`meta[name="${prop}"]`);
+        if (el) el.setAttribute('content', content);
+      };
+      resetMeta('og:title', 'Time Tested Bible');
+      resetMeta('og:description', defaultDesc);
+      resetMeta('og:image', 'https://timetested.bible/icons/icon-512.png');
+      resetMeta('twitter:title', 'Time Tested Bible');
+      resetMeta('twitter:description', defaultDesc);
+      resetMeta('twitter:image', 'https://timetested.bible/icons/icon-512.png');
+      this._blogMetaActive = false;
+    }
+
+    // Update document title based on current content
+    {
+      let pageTitle = 'Time Tested Bible';
+      switch (contentType) {
+        case 'bible':
+          if (params.book) pageTitle = `${params.book} ${params.chapter || ''} — Time Tested Bible`;
+          break;
+        case 'timetested':
+          if (params.chapterId) {
+            const name = (params.chapterId || '').replace(/^\d+_/, '').replace(/_/g, ' ');
+            pageTitle = `${name} — Time Tested Bible`;
+          }
+          break;
+        case 'blog':
+          break; // handled in loadBlogPost
+        case 'words':
+          if (params.word) pageTitle = `${params.word} — Word Study — Time Tested Bible`;
+          break;
+        case 'symbols':
+          if (params.symbol) pageTitle = `${params.symbol.replace(/-/g, ' ')} — Symbol Study — Time Tested Bible`;
+          break;
+        case 'verse-studies':
+          if (params.study) pageTitle = `${params.study.replace(/-/g, ' ')} — Verse Study — Time Tested Bible`;
+          break;
+        case 'numbers':
+          if (params.number) pageTitle = `${params.number} — Number Study — Time Tested Bible`;
+          break;
+        case 'philo':
+          if (params.work) pageTitle = `${params.work.replace(/-/g, ' ')} — Philo — Time Tested Bible`;
+          break;
+        case 'multiverse':
+          pageTitle = 'Multiverse View — Time Tested Bible';
+          break;
+      }
+      if (contentType !== 'blog') document.title = pageTitle;
+    }
     
     // If no contentType specified, show landing page
     if (!contentType) {
@@ -134,13 +187,17 @@ const ReaderView = {
     }
     
     // Check if we need to re-render (content actually changed)
-    // Also check if UI state changed (Strong's panel)
-    const uiKey = `${state.ui?.strongsId || ''}`;
+    // For blog posts, don't include strongsId in key — Strong's panel is UI-only,
+    // shouldn't trigger content reload (which loses scroll position)
+    const uiKey = (contentType === 'blog') ? '' : `${state.ui?.strongsId || ''}`;
     const fullKey = `${currentKey}:ui:${uiKey}`;
     
     if (this._lastRenderKey === fullKey && container.querySelector('#bible-explorer-page')) {
-      // Content hasn't changed — but sync UI-only state (gematria, panels)
+      // Content hasn't changed — but sync UI-only state (gematria, panels, Strong's)
       this._syncGematriaState(state.ui);
+      if (typeof BibleView !== 'undefined' && BibleView.restoreUIState) {
+        BibleView.restoreUIState(state.ui);
+      }
       
       // For classics, check if section changed (scroll to it)
       if (contentType === 'philo' && params.work && params.section) {
@@ -1592,16 +1649,24 @@ const ReaderView = {
     return `
       <div class="reader-ttt-index">
         <header class="ttt-index-header">
-          <div class="ttt-hero">
+          <div class="ttt-hero ttt-hero-card">
             <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="ttt-hero-cover">
-            <a class="ttt-hero-download" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
-              <span class="icon">📕</span>
-              <span>Buy Physical Copy</span>
-            </a>
-            <a class="ttt-hero-download" href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">
-              <span class="icon">📥</span>
-              <span>Download PDF</span>
-            </a>
+            <div class="ttt-hero-info">
+              <h2 class="ttt-hero-book-title">A Time-Tested Tradition</h2>
+              <p class="ttt-hero-subtitle">The Renewed Biblical Calendar</p>
+              <p class="ttt-hero-author">by Daniel Larimer</p>
+              <p class="ttt-hero-desc">An exploration of biblical calendar methodology using first-principles physics, astronomical calculations, and Scripture to determine when the day, month, year, and Sabbath begin.</p>
+              <div class="ttt-hero-actions">
+                <a class="ttt-hero-download ttt-hero-buy" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
+                  <span class="icon">📕</span>
+                  <span>Buy Physical Copy</span>
+                </a>
+                <a class="ttt-hero-download" href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">
+                  <span class="icon">📥</span>
+                  <span>Download PDF</span>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div class="ttt-reviews-compact">
@@ -1738,8 +1803,27 @@ const ReaderView = {
         </div>
       `;
       
-      // Make scripture references clickable (before script execution so refs are ready)
+      // Make plain-text scripture references clickable
       this.linkifyScriptureRefs(container);
+      
+      // Add verse tooltips to existing manually-created scripture links
+      // (linkifyScriptureRefs only handles text nodes; blog HTML has pre-wrapped <a> tags)
+      container.querySelectorAll('a[onclick*="contentType:\'bible\'"]').forEach(link => {
+        // Extract book, chapter, verse from the onclick
+        const m = link.getAttribute('onclick')?.match(/book:'([^']+)'.*?chapter:(\d+)(?:.*?verse:(\d+))?/);
+        if (m) {
+          const ref = `${m[1]} ${m[2]}${m[3] ? ':' + m[3] : ''}`;
+          link.dataset.ref = ref;
+          link.classList.add('scripture-ref');
+          link.setAttribute('onmouseenter', "if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)");
+          link.setAttribute('onmouseleave', "if(typeof hideVerseTooltip==='function')hideVerseTooltip()");
+        }
+      });
+      
+      // Ensure Bible data is loaded so verse tooltips can show text
+      if (typeof Bible !== 'undefined' && Bible.loadTranslation) {
+        Bible.loadTranslation('kjv').catch(() => {});
+      }
       
       // Re-execute any inline scripts from the loaded HTML
       container.querySelectorAll('script').forEach(oldScript => {
@@ -1747,7 +1831,29 @@ const ReaderView = {
         newScript.textContent = oldScript.textContent;
         oldScript.parentNode.replaceChild(newScript, oldScript);
       });
-      
+
+      // Update SEO meta tags for this blog post
+      if (typeof BlogView !== 'undefined' && BlogView.posts) {
+        const post = BlogView.posts.find(p => p.id === slug);
+        if (post) {
+          document.title = `${post.title} — Time Tested Bible`;
+          const setMeta = (prop, content) => {
+            let el = document.querySelector(`meta[property="${prop}"]`) || document.querySelector(`meta[name="${prop}"]`);
+            if (el) el.setAttribute('content', content);
+          };
+          setMeta('og:title', post.title);
+          setMeta('og:description', post.summary);
+          setMeta('twitter:title', post.title);
+          setMeta('twitter:description', post.summary);
+          if (post.image) {
+            const absImage = post.image.startsWith('http') ? post.image : `https://timetested.bible${post.image}`;
+            setMeta('og:image', absImage);
+            setMeta('twitter:image', absImage);
+          }
+          ReaderView._blogMetaActive = true;
+        }
+      }
+
     } catch (e) {
       container.innerHTML = `<div class="reader-error">Error loading blog post: ${e.message}</div>`;
     }

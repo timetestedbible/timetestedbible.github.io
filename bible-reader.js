@@ -658,14 +658,9 @@ function getBibleTooltipPortal() {
   return document.getElementById('bible-tooltip-portal') || document.body;
 }
 
-// Mobile: first tap = tooltip, second tap = Strong's panel. Desktop: hover = tooltip, click = panel.
-function isBibleReaderMobile() {
-  return window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 768;
-}
-
-let lastTappedStrongsKey = null;
-let lastTappedStrongsWord = '';
-let lastTappedStrongsGloss = '';
+// Detect touch vs mouse per-interaction: pointerdown fires before click and carries pointerType.
+let _lastPointerType = 'mouse';
+document.addEventListener('pointerdown', (e) => { _lastPointerType = e.pointerType; }, { passive: true });
 
 function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
   if (event) event.stopPropagation();
@@ -673,20 +668,18 @@ function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
   // Look up morphology context from morphhb data so the Strong's panel can show parsing info
   _setMorphContextFromVerse(strongsNum, event);
   
-  if (isBibleReaderMobile()) {
-    if (lastTappedStrongsKey === strongsNum) {
-      lastTappedStrongsKey = null;
-      lastTappedStrongsWord = '';
-      lastTappedStrongsGloss = '';
+  if (_lastPointerType === 'touch') {
+    // Touch: if tooltip already visible, open Strong's panel; otherwise show tooltip
+    const tooltip = document.getElementById('word-hover-tooltip');
+    if (tooltip) {
+      hideWordTooltip();
       showStrongsPanel(strongsNum, englishWord, gloss, event);
-      return;
+    } else {
+      showWordTooltip(event);
     }
-    lastTappedStrongsWord = englishWord || '';
-    lastTappedStrongsGloss = gloss || '';
-    showWordTooltip(event);
-    lastTappedStrongsKey = strongsNum;
     return;
   }
+  // Mouse/pen: open Strong's panel directly (hover already showed tooltip)
   showStrongsPanel(strongsNum, englishWord, gloss, event);
 }
 
@@ -794,13 +787,13 @@ function showWordTooltip(event) {
   tooltip.style.top = top + 'px';
   tooltip.style.opacity = '1';
 
-  // Click on tooltip = same as clicking the word: open Strong's panel
+  // Click on tooltip = open Strong's panel for the word it belongs to
   tooltip.addEventListener('click', function onTooltipClick(e) {
     e.preventDefault();
     e.stopPropagation();
-    const key = isBibleReaderMobile() && lastTappedStrongsKey ? lastTappedStrongsKey : (el.dataset.strongs || null);
-    const word = isBibleReaderMobile() && lastTappedStrongsKey ? lastTappedStrongsWord : ((el.textContent || '').trim());
-    const gloss = isBibleReaderMobile() && lastTappedStrongsKey ? lastTappedStrongsGloss : (el.dataset.def || '');
+    const key = el.dataset.strongs || null;
+    const word = (el.textContent || '').trim();
+    const gloss = el.dataset.def || '';
     hideWordTooltip();
     if (key) showStrongsPanel(key, word, gloss, e);
   });
@@ -823,9 +816,6 @@ function hideWordTooltip(event) {
       return; // Mouse is moving to tooltip, keep it visible
     }
   }
-  lastTappedStrongsKey = null;
-  lastTappedStrongsWord = '';
-  lastTappedStrongsGloss = '';
   const tooltip = document.getElementById('word-hover-tooltip');
   if (tooltip) tooltip.remove();
 }
@@ -888,8 +878,8 @@ function showMorphTooltip(el, event) {
     }
   }
   
-  // Tap hint on mobile
-  if (isBibleReaderMobile()) {
+  // Tap hint on touch devices
+  if (_lastPointerType === 'touch') {
     html += `<div class="morph-tip-hint">Tap again for full details</div>`;
   }
   
@@ -926,15 +916,14 @@ function hideMorphTooltip() {
   if (tooltip) tooltip.remove();
 }
 
-// Close morph tooltip when tapping outside (mobile) and reset two-tap state
+// Close morph tooltip when tapping outside
 document.addEventListener('click', function(e) {
   const tooltip = document.getElementById('morph-hover-tooltip');
-  if (!tooltip && !lastTappedInterlinearEl) return;
+  if (!tooltip) return;
   // Don't close if tapping the tooltip itself or an interlinear word block
   if (e.target.closest('.il-word-block')) return;
-  if (tooltip && tooltip.contains(e.target)) return;
+  if (tooltip.contains(e.target)) return;
   hideMorphTooltip();
-  lastTappedInterlinearEl = null;
 }, true);
 
 // Tap to expand/collapse overflowed gloss text in root connections
@@ -945,27 +934,23 @@ document.addEventListener('click', function(e) {
   }
 }, false);
 
-// Track which interlinear word was last tapped (mobile two-tap pattern)
-let lastTappedInterlinearEl = null;
-
-// Handle interlinear word tap: mobile = two-tap (tooltip then panel), desktop = direct panel open
+// Handle interlinear word tap: touch = tooltip-then-panel, mouse = direct panel open
 function handleInterlinearTap(el, event) {
   if (event) event.stopPropagation();
   
-  if (isBibleReaderMobile()) {
-    // Second tap on same element → open Strong's panel
-    if (lastTappedInterlinearEl === el) {
-      lastTappedInterlinearEl = null;
+  if (_lastPointerType === 'touch') {
+    // Touch: if tooltip already visible, open Strong's panel; otherwise show tooltip
+    const tooltip = document.getElementById('morph-hover-tooltip');
+    if (tooltip) {
+      hideMorphTooltip();
       showStrongsPanelFromMorphhb(el, event);
-      return;
+    } else {
+      showMorphTooltip(el, event);
     }
-    // First tap → show tooltip
-    lastTappedInterlinearEl = el;
-    showMorphTooltip(el, event);
     return;
   }
   
-  // Desktop: click opens panel directly (hover already showed tooltip)
+  // Mouse/pen: click opens panel directly (hover already showed tooltip)
   showStrongsPanelFromMorphhb(el, event);
 }
 
@@ -973,7 +958,6 @@ function handleInterlinearTap(el, event) {
 function showStrongsPanelFromMorphhb(el, event) {
   if (event) event.stopPropagation();
   hideMorphTooltip();
-  lastTappedInterlinearEl = null;
   
   const strongs = el.dataset.strongs || '';
   const gloss = (el.querySelector('.il-gloss')?.textContent || '').trim();
@@ -1747,8 +1731,8 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
         data-lemma="${escapedLemma}"
         data-hebrew="${escapedHebrew}"
         onclick="handleInterlinearTap(this, event)"
-        onmouseenter="if(!isBibleReaderMobile())showMorphTooltip(this, event)"
-        onmouseleave="if(!isBibleReaderMobile())hideMorphTooltip()">
+        onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)"
+        onmouseleave="if(_lastPointerType!=='touch')hideMorphTooltip()">
         <span class="il-original" data-voweled="${displayHebrew.replace(/"/g, '&quot;')}">${renderedHebrew}</span>
         <span class="il-gloss">${displayGloss}</span>
       </div>`;
@@ -5780,7 +5764,7 @@ function makeCitationClickable(citationStr, title = '') {
   const url = buildBibleUrl(citationStr);
   const citationEscaped = (citationStr || '').replace(/"/g, '&quot;');
   const titleEscaped = (title || '').replace(/"/g, '&quot;');
-  return `<a href="${url}" class="bible-citation-link" data-citation="${citationEscaped}" data-title="${titleEscaped}" onclick="handleCitationClick(event)">${escapeHtml(citationStr)}</a>`;
+  return `<a href="${url}" class="bible-citation-link" data-citation="${citationEscaped}" data-title="${titleEscaped}" data-ref="${citationEscaped}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="handleCitationClick(event)">${escapeHtml(citationStr)}</a>`;
 }
 
 // Normalize a book name — delegates to Bible API for comprehensive handling
@@ -5859,7 +5843,7 @@ function linkifyScriptureReferences(text, contextCitation = '') {
       }
     }
     const url = buildBibleUrl(citation);
-    return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match}</a>`;
+    return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" data-ref="${citation}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="handleCitationClick(event)">${match}</a>`;
   });
   
   // contextCitation should be like "Ezekiel 26" (book + chapter)
@@ -5876,14 +5860,14 @@ function linkifyScriptureReferences(text, contextCitation = '') {
         const cleanVerses = verses.replace(/–/g, '-');
         const citation = normalizedBook + ' ' + contextChapter + ':' + cleanVerses;
         const url = buildBibleUrl(citation);
-        return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${match}</a>`;
+        return `<a href="${url}" class="bible-citation-link" data-citation="${citation}" data-ref="${citation}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="handleCitationClick(event)">${match}</a>`;
       });
       
       result = result.replace(cfPattern, (match, prefix, verses) => {
         const cleanVerses = verses.replace(/–/g, '-');
         const citation = normalizedBook + ' ' + contextChapter + ':' + cleanVerses;
         const url = buildBibleUrl(citation);
-        return `(cf. <a href="${url}" class="bible-citation-link" data-citation="${citation}" onclick="handleCitationClick(event)">${prefix} ${verses}</a>)`;
+        return `(cf. <a href="${url}" class="bible-citation-link" data-citation="${citation}" data-ref="${citation}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="handleCitationClick(event)">${prefix} ${verses}</a>)`;
       });
     }
   }

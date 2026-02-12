@@ -201,14 +201,18 @@ const CalendarView = {
               const day1SelectedIndicator = (isDay1Selected && selectedTimeProgress !== null)
                 ? `<div class="time-indicator time-indicator-selected" style="left: ${selectedTimeProgress}%"></div>`
                 : '';
+              const day1SolarEclipse = day1?.isSolarEclipse;
+              const day1BloodMoon = day1?.isBloodMoon;
+              const day1EclipseClass = day1SolarEclipse ? ' solar-eclipse-day' : (day1BloodMoon ? ' blood-moon-day' : '');
+              const day1MoonClass = day1SolarEclipse ? 'moon-phase solar-eclipse' : (day1BloodMoon ? 'moon-phase blood-moon' : 'moon-phase');
               return `
-              <div class="new-moon-box day-cell new-moon${isDay1Selected ? ' highlighted' : ''}${isDay1Today ? ' today' : ''}${day1?.feasts?.length > 0 ? ' feast' : ''}${day1?.events?.length > 0 ? ' has-events' : ''}" 
+              <div class="new-moon-box day-cell new-moon${isDay1Selected ? ' highlighted' : ''}${isDay1Today ? ' today' : ''}${day1?.feasts?.length > 0 ? ' feast' : ''}${day1?.events?.length > 0 ? ' has-events' : ''}${day1EclipseClass}" 
                    data-lunar-day="1"
                    title="${day1?.jd != null ? 'JD ' + Math.floor(day1.jd) + ' · ' + day1.weekdayName : ''}">
                 ${day1TimeIndicator}
                 ${day1SelectedIndicator}
                 <div class="gregorian">${day1 ? this.formatShortDate(day1.gregorianDate) : ''}<span class="day-year">${day1 ? this.formatYear(day1.gregorianDate.getUTCFullYear()) : ''}</span></div>
-                <div class="moon-phase">${this.getMoonIcon(profile.moonPhase)}</div>
+                <div class="${day1MoonClass}">${this.getMoonIcon(profile.moonPhase)}</div>
                 <div class="lunar-day">1</div>
                 ${day1Icons.eventIcons ? `<div class="day-icons-left">${day1Icons.eventIcons}</div>` : ''}
                 ${day1Icons.feastIcons ? `<div class="day-icons-right">${day1Icons.feastIcons}</div>` : ''}
@@ -275,6 +279,15 @@ const CalendarView = {
         if (hasFeasts) classes.push('feast');
         if (hasEvents) classes.push('has-events');
         
+        // Eclipse classes
+        const isBloodMoon = day.isBloodMoon;
+        const isSolarEclipse = day.isSolarEclipse;
+        if (isBloodMoon) classes.push('blood-moon-day');
+        if (isSolarEclipse) classes.push('solar-eclipse-day');
+        
+        // Moon phase class for blood moon styling
+        const moonPhaseClass = isBloodMoon ? 'moon-phase blood-moon' : (isSolarEclipse ? 'moon-phase solar-eclipse' : 'moon-phase');
+        
         // Build feast/event icons (separated)
         const dayIcons = this.getDayIconsHtml(day);
         
@@ -293,7 +306,7 @@ const CalendarView = {
             ${timeIndicator}
             ${selectedIndicator}
             <div class="gregorian">${this.formatShortDate(day.gregorianDate)}</div>
-            <div class="moon-phase">${this.getMoonIconForDay(day, lunarDay, profile, location)}</div>
+            <div class="${moonPhaseClass}">${this.getMoonIconForDay(day, lunarDay, profile, location)}</div>
             <div class="lunar-day">${lunarDay}</div>
             ${dayIcons.eventIcons ? `<div class="day-icons-left">${dayIcons.eventIcons}</div>` : ''}
             ${dayIcons.feastIcons ? `<div class="day-icons-right">${dayIcons.feastIcons}</div>` : ''}
@@ -315,6 +328,10 @@ const CalendarView = {
       if (isSelected30) classes30.push('highlighted');
       if (hasFeasts30) classes30.push('feast');
       if (hasEvents30) classes30.push('has-events');
+      if (day30.isBloodMoon) classes30.push('blood-moon-day');
+      if (day30.isSolarEclipse) classes30.push('solar-eclipse-day');
+      
+      const day30MoonClass = day30.isBloodMoon ? 'moon-phase blood-moon' : (day30.isSolarEclipse ? 'moon-phase solar-eclipse' : 'moon-phase');
       
       const dayIcons30 = this.getDayIconsHtml(day30);
       
@@ -333,7 +350,7 @@ const CalendarView = {
           ${timeIndicator30}
           ${selectedIndicator30}
           <div class="gregorian">${this.formatShortDate(day30.gregorianDate)}</div>
-          <div class="moon-phase">${this.getMoonIconForDay(day30, 30, profile, location)}</div>
+          <div class="${day30MoonClass}">${this.getMoonIconForDay(day30, 30, profile, location)}</div>
           <div class="lunar-day">30</div>
           ${dayIcons30.eventIcons ? `<div class="day-icons-left">${dayIcons30.eventIcons}</div>` : ''}
           ${dayIcons30.feastIcons ? `<div class="day-icons-right">${dayIcons30.feastIcons}</div>` : ''}

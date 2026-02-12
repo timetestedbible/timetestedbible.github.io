@@ -127,6 +127,28 @@ button {
   transform: translateY(-100%);
 }
 
+/* When sub-nav or search results are visible, expand header to fit */
+.top-nav:has(.global-search-results.open),
+.top-nav:has(.sub-nav-bar.active) {
+  height: auto;
+  flex-wrap: wrap;
+  border-bottom: none;  /* Child borders serve as separators */
+}
+
+/* Sub-nav bar: global slot for view-specific controls (book/chapter selectors, etc.) */
+.sub-nav-bar {
+  display: none;              /* Hidden when empty / inactive */
+  flex-basis: 100%;           /* Wraps onto own row inside header's flex-wrap layout */
+  flex-shrink: 0;
+}
+.sub-nav-bar.active {
+  display: flex;
+  align-items: center;
+  background: var(--gradient-nav);
+  border-bottom: 1px solid var(--border-default);
+  padding: 6px 10px;
+}
+
 .top-nav-left {
   display: flex;
   align-items: center;
@@ -559,7 +581,7 @@ body.electron-mode .nav-history-buttons {
   background: var(--accent-primary-muted);
 }
 
-/* Search Results Region */
+/* Search Results Region (lives inside #top-nav header) */
 .global-search-results {
   display: none;
   background: linear-gradient(180deg, var(--color-bg-dark) 0%, var(--surface-raised) 100%);
@@ -568,7 +590,8 @@ body.electron-mode .nav-history-buttons {
   overflow: hidden;
   position: relative;
   flex-direction: column;
-  flex-shrink: 0;  /* Prevent flexbox from collapsing when body content exceeds viewport */
+  flex-basis: 100%;  /* Force wrap onto own row inside header's flex-wrap layout */
+  flex-shrink: 0;
 }
 
 .global-search-results.open {
@@ -734,9 +757,9 @@ body.electron-mode .nav-history-buttons {
     flex-shrink: 0;
   }
   
-  /* Search results take more space on mobile */
+  /* Search results take more space on mobile, but account for nav row height */
   .global-search-results {
-    max-height: 70vh;
+    max-height: calc(70vh - var(--top-nav-height));
   }
 }
 
@@ -1067,6 +1090,10 @@ body.electron-mode .nav-history-buttons {
 
 .menu-book-link {
   display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .menu-book-cover {
@@ -3077,14 +3104,6 @@ body.view-reader:not(.reader-landing) .content-area {
     display: flex !important;
     flex-direction: column !important;
     background: var(--surface-raised) !important;
-  }
-  
-  /* Sticky dropdown header — top:0 works because the nav is also sticky above */
-  .view-bible .bible-explorer-header,
-  body.view-reader:not(.reader-landing) .bible-explorer-header {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 100 !important;
   }
   
   /* Body scroll: inner containers flow naturally */

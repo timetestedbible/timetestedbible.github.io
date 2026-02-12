@@ -244,8 +244,13 @@ const GlobalSearch = {
       // Open research panel only if not already showing this strongs entry
       const panel = document.getElementById('research-panel');
       const alreadyOpen = panel && panel.classList.contains('open');
-      if (!alreadyOpen && typeof showStrongsPanel === 'function') {
-        showStrongsPanel(strongsNum, '', '', null);
+      if (!alreadyOpen) {
+        if (panel && typeof showStrongsPanel === 'function') {
+          showStrongsPanel(strongsNum, '', '', null);
+        } else {
+          // Panel doesn't exist (not on Bible page) — navigate to Bible first, then open panel via state
+          this._openStrongsOnBibleView(strongsNum);
+        }
       }
     }
     
@@ -923,9 +928,26 @@ const GlobalSearch = {
    */
   goToStrongs(strongsId) {
     if (!strongsId) return;
-    if (typeof showStrongsPanel === 'function') {
+    const panel = document.getElementById('research-panel');
+    if (panel && typeof showStrongsPanel === 'function') {
       showStrongsPanel(strongsId, '', '', null);
+    } else {
+      // Panel doesn't exist (not on Bible page) — navigate to Bible first, then open panel via state
+      this._openStrongsOnBibleView(strongsId);
     }
+  },
+
+  /**
+   * Navigate to the Bible view and open the Strong's panel.
+   * Used when the research panel doesn't exist in the current view's DOM.
+   * @private
+   */
+  _openStrongsOnBibleView(strongsId) {
+    if (typeof AppStore === 'undefined') return;
+    // Navigate to Bible reader — this creates the research panel DOM
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'bible' } });
+    // Set Strong's ID in state — BibleView.restoreUIState will open the panel on next render
+    AppStore.dispatch({ type: 'OPEN_STRONGS', strongsId: strongsId });
   },
   
   /**

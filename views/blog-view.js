@@ -11,12 +11,13 @@ const BlogView = {
   posts: [
     {
       id: 'blood-moon-over-the-moon-city',
-      date: 'February 2026',
+      date: 'February 12, 2026',
       title: 'Blood Moon Over the Moon City',
-      summary: 'On the first day of the twelfth month, a blood moon rose — on the exact date of Ezekiel\'s darkening oracle, in the last month of the 70th jubilee. An interactive study tracing the full moon, the throne, the trumpet, and the silence through Scripture.',
+      image: '/assets/img/BloodMoonCover.jpg',
+      summary: 'Moses was born on Adar 1. He turned 80 on Adar 1 and the waters turned to blood. He saw the kingdom from the Mountain of Prophecy on Adar 1 and vanished. Ezekiel\'s darkening oracle fell against Pharaoh on Adar 1. On Adar 1 of 2026, the full moon turns to blood.',
       content: `
-        <p>The Hebrew word for <strong>full moon</strong> and the word for <strong>throne</strong> share the same root. The trumpet is blown at the full moon. The husband returns at the full moon. Every celestial sign of His coming is a full-moon phenomenon. And the moon city — Jericho — falls at the trumpet.</p>
-        <p>This study traces these connections through Scripture, from the silence before God acts to the Jubilee vocabulary hidden in Jeremiah's Babylon oracle, and asks what it means that a blood moon falls on the date of Ezekiel's darkening oracle in the last month of the 70th jubilee.</p>
+        <p>The Hebrew word for <strong>full moon</strong> and the word for <strong>throne</strong> are the same consonants: כסא. The trumpet is blown at the full moon. The husband returns at the full moon. Every sign of His coming is a full-moon phenomenon. And the moon city — Jericho — falls at the trumpet.</p>
+        <p>This study traces 38 independently sourced data points from 12 biblical books, 3 calendrical systems, and observable astronomy — all converging on one calendar date. From the silence before God acts, to the plagues of Egypt beginning with blood, to the Jubilee vocabulary hidden in Jeremiah's Babylon oracle.</p>
         <p class="blog-nav-link">
           <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'blood-moon-over-the-moon-city'}})">Read the Full Study →</button>
         </p>
@@ -24,7 +25,7 @@ const BlogView = {
     },
     {
       id: 'v101-desktop-lightmode',
-      date: 'February 2026',
+      date: 'February 7, 2026',
       title: 'New Desktop Layout, Light Mode & Redesigned Home Page',
       summary: 'A new desktop Bible study layout with an always-visible research panel, full light-mode support, and a redesigned home page.',
       content: `
@@ -51,7 +52,7 @@ const BlogView = {
     },
     {
       id: 'v100-major-refactor',
-      date: 'February 2026',
+      date: 'February 1, 2026',
       title: 'The Big Update: 10 Translations, Hebrew Interlinear, Verse Studies & More',
       summary: 'This update adds 10 Bible translations, Hebrew interlinear with morphology, an AI-enhanced Hebrew lexicon, ancient classics, verse studies, and a redesigned reading experience.',
       content: `
@@ -225,8 +226,12 @@ const BlogView = {
    * Render a single blog post card (expanded by default for now)
    */
   renderPostCard(post) {
+    const imageHtml = post.image
+      ? `<img class="blog-post-image" src="${post.image}" alt="${post.title}" style="width:100%; border-radius:8px; margin-bottom:12px; border:1px solid var(--border-subtle);">`
+      : '';
     return `
       <article class="blog-post" id="post-${post.id}">
+        ${imageHtml}
         <div class="blog-post-meta">
           <time class="blog-post-date">${post.date}</time>
         </div>

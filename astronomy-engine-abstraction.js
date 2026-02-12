@@ -704,6 +704,63 @@ AstroEngines.nasaEclipse = {
     return null;
   },
   
+  // Check if a given date has a solar eclipse
+  // Returns true if there's a solar eclipse within 0.5 days of the given date
+  hasSolarEclipse(date) {
+    if (!this._eclipses) {
+      return false;
+    }
+    
+    const jd = this._dateToJD(date);
+    
+    // Binary search to find nearby eclipses
+    let lo = 0, hi = this._eclipses.length - 1;
+    while (lo < hi) {
+      const mid = Math.floor((lo + hi) / 2);
+      if (this._eclipses[mid].jd < jd) lo = mid + 1;
+      else hi = mid;
+    }
+    
+    // Check nearby eclipses (within a day on either side)
+    for (let i = Math.max(0, lo - 2); i < Math.min(this._eclipses.length, lo + 3); i++) {
+      const e = this._eclipses[i];
+      const diff = Math.abs(e.jd - jd);
+      if (e.t === 'n' && diff < 1.0) {
+        return true;
+      }
+    }
+    return false;
+  },
+  
+  // Get the exact time of a solar eclipse for a given date
+  // Returns a Date object or null if no eclipse found
+  getSolarEclipseTime(date) {
+    if (!this._eclipses) {
+      return null;
+    }
+    
+    const jd = this._dateToJD(date);
+    
+    // Binary search to find nearby eclipses
+    let lo = 0, hi = this._eclipses.length - 1;
+    while (lo < hi) {
+      const mid = Math.floor((lo + hi) / 2);
+      if (this._eclipses[mid].jd < jd) lo = mid + 1;
+      else hi = mid;
+    }
+    
+    // Check nearby eclipses (within a day on either side)
+    for (let i = Math.max(0, lo - 2); i < Math.min(this._eclipses.length, lo + 3); i++) {
+      const e = this._eclipses[i];
+      const diff = Math.abs(e.jd - jd);
+      if (e.t === 'n' && diff < 1.0) {
+        // Convert JD to Date
+        return this._jdToDate(e.jd);
+      }
+    }
+    return null;
+  },
+  
   // Helper to create Date with proper year handling (including negative years)
   _createDate(year, month, day, hour, minute, second) {
     // JavaScript Date.UTC interprets years 0-99 as 1900-1999

@@ -347,48 +347,47 @@ const Layout = {
   /**
    * Setup scroll-direction-aware auto-hide for the top nav.
    * Hides on scroll-down, shows immediately on any scroll-up.
-   * Only active when body is the scroll container (mobile bible/reader views).
+   * Uses capture-phase listener on document to catch scroll events from ANY
+   * container — body scroll (mobile, Calendar, Tutorial) and contained scroll
+   * (desktop Bible/Reader inside .bible-explorer-text).
    */
   setupScrollHide() {
-    const HIDE_THRESHOLD = 10; // Minimum scroll-down before hiding (px)
+    const HIDE_THRESHOLD = 10; // Minimum cumulative scroll-down before hiding (px)
     
-    window.addEventListener('scroll', () => {
+    // Capture-phase listener catches scroll events from all elements (scroll doesn't bubble)
+    document.addEventListener('scroll', (e) => {
+      // Only respond to known content scroll containers
+      const isBodyScroll = e.target === document;
+      const isContentScroll = e.target.classList?.contains('bible-explorer-text');
+      if (!isBodyScroll && !isContentScroll) return;
+      
       if (this._scrollTicking) return;
       this._scrollTicking = true;
+      
+      const scrollTarget = e.target; // capture target for use in rAF
       
       requestAnimationFrame(() => {
         this._scrollTicking = false;
         const nav = this.elements.topNav;
         if (!nav) return;
         
-        // Only auto-hide when body is scrolling (mobile bible/reader)
         const body = document.body;
-        const isScrollableView = body.classList.contains('view-bible') || 
-          (body.classList.contains('view-reader') && !body.classList.contains('reader-landing'));
+        const currentY = (scrollTarget === document) ? window.scrollY : scrollTarget.scrollTop;
+        const delta = currentY - (this._lastScrollY || 0);
         
-        if (!isScrollableView) {
-          // Reset if we switched away from a scrollable view
-          if (this._navHidden) {
-            this._navHidden = false;
-            nav.classList.remove('nav-hidden');
-            body.classList.remove('nav-hidden');
-          }
-          this._lastScrollY = window.scrollY;
-          return;
-        }
-        
-        const currentY = window.scrollY;
-        const delta = currentY - this._lastScrollY;
-        
-        if (delta > HIDE_THRESHOLD && currentY > 80) {
-          // Scrolling DOWN past threshold — hide
-          if (!this._navHidden) {
-            this._navHidden = true;
-            nav.classList.add('nav-hidden');
-            body.classList.add('nav-hidden');
+        if (delta > 0) {
+          // Scrolling DOWN — accumulate distance
+          this._scrollDownAccum = (this._scrollDownAccum || 0) + delta;
+          if (this._scrollDownAccum > HIDE_THRESHOLD && currentY > nav.offsetHeight) {
+            if (!this._navHidden) {
+              this._navHidden = true;
+              nav.classList.add('nav-hidden');
+              body.classList.add('nav-hidden');
+            }
           }
         } else if (delta < 0) {
-          // Scrolling UP at all — show immediately
+          // Scrolling UP — show immediately, reset accumulator
+          this._scrollDownAccum = 0;
           if (this._navHidden) {
             this._navHidden = false;
             nav.classList.remove('nav-hidden');
@@ -398,7 +397,7 @@ const Layout = {
         
         this._lastScrollY = currentY;
       });
-    }, { passive: true });
+    }, { capture: true, passive: true });
   },
   
   /**

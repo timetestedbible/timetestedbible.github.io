@@ -520,6 +520,51 @@ function showDayDetail(dayObj, month) {
     feastsContainer.appendChild(item);
   }
   
+  // Add solar eclipse info if this day has one
+  if (dayObj.isSolarEclipse) {
+    const solarDate = dayObj.gregorianDate;
+    const seParts = getFormattedDateParts(solarDate);
+    const dayOfWeek = seParts.weekdayName;
+    const monthName = seParts.monthName;
+    const dayNum = seParts.day;
+    const daySuffix = getOrdinalSuffix(dayNum);
+    const year = seParts.yearStr;
+    
+    const now = new Date();
+    const isPast = solarDate < now;
+    const verb = isPast ? 'occurred' : 'will occur';
+    
+    // Get the exact eclipse time for Stellarium link
+    const eclipseTime = AstroEngines.nasaEclipse.getSolarEclipseTime(dayObj.gregorianDate);
+    let eclipseTimeStr = '';
+    let stellariumSolarLink = '';
+    if (eclipseTime) {
+      const eclipseFormatted = formatTimeInObserverTimezone(eclipseTime);
+      eclipseTimeStr = ` at ${eclipseFormatted.full}`;
+      const stellariumDate = eclipseTime.toISOString().split('.')[0] + 'Z';
+      stellariumSolarLink = `<a href="https://stellarium-web.org/?date=${stellariumDate}&lat=${state.lat}&lng=${state.lon}" target="_blank" rel="noopener" class="stellarium-link"><img src="https://stellarium-web.org/favicon.ico" alt="" onerror="this.style.display='none'">View in Stellarium</a>`;
+    }
+    
+    const seItem = document.createElement('div');
+    seItem.className = 'day-detail-feast-item';
+    seItem.innerHTML = `
+      <div class="day-detail-feast-icon solar-eclipse-icon">🌑</div>
+      <div class="day-detail-feast-info">
+        <div class="day-detail-feast-header">
+          <div class="day-detail-feast-name" style="color: var(--color-warning);">Solar Eclipse</div>
+          ${stellariumSolarLink}
+        </div>
+        <div class="day-detail-feast-desc">A solar eclipse occurs when the Moon passes between the Sun and Earth, 
+          blocking the Sun's light. The Sun may appear partially or totally obscured depending on the observer's location.</div>
+        <div class="feast-basis">
+          A solar eclipse ${verb} on ${dayOfWeek}, ${monthName} ${dayNum}${daySuffix}, ${year}${eclipseTimeStr}. 
+          In Scripture, the darkening of the sun is associated with divine judgment and the Day of the LORD (Joel 2:31, Amos 8:9, Matthew 24:29).
+        </div>
+      </div>
+    `;
+    feastsContainer.appendChild(seItem);
+  }
+  
   // Add uncertainty warning for any uncertain day
   if (dayObj.isUncertain && month.dateUncertainty) {
     const item = document.createElement('div');

@@ -15,11 +15,15 @@ const ContentManager = {
   // Content area element
   contentArea: null,
   
+  // Sub-nav bar element (global slot inside header for view-specific controls)
+  subNavBar: null,
+  
   /**
    * Initialize the content manager
    */
   init() {
     this.contentArea = document.getElementById('content-area');
+    this.subNavBar = document.getElementById('sub-nav-bar');
     
     if (!this.contentArea) {
       console.error('[ContentManager] #content-area element not found');
@@ -68,6 +72,25 @@ const ContentManager = {
       
       this.currentView = viewName;
       
+      // Clear sub-nav on view change (previous view's controls are stale)
+      if (this.subNavBar) {
+        this.subNavBar.innerHTML = '';
+        this.subNavBar.classList.remove('active');
+      }
+      
+      // Update document title for top-level views
+      const viewTitles = {
+        calendar: 'Biblical Calendar',
+        reader: null, // handled by ReaderView
+        settings: 'Settings',
+        blog: 'What\'s New',
+        timeline: 'Timeline',
+        day: 'Day Detail'
+      };
+      if (viewTitles[viewName] !== undefined && viewTitles[viewName] !== null) {
+        document.title = `${viewTitles[viewName]} — Time Tested Bible`;
+      }
+
       // Scroll to top when switching views
       if (this.contentArea) this.contentArea.scrollTop = 0;
       window.scrollTo(0, 0);
@@ -83,7 +106,16 @@ const ContentManager = {
       }
     }
     
-    // Render the view
+    // Render sub-nav FIRST so selector elements exist before render() uses getElementById
+    if (view && typeof view.renderSubNav === 'function' && this.subNavBar) {
+      try {
+        view.renderSubNav(state, derived, this.subNavBar);
+      } catch (e) {
+        console.error(`[ContentManager] Error rendering sub-nav for "${viewName}":`, e);
+      }
+    }
+    
+    // Render the view content
     if (view) {
       try {
         view.render(state, derived, this.contentArea);

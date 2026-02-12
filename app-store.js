@@ -2233,6 +2233,15 @@ const AppStore = {
         } else {
           day.events = [];
         }
+        
+        // Populate eclipse flags (blood moon = total lunar eclipse, solar eclipse)
+        if (day.gregorianDate && AstroEngines?.nasaEclipse?.isLoaded) {
+          day.isBloodMoon = AstroEngines.nasaEclipse.hasLunarEclipse(day.gregorianDate);
+          day.isSolarEclipse = AstroEngines.nasaEclipse.hasSolarEclipse(day.gregorianDate);
+        } else {
+          day.isBloodMoon = false;
+          day.isSolarEclipse = false;
+        }
       }
     }
   }

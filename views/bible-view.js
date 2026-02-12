@@ -29,6 +29,106 @@ const BibleView = {
     if (typeof closeStrongsPanel === 'function') closeStrongsPanel();
     if (typeof closeBibleReader === 'function') closeBibleReader();
     if (typeof closeConceptSearch === 'function') closeConceptSearch();
+    // Reset tracked Strong's ID so restoreUIState re-opens panel when returning to this view
+    this._currentStrongsId = null;
+  },
+
+  /**
+   * Render view-specific controls into the global sub-nav bar.
+   * Called by ContentManager BEFORE render() so elements exist for getElementById.
+   */
+  renderSubNav(state, derived, container) {
+    if (!container) return;
+    
+    // Only create DOM once (same idempotent pattern as renderStructure)
+    if (container.querySelector('.bible-explorer-header-inner')) {
+      // Already rendered — just sync selector visibility
+      this.syncSelectorVisibility(state);
+      container.classList.add('active');
+      return;
+    }
+    
+    const contentType = state?.content?.params?.contentType || 'bible';
+    const displayContentType = (contentType === 'multiverse') ? 'bible' : contentType;
+    
+    // Selector visibility based on contentType
+    const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
+    const bibleDisplay = ((contentType === 'bible' || contentType === 'multiverse') && !hideAllSelectors) ? '' : 'display:none;';
+    const symbolsDisplay = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'display:none;';
+    const ttDisplay = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'display:none;';
+    const numbersDisplay = (contentType === 'numbers') ? '' : 'display:none;';
+    const classicsDisplay = (contentType === 'philo' || contentType === 'josephus') ? '' : 'display:none;';
+    
+    container.innerHTML = `
+      <div class="bible-explorer-header-inner">
+        <!-- Bible selectors (shown when content=bible) -->
+        <span id="bible-selectors" class="reader-selector-group" style="${bibleDisplay}">
+          <select id="bible-translation-select" class="bible-explorer-select bible-translation-select" 
+                  onchange="onTranslationChange(this.value)" title="Select translation">
+            ${(() => {
+              const ord = (typeof Bible !== 'undefined') ? Bible.getOrderedTranslations() : { visible: [{id:'kjv',name:'KJV'},{id:'asv',name:'ASV'},{id:'lxx',name:'LXX'}], hidden: [] };
+              const trans = state?.content?.params?.translation || 'kjv';
+              let opts = ord.visible.map(t => `<option value="${t.id}"${t.id === trans ? ' selected' : ''}>${t.name}</option>`).join('');
+              if (ord.hidden.length > 0) {
+                opts += '<optgroup label="More">' + ord.hidden.map(t => `<option value="${t.id}"${t.id === trans ? ' selected' : ''}>${t.name}</option>`).join('') + '</optgroup>';
+              }
+              return opts;
+            })()}
+          </select>
+          
+          <select id="bible-book-select" class="bible-explorer-select" 
+                  onchange="selectBibleBook(this.value)" title="Select book">
+            <option value="">Book</option>
+          </select>
+          
+          <select id="bible-chapter-select" class="bible-explorer-select" 
+                  onchange="selectBibleChapter(parseInt(this.value))" disabled title="Select chapter">
+            <option value="">Ch.</option>
+          </select>
+        </span>
+        
+        <!-- Symbol selector (shown when content=symbols) -->
+        <span id="symbol-selectors" class="reader-selector-group" style="${symbolsDisplay}">
+          <select id="symbol-select" class="bible-explorer-select" 
+                  onchange="onSymbolSelect(this.value)" title="Select symbol">
+            <option value="">Symbol...</option>
+          </select>
+        </span>
+        
+        <!-- Time Tested selector (shown when content=timetested) -->
+        <span id="timetested-selectors" class="reader-selector-group" style="${ttDisplay}">
+          <select id="timetested-chapter-select" class="bible-explorer-select" 
+                  onchange="onTimeTestedSelect(this.value)" title="Select chapter">
+            <option value="">Index</option>
+          </select>
+        </span>
+        
+        <!-- Number selector (shown when content=numbers) -->
+        <span id="number-selectors" class="reader-selector-group" style="${numbersDisplay}">
+          <select id="number-select" class="bible-explorer-select" 
+                  onchange="onNumberSelect(this.value)" title="Select number study">
+            <option value="">Index</option>
+          </select>
+        </span>
+        
+        <!-- Classics selectors (shown when content=philo or content=josephus) -->
+        <span id="classics-selectors" class="reader-selector-group" style="${classicsDisplay}">
+          <select id="classics-work-select" class="bible-explorer-select"
+                  onchange="onClassicsWorkChange(this.value)" title="Select work">
+            <option value="">Work...</option>
+          </select>
+          <input id="classics-section-input" class="bible-explorer-select classics-section-input"
+                 type="text" placeholder="Go to..." title="Jump to section (e.g. 3.2.1)"
+                 onkeydown="if(event.key==='Enter'){onClassicsSectionJump(this.value);this.value='';}"
+                 style="width:80px;">
+        </span>
+      </div>
+      <!-- Research panel header zone -->
+      <div class="research-header-inline" id="research-header-inline">
+        <span class="research-id-badge" id="research-id-badge"></span>
+      </div>
+    `;
+    container.classList.add('active');
   },
 
   // Render the Bible Explorer UI structure
@@ -281,12 +381,11 @@ const BibleView = {
   
   // Navigate to Bible location once data is loaded
   async navigateWhenReady(translation, book, chapter, verse, retries = 0) {
-    // No translation → show translation picker immediately (no data needed)
+    // No translation → auto-select default so Bible loads immediately
+    // (translation picker is still accessible via the dropdown in the Bible header)
     if (!translation) {
-      if (typeof goToBibleHome === 'function') {
-        goToBibleHome();
-      }
-      return;
+      translation = (typeof Bible !== 'undefined' && Bible.getDefaultTranslation)
+        ? Bible.getDefaultTranslation() : 'akjv';
     }
 
     // Load translation if needed
@@ -325,95 +424,11 @@ const BibleView = {
 
   // Render the reader structure with correct state from the start (unidirectional data flow)
   renderStructure(container, state = null) {
-    // Get contentType from state - this determines which selectors are visible
     const contentType = state?.content?.params?.contentType || 'bible';
-    // Multiverse uses Bible selectors (e.g. translation) and shows as Bible in dropdown
-    const displayContentType = (contentType === 'multiverse') ? 'bible' : contentType;
-    
-    // Content type dropdown removed — users switch content types via hamburger menu
-    
-    // Selector visibility based on contentType (multiverse shows Bible selectors for translation)
-    const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
-    const bibleDisplay = ((contentType === 'bible' || contentType === 'multiverse') && !hideAllSelectors) ? '' : 'display:none;';
-    const symbolsDisplay = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'display:none;';
-    const ttDisplay = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'display:none;';
-    const numbersDisplay = (contentType === 'numbers') ? '' : 'display:none;';
-    const classicsDisplay = (contentType === 'philo' || contentType === 'josephus') ? '' : 'display:none;';
     
     container.innerHTML = `
       <div id="bible-explorer-page" class="bible-explorer-page" data-content-type="${contentType}">
-        <!-- Header -->
-        <div class="bible-explorer-header">
-          <div class="bible-explorer-header-inner">
-            <!-- Bible selectors (shown when content=bible) -->
-            <span id="bible-selectors" class="reader-selector-group" style="${bibleDisplay}">
-              <select id="bible-translation-select" class="bible-explorer-select bible-translation-select" 
-                      onchange="onTranslationChange(this.value)" title="Select translation">
-                ${(() => {
-                  const ord = (typeof Bible !== 'undefined') ? Bible.getOrderedTranslations() : { visible: [{id:'kjv',name:'KJV'},{id:'asv',name:'ASV'},{id:'lxx',name:'LXX'}], hidden: [] };
-                  const trans = state?.content?.params?.translation || 'kjv';
-                  let opts = ord.visible.map(t => `<option value="${t.id}"${t.id === trans ? ' selected' : ''}>${t.name}</option>`).join('');
-                  if (ord.hidden.length > 0) {
-                    opts += '<optgroup label="More">' + ord.hidden.map(t => `<option value="${t.id}"${t.id === trans ? ' selected' : ''}>${t.name}</option>`).join('') + '</optgroup>';
-                  }
-                  return opts;
-                })()}
-              </select>
-              
-              <select id="bible-book-select" class="bible-explorer-select" 
-                      onchange="selectBibleBook(this.value)" title="Select book">
-                <option value="">Book</option>
-              </select>
-              
-              <select id="bible-chapter-select" class="bible-explorer-select" 
-                      onchange="selectBibleChapter(parseInt(this.value))" disabled title="Select chapter">
-                <option value="">Ch.</option>
-              </select>
-            </span>
-            
-            <!-- Symbol selector (shown when content=symbols) -->
-            <span id="symbol-selectors" class="reader-selector-group" style="${symbolsDisplay}">
-              <select id="symbol-select" class="bible-explorer-select" 
-                      onchange="onSymbolSelect(this.value)" title="Select symbol">
-                <option value="">Symbol...</option>
-              </select>
-            </span>
-            
-            <!-- Time Tested selector (shown when content=timetested) -->
-            <span id="timetested-selectors" class="reader-selector-group" style="${ttDisplay}">
-              <select id="timetested-chapter-select" class="bible-explorer-select" 
-                      onchange="onTimeTestedSelect(this.value)" title="Select chapter">
-                <option value="">📚 Index</option>
-              </select>
-            </span>
-            
-            <!-- Number selector (shown when content=numbers) -->
-            <span id="number-selectors" class="reader-selector-group" style="${numbersDisplay}">
-              <select id="number-select" class="bible-explorer-select" 
-                      onchange="onNumberSelect(this.value)" title="Select number study">
-                <option value="">📚 Index</option>
-              </select>
-            </span>
-            
-            <!-- Classics selectors (shown when content=philo or content=josephus) -->
-            <span id="classics-selectors" class="reader-selector-group" style="${classicsDisplay}">
-              <select id="classics-work-select" class="bible-explorer-select"
-                      onchange="onClassicsWorkChange(this.value)" title="Select work">
-                <option value="">Work...</option>
-              </select>
-              <input id="classics-section-input" class="bible-explorer-select classics-section-input"
-                     type="text" placeholder="Go to..." title="Jump to section (e.g. 3.2.1)"
-                     onkeydown="if(event.key==='Enter'){onClassicsSectionJump(this.value);this.value='';}"
-                     style="width:80px;">
-            </span>
-          </div>
-          <!-- Research panel header zone (desktop: shares row with selectors) -->
-          <div class="research-header-inline" id="research-header-inline">
-            <span class="research-id-badge" id="research-id-badge"></span>
-          </div>
-        </div>
-        
-        <!-- Body -->
+        <!-- Body (header/selectors are in #sub-nav-bar, managed by renderSubNav) -->
         <div class="bible-explorer-body">
           <div class="bible-content-wrapper">
             <!-- Hidden element to track chapter title (for syncing with content) -->

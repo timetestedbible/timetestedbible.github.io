@@ -87,8 +87,8 @@ const SYMBOL_DICTIONARY = {
   
   'sea': {
     name: 'SEA',
-    words: ['sea', 'seas', 'waters', 'waves', 'wave'],
-    strongs: ['H3220', 'G2281'],
+    words: ['sea', 'seas', 'waters', 'waves', 'wave', 'water'],
+    strongs: ['H3220', 'H4325', 'G2281', 'G5204'],
     is: 'Nations',
     is2: 'Chaotic Peoples',
     does: null,
