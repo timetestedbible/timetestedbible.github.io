@@ -34,31 +34,21 @@ Both from the same semantic domain: **cutting**. Hebrew embeds the connection: t
 
 ## Context Bag
 
-**DEFINITIONAL — JESUS DEFINES HARVEST:** Matt 13:39 — harvest = synteleia of age. Reapers = angels. Field = world. Good seed = children of kingdom. Tares = children of wicked one (Matt 13:38). Enemy = devil. THIS IS THE INTERPRETIVE KEY. Harvest is not metaphor for judgment — it IS the appointed consummation where GRASS-types (wheat vs tares = people) are separated by their FRUIT.
+Matt 13:38-39 — subj: Jesus defines harvest. harvest = synteleia of age. reapers = angels. field = world. good seed = children of kingdom. tares = children of wicked one. enemy = devil. THE INTERPRETIVE KEY.
+Rev 14:14-20 — subj: dual harvest. GRAIN (vv.14-16): Son of man, cloud, golden crown, sickle, earth reaped (G3583 dried). GRAPE (vv.17-19): angel from altar (fire-authority), clusters fully ripe (G187 akmazo), winepress of wrath. co: FIRE+WINE+ANGEL. Blood to horse bridles, 1600 furlongs.
+Joel 3:13 — subj: sickle+harvest+press merged in one verse. co: WICKEDNESS. H1310 bashal = boiled/ripened. Rev separates Joel's merged verse into two sequential actions. "Press full, fats overflow" = fullness language.
+Exo 23:16 — subj: two feasts = two harvests calendared. (1) Feast of Harvest/Weeks/Pentecost = wheat/spring. (2) Feast of Ingathering/Sukkot = grape/autumn. Acts 2 = Spirit-firstfruits. Tabernacles = final ingathering future. Feasts ARE the harvest enacted.
+Jer 51:33 — subj: Babylon = threshingfloor. co: BABYLON, FALL_OF_BABYLON. Her harvest = her judgment. Jer 50:16 — sickle cut off FROM Babylon; she cannot reap.
+Jer 8:20 — subj: missed harvest. "Harvest past, summer ended, not saved." Window CLOSES — appointed season. Isa 17:11 — harvest = heap in day of grief (wrong works).
+Hos 6:11 — subj: God SETS (H7896 shith) harvest for Judah. co: EXILE. Timed to return from captivity.
+Gal 6:7-9 — subj: sow→reap principle. Flesh→corruption. Spirit→life everlasting. "Due season" (G2398+G2540) = delayed but certain. Hos 8:7 — wind→WHIRLWIND (amplification). Hos 10:12-13, Prov 22:8, Jer 12:13, Job 4:8 confirm: sowing determines harvest type.
+Matt 9:37-38 / John 4:35-38 / Luke 10:2 — subj: people as crop. "Harvest plenteous, laborers few." Fields white=ripe. One sows, another reaps. Fruit unto life eternal.
+Mark 4:26-29 — subj: kingdom growth → sickle. Blade→ear→full corn→sickle. Triggered by ripeness, not arbitrary.
+Ruth 1:22-2:23 — subj: Gentile gleaner in Israel's harvest. co: kinsman-redeemer (Boaz). Barley+wheat → marriage → lineage of David → Christ.
+Lev 19:9, 23:22 — subj: gleaning law. NOT wholly reap corners; leave for poor+stranger. Deut 24:19 — forgotten sheaf for widow. Mercy within judgment; incomplete reaping mandated.
+Prov 6:8, 10:5, 20:4, 25:13 — subj: harvest as accountability. Wise prepare; sluggard begs; sleeping in harvest = shame.
 
-**DUAL HARVEST — TWO CROPS, TWO OUTCOMES:** Rev 14:14-20 — First harvest (vv.14-16): Son of man on white cloud, golden crown, sharp sickle. Angel from temple: "harvest of earth is ripe (G3583 xeraino = dried/withered)." Earth reaped → grain gathered. Second harvest (vv.17-19): Another angel with sharp sickle. Angel from altar (fire-authority): "gather clusters of vine, grapes fully ripe (G187 akmazo)." Cast into "great winepress of wrath of God." v.20: blood to horse bridles, 1600 furlongs. GRAIN harvest → gathering (salvation). GRAPE harvest → winepress (wrath). Same field, same time, two outcomes. Parallels Exo 23:16 two feasts exactly.
-
-**JOEL-REVELATION VERBATIM:** Joel 3:13 — "Put ye in the sickle (H4038), for the harvest (H7105) is ripe (H1310 bashal = boiled/cooked/ripened): come, get you down; for the press is full, the fats overflow; for their wickedness is great." Rev 14:15 — "Thrust in thy sickle (G1407), and reap (G2325): for the time is come for thee to reap; for the harvest (G2326) of the earth is ripe." Joel merges both harvests into one verse (sickle + press + wickedness); Revelation separates them into two sequential actions. Joel's H1310 bashal = "boiled/cooked" → ripeness as HEAT completion. Rev's G3583 xeraino (grain) = dried vs G187 akmazo (grape) = peak — different ripeness types for different crops.
-
-**FEAST STRUCTURE — TWO HARVESTS CALENDARED:** Exo 23:16 — (1) "Feast of harvest (H7105), firstfruits of thy labours" = Feast of Weeks/Pentecost (Exo 34:22). Wheat harvest. Spring. (2) "Feast of ingathering (H614 asiph), in the end (H3318) of the year" = Sukkot/Tabernacles. Final grape/fruit. Autumn. Israel's liturgical calendar enacts the dual-harvest pattern: firstfruits (Pentecost) → final ingathering (Tabernacles). Acts 2 (Pentecost) = firstfruits of Spirit-harvest. Tabernacles = final ingathering yet future. The feasts ARE the harvest prophetically enacted.
-
-**BABYLON'S HARVEST:** Jer 51:33 — "Daughter of Babylon is like a threshingfloor, time to thresh her: yet a little while, and the time of her harvest shall come." Babylon has its OWN harvest — but it's Babylon being threshed, not Babylon harvesting. Jer 50:16 — "Cut off the sower from Babylon, and him that handleth the sickle in the time of harvest." Sickle removed from Babylon → she cannot reap. Her harvest = her judgment.
-
-**MISSED HARVEST — COVENANT FAILURE:** Jer 8:20 — "The harvest is past, the summer is ended, and we are not saved." Harvest = window of salvation/gathering that can CLOSE. Once passed → too late. Not continuous — appointed season. Isa 17:11 — "the harvest shall be a heap in the day of grief." Planted and tended, but harvest arrives as destruction — works were wrong kind.
-
-**JUDAH'S APPOINTED HARVEST:** Hos 6:11 — "O Judah, he hath set a harvest for thee, when I returned the captivity of my people." God SETS (H7896 shith = appoints/places) a harvest for Judah. Timed to return from captivity. Harvest = appointed gathering after exile.
-
-**SOW-REAP PRINCIPLE — MORAL CAUSATION:** Gal 6:7-9 — "whatsoever a man soweth, that shall he also reap. He that soweth to flesh → reap corruption. He that soweth to Spirit → reap life everlasting. In due season we shall reap." Harvest is INEVITABLE consequence of sowing — but note "due season" (G2398 idios + G2540 kairos = own appointed-time). Delayed, not immediate. Hos 8:7 — "sown wind, reap whirlwind." Harvest AMPLIFIES what was sown. Hos 10:12-13 — "sow righteousness, reap mercy" vs "plowed wickedness, reaped iniquity." Prov 22:8 — "soweth iniquity, reap vanity." Jer 12:13 — "sown wheat, reap thorns" — even good seed in cursed ground → bad harvest. Job 4:8 — "plow iniquity, sow wickedness, reap the same."
-
-**SPIRITUAL HARVEST — PEOPLE AS CROP:** Matt 9:37-38 — "harvest plenteous, laborers few. Pray the Lord of the harvest send forth laborers." Harvest = people ready to be gathered. John 4:35-38 — "fields white already to harvest." Reaper gathers fruit unto life eternal. "One soweth, another reapeth." Fields = people. White = ripe/ready. Luke 10:2 — same language repeated → laborers into "his harvest."
-
-**KINGDOM GROWTH → HARVEST:** Mark 4:26-29 — Seed cast → blade → ear → full corn → "immediately he putteth in the sickle, because the harvest is come." Kingdom grows organically, THEN sickle. Harvest = appointed end of growth period. Not random — triggered by ripeness.
-
-**RUTH GLEANING — ENACTED HARVEST:** Ruth 1:22-2:23 — Naomi+Ruth arrive at beginning of barley harvest. Ruth gleans among reapers of Boaz. She keeps fast through barley + wheat harvest. TYPES: Gentile (Moabitess) gleaning among Israel's harvest. Kinsman-redeemer (Boaz) permits her in. Marriage follows harvest. Pattern: harvest → gleaning of outsiders → covenant marriage → lineage of David → Christ.
-
-**AGRICULTURAL LAW — GLEANING MANDATED:** Lev 19:9, 23:22 — "When ye reap harvest of your land, thou shalt NOT wholly reap corners... leave them for the poor and stranger." Harvest must leave a REMNANT for the vulnerable. God commands incomplete reaping → mercy within judgment. Not all is cut. Deut 24:19 — forgotten sheaf = blessing for stranger, fatherless, widow. Even in harvest-separation, provision for those outside the main gathering.
-
-**WISDOM PATTERN — HARVEST AS ACCOUNTABILITY:** Prov 6:8 — ant gathers in harvest (wise preparation). Prov 10:5 — sleeping in harvest = shame. Prov 20:4 — sluggard doesn't plow → begs in harvest. Prov 25:13 — faithful messenger refreshing as cold snow in harvest. Harvest = the moment of ACCOUNTING when prior work (or laziness) is revealed.
+**PATTERNS**: (1) HARVEST=THE END ENACTED — both from "cutting" roots (H7114→H7105 || H7112→H7093). Matt 13:39 equates. Harvest adds: ripeness, dual outcome, gathering, reapers. (2) TWO HARVESTS=TWO FEASTS=TWO OUTCOMES — grain/Pentecost/Rev14:14-16 vs grape/Tabernacles/Rev14:17-20. (3) RIPENESS=FULLNESS — Joel 3:13, Rev 14:15,18. God waits for fullness (Gen 15:16). (4) SOW-REAP=CREATION ORDINANCE — Gen 8:22 pairs with day/night. Gal 6:7 "not mocked." (5) AMPLIFICATION — Hos 8:7 wind→whirlwind. 2Cor 9:6. (6) GLEANING=MERCY WITHIN JUDGMENT — Lev 19:9, Ruth. (7) JOEL→REV CHAIN — Joel 3:13 = template for Rev 14:15. (8) BABYLON AS THRESHINGFLOOR — Jer 51:33.
 
 ## Candidate Meanings (7+)
 
