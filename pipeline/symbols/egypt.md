@@ -25,51 +25,30 @@ G125 Aigyptos = uncertain derivation. H6547 Par'ôh = Pharaoh, generic royal tit
 
 ## Context Bag
 
-**PROVISION-TO-BONDAGE MECHANISM:**
-Gen 47:20-25 — subj: people sell land+selves for bread. co: GRAIN. "We will be Pharaoh's servants." Provision IS the enslavement mechanism.
-Exod 1:11-14 — subj: Israel enslaved. co: BRICK+BONDAGE. Built with BRICK (= Gen 11:3 Babylon's brick). Iron furnace (Deut 4:20, 1Ki 8:51, Jer 11:4) = REFINING through bondage.
-Deut 28:68 — subj: covenant curse. "LORD shall bring thee into Egypt again" = SYMBOLIC destination, not just geographic.
-
-**SELF-DEIFYING RULER:**
-Exod 5:2 — "Who is the LORD?" = refuses God's NAME/authority. Hardened heart 13× = system's defining refusal.
-Ezek 29:3 — "Great dragon [H8577 tanniyn] in midst of rivers... My river is mine, I MADE it." = Isa 47:8 Babylon's "I am, none else." Self-created claim.
-Ezek 31:10 — Pharaoh as TREE exalted, heart lifted in height = Dan 4:30 Nebuchadnezzar exactly. Same tree metaphor → same fall.
-Isa 19:11 — "I am son of the wise, son of ancient kings" = false-authority claim. Wisdom becomes brutish.
-
-**PLAGUE-JUDGMENT TEMPLATE:**
-Exod 7-12 — Each plague targets a god/claim. Exod 12:12 "against ALL GODS of Egypt I execute judgment." BLOOD (Nile→death), FROGS, DARKNESS (3 days, but Israel had LIGHT, 10:23), FIRSTBORN, HAIL+FIRE (9:24).
-Rev 16 mirrors: sores (boils), sea→blood, rivers→blood, darkness on beast's kingdom (16:10), FROGS from mouths (16:13), hail (16:21). Egypt's plagues = Revelation's bowl template.
-Rev 15:3 — Victors sing "song of Moses AND the Lamb" = Exod 15 + final deliverance merged. Sea of glass mingled with FIRE (15:2) = Red Sea + fire judgment fused.
-Rev 11:6 — Two witnesses: "power over waters to turn to blood, smite earth with ALL PLAGUES" = Moses authority.
-
-**NATION-AGAINST-NATION VOCABULARY:**
-Isa 19:2 — "Egyptians against Egyptians, city against city, kingdom [H4467] against kingdom [H4467]" = Mat 24:7 / 2Chr 15:6 exact vocabulary. EGYPT is the SOURCE TEXT for the birth-pains pattern.
-Isa 19:3 — Spirit fails → seek idols, charmers [H328], familiar spirits [H178], wizards [H3049] = Isa 47:12-13 Babylon's sorceries. Rev 18:23 "by thy sorceries all nations deceived." Same chain.
-Isa 19:14 — "Drunken man staggering in vomit" = Jer 51:57 Babylon's rulers drunk. WINE judgment vocabulary shared.
-
-**REED-STAFF / FALSE REFUGE:**
-Ezek 29:6-7 — "Staff of REED to house of Israel" = breaks when leaned on. False support.
-Isa 30:1-2, 31:1-3 — "Woe to them that go down to Egypt for help." Horses = flesh, not spirit. Trusting Egypt = competing trust system.
-Isa 31:3 — "Egyptians are MEN and not God; horses FLESH not spirit" = fundamental category error.
-
-**FUNCTIONAL NAME — EGYPT IS A ROLE:**
-Rev 11:8 — "Great city SPIRITUALLY [G4153] called Sodom AND Egypt where Lord crucified." Names = FUNCTIONAL. Sodom = moral-corruption face; Egypt = bondage face. ANY system that enslaves + corrupts = "Sodom and Egypt."
-2Tim 3:8-9 — Jannes/Jambres = Egypt's magicians resisting truth with counterfeit power. "Folly shall be manifest" = sorcery always exposed.
-Heb 11:27 — "By faith forsook Egypt" = deliberate exit. Faith = choosing invisible God over visible provision.
-Jude 1:5 — "Saved out of Egypt, afterward destroyed them that believed not." Post-Egypt rebellion: extraction ≠ salvation.
-
-**HEALABLE — THE CRITICAL DISTINCTION:**
-Isa 19:22 — "LORD shall SMITE Egypt: he shall smite AND HEAL." Smite [H5062] + heal [H7495] in one sentence.
-Isa 19:25 — "Blessed be EGYPT MY PEOPLE, Assyria work of my hands, Israel mine inheritance." Egypt's people become God's people.
-Isa 19:19 — Altar to LORD IN MIDST of Egypt. Highway Egypt→Assyria. Reformation, not destruction.
-Jer 46:26 — "Afterward it shall be inhabited, as in days of old." Egypt recovers.
-CONTRAST: Jer 51:9 "We would have healed Babylon, but she is NOT healed." Babylon = unredeemable system. Egypt = reformable bondage.
-Implication: the PEOPLE trapped in Egypt-type systems are saveable. The system breaks; the people are gathered.
-
-**PHARAOH AS DRAGON:**
-Ezek 29:3 — H8577 tanniyn = "dragon/sea-monster/serpent." Same word family as Rev 12:9 "great dragon, that old serpent."
-Ezek 32:2 — H8577 again: "whale [tanniyn] in the seas [H3220]." Pharaoh = dragon IN the sea = ruler in the nations. Troubles waters = stirs nations.
-God catches Pharaoh-dragon in NET (Ezek 32:3) = same judgment mechanism as CAST-INTO-SEA.
+Gen 47:20-25 — subj: people sell land+selves for bread. co: GRAIN. Provision IS the enslavement mechanism.
+Exod 1:11-14 — subj: Israel enslaved. co: BRICK+BONDAGE. Built with BRICK (=Gen 11:3 Babylon). Iron furnace (Deut 4:20, 1Ki 8:51, Jer 11:4) = refining through bondage.
+Deut 28:68 — subj: covenant curse. "Bring thee into Egypt again" = symbolic destination, not just geographic.
+Exod 5:2 — subj: "Who is the LORD?" co: NAME. Refuses God's authority. Hardened heart 13× = system's defining refusal.
+Ezek 29:3 — subj: Pharaoh = great H8577-tanniyn in rivers. "My river is mine, I MADE it." co: DRAGON, SEA. = Isa 47:8 Babylon's self-deifying claim.
+Ezek 31:10 — subj: Pharaoh as TREE exalted. co: TREE. = Dan 4:30 Nebuchadnezzar. Same metaphor → same fall.
+Isa 19:11 — subj: "son of the wise, son of ancient kings." False-authority claim.
+Exod 7-12 — subj: plague template. Each targets a god. Exod 12:12 "against ALL GODS of Egypt." BLOOD, DARKNESS (3 days, Israel had LIGHT), FIRSTBORN, HAIL+FIRE.
+Rev 16 mirrors: sores→sea/rivers blood→darkness on beast's kingdom→FROGS from mouths→hail. Egypt's plagues = Revelation's bowl template.
+Rev 15:3 — subj: "song of Moses AND the Lamb." Sea of glass+FIRE = Red Sea + fire fused. Rev 11:6 — witnesses have Moses-authority: waters→blood, ALL PLAGUES.
+Isa 19:2 — subj: "Egyptians against Egyptians, kingdom against kingdom" = Mat 24:7 exact vocabulary. EGYPT = SOURCE TEXT for birth-pains pattern.
+Isa 19:3 — subj: seek idols+sorcerers. co: SORCERY. = Isa 47:12-13 Babylon. Rev 18:23 same chain.
+Isa 19:14 — subj: drunken staggering. co: WINE. = Jer 51:57 Babylon's rulers drunk.
+Ezek 29:6-7 — subj: staff of REED. Breaks when leaned on = false support. Isa 30:1-2, 31:1-3 — "Woe to them that go to Egypt for help." Horses=flesh not spirit. co: FAITH (competing trust).
+Rev 11:8 — subj: "great city SPIRITUALLY called Sodom AND Egypt." co: SODOM. Names = functional. Sodom = moral face; Egypt = bondage face.
+2Tim 3:8-9 — subj: Jannes/Jambres = Egypt's magicians, counterfeit power. "Folly manifest."
+Heb 11:27 — subj: "by faith forsook Egypt." Faith = invisible God over visible provision.
+Jude 1:5 — subj: saved OUT of Egypt, afterward destroyed unbelievers. Extraction ≠ salvation.
+Isa 19:22 — subj: "SMITE Egypt: smite AND HEAL." co: HEALING. CRITICAL DISTINCTION: smite+heal in one sentence.
+Isa 19:25 — subj: "Blessed be EGYPT MY PEOPLE." Egypt's people become God's people.
+Isa 19:19 — subj: altar to LORD in midst of Egypt. Highway Egypt→Assyria. Reformation, not destruction.
+Jer 46:26 — subj: "afterward inhabited as in days of old." Egypt recovers.
+CONTRAST: Jer 51:9 "would have healed Babylon, NOT healed." Babylon = unhealable. Egypt = reformable. People in Egypt-type systems saveable.
+Ezek 29:3, 32:2 — subj: Pharaoh = H8577 tanniyn in seas. co: DRAGON, SEA. = Rev 12:9. God catches in NET (32:3) = cast-into-sea judgment.
 
 ## Candidate Meanings Tested
 
