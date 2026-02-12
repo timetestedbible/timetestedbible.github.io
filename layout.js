@@ -200,7 +200,7 @@ const Layout = {
     // Close menu when clicking a menu item (navigation)
     if (this.elements.sidebar) {
       this.elements.sidebar.addEventListener('click', (e) => {
-        const menuItem = e.target.closest('.menu-item');
+        const menuItem = e.target.closest('.menu-item, .menu-book-link');
         if (menuItem) {
           this._menuClosingForNav = true;
         }
