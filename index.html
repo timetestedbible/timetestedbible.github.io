@@ -996,9 +996,9 @@
       document.addEventListener('click', function interceptInAppLinks(e) {
         const a = e.target && e.target.closest ? e.target.closest('a') : null;
         if (!a || !a.href) return;
-        // Skip hash-only links (href="#") — these are handled by their own onclick handlers
+        // Skip hash/fragment links — these are handled by their own onclick handlers or browser default
         const rawHref = a.getAttribute('href');
-        if (rawHref === '#' || rawHref === '') return;
+        if (!rawHref || rawHref === '' || rawHref.startsWith('#')) return;
         try {
           const url = new URL(a.href);
           if (url.origin !== window.location.origin) return;
