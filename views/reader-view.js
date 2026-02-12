@@ -1797,11 +1797,20 @@ const ReaderView = {
    * @param {string} slug - Blog post slug (e.g., 'blood-moon-over-the-moon-city')
    * @param {Element} container - Container to render into
    */
+  // Cache blog post HTML so back-navigation is instant and scroll position restores
+  _blogCache: new Map(),
+
   async loadBlogPost(slug, container) {
     try {
-      const response = await fetch(`/blog/${slug}.html`);
-      if (!response.ok) throw new Error('Blog post not found');
-      const html = await response.text();
+      let html;
+      if (this._blogCache.has(slug)) {
+        html = this._blogCache.get(slug);
+      } else {
+        const response = await fetch(`/blog/${slug}.html`);
+        if (!response.ok) throw new Error('Blog post not found');
+        html = await response.text();
+        this._blogCache.set(slug, html);
+      }
       
       container.innerHTML = `
         <div class="ttt-chapter-content">

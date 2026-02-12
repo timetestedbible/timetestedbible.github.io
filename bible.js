@@ -894,21 +894,26 @@ const Bible = {
         if (lineNum > 2) {
           const tabIdx = rawText.indexOf('\t', pos);
           if (tabIdx !== -1 && tabIdx < lineEnd) {
-            const ref = rawText.slice(pos, tabIdx);
-            offsets[ref] = [tabIdx + 1, lineEnd];
+            const rawRef = rawText.slice(pos, tabIdx);
 
-            // Track book/chapter structure
-            const spaceBeforeChapter = ref.lastIndexOf(' ');
+            // Normalize book name in the ref so index keys match canonical names
+            // e.g. "Psalm 68:23" → "Psalms 68:23", "Song of Songs 1:1" → "Song of Solomon 1:1"
+            const spaceBeforeChapter = rawRef.lastIndexOf(' ');
+            let ref = rawRef;
             if (spaceBeforeChapter > 0) {
-              const book = ref.slice(0, spaceBeforeChapter);
-              const chVerse = ref.slice(spaceBeforeChapter + 1);
+              const rawBook = rawRef.slice(0, spaceBeforeChapter);
+              const chVerse = rawRef.slice(spaceBeforeChapter + 1);
+              const canonBook = normalizeBookName(rawBook);
+              ref = (canonBook !== rawBook) ? canonBook + ' ' + chVerse : rawRef;
+
               const colonIdx = chVerse.indexOf(':');
               if (colonIdx > 0) {
                 const ch = parseInt(chVerse.slice(0, colonIdx));
-                if (!bookChapters[book]) bookChapters[book] = new Set();
-                bookChapters[book].add(ch);
+                if (!bookChapters[canonBook]) bookChapters[canonBook] = new Set();
+                bookChapters[canonBook].add(ch);
               }
             }
+            offsets[ref] = [tabIdx + 1, lineEnd];
           }
         }
 
