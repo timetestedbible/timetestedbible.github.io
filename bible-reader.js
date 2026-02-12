@@ -4024,6 +4024,82 @@ function hideVerseTooltip(immediate) {
   }
 }
 
+// Strong's tooltip for hover preview on strongs-link elements
+let _strongsTooltipTimer = null;
+
+function showStrongsTooltip(el, event) {
+  if (_strongsTooltipTimer) { clearTimeout(_strongsTooltipTimer); _strongsTooltipTimer = null; }
+  
+  // Extract Strong's number from onclick or text
+  const text = el.textContent.trim();
+  const strongsMatch = text.match(/^([HG]\d+)/);
+  if (!strongsMatch) return;
+  const strongsNum = strongsMatch[1];
+  
+  // Look up in dictionary
+  const dict = getStrongsDict();
+  const entry = dict.lookup(strongsNum);
+  if (!entry) return;
+  
+  // Remove any existing tooltip
+  hideStrongsTooltip(true);
+  
+  const tooltip = document.createElement('div');
+  tooltip.id = 'strongs-hover-tooltip';
+  tooltip.className = 'verse-hover-tooltip';
+  
+  const lemma = entry.lemma || '';
+  const def = entry.strongs_def || entry.kjv_def || '';
+  const pron = entry.pron || '';
+  
+  let html = `<div class="verse-tooltip-ref">${escapeHtml(strongsNum)}${lemma ? ' — ' + lemma : ''}${pron ? ' <span style="opacity:0.7">(' + escapeHtml(pron) + ')</span>' : ''}</div>`;
+  if (def) {
+    // Truncate long definitions
+    const truncated = def.length > 200 ? def.slice(0, 200) + '…' : def;
+    html += `<div class="verse-tooltip-text">${escapeHtml(truncated)}</div>`;
+  }
+  
+  tooltip.innerHTML = html;
+  getBibleTooltipPortal().appendChild(tooltip);
+  
+  // Position below the link
+  const rect = el.getBoundingClientRect();
+  const tooltipRect = tooltip.getBoundingClientRect();
+  let left = rect.left;
+  let top = rect.bottom + 5;
+  if (left + tooltipRect.width > window.innerWidth - 10) {
+    left = window.innerWidth - tooltipRect.width - 10;
+  }
+  if (left < 10) left = 10;
+  if (top + tooltipRect.height > window.innerHeight - 10) {
+    top = rect.top - tooltipRect.height - 5;
+  }
+  if (top < 10) top = 10;
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+  tooltip.style.opacity = '1';
+  
+  tooltip.addEventListener('mouseenter', function() {
+    if (_strongsTooltipTimer) { clearTimeout(_strongsTooltipTimer); _strongsTooltipTimer = null; }
+  });
+  tooltip.addEventListener('mouseleave', function() {
+    hideStrongsTooltip(true);
+  });
+}
+
+function hideStrongsTooltip(immediate) {
+  if (_strongsTooltipTimer) { clearTimeout(_strongsTooltipTimer); _strongsTooltipTimer = null; }
+  if (immediate) {
+    const tooltip = document.getElementById('strongs-hover-tooltip');
+    if (tooltip) tooltip.remove();
+  } else {
+    _strongsTooltipTimer = setTimeout(() => {
+      const tooltip = document.getElementById('strongs-hover-tooltip');
+      if (tooltip) tooltip.remove();
+    }, 150);
+  }
+}
+
 // BDB view mode: 'ai' or 'original' — persisted in localStorage
 function getBDBViewMode() {
   try { return localStorage.getItem('bdb-view-mode') || 'ai'; } catch (e) { return 'ai'; }

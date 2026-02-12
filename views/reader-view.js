@@ -1837,6 +1837,12 @@ const ReaderView = {
         }
       });
       
+      // Add Strong's number hover tooltips
+      container.querySelectorAll('a.strongs-link').forEach(link => {
+        link.setAttribute('onmouseenter', "if(typeof showStrongsTooltip==='function')showStrongsTooltip(this,event)");
+        link.setAttribute('onmouseleave', "if(typeof hideStrongsTooltip==='function')hideStrongsTooltip()");
+      });
+      
       // Ensure Bible data is loaded so verse tooltips can show text
       if (typeof Bible !== 'undefined' && Bible.loadTranslation) {
         Bible.loadTranslation('kjv').catch(() => {});
