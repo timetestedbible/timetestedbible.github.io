@@ -25,68 +25,42 @@ Core meaning: NOT a pump. The interior self — where will, allegiance, and resp
 
 ## Context Bag
 
-**HEART AS COVENANT SEAT:**
-Deut 6:5 — subj: love LORD with ALL heart+soul+might. co: LAW, SHEMA. The whole-heart command = total allegiance. Repeated: Deut 10:12, 11:13, 30:6; Josh 22:5; Matt 22:37; Mark 12:30; Luke 10:27.
-Deut 30:6 — subj: GOD circumcises heart+seed's heart → love with all heart. co: CIRCUMCISION. God performs the surgery that enables the command.
-Deut 5:29 — "O that there were such a HEART in them, that they would fear me and keep all my commandments always." God's desire = a heart oriented toward Him.
-1Sam 10:9 — subj: Saul receives "another heart." God gives/changes hearts; allegiance is installed, not self-generated.
-Jer 32:40 — "I will put my fear in their hearts, that they shall not depart from me." co: EVERLASTING COVENANT.
+**COVENANT SEAT:**
+Deut 6:5 — subj: love LORD with ALL heart+soul+might. co: LAW, SHEMA. Total allegiance command. Repeated: Deut 10:12, 11:13, 30:6; Josh 22:5; Matt 22:37; Mk 12:30; Lk 10:27.
+Deut 30:6 — subj: GOD circumcises heart → love with all heart. co: CIRCUMCISION. God performs what He commands.
+Deut 5:29 — "O that there were such a HEART in them." God's desire = heart oriented toward Him.
+1Sam 10:9 — Saul receives "another heart." Allegiance installed, not self-generated.
+Jer 32:40 — "put my fear in their hearts, shall not depart." co: EVERLASTING COVENANT.
 
-**HEART HARDENED — PHARAOH CYCLE (Exod 4-14):**
-20× references to Pharaoh's heart hardened/hardening. Three agents: (a) Pharaoh hardens own heart (8:15, 8:32, 9:34), (b) God hardens Pharaoh's heart (4:21, 7:3, 9:12, 10:1, 10:20, 10:27, 11:10, 14:4, 14:8, 14:17), (c) heart "was hardened" passive (7:13-14, 7:22, 8:19, 9:7, 9:35). co: EGYPT, PLAGUES. Pattern: self-hardening → God-hardening → judgment. Heart that will not yield to evidence becomes locked. Same cycle: 1Sam 6:6 "harden your hearts as Egyptians." Ps 95:8 / Heb 3:8, 3:15, 4:7 "harden not your hearts as in the provocation." 2Chr 36:13 Zedekiah. Prov 28:14 "he that hardeneth his heart shall fall." Mark 6:52, 8:17 disciples' hearts hardened → can't perceive. John 12:40 / Matt 13:15 / Acts 28:27 (=Isa 6:10) "heart waxed gross...lest they understand with their heart and be converted."
+**HARDENED — PHARAOH CYCLE (Exod 4-14):**
+20× Pharaoh's heart hardened. Three agents: (a) self-hardens (8:15, 8:32, 9:34), (b) God hardens (4:21, 7:3, 9:12, 10:1, 10:20, 10:27, 11:10, 14:4,8,17), (c) passive "was hardened" (7:13-14, 7:22, 8:19, 9:7, 9:35). co: EGYPT, PLAGUES. Pattern: self→God→judgment. Heart refusing evidence becomes locked. Same: 1Sam 6:6, Ps 95:8 / Heb 3:8,15, 4:7, Prov 28:14, Mk 6:52, 8:17, Jn 12:40 / Matt 13:15 / Acts 28:27 (=Isa 6:10).
 
-**HEART AS WRITING SURFACE:**
-Prov 3:3 — "write [mercy+truth] upon the table of thine heart." co: TABLET.
-Prov 7:3 — "write them upon the table of thine heart."
-Jer 17:1 — "sin of Judah written with pen of iron...upon the table of their heart." SIN also gets written there.
-Jer 31:33 — NEW COVENANT: "I will put my law in their inward parts, write it in their hearts." co: LAW, COVENANT. = Heb 8:10, 10:16. Heart replaces stone tablets.
-2Cor 3:3 — "epistle of Christ...written not with ink, but with the Spirit of the living God; not in tables of stone, but in fleshy tables of the heart." STONE→FLESH transition explicit.
-Rom 2:15 — "work of the law written in their hearts, conscience bearing witness."
+**WRITING SURFACE:**
+Prov 3:3, 7:3 — write mercy+truth on heart. co: TABLET. Jer 17:1 — sin also written with iron pen.
+Jer 31:33 — NEW COVENANT: law written in hearts. = Heb 8:10, 10:16. Heart replaces stone tablets.
+2Cor 3:3 — not stone tables but fleshy tables of heart. STONE→FLESH explicit. Rom 2:15 — law written, conscience witnesses.
 
-**HEART TRANSFORMED — EZEKIEL'S NEW HEART:**
-Ezek 11:19 — "one heart...new spirit...take stony heart out of their flesh, give heart of flesh." co: SPIRIT, STONE.
-Ezek 18:31 — "make you a new heart and a new spirit: for why will ye die?"
-Ezek 36:26 — "NEW heart...new spirit within you...take away STONY heart out of your flesh...give you heart of FLESH." DEFINING: stone = unresponsive to covenant pressure. Flesh = alive, responsive. Same fire refines flesh-heart, destroys stone-heart. co: FIRE, SPIRIT, ROCK.
-Ps 51:10 — "Create in me a CLEAN heart, O God; renew a right SPIRIT within me." Heart+spirit paired.
-Ps 51:17 — "broken and contrite heart, O God, thou wilt not despise." God values the heart that has cracked open, not the stone that resists.
-Isa 57:15 — God dwells with "contrite and humble spirit...revive the heart of the contrite ones."
+**TRANSFORMED — NEW HEART:**
+Ezek 11:19 — one heart, new spirit, stony→flesh. Ezek 18:31 — make new heart. Ezek 36:26 — DEFINING: STONY heart removed, FLESH heart given. co: FIRE, SPIRIT, ROCK. Stone = unresponsive; flesh = alive. Same fire refines flesh, destroys stone.
+Ps 51:10 — clean heart + right spirit paired. Ps 51:17 — broken+contrite heart not despised. Isa 57:15 — God dwells with contrite, revives heart.
 
-**HEART CIRCUMCISED:**
-Deut 10:16 — "circumcise the foreskin of your heart, be no more stiffnecked." co: CIRCUMCISION.
-Deut 30:6 — GOD circumcises heart. Same act: human command (10:16) → divine gift (30:6).
-Jer 4:4 — "circumcise yourselves to the LORD, take away foreskins of your heart...lest my fury come forth like fire." co: FIRE. Uncircumcised heart = fuel.
-Jer 9:26 — "all the house of Israel are uncircumcised in the heart."
-Ezek 44:7, 9 — uncircumcised in heart banned from sanctuary.
-Acts 7:51 — "uncircumcised in heart and ears, ye do always resist the Holy Ghost."
-Rom 2:29 — "circumcision is that of the heart, in the spirit, not in the letter."
+**CIRCUMCISED:**
+Deut 10:16 — circumcise heart (human command). Deut 30:6 — GOD circumcises (divine gift). Same act, two agents.
+Jer 4:4 — circumcise to LORD, lest fury as fire. co: FIRE. Uncircumcised heart = fuel.
+Jer 9:26, Ezek 44:7,9, Acts 7:51 — uncircumcised heart = resists Spirit, banned from sanctuary. Rom 2:29 — circumcision of heart, in spirit.
 
-**HEART AS SOURCE — WHAT COMES OUT:**
-Gen 6:5 — "every imagination of the thoughts of his heart was only evil continually." co: DAYS_OF_NOAH. Pre-flood condition = heart-generated wickedness.
-Gen 8:21 — "imagination of man's heart is evil from his youth." Post-flood: unchanged heart.
-Jer 17:9-10 — "the heart is deceitful above all things, and desperately wicked: who can know it? I the LORD search the heart." ONLY God can diagnose.
-Matt 12:34-35 — "out of the abundance of the heart the mouth speaketh." Good treasure → good things. Evil treasure → evil things.
-Matt 15:18-19 / Mark 7:21-23 — "out of the heart proceed evil thoughts, murders, adulteries..." Heart is SOURCE, not recipient, of defilement.
-Prov 4:23 — "Keep thy heart with all diligence; for out of it are the issues of life." Guard the source.
-Luke 8:15 — "honest and good heart, having heard the word, keep it, and bring forth fruit." Heart = soil type.
+**SOURCE — WHAT COMES OUT:**
+Gen 6:5 — imagination of heart evil continually. co: DAYS_OF_NOAH. Gen 8:21 — evil from youth (post-flood: unchanged).
+Jer 17:9-10 — heart deceitful, desperately wicked. ONLY God searches it.
+Matt 12:34-35 — abundance of heart → mouth speaks. Matt 15:18-19 / Mk 7:21-23 — heart = SOURCE of defilement.
+Prov 4:23 — keep heart; out of it = issues (H8444 totsaoth) of life. Lk 8:15 — honest heart keeps word, bears fruit. Heart = soil type.
 
-**HEART FAINT — ALARMED-FEAR CONNECTION:**
-Gen 45:26 — Jacob's "heart fainted" at news of Joseph. H3820 + H6313 = heart went numb.
-Deut 20:8 — fainthearted → "lest his brethren's heart H3824-faint." Fear contagion through heart.
-Isa 1:5 — "whole heart faint." co: REBELLION, SICKNESS.
-Jer 51:46 — "lest your heart H3824-faint, and ye fear for the rumour...ruler against ruler." co: ALARMED_FEAR, BABYLON, WARS_AND_RUMORS. The Babylon-oracle warns: don't let heart respond with panic. SAME vocabulary Jesus uses Matt 24:6 / John 14:1.
-John 14:1, 27 — "Let not your heart be G5015-troubled." co: PEACE_SHALOM. Antidote = "my peace I give unto you." Heart-trouble is the prohibited response for those who recognize God's hand.
+**FAINT — ALARMED-FEAR:**
+Gen 45:26 — Jacob's heart fainted. Deut 20:8 — fainthearted contagion.
+Jer 51:46 — "lest heart faint, fear for rumour, ruler against ruler." co: ALARMED_FEAR, BABYLON, WARS_AND_RUMORS. = Matt 24:6 / John 14:1 vocabulary.
+Jn 14:1,27 — "Let not heart be troubled." co: PEACE_SHALOM. Peace = antidote.
 
-**HEART AND TREASURE:**
-Matt 6:21 — "where your treasure is, there will your heart be also." Heart follows investment.
-Matt 5:8 — "Blessed are the pure in heart: for they shall see God."
-1Tim 1:5 — "charity out of a pure heart + good conscience + faith unfeigned."
-2Tim 2:22 — "call on the Lord out of a pure heart."
-1Pet 1:22 — "love one another with a pure heart fervently."
-Phil 4:7 — "peace of God...shall keep [G5432 phroureo = garrison] your hearts and minds." Peace GARRISONS the heart.
+**TREASURE/PURITY:**
+Matt 6:21 — treasure→heart follows. Matt 5:8 — pure heart sees God. Phil 4:7 — peace GARRISONS (G5432) hearts. 1Tim 1:5, 2Tim 2:22, 1Pet 1:22.
 
-PATTERN SUMMARY:
-Heart = covenant-response organ. It can be: (1) hardened=stone → resists all evidence, locked by repetition (Pharaoh cycle), (2) circumcised → covering removed, exposed to God, (3) broken/contrite → cracked open, receptive, valued by God, (4) written upon → receives law/sin/Spirit as inscription, (5) faint/troubled → alarm-response when allegiance is uncertain, (6) pure/clean → single allegiance, sees God.
-
-The TRAJECTORY: stone→circumcised→broken→inscribed→flesh. Ezek 36:26 = the full arc. God replaces the unresponsive organ with a living one, then writes covenant on it (Jer 31:33). This IS the new covenant mechanism. Heart of stone = Egypt/Pharaoh. Heart of flesh = new creation.
-
-Heart is where ALLEGIANCE lives. Not emotion. Deut 6:5 commands total allegiance. Jer 17:9 reveals the heart's native treachery. Ezek 36:26 promises God's surgical intervention. The heart that remains stone self-destructs under covenant fire (Jer 4:4). The heart made flesh becomes the tablet of the new covenant.
+**PATTERNS**: Heart = covenant-response organ. Six states: (1) hardened/stone → locked by repetition (Pharaoh); (2) circumcised → covering removed; (3) broken/contrite → cracked open, valued by God; (4) written upon → receives law/sin/Spirit; (5) faint/troubled → alarm when allegiance uncertain; (6) pure → single allegiance, sees God. TRAJECTORY: stone→circumcised→broken→inscribed→flesh. Ezek 36:26 = full arc. Heart of stone = Egypt/Pharaoh. Heart of flesh = new covenant tablet (Jer 31:33). Allegiance lives here, not emotion.
