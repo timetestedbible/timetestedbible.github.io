@@ -10,8 +10,8 @@ defining_verses: [Rev 6:1-8, Zech 6:1-8, Zech 1:8-11, Ezek 14:21, Rev 7:1-3, Dan
 co_occurring: [FOUR WINDS, WIND, ANIMAL, SEAL, SWORD, FAMINE, PESTILENCE, EARTHQUAKE, BIRTH PAINS, BABYLON, DECEIVE, WARS AND RUMORS OF WARS, NATION AGAINST NATION]
 context_types: [apocalyptic, prophetic oracle, discourse]
 all_verses: [Rev 6:1, Rev 6:2, Rev 6:3, Rev 6:4, Rev 6:5, Rev 6:6, Rev 6:7, Rev 6:8, Rev 7:1, Rev 7:2, Rev 7:3, Zech 6:1, Zech 6:2, Zech 6:3, Zech 6:4, Zech 6:5, Zech 6:6, Zech 6:7, Zech 6:8, Zech 1:8, Zech 1:9, Zech 1:10, Zech 1:11, Zech 1:12, Zech 2:6, Ezek 14:21, Dan 7:2, Dan 7:3, Mat 24:6-8, Jer 49:36, Ezek 37:9, Mat 24:31, Rev 19:11, Job 1:7, Ps 104:4]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.30
 inputs: {wind: [1, 1.00], four-winds: [1, 1.00], famine: [1, 1.00], pestilence: [1, 1.00], wars-rumors: [1, 1.00], earthquake: [1, 1.00], birth-pains: [1, 1.00], animal: [1, 1.00]}
 dependents: [contexts/Rev/6.001-008, contexts/Mat/24.004-008, symbols/four-winds, symbols/wind]
 ---
@@ -31,10 +31,13 @@ H122/G4450 = burning-red from fire imagery || G5515 chloros = sickly-green death
 EZEK 14:21 TETRAD MATCH: "four sore judgments: SWORD + FAMINE + NOISOME BEAST + PESTILENCE" = Rev 6:8 "kill with sword + hunger + death + beasts"
 Four horsemen execute four covenant curses || Horseman 4 summarizes all four judgments
 
-MECHANISM: RESTRAINT→RELEASE
-Rev 6: seals opened → horsemen released sequentially
-Rev 7:1-3: four angels "holding four winds...till we have sealed servants"
-Inverse operations: opening judgment seals || completing protection seals
+MECHANISM: SEALING PRECONDITION → RESTRAINT → RELEASE
+Rev 7:1-3: four angels "holding four winds of the earth, that wind should NOT blow on earth, sea, or any TREE, TILL we have sealed servants of God in their foreheads"
+The four winds/horsemen CANNOT harm any tree (nation) or grass (person) UNTIL the sealing is complete
+This is not simultaneous — it is SEQUENTIAL: seal servants FIRST → THEN release winds/horsemen
+The sealing is the PRECONDITION for the birth pains to begin, not just protection during them
+Rev 6: seals on scroll opened → horsemen released sequentially AFTER servants sealed
+Inverse operations: protection seals applied BEFORE judgment seals opened
 
 "WALK TO AND FRO" MISSION:
 Zech 1:10-11 + Zech 6:7 colored horses share phrase with Job 1:7 Satan → same patrol commission

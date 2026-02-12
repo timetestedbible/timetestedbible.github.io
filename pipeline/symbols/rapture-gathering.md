@@ -9,8 +9,8 @@ opposite: SCATTER (dispersion among nations as covenant curse)
 defining_verses: [2Th 2:1, 1Th 4:17, Mat 24:31, Isa 11:12, Deu 30:3-4, Zep 3:8, Mic 4:12]
 co_occurring: [MOUNTAIN, FOUR WINDS, EAGLE, RETURN OF CHRIST, MOMENT, TRUMPET, JERUSALEM, DAY, HARLOT, BABYLON]
 context_types: [prophetic oracle, discourse, apocalyptic, law, psalm, narrative]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.50
 inputs: {}
 dependents: []
 ---
@@ -27,7 +27,13 @@ dependents: []
 
 **CLUSTER:** Occurrences cluster around: (1) Post-exile covenant restoration (H6908 dominant); (2) Eschatological DAY/judgment (G1997+G726); (3) Agricultural harvest-completion feast (H622→Sukkot). All three converge: God's end-of-cycle ingathering.
 
-**CONSISTENT READING:** Gathering = covenant ingathering. God scattered for covenant violation (Lev 26:33); God regathers when covenant is renewed (Deu 30:1-5). Every instance: separation-from-nations + return-to-God's-presence. Not escape FROM judgment but gathering FOR covenant reconstitution. 2Th 2:1 warns: don't be deceived about timing—FALLING AWAY + WICKEDNESS revealed FIRST.
+**CONSISTENT READING:** Gathering = covenant ingathering. God scattered for covenant violation (Lev 26:33); God regathers when covenant is renewed (Deu 30:1-5). Every instance: separation-from-nations + return-to-God's-presence.
+
+**SEALING PRECONDITION:** Rev 7:1-4 = servants sealed BEFORE four winds/horsemen can harm earth/sea/trees. The sealing is the PRECONDITION for judgment to begin, not just protection during it. "Hurt not... TILL we have sealed." Sequential: seal FIRST → winds released → birth pains begin → testimony period → gathering at trumpet.
+
+**APANTESIS DIRECTION (G529):** 1Th 4:17 "caught up... to MEET (eis apantesin) the Lord in the air." G529 = technical civic-escort term: citizens go OUT to meet arriving dignitary, then escort Him BACK IN to His destination. Acts 28:15 demonstrates: brethren went out to meet Paul → escorted him INTO Rome, not away from it. Mat 25:6 virgins go out to meet bridegroom → he enters the feast. The gathering is an escort TOWARD earth (the King's destination), not departure FROM it.
+
+**ORDERING RELATIVE TO BABYLON'S FALL:** Rev 18:4 "come out of her my people" = extraction from Babylon. Rev 17:16 ten horns destroy Babylon. The extraction precedes the system's self-destruction. Then: trumpet (Rev 11:15) → kingdom transfer → gathering (Mat 24:31). The gathering is the CULMINATION after Babylon falls, not an escape before judgment begins.
 
 **ANOMALIES:** Zep 3:8/Mic 4:12—God gathers NATIONS (enemies) for destruction, not restoration. Same word, opposite recipients. Judgment-gathering vs. salvation-gathering share mechanism: God initiates both.
 

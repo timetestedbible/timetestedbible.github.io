@@ -9,8 +9,8 @@ opposite: JERUSALEM
 defining_verses: [Gen 11:9, Isa 21:9, Jer 51:6-8, Rev 14:8, Rev 17:5, Rev 18:2-4, Rev 18:21]
 co_occurring: [WINE, FORNICATION, HARLOT, MOUNTAIN, SEA, NATIONS, FAMINE, EARTHQUAKE, MOMENT, WICKEDNESS]
 context_types: [narrative, prophetic oracle, apocalyptic]
-rev: 2
-churn: 1.30
+rev: 3
+churn: 1.60
 inputs: {BABYLON, HARLOT, WINE, FORNICATION, MOMENT}
 dependents: [RETURN_OF_CHRIST, SUDDEN_DESTRUCTION, SUN_MOON_STARS, contexts/Mat/24.029-031]
 ---
@@ -35,7 +35,13 @@ Rev18:1-24 — SUBJ: Final fall. SCENE: "Fallen, fallen" (v2); "Come out of her 
 
 **CLUSTER:** Every "fallen fallen" passage (Isa21:9→Jer51:8→Rev14:8→Rev18:2) uses identical doubling. Jer51:63-64 stone→water = Rev18:21 millstone→sea. "Come out" command: Jer51:6,45 = Rev18:4. Pattern: wine-cup→nations drunk→sudden fall→God's people called out.
 
-**CONSISTENT READING:** Babylon = man's self-organized authority system replacing God's covenant order. FALL = God's sudden, total, irreversible termination of that system. Always paired with covenant-people extraction ("come out").
+**CONSISTENT READING:** Babylon = man's self-organized authority system replacing God's covenant order. Babylon THE GREAT = the global-scale, final manifestation — not a single city but the entire worldwide system of human self-rule. FALL = God's sudden, total, irreversible termination of that system. Always paired with covenant-people extraction ("come out").
+
+**WHO DESTROYS BABYLON THE GREAT — THE SELF-CONSUMPTION MECHANISM:**
+Rev 17:16-17: "the TEN HORNS... shall HATE the whore, and shall make her DESOLATE and NAKED, and shall EAT HER FLESH, and BURN HER WITH FIRE. For GOD hath put in their hearts to fulfil His will." Babylon is NOT destroyed by an external enemy — she is destroyed BY HER OWN POLITICAL APPARATUS. The ten horns (kings/political powers within the beast-system) turn on the harlot (the religious/commercial/cultural system riding the beast). God orchestrates this. Ezek 28:18 "fire FROM THE MIDST OF THEE" = same principle at Tyre. Isa 9:18-19 "wickedness burneth as the fire... people shall be as the fuel" = same self-consuming mechanism. The system's own components destroy it at God's direction.
+
+**ORDERING — EXTRACTION BEFORE DESTRUCTION:**
+Rev 18:4 "Come out of her MY PEOPLE" precedes Rev 18:8 "burned with fire." Jer 51:6,45 same sequence. Gen 19:22 Lot: "I CANNOT do anything till thou be come thither" = judgment structurally locked behind extraction. The extraction of God's people is not optional — it is a PRECONDITION for the fall. This is the "come out" principle: separation THEN destruction, never reversed.
 
 **ANOMALIES:** Gen11 has no "fall"—it's the origin. But scattering IS the first judgment on Babel-principle. Pattern set: God disrupts unified rebellion.
 
