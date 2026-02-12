@@ -1657,11 +1657,19 @@ const ReaderView = {
               <p class="ttt-hero-author">by Daniel Larimer</p>
               <p class="ttt-hero-desc">An exploration of biblical calendar methodology using first-principles physics, astronomical calculations, and Scripture to determine when the day, month, year, and Sabbath begin.</p>
               <div class="ttt-hero-actions">
-                <a class="ttt-hero-download ttt-hero-buy" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
+                <a class="ttt-hero-download ttt-hero-buy"
+                   style="background:#1a6b7a;border:1px solid #0f4250;color:#ffffff;"
+                   href="https://store.bookbaby.com/book/time-tested-tradition"
+                   target="_blank" rel="noopener"
+                   onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
                   <span class="icon">📕</span>
                   <span>Buy Physical Copy</span>
                 </a>
-                <a class="ttt-hero-download" href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">
+                <a class="ttt-hero-download"
+                   style="background:#ffffff;border:1px solid #1a6b7a;color:#1a6b7a;"
+                   href="/media/time-tested-tradition.pdf"
+                   download
+                   onclick="trackBookDownload()">
                   <span class="icon">📥</span>
                   <span>Download PDF</span>
                 </a>
