@@ -30,53 +30,45 @@ dependents: [contexts/Mat/24.009-014, contexts/Mat/24.004-031]
 
 ## Context Bag
 
-**"GOSPEL OF THE KINGDOM" — exact phrase (G2098 + G932 together, 5×):**
-Mat 4:23 — subj: Jesus. co: teaching (G1321 didasko) + healing (G2323 therapeuo). role: triple ministry = teach+herald+heal. "All Galilee" = regional scope. cycle: Ministry launch.
-Mat 9:35 — subj: Jesus. co: teaching + healing. role: IDENTICAL formula to 4:23. "All the cities and villages" = intensified scope. Bookends (inclusio) around Mat 5-9 ministry content.
-**Mat 24:14** — subj: this gospel of the kingdom. co: kerusso (G2784 herald) + oikoumene (G3625 inhabited world) + marturion (G3142 testimony) + ethnos (G1484 nations) + telos (G5056 end). DEFINING VERSE. Five-element chain: (1) this specific gospel, (2) heralded, (3) in all oikoumene, (4) for a marturion, (5) THEN (tote G5119) the telos comes. The preaching-completion IS the trigger-condition for the end.
-Mk 1:14 — subj: Jesus. co: John imprisoned (paradidomi G3860 = same "betray" verb as Mat 24:10). role: John's arrest = gospel-of-kingdom launches. Persecution of forerunner triggers kingdom-proclamation.
-Mk 1:15 — subj: Jesus. co: time fulfilled (kairos G2540 + pleroo G4137), kingdom at hand (eggizo G1448), repent (metanoeo G3340), believe (pisteuo G4100) the gospel. role: first content of the gospel = time-fullness + kingdom-nearness + repent + believe.
+**Exact phrase "gospel of the kingdom" (5×):**
+Mat 4:23 — subj: Jesus. co: teaching+healing. Triple ministry: teach+herald+heal. "All Galilee." Inclusio with Mat 9:35 (bookends Mat 5-9).
+Mat 9:35 — IDENTICAL formula. "All cities and villages" = intensified scope.
+Mat 24:14 — DEFINING. co: kerusso(G2784)+oikoumene(G3625)+marturion(G3142)+ethnos(G1484)+telos(G5056). Five-element chain: (1) this gospel, (2) heralded, (3) all oikoumene, (4) for marturion, (5) THEN telos. Preaching-completion = trigger for the end.
+Mk 1:14 — subj: Jesus. co: John imprisoned (paradidomi = same "betray" verb as Mat 24:10). Persecution of forerunner → kingdom-proclamation launches.
+Mk 1:15 — First content: kairos fulfilled + kingdom at hand + repent + believe.
 
-**G3142 marturion — testimony-as-evidence (key NT, 20×):**
-Mat 8:4 / Mk 1:44 / Lk 5:14 — for a marturion to them (leper healed). Pattern: miraculous evidence → legal testimony.
-Mat 10:18 — before governors+kings FOR MY SAKE → for a marturion to them+Gentiles. co: persecution (v17 scourge in synagogues). Persecution = delivery mechanism for marturion. SAME CONTEXT as Mat 24:9-14.
-**Mat 24:14** — for a marturion (witness) unto all nations. Not mere announcement — LEGAL EVIDENCE presented to nations. The gospel-preaching = a deposition before the court of nations.
-Mk 13:9 — for a marturion against them (before rulers). co: councils, synagogue-beatings. Luke parallel: "it shall turn to you for a marturion" (Lk 21:13). Persecution-context = testimony-context. They are the SAME event.
-Acts 4:33 — great power → gave marturion of resurrection. co: grace, power (dunamis G1411). Resurrection-witness = the content.
-2Tim 1:8 — not ashamed of marturion of our Lord, nor of prisoner. co: afflictions of the gospel (G4777 sumpatheo). Marturion + suffering = inseparable pair.
-Rev 15:5 — temple of tabernacle of marturion in heaven opened. co: TEMPLE. The heavenly marturion = the Decalogue ark (same word for tabernacle of testimony in Acts 7:44 / Heb 3:5). The gospel-witness IS covenant-witness.
+**G3142 marturion — testimony-as-evidence:**
+Mat 8:4 / Mk 1:44 / Lk 5:14 — for marturion (healed leper). Miraculous evidence → legal testimony.
+Mat 10:18 — before governors+kings for marturion. co: persecution. Persecution = delivery mechanism. = Mat 24:9-14.
+Mat 24:14 — marturion unto all nations = LEGAL EVIDENCE, not mere announcement.
+Mk 13:9 / Lk 21:13 — marturion before rulers. Persecution-context = testimony-context = SAME event.
+Acts 4:33 — great power → marturion of resurrection. Content = resurrection-witness.
+2Tim 1:8 — marturion + suffering = inseparable pair.
+Rev 15:5 — tabernacle of marturion opened = Decalogue ark (Acts 7:44). Gospel-witness IS covenant-witness.
 
-**G3141 marturia — testimony-as-evidence-given (key Revelation chain):**
-Rev 1:2,9 — John bore witness of word of God + marturia of Jesus Christ. John in Patmos FOR (dia G1223) word of God + marturia of Jesus.
-**Rev 6:9** — fifth seal: souls slain FOR (dia) word of God + marturia they held. co: altar (BLOOD), "how long?" (time). MARTYRDOM = holding the marturia. Slain witnesses under the altar.
-**Rev 11:7** — when they shall have FINISHED (teleo G5055) their marturia, the beast from the abyss makes war, overcomes, kills them. CRITICAL: (1) teleo = same verb as Jn 19:30 "it is finished." (2) The beast CAN ONLY act AFTER the testimony is teleo'd (completed/paid in full). (3) Beast kills them = martyrdom. The marturia-completion triggers the beast's permission to act.
-Rev 12:11 — overcame him by blood of Lamb + word of their marturia + loved not lives unto death. co: BLOOD, DEATH. Three-weapon victory: Lamb's blood + spoken testimony + martyrdom-willingness.
-Rev 12:17 — dragon wroth with woman → war with remnant who keep commandments of God + have marturia of Jesus. co: DRAGON, SEED, COMMANDMENTS. The remnant = defined by TWO markers: commandments + testimony.
-Rev 19:10 — marturia of Jesus IS the spirit of prophecy. co: PROPHECY. The testimony of Jesus = the animating force behind all prophecy.
-**Rev 20:4** — beheaded FOR (dia) marturia of Jesus + word of God. co: THRONES, JUDGMENT, REIGN. Those who DIED for the testimony = those who REIGN. Marturia→martyrdom→authority. The cost IS the crown.
+**G3141 marturia — Revelation chain:**
+Rev 1:2,9 — John in Patmos FOR word of God + marturia of Jesus.
+Rev 6:9 — 5th seal: souls slain FOR marturia. co: altar, BLOOD. Martyrdom = holding the marturia.
+Rev 11:7 — CRITICAL: when marturia FINISHED (teleo G5055 = Jn 19:30), beast from abyss kills them. Beast CANNOT act until testimony completed. Completion triggers beast's permission.
+Rev 12:11 — overcame by (1) Lamb's blood + (2) word of marturia + (3) loved not lives unto death.
+Rev 12:17 — remnant = commandments of God + marturia of Jesus. co: DRAGON.
+Rev 19:10 — marturia of Jesus IS spirit of prophecy.
+Rev 20:4 — beheaded FOR marturia → REIGN. Cost IS the crown. co: THRONES.
 
-**G5055 teleo → G5056 telos CHAIN (the completion trigger):**
-Mat 10:23 — ye shall not have teleo'd the cities of Israel till Son of Man comes. Preaching-to-Israel has a deadline tied to parousia.
-Lk 12:50 — baptism to be baptized with; straitened till teleo'd. Jesus's own testimony has a "finish" point = the cross.
-Jn 19:30 — "It is teleo'd" (tetelestai). The prototype: Jesus FINISHES his testimony, then dies. Pattern established: testimony-completion→death→resurrection→authority.
-**Rev 10:7** — in days of 7th angel's voice, mystery of God should be teleo'd (finished), as declared (euangelizo G2097!) to his servants the prophets. The "good-news'd" mystery is FINISHED at the 7th trumpet. Same verb euangelizo = gospel root.
-**Rev 11:7** — when they have teleo'd their marturia, beast from abyss kills them. 3.5 days dead → resurrection → ascend in cloud → 7th trumpet sounds (v15) → "kingdoms of this world are become kingdoms of our Lord and of his Christ" (v15).
+**G5055 teleo → G5056 telos CHAIN:**
+Mat 10:23 — not teleo'd cities of Israel till Son of Man comes. Deadline tied to parousia.
+Jn 19:30 — "tetelestai." Prototype: testimony-completion→death→resurrection→authority.
+Rev 10:7 — at 7th trumpet, mystery of God teleo'd (as euangelizo'd to prophets). Same verb euangelizo.
+Rev 11:7 — marturia teleo'd → beast kills → 3.5 days dead → resurrection → 7th trumpet (v15) → "kingdoms become our Lord's."
+**CHAIN**: marturion (Mat 24) → marturia (Rev 11) → teleo (Rev 11:7) → 7th trumpet → telos (Mat 24:14). Finishing witness = mechanism triggering end. Teleo→telos = same root.
 
-**CHAIN SYNTHESIS — Mat 24:14 → Rev 11:7 → Rev 10:7:**
-Mat 24:14: gospel-of-kingdom kerusso'd in all oikoumene for marturion → THEN telos comes.
-Rev 11:7: when marturia is teleo'd → beast kills witnesses → 3.5 days → resurrection → 7th trumpet.
-Rev 10:7: at 7th trumpet → mystery of God teleo'd (as euangelizo'd to prophets).
-The chain: marturion (Mat 24) → marturia (Rev 11) → teleo (Rev 11:7) → 7th trumpet → telos (Mat 24:14). The FINISHING of the witness IS the mechanism that triggers the end. Teleo (finish) → telos (end). Same root. The completion of testimony = the completion of the age.
-
-**"Preaching the kingdom" — broader usage (8× without "gospel"):**
-Lk 4:43 — "I MUST preach the kingdom of God to other cities; for therefore am I sent." co: PURPOSE (apostello = sent). Kingdom-preaching = the mission itself.
-Lk 8:1 — preaching + showing glad tidings (euangelizo) of kingdom of God. Twelve with him.
-Lk 9:2 — sent them to preach kingdom of God + heal. Delegation of the Mat 4:23/9:35 pattern.
-Lk 9:60 — "let the dead bury their dead; go thou and preach the kingdom of God." co: DEATH, urgency. Kingdom-preaching supersedes death-obligations.
-Acts 8:12 — Philip preaching things concerning kingdom of God + name of Jesus Christ. co: NAME. Kingdom + Name = inseparable pair post-resurrection.
-Acts 20:25 — Paul: "ye all among whom I have gone preaching the kingdom of God shall see my face no more." co: Paul's farewell. Paul understood his oikoumene circuit as kingdom-heralding.
-**Acts 28:31** — Paul preaching kingdom of God in Rome, "with all confidence, no man forbidding." FINAL VERSE OF ACTS. Paul in Rome = gospel reached the capital of the oikoumene. Luke's narrative arc: Jerusalem → Rome = marturion-to-oikoumene progression.
-**Rev 14:6** — angel with everlasting (aionios G166) gospel (euangelion) to preach to every nation+kindred+tongue+people. co: ANGEL, every ethnic unit. The final-scope gospel: angelic herald ensures every ethnos receives testimony. Parallels Mat 24:14 scope.
+**"Preaching the kingdom" (8× without "gospel"):**
+Lk 4:43 — "MUST preach kingdom to other cities; therefore sent." Mission-definition.
+Lk 8:1, 9:2 — preaching+healing delegated. Lk 9:60 — supersedes death-obligations.
+Acts 8:12 — kingdom of God + NAME of Jesus = inseparable pair post-resurrection.
+Acts 20:25 — Paul's oikoumene circuit as kingdom-heralding.
+Acts 28:31 — FINAL VERSE OF ACTS. Paul in Rome = gospel reached oikoumene capital. Jerusalem→Rome arc.
+Rev 14:6 — angel with everlasting gospel to every nation+kindred+tongue+people. co: ANGEL. = Mat 24:14 scope.
 
 ## THE GOSPEL PREACHED AT SINAI — AND BEFORE
 
