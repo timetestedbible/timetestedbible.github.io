@@ -8409,9 +8409,9 @@ body.biblical-timeline-open .top-nav-inner {
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: var(--surface-raised);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -8420,9 +8420,9 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .ttt-hero-download:hover {
-  background: var(--surface-hover, var(--surface-raised));
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
+  background: var(--accent-primary-subtle, rgba(212, 160, 23, 0.1));
+  border-color: var(--accent-primary-hover, var(--accent-primary));
+  color: var(--accent-primary-hover, var(--accent-primary));
   transform: translateY(-1px);
 }
 
