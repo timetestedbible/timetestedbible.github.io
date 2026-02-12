@@ -1,6 +1,6 @@
 ---
 ref: ROADMAP — Tribulation Events Sequence
-symbols: [SEAL, FOUR_HORSEMEN, FOUR_WINDS, BIRTH_PAINS, GOSPEL_OF_KINGDOM, ABOMINATION_OF_DESOLATION, FALL_OF_BABYLON_THE_GREAT, BABYLON, HARLOT, TEN_HORNS, TRUMPET, RAPTURE_GATHERING, RETURN_OF_CHRIST, SUDDEN_DESTRUCTION, SUN_MOON_STARS, SACKCLOTH, SMOKE, FIRE, EARTHQUAKE]
+symbols: [SEAL, FOUR_HORSEMEN, FOUR_WINDS, BIRTH_PAINS, GOSPEL_OF_KINGDOM, ABOMINATION_OF_DESOLATION, FALL_OF_BABYLON_THE_GREAT, BABYLON, HARLOT, TEN_HORNS, TRUMPET, RAPTURE_GATHERING, RETURN_OF_CHRIST, SUDDEN_DESTRUCTION, SUN_MOON_STARS, SACKCLOTH, SMOKE, FIRE, EARTHQUAKE, NORTH, WHO_DESTROYS_BABYLON]
 rev: 1
 churn: 1.00
 inputs:
@@ -14,6 +14,8 @@ inputs:
   symbols/rapture-gathering: [2, 1.50]
   symbols/seal: [1, 1.00]
   symbols/trumpet: [1, 1.00]
+  symbols/north: [1, 1.00]
+  symbols/who-destroys-babylon: [3, 1.10]
 dependents: [contexts/Mat/24.004-008, contexts/Rev/7.001-008, contexts/Rev/11.001-019, contexts/Rev/17.001-018, contexts/Rev/18.001-024]
 ---
 
@@ -77,7 +79,7 @@ Source: Mat 24:4-8 Critical Corrections §4 event ordering, cross-referenced wit
 ---
 
 ### EVENT 7: THE NATION FROM THE NORTH DESTROYS BABYLON THE GREAT
-**Symbolic Description:** Jeremiah identifies the destroyer: "out of the NORTH there cometh up a NATION against her" (Jer 50:3). "A people from the north, a great nation, and many kings" (Jer 50:41). "Spoilers shall come unto her from the NORTH" (Jer 51:48). This destroyer is described as a LION: "he shall come up like a LION from the swelling of Jordan" (Jer 50:44). The OT identifies Babylon's destroyer as: (1) from the north, (2) a great nation with many kings, (3) lion-like, (4) God's instrument (Jer 51:20 "thou art my battle axe and weapons of war").
+**Symbolic Description:** Jeremiah identifies the destroyer: "out of the NORTH there cometh up a NATION against her" (Jer 50:3). "A people from the north, a great nation, and many kings" (Jer 50:41). "Spoilers shall come unto her from the NORTH" (Jer 51:48). **H6828 tsaphown = "properly, HIDDEN" from H6845 tsaphan (to hide/conceal) — the north is literally "the hidden direction."** Judgment from concealment = SNARE mechanism (→ symbols/north). The SAME "from the north" that destroyed Judah (Jer 1:14, 4:6, 6:1) now destroys Babylon (Jer 50:3,41; 51:48) — instrument becomes target, same hidden approach reversed. This destroyer is described as a LION: "he shall come up like a LION from the swelling of Jordan" (Jer 50:44). The OT identifies Babylon's destroyer as: (1) from the north (= hidden/concealed), (2) a great nation with many kings, (3) lion-like, (4) God's instrument (Jer 51:20 "thou art my battle axe and weapons of war").
 
 At the Babylon-the-Great scale, the "nation from the north" = the COMPOSITE BEAST of Rev 13:2: LION mouth + BEAR feet + LEOPARD body = Dan 7's four empire-beasts MERGED into one end-time system. The TEN HORNS are the projections of this composite. Amos 5:19 gives the three-stage attack sequence: LION (open imperial assault) → BEAR (crushing force, no escape) → SERPENT (personal deceptive sting — even in your own house). These are not three separate enemies but three MODES of the same destroyer.
 
