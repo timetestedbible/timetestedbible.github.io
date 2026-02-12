@@ -381,6 +381,8 @@ const Layout = {
           if (this._scrollDownAccum > HIDE_THRESHOLD && currentY > nav.offsetHeight) {
             if (!this._navHidden) {
               this._navHidden = true;
+              // Use actual rendered height to collapse space (accounts for sub-nav)
+              nav.style.marginBottom = `-${nav.offsetHeight}px`;
               nav.classList.add('nav-hidden');
               body.classList.add('nav-hidden');
             }
@@ -390,8 +392,12 @@ const Layout = {
           this._scrollDownAccum = 0;
           if (this._navHidden) {
             this._navHidden = false;
+            // Transition margin-bottom back to 0, then clear inline style
+            nav.style.marginBottom = '0px';
             nav.classList.remove('nav-hidden');
             body.classList.remove('nav-hidden');
+            // Clear inline style after transition completes
+            setTimeout(() => { if (!this._navHidden) nav.style.marginBottom = ''; }, 300);
           }
         }
         

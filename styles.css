@@ -125,6 +125,7 @@ button {
 /* Auto-hide on scroll-down, show on scroll-up */
 .top-nav.nav-hidden {
   transform: translateY(-100%);
+  transition: transform 0.25s ease, margin-bottom 0.25s ease;
 }
 
 /* When sub-nav or search results are visible, expand header to fit */
