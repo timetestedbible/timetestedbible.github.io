@@ -10,8 +10,8 @@ defining_verses: [Ps 81:3, Prov 7:20, Mat 24:27, Josh 10:12-13, Zech 14:7, Joel 
 co_occurring: [TRUMPET, RETURN_OF_CHRIST, RAPTURE_GATHERING, FALL_OF_BABYLON, SUN_MOON_STARS, JERICHO, MARRIAGE, SMOKE, BLOOD, SACKCLOTH, FIRE]
 context_types: [prophetic oracle, apocalyptic, wisdom, narrative, law, psalm]
 all_verses: [Ps 81:3, Prov 7:20, Josh 10:12-13, Hab 3:11, Zech 14:7, Joel 2:31, Acts 2:20, Rev 6:12, Song 6:10, Isa 24:23, Isa 30:26, Ps 89:37, Ps 104:19, Mat 24:27]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.50
 inputs: {words/FULL-MOON: [1, 1.00]}
 dependents: [symbols/babylon-the-great, symbols/jericho, symbols/trumpet, symbols/return-of-christ, symbols/sun-moon-stars, symbols/rapture-gathering]
 ---
@@ -43,3 +43,24 @@ Joel 2:31 / Acts 2:20 / Rev 6:12 — Moon→blood. Smoke/fire (Rev 18:9, Joel 2:
 ## Pattern Summary
 
 The full moon (H3677 keseh) shares its root with the throne (H3678 kissé). The king's return IS the filling of the throne. The shofar is blown at this fullness (Ps 81:3). The husband returns at this appointed day (Prov 7:20). The celestial signs of His coming — light from east to west (Mat 24:27), evening light (Zech 14:7), both luminaries visible (Josh 10:12), blood-moon through smoke (Joel 2:31) — are all phenomena exclusive to the full moon. The moon-city (Jericho) falls at the trumpet. The bride is fair as the moon (Song 6:10). Every thread converges: His coming is at the full moon.
+
+## Rev 2 — OT כסא Survey + Eyes=Stars + Night Sky Reading
+
+**OT כסא SURVEY — THRONE READ AS FULL MOON:**
+- Ps 97:2: "clouds+darkness round about him, habitation of his כסא" = blood moon (clouds/darkness surround full moon). CAPSTONE VERSE.
+- 1Ki 22:19: "LORD on כסא, host of heaven standing by" = full moon surrounded by stars.
+- 1Ki 10:18-19: Solomon's כסא = ROUND behind, ivory+gold, 6 steps = round white full moon.
+- Isa 66:1: "heaven IS my כסא" = sky IS the keseh.
+- Ps 11:4: "LORD's כסא in heaven, his eyes behold" = keseh watches from sky.
+- Dan 7:9: "כסאות cast down, Ancient of Days sits, white as snow" = old authority-moons end, eternal One takes keseh. White=radiant full moon.
+- Isa 14:13: "exalt my כסא above stars" = counterfeit keseh.
+
+**CONSONANTAL IDENTITY:** Without vowel points: כֶּסֶא (keseh=full moon) and כִּסֵּא (kissé=throne) = IDENTICAL consonants כסא. Masoretic pointing forces choice; unpointed text holds both. If Revelation written in Hebrew (hebrewgospels.com argument), every כסא in Rev carries dual reading. 47 instances.
+
+**EYES = STARS:** Rev 5:6 (seven eyes=seven Spirits) + Rev 3:1 (seven Spirits=seven stars) + Rev 1:20 (seven stars=angels) → eyes=stars. Rev 4:6,8 "full of eyes" (מָלֵא עֵינַיִם) around כסא = full of stars around full moon. Dan 10:6 "eyes as lamps of fire" = eyes=lights=stars.
+
+**ANCIENT OF DAYS = KESEH PRESIDER:** Dan 7:9 white/radiant on כסא = full moon. On full-moon calendar, 1st day = keseh. Ancient of Days = One who has presided at every month-beginning since creation. Dan 7:13-14: Son of Man comes TO the כסא, kingdom given = kingdom transfers at keseh.
+
+**12 THRONES = 12 FULL MOONS:** Mat 19:28 twelve thrones judging twelve tribes = 12 months × 12 keseh-days. 12th = last = Adar = blood moon. Rev 4:4 twenty-four thronoi = 24 priestly courses = 2/month.
+
+**REV 4 = NIGHT SKY:** Unified reading: כסא in heaven = full moon in sky. Rainbow = lunar halo. 24 כסאות = monthly thrones. Lightnings/voices = moon speaks (Ps 19:2). Seven lamps = seven planets. Sea of glass = clear sky/reflecting sea. Four creatures full of עינים = four sky-directions full of stars. Not metaphor but description of what you see on the 15th.

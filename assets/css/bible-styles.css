@@ -2332,6 +2332,23 @@ body.sabbath-tester-open {
   padding: 2px 4px;
 }
 
+.day-cell .moon-phase.solar-eclipse {
+  /* Dark corona effect for solar eclipse */
+  filter: brightness(0.6) contrast(1.4);
+  text-shadow: 0 0 8px rgba(255, 200, 50, 0.9), 0 0 16px rgba(255, 165, 0, 0.6), 0 0 24px rgba(255, 140, 0, 0.3);
+  background: rgba(30, 30, 30, 0.6);
+  border-radius: 50%;
+  padding: 2px 4px;
+}
+
+.day-cell.blood-moon-day {
+  box-shadow: inset 0 0 0 2px rgba(180, 0, 0, 0.5);
+}
+
+.day-cell.solar-eclipse-day {
+  box-shadow: inset 0 0 0 2px rgba(255, 165, 0, 0.4);
+}
+
 /* Sabbath Days - gold-tinted background for more contrast */
 .day-cell.sabbath {
   background: linear-gradient(135deg, var(--calendar-sabbath-dark) 0%, var(--calendar-sabbath-light) 100%);
@@ -3534,6 +3551,14 @@ span.nav-arrow.month-nav {
   filter: sepia(1) saturate(5) hue-rotate(320deg) brightness(0.9);
   text-shadow: 0 0 10px rgba(180, 0, 0, 1), 0 0 20px rgba(255, 50, 50, 0.8), 0 0 30px rgba(200, 0, 0, 0.6);
   background: rgba(139, 0, 0, 0.3);
+  border-radius: 50%;
+  padding: 4px 6px;
+}
+
+.day-detail-feast-icon.solar-eclipse-icon {
+  filter: brightness(0.6) contrast(1.4);
+  text-shadow: 0 0 8px rgba(255, 200, 50, 0.9), 0 0 16px rgba(255, 165, 0, 0.6), 0 0 24px rgba(255, 140, 0, 0.3);
+  background: rgba(30, 30, 30, 0.5);
   border-radius: 50%;
   padding: 4px 6px;
 }
@@ -6007,7 +6032,7 @@ body.torah-info-open {
 }
 
 .about-modal {
-  background: linear-gradient(145deg, var(--surface-raised) 0%, #16213e 50%, var(--surface-raised) 100%);
+  background: linear-gradient(145deg, var(--surface-raised) 0%, var(--surface-sunken) 50%, var(--surface-raised) 100%);
   border-radius: 20px;
   max-width: 520px;
   width: 100%;
@@ -6177,7 +6202,7 @@ body.torah-info-open {
 }
 
 .ios-install-modal {
-  background: linear-gradient(145deg, var(--surface-raised) 0%, #16213e 50%, var(--surface-raised) 100%);
+  background: linear-gradient(145deg, var(--surface-raised) 0%, var(--surface-sunken) 50%, var(--surface-raised) 100%);
   border-radius: 16px;
   max-width: 380px;
   width: 100%;
@@ -7931,7 +7956,7 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .bible-loading-content {
-  background: linear-gradient(135deg, var(--surface-raised) 0%, #16213e 100%);
+  background: linear-gradient(135deg, var(--surface-raised) 0%, var(--surface-sunken) 100%);
   border: 1px solid var(--border-accent);
   border-radius: 12px;
   padding: 32px 48px;
@@ -9424,7 +9449,7 @@ body.biblical-timeline-open .top-nav-inner {
   z-index: 10200;
   max-width: 350px;
   padding: 16px 20px;
-  background: linear-gradient(135deg, var(--surface-raised) 0%, #16213e 100%);
+  background: linear-gradient(135deg, var(--surface-raised) 0%, var(--surface-sunken) 100%);
   border: 1px solid var(--accent-gold-strong);
   border-radius: 8px;
   box-shadow: 0 8px 32px var(--surface-scrim);
@@ -10578,7 +10603,8 @@ body.biblical-timeline-open .top-nav-inner {
    ═══════════════════════════════════════════════════════════════ */
 
 /* Hide research panel for non-Bible content types (no clickable words to study) */
-.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]) .research-panel {
+/* Exception: blog posts have clickable Strong's numbers */
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]) .research-panel {
   display: none !important;
 }
 
@@ -10664,14 +10690,6 @@ body.biblical-timeline-open .top-nav-inner {
     top: 0 !important; /* Override any legacy top offset */
   }
 
-  .bible-explorer-header {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 100 !important;
-    padding: 6px 10px !important;
-    background: var(--gradient-nav) !important;
-  }
-
   .bible-explorer-body {
     overflow: visible !important;
     height: auto !important;
@@ -10700,7 +10718,7 @@ body.biblical-timeline-open .top-nav-inner {
   body.research-panel-open .bible-content-wrapper {
     display: none !important;
   }
-  body.research-panel-open .bible-explorer-header {
+  body.research-panel-open #sub-nav-bar {
     display: none !important;
   }
 

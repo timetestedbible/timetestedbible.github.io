@@ -1,0 +1,548 @@
+<!-- Blog post fragment — loaded into reader-view content area -->
+<style>
+  .blog-article .passage {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    transition: opacity 0.2s;
+    line-height: 1.8;
+  }
+  .blog-article .passage .ref { color: var(--text-secondary); font-size: 13px; display: block; margin-top: 6px; }
+  .blog-article .passage .ref a { color: var(--text-secondary); text-decoration: none; }
+  .blog-article .passage .ref a:hover { color: var(--accent-primary); text-decoration: underline; }
+  .blog-article .note { color: var(--text-tertiary); font-size: 13px; margin: -8px 0 16px 20px; font-style: italic; }
+  .blog-article .prose { margin: 14px 0; line-height: 1.9; }
+  .blog-article ul { color: var(--text-primary); }
+
+  .blog-article .ph {
+    border-radius: 3px; padding: 1px 4px; cursor: pointer;
+    transition: all 0.15s; font-weight: 500;
+  }
+  .blog-article .ph.active { text-decoration: underline; filter: brightness(1.3); }
+  .blog-article .ph.dimmed-phrase { opacity: 0.3; }
+
+  .blog-article .ph[data-theme="silence"] { color: #c084fc; background: rgba(192,132,252,0.12); }
+  .blog-article .ph[data-theme="full-moon"] { color: var(--accent-gold); background: var(--accent-gold-subtle); }
+  .blog-article .ph[data-theme="trumpet"] { color: #fb923c; background: rgba(251,146,60,0.12); }
+  .blog-article .ph[data-theme="blood-moon"] { color: #e94560; background: rgba(233,69,96,0.12); }
+  .blog-article .ph[data-theme="stood-still"] { color: var(--accent-primary); background: var(--accent-primary-subtle); }
+  .blog-article .ph[data-theme="walls-fall"] { color: #f43f5e; background: rgba(244,63,94,0.12); }
+  .blog-article .ph[data-theme="come-out"] { color: #2dd4bf; background: rgba(45,212,191,0.12); }
+  .blog-article .ph[data-theme="fire"] { color: #ef4444; background: rgba(239,68,68,0.12); }
+  .blog-article .ph[data-theme="peace"] { color: #4ade80; background: rgba(74,222,128,0.12); }
+  .blog-article .ph[data-theme="jubilee"] { color: #a78bfa; background: rgba(167,139,250,0.12); }
+  .blog-article .ph[data-theme="throne"] { color: var(--accent-gold); background: var(--accent-gold-subtle); }
+
+  .blog-article h2 { color: var(--text-primary); margin: 48px 0 16px; font-weight: 700; font-size: 1.5em; border-bottom: 2px solid var(--border-default, var(--border-subtle)); padding-bottom: 8px; scroll-margin-top: 16px; }
+  .blog-article h3 { color: var(--text-primary); margin: 28px 0 10px; font-weight: 600; font-size: 1.15em; scroll-margin-top: 16px; }
+
+  .blog-toc { background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .blog-toc .toc-group { font-weight: 600; color: var(--text-primary); padding: 6px 0 2px; font-size: 14px; cursor: pointer; }
+  .blog-toc .toc-group:hover { color: var(--accent-primary); }
+  .blog-toc .toc-sub { padding-left: 16px; }
+  .blog-toc .toc-sub a { color: var(--text-secondary); text-decoration: none; display: block; padding: 2px 0; font-size: 13px; line-height: 1.5; cursor: pointer; }
+  .blog-toc .toc-sub a:hover { color: var(--accent-primary); }
+
+  .blog-article .intro { color: var(--text-secondary); font-style: italic; margin-bottom: 24px; }
+  .blog-article .blog-img { max-width: 100%; border-radius: 8px; margin: 16px 0; border: 1px solid var(--border-subtle); }
+  .blog-article .img-caption { color: var(--text-tertiary); font-size: 12px; text-align: center; margin: -8px 0 16px; }
+</style>
+
+<div class="blog-article">
+
+<p class="intro">On the first day of the twelfth month — just weeks from now — a total lunar eclipse will turn the full moon blood-red. The keseh will become blood. For those who know what Scripture says about this date, this moon, and this year, the convergence is difficult to dismiss.</p>
+
+<nav class="blog-toc" onclick="if(event.target.dataset.to){event.preventDefault();var t=document.getElementById(event.target.dataset.to);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}">
+
+<div class="toc-group" data-to="part1">I. The כסא — Throne and Full Moon Are the Same Word</div>
+<div class="toc-sub">
+<a data-to="lords-day">John Was on the Lord's Day</a>
+<a data-to="root">The Moon and the Throne Share a Root</a>
+<a data-to="same-word">The Same Word</a>
+<a data-to="ot-survey">The כסא Through Hebrew Scripture</a>
+<a data-to="eyes-stars">Eyes = Stars</a>
+<a data-to="ancient-days">Ancient of Days</a>
+<a data-to="day-of-yhwh">The Day of 𐤉𐤄𐤅𐤄</a>
+<a data-to="twelve">Twelve כסאות = Twelve Full Moons</a>
+<a data-to="night-sky">The Throne Room IS the Night Sky</a>
+</div>
+
+<div class="toc-group" data-to="part2">II. Signs Written in the Sky</div>
+<div class="toc-sub">
+<a data-to="signs">Every Sign Is a Full-Moon Phenomenon</a>
+<a data-to="blood-moon">The Blood Moon</a>
+<a data-to="lions-foot">The Lion's Foot Dipped in Blood</a>
+<a data-to="two-witnesses">Sun and Moon as Two Witnesses?</a>
+</div>
+
+<div class="toc-group" data-to="part3">III. Before the Trumpet</div>
+<div class="toc-sub">
+<a data-to="silence">Silence</a>
+<a data-to="be-still">Be Still</a>
+<a data-to="moon-city">The Moon City</a>
+<a data-to="last-trump">The Last Trump</a>
+</div>
+
+<div class="toc-group" data-to="part4">IV. The Date</div>
+<div class="toc-sub">
+<a data-to="adar1">First of the Twelfth Month</a>
+<a data-to="horsemen">Five Days Before: Horsemen Scout</a>
+<a data-to="moses">Moses Vanished on This Date</a>
+<a data-to="jubilee">The Fall of Babylon IS the Jubilee</a>
+</div>
+
+<div class="toc-group" data-to="part5">V. David's Enacted Parable</div>
+<div class="toc-sub">
+<a data-to="david">David's Empty Seat at the כסא Feast</a>
+<a data-to="convergence">The Convergence</a>
+</div>
+
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part1">I. The כסא — Throne and Full Moon Are the Same Word</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="lords-day">John Was on the Lord's Day</h3>
+
+<div class="passage" data-themes="throne full-moon">
+I was in the Spirit on the <strong>Lord's day</strong>.
+<span class="ref"><a href="/reader/bible/kjv/Revelation/1#v10" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:1,verse:10}})">Revelation 1:10</a></span>
+</div>
+
+<p class="prose">If "the Lord's day" = "the day of 𐤉𐤄𐤅𐤄" = His keseh-day = the full moon, then John received the entire Revelation <strong>on a full moon</strong>. And the first thing he sees:</p>
+
+<div class="passage" data-themes="throne full-moon" style="direction:rtl; font-size: 1.1em; text-align: right;">
+וְשִׁבְעָה <strong>כּוֹכָבִים</strong> בְּיַד יְמִינוֹ וּמִפִּיו הֹלֵךְ <strong>חֶרֶב</strong> פִּיפִיּוֹת וּמַרְאֵהוּ <strong>זֹרֵחַ כַּשֶּׁמֶשׁ</strong>
+<span class="ref" style="direction:ltr; text-align:left;"><a href="/reader/bible/kjv/Revelation/1#v16" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:1,verse:16}})">Revelation 1:16</a></span>
+</div>
+
+<p class="prose">Seven <strong>stars</strong> (כּוֹכָבִים) at His <a href="#" class="strongs-link" onclick="navigateToStrongs('H3225', event)">H3225</a> <em>yamin</em> — which means both "right side" and "south." A <strong>sword</strong> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H2719', event)">H2719</a> chereb) from His mouth. His appearance <strong>shining like the sun</strong>.</p>
+
+<p class="prose">The constellation Leo — the Lion of Judah — has seven stars forming its head and mane, known as <em>the Sickle</em>. On the night of the blood moon, these seven stars sit at the right side of the כסא. And the sickle is not just a shape — it is a command:</p>
+
+<div class="passage" data-themes="throne full-moon">
+<strong>Thrust in thy sickle</strong>, and reap: for the time is come for thee to reap; for the <strong>harvest</strong> of the earth is ripe.
+<span class="ref"><a href="/reader/bible/kjv/Revelation/14#v15" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:14,verse:15}})">Revelation 14:15-16</a></span>
+</div>
+<p class="note">The Son of Man on the cloud thrusts in His sickle. The seven-star Sickle of Leo sits at the right side of the full moon. The harvest tool is named in the sky.</p>
+
+<p class="prose">The first vision of Revelation is a full-moon-night scene: the radiant figure with the Lion's seven-star Sickle at his right side, seen on the keseh-day. The harvest is at hand.</p>
+
+<h3 id="root">The Moon and the Throne Share a Root</h3>
+
+<p class="prose">The Hebrew word for full moon is <strong>keseh</strong> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H3677', event)">H3677</a>), from the root <a href="#" class="strongs-link" onclick="navigateToStrongs('H3680', event)">H3680</a> <em>kasah</em> = "to fill up." The Hebrew word for throne is <strong>kissé</strong> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H3678', event)">H3678</a>) — from the same root. When the moon reaches fullness, the <span class="ph" data-theme="throne">throne</span> is filled. When the king takes his seat, the <span class="ph" data-theme="full-moon">moon is full</span>.</p>
+
+<div class="passage" data-themes="trumpet full-moon">
+Blow the horn at the new moon, at the <span class="ph" data-theme="full-moon">full moon</span> for our feast-day.
+<span class="ref"><a href="/reader/bible/jps/Psalms/81#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'jps',book:'Psalms',chapter:81,verse:3}})">Psalm 81:3</a> (JPS)</span>
+</div>
+<p class="note"><span class="ph" data-theme="trumpet">Trumpet</span> + <span class="ph" data-theme="full-moon">full moon</span> bound in one command.</p>
+
+<div class="passage" data-themes="full-moon throne">
+He hath taken the bag of money with him; he will come home at the <span class="ph" data-theme="full-moon">full moon</span>.
+<span class="ref"><a href="/reader/bible/jps/Proverbs/7#v20" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'jps',book:'Proverbs',chapter:7,verse:20}})">Proverbs 7:20</a> (JPS)</span>
+</div>
+
+<p class="prose">The husband departs. He returns at the <span class="ph" data-theme="full-moon">keseh</span>. And Psalm 89 states the equation outright:</p>
+
+<div class="passage" data-themes="throne full-moon">
+His seed shall endure for ever, and his <span class="ph" data-theme="throne">throne</span> as the sun before me. It shall be established for ever as the <span class="ph" data-theme="full-moon">moon</span>, and as a faithful witness in heaven.
+<span class="ref"><a href="/reader/bible/kjv/Psalms/89#v36" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:89,verse:36}})">Psalm 89:36-37</a></span>
+</div>
+<p class="note">The <span class="ph" data-theme="throne">throne</span> IS the sun. Established AS the <span class="ph" data-theme="full-moon">moon</span>. The moon = a faithful witness (<a href="#" class="strongs-link" onclick="navigateToStrongs('H539', event)">H539</a> aman).</p>
+
+<h3 id="same-word">The Same Word</h3>
+
+<p class="prose">Remove the vowel points and look at the consonants alone:</p>
+
+<ul style="margin: 12px 0 12px 24px; line-height: 2;">
+<li><strong>כֶּסֶא</strong> (keseh) = full moon — consonants: <strong>כסא</strong></li>
+<li><strong>כִּסֵּא</strong> (kissé) = throne — consonants: <strong>כסא</strong></li>
+</ul>
+
+<p class="prose"><strong>Identical.</strong> כסא = כסא. The only difference is the vowel points added 600-900 AD. There is a strong case that Revelation was originally written in Hebrew (<a href="https://hebrewgospels.com" target="_blank" rel="noopener">hebrewgospels.com</a>). The Hebrew text of Revelation 4:2:</p>
+
+<div class="passage" data-themes="throne full-moon" style="direction:rtl; font-size: 1.15em; text-align: right;">
+וראיתי <strong>כסא</strong> אחד ישב בשמים ועל ה<strong>כסא</strong> ישב אחד
+<span class="ref" style="direction:ltr; text-align:left;"><a href="/reader/bible/kjv/Revelation/4#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:4,verse:2}})">Revelation 4:2</a> (unpointed)</span>
+</div>
+
+<p class="prose">"I saw a <strong>כסא</strong> set in heaven." Throne or full moon? Both. Every כסא in Revelation — all 47 of them — carries both readings. And it is not unusual for the כסא to speak:</p>
+
+<div class="passage" data-themes="full-moon">
+<strong>Night unto night showeth knowledge.</strong> There is no speech nor language, where their voice is not heard. Their line is gone out through all the earth.
+<span class="ref"><a href="/reader/bible/kjv/Psalms/19#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:19,verse:2}})">Psalm 19:2-4</a></span>
+</div>
+
+<p class="prose">Night unto night — the moon's domain. The moon shows knowledge. Its voice reaches all the earth. A Greek reader sees <em>thronos</em>. An English reader sees "throne." A Hebrew reader sees כסא — and hears the full moon.</p>
+
+<h3 id="ot-survey">The כסא Through Hebrew Scripture</h3>
+
+<p class="prose">Once you hear it, you cannot unhear it:</p>
+
+<div class="passage" data-themes="throne blood-moon">
+<span class="ph" data-theme="blood-moon">Clouds and darkness</span> are round about him: righteousness and judgment are the habitation of his <span class="ph" data-theme="throne">כסא</span>.
+<span class="ref"><a href="/reader/bible/kjv/Psalms/97#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:97,verse:2}})">Psalm 97:2</a></span>
+</div>
+<p class="note"><span class="ph" data-theme="blood-moon">Clouds and darkness</span> surrounding the כסא = a lunar eclipse. This is what a blood moon looks like. And it says this is the <em>habitation</em> of His כסא.</p>
+
+<div class="passage" data-themes="throne full-moon">
+I saw the LORD sitting on his <span class="ph" data-theme="throne">כסא</span>, and all the host of heaven standing by him on his right hand and on his left.
+<span class="ref"><a href="/reader/bible/kjv/1Kings/22#v19" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Kings',chapter:22,verse:19}})">1 Kings 22:19</a></span>
+</div>
+<p class="note">The כסא surrounded by the host of heaven = the full moon at center, stars arrayed on every side.</p>
+
+<div class="passage" data-themes="throne full-moon">
+The king made a great <span class="ph" data-theme="throne">כסא</span> of ivory, overlaid with gold. The <span class="ph" data-theme="throne">כסא</span> had six steps, and the top was <strong>round</strong> behind.
+<span class="ref"><a href="/reader/bible/kjv/1Kings/10#v18" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Kings',chapter:10,verse:18}})">1 Kings 10:18-19</a></span>
+</div>
+<p class="note">Solomon's כסא is <strong>round</strong>. White ivory overlaid with gold. The physical throne was built in the shape of what כסא already means.</p>
+
+<div class="passage" data-themes="throne full-moon">
+The <strong>heaven</strong> is my <span class="ph" data-theme="throne">כסא</span>, and the earth is my footstool.
+<span class="ref"><a href="/reader/bible/kjv/Isaiah/66#v1" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Isaiah',chapter:66,verse:1}})">Isaiah 66:1</a></span>
+</div>
+<p class="note">Heaven IS the כסא. The sky IS the full-moon throne.</p>
+
+<div class="passage" data-themes="throne">
+I will exalt my <span class="ph" data-theme="throne">כסא</span> above the stars of God.
+<span class="ref"><a href="/reader/bible/kjv/Isaiah/14#v13" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Isaiah',chapter:14,verse:13}})">Isaiah 14:13</a></span>
+</div>
+<p class="note">The counterfeit: Satan wants his כסא above the stars. His full moon above the host of heaven.</p>
+
+<h3 id="eyes-stars">Eyes = Stars</h3>
+
+<p class="prose">Revelation makes the equation explicit: <a href="/reader/bible/kjv/Revelation/5#v6" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:5,verse:6}})">Rev 5:6</a> — seven <strong>eyes</strong> = seven <strong>Spirits</strong>. <a href="/reader/bible/kjv/Revelation/3#v1" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:3,verse:1}})">Rev 3:1</a> — seven <strong>Spirits</strong> = seven <strong>stars</strong>. Therefore: eyes = stars.</p>
+
+<div class="passage" data-themes="throne full-moon" style="direction:rtl; font-size: 1.1em; text-align: right;">
+וּבְתוֹךְ הַכִּסֵּא וְסָבִיב לְהַכִּסֵּא אַרְבַּע חַיּוֹת <strong>מָלֵא עֵינַיִם</strong>
+<span class="ref" style="direction:ltr; text-align:left;"><a href="/reader/bible/kjv/Revelation/4#v6" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:4,verse:6}})">Revelation 4:6</a></span>
+</div>
+
+<p class="prose"><strong>מָלֵא עֵינַיִם</strong> — "full of eyes" = full of stars. The night sky around the full moon — the כסא at center, the עֵינַיִם filling every direction.</p>
+
+<h3 id="ancient-days">Ancient of Days — The Keseh Presider</h3>
+
+<div class="passage" data-themes="throne full-moon">
+The <strong>Ancient of days</strong> did sit, whose garment was <strong>white as snow</strong>, and the hair of his head like the <strong>pure wool</strong>: his <span class="ph" data-theme="throne">כסא</span> was like the fiery flame.
+<span class="ref"><a href="/reader/bible/kjv/Daniel/7#v9" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Daniel',chapter:7,verse:9}})">Daniel 7:9</a></span>
+</div>
+
+<p class="prose">White as snow. Pure wool. Radiant. The brightest white object in the night sky — the <span class="ph" data-theme="full-moon">full moon</span> at its seat. On a full-moon calendar, the first day of every month IS the keseh. The Ancient of days is the One who has been at every keseh since He appointed the moon for <a href="#" class="strongs-link" onclick="navigateToStrongs('H4150', event)">H4150</a> mo'edim (<a href="/reader/bible/kjv/Psalms/104#v19" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:104,verse:19}})">Psalm 104:19</a>). And at the last keseh, the Son of Man approaches and receives the <span class="ph" data-theme="throne">kingdom</span> (<a href="/reader/bible/kjv/Daniel/7#v13" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Daniel',chapter:7,verse:13}})">Daniel 7:13-14</a>).</p>
+
+<h3 id="day-of-yhwh">The Day of 𐤉𐤄𐤅𐤄 — His Keseh-Day</h3>
+
+<p class="prose">If כסא = keseh = the full moon, then "the day of 𐤉𐤄𐤅𐤄" is not a vague future era. It is a specific <strong>keseh-day</strong>. The day the <span class="ph" data-theme="throne">throne</span> is occupied. The day the <span class="ph" data-theme="full-moon">full moon</span> rises.</p>
+
+<div class="passage" data-themes="silence throne">
+<span class="ph" data-theme="silence">Hold thy peace</span> at the presence of the Lord GOD: for the <strong>day of 𐤉𐤄𐤅𐤄</strong> is at hand.
+<span class="ref"><a href="/reader/bible/kjv/Zephaniah/1#v7" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Zephaniah',chapter:1,verse:7}})">Zephaniah 1:7</a></span>
+</div>
+<p class="note">Silence before the keseh. The day is at hand.</p>
+
+<div class="passage" data-themes="blood-moon throne">
+Woe unto you that desire the <strong>day of 𐤉𐤄𐤅𐤄</strong>! the day of 𐤉𐤄𐤅𐤄 is <span class="ph" data-theme="blood-moon">darkness</span>, and not light.
+<span class="ref"><a href="/reader/bible/kjv/Amos/5#v18" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Amos',chapter:5,verse:18}})">Amos 5:18</a></span>
+</div>
+<p class="note">The keseh-day arrives as darkness. The full moon turns to blood. <span class="ph" data-theme="blood-moon">Clouds and darkness</span> are the habitation of His כסא (Psalm 97:2).</p>
+
+<h3 id="twelve">Twelve כסאות — Twelve Full Moons</h3>
+
+<div class="passage" data-themes="throne">
+Ye also shall sit upon <strong>twelve <span class="ph" data-theme="throne">thrones</span></strong>, judging the twelve tribes of Israel.
+<span class="ref"><a href="/reader/bible/kjv/Matthew/19#v28" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Matthew',chapter:19,verse:28}})">Matthew 19:28</a></span>
+</div>
+
+<p class="prose">Twelve כסאות. Twelve months. Twelve <span class="ph" data-theme="full-moon">full moons</span>. The <strong>last</strong> of the twelve = the 12th month = Adar = where the <span class="ph" data-theme="blood-moon">blood moon</span> falls. And 24 thronoi around THE thronos (<a href="/reader/bible/kjv/Revelation/4#v4" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:4,verse:4}})">Rev 4:4</a>) = 24 priestly courses = 2 per month = 12 months of keseh-service.</p>
+
+<h3 id="night-sky">The Throne Room IS the Night Sky</h3>
+
+<div class="passage" data-themes="throne full-moon" style="line-height: 2.2;">
+A <span class="ph" data-theme="throne">כסא</span> was set in heaven <span class="note" style="display:inline; margin:0;">— the full moon set in the sky</span><br>
+and one sat on the <span class="ph" data-theme="throne">כסא</span> <span class="note" style="display:inline; margin:0;">— white and radiant</span><br>
+a rainbow round about <span class="note" style="display:inline; margin:0;">— the lunar halo</span><br>
+24 <span class="ph" data-theme="throne">כסאות</span> round about <span class="note" style="display:inline; margin:0;">— 12 months of service</span><br>
+lightnings and voices from the <span class="ph" data-theme="throne">כסא</span> <span class="note" style="display:inline; margin:0;">— the moon speaks (Ps 19:2)</span><br>
+seven lamps of fire <span class="note" style="display:inline; margin:0;">— the seven planets</span><br>
+a sea of glass like crystal <span class="note" style="display:inline; margin:0;">— the clear night sky</span><br>
+four living creatures <strong>full of eyes</strong> <span class="note" style="display:inline; margin:0;">— four directions, full of stars</span><br>
+<span class="ref"><a href="/reader/bible/kjv/Revelation/4#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:4,verse:2}})">Revelation 4:2-8</a></span>
+</div>
+
+<p class="prose">John did not describe an alien room in another dimension. He described the sky. In Hebrew. And the word he used for the seat at the center — כסא — is the same word as the <span class="ph" data-theme="full-moon">full moon</span> that sits there.</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part2">II. Signs Written in the Sky</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="signs">Every Sign of His Coming Is a Full-Moon Phenomenon</h3>
+
+<div class="passage" data-themes="full-moon">
+As the lightning [<a href="#" class="strongs-link" onclick="navigateToStrongs('G796', event)">G796</a> astrapē = bright shining] cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of man be.
+<span class="ref"><a href="/reader/bible/kjv/Matthew/24#v27" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Matthew',chapter:24,verse:27}})">Matthew 24:27</a></span>
+</div>
+<p class="note">The <span class="ph" data-theme="full-moon">full moon</span> is the only body that rises east and illuminates west all night.</p>
+
+<div class="passage" data-themes="full-moon stood-still">
+Sun, <span class="ph" data-theme="stood-still">stand thou still</span> upon Gibeon; and thou, Moon, in the valley of Ajalon.
+<span class="ref"><a href="/reader/bible/kjv/Joshua/10#v12" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Joshua',chapter:10,verse:12}})">Joshua 10:12-13</a></span>
+</div>
+<p class="note">Sun west, moon east = opposition = <span class="ph" data-theme="full-moon">full moon</span> only.</p>
+
+<div class="passage" data-themes="full-moon stood-still">
+The <span class="ph" data-theme="stood-still">sun and moon stood still</span> in their habitation.
+<span class="ref"><a href="/reader/bible/kjv/Habakkuk/3#v11" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Habakkuk',chapter:3,verse:11}})">Habakkuk 3:11</a></span>
+</div>
+
+<div class="passage" data-themes="full-moon">
+At evening time it shall be light.
+<span class="ref"><a href="/reader/bible/kjv/Zechariah/14#v7" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Zechariah',chapter:14,verse:7}})">Zechariah 14:7</a></span>
+</div>
+<p class="note">Evening light = <span class="ph" data-theme="full-moon">full moon</span> rising at sunset.</p>
+
+<h3 id="blood-moon">The Blood Moon</h3>
+
+<p class="prose">Joel 2:31 says the moon will turn to blood "before" the great day. The Hebrew word is <strong>liphnei</strong> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H6440', event)">H6440</a>) — literally "to the <em>face</em> of." Peter settles the reading:</p>
+
+<div class="passage" data-themes="blood-moon">
+<strong>This is that</strong> which was spoken by the prophet Joel... <span class="ph" data-theme="blood-moon">The sun shall be turned into darkness</span>, and the <span class="ph" data-theme="blood-moon">moon into blood</span>, before that great and notable day of the Lord come.
+<span class="ref"><a href="/reader/bible/kjv/Acts/2#v16" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Acts',chapter:2,verse:16}})">Acts 2:16-20</a></span>
+</div>
+
+<p class="prose">"<strong>This IS that.</strong>" Peter declared the Joel prophecy was already unfolding at Pentecost. The liphnei window is not a narrow gap. It is the era that faces the great day. But the moon was not blood for 2,000 years. The specific signs happen at specific moments <em>within</em> that era. Peter proves we are inside the window. The blood moon tells you where in the window you are standing.</p>
+
+<h3 id="lions-foot">The Lion's Foot Dipped in Blood</h3>
+
+<img class="blog-img" src="/assets/img/BloodMoonFeetLeo.jpg" alt="Blood moon at the feet of Leo — Stellarium, March 3, 2026">
+<p class="img-caption">Stellarium — March 3, 2026: Total lunar eclipse at the feet of Leo</p>
+
+<p class="prose">The blood moon falls at the <strong>feet of Leo</strong> — the Lion. And Scripture says:</p>
+
+<div class="passage" data-themes="blood-moon">
+That thy <strong>foot may be dipped in the blood</strong> of thine enemies, and the tongue of thy dogs in the same.
+<span class="ref"><a href="/reader/bible/kjv/Psalms/68#v23" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:68,verse:23}})">Psalm 68:23</a></span>
+</div>
+
+<p class="prose">Leo = the Lion of Judah (<a href="/reader/bible/kjv/Revelation/5#v5" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:5,verse:5}})">Rev 5:5</a>). The blood moon at the Lion's feet IS the Lion's foot dipped in blood. And Psalm 68 is the same psalm Paul quotes for Christ's ascension: "<strong>Thou hast ascended on high, thou hast led captivity captive</strong>" (v18 = <a href="/reader/bible/kjv/Ephesians/4#v8" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Ephesians',chapter:4,verse:8}})">Eph 4:8</a>).</p>
+
+<div class="passage" data-themes="blood-moon">
+He was clothed with a vesture <strong>dipped in blood</strong>: and his name is called The Word of God.
+<span class="ref"><a href="/reader/bible/kjv/Revelation/19#v13" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:19,verse:13}})">Revelation 19:13</a></span>
+</div>
+
+<div class="passage" data-themes="blood-moon">
+Judah is a <strong>lion's</strong> whelp... He washed his garments in wine, and his clothes in the <strong>blood of grapes</strong>.
+<span class="ref"><a href="/reader/bible/kjv/Genesis/49#v9" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Genesis',chapter:49,verse:9}})">Genesis 49:9,11</a></span>
+</div>
+<p class="note">The Lion. Blood. Garments. And the constellation Leo — Judah's lion — has the blood moon at its feet on Adar 1.</p>
+
+<h3 id="two-witnesses">Are the Sun and Moon the Two Witnesses?</h3>
+
+<p class="prose">The two witnesses prophesy 1,260 days "clothed in <span class="ph" data-theme="blood-moon">sackcloth</span>." The sun becomes "black as <span class="ph" data-theme="blood-moon">sackcloth</span>" (Rev 6:12). Same word. Same covering. The sun and moon are <strong>two</strong> great lights (Gen 1:16), two <strong>lampstands</strong> in the heavens, whose testimony reaches all the earth (<a href="/reader/bible/kjv/Psalms/19#v1" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:19,verse:1}})">Ps 19:1-4</a>). The moon IS a "faithful witness" (<a href="/reader/bible/kjv/Psalms/89#v37" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:89,verse:37}})">Ps 89:37</a>).</p>
+
+<p class="prose">Not everything maps cleanly — the olive trees also represent Israel (Rom 11:17-24). But the typological resonance is real: the sun and moon testify, wear sackcloth, go dark, and their restoration signals the <span class="ph" data-theme="throne">kingdom</span>.</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part3">III. Before the Trumpet</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="silence">Silence</h3>
+
+<div class="passage" data-themes="silence">
+<span class="ph" data-theme="silence">Let all the earth keep silence before him</span>.
+<span class="ref"><a href="/reader/bible/kjv/Habakkuk/2#v20" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Habakkuk',chapter:2,verse:20}})">Habakkuk 2:20</a></span>
+</div>
+
+<div class="passage" data-themes="silence trumpet">
+<span class="ph" data-theme="silence">Ye shall not shout, nor make any noise with your voice</span>, until the day I bid you <span class="ph" data-theme="trumpet">shout</span>.
+<span class="ref"><a href="/reader/bible/kjv/Joshua/6#v10" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Joshua',chapter:6,verse:10}})">Joshua 6:10</a></span>
+</div>
+
+<div class="passage" data-themes="silence trumpet">
+There was <span class="ph" data-theme="silence">silence in heaven</span> about the space of half an hour.
+<span class="ref"><a href="/reader/bible/kjv/Revelation/8#v1" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:8,verse:1}})">Revelation 8:1</a></span>
+</div>
+
+<div class="passage" data-themes="silence">
+<span class="ph" data-theme="silence">Be silent, O all flesh, before the LORD</span>.
+<span class="ref"><a href="/reader/bible/kjv/Zechariah/2#v13" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Zechariah',chapter:2,verse:13}})">Zechariah 2:13</a></span>
+</div>
+
+<h3 id="be-still">Be Still</h3>
+
+<div class="passage" data-themes="silence throne">
+<span class="ph" data-theme="silence">Be still</span>, and know that I am God.
+<span class="ref"><a href="/reader/bible/kjv/Psalms/46#v10" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Psalms',chapter:46,verse:10}})">Psalm 46:10</a></span>
+</div>
+
+<p class="prose"><span class="ph" data-theme="silence">Silence</span> before the כסא. The sheep — <span class="ph" data-theme="silence">silent</span> before the shearers (<a href="/reader/bible/kjv/Isaiah/53#v7" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Isaiah',chapter:53,verse:7}})">Isa 53:7</a>). Be still. Then the <span class="ph" data-theme="trumpet">shofar</span>. Then the <span class="ph" data-theme="walls-fall">walls fall</span>.</p>
+
+<h3 id="moon-city">The Moon City</h3>
+
+<p class="prose">Jericho (<a href="#" class="strongs-link" onclick="navigateToStrongs('H3405', event)">H3405</a>) from <a href="#" class="strongs-link" onclick="navigateToStrongs('H3394', event)">H3394</a> <strong>yareach</strong> = "moon." The moon city falls at the <span class="ph" data-theme="trumpet">trumpet</span>:</p>
+
+<div class="passage" data-themes="trumpet walls-fall">
+The people <span class="ph" data-theme="trumpet">shouted</span> when the priests <span class="ph" data-theme="trumpet">blew with the trumpets</span>... and <span class="ph" data-theme="walls-fall">the wall fell down flat</span>.
+<span class="ref"><a href="/reader/bible/kjv/Joshua/6#v20" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Joshua',chapter:6,verse:20}})">Joshua 6:20</a></span>
+</div>
+
+<div class="passage" data-themes="come-out fire">
+They <span class="ph" data-theme="come-out">brought out</span> Rahab... And they <span class="ph" data-theme="fire">burnt the city with fire</span>.
+<span class="ref"><a href="/reader/bible/kjv/Joshua/6#v22" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Joshua',chapter:6,verse:22}})">Joshua 6:22-24</a></span>
+</div>
+<p class="note"><span class="ph" data-theme="come-out">Extraction</span> THEN <span class="ph" data-theme="fire">fire</span>. Same pattern as Rev 18:4 → 18:8.</p>
+
+<div class="passage" data-themes="trumpet throne walls-fall">
+The seventh angel <span class="ph" data-theme="trumpet">sounded</span>... <span class="ph" data-theme="throne">The kingdoms of this world are become the kingdoms of our Lord</span>.
+<span class="ref"><a href="/reader/bible/kjv/Revelation/11#v15" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Revelation',chapter:11,verse:15}})">Revelation 11:15</a></span>
+</div>
+
+<h3 id="last-trump">The Last Trump</h3>
+
+<div class="passage" data-themes="trumpet">
+At the <span class="ph" data-theme="trumpet">last trump</span>: for the <span class="ph" data-theme="trumpet">trumpet</span> shall sound, and the dead shall be raised.
+<span class="ref"><a href="/reader/bible/kjv/1Corinthians/15#v52" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Corinthians',chapter:15,verse:52}})">1 Corinthians 15:52</a></span>
+</div>
+
+<p class="prose">"Jubilee" = <strong>yobel</strong> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H3104', event)">H3104</a>) = "ram's horn; trumpet." The Jubilee IS a trumpet blast. The "last trump" works at three scales: the last of seven <span class="ph" data-theme="trumpet">trumpets</span> (Rev 11:15), the last <span class="ph" data-theme="full-moon">full-moon</span> trumpet of the year (Adar), and the last <span class="ph" data-theme="jubilee">jubilee</span> trumpet of the 70th cycle.</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part4">IV. The Date</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="adar1">The Date: First of the Twelfth Month</h3>
+
+<div class="passage" data-themes="blood-moon">
+In the twelfth year, in the twelfth month, in the first day of the month... I will <span class="ph" data-theme="blood-moon">cover the sun with a cloud</span>, and the <span class="ph" data-theme="blood-moon">moon shall not give her light</span>.
+<span class="ref"><a href="/reader/bible/kjv/Ezekiel/32#v1" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Ezekiel',chapter:32,verse:1}})">Ezekiel 32:1,7-8</a></span>
+</div>
+<p class="note">The ONLY darkening oracle that names the covering agent: cloud = smoke. Dated to Adar 1.</p>
+
+<h3 id="horsemen">Five Days Before: The Horsemen Scout</h3>
+
+<div class="passage" data-themes="peace">
+Upon the four and twentieth day of the eleventh month... <span class="ph" data-theme="peace">all the earth sitteth still, and is at rest</span>.
+<span class="ref"><a href="/reader/bible/kjv/Zechariah/1#v7" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Zechariah',chapter:1,verse:7}})">Zechariah 1:7,11</a></span>
+</div>
+<p class="note">False peace. 5 days before the darkening oracle. Then: "<span class="ph" data-theme="peace">Peace and safety</span>; then sudden destruction" (<a href="/reader/bible/kjv/1Thessalonians/5#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Thessalonians',chapter:5,verse:3}})">1 Thess 5:3</a>).</p>
+
+<h3 id="moses">Moses Vanished on This Date</h3>
+
+<p class="prose">Moses begins Deuteronomy on Shevat 1 (<a href="/reader/bible/kjv/Deuteronomy/1#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Deuteronomy',chapter:1,verse:3}})">Deut 1:3</a>). He dies. Israel mourns 30 days. Jordan crossing = Nisan 10. Counting backward: <strong>Adar 1</strong>.</p>
+
+<div class="passage" data-themes="silence">
+He buried him... but <strong>no man knoweth of his sepulchre unto this day</strong>.
+<span class="ref"><a href="/reader/bible/kjv/Deuteronomy/34#v6" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Deuteronomy',chapter:34,verse:6}})">Deuteronomy 34:6</a></span>
+</div>
+
+<p class="prose">God buried Moses. No one knows where. Michael fought the devil over his body (<a href="/reader/bible/kjv/Jude/1#v9" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Jude',chapter:1,verse:9}})">Jude 1:9</a>). Then Moses appears alive at the Transfiguration (<a href="/reader/bible/kjv/Matthew/17#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Matthew',chapter:17,verse:3}})">Mat 17:3</a>). Moses vanished on Adar 1 — the same date as the darkening oracle.</p>
+
+<h3 id="jubilee">The Fall of Babylon IS the Jubilee</h3>
+
+<p class="prose">Nine Jubilee terms in Jeremiah 50-51:</p>
+
+<div class="passage" data-themes="jubilee">
+Their <span class="ph" data-theme="jubilee">Redeemer</span> is strong; the LORD of hosts is his name: he shall plead their cause, that he may <span class="ph" data-theme="jubilee">give rest to the land</span>.
+<span class="ref"><a href="/reader/bible/kjv/Jeremiah/50#v34" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Jeremiah',chapter:50,verse:34}})">Jeremiah 50:34</a></span>
+</div>
+<p class="note"><a href="#" class="strongs-link" onclick="navigateToStrongs('H1350', event)">H1350</a> gaal = THE Jubilee redemption word. + Captives freed (50:33). + Debts cancelled: "iniquity NOT FOUND" (50:20). + Land returned (50:19). + Liberty proclaimed (50:8, 51:6,45).</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part5">V. David's Enacted Parable</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="david">David's Empty Seat at the כסא Feast</h3>
+
+<div class="passage" data-themes="full-moon throne">
+Behold, to morrow is the <span class="ph" data-theme="full-moon">new moon</span>, and I should not fail to <strong>sit with the king</strong> at meat: but let me go, that I may <strong>hide myself in the field</strong> unto the <strong>third day</strong> at even.
+<span class="ref"><a href="/reader/bible/kjv/1Samuel/20#v5" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Samuel',chapter:20,verse:5}})">1 Samuel 20:5</a></span>
+</div>
+
+<p class="prose">The chodesh — the כסא day. David should sit at the king's table. Instead: hide in the field (the world, <a href="/reader/bible/kjv/Matthew/13#v38" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Matthew',chapter:13,verse:38}})">Mat 13:38</a>). Until the <strong>third day at even</strong>.</p>
+
+<div class="passage" data-themes="full-moon throne">
+<strong>Thou shalt be missed, because thy seat will be empty.</strong>
+<span class="ref"><a href="/reader/bible/kjv/1Samuel/20#v18" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Samuel',chapter:20,verse:18}})">1 Samuel 20:18</a></span>
+</div>
+
+<div class="passage" data-themes="full-moon throne silence">
+David <strong>hid</strong> himself in the field: and when the <span class="ph" data-theme="full-moon">new moon</span> was come, the king sat upon his <span class="ph" data-theme="throne">seat</span>... and <strong>David's place was empty</strong>.
+<span class="ref"><a href="/reader/bible/kjv/1Samuel/20#v24" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Samuel',chapter:20,verse:25}})">1 Samuel 20:24-25</a></span>
+</div>
+
+<p class="prose">Then v27: "the <strong>second</strong> of the <strong>chodesh</strong>" — <a href="#" class="strongs-link" onclick="navigateToStrongs('H2320', event)">H2320</a> chodesh = "new moon," not a separate word for "month." The second of the <em>renewed moon</em> feast. David still absent. <strong>Two days.</strong></p>
+
+<p class="prose">Yeshua ascended in 32 AD. Two days = 2,000 years (<a href="/reader/bible/kjv/2Peter/3#v8" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'2Peter',chapter:3,verse:8}})">2 Pet 3:8</a>). His seat has been empty since He ascended. After <strong>two days</strong> He will revive us; in the <strong>third day</strong> He will raise us up (<a href="/reader/bible/kjv/Hosea/6#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Hosea',chapter:6,verse:2}})">Hosea 6:2</a>). We are at the end of the second day.</p>
+
+<p class="prose">Then the signal — <strong>arrows</strong>. "The arrows are <strong>beyond</strong> thee" (v22) = flee. Compare: "<strong>Shoot at her, spare no arrows</strong>" (<a href="/reader/bible/kjv/Jeremiah/50#v14" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Jeremiah',chapter:50,verse:14}})">Jer 50:14</a>). "<strong>None shall return in vain</strong>" (<a href="/reader/bible/kjv/Jeremiah/50#v9" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Jeremiah',chapter:50,verse:9}})">Jer 50:9</a>). Jonathan's arrows signal David to flee. Babylon's arrows are what falls after. The signal happens at "the <strong>time appointed</strong>" — <a href="#" class="strongs-link" onclick="navigateToStrongs('H4150', event)">H4150</a> mo'ed (v35).</p>
+
+<p class="prose">And when the third day's evening comes:</p>
+
+<div class="passage" data-themes="full-moon throne">
+David <strong>arose</strong> out of a place toward the south.
+<span class="ref"><a href="/reader/bible/kjv/1Samuel/20#v41" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'1Samuel',chapter:20,verse:41}})">1 Samuel 20:41</a></span>
+</div>
+
+<p class="prose">David <strong>rises from the field</strong>. And what does a <span class="ph" data-theme="full-moon">full moon</span> do at evening? It rises from the field on the horizon. The great white disc lifting from the low place where the grass meets the sky. Light at evening (<a href="/reader/bible/kjv/Zechariah/14#v7" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Zechariah',chapter:14,verse:7}})">Zech 14:7</a>). The anointed King rising from the field IS the כסא ascending from the horizon.</p>
+
+<h3 id="convergence">The Convergence</h3>
+
+<ul style="margin: 12px 0 12px 24px; line-height: 2.2;">
+<li>70 jubilees from the Jordan crossing (1406 BC + 3430) = ~2024</li>
+<li>Abraham's covenant + 3900 years = ~2025</li>
+<li>Suleiman's 490 lunar years end at Adar 29, 2025</li>
+<li>Two days from the cross (32 AD + 2000 - 7) = 2025</li>
+<li>The third day = the millennium = 32 AD + 2000 = 2032</li>
+</ul>
+
+<p class="prose">A <span class="ph" data-theme="blood-moon">blood moon</span> is coming on the first day of the twelfth month. On the date of Ezekiel's darkening oracle. On the date Moses vanished. At the feet of the Lion. In the last month of the 70th jubilee. At the end of the second day of the anointed King's absence.</p>
+
+<p class="prose">The כסא is the <span class="ph" data-theme="full-moon">full moon</span> and the <span class="ph" data-theme="throne">throne</span> in the same consonants. The <span class="ph" data-theme="full-moon">moon</span> city will <span class="ph" data-theme="walls-fall">fall</span> at the <span class="ph" data-theme="trumpet">trumpet</span>. The <span class="ph" data-theme="trumpet">trumpet</span> is blown at the <span class="ph" data-theme="full-moon">full moon</span>. The last <span class="ph" data-theme="trumpet">trump</span> of the last <span class="ph" data-theme="jubilee">jubilee</span> of the last keseh. David's seat has been empty for two days. And at evening on the third day, the anointed King rises from the field.</p>
+
+<p class="prose">The <span class="ph" data-theme="full-moon">full moon</span> will turn to <span class="ph" data-theme="blood-moon">blood</span>. And we are facing the day.</p>
+
+</div>
+
+<script>
+(function() {
+  const article = document.querySelector('.blog-article');
+  if (!article) return;
+  let lockedTheme = null;
+
+  article.addEventListener('mouseenter', handleEnter, true);
+  article.addEventListener('mouseleave', handleLeave, true);
+  article.addEventListener('click', handleClick, true);
+
+  function handleEnter(e) {
+    const el = e.target.closest('.ph');
+    if (!el || lockedTheme) return;
+    applyHighlight(el.dataset.theme);
+  }
+  function handleLeave(e) {
+    const el = e.target.closest('.ph');
+    if (!el || lockedTheme) return;
+    clearHighlight();
+  }
+  function handleClick(e) {
+    const el = e.target.closest('.ph');
+    if (!el) { lockedTheme = null; clearHighlight(); return; }
+    e.stopPropagation();
+    const theme = el.dataset.theme;
+    if (lockedTheme === theme) { lockedTheme = null; clearHighlight(); }
+    else { lockedTheme = theme; applyHighlight(theme); }
+  }
+
+  function applyHighlight(theme) {
+    article.querySelectorAll('.ph').forEach(ph => {
+      ph.classList.toggle('active', ph.dataset.theme === theme);
+      ph.classList.toggle('dimmed-phrase', ph.dataset.theme !== theme);
+    });
+  }
+  function clearHighlight() {
+    article.querySelectorAll('.ph').forEach(ph => { ph.classList.remove('active', 'dimmed-phrase'); });
+  }
+})();
+</script>

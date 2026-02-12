@@ -10,8 +10,8 @@ defining_verses: [2Thess 2:3-4, 2Thess 2:7-8, Dan 7:25, Dan 11:36, 1John 2:18, 1
 co_occurring: [ABOMINATION_OF_DESOLATION, DECEIVE, WICKEDNESS, RETURN_OF_CHRIST, FALL_OF_BABYLON, HARLOT, ANIMAL, TRUTH, APOSTASY]
 context_types: [discourse, prophetic oracle, apocalyptic, epistle-exhortation]
 all_verses: [2Thess 2:1-12, Dan 7:8-11, Dan 7:20-27, Dan 8:9-14, Dan 8:23-26, Dan 9:26-27, Dan 11:31-39, Dan 12:11, Isa 14:12-14, Eze 28:2-9, Matt 24:15, Mark 13:14, 1John 2:18-22, 1John 4:1-3, 2John 1:7, Rev 13:1-18, Rev 17:8-11, Rev 19:20, John 17:12]
-rev: 2
-churn: 1.40
+rev: 3
+churn: 2.10
 inputs: {abomination-of-desolation: [2, 1.35], deceive: [1, 1.00], wickedness: [1, 1.00], return-of-christ: [1, 1.00], fall-of-babylon: [1, 1.00], babylon: [2, 1.60]}
 dependents: [contexts/2Th/2.001-012.md, contexts/Mat/24.015-028.md, symbols/abomination-of-desolation.md, symbols/return-of-christ.md, symbols/fall-of-babylon.md, symbols/false-messiah.md]
 ---
@@ -52,3 +52,11 @@ Rev 17:8,11 — Was/is not/ascends from abyss → G684 perdition. co: BABYLON.
 4. MYSTERY BABYLON = mystery of iniquity. System IS Babylon; person IS its final incarnation.
 
 **FULFILLMENT AUDIT:** Antiochus IV ✓type. Roman emperors ✓type. Judas ✓betrayal-principle. Many antichrists ✓partial. Rev 17 beast ✓final system. 2Thess 2:8 destroyed by coming = UNFULFILLED final form.
+
+## Rev 3 — Restrainer = Righteous Presence
+
+- Gen 18:23-32: righteous presence in a city restrains God's judgment. God agreed to spare at every threshold (50→10). Below the threshold, extraction replaces preservation.
+- Gen 19:22: "I cannot do anything till thou be come thither" = judgment locked behind extraction.
+- 2Th 2:6-7 restrainer (G2722 katecho): the righteous presence IS the restraint. Removal enables judgment.
+- "Revealed" (G601 apokalypto) = UNCOVERED, not "arrives." The wicked are revealed BY ABSENCE of the righteous. The departure exposes what was hidden. Tares visible when wheat is gathered.
+- The study already says "Removal UNVEILS, doesn't CREATE" — this is the mechanism: righteous leave → wickedness uncovered.

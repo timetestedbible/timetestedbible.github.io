@@ -10,8 +10,8 @@ defining_verses: [1Cor 15:52, 1Th 4:16, Mat 24:31, Rev 11:15, Isa 27:13, Ps 81:3
 co_occurring: [RETURN_OF_CHRIST, RAPTURE_GATHERING, FALL_OF_BABYLON, FULL_MOON, EARTHQUAKE, FOUR_WINDS, ELECT, CLOUDS, HARVEST, MOUNTAIN]
 context_types: [prophetic oracle, apocalyptic, law, narrative, psalm, discourse]
 all_verses: [Exo 19:16, Exo 19:19, Exo 20:18, Lev 23:24, Lev 25:9, Num 10:2, Num 10:9-10, Josh 6:4-6, Josh 6:8-9, Josh 6:13, Josh 6:16, Josh 6:20, Judg 3:27, Judg 6:34, Judg 7:8, Judg 7:16-22, 1Sam 13:3, 2Sam 2:28, 2Sam 6:15, 2Sam 15:10, 2Sam 18:16, 2Sam 20:1, 2Sam 20:22, 1Ki 1:34, 1Ki 1:39, 1Ki 1:41, 2Ki 9:13, 1Chr 15:28, 2Chr 15:14, Neh 4:18, Neh 4:20, Job 39:24-25, Ps 47:5, Ps 81:3, Ps 98:6, Ps 150:3, Isa 18:3, Isa 27:13, Isa 58:1, Jer 4:5, Jer 4:19, Jer 4:21, Hos 5:8, Mat 24:31, 1Cor 14:8, 1Cor 15:52, 1Th 4:16, Heb 12:19, Rev 1:10, Rev 4:1, Rev 8:2, Rev 8:6, Rev 8:13, Rev 9:14, Rev 11:15]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.50
 inputs: {symbols/full-moon: [1, 1.00], symbols/rapture-gathering: [1, 1.00], symbols/return-of-christ: [2, 1.25], symbols/fall-of-babylon: [2, 1.30]}
 dependents: [symbols/full-moon, symbols/rapture-gathering, symbols/return-of-christ, symbols/fall-of-babylon, symbols/elect, symbols/clouds]
 ---
@@ -51,3 +51,7 @@ dependents: [symbols/full-moon, symbols/rapture-gathering, symbols/return-of-chr
 5. **Kingdom-transfer signal** — PARTIAL: fits coronation, Rev 11:15, jubilee but too narrow for gathering, war.
 6. **Authoritative signal of God's sovereign action initiating irreversible transition** — BEST: covers ALL contexts. Sinai=covenant inauguration, Jericho=conquest transition, jubilee=economic reset, coronation=authority transfer, gathering=age transition, Rev trumpets=sequential judgments. The trumpet INITIATES what follows; the transition is irreversible.
 7. **Prophetic warning/call** — PARTIAL: fits Isa 58:1, Hos 5:8 but fails coronation, gathering.
+
+## Rev 2 — Jubilee = Fall of Babylon = Kingdom = One Event
+
+The Jubilee trumpet (Lev 25:9) and the fall of Babylon share the same vocabulary (see Jer 50-51 Jubilee mapping). 7th trumpet (Rev 11:15 "kingdoms become our Lord's") = 7th bowl (Rev 16:17-19 "It is done" + Babylon remembered) = one convergent event. The trumpet INITIATES: Lev 25:9 blown on Day of Atonement at the START of the Jubilee year. Debts cancelled, slaves freed, land returned — all begin at the trumpet, not after gradual process. Therefore the kingdom is declared at the TAKING of Babylon. The fall IS the transfer. Josh 6:16 "Shout; for the LORD hath given you the city" = the shout and the taking are one event. Five traditions converge at this one trumpet: (1) Jubilee = debts cancelled, (2) Jericho = walls fall, (3) Sinai = God descends, (4) Coronation = king proclaimed, (5) Ingathering = harvest complete. All five describe the same moment: Babylon falls, kingdom transfers, elect gathered.

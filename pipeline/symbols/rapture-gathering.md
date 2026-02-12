@@ -9,8 +9,8 @@ opposite: SCATTER (dispersion among nations as covenant curse)
 defining_verses: [2Th 2:1, 1Th 4:17, Mat 24:31, Isa 11:12, Deu 30:3-4, Zep 3:8, Mic 4:12]
 co_occurring: [MOUNTAIN, FOUR WINDS, EAGLE, RETURN OF CHRIST, MOMENT, TRUMPET, JERUSALEM, DAY, HARLOT, BABYLON]
 context_types: [prophetic oracle, discourse, apocalyptic, law, psalm, narrative]
-rev: 2
-churn: 1.50
+rev: 3
+churn: 2.25
 inputs: {}
 dependents: []
 ---
@@ -36,6 +36,12 @@ dependents: []
 **ORDERING RELATIVE TO BABYLON'S FALL:** Rev 18:4 "come out of her my people" = extraction from Babylon. Rev 17:16 ten horns destroy Babylon. The extraction precedes the system's self-destruction. Then: trumpet (Rev 11:15) → kingdom transfer → gathering (Mat 24:31). The gathering is the CULMINATION after Babylon falls, not an escape before judgment begins.
 
 **ANOMALIES:** Zep 3:8/Mic 4:12—God gathers NATIONS (enemies) for destruction, not restoration. Same word, opposite recipients. Judgment-gathering vs. salvation-gathering share mechanism: God initiates both.
+
+## Rev 2 — Two Events Distinguished
+
+- **Paralambano vanishing (G3880):** Jn 14:3 "receive you unto myself" = normalcy-era extraction, before pain. Isa 66:7 man child. During eating/drinking/farming (Mat 24:37-41).
+- **Episunago gathering (G1996):** Mat 24:31 = post-trumpet assembly of remaining elect, after cosmic signs. "Her children" born through travail (Isa 66:8).
+- The study's conclusion "The gathering is the CULMINATION after Babylon falls, not an escape before judgment begins" applies to the EPISUNAGO event, not the PARALAMBANO event. Two words, two settings, two events.
 
 **CROSS-TESTAMENT:** H6908→LXX G4863 (sunagō)→NT G1997 (episunagōgē). Direct morphological chain. "Synagogue" derives from same root—the gathered assembly IS the covenant community. G726 (harpazō) stands separate—forceful seizure aspect absent from H6908/H622. NT adds violence/urgency dimension.
 

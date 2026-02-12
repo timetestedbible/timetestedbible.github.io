@@ -10,6 +10,19 @@ const BlogView = {
   // Blog posts in reverse chronological order (newest first)
   posts: [
     {
+      id: 'blood-moon-over-the-moon-city',
+      date: 'February 2026',
+      title: 'Blood Moon Over the Moon City',
+      summary: 'On the first day of the twelfth month, a blood moon rose — on the exact date of Ezekiel\'s darkening oracle, in the last month of the 70th jubilee. An interactive study tracing the full moon, the throne, the trumpet, and the silence through Scripture.',
+      content: `
+        <p>The Hebrew word for <strong>full moon</strong> and the word for <strong>throne</strong> share the same root. The trumpet is blown at the full moon. The husband returns at the full moon. Every celestial sign of His coming is a full-moon phenomenon. And the moon city — Jericho — falls at the trumpet.</p>
+        <p>This study traces these connections through Scripture, from the silence before God acts to the Jubilee vocabulary hidden in Jeremiah's Babylon oracle, and asks what it means that a blood moon falls on the date of Ezekiel's darkening oracle in the last month of the 70th jubilee.</p>
+        <p class="blog-nav-link">
+          <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'blood-moon-over-the-moon-city'}})">Read the Full Study →</button>
+        </p>
+      `
+    },
+    {
       id: 'v101-desktop-lightmode',
       date: 'February 2026',
       title: 'New Desktop Layout, Light Mode & Redesigned Home Page',

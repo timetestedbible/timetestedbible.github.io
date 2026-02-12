@@ -10,8 +10,8 @@ defining_verses: [Isaiah 66:7, Isaiah 66:8, Revelation 12:5, Revelation 2:26-27,
 co_occurring: [TREE, JERUSALEM, MARK, FRUIT, NAME, MOUNTAIN]
 context_types: [covenant-identity, birth/origin, authority/rule, circumcision/membership, overcomer-promise, apocalyptic-vision]
 all_verses: [Genesis 17:10, Genesis 17:12, Genesis 17:14, Leviticus 12:2, 1 Samuel 1:11, Job 3:3, Isaiah 54:1, Isaiah 66:7, Isaiah 66:8, Isaiah 66:9, Jeremiah 20:15, Jeremiah 22:30, Jeremiah 31:9, Hosea 11:1, Exodus 4:22, Deuteronomy 10:16, Deuteronomy 30:6, Psalm 2:7-9, Galatians 4:26, Galatians 4:27, Galatians 4:28, Romans 2:29, Revelation 2:26-27, Revelation 3:21, Revelation 12:1, Revelation 12:3-4, Revelation 12:5, Revelation 12:13, Revelation 12:17, Revelation 19:15, 1 Samuel 25:22, 1 Samuel 25:34, 1 Kings 11:15, 1 Kings 14:10, 1 Kings 16:11, 1 Kings 21:21, 2 Kings 9:8]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.50
 inputs: {}
 dependents: []
 source: symbols/MAN-CHILD.md
@@ -34,3 +34,10 @@ REV 12 STRUCTURE: Woman (v.1) = Zion/covenant community through history. Man chi
 OPPOSITE: Barrenness/childlessness — Isa 54:1; Gal 4:27; Jer 22:30 → covenant community that fails to produce.
 
 SUBSTITUTION: "Covenant nation" replaces "man child" in Isa 66:7, Rev 12:5, Gen 17:10 → all coherent. Isa 66:8 confirms directly. TREE co-occurrence: man child = TREE when born as new entity. FRUIT: man child = FRUIT of seed planted in woman.
+
+## Rev 2 — Vanishing Pattern
+
+- Dan 9:26 patched: Messiah karath (cuts covenant) and H369 ayin (vanishes). Same H369 as Gen 5:24 Enoch "was not, for God took him."
+- The ayin word creates a direct line: Enoch vanished before flood → Messiah vanishes after covenant → man-child company caught up before pain.
+- Rev 12 three groups from same mother: man child (caught up, v5) ≠ woman (flees, v6) ≠ remnant of her seed (faces dragon, v17). The child comes OUT of the woman; the woman IS Israel/Zion (Gen 37:9-10 imagery: sun/moon/12 stars).
+- H4422 malat (Isa 66:7) + G726 harpazo (Rev 12:5) + H369 ayin (Dan 9:26) = three vocabularies for one event.

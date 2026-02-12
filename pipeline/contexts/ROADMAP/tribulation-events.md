@@ -1,8 +1,8 @@
 ---
-ref: ROADMAP — Tribulation Events Sequence
-symbols: [SEAL, FOUR_HORSEMEN, FOUR_WINDS, BIRTH_PAINS, GOSPEL_OF_KINGDOM, ABOMINATION_OF_DESOLATION, FALL_OF_BABYLON_THE_GREAT, BABYLON, HARLOT, TEN_HORNS, TRUMPET, RAPTURE_GATHERING, RETURN_OF_CHRIST, SUDDEN_DESTRUCTION, SUN_MOON_STARS, SACKCLOTH, SMOKE, FIRE, EARTHQUAKE, NORTH, WHO_DESTROYS_BABYLON]
-rev: 1
-churn: 1.00
+ref: ROADMAP — Tribulation Events Sequence (Rev 2)
+symbols: [SEAL, FOUR_HORSEMEN, FOUR_WINDS, BIRTH_PAINS, GOSPEL_OF_KINGDOM, ABOMINATION_OF_DESOLATION, FALL_OF_BABYLON_THE_GREAT, BABYLON, HARLOT, TEN_HORNS, TRUMPET, RAPTURE_GATHERING, RETURN_OF_CHRIST, SUDDEN_DESTRUCTION, SUN_MOON_STARS, SACKCLOTH, SMOKE, FIRE, EARTHQUAKE, NORTH, WHO_DESTROYS_BABYLON, MAN_CHILD, WRATH]
+rev: 2
+churn: 2.00
 inputs:
   contexts/Mat/24.004-008: [5, 2.00]
   contexts/Rev/7.001-008: [2, 1.50]
@@ -16,142 +16,179 @@ inputs:
   symbols/trumpet: [1, 1.00]
   symbols/north: [1, 1.00]
   symbols/who-destroys-babylon: [3, 1.10]
+  symbols/man-child: [1, 1.00]
+  symbols/wrath: [1, 1.00]
+  symbols/birth-pains: [1, 1.00]
+  chapters/21_Pre-Tribulation_Rapture: [1, 1.00]
 dependents: [contexts/Mat/24.004-008, contexts/Rev/7.001-008, contexts/Rev/11.001-019, contexts/Rev/17.001-018, contexts/Rev/18.001-024]
 ---
 
-## Tribulation Events — Preconditions, Events, Postconditions
+## Tribulation Events — Revised Sequence
 
-Source: Mat 24:4-8 Critical Corrections §4 event ordering, cross-referenced with symbol studies and context files.
+Rev 2 corrections: (1) Man-child vanishing added before birth pains per Isa 66:7. (2) Two 1,260-day periods, not one. (3) Revelation seals/trumpets/bowls = parallel perspectives, not sequential series. (4) Kingdom declared at Babylon's fall (7th trumpet = 7th bowl = convergence). (5) Jubilee vocabulary governs Jer 50-51 = fall of Babylon IS the cosmic Jubilee. (6) Mat 24 = inclusio (ring), not chronological timeline.
+
+**STRUCTURAL PRINCIPLES:**
+- Revelation's three series (seals, trumpets, bowls) are THREE PERSPECTIVES on the same period: seals = heaven's view, trumpets = witness perspective, bowls = judgment execution. The 7th of each converges on ONE event: Babylon falls = kingdom transfers = "it is done."
+- Mat 24 is an inclusio: A (vanishing question, v3) → B (aftermath, vv4-28) → B' (climax, vv29-31) → A' (vanishing revisited, vv32-51). The discourse opens and closes with the main event (sudden separation during normalcy); the middle describes what follows.
+- Isa 66:7-8 governs the structure: man child delivered BEFORE pain (v7); children born THROUGH pain (v8). Two deliveries, not one.
+- Rev 12 presents three groups from one mother: man child (caught up, v5), woman (flees, v6), remnant of her seed (faces dragon, v17).
+
+---
+
+### EVENT 0: MAN CHILD DELIVERED — Before Pain
+
+**Isa 66:7:** "Before she travailed, she brought forth; before her pain (H2256 chebel) came, she was delivered (H4422 malat) of a man child." H4422 malat = Lot's escape word (Gen 19:17,19,20,22 ×4). Man-child study: covenant nation/overcomers, not Jesus individually (Isa 66:8 "nation" confirms corporate). Rev 12:5: man child caught up (G726 harpazo = 1Th 4:17 same word) to God's throne BEFORE dragon acts.
+
+**Five witnesses to the vanishing:** (1) Isa 66:7 malat = escape before pain. (2) Rev 12:5 harpazo = caught up to throne. (3) Dan 9:26 patched: Messiah karath (cuts covenant) and H369 ayin (vanishes — Enoch's word, Gen 5:24). (4) 2Th 2:7 restrainer "taken out of the way." (5) Gen 5:24 Enoch "was not (H369), for God took him" — before the flood.
+
+**Preconditions:** Normalcy. "Eating, drinking, marrying" (Mat 24:38). "Peace and safety" (1Th 5:3). No cosmic signs. No trumpet. No warning. Thief in the night. Occurs during the A/A' frame of Mat 24's inclusio (vv37-41 "one taken, one left" using G3880 paralambano = receive alongside, Jn 14:3 same word).
+
+**Postconditions:** Restraint released. Righteous presence was restraining judgment (Gen 18:23-32 Sodom principle; Gen 19:22 "I cannot do anything till thou be come thither"; Rev 7:1-3 winds held "till"). Removal = wicked revealed by absence (2Th 2:8 G601 apokalypto = uncovering). Four winds/horsemen can now ride. Birth pains begin.
 
 ---
 
 ### EVENT 1: SEALING OF SERVANTS
-**Symbolic Description:** Angel from the east (G395 anatole = sunrise = direction of God's approach) carries G4973 sphragis of the living God. Four angels restrain (G2902 krateo = hold fast) four winds at four corners of earth. 144,000 sealed on foreheads — 12×12×1000 = complete covenant community in full measure. Judah leads (Gen 49:10 scepter); Dan omitted (idolatry tradition).
-**Preconditions:** Sixth seal shakes everything (Rev 6:12-17 — great seismos + sun/moon/stars dark + mountains/islands moved). Rev 7:1 "after these things" = sealing occurs in aftermath of cosmic disruption. The four winds/horsemen already exist and are dispatched (Zech 6:5 brass-mountain origin) but their effects are RESTRAINED until sealing completes.
-**The Event:** Servants of God sealed on foreheads before judgment released (Rev 7:2-3). G891 achri = "UNTIL/till we have sealed" = temporal boundary — protection MUST precede destruction. Same pattern: Noah sealed in ark → flood; Israel marked with blood → destroyer passes; Ezek 9:4 tav on foreheads → executioners sent (Rev 7:2-3; Ezek 9:4).
-**Postconditions:** Sealing ENABLES the four winds/horsemen to be released (Rev 7:3 "hurt not... TILL"). Without the sealing, birth pains cannot begin. This is the GATE for the entire Olivet Discourse sequence. Sequential, not concurrent: seal FIRST → winds released. Opens the door to Event 2 (Rev 7:1-3 → Rev 6:1-8 horsemen ride; contexts/Rev/7.001-008).
-**Defining Scriptures:** Rev 7:1-8, Ezek 9:4, Rev 9:4, 2Tim 2:19, Eph 1:13, Eph 4:30
+
+**Rev 7:1-8:** 144,000 sealed on foreheads = 12×12×1,000 = complete covenant witness community. Connection: 72 sent two by two (Lk 10:1) = 144 witnesses × 1,000 = full-scale commission. Two witnesses of Rev 11:3 = representative pair of this commission.
+
+**Preconditions:** Man child vanished (Event 0). Four winds already dispatched but restrained (Zech 6:5 brass-mountain origin). Rev 7:3 G891 achri = "TILL we have sealed" = temporal boundary.
+
+**Postconditions:** Sealing ENABLES the four winds/horsemen to be released. Sequential: seal FIRST → winds released.
 
 ---
 
 ### EVENT 2: FOUR WINDS / HORSEMEN RELEASED — Birth Pains Begin
-**Symbolic Description:** Four horsemen = four winds = four spirits (Zech 6:5 decode). White horse (deception/conquest at range — G5115 toxon = bow, distance weapon + delegated stephanos crown) → Red (war/sword/peace taken) → Black (famine/balances/scarcity pricing) → Pale/G5515 chloros (death tetrad: sword+hunger+death+beasts = Ezek 14:21). Colors encode function types. Mat 24:4-8 sequence maps 1:1 onto Rev 6:1-8 (contexts/Mat/24.004-008 §Phase 2).
-**Preconditions:** EVENT 1 — Servants sealed (Rev 7:1-3). "Hurt not earth, sea, nor trees TILL we have sealed." Sealing complete → Lamb opens restraining seals on scroll → four living creatures command "Come!" → horsemen ride. Inverse seal operations: protection-seals applied ON servants BEFORE judgment-seals opened ON scroll (symbols/seal).
-**The Event:** Deception (Mat 24:4-5 = Seal 1) → Wars/rumors (Mat 24:6 = Seal 2) → Famine (Mat 24:7a = Seal 3) → Pestilence+earthquakes (Mat 24:7b-c = Seal 4). Birth pains = early labor, NOT delivery. Jesus gives MECHANISM, not calendar — archē (G746) = generative cause. Deception produces fracture → war → famine/pestilence. Vocabulary triangle: Mat 24:6-7 ↔ Jer 51:46 ↔ 2Chr 15:5-6 = Babylon-collapse mechanism activating (contexts/Mat/24.004-008).
-**Postconditions:** Birth pains create the conditions for testimony under persecution (Event 3). "The end is NOT YET" (Mat 24:6) — deflates premature expectation. Sword deferred to v9+ (personal violence after systemic shaking). Darkness deferred to v29 (climactic, not preliminary). COME_OUT deferred to v16. Birth pains = the beginning, not the end (symbols/four-horsemen).
-**Defining Scriptures:** Rev 6:1-8, Mat 24:4-8, Zech 6:1-8, Ezek 14:21, 2Chr 15:5-6, Jer 51:46
+
+**Rev 6:1-8 = Mat 24:4-8 = Zech 6:1-8.** White (deception) → Red (war) → Black (famine) → Pale (death tetrad). = Babylon-collapse mechanism (vocabulary triangle: Mat 24:6-7 ↔ Jer 51:46 ↔ 2Chr 15:6). Note: Mat 24:4-8 describes the B section (aftermath of vanishing), not the chronological beginning.
+
+**Preconditions:** Event 1 — Servants sealed.
+
+**Postconditions:** Birth pains create conditions for testimony under persecution. "The end is NOT YET" (Mat 24:6).
 
 ---
 
-### EVENT 3: TESTIMONY PERIOD Under Persecution
-**Symbolic Description:** Two witnesses prophesy 1,260 days clothed in sackcloth (G4526 = goat-hair dark covering). They are the two olive trees + two lampstands (Zech 4:2-3,11-14) — both oil source and lamp bearers. Fire from their mouths = Jer 5:14, 23:29 word-as-fire. Power over waters to blood + smite earth with plagues = Exod 7-12 Moses-authority template. Sackcloth = visible testimony of judgment AND what Babylon's burning looks like from below — witnesses prophesy INSIDE the smoke (contexts/Rev/11.001-019; sackcloth study).
-**Preconditions:** EVENT 2 — Birth pains active. Mat 24:9 "THEN shall they deliver you up" follows vv4-8 birth pains. Persecution begins AFTER systemic shaking reaches individuals (sword deferred from v7 to v9). 1,260 days = 42 months = Rev 12:6,14 = Rev 13:5 = Dan 12:7 — all concurrent: city trodden, witnesses prophesy, woman sheltered, beast reigns (contexts/Rev/11.001-019).
-**The Event:** Gospel of the kingdom preached to all nations FOR A WITNESS (Mat 24:14 — G3142 marturion). Witnesses PROTECTED during testimony — beast CANNOT act until testimony G5055 teleo'd (Rev 11:7 "when they shall have FINISHED"). The witness period is structurally protected. Persecution accompanies but cannot terminate testimony before completion. Mat 24:9-13 = betrayal, hatred, false prophets, love grows cold, but "he that endureth to THE END shall be saved" (contexts/Rev/11.001-019 §TELEO/TELOS).
-**Postconditions:** Testimony completion (teleo) OPENS THE DOOR to beast-action (Event 4→5). Mat 24:14 "THEN shall the end come" = testimony finishing IS the trigger. Gospel-to-nations = not optional background activity but the structurally necessary precondition for what follows. "The end" (G5056 telos) = covenant fulfillment point, not mere chronological stop (symbols/seal §Mode C: Dan 12:4 sealed TILL time of end).
-**Defining Scriptures:** Mat 24:9-14, Rev 11:3-6, Zech 4:2-14, Jer 5:14, Exod 7-12
+### FIRST 1,260 DAYS: TESTIMONY PERIOD
+
+### EVENT 3: TESTIMONY Under Persecution
+
+**Rev 11:3:** Two witnesses prophesy 1,260 days in sackcloth. = Mat 24:9-14 gospel preached for a witness. Witnesses PROTECTED — beast CANNOT act until testimony G5055 teleo'd (Rev 11:7). Mat 24:14 "THEN shall the end come" = testimony finishing IS the trigger.
+
+**Preconditions:** Event 2 — Birth pains active. Persecution begins after systemic shaking reaches individuals.
+
+**Postconditions:** Testimony completion opens door to beast-action. Apostasia (G646 = covenant departure, 2Th 2:3) occurs WITHIN this period, creating vacancy counterfeit fills.
 
 ---
 
-### EVENT 4: TESTIMONY COMPLETED
-**Symbolic Description:** G5055 teleo (Rev 11:7 "hotan telesōsin tēn marturian") = same root as Jn 19:30 "tetelestai" (It is finished). Mat 24:14 marturion → G5056 telos. Rev 10:7 mystery teleo'd. 1Cor 15:24 telos = kingdom delivered. Same root, same event, four vantage points. The testimony IS the precondition; its completion IS the trigger (contexts/Rev/11.001-019 §TELEO/TELOS).
-**Preconditions:** EVENT 3 — Full testimony period completed. Witnesses FINISH (not cut short). The beast cannot act UNTIL they finish — witness period protected by sovereign design. Pattern: Jesus finishes testimony → dies → rises → receives authority. Witnesses repeat exactly: vv7→11→12→15 (contexts/Rev/11.001-019).
-**The Event:** Mat 24:14 "this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and THEN shall the end come." Rev 11:7 "when they shall have finished their testimony, the beast that ascendeth out of the bottomless pit shall make war against them, and shall overcome them, and kill them." Testimony completed = word withdrawn = Amos 8:11 famine of hearing the word begins. Rev 11:9-10 bodies lie 3.5 days while earth-dwellers celebrate (Dan 5 Babylon-feast-death pattern inverted — contexts/Rev/11.001-019 §Phase 2).
-**Postconditions:** Testimony completion ENABLES beast-action (Event 5). The famine of the word begins (Amos 8:11-12). The sackcloth/smoke era transitions — witnesses silenced, but their blood-testimony continues (Rev 6:10 "how long?" under the altar). Opens the door for abomination installation (Mat 24:14→15 "THEN... WHEN ye shall see").
-**Defining Scriptures:** Mat 24:14, Rev 11:7, Rev 10:7, Jn 19:30, Amos 8:11-12, 1Cor 15:24
+### MIDPOINT — THE HINGE
+
+### EVENT 4: TESTIMONY COMPLETED / BEAST ACTS
+
+**Rev 11:7:** "When they shall have FINISHED (teleo) their testimony, the beast... shall overcome them, and kill them." Mat 24:14 → 15: "THEN the end... WHEN ye see the abomination."
+
+**Three things happen at the midpoint:**
+(a) Witnesses killed — bodies lie 3.5 "days" = 3.5 prophetic years (Ezek 4:6 day-year principle) = the second half.
+(b) Abomination installed — man of sin sits in naos (2Th 2:3-4). Beast ascends from abyss (Rev 11:7).
+(c) Woman (Israel) flees — "WHEN ye see... THEN flee to the mountains" (Mat 24:15-16). Rev 12:6: woman flees to wilderness 1,260 days. Israel repents under judgment and flees.
+
+**"Come Out" extraction:** Rev 18:4 = Jer 51:6,45. Remaining faithful exit Babylon. Gen 19:22 principle: "I cannot do anything till thou be come thither." No Jews remain in the system — all have fled.
 
 ---
 
-### EVENT 5: ABOMINATION INSTALLED
-**Symbolic Description:** Man of sin (G444+G266) sits in temple of God (G3485 naos) showing himself that he IS God (2Th 2:4). Abomination of desolation (H8251+H8074 shiqquts+shamem) = counterfeit installed where God alone belongs — the replacement of covenant authority with human authority in the holy place. Beast ascends from pit (G12 abyssos = enforced containment, Rev 11:7) — influence restored after containment period. Rev 17:8 "was, and is not, and shall ascend" = counterfeit "I AM" (contexts/Rev/11.001-019 §BEAST FROM ABYSS; contexts/Rev/17.001-018).
-**Preconditions:** EVENT 4 — Testimony completed. Beast CANNOT act until witnesses finish (Rev 11:7 "when they shall have finished"). 2Th 2:3 falling away (G646 apostasia = covenant departure) comes FIRST, creating the vacancy counterfeit authority fills. 2Th 2:7 mystery of iniquity already working — visible from Mat 24:4-5 deception onward. Apostasia creates vacancy → man of sin fills it (contexts/Mat/24.004-008 §Phase 2 re: 2Th 2:7).
-**Postconditions:** Abomination installation TRIGGERS the "come out" command (Event 6). Mat 24:15-16 "WHEN ye therefore shall see... THEN let them which be in Judaea FLEE." The abomination is the VISIBLE SIGN that extraction must happen immediately. Also triggers the 3.5-day death of witnesses (Rev 11:7-10) → resurrection (Rev 11:11) → ascent (Rev 11:12). The sign that Babylon's self-destruction is imminent.
-**Defining Scriptures:** Mat 24:15, 2Th 2:3-4, Rev 11:7, Dan 9:27, Dan 11:31, Dan 12:11
+### SECOND 1,260 DAYS: WOMAN IN WILDERNESS / BEAST AUTHORITY
+
+### EVENT 5: WOMAN SHELTERED, BEAST REIGNS
+
+**Rev 12:6,14:** Woman nourished in wilderness 1,260 days / time+times+half time. **Rev 13:5:** Beast exercises authority 42 months. **Rev 11:2:** Holy city trodden 42 months. All = the second half.
+
+**Dragon's flood:** Rev 12:15 serpent spews G4215 potamos (river/flood) = army of nations pursuing the woman. = Dan 9:26 "end with a H7858 sheteph (flood)" — same concept: overwhelming military force. Water = nations (Rev 17:15). **Rev 12:16:** Earth opens mouth, swallows flood = EARTHQUAKE destroys pursuing army. May = Rev 11:13 earthquake (same hour witnesses rise).
+
+**Rev 12:17:** Dragon gives up pursuing woman → turns to make war with "remnant of her seed, which keep commandments of God and have testimony of Jesus." = Rev 13:7 beast makes war with saints.
+
+**Witnesses "dead":** The 3.5 "days" (= 3.5 years) of witnesses' bodies lying in the street = the second half. Word withdrawn (Amos 8:11 famine of hearing). Earth-dwellers celebrate the silence (Rev 11:10). The testimony IS dead during this period.
 
 ---
 
-### EVENT 6: "COME OUT" — Extraction from Babylon
-**Symbolic Description:** "Come out of her MY PEOPLE" (Rev 18:4) = Jer 51:6,45 verbatim. Extraction = covenant separation from condemned system. Cherem principle: touching what God declared cherem MAKES YOU cherem (Josh 6:18 → 7:1,12; Deut 7:26). "Come out" is not preference — it is survival protocol. Cherem is CONTAGIOUS: remaining in the banned system transfers the ban onto you (contexts/Rev/18.001-024 §Phase 2 ISA 34).
-**Preconditions:** EVENT 5 — Abomination visible. Mat 24:15-16 "when ye see... flee." The abomination is the diagnostic sign triggering extraction. Gen 19:22 Lot principle: "I CANNOT do anything till thou be come thither" = judgment structurally LOCKED behind extraction. God's people must be out before fire falls (contexts/Rev/18.001-024 §Critical Corrections).
-**The Event:** Rev 18:4 "come out of her, my people, that ye be not PARTAKERS of her sins, and that ye receive not of her plagues." Jer 51:6 "Flee out of the midst of Babylon, and deliver every man his soul." Jer 51:45 "My people, go ye out of the midst of her." Extraction = physical/economic/spiritual separation from the Babylon system before its self-consumption. Josh 6:22-24 Rahab extracted by scarlet cord BEFORE fire; Rev 11:12 witnesses ascend in cloud BEFORE earthquake-judgment (contexts/Rev/11.001-019 §Round 2 JERICHO).
-**Postconditions:** Extraction ENABLES destruction (Event 7). Once God's people are clear, the self-consumption mechanism activates. Rev 18:4→18:8 "burned with fire." The extraction IS the signal that self-destruction is imminent. Parallels: Noah enters ark → flood; Lot exits Sodom → fire; Rahab extracted → Jericho burns (symbols/fall-of-babylon §ORDERING).
-**Defining Scriptures:** Rev 18:4, Jer 51:6, Jer 51:45, Gen 19:22, Josh 6:22-24, Deut 7:26
+### EVENT 6: BABYLON FALLS / KINGDOM DECLARED — One Convergent Event
+
+**7th trumpet = 7th bowl = 7th seal = Jubilee trumpet = ONE EVENT.**
+
+Rev 11:15: "Kingdoms of this world become kingdoms of our Lord." Rev 16:17-19: "It is done" + greatest earthquake + "great Babylon came in remembrance." Rev 8:1,5: silence + fire cast to earth. Three 7th-events, one pattern: TRANSFER OF SOVEREIGNTY.
+
+**The fall of Babylon IS the cosmic Jubilee.** Jubilee vocabulary saturates Jer 50-51:
+- Trumpet/shout (50:15, 51:27) = Lev 25:9
+- Redeemer H1350 gaal (50:34) = Lev 25:25,48-49
+- Captives freed (50:33-34) = Lev 25:41,54
+- Debts/sins cancelled (50:20 "iniquity NOT FOUND") = Lev 25:28
+- Land returned (50:19 "bring Israel to his habitation") = Lev 25:13
+- Rest for the land (50:34 H7280 raga) = Lev 25:4-5
+- Return + perpetual covenant (50:4-5) = Lev 25:10
+
+The Jubilee trumpet INITIATES — blown at the START (Lev 25:9 Day of Atonement). The kingdom is declared at the taking of Babylon, not after cleanup. Liberty proclaimed. Debts cancelled. Slaves freed. Land returned.
+
+**Simultaneously at this event:** Kingdom transfers (Rev 11:15) + Babylon remembered/judged (Rev 16:19) + dead judged (Rev 11:18) + saints rewarded (Rev 11:18) + destroyers destroyed (Rev 11:18) + ark revealed (Rev 11:19) + terminal earthquake (Rev 16:18-20) + witnesses rise from 3.5-day death (Rev 11:11-12) + "It is done" (Rev 16:17).
+
+**Mechanism:** Ten horns devour harlot (Rev 17:16-17) = self-consuming fire (Ezek 28:18). FIRE → SMOKE → DARKNESS: fire produces smoke; smoke darkens authority (Isa 13:10 Babylon oracle = source text for Mat 24:29). Son of Man appears THROUGH the smoke/cloud (Mat 24:30 = Dan 7:13).
 
 ---
 
-### EVENT 7: THE NATION FROM THE NORTH DESTROYS BABYLON THE GREAT
-**Symbolic Description:** Jeremiah identifies the destroyer: "out of the NORTH there cometh up a NATION against her" (Jer 50:3). "A people from the north, a great nation, and many kings" (Jer 50:41). "Spoilers shall come unto her from the NORTH" (Jer 51:48). **H6828 tsaphown = "properly, HIDDEN" from H6845 tsaphan (to hide/conceal) — the north is literally "the hidden direction."** Judgment from concealment = SNARE mechanism (→ symbols/north). The SAME "from the north" that destroyed Judah (Jer 1:14, 4:6, 6:1) now destroys Babylon (Jer 50:3,41; 51:48) — instrument becomes target, same hidden approach reversed. This destroyer is described as a LION: "he shall come up like a LION from the swelling of Jordan" (Jer 50:44). The OT identifies Babylon's destroyer as: (1) from the north (= hidden/concealed), (2) a great nation with many kings, (3) lion-like, (4) God's instrument (Jer 51:20 "thou art my battle axe and weapons of war").
+### EVENT 7: GATHERING OF REMAINING ELECT
 
-At the Babylon-the-Great scale, the "nation from the north" = the COMPOSITE BEAST of Rev 13:2: LION mouth + BEAR feet + LEOPARD body = Dan 7's four empire-beasts MERGED into one end-time system. The TEN HORNS are the projections of this composite. Amos 5:19 gives the three-stage attack sequence: LION (open imperial assault) → BEAR (crushing force, no escape) → SERPENT (personal deceptive sting — even in your own house). These are not three separate enemies but three MODES of the same destroyer.
+**Mat 24:31:** Angels gather elect from four winds with great trumpet. = 1Th 4:16-17 dead rise + living caught up. = Isa 27:13 great trumpet + worship at Jerusalem.
 
-Rev 17:16-17: the ten horns (political projections of the composite beast) HATE the harlot, eat her flesh, burn her with fire. The beast she rides devours her. GOD orchestrates this: "God hath put in their hearts to fulfil His will." The nation-from-the-north at historical scale (Medes/Persians against Babylon 539 BC) becomes the composite beast's self-consumption at cosmic scale. Ezek 28:18 "fire FROM THE MIDST of thee." Isa 9:18-19 "wickedness burneth as fire... people as fuel."
+**G529 apantesis** = civic escort TOWARD earth. Citizens go out to meet arriving King, escort Him to His destination. Acts 28:15: brethren met Paul → escorted INTO Rome. Gathering converges on the literal Mountain — Mount Zion (Isa 27:13, Zech 14:4, Mic 4:1-2).
 
-**Preconditions:** EVENT 6 — God's people extracted. Judgment structurally locked behind extraction (Gen 19:22). Jer 50:8 "Remove out of the midst of Babylon, and go forth out of the land of the Chaldeans, and be as the he goats before the flocks" — extraction language WITHIN the nation-from-the-north oracle. Rev 17:17 "GOD hath put in their hearts to fulfil His will" = the self-destruction is divinely orchestrated. Isa 13:17 Medes "regard not silver, delight not in gold" = executioners immune to Babylon's currency.
-**The Event:** The composite beast (lion-bear-serpent-dragon, Rev 13:2) turns its own power-structure against the harlot system riding it. Rev 17:16-17 ten horns hate harlot → make desolate → eat flesh → burn with fire. Rev 18:8 "in ONE DAY, death and mourning and famine; utterly BURNED with fire." Jer 50:42-43 "voice shall roar like the sea... king of Babylon heard the report, his hands waxed feeble; anguish took hold, pangs as of a woman in travail." The birth-pains imagery transfers to Babylon's KING at the moment of her destruction — the system that caused birth pains now EXPERIENCES them. Three "one hour" witnesses (Rev 18:10,17,19) = suddenness.
-**Postconditions:** Babylon burning produces SMOKE (Rev 18:9,18; 19:3) which = sackcloth covering the sun (Rev 6:12) = the darkening of Event 8. Rev 18:21 millstone into sea = commercial kingdom ground to nothing. Sevenfold "no more" (Rev 18:22-23): music, craft, millstone, lamp, bridegroom/bride voice = total withdrawal of every covenant-function from the system. Opens cosmic darkening (Event 8) and vindicates the blood of prophets+saints (Rev 18:24; contexts/Rev/18.001-024 §V22-23).
-**Defining Scriptures:** Rev 17:16-17, Rev 18:8-19, Ezek 28:18, Isa 9:18-19, Isa 47:8-11, Jer 51:25
+**= Isa 66:8** "her children" born through travail. Nation born in a day. The second delivery — through the pain, at the trumpet.
 
----
-
-### EVENT 8: COSMIC DARKENING — Babylon's Authority Collapses
-**Symbolic Description:** Sun darkened + moon not giving light + stars falling + powers of heavens shaken (Mat 24:29). Smoke of Babylon's burning (Rev 18:9,18; 19:3) = sackcloth that covers the sun (Rev 6:12 "sun became black as sackcloth of hair"). FIRE→SMOKE→DARKNESS chain: fire produces smoke; smoke darkens authority structure. Isa 13:10 Babylon oracle: "sun darkened in going forth, moon not cause her light to shine." Same vocabulary in Joel 3:15-16: sun/moon dark + heavens/earth shake = old authorities extinguished at the exact moment true authority speaks (contexts/Rev/11.001-019 §Phase 2 JOEL 3).
-**Preconditions:** EVENT 7 — Babylon burning. The smoke of the burning IS the mechanism of the darkening. Rev 9:2 smoke from abyss darkens sun (mechanism). Sackcloth = smoke's appearance from below. The darkening is not a separate astronomical event — it is the RESULT of Babylon's system-collapse. Authority-structures (sun/moon/stars = ruling powers) go dark because their source (Babylon) is on fire (symbols/fall-of-babylon §7TH TRUMPET).
-**The Event:** Mat 24:29 "IMMEDIATELY AFTER the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken." Isa 13:10-13 Babylon oracle provides the source vocabulary. Rev 6:12-14 sixth seal parallels. The system's authority-lights go out — political, economic, religious, cultural authority-structures that derived their power from Babylon collapse when she burns.
-**Postconditions:** Darkening ENABLES the Son of Man's appearance (Event 9). Mat 24:30 "AND THEN shall appear the sign of the Son of man in heaven." The Son of Man appears THROUGH the smoke/cloud. The smoke of Babylon's burning = the cloud of Christ's appearing. The darkening of the counterfeit lights makes the true Light visible. Rev 19:3 "her smoke rose up forever" is the permanent backdrop against which the Kingdom is visible.
-**Defining Scriptures:** Mat 24:29, Isa 13:10-13, Rev 6:12-14, Joel 3:15-16, Amos 8:9, Rev 18:9
-
----
-
-### EVENT 9: SON OF MAN APPEARS Through Smoke/Cloud
-**Symbolic Description:** Mat 24:30 "sign of the Son of man in heaven... coming in the clouds of heaven with power and great glory." Dan 7:13 "one like the Son of man came with the clouds of heaven, and came to the Ancient of days." The smoke of Babylon's burning (Rev 19:3) = the cloud through which the King appears. The cloud is not a vehicle — it is the smoke of judgment through which glory becomes visible. Ezek 43:2 "glory of God came from the way of the east" (same direction as sealing angel, Rev 7:2). Mat 24:27 "lightning comes out of the east" = same approach-direction.
-**Preconditions:** EVENT 8 — Cosmic darkening. "IMMEDIATELY AFTER the tribulation... THEN shall appear" (Mat 24:29-30). The old authority-lights must go dark before the true light appears. Counterfeit authority (sun/moon/stars as Babylon's system) collapses → true authority (Son of Man) becomes visible through the smoke. Dan 7:13-14 "came to the Ancient of days" = presented before the throne to RECEIVE dominion — this is the approach, not the departure (symbols/fall-of-babylon).
-**The Event:** Mat 24:30 all tribes of earth mourn (Zech 12:10-12 pattern — recognition + grief). They SEE the Son of Man coming. "With power and great glory" = the authority Babylon claimed now visibly residing in its true owner. Dan 7:14 "there was given him dominion, and glory, and a kingdom, that all people, nations, and languages should serve him." The appearing IS the claim — visible manifestation of rightful authority replacing the collapsed counterfeit.
-**Postconditions:** Son of Man's appearing ENABLES the trumpet (Event 10). Mat 24:30-31 "THEN... AND he shall send his angels with a great sound of a trumpet." The appearing triggers the coronation-signal. Rev 11:15 "kingdoms of this world are become the kingdoms of our Lord and of his Christ" = the kingdom transfer that the appearing initiates.
-**Defining Scriptures:** Mat 24:30, Dan 7:13-14, Zech 12:10, Rev 1:7, Rev 19:11-16
-
----
-
-### EVENT 10: GREAT TRUMPET — Kingdom Transfer
-**Symbolic Description:** H7782 shophar = authoritative signal of God's sovereign action initiating irreversible transition between ages. The "last trump" (G2078 eschatos, 1Cor 15:52) = final in the 7-trumpet sequence = 7th trumpet of Rev 11:15. Five traditions converge at this trumpet: Jubilee (Lev 25:9 — debts cancelled, slaves freed, land returned), Feast of Trumpets (Lev 23:24 — opens final feast sequence), Jericho (Josh 6:20 — 7th circuit, walls fall, city taken), coronation (1Ki 1:34,39), ingathering (Isa 27:13). The trumpet IS the hinge-point between the old order and the new (symbols/trumpet).
-**Preconditions:** EVENT 9 — Son of Man visible. Mat 24:31 "he shall send his angels with a great sound of a trumpet." The trumpet follows the appearing. Rev 8:1 silence in heaven (= Josh 6:10 silence command) precedes trumpet-judgments; Rev 11:15 7th trumpet follows the full sequence. Sinai template: God descends + trumpet exceeding loud (Exo 19:16-19) = 1Th 4:16 "Lord himself shall descend... with the trump of God." Heb 12:19 recalls this trumpet explicitly (symbols/trumpet §SINAI TEMPLATE).
-**The Event:** Rev 11:15 "The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever." Simultaneously: kingdom transfers (v15) + dead judged (v18) + saints rewarded (v18) + destroyers destroyed (v18 — G1311 diaphtheiro ×2 = Jer 51:25 "destroying mountain") + ark/covenant revealed (v19) + earthquake (v19). 1Cor 15:52 "at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed." Jericho at cosmic scale: moon-city (H3405 from H3394 yareach) falls at the 7th trumpet (contexts/Rev/11.001-019 §Round 2 TRUMPET+JERICHO).
-**Postconditions:** Kingdom transfer ENABLES the gathering (Event 11). Mat 24:31 trumpet → angels gather elect. The trumpet initiates what follows; the transition is irreversible. Jubilee enacted: all debts of the old system cancelled, all slaves freed, all land (kingdom) returned to its rightful owner. Bookend: Sinai establishment → 7th trumpet consummation (contexts/Rev/11.001-019 §ARK REVEALED).
-**Defining Scriptures:** Rev 11:15-19, 1Cor 15:52, 1Th 4:16, Mat 24:31, Isa 27:13, Lev 25:9-10, Josh 6:20
-
----
-
-### EVENT 11: GATHERING OF ELECT From Four Winds
-**Symbolic Description:** G1997 episunagōgē (2Th 2:1) = gathering-upon-together. G726 harpazō (1Th 4:17) = forceful seizure/transfer. G529 apantēsis (1Th 4:17) = technical civic-escort term: citizens go OUT to meet arriving dignitary, then escort Him BACK IN to His destination. Acts 28:15 brethren went out to meet Paul → escorted him INTO Rome, not away. Mat 25:6 virgins go out to meet bridegroom → he enters the feast. The gathering is an escort TOWARD earth (the King's destination), not departure FROM it (symbols/rapture-gathering §APANTESIS).
-**Preconditions:** EVENT 10 — Great trumpet sounded. Mat 24:31 "with a great sound of a trumpet... shall GATHER together his elect." 1Th 4:16 "trump of God" → dead rise → living caught up. 2Th 2:1 episunagōgē comes AFTER man-of-sin revealed (2Th 2:1-3). The sealing (Event 1) was the PREREQUISITE; the gathering is the CULMINATION. Servants marked so they survive what comes between sealing and ingathering (symbols/rapture-gathering §SEALING PRECONDITION).
-**The Event:** Mat 24:31 "he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other." 1Th 4:16-17 "the dead in Christ shall rise first: then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air." Isa 27:13 "the great trumpet shall be blown, and they shall come which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt, and shall worship the LORD in the holy mount at Jerusalem." H622 asaph links INGATHERING FEAST (Sukkot/7th month) to harvest-completion to dwelling with God. The gathering IS the Feast of Ingathering fulfilled (symbols/rapture-gathering §TRIPLE-LANGUAGE).
-**Postconditions:** The covenant community is fully assembled before the King. Birth-pains arc complete: Mat 24:8 (beginning of labor) → Rev 11:15 (delivery) = Isa 66:7-9 "nation born in one day." Scattered Israel regathered (Deu 30:3-4 covenant restoration after curse). SCATTER reversed → GATHER. Sukkot = 7th month = completion = final harvest = dwelling with God. The gathering inaugurates the age to come: the King is present, the people are assembled, the kingdom has transferred, the old system is smoke (symbols/rapture-gathering; contexts/Rev/11.001-019 §FULFILLMENT AUDIT).
-**Defining Scriptures:** Mat 24:31, 1Th 4:16-17, 2Th 2:1, Isa 27:13, Isa 11:12, Deu 30:3-4, 1Cor 15:52
+**= G1996 episunago** (Mat 24:31) — distinct from G3880 paralambano (Mat 24:40-41). Different word, different setting, different event. Episunago = post-trumpet, post-cosmic-signs. Paralambano = normalcy-era, pre-pain.
 
 ---
 
 ## Sequence Summary
 
 ```
-EVENT 1: Sealing ─────────► GATE (Rev 7:1-8)
+EVENT 0: Man Child Vanishes ──► Before pain (Isa 66:7 / Rev 12:5)
+    │   Normalcy era. Thief. One taken, one left.
+    │   Restrainer removed. Wicked revealed by absence.
     │
-EVENT 2: Horsemen Released ► Birth pains begin (Rev 6:1-8 = Mat 24:4-8)
+EVENT 1: Sealing ─────────────► 144,000 sealed (Rev 7:1-8)
     │
-EVENT 3: Testimony Period ─► 1,260 days in sackcloth (Mat 24:9-14 = Rev 11:3-6)
+EVENT 2: Horsemen Released ───► Birth pains begin (Rev 6:1-8 = Mat 24:4-8)
     │
-EVENT 4: Testimony Complete ► "then the end" / teleo (Mat 24:14 = Rev 11:7)
-    │
-EVENT 5: Abomination ──────► Beast acts (Mat 24:15 = 2Th 2:3-4)
-    │
-EVENT 6: "Come Out" ───────► Extraction (Rev 18:4 = Jer 51:6,45)
-    │
-EVENT 7: Ten Horns Destroy ► Self-consuming fire (Rev 17:16-17)
-    │
-EVENT 8: Cosmic Darkening ─► Authority collapses (Mat 24:29 = Isa 13:10)
-    │
-EVENT 9: Son of Man Appears ► Through smoke/cloud (Mat 24:30 = Dan 7:13)
-    │
-EVENT 10: Great Trumpet ───► Kingdom transfer (Rev 11:15 = 1Cor 15:52)
-    │
-EVENT 11: Gathering ───────► Elect assembled (Mat 24:31 = 1Th 4:16-17)
+    ├── FIRST 1,260 DAYS ─────────────────────────────────────┐
+    │                                                          │
+EVENT 3: Testimony Period ────► Witnesses prophesy in sackcloth │
+    │   Gospel preached for a witness (Mat 24:9-14)            │
+    │   Apostasia occurs within (2Th 2:3)                      │
+    │                                                          │
+    ├── MIDPOINT ──────────────────────────────────────────────┤
+    │                                                          │
+EVENT 4: Hinge ───────────────► Testimony completed (Rev 11:7) │
+    │   Witnesses killed. Abomination installed.               │
+    │   Woman (Israel) flees to wilderness.                    │
+    │   "Come Out" — remaining faithful exit Babylon.          │
+    │                                                          │
+    ├── SECOND 1,260 DAYS ────────────────────────────────────┐│
+    │                                                          ││
+EVENT 5: Beast Authority ─────► Woman in wilderness (Rev 12:6) ││
+    │   Dragon's flood (army) swallowed by earthquake.         ││
+    │   Dragon wars with remnant (Rev 12:17).                  ││
+    │   Witnesses' bodies lie 3.5 "days" = 3.5 years.         ││
+    │   Word withdrawn — famine of hearing (Amos 8:11).        ││
+    │                                                          ││
+    └──────────────────────────────────────────────────────────┘│
+                                                                │
+EVENT 6: Babylon Falls ═══════► KINGDOM DECLARED               │
+    │   7th trumpet = 7th bowl = Jubilee trumpet = ONE EVENT   │
+    │   Witnesses rise. "It is done." Terminal earthquake.      │
+    │   FIRE → SMOKE → DARKNESS. Son of Man through cloud.     │
+    │   Fall of Babylon = cosmic Jubilee (Jer 50-51 vocabulary) │
+    │                                                           │
+EVENT 7: Gathering ───────────► Remaining elect assembled
+        Apantesis escort toward earth. Great trumpet.
+        "Her children" born through travail (Isa 66:8).
+        Nation born in a day. Converge on Mount Zion.
 ```
 
-**Key structural principle:** Each event is structurally LOCKED behind its predecessor. The sealing must complete before horsemen ride. Testimony must finish before the beast acts. Extraction must occur before Babylon burns. The darkening results from the burning. The Son of Man appears through the smoke. The trumpet follows the appearing. The gathering follows the trumpet. No event can be moved without breaking the causal chain Scripture establishes.
+**Key structural change from Rev 1:** The man-child vanishing (Event 0) PRECEDES the birth pains, based on Isa 66:7, the wrath distinction (thlipsis ≠ orgé, saints not appointed to orgé), the Sodom principle (Gen 18-19), and the five witnesses to the vanishing (Isa 66:7, Rev 12:5, Dan 9:26 patched, 2Th 2:7, Gen 5:24). Mat 24's inclusio structure frames the vanishing (A/A') around the aftermath (B/B'). Two gatherings distinguished by vocabulary: paralambano (normalcy-era receiving) vs episunago (post-trumpet assembly).
+
+**Timeline:** 70 jubilees from Jordan crossing (1406 BC + 3430 = ~2024 AD). Abraham's covenant (~1876 BC) + 3900 = ~2025 AD (kingdom declared) + 1000 (millennium) = 4900 = 70×70 (Dan 9:24 "seventy seventy"). Kingdom declared at START — Jubilee trumpet initiates.

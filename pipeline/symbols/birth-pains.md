@@ -9,8 +9,8 @@ opposite: REST
 defining_verses: [Isa 66:7-9, Matt 24:8, 1Thess 5:3, Mic 4:9-10, Jer 30:6-7, Rev 12:2, Gal 4:19]
 co_occurring: [JERUSALEM, BABYLON, MAN_CHILD, MOMENT, NIGHT, DARKNESS, DAY]
 context_types: [prophetic oracle, apocalyptic, discourse, psalm, wisdom]
-rev: 1
-churn: 1.00
+rev: 2
+churn: 1.50
 inputs: {}
 dependents: []
 ---
@@ -56,3 +56,10 @@ Acts 2:24 — Death's pangs loosed = resurrection reframes death as failed labor
 **CROSS-TESTAMENT:** H2256→LXX ὠδίν→NT ὠδίν (G5604). Matt 24:8 echoes OT prophetic pattern.
 
 **HEBREW:** H2256 *chebel* cord+pain links covenant binding to labor. Judgment = covenant cord tightening.
+
+## Rev 2 — Isa 66:7 Timing
+
+- Isa 66:7 explicitly says delivery BEFORE pain: "before her pain (H2256 chebel) came, she was delivered (H4422 malat) of a man child."
+- H4422 malat = Lot's Sodom escape word (Gen 19:17,19,20,22 ×4).
+- Two-stage pattern: man child before pain (v7) + children through pain (v8). Not one delivery but two.
+- The birth-pains in Mat 24:4-8 are what happens AFTER the man child is delivered, not before.

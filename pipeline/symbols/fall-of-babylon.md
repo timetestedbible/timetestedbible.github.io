@@ -9,8 +9,8 @@ opposite: JERUSALEM
 defining_verses: [Gen 11:9, Isa 21:9, Jer 51:6-8, Rev 14:8, Rev 17:5, Rev 18:2-4, Rev 18:21]
 co_occurring: [WINE, FORNICATION, HARLOT, MOUNTAIN, SEA, NATIONS, FAMINE, EARTHQUAKE, MOMENT, WICKEDNESS]
 context_types: [narrative, prophetic oracle, apocalyptic]
-rev: 3
-churn: 1.60
+rev: 4
+churn: 2.40
 inputs: {BABYLON, HARLOT, WINE, FORNICATION, MOMENT}
 dependents: [RETURN_OF_CHRIST, SUDDEN_DESTRUCTION, SUN_MOON_STARS, contexts/Mat/24.029-031]
 ---
@@ -52,3 +52,10 @@ Rev 18:4 "Come out of her MY PEOPLE" precedes Rev 18:8 "burned with fire." Jer 5
 **TRIPLE-LANGUAGE:** Hebrew bālal (confusion) lost in Greek transliteration. Meaning preserved only via Hebrew root—fall of Babylon = end of confusion, restoration of unified covenant speech (cf. Zeph3:9).
 
 **NOTE:** Rev 18:5 "her sins have reached unto HEAVEN (G3772/H8064)" — שָׁמַיִם in BDB covers BOTH the physical sky/space AND God's dwelling. Literal reading: lawlessness extending physically into the atmosphere and beyond (air travel, weapons of war, space). The tower of Babel literally reached toward the sky; Babylon's sins literally reach into space. Don't spiritualize away the physical dimension.
+
+## Rev 4 — Jubilee Vocabulary in Jer 50-51
+
+- The fall of Babylon IS the cosmic Jubilee. 9 Jubilee terms appear in Jer 50-51:
+- Trumpet/shout (50:15, 51:27), Redeemer H1350 gaal (50:34), Captives freed (50:33-34), Debts/sins cancelled (50:20 "iniquity NOT FOUND"), Land returned (50:19), Rest H7280 raga (50:34), Return + perpetual covenant (50:4-5), Come out/liberty (50:8, 51:6,45)
+- 7th trumpet = 7th bowl = Jubilee trumpet = ONE EVENT. Kingdom declared at Babylon's fall.
+- Jubilee trumpet initiates (Lev 25:9) — blown at the START, not the end.

@@ -618,7 +618,12 @@ const URLRouter = {
         }
         // No localStorage fallback — URL is source of truth
         
-        if (parts[partIndex]) params.book = decodeURIComponent(parts[partIndex]);
+        if (parts[partIndex]) {
+          let bookName = decodeURIComponent(parts[partIndex]);
+          if (typeof normalizeBookName === 'function') bookName = normalizeBookName(bookName);
+          else if (typeof Bible !== 'undefined' && Bible.normalizeBookName) bookName = Bible.normalizeBookName(bookName);
+          params.book = bookName;
+        }
         if (parts[partIndex + 1]) params.chapter = parseInt(parts[partIndex + 1]);
         if (parts[partIndex + 2]) params.verse = parseInt(parts[partIndex + 2]);
         break;
@@ -666,7 +671,12 @@ const URLRouter = {
               : 'kjv';
           }
 
-          if (bibleParts[bibleIdx]) params.book = decodeURIComponent(bibleParts[bibleIdx]);
+          if (bibleParts[bibleIdx]) {
+            let bookName = decodeURIComponent(bibleParts[bibleIdx]);
+            if (typeof normalizeBookName === 'function') bookName = normalizeBookName(bookName);
+            else if (typeof Bible !== 'undefined' && Bible.normalizeBookName) bookName = Bible.normalizeBookName(bookName);
+            params.book = bookName;
+          }
           if (bibleParts[bibleIdx + 1]) params.chapter = parseInt(bibleParts[bibleIdx + 1]);
           if (bibleParts[bibleIdx + 2]) params.verse = parseInt(bibleParts[bibleIdx + 2]);
         } else if (contentType === 'symbols') {
@@ -687,6 +697,9 @@ const URLRouter = {
         } else if (contentType === 'timetested') {
           // Parse book chapter: /reader/timetested/chapter-slug
           if (parts[1]) params.chapterId = parts[1];
+        } else if (contentType === 'blog') {
+          // Parse blog post: /reader/blog/post-slug
+          if (parts[1]) params.slug = parts[1];
         } else if (contentType === 'philo') {
           // Parse philo: /reader/philo/{work-slug}/{section}
           if (parts[1]) params.work = parts[1]; // work slug
@@ -941,6 +954,8 @@ const URLRouter = {
           if (params.study) readerPath += '/' + params.study;
         } else if (contentType === 'timetested') {
           if (params.chapterId) readerPath += '/' + params.chapterId;
+        } else if (contentType === 'blog') {
+          if (params.slug) readerPath += '/' + params.slug;
         } else if (contentType === 'philo') {
           if (params.work) readerPath += '/' + params.work;
           if (params.section) readerPath += '/' + params.section;

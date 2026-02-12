@@ -51,6 +51,20 @@ const ReaderView = {
     }
   },
 
+  /**
+   * Render view-specific controls into the global sub-nav bar.
+   * Delegates to BibleView which owns the selector DOM.
+   * Not shown on the reader landing page (no contentType).
+   */
+  renderSubNav(state, derived, container) {
+    const contentType = state?.content?.params?.contentType;
+    if (!contentType) return; // Landing page — no sub-nav
+    
+    if (typeof BibleView !== 'undefined' && BibleView.renderSubNav) {
+      BibleView.renderSubNav(state, derived, container);
+    }
+  },
+
   render(state, derived, container) {
     this.container = container;
     
@@ -103,6 +117,9 @@ const ReaderView = {
         break;
       case 'timetested':
         currentKey = `timetested:${params.chapterId || 'index'}`;
+        break;
+      case 'blog':
+        currentKey = `blog:${params.slug || 'index'}`;
         break;
       case 'philo':
         // Key only on work — section changes scroll within the same rendered page
@@ -228,6 +245,30 @@ const ReaderView = {
           }
         }, 50);
         break;
+      
+      case 'blog': {
+        // Render the Bible frame structure first (includes research panel)
+        const blogState = { content: { params: { contentType: 'blog' } } };
+        const existingBlogPage = container.querySelector('#bible-explorer-page');
+        if (!existingBlogPage) {
+          if (typeof BibleView !== 'undefined') {
+            BibleView.renderStructure(container, blogState);
+          }
+        } else if (typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+          BibleView.syncSelectorVisibility(blogState);
+        }
+        
+        // Load blog content into the text area
+        const blogTextArea = container.querySelector('#bible-explorer-text') || container.querySelector('.bible-text-area') || container;
+        if (params.slug) {
+          blogTextArea.innerHTML = `<div class="loading">Loading article...</div>`;
+          this.loadBlogPost(params.slug, blogTextArea);
+        } else {
+          blogTextArea.innerHTML = `<div class="reader-error">No blog post specified.</div>`;
+        }
+        this.syncUIState(state.ui);
+        break;
+      }
         
       case 'philo':
         this.renderClassicsInBibleFrame(state, derived, container, 'philo', params);
@@ -678,6 +719,23 @@ const ReaderView = {
   async loadWordStudy(wordId, container) {
     const contentEl = container.querySelector('#word-study-content');
     if (!contentEl) return;
+
+    // Check dictionary for redirect — some entries (e.g. root verbs) link
+    // to a combined study under a different Strong's number
+    if (typeof WORD_STUDY_DICTIONARY !== 'undefined' && WORD_STUDY_DICTIONARY[wordId]) {
+      const entry = WORD_STUDY_DICTIONARY[wordId];
+      const linkMatch = (entry.link || '').match(/\/reader\/words\/([^/?#]+)/);
+      if (linkMatch && linkMatch[1].toUpperCase() !== wordId.toUpperCase()) {
+        // Navigate to the canonical word study instead
+        AppStore.dispatch({
+          type: 'SET_VIEW',
+          view: 'reader',
+          params: { contentType: 'words', word: linkMatch[1].toUpperCase() }
+        });
+        return;
+      }
+    }
+
     try {
       const response = await fetch(`/words/${wordId}.md`);
       if (!response.ok) throw new Error(`Word study not found: ${wordId}`);
@@ -1090,7 +1148,8 @@ const ReaderView = {
         const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${targetVerse}`;
         // id matches book-scripture-index anchor format (ref-book-chapter-verse) for scroll-from-Bible
         const anchorId = 'ref-' + (book || '').toLowerCase().replace(/\s+/g, '-') + '-' + chapter + '-' + targetVerse;
-        return `<a id="${anchorId}" href="${url}" class="scripture-ref" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
+        const dataRef = `${book} ${chapter}:${targetVerse}`;
+        return `<a id="${anchorId}" href="${url}" class="scripture-ref" data-ref="${dataRef}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
       });
       node.parentNode.replaceChild(span, node);
     });
@@ -1657,6 +1716,40 @@ const ReaderView = {
       
     } catch (e) {
       container.innerHTML = `<div class="reader-error">Error loading chapter: ${e.message}</div>`;
+    }
+  },
+
+  /**
+   * Load a blog post (HTML fragment with phrase-linking) into the reader view
+   * @param {string} slug - Blog post slug (e.g., 'blood-moon-over-the-moon-city')
+   * @param {Element} container - Container to render into
+   */
+  async loadBlogPost(slug, container) {
+    try {
+      const response = await fetch(`/blog/${slug}.html`);
+      if (!response.ok) throw new Error('Blog post not found');
+      const html = await response.text();
+      
+      container.innerHTML = `
+        <div class="ttt-chapter-content">
+          <article class="ttt-chapter-body">
+            ${html}
+          </article>
+        </div>
+      `;
+      
+      // Make scripture references clickable (before script execution so refs are ready)
+      this.linkifyScriptureRefs(container);
+      
+      // Re-execute any inline scripts from the loaded HTML
+      container.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
+      
+    } catch (e) {
+      container.innerHTML = `<div class="reader-error">Error loading blog post: ${e.message}</div>`;
     }
   },
 
