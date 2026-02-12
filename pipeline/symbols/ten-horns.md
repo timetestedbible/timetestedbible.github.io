@@ -1,0 +1,43 @@
+---
+symbol: ten-horns
+name: TEN HORNS
+strongs: [H7161, H7162, G2768]
+words: ["ten horns", "horns", "horn", "qeren", "keras"]
+role: structural-pattern
+meaning: Ten subsidiary kings/powers that derive authority from and serve the beast-system — delegated imperial power that operates temporarily ("one hour") and ultimately turns on its own source (harlot). The horn = projected power/authority; ten = the complete set of vassal-kingdoms the beast deploys.
+opposite: THE SEVEN HORNS OF THE LAMB (Rev 5:6 — complete divine power; ten horns = complete imperial power)
+defining_verses: [Rev 17:12, Rev 17:16, Dan 7:7, Dan 7:24, Rev 13:1, Rev 12:3, Zech 1:18-21]
+co_occurring: [BEAST, DRAGON, HARLOT, CROWN, IRON, FIRE, SEA, BABYLON_THE_GREAT, FALL_OF_BABYLON]
+context_types: [apocalyptic, prophetic oracle, vision]
+all_verses: [Dan 7:7-8, Dan 7:11, Dan 7:20-21, Dan 7:24, Rev 12:3, Rev 13:1, Rev 13:11, Rev 17:3, Rev 17:7, Rev 17:12, Rev 17:16, Zech 1:18-21]
+rev: 1
+churn: 1.00
+inputs: {symbols/dragon: [1, 1.00], symbols/iron: [1, 1.00], symbols/crown: [1, 1.00], symbols/harlot: [1, 1.00]}
+dependents: [symbols/beast, symbols/dragon, symbols/harlot, symbols/babylon-the-great, symbols/fall-of-babylon, symbols/crown]
+---
+
+**H7161 qeren** = "a horn (as projecting); by implication a flask, cornet; by resemblance an elephant's tooth (ivory), a corner (of the altar), a ray (of light); figuratively POWER" from H7160 qaran = "to push/gore; to shoot out horns; figuratively RAYS (of light)." HORN = projected power — whether political (king's authority), military (goring weapon), liturgical (altar corners, anointing flask), or luminous (rays of God's glory, Hab 3:4). H7162 qeren (Aramaic) = same, used in Dan 7. **G2768 keras** = "a horn (literally or figuratively)" from primary word for "hair of the head" — projecting outgrowth. Both roots: SOMETHING THAT PROJECTS FROM A SOURCE — delegated extension of power.
+
+NOTE: HORN as standalone symbol spans massive range — anointing (1Sam 16:1,13; 1Ki 1:39), altar refuge (1Ki 1:50, 2:28), praise (1Chr 25:5), power (Ps 75:4-5,10; 89:17,24; 92:10; 112:9; 132:17; 148:14), salvation (2Sam 22:3; Ps 18:2; Lk 1:69), judgment (Lam 2:3,17; Jer 48:25), and scattered nations (Zech 1:18-21). This study focuses on the TEN HORNS pattern specifically.
+
+## Context Bag
+
+Dan 7:7-8 — subj: FOURTH beast (dreadful, iron teeth) has TEN HORNS (H7162). Among them rises ANOTHER LITTLE horn — before it THREE of the first horns plucked up. Little horn: eyes like man, mouth speaking GREAT THINGS. co: IRON, BEAST. Ten = full set of subsidiary kingdoms within the fourth empire. Little horn = individual ruler emerging from within, displacing three, with human cunning + blasphemous speech.
+Dan 7:11 — subj: horn speaks great words → beast SLAIN, body given to BURNING FLAME. co: FIRE. Horn's speech triggers the beast's destruction. Speech (blasphemy) brings judgment.
+Dan 7:20-21 — subj: the horn with eyes+mouth, look MORE STOUT than fellows, made WAR WITH SAINTS, prevailed. co: SAINTS. Horn-power specifically targets God's people. "More stout" = greater ambition than peer-horns.
+Dan 7:24 — subj: EXPLICIT: ten horns = TEN KINGS from this kingdom. Another rises AFTER them, DIVERSE from first, subdues THREE kings. co: BEAST. Angel's interpretation. Horns = kings. The little horn is DIFFERENT in kind from the ten.
+Dan 7:25 — subj: (same horn) speaks against Most High, wears out saints, changes TIMES AND LAWS. Given power for TIME, TIMES, HALF A TIME. co: LAW, TIME. Duration = 3.5 = half of 7. The horn's authority has a SET LIMIT.
+Rev 12:3 — subj: red DRAGON: seven heads + TEN HORNS + seven crowns ON HEADS. co: DRAGON, CROWN. Dragon's ten horns = the imperial structure Satan controls. Crowns on HEADS (not horns) — authority resides in the heads; horns are the projections of that authority.
+Rev 13:1 — subj: beast from SEA: seven heads + TEN HORNS + ten crowns ON HORNS + blasphemy names on heads. co: BEAST, SEA, DRAGON, CROWN. SHIFT: crowns move from heads (Rev 12:3) to HORNS (Rev 13:1). Dragon's authority now DELEGATED to the horn-kings. The beast-system distributes power outward. Ten crowns on ten horns = ten crowned vassal-kings.
+Rev 13:11 — subj: beast from earth: TWO horns like a LAMB, speaks as DRAGON. co: DRAGON, LAMB. False prophet. Two horns (not ten) = mimicry of the Lamb's authority (Rev 5:6 Lamb has SEVEN horns). Two = witness/testimony perverted. Looks religious, speaks imperially.
+Rev 17:3 — subj: scarlet beast with seven heads + ten horns; WOMAN rides it. co: HARLOT, SCARLET, BEAST. Harlot RIDES the ten-horned beast = uses imperial power for her purposes.
+Rev 17:7 — subj: angel explains MYSTERY of woman + beast with seven heads + ten horns. co: MYSTERY, HARLOT.
+Rev 17:12 — subj: EXPLICIT: ten horns = TEN KINGS who have received NO KINGDOM YET but receive AUTHORITY (G1849 exousia) as kings ONE HOUR with the beast. co: BEAST, CROWN. KEY: (1) These are kings WITHOUT established kingdoms — newly empowered. (2) Duration = "one hour" = extreme brevity. (3) Power is WITH (G3326 meta) the beast, not independent. They are extensions of the beast-system, not sovereign in their own right.
+Rev 17:16 — subj: TEN HORNS + beast HATE the harlot, make her DESOLATE + NAKED, eat her FLESH, BURN her with FIRE. co: HARLOT, FIRE, FALL_OF_BABYLON. CRITICAL: the beast's OWN power-structure destroys the harlot. The ten kings turn on the system they served. Self-consuming empire. Rev 17:17 — God puts it in their hearts to fulfill His will = sovereign orchestration of empire's self-destruction.
+Zech 1:18-21 — subj: FOUR horns that scattered Judah/Israel/Jerusalem. FOUR carpenters (craftsmen) come to fray/terrify them, to cast out the horns of the Gentiles. co: JUDGMENT. Four = complete set of imperial powers that dispersed Israel. God raises up counter-agents (carpenters = builders/destroyers) to deal with each horn. Pattern: every scattering horn has a corresponding judgment-agent.
+
+**HORN metaphor in broader Scripture**: (1) Ps 75:4-5,10 — "Lift not up your horn" = don't claim unauthorized power. Wicked horns cut off, righteous horns exalted. (2) 1Sam 2:1,10 — Hannah: "my horn exalted" + "exalt horn of His anointed (H4899 mashiach)." Horn = power given by God. (3) Ps 132:17 — "make horn of David to BUD (H6779 tsamach)" + "ordained a LAMP for my anointed." Horn buds = power grows organically. (4) Hab 3:4 — God: "horns (H7161) coming out of His hand; there the HIDING of His power." God's horn = radiant power emanating from His person. (5) Rev 5:6 — Lamb has SEVEN horns = complete divine power. Seven (completeness of God) vs ten (completeness of empire).
+
+**CANDIDATES**: (1) Ten nations/empires → Dan 7:24 explicitly "ten kings" — strong but too specific. (2) Delegated imperial sub-powers → Rev 17:12 "authority as kings one hour WITH the beast" — strong. (3) Military extensions of empire → horn = goring weapon → armies — partial. (4) Temporary vassal-kingdoms → Rev 17:12 "one hour" + "no kingdom yet" — strong. (5) Complete set of imperial power → ten = rounded completeness — strong. (6) Self-destructive imperial apparatus → Rev 17:16-17 they destroy their own system — distinctive but supplementary. (7) Delegated imperial power operating temporarily and ultimately self-consuming = BEST composite. Substitution: Dan 7:7 ✓ (fourth empire's full set of sub-powers), Rev 13:1 ✓ (crowned vassal-kings), Rev 17:12 ✓ (temporary empowered kings), Rev 17:16 ✓ (self-devouring), Zech 1:18 ✓ (complete set of scattering powers).
+
+**PATTERNS**: (1) CROWN MIGRATION: Dragon (Rev 12:3) has crowns on HEADS. Beast (Rev 13:1) has crowns on HORNS. Authority transfers from the core (heads = intelligence/identity) to the projections (horns = delegated power). Empire decentralizes as it matures. (2) SEVEN vs TEN: Lamb = 7 horns (divine completeness). Beast = 10 horns (imperial completeness). Both claim full power; one is authentic (7), one is counterfeit excess (10 = 7+3?). (3) ONE HOUR: Rev 17:12 — briefest duration. These kings flash into existence, serve the beast, destroy the harlot, and are themselves destroyed. Empires' final agents are ephemeral. (4) SELF-CONSUMING EMPIRE: Rev 17:16-17 — the ten horns eat the harlot's flesh and burn her. God uses the beast's own apparatus to destroy its economic/religious system. Babylon falls from WITHIN. (5) LITTLE HORN AMONG TEN: Dan 7:8 — eleventh horn rises, uproots three, speaks blasphemy, wars on saints. Ten = background; the anomalous one is the real actor. (6) FOUR HORNS → FOUR CARPENTERS: Zech 1 — every projection of imperial power has a counter-agent. God's judgment matches empire measure-for-measure.
