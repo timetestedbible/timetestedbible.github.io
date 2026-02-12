@@ -4,10 +4,10 @@ name: WHO DESTROYS BABYLON THE GREAT
 role: structural-pattern
 meaning: The "nation from the north" (Jer 50:3,41; 51:48) = the composite beast (lion-bear-serpent, Rev 13:2 = Dan 7 merged) whose ten horns are Babylon's own political apparatus that turns on the harlot (Rev 17:16-17) at God's direction — self-consuming fire from within (Ezek 28:18)
 defining_verses: [Jer 50:3, Jer 50:41-44, Jer 51:48, Rev 17:16-17, Rev 13:2, Amos 5:19, Ezek 28:18, Isa 9:18-19, Jer 50:24, Hab 1:15-17, Rev 18:8, Jer 51:25, Isa 13:17]
-co_occurring: [TEN_HORNS, LION, BEAR, SERPENT, DRAGON, BEAST, FIRE, NET, CHEREM, SNARE, BABYLON, FALL_OF_BABYLON, HARLOT, WICKEDNESS, THORNS, NORTH]
-rev: 2
-churn: 1.00
-inputs: {symbols/ten-horns: [1, 1.00], symbols/fire: [2, 1.15], symbols/net: [1, 1.00], symbols/cherem: [1, 1.00], symbols/snare: [2, 1.40], symbols/babylon: [2, 1.60], symbols/fall-of-babylon: [3, 1.60], symbols/tyre: [1, 1.00], contexts/Rev/17.001-018: [1, 1.00], contexts/Rev/18.001-024: [3, 1.20], contexts/Ezek/27.001-28.019: [2, 1.00]}
+co_occurring: [TEN_HORNS, LION, BEAR, SERPENT, DRAGON, BEAST, FIRE, NET, CHEREM, SNARE, BABYLON, FALL_OF_BABYLON, HARLOT, WICKEDNESS, THORNS, NORTH, SMOKE]
+rev: 3
+churn: 1.10
+inputs: {symbols/ten-horns: [1, 1.00], symbols/fire: [2, 1.15], symbols/net: [1, 1.00], symbols/cherem: [1, 1.00], symbols/snare: [2, 1.40], symbols/babylon: [2, 1.60], symbols/fall-of-babylon: [3, 1.60], symbols/tyre: [1, 1.00], symbols/north: [1, 1.00], contexts/Rev/17.001-018: [1, 1.00], contexts/Rev/18.001-024: [3, 1.20], contexts/Ezek/27.001-28.019: [2, 1.00]}
 dependents: [symbols/fall-of-babylon, symbols/ten-horns, symbols/fire, symbols/net, symbols/cherem, symbols/babylon, contexts/Rev/17.001-018, contexts/Rev/18.001-024]
 ---
 
@@ -16,7 +16,7 @@ dependents: [symbols/fall-of-babylon, symbols/ten-horns, symbols/fire, symbols/n
 **THE QUESTION:** Who destroys Babylon the Great?
 
 **THE NATION FROM THE NORTH — JEREMIAH'S ANSWER:**
-Jer 50:3 — "out of the NORTH there cometh up a NATION against her, which shall make her land desolate." Jer 50:9 — "an assembly of great nations from the north country." Jer 50:41 — "a people from the north, a great nation, and many kings." Jer 51:48 — "spoilers shall come unto her FROM THE NORTH." This destroyer is described as: (a) LION — Jer 50:44 "he shall come up LIKE A LION from the swelling of Jordan." (b) God's instrument — Jer 51:20 "thou art my battle axe and weapons of war." (c) Immune to Babylon's wealth — Isa 13:17 Medes "regard not silver, delight not in gold."
+Jer 50:3 — "out of the NORTH there cometh up a NATION against her, which shall make her land desolate." Jer 50:9 — "an assembly of great nations from the north country." Jer 50:41 — "a people from the north, a great nation, and many kings." Jer 51:48 — "spoilers shall come unto her FROM THE NORTH." **H6828 tsaphown = "properly, HIDDEN" from H6845 tsaphan (to hide/conceal).** North is literally "the hidden direction" — judgment from the north = judgment from concealment = the SNARE mechanism. The destroyer approaches unseen (→ symbols/north). This destroyer is described as: (a) LION — Jer 50:44 "he shall come up LIKE A LION from the swelling of Jordan." (b) God's instrument — Jer 51:20 "thou art my battle axe and weapons of war." (c) Immune to Babylon's wealth — Isa 13:17 Medes "regard not silver, delight not in gold."
 
 Historical fulfillment: Medes/Persians from the north (539 BC). Babylon-the-Great scale: the COMPOSITE BEAST of Rev 13:2 = LION mouth + BEAR feet + LEOPARD body = Dan 7's four empire-beasts MERGED into one. The ten horns are the PROJECTIONS of this composite entity. Amos 5:19 gives the three-stage attack: LION (imperial assault) → BEAR (crushing force) → SERPENT (deceptive personal sting). Not three separate enemies — three MODES of one destroyer.
 
