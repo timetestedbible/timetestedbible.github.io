@@ -32,7 +32,7 @@ Hab 3:11 — Sun+moon stood still. Same full-moon requirement. Prophetic templat
 Zech 14:7 — "at evening it shall be light." Full moon rises at sunset = light at evening. No other explanation.
 Joel 2:31 / Acts 2:20 / Rev 6:12 — Moon→blood. Smoke/fire (Rev 18:9, Joel 2:30 "pillars of smoke") reddens visible moon. Must be FULL to observe blood-color. Not eclipse — judgment-smoke mechanism.
 
-**H3842 levanah (the white/bright moon):** Song 6:10 BRIDE = fair as levanah = full-brightness moon. Isa 24:23 levanah confounded when 𐤉𐤄𐤅𐤄 reigns. Isa 30:26 levanah becomes sun-bright.
+**H3842 levanah (the white/bright moon):** Song 6:10 BRIDE = fair as levanah = full-brightness moon. Isa 24:23 levanah confounded when 𐤉𐤄𐤅𐤄 reigns. Isa 30:26 levanah becomes sun-bright — MATH PROOF: full moon reflects ~1/7 of sun's brightness. Sun×7 = sevenfold. Moon = 1/7 × 7 = current sun brightness. "Light of the moon shall be as light of the sun" = EXACTLY the math of a full moon when the sun is 7× brighter. Only works at full phase. A crescent or half moon × 7 still ≠ sun.
 
 **H3405 JERICHO** from H3394 yareach (moon). Moon-city falls at SHOFAR blast (Josh 6:20). Ps 81:3 shofar at full moon. Jericho = Babylon typology: moon-city destroyed by trumpet at full moon.
 
