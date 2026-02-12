@@ -278,7 +278,6 @@ async function showCrossRefPanel(book, chapter, verse, event) {
   await loadCrossReferences();
   
   const refs = getCrossReferencesSync(book, chapter, verse);
-  const contentEl = sidebar.querySelector('.research-panel-content');
   
   if (refs.length === 0) {
     if (contentEl) {
