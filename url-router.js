@@ -349,6 +349,11 @@ const URLRouter = {
       idx++;
       // Parse remaining as view params
       result.content.params = this._parseViewParams(result.content.view, parts.slice(idx));
+      // /blog/{slug} for full articles → render in reader view
+      if (result.content.params._blogArticle) {
+        result.content.view = 'reader';
+        delete result.content.params._blogArticle;
+      }
       // Parse query params
       this._parseQueryParams(searchParams, result);
       // Apply view redirects (e.g. /priestly → calendar with panel open)
@@ -751,8 +756,21 @@ const URLRouter = {
         break;
         
       case 'blog':
-        // Optional post ID: /blog/v100-major-refactor
-        if (parts[0]) params.postId = parts[0];
+        // /blog/{slug} — if slug matches a full blog article, render it in the reader
+        // Otherwise treat as a blog index focused on that post card
+        if (parts[0]) {
+          // Check if this slug has a full HTML article (fetched via /blog/{slug}.html)
+          // Known full-article slugs: add new ones here as blog posts are published
+          const fullArticleSlugs = ['blood-moon-over-the-moon-city'];
+          if (fullArticleSlugs.includes(parts[0])) {
+            // Render in reader view with blog content type
+            params.contentType = 'blog';
+            params.slug = parts[0];
+            params._blogArticle = true; // signal to override view to 'reader'
+          } else {
+            params.postId = parts[0];
+          }
+        }
         break;
     }
     
@@ -800,6 +818,10 @@ const URLRouter = {
         path += '/' + lunarDay;
       }
     } 
+    // Blog articles: /blog/{slug} instead of /reader/blog/{slug}
+    else if (content.view === 'reader' && content.params?.contentType === 'blog' && content.params?.slug) {
+      path = '/blog/' + content.params.slug;
+    }
     // Other views use simple URLs
     else {
       path = '/' + content.view;

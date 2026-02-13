@@ -1,0 +1,38 @@
+# Jekyll configuration for Time Tested Bible
+# GitHub Pages runs Jekyll automatically — no manual build step needed.
+# Only files with YAML frontmatter (---) are processed by Jekyll.
+# All other files (JS, CSS, images, data) pass through unchanged.
+
+# Exclude directories and files that Jekyll should never touch
+exclude:
+  - node_modules
+  - _dev
+  - pipeline
+  - scripts
+  - brank
+  - http-v1
+  - LICENSE
+  - README.md
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+
+# Don't generate a default feed or other Jekyll extras
+plugins: []
+
+# Default frontmatter values — pages can override any of these
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      page_title: "Time Tested Bible"
+      og_title: "Time Tested Bible"
+      og_description: "Bible study app with lunar calendar, Strong's concordance, interlinear Hebrew/Greek, word studies, and historical timeline."
+      og_image: "https://timetested.bible/icons/icon-512.png"
+      og_url: "https://timetested.bible/"
+      og_type: "website"
+      keywords: "bible study, biblical calendar, hebrew calendar, strongs concordance, interlinear bible, feast days, sabbath calendar, moon phases, biblical timeline, appointed times, torah portions"
+      author: "Time Tested Bible"
+      description: "Bible study app with lunar calendar, Strong's concordance, interlinear Hebrew/Greek, word studies, and historical timeline. Track Sabbaths, feast days, and appointed times."

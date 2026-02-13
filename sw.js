@@ -271,10 +271,13 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Message event - respond to version queries
+// Message event - respond to version queries and skip-waiting requests
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'GET_VERSION') {
     event.ports[0].postMessage({ version: CACHE_NAME });
+  }
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
   }
 });
 
@@ -316,6 +319,8 @@ self.addEventListener('fetch', (event) => {
       })
       .catch(() => {
         // If both cache and network fail, return offline page for navigation
+        // For blog article pages (/blog/{slug}/), also fall back to SPA shell —
+        // the SPA router will parse the URL and load the blog content
         if (event.request.mode === 'navigate') {
           return caches.match('/');
         }

@@ -27,7 +27,13 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Jekyll (in http folder)
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Legacy Jekyll (in http folder)
 http/_site/
 http/.sass-cache/
 http/.jekyll-cache/
