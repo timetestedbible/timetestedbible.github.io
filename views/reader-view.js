@@ -59,6 +59,7 @@ const ReaderView = {
   renderSubNav(state, derived, container) {
     const contentType = state?.content?.params?.contentType;
     if (!contentType) return; // Landing page — no sub-nav
+    if (contentType === 'blog') return; // Blog posts — no sub-nav
     
     if (typeof BibleView !== 'undefined' && BibleView.renderSubNav) {
       BibleView.renderSubNav(state, derived, container);

@@ -94,7 +94,7 @@ const BlogView = {
       cardBody = `
         <p class="blog-post-summary">${post.summary || ''}</p>
         <p class="blog-nav-link">
-          <a href="/blog/${post.slug}/" class="blog-read-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'${post.slug}'}}); return false;">Read the Full Study &rarr;</a>
+          <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'${post.slug}'}})">Read more &rarr;</button>
         </p>
       `;
     } else {
