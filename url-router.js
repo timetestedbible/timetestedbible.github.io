@@ -756,20 +756,14 @@ const URLRouter = {
         break;
         
       case 'blog':
-        // /blog/{slug} — if slug matches a full blog article, render it in the reader
-        // Otherwise treat as a blog index focused on that post card
+        // /blog/{slug} — route to reader with blog content type
+        // All blog post slugs are auto-discovered from posts.json;
+        // no hardcoded list needed. If the slug doesn't match a post,
+        // the reader will show a "not found" message.
         if (parts[0]) {
-          // Check if this slug has a full HTML article (fetched via /blog/{slug}.html)
-          // Known full-article slugs: add new ones here as blog posts are published
-          const fullArticleSlugs = ['blood-moon-over-the-moon-city'];
-          if (fullArticleSlugs.includes(parts[0])) {
-            // Render in reader view with blog content type
-            params.contentType = 'blog';
-            params.slug = parts[0];
-            params._blogArticle = true; // signal to override view to 'reader'
-          } else {
-            params.postId = parts[0];
-          }
+          params.contentType = 'blog';
+          params.slug = parts[0];
+          params._blogArticle = true; // signal to override view to 'reader'
         }
         break;
     }

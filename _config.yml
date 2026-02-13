@@ -21,8 +21,12 @@ exclude:
 # Don't generate a default feed or other Jekyll extras
 plugins: []
 
+# Blog post permalink structure
+permalink: /blog/:slug/
+
 # Default frontmatter values — pages can override any of these
 defaults:
+  # Site-wide defaults
   - scope:
       path: ""
     values:
@@ -36,3 +40,10 @@ defaults:
       keywords: "bible study, biblical calendar, hebrew calendar, strongs concordance, interlinear bible, feast days, sabbath calendar, moon phases, biblical timeline, appointed times, torah portions"
       author: "Time Tested Bible"
       description: "Bible study app with lunar calendar, Strong's concordance, interlinear Hebrew/Greek, word studies, and historical timeline. Track Sabbaths, feast days, and appointed times."
+  # Blog post defaults — use blog-post layout for OG tags + embedded content
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: "blog-post"
+      og_type: "article"

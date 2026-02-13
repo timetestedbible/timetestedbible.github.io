@@ -1806,9 +1806,37 @@ const ReaderView = {
       if (this._blogCache.has(slug)) {
         html = this._blogCache.get(slug);
       } else {
-        const response = await fetch(`/blog/${slug}.html`);
-        if (!response.ok) throw new Error('Blog post not found');
-        html = await response.text();
+        // Path 1: Check if blog content is embedded in the page (direct Jekyll page load)
+        // Content is in a <script type="text/blog-content"> tag (inert, not executed by browser)
+        // Inner </script> tags are escaped as <\/script> by Jekyll to avoid premature close
+        const embeddedContent = document.getElementById('jekyll-blog-content');
+        if (embeddedContent) {
+          html = embeddedContent.textContent.replace(/<\\\/script>/g, '</script>');
+          // Remove so it's not picked up again on SPA navigation
+          embeddedContent.remove();
+        } else {
+          // Path 2: SPA navigation — fetch the Jekyll-generated blog page and extract content
+          const response = await fetch(`/blog/${slug}/`);
+          if (!response.ok) {
+            // Fallback: try legacy .html fragment path
+            const legacyResponse = await fetch(`/blog/${slug}.html`);
+            if (!legacyResponse.ok) throw new Error('Blog post not found');
+            html = await legacyResponse.text();
+          } else {
+            const pageHtml = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(pageHtml, 'text/html');
+            const scriptTag = doc.getElementById('jekyll-blog-content');
+            if (scriptTag) {
+              html = scriptTag.textContent.replace(/<\\\/script>/g, '</script>');
+            } else {
+              // No template found in fetched page — try legacy .html fragment
+              const legacyResponse = await fetch(`/blog/${slug}.html`);
+              if (!legacyResponse.ok) throw new Error('Blog post not found');
+              html = await legacyResponse.text();
+            }
+          }
+        }
         this._blogCache.set(slug, html);
       }
       
@@ -1855,9 +1883,10 @@ const ReaderView = {
         oldScript.parentNode.replaceChild(newScript, oldScript);
       });
 
-      // Update SEO meta tags for this blog post
-      if (typeof BlogView !== 'undefined' && BlogView.posts) {
-        const post = BlogView.posts.find(p => p.id === slug);
+      // Update SEO meta tags for this blog post (for SPA navigation)
+      if (typeof BlogView !== 'undefined') {
+        const posts = await BlogView.loadPosts();
+        const post = posts.find(p => p.slug === slug);
         if (post) {
           document.title = `${post.title} — Time Tested Bible`;
           const setMeta = (prop, content) => {
