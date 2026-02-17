@@ -1577,6 +1577,13 @@ const ReaderView = {
         tooltip.remove();
       }
     });
+
+    element.addEventListener('click', () => {
+      const tooltip = document.querySelector('.symbol-tooltip');
+      if (tooltip) {
+        tooltip.remove();
+      }
+    });
   },
 
   /**
