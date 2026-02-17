@@ -269,7 +269,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research'],
   
   /**
    * Parse URL into state
@@ -353,6 +353,19 @@ const URLRouter = {
       if (result.content.params._blogArticle) {
         result.content.view = 'reader';
         delete result.content.params._blogArticle;
+      }
+      // /research/symbols/{key} → render in reader view
+      if (result.content.params._researchSymbol) {
+        result.content.view = 'reader';
+        result.content.params.contentType = 'symbols';
+        result.content.params.symbol = result.content.params._researchSymbol;
+        delete result.content.params._researchSymbol;
+      }
+      // /research/symbols → symbol index in reader view
+      if (result.content.params._researchSymbolIndex) {
+        result.content.view = 'reader';
+        result.content.params.contentType = 'symbols';
+        delete result.content.params._researchSymbolIndex;
       }
       // Parse query params
       this._parseQueryParams(searchParams, result);
@@ -643,6 +656,17 @@ const URLRouter = {
         if (parts[0]) params.symbol = parts[0].toLowerCase();
         break;
       
+      case 'research':
+        // /research/symbols → symbol index; /research/symbols/{key} → specific study
+        if (parts[0] === 'symbols') {
+          if (parts[1]) {
+            params._researchSymbol = parts[1].toLowerCase().replace(/\/$/, '');
+          } else {
+            params._researchSymbolIndex = true;
+          }
+        }
+        break;
+      
       case 'reader':
         // /reader/bible/kjv/Genesis/1
         // /reader/symbols/tree
@@ -815,6 +839,12 @@ const URLRouter = {
     // Blog articles: /blog/{slug} instead of /reader/blog/{slug}
     else if (content.view === 'reader' && content.params?.contentType === 'blog' && content.params?.slug) {
       path = '/blog/' + content.params.slug;
+    }
+    // Symbol studies: /research/symbols/... to match static Jekyll pages for SEO
+    else if (content.view === 'reader' && content.params?.contentType === 'symbols') {
+      path = content.params.symbol
+        ? '/research/symbols/' + content.params.symbol
+        : '/research/symbols';
     }
     // Other views use simple URLs
     else {

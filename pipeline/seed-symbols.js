@@ -58,7 +58,7 @@ for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
   }
 
   // Build the meaning line
-  const meaning = symbol.is + (symbol.is2 ? ` / ${symbol.is2}` : '');
+  const meaning = symbol.meaning || '';
   
   // Check if we have a full .md study
   const hasStudy = existingStudies.has(key.replace(/\s+/g, '-').toUpperCase()) 
@@ -69,7 +69,7 @@ symbol: ${key}
 name: ${symbol.name}
 strongs: [${(symbol.strongs || []).join(', ')}]
 words: [${symbol.words.map(w => `"${w}"`).join(', ')}]
-role: ${symbol.does ? 'noun-symbol + verb-symbol' : 'noun-symbol'}
+role: noun-symbol
 meaning: ${meaning}
 opposite: ${symbol.opposite || 'none'}
 defining_verses: []
@@ -84,7 +84,6 @@ has_full_study: ${hasStudy}
 
 ## Dictionary Entry
 ${symbol.sentence}
-${symbol.does ? `\nDOES: ${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}` : ''}
 
 ## Context Bag
 [PENDING — awaiting explore wave. Agent should search all Scripture for occurrences

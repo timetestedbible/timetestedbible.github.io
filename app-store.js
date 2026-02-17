@@ -2048,6 +2048,11 @@ const AppStore = {
       console.error('[AppStore] URLRouter not found!');
       return;
     }
+
+    // Static pages (e.g. /research/symbols/) — don't rewrite the URL
+    if (this._state.content && this._state.content.params && this._state.content.params.staticPage) {
+      return;
+    }
     
     // Determine if this should be a push or replace
     // Bible navigation should push to enable browser back/forward

@@ -1,0 +1,305 @@
+---
+description: Complete guide for generating published symbol study pages from pipeline research. Covers the full process from raw research to final /research/symbols/ page. References symbols/METHODOLOGY.md and symbols/AI-METHODOLOGY.md as the authoritative methodology.
+globs:
+  - _symbols/**/*.md
+  - _symbols/*.md
+  - pipeline/symbols/*.md
+alwaysApply: false
+---
+
+# Symbol Study Generation — Complete Guide
+
+This is the single reference for producing published symbol study pages at `/research/symbols/{key}/`. It covers the full pipeline: raw research → Context Bag → published page.
+
+**Foundational methodology documents (READ THESE FIRST if you haven't):**
+- `symbols/METHODOLOGY.md` — the human study methodology (core principles, 8-step process, 13 search questions)
+- `symbols/AI-METHODOLOGY.md` — AI-specific guardrails (anti-regurgitation, 7 candidates, show-all-work)
+
+This rule builds ON those documents. It does not replace them.
+
+The user can invoke this process by saying:
+- **"Generate a symbol study for X"** — runs the full pipeline (research + Context Bag + published page)
+- **"Generate a Context Bag for X"** — Phase 1 only (research notes, pause for review)
+- **"Publish the study for X"** — Phase 2 only (assumes Context Bag already exists at `pipeline/symbols/{key}.md`)
+
+---
+
+## Architecture
+
+```
+pipeline/symbols/{key}.md     →   _symbols/{key}.md        →   /research/symbols/{key}/
+(compressed research notes)       (published markdown)          (Jekyll-rendered HTML page)
+                                       ↓                              ↓
+                              build-symbol-dictionary.js      processStudyMarkup() runs client-side:
+                                       ↓                        $symbol → linked symbol names
+                              symbol-dictionary.js              H####/G#### → Strong's panel links
+                              (GENERATED — search,              Abbreviated refs → verse links
+                               tooltips, grid)                  Name substitution (LORD → user pref)
+```
+
+**`_symbols/*.md` is the single source of truth.** The search dictionary (`symbol-dictionary.js`) is generated from it — never edited by hand.
+
+After publishing or updating any study, run: `npm run build:dictionary`
+
+This regenerates `symbol-dictionary.js` from all `_symbols/*.md` files, making the study immediately searchable and available for tooltips, the symbol grid, and Strong's panel integration.
+
+### Key files
+- **Pipeline research**: `pipeline/symbols/{key}.md` — YAML frontmatter + Context Bag
+- **Published study**: `_symbols/{key}.md` — Jekyll collection page, `layout: symbol-study` — **SINGLE SOURCE OF TRUTH**
+- **Dictionary generator**: `pipeline/build-symbol-dictionary.js` — reads `_symbols/*.md`, generates `symbol-dictionary.js`
+- **Generated dictionary**: `symbol-dictionary.js` — **DO NOT EDIT BY HAND** — search, tooltips, symbol grid, morphology tips
+- **Layout**: `_layouts/symbol-study.html` — wraps in `<article>`, calls `processStudyMarkup()`
+- **JS processing**: `views/reader-view.js` → `processStudyMarkup()` method
+- **Styles**: `assets/css/symbols.css` → `.symbol-article-body` class
+- **Config**: `_config.yml` → `collections.symbols` (output: true, permalink: /research/symbols/:path/)
+- **Methodology**: `symbols/METHODOLOGY.md` (human), `symbols/AI-METHODOLOGY.md` (AI guardrails)
+
+---
+
+## CRITICAL: Symbol Study vs Word Study
+
+A **symbol study** asks: *What does X REPRESENT in Scripture?* (ROCK = Covenant)
+A **word study** asks: *What does this Hebrew/Greek word mean lexically?* (H6697 = rock, cliff, boulder)
+
+These are DIFFERENT tasks with DIFFERENT outputs. This guide is for SYMBOL STUDIES only.
+The symbolic meaning is what the thing STANDS FOR — not what the word literally means.
+
+**Test:** Would a secular reader using only a dictionary arrive at this meaning? If YES → it's not the symbolic meaning. (ROCK = "stone" is a dictionary definition. ROCK = "Covenant" is a symbolic meaning.)
+
+---
+
+## Phase 1: Research and Context Bag (`pipeline/symbols/{key}.md`)
+
+### The AI Problem (from `symbols/AI-METHODOLOGY.md`)
+
+If you simply rely on what you "know" about a symbol, you'll produce the **weighted average of human commentary** from training data — not a fresh analysis of Scripture. You MUST:
+- **Search the actual text files**, not rely on memory
+- **Assume consensus/tradition is WRONG** until proven by the text independently
+- **Show all work** — if it's not written out, it didn't happen
+
+### Research Process (from `symbols/METHODOLOGY.md`)
+
+**Step 1: Exhaustive search**
+- Look up Strong's definitions in `strongs-hebrew-dictionary.js` / `strongs-greek-dictionary.js`
+- Count occurrences: grep Strong's numbers in `bibles/kjv_strongs.txt`
+- Search `source/bibles/kjv.txt` for every relevant verse
+
+**Step 2: Categorize what you find**
+For every occurrence, ask which category it falls in:
+- **Definitional**: Scripture says "X IS Y" (e.g., "Thy word IS truth")
+- **Antithetical**: Contrasted with opposite (e.g., LIGHT vs DARKNESS)
+- **Functional**: What does X DO? (verbs, actions)
+- **Behavioral**: Commands about X ("walk in X", "be children of X")
+- **Applied to whom?** God only? Humans only? Both? (meaning must work for ALL)
+- **Parallel pairs**: X appears alongside Y in the same verse/passage
+- **Parables**: Controlled contexts where Jesus often defines symbols explicitly
+- **First occurrence**: The first time the word appears in Scripture
+- **Production chain**: How is this physical thing MADE? (olive → press → oil = fruit → trials → proven works)
+
+**Step 3: Generate candidates (MINIMUM 7)**
+1. Write Candidate #1 (first intuition)
+2. **Assume #1 is WRONG** → Generate Candidate #2 (meaningfully different)
+3. Continue until at least 7 candidates exist
+4. THEN evaluate all systematically
+This prevents anchoring bias.
+
+**Step 4: Test each candidate**
+- **Substitution test**: Replace the meaning in 5+ diverse verses across OT and NT. Must produce coherent sense in ALL contexts.
+- **Opposite test**: Does the opposite of your meaning match the symbol's scriptural opposite?
+- **Secular-reader test**: Would a dictionary/thesaurus produce this meaning? If yes → reject (it's a synonym, not a symbolic meaning).
+- **Redundancy test**: Would this meaning create legal redundancy with an existing Torah command?
+- **Human application test**: If Scripture says both "God is X" and "humans are X," the meaning must work for both.
+- **Cross-corpus test**: Must work in Genesis AND Psalms AND Prophets AND Gospels AND Revelation.
+
+**Step 5: Resolve symbolic recursion**
+When Scripture defines X = Y and Y is also a symbol, trace the chain:
+ROCK = Christ → Christ = Covenant Mediator → ROCK = Covenant
+The recursion must terminate in a **concrete concept**.
+
+**Step 6: 13 Search Questions (from `symbols/METHODOLOGY.md`)**
+Use these to probe for the meaning:
+1. Is there an EXPLICIT definition? ("X IS Y")
+2. What is the OPPOSITE?
+3. What is COMPARED TO this symbol?
+4. What VERBS accompany it?
+5. Can humans BE this?
+6. Is my proposed meaning a dictionary synonym?
+7. Are there PARADOXES? (verses that seem to contradict)
+8. Does saying the word accomplish the promise? (magic word test)
+9. Is this an INVOCATION symbol? (what RELATIONSHIP is invoked?)
+10. Is there a CONCENTRATED PASSAGE? (word appears many times)
+11. Does this word seem OUT OF PLACE? (incongruity = intentional)
+12. Would proposed meaning create LEGAL REDUNDANCY?
+13. HOW IS THIS THING MADE? (production chain)
+
+### Load related context
+- Read `pipeline/symbols/{co-key}.md` for every co-occurring symbol
+- Check `pipeline/contexts/` for relevant verse-range files
+- Read `symbols/{KEY}.md` (old-format SPA study) if it exists
+
+### Write the Context Bag
+Follow the format in `.cursor/rules/pipeline-agent.mdc`:
+
+```yaml
+---
+symbol: {key}
+name: {UPPERCASE NAME}
+strongs: [H####, G####]
+words: ["word1", "word2"]
+role: noun-symbol | verb-symbol | structural-pattern
+meaning: {one-line symbolic meaning — NOT a dictionary definition}
+opposite: {opposite symbol/concept}
+defining_verses: [verse refs]
+co_occurring: [RELATED, SYMBOLS]
+context_types: [definitional, prophetic, narrative, etc.]
+all_verses: [every verse checked]
+rev: 1
+churn: 1.00
+inputs: {}
+dependents: []
+---
+
+## Context Bag
+{Compressed research notes. One section per major pattern/cluster.
+Strong's data first, then organized by thematic category.
+Every claim grounded in specific verse refs.
+Pattern summary at end. 300-500 words target.}
+```
+
+---
+
+## Phase 2: Published Study (`_symbols/{key}.md`)
+
+### Pre-requisite
+A completed `pipeline/symbols/{key}.md` Context Bag.
+
+### Voice and Posture
+
+**You are a research organizer, not an oracle.** (See `symbols/AI-METHODOLOGY.md`: "Do not blindly trust the AI's conclusion. AI lacks the Holy Spirit.")
+
+Your job is to guide the reader through the evidence — highlighting parallels, connections, and patterns that may not be obvious — while letting them draw the ultimate conclusions.
+
+- **Suggestive language, not declarative.** "This pattern suggests," "compare with," "the same word appears in" — NOT "this means," "this proves."
+- **Strive for ONE unified symbolic meaning.** Multiple context-dependent meanings dilute the symbol. The methodology was designed to find the ONE meaning that works everywhere; if it splits, the right meaning may not have been found yet.
+- **Maintain humility.** "The evidence converges on..." NOT "The meaning is..."
+- **Let Scripture speak.** Quote it. Show connections. The study should feel like a guided tour of verses with annotations pointing out what to notice — not a commentary with verse footnotes.
+- **Highlight the non-obvious.** Same Hebrew word in unexpected places, structural parallels across testaments, production chains. Don't waste space on what's obvious from a plain reading.
+
+### Process
+
+**Step 1: Load full context**
+- Read `pipeline/symbols/{key}.md`
+- Read every co-occurring symbol's pipeline notes
+- Check `pipeline/contexts/` for relevant verse-range files
+- Read `symbols/{KEY}.md` (old-format SPA study) if it exists
+
+**Step 2: Plan before writing**
+- Identify the CENTER OF GRAVITY — what single thing makes this symbol click?
+- Draft an OUTLINE (section headings + key point each) BEFORE writing prose
+- Structure for quick payoff: meaning + clinching evidence first, deepening support after, reference material last
+- A reader who stops after the first section should still walk away with the core insight
+
+**Step 3: Write following the outline**
+
+#### Frontmatter
+```yaml
+---
+layout: symbol-study
+symbol_key: {key}
+title: "{Name} — Symbol Study"
+description: "{One engaging sentence: the symbolic meaning}"
+strongs: [{from pipeline}]
+words: [{from pipeline}]
+---
+```
+
+#### Opening (reader knows the meaning within seconds)
+```markdown
+# {Name}
+
+**{Symbolic meaning in one sentence — refined from pipeline `meaning` field.}**
+
+> *"{Defining verse from KJV, with the symbol word **bolded** and other symbol terms marked with $[key]}"* — {Ref}
+```
+
+**CRITICAL: The bold opening line is parsed by `build-symbol-dictionary.js` to populate the search dictionary:**
+- Text before ` — ` becomes `meaning` (short label for tooltips, grid cards, search results)
+- The full bold line becomes `sentence` (full definition for panels and search)
+- If there is no ` — `, the first sentence (before `.`) is used as `meaning`
+- Keep it clean: avoid Strong's numbers (H####/G####) in the bold line — they get stripped and can leave artifacts
+
+#### Core content — organized by INSIGHT, not verse order
+- Lead with whatever makes this symbol click: explicit identification verse, physical logic, production chain, substitution test, parable definition, narrative embodiment
+- Summary block as bold-label paragraphs — include what's relevant to THIS symbol (no fixed list):
+  ```
+  **Symbolizes:** ...
+  **Opposite:** ...
+  **Connected:** $symbol, $symbol, ...
+  ```
+- Thematic `###` sections named by insight (e.g., "The Appointed Times *Are* the Shadow") — NOT by verse reference
+- Let the research shape the structure — each symbol is different. Don't force a template.
+- Weave Strong's numbers and Hebrew/Greek into the narrative where they illuminate
+
+#### Supporting sections (use as appropriate)
+- **Patterns** — numbered cross-cutting observations
+- **Connections** — `$symbol` bullet list with one-sentence explanations
+- **Occurrences by Sense** — grouped verse reference lists
+- **Hebrew & Greek Reference** — table at the BOTTOM, not the top
+- **For Further Study** — connected studies with why the reader should read them
+
+**Step 4: Review as a first-time visitor**
+- Symbolic meaning clear from title + one-liner + first section?
+- Section headings insight-driven, not verse-driven?
+- Hebrew/Greek data at bottom, not top?
+- Structure fits THIS symbol's research, not forced into a template?
+- ONE unified meaning, not fragmented into context-dependent definitions?
+- Tone suggestive, not lecturing? Evidence fairly presented?
+- Enough Scripture? Guided tour of verses, not commentary with footnotes?
+- A reader who disagrees would still find the evidence fairly presented?
+
+---
+
+## Markup Reference
+
+Processed client-side by `processStudyMarkup()` in `views/reader-view.js`:
+
+| Syntax | Purpose | Renders as |
+|--------|---------|------------|
+| `$wings` | Symbol ref | Link showing "WINGS" (from SYMBOL_DICTIONARY) or capitalized key |
+| `$[name]` | Symbol ref preserving display text | Link showing "name" (original case) — for Scripture quotes |
+| `H6738` | Strong's Hebrew number | Button linking to Strong's panel |
+| `G4639` | Strong's Greek number | Button linking to Strong's panel |
+| `Ps 91:1` | Verse ref (abbreviated book) | Clickable link to Bible reader |
+| `[seven](/reader/numbers/7)` | Number study link | Markdown link to number study |
+
+**Inside Scripture quotes:** Use `$[key]` to link a word without changing the display text. KJV text stays faithful.
+
+**Strong's in prose:** Write `H6738 *tsel*` — number auto-links, transliteration is regular markdown.
+
+**Verse abbreviations:** Use any abbreviation from `bible.js` BOOK_NAME_MAP. Must include chapter:verse with colon.
+
+**Name substitution:** "the LORD" automatically becomes user's preferred name — no special markup needed.
+
+---
+
+## Examples of Completed Studies
+
+Read these for reference on structure, tone, and formatting:
+- `_symbols/shadow.md` — physical-logic insight (3 elements of shadow), cross-testament pattern
+- `_symbols/myrtle.md` — production chain (fragrance through crushing), person embodiment (Hadassah)
+- `_symbols/thorns.md` — explicit definition from Jesus (Parable of Sower), the anti-myrtle
+
+---
+
+## How to Direct This Process
+
+| You say | AI does |
+|---------|---------|
+| "Generate a symbol study for ROCK" | Full pipeline: research → Context Bag → published study → rebuild dictionary |
+| "Generate a Context Bag for ROCK" | Research only: creates `pipeline/symbols/rock.md`, pauses for review |
+| "Publish the study for ROCK" | Takes existing `pipeline/symbols/rock.md` → creates `_symbols/rock.md` → rebuilds dictionary |
+| "Update the thorns study" | Reads current `_symbols/thorns.md` + pipeline data, revises → rebuilds dictionary |
+| "Add $wind to the connections in shadow" | Edits `_symbols/shadow.md` directly |
+| "Do symbol studies for X, Y, Z" | Runs the pipeline for each in sequence → rebuilds dictionary once at end |
+
+**After any change to `_symbols/*.md`**, run `npm run build:dictionary` (or `node pipeline/build-symbol-dictionary.js`) to regenerate `symbol-dictionary.js`. This makes the study searchable and enables tooltips. The dictionary schema is `{ name, words, strongs, meaning, sentence, opposite, link }` — there are no `is`/`is2`/`does`/`does2` fields.

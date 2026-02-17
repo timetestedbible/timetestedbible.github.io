@@ -188,9 +188,9 @@ const ReaderView = {
     }
     
     // Check if we need to re-render (content actually changed)
-    // For blog posts, don't include strongsId in key — Strong's panel is UI-only,
-    // shouldn't trigger content reload (which loses scroll position)
-    const uiKey = (contentType === 'blog') ? '' : `${state.ui?.strongsId || ''}`;
+    // Don't include strongsId in key — Strong's panel is UI-only,
+    // shouldn't trigger content reload (which loses scroll position and destroys the panel)
+    const uiKey = '';
     const fullKey = `${currentKey}:ui:${uiKey}`;
     
     if (this._lastRenderKey === fullKey && container.querySelector('#bible-explorer-page')) {
@@ -998,31 +998,30 @@ const ReaderView = {
   /**
    * Build summary HTML for a symbol (shown at top before full study)
    */
+  _renderStrongsButtons(strongsList) {
+    if (!strongsList || !strongsList.length) return '';
+    return strongsList.map(s => {
+      let label = s;
+      let tooltip = s;
+      if (typeof getStrongsEntry === 'function') {
+        const entry = getStrongsEntry(s);
+        if (entry) {
+          // Show English definition as the button label
+          const def = entry.kjv_def || entry.strongs_def || '';
+          label = def.split(',')[0].split(';')[0].replace(/[[\]()]/g, '').trim() || entry.xlit || s;
+          // Tooltip shows Strong's number + transliteration + lemma
+          tooltip = `${s} ${entry.xlit || ''} (${entry.lemma || ''}) — ${def.substring(0, 100)}`;
+        }
+      }
+      return `<button class="symbol-strongs-btn" title="${tooltip.replace(/"/g, '&amp;quot;')}" onclick="showStrongsPanel('${s}', '', '', event)">${label}</button>`;
+    }).join(' ');
+  },
+
   buildSymbolSummaryHTML(symbol, symbolKey) {
-    const prevNext = this.getSymbolPrevNext(symbolKey);
-    
     return `
       <div class="reader-symbol-content-inline">
-        <nav class="reader-symbol-nav">
-          ${prevNext.prev ? `<button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${prevNext.prev}'}})">◀ ${prevNext.prevName}</button>` : '<span></span>'}
-          ${prevNext.next ? `<button class="symbol-nav-btn" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${prevNext.next}'}})}">${prevNext.nextName} ▶</button>` : '<span></span>'}
-        </nav>
-        
-        <header class="symbol-header">
-          <h1>📖 ${symbol.name}</h1>
-          <div class="symbol-meta-row">
-            <span class="symbol-words"><strong>Words:</strong> ${symbol.words.join(', ')}</span>
-            ${symbol.strongs ? `
-            <span class="symbol-strongs-list">
-              <strong>Strong's:</strong> 
-              ${symbol.strongs.map(s => `<button class="symbol-strongs-btn" onclick="showStrongsPanel('${s}', '', '', event)">${s}</button>`).join(' ')}
-            </span>
-            ` : ''}
-          </div>
-        </header>
-        
         <div id="symbol-study-content" class="symbol-study-content">
-          <div class="symbol-study-loading">Loading word study...</div>
+          <div class="symbol-study-loading">Loading study...</div>
         </div>
       </div>
     `;
@@ -1036,20 +1035,27 @@ const ReaderView = {
     if (!studyContainer) return;
     
     try {
-      // Symbol files are uppercase: /symbols/TREE.md
-      const filename = symbolKey.toUpperCase() + '.md';
-      const response = await fetch(`/symbols/${filename}`);
+      // Fetch the Jekyll-rendered study page and extract the article body
+      const response = await fetch(`/research/symbols/${symbolKey}/`);
       
       if (!response.ok) {
-        throw new Error(`Study not found: ${filename}`);
+        throw new Error(`Study not found: ${symbolKey}`);
       }
       
-      const markdown = await response.text();
-      const html = this.renderMarkdown(markdown);
+      const pageHtml = await response.text();
+      const doc = new DOMParser().parseFromString(pageHtml, 'text/html');
+      const article = doc.querySelector('.symbol-study-content');
       
-      studyContainer.innerHTML = `<div class="symbol-study-body">${html}</div>`;
+      if (!article) {
+        throw new Error(`No article content found for: ${symbolKey}`);
+      }
       
-      // Make scripture references clickable
+      studyContainer.innerHTML = `<div class="symbol-study-body symbol-article-body">${article.innerHTML}</div>`;
+      
+      // Process study markup ($symbol, H####/G####, abbreviated verse refs)
+      this.processStudyMarkup(studyContainer);
+      
+      // Make full-name scripture references clickable (complements abbreviated refs above)
       this.linkifyScriptureRefs(studyContainer);
       
       // Make symbol references interactive (links + tooltips)
@@ -1071,17 +1077,10 @@ const ReaderView = {
         studyContainer.innerHTML = `
           <div class="symbol-fallback">
             <div class="meaning-block meaning-is">
-              <div class="meaning-label">IS (What it represents):</div>
-              <div class="meaning-value">${symbol.is}${symbol.is2 ? ' / ' + symbol.is2 : ''}</div>
+              <div class="meaning-label">Meaning:</div>
+              <div class="meaning-value">${symbol.meaning}</div>
             </div>
-            ${symbol.does ? `
-            <div class="meaning-block meaning-does">
-              <div class="meaning-label">DOES (What it does):</div>
-              <div class="meaning-value">${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}</div>
-            </div>
-            ` : ''}
             <div class="meaning-block meaning-sentence">
-              <div class="meaning-label">Full Meaning:</div>
               <p class="meaning-paragraph">${symbol.sentence}</p>
             </div>
             ${symbol.opposite ? `
@@ -1167,6 +1166,183 @@ const ReaderView = {
   },
 
   /**
+   * Process study markup: $symbol refs, H####/G#### Strong's, and abbreviated verse references.
+   * Used for both Jekyll static symbol-study pages and SPA-loaded markdown.
+   * Handles all BOOK_NAME_MAP abbreviations and full names (with colon-required verse format).
+   */
+  processStudyMarkup(container) {
+    // Helper: collect text nodes, skipping those inside interactive elements
+    const collectTextNodes = (root, pattern) => {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) {
+        const el = walker.currentNode.parentNode;
+        if (el && (el.tagName === 'A' || el.tagName === 'CODE' || el.tagName === 'BUTTON' ||
+            el.tagName === 'PRE' || el.closest?.('a, code, button, pre'))) continue;
+        pattern.lastIndex = 0;
+        if (pattern.test(walker.currentNode.nodeValue)) {
+          nodes.push(walker.currentNode);
+        }
+      }
+      return nodes;
+    };
+
+    // --- Pass 1: $symbol-key references ---
+    // Two forms:  $wings      → display as dictionary name (e.g. "WINGS")
+    //             $[name]     → display as written text, resolve as symbol (for use in quotes)
+    {
+      const symPattern = /\$\[([a-z][a-z0-9 -]*[a-z0-9])\]|\$([a-z][a-z0-9-]*)/g;
+      const dict = typeof SYMBOL_DICTIONARY !== 'undefined' ? SYMBOL_DICTIONARY : {};
+
+      // Alias map: maps unresolvable keys to their correct dictionary keys
+      const SYMBOL_ALIASES = {
+        'the-way': 'way', 'four-winds': 'four-horsemen', 'brass': 'bronze-brass',
+        'skandalizo': 'skandalizo-stumble', 'whore': 'harlot', 'harlots': 'harlot',
+        'thorn': 'thorns', 'thief': 'thief-in-night', 'beast': 'animal',
+        'beasts': 'animal', 'stone': 'rock', 'rocks': 'rock', 'water': 'sea',
+        'waters': 'sea', 'seas': 'sea', 'moon': 'new-moon', 'bride': 'marriage',
+        'bridegroom': 'marriage', 'covenant': 'rock', 'wicked': 'wickedness',
+        'earthquakes': 'earthquake', 'mountains': 'mountain', 'mount': 'mountain',
+        'trees': 'tree', 'nations': 'sea', 'nation': 'sea', 'islands': 'island',
+        'eagles': 'eagle', 'shepherds': 'shepherd', 'virgins': 'virgin',
+        'cloud': 'clouds', 'trumpets': 'trumpet', 'nets': 'net',
+        'snares': 'snare', 'idols': 'idolatry', 'idol': 'idolatry', 'seals': 'seal',
+        'names': 'name', 'days': 'day', 'animals': 'animal', 'stars': 'sun-moon-stars',
+        'sun': 'sun-moon-stars', 'peace': 'peace-shalom', 'curses': 'curse',
+        'cursed': 'curse', 'wars-and-rumors-of-wars': 'wars-rumors',
+        'wars and rumors of wars': 'wars-rumors', 'end': 'the-end',
+        'earth': 'sea', 'kingdom': 'mountain', 'death': 'perpetual-sleep',
+        'dead': 'perpetual-sleep', 'asleep': 'sleep', 'horse': 'four-horsemen',
+        'vine': 'wine', 'olive': 'oil', 'fisherman': 'fish', 'pearl': 'sea',
+        'pearls': 'sea', 'fear': 'alarmed-fear', 'booths': 'shadow',
+        'morning': 'day', 'law': 'way', 'righteousness': 'truth',
+        'faithfulness': 'faith', 'believed': 'believe', 'wilderness': 'highway',
+        'woman': 'harlot', 'shepherd-king': 'shepherd', 'white': 'light',
+        'wheat': 'bread', 'rest': 'sleep', 'life': 'light', 'spirit': 'wind',
+        'flesh': 'bread', 'dust': 'sand', 'sorrows': 'birth-pains',
+        'rod': 'sword', 'remnant': 'elect',
+      };
+
+      collectTextNodes(container, symPattern).forEach(node => {
+        const span = document.createElement('span');
+        symPattern.lastIndex = 0;
+        span.innerHTML = node.nodeValue.replace(symPattern, (match, bracketKey, bareKey) => {
+          const keepText = !!bracketKey;  // $[name] = keep display text as-is
+          const rawKey = bracketKey || bareKey;
+          // Normalize key: spaces → hyphens for dictionary lookup
+          let lookupKey = rawKey.replace(/\s+/g, '-');
+          // Strip trailing hyphens (malformed refs like $babylon-)
+          lookupKey = lookupKey.replace(/-+$/, '');
+          // Check aliases for unresolvable keys
+          const aliasedKey = SYMBOL_ALIASES[lookupKey] || SYMBOL_ALIASES[rawKey.toLowerCase()];
+          // Try: direct key → aliased key → strip trailing 's' for plurals
+          let symbol = dict[lookupKey] || (aliasedKey && dict[aliasedKey]) || dict[rawKey];
+          let resolvedKey = aliasedKey || lookupKey;
+          if (!symbol && lookupKey.endsWith('s') && dict[lookupKey.slice(0, -1)]) {
+            symbol = dict[lookupKey.slice(0, -1)];
+            resolvedKey = lookupKey.slice(0, -1);
+          }
+          if (!symbol && typeof SYMBOL_WORD_INDEX !== 'undefined') {
+            symbol = SYMBOL_WORD_INDEX[lookupKey.toLowerCase()] || SYMBOL_WORD_INDEX[rawKey.toLowerCase()];
+            if (symbol && symbol.key) resolvedKey = symbol.key;
+          }
+          // Final alias resolution if symbol found via alias
+          if (!symbol && aliasedKey) { resolvedKey = aliasedKey; symbol = dict[aliasedKey]; }
+          // $[name] → display "name" as written; $name → display dictionary name or capitalized key
+          const displayName = keepText ? rawKey
+            : (symbol ? symbol.name
+              : rawKey.replace(/(^|-)([a-z])/g, (m, sep, c) => (sep ? '-' : '') + c.toUpperCase()));
+          // If no symbol found, render as styled text (not a broken link)
+          if (!symbol) {
+            return `<span class="symbol-ref-unresolved">${displayName}</span>`;
+          }
+          const safeSentence = (symbol.sentence || '').replace(/"/g, '&quot;');
+          const safeMeaning = (symbol.meaning || '').replace(/"/g, '&quot;');
+          return `<a href="/research/symbols/${resolvedKey}/" class="symbol-ref symbol-ref-inline" data-symbol-key="${resolvedKey}" data-symbol-name="${symbol.name}" data-symbol-meaning="${safeMeaning}" data-symbol-sentence="${safeSentence}">${displayName}</a>`;
+        });
+        node.parentNode.replaceChild(span, node);
+      });
+      // Add tooltips to symbol refs that have dictionary entries
+      container.querySelectorAll('.symbol-ref-inline:not([data-tooltip-added])').forEach(link => {
+        const symbol = dict[link.dataset.symbolKey];
+        if (symbol && typeof this.addSymbolTooltip === 'function') {
+          this.addSymbolTooltip(link, symbol);
+          link.dataset.tooltipAdded = '1';
+        }
+      });
+    }
+
+    // --- Pass 2: H####/G#### Strong's references ---
+    // Show the word (lemma/transliteration) instead of the raw number.
+    // Tooltip reveals the Strong's ID; click opens the panel.
+    const strongsPattern = /\b([HG]\d{1,5})\b/g;
+    collectTextNodes(container, strongsPattern).forEach(node => {
+      const span = document.createElement('span');
+      strongsPattern.lastIndex = 0;
+      span.innerHTML = node.nodeValue.replace(strongsPattern, (match, id) => {
+        let label = id;
+        let tooltip = id;
+        if (typeof getStrongsEntry === 'function') {
+          const entry = getStrongsEntry(id);
+          if (entry) {
+            const def = entry.kjv_def || entry.strongs_def || '';
+            label = def.split(',')[0].split(';')[0].replace(/[[\]()]/g, '').trim() || entry.xlit || id;
+            tooltip = `${id} ${entry.xlit || ''} (${entry.lemma || ''}) — ${def.substring(0, 100)}`;
+          }
+        }
+        return `<button class="symbol-strongs-btn" title="${tooltip.replace(/"/g, '&quot;')}" onclick="if(typeof showStrongsPanel==='function')showStrongsPanel('${id}','','',event)">${label}</button>`;
+      });
+      node.parentNode.replaceChild(span, node);
+    });
+
+    // --- Pass 3: Abbreviated + full-name verse references (requires chapter:verse) ---
+    if (typeof BOOK_NAME_MAP !== 'undefined' && typeof normalizeBookName === 'function') {
+      // Build and cache the pattern from BOOK_NAME_MAP keys (sorted longest first)
+      if (!this._studyVersePattern) {
+        const keys = Object.keys(BOOK_NAME_MAP).sort((a, b) => b.length - a.length);
+        const bookAlts = keys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+        this._studyVersePattern = new RegExp(
+          `\\b(${bookAlts})\\.?\\s+(\\d+):(\\d+(?:[-–—]\\d+)?(?:,\\s*\\d+(?:[-–—]\\d+)?)*)`,
+          'gi'
+        );
+      }
+      const versePattern = this._studyVersePattern;
+
+      let translation = 'kjv';
+      try { translation = localStorage.getItem('bible_translation_preference') || 'kjv'; } catch (e) {}
+
+      collectTextNodes(container, versePattern).forEach(node => {
+        const span = document.createElement('span');
+        versePattern.lastIndex = 0;
+        span.innerHTML = node.nodeValue.replace(versePattern, (match, rawBook, chapter, verseStr) => {
+          const book = normalizeBookName(rawBook);
+          const firstVerse = verseStr.split(/[,]/)[0].split(/[-–—]/)[0].trim();
+          const targetVerse = parseInt(firstVerse, 10);
+          const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${targetVerse}`;
+          const dataRef = `${book} ${chapter}:${verseStr}`;
+          return `<a href="${url}" class="scripture-ref" data-ref="${dataRef}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
+        });
+        node.parentNode.replaceChild(span, node);
+      });
+    }
+
+    // --- Pass 4: Apply user's preferred divine name substitutions (LORD → Yahuah, etc.) ---
+    if (typeof applyNamePreferencesHTML === 'function') {
+      // Walk text nodes (not inside <code> or <pre>) and apply substitutions
+      const namePattern = /\b(LORD|GOD|God|Lord|Jesus|Christ)\b/g;
+      collectTextNodes(container, namePattern).forEach(node => {
+        const original = node.nodeValue;
+        const substituted = applyNamePreferencesHTML(original);
+        if (substituted !== original) {
+          const span = document.createElement('span');
+          span.innerHTML = substituted;
+          node.parentNode.replaceChild(span, node);
+        }
+      });
+    }
+  },
+
+  /**
    * Make scripture references clickable
    */
   linkifyScriptureRefs(container) {
@@ -1183,6 +1359,9 @@ const ReaderView = {
     const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
     const textNodes = [];
     while (walker.nextNode()) {
+      // Skip text inside links (may already be linkified by processStudyMarkup)
+      const parent = walker.currentNode.parentNode;
+      if (parent && (parent.tagName === 'A' || parent.closest?.('a'))) continue;
       if (walker.currentNode.nodeValue.match(pattern)) {
         textNodes.push(walker.currentNode);
       }
@@ -1219,11 +1398,11 @@ const ReaderView = {
   linkifySymbolRefs(container) {
     if (typeof SYMBOL_DICTIONARY === 'undefined') return;
     
-    // First, enhance existing symbol links (markdown links like [NAME](/symbols/name/))
+    // First, enhance existing symbol links (markdown links like [NAME](/symbols/name/) or /research/symbols/name/)
     const symbolLinks = container.querySelectorAll('a[href*="/symbols/"]');
     symbolLinks.forEach(link => {
-      // Extract symbol key from href
-      const match = link.href.match(/\/symbols\/([a-z]+)\/?/i);
+      // Extract symbol key from href (supports hyphens and digits in key)
+      const match = link.href.match(/\/symbols\/([a-z][a-z0-9-]*)\/?/i);
       if (match) {
         const symbolKey = match[1].toLowerCase();
         const symbol = SYMBOL_DICTIONARY[symbolKey];
@@ -1232,25 +1411,13 @@ const ReaderView = {
           link.classList.add('symbol-ref');
           link.dataset.symbolKey = symbolKey;
           link.dataset.symbolName = symbol.name;
-          link.dataset.symbolMeaning = symbol.is2 || symbol.is;
+          link.dataset.symbolMeaning = symbol.meaning;
           link.dataset.symbolSentence = symbol.sentence;
           
-          // On click, open Strong's panel for this symbol (which shows symbol details)
-          link.onclick = (e) => {
-            e.preventDefault();
-            if (symbol.strongs && symbol.strongs.length > 0 && typeof showStrongsPanel === 'function') {
-              showStrongsPanel(symbol.strongs[0], '', '', e);
-            } else {
-              // Fallback to symbol page if no strongs number
-              AppStore.dispatch({
-                type: 'SET_VIEW',
-                view: 'reader',
-                params: { contentType: 'symbols', symbol: symbolKey }
-              });
-            }
-          };
+          // Update href to canonical path
+          link.href = `/research/symbols/${symbolKey}/`;
           
-          // Add hover tooltip (first tap on mobile shows this, second tap triggers click)
+          // Add hover tooltip
           this.addSymbolTooltip(link, symbol);
         }
       }
@@ -1294,17 +1461,12 @@ const ReaderView = {
         );
         if (symbolKey) {
           const symbol = SYMBOL_DICTIONARY[symbolKey];
-          // On click, open Strong's panel if available, otherwise go to symbol page
-          const onclick = symbol.strongs && symbol.strongs.length > 0
-            ? `if(typeof showStrongsPanel==='function'){showStrongsPanel('${symbol.strongs[0]}','','',event);}else{AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${symbolKey}'}})} return false;`
-            : `AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${symbolKey}'}}); return false;`;
-          return `<a href="/reader/symbols/${symbolKey}" 
+          return `<a href="/research/symbols/${symbolKey}/" 
             class="symbol-ref symbol-ref-inline" 
             data-symbol-key="${symbolKey}"
             data-symbol-name="${symbol.name}"
-            data-symbol-meaning="${symbol.is2 || symbol.is}"
+            data-symbol-meaning="${symbol.meaning}"
             data-symbol-sentence="${symbol.sentence.replace(/"/g, '&quot;')}"
-            onclick="${onclick}"
           >${match}</a>`;
         }
         return match;
@@ -1328,11 +1490,11 @@ const ReaderView = {
    */
   linkifyReaderLinks(container) {
     if (!container) return;
-    const links = container.querySelectorAll('a[href*="/reader/symbols-article/"], a[href*="/reader/symbols/"], a[href*="/reader/words/"], a[href*="/reader/numbers/"]');
+    const links = container.querySelectorAll('a[href*="/reader/symbols-article/"], a[href*="/reader/symbols/"], a[href*="/research/symbols/"], a[href*="/reader/words/"], a[href*="/reader/numbers/"]');
     links.forEach(link => {
       const href = link.getAttribute('href') || '';
       const articleMatch = href.match(/\/reader\/symbols-article\/([^/?#]+)/);
-      const symbolMatch = href.match(/\/reader\/symbols\/([^/?#]+)/);
+      const symbolMatch = href.match(/\/(?:reader|research)\/symbols\/([^/?#]+)/);
       const wordMatch = href.match(/\/reader\/words\/([^/?#]+)/);
       const numberMatch = href.match(/\/reader\/numbers\/([^/?#]+)/);
       link.addEventListener('click', (e) => {
@@ -1381,7 +1543,7 @@ const ReaderView = {
       tooltip.className = 'symbol-tooltip';
       tooltip.innerHTML = `
         <div class="symbol-tooltip-header">${symbol.name}</div>
-        <div class="symbol-tooltip-meaning">${symbol.is2 || symbol.is}</div>
+        <div class="symbol-tooltip-meaning">${symbol.meaning}</div>
         <div class="symbol-tooltip-sentence">${symbol.sentence}</div>
       `;
       document.body.appendChild(tooltip);
@@ -1534,10 +1696,81 @@ const ReaderView = {
    * Dynamically populated from SYMBOL_DICTIONARY
    */
   buildSymbolIndexHTML() {
-    const symbols = Object.entries(SYMBOL_DICTIONARY || {}).sort((a, b) => 
-      a[1].name.localeCompare(b[1].name)
-    );
-    const symbolCount = symbols.length;
+    const allSymbols = Object.entries(SYMBOL_DICTIONARY || {});
+    const byRank = [...allSymbols].sort((a, b) => (b[1].rank || 0) - (a[1].rank || 0));
+    const byAlpha = [...allSymbols].sort((a, b) => a[1].name.localeCompare(b[1].name));
+    const symbolCount = allSymbols.length;
+    
+    function buildCard(key, symbol) {
+      const aliases = (symbol.words || []).filter(w => w.toLowerCase() !== key.replace(/-/g, ' ')).join(', ');
+      return `<button class="symbol-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${key}'}})">
+          <div class="symbol-index-name">${symbol.name}</div>
+          ${aliases ? `<div class="symbol-index-aliases">${aliases}</div>` : ''}
+          <div class="symbol-index-meaning">${symbol.meaning}</div>
+        </button>`;
+    }
+    
+    function buildGrid(symbols) {
+      return symbols.map(([key, symbol]) => buildCard(key, symbol)).join('');
+    }
+    
+    // Build grouped-by-topic view
+    function buildTopicView(symbols) {
+      // Collect unique categories in order, with subcategories
+      const catOrder = [];
+      const catMap = {};
+      for (const [key, sym] of symbols) {
+        const cat = sym.category || 'Uncategorized';
+        const sub = sym.subcategory || null;
+        if (!catMap[cat]) {
+          catMap[cat] = { subs: {}, flat: [] };
+          catOrder.push(cat);
+        }
+        if (sub) {
+          if (!catMap[cat].subs[sub]) catMap[cat].subs[sub] = [];
+          catMap[cat].subs[sub].push([key, sym]);
+        } else {
+          catMap[cat].flat.push([key, sym]);
+        }
+      }
+      
+      let html = '';
+      for (const cat of catOrder) {
+        const data = catMap[cat];
+        html += `<div class="symbol-topic-group">`;
+        html += `<h3 class="symbol-topic-heading">${cat}</h3>`;
+        
+        const subNames = Object.keys(data.subs);
+        if (subNames.length > 0) {
+          for (const sub of subNames) {
+            html += `<h4 class="symbol-topic-subheading">${sub}</h4>`;
+            html += `<div class="symbol-index-grid">`;
+            for (const [key, sym] of data.subs[sub]) {
+              html += buildCard(key, sym);
+            }
+            html += `</div>`;
+          }
+        }
+        if (data.flat.length > 0) {
+          html += `<div class="symbol-index-grid">`;
+          for (const [key, sym] of data.flat) {
+            html += buildCard(key, sym);
+          }
+          html += `</div>`;
+        }
+        html += `</div>`;
+      }
+      return html;
+    }
+    
+    // Sort toggle handler (inline — switches between three pre-rendered grids)
+    const sortClick = `(function(mode, btn) {
+      document.getElementById('symbol-grid-rank').style.display = mode === 'rank' ? '' : 'none';
+      document.getElementById('symbol-grid-alpha').style.display = mode === 'alpha' ? '' : 'none';
+      document.getElementById('symbol-grid-topic').style.display = mode === 'topic' ? '' : 'none';
+      btn.parentElement.querySelectorAll('.symbol-sort-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    })`;
     
     return `
       <div class="reader-symbol-index">
@@ -1569,14 +1802,22 @@ const ReaderView = {
         </section>
         
         <section class="symbol-index-dictionary">
-          <h2>Symbol Dictionary <span class="symbol-count">(${symbolCount} symbols)</span></h2>
-          <div class="symbol-index-grid">
-            ${symbols.map(([key, symbol]) => `
-              <button class="symbol-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${key}'}})">
-                <div class="symbol-index-name">${symbol.name}</div>
-                <div class="symbol-index-meaning">${symbol.is2 || symbol.is}</div>
-              </button>
-            `).join('')}
+          <div class="symbol-index-header-row">
+            <h2>Symbol Dictionary <span class="symbol-count">(${symbolCount} symbols)</span></h2>
+            <div class="symbol-sort-controls">
+              <button class="symbol-sort-btn" onclick="${sortClick}('rank', this)">By Relevance</button>
+              <button class="symbol-sort-btn" onclick="${sortClick}('alpha', this)">A–Z</button>
+              <button class="symbol-sort-btn active" onclick="${sortClick}('topic', this)">By Topic</button>
+            </div>
+          </div>
+          <div class="symbol-index-grid" id="symbol-grid-rank" style="display:none">
+            ${buildGrid(byRank)}
+          </div>
+          <div class="symbol-index-grid" id="symbol-grid-alpha" style="display:none">
+            ${buildGrid(byAlpha)}
+          </div>
+          <div id="symbol-grid-topic">
+            ${buildTopicView(byRank)}
           </div>
         </section>
       </div>
@@ -1603,27 +1844,18 @@ const ReaderView = {
           </div>
           ${symbol.strongs ? `
           <div class="symbol-strongs-list">
-            <strong>Strong's:</strong> 
-            ${symbol.strongs.map(s => `<button class="symbol-strongs-btn" onclick="showStrongsPanel('${s}', '', '', event)">${s}</button>`).join(' ')}
+            <strong>Strong's:</strong> ${this._renderStrongsButtons(symbol.strongs)}
           </div>
           ` : ''}
         </header>
         
         <section class="symbol-meanings">
           <div class="meaning-block meaning-is">
-            <div class="meaning-label">IS (What it represents):</div>
-            <div class="meaning-value">${symbol.is}${symbol.is2 ? ' / ' + symbol.is2 : ''}</div>
+            <div class="meaning-label">Meaning:</div>
+            <div class="meaning-value">${symbol.meaning}</div>
           </div>
-          
-          ${symbol.does ? `
-          <div class="meaning-block meaning-does">
-            <div class="meaning-label">DOES (What it does):</div>
-            <div class="meaning-value">${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}</div>
-          </div>
-          ` : ''}
           
           <div class="meaning-block meaning-sentence">
-            <div class="meaning-label">Full Meaning:</div>
             <p class="meaning-paragraph">${symbol.sentence}</p>
           </div>
           
@@ -1849,6 +2081,9 @@ const ReaderView = {
         </div>
       `;
       
+      // Process $symbol markup (same as symbol studies)
+      this.processStudyMarkup(container);
+
       // Make plain-text scripture references clickable
       this.linkifyScriptureRefs(container);
       
@@ -2111,27 +2346,18 @@ const ReaderView = {
             </div>
             ${symbol.strongs ? `
             <div class="symbol-strongs-list">
-              <strong>Strong's:</strong> 
-              ${symbol.strongs.map(s => `<button class="symbol-strongs-btn" onclick="showStrongsPanel('${s}', '', '', event)">${s}</button>`).join(' ')}
+              <strong>Strong's:</strong> ${this._renderStrongsButtons(symbol.strongs)}
             </div>
             ` : ''}
           </header>
           
           <section class="symbol-meanings">
             <div class="meaning-block meaning-is">
-              <div class="meaning-label">IS (What it represents):</div>
-              <div class="meaning-value">${symbol.is}${symbol.is2 ? ' / ' + symbol.is2 : ''}</div>
+              <div class="meaning-label">Meaning:</div>
+              <div class="meaning-value">${symbol.meaning}</div>
             </div>
-            
-            ${symbol.does ? `
-            <div class="meaning-block meaning-does">
-              <div class="meaning-label">DOES (What it does):</div>
-              <div class="meaning-value">${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}</div>
-            </div>
-            ` : ''}
             
             <div class="meaning-block meaning-sentence">
-              <div class="meaning-label">Full Meaning:</div>
               <p class="meaning-paragraph">${symbol.sentence}</p>
             </div>
             
@@ -2146,7 +2372,7 @@ const ReaderView = {
           ${symbol.link ? `
           <section class="symbol-full-study">
             <a href="${symbol.link}" class="full-study-link" target="_blank">
-              📚 View Full Word Study (Markdown)
+              📚 View Full Study
             </a>
           </section>
           ` : ''}
@@ -2187,7 +2413,7 @@ const ReaderView = {
           ${symbols.map(([key, symbol]) => `
             <button class="symbol-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${key}'}})">
               <div class="symbol-index-name">${symbol.name}</div>
-              <div class="symbol-index-meaning">${symbol.is2 || symbol.is}</div>
+              <div class="symbol-index-meaning">${symbol.meaning}</div>
             </button>
           `).join('')}
         </div>

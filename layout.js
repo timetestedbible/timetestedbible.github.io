@@ -375,7 +375,13 @@ const Layout = {
         const currentY = (scrollTarget === document) ? window.scrollY : scrollTarget.scrollTop;
         const delta = currentY - (this._lastScrollY || 0);
         
-        if (delta > 0) {
+        // Prevent jitter at bottom of page: hiding/showing the nav changes document
+        // height via marginBottom, which shifts scroll position, triggering a loop.
+        // Skip toggle when near the bottom of the scrollable area.
+        const scrollEl = (scrollTarget === document) ? document.documentElement : scrollTarget;
+        const atBottom = (scrollEl.scrollHeight - scrollEl.clientHeight - currentY) < 50;
+        
+        if (delta > 0 && !atBottom) {
           // Scrolling DOWN — accumulate distance
           this._scrollDownAccum = (this._scrollDownAccum || 0) + delta;
           if (this._scrollDownAccum > HIDE_THRESHOLD && currentY > nav.offsetHeight) {
@@ -388,16 +394,19 @@ const Layout = {
             }
           }
         } else if (delta < 0) {
-          // Scrolling UP — show immediately, reset accumulator
+          // Scrolling UP — show instantly, reset accumulator
           this._scrollDownAccum = 0;
           if (this._navHidden) {
             this._navHidden = false;
-            // Transition margin-bottom back to 0, then clear inline style
+            nav.style.transition = 'none';
             nav.style.marginBottom = '0px';
             nav.classList.remove('nav-hidden');
             body.classList.remove('nav-hidden');
-            // Clear inline style after transition completes
-            setTimeout(() => { if (!this._navHidden) nav.style.marginBottom = ''; }, 300);
+            // Re-enable transitions after the instant snap
+            requestAnimationFrame(() => {
+              nav.style.transition = '';
+              nav.style.marginBottom = '';
+            });
           }
         }
         

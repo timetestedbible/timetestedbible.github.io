@@ -478,6 +478,7 @@
 .symbol-article-body {
   line-height: 1.7;
   color: var(--color-text);
+  padding-bottom: 30vh;
 }
 
 .symbol-article-body h1,
@@ -607,6 +608,7 @@
 
 .reader-symbol-index {
   padding: var(--spacing-md);
+  padding-bottom: 30vh;
 }
 
 .symbol-index-header {
@@ -665,16 +667,66 @@
   border-color: var(--color-accent);
 }
 
+.symbol-index-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
 .symbol-index-dictionary h2 {
   color: var(--color-accent);
   font-size: 1.2rem;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0;
 }
 
 .symbol-index-dictionary .symbol-count {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   font-weight: normal;
+}
+
+.symbol-sort-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.symbol-sort-btn {
+  padding: 4px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.symbol-sort-btn.active {
+  background: var(--accent-primary-subtle);
+  border-color: var(--accent-primary-muted);
+  color: var(--color-accent);
+}
+
+.symbol-topic-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.symbol-topic-heading {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--accent-primary-muted);
+}
+
+.symbol-topic-subheading {
+  color: var(--color-accent-gold);
+  font-size: 0.9rem;
+  margin: var(--spacing-md) 0 var(--spacing-xs) 0;
+  font-weight: normal;
+  font-style: italic;
 }
 
 .symbol-index-grid {
@@ -705,6 +757,13 @@
   font-size: 0.95rem;
 }
 
+.symbol-index-aliases {
+  font-size: 0.75rem;
+  color: var(--color-accent-gold);
+  font-style: italic;
+  margin-top: 1px;
+}
+
 .symbol-index-meaning {
   font-size: 0.85rem;
   color: var(--color-text-muted);
@@ -718,5 +777,79 @@
   
   .symbol-index-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Standalone Strong's Panel (for static symbol-study pages)
+   Slides in from the right when clicking H####/G#### buttons
+   on pages where the Bible reader isn't active.
+   ═══════════════════════════════════════════════════════ */
+
+.standalone-strongs-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--surface-raised, #0d2840);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.4);
+  z-index: 10200;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.standalone-strongs-overlay.open {
+  transform: translateX(0);
+}
+
+.standalone-strongs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--surface-base, #132f4c);
+  border-bottom: 1px solid var(--border-default, #1e4976);
+  flex-shrink: 0;
+}
+
+.standalone-strongs-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary, #e0d6c8);
+}
+
+.standalone-strongs-back,
+.standalone-strongs-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #8aa8c7);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.standalone-strongs-back:hover,
+.standalone-strongs-close:hover {
+  color: var(--text-primary, #e0d6c8);
+  background: var(--surface-hover, rgba(255,255,255,0.08));
+}
+
+.standalone-strongs-overlay .research-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 600px) {
+  .standalone-strongs-overlay {
+    width: 100vw;
+    max-width: 100vw;
   }
 }

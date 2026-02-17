@@ -115,6 +115,19 @@ const ContentManager = {
       }
     }
     
+    // Update body class for view-specific styling (must happen BEFORE static page early return,
+    // otherwise navigating back from bible/reader leaves stale view-* classes on <body>
+    // that break scroll behavior on the static page)
+    document.body.className = document.body.className
+      .replace(/\bview-\S+/g, '')
+      .trim();
+    document.body.classList.add(`view-${viewName}`);
+
+    // Static pages (e.g. /research/symbols/) are rendered by Jekyll — skip SPA view rendering
+    if (state.content && state.content.params && state.content.params.staticPage) {
+      return;
+    }
+
     // Render the view content
     if (view) {
       try {
@@ -126,12 +139,6 @@ const ContentManager = {
     } else {
       this.renderNotFound(viewName);
     }
-    
-    // Update body class for view-specific styling
-    document.body.className = document.body.className
-      .replace(/\bview-\S+/g, '')
-      .trim();
-    document.body.classList.add(`view-${viewName}`);
   },
   
   /**

@@ -870,11 +870,7 @@ function showMorphTooltip(el, event) {
     const glossText = el.querySelector('.il-gloss')?.textContent || '';
     const symbol = typeof getSymbolForStrongsEntry === 'function' ? getSymbolForStrongsEntry(strongs, entry, glossText) : null;
     if (symbol) {
-      html += `<div class="morph-tip-symbol">📖 <strong>${symbol.is}${symbol.is2 ? ' / ' + symbol.is2 : ''}</strong>`;
-      if (symbol.does) {
-        html += ` — ${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}`;
-      }
-      html += `</div>`;
+      html += `<div class="morph-tip-symbol">📖 <strong>${symbol.meaning}</strong></div>`;
     }
   }
   
@@ -4484,6 +4480,9 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
   
   let html = '';
   
+  // Close button to return to default research panel state
+  html += `<button class="research-panel-close-btn" onclick="closeStrongsPanel()" title="Close">✕</button>`;
+  
   // Subtle strongs ID label (visible on mobile)
   html += `<div class="research-id-mobile">${strongsNum}</div>`;
   
@@ -4525,17 +4524,11 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
           <span class="strongs-symbol-title">Symbolic Meaning</span>
         </div>
         <div class="strongs-symbol-meaning">
-          <span class="strongs-symbol-label">IS:</span>
-          <span class="strongs-symbol-value">${symbol.is}${symbol.is2 ? ' / ' + symbol.is2 : ''}</span>
+          <span class="strongs-symbol-label">Meaning:</span>
+          <span class="strongs-symbol-value">${symbol.meaning}</span>
         </div>
-        ${symbol.does ? `
-        <div class="strongs-symbol-meaning">
-          <span class="strongs-symbol-label">DOES:</span>
-          <span class="strongs-symbol-value">${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}</span>
-        </div>
-        ` : ''}
         <div class="strongs-symbol-sentence">${symbol.sentence}</div>
-        <button class="strongs-symbol-link" onclick="openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
+        <button class="strongs-symbol-link" onclick="closeStrongsPanel(); openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
       </div>
     `;
   }
@@ -4592,13 +4585,49 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
   }
 }
 
+// Create a standalone Strong's panel for pages without the Bible reader (e.g. static symbol studies).
+// Reuses the research-panel ID so the rest of showStrongsPanel works unchanged.
+function _getOrCreateStandaloneStrongsPanel() {
+  let panel = document.getElementById('standalone-strongs-panel');
+  if (panel) return panel;
+  
+  panel = document.createElement('div');
+  panel.id = 'standalone-strongs-panel';
+  panel.className = 'research-panel standalone-strongs-overlay';
+  panel.innerHTML = `
+    <div class="standalone-strongs-header">
+      <button class="standalone-strongs-back" onclick="if(typeof navigateStrongsHistory==='function')navigateStrongsHistory(-1)" title="Back"><span class="icon icon-chevron-left"></span>◀</button>
+      <span class="standalone-strongs-title">Strong's</span>
+      <button class="standalone-strongs-close" onclick="this.closest('.standalone-strongs-overlay').classList.remove('open'); document.body.classList.remove('research-panel-open');" title="Close">✕</button>
+    </div>
+    <div class="research-panel-content"></div>
+  `;
+  document.body.appendChild(panel);
+  
+  // Close on click outside
+  document.addEventListener('click', function(e) {
+    if (panel.classList.contains('open') && !panel.contains(e.target) && 
+        !e.target.closest('.symbol-strongs-btn') && !e.target.closest('.symbol-ref-inline')) {
+      panel.classList.remove('open');
+      document.body.classList.remove('research-panel-open');
+    }
+  });
+  
+  return panel;
+}
+
 // Show Strong's information slide-out for a word
 // skipDispatch: if true, don't dispatch to AppStore (used when syncing FROM state)
 function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = false) {
   if (event) event.stopPropagation();
   
-  // Use the research panel element from HTML
-  const panel = document.getElementById('research-panel');
+  // Use the research panel element from HTML (exists inside BibleView)
+  let panel = document.getElementById('research-panel');
+  
+  // Fallback: if no research-panel (e.g. static symbol-study page), create a standalone slideout
+  if (!panel) {
+    panel = _getOrCreateStandaloneStrongsPanel();
+  }
   if (!panel) return;
   
   const isNewPanel = !panel.classList.contains('open');
@@ -4637,6 +4666,9 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
   
   const contentEl = panel.querySelector('.research-panel-content');
   let html = '';
+  
+  // Close button to return to default research panel state
+  html += `<button class="research-panel-close-btn" onclick="closeStrongsPanel()" title="Close">✕</button>`;
   
   // Subtle strongs ID label (visible on mobile where header badge is hidden)
   html += `<div class="research-id-mobile">${strongsNum}</div>`;
@@ -4677,17 +4709,11 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
           <span class="strongs-symbol-title">Symbolic Meaning</span>
         </div>
         <div class="strongs-symbol-meaning">
-          <span class="strongs-symbol-label">IS:</span>
-          <span class="strongs-symbol-value">${symbol.is}${symbol.is2 ? ' / ' + symbol.is2 : ''}</span>
+          <span class="strongs-symbol-label">Meaning:</span>
+          <span class="strongs-symbol-value">${symbol.meaning}</span>
         </div>
-        ${symbol.does ? `
-        <div class="strongs-symbol-meaning">
-          <span class="strongs-symbol-label">DOES:</span>
-          <span class="strongs-symbol-value">${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}</span>
-        </div>
-        ` : ''}
         <div class="strongs-symbol-sentence">${symbol.sentence}</div>
-        <button class="strongs-symbol-link" onclick="openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
+        <button class="strongs-symbol-link" onclick="closeStrongsPanel(); openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
       </div>
     `;
   }
@@ -5028,7 +5054,7 @@ function renderInlineStrongs(taggedText, reference) {
       if (symbol) {
         classes.push('symbol-word');
         dataAttrs.push(`data-symbol="${symbol.name}"`);
-        dataAttrs.push(`data-symbol-meaning="${(symbol.is2 || symbol.is || '').replace(/"/g, '&quot;')}"`);
+        dataAttrs.push(`data-symbol-meaning="${(symbol.meaning || '').replace(/"/g, '&quot;')}"`);
       }
 
       result += `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip(event)">${displayWord}</span>`;
@@ -5142,7 +5168,7 @@ function renderVerseWithStrongs(bookName, chapter, verseNum, plainText) {
       }
       if (symbol) {
         dataAttrs.push(`data-symbol="${symbol.name}"`);
-        dataAttrs.push(`data-symbol-meaning="${(symbol.is2 || symbol.is || '').replace(/"/g, '&quot;')}"`);
+        dataAttrs.push(`data-symbol-meaning="${(symbol.meaning || '').replace(/"/g, '&quot;')}"`);
       }
       
       return `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip(event)">${match}</span>`;

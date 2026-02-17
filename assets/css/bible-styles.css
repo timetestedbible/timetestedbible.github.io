@@ -8680,7 +8680,7 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Symbol Study Content */
 .symbol-study-content {
-  margin-top: var(--spacing-lg);
+  margin-top: 0;
 }
 
 .symbol-study-loading {
@@ -10108,6 +10108,7 @@ body.biblical-timeline-open .top-nav-inner {
   border-bottom: 1px dotted rgba(212, 160, 23, 0.45);
   cursor: help;
   transition: border-color 0.15s;
+  unicode-bidi: isolate;
 }
 
 .name-sub:hover {
@@ -10273,7 +10274,9 @@ body.biblical-timeline-open .top-nav-inner {
 .strongs-symbol-label {
   color: var(--accent-primary);
   font-weight: bold;
-  min-width: 40px;
+  min-width: 75px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .strongs-symbol-value {
@@ -10685,7 +10688,7 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Hide research panel for non-Bible content types (no clickable words to study) */
 /* Exception: blog posts have clickable Strong's numbers */
-.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]) .research-panel {
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel {
   display: none !important;
 }
 
@@ -10750,6 +10753,31 @@ body.biblical-timeline-open .top-nav-inner {
   text-align: center;
   padding: 40px 20px;
   opacity: 0.6;
+}
+
+/* ─── Close button ─── */
+.research-panel-close-btn {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: var(--bg-secondary, #1a2332);
+  border: 1px solid var(--border-color, #2a3a4a);
+  color: var(--text-secondary);
+  font-size: 1.1em;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin: 4px 4px 0 0;
+  transition: color 0.2s, border-color 0.2s;
+}
+.research-panel-close-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
 }
 
 
@@ -11042,7 +11070,9 @@ body.biblical-timeline-open .top-nav-inner {
 .strongs-symbol-label {
   color: var(--accent-gold);
   font-weight: 600;
-  min-width: 40px;
+  min-width: 75px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .strongs-symbol-value {

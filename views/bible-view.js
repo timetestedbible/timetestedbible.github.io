@@ -42,9 +42,8 @@ const BibleView = {
     
     // Only create DOM once (same idempotent pattern as renderStructure)
     if (container.querySelector('.bible-explorer-header-inner')) {
-      // Already rendered — just sync selector visibility
+      // Already rendered — just sync selector visibility (which also manages .active)
       this.syncSelectorVisibility(state);
-      container.classList.add('active');
       return;
     }
     
@@ -128,7 +127,8 @@ const BibleView = {
         <span class="research-id-badge" id="research-id-badge"></span>
       </div>
     `;
-    container.classList.add('active');
+    // Let syncSelectorVisibility decide whether subnav should be visible
+    this.syncSelectorVisibility(state);
   },
 
   // Render the Bible Explorer UI structure
@@ -367,7 +367,8 @@ const BibleView = {
     const classicsSelectors = document.getElementById('classics-selectors');
     
     if (bibleSelectors) bibleSelectors.style.display = ((contentType === 'bible' || contentType === 'multiverse') && !hideAllSelectors) ? '' : 'none';
-    if (symbolSelectors) symbolSelectors.style.display = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'none';
+    // Hide symbol dropdown entirely — the index has its own grid, and individual studies don't need nav
+    if (symbolSelectors) symbolSelectors.style.display = 'none';
     if (ttSelectors) ttSelectors.style.display = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'none';
     if (classicsSelectors) classicsSelectors.style.display = (contentType === 'philo' || contentType === 'josephus') ? '' : 'none';
 
@@ -377,6 +378,18 @@ const BibleView = {
     const chapterSelect = document.getElementById('bible-chapter-select');
     if (bookSelect) bookSelect.style.display = isMultiverse ? 'none' : '';
     if (chapterSelect) chapterSelect.style.display = isMultiverse ? 'none' : '';
+
+    // Hide the entire subnav bar when no selector groups are visible
+    const subNavBar = document.getElementById('sub-nav-bar');
+    if (subNavBar) {
+      const anyVisible = [bibleSelectors, symbolSelectors, ttSelectors, classicsSelectors]
+        .some(el => el && el.style.display !== 'none');
+      if (anyVisible) {
+        subNavBar.classList.add('active');
+      } else {
+        subNavBar.classList.remove('active');
+      }
+    }
   },
   
   // Navigate to Bible location once data is loaded

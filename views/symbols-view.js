@@ -196,15 +196,8 @@ const SymbolsView = {
         <div class="symbol-card-icon">${icon}</div>
         <h3 class="symbol-card-name">${symbol.name}</h3>
         <div class="symbol-card-meaning">
-          <span class="symbol-is-label">IS:</span>
-          <span class="symbol-is-value">${symbol.is2 || symbol.is}</span>
+          <span class="symbol-is-value">${symbol.meaning}</span>
         </div>
-        ${symbol.does ? `
-        <div class="symbol-card-meaning">
-          <span class="symbol-does-label">DOES:</span>
-          <span class="symbol-does-value">${symbol.does}</span>
-        </div>
-        ` : ''}
       </button>
     `;
   },
@@ -238,19 +231,11 @@ const SymbolsView = {
           
           <section class="symbol-meanings">
             <div class="meaning-row">
-              <div class="meaning-label">IS (What it represents):</div>
-              <div class="meaning-value">${symbol.is}${symbol.is2 ? ' / ' + symbol.is2 : ''}</div>
+              <div class="meaning-label">Meaning:</div>
+              <div class="meaning-value">${symbol.meaning}</div>
             </div>
-            
-            ${symbol.does ? `
-            <div class="meaning-row">
-              <div class="meaning-label">DOES (What it does):</div>
-              <div class="meaning-value">${symbol.does}${symbol.does2 ? ' / ' + symbol.does2 : ''}</div>
-            </div>
-            ` : ''}
             
             <div class="meaning-sentence">
-              <div class="meaning-label">Full Meaning:</div>
               <p>${symbol.sentence}</p>
             </div>
             

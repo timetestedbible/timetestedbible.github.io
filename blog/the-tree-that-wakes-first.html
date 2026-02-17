@@ -1,0 +1,567 @@
+<!-- Blog post fragment — loaded into reader-view content area -->
+<style>
+  .blog-article .passage {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    transition: opacity 0.2s;
+    line-height: 1.8;
+  }
+  .blog-article .passage .ref { color: var(--text-secondary); font-size: 13px; display: block; margin-top: 6px; }
+  .blog-article .passage .ref a { color: var(--text-secondary); text-decoration: none; }
+  .blog-article .passage .ref a:hover { color: var(--accent-primary); text-decoration: underline; }
+  .blog-article .note { color: var(--text-tertiary); font-size: 13px; margin: -8px 0 16px 20px; font-style: italic; }
+  .blog-article .prose { margin: 14px 0; line-height: 1.9; }
+  .blog-article ul { color: var(--text-primary); }
+
+  .blog-article .ph {
+    border-radius: 3px; padding: 1px 4px; cursor: pointer;
+    transition: all 0.15s; font-weight: 500;
+  }
+  .blog-article .ph.active { text-decoration: underline; filter: brightness(1.3); }
+  .blog-article .ph.dimmed-phrase { opacity: 0.3; }
+
+  .blog-article .ph[data-theme="almond"] { color: #4ade80; background: rgba(74,222,128,0.12); }
+  .blog-article .ph[data-theme="sleep"] { color: #a78bfa; background: rgba(167,139,250,0.12); }
+  .blog-article .ph[data-theme="awake"] { color: var(--accent-gold); background: var(--accent-gold-subtle); }
+  .blog-article .ph[data-theme="remnant"] { color: #fb923c; background: rgba(251,146,60,0.12); }
+  .blog-article .ph[data-theme="guard"] { color: #2dd4bf; background: rgba(45,212,191,0.12); }
+  .blog-article .ph[data-theme="firstfruit"] { color: #f472b6; background: rgba(244,114,182,0.12); }
+  .blog-article .ph[data-theme="fire"] { color: #ef4444; background: rgba(239,68,68,0.12); }
+  .blog-article .ph[data-theme="throne"] { color: var(--accent-gold); background: var(--accent-gold-subtle); }
+
+  .blog-article h2 { color: var(--text-primary); margin: 48px 0 16px; font-weight: 700; font-size: 1.5em; border-bottom: 2px solid var(--border-default, var(--border-subtle)); padding-bottom: 8px; scroll-margin-top: 16px; }
+  .blog-article h3 { color: var(--text-primary); margin: 28px 0 10px; font-weight: 600; font-size: 1.15em; scroll-margin-top: 16px; }
+
+  .blog-toc { background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .blog-toc .toc-group { font-weight: 600; color: var(--text-primary); padding: 6px 0 2px; font-size: 14px; cursor: pointer; }
+  .blog-toc .toc-group:hover { color: var(--accent-primary); }
+  .blog-toc .toc-sub { padding-left: 16px; }
+  .blog-toc .toc-sub a { color: var(--text-secondary); text-decoration: none; display: block; padding: 2px 0; font-size: 13px; line-height: 1.5; cursor: pointer; }
+  .blog-toc .toc-sub a:hover { color: var(--accent-primary); }
+
+  .blog-article .intro { color: var(--text-secondary); font-style: italic; margin-bottom: 24px; }
+  .blog-article .blog-img { max-width: 100%; border-radius: 8px; margin: 16px 0; border: 1px solid var(--border-subtle); }
+  .blog-article .img-caption { color: var(--text-tertiary); font-size: 12px; text-align: center; margin: -8px 0 16px; }
+
+  .blog-article .heb { font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif; font-size: 1.15em; direction: rtl; unicode-bidi: isolate; }
+  .blog-article .heb-block { background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px 20px; margin: 12px 0; direction: rtl; text-align: right; font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif; font-size: 1.1em; line-height: 2; unicode-bidi: isolate; }
+
+  .blog-article .hw, .blog-article .ew { cursor: pointer; padding: 2px 3px; border-radius: 3px; transition: background 0.15s; }
+  .blog-article .hw.hl, .blog-article .ew.hl { background: var(--accent-gold-muted); }
+</style>
+
+<div class="blog-article">
+
+<img class="blog-img" src="/assets/img/TreeThatWakesFirst.jpg" alt="The Tree That Wakes First — almond tree becoming a golden menorah" style="margin-top: 0;">
+
+<p class="intro">This is almond season. Right now, across Israel, the almond tree is blooming — white blossoms on bare branches while every other tree still sleeps through winter. Its Hebrew name tells you why it matters: the word for "almond" and the word for "watching" are the same word. The tree is literally named "the watcher." And what Scripture says about this tree, about the lampstand, about the 144,000, and about the command to "watch" — when read in Hebrew — forms a single, urgent message.</p>
+
+<nav class="blog-toc" onclick="if(event.target.dataset.to){event.preventDefault();var t=document.getElementById(event.target.dataset.to);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}">
+
+<div class="toc-group" data-to="part1">I. The Golden Almond Trees</div>
+<div class="toc-sub">
+<a data-to="watcher-tree">The Watcher-Tree</a>
+<a data-to="menorah">The Menorah Is an Almond Tree</a>
+<a data-to="lampstands">The Churches Are Golden Almond Trees</a>
+<a data-to="dead-wood">Dead Wood That Wakes</a>
+</div>
+
+<div class="toc-group" data-to="part2">II. The 144 Clans — A Nation Born in a Day</div>
+<div class="toc-sub">
+<a data-to="hebrew-rev">What the Hebrew Actually Says</a>
+<a data-to="clans">144 Clans, Not 144,000 Individuals</a>
+<a data-to="firstfruits">The Firstfruits Who Learn the Song</a>
+<a data-to="nation">A Nation Born in a Day</a>
+</div>
+
+<div class="toc-group" data-to="part3">III. One From a City, Two From a Thousand</div>
+<div class="toc-sub">
+<a data-to="ratio">The Remnant Ratio</a>
+<a data-to="sodom">Sodom Confirms the Formula</a>
+<a data-to="threshold">Abraham's Threshold</a>
+<a data-to="two-views">Two Views of One People</a>
+</div>
+
+<div class="toc-group" data-to="part4">IV. Be the Tree</div>
+<div class="toc-sub">
+<a data-to="awake">AWAKE — The Hebrew Command</a>
+<a data-to="not-sleep">Holy Are Those Who Do Not Sleep</a>
+<a data-to="guard">Guard His Word — He Guards You</a>
+<a data-to="come-out">Come Out and Lead</a>
+</div>
+
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part1">I. The Golden Almond Trees</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="watcher-tree">The Watcher-Tree</h3>
+
+<p class="prose">The almond tree blooms in January and February — sometimes on bare wood with no leaves, while every other tree in the land still sleeps through winter. It appears to "wake up" first. And its Hebrew name tells you exactly that.</p>
+
+<p class="prose">The word for almond — <span class="heb">שָׁקֵד</span> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H8247', event)">H8247</a>) — comes directly from the word for watching: <span class="heb">שָׁקַד</span> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H8245', event)">H8245</a>). Same letters. Without the vowel marks that scribes added centuries later, they are <strong>identical</strong>: <span class="heb">שקד</span>. The almond doesn't <em>represent</em> watching by metaphor. It IS watching. The tree is literally named "the watcher."</p>
+
+<p class="prose">When God called the prophet Jeremiah, the very first thing He showed him was a branch of this tree:</p>
+
+<div class="passage" data-themes="almond">
+What do you see? And I said, I see a rod of an <span class="ph" data-theme="almond"><strong>almond tree</strong></span>. Then said the LORD to me, You have well seen: for I will <span class="ph" data-theme="almond"><strong>watch</strong></span> over my word to perform it.
+<span class="ref"><a href="/reader/bible/akjv/Jeremiah/1#v11" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Jeremiah',chapter:1,verse:11}})">Jeremiah 1:11–12</a></span>
+</div>
+<p class="note">The Hebrew pun is unmistakable: shaqed (almond) → shaqad (watching). God holds up the waker-tree and says: I am the Waker over my word.</p>
+
+<p class="prose">Before any prophecy is delivered — before the prophecies of judgment, before the promises of gathering — God establishes the foundation: <strong>I do not sleep. What I speak, I stay awake to fulfill.</strong></p>
+
+<h3 id="menorah">The Menorah Is an Almond Tree</h3>
+
+<div class="passage" data-themes="almond">
+Three bowls made like unto <span class="ph" data-theme="almond"><strong>almonds</strong></span>, with a knop and a flower in one branch; and three bowls made like <span class="ph" data-theme="almond"><strong>almonds</strong></span> in the other branch... And in the candlestick shall be four bowls made like unto <span class="ph" data-theme="almond"><strong>almonds</strong></span>.
+<span class="ref"><a href="/reader/bible/akjv/Exodus/25#v33" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Exodus',chapter:25,verse:33}})">Exodus 25:33–34</a></span>
+</div>
+
+<p class="prose">Every single cup on every branch of the menorah — the golden lampstand that burned day and night in God's temple — was shaped like an almond blossom (<a href="#" class="strongs-link" onclick="navigateToStrongs('H8246', event)">H8246</a>). Twenty-two almond cups forming the structure of the light that never went out.</p>
+
+<p class="prose">The light that was never allowed to go out in God's house was shaped like the tree that wakes first. <span class="ph" data-theme="almond">Light</span> and <span class="ph" data-theme="almond">watching</span>, fused into one object.</p>
+
+<h3 id="lampstands">The Churches Are Golden Almond Trees</h3>
+
+<div class="passage" data-themes="almond throne">
+I turned to see the voice that spake with me. And being turned, I saw seven golden <span class="ph" data-theme="almond"><strong>candlesticks</strong></span>; And in the midst of the seven <span class="ph" data-theme="almond">candlesticks</span> one like unto the Son of man.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/1#v12" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:1,verse:12}})">Revelation 1:12–13</a></span>
+</div>
+
+<div class="passage" data-themes="almond">
+The seven <span class="ph" data-theme="almond"><strong>candlesticks</strong></span> which thou sawest are the seven <strong>churches</strong>.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/1#v20" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:1,verse:20}})">Revelation 1:20</a></span>
+</div>
+
+<p class="prose">The churches are golden lampstands. Lampstands are almond trees. <strong>The churches are golden almond trees.</strong> Watcher-trees. Each one supposed to be the first to wake, the first to shine light while others sleep.</p>
+
+<p class="prose">But to one of those churches — Sardis — He says this. Read it three ways:</p>
+
+<p class="prose"><strong>The AKJV:</strong></p>
+
+<div class="passage" data-themes="sleep almond">
+These things says he that has the seven Spirits of God, and the seven <span class="ph" data-theme="almond"><strong>stars</strong></span>; I know your works, that you have a <strong>name</strong> that you live, and are <span class="ph" data-theme="sleep"><strong>dead</strong></span>. Be <strong>watchful</strong>, and strengthen the things which remain, that are ready to <span class="ph" data-theme="sleep"><strong>die</strong></span>: for I have not found your works perfect before God. Remember therefore how you have received and heard, and hold fast, and repent. If therefore you shall not <strong>watch</strong>, I will come on you as a <strong>thief</strong>, and you shall not know what hour I will come on you.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/3#v1" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:3,verse:1}})">Revelation 3:1–3</a> (AKJV)</span>
+</div>
+
+<p class="prose"><strong>From the Hebrew</strong> (<a href="https://hebrewgospels.com" target="_blank" rel="noopener">hebrewgospels.com</a>) — hover over the Hebrew below to highlight the corresponding English:</p>
+
+<div class="passage" data-themes="sleep">
+<span class="ew" data-pair="1">And to the messenger</span> <span class="ew" data-pair="2">of the assembly</span> <span class="ew" data-pair="3">of Sardis</span> <span class="ew" data-pair="4">write:</span> <span class="ew" data-pair="5">Thus says</span> <span class="ew" data-pair="6">he who has</span> <span class="ew" data-pair="7">the Spirits of YHWH,</span> <span class="ew" data-pair="8">and the seven <span class="ph" data-theme="almond">stars</span></span> — <span class="ew" data-pair="9">I know</span> <span class="ew" data-pair="10">your works,</span> <span class="ew" data-pair="11">for</span> <span class="ew" data-pair="12"><strong>a $[name]</strong></span> <span class="ew" data-pair="13">you have</span> — <span class="ew" data-pair="14">that you <span class="ph" data-theme="awake">live</span></span> — <span class="ew" data-pair="15">but you are <span class="ph" data-theme="sleep"><strong>dead</strong></span>.</span> Therefore, <strong>do not <span class="ph" data-theme="sleep">sleep</span></strong> — and strengthen that which wants to <span class="ph" data-theme="sleep">die</span>: for I have not found your works complete before YHWH. And now, remember how you have received and heard; and establish them, and do repentance. And if not, I will come upon you like a <strong>thief</strong>, and you will not know at what time I will come.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/3#v1" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:3,verse:1}})">Revelation 3:1–3</a> (from the Hebrew)</span>
+</div>
+
+<p style="direction: rtl; text-align: right; font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif; font-size: 1.15em; line-height: 2.4; background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px 20px; margin: 12px 0;">
+<span class="hw" data-pair="1">וּלְהַמַּלְאָךְ</span>
+<span class="hw" data-pair="2">מֵהָעֵדָה</span>
+<span class="hw" data-pair="3">שֶׁל</span>
+<span class="hw" data-pair="3">זַארְדִּין</span>
+<span class="hw" data-pair="4">כְּתוֹב</span>
+<span class="hw" data-pair="5">כֹּה</span>
+<span class="hw" data-pair="5">אָמַר</span>
+<span class="hw" data-pair="6">זֶה</span>
+<span class="hw" data-pair="6">שֶׁיֵּשׁ</span>
+<span class="hw" data-pair="6">לוֹ</span>
+<span class="hw" data-pair="7">הָרוּחוֹת</span>
+<span class="hw" data-pair="7">יַהְוֶה</span>
+<span class="hw" data-pair="8">וְהַשִּׁבְעָה</span>
+<span class="hw" data-pair="8">כּוֹכָבִים</span>
+<span class="hw" data-pair="9">אֲנִי</span>
+<span class="hw" data-pair="9">יוֹדֵעַ</span>
+<span class="hw" data-pair="10">אֶת</span>
+<span class="hw" data-pair="10">מַעֲשֶׂיךָ</span>
+<span class="hw" data-pair="11">כִּי</span>
+<span class="hw" data-pair="12">שֵׁם</span>
+<span class="hw" data-pair="13">יֵשׁ</span>
+<span class="hw" data-pair="13">לְךָ</span>
+<span class="hw" data-pair="14">שֶׁאַתָּה</span>
+<span class="hw" data-pair="14">חַי</span>
+<span class="hw" data-pair="15">וְאַתָּה</span>
+<span class="hw" data-pair="15">מֵת</span>
+</p>
+
+<p class="note">The word <span class="heb">שֵׁם</span> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H8034', event)">H8034</a>) means "name" — but in Scripture, $[name] = covenant. "You have a covenant — that you live — but you are dead." The covenant says you live. The reality says you're dead. And where the AKJV says "be watchful," the Hebrew says <span class="heb">אַל תִּישַׁן</span> — "do NOT sleep." Dead, sleeping, dying — three words from the same domain, spoken to a golden almond tree.</p>
+
+<p class="prose">And then the threat: "I will <strong>remove your candlestick</strong>" (<a href="/reader/bible/akjv/Revelation/2#v5" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:2,verse:5}})">Rev 2:5</a>). I will uproot your almond tree. A watcher-tree that stops watching gets removed from God's house.</p>
+
+<h3 id="dead-wood">Dead Wood That Wakes</h3>
+
+<p class="prose">And yet — there is hope in that. Because when God wanted to prove which priest He had chosen, He performed the almond's own story:</p>
+
+<div class="passage" data-themes="almond awake">
+And it came to pass, that on the morrow Moses went into the tabernacle of witness; and, behold, the rod of Aaron for the house of Levi was budded, and brought forth buds, and <span class="ph" data-theme="awake"><strong>bloomed blossoms</strong></span>, and yielded <span class="ph" data-theme="almond"><strong>almonds</strong></span>.
+<span class="ref"><a href="/reader/bible/akjv/Numbers/17#v8" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Numbers',chapter:17,verse:8}})">Numbers 17:8</a></span>
+</div>
+
+<p class="prose">Twelve dead sticks. One night. One of them buds, blooms, and bears ripe almonds — three stages of life on dead wood, overnight. The watcher-tree's fruit on a dead rod. This is the <strong>resurrection pattern</strong>. And the fruit it produces is not olives or figs — it is almonds. The priesthood is validated by the watcher-tree.</p>
+
+<p class="prose">We are called a <strong>royal priesthood</strong> (<a href="/reader/bible/akjv/1Peter/2#v9" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'1Peter',chapter:2,verse:9}})">1 Peter 2:9</a>). A <strong>kingdom of priests</strong> (<a href="/reader/bible/akjv/Revelation/5#v10" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:5,verse:10}})">Rev 5:10</a>). The priestly tree is the almond. And dead wood can bear almonds again — if God wakes it.</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part2">II. The 144 Clans — A Nation Born in a Day</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="hebrew-rev">What the Hebrew Actually Says</h3>
+
+<p class="prose">Everyone argues about the 144,000 in Revelation 7 — literal or symbolic? But that argument assumes we know what the number says. There is a strong case that Revelation was originally written in Hebrew (<a href="https://hebrewgospels.com" target="_blank" rel="noopener">hebrewgospels.com</a>). The Hebrew text of Revelation 7:4 reads:</p>
+
+<p class="prose">Hover over the Hebrew to see the English — and watch for the two key words:</p>
+
+<div class="passage">
+<span class="ew" data-pair="r1">And I heard</span> <span class="ew" data-pair="r2">the number</span> <span class="ew" data-pair="r3">of those</span> <span class="ew" data-pair="r4">who were sealed:</span> <span class="ew" data-pair="r5">it was a hundred</span> <span class="ew" data-pair="r6">and four</span> <span class="ew" data-pair="r7">and forty</span> <span class="ew" data-pair="r8"><strong><span class="ph" data-theme="firstfruit">clans</span></strong></span> — <span class="ew" data-pair="r9">who were sealed</span> <span class="ew" data-pair="r10"><strong>from the <span class="ph" data-theme="firstfruit">families</span></strong></span> <span class="ew" data-pair="r11">of the children</span> <span class="ew" data-pair="r12">of Israel.</span>
+<span class="ref"><a href="/reader/bible/akjv/Revelation/7#v4" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:7,verse:4}})">Revelation 7:4</a> (from the Hebrew)</span>
+</div>
+
+<p style="direction: rtl; text-align: right; font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif; font-size: 1.15em; line-height: 2.4; background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px 20px; margin: 12px 0;">
+<span class="hw" data-pair="r1">וְשָׁמַעְתִּי</span>
+<span class="hw" data-pair="r2">הַמִּסְפָּר</span>
+<span class="hw" data-pair="r3">מֵאֵילּוּ</span>
+<span class="hw" data-pair="r4">שֶׁנֶּחְתְּמוּ</span>
+<span class="hw" data-pair="r5">הָיָה מֵאָה</span>
+<span class="hw" data-pair="r6">וְאַרְבַּע</span>
+<span class="hw" data-pair="r7">וְאַרְבָּעִים</span>
+<span class="hw" data-pair="r8">אֲלָפִים</span>
+<span class="hw" data-pair="r9">שֶׁנֶחְתְּמוּ</span>
+<span class="hw" data-pair="r10">מִמִּשְׁפְּחוֹת</span>
+<span class="hw" data-pair="r11">בְּנֵי</span>
+<span class="hw" data-pair="r12">יִשְׂרָאֵל</span>
+</p>
+
+<p class="prose">Two words sit side by side: <strong>alaphim</strong> and <strong>mishpechot</strong>. Both mean "clans" or "families." They reinforce each other — the way Hebrew poetry always works, saying the same thing in two parallel ways: <em>144 <span class="ph" data-theme="firstfruit">clans</span>, from the <span class="ph" data-theme="firstfruit">families</span> of the children of Israel.</em></p>
+
+<h3 id="clans">144 Clans, Not 144,000 Individuals</h3>
+
+<p class="prose">The word <strong>alaphim</strong> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H505', event)">H505</a>) has two well-known meanings in Hebrew. It can mean "thousands." But it also means "clans" — family units within a tribe. Same word. Same letters. And Strong's own concordance tells you which meaning is primary. Look up <a href="#" class="strongs-link" onclick="navigateToStrongs('H505', event)">H505</a> and it says: "properly, the same as <a href="#" class="strongs-link" onclick="navigateToStrongs('H504', event)">H504</a>" — and H504 means <strong>family</strong>. The word properly means family. "Thousand" is the derived meaning — it developed later because the ox-head pictograph became the letter aleph, and the letter was eventually used as a numeral.</p>
+
+<p class="prose">We know it means "clan" because Scripture uses it that way explicitly:</p>
+
+<div class="passage" data-themes="firstfruit">
+My <span class="ph" data-theme="firstfruit"><strong>family</strong></span> [<a href="#" class="strongs-link" onclick="navigateToStrongs('H504', event)">H504</a> — same root] is the weakest in Manasseh.
+<span class="ref"><a href="/reader/bible/akjv/Judges/6#v15" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Judges',chapter:6,verse:15}})">Judges 6:15</a> — Gideon</span>
+</div>
+
+<div class="passage" data-themes="firstfruit">
+But you, Bethlehem Ephrathah, though you are little among the <span class="ph" data-theme="firstfruit"><strong>thousands</strong></span> [<a href="#" class="strongs-link" onclick="navigateToStrongs('H505', event)">H505</a> — <strong>clans</strong>] of Judah...
+<span class="ref"><a href="/reader/bible/akjv/Micah/5#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Micah',chapter:5,verse:2}})">Micah 5:2</a></span>
+</div>
+<p class="note">Bethlehem is too small to rank among Judah's clans — not literally "too small among thousands."</p>
+
+<p class="prose">If <em>alaphim</em> means clans, then: 12 tribes × 12 clans = <strong>144 clans</strong>. Not 144,000 individuals. The number 12 — the number of covenant completeness — multiplied by itself. Every tribe, every clan, fully represented. Not a headcount but a <strong>complete family structure</strong>.</p>
+
+<p class="prose">When a Greek translator encountered this word, he would have defaulted to "thousands." And that's exactly what the Greek text has. But the clan meaning was <strong>lost in translation</strong>. You can go from Hebrew to Greek and lose "clans." You can never recover it going the other direction.</p>
+
+<p class="prose">And here's what proves this isn't a back-translation: a translator converting Greek into Hebrew mechanically would use the standard word for "tribes" (<span class="heb">שבטי</span>). Instead, this text uses <strong>mishpechot</strong> — "families" — a word that echoes and reinforces the <em>clan</em> meaning of alaphim. That's natural Hebrew composition. A back-translator wouldn't produce that resonance by accident.</p>
+
+<p class="prose">This is the same kind of Hebrew wordplay we saw with the almond. In Jeremiah 1:11–12, God shows a <span class="heb">שקד</span> (almond) and says He is <span class="heb">שקד</span> (watching) — a pun that only works in Hebrew. Here in Revelation 7:4, the word <em>alaphim</em> carries five layers at once: families, thousands, firsts, trained ones, chiefs. A Hebrew listener catches all of them. The Greek <em>chiliades</em> carries exactly one — thousands. The pun is invisible in Greek. So is the <span class="heb">כסא</span> wordplay — where "throne" and "full moon" are the same unpointed word (as shown in <a href="/blog/blood-moon-over-the-moon-city/" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'blood-moon-over-the-moon-city'}})">Blood Moon Over the Moon City</a>). Three Hebrew puns in key Revelation passages — almond/watching, throne/full moon, families/firsts — all invisible once translated to Greek. That pattern points to a text composed in Hebrew, not translated into it.</p>
+
+<h3 id="firstfruits">The Firstfruits Who Learn the Song</h3>
+
+<p class="prose">The Hebrew of Revelation 14:3–4 reveals something the English hides. The 144 <em>alaphim</em> are described as the only ones who can <strong>learn</strong> the new song. And the root of their name — <span class="heb">אלף</span> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H502', event)">H502</a>) — means <strong>"to learn, to teach, to become trained."</strong></p>
+
+<p class="prose">Without vowel marks, the word <span class="heb">אלף</span> simultaneously means: <strong>to learn</strong>, <strong>clan</strong>, <strong>thousand</strong>, <strong>chief</strong>, <strong>friend</strong>, <strong>ox</strong>, and — as the first letter of the alphabet — <strong>first</strong>. This is the same phenomenon as <span class="heb">כסא</span> meaning both "throne" and "full moon" (as shown in <a href="/blog/blood-moon-over-the-moon-city/" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'blood-moon-over-the-moon-city'}})">Blood Moon Over the Moon City</a>). The original text holds all meanings; the vowel marks force you to pick one.</p>
+
+<div class="passage" data-themes="firstfruit throne">
+And they were singing like a new song before the <span class="ph" data-theme="throne"><strong>throne</strong></span> ... and no one was able to <strong>learn</strong> this song except these hundred and forty-four <span class="ph" data-theme="firstfruit"><strong>alaphim</strong></span> ... and they are bought as <span class="ph" data-theme="firstfruit"><strong>first fruits</strong></span>.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/14#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:14,verse:3}})">Revelation 14:3–4</a> (from the Hebrew)</span>
+</div>
+
+<p class="prose">The <em>alaphim</em> — whose root means "to learn, to be trained" — are the only ones who can learn the song. And they are called <strong>firstfruits</strong>: the first portion of the harvest.</p>
+
+<p class="prose">There's another layer in the word. <em>Alaphim</em> is the plural of <em>aleph</em> — the first letter of the Hebrew alphabet, whose numerical value is <strong>one</strong>. The firsts. And in the Torah, the firstborn belong to God: "Sanctify unto me <strong>all the firstborn</strong>... it is <strong>mine</strong>" (<a href="/reader/bible/akjv/Exodus/13#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Exodus',chapter:13,verse:2}})">Exod 13:2</a>). After the golden calf, when Moses said "Who is on the LORD's side?" — the sons of Levi stood with him (<a href="/reader/bible/akjv/Exodus/32#v26" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Exodus',chapter:32,verse:26}})">Exod 32:26</a>). And God took the Levites <strong>instead of</strong> all the firstborn: "The Levites shall be mine" (<a href="/reader/bible/akjv/Numbers/3#v12" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Numbers',chapter:3,verse:12}})">Num 3:12</a>). Those who stood with God at the crisis became His firstborn — His priests.</p>
+
+<p class="prose">Now look at Revelation 14:1 — the 144 <em>alaphim</em> are standing with the <strong>Lamb on Mount Zion</strong>. Called up to Him. On the rock. At the crisis. Just like the Levites with Moses. And they are "bought as firstfruits" — the firstborn who belong to Him. The 144 families are the firstborn families. The <em>alaphim</em> carries both: <strong>families</strong> in its lexical meaning, <strong>firsts</strong> in its letter.</p>
+
+<h3 id="nation">A Nation Born in a Day</h3>
+
+<p class="prose">Trees in Scripture represent nations (<a href="/reader/bible/akjv/Daniel/4#v20" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Daniel',chapter:4,verse:20}})">Daniel 4:20-22</a>, <a href="/reader/bible/akjv/Ezekiel/31#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Ezekiel',chapter:31,verse:3}})">Ezekiel 31:3-9</a>). The almond is the first tree to wake — the first <strong>nation</strong> to rise. And Isaiah asks:</p>
+
+<div class="passage" data-themes="awake">
+Shall a <strong>nation</strong> be <span class="ph" data-theme="awake"><strong>born at once</strong></span>? for as soon as Zion travailed, she brought forth her children.
+<span class="ref"><a href="/reader/bible/akjv/Isaiah/66#v8" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Isaiah',chapter:66,verse:8}})">Isaiah 66:8</a></span>
+</div>
+
+<p class="prose">Aaron's dead rod bore almonds overnight. One night — bud, bloom, fruit. A <strong>nation born in a day</strong>.</p>
+
+<p class="prose">And look at the second half of that verse: "for as soon as Zion travailed, she brought forth her children." The Hebrew word behind "as soon as" (<a href="#" class="strongs-link" onclick="navigateToStrongs('H1571', event)">H1571</a>) properly means <strong>gathering, assemblage</strong> — from a root meaning "to gather." And "travailed" (<a href="#" class="strongs-link" onclick="navigateToStrongs('H2342', event)">H2342</a>) is the word for labor pains — the same image Paul uses for the sudden destruction:</p>
+
+<div class="passage" data-themes="fire awake">
+For when they shall say, <span class="ph" data-theme="fire">Peace and safety</span>; then <span class="ph" data-theme="fire"><strong>sudden destruction</strong></span> comes on them, as <strong>travail</strong> on a woman with child; and they shall not escape.
+<span class="ref"><a href="/reader/bible/akjv/1Thessalonians/5#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'1Thessalonians',chapter:5,verse:3}})">1 Thessalonians 5:3</a></span>
+</div>
+
+<p class="prose">The <strong>travail</strong> is both the <strong>birth</strong> of the nation (Isaiah 66:8) and the <strong>sudden destruction</strong> on the world (1 Thess 5:3). Same word. Same moment. The gathering doesn't happen before the destruction or after it — <strong>gathered as Zion travailed</strong>. The extraction and the judgment are one event. The same day Lot went out, fire fell. The nation is born in the labor pains of judgment itself — gathered at one stroke, like the almond that bears fruit overnight on dead wood.</p>
+
+<p class="prose">The 144 families are not a cap on who gets saved. They are the <strong>structure</strong> of a nation — a royal priesthood, a kingdom of priests — that wakes first, like the almond, while the rest of the forest still sleeps.</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part3">III. One From a City, Two From a Thousand</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="ratio">The Remnant Ratio</h3>
+
+<p class="prose">If the 144 clans describe the <em>structure</em>, how many people are in it?</p>
+
+<div class="passage" data-themes="remnant firstfruit">
+I will take you — <span class="ph" data-theme="remnant"><strong>one</strong> from a city</span> and <span class="ph" data-theme="remnant"><strong>two</strong> from a family</span> — and I will bring you to Zion.
+<span class="ref"><a href="/reader/bible/akjv/Jeremiah/3#v14" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Jeremiah',chapter:3,verse:14}})">Jeremiah 3:14</a></span>
+</div>
+
+<p class="prose">This is Hebrew poetry — two parallel lines saying the same thing. A typical city in ancient Israel held about 500–1,000 people. A "thousand" — the other meaning of the same clan-word — is about a thousand. Both lines converge on the same number: <strong>about 1–2 people out of every thousand. Roughly 0.2%.</strong></p>
+
+<p class="prose">That's the remnant ratio. And it's consistent with everything else Scripture says:</p>
+
+<ul style="margin: 8px 0 8px 24px; line-height: 2; font-size: 14px;">
+<li>"<span class="ph" data-theme="remnant">Narrow</span> is the way... <span class="ph" data-theme="remnant"><strong>few</strong></span> there be that find it" (<a href="/reader/bible/akjv/Matthew/7#v14" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Matthew',chapter:7,verse:14}})">Matt 7:14</a>)</li>
+<li>"Many are called, but <span class="ph" data-theme="remnant"><strong>few</strong></span> are chosen" (<a href="/reader/bible/akjv/Matthew/22#v14" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Matthew',chapter:22,verse:14}})">Matt 22:14</a>)</li>
+<li>"Lord, are there <span class="ph" data-theme="remnant"><strong>few</strong></span> that be saved?" (<a href="/reader/bible/akjv/Luke/13#v23" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Luke',chapter:13,verse:23}})">Luke 13:23</a>)</li>
+</ul>
+
+<p class="prose">The gathering doesn't just include people alive today. "The <span class="ph" data-theme="sleep">dead</span> in Christ shall <span class="ph" data-theme="awake">rise</span> first — <strong>then</strong> we who are alive and remain shall be caught up together with them" (<a href="/reader/bible/akjv/1Thessalonians/4#v16" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'1Thessalonians',chapter:4,verse:16}})">1 Thess 4:16–17</a>). The multitude spans <strong>all generations</strong>.</p>
+
+<p class="prose">About 117 billion people have ever been born. About 61 billion since the cross. At 0.2%, the total multitude across all time is roughly <strong>60–230 million</strong>. The living at the time of gathering: roughly <strong>8–16 million</strong> out of 8 billion. The raised dead make up 87–97% of the total. Paul emphasizes the order — the dead rise <strong>first</strong> — because they are the main event. The living are added to them.</p>
+
+<p class="prose">One in every 500–1,000 people you pass on the street. A city of a million yields about 2,000. A town of 10,000 yields about 20. A village of 500 yields one. <em>One from a city. Two from a thousand.</em></p>
+
+<p class="prose">Put it another way: out of all the churches in your city — all the congregations, all the denominations, all the people who have a <strong>$[name]</strong> that they live — the ratio suggests about <strong>one congregation's worth</strong> from each city. The rest of the golden almond trees are asleep.</p>
+
+<p class="prose">Some will object: <em>surely more than 0.2% are saved.</em> But consider where the saved actually go. The promise was never "heaven." It was always <strong>the land</strong>:</p>
+
+<ul style="margin: 8px 0 8px 24px; line-height: 2.2; font-size: 14px;">
+<li>"Blessed are the meek: for they shall inherit the <strong>earth</strong>" (<a href="/reader/bible/akjv/Matthew/5#v5" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Matthew',chapter:5,verse:5}})">Matt 5:5</a>)</li>
+<li>"We shall reign on the <strong>earth</strong>" (<a href="/reader/bible/akjv/Revelation/5#v10" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:5,verse:10}})">Rev 5:10</a>)</li>
+<li>"The tabernacle of God is <strong>with men</strong>, and he will dwell <strong>with them</strong>" (<a href="/reader/bible/akjv/Revelation/21#v3" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:21,verse:3}})">Rev 21:3</a>) — God comes <strong>down</strong>. We don't go up.</li>
+<li>"They shall build houses, and inhabit them; and they shall plant vineyards, and eat the fruit of them" (<a href="/reader/bible/akjv/Isaiah/65#v21" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Isaiah',chapter:65,verse:21}})">Isa 65:21</a>)</li>
+</ul>
+
+<p class="prose">The inheritance is physical territory — the same land God promised Abraham from the Nile to the Euphrates (<a href="/reader/bible/akjv/Genesis/15#v18" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Genesis',chapter:15,verse:18}})">Gen 15:18</a>), promised <strong>forever</strong> (<a href="/reader/bible/akjv/Genesis/13#v15" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Genesis',chapter:13,verse:15}})">Gen 13:15</a>). It's roughly the size of France. The resurrection includes the dead from all generations. Everyone has to fit on that land.</p>
+
+<ul style="margin: 8px 0 8px 24px; line-height: 2.2; font-size: 14px;">
+<li><strong>At 0.2%</strong> (~60–230 million) — density like France to the Netherlands. Comfortable. Farmable. A nation can live there.</li>
+<li><strong>At 3% of Christians</strong> (~1 billion) — denser than Bangladesh across the entire territory. No room to farm.</li>
+<li><strong>At 30% of Christians</strong> (~10 billion) — denser than any city on earth, sustained across all the land. Physically impossible.</li>
+</ul>
+
+<p class="prose">The land itself testifies to the ratio. "Few" is not a spiritual platitude — it is a logistical reality. The territory God set apart can sustain a remnant. It cannot sustain billions.</p>
+
+<h3 id="sodom">Sodom Confirms the Formula</h3>
+
+<p class="prose">Four cities of the plain destroyed simultaneously: Sodom, Gomorrah, Admah, Zeboiim (<a href="/reader/bible/akjv/Deuteronomy/29#v23" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Deuteronomy',chapter:29,verse:23}})">Deut 29:23</a>). Total population across the four: roughly 4,000. Only 4 people were extracted. Only 3 survived — Lot's wife looked back.</p>
+
+<ul style="margin: 8px 0 8px 24px; line-height: 2; font-size: 14px;">
+<li><strong>Lot</strong> = <span class="ph" data-theme="remnant">one from a city</span></li>
+<li><strong>Two daughters</strong> = <span class="ph" data-theme="remnant">two from a clan</span></li>
+<li>1 + 2 = <strong>3 survivors</strong>. The Jeremiah formula. Exactly.</li>
+</ul>
+
+<p class="prose">Three out of roughly 4,000. That's 0.075% — right in the range. And from those three, Lot's daughters bore Moab and Ammon. From Moab came Ruth — who was grafted into Judah, into the lineage of David, into the lineage of the Messiah. The 0.2% remnant from one destroyed city eventually produced the ancestor of the King.</p>
+
+<h3 id="threshold">Abraham's Threshold</h3>
+
+<p class="prose">Abraham had established the principle: God will not destroy a city if 10 righteous remain in it (<a href="/reader/bible/akjv/Genesis/18#v32" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Genesis',chapter:18,verse:32}})">Gen 18:32</a>). And the angel told Lot explicitly:</p>
+
+<div class="passage" data-themes="awake">
+I <strong>cannot</strong> do anything until you arrive there.
+<span class="ref"><a href="/reader/bible/akjv/Genesis/19#v22" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Genesis',chapter:19,verse:22}})">Genesis 19:22</a></span>
+</div>
+
+<p class="prose">Not "I prefer not to." <strong>"I cannot."</strong> Extraction is a prerequisite for judgment, not a courtesy. God bound Himself by His own promise to Abraham.</p>
+
+<p class="prose">At 0.2%, every modern city on earth has far more than 10 righteous scattered through it. God is covenantally bound to extract His people before destruction falls. "<span class="ph" data-theme="fire">Come out</span> of her, my people" (<a href="/reader/bible/akjv/Revelation/18#v4" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:18,verse:4}})">Rev 18:4</a>) <strong>must</strong> happen before "she shall be <span class="ph" data-theme="fire">burned with fire</span>" (<a href="/reader/bible/akjv/Revelation/18#v8" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:18,verse:8}})">Rev 18:8</a>).</p>
+
+<p class="prose">Same pattern, every time. Lot out, then Sodom burns. Rahab out, then Jericho burns. "Come out," then Babylon burns. <strong>Never reversed. Never simultaneous.</strong> Jesus named it explicitly:</p>
+
+<div class="passage" data-themes="fire awake">
+As it was in the days of Lot... the <strong>same day</strong> that Lot went out of Sodom it rained <span class="ph" data-theme="fire">fire</span> and <span class="ph" data-theme="fire">brimstone</span> from heaven and destroyed them all. <strong>Even thus shall it be</strong> in the day when the Son of man is revealed.
+<span class="ref"><a href="/reader/bible/akjv/Luke/17#v28" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Luke',chapter:17,verse:28}})">Luke 17:28–30</a></span>
+</div>
+
+<h3 id="two-views">Two Views of One People</h3>
+
+<p class="prose">Revelation 7 shows the same group from two perspectives. John <strong>hears</strong> the number — 144 clans, structured, countable, a complete covenant architecture (<a href="/reader/bible/akjv/Revelation/7#v4" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:7,verse:4}})">Rev 7:4</a>). Then he <strong>looks</strong> and sees:</p>
+
+<div class="passage" data-themes="remnant firstfruit">
+A <span class="ph" data-theme="remnant"><strong>great multitude, which no man could number</strong></span>, of all nations, and kindreds, and people, and tongues, stood before the Lamb.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/7#v9" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:7,verse:9}})">Revelation 7:9</a></span>
+</div>
+
+<p class="prose">Same group. The <strong>structured view</strong>: 144 complete clans. The <strong>demographic view</strong>: an innumerable multitude from every nation. A small percentage of a vast number — all who ever lived across all generations — is still genuinely uncountable. The ratio is few. The total is vast. Both are true.</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2 id="part4">IV. Be the Tree</h2>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<h3 id="awake">Two Commands, Not One</h3>
+
+<p class="prose">When Jesus gave His final warning about the end — the Olivet Discourse in Mark 13 — English translations flatten it into a single word: "watch." But the Hebrew text (from <a href="https://hebrewgospels.com" target="_blank" rel="noopener">hebrewgospels.com</a>) reveals <strong>two distinct commands</strong> working together:</p>
+
+<div class="passage" data-themes="guard awake">
+<span class="ph" data-theme="guard"><strong>Be on guard</strong></span> and <span class="ph" data-theme="awake"><strong>be awake</strong></span> and pray, for you do not know the time nor the hour.
+<span class="ref"><a href="/reader/bible/akjv/Mark/13#v33" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Mark',chapter:13,verse:33}})">Mark 13:33</a> (from the Hebrew)</span>
+</div>
+
+<p class="prose">Two different Hebrew words:</p>
+
+<ul style="margin: 8px 0 8px 24px; line-height: 2.2; font-size: 14px;">
+<li><span class="ph" data-theme="guard"><strong><span class="heb">השמרו</span></strong></span> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H8104', event)">H8104</a> <em>shamar</em>) — <strong>Be on guard.</strong> This is the watchman-on-the-wall word. It means: stay vigilant, don't be caught off guard, keep your post. "Watch, for you know not the hour" maps here — it's about alertness, not sleeping through the moment.</li>
+<li><span class="ph" data-theme="awake"><strong><span class="heb">עורו</span></strong></span> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H5782', event)">H5782</a> <em>ur</em>) — <strong>Be awake.</strong> This is deeper. It means: rouse yourself, wake from sleep, rise. It's the same root used throughout the prophets for <strong>stirring up</strong> and for <strong>resurrection</strong>. This is not about what you <em>do</em> — it's about what you <em>are</em>.</li>
+</ul>
+
+<p class="prose"><span class="ph" data-theme="guard"><strong>Guard</strong></span> is about <strong>action</strong> — stay alert, don't be caught unaware. <span class="ph" data-theme="awake"><strong>Awake</strong></span> is about <strong>state</strong> — be alive, be on the resurrection side, not the death side. Jesus commands both in the same breath. But when He gives the final, universal command — the last word of the discourse — He escalates to the deeper one:</p>
+
+<div class="heb-block" style="text-align: center; font-size: 1.5em;">
+עוּרוּ
+</div>
+
+<p class="prose" style="text-align: center; font-weight: 600; font-size: 1.1em; margin-top: -4px;"><strong>AWAKE.</strong></p>
+
+<div class="passage" data-themes="awake">
+And what I say to you, to all I am saying it — <span class="ph" data-theme="awake"><strong>be awake!</strong></span>
+<span class="ref"><a href="/reader/bible/akjv/Mark/13#v37" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Mark',chapter:13,verse:37}})">Mark 13:37</a> (from the Hebrew)</span>
+</div>
+
+<p class="prose">Not just "be vigilant" — <strong>be alive</strong>. In Greek, the connection is the same: the word translated "watch" (<em>gregoreo</em>) comes from the word for "raise from the dead" (<em>egeiro</em>). And Scripture makes the sleep/death equation explicit:</p>
+
+<div class="passage" data-themes="sleep awake">
+Many of those who <span class="ph" data-theme="sleep"><strong>sleep</strong></span> in the dust of the earth shall <span class="ph" data-theme="awake"><strong>awake</strong></span>.
+<span class="ref"><a href="/reader/bible/akjv/Daniel/12#v2" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Daniel',chapter:12,verse:2}})">Daniel 12:2</a></span>
+</div>
+
+<div class="passage" data-themes="sleep awake">
+<span class="ph" data-theme="awake"><strong>Awake</strong></span> you who <span class="ph" data-theme="sleep"><strong>sleep</strong></span>, and <span class="ph" data-theme="awake"><strong>arise from the dead</strong></span>, and Christ shall give you <span class="ph" data-theme="almond"><strong>light</strong></span>.
+<span class="ref"><a href="/reader/bible/akjv/Ephesians/5#v14" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Ephesians',chapter:5,verse:14}})">Ephesians 5:14</a></span>
+</div>
+<p class="note">Awake → arise from the dead → Christ gives you light. And the light burns in almond-shaped cups.</p>
+
+<div class="passage" data-themes="sleep awake">
+It is high time to <span class="ph" data-theme="awake"><strong>awake</strong></span> out of <span class="ph" data-theme="sleep"><strong>sleep</strong></span>: for now is our salvation nearer than when we believed.
+<span class="ref"><a href="/reader/bible/akjv/Romans/13#v11" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Romans',chapter:13,verse:11}})">Romans 13:11</a></span>
+</div>
+
+<p class="prose">Two commands. <span class="ph" data-theme="guard"><strong>Guard</strong></span> your post — for you do not know the hour. And <span class="ph" data-theme="awake"><strong>be awake</strong></span> — be on the side of the living, not the side of the dead. Both are needed. But the final word is the deeper one.</p>
+
+<h3 id="not-sleep">Holy Are Those Who Do Not Sleep</h3>
+
+<p class="prose">In the middle of the bowl judgments — Revelation 16:15 — the Hebrew text says something the English hides:</p>
+
+<div class="heb-block">
+וְקָדוֹשׁ אֵילּוּ שֶׁלֹּא יְשֵׁינִים וְשָׁמוֹר אֶת עַצְמוֹ
+</div>
+
+<div class="passage" data-themes="awake guard">
+<span class="ph" data-theme="awake"><strong>Holy</strong></span> are those who <strong>do not <span class="ph" data-theme="sleep">sleep</span></strong>, and <span class="ph" data-theme="guard"><strong>guards</strong></span> himself that he does not walk $[naked].
+<span class="ref"><a href="/reader/bible/akjv/Revelation/16#v15" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:16,verse:15}})">Revelation 16:15</a> (from the Hebrew)</span>
+</div>
+
+<p class="prose">The Greek says "blessed is he that watcheth." The Hebrew says <strong>holy</strong> — <span class="heb">קָדוֹשׁ</span> — set apart, consecrated. Not merely fortunate. And not "watching" but "do not sleep." The faithful are defined by the <strong>absence of death</strong>. The non-sleepers are the holy ones.</p>
+
+<p class="prose">And the very next verse: a voice goes out from the <span class="heb">כִּסֵּא</span> — the throne, which is the same unpointed word as "full moon" — and says: <strong>"This is over."</strong></p>
+
+<h3 id="guard">Guard His Word — He Guards You</h3>
+
+<p class="prose">Revelation 3:10 contains a covenant promise. The Hebrew uses the same word — <span class="heb">שָׁמַר</span> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H8104', event)">H8104</a>) — twice:</p>
+
+<div class="passage" data-themes="guard">
+Because you have <span class="ph" data-theme="guard"><strong>guarded</strong></span> the word of my hope, so I will <span class="ph" data-theme="guard"><strong>guard</strong></span> you from the time of testing, which will come on the earth.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/3#v10" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:3,verse:10}})">Revelation 3:10</a> (from the Hebrew)</span>
+</div>
+
+<p class="prose"><strong>You guard His word. He guards you from the hour.</strong> Same verb. Reciprocal. This is the mechanism of preservation through judgment.</p>
+
+<p class="prose">And the remnant — the ones the dragon attacks after the woman escapes — are identified by exactly two things:</p>
+
+<div class="passage" data-themes="guard">
+The remaining ones of her seed, who <span class="ph" data-theme="guard"><strong>perform</strong></span> the commandments of YHWH, and <strong>believe</strong> in the testimony of his Messiah.
+<span class="ref"><a href="/reader/bible/akjv/Revelation/12#v17" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Revelation',chapter:12,verse:17}})">Revelation 12:17</a> (from the Hebrew)</span>
+</div>
+<p class="note">Not just knowing. Doing and believing.</p>
+
+<p class="prose">And in Scripture, <strong>$[believe] IS obey</strong>. The Greek makes this explicit. In John 3:36, the opposite of "believes" is not "doubts" — it is <a href="#" class="strongs-link" onclick="navigateToStrongs('G544', event)">G544</a> <em>apeitheō</em>: <strong>disobeys</strong>. If the opposite of believe is disobey, then believe itself means obey — to commit yourself in trusting action upon what God has said.</p>
+
+<div class="passage" data-themes="guard">
+They have not all <span class="ph" data-theme="guard"><strong>obeyed</strong></span> the gospel. For Isaiah says, Lord, who has <strong>believed</strong> our report?
+<span class="ref"><a href="/reader/bible/akjv/Romans/10#v16" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Romans',chapter:10,verse:16}})">Romans 10:16</a></span>
+</div>
+<p class="note">Paul swaps "obeyed" and "believed" as synonyms in the same sentence. To believe the gospel IS to obey it.</p>
+
+<p class="prose">The remnant is not identified by what they <em>know</em> or what they <em>feel</em>. It is identified by what they <strong>do</strong>: perform the commandments and obey the testimony. That is what believing looks like when the dragon comes.</p>
+
+<h3 id="come-out">Come Out and Lead</h3>
+
+<p class="prose">In the fall-of-Babylon prophecy — Jeremiah 50 — the command is to come out and <strong>lead</strong>:</p>
+
+<div class="passage" data-themes="fire firstfruit">
+Remove out of the midst of <span class="ph" data-theme="fire">Babylon</span>, and go forth out of the land of the Chaldeans, and be as the <span class="ph" data-theme="firstfruit"><strong>he goats before the flocks</strong></span>.
+<span class="ref"><a href="/reader/bible/akjv/Jeremiah/50#v8" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'akjv',book:'Jeremiah',chapter:50,verse:8}})">Jeremiah 50:8</a></span>
+</div>
+
+<p class="prose">The word for "he goats" (<a href="#" class="strongs-link" onclick="navigateToStrongs('H6260', event)">H6260</a>) comes from a root meaning <strong>prepared, ready</strong> (<a href="#" class="strongs-link" onclick="navigateToStrongs('H6257', event)">H6257</a>). Without vowel marks, the same letters also mean <strong>the future</strong>, <strong>things to come</strong>, and <strong>treasures</strong>. The ones who go first out of Babylon are the prepared ones. The firstfruits. The future itself.</p>
+
+<p class="prose" style="font-weight: 500; line-height: 2.2;">The almond is blooming. The golden lampstands are being tested. The watcher-tree's season is here.</p>
+
+<p class="prose" style="font-weight: 500; line-height: 2.2;">You are a royal priesthood — and the priesthood is validated by the almond. You are a golden almond tree — and the question is whether your tree is awake or asleep. Dead wood — or bearing fruit overnight.</p>
+
+<p class="prose" style="font-weight: 500; line-height: 2.2;">Wake up. Guard His word. Come out. Be the tree.</p>
+
+<div class="heb-block" style="text-align: center; font-size: 2em; margin: 32px 0;">
+עוּרוּ
+</div>
+<p style="text-align: center; font-weight: 700; font-size: 1.3em; color: var(--text-primary); margin-top: -8px;">AWAKE.</p>
+
+</div>
+
+<script>
+(function() {
+  const article = document.querySelector('.blog-article');
+  if (!article) return;
+  let lockedTheme = null;
+
+  article.addEventListener('mouseenter', handleEnter, true);
+  article.addEventListener('mouseleave', handleLeave, true);
+  article.addEventListener('click', handleClick, true);
+
+  function handleEnter(e) {
+    const el = e.target.closest('.ph');
+    if (!el || lockedTheme) return;
+    applyHighlight(el.dataset.theme);
+  }
+  function handleLeave(e) {
+    const el = e.target.closest('.ph');
+    if (!el || lockedTheme) return;
+    clearHighlight();
+  }
+  function handleClick(e) {
+    const el = e.target.closest('.ph');
+    if (!el) { lockedTheme = null; clearHighlight(); return; }
+    e.stopPropagation();
+    const theme = el.dataset.theme;
+    if (lockedTheme === theme) { lockedTheme = null; clearHighlight(); }
+    else { lockedTheme = theme; applyHighlight(theme); }
+  }
+
+  function applyHighlight(theme) {
+    article.querySelectorAll('.ph').forEach(ph => {
+      ph.classList.toggle('active', ph.dataset.theme === theme);
+      ph.classList.toggle('dimmed-phrase', ph.dataset.theme !== theme);
+    });
+  }
+  function clearHighlight() {
+    article.querySelectorAll('.ph').forEach(ph => { ph.classList.remove('active', 'dimmed-phrase'); });
+  }
+
+  // Hebrew-English word pair hover
+  article.querySelectorAll('.hw, .ew').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      const pair = el.dataset.pair;
+      article.querySelectorAll(`.hw[data-pair="${pair}"], .ew[data-pair="${pair}"]`).forEach(m => m.classList.add('hl'));
+    });
+    el.addEventListener('mouseleave', () => {
+      article.querySelectorAll('.hw.hl, .ew.hl').forEach(m => m.classList.remove('hl'));
+    });
+  });
+})();
+</script>

@@ -1,0 +1,122 @@
+# USA is Babylon the Great
+
+The Bible uses the name Babylon the Great or Mystery Babylon to refer to the world's leading empire that falls in a single hour. This chapter will review the verses in scripture that lead me to the conclusion that Babylon the Great is either the United States of America, the G7 nations, or maybe even NATO. It is destroyed by an alliance of 10 nations, one of them from the north, in a single hour and divided into 3 parts at the start of the tribulation.
+
+## Economic Power
+
+Babylon the Great is described as an economic power whose merchants were great men that trade in all manner of goods by sea. More specifically, Babylon was a nation that imports goods rather than exports them.
+
+> And the merchants of the earth will weep and mourn over her, for no one buys their merchandise anymore: merchandise of gold and silver, precious stones and pearls, fine linen and purple, silk and scarlet, every kind of citron wood, every kind of object of ivory, every kind of object of most precious wood, bronze, iron, and marble; and cinnamon and incense, fragrant oil and frankincense, wine and oil, fine flour and wheat, cattle and sheep, horses and chariots, and bodies and souls of men.
+> — Revelation 18:11-13
+
+> The kings of the earth who committed fornication (worshiped her) and lived luxuriously with her will weep and lament for her.
+> — Revelation 18:9
+
+> Every shipmaster, all who travel by ship, sailors, and as many as trade on the sea, stood at a distance and cried out when they saw the smoke of her burning, saying, 'What is like this great city?'
+> — Revelation 18:17-18
+
+> They threw dust on their heads and cried out, weeping and wailing, and saying, 'Alas, alas, that great city, in which all who had ships on the sea became rich by her wealth! For in one hour she is made desolate.'
+> — Revelation 18:19
+
+Babylon is destroyed by her creditors.
+
+> Will not your (Babylon's) creditors suddenly arise? Will they not wake up and make you tremble? Then you will become their prey.
+> — Habakkuk 2:7-8
+
+As recently as the past decade China was the top creditor of the United States, but has been steadily reducing their holdings. They are currently the second largest creditor holding about $750 billion dollars of America's debt. China's merchants sell almost everything that most people are buying in the USA and other western nations, so their merchants will certainly be sad that there is no one to buy their merchandise.
+
+> The waters which you saw, where the harlot (Babylon) sits, are peoples, multitudes, nations, and tongues.
+> — Revelation 17:15
+
+The United States rules over all the economies of the world through its currency which is the reserve currency of the world. It is through this currency that the USA has had the ability to print trillions of dollars and export the inflation to all other countries. It is through its control over the banking and transfer of dollars that every country in the world is coerced into weaponizing sanctions against USA's enemies. Even the second largest economy in the world is not immune from this pressure.
+
+Because the USA has abused this power, the BRICS nations (Brazil, Russia, India, China, and South Africa) have formed a new trading block that bypasses the use of dollars. Recently this group has grown to 10 countries like the 10 horns that hate Babylon and give their power to the Antichrist for "one hour" to destroy Babylon.
+
+> And the ten horns (rulers, e.g. BRICS) which you saw on the beast, these will hate the harlot, make her desolate and naked, eat her flesh and burn her with fire. For God has put it into their hearts to fulfill His purpose, to be of one mind, and to give their kingdom to the beast (antichrist), until the words of God are fulfilled.
+> — Revelation 17:16-17
+
+
+## Military Power
+
+Babylon is a global military power that seizes lands that are not their own. It is a law unto themselves and not subject to international "rules based order" and it enforces its law on all nations through both its economic and military might. The prophet Habakkuk describes it like an eagle, the symbol of the United States. Babylon is also known for destroying nations without sparing.
+
+> I am raising up the Babylonians (Chaldeans), that ruthless and impetuous people, who sweep across the whole earth to seize dwellings not their own. They are a feared and dreaded people; they are a law to themselves and promote their own honor…
+> They fly like an eagle swooping to devour; they all come intent on violence…They mock kings, and scoff at rulers. They laugh at all fortified cities;…
+> Then they sweep past like the wind and go on — guilty people, whose own strength is their god. …Will they continue to empty their net and go on destroying nations without sparing?
+> — Habakkuk 1:5-17
+
+Here is a list of every country bombarded by the United States and its proxies since the end of the second World War.
+
+Afghanistan 1998, 2001-
+Bosnia 1994, 1995
+Cambodia 1969-70
+China 1945-46
+Congo 1964
+Cuba 1959-1961
+El Salvador 1980s
+Korea 1950-53
+Guatemala 1954, 1960, 1967-69
+Indonesia 1958
+Laos 1964-73
+Grenada 1983
+Iraq 1991-2000s, 2015-
+Iran 1987
+Kuwait 1991
+Lebanon 1983, 1984
+Libya 1986, 2011-
+Nicaragua 1980s
+Pakistan 2003, 2006-
+Palestine 2010, 2023-
+Panama 1989
+Peru 1965
+Somalia 1993, 2007-08, 2010-
+Sudan 1998
+Syria 2014-
+Vietnam 1961-73
+Yemen 2002, 2009-
+Yugoslavia 1999
+Russia 2023-
+
+This list excludes the countries that were taken over by economic means and color revolutions. The recent war in Ukraine is an example of the United States overthrowing legitimate elections to install a puppet and then using the country as a proxy to wage war on Russia. No other country in the world comes close to being responsible for that much bloodshed.
+
+
+## Babylon the Great is Many Cities
+
+There are some people that think Babylon the Great is a single city, but Jeremiah clearly points out that Babylon is an empire with many cities. This is further confirmed in Revelation 8 when a third of the trees and a third of the ships were burned up. Trees could easily be a symbol of the nations.
+
+> And the most proud shall stumble and fall, and none shall raise him up: and I will kindle a fire in his cities, and it shall devour all round about him.
+> — Jeremiah 50:32
+
+> And the great city was divided into three parts, and the cities of the nations fell.
+> — Revelation 16:19
+
+> This calls for a mind with wisdom: the seven heads are seven mountains (nations) on which the woman is seated.
+> — Revelation 17:9
+
+I believe this could easily indicate that the G7 nations are the heart of Babylon the Great: United States, Canada, France, Germany, Italy, Japan, and United Kingdom. These are the very countries united against Russia via the proxy war in Ukraine.
+
+After Babylon falls it will be divided into three parts and the cities (plural) of the nations (also plural) will fall. Given our understanding that Babylon will fall by nuclear war in a single hour, it simply doesn't make sense that a single city destroyed by a nuke and made uninhabitable could be divided. The only way to divide what remains of Babylon is if there are many parts of Babylon that were not directly destroyed by nukes.
+
+
+## Compared to an Eagle
+
+> They (Babylon) fly like an eagle swooping to devour; they all come intent on violence.
+> — Habakkuk 1:8
+
+Meanwhile the nations coming against Babylon are described as a Lion, Bear, and Serpent.
+
+> A lion has gone up from his thicket, a destroyer of nations has set out; he has gone out from his place to make your land a waste; your cities will be ruins without inhabitant.
+> — Jeremiah 4:7
+
+> Woe unto you that desire the day of 𐤉𐤄𐤅𐤄! to what end is it for you? the day of 𐤉𐤄𐤅𐤄 is darkness, and not light. As if a man did flee from a lion (Iran), and a bear (Russia) met him; or went into the house, and leaned his hand on the wall, and a serpent (China) bit him.
+> — Amos 5:18-20
+
+What is most amazing about the quote of Amos is comparing the day of 𐤉𐤄𐤅𐤄 as a combined attack of a Lion, Bear, and Serpent which just happen to represent Iran, Russia, and China. These three countries are allied together against the United States and its allies.
+
+> Therefore, behold, the days are coming, declares 𐤉𐤄𐤅𐤄, when it shall no longer be said, 'As 𐤉𐤄𐤅𐤄 lives who brought up the people of Israel out of the land of Egypt,' but 'As 𐤉𐤄𐤅𐤄 lives who brought up the people of Israel out of the north country (Russia/BRICS) and out of all the countries (the whole world) where he had driven them.' For I will bring them back to their own land that I gave to their fathers.
+> — Jeremiah 16:14-15
+
+> Raise a standard toward Zion, flee for safety, stay not, for I bring disaster from the north, and great destruction.
+> — Jeremiah 4:6
+
+This last verse contains some hope — setting a standard toward Zion with a command to flee for safety is clear rapture typology.

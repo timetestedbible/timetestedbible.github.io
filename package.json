@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "build:dictionary": "node pipeline/build-symbol-dictionary.js"
+  },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.74.0"
+    "@anthropic-ai/sdk": "^0.74.0",
+    "dotenv": "^17.3.1",
+    "js-yaml": "^4.1.1"
   }
 }

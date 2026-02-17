@@ -31,7 +31,7 @@ const SYMBOL_DICTIONARY = ctx.SYMBOL_DICTIONARY || {};
 
 // Build known symbol list
 const knownSymbols = Object.entries(SYMBOL_DICTIONARY).map(([k, v]) => 
-  `${v.name} → ${v.is}${v.is2 ? ' / ' + v.is2 : ''}`
+  `${v.name} → ${v.meaning || v.sentence || ''}`
 ).join('\n  ');
 
 async function callAI(prompt) {
@@ -77,7 +77,7 @@ async function callAI(prompt) {
 function buildCompressPrompt(name, fullStudy, dictEntry) {
   const strongs = dictEntry?.strongs?.join(', ') || '';
   const words = dictEntry?.words?.map(w => `"${w}"`).join(', ') || '';
-  const meaning = dictEntry ? `${dictEntry.is}${dictEntry.is2 ? ' / ' + dictEntry.is2 : ''}` : '';
+  const meaning = dictEntry ? (dictEntry.meaning || '') : '';
   const opposite = dictEntry?.opposite || '';
   const sentence = dictEntry?.sentence || '';
   

@@ -3305,7 +3305,7 @@
       "id": "dove-olive-leaf",
       "title": "Dove Returns with Olive Leaf",
       "type": "biblical-event",
-      "description": "Noah sends a dove three times: first it returns with nothing (no rest), second it returns with an olive leaf (waters abated), third it doesn't return (earth ready).",
+      "description": "Seven days after the first dove returned with nothing, Noah sends the dove again. This time it returns in the evening with a freshly plucked olive leaf, showing the waters had abated from the earth.",
       "start": {
         "lunar": {
           "month": 11,
@@ -3323,9 +3323,9 @@
       "certainty": "high",
       "sources": [
         {
-          "ref": "Genesis 8:8-12",
+          "ref": "Genesis 8:10-11",
           "type": "scripture",
-          "quote": "Also **he sent forth a dove**... But the dove found no rest... And he stayed yet **other seven days**; and again he sent forth the dove... **in her mouth was an olive leaf**... And he stayed yet **other seven days**; and sent forth the dove; which **returned not again**."
+          "quote": "And he stayed yet **other seven days**; and again he sent forth the dove out of the ark; And the dove came in to him **in the evening**; and, lo, **in her mouth was an olive leaf** pluckt off: so Noah knew that the **waters were abated** from off the earth."
         }
       ],
       "tags": [
@@ -3336,6 +3336,42 @@
       ],
       "icon": "🚢🕊️🌿",
       "priority": 731
+    },
+    {
+      "id": "dove-does-not-return",
+      "title": "Dove Sent Forth — Does Not Return",
+      "type": "biblical-event",
+      "description": "Seven days after the dove returned with an olive leaf, Noah sends the dove a third time. This time it does not return — the earth is ready for life outside the ark.",
+      "start": {
+        "lunar": {
+          "month": 11,
+          "day": 24
+        },
+        "relative": {
+          "event": "dove-olive-leaf",
+          "offset": {
+            "days": 7
+          },
+          "direction": "after"
+        }
+      },
+      "certainty": "high",
+      "sources": [
+        {
+          "ref": "Genesis 8:12",
+          "type": "scripture",
+          "quote": "And he stayed yet **other seven days**; and sent forth the dove; which **returned not again** unto him any more."
+        }
+      ],
+      "tags": [
+        "flood",
+        "noah",
+        "dove",
+        "days-of-noah"
+      ],
+      "anniversary_display": false,
+      "icon": "🚢🕊️",
+      "priority": 733
     },
     {
       "id": "waters-dried-up",

@@ -18,6 +18,12 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
+# Symbol study collection
+collections:
+  symbols:
+    output: true
+    permalink: /research/symbols/:path/
+
 # Don't generate a default feed or other Jekyll extras
 plugins: []
 
@@ -47,3 +53,12 @@ defaults:
     values:
       layout: "blog-post"
       og_type: "article"
+  # Symbol study defaults
+  - scope:
+      path: "_symbols"
+      type: symbols
+    values:
+      layout: "symbol-study"
+      og_type: "article"
+      author: "Time Tested Bible"
+      og_image: "https://timetested.bible/icons/icon-512.png"

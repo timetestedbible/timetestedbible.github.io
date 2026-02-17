@@ -993,7 +993,7 @@ const GlobalSearch = {
             type: 'symbol',
             id: key,
             title: sym.name,
-            description: sym.sentence || [sym.is, sym.is2].filter(Boolean).join(' — '),
+            description: sym.sentence || sym.meaning || '',
             link: sym.link,
             icon: '🔣'
           });

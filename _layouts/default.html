@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>{{ page.page_title }}</title>
+  <title>{% if page.page_title and page.page_title != "Time Tested Bible" %}{{ page.page_title }}{% elsif page.title %}{{ page.title }} | Time Tested Bible{% else %}Time Tested Bible{% endif %}</title>
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="{{ page.description }}">
@@ -15,8 +15,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="{{ page.og_type }}">
   <meta property="og:url" content="{{ page.og_url }}">
-  <meta property="og:title" content="{{ page.og_title }}">
-  <meta property="og:description" content="{{ page.og_description }}">
+  <meta property="og:title" content="{% if page.og_title and page.og_title != "Time Tested Bible" %}{{ page.og_title }}{% elsif page.title %}{{ page.title }}{% else %}Time Tested Bible{% endif %}">
+  <meta property="og:description" content="{{ page.description }}">
   <meta property="og:image" content="{{ page.og_image }}">
   <meta property="og:site_name" content="Time Tested Bible">
   
@@ -1010,13 +1010,14 @@
           if (/\.(pdf|json|css|js|png|jpg|jpeg|gif|ico|svg|txt|woff2?)(\?|$)/i.test(pathname)) return;
           if (pathname === '/' || pathname.startsWith('/reader') || pathname.startsWith('/calendar') ||
               pathname.startsWith('/bible') || pathname.startsWith('/timeline') ||
-              pathname.startsWith('/symbols') || pathname.startsWith('/book') || pathname.startsWith('/settings') ||
+              pathname.startsWith('/symbols') || pathname.startsWith('/research') || pathname.startsWith('/book') || pathname.startsWith('/settings') ||
               pathname.startsWith('/tutorial') || pathname.startsWith('/help') || pathname.startsWith('/blog') || pathname.startsWith('/feasts') ||
               pathname.startsWith('/priestly') || pathname.startsWith('/sabbath-tester') ||
               /^\/[^/]+\/[^/]+\/\d{4}-\d{2}-\d{2}\//.test(pathname)) {
             e.preventDefault();
-            AppStore.dispatch({ type: 'URL_CHANGED', url: url });
+            // pushState FIRST so window.location is updated before subscribers fire
             if (window.history.pushState) window.history.pushState({}, '', url.pathname + url.search + (url.hash || ''));
+            AppStore.dispatch({ type: 'URL_CHANGED', url: url });
           }
         } catch (err) { /* ignore */ }
       }, true);
