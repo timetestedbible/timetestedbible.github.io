@@ -34,6 +34,7 @@ const AppStore = {
     
     // UI - transient state
     ui: {
+      researchPanelOpen: false,  // Research panel visibility (collapsed thumb vs expanded)
       strongsId: null,          // Open Strongs modal (e.g., 'H430')
       gematriaExpanded: false,  // Whether gematria related-words section is expanded
       searchQuery: null,        // Search query string
@@ -473,6 +474,7 @@ const AppStore = {
     'CLOSE_PROFILE_PICKER',
     'TOGGLE_LOCATION_PICKER',
     'CLOSE_ALL_PICKERS',
+    'SET_RESEARCH_PANEL',
     'OPEN_STRONGS',
     'SET_STRONGS_ID',
     'CLOSE_STRONGS',
@@ -1128,9 +1130,10 @@ const AppStore = {
         s.content.view = event.view;
         // Replace params entirely when switching views (don't merge old params)
         s.content.params = event.params || {};
-        // Clear Strong's panel unless explicitly preserved
+        // Clear Strong's/research panel unless explicitly preserved
         if (!event.preserveStrongs) {
           s.ui.strongsId = null;
+          s.ui.researchPanelOpen = false;
         }
         // Clear view-specific state when leaving views
         // Timeline state
@@ -1242,13 +1245,33 @@ const AppStore = {
         return true;
       
       // ─── UI Events ───
+      case 'SET_RESEARCH_PANEL': {
+        const open = !!event.open;
+        if (s.ui.researchPanelOpen === open) return false;
+        s.ui.researchPanelOpen = open;
+        // Collapsing also clears Strong's content (clean URL state)
+        if (!open) {
+          s.ui.strongsId = null;
+          s.ui.gematriaExpanded = false;
+        }
+        return true;
+      }
+
       case 'OPEN_STRONGS':
       case 'SET_STRONGS_ID': {
         const newStrongsId = event.strongsId || null;
-        if (s.ui.strongsId === newStrongsId) return false;
-        s.ui.strongsId = newStrongsId;
-        s.ui.gematriaExpanded = false; // Reset when Strong's number changes
-        return true;
+        let changed = false;
+        // Setting a Strong's ID also opens the research panel
+        if (newStrongsId && !s.ui.researchPanelOpen) {
+          s.ui.researchPanelOpen = true;
+          changed = true;
+        }
+        if (s.ui.strongsId !== newStrongsId) {
+          s.ui.strongsId = newStrongsId;
+          s.ui.gematriaExpanded = false;
+          changed = true;
+        }
+        return changed;
       }
         
       case 'CLOSE_STRONGS':
@@ -2070,7 +2093,8 @@ const AppStore = {
         'SELECT_DAY', 'SET_BIBLE_LOCATION', 'SET_GREGORIAN_DATETIME',
         'SET_LUNAR_DATETIME',
         'SET_TIMELINE_EVENT', 'SET_TIMELINE_DURATION', 'SET_TIMELINE_SEARCH',
-        'SET_TIMELINE_FOCUSED_EVENT', 'SET_GLOBAL_SEARCH', 'CLOSE_GLOBAL_SEARCH'
+        'SET_TIMELINE_FOCUSED_EVENT', 'SET_GLOBAL_SEARCH', 'CLOSE_GLOBAL_SEARCH',
+        'SET_RESEARCH_PANEL'
       ];
       // Panel state uses replaceState (updates URL but doesn't create history entry)
       // This way sharing a URL preserves panel state, but toggling doesn't pollute history

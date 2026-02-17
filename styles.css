@@ -344,6 +344,31 @@ body.electron-mode .nav-history-buttons {
   display: flex;
 }
 
+/* PWA / Electron on small screens: collapse brand text to just the icon so
+   back/forward + search + hamburger all fit without overflow */
+@media (display-mode: standalone) and (max-width: 599px) {
+  body.pwa-mode .brand-text {
+    display: none;
+  }
+  body.pwa-mode .nav-btn {
+    padding: 6px 8px;
+  }
+  body.pwa-mode .nav-history-buttons {
+    gap: 1px;
+  }
+}
+@media (max-width: 599px) {
+  body.electron-mode .brand-text {
+    display: none;
+  }
+  body.electron-mode .nav-btn {
+    padding: 6px 8px;
+  }
+  body.electron-mode .nav-history-buttons {
+    gap: 1px;
+  }
+}
+
 .nav-btn {
   background: var(--nav-btn-bg);
   border: 1px solid var(--border-accent);

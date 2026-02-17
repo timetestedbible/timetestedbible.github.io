@@ -4637,9 +4637,17 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     strongsHistory = [strongsNum];
     strongsHistoryIndex = 0;
     
-    // On mobile, clear any inline width so CSS 100% applies
     if (window.innerWidth <= 768) {
+      // On mobile, clear any inline width so CSS 100% applies
       panel.style.width = '';
+    } else {
+      // Desktop: restore saved width or use default
+      try {
+        const saved = localStorage.getItem('research-panel-width');
+        panel.style.width = saved || '380px';
+      } catch (e) {
+        panel.style.width = '380px';
+      }
     }
     
     // Mark panel as active (body class for CSS hooks)
@@ -4797,30 +4805,53 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
   }
 }
 
-// Close Research Panel (clear content back to default welcome state)
+// Collapse research panel to thumb — dispatches to AppStore for URL sync
+function collapseResearchPanel() {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_RESEARCH_PANEL', open: false });
+  }
+}
+
+// Expand research panel from collapsed thumb — dispatches to AppStore for URL sync
+function expandResearchPanel() {
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_RESEARCH_PANEL', open: true });
+  }
+}
+
+// Close Strong's content — switches to default content, panel stays open (desktop).
+// On mobile, collapses entirely since there's no persistent default view.
+// skipDispatch=true when syncing FROM state (e.g. restoreUIState, back/forward)
 function closeStrongsPanel(skipDispatch = false) {
   const panel = document.getElementById('research-panel');
   if (panel) {
-    panel.classList.remove('open', 'collapsed');
-    document.body.classList.remove('research-panel-open');
-    // Reset to welcome state (keep resize handle from HTML, reset content)
+    if (window.innerWidth <= 768) {
+      // Mobile: collapse entirely (no persistent default view)
+      panel.classList.remove('open', 'collapsed');
+      document.body.classList.remove('research-panel-open');
+      panel.style.width = '';
+    }
+    // Switch content back to default (panel remains open on desktop)
     const contentEl = panel.querySelector('.research-panel-content');
     if (contentEl) {
-      contentEl.innerHTML = '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+      contentEl.innerHTML = renderDefaultResearchContent();
     }
   }
   // Clear interlinear word highlight
   highlightInterlinearWord(null);
-  // Reset history
+  // Reset Strong's history
   strongsHistory = [];
   strongsHistoryIndex = -1;
   
   // Update state to remove strongsId from URL (unless called from URL sync)
-  // Use replace — closing the panel removes the ?strongs= param without adding a new history entry.
-  // The back button already handles this via the pushed entry from when the panel opened.
   if (!skipDispatch && typeof AppStore !== 'undefined') {
     AppStore.dispatch({ type: 'SET_STRONGS_ID', strongsId: null, replace: true });
   }
+}
+
+// Render default research panel content (context-aware, TBD)
+function renderDefaultResearchContent() {
+  return '<div class="research-panel-welcome">Click on words to dig deeper</div>';
 }
 
 // Resize functionality for Strong's sidebar
@@ -4844,15 +4875,19 @@ function doStrongsResize(event) {
   const sidebar = document.getElementById('research-panel');
   if (!sidebar) return;
   
-  // Calculate new width from right edge of content wrapper
   const wrapper = sidebar.parentElement;
   if (!wrapper) return;
   
   const wrapperRect = wrapper.getBoundingClientRect();
   const newWidth = wrapperRect.right - event.clientX;
-  const clampedWidth = Math.max(200, Math.min(newWidth, wrapperRect.width * 0.6));
   
-  sidebar.style.width = clampedWidth + 'px';
+  // Below snap threshold → visually collapse toward 0
+  if (newWidth < 120) {
+    sidebar.style.width = Math.max(0, newWidth) + 'px';
+  } else {
+    const clampedWidth = Math.max(200, Math.min(newWidth, wrapperRect.width * 0.6));
+    sidebar.style.width = clampedWidth + 'px';
+  }
 }
 
 function stopStrongsResize() {
@@ -4860,7 +4895,13 @@ function stopStrongsResize() {
   const sidebar = document.getElementById('research-panel');
   if (sidebar) {
     sidebar.classList.remove('resizing');
-    localStorage.setItem('research-panel-width', sidebar.style.width);
+    
+    // If dragged below snap threshold, collapse fully
+    if (parseInt(sidebar.style.width) < 120) {
+      collapseResearchPanel();
+    } else {
+      localStorage.setItem('research-panel-width', sidebar.style.width);
+    }
   }
   document.body.style.cursor = '';
   document.body.style.userSelect = '';

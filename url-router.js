@@ -312,6 +312,7 @@ const URLRouter = {
         params: {}
       },
       ui: {
+        researchPanelOpen: false,
         strongsId: null,
         gematriaExpanded: false,
         searchQuery: null,
@@ -460,6 +461,10 @@ const URLRouter = {
   _parseQueryParams(searchParams, result) {
     if (searchParams.get('strongs')) {
       result.ui.strongsId = searchParams.get('strongs');
+      result.ui.researchPanelOpen = true; // strongs implies panel is open
+    }
+    if (searchParams.get('research') === '1') {
+      result.ui.researchPanelOpen = true;
     }
     if (searchParams.get('gematria')) {
       result.ui.gematriaExpanded = searchParams.get('gematria') === '1';
@@ -855,6 +860,7 @@ const URLRouter = {
     // Query params (UI state)
     const params = new URLSearchParams();
     if (ui.strongsId) params.set('strongs', ui.strongsId);
+    else if (ui.researchPanelOpen) params.set('research', '1');
     if (ui.gematriaExpanded) params.set('gematria', '1');
     // Global search query (appears on any view when results are open)
     if (ui.globalSearchQuery) {

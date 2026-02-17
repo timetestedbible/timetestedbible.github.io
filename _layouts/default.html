@@ -1031,8 +1031,18 @@
       
       console.log('[App] Initialized successfully');
       
-      // Register service worker for PWA (skip in Electron — all files are local)
-      if ('serviceWorker' in navigator && !(window.electronAPI && window.electronAPI.isElectron)) {
+      // Register service worker for PWA
+      // Skip on localhost (Jekyll livereload + version.js timestamp = SW reinstall storm)
+      // Skip in Electron (all files are local)
+      const isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+      if (isLocalDev && 'serviceWorker' in navigator) {
+        // Unregister any leftover SW from previous sessions so it stops intercepting dev requests
+        navigator.serviceWorker.getRegistrations().then(regs => {
+          for (const r of regs) r.unregister();
+          if (regs.length) console.log('[PWA] Unregistered', regs.length, 'service worker(s) on localhost');
+        });
+      }
+      if ('serviceWorker' in navigator && !isLocalDev && !(window.electronAPI && window.electronAPI.isElectron)) {
         navigator.serviceWorker.register('/sw.js')
           .then((registration) => {
             console.log('[PWA] Service worker registered:', registration.scope);

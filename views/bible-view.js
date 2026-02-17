@@ -153,13 +153,19 @@ const BibleView = {
     
     if (needsFullRender) {
       this.renderStructure(container, state);
-      // Restore saved research panel width on desktop
-      if (window.innerWidth > 768) {
-        try {
-          const saved = localStorage.getItem('research-panel-width');
-          const panel = document.getElementById('research-panel');
-          if (saved && panel) panel.style.width = saved;
-        } catch (e) {}
+      // Desktop: if research panel should be open (from URL state), restore saved width
+      if (window.innerWidth > 768 && state.ui && state.ui.researchPanelOpen) {
+        const panel = document.getElementById('research-panel');
+        if (panel) {
+          try {
+            const saved = localStorage.getItem('research-panel-width');
+            panel.style.width = saved || '380px';
+          } catch (e) {
+            panel.style.width = '380px';
+          }
+          panel.classList.add('open');
+          document.body.classList.add('research-panel-open');
+        }
       }
     } else {
       this.applyMobileReaderHeight();
@@ -231,22 +237,47 @@ const BibleView = {
   restoreUIState(ui) {
     if (!ui) return;
     
-    // Sync Strong's panel with URL state
-    const sidebar = document.getElementById('research-panel');
-    const currentStrongsOpen = sidebar?.classList.contains('open');
+    const panel = document.getElementById('research-panel');
+    const panelIsOpen = panel?.classList.contains('open');
     
+    // Sync research panel visibility with state
+    if (ui.researchPanelOpen && !panelIsOpen) {
+      // State says open but panel is collapsed — expand it
+      requestAnimationFrame(() => {
+        if (panel) {
+          if (window.innerWidth > 768) {
+            try {
+              const saved = localStorage.getItem('research-panel-width');
+              panel.style.width = saved || '380px';
+            } catch (e) {
+              panel.style.width = '380px';
+            }
+          }
+          panel.classList.add('open');
+          document.body.classList.add('research-panel-open');
+        }
+      });
+    } else if (!ui.researchPanelOpen && panelIsOpen) {
+      // State says collapsed but panel is open — collapse it
+      requestAnimationFrame(() => {
+        if (panel) {
+          panel.classList.remove('open');
+          document.body.classList.remove('research-panel-open');
+          panel.style.width = '';
+        }
+      });
+    }
+    
+    // Sync Strong's content with URL state
     if (ui.strongsId && ui.strongsId !== this._currentStrongsId) {
-      // URL has a Strong's ID different from what we're showing - open/update panel
       this._currentStrongsId = ui.strongsId;
-      // Use requestAnimationFrame for proper DOM timing instead of arbitrary setTimeout
       requestAnimationFrame(() => {
         if (typeof showStrongsPanel === 'function') {
-          // Pass skipDispatch=true to prevent re-dispatching to AppStore (we're syncing FROM state)
           showStrongsPanel(ui.strongsId, '', '', null, true);
         }
       });
-    } else if (!ui.strongsId && currentStrongsOpen) {
-      // URL has no Strong's ID but panel is open - close it
+    } else if (!ui.strongsId && this._currentStrongsId) {
+      // Strong's cleared (✕) — show default content, panel stays open
       this._currentStrongsId = null;
       requestAnimationFrame(() => {
         if (typeof closeStrongsPanel === 'function') {
@@ -451,9 +482,13 @@ const BibleView = {
             <div id="bible-explorer-text" class="bible-explorer-text">
               <!-- Welcome content or chapter content rendered here -->
             </div>
+            
+            <!-- Research panel toggle — lives on content side so panel can go to 0 width -->
+            <button class="research-panel-thumb" onclick="expandResearchPanel()" title="Open research panel">◀ Study</button>
+            <button class="research-panel-collapse-btn" onclick="collapseResearchPanel()" title="Collapse panel">▶</button>
           </div>
           
-          <!-- Research Panel (always visible on desktop; word studies, lexicon, parsing, etc.) -->
+          <!-- Research Panel (0 width when collapsed; expands on Strong's click) -->
           <div id="research-panel" class="research-panel">
             <div class="research-panel-resize" onmousedown="startStrongsResize(event)"></div>
             <div id="research-panel-content" class="research-panel-content">

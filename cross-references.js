@@ -263,16 +263,25 @@ async function showCrossRefPanel(book, chapter, verse, event) {
     `;
   }
   
-  try {
-    const saved = localStorage.getItem('research-panel-width');
-    if (saved) sidebar.style.width = saved;
-  } catch (e) {}
+  // Desktop: restore saved width or use default
+  if (window.innerWidth > 768) {
+    try {
+      const saved = localStorage.getItem('research-panel-width');
+      sidebar.style.width = saved || '380px';
+    } catch (e) {
+      sidebar.style.width = '380px';
+    }
+  }
   
-  // Mark panel as active
+  // Mark panel as active (optimistic DOM update + state dispatch)
   requestAnimationFrame(() => {
     sidebar.classList.add('open');
     document.body.classList.add('research-panel-open');
   });
+  // Sync panel visibility to state/URL
+  if (typeof AppStore !== 'undefined' && !AppStore.getState()?.ui?.researchPanelOpen) {
+    AppStore.dispatch({ type: 'SET_RESEARCH_PANEL', open: true, replace: true });
+  }
   
   // Ensure data is loaded
   await loadCrossReferences();

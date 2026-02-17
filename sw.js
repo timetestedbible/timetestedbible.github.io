@@ -1,4 +1,19 @@
 // Time Tested Bible Service Worker
+
+// On localhost, immediately unregister and skip all caching.
+// Jekyll rebuilds change version.js on every save, causing an SW reinstall storm
+// (169+ parallel fetches, skipWaiting → reload loop, CPU peg).
+const _isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+if (_isLocalDev) {
+  self.addEventListener('install', () => self.skipWaiting());
+  self.addEventListener('activate', (event) => {
+    event.waitUntil(self.registration.unregister());
+  });
+  // No fetch handler — everything passes through to network
+}
+
+if (!_isLocalDev) {
+
 importScripts('/version.js');
 const CACHE_NAME = 'timetested-bible-v' + APP_VERSION;
 
@@ -327,3 +342,5 @@ self.addEventListener('fetch', (event) => {
       })
   );
 });
+
+} // end if (!_isLocalDev)

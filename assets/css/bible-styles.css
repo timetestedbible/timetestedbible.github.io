@@ -10667,6 +10667,7 @@ body.biblical-timeline-open .top-nav-inner {
 
 /* Bible content wrapper - flex container for text */
 .bible-content-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -10686,29 +10687,120 @@ body.biblical-timeline-open .top-nav-inner {
    RESEARCH PANEL — always-visible on desktop, resizable
    ═══════════════════════════════════════════════════════════════ */
 
-/* Hide research panel for non-Bible content types (no clickable words to study) */
+/* Hide research panel + controls for non-Bible content types (no clickable words to study) */
 /* Exception: blog posts have clickable Strong's numbers */
-.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel {
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel,
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel-thumb,
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel-collapse-btn {
   display: none !important;
 }
 
-/* Desktop: Research panel is always visible as a flex sibling of bible-content-wrapper.
-   Width comes from saved localStorage or default. No close button — user resizes via drag handle. */
+/* Desktop: Research panel collapses to 0 width by default.
+   Opens to saved width (or 380px) when a Strong's number is clicked.
+   Toggle controls live on bible-content-wrapper side. */
 .research-panel {
   position: relative;
-  width: 380px;
-  min-width: 200px;
+  width: 0;
+  min-width: 0;
   flex-shrink: 0;
   overflow: hidden;
   background: var(--surface-raised);
-  border-left: 1px solid var(--accent-gold-muted);
+  border-left: none;
   display: flex;
   flex-direction: column;
+  transition: width 0.25s ease, min-width 0.25s ease;
 }
 
-/* Disable width transition during drag so resize follows cursor */
+/* Expanded state — width set via inline style from JS (saved or 380px default) */
+.research-panel.open {
+  min-width: 200px;
+  border-left: 1px solid var(--accent-gold-muted);
+}
+
+/* Disable transitions and min-width during drag so resize follows cursor toward collapse */
 .research-panel.resizing {
-  transition: none;
+  transition: none !important;
+  min-width: 0 !important;
+}
+
+/* Hide content + resize handle when panel is collapsed */
+.research-panel:not(.open) .research-panel-content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.research-panel:not(.open) .research-panel-resize {
+  display: none;
+}
+
+/* ═══ Research panel toggle controls — on bible-content-wrapper right edge ═══ */
+
+/* ─── Expand thumb — visible when panel is collapsed ─── */
+.research-panel-thumb {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  opacity: 0.35;
+  font-size: 0.65em;
+  background: var(--surface-raised);
+  border: 1px solid var(--accent-gold-muted);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  z-index: 6;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.08em;
+  user-select: none;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.research-panel-thumb:hover {
+  opacity: 1;
+  color: var(--accent-gold);
+}
+
+/* Hide thumb when panel is expanded */
+body.research-panel-open .research-panel-thumb {
+  display: none;
+}
+
+/* ─── Collapse button — visible when panel is expanded ─── */
+.research-panel-collapse-btn {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  padding: 4px 3px 4px 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  font-size: 0.7em;
+  background: var(--surface-raised);
+  border: 1px solid var(--accent-gold-muted);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  z-index: 10;
+  transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+  user-select: none;
+}
+
+.research-panel-collapse-btn:hover {
+  opacity: 1;
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+/* Show collapse button when panel is expanded */
+body.research-panel-open .research-panel-collapse-btn {
+  display: flex;
 }
 
 /* Resize handle on left edge */
@@ -10848,12 +10940,16 @@ body.biblical-timeline-open .top-nav-inner {
 
   /* Let the content flow; body scrolls it */
   .research-panel.open .research-panel-content {
+    visibility: visible !important;
+    opacity: 1 !important;
     overflow: visible !important;
     flex: none;
   }
 
-  /* Hide resize handle on mobile */
-  .research-panel-resize {
+  /* Hide resize handle, collapse thumb, and collapse button on mobile */
+  .research-panel-resize,
+  .research-panel-thumb,
+  .research-panel-collapse-btn {
     display: none !important;
   }
 
