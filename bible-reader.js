@@ -4025,9 +4025,8 @@ function showStrongsTooltip(el, event) {
   
   const lemma = entry.lemma || '';
   const def = entry.strongs_def || entry.kjv_def || '';
-  const pron = entry.pron || '';
   
-  let html = `<div class="verse-tooltip-ref">${escapeHtml(strongsNum)}${lemma ? ' — ' + lemma : ''}${pron ? ' <span style="opacity:0.7">(' + escapeHtml(pron) + ')</span>' : ''}</div>`;
+  let html = `<div class="verse-tooltip-ref">${escapeHtml(strongsNum)}${lemma ? ' — ' + lemma : ''}</div>`;
   if (def) {
     // Truncate long definitions
     const truncated = def.length > 200 ? def.slice(0, 200) + '…' : def;
@@ -4616,6 +4615,22 @@ function _getOrCreateStandaloneStrongsPanel() {
   return panel;
 }
 
+// Compute a sensible default width for the research panel based on viewport.
+// Uses ~30% of viewport width, clamped between 340px and 520px.
+function getDefaultPanelWidth() {
+  const vw = window.innerWidth;
+  return Math.max(340, Math.min(520, Math.round(vw * 0.3))) + 'px';
+}
+
+// Get the research panel width to use: saved preference or smart default.
+function getResearchPanelWidth() {
+  try {
+    const saved = localStorage.getItem('research-panel-width');
+    if (saved) return saved;
+  } catch (e) {}
+  return getDefaultPanelWidth();
+}
+
 // Show Strong's information slide-out for a word
 // skipDispatch: if true, don't dispatch to AppStore (used when syncing FROM state)
 function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = false) {
@@ -4641,13 +4656,8 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
       // On mobile, clear any inline width so CSS 100% applies
       panel.style.width = '';
     } else {
-      // Desktop: restore saved width or use default
-      try {
-        const saved = localStorage.getItem('research-panel-width');
-        panel.style.width = saved || '380px';
-      } catch (e) {
-        panel.style.width = '380px';
-      }
+      // Desktop: restore saved width or use smart default
+      panel.style.width = getResearchPanelWidth();
     }
     
     // Mark panel as active (body class for CSS hooks)
