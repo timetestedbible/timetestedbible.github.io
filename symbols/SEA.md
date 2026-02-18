@@ -98,3 +98,10 @@ Understanding SEA as "chaotic peoples/nations" unlocks related symbols:
 **SEA** symbolically represents **the mass of humanity** — peoples, multitudes, nations, and tongues — particularly in their **unsanctified, chaotic, turbulent state**. This is explicitly defined in Revelation 17:15 and confirmed by multiple prophetic passages that compare the restless wicked to the troubled sea.
 
 The sea stands in contrast to dry land and islands, which represent stability and separation (sanctification) from the chaotic masses.
+
+---
+
+## Related Studies
+
+- **[MOUNTAIN](/reader/symbols/MOUNTAIN)** — Symbol study. Mountain = Kingdom / Ruling Authority. The opposite of Sea (chaos). Mountains cast into the sea = kingdoms destroyed.
+- **[HEAVEN](/reader/words/HEAVEN)** — Word study. "No more sea" (Rev 21:1) in the context of renewed heavens and earth: the chaos of ungoverned nations is ended. The kingdom (mountain) has fully replaced the sea (chaos).

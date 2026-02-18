@@ -9165,6 +9165,44 @@ body.biblical-timeline-open .top-nav-inner {
   margin-bottom: 16px;
 }
 
+/* HG "About this translation" page at /reader/bible/hg */
+.bible-explorer-welcome.hg-about-page {
+  text-align: left;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.hg-about-page .hg-about-header h2 {
+  color: var(--accent-gold);
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+.hg-about-page .hg-about-lead {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.hg-about-page .hg-about-section {
+  margin-bottom: 28px;
+}
+.hg-about-page .hg-about-section h3 {
+  color: var(--accent-primary);
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+.hg-about-page .hg-about-section h4.hg-about-sub {
+  color: var(--text-secondary);
+  font-size: 1em;
+  margin: 12px 0 8px 0;
+}
+.hg-about-page .hg-about-list {
+  margin: 8px 0 12px 1.2em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.hg-about-page .hg-about-list li {
+  margin-bottom: 6px;
+}
+
 /* Translation Cards — one row on desktop when space available */
 .bible-translation-cards {
   display: flex;
@@ -9793,6 +9831,67 @@ body.biblical-timeline-open .top-nav-inner {
 
 .il-tab-pane.active {
   display: block;
+}
+
+/* ── Hebrew Gospels Study Notes ── */
+.hg-verse-notes {
+  padding: 4px 0;
+}
+
+.hg-notes-section {
+  margin-bottom: 12px;
+}
+
+.hg-notes-section-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-gold-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--separator-color, rgba(255,255,255,0.08));
+}
+
+.hg-note-item {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  padding: 4px 0 4px 8px;
+  border-left: 2px solid var(--separator-color, rgba(255,255,255,0.08));
+  margin-bottom: 4px;
+}
+
+.hg-note-deviation {
+  border-left-color: var(--accent-gold-strong);
+}
+
+.hg-note-oneway {
+  border-left-color: #4caf50;
+}
+
+.hg-note-contradiction {
+  border-left-color: #ef5350;
+}
+
+/* ── Hebrew Gospels Chapter Study Notes ── */
+.hg-chapter-notes {
+  padding: 8px 0;
+}
+
+.hg-chapter-notes-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-gold-strong);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--separator-color, rgba(255,255,255,0.1));
+}
+
+.hg-chapter-notes-summary {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* Selected word highlight in interlinear */
@@ -10738,7 +10837,7 @@ body.biblical-timeline-open .top-nav-inner {
 /* ─── Expand thumb — visible when panel is collapsed ─── */
 .research-panel-thumb {
   position: absolute;
-  right: 0;
+  right: 14px;  /* clear the scrollbar */
   top: 50%;
   transform: translateY(-50%);
   padding: 10px 4px;
@@ -10751,8 +10850,7 @@ body.biblical-timeline-open .top-nav-inner {
   font-size: 0.65em;
   background: var(--surface-raised);
   border: 1px solid var(--accent-gold-muted);
-  border-right: none;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
   z-index: 6;
   writing-mode: vertical-rl;
   letter-spacing: 0.08em;
@@ -10774,9 +10872,9 @@ body.research-panel-open .research-panel-thumb {
 .research-panel-collapse-btn {
   display: none;
   position: absolute;
-  right: 0;
+  right: 14px;  /* clear the scrollbar */
   top: 8px;
-  padding: 4px 3px 4px 5px;
+  padding: 4px 5px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -10785,8 +10883,7 @@ body.research-panel-open .research-panel-thumb {
   font-size: 0.7em;
   background: var(--surface-raised);
   border: 1px solid var(--accent-gold-muted);
-  border-right: none;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
   z-index: 10;
   transition: opacity 0.2s, color 0.2s, border-color 0.2s;
   user-select: none;

@@ -111,10 +111,10 @@ const AppStore = {
   // ═══════════════════════════════════════════════════════════════════════
   
   /**
-   * Get a read-only copy of the current state
+   * Get current state (direct reference — treat as read-only)
    */
   getState() {
-    return structuredClone(this._state);
+    return this._state;
   },
   
   /**
@@ -125,10 +125,10 @@ const AppStore = {
   },
   
   /**
-   * Get a read-only copy of derived state
+   * Get derived state (direct reference — treat as read-only)
    */
   getDerived() {
-    return structuredClone(this._derived);
+    return this._derived;
   },
   
   /**
@@ -450,8 +450,9 @@ const AppStore = {
    * Dispatch an event to update state
    * @param {Object} event - Event with type and payload
    */
-  // Track if we're in a dispatch cycle (to prevent duplicate history entries)
   _isDispatching: false,
+  _dispatchDepth: 0,
+  _maxDispatchDepth: 10,
   
   isDispatching() {
     return this._isDispatching;
@@ -502,6 +503,13 @@ const AppStore = {
       console.log('[AppStore] dispatch:', event.type, event);
     }
     
+    this._dispatchDepth++;
+    if (this._dispatchDepth > this._maxDispatchDepth) {
+      console.error('[AppStore] Max dispatch depth exceeded! Breaking potential infinite loop. Event:', event.type);
+      this._dispatchDepth--;
+      return;
+    }
+    
     this._isDispatching = true;
     const changed = this._reduce(event);
     
@@ -513,7 +521,8 @@ const AppStore = {
         this._recomputeDerived();
       }
       
-      if (this._urlSyncEnabled) {
+      // Only sync URL from the outermost dispatch to prevent re-entrant loops
+      if (this._urlSyncEnabled && this._dispatchDepth === 1) {
         this._syncURL(event);
       }
       
@@ -531,7 +540,10 @@ const AppStore = {
         });
       }
     }
-    this._isDispatching = false;
+    this._dispatchDepth--;
+    if (this._dispatchDepth === 0) {
+      this._isDispatching = false;
+    }
   },
   
   /**
@@ -539,36 +551,42 @@ const AppStore = {
    * @param {Array} events - Array of events
    */
   dispatchBatch(events) {
-    console.log('[AppStore] dispatchBatch:', events.map(e => e.type));
+    if (window.DEBUG_STORE) {
+      console.log('[AppStore] dispatchBatch:', events.map(e => e.type));
+    }
+    this._dispatchDepth++;
+    if (this._dispatchDepth > this._maxDispatchDepth) {
+      console.error('[AppStore] Max dispatch depth exceeded in batch! Events:', events.map(e => e.type));
+      this._dispatchDepth--;
+      return;
+    }
+    
     this._isDispatching = true;
     let anyChanged = false;
     let needsDerivedRecompute = false;
     
     for (const event of events) {
-      console.log('[AppStore] batch reduce:', event.type);
       if (this._reduce(event)) {
         anyChanged = true;
-        // Check if any event requires derived recomputation
         if (!this._uiOnlyEvents.has(event.type)) {
           needsDerivedRecompute = true;
         }
       }
     }
     
-    console.log('[AppStore] anyChanged:', anyChanged, 'urlSyncEnabled:', this._urlSyncEnabled);
-    
     if (anyChanged) {
-      // Only recompute derived state if needed
       if (needsDerivedRecompute) {
         this._recomputeDerived();
       }
-      if (this._urlSyncEnabled) {
-        console.log('[AppStore] calling _syncURL');
+      if (this._urlSyncEnabled && this._dispatchDepth === 1) {
         this._syncURL(events[events.length - 1]);
       }
       this._notify();
     }
-    this._isDispatching = false;
+    this._dispatchDepth--;
+    if (this._dispatchDepth === 0) {
+      this._isDispatching = false;
+    }
   },
   
   /**
@@ -2064,47 +2082,31 @@ const AppStore = {
   // URL SYNC
   // ═══════════════════════════════════════════════════════════════════════
   
+  _pushEvents: new Set([
+    'SET_VIEW', 'SET_SELECTED_DATE', 'SET_PROFILE', 'SET_LOCATION', 
+    'SELECT_DAY', 'SET_BIBLE_LOCATION', 'SET_GREGORIAN_DATETIME',
+    'SET_LUNAR_DATETIME',
+    'SET_TIMELINE_EVENT', 'SET_TIMELINE_DURATION', 'SET_TIMELINE_SEARCH',
+    'SET_TIMELINE_FOCUSED_EVENT', 'SET_GLOBAL_SEARCH', 'CLOSE_GLOBAL_SEARCH',
+    'SET_RESEARCH_PANEL'
+  ]),
+  
   _syncURL(event) {
-    console.log('[AppStore] _syncURL called, URLRouter exists:', !!window.URLRouter);
-    
-    if (!window.URLRouter) {
-      console.error('[AppStore] URLRouter not found!');
-      return;
-    }
+    if (!window.URLRouter) return;
 
     // Static pages (e.g. /research/symbols/) — don't rewrite the URL
-    if (this._state.content && this._state.content.params && this._state.content.params.staticPage) {
-      return;
-    }
+    if (this._state.content?.params?.staticPage) return;
     
-    // Determine if this should be a push or replace
-    // Bible navigation should push to enable browser back/forward
-    // But respect explicit replace flag from event
     let shouldPush;
     if (event.replace === true) {
-      shouldPush = false;  // Explicit replace requested
+      shouldPush = false;
     } else if (event.replace === false) {
-      shouldPush = true;   // Explicit push requested
+      shouldPush = true;
     } else {
-      // Default behavior based on event type
-      // These events should create browser history entries (enable back/forward)
-      const pushEvents = [
-        'SET_VIEW', 'SET_SELECTED_DATE', 'SET_PROFILE', 'SET_LOCATION', 
-        'SELECT_DAY', 'SET_BIBLE_LOCATION', 'SET_GREGORIAN_DATETIME',
-        'SET_LUNAR_DATETIME',
-        'SET_TIMELINE_EVENT', 'SET_TIMELINE_DURATION', 'SET_TIMELINE_SEARCH',
-        'SET_TIMELINE_FOCUSED_EVENT', 'SET_GLOBAL_SEARCH', 'CLOSE_GLOBAL_SEARCH',
-        'SET_RESEARCH_PANEL'
-      ];
-      // Panel state uses replaceState (updates URL but doesn't create history entry)
-      // This way sharing a URL preserves panel state, but toggling doesn't pollute history
-      shouldPush = pushEvents.includes(event.type);
+      shouldPush = this._pushEvents.has(event.type);
     }
     
-    console.log('[AppStore] calling URLRouter.syncURL, shouldPush:', shouldPush);
-    
     try {
-      // Pass both state and derived for URL building
       window.URLRouter.syncURL(this._state, this._derived, shouldPush);
     } catch (e) {
       console.error('[AppStore] syncURL error:', e);
@@ -2115,7 +2117,19 @@ const AppStore = {
   // NOTIFY LISTENERS
   // ═══════════════════════════════════════════════════════════════════════
   
+  _notifying: false,
+  _pendingNotify: false,
+  _notifyDepth: 0,
+  
   _notify() {
+    // If we're already notifying (re-entrant from a listener dispatching),
+    // schedule another notification after the current one completes
+    if (this._notifying) {
+      this._pendingNotify = true;
+      return;
+    }
+    
+    this._notifying = true;
     const state = this.getState();
     const derived = this.getDerived();
     
@@ -2125,6 +2139,21 @@ const AppStore = {
       } catch (e) {
         console.error('[AppStore] Listener error:', e);
       }
+    }
+    this._notifying = false;
+    
+    // If a dispatch happened during notification, re-notify with fresh state
+    // but limit recursion depth to prevent infinite loops
+    if (this._pendingNotify) {
+      this._pendingNotify = false;
+      this._notifyDepth++;
+      if (this._notifyDepth > 5) {
+        console.error('[AppStore] Max notify depth exceeded! Breaking potential infinite loop.');
+        this._notifyDepth = 0;
+        return;
+      }
+      this._notify();
+      this._notifyDepth--;
     }
   },
   

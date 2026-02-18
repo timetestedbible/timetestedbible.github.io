@@ -151,3 +151,10 @@ MOUNTAIN symbolizes **kingdom or ruling authority**—an established, elevated s
 - Explains why law goes forth FROM mountains
 - Explains why faith can "remove" mountains (topple powers)
 - Works for both God's kingdom and worldly kingdoms
+
+---
+
+## Related Studies
+
+- **[HEAVEN](/reader/words/HEAVEN)** — Word study. G3772 (*ouranos*, heaven) may derive from G3735 (*oros*, mountain) — "through the idea of elevation." Heaven → Mountain → Kingdom: the word for "heaven" may encode the concept of the highest ruling authority.
+- **[SEA](/reader/symbols/SEA)** — Symbol study. Sea = Chaotic Peoples. The opposite of Mountain (kingdom/stability). Mountains cast into the sea = kingdoms thrown into chaos.

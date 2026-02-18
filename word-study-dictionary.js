@@ -116,6 +116,38 @@ const WORD_STUDY_DICTIONARY = {
     link: '/reader/words/H7676'
   },
   
+  'H8064': {
+    strongs: 'H8064',
+    lemma: 'שָׁמַיִם',
+    transliteration: 'shamayim',
+    pronunciation: "shaw-mah'-yim",
+    root: null,
+    rootLemma: null,
+    rootMeaning: null,
+    summary: 'Means "the sky" — from a root meaning "to be lofty." Used 395 times for the physical sky, cosmic expanse, or God\'s domain. Never used as a destination for the dead. The phrase "go to heaven" does not appear in Scripture.',
+    keyVerse: 'Psalm 115:16',
+    keyVerseText: 'The heaven, even the heavens, are the LORD\'s: but the earth hath he given to the children of men.',
+    bookChapter: null,
+    bookChapterTitle: null,
+    link: '/reader/words/HEAVEN'
+  },
+
+  'G3772': {
+    strongs: 'G3772',
+    lemma: 'οὐρανός',
+    transliteration: 'ouranos',
+    pronunciation: "oo-ran-os'",
+    root: 'G3735',
+    rootLemma: 'ὄρος',
+    rootMeaning: 'mountain — a mountain, as lifting itself above the plain',
+    summary: 'Means "the sky." Perhaps derived from G3735 (oros, mountain) through the idea of elevation. Used 264 times for God\'s domain, the physical sky, or the kingdom phrase. In Scripture, mountain = kingdom (Rev 17:9). Heaven → mountain → kingdom: the highest seat of ruling authority.',
+    keyVerse: 'John 3:13',
+    keyVerseText: 'And no man hath ascended up to heaven, but he that came down from heaven, even the Son of man which is in heaven.',
+    bookChapter: null,
+    bookChapterTitle: null,
+    link: '/reader/words/HEAVEN'
+  },
+
   'G4521': {
     strongs: 'G4521',
     lemma: 'σάββατον',

@@ -692,6 +692,21 @@ const BIBLE_REGISTRY = [
     file: '/bibles/lxx.txt'
   },
   {
+    id: 'hg',
+    name: 'HG',
+    fullName: 'Hebrew Gospels Translation',
+    year: 2026,
+    language: 'en',
+    hasStrongs: true,
+    searchable: true,
+    isSourceText: false,
+    rtl: false,
+    description: 'Fresh translation from Hebrew source texts with full interlinear, '
+      + 'Strong\'s numbers, and study notes. Consonantal Hebrew (no vowel points).',
+    copyright: 'Daniel Larimer, 2026',
+    file: '/bibles/hg.txt'
+  },
+  {
     id: 'wlc',
     name: 'WLC',
     fullName: 'Westminster Leningrad Codex',
@@ -1547,9 +1562,9 @@ const Bible = {
   // ── Translation ordering preferences ──
 
   // Default order: AKJV, ASV, LXX shown; YLT, SLT, DBT, DRB, JPS loaded but hidden; KJV, WBT not loaded (saves space)
-  _defaultOrder: ['akjv', 'asv', 'lxx', 'ylt', 'slt', 'dbt', 'drb', 'jps', 'kjv', 'wbt'],
+  _defaultOrder: ['akjv', 'asv', 'hg', 'lxx', 'ylt', 'slt', 'dbt', 'drb', 'jps', 'kjv', 'wbt'],
   _defaultVisibleCount: 3,
-  _defaultLoadCount: 8,
+  _defaultLoadCount: 9,
 
   /**
    * Get translations in user-preferred order, split into three tiers:

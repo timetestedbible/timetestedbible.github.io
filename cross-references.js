@@ -263,14 +263,11 @@ async function showCrossRefPanel(book, chapter, verse, event) {
     `;
   }
   
-  // Desktop: restore saved width or use default
+  // Desktop: restore saved width or use smart default
   if (window.innerWidth > 768) {
-    try {
-      const saved = localStorage.getItem('research-panel-width');
-      sidebar.style.width = saved || '380px';
-    } catch (e) {
-      sidebar.style.width = '380px';
-    }
+    sidebar.style.width = typeof getResearchPanelWidth === 'function'
+      ? getResearchPanelWidth()
+      : '380px';
   }
   
   // Mark panel as active (optimistic DOM update + state dispatch)

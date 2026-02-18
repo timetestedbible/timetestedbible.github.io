@@ -784,11 +784,13 @@ const ReaderView = {
       const entry = WORD_STUDY_DICTIONARY[wordId];
       const linkMatch = (entry.link || '').match(/\/reader\/words\/([^/?#]+)/);
       if (linkMatch && linkMatch[1].toUpperCase() !== wordId.toUpperCase()) {
-        // Navigate to the canonical word study instead
-        AppStore.dispatch({
-          type: 'SET_VIEW',
-          view: 'reader',
-          params: { contentType: 'words', word: linkMatch[1].toUpperCase() }
+        // Defer redirect to avoid dispatching from within a render cycle
+        queueMicrotask(() => {
+          AppStore.dispatch({
+            type: 'SET_VIEW',
+            view: 'reader',
+            params: { contentType: 'words', word: linkMatch[1].toUpperCase() }
+          });
         });
         return;
       }
@@ -1035,22 +1037,33 @@ const ReaderView = {
     if (!studyContainer) return;
     
     try {
-      // Fetch the Jekyll-rendered study page and extract the article body
-      const response = await fetch(`/research/symbols/${symbolKey}/`);
+      let articleHtml;
       
-      if (!response.ok) {
-        throw new Error(`Study not found: ${symbolKey}`);
+      // Path 1: Extract from existing DOM (initial Jekyll page load —
+      // the article is already rendered, no need to re-fetch our own page)
+      const existingArticle = document.querySelector('article.symbol-study-content');
+      if (existingArticle && existingArticle.innerHTML.trim()) {
+        articleHtml = existingArticle.innerHTML;
+        existingArticle.remove();
+      } else {
+        // Path 2: SPA navigation — fetch from network
+        const response = await fetch(`/research/symbols/${symbolKey}/`);
+        
+        if (!response.ok) {
+          throw new Error(`Study not found: ${symbolKey}`);
+        }
+        
+        const pageHtml = await response.text();
+        const doc = new DOMParser().parseFromString(pageHtml, 'text/html');
+        const article = doc.querySelector('.symbol-study-content');
+        
+        if (!article) {
+          throw new Error(`No article content found for: ${symbolKey}`);
+        }
+        articleHtml = article.innerHTML;
       }
       
-      const pageHtml = await response.text();
-      const doc = new DOMParser().parseFromString(pageHtml, 'text/html');
-      const article = doc.querySelector('.symbol-study-content');
-      
-      if (!article) {
-        throw new Error(`No article content found for: ${symbolKey}`);
-      }
-      
-      studyContainer.innerHTML = `<div class="symbol-study-body symbol-article-body">${article.innerHTML}</div>`;
+      studyContainer.innerHTML = `<div class="symbol-study-body symbol-article-body">${articleHtml}</div>`;
       
       // Process study markup ($symbol, H####/G####, abbreviated verse refs)
       this.processStudyMarkup(studyContainer);

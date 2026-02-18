@@ -157,12 +157,8 @@ const BibleView = {
       if (window.innerWidth > 768 && state.ui && state.ui.researchPanelOpen) {
         const panel = document.getElementById('research-panel');
         if (panel) {
-          try {
-            const saved = localStorage.getItem('research-panel-width');
-            panel.style.width = saved || '380px';
-          } catch (e) {
-            panel.style.width = '380px';
-          }
+          panel.style.width = typeof getResearchPanelWidth === 'function'
+            ? getResearchPanelWidth() : '380px';
           panel.classList.add('open');
           document.body.classList.add('research-panel-open');
         }
@@ -246,12 +242,8 @@ const BibleView = {
       requestAnimationFrame(() => {
         if (panel) {
           if (window.innerWidth > 768) {
-            try {
-              const saved = localStorage.getItem('research-panel-width');
-              panel.style.width = saved || '380px';
-            } catch (e) {
-              panel.style.width = '380px';
-            }
+            panel.style.width = typeof getResearchPanelWidth === 'function'
+              ? getResearchPanelWidth() : '380px';
           }
           panel.classList.add('open');
           document.body.classList.add('research-panel-open');

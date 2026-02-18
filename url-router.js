@@ -1046,14 +1046,15 @@ const URLRouter = {
       const newURL = this.buildURL(state, derived);
       const currentURL = window.location.pathname + window.location.search;
       
-      console.log('[URLRouter] syncURL:', { newURL, currentURL, push, view: state.content.view });
+      if (window.DEBUG_STORE) {
+        console.log('[URLRouter] syncURL:', { newURL, currentURL, push, view: state.content.view });
+      }
       
       if (newURL !== currentURL) {
         // Check if this is just URL normalization (adding default params like translation)
         // If the URLs are logically equivalent, use replaceState to avoid back-button loops
         let shouldPush = push;
         if (push && this._isUrlNormalization(currentURL, newURL)) {
-          console.log('[URLRouter] Detected URL normalization, using replaceState');
           shouldPush = false;
         }
         
@@ -1061,8 +1062,11 @@ const URLRouter = {
           // Save scroll position of current page before pushing new entry
           this.saveScrollPosition();
           history.pushState({}, '', newURL);
-          // Add to navigation history for back/forward buttons
-          AppStore.dispatch({ type: 'NAV_PUSH', url: newURL });
+          // Defer NAV_PUSH to avoid synchronous re-entrant dispatch
+          // (syncURL is called from within AppStore.dispatch)
+          queueMicrotask(() => {
+            AppStore.dispatch({ type: 'NAV_PUSH', url: newURL });
+          });
         } else {
           // For replace, preserve scroll in current state (both panes)
           const textArea = document.getElementById('bible-explorer-text');
@@ -1071,7 +1075,6 @@ const URLRouter = {
           const strongsScrollTop = strongsSidebar ? strongsSidebar.scrollTop : 0;
           history.replaceState({ scrollTop, strongsScrollTop }, '', newURL);
         }
-        console.log('[URLRouter] URL updated to:', newURL);
       }
     } catch (e) {
       console.error('[URLRouter] syncURL error:', e);

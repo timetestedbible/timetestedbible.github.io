@@ -77,6 +77,8 @@ const DATA_ASSETS = [
   '/data/bdb-ai.json',
   '/data/bdb-formatted.json.gz',
   '/data/bdb.json',
+  '/data/hebrew-gospels-interlinear.json',
+  '/data/hebrew-gospels-notes.json',
   '/docs/temple-chronology-verification.md'
 ];
 
@@ -88,6 +90,7 @@ const CONTENT_ASSETS = [
   '/bibles/kjv_strongs.txt',
   '/bibles/asv_strongs.txt',
   '/bibles/lxx.txt',
+  '/bibles/hg.txt',
   '/media/time-tested-tradition.pdf'
 ];
 

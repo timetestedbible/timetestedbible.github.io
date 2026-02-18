@@ -1128,6 +1128,14 @@ async function loadBDB() {
 let ntInterlinearData = null;
 let ntInterlinearLoading = null;
 
+// Hebrew Gospels interlinear data (Hebrew NT source texts)
+let hgInterlinearData = null;
+let hgInterlinearLoading = null;
+
+// Hebrew Gospels translation notes
+let hgNotesData = null;
+let hgNotesLoading = null;
+
 // TIPNR person/place data
 let tipnrData = null;
 let tipnrLoading = null;
@@ -1410,6 +1418,90 @@ async function loadNTInterlinear() {
   return ntInterlinearLoading;
 }
 
+async function loadHGInterlinear() {
+  if (hgInterlinearData) return true;
+  if (hgInterlinearLoading) return hgInterlinearLoading;
+  
+  hgInterlinearLoading = (async () => {
+    try {
+      const response = await fetch('/data/hebrew-gospels-interlinear.json');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (Object.keys(data).length === 0) {
+        console.log('Hebrew Gospels interlinear: no data yet');
+        return false;
+      }
+      hgInterlinearData = data;
+      const bookCount = Object.keys(hgInterlinearData).length;
+      console.log(`Hebrew Gospels interlinear loaded: ${bookCount} books`);
+      return true;
+    } catch (err) {
+      console.warn('Hebrew Gospels interlinear not available:', err.message);
+      return false;
+    } finally {
+      hgInterlinearLoading = null;
+    }
+  })();
+  
+  return hgInterlinearLoading;
+}
+
+async function loadHGNotes() {
+  if (hgNotesData) return true;
+  if (hgNotesLoading) return hgNotesLoading;
+  
+  hgNotesLoading = (async () => {
+    try {
+      const response = await fetch('/data/hebrew-gospels-notes.json');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (Object.keys(data).length === 0) {
+        console.log('Hebrew Gospels notes: no data yet');
+        return false;
+      }
+      hgNotesData = data;
+      console.log(`Hebrew Gospels notes loaded: ${Object.keys(hgNotesData).length} books`);
+      return true;
+    } catch (err) {
+      console.warn('Hebrew Gospels notes not available:', err.message);
+      return false;
+    } finally {
+      hgNotesLoading = null;
+    }
+  })();
+  
+  return hgNotesLoading;
+}
+
+function getHGInterlinearVerse(bookName, chapter, verse) {
+  if (!hgInterlinearData) return null;
+  const book = hgInterlinearData[bookName];
+  if (!book) return null;
+  const ch = book[chapter];
+  if (!ch) return null;
+  return ch[String(verse)] || null;
+}
+
+function getHGVerseNotes(bookName, chapter, verse) {
+  if (!hgNotesData) return null;
+  const book = hgNotesData[bookName];
+  if (!book) return null;
+  const ch = book[String(chapter)];
+  if (!ch || !ch.verses) return null;
+  return ch.verses[String(verse)] || null;
+}
+
+function getHGChapterNotes(bookName, chapter) {
+  if (!hgNotesData) return null;
+  const book = hgNotesData[bookName];
+  if (!book) return null;
+  return book[String(chapter)] || null;
+}
+
+function hasHGData(bookName) {
+  return hgInterlinearData && hgInterlinearData[bookName];
+}
+
 // NT book names
 const NT_BOOKS = new Set([
   'Matthew', 'Mark', 'Luke', 'John', 'Acts',
@@ -1577,16 +1669,23 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   const isNT = isNTBook(book);
   
   // Load appropriate data if needed
-  if (isNT && !ntInterlinearData) {
-    const placeholder = document.createElement('div');
-    placeholder.className = 'interlinear-display';
-    placeholder.innerHTML = '<div class="interlinear-loading">Loading Greek interlinear data...</div>';
-    verseEl.appendChild(placeholder);
-    verseEl.classList.add('interlinear-expanded');
-    requestAnimationFrame(() => placeholder.classList.add('expanded'));
-    
-    await loadNTInterlinear();
-    placeholder.remove();
+  if (isNT) {
+    const loads = [];
+    if (!ntInterlinearData) {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'interlinear-display';
+      placeholder.innerHTML = '<div class="interlinear-loading">Loading interlinear data...</div>';
+      verseEl.appendChild(placeholder);
+      verseEl.classList.add('interlinear-expanded');
+      requestAnimationFrame(() => placeholder.classList.add('expanded'));
+      
+      loads.push(loadNTInterlinear().then(() => placeholder.remove()));
+    }
+    if (!hgInterlinearData && !hgInterlinearLoading) {
+      loads.push(loadHGInterlinear());
+      loadHGNotes();
+    }
+    if (loads.length > 0) await Promise.all(loads);
   } else if (!isNT && !morphhbData) {
     const placeholder = document.createElement('div');
     placeholder.className = 'interlinear-display';
@@ -1599,9 +1698,11 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     placeholder.remove();
   }
   
-  // Get data — OT from morphhb, NT from nt-interlinear
+  // Get data — OT from morphhb, NT from nt-interlinear, HG from hebrew-gospels-interlinear
   const ntData = isNT ? getInterlinearVerse(book, chapter, verse) : null;
   const otWords = !isNT ? getMorphhbVerse(book, chapter, verse) : null;
+  const hgWords = isNT ? getHGInterlinearVerse(book, chapter, verse) : null;
+  const hgVerseNotes = isNT ? getHGVerseNotes(book, chapter, verse) : null;
   
   // Create interlinear element
   const interlinear = document.createElement('div');
@@ -1613,8 +1714,9 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   // ── Tabbed layout: Translations | Hebrew/Greek ──
   const hasOTInterlinear = !isNT && otWords && otWords.length > 0;
   const hasNTInterlinear = isNT && ntData && ntData.g;
-  const hasInterlinearWords = hasOTInterlinear || hasNTInterlinear;
-  const langLabel = isNT ? 'Greek' : 'Hebrew';
+  const hasHGInterlinear = isNT && hgWords && hgWords.length > 0;
+  const hasInterlinearWords = hasOTInterlinear || hasNTInterlinear || hasHGInterlinear;
+  const langLabel = hasHGInterlinear ? 'Hebrew' : (isNT ? 'Greek' : 'Hebrew');
   const showVowels = getVowelPointingSetting();
 
   // Check for translation patches on this verse
@@ -1626,13 +1728,22 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     if (patchNote) html += patchNote;
   }
 
-  // Default to translations tab when patches exist
-  const defaultTab = hasPatches ? 'translations' : 'hebrew';
+  // Default to translations tab when patches exist; HG Hebrew tab takes priority
+  const defaultTab = hasHGInterlinear ? 'hebrew' : (hasPatches ? 'translations' : 'hebrew');
+  const hasNotes = !!hgVerseNotes;
 
   // Tab bar (vowel toggle moved inside Hebrew pane)
   html += '<div class="il-tabs">';
-  html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">${langLabel}</button>`;
+  if (hasHGInterlinear) {
+    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">Hebrew</button>`;
+    html += `<button class="il-tab" data-tab="greek" onclick="switchInterlinearTab(this, 'greek')">Greek</button>`;
+  } else {
+    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">${langLabel}</button>`;
+  }
   html += `<button class="il-tab${defaultTab === 'translations' ? ' active' : ''}" data-tab="translations" onclick="switchInterlinearTab(this, 'translations')">Translations</button>`;
+  if (hasNotes) {
+    html += `<button class="il-tab" data-tab="notes" onclick="switchInterlinearTab(this, 'notes')">Notes</button>`;
+  }
   html += '</div>';
 
   // ── Hebrew/Greek tab pane ──
@@ -1643,7 +1754,26 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   }
 
   // Word-for-word interlinear
-  if (hasOTInterlinear) {
+  if (hasHGInterlinear) {
+    // ── HG: Hebrew Gospels word-by-word (consonantal Hebrew, no vowels) ──
+    html += '<div class="interlinear-words-container il-hebrew">';
+    for (let i = 0; i < hgWords.length; i++) {
+      const [hebrewText, strongsNum, gloss] = hgWords[i];
+      const escapedGloss = (gloss || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+      const escapedHebrew = hebrewText.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+      
+      html += `<div class="il-word-block il-clickable"
+        data-strongs="${strongsNum || ''}"
+        data-hebrew="${escapedHebrew}"
+        onclick="showStrongsPanel('${strongsNum || ''}', '${escapedGloss}', '${escapedGloss}', event)"
+        onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)"
+        onmouseleave="if(_lastPointerType!=='touch')hideMorphTooltip()">
+        <span class="il-original">${hebrewText}</span>
+        <span class="il-gloss">${gloss || '—'}</span>
+      </div>`;
+    }
+    html += '</div>';
+  } else if (hasOTInterlinear) {
     // ── OT: MorphHB word-for-word with morphology ──
     // Build gloss map from the user's preferred translation (or any loaded tagged translation)
     const taggedText = getStrongsTaggedVerse(book, chapter, verse);
@@ -1755,8 +1885,8 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     html += '<div class="interlinear-no-data">Word-for-word interlinear data not available for this verse.</div>';
   }
 
-  // NT: Greek source text inside the Hebrew/Greek pane
-  if (isNT) {
+  // NT: Greek source text — goes in separate Greek tab when HG exists, otherwise in Hebrew/Greek pane
+  if (isNT && !hasHGInterlinear) {
     const greekVerse = Bible.isLoaded('greek_nt') ? Bible.getVerse('greek_nt', book, chapter, verse) : null;
     html += `<div class="interlinear-source-text" id="il-greek-${book.replace(/\s/g,'-')}-${chapter}-${verse}">
       <div class="il-source-header"><span class="il-source-label">Greek NT</span></div>
@@ -1766,6 +1896,35 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   }
 
   html += '</div>'; // close Hebrew/Greek tab pane
+
+  // ── Greek tab pane (only when HG provides Hebrew as the primary interlinear) ──
+  if (hasHGInterlinear) {
+    html += '<div class="il-tab-pane il-pane-greek">';
+    if (hasNTInterlinear) {
+      const originalWords = ntData.g;
+      html += '<div class="interlinear-words-container">';
+      for (let i = 0; i < originalWords.length; i++) {
+        const word = originalWords[i];
+        const engWord = ntData.e[i];
+        const strongs = engWord?.s || '';
+        const gloss = engWord?.g || engWord?.e || '';
+        const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        const originalText = word.g;
+        html += `<div class="il-word-block il-clickable" onclick="showStrongsPanel('${strongs}', '${escapedGloss}', '${escapedGloss}', event)">
+          <span class="il-original">${originalText}</span>
+          <span class="il-gloss">${gloss}</span>
+        </div>`;
+      }
+      html += '</div>';
+    }
+    const greekVerse = Bible.isLoaded('greek_nt') ? Bible.getVerse('greek_nt', book, chapter, verse) : null;
+    html += `<div class="interlinear-source-text" id="il-greek-${book.replace(/\s/g,'-')}-${chapter}-${verse}">
+      <div class="il-source-header"><span class="il-source-label">Greek NT</span></div>
+      <div class="il-source-text-content">${greekVerse ? greekVerse.text : '<span style="color:var(--text-tertiary);font-style:italic;">Loading Greek NT...</span>'}</div>
+    </div>`;
+    if (!greekVerse) setTimeout(() => loadAndShowGreekNT(book, chapter, verse), 0);
+    html += '</div>'; // close Greek tab pane
+  }
 
   // ── Translations tab pane ──
   html += `<div class="il-tab-pane il-pane-translations${defaultTab === 'translations' ? ' active' : ''}">`;
@@ -1802,6 +1961,32 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   }
   html += '</div>';
   html += '</div>'; // close translations tab pane
+
+  // ── Notes tab pane (Hebrew Gospels study notes) ──
+  if (hasNotes) {
+    html += '<div class="il-tab-pane il-pane-notes">';
+    html += '<div class="hg-verse-notes">';
+    const noteSections = [
+      { key: 'one_way_hebrew', title: 'Hebrew Primacy — One-Way Translation', cssClass: 'hg-note-oneway' },
+      { key: 'greek_deviations', title: 'Greek Deviations', cssClass: 'hg-note-deviation' },
+      { key: 'contradictions', title: 'Contradictions with OT / Gospels', cssClass: 'hg-note-contradiction' },
+      { key: 'translation_notes', title: 'Translation Notes', cssClass: '' },
+      { key: 'textual_notes', title: 'Textual Notes', cssClass: '' }
+    ];
+    for (const { key, title, cssClass } of noteSections) {
+      const items = hgVerseNotes[key];
+      if (items && items.length > 0) {
+        html += '<div class="hg-notes-section">';
+        html += `<div class="hg-notes-section-title">${title}</div>`;
+        for (const note of items) {
+          html += `<div class="hg-note-item ${cssClass}">${note}</div>`;
+        }
+        html += '</div>';
+      }
+    }
+    html += '</div>';
+    html += '</div>'; // close notes tab pane
+  }
 
   interlinear.innerHTML = html;
   
@@ -5407,8 +5592,12 @@ async function switchTranslation(translationId) {
   // Update UI
   updateTranslationUI();
   
+  // Preload HG interlinear when switching to HG
+  if (canonicalId === 'hg') { loadHGInterlinear(); loadHGNotes(); }
+  
   // Rebuild chapter counts and redisplay current chapter (skip when in multiverse — state-driven re-render will refresh multiverse content)
   buildBookChapterCounts();
+  populateBibleBooks();
   const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
   const isMultiverse = state?.content?.params?.contentType === 'multiverse';
   if (!isMultiverse && bibleExplorerState.currentBook && bibleExplorerState.currentChapter) {
@@ -6155,12 +6344,14 @@ function initBibleExplorer() {
       buildBookChapterCounts();
       populateBibleBooks();
       updateTranslationUI();
+      if (currentTranslation === 'hg') { loadHGInterlinear(); loadHGNotes(); }
     });
   } else {
     syncLegacyVariables();
     buildBookChapterCounts();
     populateBibleBooks();
     updateTranslationUI();
+    if (currentTranslation === 'hg') { loadHGInterlinear(); loadHGNotes(); }
   }
 }
 
@@ -6233,14 +6424,16 @@ function goToBookIndex() {
     chapterSelect.disabled = true;
   }
 
-  // Show book index
+  // Show book index, or HG "About this translation" page at root
   const textContainer = document.getElementById('bible-explorer-text');
   if (textContainer) {
-    textContainer.innerHTML = buildBookIndexHTML();
+    textContainer.innerHTML = (currentTranslation === 'hg' && typeof getHGAboutHTML === 'function')
+      ? getHGAboutHTML()
+      : buildBookIndexHTML();
   }
 
   const titleEl = document.getElementById('bible-chapter-title');
-  if (titleEl) titleEl.textContent = 'Select a book';
+  if (titleEl) titleEl.textContent = currentTranslation === 'hg' ? 'About this translation' : 'Select a book';
 }
 
 // Build HTML for the book index page
@@ -6413,20 +6606,107 @@ function populateBibleBooks() {
   const bookSelect = document.getElementById('bible-book-select');
   if (!bookSelect) return;
   
+  // When HG translation is selected, only show books that have HG data
+  const isHG = currentTranslation === 'hg';
+  const hgBooks = isHG ? getHGAvailableBooks() : null;
+  
   let html = '<option value="">Select Book</option>';
-  html += '<optgroup label="Old Testament">';
-  for (const book of BIBLE_BOOKS.ot) {
-    const selected = bibleExplorerState.currentBook === book ? ' selected' : '';
-    html += `<option value="${book}"${selected}>${book}</option>`;
+  
+  const otBooks = isHG ? BIBLE_BOOKS.ot.filter(b => hgBooks && hgBooks.has(b)) : BIBLE_BOOKS.ot;
+  const ntBooks = isHG ? BIBLE_BOOKS.nt.filter(b => hgBooks && hgBooks.has(b)) : BIBLE_BOOKS.nt;
+  
+  if (otBooks.length > 0) {
+    html += '<optgroup label="Old Testament">';
+    for (const book of otBooks) {
+      const selected = bibleExplorerState.currentBook === book ? ' selected' : '';
+      html += `<option value="${book}"${selected}>${book}</option>`;
+    }
+    html += '</optgroup>';
   }
-  html += '</optgroup>';
-  html += '<optgroup label="New Testament">';
-  for (const book of BIBLE_BOOKS.nt) {
-    const selected = bibleExplorerState.currentBook === book ? ' selected' : '';
-    html += `<option value="${book}"${selected}>${book}</option>`;
+  if (ntBooks.length > 0) {
+    html += '<optgroup label="New Testament">';
+    for (const book of ntBooks) {
+      const selected = bibleExplorerState.currentBook === book ? ' selected' : '';
+      html += `<option value="${book}"${selected}>${book}</option>`;
+    }
+    html += '</optgroup>';
   }
-  html += '</optgroup>';
   bookSelect.innerHTML = html;
+}
+
+function getHGAvailableBooks() {
+  if (!Bible.isLoaded('hg')) return new Set();
+  const available = new Set();
+  const allBooks = [...BIBLE_BOOKS.ot, ...BIBLE_BOOKS.nt];
+  for (const book of allBooks) {
+    const v = Bible.getVerse('hg', book, 1, 1);
+    if (v) available.add(book);
+  }
+  return available;
+}
+
+// Build "About this translation" page for HG at root (/reader/bible/hg) — books list + methodology + Revelation summary
+function getHGAboutHTML() {
+  const hgBooks = getHGAvailableBooks();
+  const otBooks = BIBLE_BOOKS.ot.filter(b => hgBooks.has(b));
+  const ntBooks = BIBLE_BOOKS.nt.filter(b => hgBooks.has(b));
+
+  function buildCard(book) {
+    const chapters = Bible.getChapterCount(book) || '?';
+    return `<div class="bible-book-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'hg',book:'${book.replace(/'/g, "\\'")}',chapter:1}})">
+      <div class="book-card-header">
+        <span class="book-card-name">${book}</span>
+        <span class="book-card-chapters">${chapters} ch.</span>
+      </div>
+    </div>`;
+  }
+
+  return `
+    <div class="bible-explorer-welcome hg-about-page">
+      <div class="hg-about-header">
+        <h2>Hebrew Gospels (HG) Translation</h2>
+        <p class="hg-about-lead">The Hebrew text derives from a <strong>historical Hebrew manuscript tradition</strong> (Cochin Hebrew NT, dated at least to ~1700 AD). The <strong>English translation</strong>, Strong's number assignments, and analytical notes were produced using <strong>Claude Opus 4.6</strong>, with the goal of recovering the Hebrew-semantic layer — including Strong's numbers keyed to Hebrew where the text supports a Hebrew Vorlage.</p>
+      </div>
+
+      <section class="hg-about-section">
+        <h3>Books available</h3>
+        <p>Select a book below to read. Only books that have HG data in this app are listed.</p>
+        ${otBooks.length > 0 ? `
+        <h4 class="hg-about-sub">Old Testament</h4>
+        <div class="book-index-grid">${otBooks.map(buildCard).join('')}</div>
+        ` : ''}
+        ${ntBooks.length > 0 ? `
+        <h4 class="hg-about-sub">New Testament</h4>
+        <div class="book-index-grid">${ntBooks.map(buildCard).join('')}</div>
+        ` : ''}
+      </section>
+
+      <section class="hg-about-section">
+        <h3>Revelation: Notable changes from Greek</h3>
+        <p>In the HG Revelation translation, the following are among the most noteworthy differences from the Greek text (and from standard Greek-based translations):</p>
+        <ol class="hg-about-list">
+          <li><strong>Confidential counsels</strong> (סוֹדוֹת, H5475) instead of “revelation” (ἀποκάλυψις) — the book is framed as divine secrets delivered prophetically.</li>
+          <li><strong>Elders</strong> (זְקֵינִים) instead of “churches” (ἐκκλησίαι) — e.g. the seven lampstands as seven elders (Rev 1:4, 1:11, 1:20).</li>
+          <li><strong>Lovingkindness</strong> (חֶסֶד) instead of “grace” (χάρις) in the greeting (1:4).</li>
+          <li><strong>“Ruler and commander”</strong> (נָגִיד וּמְצַוֶּה) — verbatim Isaiah 55:4 in 1:5, absent from the Greek.</li>
+          <li><strong>Garden of Eden</strong> (גן עדן) instead of “Paradise of God” (2:6).</li>
+          <li><strong>Good testimony</strong> (עדות טובה) instead of “white stone,” with “name which none knows (experiences) except the one who received it” (2:16–17).</li>
+          <li><strong>Hope</strong> (תִּקְוָה, H8615) where Greek has “endurance” (ὑπομονή) — e.g. 2:2, 2:18, 3:10, 14:12.</li>
+        </ol>
+      </section>
+
+      <section class="hg-about-section">
+        <h3>Evidence that Revelation was originally Hebrew</h3>
+        <p>The HG notes include 877 verse-level “one-way Hebrew” markers across Revelation 1–22. These were classified by quality tier (script: <code>scripts/classify-revelation-markers.js</code>):</p>
+        <ul class="hg-about-list">
+          <li><strong>Tier 1 (decisive/structural):</strong> <strong>488</strong> — No Greek equivalent, verbatim OT quotes, Hebrew-only wordplay (e.g. סוֹדוֹת, בַּת קוֹל, מַחְתּוֹת; Isaiah/Ezekiel verbatim; פתח chain in ch. 3).</li>
+          <li><strong>Tier 2 (strong semantic shift):</strong> <strong>283</strong> — Different Hebrew root or clear contrast with Greek (e.g. חֶסֶד vs. χάρις, תִּקְוָה vs. ὑπομονή, elders vs. churches, Garden of Eden vs. Paradise).</li>
+          <li><strong>Tier 3 (Hebraizing register):</strong> <strong>106</strong> — Proper nouns and liturgical/idiom (YHWH, Yeshua, Geihinnom, menorah, “from eternity,” “by the hand of”).</li>
+        </ul>
+        <p><strong>Total: 877</strong> markers. The notes present this as evidence that the text was originally composed or transmitted in Hebrew and that the Greek is a translation from that Hebrew.</p>
+      </section>
+    </div>
+  `;
 }
 
 // Handle book dropdown change
@@ -6742,6 +7022,59 @@ async function displayBibleChapter(bookName, chapter, highlightVerse = null) {
   bibleExplorerState.currentBook = bookName;
   bibleExplorerState.currentChapter = chapter;
   bibleExplorerState.highlightedVerse = highlightVerse;
+  
+  // Show HG chapter study notes in research panel when available
+  showHGChapterNotes(bookName, chapter);
+}
+
+function showHGChapterNotes(bookName, chapter) {
+  const panel = document.getElementById('research-panel');
+  const contentEl = panel ? panel.querySelector('.research-panel-content') : null;
+  if (!contentEl) return;
+  
+  // Only show when panel is not already displaying Strong's content
+  if (panel.classList.contains('open') && contentEl.querySelector('.strongs-lemma')) return;
+  
+  const chNotes = getHGChapterNotes(bookName, chapter);
+  if (!chNotes || !chNotes.summary) {
+    // Reset to default welcome if no HG notes
+    if (!panel.classList.contains('open')) {
+      contentEl.innerHTML = '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+    }
+    return;
+  }
+  
+  // Load HG notes if not yet loaded
+  if (!hgNotesData) {
+    loadHGNotes().then(() => {
+      const notes = getHGChapterNotes(bookName, chapter);
+      if (notes && notes.summary) renderHGChapterNotes(contentEl, panel, bookName, chapter, notes);
+    });
+    return;
+  }
+  
+  renderHGChapterNotes(contentEl, panel, bookName, chapter, chNotes);
+}
+
+function renderHGChapterNotes(contentEl, panel, bookName, chapter, chNotes) {
+  let html = '<button class="research-panel-close-btn" onclick="closeStrongsPanel()" title="Close">✕</button>';
+  html += `<div class="hg-chapter-notes">`;
+  html += `<div class="hg-chapter-notes-title">${bookName} ${chapter} — Study Notes</div>`;
+  html += `<div class="hg-chapter-notes-summary">${chNotes.summary}</div>`;
+  html += '</div>';
+  
+  contentEl.innerHTML = html;
+  
+  // Auto-open the panel
+  if (!panel.classList.contains('open')) {
+    if (window.innerWidth > 768) {
+      panel.style.width = typeof getResearchPanelWidth === 'function' ? getResearchPanelWidth() : '380px';
+    }
+    requestAnimationFrame(() => {
+      panel.classList.add('open');
+      document.body.classList.add('research-panel-open');
+    });
+  }
 }
 
 // Update chapter navigation buttons
