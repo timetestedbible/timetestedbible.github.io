@@ -1155,8 +1155,8 @@ const SYMBOL_DICTIONARY = {
     sentence: 'Without covenant covering — exposed before God and the nations because the garment of covenant relationship has been stripped away or never obtained.',
     opposite: 'Clothed / covered — brought under covenant protection. God covers nakedness (Gen 3:21, Ezek 16:8); the faithful cover the naked (Isa 58:7, Ezek 18:7)',
     rank: 0,
-    category: 'Uncategorized',
-    subcategory: null,
+    category: 'Covenant & Relationship',
+    subcategory: 'Unfaithfulness',
     link: '/research/symbols/naked/'
   },
 
@@ -1822,6 +1822,20 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/tyre/'
   },
 
+  'untimely-fig': {
+    key: 'untimely-fig',
+    name: 'UNTIMELY FIG',
+    words: ['untimely figs', 'untimely birth', 'unripe fig', 'green figs', 'falling fig'],
+    strongs: ['G3653', 'H6291', 'H5309', 'H5034'],
+    meaning: 'Potential that never matured',
+    sentence: 'Potential that never matured — formed in the wrong season, it clings but never ripens, and is shed when the new season\'s life arrives.',
+    opposite: 'The firstripe fig *bikkurah*) — the precious first Fruit eagerly desired (Hos 9:10); and the green fig *pag*) that appears in Song 2:13 heading *toward* ripeness',
+    rank: 0,
+    category: 'Works & Evidence',
+    subcategory: 'Rebellion\'s Fruit',
+    link: '/research/symbols/untimely-fig/'
+  },
+
   'virgin': {
     key: 'virgin',
     name: 'VIRGIN',
@@ -1960,6 +1974,20 @@ const SYMBOL_DICTIONARY = {
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/wrath/'
+  },
+
+  'year': {
+    key: 'year',
+    name: 'YEAR',
+    words: ['year', 'years'],
+    strongs: ['H8141', 'G1763'],
+    meaning: 'A revolution of time',
+    sentence: 'A revolution of time — from a single calendar cycle to a complete Jubilee revolution, the appointed turn that brings all things back to their origin.',
+    opposite: 'Day — concentrated judgment. Where "year" is the comprehensive restoration-cycle, "day" is the singular moment of divine action. Isaiah consistently pairs them: "the **day** of vengeance" with "the **year** of [Jubilee concept]." The day destroys the bondage-system; the year establishes the liberty.',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/year/'
   },
 
   'zion': {

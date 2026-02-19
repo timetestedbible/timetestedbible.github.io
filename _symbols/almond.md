@@ -145,6 +145,8 @@ When Jacob sends gifts to the unknown ruler of Egypt (who is, unknown to him, hi
 
 - **$light** — The perpetual $light burns in almond-cups. $light = visible example of obedience. The almond connects $light to wakefulness: the one who watches is the one whose $light does not go out.
 
+- **$untimely-fig** — The $almond blooms in January–February on bare wood — the first tree to wake. At the same time, the winter fig (*olynthos*) clings dark and unripe on bare branches. Same landscape, opposite trajectories: the $almond = dead wood producing life (Aaron's rod, Num 17:8); the $untimely-fig = potential that never matured, shed when spring arrives. The Watcher-tree announces the season; the untimely fig is what the Watcher finds when He inspects.
+
 ---
 
 ## Occurrences by Sense

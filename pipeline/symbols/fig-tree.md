@@ -13,7 +13,7 @@ all_verses: [Gen 3:7, Num 13:23, Num 20:5, Deut 8:8, Judg 9:10-11, 1Ki 4:25, 2Ki
 rev: 1
 churn: 1.00
 inputs: {symbols/fruit: [1, 1.00], symbols/harvest: [1, 1.00], symbols/vine: [0, 0], symbols/wind: [1, 1.00], symbols/shadow: [1, 1.00]}
-dependents: [symbols/harvest, symbols/fruit, symbols/vine]
+dependents: [symbols/harvest, symbols/fruit, symbols/vine, symbols/untimely-fig]
 ---
 
 ## Context Bag

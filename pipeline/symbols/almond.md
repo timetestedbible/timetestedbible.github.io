@@ -13,7 +13,7 @@ all_verses: [Gen 43:11, Exo 25:33, Exo 25:34, Exo 37:19, Exo 37:20, Num 17:8, Ec
 rev: 1
 churn: 1.00
 inputs: {symbols/perpetual-sleep: [1, 1.00]}
-dependents: []
+dependents: [symbols/untimely-fig]
 ---
 
 ## Context Bag

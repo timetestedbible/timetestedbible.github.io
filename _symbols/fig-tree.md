@@ -125,7 +125,7 @@ The parable maps directly onto Jesus' three-year ministry to Israel. One more ye
 
 > *"And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling **fig** from the **fig tree**."* — Isa 34:4
 
-The word "untimely figs" in Revelation is G3653 *olynthos* — a late, winter fig that never ripened. It clings to the branch through the cold season but never matures. When the great $wind comes, it is shaken loose and falls.
+The word "untimely figs" in Revelation is G3653 *olynthos* — a late, winter fig that never ripened. It clings to the branch through the cold season but never matures. When the great $wind comes, it is shaken loose and falls. (See the full $untimely-fig study for the agricultural mechanism, the Hebrew/Greek word connections, and the broader prophetic contexts.)
 
 Here the $sun-moon-stars — the governing authority hierarchy — and the fig tree merge into a single image. The $stars represent subordinate authorities; the unripe figs represent covenant participants who never produced $fruit. They fall together because they are the same thing: people in positions of covenant authority who never bore what they were supposed to bear, shaken loose by the $wind of divine judgment (invisible spiritual power executing God's purposes).
 
@@ -195,9 +195,11 @@ The fig tree withers. The $mountain is cast into the sea (the nations). The reli
 
 - **$shadow** — The fig tree casts a $shadow: covenant protection for those who dwell under it. But $shadow is only legitimate when the body casting it is real. A barren fig tree's $shadow is false covering — leaves without substance, like the bramble's shade (Judg 9:15) or Egypt's $shadow (Isa 30:2–3). When the cursed fig tree withers (Mk 11:20), the $shadow vanishes.
 
-- **$wind** — Invisible spiritual power that shakes the unfruitful loose. Rev 6:13: figs cast by a mighty $wind. The same $wind gathers or scatters at God's command (Jer 49:36, Mat 24:31). When God sends His executing $wind, everything unripe is torn from the branch.
+- **$wind** — Invisible spiritual power that shakes the unfruitful loose. Rev 6:13: figs cast by a mighty $wind. The same $wind gathers or scatters at God's command (Jer 49:36, Mat 24:31). When God sends His executing $wind, everything unripe is torn from the branch. The $untimely-fig study traces the biological mechanism: the tree's own new growth redirects life to new $fruit, weakening the old fruit's attachment — the $wind then dislodges what was already internally disconnected.
 
 - **$sun-moon-stars** — The governing authority hierarchy. In Rev 6:12–13, the darkening of $sun-moon-stars and the falling of figs occur in the same judgment sequence. Stars falling like figs (Isa 34:4, Rev 6:13) merges two symbolic registers: authorities who never matured in covenant fruitfulness are shaken from their positions.
+
+- **$untimely-fig** — The specific study of the winter fig (G3653 *olynthos*) that clings through the cold season but never ripens. Covers the agricultural cycle, the biological abscission mechanism, the $almond as the opposite trajectory (dead wood → life while the olynthos → falls), the wind/Spirit identity, and the *qayits/qets* wordplay (summer = the end). The $untimely-fig is what happens to one stage of the fig tree's diagnostic range: potential that formed in the wrong season and falls when the new season's life arrives.
 
 - **$curse** — The covenant penalty clause. The cursed fig tree (Mat 21:19) is the $curse activated: the covenant indicator that showed leaves but no $fruit triggers the self-executing consequence of covenant violation. Bad figs become "a $curse" among the nations (Jer 24:9, 29:18). The fig tree's barrenness is what makes the $curse visible.
 

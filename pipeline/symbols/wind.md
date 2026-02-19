@@ -13,7 +13,7 @@ all_verses: [John 3:8, Zechariah 6:5, Zechariah 2:6, Jeremiah 49:36, Matthew 24:
 rev: 1
 churn: 1.00
 inputs: {}
-dependents: []
+dependents: [symbols/untimely-fig]
 source: symbols/WIND.md
 ---
 

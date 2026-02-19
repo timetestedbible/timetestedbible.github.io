@@ -4108,13 +4108,19 @@ function showVerseTooltip(el, event) {
   
   // Try to get verse text
   let verseText = null;
+  const trans = (typeof currentTranslation !== 'undefined') ? currentTranslation : 'kjv';
   if (typeof getVerseText === 'function') {
     verseText = getVerseText(fullRef);
   }
   if (!verseText && typeof Bible !== 'undefined') {
-    const trans = (typeof currentTranslation !== 'undefined') ? currentTranslation : 'kjv';
     const v = Bible.getVerse(trans, book, chapter, verse);
     if (v) verseText = v.text;
+  }
+  
+  // Apply translation patches if available, strip PUA markers for plain-text display
+  if (verseText && typeof TranslationPatches !== 'undefined' && TranslationPatches._data) {
+    verseText = TranslationPatches.applyPatches(fullRef, verseText, trans);
+    verseText = verseText.replace(/[\uE001\uE010-\uE01F]/g, '');
   }
   
   // Create tooltip
