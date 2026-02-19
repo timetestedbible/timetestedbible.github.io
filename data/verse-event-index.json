@@ -10632,7 +10632,13 @@
       "can_link_calendar": false
     },
     "Jeremiah 52:28": {
-      "events": [],
+      "events": [
+        {
+          "id": "jerusalem-captured-2-adar",
+          "title": "⚔️ Jerusalem Captured - Jehoiachin Surrenders",
+          "type": "conquest"
+        }
+      ],
       "durations": [
         {
           "id": "regnal-year-evidence",
@@ -10640,9 +10646,9 @@
         }
       ],
       "date_type": "reign_year",
-      "resolution": "partial",
+      "resolution": "resolved",
       "can_link_timeline": true,
-      "can_link_calendar": false
+      "can_link_calendar": true
     },
     "Genesis 1:5": {
       "events": [],
@@ -21192,12 +21198,32 @@
       "can_link_calendar": false
     },
     "2 Kings 24:12": {
-      "events": [],
+      "events": [
+        {
+          "id": "jerusalem-captured-2-adar",
+          "title": "⚔️ Jerusalem Captured - Jehoiachin Surrenders",
+          "type": "conquest"
+        }
+      ],
       "durations": [],
       "date_type": "reign_year",
-      "resolution": "unresolved",
-      "can_link_timeline": false,
-      "can_link_calendar": false
+      "resolution": "resolved",
+      "can_link_timeline": true,
+      "can_link_calendar": true
+    },
+    "2 Kings 24:13": {
+      "events": [
+        {
+          "id": "jerusalem-captured-2-adar",
+          "title": "⚔️ Jerusalem Captured - Jehoiachin Surrenders",
+          "type": "conquest"
+        }
+      ],
+      "durations": [],
+      "date_type": "reign_year",
+      "resolution": "resolved",
+      "can_link_timeline": true,
+      "can_link_calendar": true
     },
     "2 Kings 25:25": {
       "events": [],
@@ -43724,13 +43750,17 @@
     "Jeremiah 52:28": {
       "verse": "Jeremiah 52:28",
       "has_timeline_link": true,
-      "has_calendar_link": false,
+      "has_calendar_link": true,
       "timeline_target": {
-        "type": "duration",
-        "id": "regnal-year-evidence",
-        "title": "Proof of Regnal Year Counting: Neb 7th vs 8th"
+        "type": "event",
+        "id": "jerusalem-captured-2-adar",
+        "title": "Jerusalem Captured - Jehoiachin Surrenders"
       },
-      "calendar_target": null
+      "calendar_target": {
+        "type": "event",
+        "id": "jerusalem-captured-2-adar",
+        "title": "Jerusalem Captured - Jehoiachin Surrenders"
+      }
     },
     "Genesis 1:5": {
       "verse": "Genesis 1:5",
@@ -52953,10 +52983,33 @@
     },
     "2 Kings 24:12": {
       "verse": "2 Kings 24:12",
-      "has_timeline_link": false,
-      "has_calendar_link": false,
-      "timeline_target": null,
-      "calendar_target": null
+      "has_timeline_link": true,
+      "has_calendar_link": true,
+      "timeline_target": {
+        "type": "event",
+        "id": "jerusalem-captured-2-adar",
+        "title": "Jerusalem Captured - Jehoiachin Surrenders"
+      },
+      "calendar_target": {
+        "type": "event",
+        "id": "jerusalem-captured-2-adar",
+        "title": "Jerusalem Captured - Jehoiachin Surrenders"
+      }
+    },
+    "2 Kings 24:13": {
+      "verse": "2 Kings 24:13",
+      "has_timeline_link": true,
+      "has_calendar_link": true,
+      "timeline_target": {
+        "type": "event",
+        "id": "jerusalem-captured-2-adar",
+        "title": "Jerusalem Captured - Jehoiachin Surrenders"
+      },
+      "calendar_target": {
+        "type": "event",
+        "id": "jerusalem-captured-2-adar",
+        "title": "Jerusalem Captured - Jehoiachin Surrenders"
+      }
     },
     "2 Kings 25:25": {
       "verse": "2 Kings 25:25",
