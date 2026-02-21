@@ -203,11 +203,11 @@ The act of abortion is itself covenant-breaking. You cannot simultaneously break
 
 ## Part X: The Resurrection Math — The Numbers Confirm the Teaching
 
-About 117 billion people have ever been born (Population Reference Bureau). Pre-industrial child mortality was devastating — roughly 40-50% of all births died before age 5. That's about 50-55 billion children who died across human history.
+The commonly cited figure is ~117 billion total humans ever born (Population Reference Bureau), but this assumes 200,000 years of human history. On a biblical timeline from Abraham forward (the covenant-accessible population), the total is closer to ~49 billion. Since Christ (when the covenant opened to all nations), ~43 billion. Pre-industrial child mortality was devastating — roughly 40-50% of all births died before age 5.
 
 ### If ALL children are automatically saved:
 
-- ~55 billion children + ~124 million saved adults (0.2% per Jer 3:14) ≈ 55 billion total
+- ~55 billion children + ~86-99 million saved adults (0.2% of ~43-49 billion covenant-accessible population per Jer 3:14) ≈ 55 billion total
 - That's 47% of all humans ever born
 - Jesus: "Few there be that find it" (Matt 7:14). "Many are called, but few are chosen" (Matt 22:14)
 - 47% is not "few"
@@ -221,12 +221,37 @@ The traditional reading maps this as the Levant corridor — modern Israel, Leba
 
 *(See maps: PromisedLandMap.jpg = traditional boundaries; PromisedLandMapBroad.jpg = Greater Israel boundaries; PromisedLandThreeScales.jpg = all three scales compared)*
 
+### The land has a designed capacity — God said so
+
+God Himself confirmed that the Promised Land has a population capacity. At the conquest, Israel was too small to fill it:
+
+> *"I will not drive them out from before thee in one year; lest the land become desolate, and the beast of the field multiply against thee. By little and little I will drive them out from before thee, until thou be increased, and inherit the land."* — Exod 23:29–30
+
+The land goes wild if underpopulated. God gave it incrementally — "by little and little" — because the territory has a RIGHT-SIZED population, and Israel hadn't grown into it yet.
+
+### Solomon's golden age — the historical benchmark
+
+By Solomon's era (~970 BC), the population had grown to ~5–6 million, and the density in the core settled territory was approximately **1.6 acres per person**. This era produced the FIRST occurrence of the phrase "every man under his vine and under his fig tree" (1 Ki 4:25) — the biblical picture of prosperous, spacious, agricultural life.
+
+Apply Solomon's golden-age density to the FULL Promised Land:
+
+| Territory | At Solomon-era density (~1.7 acres/person) | Capacity |
+|---|---|---|
+| Traditional Promised Land (~300K sq mi) | ~110 million | Full "vine and fig tree" density |
+| Greater Israel (~900K sq mi) | ~330 million | Full "vine and fig tree" density |
+
+The 0.2% remnant ratio of Jeremiah 3:14 applied to the covenant-accessible population (~43-49 billion since Abraham/Christ) produces ~86-99 million firstfruits. Of the 8 billion alive today, 0.2% is just ~16 million. These numbers fall well within the land's capacity at Solomon-era density. The mature "vine and fig tree" density (110-330 million) is reached as the mortal population grows alongside the immortal firstfruits during the millennium.
+
+### The punchline — bedroom vs. homestead
+
+Now compare the two models at this historically-confirmed density:
+
 | Scenario | Total Saved | Traditional (~300K sq mi) | Greater Israel (~900K sq mi) |
 |---|---|---|---|
-| All children saved | ~55 billion | ~183,000/sq mi (2× Manhattan) | ~61,000/sq mi (still denser than Manhattan) |
-| Household model | ~200-500 million | ~667-1,667/sq mi (like England) | ~222-556/sq mi (like rural France) |
+| All children saved | ~55 billion | ~150 sq ft per person (a small bedroom) | ~450 sq ft per person (a studio apartment) |
+| Household model (~0.2%) | ~86-99 million | ~2.0 acres per person (a homestead) | ~5.8 acres per person (a small farm) |
 
-Even the most generous land reading cannot rescue the all-children model from absurd population density.
+The all-children model gives each person a bedroom. The household model gives each person a homestead with a vineyard — exactly what the prophets describe. Even at the most generous land reading, the all-children model cannot produce the agricultural, spacious life that Scripture promises.
 
 ### Steel-man test — the New Jerusalem (Revelation 21:16-17)
 
@@ -263,7 +288,7 @@ The measurement per side is שְׁנֵים עָשָׂר אֶלֶף (shneim asar 
 
 **Reading 1 — 12,000 individual resurrection plots per side:**
 - Base: 12,000 × 12,000 = **144 million** plots
-- Cross-check: 144 million ÷ ~117 billion ever born = **~0.12%**
+- Cross-check: 144 million ÷ ~43-49 billion covenant-accessible population = **~0.29-0.33%** (close to 0.2%)
 - Cross-check: 144 million ÷ ~61 billion since the cross = **~0.24%**
 - The Jeremiah 3:14 ratio ("one from a city, two from a thousand") = **~0.2%**
 - The numbers converge independently.
@@ -304,7 +329,7 @@ Give the opposing view every advantage. Use the stadia reading — 1.9 million s
 | Scenario | Total Saved | New Jerusalem at stadia scale (~1.9M sq mi) |
 |---|---|---|
 | All children saved | ~55 billion | ~28,900/sq mi (Manhattan density) |
-| Household model | ~200-500 million | ~105-263/sq mi (like Vermont) |
+| Household model (~0.2%) | ~16-86 million | ~8-45/sq mi (spacious rural) |
 
 Even granting a continent-sized city that extends into outer space, 55 billion people still pack it to Manhattan density — in a city described as having golden streets, a river, orchards of twelve fruits, and open gates. The household model yields Vermont-level spaciousness.
 
