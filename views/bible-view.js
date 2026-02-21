@@ -484,7 +484,7 @@ const BibleView = {
           <div id="research-panel" class="research-panel">
             <div class="research-panel-resize" onmousedown="startStrongsResize(event)"></div>
             <div id="research-panel-content" class="research-panel-content">
-              <div class="research-panel-welcome">Click on words to dig deeper</div>
+              ${typeof renderDefaultResearchContent === 'function' ? renderDefaultResearchContent() : '<div class="research-panel-welcome">Click on words to dig deeper</div>'}
             </div>
           </div>
         </div>

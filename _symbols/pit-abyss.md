@@ -148,6 +148,48 @@ The beast's trajectory is: *was* (active) → *is not* (contained) → *shall as
 
 This sequence matters for the $fall-of-babylon chain. The contained forces emerge. The $smoke of their emergence darkens the world. The $beast and $serpent exercise their brief, loosed authority. And then comes the final judgment — not back into the pit, but into the lake of $fire, where there is no $key, no $seal to break, and no release.
 
+### The *Tehom* Beneath — What the Abyss Actually Is
+
+The word G12 *abyssos* ("depthless, bottomless") is not a New Testament invention. In the Septuagint (LXX), it is the standard translation of H8415 *tehom* — the primordial "deep" of Genesis 1:2:
+
+> *"And the earth was without form, and void; and $[darkness] was upon the face of the **deep** (H8415 *tehom*). And the Spirit of God moved upon the face of the $[waters]."* — Gen 1:2
+
+When John writes *abyssos* in Revelation, a Hebrew ear hears *tehom*. And the two-word phrase in Rev 9:1 — "the **pit** (G5421 *phrear*) of the **abyss** (G12 *abyssos*)" — distinguishes two things: the *phrear* is the physical shaft (a well, a cistern — the same word used for Jacob's well in Jn 4:11), and the *abyssos* is the depthless realm below it. The "bottomless pit" is literally **the well that opens into the primordial deep**. The KJV collapses this into one phrase, but the Greek keeps them separate. John even flags the Hebrew layer explicitly: the king of the abyss has a name "in the **Hebrew tongue** — Abaddon" (Rev 9:11).
+
+H8415 *tehom* appears 36 times in the OT. It is always associated with vast subterranean waters — the deep that lies *beneath* everything:
+
+- Gen 49:25 — *"blessings of the **deep** (tehom) that **coucheth beneath**"*
+- Deut 33:13 — *"the **deep** that coucheth beneath"*
+- Ps 78:15 — *"gave them drink as out of the great **depths** (tehom)"*
+- Prov 8:24, 27–28 — Wisdom present when God set bounds on the *tehom*
+
+The *tehom* is distinct from the $sea (H3220 *yam*). The sea is the gathered surface waters — the chaotic mass of nations. The *tehom* is deeper: the subterranean supply, the primordial ocean beneath the earth, the pre-creation waters over which God's Spirit brooded. In the vertical structure of creation: waters above the firmament → firmament (heaven) → seas (surface) → dry land → the *tehom* (beneath all).
+
+Genesis 1:2 presents a parallel structure that illuminates what *tehom* is:
+
+| Line A | Line B |
+|--------|--------|
+| $darkness was upon the face of | the Spirit of God moved upon the face of |
+| **the deep** (*tehom*) | **the waters** (*mayim*) |
+
+If this is synonymous parallelism — and the verse structure suggests it is — then the *tehom* is the waters, and the "darkness" over it corresponds to the Spirit of God. Psalm 139:12 confirms this: *"the $[darkness] is as $[light] to you."* The "darkness" over the *tehom* is not the absence of God — it is the **concealed presence** of God's Spirit before revelation begins. The "letting" of light is the *uncovering* of what was already there.
+
+This reframes the abyss entirely. The *tehom/abyssos* is not an inherently evil realm. It is the **pre-ordered state** — the raw creation material over which God broods before He begins separating, naming, and structuring. What makes it dangerous is not its nature but its *unboundedness*. God's creative acts in Genesis 1 are acts of *containment* — separating light from darkness, waters above from waters below, sea from land. The *tehom* is what exists before those separations. When its boundaries fail, chaos returns.
+
+This is precisely what happens in the flood:
+
+> *"The fountains of the great **deep** (tehom) were **broken up**."* — Gen 7:11
+
+The *tehom* erupts through its containment. The separations of Day 2 (waters above / waters below) and Day 3 (sea / land) collapse. Creation runs backward. The deep reclaims everything.
+
+And this is what happens in Revelation:
+
+> *"He opened the **well** (phrear) of the **abyss** (abyssos); and there arose **smoke** out of the well."* — Rev 9:2
+
+The same structure — the deep breaking through its seal. But now what surges up is not water but $smoke, $darkness, and demonic powers. The flood was the physical un-creation. Revelation's opening of the abyss is the spiritual un-creation — the pre-ordered state erupting back through the boundaries God set. Both are the *tehom* unleashed.
+
+And both are reversed. After the flood, God re-establishes the boundaries (Gen 8:2 — "the fountains of the deep were **stopped**"). After Revelation's abyss erupts, the $serpent is bound, the abyss is sealed again (Rev 20:1–3), and eventually the entire structure is replaced by a new heaven and new earth where there is "no more $sea" (Rev 21:1) — and, by implication, no more *tehom* to erupt.
+
 ### The Fear–Pit–Snare Triad
 
 > *"Fear, and the **pit**, and the snare, are upon thee, O inhabitant of the earth."* — Isa 24:17
@@ -217,7 +259,9 @@ Three times in one chapter (vv. 18, 24, 28, 30): God delivers from the pit. The 
 
 - **$darkness** — "Thou hast laid me in the lowest pit, in darkness, in the deeps" (Ps 88:6). $darkness is hidden, concealed disobedience. The pit is the *place* of that hiddenness — where entities are removed from sight and stripped of visible influence. When the pit opens (Rev 9:2), $darkness spreads as the concealed forces are released into the world.
 
-- **$sea** — The $sea represents chaotic nations and peoples. The pit shares the vocabulary of "the deeps" (G12 *abyssos* is the LXX rendering of the primordial deep in Gen 1:2). Beasts emerge from the $sea (Dan 7:3, Rev 13:1) and from the pit (Rev 11:7, 17:8) — both are reservoirs from which powers arise. The pit is the structured, sealed version of what the $sea is in its uncontained form.
+- **$sea** — The $sea represents chaotic nations and peoples on the surface. The *tehom* (H8415) is deeper — the primordial subterranean waters beneath everything, which the LXX renders as G12 *abyssos*. Beasts emerge from the $sea (Dan 7:3, Rev 13:1) and from the abyss (Rev 11:7, 17:8) — both are reservoirs from which powers arise, but the $sea is the surface chaos of nations, while the *tehom/abyssos* is the deeper, pre-creation chaos that predates even the sea. The pit is the containment structure over the *tehom*; the $sea is what gathers on the surface above it.
+
+- **$water** — The *phrear* (G5421) in Rev 9:1 — "well of the abyss" — is the same word used for Jacob's well (Jn 4:11), where Jesus offers living $water. The well can reach two very different sources: a spring of living water (the fountain of life) or the *tehom/abyssos* (the primordial deep). Same physical structure — opposite destinations. The cistern-well-fountain spectrum connects the $water study, the $sheol study, and the pit-abyss: fountain → well → cistern → pit → *tehom*.
 
 - **$fire** — $fire is God's covenant standard in active contact. The pit contains $fire — when opened, $smoke arises "as the smoke of a great furnace" (Rev 9:2). The pit is not the $fire itself but the vessel that holds the $fire's effects in check. The lake of $fire is the pit's permanent successor — the containment without a $key.
 
@@ -299,8 +343,9 @@ Exod 21:33–34, Lev 11:36, 1 Sam 13:6, 2 Sam 17:9, 2 Sam 18:17, 2 Sam 23:15–1
 | H953 | *bôwr* | cistern, pit, dungeon — from H952 "to bore" | ~50× OT. Primary word for pit-as-containment |
 | H6354 | *pachath* | pit (as trap) — always snare/trap context | ~8× OT. Part of *pachad–pachath–pach* triad |
 | H7845 | *shachath* | pit, destruction, corruption — from H7743 "to sink" | ~23× OT. Overlaps death/decay imagery |
-| G12 | *abyssos* | the abyss, "depthless" — alpha-privative + *bythos* (depth) | 9× NT. LXX renders H8415 *tehom* (Gen 1:2 deep) |
-| G5421 | *phrear* | well, cistern, pit — physical structure used as prison | 7× NT. Combined with G12 in Rev 9:1 "pit of the abyss" |
+| H8415 | *tehom* | the deep — an abyss as a surging mass of water, the subterranean water-supply | 36× OT. From H1949 *hum* (to agitate). The primordial deep of Gen 1:2. LXX: *abyssos* |
+| G12 | *abyssos* | the abyss, "depthless" — alpha-privative + *bythos* (depth) | 9× NT. LXX translation of H8415 *tehom*. Rev uses it for the sealed realm beneath |
+| G5421 | *phrear* | well, cistern, pit — physical structure (same word as Jacob's well, Jn 4:11) | 7× NT. Combined with G12 in Rev 9:1 — "well (*phrear*) of the abyss (*abyssos*)" |
 | H6485 | *paqad* | to visit, inspect, attend to — "after many days visited" (Isa 24:22) | Both positive (release) and negative (judgment) force |
 | H3724 | *kopher* | ransom, covering price, atonement — "deliver him from going down to the pit: I have found a ransom" (Job 33:24) | |
 | G2808 | *kleio* | to shut — "shut him up" (Rev 20:3) | |
@@ -317,3 +362,5 @@ KJV translates H953 as "pit," "cistern," "dungeon," "well." G12 appears as "deep
 - **$serpent** — The pit's most prominent prisoner. How does the deceiver who dug pits for others end up confined in one — and what happens when the containment period ends?
 - **$darkness** — The pit's interior condition. What is the relationship between enforced containment and concealed disobedience? Why does opening the pit spread darkness rather than light?
 - **$fall-of-babylon** — The beast ascends from the pit, Babylon falls, and the beast returns to perdition. How does the pit function as the staging ground for the final sequence of God's covenant judgment?
+- **$water** — The *phrear* ("well") of the abyss (Rev 9:1) uses the same word as Jacob's well (Jn 4:11), where Jesus offers living water. A well can reach a spring of life or the primordial *tehom*. How does the fountain → well → cistern → pit → *tehom* spectrum illuminate the choice between life and death in Jer 2:13?
+- **$sheol** — Sheol (H7585) and the pit (*bowr*) parallel in Hebrew poetry (Ps 30:3, Isa 14:15), but sheol is death's demand on flesh while the pit contains the living in powerlessness. Where do these categories merge, and what does it mean that the *tehom* underlies both?

@@ -6,29 +6,12 @@ layout: default
 </article>
 <script>
 (function() {
-  // Static article is shown immediately for SEO and fast first-paint.
-  // Once the SPA initializes, INIT_FROM_URL routes /research/symbols/{key}/
-  // into the reader view — which fetches this same page, extracts the article,
-  // and renders it inside the reader's infrastructure (with push panel, resize, etc).
-  // We just need to hide the static article once the SPA takes over.
-  var symbolArticle = document.querySelector('.symbol-study-content');
-  var contentArea = document.getElementById('content-area');
-
-  // Hide SPA content area until it's ready (prevent flash of empty content)
-  if (contentArea) contentArea.style.display = 'none';
-
-  document.addEventListener('DOMContentLoaded', function() {
-    if (typeof AppStore === 'undefined') return;
-
-    AppStore.subscribe(function(state) {
-      // Once the SPA has routed to the reader view, hide the static article
-      // and show the SPA content area
-      var isReaderView = state.content && state.content.view === 'reader';
-      if (isReaderView) {
-        if (symbolArticle) symbolArticle.style.display = 'none';
-        if (contentArea) contentArea.style.display = '';
-      }
-    });
-  });
+  // Cache the Jekyll-rendered article HTML so the SPA can reuse it
+  // without re-fetching the page. Runs synchronously before DOMContentLoaded,
+  // so the HTML is saved before ContentManager replaces #content-area.
+  var article = document.querySelector('article.symbol-study-content');
+  if (article) {
+    window.__jekyllArticle = { type: 'symbol', html: article.innerHTML };
+  }
 })();
 </script>

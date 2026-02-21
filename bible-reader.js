@@ -5050,9 +5050,39 @@ function closeStrongsPanel(skipDispatch = false) {
   }
 }
 
-// Render default research panel content (context-aware, TBD)
+// Render verse study cards for the current chapter (if any exist)
+function renderVerseStudyCards() {
+  const book = bibleExplorerState.currentBook;
+  const ch = bibleExplorerState.currentChapter;
+  if (!book || !ch || !window.VERSE_STUDY_INDEX) return '';
+  const abbrev = (typeof abbreviateBookName === 'function') ? abbreviateBookName(book) : book;
+  const prefix = abbrev + ' ' + ch + ':';
+  const matches = window.VERSE_STUDY_INDEX.filter(function(s) { return s.ref && s.ref.startsWith(prefix); });
+  if (matches.length === 0) return '';
+  let html = '<div class="research-panel-studies">';
+  html += '<div class="research-panel-studies-header">Verse Studies</div>';
+  matches.forEach(function(s) {
+    html += '<button class="research-panel-study-card" onclick="AppStore.dispatch({type:\'SET_VIEW\',view:\'reader\',params:{contentType:\'verse-studies\',study:\'' + s.id + '\'}})">'
+      + '<span class="study-card-ref">' + s.ref + '</span>'
+      + '<span class="study-card-title">' + s.title + '</span>'
+      + '<span class="study-card-desc">' + s.desc + '</span>'
+      + '</button>';
+  });
+  html += '</div>';
+  return html;
+}
+
+// Render default research panel content — verse study cards + welcome message
 function renderDefaultResearchContent() {
-  return '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+  return renderVerseStudyCards() + '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+}
+
+// Verse study lookup — check if a verse has an associated verse study
+function getVerseStudy(bookName, chapter, verse) {
+  if (!window.VERSE_STUDY_INDEX || !bookName) return null;
+  const abbrev = (typeof abbreviateBookName === 'function') ? abbreviateBookName(bookName) : bookName;
+  const ref = abbrev + ' ' + chapter + ':' + verse;
+  return window.VERSE_STUDY_INDEX.find(function(s) { return s.ref === ref; }) || null;
 }
 
 // Resize functionality for Strong's sidebar
@@ -6903,6 +6933,10 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
     const crossRefHtml = hasCrossRefs
       ? `<span class="verse-cross-ref" onclick="showCrossRefPanel('${bookName}', ${chapter}, ${verse.verse}, event)" title="Cross References">🔗</span>`
       : `<span class="verse-cross-ref-spacer"></span>`;
+    const vstudy = (typeof getVerseStudy === 'function') ? getVerseStudy(bookName, chapter, verse.verse) : null;
+    const verseStudyHtml = vstudy
+      ? `<span class="verse-study-ref" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${vstudy.id}'}})" title="Verse Study: ${vstudy.title}">📜</span>`
+      : '';
     const tlData = (typeof getVerseTimelineEvents === 'function') ? getVerseTimelineEvents(bookName, chapter, verse.verse) : null;
     let timelineHtml;
     if (tlData && tlData.events.length > 0) {
@@ -6917,7 +6951,7 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
     const interlinearBtn = `<span class="verse-interlinear-ref" onclick="showInterlinear('${bookName.replace(/'/g, "\\'")}', ${chapter}, ${verse.verse}, event)" title="${interlinearTitle}">☰</span>`;
     const verseNumSpan = `<span class="bible-verse-number" onclick="copyVerseReference('${bookName}', ${chapter}, ${verse.verse})" title="Click to copy reference">${verse.verse}</span>`;
     html += `<div class="bible-explorer-verse${origLangClass}" id="verse-${verse.verse}">
-      <div class="verse-meta">${bookRefHtml}${crossRefHtml}${timelineHtml}${interlinearBtn}${verseNumSpan}</div>
+      <div class="verse-meta">${bookRefHtml}${crossRefHtml}${verseStudyHtml}${timelineHtml}${interlinearBtn}${verseNumSpan}</div>
       <span class="bible-verse-text">${verseText}</span>
     </div>`;
   }
@@ -7043,15 +7077,13 @@ function showHGChapterNotes(bookName, chapter) {
   
   const chNotes = getHGChapterNotes(bookName, chapter);
   if (!chNotes || !chNotes.summary) {
-    // Reset to default welcome if no HG notes
-    if (!panel.classList.contains('open')) {
-      contentEl.innerHTML = '<div class="research-panel-welcome">Click on words to dig deeper</div>';
-    }
+    contentEl.innerHTML = renderDefaultResearchContent();
     return;
   }
   
-  // Load HG notes if not yet loaded
+  // Load HG notes if not yet loaded — show verse study cards while waiting
   if (!hgNotesData) {
+    contentEl.innerHTML = renderDefaultResearchContent();
     loadHGNotes().then(() => {
       const notes = getHGChapterNotes(bookName, chapter);
       if (notes && notes.summary) renderHGChapterNotes(contentEl, panel, bookName, chapter, notes);
@@ -7064,6 +7096,7 @@ function showHGChapterNotes(bookName, chapter) {
 
 function renderHGChapterNotes(contentEl, panel, bookName, chapter, chNotes) {
   let html = '<button class="research-panel-close-btn" onclick="closeStrongsPanel()" title="Close">✕</button>';
+  html += renderVerseStudyCards();
   html += `<div class="hg-chapter-notes">`;
   html += `<div class="hg-chapter-notes-title">${bookName} ${chapter} — Study Notes</div>`;
   html += `<div class="hg-chapter-notes-summary">${chNotes.summary}</div>`;
@@ -7326,6 +7359,7 @@ function openBibleExplorerTo(book, chapter, verse = null) {
       } else {
         if (textContainer) textContainer.scrollTop = 0;
       }
+      showHGChapterNotes(normalizedBook, chapter);
     } else {
       displayBibleChapter(normalizedBook, chapter, verse);
     }

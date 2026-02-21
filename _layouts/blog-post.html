@@ -1,4 +1,14 @@
 ---
 layout: default
 ---
-<script type="text/blog-content" id="jekyll-blog-content">{{ content | replace: '</script>', '<\\/script>' }}</script>
+<article class="blog-article-content" style="max-width: 800px; margin: 0 auto; padding: 20px 24px;" role="article" aria-label="{{ page.title }}">
+  {{ content }}
+</article>
+<script>
+(function() {
+  var article = document.querySelector('article.blog-article-content');
+  if (article) {
+    window.__jekyllArticle = { type: 'blog', html: article.innerHTML };
+  }
+})();
+</script>

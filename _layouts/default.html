@@ -219,6 +219,10 @@
         visibility: hidden !important;
       }
     }
+    /* Hide loading spinner when Jekyll has rendered article content */
+    #content-area > article ~ #app-loading {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -380,8 +384,12 @@
       
       <!-- Center Content Area (expands to fill) -->
       <main id="content-area" class="content-area">
-        <!-- Content rendered by ContentManager -->
-        <div class="loading">Loading...</div>
+        <!-- Jekyll-rendered article content (symbols, verses, blog posts) appears here
+             instantly — no JS needed to read it. JS enhances in place. -->
+        {{ content }}
+        <!-- Loading spinner: only visible for JS-only views (calendar, timeline, etc.)
+             Hidden automatically when Jekyll article content is present above. -->
+        <div class="loading" id="app-loading">Loading...</div>
         <noscript>
           <div style="padding: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
             <h1>Time Tested Bible</h1>
@@ -599,9 +607,6 @@
   <!-- Bible tooltips & popups: fixed overlay so they always paint on top -->
   <div id="bible-tooltip-portal" class="bible-tooltip-portal" aria-hidden="true"></div>
   
-  <!-- Child layout content (e.g. blog-post.html injects <template> here) -->
-  {{ content }}
-  
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- SCRIPTS -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
@@ -657,6 +662,7 @@
   <script src="/strongs-hebrew-dictionary.js"></script>
   <script src="/strongs-greek-dictionary.js"></script>
   <script src="/symbol-dictionary.js"></script>
+  <script src="/verse-study-index.js"></script>
   <script src="/word-study-dictionary.js"></script>
   <script src="/book-scripture-index.js"></script>
   <script src="/cross-references.js"></script>

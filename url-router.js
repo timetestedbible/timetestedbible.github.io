@@ -368,6 +368,19 @@ const URLRouter = {
         result.content.params.contentType = 'symbols';
         delete result.content.params._researchSymbolIndex;
       }
+      // /research/verses/{key} → render in reader view
+      if (result.content.params._researchVerse) {
+        result.content.view = 'reader';
+        result.content.params.contentType = 'verse-studies';
+        result.content.params.study = result.content.params._researchVerse;
+        delete result.content.params._researchVerse;
+      }
+      // /research/verses → verse study index in reader view
+      if (result.content.params._researchVerseIndex) {
+        result.content.view = 'reader';
+        result.content.params.contentType = 'verse-studies';
+        delete result.content.params._researchVerseIndex;
+      }
       // Parse query params
       this._parseQueryParams(searchParams, result);
       // Apply view redirects (e.g. /priestly → calendar with panel open)
@@ -670,6 +683,14 @@ const URLRouter = {
             params._researchSymbolIndex = true;
           }
         }
+        // /research/verses → verse study index; /research/verses/{key} → specific study
+        if (parts[0] === 'verses') {
+          if (parts[1]) {
+            params._researchVerse = parts[1].toLowerCase().replace(/\/$/, '');
+          } else {
+            params._researchVerseIndex = true;
+          }
+        }
         break;
       
       case 'reader':
@@ -850,6 +871,12 @@ const URLRouter = {
       path = content.params.symbol
         ? '/research/symbols/' + content.params.symbol
         : '/research/symbols';
+    }
+    // Verse studies: /research/verses/... to match static Jekyll pages for SEO
+    else if (content.view === 'reader' && content.params?.contentType === 'verse-studies') {
+      path = content.params.study
+        ? '/research/verses/' + content.params.study
+        : '/research/verses';
     }
     // Other views use simple URLs
     else {
@@ -1112,14 +1139,20 @@ const URLRouter = {
         const np = newParsed.content.params;
         
         // Same destination, just path format changed (e.g., translation added)
-        if (cp.book === np.book && 
-            cp.chapter === np.chapter && 
+        if (cp.book === np.book &&
+            cp.chapter === np.chapter &&
             cp.verse === np.verse &&
             cp.contentType === np.contentType) {
           // For classics, section/work changes are real navigation
           if (cp.contentType === 'philo' || cp.contentType === 'josephus') {
             if (cp.section !== np.section || cp.work !== np.work) return false;
           }
+          // For symbols, index→detail or detail→detail is real navigation
+          if (cp.contentType === 'symbols' && cp.symbol !== np.symbol) return false;
+          // For verse studies, different studies are real navigation
+          if (cp.contentType === 'verse-studies' && cp.verseStudy !== np.verseStudy) return false;
+          // For blog, different posts are real navigation
+          if (cp.contentType === 'blog' && cp.slug !== np.slug) return false;
           return true;
         }
       }

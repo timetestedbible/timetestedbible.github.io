@@ -37,7 +37,9 @@ Every other appearance of "way" in Scripture — whether general or definite, wh
 
 **The surprise:** The early church was not called "Christians" first. They were called "the Way" (Acts 9:2, 19:9, 19:23, 24:14) — a name that identified them not by belief but by *manner of life*.
 
-**Connected:** $truth, $light, $highway, $fruit, $bread, $wickedness, $faith
+**See also:** $the-way — the definite form. When the article appears ("THE way"), the meaning narrows from generic conduct to the specific covenant pattern God defines and Christ embodies.
+
+**Connected:** $the-way, $truth, $light, $highway, $fruit, $bread, $wickedness, $faith
 
 ---
 

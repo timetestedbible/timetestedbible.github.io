@@ -428,7 +428,7 @@ const ReaderView = {
             <div class="reader-card-icon">📖</div>
             <h2>Verse Studies</h2>
             <p>In-depth studies of specific verses — translation analysis, consonantal ambiguities, and patterns that connect across Scripture.</p>
-            <div class="reader-card-meta">2 studies</div>
+            <div class="reader-card-meta">${typeof VERSE_STUDY_INDEX !== 'undefined' ? VERSE_STUDY_INDEX.length : 0} studies</div>
             <button class="reader-card-btn">
               Browse Verse Studies →
             </button>
@@ -830,10 +830,7 @@ const ReaderView = {
     if (!textArea) return;
     if (!studyId) {
       // Index: list all verse studies
-      const studies = [
-        { id: 'H369', title: 'H369 אַיִן — The Divine Removal Pattern', desc: 'How Scripture uses "is not" (אַיִן) as a keyword for persons taken by God — from Enoch to the empty tomb.' },
-        { id: 'DANIEL-9', title: 'Daniel 9:24-27 — A Fresh Look at the Hebrew', desc: 'Walking through Daniel\'s prophecy one word at a time. Covenant-cutting, vanishing, the marriage pattern, and who the "he" really is.' },
-      ];
+      const studies = typeof VERSE_STUDY_INDEX !== 'undefined' ? VERSE_STUDY_INDEX : [];
       textArea.innerHTML = `
         <div class="reader-word-study-index">
           <nav class="reader-symbol-nav">
@@ -846,7 +843,7 @@ const ReaderView = {
           <div class="word-study-index-list">
             ${studies.map(s => `
               <button class="word-study-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${s.id}'}})">
-                <span class="word-study-strongs">${s.id}</span>
+                <span class="word-study-strongs">${s.ref}</span>
                 <span class="word-study-summary">${s.title}</span>
                 <span class="word-study-summary" style="opacity:0.7;font-size:0.85em;margin-top:4px;">${s.desc}</span>
               </button>
@@ -878,18 +875,44 @@ const ReaderView = {
     const contentEl = container.querySelector('#verse-study-content');
     if (!contentEl) return;
     try {
-      // Try words/ directory first (where H369 and DANIEL-9 live), then symbols/
-      let response = await fetch(`/words/${studyId}.md`);
-      if (!response.ok) {
-        response = await fetch(`/symbols/${studyId}.md`);
+      let articleHtml;
+
+      // Path 1: Use cached article from Jekyll page (initial load)
+      if (window.__jekyllArticle && window.__jekyllArticle.type === 'verse') {
+        articleHtml = window.__jekyllArticle.html;
+        delete window.__jekyllArticle;
       }
-      if (!response.ok) throw new Error(`Verse study not found: ${studyId}`);
-      const markdown = await response.text();
-      const html = this.renderMarkdown(markdown);
-      contentEl.innerHTML = `<div class="word-study-body">${html}</div>`;
+
+      // Path 2: Try Jekyll collection at /research/verses/{key}/
+      if (!articleHtml) {
+        const jekyllResponse = await fetch(`/research/verses/${studyId}/`);
+        if (jekyllResponse.ok) {
+          const pageHtml = await jekyllResponse.text();
+          const doc = new DOMParser().parseFromString(pageHtml, 'text/html');
+          const article = doc.querySelector('.verse-study-content');
+          if (article) articleHtml = article.innerHTML;
+        }
+      }
+
+      // Path 3: Legacy — try words/ directory (H369, DANIEL-9), then symbols/
+      if (!articleHtml) {
+        let response = await fetch(`/words/${studyId}.md`);
+        if (!response.ok) {
+          response = await fetch(`/symbols/${studyId}.md`);
+        }
+        if (response.ok) {
+          const markdown = await response.text();
+          articleHtml = this.renderMarkdown(markdown);
+        }
+      }
+
+      if (!articleHtml) throw new Error(`Verse study not found: ${studyId}`);
+
+      contentEl.innerHTML = `<div class="word-study-body symbol-article-body">${articleHtml}</div>`;
+      this.processStudyMarkup(contentEl);
       this.linkifyScriptureRefs(contentEl);
+      this.linkifySymbolRefs(contentEl);
       this.linkifyReaderLinks(contentEl);
-      // Scroll spy + deep-link into hash heading
       const scrollRoot = container.closest('#bible-explorer-text') || container;
       this.setupScrollSpy(scrollRoot);
       this.scrollToHashHeading(scrollRoot);
@@ -1039,12 +1062,11 @@ const ReaderView = {
     try {
       let articleHtml;
       
-      // Path 1: Extract from existing DOM (initial Jekyll page load —
-      // the article is already rendered, no need to re-fetch our own page)
-      const existingArticle = document.querySelector('article.symbol-study-content');
-      if (existingArticle && existingArticle.innerHTML.trim()) {
-        articleHtml = existingArticle.innerHTML;
-        existingArticle.remove();
+      // Path 1: Use cached article from Jekyll page (initial load —
+      // the layout script cached the HTML before ContentManager replaced #content-area)
+      if (window.__jekyllArticle && window.__jekyllArticle.type === 'symbol') {
+        articleHtml = window.__jekyllArticle.html;
+        delete window.__jekyllArticle;
       } else {
         // Path 2: SPA navigation — fetch from network
         const response = await fetch(`/research/symbols/${symbolKey}/`);
@@ -1209,11 +1231,11 @@ const ReaderView = {
 
       // Alias map: maps unresolvable keys to their correct dictionary keys
       const SYMBOL_ALIASES = {
-        'the-way': 'way', 'four-winds': 'four-horsemen', 'brass': 'bronze-brass',
+        'four-winds': 'four-horsemen', 'brass': 'bronze-brass',
         'skandalizo': 'skandalizo-stumble', 'whore': 'harlot', 'harlots': 'harlot',
         'thorn': 'thorns', 'thief': 'thief-in-night', 'beast': 'animal',
-        'beasts': 'animal', 'stone': 'rock', 'rocks': 'rock', 'water': 'sea',
-        'waters': 'sea', 'seas': 'sea', 'moon': 'new-moon', 'bride': 'marriage',
+        'beasts': 'animal', 'stone': 'rock', 'rocks': 'rock', 'waters': 'water',
+        'seas': 'sea', 'moon': 'new-moon', 'bride': 'marriage',
         'bridegroom': 'marriage', 'covenant': 'rock', 'wicked': 'wickedness',
         'earthquakes': 'earthquake', 'mountains': 'mountain', 'mount': 'mountain',
         'trees': 'tree', 'nations': 'sea', 'nation': 'sea', 'islands': 'island',
@@ -2059,31 +2081,25 @@ const ReaderView = {
       if (this._blogCache.has(slug)) {
         html = this._blogCache.get(slug);
       } else {
-        // Path 1: Check if blog content is embedded in the page (direct Jekyll page load)
-        // Content is in a <script type="text/blog-content"> tag (inert, not executed by browser)
-        // Inner </script> tags are escaped as <\/script> by Jekyll to avoid premature close
-        const embeddedContent = document.getElementById('jekyll-blog-content');
-        if (embeddedContent) {
-          html = embeddedContent.textContent.replace(/<\\\/script>/g, '</script>');
-          // Remove so it's not picked up again on SPA navigation
-          embeddedContent.remove();
+        // Path 1: Use cached article from Jekyll page (initial load —
+        // the layout script cached the visible article HTML before ContentManager replaced #content-area)
+        if (window.__jekyllArticle && window.__jekyllArticle.type === 'blog') {
+          html = window.__jekyllArticle.html;
+          delete window.__jekyllArticle;
         } else {
           // Path 2: SPA navigation — fetch the Jekyll-generated blog page and extract content
           const response = await fetch(`/blog/${slug}/`);
           if (!response.ok) {
-            // Fallback: try legacy .html fragment path
             const legacyResponse = await fetch(`/blog/${slug}.html`);
             if (!legacyResponse.ok) throw new Error('Blog post not found');
             html = await legacyResponse.text();
           } else {
             const pageHtml = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(pageHtml, 'text/html');
-            const scriptTag = doc.getElementById('jekyll-blog-content');
-            if (scriptTag) {
-              html = scriptTag.textContent.replace(/<\\\/script>/g, '</script>');
+            const doc = new DOMParser().parseFromString(pageHtml, 'text/html');
+            const article = doc.querySelector('.blog-article-content');
+            if (article) {
+              html = article.innerHTML;
             } else {
-              // No template found in fetched page — try legacy .html fragment
               const legacyResponse = await fetch(`/blog/${slug}.html`);
               if (!legacyResponse.ok) throw new Error('Blog post not found');
               html = await legacyResponse.text();

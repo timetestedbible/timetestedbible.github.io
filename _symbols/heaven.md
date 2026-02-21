@@ -31,9 +31,9 @@ When fire falls "from the LORD out of heaven" on Sodom (Gen 19:24), it comes thr
 
 **Defining verses:** Gen 1:1, Ps 115:16, Isa 66:1, Mat 6:10, Heb 12:26–27, Rev 21:1–3
 
-**The surprise:** Heaven is not permanent. The present heavens are "reserved unto fire" (2 Pet 3:7), will "pass away with a great noise" (2 Pet 3:10), and will be replaced by a *new* heaven (Rev 21:1). The goal of Scripture is not for people to go up to heaven — it is for heaven to come *down* to earth (Rev 21:2–3).
+**The surprise:** Heaven is not permanent in its present form. The present heavens are "reserved unto fire" (2 Pet 3:7) and will "pass away with a great noise" (2 Pet 3:10). But the word for "new" in "new heavens" is H2319 *chadash* — from the root meaning "to renew, repair, rebuild" (the same word analyzed in the $renewed-covenant study) — and the Greek is G2537 *kainos*, "new in freshness," not new in existence. The heavens are *renewed*, not replaced. And the goal of Scripture is not for people to go up to heaven — it is for heaven to come *down* to earth (Rev 21:2–3).
 
-**Connected:** $earth, $sea, $sun-moon-stars, $fire, $earthquake, $clouds, $mountain, $return-of-christ
+**Connected:** $earth, $sea, $sun-moon-stars, $fire, $earthquake, $clouds, $mountain, $return-of-christ, $renewed-covenant
 
 ---
 
@@ -142,7 +142,7 @@ But dissolution is not the end. It is the precondition for renewal:
 
 > *"Nevertheless we, according to his promise, look for new **heavens** and a new earth, wherein dwelleth righteousness."* — 2 Pet 3:13
 
-The word is G2537 *kainos* — new in *kind*, not merely new in time. The replacement heaven is qualitatively different. And what characterizes it? *Righteousness dwells there.* The gap between heaven's nature (where God's will is done) and earth's condition (where it is not) will finally be closed — not by earth rising to heaven, but by a new heaven-and-earth in which righteousness is simply *at home*.
+The word is G2537 *kainos* — new in *freshness*, not merely new in time. The same word used for the $renewed-covenant (Heb 8:8), whose compounds (G340 *anakainizo*, G341 *anakainoo*) mean "to restore, to renovate." And the Hebrew original in Isa 65:17 is H2319 *chadash* — from the root meaning "to renew, repair, rebuild." The renewed heaven is not a different heaven. It is the same jurisdictional domain, purged and restored. And what characterizes it? *Righteousness dwells there.* The gap between heaven's nature (where God's will is done) and earth's condition (where it is not) will finally be closed — not by earth rising to heaven, but by a renewed heaven-and-earth in which righteousness is simply *at home*.
 
 ### The Gap Closes
 
@@ -188,7 +188,7 @@ This single passage is the heavens being *purged, shaken, and replaced* — Eph 
 
 3. **Directional: down = grace, up = presumption.** God sends down (rain, fire, Christ, New Jerusalem, the Spirit). Man reaches up (Babel, the five "I will" statements, Babylon's sins). The exception that proves the rule: Christ ascends by divine right, having first descended.
 
-4. **Contested → Purged → Replaced.** Eph 6:12 (wickedness in heavenly places) → Rev 12:7–9 (dragon cast out) → Heb 12:27 (shakeable things removed) → 2 Pet 3:10–13 (heavens dissolved by $fire) → Rev 21:1 (new heaven). This is the sequence: the present heavens are not permanent. They are a jurisdictional domain that must be cleansed and renewed.
+4. **Contested → Purged → Renewed.** Eph 6:12 (wickedness in heavenly places) → Rev 12:7–9 (dragon cast out) → Heb 12:27 (shakeable things removed) → 2 Pet 3:10–13 (heavens dissolved by $fire) → Rev 21:1 (renewed heaven). The present heavens are not permanent in their current form. They are a jurisdictional domain that must be cleansed and renewed — the same domain, restored (H2319 *chadash* / G2537 *kainos*), not annihilated and rebuilt from nothing.
 
 5. **Heaven contains what earth will become.** The pattern of things in heaven (Heb 8:5, Exod 25:40) is shown to Moses so he can build a copy on earth. The tabernacle is an earth-copy of a heaven-reality. The trajectory is always: heaven's pattern becoming earth's reality.
 
@@ -213,6 +213,8 @@ This single passage is the heavens being *purged, shaken, and replaced* — Eph 
 - **$mountain** — Kingdom / ruling authority. God's mountain (Zion) is where heaven's authority touches earth (Isa 2:2–3). Babel's tower reaching "unto heaven" (Gen 11:4) is the counterfeit — a man-made $mountain grasping for divine jurisdiction. The stone that becomes a great $mountain filling the earth (Dan 2:35) is heaven's kingdom displacing all others.
 
 - **$return-of-christ** — The Covenant King's arrival to execute covenant judgment and establish covenant rule. Christ comes "in the clouds of heaven" (Mat 24:30) — *through* the authority domain, *wielding* it. Heaven opens (Rev 19:11) and the rider emerges. The return is the decisive moment when heaven's unchallenged governance invades earth's contested space.
+
+- **$renewed-covenant** — The same Hebrew root (H2318 *chadash* = "to renew, repair, rebuild") underlies both the "new" covenant (Jer 31:31) and the "new" heavens (Isa 65:17). The same Greek word (G2537 *kainos* = "new in freshness") is used for both in the NT. If the covenant is renewed rather than replaced — same terms, new writing surface, better mediator — the heavens follow the same pattern: same jurisdictional domain, purged of contested authority, restored under God's unmediated rule.
 
 ---
 
@@ -281,3 +283,4 @@ KJV translates H8064 as "heaven(s)," "sky," and "air." H7549 appears as "firmame
 - **$fire** — The agent by which the present heavens are dissolved. How does the same fire refine the faithful and consume the rebellious — and what survives?
 - **$earthquake** — The shaking that removes "things that are made." What are the man-installed structures in the heavenly realm, and what does it mean for them to be shaken out?
 - **$mountain** — Kingdom and ruling authority. How does the stone that becomes a mountain filling the earth (Dan 2:35) relate to the new heaven descending to meet the new earth?
+- **$renewed-covenant** — The Hebrew word for "new" in both "new covenant" and "new heavens" is H2319 *chadash* — from the root meaning "to renew, repair, rebuild." If the everlasting covenant was renewed rather than replaced, what does that imply about the heavens that are made *chadash*?

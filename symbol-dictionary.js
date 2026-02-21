@@ -1525,6 +1525,20 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/sheep/'
   },
 
+  'sheol': {
+    key: 'sheol',
+    name: 'SHEOL',
+    words: ['sheol', 'hell', 'grave', 'pit', 'hades', 'death'],
+    strongs: ['H7585', 'G86', 'H4194', 'G2288'],
+    meaning: 'Mortality\'s demand on all flesh',
+    sentence: 'Mortality\'s demand on all flesh — the insatiable claim that death makes on every living thing, personified as a power with a mouth, belly, gates, and bars, and answered only by God\'s power to ransom, redeem, and resurrect.',
+    opposite: 'The land of the living / resurrection / the fountain of life (Ps 36:9, Jer 2:13)',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/sheol/'
+  },
+
   'shepherd': {
     key: 'shepherd',
     name: 'SHEPHERD',
@@ -1692,6 +1706,48 @@ const SYMBOL_DICTIONARY = {
     category: 'Gathering & Consummation',
     subcategory: null,
     link: '/research/symbols/the-end/'
+  },
+
+  'the-life': {
+    key: 'the-life',
+    name: 'THE LIFE',
+    words: ['the life', 'tree of life', 'water of life', 'book of life'],
+    strongs: ['H2416', 'G2222'],
+    meaning: 'Covenant-existence as God defines it',
+    sentence: 'Covenant-existence as God defines it — not biological survival but the quality of being that flows from God\'s presence and defines His people.',
+    opposite: 'Death — not merely biological cessation but separation from the covenant source (Sheol, the demanding place)',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/the-life/'
+  },
+
+  'the-truth': {
+    key: 'the-truth',
+    name: 'THE TRUTH',
+    words: ['the truth'],
+    strongs: ['H571', 'G225'],
+    meaning: 'God\'s covenant standard',
+    sentence: 'God\'s covenant standard — His law, His word, His faithfulness. Not factual accuracy but the divine measure against which all else is tested.',
+    opposite: 'The lie / falsehood — the anti-standard that substitutes for God\'s measure (Isa 28:15 — "we have made lies our refuge"; Jn 8:44 — the devil "abode not in the truth")',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/the-truth/'
+  },
+
+  'the-way': {
+    key: 'the-way',
+    name: 'THE WAY',
+    words: ['the way', 'the way of the lord', 'that way', 'this way'],
+    strongs: ['H1870', 'G3598'],
+    meaning: 'The specific covenant pattern that God defines and Christ embodies',
+    sentence: 'The specific covenant pattern that God defines and Christ embodies — distinct from generic way (any person\'s conduct), THE way is the one road that leads to life.',
+    opposite: '"The way of the wicked" (Ps 1:6, Prov 4:19) — also definite, but the anti-pattern; "the broad way" that leads to destruction (Mat 7:13)',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/the-way/'
   },
 
   'thief-in-night': {
@@ -1862,6 +1918,20 @@ const SYMBOL_DICTIONARY = {
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/wars-rumors/'
+  },
+
+  'water': {
+    key: 'water',
+    name: 'WATER',
+    words: ['water', 'waters', 'living water', 'fountain', 'spring', 'well', 'cistern', 'running water'],
+    strongs: ['H4325', 'H2416', 'H4726', 'H4599', 'H875', 'H877', 'G5204', 'G4077', 'G2198'],
+    meaning: 'The life that flows from God\'s presence',
+    sentence: 'The life that flows from God\'s presence — distinguished from the sea by its source and movement, and from human religion by its continuous, self-renewing supply.',
+    opposite: 'Cisterns (man-made, broken, containment of dead water) / bitter water / the Sea (gathered, chaotic, restless)',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/water/'
   },
 
   'way': {

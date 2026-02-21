@@ -38,21 +38,27 @@ This paradox — the same root naming both the weapon that destroys and the moun
 
 **The surprise:** Sword (H2719 *chereb*), drought (H2721 *choreb*), and the covenant mountain Horeb (H2722 *Choreb*) are all the same root — and H2719 also translates as "knife" when used for circumcision, making the sword the instrument that *initiates* covenant, not just the one that enforces its curses.
 
-**Connected:** $fire, $famine, $pestilence, $blood, $babylon, $earthquake, $heaven, $thorns
+**Connected:** $fire, $famine, $pestilence, $blood, $babylon, $earthquake, $heaven, $thorns, $the-way, $tree, $water
 
 ---
 
 ## Sword Across Scripture
 
-### The Flaming Desolation — Eden's Gate
+### The Flaming Gate — Eden's Sword
 
 > *"So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming **sword** which turned every way, to keep the way of the tree of life."* — Gen 3:24
 
-The first sword in Scripture is not wielded by a human. It is a H2719 *chereb* wrapped in flame (H3858 *lahat* — to blaze and enwrap) that H2015 *haphak* — overturns, transforms — in every direction. This is $fire fused with desolation: God's holy standard in active contact (*$fire*) combined with the covenant instrument (*sword*). Together they guard the way to the tree of life.
+The first sword in Scripture is not wielded by a human. It is a H2719 *chereb* wrapped in flame (H3858 *lahat* — to blaze and enwrap) that H2015 *haphak* in every direction. Three words in this verse carry more weight than the English lets on.
 
-What the sword does here is not merely threaten. It *desolates* the approach. The way back to Eden becomes a waste — the sword-root's essential action. The cherubim and the flaming sword stand as the first picture of the covenant standard barring entry to the unfaithful.
+**H2015 *haphak*** does not mean "spinning" or "rotating." Strong's: "to turn about or over; to **change**, overturn, return, **be converted**." This is the transformation verb — used for Sodom's overthrow (Gen 19:21, 25), water turned to blood (Exod 7:17), and conversion itself. The sword does not merely move — it *transforms what it contacts*. It converts in every direction.
 
-The fusion of sword and $fire recurs throughout Scripture: Joshua burns cities after putting them to the sword (Josh 11:11), Judah does the same (Judg 1:8, 18:27, 20:48), Isaiah's final judgment comes "by $[fire] AND by his **sword**" (Isa 66:16), and Christ's eyes are like flame while the sword proceeds from His mouth (Rev 1:14–16, 19:12–15). The flaming sword of Gen 3:24 is the prototype for every subsequent appearance of the desolation-maker in divine hands.
+**H8104 *shamar*** — "to keep" — does not mean "to block." Strong's: "to **hedge about** (as with thorns), **guard**, protect, **preserve**." This is the same word given to Adam in Gen 2:15: God placed him in the garden "to dress it and to **keep** (*shamar*) it." Adam's original mandate was to *shamar* the garden. Now the cherubim and flaming sword *shamar* $the-way of the $tree of life. The way is **preserved**, not destroyed.
+
+And the object of the guarding is *lishmor et-derek etz hachayyim* — "to preserve **the way of** the tree of life." $the-way (*derek*) — covenant-conduct, Torah-faithfulness — still exists. The $tree of life — the living nation/people — still stands. The sword preserves the path to them.
+
+This reframes the entire image. The flaming *chereb* at Eden's gate is not a wall. It is a **gate that transforms**. The same $fire that killed the soldiers at Nebuchadnezzar's furnace and left the covenant-keepers unharmed (Dan 3:22–25). The same fire-law (*eshdath*, H799 — fire + law, from the same *esh* root) given at Horeb (H2722 — from the same root as *chereb*). The sword tests what passes through. Gold survives. Chaff is consumed. $the-way is preserved — for whoever can pass through the fire.
+
+The fusion of sword and $fire recurs throughout Scripture: Joshua burns cities after putting them to the sword (Josh 11:11), Isaiah's final judgment comes "by $[fire] AND by his **sword**" (Isa 66:16), and Christ's eyes are like flame while the sword proceeds from His mouth (Rev 1:14–16, 19:12–15). The flaming sword of Gen 3:24 is the prototype — and Revelation 22:1–2 shows the destination it guards: the $tree of life standing by the river of $water of life, with leaves "for the healing of the nations." The way was never destroyed. It was guarded by fire, preserved through judgment, and opened again in the renewed creation.
 
 ### The Circumcision Knife — Covenant Entry
 
