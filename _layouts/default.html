@@ -5,29 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>{% if page.page_title and page.page_title != "Time Tested Bible" %}{{ page.page_title }}{% elsif page.title %}{{ page.title }} | Time Tested Bible{% else %}Time Tested Bible{% endif %}</title>
   
+  {% if page.og_image %}{% assign resolved_og_image = page.og_image %}{% elsif page.image %}{% assign resolved_og_image = page.image %}{% else %}{% assign resolved_og_image = "https://timetested.bible/icons/og-image.png" %}{% endif %}{% unless resolved_og_image contains "://" %}{% assign resolved_og_image = "https://timetested.bible" | append: resolved_og_image %}{% endunless %}
+  {% if page.og_url %}{% assign resolved_og_url = page.og_url %}{% else %}{% assign resolved_og_url = "https://timetested.bible" | append: page.url %}{% endif %}
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="{{ page.description }}">
   <meta name="keywords" content="{{ page.keywords }}">
   <meta name="author" content="{{ page.author }}">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="{{ page.og_url }}">
-  
+  <link rel="canonical" href="{{ resolved_og_url }}">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="{{ page.og_type }}">
-  <meta property="og:url" content="{{ page.og_url }}">
+  <meta property="og:url" content="{{ resolved_og_url }}">
   <meta property="og:title" content="{% if page.og_title and page.og_title != "Time Tested Bible" %}{{ page.og_title }}{% elsif page.title %}{{ page.title }}{% else %}Time Tested Bible{% endif %}">
   <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:image" content="{{ page.og_image }}">
+  <meta property="og:image" content="{{ resolved_og_image }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="633">
   <meta property="og:site_name" content="Time Tested Bible">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="{{ page.og_url }}">
-  <meta name="twitter:title" content="{{ page.og_title }}">
-  <meta name="twitter:description" content="{{ page.og_description }}">
-  <meta name="twitter:image" content="{{ page.og_image }}">
+  <meta name="twitter:url" content="{{ resolved_og_url }}">
+  <meta name="twitter:title" content="{% if page.og_title and page.og_title != "Time Tested Bible" %}{{ page.og_title }}{% elsif page.title %}{{ page.title }}{% else %}Time Tested Bible{% endif %}">
+  <meta name="twitter:description" content="{% if page.og_description %}{{ page.og_description }}{% else %}{{ page.description }}{% endif %}">
+  <meta name="twitter:image" content="{{ resolved_og_image }}">
   
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
