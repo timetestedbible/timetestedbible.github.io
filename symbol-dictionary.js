@@ -174,6 +174,20 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/blood/'
   },
 
+  'born-again': {
+    key: 'born-again',
+    name: 'BORN AGAIN',
+    words: ['born again', 'born of god', 'begotten', 'regeneration'],
+    strongs: ['G1080', 'G509', 'G313', 'G3824'],
+    meaning: 'Receiving God\'s nature from above through His word',
+    sentence: 'Receiving God\'s nature from above through His word — becoming His child and heir by a birth sourced from heaven, not from human will.',
+    opposite: 'Born of flesh — lineage, human will, and fleshly effort producing only more flesh (Joh 1:13, Joh 3:6, Gal 4:23)',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/born-again/'
+  },
+
   'bread': {
     key: 'bread',
     name: 'BREAD',
@@ -961,6 +975,20 @@ const SYMBOL_DICTIONARY = {
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/judah/'
+  },
+
+  'knowledge': {
+    key: 'knowledge',
+    name: 'KNOWLEDGE',
+    words: ['knowledge', 'know', 'cunning', 'da\'ath', 'gnosis'],
+    strongs: ['H1847', 'G1108'],
+    meaning: 'Discernment between good and evil',
+    sentence: 'Discernment between good and evil — rooted in the fear of God, equated with Torah, and expressed through obedience to His commands.',
+    opposite: 'Fool — "fools despise wisdom and instruction" (Prov 1:7)',
+    rank: 0,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/knowledge/'
   },
 
   'lamb': {

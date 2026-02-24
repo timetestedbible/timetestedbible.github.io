@@ -1027,18 +1027,13 @@ const ReaderView = {
     if (!strongsList || !strongsList.length) return '';
     return strongsList.map(s => {
       let label = s;
-      let tooltip = s;
       if (typeof getStrongsEntry === 'function') {
         const entry = getStrongsEntry(s);
         if (entry) {
-          // Show English definition as the button label
-          const def = entry.kjv_def || entry.strongs_def || '';
-          label = def.split(',')[0].split(';')[0].replace(/[[\]()]/g, '').trim() || entry.xlit || s;
-          // Tooltip shows Strong's number + transliteration + lemma
-          tooltip = `${s} ${entry.xlit || ''} (${entry.lemma || ''}) — ${def.substring(0, 100)}`;
+          label = (typeof extractGloss === 'function' ? extractGloss(entry) : '') || entry.xlit || s;
         }
       }
-      return `<button class="symbol-strongs-btn" title="${tooltip.replace(/"/g, '&amp;quot;')}" onclick="showStrongsPanel('${s}', '', '', event)">${label}</button>`;
+      return `<button class="symbol-strongs-btn" data-strongs="${s}" onmouseenter="if(typeof showStrongsButtonTooltip==='function')showStrongsButtonTooltip(this,event)" onmouseleave="if(typeof hideStrongsButtonTooltip==='function')hideStrongsButtonTooltip()" onclick="showStrongsPanel('${s}', '', '', event)">${label}</button>`;
     }).join(' ');
   },
 
@@ -1213,7 +1208,7 @@ const ReaderView = {
       while (walker.nextNode()) {
         const el = walker.currentNode.parentNode;
         if (el && (el.tagName === 'A' || el.tagName === 'CODE' || el.tagName === 'BUTTON' ||
-            el.tagName === 'PRE' || el.closest?.('a, code, button, pre'))) continue;
+            el.tagName === 'PRE' || el.closest?.('a, code, button, pre, .no-name-swap'))) continue;
         pattern.lastIndex = 0;
         if (pattern.test(walker.currentNode.nodeValue)) {
           nodes.push(walker.currentNode);
@@ -1316,19 +1311,19 @@ const ReaderView = {
       strongsPattern.lastIndex = 0;
       span.innerHTML = node.nodeValue.replace(strongsPattern, (match, id) => {
         let label = id;
-        let tooltip = id;
         if (typeof getStrongsEntry === 'function') {
           const entry = getStrongsEntry(id);
           if (entry) {
-            const def = entry.kjv_def || entry.strongs_def || '';
-            label = def.split(',')[0].split(';')[0].replace(/[[\]()]/g, '').trim() || entry.xlit || id;
-            tooltip = `${id} ${entry.xlit || ''} (${entry.lemma || ''}) — ${def.substring(0, 100)}`;
+            label = (typeof extractGloss === 'function' ? extractGloss(entry) : '') || entry.xlit || id;
           }
         }
-        return `<button class="symbol-strongs-btn" title="${tooltip.replace(/"/g, '&quot;')}" onclick="if(typeof showStrongsPanel==='function')showStrongsPanel('${id}','','',event)">${label}</button>`;
+        return `<button class="symbol-strongs-btn" data-strongs="${id}" onmouseenter="if(typeof showStrongsButtonTooltip==='function')showStrongsButtonTooltip(this,event)" onmouseleave="if(typeof hideStrongsButtonTooltip==='function')hideStrongsButtonTooltip()" onclick="if(typeof showStrongsPanel==='function')showStrongsPanel('${id}','','',event)">${label}</button>`;
       });
       node.parentNode.replaceChild(span, node);
     });
+
+    // Preload BDB lexicon so tooltips have rich sense data ready
+    if (typeof loadBDB === 'function') loadBDB();
 
     // --- Pass 3: Abbreviated + full-name verse references (requires chapter:verse) ---
     if (typeof BOOK_NAME_MAP !== 'undefined' && typeof normalizeBookName === 'function') {
