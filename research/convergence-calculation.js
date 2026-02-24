@@ -10,6 +10,7 @@ const lines = [
   { name: 'Prophetic (Jer 3:14)',          low: 0.10,  high: 0.20,  color: '#2196F3' },
   { name: 'Agricultural (olive gleaning)', low: 0.03,  high: 0.50,  color: '#8BC34A' },
   { name: 'Metallurgical (refining yield)',low: 0.01,  high: 1.00,  color: '#FFC107' },
+  { name: 'Wisdom (Solomon Eccl 7:28)',    low: 0.03,  high: 0.10,  color: '#E91E63' },
   { name: 'Ecological (lion/prey)',        low: 0.14,  high: 1.00,  color: '#795548' },
   { name: 'Typological (Israel/nations)',  low: 0.12,  high: 0.52,  color: '#00BCD4' },
   { name: 'Spatial (land density)',        low: 0.15,  high: 0.25,  color: '#4CAF50' },

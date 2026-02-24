@@ -831,6 +831,84 @@ code {
   line-height: 1.4;
 }
 
+/* Strong's button tooltip (blog posts / symbol studies) */
+.strongs-btn-tooltip {
+  position: fixed;
+  z-index: 10200;
+  max-width: 380px;
+  min-width: 180px;
+  padding: 10px 14px;
+  background: var(--color-surface, var(--surface-raised));
+  border: 1px solid var(--accent-gold-muted);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 4px 20px var(--surface-scrim);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: auto;
+}
+
+.strongs-tip-lemma {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 2px;
+  direction: auto;
+}
+
+.strongs-tip-xlit {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.strongs-tip-pron {
+  font-style: normal;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.strongs-tip-def {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.45;
+  margin-bottom: 4px;
+}
+
+.strongs-tip-senses {
+  margin: 4px 0;
+}
+
+.strongs-tip-sense {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  padding: 1px 0 1px 10px;
+  border-left: 2px solid var(--accent-gold-muted);
+  margin-bottom: 3px;
+}
+
+.strongs-tip-sense-primary {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-left-color: var(--accent-gold);
+}
+
+.strongs-tip-sense-num {
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-right: 3px;
+}
+
+.strongs-tip-id {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  text-align: right;
+  margin-top: 2px;
+}
+
 /* Reader Error */
 .reader-error {
   padding: var(--spacing-xl);

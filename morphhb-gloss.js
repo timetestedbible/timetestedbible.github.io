@@ -10,7 +10,7 @@
 
 /**
  * Extract a short English gloss from a Strong's dictionary entry.
- * Prefers the first KJV rendering that isn't a grammar note.
+ * Prefers the lexicon definition (strongs_def) over KJV translation renderings.
  *
  * @param {object} entry - Strong's dictionary entry (e.g. strongsHebrewDictionary["H430"])
  * @returns {string} Short gloss, e.g. "God", "beginning", "create"
@@ -18,20 +18,62 @@
 function extractGloss(entry) {
   if (!entry) return '';
 
-  // Try kjv_def first — gives actual translation words
+  // Try strongs_def first — the lexicon definition is cleaner and more meaningful
+  if (entry.strongs_def) {
+    const gloss = extractLexiconGloss(entry.strongs_def);
+    if (gloss) return gloss;
+  }
+
+  // Fall back to kjv_def (list of KJV translation renderings)
   if (entry.kjv_def) {
     const gloss = extractFirstMeaning(entry.kjv_def);
     if (gloss) return gloss;
   }
 
-  // Fall back to strongs_def
-  if (entry.strongs_def) {
-    const gloss = extractFirstMeaning(entry.strongs_def);
-    if (gloss) return gloss;
-  }
-
   // Last resort: the lemma itself
   return entry.lemma || '';
+}
+
+/**
+ * Extract a short gloss from a lexicon-style definition (strongs_def).
+ * These are sentence-form definitions like:
+ *   "the earth (at large, or partitively a land)" → "earth"
+ *   "gods in the ordinary sense; but specifically..." → "gods"
+ *   "the first, in place, time, order or rank" → "first"
+ *   "{father}" → "father"
+ *
+ * @param {string} def - Lexicon definition string
+ * @returns {string} Short gloss word(s)
+ */
+function extractLexiconGloss(def) {
+  if (!def) return '';
+
+  // Unwrap {cross-references} like "{father}" or "{properly, ...};"
+  let text = def.replace(/^\{([^}]+)\};?$/, '$1');
+
+  // Remove parenthetical clarifications first (they may span semicolons/commas)
+  text = text.replace(/\s*\([^)]*\)/g, '');
+  // Handle unclosed parens (bad data): truncate at opening paren
+  text = text.replace(/\s*\(.*$/, '');
+
+  // Take text before first semicolon (strips secondary senses)
+  const semiIdx = text.indexOf(';');
+  if (semiIdx > 0) text = text.substring(0, semiIdx);
+
+  // Take text before first comma (strips additional qualifiers)
+  const commaIdx = text.indexOf(',');
+  if (commaIdx > 0) text = text.substring(0, commaIdx);
+
+  // Strip qualifying phrases that follow the core meaning
+  text = text.replace(/\s+(?:in|of|by|for|from|through|upon|with|used|applied|especially)\b.*$/i, '');
+
+  // Strip leading articles
+  text = text.replace(/^(the|a|an)\s+/i, '');
+
+  text = text.replace(/\s+/g, ' ').replace(/\.\s*$/, '').trim();
+
+  if (text.length < 2) return '';
+  return text;
 }
 
 /**
@@ -200,6 +242,7 @@ function getPrefixMeanings(lemma) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     extractGloss,
+    extractLexiconGloss,
     extractFirstMeaning,
     getGloss,
     getRootWord,

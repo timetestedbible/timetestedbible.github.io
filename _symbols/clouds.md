@@ -149,6 +149,19 @@ The clouds are the meeting point. Not the destination — the *meeting point*. T
 
 The $rapture-gathering — God's covenant ingathering of His people — happens *in the clouds*. The clouds are where the King's escort forms. The $trumpet sounds (1 Th 4:16), the dead rise, the living are caught up — and all of it happens in the cloud that has been the medium of divine encounter since the wilderness.
 
+### Clouds as Spirit-Transport — The *Harpazo* Pattern
+
+The word "caught up" in 1 Th 4:17 is G726 *harpazo* — to seize, carry off. Every *harpazo* event in Scripture is a Spirit-transport, and clouds are the visible form of that transport:
+
+- **Acts 8:39** — Philip *harpazo*-ed by the Spirit after baptizing the eunuch. He appeared at Azotus, ~30 miles away. Same verb as 1 Th 4:17 — physical relocation by Spirit-power.
+- **2 Cor 12:2-4** — Paul "caught up" (*harpazo*) to the third heaven / paradise. Whether bodily or spiritual, Paul wasn't sure — but the verb is the same.
+- **Ezek 3:12, 14** — "the Spirit (*ruach*) took me up." Not *harpazo* (Hebrew, not Greek), but the identical phenomenon: Spirit-powered transport.
+- **Ezek 8:3; 11:1, 24; 37:1; 43:5** — Ezekiel repeatedly lifted and carried by the *ruach* (Spirit/wind) to specific locations on earth.
+- **Rev 11:12** — The Two Witnesses "ascended up to heaven **in a cloud**." Cloud = the visible form of Spirit-transport. Same *harpazo* category.
+
+The pattern: the Spirit (*ruach*) seizes → the cloud is the visible vehicle → the person arrives at a destination, always on earth in the narrative cases (Philip to Azotus, Ezekiel to the valley / temple / inner court). Clouds are not the atmosphere — they are what *ruach*-transport looks like from the outside.
+
+
 ### Clouds Without Water — The Counterfeit
 
 > *"These are wells without water, **clouds** that are carried with a tempest; to whom the mist of $[darkness] is reserved for ever."* — 2 Pet 2:17
@@ -296,3 +309,4 @@ KJV translates H6051 as "cloud," "clouds," "cloudy." H5645 appears as "thick clo
 - **$mountain** — The seat of ruling authority where clouds descend. Why does God consistently appear in cloud upon $mountains — Sinai, transfiguration, Zion?
 - **$return-of-christ** — The Covenant King's arrival. Every parousia text names clouds as the vehicle. How does the cloud's wilderness function — guide, shield, judge, command — carry into what the King does when He arrives?
 - **$rapture-gathering** — The covenant ingathering that happens *in the clouds*. What does the *apantesis* pattern reveal about the direction of the gathering — toward God's destination, not away from it?
+- **Timarot — Palm Trees of Smoke** — What the cloud-chariots evacuate the remnant FROM. Joel 2:30's תִּימָרוֹת (*timarot*, from *tamar* = palm tree) describes palm-tree-shaped pillars of smoke. Combined with Zechariah's flying rolls, Peter's dissolved elements, and Revelation's one-hour destruction — the prophets described what the clouds save us from. See the [full study](/blog/timarot-palm-trees-of-smoke/).

@@ -4265,6 +4265,99 @@ function hideStrongsTooltip(immediate) {
   }
 }
 
+// Rich tooltip for Strong's buttons in blog posts / symbol studies
+let _strongsBtnTooltipTimer = null;
+
+function showStrongsButtonTooltip(el, event) {
+  if (_strongsBtnTooltipTimer) { clearTimeout(_strongsBtnTooltipTimer); _strongsBtnTooltipTimer = null; }
+
+  const strongsNum = el.dataset.strongs;
+  if (!strongsNum) return;
+
+  const entry = (typeof getStrongsEntry === 'function') ? getStrongsEntry(strongsNum) : null;
+  if (!entry) return;
+
+  hideStrongsButtonTooltip(true);
+
+  const tooltip = document.createElement('div');
+  tooltip.id = 'strongs-btn-tooltip';
+  tooltip.className = 'strongs-btn-tooltip';
+
+  const lemma = entry.lemma || '';
+  const xlit = entry.xlit || entry.translit || '';
+  const pron = entry.pron || '';
+
+  let html = '';
+
+  // Header: lemma + transliteration
+  if (lemma) {
+    html += `<div class="strongs-tip-lemma">${lemma}</div>`;
+  }
+  if (xlit) {
+    html += `<div class="strongs-tip-xlit">${escapeHtml(xlit)}${pron ? ' <span class="strongs-tip-pron">(' + escapeHtml(pron) + ')</span>' : ''}</div>`;
+  }
+
+  // Use BDB lexicon senses if available, fall back to strongs_def
+  const bdbEntry = bdbData && (bdbData[strongsNum] || bdbData[strongsNum.replace(/[a-z]$/, '')]);
+  if (bdbEntry && bdbEntry.senses && bdbEntry.senses.length > 0) {
+    html += '<div class="strongs-tip-senses">';
+    bdbEntry.senses.forEach((sense, i) => {
+      const cls = i === 0 ? 'strongs-tip-sense strongs-tip-sense-primary' : 'strongs-tip-sense';
+      html += `<div class="${cls}"><span class="strongs-tip-sense-num">${sense.number}.</span> ${escapeHtml(sense.meaning)}</div>`;
+    });
+    html += '</div>';
+  } else {
+    const strongsDef = entry.strongs_def || '';
+    if (strongsDef) {
+      const rawDef = strongsDef.replace(/^\{([^}]+)\};?$/, '$1');
+      html += `<div class="strongs-tip-def">${escapeHtml(rawDef)}</div>`;
+    }
+  }
+
+  // Subtle Strong's number
+  html += `<div class="strongs-tip-id">${escapeHtml(strongsNum)}</div>`;
+
+  tooltip.innerHTML = html;
+  (typeof getBibleTooltipPortal === 'function' ? getBibleTooltipPortal() : document.body).appendChild(tooltip);
+
+  // Position below the button
+  const rect = el.getBoundingClientRect();
+  const tooltipRect = tooltip.getBoundingClientRect();
+  let left = rect.left;
+  let top = rect.bottom + 5;
+  if (left + tooltipRect.width > window.innerWidth - 10) {
+    left = window.innerWidth - tooltipRect.width - 10;
+  }
+  if (left < 10) left = 10;
+  if (top + tooltipRect.height > window.innerHeight - 10) {
+    top = rect.top - tooltipRect.height - 5;
+  }
+  if (top < 10) top = 10;
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+  tooltip.style.opacity = '1';
+
+  tooltip.addEventListener('mouseenter', () => {
+    if (_strongsBtnTooltipTimer) { clearTimeout(_strongsBtnTooltipTimer); _strongsBtnTooltipTimer = null; }
+  });
+  tooltip.addEventListener('mouseleave', () => {
+    hideStrongsButtonTooltip(true);
+  });
+}
+
+function hideStrongsButtonTooltip(immediate) {
+  if (_strongsBtnTooltipTimer) { clearTimeout(_strongsBtnTooltipTimer); _strongsBtnTooltipTimer = null; }
+  if (immediate) {
+    const tooltip = document.getElementById('strongs-btn-tooltip');
+    if (tooltip) tooltip.remove();
+  } else {
+    _strongsBtnTooltipTimer = setTimeout(() => {
+      const tooltip = document.getElementById('strongs-btn-tooltip');
+      if (tooltip) tooltip.remove();
+    }, 150);
+  }
+}
+
 // BDB view mode: 'ai' or 'original' — persisted in localStorage
 function getBDBViewMode() {
   try { return localStorage.getItem('bdb-view-mode') || 'ai'; } catch (e) { return 'ai'; }
@@ -4826,6 +4919,7 @@ function getResearchPanelWidth() {
 // skipDispatch: if true, don't dispatch to AppStore (used when syncing FROM state)
 function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = false) {
   if (event) event.stopPropagation();
+  hideStrongsButtonTooltip(true);
   
   // Use the research panel element from HTML (exists inside BibleView)
   let panel = document.getElementById('research-panel');

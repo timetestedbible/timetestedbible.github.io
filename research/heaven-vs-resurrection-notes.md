@@ -1,18 +1,16 @@
-# The Population of the Renewed Earth
-
-**Working title:** *Where Do We Go? What Do We Become?*
+# Heaven vs Resurrection
 
 **Thesis:** The questions of afterlife, resurrection bodies, marriage, and daily life in the age to come are not speculative theology — they directly constrain and confirm the physical land promise to Abraham and the population density of the Renewed Jerusalem.
 
 **Two work products from this research:**
-1. **Research article** (timeless, evidence-based, guided tour) → `/research/population-of-the-renewed-earth/`
-2. **Blog post** (timely, urgent, personal, references the research article) → `_posts/2026-02-XX-the-remnant-equation.html`
+1. **Research article** (timeless, evidence-based, guided tour) → *Heaven vs Resurrection*
+2. **Blog post** (timely, urgent, personal, references the research article) → *Land of the Free, Home from the Grave*
 
 ---
 
 ## MASTER OUTLINE — Research Article
 
-The logical flow: establish the physical premise → prove the dead sleep (removes the false safety net) → prove the destination is earth (removes "cloud heaven") → define the body (proves physicality) → explain the gathering sequence (how we get there) → explain the millennial ecosystem (two populations, marriage/reproduction/temple) → converge on population math → the picture that emerges.
+The logical flow: establish the physical premise → prove the dead sleep (removes the false safety net) → prove the destination is earth (removes "cloud heaven") → define the body (proves physicality) → explain the gathering sequence (how we get there) → explain the millennial ecosystem (two populations, marriage/reproduction/temple) → the three parables of extraction (Christ's own remnant language) → the two harvests → converge on population math → the picture that emerges.
 
 Each section builds on the previous. Nothing is introduced before its foundation is laid.
 
@@ -34,6 +32,27 @@ Each section builds on the previous. Nothing is introduced before its foundation
 
 ### II. The Physics of Sleep — Where Do the Dead Go?
 **Must be settled first. Removes the "they're already in heaven" assumption that makes everything else moot.**
+
+**The question nobody distinguishes:** When a 2010 *60 Minutes / Vanity Fair* poll asked Americans *"What do you think most likely happens to people AFTER THEY DIE?"*, 65% answered "Go to heaven, purgatory, or hell." The remaining options — another dimension (7%), reborn on earth (6%), ghosts (2%), no afterlife (13%) — reveal something more important than the answers themselves: *nobody even thought to ask about resurrection.* The poll didn't offer "unconscious until the resurrection" because the category doesn't exist in the modern imagination. For most people, "go to heaven when you die" IS the final answer — not a temporary waiting room before something bigger.
+
+**What happens when you actually offer the option?** We polled our own audience (500 votes) with the resurrection choice included:
+
+| Answer | % |
+|---|---|
+| Go to heaven or hell | 63% |
+| Sleep until resurrection to flesh and bones | 27% |
+| Become a ghost | 1% |
+| Don't know / Other | 9% |
+
+Over a quarter chose "sleep until resurrection" — when it was available as an option. But note the sample: this audience skews heavily toward people already studying eschatology, rapture, and resurrection. Even among the most interested, most eschatologically engaged readers — people who actively seek out this material — the sleep view is still a minority at 27%. Among the general Christian population, national polls put it at ~1–2% (the combined membership of Seventh-day Adventists, Jehovah's Witnesses, Christadelphians, and scattered individuals in other traditions). This is a minority view at every level of measurement.
+
+This is the real confusion. Most Christians have collapsed two distinct events into one: the *intermediate state* (what happens between death and resurrection) and the *final state* (what happens after). Ask any churchgoer whether Grandma is in heaven, and they'll say yes. Ask whether Grandma will eventually receive a physical body back on a physical earth, and you'll get a blank stare — even though their own creeds affirm "the resurrection of the body" and "the life of the world to come" as two separate things. Even Catholics, whose catechism formally distinguishes the particular judgment (at death) from the general judgment (at resurrection), functionally treat heaven-at-death as the endpoint.
+
+**The demotion problem:** If the righteous dead are already consciously in God's presence — enjoying heavenly bliss, seeing His face, free from suffering — then physical resurrection is a *demotion.* You're pulling saints out of paradise and stuffing them back into bodies on dirt. Every resurrection in Scripture becomes an act of cruelty: Lazarus ripped from four days of heavenly joy. The widow's son torn from God's embrace. Jairus's twelve-year-old daughter dragged from glory back into a world of disease and death. And none of them — not one — reports a single word about where they were. The silence is inexplicable if they were conscious. It is exactly what you'd expect if they were asleep.
+
+**The minority signal:** Even granting that the sleep view remains a minority nationally (~1–2%), consider: the article's own math concludes the firstfruits are ~0.2% of humanity. "Few there be that find it" (Mat 7:14). "One of a city, and two of a family" (Jer 3:14). A truth held by a small minority is exactly what the narrow-gate framework predicts. The question is not *how many people believe this* — it's *what does the text say?*
+
+The positive case below rests on the biblical text and the pre-Nicene historical record (Section II-E: Justin Martyr, Irenaeus, Tatian, Athenagoras — all before the Platonic soul doctrine entered Christianity through Origen and Augustine). The evidence follows.
 
 **A. The positive case — four converging lines:**
 
@@ -91,10 +110,68 @@ Each section builds on the previous. Nothing is introduced before its foundation
    - Two kinds of raised bodies: mortal restoration (Lazarus etc.) vs. glorified transformation (1 Cor 15:44)
    - The living saints: 1 Cor 15:51-52 — bypass death entirely, changed in a moment
 
-**E. Historical pedigree:**
-   - Justin Martyr, Irenaeus (Against Heresies 5.31 — souls WAIT), Tatian, Athenagoras
-   - Conscious-heaven view is Origenist/Augustinian, not apostolic
-   - This framework is the recovery of the pre-Nicene position
+**E. The Torah teaches resurrection — and always has:**
+
+   The scholarly claim that "resurrection doesn't appear until Daniel" is a claim about *explicit propositional language.* Dan 12:2 is the first verse that says "the dead shall awake" in so many words. But the Torah teaches through enacted pattern, narrative, and feast cycles — and it is saturated with resurrection:
+
+   1. **Ex 3:6 / Mat 22:31-32** — Jesus Himself argues that the Torah proves resurrection. The Sadducees denied resurrection *precisely because they claimed the Torah didn't teach it.* Jesus quotes the burning bush — "I AM the God of Abraham, Isaac, and Jacob" — and says, "God is not the God of the dead, but of the living." He meets the Sadducees on their own ground and tells them they're wrong. If Jesus says the Torah teaches resurrection, the matter is settled.
+   2. **Deut 32:39** — "I kill, and I make alive; I wound, and I heal." Kill/make alive parallels wound/heal. If wound/heal is literal reversal, kill/make alive is literal reversal = resurrection.
+   3. **Gen 22:5 + Heb 11:17-19** — Abraham says "I and the lad will go yonder and worship, and come again to you." "WE will come again" — after being commanded to sacrifice Isaac. Hebrews confirms: Abraham expected God to raise Isaac from the dead. Where did he get that expectation?
+   4. **Gen 22 + Gen 21:12** — "In Isaac shall thy seed be called." If the promise stands and Isaac dies, God must raise him. Abraham's logic requires resurrection.
+   5. **Gen 2:7** — Dust + breath = living soul. If God assembled a living person from dust once, He can do it again. The creation formula IS the resurrection formula.
+   6. **Num 17:8** — Aaron's rod that budded. A dead stick — cut from the tree, no roots, no life — sprouts, blossoms, and bears almonds overnight. Dead wood lives. A resurrection sign confirming priestly authority.
+   7. **Lev 23:10-11** — Firstfruits. A sheaf is cut (death), then waved/raised before the LORD. Paul: "Christ the firstfruits of them that slept" (1 Cor 15:20). The Torah *commands* the feast that pictures resurrection.
+   8. **Gen 3:15** — The seed of the woman will be bruised (die) but will crush the serpent's head (triumph after death). Death-then-victory = resurrection pattern, in the first prophecy in Scripture.
+   9. **Ex 12 — The Passover pattern.** The lamb dies so the firstborn lives. Death passes over. The entire exodus is structured as death → deliverance → new life.
+   10. **Gen 5:24** — "Enoch was not; for God took him." Death is not the final word — God can take someone beyond it. In the Torah, before any prophet.
+
+   The Torah doesn't teach resurrection as a doctrinal proposition. It teaches it as a pattern woven into creation, covenant, feast, and narrative. The Sadducees missed it because they were looking for a proof-text. Jesus showed them it was in the grammar of God's self-identification.
+
+**F. Where the replacement doctrine came from — the pagan genealogy of "heaven and hell":**
+
+   The immediate-heaven-or-hell-at-death framework is not native to the Hebrew Bible. Its genealogy is traceable:
+
+   1. **The Hebrew Bible: Sheol for all.** The OT has ONE destination for ALL the dead: Sheol. Righteous and wicked alike (Gen 37:35, Ps 89:48). Not reward or punishment — silence, unconsciousness, cessation (Eccl 9:5, 10; Ps 146:4). No heaven-for-the-good and hell-for-the-bad in the Torah, the Prophets, or the Writings.
+   2. **Egyptian afterlife (ancient, pre-biblical).** Egypt had the most developed afterlife judgment system: weighing the heart against Ma'at, Osiris as judge, the Field of Reeds (paradise), Ammit devouring the unjustified. Israel was immersed in Egyptian culture for generations, yet the Torah *deliberately does not adopt* this framework. Moses, educated in "all the wisdom of the Egyptians" (Acts 7:22), gives Israel a law with no afterlife reward/punishment system. The absence is conspicuous.
+   3. **Greek philosophy: the immortal soul (Plato, 428–348 BC).** The soul is inherently immortal and pre-exists the body. The body is a prison (*soma = sema*). Death liberates the soul. The soul is judged: Elysium (paradise), Asphodel Meadows (neutral), Tartarus (punishment). This three-tier afterlife is the structural ancestor of heaven / purgatory / hell.
+   4. **Zoroastrian influence: the Persian bridge (post-exile, 539 BC onward).** Individual judgment at death. The Chinvat Bridge (righteous cross to paradise, wicked fall to torment). House of Song (heaven) for the righteous, House of Lies (hell) for the wicked. Final resurrection and cosmic renovation. Scholars note Jewish afterlife concepts evolved dramatically during Persian and Hellenistic cultural contact.
+   5. **Intertestamental development (300 BC – 100 AD).** Judaism fractured: Pharisees adopted resurrection + conscious intermediate state (Hellenistic/Zoroastrian synthesis). Sadducees rejected resurrection entirely. 1 Enoch, 4 Ezra — elaborate heavenly/hellish cosmologies emerge. The Pharisaic view fed into both rabbinic Judaism and early Christianity — already a synthesis of Hebrew resurrection theology with Greek/Persian soul concepts.
+   6. **Early church fathers: sleep.** Justin Martyr (100–165): Christians who say the soul goes to heaven at death are not orthodox. Irenaeus (130–202): souls "wait" in an invisible place until resurrection (*Against Heresies* 5.31). Tatian, Athenagoras, Theophilus of Antioch — conditional immortality / soul sleep.
+   7. **The Platonic turn.** Origen (185–253) — deeply Platonist. Taught pre-existence of souls, immortality of the soul, allegorical interpretation. His framework imported the Platonic soul into Christian theology. Augustine (354–430) — cemented eternal conscious torment, rejected soul sleep, systematized the heaven/hell binary that became Catholic and then Protestant orthodoxy.
+   8. **Dante solidifies the imagery (1320 AD).** The *Divine Comedy* gave Western Christianity its vivid imagery of hell — nine circles, specific punishments, fire and ice. Much of what modern Christians "see" when they think of hell comes from Dante, not Scripture.
+
+   Bart Ehrman (secular scholar, *Heaven and Hell: A History of the Afterlife*, 2020) reaches the same conclusion independently: the concepts of eternal heaven and hell as immediate post-death destinations "are not found in the Old Testament and were not taught by Jesus." (Ehrman is wrong that resurrection isn't in the Torah — see Section II-E above — but his historical genealogy of the replacement doctrine is well-documented.)
+
+   **The summary:** The Torah teaches Sheol (unconscious sleep) and resurrection (through pattern, feast, and narrative). The immediate-heaven-or-hell doctrine entered Judaism through Persian and Greek cultural contact, was amplified by Platonic philosophy through Origen, and cemented by Augustine. The pre-Nicene church fathers — closest to the apostles — taught what the Hebrew text teaches: sleep until resurrection.
+
+**G. What harm is there in getting this wrong?**
+
+   1. **It breaks Paul's argument.** 1 Cor 15:16-18: "If the dead rise not... then they also which are fallen asleep in Christ are PERISHED." If they're already in heaven, they haven't perished — they're fine. Paul's logic is incoherent unless the dead are unconscious and resurrection is their *only* hope.
+   2. **It spiritualizes away the land promise.** If the destination is spiritual heaven, the physical land promise to Abraham becomes a metaphor. The promised land = "heaven." The physical body = unnecessary. The entire physical framework of the covenant — land, body, temple, city, tribal allotments — gets allegorized into mist. This is the historical root of replacement theology, supersessionism, and the disconnection of Christianity from the Abrahamic covenant.
+   3. **It erases the firstfruits distinction.** If everyone goes to heaven at death, there's no meaningful difference between the first resurrection (Rev 20:4-6) and the second. The timing is irrelevant. But if you sleep until resurrection, WHICH resurrection you're part of is the most consequential question of your life.
+   4. **It kills the urgency of the narrow gate.** "I'm going to heaven when I die" is the ultimate comfort doctrine. If heaven is the default, "few there be that find it" becomes a puzzle to explain away. But if the firstfruits are 0.2% and the rest sleep — the narrow gate has teeth.
+   5. **It makes the millennium an awkward appendix.** If saints are already in heaven, reigning on earth for 1000 years (Rev 5:10, 20:4-6) is a demotion. This is exactly why amillennialism (no literal millennium) became dominant — the millennium is theologically embarrassing if heaven is already the destination.
+   6. **It breaks the feast cycle.** The Torah's feast calendar (Firstfruits → Harvest → Ingathering) maps onto the resurrection timeline. If everyone arrives in heaven individually at death, there's no corporate harvest event — the feasts lose their prophetic structure.
+   7. **It opens the door to necromancy — and a majority of Christians have walked through it.** If the dead are conscious, communication with them is conceptually possible. And the data shows it's not hypothetical: Pew Research (2023) found that among Christians who reported at least one interaction with a dead loved one in the past year (felt their presence, spoke to them, or received communication), the numbers by group are: Evangelicals 35%, Mainline Protestants 52%, Historically Black Protestants 56%, Catholics 58%. **A majority of Christians in America interacted with someone they believe is dead in the past year.** For "ever visited by a dead loved one," the numbers are higher still: Evangelicals 42%, Mainline 58%, Black Protestants 67%, Catholics 66%. The trend is growing — Barna (2003) found 29% of born-again Christians believed communicating with the dead was possible; the 2023 figures are far higher.
+
+   This is exactly what the Torah forbids:
+   - Deut 18:10-12 — consulting the dead is an *abomination* (H8441 *to'evah*)
+   - Lev 19:31 — "Regard not them that have familiar spirits, neither seek after wizards"
+   - Lev 20:6 — "I will set my face against that soul"
+   - Isa 8:19 — "Should not a people seek unto their God? On behalf of the living, should they seek unto the dead?"
+
+   The sleep doctrine eliminates this entirely. If the dead are unconscious, they CANNOT communicate. Any perceived "communication" is either the bereaved person's own psychology (grief, memory, dreams — natural and not sinful) or something *else* presenting itself as the dead person (a deceiving spirit — which explains why God forbade the practice so forcefully). The wrong belief isn't abstract theology — it's producing the exact behavior the Torah calls an abomination, at scale, inside the church, and the majority don't realize it because their doctrine told them the dead are available.
+
+   **The deeper danger: the doctrine prevents confession.** Everyone sins — accidental sin has a remedy (Lev 4-5, Num 15:22-29). But what happens when someone is *confronted* with the evidence and refuses to acknowledge it as sin? The doctrine of conscious heaven provides the exact theological cover needed for denial: "It's not necromancy — she's alive in heaven watching over me. I'm not doing a séance." The sin moves from accidental to willful — and willful sin occupies a different category entirely:
+
+   - **Num 15:30-31** — "The soul that doeth anything presumptuously... hath despised the word of the LORD, and hath broken his commandment; that soul shall utterly be cut off." No sacrifice for sin done "with a high hand."
+   - **Heb 10:26-27** — "For if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins, but a certain fearful looking for of judgment and fiery indignation." Paul's letter to the Hebrews restates the Torah principle in NT terms: willful sin after knowledge = no sacrifice remains.
+   - **Heb 10:28-29** — "He that despised Moses' law died without mercy under two or three witnesses: of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of God?" The NT standard is *stricter* than the OT, not looser.
+   - **1 John 1:8-10** — "If we confess our sins, he is faithful and just to forgive us our sins" (v9). "If we say that we have no sin, we deceive ourselves" (v8). "If we say that we have not sinned, we make him a liar" (v10). Confession is the mechanism. Denial blocks the mechanism.
+
+   The false doctrine doesn't just enable the sin — it prevents confession of the sin. It creates the violation AND provides the theological framework that makes repentance impossible. You can't confess what you refuse to recognize. A majority of Christians are engaging in behavior the Torah calls an abomination (Deut 18:12), and when confronted, their doctrine gives them a reason to deny it — which moves them from accidental sin (forgivable) to willful sin after knowledge (Heb 10:26 — no sacrifice remains). The doctrine is self-defending: it produces the sin and immunizes against correction.
+   8. **It hides the two-population structure.** If everyone is in heaven, there's no framework for the mortal nations of the millennium (Isa 65:20, Zech 14:16-19), the Ezekiel temple (Ezek 40-48), or the nations outside the city (Rev 21:24-26).
+   9. **It flattens the resurrection timeline.** Heaven-or-hell = one moment, one verdict. But Scripture describes multiple stages: firstfruits (Rev 20:4-6), second resurrection (Rev 20:12-13), and final judgment — with real, permanent consequences. The second resurrection is not a second chance; it is judgment by works and the book of life (Rev 20:12-15). Those not found in the book of life face the second death (Rev 20:15). The harvest model is not universalism on a delayed schedule — it is a structured sequence with genuine sorting at every stage. Missing the firstfruits is not the same as the second death, but neither is it guaranteed salvation later. The distinction matters precisely because the outcomes are different and the stakes are real.
 
 ---
 
@@ -120,19 +197,38 @@ Each section builds on the previous. Nothing is introduced before its foundation
    - G726 *harpazo* = "seize, carry off" (Philip → Azotus, 30 miles — same verb as rapture)
    - Both eventually died, currently asleep (Heb 11:39-40)
 
-**D. The gathering sequence — islands flee, saints hide, then inherit:**
-   - Islands = sanctified people (island study). "Moved out of their places" / "fled away" (Rev 6:14, 16:20) = gathering
-   - Caught up to meet (*apantesis*) the Lord in the AIR (*aer* = atmosphere, NOT *ouranos* = heaven)
-   - Hidden "for a little moment" (Isa 26:20) — the chambers/wilderness/clouds
-   - Pattern: Noah in ark, Lot from Sodom, Rahab in house, Passover behind the door
+**D. The gathering sequence — cloud-chariots, wilderness, walk through ashes:**
 
-**E. The hovering city — the New Jerusalem in transit:**
-   - The city begins descending from God's jurisdictional realm
-   - Saints caught up to MEET it in the air (apantesis — go out to meet, escort back)
-   - They ENTER the city — the Father's house with many rooms (Jn 14:2)
-   - The city hovers as hidden sanctuary while judgment falls below
-   - The Two Witnesses ascend "in a cloud" into this hovering city (Rev 11:12) — confirms it exists in the atmosphere
-   - New Jerusalem "comes down from God out of heaven" (Rev 21:2) = it was in the atmosphere, now it lands
+   The gathering is an evacuation, not an ascension. Every element is textually grounded:
+
+   1. **Cloud-chariots arrive** — Ps 104:3: "who maketh the clouds his chariot." Clouds in Scripture are ALWAYS divine transport vehicles (see cloud symbol study). Every use: pillar of cloud leading Israel, cloud receiving Jesus at ascension, Son of Man coming WITH clouds, Two Witnesses ascending IN a cloud.
+   2. **Saints caught up (*harpazo*)** — 1 Thess 4:17. Same verb as Philip's Spirit-transport (Acts 8:39 — moved 30 miles to Azotus). Same category as Ezekiel's Spirit-lifts (Ezek 3:12, 8:3, 37:1). Physical relocation by Spirit-powered transport, deposited on earth.
+   3. **The meeting (*apantesis*)** — G529: go out to meet an arriving dignitary, escort him to his destination (Acts 28:15 — brethren go out to meet Paul, escort him INTO Rome). Direction: up → meet → back down to earth.
+   4. **In the air (*aer*)** — G109, the atmosphere. The cloud-chariots operate in the sky. The meeting is brief — a rendezvous during transport, not a destination.
+   5. **Hidden in the wilderness** — Rev 12:6: "the woman fled into the wilderness, where she hath a place prepared of God." Rev 12:14: "given two wings of a great eagle, that she might fly into the wilderness, into her place." Isa 26:20: "enter into thy chambers, and shut thy doors... hide thyself for a little moment, until the indignation be overpast." Isa 16:1-4: Moab/Petra named as refuge for outcasts.
+   6. **The extraction-before-judgment pattern** — EVERY precedent: Noah in ark BEFORE flood. Lot out BEFORE fire (Gen 19:22 — "I CANNOT do anything until thou be come thither"). Rahab in house BEFORE Jericho falls. Blood on door BEFORE destroyer passes. The extraction is mandatory and sequenced.
+   7. **The furnace pattern — protected THROUGH judgment, not removed from earth** — Dan 3:25: three walk IN the fire unharmed. Isa 43:2: "when thou walkest through the fire, thou shalt not be burned." The righteous don't escape to another realm — they pass through the judgment protected.
+   8. **Walk through the ashes** — Mal 4:3: "ye shall tread down the wicked; for they shall be ashes under the soles of your feet." Isa 66:24: "they shall go forth, and look upon the carcasses." Physical feet. Physical ashes. On the ground.
+   9. **Reign ON the earth** — Rev 5:10: "we shall reign ON THE EARTH." Not from the air, not from a hovering city. On the ground. The destination is earth. The cloud-chariot transport is the vehicle, not the home.
+
+   **What the remnant is being evacuated FROM:**
+   - Zech 5:1-4 — Flying rolls (20×10 cubits, ~30×15 ft) that consume stone AND wood
+   - Joel 2:30 — תִּימָרוֹת (*timarot*, H8490, from *tamar* = palm tree) of smoke — palm-tree-shaped pillars of smoke (mushroom clouds)
+   - 2 Pet 3:10 — *stoicheion* (fundamental elements) *luō* (dissolved/disintegrated) with *kausoō* (extreme heat) and *rhoizēdon* (rushing/whizzing crash)
+   - Isa 34:5 — "my sword shall be bathed in heaven" — weapon passing through space before descending
+   - Zech 5:7-8 — talent of lead (nuclear shielding material)
+   - Rev 8:7-12 — 1/3 of earth destroyed
+   - Rev 18:10, 17, 19 — great city destroyed in ONE HOUR
+   - Mat 24:22 — "except those days be shortened, no flesh would be saved"
+
+   The cloud-chariots extract the remnant. The *timarot* fall on everything else. The survivors emerge and walk through the ashes.
+
+**E. The New Jerusalem — descends AFTER the millennium, not before:**
+   - Heb 12:22, Gal 4:26 — the heavenly Jerusalem already exists ("Jerusalem which is above")
+   - Rev 20:9 — "the beloved city" present at end of millennium = earthly Jerusalem (Ps 78:68, 87:2, Jer 12:7 — earthly Zion called "beloved" throughout OT)
+   - Rev 21:1-2 — New Jerusalem descends AFTER the 1000 years, AFTER Gog/Magog, AFTER final judgment, onto the RENEWED earth
+   - Rev 21:3 — "the tabernacle of God is WITH men" — final state: God on earth permanently
+   - The New Jerusalem descends ONCE, at the end, for the final state — not during the millennium
 
 **F. The Bridegroom's Year and the 7-year framework:**
    - Deut 24:5 — bridegroom shall not go to war for one year
@@ -234,7 +330,73 @@ Each section builds on the previous. Nothing is introduced before its foundation
 
 ---
 
-### VI. The Two Harvests — First Fruits and Final Ingathering
+### VI. The Three Parables of Extraction — Gold, Stones, and the Net
+**The remnant pattern in Christ's own words. Three parables, one sequence: extraction of the valuable from the mass.**
+
+**Interpretive note:** The reading below (man = Christ, treasure = the elect) is held by roughly 10–15% of commentators. The majority (~85–90%) read the man as the believer and the treasure as Christ/the kingdom. The Hebrew Matthew angle connecting "valuable stones" to *segullah*/living stones is essentially unstudied. This section presents the minority reading and the textual reasons for preferring it.
+
+**A. The Hebrew Matthew text (Mat 13:44-49):**
+
+The Hebrew Matthew (Shem Tov) reads differently from the Greek in ways that sharpen the parable sequence:
+   - v44: "The heavenly kingdom is like **gold** hidden in a field" (Greek: "treasure" / *thēsauros*)
+   - v45: "like a merchant who searches for **valuable stones**" (Greek: "pearl" / *margaritēs*)
+   - v46: "when he found **a good valuable stone** he went and sold everything... and bought the stone"
+   - v47-49: the net gathers all kinds, good sorted into vessels, bad cast out — "so it will be at the end of the world"
+
+**B. The Christological reading — man = Christ, treasure = the remnant:**
+
+   1. **"The field is the world"** — Jesus defines this symbol explicitly in the same discourse (Mat 13:38, wheat and tares). Using the same symbol with a different meaning two parables later would be unusual.
+   2. **Christ is the buyer** — 1 Cor 6:20: "ye are bought with a price." Rev 5:9: "thou wast slain, and hast redeemed us." 1 Pet 1:18-19: "redeemed... with the precious blood of Christ." 2 Pet 2:1: "the Lord that bought them." The purchase language maps onto redemption. Grace is free to the recipient, not to the giver — the buyer pays; the treasure doesn't.
+   3. **Israel is God's treasure** — Ex 19:5: "ye shall be a *segullah* unto me above all people." Ps 135:4: "Israel for his *segullah*." Mal 3:17: "they shall be mine... my jewels [*segullah*]." The treasure buried in the field = the remnant hidden within humanity.
+   4. **He bought the whole field** — Christ redeemed the whole world (the field) to get the treasure (the elect) within it. The entire field is purchased, not just the treasure extracted.
+   5. **The joy** — "for JOY thereof goeth and selleth all." Heb 12:2: "who for the JOY that was set before him endured the cross." The joy is Christ's joy at redeeming His people, not the believer's joy at finding God.
+   6. **"Buying" is valid parabolic language for human action too** — the wise virgins are told to "go and buy" oil (Mat 25:9); Isa 55:1: "come, buy wine and milk." But in this sequence, the buyer acts with sovereign initiative (searches, finds, sells everything, buys) — the pattern of a redeemer, not a seeker stumbling onto salvation.
+
+**C. The "valuable stones" connection (Hebrew Matthew):**
+
+   The Greek "pearl of great price" naturally reads as a singular unique treasure — Christ. But the Hebrew "valuable stones" connects to a different network:
+   - **Mal 3:17** — God's people ARE the precious stones (*segullah*)
+   - **1 Pet 2:5** — "Ye also, as living stones, are built up a spiritual house"
+   - **Rev 21:19-20** — The foundations of New Jerusalem = twelve precious stones, one per tribe
+   - **Isa 54:11-12** — "I will lay thy stones with fair colours, and lay thy foundations with sapphires... all thy borders of pleasant stones"
+   - **Ex 28:17-21** — Twelve stones on the high priest's breastplate, each engraved with a tribal name. The priest carries the precious stones over his heart.
+   - The merchant searching for valuable stones and finding the one good stone = Christ seeking His people and identifying the genuine article
+
+**D. The unified sequence — divine extraction:**
+
+   All three parables describe the same pattern: extraction of the valuable from the mass.
+   1. **Gold from a field** — treasure buried in dirt, buyer purchases the whole field to get it
+   2. **A good stone from among stones** — merchant searches, identifies, pays everything to acquire
+   3. **Good fish from the net** — net gathers everything, angels sort at the end of the world
+
+   In parables 1 and 2, someone pays a price to acquire what's valuable. In parable 3, the sorting is explicitly eschatological — angels separating on divine authority. If the buyer in parables 1 and 2 is "any believer," parable 3 breaks the pattern (the sorters are clearly not believers). But if the agent in all three is on the divine side — Christ buying, Christ acquiring, angels sorting — the sequence is unified.
+
+   **Gold refined by fire** (Hebrew Matthew's "gold" vs. Greek "treasure"): Mal 3:2-3 (refiner's fire), 1 Pet 1:7 (faith tried by fire, more precious than gold), Rev 3:18 ("buy of me gold tried in the fire"). The remnant are the gold that survives the refining — hidden in the field of humanity, indistinguishable from dirt until someone digs.
+
+**E. The gold-mining analogy — the parable quantified:**
+
+   Modern gold mining classifies ore by concentration:
+
+   | Grade | Gold per ton | As percentage |
+   |---|---|---|
+   | Low-grade | <1 g/t | <0.0001% |
+   | Medium-grade | 1–5 g/t | 0.0001–0.0005% |
+   | High-grade | 5–20 g/t | 0.0005–0.002% |
+   | Bonanza-grade | >20 g/t | >0.002% |
+   | **The remnant (0.2%)** | **~2,000 g/t** | **0.2%** |
+
+   Even at bonanza-grade (0.002%), miners consider a deposit "extremely lucrative" — worth acquiring the entire field. The remnant at 0.2% is 100× more concentrated than bonanza-grade gold, and a miner who recognized that deposit would sell everything he owned to buy that field.
+
+   The parable's logic is the logic of extraction economics: you don't buy a field for the dirt. You buy it for what's hidden in it. The cost of the field is justified by the value of the treasure within — even when the treasure is a vanishingly small fraction of the total mass. The Hebrew Matthew's use of "gold" (not the generic Greek "treasure") makes the metallurgical connection explicit: this is ore in the ground, not a buried chest. You have to buy the field, mine it, and refine it (Mal 3:2-3) to get what's valuable out. Everything else is slag.
+
+**F. Connection to the remnant math:**
+   - The 0.2% firstfruits = the gold in the field, the good stone among stones, the good fish from the catch
+   - Christ purchased the whole field (redeemed all creation) to extract the treasure (the remnant)
+   - The net gathers ALL — but only the good go into vessels. The sorting is the judgment. The few are few.
+
+---
+
+### VII. The Two Harvests — First Fruits and Final Ingathering
 **The spatial key that makes the math work.**
 
 **A. The agricultural feast cycle maps onto the resurrection timeline:**
@@ -263,7 +425,7 @@ Each section builds on the previous. Nothing is introduced before its foundation
 
 ---
 
-### VII. The Convergence — Population Density
+### VIII. The Convergence — Population Density
 **All premises assembled. The math speaks.**
 
 **A. The logic chain:**
@@ -297,9 +459,130 @@ Each section builds on the previous. Nothing is introduced before its foundation
    - Firstfruits (~0.2% of humans) inherit a proportional slice (~0.6-1.8% of land)
    - Final harvest inherits the whole globe after the second resurrection
 
+**F. The "few" confirmed across canonical and extra-biblical texts:**
+
+   **Calculable ratios (hard numbers from Scripture):**
+
+   | Source | What's measured | Numbers | Ratio |
+   |---|---|---|---|
+   | Noah (Gen 7:7, 1 Pet 3:20) | Righteous in the whole world | 8 / millions | <0.001% |
+   | Sodom (Gen 19) | Righteous extracted from 4 cities | 3-4 / ~4,000 | 0.1% |
+   | Solomon (Eccl 7:28) | Upright men found by searching | 1 / 1,000 | 0.1% |
+   | Jeremiah (3:14) | Gathered from cities and clans | 1-2 / 1,000 | 0.1-0.2% |
+   | Elijah (1 Ki 19:18, Rom 11:4-5) | Who had not bowed to Baal | 7,000 / ~2-3M | 0.23-0.35% |
+
+   Five independent data points from five different authors across ~1,500 years. All land between 0.001% and 0.35%. Center of gravity: **0.1-0.2%**.
+
+   **Modern demographic confirmation — the Sabbath SIGN:**
+
+   The Sabbath is explicitly declared the sign that identifies God's sanctified people:
+   - Ex 31:13 — "my sabbaths ye shall keep: for it is a **sign** between me and you throughout your generations; that ye may know that I am the LORD that doth **sanctify** you"
+   - Ezek 20:12 — "I gave them my sabbaths, to be a **sign** between me and them, that they might know that I am the LORD that **sanctify** them"
+   - Ezek 20:20 — "hallow my sabbaths; and they shall be a **sign** between me and you, that ye may know that I am the LORD your God"
+
+   Sabbath-keeping Christians worldwide (~2024 data):
+
+   | Group | Adherents |
+   |---|---|
+   | Seventh-day Adventists | ~24,000,000 |
+   | True Jesus Church | ~2,000,000 |
+   | Church of God (Seventh Day) | ~250,000 |
+   | Seventh Day Baptists | ~47,500 |
+   | Hebrew Roots / Torah-observant | ~550,000 |
+   | Messianic Jews (Sabbath-keeping) | ~650,000 |
+   | **Total** | **~27,500,000** |
+
+   **27.5 million / 8 billion = 0.34% — 1 in 291.**
+
+   The sign identifies the people. The people match the ratio. Five ancient calculations (Noah, Sodom, Solomon, Jeremiah, Elijah) converge on 0.1-0.35%. The modern demographic measurement of those bearing the covenantal sign lands at 0.34% — right at Elijah's 7,000 benchmark (0.23-0.35%).
+
+   **Stacking filters — the narrow gate as obedience funnel:**
+
+   A caution: all sin (Rom 3:23), and we cannot construct a checklist of commandments and declare everyone outside it damned. The issue is not the sin — everyone falls short. The issue is **the denial that breaking these commandments IS sin.** Accidental sin has a remedy: confession (1 John 1:9), repentance, sacrifice. But when confronted with the evidence and the response is "that doesn't apply anymore" or "we're under grace" — the sin moves from accidental to willful (Heb 10:26 — no sacrifice remains). The same self-defending doctrine pattern identified in Section II-G (necromancy): the false teaching enables the violation AND provides the framework to deny it's a violation when confronted.
+
+   With that understood, Scripture does make two things explicitly clear:
+
+   1. **The Sabbath is a sign that He sanctifies us** — Ex 31:13, Ezek 20:12, 20. Not a suggestion. A covenant marker. The sign that distinguishes His people. Refusing the sign is refusing the identification.
+
+   2. **Those who eat swine and other unclean things will perish on judgment day** — Isa 66:17: "They that sanctify themselves, and purify themselves in the gardens behind one tree in the midst, **eating swine's flesh, and the abomination, and the mouse, shall be consumed together**, saith the LORD." This is a judgment-day text (Isa 66:15-16: "the LORD will come with fire... by fire and by his sword will the LORD plead with all flesh: and the slain of the LORD shall be many"). Those eating unclean at that moment are explicitly listed among the consumed.
+
+   These are not arbitrary filters. They are the two markers Scripture itself names as identifying who is sanctified (Sabbath) and who perishes (unclean food at judgment). Of those who keep both:
+
+   | Filter | Number | % of 8B |
+   |---|---|---|
+   | Sabbath-keepers | ~27.5 million | 0.34% |
+   | Sabbath + clean/unclean food laws | ~19-20 million | 0.24% |
+
+   Each additional act of obedience narrows the funnel. The gate is narrow not because God made it small — it's narrow because each commandment is a filter that most people choose not to pass through. By the time you reach full covenant observance, you approach Solomon's "one man among a thousand" (0.1%).
+
+   **Directional confirmations (not precisely calculable):**
+
+   | Source | Language | Direction |
+   |---|---|---|
+   | Mat 7:14 | "few there be that find it" | few |
+   | Mat 22:14 | "many called, few chosen" | few from many |
+   | Mat 24:22 | "except those days be shortened, no flesh would be saved" | approaching zero |
+   | Lk 17:28-30 | "as in the days of Lot" | Sodom-scale |
+   | Gen 19:31 | Lot's daughters: "not a man in the earth" | near-zero locally |
+   | Isa 6:13 | "a tenth... shall be eaten... holy seed the stump" | <10%, further reduced |
+   | Ezek 5:1-4 | hair divided in thirds, few bound in garment | tiny fraction |
+   | 2 Esdras 8:1-3 | "many created, few saved" | few |
+   | 2 Esdras 9:15 | "wave vs. drop" | extreme |
+   | 2 Esdras 9:22 | "grape from a cluster" | 1/80-200 berries = 0.5-1.25% |
+   | 2 Esdras 9:22 | "plant from a forest" | extreme |
+   | 2 Baruch 14:2 | "few nations will be left" | few from many |
+   | 2 Baruch 48:33 | "not many wise... intelligent but few" | few from many |
+   | Hebrew Mat 13:44 | "gold hidden in a field" | gold ore: bonanza-grade 0.002% |
+
+   Grape cluster data: a typical cluster has 80-200 berries (world record ~850). One grape from a cluster of 200 = 0.5%. The gold-dust-vs-clay metaphor (2 Esdras 7) mirrors the gold-hidden-in-a-field parable (Hebrew Matthew) — same theology of precious rarity within common mass.
+
+**G. The Ezekiel temple capacity constraint (see `research/ezekiel-temple-capacity.js`):**
+
+   The Ezekiel temple's physical dimensions were modeled against historical cross-checks:
+
+   1. **Temple dimensions:** 500×500 cubits outer wall = ~17 acres total, ~14.8 acres usable court. Four corner kitchens (40×30 cubits each). 24 slaughter tables across 3 gates. Distributed processing system.
+   2. **Historical cross-check:** Herod's Temple Mount (~23 acres usable) served 300K-500K Passover pilgrims (scholarly estimate). Our "session cycling" model predicted 3.9M — **8-13× too high.** Pilgrims didn't rotate in/out. They came and stayed. Instantaneous density at Herod: ~3-5 people/sq m.
+   3. **Ezekiel temple at Herod-comparable density:** ~200-300K instantaneous capacity per feast.
+   4. **The mishpachah delegation model (Zech 14:17-19):** The Hebrew word for "families" in Zech 14:17 is מִשְׁפְּחוֹת (*mishpachot*) — CLANS, not nuclear families. v16 says "every one that is left" shall go up, but v17-19 punishes the *mishpachah* (clan) that doesn't come — the punishment falls on the clan, not the individual. The clan head's attendance provides covering for the clan (same principle: high priest covers nation, household head covers household at Passover, clan head covers clan at Sukkot).
+   5. **Temple is NEVER the binding constraint.** At 250K capacity with clan delegations, even small delegations represent vast populations. The number of founding mishpachot is fixed — population within each grows, but delegation slots stay constant.
+
+**H. Mortal population during the millennium:**
+
+   **Starting population — Mat 24:19-20 and the Lot template:**
+   - Mat 24:19-20: pregnant women flee from Judea — mortal survivors enter the millennium
+   - Lk 17:28-30: "as in the days of Lot" — Sodom-scale thoroughness
+   - Sheep/goats judgment (Mat 25:31-46) sorts the living nations → sheep enter as mortal population
+   - Minimum starting population (Promised Land): 0.2% of current Judea/Israel (~9.8M) ≈ **~20,000**
+   - Minimum starting population (global): 0.2% of 8 billion ≈ **~16 million**
+
+   **Lifespan — Isa 65:20-22:**
+   - *Na'ar* (H5288) at 100 = still in the pre-maturity/apprentice stage (not biologically immature — Joshua was called *na'ar* at 40-50). Tells us lifespan is much longer than 100, not that reproduction starts late.
+   - "Days of a tree" (Isa 65:22) = multi-century (oaks 500-1000yr, olives 1000+)
+   - BUT: "the sinner being 100 years old shall be accursed" — sinners die at 100. Extended lifespan is for the covenant-following. If sin persists among the nations (Zech 14:17-19 — punished for not keeping feasts; Rev 20:7-9 — final rebellion), then **general mortal lifespans remain similar to modern levels.** The "days of a tree" applies to the righteous among the mortals.
+   - Therefore: **traditional population growth metrics apply** (0.1-0.5%/yr, normal lifespans, normal fertility).
+
+   **Population growth modeling (see `research/ezekiel-temple-capacity.js`):**
+   - Too many unknowns to model precisely: lifespan, fertility, mortality rate, starting population all uncertain
+   - What we CAN say: at traditional growth rates (0.3%/yr), 16M starting → ~20 billion by year 1000. Even at 0.1%/yr → ~272M. Either way, "sand of the sea" (Rev 20:8) is easily achievable.
+   - **The Promised Land population is constrained by agricultural carrying capacity** (~30-60M at intensive agriculture on ~300K sq mi), not by the temple
+   - **The global population is unconstrained** — grows freely, sends mishpachah delegations to Jerusalem once/year for Sukkot
+   - **Gog/Magog (Rev 20:8)** draws from "the four quarters of the earth" — the global mortal population, not the Promised Land residents
+
+   **The restraint question:**
+   - Without death and infant mortality, populations explode (the model proves any combination of moderate fertility + low mortality → physically impossible numbers within centuries)
+   - The ONLY mechanism that keeps population manageable is voluntary restraint — people choosing fewer children
+   - Motivation for large families disappears: no infant mortality, no labor urgency, extended lifespan, peace, security
+   - Priestly instruction (Isa 2:3, Mic 4:2) includes stewardship of the land
+   - Failure of restraint at the margins, far from Zion's instruction, over 1000 years → demographic pressure → Gog/Magog. The rebellion is not just spiritual — it's resource-driven.
+
+   **The 6000/1000 ratio:**
+   - The firstfruits are produced over ~6,000 years of human history — every generation since the covenant was accessible. 0.2% of ~43-85 billion = ~86-170 million firstfruits.
+   - The final harvest is produced during ~1,000 years of the millennium — mortal nations reproducing, being instructed, being judged — culminating in the second resurrection (Rev 20:12-13).
+   - Ratio 6:1 mirrors the creation pattern: 6 days of labor, 1 day of rest. The growing season produces the firstfruits; the harvest gathers the final crop.
+
 ---
 
-### VIII. The Picture That Emerges
+### IX. The Picture That Emerges
 **The synthesis. What does it actually look like?**
 
 Physical, agricultural, tribal, spacious, immortal, joyful, extra-dimensional, governed directly by God.
@@ -1142,28 +1425,28 @@ This harmonizes every strand: the apantesis (going out to meet the arriving king
 
 The New Jerusalem in transit is the chuppah, the bridal canopy, the hiding place, the Father's house, the chambers. It is the home where the Bridegroom stays with His bride while the earth below is judged.
 
-**Proof-text: The Two Witnesses ascend INTO the hovering city (Rev 11:11-12):**
+**The Two Witnesses ascend in a cloud (Rev 11:11-12):**
 
 "And after three days and an half the Spirit of life from God entered into them, and they stood upon their feet… And they heard a great voice from heaven saying unto them, COME UP HITHER. And they ascended up to heaven in a cloud; and their enemies beheld them."
 
-Under the traditional reading, the two witnesses bypass the atmosphere and go straight to God's throne — violating Jn 3:13 ("no man hath ascended up to heaven"). But under the hovering-city framework: they ascend in a cloud into the *aer* — they are returning to the New Jerusalem in transit.
+The cloud is the transport vehicle (Ps 104:3 — "who maketh the clouds his chariot"). The two witnesses are Spirit-transported — same *harpazo* category as Philip (Acts 8:39), same cloud-vehicle as Christ's ascension (Acts 1:9). Their destination after the transport is not specified — they may be relocated to the prepared wilderness place (Rev 12:6) or to wherever the Bridegroom's presence is during the tribulation period.
 
 **The two witnesses are NOT the "remnant of her seed" (Rev 12:17).** The remnant of her seed are those the dragon makes war against and OVERCOMES (Rev 13:7, Dan 7:21) — helpless tribulation saints, martyred victims. The two witnesses are the opposite: they have OFFENSIVE POWER for the entire 1260 days — fire from their mouths consumes their enemies, they shut heaven so it doesn't rain, they turn water to blood, they strike earth with plagues (Rev 11:5-6). The beast can only kill them AFTER "they have finished their testimony" (Rev 11:7). They are not being overcome — they are operating with the Bridegroom's authority.
 
-The witnesses are ENVOYS — sent FROM the hidden Bridegroom to operate on earth with His power while the bride is sheltered. Their powers map onto Moses (water to blood, plagues — Exod 7-12) and Elijah (shutting heaven, fire — 1 Ki 17:1, 2 Ki 1:10-12). They are commissioned, empowered, complete their mission, are briefly killed (3.5 days), then ascend BACK to the hovering city — returning to the Bridegroom's presence after their earthly assignment.
+The witnesses are ENVOYS — sent FROM the hidden Bridegroom to operate on earth with His power while the bride is sheltered. Their powers map onto Moses (water to blood, plagues — Exod 7-12) and Elijah (shutting heaven, fire — 1 Ki 17:1, 2 Ki 1:10-12). They are commissioned, empowered, complete their mission, are briefly killed (3.5 days), then ascend in a cloud — Spirit-transported back to the Bridegroom's presence after their earthly assignment.
 
-Their ascent in Rev 11:12 is a RETURN, not an initial gathering. They were sent out from the protected position, operated on earth, and now come back. This confirms the hovering city exists during the tribulation period — there is somewhere for them to ascend TO in the atmosphere.
+Their ascent in Rev 11:12 is a RETURN, not an initial gathering. They were sent out from the protected position, operated on earth, and now come back — Spirit-transported by cloud-chariot to wherever the Bridegroom's presence is during the tribulation (the prepared wilderness place, Rev 12:6).
 
 The sequence within Revelation:
 - Rev 11:3-6 — witnesses prophesy with power for 1260 days (envoys operating on earth)
 - Rev 11:7 — beast kills them AFTER they finish (mission complete)
 - Rev 11:9-11 — they lie dead "three days and an half" before resurrection. NOTE: if the day-year principle applies (Num 14:34 — "each day for a year"; Ezek 4:6 — "I have appointed thee each day for a year"), then 3.5 days = 3.5 YEARS — the exact duration of the second half of the week (the woman's 1260 days in the wilderness). Their death spans the entire second half. Their resurrection at the end of the 3.5 years aligns with the completion of the full 7-year period — and with the first resurrection of Rev 20:4, when ALL the tribulation martyrs are raised. This maps onto the Jacob typology: the second bride (Rachel / the tribulation martyrs) is gathered at the END of the 7-year period, completing the full bride before the marriage supper.
-- Rev 11:11-12 — resurrected, ascend in a cloud (return to the hovering city)
+- Rev 11:11-12 — resurrected, ascend in a cloud (Spirit-transported back to the Bridegroom)
 - Rev 11:15 — "The kingdoms of this world are become the kingdoms of our Lord" (seventh trumpet)
 - Rev 19:7 — "The marriage of the Lamb is come, and his wife hath made herself ready" (bride complete — the remnant of her seed, the tribulation martyrs, have now been gathered through the first resurrection, Rev 20:4)
 - Rev 19:11 — Christ rides out to war (bridegroom's exemption over)
 
-The saints are never "in heaven" in the popular sense. They are WITH Christ — in the air, in the clouds, in the wilderness, in the chambers — for the full 7 years, hidden and feasting, while the world below goes through judgment. Then they descend together.
+The saints are never "in heaven" in the popular sense. They are WITH Christ — in the wilderness, in the prepared place, in the chambers (Isa 26:20) — for the duration of the tribulation, hidden and protected, while judgment falls. Then they emerge, walk through the ashes (Mal 4:3), and reign on the earth (Rev 5:10).
 
 **This is a WORKING HYPOTHESIS, not a resolved position.** It needs further testing against:
 - The exact chronology of Revelation's seals, trumpets, and bowls
