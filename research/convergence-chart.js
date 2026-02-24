@@ -21,10 +21,7 @@ function xPos(pct) {
   return marginLeft + Math.max(0, Math.min(plotW, ((logVal - logMin) / (logMax - logMin)) * plotW));
 }
 
-// Sort by precision (tightest first)
-lines.sort((a, b) => {
-  return (Math.log(a.high) - Math.log(a.low)) - (Math.log(b.high) - Math.log(b.low));
-});
+// Keep order from data file (strongest argument first)
 
 const barHeight = 24;
 const barGap = 7;
