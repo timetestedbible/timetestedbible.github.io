@@ -233,7 +233,7 @@ The identity of the two mountains is suggestive: Sinai (where the law was given)
 
 - **$babylon** — Man's substitute kingdom. The horsemen's work ultimately targets $babylon — the worldly system opposed to God's covenant rule. $babylon is both the instrument God uses (Ezek 21:19 — $sword given to $babylon's hand) and the target the horsemen ultimately destroy (Rev 18).
 
-- **$deceive** — Leading away from THE WAY. The first horseman (white horse, bow, delegated crown) maps to Jesus' first warning: "Take heed that no man $deceive you" (Mat 24:4). $deceive is the first horseman's weapon — counterfeit covenant authority that conquers by misdirection.
+- **$deceive** — Leading away from $the-way. The first horseman (white horse, bow, delegated crown) maps to Jesus' first warning: "Take heed that no man $deceive you" (Mat 24:4). $deceive is the first horseman's weapon — counterfeit covenant authority that conquers by misdirection.
 
 - **$nation-against-nation** — Covenant order fracturing. The second horseman's work: "take peace from the earth, that they should kill one another" (Rev 6:4). $nation-against-nation is the judgment-sign that unified order is splintering under divine discipline — peoples who should be one turning $sword against each other.
 

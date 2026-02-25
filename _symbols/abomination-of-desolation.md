@@ -134,7 +134,7 @@ The connection between the abomination and $fornication / $harlot imagery is not
 
 > *"And the woman was arrayed in purple and scarlet colour, and decked with gold and precious stones and pearls, having a golden cup in her hand full of **abominations** (G946 *bdelygma*) and filthiness of her **$[fornication]**."* — Rev 17:4
 
-> *"And upon her forehead was a name written, MYSTERY, BABYLON THE GREAT, THE MOTHER OF **$[harlot]S** AND **ABOMINATIONS** OF THE EARTH."* — Rev 17:5
+> *"And upon her forehead was a name written, MYSTERY, $[babylon-the-great], THE MOTHER OF **$[harlot]S** AND **ABOMINATIONS** OF THE EARTH."* — Rev 17:5
 
 Babylon is the *mother* — the source — of the abomination pattern. Her cup is full of *bdelygmata*, the same word Jesus uses in Mat 24:15. She does not merely commit $fornication; she is the matrix from which all counterfeit authority systems emerge. The $harlot is the covenant-breaker; the abomination is what she births into the holy place.
 

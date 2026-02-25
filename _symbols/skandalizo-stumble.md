@@ -64,7 +64,7 @@ Mat 24:10–12 describes not a single event but a chain reaction. Each stage pro
 2. **Skandalizo** (v. 10a) — the trap triggers; many depart
 3. **Betrayal** (v. 10b) — the departed turn against those who remain
 4. **Hatred** (v. 10c) — covenant bonds invert into hostility
-5. **$deceive** (v. 11) — false prophets arise, leading away from THE WAY
+5. **$deceive** (v. 11) — false prophets arise, leading away from $the-way
 6. **$wickedness** abounds (v. 12a) — lawlessness / covenant transgression becomes pervasive
 7. **Love grows cold** (v. 12b) — the final state
 

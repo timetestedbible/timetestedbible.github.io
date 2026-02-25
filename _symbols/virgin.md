@@ -127,9 +127,9 @@ Every nation, every institution, every individual stands in one city or the othe
 
 The full symbolic chain runs in both directions:
 
-**Descent:** VIRGIN → commits $FORNICATION ($idolatry) → becomes $HARLOT (covenant breaker) → joins $BABYLON (worldly kingdom)
+**Descent:** VIRGIN → commits $$fornication ($idolatry) → becomes $$harlot (covenant breaker) → joins $$babylon (worldly kingdom)
 
-**Restoration:** $HARLOT → repents (turns) → becomes VIRGIN again → enters $JERUSALEM (covenant community)
+**Restoration:** $$harlot → repents (turns) → becomes VIRGIN again → enters $$jerusalem (covenant community)
 
 This is not theoretical. Hosea enacts it. God tells the prophet: "Go, take unto thee a wife of whoredoms... for the land hath committed great whoredom, departing from the LORD" (Hos 1:2). Gomer is the $harlot — $israel who has departed from her husband. The entire book traces her descent and God's relentless pursuit, ending in restoration: "I will betroth thee unto me for ever" (Hos 2:19).
 

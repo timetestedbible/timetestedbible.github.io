@@ -107,7 +107,7 @@ The heart departs. The eyes chase after. The $idolatry is not external only — 
 
 > *"Come hither; I will shew unto thee the judgment of the great whore that sitteth upon many waters: With whom the kings of the earth have committed **fornication**, and the inhabitants of the earth have been made drunk with the wine of her **fornication**."* — Rev 17:1–2
 
-> *"MYSTERY, **BABYLON** THE GREAT, THE MOTHER OF **HARLOTS** AND ABOMINATIONS OF THE EARTH"* — Rev 17:5
+> *"MYSTERY, **$[babylon]** THE GREAT, THE MOTHER OF **HARLOTS** AND ABOMINATIONS OF THE EARTH"* — Rev 17:5
 
 > *"For all nations have drunk of the $[wine] of the wrath of her **fornication**, and the kings of the earth have committed **fornication** with her"* — Rev 18:3
 

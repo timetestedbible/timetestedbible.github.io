@@ -52,7 +52,7 @@ The Greek vocabulary in 2 Thessalonians 2 traces a deliberate progression from a
 
 "Man of sin" (G444 + G266) names what he *is*: sin embodied. "That Wicked" (G459 *anomos*) names what he *does*: operates without Torah, without covenant law. The abstract becomes structural, and the structural becomes personal. $wickedness — defined in Deut 17:2 as "transgressing his covenant" and in the Greek as *anomia* (lawlessness) — finds its ultimate personal expression in this figure.
 
-Paul's phrase "mystery of iniquity" (G3466 *mysterion* + G458 *anomia*) in 2Thess 2:7 parallels Revelation's inscription: "MYSTERY, BABYLON THE GREAT" (Rev 17:5). The $fall-of-babylon is the collapse of man's unified self-ruling system built against God's word — and the mystery of iniquity is that same Babylon-principle operating covertly, *within* the covenant community, before its open manifestation. The mystery is not that lawlessness exists in the world. The mystery is that it works *inside the temple*.
+Paul's phrase "mystery of iniquity" (G3466 *mysterion* + G458 *anomia*) in 2Thess 2:7 parallels Revelation's inscription: "MYSTERY, $babylon-the-great" (Rev 17:5). The $fall-of-babylon is the collapse of man's unified self-ruling system built against God's word — and the mystery of iniquity is that same Babylon-principle operating covertly, *within* the covenant community, before its open manifestation. The mystery is not that lawlessness exists in the world. The mystery is that it works *inside the temple*.
 
 ### Son of Perdition — The Betrayer From Within
 
@@ -188,7 +188,7 @@ Every portrait of the man of sin ends the same way: divine termination. Not by h
 
 - **$return-of-christ** — The covenant King's arrival to execute judgment and establish covenant rule is the direct and sole termination of the man of sin. 2Thess 2:8 binds them inseparably: the lawless one is "destroyed by the brightness (*epiphaneia*) of his coming (*parousia*)." The man of sin's existence is bounded on one end by the restrainer's removal and on the other by Christ's appearing. He cannot outlast the $return-of-christ by a single moment.
 
-- **$fall-of-babylon** — "Mystery of iniquity" (2Thess 2:7) parallels "MYSTERY BABYLON" (Rev 17:5). The $fall-of-babylon is the collapse of man's unified self-ruling system — and the man of sin is that system's final personal incarnation. The beast "goeth into perdition" (Rev 17:11); the "son of perdition" (2Thess 2:3) bears the same G684 *apoleia*. When Babylon falls, her king falls with her.
+- **$fall-of-babylon** — "Mystery of iniquity" (2Thess 2:7) parallels "MYSTERY $babylon" (Rev 17:5). The $fall-of-babylon is the collapse of man's unified self-ruling system — and the man of sin is that system's final personal incarnation. The beast "goeth into perdition" (Rev 17:11); the "son of perdition" (2Thess 2:3) bears the same G684 *apoleia*. When Babylon falls, her king falls with her.
 
 - **$deceive** — The man of sin's primary weapon. His *parousia* is "with all deceivableness" (2Thess 2:10). To $deceive is to cause covenant breach by misrepresenting God's commands — leading away from the way. The lawless one does not announce himself as God's enemy; he presents himself *as God* (2Thess 2:4). The deception succeeds only upon those who "received not the love of the truth" (2Thess 2:10).
 

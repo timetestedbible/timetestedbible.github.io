@@ -136,7 +136,7 @@ The contrast with Revelation 17 is deliberate:
 | Mount Zion (Rev 14:1) | Babylon's Mountains (Rev 17:9) |
 |---|---|
 | The $lamb stands on the throne | The beast sits on seven $mountains |
-| Father's $name on foreheads | "BABYLON" on the harlot's forehead |
+| Father's $name on foreheads | "$babylon" on the harlot's forehead |
 | The faithful who keep God's commandments (Rev 14:12) | Those who receive the beast's $mark (Rev 13:16) |
 | God's kingdom | The rival kingdoms |
 

@@ -131,7 +131,7 @@ This pattern converges with the $cherem reversal: $babylon casts its *cherem*-ne
 
 The $harlot — the idolater, the covenant-breaker — is described with both net-words simultaneously. Her heart is *matsod* (the hunter's net) and *cherem* (the enclosing-ban-net). She captures those drawn to her, and her mechanism is the net: total enclosure from which the sinner cannot extract himself.
 
-The parallel to $babylon is unmistakable. The $harlot of Revelation sits upon the $sea — the chaotic nations (Rev 17:15) — and her system operates exactly like a net: drawing all peoples into her commercial and religious grip. Ecclesiastes' "woman whose heart is nets" anticipates Revelation's "BABYLON THE GREAT, THE MOTHER OF HARLOTS" (Rev 17:5). The heart of the system is a *cherem*-net — an instrument of total enclosure that gathers indiscriminately and holds irrevocably.
+The parallel to $babylon is unmistakable. The $harlot of Revelation sits upon the $sea — the chaotic nations (Rev 17:15) — and her system operates exactly like a net: drawing all peoples into her commercial and religious grip. Ecclesiastes' "woman whose heart is nets" anticipates Revelation's "$babylon-the-great, THE MOTHER OF HARLOTS" (Rev 17:5). The heart of the system is a *cherem*-net — an instrument of total enclosure that gathers indiscriminately and holds irrevocably.
 
 But note the escape clause: "whoso pleaseth God shall escape from her." The net is not fate. Escape exists for those aligned with God — a principle echoed in Ps 31:4 ("pull me out of the net") and Ps 124:7 ("the snare is broken, and we are escaped").
 

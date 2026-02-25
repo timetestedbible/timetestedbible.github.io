@@ -83,7 +83,7 @@ The description "golden cup in the LORD's hand" (Jer 51:7) is arresting. The cup
 
 ### Mystery Babylon: The Harlot on the Mountain
 
-> *"And upon her forehead was a name written, MYSTERY, **BABYLON** THE GREAT, THE MOTHER OF HARLOTS AND ABOMINATIONS OF THE EARTH."* — Rev 17:5
+> *"And upon her forehead was a name written, MYSTERY, **$[babylon]** THE GREAT, THE MOTHER OF HARLOTS AND ABOMINATIONS OF THE EARTH."* — Rev 17:5
 
 > *"And here is the mind which hath wisdom. The seven heads are seven $[mountain]s, on which the woman sitteth."* — Rev 17:9
 

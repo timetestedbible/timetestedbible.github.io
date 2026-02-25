@@ -1453,65 +1453,6 @@ const ReaderView = {
       }
     });
     
-    // Also look for standalone symbol names in text (UPPERCASE symbol names)
-    // Build pattern from known symbol names
-    const symbolNames = Object.values(SYMBOL_DICTIONARY).map(s => s.name);
-    if (symbolNames.length === 0) return;
-    
-    // Create a case-insensitive pattern that matches whole words
-    // Match uppercase symbol names or capitalized (e.g., NAME, Name)
-    const pattern = new RegExp(`\\b(${symbolNames.join('|')})\\b`, 'g');
-    
-    // Walk through text nodes
-    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
-    const textNodes = [];
-    while (walker.nextNode()) {
-      // Skip if inside a link, code, or already processed element
-      const parent = walker.currentNode.parentNode;
-      if (parent && (
-        parent.tagName === 'A' || 
-        parent.tagName === 'CODE' ||
-        parent.tagName === 'BUTTON' ||
-        parent.classList?.contains('symbol-ref') ||
-        parent.closest('a, code, button, .symbol-header, .symbol-nav-btn')
-      )) {
-        continue;
-      }
-      if (walker.currentNode.nodeValue.match(pattern)) {
-        textNodes.push(walker.currentNode);
-      }
-    }
-    
-    textNodes.forEach(node => {
-      const span = document.createElement('span');
-      span.innerHTML = node.nodeValue.replace(pattern, (match) => {
-        // Find the symbol by name (case-insensitive)
-        const symbolKey = Object.keys(SYMBOL_DICTIONARY).find(
-          k => SYMBOL_DICTIONARY[k].name.toUpperCase() === match.toUpperCase()
-        );
-        if (symbolKey) {
-          const symbol = SYMBOL_DICTIONARY[symbolKey];
-          return `<a href="/research/symbols/${symbolKey}/" 
-            class="symbol-ref symbol-ref-inline" 
-            data-symbol-key="${symbolKey}"
-            data-symbol-name="${symbol.name}"
-            data-symbol-meaning="${symbol.meaning}"
-            data-symbol-sentence="${symbol.sentence.replace(/"/g, '&quot;')}"
-          >${match}</a>`;
-        }
-        return match;
-      });
-      node.parentNode.replaceChild(span, node);
-    });
-    
-    // Add tooltips to all newly created symbol refs
-    container.querySelectorAll('.symbol-ref-inline').forEach(link => {
-      const symbolKey = link.dataset.symbolKey;
-      const symbol = SYMBOL_DICTIONARY[symbolKey];
-      if (symbol) {
-        this.addSymbolTooltip(link, symbol);
-      }
-    });
   },
 
   /**
