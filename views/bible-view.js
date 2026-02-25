@@ -417,8 +417,17 @@ const BibleView = {
   
   // Navigate to Bible location once data is loaded
   async navigateWhenReady(translation, book, chapter, verse, retries = 0) {
-    // No translation → auto-select default so Bible loads immediately
-    // (translation picker is still accessible via the dropdown in the Bible header)
+    // No translation and no book → show translation picker (welcome page)
+    // URL: /reader/bible with nothing else
+    if (!translation && !book) {
+      const textContainer = document.getElementById('bible-explorer-text');
+      if (textContainer && typeof getBibleWelcomeHTML === 'function') {
+        textContainer.innerHTML = getBibleWelcomeHTML();
+      }
+      return;
+    }
+
+    // Translation provided but might need loading; fall back to default if only book given without translation
     if (!translation) {
       translation = (typeof Bible !== 'undefined' && Bible.getDefaultTranslation)
         ? Bible.getDefaultTranslation() : 'akjv';
