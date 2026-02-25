@@ -2627,21 +2627,6 @@ function searchStrongsInGlobal(strongsNum) {
   }
 }
 
-// Toggle verse search visibility (legacy — now replaced by searchStrongsInGlobal)
-function toggleVerseSearch(strongsNum) {
-  const container = document.getElementById('strongs-verse-results');
-  const btn = document.getElementById('strongs-find-verses-btn');
-  
-  if (container.style.display === 'none' || !container.innerHTML) {
-    container.style.display = 'block';
-    btn.textContent = 'Hide verses';
-    searchVersesWithStrongs(strongsNum);
-  } else {
-    container.style.display = 'none';
-    btn.textContent = 'Find all verses →';
-  }
-}
-
 // ============================================================================
 // CONCEPT SEARCH - Find verses by English word, following Strong's numbers
 // ============================================================================
@@ -3104,50 +3089,6 @@ function expandConceptSearch() {
   }, 10);
 }
 
-// Legacy function
-function findAllConceptVerses() {
-  expandConceptSearch();
-}
-
-// Compare verse references for sorting
-function compareVerseRefs(refA, refB) {
-  const booksOrder = [
-    'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy',
-    'Joshua', 'Judges', 'Ruth', '1 Samuel', '2 Samuel', '1 Kings', '2 Kings',
-    '1 Chronicles', '2 Chronicles', 'Ezra', 'Nehemiah', 'Esther',
-    'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon',
-    'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel',
-    'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah',
-    'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi',
-    'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans',
-    '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians',
-    '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon',
-    'Hebrews', 'James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation'
-  ];
-  
-  const parseRef = (ref) => {
-    const match = ref.match(/^(.+?)\s+(\d+):(\d+)$/);
-    if (match) {
-      return {
-        book: match[1],
-        chapter: parseInt(match[2]),
-        verse: parseInt(match[3])
-      };
-    }
-    return { book: ref, chapter: 0, verse: 0 };
-  };
-  
-  const a = parseRef(refA);
-  const b = parseRef(refB);
-  
-  const bookIndexA = booksOrder.indexOf(a.book);
-  const bookIndexB = booksOrder.indexOf(b.book);
-  
-  if (bookIndexA !== bookIndexB) return bookIndexA - bookIndexB;
-  if (a.chapter !== b.chapter) return a.chapter - b.chapter;
-  return a.verse - b.verse;
-}
-
 // Display verse results with pagination
 function displayConceptVerseResults(results, startIndex, count, conceptOnlyCount = 0) {
   const container = document.getElementById('concept-verse-results');
@@ -3165,7 +3106,7 @@ function displayConceptVerseResults(results, startIndex, count, conceptOnlyCount
   const searchWord = conceptSearchState.searchWord || '';
   
   for (const result of showing) {
-    const abbrevRef = abbreviateReference(result.ref);
+    const abbrevRef = abbreviateRef(result.ref);
     const highlightedText = highlightConceptWords(result.text, result.words, searchWord);
     
     const strongsDisplay = result.strongsNums.length > 0 
@@ -3250,7 +3191,7 @@ function loadMoreConceptVerses(startIndex) {
   
   let html = '';
   for (const result of showing) {
-    const abbrevRef = abbreviateReference(result.ref);
+    const abbrevRef = abbreviateRef(result.ref);
     const highlightedText = highlightConceptWords(result.text, result.words, searchWord);
     const strongsDisplay = result.strongsNums.length > 0 
       ? result.strongsNums.join(', ')
@@ -3481,7 +3422,7 @@ function displayRegexResults(results, startIndex, count, searchTime) {
   </div>`;
   
   for (const result of showing) {
-    const abbrevRef = abbreviateReference(result.ref);
+    const abbrevRef = abbreviateRef(result.ref);
     const highlightedText = highlightRegexMatches(result.text, state.regex);
     
     html += `<div class="concept-verse-item regex-result">
@@ -3535,7 +3476,7 @@ function loadMoreRegexResults(startIndex) {
   
   let html = '';
   for (const result of showing) {
-    const abbrevRef = abbreviateReference(result.ref);
+    const abbrevRef = abbreviateRef(result.ref);
     const highlightedText = highlightRegexMatches(result.text, state.regex);
     
     html += `<div class="concept-verse-item regex-result">
@@ -3711,33 +3652,6 @@ function initSearchDivider() {
   });
   
   searchDividerInitialized = true;
-}
-
-// Abbreviate a verse reference
-function abbreviateReference(ref) {
-  const abbrevs = {
-    'Genesis': 'Gen', 'Exodus': 'Exo', 'Leviticus': 'Lev', 'Numbers': 'Num', 'Deuteronomy': 'Deu',
-    'Joshua': 'Jos', 'Judges': 'Jdg', 'Ruth': 'Rut', '1 Samuel': '1Sa', '2 Samuel': '2Sa',
-    '1 Kings': '1Ki', '2 Kings': '2Ki', '1 Chronicles': '1Ch', '2 Chronicles': '2Ch',
-    'Ezra': 'Ezr', 'Nehemiah': 'Neh', 'Esther': 'Est', 'Job': 'Job', 'Psalms': 'Psa',
-    'Proverbs': 'Pro', 'Ecclesiastes': 'Ecc', 'Song of Solomon': 'Son', 'Isaiah': 'Isa',
-    'Jeremiah': 'Jer', 'Lamentations': 'Lam', 'Ezekiel': 'Eze', 'Daniel': 'Dan',
-    'Hosea': 'Hos', 'Joel': 'Joe', 'Amos': 'Amo', 'Obadiah': 'Oba', 'Jonah': 'Jon',
-    'Micah': 'Mic', 'Nahum': 'Nah', 'Habakkuk': 'Hab', 'Zephaniah': 'Zep', 'Haggai': 'Hag',
-    'Zechariah': 'Zec', 'Malachi': 'Mal', 'Matthew': 'Mat', 'Mark': 'Mar', 'Luke': 'Luk',
-    'John': 'Joh', 'Acts': 'Act', 'Romans': 'Rom', '1 Corinthians': '1Co', '2 Corinthians': '2Co',
-    'Galatians': 'Gal', 'Ephesians': 'Eph', 'Philippians': 'Php', 'Colossians': 'Col',
-    '1 Thessalonians': '1Th', '2 Thessalonians': '2Th', '1 Timothy': '1Ti', '2 Timothy': '2Ti',
-    'Titus': 'Tit', 'Philemon': 'Phm', 'Hebrews': 'Heb', 'James': 'Jam', '1 Peter': '1Pe',
-    '2 Peter': '2Pe', '1 John': '1Jo', '2 John': '2Jo', '3 John': '3Jo', 'Jude': 'Jud', 'Revelation': 'Rev'
-  };
-  
-  for (const [full, abbr] of Object.entries(abbrevs)) {
-    if (ref.startsWith(full + ' ')) {
-      return ref.replace(full + ' ', abbr + ' ');
-    }
-  }
-  return ref;
 }
 
 // ============================================================================
@@ -4049,33 +3963,9 @@ function navigateToBDBVerse(verseRef, event) {
   if (event) { event.preventDefault(); event.stopPropagation(); }
   const match = verseRef.match(/^(\d?\s?[A-Za-z]+)\s+(\d+):(\d+)/);
   if (!match) return;
-  // Map abbreviations to full book names
-  const abbrevMap = {
-    'Gen': 'Genesis', 'Exod': 'Exodus', 'Lev': 'Leviticus', 'Num': 'Numbers',
-    'Deut': 'Deuteronomy', 'Josh': 'Joshua', 'Judg': 'Judges', 'Ruth': 'Ruth',
-    '1Sam': '1 Samuel', '2Sam': '2 Samuel', '1Kgs': '1 Kings', '1Kin': '1 Kings',
-    '2Kgs': '2 Kings', '2Kin': '2 Kings', '1Chr': '1 Chronicles', '2Chr': '2 Chronicles',
-    'Ezra': 'Ezra', 'Neh': 'Nehemiah', 'Esth': 'Esther', 'Est': 'Esther',
-    'Job': 'Job', 'Psa': 'Psalms', 'Prov': 'Proverbs', 'Pro': 'Proverbs',
-    'Eccl': 'Ecclesiastes', 'Song': 'Song of Solomon', 'Isa': 'Isaiah',
-    'Jer': 'Jeremiah', 'Lam': 'Lamentations', 'Ezek': 'Ezekiel', 'Eze': 'Ezekiel',
-    'Dan': 'Daniel', 'Hos': 'Hosea', 'Joel': 'Joel', 'Amos': 'Amos',
-    'Obad': 'Obadiah', 'Jon': 'Jonah', 'Jonah': 'Jonah', 'Mic': 'Micah',
-    'Nah': 'Nahum', 'Hab': 'Habakkuk', 'Zeph': 'Zephaniah', 'Hag': 'Haggai',
-    'Zech': 'Zechariah', 'Mal': 'Malachi',
-    'Matt': 'Matthew', 'Mark': 'Mark', 'Luke': 'Luke', 'John': 'John',
-    'Acts': 'Acts', 'Rom': 'Romans', '1Cor': '1 Corinthians', '2Cor': '2 Corinthians',
-    'Gal': 'Galatians', 'Eph': 'Ephesians', 'Phil': 'Philippians', 'Col': 'Colossians',
-    '1Thess': '1 Thessalonians', '2Thess': '2 Thessalonians', '1Tim': '1 Timothy',
-    '2Tim': '2 Timothy', 'Tit': 'Titus', 'Phlm': 'Philemon', 'Heb': 'Hebrews',
-    'Jas': 'James', '1Pet': '1 Peter', '2Pet': '2 Peter', '1John': '1 John',
-    '2John': '2 John', '3John': '3 John', 'Jude': 'Jude', 'Rev': 'Revelation'
-  };
-  const bookAbbr = match[1].trim();
-  const book = abbrevMap[bookAbbr] || bookAbbr;
+  const book = normalizeBookName(match[1].trim());
   const chapter = parseInt(match[2]);
   const verse = parseInt(match[3]);
-  // Navigate to verse (keep research panel open — user is studying a word)
   if (typeof openBibleExplorerTo === 'function') {
     openBibleExplorerTo(book, chapter, verse);
   }
@@ -5659,24 +5549,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// normalizeBookName — delegates to Bible API (comprehensive abbreviation + variant handling)
-// This first definition is overridden by the one below, but kept for safety during transition.
-function normalizeBookName(book) {
-  if (typeof Bible !== 'undefined' && Bible.normalizeBookName) {
-    return Bible.normalizeBookName(book);
-  }
-  // Minimal fallback
-  const normalizations = { 'Psalm': 'Psalms', 'Song of Songs': 'Song of Solomon', 'Canticles': 'Song of Solomon' };
-  return normalizations[book] || book;
-}
-
-// parseBibleText, rebuildTranslationIndex, rebuildIndex — REMOVED
-// Bible API (bible.js) handles parsing and indexing internally.
-// These stubs exist only if any old code still calls them.
-async function parseBibleText() { return []; }
-function rebuildTranslationIndex() {}
-function rebuildIndex() { syncLegacyVariables(); }
-
 // Update loading dialog text
 function updateLoadingDialogText(text) {
   const dialog = document.getElementById('bible-loading-dialog');
@@ -5983,15 +5855,6 @@ function buildMultiverseHTML(citationStr, translationId) {
   if (currentBook !== '') html += '</div></div>';
   html += '</div>';
   return html;
-}
-
-function escapeHtml(str) {
-  if (str == null) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }
 
 // Navigate from multiverse verse number to full chapter view at that verse
