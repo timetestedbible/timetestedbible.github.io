@@ -1,0 +1,17 @@
+---
+description: Investigate gzip compression for all JSON data files to reduce PWA size
+globs: data/*.json
+alwaysApply: false
+---
+
+# Data File Compression — Open Question
+
+Currently only `bdb-formatted.json.gz` uses gzip compression (with `DecompressionStream` API in `loadBDBFormatted`). All other data files (`morphhb.json`, `nt-interlinear.json`, `hebrew-gospels-interlinear.json`, `hebrew-gospels-notes.json`, `tipnr.json`, `bdb-ai.json`, `bdb.json`, `gematria-compact.json`, `gematria-index.json`) are served as uncompressed JSON.
+
+## TODO: Evaluate storing all data files as `.json.gz`
+
+- `DecompressionStream` is supported in all modern browsers (Chrome 80+, Safari 16.4+, Firefox 113+)
+- The shared `_loadJsonData` utility in `bible-reader.js` could be extended with a `gzip: true` option
+- Potential savings: JSON text typically compresses 70-85% with gzip
+- Service Worker already caches these files, so decompression only happens once per version
+- Measure actual sizes before/after to confirm benefit for PWA install size

@@ -987,6 +987,40 @@ function hideBibleLoadingDialog() {
   if (dialog) dialog.classList.remove('visible');
 }
 
+// ─── Shared JSON loader utility ──────────────────────────────────────────────
+// Deduplicates concurrent fetches, handles caching, and standardizes error handling.
+const _jsonLoadCache = new Map();
+
+async function _loadJsonData(url, label, opts = {}) {
+  if (opts.isLoaded && opts.isLoaded()) return true;
+  if (_jsonLoadCache.has(url)) return _jsonLoadCache.get(url);
+
+  const promise = (async () => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (opts.rejectEmpty && Object.keys(data).length === 0) {
+        console.log(`[${label}] No data yet`);
+        return false;
+      }
+      opts.setData(data);
+      const count = typeof data === 'object' ? Object.keys(data).length : '?';
+      console.log(`[${label}] Loaded: ${count} entries`);
+      if (opts.onLoad) opts.onLoad();
+      return true;
+    } catch (err) {
+      console.warn(`[${label}] Not available:`, err.message);
+      return false;
+    } finally {
+      _jsonLoadCache.delete(url);
+    }
+  })();
+
+  _jsonLoadCache.set(url, promise);
+  return promise;
+}
+
 // ─── Loading pipeline: delegates to Bible API (bible.js) ─────────────────────
 // The Bible API manages blobs, indexes, and decompression.
 // These wrapper functions maintain backwards compatibility with the rest of bible-reader.js.
@@ -1089,77 +1123,41 @@ function hasHebrewText(bookName) {
 
 // MorphHB data storage - Hebrew words with morphology and Strong's (replaces interlinear.json for OT)
 let morphhbData = null;
-let morphhbLoading = null;
 
 // Current morphology context (set when clicking a word from interlinear, cleared on panel nav)
 let currentMorphContext = null;
 
 // BDB Lexicon data (lazy-loaded on first Strong's panel open)
 let bdbData = null;
-let bdbLoading = null;
 
 async function loadBDB() {
-  if (bdbData) return true;
-  if (bdbLoading) return bdbLoading;
-  
-  bdbLoading = (async () => {
-    try {
-      const response = await fetch('/data/bdb-ai.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      bdbData = await response.json();
-      console.log(`BDB lexicon loaded: ${Object.keys(bdbData).length} entries`);
-      // Also load raw BDB in background for verification view
+  return _loadJsonData('/data/bdb-ai.json', 'BDB Lexicon', {
+    isLoaded: () => bdbData,
+    setData: (d) => { bdbData = d; },
+    onLoad: () => {
       loadBDBRaw();
-      // If user prefers original BDB, preload formatted data
       if (getBDBViewMode() === 'original') loadBDBFormatted();
-      return true;
-    } catch (err) {
-      console.warn('BDB lexicon not available:', err.message);
-      return false;
-    } finally {
-      bdbLoading = null;
     }
-  })();
-  
-  return bdbLoading;
+  });
 }
 
 // NT interlinear data (Greek)
 let ntInterlinearData = null;
-let ntInterlinearLoading = null;
 
 // Hebrew Gospels interlinear data (Hebrew NT source texts)
 let hgInterlinearData = null;
-let hgInterlinearLoading = null;
 
 // Hebrew Gospels translation notes
 let hgNotesData = null;
-let hgNotesLoading = null;
 
 // TIPNR person/place data
 let tipnrData = null;
-let tipnrLoading = null;
 
 async function loadTipnr() {
-  if (tipnrData) return true;
-  if (tipnrLoading) return tipnrLoading;
-  
-  tipnrLoading = (async () => {
-    try {
-      const response = await fetch('/data/tipnr.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      tipnrData = await response.json();
-      console.log(`TIPNR data loaded: ${Object.keys(tipnrData).length} entries`);
-      return true;
-    } catch (err) {
-      console.warn('TIPNR data not available:', err.message);
-      return false;
-    } finally {
-      tipnrLoading = null;
-    }
-  })();
-  
-  return tipnrLoading;
+  return _loadJsonData('/data/tipnr.json', 'TIPNR', {
+    isLoaded: () => tipnrData,
+    setData: (d) => { tipnrData = d; }
+  });
 }
 
 // Book name abbreviation to full name mapping for TIPNR references
@@ -1359,26 +1357,10 @@ function renderPersonInfoHtml(allPersonInfo) {
 }
 
 async function loadMorphhb() {
-  if (morphhbData) return true;
-  if (morphhbLoading) return morphhbLoading;
-  
-  morphhbLoading = (async () => {
-    try {
-      const response = await fetch('/data/morphhb.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      morphhbData = await response.json();
-      const bookCount = Object.keys(morphhbData).length;
-      console.log(`MorphHB data loaded: ${bookCount} OT books`);
-      return true;
-    } catch (err) {
-      console.warn('MorphHB data not available:', err.message);
-      return false;
-    } finally {
-      morphhbLoading = null;
-    }
-  })();
-  
-  return morphhbLoading;
+  return _loadJsonData('/data/morphhb.json', 'MorphHB', {
+    isLoaded: () => morphhbData,
+    setData: (d) => { morphhbData = d; }
+  });
 }
 
 // Get morphhb word data for a verse: returns array of [hebrewText, lemma, morphCode] or null
@@ -1397,80 +1379,26 @@ function getMorphhbLang(morphCode) {
 }
 
 async function loadNTInterlinear() {
-  if (ntInterlinearData) return true;
-  if (ntInterlinearLoading) return ntInterlinearLoading;
-  
-  ntInterlinearLoading = (async () => {
-    try {
-      const response = await fetch('/data/nt-interlinear.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      ntInterlinearData = await response.json();
-      console.log(`NT Interlinear data loaded: ${Object.keys(ntInterlinearData).length} verses`);
-      return true;
-    } catch (err) {
-      console.warn('NT Interlinear data not available:', err.message);
-      return false;
-    } finally {
-      ntInterlinearLoading = null;
-    }
-  })();
-  
-  return ntInterlinearLoading;
+  return _loadJsonData('/data/nt-interlinear.json', 'NT Interlinear', {
+    isLoaded: () => ntInterlinearData,
+    setData: (d) => { ntInterlinearData = d; }
+  });
 }
 
 async function loadHGInterlinear() {
-  if (hgInterlinearData) return true;
-  if (hgInterlinearLoading) return hgInterlinearLoading;
-  
-  hgInterlinearLoading = (async () => {
-    try {
-      const response = await fetch('/data/hebrew-gospels-interlinear.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      if (Object.keys(data).length === 0) {
-        console.log('Hebrew Gospels interlinear: no data yet');
-        return false;
-      }
-      hgInterlinearData = data;
-      const bookCount = Object.keys(hgInterlinearData).length;
-      console.log(`Hebrew Gospels interlinear loaded: ${bookCount} books`);
-      return true;
-    } catch (err) {
-      console.warn('Hebrew Gospels interlinear not available:', err.message);
-      return false;
-    } finally {
-      hgInterlinearLoading = null;
-    }
-  })();
-  
-  return hgInterlinearLoading;
+  return _loadJsonData('/data/hebrew-gospels-interlinear.json', 'HG Interlinear', {
+    isLoaded: () => hgInterlinearData,
+    setData: (d) => { hgInterlinearData = d; },
+    rejectEmpty: true
+  });
 }
 
 async function loadHGNotes() {
-  if (hgNotesData) return true;
-  if (hgNotesLoading) return hgNotesLoading;
-  
-  hgNotesLoading = (async () => {
-    try {
-      const response = await fetch('/data/hebrew-gospels-notes.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      if (Object.keys(data).length === 0) {
-        console.log('Hebrew Gospels notes: no data yet');
-        return false;
-      }
-      hgNotesData = data;
-      console.log(`Hebrew Gospels notes loaded: ${Object.keys(hgNotesData).length} books`);
-      return true;
-    } catch (err) {
-      console.warn('Hebrew Gospels notes not available:', err.message);
-      return false;
-    } finally {
-      hgNotesLoading = null;
-    }
-  })();
-  
-  return hgNotesLoading;
+  return _loadJsonData('/data/hebrew-gospels-notes.json', 'HG Notes', {
+    isLoaded: () => hgNotesData,
+    setData: (d) => { hgNotesData = d; },
+    rejectEmpty: true
+  });
 }
 
 function getHGInterlinearVerse(bookName, chapter, verse) {
@@ -1681,7 +1609,7 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
       
       loads.push(loadNTInterlinear().then(() => placeholder.remove()));
     }
-    if (!hgInterlinearData && !hgInterlinearLoading) {
+    if (!hgInterlinearData) {
       loads.push(loadHGInterlinear());
       loadHGNotes();
     }
@@ -4600,14 +4528,13 @@ function linkifyBDBScriptureRefs(html) {
 let bdbRawData = null;
 
 async function loadBDBRaw() {
-  if (bdbRawData) return;
-  try {
-    const response = await fetch('/data/bdb.json');
-    if (response.ok) bdbRawData = await response.json();
-  } catch (e) {}
+  return _loadJsonData('/data/bdb.json', 'BDB Raw', {
+    isLoaded: () => bdbRawData,
+    setData: (d) => { bdbRawData = d; }
+  });
 }
 
-// Formatted BDB data (structured original text, lazy-loaded on demand)
+// Formatted BDB data (structured original text, lazy-loaded on demand via gzip)
 let bdbFormattedData = null;
 let bdbFormattedLoading = null;
 
