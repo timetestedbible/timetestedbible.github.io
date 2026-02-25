@@ -331,7 +331,7 @@ function showSymbolPanel(symbolKey, word, event) {
       </div>
       <div class="symbol-sentence">\${symbol.sentence}</div>
       \${symbol.opposite ? \`<div class="symbol-opposite"><strong>Opposite:</strong> \${symbol.opposite}</div>\` : ''}
-      <button class="symbol-study-link" onclick="closeSymbolPanel(); openSymbolStudyInReader('\${symbolKey}')">Full Study →</button>
+      <button class="symbol-study-link" onclick="closeSymbolPanel(); navigateToSymbolStudy('\${symbolKey}')">Full Study →</button>
     </div>
   \`;
   
@@ -366,11 +366,22 @@ function closeSymbolPanel() {
   }
 }
 
-// Open symbol study in reader view
+// Open symbol study in reader view (SPA navigation)
 function openSymbolStudyInReader(symbolKey) {
-  const symbol = SYMBOL_DICTIONARY[symbolKey];
-  const link = symbol && symbol.link ? symbol.link : \`/research/symbols/\${symbolKey}/\`;
-  window.location.href = link;
+  navigateToSymbolStudy(symbolKey);
+}
+
+// SPA navigation to a symbol study — keeps research panel open on desktop
+function navigateToSymbolStudy(symbolKey) {
+  if (!symbolKey) return;
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'reader',
+      params: { contentType: 'symbols', symbol: symbolKey.toLowerCase() },
+      preserveStrongs: window.innerWidth > 768
+    });
+  }
 }
 
 // Close symbol panel when clicking outside

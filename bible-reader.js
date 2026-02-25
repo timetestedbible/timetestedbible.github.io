@@ -658,6 +658,21 @@ function getBibleTooltipPortal() {
   return document.getElementById('bible-tooltip-portal') || document.body;
 }
 
+// Shared tooltip positioning: place below anchor, flip above if clipped, keep in viewport.
+function _positionTooltipBelow(tooltip, anchorEl, margin = 5, edge = 10) {
+  const rect = anchorEl.getBoundingClientRect();
+  const tipRect = tooltip.getBoundingClientRect();
+  let left = rect.left;
+  let top = rect.bottom + margin;
+  if (left + tipRect.width > window.innerWidth - edge) left = window.innerWidth - tipRect.width - edge;
+  if (left < edge) left = edge;
+  if (top + tipRect.height > window.innerHeight - edge) top = rect.top - tipRect.height - margin;
+  if (top < edge) top = edge;
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+  tooltip.style.opacity = '1';
+}
+
 // Detect touch vs mouse per-interaction: pointerdown fires before click and carries pointerType.
 let _lastPointerType = 'mouse';
 document.addEventListener('pointerdown', (e) => { _lastPointerType = e.pointerType; }, { passive: true });
@@ -680,6 +695,7 @@ function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
     return;
   }
   // Mouse/pen: open Strong's panel directly (hover already showed tooltip)
+  hideWordTooltip();
   showStrongsPanel(strongsNum, englishWord, gloss, event);
 }
 
@@ -729,66 +745,46 @@ function _setMorphContextFromVerse(strongsNum, event) {
 }
 
 // Show word tooltip on hover (definitions + symbol meaning + name substitution info)
+let _wordTooltipAnchor = null;
+let _wordTooltipTracker = null;
+
 function showWordTooltip(event) {
   const el = event.target.closest('.strongs-word, .name-sub') || event.target;
   const def = el.dataset.def;
   const symbolMeaning = el.dataset.symbolMeaning;
   const originalName = el.dataset.original;
-  
-  // Skip if no useful info to show
+
   if (!def && !symbolMeaning && !originalName) return;
-  
-  // Remove any existing tooltip
+
   hideWordTooltip();
-  
-  // Create tooltip
+
   const tooltip = document.createElement('div');
   tooltip.id = 'word-hover-tooltip';
   tooltip.className = 'word-hover-tooltip';
-  
+
   let html = '';
-  
-  // Show original name if this is a name substitution
   if (originalName) {
     html += `<div class="word-tooltip-original">Original: <strong>${originalName}</strong> <span class="word-tooltip-settings" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW', view:'settings'})" title="Name Settings">⚙</span></div>`;
   }
-  
-  // Show definition (synonyms) if available
   if (def) {
     html += `<div class="word-tooltip-def">${def}</div>`;
   }
-  
-  // Show symbol meaning if available
   if (symbolMeaning) {
-    html += `<div class="word-tooltip-symbol">📖 ${symbolMeaning}</div>`;
+    const symbolKey = el.dataset.symbolKey || '';
+    if (symbolKey) {
+      html += `<div class="word-tooltip-symbol word-tooltip-symbol-link" data-symbol-key="${symbolKey}" onclick="event.stopPropagation(); hideWordTooltip(); navigateToSymbolStudy('${symbolKey}')">📖 ${symbolMeaning}</div>`;
+    } else {
+      html += `<div class="word-tooltip-symbol">📖 ${symbolMeaning}</div>`;
+    }
   }
-  
+
   tooltip.innerHTML = html;
   getBibleTooltipPortal().appendChild(tooltip);
-  
-  // Position tooltip below the word (viewport coords for position:fixed)
-  const rect = el.getBoundingClientRect();
-  const tooltipRect = tooltip.getBoundingClientRect();
-  
-  let left = rect.left;
-  let top = rect.bottom + 5;
-  
-  // Keep within viewport
-  if (left + tooltipRect.width > window.innerWidth - 10) {
-    left = window.innerWidth - tooltipRect.width - 10;
-  }
-  if (left < 10) left = 10;
-  if (top + tooltipRect.height > window.innerHeight - 10) {
-    top = rect.top - tooltipRect.height - 5;
-  }
-  if (top < 10) top = 10;
-  
-  tooltip.style.left = left + 'px';
-  tooltip.style.top = top + 'px';
-  tooltip.style.opacity = '1';
+  _positionTooltipBelow(tooltip, el);
+  _wordTooltipAnchor = el;
 
-  // Click on tooltip = open Strong's panel for the word it belongs to
   tooltip.addEventListener('click', function onTooltipClick(e) {
+    if (e.target.closest('.word-tooltip-symbol-link')) return;
     e.preventDefault();
     e.stopPropagation();
     const key = el.dataset.strongs || null;
@@ -797,25 +793,36 @@ function showWordTooltip(event) {
     hideWordTooltip();
     if (key) showStrongsPanel(key, word, gloss, e);
   });
-  
-  // Hide tooltip when mouse leaves it (unless returning to the word)
-  tooltip.addEventListener('mouseleave', function onTooltipLeave(e) {
-    // Check if mouse is going back to a strongs-word or symbol-word
-    if (e.relatedTarget && (e.relatedTarget.classList?.contains('strongs-word') || e.relatedTarget.classList?.contains('symbol-word'))) {
-      return; // Mouse is going back to a word, that word's mouseenter will show new tooltip
-    }
-    hideWordTooltip();
-  });
+
+  // Proximity-based hiding: track mouse position, hide when outside both anchor and tooltip
+  if (_lastPointerType !== 'touch') {
+    _wordTooltipTracker = function(e) {
+      const tip = document.getElementById('word-hover-tooltip');
+      if (!tip) { _stopWordTooltipTracking(); return; }
+      const pad = 12;
+      if (_isInsideRect(e.clientX, e.clientY, el, pad) ||
+          _isInsideRect(e.clientX, e.clientY, tip, pad)) return;
+      hideWordTooltip();
+    };
+    document.addEventListener('mousemove', _wordTooltipTracker);
+  }
 }
 
-function hideWordTooltip(event) {
-  // If mouse is moving to the tooltip, don't hide it
-  if (event && event.relatedTarget) {
-    const tooltip = document.getElementById('word-hover-tooltip');
-    if (tooltip && (tooltip === event.relatedTarget || tooltip.contains(event.relatedTarget))) {
-      return; // Mouse is moving to tooltip, keep it visible
-    }
+function _isInsideRect(x, y, el, pad) {
+  const r = el.getBoundingClientRect();
+  return x >= r.left - pad && x <= r.right + pad && y >= r.top - pad && y <= r.bottom + pad;
+}
+
+function _stopWordTooltipTracking() {
+  if (_wordTooltipTracker) {
+    document.removeEventListener('mousemove', _wordTooltipTracker);
+    _wordTooltipTracker = null;
   }
+  _wordTooltipAnchor = null;
+}
+
+function hideWordTooltip() {
+  _stopWordTooltipTracking();
   const tooltip = document.getElementById('word-hover-tooltip');
   if (tooltip) tooltip.remove();
 }
@@ -823,7 +830,7 @@ function hideWordTooltip(event) {
 // ── MorphHB hover tooltip for interlinear Hebrew words ──
 
 function showMorphTooltip(el, event) {
-  hideMorphTooltip(); // Remove any existing
+  hideMorphTooltip(); // Remove any existing immediately
   
   const strongs = el.dataset.strongs || '';
   const morphDesc = el.dataset.morphDesc || '';
@@ -897,7 +904,7 @@ function showMorphTooltip(el, event) {
   tooltip.style.left = left + 'px';
   tooltip.style.top = top + 'px';
   
-  // On mobile: tap tooltip to open Strong's panel
+  // Tap tooltip to open Strong's panel
   tooltip.addEventListener('click', function(e) {
     e.stopPropagation();
     hideMorphTooltip();
@@ -905,9 +912,39 @@ function showMorphTooltip(el, event) {
       showStrongsPanelFromMorphhb(el, e);
     }
   });
+
+  // Proximity-based hiding: mousemove tracks whether cursor is near anchor or tooltip
+  if (_lastPointerType !== 'touch') {
+    _morphTooltipAnchor = el;
+    _morphTooltipTracker = function(e) {
+      const tip = document.getElementById('morph-hover-tooltip');
+      if (!tip) { _stopMorphTooltipTracking(); return; }
+      const pad = 12;
+      // Morph tooltip uses absolute positioning (scrollY offset) — convert mouse to page coords
+      const px = e.clientX, py = e.clientY + window.scrollY;
+      const tipR = tip.getBoundingClientRect();
+      const tipPage = { left: tipR.left, right: tipR.right, top: tipR.top + window.scrollY, bottom: tipR.bottom + window.scrollY };
+      if (_isInsideRect(e.clientX, e.clientY, el, pad) ||
+          (px >= tipPage.left - pad && px <= tipPage.right + pad && py >= tipPage.top - pad && py <= tipPage.bottom + pad)) return;
+      hideMorphTooltip();
+    };
+    document.addEventListener('mousemove', _morphTooltipTracker);
+  }
+}
+
+let _morphTooltipAnchor = null;
+let _morphTooltipTracker = null;
+
+function _stopMorphTooltipTracking() {
+  if (_morphTooltipTracker) {
+    document.removeEventListener('mousemove', _morphTooltipTracker);
+    _morphTooltipTracker = null;
+  }
+  _morphTooltipAnchor = null;
 }
 
 function hideMorphTooltip() {
+  _stopMorphTooltipTracking();
   const tooltip = document.getElementById('morph-hover-tooltip');
   if (tooltip) tooltip.remove();
 }
@@ -916,10 +953,18 @@ function hideMorphTooltip() {
 document.addEventListener('click', function(e) {
   const tooltip = document.getElementById('morph-hover-tooltip');
   if (!tooltip) return;
-  // Don't close if tapping the tooltip itself or an interlinear word block
   if (e.target.closest('.il-word-block')) return;
   if (tooltip.contains(e.target)) return;
   hideMorphTooltip();
+}, true);
+
+// Close word tooltip when tapping outside (mobile)
+document.addEventListener('click', function(e) {
+  const tooltip = document.getElementById('word-hover-tooltip');
+  if (!tooltip) return;
+  if (e.target.closest('.strongs-word, .name-sub')) return;
+  if (tooltip.contains(e.target)) return;
+  hideWordTooltip();
 }, true);
 
 // Tap to expand/collapse overflowed gloss text in root connections
@@ -1694,8 +1739,7 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
         data-strongs="${strongsNum || ''}"
         data-hebrew="${escapedHebrew}"
         onclick="showStrongsPanel('${strongsNum || ''}', '${escapedGloss}', '${escapedGloss}', event)"
-        onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)"
-        onmouseleave="if(_lastPointerType!=='touch')hideMorphTooltip()">
+        onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)">
         <span class="il-original">${hebrewText}</span>
         <span class="il-gloss">${gloss || '—'}</span>
       </div>`;
@@ -1785,8 +1829,7 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
         data-lemma="${escapedLemma}"
         data-hebrew="${escapedHebrew}"
         onclick="handleInterlinearTap(this, event)"
-        onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)"
-        onmouseleave="if(_lastPointerType!=='touch')hideMorphTooltip()">
+        onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)">
         <span class="il-original" data-voweled="${displayHebrew.replace(/"/g, '&quot;')}">${renderedHebrew}</span>
         <span class="il-gloss">${displayGloss}</span>
       </div>`;
@@ -3955,28 +3998,7 @@ function showVerseTooltip(el, event) {
   
   tooltip.innerHTML = html;
   getBibleTooltipPortal().appendChild(tooltip);
-  
-  // Position tooltip below the reference (viewport coords for position:fixed)
-  const rect = el.getBoundingClientRect();
-  const tooltipRect = tooltip.getBoundingClientRect();
-  
-  let left = rect.left;
-  let top = rect.bottom + 5;
-  
-  // Keep within viewport
-  if (left + tooltipRect.width > window.innerWidth - 10) {
-    left = window.innerWidth - tooltipRect.width - 10;
-  }
-  if (left < 10) left = 10;
-  // If it would go below viewport, show above instead
-  if (top + tooltipRect.height > window.innerHeight - 10) {
-    top = rect.top - tooltipRect.height - 5;
-  }
-  if (top < 10) top = 10;
-  
-  tooltip.style.left = left + 'px';
-  tooltip.style.top = top + 'px';
-  tooltip.style.opacity = '1';
+  _positionTooltipBelow(tooltip, el);
   
   // Click tooltip to navigate
   tooltip.addEventListener('click', function(e) {
@@ -4004,7 +4026,7 @@ function hideVerseTooltip(immediate) {
     _verseTooltipTimer = setTimeout(() => {
       const tooltip = document.getElementById('verse-hover-tooltip');
       if (tooltip) tooltip.remove();
-    }, 150);
+    }, 250);
   }
 }
 
@@ -4044,23 +4066,7 @@ function showStrongsTooltip(el, event) {
   
   tooltip.innerHTML = html;
   getBibleTooltipPortal().appendChild(tooltip);
-  
-  // Position below the link
-  const rect = el.getBoundingClientRect();
-  const tooltipRect = tooltip.getBoundingClientRect();
-  let left = rect.left;
-  let top = rect.bottom + 5;
-  if (left + tooltipRect.width > window.innerWidth - 10) {
-    left = window.innerWidth - tooltipRect.width - 10;
-  }
-  if (left < 10) left = 10;
-  if (top + tooltipRect.height > window.innerHeight - 10) {
-    top = rect.top - tooltipRect.height - 5;
-  }
-  if (top < 10) top = 10;
-  tooltip.style.left = left + 'px';
-  tooltip.style.top = top + 'px';
-  tooltip.style.opacity = '1';
+  _positionTooltipBelow(tooltip, el);
   
   tooltip.addEventListener('mouseenter', function() {
     if (_strongsTooltipTimer) { clearTimeout(_strongsTooltipTimer); _strongsTooltipTimer = null; }
@@ -4079,7 +4085,7 @@ function hideStrongsTooltip(immediate) {
     _strongsTooltipTimer = setTimeout(() => {
       const tooltip = document.getElementById('strongs-hover-tooltip');
       if (tooltip) tooltip.remove();
-    }, 150);
+    }, 250);
   }
 }
 
@@ -4137,23 +4143,7 @@ function showStrongsButtonTooltip(el, event) {
 
   tooltip.innerHTML = html;
   (typeof getBibleTooltipPortal === 'function' ? getBibleTooltipPortal() : document.body).appendChild(tooltip);
-
-  // Position below the button
-  const rect = el.getBoundingClientRect();
-  const tooltipRect = tooltip.getBoundingClientRect();
-  let left = rect.left;
-  let top = rect.bottom + 5;
-  if (left + tooltipRect.width > window.innerWidth - 10) {
-    left = window.innerWidth - tooltipRect.width - 10;
-  }
-  if (left < 10) left = 10;
-  if (top + tooltipRect.height > window.innerHeight - 10) {
-    top = rect.top - tooltipRect.height - 5;
-  }
-  if (top < 10) top = 10;
-  tooltip.style.left = left + 'px';
-  tooltip.style.top = top + 'px';
-  tooltip.style.opacity = '1';
+  _positionTooltipBelow(tooltip, el);
 
   tooltip.addEventListener('mouseenter', () => {
     if (_strongsBtnTooltipTimer) { clearTimeout(_strongsBtnTooltipTimer); _strongsBtnTooltipTimer = null; }
@@ -4172,7 +4162,7 @@ function hideStrongsButtonTooltip(immediate) {
     _strongsBtnTooltipTimer = setTimeout(() => {
       const tooltip = document.getElementById('strongs-btn-tooltip');
       if (tooltip) tooltip.remove();
-    }, 150);
+    }, 250);
   }
 }
 
@@ -4628,7 +4618,7 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
           <span class="strongs-symbol-value">${symbol.meaning}</span>
         </div>
         <div class="strongs-symbol-sentence">${symbol.sentence}</div>
-        <button class="strongs-symbol-link" onclick="closeStrongsPanel(); openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
+        <button class="strongs-symbol-link" onclick="navigateToSymbolStudy('${symbolKey}')">Full Symbol Study →</button>
       </div>
     `;
   }
@@ -4833,7 +4823,7 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
           <span class="strongs-symbol-value">${symbol.meaning}</span>
         </div>
         <div class="strongs-symbol-sentence">${symbol.sentence}</div>
-        <button class="strongs-symbol-link" onclick="closeStrongsPanel(); openSymbolStudyInReader('${symbolKey}')">Full Symbol Study →</button>
+        <button class="strongs-symbol-link" onclick="navigateToSymbolStudy('${symbolKey}')">Full Symbol Study →</button>
       </div>
     `;
   }
@@ -5238,9 +5228,10 @@ function renderInlineStrongs(taggedText, reference) {
         classes.push('symbol-word');
         dataAttrs.push(`data-symbol="${symbol.name}"`);
         dataAttrs.push(`data-symbol-meaning="${(symbol.meaning || '').replace(/"/g, '&quot;')}"`);
+        if (symbol.key) dataAttrs.push(`data-symbol-key="${symbol.key}"`);
       }
 
-      result += `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip(event)">${displayWord}</span>`;
+      result += `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)">${displayWord}</span>`;
     }
 
     // Check for consecutive tags on the same word (e.g. word{H1254}{H853})
@@ -5352,9 +5343,10 @@ function renderVerseWithStrongs(bookName, chapter, verseNum, plainText) {
       if (symbol) {
         dataAttrs.push(`data-symbol="${symbol.name}"`);
         dataAttrs.push(`data-symbol-meaning="${(symbol.meaning || '').replace(/"/g, '&quot;')}"`);
+        if (symbol.key) dataAttrs.push(`data-symbol-key="${symbol.key}"`);
       }
       
-      return `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)" onmouseleave="hideWordTooltip(event)">${match}</span>`;
+      return `<span class="${classes.join(' ')}" ${dataAttrs.join(' ')} onclick="${onclick}" onmouseenter="showWordTooltip(event)">${match}</span>`;
     }
     
     return match;

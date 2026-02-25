@@ -1608,10 +1608,13 @@ const ReaderView = {
       }
     });
 
-    element.addEventListener('click', () => {
+    element.addEventListener('click', (e) => {
+      e.preventDefault();
       const tooltip = document.querySelector('.symbol-tooltip');
-      if (tooltip) {
-        tooltip.remove();
+      if (tooltip) tooltip.remove();
+      const key = element.dataset.symbolKey;
+      if (key && typeof navigateToSymbolStudy === 'function') {
+        navigateToSymbolStudy(key);
       }
     });
   },
