@@ -4,7 +4,7 @@ name: RAPTURE / GATHERING
 strongs: [G1997, G726, H6908, H622]
 words: [gathering, caught up, gather, gathered, assemble, rapture]
 role: verb-symbol
-meaning: Covenant ingathering — God collecting His covenant people to Himself for judgment-separation and covenant restoration
+meaning: Covenant ingathering — God collecting His covenant people to Himself: firstfruits extracted before wrath, full harvest at the end
 opposite: SCATTER (dispersion among nations as covenant curse)
 defining_verses: [2Th 2:1, 1Th 4:17, Mat 24:31, Isa 11:12, Deu 30:3-4, Zep 3:8, Mic 4:12]
 co_occurring: [MOUNTAIN, FOUR WINDS, EAGLE, RETURN OF CHRIST, MOMENT, TRUMPET, JERUSALEM, DAY, HARLOT, BABYLON]
@@ -31,17 +31,17 @@ dependents: []
 
 **SEALING PRECONDITION:** Rev 7:1-4 = servants sealed BEFORE four winds/horsemen can harm earth/sea/trees. The sealing is the PRECONDITION for judgment to begin, not just protection during it. "Hurt not... TILL we have sealed." Sequential: seal FIRST → winds released → birth pains begin → testimony period → gathering at trumpet.
 
-**APANTESIS DIRECTION (G529):** 1Th 4:17 "caught up... to MEET (eis apantesin) the Lord in the air." G529 = technical civic-escort term: citizens go OUT to meet arriving dignitary, then escort Him BACK IN to His destination. Acts 28:15 demonstrates: brethren went out to meet Paul → escorted him INTO Rome, not away from it. Mat 25:6 virgins go out to meet bridegroom → he enters the feast. The gathering is an escort TOWARD earth (the King's destination), not departure FROM it.
+**APANTESIS (G529):** 1Th 4:17 "caught up... to MEET (eis apantesin) the Lord in the air." G529 = meeting/encounter. The apantesis describes the mechanics of the meeting — saints caught up to meet the Lord — but does not determine timing. The firstfruits rapture occurs before the tribulation; the full harvest assembly at the return. The meeting in the air is the extraction event.
 
-**ORDERING RELATIVE TO BABYLON'S FALL:** Rev 18:4 "come out of her my people" = extraction from Babylon. Rev 17:16 ten horns destroy Babylon. The extraction precedes the system's self-destruction. Then: trumpet (Rev 11:15) → kingdom transfer → gathering (Mat 24:31). The gathering is the CULMINATION after Babylon falls, not an escape before judgment begins.
+**ORDERING RELATIVE TO BABYLON'S FALL:** Rev 18:4 "come out of her my people" = extraction from Babylon BEFORE her plagues fall. Gen 19:22 "I cannot do anything till thou be come out" = righteous extracted BEFORE destruction. Jer 50:8 "be as the he goats before the flocks" = firstfruits depart first. The firstfruits rapture extracts the faithful before Babylon falls and wrath is poured out. The full harvest (tribulation saints) is gathered at the consummation.
 
 **ANOMALIES:** Zep 3:8/Mic 4:12—God gathers NATIONS (enemies) for destruction, not restoration. Same word, opposite recipients. Judgment-gathering vs. salvation-gathering share mechanism: God initiates both.
 
 ## Rev 2 — Two Events Distinguished
 
 - **Paralambano vanishing (G3880):** Jn 14:3 "receive you unto myself" = normalcy-era extraction, before pain. Isa 66:7 man child. During eating/drinking/farming (Mat 24:37-41).
-- **Episunago gathering (G1996):** Mat 24:31 = post-trumpet assembly of remaining elect, after cosmic signs. "Her children" born through travail (Isa 66:8).
-- The study's conclusion "The gathering is the CULMINATION after Babylon falls, not an escape before judgment begins" applies to the EPISUNAGO event, not the PARALAMBANO event. Two words, two settings, two events.
+- **Episunago gathering (G1996):** Mat 24:31 = corporate assembly of the full harvest of elect at the consummation. "Her children" (plural) born through travail (Isa 66:8) = the tribulation saints gathered at the end.
+- Two words, two settings, two events: PARALAMBANO/HARPAZO = firstfruits rapture before tribulation (quiet extraction during normalcy, Isa 66:7 birth BEFORE labor); EPISUNAGO = full harvest assembly at the return. The firstfruits are the he-goats before the flocks (Jer 50:8).
 
 **CROSS-TESTAMENT:** H6908→LXX G4863 (sunagō)→NT G1997 (episunagōgē). Direct morphological chain. "Synagogue" derives from same root—the gathered assembly IS the covenant community. G726 (harpazō) stands separate—forceful seizure aspect absent from H6908/H622. NT adds violence/urgency dimension.
 

@@ -2,14 +2,14 @@
 layout: symbol-study
 symbol_key: rapture-gathering
 title: "Rapture / Gathering — Symbol Study"
-description: "The gathering in Scripture represents covenant ingathering — God collecting His scattered covenant people to Himself, the great harvest-completion that ends the age and begins the next."
+description: "The gathering in Scripture represents covenant ingathering — God collecting His covenant people to Himself. The vocabulary reveals two distinct phases: a sudden extraction of the firstfruits before destruction falls, then the corporate assembly of the full harvest at the end."
 strongs: [G1997, G726, H6908, H622]
 words: [gathering, caught up, gather, gathered, assemble, rapture]
 ---
 
 # Rapture / Gathering
 
-**Covenant ingathering — God collecting His covenant people to Himself for judgment-separation and covenant restoration.**
+**Covenant ingathering — God collecting His covenant people to Himself: first the firstfruits snatched out before destruction falls, then the full harvest gathered at the end of the age.**
 
 > *"Now we beseech you, brethren, by the coming of our Lord Jesus Christ, and by our **gathering** together unto him"* — 2 Th 2:1
 
@@ -29,7 +29,7 @@ This means the "rapture" is not a modern invention layered onto Paul's letters. 
 
 What makes this hard to see is that modern readers begin with 1 Th 4:17 and work backward. Scripture begins with Deu 30:3–4 and works forward. Every prophet who speaks of gathering is quoting Moses. Every New Testament gathering text is fulfilling what Moses promised.
 
-**Symbolizes:** Covenant ingathering — God collecting His scattered people to Himself at the end of the age
+**Symbolizes:** Covenant ingathering — God collecting His scattered people to Himself: firstfruits extracted before wrath, full harvest gathered at the close of the age
 
 **Opposite:** $scatter — dispersion among the nations as covenant curse (Lev 26:33, Deu 28:64)
 
@@ -99,7 +99,7 @@ The New Testament adds a distinction the Old Testament does not make as sharply:
 
 > *"Not forsaking the **assembling** of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the $[day] approaching."* — Heb 10:25
 
-Both occurrences connect the gathering to the approaching $day — the time of exposure and accountability. This is the post-$trumpet assembly of the covenant community: visible, corporate, tied to the $return-of-christ. It is the direct Greek descendant of H6908, Moses' covenant-restoration word.
+Both occurrences connect the gathering to the approaching $day — the time of exposure and accountability. This is the corporate assembly of the covenant community: visible, public, tied to the $return-of-christ. It is the direct Greek descendant of H6908, Moses' covenant-restoration word.
 
 **G726** *harpazō* — to seize, snatch, catch up by force. This word carries an entirely different energy:
 
@@ -113,24 +113,44 @@ Both occurrences connect the gathering to the approaching $day — the time of e
 
 *Harpazō* is violent. It is the word for seizure, for forceful removal. It shares nothing with the patient, pastoral regathering of H6908/*qabats*. When God *harpazō*-s, He snatches — with urgency, with sovereignty, against opposing forces. The Spirit snatches Philip from the road (Acts 8:39). Paul is caught up to the third heaven without choice or preparation. The man child is seized to God's throne before the dragon can devour.
 
-The pipeline research distinguishes two events encoded in these two word-families:
+The vocabulary distinguishes two phases of the ingathering:
 
-- **G3880** *paralambanō* (Jn 14:3, Mat 24:40–41) — "receive unto myself," a normalcy-era taking during eating, drinking, farming. This is the quiet extraction.
-- **G1997** *episunagōgē* (Mat 24:31, 2 Th 2:1) — the post-$trumpet corporate assembly of the remaining elect after cosmic signs.
+- **G3880** *paralambanō* (Jn 14:3, Mat 24:40–41) — "receive unto myself," a normalcy-era taking during eating, drinking, farming. This is the quiet extraction — the firstfruits rapture before the wrath falls, while life appears to continue as normal for those left behind. "Two in the field; one taken, one left."
+- **G726** *harpazō* (1 Th 4:17, Rev 12:5) — forceful seizure, snatching up. The male child caught up to God's throne *before* the woman flees into the wilderness (Rev 12:5–6). Paul caught up to paradise. The saints caught up in the clouds. This is the same firstfruits event from another angle — sudden, sovereign, irresistible.
+- **G1997** *episunagōgē* (Mat 24:31, 2 Th 2:1) — the corporate assembly of the full harvest of the elect at the $return-of-christ, the public consummation of the kingdom.
 
-Whether these represent two phases of one event or distinct moments, the vocabulary itself insists they are not identical. One is intimate and sudden; the other is public and climactic. Both are gatherings. Neither is escape.
+The vocabulary itself insists these are not identical. One is intimate and sudden; the other is public and climactic. One is firstfruits; the other is the feast of ingathering. The firstfruits rapture precedes the tribulation; the full harvest follows it.
 
-### The Direction of the Gathering — Toward Earth, Not Away
+### Birth Before Labor — The Astonishing Order
 
-A detail in 1 Th 4:17 changes everything if taken seriously:
+> *"**Before** she was in labor, she gave birth; **before** her pain came, she delivered a male child. Who has heard such a thing? Who has seen such things? Shall a land be born in one day? Shall a nation be brought forth in one $[moment]?"* — Isa 66:7–8
 
-> *"Caught up together with them in the $[clouds], **to meet** the Lord in the air."*
+Isaiah presents a birth that precedes the labor pains — and marks it as astonishing: *"Who has heard such a thing?"* The natural order is reversed. The child comes *before* the travail.
 
-The phrase "to meet" translates G1519 + G529 *eis apantesin* — a technical civic-escort term in the ancient world. When a dignitary approached a city, the citizens would go *out* to meet him and then escort him *back in* to his destination. The meeting happened outside; the movement continued inward.
+Revelation 12 enacts this pattern:
 
-Acts 28:15 demonstrates this precisely: brethren went out *to meet* (G529 *eis apantesin*) Paul, then escorted him *into* Rome — not away from it. Mat 25:6 follows the same pattern: the virgins go out to meet the bridegroom, and the procession enters *into the feast*, not away from the wedding hall.
+> *"And she brought forth a male child, who was to rule all nations with a rod of iron: and her child was **caught up** (G726 *harpazō*) unto God, and to his throne. And the woman fled into the wilderness..."* — Rev 12:5–6
 
-The gathering, then, is not departure from earth but an escort *toward* it. The saints rise to meet the descending King — and the procession continues downward, into His $kingdom. The $mountain that fills the whole earth (Dan 2:35) is the destination. The $jerusalem that descends from heaven (Rev 21:2) is coming *down*.
+The male child is caught up (*harpazō*) **before** the woman flees into the wilderness for 1,260 days. The birth/rapture precedes the tribulation flight. The child cannot be Yeshua alone — He was not "caught up" immediately at birth. And Isaiah 66:8 shifts to plural: "she brought forth **her children**" — a nation born in a day. This is the firstfruits extraction: the faithful snatched up before the labor pains of tribulation begin.
+
+> *"All these are but the **beginning** of the $[birth-pains]."* — Mat 24:8
+
+What are these "beginning" birth pains? Famines, earthquakes, nation against nation, kingdom against kingdom — the pattern of the $[fall-of-babylon]. The birth pains *begin* with the fall of $babylon, and the child is delivered **before** the pain comes.
+
+### The Jericho Similitude — Extraction Before the Fire
+
+The fall of Jericho (Joshua 6) walks out the gathering pattern in miniature:
+
+1. **Joshua (Yeshua) appears** as captain of the host before the battle (Josh 5:13–15)
+2. The walls fall at the sound of the **$[trumpet]** and shout (Josh 6:16, 20)
+3. **Rahab and her household are extracted** before the city burns (Josh 6:22–23)
+4. **The city is burned with fire** (Josh 6:24)
+
+The order is: trumpet → extraction of the faithful → fire. Rahab — the former $harlot who hid the messengers (the word in her heart, Ps 119:11) — is brought out before destruction falls. She had the scarlet cord in the window, a sign of covenant faith marking her house for deliverance, like the Passover blood on the doorpost.
+
+> *"For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the **$[trumpet]** of God: and the dead in Christ shall rise first: Then we which are alive and remain shall be **caught up**..."* — 1 Th 4:16–17
+
+Shout. Trumpet. Caught up. Then destruction. The Jericho pattern is the rapture pattern.
 
 ### The Threshing Floor — When God Gathers the Nations
 
@@ -150,7 +170,7 @@ Zep 3:8 makes this explicit:
 
 > *"Therefore wait ye upon me, saith the LORD, until the day that I rise up to the prey: for my determination is to **gather** the nations, that I may **assemble** the kingdoms, to pour upon them mine indignation."*
 
-The gathering of the nations for judgment and the gathering of the elect for restoration happen at the same $day. The $day exposes everything (1 Co 3:13). The same event is salvation for one and destruction for the other. This is why the gathering cannot be reduced to "escape" — it is the threshing that separates wheat from chaff.
+God gathers His covenant people for salvation and the nations for judgment. The $day exposes everything (1 Co 3:13). The same divine action is deliverance for one and destruction for the other — but the firstfruits are extracted *before* the threshing begins. "God hath not appointed us to wrath, but to obtain salvation" (1 Th 5:9). The wrath falls on those who remain.
 
 ### The Trumpet That Initiates the Gathering
 
@@ -170,11 +190,19 @@ The convergence is striking: Mat 24:31 (great trumpet + gather elect), 1 Co 15:5
 
 > *"And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues."* — Rev 18:4
 
-Before $babylon falls, God's people are called *out*. This is the Lot pattern (Gen 19:12–16), the Rahab pattern (Josh 6:22–23), the first Passover pattern (Exo 12:22–23). Extraction precedes system destruction. The gathering is not escape from tribulation in general — it is extraction from the covenant-counterfeit system before it consumes itself.
+Before $babylon falls, God's people are called *out*. This is the Lot pattern (Gen 19:12–16), the Rahab pattern (Josh 6:22–23), the first Passover pattern (Exo 12:22–23). Extraction precedes system destruction. Every time God destroys a system, He first removes His people from it.
 
-$babylon is man's substitute system for God's covenant rule — the worldly $kingdom that opposes $jerusalem. Its destruction is self-consumption: "fire from the midst of thee" (Ezek 28:18). The gathering separates God's people from that system so they are not consumed when it devours its own.
+> *"Haste thee, **escape** thither; for **I cannot do any thing till thou be come** thither."* — Gen 19:22
 
-The sequence the evidence suggests: sealing of God's servants (Rev 7:1–4) → testimony period → $babylon falls → $trumpet sounds → gathering of the elect → $kingdom transferred. The gathering is the culmination, not the opening move.
+God could not destroy Sodom until Lot was out. The righteous presence restrains judgment. When the righteous depart, judgment falls. This is the mechanism Paul describes in 2 Th 2:7: "he who now restrains will do so **until he is out of the midst**."
+
+$babylon is man's substitute system for God's covenant rule — the worldly $kingdom that opposes $jerusalem. Its destruction is self-consumption: "fire from the midst of thee" (Ezek 28:18). The firstfruits gathering separates God's people from that system so they are not consumed when it devours its own.
+
+> *"Flee out of the midst of $[babylon], and go forth out of the land of the Chaldeans, and be as the **he goats before the flocks**."* — Jer 50:8
+
+The he-goats go first — the firstfruits, the leaders. The flocks follow. In a typical herd, he-goats number roughly 1 to every 20–50 of the flock. A small remnant departs first; the greater harvest follows through the tribulation that the departure triggers.
+
+The sequence: firstfruits extracted (the departure / rapture) → $babylon falls (God's wrath, which the saints are not appointed to) → tribulation and testimony → full harvest at the $return-of-christ.
 
 ### The Feast of Ingathering — Where It All Ends
 
@@ -186,7 +214,9 @@ If H622 *asaph* links the gathering to Sukkot (the Feast of Ingathering/Tabernac
 
 Sukkot sits in the 7th month — the month of completion. The sequence: Feast of Trumpets (1st of 7th month — warning, alarm) → Day of Atonement (10th — judgment, Jubilee trumpet) → Feast of Tabernacles (15th — ingathering, dwelling with God). Three feasts in a single month: warning, then judgment, then gathering. The feast sequence *is* the end-times sequence.
 
-And what does Tabernacles celebrate? Dwelling with God. Living in booths — temporary shelters — to remember that God brought them out and made them dwell with Him. The final gathering is not transit to another location. It is the arrival of permanent dwelling:
+But note: the firstfruits wave offering (Lev 23:10–11) occurs months *before* the Feast of Ingathering. The firstfruits are presented at the start of the harvest season; the main feast of ingathering comes at the end. The rapture of the firstfruits precedes the great tribulation, just as the wave offering precedes Sukkot.
+
+And what does Tabernacles celebrate? Dwelling with God. Living in booths — temporary shelters — to remember that God brought them out and made them dwell with Him. The final ingathering of the full harvest is the arrival of permanent dwelling:
 
 > *"Behold, the tabernacle of God is with men, and he will **dwell** with them, and they shall be his people."* — Rev 21:3
 
@@ -204,7 +234,7 @@ The Feast of Ingathering fulfilled. The harvest complete. God dwelling with His 
 
 4. **The trumpet initiates the gathering.** Mat 24:31, 1 Co 15:52, 1 Th 4:16, Isa 27:13, Rev 11:15 — the trumpet causes, not accompanies, the ingathering. No trumpet, no gathering.
 
-5. **The gathering moves toward earth, not away.** G529 *apantēsis* (civic escort) indicates the saints go out to meet the descending King and accompany Him to His destination — the earth, not heaven.
+5. **Firstfruits precede the harvest.** The rapture vocabulary (G726 *harpazō*, G3880 *paralambanō*) describes a sudden extraction during normalcy — before the tribulation. The harvest vocabulary (G1997 *episunagōgē*, H6908 *qabats*) describes the corporate assembly at the end. Two phases, one ingathering. Birth before labor (Isa 66:7).
 
 6. **H622** *asaph* **encodes death + harvest + feast in one word.** "Gathered to his fathers" (death), "feast of ingathering" (Sukkot), "gathered in again" (restoration). The final gathering fulfills all three: the dead are raised, the harvest is complete, the feast begins.
 
@@ -216,7 +246,7 @@ The Feast of Ingathering fulfilled. The harvest complete. God dwelling with His 
 
 - **$trumpet** — The signal that initiates the gathering. The $trumpet is the authoritative sound of God's sovereign action — kingdom transfer, wall-breaking judgment, irreversible transition. At the last $trumpet, the dead rise, the living are changed, and the elect are assembled (1 Co 15:52, Mat 24:31). The Jubilee trumpet (Lev 25:9) cancels debts, frees slaves, and restores inheritance — the gathering IS the Jubilee proclaimed.
 
-- **$return-of-christ** — The covenant King's arrival to execute judgment and establish rule. 2 Th 2:1 pairs them explicitly: "the coming of our Lord Jesus Christ AND our gathering together unto him." The gathering is not a separate event from the $return-of-christ but its immediate consequence — the King arrives, the people are assembled.
+- **$return-of-christ** — The covenant King's arrival to execute judgment and establish rule. 2 Th 2:1 pairs the parousia and the episunagōgē as the topic Paul is addressing. The firstfruits rapture begins the parousia process — the King's "coming" encompasses the extraction of the firstfruits, the tribulation period, and the final visible return with His saints. The full harvest is assembled at the consummation.
 
 - **$mountain** — Kingdom/ruling authority. Isa 27:13: the gathered outcasts "shall worship the LORD in the holy $mountain in $jerusalem." The destination of the gathering is God's $kingdom — the $mountain that fills the whole earth (Dan 2:35). The gathering brings people to the seat of rule.
 
@@ -230,7 +260,7 @@ The Feast of Ingathering fulfilled. The harvest complete. God dwelling with His 
 
 - **$harlot** — Idolater/covenant breaker. The $harlot is the anti-gathering: divided loyalty, scattered allegiance, going after foreign masters (Hos 7:11). The gathering separates the faithful from the system of harlotry and brings them to the faithful bridegroom.
 
-- **$day** — Exposure/time of accountability. Both uses of G1997 *episunagōgē* connect the gathering to the approaching $day (2 Th 2:1–2, Heb 10:25). The gathering occurs at the $day of accountability — when all is exposed and the covenant community is assembled for final reckoning.
+- **$day** — Exposure/time of accountability. Both uses of G1997 *episunagōgē* connect the gathering to the approaching $day (2 Th 2:1–2, Heb 10:25). The firstfruits depart before the $day arrives (2 Th 2:3: "that day shall not come, except the departure come first"). The full harvest is gathered when the $day reaches its consummation. Heb 10:25 urges faithfulness "as ye see the day approaching" — the assembly of believers now foreshadows the assembly to come.
 
 - **$moment** — Sudden judgment. "In a $moment, in the twinkling of an eye, at the last trumpet" (1 Co 15:52). The gathering happens at the $moment of divine judgment — swift, decisive, irreversible. The transformation is instantaneous because the judgment is instantaneous.
 
@@ -271,8 +301,10 @@ Rev 18:4, Jer 50:8, Jer 51:6
 | G1996 | *episunagō* | gather together (verb) | Mat 24:31, Mk 13:27; verb form of G1997 |
 | G726 | *harpazō* | seize, snatch, catch up | Forceful divine seizure; 1 Th 4:17, Rev 12:5, 2 Co 12:2–4 |
 | G4863 | *sunagō* | gather together | LXX rendering of H6908; root of "synagogue" — the gathered assembly |
-| G529 | *apantēsis* | meeting, civic escort | 1 Th 4:17 "to meet the Lord"; technical term: go out to meet dignitary, escort him IN |
-| G3880 | *paralambanō* | receive, take alongside | Jn 14:3, Mat 24:40–41; normalcy-era taking |
+| G529 | *apantēsis* | meeting, encounter | 1 Th 4:17 "to meet the Lord in the air" |
+| G3880 | *paralambanō* | receive, take alongside | Jn 14:3, Mat 24:40–41; normalcy-era taking — the quiet firstfruits extraction |
+| G646 | *apostasia* | departure, defection | 2 Th 2:3 "the departure"; rendered "departing" in all English Bibles before KJV; fem. of G647 |
+| G536 | *aparchē* | firstfruits | 2 Th 2:13; the early portion offered at the START of the harvest, not the end |
 
 ---
 
@@ -287,3 +319,5 @@ Rev 18:4, Jer 50:8, Jer 51:6
 - **$babylon** — The gathering is also extraction from Babylon. What does the "come out of her, my people" pattern — from Lot to Rahab to Revelation — reveal about the relationship between leaving the false system and entering the true one?
 
 - **$day** — Both uses of *episunagōgē* point to the approaching Day. Why does the writer of Hebrews connect weekly assembly with the eschatological gathering — and what does that say about what the gathered community is practicing now?
+
+- **2 Th 2:3 — The Departure** — The word G646 *apostasia* was rendered "departing" by every major English Bible before the KJV. The definite article ("THE departure") points to a specific anticipated event Paul had already taught the Thessalonians about. How does this reshape the sequence of 2 Thessalonians 2?

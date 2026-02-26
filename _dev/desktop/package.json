@@ -1,6 +1,6 @@
 {
   "name": "timetested-bible",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Time Tested Bible Study App",
   "main": "main.js",
   "scripts": {
@@ -56,16 +56,25 @@
     "mac": {
       "category": "public.app-category.reference",
       "icon": "../../icons/icon-512.png",
-      "target": ["dmg", "zip"],
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "identity": null
     },
     "win": {
       "icon": "../../icons/icon-512.png",
-      "target": ["nsis", "portable"]
+      "target": [
+        "nsis",
+        "portable"
+      ]
     },
     "linux": {
       "icon": "../../icons/icon-512.png",
-      "target": ["AppImage", "deb"],
+      "target": [
+        "AppImage",
+        "deb"
+      ],
       "category": "Education"
     }
   }

@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "build:dictionary": "node pipeline/build-symbol-dictionary.js"
+    "build:ranks": "node pipeline/build-content-graph.js",
+    "build:dictionary": "node pipeline/build-symbol-dictionary.js",
+    "build:studies": "npm run build:ranks && npm run build:dictionary",
+    "verify:symbols": "node scripts/verify-symbol-refs.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",

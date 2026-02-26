@@ -165,7 +165,19 @@ Isaiah 47 introduces a second stage. Now the subject shifts — it is $babylon h
 
 Revelation 18 completes the cycle. Babylon the Great says "I sit a queen, and am no widow, and shall see no sorrow" (Rev 18:7) — echoing Isa 47:8. Her plagues come "in one day" (Rev 18:8) — echoing Isa 47:9. But Revelation adds details that link back to the Jeremiah pattern: "by thy **sorceries** were all nations **deceived**" (Rev 18:23) — Babylon operates a deception system. "In her was found the blood of **prophets**, and of saints" (Rev 18:24) — she kills the true prophets, the watchmen. And critically: "**Come out of her, my people**, that ye be not partakers of her sins, and that ye receive not of her plagues" (Rev 18:4) — God's people are **inside** Babylon when the call comes.
 
-This raises a question the evidence demands but does not definitively answer: who is the "they" of 1 Thessalonians 5:3? The OT pattern has false prophets inside the covenant community declaring peace over Jerusalem while Babylon approaches. But Paul's vocabulary is drawn from the Babylon oracles (Isa 47, via the LXX). And Revelation places God's people inside Babylon itself, needing to "come out." The false-peace claim may not belong to one group or the other — it may be the signature of any system that leans on God's name while breaking God's covenant, whether that system is called Jerusalem or Babylon.
+This converges on a question the evidence now answers: who is the "they" of 1 Thessalonians 5:3?
+
+Paul's grammar supplies the first clue. The same letter that contains "when **they** say peace and safety" (5:3) already identified a specific "they" in chapter 2: "the **Jews**: who both killed the Lord Jesus, and their own prophets... for the **wrath** has come upon them to the uttermost" (1Th 2:15-16). Then 5:9: "God has not appointed **us** to **wrath**." Same letter, same ὀργή — two groups. The "they/them" of chapter 2 and chapter 5 form an inclusio.
+
+The key phrase in 5:6 — "let us not $sleep, as do **the rest** (οἱ λοιποί)" — appears in Paul's other letters as a technical term for hardened Israel: "the election hath obtained it, and **the rest** (οἱ λοιποί) **were hardened**... God hath given them the spirit of slumber" (Rom 11:7-8). Same phrase, same judicial $sleep, same group.
+
+Three witnesses level the same charge against the same entity: **Jesus** to Jerusalem — "upon you may come all the righteous blood shed upon the earth" (Mat 23:35); **Paul** — "the Jews: who killed the Lord Jesus, and their own prophets" (1Th 2:15); **John** about $babylon — "in her was found the blood of prophets, and of all slain upon the earth" (Rev 18:24). The blood-guilt charge is identical, and all three name the covenant community that rejected its covenant-keeper.
+
+The apparent tension between the Jerusalem pattern (false prophets declaring peace) and the $babylon pattern (Isa 47, self-deifying empire) dissolves when the woman and the beast of Revelation 17 are distinguished. The beast is the political empire. The **woman riding the beast** is the $harlot — and Scripture reserves that word for covenant breakers, never pagans (Deut 31:16: "go a whoring" = "break my covenant"). Rev 11:8 identifies "the great city" as the place "where our Lord was crucified" — Jerusalem. Rev 17:18 says the woman IS "that great city." The $harlot is daughter of Zion turned covenant-breaker, riding the successive world empires (the seven mountains of Rev 17:9), reaching her final form on the last beast.
+
+"Come out of her, my people" (Rev 18:4) is addressed to covenant insiders — God's people trapped inside this system. The hardened (Rom 11:7) have not come out. They are "the rest" who $sleep. They are "they" who say peace and safety — leaning on the LORD's $name (Mic 3:11) while violating the covenant, declaring *shalom* over a wound they treated "slightly" (Jer 6:14).
+
+The full verse study is at [1Th 5:3](/reader/verses/1th-5-3).
 
 ---
 

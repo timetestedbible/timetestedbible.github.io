@@ -34,7 +34,7 @@ And the man of sin is not merely a future person. He is a *pattern* — a princi
 
 **Defining verses:** 2Thess 2:3–4, 2Thess 2:7–8, Dan 7:25, 1Jn 2:18
 
-**The surprise:** The Greek word translated "falling away" (G646 *apostasia*) is the feminine form of G647 *apostasion* — the word for a *divorce document*. The "falling away" that precedes the man of sin is not generic decline — it is a formal covenant departure, a divorce from God.
+**The surprise:** The Greek word translated "falling away" (G646 *apostasia*) was rendered "departing" in every major English Bible before the KJV — and *discessio* (departure) in the Latin Vulgate for over a thousand years. The noun is the feminine form of G647 *apostasion* (divorce document), and the root verb G868 *aphistemi* means "to depart, to stand away from." THE departure of the faithful — the firstfruits rapture — precedes the man of sin's revealing. The righteous are extracted; the vacancy is filled.
 
 **Connected:** $abomination-of-desolation, $deceive, $wickedness, $return-of-christ, $fall-of-babylon, $harlot, $animal, $truth
 
@@ -62,7 +62,7 @@ Paul's phrase "mystery of iniquity" (G3466 *mysterion* + G458 *anomia*) in 2Thes
 
 Only two figures in the New Testament bear the title "son of perdition" (G684 *apoleia*): Judas and the man of sin. The same word reappears in Revelation: the beast "goeth into perdition" (Rev 17:8, 11). Three points on one line: Judas → man of sin → beast. All three share the same defining characteristic: **betrayal from within covenant space**.
 
-Judas was not an outsider. He was one of the twelve. He sat at the table, received the bread, and went out into the night (Jn 13:26–30). The man of sin follows this pattern — he does not attack the temple from outside. He *sits in it*. The danger is not a foreign invader but a covenant insider who usurps the seat of God. This is why the "falling away" (G646 *apostasia*) must come first: the covenant community must fracture before the usurper can take his place within it. And *apostasia* is not merely "rebellion" — its root is the divorce document (G647 *apostasion*, Mat 5:31, Mat 19:7). This is a formal departure from the covenant marriage.
+Judas was not an outsider. He was one of the twelve. He sat at the table, received the bread, and went out into the night (Jn 13:26–30). The man of sin follows this pattern — he does not attack the temple from outside. He *sits in it*. The danger is not a foreign invader but a covenant insider who usurps the seat of God. This is why THE departure (G646 *apostasia*) must come first: the faithful depart — they are extracted as firstfruits before the wrath — and their removal creates the vacancy the usurper fills. The word *apostasia* (rendered "departing" in all English Bibles before the KJV) is the feminine form of G647 *apostasion* — the divorce document (Mat 5:31, Mat 19:7). The departure is simultaneously a formal separation: God's people exit the covenant-counterfeit system, and the system's lawlessness stands exposed.
 
 ### The Self-Exaltation Pattern
 
@@ -108,7 +108,7 @@ The restrainer appears in both neuter ("what withholdeth," v. 6 — a thing, a p
 
 The logic finds its prototype in Genesis 18. Abraham negotiates with God over Sodom: would God spare the city for fifty righteous? For forty-five? Down to ten? At every threshold, God agrees — the presence of the righteous restrains judgment. When the righteous are *removed* (Lot extracted in Gen 19:22), judgment falls immediately. God's own words: "I cannot do anything till thou be come out thither."
 
-This is the mechanism Paul describes. The lawless one is not created by the removal of the restrainer — the lawlessness is *already working* (2Thess 2:7). The restrainer holds it back from full manifestation. When the restraint is removed, what was hidden is *uncovered* — the same word (G601 *apokalypto*) Paul uses for the lawless one's "revealing." The wheat is gathered; the tares become visible. The righteous presence departs; the $wickedness stands exposed.
+This is the mechanism Paul describes — and it is the pre-tribulation rapture in its oldest form. The lawless one is not created by the removal of the restrainer — the lawlessness is *already working* (2Thess 2:7). The faithful who "hold fast" (G2722 *katechō* — the same word as 1Th 5:21 "hold fast that which is good") restrain lawlessness by their presence. When they are removed — "out of the midst" (ἐκ μέσου γένηται, 2Th 2:7) — what was hidden is *uncovered*. This is THE departure (*apostasia*) of verse 3: the faithful extracted as firstfruits before the wrath. The wheat is gathered; the tares become visible. The righteous depart; the $wickedness stands exposed; and "then shall that Wicked be revealed" (2Th 2:8).
 
 ### The Counterfeit Parousia
 
@@ -168,7 +168,7 @@ Every portrait of the man of sin ends the same way: divine termination. Not by h
 
 1. **The five-element sequence is invariant.** Self-exaltation → divine-seat claim → worship displacement → saint persecution → divine termination. Isa 14, Ezek 28, Dan 7, Dan 11, 2Thess 2, Rev 13 — the same structure every time. The consistency across independent prophetic voices suggests a single underlying reality.
 
-2. **The betrayal comes from inside.** Judas from among the twelve. The man of sin sitting in the temple. The $harlot riding the beast (Rev 17). The pattern is not invasion by a foreign enemy but corruption of covenant space from within. This is why *apostasia* precedes the revealing — the covenant community fractures first.
+2. **The betrayal comes from inside.** Judas from among the twelve. The man of sin sitting in the temple. The $harlot riding the beast (Rev 17). The pattern is not invasion by a foreign enemy but corruption of covenant space from within. This is why THE departure precedes the revealing — the faithful are extracted (the firstfruits rapture), and the vacancy they leave behind is filled by the usurper.
 
 3. **Mystery precedes manifestation.** The lawlessness is *already working* before it is *revealed*. The spirit of antichrist is *already in the world* before many antichrists appear. The pattern progresses from hidden to open: spirit → principle → system → person. The restrainer holds back the final unveiling, not the existence of the principle itself.
 
@@ -178,7 +178,7 @@ Every portrait of the man of sin ends the same way: divine termination. Not by h
 
 6. **Desolation follows the abomination.** The $abomination-of-desolation is not merely installed — it *empties* the place it occupies. True worship departs. The faithful flee. The holy place becomes desolate not because it is physically destroyed but because the presence of God and His people vacates it. The man of sin's occupation is simultaneously the temple's abandonment.
 
-7. **Removal of the righteous unveils the wicked.** Gen 18–19, 2Thess 2:7. The restrainer's departure does not *create* lawlessness — it *exposes* what was hidden. The wheat gathered, the tares visible. The righteous extracted, the wickedness uncovered. G601 *apokalypto* — the same unveiling that reveals Christ to the faithful reveals the lawless one to the world.
+7. **Removal of the righteous unveils the wicked.** Gen 18–19, 2Thess 2:3,7. THE departure (*apostasia*) of the faithful — the firstfruits rapture — does not *create* lawlessness; it *exposes* what was hidden. God could not destroy Sodom until Lot was extracted (Gen 19:22). The restrainer is removed "out of the midst" (2Th 2:7), the wheat gathered, the tares visible, the $wickedness uncovered. G601 *apokalypto* — the same unveiling that reveals Christ to the faithful reveals the lawless one to the world.
 
 ---
 
@@ -255,7 +255,7 @@ Jn 17:12
 | G458 | *anomia* | lawlessness — *a-* + *nomos* (law) | "Mystery of iniquity" (2Thess 2:7) |
 | G459 | *anomos* | lawless one — without law | "That Wicked" (2Thess 2:8) |
 | G684 | *apoleia* | perdition, destruction | "Son of perdition" (2Thess 2:3, Jn 17:12, Rev 17:8) |
-| G646 | *apostasia* | departure, falling away — fem. of G647 *apostasion* (divorce document) | 2Thess 2:3 |
+| G646 | *apostasia* | departure — fem. of G647 *apostasion* (divorce document); rendered "departing" in all English Bibles before KJV | 2Thess 2:3 — THE departure precedes the man of sin's revealing |
 | G601 | *apokalypto* | to uncover, reveal | Used for both Christ's and the lawless one's "revealing" |
 | G3466 | *mysterion* | mystery, hidden thing | "Mystery of iniquity" (2Thess 2:7) ∥ "Mystery Babylon" (Rev 17:5) |
 | G2722 | *katecho* | to hold down, restrain | The restrainer (2Thess 2:6–7), both neuter and masculine |

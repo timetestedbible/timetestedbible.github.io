@@ -1221,7 +1221,7 @@ const ReaderView = {
     // Two forms:  $wings      → display as dictionary name (e.g. "WINGS")
     //             $[name]     → display as written text, resolve as symbol (for use in quotes)
     {
-      const symPattern = /\$\[([a-z][a-z0-9 -]*[a-z0-9])\]|\$([a-z][a-z0-9-]*)/g;
+      const symPattern = /\$\[([a-zA-Z][a-zA-Z0-9 -]*[a-zA-Z0-9])\]|\$([a-z][a-z0-9-]*)/g;
       const dict = typeof SYMBOL_DICTIONARY !== 'undefined' ? SYMBOL_DICTIONARY : {};
 
       // Alias map: maps unresolvable keys to their correct dictionary keys
@@ -1259,8 +1259,8 @@ const ReaderView = {
         span.innerHTML = node.nodeValue.replace(symPattern, (match, bracketKey, bareKey) => {
           const keepText = !!bracketKey;  // $[name] = keep display text as-is
           const rawKey = bracketKey || bareKey;
-          // Normalize key: spaces → hyphens for dictionary lookup
-          let lookupKey = rawKey.replace(/\s+/g, '-');
+          // Normalize key: spaces → hyphens, lowercase for dictionary lookup
+          let lookupKey = rawKey.replace(/\s+/g, '-').toLowerCase();
           // Strip trailing hyphens (malformed refs like $babylon-)
           lookupKey = lookupKey.replace(/-+$/, '');
           // Check aliases for unresolvable keys
@@ -1348,7 +1348,7 @@ const ReaderView = {
           const book = normalizeBookName(rawBook);
           const firstVerse = verseStr.split(/[,]/)[0].split(/[-–—]/)[0].trim();
           const targetVerse = parseInt(firstVerse, 10);
-          const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${targetVerse}`;
+          const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}.${targetVerse}`;
           const dataRef = `${book} ${chapter}:${verseStr}`;
           return `<a href="${url}" class="scripture-ref" data-ref="${dataRef}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
         });
@@ -1412,7 +1412,7 @@ const ReaderView = {
         // Extract first verse number from potentially comma-separated string
         const firstVerse = verseStr ? verseStr.split(/[,]/)[0].split(/[-–—]/)[0].trim() : '1';
         const targetVerse = parseInt(firstVerse, 10);
-        const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${targetVerse}`;
+        const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}.${targetVerse}`;
         // id matches book-scripture-index anchor format (ref-book-chapter-verse) for scroll-from-Bible
         const anchorId = 'ref-' + (book || '').toLowerCase().replace(/\s+/g, '-') + '-' + chapter + '-' + targetVerse;
         const dataRef = `${book} ${chapter}:${targetVerse}`;

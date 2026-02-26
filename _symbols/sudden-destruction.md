@@ -128,7 +128,7 @@ Compare Isa 66:7–9, where Zion delivers before the pain even comes — the man
 
 1. **The false-security prerequisite.** Every instance of sudden destruction is preceded by a declaration of safety — explicit or implicit. "Peace and safety" (1Th 5:3), "I sit a queen" (Isa 47:8, Rev 18:7), "My power and the might of mine hand" (Deut 8:17). The destruction is "sudden" because the victim believed there was no danger. Remove the false security, and the destruction is no longer sudden — it is expected.
 
-2. **Inescapability as the defining marker.** Paul's "they shall not escape" (1Th 5:3, *ou mē ekphygōsin* — emphatic double negative) is the signature. The snare closes on all who dwell on the face of the earth (Lk 21:35). There is no remedy (Pro 6:15, 29:1). The only exemption is *not being in the category* — belonging to the $day rather than the $night.
+2. **Inescapability as the defining marker.** Paul's "they shall not escape" (1Th 5:3, *ou mē ekphygōsin* — emphatic double negative) is the signature. The snare closes on all who dwell on the face of the earth (Lk 21:35). There is no remedy (Pro 6:15, 29:1). The only exemption is not being present when it falls — "God hath not appointed us to wrath" (1Th 5:9). THE departure of the faithful (G646 *apostasia*, 2Th 2:3) precedes the sudden destruction, just as Lot's extraction preceded Sodom's fire.
 
 3. **Warnings always precede.** Sudden destruction is never truly without warning — it is without warning *for those who refused the warning*. Wisdom called and was refused (Pro 1:24). The man was "often reproved" (Pro 29:1). The turtledove knows its appointed times, but God's people do not (Jer 8:7). The gap between perceived safety and actual danger is self-imposed.
 
@@ -142,7 +142,7 @@ Compare Isa 66:7–9, where Zion delivers before the pain even comes — the man
 
 ## Connections
 
-- **$sleep** — The opposite symbol and the precondition. Those who are spiritually asleep — dead to awareness, unconscious of the times — are the ones upon whom sudden destruction falls. "Let us not sleep, as do others; but let us watch and be sober" (1Th 5:6). Wakefulness is the only exemption. The relationship is not sequential (sleep then destruction) but structural: $sleep *is* the vulnerability that sudden destruction exploits.
+- **$sleep** — The opposite symbol and the precondition. Those who are spiritually asleep — dead to awareness, unconscious of the times — are the ones upon whom sudden destruction falls. "Let us not sleep, as do others; but let us watch and be sober" (1Th 5:6). Wakefulness is the posture of those who will be taken in THE departure before the wrath falls. The relationship is not sequential (sleep then destruction) but structural: $sleep *is* the vulnerability that sudden destruction exploits, and wakefulness is the condition of those who are raptured.
 
 - **$birth-pains** — Paul's chosen simile. Sudden destruction comes "as travail upon a woman with child" (1Th 5:3) — covenant judgment that produces a new covenant order through painful transition. The comparison means the destruction is not terminal for God's purposes, only for those caught in it. Something is being born through the collapse.
 

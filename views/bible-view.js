@@ -31,7 +31,7 @@ const BibleView = {
     if (typeof closeConceptSearch === 'function') closeConceptSearch();
     // Reset tracked IDs so restoreUIState re-opens panels when returning to this view
     this._currentStrongsId = null;
-    this._lastInterlinearVerse = undefined;
+    this._lastExpandedVerse = undefined;
   },
 
   /**
@@ -184,7 +184,7 @@ const BibleView = {
         
         // Reset restoration flags on navigation change
         this._interlinearRestored = false;
-        this._lastInterlinearVerse = undefined;
+        this._lastExpandedVerse = undefined;
         
         // Wait for Bible data to be ready then navigate
         this.navigateWhenReady(translation, book, chapter, verse);
@@ -329,31 +329,25 @@ const BibleView = {
       }
     }
     
-    // Sync interlinear state
-    if (ui.interlinearVerse !== this._lastInterlinearVerse) {
-      const prevVerse = this._lastInterlinearVerse;
-      this._lastInterlinearVerse = ui.interlinearVerse;
-      
+    // Interlinear restoration/collapse is handled by openBibleExplorerTo (after DOM is ready).
+    // Collapse any stale expansion when state has no tab (tab = expansion is open).
+    const currentParams = (typeof AppStore !== 'undefined') ? AppStore.getState()?.content?.params : {};
+    const stateTab = currentParams?.tab;
+    const stateVerse = currentParams?.verse;
+    if (!stateTab && this._lastExpandedVerse) {
+      const prevVerse = this._lastExpandedVerse;
+      this._lastExpandedVerse = null;
       requestAnimationFrame(() => {
-        const state = AppStore.getState();
-        const params = state.content?.params || {};
-        
-        if (ui.interlinearVerse && params.book && params.chapter) {
-          const verseEl = document.getElementById(`verse-${ui.interlinearVerse}`);
-          const isAlreadyExpanded = verseEl?.classList.contains('interlinear-expanded');
-          if (!isAlreadyExpanded && typeof onVerseTap === 'function') {
-            onVerseTap(params.book, params.chapter, ui.interlinearVerse);
-          }
-        } else if (prevVerse) {
-          const prevVerseEl = document.getElementById(`verse-${prevVerse}`);
-          const existing = prevVerseEl?.querySelector('.verse-expansion') || prevVerseEl?.querySelector('.interlinear-display');
-          if (existing) {
-            existing.classList.remove('expanded');
-            setTimeout(() => existing.remove(), 200);
-            prevVerseEl.classList.remove('interlinear-expanded');
-          }
+        const prevVerseEl = document.getElementById(`verse-${prevVerse}`);
+        const existing = prevVerseEl?.querySelector('.verse-expansion') || prevVerseEl?.querySelector('.interlinear-display');
+        if (existing) {
+          existing.classList.remove('expanded');
+          setTimeout(() => existing.remove(), 200);
+          prevVerseEl.classList.remove('interlinear-expanded');
         }
       });
+    } else if (stateTab && stateVerse) {
+      this._lastExpandedVerse = stateVerse;
     }
     
     // Update history button states

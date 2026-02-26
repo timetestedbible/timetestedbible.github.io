@@ -39,9 +39,9 @@ pipeline/symbols/{key}.md     →   _symbols/{key}.md        →   /research/sym
 
 **`_symbols/*.md` is the single source of truth.** The search dictionary (`symbol-dictionary.js`) is generated from it — never edited by hand.
 
-After publishing or updating any study, run: `npm run build:dictionary`
+After publishing or updating any study, run: `npm run build:studies`
 
-This regenerates `symbol-dictionary.js` from all `_symbols/*.md` files, making the study immediately searchable and available for tooltips, the symbol grid, and Strong's panel integration.
+This runs the **unified content graph** (`build:ranks` → `pipeline/build-content-graph.js`) which computes PageRank across ALL content types (symbol studies, verse studies, 340K cross-references, book scripture index, timeline events — 30K+ nodes, 354K+ edges), then rebuilds the symbol dictionary with updated ranks.
 
 ### Key files
 - **Pipeline research**: `pipeline/symbols/{key}.md` — YAML frontmatter + Context Bag
@@ -53,6 +53,9 @@ This regenerates `symbol-dictionary.js` from all `_symbols/*.md` files, making t
 - **Styles**: `assets/css/symbols.css` → `.symbol-article-body` class
 - **Config**: `_config.yml` → `collections.symbols` (output: true, permalink: /research/symbols/:path/)
 - **Methodology**: `symbols/METHODOLOGY.md` (human), `symbols/AI-METHODOLOGY.md` (AI guardrails)
+- **Content graph**: `pipeline/build-content-graph.js` — unified PageRank across all content (symbols, verses, cross-refs, events, book)
+- **Ref parsing lib**: `pipeline/lib/parse-refs.js` — shared scripture reference extraction for pipeline scripts
+- **Generated ranks**: `_data/symbol_ranks.yml` (symbol PageRank), `_data/verse_ranks.yml` (all 30K+ Bible verse ranks), `_data/reverse_index.yml` (symbol → citing content), `_data/graph_stats.yml` (summary)
 
 ---
 
@@ -295,11 +298,17 @@ Read these for reference on structure, tone, and formatting:
 
 | You say | AI does |
 |---------|---------|
-| "Generate a symbol study for ROCK" | Full pipeline: research → Context Bag → published study → rebuild dictionary |
+| "Generate a symbol study for ROCK" | Full pipeline: research → Context Bag → published study → `npm run build:studies` |
 | "Generate a Context Bag for ROCK" | Research only: creates `pipeline/symbols/rock.md`, pauses for review |
-| "Publish the study for ROCK" | Takes existing `pipeline/symbols/rock.md` → creates `_symbols/rock.md` → rebuilds dictionary |
-| "Update the thorns study" | Reads current `_symbols/thorns.md` + pipeline data, revises → rebuilds dictionary |
+| "Publish the study for ROCK" | Takes existing `pipeline/symbols/rock.md` → creates `_symbols/rock.md` → `npm run build:studies` |
+| "Update the thorns study" | Reads current `_symbols/thorns.md` + pipeline data, revises → `npm run build:studies` |
 | "Add $wind to the connections in shadow" | Edits `_symbols/shadow.md` directly |
-| "Do symbol studies for X, Y, Z" | Runs the pipeline for each in sequence → rebuilds dictionary once at end |
+| "Do symbol studies for X, Y, Z" | Runs the pipeline for each in sequence → `npm run build:studies` once at end |
+| "Generate a verse study for X" | Creates `_verses/key.md` → `npm run build:studies` (verse studies feed PageRank) |
 
-**After any change to `_symbols/*.md`**, run `npm run build:dictionary` (or `node pipeline/build-symbol-dictionary.js`) to regenerate `symbol-dictionary.js`. This makes the study searchable and enables tooltips. The dictionary schema is `{ name, words, strongs, meaning, sentence, opposite, link }` — there are no `is`/`is2`/`does`/`does2` fields.
+**After any change to `_symbols/*.md` or `_verses/*.md`**, run `npm run build:studies` (which runs `build:ranks` then `build:dictionary`). This rebuilds PageRank scores from cross-references, then regenerates `symbol-dictionary.js` with updated ranks. The dictionary schema is `{ name, words, strongs, meaning, sentence, opposite, rank, link }`.
+
+Build commands:
+- `npm run build:studies` — full rebuild (ranks + dictionary) — **use this one**
+- `npm run build:ranks` — PageRank only (`pipeline/build-symbol-ranks.js`)
+- `npm run build:dictionary` — dictionary only (`pipeline/build-symbol-dictionary.js`)

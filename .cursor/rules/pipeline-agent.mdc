@@ -211,7 +211,14 @@ Pipeline files must be COMPRESSED. Every word earns its place.
 **Test: could another agent reconstruct the full picture by reading this file + its declared inputs?**
 If yes → properly compressed. If it needs info that's neither here nor in a dependency → missing data.
 
-## AFTER EVERY TASK — Two Required Steps
+## AFTER EVERY TASK — Three Required Steps
+
+### Step 0: Rebuild Content Graph + Dictionary
+After creating or modifying any `_symbols/*.md` or `_verses/*.md` file, run:
+```
+npm run build:studies
+```
+This runs the **unified content graph** (`pipeline/build-content-graph.js`) which computes PageRank across 30K+ nodes and 354K+ edges (symbol studies, verse studies, 340K cross-references, book scripture index, timeline events), then regenerates the symbol dictionary with updated ranks. Outputs: `_data/symbol_ranks.yml`, `_data/verse_ranks.yml` (all Bible verse ranks), `_data/reverse_index.yml`, `_data/graph_stats.yml`.
 
 ### Step A: Gap Analysis (Meta Step)
 After completing any study or integration, scan your own output and ask:

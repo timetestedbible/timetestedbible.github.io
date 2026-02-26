@@ -96,6 +96,24 @@ const TranslationPatches = {
     return this.getPatchesForVerse(verseRef).length > 0;
   },
 
+  getPatchesForChapter(book, chapter) {
+    if (!this._verseIndex) return [];
+    const prefix = `${book} ${chapter}:`;
+    const results = [];
+    const seen = new Set();
+    for (const [ref, patches] of Object.entries(this._verseIndex)) {
+      if (ref.startsWith(prefix)) {
+        for (const patch of patches) {
+          if (!seen.has(patch.id)) {
+            seen.add(patch.id);
+            results.push({ verseRef: ref, patch });
+          }
+        }
+      }
+    }
+    return results;
+  },
+
   // ── Text Processing ───────────────────────────────────────────
 
   stripStrongsTags(text) {
@@ -354,7 +372,13 @@ const TranslationPatches = {
 
     const parts = studyUrl.split('/').filter(Boolean);
 
-    if (typeof AppStore !== 'undefined' && parts[0] === 'reader' && parts[1] && parts[2]) {
+    if (typeof AppStore === 'undefined') {
+      window.location.href = studyUrl;
+      return;
+    }
+
+    // /reader/{contentType}/{slug}
+    if (parts[0] === 'reader' && parts[1] && parts[2]) {
       const contentType = parts[1];
       const slug = parts[2];
       const params = { contentType };
@@ -368,7 +392,37 @@ const TranslationPatches = {
       return;
     }
 
-    // Fallback
+    // /blog/{slug}
+    if (parts[0] === 'blog' && parts[1]) {
+      AppStore.dispatch({
+        type: 'SET_VIEW',
+        view: 'reader',
+        params: { contentType: 'blog', slug: parts[1] }
+      });
+      return;
+    }
+
+    // /research/symbols/{key}
+    if (parts[0] === 'research' && parts[1] === 'symbols' && parts[2]) {
+      AppStore.dispatch({
+        type: 'SET_VIEW',
+        view: 'reader',
+        params: { contentType: 'symbols', symbol: parts[2].toLowerCase() }
+      });
+      return;
+    }
+
+    // /research/verses/{key}
+    if (parts[0] === 'research' && parts[1] === 'verses' && parts[2]) {
+      AppStore.dispatch({
+        type: 'SET_VIEW',
+        view: 'reader',
+        params: { contentType: 'verse-studies', study: parts[2] }
+      });
+      return;
+    }
+
+    // Fallback for any other URL
     if (typeof URLRouter !== 'undefined') {
       history.pushState({}, '', studyUrl);
       AppStore.dispatch({ type: 'URL_CHANGED', url: window.location.href });
@@ -575,6 +629,11 @@ const TranslationPatches = {
     window.dispatchEvent(new Event('patchesChanged'));
     // Do NOT null BibleView.lastRenderedParams or dispatch PATCHES_CHANGED —
     // those trigger immediate re-render which destroys the DOM and kills the interlinear
+
+    // Refresh the research panel patch cards if visible
+    if (typeof updateResearchPanelForChapter === 'function') {
+      updateResearchPanelForChapter(true);
+    }
   },
 
   _refreshVerses() {

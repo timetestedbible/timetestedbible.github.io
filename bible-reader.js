@@ -1685,43 +1685,21 @@ async function onVerseTap(book, chapter, verse) {
   const verseEl = document.getElementById(`verse-${verse}`);
   if (!verseEl) return;
 
-  // Set this verse as the selected verse in URL (replaceState to avoid re-render)
-  try {
-    const url = new URL(window.location);
-    url.searchParams.set('verse', verse);
-    window.history.replaceState({}, '', url);
-    if (typeof AppStore !== 'undefined') {
-      const s = AppStore.getState();
-      if (s.content?.params) s.content.params.verse = verse;
-    }
-    bibleExplorerState.highlightedVerse = verse;
-  } catch (e) {}
-
   // Toggle off if already expanded
   const existing = verseEl.querySelector('.verse-expansion');
   if (existing) {
     existing.classList.remove('expanded');
     setTimeout(() => existing.remove(), 200);
     verseEl.classList.remove('interlinear-expanded');
-    // Clear both verse selection and interlinear state
-    try {
-      const url = new URL(window.location);
-      url.searchParams.delete('verse');
-      url.searchParams.delete('il');
-      url.searchParams.delete('ilt');
-      window.history.replaceState({}, '', url);
-      if (typeof AppStore !== 'undefined') {
-        const s = AppStore.getState();
-        if (s.content?.params) s.content.params.verse = null;
-      }
-      bibleExplorerState.highlightedVerse = null;
-    } catch (e) {}
+    bibleExplorerState.highlightedVerse = null;
     if (typeof AppStore !== 'undefined') {
-      AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: null, replace: true });
+      AppStore.dispatch({ type: 'SET_VERSE', verse: null, tab: null, replace: true });
     }
-    if (window.innerWidth > 768) updateResearchPanelForChapter();
+    if (window.innerWidth > 768) updateResearchPanelForChapter(true);
     return;
   }
+
+  bibleExplorerState.highlightedVerse = verse;
 
   // Collapse any other expanded verse
   document.querySelectorAll('.verse-expansion').forEach(el => el.remove());
@@ -1750,11 +1728,12 @@ async function onVerseTap(book, chapter, verse) {
     await loadMorphhb();
   }
 
-  // Ensure cross-reference data is loading in background
+  // Ensure cross-reference data and content ranks are loading in background
   if (typeof loadCrossReferences === 'function') loadCrossReferences();
+  if (typeof loadContentRanks === 'function') loadContentRanks();
 
   // Check if we should restore a specific tab from URL state
-  const urlTab = (typeof AppStore !== 'undefined') ? AppStore.getState()?.ui?.interlinearTab : null;
+  const urlTab = (typeof AppStore !== 'undefined') ? AppStore.getState()?.content?.params?.tab : null;
 
   // Build tabs
   const { html: tabsHtml, defaultTab } = buildVerseExpansionHTML(book, chapter, verse, urlTab);
@@ -1762,9 +1741,11 @@ async function onVerseTap(book, chapter, verse) {
 
   const activeTab = urlTab || defaultTab;
 
-  // Dispatch for URL sync
+  // Dispatch for URL sync — use replace when restoring from URL to avoid duplicate history entries
   if (typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: verse, tab: activeTab, replace: false });
+    const isRestore = bibleExplorerState._restoringFromURL;
+    bibleExplorerState._restoringFromURL = false;
+    AppStore.dispatch({ type: 'SET_VERSE', verse: verse, tab: activeTab, replace: isRestore });
   }
 
   // On desktop, also update research panel with verse-specific content
@@ -1793,7 +1774,8 @@ function buildVerseExpansionHTML(book, chapter, verse, requestedTab) {
   const vstudy = (typeof getVerseStudy === 'function') ? getVerseStudy(book, chapter, verse) : null;
   const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(book, chapter, verse) : false;
   const tlData = (typeof getVerseTimelineEvents === 'function') ? getVerseTimelineEvents(book, chapter, verse) : null;
-  const hasLinks = (bookRefs && bookRefs.length > 0) || vstudy || hasCrossRefs;
+  const hasSymbols = typeof SYMBOL_WORD_INDEX !== 'undefined';
+  const hasLinks = (bookRefs && bookRefs.length > 0) || vstudy || hasCrossRefs || hasSymbols;
   const hasEvents = tlData && tlData.events.length > 0;
 
   // Determine which tabs to show and the default
@@ -1827,6 +1809,7 @@ function buildVerseExpansionHTML(book, chapter, verse, requestedTab) {
   if (hasEvents) {
     html += `<button class="il-tab" data-tab="events" onclick="switchInterlinearTab(this, 'events')"><span class="il-tab-icon">📅</span><span class="il-tab-label">Events</span></button>`;
   }
+  html += `<button class="il-close-btn" onclick="onVerseTap('${book.replace(/'/g, "\\'")}', ${chapter}, ${verse})" title="Close">✕</button>`;
   html += '</div>';
 
   // ── Hebrew/Greek tab pane ──
@@ -1844,7 +1827,7 @@ function buildVerseExpansionHTML(book, chapter, verse, requestedTab) {
 
   if (!isNT) {
     const showVowels = getVowelPointingSetting();
-    html += `<div class="il-vowel-toggle-container"><label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowels</label></div>`;
+    html += `<div class="il-vowel-toggle-container"><label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)">Vowels</label></div>`;
   }
 
   if (isNT && !hasHGInterlinear) {
@@ -1876,7 +1859,7 @@ function buildVerseExpansionHTML(book, chapter, verse, requestedTab) {
 
   // ── Links tab ──
   if (hasLinks) {
-    html += `<div class="il-tab-pane il-pane-links${defaultTab === 'links' ? ' active' : ''}">`;
+    html += `<div class="il-tab-pane il-pane-links${defaultTab === 'links' ? ' active' : ''}" data-links-book="${book}" data-links-ch="${chapter}" data-links-v="${verse}">`;
     html += buildLinksTabHTML(book, chapter, verse, bookRefs, vstudy, hasCrossRefs);
     html += '</div>';
   }
@@ -2089,58 +2072,178 @@ function _renderCrossRefCard(ref) {
   </div>`;
 }
 
+// Persisted filter/sort preferences for the links tab
+const _linksPrefs = {
+  get filters() {
+    try { return JSON.parse(localStorage.getItem('linksFilters') || 'null') || { vstudy: true, symbol: true, book: true, crossref: true }; }
+    catch { return { vstudy: true, symbol: true, book: true, crossref: true }; }
+  },
+  set filters(v) { try { localStorage.setItem('linksFilters', JSON.stringify(v)); } catch {} },
+  get sortAsc() {
+    try { return localStorage.getItem('linksSortAsc') === '1'; } catch { return false; }
+  },
+  set sortAsc(v) { try { localStorage.setItem('linksSortAsc', v ? '1' : '0'); } catch {} },
+};
+
+function _rerenderLinksPane(containerEl) {
+  const pane = containerEl.closest('[data-links-book]');
+  if (!pane) return;
+  const book = pane.dataset.linksBook;
+  const ch = parseInt(pane.dataset.linksCh);
+  const v = parseInt(pane.dataset.linksV);
+  if (!book || !ch || !v) return;
+  const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(book, ch, v) : null;
+  const vstudy = (typeof getVerseStudy === 'function') ? getVerseStudy(book, ch, v) : null;
+  const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(book, ch, v) : false;
+  pane.innerHTML = buildLinksTabHTML(book, ch, v, bookRefs, vstudy, hasCrossRefs);
+}
+
+function _toggleLinksFilter(type, containerEl) {
+  const f = _linksPrefs.filters;
+  f[type] = !f[type];
+  _linksPrefs.filters = f;
+  _rerenderLinksPane(containerEl);
+}
+
+function _toggleLinksSort(containerEl) {
+  _linksPrefs.sortAsc = !_linksPrefs.sortAsc;
+  _rerenderLinksPane(containerEl);
+}
+
 function buildLinksTabHTML(book, chapter, verse, bookRefs, vstudy, hasCrossRefs) {
-  let html = '';
+  const filters = _linksPrefs.filters;
+  const sortAsc = _linksPrefs.sortAsc;
 
-  // Time Tested content first
-  if (bookRefs && bookRefs.length > 0) {
-    html += '<div class="verse-links-section"><div class="verse-links-section-title">Referenced in Time Tested</div>';
-    const seen = new Set();
-    for (const ref of bookRefs) {
-      const key = `${ref.chapter}-${ref.title}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      const url = typeof getChapterUrl === 'function' ? getChapterUrl(ref.chapter, ref.anchor) : '#';
-      html += `<a href="${url}" class="verse-link-card">
-        <span class="verse-link-label">Chapter ${parseInt(ref.chapter)}</span>
-        <span class="verse-link-title">${ref.title}</span>
-      </a>`;
-    }
-    html += '</div>';
-  }
+  // --- Collect all references into unified array ---
+  const items = [];
+  const BASE_WEIGHT = { vstudy: 1000, symbol: 50, book: 25, crossref: 1 };
 
+  // Verse study
   if (vstudy) {
-    html += `<div class="verse-links-section"><div class="verse-links-section-title">Verse Study</div>
-      <button class="verse-link-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${vstudy.id}'}})">
-        <span class="verse-link-label">${vstudy.ref || ''}</span>
+    items.push({
+      type: 'vstudy',
+      label: vstudy.title || vstudy.ref || '',
+      score: BASE_WEIGHT.vstudy * (getVstudyRank(vstudy.id) || 100),
+      html: `<button class="verse-link-card card-vstudy" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${vstudy.id}'}})">
+        <span class="verse-link-type-tag">study</span>
         <span class="verse-link-title">${vstudy.title}</span>
         ${vstudy.desc ? `<span class="verse-link-desc">${vstudy.desc}</span>` : ''}
-      </button>
+      </button>`,
+    });
+  }
+
+  // Symbols in this verse
+  const verseSymbols = getVerseSymbols(book, chapter, verse);
+  for (const { key, symbol } of verseSymbols) {
+    if (!symbol || !symbol.link) continue;
+    const rank = (symbol.rank || getSymbolRank(key) || 1);
+    items.push({
+      type: 'symbol',
+      label: symbol.name || key,
+      score: BASE_WEIGHT.symbol * rank,
+      html: `<button class="verse-link-card card-symbol" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${key}'}})">
+        <span class="verse-link-type-tag">symbol</span>
+        <span class="verse-link-label">${symbol.name || key}</span>
+        ${symbol.meaning ? `<span class="verse-link-desc">${symbol.meaning}</span>` : ''}
+      </button>`,
+    });
+  }
+
+  // Book references (Time Tested Tradition)
+  if (bookRefs && bookRefs.length > 0) {
+    const seen = new Set();
+    for (const ref of bookRefs) {
+      const dedupKey = `${ref.chapter}-${ref.title}`;
+      if (seen.has(dedupKey)) continue;
+      seen.add(dedupKey);
+      const rank = getBookChapterRank(ref.chapter) || 1;
+      items.push({
+        type: 'book',
+        label: ref.title || ref.chapter,
+        score: BASE_WEIGHT.book * rank,
+        html: `<a href="#" class="verse-link-card card-book" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapter:'${ref.chapter}',anchor:'${ref.anchor || ''}'}}); return false;">
+          <span class="verse-link-type-tag">time tested</span>
+          <span class="verse-link-title">${ref.title}</span>
+        </a>`,
+      });
+    }
+  }
+
+  // Cross references — use PageRank if loaded, otherwise votes (never mix)
+  if (hasCrossRefs) {
+    const ranksLoaded = !!_contentRanks;
+    const refs = (typeof getCrossReferencesSync === 'function') ? getCrossReferencesSync(book, chapter, verse) : [];
+    for (const ref of refs) {
+      const p = ref.parsed;
+      const rank = ranksLoaded
+        ? (getVerseRank(p.book, p.chapter, p.verseStart) || 0.01)
+        : (ref.votes || 1);
+      let verseText = '';
+      if (typeof getVerseText === 'function') {
+        verseText = getVerseText(`${p.book} ${p.chapter}:${p.verseStart}`) || '';
+        if (verseText.length > 100) verseText = verseText.substring(0, 97) + '...';
+      }
+      items.push({
+        type: 'crossref',
+        label: ref.display,
+        score: BASE_WEIGHT.crossref * rank,
+        html: `<div class="verse-link-card card-crossref" onclick="goToScriptureFromSidebar('${ref.display.replace(/'/g, "\\'")}')">
+          <span class="verse-link-label">${ref.display}</span>
+          ${verseText ? `<span class="verse-link-desc">${verseText}</span>` : ''}
+        </div>`,
+      });
+    }
+  }
+
+  // --- Filter ---
+  const filtered = items.filter(item => filters[item.type]);
+
+  // --- Sort (deterministic: by score, then by type weight, then by label) ---
+  const TYPE_ORDER = { vstudy: 0, symbol: 1, book: 2, crossref: 3 };
+  filtered.sort((a, b) => {
+    const scoreDiff = sortAsc ? a.score - b.score : b.score - a.score;
+    if (scoreDiff !== 0) return scoreDiff;
+    const typeDiff = TYPE_ORDER[a.type] - TYPE_ORDER[b.type];
+    if (typeDiff !== 0) return typeDiff;
+    return (a.label || '').localeCompare(b.label || '');
+  });
+
+  // --- Render ---
+  let html = '';
+
+  // Filter toolbar
+  const btnCls = (type) => `verse-links-filter-btn${filters[type] ? ' active' : ''}`;
+  const counts = { vstudy: 0, symbol: 0, book: 0, crossref: 0 };
+  for (const item of items) counts[item.type]++;
+
+  html += `<div class="verse-links-toolbar">
+    ${counts.vstudy ? `<button class="${btnCls('vstudy')}" onclick="_toggleLinksFilter('vstudy', this)" title="Verse studies">Studies</button>` : ''}
+    <button class="${btnCls('symbol')}" onclick="_toggleLinksFilter('symbol', this)" title="Symbol studies">Symbols${counts.symbol ? ` ${counts.symbol}` : ''}</button>
+    ${counts.book ? `<button class="${btnCls('book')}" onclick="_toggleLinksFilter('book', this)" title="Time Tested Tradition references">Time Tested</button>` : ''}
+    <button class="${btnCls('crossref')}" onclick="_toggleLinksFilter('crossref', this)" title="Cross references (${counts.crossref})">Refs${counts.crossref ? ` ${counts.crossref}` : ''}</button>
+    <button class="verse-links-sort-btn" onclick="_toggleLinksSort(this)" title="${sortAsc ? 'Showing rare first' : 'Showing important first'}">${sortAsc ? '↑' : '↓'}</button>
+  </div>`;
+
+  if (filtered.length === 0) {
+    html += '<div class="interlinear-no-data">No references match current filters.</div>';
+    return html;
+  }
+
+  // Show first 20, expand for the rest
+  const maxVisible = 20;
+  const visible = filtered.slice(0, maxVisible);
+  const hidden = filtered.slice(maxVisible);
+
+  for (const item of visible) html += item.html;
+
+  if (hidden.length > 0) {
+    const hiddenHtml = hidden.map(item => item.html).join('');
+    html += `<div class="verse-links-expand">
+      <button class="verse-links-expand-btn" onclick="this.parentElement.querySelector('.verse-links-hidden').style.display='block';this.style.display='none';">Show ${hidden.length} more</button>
+      <div class="verse-links-hidden" style="display:none">${hiddenHtml}</div>
     </div>`;
   }
 
-  if (hasCrossRefs) {
-    const refs = (typeof getCrossReferencesSync === 'function') ? getCrossReferencesSync(book, chapter, verse) : [];
-    if (refs.length > 0) {
-      html += '<div class="verse-links-section"><div class="verse-links-section-title">Cross References</div>';
-      const maxRefs = 15;
-      const displayRefs = refs.slice(0, maxRefs);
-      for (const ref of displayRefs) {
-        html += _renderCrossRefCard(ref);
-      }
-      if (refs.length > maxRefs) {
-        const hiddenRefs = refs.slice(maxRefs);
-        const hiddenHtml = hiddenRefs.map(r => _renderCrossRefCard(r)).join('');
-        html += `<div class="verse-links-expand">
-          <button class="verse-links-expand-btn" onclick="this.parentElement.querySelector('.verse-links-hidden').style.display='block';this.style.display='none';">Show ${hiddenRefs.length} more</button>
-          <div class="verse-links-hidden" style="display:none">${hiddenHtml}</div>
-        </div>`;
-      }
-      html += '</div>';
-    }
-  }
-
-  if (!html) html = '<div class="interlinear-no-data">No links available for this verse.</div>';
   return html;
 }
 
@@ -2175,20 +2278,22 @@ function updateResearchPanelForVerse(book, chapter, verse) {
 
   let html = '<button class="research-panel-back-btn" onclick="collapseResearchPanel()">← Back to chapter</button>';
   html += `<div class="research-panel-verse-header">${book} ${chapter}:${verse}</div>`;
+  html += `<div data-links-book="${book}" data-links-ch="${chapter}" data-links-v="${verse}">`;
   html += buildLinksTabHTML(book, chapter, verse, bookRefs, vstudy, hasCrossRefs);
+  html += '</div>';
   html += '<hr class="research-panel-divider">';
   html += renderChapterResearchContent();
   contentEl.innerHTML = html;
 }
 
-function updateResearchPanelForChapter() {
+function updateResearchPanelForChapter(force) {
   const contentEl = document.getElementById('research-panel-content');
   if (!contentEl) return;
-  // Only refresh if panel is showing chapter-level content (not Strong's, HG notes, or verse-specific)
-  if (contentEl.querySelector('.strongs-panel-content') ||
+  // Only refresh if panel is showing chapter-level content (not Strong's or verse-specific)
+  // Unless force=true (called from verse deselection, must restore chapter view)
+  if (!force && (contentEl.querySelector('.strongs-panel-content') ||
       contentEl.querySelector('.strongs-lemma') ||
-      contentEl.querySelector('.hg-chapter-notes') ||
-      contentEl.querySelector('.research-panel-verse-header')) return;
+      contentEl.querySelector('.research-panel-verse-header'))) return;
   contentEl.innerHTML = renderChapterResearchContent();
 }
 
@@ -2209,6 +2314,55 @@ function renderChapterResearchContent() {
 
   const book = bibleExplorerState.currentBook;
   const ch = bibleExplorerState.currentChapter;
+
+  if (book && ch && typeof TranslationPatches !== 'undefined' && TranslationPatches.getPatchesForChapter) {
+    const chapterPatches = TranslationPatches.getPatchesForChapter(book, ch);
+    if (chapterPatches.length > 0) {
+      html += '<div class="research-panel-section"><div class="research-panel-section-title">Translation Patches</div>';
+      const trans = currentTranslation || 'kjv';
+      for (const { verseRef, patch } of chapterPatches) {
+        const state = TranslationPatches.getVerseState(verseRef);
+        const escapedRef = verseRef.replace(/'/g, "\\'");
+        const origText = patch.find?.[trans] ? TranslationPatches.stripStrongsTags(patch.find[trans]) : null;
+        const patchText = patch.replace?.[trans] ? TranslationPatches.stripStrongsTags(patch.replace[trans]) : null;
+
+        let stateLabel = '';
+        if (state === 'accepted') stateLabel = '<span class="patch-card-state patch-card-accepted">Accepted</span>';
+        else if (state === 'rejected') stateLabel = '<span class="patch-card-state patch-card-rejected">Available</span>';
+        else stateLabel = '<span class="patch-card-state patch-card-pending">Pending</span>';
+
+        html += `<div class="research-panel-patch-card">`;
+        html += `<div class="patch-card-header"><span class="patch-card-ref">${verseRef}</span>${stateLabel}</div>`;
+        if (origText && patchText) {
+          if (state === 'pending' || state === 'accepted') {
+            html += `<div class="patch-card-comparison"><del>${origText}</del></div>`;
+            html += `<div class="patch-card-replacement">${patchText}</div>`;
+          } else {
+            html += `<div class="patch-card-comparison">${origText}</div>`;
+            html += `<div class="patch-card-replacement"><em>\u2192 ${patchText}</em></div>`;
+          }
+        }
+        if (patch.summary) {
+          html += `<div class="patch-card-summary">${patch.summary}</div>`;
+        }
+        html += '<div class="patch-card-actions">';
+        if (patch.study) {
+          html += `<button class="patch-tooltip-btn patch-tooltip-study" onclick="event.stopPropagation(); TranslationPatches.openStudy('${TranslationPatches._escapeAttr(patch.study)}', '${patch.section || ''}')">Full Study \u2192</button>`;
+        }
+        if (state === 'pending') {
+          html += `<button class="patch-tooltip-btn patch-tooltip-accept" onclick="TranslationPatches.acceptVerse('${escapedRef}')">Accept</button>`;
+          html += `<button class="patch-tooltip-btn patch-tooltip-reject" onclick="TranslationPatches.rejectVerse('${escapedRef}')">Reject</button>`;
+        } else if (state === 'accepted') {
+          html += `<button class="patch-tooltip-btn patch-tooltip-reject" onclick="TranslationPatches.rejectVerse('${escapedRef}')">Revert</button>`;
+        } else if (state === 'rejected') {
+          html += `<button class="patch-tooltip-btn patch-tooltip-accept" onclick="TranslationPatches.acceptVerse('${escapedRef}')">Re-apply</button>`;
+        }
+        html += '</div></div>';
+      }
+      html += '</div>';
+    }
+  }
+
   if (book && ch && typeof getVerseTimelineEvents === 'function') {
     const chapterEvents = [];
     const seenIds = new Set();
@@ -2237,10 +2391,77 @@ function renderChapterResearchContent() {
     }
   }
 
+  // HG chapter study notes — collapsible card, shown on all translations
+  if (book && ch) {
+    const chNotes = getHGChapterNotes(book, ch);
+    if (chNotes && chNotes.summary) {
+      const isHG = currentTranslation === 'hg';
+      const userPref = localStorage.getItem('hg-notes-collapsed');
+      const collapsed = userPref !== null ? userPref === '1' : !isHG;
+      const linkedSummary = typeof linkifyScriptureReferences === 'function'
+        ? linkifyScriptureReferences(chNotes.summary, `${book} ${ch}`)
+        : chNotes.summary;
+      html += `<div class="research-panel-section hg-chapter-notes-section${collapsed ? ' collapsed' : ''}">`;
+      html += `<div class="research-panel-section-title hg-notes-toggle" onclick="this.parentElement.classList.toggle('collapsed'); localStorage.setItem('hg-notes-collapsed', this.parentElement.classList.contains('collapsed') ? '1' : '0')">`;
+      html += `<span>Hebrew Gospels Notes</span><span class="hg-notes-chevron"></span></div>`;
+      html += `<div class="hg-chapter-notes-body">`;
+      html += `<div class="hg-chapter-notes-summary">${linkedSummary}</div>`;
+      if (!isHG) {
+        html += `<button class="hg-notes-read-btn" onclick="switchTranslation('hg')">Read in Hebrew Gospels →</button>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+
   // Chapter-level verse studies
   html += renderVerseStudyCards();
 
-  html += '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+  // Chapter-level book references (de-duplicated) — before symbols since it's curated content
+  if (book && ch && typeof getBookReferences === 'function') {
+    const chapterVerseCount = Bible.getChapter(currentTranslation, book, ch)?.length || 0;
+    const seenRefs = new Set();
+    const chapterBookRefs = [];
+    for (let v = 1; v <= chapterVerseCount; v++) {
+      const refs = getBookReferences(book, ch, v);
+      if (!refs) continue;
+      for (const ref of refs) {
+        const dedupKey = `${ref.chapter}-${ref.title}`;
+        if (seenRefs.has(dedupKey)) continue;
+        seenRefs.add(dedupKey);
+        chapterBookRefs.push(ref);
+      }
+    }
+    if (chapterBookRefs.length > 0) {
+      html += '<div class="research-panel-section"><div class="research-panel-section-title">Time Tested Tradition</div>';
+      for (const ref of chapterBookRefs) {
+        html += `<a href="#" class="research-panel-study-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapter:'${ref.chapter}',anchor:'${ref.anchor || ''}'}}); return false;">
+          <span class="study-card-title">${ref.title || ''}</span>
+        </a>`;
+      }
+      html += '</div>';
+    }
+  }
+
+  // Symbols found in this chapter — sorted by ascending PageRank (rarest first)
+  const chapterSyms = bibleExplorerState.chapterSymbols || [];
+  if (chapterSyms.length > 0) {
+    const sorted = chapterSyms
+      .filter(s => s.symbol && s.symbol.link)
+      .sort((a, b) => (a.symbol.rank || 0) - (b.symbol.rank || 0));
+    if (sorted.length > 0) {
+      html += '<div class="research-panel-section"><div class="research-panel-section-title">Symbols in This Chapter</div>';
+      for (const { key, symbol } of sorted) {
+        const meaning = symbol.meaning || '';
+        html += `<button class="research-panel-study-card research-panel-symbol-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols',symbol:'${key}'}})">
+          <span class="study-card-ref">${symbol.name || key}</span>
+          ${meaning ? `<span class="study-card-meaning">${meaning}</span>` : ''}
+        </button>`;
+      }
+      html += '</div>';
+    }
+  }
+
+  html += '<div class="research-panel-welcome">Tap a verse number to explore</div>';
   return html;
 }
 
@@ -2263,10 +2484,8 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     existing.classList.remove('expanded');
     setTimeout(() => existing.remove(), 200);
     verseEl.classList.remove('interlinear-expanded');
-    // Dispatch to AppStore for URL sync (unidirectional flow)
-    // Use replace — closing interlinear removes the ?il= param without adding a history entry
     if (typeof AppStore !== 'undefined') {
-      AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: null, replace: true });
+      AppStore.dispatch({ type: 'SET_VERSE', verse: null, tab: null, replace: true });
     }
     return;
   }
@@ -2614,7 +2833,7 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   // a full chapter re-render which destroys the interlinear we just created.
   const isMultiverse = typeof verseElOrId === 'string' && verseElOrId.startsWith('mv-');
   if (!isMultiverse && typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: verse, replace: false });
+    AppStore.dispatch({ type: 'SET_VERSE', verse: verse, replace: false });
   }
 }
 
@@ -2700,7 +2919,7 @@ function switchInterlinearTab(btnEl, tabName) {
   if (targetPane) targetPane.classList.add('active');
 
   if (typeof AppStore !== 'undefined') {
-    AppStore.dispatch({ type: 'SET_INTERLINEAR_TAB', tab: tabName, replace: true });
+    AppStore.dispatch({ type: 'SET_VERSE', tab: tabName, replace: true });
   }
 }
 
@@ -6045,6 +6264,116 @@ function applySymbolHighlighting(text) {
   return result;
 }
 
+// --- Content ranks (PageRank scores for all content types) ---
+let _contentRanks = null;
+let _contentRanksLoading = false;
+
+async function loadContentRanks() {
+  if (_contentRanks) return _contentRanks;
+  if (_contentRanksLoading) return null;
+  _contentRanksLoading = true;
+  try {
+    const resp = await fetch('/data/content-ranks.json');
+    if (!resp.ok) throw new Error('Failed to load content-ranks.json');
+    _contentRanks = await resp.json();
+    console.log('[ContentRanks] Loaded — verses:', (_contentRanks.v || []).length, 'books,',
+      Object.keys(_contentRanks.s || {}).length, 'symbols,',
+      Object.keys(_contentRanks.vs || {}).length, 'vstudies,',
+      Object.keys(_contentRanks.e || {}).length, 'events,',
+      Object.keys(_contentRanks.b || {}).length, 'book chapters');
+  } catch (e) {
+    console.warn('[ContentRanks] Failed:', e);
+    _contentRanks = { v: [], s: {}, vs: {}, e: {}, b: {} };
+  }
+  _contentRanksLoading = false;
+  return _contentRanks;
+}
+
+function getVerseRank(bookName, chapter, verse) {
+  if (!_contentRanks || !_contentRanks.v || !bookName) return 0;
+  const bi = typeof BOOK_ORDER_INDEX !== 'undefined' ? BOOK_ORDER_INDEX[bookName] : -1;
+  if (bi == null || bi < 0) return 0;
+  const chArr = _contentRanks.v[bi];
+  if (!chArr || !chArr[chapter - 1]) return 0;
+  const score = chArr[chapter - 1][verse - 1];
+  return score ? score / 10 : 0;
+}
+
+function getSymbolRank(key) {
+  if (!_contentRanks || !_contentRanks.s) return 0;
+  const score = _contentRanks.s[key];
+  return score ? score / 10 : 0;
+}
+
+function getVstudyRank(key) {
+  if (!_contentRanks || !_contentRanks.vs) return 0;
+  const score = _contentRanks.vs[key];
+  return score ? score / 10 : 0;
+}
+
+function getEventRank(id) {
+  if (!_contentRanks || !_contentRanks.e) return 0;
+  const score = _contentRanks.e[id];
+  return score ? score / 10 : 0;
+}
+
+function getBookChapterRank(chapter) {
+  if (!_contentRanks || !_contentRanks.b) return 0;
+  const score = _contentRanks.b[chapter];
+  return score ? score / 10 : 0;
+}
+
+// Get symbols found in a single verse's text
+function getVerseSymbols(bookName, chapter, verse) {
+  if (typeof SYMBOL_DICTIONARY === 'undefined' || typeof SYMBOL_WORD_INDEX === 'undefined') return [];
+  const v = Bible.getVerse(currentTranslation || 'kjv', bookName, chapter, verse);
+  if (!v || !v.text) return [];
+  const found = new Map();
+  const multiWord = typeof getMultiWordSymbolPhrases === 'function' ? getMultiWordSymbolPhrases() : [];
+  const text = v.text;
+  for (const { phrase, key } of multiWord) {
+    if (text.toLowerCase().includes(phrase.toLowerCase()) && !found.has(key)) {
+      found.set(key, SYMBOL_DICTIONARY[key]);
+    }
+  }
+  const words = text.replace(/[.,;:!?'"()]/g, '').toLowerCase().split(/\s+/);
+  for (const w of words) {
+    if (!w) continue;
+    const sym = SYMBOL_WORD_INDEX[w];
+    if (sym && sym.key && !found.has(sym.key)) {
+      found.set(sym.key, sym);
+    }
+  }
+  return [...found.entries()].map(([key, sym]) => ({ key, symbol: sym }));
+}
+
+// Collect unique symbol keys found in a chapter's verse texts (for research panel)
+function collectChapterSymbols(verses) {
+  if (typeof SYMBOL_DICTIONARY === 'undefined' || typeof SYMBOL_WORD_INDEX === 'undefined') return [];
+  const found = new Map(); // key → symbol object
+  const multiWord = typeof getMultiWordSymbolPhrases === 'function' ? getMultiWordSymbolPhrases() : [];
+
+  for (const verse of verses) {
+    const text = verse.text || '';
+    // Multi-word phrase matching (longest first, same order as applySymbolHighlighting)
+    for (const { phrase, key } of multiWord) {
+      if (text.toLowerCase().includes(phrase.toLowerCase()) && !found.has(key)) {
+        found.set(key, SYMBOL_DICTIONARY[key]);
+      }
+    }
+    // Single-word matching
+    const words = text.replace(/[.,;:!?'"()]/g, '').toLowerCase().split(/\s+/);
+    for (const w of words) {
+      if (!w) continue;
+      const sym = SYMBOL_WORD_INDEX[w];
+      if (sym && sym.key && !found.has(sym.key)) {
+        found.set(sym.key, sym);
+      }
+    }
+  }
+  return [...found.entries()].map(([key, sym]) => ({ key, symbol: sym }));
+}
+
 // Show book reference popup when clicking the book icon
 function showBookRefPopup(book, chapter, verse, event) {
   if (event) event.stopPropagation();
@@ -6520,7 +6849,7 @@ function formatVersesForDisplay(verses, title = '') {
     const bookEncoded = encodeURIComponent(verse.book);
     const trans = currentTranslation || 'kjv';
     html += `<span class="bible-verse"><sup class="bible-verse-num">
-      <a href="/bible/${trans}/${bookEncoded}/${verse.chapter}?verse=${verse.verse}" 
+      <a href="/bible/${trans}/${bookEncoded}/${verse.chapter}.${verse.verse}"
          onclick="openBibleExplorerFromModal('${verse.book}', ${verse.chapter}, ${verse.verse}); return false;"
          title="Open ${verse.book} ${verse.chapter}:${verse.verse} in Bible Explorer">${verse.verse}</a>
     </sup>${verse.text} </span>`;
@@ -6601,7 +6930,8 @@ function handleCitationClick(event) {
       AppStore.dispatch({
         type: 'SET_VIEW',
         view: 'reader',
-        params: { contentType: 'multiverse', multiverse: citation, translation }
+        params: { contentType: 'multiverse', multiverse: citation, translation },
+        preserveStrongs: true
       });
     }
     return;
@@ -6619,7 +6949,7 @@ function handleCitationClick(event) {
   if (typeof AppStore !== 'undefined') {
     const params = { contentType: 'bible', translation, book, chapter };
     if (verse) params.verse = verse;
-    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params });
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params, preserveStrongs: true });
   }
 }
 
@@ -6627,7 +6957,7 @@ function handleCitationClick(event) {
 function buildBibleUrl(citation, translation = null) {
   // Parse citation: "Book Chapter:Verse" or "Book Chapter"
   const match = citation.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
-  if (!match) return '/bible/kjv/';
+  if (!match) return '/reader/bible/kjv/';
   
   const book = match[1];
   const chapter = match[2];
@@ -6635,9 +6965,9 @@ function buildBibleUrl(citation, translation = null) {
   const trans = translation || currentTranslation || 'kjv';
   
   const bookEncoded = encodeURIComponent(book);
-  let url = `/bible/${trans}/${bookEncoded}/${chapter}`;
+  let url = `/reader/bible/${trans}/${bookEncoded}/${chapter}`;
   if (verse) {
-    url += `?verse=${verse}`;
+    url += `.${verse}`;
   }
   return url;
 }
@@ -6683,7 +7013,7 @@ function linkifyScriptureReferences(text, contextCitation = '') {
     'Hebrews', 'James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John',
     'Jude', 'Revelation',
     // Common abbreviations
-    'Gen', 'Exod?', 'Lev', 'Num', 'Deut',
+    'Gen', 'Ex', 'Exod?', 'Lev', 'Num', 'Deut',
     'Josh', 'Judg', 'Sam', 'Kgs', 'Chr', 'Neh', 'Est',
     'Psa?', 'Prov', 'Eccl', 'Song', 'Isa', 'Jer', 'Lam', 'Ezek?', 'Dan',
     'Hos', 'Obad', 'Mic', 'Nah', 'Hab', 'Zeph', 'Hag', 'Zech', 'Mal',
@@ -6833,11 +7163,14 @@ function navigateToBibleLocation(book, chapter, verse = null, addToHistory = tru
     bibleExplorerState.historyIndex = bibleExplorerState.history.length - 1;
   }
   
-  // Navigate
+  // Navigate — update book dropdown without triggering selectBibleChapter(1) side effect
   if (bibleExplorerState.bookChapterCounts[normalizedBook]) {
-    selectBibleBook(normalizedBook);
-    populateBibleChapters(normalizedBook);
+    bibleExplorerState.currentBook = normalizedBook;
     bibleExplorerState.currentChapter = chapter;
+    const bookSelect = document.getElementById('bible-book-select');
+    if (bookSelect) bookSelect.value = normalizedBook;
+    if (typeof updateChapterDropdown === 'function') updateChapterDropdown(normalizedBook);
+    populateBibleChapters(normalizedBook);
     displayBibleChapter(normalizedBook, chapter, verse);
     updateChapterNavigation();
     updateBibleHistoryButtons();
@@ -6873,17 +7206,31 @@ function updateBibleHistoryButtons() {
 // Handle scripture link click from Strong's sidebar
 // Can be called with (book, chapter, verse) OR with just a reference string like "Genesis 1:5"
 function goToScriptureFromSidebar(bookOrRef, chapter, verse) {
-  // If called with a single reference string, parse it
+  // Parse single reference string if needed
   if (chapter === undefined) {
-    const match = bookOrRef.match(/^(.+)\s+(\d+):(\d+)$/);
-    if (!match) return;
-    const book = match[1];
-    chapter = parseInt(match[2]);
-    verse = parseInt(match[3]);
-    navigateToBibleLocation(book, chapter, verse, true);
-  } else {
-    navigateToBibleLocation(bookOrRef, chapter, verse, true);
+    const cleaned = bookOrRef.replace(/[-–—]\d+$/, '');
+    const parsed = typeof parseRef === 'function' ? parseRef(cleaned) : null;
+    if (!parsed) return;
+    bookOrRef = parsed.book;
+    chapter = parsed.chapter;
+    verse = parsed.verse || 1;
   }
+  // Save scroll position of current view before navigating away
+  if (typeof URLRouter !== 'undefined' && URLRouter.saveScrollPosition) {
+    URLRouter.saveScrollPosition();
+  }
+  // Single atomic dispatch — AppStore drives URL, BibleView.render drives the UI
+  AppStore.dispatch({
+    type: 'SET_VIEW',
+    view: 'reader',
+    params: {
+      contentType: 'bible',
+      translation: currentTranslation || 'kjv',
+      book: bookOrRef,
+      chapter: chapter,
+      verse: verse || undefined
+    }
+  });
 }
 
 // Initialize Bible Explorer
@@ -7444,6 +7791,17 @@ function renderPoetryLines(verseTextHtml, proseIntro = false) {
 
   if (segments.length <= 1) return segments[0] || verseTextHtml;
 
+  // Merge short first segments (e.g. "But", "And", "For") into the second segment
+  // so they don't render as awkward single-word poetry lines.
+  if (!proseIntro && segments.length >= 2) {
+    const visibleText = segments[0].replace(/<[^>]*>/g, '').trim();
+    const wordCount = visibleText.split(/\s+/).filter(w => w.length > 0).length;
+    if (wordCount <= 3 && visibleText.length < 20) {
+      segments[1] = segments[0] + segments[1];
+      segments.shift();
+    }
+  }
+
   // First segment: prose intro (unwrapped) or q1
   let result = proseIntro
     ? segments[0]
@@ -7576,6 +7934,20 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
   const acrosticByVerse = {};
   if (fmt?.acrostic) for (const a of fmt.acrostic) acrosticByVerse[a.v] = a.t;
 
+  // Pre-index verse studies for this chapter (O(1) lookup per verse)
+  const verseStudyMap = {};
+  if (window.VERSE_STUDY_INDEX) {
+    const abbrev = (typeof abbreviateBookName === 'function') ? abbreviateBookName(bookName) : bookName;
+    const prefix = abbrev + ' ' + chapter + ':';
+    for (const s of window.VERSE_STUDY_INDEX) {
+      if (s.ref && s.ref.startsWith(prefix)) {
+        const vStr = s.ref.slice(prefix.length).split(/[-–—]/)[0];
+        const vNum = parseInt(vStr, 10);
+        if (vNum) verseStudyMap[vNum] = s;
+      }
+    }
+  }
+
   // Detect all-poetry chapters (e.g. Psalms) to reduce indent on small screens
   const allPoetry = poetrySet && verses.length > 0 && verses.every(v => poetrySet.has(v.verse));
   const chapterClass = allPoetry ? ' all-poetry' : '';
@@ -7687,7 +8059,10 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
     }
 
     const escapedBook = bookName.replace(/'/g, "\\'");
-    const verseNumSpan = `<span class="bible-verse-number" onclick="onVerseTap('${escapedBook}', ${chapter}, ${vn})" title="Tap for interlinear &amp; details">${vn}</span>`;
+    const vStudy = verseStudyMap[vn];
+    const studyClass = vStudy ? ' has-verse-study' : '';
+    const studyTitle = vStudy ? `Verse Study: ${vStudy.title}` : 'Tap for interlinear &amp; details';
+    const verseNumSpan = `<span class="bible-verse-number${studyClass}" onclick="onVerseTap('${escapedBook}', ${chapter}, ${vn})" title="${studyTitle}">${vn}</span>`;
     html += `<div class="bible-explorer-verse${origLangClass}${poetryClass}" id="verse-${vn}">${verseNumSpan}<span class="bible-verse-text">${verseText}</span></div> `;
 
     // Selah after verse (inline span so it flows with text)
@@ -7696,6 +8071,10 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
     }
   }
   closeParagraph();
+
+  // Collect symbols found in this chapter for the research panel
+  bibleExplorerState.chapterSymbols = collectChapterSymbols(verses);
+
   html += `
     <div class="bible-chapter-nav bible-chapter-nav-in-content">
       <button type="button" id="bible-prev-chapter" class="bible-nav-btn" onclick="prevBibleChapter()" title="Previous chapter">◁ Prev</button>
@@ -7804,58 +8183,13 @@ async function displayBibleChapter(bookName, chapter, highlightVerse = null) {
   bibleExplorerState.currentChapter = chapter;
   bibleExplorerState.highlightedVerse = highlightVerse;
   
-  // Show HG chapter study notes in research panel when available
-  showHGChapterNotes(bookName, chapter);
+  // Ensure HG notes data loads so the research panel can show the notes section
+  if (!hgNotesData && typeof loadHGNotes === 'function') {
+    loadHGNotes().then(() => updateResearchPanelForChapter());
+  }
 }
 
-function showHGChapterNotes(bookName, chapter) {
-  const panel = document.getElementById('research-panel');
-  const contentEl = panel ? panel.querySelector('.research-panel-content') : null;
-  if (!contentEl) return;
-  
-  // Only show when panel is not already displaying Strong's content
-  if (panel.classList.contains('open') && contentEl.querySelector('.strongs-lemma')) return;
-  
-  const chNotes = getHGChapterNotes(bookName, chapter);
-  if (!chNotes || !chNotes.summary) {
-    contentEl.innerHTML = renderDefaultResearchContent();
-    return;
-  }
-  
-  // Load HG notes if not yet loaded — show verse study cards while waiting
-  if (!hgNotesData) {
-    contentEl.innerHTML = renderDefaultResearchContent();
-    loadHGNotes().then(() => {
-      const notes = getHGChapterNotes(bookName, chapter);
-      if (notes && notes.summary) renderHGChapterNotes(contentEl, panel, bookName, chapter, notes);
-    });
-    return;
-  }
-  
-  renderHGChapterNotes(contentEl, panel, bookName, chapter, chNotes);
-}
-
-function renderHGChapterNotes(contentEl, panel, bookName, chapter, chNotes) {
-  let html = '<button class="research-panel-close-btn" onclick="closeStrongsPanel()" title="Close">✕</button>';
-  html += renderVerseStudyCards();
-  html += `<div class="hg-chapter-notes">`;
-  html += `<div class="hg-chapter-notes-title">${bookName} ${chapter} — Study Notes</div>`;
-  html += `<div class="hg-chapter-notes-summary">${chNotes.summary}</div>`;
-  html += '</div>';
-  
-  contentEl.innerHTML = html;
-  
-  // Auto-open the panel
-  if (!panel.classList.contains('open')) {
-    if (window.innerWidth > 768) {
-      panel.style.width = typeof getResearchPanelWidth === 'function' ? getResearchPanelWidth() : '380px';
-    }
-    requestAnimationFrame(() => {
-      panel.classList.add('open');
-      document.body.classList.add('research-panel-open');
-    });
-  }
-}
+// (HG chapter notes now rendered inline within renderChapterResearchContent)
 
 // Update chapter navigation buttons
 function updateChapterNavigation() {
@@ -8033,12 +8367,27 @@ function parseSearchCitation(str) {
 // Display always respects URL/state: when the callback runs it reads state.content.params.translation and uses that.
 function openBibleExplorerTo(book, chapter, verse = null) {
   const normalizedBook = normalizeBookName(book);
-  
+
+  // Skip if already displaying the same chapter (avoid scroll reset on re-renders)
+  if (bibleExplorerState.currentBook === normalizedBook &&
+      bibleExplorerState.currentChapter === chapter &&
+      document.getElementById('bible-explorer-text')?.querySelector('.bible-explorer-chapter')) {
+    // Only scroll to verse if specified and different from current highlight
+    if (verse && verse !== bibleExplorerState.highlightedVerse) {
+      const verseEl = document.getElementById(`verse-${verse}`);
+      if (verseEl) {
+        verseEl.classList.add('highlighted');
+        verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+    return;
+  }
+
   // Navigate to Bible Explorer if not already there
   if (typeof navigateTo === 'function') {
     navigateTo('bible-explorer');
   }
-  
+
   // No delay when already initialized (book in counts); 200ms only to wait for init
   const delay = bibleExplorerState.bookChapterCounts && bibleExplorerState.bookChapterCounts[normalizedBook] ? 0 : 200;
   setTimeout(async () => {
@@ -8100,7 +8449,9 @@ function openBibleExplorerTo(book, chapter, verse = null) {
       } else {
         if (textContainer) textContainer.scrollTop = 0;
       }
-      showHGChapterNotes(normalizedBook, chapter);
+      if (!hgNotesData && typeof loadHGNotes === 'function') {
+        loadHGNotes().then(() => updateResearchPanelForChapter());
+      }
     } else {
       displayBibleChapter(normalizedBook, chapter, verse);
     }
@@ -8113,6 +8464,20 @@ function openBibleExplorerTo(book, chapter, verse = null) {
     if (typeof updateBibleHistoryButtons === 'function') updateBibleHistoryButtons();
     
     updateBibleExplorerURL(normalizedBook, chapter, verse);
+
+    // Restore interlinear expansion from state (URL → State → UI)
+    // Only expand if tab is specified — verse alone just highlights/scrolls
+    if (typeof AppStore !== 'undefined') {
+      const contentParams = AppStore.getState()?.content?.params;
+      if (contentParams?.verse && contentParams?.tab) {
+        const ilVerse = contentParams.verse;
+        const ilVerseEl = document.getElementById(`verse-${ilVerse}`);
+        if (ilVerseEl && !ilVerseEl.classList.contains('interlinear-expanded')) {
+          bibleExplorerState._restoringFromURL = true;
+          onVerseTap(normalizedBook, chapter, ilVerse);
+        }
+      }
+    }
   }, delay);
 }
 
@@ -8132,7 +8497,7 @@ function updateBibleExplorerURL(book, chapter, verse = null) {
     const bookEncoded = encodeURIComponent(book);
     let url = `/bible/${currentTranslation}/${bookEncoded}/${chapter}`;
     if (verse) {
-      url += `?verse=${verse}`;
+      url += `.${verse}`;
     }
     window.history.replaceState({}, '', url);
   }

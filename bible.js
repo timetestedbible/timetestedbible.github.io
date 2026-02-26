@@ -321,9 +321,8 @@ function citationToUrlSegments(citationStr) {
     // Try: Book Chapter:VerseSpec (verse spec can include ranges, commas)
     const verseMatch = ref.match(/^(.+?)\s+(\d+):(.+)$/);
     if (verseMatch) {
-      const book = verseMatch[1].replace(/\s+/g, '-');
+      const book = abbreviateBookName(verseMatch[1]).replace(/\s+/g, '-');
       const chapter = verseMatch[2];
-      // "Genesis 1:4,14" → "Genesis.1.4.14", "Genesis 1:4-7" → "Genesis.1.4-7"
       const versePart = verseMatch[3].replace(/,\s*/g, '.');
       segments.push(`${book}.${chapter}.${versePart}`);
       continue;
@@ -332,7 +331,7 @@ function citationToUrlSegments(citationStr) {
     // Try: Book Chapter-Chapter (chapter range, no verse)
     const chapterRangeMatch = ref.match(/^(.+?)\s+(\d+)-(\d+)$/);
     if (chapterRangeMatch) {
-      const book = chapterRangeMatch[1].replace(/\s+/g, '-');
+      const book = abbreviateBookName(chapterRangeMatch[1]).replace(/\s+/g, '-');
       segments.push(`${book}.${chapterRangeMatch[2]}-${chapterRangeMatch[3]}`);
       continue;
     }
@@ -340,7 +339,7 @@ function citationToUrlSegments(citationStr) {
     // Try: Book Chapter (whole chapter)
     const wholeChapterMatch = ref.match(/^(.+?)\s+(\d+)$/);
     if (wholeChapterMatch) {
-      const book = wholeChapterMatch[1].replace(/\s+/g, '-');
+      const book = abbreviateBookName(wholeChapterMatch[1]).replace(/\s+/g, '-');
       segments.push(`${book}.${wholeChapterMatch[2]}`);
       continue;
     }

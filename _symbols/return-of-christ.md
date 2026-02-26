@@ -25,7 +25,7 @@ G2015 *epiphaneia* — a **shining forth**. The visible, undeniable manifestatio
 
 G602 *apokalypsis* — an **uncovering**. Not revelation of information, but the stripping away of every covering. What was concealed is laid bare. The Hebrew equivalent, H1540 *galah*, means to expose, to make naked.
 
-Three lenses on the same event: political (the King arrives), optical (the hidden one shines forth), judicial (everything is uncovered). Together they describe not an escape plan but a **reckoning** — the moment the Covenant King steps into full view and every covenant obligation comes due simultaneously.
+Three lenses on the same event: political (the King arrives), optical (the hidden one shines forth), judicial (everything is uncovered). Together they describe a **reckoning** — the moment the Covenant King steps into full view and every covenant obligation comes due simultaneously. But the faithful firstfruits have already been extracted before this reckoning reaches its full intensity (2Th 2:3, 1Th 1:10). The return encompasses a process: the departure of the faithful, the tribulation, and the final visible appearing.
 
 This is why Jesus compares it to $lightning: not because it is fast, but because it is **total exposure**. Lightning illuminates everything at once, from horizon to horizon. Nothing hides. The Return of Christ is the ultimate $day — the time of exposure and accountability that $night and $sleep cannot survive.
 

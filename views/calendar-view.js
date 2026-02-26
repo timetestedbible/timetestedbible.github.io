@@ -1308,7 +1308,7 @@ const CalendarView = {
       try {
         translation = localStorage.getItem('bible_translation_preference') || 'kjv';
       } catch (e) {}
-      return `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}?verse=${verse}`;
+      return `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}.${verse}`;
     }
     return null;
   },

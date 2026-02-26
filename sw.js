@@ -276,6 +276,19 @@ self.addEventListener('fetch', (event) => {
   // Skip chrome-extension and other non-http requests
   if (!event.request.url.startsWith('http')) return;
   
+  // For navigation requests (page loads, back/forward), always serve the SPA shell.
+  // Chrome may bypass bfcache for pages with service workers, causing back/forward
+  // to make a full navigation request. Serving the SPA shell ensures the client-side
+  // router handles the URL without a full page reload. The SPA fetches study/article
+  // content via JS fetch() which goes through the sub-resource path below.
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      caches.match('/').then(cached => cached || fetch('/'))
+    );
+    return;
+  }
+  
+  // Sub-resources: cache-first with background update
   event.respondWith(
     caches.match(event.request)
       .then((cachedResponse) => {
@@ -305,12 +318,8 @@ self.addEventListener('fetch', (event) => {
         });
       })
       .catch(() => {
-        // If both cache and network fail, return offline page for navigation
-        // For blog article pages (/blog/{slug}/), also fall back to SPA shell —
-        // the SPA router will parse the URL and load the blog content
-        if (event.request.mode === 'navigate') {
-          return caches.match('/');
-        }
+        // Sub-resource failed both cache and network — nothing to serve
+        return new Response('', { status: 503 });
       })
   );
 });

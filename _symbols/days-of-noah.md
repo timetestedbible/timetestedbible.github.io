@@ -196,7 +196,7 @@ The "same example of unbelief" — the wilderness generation who heard and did n
 
 - **$sleep** — "Knew not" (Mat 24:39). $sleep is spiritual unawareness — the state of being unresponsive to God's word. Noah's generation was asleep in the symbolic sense: alive but unconscious to the approaching judgment. Paul's warning — "let us not $sleep, as do others" (1 Th 5:6) — is the days-of-Noah pattern applied to the church.
 
-- **$rapture-gathering** — "Then shall two be in the field; the one shall be taken, and the other left" (Mat 24:40). The $rapture-gathering is covenant ingathering — God collecting His people for judgment-separation. In the flood pattern, the faithful are gathered into the ark, sealed by God, and carried through the judgment into a renewed world. The gathering is separation-for-preservation, not escape from the world.
+- **$rapture-gathering** — "Then shall two be in the field; the one shall be taken, and the other left" (Mat 24:40). The $rapture-gathering is covenant ingathering — God collecting His people for deliverance before judgment falls. G3880 *paralambanō* (taken) describes a normalcy-era extraction: eating, drinking, farming, then suddenly one is taken. In the flood pattern, Noah was sealed into the ark *before* the waters came. In the Lot pattern, Lot was extracted *before* the fire fell — "I cannot do anything till thou be come out" (Gen 19:22). The firstfruits are separated from the world before its destruction.
 
 ---
 

@@ -39,8 +39,6 @@ const AppStore = {
       gematriaExpanded: false,  // Whether gematria related-words section is expanded
       searchQuery: null,        // Search query string
       personId: null,           // Open person card
-      interlinearVerse: null,   // Open interlinear for verse (e.g., 5)
-      interlinearTab: null,     // Active tab in verse expansion (e.g., 'hebrew', 'translations', 'links', 'events')
       timelineEventId: null,    // Selected timeline event ID (opens detail panel)
       timelineDurationId: null, // Selected timeline duration ID
       timelineFocusedEventId: null, // Focused/highlighted event (no detail panel)
@@ -484,8 +482,7 @@ const AppStore = {
     'OPEN_SEARCH',
     'SET_SEARCH_QUERY',
     'CLOSE_SEARCH',
-    'SET_INTERLINEAR_VERSE',
-    'SET_INTERLINEAR_TAB',
+    'SET_VERSE',
     'OPEN_PERSON',
     'CLOSE_PERSON',
     'NAV_PUSH',
@@ -1172,10 +1169,21 @@ const AppStore = {
           s.ui.eventsEra = 'all';
           s.ui.eventsViewMode = 'list';
         }
-        // Reader-specific state
+        // Clear verse/tab when leaving reader or changing book/chapter
         if (event.view !== 'reader') {
-          s.ui.interlinearVerse = null;
-          s.ui.interlinearTab = null;
+          // Leaving reader — clear verse selection
+        } else if (event.params) {
+          const oldBook = s.content.params.book;
+          const oldChapter = s.content.params.chapter;
+          const newBook = event.params.book;
+          const newChapter = event.params.chapter;
+          if (newBook && newChapter && (newBook !== oldBook || newChapter !== oldChapter)) {
+            // Changing book/chapter — clear verse selection (it belongs to the old chapter)
+            if (!event.params.verse) {
+              event.params.verse = null;
+              event.params.tab = null;
+            }
+          }
         }
         // Calendar panel state
         if (event.view !== 'calendar') {
@@ -1318,19 +1326,12 @@ const AppStore = {
         s.ui.searchQuery = null;
         return true;
         
-      case 'SET_INTERLINEAR_VERSE': {
+      case 'SET_VERSE': {
         const newVerse = event.verse || null;
-        const newTab = event.tab || null;
-        if (s.ui.interlinearVerse === newVerse && s.ui.interlinearTab === newTab) return false;
-        s.ui.interlinearVerse = newVerse;
-        s.ui.interlinearTab = newTab;
-        return true;
-      }
-
-      case 'SET_INTERLINEAR_TAB': {
-        const newTab = event.tab || null;
-        if (s.ui.interlinearTab === newTab) return false;
-        s.ui.interlinearTab = newTab;
+        const newTab = event.tab !== undefined ? (event.tab || null) : s.content.params.tab;
+        if (s.content.params.verse === newVerse && s.content.params.tab === newTab) return false;
+        s.content.params.verse = newVerse;
+        s.content.params.tab = newTab;
         return true;
       }
         

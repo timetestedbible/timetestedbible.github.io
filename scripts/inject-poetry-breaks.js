@@ -180,21 +180,10 @@ function injectBreaks(verseText, poetryLines) {
     let found = false;
     const searchFrom = offset > 0 ? offset : 0;
 
-    // Try matching progressively fewer words from the start of the BSB line.
-    // Multi-word anchors are specific enough for substring matching.
-    // Single-word anchors require a word boundary (preceded by space/start).
-    for (let numWords = Math.min(4, words.length); numWords >= 1; numWords--) {
+    // Strategy 1: Try matching multi-word anchors from BSB line (most accurate)
+    for (let numWords = Math.min(4, words.length); numWords >= 2; numWords--) {
       const anchor = words.slice(0, numWords).join(' ').toLowerCase();
-      let pos = stripped.indexOf(anchor, searchFrom);
-
-      // For single-word anchors, ensure word boundary
-      if (numWords === 1) {
-        while (pos >= 0) {
-          if (pos === 0 || stripped[pos - 1] === ' ' || stripped[pos - 1] === ',') break;
-          pos = stripped.indexOf(anchor, pos + 1);
-        }
-      }
-      
+      const pos = stripped.indexOf(anchor, searchFrom);
       if (pos >= 0 && pos > 0) {
         const origPos = mapStrippedPosToOriginal(verseText, pos);
         if (origPos > 0) {
@@ -207,8 +196,35 @@ function injectBreaks(verseText, poetryLines) {
       }
     }
 
+    // Strategy 2: Position-based — find the nearest word boundary at the same
+    // relative position in the target verse as the BSB line break.
     if (!found) {
-      // Unmatched line — handled at render time by splitPoetryAtPunctuation
+      const bsbFullText = poetryLines.map(l => l.text).join(' ');
+      const bsbBeforeLen = poetryLines.slice(0, i).map(l => l.text).join(' ').length;
+      const ratio = bsbBeforeLen / bsbFullText.length;
+      const targetPos = Math.round(ratio * stripped.length);
+
+      // Find the nearest word boundary (space) to targetPos
+      let bestPos = -1;
+      for (let d = 0; d < 20; d++) {
+        if (targetPos + d < stripped.length && stripped[targetPos + d] === ' ') {
+          bestPos = targetPos + d + 1;
+          break;
+        }
+        if (targetPos - d > searchFrom && stripped[targetPos - d] === ' ') {
+          bestPos = targetPos - d + 1;
+          break;
+        }
+      }
+      if (bestPos > searchFrom && bestPos < stripped.length) {
+        const origPos = mapStrippedPosToOriginal(verseText, bestPos);
+        if (origPos > 0) {
+          const insertAt = origPos + (result.length - verseText.length);
+          result = result.slice(0, insertAt) + breakChar + result.slice(insertAt);
+          offset = bestPos + 5;
+          found = true;
+        }
+      }
     }
   }
 

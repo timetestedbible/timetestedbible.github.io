@@ -256,6 +256,23 @@ for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
       });
     }
   }
+  // Also index KJV trigger phrases for matching in Bible text
+  if (symbol.kjvTriggers) {
+    for (const trigger of symbol.kjvTriggers) {
+      const lower = trigger.toLowerCase();
+      if (lower.includes(' ')) {
+        SYMBOL_MULTI_WORD_PHRASES.push({
+          phrase: lower,
+          symbol: symbol,
+          key: key
+        });
+      } else {
+        if (!SYMBOL_WORD_INDEX[lower]) {
+          SYMBOL_WORD_INDEX[lower] = symbol;
+        }
+      }
+    }
+  }
 }
 
 // Sort multi-word phrases by length (longest first) for proper matching

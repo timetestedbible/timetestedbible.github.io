@@ -228,8 +228,9 @@ const URLRouter = {
       
       // Restore scroll position from history state — but NOT if the URL targets a specific verse,
       // because the verse-scroll in openBibleExplorerTo should take priority
-      const hasVerseTarget = new URLSearchParams(window.location.search).has('verse');
-      if (!hasVerseTarget && event.state && event.state.scrollTop !== undefined) {
+      const pathHasVerse = /\/\d+\.\d+/.test(window.location.pathname);
+      const queryHasVerse = new URLSearchParams(window.location.search).has('verse');
+      if (!pathHasVerse && !queryHasVerse && event.state && event.state.scrollTop !== undefined) {
         setTimeout(() => {
           const textArea = document.getElementById('bible-explorer-text');
           if (textArea) {
@@ -269,7 +270,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research', 'multiverse'],
   
   /**
    * Parse URL into state
@@ -317,8 +318,6 @@ const URLRouter = {
         gematriaExpanded: false,
         searchQuery: null,
         personId: null,
-        interlinearVerse: null,
-        interlinearTab: null,
         timelineEventId: null,
         timelineDurationId: null,
         timelineFocusedEventId: null,
@@ -381,6 +380,11 @@ const URLRouter = {
         result.content.view = 'reader';
         result.content.params.contentType = 'verse-studies';
         delete result.content.params._researchVerseIndex;
+      }
+      // /multiverse/[translation/]seg1/seg2/... → render in reader view
+      if (result.content.params._multiverseRedirect) {
+        result.content.view = 'reader';
+        delete result.content.params._multiverseRedirect;
       }
       // Parse query params
       this._parseQueryParams(searchParams, result);
@@ -519,19 +523,9 @@ const URLRouter = {
     if (searchParams.get('person')) {
       result.ui.personId = searchParams.get('person');
     }
-    if (searchParams.get('verse')) {
-      const verseNum = parseInt(searchParams.get('verse'));
-      result.content.params.verse = verseNum;
-      // Selected verse implies interlinear expansion
-      if (!searchParams.get('il')) {
-        result.ui.interlinearVerse = verseNum;
-      }
-    }
-    if (searchParams.get('il')) {
-      result.ui.interlinearVerse = parseInt(searchParams.get('il'));
-    }
-    if (searchParams.get('ilt')) {
-      result.ui.interlinearTab = searchParams.get('ilt');
+    // Legacy ?verse= query param support (redirect to new Chapter.Verse path format)
+    if (searchParams.get('verse') && result.content.params.chapter && !result.content.params.verse) {
+      result.content.params.verse = parseInt(searchParams.get('verse'));
     }
     // Timeline-specific params (only parse on timeline view)
     if (result.content.view === 'timeline') {
@@ -702,6 +696,24 @@ const URLRouter = {
         }
         break;
       
+      case 'multiverse': {
+        // /multiverse/[translation/]Book.Ch.Vs/Book.Ch.Vs/...
+        const mvTranslations = typeof Bible !== 'undefined'
+          ? Bible.getTranslations().map(t => t.id)
+          : ['kjv', 'asv', 'akjv', 'ylt', 'dbt', 'drb', 'jps', 'slt', 'wbt', 'lxx'];
+        let mvParts = parts.slice(0).filter(Boolean);
+        if (mvParts[0] && mvTranslations.includes(mvParts[0].toLowerCase())) {
+          params.translation = mvParts[0].toLowerCase();
+          mvParts = mvParts.slice(1);
+        }
+        if (mvParts.length) {
+          params.multiverse = this._decodeMultiverse(mvParts);
+        }
+        params.contentType = 'multiverse';
+        params._multiverseRedirect = true;
+        break;
+      }
+      
       case 'reader':
         // /reader/bible/kjv/Genesis/1
         // /reader/symbols/tree
@@ -741,8 +753,21 @@ const URLRouter = {
             else if (typeof Bible !== 'undefined' && Bible.normalizeBookName) bookName = Bible.normalizeBookName(bookName);
             params.book = bookName;
           }
-          if (bibleParts[bibleIdx + 1]) params.chapter = parseInt(bibleParts[bibleIdx + 1]);
-          if (bibleParts[bibleIdx + 2]) params.verse = parseInt(bibleParts[bibleIdx + 2]);
+          // Parse Chapter.Verse format: "53" or "53.5"
+          if (bibleParts[bibleIdx + 1]) {
+            const chapterPart = bibleParts[bibleIdx + 1];
+            const dotIdx = chapterPart.indexOf('.');
+            if (dotIdx >= 0) {
+              params.chapter = parseInt(chapterPart.substring(0, dotIdx));
+              params.verse = parseInt(chapterPart.substring(dotIdx + 1));
+            } else {
+              params.chapter = parseInt(chapterPart);
+            }
+          }
+          // Tab name as next path segment: "links", "hebrew", etc.
+          if (bibleParts[bibleIdx + 2]) {
+            params.tab = bibleParts[bibleIdx + 2].toLowerCase();
+          }
         } else if (contentType === 'symbols') {
           // Parse symbol: /reader/symbols/tree
           if (parts[1]) params.symbol = parts[1].toLowerCase();
@@ -887,6 +912,13 @@ const URLRouter = {
         ? '/research/verses/' + content.params.study
         : '/research/verses';
     }
+    // Multiverse: /multiverse/[translation/]seg1/seg2/...
+    else if (content.view === 'reader' && content.params?.contentType === 'multiverse') {
+      const t = content.params.translation || 'kjv';
+      const segments = this._encodeMultiverseSegments(content.params.multiverse);
+      path = '/multiverse/' + t;
+      for (const seg of segments) path += '/' + seg;
+    }
     // Other views use simple URLs
     else {
       path = '/' + content.view;
@@ -953,17 +985,7 @@ const URLRouter = {
       }
     }
     // Add verse to query params for bible content (both 'bible' view and 'reader' view with bible content)
-    const isBibleContent = content.view === 'bible' || 
-      (content.view === 'reader' && content.params?.contentType === 'bible');
-    if (content.params.verse && isBibleContent) {
-      params.set('verse', content.params.verse);
-    }
-    if (ui.interlinearVerse && isBibleContent) {
-      params.set('il', ui.interlinearVerse);
-      if (ui.interlinearTab) {
-        params.set('ilt', ui.interlinearTab);
-      }
-    }
+    // verse and tab are now encoded in the path as Chapter.Verse/Tab — no query params needed
     // Timeline params - event/duration/search are mutually exclusive for detail panel
     // Focused event can exist alongside others (it's just highlighting)
     if (content.view === 'timeline') {
@@ -1032,7 +1054,11 @@ const URLRouter = {
         if (contentType === 'bible') {
           if (params.translation) readerPath += '/' + params.translation;
           if (params.book) readerPath += '/' + encodeURIComponent(params.book);
-          if (params.chapter) readerPath += '/' + params.chapter;
+          if (params.chapter) {
+            readerPath += '/' + params.chapter;
+            if (params.verse) readerPath += '.' + params.verse;
+          }
+          if (params.tab) readerPath += '/' + params.tab;
         } else if (contentType === 'symbols') {
           if (params.symbol) readerPath += '/' + params.symbol;
         } else if (contentType === 'symbols-article') {
@@ -1055,10 +1081,6 @@ const URLRouter = {
           if (params.book != null) readerPath += '/' + params.book;
           if (params.chapter != null) readerPath += '/' + params.chapter;
           if (params.section != null) readerPath += '/' + params.section;
-        } else if (contentType === 'multiverse') {
-          readerPath += '/' + (params.translation || 'kjv');
-          const segments = this._encodeMultiverseSegments(params.multiverse);
-          for (const seg of segments) readerPath += '/' + seg;
         }
         return readerPath;
         
@@ -1165,6 +1187,8 @@ const URLRouter = {
           if (cp.contentType === 'verse-studies' && cp.verseStudy !== np.verseStudy) return false;
           // For blog, different posts are real navigation
           if (cp.contentType === 'blog' && cp.slug !== np.slug) return false;
+          // For multiverse, different citations are real navigation
+          if (cp.contentType === 'multiverse' && cp.multiverse !== np.multiverse) return false;
           return true;
         }
       }

@@ -79,7 +79,7 @@ The most striking feature of the thief imagery is that it describes **one event 
 
 > *"But ye, brethren, are not in $[darkness], that that $[day] should overtake you as a **thief**."* — 1Th 5:4
 
-The same Day. The same arrival. For one group: $sudden-destruction — covenant judgment falling without warning on those who declared "peace and safety" while living in $darkness. For the other: no surprise at all. Paul does not say believers escape the Day — he says the Day does not *overtake* them. They are already awake, already watching, already oriented toward it. The Day arrives and finds them ready.
+The same Day. The same arrival. For one group: $sudden-destruction — covenant judgment falling without warning on those who declared "peace and safety" while living in $darkness. For the other: deliverance. Paul explicitly says "God hath not appointed us to wrath" (1Th 5:9) and that Jesus "delivered us from the wrath to come" (1Th 1:10). THE departure (*apostasia*, 2Th 2:3) comes first — the faithful are extracted before the Day of wrath overtakes the sleepers. Those who watch are not caught in the snare because they are no longer present when it springs.
 
 Revelation 16:15 sharpens this further. Inserted between the sixth and seventh bowl judgments — deep into the sequence of cosmic judgment — Christ says:
 
