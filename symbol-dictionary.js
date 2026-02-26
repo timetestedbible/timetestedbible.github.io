@@ -292,9 +292,9 @@ const SYMBOL_DICTIONARY = {
     name: 'CLOUDS',
     words: ['cloud', 'clouds', 'cloudy', 'thick cloud'],
     strongs: ['H6051', 'H5645', 'H6050', 'G3507'],
-    meaning: 'The visible manifestation of God\'s presence',
-    sentence: 'The visible manifestation of God\'s presence — simultaneously concealing His person and revealing His arrival.',
-    opposite: 'Clear sky — "a morning without **clouds**" (2 Sam 23:4) = unmediated, unveiled light; the state where no concealment remains between God and what He illuminates',
+    meaning: 'God\'s chariot',
+    sentence: 'God\'s chariot — the vehicle by which He arrives, departs, guides, and carries His people from place to place.',
+    opposite: 'Clear sky — "a morning without **clouds**" (2 Sam 23:4) = unmediated, unveiled light; no vehicle needed because God is present without transport',
     rank: 16,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
@@ -975,6 +975,20 @@ const SYMBOL_DICTIONARY = {
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/jerusalem/'
+  },
+
+  'jubilee': {
+    key: 'jubilee',
+    name: 'JUBILEE',
+    words: ['jubile', 'jubilee', 'liberty', 'release', 'trumpet', 'yobel'],
+    strongs: ['H3104', 'H8643', 'H1865'],
+    meaning: 'The master reset cycle',
+    sentence: 'The master reset cycle — seven sevens of years, then everything returns to its origin. Debts cancelled, slaves freed, land restored, covenant renewed.',
+    opposite: null,
+    rank: 0,
+    category: 'Prophetic Signs & Timing',
+    subcategory: null,
+    link: '/research/symbols/jubilee/'
   },
 
   'judah': {

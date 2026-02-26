@@ -2,36 +2,36 @@
 layout: symbol-study
 symbol_key: clouds
 title: "Clouds — Symbol Study"
-description: "Clouds in Scripture represent the visible manifestation of God's presence — the medium that simultaneously conceals His person and reveals His arrival, through which He speaks, leads, judges, and gathers His people."
+description: "Clouds in Scripture are God's chariot — the vehicle by which He arrives, departs, guides, and carries His people from place to place. Every Spirit-transport in Scripture lands at a real-world destination."
 strongs: [H6051, H5645, H6050, G3507]
 words: [cloud, clouds, cloudy, thick cloud]
 ---
 
 # Clouds
 
-**The visible manifestation of God's presence — simultaneously concealing His person and revealing His arrival.**
+**God's chariot — the vehicle by which He arrives, departs, guides, and carries His people from place to place.**
 
-> *"And the LORD descended in the **cloud**, and stood with him there, and proclaimed the name of the LORD."* — Exo 34:5
+> *"Who maketh the **clouds** his chariot: who walketh upon the wings of the wind."* — Ps 104:3
 
 ---
 
 ## The Key Insight
 
-Clouds in Scripture are never passive weather. They are the medium through which God *acts*.
+Every *harpazo* (Spirit-transport) event in Scripture deposits the person at a real-world destination: Philip seized by the Spirit and found at Azotus, 30 miles away (Acts 8:39). Ezekiel lifted to the valley, the temple, the inner court (Ezek 3:12, 8:3, 37:1). Paul caught up to the third heaven (2 Cor 12:2-4). The two witnesses ascending "in a cloud" (Rev 11:12). In every case, the same verb — G726 *harpazo*, to seize and carry — and a destination. Clouds are not the destination. They are the vehicle.
 
-A cloud leads Israel through the wilderness. A cloud descends on Sinai when God speaks. A cloud fills the temple so that priests cannot stand. A cloud receives Jesus at his ascension. A cloud will carry the Son of Man when every eye sees him.
+And they behave like vehicles. They move independently with deliberate direction (Exo 13:21). They carry persons — God descends IN a cloud (Exo 34:5), the Son of Man comes ON clouds (Dan 7:13), Jesus is RECEIVED by a cloud (Acts 1:9). Someone sits on them (Rev 14:14) and rides them (Isa 19:1). They land at specific locations (Num 12:5). They emit light, fire, and sound (Exo 14:24, Exo 19:16, Mat 17:5). They shield selectively — darkness to Egypt, light to Israel, from the same cloud (Exo 14:19-20). They can be entered (Exo 24:18, Lk 9:34).
 
-The pattern is consistent across forty centuries of biblical narrative: the cloud is how God's unapproachable presence becomes *visible* without becoming *deadly*. Moses could not see God's face and live (Exo 33:20) — but he could enter the cloud and spend forty days in God's presence (Exo 24:18). The cloud solves the problem of encounter. It is thick enough to shield, thin enough to signal. It hides the person of God while announcing the *arrival* of God.
+Psalm 104:3 says it plainly: "Who maketh the clouds his **chariot**." Not metaphor within the psalm's logic — the psalm is cataloguing what God uses: "stretchest out the heavens like a curtain... maketh the clouds his chariot... walketh upon the wings of the wind." Chariot is the vehicle. Cloud is the substance. The word "cloud" may simply be the best available description for something that hovers, moves, glows, carries, speaks, and shields — doing things no weather phenomenon does.
 
-This dual function — concealing and revealing at the same moment — is the cloud's defining characteristic. When a cloud appears in Scripture, God is doing something. Not metaphorically. Not symbolically in the way modern readers might expect. The cloud *is* the active medium of divine encounter.
+And the departure and return are the same vehicle: "This same Jesus, which is taken up from you into heaven, shall so come **in like manner** as ye have seen him go" (Acts 1:11). Cloud going up. Cloud coming back. Same craft, both directions.
 
-**Symbolizes:** The visible manifestation of God's presence — His arrival vehicle, command signal, protective shield, and judgment platform
+**Symbolizes:** Vehicle — the craft that carries persons from place to place, guides movement, shields during transit, and serves as the platform from which God speaks, judges, and gathers
 
-**Opposite:** Clear sky — "a morning without **clouds**" (2 Sam 23:4) = unmediated, unveiled light; the state where no concealment remains between God and what He illuminates
+**Opposite:** Clear sky — "a morning without **clouds**" (2 Sam 23:4) = unmediated, unveiled light; no vehicle needed because God is present without transport
 
-**Defining verses:** Exo 13:21, Exo 34:5, Dan 7:13, Mat 24:30, 1 Th 4:17, Rev 1:7
+**Defining verses:** Ps 104:3, Exo 13:21, Dan 7:13, Acts 1:9-11, 1 Th 4:17, Rev 14:14
 
-**The surprise:** The $smoke of Babylon's burning and the $clouds through which Christ arrives may be the *same phenomenon* — He appears through the evidence of judgment itself (Rev 9:2 → Rev 6:12 → Mat 24:30)
+**The surprise:** The $smoke of Babylon's burning and the $clouds through which Christ arrives may be the *same phenomenon* — He appears through the evidence of judgment itself (Rev 9:2 → Rev 6:12 → Mat 24:30). And Acts 1:11 connects departure and return: "shall so come **in like manner** as ye have seen him go" — same vehicle, both directions.
 
 **Connected:** $fire, $trumpet, $mountain, $smoke, $darkness, $sun-moon-stars, $return-of-christ, $rapture-gathering, $earthquake
 

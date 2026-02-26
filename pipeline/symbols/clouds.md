@@ -4,7 +4,7 @@ name: CLOUDS
 strongs: [H6051, H5645, H6050, G3507]
 words: ["cloud", "clouds", "cloudy", "thick cloud"]
 role: noun-symbol
-meaning: The visible manifestation of God's presence — simultaneously concealing His person and revealing His arrival, the medium through which He speaks, leads, judges, and gathers His people
+meaning: Transport vehicles — the craft by which God arrives, departs, guides, gathers, shields, speaks, and carries His people from place to place
 opposite: CLEAR SKY (2Sam 23:4 morning without clouds = unmediated light)
 defining_verses: [Exo 13:21, Exo 34:5, Dan 7:13, Mat 24:30, 1Th 4:17, Rev 1:7, Rev 14:14]
 co_occurring: [RETURN_OF_CHRIST, TRUMPET, FIRE, GLORY, MOUNTAIN, SMOKE, DARKNESS, RAPTURE_GATHERING, SUN_MOON_STARS, EARTHQUAKE]
