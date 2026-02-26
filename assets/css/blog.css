@@ -71,6 +71,15 @@
   line-height: 1.3;
 }
 
+.blog-post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-post-title a:hover {
+  color: var(--accent-primary);
+}
+
 /* Post summary */
 .blog-post-summary {
   color: var(--text-secondary);

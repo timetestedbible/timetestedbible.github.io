@@ -123,8 +123,15 @@ if (typeof window !== 'undefined') {
   window.loadVerseEventIndex = loadVerseEventIndex;
   window._formatEventDate = _formatEventDate;
   
-  // Preload immediately so icons show correctly on first render
-  loadVerseEventIndex();
+  // Preload immediately, then refresh research panel when data arrives
+  loadVerseEventIndex().then(() => {
+    // Delay slightly — chapter state may not be set yet on initial page load
+    setTimeout(() => {
+      if (typeof updateResearchPanelForChapter === 'function') {
+        updateResearchPanelForChapter();
+      }
+    }, 500);
+  });
 }
 
 if (typeof module !== 'undefined' && module.exports) {

@@ -183,8 +183,8 @@ const SYMBOL_DICTIONARY = {
     sentence: 'Receiving God\'s nature from above through His word — becoming His child and heir by a birth sourced from heaven, not from human will.',
     opposite: 'Born of flesh — lineage, human will, and fleshly effort producing only more flesh (Joh 1:13, Joh 3:6, Gal 4:23)',
     rank: 0,
-    category: 'Uncategorized',
-    subcategory: null,
+    category: 'Covenant & Relationship',
+    subcategory: 'Faithfulness',
     link: '/research/symbols/born-again/'
   },
 
@@ -469,6 +469,20 @@ const SYMBOL_DICTIONARY = {
     category: 'Kingdoms & Peoples',
     subcategory: 'Nations & Empires',
     link: '/research/symbols/egypt/'
+  },
+
+  'elam': {
+    key: 'elam',
+    name: 'ELAM',
+    words: ['elam', 'elamite', 'elamites'],
+    strongs: ['H5867', 'H5962', 'G1639'],
+    meaning: 'Modern Iran',
+    sentence: 'Modern Iran — the place where Scripture first enacts the fall of Babylon and where it says the bow will be broken in the latter days.',
+    opposite: null,
+    rank: 0,
+    category: 'Kingdoms & Peoples',
+    subcategory: 'Nations & Empires',
+    link: '/research/symbols/elam/'
   },
 
   'elect': {
@@ -986,8 +1000,8 @@ const SYMBOL_DICTIONARY = {
     sentence: 'Discernment between good and evil — rooted in the fear of God, equated with Torah, and expressed through obedience to His commands.',
     opposite: 'Fool — "fools despise wisdom and instruction" (Prov 1:7)',
     rank: 0,
-    category: 'Uncategorized',
-    subcategory: null,
+    category: 'Works & Evidence',
+    subcategory: 'Covenant Fruit',
     link: '/research/symbols/knowledge/'
   },
 
@@ -1562,7 +1576,7 @@ const SYMBOL_DICTIONARY = {
     sentence: 'Mortality\'s demand on all flesh — the insatiable claim that death makes on every living thing, personified as a power with a mouth, belly, gates, and bars, and answered only by God\'s power to ransom, redeem, and resurrect.',
     opposite: 'The land of the living / resurrection / the fountain of life (Ps 36:9, Jer 2:13)',
     rank: 0,
-    category: 'Uncategorized',
+    category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/sheol/'
   },
@@ -1745,8 +1759,8 @@ const SYMBOL_DICTIONARY = {
     sentence: 'Covenant-existence as God defines it — not biological survival but the quality of being that flows from God\'s presence and defines His people.',
     opposite: 'Death — not merely biological cessation but separation from the covenant source (Sheol, the demanding place)',
     rank: 0,
-    category: 'Uncategorized',
-    subcategory: null,
+    category: 'Covenant & Relationship',
+    subcategory: 'Faithfulness',
     link: '/research/symbols/the-life/'
   },
 
@@ -1759,8 +1773,8 @@ const SYMBOL_DICTIONARY = {
     sentence: 'God\'s covenant standard — His law, His word, His faithfulness. Not factual accuracy but the divine measure against which all else is tested.',
     opposite: 'The lie / falsehood — the anti-standard that substitutes for God\'s measure (Isa 28:15 — "we have made lies our refuge"; Jn 8:44 — the devil "abode not in the truth")',
     rank: 0,
-    category: 'Uncategorized',
-    subcategory: null,
+    category: 'Covenant & Relationship',
+    subcategory: 'Faithfulness',
     link: '/research/symbols/the-truth/'
   },
 
@@ -1773,8 +1787,8 @@ const SYMBOL_DICTIONARY = {
     sentence: 'The specific covenant pattern that God defines and Christ embodies — distinct from generic way (any person\'s conduct), THE way is the one road that leads to life.',
     opposite: '"The way of the wicked" (Ps 1:6, Prov 4:19) — also definite, but the anti-pattern; "the broad way" that leads to destruction (Mat 7:13)',
     rank: 0,
-    category: 'Uncategorized',
-    subcategory: null,
+    category: 'Covenant & Relationship',
+    subcategory: 'Faithfulness',
     link: '/research/symbols/the-way/'
   },
 
@@ -1957,8 +1971,8 @@ const SYMBOL_DICTIONARY = {
     sentence: 'The life that flows from God\'s presence — distinguished from the sea by its source and movement, and from human religion by its continuous, self-renewing supply.',
     opposite: 'Cisterns (man-made, broken, containment of dead water) / bitter water / the Sea (gathered, chaotic, restless)',
     rank: 0,
-    category: 'Uncategorized',
-    subcategory: null,
+    category: 'Covenant & Relationship',
+    subcategory: 'Faithfulness',
     link: '/research/symbols/water/'
   },
 
@@ -2083,7 +2097,7 @@ const SYMBOL_DICTIONARY = {
     sentence: 'A revolution of time — from a single calendar cycle to a complete Jubilee revolution, the appointed turn that brings all things back to their origin.',
     opposite: 'Day — concentrated judgment. Where "year" is the comprehensive restoration-cycle, "day" is the singular moment of divine action. Isaiah consistently pairs them: "the **day** of vengeance" with "the **year** of [Jubilee concept]." The day destroys the bondage-system; the year establishes the liberty.',
     rank: 0,
-    category: 'Uncategorized',
+    category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/year/'
   },

@@ -503,7 +503,7 @@
         
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'blog'}])">
           <span class="menu-icon">📰</span>
-          <span class="menu-label">Blog (What's New)</span>
+          <span class="menu-label">Blog</span>
         </button>
         
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'tutorial'}])">
@@ -1054,6 +1054,13 @@
         });
       }
       if ('serviceWorker' in navigator && !isLocalDev && !(window.electronAPI && window.electronAPI.isElectron)) {
+        // Request persistent storage so the browser won't evict our cached data
+        if (navigator.storage && navigator.storage.persist) {
+          navigator.storage.persist().then(granted => {
+            if (granted) console.log('[PWA] Persistent storage granted');
+          });
+        }
+
         navigator.serviceWorker.register('/sw.js')
           .then((registration) => {
             console.log('[PWA] Service worker registered:', registration.scope);

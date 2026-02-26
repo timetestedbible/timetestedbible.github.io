@@ -4632,6 +4632,143 @@ body.bible-reader-open {
   color: var(--accent-primary-hover);
 }
 
+.bible-explorer-chapter-header {
+  text-align: center;
+  padding: 20px 0 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle, rgba(128,128,128,0.15));
+}
+
+.bible-explorer-chapter-header h2 {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: var(--accent-gold, #c9a94e);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Verse Formatting: Section Headings, Poetry, Breaks ── */
+
+.chapter-book-division {
+  text-align: center;
+  padding: 16px 0 8px;
+  margin-bottom: 8px;
+}
+.book-division-title {
+  display: block;
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold, #c9a94e);
+  text-transform: uppercase;
+}
+.book-division-range {
+  display: block;
+  font-size: 0.8em;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.chapter-section-heading {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--accent-gold, #c9a94e);
+  margin: 20px 0 2px;
+  padding-top: 8px;
+}
+
+.chapter-cross-ref {
+  font-size: 0.82em;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.chapter-sub-heading {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--color-text-secondary, #aaa);
+  margin: 14px 0 4px;
+}
+
+.psalm-superscription {
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 4px 0 8px;
+  padding-left: 2em;
+}
+
+.chapter-acrostic {
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-primary, #6ba4d9);
+  margin: 14px 0 4px;
+  text-transform: uppercase;
+}
+
+.verse-stanza-break {
+  height: 0;
+}
+
+.verse-selah {
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-left: 0.5em;
+}
+
+/* Fully-poetry verses — block with indent */
+.bible-explorer-verse.verse-poetry {
+  display: block;
+  margin-bottom: 4px;
+  margin-left: 2em;
+}
+
+/* All-poetry chapters (Psalms, etc.) — reduce indent since there's no prose to differentiate from */
+.all-poetry .bible-explorer-verse.verse-poetry {
+  margin-left: 0;
+}
+
+/* Poetry lines — all q1 at 2em, all q2 at 3em from content edge */
+.verse-poetry-line.q1 {
+  display: block;
+  margin-left: 2em;
+  text-indent: 0;
+}
+
+.verse-poetry-line.q2 {
+  display: block;
+  margin-left: 3em;
+  text-indent: 0;
+}
+
+/* Inside .verse-poetry the parent already provides 2em offset */
+.verse-poetry .verse-poetry-line.q1 {
+  margin-left: 0;
+}
+
+.verse-poetry .verse-poetry-line.q1:first-child {
+  display: inline;
+}
+
+.verse-poetry .verse-poetry-line.q2 {
+  margin-left: 1em;
+}
+
+@media (max-width: 600px) {
+  .verse-paragraph {
+    text-indent: 0.75em;
+  }
+  .bible-explorer-verse.verse-poetry {
+    margin-left: 1.5em;
+  }
+  .verse-poetry-line.q2 {
+    margin-left: 0.75em;
+  }
+}
+
 .bible-chapter-separator {
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent-primary-strong), transparent);
@@ -8088,6 +8225,11 @@ body.biblical-timeline-open .top-nav-inner {
   max-width: 800px;
   margin: 0 auto;
 }
+@media (max-width: 768px) {
+  .reader-symbol-content-inline {
+    padding: 2px 1px;
+  }
+}
 
 .reader-symbol-content-inline .symbol-header {
   margin-bottom: 24px;
@@ -9445,89 +9587,31 @@ body.biblical-timeline-open .top-nav-inner {
   font-weight: 600;
 }
 
+/* Verse paragraph container — groups consecutive prose verses into flowing text */
+.verse-paragraph {
+  text-indent: 1em;
+  line-height: 1.8;
+}
+
 .bible-explorer-verse {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 8px;
+  display: inline;
   scroll-margin-top: 80px;
+  position: relative;
 }
 
-/* Desktop: meta (book, link, verse#) inline before text */
-.verse-meta {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  flex-shrink: 0;
-}
-
-.bible-explorer-verse .verse-meta .verse-book-ref,
-.bible-explorer-verse .verse-meta .verse-book-ref-spacer,
-.bible-explorer-verse .verse-meta .verse-cross-ref,
-.bible-explorer-verse .verse-meta .verse-cross-ref-spacer,
-.bible-explorer-verse .verse-meta .verse-study-ref,
-.bible-explorer-verse .verse-meta .verse-timeline-ref,
-.bible-explorer-verse .verse-meta .verse-timeline-ref-spacer,
-.bible-explorer-verse .verse-meta .verse-interlinear-ref,
-.bible-explorer-verse .verse-meta .bible-verse-number {
-  flex-shrink: 0;
+/* When expanded (interlinear open), switch to block so expansion panel renders below */
+.bible-explorer-verse.interlinear-expanded {
+  display: block;
 }
 
 .bible-explorer-verse .bible-verse-text {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Mobile: verse number + icons stacked on left (number on top), text on right — number next to first word */
-@media (max-width: 768px) {
-  .bible-explorer-verse {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .bible-explorer-verse .verse-meta {
-    order: 1;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    gap: 2px;
-    margin-right: 6px;
-  }
-  .bible-explorer-verse .verse-meta .bible-verse-number {
-    order: 1;
-  }
-  .bible-explorer-verse .verse-meta .verse-book-ref,
-  .bible-explorer-verse .verse-meta .verse-book-ref-spacer {
-    order: 2;
-  }
-  .bible-explorer-verse .verse-meta .verse-cross-ref,
-  .bible-explorer-verse .verse-meta .verse-cross-ref-spacer {
-    order: 3;
-  }
-  .bible-explorer-verse .verse-meta .verse-timeline-ref,
-  .bible-explorer-verse .verse-meta .verse-timeline-ref-spacer {
-    order: 4;
-  }
-  .bible-explorer-verse .verse-meta .verse-interlinear-ref {
-    order: 5;
-  }
-  .bible-explorer-verse .verse-meta .verse-book-ref-spacer,
-  .bible-explorer-verse .verse-meta .verse-cross-ref-spacer,
-  .bible-explorer-verse .verse-meta .verse-timeline-ref-spacer {
-    display: none;
-  }
-  .bible-explorer-verse .bible-verse-text {
-    order: 2;
-    flex: 1;
-    min-width: 0;
-    padding-left: 0;
-  }
+  display: inline;
 }
 
 .bible-explorer-verse.highlighted {
   background: var(--accent-gold-subtle);
-  padding: 8px 12px;
-  margin: 4px -12px 8px -12px;
-  border-radius: 4px;
-  border-left: 3px solid var(--accent-gold);
+  padding: 2px 4px;
+  border-radius: 3px;
 }
 
 .bible-verse-number {
@@ -9535,13 +9619,23 @@ body.biblical-timeline-open .top-nav-inner {
   font-size: 0.75em;
   font-weight: 600;
   vertical-align: super;
-  margin-right: 4px;
+  margin-right: 1px;
   cursor: pointer;
-  user-select: none;
+  padding: 2px 3px;
+  border-radius: 3px;
+  transition: background 0.15s, color 0.15s;
 }
 
-.bible-verse-number:hover {
-  color: var(--accent-primary-hover);
+@media (hover: hover) {
+  .bible-verse-number:hover {
+    color: var(--accent-primary-hover);
+    background: var(--accent-primary-subtle, rgba(107, 164, 217, 0.1));
+  }
+}
+
+.bible-explorer-verse.interlinear-expanded > .bible-verse-number {
+  background: var(--accent-primary-subtle, rgba(107, 164, 217, 0.15));
+  color: var(--accent-gold);
 }
 
 .bible-verse-text {
@@ -9612,44 +9706,22 @@ body.biblical-timeline-open .top-nav-inner {
   transition: all 0.2s;
 }
 
-.bible-verse-number.clickable-hebrew:hover {
-  color: var(--accent-gold);
-  transform: scale(1.2);
+@media (hover: hover) {
+  .bible-verse-number.clickable-hebrew:hover {
+    color: var(--accent-gold);
+    transform: scale(1.2);
+  }
 }
 
 .bible-explorer-verse.interlinear-expanded {
-  display: block; /* Override flex to prevent verse text squishing */
   background: rgba(126, 200, 227, 0.03);
   border-radius: 8px;
   margin: 4px -8px;
   padding: 8px;
 }
 
-/* Keep verse meta and text inline when expanded */
-.bible-explorer-verse.interlinear-expanded > .verse-meta {
-  display: inline-block;
-  margin-right: 4px;
-  vertical-align: top;
-}
-
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-book-ref,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-book-ref-spacer,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-cross-ref,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-cross-ref-spacer,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-study-ref,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-timeline-ref,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-timeline-ref-spacer,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .verse-interlinear-ref,
-.bible-explorer-verse.interlinear-expanded > .verse-meta .bible-verse-number {
-  display: inline;
-  margin-right: 4px;
-}
-
-.bible-explorer-verse.interlinear-expanded > .bible-verse-text {
-  display: inline;
-}
-
-/* Interlinear Display - Simple two-line format */
+/* ── Verse Expansion (tabbed panel below tapped verse) ── */
+.verse-expansion,
 .interlinear-display {
   overflow: hidden;
   max-height: 0;
@@ -9659,6 +9731,7 @@ body.biblical-timeline-open .top-nav-inner {
   padding: 0;
 }
 
+.verse-expansion.expanded,
 .interlinear-display.expanded {
   max-height: none;
   opacity: 1;
@@ -9668,6 +9741,139 @@ body.biblical-timeline-open .top-nav-inner {
   border-radius: 8px;
   border-left: 3px solid var(--accent-gold-muted);
   overflow-y: auto;
+}
+
+.verse-expansion-loading {
+  padding: 12px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ── Links tab styles ── */
+.verse-links-section {
+  margin-bottom: 12px;
+}
+.verse-links-section-title {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+.verse-link-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--surface-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+.verse-link-card:hover {
+  border-color: var(--accent-gold);
+}
+.verse-link-label {
+  display: block;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+.verse-link-title {
+  display: block;
+  font-size: 0.95em;
+  color: var(--text-primary);
+}
+.verse-link-desc {
+  display: block;
+  font-size: 0.82em;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+.verse-links-expand-btn {
+  font-size: 0.82em;
+  color: var(--accent-primary);
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 4px;
+  transition: background 0.15s;
+}
+.verse-links-expand-btn:hover {
+  background: var(--accent-primary-subtle, rgba(107, 164, 217, 0.1));
+}
+
+/* ── Events tab styles ── */
+.verse-event-card {
+  background: var(--surface-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.verse-event-card:hover {
+  border-color: var(--accent-gold);
+}
+.verse-event-title {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.verse-event-date {
+  font-size: 0.82em;
+  color: var(--accent-primary);
+  margin-top: 2px;
+}
+.verse-event-desc {
+  font-size: 0.85em;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* ── Research panel section styles ── */
+.research-panel-verse-header {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--accent-gold, #c9a94e);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.research-panel-divider {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 16px 0;
+}
+.research-panel-section {
+  margin-bottom: 16px;
+}
+.research-panel-section-title {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+.research-panel-back-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  font-size: 0.95em;
+  padding: 10px 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 
 /* Hebrew line */
@@ -9718,9 +9924,8 @@ body.biblical-timeline-open .top-nav-inner {
 .interlinear-words-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--accent-primary-muted);
+  gap: 10px 8px;
+  padding: 12px 0;
   margin-bottom: 10px;
 }
 
@@ -9732,22 +9937,24 @@ body.biblical-timeline-open .top-nav-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4px 8px;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
+  padding: 6px 10px 5px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
-  min-width: 40px;
   min-width: 50px;
 }
 
 .il-word-block:hover {
-  background: var(--accent-gold-muted);
+  background: var(--accent-gold-subtle);
+  border-color: var(--border-gold);
 }
 
 .il-original {
-  font-size: 1.3em;
-  color: var(--accent-primary);
+  font-size: 1.4em;
+  line-height: 1.3;
+  color: var(--text-primary);
   font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
 }
 
@@ -9762,19 +9969,21 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .il-gloss {
-  font-size: 0.85em;
-  color: var(--accent-gold);
+  font-size: 0.82em;
+  color: var(--text-secondary);
   text-align: center;
+  margin-top: 2px;
+  line-height: 1.3;
 }
 
 .il-prefix {
   color: var(--accent-primary);
-  font-size: 0.85em;
-  opacity: 0.8;
+  font-size: 0.82em;
 }
 
 .il-hebrew-prefix {
   color: var(--accent-primary);
+  opacity: 0.7;
 }
 
 /* ── Interlinear Tab Layout ── */
@@ -9789,6 +9998,10 @@ body.biblical-timeline-open .top-nav-inner {
 
 .il-tab {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -9799,6 +10012,16 @@ body.biblical-timeline-open .top-nav-inner {
   cursor: pointer;
   transition: all 0.2s;
   text-align: center;
+}
+
+.il-tab-icon {
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+@media (max-width: 500px) {
+  .il-tab-label { display: none; }
+  .il-tab { padding: 6px 8px; }
 }
 
 .il-tab:first-child {
@@ -9815,16 +10038,19 @@ body.biblical-timeline-open .top-nav-inner {
 }
 
 .il-vowel-toggle-inline {
-  font-size: 0.75em;
+  font-size: 0.78em;
   color: var(--text-tertiary);
   padding: 4px 8px;
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .il-vowel-toggle-inline input {
-  margin-right: 3px;
+  margin-right: 0;
 }
 
 .il-tab-pane {
@@ -9899,8 +10125,8 @@ body.biblical-timeline-open .top-nav-inner {
 /* Selected word highlight in interlinear */
 .il-word-block.il-word-active {
   background: var(--accent-gold-muted);
-  box-shadow: 0 0 0 2px var(--accent-gold-strong);
-  border-radius: 4px;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 1px var(--accent-gold-strong);
 }
 
 .il-vowel-toggle-bar {
@@ -10093,12 +10319,12 @@ body.biblical-timeline-open .top-nav-inner {
   }
   
   .il-word-block {
-    padding: 3px 6px;
-    min-width: 32px;
+    padding: 4px 7px 3px;
+    min-width: 36px;
   }
   
   .il-original {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
   
   .il-gloss {
@@ -10169,6 +10395,24 @@ body.biblical-timeline-open .top-nav-inner {
   color: var(--accent-gold);
   font-size: 0.9em;
   line-height: 1.4;
+}
+.word-tooltip-senses {
+  font-size: 0.88em;
+  line-height: 1.4;
+}
+.word-tooltip-sense {
+  color: var(--accent-gold);
+  margin-bottom: 2px;
+}
+.word-tooltip-sense-num {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-right: 3px;
+}
+.word-tooltip-sense-more {
+  color: var(--color-text-muted);
+  font-size: 0.85em;
+  font-style: italic;
 }
 
 .word-tooltip-symbol {
@@ -11017,8 +11261,8 @@ body.research-panel-open .research-panel-collapse-btn {
   position: sticky;
   top: 0;
   float: right;
-  background: var(--bg-secondary, #1a2332);
-  border: 1px solid var(--border-color, #2a3a4a);
+  background: transparent;
+  border: 1px solid var(--border-color, #ccc);
   color: var(--text-secondary);
   font-size: 1.1em;
   width: 30px;
@@ -11030,11 +11274,12 @@ body.research-panel-open .research-panel-collapse-btn {
   justify-content: center;
   z-index: 10;
   margin: 4px 4px 0 0;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 .research-panel-close-btn:hover {
   color: var(--text-primary);
   border-color: var(--text-secondary);
+  background: var(--surface-sunken, rgba(0,0,0,0.05));
 }
 
 
@@ -11118,6 +11363,11 @@ body.research-panel-open .research-panel-collapse-btn {
     display: none !important;
   }
 
+  /* Show back button on mobile */
+  .research-panel-back-btn {
+    display: block !important;
+  }
+
   /* Strong's ID label — already visible via base styles, adjust padding for mobile */
   .research-id-mobile {
     padding: 8px 16px 0;
@@ -11172,6 +11422,59 @@ body.research-panel-open .research-panel-collapse-btn {
 .strongs-pronunciation {
   color: var(--text-secondary);
   font-style: italic;
+}
+
+.strongs-pos {
+  font-size: 0.85em;
+  color: var(--accent-primary);
+  text-align: center;
+  margin-bottom: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.strongs-thayer-section {
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--accent-primary-subtle);
+  border-radius: 8px;
+}
+
+.strongs-thayer-summary {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.strongs-thayer-content {
+  margin-top: 8px;
+  font-size: 0.92em;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.strongs-thayer-content ol {
+  margin: 4px 0;
+  padding-left: 1.4em;
+}
+
+.strongs-thayer-content li {
+  margin-bottom: 4px;
+}
+
+.strongs-thayer-content a.bible {
+  color: var(--accent-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.strongs-thayer-content a.bible:hover {
+  text-decoration: underline;
 }
 
 .strongs-definition {
@@ -11646,10 +11949,7 @@ body.research-panel-open .research-panel-collapse-btn {
   
   .bible-explorer-select {
     min-width: 0;
-    flex: 1 1 auto;
-    max-width: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    flex: 0 1 auto;
   }
   
   .reader-content-select {
@@ -11665,9 +11965,8 @@ body.research-panel-open .research-panel-collapse-btn {
   }
   
   #bible-book-select {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: 60px;
-    max-width: 100px;
   }
   
   #bible-chapter-select {
@@ -11741,7 +12040,6 @@ body.research-panel-open .research-panel-collapse-btn {
   
   #bible-book-select {
     min-width: 50px;
-    max-width: 80px;
   }
   
   #bible-chapter-select {
@@ -11818,7 +12116,7 @@ body.research-panel-open .research-panel-collapse-btn {
   }
   
   #bible-book-select {
-    max-width: 65px;
+    flex: 1 1 auto;
   }
   
   #bible-chapter-select {
@@ -13348,8 +13646,9 @@ details.concept-strongs-section[open] .concept-expand-icon {
   border-top: 1px solid var(--color-warning-muted);
 }
 
-/* ── Vowel toggle container inside Hebrew pane ── */
+/* ── Vowel toggle container inside Hebrew pane (bottom) ── */
 .il-vowel-toggle-container {
   text-align: right;
-  margin-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 0;
 }

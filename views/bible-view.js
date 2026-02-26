@@ -29,8 +29,9 @@ const BibleView = {
     if (typeof closeStrongsPanel === 'function') closeStrongsPanel();
     if (typeof closeBibleReader === 'function') closeBibleReader();
     if (typeof closeConceptSearch === 'function') closeConceptSearch();
-    // Reset tracked Strong's ID so restoreUIState re-opens panel when returning to this view
+    // Reset tracked IDs so restoreUIState re-opens panels when returning to this view
     this._currentStrongsId = null;
+    this._lastInterlinearVerse = undefined;
   },
 
   /**
@@ -143,7 +144,7 @@ const BibleView = {
     const isMultiverse = contentType === 'multiverse' && multiverse;
     const paramsKey = isMultiverse
       ? `multiverse:${translation || 'kjv'}:${multiverse}`
-      : `${book}-${chapter}-${verse}-${translation}`;
+      : `${book}-${chapter}-${translation}`;
     const needsFullRender = !this.initialized || !container.querySelector('#bible-explorer-page');
     
     // Check if the content area has non-Bible content (switching back from Time-Tested/Symbols)
@@ -183,6 +184,7 @@ const BibleView = {
         
         // Reset restoration flags on navigation change
         this._interlinearRestored = false;
+        this._lastInterlinearVerse = undefined;
         
         // Wait for Bible data to be ready then navigate
         this.navigateWhenReady(translation, book, chapter, verse);
@@ -237,14 +239,13 @@ const BibleView = {
     const panelIsOpen = panel?.classList.contains('open');
     
     // Sync research panel visibility with state
-    if (ui.researchPanelOpen && !panelIsOpen) {
-      // State says open but panel is collapsed — expand it
+    // On mobile, don't auto-restore the research panel — it takes over the full screen
+    const isMobile = window.innerWidth <= 768;
+    if (ui.researchPanelOpen && !panelIsOpen && !isMobile) {
       requestAnimationFrame(() => {
         if (panel) {
-          if (window.innerWidth > 768) {
-            panel.style.width = typeof getResearchPanelWidth === 'function'
-              ? getResearchPanelWidth() : '380px';
-          }
+          panel.style.width = typeof getResearchPanelWidth === 'function'
+            ? getResearchPanelWidth() : '380px';
           panel.classList.add('open');
           document.body.classList.add('research-panel-open');
         }
@@ -338,16 +339,14 @@ const BibleView = {
         const params = state.content?.params || {};
         
         if (ui.interlinearVerse && params.book && params.chapter) {
-          // Need to show interlinear for this verse
           const verseEl = document.getElementById(`verse-${ui.interlinearVerse}`);
           const isAlreadyExpanded = verseEl?.classList.contains('interlinear-expanded');
-          if (!isAlreadyExpanded && typeof showInterlinear === 'function') {
-            showInterlinear(params.book, params.chapter, ui.interlinearVerse, null);
+          if (!isAlreadyExpanded && typeof onVerseTap === 'function') {
+            onVerseTap(params.book, params.chapter, ui.interlinearVerse);
           }
         } else if (prevVerse) {
-          // Need to collapse previous interlinear
           const prevVerseEl = document.getElementById(`verse-${prevVerse}`);
-          const existing = prevVerseEl?.querySelector('.interlinear-display');
+          const existing = prevVerseEl?.querySelector('.verse-expansion') || prevVerseEl?.querySelector('.interlinear-display');
           if (existing) {
             existing.classList.remove('expanded');
             setTimeout(() => existing.remove(), 200);

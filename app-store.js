@@ -40,6 +40,7 @@ const AppStore = {
       searchQuery: null,        // Search query string
       personId: null,           // Open person card
       interlinearVerse: null,   // Open interlinear for verse (e.g., 5)
+      interlinearTab: null,     // Active tab in verse expansion (e.g., 'hebrew', 'translations', 'links', 'events')
       timelineEventId: null,    // Selected timeline event ID (opens detail panel)
       timelineDurationId: null, // Selected timeline duration ID
       timelineFocusedEventId: null, // Focused/highlighted event (no detail panel)
@@ -484,6 +485,7 @@ const AppStore = {
     'SET_SEARCH_QUERY',
     'CLOSE_SEARCH',
     'SET_INTERLINEAR_VERSE',
+    'SET_INTERLINEAR_TAB',
     'OPEN_PERSON',
     'CLOSE_PERSON',
     'NAV_PUSH',
@@ -1173,6 +1175,7 @@ const AppStore = {
         // Reader-specific state
         if (event.view !== 'reader') {
           s.ui.interlinearVerse = null;
+          s.ui.interlinearTab = null;
         }
         // Calendar panel state
         if (event.view !== 'calendar') {
@@ -1317,8 +1320,17 @@ const AppStore = {
         
       case 'SET_INTERLINEAR_VERSE': {
         const newVerse = event.verse || null;
-        if (s.ui.interlinearVerse === newVerse) return false;
+        const newTab = event.tab || null;
+        if (s.ui.interlinearVerse === newVerse && s.ui.interlinearTab === newTab) return false;
         s.ui.interlinearVerse = newVerse;
+        s.ui.interlinearTab = newTab;
+        return true;
+      }
+
+      case 'SET_INTERLINEAR_TAB': {
+        const newTab = event.tab || null;
+        if (s.ui.interlinearTab === newTab) return false;
+        s.ui.interlinearTab = newTab;
         return true;
       }
         

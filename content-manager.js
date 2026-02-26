@@ -83,7 +83,7 @@ const ContentManager = {
         calendar: 'Biblical Calendar',
         reader: null, // handled by ReaderView
         settings: 'Settings',
-        blog: 'What\'s New',
+        blog: 'Blog',
         timeline: 'Timeline',
         day: 'Day Detail'
       };

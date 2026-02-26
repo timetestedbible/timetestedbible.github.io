@@ -25,9 +25,11 @@ const Layout = {
   _openDropdown: null,
   
   // Scroll-direction header auto-hide state
-  _lastScrollY: 0,
+  _lastScrollY_body: 0,
+  _lastScrollY_content: 0,
   _navHidden: false,
   _scrollTicking: false,
+  _scrollCooldownUntil: 0,
   
   /**
    * Initialize the layout
@@ -350,13 +352,15 @@ const Layout = {
    * Uses capture-phase listener on document to catch scroll events from ANY
    * container — body scroll (mobile, Calendar, Tutorial) and contained scroll
    * (desktop Bible/Reader inside .bible-explorer-text).
+   *
+   * Tracks lastScrollY per source to avoid cross-source delta confusion.
+   * Uses a cooldown after toggling to prevent layout-shift feedback loops.
    */
   setupScrollHide() {
-    const HIDE_THRESHOLD = 10; // Minimum cumulative scroll-down before hiding (px)
+    const HIDE_THRESHOLD = 40;
+    const COOLDOWN_MS = 300;
     
-    // Capture-phase listener catches scroll events from all elements (scroll doesn't bubble)
     document.addEventListener('scroll', (e) => {
-      // Only respond to known content scroll containers
       const isBodyScroll = e.target === document;
       const isContentScroll = e.target.classList?.contains('bible-explorer-text');
       if (!isBodyScroll && !isContentScroll) return;
@@ -364,53 +368,52 @@ const Layout = {
       if (this._scrollTicking) return;
       this._scrollTicking = true;
       
-      const scrollTarget = e.target; // capture target for use in rAF
+      const scrollTarget = e.target;
+      const sourceKey = isBodyScroll ? '_lastScrollY_body' : '_lastScrollY_content';
       
       requestAnimationFrame(() => {
         this._scrollTicking = false;
         const nav = this.elements.topNav;
         if (!nav) return;
         
-        const body = document.body;
-        const currentY = (scrollTarget === document) ? window.scrollY : scrollTarget.scrollTop;
-        const delta = currentY - (this._lastScrollY || 0);
+        const now = performance.now();
+        const currentY = isBodyScroll ? window.scrollY : scrollTarget.scrollTop;
+        const lastY = this[sourceKey] || 0;
+        const delta = currentY - lastY;
+        this[sourceKey] = currentY;
         
-        // Prevent jitter at bottom of page: hiding/showing the nav changes document
-        // height via marginBottom, which shifts scroll position, triggering a loop.
-        // Skip toggle when near the bottom of the scrollable area.
-        const scrollEl = (scrollTarget === document) ? document.documentElement : scrollTarget;
+        if (Math.abs(delta) < 2) return;
+        
+        // Skip direction logic during cooldown after a toggle
+        if (now < this._scrollCooldownUntil) return;
+        
+        const scrollEl = isBodyScroll ? document.documentElement : scrollTarget;
         const atBottom = (scrollEl.scrollHeight - scrollEl.clientHeight - currentY) < 50;
         
         if (delta > 0 && !atBottom) {
-          // Scrolling DOWN — accumulate distance
           this._scrollDownAccum = (this._scrollDownAccum || 0) + delta;
           if (this._scrollDownAccum > HIDE_THRESHOLD && currentY > nav.offsetHeight) {
             if (!this._navHidden) {
               this._navHidden = true;
-              // Use actual rendered height to collapse space (accounts for sub-nav)
+              this._scrollCooldownUntil = now + COOLDOWN_MS;
               nav.style.marginBottom = `-${nav.offsetHeight}px`;
               nav.classList.add('nav-hidden');
-              body.classList.add('nav-hidden');
+              document.body.classList.add('nav-hidden');
             }
           }
         } else if (delta < 0) {
-          // Scrolling UP — show instantly, reset accumulator
           this._scrollDownAccum = 0;
           if (this._navHidden) {
             this._navHidden = false;
-            nav.style.transition = 'none';
-            nav.style.marginBottom = '0px';
+            this._scrollCooldownUntil = now + COOLDOWN_MS;
             nav.classList.remove('nav-hidden');
-            body.classList.remove('nav-hidden');
-            // Re-enable transitions after the instant snap
-            requestAnimationFrame(() => {
-              nav.style.transition = '';
-              nav.style.marginBottom = '';
-            });
+            document.body.classList.remove('nav-hidden');
+            // Remove marginBottom after transition completes
+            nav.addEventListener('transitionend', () => {
+              if (!this._navHidden) nav.style.marginBottom = '';
+            }, { once: true });
           }
         }
-        
-        this._lastScrollY = currentY;
       });
     }, { capture: true, passive: true });
   },

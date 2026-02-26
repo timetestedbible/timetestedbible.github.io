@@ -1,0 +1,5 @@
+---
+layout: null
+---
+{% comment %}Auto-generated content manifest for PWA offline caching{% endcomment %}
+{% assign urls = "" %}{% for s in site.symbols %}{% assign u = "/research/symbols/" | append: s.slug | append: "/" %}{% unless urls == "" %}{% assign urls = urls | append: "," %}{% endunless %}{% assign urls = urls | append: u %}{% endfor %}{% for f in site.static_files %}{% if f.path contains '/symbols/' and f.extname == '.md' %}{% assign urls = urls | append: "," | append: f.path %}{% endif %}{% endfor %}{% for f in site.static_files %}{% if f.path contains '/words/' and f.extname == '.md' %}{% assign urls = urls | append: "," | append: f.path %}{% endif %}{% endfor %}{% for v in site.verses %}{% assign u = "/research/verses/" | append: v.slug | append: "/" %}{% assign urls = urls | append: "," | append: u %}{% endfor %}{% assign urls = urls | append: ",/blog/posts.json" %}{% for post in site.posts %}{% assign u = "/blog/" | append: post.slug | append: "/" %}{% assign urls = urls | append: "," | append: u %}{% endfor %}{{ urls | split: "," | jsonify }}

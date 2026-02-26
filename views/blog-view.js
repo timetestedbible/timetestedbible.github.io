@@ -52,8 +52,8 @@ const BlogView = {
     container.innerHTML = `
       <div class="blog-view">
         <header class="blog-header">
-          <h1>What's New</h1>
-          <p class="blog-subtitle">Updates, new features, and improvements to the Time-Tested calendar app.</p>
+          <h1>Blog</h1>
+          <p class="blog-subtitle">Articles, research, and updates from the Time-Tested project.</p>
         </header>
         <div class="blog-posts">
           <div class="loading">Loading posts...</div>
@@ -107,7 +107,7 @@ const BlogView = {
         <div class="blog-post-meta">
           <time class="blog-post-date">${post.date}</time>
         </div>
-        <h2 class="blog-post-title">${post.title}</h2>
+        <h2 class="blog-post-title">${post.hasContent ? `<a href="#" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'${post.slug}'}})">${post.title}</a>` : post.title}</h2>
         ${cardBody}
       </article>
     `;

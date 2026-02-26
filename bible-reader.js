@@ -167,6 +167,24 @@ function buildConsonantalRootIndex() {
 }
 
 // ============================================
+// VERSE FORMATTING DATA
+// ============================================
+
+let verseFormattingData = null;
+
+async function loadVerseFormatting() {
+  return _loadJsonData('/data/verse-formatting.json', 'Verse Formatting', {
+    isLoaded: () => verseFormattingData,
+    setData: (d) => { verseFormattingData = d; }
+  });
+}
+
+function getChapterFormatting(bookName, chapter) {
+  if (!verseFormattingData) return null;
+  return verseFormattingData[`${bookName}.${chapter}`] || null;
+}
+
+// ============================================
 // GEMATRIA DATA AND FUNCTIONS
 // ============================================
 
@@ -182,19 +200,12 @@ async function loadGematriaData() {
   
   gematriaLoading = (async () => {
     try {
-      // Load both compact data and index
-      const [compactRes, indexRes] = await Promise.all([
-        fetch('/data/gematria-compact.json'),
-        fetch('/data/gematria-index.json')
+      const [compact, index] = await Promise.all([
+        _fetchJsonGz('/data/gematria-compact.json'),
+        _fetchJsonGz('/data/gematria-index.json')
       ]);
-      
-      if (compactRes.ok) {
-        gematriaData = await compactRes.json();
-      }
-      if (indexRes.ok) {
-        gematriaIndex = await indexRes.json();
-      }
-      
+      gematriaData = compact;
+      gematriaIndex = index;
       console.log('[Gematria] Loaded gematria data');
       return true;
     } catch (err) {
@@ -679,18 +690,23 @@ document.addEventListener('pointerdown', (e) => { _lastPointerType = e.pointerTy
 
 function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
   if (event) event.stopPropagation();
-  
+
   // Look up morphology context from morphhb data so the Strong's panel can show parsing info
   _setMorphContextFromVerse(strongsNum, event);
-  
+
   if (_lastPointerType === 'touch') {
-    // Touch: if tooltip already visible, open Strong's panel; otherwise show tooltip
     const tooltip = document.getElementById('word-hover-tooltip');
-    if (tooltip) {
+    const clickedEl = event?.target?.closest('.strongs-word');
+    // Second tap on SAME word → open Strong's panel
+    if (tooltip && tooltip._anchorEl === clickedEl) {
       hideWordTooltip();
       showStrongsPanel(strongsNum, englishWord, gloss, event);
     } else {
+      // First tap (or different word) → show tooltip
+      hideWordTooltip();
       showWordTooltip(event);
+      const newTooltip = document.getElementById('word-hover-tooltip');
+      if (newTooltip) newTooltip._anchorEl = clickedEl;
     }
     return;
   }
@@ -750,11 +766,11 @@ let _wordTooltipTracker = null;
 
 function showWordTooltip(event) {
   const el = event.target.closest('.strongs-word, .name-sub') || event.target;
-  const def = el.dataset.def;
   const symbolMeaning = el.dataset.symbolMeaning;
   const originalName = el.dataset.original;
+  const strongsNum = el.dataset.strongs;
 
-  if (!def && !symbolMeaning && !originalName) return;
+  if (!symbolMeaning && !originalName && !strongsNum) return;
 
   hideWordTooltip();
 
@@ -766,9 +782,29 @@ function showWordTooltip(event) {
   if (originalName) {
     html += `<div class="word-tooltip-original">Original: <strong>${originalName}</strong> <span class="word-tooltip-settings" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW', view:'settings'})" title="Name Settings">⚙</span></div>`;
   }
-  if (def) {
-    html += `<div class="word-tooltip-def">${def}</div>`;
+
+  // Use BDB senses if available, fall back to Strong's/KJV definition
+  if (strongsNum) {
+    const bdbEntry = bdbData && (bdbData[strongsNum] || bdbData[strongsNum.replace(/[a-z]$/, '')]);
+    if (bdbEntry && bdbEntry.senses && bdbEntry.senses.length > 0) {
+      const maxSenses = 4;
+      const senses = bdbEntry.senses.slice(0, maxSenses);
+      html += '<div class="word-tooltip-senses">';
+      for (const sense of senses) {
+        html += `<div class="word-tooltip-sense"><span class="word-tooltip-sense-num">${sense.number}.</span> ${sense.meaning}</div>`;
+      }
+      if (bdbEntry.senses.length > maxSenses) {
+        html += `<div class="word-tooltip-sense-more">+${bdbEntry.senses.length - maxSenses} more</div>`;
+      }
+      html += '</div>';
+    } else {
+      const def = el.dataset.def;
+      if (def) {
+        html += `<div class="word-tooltip-def">${def}</div>`;
+      }
+    }
   }
+
   if (symbolMeaning) {
     const symbolKey = el.dataset.symbolKey || '';
     if (symbolKey) {
@@ -776,6 +812,9 @@ function showWordTooltip(event) {
     } else {
       html += `<div class="word-tooltip-symbol">📖 ${symbolMeaning}</div>`;
     }
+  }
+  if (!html && strongsNum) {
+    html = `<div class="word-tooltip-def">${strongsNum} — Tap again for details</div>`;
   }
 
   tooltip.innerHTML = html;
@@ -980,19 +1019,37 @@ function handleInterlinearTap(el, event) {
   if (event) event.stopPropagation();
   
   if (_lastPointerType === 'touch') {
-    // Touch: if tooltip already visible, open Strong's panel; otherwise show tooltip
+    // Touch: if tooltip already visible for THIS word, open Strong's panel; otherwise show tooltip
     const tooltip = document.getElementById('morph-hover-tooltip');
-    if (tooltip) {
+    if (tooltip && tooltip._anchorEl === el) {
       hideMorphTooltip();
-      showStrongsPanelFromMorphhb(el, event);
+      _openStrongsPanelFromWord(el, event);
     } else {
+      hideMorphTooltip();
       showMorphTooltip(el, event);
+      const tip = document.getElementById('morph-hover-tooltip');
+      if (tip) tip._anchorEl = el;
     }
     return;
   }
   
   // Mouse/pen: click opens panel directly (hover already showed tooltip)
-  showStrongsPanelFromMorphhb(el, event);
+  _openStrongsPanelFromWord(el, event);
+}
+
+function _openStrongsPanelFromWord(el, event) {
+  hideMorphTooltip();
+  // Use morphhb path if morphology data is present, otherwise simple Strong's open
+  if (el.dataset.morphCode || el.dataset.lemma) {
+    showStrongsPanelFromMorphhb(el, event);
+  } else {
+    const strongs = el.dataset.strongs || '';
+    const gloss = (el.querySelector('.il-gloss')?.textContent || '').trim();
+    if (strongs) {
+      highlightInterlinearWord(strongs);
+      showStrongsPanel(strongs, gloss, gloss, event);
+    }
+  }
 }
 
 // Open Strong's panel with morphology context from a morphhb interlinear word block
@@ -1036,15 +1093,31 @@ function hideBibleLoadingDialog() {
 // Deduplicates concurrent fetches, handles caching, and standardizes error handling.
 const _jsonLoadCache = new Map();
 
+async function _fetchJsonGz(url) {
+  const hasDecompress = typeof DecompressionStream !== 'undefined';
+  if (hasDecompress) {
+    try {
+      const response = await fetch(url + '.gz');
+      if (response.ok) {
+        const ds = new DecompressionStream('gzip');
+        const decompressed = response.body.pipeThrough(ds);
+        const text = await new Response(decompressed).text();
+        return JSON.parse(text);
+      }
+    } catch (e) { /* fall through to raw */ }
+  }
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+}
+
 async function _loadJsonData(url, label, opts = {}) {
   if (opts.isLoaded && opts.isLoaded()) return true;
   if (_jsonLoadCache.has(url)) return _jsonLoadCache.get(url);
 
   const promise = (async () => {
     try {
-      const response = await fetch(url);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
+      const data = await _fetchJsonGz(url);
       if (opts.rejectEmpty && Object.keys(data).length === 0) {
         console.log(`[${label}] No data yet`);
         return false;
@@ -1604,7 +1677,574 @@ function getStrongsTaggedVerse(book, chapter, verse) {
   return null;
 }
 
-// Show interlinear display for a verse
+// ============================================
+// VERSE TAP — unified expansion with tabs
+// ============================================
+
+async function onVerseTap(book, chapter, verse) {
+  const verseEl = document.getElementById(`verse-${verse}`);
+  if (!verseEl) return;
+
+  // Set this verse as the selected verse in URL (replaceState to avoid re-render)
+  try {
+    const url = new URL(window.location);
+    url.searchParams.set('verse', verse);
+    window.history.replaceState({}, '', url);
+    if (typeof AppStore !== 'undefined') {
+      const s = AppStore.getState();
+      if (s.content?.params) s.content.params.verse = verse;
+    }
+    bibleExplorerState.highlightedVerse = verse;
+  } catch (e) {}
+
+  // Toggle off if already expanded
+  const existing = verseEl.querySelector('.verse-expansion');
+  if (existing) {
+    existing.classList.remove('expanded');
+    setTimeout(() => existing.remove(), 200);
+    verseEl.classList.remove('interlinear-expanded');
+    // Clear both verse selection and interlinear state
+    try {
+      const url = new URL(window.location);
+      url.searchParams.delete('verse');
+      url.searchParams.delete('il');
+      url.searchParams.delete('ilt');
+      window.history.replaceState({}, '', url);
+      if (typeof AppStore !== 'undefined') {
+        const s = AppStore.getState();
+        if (s.content?.params) s.content.params.verse = null;
+      }
+      bibleExplorerState.highlightedVerse = null;
+    } catch (e) {}
+    if (typeof AppStore !== 'undefined') {
+      AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: null, replace: true });
+    }
+    if (window.innerWidth > 768) updateResearchPanelForChapter();
+    return;
+  }
+
+  // Collapse any other expanded verse
+  document.querySelectorAll('.verse-expansion').forEach(el => el.remove());
+  document.querySelectorAll('.bible-explorer-verse.interlinear-expanded').forEach(el => {
+    el.classList.remove('interlinear-expanded');
+  });
+
+  // Build the tabbed expansion
+  const expansion = document.createElement('div');
+  expansion.className = 'verse-expansion';
+  expansion.innerHTML = '<div class="verse-expansion-loading">Loading...</div>';
+  verseEl.appendChild(expansion);
+  verseEl.classList.add('interlinear-expanded');
+  requestAnimationFrame(() => expansion.classList.add('expanded'));
+
+  // Determine available tabs
+  const isNT = isNTBook(book);
+
+  // Load interlinear data if needed
+  if (isNT) {
+    const loads = [];
+    if (!ntInterlinearData) loads.push(loadNTInterlinear());
+    if (!hgInterlinearData) { loads.push(loadHGInterlinear()); loadHGNotes(); }
+    if (loads.length > 0) await Promise.all(loads);
+  } else if (!morphhbData) {
+    await loadMorphhb();
+  }
+
+  // Ensure cross-reference data is loading in background
+  if (typeof loadCrossReferences === 'function') loadCrossReferences();
+
+  // Check if we should restore a specific tab from URL state
+  const urlTab = (typeof AppStore !== 'undefined') ? AppStore.getState()?.ui?.interlinearTab : null;
+
+  // Build tabs
+  const { html: tabsHtml, defaultTab } = buildVerseExpansionHTML(book, chapter, verse, urlTab);
+  expansion.innerHTML = tabsHtml;
+
+  const activeTab = urlTab || defaultTab;
+
+  // Dispatch for URL sync
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_INTERLINEAR_VERSE', verse: verse, tab: activeTab, replace: false });
+  }
+
+  // On desktop, also update research panel with verse-specific content
+  if (window.innerWidth > 768) {
+    updateResearchPanelForVerse(book, chapter, verse);
+  }
+}
+
+function buildVerseExpansionHTML(book, chapter, verse, requestedTab) {
+  const isNT = isNTBook(book);
+  const ref = `${book} ${chapter}:${verse}`;
+
+  // Check what data is available
+  const ntData = isNT ? getInterlinearVerse(book, chapter, verse) : null;
+  const otWords = !isNT ? getMorphhbVerse(book, chapter, verse) : null;
+  const hgWords = isNT ? getHGInterlinearVerse(book, chapter, verse) : null;
+  const hgVerseNotes = isNT ? getHGVerseNotes(book, chapter, verse) : null;
+  const hasOTInterlinear = !isNT && otWords && otWords.length > 0;
+  const hasNTInterlinear = isNT && ntData && ntData.g;
+  const hasHGInterlinear = isNT && hgWords && hgWords.length > 0;
+  const hasInterlinearWords = hasOTInterlinear || hasNTInterlinear || hasHGInterlinear;
+  const hasNotes = !!hgVerseNotes;
+  const hasPatches = typeof TranslationPatches !== 'undefined' && TranslationPatches.hasPatchesForVerse && TranslationPatches.hasPatchesForVerse(ref);
+
+  const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(book, chapter, verse) : null;
+  const vstudy = (typeof getVerseStudy === 'function') ? getVerseStudy(book, chapter, verse) : null;
+  const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(book, chapter, verse) : false;
+  const tlData = (typeof getVerseTimelineEvents === 'function') ? getVerseTimelineEvents(book, chapter, verse) : null;
+  const hasLinks = (bookRefs && bookRefs.length > 0) || vstudy || hasCrossRefs;
+  const hasEvents = tlData && tlData.events.length > 0;
+
+  // Determine which tabs to show and the default
+  const langLabel = hasHGInterlinear ? 'Hebrew' : (isNT ? 'Greek' : 'Hebrew');
+  const computedDefault = hasHGInterlinear ? 'hebrew' : (hasPatches ? 'translations' : (hasInterlinearWords ? 'hebrew' : (hasLinks ? 'links' : 'translations')));
+  const defaultTab = requestedTab || computedDefault;
+
+  let html = '';
+
+  // Translation patch note (above tabs)
+  if (hasPatches && TranslationPatches.getInterlinearNote) {
+    const patchNote = TranslationPatches.getInterlinearNote(ref);
+    if (patchNote) html += patchNote;
+  }
+
+  // Tab bar
+  html += '<div class="il-tabs">';
+  if (hasHGInterlinear) {
+    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')"><span class="il-tab-icon">⇄</span><span class="il-tab-label">Hebrew</span></button>`;
+    html += `<button class="il-tab" data-tab="greek" onclick="switchInterlinearTab(this, 'greek')"><span class="il-tab-icon">⇄</span><span class="il-tab-label">Greek</span></button>`;
+  } else if (hasInterlinearWords) {
+    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')"><span class="il-tab-icon">⇄</span><span class="il-tab-label">${langLabel}</span></button>`;
+  }
+  html += `<button class="il-tab${defaultTab === 'translations' ? ' active' : ''}" data-tab="translations" onclick="switchInterlinearTab(this, 'translations')"><span class="il-tab-icon">☰</span><span class="il-tab-label">Translations</span></button>`;
+  if (hasNotes) {
+    html += `<button class="il-tab" data-tab="notes" onclick="switchInterlinearTab(this, 'notes')"><span class="il-tab-icon">📝</span><span class="il-tab-label">Notes</span></button>`;
+  }
+  if (hasLinks) {
+    html += `<button class="il-tab${defaultTab === 'links' ? ' active' : ''}" data-tab="links" onclick="switchInterlinearTab(this, 'links')"><span class="il-tab-icon">🔗</span><span class="il-tab-label">Refs</span></button>`;
+  }
+  if (hasEvents) {
+    html += `<button class="il-tab" data-tab="events" onclick="switchInterlinearTab(this, 'events')"><span class="il-tab-icon">📅</span><span class="il-tab-label">Events</span></button>`;
+  }
+  html += '</div>';
+
+  // ── Hebrew/Greek tab pane ──
+  html += `<div class="il-tab-pane il-pane-hebrew${defaultTab === 'hebrew' ? ' active' : ''}">`;
+
+  if (hasHGInterlinear) {
+    html += buildHGInterlinearHTML(hgWords);
+  } else if (hasOTInterlinear) {
+    html += buildOTInterlinearHTML(book, chapter, verse, otWords);
+  } else if (hasNTInterlinear) {
+    html += buildNTInterlinearHTML(ntData);
+  } else {
+    html += '<div class="interlinear-no-data">Interlinear data not available for this verse.</div>';
+  }
+
+  if (!isNT) {
+    const showVowels = getVowelPointingSetting();
+    html += `<div class="il-vowel-toggle-container"><label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowels</label></div>`;
+  }
+
+  if (isNT && !hasHGInterlinear) {
+    html += buildGreekSourceHTML(book, chapter, verse);
+  }
+  html += '</div>'; // close Hebrew pane
+
+  // ── Greek tab (when HG provides Hebrew as primary) ──
+  if (hasHGInterlinear) {
+    html += '<div class="il-tab-pane il-pane-greek">';
+    if (hasNTInterlinear) {
+      html += buildNTInterlinearHTML(ntData);
+    }
+    html += buildGreekSourceHTML(book, chapter, verse);
+    html += '</div>';
+  }
+
+  // ── Translations tab ──
+  html += `<div class="il-tab-pane il-pane-translations${defaultTab === 'translations' ? ' active' : ''}">`;
+  html += buildTranslationsTabHTML(book, chapter, verse, ref);
+  html += '</div>';
+
+  // ── Notes tab ──
+  if (hasNotes) {
+    html += '<div class="il-tab-pane il-pane-notes">';
+    html += buildNotesTabHTML(hgVerseNotes);
+    html += '</div>';
+  }
+
+  // ── Links tab ──
+  if (hasLinks) {
+    html += `<div class="il-tab-pane il-pane-links${defaultTab === 'links' ? ' active' : ''}">`;
+    html += buildLinksTabHTML(book, chapter, verse, bookRefs, vstudy, hasCrossRefs);
+    html += '</div>';
+  }
+
+  // ── Events tab ──
+  if (hasEvents) {
+    html += `<div class="il-tab-pane il-pane-events${defaultTab === 'events' ? ' active' : ''}">`;
+    html += buildEventsTabHTML(tlData);
+    html += '</div>';
+  }
+
+  return { html, defaultTab };
+}
+
+// ── Extracted interlinear builders (reused from showInterlinear internals) ──
+
+function buildHGInterlinearHTML(hgWords) {
+  let html = '<div class="interlinear-words-container il-hebrew">';
+  for (let i = 0; i < hgWords.length; i++) {
+    const [hebrewText, strongsNum, gloss] = hgWords[i];
+    const escapedGloss = (gloss || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const escapedHebrew = hebrewText.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    html += `<div class="il-word-block il-clickable"
+      data-strongs="${strongsNum || ''}"
+      data-hebrew="${escapedHebrew}"
+      onclick="handleInterlinearTap(this, event)"
+      onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)">
+      <span class="il-original">${hebrewText}</span>
+      <span class="il-gloss">${gloss || '—'}</span>
+    </div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+function buildOTInterlinearHTML(book, chapter, verse, otWords) {
+  const showVowels = getVowelPointingSetting();
+  const taggedText = getStrongsTaggedVerse(book, chapter, verse);
+  const glossMap = buildStrongsGlossMap(taggedText);
+  const glossIdx = new Map();
+
+  let html = '<div class="interlinear-words-container il-hebrew">';
+  for (let i = 0; i < otWords.length; i++) {
+    const [hebrewText, lemma, morphCode] = otWords[i];
+    const lang = getMorphhbLang(morphCode);
+    const strongsNum = typeof primaryStrongsFromLemma === 'function' ? primaryStrongsFromLemma(lemma, lang) : '';
+
+    let gloss = '';
+    const baseStrongs = strongsNum ? strongsNum.replace(/[a-z]$/, '') : '';
+    const glossKey = glossMap.has(strongsNum) ? strongsNum : (glossMap.has(baseStrongs) ? baseStrongs : '');
+    if (glossKey) {
+      const words = glossMap.get(glossKey);
+      const idx = glossIdx.get(glossKey) || 0;
+      if (idx < words.length) { gloss = words[idx]; glossIdx.set(glossKey, idx + 1); }
+      else { gloss = words[0]; }
+    }
+    if (!gloss && strongsNum && typeof getWordGloss === 'function') {
+      gloss = getWordGloss(lemma, lang, typeof strongsHebrewDictionary !== 'undefined' ? strongsHebrewDictionary : {});
+    }
+
+    const decoded = typeof decodeMorphology === 'function' ? decodeMorphology(morphCode) : null;
+    const morphDesc = decoded ? decoded.description : '';
+    const prefixes = typeof getPrefixMeanings === 'function' ? getPrefixMeanings(lemma) : [];
+    const prefixLabel = prefixes.length > 0 ? prefixes.join('+') + '+' : '';
+    const verbPronoun = getVerbPronoun(decoded);
+
+    const hebrewParts = hebrewText.split('/');
+    let displayHebrew;
+    if (hebrewParts.length > 1) {
+      const prefixHebrew = hebrewParts.slice(0, -1).join('');
+      const rootHebrew = hebrewParts[hebrewParts.length - 1];
+      displayHebrew = `<span class="il-hebrew-prefix">${prefixHebrew}</span>${rootHebrew}`;
+    } else {
+      displayHebrew = hebrewText;
+    }
+
+    let displayGloss = gloss || '—';
+    if (verbPronoun || prefixLabel) {
+      const prefix = prefixLabel ? `<span class="il-prefix">${prefixLabel}</span>` : '';
+      const pronoun = verbPronoun ? `<span class="il-prefix">${verbPronoun}</span>` : '';
+      displayGloss = prefix + pronoun + (gloss || '—');
+    }
+
+    const plainHebrew = hebrewText.replace(/\//g, '');
+    const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const escapedMorphDesc = morphDesc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const escapedHebrew = plainHebrew.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const escapedMorphCode = (morphCode || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const escapedLemma = (lemma || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const renderedHebrew = showVowels ? displayHebrew : displayHebrew.replace(HEBREW_DIACRITICS_RE, '');
+
+    html += `<div class="il-word-block il-clickable"
+      data-strongs="${strongsNum || ''}"
+      data-morph-desc="${escapedMorphDesc}"
+      data-morph-code="${escapedMorphCode}"
+      data-lemma="${escapedLemma}"
+      data-hebrew="${escapedHebrew}"
+      onclick="handleInterlinearTap(this, event)"
+      onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)">
+      <span class="il-original" data-voweled="${displayHebrew.replace(/"/g, '&quot;')}">${renderedHebrew}</span>
+      <span class="il-gloss">${displayGloss}</span>
+    </div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+function buildNTInterlinearHTML(ntData) {
+  const originalWords = ntData.g;
+  let html = '<div class="interlinear-words-container">';
+  for (let i = 0; i < originalWords.length; i++) {
+    const word = originalWords[i];
+    const engWord = ntData.e[i];
+    const strongs = engWord?.s || '';
+    const gloss = engWord?.g || engWord?.e || '';
+    const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const originalText = word.g;
+    html += `<div class="il-word-block il-clickable"
+      data-strongs="${strongs}"
+      onclick="handleInterlinearTap(this, event)"
+      onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)">
+      <span class="il-original">${originalText}</span>
+      <span class="il-gloss">${gloss}</span>
+    </div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+function buildGreekSourceHTML(book, chapter, verse) {
+  const greekVerse = Bible.isLoaded('greek_nt') ? Bible.getVerse('greek_nt', book, chapter, verse) : null;
+  let html = `<div class="interlinear-source-text" id="il-greek-${book.replace(/\s/g,'-')}-${chapter}-${verse}">
+    <div class="il-source-header"><span class="il-source-label">Greek NT</span></div>
+    <div class="il-source-text-content">${greekVerse ? greekVerse.text : '<span style="color:var(--text-tertiary);font-style:italic;">Loading Greek NT...</span>'}</div>
+  </div>`;
+  if (!greekVerse) setTimeout(() => loadAndShowGreekNT(book, chapter, verse), 0);
+  return html;
+}
+
+function buildTranslationsTabHTML(book, chapter, verse, ref) {
+  const isNT = isNTBook(book);
+  const { visible: visibleTranslations, hidden: hiddenTranslations, notLoaded: notLoadedTranslations } = Bible.getOrderedTranslations();
+  const primaryIds = visibleTranslations.map(t => t.id);
+  const moreIds = [...hiddenTranslations, ...notLoadedTranslations].map(t => t.id).filter(id => id !== currentTranslation);
+
+  let html = '<div class="interlinear-translations">';
+  for (const tid of primaryIds) {
+    if (tid === currentTranslation) continue;
+    if (isNT && tid === 'lxx') continue;
+    const otherVerse = Bible.getVerse(tid, book, chapter, verse);
+    if (!otherVerse) continue;
+    const reg = Bible.getTranslation(tid);
+    const isGreekTrans = tid === 'lxx';
+    let compText = otherVerse.text;
+    if (typeof TranslationPatches !== 'undefined' && TranslationPatches.highlightComparison) {
+      compText = TranslationPatches.highlightComparison(ref, compText, tid);
+    }
+    html += `<div class="interlinear-trans-row${isGreekTrans ? ' interlinear-trans-greek' : ''}">
+      <span class="interlinear-trans-label">${reg ? reg.name : tid.toUpperCase()}</span>
+      <span class="interlinear-trans-text">${compText}</span>
+    </div>`;
+  }
+  if (moreIds.length > 0) {
+    const escapedBook = book.replace(/'/g, "\\'");
+    html += `<div class="interlinear-more-section">
+      <button class="interlinear-more-btn" onclick="expandMoreTranslations(this, '${escapedBook}', ${chapter}, ${verse})">+ ${moreIds.length} more translations</button>
+      <div class="interlinear-more-content" data-translation-ids="${moreIds.join(',')}">
+        <div class="interlinear-more-loading" style="display:none;">Loading translations...</div>
+      </div>
+    </div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+function buildNotesTabHTML(hgVerseNotes) {
+  let html = '<div class="hg-verse-notes">';
+  const noteSections = [
+    { key: 'one_way_hebrew', title: 'Hebrew Primacy — One-Way Translation', cssClass: 'hg-note-oneway' },
+    { key: 'greek_deviations', title: 'Greek Deviations', cssClass: 'hg-note-deviation' },
+    { key: 'contradictions', title: 'Contradictions with OT / Gospels', cssClass: 'hg-note-contradiction' },
+    { key: 'translation_notes', title: 'Translation Notes', cssClass: '' },
+    { key: 'textual_notes', title: 'Textual Notes', cssClass: '' }
+  ];
+  for (const { key, title, cssClass } of noteSections) {
+    const items = hgVerseNotes[key];
+    if (items && items.length > 0) {
+      html += '<div class="hg-notes-section">';
+      html += `<div class="hg-notes-section-title">${title}</div>`;
+      for (const note of items) {
+        html += `<div class="hg-note-item ${cssClass}">${note}</div>`;
+      }
+      html += '</div>';
+    }
+  }
+  html += '</div>';
+  return html;
+}
+
+function _renderCrossRefCard(ref) {
+  const p = ref.parsed;
+  let verseText = '';
+  if (typeof getVerseText === 'function') {
+    verseText = getVerseText(`${p.book} ${p.chapter}:${p.verseStart}`) || '';
+    if (verseText.length > 120) verseText = verseText.substring(0, 117) + '...';
+  }
+  return `<div class="verse-link-card cross-ref-link" onclick="goToScriptureFromSidebar('${ref.display.replace(/'/g, "\\'")}')">
+    <span class="verse-link-label">${ref.display}</span>
+    ${verseText ? `<span class="verse-link-desc">${verseText}</span>` : ''}
+  </div>`;
+}
+
+function buildLinksTabHTML(book, chapter, verse, bookRefs, vstudy, hasCrossRefs) {
+  let html = '';
+
+  // Time Tested content first
+  if (bookRefs && bookRefs.length > 0) {
+    html += '<div class="verse-links-section"><div class="verse-links-section-title">Referenced in Time Tested</div>';
+    const seen = new Set();
+    for (const ref of bookRefs) {
+      const key = `${ref.chapter}-${ref.title}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const url = typeof getChapterUrl === 'function' ? getChapterUrl(ref.chapter, ref.anchor) : '#';
+      html += `<a href="${url}" class="verse-link-card">
+        <span class="verse-link-label">Chapter ${parseInt(ref.chapter)}</span>
+        <span class="verse-link-title">${ref.title}</span>
+      </a>`;
+    }
+    html += '</div>';
+  }
+
+  if (vstudy) {
+    html += `<div class="verse-links-section"><div class="verse-links-section-title">Verse Study</div>
+      <button class="verse-link-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${vstudy.id}'}})">
+        <span class="verse-link-label">${vstudy.ref || ''}</span>
+        <span class="verse-link-title">${vstudy.title}</span>
+        ${vstudy.desc ? `<span class="verse-link-desc">${vstudy.desc}</span>` : ''}
+      </button>
+    </div>`;
+  }
+
+  if (hasCrossRefs) {
+    const refs = (typeof getCrossReferencesSync === 'function') ? getCrossReferencesSync(book, chapter, verse) : [];
+    if (refs.length > 0) {
+      html += '<div class="verse-links-section"><div class="verse-links-section-title">Cross References</div>';
+      const maxRefs = 15;
+      const displayRefs = refs.slice(0, maxRefs);
+      for (const ref of displayRefs) {
+        html += _renderCrossRefCard(ref);
+      }
+      if (refs.length > maxRefs) {
+        const hiddenRefs = refs.slice(maxRefs);
+        const hiddenHtml = hiddenRefs.map(r => _renderCrossRefCard(r)).join('');
+        html += `<div class="verse-links-expand">
+          <button class="verse-links-expand-btn" onclick="this.parentElement.querySelector('.verse-links-hidden').style.display='block';this.style.display='none';">Show ${hiddenRefs.length} more</button>
+          <div class="verse-links-hidden" style="display:none">${hiddenHtml}</div>
+        </div>`;
+      }
+      html += '</div>';
+    }
+  }
+
+  if (!html) html = '<div class="interlinear-no-data">No links available for this verse.</div>';
+  return html;
+}
+
+function buildEventsTabHTML(tlData) {
+  if (!tlData || !tlData.events || tlData.events.length === 0) {
+    return '<div class="interlinear-no-data">No timeline events for this verse.</div>';
+  }
+  let html = '';
+  for (const ev of tlData.events) {
+    const title = (ev.title || '').replace(/📅\s*/g, '');
+    const dateStr = _getResolvedEventDate(ev.id)
+      || ((typeof _formatEventDate === 'function' && tlData.date) ? _formatEventDate(tlData.date) : '');
+    const desc = ev.description || '';
+    html += `<div class="verse-event-card" onclick="navigateToVerseEvent('${ev.id}', event)">
+      <div class="verse-event-title">${title}</div>
+      ${dateStr ? `<div class="verse-event-date">${dateStr}</div>` : ''}
+      ${desc ? `<div class="verse-event-desc">${desc}</div>` : ''}
+    </div>`;
+  }
+  return html;
+}
+
+// ── Research panel updates ──
+
+function updateResearchPanelForVerse(book, chapter, verse) {
+  const contentEl = document.getElementById('research-panel-content');
+  if (!contentEl) return;
+
+  const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(book, chapter, verse) : null;
+  const vstudy = (typeof getVerseStudy === 'function') ? getVerseStudy(book, chapter, verse) : null;
+  const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(book, chapter, verse) : false;
+
+  let html = '<button class="research-panel-back-btn" onclick="collapseResearchPanel()">← Back to chapter</button>';
+  html += `<div class="research-panel-verse-header">${book} ${chapter}:${verse}</div>`;
+  html += buildLinksTabHTML(book, chapter, verse, bookRefs, vstudy, hasCrossRefs);
+  html += '<hr class="research-panel-divider">';
+  html += renderChapterResearchContent();
+  contentEl.innerHTML = html;
+}
+
+function updateResearchPanelForChapter() {
+  const contentEl = document.getElementById('research-panel-content');
+  if (!contentEl) return;
+  // Only refresh if panel is showing chapter-level content (not Strong's, HG notes, or verse-specific)
+  if (contentEl.querySelector('.strongs-panel-content') ||
+      contentEl.querySelector('.strongs-lemma') ||
+      contentEl.querySelector('.hg-chapter-notes') ||
+      contentEl.querySelector('.research-panel-verse-header')) return;
+  contentEl.innerHTML = renderChapterResearchContent();
+}
+
+function _getResolvedEventDate(eventId) {
+  const resolved = (typeof getTimelineResolvedEvents === 'function') ? getTimelineResolvedEvents() : [];
+  const ev = resolved.find(r => r.id === eventId);
+  if (!ev || !ev.startGregorian) return '';
+  const g = ev.startGregorian;
+  if (g.year == null) return '';
+  const yearStr = g.year < 0 ? `${Math.abs(g.year)} BC` : `${g.year} AD`;
+  if (g.month && g.day) return `${yearStr}, Month ${g.month}, Day ${g.day}`;
+  if (g.month) return `${yearStr}, Month ${g.month}`;
+  return yearStr;
+}
+
+function renderChapterResearchContent() {
+  let html = '<button class="research-panel-back-btn" onclick="collapseResearchPanel()">← Back to chapter</button>';
+
+  const book = bibleExplorerState.currentBook;
+  const ch = bibleExplorerState.currentChapter;
+  if (book && ch && typeof getVerseTimelineEvents === 'function') {
+    const chapterEvents = [];
+    const seenIds = new Set();
+    const chapterVerseCount = Bible.getChapter(currentTranslation, book, ch)?.length || 0;
+    for (let v = 1; v <= chapterVerseCount; v++) {
+      const tlData = getVerseTimelineEvents(book, ch, v);
+      if (!tlData) continue;
+      for (const ev of tlData.events) {
+        if (seenIds.has(ev.id)) continue;
+        seenIds.add(ev.id);
+        chapterEvents.push({ ev, date: tlData.date });
+      }
+    }
+    if (chapterEvents.length > 0) {
+      html += '<div class="research-panel-section"><div class="research-panel-section-title">Timeline Events</div>';
+      for (const { ev, date } of chapterEvents) {
+        const title = (ev.title || '').replace(/📅\s*/g, '');
+        const dateStr = _getResolvedEventDate(ev.id)
+          || ((typeof _formatEventDate === 'function' && date) ? _formatEventDate(date) : '');
+        html += `<div class="verse-event-card" onclick="navigateToVerseEvent('${ev.id}', event)">
+          <div class="verse-event-title">${title}</div>
+          ${dateStr ? `<div class="verse-event-date">${dateStr}</div>` : ''}
+        </div>`;
+      }
+      html += '</div>';
+    }
+  }
+
+  // Chapter-level verse studies
+  html += renderVerseStudyCards();
+
+  html += '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+  return html;
+}
+
+// Show interlinear display for a verse (legacy — still used by multiverse view)
 // verseElOrId: optional - for multiverse use unique id (e.g. 'mv-Dan-9-23') or pass element
 async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   if (event) event.stopPropagation();
@@ -1708,23 +2348,19 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
   // Tab bar (vowel toggle moved inside Hebrew pane)
   html += '<div class="il-tabs">';
   if (hasHGInterlinear) {
-    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">Hebrew</button>`;
-    html += `<button class="il-tab" data-tab="greek" onclick="switchInterlinearTab(this, 'greek')">Greek</button>`;
+    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')"><span class="il-tab-icon">⇄</span><span class="il-tab-label">Hebrew</span></button>`;
+    html += `<button class="il-tab" data-tab="greek" onclick="switchInterlinearTab(this, 'greek')"><span class="il-tab-icon">⇄</span><span class="il-tab-label">Greek</span></button>`;
   } else {
-    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')">${langLabel}</button>`;
+    html += `<button class="il-tab${defaultTab === 'hebrew' ? ' active' : ''}" data-tab="hebrew" onclick="switchInterlinearTab(this, 'hebrew')"><span class="il-tab-icon">⇄</span><span class="il-tab-label">${langLabel}</span></button>`;
   }
-  html += `<button class="il-tab${defaultTab === 'translations' ? ' active' : ''}" data-tab="translations" onclick="switchInterlinearTab(this, 'translations')">Translations</button>`;
+  html += `<button class="il-tab${defaultTab === 'translations' ? ' active' : ''}" data-tab="translations" onclick="switchInterlinearTab(this, 'translations')"><span class="il-tab-icon">☰</span><span class="il-tab-label">Translations</span></button>`;
   if (hasNotes) {
-    html += `<button class="il-tab" data-tab="notes" onclick="switchInterlinearTab(this, 'notes')">Notes</button>`;
+    html += `<button class="il-tab" data-tab="notes" onclick="switchInterlinearTab(this, 'notes')"><span class="il-tab-icon">📝</span><span class="il-tab-label">Notes</span></button>`;
   }
   html += '</div>';
 
   // ── Hebrew/Greek tab pane ──
   html += `<div class="il-tab-pane il-pane-hebrew${defaultTab === 'hebrew' ? ' active' : ''}">`;
-  // Vowel toggle inside the Hebrew pane (OT only)
-  if (!isNT) {
-    html += `<div class="il-vowel-toggle-container"><label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowels</label></div>`;
-  }
 
   // Word-for-word interlinear
   if (hasHGInterlinear) {
@@ -1854,6 +2490,11 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
     html += '</div>';
   } else {
     html += '<div class="interlinear-no-data">Word-for-word interlinear data not available for this verse.</div>';
+  }
+
+  // Vowel toggle at bottom of Hebrew pane (OT only)
+  if (!isNT) {
+    html += `<div class="il-vowel-toggle-container"><label class="il-vowel-toggle-inline"><input type="checkbox" ${showVowels ? 'checked' : ''} onchange="toggleVowelPointing(this)"> Vowels</label></div>`;
   }
 
   // NT: Greek source text — goes in separate Greek tab when HG exists, otherwise in Hebrew/Greek pane
@@ -2048,17 +2689,19 @@ function toggleInterlinearOriginal(btnEl) {
 
 // Switch between interlinear tabs (Hebrew/Greek vs Translations)
 function switchInterlinearTab(btnEl, tabName) {
-  const display = btnEl.closest('.interlinear-display');
+  const display = btnEl.closest('.verse-expansion') || btnEl.closest('.interlinear-display');
   if (!display) return;
-  
-  // Update tab buttons
+
   display.querySelectorAll('.il-tab').forEach(t => t.classList.remove('active'));
   btnEl.classList.add('active');
-  
-  // Update tab panes
+
   display.querySelectorAll('.il-tab-pane').forEach(p => p.classList.remove('active'));
   const targetPane = display.querySelector(`.il-pane-${tabName}`);
   if (targetPane) targetPane.classList.add('active');
+
+  if (typeof AppStore !== 'undefined') {
+    AppStore.dispatch({ type: 'SET_INTERLINEAR_TAB', tab: tabName, replace: true });
+  }
 }
 
 // Highlight the Hebrew word in interlinear that matches the open Strong's panel
@@ -2093,7 +2736,7 @@ function toggleVowelPointing(checkbox) {
   try { localStorage.setItem('hebrew_vowel_pointing', String(showVowels)); } catch (e) {}
   
   // Apply to all visible interlinear word blocks
-  const interlinearDisplay = checkbox.closest('.interlinear-display');
+  const interlinearDisplay = checkbox.closest('.verse-expansion') || checkbox.closest('.interlinear-display');
   if (!interlinearDisplay) return;
   
   interlinearDisplay.querySelectorAll('.il-original').forEach(el => {
@@ -4580,9 +5223,11 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
     html += `
       <div class="strongs-lemma">${entry.lemma || ''}</div>
       <div class="strongs-transliteration">${entry.xlit || ''} <span class="strongs-pronunciation">(${entry.pron || ''})</span></div>
+      ${entry.pos ? `<div class="strongs-pos">${entry.pos}</div>` : ''}
       <div class="strongs-definition">${linkifyStrongsRefs(entry.strongs_def || '')}</div>
       ${entry.kjv_def ? `<div class="strongs-kjv-usage"><strong>KJV:</strong> ${linkifyStrongsRefs(entry.kjv_def)}</div>` : ''}
       ${entry.derivation ? `<div class="strongs-derivation"><strong>Derivation:</strong> ${expandDerivation(entry.derivation)}</div>` : ''}
+      ${entry.thayer ? `<details class="strongs-thayer-section" open><summary class="strongs-thayer-summary">Thayer's Definition</summary><div class="strongs-thayer-content">${linkifyStrongsRefs(entry.thayer)}</div></details>` : ''}
     `;
   } else {
     html += `<div class="strongs-gloss">No definition available for ${strongsNum}</div>`;
@@ -4791,9 +5436,11 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     html += `
       <div class="strongs-lemma">${entry.lemma || ''}</div>
       <div class="strongs-transliteration">${entry.xlit || ''} <span class="strongs-pronunciation">(${entry.pron || ''})</span></div>
+      ${entry.pos ? `<div class="strongs-pos">${entry.pos}</div>` : ''}
       <div class="strongs-definition">${linkifyStrongsRefs(entry.strongs_def || '')}</div>
       ${entry.kjv_def ? `<div class="strongs-kjv-usage"><strong>KJV:</strong> ${linkifyStrongsRefs(entry.kjv_def)}</div>` : ''}
       ${entry.derivation ? `<div class="strongs-derivation"><strong>Derivation:</strong> ${expandDerivation(entry.derivation)}</div>` : ''}
+      ${entry.thayer ? `<details class="strongs-thayer-section"><summary class="strongs-thayer-summary">Thayer's Definition</summary><div class="strongs-thayer-content">${linkifyStrongsRefs(entry.thayer)}</div></details>` : ''}
     `;
   } else {
     html += `<div class="strongs-gloss">${gloss || 'No definition available'}</div>`;
@@ -4973,9 +5620,9 @@ function renderVerseStudyCards() {
   return html;
 }
 
-// Render default research panel content — verse study cards + welcome message
+// Render default research panel content — chapter events + verse studies + welcome
 function renderDefaultResearchContent() {
-  return renderVerseStudyCards() + '<div class="research-panel-welcome">Click on words to dig deeper</div>';
+  return renderChapterResearchContent();
 }
 
 // Verse study lookup — check if a verse has an associated verse study
@@ -5168,6 +5815,9 @@ function renderInlineStrongs(taggedText, reference) {
       leadingText = textBefore.slice(0, splitIdx + 1);
       word = textBefore.slice(splitIdx + 1);
     }
+
+    // Strip poetry markers from word (they stay in leadingText for renderPoetryLines)
+    word = word.replace(/[\u200B\u200C]/g, '');
 
     // Check for name substitution BEFORE rendering leading text
     // (divine name H3068 needs "the " stripped from leading text)
@@ -6238,6 +6888,19 @@ function goToScriptureFromSidebar(bookOrRef, chapter, verse) {
 
 // Initialize Bible Explorer
 function initBibleExplorer() {
+  // Load verse formatting data in background (section headings, poetry flags, etc.)
+  loadVerseFormatting();
+
+  // Pre-warm resolved events cache so chapter event dates are available
+  if (typeof ResolvedEventsCache !== 'undefined' && typeof getTimelineProfile === 'function') {
+    const profile = getTimelineProfile();
+    if (profile && !ResolvedEventsCache.isCached(profile)) {
+      ResolvedEventsCache.getEventsAsync(profile).then(() => {
+        if (typeof updateResearchPanelForChapter === 'function') updateResearchPanelForChapter();
+      });
+    }
+  }
+
   // Restore saved translation preference
   const savedTranslation = getSavedTranslationPreference();
   if (savedTranslation && (Bible.getTranslation(savedTranslation) || BIBLE_TRANSLATIONS[savedTranslation])) {
@@ -6754,6 +7417,143 @@ function selectBibleChapter(chapter, addToHistory = true) {
   updateBibleExplorerURL(bibleExplorerState.currentBook, chapter, null);
 }
 
+// Render verse text with invisible Unicode poetry line breaks (Layer 2).
+// \u200B = line break, \u200C after \u200B = indent level 2.
+// proseIntro: if true, the first segment is prose (not wrapped in q1) — for mixed verses.
+function renderPoetryLines(verseTextHtml, proseIntro = false) {
+  if (!verseTextHtml.includes('\u200B')) return verseTextHtml;
+
+  // HTML-aware split: only break on \u200B that appears in text content,
+  // not inside HTML tags or attributes (which would break the markup).
+  const segments = [];
+  let current = '';
+  let inTag = false;
+  for (let i = 0; i < verseTextHtml.length; i++) {
+    const ch = verseTextHtml[i];
+    if (ch === '<') { inTag = true; current += ch; continue; }
+    if (ch === '>') { inTag = false; current += ch; continue; }
+    if (!inTag && ch === '\u200B') {
+      segments.push(current);
+      current = '';
+      continue;
+    }
+    if (inTag && ch === '\u200B') continue;
+    current += ch;
+  }
+  segments.push(current);
+
+  if (segments.length <= 1) return segments[0] || verseTextHtml;
+
+  // First segment: prose intro (unwrapped) or q1
+  let result = proseIntro
+    ? segments[0]
+    : `<span class="verse-poetry-line q1">${segments[0]}</span>`;
+
+  for (let i = 1; i < segments.length; i++) {
+    const seg = segments[i];
+    if (seg.startsWith('\u200C') || seg.charCodeAt(0) === 0x200C) {
+      result += `<span class="verse-poetry-line q2">${seg.slice(1)}</span>`;
+    } else {
+      result += `<span class="verse-poetry-line q1">${seg}</span>`;
+    }
+  }
+  return result;
+}
+
+// Split long q1 poetry lines at commas to add missing line breaks.
+// Handles nested spans (Strong's words) by tracking tag depth.
+function splitLongPoetryLines(html) {
+  const Q1_OPEN = '<span class="verse-poetry-line q1">';
+  const SPAN_CLOSE = '</span>';
+  let result = '';
+  let pos = 0;
+
+  while (pos < html.length) {
+    const q1Start = html.indexOf(Q1_OPEN, pos);
+    if (q1Start < 0) { result += html.slice(pos); break; }
+
+    result += html.slice(pos, q1Start);
+
+    // Find the matching </span> by tracking depth
+    let depth = 1;
+    let i = q1Start + Q1_OPEN.length;
+    while (i < html.length && depth > 0) {
+      if (html.startsWith('<span', i)) depth++;
+      if (html.startsWith('</span>', i)) { depth--; if (depth === 0) break; }
+      i++;
+    }
+    const content = html.slice(q1Start + Q1_OPEN.length, i);
+    pos = i + SPAN_CLOSE.length;
+
+    // Check if this q1 span has commas in text content worth splitting
+    let hasTextComma = false;
+    let inTag = false;
+    for (let j = 0; j < content.length; j++) {
+      if (content[j] === '<') inTag = true;
+      if (content[j] === '>') { inTag = false; continue; }
+      if (!inTag && content[j] === ',') { hasTextComma = true; break; }
+    }
+
+    if (!hasTextComma) {
+      result += Q1_OPEN + content + SPAN_CLOSE;
+      continue;
+    }
+
+    // Split at commas in text content (not inside HTML tags)
+    const parts = [];
+    let current = '';
+    inTag = false;
+    for (let j = 0; j < content.length; j++) {
+      const ch = content[j];
+      if (ch === '<') inTag = true;
+      if (ch === '>') { inTag = false; current += ch; continue; }
+      if (!inTag && ch === ',') {
+        current += ch;
+        parts.push(current);
+        current = '';
+        continue;
+      }
+      current += ch;
+    }
+    if (current) parts.push(current);
+
+    if (parts.length <= 1) {
+      result += Q1_OPEN + content + SPAN_CLOSE;
+    } else {
+      result += parts.map((p, idx) =>
+        `<span class="verse-poetry-line ${idx === 0 ? 'q1' : 'q2'}">${p}</span>`
+      ).join('');
+    }
+  }
+
+  return result;
+}
+
+// Fallback poetry line splitting for verses without explicit \u200B markers.
+// Splits at semicolons/colons — first segment q1, continuations q2.
+function splitPoetryAtPunctuation(html) {
+  const segments = [];
+  let current = '';
+  let inTag = false;
+  for (let i = 0; i < html.length; i++) {
+    const ch = html[i];
+    if (ch === '<') { inTag = true; current += ch; continue; }
+    if (ch === '>') { inTag = false; current += ch; continue; }
+    if (!inTag && (ch === ';' || ch === ':')) {
+      current += ch;
+      segments.push(current);
+      current = '';
+      continue;
+    }
+    current += ch;
+  }
+  if (current) segments.push(current);
+  if (segments.length <= 1) return html;
+  return segments.map((s, i) =>
+    `<span class="verse-poetry-line ${i === 0 ? 'q1' : 'q2'}">${s}</span>`
+  ).join('');
+}
+
 // Build chapter HTML (sync, for LCP: call with useInterlinear=false to paint immediately)
 function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
   const isNT = isNTBook(bookName);
@@ -6761,15 +7561,83 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
   const hasOriginalLang = hasInterlinear(bookName);
   const origLangClass = hasOriginalLang ? ' has-hebrew' : '';
   const interlinearTitle = isNTBook(bookName) ? 'Click to show interlinear Greek' : 'Click to show interlinear Hebrew';
-  let html = '<div class="bible-explorer-chapter">';
-  html += `<div class="bible-explorer-chapter-header">
-    <h2>${bookName}</h2>
-    <div class="chapter-subtitle">Chapter ${chapter}</div>
-  </div>`;
-  for (const verse of verses) {
-    const reference = `${bookName} ${chapter}:${verse.verse}`;
+  const fmt = getChapterFormatting(bookName, chapter);
 
-    // Apply translation patches to the raw text before rendering
+  // Pre-index formatting arrays into Sets for O(1) lookup
+  const poetrySet = fmt?.poetry ? new Set(fmt.poetry) : null;
+  const breakSet = fmt?.breaks ? new Set(fmt.breaks) : null;
+  const selahSet = fmt?.selah ? new Set(fmt.selah) : null;
+
+  // Index headings/sub/acrostic by verse number
+  const headingsByVerse = {};
+  if (fmt?.headings) for (const h of fmt.headings) (headingsByVerse[h.v] ||= []).push(h);
+  const subByVerse = {};
+  if (fmt?.sub) for (const s of fmt.sub) (subByVerse[s.v] ||= []).push(s);
+  const acrosticByVerse = {};
+  if (fmt?.acrostic) for (const a of fmt.acrostic) acrosticByVerse[a.v] = a.t;
+
+  // Detect all-poetry chapters (e.g. Psalms) to reduce indent on small screens
+  const allPoetry = poetrySet && verses.length > 0 && verses.every(v => poetrySet.has(v.verse));
+  const chapterClass = allPoetry ? ' all-poetry' : '';
+
+  let html = `<div class="bible-explorer-chapter${chapterClass}">`;
+  html += `<div class="bible-explorer-chapter-header">
+    <h2>${bookName} ${chapter}</h2>
+  </div>`;
+
+  // Book division (Psalms BOOK I-V)
+  if (fmt?.bookDiv) {
+    html += `<div class="chapter-book-division">
+      <span class="book-division-title">${fmt.bookDiv.title}</span>
+      <span class="book-division-range">${fmt.bookDiv.range || ''}</span>
+    </div>`;
+  }
+
+  let inParagraph = false;
+  const closeParagraph = () => { if (inParagraph) { html += '</div>'; inParagraph = false; } };
+  const openParagraph = () => { if (!inParagraph) { html += '<div class="verse-paragraph">'; inParagraph = true; } };
+
+  for (const verse of verses) {
+    const vn = verse.verse;
+    const reference = `${bookName} ${chapter}:${vn}`;
+    const isPoetry = poetrySet?.has(vn);
+
+    // --- Formatting elements before this verse (all block-level, close paragraph first) ---
+
+    const hasHeading = !!headingsByVerse[vn];
+    const hasSub = !!subByVerse[vn];
+    const hasSuperscription = fmt?.superscription && fmt.superscription.v === vn;
+    const hasAcrostic = !!acrosticByVerse[vn];
+
+    // Only close paragraph for structural elements (headings, superscriptions, acrostics).
+    // Breaks are too granular — they were designed for one-verse-per-line spacing.
+    if (hasHeading || hasSub || hasSuperscription || hasAcrostic) {
+      closeParagraph();
+    }
+
+    if (hasHeading) {
+      for (const h of headingsByVerse[vn]) {
+        html += `<div class="chapter-section-heading">${h.t}</div>`;
+        if (h.r) html += `<div class="chapter-cross-ref">${linkifyScriptureReferences(h.r)}</div>`;
+      }
+    }
+
+    if (hasSub) {
+      for (const s of subByVerse[vn]) {
+        html += `<div class="chapter-sub-heading">${linkifyScriptureReferences(s.t)}</div>`;
+      }
+    }
+
+    if (hasSuperscription) {
+      html += `<div class="psalm-superscription">${fmt.superscription.t}</div>`;
+    }
+
+    if (hasAcrostic) {
+      html += `<div class="chapter-acrostic">${acrosticByVerse[vn]}</div>`;
+    }
+
+    // --- Verse text ---
+
     let patchedStrongsText = verse.strongsText;
     let patchedPlainText = verse.text;
     if (typeof TranslationPatches !== 'undefined' && TranslationPatches.applyPatches) {
@@ -6784,53 +7652,50 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
 
     let verseText;
     if (patchedStrongsText) {
-      // Translation has inline Strong's tags — render them as clickable links
       verseText = renderInlineStrongs(patchedStrongsText, reference);
     } else if (hasOriginalLang && hasInterlinearData) {
-      // Fallback: KJV-style interlinear word matching (legacy path)
       verseText = renderVerseWithStrongs(bookName, chapter, verse.verse, verse.text);
     } else {
       let plainHtml = applySymbolHighlighting(applyVerseAnnotations(reference, patchedPlainText));
-      // Apply name preferences (regex path for non-Strong's translations)
       if (typeof applyNamePreferencesHTML === 'function') {
         plainHtml = applyNamePreferencesHTML(plainHtml);
       }
       verseText = plainHtml;
     }
-    // Convert patch markers to styled spans (after all rendering pipelines)
     if (typeof TranslationPatches !== 'undefined' && TranslationPatches.applyPatchMarkers) {
       verseText = TranslationPatches.applyPatchMarkers(verseText, reference);
     }
-    const bookRefs = (typeof getBookReferences === 'function') ? getBookReferences(bookName, chapter, verse.verse) : null;
-    const bookRefHtml = bookRefs && bookRefs.length > 0
-      ? `<span class="verse-book-ref" onclick="showBookRefPopup('${bookName}', ${chapter}, ${verse.verse}, event)" title="Referenced in A Time Tested Tradition">📖</span>`
-      : `<span class="verse-book-ref-spacer"></span>`;
-    const hasCrossRefs = (typeof hasCrossReferences === 'function') ? hasCrossReferences(bookName, chapter, verse.verse) : false;
-    const crossRefHtml = hasCrossRefs
-      ? `<span class="verse-cross-ref" onclick="showCrossRefPanel('${bookName}', ${chapter}, ${verse.verse}, event)" title="Cross References">🔗</span>`
-      : `<span class="verse-cross-ref-spacer"></span>`;
-    const vstudy = (typeof getVerseStudy === 'function') ? getVerseStudy(bookName, chapter, verse.verse) : null;
-    const verseStudyHtml = vstudy
-      ? `<span class="verse-study-ref" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${vstudy.id}'}})" title="Verse Study: ${vstudy.title}">📜</span>`
-      : '';
-    const tlData = (typeof getVerseTimelineEvents === 'function') ? getVerseTimelineEvents(bookName, chapter, verse.verse) : null;
-    let timelineHtml;
-    if (tlData && tlData.events.length > 0) {
-      const ev = tlData.events[0];
-      const title = (ev.title || '').replace(/📅\s*/g, '');
-      const dateStr = (typeof _formatEventDate === 'function' && tlData.date) ? _formatEventDate(tlData.date) : '';
-      const tipText = dateStr ? `${title} — ${dateStr}` : title;
-      timelineHtml = `<span class="verse-timeline-ref" data-tip="${tipText.replace(/"/g, '&quot;')}" onclick="navigateToVerseEvent('${ev.id}', event)"><img src="/assets/img/timeline_icon.png" alt="Timeline" class="verse-timeline-icon"></span>`;
-    } else {
-      timelineHtml = `<span class="verse-timeline-ref-spacer"></span>`;
+
+    // Apply poetry line breaks. For mixed verses (prose intro + poetry body),
+    // the first segment stays inline and subsequent segments get q1/q2 block spans.
+    const hasPoetryMarkers = verseText.includes('\u200B');
+    if (isPoetry || hasPoetryMarkers) {
+      verseText = renderPoetryLines(verseText, !isPoetry);
     }
-    const interlinearBtn = `<span class="verse-interlinear-ref" onclick="showInterlinear('${bookName.replace(/'/g, "\\'")}', ${chapter}, ${verse.verse}, event)" title="${interlinearTitle}">☰</span>`;
-    const verseNumSpan = `<span class="bible-verse-number" onclick="copyVerseReference('${bookName}', ${chapter}, ${verse.verse})" title="Click to copy reference">${verse.verse}</span>`;
-    html += `<div class="bible-explorer-verse${origLangClass}" id="verse-${verse.verse}">
-      <div class="verse-meta">${bookRefHtml}${crossRefHtml}${verseStudyHtml}${timelineHtml}${interlinearBtn}${verseNumSpan}</div>
-      <span class="bible-verse-text">${verseText}</span>
-    </div>`;
+    // For poetry verses, apply punctuation-based splitting to any long q1 spans
+    // that didn't get broken up by \u200B markers (cross-translation vocabulary gaps).
+    if (isPoetry) {
+      verseText = splitLongPoetryLines(verseText);
+    }
+
+    const poetryClass = isPoetry ? ' verse-poetry' : '';
+
+    if (isPoetry) {
+      closeParagraph();
+    } else {
+      openParagraph();
+    }
+
+    const escapedBook = bookName.replace(/'/g, "\\'");
+    const verseNumSpan = `<span class="bible-verse-number" onclick="onVerseTap('${escapedBook}', ${chapter}, ${vn})" title="Tap for interlinear &amp; details">${vn}</span>`;
+    html += `<div class="bible-explorer-verse${origLangClass}${poetryClass}" id="verse-${vn}">${verseNumSpan}<span class="bible-verse-text">${verseText}</span></div> `;
+
+    // Selah after verse (inline span so it flows with text)
+    if (selahSet?.has(vn)) {
+      html += '<span class="verse-selah">Selah</span>';
+    }
   }
+  closeParagraph();
   html += `
     <div class="bible-chapter-nav bible-chapter-nav-in-content">
       <button type="button" id="bible-prev-chapter" class="bible-nav-btn" onclick="prevBibleChapter()" title="Previous chapter">◁ Prev</button>

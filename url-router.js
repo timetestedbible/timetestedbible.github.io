@@ -318,6 +318,7 @@ const URLRouter = {
         searchQuery: null,
         personId: null,
         interlinearVerse: null,
+        interlinearTab: null,
         timelineEventId: null,
         timelineDurationId: null,
         timelineFocusedEventId: null,
@@ -519,10 +520,18 @@ const URLRouter = {
       result.ui.personId = searchParams.get('person');
     }
     if (searchParams.get('verse')) {
-      result.content.params.verse = parseInt(searchParams.get('verse'));
+      const verseNum = parseInt(searchParams.get('verse'));
+      result.content.params.verse = verseNum;
+      // Selected verse implies interlinear expansion
+      if (!searchParams.get('il')) {
+        result.ui.interlinearVerse = verseNum;
+      }
     }
     if (searchParams.get('il')) {
       result.ui.interlinearVerse = parseInt(searchParams.get('il'));
+    }
+    if (searchParams.get('ilt')) {
+      result.ui.interlinearTab = searchParams.get('ilt');
     }
     // Timeline-specific params (only parse on timeline view)
     if (result.content.view === 'timeline') {
@@ -951,6 +960,9 @@ const URLRouter = {
     }
     if (ui.interlinearVerse && isBibleContent) {
       params.set('il', ui.interlinearVerse);
+      if (ui.interlinearTab) {
+        params.set('ilt', ui.interlinearTab);
+      }
     }
     // Timeline params - event/duration/search are mutually exclusive for detail panel
     // Focused event can exist alongside others (it's just highlighting)

@@ -126,6 +126,7 @@ button {
 .top-nav.nav-hidden {
   transform: translateY(-100%);
   transition: transform 0.25s ease, margin-bottom 0.25s ease;
+  pointer-events: none;
 }
 
 /* When sub-nav or search results are visible, expand header to fit */
@@ -3119,10 +3120,7 @@ body.view-reader:not(.reader-landing) .content-area {
   flex-shrink: 0;
 }
 
-/* Hide redundant chapter header - nav bar already shows book/chapter */
-.bible-explorer-chapter-header {
-  display: none !important;
-}
+/* Chapter header is now visible — shows "Book Chapter" title above verses */
 
 /* Mobile adjustments for Bible — body scroll with sticky header */
 @media (max-width: 768px) {
