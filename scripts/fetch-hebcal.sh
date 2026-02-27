@@ -10,4 +10,5 @@ URL="https://unpkg.com/@hebcal/core@${HEBCAL_VERSION}/dist/bundle.min.js"
 mkdir -p lib/hebcal
 echo "Fetching @hebcal/core@${HEBCAL_VERSION} to ${DEST}..."
 curl -sS -L -o "$DEST" "$URL"
+sed -i '' '/^\/\/# sourceMappingURL=/d' "$DEST"
 echo "Done. $(wc -c < "$DEST") bytes written to ${DEST}"

@@ -91,10 +91,11 @@ const ContentManager = {
         document.title = `${viewTitles[viewName]} — Time Tested Bible`;
       }
 
-      // Scroll to top when switching views
+      // Scroll to top and reset nav state when switching views
       if (this.contentArea) this.contentArea.scrollTop = 0;
       window.scrollTo(0, 0);
       document.body.scrollTop = 0;
+      if (typeof Layout !== 'undefined') Layout.resetScrollState();
       
       // Call init on new view if it exists
       if (view && typeof view.init === 'function') {
@@ -127,6 +128,11 @@ const ContentManager = {
     if (state.content && state.content.params && state.content.params.staticPage) {
       return;
     }
+
+    // Remove stale tooltips that may persist across navigation
+    document.querySelectorAll(
+      '#verse-hover-tooltip, #morph-hover-tooltip, #strongs-hover-tooltip, #strongs-btn-tooltip, .symbol-tooltip'
+    ).forEach(el => el.remove());
 
     // Render the view content
     if (view) {

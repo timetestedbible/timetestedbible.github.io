@@ -30,6 +30,7 @@ const Layout = {
   _navHidden: false,
   _scrollTicking: false,
   _scrollCooldownUntil: 0,
+  _marginTimer: 0,
   
   /**
    * Initialize the layout
@@ -396,6 +397,7 @@ const Layout = {
             if (!this._navHidden) {
               this._navHidden = true;
               this._scrollCooldownUntil = now + COOLDOWN_MS;
+              clearTimeout(this._marginTimer);
               nav.style.marginBottom = `-${nav.offsetHeight}px`;
               nav.classList.add('nav-hidden');
               document.body.classList.add('nav-hidden');
@@ -404,18 +406,38 @@ const Layout = {
         } else if (delta < 0) {
           this._scrollDownAccum = 0;
           if (this._navHidden) {
-            this._navHidden = false;
+            this.showNav();
             this._scrollCooldownUntil = now + COOLDOWN_MS;
-            nav.classList.remove('nav-hidden');
-            document.body.classList.remove('nav-hidden');
-            // Remove marginBottom after transition completes
-            nav.addEventListener('transitionend', () => {
-              if (!this._navHidden) nav.style.marginBottom = '';
-            }, { once: true });
           }
         }
       });
     }, { capture: true, passive: true });
+  },
+  
+  /**
+   * Show the top nav (undo scroll-hide). Safe to call even if already visible.
+   */
+  showNav() {
+    const nav = this.elements.topNav;
+    if (!nav) return;
+    this._navHidden = false;
+    this._scrollDownAccum = 0;
+    clearTimeout(this._marginTimer);
+    nav.classList.remove('nav-hidden');
+    document.body.classList.remove('nav-hidden');
+    this._marginTimer = setTimeout(() => {
+      if (!this._navHidden) nav.style.marginBottom = '';
+    }, 300);
+  },
+  
+  /**
+   * Reset scroll-hide tracking (call on view changes to avoid stale deltas).
+   */
+  resetScrollState() {
+    this.showNav();
+    this._lastScrollY_body = 0;
+    this._lastScrollY_content = 0;
+    this._scrollCooldownUntil = 0;
   },
   
   /**

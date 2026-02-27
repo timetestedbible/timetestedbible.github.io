@@ -119,13 +119,12 @@ button {
   padding: 0 var(--spacing-md);
   width: 100%;
   gap: var(--spacing-md);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, margin-bottom 0.25s ease;
 }
 
 /* Auto-hide on scroll-down, show on scroll-up */
 .top-nav.nav-hidden {
   transform: translateY(-100%);
-  transition: transform 0.25s ease, margin-bottom 0.25s ease;
   pointer-events: none;
 }
 
