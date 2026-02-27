@@ -76,6 +76,17 @@ if [ ! -d "node_modules" ]; then
     npm install
 fi
 
+# ── Build Jekyll site (electron bundles from _site/) ──
+echo -e "  ${YELLOW}Building Jekyll site...${NC}"
+cd "$SCRIPT_DIR/../.."
+if command -v bundle &>/dev/null; then
+    bundle exec jekyll build --quiet
+else
+    jekyll build --quiet
+fi
+cd "$SCRIPT_DIR"
+echo -e "  ${GREEN}Jekyll build complete${NC}"
+
 # ── Create output directory ──
 mkdir -p "${DIST_DIR}/logs"
 

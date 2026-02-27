@@ -55,11 +55,13 @@ enrichment.log
 notes/
 
 # Trash - deprecated files kept locally but not tracked
+_trash/
 http/.trash/
 
-# Legacy app versions — kept locally for migration reference only
+# Legacy app versions — moved to _trash
 http-v1/
 http-v2/
+http/
 
 # MorphHB source repo (cloned for build only, not committed)
 morphhb-source/

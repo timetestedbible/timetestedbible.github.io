@@ -31,6 +31,7 @@ const Layout = {
   _scrollTicking: false,
   _scrollCooldownUntil: 0,
   _marginTimer: 0,
+  _suppressHideUntil: 0,
   
   /**
    * Initialize the layout
@@ -58,6 +59,7 @@ const Layout = {
     this.setupDropdownHandlers();
     this.setupPWANavigation();
     this.setupScrollHide();
+    this.patchScrollIntoView();
     
     // Initial layout update
     this.updateLayout();
@@ -348,6 +350,24 @@ const Layout = {
   },
   
   /**
+   * Patch Element.scrollIntoView to automatically suppress nav hiding
+   * during programmatic scrolls (verse anchors, section jumps, etc.).
+   */
+  patchScrollIntoView() {
+    const origScrollIntoView = Element.prototype.scrollIntoView;
+    const layout = this;
+    Element.prototype.scrollIntoView = function(arg) {
+      layout.suppressHide(300);
+      if (typeof arg === 'object' && arg !== null) {
+        arg = Object.assign({}, arg, { behavior: 'instant' });
+      } else {
+        arg = { behavior: 'instant' };
+      }
+      return origScrollIntoView.call(this, arg);
+    };
+  },
+  
+  /**
    * Setup scroll-direction-aware auto-hide for the top nav.
    * Hides on scroll-down, shows immediately on any scroll-up.
    * Uses capture-phase listener on document to catch scroll events from ANY
@@ -358,6 +378,10 @@ const Layout = {
    * Uses a cooldown after toggling to prevent layout-shift feedback loops.
    */
   setupScrollHide() {
+    // Desktop and Electron: never hide the nav — plenty of screen space
+    const isDesktop = window.matchMedia('(min-width: 900px)').matches;
+    if (isDesktop || this._isElectron) return;
+    
     const HIDE_THRESHOLD = 40;
     const COOLDOWN_MS = 300;
     
@@ -390,6 +414,14 @@ const Layout = {
         
         const scrollEl = isBodyScroll ? document.documentElement : scrollTarget;
         const atBottom = (scrollEl.scrollHeight - scrollEl.clientHeight - currentY) < 50;
+        
+        // During suppression window (programmatic scrolls), don't hide — only allow show
+        if (now < this._suppressHideUntil) {
+          if (delta < 0 && this._navHidden) {
+            this.showNav();
+          }
+          return;
+        }
         
         if (delta > 0 && !atBottom) {
           this._scrollDownAccum = (this._scrollDownAccum || 0) + delta;
@@ -438,6 +470,17 @@ const Layout = {
     this._lastScrollY_body = 0;
     this._lastScrollY_content = 0;
     this._scrollCooldownUntil = 0;
+    this.suppressHide(800);
+  },
+  
+  /**
+   * Temporarily prevent nav from hiding (for programmatic scrolls like
+   * scrollIntoView after navigation). The nav can still show during this
+   * window, but won't hide — so user keeps their controls.
+   * @param {number} ms — suppression duration in milliseconds
+   */
+  suppressHide(ms) {
+    this._suppressHideUntil = performance.now() + (ms || 600);
   },
   
   /**

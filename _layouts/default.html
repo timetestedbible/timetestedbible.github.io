@@ -1146,8 +1146,64 @@
           document.querySelectorAll('.symbol-tooltip, .word-hover-tooltip, .hebrew-tooltip, .book-ref-popup').forEach(el => el.remove());
         }
       }, { passive: true });
+
+      // ── Welcome theme picker (first visit only) ──
+      try {
+        if (!localStorage.getItem('welcomeThemeShown')) {
+          setTimeout(() => showWelcomeThemePicker(), 1200);
+        }
+      } catch(e) {}
     });
-    
+
+    // ═══════════════════════════════════════════════════════════════════
+    // WELCOME THEME PICKER (first visit)
+    // ═══════════════════════════════════════════════════════════════════
+
+    function showWelcomeThemePicker() {
+      const overlay = document.createElement('div');
+      overlay.className = 'welcome-theme-overlay';
+      overlay.innerHTML = `
+        <div class="welcome-theme-card">
+          <h2>Welcome to Time Tested Bible</h2>
+          <p>Choose your preferred reading theme:</p>
+          <div class="welcome-theme-options">
+            <button class="settings-option-btn" data-theme="dark" onclick="previewWelcomeTheme('dark')">
+              <span class="option-icon">🌙</span>
+              <span class="option-label">Dark</span>
+            </button>
+            <button class="settings-option-btn" data-theme="light" onclick="previewWelcomeTheme('light')">
+              <span class="option-icon">☀️</span>
+              <span class="option-label">Light</span>
+            </button>
+            <button class="settings-option-btn" data-theme="auto" onclick="previewWelcomeTheme('auto')">
+              <span class="option-icon">🔄</span>
+              <span class="option-label">Auto</span>
+            </button>
+          </div>
+          <button class="welcome-theme-done" onclick="dismissWelcomeTheme()">Done</button>
+          <p class="welcome-theme-hint">You can change this anytime in <strong>Settings</strong> (☰ menu → Settings → Theme).</p>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      requestAnimationFrame(() => overlay.classList.add('visible'));
+    }
+
+    function previewWelcomeTheme(theme) {
+      AppStore.dispatch({ type: 'SET_THEME', theme });
+      document.querySelectorAll('.welcome-theme-options .settings-option-btn').forEach(btn => {
+        btn.classList.toggle('selected', btn.dataset.theme === theme);
+      });
+    }
+
+    function dismissWelcomeTheme() {
+      try { localStorage.setItem('welcomeThemeShown', '1'); } catch(e) {}
+      const overlay = document.querySelector('.welcome-theme-overlay');
+      if (overlay) {
+        overlay.classList.remove('visible');
+        setTimeout(() => overlay.remove(), 300);
+      }
+    }
+
     // ═══════════════════════════════════════════════════════════════════
     // PWA INSTALL FUNCTIONALITY
     // ═══════════════════════════════════════════════════════════════════

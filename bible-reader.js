@@ -35,7 +35,7 @@ const BIBLE_TRANSLATIONS = {
 
 // Translation data storage — legacy globals, now backed by Bible API proxies (defined below)
 // bibleTranslations and bibleIndexes are defined after Bible API is available.
-let currentTranslation = 'kjv';
+let currentTranslation = getDefaultTranslation();
 let translationsLoading = {};  // Track which translations are currently loading
 
 // Hebrew (WLC) — now managed by Bible API (bible.js)
@@ -1186,7 +1186,7 @@ function _mapTranslationId(id) {
 
 // Load Bible (backwards compatible - loads KJV)
 async function loadBible(showDialog = false) {
-  return loadTranslation('kjv', showDialog);
+  return loadTranslation(getDefaultTranslation(), showDialog);
 }
 
 // Load all translations in background (KJV first, then others)
@@ -2319,7 +2319,7 @@ function renderChapterResearchContent() {
     const chapterPatches = TranslationPatches.getPatchesForChapter(book, ch);
     if (chapterPatches.length > 0) {
       html += '<div class="research-panel-section"><div class="research-panel-section-title">Translation Patches</div>';
-      const trans = currentTranslation || 'kjv';
+      const trans = currentTranslation || getDefaultTranslation();
       for (const { verseRef, patch } of chapterPatches) {
         const state = TranslationPatches.getVerseState(verseRef);
         const escapedRef = verseRef.replace(/'/g, "\\'");
@@ -4831,7 +4831,7 @@ function showVerseTooltip(el, event) {
   
   // Try to get verse text
   let verseText = null;
-  const trans = (typeof currentTranslation !== 'undefined') ? currentTranslation : 'kjv';
+  const trans = (typeof currentTranslation !== 'undefined') ? currentTranslation : getDefaultTranslation();
   if (typeof getVerseText === 'function') {
     verseText = getVerseText(fullRef);
   }
@@ -4890,6 +4890,26 @@ function hideVerseTooltip(immediate) {
       if (tooltip) tooltip.remove();
     }, 250);
   }
+}
+
+// Scripture-ref click handler used by inline onclick on .scripture-ref links.
+// Mobile: show tooltip (tap tooltip to navigate). Desktop: navigate via SPA router.
+function handleScriptureNav(el, event) {
+  if (event) { event.preventDefault(); event.stopPropagation(); }
+  if (window.innerWidth <= 768) {
+    showVerseTooltip(el, event);
+    return false;
+  }
+  hideVerseTooltip(true);
+  // Parse navigation from the href: /reader/bible/{trans}/{book}/{ch}.{v}
+  const href = el.getAttribute('href') || '';
+  if (typeof URLRouter !== 'undefined' && URLRouter.parseURL) {
+    const parsed = URLRouter.parseURL(href);
+    if (parsed && typeof AppStore !== 'undefined') {
+      AppStore.dispatch({ type: 'SET_VIEW', view: parsed.content.view, params: parsed.content.params });
+    }
+  }
+  return false;
 }
 
 // Strong's tooltip for hover preview on strongs-link elements
@@ -5372,7 +5392,7 @@ function linkifyBDBScriptureRefs(html) {
   return html.replace(refPattern, (match, book, chapter, verses) => {
     const ref = match.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
     const escaped = ref.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-    return `<span class="bdb-verse-ref" data-ref="${escaped}" onclick="navigateToBDBVerse('${escaped}', event)" onmouseenter="showVerseTooltip(this, event)" onmouseleave="hideVerseTooltip()">${match}</span>`;
+    return `<span class="bdb-verse-ref" data-ref="${escaped}" onclick="if(window.innerWidth<=768){showVerseTooltip(this,event)}else{navigateToBDBVerse('${escaped}',event)}" onmouseenter="showVerseTooltip(this, event)" onmouseleave="hideVerseTooltip()">${match}</span>`;
   });
 }
 
@@ -5618,9 +5638,12 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     
     // Mark panel as active (body class for CSS hooks)
     requestAnimationFrame(() => {
+      // Save Bible text scroll position before hiding content on mobile
+      if (window.innerWidth <= 768) {
+        panel._savedScrollY = window.scrollY;
+      }
       panel.classList.add('open');
       document.body.classList.add('research-panel-open');
-      // On mobile, scroll to top so user sees content from the start
       if (window.innerWidth <= 768) {
         window.scrollTo(0, 0);
       }
@@ -5795,9 +5818,15 @@ function closeStrongsPanel(skipDispatch = false) {
   if (panel) {
     if (window.innerWidth <= 768) {
       // Mobile: collapse entirely (no persistent default view)
+      const savedScroll = panel._savedScrollY;
       panel.classList.remove('open', 'collapsed');
       document.body.classList.remove('research-panel-open');
       panel.style.width = '';
+      // Restore Bible text scroll position after content is visible again
+      if (typeof savedScroll === 'number') {
+        requestAnimationFrame(() => window.scrollTo(0, savedScroll));
+        panel._savedScrollY = undefined;
+      }
     }
     // Switch content back to default (panel remains open on desktop)
     const contentEl = panel.querySelector('.research-panel-content');
@@ -6035,7 +6064,12 @@ function renderInlineStrongs(taggedText, reference) {
       word = textBefore.slice(splitIdx + 1);
     }
 
-    // Strip poetry markers from word (they stay in leadingText for renderPoetryLines)
+    // Move poetry markers from word into leadingText so renderPoetryLines can find them
+    const poetryPrefix = word.match(/^[\u200B\u200C]+/);
+    if (poetryPrefix) {
+      leadingText += poetryPrefix[0];
+      word = word.slice(poetryPrefix[0].length);
+    }
     word = word.replace(/[\u200B\u200C]/g, '');
 
     // Check for name substitution BEFORE rendering leading text
@@ -6326,7 +6360,7 @@ function getBookChapterRank(chapter) {
 // Get symbols found in a single verse's text
 function getVerseSymbols(bookName, chapter, verse) {
   if (typeof SYMBOL_DICTIONARY === 'undefined' || typeof SYMBOL_WORD_INDEX === 'undefined') return [];
-  const v = Bible.getVerse(currentTranslation || 'kjv', bookName, chapter, verse);
+  const v = Bible.getVerse(currentTranslation || getDefaultTranslation(), bookName, chapter, verse);
   if (!v || !v.text) return [];
   const found = new Map();
   const multiWord = typeof getMultiWordSymbolPhrases === 'function' ? getMultiWordSymbolPhrases() : [];
@@ -6521,10 +6555,13 @@ function updateTranslationUI() {
 
 // Get saved translation preference
 function getSavedTranslationPreference() {
+  if (typeof Bible !== 'undefined' && Bible.getDefaultTranslation) {
+    return getDefaultTranslation();
+  }
   try {
-    return localStorage.getItem('bible_translation_preference') || 'kjv';
+    return localStorage.getItem('bible_translation_preference') || 'akjv';
   } catch (e) {
-    return 'kjv';
+    return 'akjv';
   }
 }
 
@@ -6655,7 +6692,7 @@ function isMultiVerseCitation(citationStr) {
 // Build HTML for multiverse view: selected verses with Strongs, symbols, and verse numbers that link to full chapter
 // translationId: optional; when set, use that translation's verses (avoids race with global bibleData when toggling KJV/ASV)
 function buildMultiverseHTML(citationStr, translationId) {
-  const trans = translationId || (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+  const trans = translationId || (typeof currentTranslation !== 'undefined' && currentTranslation) || getDefaultTranslation();
   if (!Bible.isLoaded(trans)) return '<div class="bible-explorer-welcome"><p>Bible data not loaded.</p></div>';
   // Use Bible API for verse resolution
   const verses = Bible.getVersesForCitation(trans, citationStr);
@@ -6758,7 +6795,7 @@ function buildMultiverseHTML(citationStr, translationId) {
 // Navigate from multiverse verse number to full chapter view at that verse
 function goToChapterFromMultiverse(bookName, chapter, verse) {
   if (typeof AppStore !== 'undefined') {
-    const translation = (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+    const translation = (typeof currentTranslation !== 'undefined' && currentTranslation) || getDefaultTranslation();
     AppStore.dispatch({
       type: 'SET_VIEW',
       view: 'reader',
@@ -6771,7 +6808,7 @@ function goToChapterFromMultiverse(bookName, chapter, verse) {
 // translationId: optional; when set, use that translation's data instead of global bibleData (for multiverse so requested translation wins)
 // getVersesForCitation — now delegates to Bible API
 function getVersesForCitation(citation, translationId) {
-  const trans = translationId || currentTranslation || 'kjv';
+  const trans = translationId || currentTranslation || getDefaultTranslation();
   if (!Bible.isLoaded(trans)) return [];
   // Build citation string from structured citation object
   let citationStr = citation.book + ' ' + citation.startChapter + ':' + citation.startVerse;
@@ -6787,7 +6824,7 @@ function getVersesForCitation(citation, translationId) {
 
 // getVersesForCitationString — now delegates to Bible API
 function getVersesForCitationString(citationStr, translationId) {
-  const trans = translationId || currentTranslation || 'kjv';
+  const trans = translationId || currentTranslation || getDefaultTranslation();
   if (!Bible.isLoaded(trans)) return [];
   return Bible.getVersesForCitation(trans, citationStr);
 }
@@ -6833,7 +6870,7 @@ function formatVersesForDisplay(verses, title = '') {
       }
       currentChapter = verse.chapter;
       const bookEncoded = encodeURIComponent(verse.book);
-      const trans = currentTranslation || 'kjv';
+      const trans = currentTranslation || getDefaultTranslation();
       html += `<div class="bible-chapter-section">`;
       html += `<div class="bible-chapter-header">
         <a href="/bible/${trans}/${bookEncoded}/${verse.chapter}" 
@@ -6847,7 +6884,7 @@ function formatVersesForDisplay(verses, title = '') {
     
     // Verse with superscript verse number - clickable to open in Bible Explorer at that verse
     const bookEncoded = encodeURIComponent(verse.book);
-    const trans = currentTranslation || 'kjv';
+    const trans = currentTranslation || getDefaultTranslation();
     html += `<span class="bible-verse"><sup class="bible-verse-num">
       <a href="/bible/${trans}/${bookEncoded}/${verse.chapter}.${verse.verse}"
          onclick="openBibleExplorerFromModal('${verse.book}', ${verse.chapter}, ${verse.verse}); return false;"
@@ -6917,16 +6954,24 @@ function closeBibleReader() {
 }
 
 // Handle click on citation link — navigate via SPA router (single verse → chapter; multi → multiverse)
+// Mobile: show verse tooltip on first tap; tooltip tap navigates.
 function handleCitationClick(event) {
   event.preventDefault();
   event.stopPropagation();
   const el = event.target.closest('[data-citation]');
   const citation = el?.dataset.citation;
   if (!citation) return;
+
+  // Mobile: show tooltip instead of navigating (tooltip click will navigate)
+  if (window.innerWidth <= 768 && el.dataset.ref) {
+    showVerseTooltip(el, event);
+    return;
+  }
+  hideVerseTooltip(true);
   
   if (typeof isMultiVerseCitation === 'function' && isMultiVerseCitation(citation)) {
     if (typeof AppStore !== 'undefined') {
-      const translation = (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+      const translation = (typeof currentTranslation !== 'undefined' && currentTranslation) || getDefaultTranslation();
       AppStore.dispatch({
         type: 'SET_VIEW',
         view: 'reader',
@@ -6944,7 +6989,7 @@ function handleCitationClick(event) {
   const book = (typeof normalizeBookName === 'function' ? normalizeBookName(match[1]) : match[1]);
   const chapter = parseInt(match[2]);
   const verse = match[3] ? parseInt(match[3]) : undefined;
-  const translation = (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+  const translation = (typeof currentTranslation !== 'undefined' && currentTranslation) || getDefaultTranslation();
   
   if (typeof AppStore !== 'undefined') {
     const params = { contentType: 'bible', translation, book, chapter };
@@ -6957,12 +7002,12 @@ function handleCitationClick(event) {
 function buildBibleUrl(citation, translation = null) {
   // Parse citation: "Book Chapter:Verse" or "Book Chapter"
   const match = citation.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
-  if (!match) return '/reader/bible/kjv/';
+  if (!match) return '/reader/bible/' + getDefaultTranslation() + '/';
   
   const book = match[1];
   const chapter = match[2];
   const verse = match[3];
-  const trans = translation || currentTranslation || 'kjv';
+  const trans = translation || currentTranslation || getDefaultTranslation();
   
   const bookEncoded = encodeURIComponent(book);
   let url = `/reader/bible/${trans}/${bookEncoded}/${chapter}`;
@@ -7225,7 +7270,7 @@ function goToScriptureFromSidebar(bookOrRef, chapter, verse) {
     view: 'reader',
     params: {
       contentType: 'bible',
-      translation: currentTranslation || 'kjv',
+      translation: currentTranslation || getDefaultTranslation(),
       book: bookOrRef,
       chapter: chapter,
       verse: verse || undefined
@@ -7791,14 +7836,16 @@ function renderPoetryLines(verseTextHtml, proseIntro = false) {
 
   if (segments.length <= 1) return segments[0] || verseTextHtml;
 
-  // Merge short first segments (e.g. "But", "And", "For") into the second segment
+  // Merge short segments (e.g. "But", "And", "I") into the next segment
   // so they don't render as awkward single-word poetry lines.
-  if (!proseIntro && segments.length >= 2) {
-    const visibleText = segments[0].replace(/<[^>]*>/g, '').trim();
+  // Scans all segments (not just the first) and merges forward.
+  for (let i = (proseIntro ? 1 : 0); i < segments.length - 1; i++) {
+    const visibleText = segments[i].replace(/[\u200C]/g, '').replace(/<[^>]*>/g, '').trim();
     const wordCount = visibleText.split(/\s+/).filter(w => w.length > 0).length;
-    if (wordCount <= 3 && visibleText.length < 20) {
-      segments[1] = segments[0] + segments[1];
-      segments.shift();
+    if (wordCount <= 1 && visibleText.length < 10) {
+      segments[i + 1] = segments[i] + ' ' + segments[i + 1];
+      segments.splice(i, 1);
+      i--;
     }
   }
 
@@ -8013,7 +8060,7 @@ function buildChapterHTML(bookName, chapter, verses, useInterlinear) {
     let patchedStrongsText = verse.strongsText;
     let patchedPlainText = verse.text;
     if (typeof TranslationPatches !== 'undefined' && TranslationPatches.applyPatches) {
-      const trans = currentTranslation || 'kjv';
+      const trans = currentTranslation || getDefaultTranslation();
       if (patchedStrongsText) {
         patchedStrongsText = TranslationPatches.applyPatches(reference, patchedStrongsText, trans);
       }
@@ -8395,7 +8442,7 @@ function openBibleExplorerTo(book, chapter, verse = null) {
     
     // State/URL is source of truth: use whatever translation the URL says (avoids stale display when toggling ASV/KJV)
     const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
-    const trans = state?.content?.params?.translation || currentTranslation || 'kjv';
+    const trans = state?.content?.params?.translation || currentTranslation || getDefaultTranslation();
     if (trans && currentTranslation !== trans && typeof switchTranslation === 'function') {
       await switchTranslation(trans);
     }
@@ -8487,7 +8534,7 @@ function updateBibleExplorerURL(book, chapter, verse = null) {
   if (typeof AppStore !== 'undefined') {
     AppStore.dispatch({
       type: 'SET_BIBLE_LOCATION',
-      translation: currentTranslation || 'kjv',
+      translation: currentTranslation || getDefaultTranslation(),
       book: book,
       chapter: chapter,
       verse: verse

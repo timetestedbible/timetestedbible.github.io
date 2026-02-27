@@ -26,8 +26,8 @@ function getAppPath() {
     // Production: files are in Resources/app
     return path.join(process.resourcesPath, 'app');
   } else {
-    // Development: files are in the project root (two levels up from _dev/desktop/)
-    return path.join(__dirname, '../..');
+    // Development: serve from Jekyll's build output (_site/) which has processed HTML
+    return path.join(__dirname, '../../_site');
   }
 }
 

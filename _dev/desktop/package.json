@@ -33,23 +33,11 @@
     ],
     "extraResources": [
       {
-        "from": "../../",
+        "from": "../../_site",
         "to": "app",
         "filter": [
           "**/*",
-          "!_dev/**",
-          "!.git/**",
-          "!.github/**",
-          "!.cursor/**",
-          "!node_modules/**",
-          "!scripts/**",
-          "!tests/**",
-          "!source/**",
-          "!docs/**",
-          "!**/*.py",
-          "!**/*.sh",
-          "!**/.DS_Store",
-          "!**/package-lock.json"
+          "!.DS_Store"
         ]
       }
     ],

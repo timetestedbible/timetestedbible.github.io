@@ -8484,3 +8484,88 @@ code {
   color: var(--text-primary);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   WELCOME THEME PICKER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.welcome-theme-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.welcome-theme-overlay.visible {
+  opacity: 1;
+}
+
+.welcome-theme-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-accent);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-theme-card h2 {
+  color: var(--text-primary);
+  margin: 0 0 8px;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.welcome-theme-card > p {
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+  font-size: 0.95em;
+}
+
+.welcome-theme-options {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.welcome-theme-done {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  background: var(--accent-primary);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.welcome-theme-done:hover {
+  opacity: 0.85;
+}
+
+.welcome-theme-hint {
+  color: var(--text-tertiary);
+  font-size: 0.8em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.welcome-theme-hint strong {
+  color: var(--text-secondary);
+}
+
