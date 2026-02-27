@@ -288,26 +288,17 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
-  // Sub-resources: cache-first with background update
+  // Sub-resources: cache-first, no background update.
+  // All files in a cache are from the same APP_VERSION (installed atomically).
+  // Background updates would create version mismatches (old + new JS in same cache).
+  // New versions arrive through the install handler when APP_VERSION changes.
   event.respondWith(
     caches.match(event.request)
       .then((cachedResponse) => {
-        // Return cached version if available
-        if (cachedResponse) {
-          // Fetch in background to update cache
-          fetch(event.request).then((response) => {
-            if (response && response.status === 200) {
-              caches.open(CACHE_NAME).then((cache) => {
-                cache.put(event.request, response);
-              });
-            }
-          }).catch(() => {});
-          return cachedResponse;
-        }
+        if (cachedResponse) return cachedResponse;
         
-        // Otherwise fetch from network
+        // Not cached — fetch from network and cache for offline use
         return fetch(event.request).then((response) => {
-          // Cache successful responses
           if (response && response.status === 200) {
             const responseClone = response.clone();
             caches.open(CACHE_NAME).then((cache) => {
@@ -318,7 +309,6 @@ self.addEventListener('fetch', (event) => {
         });
       })
       .catch(() => {
-        // Sub-resource failed both cache and network — nothing to serve
         return new Response('', { status: 503 });
       })
   );
