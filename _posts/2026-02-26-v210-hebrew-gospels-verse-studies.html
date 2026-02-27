@@ -1,65 +1,101 @@
 ---
-title: "Version 2.1: Hebrew Gospels, Verse Studies, Cross-References & 151 Symbol Studies"
-summary: "A new Hebrew-origin New Testament translation, 31 verse studies examining every 'law abolished' passage, a cross-references panel, 151 symbol studies, and social sharing."
-og_title: "Version 2.1: Hebrew Gospels, Verse Studies & More"
-og_description: "Hebrew Gospels translation, 31 verse studies, cross-references panel, 151 symbol studies, 10 new blog posts, and social sharing — all offline."
+title: "Version 2.1 — Hebrew Gospels, Verse Studies & 151 Symbol Studies"
+summary: "11 Bible translations, a Hebrew-origin NT, 31 verse studies, 151 symbol studies, cross-references, and 10 new blog posts — all available offline."
+image: "/assets/img/v210-hero.jpg"
+og_title: "Time Tested Bible v2.1 — Hebrew Gospels, Verse Studies & More"
+og_description: "11 Bible translations, a Hebrew-origin NT, 31 verse studies, 151 symbol studies, cross-references, and 10 new blog posts — all available offline."
 og_url: "https://timetested.bible/blog/v210-hebrew-gospels-verse-studies/"
 page_title: "Version 2.1 — Time Tested Bible"
 date: 2026-02-26
 ---
-<p>276 commits since the last update. Here's what's new for readers and students.</p>
+<style>
+  .blog-article .release-hero { max-width: 100%; border-radius: 12px; margin: 0 0 24px; border: 1px solid var(--border-subtle); }
+  .blog-article .install-cards { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+  .blog-article .install-card { flex: 1; min-width: 200px; background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px; text-align: center; }
+  .blog-article .install-card h4 { margin: 0 0 6px; color: var(--text-primary); font-size: 1.05em; }
+  .blog-article .install-card p { margin: 0; color: var(--text-secondary); font-size: 0.85em; line-height: 1.5; }
+  .blog-article .install-card .install-icon { font-size: 2em; margin-bottom: 8px; }
+</style>
+
+<div class="blog-article">
+
+<img class="release-hero" src="/assets/img/v210-hero.jpg" alt="Time Tested Bible v2.1 — Ancient wisdom meets modern tools">
+
+<h1 style="margin:0 0 8px; font-size:1.8em; font-weight:800; color:var(--text-primary);">Time Tested Bible v2.1</h1>
+<p style="color:var(--text-tertiary); font-size:13px; margin-bottom:24px;">11 translations. 151 symbol studies. 31 verse studies. 10 blog posts. All offline.</p>
+
+<p class="prose">This is the biggest content update since launch. Here's what's new.</p>
 
 <h3>Hebrew Gospels Translation</h3>
-<p>A new <strong>Hebrew Gospels (HG)</strong> translation is now available in the Bible reader. Based on the Cochin Hebrew New Testament manuscript tradition (~1700 AD), this translation renders the New Testament from a Hebrew-origin perspective — showing where the Greek may have obscured the original Hebrew meaning.</p>
-<p>The HG translation includes <strong>verse-level study notes</strong> that flag Hebrew primacy issues, Greek deviations, and translation contradictions. Chapters include collapsible note sections with detailed commentary. Revelation alone has over 870 study note markers.</p>
+<p class="prose">A new <strong>Hebrew Gospels</strong> translation is now available — the 11th translation in the reader. Based on the Cochin Hebrew New Testament manuscript tradition (~1700 AD), it renders the New Testament from a Hebrew-origin perspective, showing where the Greek may have obscured the original Hebrew meaning.</p>
+<p class="prose">The translation includes <strong>verse-level study notes</strong> that flag Hebrew primacy issues, Greek deviations, and translation contradictions. Revelation alone has over 870 study note markers. Chapters include collapsible note sections with detailed commentary.</p>
 <p class="blog-nav-link">
   <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'hg',book:'Matthew',chapter:5}})">Try it: Matthew 5 in Hebrew Gospels →</button>
 </p>
 
 <h3>Torah Eternal — 31 Verse Studies</h3>
-<p>Every major passage cited to argue "the law has been abolished" now has a <strong>detailed verse study</strong> — 31 in total. Each study examines the passage in its original language, reads the verses before and after, and shows what the text actually says in context.</p>
-<p>Passages covered include Matthew 5:17, Romans 6:14, Romans 7:4, Romans 10:4, Galatians 3:25, Galatians 5:18, Ephesians 2:15, Colossians 2:14, Hebrews 8:13, 2 Corinthians 3:7, Acts 15:10, and more. Start with the overview page that links them all together.</p>
+<p class="prose">Every major passage cited to argue "the law has been abolished" now has a <strong>detailed verse study</strong> — 31 in total. Each study examines the passage in its original language, reads the verses before and after, and shows what the text actually says in context.</p>
+<p class="prose">Passages covered include Matthew 5:17, Romans 6:14, Romans 7:4, Romans 10:4, Galatians 3:25, Galatians 5:18, Ephesians 2:15, Colossians 2:14, Hebrews 8:13, 2 Corinthians 3:7, Acts 15:10, and more.</p>
 <p class="blog-nav-link">
   <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'mat-5-17'}})">Start: Torah Eternal Overview →</button>
 </p>
 
 <h3>Cross-References Panel</h3>
-<p>The research panel now includes a <strong>cross-references tab</strong> powered by OpenBible.info data. Select any verse and see the top related passages with verse text previews — no need to look them up manually. Each reference is clickable and navigates directly to the passage.</p>
+<p class="prose">The research panel now includes a <strong>cross-references tab</strong>. Select any verse and see the top related passages with verse text previews — no need to look them up manually. Each reference is clickable and navigates directly to the passage.</p>
 <p class="blog-nav-link">
   <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'kjv',book:'Genesis',chapter:1}})">Try it: Open any chapter, tap a verse →</button>
 </p>
 
 <h3>151 Symbol Studies</h3>
-<p>The symbol dictionary has grown to <strong>151 studies</strong> — from Almond to Zion. Each study traces how Scripture uses a recurring image, word, or concept across both testaments. New studies include Throne, Lamb, Lion, Trumpet, Wrath, Jericho, Ten Horns, Net, Scarlet, Snare, Bear, and dozens more.</p>
-<p>Symbol references are now linked throughout blog posts and verse studies using the <strong>$[symbol]</strong> markup — tap any highlighted symbol word to open its full study.</p>
+<p class="prose">The symbol dictionary has grown to <strong>151 studies</strong> — from Almond to Zion. Each study traces how Scripture uses a recurring image, word, or concept across both testaments. Tap any highlighted symbol word in a blog post or verse study to open its full study, or hover for a tooltip preview.</p>
 <p class="blog-nav-link">
   <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols'}})">Browse All 151 Symbol Studies →</button>
 </p>
 
+<h3>Improved Bible Text</h3>
+<p class="prose">Poetry sections (Psalms, Proverbs, prophets) now display with proper line breaks and indentation. Paragraph spacing, verse number styling, and line height have been refined across all 11 translations for a cleaner reading experience on both mobile and desktop.</p>
+
 <h3>10 New Blog Posts</h3>
-<p>Ten substantial studies have been published since the last update:</p>
 <ul>
-  <li><strong>Peace and Safety</strong> — Who are "they" in 1 Thessalonians 5:3? Every OT source gives the same answer.</li>
-  <li><strong>Last Call before the Fall</strong> — 15 independent lines of evidence converge on the size of the remnant.</li>
-  <li><strong>Blood Moon Over the Moon City</strong> — A study of Psalm 81:3 and the full moon throne connection.</li>
-  <li><strong>Land of the Free, Home from the Grave</strong> — The biblical math of the afterlife.</li>
-  <li><strong>Population of the Renewed Earth</strong> — Physical land, physical bodies, a fixed number.</li>
-  <li><strong>Summer Is Near</strong> — The fig tree prophecy and what "this generation" means.</li>
-  <li><strong>The Tree That Wakes First</strong> — The almond rod and Aaron's budding staff.</li>
-  <li><strong>Why Jasher, Jubilees, and Enoch Are Not Scripture</strong> — A research study.</li>
-  <li>And more — all accessible from the <button onclick="AppStore.dispatch({type:'SET_VIEW',view:'blog'})" style="background:none;border:none;color:var(--accent-primary);cursor:pointer;padding:0;font:inherit;text-decoration:underline;">Blog</button> page.</li>
+  <li><strong><a href="/blog/peace-and-safety/" style="color:var(--accent-primary)">Peace and Safety</a></strong> — Who are "they" in 1 Thessalonians 5:3? Every OT source gives the same answer.</li>
+  <li><strong><a href="/blog/last-call-before-the-fall/" style="color:var(--accent-primary)">Last Call before the Fall</a></strong> — 15 independent lines of evidence converge on the size of the remnant.</li>
+  <li><strong><a href="/blog/blood-moon-over-the-moon-city/" style="color:var(--accent-primary)">Blood Moon Over the Moon City</a></strong> — Psalm 81:3, the full moon throne, and the Leo constellation.</li>
+  <li><strong><a href="/blog/land-of-the-free-home-from-the-grave/" style="color:var(--accent-primary)">Land of the Free, Home from the Grave</a></strong> — The biblical math of the afterlife.</li>
+  <li><strong><a href="/blog/population-of-the-renewed-earth/" style="color:var(--accent-primary)">Population of the Renewed Earth</a></strong> — Physical land, physical bodies, a fixed number.</li>
+  <li><strong><a href="/blog/summer-is-near/" style="color:var(--accent-primary)">Summer Is Near</a></strong> — The fig tree prophecy and what "this generation" means.</li>
+  <li><strong><a href="/blog/the-tree-that-wakes-first/" style="color:var(--accent-primary)">The Tree That Wakes First</a></strong> — The almond rod and Aaron's budding staff.</li>
+  <li><strong><a href="/blog/why-jasher-jubilees-enoch-are-not-scripture/" style="color:var(--accent-primary)">Why Jasher, Jubilees, and Enoch Are Not Scripture</a></strong> — A research study.</li>
+  <li>And more on the <a href="#" onclick="AppStore.dispatch({type:'SET_VIEW',view:'blog'});return false;" style="color:var(--accent-primary)">Blog</a> page.</li>
 </ul>
 
-<h3>Improved Bible Text Formatting</h3>
-<p>The Bible reader now renders text with better <strong>readability and structure</strong>. Poetry sections (Psalms, Proverbs, prophets) display with proper line breaks and indentation. Paragraph spacing, verse number styling, and line height have been refined across all translations for a cleaner reading experience on both mobile and desktop.</p>
-
 <h3>Social Sharing</h3>
-<p>When you share a blog post link on social media, messaging apps, or group chats, it now displays a <strong>rich preview card</strong> with the post's title, description, and hero image — powered by Open Graph meta tags. No more bare URLs.</p>
+<p class="prose">When you share a blog post link on social media, messaging apps, or group chats, it now displays a rich preview card with the title, description, and hero image. No more bare URLs.</p>
 
-<h3>Strong's Tooltips in Blog Posts</h3>
-<p>Blog posts that reference Strong's numbers (like H8199 or G646) now show <strong>hover tooltips</strong> with the Hebrew or Greek word, transliteration, and definition — the same tooltips available in the Bible reader, now working throughout all study content.</p>
+<!-- ═══════════════════════════════ -->
+<h2 style="margin-top:48px; border-bottom: 2px solid var(--border-default, var(--border-subtle)); padding-bottom:8px;">Take It With You — Works Offline</h2>
 
-<h3>Symbol Hover Tooltips</h3>
-<p>Symbol-linked words throughout the site now show a <strong>preview tooltip on hover</strong> with a summary of the symbol's meaning. Tap to open the full study, or just hover to get the gist without leaving your reading position.</p>
+<p class="prose">Everything in this app — all 11 Bible translations, the Hebrew lexicon, 151 symbol studies, 31 verse studies, the historical timeline, Josephus, Philo, and every blog post — is stored on your device after first load. There is no server, no database, and no internet connection required after installation.</p>
 
-<p class="blog-closing">Everything still works fully offline. No account required, no ads, no tracking. Install the app from your browser and all 151 symbol studies, 31 verse studies, 11 Bible translations, and 10 blog posts are yours — on your device, no internet needed.</p>
+<p class="prose">That means <strong>searches are instant</strong> — no waiting for server responses. It also means the app works when you have no cell signal, no Wi-Fi, or if the grid goes down entirely. If you're preparing for what's ahead, a complete Bible study library that works without infrastructure is not a convenience — it's a necessity.</p>
+
+<div class="install-cards">
+  <div class="install-card">
+    <div class="install-icon">🌐</div>
+    <h4>Web</h4>
+    <p>Visit <a href="https://timetested.bible" style="color:var(--accent-primary)">timetested.bible</a> in any browser. Always up to date. No install required.</p>
+  </div>
+  <div class="install-card">
+    <div class="install-icon">📲</div>
+    <h4>PWA</h4>
+    <p>Tap "Add to Home Screen" on your phone or the install icon in your desktop browser. Works fully offline. Auto-updates when online.</p>
+  </div>
+  <div class="install-card">
+    <div class="install-icon">💻</div>
+    <h4>Desktop App</h4>
+    <p>Download for <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/tag/v2.1.0" style="color:var(--accent-primary)">macOS, Windows, or Linux</a>. Ships with everything built in. Auto-updates content in the background.</p>
+  </div>
+</div>
+
+<p class="prose">No account required. No ads. No tracking. Your study stays between you and Scripture.</p>
+
+</div>
