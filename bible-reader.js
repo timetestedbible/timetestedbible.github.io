@@ -2312,6 +2312,7 @@ function _getResolvedEventDate(eventId) {
 function renderChapterResearchContent() {
   let html = '<button class="research-panel-back-btn" onclick="collapseResearchPanel()">← Back to chapter</button>';
 
+  if (!bibleExplorerState) return html;
   const book = bibleExplorerState.currentBook;
   const ch = bibleExplorerState.currentChapter;
 
