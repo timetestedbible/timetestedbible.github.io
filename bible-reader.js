@@ -35,7 +35,7 @@ const BIBLE_TRANSLATIONS = {
 
 // Translation data storage — legacy globals, now backed by Bible API proxies (defined below)
 // bibleTranslations and bibleIndexes are defined after Bible API is available.
-var currentTranslation = getDefaultTranslation();
+var currentTranslation = (typeof getDefaultTranslation === 'function') ? getDefaultTranslation() : 'kjv';
 var translationsLoading = {};  // Track which translations are currently loading
 
 // Hebrew (WLC) — now managed by Bible API (bible.js)
