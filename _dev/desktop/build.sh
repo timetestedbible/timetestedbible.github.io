@@ -41,6 +41,12 @@ fi
 read -p "  Enter release version [${CURRENT_VERSION}]: " NEW_VERSION
 NEW_VERSION="${NEW_VERSION:-$CURRENT_VERSION}"
 
+# Validate version format (must be x.y.z)
+if ! echo "$NEW_VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+    echo -e "  ${RED}Invalid version '${NEW_VERSION}' — must be x.y.z (e.g. 2.1.0)${NC}"
+    exit 1
+fi
+
 DIST_DIR="dist/v${NEW_VERSION}"
 
 # Check if this version already exists
@@ -77,15 +83,59 @@ if [ ! -d "node_modules" ]; then
 fi
 
 # ── Build Jekyll site (electron bundles from _site/) ──
-echo -e "  ${YELLOW}Building Jekyll site...${NC}"
 cd "$SCRIPT_DIR/../.."
-if command -v bundle &>/dev/null; then
-    bundle exec jekyll build --quiet
+PROJECT_ROOT="$SCRIPT_DIR/../.."
+SITE_DIR="$PROJECT_ROOT/_site"
+
+# ── Clean and build Jekyll site ──
+echo -e "  ${YELLOW}Building clean Jekyll site...${NC}"
+rm -rf "$SITE_DIR"
+
+JEKYLL_BIN=""
+if [ -f "$PROJECT_ROOT/Gemfile" ] && command -v bundle &>/dev/null; then
+    JEKYLL_BIN="bundle exec jekyll"
+elif command -v jekyll &>/dev/null; then
+    JEKYLL_BIN="jekyll"
 else
-    jekyll build --quiet
+    # Search common gem bin paths
+    for p in /opt/homebrew/lib/ruby/gems/*/bin/jekyll /usr/local/lib/ruby/gems/*/bin/jekyll; do
+        [ -x "$p" ] && JEKYLL_BIN="$p" && break
+    done
 fi
-cd "$SCRIPT_DIR"
+
+if [ -z "$JEKYLL_BIN" ]; then
+    echo -e "  ${RED}ERROR: Jekyll not found. Install with: gem install jekyll${NC}"
+    exit 1
+fi
+
+cd "$PROJECT_ROOT"
+$JEKYLL_BIN build --quiet
 echo -e "  ${GREEN}Jekyll build complete${NC}"
+
+# ── Remove uncompressed JSON files that have .gz counterparts ──
+echo -e "  ${YELLOW}Stripping uncompressed data files...${NC}"
+STRIPPED=0
+for gz in "$SITE_DIR"/data/*.json.gz; do
+    [ -f "$gz" ] || continue
+    raw="${gz%.gz}"
+    if [ -f "$raw" ]; then
+        rm "$raw"
+        STRIPPED=$((STRIPPED + 1))
+    fi
+done
+echo -e "  ${GREEN}Removed ${STRIPPED} uncompressed JSON files (gz versions kept)${NC}"
+
+# ── Report final size ──
+SITE_SIZE=$(du -sh "$SITE_DIR" | awk '{print $1}')
+echo -e "  ${GREEN}_site/ size: ${SITE_SIZE}${NC}"
+
+# ── Generate site-bundle.tar.gz for auto-updates ──
+echo -e "  ${YELLOW}Creating site-bundle.tar.gz for auto-updates...${NC}"
+tar czf "$SITE_DIR/site-bundle.tar.gz" -C "$SITE_DIR" --exclude='site-bundle.tar.gz' .
+BUNDLE_SIZE=$(ls -lh "$SITE_DIR/site-bundle.tar.gz" | awk '{print $5}')
+echo -e "  ${GREEN}site-bundle.tar.gz created (${BUNDLE_SIZE})${NC}"
+
+cd "$SCRIPT_DIR"
 
 # ── Create output directory ──
 mkdir -p "${DIST_DIR}/logs"

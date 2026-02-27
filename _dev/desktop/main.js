@@ -1,7 +1,8 @@
-const { app, BrowserWindow, Menu, protocol, net, shell } = require('electron');
+const { app, BrowserWindow, Menu, protocol, net, shell, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const { pathToFileURL } = require('url');
+const { getUpdatedBundlePath, checkForUpdates, revertToBuiltin, listBundles, switchToVersion } = require('./updater');
 
 // Keep a global reference of the window object
 let mainWindow;
@@ -20,13 +21,19 @@ protocol.registerSchemesAsPrivileged([{
   }
 }]);
 
-// Get the path to web app files (different in dev vs production)
+// Get the path to web app files.
+// Priority: downloaded update bundle > bundled _site > dev _site
 function getAppPath() {
+  // Check for a downloaded update bundle first
+  const updatedPath = getUpdatedBundlePath();
+  if (updatedPath) {
+    console.log(`[App] Serving from updated bundle: ${updatedPath}`);
+    return updatedPath;
+  }
+
   if (app.isPackaged) {
-    // Production: files are in Resources/app
     return path.join(process.resourcesPath, 'app');
   } else {
-    // Development: serve from Jekyll's build output (_site/) which has processed HTML
     return path.join(__dirname, '../../_site');
   }
 }
@@ -115,6 +122,25 @@ function createWindow() {
   // Show window when ready to prevent visual flash
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
+
+    // Check for site bundle updates in the background
+    setTimeout(() => {
+      checkForUpdates(appPath, (newVersion) => {
+        console.log(`[App] Update v${newVersion} ready — will load on next launch`);
+        if (mainWindow && !mainWindow.isDestroyed()) {
+          mainWindow.webContents.executeJavaScript(
+            `if(typeof AppStore!=='undefined'){` +
+            `  const b=document.createElement('div');` +
+            `  b.id='electron-update-banner';` +
+            `  b.style.cssText='position:fixed;bottom:0;left:0;right:0;z-index:30000;background:var(--accent-primary);color:var(--color-bg);text-align:center;padding:10px 16px;font-weight:600;cursor:pointer;font-size:14px;';` +
+            `  b.textContent='Update downloaded — restart to apply';` +
+            `  b.onclick=()=>window.electronAPI.restartApp?.();` +
+            `  document.body.appendChild(b);` +
+            `}`
+          );
+        }
+      });
+    }, 5000);
   });
 
   // Open DevTools in development
@@ -205,6 +231,14 @@ function createMenu() {
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 }
+
+// IPC handlers for update management
+ipcMain.on('restart-app', () => { app.relaunch(); app.exit(0); });
+ipcMain.handle('revert-to-builtin', () => { revertToBuiltin(); return true; });
+ipcMain.handle('list-bundles', () => listBundles(
+  app.isPackaged ? path.join(process.resourcesPath, 'app') : path.join(__dirname, '../../_site')
+));
+ipcMain.handle('switch-to-version', (_, v) => switchToVersion(v));
 
 // App lifecycle events
 app.whenReady().then(() => {

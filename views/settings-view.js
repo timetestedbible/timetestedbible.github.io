@@ -224,6 +224,17 @@ const SettingsView = {
             </button>
           </div>
         </section>
+        
+        ${window.electronAPI?.isElectron ? `
+        <!-- App Version (Electron only) -->
+        <section class="settings-section" id="electron-version-section">
+          <h3>📦 App Version</h3>
+          <p class="settings-description">Choose which version of the site content to use. New versions are downloaded automatically when available.</p>
+          <div id="electron-version-list" class="settings-theme-options" style="flex-direction:column;gap:6px;">
+            <p class="settings-description">Loading versions...</p>
+          </div>
+        </section>
+        ` : ''}
       </div>
     `;
     
@@ -231,6 +242,7 @@ const SettingsView = {
     setTimeout(() => {
       this.initLocationMap(container, currentLocation, locationPref.method !== 'gps');
       this._initTranslationDragDrop();
+      if (window.electronAPI?.isElectron) this._loadVersionPicker();
     }, 0);
   },
   
@@ -628,15 +640,7 @@ const SettingsView = {
    * Get translation preference from localStorage
    */
   getTranslationPreference() {
-    // Use Bible API's ordered list — first item is the default
-    if (typeof Bible !== 'undefined' && Bible.getDefaultTranslation) {
-      return Bible.getDefaultTranslation();
-    }
-    try {
-      return localStorage.getItem('bible_translation_preference') || 'kjv';
-    } catch (e) {
-      return 'kjv';
-    }
+    return getDefaultTranslation();
   },
 
   /**
@@ -917,6 +921,63 @@ const SettingsView = {
    */
   saveThemePreference(theme) {
     AppStore.dispatch({ type: 'SET_THEME', theme });
+  },
+
+  /**
+   * Load and render the Electron version picker
+   */
+  async _loadVersionPicker() {
+    const list = document.getElementById('electron-version-list');
+    if (!list || !window.electronAPI?.listBundles) return;
+
+    try {
+      const bundles = await window.electronAPI.listBundles();
+      if (!bundles || bundles.length === 0) {
+        list.innerHTML = '<p class="settings-description">No versions available.</p>';
+        return;
+      }
+
+      const formatDate = (ts) => {
+        const d = new Date(ts * 1000);
+        return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+      };
+
+      list.innerHTML = bundles.map(b => `
+        <button class="settings-option-btn ${b.active ? 'selected' : ''}"
+                style="flex-direction:row;gap:12px;justify-content:flex-start;padding:10px 14px;"
+                onclick="SettingsView._switchVersion(${b.builtin ? "'builtin'" : b.version})"
+                ${b.active ? 'disabled' : ''}>
+          <span class="option-icon" style="font-size:1.4em;">${b.active ? '✅' : b.builtin ? '📦' : '☁️'}</span>
+          <span style="text-align:left;">
+            <span class="option-label" style="display:block;">${b.builtin ? 'Built-in (shipped)' : formatDate(b.version)}</span>
+            <span style="font-size:0.75em;opacity:0.6;">v${b.version}</span>
+          </span>
+        </button>
+      `).join('');
+    } catch (e) {
+      list.innerHTML = '<p class="settings-description">Could not load versions.</p>';
+    }
+  },
+
+  /**
+   * Switch to a specific version or revert to built-in
+   */
+  async _switchVersion(version) {
+    if (!window.electronAPI) return;
+    if (version === 'builtin') {
+      await window.electronAPI.revertToBuiltin();
+    } else {
+      await window.electronAPI.switchToVersion(version);
+    }
+    // Show restart prompt
+    const section = document.getElementById('electron-version-section');
+    if (section) {
+      const note = document.createElement('p');
+      note.style.cssText = 'color:var(--accent-primary);font-weight:600;margin-top:8px;';
+      note.innerHTML = 'Version changed — <a href="#" onclick="window.electronAPI.restartApp();return false;" style="color:var(--accent-primary);text-decoration:underline;">Restart now</a> to apply.';
+      section.appendChild(note);
+    }
+    this._loadVersionPicker();
   }
 };
 
