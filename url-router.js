@@ -742,9 +742,7 @@ const URLRouter = {
           // If first part is not a known translation but there are parts (book/chapter),
           // use the configured default translation instead of showing the picker
           if (!params.translation && bibleParts.length > 0) {
-            params.translation = typeof Bible !== 'undefined'
-              ? Bible.getDefaultTranslation()
-              : 'kjv';
+            params.translation = getDefaultTranslation();
           }
 
           if (bibleParts[bibleIdx]) {
@@ -914,7 +912,7 @@ const URLRouter = {
     }
     // Multiverse: /multiverse/[translation/]seg1/seg2/...
     else if (content.view === 'reader' && content.params?.contentType === 'multiverse') {
-      const t = content.params.translation || 'kjv';
+      const t = content.params.translation || getDefaultTranslation();
       const segments = this._encodeMultiverseSegments(content.params.multiverse);
       path = '/multiverse/' + t;
       for (const seg of segments) path += '/' + seg;
@@ -1184,7 +1182,7 @@ const URLRouter = {
           // For symbols, index→detail or detail→detail is real navigation
           if (cp.contentType === 'symbols' && cp.symbol !== np.symbol) return false;
           // For verse studies, different studies are real navigation
-          if (cp.contentType === 'verse-studies' && cp.verseStudy !== np.verseStudy) return false;
+          if (cp.contentType === 'verse-studies' && cp.study !== np.study) return false;
           // For blog, different posts are real navigation
           if (cp.contentType === 'blog' && cp.slug !== np.slug) return false;
           // For multiverse, different citations are real navigation

@@ -152,7 +152,7 @@ const ReaderView = {
         currentKey = `bible:${params.translation}:${params.book}:${params.chapter}:${params.verse || ''}`;
         break;
       case 'multiverse':
-        currentKey = `multiverse:${params.translation || 'kjv'}:${(params.multiverse || '').replace(/"/g, '')}`;
+        currentKey = `multiverse:${params.translation || getDefaultTranslation()}:${(params.multiverse || '').replace(/"/g, '')}`;
         break;
       case 'symbols':
         currentKey = `symbols:${params.symbol || 'index'}`;
@@ -829,8 +829,34 @@ const ReaderView = {
     const textArea = container.querySelector('#bible-explorer-text');
     if (!textArea) return;
     if (!studyId) {
-      // Index: list all verse studies
+      // Index: list all verse studies with two sort orders
       const studies = typeof VERSE_STUDY_INDEX !== 'undefined' ? VERSE_STUDY_INDEX : [];
+
+      const byBible = [...studies].sort((a, b) =>
+        typeof Bible !== 'undefined' && Bible.compareRefs ? Bible.compareRefs(a.ref, b.ref) : 0
+      );
+
+      const byRank = [...studies].sort((a, b) => {
+        const ra = typeof getVstudyRank === 'function' ? getVstudyRank(a.id) : 0;
+        const rb = typeof getVstudyRank === 'function' ? getVstudyRank(b.id) : 0;
+        return rb - ra;
+      });
+
+      const renderList = (list) => list.map(s => `
+        <button class="word-study-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${s.id}'}})">
+          <span class="word-study-strongs">${s.ref}</span>
+          <span class="word-study-summary">${s.title}</span>
+          <span class="word-study-summary" style="opacity:0.7;font-size:0.85em;margin-top:4px;">${s.desc}</span>
+        </button>
+      `).join('');
+
+      const sortClick = `(function(mode, btn) {
+        document.getElementById('vstudy-list-bible').style.display = mode === 'bible' ? '' : 'none';
+        document.getElementById('vstudy-list-rank').style.display = mode === 'rank' ? '' : 'none';
+        btn.parentElement.querySelectorAll('.symbol-sort-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+      })`;
+
       textArea.innerHTML = `
         <div class="reader-word-study-index">
           <nav class="reader-symbol-nav">
@@ -840,14 +866,15 @@ const ReaderView = {
           </nav>
           <h1>📖 Verse Studies</h1>
           <p class="word-study-index-intro">In-depth studies attached to specific verses — examining translation choices, consonantal ambiguities, and patterns that cross-reference multiple passages. Distinct from <strong>word studies</strong> (lexical) and <strong>symbol studies</strong> (what a term represents).</p>
-          <div class="word-study-index-list">
-            ${studies.map(s => `
-              <button class="word-study-index-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies',study:'${s.id}'}})">
-                <span class="word-study-strongs">${s.ref}</span>
-                <span class="word-study-summary">${s.title}</span>
-                <span class="word-study-summary" style="opacity:0.7;font-size:0.85em;margin-top:4px;">${s.desc}</span>
-              </button>
-            `).join('')}
+          <div class="symbol-sort-controls" style="margin-bottom:var(--spacing-md)">
+            <button class="symbol-sort-btn active" onclick="${sortClick}('bible', this)">Bible Order</button>
+            <button class="symbol-sort-btn" onclick="${sortClick}('rank', this)">By Relevance</button>
+          </div>
+          <div class="word-study-index-list" id="vstudy-list-bible">
+            ${renderList(byBible)}
+          </div>
+          <div class="word-study-index-list" id="vstudy-list-rank" style="display:none">
+            ${renderList(byRank)}
           </div>
         </div>
       `;
@@ -1338,8 +1365,7 @@ const ReaderView = {
       }
       const versePattern = this._studyVersePattern;
 
-      let translation = 'kjv';
-      try { translation = localStorage.getItem('bible_translation_preference') || 'kjv'; } catch (e) {}
+      let translation = getDefaultTranslation();
 
       collectTextNodes(container, versePattern).forEach(node => {
         const span = document.createElement('span');
@@ -1350,7 +1376,7 @@ const ReaderView = {
           const targetVerse = parseInt(firstVerse, 10);
           const url = `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}.${targetVerse}`;
           const dataRef = `${book} ${chapter}:${verseStr}`;
-          return `<a href="${url}" class="scripture-ref" data-ref="${dataRef}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
+          return `<a href="${url}" class="scripture-ref" data-ref="${dataRef}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="return handleScriptureNav(this,event)">${match}</a>`;
         });
         node.parentNode.replaceChild(span, node);
       });
@@ -1398,10 +1424,7 @@ const ReaderView = {
     }
     
     // Get current translation preference
-    let translation = 'kjv';
-    try {
-      translation = localStorage.getItem('bible_translation_preference') || 'kjv';
-    } catch (e) {}
+    let translation = getDefaultTranslation();
     
     textNodes.forEach(node => {
       const span = document.createElement('span');
@@ -1416,7 +1439,7 @@ const ReaderView = {
         // id matches book-scripture-index anchor format (ref-book-chapter-verse) for scroll-from-Bible
         const anchorId = 'ref-' + (book || '').toLowerCase().replace(/\s+/g, '-') + '-' + chapter + '-' + targetVerse;
         const dataRef = `${book} ${chapter}:${targetVerse}`;
-        return `<a id="${anchorId}" href="${url}" class="scripture-ref" data-ref="${dataRef}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${translation}',book:'${book}',chapter:${chapter},verse:${targetVerse}}}); return false;">${match}</a>`;
+        return `<a id="${anchorId}" href="${url}" class="scripture-ref" data-ref="${dataRef}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="return handleScriptureNav(this,event)">${match}</a>`;
       });
       node.parentNode.replaceChild(span, node);
     });
@@ -2065,14 +2088,17 @@ const ReaderView = {
       // Add verse tooltips to existing manually-created scripture links
       // (linkifyScriptureRefs only handles text nodes; blog HTML has pre-wrapped <a> tags)
       container.querySelectorAll('a[onclick*="contentType:\'bible\'"]').forEach(link => {
-        // Extract book, chapter, verse from the onclick
         const m = link.getAttribute('onclick')?.match(/book:'([^']+)'.*?chapter:(\d+)(?:.*?verse:(\d+))?/);
         if (m) {
-          const ref = `${m[1]} ${m[2]}${m[3] ? ':' + m[3] : ''}`;
+          const book = m[1], ch = m[2], v = m[3];
+          const ref = `${book} ${ch}${v ? ':' + v : ''}`;
           link.dataset.ref = ref;
           link.classList.add('scripture-ref');
+          const trans = (typeof getDefaultTranslation === 'function') ? getDefaultTranslation() : 'akjv';
+          link.href = `/reader/bible/${trans}/${encodeURIComponent(book)}/${ch}${v ? '.' + v : ''}`;
           link.setAttribute('onmouseenter', "if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)");
           link.setAttribute('onmouseleave', "if(typeof hideVerseTooltip==='function')hideVerseTooltip()");
+          link.setAttribute('onclick', "return handleScriptureNav(this,event)");
         }
       });
       
@@ -2084,7 +2110,7 @@ const ReaderView = {
       
       // Ensure Bible data is loaded so verse tooltips can show text
       if (typeof Bible !== 'undefined' && Bible.loadTranslation) {
-        Bible.loadTranslation('kjv').catch(() => {});
+        Bible.loadTranslation(getDefaultTranslation()).catch(() => {});
       }
       
       // Re-execute any inline scripts from the loaded HTML

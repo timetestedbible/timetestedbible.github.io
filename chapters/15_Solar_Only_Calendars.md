@@ -22,6 +22,26 @@ The 364-day solar calendar documented in the Dead Sea Scrolls requires inserting
 
 The Exodus narrative demonstrates that the 15th of both the first and second month were Sabbaths (Exodus 12:15-16; 16:1, 22-30). This is mathematically impossible with any solar calendar that maintains a continuous 7-day weekly cycle and fixed month lengths. If the 15th of month one is a Sabbath, then 29-30 days later (the 15th of month two) would shift by 1-2 days in a continuous cycle, making it impossible for both to be Sabbaths. This scriptural evidence directly refutes solar calendars that claim a continuous weekly cycle, as they cannot accommodate consecutive 15ths both being Sabbaths.
 
+## Sixth: The 22nd of the 2nd Month
+
+The manna narrative in Exodus 16 provides hard calendar dates that can be tested against any proposed calendar system. The sequence is explicit:
+
+> And all the congregation of the children of Israel came unto the wilderness of Sin… on the **fifteenth day of the second month** after their departing out of the land of Egypt.
+> — Exodus 16:1
+
+That same day they murmured, and God promised quails in the evening and manna in the morning (vv. 12–13). The first manna appeared the morning of the **16th**. They gathered it for six days — the 16th through the 21st. On the sixth day (the 21st) they gathered a double portion (v. 22). Moses then announced:
+
+> To morrow is the rest of the holy **sabbath** unto the LORD.
+> — Exodus 16:23
+
+The sabbath is therefore the **22nd of the 2nd month**. This is not inference — it is arithmetic from the dates Scripture provides: arrival on the 15th, first manna on the 16th, six days of gathering (16th–21st), sabbath on the 22nd.
+
+In the 364-day solar calendar (the Enochian/Qumran system), the year always begins on a Wednesday (day 4 of creation). Month 1 has 30 days. This means the 1st of the 2nd month always falls on a Friday (Wednesday + 30 days = Friday). Counting forward, the 22nd of the 2nd month is always a **Friday** in this system — one day before the sabbath, never on it.
+
+Scripture says the 22nd of the 2nd month was a sabbath. The 364-day solar calendar says it was a Friday. Both cannot be true.
+
+This is not an argument from inference or typology. It is a straightforward date check: the manna narrative provides the day number, the month number, and the weekly cycle position — and the solar calendar fails the test.
+
 ## Conclusion
 
 What this demonstrates is that these extra-biblical books are incompatible with the evidence from the Bible and should be viewed skeptically.

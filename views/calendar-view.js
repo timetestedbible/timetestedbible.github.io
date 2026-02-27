@@ -1303,10 +1303,9 @@ const CalendarView = {
       const book = match[1].trim();
       const chapter = match[2];
       const verse = match[3];
-      // Get saved translation preference or default to 'kjv'
-      let translation = 'kjv';
+      let translation = 'akjv';
       try {
-        translation = localStorage.getItem('bible_translation_preference') || 'kjv';
+        translation = getDefaultTranslation();
       } catch (e) {}
       return `/reader/bible/${translation}/${encodeURIComponent(book)}/${chapter}.${verse}`;
     }

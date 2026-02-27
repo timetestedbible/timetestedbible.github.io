@@ -66,8 +66,8 @@ const BibleView = {
           <select id="bible-translation-select" class="bible-explorer-select bible-translation-select" 
                   onchange="onTranslationChange(this.value)" title="Select translation">
             ${(() => {
-              const ord = (typeof Bible !== 'undefined') ? Bible.getOrderedTranslations() : { visible: [{id:'kjv',name:'KJV'},{id:'asv',name:'ASV'},{id:'lxx',name:'LXX'}], hidden: [] };
-              const trans = state?.content?.params?.translation || 'kjv';
+              const ord = (typeof Bible !== 'undefined') ? Bible.getOrderedTranslations() : { visible: [{id:'akjv',name:'AKJV'},{id:'asv',name:'ASV'},{id:'lxx',name:'LXX'}], hidden: [] };
+              const trans = state?.content?.params?.translation || getDefaultTranslation();
               let opts = ord.visible.map(t => `<option value="${t.id}"${t.id === trans ? ' selected' : ''}>${t.name}</option>`).join('');
               if (ord.hidden.length > 0) {
                 opts += '<optgroup label="More">' + ord.hidden.map(t => `<option value="${t.id}"${t.id === trans ? ' selected' : ''}>${t.name}</option>`).join('') + '</optgroup>';
@@ -143,7 +143,7 @@ const BibleView = {
     
     const isMultiverse = contentType === 'multiverse' && multiverse;
     const paramsKey = isMultiverse
-      ? `multiverse:${translation || 'kjv'}:${multiverse}`
+      ? `multiverse:${translation || getDefaultTranslation()}:${multiverse}`
       : `${book}-${chapter}-${translation}`;
     const needsFullRender = !this.initialized || !container.querySelector('#bible-explorer-page');
     
@@ -174,7 +174,7 @@ const BibleView = {
       if (this.lastRenderedParams !== paramsKey) {
         this.lastRenderedParams = paramsKey;
         console.log('[BibleView] Rendering multiverse:', multiverse);
-        this.renderMultiverseContent(multiverse, translation || 'kjv');
+        this.renderMultiverseContent(multiverse, translation || getDefaultTranslation());
       }
     } else {
       // Navigate if params changed OR if switching back to Bible from another content type
@@ -199,7 +199,7 @@ const BibleView = {
   async renderMultiverseContent(citationStr, translation) {
     const textContainer = document.getElementById('bible-explorer-text');
     if (!textContainer) return;
-    const requestedTranslation = translation || 'kjv';
+    const requestedTranslation = translation || getDefaultTranslation();
     // Ensure Bible data is loaded
     const isReady = typeof bibleExplorerState !== 'undefined' &&
                     bibleExplorerState.bookChapterCounts &&
@@ -252,11 +252,17 @@ const BibleView = {
       });
     } else if (!ui.researchPanelOpen && panelIsOpen) {
       // State says collapsed but panel is open — collapse it
+      const savedScroll = panel?._savedScrollY;
       requestAnimationFrame(() => {
         if (panel) {
           panel.classList.remove('open');
           document.body.classList.remove('research-panel-open');
           panel.style.width = '';
+          // Restore Bible text scroll position on mobile
+          if (typeof savedScroll === 'number' && window.innerWidth <= 768) {
+            requestAnimationFrame(() => window.scrollTo(0, savedScroll));
+            panel._savedScrollY = undefined;
+          }
         }
       });
     }
@@ -422,8 +428,7 @@ const BibleView = {
 
     // Translation provided but might need loading; fall back to default if only book given without translation
     if (!translation) {
-      translation = (typeof Bible !== 'undefined' && Bible.getDefaultTranslation)
-        ? Bible.getDefaultTranslation() : 'akjv';
+      translation = getDefaultTranslation();
     }
 
     // Load translation if needed

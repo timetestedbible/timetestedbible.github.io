@@ -1091,7 +1091,7 @@ function hideBibleLoadingDialog() {
 
 // ─── Shared JSON loader utility ──────────────────────────────────────────────
 // Deduplicates concurrent fetches, handles caching, and standardizes error handling.
-const _jsonLoadCache = new Map();
+var _jsonLoadCache = new Map();
 
 async function _fetchJsonGz(url) {
   const hasDecompress = typeof DecompressionStream !== 'undefined';
@@ -7173,7 +7173,7 @@ var bibleExplorerState = {
 
 // Cache for rendered chapter HTML to avoid re-generating on back navigation
 // Key format: "translation:book:chapter" -> HTML string
-const chapterHTMLCache = new Map();
+var chapterHTMLCache = new Map();
 
 // Clear chapter cache and re-render when name preferences change
 window.addEventListener('namePreferencesChanged', () => {

@@ -27,27 +27,27 @@ const MethodologyView = {
           </p>
 
           <div class="method-verse-grid">
-            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Psalms',chapter:78}})">
+            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Psalms',chapter:78}})">
               "I will open my mouth in a parable; I will utter dark sayings of old."
               <cite>— Psalm 78:2</cite>
             </blockquote>
-            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Matthew',chapter:13}})">
+            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Matthew',chapter:13}})">
               "All these things spake Jesus unto the multitude in parables; and without a parable spake he not unto them."
               <cite>— Matthew 13:34</cite>
             </blockquote>
-            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
+            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Proverbs',chapter:25}})">
               "It is the glory of God to conceal a matter, but the glory of kings is to search it out."
               <cite>— Proverbs 25:2</cite>
             </blockquote>
-            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'John',chapter:16}})">
+            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'John',chapter:16}})">
               "These things have I spoken unto you in proverbs: but the time cometh, when I shall no more speak unto you in proverbs, but I shall shew you plainly of the Father."
               <cite>— John 16:25</cite>
             </blockquote>
-            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Luke',chapter:8}})">
+            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Luke',chapter:8}})">
               "Unto you it is given to know the mysteries of the kingdom of God: but to others in parables; that seeing they might not see, and hearing they might not understand."
               <cite>— Luke 8:10</cite>
             </blockquote>
-            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'1Thessalonians',chapter:5}})">
+            <blockquote class="method-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'1Thessalonians',chapter:5}})">
               "Test everything; hold fast what is good."
               <cite>— 1 Thessalonians 5:21</cite>
             </blockquote>
@@ -153,7 +153,7 @@ const MethodologyView = {
                 <strong>Inline Citation Linking</strong> — References in the book and word studies link directly to the source passage. One tap to verify any claim against the primary text.
               </div>
             </div>
-            <div class="method-verse-inline" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Acts',chapter:17}})">
+            <div class="method-verse-inline" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Acts',chapter:17}})">
               "They searched the Scriptures daily to see whether those things were so." — Acts 17:11
             </div>
             <div class="method-btn-row">
@@ -250,7 +250,7 @@ const MethodologyView = {
 
         <!-- FOOTER -->
         <footer class="method-footer">
-          <div class="method-footer-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
+          <div class="method-footer-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Proverbs',chapter:25}})">
             <p>"It is the glory of God to conceal a matter, but the glory of kings is to search it out."</p>
             <cite>— Proverbs 25:2</cite>
           </div>

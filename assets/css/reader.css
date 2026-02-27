@@ -353,7 +353,7 @@
   display: block;
   width: 100%;
   text-align: left;
-  background: linear-gradient(135deg, rgba(42, 90, 140, 0.4) 0%, rgba(26, 58, 92, 0.6) 100%);
+  background: var(--accent-primary-subtle);
   border: 1px solid var(--accent-primary-muted);
   border-radius: 8px;
   padding: var(--spacing-md);
@@ -362,6 +362,7 @@
   color: var(--color-text);
 }
 .word-study-index-item:hover {
+  background: var(--accent-primary-muted);
   border-color: var(--color-accent);
   box-shadow: 0 4px 15px var(--accent-primary-subtle);
 }

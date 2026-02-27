@@ -16,7 +16,7 @@ const TutorialView = {
         <section class="hero-section" style="margin-top: 30px;">
           <div class="hero-card">
             <h1 class="hero-headline">"Test everything. Hold fast what is good."</h1>
-            <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
+            <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
             <p class="hero-description">
               Deep Bible study tools with enhanced Strong's/BDB lexicon, interlinear Hebrew and Greek, 
               and flexible calendar profiles that let you test any theory against 2,000+ years of history.
@@ -46,15 +46,15 @@ const TutorialView = {
           <h2 class="section-title">Why a Study Tool?</h2>
           <p class="section-intro">Scripture is intentionally written in parables, dark sayings, and symbolic language — not plainly. The deeper meaning is there for those willing to search it out.</p>
           <div class="why-deeper-verses">
-            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Psalms',chapter:78}})">
+            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Psalms',chapter:78}})">
               "I will open my mouth in a parable; I will utter dark sayings of old."
               <cite>— Psalm 78:2</cite>
             </blockquote>
-            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Matthew',chapter:13}})">
+            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Matthew',chapter:13}})">
               "All these things spake Jesus unto the multitude in parables; and without a parable spake he not unto them."
               <cite>— Matthew 13:34</cite>
             </blockquote>
-            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
+            <blockquote class="why-verse" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Proverbs',chapter:25}})">
               "It is the glory of God to conceal a matter, but the glory of kings is to search it out."
               <cite>— Proverbs 25:2</cite>
             </blockquote>
@@ -141,7 +141,7 @@ const TutorialView = {
                 <h3>Word Studies</h3>
               </div>
               <p>Trace every word back to its Strong's/BDB entry, examine every occurrence in Hebrew or Greek, and see where translators made different choices for the same word.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:30}})">
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Proverbs',chapter:30}})">
                 "Every word of God is pure." — Proverbs 30:5
               </div>
               <span class="learn-link">Learn More →</span>
@@ -153,7 +153,7 @@ const TutorialView = {
                 <h3>Symbol Studies</h3>
               </div>
               <p>Scripture uses consistent symbolic language. Identify each symbol's meaning from clear passages, then test it across all of Scripture using the substitution method.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Proverbs',chapter:25}})">
                 "It is the glory of God to conceal a matter." — Proverbs 25:2
               </div>
               <span class="learn-link">Learn More →</span>
@@ -165,7 +165,7 @@ const TutorialView = {
                 <h3>Verse Studies</h3>
               </div>
               <p>Compare across 10 translations, examine interlinear Hebrew/Greek, and layer annotations to follow threads across books.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Isaiah',chapter:28}})">
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Isaiah',chapter:28}})">
                 "Precept upon precept; line upon line." — Isaiah 28:10
               </div>
               <span class="learn-link">Learn More →</span>
@@ -177,7 +177,7 @@ const TutorialView = {
                 <h3>Primary Sources</h3>
               </div>
               <p>Full text of Philo and Josephus — the most important extra-biblical witnesses. Inline citations let you verify any claim against the source.</p>
-              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Acts',chapter:17}})">
+              <div class="principle-verse" onclick="event.stopPropagation(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Acts',chapter:17}})">
                 "They searched the Scriptures daily." — Acts 17:11
               </div>
               <span class="learn-link">Learn More →</span>
@@ -312,7 +312,7 @@ const TutorialView = {
 
         <!-- 8. FOOTER -->
         <footer class="tutorial-footer">
-          <div class="footer-verse" style="cursor:pointer" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:(typeof Bible!=='undefined'?Bible.getDefaultTranslation():'kjv'),book:'Proverbs',chapter:25}})">
+          <div class="footer-verse" style="cursor:pointer" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'Proverbs',chapter:25}})">
             <p>"It is the glory of God to conceal a matter, but the glory of kings is to search out a matter."</p>
             <cite>— Proverbs 25:2</cite>
           </div>

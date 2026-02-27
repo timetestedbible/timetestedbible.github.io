@@ -1432,11 +1432,12 @@ const Bible = {
   /**
    * Load translations progressively: primary first, then the rest in background.
    * Non-blocking — returns immediately after starting primary load.
-   * @param {string} primaryId - Translation to load first (awaited). Default 'kjv'.
+   * @param {string} primaryId - Translation to load first (awaited). Defaults to user's preferred translation.
    * @param {Function} [onProgress] - Called as (translationId, loaded, total) when each finishes.
    * @returns {Promise<boolean>} true when primary is loaded.
    */
-  async loadProgressive(primaryId = 'kjv', onProgress = null) {
+  async loadProgressive(primaryId, onProgress = null) {
+    if (!primaryId) primaryId = this.getDefaultTranslation();
     this._ensureInit();
 
     // Load primary translation (awaited — UI needs this)
@@ -1644,9 +1645,15 @@ const Bible = {
    */
   getDefaultTranslation() {
     const { order } = this.getOrderedTranslations();
-    return order[0] || 'kjv';
+    return order[0] || 'akjv';
   }
 };
+
+// Global helper: safe default translation accessor (avoids repeated typeof checks)
+function getDefaultTranslation() {
+  return (typeof Bible !== 'undefined' && Bible.getDefaultTranslation)
+    ? Bible.getDefaultTranslation() : 'akjv';
+}
 
 // ── Export for Node.js (tests) and browser ──
 if (typeof module !== 'undefined' && module.exports) {

@@ -1147,10 +1147,12 @@ const AppStore = {
         s.content.view = event.view;
         // Replace params entirely when switching views (don't merge old params)
         s.content.params = event.params || {};
-        // Clear Strong's/research panel unless explicitly preserved
+        // Clear Strong's context on navigation; only close panel on mobile
         if (!event.preserveStrongs) {
           s.ui.strongsId = null;
-          s.ui.researchPanelOpen = false;
+          if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+            s.ui.researchPanelOpen = false;
+          }
         }
         // Clear view-specific state when leaving views
         // Timeline state

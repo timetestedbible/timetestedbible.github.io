@@ -8384,63 +8384,6 @@ body.biblical-timeline-open .top-nav-inner {
   margin: 0 auto;
 }
 
-.word-study-index-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.word-study-index-header h1 {
-  font-size: 1.6rem;
-  color: var(--accent-primary);
-  margin: 0 0 8px;
-}
-
-.word-study-index-header p {
-  color: var(--text-secondary);
-}
-
-.word-study-index-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-}
-
-.word-study-index-item {
-  background: var(--accent-primary-subtle);
-  border: 1px solid var(--border-accent);
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.word-study-index-item:hover {
-  background: var(--accent-primary-muted);
-  border-color: var(--accent-primary-strong);
-}
-
-.word-study-index-strongs {
-  color: var(--accent-primary);
-  font-weight: 600;
-  font-size: 0.9em;
-  margin-bottom: 4px;
-}
-
-.word-study-index-lemma {
-  font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
-  color: var(--accent-gold);
-  font-size: 1.5em;
-  direction: rtl;
-  margin-bottom: 4px;
-}
-
-.word-study-index-translit {
-  color: var(--text-secondary);
-  font-style: italic;
-  font-size: 0.95em;
-}
 
 /* Time Tested index styling */
 .reader-ttt-index {

@@ -274,7 +274,7 @@ const GlobalSearch = {
         }
         // Chapter range like "Rev 17-18" — parseRef doesn't handle these,
         // but the citation parser does. If it resolves to verses, navigate.
-        const trans = Bible.getDefaultTranslation();
+        const trans = getDefaultTranslation();
         if (Bible.isLoaded(trans)) {
           const verses = Bible.getVersesForCitation(trans, normalized);
           const real = verses.filter(v => !v.isSeparator);
@@ -620,9 +620,7 @@ const GlobalSearch = {
     
     // Navigate using AppStore
     if (typeof AppStore !== 'undefined') {
-      const translation = typeof Bible !== 'undefined' 
-        ? Bible.getDefaultTranslation() 
-        : 'kjv';
+      const translation = getDefaultTranslation();
       const params = {
         contentType: 'bible',
         translation,
@@ -703,7 +701,7 @@ const GlobalSearch = {
     
     // Ensure Bible data is loaded (needed for Bible and Strongs searches)
     const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
-    const translation = state?.content?.params?.translation || (typeof currentTranslation !== 'undefined' ? currentTranslation : 'kjv');
+    const translation = state?.content?.params?.translation || (typeof currentTranslation !== 'undefined' ? currentTranslation : getDefaultTranslation());
     if ((filters.bible || filters.strongs) && !Bible.isLoaded(translation)) {
       if (content) {
         content.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--color-text-muted);">Loading Bible...</div>';
@@ -1114,7 +1112,7 @@ const GlobalSearch = {
   performTextSearch(query, offset = 0, limit = 50) {
     const wordPattern = new RegExp(`\\b${this.escapeRegex(query)}\\b`, 'gi');
     const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
-    const translation = state?.content?.params?.translation || (typeof currentTranslation !== 'undefined' ? currentTranslation : 'kjv');
+    const translation = state?.content?.params?.translation || (typeof currentTranslation !== 'undefined' ? currentTranslation : getDefaultTranslation());
 
     if (!Bible.isLoaded(translation)) {
       return {
@@ -1556,7 +1554,7 @@ const GlobalSearch = {
     
     // Preserve current translation so navigateWhenReady doesn't fall back to bible home
     const state = AppStore.getState();
-    const translation = state.content?.params?.translation || 'kjv';
+    const translation = state.content?.params?.translation || getDefaultTranslation();
     
     // On mobile: close the research panel so the bible verse is visible
     // (no room for side-by-side; user can tap a word to re-open strongs)

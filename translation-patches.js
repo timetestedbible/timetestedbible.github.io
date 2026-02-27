@@ -289,7 +289,7 @@ const TranslationPatches = {
     if (state === 'inactive') return null;
 
     const escapedRef = this._escapeAttr(verseRef);
-    const trans = (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+    const trans = (typeof currentTranslation !== 'undefined' && currentTranslation) || getDefaultTranslation();
 
     let html = '<div class="patch-interlinear-note">';
 
@@ -511,7 +511,7 @@ const TranslationPatches = {
     const state = this.getVerseState(verseRef);
     this.hideTooltip();
 
-    const trans = (typeof currentTranslation !== 'undefined' && currentTranslation) || 'kjv';
+    const trans = (typeof currentTranslation !== 'undefined' && currentTranslation) || getDefaultTranslation();
     let html = '<div class="patch-tooltip">';
 
     if (state === 'accepted') {

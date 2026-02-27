@@ -704,7 +704,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Works and deeds',
     sentence: 'Works and deeds — the visible output that reveals the hidden nature of whoever produces it.',
     opposite: 'Barrenness, fruitlessness — producing no works, having nothing to show',
-    rank: 7.6,
+    rank: 7.5,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/fruit/'
@@ -1421,7 +1421,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Hebrew word behind "new covenant" comes from a root that means "to renew,…',
     sentence: 'The Hebrew word behind "new covenant" comes from a root that means "to renew, repair, rebuild" — and every layer of the source languages confirms it. The everlasting covenant was not replaced. It was renewed.',
     opposite: null,
-    rank: 5.9,
+    rank: 7.1,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/renewed-covenant/'
@@ -1449,7 +1449,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The unchanging covenant',
     sentence: 'The unchanging covenant — the binding agreement between God and man that does not shift, does not fail, and upon which everything stands or falls.',
     opposite: 'Sand — multitudes at the covenant boundary, people without a binding relationship to God, shifting and innumerable but not yet bound',
-    rank: 7.9,
+    rank: 8,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/rock/'
@@ -1561,7 +1561,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant protection cast by a body standing between you and destruction',
     sentence: 'Covenant protection cast by a body standing between you and destruction.',
     opposite: 'Exposed, uncovered — outside the shadow means outside the covenant',
-    rank: 6,
+    rank: 6.4,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/shadow/'

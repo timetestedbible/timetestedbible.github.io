@@ -366,7 +366,7 @@ function navigateToCrossRef(book, chapter, verse) {
   
   // Get current translation
   const state = typeof AppStore !== 'undefined' ? AppStore.getState() : null;
-  const translation = state?.content?.params?.translation || 'kjv';
+  const translation = state?.content?.params?.translation || getDefaultTranslation();
   
   console.log('[CrossRef] Using translation:', translation);
   

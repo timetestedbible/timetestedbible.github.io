@@ -221,7 +221,7 @@ const BookView = {
             view: 'reader',
             params: {
               contentType: 'bible',
-              translation: parts[bibleIdx - 1] || 'kjv',
+              translation: parts[bibleIdx - 1] || getDefaultTranslation(),
               book: decodeURIComponent(parts[bibleIdx] || 'Genesis'),
               chapter: parseInt(parts[bibleIdx + 1]) || 1,
               verse: url.searchParams.get('verse') ? parseInt(url.searchParams.get('verse')) : null
