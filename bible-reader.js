@@ -35,14 +35,14 @@ const BIBLE_TRANSLATIONS = {
 
 // Translation data storage — legacy globals, now backed by Bible API proxies (defined below)
 // bibleTranslations and bibleIndexes are defined after Bible API is available.
-let currentTranslation = getDefaultTranslation();
-let translationsLoading = {};  // Track which translations are currently loading
+var currentTranslation = getDefaultTranslation();
+var translationsLoading = {};  // Track which translations are currently loading
 
 // Hebrew (WLC) — now managed by Bible API (bible.js)
 // Legacy stubs for any code that still checks these
-let hebrewData = null;
-let hebrewIndex = {};
-let hebrewLoading = null;
+var hebrewData = null;
+var hebrewIndex = {};
+var hebrewLoading = null;
 
 // BOOK_NUM_TO_NAME and BOOK_NAME_TO_NUM are now defined in bible.js (loaded first).
 // They're available as globals: BOOK_NUM_TO_NAME, BOOK_NAME_TO_NUM
@@ -123,9 +123,9 @@ const KJV_NAME_VARIANTS = {
 // They're available as globals and used by normalizeBookName() in bible.js.
 
 // KJV Strong's data storage
-let kjvStrongsData = null;
-let kjvStrongsIndex = {};
-let kjvStrongsLoading = null;
+var kjvStrongsData = null;
+var kjvStrongsIndex = {};
+var kjvStrongsLoading = null;
 
 // Strong's Dictionaries - reference to global variables from strongs-*-dict.js
 // Will be set when the scripts load
@@ -151,7 +151,7 @@ function getStrongsDict() {
 
 // Maps consonantal forms (vowels stripped) → array of Strong's numbers
 // Built lazily from strongsHebrewDictionary on first use
-let consonantalRootIndex = null;
+var consonantalRootIndex = null;
 
 function buildConsonantalRootIndex() {
   if (consonantalRootIndex) return;
@@ -170,7 +170,7 @@ function buildConsonantalRootIndex() {
 // VERSE FORMATTING DATA
 // ============================================
 
-let verseFormattingData = null;
+var verseFormattingData = null;
 
 async function loadVerseFormatting() {
   return _loadJsonData('/data/verse-formatting.json', 'Verse Formatting', {
@@ -189,9 +189,9 @@ function getChapterFormatting(bookName, chapter) {
 // ============================================
 
 // Gematria data storage
-let gematriaData = null;        // { hebrew: {...}, greek: {...} }
-let gematriaIndex = null;       // { value: { hebrew: [...], greek: [...] }, ... }
-let gematriaLoading = null;     // Promise while loading
+var gematriaData = null;        // { hebrew: {...}, greek: {...} }
+var gematriaIndex = null;       // { value: { hebrew: [...], greek: [...] }, ... }
+var gematriaLoading = null;     // Promise while loading
 
 // Load gematria data (lazy load on first use)
 async function loadGematriaData() {
@@ -370,12 +370,12 @@ function getStrongsEntry(strongsNum) {
 // They now derive from the Bible API instead of local arrays.
 // TODO: Remove these once all access is migrated to Bible.getVerse/getChapter.
 
-let bibleData = null;  // Legacy: used by displayBibleChapter filter, buildBookChapterCounts
-let bibleIndex = {};   // Legacy: used by showInterlinear for cross-translation comparison
+var bibleData = null;  // Legacy: used by displayBibleChapter filter, buildBookChapterCounts
+var bibleIndex = {};   // Legacy: used by showInterlinear for cross-translation comparison
 
 // Proxy objects that delegate to Bible API internals
 // bibleTranslations[id] and bibleIndexes[id] are read in several places
-let bibleTranslations = new Proxy({}, {
+var bibleTranslations = new Proxy({}, {
   get(target, prop) {
     if (typeof prop === 'string' && Bible.isLoaded(prop)) {
       // Return a truthy marker — actual verse data comes from Bible.getVerse/getChapter
@@ -384,7 +384,7 @@ let bibleTranslations = new Proxy({}, {
     return undefined;
   }
 });
-let bibleIndexes = new Proxy({}, {
+var bibleIndexes = new Proxy({}, {
   get(target, prop) {
     if (typeof prop === 'string' && Bible.isLoaded(prop)) {
       // Return a proxy that resolves verse lookups via Bible API
@@ -412,7 +412,7 @@ function getBibleIndex() {
 // Sync legacy globals. During Phase 1 transition, bibleData is set to a
 // marker object so truthiness checks pass. Actual data access is migrated
 // in Phase 2 to use Bible.getChapter / Bible.getVerse directly.
-let _legacyTranslation = null;  // track which translation bibleData was built for
+var _legacyTranslation = null;  // track which translation bibleData was built for
 
 function syncLegacyVariables() {
   if (!Bible.isLoaded(currentTranslation)) {
@@ -685,7 +685,7 @@ function _positionTooltipBelow(tooltip, anchorEl, margin = 5, edge = 10) {
 }
 
 // Detect touch vs mouse per-interaction: pointerdown fires before click and carries pointerType.
-let _lastPointerType = 'mouse';
+var _lastPointerType = 'mouse';
 document.addEventListener('pointerdown', (e) => { _lastPointerType = e.pointerType; }, { passive: true });
 
 function handleStrongsWordClick(strongsNum, englishWord, gloss, event) {
@@ -761,8 +761,8 @@ function _setMorphContextFromVerse(strongsNum, event) {
 }
 
 // Show word tooltip on hover (definitions + symbol meaning + name substitution info)
-let _wordTooltipAnchor = null;
-let _wordTooltipTracker = null;
+var _wordTooltipAnchor = null;
+var _wordTooltipTracker = null;
 
 function showWordTooltip(event) {
   const el = event.target.closest('.strongs-word, .name-sub') || event.target;
@@ -971,8 +971,8 @@ function showMorphTooltip(el, event) {
   }
 }
 
-let _morphTooltipAnchor = null;
-let _morphTooltipTracker = null;
+var _morphTooltipAnchor = null;
+var _morphTooltipTracker = null;
 
 function _stopMorphTooltipTracking() {
   if (_morphTooltipTracker) {
@@ -1240,13 +1240,13 @@ function hasHebrewText(bookName) {
 // ============================================================================
 
 // MorphHB data storage - Hebrew words with morphology and Strong's (replaces interlinear.json for OT)
-let morphhbData = null;
+var morphhbData = null;
 
 // Current morphology context (set when clicking a word from interlinear, cleared on panel nav)
-let currentMorphContext = null;
+var currentMorphContext = null;
 
 // BDB Lexicon data (lazy-loaded on first Strong's panel open)
-let bdbData = null;
+var bdbData = null;
 
 async function loadBDB() {
   return _loadJsonData('/data/bdb-ai.json', 'BDB Lexicon', {
@@ -1260,16 +1260,16 @@ async function loadBDB() {
 }
 
 // NT interlinear data (Greek)
-let ntInterlinearData = null;
+var ntInterlinearData = null;
 
 // Hebrew Gospels interlinear data (Hebrew NT source texts)
-let hgInterlinearData = null;
+var hgInterlinearData = null;
 
 // Hebrew Gospels translation notes
-let hgNotesData = null;
+var hgNotesData = null;
 
 // TIPNR person/place data
-let tipnrData = null;
+var tipnrData = null;
 
 async function loadTipnr() {
   return _loadJsonData('/data/tipnr.json', 'TIPNR', {
@@ -1300,7 +1300,7 @@ const TIPNR_BOOK_ABBREVS = {
 
 // Linkify scripture refs and Strong's numbers in person info text
 // Cache for name to Strong's lookup
-let nameToStrongsCache = null;
+var nameToStrongsCache = null;
 
 function buildNameToStrongsCache() {
   if (nameToStrongsCache || !tipnrData) return;
@@ -3010,7 +3010,7 @@ function unhighlightBhsa() {
 // ============================================================================
 
 // Search state
-let verseSearchState = {
+var verseSearchState = {
   strongsNum: null,
   verseRefs: null,      // Array of all verse references
   currentIndex: 0,      // Current position in scan
@@ -3466,7 +3466,7 @@ function searchStrongsInGlobal(strongsNum) {
 // ============================================================================
 
 // State for concept search
-let conceptSearchState = {
+var conceptSearchState = {
   searchWord: null,
   strongsNumbers: [],  // All Strong's numbers found for the word
   currentStrongsIndex: 0,
@@ -3977,7 +3977,7 @@ function displayConceptVerseResults(results, startIndex, count, conceptOnlyCount
 }
 
 // Observer for infinite scroll
-let conceptScrollObserver = null;
+var conceptScrollObserver = null;
 
 function setupConceptScrollObserver(sentinel, nextIndex) {
   // Clean up previous observer
@@ -4127,7 +4127,7 @@ function closeConceptSearch(skipDispatch = false) {
 // ============================================================================
 
 // State for regex search
-let regexSearchState = {
+var regexSearchState = {
   pattern: null,
   regex: null,
   results: [],
@@ -4337,7 +4337,7 @@ function loadMoreRegexResults(startIndex) {
 }
 
 // Observer for regex infinite scroll
-let regexScrollObserver = null;
+var regexScrollObserver = null;
 
 function setupRegexScrollObserver(sentinel, nextIndex) {
   // Clean up previous observer
@@ -4415,7 +4415,7 @@ function escapeHtml(text) {
 }
 
 // Initialize the draggable search divider
-let searchDividerInitialized = false;
+var searchDividerInitialized = false;
 
 function initSearchDivider() {
   if (searchDividerInitialized) return;
@@ -4493,8 +4493,8 @@ function initSearchDivider() {
 // ============================================================================
 
 // Navigation history for Strong's panel
-let strongsHistory = [];
-let strongsHistoryIndex = -1;
+var strongsHistory = [];
+var strongsHistoryIndex = -1;
 
 // Single source of truth: find symbol for a Strong's entry.
 // Three reliable matching paths only:
@@ -4790,7 +4790,7 @@ function renderBDBRef(ref, skipStem) {
 }
 
 // Track which Strong's entry the BDB section is currently showing (to avoid self-links)
-let bdbCurrentStrongs = '';
+var bdbCurrentStrongs = '';
 
 // Navigate to a verse from BDB ref
 function navigateToBDBVerse(verseRef, event) {
@@ -4806,7 +4806,7 @@ function navigateToBDBVerse(verseRef, event) {
 }
 
 // Verse tooltip for BDB scripture references — shows verse text on hover
-let _verseTooltipTimer = null;
+var _verseTooltipTimer = null;
 
 function showVerseTooltip(el, event) {
   // Clear any pending hide
@@ -4914,7 +4914,7 @@ function handleScriptureNav(el, event) {
 }
 
 // Strong's tooltip for hover preview on strongs-link elements
-let _strongsTooltipTimer = null;
+var _strongsTooltipTimer = null;
 
 function showStrongsTooltip(el, event) {
   if (_strongsTooltipTimer) { clearTimeout(_strongsTooltipTimer); _strongsTooltipTimer = null; }
@@ -4973,7 +4973,7 @@ function hideStrongsTooltip(immediate) {
 }
 
 // Rich tooltip for Strong's buttons in blog posts / symbol studies
-let _strongsBtnTooltipTimer = null;
+var _strongsBtnTooltipTimer = null;
 
 function showStrongsButtonTooltip(el, event) {
   if (_strongsBtnTooltipTimer) { clearTimeout(_strongsBtnTooltipTimer); _strongsBtnTooltipTimer = null; }
@@ -5398,7 +5398,7 @@ function linkifyBDBScriptureRefs(html) {
 }
 
 // Raw BDB data (loaded alongside AI data for verification)
-let bdbRawData = null;
+var bdbRawData = null;
 
 async function loadBDBRaw() {
   return _loadJsonData('/data/bdb.json', 'BDB Raw', {
@@ -5408,8 +5408,8 @@ async function loadBDBRaw() {
 }
 
 // Formatted BDB data (structured original text, lazy-loaded on demand via gzip)
-let bdbFormattedData = null;
-let bdbFormattedLoading = null;
+var bdbFormattedData = null;
+var bdbFormattedLoading = null;
 
 async function loadBDBFormatted() {
   if (bdbFormattedData) return true;
@@ -5883,7 +5883,7 @@ function getVerseStudy(bookName, chapter, verse) {
 }
 
 // Resize functionality for Strong's sidebar
-let isResizing = false;
+var isResizing = false;
 
 function startStrongsResize(event) {
   event.preventDefault();
@@ -6300,8 +6300,8 @@ function applySymbolHighlighting(text) {
 }
 
 // --- Content ranks (PageRank scores for all content types) ---
-let _contentRanks = null;
-let _contentRanksLoading = false;
+var _contentRanks = null;
+var _contentRanksLoading = false;
 
 async function loadContentRanks() {
   if (_contentRanks) return _contentRanks;
