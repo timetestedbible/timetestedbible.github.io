@@ -10,11 +10,11 @@ date: 2026-02-26
 ---
 <style>
   .blog-article .release-hero { max-width: 100%; border-radius: 12px; margin: 0 0 24px; border: 1px solid var(--border-subtle); }
-  .blog-article .install-cards { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
-  .blog-article .install-card { flex: 1; min-width: 200px; background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px; text-align: center; }
-  .blog-article .install-card h4 { margin: 0 0 6px; color: var(--text-primary); font-size: 1.05em; }
-  .blog-article .install-card p { margin: 0; color: var(--text-secondary); font-size: 0.85em; line-height: 1.5; }
-  .blog-article .install-card .install-icon { font-size: 2em; margin-bottom: 8px; }
+  .blog-article .install-cards { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+  .blog-article .install-card { display: flex; align-items: center; gap: 14px; background: var(--surface-raised); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 14px 18px; text-align: left; }
+  .blog-article .install-card h4 { margin: 0 0 2px; color: var(--text-primary); font-size: 1em; }
+  .blog-article .install-card p { margin: 0; color: var(--text-secondary); font-size: 0.88em; line-height: 1.5; }
+  .blog-article .install-card .install-icon { font-size: 1.8em; flex-shrink: 0; }
 </style>
 
 <div class="blog-article">
@@ -81,18 +81,15 @@ date: 2026-02-26
 <div class="install-cards">
   <div class="install-card">
     <div class="install-icon">🌐</div>
-    <h4>Web</h4>
-    <p>Visit <a href="https://timetested.bible" style="color:var(--accent-primary)">timetested.bible</a> in any browser. Always up to date. No install required.</p>
+    <div><h4>Web</h4><p>Visit <a href="https://timetested.bible" style="color:var(--accent-primary)">timetested.bible</a> in any browser. Always up to date, no install required.</p></div>
   </div>
   <div class="install-card">
     <div class="install-icon">📲</div>
-    <h4>PWA</h4>
-    <p>Tap "Add to Home Screen" on your phone or the install icon in your desktop browser. Works fully offline. Auto-updates when online.</p>
+    <div><h4>PWA — Phone, Tablet, or Desktop</h4><p>Tap "Add to Home Screen" on mobile or the install icon in your browser. Works fully offline after first load. Auto-updates when online.</p></div>
   </div>
   <div class="install-card">
     <div class="install-icon">💻</div>
-    <h4>Desktop App</h4>
-    <p>Download for <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/tag/v2.1.0" style="color:var(--accent-primary)">macOS, Windows, or Linux</a>. Ships with everything built in. Auto-updates content in the background.</p>
+    <div><h4>Desktop App — macOS, Windows, Linux</h4><p><a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/tag/v2.1.0" style="color:var(--accent-primary)">Download from GitHub</a>. Ships with everything built in. Auto-updates content in the background.</p></div>
   </div>
 </div>
 
