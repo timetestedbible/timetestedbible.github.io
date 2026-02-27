@@ -7160,7 +7160,7 @@ const BIBLE_BOOKS = {
 };
 
 // Track current state
-let bibleExplorerState = {
+var bibleExplorerState = {
   currentBook: null,
   currentChapter: null,
   highlightedVerse: null,
