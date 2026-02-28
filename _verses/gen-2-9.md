@@ -7,6 +7,7 @@ description: "The two trees at the center of Eden: the living nation and the mor
 verse_ref: "Gen 2:9"
 strongs: [H6086, H2416, H1847, H2896, H7451, H8432, H1588, H3045, H5903, H8384, H6529, H5785, H3801]
 words: [tree, life, knowledge, good, evil, midst, garden, knew, naked, fig, fruit, skins, coats]
+group: "Eden and Creation"
 ---
 
 # Genesis 2:9

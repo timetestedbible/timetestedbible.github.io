@@ -1163,7 +1163,7 @@ function _replaceNamesInText(text, prefs) {
   if (prefs.divineName !== 'lord') {
     const divine = DIVINE_NAME_MAP[prefs.divineName];
     if (divine) {
-      collectMatches(/\bthe LORD\b/g, divine.display, 'the LORD');
+      collectMatches(/\b[Tt]he LORD\b/g, divine.display, 'the LORD');
       collectMatches(/\bTHE LORD\b/g, divine.upper, 'THE LORD');
       collectMatches(/\bLORD\b/g, divine.bare, 'LORD');
       if (prefs.divineName !== 'jehovah') {
@@ -1227,7 +1227,7 @@ function applyNamePreferences(text) {
   if (prefs.divineName !== 'lord') {
     const divine = DIVINE_NAME_MAP[prefs.divineName];
     if (divine) {
-      result = result.replace(/\bthe LORD\b/g, divine.display);
+      result = result.replace(/\b[Tt]he LORD\b/g, divine.display);
       result = result.replace(/\bTHE LORD\b/g, divine.upper);
       result = result.replace(/\bLORD\b/g, divine.bare);
       if (prefs.divineName !== 'jehovah') {

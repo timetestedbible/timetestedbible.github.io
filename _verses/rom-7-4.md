@@ -7,6 +7,7 @@ description: "The marriage analogy: death ends the old covenant's condemnation, 
 verse_ref: "Rom 7:4"
 strongs: [G2289, G3551, G2590, G4151, G1121, G40, G1342, G18]
 words: [dead, law, fruit, spirit, letter, holy, just, good]
+group: "Torah Eternal"
 ---
 
 # Romans 7:4–6

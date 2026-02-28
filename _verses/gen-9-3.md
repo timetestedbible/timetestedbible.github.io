@@ -7,6 +7,7 @@ description: "Spoken to Noah — who already distinguished clean from unclean by
 verse_ref: "Gen 9:3"
 strongs: [H7431, H2416, H3418, H6212, H2889, H2931]
 words: [moving thing, living, green, herb, clean, unclean]
+group: "Clean and Unclean"
 ---
 
 # Genesis 9:3

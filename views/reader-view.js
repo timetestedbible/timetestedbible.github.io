@@ -268,6 +268,7 @@ const ReaderView = {
         
       case 'words':
         this.renderWordStudyInBibleFrame(state, derived, container, params.word);
+        this.syncUIState(state.ui);
         setTimeout(() => {
           if (typeof updateReaderContentSelector === 'function') {
             updateReaderContentSelector('words');
@@ -277,6 +278,7 @@ const ReaderView = {
         
       case 'verse-studies':
         this.renderVerseStudyInBibleFrame(state, derived, container, params.study);
+        this.syncUIState(state.ui);
         setTimeout(() => {
           if (typeof updateReaderContentSelector === 'function') {
             updateReaderContentSelector('verse-studies');
@@ -286,6 +288,7 @@ const ReaderView = {
         
       case 'numbers':
         this.renderNumberStudyInBibleFrame(state, derived, container, params.number);
+        this.syncUIState(state.ui);
         setTimeout(() => {
           if (typeof updateReaderContentSelector === 'function') {
             updateReaderContentSelector('numbers');
@@ -829,7 +832,7 @@ const ReaderView = {
     const textArea = container.querySelector('#bible-explorer-text');
     if (!textArea) return;
     if (!studyId) {
-      // Index: list all verse studies with two sort orders
+      // Index: list all verse studies with three sort orders
       const studies = typeof VERSE_STUDY_INDEX !== 'undefined' ? VERSE_STUDY_INDEX : [];
 
       const byBible = [...studies].sort((a, b) =>
@@ -850,9 +853,41 @@ const ReaderView = {
         </button>
       `).join('');
 
+      const groupOrder = ['Torah Eternal', 'Clean and Unclean', 'Nature of Hell', 'Second Death Sources', 'Prophecy', 'Eden and Creation', 'Other'];
+      const getGroups = (s) => {
+        if (Array.isArray(s.groups)) return s.groups;
+        if (typeof s.groups === 'string') return [s.groups];
+        if (typeof s.group === 'string') return [s.group];
+        return ['Other'];
+      };
+      const renderGrouped = (list) => {
+        const groups = {};
+        for (const s of list) {
+          for (const g of getGroups(s)) {
+            if (!groups[g]) groups[g] = [];
+            groups[g].push(s);
+          }
+        }
+        let html = '';
+        const allGroups = [...groupOrder, ...Object.keys(groups).filter(g => !groupOrder.includes(g))];
+        for (const g of allGroups) {
+          if (!groups[g] || groups[g].length === 0) continue;
+          const sorted = [...groups[g]].sort((a, b) =>
+            typeof Bible !== 'undefined' && Bible.compareRefs ? Bible.compareRefs(a.ref, b.ref) : 0
+          );
+          const count = sorted.length;
+          const gid = 'vsg-' + g.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+          html += `<div class="symbol-topic-group">`;
+          html += `<h3 class="symbol-topic-heading vstudy-group-toggle" onclick="var el=document.getElementById('${gid}');var arr=this.querySelector('.vstudy-group-arrow');if(el.style.display==='none'){el.style.display='';arr.textContent='▾'}else{el.style.display='none';arr.textContent='▸'}" style="cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px;"><span class="vstudy-group-arrow" style="font-size:0.8em;opacity:0.5;">▾</span>${g}<span style="font-size:0.75em;opacity:0.5;font-weight:400;margin-left:4px;">(${count})</span></h3>`;
+          html += `<div class="word-study-index-list" id="${gid}">${renderList(sorted)}</div></div>`;
+        }
+        return html;
+      };
+
       const sortClick = `(function(mode, btn) {
         document.getElementById('vstudy-list-bible').style.display = mode === 'bible' ? '' : 'none';
         document.getElementById('vstudy-list-rank').style.display = mode === 'rank' ? '' : 'none';
+        document.getElementById('vstudy-list-topic').style.display = mode === 'topic' ? '' : 'none';
         btn.parentElement.querySelectorAll('.symbol-sort-btn').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
       })`;
@@ -864,13 +899,17 @@ const ReaderView = {
               ← Back to Reader
             </button>
           </nav>
-          <h1>📖 Verse Studies</h1>
-          <p class="word-study-index-intro">In-depth studies attached to specific verses — examining translation choices, consonantal ambiguities, and patterns that cross-reference multiple passages. Distinct from <strong>word studies</strong> (lexical) and <strong>symbol studies</strong> (what a term represents).</p>
+          <h1>Verse Studies</h1>
+          <p class="word-study-index-intro">In-depth studies attached to specific verses — examining translation choices, Hebrew gospel evidence, and patterns that cross-reference multiple passages.</p>
           <div class="symbol-sort-controls" style="margin-bottom:var(--spacing-md)">
-            <button class="symbol-sort-btn active" onclick="${sortClick}('bible', this)">Bible Order</button>
+            <button class="symbol-sort-btn active" onclick="${sortClick}('topic', this)">By Topic</button>
+            <button class="symbol-sort-btn" onclick="${sortClick}('bible', this)">Bible Order</button>
             <button class="symbol-sort-btn" onclick="${sortClick}('rank', this)">By Relevance</button>
           </div>
-          <div class="word-study-index-list" id="vstudy-list-bible">
+          <div id="vstudy-list-topic">
+            ${renderGrouped(studies)}
+          </div>
+          <div class="word-study-index-list" id="vstudy-list-bible" style="display:none">
             ${renderList(byBible)}
           </div>
           <div class="word-study-index-list" id="vstudy-list-rank" style="display:none">
@@ -1330,24 +1369,78 @@ const ReaderView = {
     }
 
     // --- Pass 2: H####/G#### Strong's references ---
-    // Show the word (lemma/transliteration) instead of the raw number.
-    // Tooltip reveals the Strong's ID; click opens the panel.
+    // When author writes "H7585 *sheol*", make "sheol" the clickable link for H7585.
+    // When H#### appears alone (no following italic), show a button with the dictionary gloss.
     const strongsPattern = /\b([HG]\d{1,5})\b/g;
     collectTextNodes(container, strongsPattern).forEach(node => {
-      const span = document.createElement('span');
       strongsPattern.lastIndex = 0;
-      span.innerHTML = node.nodeValue.replace(strongsPattern, (match, id) => {
-        let label = id;
-        if (typeof getStrongsEntry === 'function') {
-          const entry = getStrongsEntry(id);
-          if (entry) {
-            label = (typeof extractGloss === 'function' ? extractGloss(entry) : '') || entry.xlit || id;
-          }
+      const matches = [];
+      let m;
+      while ((m = strongsPattern.exec(node.nodeValue)) !== null) {
+        matches.push({ id: m[1], index: m.index, length: m[0].length });
+      }
+      if (matches.length === 0) return;
+
+      const frag = document.createDocumentFragment();
+      let lastIdx = 0;
+
+      for (const match of matches) {
+        if (match.index > lastIdx) {
+          frag.appendChild(document.createTextNode(node.nodeValue.slice(lastIdx, match.index)));
         }
-        return `<button class="symbol-strongs-btn" data-strongs="${id}" onmouseenter="if(typeof showStrongsButtonTooltip==='function')showStrongsButtonTooltip(this,event)" onmouseleave="if(typeof hideStrongsButtonTooltip==='function')hideStrongsButtonTooltip()" onclick="if(typeof showStrongsPanel==='function')showStrongsPanel('${id}','','',event)">${label}</button>`;
-      });
-      node.parentNode.replaceChild(span, node);
+
+        const id = match.id;
+        const afterText = node.nodeValue.slice(match.index + match.length);
+        const nextSibling = node.nextSibling;
+        const trailingSpace = /^\s*$/.test(afterText);
+        const nextIsItalic = nextSibling && (nextSibling.nodeName === 'EM' || nextSibling.nodeName === 'I');
+
+        if (trailingSpace && nextIsItalic && matches.indexOf(match) === matches.length - 1) {
+          // Author pattern: "H7585 *sheol*" — make the italic word the clickable element
+          const italicEl = nextSibling;
+          const label = italicEl.textContent;
+          const btn = document.createElement('button');
+          btn.className = 'symbol-strongs-btn';
+          btn.dataset.strongs = id;
+          btn.setAttribute('onmouseenter', "if(typeof showStrongsButtonTooltip==='function')showStrongsButtonTooltip(this,event)");
+          btn.setAttribute('onmouseleave', "if(typeof hideStrongsButtonTooltip==='function')hideStrongsButtonTooltip()");
+          btn.setAttribute('onclick', `if(typeof showStrongsPanel==='function')showStrongsPanel('${id}','','',event)`);
+          btn.textContent = label;
+          btn.style.fontStyle = 'italic';
+          frag.appendChild(btn);
+          // Mark the italic element for removal after processing
+          italicEl.dataset._strongsAbsorbed = '1';
+        } else {
+          // Standalone H#### — show dictionary gloss as before
+          let label = id;
+          if (typeof getStrongsEntry === 'function') {
+            const entry = getStrongsEntry(id);
+            if (entry) {
+              label = (typeof extractGloss === 'function' ? extractGloss(entry) : '') || entry.xlit || id;
+            }
+          }
+          const btn = document.createElement('button');
+          btn.className = 'symbol-strongs-btn';
+          btn.dataset.strongs = id;
+          btn.setAttribute('onmouseenter', "if(typeof showStrongsButtonTooltip==='function')showStrongsButtonTooltip(this,event)");
+          btn.setAttribute('onmouseleave', "if(typeof hideStrongsButtonTooltip==='function')hideStrongsButtonTooltip()");
+          btn.setAttribute('onclick', `if(typeof showStrongsPanel==='function')showStrongsPanel('${id}','','',event)`);
+          btn.textContent = label;
+          frag.appendChild(btn);
+        }
+
+        lastIdx = match.index + match.length;
+      }
+
+      if (lastIdx < node.nodeValue.length) {
+        frag.appendChild(document.createTextNode(node.nodeValue.slice(lastIdx)));
+      }
+
+      node.parentNode.replaceChild(frag, node);
     });
+
+    // Remove italic elements that were absorbed into Strong's buttons
+    container.querySelectorAll('em[data-_strongs-absorbed], i[data-_strongs-absorbed]').forEach(el => el.remove());
 
     // Preload BDB lexicon so tooltips have rich sense data ready
     if (typeof loadBDB === 'function') loadBDB();

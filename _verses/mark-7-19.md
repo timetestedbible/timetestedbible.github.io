@@ -7,6 +7,7 @@ description: "The dispute is about Pharisaic handwashing traditions — not Levi
 verse_ref: "Mark 7:19"
 strongs: [G2511, G3956, G1033, G2588, G2836, G856, G2839, G169]
 words: [purging, foods, heart, belly, draught, clean, common, unclean]
+group: "Clean and Unclean"
 ---
 
 # Mark 7:19

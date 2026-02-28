@@ -25,7 +25,26 @@ The word H7585 *sheol* derives from H7592 *sha'al* — "to ask, inquire, request
 
 Four things that are never satisfied. Sheol is the first. Its nature is *demand* — and like the barren womb, the dry earth, and the consuming $fire, it cannot say "enough."
 
-The Greek equivalent, G86 *hades*, comes from a different root — alpha-privative + G1492 *eido* ("to see") — meaning "the **unseen**." The Hebrew names the demand. The Greek names the hiddenness. Together they describe a realm that claims all life into invisibility.
+### The Word Itself — שְׁאוֹל in Paleo-Hebrew
+
+The pictographic letters that compose *sheol* reveal what the word encodes:
+
+| Letter | Paleo | Picture | Meaning in Scripture |
+|--------|-------|---------|---------------------|
+| **שׁ** (Shin) | 𐤔 | Teeth / flame | $fire, consume — "our God is a consuming $fire" (Heb 12:29) |
+| **א** (Aleph) | 𐤀 | Ox head | God, the first, the leader — "I am the Aleph and the Tav" (Rev 22:13) |
+| **ו** (Vav) | 𐤅 | Tent peg / nail | Connected, fastened, bound |
+| **ל** (Lamed) | 𐤋 | Shepherd's staff | Authority, the shepherd — "The LORD is my shepherd" (Ps 23:1) |
+
+**שְׁאוֹל = Fire — God — Connected — Shepherd**
+
+The consuming $fire and the good shepherd are the same person. The same staff that comforts the sheep (Ps 23:4 — "thy rod and thy staff they comfort me") strikes the predator. Sheol is not a place where God sends you — it is who God IS to those without covering. The $fire is Him. The authority is Him. The demanding place demands because the Shepherd demands an accounting of His flock.
+
+Each connection is explicit in Scripture: God says He IS $fire (Deut 4:24). God says He IS the Aleph (Rev 22:13). God says He IS the shepherd (John 10:11, Ps 23:1). The vav (nail/connection) binds fire to authority — the same nail that fastened sheol's grip on the dead is the nail that fastened Christ to the cross. He holds the keys of death and hades (Rev 1:18) because He passed through the fire Himself.
+
+### Hebrew vs. Greek Etymology
+
+The Greek equivalent, G86 *hades*, comes from a different root — alpha-privative + G1492 *eido* ("to see") — meaning "the **unseen**." The Hebrew names what sheol IS: God's consuming authority. The Greek names what it looks like from outside: the unseen, the hidden. Together they describe a reality that claims all life — the $fire of God's nature, invisible to the living until they pass through it.
 
 But sheol is not the final word. The same God who "bringeth down to the grave" also "bringeth up" (1 Sam 2:6). Psalm 16:10 promises that God's Holy One will not be *left* in sheol. And Revelation 20:14 records sheol's own death: "death and hell were cast into the lake of fire." The demanding place is itself destroyed.
 

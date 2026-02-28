@@ -11142,10 +11142,10 @@ body.biblical-timeline-open .top-nav-inner {
    ═══════════════════════════════════════════════════════════════ */
 
 /* Hide research panel + controls for non-Bible content types (no clickable words to study) */
-/* Exception: blog posts have clickable Strong's numbers */
-.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel,
-.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel-thumb,
-.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]) .research-panel-collapse-btn {
+/* Exception: blog posts, symbol/verse/word/number studies all have clickable Strong's numbers */
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]):not([data-content-type="verse-studies"]):not([data-content-type="words"]):not([data-content-type="numbers"]) .research-panel,
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]):not([data-content-type="verse-studies"]):not([data-content-type="words"]):not([data-content-type="numbers"]) .research-panel-thumb,
+.bible-explorer-page:not([data-content-type="bible"]):not([data-content-type="multiverse"]):not([data-content-type="blog"]):not([data-content-type="symbols"]):not([data-content-type="verse-studies"]):not([data-content-type="words"]):not([data-content-type="numbers"]) .research-panel-collapse-btn {
   display: none !important;
 }
 

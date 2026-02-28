@@ -337,7 +337,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Concealed disobedience',
     sentence: 'Concealed disobedience — the state of hiding one\'s conduct from scrutiny.',
     opposite: 'Light — visible obedience, example that can be seen and followed. Where darkness conceals, Light makes manifest.',
-    rank: 8.2,
+    rank: 8.3,
     category: 'Works & Evidence',
     subcategory: 'Rebellion\'s Fruit',
     link: '/research/symbols/darkness/'
@@ -451,7 +451,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God shaking any established order',
     sentence: 'God shaking any established order — ground, sky, nations, kingdoms — to judge and remove what is unfaithful, so that what cannot be shaken remains.',
     opposite: 'The Rock — the unchanging covenant that cannot be shaken',
-    rank: 6,
+    rank: 6.1,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/earthquake/'
@@ -577,7 +577,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The absence of God\'s Word',
     sentence: 'The absence of God\'s Word — covenant instruction withdrawn, leaving a people who should be fed by heaven starving in a land that has nothing to give them.',
     opposite: 'Bread — the Word of God, covenant terms that sustain life. Famine is the empty place where Bread should be.',
-    rank: 5.5,
+    rank: 5.4,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/famine/'
@@ -606,7 +606,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s holy standard in active contact',
     sentence: 'God\'s holy standard in active contact — consuming what violates covenant, refining what keeps it.',
     opposite: 'Quenching (1 Th 5:19 — "Quench not the Spirit") / Water as paired judgment agent (2 Pet 3:5–7 — the world judged first by water, reserved now for fire)',
-    rank: 8.9,
+    rank: 12.7,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/fire/'
@@ -676,7 +676,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Idolatry',
     sentence: 'Idolatry — the act of turning from God to serve other gods, other masters, other standards.',
     opposite: 'Faith — trusting obedience, exclusive devotion to God',
-    rank: 6,
+    rank: 5.9,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/fornication/'
@@ -690,7 +690,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s executing spirits',
     sentence: 'God\'s executing spirits — dispatched from the throne to patrol the earth and carry out the four covenant judgments: conquest, war, famine, and pestilence.',
     opposite: 'Rest / Stillness — *"all the earth sitteth still, and is at rest"* (Zech 1:11). When the spirits report back that the earth is quiet, judgment has not yet been released.',
-    rank: 5.1,
+    rank: 5,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/four-horsemen/'
@@ -851,6 +851,20 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/heaven/'
   },
 
+  'hell': {
+    key: 'hell',
+    name: 'HELL',
+    words: ['hell', 'sheol', 'gehenna', 'gehinnom', 'hades', 'fire', 'lake', 'death', 'torment', 'punishment', 'second death'],
+    strongs: ['H7585', 'H1516', 'H784', 'H4194', 'H6031', 'H6064', 'H312', 'H8145', 'G1067', 'G86', 'G928', 'G2851', 'G3041'],
+    meaning: 'Three Hebrew concepts that English collapses into one word',
+    sentence: 'Three Hebrew concepts that English collapses into one word — and the collapse has created a doctrine Scripture does not teach.',
+    opposite: 'Eternal life / the resurrection / the Garden of Eden',
+    rank: 4.9,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/hell/'
+  },
+
   'highway': {
     key: 'highway',
     name: 'HIGHWAY',
@@ -901,7 +915,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Unyielding dominion',
     sentence: 'Unyielding dominion — crushing imperial force that breaks, subdues, and will not bend.',
     opposite: 'Clay — the brittle, human element that cannot cohere with iron, producing the structural weakness that dooms the final kingdom',
-    rank: 5.3,
+    rank: 5.2,
     category: 'Authority & Governance',
     subcategory: null,
     link: '/research/symbols/iron/'
@@ -1069,7 +1083,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Visible obedience',
     sentence: 'Visible obedience — the open, public demonstration of God\'s commandments that others can see and follow.',
     opposite: 'Darkness — hidden, concealed disobedience; doing in secret what should be done openly',
-    rank: 8,
+    rank: 8.1,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/light/'
@@ -1210,7 +1224,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Without covenant covering',
     sentence: 'Without covenant covering — exposed before God and the nations because the garment of covenant relationship has been stripped away or never obtained.',
     opposite: 'Clothed / covered — brought under covenant protection. God covers nakedness (Gen 3:21, Ezek 16:8); the faithful cover the naked (Isa 58:7, Ezek 18:7)',
-    rank: 4.9,
+    rank: 5,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/naked/'
@@ -1519,7 +1533,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The chaotic mass of nations and peoples',
     sentence: 'The chaotic mass of nations and peoples — restless, turbulent, ungoverned by covenant.',
     opposite: 'Island / dry land — the set-apart, the sanctified, that which God has separated *out* of the sea',
-    rank: 8.2,
+    rank: 8.3,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/sea/'
@@ -1547,7 +1561,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The deceiver working through cunning speech',
     sentence: 'The deceiver working through cunning speech — the personal agent who beguiles the mind through whispered suggestion, questioning and contradicting God\'s word.',
     opposite: 'The Lamb — innocent where the serpent is cunning, truthful where the serpent lies, self-sacrificing where the serpent is self-preserving',
-    rank: 5.8,
+    rank: 6.2,
     category: 'Counterfeit & Deception',
     subcategory: null,
     link: '/research/symbols/serpent/'
@@ -1589,7 +1603,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Mortality\'s demand on all flesh',
     sentence: 'Mortality\'s demand on all flesh — the insatiable claim that death makes on every living thing, personified as a power with a mouth, belly, gates, and bars, and answered only by God\'s power to ransom, redeem, and resurrect.',
     opposite: 'The land of the living / resurrection / the fountain of life (Ps 36:9, Jer 2:13)',
-    rank: 5.2,
+    rank: 7.3,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/sheol/'
@@ -1674,7 +1688,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A concealed mechanism of sudden seizure',
     sentence: 'A concealed mechanism of sudden seizure — what you cannot see captures you.',
     opposite: 'Watchfulness / Escape *malat* — Ps 124:7; *gregoreuo* — Lk 21:36)',
-    rank: 5.4,
+    rank: 5.3,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/snare/'
@@ -1984,7 +1998,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The life that flows from God\'s presence',
     sentence: 'The life that flows from God\'s presence — distinguished from the sea by its source and movement, and from human religion by its continuous, self-renewing supply.',
     opposite: 'Cisterns (man-made, broken, containment of dead water) / bitter water / the Sea (gathered, chaotic, restless)',
-    rank: 6.2,
+    rank: 6.5,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/water/'
