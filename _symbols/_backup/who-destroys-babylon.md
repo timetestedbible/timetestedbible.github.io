@@ -39,7 +39,7 @@ This is the principle that unlocks the entire pattern: **the instrument of oppre
 
 **The surprise:** The "nation from the $north" that destroys Babylon in Jeremiah is not a foreign power in the traditional sense — it is the composite $beast itself: the $lion-$bear-$serpent system (Rev 13:2) that Babylon created and rode. The same "from the north" that destroyed Judah now destroys Babylon (Jer 1:14 → Jer 50:3). The hidden direction delivers the same concealed blow to the executor that the executor once delivered to others.
 
-**Connected:** $ten-horns, $beast, $lion, $bear, $serpent, $dragon, $fire, $net, $cherem, $snare, $babylon, $harlot, $wickedness, $north, $smoke
+**Connected:** $ten-horns, $beast, $lion, $bear, $serpent, $dragon, $fire, $net, $cherem, $snare, $babylon, $harlot, $wickedness, $north
 
 ---
 
@@ -288,8 +288,6 @@ Judgment is structurally locked behind the extraction of God's people. The $fire
 - **$wickedness** — Defined as lawlessness / covenant transgression (Deut 17:2, 2 Th 2:7). $wickedness burns as $fire (Isa 9:18) and is inherently self-consuming (Isa 9:19). Babylon's wickedness is both the cause and the fuel of her destruction.
 
 - **$north** — "The hidden direction" (H6828 from H6845 *tsaphan* = to conceal). Judgment approaches from concealment. Both Judah's destroyer and Babylon's destroyer come from the same hidden quarter — the boomerang principle.
-
-- **$smoke** — The visible aftermath of Babylon's burning. Kings and merchants see it "from afar" (Rev 18:9, 18). The $smoke ascends forever (Rev 19:3) — permanent testimony of self-consumption.
 
 ---
 

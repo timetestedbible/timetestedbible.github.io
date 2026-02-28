@@ -33,7 +33,7 @@ This is the scorpion's distinctive property across every context in which it app
 
 **The surprise:** The Greek G4651 *skorpios* probably derives from an obsolete root related to G4649 *skopos* ("to peer about, a mark/target") — meaning *to pierce*. The scorpion's name encodes its method: it watches, it targets, then it strikes. And in Rev 9:10, the sting comes from the **tail** — not the front. The scorpion's torment is what follows *after*, the trailing consequence you didn't see coming.
 
-**Connected:** $serpent, $locust, $fire, $smoke, $pit-abyss, $seal, $thorn, $wilderness
+**Connected:** $serpent, $locust, $fire, $pit-abyss, $seal, $thorn, $wilderness
 
 ---
 
@@ -153,9 +153,7 @@ The name suggests a pattern visible elsewhere in the symbol: scorpion-torment ma
 
 - **$locust** — God-commissioned multiplying agents of devouring consumption. In Rev 9:3, $locust creatures from the $pit-abyss are given scorpion-power — the consuming swarm acquires the ability to sting and torment. The fusion creates something that both devours (locust nature) and incapacitates with lingering pain (scorpion nature), directed only at the unsealed.
 
-- **$fire** — God's holy standard in active contact, consuming what violates covenant and refining what keeps it. The $pit-abyss from which Rev 9's scorpion-locusts emerge contains $fire — its $smoke darkens the sun when the pit is opened. The scorpion-torment emerges *through* the evidence of God's consuming standard already at work.
-
-- **$smoke** — The ascending evidence of $fire's application. Rev 9:2–3: $smoke rises from the opened $pit-abyss, darkening sun and air, and the scorpion-locusts emerge *from* the $smoke. Smoke is the bridge between judgment-fire and the darkness through which tormenting agents arrive.
+- **$fire** — God's holy standard in active contact, consuming what violates covenant and refining what keeps it. The $pit-abyss from which Rev 9's scorpion-locusts emerge contains $fire. The scorpion-torment emerges *through* the evidence of God's consuming standard already at work.
 
 - **$pit-abyss** — Enforced containment that removes an entity from exerting influence — temporary, sealed but openable. Rev 9:1–2: the pit is *opened*, and what had been contained is released. The scorpion-locusts' origin is the containment itself — they emerge when restraint is lifted, bringing incapacitating torment from a place of enforced holding.
 
@@ -216,4 +214,4 @@ KJV translates H6137 as "scorpion" and "scorpions." G4651 likewise appears as "s
 
 - **$pit-abyss** — The scorpion-locusts' origin. What does it mean that enforced containment, when opened, releases agents of incapacitating torment rather than lethal destruction?
 
-- **$fire** — The holy standard whose active application produces the $smoke from which scorpion-agents emerge. How does God's consuming contact with what violates covenant generate the conditions for non-lethal torment?
+- **$fire** — The holy standard whose active application is at work in the $pit-abyss from which scorpion-agents emerge. How does God's consuming contact with what violates covenant generate the conditions for non-lethal torment?

@@ -33,7 +33,7 @@ The Hebrew name itself encodes the fate: H5467 *Cedom* derives from an unused ro
 
 **The surprise:** Jesus does not describe Sodom's sin as sexual. He describes it as *ordinary*: "They did eat, they drank, they bought, they sold, they planted, they builded" (Lk 17:28). Six perfectly normal activities. The sin was not what they did — it was their obliviousness to what was coming.
 
-**Connected:** $fire, $babylon, $egypt, $jerusalem, $bread, $harlot, $wickedness, $smoke
+**Connected:** $fire, $babylon, $egypt, $jerusalem, $bread, $harlot, $wickedness
 
 ---
 
@@ -111,7 +111,7 @@ Sodom's judgment has four distinguishing features:
 
 **It is sudden.** "The same day that Lot went out of Sodom it rained fire and brimstone from heaven" (Lk 17:29). The judgment falls in a $moment — one day, no warning sequence, no escalating plagues. Compare this with $egypt, where judgment comes through ten progressive plagues with opportunities for repentance between each. Sodom receives no such mercy. The cycle has run to completion.
 
-**It leaves $smoke as testimony.** Abraham sees the $smoke rising — the visible, ascending evidence of $fire's application. This image becomes the template for $babylon's fall: "the smoke of her burning" seen by kings and merchants from afar (Rev 18:9, 18:18). Sodom's $smoke is the prototype; $babylon's $smoke is the fulfillment.
+**It leaves smoke as testimony.** Abraham sees the smoke rising (Gen 19:28). This image becomes the template for $babylon's fall: "the smoke of her burning" seen by kings and merchants from afar (Rev 18:9, 18:18).
 
 ### Extraction — Getting Lot Out
 
@@ -218,8 +218,6 @@ Jerusalem was too proud to even *mention* Sodom — too proud to recognize the f
 - **$bread** — The Word / covenant terms. Sodom's "fulness of bread" (Ezek 16:49) is fulness of provision without covenant obligation — having every resource and using none of it for righteousness. Abraham refuses Sodom's $bread (Gen 14:22–23) to avoid entanglement.
 
 - **$wickedness** — Covenant transgression / lawlessness. "The men of Sodom were wicked (H7563 *rasha*) and sinners before the LORD exceedingly" (Gen 13:13). $wickedness burns like $fire (Isa 9:18) — Sodom's covenant transgression becomes its own fuel.
-
-- **$smoke** — The visible, ascending evidence of $fire's application. Abraham sees Sodom's $smoke rising like a furnace (Gen 19:28) — the same image reappears in Rev 18:9 and 19:3 as testimony of $babylon's fall. Sodom's $smoke is the prototype.
 
 - **$harlot** — The covenant breaker. Sodom's cycle parallels the $harlot's pattern: divided loyalty, abundance spent on self-gratification rather than covenant faithfulness. Jer 23:14 links Sodom-identity with adultery and lies among $jerusalem's prophets.
 

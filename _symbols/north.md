@@ -33,7 +33,7 @@ This single root illuminates a pattern that runs from Genesis to Revelation. God
 
 **The surprise:** The word family of H6845 *tsaphan* produces not only "north" but also H4710 *mitspun* (a secret thing), H6840 *tsaphiyn* (a treasure, as something hidden), and even the prophet's name Zephaniah (H6846) — "Yah has secreted/hidden." The entire cluster encodes concealment: hoarding, lurking, protecting, treasuring in darkness.
 
-**Connected:** $lion, $bear, $serpent, $dragon, $fire, $smoke, $snare, $babylon, $throne
+**Connected:** $lion, $bear, $serpent, $dragon, $fire, $snare, $babylon, $throne
 
 ---
 
@@ -167,7 +167,7 @@ This is the resolution of the "north" tension: God's judgment, issued from conce
 
 6. **"Many people" — the northern invasion template.** Jer 50:41 "many kings" ‖ Ezek 38:15 "many people" ‖ Dan 11:40 "chariots and horsemen and many ships." The eschatological approach from the north consistently involves overwhelming numbers emerging from concealment.
 
-7. **$smoke from the north.** "From the north a $[smoke]" (Isa 14:31). The hidden direction produces what obscures — $smoke darkens, and the north is where the darkening originates. Concealment generates further concealment.
+7. **Obscuring from the north.** "From the north a smoke" (Isa 14:31). The hidden direction produces what obscures — the north is where the darkening originates. Concealment generates further concealment.
 
 ---
 
@@ -178,8 +178,6 @@ This is the resolution of the "north" tension: God's judgment, issued from conce
 - **$snare** — The north and the $snare share the same operative principle: hiddenness. A snare works because it is not seen (Prov 1:17). Judgment from the north works because the target does not see it coming. The north *is* the direction of the snare.
 
 - **$fire** — Ezek 1:4 — $fire infolding itself comes from the north with God's throne-glory. The hidden direction conceals the $fire of God's presence until the moment of theophany. Fire stored in concealment, released at revelation.
-
-- **$smoke** — "From the north a smoke" (Isa 14:31). $smoke obscures; the north is the direction of obscuring. The hidden quarter produces what darkens and blinds — smoke being the visible evidence of the concealed fire.
 
 - **$dragon** — The cities of Judah become "a den of dragons" when the north-invader strikes (Jer 10:22). The $dragon — chaos, desolation — follows in the wake of what the hidden direction sends.
 
@@ -254,6 +252,5 @@ KJV translates H6828 as "north," "north side," "north wind," "northward." The wo
 
 - **$snare** — The north and the snare share a principle: concealment is what gives the mechanism its power. How does the snare function across Scripture, and what does it mean that God's judgment operates like a hidden trap?
 - **$lion** — The lion springs from the thicket toward Judah, then toward Babylon — always from the hidden quarter. What does the lion represent, and why does it emerge from concealment?
-- **$smoke** — "From the north a smoke." The hidden direction produces what obscures vision. How does smoke function symbolically as the instrument of spiritual darkening?
 - **$throne** — The north is throne-territory: God's seat, the adversary's aspiration. What does the throne represent, and what does it mean that God's authority is positioned in the hidden quarter?
 - **$babylon** — First the instrument stored in the north, then the target struck from the north. How does Babylon's full symbolic arc illuminate the boomerang pattern of the hidden direction?

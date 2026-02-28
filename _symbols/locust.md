@@ -35,7 +35,7 @@ This is confirmed in every prophetic context. "If **I command** the locust to de
 
 **The surprise:** In Revelation 9, the locust-swarm from the $pit-abyss is *forbidden* to eat $grass or $tree — the very things real locusts devour. Instead, these locusts torment only those without God's $seal. The natural symbol is inverted: the consuming agents bypass vegetation (people under covenant protection) and consume the wellbeing of the unprotected.
 
-**Connected:** $grass, $tree, $fire, $smoke, $pit-abyss, $wind, $darkness, $scorpion, $lion, $crown, $seal
+**Connected:** $grass, $tree, $fire, $pit-abyss, $wind, $darkness, $scorpion, $lion, $crown, $seal
 
 ---
 
@@ -105,7 +105,7 @@ Here the symbol turns inside out. Natural locusts consume vegetation — $grass 
 
 The inversion is theologically precise. Under the old pattern, God sent consuming agents against His covenant people's *production* — their harvests, their vines, their fig trees — to provoke repentance. Under this apocalyptic pattern, the consuming agents bypass the protected and consume the *wellbeing* of those who refused the seal. The stripping is redirected from agriculture to persons.
 
-The origin is also significant: these locusts emerge from $smoke rising out of the opened $pit-abyss — enforced containment now released. The chain reads: $pit-abyss opened → $smoke ascends → $darkness covers sun and air → locusts emerge from $smoke. They come from containment, through the ascending evidence of $fire's application, through obscured order, into the world.
+The origin is also significant: these locusts emerge from the opened $pit-abyss — enforced containment now released. They come from containment, through obscured order, into the world.
 
 ### The Composite Creature
 
@@ -217,8 +217,6 @@ Even this connects to the core meaning. The consuming agents are themselves cons
 - **$tree** — Nations / people groups. Joel 1:7, 12 — the locust strips the vine and fig tree bare, lays waste every tree of the field. Deut 28:42 — fruit and trees consumed. Rev 9:4 — trees explicitly protected from the abyss-locusts. What the covenant curse stripped from Israel's national life, the apocalyptic swarm leaves untouched.
 
 - **$fire** — God's holy standard in active contact. Joel 1:19–20 — fire has devoured the pastures alongside the locust. Joel 2:3 — "a fire devoureth before them, and behind them a flame burneth." Fire and locust work the same field: fire consumes what violates the standard; the locust strips what was produced. Both are God's.
-
-- **$smoke** — The ascending evidence of fire's application. Rev 9:2–3 — locusts emerge *from* smoke. The smoke of the abyss is the visible byproduct of fire-judgment; the locust swarm is what the smoke carries into the world. Chain: $pit-abyss opened → $fire produces $smoke → $smoke darkens → locusts emerge from $smoke.
 
 - **$pit-abyss** — Enforced containment that removes influence. Rev 9:1–2 — the abyss is opened and the locusts pour out. They were *contained*; now they are released. Their king rules the abyss (Rev 9:11). The consuming agents come from the place of restrained destruction.
 

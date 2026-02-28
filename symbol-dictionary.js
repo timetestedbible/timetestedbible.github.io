@@ -112,7 +112,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Man\'s substitute system for God\'s covenant rule',
     sentence: 'Man\'s substitute system for God\'s covenant rule — the kingdom built on bricks instead of rock, reaching for a name instead of receiving one.',
     opposite: 'Jerusalem — the covenant community that descends from God (Rev 21:2), receives a Name (Isa 62:2), and is built on Rock (Mat 16:18)',
-    rank: 9.6,
+    rank: 9.7,
     category: 'Kingdoms & Peoples',
     subcategory: 'Nations & Empires',
     link: '/research/symbols/babylon/'
@@ -337,7 +337,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Concealed disobedience',
     sentence: 'Concealed disobedience — the state of hiding one\'s conduct from scrutiny.',
     opposite: 'Light — visible obedience, example that can be seen and followed. Where darkness conceals, Light makes manifest.',
-    rank: 8.3,
+    rank: 8.2,
     category: 'Works & Evidence',
     subcategory: 'Rebellion\'s Fruit',
     link: '/research/symbols/darkness/'
@@ -606,7 +606,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s holy standard in active contact',
     sentence: 'God\'s holy standard in active contact — consuming what violates covenant, refining what keeps it.',
     opposite: 'Quenching (1 Th 5:19 — "Quench not the Spirit") / Water as paired judgment agent (2 Pet 3:5–7 — the world judged first by water, reserved now for fire)',
-    rank: 12.7,
+    rank: 12.6,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/fire/'
@@ -856,8 +856,8 @@ const SYMBOL_DICTIONARY = {
     name: 'HELL',
     words: ['hell', 'sheol', 'gehenna', 'gehinnom', 'hades', 'fire', 'lake', 'death', 'torment', 'punishment', 'second death'],
     strongs: ['H7585', 'H1516', 'H784', 'H4194', 'H6031', 'H6064', 'H312', 'H8145', 'G1067', 'G86', 'G928', 'G2851', 'G3041'],
-    meaning: 'Three Hebrew concepts that English collapses into one word',
-    sentence: 'Three Hebrew concepts that English collapses into one word — and the collapse has created a doctrine Scripture does not teach.',
+    meaning: 'Do the wicked suffer conscious torment forever',
+    sentence: 'Do the wicked suffer conscious torment forever — or do they cease to exist?',
     opposite: 'Eternal life / the resurrection / the Garden of Eden',
     rank: 4.9,
     category: 'Uncategorized',
@@ -929,7 +929,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Sanctified people',
     sentence: 'Sanctified people — set apart from the sea of nations, waiting for God\'s standard.',
     opposite: 'The Sea — chaotic, unsanctified masses of humanity (Rev 17:15)',
-    rank: 5.3,
+    rank: 5.7,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/island/'
@@ -1196,7 +1196,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A kingdom',
     sentence: 'A kingdom — a seat of ruling authority, established over the peoples below.',
     opposite: 'The Sea — chaotic nations without government, turbulent peoples. Also the valley — the place of subjection, not rule',
-    rank: 7.2,
+    rank: 7.1,
     category: 'Authority & Governance',
     subcategory: null,
     link: '/research/symbols/mountain/'
@@ -1224,7 +1224,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Without covenant covering',
     sentence: 'Without covenant covering — exposed before God and the nations because the garment of covenant relationship has been stripped away or never obtained.',
     opposite: 'Clothed / covered — brought under covenant protection. God covers nakedness (Gen 3:21, Ezek 16:8); the faithful cover the naked (Isa 58:7, Ezek 18:7)',
-    rank: 5,
+    rank: 4.9,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/naked/'
@@ -1533,7 +1533,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The chaotic mass of nations and peoples',
     sentence: 'The chaotic mass of nations and peoples — restless, turbulent, ungoverned by covenant.',
     opposite: 'Island / dry land — the set-apart, the sanctified, that which God has separated *out* of the sea',
-    rank: 8.3,
+    rank: 8.6,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/sea/'
@@ -1561,7 +1561,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The deceiver working through cunning speech',
     sentence: 'The deceiver working through cunning speech — the personal agent who beguiles the mind through whispered suggestion, questioning and contradicting God\'s word.',
     opposite: 'The Lamb — innocent where the serpent is cunning, truthful where the serpent lies, self-sacrificing where the serpent is self-preserving',
-    rank: 6.2,
+    rank: 6.1,
     category: 'Counterfeit & Deception',
     subcategory: null,
     link: '/research/symbols/serpent/'
@@ -1666,20 +1666,6 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/sleep/'
   },
 
-  'smoke': {
-    key: 'smoke',
-    name: 'SMOKE',
-    words: ['smoke', 'smoking', 'vapour of smoke'],
-    strongs: ['H6227', 'H6225', 'H6226', 'H7008', 'G2586'],
-    meaning: 'The visible, ascending evidence of fire\'s application',
-    sentence: 'The visible, ascending evidence of fire\'s application — testimony rising to God of what has been consumed or offered.',
-    opposite: 'Rain / Dew — provision descending from heaven to earth, versus evidence ascending from earth to God',
-    rank: 5.4,
-    category: 'Judgment & Consequence',
-    subcategory: null,
-    link: '/research/symbols/smoke/'
-  },
-
   'snare': {
     key: 'snare',
     name: 'SNARE',
@@ -1688,7 +1674,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A concealed mechanism of sudden seizure',
     sentence: 'A concealed mechanism of sudden seizure — what you cannot see captures you.',
     opposite: 'Watchfulness / Escape *malat* — Ps 124:7; *gregoreuo* — Lk 21:36)',
-    rank: 5.3,
+    rank: 5.4,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/snare/'
@@ -1744,7 +1730,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The desolation-maker',
     sentence: 'The desolation-maker — the instrument that cuts and wastes, whose root IS drought and ruin, and whose edge both makes and breaks covenant.',
     opposite: 'Plowshare — cultivation where there was destruction (Isa 2:4, Mic 4:3: swords beaten into plowshares = desolation-making reversed into fruitfulness; Joel 3:10 reverses the direction)',
-    rank: 6.6,
+    rank: 6.7,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/sword/'
@@ -1928,7 +1914,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s commandments',
     sentence: 'God\'s commandments — the divine standard by which reality is measured and life is lived.',
     opposite: 'The lie — rejecting God\'s standard; man\'s way substituted for God\'s way',
-    rank: 8.1,
+    rank: 8,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/truth/'

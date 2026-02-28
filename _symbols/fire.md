@@ -38,7 +38,7 @@ The fire does not ask *whose* work it is. It asks what the work is *made of*. $g
 
 **The surprise:** $wickedness itself *burns like fire* (Isa 9:18) — covenant transgression is not merely punished by fire; it *becomes* fire, consuming itself and everything around it. Babylon does not need an external torch. Her iniquity breeds her own flame (Ezek 28:18).
 
-**Connected:** $wickedness, $smoke, $darkness, $light, $mountain, $earthquake, $trumpet, $gold-silver, $armor-of-god, $days-of-noah, $fall-of-babylon, $sudden-destruction
+**Connected:** $wickedness, $darkness, $light, $mountain, $earthquake, $trumpet, $gold-silver, $armor-of-god, $days-of-noah, $fall-of-babylon, $sudden-destruction
 
 ---
 
@@ -57,7 +57,7 @@ H784 *esh* (fire) appears 549 times in the Old Testament. Its derivative H799 *e
 This is why fire appears at every major covenant moment:
 
 - The **burning bush** (Exod 3:2–4) — fire that does not consume. The bush endures because it is holy ground, set apart for God's purpose. The fire reveals the bush's nature without destroying it.
-- **Sinai** (Exod 19:18) — "mount Sinai was altogether on a smoke, because the LORD descended upon it in **fire**." The $mountain (kingdom/ruling authority) meets the divine standard. co: $earthquake, $trumpet, $smoke.
+- **Sinai** (Exod 19:18) — "mount Sinai was altogether on a smoke, because the LORD descended upon it in **fire**." The $mountain (kingdom/ruling authority) meets the divine standard. co: $earthquake, $trumpet.
 - **The pillar** (Exod 13:21–22) — fire by night, cloud by day. The standard *guides* the covenant people. The same fire that will consume Sodom lights Israel's path.
 - **The throne** (Dan 7:9–10) — "his throne was like the fiery flame, and his wheels as burning **fire**. A fiery stream issued and came forth from before him." God's governing seat radiates His standard outward.
 - **Christ's eyes** (Rev 1:14) — "his eyes were as a flame of **fire**." The risen Lord sees with the penetrating clarity of the standard itself.
@@ -208,11 +208,9 @@ Revelation also describes demonic breastplates "of fire, and of jacinth, and bri
 
 5. **The covenant-contact sequence.** Bush (Exod 3) → Sinai (Exod 19) → altar coals (Isa 6) → Pentecost (Acts 2). Fire progressively draws *closer* to covenant people — from a bush at a distance, to a mountain with barriers, to a coal touching lips, to tongues resting *on* each person. The trajectory is intimacy, not destruction.
 
-6. **Fire produces $smoke.** Gen 19:28, Exod 19:18, Rev 18:9. The visible ascending evidence of what fire has done — testimony rising to God. Judgment-$smoke darkens the sky; offering-$smoke carries prayers upward (Rev 8:4). Same mechanism, different material.
+6. **The counterfeit.** Rev 13:13 (false prophet's fire from heaven), Rev 9:17 (demonic fire-breastplates), Lev 10:1–2 (strange fire). Where God's standard can be counterfeited, false fire appears — a manufactured authority without the covenant behind it.
 
-7. **The counterfeit.** Rev 13:13 (false prophet's fire from heaven), Rev 9:17 (demonic fire-breastplates), Lev 10:1–2 (strange fire). Where God's standard can be counterfeited, false fire appears — a manufactured authority without the covenant behind it.
-
-8. **Fire at every covenant transition.** Abrahamic covenant (Gen 15:17 — smoking furnace and burning lamp), Sinai (Exod 19:18), Elijah's altar (1 Ki 18:38), Pentecost (Acts 2:3), the return (2 Th 1:7–8 — "revealed from heaven with his mighty angels, in flaming fire"). Fire marks the moment the standard is *applied* to the world.
+7. **Fire at every covenant transition.** Abrahamic covenant (Gen 15:17 — smoking furnace and burning lamp), Sinai (Exod 19:18), Elijah's altar (1 Ki 18:38), Pentecost (Acts 2:3), the return (2 Th 1:7–8 — "revealed from heaven with his mighty angels, in flaming fire"). Fire marks the moment the standard is *applied* to the world.
 
 ---
 
@@ -220,9 +218,7 @@ Revelation also describes demonic breastplates "of fire, and of jacinth, and bri
 
 - **$wickedness** — Covenant transgression (lawlessness, H7562/G4189). Fire and $wickedness are linked not merely as punishment and crime, but as nature and fuel. "Wickedness burneth as the fire" (Isa 9:18). Lawlessness does not simply *receive* fire — it *is* combustible material. People become "the fuel of the fire" (Isa 9:19). Covenant transgression generates its own destruction.
 
-- **$smoke** — The visible, ascending evidence of fire's application. Fire produces $smoke invariably — whether from judgment (Gen 19:28, Rev 18:9) or from worship (Rev 8:4). $smoke is the bridge between fire and $darkness: Babylon burns → $smoke rises → sun/authorities darkened (Rev 9:2). The fire-$smoke-$darkness chain is the mechanism of the end.
-
-- **$darkness** — Hidden, concealed disobedience. Fire and $darkness appear opposite in nature ($light vs. $darkness), yet fire *produces* $darkness through $smoke (Rev 9:2, Isa 9:18–19). The $darkness at Sinai (Deut 4:11, 5:22–23) surrounds the fire — God's standard is so intense that the visible result is impenetrable obscurity to those outside the covenant.
+- **$darkness** — Hidden, concealed disobedience. Fire and $darkness appear opposite in nature ($light vs. $darkness), yet fire can *produce* $darkness (Rev 9:2, Isa 9:18–19). The $darkness at Sinai (Deut 4:11, 5:22–23) surrounds the fire — God's standard is so intense that the visible result is impenetrable obscurity to those outside the covenant.
 
 - **$light** — Visible obedience, example. Fire *is* light in its purest active form — God is both "a consuming fire" (Heb 12:29) and "light, and in him is no $darkness at all" (1 Jn 1:5). The pillar of fire illuminated Israel's path by night (Exod 13:21). For those within covenant, the fire functions as guiding $light.
 
@@ -317,11 +313,9 @@ KJV translates H784 as "fire," "burning," "fiery," "flaming," "hot." G4442 appea
 
 - **$wickedness** — If fire is God's standard applied, wickedness is the anti-material that cannot survive contact. How does lawlessness function as self-consuming fuel, and what does this reveal about the nature of covenant transgression?
 
-- **$smoke** — Fire's invariable product. The $smoke study traces the ascending evidence of fire's work — from Sodom's pillar to Babylon's final burning — and reveals how $smoke bridges fire and $darkness in the eschatological sequence.
-
 - **$light** — Fire's constructive face. If fire is the standard in active contact, $light is the standard as visible example. How do the two relate, and when does fire function as $light rather than destruction?
 
-- **$fall-of-babylon** — The final act of fire in history. Babylon's burning is the culmination of the self-consuming pattern — $wickedness as fuel, fire from within, $smoke rising forever. The Jubilee vocabulary of Jer 50–51 reveals the fall as liberation, not merely punishment.
+- **$fall-of-babylon** — The final act of fire in history. Babylon's burning is the culmination of the self-consuming pattern — $wickedness as fuel, fire from within. The Jubilee vocabulary of Jer 50–51 reveals the fall as liberation, not merely punishment.
 
 - **$days-of-noah** — The water-then-fire escalation. Peter's parallel between the flood and the coming fire (2 Pet 3:5–7) raises the question: what changes between the two judgments, and what remains the same?
 

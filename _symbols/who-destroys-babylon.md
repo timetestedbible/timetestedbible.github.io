@@ -39,7 +39,7 @@ This single insight — **self-consumption orchestrated by God** — unifies eve
 
 **The surprise:** The Hebrew word for "north" — the direction from which Babylon's destroyer comes — is H6828 *tsaphown*, which literally means "hidden." From H6845 *tsaphan*: to conceal, to lurk. The $north is "the hidden direction." Judgment from the north is judgment from concealment — a $snare. Babylon never sees it coming because the destroyer is already inside.
 
-**Connected:** $ten-horns, $beast, $lion, $bear, $serpent, $dragon, $fire, $net, $cherem, $snare, $babylon, $fall-of-babylon, $harlot, $wickedness, $thorns, $north, $smoke
+**Connected:** $ten-horns, $beast, $lion, $bear, $serpent, $dragon, $fire, $net, $cherem, $snare, $babylon, $fall-of-babylon, $harlot, $wickedness, $thorns, $north
 
 ---
 
@@ -107,7 +107,7 @@ Isaiah traces the same chain:
 
 > *"For **$[wickedness]** burneth as the **$[fire]**: it shall devour the $[thorns] and briers, and shall kindle in the thickets of the forest, and they shall mount up like the lifting up of **$[smoke]**. Through the wrath of the LORD of hosts is the land darkened, and the **people shall be as the fuel** of the $[fire]: **no man shall spare his brother**."* — Isa 9:18–19
 
-$wickedness — lawlessness, covenant transgression (Deut 17:2, 2 Thess 2:7) — *burns as fire*. The $thorns — worldly people characterized by cares, riches, and pleasures (Lk 8:14) — become the fuel. The people who composed the system become the material it consumes. Mutual destruction: "no man shall spare his brother." The $smoke rises — the visible, ascending evidence of what has been consumed (Rev 18:9, 18:18).
+$wickedness — lawlessness, covenant transgression (Deut 17:2, 2 Thess 2:7) — *burns as fire*. The $thorns — worldly people characterized by cares, riches, and pleasures (Lk 8:14) — become the fuel. The people who composed the system become the material it consumes. Mutual destruction: "no man shall spare his brother."
 
 Isaiah 47:14 completes the image:
 
@@ -230,8 +230,6 @@ The extraction precedes the destruction. Gen 19:22 establishes the principle wit
 - **$thorns** — Worldly people characterized by cares, riches, and pleasures (Lk 8:14). In Isa 9:18, $wickedness devours the $thorns — the very population Babylon cultivated becomes the fuel she burns. Isa 10:17 says the $thorns and briers burn "in one day" — matching Rev 18:8.
 
 - **$north** — The hidden direction (H6828 from H6845, to conceal). Both God's glory (Ezek 1:4) and God's judgment (Jer 1:14, Jer 50:3) approach from concealment. The same "from the north" that destroyed Judah (Jer 1:14) later destroys Babylon (Jer 50:3) — boomerang from the hidden quarter.
-
-- **$smoke** — The visible, ascending evidence of $fire's application. The $smoke of Babylon's burning rises forever (Rev 19:3), seen from afar by kings and merchants (Rev 18:9, 18:18) — exactly as Abraham saw the $smoke of Sodom "as the smoke of a furnace" (Gen 19:28). The $smoke is the testimony that self-consumption is complete.
 
 ---
 

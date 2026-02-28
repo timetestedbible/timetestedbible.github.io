@@ -35,7 +35,7 @@ And the pit *releases*.
 
 **The surprise:** The pit is *waterless*. "The pit was empty, there was no water in it" (Gen 37:24). "The pit wherein is no water" (Zech 9:11). A cistern *with* water sustains life — "drink waters out of thine own cistern" (Prov 5:15). A cistern *without* water is a prison. The same structure, emptied of its life-giving content, becomes a containment vessel.
 
-**Connected:** $darkness, $sea, $fire, $smoke, $seal, $serpent, $fall-of-babylon
+**Connected:** $darkness, $sea, $fire, $seal, $serpent, $fall-of-babylon
 
 ---
 
@@ -130,13 +130,13 @@ This connects directly to the defining contrast in Isaiah 14:
 
 $throne above the stars versus sides of the pit. Maximum exaltation versus maximum containment. The two poles of the symbol.
 
-### When the Pit Opens — Smoke, Darkness, and the Beast
+### When the Pit Opens — Darkness and the Beast
 
-> *"And he opened the **bottomless pit**; and there arose a $[smoke] out of the **pit**, as the $[smoke] of a great furnace; and the sun and the air were $[darkness] by reason of the $[smoke] of the **pit**."* — Rev 9:2
+> *"And he opened the **bottomless pit**; and there arose a smoke out of the **pit**, as the smoke of a great furnace; and the sun and the air were $[darkness] by reason of the smoke of the **pit**."* — Rev 9:2
 
-When the pit is *opened*, its contents pour out — and those contents produce $darkness. The $smoke that rises from the pit is the visible, ascending evidence of $fire's application; it obscures the sun and air, darkening the structures of authority. Hidden disobedience ($darkness) spreads as what was contained is released.
+When the pit is *opened*, its contents pour out — and those contents produce $darkness. What was contained obscures the sun and air, darkening the structures of authority. Hidden disobedience ($darkness) spreads as what was contained is released.
 
-Out of the $smoke come locusts with a king: "the angel of the bottomless pit, whose name in the Hebrew tongue is Abaddon (H3 — 'destruction'), but in the Greek tongue hath his name Apollyon (G623 — 'destroyer')" (Rev 9:11). The pit has a ruler — destruction personified. This is not Satan (Satan is *cast into* the pit in Rev 20:1–3; the angel of the pit *rules* it). They are distinct.
+Out of the smoke come locusts with a king: "the angel of the bottomless pit, whose name in the Hebrew tongue is Abaddon (H3 — 'destruction'), but in the Greek tongue hath his name Apollyon (G623 — 'destroyer')" (Rev 9:11). The pit has a ruler — destruction personified. This is not Satan (Satan is *cast into* the pit in Rev 20:1–3; the angel of the pit *rules* it). They are distinct.
 
 The beast itself ascends from the abyss:
 
@@ -146,7 +146,7 @@ The beast itself ascends from the abyss:
 
 The beast's trajectory is: *was* (active) → *is not* (contained) → *shall ascend* (released) → *go into perdition* (terminated permanently in the lake of $fire). The pit is the middle stage — the period of powerlessness between active influence and final destruction. It is not the destination. It is the holding cell on the way to the courtroom.
 
-This sequence matters for the $fall-of-babylon chain. The contained forces emerge. The $smoke of their emergence darkens the world. The $beast and $serpent exercise their brief, loosed authority. And then comes the final judgment — not back into the pit, but into the lake of $fire, where there is no $key, no $seal to break, and no release.
+This sequence matters for the $fall-of-babylon chain. The contained forces emerge. The $beast and $serpent exercise their brief, loosed authority. And then comes the final judgment — not back into the pit, but into the lake of $fire, where there is no $key, no $seal to break, and no release.
 
 ### The *Tehom* Beneath — What the Abyss Actually Is
 
@@ -186,7 +186,7 @@ And this is what happens in Revelation:
 
 > *"He opened the **well** (phrear) of the **abyss** (abyssos); and there arose **smoke** out of the well."* — Rev 9:2
 
-The same structure — the deep breaking through its seal. But now what surges up is not water but $smoke, $darkness, and demonic powers. The flood was the physical un-creation. Revelation's opening of the abyss is the spiritual un-creation — the pre-ordered state erupting back through the boundaries God set. Both are the *tehom* unleashed.
+The same structure — the deep breaking through its seal. But now what surges up is not water but $darkness and demonic powers. The flood was the physical un-creation. Revelation's opening of the abyss is the spiritual un-creation — the pre-ordered state erupting back through the boundaries God set. Both are the *tehom* unleashed.
 
 And both are reversed. After the flood, God re-establishes the boundaries (Gen 8:2 — "the fountains of the deep were **stopped**"). After Revelation's abyss erupts, the $serpent is bound, the abyss is sealed again (Rev 20:1–3), and eventually the entire structure is replaced by a new heaven and new earth where there is "no more $sea" (Rev 21:1) — and, by implication, no more *tehom* to erupt.
 
@@ -249,7 +249,7 @@ Three times in one chapter (vv. 18, 24, 28, 30): God delivers from the pit. The 
 
 5. **The digger falls in.** Ps 7:15, 9:15, 35:7–8, 57:6, Prov 26:27, Eccl 10:8. Containment designed for others becomes the designer's own prison. A wisdom principle with cosmic scope: the $serpent who devised the trap is trapped (Rev 20:1–3).
 
-6. **Pit opened → smoke → darkness.** Rev 9:2 traces the chain. The $fire within the pit produces $smoke when the $seal is broken. The $smoke darkens the visible authorities (sun and air). The $darkness — concealed disobedience — spreads through the release of what was contained. Fire → smoke → darkness is the invariable sequence.
+6. **Pit opened → darkness.** Rev 9:2 traces the chain. When the $seal is broken, $darkness spreads — the concealed disobedience spreads through the release of what was contained.
 
 7. **"After many days" = a set period.** Isa 24:22 ("after many days shall they be visited") and Rev 20:3 ("till the thousand years should be fulfilled") both specify a fixed term. The containment is not indefinite — it is *appointed*. The same principle of ordered timing that governs the $seal governs the pit.
 
@@ -263,15 +263,13 @@ Three times in one chapter (vv. 18, 24, 28, 30): God delivers from the pit. The 
 
 - **$water** — The *phrear* (G5421) in Rev 9:1 — "well of the abyss" — is the same word used for Jacob's well (Jn 4:11), where Jesus offers living $water. The well can reach two very different sources: a spring of living water (the fountain of life) or the *tehom/abyssos* (the primordial deep). Same physical structure — opposite destinations. The cistern-well-fountain spectrum connects the $water study, the $sheol study, and the pit-abyss: fountain → well → cistern → pit → *tehom*.
 
-- **$fire** — $fire is God's covenant standard in active contact. The pit contains $fire — when opened, $smoke arises "as the smoke of a great furnace" (Rev 9:2). The pit is not the $fire itself but the vessel that holds the $fire's effects in check. The lake of $fire is the pit's permanent successor — the containment without a $key.
-
-- **$smoke** — $smoke is the ascending evidence of $fire's application. Rev 9:2 traces the chain: pit opened → $smoke rises → sun darkened. The $smoke of the pit is the bridge between the $fire of judgment and the $darkness that results. It also connects to the $fall-of-babylon sequence: Babylon's burning produces the $smoke that darkens the world (Rev 18:9, 18; 19:3).
+- **$fire** — $fire is God's covenant standard in active contact. The pit contains $fire — when opened, smoke arises "as the smoke of a great furnace" (Rev 9:2). The pit is not the $fire itself but the vessel that holds the $fire's effects in check. The lake of $fire is the pit's permanent successor — the containment without a $key.
 
 - **$seal** — The $seal is authority's binding claim — sovereign identity that secures what it marks. In Rev 20:3, God sets a $seal upon the pit to restrain Satan. The $seal answers *whose authority governs this containment* — it is God's sovereign claim, not a lock that might be picked. When the appointed time comes, the same authority that sealed also loosens.
 
 - **$serpent** — The $serpent is the deceiver working through cunning speech. Rev 20:2 identifies the dragon, the old $serpent, the Devil and Satan as the entity cast into the pit. The pit's explicit function is to stop the $serpent's deception: "that he should deceive the nations no more." The cunning whisperer is muzzled. The $serpent who dug pits for others (Ps 57:6 principle) is himself confined in one.
 
-- **$fall-of-babylon** — The collapse of man's self-ruling system connects to the pit sequence. The $beast ascends *from* the pit (Rev 11:7, 17:8) and exercises its brief authority before Babylon falls. The $smoke of the pit (Rev 9:2) anticipates the $smoke of Babylon's burning (Rev 18:9). The pit releases what will ultimately self-consume — Babylon is destroyed by her own apparatus (Rev 17:16–17), then the powers that animated her are returned to final containment in the lake of $fire.
+- **$fall-of-babylon** — The collapse of man's self-ruling system connects to the pit sequence. The $beast ascends *from* the pit (Rev 11:7, 17:8) and exercises its brief authority before Babylon falls. The pit releases what will ultimately self-consume — Babylon is destroyed by her own apparatus (Rev 17:16–17), then the powers that animated her are returned to final containment in the lake of $fire.
 
 ---
 

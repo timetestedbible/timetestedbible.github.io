@@ -35,7 +35,7 @@ In every case — mourning father, darkened sun, prophesying witnesses — sackc
 
 **The surprise:** The Hebrew root of sackcloth (H8242 *saq*) derives from H8264 *shaqaq* — "to rush through." The same word describes water rushing through mesh. Sackcloth is woven *coarse* — it cannot conceal, only cover darkly. And Revelation specifies that the sun's sackcloth is G3189 *melas* ("black") and G5155 *trichinos* ("of hair") — the material itself is inherently dark, not dyed. The darkness is in the fabric's nature.
 
-**Connected:** $darkness, $sun-moon-stars, $smoke, $fire, $earthquake, $fall-of-babylon
+**Connected:** $darkness, $sun-moon-stars, $fire, $earthquake, $fall-of-babylon
 
 ---
 
@@ -71,7 +71,7 @@ Revelation makes the same connection explicit:
 
 The $sun — supreme governing authority — wears sackcloth. The specification "of hair" (G5155 *trichinos*) and "black" (G3189 *melas*) points back to the physical material: dark goat-hair fabric. The sun doesn't merely darken — it *puts on* the judgment garment. The same covering that appears on human loins now appears on the primary authority in the sky.
 
-The mechanism behind this darkening emerges when Revelation's other scenes are considered. In Rev 9:2, $smoke rises from the abyss and darkens the $sun and the air. $smoke — the visible, ascending testimony of $fire's application — is the *agent* that produces the sackcloth-appearance. The chain runs: $fire consumes → $smoke rises → the $sun is darkened → it appears black as sackcloth. Sackcloth is what the darkened authority *looks like* to those who see it.
+The connection between sackcloth and $darkness is not merely metaphorical — it is built into the material itself. Dark goat-hair fabric. When the $sun goes dark, the authority *looks like* sackcloth — the judgment-garment is what the darkened authority appears to be wearing.
 
 ### The Amos Sequence: Darkened Sun → Sackcloth → Famine of the Word
 
@@ -149,20 +149,17 @@ This echoes Ps 30:11 — when God removes sackcloth and replaces it with gladnes
 
 ---
 
-## The Chain: Fire → Smoke → Sackcloth → Darkness
+## The Chain: Fire → Sackcloth → Darkness
 
-The co-occurring symbols around sackcloth form a sequence that becomes visible when the pieces are laid side by side:
+The co-occurring symbols around sackcloth form a sequence:
 
 1. **$fire** — God's holy standard in active contact, consuming what violates covenant
-2. **$smoke** — The visible, ascending evidence of fire's application, testimony rising upward
-3. **Sackcloth** — The dark covering that results: the appearance of the obscured authority
-4. **$darkness** — The concealment that follows: governing order hidden, removed from view
+2. **Sackcloth** — The dark covering that results: the appearance of the obscured authority
+3. **$darkness** — The concealment that follows: governing order hidden, removed from view
 
-The sequence appears most clearly in Revelation. $fire of judgment produces $smoke (Rev 9:2 — smoke from the pit). $smoke darkens the $sun (Rev 9:2 — "the sun and the air were darkened by reason of the smoke"). The darkened $sun appears "black as sackcloth of hair" (Rev 6:12). And the result is $darkness — authority extinguished, concealed disobedience exposed because the governing structure that should have restrained it is gone.
+The sequence appears most clearly in Revelation. The darkened $sun appears "black as sackcloth of hair" (Rev 6:12). And the result is $darkness — authority extinguished, concealed disobedience exposed because the governing structure that should have restrained it is gone.
 
-$smoke is the bridge between $fire and sackcloth. Sackcloth is the *appearance* of what smoke produces — the dark covering over authority. And $darkness is the condition that follows.
-
-The $fall-of-babylon fits directly into this chain. Babylon burns from within (Rev 17:16 — her own political apparatus turns on her). $smoke rises from her burning (Rev 18:9, 18:18, 19:3 — kings and merchants see her smoke from afar). The $smoke of Babylon's burning darkens the governing authorities ($sun black as sackcloth). And through that smoke — that very obscuring of the old order — the Son of Man appears (Mat 24:29–30).
+The $fall-of-babylon fits directly into this chain. Babylon burns from within (Rev 17:16 — her own political apparatus turns on her). The governing authorities are darkened ($sun black as sackcloth). And through that obscuring of the old order, the Son of Man appears (Mat 24:29–30).
 
 ---
 
@@ -190,13 +187,11 @@ The $fall-of-babylon fits directly into this chain. Babylon burns from within (R
 
 - **$darkness** — Hidden, concealed disobedience. Sackcloth and $darkness share vocabulary (Isa 50:3 — "I clothe the heavens with darkness, and I make sackcloth their covering"). $darkness is the condition of concealed rebellion; sackcloth is the *visible testimony* that God is responding to it. Sackcloth makes the hidden judgment manifest.
 
-- **$smoke** — The ascending evidence of $fire's application. $smoke is the mechanism that produces the sackcloth-appearance on the $sun (Rev 9:2 — smoke darkens the sun; Rev 6:12 — sun appears as sackcloth). $smoke rises, sackcloth appears. One is the cause; the other is how it looks.
-
-- **$fire** — God's holy standard in active contact. $fire produces $smoke, which produces the darkened appearance described as sackcloth. The chain from $fire to sackcloth runs through every major judgment sequence in Revelation.
+- **$fire** — God's holy standard in active contact. $fire produces the judgment that darkens the governing authorities, giving them the appearance of sackcloth. The chain from $fire to sackcloth runs through every major judgment sequence in Revelation.
 
 - **$earthquake** — God shaking the established order. In Rev 6:12, a great $earthquake accompanies the sun becoming sackcloth. The shaking of the governing structure (earthquake) and the darkening of the governing authority (sackcloth) occur simultaneously — the removal is both structural and visible.
 
-- **$fall-of-babylon** — The collapse of man's self-ruling system. Babylon burns → $smoke rises → authorities darkened (sackcloth over the sun) → the old order is terminated. The $smoke of Babylon's burning (Rev 18:9, 19:3) is the same smoke that makes the $sun appear as sackcloth (Rev 6:12).
+- **$fall-of-babylon** — The collapse of man's self-ruling system. Babylon burns → authorities darkened (sackcloth over the sun) → the old order is terminated.
 
 ---
 
@@ -252,7 +247,6 @@ KJV translates H8242 as "sackcloth," "sackclothes," "sack," and "sacks." The gra
 ## For Further Study
 
 - **$sun-moon-stars** — The governing authority hierarchy that sackcloth covers. What does it mean for the sun to "wear" a garment — and what happens when that garment is removed?
-- **$smoke** — The mechanism that darkens the sun to sackcloth-appearance. How does the ascending testimony of fire's application connect to the visible covering of judgment?
-- **$fire** — The standard that produces the smoke that produces the sackcloth. The full chain from God's holy contact to the dark covering over authority.
+- **$fire** — The standard that produces the judgment resulting in sackcloth. The full chain from God's holy contact to the dark covering over authority.
 - **$darkness** — Sackcloth's companion in Isa 50:3. What is the relationship between concealed disobedience and the visible garment that testifies to God's response?
-- **$fall-of-babylon** — The event that produces the smoke that darkens the sun to sackcloth. Babylon burns from within, and the smoke of her burning covers the heavens.
+- **$fall-of-babylon** — The event that darkens the sun to sackcloth. Babylon burns from within, and the heavens wear the judgment-garment.

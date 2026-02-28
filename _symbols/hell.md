@@ -9,7 +9,7 @@ words: [hell, sheol, gehenna, gehinnom, hades, fire, lake, death, torment, punis
 
 # Hell
 
-**Do the wicked suffer conscious torment forever — or do they die?**
+**Do the wicked suffer conscious torment forever — or do they cease to exist?**
 
 Most Christians assume the answer is eternal torment. But Scripture says something different: "The wages of sin is **death**" (Rom 6:23). Not eternal torment. Death. The soul that sins "shall **die**" (Ezek 18:4). God is able to "**destroy** both soul and body" (Matt 10:28). And God "**alone** has immortality" (1 Tim 6:16) — if humans had immortal souls, God would not be alone in possessing it.
 
@@ -250,6 +250,26 @@ Scripture defines what smoke does — it vanishes:
 > *"They shall be... as the **smoke** out of the chimney."* — Hos 13:3
 
 Smoke is driven away, vanishes, dissipates. Babylon's smoke "rises from generation to generation" (Rev 19:3) — but Babylon is destroyed, not still burning. Edom's smoke "goes up for ever" (Isa 34:10) — Edom is not still smoking. The smoke is evidence the fire finished, not proof of ongoing burning.
+
+### Matthew 25:41, 46 — "Everlasting Punishment"
+
+> *"Depart from Me, you cursed, into the **everlasting fire** prepared for the **devil and his angels**."* — v.41
+
+> *"And these will go away into **everlasting punishment**, but the righteous into **eternal life**."* — v.46
+
+Two words matter here. First: the word for "punishment" is G2851 *kolasis* — from G2849 *kolazo*, meaning "to lop or prune, as trees and wings." Aristotle distinguished *kolasis* (corrective removal) from G5098 *timoria* (retributive torture). Jesus chose *kolasis*. The image is a dead branch pruned off and burned (John 15:2, 6) — not a branch kept alive in fire forever.
+
+Second: G166 *aionios* (eternal/everlasting). The same word modifies "eternal redemption" (Heb 9:12) — Christ does not keep redeeming forever; the act happened once, the result is permanent. "Eternal judgment" (Heb 6:2) — God does not keep judging forever; the verdict is permanent. "Eternal fire" destroyed Sodom (Jude 1:7) — Sodom is not still burning. The pattern: *aionios* modifies the RESULT, not the DURATION. "Eternal punishment" = the punishment is permanent. "Eternal life" = the life is permanent. One side permanently lives. The other side is permanently pruned off.
+
+And v.41 specifies this fire was prepared for the devil and his angels — not for humans. See [Matt 25:41 verse study](/research/verses/mat-25-41/).
+
+### 2 Thessalonians 1:9 — "Everlasting Destruction"
+
+> *"These shall be punished with **everlasting destruction** from the **presence** of the Lord and from the glory of His power."* — 2 Thess 1:9
+
+G3639 *olethros* means destruction, ruin — terminal, not ongoing. Paul uses the same word for the "destruction of the flesh" (1 Cor 5:5) and "sudden destruction" that comes on the unsuspecting (1 Thess 5:3). In every use, *olethros* describes something being brought to an end — not something existing forever in a state of ruin.
+
+"Everlasting destruction" follows the same *aionios* pattern: permanently destroyed, just as "eternal redemption" means permanently redeemed. And "from the presence of the Lord" describes what happens when you are separated from the source of life — without the sustainer, nothing remains. "As though they had not been" (Obad 1:16). See [2 Thess 1:9 verse study](/research/verses/2th-1-9/).
 
 ---
 

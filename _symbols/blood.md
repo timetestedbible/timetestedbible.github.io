@@ -215,7 +215,7 @@ When $water becomes blood, the sustaining system becomes an accusation system. W
 
 The $moon — which represents derivative, reflective authority — takes on the appearance of blood. The authority structure itself begins to look like shed life. What should reflect the $sun's governance now reflects only violence and death. This is not an astronomical event but a symbolic statement: when the governing powers become instruments of bloodshed, they *look like* blood. Their character is exposed.
 
-Blood, $fire, and $smoke form a triad of judgment signs (Joel 2:30, Acts 2:19). $fire is God's standard applied; $smoke is the ascending evidence; blood is the life made visible. Together they testify: life has been taken, the standard has been applied, and the evidence rises to God.
+Blood and $fire form the judgment signs of Joel 2:30 and Acts 2:19. $fire is God's standard applied; blood is the life made visible. Together they testify: life has been taken, and the standard has been applied.
 
 ---
 
@@ -279,7 +279,7 @@ Blood here represents the biological life that *ends*. "Flesh and blood" is not 
 
 - **$lamb** — The lamb is the source of atoning blood. From Abel's offering (Gen 4:4) through Passover (Exod 12:3–5) to "the blood of the Lamb" (Rev 12:11). The $lamb provides the life; the blood carries and displays it.
 
-- **$fire** — Blood, $fire, and $smoke form the triad of judgment signs (Joel 2:30, Acts 2:19). Fire is God's standard applied; blood is the life made visible; smoke is the ascending evidence. In Rev 8:7, hail, fire, and blood fall together as the first trumpet.
+- **$fire** — Blood and $fire form the judgment signs of Joel 2:30 and Acts 2:19. Fire is God's standard applied; blood is the life made visible. In Rev 8:7, hail, fire, and blood fall together as the first trumpet.
 
 - **$sea** — When the $sea becomes blood (Rev 8:8, 16:3), the nations-as-waters are transformed into testimony of death. The chaotic peoples become evidence of the life they have shed.
 
@@ -335,6 +335,6 @@ Ezek 16:6, Joel 3:19, Acts 15:20, Acts 20:26
 
 - **$wine** — Blood's agricultural twin. Wine is "blood of grapes" — the life of the vine released by pressing. How does the vine-to-winepress chain illuminate the cross?
 - **$lamb** — The source of atoning blood. From "where is the lamb?" (Gen 22:7) to "the Lamb slain from the foundation of the world" (Rev 13:8), the lamb provides the life that the blood carries.
-- **$fire** — Blood's companion in judgment signs. Fire is the standard applied; blood is the life exposed. Together with $smoke, they form the triad that precedes the Day of the Lord.
+- **$fire** — Blood's companion in judgment signs. Fire is the standard applied; blood is the life exposed. Together they precede the Day of the Lord (Joel 2:30, Acts 2:19).
 - **$sea** — When the sea becomes blood, the nations are transformed into testimony. How does the waters-to-blood pattern connect Egypt's plagues to Revelation's bowls?
 - **$harlot** — Drunk with the blood of the saints. Babylon's defining crime is accumulated blood-guilt — the life of the faithful consumed as intoxicant. What does it mean that she is judged specifically for *blood*?

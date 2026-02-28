@@ -31,9 +31,9 @@ And the departure and return are the same vehicle: "This same Jesus, which is ta
 
 **Defining verses:** Ps 104:3, Exo 13:21, Dan 7:13, Acts 1:9-11, 1 Th 4:17, Rev 14:14
 
-**The surprise:** The $smoke of Babylon's burning and the $clouds through which Christ arrives may be the *same phenomenon* — He appears through the evidence of judgment itself (Rev 9:2 → Rev 6:12 → Mat 24:30). And Acts 1:11 connects departure and return: "shall so come **in like manner** as ye have seen him go" — same vehicle, both directions.
+**The surprise:** Acts 1:11 connects departure and return: "shall so come **in like manner** as ye have seen him go" — same vehicle, both directions. The cloud that received Him at the ascension is the cloud that carries Him back.
 
-**Connected:** $fire, $trumpet, $mountain, $smoke, $darkness, $sun-moon-stars, $return-of-christ, $rapture-gathering, $earthquake
+**Connected:** $fire, $trumpet, $mountain, $darkness, $sun-moon-stars, $return-of-christ, $rapture-gathering, $earthquake
 
 ---
 
@@ -95,9 +95,9 @@ God appears *in the cloud* over the mercy seat. This is where He meets Israel's 
 
 > *"And he shall put the incense upon the $[fire] before the LORD, that the **cloud** of the incense may cover the mercy seat that is upon the testimony, that he die not."* — Lev 16:13
 
-Aaron must create a *human-made cloud* — incense $smoke — to cover the mercy seat before approaching. The incense cloud replicates, in miniature, what God's cloud does at the cosmic scale: it mediates between holiness and frailty. Without the cloud, Aaron dies.
+Aaron must create a *human-made cloud* — incense smoke — to cover the mercy seat before approaching. The incense cloud replicates, in miniature, what God's cloud does at the cosmic scale: it mediates between holiness and frailty. Without the cloud, Aaron dies.
 
-The word for burning incense (H6999 *qatar*) means "to turn into fragrance by fire" — and its derivative H7008 *qitor* (fume, cloud) is the very word used for the $smoke rising from Sodom in Gen 19:28. The same vocabulary for worship-cloud and judgment-$smoke. What rises depends on what is burned.
+The word for burning incense (H6999 *qatar*) means "to turn into fragrance by fire" — and its derivative H7008 *qitor* (fume, cloud) is the very word used for the smoke rising from Sodom in Gen 19:28. The same vocabulary for worship-cloud and judgment-smoke. What rises depends on what is burned.
 
 ### The Son of Man Comes WITH the Clouds
 
@@ -174,30 +174,6 @@ The image works precisely because Scripture's readers would associate clouds wit
 
 ---
 
-## The Smoke-Cloud Connection
-
-One of the most striking cross-references in the cloud data connects $smoke, $darkness, and $clouds into a single eschatological sequence:
-
-> *"And he opened the bottomless pit; and there arose a **smoke** out of the pit, as the **smoke** of a great furnace; and the $[sun] and the air were darkened by reason of the **smoke** of the pit."* — Rev 9:2
-
-$Fire produces $smoke. $smoke produces $darkness — the obscuring of governing authorities ($sun-moon-stars). The mechanism is explicit: $fire (God's holy standard in active contact) consumes what violates covenant → $smoke rises as visible evidence → $smoke darkens the $sun (authority structures collapse).
-
-Now consider the Fall of Babylon sequence:
-
-> *"And the kings of the earth… shall bewail her, and lament for her, when they shall see the **smoke** of her burning."* — Rev 18:9
-
-> *"And again they said, Alleluia. And her **smoke** rose up for ever and ever."* — Rev 19:3
-
-Babylon burns. Her $smoke rises. And compare:
-
-> *"And I beheld when he had opened the sixth seal, and, lo, there was a great $[earthquake]… and the $[sun] became black as sackcloth of hair."* — Rev 6:12
-
-The sackcloth covering the $sun may *be* the $smoke of judgment. Ezekiel uses this exact language for Egypt's fall: "I will cover the $[sun] with a **cloud**" (Ezek 32:7). The cloud through which the Son of Man arrives (Mat 24:30) may be the very $smoke of Babylon's destruction — He appears *through* the evidence of judgment, just as God looked *through* the pillar of cloud and $fire to trouble Egypt at the Red Sea (Exo 14:24).
-
-The chain: $fire → $smoke → $clouds/$darkness → Son of Man appears. The judgment-cloud and the arrival-cloud are one.
-
----
-
 ## Patterns
 
 1. **The cloud is always active, never decorative.** Every cloud in Scripture *does* something: leads, shields, speaks, fills, receives, carries, obscures, judges. There is no passive cloud in the biblical symbolic vocabulary.
@@ -212,25 +188,21 @@ The chain: $fire → $smoke → $clouds/$darkness → Son of Man appears. The ju
 
 6. **Cloud + $trumpet + $fire + $mountain + $earthquake = theophany cluster.** This combination appears at Sinai (Exo 19:16–18), at the $return-of-christ (Mat 24:29–31, Rev 11:15–19), and at the transfiguration (Mat 17:1–5). The elements travel together because they are all aspects of the same event: God manifesting His presence.
 
-7. **$Smoke becomes cloud.** The $smoke of judgment (Babylon's burning) and the cloud of divine presence converge eschatologically. God has always appeared through $fire and $smoke — from Sinai (Exo 19:18) to the covenant ceremony (Gen 15:17) to the final revelation.
-
-8. **Clouds without substance = false presence.** 2 Pet 2:17, Jude 1:12 — the counterfeit cloud carries nothing. The form of God's manifest presence without the reality.
+7. **Clouds without substance = false presence.** 2 Pet 2:17, Jude 1:12 — the counterfeit cloud carries nothing. The form of God's manifest presence without the reality.
 
 ---
 
 ## Connections
 
-- **$fire** — The cloud's constant companion. Cloud by day, $fire by night — same pillar (Exo 13:21–22). God's holy standard in active contact ($fire) produces the visible manifestation ($clouds/$smoke). At Sinai, in the tabernacle, and in the eschaton, cloud and $fire are inseparable aspects of God's self-revelation.
+- **$fire** — The cloud's constant companion. Cloud by day, $fire by night — same pillar (Exo 13:21–22). At Sinai, in the tabernacle, and in the eschaton, cloud and $fire are inseparable aspects of God's self-revelation.
 
 - **$trumpet** — The authoritative signal that initiates God's sovereign action sounds *from within* or *alongside* the cloud. At Sinai, the $trumpet and the cloud descend together (Exo 19:16). At the return, the $trumpet of God precedes the gathering in the clouds (1 Th 4:16–17). The $trumpet announces what the cloud carries.
 
 - **$mountain** — The seat of ruling authority. God descends in cloud upon the $mountain (Exo 19:16, Exo 24:15). The Son of Man receives the $kingdom while arriving with clouds (Dan 7:13–14). Cloud + $mountain = divine authority establishing itself in a visible location.
 
-- **$smoke** — The ascending evidence of $fire's application. $Smoke and cloud merge at Sinai ("the smoke thereof ascended as the smoke of a furnace," Exo 19:18) and in eschatology (Babylon's $smoke darkens the $sun, Rev 9:2; the Son of Man appears through the cloud, Mat 24:30). The $smoke of judgment and the cloud of presence converge.
-
 - **$darkness** — The concealment of governing authorities. When clouds appear as judgment, they produce $darkness — the $sun is covered (Ezek 32:7), authority collapses (Mat 24:29). The cloud that reveals God simultaneously obscures the existing order. The old is hidden so the new can be seen.
 
-- **$sun-moon-stars** — The governing authority hierarchy. Darkening of $sun-moon-stars co-occurs with cloud/smoke: Ezek 32:7 "cover the sun with a cloud," Rev 6:12 sun black as sackcloth, Rev 9:2 smoke darkens sun. When the cloud of God's presence arrives, existing authority structures are eclipsed.
+- **$sun-moon-stars** — The governing authority hierarchy. Darkening of $sun-moon-stars co-occurs with cloud: Ezek 32:7 "cover the sun with a cloud," Rev 6:12 sun black as sackcloth. When the cloud of God's presence arrives, existing authority structures are eclipsed.
 
 - **$return-of-christ** — The Covenant King's arrival to execute judgment and establish rule. Every parousia text names clouds as the vehicle: Dan 7:13, Mat 24:30, Mat 26:64, Rev 1:7, Rev 14:14. The cloud that led Israel, spoke at Sinai, and filled the temple is the same cloud that carries the returning King.
 
@@ -294,7 +266,6 @@ Lk 12:54
 | H5645 | *ab* | thick cloud, dark cloud — from H5743 "to be thick/dense" | Opacity, weight; distinct from H6051 |
 | H6050 | *anan* (Aramaic) | cloud — Aramaic equivalent of H6051 | Dan 7:13 only |
 | G3507 | *nephele* | cloud — from G3509 *nephos* (cloud-mass) | 25× NT |
-| H7008 | *qitor* | fume, cloud, smoke — from H6999 *qatar* "to burn incense" | Connects worship-smoke to cloud; Gen 19:28 |
 | H5982 | *ammud* | pillar, column | Used with *anan* for "pillar of cloud" |
 
 KJV translates H6051 as "cloud," "clouds," "cloudy." H5645 appears as "thick cloud," "dark cloud," "cloud." G3507 is consistently "cloud" or "clouds."
@@ -305,7 +276,6 @@ KJV translates H6051 as "cloud," "clouds," "cloudy." H5645 appears as "thick clo
 
 - **$fire** — The cloud's inseparable companion. How does $fire as God's holy standard illuminate why cloud and $fire always appear together — and why the same pillar manifests as both?
 - **$trumpet** — The signal that sounds alongside and within the cloud. From Sinai to the last $trumpet, what does the convergence of cloud + $trumpet reveal about the single event they announce?
-- **$smoke** — The ascending evidence of what $fire has consumed. How does the $smoke-to-cloud connection change the reading of Babylon's fall and the Son of Man's appearance?
 - **$mountain** — The seat of ruling authority where clouds descend. Why does God consistently appear in cloud upon $mountains — Sinai, transfiguration, Zion?
 - **$return-of-christ** — The Covenant King's arrival. Every parousia text names clouds as the vehicle. How does the cloud's wilderness function — guide, shield, judge, command — carry into what the King does when He arrives?
 - **$rapture-gathering** — The covenant ingathering that happens *in the clouds*. What does the *apantesis* pattern reveal about the direction of the gathering — toward God's destination, not away from it?

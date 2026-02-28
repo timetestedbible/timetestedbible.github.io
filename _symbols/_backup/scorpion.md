@@ -35,7 +35,7 @@ This single distinction — **torment, not death; from behind, not in front** �
 
 **The surprise:** The Greek G4651 *skorpios* likely derives from a root meaning "to pierce" connected to G4649 *skopos* ("to peer about, a target") — the scorpion's etymology encodes *targeting then piercing*. It watches, aims, then strikes. And the escalation in Ezek 2:6 — briers → $thorns → scorpions — reveals a three-stage progression: irritation → wounding → incapacitating torment.
 
-**Connected:** $serpent, $locust, $fire, $smoke, $pit-abyss, $seal, $thorn, $wilderness
+**Connected:** $serpent, $locust, $fire, $pit-abyss, $seal, $thorn, $wilderness
 
 ---
 
@@ -49,7 +49,7 @@ This single distinction — **torment, not death; from behind, not in front** �
 
 > *"And they had tails like unto **scorpions**, and there were stings in their tails: and their power was to hurt men five months."* — Rev 9:10
 
-Revelation 9 is the defining passage. The $locust swarm emerges from the $smoke of the $pit-abyss and receives a power that is not its own — the power of *scorpions*. The composite is deliberate: the $locust consumes; the scorpion stings. Together they form agents that both strip and torment.
+Revelation 9 is the defining passage. The $locust swarm emerges from the $pit-abyss and receives a power that is not its own — the power of *scorpions*. The composite is deliberate: the $locust consumes; the scorpion stings. Together they form agents that both strip and torment.
 
 But the scorpion-power comes with an explicit limitation: **they cannot kill**. Only torment. Five months — which corresponds roughly to the active scorpion season in Palestine (May through September), suggesting a bounded, seasonal affliction. Terrible while it lasts, but not permanent. Not terminal.
 
@@ -148,9 +148,7 @@ The place-name Ma'aleh Aqrabbim — "Ascent of Scorpions" (Num 34:4, Judg 1:36) 
 
 - **$fire** — The scorpion's sting burns. Rev 9:17 describes the composite creatures with breastplates of $fire. The $pit-abyss from which the scorpion-locusts emerge contains $fire (Rev 9:2 — smoke rises as from a furnace). The scorpion is an agent that delivers fire's burning without fire's consuming finality.
 
-- **$smoke** — The scorpion-locusts emerge *from* $smoke (Rev 9:3). $smoke is the visible evidence of $fire's work and the mechanism that darkens. The scorpion comes through obscured conditions — out of the aftermath of burning, hidden in the haze.
-
-- **$pit-abyss** — The containment from which scorpion-power is released. Rev 9:1–2 opens the $pit-abyss; the $smoke and $locust-scorpions emerge. The $pit-abyss holds forces in enforced containment; when opened, the scorpion's incapacitating torment is unleashed upon the unsealed.
+- **$pit-abyss** — The containment from which scorpion-power is released. Rev 9:1–2 opens the $pit-abyss and the $locust-scorpions emerge. The $pit-abyss holds forces in enforced containment; when opened, the scorpion's incapacitating torment is unleashed upon the unsealed.
 
 - **$seal** — Rev 9:4 — the $sealed are untouched by the scorpion-locusts. The $seal of God on the forehead determines immunity. The scorpion tests the boundary: those claimed by God's authority are exempt from this particular torment.
 
