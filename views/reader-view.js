@@ -2183,7 +2183,8 @@ const ReaderView = {
       container.querySelectorAll('a[onclick*="contentType:\'bible\'"]').forEach(link => {
         const m = link.getAttribute('onclick')?.match(/book:'([^']+)'.*?chapter:(\d+)(?:.*?verse:(\d+))?/);
         if (m) {
-          const book = m[1], ch = m[2], v = m[3];
+          const rawBook = m[1], ch = m[2], v = m[3];
+          const book = (typeof normalizeBookName === 'function') ? normalizeBookName(rawBook) : rawBook;
           const ref = `${book} ${ch}${v ? ':' + v : ''}`;
           link.dataset.ref = ref;
           link.classList.add('scripture-ref');

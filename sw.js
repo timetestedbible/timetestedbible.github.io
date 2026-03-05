@@ -241,7 +241,7 @@ self.addEventListener('install', (event) => {
           console.warn('Content manifest not available:', err.message);
         }
       })
-      // Don't skipWaiting here — wait for user to click "Update" (SKIP_WAITING message)
+      .then(() => self.skipWaiting())
   );
 });
 

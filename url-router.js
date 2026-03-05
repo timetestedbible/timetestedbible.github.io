@@ -230,11 +230,16 @@ const URLRouter = {
       // because the verse-scroll in openBibleExplorerTo should take priority
       const pathHasVerse = /\/\d+\.\d+/.test(window.location.pathname);
       const queryHasVerse = new URLSearchParams(window.location.search).has('verse');
-      if (!pathHasVerse && !queryHasVerse && event.state && event.state.scrollTop !== undefined) {
+      const hasSavedScroll = event.state && (event.state.scrollTop !== undefined || event.state.windowScrollY !== undefined);
+      if (!pathHasVerse && !queryHasVerse && hasSavedScroll) {
         setTimeout(() => {
           const textArea = document.getElementById('bible-explorer-text');
-          if (textArea) {
+          if (textArea && event.state.scrollTop) {
             textArea.scrollTop = event.state.scrollTop;
+          }
+          // Restore window/body scroll for mobile/body-scroll layouts
+          if (event.state.windowScrollY) {
+            window.scrollTo(0, event.state.windowScrollY);
           }
           // Restore Strong's sidebar scroll position too
           if (event.state.strongsScrollTop !== undefined) {
@@ -260,7 +265,10 @@ const URLRouter = {
       const scrollTop = textArea.scrollTop;
       const strongsSidebar = document.querySelector('#research-panel .research-panel-content');
       const strongsScrollTop = strongsSidebar ? strongsSidebar.scrollTop : 0;
-      const state = { ...history.state, scrollTop, strongsScrollTop };
+      // Also save window scroll for mobile/body-scroll layouts where the element
+      // has overflow:visible and body handles scrolling (scrollTop would be 0)
+      const windowScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const state = { ...history.state, scrollTop, strongsScrollTop, windowScrollY };
       history.replaceState(state, '', window.location.href);
     }
   },

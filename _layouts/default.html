@@ -1068,24 +1068,6 @@
             // Check for updates every hour
             setInterval(() => registration.update(), 60 * 60 * 1000);
             
-            // If a new SW is already waiting (e.g. from a previous visit), show the banner now
-            if (registration.waiting) {
-              showUpdateBanner(registration.waiting);
-            }
-            
-            // Listen for new service worker installations
-            registration.addEventListener('updatefound', () => {
-              const newWorker = registration.installing;
-              if (!newWorker) return;
-              
-              newWorker.addEventListener('statechange', () => {
-                // Only show banner when there's a controller (i.e. this isn't the first install)
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  console.log('[PWA] New version available');
-                  showUpdateBanner(newWorker);
-                }
-              });
-            });
           })
           .catch((error) => {
             console.warn('[PWA] Service worker registration failed:', error);
@@ -1098,38 +1080,6 @@
             refreshing = true;
             window.location.reload();
           }
-        });
-      }
-      
-      /** Show a non-intrusive banner prompting the user to reload for the new version */
-      function showUpdateBanner(waitingWorker) {
-        // Don't show duplicate banners
-        if (document.getElementById('pwa-update-banner')) return;
-        
-        const banner = document.createElement('div');
-        banner.id = 'pwa-update-banner';
-        banner.setAttribute('role', 'alert');
-        banner.innerHTML = `
-          <span>A new version is available.</span>
-          <button id="pwa-update-btn">Update now</button>
-          <button id="pwa-dismiss-btn" aria-label="Dismiss">&times;</button>
-        `;
-        document.body.appendChild(banner);
-        
-        // Trigger slide-in animation on next frame
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => banner.classList.add('visible'));
-        });
-        
-        document.getElementById('pwa-update-btn').addEventListener('click', () => {
-          // Tell the waiting SW to activate
-          waitingWorker.postMessage({ type: 'SKIP_WAITING' });
-          banner.classList.remove('visible');
-        });
-        
-        document.getElementById('pwa-dismiss-btn').addEventListener('click', () => {
-          banner.classList.remove('visible');
-          setTimeout(() => banner.remove(), 300);
         });
       }
       

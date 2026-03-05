@@ -211,6 +211,9 @@ function normalizeBookName(bookStr) {
     .replace(/^ii\s+/, '2 ')
     .replace(/^i\s+/, '1 ');
 
+  // Insert space after leading digit if missing: "1corinthians" → "1 corinthians"
+  cleaned = cleaned.replace(/^(\d)([a-z])/, '$1 $2');
+
   return BOOK_NAME_MAP[cleaned] || bookStr.trim();
 }
 
