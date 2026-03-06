@@ -4919,11 +4919,10 @@ var _strongsTooltipTimer = null;
 function showStrongsTooltip(el, event) {
   if (_strongsTooltipTimer) { clearTimeout(_strongsTooltipTimer); _strongsTooltipTimer = null; }
   
-  // Extract Strong's number from onclick or text
+  // Extract Strong's number from data attribute, onclick, or text
   const text = el.textContent.trim();
-  const strongsMatch = text.match(/^([HG]\d+)/);
-  if (!strongsMatch) return;
-  const strongsNum = strongsMatch[1];
+  const strongsNum = el.dataset.strongs || (text.match(/^([HG]\d+)/) || [])[1];
+  if (!strongsNum) return;
   
   // Look up in dictionary
   const dict = getStrongsDict();
@@ -7607,8 +7606,10 @@ function getHGAvailableBooks() {
   const available = new Set();
   const allBooks = [...BIBLE_BOOKS.ot, ...BIBLE_BOOKS.nt];
   for (const book of allBooks) {
-    const v = Bible.getVerse('hg', book, 1, 1);
-    if (v) available.add(book);
+    // Check several verse numbers since some manuscripts start mid-chapter
+    for (let v = 1; v <= 10; v++) {
+      if (Bible.getVerse('hg', book, 1, v)) { available.add(book); break; }
+    }
   }
   return available;
 }

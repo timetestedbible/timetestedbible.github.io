@@ -2196,10 +2196,14 @@ const ReaderView = {
         }
       });
       
-      // Add Strong's number hover tooltips
-      container.querySelectorAll('a.strongs-link').forEach(link => {
+      // Add Strong's number hover tooltips (both explicit strongs-link and data-strongs annotated elements)
+      container.querySelectorAll('a.strongs-link, [data-strongs]').forEach(link => {
         link.setAttribute('onmouseenter', "if(typeof showStrongsTooltip==='function')showStrongsTooltip(this,event)");
         link.setAttribute('onmouseleave', "if(typeof hideStrongsTooltip==='function')hideStrongsTooltip()");
+        if (!link.getAttribute('onclick') && link.dataset.strongs) {
+          link.setAttribute('onclick', "navigateToStrongs('" + link.dataset.strongs + "', event)");
+          link.style.cursor = 'pointer';
+        }
       });
       
       // Ensure Bible data is loaded so verse tooltips can show text

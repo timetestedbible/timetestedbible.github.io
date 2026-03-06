@@ -1000,16 +1000,14 @@ const Bible = {
     const reg = this._registryMap[translationId];
     const hasStrongsData = reg && reg.hasStrongs;
     const prefix = `${book} ${chapter}:`;
+    const prefixLen = prefix.length;
     const verses = [];
 
-    // Iterate through possible verse numbers (1-200 to be safe)
-    for (let v = 1; v <= 200; v++) {
-      const ref = `${prefix}${v}`;
+    for (const ref of Object.keys(index)) {
+      if (!ref.startsWith(prefix)) continue;
+      const v = parseInt(ref.slice(prefixLen), 10);
+      if (isNaN(v)) continue;
       const offsets = index[ref];
-      if (!offsets) {
-        if (v > 1) break; // Past the last verse
-        continue;
-      }
       const rawText = blob.slice(offsets[0], offsets[1]);
       verses.push({
         verse: v,
@@ -1019,6 +1017,7 @@ const Bible = {
       });
     }
 
+    verses.sort((a, b) => a.verse - b.verse);
     return verses;
   },
 
