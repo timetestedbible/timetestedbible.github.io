@@ -13354,6 +13354,62 @@ details.concept-strongs-section[open] .concept-expand-icon {
   }
 }
 
+/* Derivation tooltip trigger elements */
+[data-derive-key] {
+  border-bottom: 1.5px dotted var(--accent-primary);
+  transition: border-color 0.15s, color 0.15s;
+}
+[data-derive-key]:hover {
+  border-bottom-style: solid;
+  color: var(--accent-primary);
+}
+
+/* Hidden derivation content (read by tooltip JS) */
+.derive-data { display: none !important; }
+
+/* Derivation tooltip (rich popover) */
+.derive-tooltip {
+  max-width: 420px;
+  min-width: 260px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.derive-tooltip .derive-traditional {
+  color: var(--text-secondary);
+  font-size: 0.85em;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.derive-tooltip .derive-traditional strong {
+  color: var(--text-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.03em;
+}
+.derive-tooltip .derive-rationale {
+  color: var(--text-primary);
+  font-size: 0.88em;
+  line-height: 1.55;
+}
+.derive-tooltip .derive-tooltip-link {
+  color: var(--accent-primary);
+  font-size: 0.82em;
+  font-weight: 600;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border-subtle);
+  cursor: pointer;
+}
+.derive-tooltip .derive-tooltip-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .derive-tooltip { max-width: calc(100vw - 20px); }
+}
+
 .bdb-stem-badge {
   background: var(--accent-gold-muted);
   color: var(--accent-gold);
@@ -13833,4 +13889,103 @@ details.concept-strongs-section[open] .concept-expand-icon {
   text-align: right;
   margin-top: 4px;
   margin-bottom: 0;
+}
+
+/* ── Derivation step tabs ── */
+.derive-steps {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.derive-steps-nav {
+  display: flex;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.derive-step-btn {
+  flex: 1;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+.derive-step-btn:hover {
+  color: var(--text-primary);
+}
+.derive-step-btn.active {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+.derive-step-panel {
+  display: none;
+  padding: 16px 20px;
+}
+.derive-step-panel.active {
+  display: block;
+}
+.derive-step-panel blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+.derive-step-panel .derive-step-note {
+  color: var(--text-tertiary);
+  font-size: 0.82em;
+  margin-top: 10px;
+  font-style: italic;
+}
+.derive-step-panel .derive-sub-step {
+  margin: 6px 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--border-subtle);
+  font-size: 0.92em;
+  line-height: 1.6;
+}
+.derive-step-panel .derive-sub-label {
+  color: var(--text-tertiary);
+  font-weight: 600;
+  font-size: 0.85em;
+}
+mark.step-1, mark.step-2, mark.step-3, mark.step-4 { border-radius: 2px; padding: 0 2px; color: inherit; position: relative; cursor: default; }
+mark.step-1 { background: color-mix(in srgb, var(--accent-primary) 18%, transparent); }
+mark.step-2 { background: color-mix(in srgb, var(--accent-gold, #d4a017) 22%, transparent); }
+mark.step-3 { background: color-mix(in srgb, var(--accent-green, #22c55e) 18%, transparent); }
+mark.step-4 { background: color-mix(in srgb, var(--accent-purple, #a855f7) 22%, transparent); }
+mark[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-overlay);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-primary-strong);
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-size: 0.78em;
+  font-style: normal;
+  font-weight: normal;
+  white-space: nowrap;
+  z-index: 10200;
+  pointer-events: none;
+  box-shadow: 0 2px 8px var(--surface-scrim);
+}
+@media (max-width: 500px) {
+  mark[data-tip]:hover::after { white-space: normal; max-width: 200px; }
+}
+@media (max-width: 500px) {
+  .derive-step-btn { font-size: 0.78em; padding: 8px 8px; }
+  .derive-step-panel { padding: 12px 14px; }
 }

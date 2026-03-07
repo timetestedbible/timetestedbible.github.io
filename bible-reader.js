@@ -4978,6 +4978,88 @@ function hideStrongsTooltip(immediate) {
   }
 }
 
+// Derivation tooltip for [data-derive-key] elements in blog/study callouts
+var _deriveTooltipTimer = null;
+
+function showDeriveTooltip(el, event) {
+  if (_deriveTooltipTimer) { clearTimeout(_deriveTooltipTimer); _deriveTooltipTimer = null; }
+
+  const key = el.dataset.deriveKey;
+  if (!key) return;
+
+  hideDeriveTooltip(true);
+
+  const contentEl = document.getElementById('derive-' + key);
+  if (!contentEl) return;
+
+  const tooltip = document.createElement('div');
+  tooltip.id = 'derive-hover-tooltip';
+  tooltip.className = 'verse-hover-tooltip derive-tooltip';
+
+  let html = contentEl.innerHTML;
+  const anchor = el.dataset.anchor;
+  if (anchor) {
+    html += `<div class="derive-tooltip-link">See details &rarr;</div>`;
+  }
+
+  tooltip.innerHTML = html;
+  getBibleTooltipPortal().appendChild(tooltip);
+  _positionTooltipBelow(tooltip, el);
+
+  tooltip.addEventListener('mouseenter', () => {
+    if (_deriveTooltipTimer) { clearTimeout(_deriveTooltipTimer); _deriveTooltipTimer = null; }
+  });
+  tooltip.addEventListener('mouseleave', () => {
+    hideDeriveTooltip(true);
+  });
+  if (anchor) {
+    tooltip.querySelector('.derive-tooltip-link')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hideDeriveTooltip(true);
+      const target = document.getElementById(anchor);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+}
+
+function hideDeriveTooltip(immediate) {
+  if (_deriveTooltipTimer) { clearTimeout(_deriveTooltipTimer); _deriveTooltipTimer = null; }
+  if (immediate) {
+    const tooltip = document.getElementById('derive-hover-tooltip');
+    if (tooltip) tooltip.remove();
+  } else {
+    _deriveTooltipTimer = setTimeout(() => {
+      const tooltip = document.getElementById('derive-hover-tooltip');
+      if (tooltip) tooltip.remove();
+    }, 250);
+  }
+}
+
+function handleDeriveTap(el, event) {
+  event.stopPropagation();
+  const existing = document.getElementById('derive-hover-tooltip');
+  if (existing) {
+    const anchor = el.dataset.anchor;
+    if (anchor) {
+      hideDeriveTooltip(true);
+      const target = document.getElementById(anchor);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      hideDeriveTooltip(true);
+    }
+    return;
+  }
+  showDeriveTooltip(el, event);
+}
+
+document.addEventListener('click', function(e) {
+  const tooltip = document.getElementById('derive-hover-tooltip');
+  if (!tooltip) return;
+  if (e.target.closest('[data-derive-key]')) return;
+  if (tooltip.contains(e.target)) return;
+  hideDeriveTooltip(true);
+}, true);
+
 // Rich tooltip for Strong's buttons in blog posts / symbol studies
 var _strongsBtnTooltipTimer = null;
 

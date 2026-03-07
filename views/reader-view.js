@@ -1498,6 +1498,25 @@ const ReaderView = {
         }
       });
     }
+
+    // Hook up derivation tooltips for [data-derive-key] elements
+    container.querySelectorAll('[data-derive-key]').forEach(el => {
+      el.setAttribute('onmouseenter', "if(typeof showDeriveTooltip==='function'&&typeof _lastPointerType!=='undefined'&&_lastPointerType!=='touch')showDeriveTooltip(this,event)");
+      el.setAttribute('onmouseleave', "if(typeof hideDeriveTooltip==='function')hideDeriveTooltip()");
+      el.setAttribute('onclick', "if(typeof handleDeriveTap==='function')handleDeriveTap(this,event)");
+      el.style.cursor = 'pointer';
+    });
+
+    // Hook up derivation step tabs
+    container.querySelectorAll('.derive-steps').forEach(tabs => {
+      tabs.querySelectorAll('.derive-step-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.step;
+          tabs.querySelectorAll('.derive-step-btn').forEach(b => b.classList.toggle('active', b.dataset.step === target));
+          tabs.querySelectorAll('.derive-step-panel').forEach(p => p.classList.toggle('active', p.dataset.step === target));
+        });
+      });
+    });
   },
 
   /**
@@ -2207,6 +2226,7 @@ const ReaderView = {
       
       // Add Strong's number hover tooltips (both explicit strongs-link and data-strongs annotated elements)
       container.querySelectorAll('a.strongs-link, [data-strongs]').forEach(link => {
+        if (link.dataset.deriveKey) return; // data-derive-key elements get their own handler
         link.setAttribute('onmouseenter', "if(typeof showStrongsTooltip==='function')showStrongsTooltip(this,event)");
         link.setAttribute('onmouseleave', "if(typeof hideStrongsTooltip==='function')hideStrongsTooltip()");
         if (!link.getAttribute('onclick') && link.dataset.strongs) {
@@ -2214,7 +2234,7 @@ const ReaderView = {
           link.style.cursor = 'pointer';
         }
       });
-      
+
       // Ensure Bible data is loaded so verse tooltips can show text
       if (typeof Bible !== 'undefined' && Bible.loadTranslation) {
         Bible.loadTranslation(getDefaultTranslation()).catch(() => {});
