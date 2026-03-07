@@ -95,10 +95,27 @@ const JOSEPHUS_WORK_MAP = {
   'autobiography': 'Life',
 };
 
+// ─── Pseudepigrapha: work name normalization ────────────────────────────────
+const PSEUDEPIGRAPHA_WORK_MAP = {
+  '1 enoch': { id: 'enoch', work: '1 Enoch', chapters: 108 },
+  'enoch': { id: 'enoch', work: '1 Enoch', chapters: 108 },
+  'book of enoch': { id: 'enoch', work: '1 Enoch', chapters: 108 },
+  '1enoch': { id: 'enoch', work: '1 Enoch', chapters: 108 },
+  'jubilees': { id: 'jubilees', work: 'Jubilees', chapters: 50 },
+  'book of jubilees': { id: 'jubilees', work: 'Jubilees', chapters: 50 },
+  'jub': { id: 'jubilees', work: 'Jubilees', chapters: 50 },
+  'jasher': { id: 'jasher', work: 'Jasher', chapters: 91 },
+  'book of jasher': { id: 'jasher', work: 'Jasher', chapters: 91 },
+  'sefer hayashar': { id: 'jasher', work: 'Jasher', chapters: 91 },
+};
+
 // ─── Registry: author id → file path (under /classics/) ─────────────────────
 const CLASSICS_REGISTRY = [
   { id: 'philo', name: 'Philo', file: '/classics/philo.txt' },
   { id: 'josephus', name: 'Josephus', file: '/classics/josephus.txt' },
+  { id: 'enoch', name: '1 Enoch', file: '/classics/enoch.txt' },
+  { id: 'jubilees', name: 'Jubilees', file: '/classics/jubilees.txt' },
+  { id: 'jasher', name: 'Jasher', file: '/classics/jasher.txt' },
 ];
 
 const _registryMap = {};
@@ -276,9 +293,34 @@ function parseJosephusCitation(str) {
 }
 
 /**
- * Parse a citation string (Philo or Josephus). Tries Philo first, then Josephus.
+ * Parse a pseudepigrapha citation string.
+ * e.g. "1 Enoch 42", "Enoch 42", "Jubilees 5", "Jub 5", "Jasher 12", "Book of Jasher 12"
+ * @returns {{ author: string, work: string, workKey: string, chapter: number } | null}
+ */
+function parsePseudepigraphaCitation(str) {
+  if (!str || typeof str !== 'string') return null;
+  let s = str.trim();
+  // Match: work name + chapter number
+  const match = s.match(/^(.+?)\s+(\d+)\s*$/);
+  if (!match) return null;
+  const workInput = match[1].trim().toLowerCase();
+  const chapter = parseInt(match[2], 10);
+  const entry = PSEUDEPIGRAPHA_WORK_MAP[workInput];
+  if (!entry) return null;
+  return {
+    author: entry.id,
+    work: entry.work,
+    workKey: entry.id,
+    chapter,
+  };
+}
+
+/**
+ * Parse a citation string (Philo, Josephus, or Pseudepigrapha).
  */
 function parseCitation(str) {
+  const pseudo = parsePseudepigraphaCitation(str);
+  if (pseudo) return pseudo;
   const philo = parsePhiloCitation(str);
   if (philo) return philo;
   return parseJosephusCitation(str);
@@ -297,6 +339,9 @@ function normalizeCitation(str) {
     if (p.hasThreeParts) return `${p.work} ${p.book}.${p.chapter}.${p.section}`;
     if (p.chapter != null) return `${p.work} ${p.book}.${p.chapter}`;
     return `${p.work} ${p.book}`;
+  }
+  if (['enoch', 'jubilees', 'jasher'].includes(p.author)) {
+    return `${p.work} ${p.chapter}`;
   }
   return '';
 }
@@ -324,6 +369,10 @@ function getSectionByParsed(parsed) {
   if (parsed.author === 'josephus') {
     const ref = `${parsed.work}|${parsed.book}|${parsed.chapter}|${parsed.section}`;
     return getSection('josephus', ref);
+  }
+  if (['enoch', 'jubilees', 'jasher'].includes(parsed.author)) {
+    const ref = `${parsed.work}|${parsed.chapter}`;
+    return getSection(parsed.author, ref);
   }
   return null;
 }
@@ -442,6 +491,7 @@ const Classics = {
   CLASSICS_REGISTRY,
   PHILO_WORK_MAP,
   JOSEPHUS_WORK_MAP,
+  PSEUDEPIGRAPHA_WORK_MAP,
   _parseBlob,
   _fetchAndDecompress,
   _blobs: () => _blobs,
@@ -450,6 +500,7 @@ const Classics = {
   loadAuthor,
   parsePhiloCitation,
   parseJosephusCitation,
+  parsePseudepigraphaCitation,
   parseCitation,
   normalizeCitation,
   getSection,

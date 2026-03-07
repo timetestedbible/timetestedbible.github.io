@@ -805,6 +805,10 @@ const URLRouter = {
           if (parts[2]) params.book = parseInt(parts[2]);
           if (parts[3]) params.chapter = parseInt(parts[3]);
           if (parts[4]) params.section = parseInt(parts[4]);
+        } else if (contentType === 'apocrypha') {
+          // Parse apocrypha: /reader/apocrypha/{book-slug}/{chapter}
+          if (parts[1]) params.book = parts[1]; // 'enoch', 'jubilees', 'jasher'
+          if (parts[2]) params.chapter = parseInt(parts[2]);
         } else if (contentType === 'multiverse') {
           // Parse multiverse: /reader/multiverse/kjv/Dan.9.23/Daniel.12.11 (translation then ref segments)
           const knownTranslations = typeof Bible !== 'undefined'
@@ -1087,6 +1091,9 @@ const URLRouter = {
           if (params.book != null) readerPath += '/' + params.book;
           if (params.chapter != null) readerPath += '/' + params.chapter;
           if (params.section != null) readerPath += '/' + params.section;
+        } else if (contentType === 'apocrypha') {
+          if (params.book) readerPath += '/' + params.book;
+          if (params.chapter != null) readerPath += '/' + params.chapter;
         }
         return readerPath;
         
@@ -1186,6 +1193,10 @@ const URLRouter = {
           // For classics, section/work changes are real navigation
           if (cp.contentType === 'philo' || cp.contentType === 'josephus') {
             if (cp.section !== np.section || cp.work !== np.work) return false;
+          }
+          // For apocrypha, book or chapter changes are real navigation
+          if (cp.contentType === 'apocrypha') {
+            if (cp.book !== np.book || cp.chapter !== np.chapter) return false;
           }
           // For symbols, index→detail or detail→detail is real navigation
           if (cp.contentType === 'symbols' && cp.symbol !== np.symbol) return false;

@@ -52,12 +52,14 @@ const BibleView = {
     const displayContentType = (contentType === 'multiverse') ? 'bible' : contentType;
     
     // Selector visibility based on contentType
-    const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
+    const classicsTypes = ['philo', 'josephus'];
+    const hideAllSelectors = ['words', 'people', 'symbols-article', 'verse-studies', ...classicsTypes, 'apocrypha'].includes(displayContentType);
     const bibleDisplay = ((contentType === 'bible' || contentType === 'multiverse') && !hideAllSelectors) ? '' : 'display:none;';
     const symbolsDisplay = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'display:none;';
     const ttDisplay = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'display:none;';
     const numbersDisplay = (contentType === 'numbers') ? '' : 'display:none;';
-    const classicsDisplay = (contentType === 'philo' || contentType === 'josephus') ? '' : 'display:none;';
+    const classicsDisplay = classicsTypes.includes(contentType) ? '' : 'display:none;';
+    const apocryphaDisplay = (contentType === 'apocrypha') ? '' : 'display:none;';
     
     container.innerHTML = `
       <div class="bible-explorer-header-inner">
@@ -121,6 +123,21 @@ const BibleView = {
                  type="text" placeholder="Go to..." title="Jump to section (e.g. 3.2.1)"
                  onkeydown="if(event.key==='Enter'){onClassicsSectionJump(this.value);this.value='';}"
                  style="width:80px;">
+        </span>
+        
+        <!-- Apocrypha selectors (shown when content=apocrypha) -->
+        <span id="apocrypha-selectors" class="reader-selector-group" style="${apocryphaDisplay}">
+          <select id="apocrypha-book-select" class="bible-explorer-select"
+                  onchange="onApocryphaBookChange(this.value)" title="Select book">
+            <option value="">Book</option>
+            <option value="enoch">1 Enoch</option>
+            <option value="jubilees">Jubilees</option>
+            <option value="jasher">Jasher</option>
+          </select>
+          <select id="apocrypha-chapter-select" class="bible-explorer-select"
+                  onchange="onApocryphaChapterChange(parseInt(this.value))" disabled title="Select chapter">
+            <option value="">Ch.</option>
+          </select>
         </span>
       </div>
       <!-- Research panel header zone -->
@@ -381,18 +398,19 @@ const BibleView = {
     if (page) page.dataset.contentType = contentType;
     
     // Show/hide selector groups (multiverse shows Bible selectors e.g. translation)
-    const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article', 'verse-studies', 'philo', 'josephus'].includes(displayContentType);
+    const classicsTypes = ['philo', 'josephus'];
+    const hideAllSelectors = ['words', 'numbers', 'people', 'symbols-article', 'verse-studies', ...classicsTypes, 'apocrypha'].includes(displayContentType);
     const bibleSelectors = document.getElementById('bible-selectors');
     const symbolSelectors = document.getElementById('symbol-selectors');
     const ttSelectors = document.getElementById('timetested-selectors');
-    
     const classicsSelectors = document.getElementById('classics-selectors');
+    const apocryphaSelectors = document.getElementById('apocrypha-selectors');
     
     if (bibleSelectors) bibleSelectors.style.display = ((contentType === 'bible' || contentType === 'multiverse') && !hideAllSelectors) ? '' : 'none';
-    // Hide symbol dropdown entirely — the index has its own grid, and individual studies don't need nav
     if (symbolSelectors) symbolSelectors.style.display = 'none';
     if (ttSelectors) ttSelectors.style.display = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'none';
-    if (classicsSelectors) classicsSelectors.style.display = (contentType === 'philo' || contentType === 'josephus') ? '' : 'none';
+    if (classicsSelectors) classicsSelectors.style.display = classicsTypes.includes(contentType) ? '' : 'none';
+    if (apocryphaSelectors) apocryphaSelectors.style.display = (contentType === 'apocrypha') ? '' : 'none';
 
     // In multiverse mode, hide book/chapter selectors (translation still active)
     const isMultiverse = contentType === 'multiverse';
@@ -404,7 +422,7 @@ const BibleView = {
     // Hide the entire subnav bar when no selector groups are visible
     const subNavBar = document.getElementById('sub-nav-bar');
     if (subNavBar) {
-      const anyVisible = [bibleSelectors, symbolSelectors, ttSelectors, classicsSelectors]
+      const anyVisible = [bibleSelectors, symbolSelectors, ttSelectors, classicsSelectors, apocryphaSelectors]
         .some(el => el && el.style.display !== 'none');
       if (anyVisible) {
         subNavBar.classList.add('active');
@@ -456,6 +474,12 @@ const BibleView = {
       return;
     }
 
+    // Book set but no chapter → show book landing page
+    if (book && !chapter) {
+      this.renderBookLanding(book, translation);
+      return;
+    }
+
     // Navigate to book/chapter
     if (book && chapter) {
       if (typeof openBibleExplorerTo === 'function') {
@@ -463,6 +487,76 @@ const BibleView = {
         openBibleExplorerTo(book, parseInt(chapter), verse ? parseInt(verse) : null);
       }
     }
+  },
+
+  renderBookLanding(book, translation) {
+    const textContainer = document.getElementById('bible-explorer-text');
+    if (!textContainer) return;
+
+    const chapterCount = (typeof bibleExplorerState !== 'undefined' && bibleExplorerState.bookChapterCounts)
+      ? bibleExplorerState.bookChapterCounts[book] || 0
+      : 0;
+
+    if (chapterCount === 0) {
+      textContainer.innerHTML = `<div class="reader-error">No data available for ${book}.</div>`;
+      return;
+    }
+
+    const t = translation || (typeof currentTranslation !== 'undefined' ? currentTranslation : 'kjv');
+    const safeBook = book.replace(/'/g, "\\'");
+
+    const encBook = encodeURIComponent(book);
+
+    let html = `<div class="book-landing">`;
+    html += `<h1 class="book-landing-title">${book}</h1>`;
+    html += `<p class="book-landing-subtitle">${chapterCount} chapters</p>`;
+    html += `<div class="book-landing-chapters">`;
+
+    for (let i = 1; i <= chapterCount; i++) {
+      const fmt = typeof getChapterFormatting === 'function' ? getChapterFormatting(book, i) : null;
+      const mainHeading = fmt?.headings?.[0]?.t || '';
+      const subHeadings = [];
+
+      if (fmt?.headings) {
+        for (let h = 1; h < fmt.headings.length; h++) {
+          subHeadings.push({ t: fmt.headings[h].t, v: fmt.headings[h].v });
+        }
+      }
+      if (fmt?.sub) {
+        for (const s of fmt.sub) {
+          subHeadings.push({ t: s.t, v: s.v });
+        }
+      }
+      subHeadings.sort((a, b) => a.v - b.v);
+
+      const chUrl = `/reader/bible/${t}/${encBook}/${i}`;
+      const chClick = `AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${t}',book:'${safeBook}',chapter:${i}}}); return false;`;
+
+      html += `<div class="book-landing-chapter">`;
+      html += `<a href="${chUrl}" onclick="${chClick}" class="book-landing-ch-link">`;
+      html += `<span class="book-landing-ch-num">${i}</span>`;
+      if (mainHeading) html += `<span class="book-landing-ch-title">${mainHeading}</span>`;
+      html += `</a>`;
+
+      if (subHeadings.length > 0) {
+        html += `<div class="book-landing-subs">`;
+        html += subHeadings.map(s => {
+          const vUrl = `/reader/bible/${t}/${encBook}/${i}.${s.v}`;
+          const vClick = `AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${t}',book:'${safeBook}',chapter:${i},verse:${s.v}}}); return false;`;
+          return `<a href="${vUrl}" onclick="${vClick}" class="book-landing-sub">${s.t}</a>`;
+        }).join('');
+        html += `</div>`;
+      }
+
+      html += `</div>`;
+    }
+
+    html += `</div></div>`;
+    textContainer.innerHTML = html;
+
+    if (typeof updateChapterDropdown === 'function') updateChapterDropdown(book);
+    const bookSelect = document.getElementById('bible-book-select');
+    if (bookSelect) bookSelect.value = book;
   },
 
   // Render the reader structure with correct state from the start (unidirectional data flow)

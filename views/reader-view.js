@@ -93,7 +93,8 @@ const ReaderView = {
       let pageTitle = 'Time Tested Bible';
       switch (contentType) {
         case 'bible':
-          if (params.book) pageTitle = `${params.book} ${params.chapter || ''} — Time Tested Bible`;
+          if (params.book && params.chapter) pageTitle = `${params.book} ${params.chapter} — Time Tested Bible`;
+          else if (params.book) pageTitle = `${params.book} — Time Tested Bible`;
           break;
         case 'timetested':
           if (params.chapterId) {
@@ -118,6 +119,19 @@ const ReaderView = {
         case 'philo':
           if (params.work) pageTitle = `${params.work.replace(/-/g, ' ')} — Philo — Time Tested Bible`;
           break;
+        case 'apocrypha': {
+          const APOCRYPHA_NAMES = { enoch: '1 Enoch', jubilees: 'Jubilees', jasher: 'Jasher' };
+          const apoBookName = APOCRYPHA_NAMES[params.book] || 'Apocrypha';
+          const apoChTitle = params.book && params.chapter && this._CHAPTER_TITLES?.[params.book]?.[params.chapter];
+          if (params.book && params.chapter) {
+            pageTitle = `${apoBookName} ${params.chapter}${apoChTitle ? ' — ' + apoChTitle : ''} — Time Tested Bible`;
+          } else if (params.book) {
+            pageTitle = `${apoBookName} — Time Tested Bible`;
+          } else {
+            pageTitle = 'Apocrypha — Time Tested Bible';
+          }
+          break;
+        }
         case 'multiverse':
           pageTitle = 'Multiverse View — Time Tested Bible';
           break;
@@ -182,6 +196,9 @@ const ReaderView = {
       case 'josephus':
         // Key on work + book — section changes scroll within the same rendered book
         currentKey = `josephus:${params.work || 'index'}:${params.book || ''}`;
+        break;
+      case 'apocrypha':
+        currentKey = `apocrypha:${params.book || 'index'}:${params.chapter || ''}`;
         break;
       default:
         currentKey = 'unknown';
@@ -351,6 +368,16 @@ const ReaderView = {
         }, 50);
         break;
 
+      case 'apocrypha':
+        this.renderApocryphaInBibleFrame(state, derived, container, params);
+        this.syncUIState(state.ui);
+        setTimeout(() => {
+          if (typeof updateReaderContentSelector === 'function') {
+            updateReaderContentSelector('apocrypha');
+          }
+        }, 50);
+        break;
+
       case 'people':
         // Future: People studies - for now, show landing page
         this.renderLandingPage(state, derived, container);
@@ -476,6 +503,16 @@ const ReaderView = {
             <p>First-century Jewish historian. Antiquities, Jewish War, Against Apion, and Life — primary sources for Second Temple period history.</p>
             <button class="reader-card-btn">
               Browse Josephus →
+            </button>
+          </div>
+          
+          <!-- Apocrypha -->
+          <div class="reader-content-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha'}})">
+            <div class="reader-card-icon">📜</div>
+            <h2>Apocrypha</h2>
+            <p>Extra-biblical texts: 1 Enoch, Jubilees, and Jasher. Ancient sources frequently referenced alongside Scripture.</p>
+            <button class="reader-card-btn">
+              Browse Apocrypha →
             </button>
           </div>
         </div>
@@ -2580,6 +2617,76 @@ const ReaderView = {
   },
 
   // ═══════════════════════════════════════════════════════════════════════
+  // APOCRYPHA (1 Enoch, Jubilees, Jasher)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  /**
+   * Render Apocrypha content within the Bible frame.
+   * Uses params.book (enoch/jubilees/jasher) and params.chapter.
+   */
+  renderApocryphaInBibleFrame(state, derived, container, params) {
+    const existingPage = container.querySelector('#bible-explorer-page');
+    if (!existingPage && typeof BibleView !== 'undefined') {
+      BibleView.renderStructure(container, { content: { params: { contentType: 'apocrypha' } } });
+    } else if (existingPage && typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      BibleView.syncSelectorVisibility({ content: { params: { contentType: 'apocrypha' } } });
+    }
+
+    const textArea = container.querySelector('#bible-explorer-text');
+    if (!textArea) return;
+
+    const bookSlug = params.book; // 'enoch', 'jubilees', 'jasher'
+    const APOCRYPHA_NAMES = { enoch: '1 Enoch', jubilees: 'Jubilees', jasher: 'Jasher' };
+
+    if (!bookSlug) {
+      this._renderApocryphaIndex(textArea);
+      const titleEl = container.querySelector('#bible-chapter-title');
+      if (titleEl) titleEl.textContent = 'Apocrypha';
+      this.hideChapterNav(container);
+      return;
+    }
+
+    const bookName = APOCRYPHA_NAMES[bookSlug] || bookSlug;
+
+    if (typeof Classics !== 'undefined' && !Classics.isLoaded(bookSlug)) {
+      textArea.innerHTML = `<div class="symbol-study-loading">Loading ${bookName}...</div>`;
+      Classics.loadAuthor(bookSlug).then(() => {
+        this._renderPseudepigraphaContent(textArea, bookSlug, bookName, params);
+      });
+    } else {
+      this._renderPseudepigraphaContent(textArea, bookSlug, bookName, params);
+    }
+
+    const titleEl = container.querySelector('#bible-chapter-title');
+    if (titleEl) titleEl.textContent = params.chapter ? `${bookName} ${params.chapter}` : bookName;
+    this.hideChapterNav(container);
+  },
+
+  _notScriptureLink: `<a href="/blog/why-jasher-jubilees-enoch-are-not-scripture" class="not-scripture-link" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'why-jasher-jubilees-enoch-are-not-scripture'}})">Why these books are not Scripture</a>`,
+
+  _renderApocryphaIndex(textArea) {
+    const books = [
+      { slug: 'enoch', name: '1 Enoch', desc: 'Apocalyptic text attributed to Enoch. 108 chapters. R.H. Charles (1917).' },
+      { slug: 'jubilees', name: 'Jubilees', desc: 'Retelling of Genesis through Exodus 12. 50 chapters. R.H. Charles (1913).' },
+      { slug: 'jasher', name: 'Jasher', desc: 'Narrative history paralleling Genesis through Joshua. 91 chapters. (1840).' },
+    ];
+    textArea.innerHTML = `
+      <div class="classics-index">
+        <h1 class="classics-index-title">Apocrypha</h1>
+        <p class="classics-index-intro">Extra-biblical texts frequently referenced alongside Scripture. Select a book to begin reading.</p>
+        <div class="not-scripture-banner">These texts contain useful historical context but are not canonical Scripture. ${this._notScriptureLink}</div>
+        <div class="classics-works-list">
+          ${books.map(b => `
+            <a href="/reader/apocrypha/${b.slug}" class="classics-work-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${b.slug}'}}); return false;">
+              <span class="classics-work-name">${b.name}</span>
+              <span class="classics-work-meta">${b.desc}</span>
+            </a>`).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
   // CLASSICS (Philo & Josephus)
   // ═══════════════════════════════════════════════════════════════════════
 
@@ -2600,7 +2707,8 @@ const ReaderView = {
     if (!textArea) return;
 
     const workSlug = params.work;
-    const authorName = authorId === 'philo' ? 'Philo' : 'Josephus';
+    const AUTHOR_NAMES = { philo: 'Philo', josephus: 'Josephus' };
+    const authorName = AUTHOR_NAMES[authorId] || authorId;
 
     // Lazy-load data, then render
     if (typeof Classics !== 'undefined' && !Classics.isLoaded(authorId)) {
@@ -2676,6 +2784,342 @@ const ReaderView = {
               </a>`;
           }).join('')}
         </div>
+      </div>
+    `;
+  },
+
+  // Chapter titles for pseudepigrapha (keyed by authorId)
+  _CHAPTER_TITLES: {
+    enoch: {
+      1: 'Blessing of Enoch; The Coming Judgement',
+      2: 'The Order of the Luminaries',
+      3: 'The Evergreen Trees',
+      4: 'The Heat of Summer',
+      5: 'The Cycle of Nature; Obedience of Creation',
+      6: 'The Fall of the Watchers',
+      7: 'The Nephilim and Their Wickedness',
+      8: 'The Teachings of Azazel',
+      9: 'The Cry of the Archangels',
+      10: 'God\'s Judgement on the Watchers',
+      11: 'The Blessings of the Righteous',
+      12: 'Enoch Hidden; Sent to the Watchers',
+      13: 'Enoch\'s Message to Azazel',
+      14: 'The Vision of the Heavenly Throne',
+      15: 'God Rebukes the Watchers',
+      16: 'The Spirits of the Giants',
+      17: 'The First Journey: Fire and Darkness',
+      18: 'The Treasuries of the Winds; The Corner-Stone',
+      19: 'The Angels Who Sinned with Women',
+      20: 'The Names of the Holy Angels',
+      21: 'The Chaotic Place; Seven Bound Stars',
+      22: 'The Hollow Places of the Dead',
+      23: 'The Burning Fire in the West',
+      24: 'The Seven Mountains and the Tree of Life',
+      25: 'The Fragrant Tree Promised to the Righteous',
+      26: 'Jerusalem: The Blessed Mountain',
+      27: 'The Valley of the Accursed',
+      28: 'The Desert in the East',
+      29: 'Aromatic Trees of Frankincense',
+      30: 'The Valley of Fragrant Waters',
+      31: 'The Garden of Righteousness',
+      32: 'The Mountains to the North-East',
+      33: 'The Ends of the Earth; The Portals of Heaven',
+      34: 'The Portals of the North',
+      35: 'The Portals of the West',
+      36: 'The Portals of the South and East',
+      37: 'Introduction to the Parables',
+      38: 'The First Parable: Judgement of the Wicked',
+      39: 'The Dwelling-Places of the Righteous',
+      40: 'The Four Archangels',
+      41: 'The Secrets of the Heavens',
+      42: 'Wisdom Finds No Dwelling-Place',
+      43: 'Lightning and the Stars',
+      44: 'Other Lightnings',
+      45: 'The Second Parable: The Lot of the Apostates',
+      46: 'The Head of Days and the Son of Man',
+      47: 'The Prayer of the Righteous',
+      48: 'The Fountain of Righteousness; The Son of Man',
+      49: 'The Power and Wisdom of the Elect One',
+      50: 'The Resurrection of the Dead',
+      51: 'The Elect One on the Throne of Glory',
+      52: 'The Six Metal Mountains',
+      53: 'The Valley of Judgement',
+      54: 'The Punishment of the Fallen Angels',
+      55: 'The Third Parable: The Flood',
+      56: 'The Host of Azazel Cast into the Furnace',
+      57: 'The Return from the East and West',
+      58: 'The Light of the Righteous',
+      59: 'The Lights and the Thunder',
+      60: 'The Quaking of Heaven; Leviathan and Behemoth',
+      61: 'The Angels Measure Paradise',
+      62: 'The Judgement of Kings and the Mighty',
+      63: 'The Vain Repentance of Kings',
+      64: 'The Fallen Angels in the Abyss',
+      65: 'Enoch Foretells the Flood to Noah',
+      66: 'The Angels of Punishment Prepare the Flood',
+      67: 'God\'s Promise to Noah',
+      68: 'Michael and Raphael Astonished at the Judgement',
+      69: 'The Names and Deeds of the Fallen Angels',
+      70: 'The Translation of Enoch',
+      71: 'Two Earlier Visions of Enoch',
+      72: 'The Course of the Sun',
+      73: 'The Course of the Moon',
+      74: 'The Lunar Year',
+      75: 'The Intercalary Days and the Stars',
+      76: 'The Twelve Portals of the Winds',
+      77: 'The Four Quarters and the Rivers',
+      78: 'The Names of Sun and Moon',
+      79: 'The Law of the Stars Completed',
+      80: 'The Sinners Alter the Courses',
+      81: 'The Heavenly Tablets',
+      82: 'The Leaders of the Seasons and Months',
+      83: 'The First Dream-Vision: The Deluge',
+      84: 'Enoch\'s Prayer Against the Flood',
+      85: 'The Second Dream-Vision: The History of the World',
+      86: 'The Fallen Star and the Oxen',
+      87: 'The Coming of the Angels',
+      88: 'The Punishment of the Fallen Star',
+      89: 'The Deluge to the Exodus',
+      90: 'The Seventy Shepherds; The New Jerusalem',
+      91: 'Enoch\'s Admonition to His Children',
+      92: 'The Book of Enoch\'s Wisdom',
+      93: 'The Apocalypse of Weeks (Part 1)',
+      94: 'Admonitions to the Righteous',
+      95: 'Woes Against the Sinners',
+      96: 'Hope for the Righteous; Woes for the Wicked',
+      97: 'Woes Against Those Who Trust in Wealth',
+      98: 'All Sin Recorded in Heaven',
+      99: 'Woes for the Godless in the Last Days',
+      100: 'The Mutual Slaughter of the Sinners',
+      101: 'Exhortation to Fear God',
+      102: 'The Terrors of the Day of Judgement',
+      103: 'The Destiny of the Righteous Dead',
+      104: 'Assurances to the Righteous',
+      105: 'God and the Messiah to Dwell with Man',
+      106: 'The Birth of Noah',
+      107: 'The Transgression of Future Generations',
+      108: 'Appendix: The Book for Methuselah',
+    },
+    jubilees: {
+      1: 'Moses on Mount Sinai; God\'s Covenant',
+      2: 'The Six Days of Creation; The Sabbath',
+      3: 'Adam Names the Animals; The Garden of Eden',
+      4: 'Cain and Abel; The Generations to Enoch',
+      5: 'The Watchers and the Flood',
+      6: 'Noah\'s Sacrifice; The Feast of Weeks',
+      7: 'Noah\'s Vineyard; The Commandments of Noah',
+      8: 'The Division of the Earth Among Noah\'s Sons',
+      9: 'The Portions of Shem, Ham, and Japheth',
+      10: 'The Demons and the Healing of Noah\'s Sons',
+      11: 'The Generations from Reu to Abram',
+      12: 'Abram Rejects Idolatry',
+      13: 'Abram Journeys to Canaan and Egypt',
+      14: 'The Covenant of the Pieces',
+      15: 'The Covenant of Circumcision; Birth of Ishmael',
+      16: 'The Three Angels; The Destruction of Sodom',
+      17: 'Isaac Weaned; Ishmael\'s Jealousy',
+      18: 'The Binding of Isaac',
+      19: 'The Death of Sarah; Isaac and Rebecca',
+      20: 'Abraham\'s Farewell Exhortation',
+      21: 'Abraham\'s Charge to Isaac',
+      22: 'The Death of Abraham; His Blessing on Jacob',
+      23: 'The Death of Abraham; The Decline of Generations',
+      24: 'Isaac in Gerar; God\'s Promise',
+      25: 'Rebecca\'s Counsel to Jacob',
+      26: 'Isaac\'s Blessing on Jacob',
+      27: 'Jacob Flees to Laban',
+      28: 'Jacob Serves Laban; His Wives and Children',
+      29: 'Jacob\'s Departure from Laban',
+      30: 'The Defilement of Dinah; Levi and the Priesthood',
+      31: 'Jacob at Bethel; Levi\'s Dream',
+      32: 'The Tithe at Bethel; Jacob Wrestles',
+      33: 'The Sin of Reuben; The Laws of Incest',
+      34: 'The War of the Amorites Against Jacob',
+      35: 'Rebecca\'s Plea; Isaac\'s Blessing on Levi and Judah',
+      36: 'Isaac\'s Farewell; The Oath of Esau',
+      37: 'The War of Esau Against Jacob',
+      38: 'The War Continues; Esau Falls',
+      39: 'Joseph in Egypt; Potiphar\'s Wife',
+      40: 'Pharaoh\'s Dreams; Joseph\'s Exaltation',
+      41: 'Judah and Tamar',
+      42: 'The Famine; Joseph\'s Brothers in Egypt',
+      43: 'Joseph Reveals Himself',
+      44: 'Jacob Goes Down to Egypt',
+      45: 'Israel in Goshen; Jacob Blesses Pharaoh',
+      46: 'The Deaths of Jacob and Joseph',
+      47: 'Moses\' Birth and Early Life',
+      48: 'The Exodus; The Prince of Mastema',
+      49: 'The Commandments of the Passover',
+      50: 'The Sabbath Laws',
+    },
+    jasher: {
+      1: 'Creation, Adam and Eve, Cain and Abel',
+      2: 'Seth and the Generations of Adam',
+      3: 'Enoch Walks with God',
+      4: 'The Ascension of Enoch',
+      5: 'The Wickedness Before the Flood',
+      6: 'Noah and the Flood',
+      7: 'The Sons of Noah and the Nations',
+      8: 'The Birth of Abram',
+      9: 'Haran, Nahor, and the Family of Terah',
+      10: 'The Scattering of the Nations',
+      11: 'Nimrod and the Cities of Shinar',
+      12: 'Abram Cast into the Furnace',
+      13: 'Terah Departs Ur for Haran',
+      14: 'Rikayon and the Rise of Egypt',
+      15: 'Abram Goes Down to Egypt',
+      16: 'The War of the Kings',
+      17: 'Wars Among the Nations',
+      18: 'The Covenant of Circumcision',
+      19: 'The Sins of Sodom',
+      20: 'Abraham in the Land of the Philistines',
+      21: 'The Birth of Isaac',
+      22: 'Ishmael Sent Away',
+      23: 'The Binding of Isaac',
+      24: 'The Death and Burial of Sarah',
+      25: 'Keturah and the Death of Abraham',
+      26: 'Jacob and Esau; The Birthright',
+      27: 'Esau the Hunter; The Death of Nimrod',
+      28: 'Isaac and the Philistines',
+      29: 'Jacob Obtains the Blessing',
+      30: 'Jacob\'s Vision at Bethel',
+      31: 'Jacob Serves Laban',
+      32: 'Jacob Sends Messengers to Esau',
+      33: 'Jacob at Shechem; Dinah',
+      34: 'The Destruction of Shechem',
+      35: 'The Kings of the Amorites Against Jacob',
+      36: 'Jacob Returns to Bethel',
+      37: 'Joseph and His Brothers',
+      38: 'The Wars of the Sons of Jacob',
+      39: 'The Sons of Jacob at Tapnach',
+      40: 'The Sons of Jacob at Bethchorin',
+      41: 'Joseph Sold into Slavery',
+      42: 'Joseph Cast into the Pit',
+      43: 'The Brothers\' Remorse; Judah and Tamar',
+      44: 'Joseph Brought to Egypt',
+      45: 'The Sons of Jacob in Canaan',
+      46: 'Joseph in Prison',
+      47: 'The Death of Isaac',
+      48: 'Pharaoh\'s Dreams',
+      49: 'Joseph Appointed Over Egypt',
+      50: 'Wars of Ishmael and Tarshish',
+      51: 'Jacob Sends His Sons to Egypt',
+      52: 'The Brothers Return from Egypt',
+      53: 'Benjamin Brought to Egypt',
+      54: 'Joseph Reveals Himself',
+      55: 'Jacob Goes Down to Egypt',
+      56: 'The Death of Jacob',
+      57: 'The War with the Sons of Esau',
+      58: 'The Death of Joseph',
+      59: 'The Descendants of Israel in Egypt',
+      60: 'Zepho and the Wars of Edom',
+      61: 'Israel\'s Burdens Begin',
+      62: 'The Deaths of the Elders of Israel',
+      63: 'The Death of Levi; Israel Oppressed',
+      64: 'Balaam and the Kings of Chittim',
+      65: 'The Counsel Against Israel',
+      66: 'Israel\'s Bondage Deepens',
+      67: 'The Birth of Moses',
+      68: 'Miriam\'s Prophecy; Moses Hidden',
+      69: 'Pharaoh\'s Daughter Finds Moses',
+      70: 'The Young Moses Before Pharaoh',
+      71: 'Moses Flees to Cush',
+      72: 'Moses and the War in Cush',
+      73: 'Moses Reigns Over Cush',
+      74: 'Kings of Edom; Moab and Midian',
+      75: 'The Children of Ephraim Leave Egypt Early',
+      76: 'Moses Departs from Cush',
+      77: 'The Reign of Pharaoh Adikam',
+      78: 'The Death of Baal Channan, King of Edom',
+      79: 'Moses in Midian; The Burning Bush',
+      80: 'Moses Returns to Egypt; The Plagues Begin',
+      81: 'The Exodus; The Crossing of the Red Sea',
+      82: 'Israel at Sinai; The Giving of the Law',
+      83: 'The Tabernacle and the Priesthood',
+      84: 'Korah\'s Rebellion',
+      85: 'Wars with the Canaanites; Balaam and Balak',
+      86: 'The Numbering of Israel',
+      87: 'The Death of Moses',
+      88: 'Joshua Leads Israel into Canaan',
+      89: 'Joshua\'s Song of Victory',
+      90: 'The Wars of Edom and Chittim',
+      91: 'After Joshua; Judah Leads Israel',
+    },
+  },
+
+  /**
+   * Render pseudepigrapha content (1 Enoch, Jubilees, Jasher).
+   * Chapter index or single chapter view with prev/next navigation.
+   */
+  _renderPseudepigraphaContent(textArea, authorId, authorName, params) {
+    const works = typeof Classics !== 'undefined' ? Classics.getWorks(authorId) : [];
+    if (works.length === 0) {
+      textArea.innerHTML = `<div class="reader-error">No data loaded for ${authorName}.</div>`;
+      return;
+    }
+
+    const workName = works[0];
+    const sections = Classics.getSectionList(authorId, workName);
+    const totalChapters = sections.length;
+    const chapter = params.chapter;
+    const titles = this._CHAPTER_TITLES[authorId] || {};
+
+    if (!chapter) {
+      const PSEUDEPIGRAPHA_INTROS = {
+        enoch: 'The Book of Enoch (1 Enoch). R.H. Charles translation (1917). Apocalyptic text attributed to Enoch, great-grandfather of Noah. 108 chapters covering the Watchers, Parables, Astronomical Book, Dream Visions, and Epistle of Enoch.',
+        jubilees: 'The Book of Jubilees. R.H. Charles translation (1913). Retelling of Genesis through Exodus 12, structured around jubilee periods. 50 chapters covering creation through the Passover.',
+        jasher: 'The Book of Jasher. Translation from Hebrew (1840). Narrative history paralleling Genesis through Joshua. 91 chapters covering creation through the conquest of Canaan.',
+      };
+      textArea.innerHTML = `
+        <div class="classics-index">
+          <h1 class="classics-index-title">${authorName}</h1>
+          <p class="classics-index-intro">${PSEUDEPIGRAPHA_INTROS[authorId] || ''}</p>
+          <div class="classics-works-list">
+            ${sections.map(ref => {
+              const ch = ref.split('|')[1];
+              const title = titles[ch] || '';
+              const subtitle = title ? `<span class="classics-work-meta">${title}</span>` : '';
+              return `
+                <a href="/reader/apocrypha/${authorId}/${ch}" class="classics-work-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}',chapter:${ch}}}); return false;">
+                  <span class="classics-work-name">Chapter ${ch}</span>
+                  ${subtitle}
+                </a>`;
+            }).join('')}
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    // Render single chapter
+    const ref = `${workName}|${chapter}`;
+    const text = Classics.getSection(authorId, ref);
+    if (!text) {
+      textArea.innerHTML = `<div class="reader-error">Chapter ${chapter} not found in ${authorName}. <a href="#" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}'}}); return false;">Back to index</a></div>`;
+      return;
+    }
+
+    const chapterTitle = titles[chapter] ? ` — ${titles[chapter]}` : '';
+    const prevCh = chapter > 1 ? chapter - 1 : null;
+    const nextCh = chapter < totalChapters ? chapter + 1 : null;
+    const prevLink = prevCh ? `<a href="/reader/apocrypha/${authorId}/${prevCh}" class="classics-nav-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}',chapter:${prevCh}}}); return false;">&laquo; Ch. ${prevCh}</a>` : '<span></span>';
+    const nextLink = nextCh ? `<a href="/reader/apocrypha/${authorId}/${nextCh}" class="classics-nav-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}',chapter:${nextCh}}}); return false;">Ch. ${nextCh} &raquo;</a>` : '<span></span>';
+
+    const formattedText = text.replace(/\n/g, '</p><p>');
+
+    textArea.innerHTML = `
+      <div class="classics-reader">
+        <header class="classics-reader-header">
+          <h1>${authorName} ${chapter}${chapterTitle}</h1>
+          <div class="not-scripture-banner not-scripture-banner-sm">${this._notScriptureLink}</div>
+          <nav class="classics-chapter-nav">${prevLink}
+            <a href="/reader/apocrypha/${authorId}" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}'}}); return false;">All Chapters</a>
+            ${nextLink}</nav>
+        </header>
+        <article class="classics-reader-body">
+          <p>${formattedText}</p>
+        </article>
+        <footer class="classics-chapter-nav">${prevLink}${nextLink}</footer>
       </div>
     `;
   },
@@ -2820,6 +3264,12 @@ const ReaderView = {
     // Also match without "Philo" prefix for known work names + number
     const philoPatternDirect = new RegExp(`(${philoAllWorks})\\s+(\\d+)`, 'g');
 
+    // Pseudepigrapha patterns — matches:
+    //   "1 Enoch 42", "Enoch 42", "Book of Enoch 42"
+    //   "Jubilees 5", "Jub 5", "Jub. 5", "Book of Jubilees 5"
+    //   "Jasher 12", "Book of Jasher 12"
+    const pseudoPattern = /(?:(?:Book\s+of\s+)?(?:1\s+)?Enoch|Jubilees|Jub\.?|(?:Book\s+of\s+)?Jasher)\s+(\d+)/g;
+
     const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
     const textNodes = [];
     while (walker.nextNode()) {
@@ -2829,7 +3279,8 @@ const ReaderView = {
       josephusPattern.lastIndex = 0;
       philoPattern.lastIndex = 0;
       philoPatternDirect.lastIndex = 0;
-      if (josephusPattern.test(text) || philoPattern.test(text) || philoPatternDirect.test(text)) {
+      pseudoPattern.lastIndex = 0;
+      if (josephusPattern.test(text) || philoPattern.test(text) || philoPatternDirect.test(text) || pseudoPattern.test(text)) {
         textNodes.push(walker.currentNode);
       }
     }
@@ -2850,20 +3301,28 @@ const ReaderView = {
       return `<a href="${url}" class="classics-citation-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'philo',work:'${slug}',section:'${parsed.section}'}}); return false;">${match}</a>`;
     };
 
+    const makePseudoLink = (match) => {
+      const parsed = Classics.parsePseudepigraphaCitation(match);
+      if (!parsed) return match;
+      const url = `/reader/apocrypha/${parsed.author}/${parsed.chapter}`;
+      return `<a href="${url}" class="classics-citation-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${parsed.author}',chapter:${parsed.chapter}}}); return false;">${match}</a>`;
+    };
+
     textNodes.forEach(node => {
       let html = node.nodeValue;
-      // Replace Josephus citations first (longer patterns)
       josephusPattern.lastIndex = 0;
       html = html.replace(josephusPattern, (match) => makeJosephusLink(match));
-      // Replace Philo citations with "Philo" prefix (catches Roman numeral sections)
       philoPattern.lastIndex = 0;
       html = html.replace(philoPattern, (match) => makePhiloLink(match));
-      // Replace Philo citations without prefix (known work names + number only)
       philoPatternDirect.lastIndex = 0;
       html = html.replace(philoPatternDirect, (match) => {
-        // Skip if already wrapped in a link
         if (html.indexOf(`>${match}</a>`) !== -1) return match;
         return makePhiloLink(match);
+      });
+      pseudoPattern.lastIndex = 0;
+      html = html.replace(pseudoPattern, (match) => {
+        if (html.indexOf(`>${match}</a>`) !== -1) return match;
+        return makePseudoLink(match);
       });
       if (html !== node.nodeValue) {
         const span = document.createElement('span');

@@ -269,6 +269,9 @@
             <span class="nav-dropdown-icon">📝</span> Word Studies
           </button>
           <div class="nav-dropdown-divider"></div>
+          <button class="nav-dropdown-item" onclick="Layout.closeDropdown(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha'}})">
+            <span class="nav-dropdown-icon">📜</span> Apocrypha
+          </button>
           <button class="nav-dropdown-item" onclick="Layout.closeDropdown(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'philo'}})">
             <span class="nav-dropdown-icon">📚</span> Philo
           </button>
@@ -487,6 +490,11 @@
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'words'}}])">
           <span class="menu-icon">📝</span>
           <span class="menu-label">Word Studies</span>
+        </button>
+        
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha'}}])">
+          <span class="menu-icon">📜</span>
+          <span class="menu-label">Apocrypha</span>
         </button>
         
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'reader',params:{contentType:'philo'}}])">

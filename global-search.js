@@ -658,18 +658,25 @@ const GlobalSearch = {
   navigateToClassics(parsed) {
     this.close();
     if (typeof AppStore === 'undefined' || typeof Classics === 'undefined') return;
-    const slug = Classics.getWorkSlug(parsed.work);
     if (parsed.author === 'philo') {
+      const slug = Classics.getWorkSlug(parsed.work);
       AppStore.dispatch({
         type: 'SET_VIEW',
         view: 'reader',
         params: { contentType: 'philo', work: slug, section: String(parsed.section) }
       });
     } else if (parsed.author === 'josephus') {
+      const slug = Classics.getWorkSlug(parsed.work);
       AppStore.dispatch({
         type: 'SET_VIEW',
         view: 'reader',
         params: { contentType: 'josephus', work: slug, book: parsed.book, chapter: parsed.chapter, section: parsed.section }
+      });
+    } else if (['enoch', 'jubilees', 'jasher'].includes(parsed.author)) {
+      AppStore.dispatch({
+        type: 'SET_VIEW',
+        view: 'reader',
+        params: { contentType: 'apocrypha', book: parsed.author, chapter: parsed.chapter }
       });
     }
   },

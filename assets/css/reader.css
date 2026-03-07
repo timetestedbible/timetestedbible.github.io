@@ -966,6 +966,115 @@ code {
   margin-left: var(--spacing-md);
 }
 
+/* ── Book landing page (per-book chapter outline) ── */
+
+.book-landing {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.book-landing-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 4px;
+}
+
+.book-landing-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-lg);
+}
+
+.book-landing-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.book-landing-chapter {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-border-subtle, rgba(128,128,128,0.1));
+}
+
+.book-landing-ch-link {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm, 4px);
+  transition: background 0.15s;
+}
+
+.book-landing-ch-link:hover {
+  background: var(--accent-gold-subtle);
+}
+
+.book-landing-ch-num {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold, #c9a94e);
+  min-width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.book-landing-ch-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.book-landing-subs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  padding: 2px 8px 4px 46px;
+}
+
+.book-landing-sub {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.book-landing-sub:hover {
+  color: var(--accent-gold, #c9a94e);
+  text-decoration: underline;
+}
+
+/* ── "Not Scripture" banner for apocrypha ── */
+
+.not-scripture-banner {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface-raised, rgba(128,128,128,0.06));
+  border-left: 3px solid var(--accent-gold, #c9a94e);
+  padding: 8px 12px;
+  margin: 12px 0;
+  border-radius: 0 var(--radius-sm, 4px) var(--radius-sm, 4px) 0;
+  line-height: 1.5;
+}
+
+.not-scripture-banner-sm {
+  font-size: 0.78rem;
+  padding: 5px 10px;
+  margin: 6px 0 10px;
+}
+
+.not-scripture-link {
+  color: var(--accent-gold, #c9a94e);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.not-scripture-link:hover {
+  text-decoration: underline;
+}
+
 /* Continuous-scroll reading view */
 .classics-reader {
   max-width: 700px;

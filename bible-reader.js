@@ -7523,7 +7523,7 @@ function buildBookIndexHTML() {
     const desc = info.description || '';
     const category = info.category || '';
     const categoryBadge = category ? `<span class="book-card-category">${category}</span>` : '';
-    return `<div class="bible-book-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${currentTranslation}',book:'${book.replace(/'/g, "\\'")}',chapter:1}})">
+    return `<div class="bible-book-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'${currentTranslation}',book:'${book.replace(/'/g, "\\'")}'}})">
       <div class="book-card-header">
         <span class="book-card-name">${book}</span>
         <span class="book-card-chapters">${chapters} ch.</span>
@@ -7711,7 +7711,7 @@ function getHGAboutHTML() {
 
   function buildCard(book) {
     const chapters = Bible.getChapterCount(book) || '?';
-    return `<div class="bible-book-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'hg',book:'${book.replace(/'/g, "\\'")}',chapter:1}})">
+    return `<div class="bible-book-card" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:'hg',book:'${book.replace(/'/g, "\\'")}'}})">
       <div class="book-card-header">
         <span class="book-card-name">${book}</span>
         <span class="book-card-chapters">${chapters} ch.</span>
@@ -7795,7 +7795,10 @@ function updateChapterDropdown(book) {
   let html = '<option value="">Ch.</option>';
   for (let i = 1; i <= chapterCount; i++) {
     const selected = bibleExplorerState.currentChapter === i ? ' selected' : '';
-    html += `<option value="${i}"${selected}>${i}</option>`;
+    const fmt = verseFormattingData ? verseFormattingData[`${book}.${i}`] : null;
+    const title = fmt?.headings?.[0]?.t;
+    const label = title ? `${i} — ${title}` : `${i}`;
+    html += `<option value="${i}"${selected}>${label}</option>`;
   }
   chapterSelect.innerHTML = html;
   chapterSelect.disabled = false;
@@ -7827,21 +7830,11 @@ function switchBibleNavTab(tab) {
 
 // Select a book
 function selectBibleBook(bookName) {
-  // Update state FIRST (state before render)
-  bibleExplorerState.currentBook = bookName;
-  bibleExplorerState.currentChapter = 1;  // Reset to chapter 1 when changing books
-  
-  // Update book dropdown selection
-  const bookSelect = document.getElementById('bible-book-select');
-  if (bookSelect) {
-    bookSelect.value = bookName;
-  }
-  
-  // Update chapter dropdown (now uses currentChapter = 1)
-  updateChapterDropdown(bookName);
-  
-  // Display chapter 1
-  selectBibleChapter(1);
+  if (!bookName) return;
+  AppStore.dispatch({
+    type: 'SET_VIEW', view: 'reader',
+    params: { contentType: 'bible', translation: currentTranslation, book: bookName }
+  });
 }
 
 // Populate chapter grid for selected book
@@ -8779,7 +8772,9 @@ function updateReaderContentSelector(contentType) {
   if (symbolSelectors) symbolSelectors.style.display = (contentType === 'symbols' && !hideAllSelectors) ? '' : 'none';
   if (ttSelectors) ttSelectors.style.display = (contentType === 'timetested' && !hideAllSelectors) ? '' : 'none';
   if (numberSelectors) numberSelectors.style.display = (contentType === 'numbers') ? '' : 'none';
-  if (classicsSelectors) classicsSelectors.style.display = (contentType === 'philo' || contentType === 'josephus') ? '' : 'none';
+  if (classicsSelectors) classicsSelectors.style.display = ['philo', 'josephus'].includes(contentType) ? '' : 'none';
+  const apocryphaSelectors = document.getElementById('apocrypha-selectors');
+  if (apocryphaSelectors) apocryphaSelectors.style.display = (contentType === 'apocrypha') ? '' : 'none';
   
   // Populate symbol dropdown if switching to symbols
   if (contentType === 'symbols') {
@@ -8805,6 +8800,11 @@ function updateReaderContentSelector(contentType) {
   // Populate classics dropdowns
   if (contentType === 'philo' || contentType === 'josephus') {
     populateClassicsDropdowns(contentType);
+  }
+  
+  // Populate apocrypha dropdowns
+  if (contentType === 'apocrypha') {
+    populateApocryphaSelectors();
   }
 }
 
@@ -9035,6 +9035,78 @@ function onClassicsSectionJump(value) {
       const b = parseInt(value);
       AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'josephus', work: params.work, book: b } });
     }
+  }
+}
+
+// ── Apocrypha selector handlers ──
+
+const APOCRYPHA_BOOKS = {
+  enoch: { name: '1 Enoch', chapters: 108 },
+  jubilees: { name: 'Jubilees', chapters: 50 },
+  jasher: { name: 'Jasher', chapters: 91 },
+};
+
+function onApocryphaBookChange(bookSlug) {
+  if (typeof AppStore === 'undefined') return;
+  if (!bookSlug) {
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha' } });
+    return;
+  }
+  AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha', book: bookSlug, chapter: 1 } });
+}
+
+function onApocryphaChapterChange(chapter) {
+  if (!chapter || typeof AppStore === 'undefined') return;
+  const state = AppStore.getState();
+  const book = state?.content?.params?.book;
+  if (!book) return;
+  AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha', book, chapter } });
+}
+
+function populateApocryphaSelectors() {
+  const state = typeof AppStore !== 'undefined' ? AppStore.getState() : {};
+  const params = state?.content?.params || {};
+  const bookSlug = params.book;
+
+  const bookSelect = document.getElementById('apocrypha-book-select');
+  if (bookSelect) {
+    bookSelect.value = bookSlug || '';
+  }
+
+  const chapterSelect = document.getElementById('apocrypha-chapter-select');
+  if (!chapterSelect) return;
+
+  if (!bookSlug || !APOCRYPHA_BOOKS[bookSlug]) {
+    chapterSelect.innerHTML = '<option value="">Ch.</option>';
+    chapterSelect.disabled = true;
+    return;
+  }
+
+  const info = APOCRYPHA_BOOKS[bookSlug];
+  let totalChapters = info.chapters;
+
+  // If data is loaded, use actual count from Classics
+  if (typeof Classics !== 'undefined' && Classics.isLoaded(bookSlug)) {
+    const works = Classics.getWorks(bookSlug);
+    if (works.length > 0) {
+      totalChapters = Classics.getSectionList(bookSlug, works[0]).length;
+    }
+  }
+
+  const titles = (typeof ReaderView !== 'undefined' && ReaderView._CHAPTER_TITLES)
+    ? ReaderView._CHAPTER_TITLES[bookSlug] || {}
+    : {};
+
+  let html = '<option value="">Ch.</option>';
+  for (let i = 1; i <= totalChapters; i++) {
+    const title = titles[i] ? ` — ${titles[i]}` : '';
+    html += `<option value="${i}"${i === params.chapter ? ' selected' : ''}>${i}${title}</option>`;
+  }
+  chapterSelect.innerHTML = html;
+  chapterSelect.disabled = false;
+
+  if (params.chapter) {
+    chapterSelect.value = params.chapter;
   }
 }
 
