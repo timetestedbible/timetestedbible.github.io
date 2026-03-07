@@ -982,6 +982,76 @@ function getLocalDateFromUTC(utcDate, longitude) {
   return result;
 }
 
+// Format a local-time Date (from utcToLocalTime) as "H:MM AM/PM"
+function formatLocalTimeStr(localDate) {
+  const h = localDate.getUTCHours();
+  const m = String(localDate.getUTCMinutes()).padStart(2, '0');
+  return `${h % 12 || 12}:${m} ${h >= 12 ? 'PM' : 'AM'}`;
+}
+
+// Get human-readable label for the current moon phase setting
+function getMoonLabel() {
+  const phase = state.moonPhase || 'full';
+  switch (phase) {
+    case 'full': return 'Full Moon';
+    case 'dark': return 'Dark Moon (conjunction)';
+    case 'crescent': return 'First Visible Crescent';
+    default: return 'Moon';
+  }
+}
+
+// Get dynamic Renewed Moon feast description based on current moon phase
+function getRenewedMoonDescription() {
+  const phase = state.moonPhase || 'full';
+  switch (phase) {
+    case 'full':
+      return 'First light after full moon \u2014 waning moon 12\u00B0+ above western horizon';
+    case 'dark':
+      return 'Day following the dark moon (conjunction)';
+    case 'crescent':
+      return 'Day following first visible crescent moon sighting';
+    default:
+      return 'First day of the lunar month';
+  }
+}
+
+// Format moon event date/time parts in observer's local solar time.
+// Returns an object with all the parts needed to build explanation text.
+function formatMoonEventDate(moonEventTimestamp, longitude) {
+  const moonEventDate = new Date(moonEventTimestamp);
+  const moonLocalTime = utcToLocalTime(moonEventDate.getTime(), longitude);
+  const moonTimeStr = formatLocalTimeStr(moonLocalTime);
+
+  const moonParts = (typeof getFormattedDateParts === 'function')
+    ? getFormattedDateParts(moonLocalTime)
+    : null;
+
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  const dayOfWeek = moonParts ? moonParts.weekdayName : weekdays[moonLocalTime.getUTCDay()];
+  const monthName = moonParts ? moonParts.shortMonthName : shortMonths[moonLocalTime.getUTCMonth()];
+  const dayNum = moonParts ? moonParts.day : moonLocalTime.getUTCDate();
+  const daySuffix = (typeof getOrdinalSuffix === 'function') ? getOrdinalSuffix(dayNum) : 'th';
+  const year = moonParts ? moonParts.yearStr : String(moonLocalTime.getUTCFullYear());
+
+  const isPast = moonEventDate < new Date();
+  const occurVerb = isPast ? 'occurred' : 'will occur';
+
+  return {
+    moonEventDate,
+    moonLocalTime,
+    moonTimeStr,
+    dayOfWeek,
+    monthName,
+    dayNum,
+    daySuffix,
+    year,
+    isPast,
+    occurVerb
+  };
+}
+
 // Explicitly expose key functions on window for cross-file access
 window.isBeforeGregorianReform = isBeforeGregorianReform;
 window.julianCalendarToJDN = julianCalendarToJDN;

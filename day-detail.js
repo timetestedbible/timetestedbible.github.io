@@ -155,19 +155,7 @@ function showDayDetail(dayObj, month) {
       if (feast.name === 'Renewed Moon' && dayObj.lunarDay === 1 && month.moonEvent) {
         const moonEventTime = month.moonEvent;
         const signName = getMoonLabel();
-        
-        // Format moon event date in a friendly way
-        const moonEventDate = new Date(moonEventTime);
-        const moonParts = getFormattedDateParts(moonEventDate);
-        const dayOfWeek = moonParts.weekdayName;
-        const monthName = moonParts.shortMonthName;
-        const dayNum = moonParts.day;
-        const daySuffix = getOrdinalSuffix(dayNum);
-        const year = moonParts.yearStr;
-        
-        // Format times in observer's local time (based on longitude), not browser timezone
-        const moonLocalTime = utcToLocalTime(moonEventDate.getTime(), state.lon);
-        const moonTimeStr = `${moonLocalTime.getUTCHours() % 12 || 12}:${String(moonLocalTime.getUTCMinutes()).padStart(2, '0')} ${moonLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
+        const { moonEventDate, moonLocalTime, moonTimeStr, dayOfWeek, monthName, dayNum, daySuffix, year, occurVerb } = formatMoonEventDate(moonEventTime, state.lon);
         
         const dayStartLabel = getDayStartLabel();
         
@@ -206,7 +194,7 @@ function showDayDetail(dayObj, month) {
         // Get the day start time (sunset that starts Day 1)
         const dayStartTimestamp = getDayStartTime(dayObj.gregorianDate);
         const dayStartLocalTime = utcToLocalTime(dayStartTimestamp, state.lon);
-        const dayStartStr = `${dayStartLocalTime.getUTCHours() % 12 || 12}:${String(dayStartLocalTime.getUTCMinutes()).padStart(2, '0')} ${dayStartLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
+        const dayStartStr = formatLocalTimeStr(dayStartLocalTime);
         
         // For the margin calculation (used for uncertainty warning), use the same-day sunset margin
         // This tells us how close the conjunction was to sunset on that day
@@ -224,10 +212,7 @@ function showDayDetail(dayObj, month) {
           marginStr = `${marginMinsRemainder} minute${marginMinsRemainder > 1 ? 's' : ''}`;
         }
         
-        // Determine tense based on whether the date is past or future
-        const now = new Date();
-        const isPast = moonEventDate < now;
-        const occurVerb = isPast ? 'occurred' : 'will occur';
+        // occurVerb already provided by formatMoonEventDate
         
         // Check if this is crescent + sunset mode (special case where crescent day IS Day 1)
         const isCrescentSunset = state.moonPhase === 'crescent' && 

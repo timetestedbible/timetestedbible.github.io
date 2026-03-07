@@ -212,7 +212,7 @@ const CalendarView = {
                 ${day1TimeIndicator}
                 ${day1SelectedIndicator}
                 <div class="gregorian">${day1 ? this.formatShortDate(day1.gregorianDate) : ''}<span class="day-year">${day1 ? this.formatYear(day1.gregorianDate.getUTCFullYear()) : ''}</span></div>
-                <div class="${day1MoonClass}">${this.getMoonIcon(profile.moonPhase)}</div>
+                <div class="${day1MoonClass}">${day1 ? this.getMoonIconForDay(day1, 1, profile, context.location) : this.getMoonIcon(profile.moonPhase)}</div>
                 <div class="lunar-day">1</div>
                 ${day1Icons.eventIcons ? `<div class="day-icons-left">${day1Icons.eventIcons}</div>` : ''}
                 ${day1Icons.feastIcons ? `<div class="day-icons-right">${day1Icons.feastIcons}</div>` : ''}
@@ -942,87 +942,25 @@ const CalendarView = {
       const moonPhase = profile.moonPhase || 'full';
       const dayStartTime = profile.dayStartTime || 'morning';
       
-      // Get moon event details
+      // Format moon event date/time using shared utility
       const moonEventTime = month.moonEvent;
-      const moonEventDate = new Date(moonEventTime);
+      const { moonEventDate, moonTimeStr, dayOfWeek, monthName, dayNum: dayNum2, daySuffix, year, occurVerb } =
+        (typeof formatMoonEventDate === 'function')
+          ? formatMoonEventDate(moonEventTime, location.lon)
+          : { moonEventDate: new Date(moonEventTime), moonTimeStr: '', dayOfWeek: '', monthName: '', dayNum: '', daySuffix: '', year: '', occurVerb: 'will occur' };
       
-      // Convert to JD for calendar system handling
-      const moonJD = (moonEventDate.getTime() / 86400000) + 2440587.5;
-      const GREGORIAN_START_JD = 2299161; // Oct 15, 1582
-      const useJulianCal = moonJD < GREGORIAN_START_JD;
-      
-      // Convert JD to appropriate calendar (Julian for ancient, Gregorian for modern)
-      let calYear, calMonth, calDay;
-      if (useJulianCal && typeof EventResolver !== 'undefined' && EventResolver.julianDayToJulianCalendar) {
-        const julian = EventResolver.julianDayToJulianCalendar(moonJD);
-        calYear = julian.year;
-        calMonth = julian.month;
-        calDay = julian.day;
-      } else {
-        calYear = moonEventDate.getUTCFullYear();
-        calMonth = moonEventDate.getUTCMonth() + 1;
-        calDay = moonEventDate.getUTCDate();
-      }
-      
-      // Format moon event date/time
-      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const moonParts = typeof getFormattedDateParts === 'function' 
-        ? getFormattedDateParts(moonEventDate)
-        : { weekdayName: weekdays[moonEventDate.getUTCDay()],
-            shortMonthName: monthNames[calMonth - 1],
-            day: calDay,
-            yearStr: this.formatYear(calYear) };
-      // Override with Julian calendar values for ancient dates
-      if (useJulianCal) {
-        moonParts.shortMonthName = monthNames[calMonth - 1];
-        moonParts.day = calDay;
-        moonParts.yearStr = this.formatYear(calYear);
-      }
-      const dayOfWeek = moonParts.weekdayName;
-      const monthName = moonParts.shortMonthName;
-      const dayNum2 = moonParts.day;
-      const daySuffix = this.getOrdinal(dayNum2).slice(-2);
-      const year = moonParts.yearStr;
-      
-      // Format time in observer's local time
-      let moonTimeStr = '';
-      if (typeof utcToLocalTime === 'function') {
-        const moonLocalTime = utcToLocalTime(moonEventDate.getTime(), location.lon);
-        moonTimeStr = `${moonLocalTime.getUTCHours() % 12 || 12}:${String(moonLocalTime.getUTCMinutes()).padStart(2, '0')} ${moonLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
-      } else {
-        moonTimeStr = moonEventDate.toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
-      }
-      
-      // Get day start label and time
-      let dayStartLabel = 'sunrise';
-      if (dayStartTime === 'evening') dayStartLabel = 'sunset';
-      else if (typeof getDayStartLabel === 'function') dayStartLabel = getDayStartLabel();
+      const signName = getMoonLabel();
+      const dayStartLabel = (typeof getDayStartLabel === 'function') ? getDayStartLabel() : (dayStartTime === 'evening' ? 'sunset' : 'sunrise');
       
       let dayStartStr = '';
-      if (typeof getDayStartTime === 'function') {
+      if (typeof getDayStartTime === 'function' && typeof utcToLocalTime === 'function') {
         const dayStartTs = getDayStartTime(day.gregorianDate);
-        if (typeof utcToLocalTime === 'function') {
-          const dayStartLocalTime = utcToLocalTime(dayStartTs, location.lon);
-          dayStartStr = `${dayStartLocalTime.getUTCHours() % 12 || 12}:${String(dayStartLocalTime.getUTCMinutes()).padStart(2, '0')} ${dayStartLocalTime.getUTCHours() >= 12 ? 'PM' : 'AM'}`;
-        }
+        dayStartStr = formatLocalTimeStr(utcToLocalTime(dayStartTs, location.lon));
       }
       
-      // Get moon phase label
-      let signName = moonPhase === 'crescent' ? 'First Visible Crescent' : 
-                     moonPhase === 'full' ? 'Full Moon' : 'Dark Moon (conjunction)';
-      if (typeof getMoonLabel === 'function') signName = getMoonLabel();
-      
-      // Determine tense
-      const isPast = moonEventDate < new Date();
-      const occurVerb = isPast ? 'occurred' : 'will occur';
-      
-      // Build explanation text based on moon phase
-      let explanationText = '';
-      if (moonPhase === 'dark' || moonPhase === 'full') {
-        explanationText = `The ${signName} ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum2}${daySuffix}, ${year} at ${moonTimeStr}. ` +
-          `The month begins at ${dayStartLabel}${dayStartStr ? ` (${dayStartStr})` : ''}.`;
-      } else if (moonPhase === 'crescent') {
+      // Build explanation text
+      let explanationText;
+      if (moonPhase === 'crescent') {
         explanationText = `The first visible Crescent Moon ${occurVerb} on ${dayOfWeek}, ${monthName} ${dayNum2}${daySuffix}, ${year}. ` +
           `The month begins at ${dayStartLabel}${dayStartStr ? ` (${dayStartStr})` : ''}.`;
       } else {
@@ -1045,7 +983,7 @@ const CalendarView = {
     
     // Use dynamic description for Renewed Moon
     let description = feast.description || '';
-    if (feast.name === 'Renewed Moon' && typeof getRenewedMoonDescription === 'function') {
+    if (feast.name === 'Renewed Moon') {
       description = getRenewedMoonDescription();
     }
     
@@ -3016,54 +2954,24 @@ const CalendarView = {
     const day = month?.days?.find(d => d.lunarDay === todayLunarDay);
     if (!day?.gregorianDate) return null;
     
-    const dayStartTime = profile.dayStartTime || 'morning';
-    
     try {
       const now = Date.now();
-      let dayStartTs, dayEndTs;
       
-      if (dayStartTime === 'morning') {
-        // Day starts at first light, ends at next first light
-        if (typeof getAstronomicalTimes === 'function') {
-          const todayAstro = getAstronomicalTimes(day.gregorianDate, location);
-          
-          // Get tomorrow's date for end of day
-          const tomorrowDate = new Date(day.gregorianDate.getTime());
-          tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1);
-          const tomorrowAstro = getAstronomicalTimes(tomorrowDate, location);
-          
-          dayStartTs = todayAstro?.firstLightTs;
-          dayEndTs = tomorrowAstro?.firstLightTs;
-        }
-      } else {
-        // Day starts at sunset, ends at next sunset
-        if (typeof getSunsetTimestamp === 'function') {
-          // Get yesterday's sunset (start of today's biblical day)
-          const yesterdayDate = new Date(day.gregorianDate.getTime());
-          yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
-          dayStartTs = getSunsetTimestamp(yesterdayDate);
-          dayEndTs = getSunsetTimestamp(day.gregorianDate);
-        }
-      }
+      // getDayStartTime respects the profile's dayStartAngle (sunrise, civil, nautical, etc.)
+      // and dayStartTime (morning/evening), returning the correct boundary timestamp
+      if (typeof getDayStartTime !== 'function') return null;
       
-      if (!dayStartTs || !dayEndTs) {
-        // Fallback: assume 24-hour day starting at 6am or 6pm
-        const baseHour = dayStartTime === 'morning' ? 6 : 18;
-        const dayDate = new Date(day.gregorianDate.getTime());
-        dayDate.setUTCHours(baseHour, 0, 0, 0);
-        dayStartTs = dayDate.getTime();
-        dayEndTs = dayStartTs + 24 * 60 * 60 * 1000;
-      }
+      const dayStartTs = getDayStartTime(day.gregorianDate);
+      const tomorrowDate = new Date(day.gregorianDate.getTime());
+      tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1);
+      const dayEndTs = getDayStartTime(tomorrowDate);
       
-      // Calculate progress as percentage
+      if (!dayStartTs || !dayEndTs) return null;
+      
       const totalDuration = dayEndTs - dayStartTs;
-      const elapsed = now - dayStartTs;
-      
       if (totalDuration <= 0) return null;
       
-      const progress = (elapsed / totalDuration) * 100;
-      
-      // Clamp to 0-100 range
+      const progress = ((now - dayStartTs) / totalDuration) * 100;
       return Math.max(0, Math.min(100, progress));
     } catch (e) {
       console.warn('Could not calculate time progress:', e);
@@ -3087,65 +2995,36 @@ const CalendarView = {
     const day = month?.days?.find(d => d.lunarDay === selectedDay);
     if (!day?.gregorianDate) return null;
     
-    const dayStartTime = profile.dayStartTime || 'morning';
     const { hours, minutes } = time;
     
     try {
-      // Create a timestamp for the selected time on this day
-      // The time is in LOCAL solar time at the location, so we need to convert to UTC
-      // Longitude determines UTC offset: 15° = 1 hour
+      // Convert local solar time to a UTC timestamp on this day's Gregorian date
       const locationOffsetHours = location.lon / 15;
       const selectedDate = new Date(day.gregorianDate.getTime());
-      // Set the UTC hours adjusted for location offset
-      // If local time is 14:00 at Jerusalem (lon ~35°, offset ~2.33h), UTC is ~11:40
       const utcHours = hours - locationOffsetHours;
       selectedDate.setUTCHours(0, 0, 0, 0);
-      const selectedTs = selectedDate.getTime() + (utcHours * 60 + minutes) * 60 * 1000;
+      let selectedTs = selectedDate.getTime() + (utcHours * 60 + minutes) * 60 * 1000;
       
-      let dayStartTs, dayEndTs;
+      if (typeof getDayStartTime !== 'function') return null;
       
-      if (dayStartTime === 'morning') {
-        // Day starts at first light, ends at next first light
-        if (typeof getAstronomicalTimes === 'function') {
-          const todayAstro = getAstronomicalTimes(day.gregorianDate, location);
-          
-          // Get tomorrow's date for end of day
-          const tomorrowDate = new Date(day.gregorianDate.getTime());
-          tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1);
-          const tomorrowAstro = getAstronomicalTimes(tomorrowDate, location);
-          
-          dayStartTs = todayAstro?.firstLightTs;
-          dayEndTs = tomorrowAstro?.firstLightTs;
-        }
-      } else {
-        // Day starts at sunset, ends at next sunset
-        if (typeof getSunsetTimestamp === 'function') {
-          // Get yesterday's sunset (start of today's biblical day)
-          const yesterdayDate = new Date(day.gregorianDate.getTime());
-          yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
-          dayStartTs = getSunsetTimestamp(yesterdayDate);
-          dayEndTs = getSunsetTimestamp(day.gregorianDate);
-        }
+      const dayStartTs = getDayStartTime(day.gregorianDate);
+      const tomorrowDate = new Date(day.gregorianDate.getTime());
+      tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1);
+      const dayEndTs = getDayStartTime(tomorrowDate);
+      
+      if (!dayStartTs || !dayEndTs) return null;
+      
+      // For morning-start calendars, local times before the day start (e.g. 1:50 AM
+      // before ~5 AM nautical twilight) are the tail end of the lunar day — they fall
+      // on the NEXT Gregorian date's early morning, still within this lunar day.
+      if (selectedTs < dayStartTs) {
+        selectedTs += 24 * 60 * 60 * 1000;
       }
       
-      if (!dayStartTs || !dayEndTs) {
-        // Fallback: assume 24-hour day starting at 6am or 6pm
-        const baseHour = dayStartTime === 'morning' ? 6 : 18;
-        const dayDate = new Date(day.gregorianDate.getTime());
-        dayDate.setUTCHours(baseHour, 0, 0, 0);
-        dayStartTs = dayDate.getTime();
-        dayEndTs = dayStartTs + 24 * 60 * 60 * 1000;
-      }
-      
-      // Calculate progress as percentage
       const totalDuration = dayEndTs - dayStartTs;
-      const elapsed = selectedTs - dayStartTs;
-      
       if (totalDuration <= 0) return null;
       
-      const progress = (elapsed / totalDuration) * 100;
-      
-      // Clamp to 0-100 range
+      const progress = ((selectedTs - dayStartTs) / totalDuration) * 100;
       return Math.max(0, Math.min(100, progress));
     } catch (e) {
       console.warn('Could not calculate selected time progress:', e);
@@ -3345,23 +3224,28 @@ const CalendarView = {
    * @returns {string} Moon emoji or empty string
    */
   getMoonIconForDay(day, lunarDay, profile, location) {
-    // Day 1 always shows the defining moon phase
-    if (lunarDay === 1) return this.getMoonIcon(profile.moonPhase);
-    
     if (!day?.gregorianDate) return '';
     
     try {
-      // Get the elongation at day start and day end
-      const elongStart = this.getElongationForDate(day.gregorianDate, profile, location);
-      
-      // Get next day's date for end of lunar day
+      // Use actual biblical day boundaries (respects dayStartAngle/dayStartTime)
+      // instead of midnight UTC, so the icon appears on the correct lunar day
       const nextDate = new Date(day.gregorianDate.getTime());
       nextDate.setUTCDate(nextDate.getUTCDate() + 1);
-      const elongEnd = this.getElongationForDate(nextDate, profile, location);
+      
+      let dayStartDate = day.gregorianDate;
+      let dayEndDate = nextDate;
+      if (typeof getDayStartTime === 'function') {
+        const startTs = getDayStartTime(day.gregorianDate);
+        const endTs = getDayStartTime(nextDate);
+        if (startTs) dayStartDate = new Date(startTs);
+        if (endTs) dayEndDate = new Date(endTs);
+      }
+      
+      const elongStart = this.getElongationForDate(dayStartDate, profile, location);
+      const elongEnd = this.getElongationForDate(dayEndDate, profile, location);
       
       if (elongStart === null || elongEnd === null) return '';
       
-      // Only show icons for full, new, and half moons (first/last quarter)
       const quarters = [
         { angle: 0, icon: '🌑' },    // New Moon
         { angle: 90, icon: '🌓' },   // First Quarter

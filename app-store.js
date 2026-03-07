@@ -2308,9 +2308,17 @@ const AppStore = {
         }
         
         // Populate eclipse flags (blood moon = total lunar eclipse, solar eclipse)
-        if (day.gregorianDate && AstroEngines?.nasaEclipse?.isLoaded) {
-          day.isBloodMoon = AstroEngines.nasaEclipse.hasLunarEclipse(day.gregorianDate);
-          day.isSolarEclipse = AstroEngines.nasaEclipse.hasSolarEclipse(day.gregorianDate);
+        // Use the day's actual JD range [day.jd, day.jd+1) so eclipses are
+        // assigned to the correct biblical day, not the Gregorian/UTC date
+        if (day.jd && AstroEngines?.nasaEclipse?.isLoaded) {
+          const rangeCheck = AstroEngines.nasaEclipse.hasLunarEclipseInRange;
+          if (rangeCheck) {
+            day.isBloodMoon = AstroEngines.nasaEclipse.hasLunarEclipseInRange(day.jd, day.jd + 1);
+            day.isSolarEclipse = AstroEngines.nasaEclipse.hasSolarEclipseInRange(day.jd, day.jd + 1);
+          } else {
+            day.isBloodMoon = AstroEngines.nasaEclipse.hasLunarEclipse(day.gregorianDate);
+            day.isSolarEclipse = AstroEngines.nasaEclipse.hasSolarEclipse(day.gregorianDate);
+          }
         } else {
           day.isBloodMoon = false;
           day.isSolarEclipse = false;

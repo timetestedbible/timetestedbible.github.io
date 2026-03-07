@@ -674,6 +674,38 @@ AstroEngines.nasaEclipse = {
     }
     return false;
   },
+
+  // Check if a lunar eclipse falls within a JD range [startJD, endJD)
+  hasLunarEclipseInRange(startJD, endJD) {
+    if (!this._eclipses) return false;
+    let lo = 0, hi = this._eclipses.length - 1;
+    while (lo < hi) {
+      const mid = Math.floor((lo + hi) / 2);
+      if (this._eclipses[mid].jd < startJD) lo = mid + 1;
+      else hi = mid;
+    }
+    for (let i = Math.max(0, lo - 1); i < Math.min(this._eclipses.length, lo + 3); i++) {
+      const e = this._eclipses[i];
+      if (e.t === 'f' && e.jd >= startJD && e.jd < endJD) return true;
+    }
+    return false;
+  },
+
+  // Check if a solar eclipse falls within a JD range [startJD, endJD)
+  hasSolarEclipseInRange(startJD, endJD) {
+    if (!this._eclipses) return false;
+    let lo = 0, hi = this._eclipses.length - 1;
+    while (lo < hi) {
+      const mid = Math.floor((lo + hi) / 2);
+      if (this._eclipses[mid].jd < startJD) lo = mid + 1;
+      else hi = mid;
+    }
+    for (let i = Math.max(0, lo - 1); i < Math.min(this._eclipses.length, lo + 3); i++) {
+      const e = this._eclipses[i];
+      if (e.t === 'n' && e.jd >= startJD && e.jd < endJD) return true;
+    }
+    return false;
+  },
   
   // Get the exact time of a lunar eclipse for a given date
   // Returns a Date object or null if no eclipse found
