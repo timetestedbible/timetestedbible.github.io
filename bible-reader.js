@@ -3521,7 +3521,7 @@ function findStrongsForWord(word) {
         const match = strongsMatches.get(key);
         match.fromGloss = true;
         // Check derived gloss (first meaning)
-        const gloss = (typeof extractGloss === 'function' ? extractGloss(entry) : '').toLowerCase();
+        const gloss = (typeof extractGloss === 'function' ? extractGloss(entry, key) : '').toLowerCase();
         if (gloss === normalizedWord || gloss === normalizedWord + 's') {
           match.exactGlossMatch = true;
           match.count += 10; // Boost exact gloss matches
@@ -4937,11 +4937,18 @@ function showStrongsTooltip(el, event) {
   tooltip.className = 'verse-hover-tooltip';
   
   const lemma = entry.lemma || '';
-  const def = entry.strongs_def || entry.kjv_def || '';
+  const bdbEntry = typeof bdbData !== 'undefined' && bdbData && (bdbData[strongsNum] || bdbData[strongsNum.replace(/[a-z]$/, '')]);
+  const gloss = bdbEntry?.gloss || '';
+  const def = gloss || entry.strongs_def || entry.kjv_def || '';
   
   let html = `<div class="verse-tooltip-ref">${escapeHtml(strongsNum)}${lemma ? ' — ' + lemma : ''}</div>`;
-  if (def) {
-    // Truncate long definitions
+  if (gloss) {
+    html += `<div class="verse-tooltip-text" style="font-weight:600;">${escapeHtml(gloss)}</div>`;
+    if (bdbEntry?.senses?.length) {
+      const topSenses = bdbEntry.senses.slice(0, 3).map(s => `${s.number}. ${s.meaning}`).join('; ');
+      html += `<div class="verse-tooltip-text" style="font-size:0.85em;opacity:0.8;">${escapeHtml(topSenses)}</div>`;
+    }
+  } else if (def) {
     const truncated = def.length > 200 ? def.slice(0, 200) + '…' : def;
     html += `<div class="verse-tooltip-text">${escapeHtml(truncated)}</div>`;
   }

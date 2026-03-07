@@ -15,10 +15,16 @@
  * @param {object} entry - Strong's dictionary entry (e.g. strongsHebrewDictionary["H430"])
  * @returns {string} Short gloss, e.g. "God", "beginning", "create"
  */
-function extractGloss(entry) {
+function extractGloss(entry, strongsNum) {
   if (!entry) return '';
 
-  // Try strongs_def first — the lexicon definition is cleaner and more meaningful
+  // Try BDB-AI gloss first — curated, concise, most readable
+  if (strongsNum && typeof bdbData !== 'undefined' && bdbData) {
+    const bdb = bdbData[strongsNum] || bdbData[strongsNum.replace(/[a-z]$/, '')];
+    if (bdb && bdb.gloss) return bdb.gloss;
+  }
+
+  // Try strongs_def — the lexicon definition
   if (entry.strongs_def) {
     const gloss = extractLexiconGloss(entry.strongs_def);
     if (gloss) return gloss;

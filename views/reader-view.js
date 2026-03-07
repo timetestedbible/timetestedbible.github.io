@@ -1096,7 +1096,7 @@ const ReaderView = {
       if (typeof getStrongsEntry === 'function') {
         const entry = getStrongsEntry(s);
         if (entry) {
-          label = (typeof extractGloss === 'function' ? extractGloss(entry) : '') || entry.xlit || s;
+          label = (typeof extractGloss === 'function' ? extractGloss(entry, s) : '') || entry.xlit || s;
         }
       }
       return `<button class="symbol-strongs-btn" data-strongs="${s}" onmouseenter="if(typeof showStrongsButtonTooltip==='function')showStrongsButtonTooltip(this,event)" onmouseleave="if(typeof hideStrongsButtonTooltip==='function')hideStrongsButtonTooltip()" onclick="showStrongsPanel('${s}', '', '', event)">${label}</button>`;
@@ -1416,7 +1416,7 @@ const ReaderView = {
           if (typeof getStrongsEntry === 'function') {
             const entry = getStrongsEntry(id);
             if (entry) {
-              label = (typeof extractGloss === 'function' ? extractGloss(entry) : '') || entry.xlit || id;
+              label = (typeof extractGloss === 'function' ? extractGloss(entry, id) : '') || entry.xlit || id;
             }
           }
           const btn = document.createElement('button');
@@ -1443,7 +1443,16 @@ const ReaderView = {
     container.querySelectorAll('em[data-_strongs-absorbed], i[data-_strongs-absorbed]').forEach(el => el.remove());
 
     // Preload BDB lexicon so tooltips have rich sense data ready
-    if (typeof loadBDB === 'function') loadBDB();
+    // Then update Strong's badge labels with BDB glosses (they were created above before BDB loaded)
+    if (typeof loadBDB === 'function') loadBDB().then(() => {
+      if (typeof bdbData !== 'undefined' && bdbData) {
+        container.querySelectorAll('.symbol-strongs-btn[data-strongs]').forEach(btn => {
+          const id = btn.dataset.strongs;
+          const bdb = bdbData[id] || bdbData[id.replace(/[a-z]$/, '')];
+          if (bdb && bdb.gloss) btn.textContent = bdb.gloss;
+        });
+      }
+    });
 
     // --- Pass 3: Abbreviated + full-name verse references (requires chapter:verse) ---
     if (typeof BOOK_NAME_MAP !== 'undefined' && typeof normalizeBookName === 'function') {

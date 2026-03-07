@@ -606,7 +606,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s holy standard in active contact',
     sentence: 'God\'s holy standard in active contact — consuming what violates covenant, refining what keeps it.',
     opposite: 'Quenching (1 Th 5:19 — "Quench not the Spirit") / Water as paired judgment agent (2 Pet 3:5–7 — the world judged first by water, reserved now for fire)',
-    rank: 12.6,
+    rank: 12.7,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/fire/'
@@ -1857,7 +1857,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The seat of governing authority',
     sentence: 'The seat of governing authority — who sits on it defines the age. The Hebrew word for "throne" and "full moon" are the same consonants: כסא.',
     opposite: 'Footstool — the position of subjugation beneath the throne (Ps 110:1 "make thine enemies thy footstool")',
-    rank: 5.5,
+    rank: 5.6,
     category: 'Authority & Governance',
     subcategory: null,
     link: '/research/symbols/throne/'
@@ -1984,7 +1984,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The life that flows from God\'s presence',
     sentence: 'The life that flows from God\'s presence — distinguished from the sea by its source and movement, and from human religion by its continuous, self-renewing supply.',
     opposite: 'Cisterns (man-made, broken, containment of dead water) / bitter water / the Sea (gathered, chaotic, restless)',
-    rank: 6.5,
+    rank: 6.6,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/water/'
