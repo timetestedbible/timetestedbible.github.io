@@ -806,9 +806,18 @@ const URLRouter = {
           if (parts[3]) params.chapter = parseInt(parts[3]);
           if (parts[4]) params.section = parseInt(parts[4]);
         } else if (contentType === 'apocrypha') {
-          // Parse apocrypha: /reader/apocrypha/{book-slug}/{chapter}
-          if (parts[1]) params.book = parts[1]; // 'enoch', 'jubilees', 'jasher'
-          if (parts[2]) params.chapter = parseInt(parts[2]);
+          // Parse apocrypha: /reader/apocrypha/{book-slug}/{chapter} or {chapter}.{verse}
+          if (parts[1]) params.book = parts[1];
+          if (parts[2]) {
+            const chPart = parts[2];
+            const dotIdx = chPart.indexOf('.');
+            if (dotIdx >= 0) {
+              params.chapter = parseInt(chPart.substring(0, dotIdx));
+              params.verse = parseInt(chPart.substring(dotIdx + 1));
+            } else {
+              params.chapter = parseInt(chPart);
+            }
+          }
         } else if (contentType === 'multiverse') {
           // Parse multiverse: /reader/multiverse/kjv/Dan.9.23/Daniel.12.11 (translation then ref segments)
           const knownTranslations = typeof Bible !== 'undefined'
@@ -1093,7 +1102,10 @@ const URLRouter = {
           if (params.section != null) readerPath += '/' + params.section;
         } else if (contentType === 'apocrypha') {
           if (params.book) readerPath += '/' + params.book;
-          if (params.chapter != null) readerPath += '/' + params.chapter;
+          if (params.chapter != null) {
+            readerPath += '/' + params.chapter;
+            if (params.verse != null) readerPath += '.' + params.verse;
+          }
         }
         return readerPath;
         

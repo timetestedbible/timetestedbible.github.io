@@ -120,8 +120,7 @@ const ReaderView = {
           if (params.work) pageTitle = `${params.work.replace(/-/g, ' ')} — Philo — Time Tested Bible`;
           break;
         case 'apocrypha': {
-          const APOCRYPHA_NAMES = { enoch: '1 Enoch', jubilees: 'Jubilees', jasher: 'Jasher' };
-          const apoBookName = APOCRYPHA_NAMES[params.book] || 'Apocrypha';
+          const apoBookName = this._APOCRYPHA_NAMES[params.book] || 'Apocrypha';
           const apoChTitle = params.book && params.chapter && this._CHAPTER_TITLES?.[params.book]?.[params.chapter];
           if (params.book && params.chapter) {
             pageTitle = `${apoBookName} ${params.chapter}${apoChTitle ? ' — ' + apoChTitle : ''} — Time Tested Bible`;
@@ -227,9 +226,10 @@ const ReaderView = {
       } else if (contentType === 'josephus' && params.book != null && params.chapter != null && params.section != null) {
         const anchor = container.querySelector('#section-' + params.book + '-' + params.chapter + '-' + params.section);
         if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Sync section dropdown
         const sel = document.getElementById('classics-section-select');
         if (sel) sel.value = params.book + '.' + params.chapter + '.' + params.section;
+      } else if (contentType === 'apocrypha' && params.verse) {
+        this._scrollToApocryphaVerse(container, params.verse);
       }
       return;
     }
@@ -2636,8 +2636,6 @@ const ReaderView = {
     if (!textArea) return;
 
     const bookSlug = params.book; // 'enoch', 'jubilees', 'jasher'
-    const APOCRYPHA_NAMES = { enoch: '1 Enoch', jubilees: 'Jubilees', jasher: 'Jasher' };
-
     if (!bookSlug) {
       this._renderApocryphaIndex(textArea);
       const titleEl = container.querySelector('#bible-chapter-title');
@@ -2646,7 +2644,7 @@ const ReaderView = {
       return;
     }
 
-    const bookName = APOCRYPHA_NAMES[bookSlug] || bookSlug;
+    const bookName = this._APOCRYPHA_NAMES[bookSlug] || bookSlug;
 
     if (typeof Classics !== 'undefined' && !Classics.isLoaded(bookSlug)) {
       textArea.innerHTML = `<div class="symbol-study-loading">Loading ${bookName}...</div>`;
@@ -2662,26 +2660,126 @@ const ReaderView = {
     this.hideChapterNav(container);
   },
 
-  _notScriptureLink: `<a href="/blog/why-jasher-jubilees-enoch-are-not-scripture" class="not-scripture-link" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'why-jasher-jubilees-enoch-are-not-scripture'}})">Why these books are not Scripture</a>`,
+  _scrollToApocryphaVerse(container, verse) {
+    const el = container.querySelector(`#apo-v-${verse}`);
+    if (el) {
+      container.querySelectorAll('.apo-verse-highlight').forEach(v => v.classList.remove('apo-verse-highlight'));
+      el.classList.add('apo-verse-highlight');
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  },
+
+  _formatApocryphaText(text) {
+    // Split into lines (each line typically starts with "N. verse text")
+    const lines = text.split('\n');
+    const formatted = lines.map(line => {
+      // Match verse number at start: "1. text" or "23. text"
+      const match = line.match(/^(\d+)\.\s+(.*)$/);
+      if (match) {
+        const vn = match[1];
+        const vtext = match[2];
+        return `<span id="apo-v-${vn}" class="apo-verse"><span class="apo-verse-num">${vn}</span>${vtext}</span>`;
+      }
+      return `<span class="apo-verse">${line}</span>`;
+    });
+    return formatted.join('\n');
+  },
+
+  _linkifyExclusionText(text, bookSlug) {
+    if (!text) return text;
+
+    // Helper: apply a regex replacement only to text outside HTML tags
+    function replaceOutsideTags(html, regex, replacer) {
+      return html.replace(/(<[^>]+>)|([^<]+)/g, (m, tag, txt) => {
+        if (tag) return tag;
+        return txt.replace(regex, replacer);
+      });
+    }
+
+    // First pass: linkify self-references (ch. N, N:N) BEFORE scripture linkification
+    // "ch. N" or "ch. N–M"
+    text = replaceOutsideTags(text, /ch\.\s*(\d+)(?:\s*[\u2013-]\s*(\d+))?/g, (match, ch1) => {
+      const url = `/reader/apocrypha/${bookSlug}/${ch1}`;
+      const onclick = `AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${bookSlug}',chapter:${ch1}}}); return false;`;
+      return `<a href="${url}" onclick="${onclick}" class="not-scripture-link">${match}</a>`;
+    });
+
+    // Linkify canonical scripture references (Genesis 1:14, Ecclesiastes 9:5, etc.)
+    // This runs second so it wraps "BookName N:N" patterns; bare N:N already handled above
+    if (typeof linkifyScriptureReferences === 'function') {
+      text = linkifyScriptureReferences(text);
+    }
+
+    // Final pass: linkify bare N:N self-references not yet wrapped (only outside tags)
+    text = replaceOutsideTags(text, /(\d+):(\d+)(?:\s*[\u2013-]\s*(\d+))?/g, (match, ch, v1) => {
+      const url = `/reader/apocrypha/${bookSlug}/${ch}.${v1}`;
+      const onclick = `AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${bookSlug}',chapter:${parseInt(ch)},verse:${parseInt(v1)}}}); return false;`;
+      return `<a href="${url}" onclick="${onclick}" class="not-scripture-link">${match}</a>`;
+    });
+
+    return text;
+  },
+
+  _getBookWarning(bookSlug) {
+    const info = this._BOOK_INFO[bookSlug];
+    let warning = info?.warning || 'This text is not canonical Scripture.';
+    warning = this._linkifyExclusionText(warning, bookSlug);
+    const blogBooks = ['enoch', 'jubilees', 'jasher'];
+    const link = blogBooks.includes(bookSlug)
+      ? ` <a href="/blog/why-jasher-jubilees-enoch-are-not-scripture" class="not-scripture-link" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'blog',slug:'why-jasher-jubilees-enoch-are-not-scripture'}})">Read more</a>`
+      : '';
+    return warning + link;
+  },
 
   _renderApocryphaIndex(textArea) {
-    const books = [
-      { slug: 'enoch', name: '1 Enoch', desc: 'Apocalyptic text attributed to Enoch. 108 chapters. R.H. Charles (1917).' },
-      { slug: 'jubilees', name: 'Jubilees', desc: 'Retelling of Genesis through Exodus 12. 50 chapters. R.H. Charles (1913).' },
-      { slug: 'jasher', name: 'Jasher', desc: 'Narrative history paralleling Genesis through Joshua. 91 chapters. (1840).' },
+    const sections = [
+      { label: 'Pseudepigrapha', books: [
+        { slug: 'enoch', name: '1 Enoch', desc: 'Apocalyptic text attributed to Enoch. 108 chapters. R.H. Charles (1917).' },
+        { slug: '2enoch', name: '2 Enoch', desc: 'Secrets of Enoch. 68 chapters. Slavonic apocalyptic text.' },
+        { slug: 'jubilees', name: 'Jubilees', desc: 'Retelling of Genesis through Exodus 12. 50 chapters. R.H. Charles (1913).' },
+        { slug: 'jasher', name: 'Jasher', desc: 'Narrative history paralleling Genesis through Joshua. 91 chapters. (1840).' },
+        { slug: '2baruch', name: '2 Baruch', desc: 'Syriac Apocalypse of Baruch. 87 chapters.' },
+        { slug: 'psalmsSolomon', name: 'Psalms of Solomon', desc: '18 psalms from the Second Temple period.' },
+        { slug: 'testaments', name: 'Testaments of XII Patriarchs', desc: 'Final words of Jacob\'s twelve sons. 12 testaments.' },
+      ]},
+      { label: 'Deuterocanon (KJV Apocrypha)', books: [
+        { slug: 'sirach', name: 'Sirach', desc: 'Wisdom of Ben Sira (Ecclesiasticus). 51 chapters.' },
+        { slug: 'wisdom', name: 'Wisdom of Solomon', desc: 'Wisdom literature. 19 chapters.' },
+        { slug: 'tobit', name: 'Tobit', desc: 'Narrative of Tobit and Tobias. 14 chapters.' },
+        { slug: 'judith', name: 'Judith', desc: 'Narrative of Judith and Holofernes. 16 chapters.' },
+        { slug: 'baruch', name: 'Baruch', desc: 'Attributed to Baruch son of Neriah. 5 chapters.' },
+        { slug: '1esdras', name: '1 Esdras', desc: 'Parallel account of Chronicles–Ezra–Nehemiah. 9 chapters.' },
+        { slug: '2esdras', name: '2 Esdras', desc: 'Apocalyptic visions of Ezra (4 Ezra). 16 chapters.' },
+        { slug: '1maccabees', name: '1 Maccabees', desc: 'Hasmonean revolt and kingdom. 16 chapters.' },
+        { slug: '2maccabees', name: '2 Maccabees', desc: 'Parallel account of the Maccabean period. 15 chapters.' },
+      ]},
+      { label: 'Additions to Daniel & Esther', books: [
+        { slug: 'letterJeremiah', name: 'Letter of Jeremiah', desc: 'Epistle against idolatry.' },
+        { slug: 'prayerAzariah', name: 'Prayer of Azariah', desc: 'Song of the Three Holy Children.' },
+        { slug: 'susanna', name: 'Susanna', desc: 'Daniel vindicates a falsely accused woman.' },
+        { slug: 'belDragon', name: 'Bel and the Dragon', desc: 'Daniel exposes idol worship.' },
+        { slug: 'prayerManasseh', name: 'Prayer of Manasseh', desc: 'Penitential prayer of King Manasseh.' },
+      ]},
     ];
+
+    const renderSection = (section) => {
+      let html = `<h2 class="classics-section-label">${section.label}</h2>`;
+      html += `<div class="classics-works-list">`;
+      html += section.books.map(b => `
+        <a href="/reader/apocrypha/${b.slug}" class="classics-work-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${b.slug}'}}); return false;">
+          <span class="classics-work-name">${b.name}</span>
+          <span class="classics-work-meta">${b.desc}</span>
+        </a>`).join('');
+      html += `</div>`;
+      return html;
+    };
+
     textArea.innerHTML = `
       <div class="classics-index">
         <h1 class="classics-index-title">Apocrypha</h1>
         <p class="classics-index-intro">Extra-biblical texts frequently referenced alongside Scripture. Select a book to begin reading.</p>
-        <div class="not-scripture-banner">These texts contain useful historical context but are not canonical Scripture. ${this._notScriptureLink}</div>
-        <div class="classics-works-list">
-          ${books.map(b => `
-            <a href="/reader/apocrypha/${b.slug}" class="classics-work-item" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${b.slug}'}}); return false;">
-              <span class="classics-work-name">${b.name}</span>
-              <span class="classics-work-meta">${b.desc}</span>
-            </a>`).join('')}
-        </div>
+        <div class="not-scripture-banner">These texts contain useful historical context but are not canonical Scripture. Each book page explains the specific reasons for its exclusion from the canon.</div>
+        ${sections.map(renderSection).join('')}
       </div>
     `;
   },
@@ -2786,6 +2884,125 @@ const ReaderView = {
         </div>
       </div>
     `;
+  },
+
+  _APOCRYPHA_NAMES: {
+    enoch: '1 Enoch', jubilees: 'Jubilees', jasher: 'Jasher',
+    '2enoch': '2 Enoch', '2baruch': '2 Baruch', psalmsSolomon: 'Psalms of Solomon',
+    testaments: 'Testaments of XII Patriarchs',
+    sirach: 'Sirach', wisdom: 'Wisdom of Solomon', tobit: 'Tobit', judith: 'Judith',
+    baruch: 'Baruch', letterJeremiah: 'Letter of Jeremiah', prayerAzariah: 'Prayer of Azariah',
+    susanna: 'Susanna', belDragon: 'Bel and the Dragon', prayerManasseh: 'Prayer of Manasseh',
+    '1esdras': '1 Esdras', '2esdras': '2 Esdras',
+    '1maccabees': '1 Maccabees', '2maccabees': '2 Maccabees',
+  },
+
+  _BOOK_INFO: {
+    enoch: {
+      intro: 'The Book of Enoch (1 Enoch). R.H. Charles translation (1917). Apocalyptic text attributed to Enoch, great-grandfather of Noah. 108 chapters covering the Watchers, Parables, Astronomical Book, Dream Visions, and Epistle of Enoch.',
+      exclusion: '1 Enoch teaches a conscious intermediate state for the dead (ch. 22), with separate compartments for righteous and wicked souls awaiting final judgment. This directly contradicts Ecclesiastes 9:5 ("the dead know nothing") and Psalm 146:4 ("his thoughts perish"). The Astronomical Book (ch. 72\u201382) promotes a 364-day solar calendar that contradicts the lunar-observable calendar established in Genesis 1:14 and Psalm 104:19. While Jude 14\u201315 quotes from 1 Enoch, citation does not imply canonization\u2014Paul likewise quoted pagan poets (Acts 17:28, Titus 1:12) without endorsing their works as Scripture.',
+      warning: '1 Enoch contradicts Scripture on the state of the dead (Ecclesiastes 9:5) and the calendar (Genesis 1:14).',
+    },
+    jubilees: {
+      intro: 'The Book of Jubilees. R.H. Charles translation (1913). Retelling of Genesis through Exodus 12, structured around jubilee periods. 50 chapters covering creation through the Passover.',
+      exclusion: 'Jubilees imposes a rigid 364-day solar calendar (ch. 6:32\u201338) and condemns anyone who observes the moon, directly contradicting Genesis 1:14\u201316 which appoints the moon as a sign for seasons. It elevates Sabbath-breaking to a capital offense punishable by death in heaven (ch. 2:25\u201327), going beyond what Torah prescribes. The book also introduces an elaborate angelology and demonology (the "Prince of Mastema") that has no basis in the Torah. While it preserves useful chronological details, its theological additions and calendar polemics place it outside the canonical tradition.',
+      warning: 'Jubilees contradicts Genesis 1:14\u201316 by condemning lunar observation and imposing a solar-only calendar.',
+    },
+    jasher: {
+      intro: 'The Book of Jasher. Translation from Hebrew (1840). Narrative history paralleling Genesis through Joshua. 91 chapters covering creation through the conquest of Canaan.',
+      exclusion: 'The Book of Jasher claims to be the ancient text referenced in Joshua 10:13 and 2 Samuel 1:18, but this identification is unverifiable and most scholars consider the 1840 "translation" a medieval composition, not an ancient document. While its narrative largely follows the biblical account and contains useful midrashic expansions, it introduces fictional embellishments (Abram destroying Terah\'s idols, Nimrod casting Abram into a furnace) that have no basis in Scripture and can be mistaken for biblical history. The text was never part of any Jewish or Christian canonical list.',
+      warning: 'Jasher is likely a medieval composition, not the ancient text referenced in Joshua 10:13.',
+    },
+    '2enoch': {
+      intro: 'The Secrets of Enoch (2 Enoch). Slavonic apocalyptic text. 68 chapters describing Enoch\'s journey through ten heavens and God\'s revelation of creation.',
+      exclusion: '2 Enoch survives only in Slavonic manuscripts dating to the 14th century or later, with no Hebrew or Greek original extant. Its theology diverges significantly from the Torah: it describes ten heavens with elaborate angelic hierarchies (ch. 20\u201322), teaches the pre-existence of souls, and presents a creation account (ch. 25\u201333) that contradicts Genesis in multiple details. The text shows clear Christian interpolation (references to the Trinity in some manuscripts) and contains mystical speculation about Melchizedek\'s miraculous birth (ch. 68\u201373) that has no basis in Scripture. Its late manuscript tradition and theological inconsistencies place it well outside any canonical consideration.',
+      warning: '2 Enoch survives only in late Slavonic manuscripts with no ancient original. It contains theological ideas foreign to Torah.',
+    },
+    '2baruch': {
+      intro: 'The Syriac Apocalypse of Baruch (2 Baruch). 87 chapters of apocalyptic visions attributed to Baruch, Jeremiah\'s scribe.',
+      exclusion: '2 Baruch teaches an elaborate eschatology including a conscious intermediate state for the dead (ch. 30), a transformed resurrection body that becomes like angels or stars (ch. 49\u201351), and a messianic kingdom on earth followed by a separate eternal age (ch. 29\u201330, 72\u201374). These doctrines have no basis in Torah, which teaches that the dead "sleep in the dust" (Daniel 12:2). The text was written after 70 AD (it reflects the destruction of the Second Temple) and was attributed pseudonymously to Baruch to give it authority. It survives primarily in a single Syriac manuscript, and was never included in any Jewish or Christian canonical list.',
+      warning: '2 Baruch teaches doctrines about the afterlife and resurrection that have no basis in Torah.',
+    },
+    psalmsSolomon: {
+      intro: 'Psalms of Solomon. 18 psalms from the Second Temple period (1st century BC), likely composed in response to Pompey\'s conquest of Jerusalem in 63 BC.',
+      exclusion: 'The Psalms of Solomon are pseudonymously attributed to King Solomon but were composed roughly 900 years after his death, in response to Pompey\'s conquest of Jerusalem (63 BC). While they contain beautiful devotional poetry, Psalm 17 introduces a militant messianic figure who will violently purge Jerusalem of Gentiles and rule with an iron rod\u2014a political theology at odds with the Torah\'s vision of Israel as a "kingdom of priests" (Exodus 19:6). The collection was known to early Christians but was never included in the Hebrew Bible, the Septuagint canon, or any authoritative canonical list.',
+      warning: 'The Psalms of Solomon were composed ~900 years after Solomon and were never part of any canonical list.',
+    },
+    testaments: {
+      intro: 'Testaments of the Twelve Patriarchs. Final words and moral instruction attributed to each of Jacob\'s twelve sons. 12 testaments with multiple chapters.',
+      exclusion: 'The Testaments of the Twelve Patriarchs contain extensive Christian interpolations that betray their final form as a 2nd-century AD Christian editing of older Jewish material. References to the virgin birth, the crucifixion, and the Trinity appear throughout (e.g., Testament of Levi 2:11, Testament of Benjamin 3:8). The original Jewish core may be ancient, but the Christian reworking makes it impossible to separate authentic pre-Christian material from later additions. The ethical teachings are often excellent, but the theological framework reflects post-biblical developments foreign to Torah.',
+      warning: 'The Testaments contain extensive Christian interpolations that make it impossible to recover the original Jewish text.',
+    },
+    sirach: {
+      intro: 'The Wisdom of Ben Sira, also called Sirach or Ecclesiasticus. 51 chapters of wisdom literature. KJV 1611 Apocrypha text.',
+      exclusion: 'The rabbis debated Sirach\'s status extensively (Tosefta Yadayim 2:13) and ultimately excluded it, ruling that "the books of Ben Sira and all books written from then on do not defile the hands"\u2014the technical term for canonical status. The primary concern was chronological: Ben Sira wrote around 180 BC, well after the prophetic period was considered closed. The Hebrew original was lost for centuries and only partially recovered in the Cairo Geniza (1896) and at Masada, raising questions about textual integrity. While its wisdom is often excellent and echoes Proverbs, its teachings on almsgiving as atonement for sin (3:30, 29:12) approach a doctrine of merit-based salvation absent from Torah.',
+      warning: 'Sirach was explicitly excluded by the rabbis (Tosefta Yadayim 2:13) as written after the close of the prophetic era.',
+    },
+    wisdom: {
+      intro: 'The Wisdom of Solomon. 19 chapters of wisdom literature. KJV 1611 Apocrypha text.',
+      exclusion: 'Despite its attribution to Solomon, the Wisdom of Solomon was composed in Greek (not Hebrew) in Alexandria, Egypt, probably in the 1st century BC\u2014roughly 900 years after Solomon\'s death. The pseudonymous attribution is the primary concern: the author writes in Solomon\'s voice ("I also am a mortal man," 7:1) but the Greek language, Hellenistic literary style, and engagement with Greek philosophical concepts (the pre-existence of the soul in 8:19\u201320, the body as a "burden" to the soul in 9:15) place it firmly in the Alexandrian diaspora. While some passages can be read in harmony with Torah (e.g. "the souls of the righteous are in the hand of God" in 3:1 need not imply consciousness), the overall framework draws heavily on Platonic categories foreign to the Hebrew wisdom tradition. It was never part of the Hebrew Bible.',
+      warning: 'Wisdom of Solomon was composed in Greek ~900 years after Solomon under a pseudonymous attribution.',
+    },
+    tobit: {
+      intro: 'The Book of Tobit. 14 chapters of narrative set during the Assyrian exile. KJV 1611 Apocrypha text.',
+      exclusion: 'Tobit contains practices that directly conflict with Torah: burning the heart and liver of a fish to produce smoke that drives away a demon (6:7\u20138, 8:2\u20133). This is a form of magical incantation that Deuteronomy 18:10\u201312 explicitly prohibits. The angel Raphael also practices deception, traveling under a false identity (5:12\u201318), and the narrative includes folklore elements (a demon who serially kills seven husbands) more characteristic of ancient Near Eastern folk tales than biblical revelation. While the story promotes piety and family devotion, these elements disqualified it from the Hebrew canon. It survives in multiple contradictory Greek recensions, suggesting extensive editing over time.',
+      warning: 'Tobit describes magical practices (burning fish organs to repel demons) prohibited by Deuteronomy 18:10\u201312.',
+    },
+    judith: {
+      intro: 'The Book of Judith. 16 chapters of narrative. KJV 1611 Apocrypha text.',
+      exclusion: 'Judith contains well-known historical inaccuracies that even ancient readers recognized. The opening verse calls Nebuchadnezzar "king of the Assyrians, who reigned in Nineveh"\u2014but Nebuchadnezzar was king of Babylon, and Nineveh had already been destroyed before his reign. The book also places the story after the return from exile (4:3, 5:18\u201319) while simultaneously describing pre-exilic conditions, creating an impossible chronology. The heroine Judith uses deliberate deception and seduction as her primary strategy (10:11\u201319, 12:10\u201320), and the narrative celebrates this without qualification. Most scholars consider the book a historical novel rather than a record of actual events.',
+      warning: 'Judith contains clear historical errors: it calls Nebuchadnezzar "king of the Assyrians, who reigned in Nineveh."',
+    },
+    baruch: {
+      intro: 'The Book of Baruch. 5 chapters attributed to Baruch son of Neriah, Jeremiah\'s scribe. KJV 1611 Apocrypha text.',
+      exclusion: 'Baruch claims to have been written by Jeremiah\'s scribe in Babylon (1:1\u20132), but its literary dependence on Daniel (which was written later) and its polished Greek style suggest a much later composition, likely the 2nd or 1st century BC. The text is largely a mosaic of phrases borrowed from Jeremiah, Isaiah, Deuteronomy, and Job, arranged into new compositions. While devotionally earnest, it introduces no new prophetic revelation and was never part of the Hebrew canon. Jerome noted that "the Hebrews neither read nor possess" the book.',
+      warning: 'Baruch claims authorship by Jeremiah\'s scribe but shows literary dependence on later texts. Jerome noted the Hebrews did not possess it.',
+    },
+    letterJeremiah: {
+      intro: 'The Letter of Jeremiah. A single chapter warning against idolatry, attributed to Jeremiah. KJV 1611 Apocrypha text.',
+      exclusion: 'The Letter of Jeremiah purports to be written by the prophet Jeremiah to the exiles in Babylon, but its Greek composition, repetitive rhetorical style, and dependence on Jeremiah 10 and Isaiah 44\u201346 suggest it is a later composition in Jeremiah\'s name. A Greek fragment was found among the Dead Sea Scrolls (7Q2), dating it to at least the 1st century BC, but pseudonymous attribution disqualifies it under the Torah\'s own standard that prophets must speak in their own name and be accountable for their words (Deuteronomy 18:20\u201322).',
+      warning: 'The Letter of Jeremiah is pseudonymously attributed to the prophet and was composed in Greek, not Hebrew.',
+    },
+    prayerAzariah: {
+      intro: 'The Prayer of Azariah and the Song of the Three Holy Children. An addition to Daniel 3 in the Greek Septuagint. KJV 1611 Apocrypha text.',
+      exclusion: 'This text is an addition inserted into the Greek translation of Daniel between verses 23 and 24 of chapter 3. It does not appear in the Hebrew/Aramaic text of Daniel. The prayer and hymn are devotionally beautiful but were recognized as additions: Jerome included them in the Vulgate but marked them as not found in the Hebrew. Their absence from the original Semitic text of Daniel, combined with their interruption of the narrative flow, indicates they are liturgical compositions inserted by later editors.',
+      warning: 'This text was inserted into the Greek Daniel. It does not appear in the Hebrew/Aramaic original.',
+    },
+    susanna: {
+      intro: 'The Story of Susanna. An addition to Daniel in the Greek Septuagint. KJV 1611 Apocrypha text.',
+      exclusion: 'Susanna is an addition to the Book of Daniel found only in the Greek text, not in the Hebrew/Aramaic original. The story contains a wordplay on Greek tree names (mastic/cut, holm oak/cleave in verses 54\u201359) that only works in Greek, proving it was composed in Greek rather than translated from a Semitic original. This Greek wordplay was noted by Julius Africanus in the 3rd century as evidence against its authenticity. While the story illustrates Daniel\'s wisdom, its Greek origin disqualifies it from a Hebrew canon.',
+      warning: 'Susanna contains Greek wordplays proving it was composed in Greek, not translated from Hebrew.',
+    },
+    belDragon: {
+      intro: 'Bel and the Dragon. An addition to Daniel in the Greek Septuagint. KJV 1611 Apocrypha text.',
+      exclusion: 'Bel and the Dragon comprises two short narratives appended to Daniel in the Greek text. Like Susanna, it is absent from the Hebrew/Aramaic Daniel. The stories (Daniel exposing the priests of Bel through scattered ashes, Daniel killing a dragon by feeding it pitch cakes) read as folk tales rather than prophetic history. Jerome included them in the Vulgate but noted they were not in the Hebrew. The narrative of Daniel destroying a living dragon by feeding it an explosive concoction (v. 27) has no parallel in canonical Scripture and reflects the genre of Jewish folk legend.',
+      warning: 'Bel and the Dragon is absent from the Hebrew Daniel. Its folk-tale style differs from canonical prophetic literature.',
+    },
+    prayerManasseh: {
+      intro: 'The Prayer of Manasseh. A penitential prayer attributed to the wicked king Manasseh of Judah. KJV 1611 Apocrypha text.',
+      exclusion: 'The Prayer of Manasseh claims to be the prayer referenced in 2 Chronicles 33:12\u201313, where Manasseh humbles himself before God during his captivity. However, 2 Chronicles itself does not include the text of that prayer\u2014it simply records that he prayed. This text was composed to fill that gap, likely in the 2nd or 1st century BC. It is not found in the Hebrew Bible or the Septuagint proper (it appears only in some manuscripts as an appendix). While its penitential theology is beautiful, its late and pseudonymous composition places it outside canonical consideration.',
+      warning: 'The Prayer of Manasseh was composed centuries later to fill a gap in 2 Chronicles 33. It is not found in the Hebrew Bible.',
+    },
+    '1esdras': {
+      intro: '1 Esdras. 9 chapters. A parallel account of 2 Chronicles 35\u201336, Ezra, and Nehemiah 7:38\u20138:12. KJV 1611 Apocrypha text.',
+      exclusion: '1 Esdras largely reproduces material already found in 2 Chronicles and Ezra-Nehemiah, but rearranges the chronology and adds the "Debate of the Three Guardsmen" (ch. 3\u20134), a Persian court tale in which Zerubbabel wins a contest by arguing that "truth is strongest." This addition has no parallel in canonical Scripture and reads as wisdom literature grafted onto a historical framework. The chronological rearrangements create contradictions with the canonical order of events in Ezra-Nehemiah. Jerome rejected it, and it was never part of the Hebrew canon.',
+      warning: '1 Esdras rearranges the chronology of Ezra-Nehemiah and adds a non-biblical court tale.',
+    },
+    '2esdras': {
+      intro: '2 Esdras (4 Ezra). 16 chapters of apocalyptic visions. KJV 1611 Apocrypha text.',
+      exclusion: '2 Esdras was written pseudonymously after 70 AD (it laments the destruction of the Temple) but attributed to Ezra, who lived roughly 500 years earlier. Chapters 1\u20132 and 15\u201316 are widely recognized as later Christian additions not present in the original text. Notably, 7:28 refers to "my son Jesus"\u2014a Latin rendering that reflects Christian editorial influence on the manuscript tradition. The text survives in Latin, Syriac, Ethiopic, Georgian, and Arabic but not in Greek or Hebrew, making the original irrecoverable. On the state of the dead, the KJV text is actually broadly compatible with Torah: 7:32 describes the dead as "asleep" in the earth, "dwelling in silence," awaiting future restoration\u2014language consistent with Daniel 12:2 and Ecclesiastes 9:5. Some later manuscript traditions include an additional passage (7:75\u2013101, discovered in 1875) that introduces conscious intermediate states, but this passage does not appear in the KJV 1611 text.',
+      warning: '2 Esdras was written after 70 AD under the pseudonym of Ezra. Chapters 1\u20132 and 15\u201316 are later Christian additions.',
+    },
+    '1maccabees': {
+      intro: '1 Maccabees. 16 chapters of Hasmonean history (175\u2013134 BC). KJV 1611 Apocrypha text.',
+      exclusion: '1 Maccabees is arguably the most historically reliable of the Apocrypha. It was originally written in Hebrew (now lost) and provides an invaluable primary source for the Maccabean revolt. However, it was excluded from the Hebrew canon likely because it was composed too late (after ~100 BC) to be considered part of the prophetic tradition, which the rabbis believed ended with Malachi. The author himself acknowledges this: "there was great distress in Israel, such as had not been since the time that prophets ceased to appear among them" (9:27). The book records history, not prophecy, and makes no claim to divine inspiration.',
+      warning: '1 Maccabees is valuable history but was written after the prophetic era closed. Its author acknowledges no prophet existed in his time (9:27).',
+    },
+    '2maccabees': {
+      intro: '2 Maccabees. 15 chapters covering the Maccabean period (180\u2013161 BC). KJV 1611 Apocrypha text.',
+      exclusion: '2 Maccabees introduces doctrines absent from Torah and used to support later theological developments: prayers and offerings for the dead (12:43\u201345, the primary proof-text for the Catholic doctrine of purgatory), the intercession of dead saints (15:12\u201316, where the deceased Onias and Jeremiah pray for Israel), and the pre-existence of the Temple in heaven (2:4\u20138). The compiler openly admits his work is an abridgment of a five-volume history by Jason of Cyrene (2:23) and apologizes for any errors (15:38\u201339)\u2014an admission inconsistent with inspired Scripture. Written in Greek, not Hebrew, it reflects Hellenistic Jewish theology from the Diaspora.',
+      warning: '2 Maccabees introduces prayers for the dead (12:43\u201345) and intercession by dead saints\u2014doctrines absent from Torah.',
+    },
   },
 
   // Chapter titles for pseudepigrapha (keyed by authorId)
@@ -3045,6 +3262,395 @@ const ReaderView = {
       90: 'The Wars of Edom and Chittim',
       91: 'After Joshua; Judah Leads Israel',
     },
+    sirach: {
+      1: 'The Prologue; The Fear of the Lord',
+      2: 'Patience in Temptation',
+      3: 'Duties to Parents',
+      4: 'Compassion for the Poor',
+      5: 'Presumption and Repentance',
+      6: 'True and False Friendship',
+      7: 'Miscellaneous Precepts',
+      8: 'Prudence in Dealings',
+      9: 'Warnings About Women',
+      10: 'The Wise Ruler',
+      11: 'Humility and Appearances',
+      12: 'Discernment in Giving',
+      13: 'Rich and Poor',
+      14: 'Happiness and the Pursuit of Wisdom',
+      15: 'Wisdom and the Law',
+      16: 'Divine Justice',
+      17: 'The Creation of Man',
+      18: 'The Greatness of God',
+      19: 'Drunkenness and Gossip',
+      20: 'Wise and Foolish Speech',
+      21: 'Sin and Folly',
+      22: 'The Sluggard and the Fool',
+      23: 'Prayer Against Sin',
+      24: 'Wisdom\'s Self-Praise',
+      25: 'Three Beautiful Things',
+      26: 'Good and Evil Wives',
+      27: 'Honesty in Trade',
+      28: 'Forgiveness and the Tongue',
+      29: 'Lending and Almsgiving',
+      30: 'The Discipline of Children',
+      31: 'Riches and Feasting',
+      32: 'Conduct at a Banquet',
+      33: 'Trust in the Lord',
+      34: 'Dreams and Travel',
+      35: 'Sacrifices and Justice',
+      36: 'Prayer for Israel',
+      37: 'Counsel and Advisors',
+      38: 'The Physician; Mourning',
+      39: 'The Scholar and the Craftsman',
+      40: 'Hardships of Life',
+      41: 'Death; Shame',
+      42: 'Proper and Improper Shame',
+      43: 'The Wonders of Creation',
+      44: 'Praise of the Fathers',
+      45: 'Moses, Aaron, and Phinehas',
+      46: 'Joshua and Caleb; Samuel',
+      47: 'Nathan, David, and Solomon',
+      48: 'Elijah and Elisha',
+      49: 'Josiah and the Prophets',
+      50: 'Simon the High Priest',
+      51: 'A Prayer of Thanksgiving',
+    },
+    wisdom: {
+      1: 'Seek Righteousness, Not Death',
+      2: 'The Reasoning of the Wicked',
+      3: 'The Destiny of the Righteous',
+      4: 'The Reward of Virtue',
+      5: 'The Vindication of the Just',
+      6: 'Exhortation to Seek Wisdom',
+      7: 'Solomon\'s Prayer for Wisdom',
+      8: 'Wisdom as a Bride',
+      9: 'Solomon\'s Prayer',
+      10: 'Wisdom in History: Adam to Moses',
+      11: 'God\'s Mercy in the Exodus',
+      12: 'God\'s Patience with the Canaanites',
+      13: 'Folly of Nature Worship',
+      14: 'The Origin of Idolatry',
+      15: 'Israel\'s Fidelity; Foolish Idols',
+      16: 'Contrasts: Plagues and Blessings',
+      17: 'Darkness on Egypt; Light for Israel',
+      18: 'The Night of the Passover',
+      19: 'The Red Sea and Final Judgments',
+    },
+    tobit: {
+      1: 'Tobit\'s Faithfulness in Nineveh',
+      2: 'Tobit\'s Blindness',
+      3: 'Tobit\'s Prayer; Sarah\'s Plight',
+      4: 'Tobit\'s Instructions to Tobias',
+      5: 'Tobias Meets the Angel Raphael',
+      6: 'The Fish and the Cure',
+      7: 'The Wedding of Tobias and Sarah',
+      8: 'The Wedding Night; The Demon Defeated',
+      9: 'Raphael Recovers the Money',
+      10: 'The Anxious Parents',
+      11: 'Tobit\'s Sight Restored',
+      12: 'Raphael Reveals His Identity',
+      13: 'Tobit\'s Song of Praise',
+      14: 'Tobit\'s Final Words and Death',
+    },
+    judith: {
+      1: 'Nebuchadnezzar\'s War with Arphaxad',
+      2: 'Holofernes\' Campaign',
+      3: 'The Nations Submit',
+      4: 'Israel Prepares to Resist',
+      5: 'Achior\'s Account of Israel',
+      6: 'Achior Delivered to the Israelites',
+      7: 'The Siege of Bethulia',
+      8: 'Judith\'s Rebuke of the Elders',
+      9: 'Judith\'s Prayer',
+      10: 'Judith Goes to the Assyrian Camp',
+      11: 'Judith Before Holofernes',
+      12: 'The Banquet',
+      13: 'Judith Slays Holofernes',
+      14: 'The Head Displayed; Achior Converts',
+      15: 'The Assyrians Flee',
+      16: 'Judith\'s Song of Triumph',
+    },
+    baruch: {
+      1: 'Baruch Reads the Book in Babylon',
+      2: 'Confession of Israel\'s Sins',
+      3: 'Prayer for Mercy; Praise of Wisdom',
+      4: 'Encouragement for Jerusalem',
+      5: 'Jerusalem\'s Future Glory',
+    },
+    '1esdras': {
+      1: 'Josiah\'s Passover; The Fall of Jerusalem',
+      2: 'Cyrus\'s Decree; Opposition',
+      3: 'The Debate of the Three Guardsmen',
+      4: 'Zerubbabel\'s Argument: Truth Is Strongest',
+      5: 'The Return from Exile',
+      6: 'The Building of the Temple Resumes',
+      7: 'The Temple Completed and Dedicated',
+      8: 'Ezra\'s Mission to Jerusalem',
+      9: 'The Problem of Mixed Marriages',
+    },
+    '2esdras': {
+      1: 'The Genealogy of Ezra; God\'s Reproach',
+      2: 'God Turns to the Gentiles',
+      3: 'Ezra\'s First Vision: Why Does Evil Prevail?',
+      4: 'The Angel Uriel\'s Response',
+      5: 'Signs of the End',
+      6: 'The Second Vision: Creation and the Age to Come',
+      7: 'The Third Vision: The Narrow Way; The Fate of Souls',
+      8: 'Ezra\'s Lament; God\'s Response',
+      9: 'The Fourth Vision: The Mourning Woman (Zion)',
+      10: 'The Vision of the Heavenly City',
+      11: 'The Fifth Vision: The Eagle',
+      12: 'Interpretation of the Eagle Vision',
+      13: 'The Sixth Vision: The Man from the Sea',
+      14: 'The Seventh Vision: The Restoration of Scripture',
+      15: 'Prophecies of Woe Against the Nations',
+      16: 'Tribulation and Endurance',
+    },
+    '1maccabees': {
+      1: 'Alexander and Antiochus; The Persecution',
+      2: 'Mattathias and the Revolt',
+      3: 'Judas Maccabeus Takes Command',
+      4: 'Victories Over Gorgias and Lysias',
+      5: 'Wars with Neighboring Peoples',
+      6: 'The Death of Antiochus; Siege of Zion',
+      7: 'Demetrius Sends Bacchides and Alcimus',
+      8: 'Alliance with Rome',
+      9: 'The Death of Judas; Jonathan Succeeds',
+      10: 'Alexander Epiphanes and Jonathan',
+      11: 'Ptolemy\'s Invasion; Jonathan\'s Alliances',
+      12: 'Renewed Alliances; Jonathan Captured',
+      13: 'Simon Takes Command',
+      14: 'The Glory of Simon\'s Rule',
+      15: 'Antiochus VII and Simon',
+      16: 'John Hyrcanus Succeeds Simon',
+    },
+    '2maccabees': {
+      1: 'Letters to the Jews in Egypt',
+      2: 'Jeremiah Hides the Ark; The Compiler\'s Preface',
+      3: 'Heliodorus Repelled from the Temple',
+      4: 'Corruption of the High Priesthood',
+      5: 'Antiochus Plunders the Temple',
+      6: 'The Persecution; Eleazar\'s Martyrdom',
+      7: 'The Martyrdom of the Seven Brothers',
+      8: 'Judas Maccabeus Rallies Israel',
+      9: 'The Death of Antiochus',
+      10: 'Purification of the Temple',
+      11: 'Lysias\'s Campaign and Treaty',
+      12: 'Campaigns Against Neighboring Peoples',
+      13: 'Antiochus V and Lysias Invade',
+      14: 'Demetrius and Nicanor',
+      15: 'The Defeat and Death of Nicanor',
+    },
+    '2enoch': {
+      1: 'Enoch\'s Call to Heaven',
+      2: 'Enoch\'s Instructions to His Sons',
+      3: 'The First Heaven: Clouds and Stars',
+      4: 'The Rulers of the Stars',
+      5: 'The Treasuries of Snow and Dew',
+      6: 'The Treasure-Houses of Dew',
+      7: 'The Second Heaven: The Imprisoned Angels',
+      8: 'The Third Heaven: Paradise',
+      9: 'The Place Prepared for the Righteous',
+      10: 'The Place of Torment in the North',
+      11: 'The Fourth Heaven: Sun and Moon',
+      12: 'The Phoenixes and Chalkydri',
+      13: 'The Eastern Gates of the Sun',
+      14: 'The Western Gates of the Sun',
+      15: 'The Song of the Phoenixes',
+      16: 'The Course of the Moon',
+      17: 'The Armed Soldiers of the Fourth Heaven',
+      18: 'The Fifth Heaven: The Grigori',
+      19: 'The Sixth Heaven: The Archangels',
+      20: 'The Seventh Heaven: The Great Light',
+      21: 'The Cherubim and Seraphim',
+      22: 'The Tenth Heaven: The Face of the Lord',
+      23: 'God Reveals All Things to Enoch',
+      24: 'Enoch Sits at God\'s Left Hand',
+      25: 'The Creation: Adoil',
+      26: 'The Foundation: Archas',
+      27: 'The Separation of Light and Darkness',
+      28: 'The Firmament and the Dry Land',
+      29: 'The Creation of the Angels',
+      30: 'The Third Day: Trees, Paradise, and Adam',
+      31: 'Adam in the Garden; The Command',
+      32: 'Adam\'s Return to Earth',
+      33: 'The Eighth Day; The Ages of the World',
+      34: 'God\'s Rejection of the Disobedient',
+      35: 'The Future Generation',
+      36: 'Enoch\'s Return for Thirty Days',
+      37: 'The Angel Transforms Enoch\'s Appearance',
+      38: 'Enoch Returns to Earth',
+      39: 'Enoch Admonishes His Children',
+      40: 'Enoch\'s Knowledge of All Things',
+      41: 'Enoch Weeps for Adam\'s Sin',
+      42: 'The Key-Holders of Hell',
+      43: 'Measure and Righteous Judgment',
+      44: 'God Created Man in His Likeness',
+      45: 'Offerings Before the Lord',
+      46: 'Gifts and a Loyal Heart',
+      47: 'The Books of Enoch\'s Handwriting',
+      48: 'The Solar and Lunar Courses',
+      49: 'Enoch\'s Oath',
+      50: 'Every Man\'s Work in Writing',
+      51: 'Give to the Poor',
+      52: 'Praise and Cursing',
+      53: 'No Helper for the Sinner',
+      54: 'Enoch\'s Final Instructions',
+      55: 'The Sons of Enoch Build an Altar',
+      56: 'Methusalam Serves as Priest',
+      57: 'Enoch\'s Instructions About Sacrifice',
+      58: 'Enoch\'s Praise of the Lord',
+      59: 'Enoch\'s Warning to His Sons',
+      60: 'Enoch\'s Final Address',
+      61: 'Enoch Taken Up; Methusalam\'s Sacrifice',
+      62: 'The People Gather at Achuzan',
+      63: 'The Elders of the People Consult',
+      64: 'Nir and His Wife; The Birth of Melchisedek',
+      65: 'The Death of Nir\'s Wife',
+      66: 'The People Learn of the Child',
+      67: 'God Commands Michael About Melchisedek',
+      68: 'The Conclusion; The Flood Begins',
+    },
+    '2baruch': {
+      1: 'God Warns Baruch of Jerusalem\'s Fall',
+      2: 'Baruch\'s Anguish',
+      3: 'God\'s Answer: The True Zion Endures',
+      4: 'The Heavenly Jerusalem',
+      5: 'The Fall of Jerusalem Foretold',
+      6: 'Angels Hide the Holy Vessels',
+      7: 'The City Delivered to Its Enemies',
+      8: 'Baruch\'s Lament at the Ruins',
+      9: 'Baruch\'s Prayer',
+      10: 'Baruch Mourns Over Zion',
+      11: 'Baruch\'s Lament for the Land',
+      12: 'Why Has Israel Been Given to the Gentiles?',
+      13: 'God Speaks of Coming Judgment',
+      14: 'The Reward of the Righteous',
+      15: 'The Suffering of This World',
+      16: 'The Building That Is to Come',
+      17: 'The Conflict of Good and Evil',
+      18: 'The World of Corruption',
+      19: 'Adam\'s Sin and Its Consequences',
+      20: 'The Time of Tribulation Approaches',
+      21: 'Baruch\'s Prayer for Understanding',
+      22: 'God\'s Response; The Coming End',
+      23: 'The Numbering of Souls',
+      24: 'The Time of the Messiah',
+      25: 'Signs of the Last Days',
+      26: 'The Twelve Woes',
+      27: 'The Sequence of Tribulations',
+      28: 'The Final Tribulation',
+      29: 'The Messiah\'s Reign; The Plenty of the Land',
+      30: 'The Resurrection of the Dead',
+      31: 'Baruch Speaks to the People',
+      32: 'The Promise of Consolation',
+      33: 'The Vine and the Cedar',
+      34: 'Baruch Asks About the Vision',
+      35: 'The Vision of the Forest and the Vine',
+      36: 'The Forest, the Plain, and the Vine',
+      37: 'Baruch\'s Question About the Vision',
+      38: 'The Interpretation Begins',
+      39: 'The Four Kingdoms',
+      40: 'The Last Leader and the Messiah',
+      41: 'The Fate of the Righteous and Wicked',
+      42: 'The Hope of the World to Come',
+      43: 'Those Who Left the Covenant',
+      44: 'Baruch\'s Farewell to the People',
+      45: 'Baruch Goes to Hebron',
+      46: 'Baruch\'s Letter to the Exiles',
+      47: 'Baruch\'s Fasting and Prayer',
+      48: 'Baruch\'s Great Prayer',
+      49: 'The Resurrection Body',
+      50: 'The Transformation of the Righteous',
+      51: 'Glory of the Righteous; Shame of the Wicked',
+      52: 'The Vision of the Cloud',
+      53: 'The Cloud and the Bright and Dark Waters',
+      54: 'Baruch Asks for Interpretation',
+      55: 'The Angel Ramiel Interprets',
+      56: 'The Dark and Bright Waters Explained',
+      57: 'The Bright Waters of Abraham',
+      58: 'The Dark Waters of Egypt',
+      59: 'The Bright Waters of Moses',
+      60: 'The Dark Waters of the Judges',
+      61: 'The Bright Waters of David and Solomon',
+      62: 'The Dark Waters of Jeroboam',
+      63: 'The Bright Waters of Hezekiah',
+      64: 'The Dark Waters of Manasseh',
+      65: 'The Bright Waters of Josiah',
+      66: 'The Dark Waters of the Destruction',
+      67: 'The Bright Waters of the Rebuilding',
+      68: 'The Dark Waters of the Greek Period',
+      69: 'The Bright Waters of the Maccabees',
+      70: 'The Dark Waters of the Last Days',
+      71: 'The Final Bright Waters',
+      72: 'The Messiah\'s Rule',
+      73: 'The Age of Peace',
+      74: 'The End of This World',
+      75: 'God Confirms the Vision',
+      76: 'Baruch Told to Go to the Mountain',
+      77: 'Baruch\'s Epistle to the Nine and a Half Tribes',
+      78: 'The Letter: Remember Zion\'s Glory',
+      79: 'The Letter: Remember Moses\' Warning',
+      80: 'The Letter: Your Sufferings Will End',
+      81: 'The Letter: The Coming Judgment',
+      82: 'The Letter: Comfort from the Law',
+      83: 'The Letter: God Will Avenge You',
+      84: 'The Letter: Keep the Commandments',
+      85: 'The Letter: Former Prophets Helped You',
+      86: 'The Letter: Read This in Your Congregations',
+      87: 'The Letter Sent by Eagle',
+    },
+    psalmsSolomon: {
+      1: 'A Cry in Distress',
+      2: 'The Fall of Jerusalem to Pompey',
+      3: 'The Righteous and the Sinners',
+      4: 'Against the Men-Pleasers',
+      5: 'Praise of God as Refuge',
+      6: 'In Hope',
+      7: 'A Prayer for Deliverance',
+      8: 'The Sound of War; Israel\'s Sins',
+      9: 'Israel\'s Captivity and Repentance',
+      10: 'God\'s Discipline of the Righteous',
+      11: 'The Return of the Exiles',
+      12: 'Against the Slanderous Tongue',
+      13: 'Comfort for the Righteous',
+      14: 'God\'s Faithfulness to the Pious',
+      15: 'Help for the Pious',
+      16: 'When the Soul Slumbers',
+      17: 'The Messianic King',
+      18: 'The Anointed of the Lord',
+    },
+    testaments: {
+      1: 'Reuben: On Impure Thoughts',
+      2: 'Reuben: Warning Against Fornication',
+      3: 'Simeon: On Envy',
+      4: 'Simeon: Repentance',
+      5: 'Simeon: Prophecy of the Messiah',
+      6: 'Levi: Vision of Heaven',
+      7: 'Levi: Judgment and Priesthood',
+      8: 'Levi: The Destruction of Shechem',
+      9: 'Levi: Fear the Lord',
+      10: 'Levi: The Seventy Weeks of the Priesthood',
+      11: 'Judah: Valor in War',
+      12: 'Judah: Sin with Bathshua and Tamar',
+      13: 'Judah: Warning Against Wine and Lust',
+      14: 'Judah: Love Levi',
+      15: 'Issachar: On Simplicity',
+      16: 'Issachar: Warning for the Last Times',
+      17: 'Zebulun: On Compassion',
+      18: 'Zebulun: Show Mercy',
+      19: 'Dan: On Anger',
+      20: 'Dan: Depart from Wrath',
+      21: 'Naphtali: On Natural Goodness',
+      22: 'Naphtali: Vision on the Mount of Olives',
+      23: 'Gad: On Hatred',
+      24: 'Gad: Love One Another',
+      25: 'Asher: Two Faces of Vice and Virtue',
+      26: 'Joseph: On Chastity',
+      27: 'Joseph: Patience and Prayer',
+      28: 'Benjamin: On a Pure Mind',
+      29: 'Benjamin: Flee Evil, Cleave to Good',
+    },
   },
 
   /**
@@ -3065,15 +3671,15 @@ const ReaderView = {
     const titles = this._CHAPTER_TITLES[authorId] || {};
 
     if (!chapter) {
-      const PSEUDEPIGRAPHA_INTROS = {
-        enoch: 'The Book of Enoch (1 Enoch). R.H. Charles translation (1917). Apocalyptic text attributed to Enoch, great-grandfather of Noah. 108 chapters covering the Watchers, Parables, Astronomical Book, Dream Visions, and Epistle of Enoch.',
-        jubilees: 'The Book of Jubilees. R.H. Charles translation (1913). Retelling of Genesis through Exodus 12, structured around jubilee periods. 50 chapters covering creation through the Passover.',
-        jasher: 'The Book of Jasher. Translation from Hebrew (1840). Narrative history paralleling Genesis through Joshua. 91 chapters covering creation through the conquest of Canaan.',
-      };
+      const info = this._BOOK_INFO[authorId] || {};
+      const exclusionHtml = info.exclusion
+        ? `<div class="not-scripture-banner">${this._linkifyExclusionText(info.exclusion, authorId)}</div>`
+        : '';
       textArea.innerHTML = `
         <div class="classics-index">
           <h1 class="classics-index-title">${authorName}</h1>
-          <p class="classics-index-intro">${PSEUDEPIGRAPHA_INTROS[authorId] || ''}</p>
+          <p class="classics-index-intro">${info.intro || ''}</p>
+          ${exclusionHtml}
           <div class="classics-works-list">
             ${sections.map(ref => {
               const ch = ref.split('|')[1];
@@ -3102,26 +3708,29 @@ const ReaderView = {
     const chapterTitle = titles[chapter] ? ` — ${titles[chapter]}` : '';
     const prevCh = chapter > 1 ? chapter - 1 : null;
     const nextCh = chapter < totalChapters ? chapter + 1 : null;
-    const prevLink = prevCh ? `<a href="/reader/apocrypha/${authorId}/${prevCh}" class="classics-nav-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}',chapter:${prevCh}}}); return false;">&laquo; Ch. ${prevCh}</a>` : '<span></span>';
-    const nextLink = nextCh ? `<a href="/reader/apocrypha/${authorId}/${nextCh}" class="classics-nav-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}',chapter:${nextCh}}}); return false;">Ch. ${nextCh} &raquo;</a>` : '<span></span>';
+    const prevLink = prevCh ? `<a href="/reader/apocrypha/${authorId}/${prevCh}" class="classics-nav-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}',chapter:${prevCh}}}); return false;">&laquo; Ch. ${prevCh}</a>` : '<span class="classics-nav-spacer">&laquo; Ch.</span>';
+    const nextLink = nextCh ? `<a href="/reader/apocrypha/${authorId}/${nextCh}" class="classics-nav-link" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}',chapter:${nextCh}}}); return false;">Ch. ${nextCh} &raquo;</a>` : '<span class="classics-nav-spacer">Ch. &raquo;</span>';
+    const allChaptersLink = `<a href="/reader/apocrypha/${authorId}" class="classics-nav-home" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}'}}); return false;">All Chapters</a>`;
 
-    const formattedText = text.replace(/\n/g, '</p><p>');
+    const formattedText = this._formatApocryphaText(text);
 
     textArea.innerHTML = `
       <div class="classics-reader">
         <header class="classics-reader-header">
           <h1>${authorName} ${chapter}${chapterTitle}</h1>
-          <div class="not-scripture-banner not-scripture-banner-sm">${this._notScriptureLink}</div>
-          <nav class="classics-chapter-nav">${prevLink}
-            <a href="/reader/apocrypha/${authorId}" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'apocrypha',book:'${authorId}'}}); return false;">All Chapters</a>
-            ${nextLink}</nav>
+          <div class="not-scripture-banner not-scripture-banner-sm">${this._getBookWarning(authorId)}</div>
+          <nav class="classics-chapter-nav">${prevLink}${allChaptersLink}${nextLink}</nav>
         </header>
         <article class="classics-reader-body">
-          <p>${formattedText}</p>
+          ${formattedText}
         </article>
-        <footer class="classics-chapter-nav">${prevLink}${nextLink}</footer>
+        <footer class="classics-chapter-nav classics-chapter-nav-bottom">${prevLink}${allChaptersLink}${nextLink}</footer>
       </div>
     `;
+
+    if (params.verse) {
+      setTimeout(() => this._scrollToApocryphaVerse(textArea, params.verse), 100);
+    }
   },
 
   /**

@@ -8184,6 +8184,29 @@ body.biblical-timeline-open .top-nav-inner {
   font-size: 0.95em;
   cursor: pointer;
   min-width: 140px;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .bible-explorer-select {
+    min-width: 0;
+    max-width: 48vw;
+    padding: 6px 8px;
+    font-size: 0.85em;
+  }
+  #apocrypha-selectors {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+  }
+  #apocrypha-book-select {
+    flex: 1;
+    min-width: 0;
+  }
+  #apocrypha-chapter-select {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 .bible-explorer-select:disabled {
@@ -13958,7 +13981,8 @@ details.concept-strongs-section[open] .concept-expand-icon {
   font-weight: 600;
   font-size: 0.85em;
 }
-mark.step-1, mark.step-2, mark.step-3, mark.step-4 { border-radius: 2px; padding: 0 2px; color: inherit; position: relative; cursor: default; }
+mark[data-tip] { position: relative; cursor: help; background: none; border-bottom: 1.5px dotted var(--text-tertiary); padding: 0; }
+mark.step-1, mark.step-2, mark.step-3, mark.step-4 { border-radius: 2px; padding: 0 2px; color: inherit; position: relative; cursor: default; border-bottom: none; }
 mark.step-1 { background: color-mix(in srgb, var(--accent-primary) 18%, transparent); }
 mark.step-2 { background: color-mix(in srgb, var(--accent-gold, #d4a017) 22%, transparent); }
 mark.step-3 { background: color-mix(in srgb, var(--accent-green, #22c55e) 18%, transparent); }

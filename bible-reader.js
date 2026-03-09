@@ -7797,7 +7797,7 @@ function updateChapterDropdown(book) {
     const selected = bibleExplorerState.currentChapter === i ? ' selected' : '';
     const fmt = verseFormattingData ? verseFormattingData[`${book}.${i}`] : null;
     const title = fmt?.headings?.[0]?.t;
-    const label = title ? `${i} — ${title}` : `${i}`;
+    const label = title ? `${i}. ${title}` : `${i}`;
     html += `<option value="${i}"${selected}>${label}</option>`;
   }
   chapterSelect.innerHTML = html;
@@ -9041,9 +9041,29 @@ function onClassicsSectionJump(value) {
 // ── Apocrypha selector handlers ──
 
 const APOCRYPHA_BOOKS = {
+  // Pseudepigrapha
   enoch: { name: '1 Enoch', chapters: 108 },
   jubilees: { name: 'Jubilees', chapters: 50 },
   jasher: { name: 'Jasher', chapters: 91 },
+  '2enoch': { name: '2 Enoch', chapters: 68 },
+  '2baruch': { name: '2 Baruch', chapters: 87 },
+  psalmsSolomon: { name: 'Psalms of Solomon', chapters: 18 },
+  testaments: { name: 'Testaments of XII Patriarchs', chapters: 29 },
+  // KJV Apocrypha
+  sirach: { name: 'Sirach', chapters: 51 },
+  wisdom: { name: 'Wisdom of Solomon', chapters: 19 },
+  tobit: { name: 'Tobit', chapters: 14 },
+  judith: { name: 'Judith', chapters: 16 },
+  baruch: { name: 'Baruch', chapters: 5 },
+  letterJeremiah: { name: 'Letter of Jeremiah', chapters: 1 },
+  prayerAzariah: { name: 'Prayer of Azariah', chapters: 1 },
+  susanna: { name: 'Susanna', chapters: 1 },
+  belDragon: { name: 'Bel and the Dragon', chapters: 1 },
+  prayerManasseh: { name: 'Prayer of Manasseh', chapters: 1 },
+  '1esdras': { name: '1 Esdras', chapters: 9 },
+  '2esdras': { name: '2 Esdras', chapters: 16 },
+  '1maccabees': { name: '1 Maccabees', chapters: 16 },
+  '2maccabees': { name: '2 Maccabees', chapters: 15 },
 };
 
 function onApocryphaBookChange(bookSlug) {
@@ -9052,15 +9072,21 @@ function onApocryphaBookChange(bookSlug) {
     AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha' } });
     return;
   }
-  AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha', book: bookSlug, chapter: 1 } });
+  AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha', book: bookSlug } });
 }
 
-function onApocryphaChapterChange(chapter) {
-  if (!chapter || typeof AppStore === 'undefined') return;
+function onApocryphaChapterChange(value) {
+  if (typeof AppStore === 'undefined') return;
   const state = AppStore.getState();
   const book = state?.content?.params?.book;
   if (!book) return;
-  AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha', book, chapter } });
+  if (value === '__index__') {
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha', book } });
+  } else {
+    const chapter = parseInt(value);
+    if (!chapter) return;
+    AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'apocrypha', book, chapter } });
+  }
 }
 
 function populateApocryphaSelectors() {
@@ -9097,9 +9123,10 @@ function populateApocryphaSelectors() {
     ? ReaderView._CHAPTER_TITLES[bookSlug] || {}
     : {};
 
-  let html = '<option value="">Ch.</option>';
+  const isIndex = !params.chapter;
+  let html = `<option value="__index__"${isIndex ? ' selected' : ''}>Index</option>`;
   for (let i = 1; i <= totalChapters; i++) {
-    const title = titles[i] ? ` — ${titles[i]}` : '';
+    const title = titles[i] ? `. ${titles[i]}` : '';
     html += `<option value="${i}"${i === params.chapter ? ' selected' : ''}>${i}${title}</option>`;
   }
   chapterSelect.innerHTML = html;

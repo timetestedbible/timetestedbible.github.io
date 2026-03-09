@@ -130,13 +130,37 @@ const BibleView = {
           <select id="apocrypha-book-select" class="bible-explorer-select"
                   onchange="onApocryphaBookChange(this.value)" title="Select book">
             <option value="">Book</option>
-            <option value="enoch">1 Enoch</option>
-            <option value="jubilees">Jubilees</option>
-            <option value="jasher">Jasher</option>
+            <optgroup label="Pseudepigrapha">
+              <option value="enoch">1 Enoch</option>
+              <option value="2enoch">2 Enoch</option>
+              <option value="jubilees">Jubilees</option>
+              <option value="jasher">Jasher</option>
+              <option value="2baruch">2 Baruch</option>
+              <option value="psalmsSolomon">Ps. of Solomon</option>
+              <option value="testaments">XII Patriarchs</option>
+            </optgroup>
+            <optgroup label="Deuterocanon">
+              <option value="sirach">Sirach</option>
+              <option value="wisdom">Wisdom</option>
+              <option value="tobit">Tobit</option>
+              <option value="judith">Judith</option>
+              <option value="baruch">Baruch</option>
+              <option value="1esdras">1 Esdras</option>
+              <option value="2esdras">2 Esdras</option>
+              <option value="1maccabees">1 Maccabees</option>
+              <option value="2maccabees">2 Maccabees</option>
+            </optgroup>
+            <optgroup label="Additions">
+              <option value="letterJeremiah">Ep. Jeremiah</option>
+              <option value="prayerAzariah">Pr. Azariah</option>
+              <option value="susanna">Susanna</option>
+              <option value="belDragon">Bel & Dragon</option>
+              <option value="prayerManasseh">Pr. Manasseh</option>
+            </optgroup>
           </select>
           <select id="apocrypha-chapter-select" class="bible-explorer-select"
-                  onchange="onApocryphaChapterChange(parseInt(this.value))" disabled title="Select chapter">
-            <option value="">Ch.</option>
+                  onchange="onApocryphaChapterChange(this.value)" disabled title="Select chapter">
+            <option value="__index__">Index</option>
           </select>
         </span>
       </div>

@@ -937,6 +937,15 @@ code {
   line-height: 1.6;
   margin-bottom: var(--spacing-lg);
 }
+.classics-section-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-gold, #c9a94e);
+  margin: var(--spacing-lg) 0 var(--spacing-sm);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-border-subtle, rgba(128,128,128,0.15));
+}
+
 .classics-works-list {
   display: flex;
   flex-direction: column;
@@ -1075,6 +1084,28 @@ code {
   text-decoration: underline;
 }
 
+/* ── Apocrypha verse formatting ── */
+
+.apo-verse {
+  display: block;
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+
+.apo-verse-num {
+  font-weight: 600;
+  color: var(--accent-gold, #c9a94e);
+  margin-right: 6px;
+  font-size: 0.85em;
+}
+
+.apo-verse-highlight {
+  background: var(--accent-gold-subtle, rgba(201, 169, 78, 0.12));
+  border-radius: var(--radius-sm, 4px);
+  padding: 2px 4px;
+  transition: background 0.3s;
+}
+
 /* Continuous-scroll reading view */
 .classics-reader {
   max-width: 700px;
@@ -1154,6 +1185,54 @@ code {
   background: var(--accent-gold-subtle);
 }
 
+/* Chapter navigation (prev/next chapter for pseudepigrapha) */
+.classics-chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+  margin-top: var(--spacing-sm);
+}
+.classics-chapter-nav-bottom {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--accent-gold-muted);
+}
+.classics-nav-link {
+  background: var(--accent-gold-subtle, rgba(184, 157, 105, 0.1));
+  border: 1px solid var(--accent-gold-muted, rgba(184, 157, 105, 0.3));
+  border-radius: 6px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  color: var(--color-accent, var(--accent-gold));
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.classics-nav-link:hover {
+  background: var(--accent-gold-muted, rgba(184, 157, 105, 0.2));
+  border-color: var(--accent-gold, #b89d69);
+}
+.classics-nav-home {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+}
+.classics-nav-home:hover {
+  color: var(--color-accent, var(--accent-gold));
+}
+.classics-nav-spacer {
+  visibility: hidden;
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 0.85rem;
+}
+
 /* Citation links inside classics text */
 .classics-citation-link {
   color: var(--color-accent, var(--accent-gold));
@@ -1229,6 +1308,13 @@ code {
   }
   .classics-reader-body {
     font-size: 1rem;
+  }
+  .classics-chapter-nav {
+    gap: var(--spacing-xs);
+  }
+  .classics-nav-link {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.8rem;
   }
   .footnote-tooltip {
     max-width: calc(100vw - 40px);
