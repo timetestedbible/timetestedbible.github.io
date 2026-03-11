@@ -45,6 +45,50 @@ Every punishment principle in Torah — proportionality, maximum limits, death a
 
 ---
 
+## What "Punishment" and "Torment" Actually Say
+
+Torah establishes that God's punishment is proportional, capped, and terminal. But what about the NT words translated "punishment" and "torment" — do they introduce a new category of suffering that Torah never mentioned?
+
+Look at the actual words.
+
+### "Torment" — G928 *basanizo* (To Test by Touchstone)
+
+The Greek word translated "tormented" in Revelation 14:10 and 20:10 is G928 *basanizo*. Its root is G931 *basanos* — which Strong's defines as **"a touchstone."** A *basanos* was a black siliceous stone used to test the purity of gold or silver by the color of the streak it left when rubbed against it. The touchstone does not torture the gold — it *reveals what the gold is made of*.
+
+The word extended from testing metals to testing people (interrogation), and from there to affliction and pain. But the root image is not sadistic suffering — it is **a test that reveals what something truly is**. The same fire that proves gold genuine consumes what is counterfeit. Same test. Different outcomes. Based on what you are made of.
+
+The Hebrew gospel sharpens this further. Where the Greek uses *basanizo*, the Hebrew uses two different words in two different passages:
+
+- **Rev 14:10** — H6064 *anash*: to impose a judicial fine, to penalize. Its OT uses are court-assessed penalties: a fine for causing a miscarriage (Ex 21:22), a fine for false accusation (Deut 22:19), a levy on the land (2 Chr 36:3). *Anash* is a sentence, not a sensation — and a fine, by nature, is finite. You pay it and it's done.
+
+- **Rev 20:10** — H6031 *anah*: to humble, bring low, afflict, abase. Used for Israel's affliction in Egypt (Gen 15:13), for fasting and self-denial on the Day of Atonement (Lev 16:29), and for the suffering servant — "he was afflicted" (Isa 53:7). The suffering servant's *anah* included scourging and crucifixion — real agony. But even in its most extreme use, *anah* describes a finite affliction that ends. Jesus was afflicted, and then he died. The affliction was not the eternal state — it was the path to the outcome.
+
+Neither Hebrew word prescribes eternal suffering. One is a judicial verdict. The other is affliction that — even at its worst — is finite and purposeful, not an endless condition.
+
+### "Punishment" — G2851 *kolasis* (Pruning)
+
+The word translated "punishment" in Matt 25:46 ("everlasting punishment") is G2851 *kolasis* — from G2849 *kolazo*, which means **"to lop or prune, as trees and wings; to curb, check, restrain."** The image is a gardener cutting off a dead branch — not a torturer inflicting pain.
+
+Aristotle drew a distinction the Greek-speaking world understood: *kolasis* is corrective action (removal for the benefit of the whole), while G5098 *timoria* is retributive punishment (vengeance for the punisher's satisfaction). Jesus chose *kolasis*. He did not choose *timoria*.
+
+And He illustrated the word Himself: "Every branch in Me that does not bear fruit He takes away... If anyone does not abide in Me, he is cast out as a branch and is withered; and they gather them and cast them into the fire, and they are burned" (John 15:2, 6). The branch is pruned off and burned. The pruning is the verdict. The $fire finishes it.
+
+### The Pattern
+
+Every word English translates as "punishment" or "torment" carries a meaning that Torah would recognize:
+
+| English | Greek | Root Meaning | Hebrew Gospel Equivalent |
+|---------|-------|-------------|------------------------|
+| tormented | G928 *basanizo* | to test by touchstone | H6064 *anash* (judicial fine) or H6031 *anah* (humbled) |
+| punishment | G2851 *kolasis* | pruning — cutting off | — |
+| punishment (retributive) | G5098 *timoria* | vindication, vengeance | **Jesus never used this word** |
+
+Testing. Fining. Humbling. Pruning. These are judicial actions — verdicts carried out — not descriptions of ongoing suffering. Torah's punishment system is proportional and terminal. The NT vocabulary, examined at root level, says the same thing.
+
+See verse studies: [Rev 14:10](/research/verses/rev-14-10/) | [Rev 20:10](/research/verses/rev-20-10/) | [Matt 25:41](/research/verses/mat-25-41/)
+
+---
+
 ## The Soul Is Mortal
 
 The entire doctrine of eternal conscious torment depends on ONE premise: **the soul is indestructible.** If the soul cannot be destroyed, it must exist forever, and therefore the wicked must experience something forever. But Scripture says the opposite:
@@ -55,7 +99,7 @@ Adam did not have a soul before his body was formed. He BECAME a H5315 *nephesh*
 
 > *"The **soul** that sins, it shall **die**."* — Ezek 18:4
 
-> *"Fear him who is able to **destroy** both **soul** and body in gehenna."* — Matt 10:28
+> *"Fear him who is able to **destroy** both **soul** and body in <mark data-tip="KJV: 'hell' — Greek G1067 geenna (Valley of Hinnom), distinct from sheol/hades">gehenna</mark>."* — Matt 10:28
 
 > *"Who **alone has immortality**, dwelling in the light which no man can approach."* — 1 Tim 6:16
 
@@ -67,7 +111,7 @@ The soul can die. The soul can be destroyed. God ALONE has immortality. Humans S
 
 ## Everyone Goes to Sheol
 
-$sheol is where ALL the dead go — righteous and wicked alike. Scripture says the most righteous people in the Bible went there:
+$sheol is where ALL the dead go — righteous and wicked alike. Scripture says the most righteous people in the Bible went there. (In the KJV, the Hebrew word H7585 *sheol* is translated as "grave" 31 times and "hell" 31 times — every bolded **grave** and **hell** in the quotes below is the same Hebrew word.)
 
 > *"I will go down into the **grave** unto my son mourning."* — Gen 37:35 (Jacob — the covenant patriarch)
 
@@ -87,7 +131,7 @@ If the righteous go to sheol, then sheol is not "hell." It is the universal grav
 
 > *"His breath goeth forth, he returneth to his earth; in that very day **his thoughts perish**."* — Ps 146:4
 
-The dead know nothing. Remember nothing. Think nothing. Say nothing. Praise nothing. They are in silence. Sheol is not conscious torment — it is the sleep of death, until God calls them out of it.
+The dead know nothing. Remember nothing. Think nothing. Say nothing. Praise nothing. They are in silence, not screaming agony. Sheol is not conscious torment — it is the sleep of death, until God calls them out of it.
 
 ---
 
@@ -98,7 +142,7 @@ Before examining the difficult passages, it helps to know that the English word 
 | Term | Hebrew/Greek | What It Is |
 |------|-------------|-----------|
 | **$sheol** / Hades | H7585 / G86 | The grave — the realm of the dead. Both righteous and wicked go here. Temporary. |
-| **Gehinnom** / Gehenna | H1516 / G1067 | Divine judgment. Originally the Valley of Hinnom where Israel burned children to Molech; by the Second Temple period, the Hebrew word for post-death punishment of the wicked. |
+| **Gehinnom** / Gehenna | H1516 / G1067 | Divine judgment. Originally the Valley of Hinnom where Israel burned children to Molech; by the Second Temple period, the Hebrew word for post-death judgment of the wicked. |
 | **Lake of fire** | G3041 + G4442 | The fire into which death and the grave are cast (Rev 20:14). Called "the second death." |
 
 The KJV translates H7585 *sheol* as "grave" 31 times and "hell" 31 times — making one word look like two. Meanwhile, it translates both G86 *hades* (the unseen) and G1067 *gehenna* (Valley of Hinnom) as "hell" — making two words look like one. When you see "hell" in a passage below, ask: which word is it actually?
@@ -191,7 +235,7 @@ The Hebrew text of Revelation uses distinct terms where English flattens everyth
 | Rev 20:14 | Death and Hades into lake of fire | Death and **Gehinnom** into the fire | GEHINNOM — the judgment system destroyed |
 | Rev 21:8 | Lake that burns | **Fire of Sheol** — wages from the fire | "Second death" |
 
-Rev 20:14 uniquely switches from Sheol to **Gehinnom** — because sheol (the grave) is itself being destroyed along with the entire system of divine judgment. See [Rev 20:14 verse study](/research/verses/rev-20-14/) for the directionality argument and Targum corroboration.
+Rev 20:14 uniquely switches from Sheol to <mark data-tip="Divine judgment. Originally the Valley of Hinnom where Israel burned children to Molech; by the Second Temple period, the Hebrew word for post-death judgment of the wicked.">**Gehinnom**</mark> — because sheol (the grave) is itself being destroyed along with the entire system of divine judgment. See [Rev 20:14 verse study](/research/verses/rev-20-14/) for the directionality argument and Targum corroboration.
 
 ---
 
@@ -219,17 +263,21 @@ This is an honest tension in the text — the phrase can be read either way. But
 
 > *"And whosoever was not found written in the book of life was cast into the lake of fire."* — Rev 20:15
 
-Read them side by side — even in the standard English. Verse 10 names three entities: the devil, the beast, and the false prophet. They are "tormented for ever and ever." Then verses 14-15 describe everyone else — and the text switches language. It does not say humans are "tormented for ever and ever." It says they are cast into the fire, and it names what that is: **"this is the second death."**
+The Hebrew gospel adds precision. Where the Greek uses G928 *basanizo* ("tormented"), the Hebrew uses H6031 *anah* — "afflicted, humbled, brought low." As [established above](#what-punishment-and-torment-actually-say), *anah* is the word for Israel's affliction in Egypt, for the Day of Atonement fast, for the suffering servant. It describes being brought low — and death is the ultimate bringing low. Non-existence is the ultimate humbling. To be *anah* from age to age is to be permanently reduced to nothing — not to be kept alive in agony.
 
-The text itself chose different words for different beings. You can decide whether to extend v.10's language to vv.14-15, but the text didn't.
+The Hebrew also calls the location "the fire of $sheol" — not a separate realm, but $fire within the grave itself. And v.14 uniquely switches from Sheol to <mark data-tip="Divine judgment. Originally the Valley of Hinnom where Israel burned children to Molech; by the Second Temple period, the Hebrew word for post-death judgment of the wicked.">**Gehinnom**</mark> — because the grave itself is being destroyed along with the system of divine judgment.
 
-The Hebrew gospel adds precision: v.10 uses H6031 *anah* ("afflicted/humbled") rather than "tortured," and calls the location "the fire of $sheol." V.14 uniquely switches from Sheol to **Gehinnom** — because the grave itself is being destroyed along with the system of divine judgment. See [Rev 20:10](/research/verses/rev-20-10/) and [Rev 20:14](/research/verses/rev-20-14/) verse studies.
+And then verses 14-15 name what the fire accomplishes: **"this is the second death."** The text's own label is not "eternal torment" — it is death.
+
+See [Rev 20:10](/research/verses/rev-20-10/) and [Rev 20:14](/research/verses/rev-20-14/) verse studies.
 
 ### The Rich Man and Lazarus
 
 The rich man is "in Hades, in torment" (Luke 16:23) — conscious, speaking, feeling pain. This is a parable in a sequence of parables (Lost Sheep, Lost Coin, Prodigal Son, Unjust Steward), and its details cannot override the clear statements established above. Abraham is also dead — two dead men having a conversation across a chasm. But the dead "know not anything" (Eccl 9:5), "in death there is no remembrance" (Ps 6:5), their "thoughts perish" (Ps 146:4). If we take the parable literally, Abraham is conscious in sheol — but Peter says David (who died after Abraham) "is not ascended into the heavens" (Acts 2:34), and no one argues David is having conversations in a compartment.
 
-The traditional reading of "two compartments in sheol" — one for comfort, one for torment — comes from this parable and from later Jewish tradition, not from Torah or the Prophets. No OT passage describes sheol having compartments. The OT describes sheol as silence (Ps 115:17), unknowing (Eccl 9:5), and sleep (Dan 12:2).
+The tradition of "two compartments in sheol" — one for comfort, one for torment — does not come from Torah or the Prophets. It comes from 1 Enoch 22 (3rd-2nd century BC), which describes four hollow places inside a mountain for different categories of dead. This is the imagery Jesus' audience would have recognized. But 1 Enoch 22 has a deeper problem than contradicting the canonical state of the dead — it describes Enoch *communicating with the dead*. Abel's spirit is conscious, speaking, making accusations from his compartment. Torah calls consulting the dead an abomination (Deut 18:11-12) — the sin that ended Saul's kingdom (1 Sam 28). Yes, 1 Samuel 28 itself describes Samuel's spirit appearing — but Scripture *narrates* that event while *condemning* it: "Saul died for his transgression... for asking counsel of one that had a familiar spirit" (1 Chr 10:13). The text records what happened and pronounces the verdict: this act destroyed him. 1 Enoch does the opposite — an archangel guides Enoch through sheol and introduces him to conscious dead spirits as legitimate divine revelation. 1 Samuel says consulting the dead destroyed Saul; 1 Enoch says consulting the dead is how God reveals truth. And the canonical Abel passage says something different from either: Abel's **blood** cries from the **ground** (Gen 4:10) — not Abel's spirit from a compartment.
+
+The compartment architecture only works if the dead are conscious. If the dead "know not anything" (Eccl 9:5), if "his thoughts perish" (Ps 146:4), if they are in "silence" (Ps 115:17) and "sleep" (Dan 12:2) — compartments serve no purpose. 1 Enoch's sheol is built on a premise the canonical text denies. (See [Why Jasher, Jubilees, and Enoch Are Not Scripture](/blog/why-jasher-jubilees-enoch-are-not-scripture/) for the full canonicity argument.)
 
 The parable's own point is not about the architecture of sheol. It's about Torah: "They have Moses and the prophets; let them hear them" (Luke 16:29). "If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead" (Luke 16:31). See [Luke 16:23 verse study](/research/verses/luk-16-23/).
 
@@ -495,7 +543,7 @@ Dan 3:25-27, Ex 3:2, Isa 43:2
 | Strong's | Word | Meaning | Notes |
 |----------|------|---------|-------|
 | H7585 | *sheol* | the grave, realm of the dead | From H7592 *sha'al* (to ask/demand). Both righteous and wicked descend. Temporary. |
-| H1516 | *gay* | valley — Gei-Hinnom, Valley of Hinnom | Originally geographic. By Second Temple period: the Hebrew word for divine judgment / post-death punishment. |
+| H1516 | *gay* | valley — Gei-Hinnom, Valley of Hinnom | Originally geographic. By Second Temple period: the Hebrew word for divine judgment of the dead. |
 | G1067 | *geenna* | Gehenna | Greek transliteration of Gei-Hinnom. The judgment concept — NOT the same as Hades ($sheol). |
 | G86 | *hades* | the unseen | Greek equivalent of sheol. Temporary. Destroyed in Rev 20:14. |
 | H784 | *esh* | fire | God's nature (Deut 4:24). The consuming/refining presence. |

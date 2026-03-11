@@ -59,7 +59,42 @@ The Jasher scene is emotionally powerful — that's why it persists. But emotion
 
 ---
 
-## Test 2: The "Watched" Reference — Biblical Citations of Jasher
+## Test 2: Jasher — Enoch "Ascended Into Heaven"
+
+### What Jasher claims (Jasher 3):
+
+Jasher chapter 3 describes Enoch's departure from earth using the phrase "ascended into heaven" no fewer than five times:
+
+> "An angel of the Lord then called unto Enoch from heaven, and wished to bring him up to heaven **to make him reign there over the sons of God**, as he had reigned over the sons of men upon earth." (3:16)
+
+> "I have been required to **ascend into heaven**." (3:17)
+
+> "Enoch **ascended into heaven** in a whirlwind, with horses and chariots of fire." (3:22)
+
+> "from which he **ascended into heaven**." (3:23)
+
+> "And when Enoch had **ascended into heaven**, all the kings of the earth rose and took Methuselah his son and anointed him." (3:24)
+
+### What Scripture says:
+
+Scripture describes the same event with deliberately different language — and categorically denies that any man has ascended to heaven:
+
+- **Gen 5:24** — "Enoch walked with God: and he was not; for **God took him**." No mention of heaven. No ascension.
+- **Heb 11:5** — "By faith Enoch was **translated** (G3346 *metatithemi* — to transfer, transpose, transport) that he should not see death; and **was not found**." The word is *translated* — transported, relocated — not *ascended*.
+- **Jn 3:13** — "And **no man hath ascended up to heaven**, but he that came down from heaven, even the Son of man." Categorical. No man — not Enoch, not Elijah, not anyone.
+- **Acts 2:34** — "For **David is NOT ascended** into the heavens."
+
+### The contradiction:
+
+The word choice matters. Scripture deliberately avoids saying Enoch "ascended into heaven." Genesis says God "took" him. Hebrews says he was "translated" — transported, transferred. Jasher uses the exact phrase that John 3:13 categorically denies: "ascended into heaven."
+
+Jasher also adds a theological claim beyond the mere location: Enoch was brought to heaven "to make him reign there over the sons of God." This is not found anywhere in the canonical text and parallels 1 Enoch's framework of Enoch enthroned in heaven — a premise that contradicts both Jn 3:13 ("no man hath ascended") and Heb 11:39-40 ("they without us should not be made perfect").
+
+This is the same error that drives 1 Enoch's entire framework (see Test 5) — the assumption that Enoch is alive and conscious in heaven. Both Jasher and 1 Enoch build on a premise Scripture denies.
+
+---
+
+## Test 3: The "Watched" Reference — Biblical Citations of Jasher
 
 Two canonical books cite "the book of Jasher":
 
@@ -74,13 +109,13 @@ Compare: Paul cites the Cretan poet Epimenides — "Cretians are alway liars, ev
 
 ---
 
-## Test 3: Jubilees — Adding To and Taking From the Torah
+## Test 4: Jubilees — Adding To and Taking From the Torah
 
 Jubilees (also called "Little Genesis") claims to be an angelic revelation to Moses on Sinai — dictated by the "Angel of the Presence" from heavenly tablets while Moses was receiving the Torah (Jubilees 1:1-4, 26-29; 2:1). It presents itself as an authoritative expansion of Genesis-Exodus, claiming the Torah you have is incomplete and needs this secret angelic supplement. Deuteronomy 4:2 and 12:32 were written to prevent exactly this kind of claim: "You shall not add to the word that I command you, nor take from it."
 
 Five specific failures:
 
-### 3a. Invents commandments and penalties the Torah never gave
+### 4a. Invents commandments and penalties the Torah never gave
 
 Jubilees repeatedly inserts laws, rituals, and death penalties that Moses never gave:
 
@@ -92,7 +127,7 @@ Jubilees repeatedly inserts laws, rituals, and death penalties that Moses never 
 
 These are textbook violations of Deuteronomy 4:2. The Torah presents its penal code as complete. A book that invents new capital offenses is adding to the word.
 
-### 3b. Removes the patriarchs' sins — hagiography
+### 4b. Removes the patriarchs' sins — hagiography
 
 The Torah candidly records the patriarchs' failures, and those failures are theologically essential — they demonstrate that God's covenant faithfulness does not depend on human perfection. Jubilees edits this out:
 
@@ -102,7 +137,7 @@ The Torah candidly records the patriarchs' failures, and those failures are theo
 
 This is subtracting the Torah's theological point. The raw Genesis accounts are cited in the NT precisely because they show flawed humans receiving unmerited grace (Rom 4:1-5, Rom 9:10-13, Heb 11:8-12). Jubilees replaces history with propaganda — making the patriarchs flawless Torah-keepers, which undermines the entire grace-through-faith framework that Paul builds on the *actual* Genesis record.
 
-### 3c. Replaces the Torah's calendar with a sectarian 364-day solar calendar
+### 4c. Replaces the Torah's calendar with a sectarian 364-day solar calendar
 
 The Torah ties festivals to the agricultural/lunar cycle (Exod 12-13, Lev 23, Deut 16). The canonical text makes both luminaries authoritative:
 
@@ -117,7 +152,7 @@ Jubilees mandates a fixed 364-day solar year (12 months of 30 days + 4 intercala
 
 A book that eliminates the moon from the calendar contradicts the Torah's creation ordinance. This is not a matter of calculation method — it is a fundamental disagreement about which luminaries govern the *moedim*. And a fixed 364-day calendar drifts against the actual harvest seasons within decades, contradicting the Torah's own agricultural timing instructions (Lev 23:39, Deut 16:9). The Dead Sea Scrolls version requires inserting an undocumented week every 7 years to stay synchronized — an addition with no scriptural basis (see chapter 15, "Solar Only Calendars").
 
-### 3d. Backdates specific rituals the Torah presents as new revelation
+### 4d. Backdates specific rituals the Torah presents as new revelation
 
 **The nuance:** Scripture itself hints at pre-Sinai observance of Torah principles. Gen 26:5 says Abraham "obeyed my voice, and kept my charge, my commandments, my statutes, and my laws" — using the full Mosaic vocabulary (*mitsvah*, *chuqqah*, *torah*) centuries before Sinai. The seventh-day pattern is established at creation (Gen 2:2-3). Abel and Noah offer sacrifices. The Torah may well be eternal in its principles.
 
@@ -129,7 +164,7 @@ The problem with Jubilees is not that it shows patriarchs following God's ways. 
 
 The test is simple: where the Torah itself says "this is new" or frames a command as first-given, Jubilees contradicts it by backdating. Where the Torah leaves room for eternal principles (Gen 26:5, Gen 2:2-3), that is a different question. Jubilees doesn't just affirm eternal Torah — it rewrites the Torah's own presentation of when specific rituals were revealed.
 
-### 3e. Claims to be a parallel Sinai revelation
+### 4e. Claims to be a parallel Sinai revelation
 
 The ultimate "adding to the word": Jubilees opens by claiming the Angel of the Presence dictated the entire book to Moses from heavenly tablets *while he was on the mountain receiving the Torah* (Jubilees 1:1-4, 26-29; 2:1). It tells readers that the Torah they have is incomplete without this secret angelic supplement.
 
@@ -137,7 +172,7 @@ This would require us to believe Moses received two conflicting books on Sinai �
 
 ---
 
-## Test 4: 1 Enoch — Enoch Is the Messiah
+## Test 5: 1 Enoch — Enoch Is the Messiah
 
 This is the most disqualifying claim in the entire pseudepigraphal corpus.
 
@@ -167,9 +202,13 @@ Enoch is from the antediluvian line of Seth (Gen 5:18-24). He is not from Judah.
 
 The Rachel-speaks test (Test 1) shows Jasher contradicting a *doctrine* — the state of the dead. The Enoch-is-Messiah claim contradicts the *identity of the Messiah himself.* This is not a peripheral error. It is a competing gospel. A book that identifies the wrong person as the Son of Man cannot be divinely inspired Scripture — because the Holy Spirit does not contradict Himself about who the Anointed One is.
 
-### The premise fails too — Enoch is not in heaven:
+### The book describes communication with the dead:
 
-Beyond the messianic claim, 1 Enoch's entire framework assumes Enoch is alive, conscious, and touring the cosmos — receiving visions, speaking with angels, sitting on thrones. This rests on the popular assumption that "God took him" (Gen 5:24) means Enoch ascended to heaven and lives there now.
+Beyond the messianic claim, 1 Enoch has a problem Torah would immediately flag. In chapter 22, Enoch tours sheol and encounters Abel's spirit — conscious, speaking, making accusations against Cain from a compartment. This is communication with the dead — the very practice Torah calls an abomination (Deut 18:10-12), the sin that ended Saul's kingdom (1 Sam 28). And the canonical Abel passage says something different: Abel's BLOOD cries from the GROUND (Gen 4:10) — not his spirit from a compartment. The compartment architecture of 1 Enoch 22 only works if the dead are conscious — a premise the canonical text denies (Eccl 9:5, Ps 146:4, Ps 115:17, Dan 12:2).
+
+### Enoch was taken — but where?
+
+1 Enoch's broader framework assumes Enoch is alive, conscious, and touring the cosmos — receiving visions, speaking with angels, sitting on thrones. This rests on the popular assumption that "God took him" (Gen 5:24) means Enoch ascended to heaven and lives there now.
 
 The canon says otherwise:
 
@@ -183,7 +222,7 @@ Either way — whether transported forward or by some other mechanism — Enoch 
 
 ### The Jude citation:
 
-The Jude 14-15 citation of 1 Enoch follows the same pattern as Josh 10:13 citing Jasher: Jude quotes a specific prophecy ("the Lord cometh with ten thousands of his saints, to execute judgment") that aligns with canonical teaching (Deut 33:2, Zech 14:5). He does not endorse 1 Enoch's messianic claim for Enoch, its elaborate Watcher mythology, or its astronomical cosmology. Citation of one datum is not canonization of the entire source.
+Jude 14 says "Enoch also, the seventh from Adam, *prophesied*" — he attributes a prophecy to Enoch the *person*, not to a book. The prophecy itself ("the Lord cometh with ten thousands of his saints, to execute judgment") aligns with canonical teaching (Deut 33:2, Zech 14:5). Jude does not endorse 1 Enoch's messianic claim for Enoch, its compartmentalized sheol, its Watcher mythology, or its astronomical cosmology. Quoting a person's prophecy is not canonizing a book written in that person's name — just as Joshua citing Jasher for the long day does not canonize Jasher's Rachel speaking from the grave.
 
 ### The calendar contradiction — same error as Jubilees:
 
@@ -231,12 +270,14 @@ The error is treating these books as *equal authority* with the canonical text �
 | Test | Book | Claim | Canon Says | Result |
 |---|---|---|---|---|
 | State of the dead | Jasher 42 | Rachel speaks, knows, advises from the grave | Dead know nothing (Eccl 9:5), thoughts perish (Ps 146:4) | **FAIL** |
+| Enoch ascended to heaven | Jasher 3 | Enoch "ascended into heaven" (5x), reigns over sons of God | "Translated" / "took" (Gen 5:24, Heb 11:5); "no man hath ascended" (Jn 3:13) | **FAIL** |
 | Invented commandments | Jubilees 50:7-8, 12-13 | New death penalties for Sabbath (marital relations, fasting) | Torah's Sabbath commands give no such penalties; Moses fasted 40 days including Sabbaths (Exod 34:28) | **FAIL** |
 | Patriarchal hagiography | Jubilees | Removes Abraham's deception, Jacob's deception | Torah records these candidly; NT cites the raw accounts (Rom 4, Rom 9) | **FAIL** |
 | Calendar authority | Jubilees 6:36-38 | Solar-only 364-day; condemns lunar observation | Moon appointed for moedim (Ps 104:19, Gen 1:14-16) | **FAIL** |
 | Backdating rituals | Jubilees 16:20-31 | Abraham invented Sukkot rituals | Torah presents Sukkot instructions as given through Moses (Lev 23:33-43) | **FAIL** |
 | Parallel Sinai claim | Jubilees 1:1-4 | Angel dictated this book to Moses alongside Torah | "You shall not add to the word" (Deut 4:2, 12:32) | **FAIL** |
 | Identity of the Messiah | 1 Enoch 71:14 | Enoch is the Son of Man / Anointed One | Messiah is from David's line (2 Sam 7:12, Isa 9:6, Mic 5:2); Jesus claims the title (Jn 4:25-26) | **FAIL** |
+| Communication with the dead | 1 Enoch 22 | Enoch tours sheol, speaks with Abel's conscious spirit | Consulting the dead is an abomination (Deut 18:10-12); dead know nothing (Eccl 9:5); Abel's blood cries, not his spirit (Gen 4:10) | **FAIL** |
 | Enoch alive in heaven | 1 Enoch (entire premise) | Enoch is conscious, touring the cosmos, enthroned | "No man hath ascended" (Jn 3:13); "not made perfect without us" (Heb 11:39-40) | **FAIL** |
 | Calendar / moon demoted | 1 Enoch 72-82 | 364-day solar year; moon is secondary/irregular | Moon is a "great light" governing the night (Gen 1:16); appointed for moedim (Ps 104:19) | **FAIL** |
 | Citation = endorsement? | Jasher (cited in Josh, 2 Sam) | Full book is Scripture because cited | Citations validate specific data, not entire source | **FAIL** |
