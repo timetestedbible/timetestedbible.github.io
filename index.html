@@ -1,3 +1,27 @@
 ---
 layout: default
 ---
+<div id="raw-fallback" style="position:fixed;inset:0;z-index:99999;background:#1a3a5c;display:flex;align-items:center;justify-content:center;color:#f5f0e8;font-family:system-ui,sans-serif">
+  <div style="text-align:center">
+    <div style="font-size:2.5em;margin-bottom:16px">🌕</div>
+    <div style="font-size:1.3em;font-weight:600">Time Tested Bible</div>
+    <div style="margin-top:8px;opacity:0.7" id="raw-fallback-status">Loading...</div>
+  </div>
+</div>
+<script>
+(function() {
+  var fb = document.getElementById('raw-fallback');
+  if (!fb) return;
+  if (document.getElementById('top-nav')) {
+    fb.remove();
+  } else {
+    var s = document.getElementById('raw-fallback-status');
+    var t = 10;
+    var iv = setInterval(function() {
+      t--;
+      if (s) s.textContent = 'Site is updating\u2026 retrying in ' + t + 's';
+      if (t <= 0) { clearInterval(iv); location.reload(); }
+    }, 1000);
+  }
+})();
+</script>
