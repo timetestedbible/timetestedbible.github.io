@@ -4842,7 +4842,7 @@ function showVerseTooltip(el, event) {
   }
   
   // Apply translation patches if available, strip PUA markers for plain-text display
-  if (verseText && typeof TranslationPatches !== 'undefined' && TranslationPatches._data) {
+  if (verseText && typeof TranslationPatches !== 'undefined' && typeof TranslationPatches.applyPatches === 'function') {
     verseText = TranslationPatches.applyPatches(fullRef, verseText, trans);
     verseText = verseText.replace(/[\uE001\uE010-\uE01F]/g, '');
   }

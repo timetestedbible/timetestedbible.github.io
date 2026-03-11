@@ -111,7 +111,14 @@ const ReaderView = {
           if (params.symbol) pageTitle = `${params.symbol.replace(/-/g, ' ')} — Symbol Study — Time Tested Bible`;
           break;
         case 'verse-studies':
-          if (params.study) pageTitle = `${params.study.replace(/-/g, ' ')} — Verse Study — Time Tested Bible`;
+          if (params.study) {
+            const vstudyMeta = (typeof VERSE_STUDY_INDEX !== 'undefined' ? VERSE_STUDY_INDEX : []).find(s => s.id === params.study);
+            if (vstudyMeta) {
+              pageTitle = `${vstudyMeta.ref} — ${vstudyMeta.title} — Time Tested Bible`;
+            } else {
+              pageTitle = `${params.study.replace(/-/g, ' ')} — Verse Study — Time Tested Bible`;
+            }
+          }
           break;
         case 'numbers':
           if (params.number) pageTitle = `${params.number} — Number Study — Time Tested Bible`;
@@ -970,7 +977,14 @@ const ReaderView = {
       this.loadVerseStudy(studyId, textArea);
     }
     const titleEl = container.querySelector('#bible-chapter-title');
-    if (titleEl) titleEl.textContent = studyId ? `Verse Study: ${studyId}` : 'Verse Studies';
+    if (titleEl) {
+      if (studyId) {
+        const vstudyMeta = (typeof VERSE_STUDY_INDEX !== 'undefined' ? VERSE_STUDY_INDEX : []).find(s => s.id === studyId);
+        titleEl.textContent = vstudyMeta ? `${vstudyMeta.ref} — ${vstudyMeta.title}` : `Verse Study: ${studyId}`;
+      } else {
+        titleEl.textContent = 'Verse Studies';
+      }
+    }
     this.hideChapterNav(container);
   },
 

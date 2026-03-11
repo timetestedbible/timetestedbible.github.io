@@ -192,7 +192,10 @@ function getRootWord(strongsNum, dictionary) {
  */
 function getWordGloss(lemma, lang, dictionary) {
   if (!lemma || !dictionary) return '';
-  const prefix = lang === 'A' ? 'A' : 'H';
+  // Strong's OT numbers for both Hebrew and Aramaic use the "H" prefix (H8120, H506, etc.).
+  // Using "A" here prevents Aramaic entries from resolving, which is why Daniel 7's
+  // Aramaic words were missing glosses. Always use "H" for MorphHB Strong's numbers.
+  const prefix = 'H';
 
   // Split lemma on "/" and find the last numeric part (the root word)
   const parts = lemma.split('/');
