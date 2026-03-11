@@ -196,7 +196,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Word of God',
     sentence: 'The Word of God — covenant terms spoken from His mouth, received as sustenance for life.',
     opposite: 'Famine — specifically "not a famine of bread… but of hearing the words of the LORD" (Amos 8:11)',
-    rank: 8,
+    rank: 8.1,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/bread/'
@@ -337,7 +337,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Concealed disobedience',
     sentence: 'Concealed disobedience — the state of hiding one\'s conduct from scrutiny.',
     opposite: 'Light — visible obedience, example that can be seen and followed. Where darkness conceals, Light makes manifest.',
-    rank: 8.2,
+    rank: 8.3,
     category: 'Works & Evidence',
     subcategory: 'Rebellion\'s Fruit',
     link: '/research/symbols/darkness/'
@@ -606,7 +606,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s holy standard in active contact',
     sentence: 'God\'s holy standard in active contact — consuming what violates covenant, refining what keeps it.',
     opposite: 'Quenching (1 Th 5:19 — "Quench not the Spirit") / Water as paired judgment agent (2 Pet 3:5–7 — the world judged first by water, reserved now for fire)',
-    rank: 12.7,
+    rank: 12.6,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/fire/'
@@ -704,7 +704,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Works and deeds',
     sentence: 'Works and deeds — the visible output that reveals the hidden nature of whoever produces it.',
     opposite: 'Barrenness, fruitlessness — producing no works, having nothing to show',
-    rank: 7.5,
+    rank: 7.6,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/fruit/'
@@ -718,7 +718,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The day of fullness',
     sentence: 'The day of fullness — when the king takes his throne. The Hebrew word for "full moon" and the word for "throne" are the same consonants: כסא.',
     opposite: 'New moon *chodesh*) — the concealed/renewed moon, the beginning of the cycle',
-    rank: 5,
+    rank: 5.2,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/full-moon/'
@@ -1280,7 +1280,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Hebrew word translated "new moon" means "renewed"',
     sentence: 'The Hebrew word translated "new moon" means "renewed" — restored to completeness. Every use of the root verb in Scripture describes restoration to fullness, not a bare beginning.',
     opposite: 'The dark/invisible moon — absence, concealment, incompleteness. All shadow, no witness.',
-    rank: 5,
+    rank: 5.2,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/new-moon/'
@@ -1308,7 +1308,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The hidden direction',
     sentence: 'The hidden direction — the quarter from which what is concealed approaches, whether God\'s glory or God\'s judgment.',
     opposite: 'The south *negeb* = parched, dry, visible; *teman* = right hand when facing east — the known, open, exposed direction)',
-    rank: 4.9,
+    rank: 5.1,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/north/'
@@ -1857,7 +1857,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The seat of governing authority',
     sentence: 'The seat of governing authority — who sits on it defines the age. The Hebrew word for "throne" and "full moon" are the same consonants: כסא.',
     opposite: 'Footstool — the position of subjugation beneath the throne (Ps 110:1 "make thine enemies thy footstool")',
-    rank: 5.6,
+    rank: 5.7,
     category: 'Authority & Governance',
     subcategory: null,
     link: '/research/symbols/throne/'
@@ -1998,7 +1998,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Conduct',
     sentence: 'Conduct — manner of life. When definite ("THE way"), the pattern of conduct defined by God\'s commandments.',
     opposite: 'Wickedness (lawlessness, covenant transgression), crooked paths, the broad way',
-    rank: 5.8,
+    rank: 6.3,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/way/'
