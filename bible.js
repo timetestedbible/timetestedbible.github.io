@@ -168,8 +168,8 @@ const BOOK_NAME_MAP = {
   // Colossians
   'col': 'Colossians',
   // 1-2 Thessalonians
-  '1 thess': '1 Thessalonians', '1thess': '1 Thessalonians', '1th': '1 Thessalonians',
-  '2 thess': '2 Thessalonians', '2thess': '2 Thessalonians', '2th': '2 Thessalonians',
+  '1 thess': '1 Thessalonians', '1thess': '1 Thessalonians', '1 thes': '1 Thessalonians', '1thes': '1 Thessalonians', '1th': '1 Thessalonians',
+  '2 thess': '2 Thessalonians', '2thess': '2 Thessalonians', '2 thes': '2 Thessalonians', '2thes': '2 Thessalonians', '2th': '2 Thessalonians',
   // 1-2 Timothy
   '1 tim': '1 Timothy', '1tim': '1 Timothy', '1ti': '1 Timothy',
   '2 tim': '2 Timothy', '2tim': '2 Timothy', '2ti': '2 Timothy',

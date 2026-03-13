@@ -7161,7 +7161,7 @@ function linkifyScriptureReferences(text, contextCitation = '') {
   // Main pattern: Book Chapter:Verse(s) or Book Chapter-Chapter
   // Matches: "Rev 18:21", "Ezekiel 26:4-5,14", "Revelation 17-18", "1 Kings 8:1-11,65-66"
   const mainPattern = new RegExp(
-    `((?:1|2|3|I{1,3})?\\s*(?:${bookPattern})\\.?)\\s*(\\d+)(?::(\\d+(?:[-–]\\d+)?(?:,\\s*\\d+(?:[-–]\\d+)?)*))?(?:[-–](\\d+)(?::(\\d+))?)?`,
+    `((?:1|2|3|I{1,3})?\\s*(?:${bookPattern})\\.?)\\s*(\\d+)(?::(\\d+(?:[-–]\\d+(?!:\\d))?(?:,\\s*\\d+(?:[-–]\\d+(?!:\\d))?)*))?(?:[-–](\\d+)(?::(\\d+))?)?`,
     'gi'
   );
   

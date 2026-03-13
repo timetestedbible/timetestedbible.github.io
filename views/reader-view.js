@@ -1512,7 +1512,7 @@ const ReaderView = {
         const keys = Object.keys(BOOK_NAME_MAP).sort((a, b) => b.length - a.length);
         const bookAlts = keys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
         this._studyVersePattern = new RegExp(
-          `\\b(${bookAlts})\\.?\\s+(\\d+):(\\d+(?:[-–—]\\d+)?(?:,\\s*\\d+(?:[-–—]\\d+)?)*)`,
+          `\\b(${bookAlts})\\.?\\s+(\\d+):(\\d+(?:[-–—]\\d+(?!:\\d))?(?:,\\s*\\d+(?:[-–—]\\d+(?!:\\d))?)*)(?:[-–—](\\d+)(?::(\\d+))?)?`,
           'gi'
         );
       }
@@ -1523,7 +1523,7 @@ const ReaderView = {
       collectTextNodes(container, versePattern).forEach(node => {
         const span = document.createElement('span');
         versePattern.lastIndex = 0;
-        span.innerHTML = node.nodeValue.replace(versePattern, (match, rawBook, chapter, verseStr) => {
+        span.innerHTML = node.nodeValue.replace(versePattern, (match, rawBook, chapter, verseStr, _endChapter, _endVerse) => {
           const book = normalizeBookName(rawBook);
           const firstVerse = verseStr.split(/[,]/)[0].split(/[-–—]/)[0].trim();
           const targetVerse = parseInt(firstVerse, 10);
@@ -1582,7 +1582,7 @@ const ReaderView = {
     
     // Match: Book Chapter:Verse(,Verse)*(-EndVerse)? OR Book Chapter (chapter only)
     // Supports comma-separated verses like Deuteronomy 16:9,10,16
-    const pattern = new RegExp(`\\b(${books})\\s+(\\d+)(?::(\\d+(?:[-–—]\\d+)?(?:,\\s*\\d+(?:[-–—]\\d+)?)*))?\\b`, 'g');
+    const pattern = new RegExp(`\\b(${books})\\s+(\\d+)(?::(\\d+(?:[-–—]\\d+(?!:\\d))?(?:,\\s*\\d+(?:[-–—]\\d+(?!:\\d))?)*))?(?:[-–—](\\d+)(?::(\\d+))?)?\\b`, 'g');
     
     const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
     const textNodes = [];
@@ -1602,7 +1602,7 @@ const ReaderView = {
       const span = document.createElement('span');
       // Reset lastIndex since we reuse the regex
       pattern.lastIndex = 0;
-      span.innerHTML = node.nodeValue.replace(pattern, (match, book, chapter, verseStr) => {
+      span.innerHTML = node.nodeValue.replace(pattern, (match, book, chapter, verseStr, _endChapter, _endVerse) => {
         // Build URL - if no verse, default to verse 1
         // Extract first verse number from potentially comma-separated string
         const firstVerse = verseStr ? verseStr.split(/[,]/)[0].split(/[-–—]/)[0].trim() : '1';
