@@ -902,6 +902,13 @@ function showMorphTooltip(el, event) {
       html += `<div class="morph-tip-kjv"><strong>KJV:</strong> ${kjvShort}</div>`;
     }
   }
+
+  // Verse-contextual rendering — how the chosen translation rendered THIS word here.
+  // (The displayed gloss is the curated BDB lemma meaning; this shows the translation choice.)
+  const contextGloss = el.dataset.kjvGloss || '';
+  if (contextGloss) {
+    html += `<div class="morph-tip-context"><strong>In context:</strong> ${contextGloss}</div>`;
+  }
   
   // Morphology description + grammar help
   if (morphDesc) {
@@ -1659,6 +1666,47 @@ function buildStrongsGlossMap(strongsText) {
   return map;
 }
 
+// Resolve the gloss for a single OT (Hebrew/Aramaic) interlinear word.
+//
+// BDB-primary: the curated lemma gloss (data/bdb-ai.json — 100% Hebrew-lexicon coverage,
+// via getWordGloss → BDB → cleaned lexicon → kjv_def → lemma) is the authoritative meaning
+// shown in the interlinear. The KJV/ASV Strong's-tagged rendering is kept as a SECONDARY,
+// verse-contextual gloss (surfaced in the hover tooltip): it shows how the chosen
+// translation rendered the word *here*, but it leaks neighboring function words and merges
+// adjacent words, so it is no longer the primary display.
+//
+// glossMap/glossIdx come from buildStrongsGlossMap() and a per-render Map; they consume the
+// contextual-phrase queue in order so repeated Strong's numbers map to the right occurrence.
+// Returns { gloss, contextual } — `gloss` is what to show, `contextual` is the tooltip extra.
+function resolveOTGloss(lemma, lang, strongsNum, glossMap, glossIdx) {
+  // Primary: curated lemma gloss (BDB-backed once data/bdb-ai.json is loaded)
+  let gloss = '';
+  if (strongsNum && typeof getWordGloss === 'function') {
+    gloss = getWordGloss(lemma, lang, typeof strongsHebrewDictionary !== 'undefined' ? strongsHebrewDictionary : {});
+  }
+
+  // Secondary: how the current translation renders this word in THIS verse
+  let contextual = '';
+  if (glossMap && glossMap.size && strongsNum) {
+    const baseStrongs = strongsNum.replace(/[a-z]$/, '');
+    const glossKey = glossMap.has(strongsNum) ? strongsNum : (glossMap.has(baseStrongs) ? baseStrongs : '');
+    if (glossKey) {
+      const words = glossMap.get(glossKey);
+      const idx = (glossIdx && glossIdx.get(glossKey)) || 0;
+      if (idx < words.length) {
+        contextual = words[idx];
+        if (glossIdx) glossIdx.set(glossKey, idx + 1);
+      } else {
+        contextual = words[0];
+      }
+    }
+  }
+
+  // Safety net: if no curated gloss exists, fall back to the contextual rendering.
+  if (!gloss) gloss = contextual;
+  return { gloss, contextual };
+}
+
 // Get the best Strong's-tagged verse text for gloss derivation.
 // Prefers the user's current translation, then falls back to any loaded tagged translation.
 function getStrongsTaggedVerse(book, chapter, verse) {
@@ -1724,8 +1772,12 @@ async function onVerseTap(book, chapter, verse) {
     if (!ntInterlinearData) loads.push(loadNTInterlinear());
     if (!hgInterlinearData) { loads.push(loadHGInterlinear()); loadHGNotes(); }
     if (loads.length > 0) await Promise.all(loads);
-  } else if (!morphhbData) {
-    await loadMorphhb();
+  } else {
+    // OT: need MorphHB for the words AND the BDB lexicon for BDB-primary glosses.
+    const loads = [];
+    if (!morphhbData) loads.push(loadMorphhb());
+    if (!bdbData && typeof loadBDB === 'function') loads.push(loadBDB());
+    if (loads.length > 0) await Promise.all(loads);
   }
 
   // Ensure cross-reference data and content ranks are loading in background
@@ -1907,18 +1959,8 @@ function buildOTInterlinearHTML(book, chapter, verse, otWords) {
     const lang = getMorphhbLang(morphCode);
     const strongsNum = typeof primaryStrongsFromLemma === 'function' ? primaryStrongsFromLemma(lemma, lang) : '';
 
-    let gloss = '';
-    const baseStrongs = strongsNum ? strongsNum.replace(/[a-z]$/, '') : '';
-    const glossKey = glossMap.has(strongsNum) ? strongsNum : (glossMap.has(baseStrongs) ? baseStrongs : '');
-    if (glossKey) {
-      const words = glossMap.get(glossKey);
-      const idx = glossIdx.get(glossKey) || 0;
-      if (idx < words.length) { gloss = words[idx]; glossIdx.set(glossKey, idx + 1); }
-      else { gloss = words[0]; }
-    }
-    if (!gloss && strongsNum && typeof getWordGloss === 'function') {
-      gloss = getWordGloss(lemma, lang, typeof strongsHebrewDictionary !== 'undefined' ? strongsHebrewDictionary : {});
-    }
+    // BDB-primary gloss; KJV contextual rendering kept as secondary (tooltip).
+    const { gloss, contextual: contextualGloss } = resolveOTGloss(lemma, lang, strongsNum, glossMap, glossIdx);
 
     const decoded = typeof decodeMorphology === 'function' ? decodeMorphology(morphCode) : null;
     const morphDesc = decoded ? decoded.description : '';
@@ -1944,11 +1986,12 @@ function buildOTInterlinearHTML(book, chapter, verse, otWords) {
     }
 
     const plainHebrew = hebrewText.replace(/\//g, '');
-    const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     const escapedMorphDesc = morphDesc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     const escapedHebrew = plainHebrew.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     const escapedMorphCode = (morphCode || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     const escapedLemma = (lemma || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    // Only carry the contextual rendering when it differs from the displayed gloss.
+    const escapedContextual = (contextualGloss && contextualGloss !== gloss ? contextualGloss : '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     const renderedHebrew = showVowels ? displayHebrew : displayHebrew.replace(HEBREW_DIACRITICS_RE, '');
 
     html += `<div class="il-word-block il-clickable"
@@ -1957,6 +2000,7 @@ function buildOTInterlinearHTML(book, chapter, verse, otWords) {
       data-morph-code="${escapedMorphCode}"
       data-lemma="${escapedLemma}"
       data-hebrew="${escapedHebrew}"
+      data-kjv-gloss="${escapedContextual}"
       onclick="handleInterlinearTap(this, event)"
       onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)">
       <span class="il-original" data-voweled="${displayHebrew.replace(/"/g, '&quot;')}">${renderedHebrew}</span>
@@ -2519,15 +2563,19 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
       loadHGNotes();
     }
     if (loads.length > 0) await Promise.all(loads);
-  } else if (!isNT && !morphhbData) {
+  } else if (!isNT && (!morphhbData || (!bdbData && typeof loadBDB === 'function'))) {
     const placeholder = document.createElement('div');
     placeholder.className = 'interlinear-display';
     placeholder.innerHTML = '<div class="interlinear-loading">Loading Hebrew interlinear data...</div>';
     verseEl.appendChild(placeholder);
     verseEl.classList.add('interlinear-expanded');
     requestAnimationFrame(() => placeholder.classList.add('expanded'));
-    
-    await loadMorphhb();
+
+    // OT needs MorphHB for the words AND the BDB lexicon for BDB-primary glosses.
+    const loads = [];
+    if (!morphhbData) loads.push(loadMorphhb());
+    if (!bdbData && typeof loadBDB === 'function') loads.push(loadBDB());
+    await Promise.all(loads);
     placeholder.remove();
   }
   
@@ -2615,27 +2663,10 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
       const lang = getMorphhbLang(morphCode);
       const strongsNum = typeof primaryStrongsFromLemma === 'function' ? primaryStrongsFromLemma(lemma, lang) : '';
       
-      // Get English gloss: prefer the actual translation word, fall back to dictionary
-      // MorphHB has variant suffixes (H5921a) but KJV tags use base numbers (H5921)
-      let gloss = '';
-      const baseStrongs = strongsNum ? strongsNum.replace(/[a-z]$/, '') : '';
-      const glossKey = glossMap.has(strongsNum) ? strongsNum : (glossMap.has(baseStrongs) ? baseStrongs : '');
-      if (glossKey) {
-        const words = glossMap.get(glossKey);
-        const idx = glossIdx.get(glossKey) || 0;
-        if (idx < words.length) {
-          gloss = words[idx];
-          glossIdx.set(glossKey, idx + 1);
-        } else {
-          // All queue entries consumed; reuse the first
-          gloss = words[0];
-        }
-      }
-      // Fall back to dictionary gloss if no translation match
-      if (!gloss && strongsNum && typeof getWordGloss === 'function') {
-        gloss = getWordGloss(lemma, lang, typeof strongsHebrewDictionary !== 'undefined' ? strongsHebrewDictionary : {});
-      }
-      
+      // BDB-primary gloss (curated lemma meaning); KJV contextual rendering kept as
+      // secondary, surfaced in the hover tooltip. See resolveOTGloss().
+      const { gloss, contextual: contextualGloss } = resolveOTGloss(lemma, lang, strongsNum, glossMap, glossIdx);
+
       const decoded = typeof decodeMorphology === 'function' ? decodeMorphology(morphCode) : null;
       const morphDesc = decoded ? decoded.description : '';
       
@@ -2669,21 +2700,23 @@ async function showInterlinear(book, chapter, verse, event, verseElOrId) {
       
       // Escape for HTML attributes (use plain text for data attributes, not HTML)
       const plainHebrew = hebrewText.replace(/\//g, '');
-      const escapedGloss = gloss.replace(/'/g, "\\'").replace(/"/g, '&quot;');
       const escapedMorphDesc = morphDesc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
       const escapedHebrew = plainHebrew.replace(/'/g, "\\'").replace(/"/g, '&quot;');
       const escapedMorphCode = (morphCode || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
       const escapedLemma = (lemma || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-      
+      // Only carry the contextual rendering when it differs from the displayed gloss.
+      const escapedContextual = (contextualGloss && contextualGloss !== gloss ? contextualGloss : '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
       // Apply vowel stripping at render time if preference is off
       const renderedHebrew = showVowels ? displayHebrew : displayHebrew.replace(HEBREW_DIACRITICS_RE, '');
-      
+
       html += `<div class="il-word-block il-clickable"
         data-strongs="${strongsNum || ''}"
         data-morph-desc="${escapedMorphDesc}"
         data-morph-code="${escapedMorphCode}"
         data-lemma="${escapedLemma}"
         data-hebrew="${escapedHebrew}"
+        data-kjv-gloss="${escapedContextual}"
         onclick="handleInterlinearTap(this, event)"
         onmouseenter="if(_lastPointerType!=='touch')showMorphTooltip(this, event)">
         <span class="il-original" data-voweled="${displayHebrew.replace(/"/g, '&quot;')}">${renderedHebrew}</span>

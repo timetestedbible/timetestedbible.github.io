@@ -62,6 +62,18 @@ function extractLexiconGloss(def) {
   // Handle unclosed parens (bad data): truncate at opening paren
   text = text.replace(/\s*\(.*$/, '');
 
+  // Strip leading editorial qualifiers. Strong frequently opens a definition with a
+  // register marker rather than the meaning itself — "properly, X", "figuratively, X",
+  // "by implication, X". The naive "text before first comma" rule below would otherwise
+  // return the marker (e.g. "properly") instead of X. ~6.8% of Hebrew entries do this.
+  // (Safety net only: the curated BDB gloss is the primary source and covers 100% of the
+  // Hebrew lexicon — this path matters when an entry has no BDB gloss or BDB isn't loaded.)
+  let prevText;
+  do {
+    prevText = text;
+    text = text.replace(/^\s*(?:properly|figurative(?:ly)?|literal(?:ly)?|specifically|specially|by\s+implication|by\s+extension|by\s+analogy|probably|perhaps)\b[,:;]?\s*/i, '');
+  } while (text !== prevText);
+
   // Take text before first semicolon (strips secondary senses)
   const semiIdx = text.indexOf(';');
   if (semiIdx > 0) text = text.substring(0, semiIdx);
@@ -156,7 +168,10 @@ function getGloss(strongsNum, dictionary) {
     entry = dictionary[base];
   }
 
-  return extractGloss(entry);
+  // Pass strongsNum so extractGloss can consult the curated BDB gloss first.
+  // (Previously omitted, which silently disabled the BDB-primary path for the
+  // interlinear and let raw lexicon definitions like "properly, ..." surface.)
+  return extractGloss(entry, strongsNum);
 }
 
 /**

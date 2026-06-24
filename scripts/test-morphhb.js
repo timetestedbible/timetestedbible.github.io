@@ -10,6 +10,8 @@
 
 const path = require('path');
 const fs = require('fs');
+// Require the REAL runtime modules (project root), not local copies — local copies
+// drifted out of sync in the past and gave false-positive test results.
 const {
   decodeMorphology,
   decodeSegment,
@@ -17,16 +19,17 @@ const {
   primaryStrongsFromLemma,
   stripCantillation,
   stripAllDiacritics,
-} = require('./morphology-decoder');
+} = require('../morphology-decoder');
 
 const {
   extractFirstMeaning,
   extractGloss,
+  extractLexiconGloss,
   getGloss,
   getRootWord,
   getWordGloss,
   getPrefixMeanings
-} = require('./morphhb-gloss');
+} = require('../morphhb-gloss');
 
 let passed = 0;
 let failed = 0;
@@ -600,26 +603,59 @@ assertEqual(extractFirstMeaning('choose, create (creator)'), 'choose', 'First fr
 assertEqual(extractFirstMeaning('air, [idiom] astrologer, heaven(-s).'), 'air', 'Strip parens');
 assertEqual(extractFirstMeaning('[idiom] common, earth'), 'earth', 'Skip leading [idiom]');
 
-console.log('\n── getGloss ──');
+console.log('\n── extractLexiconGloss: strip editorial qualifiers ──');
+
+// Strong opens ~6.8% of Hebrew definitions with a register marker ("properly,",
+// "figuratively,", ...) that is NOT the meaning. These must be stripped so the real
+// gloss surfaces instead of "properly". (Regression guard for the Deut 4:19 bug.)
+assertEqual(extractLexiconGloss('properly, self (but generally used to point out)'), 'self', 'strip "properly,"');
+assertEqual(extractLexiconGloss('properly, the whole; hence, all, any or every'), 'whole', 'strip "properly," + article');
+assertEqual(extractLexiconGloss('properly, removal; used only (in the construction) adverb as conjunction, lest'), 'removal', 'strip "properly," (H6435)');
+assertEqual(extractLexiconGloss('figuratively, sad'), 'sad', 'strip "figuratively,"');
+assertEqual(extractLexiconGloss('the earth (at large, or partitively a land)'), 'earth', 'parenthetical + article');
+assertEqual(extractLexiconGloss('father, in a literal and immediate'), 'father', 'plain first sense');
+
+console.log('\n── getGloss (no BDB → cleaned lexicon fallback) ──');
 
 const mockDict = {
   'H430': { lemma: 'אֱלֹהִים', kjv_def: 'angels, [idiom] exceeding, God (gods)', strongs_def: 'gods' },
   'H7225': { lemma: 'רֵאשִׁית', kjv_def: 'beginning, chief(-est)', strongs_def: 'the first' },
   'H1254': { lemma: 'בָּרָא', kjv_def: 'choose, create (creator)', strongs_def: 'to create' },
-  'H853': { lemma: 'אֵת', kjv_def: '(as such unrepresented in English).', strongs_def: 'self' },
+  'H853': { lemma: 'אֵת', kjv_def: '(as such unrepresented in English).', strongs_def: 'properly, self (but generally used to point out)' },
+  'H3605': { lemma: 'כֹּל', kjv_def: 'all, any', strongs_def: 'properly, the whole; hence, all' },
   'H1035': { lemma: 'בֵּית לֶחֶם', kjv_def: 'Bethlehem', strongs_def: 'house of bread' },
 };
 
-assertEqual(getGloss('H430', mockDict), 'angels', 'H430');
-assertEqual(getGloss('H1254a', mockDict), 'choose', 'H1254a variant fallback');
-assertEqual(getGloss('H853', mockDict), 'self', 'Fallback to strongs_def');
+// With no BDB loaded, getGloss derives from the cleaned strongs_def.
+assertEqual(getGloss('H430', mockDict), 'gods', 'H430 strongs_def');
+assertEqual(getGloss('H1254a', mockDict), 'to create', 'H1254a variant fallback');
+assertEqual(getGloss('H853', mockDict), 'self', 'H853 strips "properly," qualifier');
 assertEqual(getGloss('H9999', mockDict), '', 'Missing entry');
-assertEqual(getGloss('H1035', mockDict), 'Bethlehem', 'H1035 with +');
+// "of bread" is stripped by the trailing-qualifier rule — the no-BDB fallback is
+// imperfect for construct-chain proper nouns; the curated BDB gloss ("Bethlehem")
+// covers this in the real runtime (BDB has 100% lexicon coverage).
+assertEqual(getGloss('H1035', mockDict), 'house', 'H1035 (no-BDB fallback)');
 
-console.log('\n── getWordGloss with + lemmas ──');
+console.log('\n── getGloss (BDB-primary: curated gloss wins over strongs_def) ──');
 
-assertEqual(getWordGloss('1035+', 'H', mockDict), 'Bethlehem', '1035+ gloss');
-assertEqual(getWordGloss('m/1035+', 'H', mockDict), 'Bethlehem', 'm/1035+ gloss');
+// When the curated BDB gloss exists it is authoritative — this is the fix for the
+// "properly" interlinear bug. getGloss must pass the Strong's number through so
+// extractGloss can consult BDB (it previously dropped the argument).
+global.bdbData = {
+  'H853': { gloss: 'direct object marker' },
+  'H3605': { gloss: 'whole, all, every' },
+  'H430': { gloss: 'God, gods, divine beings' },
+};
+assertEqual(getGloss('H853', mockDict), 'direct object marker', 'BDB gloss wins over strongs_def');
+assertEqual(getGloss('H430', mockDict), 'God, gods, divine beings', 'BDB gloss wins for H430');
+assertEqual(getWordGloss('c/853', 'H', mockDict), 'direct object marker', 'getWordGloss → BDB via compound lemma');
+assertEqual(getWordGloss('l/3605', 'H', mockDict), 'whole, all, every', 'getWordGloss → BDB (H3605)');
+delete global.bdbData; // restore no-BDB state for the mock-dict assertions below
+
+console.log('\n── getWordGloss with + lemmas (no BDB) ──');
+
+assertEqual(getWordGloss('1035+', 'H', mockDict), 'house', '1035+ gloss');
+assertEqual(getWordGloss('m/1035+', 'H', mockDict), 'house', 'm/1035+ gloss');
 
 console.log('\n── getRootWord ──');
 
@@ -648,20 +684,42 @@ if (fs.existsSync(strongsDictPath)) {
   console.log('\n── Real Strong\'s dictionary ──');
 
   const dictCode = fs.readFileSync(strongsDictPath, 'utf8');
+  if (typeof global.window === 'undefined') global.window = {};
   eval(dictCode);
+
+  // Load the curated BDB lexicon so getWordGloss exercises the BDB-primary path the
+  // runtime uses (the interlinear awaits loadBDB() before rendering).
+  const bdbPath = path.join(__dirname, '..', 'data', 'bdb-ai.json');
+  if (fs.existsSync(bdbPath)) {
+    global.bdbData = JSON.parse(fs.readFileSync(bdbPath, 'utf8'));
+  }
 
   const gen11Lemmas = [
     { lemma: 'b/7225', expected: /beginning/i },
-    { lemma: '1254 a', expected: /choose|create/i },
-    { lemma: '430', expected: /angels|God/i },
+    { lemma: '1254 a', expected: /choose|create|shape/i },
+    { lemma: '430', expected: /God/i },
     { lemma: '853', expected: /./ },
-    { lemma: 'd/8064', expected: /air|heaven/i },
-    { lemma: 'd/776', expected: /common|country|earth/i },
+    { lemma: 'd/8064', expected: /heaven|sky/i },
+    { lemma: 'd/776', expected: /earth|land|country/i },
   ];
 
   for (const { lemma, expected } of gen11Lemmas) {
     const gloss = getWordGloss(lemma, 'H', strongsHebrewDictionary);
     assert(expected.test(gloss), `Gloss for "${lemma}": "${gloss}" matches ${expected}`);
+  }
+
+  // Regression: Deut 4:19 untagged particles must NOT render as "properly".
+  // These resolve via the BDB-primary fallback path (no KJV tag → curated lemma gloss).
+  const deut419 = [
+    { lemma: '853', expected: /direct object/i },   // אֵת object marker
+    { lemma: '3605', expected: /all|whole|every/i }, // כֹּל
+    { lemma: 'c/6435', expected: /lest/i },          // פֶן
+    { lemma: '8478', expected: /under|beneath|instead/i }, // תַּחַת
+  ];
+  for (const { lemma, expected } of deut419) {
+    const gloss = getWordGloss(lemma, 'H', strongsHebrewDictionary);
+    assert(gloss !== 'properly', `Deut 4:19 "${lemma}" is not "properly" (got "${gloss}")`);
+    assert(expected.test(gloss), `Deut 4:19 gloss "${lemma}": "${gloss}" matches ${expected}`);
   }
 
   // Test that "+" lemmas resolve

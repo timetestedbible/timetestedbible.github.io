@@ -25,7 +25,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const { stripCantillation, primaryStrongsFromLemma } = require('./morphology-decoder');
+// Use the project-root module (single source of truth — no local copy to drift).
+const { stripCantillation, primaryStrongsFromLemma } = require('../morphology-decoder');
 
 // ── OSIS book file names → app canonical book names ────────────────
 
