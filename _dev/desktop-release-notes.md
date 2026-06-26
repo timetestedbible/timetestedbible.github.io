@@ -32,17 +32,32 @@ platform; switch to Compatibility only if it fails to launch.)*
 
 ---
 
-## Installing
+## ⚠️ Opening the app — these builds are unsigned
 
-**macOS** — open the `.dmg`, drag the app to Applications. These builds are **not yet
-notarized**, so the first launch shows *"unidentified developer."* Right-click the app →
-**Open** → **Open** (once), or run `xattr -cr "/Applications/Time Tested Bible.app"`.
+To keep the app free, the builds are **not code-signed**, so your operating system warns you
+the **first** time you open it. This is normal and expected — here's the one-time approval.
 
-**Windows** — run the installer. SmartScreen may warn ("Windows protected your PC") because
-the build isn't code-signed yet → **More info** → **Run anyway**.
+### macOS
+1. Open the `.dmg` and drag **Time Tested Bible** into **Applications**.
+2. The first launch is blocked (*"Apple could not verify…"* / *"unidentified developer"*).
+   Do **one** of these:
+   - **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** next to
+     the *Time Tested Bible* message — then open the app again and confirm; **or**
+   - open **Terminal** and run, then launch the app normally:
+     ```
+     xattr -dr com.apple.quarantine "/Applications/Time Tested Bible.app"
+     ```
+   *(On older macOS you can also right-click the app → **Open** → **Open**.)*
 
-**Linux** — `.AppImage`: `chmod +x` and run. `.deb`: `sudo dpkg -i <file>.deb`.
-(AppImage may need `libfuse2` on some distros.)
+### Windows
+1. Run the installer. **SmartScreen** shows *"Windows protected your PC."*
+2. Click **More info → Run anyway**. (If Microsoft Defender quarantines it, choose
+   **Allow** — it's a false positive for unsigned independent apps.)
+
+### Linux
+- **AppImage:** `chmod +x "Time Tested Bible"*.AppImage` then run it. Some distros need FUSE:
+  `sudo apt install libfuse2`.
+- **.deb:** `sudo apt install ./"Time Tested Bible"*.deb` (installs dependencies too).
 
 ---
 
@@ -50,5 +65,5 @@ the build isn't code-signed yet → **More info** → **Run anyway**.
 - Both builds contain the full study app **offline** — every translation, the lexicons,
   interlinear data, the calendar/astronomy engine, and the 2nd-edition book PDF.
 - They're the same app and the same data; only the packaging differs.
-- These builds are currently **unsigned/un-notarized** — see the install notes above. Signed
-  builds are planned.
+- These builds are **unsigned by design** (signing/notarization adds yearly cost); the
+  one-time approval above is all that's needed.
