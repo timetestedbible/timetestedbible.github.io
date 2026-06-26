@@ -13,13 +13,18 @@ use serde::Serialize;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-const SITE_URL: &str = "https://timetested.bible";
+// Content updates ride with GitHub Releases — the `latest/download/<asset>` permalink
+// always serves the newest published (non-draft, non-prerelease) release's asset, with no
+// API call or rate limits. The desktop-release workflow uploads version.js +
+// site-bundle.tar.gz to each release. (ureq follows the 302 to the asset host.)
+const RELEASES_URL: &str =
+    "https://github.com/timetestedbible/timetestedbible.github.io/releases/latest/download";
 
 fn version_url() -> String {
-    format!("{SITE_URL}/version.js")
+    format!("{RELEASES_URL}/version.js")
 }
 fn bundle_url() -> String {
-    format!("{SITE_URL}/site-bundle.tar.gz")
+    format!("{RELEASES_URL}/site-bundle.tar.gz")
 }
 
 /// `<app_data_dir>/site-bundles`

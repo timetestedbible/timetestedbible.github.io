@@ -39,6 +39,7 @@ jobs:
 
   # ── Build the site ONCE (Jekyll only runs here), trim it, share it ──
   prepare:
+    needs: create-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -53,6 +54,18 @@ jobs:
           path: _dev/desktop-tauri/desktop-site
           retention-days: 1
           include-hidden-files: true
+      # Content auto-update assets — the apps pull these from releases/latest/download/.
+      - name: Build content auto-update assets
+        run: |
+          cp _site/version.js version.js
+          tar czf site-bundle.tar.gz -C _dev/desktop-tauri/desktop-site .
+      - name: Upload content bundle + version marker to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          files: |
+            site-bundle.tar.gz
+            version.js
 
   # ── Tauri (default build) ──
   tauri:

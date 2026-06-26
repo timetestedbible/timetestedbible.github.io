@@ -46,18 +46,23 @@ If that ever changes, the workflow already has commented env slots; add GitHub s
   `package.json`; currently `null`).
 - **Windows:** a code-signing cert.
 
-## Auto-update (currently broken server-side)
+## Auto-update — content via GitHub Releases
 
-Both updaters fetch `https://timetested.bible/site-bundle.tar.gz` and compare
-`/version.js`. That URL currently **404s** — the site doesn't publish the bundle — so
-auto-update *download* fails for **both** shells (they fall back to the built-in content; no
-crash). To enable auto-update, publish `site-bundle.tar.gz` at the Pages site root on each
-deploy:
+Both updaters pull from the **latest published release** permalink (no API, no rate limits,
+skips drafts/prereleases):
+- `…/releases/latest/download/version.js` → compare APP_VERSION to the installed bundle's.
+- `…/releases/latest/download/site-bundle.tar.gz` → if newer, download + serve next launch.
 
-- `_dev/desktop/build.sh` already generates it into `_site/`; the **Pages build**
-  (`jekyll.yml`) does not. Add a step to the Pages deploy that runs
-  `tar czf _site/site-bundle.tar.gz -C _site --exclude=site-bundle.tar.gz .` so it lands at
-  the site root, or host it as a release asset and point the updaters there.
+The release workflow's `prepare` job uploads both assets (the bundle is the trimmed,
+`.gz`-only site, ~100 MB). So publishing a release automatically offers the new content to
+installed 2.2.0+ apps. Release-asset bandwidth doesn't count against the Pages 100 GB/month.
+
+**Scope:** updates **web content** only (`_site` — chapters, reader JS, `desktop-bridge.js`),
+not the native shell binary; shell/installer changes ship as new `.dmg`/`.exe` in the release.
+
+**Reach:** the updater URL is baked into each build, so **only 2.2.0+ apps use Releases**.
+Older v2.1.0 installs point at the previous (always-404) Pages URL and have never
+auto-updated — no regression; they update by re-downloading.
 
 ## Versioning
 

@@ -16,9 +16,13 @@ const path = require('path');
 const fs = require('fs');
 const { execFile } = require('child_process');
 
-const SITE_URL = 'https://timetested.bible';
-const VERSION_URL = `${SITE_URL}/version.js`;
-const BUNDLE_URL = `${SITE_URL}/site-bundle.tar.gz`;
+// Content updates ride with GitHub Releases. The `latest/download/<asset>` permalink
+// always serves the newest PUBLISHED (non-draft, non-prerelease) release's asset — no
+// API call, no rate limits. The desktop-release workflow uploads version.js +
+// site-bundle.tar.gz to each release. (net.request follows the 302 to the asset host.)
+const RELEASES_URL = 'https://github.com/timetestedbible/timetestedbible.github.io/releases/latest/download';
+const VERSION_URL = `${RELEASES_URL}/version.js`;
+const BUNDLE_URL = `${RELEASES_URL}/site-bundle.tar.gz`;
 const BUNDLES_DIR = path.join(app.getPath('userData'), 'site-bundles');
 const CURRENT_FILE = path.join(BUNDLES_DIR, 'current-version');
 
