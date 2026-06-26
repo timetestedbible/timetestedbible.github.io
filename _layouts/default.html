@@ -624,6 +624,7 @@
   
   <!-- App version (single source of truth for all cache busting) -->
   <script src="/version.js"></script>
+  <script src="/desktop-bridge.js"></script>
   
   <!-- External Libraries (bundled locally) -->
   <script src="/lib/astronomy.browser.min.js"></script>
@@ -1061,7 +1062,7 @@
           if (regs.length) console.log('[PWA] Unregistered', regs.length, 'service worker(s) on localhost');
         });
       }
-      if ('serviceWorker' in navigator && !isLocalDev && !(window.electronAPI && window.electronAPI.isElectron)) {
+      if ('serviceWorker' in navigator && !isLocalDev && !(window.Native && window.Native.isDesktop)) {
         // Request persistent storage so the browser won't evict our cached data
         if (navigator.storage && navigator.storage.persist) {
           navigator.storage.persist().then(granted => {
@@ -1091,8 +1092,8 @@
         });
       }
       
-      // PWA Install handling (skip in Electron — already installed as desktop app)
-      if (!(window.electronAPI && window.electronAPI.isElectron)) {
+      // PWA Install handling (skip in the desktop app — already installed)
+      if (!(window.Native && window.Native.isDesktop)) {
         setupInstallPrompt();
       }
       
@@ -1171,10 +1172,10 @@
     function setupInstallPrompt() {
       const installBtn = document.getElementById('install-app-btn');
       
-      // Check if already installed as PWA or running in Electron
-      if (window.matchMedia('(display-mode: standalone)').matches || 
+      // Check if already installed as PWA or running in the desktop app
+      if (window.matchMedia('(display-mode: standalone)').matches ||
           window.navigator.standalone === true ||
-          (window.electronAPI && window.electronAPI.isElectron)) {
+          (window.Native && window.Native.isDesktop)) {
         // Already installed, hide install button
         return;
       }
@@ -1298,7 +1299,7 @@
   
   <!-- Analytics (disabled in Electron desktop app) -->
   <script>
-    if (!(window.electronAPI && window.electronAPI.isElectron)) {
+    if (!(window.Native && window.Native.isDesktop)) {
       // Google Analytics
       var gaScript = document.createElement('script');
       gaScript.async = true;

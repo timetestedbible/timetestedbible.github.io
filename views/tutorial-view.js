@@ -423,10 +423,10 @@ const TutorialView = {
   renderInstallOptions() {
     const isPWA = window.matchMedia('(display-mode: standalone)').matches ||
                   window.navigator.standalone === true;
-    const isElectron = window.electronAPI && window.electronAPI.isElectron;
+    const isDesktop = window.Native && window.Native.isDesktop;
 
     // Already installed — show brief confirmation
-    if (isPWA || isElectron) {
+    if (isPWA || isDesktop) {
       return `
         <section class="install-section installed">
           <div class="install-card">

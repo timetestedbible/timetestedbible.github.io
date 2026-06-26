@@ -22,6 +22,7 @@ const CORE_ASSETS = [
   '/',
   '/index.html',
   '/version.js',
+  '/desktop-bridge.js',
   '/manifest.json',
   '/styles.css',
   '/app-store.js',

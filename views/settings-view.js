@@ -225,8 +225,8 @@ const SettingsView = {
           </div>
         </section>
         
-        ${window.electronAPI?.isElectron ? `
-        <!-- App Version (Electron only) -->
+        ${window.Native?.isDesktop ? `
+        <!-- App Version (desktop only) -->
         <section class="settings-section" id="electron-version-section">
           <h3>📦 App Version</h3>
           <p class="settings-description">Choose which version of the site content to use. New versions are downloaded automatically when available.</p>
@@ -242,7 +242,7 @@ const SettingsView = {
     setTimeout(() => {
       this.initLocationMap(container, currentLocation, locationPref.method !== 'gps');
       this._initTranslationDragDrop();
-      if (window.electronAPI?.isElectron) this._loadVersionPicker();
+      if (window.Native?.isDesktop) this._loadVersionPicker();
     }, 0);
   },
   
@@ -928,10 +928,10 @@ const SettingsView = {
    */
   async _loadVersionPicker() {
     const list = document.getElementById('electron-version-list');
-    if (!list || !window.electronAPI?.listBundles) return;
+    if (!list || !window.Native?.listBundles) return;
 
     try {
-      const bundles = await window.electronAPI.listBundles();
+      const bundles = await window.Native.listBundles();
       if (!bundles || bundles.length === 0) {
         list.innerHTML = '<p class="settings-description">No versions available.</p>';
         return;
@@ -963,18 +963,18 @@ const SettingsView = {
    * Switch to a specific version or revert to built-in
    */
   async _switchVersion(version) {
-    if (!window.electronAPI) return;
+    if (!window.Native?.isDesktop) return;
     if (version === 'builtin') {
-      await window.electronAPI.revertToBuiltin();
+      await window.Native.revertToBuiltin();
     } else {
-      await window.electronAPI.switchToVersion(version);
+      await window.Native.switchToVersion(version);
     }
     // Show restart prompt
     const section = document.getElementById('electron-version-section');
     if (section) {
       const note = document.createElement('p');
       note.style.cssText = 'color:var(--accent-primary);font-weight:600;margin-top:8px;';
-      note.innerHTML = 'Version changed — <a href="#" onclick="window.electronAPI.restartApp();return false;" style="color:var(--accent-primary);text-decoration:underline;">Restart now</a> to apply.';
+      note.innerHTML = 'Version changed — <a href="#" onclick="window.Native.restartApp();return false;" style="color:var(--accent-primary);text-decoration:underline;">Restart now</a> to apply.';
       section.appendChild(note);
     }
     this._loadVersionPicker();

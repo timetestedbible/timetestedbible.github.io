@@ -48,8 +48,8 @@ const Layout = {
     
     // Cache PWA/Electron status once — doesn't change during a session
     this._isPWA = this.isPWA();
-    this._isElectron = !!(window.electronAPI && window.electronAPI.isElectron);
-    if (this._isElectron) {
+    this._isDesktop = !!(window.Native && window.Native.isDesktop);
+    if (this._isDesktop) {
       this.elements.body.classList.add('electron-mode');
     }
     
@@ -95,7 +95,7 @@ const Layout = {
   isPWA() {
     return window.matchMedia('(display-mode: standalone)').matches ||
            window.navigator.standalone === true ||
-           (window.electronAPI && window.electronAPI.isElectron);
+           (window.Native && window.Native.isDesktop);
   },
   
   /**
@@ -380,7 +380,7 @@ const Layout = {
   setupScrollHide() {
     // Desktop and Electron: never hide the nav — plenty of screen space
     const isDesktop = window.matchMedia('(min-width: 900px)').matches;
-    if (isDesktop || this._isElectron) return;
+    if (isDesktop || this._isDesktop) return;
     
     const HIDE_THRESHOLD = 40;
     const COOLDOWN_MS = 300;
