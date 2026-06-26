@@ -35,7 +35,7 @@ window.Native.{ kind, isDesktop, platform, listBundles, switchToVersion, revertT
 - Platform deps per https://tauri.app/start/prerequisites (e.g. WebKitGTK on Linux,
   WebView2 on Windows — preinstalled on Win11/most Win10).
 
-## Run (verified working)
+## Run (dev)
 
 ```bash
 # 1. Build the web app so _site exists (from repo root):
@@ -46,14 +46,35 @@ cd _dev/desktop-tauri/src-tauri
 cargo run            # first build ~1 min, then the window opens
 ```
 
-Dev PNG icons are already generated in `src-tauri/icons/`. For distribution **installers**
-you additionally need tauri-cli + platform icons (.icns/.ico):
+In dev the app serves `_site` straight from the repo (the `builtin_path()` fallback).
+
+## Build the installer (.dmg / .app)
 
 ```bash
-cargo install tauri-cli --version "^2"
-cargo tauri icon ../../../icons/icon-512.png   # full icon set incl. .icns/.ico
-cargo tauri build                              # installers under target/release/bundle/
+cargo install tauri-cli --version "^2"                 # one-time
+cd _dev/desktop-tauri/src-tauri
+cargo tauri icon ../../../icons/icon-512.png           # one-time: full .icns/.ico set
+cd ..  &&  ./build-dmg.sh
 ```
+
+`build-dmg.sh` runs the whole pipeline: `jekyll build` → `node build-desktop-site.js` (trim)
+→ `CI=true cargo tauri build`. Output: `src-tauri/target/release/bundle/dmg/*.dmg` (+ `.app`).
+
+`CI=true` is required on **headless** macOS — the dmg's Finder/AppleScript window styling
+fails without a GUI session; it's harmless on a normal desktop session.
+
+## Size optimizations
+
+The naive bundle was ~290 MB. Two fixes (both in place):
+
+1. **Stub frontend.** `build.frontendDist` → `frontend-stub/` (one placeholder `index.html`)
+   instead of `_site`. Tauri's `generate_context!()` embeds frontendDist **into the binary**;
+   the stub stops ~120 MB of `_site` being baked in (the app serves the real site from
+   bundled resources via `app://`, never the embedded copy).
+2. **Compressed-only resources.** `build-desktop-site.js` hard-links `_site` into
+   `desktop-site/` but drops every uncompressed file that has a `.gz` twin (~129 MB). The app
+   fetches `.gz` and unpacks just-in-time (`DecompressionStream`), so the plain copies are
+   dead weight. `bundle.resources` points at `desktop-site/`.
 
 ## Status — verified building + running
 
