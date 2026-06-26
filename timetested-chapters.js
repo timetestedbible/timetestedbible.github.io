@@ -3,8 +3,14 @@
 
 const TIME_TESTED_CHAPTERS = [
   // Main chapters
-  { 
-    id: '01_Introduction', 
+  {
+    id: '00_Preface',
+    title: 'Preface',
+    folder: 'chapters',
+    summary: 'Introduces the second edition and the new material added since the first—Lucifer’s Declared Plan, the Hebrew Revelation 12 sign, and the identical ancient consonants of “full moon” and “throne”—and how this evidence strengthens the case for when the month and year begin.'
+  },
+  {
+    id: '01_Introduction',
     title: '1. Introduction', 
     folder: 'chapters',
     summary: 'Introduces the fundamental problem with modern calendar traditions and establishes the need to return to biblical truth. This chapter sets the foundation for understanding why calendar accuracy matters for walking in truth and keeping appointed times.'
@@ -45,8 +51,14 @@ const TIME_TESTED_CHAPTERS = [
     folder: 'chapters',
     summary: 'Examines when the biblical month begins—dark moon, crescent moon, or full moon. This chapter tests various theories against historical evidence and biblical testimony to determine the correct method.'
   },
-  { 
-    id: '08_When_does_the_Year_Start', 
+  {
+    id: '07b_Lucifers_Declared_Plan',
+    title: 'Lucifer’s Declared Plan',
+    folder: 'chapters',
+    summary: 'A deep dive into the Hebrew of Isaiah 14, arguing that Lucifer’s declared plan is to raise a counterfeit dark moon over the appointed times and eclipse the sun—the most overt evidence that the true month begins at the full moon. Explores ben shachar, the “mount of the congregation” (moed), tsaphon, and the throne/full-moon identity.'
+  },
+  {
+    id: '08_When_does_the_Year_Start',
     title: '8. When Does the Year Start?', 
     folder: 'chapters',
     summary: 'Determines when the biblical year begins and how to identify the first month. This chapter examines the role of the equinox and agricultural signs in determining the year\'s start.'

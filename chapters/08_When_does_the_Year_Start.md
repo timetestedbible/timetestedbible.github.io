@@ -103,9 +103,27 @@ Some people put forth the idea that “Aviv” is a reference to the “barley s
 
 The precession of the equinoxes is a slow, cyclical wobble in Earth's axial tilt, akin to a spinning top gradually shifting its orientation, caused by gravitational pulls from the Sun and Moon on Earth's equatorial bulge. This precession completes a full cycle every approximately 25,772 years, causing the position of the vernal equinox (where the Sun crosses the celestial equator) to drift westward along the ecliptic by about 50 arcseconds per year relative to the fixed background stars. As a result, the zodiac constellations that align with the equinoxes and solstices slowly shift over millennia—what was once Aries at the spring equinox in ancient times is now Pisces, and will eventually become Aquarius.
 
-Linking the start of the year to any fixed stellar reference, such as the Sun or Moon's position relative to a star like Spica in Virgo (the "barley seed" in some interpretations), inevitably leads to seasonal drift over thousands of years because these alignments are sidereal (star-based) and ignore precession's gradual realignment of Earth's seasons with the zodiac. A calendar tied to such a star will initially sync with solar seasons but slip backward by about one zodiac sign every 2,000 years—too early relative to the equinox 4,000 years ago, occasionally aligning 2,000 years ago, and lagging a month later in recent centuries. This drift disrupts harmony with the land's rhythms, as feasts wander from spring renewal to winter chill.
+Linking the start of the year to any fixed stellar reference, such as the Sun or Moon's position relative to a star like Spica in Virgo (the "barley seed" in some interpretations), inevitably leads to seasonal drift over thousands of years because these alignments are sidereal (star-based) and ignore precession's gradual realignment of Earth's seasons with the zodiac. A calendar tied to such a star will initially sync with solar seasons but slip backward by about one zodiac sign every 2,000 years—too early relative to the equinox 4,000 years ago, occasionally aligning 2,000 years ago, and lagging a month later in recent centuries and by the end of the millennial reign it will severely lag the seasons. This drift disrupts harmony with the land's rhythms, as feasts wander from spring renewal to winter chill.
 
-For these reasons it fails to meet one of the principles outlined for the start of the year.
+For these reasons it fails to meet one of the principles outlined for the start of the year. However, principles must be recognized as a human aesthetic and we are not to lean on our own understanding. It is entirely possible that changes in the earth caused by the flood and future changes caused by something like a magnetic pole shift or God renewal of heaven and earth, will change the projected celestial misalignment before it becomes an issue.
+
+## The Revelation 12 Sign
+
+In an earlier chapter I introduced this translation of the Hebrew Revelation.
+
+> *And was seen a great sign (light) in the heavens, a certain/one woman clothed in the sun and the moon under her feet and from her begins authoritative cycle, one/first of twelve constellations (stars, Mazzaroth).*
+> — Revelation 12:1
+
+In Genesis we are told that there are two "great signs" or "great lights" in the heavens and that the sun, moon, and stars are for times and seasons and here we see a great light connected to a certain one woman, likely Virgo. This verse appears to state that a cycle of 12 stars (constellations) starts from her. This, in turn, implies that the months are named after the moons which are identified by the constellation of the moon. So we now have a plausible translation and interpretation of scripture that directly tells us when the year begins. This aligns with testimony from Josephus:
+
+> *In the month of Xanthicus, which is by us called Nisan, and is the beginning of our year, on the fourteenth day of the lunar month, when the sun is in Aries, (for in this month it was that we were delivered from bondage under the Egyptians,)*
+> — Josephus - Antiquities of the Jews, Book 3, Ch 10.5
+
+In 32 AD, the time of Josephus, the full moon at the foot of Virgo aligns with the sun at the foot of Aries and happens to also be the first full moon after the equinox. Therefore, in many years all three methods align, but in other years and other locations, this may not always be true.
+
+The challenge with using Spica to determine whether the moon is at the foot of Virgo and the specific requirement that Spica set before the full moon is that every timezone has a different reckoning and it is far more challenging to discern a global year than using an equinox.
+
+For example, in 2026 the Revelation 12 sign combined with Spica rule puts Israel an entire month ahead of the United States. This creates a situation where not only can days be off-by-one depending upon your location, but months can be off-by-one depending upon your location.
 
 ## The Location Problem: Why Observation Alone Creates Calendar Chaos
 
@@ -154,6 +172,8 @@ Some might argue that God's calendar was designed for a specific era—the time 
 
 The equinox, by contrast, is defined by Earth's relationship to the sun—the tilt of the axis relative to the orbital plane. This relationship is stable over tens of thousands of years (with only minor variations in obliquity). The equinox will mark the start of spring forever, regardless of which constellation happens to be behind the sun at that moment.
 
+Still, this objection only bites far outside the window of time Scripture is concerned with. The Spica / Revelation 12 sign holds true across that entire window—it aligns at the three pivotal dates of redemptive history: the Exodus, the Cross, and (if it arrives in the near future) the Second Coming. Precession only breaks the alignment long after that—and from that time on, no one knows but the Father, for Scripture itself tells us nothing beyond it. Just as the flood reset the face of the earth, the new heaven and new earth may well arrive with new signs and new revelation. An objection that only matters thousands of years beyond the prophetic window may simply be reaching into a future God has reserved for Himself.
+
 ## Resolving the Debate
 
 When we apply the principles established in the Principles of Evaluation chapter, the equinox rule satisfies them more fully than the Spica rule:
@@ -170,13 +190,13 @@ When we apply the principles established in the Principles of Evaluation chapter
 
 6. **Practical Global Decentralized Observation:** The equinox can be determined identically by observers worldwide. The Spica rule can yield different results for different locations.
 
-The Spica imagery in Revelation 12 ("a woman clothed with the sun, with the moon under her feet") may well be prophetically significant for identifying a specific historical event, but using it as the perpetual mechanism for determining the year start creates practical problems that violate the principles Scripture itself establishes for the calendar.
+The Spica imagery in Revelation 12 ("a woman clothed with the sun, with the moon under her feet") may well be prophetically significant for identifying a specific historical event, but using it as the perpetual mechanism for determining the year start raises the practical challenges explored above.
 
-The equinox rule—first renewed moon (full moon) on or after the spring equinox—provides a stable, predictable, globally consistent, and eternally reliable method for determining when the year begins.
+The equinox rule—first renewed moon (full moon) on or after the spring equinox—provides a stable, predictable, and globally consistent method for determining when the year begins.
 
 ## Conclusion
 
-To ensure the year starts with ripe Barley on Aviv 16th requires the use of the first renewed moon after the equinox. Even 2 weeks earlier would cause some years to lack ripe Barley. Any additional delay and the barley harvest would be entirely over in some years.
+You can be certain that if the first full moon is after the equinox, the barley is abib, and the full moon is at the foot of Virgo then your calendar year is starting on the right month. If some of these signs do not align on certain years and in certain regions then there is legitimate ambiguity on whether to prioritize the interpretation of the Revelation 12 sign or the timing relative to the equinox. As of this writing I have no objective historical anchor points that are able to disambiguate these signs as on both the year of the cross and the year of the Exodus they all agree.
 
 > *And God said, “Let there be lights in the expanse of the sky to distinguish between the day and the night, and let them be signs to mark the seasons and days and years. And let them serve as lights in the expanse of the sky to shine upon the earth.” And it was so.*
 > — Genesis 1:14
