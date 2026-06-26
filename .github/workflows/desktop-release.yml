@@ -3,14 +3,11 @@ name: Desktop Release (Tauri + Electron)
 # Builds BOTH desktop shells for macOS, Windows, and Linux and attaches the
 # installers to a GitHub Release.
 #
-#   - Tauri   = the lightweight default build (tiny, OS webview)
+#   - Tauri    = the lightweight default build (tiny, OS webview)
 #   - Electron = the compatibility fallback (bundled Chromium)
 #
 # Trigger: push a tag like `v2.2.0`, or run manually (workflow_dispatch).
-#
-# ⚠️ NOT yet validated on CI — this is a first-draft pipeline. Push a tag to a
-#    test branch / pre-release and iterate. Builds are UNSIGNED by default; add
-#    signing secrets (see _dev/DESKTOP_RELEASE.md) before public distribution.
+# Builds are UNSIGNED (by design — see _dev/desktop-release-notes.md for user steps).
 
 on:
   push:
@@ -22,68 +19,76 @@ on:
         required: true
 
 permissions:
-  contents: write   # create releases + upload assets
+  contents: write
 
 env:
   TAG: ${{ github.event.inputs.tag || github.ref_name }}
 
 jobs:
-  # ── Create the (draft) release once; build jobs upload assets into it ──
+  # ── Create the draft release once; build jobs upload assets into it ──
   create-release:
     runs-on: ubuntu-latest
-    outputs:
-      tag: ${{ env.TAG }}
     steps:
       - uses: actions/checkout@v4
-      - name: Create draft release
-        uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.TAG }}
           name: Time Tested Bible ${{ env.TAG }}
           draft: true
           body_path: _dev/desktop-release-notes.md
 
+  # ── Build the site ONCE (Jekyll only runs here), trim it, share it ──
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with: { ruby-version: '3.3', bundler-cache: true }
+      - run: bundle exec jekyll build
+      - name: Trim the site for bundling (.gz-only + 2nd-ed PDF)
+        run: node _dev/desktop-tauri/build-desktop-site.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _dev/desktop-tauri/desktop-site
+          retention-days: 1
+          include-hidden-files: true
+
   # ── Tauri (default build) ──
   tauri:
-    needs: create-release
+    needs: [create-release, prepare]
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: macos-14      # Apple Silicon (arm64)
-          - os: macos-13      # Intel (x64)
-          - os: windows-latest
-          - os: ubuntu-22.04
+        os: [macos-14, macos-13, windows-latest, ubuntu-22.04]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Ruby + build the site
-        uses: ruby/setup-ruby@v1
-        with: { ruby-version: '3.3', bundler-cache: true }
-      - run: bundle exec jekyll build
-
-      - name: Trim the site for the bundle (.gz-only + 2nd-ed PDF)
-        run: node _dev/desktop-tauri/build-desktop-site.js
-
+      - name: Fetch prepared site -> desktop-site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _dev/desktop-tauri/desktop-site
+      - name: Linux WebKit dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libgtk-3-dev \
+            libayatana-appindicator3-dev librsvg2-dev patchelf
       - name: Build + upload Tauri bundles
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # macOS signing/notarization (optional — leave unset for unsigned builds):
-          # APPLE_CERTIFICATE, APPLE_CERTIFICATE_PASSWORD, APPLE_SIGNING_IDENTITY,
-          # APPLE_ID, APPLE_PASSWORD, APPLE_TEAM_ID
         with:
           projectPath: _dev/desktop-tauri/src-tauri
-          tauriScript: cargo tauri
           tagName: ${{ env.TAG }}
           releaseName: Time Tested Bible ${{ env.TAG }}
           # GitHub Actions sets CI=true, so the dmg's Finder/AppleScript styling is
-          # auto-skipped; native arch per runner (no --target needed).
+          # auto-skipped; native arch per runner.
 
   # ── Electron (compatibility fallback) ──
   electron:
-    needs: create-release
+    needs: [create-release, prepare]
     strategy:
       fail-fast: false
       matrix:
@@ -95,33 +100,20 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Ruby + build the site
-        uses: ruby/setup-ruby@v1
-        with: { ruby-version: '3.3', bundler-cache: true }
-      - run: bundle exec jekyll build
-
-      - name: Trim data + create auto-update bundle
-        shell: bash
-        run: |
-          # drop uncompressed JSON that has a .gz twin (app fetches .gz)
-          find _site/data -name '*.json.gz' | while read -r gz; do
-            raw="${gz%.gz}"; [ -f "$raw" ] && rm "$raw"; done
-          # auto-update bundle (the updater downloads this)
-          tar czf _site/site-bundle.tar.gz -C _site --exclude=site-bundle.tar.gz .
-
-      - name: Setup Node + install
-        uses: actions/setup-node@v4
+      - name: Fetch prepared site -> _site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+      - uses: actions/setup-node@v4
         with: { node-version: '20' }
-      - run: npm ci
+      - name: Install Electron deps
         working-directory: _dev/desktop
-
+        run: npm install --no-audit --no-fund   # lockfile is out of sync; install reconciles
       - name: Build Electron installers
-        shell: bash
         working-directory: _dev/desktop
         run: npx electron-builder ${{ matrix.eb }} --publish never
-
-      - name: Upload Electron artifacts to release
+      - name: Upload Electron artifacts
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.TAG }}
