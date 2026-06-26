@@ -111,7 +111,7 @@ For these reasons it fails to meet one of the principles outlined for the start 
 
 In an earlier chapter I introduced this translation of the Hebrew Revelation.
 
-> *And was seen a great sign (light) in the heavens, a certain/one woman clothed in the sun and the moon under her feet and from her begins authoritative cycle, one/first of twelve constellations (stars, Mazzaroth).*
+> *And was seen a great sign (light) in the heavens, a certain/one woman clothed in the sun and the moon under her feet and from her begins authoritative circle/cycle, one/first of twelve constellations (stars, Mazzaroth).*
 > — Revelation 12:1
 
 In Genesis we are told that there are two "great signs" or "great lights" in the heavens and that the sun, moon, and stars are for times and seasons and here we see a great light connected to a certain one woman, likely Virgo. This verse appears to state that a cycle of 12 stars (constellations) starts from her. This, in turn, implies that the months are named after the moons which are identified by the constellation of the moon. So we now have a plausible translation and interpretation of scripture that directly tells us when the year begins. This aligns with testimony from Josephus:

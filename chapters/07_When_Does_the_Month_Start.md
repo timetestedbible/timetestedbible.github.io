@@ -186,6 +186,38 @@ Putting the letters together (ח + ד + ש = ḥōḏeš), the word evokes **a p
 
 The image fits the full moon without force, aligning with the Bible’s own use of the word for renewal to completeness. These letters also note dividing or separation of months as the gate/wall between one month and the next. The shining whiteness is hard to connect to a dark moon.
 
+This aligns with the meaning of the Hebrew letters that describe the renewed moon as an enclosed light in a door/gate and matches the imagery of the Pearly Gates containing One Whole Single Pearl like a Full Moon sitting among the stars.
+
+In what may be the original Hebrew of Revelation 12 we are given details that are missing in the Greek and English translations. These details strongly suggest that this isn’t merely Greek back-translated to Hebrew.
+
+> _And was seen a great sign (light) in the heavens, a certain/one woman clothed in the sun and the moon under her feet and from her begins authoritative circle/cycle, one/first of twelve constellations (stars, Mazzaroth)._
+> — Revelation 12:1
+
+In Genesis we are told that there are two “great signs” or “great lights” in the heavens and that the sun, moon, and stars are for times and seasons. We will revisit this later regarding when the year starts, but for now we see a great light clothed in the sun. The full moon is in Virgo in the spring when barley is in the ear (aviv) and if this is the head of the cycle of months (moonths) then this is clearly a full moon. The only other time Virgo can be “clothed in the sun” is the fall with a dark moon at her feet. At that time you cannot see the constellation stars of Virgo nor can you see the moon because the sun is in Virgo in the middle of the day.
+
+Once you connect the Hebrew word for “head” can mean start or height or source then you can bring more context to the rest of the sentence. The Hebrew word translated as “upon” can mean against, as in pressed up against, like you would press a tape measure against the wall. The word for crown is strongly connected to a circle that confers authority — and a circle is a cycle, and a cycle is the basis of the calendar. Crown → circle → cycle → calendar. But the most interesting aspect is the phrase “one of twelve stars” when you consider that a constellation consists of multiple stars. So the moon goes through the 12 constellations starting from Virgo.
+
+> _Then he had another dream, and he told it to his brothers. ‘Listen,’ he said, ‘I had another dream, and this time the sun and moon and eleven stars were bowing down to me.’ (Joseph being 12th/13th star)… His father rebuked him and said, ‘What is this dream you had? Will your mother and I and your brothers actually come and bow down to the ground before you?’_
+> — Genesis 37:9-10
+
+And from here we see that Genesis defines the 12 stars as the 12 tribes of Israel and the moon is connected to Joseph’s mother, a certain woman!
+
+> _And for the twelve stones, whether we understand by them the months, or whether we understand the like number of the signs of that circle which the Greeks call the Zodiac, we shall not be mistaken in their meaning._
+> — Josephus, Antiquities of the Jews 3.7.7 / 3.186
+
+> _Then the twelve stones on the breast, which are not like one another in colour, and which are divided into four rows of three stones in each, what else can they be emblems of, except of the circle of the zodiac? For that also is divided into four parts, each consisting of three animals, by which divisions it makes up the seasons of the year…_
+> — Philo of Alexandria (On the Life of Moses / De Vita Mosis II.124)
+
+> _…on his chest there are twelve precious stones of different colours, arranged in four rows of three stones in each row, being fashioned so as an emblem of the Zodiac. For the Zodiac also consists of twelve animals and so divides the four seasons of the year, allotting three animals to each season._
+> — Philo (Life of Moses II.80)
+
+The constellation Virgo is connected to the tribe of Issachar, which is widely understood as the tribe that understands the times and knowing when to act.
+
+> _“Of the children of Issachar, men that had understanding of the times, to know what Israel ought to do…”_
+> — 1 Chronicles 12:32
+
+And with this we come “full circle”, knowing that the full moon is the great sign of the months signified by the constellations starting with Virgo in the spring.
+
   
 
   
