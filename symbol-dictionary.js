@@ -47,6 +47,20 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/almond/'
   },
 
+  'ancient-of-days': {
+    key: 'ancient-of-days',
+    name: 'ANCIENT OF DAYS',
+    words: ['ancient', 'advanced', 'old', 'removed', 'days', 'venerable', 'durable'],
+    strongs: ['H6268', 'H6275', 'H6267', 'H6266', 'H6276', 'H6277', 'H3118'],
+    meaning: 'The starting point from which the days advance',
+    sentence: 'The starting point from which the days advance. The Aramaic root behind "Ancient" means "to advance, to proceed forward" — not merely "the old one." He is the Beginning of Days: the personified calendar origin, seated on His throne at Nisan 1.',
+    opposite: 'The adversary of Daniel 7:25, who *"thinks to change **times** and laws"* — attempting to displace the Starting of Days from His seat and substitute a counterfeit calendar.',
+    rank: 4.9,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/ancient-of-days/'
+  },
+
   'animal': {
     key: 'animal',
     name: 'ANIMAL',
@@ -168,7 +182,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The life of the flesh made visible',
     sentence: 'The life of the flesh made visible — which when offered atones, when taken accuses, and when displayed marks what belongs to God.',
     opposite: 'Water — sustaining provision. When Water becomes blood (Exod 7:17, Rev 16:3–4), provision is inverted into testimony of death',
-    rank: 5.7,
+    rank: 5.9,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/blood/'
@@ -196,7 +210,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Word of God',
     sentence: 'The Word of God — covenant terms spoken from His mouth, received as sustenance for life.',
     opposite: 'Famine — specifically "not a famine of bread… but of hearing the words of the LORD" (Amos 8:11)',
-    rank: 8.1,
+    rank: 8.7,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/bread/'
@@ -718,7 +732,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The day of fullness',
     sentence: 'The day of fullness — when the king takes his throne. The Hebrew word for "full moon" and the word for "throne" are the same consonants: כסא.',
     opposite: 'New moon *chodesh*) — the concealed/renewed moon, the beginning of the cycle',
-    rank: 5.2,
+    rank: 5.4,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/full-moon/'
@@ -1174,6 +1188,34 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/marriage/'
   },
 
+  'meat': {
+    key: 'meat',
+    name: 'MEAT',
+    words: ['meat', 'strong meat', 'solid food'],
+    strongs: ['G1033', 'G1035', 'G5160', 'G2307', 'G5048'],
+    meaning: 'Doing the will of the Father',
+    sentence: 'Doing the will of the Father — the will done is the soul\'s true food. (Milk is the word heard; meat is the will done.)',
+    opposite: 'Milk — the word merely *heard / received* (a babe is fed; he hasn\'t yet *done*)',
+    rank: 5.3,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/meat/'
+  },
+
+  'milk': {
+    key: 'milk',
+    name: 'MILK',
+    words: ['milk', 'milk of the word', 'sincere milk'],
+    strongs: ['G1051', 'G3050'],
+    meaning: 'The word received',
+    sentence: 'The word received — the elementary, pre-digested first food by which new believers grow, meant to give way to meat (the will done).',
+    opposite: 'Meat — the will *done* (milk is fed *to* you; meat you must work and discern)',
+    rank: 5.1,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/milk/'
+  },
+
   'moment': {
     key: 'moment',
     name: 'MOMENT',
@@ -1308,7 +1350,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The hidden direction',
     sentence: 'The hidden direction — the quarter from which what is concealed approaches, whether God\'s glory or God\'s judgment.',
     opposite: 'The south *negeb* = parched, dry, visible; *teman* = right hand when facing east — the known, open, exposed direction)',
-    rank: 5.1,
+    rank: 5.2,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/north/'
@@ -1857,7 +1899,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The seat of governing authority',
     sentence: 'The seat of governing authority — who sits on it defines the age. The Hebrew word for "throne" and "full moon" are the same consonants: כסא.',
     opposite: 'Footstool — the position of subjugation beneath the throne (Ps 110:1 "make thine enemies thy footstool")',
-    rank: 5.7,
+    rank: 5.8,
     category: 'Authority & Governance',
     subcategory: null,
     link: '/research/symbols/throne/'
