@@ -278,7 +278,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research', 'multiverse'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'books', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research', 'multiverse'],
   
   /**
    * Parse URL into state
@@ -393,6 +393,12 @@ const URLRouter = {
       if (result.content.params._multiverseRedirect) {
         result.content.view = 'reader';
         delete result.content.params._multiverseRedirect;
+      }
+      // /books/{book}/{chapter} → render the AsciiDoc book in reader view
+      if (result.content.params._book) {
+        result.content.view = 'reader';
+        result.content.params.contentType = 'books';
+        delete result.content.params._book;
       }
       // Parse query params
       this._parseQueryParams(searchParams, result);
@@ -679,7 +685,17 @@ const URLRouter = {
         // /book/01_Introduction (legacy, redirects to reader)
         if (parts[0]) params.chapterId = parts[0];
         break;
-      
+
+      case 'books':
+        // /books/{book}/{chapter} → AsciiDoc book in reader view
+        // /books/{book}            → book table of contents
+        if (parts[0]) {
+          params.bookSlug = parts[0].toLowerCase().replace(/\/$/, '');
+          if (parts[1]) params.chapterSlug = parts[1].toLowerCase().replace(/\/$/, '');
+          params._book = true;
+        }
+        break;
+
       case 'symbols':
         // /symbols/tree (legacy, redirects to reader)
         if (parts[0]) params.symbol = parts[0].toLowerCase();
@@ -930,6 +946,13 @@ const URLRouter = {
       path = content.params.study
         ? '/research/verses/' + content.params.study
         : '/research/verses';
+    }
+    // AsciiDoc books: /books/{book}/{chapter} to match static Jekyll pages for SEO
+    else if (content.view === 'reader' && content.params?.contentType === 'books') {
+      const b = content.params.bookSlug || 'symbolic-language';
+      path = content.params.chapterSlug
+        ? '/books/' + b + '/' + content.params.chapterSlug
+        : '/books/' + b;
     }
     // Multiverse: /multiverse/[translation/]seg1/seg2/...
     else if (content.view === 'reader' && content.params?.contentType === 'multiverse') {

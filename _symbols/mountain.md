@@ -29,13 +29,13 @@ This is the single key that unlocks every mountain passage in Scripture. Mountai
 
 **Symbolizes:** Kingdom — ruling authority, governmental power, a seat of dominion
 
-**Opposite:** The $sea — chaotic nations without government, turbulent peoples. Also the valley — the place of subjection, not rule
+**Opposite:** The $sea — chaotic nations without government, turbulent peoples. Also the $valley — the low place of subjection, not rule
 
 **Defining verses:** Rev 17:9, Dan 2:35, Dan 2:44–45, Isa 2:2–3, Jer 51:25
 
 **The surprise:** When Jesus says "say unto this mountain, Be thou removed, and be thou cast into the $[sea]" (Mat 21:21), He is not talking about geology. A $mountain cast into the $sea is a kingdom thrown into the chaos of ungoverned peoples. $faith — trusting obedience — topples ruling powers.
 
-**Connected:** $sea, $rock, $babylon, $jerusalem, $faith, $truth, $bread
+**Connected:** $sea, $valley, $rock, $babylon, $jerusalem, $faith, $truth, $bread
 
 ---
 

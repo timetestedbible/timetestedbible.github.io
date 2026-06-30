@@ -37,8 +37,18 @@ collections:
     output: true
     permalink: /research/verses/:path/
 
-# Don't generate a default feed or other Jekyll extras
-plugins: []
+# Plugins (custom GitHub Actions build — not restricted to the Pages safelist)
+plugins:
+  - jekyll-asciidoc
+
+# AsciiDoc rendering (the "Bible's Symbolic Language" book). Static, build-time.
+asciidoctor:
+  attributes:
+    - showtitle@        # let the layout render the title, not Asciidoctor
+    - sectanchors       # anchor links on headings
+    - sectlinks
+    - idprefix=_
+    - idseparator=-
 
 # Blog post permalink structure
 permalink: /blog/:slug/
@@ -81,6 +91,16 @@ defaults:
       type: verses
     values:
       layout: "verse-study"
+      og_type: "article"
+      author: "Time Tested Bible"
+      og_image: "https://timetested.bible/icons/og-image.png"
+  # "The Bible's Symbolic Language" book — AsciiDoc chapters
+  - scope:
+      path: "books/symbolic-language"
+    values:
+      layout: "book-chapter"
+      book: "The Bible's Symbolic Language"
+      book_slug: "symbolic-language"
       og_type: "article"
       author: "Time Tested Bible"
       og_image: "https://timetested.bible/icons/og-image.png"

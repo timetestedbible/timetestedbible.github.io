@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="book-index-content" role="article" aria-label="{{ page.book }}">
+  <header class="book-index-header">
+    <h1 class="book-index-title">{{ page.book }}</h1>
+    {% if page.subtitle %}<p class="book-index-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  <div class="book-index-intro">
+    {{ content }}
+  </div>
+
+  {% assign chapters = site.pages | where: "book_slug", page.book_slug | where_exp: "p", "p.order" | sort: "order" %}
+  <ol class="book-index-toc">
+    {% for c in chapters %}
+      <li class="book-toc-item">
+        <a href="{{ c.url }}">
+          <span class="book-toc-title">{{ c.title }}</span>
+          {% if c.description %}<span class="book-toc-desc">{{ c.description }}</span>{% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+</article>
+<script>
+(function () {
+  var art = document.querySelector('article.book-index-content');
+  if (art) {
+    window.__jekyllArticle = {
+      type: 'book-index',
+      bookSlug: {{ page.book_slug | jsonify }},
+      html: art.innerHTML
+    };
+  }
+})();
+</script>

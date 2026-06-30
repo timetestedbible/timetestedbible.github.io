@@ -1,0 +1,55 @@
+---
+layout: default
+---
+{% assign chapters = site.pages | where: "book_slug", page.book_slug | where_exp: "p", "p.order" | sort: "order" %}
+{% assign curIdx = 0 %}
+{% for c in chapters %}{% if c.slug == page.slug %}{% assign curIdx = forloop.index0 %}{% endif %}{% endfor %}
+{% assign prevIdx = curIdx | minus: 1 %}
+{% assign nextIdx = curIdx | plus: 1 %}
+<article class="book-chapter-content" role="article" aria-label="{{ page.title }}">
+  {% if page.epigraphs %}
+  <div class="book-chapter-epigraphs">
+    {% for e in page.epigraphs %}
+    <blockquote class="chapter-epigraph">
+      <p>{{ e.quote }}</p>
+      <cite>&mdash; {{ e.ref }}</cite>
+    </blockquote>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <header class="book-chapter-header">
+    <a class="book-chapter-booktitle" href="/books/{{ page.book_slug }}/">{{ page.book }}</a>
+    <h1 class="book-chapter-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="book-chapter-body">
+    {{ content }}
+  </div>
+
+  <nav class="book-chapter-nav">
+    {% if curIdx > 0 %}{% assign p = chapters[prevIdx] %}<a class="book-nav-btn book-nav-prev" href="{{ p.url }}">&larr; {{ p.title }}</a>{% else %}<span></span>{% endif %}
+    <a class="book-nav-btn book-nav-toc" href="/books/{{ page.book_slug }}/">Contents</a>
+    {% if nextIdx < chapters.size %}{% assign n = chapters[nextIdx] %}<a class="book-nav-btn book-nav-next" href="{{ n.url }}">{{ n.title }} &rarr;</a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>
+<script>
+(function () {
+  // Cache the Jekyll-rendered chapter body so the SPA reader can reuse it
+  // without re-fetching. Mirrors the symbol-study layout. The reader builds
+  // its own header/nav from the chapter registry, so cache only the body.
+  var body = document.querySelector('article.book-chapter-content .book-chapter-body');
+  var epi = document.querySelector('article.book-chapter-content .book-chapter-epigraphs');
+  if (body) {
+    window.__jekyllArticle = {
+      type: 'book',
+      book: {{ page.book | jsonify }},
+      bookSlug: {{ page.book_slug | jsonify }},
+      slug: {{ page.slug | jsonify }},
+      title: {{ page.title | jsonify }},
+      epigraphsHtml: epi ? epi.innerHTML : '',
+      html: body.innerHTML
+    };
+  }
+})();
+</script>

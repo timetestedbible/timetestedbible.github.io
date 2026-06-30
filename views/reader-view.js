@@ -192,6 +192,9 @@ const ReaderView = {
       case 'timetested':
         currentKey = `timetested:${params.chapterId || 'index'}`;
         break;
+      case 'books':
+        currentKey = `books:${params.bookSlug || ''}:${params.chapterSlug || 'index'}`;
+        break;
       case 'blog':
         currentKey = `blog:${params.slug || 'index'}`;
         break;
@@ -330,7 +333,13 @@ const ReaderView = {
           }
         }, 50);
         break;
-      
+
+      case 'books':
+        // "The Bible's Symbolic Language" (and future AsciiDoc books)
+        this.renderBookInBibleFrame(state, derived, container, params.bookSlug, params.chapterSlug, params.section);
+        this.syncUIState(state.ui);
+        break;
+
       case 'blog': {
         // Render the Bible frame structure first (includes research panel)
         const blogState = { content: { params: { contentType: 'blog' } } };
@@ -1763,6 +1772,133 @@ const ReaderView = {
    * @param {string} chapterId - Chapter ID to load
    * @param {string} section - Optional section anchor to scroll to
    */
+  /**
+   * Render an AsciiDoc book chapter ("The Bible's Symbolic Language") inside
+   * the Bible reader frame. Chapters are pre-rendered to HTML by Jekyll;
+   * here we reuse that HTML (cached on first load, fetched on SPA navigation)
+   * and wrap it in the book's header + prev/next navigation.
+   */
+  renderBookInBibleFrame(state, derived, container, bookSlug, chapterSlug, section) {
+    const bookState = { content: { params: { contentType: 'books' } } };
+    const existingPage = container.querySelector('#bible-explorer-page');
+    if (!existingPage) {
+      if (typeof BibleView !== 'undefined') {
+        BibleView.renderStructure(container, bookState);
+      }
+    } else if (typeof BibleView !== 'undefined' && BibleView.syncSelectorVisibility) {
+      BibleView.syncSelectorVisibility(bookState);
+    }
+
+    const book = (typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook.book : null;
+    const bookTitle = book ? book.title : 'Book';
+    const textArea = container.querySelector('#bible-explorer-text');
+    const titleEl = container.querySelector('#bible-chapter-title');
+
+    if (!textArea) return;
+
+    // No chapter → show the table of contents
+    if (!chapterSlug) {
+      if (titleEl) titleEl.textContent = bookTitle;
+      const items = (book ? book.chapters : []).map(c =>
+        `<li class="book-toc-item"><a href="${SymbolicLanguageBook.chapterPath(c.slug)}"
+            onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug || book.slug}',chapterSlug:'${c.slug}'}})">
+            <span class="book-toc-title">${c.title}</span>
+            ${c.summary ? `<span class="book-toc-desc">${c.summary}</span>` : ''}
+          </a></li>`).join('');
+      textArea.innerHTML = `
+        <div class="book-index-content">
+          <header class="book-index-header"><h1 class="book-index-title">${bookTitle}</h1></header>
+          <ol class="book-index-toc">${items}</ol>
+        </div>`;
+      this.hideChapterNav(container);
+      return;
+    }
+
+    const chapter = (typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook.getChapter(chapterSlug) : null;
+    const chapterTitle = chapter ? chapter.title : 'Chapter';
+    if (titleEl) titleEl.textContent = chapterTitle;
+
+    const nav = (typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook.getPrevNext(chapterSlug) : { prev: null, next: null };
+    const navBtn = (ch, dir) => ch
+      ? `<button class="book-nav-btn book-nav-${dir}" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug}',chapterSlug:'${ch.slug}'}})">${dir === 'prev' ? '← ' : ''}${ch.title}${dir === 'next' ? ' →' : ''}</button>`
+      : '<span></span>';
+
+    textArea.innerHTML = `
+      <div class="book-chapter-content">
+        <div class="book-chapter-epigraphs" id="book-chapter-epigraphs" style="display:none"></div>
+        <header class="book-chapter-header">
+          <button class="book-chapter-booktitle" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug}'}})">${bookTitle}</button>
+          <h1 class="book-chapter-title">${chapterTitle}</h1>
+        </header>
+        <div class="book-chapter-body" id="book-chapter-body"><div class="book-loading">Loading…</div></div>
+        <nav class="book-chapter-nav">
+          ${navBtn(nav.prev, 'prev')}
+          <button class="book-nav-btn book-nav-toc" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug}'}})">Contents</button>
+          ${navBtn(nav.next, 'next')}
+        </nav>
+      </div>`;
+
+    this.loadBookChapter(bookSlug, chapterSlug, textArea, section);
+    this.hideChapterNav(container);
+  },
+
+  /**
+   * Load a book chapter's rendered body: reuse the Jekyll-cached article on
+   * initial page load, otherwise fetch the pre-rendered page over the network.
+   */
+  async loadBookChapter(bookSlug, chapterSlug, container, section) {
+    const body = container.querySelector('#book-chapter-body');
+    const epiEl = container.querySelector('#book-chapter-epigraphs');
+    if (!body) return;
+    try {
+      let html, epigraphsHtml = '';
+      // Path 1: cached article from the Jekyll page (initial load)
+      if (window.__jekyllArticle && window.__jekyllArticle.type === 'book' &&
+          (!window.__jekyllArticle.slug || window.__jekyllArticle.slug === chapterSlug)) {
+        html = window.__jekyllArticle.html;
+        epigraphsHtml = window.__jekyllArticle.epigraphsHtml || '';
+        delete window.__jekyllArticle;
+      } else {
+        // Path 2: SPA navigation — fetch the pre-rendered page
+        const response = await fetch(`/books/${bookSlug}/${chapterSlug}/`);
+        if (!response.ok) throw new Error(`Chapter not found: ${chapterSlug}`);
+        const pageHtml = await response.text();
+        const doc = new DOMParser().parseFromString(pageHtml, 'text/html');
+        const article = doc.querySelector('.book-chapter-body');
+        if (!article) throw new Error(`No chapter body found for: ${chapterSlug}`);
+        html = article.innerHTML;
+        const epiSrc = doc.querySelector('.book-chapter-epigraphs');
+        epigraphsHtml = epiSrc ? epiSrc.innerHTML : '';
+      }
+
+      // Chapter epigraphs sit above the title
+      if (epiEl) {
+        if (epigraphsHtml) { epiEl.innerHTML = epigraphsHtml; epiEl.style.display = ''; }
+        else { epiEl.innerHTML = ''; epiEl.style.display = 'none'; }
+      }
+
+      body.innerHTML = html;
+
+      // Reuse the site's content enhancers
+      if (epiEl && epiEl.innerHTML) this.linkifyScriptureRefs(epiEl);
+      this.linkifyScriptureRefs(body);
+      this.linkifySymbolRefs(body);
+      if (typeof this.linkifyClassicsRefs === 'function') this.linkifyClassicsRefs(body);
+      if (typeof this.linkifyReaderLinks === 'function') this.linkifyReaderLinks(body);
+
+      const scrollRoot = container.closest('#bible-explorer-text') || container;
+      if (typeof this.setupScrollSpy === 'function') this.setupScrollSpy(scrollRoot);
+      if (section && typeof this.scrollToSection === 'function') {
+        setTimeout(() => this.scrollToSection(section, container), 100);
+      } else if (typeof this.scrollToHashHeading === 'function') {
+        this.scrollToHashHeading(scrollRoot);
+      }
+    } catch (e) {
+      console.error('[ReaderView] Error loading book chapter:', e);
+      body.innerHTML = `<div class="reader-error">Could not load chapter: ${e.message}</div>`;
+    }
+  },
+
   renderTimeTestedInBibleFrame(state, derived, container, chapterId, section) {
     // First render the Bible structure if not already present
     const tttState = { content: { params: { contentType: 'timetested' } } };

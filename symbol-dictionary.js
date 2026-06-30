@@ -620,7 +620,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s holy standard in active contact',
     sentence: 'God\'s holy standard in active contact — consuming what violates covenant, refining what keeps it.',
     opposite: 'Quenching (1 Th 5:19 — "Quench not the Spirit") / Water as paired judgment agent (2 Pet 3:5–7 — the world judged first by water, reserved now for fire)',
-    rank: 12.6,
+    rank: 12.7,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/fire/'
@@ -831,7 +831,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The appointed separation',
     sentence: 'The appointed separation — the consummation when accumulated works reach fullness and are gathered to their outcome.',
     opposite: 'Seedtime / Sowing (Gen 8:22) — the beginning of the process whose end is harvest',
-    rank: 5.1,
+    rank: 5.3,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/harvest/'
@@ -1237,8 +1237,8 @@ const SYMBOL_DICTIONARY = {
     strongs: ['H2022', 'G3735'],
     meaning: 'A kingdom',
     sentence: 'A kingdom — a seat of ruling authority, established over the peoples below.',
-    opposite: 'The Sea — chaotic nations without government, turbulent peoples. Also the valley — the place of subjection, not rule',
-    rank: 7.1,
+    opposite: 'The Sea — chaotic nations without government, turbulent peoples. Also the Valley — the low place of subjection, not rule',
+    rank: 7.3,
     category: 'Authority & Governance',
     subcategory: null,
     link: '/research/symbols/mountain/'
@@ -1505,7 +1505,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The unchanging covenant',
     sentence: 'The unchanging covenant — the binding agreement between God and man that does not shift, does not fail, and upon which everything stands or falls.',
     opposite: 'Sand — multitudes at the covenant boundary, people without a binding relationship to God, shifting and innumerable but not yet bound',
-    rank: 8,
+    rank: 8.2,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/rock/'
@@ -1575,7 +1575,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The chaotic mass of nations and peoples',
     sentence: 'The chaotic mass of nations and peoples — restless, turbulent, ungoverned by covenant.',
     opposite: 'Island / dry land — the set-apart, the sanctified, that which God has separated *out* of the sea',
-    rank: 8.6,
+    rank: 8.8,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/sea/'
@@ -1956,7 +1956,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s commandments',
     sentence: 'God\'s commandments — the divine standard by which reality is measured and life is lived.',
     opposite: 'The lie — rejecting God\'s standard; man\'s way substituted for God\'s way',
-    rank: 8,
+    rank: 8.1,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/truth/'
@@ -1988,6 +1988,20 @@ const SYMBOL_DICTIONARY = {
     category: 'Works & Evidence',
     subcategory: 'Rebellion\'s Fruit',
     link: '/research/symbols/untimely-fig/'
+  },
+
+  'valley': {
+    key: 'valley',
+    name: 'VALLEY',
+    words: ['valley', 'valleys', 'low', 'lowly', 'brought low', 'humble', 'depths'],
+    strongs: ['H1516', 'H6010', 'H1237', 'G5327'],
+    meaning: 'The low place',
+    sentence: 'The low place — subjection, humbling, death, and decision; the pole opposite the ruling mountain, and the ground from which God exalts the lowly.',
+    opposite: 'Mountain — a kingdom, a seat of rule, the exalted',
+    rank: 5,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/valley/'
   },
 
   'virgin': {
@@ -2026,7 +2040,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The life that flows from God\'s presence',
     sentence: 'The life that flows from God\'s presence — distinguished from the sea by its source and movement, and from human religion by its continuous, self-renewing supply.',
     opposite: 'Cisterns (man-made, broken, containment of dead water) / bitter water / the Sea (gathered, chaotic, restless)',
-    rank: 6.6,
+    rank: 6.8,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/water/'

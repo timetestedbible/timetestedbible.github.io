@@ -1,0 +1,331 @@
+/* ===========================================================================
+   "The Bible's Symbolic Language" — book reading styles
+   Used by the book-chapter / book-index layouts AND by the SPA reader's
+   book content-type. Scoped to .book-chapter-* / .book-index-* so nothing
+   existing is affected.
+   =========================================================================== */
+
+.book-chapter-content,
+.book-index-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+  color: var(--text-primary);
+}
+
+/* ---- Chapter header ---- */
+.book-chapter-header,
+.book-index-header {
+  text-align: center;
+  margin: 8px 0 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.book-chapter-booktitle {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.book-chapter-booktitle:hover { color: var(--accent-gold-hover); }
+
+.book-chapter-title,
+.book-index-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 600;
+}
+
+.book-index-subtitle {
+  margin: 14px 0 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+/* ---- Chapter epigraphs (centered, above the chapter title) ---- */
+.book-chapter-epigraphs {
+  max-width: 560px;
+  margin: 4px auto 26px;
+  text-align: center;
+}
+.book-chapter-epigraphs .chapter-epigraph {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+.book-chapter-epigraphs .chapter-epigraph p {
+  margin: 0 0 5px;
+  line-height: 1.6;
+}
+.book-chapter-epigraphs .chapter-epigraph cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.85em;
+  color: var(--text-tertiary);
+}
+.book-chapter-epigraphs .chapter-epigraph a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+/* ---- Reading body ---- */
+.book-chapter-body {
+  font-size: 1.075rem;
+  line-height: 1.78;
+  color: var(--text-primary);
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+/* Don't justify the right-aligned citations or centered epigraphs */
+.book-chapter-body .attribution { text-align: right; }
+.book-chapter-body .quoteblock.epigraph,
+.book-chapter-body .quoteblock.epigraph blockquote p { text-align: center; }
+
+.book-chapter-body p {
+  margin: 0 0 1.2em;
+}
+
+/* Book-style first-line indent: only consecutive flowing paragraphs are
+   indented; the first paragraph and any paragraph right after a quote stay
+   flush (Asciidoctor wraps each paragraph in <div class="paragraph">). */
+.book-chapter-body > .paragraph + .paragraph p {
+  text-indent: 1.6em;
+}
+.book-chapter-body > .opening + .paragraph p { text-indent: 0; }
+
+/* Drop cap on the opening paragraph (explicitly marked [.opening] in the .adoc). */
+.book-chapter-body .opening p:first-letter {
+  float: left;
+  font-size: 3.1em;
+  line-height: 0.82;
+  padding: 0.05em 0.1em 0 0;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.book-chapter-body strong,
+.book-chapter-body b { color: var(--accent-primary); font-weight: 600; }
+
+.book-chapter-body em,
+.book-chapter-body i { color: var(--accent-gold); font-style: italic; }
+
+.book-chapter-body h2,
+.book-chapter-body h3 {
+  color: var(--accent-primary);
+  margin: 1.8em 0 0.6em;
+  line-height: 1.3;
+}
+.book-chapter-body h2 { font-size: 1.5rem; }
+.book-chapter-body h3 { font-size: 1.2rem; color: var(--accent-gold); }
+
+/* ---- Quote blocks (Asciidoctor .quoteblock) ----
+   Asciidoctor renders .attribution as a SIBLING after <blockquote>, not a
+   child. So the border + padding live on the .quoteblock container, which
+   keeps the citation visually INSIDE the quote and lets us right-align it. */
+.book-chapter-body .quoteblock {
+  margin: 1.6em 1.9em;
+  padding: 0.35em 0.95em 0.35em 1.25em;
+  border-left: 3px solid var(--border-gold);
+}
+.book-chapter-body .quoteblock blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--text-secondary);
+}
+/* Kill the global paragraph bottom-margin inside quotes (it was the "blank
+   line" before the citation). Multi-paragraph quotes still get spacing. */
+.book-chapter-body .quoteblock blockquote p { margin: 0; }
+.book-chapter-body .quoteblock blockquote .paragraph + .paragraph p { margin-top: 0.6em; }
+
+.book-chapter-body .quoteblock .attribution {
+  margin-top: 0.35em;
+  text-align: right;
+  font-size: 0.9em;
+  color: var(--text-tertiary);
+  font-style: normal;
+}
+/* Keep speaker + reference on one line: "— Jesus, Matthew 15:15-16".
+   Asciidoctor puts a <br> between the attribution name and the <cite>. */
+.book-chapter-body .quoteblock .attribution br { display: none; }
+.book-chapter-body .quoteblock .attribution cite::before { content: ", "; }
+.book-chapter-body .quoteblock .attribution cite {
+  font-style: normal;
+  color: var(--accent-primary);
+}
+
+/* Scripture quotes: italic, gold rule */
+.book-chapter-body .quoteblock.scripture {
+  border-left-color: var(--accent-gold-strong);
+}
+.book-chapter-body .quoteblock.scripture blockquote {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* Opening epigraphs: lighter, centered, no rule — set the chapter's tone */
+.book-chapter-body .quoteblock.epigraph {
+  max-width: 560px;
+  margin: 0 auto 1.5em;
+  padding: 0;
+  border-left: 0;
+  text-align: center;
+}
+.book-chapter-body .quoteblock.epigraph blockquote {
+  font-size: 0.98em;
+  color: var(--text-secondary);
+}
+.book-chapter-body .quoteblock.epigraph .attribution {
+  text-align: center;
+}
+
+/* Asciidoctor wraps inline italic emphasis differently; keep links readable */
+.book-chapter-body a { color: var(--accent-primary); text-decoration: none; }
+.book-chapter-body a:hover { text-decoration: underline; }
+
+/* ---- Tables (prevalence tables) — clean booktabs style: horizontal rules only ---- */
+.book-chapter-body table {
+  border-collapse: collapse;
+  margin: 1.8em auto;
+  font-size: 0.95rem;
+  width: 100%;
+  border-top: 2px solid var(--border-strong);
+  border-bottom: 2px solid var(--border-strong);
+}
+.book-chapter-body table caption,
+.book-chapter-body .title {
+  caption-side: top;
+  color: var(--text-tertiary);
+  font-style: italic;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.book-chapter-body th,
+.book-chapter-body td {
+  border: 0;
+  padding: 4px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+.book-chapter-body thead th {
+  color: var(--text-primary);
+  background: none;
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--border-strong);
+  letter-spacing: 0.02em;
+}
+.book-chapter-body tbody td { color: var(--text-secondary); }
+.book-chapter-body tbody tr + tr td { border-top: 1px solid var(--border-subtle); }
+/* center the rank + prevalence columns */
+.book-chapter-body .prevalence-table td:first-child,
+.book-chapter-body .prevalence-table th:first-child,
+.book-chapter-body .prevalence-table td:last-child,
+.book-chapter-body .prevalence-table th:last-child { text-align: center; }
+
+/* ---- Chapter nav ---- */
+.book-chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+.book-nav-btn {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--nav-btn-border);
+  background: var(--nav-btn-bg);
+  transition: background 0.15s ease;
+}
+.book-nav-btn:hover { background: var(--nav-btn-hover-bg); }
+.book-nav-toc { border-style: dashed; }
+
+/* ---- Index / table of contents ---- */
+.book-index-intro {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+.book-index-toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: bookch;
+}
+.book-toc-item { margin: 0 0 10px; }
+.book-toc-item a {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--surface-hover);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.book-toc-item a:hover {
+  border-color: var(--border-accent);
+  background: var(--surface-active);
+}
+.book-toc-title {
+  display: block;
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.book-toc-desc {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ---- Footnotes (cross-references between symbols) ---- */
+.book-chapter-body sup.footnote { font-size: 0.7em; line-height: 0; }
+.book-chapter-body sup.footnote a { text-decoration: none; }
+.book-chapter-body #footnotes {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, rgba(128,128,128,0.3));
+}
+.book-chapter-body #footnotes .footnote {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+.book-chapter-body #footnotes .footnote > a { font-weight: 600; text-decoration: none; }
+
+/* ---- Light theme overrides ---- */
+body.theme-light .book-chapter-title,
+body.theme-light .book-index-title,
+body.theme-light .book-chapter-body { color: var(--text-primary); }
+
+@media (max-width: 600px) {
+  .book-chapter-content,
+  .book-index-content { padding: 16px 16px 48px; }
+  .book-chapter-body .quoteblock { margin-left: 0.75em; margin-right: 0.5em; }
+  .book-chapter-title,
+  .book-index-title { font-size: 1.6rem; }
+  .book-chapter-body { font-size: 1.02rem; }
+  .book-chapter-nav { flex-direction: column; align-items: stretch; }
+  .book-nav-btn { text-align: center; }
+}
