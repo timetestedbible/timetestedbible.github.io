@@ -329,3 +329,12 @@ body.theme-light .book-chapter-body { color: var(--text-primary); }
   .book-chapter-nav { flex-direction: column; align-items: stretch; }
   .book-nav-btn { text-align: center; }
 }
+
+/* ---- Symbol cross-references (glossary) — a common fixed-width bold style ---- */
+.book-chapter-body .symbol {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.book-chapter-body .seeref { font-style: italic; font-size: 0.9em; }
+.book-chapter-body .scref { font-style: italic; font-size: 0.85em; }

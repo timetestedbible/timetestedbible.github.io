@@ -36,6 +36,17 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   FN_RULE_GAP   = 5      # gap below the rule, above the first note
   EPIGRAPH_INDENT = 40   # left/right margin on chapter epigraphs (keeps lines short, no hyphenation)
 
+  # Style roled cross-references (the sym: glossary macro). asciidoctor-pdf's xref
+  # branch makes the internal jump (<a anchor=...>) but omits the role class, so a
+  # roled xref loses its styling; re-add the class while keeping the internal anchor.
+  def convert_inline_anchor node
+    if node.type == :xref && (role = node.role) && (refid = node.attributes['refid']) && node.text && !node.attributes['path']
+      %(<a anchor="#{derive_anchor_from_id refid}" class="#{role}">#{node.text}</a>).gsub ']', '&#93;'
+    else
+      super
+    end
+  end
+
   # init_pdf runs allocate_scratch_prototype (Marshal.dump self) for dry runs;
   # our state (esp. a Document ref) must not exist yet, so set it up AFTER super.
   def init_pdf doc
@@ -135,9 +146,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # give us the TOC, PDF bookmarks, and running heads; this keeps the epigraph
   # above the title. Data comes from $chapter_epigraphs (set by build.rb).
   def ink_chapter_title node, title, opts = {}
-    move_down 150   # chapter sink — begin each opener partway down the page
     epis = (defined?($chapter_epigraphs) && $chapter_epigraphs) ? $chapter_epigraphs[node.id] : nil
     if epis && !epis.empty?
+      move_down 48   # small top sink — the epigraph sits in the upper half of the opener
       esc = ->(s) { s.to_s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
       theme_font :base do
         epis.each do |e|
@@ -147,8 +158,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
           end
         end
       end
-      move_down 6
     end
+    # Drop the chapter title to about the middle of the page; the epigraph stays
+    # above it in the top half. (Guard so a long epigraph never pushes it upward.)
+    mid = bounds.height / 2.0
+    move_cursor_to mid if cursor > mid
     super
   end
 end

@@ -15,9 +15,11 @@ require 'asciidoctor'
 require 'asciidoctor-pdf'
 require 'yaml'
 require_relative 'extension'
+require File.expand_path('../../../_plugins/symbol_macro', __dir__)  # sym: inline macro — glossary xref (PDF) / link (web), shared with the web build
 
 DIR   = __dir__
 SRC   = File.expand_path('..', DIR)                       # chapters live one level up
+FONTS = File.join(DIR, 'fonts')                           # bundled fonts (Noto Serif Hebrew, OFL) for Hebrew glyphs
 MEDIA = (ARGV[0] || 'screen')
 OUT   = File.join(DIR, 'the-bibles-symbolic-language.pdf')
 NBSP  = '{nbsp}'
@@ -83,6 +85,7 @@ render = lambda do |reserve_pages, do_flush|
     attributes: {
       'pdf-themesdir'       => DIR,
       'pdf-theme'           => 'trade',
+      'pdf-fontsdir'        => FONTS,   # base fonts use explicit GEM_FONTS_DIR/ prefixes; Hebrew fonts resolve here
       'media'               => MEDIA,
       'hyphens'             => 'en',
       'imagesdir'           => SRC,

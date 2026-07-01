@@ -5,6 +5,19 @@
 # (quoted so YAML keeps it a hex string, not the integer 0). No gray, no color.
 extends: default
 
+# Hebrew glyphs: fall back to Noto Serif Hebrew (OFL, bundled in ./fonts) so
+# unpointed consonants render in print. RTL ordering is handled by asciidoctor-pdf.
+font:
+  catalog:
+    merge: true
+    Noto Serif Hebrew:
+      normal: NotoSerifHebrew-Regular.ttf
+      bold: NotoSerifHebrew-Bold.ttf
+      italic: NotoSerifHebrew-Regular.ttf
+      bold_italic: NotoSerifHebrew-Bold.ttf
+  fallbacks:
+    - Noto Serif Hebrew
+
 page:
   size: [6in, 9in]
   # Generous inner (gutter) margin for perfect-bound trade books.
@@ -80,6 +93,22 @@ role:
     font-size: 9
     font-style: normal
     font-color: '000000'
+  # Glossary cross-references to other symbols: fixed-width, bold, pure black
+  # (applied as [.symbol]`word` — codespan supplies the monospace face).
+  symbol:
+    font-family: M+ 1mn
+    font-style: bold
+    font-color: '000000'
+  # Glossary "see <chapter>" pointer line — italic, smaller, set off from the definition
+  seeref:
+    font-style: italic
+    font-size: 9
+    font-color: '000000'
+  # Scripture references inside a definition — small italic, kept out of the way
+  scref:
+    font-style: italic
+    font-size: 8.5
+    font-color: '000000'
 
 # Prevalence tables — clean "booktabs" style: pure-black horizontal rules only
 # (top rule, rule under the header, bottom rule), no shading, no vertical lines.
@@ -125,6 +154,7 @@ running-content:
   start-at: body
 header:
   height: 0.6in
+  margin: [0.2in, inherit, 0, inherit]   # push header down from the trim edge (BookBaby 0.5in safety)
   recto:
     right:
       content: '{chapter-title}'
@@ -135,6 +165,8 @@ header:
   font-color: '000000'
 footer:
   height: 0.6in
+  margin: [0, inherit, 0.2in, inherit]   # lift folio up from the trim edge (BookBaby 0.5in safety)
+  # footer separator keeps the inherited light-gray (DDDDDD) hairline — gray is fine for non-text rules
   recto:
     right:
       content: '{page-number}'

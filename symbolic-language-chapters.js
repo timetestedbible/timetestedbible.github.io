@@ -21,7 +21,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     {
       slug: 'sea-and-waters',
       title: 'Sea & Waters',
-      summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, and the "no more sea" of the new creation.'
+      summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, the two waters of creation (nations below, the sea of glass above), and the "no more sea" of the new creation.'
     },
     {
       slug: 'sign-of-jonah',
@@ -56,7 +56,12 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     {
       slug: 'trees',
       title: 'Trees',
-      summary: 'A tree in Scripture is a nation or people group — rooted in its origin, sheltering those within it, judged by its fruit, and cut down in judgment ("It is thou, O king," Daniel says of Babylon). The tree completes the picture: mountain (kingdom) over tree (nation) over grass (the individual).'
+      summary: 'A tree in Scripture is a nation or people group — rooted in its origin, sheltering those within it, judged by its fruit, and cut down in judgment ("It is thou, O king," Daniel says of Babylon). The tree completes the picture: mountain (kingdom) over tree (nation) over grass (the individual). Its wild companion is the beast — the nations as ravening kingdoms (Daniel\'s four beasts) and the unclean animals God cleanses to bring in the Gentiles (Peter\'s vision).'
+    },
+    {
+      slug: 'grass',
+      title: 'Grass',
+      summary: 'Grass is a man — a single mortal, here in the morning and cut down by evening ("all flesh is grass," Isaiah 40). It is the lowest of the three figures — mountain (kingdom) over tree (nation) over grass (the individual). But grain is grass too: the seed is God\'s word, the harvest is the end of the age, the wheat the children of the kingdom and the chaff the wicked, the firstfruits sheaf Christ. Every piece was defined in the Law and the Prophets — so the harvest parables asked no new vocabulary of anyone who knew his Scripture.'
     },
     {
       slug: 'garments',
@@ -96,12 +101,12 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     {
       slug: 'sun-moon-and-stars',
       title: 'Sun, Moon, and Stars',
-      summary: 'The lights of heaven are set for two offices — to rule, and to mark the appointed times. Joseph\'s dream defines them: sun = the ruler, moon = the derived authority, stars = the princes. So when the prophets say the sun is darkened and the stars fall, a nation\'s government is collapsing, not the cosmos ending — and the same lights are the destiny of the righteous, who shall shine as the sun and the stars in the kingdom.'
+      summary: 'The lights of heaven, read as persons. Joseph\'s dream sets the pattern, and each light tells what it is: the sun is the Father, the source of light (Psalm 84:11); the moon, which has no light of its own but the sun\'s reflected, is the faithful witness who bears that light through the world\'s night — the Son (Psalm 89:37; Revelation 1:5; John 1:5); the stars are the righteous, who rule the night with Him (Daniel 12:3); and the twelve stars are the twelve tribes (Revelation 12:1). Satan\'s counterfeit inverts the order — a dark moon raised over God\'s stars to usurp the appointed times (Isaiah 14).'
     },
     {
       slug: 'the-fear-of-the-lord',
       title: 'The Fear of the Lord',
-      summary: 'The closing chapter. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book.'
+      summary: 'The closing chapter. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book. Its counterfeit is the fear of man — the snare that breaks the very commandments the fear of God keeps (Proverbs 29:25).'
     },
     {
       slug: 'glossary',
