@@ -9,6 +9,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   basePath: '/books/symbolic-language',
   chapters: [
     {
+      slug: 'how-to-use',
+      title: 'How to Use This Book',
+      summary: 'A few conventions for reading: symbols the Bible defines are set in a distinct style and collected in the Glossary; Scripture is quoted from the KJV unless noted; and in the free digital editions every symbol links to its glossary entry.'
+    },
+    {
       slug: 'introduction',
       title: 'Introduction',
       summary: 'Why Jesus concealed his teaching in parables, what milk and meat really mean, and how Scripture encodes an objective, translation-robust symbolic language anyone can now learn to decode.'
@@ -109,9 +114,14 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The closing chapter. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book. Its counterfeit is the fear of man — the snare that breaks the very commandments the fear of God keeps (Proverbs 29:25).'
     },
     {
+      slug: 'path-to-salvation',
+      title: 'The Path to Salvation',
+      summary: 'Borrowed from Time Tested Tradition. Keeping the commandments is not a works-based salvation, yet willful, unrepentant lawbreaking condemns. Salvation comes by confessing Jesus as Lord and the law as good — and the familiar three-step path cannot even be taken without the law that defines sin, the High Priest it establishes, and the obedience that calling Him Master requires.'
+    },
+    {
       slug: 'glossary',
       title: 'Glossary of Symbols',
-      summary: 'The whole vocabulary in one place: every symbol the book uses, each with its meaning, a defining verse, and the chapter that proves it. Entries marked "not yet proven" are referenced in the text but await their own treatment — the working list of what is left to expand.'
+      summary: 'The whole vocabulary in one place: every symbol the book uses, each with its meaning, a defining verse, and the chapter that proves it.'
     }
   ]
 };

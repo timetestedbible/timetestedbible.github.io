@@ -41,7 +41,7 @@ doc = +<<~ADOC
   :doctype: book
   :lang: en
   :notitle:
-  :toc:
+  :toc: macro
   :toc-title: Contents
   :toclevels: 1
 ADOC
@@ -51,17 +51,31 @@ ADOC
 # keyed by chapter id (the slug), and expose via the global the converter reads.
 epigraph_map = {}
 
+front_entries = []
+main_entries  = []
 chapters.each do |path|
   fm, body = split_front_matter(File.read(path))
   slug  = fm['slug'] || File.basename(path, '.adoc').sub(/^\d+[-_]/, '')
   title = fm['title'] || slug
   epigraph_map[slug] = fm['epigraphs'] if fm['epigraphs'].is_a?(Array) && !fm['epigraphs'].empty?
+  (fm['front_matter'] ? front_entries : main_entries) << { slug: slug, title: title, body: body.strip, file: File.basename(path) }
+end
 
-  # Real chapter: auto page break, TOC entry, PDF bookmark, running head.
-  doc << "\n[##{slug}]\n== #{title}\n\n"
-  doc << body.strip << "\n"
+# Front matter (e.g. the copyright page): rendered BEFORE the Contents as untitled
+# colophon pages — no chapter heading, no TOC entry, and, sitting ahead of the body,
+# no running head or page number. Flag a file with `front_matter: true` in its YAML.
+front_entries.each do |c|
+  doc << "\n" << c[:body] << "\n\n<<<\n"
+  warn "  · #{c[:title]}  (front matter, #{c[:file]})"
+end
 
-  warn "  + #{title}  (#{File.basename(path)})"
+# Contents — placed here, after the front matter and before the chapters.
+doc << "\ntoc::[]\n"
+
+# Main chapters: auto page break, TOC entry, PDF bookmark, running head.
+main_entries.each do |c|
+  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
+  warn "  + #{c[:title]}  (#{c[:file]})"
 end
 
 $chapter_epigraphs = epigraph_map
