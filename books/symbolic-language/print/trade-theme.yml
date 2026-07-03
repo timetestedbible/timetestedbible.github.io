@@ -5,12 +5,20 @@
 # (quoted so YAML keeps it a hex string, not the integer 0). No gray, no color.
 extends: default
 
+# Body face: Gentium Book Plus (SIL, OFL, bundled in ./fonts) — a text face designed
+# for scholarly/biblical publishing; full regular/italic/bold/bold-italic, wide
+# Latin coverage incl. the transliteration diacritics (kētos, anastēsontai).
 # Hebrew glyphs: fall back to Noto Serif Hebrew (OFL, bundled in ./fonts) so
 # unpointed consonants render in print. RTL ordering is handled by asciidoctor-pdf.
 # Paleo-Hebrew / Phoenician glyphs (the divine name) fall back to Noto Sans Phoenician (OFL, bundled).
 font:
   catalog:
     merge: true
+    Gentium Book Plus:
+      normal: GentiumBookPlus-Regular.ttf
+      bold: GentiumBookPlus-Bold.ttf
+      italic: GentiumBookPlus-Italic.ttf
+      bold_italic: GentiumBookPlus-BoldItalic.ttf
     Noto Serif Hebrew:
       normal: NotoSerifHebrew-Regular.ttf
       bold: NotoSerifHebrew-Bold.ttf
@@ -22,6 +30,11 @@ font:
       italic: NotoSansPhoenician-Regular.ttf
       bold_italic: NotoSansPhoenician-Regular.ttf
   fallbacks:
+    # Gentium first: catches glyphs missing from the M+ 1mn symbol face (its
+    # gem subsets lack even the curly apostrophe U+2019 — "whale's belly"
+    # rendered a box). Gentium has no Hebrew/Phoenician, so those characters
+    # fall through to the next entries.
+    - Gentium Book Plus
     - Noto Serif Hebrew
     - Noto Sans Phoenician
 
@@ -33,19 +46,28 @@ page:
   margin-outer: 0.6in
 
 base:
-  font-family: Noto Serif
-  font-size: 10.5
-  line-height: 1.46
+  font-family: Gentium Book Plus
+  font-size: 11
+  # NOTE: asciidoctor-pdf line-height multiplies the FONT'S OWN natural line
+  # height, not the point size — and Gentium Book Plus carries tall metrics
+  # (ascent 1.099 + descent 0.366 = 1.465em, sized for stacked diacritics).
+  # 0.9 x 1.465em = 1.32em = ~14.5pt baseline-to-baseline on 11pt type: proper
+  # book leading. (1.3 here rendered ~1.9em — nearly double-spaced.)
+  line-height: 0.9
   text-align: justify
   font-color: '000000'
 
 heading:
-  font-family: Noto Serif
+  font-family: Gentium Book Plus
   font-style: bold
   font-color: '000000'
   h1-font-size: 22
   h2-font-size: 16
   h3-font-size: 13
+  # Keep >= 2 body lines under any heading: the paragraph balancer (extension.rb)
+  # pushes a paragraph to the next page rather than leave 1 line of it behind, so
+  # a heading must not ink unless that much room remains below it.
+  min-height-after: 42
 
 # Title page is supplied as a full-page front-cover SVG; the auto title page is
 # disabled (:notitle:). These keys are unused but kept black for safety.
@@ -77,7 +99,7 @@ quote:
   font-size: $base-font-size      # same size as regular text
   border-width: 0
   border-left-width: 0            # THE key for the left vertical bar (separate from border-width)
-  padding: [3, 30, 3, 30]         # [t,r,b,l] — indent both left and right, no border
+  padding: [12, 30, 3, 30]        # [t,r,b,l] — top 12 ≈ bottom (3 + block margin 10), so the gap above a quote matches the gap after its citation
   cite:
     font-size: 8.5
     font-style: normal
@@ -100,11 +122,15 @@ role:
     font-size: 9
     font-style: normal
     font-color: '000000'
-  # Glossary cross-references to other symbols: fixed-width, bold, pure black
-  # (applied as [.symbol]`word` — codespan supplies the monospace face).
+  # Glossary cross-references to other symbols — the KJV "LORD" convention:
+  # bold capitals at reduced size (small-caps effect) in the body face. Keeps
+  # the distinction without the height/width clash the old monospace (M+ 1mn)
+  # had against Gentium ("wife" gappy, "whoredoms" dense).
   symbol:
-    font-family: M+ 1mn
+    font-family: Gentium Book Plus
     font-style: bold
+    font-size: 0.75em
+    text-transform: uppercase
     font-color: '000000'
   # Glossary "see <chapter>" pointer line — italic, smaller, set off from the definition
   seeref:
@@ -143,7 +169,7 @@ table:
   body:
     background-color: 'ffffff'
   cell:
-    padding: [2.5, 9, 2.5, 9]
+    padding: [2, 9, 2, 9]   # tight enough that the 19-row Jonah table fits one page
 table-caption:
   font-style: italic
   font-color: '000000'

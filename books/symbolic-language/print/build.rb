@@ -7,8 +7,14 @@
 #   - asciidoctor-pdf for rendering, with the trade theme
 #
 # Usage:
-#   ruby build.rb            # screen PDF (single pages) — proofing
-#   ruby build.rb prepress   # print-ready: facing pages, gutter margins
+#   ruby build.rb            # BOTH PDFs: print (prepress — the default artifact
+#                            # we edit and iterate on) and screen (refined later)
+#   ruby build.rb print      # print-ready only: facing pages, gutter margins
+#   ruby build.rb screen     # screen only: single pages
+#
+# Outputs:
+#   the-bibles-symbolic-language-print.pdf    (media=prepress)
+#   the-bibles-symbolic-language-screen.pdf   (media=screen)
 #
 # Requires:  gem install asciidoctor-pdf
 require 'asciidoctor'
@@ -20,9 +26,19 @@ require File.expand_path('../../../_plugins/symbol_macro', __dir__)  # sym: inli
 DIR   = __dir__
 SRC   = File.expand_path('..', DIR)                       # chapters live one level up
 FONTS = File.join(DIR, 'fonts')                           # bundled fonts (Noto Serif Hebrew, OFL) for Hebrew glyphs
-MEDIA = (ARGV[0] || 'screen')
-OUT   = File.join(DIR, 'the-bibles-symbolic-language.pdf')
 NBSP  = '{nbsp}'
+
+# Targets: media => output file. Print (prepress) is the primary artifact.
+ALL_TARGETS = {
+  'prepress' => File.join(DIR, 'the-bibles-symbolic-language-print.pdf'),
+  'screen'   => File.join(DIR, 'the-bibles-symbolic-language-screen.pdf'),
+}
+TARGETS = case (ARGV[0] || 'all')
+          when 'all'               then ALL_TARGETS
+          when 'print', 'prepress' then ALL_TARGETS.slice('prepress')
+          when 'screen'            then ALL_TARGETS.slice('screen')
+          else abort "Unknown target #{ARGV[0].inspect} — use print, screen, or no argument for both"
+          end
 
 # --- Split Jekyll YAML front matter from the AsciiDoc body ---
 def split_front_matter(raw)
@@ -86,42 +102,48 @@ $chapter_epigraphs = epigraph_map
 # the detected set matches the reserved set, do one final pass that draws the
 # notes. extension.rb reads $fn_reserve_pages / $fn_flush and reports
 # $fn_detected_pages. See extension.rb for the rationale.
-render = lambda do |reserve_pages, do_flush|
-  $fn_reserve_pages  = reserve_pages
-  $fn_flush          = do_flush
-  $fn_detected_pages = []
-  Asciidoctor.convert doc,
-    backend: 'pdf',
-    safe: :unsafe,
-    base_dir: SRC,
-    to_file: OUT,
-    mkdirs: true,
-    attributes: {
-      'pdf-themesdir'       => DIR,
-      'pdf-theme'           => 'trade',
-      'pdf-fontsdir'        => FONTS,   # base fonts use explicit GEM_FONTS_DIR/ prefixes; Hebrew fonts resolve here
-      'media'               => MEDIA,
-      'hyphens'             => 'en',
-      'imagesdir'           => SRC,
-      'front-cover-image'   => "image:#{File.join(DIR, 'title-page.svg')}[fit=fill]",
-    }
-  $fn_detected_pages.uniq.sort
-end
-
-reserve  = []
-detected = []
-converged = false
-6.times do |i|
-  detected = render.call reserve, false
-  warn "  footnote pass #{i + 1}: reserved #{reserve.inspect} -> markers on #{detected.inspect}"
-  if detected == reserve
-    converged = true
-    break
+build_target = lambda do |media, out|
+  render = lambda do |reserve_pages, do_flush|
+    $fn_reserve_pages  = reserve_pages
+    $fn_flush          = do_flush
+    $fn_detected_pages = {}
+    Asciidoctor.convert doc,
+      backend: 'pdf',
+      safe: :unsafe,
+      base_dir: SRC,
+      to_file: out,
+      mkdirs: true,
+      attributes: {
+        'pdf-themesdir'       => DIR,
+        'pdf-theme'           => 'trade',
+        'pdf-fontsdir'        => FONTS,   # base fonts use explicit GEM_FONTS_DIR/ prefixes; Hebrew fonts resolve here
+        'media'               => media,
+        'hyphens'             => 'en',
+        'imagesdir'           => SRC,
+        'front-cover-image'   => "image:#{File.join(DIR, 'title-page.svg')}[fit=fill]",
+      }
+    $fn_detected_pages.sort.to_h
   end
-  reserve = detected
-end
-final_reserve = converged ? reserve : (reserve | detected).sort
-warn "  footnote layout #{converged ? 'converged' : 'did not converge — reserving union'}: #{final_reserve.inspect}"
-render.call final_reserve, true
 
-warn "Wrote: #{OUT}  (media=#{MEDIA})"
+  fmt = ->(h) { '{' + h.map { |pg, pts| "#{pg}:#{pts}pt" }.join(', ') + '}' }
+  reserve  = {}
+  detected = {}
+  converged = false
+  6.times do |i|
+    detected = render.call reserve, false
+    warn "  footnote pass #{i + 1}: reserved #{fmt.call reserve} -> needed #{fmt.call detected}"
+    if detected == reserve
+      converged = true
+      break
+    end
+    reserve = detected
+  end
+  # Non-convergence fallback: reserve the max of both maps per page.
+  final_reserve = converged ? reserve : reserve.merge(detected) { |_, a, b| [a, b].max }.sort.to_h
+  warn "  footnote layout #{converged ? 'converged' : 'did not converge — reserving max union'}: #{fmt.call final_reserve}"
+  render.call final_reserve, true
+
+  warn "Wrote: #{out}  (media=#{media})"
+end
+
+TARGETS.each { |media, out| build_target.call media, out }

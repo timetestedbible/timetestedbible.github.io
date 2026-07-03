@@ -29,6 +29,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, the two waters of creation (nations below, the sea of glass above), and the "no more sea" of the new creation.'
     },
     {
+      slug: 'signs-and-similitudes',
+      title: 'Signs and Similitudes',
+      summary: 'Before reading the sign Jesus chose, learn what a sign is: not a wonder on demand but a message given in advance — an oracle, or a prophet\'s lived story — whose fulfillment testifies. God says He "used similitudes"; Paul says the lives of real people are types; Jesus reads history as prophecy; and Ecclesiastes explains why: there is no new thing under the sun — what has been done will be done again. Isaac on Moriah and Joseph in Egypt prove the method before Jonah becomes the full case study.'
+    },
+    {
       slug: 'sign-of-jonah',
       title: 'The Sign of Jonah',
       summary: 'Read through the symbols of sea and city, the only sign Jesus gave opens up: the "heart of the earth" is Jerusalem, the great fish a devouring kingdom forced to give back what it swallowed, and Jonah is a scene-by-scene prophecy of His betrayal, arrest, interrogation, death, resurrection, and the gospel\'s turn to the nations.'
@@ -47,6 +52,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       slug: 'the-name',
       title: 'The Name',
       summary: 'Almost everyone thinks "taking the name in vain" is about cursing or mispronouncing YHWH. But Scripture equates the name with the covenant: to take it in vain is to empty that covenant — to claim God\'s name while living lawlessly. The name is the covenant owned, embodied in Jesus, kept by obedience — and most who say "Lord, Lord" take it in vain.'
+    },
+    {
+      slug: 'marriage-and-divorce',
+      title: 'Marriage and Divorce',
+      summary: 'The common view says Jesus permits divorce for sexual immorality — but under the law, adultery carries death, not divorce, and Jesus uses two different Greek words in the same sentence. Scripture\'s own usage points to the union that is itself fornication — the out-of-covenant marriage — where putting away is commanded (Ezra), while putting away the wife of the covenant is treachery (Malachi holds both edges). And God keeps His own statute: He gave adulterous Israel the bill of divorce, faced His own no-return rule, and answered it at the cross — the Husband took the wife\'s death penalty and rose to marry her renewed. The Bible ends with a burning and a wedding.'
     },
     {
       slug: 'the-bow',
@@ -76,12 +86,17 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     {
       slug: 'wings',
       title: 'Wings',
-      summary: 'One Hebrew word — kanaph — is scattered across English as wing, skirt, border, corner, and edge. It is the hem where God commanded the fringes bound, "that ye may remember all the commandments... and do them." So the wing carries the law: there is healing in it (Malachi 4:2), refuge under it, covenant in the spreading of it, and at the corner of the field the remnant gleans.'
+      summary: 'One Hebrew word — kanaph — is scattered across English as wing, skirt, border, corner, quarter, end, uttermost part, even "overspreading": 108 occurrences under eighteen renderings, and the thread is lost in the spread. It is the edge where God commanded the fringes bound, "that ye may remember all the commandments... and do them" — so wherever kanaph hides, the commandments are near. The ark of the covenant sits under the wings of the cherubim; the covenant is cut by spreading the wing; the kingdom tears when the skirt tears (Saul); the dispersed wait at the four corners of the earth; and there is healing in his wings.'
     },
     {
       slug: 'orphans-widows-and-the-fatherless',
       title: 'Orphans, Widows, and the Fatherless',
-      summary: 'Everyone honors caring for widows and orphans — even the godless do — and assumes himself a giver, never one of them. But Scripture turns it: the covenant people, cut off from their Husband, are themselves the widow and the fatherless (Lamentations 5:3). God defends, feeds, and gathers them home — and the food is His word, the clothing His righteousness, multiplied like five loaves and two fishes. The stranger is no mere foreigner but the one outside the covenant, drawn in at the field edge.'
+      summary: 'Everyone honors caring for widows and orphans — even the godless do — and assumes himself a giver, never one of them. But Scripture turns it: the covenant people, cut off from their Husband, are themselves the widow and the fatherless (Lamentations 5:3). God defends, feeds, and gathers them home — and the food is His word, the clothing His righteousness, multiplied like five loaves and two fishes. The stranger is no mere foreigner but the one outside the covenant, drawn in at the field edge. And the poor — the fourth name at the same corner — are the bowed-humble heirs of the kingdom, set against the self-made rich who have need of nothing.'
+    },
+    {
+      slug: 'the-remnant',
+      title: 'The Remnant',
+      summary: 'Everyone assumes they stand on the right side of the narrow gate. Scripture gives numbers, not just a warning — a fixed remnant-ratio running through the gleaning law\'s own geometry, the shaking of an olive tree, Elijah\'s seven thousand, the third refined as gold, and the rarity of gold itself in the earth\'s crust. Fifteen independent lines of evidence, biblical and physical, converge on the same conclusion: the saved are not a majority cut short, but a remnant — small by design, from Noah\'s eight to the crowds that dissolve to twelve.'
     },
     {
       slug: 'knowing-faith-love-and-belief',
@@ -109,9 +124,34 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The lights of heaven, read as persons. Joseph\'s dream sets the pattern, and each light tells what it is: the sun is the Father, the source of light (Psalm 84:11); the moon, which has no light of its own but the sun\'s reflected, is the faithful witness who bears that light through the world\'s night — the Son (Psalm 89:37; Revelation 1:5; John 1:5); the stars are the righteous, who rule the night with Him (Daniel 12:3); and the twelve stars are the twelve tribes (Revelation 12:1). Satan\'s counterfeit inverts the order — a dark moon raised over God\'s stars to usurp the appointed times (Isaiah 14).'
     },
     {
+      slug: 'shadow',
+      title: 'Shadow',
+      summary: 'A prime example of a symbol read backwards: shadow calls up gloom, but in Scripture\'s own usage the shadow is the covering of a greater presence — the shadow of the Almighty, of His wings, of a kingdom\'s tree over its peoples — and the KJV itself twice renders the word "defence." Even the law is a shadow of GOOD things, and the shadow of death is walked through, turned into morning. It is good to be in the shadow.'
+    },
+    {
+      slug: 'justice-and-judgment',
+      title: 'Justice and Judgment',
+      summary: '"Judgment" lands on modern ears as condemnation and "justice" as an abstraction — but Scripture commands both as deeds. The Hebrew behind "justice" is the righteousness-word: one word, two renderings (Genesis 18:19 / Jeremiah 22:3), and righteousness is already defined as the commandments done. Judgment (mishpat) is the law\'s ruling and the ruler\'s office — what God declares due, owed first to the widow, the fatherless, the stranger, and the poor; to judge is to rule and deliver by the law, which is why the judges were saviours, the righteous pray for judgment, and creation rejoices at its coming. The first "way of the LORD" in Scripture is defined as doing exactly this.'
+    },
+    {
+      slug: 'liberty',
+      title: 'Liberty',
+      summary: 'The Hebrew word for liberty appears seven times, and every one is the jubilee: the King\'s decreed release of debts, slaves, and land — the proclamation Jesus claimed at Nazareth. The same word names the swallow, the free bird that nests at God\'s altars. Freedom in Scripture is a change of masters, not an absence of one; its constitution is "the perfect law of liberty," and its counterfeit — liberty as license — is called a return to bondage.'
+    },
+    {
+      slug: 'worship',
+      title: 'Worship',
+      summary: 'A word compressed to "sing songs in church" — but Scripture separates worship from singing inside single scenes: Judah fell down worshipping while the Levites stood up to praise. The word means to bow down; its fixed pair is to serve; Jesus quotes "thou shalt fear the LORD" as "thou shalt worship the Lord." Vain worship is homage shaped by the commandments of men, and the everlasting gospel\'s call to "worship him that made heaven, and earth, the sea" quotes the sabbath commandment\'s own ground clause.'
+    },
+    {
       slug: 'the-fear-of-the-lord',
       title: 'The Fear of the Lord',
       summary: 'The closing chapter. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book. Its counterfeit is the fear of man — the snare that breaks the very commandments the fear of God keeps (Proverbs 29:25).'
+    },
+    {
+      slug: 'the-parables-of-the-kingdom',
+      title: 'The Parables of the Kingdom',
+      summary: 'The final exam. With the whole glossary in hand, the seven parables of Matthew 13 are read straight through by substitution — seed, field, wheat, tares, tree, leaven, treasure, pearl, net. Five open at a touch; the leaven overturns a tradition (leaven is the word soured, everywhere Scripture defines it); and the pearl, the woman, and the three measures of meal expose symbols still unmapped — which is the lesson: the language keeps going. The feeding of the five thousand closes it as a similitude lived out loud.'
     },
     {
       slug: 'path-to-salvation',

@@ -7,8 +7,8 @@
 #       - chapter epigraphs render above the chapter title
 #       - PAGE-BOTTOM FOOTNOTES (see below)
 #
-# Page-bottom footnotes (dynamic, per-page reserve)
-# -------------------------------------------------
+# Page-bottom footnotes (dynamic, per-page MEASURED reserve)
+# -----------------------------------------------------------
 # asciidoctor-pdf renders footnotes as endnotes at chapter end. We want them at
 # the foot of the page that carries the marker, WITHOUT making footnote-free
 # pages pay for the space. asciidoctor regenerates the margin box from the page
@@ -16,12 +16,17 @@
 # and the footer is drawn from the page EDGE, so shrinking a page's content area
 # does not move the page number.
 #
+# The reserve is MEASURED per page, not fixed: each detected note's typeset
+# height is computed (footnotes theme font, content width) and accumulated, so a
+# page carrying two long notes gets a band big enough for both. (A fixed band
+# overflowed: the spillover was drawn ON TOP of body text on following pages.)
+#
 # build.rb drives a short converging loop over this converter:
-#   - $fn_reserve_pages : pages to shrink (give a foot band) on this pass
+#   - $fn_reserve_pages : Hash page => band points to reserve on this pass
 #   - $fn_flush         : whether to draw the notes (only the final pass)
-#   - $fn_detected_pages: OUT — pages where markers actually landed this pass
-# It re-renders until the detected set matches the reserved set (a fixed point),
-# then does one final pass that draws the notes.
+#   - $fn_detected_pages: OUT — Hash page => band points actually needed
+# It re-renders until detected == reserved (a fixed point), then does one final
+# pass that draws the notes.
 
 require 'asciidoctor'
 require 'asciidoctor/extensions'
@@ -30,10 +35,28 @@ require 'asciidoctor-pdf'
 class TradePdfConverter < Asciidoctor::PDF::Converter
   register_for 'pdf'
 
-  FN_RESERVE    = 36.0   # 0.5in band added to the bottom margin of footnote pages
   FN_RULE_LEN   = 144    # 2in separator rule
   FN_RULE_WIDTH = 0.5
   FN_RULE_GAP   = 5      # gap below the rule, above the first note
+  FN_BAND_PAD   = 9      # rule + breathing room added once per footnote page
+
+  # Band points a page must reserve for its notes so far (measured), + padding.
+  def fn_band_height pts
+    pts + FN_BAND_PAD
+  end
+
+  # Measured height of one note at footnotes size across the content width.
+  def fn_note_height fn
+    spacing = @theme.footnotes_item_spacing || 2
+    h = nil
+    theme_font :footnotes do
+      h = height_of_typeset_text %([#{fn.index}] #{fn.text}),
+        inline_format: true, line_height: (@theme.footnotes_line_height || @theme.base_line_height)
+    rescue StandardError
+      h = nil
+    end
+    ((h || 24) + spacing).ceil
+  end
   EPIGRAPH_INDENT = 40   # left/right margin on chapter epigraphs (keeps lines short, no hyphenation)
 
   # Style roled cross-references (the sym: glossary macro). asciidoctor-pdf's xref
@@ -42,6 +65,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def convert_inline_anchor node
     if node.type == :xref && (role = node.role) && (refid = node.attributes['refid']) && node.text && !node.attributes['path']
       %(<a anchor="#{derive_anchor_from_id refid}" class="#{role}">#{node.text}</a>).gsub ']', '&#93;'
+    elsif node.type == :link && (target = node.target).to_s.start_with?('/books/symbolic-language/')
+      # Site-internal chapter links (footnotes, glossary "see" lines) are meaningless
+      # as URLs on paper — and media=prepress reveals them as bracketed paths after
+      # the link text. Convert them to internal PDF cross-references instead:
+      # build.rb anchors every chapter with its slug ([#slug]).
+      slug = target.split('/').reject(&:empty?).last
+      %(<a anchor="#{derive_anchor_from_id slug}">#{node.text}</a>).gsub ']', '&#93;'
     else
       super
     end
@@ -66,13 +96,15 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     return if @fn_flushing
     @fn_base_margin ||= page_margin.dup
     m = @fn_base_margin
-    reserve = (defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : []
-    target = reserve.include?(page_number) ? [m[0], m[1], m[2] + FN_RESERVE, m[3]] : m
+    reserve = (defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : {}
+    extra = reserve[page_number]
+    target = extra ? [m[0], m[1], m[2] + fn_band_height(extra), m[3]] : m
     set_page_margin target unless page_margin == target
   end
 
   def convert_document doc
     out = super
+    flush_table_float force: true unless scratch?
     flush_page_footnotes if defined?($fn_flush) && $fn_flush
     out
   end
@@ -93,7 +125,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       next unless fn
       @fn_seen[i] = true
       (@fn_queue[page_number] ||= []) << fn
-      ($fn_detected_pages ||= []) << page_number if defined?($fn_detected_pages)
+      if defined?($fn_detected_pages) && $fn_detected_pages
+        $fn_detected_pages[page_number] = ($fn_detected_pages[page_number] || 0) + fn_note_height(fn)
+      end
     end
     result
   end
@@ -104,20 +138,22 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     @fn_flushing = true
     spacing = @theme.footnotes_item_spacing || 2
     m = @fn_base_margin
+    reserve = (defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : {}
     @fn_queue.each do |pg, fns|
       next if fns.empty?
       go_to_page pg
       pw    = page.dimensions[2] - page.dimensions[0]
       left  = m[3]
       width = pw - m[3] - m[1]
-      floor = m[2] + FN_RESERVE        # content floor on a reserved page (from page bottom)
+      band  = fn_band_height(reserve[pg] || fns.sum { |fn| fn_note_height fn })
+      floor = m[2] + band              # content floor on a reserved page (from page bottom)
       canvas do
         stroke do
           line_width FN_RULE_WIDTH
           stroke_color '000000'
           stroke_horizontal_line left, left + FN_RULE_LEN, at: floor
         end
-        bounding_box [left, floor - FN_RULE_GAP], width: width, height: FN_RESERVE - FN_RULE_GAP do
+        bounding_box [left, floor - FN_RULE_GAP], width: width, height: band - FN_RULE_GAP do
           theme_font :footnotes do
             fns.each do |fn|
               ink_prose %([#{fn.index}] #{fn.text}), margin_bottom: spacing, hyphenate: true
@@ -129,17 +165,223 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     @fn_flushing = false
   end
 
+  # Widow control, where the cost lands: pulling a block down with move_cursor_to
+  # opens a hole BETWEEN paragraphs mid-page — visible and ugly. Instead, shorten
+  # the CURRENT page's writable area so the block breaks a line earlier and the
+  # page simply runs short at the bottom: the ragged-bottom line a human
+  # typesetter would leave. init_page re-asserts the proper margin on every new
+  # page; normalize_page_bottom runs after the block renders as a safety net for
+  # the case where it did not break after all.
+  def shorten_page_bottom pts
+    cur = page_margin.dup
+    set_page_margin [cur[0], cur[1], cur[2] + pts, cur[3]]
+    @page_bottom_shortened = true
+  end
+
+  def normalize_page_bottom
+    return unless @page_bottom_shortened
+    @page_bottom_shortened = false
+    return unless @fn_base_margin
+    m = @fn_base_margin
+    reserve = (defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : {}
+    extra = reserve[page_number]
+    target = extra ? [m[0], m[1], m[2] + fn_band_height(extra), m[3]] : m
+    set_page_margin target unless page_margin == target
+  end
+
+  # Full-page tables float like figures. A tall table that starts mid-page breaks
+  # ugly (rows spill) or, forced unbreakable, shoves to the next page and leaves a
+  # hole. Instead: when a table does not fit the space remaining but WOULD fit a
+  # single page by itself, defer it — the blocks that follow it in the source flow
+  # up to fill the current page, and the table renders whole at the next block
+  # boundary that lands at a page top (or wherever it first fits). Reading order
+  # shifts by a paragraph or two, exactly like a floated figure in any print book;
+  # lead-in prose should reference the table, not colon into it.
+  def convert_table node
+    return super if scratch? || @float_now
+    flush_table_float                       # place any pending float before a new table
+    ext = begin
+      dry_run { convert_table node }
+    rescue StandardError
+      nil
+    end
+    if ext && !ext.single_page?
+      # Would it fit on ONE page by itself? Measure from a fresh page top in the
+      # scratch document (a split-measurement over-counts by the repeated header).
+      fits_alone = begin
+        ext2 = dry_run do
+          advance_page unless at_page_top?
+          convert_table node
+        end
+        ext2.single_page?
+      rescue StandardError
+        false
+      end
+      if fits_alone
+        @table_float = node
+        return
+      end
+    end
+    super
+  end
+
+  def flush_table_float force: false
+    return unless (node = @table_float)
+    if at_page_top?
+      @table_float = nil
+      render_float_table node
+    elsif force
+      @table_float = nil
+      advance_page unless at_page_top?
+      render_float_table node
+    else
+      ext = begin
+        dry_run { convert_table node }      # does it fit in what remains here?
+      rescue StandardError
+        nil
+      end
+      if ext && ext.single_page?
+        @table_float = nil
+        render_float_table node
+      end
+    end
+  end
+
+  def render_float_table node
+    prev = @float_now
+    @float_now = true
+    convert_table node
+  ensure
+    @float_now = prev
+  end
+
+  # Any float still pending at a section boundary or document end must land now,
+  # inside its own chapter.
+  def convert_section node
+    flush_table_float force: true unless scratch?
+    super
+  end
+
   # Body paragraphs get a first-line indent (theme prose-text-indent); quote
   # content must not. The converter applies the indent globally, so zero it while
   # a quote (and its citation) renders.
+  # asciidoctor-pdf does `alias convert_quote convert_quote_or_verse` at class-load, so the
+  # dispatch (convert_quote / convert_verse) binds to the BASE method and bypasses this
+  # subclass override. Re-route the aliases through our version.
+  def convert_quote node
+    convert_quote_or_verse node
+  end
+  alias convert_verse convert_quote
+
   def convert_quote_or_verse node
     saved = @theme.prose_text_indent
     @theme.prose_text_indent = 0
+    prev_in_quote = @in_quote
+    @in_quote = true
     begin
+      unless scratch? || prev_in_quote
+        flush_table_float
+        balance_block_quote node
+      end
       super
     ensure
+      @in_quote = prev_in_quote
       @theme.prose_text_indent = saved
+      normalize_page_bottom unless scratch?
     end
+  end
+
+  # Ordinary prose paragraphs need the same widow/orphan control as quotes: never
+  # strand a single line of a paragraph on either side of a page break. Quotes
+  # balance themselves as a unit (above), so paragraphs inside a quote — including
+  # the injected citation — are excluded via @in_quote.
+  def convert_paragraph node
+    unless scratch? || @in_quote
+      flush_table_float
+      balance_prose_paragraph node
+    end
+    result = super
+    normalize_page_bottom unless scratch? || @in_quote
+    result
+  end
+
+  def balance_prose_paragraph node
+    ext = begin
+      dry_run { convert_paragraph node }               # measure the natural break from here
+    rescue StandardError
+      return
+    end
+    return if ext.single_page?                         # fits on the current page
+    lh_mult = @theme.base_line_height || 1.15
+    line_h  = nil
+    theme_font(:base) { line_h = font.height * lh_mult }
+    min_chunk = line_h * 2                             # >= 2 lines on each side of a break
+    first_h   = ext.from.cursor
+    last_h    = bounds.height - ext.to.cursor
+    spans     = ext.to.page - ext.from.page
+    if first_h < min_chunk
+      # orphan: fewer than 2 lines fit here — send the whole paragraph over.
+      advance_page unless at_page_top?
+    elsif spans == 1 && last_h < min_chunk
+      # widow: the natural break leaves a lone line on the next page. Shorten this
+      # page's bottom in whole line-heights so the paragraph breaks a line earlier
+      # (a second line follows the widow over; the page runs short at the bottom
+      # instead of opening a hole between paragraphs) — unless the first page
+      # would drop below the minimum, in which case send the whole paragraph over.
+      deficit = min_chunk - last_h
+      pull = (deficit / line_h).ceil * line_h
+      if first_h - pull >= min_chunk
+        shorten_page_bottom pull
+      else
+        advance_page unless at_page_top?
+      end
+    end
+  end
+
+  # Widow/orphan control for block quotes. asciidoctor-pdf offers only all-or-nothing
+  # keep-together, which shoves a too-tall quote wholly onto the next page and leaves a
+  # gap. Instead we let long quotes break across pages, but never strand fewer than
+  # ~3 lines (2 content lines + the citation) of the quote on any page: measure the
+  # quote; if it fits on the current page, do nothing; if a break would leave less
+  # than that on either side, push the whole quote (or enough of it) over; otherwise
+  # let it break naturally.
+  def balance_block_quote node
+    ext = begin
+      dry_run { convert_quote_or_verse node }        # measure the natural break from here
+    rescue StandardError
+      return
+    end
+    return if ext.single_page?                       # fits on the current page — nothing to do
+    # Measure the REAL rendered line height. The theme's line-height multiplies the
+    # font's own natural height (Gentium Book Plus: 1.465em), NOT the point size —
+    # estimating with size x line-height underestimates by that factor and lets a
+    # lone line + citation slip past the guard ("yards… — Isaiah 37:30").
+    lh_mult = @theme.quote_line_height || @theme.base_line_height || 1.15
+    line_h  = nil
+    theme_font(:quote) { line_h = font.height * lh_mult }
+    # >= 2 content lines + the citation (with its spacing) on any page of the quote.
+    min_chunk = line_h * 3
+    first_h   = ext.from.cursor                       # the quote's portion on the current page
+    last_h    = bounds.height - ext.to.cursor         # the quote's portion on the final page
+    spans     = ext.to.page - ext.from.page           # 1 == breaks across two pages
+    if first_h < min_chunk
+      # fewer than ~2 lines fit here — don't orphan them; send the whole quote over.
+      advance_page unless at_page_top?
+    elsif spans == 1 && last_h < min_chunk
+      # widow: a natural break leaves too little on the next page. Lines move in whole
+      # increments, so shorten the page bottom in FULL line-heights (a fractional
+      # nudge cannot shift a line): the quote breaks a line earlier and the page
+      # runs short at the bottom — unless the first page would then drop below the
+      # minimum, in which case send the whole quote over.
+      deficit = min_chunk - last_h
+      pull = (deficit / line_h).ceil * line_h
+      if first_h - pull >= min_chunk
+        shorten_page_bottom pull
+      else
+        advance_page unless at_page_top?
+      end
+    end
+    # otherwise: >= 2 lines here AND >= 2 on the next page -> let super break it naturally
   end
 
   # Render the chapter epigraph (if any) ABOVE the chapter title. Real chapters
@@ -172,8 +414,8 @@ class QuoteCitationTreeprocessor < Asciidoctor::Extensions::Treeprocessor
 
   def process document
     document.find_by(context: :quote).each do |quote|
-      # Keep the quote (and the citation we add below) together on one page.
-      quote.set_option 'unbreakable'
+      # Page-breaking for quotes — with 2-line widow/orphan control — is handled in
+      # TradePdfConverter#balance_block_quote, so we do NOT force them unbreakable here.
 
       attribution = quote.attr 'attribution'
       citetitle   = quote.attr 'citetitle'
