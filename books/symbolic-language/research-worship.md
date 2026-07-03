@@ -1,4 +1,4 @@
-# Research: Worship — the corpus behind ch. 26
+# Research: Worship — the corpus behind ch. 31
 
 Done 2026-07-02 for the chapter. KJV "worship*" falls in 188 verses.
 Tagged: *shachah* H7812 (bow down, prostrate) 172×; Greek *proskuneō*
@@ -58,7 +58,7 @@ thee… all nations shall come and WORSHIP before thee." And the vain
 counterfeit is defined through the same equation: Isa 29:13 "their FEAR
 toward me is taught by the PRECEPT OF MEN" = Matt 15:9 "in vain they do
 WORSHIP me, teaching for doctrines the COMMANDMENTS OF MEN." → hands
-directly to ch. 27 (fear of the LORD = keep His commandments,
+directly to ch. 32 (fear of the LORD = keep His commandments,
 Eccl 12:13).
 
 ## First occurrence
@@ -106,7 +106,7 @@ SERVICE (latreia)"; John 4:23-24 "worship him in spirit and IN TRUTH"
 (truth = God's law, Ps 119:142); Nehemiah's assembly read the law a
 quarter of the day, then "confessed, and WORSHIPPED" (Neh 9:3). Exodus'
 liberation-formula: "let my people go, that they may SERVE me"
-(Ex 8:1) — released FROM Pharaoh's service INTO God's (ties to ch. 25
+(Ex 8:1) — released FROM Pharaoh's service INTO God's (ties to ch. 30
 Liberty).
 
 ## Meaning
@@ -116,3 +116,16 @@ to God and serve Him only — the fear of the LORD acted out, at His
 appointed times, on His terms. Singing can accompany it; it is not it.
 The counterfeit is worship re-defined by the precepts of men — and the
 end-time issue (Rev 13-14) is precisely whom you bow to and serve.
+
+## Creature vs Creator (Rom 1:25) — author query, tested 2026-07-03
+
+Is "creature" the beast symbol? Lexically NO: ktisis G2937 (from ktizo,
+create) = the made thing — same word as "whole CREATION groaneth"
+(Rom 8:22), "new CREATURE" (2 Cor 5:17). Revelation beast = therion
+G2342, different word. Structurally YES, one direction: Rom 1:23 quotes
+Moses own idolatry catalog item for item (Deut 4:16-18, running on to
+sun/moon/stars in 4:19); the made thing men serve has a fixed political
+face — the beast, a kingdom of men — and creature-worship heads up at
+Rev 13 (all the world worships the beast). Every beast is a creature;
+not every creature is the beast. Handled in ch. 31 prose with sym-beast
+link; no glossary alias (would overclaim the lexical identity).

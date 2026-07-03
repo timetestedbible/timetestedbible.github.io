@@ -1,4 +1,4 @@
-# Research: Liberty — the corpus behind ch. 25
+# Research: Liberty — the corpus behind ch. 30
 
 Done 2026-07-02 for the chapter. The Hebrew liberty-word is tiny and
 perfectly focused; the Greek side pairs freedom against slavery.

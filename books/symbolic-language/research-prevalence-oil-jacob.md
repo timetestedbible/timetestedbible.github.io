@@ -1,9 +1,9 @@
-# Research: prevalence sourcing — ch. 19 oil table, ch. 21 Jacob table
+# Research: prevalence sourcing — ch. 22 oil table, ch. 24 Jacob table
 
 Done 2026-07-02 (web survey per the table rule). Ch. 2 mountain tables
 still need their own pass.
 
-## Ch. 18 — "How the oil is usually read" (rank 1 = Holy Spirit, 65%)
+## Ch. 20 — "How the oil is usually read" (rank 1 = Holy Spirit, 65%)
 
 Rank-1 CONFIRMED as the dominant teaching:
 - GotQuestions ("Parable of the Ten Virgins"): oil widely taken as the
@@ -21,7 +21,7 @@ The spread matches the table's shape (Spirit >> faith/grace/works/
 word). Exact 65/12/10/8/5 remain estimates — keep "Est. %" label or
 soften to "most / some / a few"; sources above can be footnoted.
 
-## Ch. 20 — "How Jacob→Israel is usually read" (rank 1 = old man/new man, 50%)
+## Ch. 22 — "How Jacob→Israel is usually read" (rank 1 = old man/new man, 50%)
 
 Rank-1 CONFIRMED as a standard reading:
 - GotQuestions ("Why is Jacob called Jacob and Israel alternately?"):

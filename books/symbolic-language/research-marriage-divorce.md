@@ -43,7 +43,7 @@ Deut 24:1-4: the ground is "some{H1697} UNCLEANNESS{H6172}" — Hebrew
 word of Lev 18's forbidden-union catalog ("uncover the NAKEDNESS of…,"
 54× corpus-wide, concentrated in Lev 18/20) — the statute's own word
 points at the unions that were never lawful, not at adultery (which
-ch. 23 of Deuteronomy has already sentenced to death two chapters
+ch. 28 of Deuteronomy has already sentenced to death two chapters
 earlier). The statute regulates: bill in her hand, sent out, free to
 remarry (24:2), and the NO-RETURN rule — the first husband "may not
 take her again… after that she is defiled; for that is abomination"
@@ -93,7 +93,7 @@ The union itself can BE the fornication:
 - He did not stone His adulterous wife; He divorced her: "backsliding
   Israel committed adultery; I had PUT HER AWAY, and given her a BILL
   OF DIVORCE" (Jer 3:8); "Where is the bill of your mother's
-  divorcement?" (Isa 50:1 — already quoted in ch. 15). The bill =
+  divorcement?" (Isa 50:1 — already quoted in ch. 16). The bill =
   exile/scattering.
 - The return-riddle: Jer 3:1 quotes Deut 24:4 — "shall he return unto
   her again? shall not that land be greatly polluted? …YET RETURN AGAIN
@@ -110,7 +110,7 @@ The union itself can BE the fornication:
 - Hosea enacts it: "Go yet, love… an adulteress… So I BOUGHT her to me"
   (Hos 3:1-2); "thou shalt call me ISHI [my husband]" (2:16); "I will
   BETROTH thee unto me for ever… in righteousness, and in judgment"
-  (2:19-20 — betrothal in the vocabulary of ch. 23).
+  (2:19-20 — betrothal in the vocabulary of ch. 28).
 - Isa 54:4-7 — "the reproach of thy WIDOWHOOD" forgotten; "thy MAKER is
   thine HUSBAND… with great mercies will I GATHER thee."
 - John 8:3-11 — the death-penalty case laid before the Husband-to-die;

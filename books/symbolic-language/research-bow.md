@@ -49,7 +49,7 @@ the claim is corrected to "the only bow in the New Testament").
    FILLED THE BOW WITH EPHRAIM" (Zech 9:13), beside "the battle bow
    shall be CUT OFF: and he shall speak PEACE unto the heathen" (9:10).
    Also 1 Sam 2:4 "the bows of the mighty men are broken" (Hannah,
-   beside 2:8 used in ch. 16).
+   beside 2:8 used in ch. 17).
 
 ## TODO lead (logged)
 

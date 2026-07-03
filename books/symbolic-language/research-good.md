@@ -15,7 +15,7 @@
   and GOOD, and death and evil" (Deut 30:15) — good ∥ life, the pair
   of the way (ch. 7).
 - "He hath shewed thee, O man, what is GOOD… to do justly, and to love
-  mercy" (Mic 6:8 — good = justice/judgment done, ch. 24).
+  mercy" (Mic 6:8 — good = justice/judgment done, ch. 29).
 - Gen 1's "God saw that it was good" — creation conforming to His
   intent; "it is not good that the man should be alone" — the one
   not-good.
@@ -29,7 +29,7 @@ MEANING-word, not a symbol — but a defined one: good = conformity to
 God's own character as expressed in His commandments. The payoff is
 apologetic: "why do you call the law a burden when Scripture calls it
 GOOD?" Recommend: no chapter; add a one-paragraph beat to ch. 6
-(gospel of good) or ch. 24 (Mic 6:8 already there), plus a glossary
+(gospel of good) or ch. 29 (Mic 6:8 already there), plus a glossary
 entry marked as meaning-definition:
 
 [[sym-good]]Good:: God's own character as expressed in His

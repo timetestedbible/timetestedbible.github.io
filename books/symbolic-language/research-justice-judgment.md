@@ -1,4 +1,4 @@
-# Research: Justice and Judgment — the corpus behind ch. 24
+# Research: Justice and Judgment — the corpus behind ch. 29
 
 Done 2026-07-02 for the chapter. KJV "judgment*" falls in 408 verses,
 "justice" in only 28. Tagged: *mishpat* H4941 421×; *tsedaqah* H6666
@@ -55,7 +55,7 @@ defined: the doing of God's commandments (Deut 6:25; Ps 119:172).
 - Hab 1:4 "the LAW is slacked, and JUDGMENT doth never go forth" —
   judgment goes forth from the law.
 
-## Judgment = the due of the weak (ties to ch. 16's household)
+## Judgment = the due of the weak (ties to ch. 17's household)
 
 - Deut 10:18 "He doth execute the JUDGMENT of the fatherless and widow."
 - Isa 1:17 "seek judgment, relieve the oppressed, JUDGE the fatherless,
@@ -63,7 +63,7 @@ defined: the doing of God's commandments (Deut 6:25; Ps 119:172).
 - Jer 5:28 "the RIGHT{mishpat} of the needy do they not judge."
 - Zech 7:9-10 "Execute TRUE JUDGMENT… and oppress not the widow, nor
   the fatherless, the stranger, nor the poor" — mishpat commanded, then
-  the four names of ch. 16.
+  the four names of ch. 17.
 - Jer 22:15-16 Josiah "did judgment and justice… He JUDGED THE CAUSE OF
   THE POOR AND NEEDY; then it was well with him: WAS NOT THIS TO KNOW
   ME? saith the LORD" — doing mishpat for the poor = knowing God
@@ -138,7 +138,7 @@ JUDGMENT." The way = justice and judgment done.
   near" — followed immediately by "keepeth the SABBATH" (law-positive).
 - Isa 61:8 "For I the LORD LOVE JUDGMENT… and I will make an
   EVERLASTING COVENANT with them" — inside Isaiah's jubilee/liberty
-  chapter (hand-off to ch. 25 Liberty).
+  chapter (hand-off to ch. 30 Liberty).
 - Jer 9:24 God's own résumé: "I am the LORD which exercise
   lovingkindness, JUDGMENT, and RIGHTEOUSNESS, in the earth: for in
   these things I DELIGHT."

@@ -69,6 +69,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Wind, in Hebrew, is spirit (ruach). The four winds are the four spirits of heaven (Zechariah 6:5) — God\'s executing agents, shown in the New Testament as the four horsemen. They stir the nations, scatter and gather peoples, raise the dead, and are held or loosed at the throne\'s command.'
     },
     {
+      slug: 'clouds',
+      title: 'Clouds',
+      summary: 'The sea chapter promised the clouds a chapter, and the finding is that a cloud in Scripture is scarcely ever weather — it is a vehicle: "who maketh the clouds his chariot" (Psalm 104:3, the verse that parks this chapter and the four winds in one line). The LORD rides a swift cloud into Egypt; the pillar leads, maneuvers between the camps, and its lifting is the marching order; a cloud receives Jesus at the ascension and He returns in like manner; the two witnesses ascend in one; the reaper of Revelation 14 works from one; the disciples fear as they enter one. And a cloud is what rises from the sea — so the "cloud of witnesses" is a multitude drawn out of the peoples, and "caught up in the clouds to meet the Lord in the air" is the gathering boarding its transport: the King\'s convoy forming in the sky.'
+    },
+    {
       slug: 'trees',
       title: 'Trees',
       summary: 'A tree in Scripture is a nation or people group — rooted in its origin, sheltering those within it, judged by its fruit, and cut down in judgment ("It is thou, O king," Daniel says of Babylon). The tree completes the picture: mountain (kingdom) over tree (nation) over grass (the individual). Its wild companion is the beast — the nations as ravening kingdoms (Daniel\'s four beasts) and the unclean animals God cleanses to bring in the Gentiles (Peter\'s vision).'
@@ -94,9 +99,19 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Everyone honors caring for widows and orphans — even the godless do — and assumes himself a giver, never one of them. But Scripture turns it: the covenant people, cut off from their Husband, are themselves the widow and the fatherless (Lamentations 5:3). God defends, feeds, and gathers them home — and the food is His word, the clothing His righteousness, multiplied like five loaves and two fishes. The stranger is no mere foreigner but the one outside the covenant, drawn in at the field edge. And the poor — the fourth name at the same corner — are the bowed-humble heirs of the kingdom, set against the self-made rich who have need of nothing.'
     },
     {
+      slug: 'the-moment',
+      title: 'The Moment',
+      summary: 'Babylon boasts, "I sit a queen, and am no widow" — and Scripture answers with a single word: in a MOMENT the loss of children and widowhood shall come upon her, in one day. The Hebrew is built on the image of an eye\'s wink, and the same picture crosses into the Greek: "in a moment, in the twinkling of an eye." It is the word of Babylon\'s fall, of Korah\'s swallowing, of the last trumpet, and of God\'s own anger toward His people — never long, and never slow. Judgment does not creep; it blinks.'
+    },
+    {
+      slug: 'the-fall-of-babylon',
+      title: 'The Fall of Babylon',
+      summary: 'The Exodus is not only history; it is the similitude of the end. The plagues replay in the vials, "let my people go" returns as "come out of her, my people," and the spoilers gather in the north — tsaphon, the hidden quarter, the root that means to lurk: the ambush comes by the door Babylon cannot watch. The pursuer sinks like a stone in both stories — Jeremiah\'s scroll bound to a stone in Euphrates, Revelation\'s millstone hurled into the sea — and the verdict is not the going down but the not-rising: Babylon "shall not rise"; Jonah, the Messiah, and the baptized come up. And the great city is given her street address in the book\'s own grammar: "spiritually called Sodom and Egypt, where also our Lord was crucified" — Sodom for her sin, Egypt for her bondage, Babylon for her boast — three spiritual names on one gate, and the gate is Jerusalem\'s.'
+    },
+    {
       slug: 'the-remnant',
       title: 'The Remnant',
-      summary: 'Everyone assumes they stand on the right side of the narrow gate. Scripture gives numbers, not just a warning — a fixed remnant-ratio running through the gleaning law\'s own geometry, the shaking of an olive tree, Elijah\'s seven thousand, the third refined as gold, and the rarity of gold itself in the earth\'s crust. Fifteen independent lines of evidence, biblical and physical, converge on the same conclusion: the saved are not a majority cut short, but a remnant — small by design, from Noah\'s eight to the crowds that dissolve to twelve.'
+      summary: 'Lord, are there few that be saved? Scripture answers with numbers, not moods. One anchor census — Elijah\'s seven thousand out of a kingdom of a million, ratified by Paul as the standing pattern — then a dozen independent witnesses: Jeremiah\'s one-of-a-city, the olive tree\'s two or three berries, the gleaning law\'s own geometry, gold\'s grade in the rock, Solomon\'s one-in-a-thousand count, the lion among the beasts, Job\'s four lone messengers. Every line converges on the same fraction of one percent. And the four Hebrew words for remnant say what arithmetic cannot: the living flesh, the excellence, the one who slips through the needle\'s puncture, the escaped portion.'
     },
     {
       slug: 'knowing-faith-love-and-belief',
@@ -122,6 +137,16 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       slug: 'sun-moon-and-stars',
       title: 'Sun, Moon, and Stars',
       summary: 'The lights of heaven, read as persons. Joseph\'s dream sets the pattern, and each light tells what it is: the sun is the Father, the source of light (Psalm 84:11); the moon, which has no light of its own but the sun\'s reflected, is the faithful witness who bears that light through the world\'s night — the Son (Psalm 89:37; Revelation 1:5; John 1:5); the stars are the righteous, who rule the night with Him (Daniel 12:3); and the twelve stars are the twelve tribes (Revelation 12:1). Satan\'s counterfeit inverts the order — a dark moon raised over God\'s stars to usurp the appointed times (Isaiah 14).'
+    },
+    {
+      slug: 'lucifers-declared-plan',
+      title: "Lucifer's Declared Plan",
+      summary: 'The counterfeit of the celestial order, read from the enemy\'s own filing. On the unpointed consonants of Isaiah 14, the five "I wills" are not five ways of wanting to be God but one astronomical act: the "throne" (kisse) he exalts is spelled letter for letter as the full moon (keseh, Proverbs 7:20); the "mount of the congregation" is har moed — authority over the appointed times; the "sides of the north" (tsaphon — Strong\'s: "properly, hidden, i.e. dark") are the uttermost recesses of the darkness, the invisible dark conjunction; and "I will be like the most High" shares its consonants with "I will silence the Highest" — the sun eclipsed, at the height of the thick covering. The shining one is the son of the dark before dawn, raising a lightless moon over the stars of God to change times and laws (Daniel 7:25) — and he is promised the recesses he chose: the sides of the pit.'
+    },
+    {
+      slug: 'the-pearl',
+      title: 'The Pearl',
+      summary: 'The office the enemy set his heart to seize has a symbol, and it is a pearl. The OT\'s pearls hide under the KJV\'s "rubies" — peninim, Strong\'s "probably a pearl (as round)": wisdom is more precious than pearls, and the virtuous bride\'s price is far above them. And the night sky keeps one fulness: keseh, the full moon, the letters under "throne" and "time appointed" (Psalm 81:3; Proverbs 7:20) — the one complete light, appointed to govern the moedim, entering by the east gate that Ezekiel says opens on the day of the new moon. Beside the city whose every gate is "of one pearl," the merchant\'s purchase comes into focus: one pearl, one gate — entry at the King\'s appointed time of meeting. The full calendar case is the work of Time Tested Tradition; this chapter establishes the symbol.'
     },
     {
       slug: 'shadow',
@@ -151,7 +176,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     {
       slug: 'the-parables-of-the-kingdom',
       title: 'The Parables of the Kingdom',
-      summary: 'The final exam. With the whole glossary in hand, the seven parables of Matthew 13 are read straight through by substitution — seed, field, wheat, tares, tree, leaven, treasure, pearl, net. Five open at a touch; the leaven overturns a tradition (leaven is the word soured, everywhere Scripture defines it); and the pearl, the woman, and the three measures of meal expose symbols still unmapped — which is the lesson: the language keeps going. The feeding of the five thousand closes it as a similitude lived out loud.'
+      summary: 'The final exam — taken closed-book. Jesus was astonished His disciples could not decode the sower ("Know ye not this parable? and how then will ye know all parables?"), and the rebuke is only fair if the answers were already on the table. They were: the psalm He fulfills calls the parables "dark sayings of old… our fathers have told us," and the OT decodes its own parables in front of the reader — Nathan and David, Isaiah\'s vineyard, Ezekiel\'s eagles. So each of the seven parables of Matthew 13 is derived here from the Old Testament alone — Isaiah\'s seed, Jeremiah\'s fallow heart, Abram\'s fowls, the two seeds of Eden, the exalted low tree of Ezekiel 17, Torah\'s leaven, Sinai\'s treasure-people, the pearl hiding under the KJV\'s "rubies," Habakkuk\'s net — and only then graded against the Teacher\'s answer key. Every key He gave matches the derivation; where He gave none, the chapter marks where derivation ends and testing begins.'
     },
     {
       slug: 'path-to-salvation',

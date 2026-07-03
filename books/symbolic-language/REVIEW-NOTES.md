@@ -12,22 +12,22 @@ Script-checked every block + inline quote against KJV/ASV. Opus's
 quoting is *accurate* overall. Real fixes found (all small, inside
 quote marks — exact wording proposed):
 
-1. ch. 12 Trees — "he did eat grass as oxen" → KJV has "and did eat
+1. ch. 13 Trees — "he did eat grass as oxen" → KJV has "and did eat
    grass as oxen" (drop "he" or requote).
-2. ch. 12 Trees — "to plead with all flesh" → KJV "will the LORD plead
+2. ch. 13 Trees — "to plead with all flesh" → KJV "will the LORD plead
    with all flesh" (drop "to" inside the quote marks).
-3. ch. 14 Garments — "not having a wedding garment" → KJV "which had
+3. ch. 15 Garments — "not having a wedding garment" → KJV "which had
    not on a wedding garment".
-4. ch. 14 Garments — "make[s] coats of skins" → quote exactly: "did
+4. ch. 15 Garments — "make[s] coats of skins" → quote exactly: "did
    the LORD God make coats of skins, and clothed them".
-5. ch. 20 Light — "and called the light Day" → KJV "and God called the
+5. ch. 23 Light — "and called the light Day" → KJV "and God called the
    light Day".
-6. ch. 21 Jacob — "no iniquity in Jacob" → KJV "He hath not beheld
+6. ch. 24 Jacob — "no iniquity in Jacob" → KJV "He hath not beheld
    iniquity in Jacob" (Num 23:21).
-7. ch. 27 Fear — "because they loved the praise of men" → KJV "for
+7. ch. 32 Fear — "because they loved the praise of men" → KJV "for
    they loved the praise of men" (John 12:42-43).
 False positives ignored: chs. 1/2/27 use NKJV/AMP/Yeshua-substitutions
-by the author's design; aqob glosses in ch. 21 are annotations.
+by the author's design; aqob glosses in ch. 24 are annotations.
 
 ## 1. Per-chapter studies and proposals
 
@@ -56,7 +56,7 @@ held until sealing). Proposals:
   upon the WINGS of the WIND" (Ps 18:10; 104:3) — even the wind wears
   kanaph; and "the wind hath bound her up in her wings" (Hos 4:19).
 
-### ch. 12 Trees (1,957 words — strong; targeted adds)
+### ch. 13 Trees (1,957 words — strong; targeted adds)
 The Isa 66:17 gardens argument is a signature piece; keep untouched.
 Proposals:
 - Quote fixes #1-2 above.
@@ -76,7 +76,7 @@ Proposals:
   Shadow); "all the trees of the field shall clap their hands"
   (Isa 55:12).
 
-### ch. 13 Grass (1,214 words — solid; complete the harvest chain)
+### ch. 14 Grass (1,214 words — solid; complete the harvest chain)
 Proposals:
 - Links: sym-mountain/sym-tree (opening), sym-bread (Deut 8:3),
   sym-wind (chaff), sym-fruit.
@@ -95,7 +95,7 @@ Proposals:
 - Note: leaven consonants → vinegar claim already present and correct
   (chamets family).
 
-### ch. 14 Garments (1,822 words — excellent; epigraph + 3 adds)
+### ch. 15 Garments (1,822 words — excellent; epigraph + 3 adds)
 Proposals:
 - Quote fixes #3-4 above.
 - CASH THE EPIGRAPH (per the ch. 8 rule): Isa 61:10 "garments of
@@ -115,13 +115,13 @@ Proposals:
   sym-scarlet (Isa 1:18), sym-poor + sym-naked (Rev 3:17), sym-lamb,
   sym-gospel + way/truth/life links in the closing summary.
 
-### ch. 16 Orphans/Widows (reviewed earlier when Poor/Rich was added)
+### ch. 17 Orphans/Widows (reviewed earlier when Poor/Rich was added)
 Quote audit: CLEAN. Remaining link pass (outside the new Poor/Rich
 section, which is fully linked): sym-passover (Ex 12:48), sym-bread
 (Deut 8:3), sym-garment ("clothe... righteousness"), sym-remnant,
 sym-marriage (Isa 54:5). No content changes proposed.
 
-### ch. 18 Knowing, Faith, Love, Belief (1,233 — excellent)
+### ch. 21 Knowing, Faith, Love, Belief (1,233 — excellent)
 Proposals:
 - Links: sym-stranger (twice — "a stranger is simply one not known"),
   sym-name (×3 incl. Rom 10:13 close), sym-marriage (bride/Head
@@ -137,20 +137,20 @@ Proposals:
   until the going down of the sun" (Ex 17:12) — the faith-word's first
   appearance is hands held up in obedience, not a feeling.
 
-### ch. 19 The Fool and the Wise (1,336 — excellent; one flag)
+### ch. 22 The Fool and the Wise (1,336 — excellent; one flag)
 The oil argument (bought/stored/not-lent; Prov 23:23; Gethsemane the
 oil-press on the Mount of Olives) is one of the book's best.
 - FLAG: the prevalence table ("How the oil is usually read", 65/12/10/
   8/5%) has NO research-oil-prevalence.md behind it — violates the
   table rule. Needs sourced quotes (GotQuestions, commentaries) or the
-  numbers softened. Same flag for ch. 21's table (below) and the
+  numbers softened. Same flag for ch. 24's table (below) and the
   older ch. 2/3 tables (already in TODO).
 - Links: sym-virgin (own? no — sym-virgin points here; keep plain),
   sym-harlot, sym-lamp→sym-light (Prov 6:23 quote), sym-truth
   (Ps 119:142), sym-rock/sym-sand (builders), sym-olive (own), 
   sym-knowing ("I know you not" → sym-knowing).
 
-### ch. 20 Light and Darkness (861 — thin; expand ~+400)
+### ch. 23 Light and Darkness (861 — thin; expand ~+400)
 - Quote fix #5.
 - ADD Ex 10:22-23 — the ninth plague: "darkness in all the land of
   Egypt… but all the children of Israel had LIGHT in their dwellings"
@@ -163,25 +163,25 @@ oil-press on the Mount of Olives) is one of the book's best.
 - ADD Ps 27:1 "The LORD is my LIGHT and my SALVATION" (light ∥
   yeshuah); Isa 2:5 "let us walk in the light of the LORD" (follows
   law-from-Zion — ties the gospel chapter).
-- Links: sym-oil (×3, back to ch. 19), sym-garment, sym-virgin,
+- Links: sym-oil (×3, back to ch. 22), sym-garment, sym-virgin,
   sym-way, sym-feet (Ps 119:105).
 
-### ch. 21 Jacob, Israel, Ephraim (1,696 — strong)
+### ch. 24 Jacob, Israel, Ephraim (1,696 — strong)
 - Quote fix #6. FLAG: prevalence table (50/22/16/12%) needs research
   doc per the rule.
 - Links: sym-name/sym-new (the renamed covenant — ch. 8/17 refs),
   sym-marriage? minor. (Second half of chapter — Ephraim material —
   read in earlier sessions; no further issues logged.)
 
-### ch. 22 Sun, Moon, Stars (1,539 — strong)
+### ch. 25 Sun, Moon, Stars (1,539 — strong)
 - Genesis 1:16 "stars also" italics argument verified (KJV italics
   supply "also"; "he made" carried over — claim is fair).
-- Links: sym-light/sym-night/sym-day (ch. 20 refs), sym-sign (Gen 1:14
+- Links: sym-light/sym-night/sym-day (ch. 23 refs), sym-sign (Gen 1:14
   "for signs" → sym-sign!), sym-firmament (ch. 3).
 - Note: description mentions Virgo/constellations — body defers to
   TTT; fine.
 
-### ch. 27 The Fear of the LORD (1,003 — tight, good close)
+### ch. 32 The Fear of the LORD (1,003 — tight, good close)
 - Quote fix #7.
 - ADD one-line bridge to the (new) preceding Worship chapter: Jesus
   rendering Deut 6:13's "fear" as "worship" (Matt 4:10) — the two
@@ -193,7 +193,7 @@ oil-press on the Mount of Olives) is one of the book's best.
   their hearts, that they shall not depart from me" — the renewed
   covenant writes the fear in, exactly as Jer 31:33 writes the law in
   (same oracle, next chapter).
-- Links: sym-wise/sym-fool (ch. 19), sym-grass (Isa 51:12/40:6),
+- Links: sym-wise/sym-fool (ch. 22), sym-grass (Isa 51:12/40:6),
   sym-gospel + sym-worship (Rev 14:7), closing summary links
   (mountain, sea, way/truth/life, name, garment, light).
 
@@ -212,15 +212,15 @@ oil-press on the Mount of Olives) is one of the book's best.
 - draft-fall-of-babylon.adoc — full draft chapter (excluded from the
   print build by its filename), the Exodus-typology thesis from ch. 3.
 - Beasts-of-prey: research-lion.md already covers; recommend a short
-  "Beasts of Prey" section added to ch. 12 Trees rather than a new
+  "Beasts of Prey" section added to ch. 13 Trees rather than a new
   chapter (wolf/bear/leopard/fox material listed there).
 
 ## 3. Standing flags for the author
 
 - Three prevalence tables still lack source research (ch. 2 mountain
-  ×4, ch. 19 oil, ch. 21 Jacob) — need WebSearch pass with quoted
+  ×4, ch. 22 oil, ch. 24 Jacob) — need WebSearch pass with quoted
   sources per the rule, or soften numbers.
-- sym-marriage in glossary still also referenced from ch. 14 (Garments)
+- sym-marriage in glossary still also referenced from ch. 15 (Garments)
   — intentional (the garment IS the covering; marriage defined at
   ch. 9); no action.
 - Chapters 1, 2, 27 (author's voice) were quote-audited only; NKJV/AMP

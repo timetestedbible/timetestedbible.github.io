@@ -48,7 +48,7 @@ All key texts verified against the corpus 2026-07-02.
   transgressions" (Ps 103:12); "many shall come from the EAST and
   WEST, and shall sit down with Abraham" (Matt 8:11).
 - Ties: the four winds (ch. 11) traverse the quarters; the four
-  kanaph-corners of the earth (ch. 15) are where the dispersed wait.
+  kanaph-corners of the earth (ch. 16) are where the dispersed wait.
 
 ## Recommendation
 

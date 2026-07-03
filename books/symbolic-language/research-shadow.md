@@ -61,7 +61,7 @@ Moses covered by God's hand-shadow while the glory passed (Ex 33:22); "the
 sun shall not smite thee" under the LORD's shade (Ps 121:5-6). And the
 covering is the covenant: Ps 91:1+4 sets "shadow of the Almighty" beside
 "under his wings shalt thou trust"; the wings are the kanaph where the
-commandments hang (tzitzit, Num 15:38-39 — Wings ch. 15); the cherubim's
+commandments hang (tzitzit, Num 15:38-39 — Wings ch. 16); the cherubim's
 WINGS shadow the mercy seat (Heb 9:5). The commandments are not the fire —
 they are the shade that lets a man dwell beside it (law-positive); the same
 Sun rises "with healing in his wings" on them that fear His name (Mal 4:2).
@@ -71,7 +71,7 @@ salvation); the hand that covered Moses (Ex 33:22) is God's salvation —
 Yeshua — standing in the gap (Isa 49:2, the Servant hidden in the
 hand-shadow); and Ps 84:11 holds both halves in one breath: "the LORD God
 is a SUN and SHIELD" — the fire and the covering in one Person. He shades
-us from Himself, and the shade is His Messiah. Now stated in ch. 23.
+us from Himself, and the shade is His Messiah. Now stated in ch. 28.
 
 ## Tier 2 — A kingdom's shadow: protection over peoples (ties to Trees)
 

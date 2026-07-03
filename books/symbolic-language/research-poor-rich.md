@@ -1,4 +1,4 @@
-# Research: Poor and Rich — the corpus behind the Poor-and-Rich section of ch. 16 (Orphans, Widows & the Fatherless)
+# Research: Poor and Rich — the corpus behind the Poor-and-Rich section of ch. 17 (Orphans, Widows & the Fatherless)
 
 Done 2026-07-02 for the chapter. Corpus: KJV "poor" ~200 verses, "rich"
 ~80. Tagged: *ani* H6041 (poor/afflicted) 77×; *anav* H6035 (meek) 24×;

@@ -126,22 +126,32 @@ build_target = lambda do |media, out|
   end
 
   fmt = ->(h) { '{' + h.map { |pg, pts| "#{pg}:#{pts}pt" }.join(', ') + '}' }
-  reserve  = {}
-  detected = {}
-  converged = false
-  6.times do |i|
-    detected = render.call reserve, false
-    warn "  footnote pass #{i + 1}: reserved #{fmt.call reserve} -> needed #{fmt.call detected}"
-    if detected == reserve
-      converged = true
-      break
-    end
-    reserve = detected
+# Safety criterion, not equality: the loop stops when every page that NEEDS a
+# band already has one at least as tall as needed (detected SUBSET-OF reserve).
+# The reserve only ever grows (max-union per pass), so oscillating markers —
+# a band on page N pushing its own marker to N+1 and back — cannot flip-flop
+# forever; both pages simply end up reserved. A reserved page whose marker
+# moved away keeps a small empty band (a slightly short page) — invisible,
+# and the price of a guarantee: the final flush pass renders with the exact
+# reserve that its own measuring pass proved sufficient, so a drawn note can
+# never land on an unreserved page (which printed notes OVER body text).
+reserve = {}
+passes  = 0
+loop do
+  passes += 1
+  detected = render.call reserve, false
+  warn "  footnote pass #{passes}: reserved #{fmt.call reserve} -> needed #{fmt.call detected}"
+  safe = detected.all? { |pg, h| reserve[pg] && reserve[pg] >= h }
+  break if safe
+  if passes >= 12
+    warn "  footnote layout did not settle in 12 passes — reserving union and proceeding"
+    detected.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max }
+    break
   end
-  # Non-convergence fallback: reserve the max of both maps per page.
-  final_reserve = converged ? reserve : reserve.merge(detected) { |_, a, b| [a, b].max }.sort.to_h
-  warn "  footnote layout #{converged ? 'converged' : 'did not converge — reserving max union'}: #{fmt.call final_reserve}"
-  render.call final_reserve, true
+  detected.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max }
+end
+warn "  footnote layout settled after #{passes} passes: #{fmt.call reserve}"
+render.call reserve, true
 
   warn "Wrote: #{out}  (media=#{media})"
 end

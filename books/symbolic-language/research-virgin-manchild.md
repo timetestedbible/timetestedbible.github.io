@@ -12,7 +12,7 @@ All texts verified 2026-07-02.
    sun, and the moon under her feet, and upon her head a crown of
    TWELVE STARS… she brought forth a MAN CHILD, who was to RULE ALL
    NATIONS with a rod of iron." The sun/moon/twelve-stars household is
-   Joseph's dream (ch. 22) — the woman is covenant Israel, not one
+   Joseph's dream (ch. 25) — the woman is covenant Israel, not one
    maiden only; the virgin scales the way every symbol scales.
 3. Isa 66:7-8 — "she was delivered of a MAN CHILD… shall a NATION be
    born at once?" — the exact phrase of Rev 12:5, and Isaiah's own

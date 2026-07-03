@@ -231,8 +231,16 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       @table_float = nil
       render_float_table node
     elsif force
+      # Even a forced flush should fill the current page if the table fits in
+      # what remains — advancing unconditionally left near-empty pages when a
+      # figure pushed the float's boundary onto a fresh page.
       @table_float = nil
-      advance_page unless at_page_top?
+      ext = begin
+        dry_run { convert_table node }
+      rescue StandardError
+        nil
+      end
+      advance_page unless at_page_top? || (ext && ext.single_page?)
       render_float_table node
     else
       ext = begin
@@ -255,10 +263,31 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     @float_now = prev
   end
 
-  # Any float still pending at a section boundary or document end must land now,
-  # inside its own chapter.
+  # Any float still pending at a section boundary — including a [discrete]
+  # heading — or at document end must land now, inside its own section: a
+  # floated table must never drift past the heading of the section that
+  # introduced it.
   def convert_section node
     flush_table_float force: true unless scratch?
+    super
+  end
+
+  def convert_floating_title node
+    flush_table_float force: true unless scratch?
+    super
+  end
+
+  # Figures come in two renditions: NAME.svg (color, screen + web) and a
+  # NAME-print.svg sibling (light-background grayscale, drawn for ink on paper).
+  # The prepress build swaps in the print rendition when the sibling exists;
+  # the gray PDF derives from prepress, so it inherits the swap.
+  def convert_image node
+    flush_table_float unless scratch?
+    if (node.document.attr 'media') == 'prepress' && (target = node.attr 'target')&.end_with?('.svg') && !target.end_with?('-print.svg')
+      print_target = target.sub(/\.svg$/, '-print.svg')
+      dir = node.document.attr 'imagesdir'
+      node.set_attr 'target', print_target if dir && ::File.exist?(::File.join(dir, print_target))
+    end
     super
   end
 

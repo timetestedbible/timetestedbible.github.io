@@ -8,13 +8,13 @@ Question posed (TODO): one symbol with two poles, or two distinct uses?
   I have given it to you upon the altar to make an atonement" (Lev
   17:11); "the BLOOD OF THE COVENANT" (Ex 24:8; Matt 26:28; Heb 13:20);
   "by the blood of thy covenant I have sent forth thy PRISONERS out of
-  the pit" (Zech 9:11 — blood as release-instrument, ties ch. 25
+  the pit" (Zech 9:11 — blood as release-instrument, ties ch. 30
   Liberty); the Passover token (Ex 12:13, in chs. 7/8); washed robes
   (Rev 7:14).
 - LIFE TAKEN (death upon the peoples): waters→blood (first plague; Rev
   16:3-6 "became as the blood OF A DEAD MAN: and every living soul
   DIED"); "they have shed the blood of saints… thou hast given them
-  BLOOD TO DRINK"; blood in the skirts (Jer 2:34, ch. 15); the winepress
+  BLOOD TO DRINK"; blood in the skirts (Jer 2:34, ch. 16); the winepress
   (Rev 14:20).
 
 ## Verdict proposed

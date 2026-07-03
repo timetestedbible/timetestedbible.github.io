@@ -49,6 +49,7 @@ asciidoctor:
     - sectlinks
     - idprefix=_
     - idseparator=-
+    - imagesdir=/assets/img   # chapter figures resolve to site assets (color renditions; print swaps in -print.svg siblings)
 
 # Blog post permalink structure
 permalink: /blog/:slug/

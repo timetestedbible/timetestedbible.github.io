@@ -1,4 +1,4 @@
-# Research: Wings — full kanaph audit behind the expanded ch. 15
+# Research: Wings — full kanaph audit behind the expanded ch. 16
 
 Done 2026-07-02. *kanaph* H3671: 108 occurrences under 18 KJV
 renderings — the scatter is the point: the reader must learn to lift
@@ -35,7 +35,7 @@ the commandment-fringe to the wings of refuge.
 - Rev 12:14 — the woman given "two wings of a great eagle" to the
   wilderness: the Exodus replayed.
 - Isa 6:2 — even seraphim cover face and feet with wings before the
-  fire (ties ch. 23 shadow/fire).
+  fire (ties ch. 28 shadow/fire).
 
 ## The torn skirt (new section material)
 
@@ -59,7 +59,7 @@ the commandment-fringe to the wings of refuge.
 - Counterfeit wings: Assyria's "stretching out of his WINGS shall fill
   the breadth of thy land, O Immanuel" (Isa 8:8); the "great eagle
   with great wings" empire-kings of Ezek 17:3, 7. Whose wing covers
-  you (ch. 23's question).
+  you (ch. 28's question).
 - Matt 23 is framed in kanaph: v. 5 the enlarged kraspeda (fringes
   made broad, "to be seen of men") → v. 37 the refused wings ("as a
   hen gathereth her chickens… ye would not").

@@ -26,7 +26,7 @@ the magicians' staffs = nations, swallowed by Aaron's rod = Dan 2:44
 
 "Put now thine HAND into thy BOSOM… leprous as snow… into thy bosom
 AGAIN… turned again as his other flesh."
-Working reading (to test): the hand = works/power (ch. 23 material:
+Working reading (to test): the hand = works/power (ch. 28 material:
 God's hand works yeshuah, Ps 98:1); the bosom = the place of covenant
 intimacy (John 1:18 "in the bosom of the Father"; Ruth's Boaz-scene?
 Num 11:12 "carry them in thy bosom"). The hand drawn from the bosom
