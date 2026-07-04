@@ -186,6 +186,10 @@ link:
   font-color: '000000'
 toc:
   font-color: '000000'
+  # tighter than body so all chapters + the six part lines fit the Contents
+  # on a single page
+  font-size: 10
+  line-height: 0.73
   dot-leader:
     content: '. '
     font-color: '000000'
@@ -209,11 +213,14 @@ header:
       content: '{chapter-title}'
   verso:
     left:
-      content: 'The Bible''s Symbolic Language'
+      content: 'MEAT: The Bible''s Symbolic Language'
   font-size: 8
   font-color: '000000'
 footer:
-  height: 0.6in
+  # 0.5in keeps the separator hairline BELOW the body floor (bottom margin
+  # 0.7in): at 0.6in the hairline sat 9.6pt above the floor and struck
+  # through the last text line of any page that filled to the bottom.
+  height: 0.5in
   margin: [0, inherit, 0.2in, inherit]   # lift folio up from the trim edge (BookBaby 0.5in safety)
   # footer separator keeps the inherited light-gray (DDDDDD) hairline — gray is fine for non-text rules
   recto:

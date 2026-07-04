@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Title page for the 6x9 trade edition (432pt x 648pt). The three title
-     lines are each stretched with textLength so they share an identical width.
+<!-- Title page for the 6x9 trade edition (432pt x 648pt), mirroring the cover
+     lockup at 72pt/in: MEAT in tall italic caps with an underline (the book's
+     register for a word under study), THE BIBLE'S / SYMBOLIC / LANGUAGE
+     bracketed by a matching closing rule, author beneath the frame. Lines are
+     stretched with textLength so the block shares one width; tall caps come
+     from a non-uniform scale with y pre-divided by the factor.
      All ink is pure black (#000000) — BookBaby rejects color/gray in the interior. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="432" height="648" viewBox="0 0 432 648">
   <rect width="432" height="648" fill="#ffffff"/>
 
-  <!-- Title: THE BIBLE'S / SYMBOLIC / LANGUAGE — all three the same width -->
   <g font-family="Noto Serif" fill="#000000" text-anchor="middle">
-    <text x="216" y="252" font-size="40" textLength="300" lengthAdjust="spacingAndGlyphs">THE BIBLE&#8217;S</text>
-    <text x="216" y="306" font-size="40" textLength="300" lengthAdjust="spacingAndGlyphs">SYMBOLIC</text>
-    <text x="216" y="360" font-size="40" textLength="300" lengthAdjust="spacingAndGlyphs">LANGUAGE</text>
+    <!-- MEAT — baseline 270 (y = 270/1.18) -->
+    <text x="216" y="228.8" font-size="73.4" font-style="italic" font-weight="bold"
+          transform="scale(1,1.18)" textLength="241.2" lengthAdjust="spacingAndGlyphs">MEAT</text>
+    <!-- underline / top of the frame -->
+    <rect x="95.4" y="280" width="241.2" height="3"/>
+    <!-- subtitle — baselines 322.6 / 365.8 / 409 (y pre-divided by 1.22) -->
+    <text x="216" y="264.4" font-size="37.4" transform="scale(1,1.22)" textLength="234" lengthAdjust="spacingAndGlyphs">THE BIBLE&#8217;S</text>
+    <text x="216" y="299.8" font-size="37.4" transform="scale(1,1.22)" textLength="234" lengthAdjust="spacingAndGlyphs">SYMBOLIC</text>
+    <text x="216" y="335.2" font-size="37.4" transform="scale(1,1.22)" textLength="234" lengthAdjust="spacingAndGlyphs">LANGUAGE</text>
+    <!-- closing rule -->
+    <rect x="95.4" y="419" width="241.2" height="3"/>
+    <!-- author -->
+    <text x="216" y="453.6" font-size="15.8" letter-spacing="1.8">DANIEL LARIMER</text>
   </g>
-
-  <!-- thin black rule -->
-  <rect x="156" y="392" width="120" height="1.2" fill="#000000"/>
-
-  <!-- author -->
-  <text x="216" y="436" font-family="Noto Serif" font-size="15" fill="#000000"
-        text-anchor="middle">By Daniel Larimer</text>
 
   <!-- epigraph -->
   <g font-family="Noto Serif" font-style="italic" fill="#000000" text-anchor="middle">

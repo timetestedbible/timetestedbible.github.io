@@ -53,7 +53,7 @@ chapters = Dir.glob(File.join(SRC, '[0-9]*-*.adoc')).sort
 abort "No chapter files (NN-name.adoc) in #{SRC}" if chapters.empty?
 
 doc = +<<~ADOC
-  = The Bible's Symbolic Language
+  = MEAT: The Bible's Symbolic Language
   :doctype: book
   :lang: en
   :notitle:
@@ -88,8 +88,45 @@ end
 # Contents — placed here, after the front matter and before the chapters.
 doc << "\ntoc::[]\n"
 
+# --- Parts: the book's five movements plus the appendices. Keyed by the slug
+# of the chapter that OPENS each part; a level-0 part heading (real book part:
+# own page, nested TOC) with a short opener is emitted before that chapter.
+PARTS = {
+  'introduction' => ['Part One — The Key', <<~TXT],
+    Scripture speaks a symbolic language, and it expects its readers to learn it.
+    This part states the method and sits the exam Jesus Himself graded — the parables of the kingdom, derived from the Scriptures the disciples already held — then works the language's first grammar: the mountain, the sea, the sign.
+    It ends inside the sign of Jonah, where one prophet's life is read as a single similitude.
+  TXT
+  'gospel' => ['Part Two — The Covenant', <<~TXT],
+    The gospel is a king's proclamation, and its content is a covenant.
+    This part gathers the covenant's own vocabulary — the way, the name, the marriage, the bow — and finds beneath them one binding thing: the law of the kingdom, going forth from Zion, taking a people as a bride takes a name.
+  TXT
+  'the-four-winds' => ['Part Three — The Scattering', <<~TXT],
+    Nations are trees and people are grass, and a bride who broke covenant was divorced and scattered to the four winds.
+    This part follows the two houses of Israel through their garments, their wings, their widowhood and orphanhood, to the fall of the city that holds them captive — and to the remnant God has always kept.
+    Its summit is a name: who Babylon is, and the call that ends her chapter — come out of her, my people.
+  TXT
+  'knowing-faith-love-and-belief' => ['Part Four — The Usurper', <<~TXT],
+    To spot a counterfeit, first know the true.
+    This part learns discernment — what it is to know, who the fool and the wise are, what light and darkness do — then reads the fourth day's sky as Scripture assigns it: sun, moon, and stars in their offices.
+    Then it opens the enemy's plan, published out of his own heart: a throne that is a moon, raised over the appointed times — and finds the pearl of great price hanging where no tradition thought to look.
+  TXT
+  'shadow' => ['Part Five — The Verdict', <<~TXT],
+    Once the method holds, the conclusions are arithmetic.
+    This part weighs the shadow against the substance, justice against the case of the fatherless, liberty against the year of release, worship against the calendar it keeps, and the fear of the LORD against the fear of man.
+    It ends where the book has aimed from the first page: the path to salvation.
+  TXT
+  'clouds' => ['Appendices', <<~TXT],
+    Three symbol studies that stand on their own, for the reader still hungry — and the glossary that indexes every symbol this book proves.
+  TXT
+}
+
 # Main chapters: auto page break, TOC entry, PDF bookmark, running head.
 main_entries.each do |c|
+  if (part = PARTS[c[:slug]])
+    doc << "\n= #{part[0]}\n\n#{part[1]}\n"
+    warn "  = #{part[0]}"
+  end
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
   warn "  + #{c[:title]}  (#{c[:file]})"
 end

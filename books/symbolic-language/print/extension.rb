@@ -432,8 +432,12 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     end
     # Drop the chapter title to about the middle of the page; the epigraph stays
     # above it in the top half. (Guard so a long epigraph never pushes it upward.)
-    mid = bounds.height / 2.0
-    move_cursor_to mid if cursor > mid
+    # "How to Use This Book" is exempt (author's single-page exception): its
+    # title stays at the top so the conventions fit on one opening page.
+    unless node.id == 'how-to-use'
+      mid = bounds.height / 2.0
+      move_cursor_to mid if cursor > mid
+    end
     super
   end
 end

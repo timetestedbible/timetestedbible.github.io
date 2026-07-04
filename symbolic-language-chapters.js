@@ -5,7 +5,7 @@
 
 const SYMBOLIC_LANGUAGE_BOOK = {
   slug: 'symbolic-language',
-  title: "The Bible's Symbolic Language",
+  title: "MEAT: The Bible's Symbolic Language",
   basePath: '/books/symbolic-language',
   chapters: [
     {
@@ -17,6 +17,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       slug: 'introduction',
       title: 'Introduction',
       summary: 'Why Jesus concealed his teaching in parables, what milk and meat really mean, and how Scripture encodes an objective, translation-robust symbolic language anyone can now learn to decode.'
+    },
+    {
+      slug: 'the-parables-of-the-kingdom',
+      title: 'The Parables of the Kingdom',
+      summary: 'The final exam — taken closed-book. Jesus was astonished His disciples could not decode the sower ("Know ye not this parable? and how then will ye know all parables?"), and the rebuke is only fair if the answers were already on the table. They were: the psalm He fulfills calls the parables "dark sayings of old… our fathers have told us," and the OT decodes its own parables in front of the reader — Nathan and David, Isaiah\'s vineyard, Ezekiel\'s eagles. So each of the seven parables of Matthew 13 is derived here from the Old Testament alone — Isaiah\'s seed, Jeremiah\'s fallow heart, Abram\'s fowls, the two seeds of Eden, the exalted low tree of Ezekiel 17, Torah\'s leaven, Sinai\'s treasure-people, the pearl hiding under the KJV\'s "rubies," Habakkuk\'s net — and only then graded against the Teacher\'s answer key. Every key He gave matches the derivation; where He gave none, the chapter marks where derivation ends and testing begins.'
     },
     {
       slug: 'mountain',
@@ -69,11 +74,6 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Wind, in Hebrew, is spirit (ruach). The four winds are the four spirits of heaven (Zechariah 6:5) — God\'s executing agents, shown in the New Testament as the four horsemen. They stir the nations, scatter and gather peoples, raise the dead, and are held or loosed at the throne\'s command.'
     },
     {
-      slug: 'clouds',
-      title: 'Clouds',
-      summary: 'The sea chapter promised the clouds a chapter, and the finding is that a cloud in Scripture is scarcely ever weather — it is a vehicle: "who maketh the clouds his chariot" (Psalm 104:3, the verse that parks this chapter and the four winds in one line). The LORD rides a swift cloud into Egypt; the pillar leads, maneuvers between the camps, and its lifting is the marching order; a cloud receives Jesus at the ascension and He returns in like manner; the two witnesses ascend in one; the reaper of Revelation 14 works from one; the disciples fear as they enter one. And a cloud is what rises from the sea — so the "cloud of witnesses" is a multitude drawn out of the peoples, and "caught up in the clouds to meet the Lord in the air" is the gathering boarding its transport: the King\'s convoy forming in the sky.'
-    },
-    {
       slug: 'trees',
       title: 'Trees',
       summary: 'A tree in Scripture is a nation or people group — rooted in its origin, sheltering those within it, judged by its fruit, and cut down in judgment ("It is thou, O king," Daniel says of Babylon). The tree completes the picture: mountain (kingdom) over tree (nation) over grass (the individual). Its wild companion is the beast — the nations as ravening kingdoms (Daniel\'s four beasts) and the unclean animals God cleanses to bring in the Gentiles (Peter\'s vision).'
@@ -99,11 +99,6 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Everyone honors caring for widows and orphans — even the godless do — and assumes himself a giver, never one of them. But Scripture turns it: the covenant people, cut off from their Husband, are themselves the widow and the fatherless (Lamentations 5:3). God defends, feeds, and gathers them home — and the food is His word, the clothing His righteousness, multiplied like five loaves and two fishes. The stranger is no mere foreigner but the one outside the covenant, drawn in at the field edge. And the poor — the fourth name at the same corner — are the bowed-humble heirs of the kingdom, set against the self-made rich who have need of nothing.'
     },
     {
-      slug: 'the-moment',
-      title: 'The Moment',
-      summary: 'Babylon boasts, "I sit a queen, and am no widow" — and Scripture answers with a single word: in a MOMENT the loss of children and widowhood shall come upon her, in one day. The Hebrew is built on the image of an eye\'s wink, and the same picture crosses into the Greek: "in a moment, in the twinkling of an eye." It is the word of Babylon\'s fall, of Korah\'s swallowing, of the last trumpet, and of God\'s own anger toward His people — never long, and never slow. Judgment does not creep; it blinks.'
-    },
-    {
       slug: 'the-fall-of-babylon',
       title: 'The Fall of Babylon',
       summary: 'The Exodus is not only history; it is the similitude of the end. The plagues replay in the vials, "let my people go" returns as "come out of her, my people," and the spoilers gather in the north — tsaphon, the hidden quarter, the root that means to lurk: the ambush comes by the door Babylon cannot watch. The pursuer sinks like a stone in both stories — Jeremiah\'s scroll bound to a stone in Euphrates, Revelation\'s millstone hurled into the sea — and the verdict is not the going down but the not-rising: Babylon "shall not rise"; Jonah, the Messiah, and the baptized come up. And the great city is given her street address in the book\'s own grammar: "spiritually called Sodom and Egypt, where also our Lord was crucified" — Sodom for her sin, Egypt for her bondage, Babylon for her boast — three spiritual names on one gate, and the gate is Jerusalem\'s.'
@@ -127,11 +122,6 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       slug: 'light-and-darkness',
       title: 'Light and Darkness, Day and Night',
       summary: 'Light is not vague truth but the law lived where men can see it — "the commandment is a lamp; and the law is light" (Proverbs 6:23); "let your light so shine... that they may see your good works." Darkness is not ignorance but concealed disobedience. They are the same division as the day and the night (Genesis 1:5): the children of light are the children of the day — awake, sober, working while it is day. Garment, oil, and light converge in the one cast into outer darkness.'
-    },
-    {
-      slug: 'jacob-israel-and-ephraim',
-      title: 'Jacob, Israel, and Ephraim',
-      summary: 'Jacob — the heel-grabbing supplanter — is the crooked human heart; Israel is the new name given to that same man for prevailing with God. The two names do not divide flesh from spirit; they tell one story, the crooked made straight. So Israel is covenant and character, not blood — "they are not all Israel, which are of Israel." And Ephraim, the firstborn whose seed becomes "a multitude of nations," is that people scattered into all the earth as fruit, and regathered into one.'
     },
     {
       slug: 'sun-moon-and-stars',
@@ -174,14 +164,24 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The closing chapter. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book. Its counterfeit is the fear of man — the snare that breaks the very commandments the fear of God keeps (Proverbs 29:25).'
     },
     {
-      slug: 'the-parables-of-the-kingdom',
-      title: 'The Parables of the Kingdom',
-      summary: 'The final exam — taken closed-book. Jesus was astonished His disciples could not decode the sower ("Know ye not this parable? and how then will ye know all parables?"), and the rebuke is only fair if the answers were already on the table. They were: the psalm He fulfills calls the parables "dark sayings of old… our fathers have told us," and the OT decodes its own parables in front of the reader — Nathan and David, Isaiah\'s vineyard, Ezekiel\'s eagles. So each of the seven parables of Matthew 13 is derived here from the Old Testament alone — Isaiah\'s seed, Jeremiah\'s fallow heart, Abram\'s fowls, the two seeds of Eden, the exalted low tree of Ezekiel 17, Torah\'s leaven, Sinai\'s treasure-people, the pearl hiding under the KJV\'s "rubies," Habakkuk\'s net — and only then graded against the Teacher\'s answer key. Every key He gave matches the derivation; where He gave none, the chapter marks where derivation ends and testing begins.'
-    },
-    {
       slug: 'path-to-salvation',
       title: 'The Path to Salvation',
       summary: 'Borrowed from Time Tested Tradition. Keeping the commandments is not a works-based salvation, yet willful, unrepentant lawbreaking condemns. Salvation comes by confessing Jesus as Lord and the law as good — and the familiar three-step path cannot even be taken without the law that defines sin, the High Priest it establishes, and the obedience that calling Him Master requires.'
+    },
+    {
+      slug: 'clouds',
+      title: 'Appendix: Clouds',
+      summary: 'A cloud in Scripture is scarcely ever weather — it is a vehicle ("who maketh the clouds his chariot"), and its cargo is water. The LORD rides a swift cloud into Egypt; the pillar leads Israel, maneuvers between the camps, and its lifting is the marching order; a cloud receives Him at the ascension and He returns in like manner; the two witnesses ascend in one; the disciples fear as they enter one. And the water is defined: "my doctrine shall drop as the rain" — the former and latter rains frame the age between them, the judged vineyard has its clouds commanded to withhold, and Amos calls the drought a famine of hearing the words of the LORD. The counterfeit is the cloud without water, carried about of winds; the faithful, risen from the sea of peoples, are themselves the cloud of witnesses, caught up to meet the Lord in the air.'
+    },
+    {
+      slug: 'the-moment',
+      title: 'Appendix: The Moment',
+      summary: 'Babylon boasts, "I sit a queen, and am no widow" — and Scripture answers with a single word: in a MOMENT the loss of children and widowhood shall come upon her, in one day. The Hebrew is built on the image of an eye\'s wink, and the same picture crosses into the Greek: "in a moment, in the twinkling of an eye." It is the word of Babylon\'s fall, of Korah\'s swallowing, of the last trumpet, and of God\'s own anger toward His people — never long, and never slow. Judgment does not creep; it blinks.'
+    },
+    {
+      slug: 'jacob-israel-and-ephraim',
+      title: 'Appendix: Jacob, Israel, and Ephraim',
+      summary: 'Jacob — the heel-grabbing supplanter — is the crooked human heart; Israel is the new name given to that same man for prevailing with God. The two names do not divide flesh from spirit; they tell one story, the crooked made straight. So Israel is covenant and character, not blood — "they are not all Israel, which are of Israel." And Ephraim, the firstborn whose seed becomes "a multitude of nations," is that people scattered into all the earth as fruit, and regathered into one.'
     },
     {
       slug: 'glossary',

@@ -541,3 +541,38 @@ symbols named as the tip of the iceberg + reader's method charge.
   covenant-stone), Messiah-shade paragraph added to Shadow (Lam 4:20;
   Song 2:3; Isa 32:1-2; "the body is of Christ" — the shade is His
   Messiah).
+
+## Cover (2026-07-04)
+- cover/ system: make_cover.py generates layered SVG wraps (editable text
+  layers, spine width parameterized at 317pp x 0.00225in — VERIFY against
+  BookBaby spec). Typography mirrors print/title-page.svg (Noto Serif,
+  three equal-width caps lines, rule, byline; fonts embedded @font-face).
+- Presets: front-angel / spine-angel / front-orbs (original hero image,
+  ~106 DPI — needs hi-res regeneration before upload) and front-wings
+  (calendar-usurper-wrap.jpg, 5186x3700 = 400 DPI canvas, built by
+  cover/expand_image.py: sharp original spans the front panel, wings
+  entirely on front; underlay = blurred figure-free sky + rock bands of
+  the same painting; title on the dark mountain below the feet).
+- NOTE: the sharp content itself is upscaled from 1376px — a generative
+  hi-res regeneration/outpainting can replace calendar-usurper-wrap.jpg
+  1:1 (same canvas, same content rect 2735,200..5135,1540) with zero
+  layout changes.
+
+## 2026-07-04 (evening)
+- Clouds ch. 12 REWRITTEN per author: no promise/meta-talk, register
+  trimmed, and the cargo brought home — rain = the word (Deut 32:2; Isa
+  55:10), former/latter rains frame the age (Deut 11:14; Hos 6:3; Joel
+  2:23; Zech 10:1; Jas 5:7), withholding = word-famine (Isa 5:6; Amos
+  8:11), cloud-test Eccl 11:3, counterfeit clouds without water (Jude 12;
+  2 Pet 2:17; Prov 25:14). research-clouds.md still current.
+- COMMISSIONED: living water study (fresh vs salt vs spiritual water) —
+  the author wants it studied; sym-living-2 currently "not yet proven".
+- Ch. 24: two sticks = two olive trees passage (Jer 11:16-17 both houses
+  under the olive name; Zech 4 oil-pipes; Rev 11:4 + 1:20 witnesses =
+  two assemblies; oil->lamp(commandment)->light chain; Isa 49:6 both
+  halves; Deut 4:6). Author's proposal tested and integrated.
+- Ch. 26: untimely figs (Rev 6:13) — fruit borne on the wrong moed,
+  shaken down by the wind; stars on the counterfeit calendar.
+- FIXED: footer hairline struck through the last body line on full pages
+  (folio 129 etc.) — footer height 0.6in put the separator 9.6pt ABOVE
+  the body floor; now 0.5in. Glossary stale-pointer audit run.
