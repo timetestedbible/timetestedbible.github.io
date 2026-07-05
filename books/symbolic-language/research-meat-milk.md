@@ -261,14 +261,65 @@ for the Real-Presence counter raised by the doctrinal panel (6:63).
    belongs to the teleioi, the finished-mature (Heb 5:14). Meat and its
    eaters share the root of completion: milk begins; meat completes.
 
+## Counter-text answered: "the kingdom of God is not meat and drink" (Rom 14:17)
+
+Author 2026-07-05: "Rom 14:17 seems to contradict our meat study... word
+of god done = righteousness... kingdom of god is not meat and drink..."
+Verdict after verification: **no contradiction — the verse is a witness
+for the study; the KJV manufactured the collision.**
+
+1. **The word is an act, not the symbol's substance.** Rom 14:17 reads
+   βρῶσις καὶ πόσις — _brōsis kai posis_, "EATING and drinking" (G1035,
+   Strong's: "abstractly, EATING"), verbal nouns — the identical pair of
+   Col 2:16 ("let no man judge you in eating, or in drinking"). Not
+   John 4:34's _brōma_ (the food itself, "My meat is to do the will").
+2. **The chapter pins it to the literal table end to end:** the weak
+   brother "eateth HERBS" (v2); "destroy not him with thy MEAT [_brōma_,
+   the food on the plate]" (v15); "for MEAT [_brōma_] destroy not the
+   work of God" (v20); "neither to eat FLESH [_kreas_, butcher's meat],
+   nor to drink WINE" (v21); the esteemed days (v5-6). The dispute is
+   table-scruples between brothers — herbs, wine, fast-days.
+3. **The verse's second half installs the symbol's content in the
+   literal food's place:** "not eating and drinking; but RIGHTEOUSNESS,
+   and PEACE, and joy." The word of God DONE is righteousness — so the
+   verse strips kingdom-weight from literal food and names the kingdom's
+   substance as exactly what symbolic meat IS. The Romans echo of the
+   verse that closes the John 6 meat discourse: "the flesh profiteth
+   nothing; the words that I speak unto you, they are spirit" (John
+   6:63).
+4. **Paul's triplet keeps Isaiah's order:** "the work of RIGHTEOUSNESS
+   shall be PEACE; and the effect of righteousness quietness and
+   assurance" (Isa 32:17) → "RIGHTEOUSNESS, and PEACE, and joy"
+   (Rom 14:17). The meat→righteousness→peace pipeline is the same one
+   the peace study runs on (research-peace.md); Ps 85:10 pairs the same
+   two.
+5. **The same Greek word carries both layers, and context sorts them:**
+   Jesus uses _brōsis_ for the SYMBOL — "labour not for the meat
+   [_brōsis_] which perisheth, but for that meat [_brōsis_] which
+   endureth unto everlasting life" (John 6:27). Rom 14 is at a table;
+   John 6 is "which the Son of man shall give unto you." The normal
+   two-layer situation, not a conflict.
+6. **Heb 12:16 closes the loop:** Esau "for one morsel of meat [_brōsis_
+   — one act of eating] sold his birthright" — literal eating traded
+   against covenant standing; Rom 14:15 forbids the same trade in
+   reverse ("destroy not him with thy meat, for whom Christ died").
+
+Guard-rail (Torah-eternal): Rom 14's dispute is herbs, wine, and
+fast-days — voluntary scruples between believers — NOT the Leviticus 11
+line. The verse ranks table-quarrels below righteousness; it does not
+repeal a command. If the meat material gets chapter prose, this verse
+should be CITED and answered there — any alert reader will raise it.
+
 ## Candidates flagged, not claimed (over-fitting guard)
 
 - "Land flowing with milk and honey" (~20 of 42 milk verses): the author's
   seed study scopes it as abundance; note only that Isa 7:15, 22 puts
   butter-and-honey in the training-diet register. Unresolved; do not claim.
-- Rom 14:17 "the kingdom of God is not meat and drink" and 1 Cor 8 (meat
-  offered to idols) read naturally as literal food-disputes; the symbolic
-  layer (doctrine offered to idols?) is NOT established. Handle literally.
+- Rom 14:17 — see "Counter-text answered" above: literal (brōsis = the
+  act of eating), and its second half confirms the symbol's content.
+- 1 Cor 8 (meat offered to idols) reads naturally as a literal
+  food-dispute; the symbolic layer (doctrine offered to idols?) is NOT
+  established. Handle literally.
 
 ## Where used / recommendations
 

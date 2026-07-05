@@ -98,7 +98,10 @@ covenant finished between the parties.
   37:15-22's joined sticks directly).
 - **Rom 14:17** — "the kingdom of God is not meat and drink; but
   righteousness, and PEACE, and joy" — the kingdom's content named with
-  righteousness → peace in Isa 32:17's exact order.
+  righteousness → peace in Isa 32:17's exact order. (The "not meat and
+  drink" half is _brōsis kai posis_, the ACT of eating and drinking, not
+  the meat symbol — challenged by the author and answered in full in
+  research-meat-milk.md, "Counter-text answered.")
 - Hebrew NT witness (Ele Ha-Sodot, bibles/hg.txt): John 14:27 reads
   "SHALOM I leave for you, my SHALOM I give to you" — the Hebrew NT
   hands eirēnē straight back to shalom. (Corpus covers
