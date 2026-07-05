@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" font-family="Gentium Book Plus">
+  <!-- The same three letters (chet-lamed-bet), without and with the vowel
+       points. Consonants are set in Noto Serif Hebrew as individual
+       positioned glyphs (RTL order by placement, immune to shaping);
+       the niqqud are DRAWN (qamats bars, tsere/segol dots) so the print
+       shows exactly which marks the Masoretes added. Pure black interior. -->
+
+  <!-- ===== the unpointed word: what the prophets wrote ===== -->
+  <g font-family="Noto Serif Hebrew" font-size="120" fill="#000000" text-anchor="middle">
+    <text x="525" y="150">&#x05D7;</text>
+    <text x="440" y="150">&#x05DC;</text>
+    <text x="355" y="150">&#x05D1;</text>
+  </g>
+  <text x="440" y="196" text-anchor="middle" font-size="26" font-style="italic" fill="#000000">what the prophets wrote</text>
+
+  <!-- branches -->
+  <g stroke="#000000" stroke-width="2" stroke-linecap="round">
+    <line x1="400" y1="216" x2="270" y2="252"/>
+    <line x1="480" y1="216" x2="610" y2="252"/>
+  </g>
+
+  <!-- ===== right branch: qamats + qamats = chalav, milk ===== -->
+  <g font-family="Noto Serif Hebrew" font-size="100" fill="#000000" text-anchor="middle">
+    <text x="700" y="348">&#x05D7;</text>
+    <text x="630" y="348">&#x05DC;</text>
+    <text x="560" y="348">&#x05D1;</text>
+  </g>
+  <g fill="#000000">
+    <!-- qamats under chet -->
+    <rect x="688" y="364" width="24" height="5"/>
+    <rect x="697.5" y="369" width="5" height="13"/>
+    <!-- qamats under lamed -->
+    <rect x="618" y="364" width="24" height="5"/>
+    <rect x="627.5" y="369" width="5" height="13"/>
+  </g>
+  <text x="630" y="430" text-anchor="middle" font-size="33" font-style="italic" fill="#000000">chalav</text>
+  <text x="630" y="462" text-anchor="middle" font-size="26" fill="#000000">milk</text>
+
+  <!-- ===== left branch: tsere + segol = cheleb, the fat ===== -->
+  <g font-family="Noto Serif Hebrew" font-size="100" fill="#000000" text-anchor="middle">
+    <text x="320" y="348">&#x05D7;</text>
+    <text x="250" y="348">&#x05DC;</text>
+    <text x="180" y="348">&#x05D1;</text>
+  </g>
+  <g fill="#000000">
+    <!-- tsere under chet: two dots -->
+    <circle cx="312" cy="371" r="4.5"/>
+    <circle cx="328" cy="371" r="4.5"/>
+    <!-- segol under lamed: three dots -->
+    <circle cx="242" cy="368" r="4.5"/>
+    <circle cx="258" cy="368" r="4.5"/>
+    <circle cx="250" cy="381" r="4.5"/>
+  </g>
+  <text x="250" y="430" text-anchor="middle" font-size="33" font-style="italic" fill="#000000">cheleb</text>
+  <text x="250" y="462" text-anchor="middle" font-size="26" fill="#000000">the fat</text>
+</svg>

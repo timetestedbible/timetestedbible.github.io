@@ -121,12 +121,12 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     {
       slug: 'noah-uncovered',
       title: 'Noah Uncovered',
-      summary: 'Genesis 8:13 is a ship\'s log — a date, a dried earth, a covering removed. Remove the breath instead, and the same consonants sustain a second reading from first word to last: at the completeness of six seals of the age, the peoples desolated from above, the righteous of the Sabbath\'s ages taken up with the covering of the covenant — the sixth seal of Revelation, written into the flood account two and a half millennia before John saw it. The rabbis\' own al tikrei tradition confesses the letters speak twice ("a verse never loses its plain meaning"), and Radak rules both readings intentionally true. One pun is wit; twelve consecutive words that read as plain history and the end of the age at once is the fingerprint.'
+      summary: 'Genesis 8:13 is a ship\'s log — a date, a dried earth, a covering removed. Remove the vowel points instead, and the same consonants sustain a second reading from first word to last: at the completeness of six seals of the age, the peoples desolated from above, the righteous of the Sabbath\'s ages taken up with the covering of the covenant — the sixth seal of Revelation, written into the flood account two and a half millennia before John saw it. One pun is wit; twelve consecutive words that read as plain history and the end of the age at once is the fingerprint.'
     },
     {
       slug: 'behold-the-hand',
       title: 'Behold the Hand, Behold the Nail',
-      summary: 'Before the square letters of Babylon, Hebrew was written in pictures — and the letter names survive as Bible words: yod is the hand, he is the breath-word behold, and vav, the peg, appears in Scripture only as the tabernacle\'s hooks. Spell the Name in its oldest pictures and it reads: behold the hand, behold the nail. A picture proves nothing by itself — the pictures may illustrate what the verses prove, never prove what the verses do not — but here the prophets say the same sentence: "they shall look upon me whom they have pierced" (Zechariah 12:10, the Name-bearer speaking of Himself), and the risen Lord to Thomas: "behold my hands" (John 20:27).'
+      summary: 'Before the square letters of Babylon, Hebrew was written in pictures — and the letter names survive as Bible words: yod is the hand, he is the word behold, and vav, the peg, appears in Scripture only as the tabernacle\'s hooks. Spell the Name in its oldest pictures and it reads: behold the hand, behold the nail. A picture proves nothing by itself — the pictures may illustrate what the verses prove, never prove what the verses do not — but here the prophets say the same sentence: "they shall look upon me whom they have pierced" (Zechariah 12:10, the Name-bearer speaking of Himself), and the risen Lord to Thomas: "behold my hands" (John 20:27).'
     },
     {
       slug: 'sun-moon-and-stars',
