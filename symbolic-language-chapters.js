@@ -124,11 +124,6 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Genesis 8:13 is a ship\'s log — a date, a dried earth, a covering removed. Remove the vowel points instead, and the same consonants sustain a second reading from first word to last: at the completeness of six seals of the age, the peoples desolated from above, the righteous of the Sabbath\'s ages taken up with the covering of the covenant — the sixth seal of Revelation, written into the flood account two and a half millennia before John saw it. One pun is wit; twelve consecutive words that read as plain history and the end of the age at once is the fingerprint.'
     },
     {
-      slug: 'daniel-unsealed',
-      title: 'Daniel Unsealed',
-      summary: 'Daniel was commanded to seal the book to the time of the end — and a seal implies an unsealing. Jeremiah\'s seventy years failed as a literal count (Babylon fell without a fight; the captives came home after sixty), and unpointed Daniel 9:24 opens with the same word twice — seventy seventy: seventy jubilees. The ninth chapter\'s two decrees, four hundred ninety years from each rebuilding of Jerusalem, and the twelfth chapter\'s past-tense "the daily was taken away" with its 1,290 and 1,335 year-days, read straight through history — Messiah cut a covenant and vanished (karath, v\'ain — the Enoch idiom), the abomination set up in the holy place on schedule, and the counts closing together at the end of the times. The seal was never wax; it is the reading tradition laid over the letters.'
-    },
-    {
       slug: 'behold-the-hand',
       title: 'Behold the Hand, Behold the Nail',
       summary: 'Before the square letters of Babylon, Hebrew was written in pictures — and the letter names survive as Bible words: yod is the hand, he is the word behold, and vav, the peg, appears in Scripture only as the tabernacle\'s hooks. Spell the Name in its oldest pictures and it reads: behold the hand, behold the nail. A picture proves nothing by itself — the pictures may illustrate what the verses prove, never prove what the verses do not — but here the prophets say the same sentence: "they shall look upon me whom they have pierced" (Zechariah 12:10, the Name-bearer speaking of Himself), and the risen Lord to Thomas: "behold my hands" (John 20:27).'
@@ -157,6 +152,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       slug: 'the-fall-of-babylon',
       title: 'The Fall of Babylon',
       summary: 'The Exodus is not only history; it is the similitude of the end. The plagues replay in the vials, "let my people go" returns as "come out of her, my people," and the spoilers gather in the north — tsaphon, the hidden quarter, the root that means to lurk: the ambush comes by the door Babylon cannot watch. The pursuer sinks like a stone in both stories — Jeremiah\'s scroll bound to a stone in Euphrates, Revelation\'s millstone hurled into the sea — and the verdict is not the going down but the not-rising: Babylon "shall not rise"; Jonah, the Messiah, and the baptized come up. And the great city is given her street address in the book\'s own grammar: "spiritually called Sodom and Egypt, where also our Lord was crucified" — Sodom for her sin, Egypt for her bondage, Babylon for her boast — three spiritual names on one gate, and the gate is Jerusalem\'s.'
+    },
+    {
+      slug: 'daniel-unsealed',
+      title: 'Daniel Unsealed',
+      summary: 'Daniel was commanded to seal the book to the time of the end — and a seal implies an unsealing. Jeremiah\'s seventy years failed as a literal count (Babylon fell without a fight; the captives came home after sixty), and unpointed Daniel 9:24 opens with the same word twice — seventy seventy: seventy jubilees. The ninth chapter\'s two decrees, four hundred ninety years from each rebuilding of Jerusalem, and the twelfth chapter\'s past-tense "the daily was taken away" with its 1,290 and 1,335 year-days, read straight through history — Messiah cut a covenant and vanished (karath, v\'ain — the Enoch idiom), the abomination set up in the holy place on schedule, and the counts closing together at the end of the times. The seal was never wax; it is the reading tradition laid over the letters.'
     },
     {
       slug: 'clouds',
