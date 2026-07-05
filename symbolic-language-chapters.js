@@ -24,16 +24,6 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The final exam — taken closed-book. Jesus was astonished His disciples could not decode the sower ("Know ye not this parable? and how then will ye know all parables?"), and the rebuke is only fair if the answers were already on the table. They were: the psalm He fulfills calls the parables "dark sayings of old… our fathers have told us," and the OT decodes its own parables in front of the reader — Nathan and David, Isaiah\'s vineyard, Ezekiel\'s eagles. So each of the seven parables of Matthew 13 is derived here from the Old Testament alone — Isaiah\'s seed, Jeremiah\'s fallow heart, Abram\'s fowls, the two seeds of Eden, the exalted low tree of Ezekiel 17, Torah\'s leaven, Sinai\'s treasure-people, the pearl hiding under the KJV\'s "rubies," Habakkuk\'s net — and only then graded against the Teacher\'s answer key. Every key He gave matches the derivation; where He gave none, the chapter marks where derivation ends and testing begins.'
     },
     {
-      slug: 'mountain',
-      title: 'Mountain',
-      summary: 'Scripture defines the mountain as a kingdom — Revelation, Daniel, Isaiah, and Jeremiah agree — and that one key unlocks dozens of passages, from the burning mountain cast into the sea to the command to flee to the mountains.'
-    },
-    {
-      slug: 'sea-and-waters',
-      title: 'Sea & Waters',
-      summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, the two waters of creation (nations below, the sea of glass above), and the "no more sea" of the new creation.'
-    },
-    {
       slug: 'signs-and-similitudes',
       title: 'Signs and Similitudes',
       summary: 'Before reading the sign Jesus chose, learn what a sign is: not a wonder on demand but a message given in advance — an oracle, or a prophet\'s lived story — whose fulfillment testifies. God says He "used similitudes"; Paul says the lives of real people are types; Jesus reads history as prophecy; and Ecclesiastes explains why: there is no new thing under the sun — what has been done will be done again. Isaac on Moriah and Joseph in Egypt prove the method before Jonah becomes the full case study.'
@@ -42,6 +32,16 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       slug: 'sign-of-jonah',
       title: 'The Sign of Jonah',
       summary: 'Read through the symbols of sea and city, the only sign Jesus gave opens up: the "heart of the earth" is Jerusalem, the great fish a devouring kingdom forced to give back what it swallowed, and Jonah is a scene-by-scene prophecy of His betrayal, arrest, interrogation, death, resurrection, and the gospel\'s turn to the nations.'
+    },
+    {
+      slug: 'mountain',
+      title: 'Mountain',
+      summary: 'Scripture defines the mountain as a kingdom — Revelation, Daniel, Isaiah, and Jeremiah agree — and that one key unlocks dozens of passages, from the burning mountain cast into the sea to the command to flee to the mountains.'
+    },
+    {
+      slug: 'sea-and-waters',
+      title: 'Sea & Waters',
+      summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, the two waters of creation (nations below, the sea of glass above), and the "no more sea" of the new creation.'
     },
     {
       slug: 'gospel',
@@ -182,6 +182,16 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       slug: 'jacob-israel-and-ephraim',
       title: 'Appendix: Jacob, Israel, and Ephraim',
       summary: 'Jacob — the heel-grabbing supplanter — is the crooked human heart; Israel is the new name given to that same man for prevailing with God. The two names do not divide flesh from spirit; they tell one story, the crooked made straight. So Israel is covenant and character, not blood — "they are not all Israel, which are of Israel." And Ephraim, the firstborn whose seed becomes "a multitude of nations," is that people scattered into all the earth as fruit, and regathered into one.'
+    },
+    {
+      slug: 'foreskin',
+      title: 'Appendix: The Foreskin',
+      summary: 'Take away the foreskins of your heart, says Jeremiah — a symbol the reader is expected to know. Scripture decodes it out loud: what the circumcision made without hands removes is "the body of the sins of the flesh." The foreskin is the blocking flesh over a covenant member: the uncircumcised heart cannot be humbled or love, the uncircumcised ear cannot hearken, uncircumcised lips cannot be heard, and a young tree\'s fruit is orlah until the covenant year. Cut it away, or be cut off.'
+    },
+    {
+      slug: 'butter',
+      title: 'Appendix: Butter',
+      summary: 'Very few would connect butter to sound doctrine — yet Scripture does. Butter is the word churned solid: the discernment diet ("butter and honey shall he eat, that he may know to refuse the evil, and choose the good"), the remnant\'s food, the wash of the walking feet ("I washed my steps with butter"). Faithful hands carried butter to David in the wilderness while the betrayer\'s words stayed "smoother than butter, but war was in his heart."'
     },
     {
       slug: 'glossary',

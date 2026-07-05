@@ -1,0 +1,1850 @@
+# MEAT: The Bible's Symbolic Language — working outline
+
+Format: chapter → section → key points (≤7 sections, ≤7 points, ≤7 words).
+⚡ marks a flash — the unexpected insight a reader underlines.
+"⟶ overturns:" names the doctrine/common teaching the chapter detonates.
+Order shown = the structure panel's proposed seven parts (NOT yet the
+printed order — annotate/reorder freely; chapters are movable blocks).
+
+
+# Part I — Milk and Meat
+
+- **Introduction**  ⟶ overturns: Understanding precedes obedience; the Bible reads plainly
+  - Opening — Why Parables?
+    - Author understood no more than Pharisees
+    - Even the disciples failed the parables
+    - ⚡ Mark 4:13: one parable keys all parables
+    - Jesus spoke publicly only in parables
+    - Paul demonstrated mysteries by reason, not inspiration
+    - Prophets used similitudes; lives double as parables
+    - Daniel: words sealed until the end
+  - Milk, Meat, and the Obedience Test
+    - ⚡ Precept-upon-precept designed to snare, not teach
+    - ⚡ Hear has three senses: sound, obey, understand
+    - Milk: simplified message babes easily misinterpret
+    - Meat: full understanding given the obedient
+    - Pastors preach milk/meat without Isaiah's definition
+    - ⚡ John 7:17: obedience precedes doctrinal knowledge
+    - No prophecy is of private interpretation
+  - How Is Meaning Represented? I: Semantic Drift
+    - Semantic drift compounds with translation drift
+    - KJV 'let' now means its opposite
+    - Prevent, careful, peculiar: all senses drifted
+    - ⚡ 'Replenish' drift spawned a false doctrine
+    - 'Meat' itself drifted: meant any food
+    - Remedy: compare every occurrence until sense returns
+    - Meaning lives in relationships, not words
+  - II: Symbols Live in Relationships
+    - Symbol is the idea; word merely labels
+    - Definitions never first; gather every passage
+    - ⚡ Relationships survive translation; symbols persist intact
+    - ⚡ AI translation: meaning learned without dictionaries
+    - AI is proof-of-concept, never the judge
+    - Scripture interprets itself: line upon line
+  - III: From Memorization to Modern Tools
+    - Anciently only elites could memorize Scripture
+    - Josephus: laws engraved from earliest childhood
+    - Memorized text reveals patterns first-readers miss
+    - ⚡ Paul's mysteries decodable without Paul's explanation
+    - ⚡ Daniel's knowledge-increase: tools replace lifetime memorization
+    - Translations scatter one original word, hiding threads
+    - Jigsaw method; verify against Jesus' explanations
+  - IV: Structure, Consonants, and Wordplay
+    - ⚡ Matching is structural, not spelling
+    - Kingdom wears two images: mountain, tree
+    - ⚡ NT Greek already one translation layer
+    - Vowel points: late, human, not authoritative
+    - Same consonants: fire, woman, fire-offering
+    - ⚡ Proverbs 6: strange woman IS fire
+    - Deterministic process; consistency proves supernatural authorship
+  - Is This a Works-Based Salvation?
+    - Preempts works-based-salvation objection immediately
+    - Nothing we do earns the kingdom
+    - We obey because it is duty
+    - ⚡ Obedience merely stops deepening the debt
+    - Grace alone saves; Spirit empowers overcoming
+    - Full case: Path to Salvation chapter
+    - Promise: new eyes, Berean discernment, meat
+
+- **The Parables of the Kingdom**  ⟶ overturns: Leaven = spreading gospel; treasure = our salvation
+  - Opening — How the Exam Is Sat
+    - ⚡ Rebuke fair only if answers pre-existed
+    - Psalm 78: dark sayings of old
+    - OT self-decodes: Nathan, Isaiah 5, Ezekiel 17
+    - ⚡ Ezekiel 17:12 pre-asks the boat question
+    - Definitions hold uniformly or nothing decodes
+    - One verse candidate; cross-corpus pattern establishes
+    - Test is searching, not remembering
+  - The Sower, Derived and Graded
+    - Isaiah 55: word is seed and bread
+    - Jeremiah 4, Hosea 10: fallow ground = heart
+    - Thorns: curse-ground's crop, anxious toil field
+    - ⚡ Thorn-thistle pair recurs once: Hosea's altars
+    - ⚡ Ezekiel 36: stony heart, 'tilled and sown'
+    - ⚡ Adam from adamah: flesh is ground
+    - Fowls = Genesis 15 devourers; four-for-four grade
+  - The Wheat and the Tares
+    - ⚡ Two seeds: Genesis 3:15 enmity
+    - Job 31:40: cockle instead of barley
+    - Isaiah's choice vine yields wild grapes
+    - Harvest = reckoning: Joel's sickle, Babylon's threshingfloor
+    - Malachi 4: wicked as stubble, burned
+    - Key matches item for item
+  - The Mustard Seed — The Leaven
+    - ⚡ Least = chosen: Israel fewest of peoples
+    - Ezekiel 17/Daniel 4: tree = kingdom exalted
+    - Fowls of every wing = sheltered nations
+    - ⚡ Lodge = shakan: nations tent-rest in Branch
+    - Edge: fowls also devour; cedar axed
+    - Torah leaven: always hidden corruption, never good
+    - ⚡ Warning parable, not gospel-spread; woman/measures pending
+  - The Treasure — The Pearl
+    - Treasure = the people, hidden (Exodus 19:5)
+    - ⚡ Common reading inverted: God is seeker
+    - ⚡ Disciples forsook all; none bought field
+    - ⚡ Hebrew Matthew gold = ore: mined, refined
+    - ⚡ Peninim: KJV 'rubies' are pearls
+    - Wisdom, bride, hid treasure: Proverbs' merchant
+    - One pearl = one bride; Revelation's pearl-gates
+  - The Net
+    - Habakkuk 1: men as netted fish
+    - Jeremiah 16:16: God sends many fishers
+    - 'Every kind': Ezekiel 47's swarming catch
+    - ⚡ Shore-sorting = Leviticus 11 clean/unclean
+    - Field = covenant land; sea = nations
+  - A Similitude Lived Out Loud — Have Ye Understood?
+    - ⚡ Feeding 5,000: a lived, graded sign
+    - ⚡ Crowd ate the sign, never read it
+    - ⚡ 6:63 decodes flesh: my words
+    - ⚡ Hard saying sorts hearers; many leave
+    - Peter answers flesh with words (6:68)
+    - Five barley loaves = Law, Israel's grain
+    - Two fish = Deuteronomy's two witnesses
+    - Shared word multiplies; twelve baskets, twelve tribes
+    - Crowd decoded: prophet like unto Moses
+    - Every supplied key matched; conclusions become arithmetic
+    - ⚡ Scribe's 'new and old': fulfillment plus derivation
+
+
+- **[PLANNED] The Vowel Points**  ⟶ overturns: Masoretic pointing as part of the infallible word
+  - Tradition, not text
+    - Points added centuries after the prophets
+    - DSS and LXX predate points
+    - ⚡ Hebrews quotes the LXX as Scripture
+    - ⚡ Jot and tittle: letters, not points
+  - Case studies already in the book
+    - ⚡ chalav/cheleb: obedience at stake (Lev 3:17)
+    - ⚡ keseh/kisse: throne spelled as full moon
+    - ⚡ helel/shachar: bringer of darkness
+    - Job 22:30: island of the innocent
+    - basar/besorah: flesh and tidings
+  - The rule
+    - Consonants judge; points advise
+    - Prefer witnesses older than points
+    - Read the source with fresh eyes
+
+# Part II — The Creation
+
+- **Trees**  ⟶ overturns: Dietary-law abolition; clean/unclean holds forever
+  - Opening: The Tree Defined
+    - Rev 7:3 pairs earth, sea, trees
+    - ⚡ Daniel decodes: "It is thou, O king"
+    - Tree = nation, a rooted people
+    - Israel vine, Assyria cedar, covenant olive
+    - Species of tree marks which nation
+  - By Their Kind
+    - Israel: vine, fig, olive — covenant trees
+    - Gentile empires: towering cedars (Assyria, Pharaoh)
+    - Cursed fig tree pronounces on Israel
+    - Species also marks national character
+  - The Anatomy of a Nation
+    - Romans 11 olive: root, branches, grafting
+    - Root = patriarchs, the covenant foundation
+    - Branches = members, broken off or grafted
+    - Nation persists through membership exchange
+  - Fruit and the Fire
+    - Fruit = works; nations weighed by deeds
+    - Barren tree hewn: judgment of nations
+    - Axe at the root (Luke 3:9)
+    - Babylon felled; stump left for regrowth
+    - "Empty vine": full works, wrong purpose
+  - A Forest of Nations
+    - "Trees of the field" = all nations
+    - God gardens: fells high, exalts low
+    - ⚡ Cedar = stature; David's house one too
+    - Empire's boughs shelter beasts and fowls
+    - ⚡ Mountain, tree, grass: kingdom, nation, person
+    - Two witnesses = Zechariah's two olive trees
+    - Righteous man: tree in miniature (Psalm 1)
+  - Beasts
+    - Beast = the nation wild and ravening
+    - Daniel 7:17: beasts are kings, decoded
+    - Beasts rise from sea, shelter under tree
+    - ⚡ Nebuchadnezzar falls whole order: tree→beast→grass
+    - Clean/unclean animals = covenant line through mankind
+    - ⚡ Peter's sheet: kill/eat = covenant-making meal
+    - Gentile "dog": unclean animal outside house
+  - Gardens
+    - Garden = a planting of nation-trees
+    - ⚡ Isaiah's "gardens": nations Judah ran to
+    - ⚡ Isaiah 66:17 "tree" supplied by translators
+    - "After one" = following one nation
+    - Context: 66:18-19 gathers all nations
+    - ⚡ Last-judgment swine verdict: diet eternal
+    - Return: Rev 7:3 trees spared = nations
+
+- **Mountain**  ⟶ overturns: Faith-moved mountains are personal obstacles
+  - Scripture Defines the Symbol
+    - Apt pyramid analogy isn't proof; Scripture defines
+    - Rev 17:9-10: seven mountains are seven kings
+    - Daniel 2: stone-mountain consumes kingdoms, fills earth
+    - Earth-filling growth rules out physical mountain
+    - ⚡ Stone cut without hands: covenant cut (karat)
+    - That Rock was Christ; covenant becomes kingdom
+    - Isaiah 2, Jeremiah 51: four witnesses agree
+  - The Burning Mountain (Rev 8:8-9)
+    - Blazing mountain into sea = empire falls
+    - Claude estimates published-teaching prevalence per verse
+    - 85% read asteroid/volcano, missing the symbol
+    - Sea = masses; creatures = gentile nations
+    - Third of people ≈ two billion dead
+    - ⚡ 'Thrown into sea' = Babylon's fall catch-phrase
+    - Symbols include catch-phrases, not just words
+  - Faith That Moves Mountains
+    - Matt 17:20, 21:21, Mark 11:23 mountain sayings
+    - ⚡ Personal-obstacle reading 55%; kingdom reading 2%
+    - Context: fig tree — trees are kingdoms too
+    - 'Cast into sea' again points to Babylon
+    - Symbols interconnect: defined by companion symbols, verbs
+  - Poetry Decoded: Psalm 46 and Joel 2
+    - Psalm 46: mountains into sea; 85% miss
+    - Joel 2:2: dawn-mist spread over mountains
+    - ⚡ Shachar (dawn) shares root with shachor (black)
+    - Reading: dark smoke-clouds spread over nations
+  - Instructions Hidden in Prophecy
+    - ⚡ 'Flee to mountains' = flee to nations
+    - Fulfilled once: 70 AD scattering from Jerusalem
+    - Jer 50:6: shepherds mislead sheep among nations
+    - 'Mountain to hill' = nation to city
+    - Isa 40:4: nations humbled, humble ones exalted
+    - Valleys = those enslaved by mountains
+  - Hunters, Hiding Places, Islands, Temptation
+    - Jer 16:16: fishers first, then hunters
+    - Fishers of men; uncaught are hunted
+    - Holes of rocks = bunkers
+    - Rev 6: hiding in rocks of mountains
+    - Rev 16:20: islands flee, mountains not found
+    - Island personification sparked island-symbol research
+    - ⚡ Matt 4:8 high mountain: likely Babylon
+  - Conclusion and the AI Method
+    - Pattern holds across whole of Scripture
+    - Chapter seeded future symbols: sea, trees, beasts
+    - Each defined by Scripture interpreting Scripture
+    - AI on intuition returned the common errors
+    - ⚡ Given the process, meaning becomes deterministic
+    - Discipline of process, not reader's cleverness
+    - Next: symbol after symbol, then doctrine
+
+- **Grass**  ⟶ overturns: Jesus's parables invented new imagery
+  - Opening: All Flesh Is Grass
+    - Grass is a man, single mortal
+    - Isaiah 40:6-8: flesh grass, word stands
+    - ⚡ Mountain kingdom, tree nation, grass individual
+    - Psalms 90/103: morning up, evening gone
+    - 1 Peter 1:24 hands definition back
+  - Grain Is Grass
+    - ⚡ Not only frailty: field God farms
+    - Barley and wheat are grasses
+    - Seed is the word (Luke 8:11)
+    - Soils are hearts: hard, shallow, good
+    - Grain dies to bear (John 12:24)
+  - The Harvest
+    - Reaping is judgment
+    - Joel/Micah fixed harvest imagery pre-parables
+    - ⚡ Jesus cites the image, not invents
+    - Harvest = end of world; reapers = angels
+    - Revelation 14:15 reissues Joel's sickle command
+    - Present tense: fields white, labourers few
+  - Wheat, Chaff, and Tares
+    - ⚡ Two different partings at one harvest
+    - Chaff: wheat's own husk, wind-winnowed
+    - Isaiah 17:13: kingdoms blown off as chaff
+    - Tares: darnel counterfeit, indistinguishable until ear
+    - Matthew 13:38: Jesus decodes tares himself
+    - ⚡ Amos's sieve = Peter's sifting; grain kept
+  - The Firstfruits
+    - Barley first-ripe; wave sheaf pledges harvest
+    - ⚡ Christ = firstfruits, risen in sheaf season
+    - Barley loaf = Israel (Judges 7:13)
+    - Five barley loaves feed multitude
+    - Few and lowly carry whole field
+  - The Leaven
+    - Bread is the word (Deuteronomy 8:3)
+    - Leaven: word soured, puffed up
+    - ⚡ Same consonants: vinegar, embittered, cruel
+    - No leaven on altar (Leviticus 2:11)
+    - Pharisees' leaven = doctrine, not loaves
+    - Paul: little leaven, whole lump; purge
+  - Ears to Hear
+    - Parables spoke the oldest tongue
+    - Every piece pre-defined in Law, Prophets
+    - Informed hearer needed no interpreter
+    - ⚡ Mark 4:13: know this, know all
+    - Words sown centuries earlier; parable reaps
+
+- **The Bow**  ⟶ overturns: Rainbow as mere sentimental promise-sign
+  - Opening: The Bow in the Cloud
+    - ⚡ Rainbow = qesheth, the warrior's weapon
+    - Genesis 9:13 names bow 'token of covenant'
+    - Not analogy: text itself equates them
+    - ⚡ 'Every living creature' = every nation (beasts=kingdoms)
+    - First covenant: universal, with all nations
+    - That universal reach hinges everything following
+  - The Bow Is the Covenant
+    - Qesheth = kingdom's might: 'bow of Elam'
+    - ⚡ Isaiah 22:3 'archers' hides bound-by-bow vow
+    - Weapon, might, covenant, vow: one word
+    - ⚡ Arrowless rider conquers by covenant (Revelation 6:2)
+    - Jonathan's bow passes at covenant-cutting
+    - ⚡ Habakkuk 3:9: bow = oaths = thy word
+    - Zechariah 9:13: covenant people fill the bow
+  - Make Us a Name
+    - A kingdom's bond: nothing but words
+    - Babel's name: bond against scattering
+    - Name = covenant (Name chapter)
+    - Babel: self-strung bow against heaven
+    - ⚡ God topples nothing; cuts the bond
+    - One speech = bowstring; confounded, kingdom scatters
+    - Feared scattering becomes the judgment itself
+  - Elam and the Mortar of Babel
+    - Elam: Babylon's partner, shared judgment
+    - Bible's first war: Elam with Shinar/Babel
+    - ⚡ Chemar: battlefield slimepits = Babel's tower mortar
+    - ⚡ Abram's 'confederate' = literally covenant-masters
+    - True covenant stands against self-covenant
+    - Jeremiah's Elam oracle prologues Babylon's fall
+    - Same sentence on both: bow broken
+  - Break the Bow
+    - God unstrings kingdoms: breaks the bow
+    - ⚡ Hosea 2:18: covenant made, bow broken together
+    - Breaking staged inside re-betrothal wedding scene
+    - 'Break the bow of Elam' (Jeremiah 49:35)
+    - Babylon: 'every one of their bows broken'
+    - Israel's own bow broken at Jezreel
+    - ⚡ Deceitful bow: covenant worn, failing at draw
+  - Two Names, Two Bows
+    - ⚡ Genesis 12 answers Babel: 'make thy name'
+    - Name given, not grasped; blesses all
+    - Noah's bow still hangs: everlasting covenant
+    - Bow rings throne: Ezekiel 1:28, Revelation 4:3
+    - ⚡ Every verdict rendered inside the covenant
+    - Joseph's bow abides — strung by God
+    - Every bow strung against Him unstrings
+
+- **The Four Winds**  ⟶ overturns: Four winds as mere compass-points idiom
+  - Opening — Zechariah's Four Spirits
+    - Takes up Sea chapter's unfinished thread
+    - Zechariah 6:5 names them: four spirits
+    - ⚡ Ruach: one word — wind, spirit, breath
+    - Office: go forth from before Lord
+    - Dispatched from the throne
+  - Not Directions, Not Weather
+    - Dictionary flattens: compass points or weather
+    - Angel said spirits, not directions
+    - Four = reach; agents, not quarters
+    - Psalm 104:4: angels are spirits
+    - They return and report (Zechariah 1:11)
+    - Even literal storm obeys: 'Peace, be still'
+    - God's executing power, direct authority
+  - The Four Horsemen
+    - ⚡ Zechariah's horses = Revelation's four horsemen
+    - Colors mark assignments; seals release them
+    - White horse's bow = covenant bow
+    - Pale horse Death carries all four
+    - Ezekiel 14:21: the four sore judgments
+    - They execute Leviticus/Deuteronomy covenant curses
+    - One sequence: Ezekiel, Zechariah, John, Jesus
+  - Scatter and Gather
+    - ⚡ Same winds run opposite errands
+    - Scatter Elam in judgment (Jeremiah 49:36)
+    - Gather elect from four winds (Matthew 24:31)
+    - Stir sea; beast-kingdoms rise (Daniel 7)
+    - Breathe life into slain (Ezekiel 37:9)
+    - Direction set by Sender, not wind
+    - Four corners forward-link to Wings chapter
+  - East Wind and Pentecost (within Scatter and Gather)
+    - ⚡ Judgment-wind has compass habit: east
+    - Red Sea, locusts, Jonah — east wind
+    - Hosea 13:15: 'wind of the LORD'
+    - ⚡ Acts 2: Ezekiel's breath, appointed day
+    - John 3:8: wind/Spirit both languages
+    - 'Wings of the wind' (Psalm 18:10)
+  - Held Until the Sealing (+ conclusion)
+    - Revelation 7: angels hold the winds
+    - Hurt not earth, sea, trees
+    - ⚡ Sealing first; release after
+    - Not blind nature, not rebel powers
+    - Ministers do only what He sends
+
+- **Sea & Waters**  ⟶ overturns: Dan 9:26: antichrist's people destroy Jerusalem
+  - Defined by Scripture: Waters Are Peoples
+    - Revelation 17:15: waters = peoples, nations, tongues
+    - Same chapter defined mountains: one map
+    - ⚡ Tool: Hebrew poetry rhymes ideas, not sounds
+    - Isaiah 17, Psalm 65: nations parallel waters
+    - Psalm 98:7: sea's fulness = world's dwellers
+    - 376 verses; three-quarters fit the symbol
+    - Luke 21:25 self-gloss; most read literally
+  - The Restless Sea: Beasts and Floods
+    - Isaiah 57:20: the wicked are the sea
+    - James 1:6: one doubter, one wave
+    - Daniel 7: wind-spirits churn; beast-kingdoms rise
+    - ⚡ Revelation 16:3: souls die in the sea
+    - Overflowing flood = invading nation (Isaiah 8:7)
+    - Boasting Egypt-flood; dragon's flood after woman
+    - ⚡ Daniel 9:26 corrected: Messiah's host counter-floods
+  - The Red Sea: Egypt the Rehearsal
+    - ⚡ Habakkuk 3:8 riddle answered: chariots of yeshuah
+    - ⚡ 'Sank as stone' = Babylon-fall formula
+    - ⚡ Yam suph consonants: Sea of the End
+    - ⚡ Egypt the rehearsal; Revelation the performance
+    - Witnesses' blood-plague: the word slays peoples
+    - Matteh staff = tribe; the sign speaks
+    - Literal and symbolic together: Author's fingerprint
+  - Baptism, Babylon, Tyre; Fish and Net
+    - ⚡ Baptism: sins sink like Pharaoh's host
+    - Personification flags a symbol in play
+    - Jeremiah 51:42: sea-throne becomes her grave
+    - Tyre: princes of sea; waves = nations
+    - Habakkuk 1:14: men as rulerless fish
+    - 'Fishers of men': next-verse rule gloss
+    - Kingdom = net gathering every kind
+  - Master of the Sea
+    - Psalm 89: stilling sea = breaking Rahab
+    - ⚡ Storm rebuke: Jesus signs His name
+    - ⚡ Walking, 'passing by': Job 9 embodied
+    - Psalm 77: way in sea, people led
+    - ⚡ Mark 4:1: seated on sea, multitude ashore
+    - Legion — the many — drowned like Pharaoh
+    - Jonah's sea story deferred to sign chapter
+  - Two Seas: Below and Above
+    - Genesis: sea = gathered mass; land separated
+    - Jeremiah 10:13: vapours ascend to heavens' waters
+    - ⚡ Two people-seas: roaring below, glass above
+    - Rev 19:6: multitude's voice = many waters
+    - ⚡ Rapture = vapour: lifted from nations' sea
+    - Solomon's molten sea: glass sea in brass
+    - 'No more sea'; last flood is knowledge
+  - Sand & Islands; Living-Water Caution
+    - Sand: numberless multitude, the sea's bound
+    - ⚡ House on sand = built on crowd
+    - ⚡ Island: covenant ground out of peoples — holy
+    - Rev 16:20: islands flee — delivered, mountains dissolved
+    - ⚡ Job 22:30 consonants: island of the innocent
+    - Paul's shipwreck enacts the island symbol
+    - Living water: opposite symbol; heals the sea
+
+
+# Part III — Signs
+
+- **Signs and Similitudes**  ⟶ overturns: A sign means a miracle on demand
+  - Paul's Method: History Written as Types
+    - 'Ensamples' is typos: patterns struck beforehand
+    - ⚡ Things happened as types before written
+    - Paul demonstrates a method, not revelation
+    - Rock, Adam, Galatians allegory: method shown
+    - Psalm 78: whole history a parable
+    - Parable-history means the history was composed
+    - Two words to hold: sign, similitude
+  - The Sign Defined
+    - Men demand wonders; prophets mean messages
+    - ⚡ Saul's signs: foretold scenes, zero wonders
+    - ⚡ The prophet himself can be the sign
+    - ⚡ Ezekiel 4: day-for-year conversion table decreed
+    - Moses' wonders are 'voices' — signs speak
+    - Revelation's 'wonders' are sēmeion: titled signs
+    - Definition: message ahead; fulfillment testifies afterward
+  - The Virgin Sign, Covenant Signs, Two Tests
+    - ⚡ Isaiah 7:14: nothing happened that day
+    - The word itself stood seven centuries
+    - Unfinished: the woman returns, Revelation 12
+    - Covenant signs: bow, circumcision, sabbath — perpetual
+    - Deuteronomy 18: unfulfilled sign, presumptuous prophet
+    - ⚡ Deuteronomy 13 overrides: fulfillment never licenses lawbreaking
+  - Similitudes: Likenesses Composed of Lives
+    - Hosea 12:10: God 'used similitudes' Himself
+    - Hosea lived it: bought adulteress bride back
+    - Jesus treats histories as prophecies requiring fulfillment
+    - Antitypon: type-language is Scripture's own vocabulary
+    - ⚡ Luke 24:27 'all scriptures' outruns both schools
+    - Manna, temple, lamb: certified NT instances
+  - The Warrant: No New Thing Under the Sun
+    - Ecclesiastes 1:9 read flat sounds weary
+    - ⚡ Sun is a symbol: the LORD
+    - No new thing: signature, not sigh
+    - ⚡ 'God requireth that which is past' (3:15)
+    - Same Author repeats His themes purposely
+  - Proofs: Isaac, Joseph, Rahab
+    - ⚡ Genesis 22: Scripture's first 'love' — a father's
+    - Son carries wood; substitute dies in thorns
+    - Moriah pre-chosen: the future temple mount
+    - ⚡ Hebrews 11:19: received 'en parabolē' — parable
+    - ⚡ Joseph known only 'at the second time'
+    - That Joseph sermon got Stephen killed
+    - Clement: Rahab's scarlet thread was prophecy
+  - Israel the Master Similitude; the Habit
+    - ⚡ Hosea 11:1: nation's past, Matthew's 'fulfilled'
+    - Jesus relives Israel: sea, forty, Deuteronomy
+    - Israel's history: lived first, fulfilled after
+    - Habit: treat the histories as composed
+    - Unusual details are similitude lines, not color
+    - Next: Jonah's life, the sign Jesus chose
+
+- **The Sign of Jonah**  ⟶ overturns: "Heart of the earth" means the tomb
+  - The One Sign, Read Whole
+    - Jesus refuses every sign but Jonah's
+    - Common teaching stops at three-day count
+    - ⚡ Luke 11:30: Jonah himself IS the sign
+    - Sign: message given ahead; fulfillment testifies
+    - Habit: read the quotation's whole context
+    - Composed history, like Isaac and Joseph
+  - Heart of the Earth, Heart of the Seas
+    - Yonah: dove; ben Amittai: son of truth
+    - No Scripture calls a grave that
+    - Ezekiel 5:5: Jerusalem set amid the nations
+    - Tabbur ha'aretz: navel; KJV flattens
+    - ⚡ Jonah 2:3 Hebrew: 'heart of the seas'
+    - Seas' heart: the gentile world's center
+    - ⚡ Heart of earth is Jerusalem, not tomb
+  - Storm, Trial, and Casting
+    - Sleeping prophet: Jesus replays, rewrites ending
+    - ⚡ Interrogation reads as Passion transcript
+    - 'Whence comest thou?' — Pilate's very question
+    - Innocent blood: sailors' words, Pilate's water
+    - Cast willingly, yet by wicked hands
+    - Man given to sea; raging ceases
+    - ⚡ First gentile worshippers: the execution crew
+  - The Great Fish: a Devouring Kingdom
+    - Not 'whale': dag gadol, kētos
+    - Vayman: appointed — monster on assignment
+    - ⚡ Great fish: a kingdom in the sea
+    - Jeremiah 51:34: Jonah's itinerary, spoken of Babylon
+    - ⚡ Rev 11:8: Jerusalem 'spiritually Egypt' — the dragon
+    - She rode Rome, Daniel's iron kingdom
+    - Acts 4:27 photographs both jaws together
+  - Belly of Sheol, Forced Release
+    - Alive and praying, not a corpse
+    - 'From corruption': Psalm 16:10, Peter's Pentecost proof
+    - ⚡ Suph weeds: reed-wreath; consonants spell 'end'
+    - ⚡ Prayer's last word: yeshuah — His name
+    - Salvation named; fish immediately releases
+    - Jeremiah 51:44: dragons must disgorge their swallowed
+    - Babylon sinks; Jonah rises; baptism enacts
+  - Nineveh: the Sea Turns
+    - Fixed order: resurrection first, then repentance
+    - Nineveh: gentile sea-city bows to sign
+    - 'That great city': Revelation's harlot title
+    - ⚡ Three days' journey = three thousand years
+    - ⚡ Anastēsontai: Ninevites literally rise and judge
+    - He fled because mercy would succeed
+    - ⚡ Jonah's anger prophesies Israel's envy
+  - Closing Table, Augustine, the Count
+    - Augustine saw it — misplaced the ship
+    - ⚡ Ship = betrayal night, not the cross
+    - Recovery, not novelty: no source assembles
+    - ⚡ Jerusalem reading dissolves day-counting gymnastics
+    - Emmaus: 'today is the third day'
+    - Symbols scale micro: fare, nap, wreath
+    - Hook: 'gospel' is the next symbol
+
+- **The Fall of Babylon**  ⟶ overturns: Mystery Babylon is a foreign capital (Rome)
+  - Opening / The Plagues Replayed
+    - Sea-of-glass victors sing song of Moses
+    - ⚡ Exodus is similitude of Babylon's fall
+    - Scene-for-scene, as Jonah was the Passion
+    - First plague blood; vials repeat it
+    - ⚡ Two witnesses: Moses-Aaron credentials reissued (11:6)
+    - Pharaoh's magicians become Babylon's sorceries
+    - Same contest at full scale
+  - Let My People Go — Come Out of Her
+    - Exodus 8:1 demand returns in Revelation 18:4
+    - Jeremiah 51:45 gave Babylon same summons
+    - ⚡ One voice, three ages, three exoduses
+    - Plagues fall on those who stay
+  - The Spoiler from the North
+    - Spoilers come from north (Jeremiah 50-51)
+    - ⚡ Tsaphon/tsaphan: north means hidden, lurking
+    - ⚡ North: sky's dark, sun never crosses
+    - Evil breaks from north (Jeremiah 1:14)
+    - Sides of north: Lucifer's chosen seat
+    - Lurker repaid through his own door
+  - The Stone That Sinks
+    - Pursuers sank as stone (Exodus 15:5)
+    - Jeremiah's sign: scroll bound to stone, Euphrates
+    - ⚡ Revelation 18:21 millstone performs Jeremiah's sign
+    - Cast-into-sea: power sunk among peoples, forever
+    - Mountain burned (Jeremiah 51:25); music stops
+  - The Verdict Is the Not-Rising
+    - Everyone goes into the waters
+    - ⚡ Verdict is not-rising, not going-down
+    - Jonah, Messiah, baptized all come up
+    - ⚡ Sins sink Babylon-like, never rising (Micah 7:19)
+    - Covenant decides who comes back up
+    - ⚡ Millstone-neck: a man, Babylon in miniature
+  - That Great City
+    - Waters=peoples; woman=great city (Revelation 17)
+    - ⚡ Revelation 11:8: city where Lord crucified
+    - Sodom, Egypt: spiritual names, forehead MYSTERY-name
+    - ⚡ Isaiah already called Jerusalem Sodom (1:10)
+    - Egypt=bondage-house; Galatians 4:25: Jerusalem enslaved
+    - Prophets' blood fixes address: Jerusalem (Matthew 23)
+    - Harlot-wife, widow-queen: same woman, not foreign
+  - The Song on the Far Shore
+    - Victors stand where Israel stood
+    - Song doubled: Moses and the Lamb
+    - Last Exodus: every nation at once
+    - Plagues, call-out, sunk pursuer, singing shore
+    - Gospel ends where it began: Red sea
+
+
+# Part IV — The Covenant
+
+- **Knowing, Faith, Love, and Belief**  ⟶ overturns: Faith as assent; saying-the-name salvation
+  - Opening: Four Emptied Words
+    - Four words define being right with God
+    - Dictionary empties them: information, feeling, assent
+    - Emptied meanings ask nothing of the hands
+    - One may claim all four, keep nothing
+    - Scripture: all four = trusting obedience
+  - Love
+    - 1 John 5:3: love = keeping commandments
+    - John 14:15: love me = keep commandments
+    - Not new: Deuteronomy 6:5 love = keeping
+    - The feeling passes; the keeping is love
+  - Knowing
+    - ⚡ Right doctrine still hears "never knew you"
+    - ⚡ Stranger = one not known; household expulsion
+    - 1 John 2:3-4: knowing proven by keeping
+    - Hosea 4:6: lost knowledge = forgotten law
+    - Jeremiah 22:16: judging poor IS knowing God
+    - ⚡ "Adam knew Eve": knowing = marriage union
+    - Bride obeys Head; sheep, voice, name interlock
+  - Faith
+    - James 2:17: workless faith is dead
+    - Devils believe and tremble; assent saves none
+    - Hebrews 11:8: by faith Abraham obeyed
+    - Emunah: faithfulness, steadiness — Habakkuk 2:4
+    - ⚡ First use: Moses' steady hands (Exodus 17:12)
+    - Faith is trust that obeys
+  - Belief
+    - John 3:36: two different Greek verbs
+    - ⚡ "Believeth not" = apeitheo: "disobeys"
+    - Belief's opposite is disobedience, not doubt
+    - Hebrews 3:18: "unbelief" named as disobedience
+    - Romans 10:16: obeying gospel = believing report
+    - Abraham: believing and offering Isaac one act
+  - Closing: The Four Are One
+    - Four words collapse into one: obedience
+    - Dictionary split them, made each invisible
+    - ⚡ "Call the name" = take the covenant
+    - "Lord, Lord" called; never called upon
+    - Symbols make the verse ask your life
+
+- **Gospel**  ⟶ overturns: The gospel is Jesus's death and resurrection
+  - The Test: Gather Every Use
+    - AI's one-sentence gospel: death, resurrection, faith
+    - Method: gather all ninety-eight gospel verses
+    - Greek euangelion/euangelizo; Hebrew basar/besorah
+    - Sort by titles the gospel wears
+    - Only named content: 'of the kingdom'
+    - ⚡ Never 'gospel of cross' or resurrection
+  - The Herald's Cry: Thy God Reigneth
+    - Jesus always preached 'gospel of the kingdom'
+    - Kerysso: royal herald announces, doesn't debate
+    - Besorah is battle-news: lepers, siege lifted
+    - Isaiah 52:7 compresses it: 'Thy God reigneth'
+    - ⚡ Herald's 'salvation' is yeshuah — names Yeshua
+    - Nahum's herald commands: keep thy feasts
+    - Luke 4/Isaiah 61: proclaiming year of release
+  - The Hinge: Preached Before Calvary
+    - Jesus preached the full gospel before dying
+    - ⚡ Can't preach death-gospel three years early
+    - Commanded 'believe the gospel' before cross
+    - Gospel: message Jesus taught, not about him
+  - One Everlasting Gospel: Abraham to Revelation
+    - ⚡ Hebrews 4:2: gospel preached at Sinai
+    - Sinai's gospel content: kingdom of priests
+    - Galatians 3:8: Abraham was pre-gospeled (proeuangelizomai)
+    - One gospel: Abraham, Sinai, Jesus, apostles
+    - Revelation 14:6: the everlasting gospel
+    - Everlasting cannot begin at the cross
+    - Its cry: fear God, worship Maker
+  - Renewed Covenant, Law Filled Full
+    - Kingdom announcement carries covenant terms
+    - ⚡ Chadash: 'new' covenant means renewed, repaired
+    - Proof: David's 'renew,' Joash's 'repair'
+    - Jeremiah 31: same law, new surface — heart
+    - ⚡ Pleroo 'fulfil': fill full, opposite of destroy
+    - Sermon on Mount: renewed covenant in motion
+    - Law will go forth from Zion
+  - Obeying the Gospel
+    - Romans, Thessalonians, Peter: 'obey the gospel'
+    - Nobody obeys a news bulletin
+    - Proclamations with terms are obeyed or defied
+    - Romans 10:16: 'obeyed' and 'believed' interchange
+    - ⚡ John 3:36 'believeth not' is apeitheo: disobey
+    - Believing the gospel means obeying the King
+  - The Cross, Paul, and the Grade
+    - Cross secures kingdom; purchase isn't proclamation
+    - 1 Corinthians 15: defending resurrection, gospel's hinge
+    - 'According to scriptures' anchors prior promise
+    - ⚡ Romans 1: resurrection enthrones David's seed
+    - Matthew 24:14: end-time gospel still kingdom-titled
+    - Grade AI sentence: true part, wrong whole
+    - Kingdom filling earth, not information spreading
+
+- **The Way, The Truth, and The Life**  ⟶ overturns: Jesus as new road up to heaven
+  - Opening: John 14:6 Reread
+    - Three titles, not one claim
+    - Each fastened with 'the': God-defined particulars
+    - ⚡ 'Unto the Father,' not 'to heaven'
+    - Hope = heaven descending (Rev 21:2-3)
+  - The Way
+    - Derek: road made by the treading
+    - ⚡ Way = conduct, not destination
+    - Genesis 18:19 first-use: justice and judgment
+    - 2 Peter 2:21: way = holy commandment
+    - Matt 7: narrow way, Torah-shaped conduct
+    - First disciples simply called 'the Way'
+    - ⚡ Acts 24:14: old covenant-conduct, not new religion
+  - The Truth
+    - Truth ≠ factual accuracy (modern mishearing)
+    - ⚡ Psalm 119:142: thy law IS the truth
+    - John 17:17: thy word is truth
+    - Truth = the measuring standard itself
+    - Things are true as they answer it
+  - The Life
+    - The life = covenant-existence
+    - John 1:4: the life was the light
+    - Light = law lived visibly (Matt 5:16)
+    - The life shows — obedience displayed
+    - Prov 3:18: law = tree of life
+    - ⚡ Tree of life = living nation
+    - Conduct yields existence (Matt 7:14)
+  - The Highway
+    - ⚡ Way = how; highway (mesillah) = where
+    - Isaiah 35:8-9: highway of holiness
+    - Lion = wicked ruler; beast = kingdom
+    - ⚡ Fools won't err: nothing hidden (Deut 30)
+    - Prepare highway = repentance, John's cry
+    - Wedding feast: highway guest needs garment
+    - Where and how stand or fall together
+  - The Door
+    - Highway ends at a door — person
+    - John 10:9: 'I am the door'
+    - Doorposts: word written (Deut 11:20)
+    - Doorposts: lamb's blood (Exodus 12:13)
+    - ⚡ Door bears law AND lamb together
+    - Enter by Him = word and blood
+  - One Torah, Three Aspects / The Torah Embodied
+    - Prov 6:23: commandment, law, way of life
+    - Truth defines way; way produces life
+    - ⚡ Eden's sword = Word, preserving (shamar) way
+    - ⚡ Prosphatos: 'new' way = freshly slain
+    - Gospel chapter's claim, now first person
+    - He is Torah embodied — standard walking
+    - ⚡ 'By me': original road thrown open
+
+
+# Part V — The Covenant People
+
+- **Garments**  ⟶ overturns: Righteousness as state possessed, not acts done
+  - Opening: The Speechless Wedding Guest
+    - Wedding guest condemned by his clothing
+    - King's feast for his son: Lamb's marriage
+    - ⚡ Speechless = phimoō: muzzled, storm-stilling word
+    - No defense in mouth: none on back
+    - Invited, seated, found out only inside
+    - Many called; the garment sorts them
+  - The Garment Named: Righteous Acts
+    - Rev 19:8: fine linen IS righteous acts
+    - Greek dikaiōmata: plural, active righteous deeds
+    - ⚡ KJV shortening turned doing into having
+    - Righteousness = commandments (Deut 6:25; Psalm 119:172)
+    - 1 John 3:7: doing makes righteous
+    - Isaiah 61:10: garments of yeshuah, salvation-wear
+    - Prodigal's best robe: restored before speech ends
+  - The Covering Is the Covenant
+    - Ezekiel 16:8: spread skirt = covenant entered
+    - Skirt = kanaph: wing, corner, border
+    - ⚡ Fringes bound on kanaph: law-in-hem
+    - Covenant covers first; clothing given second
+    - Granted, yet she arrays herself
+    - First garment: coats of skins, blood-cost
+    - ⚡ Name = covenant owned; garment = worn
+  - Filthy Rags
+    - Isaiah 64:6 misread: obedience as filth
+    - ⚡ Filth is the doer, not the deed
+    - Clean deed, stained hand, marked rag
+    - Wash the garment; never cast off
+    - Scarlet to snow (Isaiah 1:16-18)
+    - Zechariah 3:4: raiment changed, iniquity removed
+    - Rev 22:14: commandment-doers gain tree right
+  - Washing the Walk; Fig-Leaf Coverings
+    - ⚡ John 13:10: bath = one-time baptism
+    - Feet = the walk, washed daily
+    - Galatians 3:27: baptized put on Christ
+    - Fig leaves: covering of own cut
+    - Own-eyes rightness: way of death
+    - ⚡ Cursed fig = fig-leaf covering pictured
+    - Leaves are show; fruit is substance
+  - Keep Your Garments
+    - Sardis's undefiled few walk in white
+    - Rev 16:15: keep garments or walk naked
+    - Keeping = continuing the righteous doing
+    - 'Put on' commands: clothing is conduct
+    - Isaiah 59:17: God wears the armour first
+    - ⚡ Ephesians armour: God's wardrobe, not Rome's
+    - Robes are worn, not framed
+  - Naked
+    - Nakedness = exposure, not nudity
+    - Laodicea: naked and cannot feel it
+    - Judgment strips: nakedness uncovered (Isaiah 47:3)
+    - Paul's dread: found naked at resurrection
+    - Gospel announced; name owned; garment worn
+    - Few chosen: dressed on the highway
+    - Own-cut covering ends speechless, dark
+
+- **Orphans, Widows, and the Fatherless**  ⟶ overturns: Widow-care is charity for others
+  - Opening
+    - Pure religion: visit fatherless and widows
+    - Even the godless fund the work
+    - Readers assume themselves givers, never widows
+    - Symbolic language overturns the assumption
+  - We Are the Widow
+    - Divorced (Isaiah 50:1); city 'as widow'
+    - ⚡ Covenant people themselves are the widow
+    - Widow's exact opposite: the boasting queen
+    - ⚡ Revelation 18:7 quotes Isaiah 47:8 verbatim
+    - Denier widowed 'in one day' — both texts
+    - Confessors remarried; the difference is confession
+  - Thy Maker Is Thine Husband
+    - 'Thy Maker is thine husband' (Isaiah 54:5)
+    - Widow-defense: Husband moving toward His own
+    - Deuteronomy 10:18: judgment, food, raiment
+    - Unreaped corner: stranger, fatherless, widow
+    - Widowed remnant gleans edge, like Ruth
+  - The Stranger
+    - Defined by opposite: fellowcitizen (Ephesians 2:19)
+    - Stranger = non-citizen of covenant commonwealth
+    - Corner-gleaning draws the ger toward citizenship
+    - Passover: 'as one born in the land'
+    - Ruth: gleaning Moabite grafted into Redeemer's line
+    - ⚡ Key inverts: citizens become strangers to world
+    - 'Conversation' (Philippians 3:20) literally means citizenship
+  - The Poor and the Rich
+    - Poor is fourth corner-gleaner (Zechariah 7:10)
+    - ⚡ Hebrew 'poor' twins 'meek': root bowed-down
+    - Isaiah's 'meek' = Jesus' 'poor' (Luke 4:18)
+    - God's poor: contrite, trembles at word
+    - Rich = unbowed Laodicea, needing nothing
+    - ⚡ Camel/needle: trust, not treasure; Abraham heir
+    - Symbol deepens command: hand stays open
+  - Food and Raiment
+    - Widow's food and raiment aren't bare
+    - Bread = every word (Deuteronomy 8:3)
+    - Raiment = righteous deeds He grants
+    - Worst famine: hearing the LORD's words
+    - 'Feed my sheep' means teach commandments
+    - ⚡ His flesh = bread; crowd took literally
+    - Feed the hungry: hand across the word
+
+- **Marriage and Divorce**  ⟶ overturns: Jesus permits divorce for sexual immorality
+  - Opening + The Collision with the Law
+    - AI verdict: divorce allowed for porneia
+    - All three scholarly camps read literal sex
+    - None opens Torah on each case
+    - Law: adultery is capital, not divorce-ground
+    - ⚡ A dead spouse needs no bill
+    - Common reading: Jesus commutes death penalty
+    - Same sermon: no jot shall pass
+  - Two Words in One Sentence
+    - ⚡ Exception porneia; consequence moicheia — different words
+    - 'Adulteries, fornications' listed separately (Matthew 15:19)
+    - Mark, Luke: absolute form, no exception
+    - Hebrew Mark/Luke also lacks exception (footnote)
+    - Matthew 1 already shows the case
+    - ⚡ Joseph 'just' while putting away privily
+    - Exception covers Joseph, not commuting Leviticus
+  - What God Hath Joined / The Nakedness of a Thing
+    - Marriage = covenant: wing, oath, name (Ezekiel 16:8)
+    - ⚡ 'Who joined it?' is the whole question
+    - 'Uncleanness' = Hebrew 'nakedness of a thing'
+    - ⚡ Same nakedness-word as Leviticus 18 unions
+    - Statute targets never-lawful unions, not adultery
+    - No-return rule (Deut 24:4): gospel hinge
+    - Regulated for hard hearts, never blessed
+  - The Commanded Divorce
+    - ⚡ Out-of-covenant marriage IS the whoring (Exodus 34)
+    - Fornication = covenant-unfaithfulness: stones, stocks, kingdoms
+    - ⚡ Ezra: divorce commanded, 'according to law'
+    - Malachi condemns both: which union severed?
+    - 'What God joined' is covenant clause
+    - Paul marks voices: 'I, not the Lord'
+    - ⚡ Ezra's day drew out; gospel draws in
+  - The Deposed Queen
+    - Vashti divorced: disobedience, no sexual sin
+    - 'Estate unto another better than she'
+    - ⚡ Same formula: Saul, Solomon, vineyard husbandmen
+    - Queen's breach teaches every house rebellion
+    - ⚡ Esther comes unsummoned: 'if I perish'
+    - Two wives of the symbolic story
+  - God's Own Case File
+    - God divorces adulterous Israel, doesn't stone
+    - The bill of divorce = the exile
+    - ⚡ Jeremiah 3:1: God cites His no-return statute
+    - Romans 7: Husband's death frees the wife
+    - ⚡ She earned stoning; He took stroke
+    - Remarriage language: Jeremiah 31, Hosea's buyback
+    - ⚡ John 8: not waiving penalty — paying it
+  - The Burning and the Wedding
+    - Bible closes: execution first, then wedding
+    - ⚡ Whore burned = Leviticus 21:9 sentence
+    - ⚡ Bride wears 'righteous acts' — plural, active
+    - Every marriage figures Christ and church
+    - Verdict: adultery's wage death — He paid
+    - Allowed putting-away is the commanded one
+    - Next symbol: the bow (covenant-wide binding)
+
+- **Wings**  ⟶ overturns: Wings as tender shelter apart from law
+  - Opening: One Word, Eighteen Renderings
+    - Bleeding woman touched border, not the cloak
+    - Kanaph: 108 occurrences, eighteen English renderings
+    - Wing, skirt, border, corner, quarter, overspreading
+    - Kanaph: the outermost edge of anything
+    - Rule: where kanaph hides, commandments near
+  - The Fringe on the Wing
+    - Tzitzit bound at kanaph (Numbers 15)
+    - Purpose: remember all commandments, do them
+    - ⚡ 'Borders,' 'quarters' — English never says wing
+    - Remembering means doing (Deuteronomy 8:11)
+    - Unpointed, Strong's two entries are one word
+    - ⚡ Isaiah 30:20: teachers kanaph-ed into corner
+    - Pharisees enlarge borders: obedience advertised, undone
+  - Healing in His Wings
+    - She grasped the tzitzit, not random cloth
+    - ⚡ Kraspedon: LXX's word for tzitzit
+    - Malachi 4:2: healing in his wings
+    - Healing hangs where the commandments hang
+    - She reached for law made flesh
+    - All who touched made perfectly whole
+  - The Covenant Under the Wings
+    - Ark of covenant under cherubim wings
+    - God commands from between the wings
+    - ⚡ Holy of holies: Numbers 15 in gold
+    - Psalm 91: the covering is truth/law
+    - ⚡ Under wings means inside the law
+    - Eagles' wings carried Israel to Sinai's commandments
+    - Revelation 12:14 replays the Exodus flight
+  - Spread Your Wing Over Me
+    - Spread kanaph: enter covenant (Ezekiel 16:8)
+    - Ruth asks Boaz: spread thy skirt
+    - Father's skirt law shares fringes' chapter
+    - Hen and chicks: covenant wing refused
+    - ⚡ Matthew 23: kanaph counterfeited, then refused
+    - Refused wing replaced: Assyria's wings, eagles
+    - Everyone under some wing; the question, whose
+  - The Torn Skirt
+    - ⚡ Saul's torn skirt is torn kingdom
+    - David's heart smote: cut the covenant edge
+    - Same skirt: David's evidence of covenant kept
+    - Skirts hold covenant record: innocents' blood, filthiness
+    - Haggai: fringe transmits no merit, testifies
+    - Remnant bound in skirt (Ezekiel 5:3)
+  - The Corners of the Earth / The Corner of the Field
+    - Earth wears a garment with corners
+    - Dispersed gathered from four kanaph (Isaiah 11:12)
+    - Job 38:13: wicked shaken out like garment
+    - Field corner is pe'ah, not kanaph
+    - ⚡ Symbol matches by structure, not spelling
+    - Edge reserved for poor, stranger, widow
+    - Ruth gleaned corner, redeemed under wing
+
+- **The Name**  ⟶ overturns: Vain-taking = cursing; "in Jesus' name" formula
+  - Opening + In My Name
+    - Two common errors treat name as sound
+    - John 14:13: 'whatsoever' falsifies the formula
+    - 'In my name' = inside the relationship
+    - Exodus 23:21: 'my name is in him'
+    - That name-bearing Angel is pre-incarnate Christ
+    - 'Will not pardon' — pardon awaits incarnation
+    - ⚡ Angel's 'place prepared' anticipates John 14:2-3
+  - Lord, Lord
+    - Matthew 7:22: heaviest name-users are rejected
+    - 'Iniquity' = anomia: lawlessness
+    - Sound without substance; name isn't lip-word
+  - The Name Is the Covenant
+    - ⚡ David says ark; God answers 'name'
+    - The name is the covenant itself
+    - 'House' wordplay: building and family line
+    - Fulfilled three ways: flesh, stone, covenant
+    - Zechariah 6:12: name, house, throne united
+    - ⚡ Acts 4:12: no other covenant saves
+    - ⚡ Exodus 6:3: Abraham heard, hadn't covenanted
+  - Taking It in Vain
+    - 'Vain' = shav: emptiness, for nothing
+    - Sin of the life, not mouth
+    - ⚡ Proverbs 28:9: lawless prayer is abomination
+    - ⚡ Most vain-taking happens inside the church
+    - Ezekiel 36:20: profaned by faithless wearing
+    - God hallows name by sanctifying wearers
+  - The Lord's Prayer
+    - ⚡ 'Hallowed be': imperative demanding Ezekiel 36:23
+    - Name hallowed when Bearer's will done
+    - Bread = word; manna proves law-walking
+    - Debts = sins; release must be practiced
+    - ⚡ 'Tempt' = 'prove': Genesis 22:1, Exodus 16:4
+    - 'From evil' = the evil one, personal
+    - The prayer: covenant renewed in miniature
+  - Keeping the Name + The Counterfeit Name
+    - Deuteronomy 28:58 binds law-keeping to name
+    - Revelation 14: commandments plus Father's forehead-name
+    - Babel: 'let us make us a name'
+    - ⚡ Made name versus given name: Bible's war
+    - ⚡ Revelation: no unmarked forehead exists
+  - Called by His Name
+    - Isaiah 4:1: 'called by name' = married
+    - ⚡ Seven women = churches wanting name only
+    - Ruth asks kanaph — wing, covenant edge
+    - Ezekiel 16:8: God weds by spread skirt
+    - ⚡ Tzitzit stitch commandments into the covering
+    - ⚡ Ruth's wedding raises David's name-house
+    - Close: name = covenant owned; marriage next
+
+- **The Remnant**  ⟶ overturns: The assumption most professing believers are saved
+  - The Question and the Anchor: Elijah's Seven Thousand
+    - Everyone quietly assumes majority-side salvation
+    - Luke 13:23-24: quantity asked, 'strive' answered
+    - 1 Kings 19:18: God counts 7,000
+    - ⚡ Menahem's tribute math: kingdom of ~1-2 million
+    - 7,000 per million: 0.7% at best
+    - Romans 11:5: ratio the standing pattern
+    - Romans 9:27: sand-of-sea multitude, remnant saved
+  - One of a City; Two or Three Berries
+    - Jeremiah 3:14: one-of-a-city, two-of-a-family
+    - City/clan sizes: fraction of one percent
+    - ⚡ Ratio lives inside the remarriage verse
+    - Isaiah 17:5-6: harvest strips; gleanings remain
+    - Five-eight berries per 15-30 thousand: hundredths-percent
+    - Orchard fact: only unreachable berries survive beating
+    - Isaiah 24:13: same tree, whole earth
+  - The Field's Edge and the Gold Grade
+    - Leviticus 19:9: leave the pe'ah edge
+    - ⚡ Edge share shrinks as field grows
+    - Working farms: edge is 0.25-0.51% crop
+    - Field=world; gleaners: poor, stranger, fatherless, widow
+    - Isaiah 13:12: survivor rarer than gold
+    - ⚡ Remnant assays 2,000 g/t; Buyer's whole-field logic
+    - Ezekiel's dross; Zechariah's refined third through fire
+  - Solomon, the Lion, Job, and Outside Witnesses
+    - Ecclesiastes 7:28: one man among a thousand
+    - ⚡ Micah's lion: apex authority, one-per-thousand count
+    - Deuteronomy 7:7: fewest of all people
+    - Job pre-law: five survivors of hundreds
+    - 2 Esdras: grape kept from the cluster
+    - ⚡ Josephus' 6,000 Pharisees: 1% ceiling (Matthew 5:20)
+    - Micaiah versus 400; Elijah versus 850
+  - The Land Itself Is a Census
+    - Covenant: deeded land with drawn borders
+    - Bodily heirs inherit erets, measured ground
+    - ⚡ Micah 4:4 quotes Solomon's actual census density
+    - Solomon's density: land carries 110-330 million
+    - Two billion heirs: house lot, no vineyard
+    - Exodus 23:29-30: sparse start is stated policy
+    - ⚡ Land sized for remnant; measurements are census
+  - The Convergence — and Ruth
+    - Fifteen independent lines, one narrow band
+    - Center ~0.21%: seventeen million of eight billion
+    - Fewer than a handful per congregation
+    - Multi-witness signature: Red Sea, Jonah again
+    - ⚡ Line: acknowledging stumblers versus command-deniers
+    - ⚡ Ruth carries all four gleaner names
+    - Gleaner meets Redeemer; enters Messiah's line
+  - What 'Remnant' Means; Design; the Response
+    - Four Hebrew words; none means leftovers
+    - She'erith: living flesh, blood kin
+    - ⚡ Yether: exceeding portion — Matthew 5:20's 'exceed'
+    - ⚡ Sarid: needle's-eye puncture inside survivor's name
+    - Peletah: escaped portion, Job's messengers' word
+    - By design: Gideon's 300; little flock
+    - Strive/agonizomai: seeking insufficient; assumption is deadliest
+
+
+# Part VI — The Children of Light
+
+- **The Fool and the Wise**  ⟶ overturns: Oil of ten virgins = Holy Spirit
+  - Opening: A Word Worth Knowing
+    - Saying 'fool' risks hell fire (Matt 5:22)
+    - Modern fool: slow or silly
+    - Bible's fool: nothing about intelligence
+  - Hearing and Doing
+    - Fool says in heart: no God (Ps 14:1)
+    - Not a theory — a way of living
+    - Fool's way right in his own eyes
+    - Matt 7:24-26: both builders hear same words
+    - ⚡ Doing alone divides wise from fool
+    - Wisdom = obedience: 'do his commandments' (Ps 111:10)
+    - Fool = disobedient, however clever
+  - The Ten Virgins
+    - All ten are parthenos: chaste, faithful brides
+    - ⚡ Not harlots shut out — virgins are
+    - Only difference: oil (Matt 25:3-4)
+    - Foolish women: nature first, lamp reveals it
+    - ⚡ Prov 6:23 decodes: lamp commandment, light law
+    - Oil stands between lamp and light
+  - What Is the Oil? Not the Spirit
+    - Majority reading: oil is Holy Spirit (65%)
+    - But this oil must be bought
+    - ⚡ Acts 8:20: Spirit cannot be bought
+    - Nor grace/faith: gathered beforehand, unlendable
+  - Buy the Truth
+    - ⚡ Proverbs 23:23 commands: buy the truth
+    - Truth is the law (Ps 119:142)
+    - Wisdom, understanding, instruction: all law kept
+    - Price: an obeying ear (Isa 55:1-3)
+    - Purchase = lifetime obedience; buys the covenant
+    - Once bought, never sold or transferred
+  - Oil Pressed: Gethsemane
+    - Oil: olives beaten for light (Ex 27:20)
+    - Olive tree is Israel, covenant people
+    - Oil = obedience proven under pressure
+    - ⚡ Gethsemane means oil press
+    - The press sits on olive-nation's mount
+    - Christ crushed: 'not my will, thine'
+    - Neighbor's obedience will not burn for you
+  - Verdict: I Know You Not
+    - 'I know you not' (Matt 25:12)
+    - ⚡ Same verdict as 'I never knew you'
+    - Foolish from the first, not forgetful
+    - Book's one question: did you do it?
+
+- **Light and Darkness, Day and Night**  ⟶ overturns: Light as enlightenment; darkness as ignorance
+  - Opening: The Law Is Light
+    - Opens from oil: what is light?
+    - Not feeling, mood, or vague truth
+    - ⚡ Proverbs 6:23: commandment lamp, law light
+    - Psalm 119:105: word lamps the path
+    - Isaiah 8:20: law tests for light
+  - Let Your Light Shine
+    - Light is the law lived visibly
+    - Matthew 5:16: men see good works
+    - Hidden lamp under bushel: no lamp
+    - ⚡ Oil of tried obedience becomes conduct
+    - Isaiah 58:10: feed hungry, light rises
+    - Psalm 27:1: light and yeshuah together
+  - Why Men Love the Dark
+    - ⚡ Darkness is concealment, not ignorance
+    - Choshek root: to hide
+    - John 3:19: dark loved, deeds evil
+    - In Him no darkness: nothing hidden
+    - ⚡ Isaiah 50:11: self-kindled counterfeit light
+    - Own sparks parallel the fig-leaf garment
+  - Day and Night
+    - ⚡ Genesis 1:5: light/darkness are Day/Night
+    - Day: work while seen (John 9:4)
+    - Night: men hide, sleep, stumble
+    - ⚡ Ninth plague: whole symbol staged historically
+    - Believers: children of light and day
+    - Day watches sober; night sleeps drunken
+    - Romans 13:12: put on light's armour
+  - Outer Darkness
+    - Garmentless guest cast into outer darkness
+    - No garment, no oil, no light
+    - ⚡ One condition under three figures
+    - ⚡ First-day division repeated at the end
+    - Light: commandments kept before every eye
+    - Nothing left that needs the dark
+
+- **Sun, Moon, and Stars**  ⟶ overturns: Lucifer the light-bringer raising a throne
+  - Opening — Made to Rule (Genesis 1)
+    - Genesis 1:16: lights given rule, not glow
+    - ⚡ 'Also' is supplied; Hebrew: 'and the stars'
+    - Stars rule night with moon (Psalm 136:9)
+    - Two offices: rule; signs and seasons
+    - Time-reckoning deferred to Time Tested Tradition
+  - Joseph's Dream
+    - Scripture interprets its own symbol
+    - Jacob: sun father, moon mother, stars brothers
+    - ⚡ Lights read as a governing household
+    - Lift one family to the whole
+  - The Sun: the Father
+    - Sun is source; every light borrows
+    - Psalm 84:11: the LORD God, a sun
+    - He alone shines of Himself
+  - The Moon: the Faithful Witness
+    - Moon owns no light; reflects the sun's
+    - Son does nothing of himself (John 5:19)
+    - ⚡ Moon and Jesus: same title, 'faithful witness'
+    - Psalm 89:37 meets Revelation 1:5
+    - Night = this present age (John 9:4)
+    - Light shining in darkness is night's light
+    - Moon bears Father's light until day dawns
+  - The Stars: the Righteous / The Twelve: the Tribes
+    - Daniel 12:3: the wise shine as stars
+    - Stars shine with His borrowed light
+    - Revelation 12:1: crown of twelve stars
+    - Tribes are God's constellations, His Mazzaroth
+    - ⚡ Woman is Virgo; crown, twelve constellations
+    - Issachar's Virgo: crown, circle, cycle, calendar
+    - Matthew 13:43: righteous shine as sun
+  - Satan's Counterfeit
+    - Isaiah 14:13: 'throne above the stars'
+    - ⚡ kisse/keseh: throne spelled as full moon
+    - A covered moon over God's stars
+    - ⚡ 'Mount of congregation' hides moéd: appointed times
+    - ⚡ Helel: bringer of darkness, not light
+    - Daniel 7:25: think to change times, laws
+    - Next chapter reads the plan line-by-line
+  - The Heavens Declare
+    - Heavens made to testify (Psalm 19:1-2)
+    - Wordless speech, heard in every tongue
+    - Romans 1:20: invisible things clearly seen
+    - Sky pattern IS the truth, not decoration
+
+- **Lucifer's Declared Plan**  ⟶ overturns: 'I wills' as pride; dark-conjunction new moons
+  - Opening: The Judge Published the Plan
+    - Plan unannounced — "said in thine heart"
+    - Amos 4:13: God declares man's thought
+    - Enemy kept counsel; Judge published it
+    - Proverb commanded against Babylon (Isaiah 14:4)
+    - Tradition: five repetitions of wanting Godhood
+    - Method: drop vowel points; consonants speak
+    - ⚡ Five steps, one act — a moon
+  - The Name: Son of the Dark
+    - helel: shining one, introduced fallen
+    - ben: product of ("sons of Belial")
+    - shachar consonants: dark; dawn via duskiness
+    - shachar hour is dark (John 20:1)
+    - ⚡ ben shachar: son of the dark
+    - metaschēmatizetai: disguise (2 Corinthians 11:14)
+    - Isaiah substance, Paul disguise — one portrait
+  - A Throne That Is a Moon
+    - ⚡ kisse throne = keseh full moon, letter-identical
+    - Proverbs 7:20 "day appointed" = keseh, כסא
+    - One root kasah: covered seat, filled light
+    - Job 26:9: moon's veiled face, His cloud
+    - Context votes: stars, cloud-heights, night sky
+    - Stars of God = the righteous
+    - ⚡ Raises lightless moon over God's people
+  - The Mount of the Congregation
+    - English opaque; Hebrew is har moed
+    - moed: appointed feasts (Leviticus 23:2)
+    - Genesis 1:14, Psalm 104:19: lights keep moedim
+    - ohel moed: tent of appointed time
+    - har: ruling authority, decoded chapter two
+    - ⚡ har moed: seat over appointed times
+    - Darkness-producer will govern the calendar
+  - The Sides of the North
+    - yarketh: farthest recess (ship hold, cave)
+    - tsaphon: hidden, dark, unknown quarter
+    - Compass direction strange address in heaven
+    - ⚡ For a moon, uttermost dark = phase
+    - The phase: invisible conjunction beside sun
+    - Full moon's office, worked opposite phase
+    - ⚡ Counterfeit: calendar begun at invisible moon
+  - Silencing the Greatest Light — The Plan, Read Whole
+    - av "clouds": envelope, thick darkness
+    - ⚡ eddammeh: resemble — or silence, destroy
+    - elyon simply "highest": the sun (Psalm 84:11)
+    - ⚡ Only darkened moon eclipses the sun
+    - Eclipse stops heavens' speech (Psalm 19)
+    - Amos 8:9: God's same eclipse vocabulary
+    - Re-rendered: five sequential, checkable steps
+  - To Change Times and Laws
+    - Daniel 7:25 names it: change times, laws
+    - ⚡ By deception: righteous keep unappointed feasts
+    - ⚡ Untimely figs (Revelation 6:13): wrong-moed fruit
+    - Ezekiel 20:20: hallowed times, the sign
+    - ⚡ He asked yarketh dark; granted yarketh pit
+    - ⚡ No one forges a worthless document
+    - Nahum 1:15: gospel feet keep feasts
+
+- **The Pearl**  ⟶ overturns: Month begins at full moon, not dark
+  - Opening (unheaded): why calendars
+    - Why a symbol book cares about calendars
+    - ⚡ Enemy's coveted seat has symbol: pearl
+    - Matthew 13:45-46: parable left unkeyed
+    - Flags where assembly exceeds textual proof
+    - Complete case belongs to Time Tested Tradition
+  - The Pearls the Translators Buried
+    - ⚡ peninim: KJV "rubies," Strong's "probably pearl"
+    - Wisdom above pearls: Proverbs 3:15, Job 28:18
+    - Proverbs 2:4-5: seeker is already the merchant
+    - ⚡ Proverbs 31:10: bride priced far above pearls
+    - Pearl: from sea (nations), formed around wound
+    - One pearl: kingdom is one whole bride
+    - The word pulls upward, at the sky
+  - The Fulness in the Night Sky
+    - keseh: Strong's "fulness or the full moon"
+    - Psalm 81:3: KJV alone against "full moon"
+    - ⚡ Septuagint eusēmos: conspicuous, sign-rooted (Genesis 1:14)
+    - Dark conjunction: the one signless day
+    - ⚡ No "and": full moon IS new moon
+    - Full moon heads month (Numbers 10:10, 28:11)
+    - ⚡ Moon governs moedim; sky owns one pearl
+  - The Fulness (cont.): throne and bride
+    - ⚡ Proverbs 7:20: keseh spelled כסא, "throne"
+    - One root kasah: covered seat, filled light
+    - Psalm 89:36-37: throne as sun, as moon
+    - Job 26:9 holds both senses; darkness outside
+    - Joseph's dream: sun father, moon mother
+    - ⚡ Bridegroom sun; fulness answers him face-to-face
+    - ⚡ Bride "fair as moon," priced above pearls
+  - The Gate That Opens
+    - Psalm 19: sky a tabernacle facing east
+    - Ezekiel 46:1: east gate opens new-moon day
+    - Open gate: something must come through
+    - ⚡ Only full moon rises east at sunset
+    - Sliver hunted low west, beside sun
+    - Shepherd by door; prince by east gate
+    - ⚡ Counterfeit climbs in from the dark side
+  - One Pearl, One Gate
+    - Revelation 21:21: each gate one whole pearl
+    - Greek, Hebrew Revelation both double "one"
+    - ⚡ Pearl-gates are the moedim: King's meetings
+    - Twelve gates, twelve full moons, Mazzaroth
+    - ⚡ Merchant bought gate-entry, not jewelry
+    - Isaiah 33:6 welds treasure and times
+    - Proverbs 25:2: God conceals, kings search out
+  - The Two Moons
+    - Same seat: enemy dark-covered, LORD light-covered
+    - One reflects everything, the other nothing
+    - Stars — the righteous — follow one moon
+    - ⚡ Pearl is the gate, not an ornament
+    - Every link textual; the chain a reading
+    - Calendar reckoning deferred to Time Tested Tradition
+    - Merchant who understands does not haggle
+
+
+# Part VII — The Whole Duty of Man
+
+- **Shadow**  ⟶ overturns: Colossians 2 abolishes sabbaths and feasts
+  - The doctrine built on gloom
+    - Col 2:16-17: top law-abolished proof text
+    - Teaching: body arrived, shadows discharged
+    - Reading rests wholly on shadow-as-gloom assumption
+    - Assumption is the reader's, not Scripture's
+    - Chapter gathers all eighty shadow verses
+    - Verdict on Colossians held until end
+  - KJV itself renders shadow as 'defence'
+    - ⚡ Num 14:9: 'defence' is tsel, shadow
+    - Shadow gone: nation naked to judgment
+    - Eccl 7:12: wisdom and money shelter likewise
+    - Translator wobble is a signpost — method
+  - The righteous dwell in His shadow
+    - Psalm 91:1: shadow of the Almighty
+    - Wings' shadow = kanaph, the commandments' reminder
+    - ⚡ Refuge is the law's own shade
+    - Psalm 121:5: the LORD IS the shade
+    - Isaiah 25:4 parallels: refuge/shadow, storm/heat
+    - Rock, tabernacle, hand, bride, revival verses
+    - Verdict: good to be in shadow
+  - Shade from the consuming fire
+    - The heat is God's consuming fire
+    - Isa 33: the righteous dwell with burnings
+    - Moses shaded by God's own hand
+    - ⚡ Right hand works yeshuah: shade is Yeshua
+    - ⚡ Psalm 84:11: Sun and shield, one Person
+    - Commandments: shade beside fire, not fire
+    - Malachi 4:2: healing in his wings
+  - Kingdoms cast shadows
+    - Kingdom = tree; its shadow = protection
+    - Jotham: crown offer is shade offer
+    - Ezek 31: nations dwelt under Assyria's shadow
+    - Mustard tree: fowls lodge under shadow
+    - Egypt's shadow: false shelter becomes confusion
+    - ⚡ Hosea 4:13: idolatry is shadow-hunger
+    - Everyone lives in some shadow — whose?
+  - The body casts the shadow: Colossians reread
+    - ⚡ Epeskiazen: tabernacle cloud verb, Luke 1:35
+    - ⚡ Tselem 'image' is built on tsel
+    - Shadow is attached to its body
+    - Hebrews 10:1: shadow of GOOD things
+    - 'Judge you' protects feast-keepers, not condemns
+    - ⚡ Feasts ARE — present tense, post-resurrection
+    - ⚡ Feasts: shadow OF Christ, His shade
+  - Even death's shadow; the method
+    - ⚡ Tsalmavet: death's outline cannot kill
+    - Psalm 23: walk THROUGH, not into
+    - Death's shadow proves the morning exists
+    - James 1:17: no shadow of turning
+    - Method: gather all uses, read parallels
+    - Wobble signposts the Hebrew beneath
+    - Good to be in shadow — whose?
+
+- **Justice and Judgment**  ⟶ overturns: Judgment as condemnation; 'judge not' ethic
+  - Two Words the Modern Ear Mishears
+    - Judgment heard as gavel, sentence, condemnation
+    - 'Do not judge': last commandment standing
+    - Justice: abstraction marched for, never located
+    - Scripture commands both as deeds (Gen 18:19)
+    - Cannot do condemnation or keep abstraction
+    - Four hundred verses define and join them
+  - Justice Is Righteousness Renamed
+    - ⚡ Gen 18:19 'justice' = Jer 22:3 'righteousness'
+    - Ps 89:14/97:2: same sentence, two renderings
+    - Isa 56:1: both renderings, one verse
+    - Righteousness already defined: commandments done (Deut 6:25)
+    - Justice: commandments done toward one's neighbor
+    - Hence commandable, learnable, performable
+  - Judgment (Mishpat) Is the Law's Ruling
+    - Deut 4:8: statutes and judgments = law
+    - Ps 119: 'judgments of thy mouth,' kept
+    - ⚡ Not the gavel falling — the ruling
+    - Keeping judgment: rendering what rulings declare due
+    - Hab 1:4: law slacked, judgment stops
+    - Judgment issues from law, verdict from statute
+  - Owed First to the Four
+    - Zech 7:9-10: true judgment → gleaning-corner four
+    - Deut 10:18: God executes their judgment
+    - ⚡ Jer 5:28 'right' = mishpat, needy's due
+    - Job 29: judgment worn as robe, diadem
+    - ⚡ Jer 22:16: judging poor's cause = knowing God
+    - Ezek 18 'lawful and right': third rendering
+    - Weekday inventory: pledge, bread, garment, usury
+  - Weightier Matter of the Law; Thrones
+    - Matt 23:23: left undone, not unbelieved
+    - Isa 42: 'judgment' answered by 'law'
+    - Branch executes judgment and justice (Jer 23:5)
+    - Ps 89:14: throne's habitation, justice and judgment
+    - Solomon, David: kingship given for judgment
+    - Unjust king: throne missing its habitation
+  - To Judge Is to Rule
+    - ⚡ Judges delivered; Nehemiah names them 'saviours'
+    - 1 Sam 8: judge us, fight battles
+    - Isa 33:22: judge, lawgiver, king, saviour
+    - Exod 18:16: judging = teaching the statutes
+    - Ezek 20 'plead': the judge-verb itself
+    - ⚡ Wilderness judgment: God becoming King, not condemning
+    - Condemnation: one verdict, not the office
+  - The Day, the Delight, the Definition
+    - ⚡ Righteous pray for judgment; creation rejoices
+    - Dan 7:22: saints given judgment = thrones
+    - ⚡ Gen 18:25 'do right' = do mishpat
+    - ⚡ Judgment Day: Sinai's rulings, no surprises
+    - Delight above sacrifice (Prov 21:3; Jer 9:24)
+    - Isa 59: way, judgment, justice, truth fall
+    - ⚡ Gen 18:19: 'way of LORD' defined here
+
+- **Liberty**  ⟶ overturns: Liberty as autonomy — freedom from rule
+  - The Bell vs. the Verse: Seven Uses
+    - Liberty Bell's words are Leviticus 25:10
+    - Modern 'no-master' meaning bends every verse
+    - Hebrew 'liberty' appears only seven times
+    - All seven name the same institution
+    - Liberty is the jubilee: decreed release
+    - ⚡ Liberty is a command of the law
+    - Only the King's decree frees slaves
+  - The Anointed Proclaims Release
+    - Isaiah 61: liberty proclaimed to captives
+    - ⚡ 'Acceptable year' means Deuteronomy's release year
+    - Seventh year: debts released, servants freed
+    - Nazareth: 'this day fulfilled' (Luke 4:21)
+    - ⚡ He proclaimed release in its appointed year
+    - ⚡ Gospel and jubilee: one proclamation
+  - The Swallow at the Altar
+    - ⚡ Same Hebrew word names the swallow
+    - Psalm 84:3: swallow nests at God's altars
+    - ⚡ Liberty embodied flies home to altar
+    - Jubilee sends home, not open sky
+  - Sin the Slaver: Change of Masters
+    - Judeans claim 'never in bondage' under Rome
+    - Whoever commits sin is sin's servant
+    - Truth — God's law — makes free
+    - ⚡ Law is the writ of manumission
+    - ⚡ Leviticus 25:55: freed because already His servants
+    - ⚡ Liberty: change of masters, never absence
+    - No third condition: every man serves
+  - The Perfect Law of Liberty
+    - 'Perfect law of liberty': plain description
+    - Jubilee law is liberty's own constitution
+    - Judged by the law of liberty
+    - Stand fast: liberty is a standing
+    - Kept by continuing in the word
+    - ⚡ Romans 8:21: the cosmic jubilee
+  - The Bored Ear: The Willing Servant
+    - Loving servant refuses freedom, serves forever
+    - Sealed: ear bored at door post
+    - ⚡ Shama: hearing and obeying, one verb
+    - Door posts carry the written commandments
+    - ⚡ Psalm 40 'opened' is karah: bored
+    - Isaiah 50:5: opened ear, not rebellious
+    - ⚡ Son abides by nature, slave by choice
+  - The Counterfeit and Zedekiah's Sentence
+    - Counterfeit: liberty as license to flesh
+    - Liberty-promisers are servants of corruption
+    - ⚡ License: old master's brand, new name
+    - Autonomy is the serpent's original pitch
+    - Zedekiah's princes re-enslaved their freed brothers
+    - ⚡ God's reply: liberty — to the sword
+    - Segue: what 'serve me' actually means
+
+- **Worship**  ⟶ overturns: That worship means the song service
+  - Worship Is Not Singing
+    - Modern ear: worship means music set
+    - Word spans nearly two hundred verses
+    - 2 Chronicles 29:28: worshipped, sang, sounded
+    - Different people, distinct acts, same moment
+    - ⚡ Worship falls down; praise stands up
+    - Jehoshaphat: Judah prostrate, Levites stand praising
+    - Singing accompanies worship, never equals it
+  - The Word Itself: Bow and Kiss
+    - Shachah: bow down, prostrate — plain homage
+    - Same word: worship God, obeisance men
+    - The One bowed to defines worship
+    - ⚡ Proskuneo: 'toward-kiss' — subject kisses his king
+    - Psalm 2:12: kiss the Son
+    - Elijah's 7000: knees unbowed, mouths unkissed
+    - Worship: body's declaration of allegiance
+  - First Use: Abraham on Moriah
+    - First occurrence teaches the word's meaning
+    - Genesis 22:5: 'go yonder and worship'
+    - ⚡ First worship: costliest obedience, up mountain
+    - No instrument, assembly, or song present
+    - 'To obey is better than sacrifice'
+  - The Fixed Pair: Bow and Serve
+    - Second commandment's 'bow down' is shachah
+    - Bow never travels alone: and serve
+    - Pair holds: Daniel 3, Romans 1:25
+    - ⚡ Ktisis: any made thing — beast included
+    - Matthew 4:10 welds the pair forever
+    - Romans 12:1: worship without an assembly
+    - Satan asked bow; service follows it
+  - Fear Equals Worship; the Counterfeit
+    - ⚡ Jesus renders Deut 6:13 'fear' as 'worship'
+    - Parallel columns confirm the fear-worship equation
+    - Worship: fear of LORD made visible
+    - Matthew 15:9: vain worship, men's commandments
+    - ⚡ Isaiah 29:13 behind it reads 'fear'
+    - Vain: true God, on human terms
+    - Weighed by whose commandments, not sincerity
+  - Worship Is Kept at Appointed Times
+    - Worship is 'gone up' to, yearly
+    - Elkanah, feast Greeks, eunuch, Paul
+    - Paul: worship is believing the law
+    - Isaiah 66:23: all flesh, every sabbath
+    - Zechariah 14: skip the feast, no rain
+    - Worship kept like feast, like commandment
+  - The Last Angel's Cry
+    - Revelation 14:7: fear and worship paired
+    - ⚡ 'Made heaven, earth, sea' quotes Exodus 20:11
+    - Angel restores sabbath memorial, not novelty
+    - Hebrew Revelation: 'make prayer to him'
+    - Revelation 13: Daniel 3 furnace, worldwide
+    - Final division drawn at this word
+    - John refused (22:9); next chapter: fear
+
+- **The Fear of the Lord**  ⟶ overturns: Fear as terror or contentless reverence
+  - Opening (untitled)
+    - Eccl 12:13: conclusion of the whole matter
+    - Last symbol because root of all
+    - Hollowed into terror or soft reverence
+    - Scripture defines fear by what it does
+  - Not Terror, but Obedience
+    - ⚡ Deut 10:12-13: fear and keep, one requirement
+    - Proverbs: fear is to hate evil
+    - Job 28:28: departing evil is understanding
+    - Fear = obedience, like love, faith
+    - ⚡ Matt 4:10 swaps 'fear' for 'worship'
+  - The Beginning of Wisdom
+    - Prov 9:10: fear begins wisdom
+    - Psalm 111:10: wise = commandment-doers
+    - Fool: no fear, no wisdom
+    - Clever fool still builds on sand
+  - Fear Him
+    - Matt 10:28: fear the soul-destroyer only
+    - Fear God; fear nothing else
+    - Fear: clean, treasure, fountain of life
+    - ⚡ Psalm 25:14: fearing Him opens covenant
+    - Jer 32:40: covenant puts fear in hearts
+  - The Fear of Man
+    - ⚡ Fear is the throne of obedience
+    - Prov 29:25: counterfeit snare versus safety
+    - Saul: feared people, so obeyed them
+    - Gal 1:10: pleasing men excludes Christ
+    - Midwives: greater fear overruled Pharaoh's command
+    - God's fear casts out man's fear
+    - ⚡ To fear man is fearing grass
+  - The Whole Duty
+    - ⚡ Rev 14:7: end-time gospel commands fear
+    - Rev 14:12: keep commandments and faith
+    - Last symbol is Scripture's first demand
+    - Every symbol guards the same command
+    - Closes repeating Eccl 12:13
+
+- **The Path to Salvation**  ⟶ overturns: Keeping the law is works-based salvation
+  - Opening — The Law Still Stands
+    - Ported from Time Tested Tradition; keeps Yeshua/𐤉𐤄𐤅𐤄
+    - Church teaches law-keeping = works-based salvation
+    - Not saved by works; willful lawbreaking condemns
+    - Matt 5:17: fulfill = establish, not destroy
+    - Not one jot passes till all fulfilled
+    - Everything Yeshua taught is Old Testament
+  - Sin, Truth, and the Law
+    - What is sin? Only law defines it
+    - Rom 7:7; 1 John 3:4: sin = lawlessness
+    - Bible defines own terms; survives translation drift
+    - Psalm 119:142: thy law is truth
+    - ⚡ So Hebrews 10:26 'truth' = law of Moses
+    - Denying the law = denying Yeshua (Matt 10:33)
+    - Way, truth, life: law made flesh
+  - Yeshua the High Priest
+    - Heb 4:14-16: Yeshua our great High Priest
+    - His blood covers unintentional, repented sins
+    - Priesthood's terms defined by Torah itself
+    - ⚡ Numbers 15: willful sinner cut from atonement
+    - Willful defiance = blasphemy, grieving grace's Spirit
+    - Rev 2:5: repent, do first works
+  - Works-Based Salvation?
+    - ⚡ No — the law itself provides the Priest
+    - No salvation except through priestly intercession
+    - Luke 17:10: obedience is unprofitable duty
+    - If obeying earned, obeying were optional
+    - ⚡ Three-step altar call presupposes the law
+    - Sin defined, sacrifice believed, Master obeyed
+    - Christlike walking = doing only Father's will
+  - Go and Sin No More
+    - ⚡ 'Sin no more' = 'keep the law'
+    - John 5:14: relapse brings worse punishment
+    - Matches Hebrews 10:29 'much worse punishment'
+    - ⚡ Teaching 'law abolished' IS willful sin
+    - 1 John 3: abiders don't sin willfully
+    - Matt 7:23: miracle-workers rejected as lawless
+  - All Have Sinned & Continue to Sin
+    - Paul does the very thing he hates
+    - All sinned; only mercy and faith save
+    - John 8:32: the freeing truth = the law
+    - Romans 7: mind serves law, flesh sin
+    - Deny law's goodness = agree with indwelling sin
+    - Sin personified: demon-like, enslaving the flesh
+  - How Then Shall We Be Saved?
+    - Salvation requires confessing the law good
+    - Rom 10:9: 'Lord' = Master, therefore obedience
+    - Grace saves; we're created FOR works
+    - Repentance = turning from sin to obedience
+    - Attempted obedience is faith's evidence
+    - ⚡ Reckless driver: paid tickets ≠ no rules
+    - Heart of obedience required, not perfection
+
+
+# Appendices
+
+- **Appendix: Clouds**  ⟶ overturns: Literal-weather reading of Christ's coming clouds
+  - Opening: Where From, What For
+    - A cloud is scarcely ever weather
+    - Vapours ascend from seas, return as rain
+    - Psalm 104:3: clouds his chariot
+    - Chariot, wind-wings, spirits recall Zechariah's chariots
+    - ⚡ Thesis: cloud = vehicle; cargo = water
+  - His Chariot
+    - Isaiah 19:1: rides — not appears over
+    - Rideth upon heavens; chariots of God
+    - David: rode a cherub, wind's wings
+    - ⚡ Nahum: clouds are dust of His feet
+    - Jeremiah 4:13 pairs cloud with chariot
+  - The Pillar That Drives
+    - Israel walked behind proof forty years
+    - At sea: van to rear guard
+    - Dark to Egypt, light to Israel
+    - He spake in the cloudy pillar
+    - Cloud lifts, camp marches; settles, rests
+    - Settled cloud fills temple; priests stopped
+  - Who Rides
+    - Daniel 7:13: coronation arrives with clouds
+    - Jesus claims that seat by name
+    - Ascension cloud; returns 'in like manner'
+    - Two witnesses ascend in a cloud
+    - Revelation 14: reaper sits on cloud
+    - ⚡ Disciples boarded once, feared, heard voice
+    - Elijah went up behind same horses
+  - The Cargo Is the Word
+    - ⚡ 'My doctrine shall drop as rain'
+    - Isaiah 55: rain = word, gives seed
+    - Former/latter rains run covenant's calendar
+    - James: two rains frame the age
+    - Ask rain in latter-rain season
+    - Judged vineyard: clouds commanded not rain
+    - ⚡ Amos: the drought is word-famine
+  - Clouds Without Water
+    - Test: full clouds empty themselves
+    - False teachers: clouds without water
+    - Proverbs 25:14: false gift, rainless cloud
+    - All cloud's look, none of cargo
+    - ⚡ True cloud driven; counterfeit wind-blown
+  - Risen from the Sea
+    - Elijah's cloud rises out of sea
+    - ⚡ Sea = nations; cloud = risen multitude
+    - 'Cloud of witnesses' becomes literal grammar
+    - Gog: counterfeit cloud, many people
+    - Caught-up saints board the same vehicle
+    - ⚡ Saints: vapour the sea finally yields
+    - Rain gives seed — next chapter: trees
+
+- **Appendix: The Moment**  ⟶ overturns: Judgment creeps gradually; delay implies uncertainty
+  - Opening: Babylon's Boast Answered
+    - Revelation 18:7 boast; Isaiah 47:9 answers timing
+    - 'In a moment': children and husband gone
+    - One small word unifies Scripture's suddenness
+  - The Wink of an Eye
+    - ⚡ Rega: root means wink of eyelid
+    - Shortest interval; never describes a process
+    - Exodus 33:5: consume stiff-necked in moment
+    - Korah consumed in a moment (Numbers 16)
+    - Job 34:20: mighty taken 'without hand'
+    - Atomos: uncut, indivisible atom of time
+    - ⚡ 1 Cor 15:52 twinkling independently matches rega
+  - Suddenly
+    - Pithom shares rega's wink-root family
+    - Jeremiah 4:20 pairs suddenly with moment
+    - Jeremiah 51:8: Babylon suddenly fallen
+    - Revelation 18: 'one hour' three times
+    - Mourners stunned by speed, not fall
+    - ⚡ Malachi 3:1: LORD's arrival keeps identical timing
+  - No Remedy in the Wink
+    - Proverbs 29:1: sudden destruction, without remedy
+    - Years of reproof; destruction allows none
+    - 1 Thess 5:3: peace-and-safety, then travail
+    - ⚡ Travail image answers Babylon's childless boast
+    - Luke 21:34 aiphnidios: cousin of Babylon's suddenly
+    - The moment never asks if ready
+  - The Moment That Blesses
+    - Same rega measures God's own anger
+    - Isaiah 54:7-8: moment wrath, everlasting kindness
+    - Psalm 30:5: anger momentary, favour life
+    - 2 Cor 4:17: affliction shrunk to moment
+    - Moment: God's unit of decisive action
+    - ⚡ Devil's 'moment' offer betrays kingdom's cheapness
+  - The Sign That Was Not Sudden
+    - Habakkuk 2:3: vision tarries, surely comes
+    - ⚡ Patience and suddenness: same character, two distances
+    - Tarrying was appointed time, not uncertainty
+  - The Queen's Clock Is Not Her Own
+    - Moment is the judgment's own timer
+    - Wife warned for generations, falls instantly
+    - Isaiah 47:9, Revelation 18, Jeremiah 51 converge
+    - Forward links: remnant and shadow chapters
+    - ⚡ Same wink raises the dead
+
+- **Appendix: Jacob, Israel, and Ephraim**  ⟶ overturns: Israel by blood; Jacob/Israel as swapped selves
+  - Opening: One Man, Two Names
+    - Genesis 32:28: wrestler renamed at daybreak
+    - Pulpit reading: flesh/spirit swap dominates, 50%
+    - ⚡ God forbids 'Jacob,' keeps saying it
+    - Isaiah trades titles between both names
+    - Both names span innocence and defilement
+    - One heart straightened, not selves swapped
+  - Jacob: The Crooked
+    - Heel-grabber; Esau: 'rightly named Jacob'
+    - Root yields aqob: crooked, deceitful
+    - ⚡ Jeremiah 17:9: every heart is aqob
+    - To be named Jacob is human
+  - Israel: The Crooked Made Straight
+    - Israel: prevailing with God, not bloodline
+    - ⚡ Hosea 12:4: prevailed by weeping, supplication
+    - ⚡ Isaiah 40:4: crooked (aqob) made straight
+    - New name requires confessing the old
+    - John 1:47: Jacob with Jacob removed
+  - The Renewed Covenant
+    - New name = renewed covenant (name symbol)
+    - Bethel outbound: fathers' covenant first given
+    - Genesis 35:10-12: covenant resealed under 'Israel'
+    - Blessing already carries 'company of nations'
+    - Held all night; name at daybreak
+    - Pattern: Israel's long night among nations
+    - ⚡ Jesus rose at dawn: same pattern
+  - They Are Not All Israel
+    - Romans 9:6: Israel is not descent
+    - Inward Jew; Israel-of-God walks the rule
+    - Wild branch grafted into nation-tree
+    - Revelation 2:17: overcomer's new name
+    - Jacob at ford: the first overcomer
+  - Ephraim: Fruit in the Land of Affliction
+    - Ephraim: double fruit in affliction (41:52)
+    - 'Ephraim is my firstborn' (Jeremiah 31:9)
+    - Genesis 48:19: seed = multitude of nations
+    - Hebrew: melo ha-goyim, fulness of nations
+    - ⚡ Scattered on purpose: judgment sows seed
+    - ⚡ Paul's 'fulness of Gentiles' = melo ha-goyim
+  - Two Sticks, One Nation
+    - Grieving Father seeks lost sheep (Hosea 11:8)
+    - ⚡ Sticks are ets: tree-nations rejoined
+    - ⚡ Peter applies Hosea's reversal to church
+    - Jeremiah 11:16: both houses, one olive name
+    - ⚡ Two witnesses: covenant peoples, not men
+    - Oil→lamp (commandment)→light to Gentiles
+    - Three names, one road; not bloodline
+
+
+- **Appendix: The Foreskin**  ⟶ overturns: circumcision as mere ritual membership
+  - Scripture's own decode
+    - ⚡ Col 2:11: body of sins, named
+  - The blocked members
+    - Heart: stiffnecked, unhumbled, unloving until cut
+    - ⚡ Ear uncircumcised: cannot hearken (Jer 6:10)
+    - Lips: Moses, speech blocked
+    - ⚡ Tree fruit is orlah three years
+    - Acts 7:51: Stephen gathers all members
+  - Cut, or be cut off
+    - ⚡ Gen 17:14: which cutting, your choice
+    - Seed passes the marked member (observation)
+    - ⚡ Plow and knife: one operation (Jer 4:3-4)
+
+- **Appendix: Butter**  ⟶ overturns: butter as mere abundance imagery
+  - The discernment diet
+    - ⚡ Isa 7:15: butter teaches refusing evil
+    - Isa 7:22: the remnant eats butter
+  - Washed steps
+    - ⚡ Job 29:6: steps, butter, rock, oil
+  - Butter in the wilderness
+    - 2 Sam 17:29: faithful hands feed David
+    - ⚡ Ps 55:21: smoother than butter, same story
+  - A lordly dish
+    - Judg 5:25: water, milk, butter ladder
+    - Living-water question marked, pending study
+
+# Flash cadence audit (flashes per chapter)
+
+- Introduction: 13
+- The Parables of the Kingdom: 15
+- Trees: 8
+- Mountain: 7
+- Grass: 8
+- The Bow: 12
+- The Four Winds: 6
+- Sea & Waters: 16
+- Signs and Similitudes: 13
+- The Sign of Jonah: 14
+- The Fall of Babylon: 11
+- Knowing, Faith, Love, and Belief: 6
+- Gospel: 8
+- The Way, The Truth, and The Life: 11
+- Garments: 8
+- Orphans, Widows, and the Fatherless: 6
+- Marriage and Divorce: 15
+- Wings: 8
+- The Name: 13
+- The Remnant: 12
+- The Fool and the Wise: 7
+- Light and Darkness, Day and Night: 8
+- Sun, Moon, and Stars: 7
+- Lucifer's Declared Plan: 13
+- The Pearl: 14
+- Shadow: 10
+- Justice and Judgment: 10
+- Liberty: 15
+- Worship: 7
+- The Fear of the Lord: 6
+- The Path to Salvation: 7
+- Appendix: Clouds: 8
+- Appendix: The Moment: 7
+- Appendix: Jacob, Israel, and Ephraim: 10

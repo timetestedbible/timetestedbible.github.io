@@ -94,8 +94,8 @@ doc << "\ntoc::[]\n"
 PARTS = {
   'introduction' => ['Part One — The Key', <<~TXT],
     Scripture speaks a symbolic language, and it expects its readers to learn it.
-    This part states the method and sits the exam Jesus Himself graded — the parables of the kingdom, derived from the Scriptures the disciples already held — then works the language's first grammar: the mountain, the sea, the sign.
-    It ends inside the sign of Jonah, where one prophet's life is read as a single similitude.
+    This part states the method and sits the exam Jesus Himself graded — the parables of the kingdom, derived from the Scriptures the disciples already held — then widens the canvas from spoken parables to lived ones, and reads the sign of Jonah: one prophet's whole life as a single similitude.
+    It closes with the two symbols the sign is written in — the mountain and the sea — case studies kept not for their definitions but for their surprises.
   TXT
   'gospel' => ['Part Two — The Covenant', <<~TXT],
     The gospel is a king's proclamation, and its content is a covenant.
@@ -117,7 +117,7 @@ PARTS = {
     It ends where the book has aimed from the first page: the path to salvation.
   TXT
   'clouds' => ['Appendices', <<~TXT],
-    Three symbol studies that stand on their own, for the reader still hungry — and the glossary that indexes every symbol this book proves.
+    Symbol studies that stand on their own, for the reader still hungry — and the glossary that indexes every symbol this book proves.
   TXT
 }
 

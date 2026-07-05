@@ -36,3 +36,37 @@ entry marked as meaning-definition:
 commandments — "there is none good but one… keep the commandments";
 the law is "holy, and just, and good," and to do good is to do it. +
 (Matt 19:17; Rom 7:12; Ps 119:68; Deut 30:15) — placement for review.
+
+## Author ruling (2026-07-05): "GOOD is a symbol"
+
+The ruling supersedes the proposed meaning-word verdict above. What
+strengthens the symbol case beyond the earlier pass is the TASTE-CHAIN:
+good is the fixed VERDICT-WORD of the tasting register — "O taste and see
+that the LORD is GOOD" (Ps 34:8); "prove all things; hold fast that which
+is GOOD" (1 Thess 5:21); senses "exercised to discern both GOOD and evil"
+(Heb 5:14); "tasted the GOOD word of God" (Heb 6:5, directly after the
+strong-meat passage, as 1 Pet 2:3's tasting follows the milk verse). If
+good were the taster's own preference, the taste test would be a
+preference poll; because good has a fixed referent (God) and a published
+standard (His law), the test is an assay against a standard. Dictionary
+"good" = the speaker's assessment; Scripture's good = His declaration —
+the meanings differ, which is the symbol test.
+
+Additional derivation (all verified):
+- **Declared, not assessed:** good enters creation as God's declaration
+  ("GOD SAW... it was very good," Gen 1:31, seven sightings); the fall
+  begins when the other eyes seize the declaration — "the WOMAN SAW that
+  the tree was good" (Gen 3:6), "ye shall be as gods, knowing good and
+  evil" (3:5). The kings are graded by whose eyes count ("right in the
+  eyes of the LORD").
+- **The counterfeit is the relabel:** "Woe unto them that CALL evil good,
+  and good evil" (Isa 5:20) — the dictionary-attack of Gen 3:1. The
+  assay-stone answers it: "To the LAW and to the testimony" (Isa 8:20).
+- **The gospel connection stands confirmed:** "good tidings OF GOOD"
+  (Isa 52:7) — the gospel announces THE GOOD, and the good is His law:
+  the tidings-of-good and law-from-Zion definitions of the gospel are one
+  claim.
+
+Placement remains the open item: glossary entry ready above; natural
+seeref homes are the new introduction (the taste-test chain) or ch. 7
+Gospel (tidings of good). Awaiting author's placement call.

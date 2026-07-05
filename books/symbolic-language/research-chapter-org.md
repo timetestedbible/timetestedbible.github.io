@@ -51,3 +51,8 @@ This book has the following Goals:
      - apply the method to various symbols, if we apply it to 
      a symbol we should identify the hidden meaning that aligns 
      with the rest of scripture.
+
+
+Audience 
+  - the title directs this book to those who desire to be mature in
+  their handling of the word. Those 
