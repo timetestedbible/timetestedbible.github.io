@@ -92,32 +92,32 @@ doc << "\ntoc::[]\n"
 # of the chapter that OPENS each part; a level-0 part heading (real book part:
 # own page, nested TOC) with a short opener is emitted before that chapter.
 PARTS = {
-  'introduction' => ['Part One — The Key', <<~TXT],
+  'introduction' => ['Part One — The Method', <<~TXT],
     Scripture speaks a symbolic language, and it expects its readers to learn it.
-    This part states the method and sits the exam Jesus Himself graded — the parables of the kingdom, derived from the Scriptures the disciples already held — then widens the canvas from spoken parables to lived ones, and reads the sign of Jonah: one prophet's whole life as a single similitude.
-    It closes with the two symbols the sign is written in — the mountain and the sea — case studies kept not for their definitions but for their surprises.
+    This part states the method and sits the exam Jesus Himself graded — the parables of the kingdom, derived from the Scriptures the disciples already held — then widens the canvas from spoken parables to lived ones.
+    It ends inside the sign of Jonah: one prophet's whole life, read scene by scene as a single similitude.
   TXT
-  'gospel' => ['Part Two — The Covenant', <<~TXT],
-    The gospel is a king's proclamation, and its content is a covenant.
-    This part gathers the covenant's own vocabulary — the way, the name, the marriage, the bow — and finds beneath them one binding thing: the law of the kingdom, going forth from Zion, taking a people as a bride takes a name.
+  'gospel' => ['Part Two — The Doctrine', <<~TXT],
+    If the method holds, what does it do to doctrine?
+    This part applies it to the words every believer already owns — gospel, believe, know, love, the way, the name, the marriage — and lets Scripture define each in its turn.
+    Then it follows the covenant into the life it makes: the wing that seals it, the widowed people and the remnant, the shadow, justice, and liberty of the King's house, the wise who hear and do, the light worn in the open, and the worship and fear beneath them all.
+    Some definitions land where the church already stands; others have been waiting a long time to be read.
   TXT
-  'the-four-winds' => ['Part Three — The Scattering', <<~TXT],
-    Nations are trees and people are grass, and a bride who broke covenant was divorced and scattered to the four winds.
-    This part follows the two houses of Israel through their garments, their wings, their widowhood and orphanhood, to the fall of the city that holds them captive — and to the remnant God has always kept.
-    Its summit is a name: who Babylon is, and the call that ends her chapter — come out of her, my people.
+  'sun-moon-and-stars' => ['Part Three — The Calendar', <<~TXT],
+    The fourth day hung lights in the firmament "for signs, and for seasons."
+    This part reads that sky as Scripture assigns it — the sun, the moon, and the stars in their offices — then opens the enemy's plan, published out of his own heart: a throne that is a moon, raised over the appointed times — and finds the pearl of great price where no tradition thought to look.
   TXT
-  'knowing-faith-love-and-belief' => ['Part Four — The Usurper', <<~TXT],
-    To spot a counterfeit, first know the true.
-    This part learns discernment — what it is to know, who the fool and the wise are, what light and darkness do — then reads the fourth day's sky as Scripture assigns it: sun, moon, and stars in their offices.
-    Then it opens the enemy's plan, published out of his own heart: a throne that is a moon, raised over the appointed times — and finds the pearl of great price hanging where no tradition thought to look.
+  'the-four-winds' => ['Part Four — The Prophecy', <<~TXT],
+    What is coming, and in what words it was told.
+    The four winds that scatter and gather, the fall of the city that holds the captives, the clouds that carry, the moment that changes everything — and the path home, where this book has been walking since its first page.
   TXT
-  'shadow' => ['Part Five — The Verdict', <<~TXT],
-    Once the method holds, the conclusions are arithmetic.
-    This part weighs the shadow against the substance, justice against the case of the fatherless, liberty against the year of release, worship against the calendar it keeps, and the fear of the LORD against the fear of man.
-    It ends where the book has aimed from the first page: the path to salvation.
+  'mountain' => ['Part Five — Symbol Studies', <<~TXT],
+    The case studies.
+    Each chapter takes one symbol through the full method — every occurrence gathered, counter-texts weighed, and the surprises kept.
+    Read them in order or consult them as needed; each stands on its own.
   TXT
-  'clouds' => ['Appendices', <<~TXT],
-    Symbol studies that stand on their own, for the reader still hungry — and the glossary that indexes every symbol this book proves.
+  'glossary' => ['Part Six — The Glossary', <<~TXT],
+    Every symbol this book proves, one line each — with the scriptures that fix its meaning and the chapter that carries the full study.
   TXT
 }
 

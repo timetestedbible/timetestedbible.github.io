@@ -34,19 +34,14 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Read through the symbols of sea and city, the only sign Jesus gave opens up: the "heart of the earth" is Jerusalem, the great fish a devouring kingdom forced to give back what it swallowed, and Jonah is a scene-by-scene prophecy of His betrayal, arrest, interrogation, death, resurrection, and the gospel\'s turn to the nations.'
     },
     {
-      slug: 'mountain',
-      title: 'Mountain',
-      summary: 'Scripture defines the mountain as a kingdom — Revelation, Daniel, Isaiah, and Jeremiah agree — and that one key unlocks dozens of passages, from the burning mountain cast into the sea to the command to flee to the mountains.'
-    },
-    {
-      slug: 'sea-and-waters',
-      title: 'Sea & Waters',
-      summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, the two waters of creation (nations below, the sea of glass above), and the "no more sea" of the new creation.'
-    },
-    {
       slug: 'gospel',
       title: 'Gospel',
       summary: 'Everyone thinks they know what "gospel" means — the message about Jesus. But Scripture defines it as the gospel of the kingdom: the herald\'s cry that God reigns, the same good news preached to Abraham and at Sinai, the renewed covenant and the law of the kingdom — the Torah written on the heart and destined to go forth from Zion. It is the message Jesus taught, not merely the message about him.'
+    },
+    {
+      slug: 'knowing-faith-love-and-belief',
+      title: 'Knowing, Faith, Love, and Belief',
+      summary: 'Four words the dictionary has emptied into inward, invisible states — knowledge as information, love as feeling, faith and belief as mental assent. Scripture defines all four as one thing: trusting obedience. Love is keeping commandments; to know God is to keep them; faith without works is dead; and "believeth not," in the Greek, is "obeyeth not."'
     },
     {
       slug: 'the-way-the-truth-and-the-life',
@@ -64,31 +59,6 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The common view says Jesus permits divorce for sexual immorality — but under the law, adultery carries death, not divorce, and Jesus uses two different Greek words in the same sentence. Scripture\'s own usage points to the union that is itself fornication — the out-of-covenant marriage — where putting away is commanded (Ezra), while putting away the wife of the covenant is treachery (Malachi holds both edges). And God keeps His own statute: He gave adulterous Israel the bill of divorce, faced His own no-return rule, and answered it at the cross — the Husband took the wife\'s death penalty and rose to marry her renewed. The Bible ends with a burning and a wedding.'
     },
     {
-      slug: 'the-bow',
-      title: 'The Bow',
-      summary: 'The rainbow is a bow — a weapon laid down. The Hebrew qesheth is one word for the warrior\'s bow, the covenant token of Genesis 9, and a binding bond. So the bow is the covenant that binds a people: Babel forged its own ("make us a name, lest we be scattered"), and God breaks such bows — of Elam, of Babylon — scattering the kingdom strung against Him.'
-    },
-    {
-      slug: 'the-four-winds',
-      title: 'The Four Winds',
-      summary: 'Wind, in Hebrew, is spirit (ruach). The four winds are the four spirits of heaven (Zechariah 6:5) — God\'s executing agents, shown in the New Testament as the four horsemen. They stir the nations, scatter and gather peoples, raise the dead, and are held or loosed at the throne\'s command.'
-    },
-    {
-      slug: 'trees',
-      title: 'Trees',
-      summary: 'A tree in Scripture is a nation or people group — rooted in its origin, sheltering those within it, judged by its fruit, and cut down in judgment ("It is thou, O king," Daniel says of Babylon). The tree completes the picture: mountain (kingdom) over tree (nation) over grass (the individual). Its wild companion is the beast — the nations as ravening kingdoms (Daniel\'s four beasts) and the unclean animals God cleanses to bring in the Gentiles (Peter\'s vision).'
-    },
-    {
-      slug: 'grass',
-      title: 'Grass',
-      summary: 'Grass is a man — a single mortal, here in the morning and cut down by evening ("all flesh is grass," Isaiah 40). It is the lowest of the three figures — mountain (kingdom) over tree (nation) over grass (the individual). But grain is grass too: the seed is God\'s word, the harvest is the end of the age, the wheat the children of the kingdom and the chaff the wicked, the firstfruits sheaf Christ. Every piece was defined in the Law and the Prophets — so the harvest parables asked no new vocabulary of anyone who knew his Scripture.'
-    },
-    {
-      slug: 'garments',
-      title: 'Garments',
-      summary: 'A garment is righteousness — "the fine linen is the righteous acts of the saints" (Revelation 19:8, ASV), the covenant covering worn as righteous deeds. The man cast from the wedding feast had none. The acts are clean; sin only stains the cloth — so the garment is washed, not cast off, and kept by keeping the commandments. To be without it is to be naked — the covenant stripped, the shame seen.'
-    },
-    {
       slug: 'wings',
       title: 'Wings',
       summary: 'One Hebrew word — kanaph — is scattered across English as wing, skirt, border, corner, quarter, end, uttermost part, even "overspreading": 108 occurrences under eighteen renderings, and the thread is lost in the spread. It is the edge where God commanded the fringes bound, "that ye may remember all the commandments... and do them" — so wherever kanaph hides, the commandments are near. The ark of the covenant sits under the wings of the cherubim; the covenant is cut by spreading the wing; the kingdom tears when the skirt tears (Saul); the dispersed wait at the four corners of the earth; and there is healing in his wings.'
@@ -99,44 +69,9 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Everyone honors caring for widows and orphans — even the godless do — and assumes himself a giver, never one of them. But Scripture turns it: the covenant people, cut off from their Husband, are themselves the widow and the fatherless (Lamentations 5:3). God defends, feeds, and gathers them home — and the food is His word, the clothing His righteousness, multiplied like five loaves and two fishes. The stranger is no mere foreigner but the one outside the covenant, drawn in at the field edge. And the poor — the fourth name at the same corner — are the bowed-humble heirs of the kingdom, set against the self-made rich who have need of nothing.'
     },
     {
-      slug: 'the-fall-of-babylon',
-      title: 'The Fall of Babylon',
-      summary: 'The Exodus is not only history; it is the similitude of the end. The plagues replay in the vials, "let my people go" returns as "come out of her, my people," and the spoilers gather in the north — tsaphon, the hidden quarter, the root that means to lurk: the ambush comes by the door Babylon cannot watch. The pursuer sinks like a stone in both stories — Jeremiah\'s scroll bound to a stone in Euphrates, Revelation\'s millstone hurled into the sea — and the verdict is not the going down but the not-rising: Babylon "shall not rise"; Jonah, the Messiah, and the baptized come up. And the great city is given her street address in the book\'s own grammar: "spiritually called Sodom and Egypt, where also our Lord was crucified" — Sodom for her sin, Egypt for her bondage, Babylon for her boast — three spiritual names on one gate, and the gate is Jerusalem\'s.'
-    },
-    {
       slug: 'the-remnant',
       title: 'The Remnant',
       summary: 'Lord, are there few that be saved? Scripture answers with numbers, not moods. One anchor census — Elijah\'s seven thousand out of a kingdom of a million, ratified by Paul as the standing pattern — then a dozen independent witnesses: Jeremiah\'s one-of-a-city, the olive tree\'s two or three berries, the gleaning law\'s own geometry, gold\'s grade in the rock, Solomon\'s one-in-a-thousand count, the lion among the beasts, Job\'s four lone messengers. Every line converges on the same fraction of one percent. And the four Hebrew words for remnant say what arithmetic cannot: the living flesh, the excellence, the one who slips through the needle\'s puncture, the escaped portion.'
-    },
-    {
-      slug: 'knowing-faith-love-and-belief',
-      title: 'Knowing, Faith, Love, and Belief',
-      summary: 'Four words the dictionary has emptied into inward, invisible states — knowledge as information, love as feeling, faith and belief as mental assent. Scripture defines all four as one thing: trusting obedience. Love is keeping commandments; to know God is to keep them; faith without works is dead; and "believeth not," in the Greek, is "obeyeth not."'
-    },
-    {
-      slug: 'the-fool-and-the-wise',
-      title: 'The Fool and the Wise',
-      summary: 'Calling a man a fool risks hell-fire (Matthew 5:22), so let Scripture define it: a fool is not the dull man but the one who hears God\'s word and will not do it; the wise hears and does. This opens the ten virgins — the oil is not the Holy Spirit (which cannot be bought, Acts 8:20) but the pressed, proven works of obedience that alone make the lamp give light.'
-    },
-    {
-      slug: 'light-and-darkness',
-      title: 'Light and Darkness, Day and Night',
-      summary: 'Light is not vague truth but the law lived where men can see it — "the commandment is a lamp; and the law is light" (Proverbs 6:23); "let your light so shine... that they may see your good works." Darkness is not ignorance but concealed disobedience. They are the same division as the day and the night (Genesis 1:5): the children of light are the children of the day — awake, sober, working while it is day. Garment, oil, and light converge in the one cast into outer darkness.'
-    },
-    {
-      slug: 'sun-moon-and-stars',
-      title: 'Sun, Moon, and Stars',
-      summary: 'The lights of heaven, read as persons. Joseph\'s dream sets the pattern, and each light tells what it is: the sun is the Father, the source of light (Psalm 84:11); the moon, which has no light of its own but the sun\'s reflected, is the faithful witness who bears that light through the world\'s night — the Son (Psalm 89:37; Revelation 1:5; John 1:5); the stars are the righteous, who rule the night with Him (Daniel 12:3); and the twelve stars are the twelve tribes (Revelation 12:1). Satan\'s counterfeit inverts the order — a dark moon raised over God\'s stars to usurp the appointed times (Isaiah 14).'
-    },
-    {
-      slug: 'lucifers-declared-plan',
-      title: "Lucifer's Declared Plan",
-      summary: 'The counterfeit of the celestial order, read from the enemy\'s own filing. On the unpointed consonants of Isaiah 14, the five "I wills" are not five ways of wanting to be God but one astronomical act: the "throne" (kisse) he exalts is spelled letter for letter as the full moon (keseh, Proverbs 7:20); the "mount of the congregation" is har moed — authority over the appointed times; the "sides of the north" (tsaphon — Strong\'s: "properly, hidden, i.e. dark") are the uttermost recesses of the darkness, the invisible dark conjunction; and "I will be like the most High" shares its consonants with "I will silence the Highest" — the sun eclipsed, at the height of the thick covering. The shining one is the son of the dark before dawn, raising a lightless moon over the stars of God to change times and laws (Daniel 7:25) — and he is promised the recesses he chose: the sides of the pit.'
-    },
-    {
-      slug: 'the-pearl',
-      title: 'The Pearl',
-      summary: 'The office the enemy set his heart to seize has a symbol, and it is a pearl. The OT\'s pearls hide under the KJV\'s "rubies" — peninim, Strong\'s "probably a pearl (as round)": wisdom is more precious than pearls, and the virtuous bride\'s price is far above them. And the night sky keeps one fulness: keseh, the full moon, the letters under "throne" and "time appointed" (Psalm 81:3; Proverbs 7:20) — the one complete light, appointed to govern the moedim, entering by the east gate that Ezekiel says opens on the day of the new moon. Beside the city whose every gate is "of one pearl," the merchant\'s purchase comes into focus: one pearl, one gate — entry at the King\'s appointed time of meeting. The full calendar case is the work of Time Tested Tradition; this chapter establishes the symbol.'
     },
     {
       slug: 'shadow',
@@ -154,6 +89,16 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The Hebrew word for liberty appears seven times, and every one is the jubilee: the King\'s decreed release of debts, slaves, and land — the proclamation Jesus claimed at Nazareth. The same word names the swallow, the free bird that nests at God\'s altars. Freedom in Scripture is a change of masters, not an absence of one; its constitution is "the perfect law of liberty," and its counterfeit — liberty as license — is called a return to bondage.'
     },
     {
+      slug: 'the-fool-and-the-wise',
+      title: 'The Fool and the Wise',
+      summary: 'Calling a man a fool risks hell-fire (Matthew 5:22), so let Scripture define it: a fool is not the dull man but the one who hears God\'s word and will not do it; the wise hears and does. This opens the ten virgins — the oil is not the Holy Spirit (which cannot be bought, Acts 8:20) but the pressed, proven works of obedience that alone make the lamp give light.'
+    },
+    {
+      slug: 'light-and-darkness',
+      title: 'Light and Darkness, Day and Night',
+      summary: 'Light is not vague truth but the law lived where men can see it — "the commandment is a lamp; and the law is light" (Proverbs 6:23); "let your light so shine... that they may see your good works." Darkness is not ignorance but concealed disobedience. They are the same division as the day and the night (Genesis 1:5): the children of light are the children of the day — awake, sober, working while it is day. Garment, oil, and light converge in the one cast into outer darkness.'
+    },
+    {
       slug: 'worship',
       title: 'Worship',
       summary: 'A word compressed to "sing songs in church" — but Scripture separates worship from singing inside single scenes: Judah fell down worshipping while the Levites stood up to praise. The word means to bow down; its fixed pair is to serve; Jesus quotes "thou shalt fear the LORD" as "thou shalt worship the Lord." Vain worship is homage shaped by the commandments of men, and the everlasting gospel\'s call to "worship him that made heaven, and earth, the sea" quotes the sabbath commandment\'s own ground clause.'
@@ -164,40 +109,95 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The closing chapter. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book. Its counterfeit is the fear of man — the snare that breaks the very commandments the fear of God keeps (Proverbs 29:25).'
     },
     {
+      slug: 'sun-moon-and-stars',
+      title: 'Sun, Moon, and Stars',
+      summary: 'The lights of heaven, read as persons. Joseph\'s dream sets the pattern, and each light tells what it is: the sun is the Father, the source of light (Psalm 84:11); the moon, which has no light of its own but the sun\'s reflected, is the faithful witness who bears that light through the world\'s night — the Son (Psalm 89:37; Revelation 1:5; John 1:5); the stars are the righteous, who rule the night with Him (Daniel 12:3); and the twelve stars are the twelve tribes (Revelation 12:1). Satan\'s counterfeit inverts the order — a dark moon raised over God\'s stars to usurp the appointed times (Isaiah 14).'
+    },
+    {
+      slug: 'lucifers-declared-plan',
+      title: "Lucifer's Declared Plan",
+      summary: 'The counterfeit of the celestial order, read from the enemy\'s own filing. On the unpointed consonants of Isaiah 14, the five "I wills" are not five ways of wanting to be God but one astronomical act: the "throne" (kisse) he exalts is spelled letter for letter as the full moon (keseh, Proverbs 7:20); the "mount of the congregation" is har moed — authority over the appointed times; the "sides of the north" (tsaphon — Strong\'s: "properly, hidden, i.e. dark") are the uttermost recesses of the darkness, the invisible dark conjunction; and "I will be like the most High" shares its consonants with "I will silence the Highest" — the sun eclipsed, at the height of the thick covering. The shining one is the son of the dark before dawn, raising a lightless moon over the stars of God to change times and laws (Daniel 7:25) — and he is promised the recesses he chose: the sides of the pit.'
+    },
+    {
+      slug: 'the-pearl',
+      title: 'The Pearl',
+      summary: 'The office the enemy set his heart to seize has a symbol, and it is a pearl. The OT\'s pearls hide under the KJV\'s "rubies" — peninim, Strong\'s "probably a pearl (as round)": wisdom is more precious than pearls, and the virtuous bride\'s price is far above them. And the night sky keeps one fulness: keseh, the full moon, the letters under "throne" and "time appointed" (Psalm 81:3; Proverbs 7:20) — the one complete light, appointed to govern the moedim, entering by the east gate that Ezekiel says opens on the day of the new moon. Beside the city whose every gate is "of one pearl," the merchant\'s purchase comes into focus: one pearl, one gate — entry at the King\'s appointed time of meeting. The full calendar case is the work of Time Tested Tradition; this chapter establishes the symbol.'
+    },
+    {
+      slug: 'the-four-winds',
+      title: 'The Four Winds',
+      summary: 'Wind, in Hebrew, is spirit (ruach). The four winds are the four spirits of heaven (Zechariah 6:5) — God\'s executing agents, shown in the New Testament as the four horsemen. They stir the nations, scatter and gather peoples, raise the dead, and are held or loosed at the throne\'s command.'
+    },
+    {
+      slug: 'the-fall-of-babylon',
+      title: 'The Fall of Babylon',
+      summary: 'The Exodus is not only history; it is the similitude of the end. The plagues replay in the vials, "let my people go" returns as "come out of her, my people," and the spoilers gather in the north — tsaphon, the hidden quarter, the root that means to lurk: the ambush comes by the door Babylon cannot watch. The pursuer sinks like a stone in both stories — Jeremiah\'s scroll bound to a stone in Euphrates, Revelation\'s millstone hurled into the sea — and the verdict is not the going down but the not-rising: Babylon "shall not rise"; Jonah, the Messiah, and the baptized come up. And the great city is given her street address in the book\'s own grammar: "spiritually called Sodom and Egypt, where also our Lord was crucified" — Sodom for her sin, Egypt for her bondage, Babylon for her boast — three spiritual names on one gate, and the gate is Jerusalem\'s.'
+    },
+    {
+      slug: 'clouds',
+      title: 'Clouds',
+      summary: 'A cloud in Scripture is scarcely ever weather — it is a vehicle ("who maketh the clouds his chariot"), and its cargo is water. The LORD rides a swift cloud into Egypt; the pillar leads Israel, maneuvers between the camps, and its lifting is the marching order; a cloud receives Him at the ascension and He returns in like manner; the two witnesses ascend in one; the disciples fear as they enter one. And the water is defined: "my doctrine shall drop as the rain" — the former and latter rains frame the age between them, the judged vineyard has its clouds commanded to withhold, and Amos calls the drought a famine of hearing the words of the LORD. The counterfeit is the cloud without water, carried about of winds; the faithful, risen from the sea of peoples, are themselves the cloud of witnesses, caught up to meet the Lord in the air.'
+    },
+    {
+      slug: 'the-moment',
+      title: 'The Moment',
+      summary: 'Babylon boasts, "I sit a queen, and am no widow" — and Scripture answers with a single word: in a MOMENT the loss of children and widowhood shall come upon her, in one day. The Hebrew is built on the image of an eye\'s wink, and the same picture crosses into the Greek: "in a moment, in the twinkling of an eye." It is the word of Babylon\'s fall, of Korah\'s swallowing, of the last trumpet, and of God\'s own anger toward His people — never long, and never slow. Judgment does not creep; it blinks.'
+    },
+    {
       slug: 'path-to-salvation',
       title: 'The Path to Salvation',
       summary: 'Borrowed from Time Tested Tradition. Keeping the commandments is not a works-based salvation, yet willful, unrepentant lawbreaking condemns. Salvation comes by confessing Jesus as Lord and the law as good — and the familiar three-step path cannot even be taken without the law that defines sin, the High Priest it establishes, and the obedience that calling Him Master requires.'
     },
     {
-      slug: 'clouds',
-      title: 'Appendix: Clouds',
-      summary: 'A cloud in Scripture is scarcely ever weather — it is a vehicle ("who maketh the clouds his chariot"), and its cargo is water. The LORD rides a swift cloud into Egypt; the pillar leads Israel, maneuvers between the camps, and its lifting is the marching order; a cloud receives Him at the ascension and He returns in like manner; the two witnesses ascend in one; the disciples fear as they enter one. And the water is defined: "my doctrine shall drop as the rain" — the former and latter rains frame the age between them, the judged vineyard has its clouds commanded to withhold, and Amos calls the drought a famine of hearing the words of the LORD. The counterfeit is the cloud without water, carried about of winds; the faithful, risen from the sea of peoples, are themselves the cloud of witnesses, caught up to meet the Lord in the air.'
+      slug: 'mountain',
+      title: 'Mountain',
+      summary: 'Scripture defines the mountain as a kingdom — Revelation, Daniel, Isaiah, and Jeremiah agree — and that one key unlocks dozens of passages, from the burning mountain cast into the sea to the command to flee to the mountains.'
     },
     {
-      slug: 'the-moment',
-      title: 'Appendix: The Moment',
-      summary: 'Babylon boasts, "I sit a queen, and am no widow" — and Scripture answers with a single word: in a MOMENT the loss of children and widowhood shall come upon her, in one day. The Hebrew is built on the image of an eye\'s wink, and the same picture crosses into the Greek: "in a moment, in the twinkling of an eye." It is the word of Babylon\'s fall, of Korah\'s swallowing, of the last trumpet, and of God\'s own anger toward His people — never long, and never slow. Judgment does not creep; it blinks.'
+      slug: 'sea-and-waters',
+      title: 'Sea & Waters',
+      summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, the two waters of creation (nations below, the sea of glass above), and the "no more sea" of the new creation.'
+    },
+    {
+      slug: 'trees',
+      title: 'Trees',
+      summary: 'A tree in Scripture is a nation or people group — rooted in its origin, sheltering those within it, judged by its fruit, and cut down in judgment ("It is thou, O king," Daniel says of Babylon). The tree completes the picture: mountain (kingdom) over tree (nation) over grass (the individual). Its wild companion is the beast — the nations as ravening kingdoms (Daniel\'s four beasts) and the unclean animals God cleanses to bring in the Gentiles (Peter\'s vision).'
+    },
+    {
+      slug: 'grass',
+      title: 'Grass',
+      summary: 'Grass is a man — a single mortal, here in the morning and cut down by evening ("all flesh is grass," Isaiah 40). It is the lowest of the three figures — mountain (kingdom) over tree (nation) over grass (the individual). But grain is grass too: the seed is God\'s word, the harvest is the end of the age, the wheat the children of the kingdom and the chaff the wicked, the firstfruits sheaf Christ. Every piece was defined in the Law and the Prophets — so the harvest parables asked no new vocabulary of anyone who knew his Scripture.'
+    },
+    {
+      slug: 'garments',
+      title: 'Garments',
+      summary: 'A garment is righteousness — "the fine linen is the righteous acts of the saints" (Revelation 19:8, ASV), the covenant covering worn as righteous deeds. The man cast from the wedding feast had none. The acts are clean; sin only stains the cloth — so the garment is washed, not cast off, and kept by keeping the commandments. To be without it is to be naked — the covenant stripped, the shame seen.'
+    },
+    {
+      slug: 'the-bow',
+      title: 'The Bow',
+      summary: 'The rainbow is a bow — a weapon laid down. The Hebrew qesheth is one word for the warrior\'s bow, the covenant token of Genesis 9, and a binding bond. So the bow is the covenant that binds a people: Babel forged its own ("make us a name, lest we be scattered"), and God breaks such bows — of Elam, of Babylon — scattering the kingdom strung against Him.'
     },
     {
       slug: 'jacob-israel-and-ephraim',
-      title: 'Appendix: Jacob, Israel, and Ephraim',
+      title: 'Jacob, Israel, and Ephraim',
       summary: 'Jacob — the heel-grabbing supplanter — is the crooked human heart; Israel is the new name given to that same man for prevailing with God. The two names do not divide flesh from spirit; they tell one story, the crooked made straight. So Israel is covenant and character, not blood — "they are not all Israel, which are of Israel." And Ephraim, the firstborn whose seed becomes "a multitude of nations," is that people scattered into all the earth as fruit, and regathered into one.'
     },
     {
       slug: 'foreskin',
-      title: 'Appendix: The Foreskin',
+      title: 'The Foreskin',
       summary: 'Take away the foreskins of your heart, says Jeremiah — a symbol the reader is expected to know. Scripture decodes it out loud: what the circumcision made without hands removes is "the body of the sins of the flesh." The foreskin is the blocking flesh over a covenant member: the uncircumcised heart cannot be humbled or love, the uncircumcised ear cannot hearken, uncircumcised lips cannot be heard, and a young tree\'s fruit is orlah until the covenant year. Cut it away, or be cut off.'
     },
     {
       slug: 'butter',
-      title: 'Appendix: Butter',
+      title: 'Butter',
       summary: 'Very few would connect butter to sound doctrine — yet Scripture does. Butter is the word churned solid: the discernment diet ("butter and honey shall he eat, that he may know to refuse the evil, and choose the good"), the remnant\'s food, the wash of the walking feet ("I washed my steps with butter"). Faithful hands carried butter to David in the wilderness while the betrayer\'s words stayed "smoother than butter, but war was in his heart."'
     },
     {
       slug: 'glossary',
       title: 'Glossary of Symbols',
       summary: 'The whole vocabulary in one place: every symbol the book uses, each with its meaning, a defining verse, and the chapter that proves it.'
-    }
+    },
   ]
 };
 
