@@ -429,12 +429,16 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # Render the chapter epigraph (if any) ABOVE the chapter title. Real chapters
   # give us the TOC, PDF bookmarks, and running heads; this keeps the epigraph
   # above the title. Data comes from $chapter_epigraphs (set by build.rb).
-  # Chapters start on the next page, either hand — prepress media otherwise
-  # forces recto starts, which inserted a blank verso before roughly every
-  # other chapter (24 across the book; author's ruling 2026-07-05: no blank
-  # padding). The screen build never recto-forced, so the editions now match.
+  # BookBaby: chapters open on the right hand (recto, odd folio). When the
+  # next page falls on a verso, insert a spacer — but a TRUE blank: flagging
+  # it imported makes ink_running_content skip it (no running head, no
+  # folio), while it still occupies a page number so folio parity holds.
   def start_new_chapter _chapter
     start_new_page unless at_page_top?
+    unless recto_page?
+      state.page.instance_variable_set :@imported_page, true
+      start_new_page
+    end
   end
 
   def ink_chapter_title node, title, opts = {}
