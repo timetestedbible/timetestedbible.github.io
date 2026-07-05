@@ -124,6 +124,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Genesis 8:13 is a ship\'s log — a date, a dried earth, a covering removed. Remove the vowel points instead, and the same consonants sustain a second reading from first word to last: at the completeness of six seals of the age, the peoples desolated from above, the righteous of the Sabbath\'s ages taken up with the covering of the covenant — the sixth seal of Revelation, written into the flood account two and a half millennia before John saw it. One pun is wit; twelve consecutive words that read as plain history and the end of the age at once is the fingerprint.'
     },
     {
+      slug: 'daniel-unsealed',
+      title: 'Daniel Unsealed',
+      summary: 'Daniel was commanded to seal the book to the time of the end — and a seal implies an unsealing. Jeremiah\'s seventy years failed as a literal count (Babylon fell without a fight; the captives came home after sixty), and unpointed Daniel 9:24 opens with the same word twice — seventy seventy: seventy jubilees. The ninth chapter\'s two decrees, four hundred ninety years from each rebuilding of Jerusalem, and the twelfth chapter\'s past-tense "the daily was taken away" with its 1,290 and 1,335 year-days, read straight through history — Messiah cut a covenant and vanished (karath, v\'ain — the Enoch idiom), the abomination set up in the holy place on schedule, and the counts closing together at the end of the times. The seal was never wax; it is the reading tradition laid over the letters.'
+    },
+    {
       slug: 'behold-the-hand',
       title: 'Behold the Hand, Behold the Nail',
       summary: 'Before the square letters of Babylon, Hebrew was written in pictures — and the letter names survive as Bible words: yod is the hand, he is the word behold, and vav, the peg, appears in Scripture only as the tabernacle\'s hooks. Spell the Name in its oldest pictures and it reads: behold the hand, behold the nail. A picture proves nothing by itself — the pictures may illustrate what the verses prove, never prove what the verses do not — but here the prophets say the same sentence: "they shall look upon me whom they have pierced" (Zechariah 12:10, the Name-bearer speaking of Himself), and the risen Lord to Thomas: "behold my hands" (John 20:27).'
