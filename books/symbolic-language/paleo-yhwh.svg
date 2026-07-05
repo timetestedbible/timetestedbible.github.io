@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 25 880 292" font-family="Gentium Book Plus">
+  <!-- The Name in the first alphabet's pictures, read right to left:
+       yod (arm and hand) | he (man, arms lifted: behold) | vav (peg, nail) | he.
+       Line art for the trade interior: near-black strokes on the page, no fill. -->
+  <defs>
+    <!-- he: a man with arms lifted — "behold!" -->
+    <g id="he-man" stroke="#1f1f1f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <circle cx="0" cy="-78" r="14"/>
+      <path d="M 0,-62 L 0,42"/>
+      <path d="M 0,-40 L -46,-88"/>
+      <path d="M 0,-40 L 46,-88"/>
+      <path d="M 0,42 L -34,96"/>
+      <path d="M 0,42 L 34,96"/>
+    </g>
+  </defs>
+
+  <!-- ===== cell 1 (rightmost): YOD — an arm with its hand ===== -->
+  <g transform="translate(770,140)">
+    <g stroke="#1f1f1f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- shoulder to elbow, elbow to wrist -->
+      <path d="M -66,86 L -22,66 L 12,2"/>
+      <!-- the open hand: four fingers and a thumb, fanned from the wrist -->
+      <path d="M 12,2 L -14,-28"/>
+      <path d="M 12,2 L 0,-42"/>
+      <path d="M 12,2 L 19,-46"/>
+      <path d="M 12,2 L 38,-36"/>
+      <path d="M 12,2 L 52,-8"/>
+    </g>
+  </g>
+  <text x="770" y="258" text-anchor="middle" font-size="30" font-style="italic" fill="#1f1f1f">yod</text>
+  <text x="770" y="290" text-anchor="middle" font-size="22" fill="#555555">the hand</text>
+
+  <!-- ===== cell 2: HE — a man with arms lifted ===== -->
+  <g transform="translate(550,140)"><use href="#he-man"/></g>
+  <text x="550" y="258" text-anchor="middle" font-size="30" font-style="italic" fill="#1f1f1f">he</text>
+  <text x="550" y="290" text-anchor="middle" font-size="22" fill="#555555">behold!</text>
+
+  <!-- ===== cell 3: VAV — the peg, the nail ===== -->
+  <g transform="translate(330,140)">
+    <g stroke="#1f1f1f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- shaft -->
+      <path d="M 0,96 L 0,-34"/>
+      <!-- hooked head -->
+      <path d="M 0,-34 C 0,-80 54,-80 54,-40 L 54,-22"/>
+    </g>
+  </g>
+  <text x="330" y="258" text-anchor="middle" font-size="30" font-style="italic" fill="#1f1f1f">vav</text>
+  <text x="330" y="290" text-anchor="middle" font-size="22" fill="#555555">the peg, the nail</text>
+
+  <!-- ===== cell 4 (leftmost): HE again ===== -->
+  <g transform="translate(110,140)"><use href="#he-man"/></g>
+  <text x="110" y="258" text-anchor="middle" font-size="30" font-style="italic" fill="#1f1f1f">he</text>
+  <text x="110" y="290" text-anchor="middle" font-size="22" fill="#555555">behold!</text>
+</svg>

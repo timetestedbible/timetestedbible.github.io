@@ -53,7 +53,7 @@ chapters = Dir.glob(File.join(SRC, '[0-9]*-*.adoc')).sort
 abort "No chapter files (NN-name.adoc) in #{SRC}" if chapters.empty?
 
 doc = +<<~ADOC
-  = MEAT: The Bible's Symbolic Language
+  = MEAT The Bible's Symbolic Language
   :doctype: book
   :lang: en
   :notitle:

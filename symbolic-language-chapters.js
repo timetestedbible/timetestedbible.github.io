@@ -5,7 +5,7 @@
 
 const SYMBOLIC_LANGUAGE_BOOK = {
   slug: 'symbolic-language',
-  title: "MEAT: The Bible's Symbolic Language",
+  title: "MEAT The Bible's Symbolic Language",
   basePath: '/books/symbolic-language',
   chapters: [
     {
