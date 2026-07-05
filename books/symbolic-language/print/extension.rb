@@ -282,6 +282,20 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       @pending_part = node
       return traverse(node)
     end
+    # Back-matter density (author's ruling, 2026-07-05): the glossary packs to
+    # reference-apparatus convention — one point below body with tighter
+    # leading — while every other chapter keeps the reading spec.
+    if node.id == 'glossary'
+      saved_size, saved_lh = @theme.base_font_size, @theme.base_line_height
+      @theme.base_font_size = 10
+      @theme.base_line_height = 0.85
+      begin
+        super
+      ensure
+        @theme.base_font_size, @theme.base_line_height = saved_size, saved_lh
+      end
+      return
+    end
     super
   end
 
@@ -472,8 +486,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     # Drop the chapter title to about the middle of the page; the epigraph stays
     # above it in the top half. (Guard so a long epigraph never pushes it upward.)
     # "How to Use This Book" is exempt (author's single-page exception): its
-    # title stays at the top so the conventions fit on one opening page.
-    unless node.id == 'how-to-use'
+    # title stays at the top so the conventions fit on one opening page — and
+    # the Glossary starts at the top like the reference section it is.
+    unless node.id == 'how-to-use' || node.id == 'glossary'
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
     end

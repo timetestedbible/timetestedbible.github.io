@@ -195,7 +195,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     },
     {
       slug: 'garments',
-      title: 'Garments',
+      title: 'Garments & Armor',
       summary: 'A garment is righteousness — "the fine linen is the righteous acts of the saints" (Revelation 19:8, ASV), the covenant covering worn as righteous deeds. The man cast from the wedding feast had none. The acts are clean; sin only stains the cloth — so the garment is washed, not cast off, and kept by keeping the commandments. To be without it is to be naked — the covenant stripped, the shame seen.'
     },
     {
