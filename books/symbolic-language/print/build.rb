@@ -103,20 +103,25 @@ PARTS = {
     Then it follows the covenant into the life it makes: the wing that seals it, the widowed people and the remnant, the shadow, justice, and liberty of the King's house, the wise who hear and do, the light worn in the open, and the worship and fear beneath them all.
     Some definitions land where the church already stands; others have been waiting a long time to be read.
   TXT
-  'sun-moon-and-stars' => ['Part Three — The Calendar', <<~TXT],
+  'what-is-the-point' => ['Part Three — The Point', <<~TXT],
+    The prophets wrote in consonants; the vowels came a thousand years later, from the hands of careful men.
+    This part weighs that tradition against the letters it was laid over — then watches the letters do what no pointing can record: rhyme in meaning, so that one verse speaks twice and is true both times.
+    The deepest readings in this book stand on this ground.
+  TXT
+  'sun-moon-and-stars' => ['Part Four — The Calendar', <<~TXT],
     The fourth day hung lights in the firmament "for signs, and for seasons."
     This part reads that sky as Scripture assigns it — the sun, the moon, and the stars in their offices — then opens the enemy's plan, published out of his own heart: a throne that is a moon, raised over the appointed times — and finds the pearl of great price where no tradition thought to look.
   TXT
-  'the-four-winds' => ['Part Four — The Prophecy', <<~TXT],
+  'the-four-winds' => ['Part Five — The Prophecy', <<~TXT],
     What is coming, and in what words it was told.
     The four winds that scatter and gather, the fall of the city that holds the captives, the clouds that carry, the moment that changes everything — and the path home, where this book has been walking since its first page.
   TXT
-  'mountain' => ['Part Five — Symbol Studies', <<~TXT],
+  'mountain' => ['Part Six — Symbol Studies', <<~TXT],
     The case studies.
     Each chapter takes one symbol through the full method — every occurrence gathered, counter-texts weighed, and the surprises kept.
     Read them in order or consult them as needed; each stands on its own.
   TXT
-  'glossary' => ['Part Six — The Glossary', <<~TXT],
+  'glossary' => ['Part Seven — The Glossary', <<~TXT],
     Every symbol this book proves, one line each — with the scriptures that fix its meaning and the chapter that carries the full study.
   TXT
 }

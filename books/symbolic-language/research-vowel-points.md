@@ -7,9 +7,16 @@ Hebrews. I have concluded that we need an entire chapter on why vowel
 points cannot be fully trusted and pure study of scripture must strip
 that tradition and consider the source text with fresh eyes."
 
-Intro now alludes forward: "a later chapter makes the full case that they
-must not be treated as part of the infallible word when seeking the
-truth." Chapter to be written; skeleton below.
+INTEGRATED 2026-07-05: written as ch. 20 "What Is the Point?", opening
+Part Three — The Point (author-ratified part name; the pun is the
+title). Companion chapter: ch. 21 "Spoken Once, Heard Twice" (wordplay
+as second dimension — Jer 1:11-12 shaqed/shoqed in-text decode, Ps
+62:11 doctrine, Isa 5:7 mishpat/mispach, ishah/esh Prov 6:27-29; big
+readings deferred to their chapters: keseh/Pearl, helel/Lucifer, Job
+22:30/Sea). English puns framed as analogy only (author's rule). The
+intro now names the chapter; ch. 19 bridges into the part; Genesis
+1:14 calendar bridge moved to ch. 21's close. Skeleton below was the
+source.
 
 ## The stakes (why this is not academic)
 

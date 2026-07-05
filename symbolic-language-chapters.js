@@ -106,7 +106,17 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     {
       slug: 'the-fear-of-the-lord',
       title: 'The Fear of the Lord',
-      summary: 'The closing chapter. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book. Its counterfeit is the fear of man — the snare that breaks the very commandments the fear of God keeps (Proverbs 29:25).'
+      summary: 'The closing chapter of the doctrine studies. The fear of the LORD is neither raw terror nor a reverence that asks nothing; Scripture defines it as keeping the commandments and departing from evil — "Fear God, and keep his commandments: for this is the whole duty of man" (Ecclesiastes 12:13). It is the beginning of wisdom and the root beneath every symbol in this book. Its counterfeit is the fear of man — the snare that breaks the very commandments the fear of God keeps (Proverbs 29:25).'
+    },
+    {
+      slug: 'what-is-the-point',
+      title: 'What Is the Point?',
+      summary: 'The prophets wrote in consonants; the vowel points were added by the Masoretes a thousand years and more after Malachi. Jesus pledged the preservation of the law to the jot and the tittle — parts of letters (Matthew 5:18) — and the oldest witnesses, the Dead Sea Scrolls and the Greek translation the apostles quote as Scripture, read the bare letters: Hebrews 10:5 puts the older Greek reading of Psalm 40 in the Messiah\'s own mouth. The points are the most careful commentary ever kept, and still a commentary — a tradition of men to be weighed against the letters, never seated as their judge.'
+    },
+    {
+      slug: 'spoken-once-heard-twice',
+      title: 'Spoken Once, Heard Twice',
+      summary: 'God\'s first lesson to the young Jeremiah is a pun — the almond rod (shaqed) means "I am watching" (shoqed) — and He decodes it Himself (Jeremiah 1:11-12). "God hath spoken once; twice have I heard this" (Psalm 62:11): where the letters carry two readings, both are meant. Isaiah\'s vineyard verdict rhymes judgment into its crime (Isaiah 5:7); the strange-woman warnings of Proverbs 6 walk on the letters woman and fire share; and the same wordplay that fixed verses in a hearer\'s memory binds symbol to symbol — a second dimension of meaning that survives only in the consonants.'
     },
     {
       slug: 'sun-moon-and-stars',
