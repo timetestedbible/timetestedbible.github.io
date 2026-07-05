@@ -88,49 +88,26 @@ end
 # Contents — placed here, after the front matter and before the chapters.
 doc << "\ntoc::[]\n"
 
-# --- Parts: the book's five movements plus the appendices. Keyed by the slug
-# of the chapter that OPENS each part; a level-0 part heading (real book part:
-# own page, nested TOC) with a short opener is emitted before that chapter.
+# --- Parts: the book's seven movements. Keyed by the slug of the chapter that
+# OPENS each part. Emitted as bare level-0 headings — extension.rb renders each
+# as a KICKER above its opening chapter's title (no part page, no blank verso;
+# author's ruling 2026-07-05) while the Contents and PDF outline keep the
+# part/chapter hierarchy.
 PARTS = {
-  'introduction' => ['Part One — The Method', <<~TXT],
-    Scripture speaks a symbolic language, and it expects its readers to learn it.
-    This part states the method and sits the exam Jesus Himself graded — the parables of the kingdom, derived from the Scriptures the disciples already held — then widens the canvas from spoken parables to lived ones.
-    It ends inside the sign of Jonah: one prophet's whole life, read scene by scene as a single similitude.
-  TXT
-  'gospel' => ['Part Two — The Doctrine', <<~TXT],
-    If the method holds, what does it do to doctrine?
-    This part applies it to the words every believer already owns — gospel, believe, know, love, the way, the name, the marriage — and lets Scripture define each in its turn.
-    Then it follows the covenant into the life it makes: the wing that seals it, the widowed people and the remnant, the shadow, justice, and liberty of the King's house, the wise who hear and do, the light worn in the open, and the worship and fear beneath them all.
-    Some definitions land where the church already stands; others have been waiting a long time to be read.
-  TXT
-  'what-is-the-point' => ['Part Three — The Point', <<~TXT],
-    The prophets wrote in consonants; the vowels came a thousand years later, from the hands of careful men.
-    This part weighs that tradition against the letters it was laid over — then watches the letters do what no pointing can record: rhyme in meaning, so that one verse speaks twice and is true both times — and, beneath the sounds, draw: the oldest letters are pictures, and the pictures preach.
-    The deepest readings in this book stand on this ground.
-  TXT
-  'sun-moon-and-stars' => ['Part Four — The Calendar', <<~TXT],
-    The fourth day hung lights in the firmament "for signs, and for seasons."
-    This part reads that sky as Scripture assigns it — the sun, the moon, and the stars in their offices — then opens the enemy's plan, published out of his own heart: a throne that is a moon, raised over the appointed times — and finds the pearl of great price where no tradition thought to look.
-  TXT
-  'the-four-winds' => ['Part Five — The Prophecy', <<~TXT],
-    What is coming, and in what words it was told.
-    The four winds that scatter and gather, the fall of the city that holds the captives, the clouds that carry, the moment that changes everything — and the path home, where this book has been walking since its first page.
-  TXT
-  'mountain' => ['Part Six — Symbol Studies', <<~TXT],
-    The case studies.
-    Each chapter takes one symbol through the full method — every occurrence gathered, counter-texts weighed, and the surprises kept.
-    Read them in order or consult them as needed; each stands on its own.
-  TXT
-  'glossary' => ['Part Seven — The Glossary', <<~TXT],
-    Every symbol this book proves, one line each — with the scriptures that fix its meaning and the chapter that carries the full study.
-  TXT
+  'introduction'       => 'Part One — The Method',
+  'gospel'             => 'Part Two — The Doctrine',
+  'what-is-the-point'  => 'Part Three — The Point',
+  'sun-moon-and-stars' => 'Part Four — The Calendar',
+  'the-four-winds'     => 'Part Five — The Prophecy',
+  'mountain'           => 'Part Six — Symbol Studies',
+  'glossary'           => 'Part Seven — The Glossary',
 }
 
 # Main chapters: auto page break, TOC entry, PDF bookmark, running head.
 main_entries.each do |c|
   if (part = PARTS[c[:slug]])
-    doc << "\n= #{part[0]}\n\n#{part[1]}\n"
-    warn "  = #{part[0]}"
+    doc << "\n= #{part}\n"
+    warn "  = #{part}"
   end
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
   warn "  + #{c[:title]}  (#{c[:file]})"

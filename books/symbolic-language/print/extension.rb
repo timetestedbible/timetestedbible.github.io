@@ -267,8 +267,21 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # heading — or at document end must land now, inside its own section: a
   # floated table must never drift past the heading of the section that
   # introduced it.
+  #
+  # Parts render as KICKERS, not pages (author's ruling, 2026-07-05): a
+  # dedicated part page plus its forced blank verso cost two near-empty
+  # pages per part. Instead the part stays a real level-0 section — so the
+  # Contents still groups chapters under it and the PDF outline keeps the
+  # hierarchy — but it inks nothing here; ink_chapter_title draws its title
+  # as a small line above the opening chapter's title, and registers the
+  # part's destination on that same page so TOC numbers and bookmarks land
+  # where the part actually begins.
   def convert_section node
     flush_table_float force: true unless scratch?
+    if node.document.doctype == 'book' && node.level == 0 && node.sectname == 'part'
+      @pending_part = node
+      return traverse(node)
+    end
     super
   end
 
@@ -416,7 +429,29 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # Render the chapter epigraph (if any) ABOVE the chapter title. Real chapters
   # give us the TOC, PDF bookmarks, and running heads; this keeps the epigraph
   # above the title. Data comes from $chapter_epigraphs (set by build.rb).
+  # Chapters start on the next page, either hand — prepress media otherwise
+  # forces recto starts, which inserted a blank verso before roughly every
+  # other chapter (24 across the book; author's ruling 2026-07-05: no blank
+  # padding). The screen build never recto-forced, so the editions now match.
+  def start_new_chapter _chapter
+    start_new_page unless at_page_top?
+  end
+
   def ink_chapter_title node, title, opts = {}
+    if (part = @pending_part)
+      @pending_part = nil
+      add_dest_for_block part   # TOC entry + outline bookmark resolve to this page
+      esc_part = part.title.to_s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;')
+      theme_font :heading do
+        ink_prose %(<font size="10.5">#{esc_part.upcase}</font>), align: :center, margin_bottom: 0, hyphenate: false
+      end
+      stroke do
+        line_width 0.6
+        x_mid = bounds.width / 2.0
+        horizontal_line x_mid - 54, x_mid + 54, at: cursor - 7
+      end
+      move_down 18
+    end
     epis = (defined?($chapter_epigraphs) && $chapter_epigraphs) ? $chapter_epigraphs[node.id] : nil
     if epis && !epis.empty?
       move_down 48   # small top sink — the epigraph sits in the upper half of the opener
