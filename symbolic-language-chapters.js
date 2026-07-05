@@ -119,6 +119,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'God\'s first lesson to the young Jeremiah is a pun — the almond rod (shaqed) means "I am watching" (shoqed) — and He decodes it Himself (Jeremiah 1:11-12). "God hath spoken once; twice have I heard this" (Psalm 62:11): where the letters carry two readings, both are meant. Isaiah\'s vineyard verdict rhymes judgment into its crime (Isaiah 5:7); the strange-woman warnings of Proverbs 6 walk on the letters woman and fire share; and the same wordplay that fixed verses in a hearer\'s memory binds symbol to symbol — a second dimension of meaning that survives only in the consonants.'
     },
     {
+      slug: 'behold-the-hand',
+      title: 'Behold the Hand, Behold the Nail',
+      summary: 'Before the square letters of Babylon, Hebrew was written in pictures — and the letter names survive as Bible words: yod is the hand, he is the breath-word behold, and vav, the peg, appears in Scripture only as the tabernacle\'s hooks. Spell the Name in its oldest pictures and it reads: behold the hand, behold the nail. A picture proves nothing by itself — the pictures may illustrate what the verses prove, never prove what the verses do not — but here the prophets say the same sentence: "they shall look upon me whom they have pierced" (Zechariah 12:10, the Name-bearer speaking of Himself), and the risen Lord to Thomas: "behold my hands" (John 20:27).'
+    },
+    {
       slug: 'sun-moon-and-stars',
       title: 'Sun, Moon, and Stars',
       summary: 'The lights of heaven, read as persons. Joseph\'s dream sets the pattern, and each light tells what it is: the sun is the Father, the source of light (Psalm 84:11); the moon, which has no light of its own but the sun\'s reflected, is the faithful witness who bears that light through the world\'s night — the Son (Psalm 89:37; Revelation 1:5; John 1:5); the stars are the righteous, who rule the night with Him (Daniel 12:3); and the twelve stars are the twelve tribes (Revelation 12:1). Satan\'s counterfeit inverts the order — a dark moon raised over God\'s stars to usurp the appointed times (Isaiah 14).'

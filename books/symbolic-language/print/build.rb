@@ -105,7 +105,7 @@ PARTS = {
   TXT
   'what-is-the-point' => ['Part Three — The Point', <<~TXT],
     The prophets wrote in consonants; the vowels came a thousand years later, from the hands of careful men.
-    This part weighs that tradition against the letters it was laid over — then watches the letters do what no pointing can record: rhyme in meaning, so that one verse speaks twice and is true both times.
+    This part weighs that tradition against the letters it was laid over — then watches the letters do what no pointing can record: rhyme in meaning, so that one verse speaks twice and is true both times — and, beneath the sounds, draw: the oldest letters are pictures, and the pictures preach.
     The deepest readings in this book stand on this ground.
   TXT
   'sun-moon-and-stars' => ['Part Four — The Calendar', <<~TXT],
