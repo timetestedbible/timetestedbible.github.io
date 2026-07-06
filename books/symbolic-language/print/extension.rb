@@ -32,7 +32,6 @@ require 'asciidoctor'
 require 'asciidoctor/extensions'
 require 'asciidoctor-pdf'
 require 'json'
-require 'set'
 
 class TradePdfConverter < Asciidoctor::PDF::Converter
   register_for 'pdf'
@@ -92,22 +91,33 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   SX_VERSE_RX = /\A(\d{1,3}):(\d{1,3}(?:[-–]\d{1,3}(?::\d{1,3})?)?)/
   SX_EMDASH = '—'
 
-  def sx_record book, chap, vspec, page
-    (((@sx_catalog[book] ||= {})[%(#{chap}:#{vspec})] ||= ::Set.new)) << page
+  # quoted: the citation is a block-quote attribution — the verse is quoted in
+  # full on that page, so its locator prints BOLD in the index. Bold wins when
+  # the same verse is also cited inline on the same page.
+  def sx_record book, chap, vspec, page, quoted
+    pages = ((@sx_catalog[book] ||= {})[%(#{chap}:#{vspec})] ||= {})
+    pages[page] = (pages[page] || false) | quoted
   end
 
   # Scan a block's source text for citations and record them against the page
   # range the block rendered across. A block that broke across pages attributes
-  # each citation proportionally by its character offset — refs near the top of
-  # the text go to the first page, refs near the end to the last (the seeref
-  # tail of a glossary entry, the citation line of a quote).
-  def sx_scan text, page_from, page_to = page_from
+  # each citation by its character offset: `boundaries` (cumulative text
+  # fractions at which the block crossed onto each following page, measured
+  # from the rendered geometry) when the caller has them, else linear
+  # proportion — refs near the top of the text go to the first page, refs near
+  # the end to the last (the seeref tail of a glossary entry).
+  def sx_scan text, page_from, page_to = page_from, quoted: false, boundaries: nil
     return if !@sx_catalog || !text.is_a?(::String) || text.empty?
     len = text.length
     text.scan SX_CITE_RX do
       m = Regexp.last_match
       page = if page_to > page_from
-               (page_from + ((m.begin(0).to_f / len) * (page_to - page_from + 1)).floor).clamp(page_from, page_to)
+               fo = m.begin(0).to_f / len
+               if boundaries && !boundaries.empty?
+                 (page_from + (boundaries.count { |b| fo >= b })).clamp(page_from, page_to)
+               else
+                 (page_from + (fo * (page_to - page_from + 1)).floor).clamp(page_from, page_to)
+               end
              else
                page_from
              end
@@ -115,9 +125,56 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       m[2].split(/\s*;\s*/).each do |seg|
         next unless seg =~ SX_VERSE_RX
         chap, rest = $1, $'
-        sx_record book, chap, ($2.tr '–', '-'), page
-        rest.scan(/,\s*(\d{1,3}(?:[-–]\d{1,3})?)/) { |(v)| sx_record book, chap, (v.tr '–', '-'), page }
+        sx_record book, chap, ($2.tr '–', '-'), page, quoted
+        rest.scan(/,\s*(\d{1,3}(?:[-–]\d{1,3})?)/) { |(v)| sx_record book, chap, (v.tr '–', '-'), page, quoted }
       end
+    end
+  end
+
+  SX_FOOTNOTE_RX = /footnote:[\w-]*\[(.*?)\]/m
+
+  # Paragraph-level scan with two accuracy refinements over plain sx_scan:
+  #   1. footnote macro BODIES are cut out of the offset space (they render as
+  #      a superscript marker, not inline text — a long note would skew every
+  #      offset after it) and scanned separately at the marker's position (the
+  #      note is drawn at the foot of the marker's own page);
+  #   2. when the paragraph broke across pages, the crossing points come from
+  #      the rendered geometry (points filled on the first page vs the last)
+  #      rather than assuming the text splits evenly.
+  def sx_scan_paragraph src, start_page, end_page, start_cursor, quoted: false
+    return if !@sx_catalog || !src.is_a?(::String) || src.empty?
+    stripped = +''
+    notes = []
+    last = 0
+    src.scan SX_FOOTNOTE_RX do
+      m = Regexp.last_match
+      stripped << (src[last...m.begin(0)] || '')
+      notes << [stripped.length, m[1]]
+      stripped << '*'
+      last = m.end(0)
+    end
+    stripped << (src[last..] || '')
+    boundaries = nil
+    if end_page > start_page
+      span    = end_page - start_page
+      h_first = start_cursor.to_f
+      h_last  = bounds.height - cursor
+      total   = h_first + h_last + ((span - 1) * bounds.height)
+      total   = 1.0 if total <= 0
+      cum = h_first
+      boundaries = [cum / total]
+      (span - 1).times { cum += bounds.height; boundaries << cum / total }
+    end
+    sx_scan stripped, start_page, end_page, quoted: quoted, boundaries: boundaries
+    slen = [stripped.length, 1].max
+    notes.each do |pos, body|
+      note_page = if boundaries
+                    fo = pos.to_f / slen
+                    (start_page + (boundaries.count { |b| fo >= b })).clamp(start_page, end_page)
+                  else
+                    start_page
+                  end
+      sx_scan body, note_page, note_page, quoted: quoted
     end
   end
 
@@ -141,22 +198,29 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   # Catalog (physical pages) -> canonically ordered entries with printed folios:
-  # [[book, [["1:16", [208, 214]], ...]], ...]. The folio offset comes from the
-  # same source the running footer uses (page-numbering start-at after-toc);
-  # citations inked before folio 1 (front-matter colophon pages) are dropped.
+  # [[book, [["1:16", [[208, false], [214, true]]], ...]], ...] — each locator a
+  # [folio, quoted] pair (quoted = block-quoted in full there, printed bold).
+  # The folio offset comes from the same source the running footer uses
+  # (page-numbering start-at after-toc); citations inked before folio 1
+  # (front-matter colophon pages) are dropped.
   def sx_folio_entries
     return [] if !@sx_catalog || @sx_catalog.empty?
     offset = ((defined?(@index) && @index && @index.start_page_number) ? @index.start_page_number : 1) - 1
     SX_CANON.filter_map do |book|
       next unless (verses = @sx_catalog[book])
       entries = verses.filter_map do |vd, pages|
-        folios = pages.map { |p| p - offset }.select { |f| f >= 1 }.uniq.sort
-        next if folios.empty?
+        locs = {}
+        pages.each do |p, q|
+          f = p - offset
+          next if f < 1
+          locs[f] = (locs[f] || false) | q
+        end
+        next if locs.empty?
         next unless vd =~ /\A(\d+):(\d+)(?:-(?:(\d+):)?(\d+))?/
-        [[$1.to_i, $2.to_i, $3.to_i, ($4 || $2).to_i], vd, folios]
+        [[$1.to_i, $2.to_i, $3.to_i, ($4 || $2).to_i], vd, locs.sort]
       end
       next if entries.empty?
-      [book, entries.sort_by { |key, _, _| key }.map { |_, vd, folios| [vd, folios] }]
+      [book, entries.sort_by { |key, _, _| key }.map { |_, vd, locs| [vd, locs] }]
     end
   end
 
@@ -210,7 +274,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     @fn_queue = {}        # page_number => [footnote, ...]
     @fn_seen = {}         # footnote index => already queued
     @fn_flushing = false
-    @sx_catalog = {}      # book => { "chap:verse(-verse)" => Set of physical pages }
+    @sx_catalog = {}      # book => { "chap:verse(-verse)" => { physical page => quoted? } }
   end
 
   # Reserve the foot band on this page by enlarging only its bottom margin, if the
@@ -239,11 +303,15 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     out
   end
 
+  # Each reference maps to an array of locator objects: {"p" => printed folio,
+  # "q" => true when the verse is quoted in full (block-quoted) on that page}.
   def write_scripture_index_json
     entries = sx_folio_entries
     return if entries.empty?
     data = {}
-    entries.each { |book, verses| verses.each { |vd, folios| data[%(#{book} #{vd})] = folios } }
+    entries.each do |book, verses|
+      verses.each { |vd, locs| data[%(#{book} #{vd})] = locs.map { |f, q| { 'p' => f, 'q' => q } } }
+    end
     path = ::File.expand_path '../scripture-index.json', __dir__
     ::File.write path, (::JSON.pretty_generate data)
     warn %(Wrote: #{path}  (scripture index, #{data.size} refs))
@@ -463,10 +531,12 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     end
     # Scripture Index — the empty chapter build.rb appends; super inks the
     # chapter opening (recto start, running head, TOC + outline destination),
-    # then the collected catalog is inked at glossary density.
+    # then the collected catalog is inked at index density (9pt — reference
+    # apparatus conventionally runs 1.5-2pt below body — on the glossary's
+    # tight leading).
     if node.id == 'scripture-index'
       saved_size, saved_lh = @theme.base_font_size, @theme.base_line_height
-      @theme.base_font_size = 10
+      @theme.base_font_size = 9
       @theme.base_line_height = 0.85
       begin
         super
@@ -482,23 +552,47 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     super
   end
 
-  # Ink the collected scripture index: books in canonical order as bold run-in
-  # heads, one line per verse — "1:16 — 208, 214" — in two dense columns
-  # (mirrors the gem's convert_index_section column_box usage).
+  SX_HEAD_SIZE       = 9.5     # book heads a touch above the 9pt entries
+  SX_TURNOVER_INDENT = 10.8    # ~0.15in hang for wrapped locator lines
+
+  # Ink the collected scripture index: books in canonical order as bold heads,
+  # one verse per line — "1:16 · 208, 214" (middot separator; an en dash reads
+  # as a range) — in two dense columns (mirrors the gem's convert_index_section
+  # column_box usage). Locators where the verse is block-quoted print bold.
+  # Column/page breaks between entries are taken EXPLICITLY (move_past_bottom
+  # when the next line cannot fit), so every mid-book break re-opens with a
+  # "Book — continued" head; a fresh book head at a column top needs none.
   def ink_scripture_index
     entries = sx_folio_entries
     return if entries.empty?
     theme_font :base do
+      ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full.</em>',
+        align: :left, size: SX_HEAD_SIZE, margin_bottom: 10, hyphenate: false
+      esc = ->(s) { s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
       end_cursor = nil
       column_box [bounds.left, cursor], columns: 2, width: bounds.width, reflow_margins: true, spacer: (@theme.index_column_gap || 24) do
         line_h = height_of_typeset_text 'A'
         first = true
         entries.each do |book, verses|
           # never strand a book head at a column foot with fewer than 2 entries below
-          bounds.move_past_bottom if cursor < line_h * 3
-          ink_prose book, align: :left, styles: [:bold], margin_top: (first ? 0 : 5), margin_bottom: 1, hyphenate: false
-          verses.each do |vd, folios|
-            ink_prose %(#{vd} #{SX_EMDASH} #{folios.join ', '}), align: :left, margin_bottom: 0, hanging_indent: 9, hyphenate: false
+          bounds.move_past_bottom if cursor < line_h * 3.6
+          ink_prose %(<strong>#{esc[book]}</strong>), align: :left, size: SX_HEAD_SIZE,
+            margin_top: (first ? 0 : 5), margin_bottom: 1, hyphenate: false
+          verses.each do |vd, locs|
+            text = %(#{vd} · #{locs.map { |f, q| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '})
+            # keep each entry whole: measure it (at turnover width — the
+            # conservative side) and, when it cannot fit what remains of the
+            # column, break explicitly and repeat the head as "— continued"
+            if cursor < line_h * 6
+              h = nil
+              indent(SX_TURNOVER_INDENT) { h = height_of_typeset_text text, inline_format: true }
+              if cursor < h + 1
+                bounds.move_past_bottom
+                ink_prose %(<strong>#{esc[book]}</strong> <em>#{SX_EMDASH} continued</em>), align: :left,
+                  size: SX_HEAD_SIZE, margin_bottom: 1, hyphenate: false
+              end
+            end
+            ink_prose text, align: :left, margin_bottom: 0, hanging_indent: SX_TURNOVER_INDENT, hyphenate: false
           end
           first = false
         end
@@ -568,14 +662,19 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       move_down 5 if (node.role? && node.roles.include?('poemline')) && !at_page_top?
       balance_prose_paragraph node
     end
-    start_page = page_number unless scratch?
+    unless scratch?
+      start_page = page_number
+      start_cursor = cursor
+    end
     result = super
     unless scratch?
       # Scripture index: scan the paragraph's source (inline refs, footnote
       # macro text, and the citation paragraphs the quote treeprocessor builds
       # from block-quote attributions — those render inside the quote, so the
-      # page recorded is the quote's own page).
-      sx_scan node.source, start_page, page_number
+      # page recorded is the quote's own page, and their locators print BOLD:
+      # the verse is quoted in full there).
+      sx_scan_paragraph node.source, start_page, page_number, start_cursor,
+        quoted: (node.role? && (node.roles.include? 'citation'))
       normalize_page_bottom unless @in_quote
     end
     result

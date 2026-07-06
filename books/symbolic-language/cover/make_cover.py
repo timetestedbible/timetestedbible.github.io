@@ -24,7 +24,7 @@ import sys, os, re
 # ---------------- parameters ----------------
 TRIM_W, TRIM_H = 6.0, 9.0          # inches, trade paperback
 BLEED          = 0.125             # BookBaby standard
-PAGES          = 416               # print PDF page count — update when final
+PAGES          = 414               # print PDF page count — update when final
 IN_PER_PAGE    = 0.00225           # BookBaby 50# white — VERIFY on their spec
 SPINE          = round(PAGES * IN_PER_PAGE, 3)   # 0.713" at 317 pp
 DPI            = 300               # SVG user units are inches * DPI
