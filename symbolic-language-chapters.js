@@ -140,7 +140,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     },
     {
       slug: 'the-pearl',
-      title: 'The Pearl',
+      title: 'The Pearls of Wisdom',
       summary: 'The office the enemy set his heart to seize has a symbol, and it is a pearl. The OT\'s pearls hide under the KJV\'s "rubies" — peninim, Strong\'s "probably a pearl (as round)": wisdom is more precious than pearls, and the virtuous bride\'s price is far above them. And the night sky keeps one fulness: keseh, the full moon, the letters under "throne" and "time appointed" (Psalm 81:3; Proverbs 7:20) — the one complete light, appointed to govern the moedim, entering by the east gate that Ezekiel says opens on the day of the new moon. Beside the city whose every gate is "of one pearl," the merchant\'s purchase comes into focus: one pearl, one gate — entry at the King\'s appointed time of meeting. The full calendar case is the work of Time Tested Tradition; this chapter establishes the symbol.'
     },
     {
