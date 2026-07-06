@@ -113,6 +113,15 @@ main_entries.each do |c|
   warn "  + #{c[:title]}  (#{c[:file]})"
 end
 
+# Scripture Index — generated back matter: an empty chapter the converter
+# (extension.rb) intercepts by id and populates at ink time from the verse
+# citations collected during the same render pass. It renders after every body
+# chapter, so all page numbers it prints are already final; it is populated
+# identically on every pass of the footnote loop, so page counts stay
+# consistent across passes.
+doc << "\n[#scripture-index]\n== Scripture Index\n"
+warn '  + Scripture Index  (generated from citations by extension.rb)'
+
 $chapter_epigraphs = epigraph_map
 
 # Page-bottom footnotes need to know which pages carry a marker before they are

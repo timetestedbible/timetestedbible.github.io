@@ -31,9 +31,134 @@
 require 'asciidoctor'
 require 'asciidoctor/extensions'
 require 'asciidoctor-pdf'
+require 'json'
+require 'set'
 
 class TradePdfConverter < Asciidoctor::PDF::Converter
   register_for 'pdf'
+
+  # --- Scripture index -------------------------------------------------------
+  # Every render pass collects the verse citations it inks — keyed by canonical
+  # reference, valued by the PHYSICAL page numbers they land on — and the
+  # generated "Scripture Index" chapter (appended by build.rb, rendered after
+  # the glossary) sets them as printed folios. Because the index is the last
+  # chapter, every body page number is already final when it renders; the
+  # catalog is per-converter-instance state (init_pdf), so each pass of the
+  # footnote loop starts clean and only the final flush pass is kept.
+  SX_CANON = [
+    'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth',
+    '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra',
+    'Nehemiah', 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon',
+    'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos',
+    'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi',
+    'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1 Corinthians', '2 Corinthians',
+    'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians',
+    '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews', 'James', '1 Peter', '2 Peter',
+    '1 John', '2 John', '3 John', 'Jude', 'Revelation',
+    # Cited extra-canonical books index after Revelation.
+    '1 Enoch', '2 Esdras',
+  ].freeze
+
+  SX_ALIASES = {
+    'Gen' => 'Genesis', 'Ex' => 'Exodus', 'Exod' => 'Exodus', 'Lev' => 'Leviticus',
+    'Num' => 'Numbers', 'Deut' => 'Deuteronomy', 'Dt' => 'Deuteronomy', 'Josh' => 'Joshua',
+    'Judg' => 'Judges', 'Jdg' => 'Judges', '1 Sam' => '1 Samuel', '2 Sam' => '2 Samuel',
+    '1 Kgs' => '1 Kings', '2 Kgs' => '2 Kings', '1 Chr' => '1 Chronicles', '1 Chron' => '1 Chronicles',
+    '2 Chr' => '2 Chronicles', '2 Chron' => '2 Chronicles', 'Neh' => 'Nehemiah', 'Esth' => 'Esther',
+    'Ps' => 'Psalms', 'Pss' => 'Psalms', 'Psalm' => 'Psalms', 'Prov' => 'Proverbs',
+    'Eccl' => 'Ecclesiastes', 'Ecc' => 'Ecclesiastes', 'Song of Songs' => 'Song of Solomon',
+    'Song' => 'Song of Solomon', 'Cant' => 'Song of Solomon', 'Isa' => 'Isaiah', 'Jer' => 'Jeremiah',
+    'Lam' => 'Lamentations', 'Ezek' => 'Ezekiel', 'Dan' => 'Daniel', 'Hos' => 'Hosea',
+    'Obad' => 'Obadiah', 'Mic' => 'Micah', 'Nah' => 'Nahum', 'Hab' => 'Habakkuk',
+    'Zeph' => 'Zephaniah', 'Hag' => 'Haggai', 'Zech' => 'Zechariah', 'Mal' => 'Malachi',
+    'Matt' => 'Matthew', 'Mt' => 'Matthew', 'Mk' => 'Mark', 'Lk' => 'Luke', 'Jn' => 'John',
+    'Rom' => 'Romans', '1 Cor' => '1 Corinthians', '2 Cor' => '2 Corinthians', 'Gal' => 'Galatians',
+    'Eph' => 'Ephesians', 'Phil' => 'Philippians', 'Col' => 'Colossians',
+    '1 Thess' => '1 Thessalonians', '2 Thess' => '2 Thessalonians', '1 Tim' => '1 Timothy',
+    '2 Tim' => '2 Timothy', 'Philem' => 'Philemon', 'Phlm' => 'Philemon', 'Heb' => 'Hebrews',
+    'Jas' => 'James', '1 Pet' => '1 Peter', '2 Pet' => '2 Peter', 'Rev' => 'Revelation',
+    'Enoch' => '1 Enoch',
+  }.freeze
+
+  SX_BOOK_NAMES = (SX_CANON + SX_ALIASES.keys).sort_by { |n| -n.length }.map { |n| Regexp.escape n }.join '|'
+  # One citation = Book C:V[-V[:V]] [, V[-V]]* [; C:V ...]* — semicolon segments
+  # inherit the book ("Proverbs 3:15; 8:11"), comma items inherit book+chapter
+  # ("Matthew 13:44, 38"). A comma item is accepted only when followed by
+  # punctuation or end of line, so "(Ps 23:1, 2 Kings 3:4)" cannot swallow the
+  # "2" of "2 Kings" as a verse. Bare refs with no book name — "(31:18)" — are
+  # never matched (documented limitation).
+  SX_VLIST = /(?:\s*,\s*\d{1,3}(?:[-–]\d{1,3})?(?=\s*[^\w\s]|\s*$))*/
+  SX_CITE_RX = /\b(#{SX_BOOK_NAMES})\.?\s+(\d{1,3}:\d{1,3}(?:[-–]\d{1,3}(?::\d{1,3})?)?#{SX_VLIST}(?:\s*;\s*\d{1,3}:\d{1,3}(?:[-–]\d{1,3}(?::\d{1,3})?)?#{SX_VLIST})*)/
+  SX_VERSE_RX = /\A(\d{1,3}):(\d{1,3}(?:[-–]\d{1,3}(?::\d{1,3})?)?)/
+  SX_EMDASH = '—'
+
+  def sx_record book, chap, vspec, page
+    (((@sx_catalog[book] ||= {})[%(#{chap}:#{vspec})] ||= ::Set.new)) << page
+  end
+
+  # Scan a block's source text for citations and record them against the page
+  # range the block rendered across. A block that broke across pages attributes
+  # each citation proportionally by its character offset — refs near the top of
+  # the text go to the first page, refs near the end to the last (the seeref
+  # tail of a glossary entry, the citation line of a quote).
+  def sx_scan text, page_from, page_to = page_from
+    return if !@sx_catalog || !text.is_a?(::String) || text.empty?
+    len = text.length
+    text.scan SX_CITE_RX do
+      m = Regexp.last_match
+      page = if page_to > page_from
+               (page_from + ((m.begin(0).to_f / len) * (page_to - page_from + 1)).floor).clamp(page_from, page_to)
+             else
+               page_from
+             end
+      book = SX_ALIASES[m[1]] || m[1]
+      m[2].split(/\s*;\s*/).each do |seg|
+        next unless seg =~ SX_VERSE_RX
+        chap, rest = $1, $'
+        sx_record book, chap, ($2.tr '–', '-'), page
+        rest.scan(/,\s*(\d{1,3}(?:[-–]\d{1,3})?)/) { |(v)| sx_record book, chap, (v.tr '–', '-'), page }
+      end
+    end
+  end
+
+  def sx_scan_table node, page_from, page_to
+    return unless @sx_catalog
+    texts = []
+    rows = node.rows
+    [rows.head, rows.body, rows.foot].each do |rowset|
+      next unless rowset
+      rowset.each do |row|
+        row.each do |cell|
+          texts << begin
+            cell.source
+          rescue StandardError
+            nil
+          end
+        end
+      end
+    end
+    sx_scan texts.compact.join("\n"), page_from, page_to
+  end
+
+  # Catalog (physical pages) -> canonically ordered entries with printed folios:
+  # [[book, [["1:16", [208, 214]], ...]], ...]. The folio offset comes from the
+  # same source the running footer uses (page-numbering start-at after-toc);
+  # citations inked before folio 1 (front-matter colophon pages) are dropped.
+  def sx_folio_entries
+    return [] if !@sx_catalog || @sx_catalog.empty?
+    offset = ((defined?(@index) && @index && @index.start_page_number) ? @index.start_page_number : 1) - 1
+    SX_CANON.filter_map do |book|
+      next unless (verses = @sx_catalog[book])
+      entries = verses.filter_map do |vd, pages|
+        folios = pages.map { |p| p - offset }.select { |f| f >= 1 }.uniq.sort
+        next if folios.empty?
+        next unless vd =~ /\A(\d+):(\d+)(?:-(?:(\d+):)?(\d+))?/
+        [[$1.to_i, $2.to_i, $3.to_i, ($4 || $2).to_i], vd, folios]
+      end
+      next if entries.empty?
+      [book, entries.sort_by { |key, _, _| key }.map { |_, vd, folios| [vd, folios] }]
+    end
+  end
 
   FN_RULE_LEN   = 144    # 2in separator rule
   FN_RULE_WIDTH = 0.5
@@ -85,6 +210,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     @fn_queue = {}        # page_number => [footnote, ...]
     @fn_seen = {}         # footnote index => already queued
     @fn_flushing = false
+    @sx_catalog = {}      # book => { "chap:verse(-verse)" => Set of physical pages }
   end
 
   # Reserve the foot band on this page by enlarging only its bottom margin, if the
@@ -106,7 +232,21 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     out = super
     flush_table_float force: true unless scratch?
     flush_page_footnotes if defined?($fn_flush) && $fn_flush
+    # Machine-readable index artifact, written once per build from the final
+    # (flush) pass of the primary (prepress) target — same folios as the
+    # printed Scripture Index.
+    write_scripture_index_json if !scratch? && defined?($fn_flush) && $fn_flush && (doc.attr 'media') == 'prepress'
     out
+  end
+
+  def write_scripture_index_json
+    entries = sx_folio_entries
+    return if entries.empty?
+    data = {}
+    entries.each { |book, verses| verses.each { |vd, folios| data[%(#{book} #{vd})] = folios } }
+    path = ::File.expand_path '../scripture-index.json', __dir__
+    ::File.write path, (::JSON.pretty_generate data)
+    warn %(Wrote: #{path}  (scripture index, #{data.size} refs))
   end
 
   # Suppress the built-in chapter-end / doc-end footnote dump.
@@ -198,7 +338,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # shifts by a paragraph or two, exactly like a floated figure in any print book;
   # lead-in prose should reference the table, not colon into it.
   def convert_table node
-    return super if scratch? || @float_now
+    return super if scratch?
+    if @float_now                           # the real (floated) render
+      start_page = page_number
+      result = super
+      sx_scan_table node, start_page, page_number
+      return result
+    end
     flush_table_float                       # place any pending float before a new table
     ext = begin
       dry_run { convert_table node }
@@ -222,7 +368,22 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
         return
       end
     end
-    super
+    start_page = page_number                # the real (in-flow) render
+    result = super
+    sx_scan_table node, start_page, page_number
+    result
+  end
+
+  # Description-list descriptions (the glossary's seeref lines) are inked as
+  # list-item primary text, not paragraphs — collect their citations here.
+  # Blocks ATTACHED to a description traverse convert_paragraph, so only the
+  # primary text is scanned (no double count).
+  def traverse_list_item node, list_type, opts = {}
+    return super if scratch? || list_type != :dlist_desc
+    start_page = page_number
+    result = super
+    sx_scan (node.text? ? node.text : nil), start_page, page_number
+    result
   end
 
   def flush_table_float force: false
@@ -296,7 +457,51 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       end
       return
     end
+    # Scripture Index — the empty chapter build.rb appends; super inks the
+    # chapter opening (recto start, running head, TOC + outline destination),
+    # then the collected catalog is inked at glossary density.
+    if node.id == 'scripture-index'
+      saved_size, saved_lh = @theme.base_font_size, @theme.base_line_height
+      @theme.base_font_size = 10
+      @theme.base_line_height = 0.85
+      begin
+        super
+        unless scratch?
+          ink_scripture_index
+          node.set_attr 'pdf-page-end', page_number
+        end
+      ensure
+        @theme.base_font_size, @theme.base_line_height = saved_size, saved_lh
+      end
+      return
+    end
     super
+  end
+
+  # Ink the collected scripture index: books in canonical order as bold run-in
+  # heads, one line per verse — "1:16 — 208, 214" — in two dense columns
+  # (mirrors the gem's convert_index_section column_box usage).
+  def ink_scripture_index
+    entries = sx_folio_entries
+    return if entries.empty?
+    theme_font :base do
+      end_cursor = nil
+      column_box [bounds.left, cursor], columns: 2, width: bounds.width, reflow_margins: true, spacer: (@theme.index_column_gap || 24) do
+        line_h = height_of_typeset_text 'A'
+        first = true
+        entries.each do |book, verses|
+          # never strand a book head at a column foot with fewer than 2 entries below
+          bounds.move_past_bottom if cursor < line_h * 3
+          ink_prose book, align: :left, styles: [:bold], margin_top: (first ? 0 : 5), margin_bottom: 1, hyphenate: false
+          verses.each do |vd, folios|
+            ink_prose %(#{vd} #{SX_EMDASH} #{folios.join ', '}), align: :left, margin_bottom: 0, hanging_indent: 9, hyphenate: false
+          end
+          first = false
+        end
+        end_cursor = cursor if bounds.current_column == 0
+      end
+      move_cursor_to end_cursor if end_cursor
+    end
   end
 
   def convert_floating_title node
@@ -359,8 +564,16 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       move_down 5 if (node.role? && node.roles.include?('poemline')) && !at_page_top?
       balance_prose_paragraph node
     end
+    start_page = page_number unless scratch?
     result = super
-    normalize_page_bottom unless scratch? || @in_quote
+    unless scratch?
+      # Scripture index: scan the paragraph's source (inline refs, footnote
+      # macro text, and the citation paragraphs the quote treeprocessor builds
+      # from block-quote attributions — those render inside the quote, so the
+      # page recorded is the quote's own page).
+      sx_scan node.source, start_page, page_number
+      normalize_page_bottom unless @in_quote
+    end
     result
   end
 
@@ -483,6 +696,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
             ink_prose %(<em>#{esc.call(e['quote'])}</em>), align: :center, margin_bottom: 3, hyphenate: false
             ink_prose %(<font size="9">— #{esc.call(e['ref'])}</font>), align: :center, margin_bottom: 16
           end
+          sx_scan e['ref'].to_s, page_number unless scratch?
         end
       end
     end
@@ -490,8 +704,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     # above it in the top half. (Guard so a long epigraph never pushes it upward.)
     # "How to Use This Book" is exempt (author's single-page exception): its
     # title stays at the top so the conventions fit on one opening page — and
-    # the Glossary starts at the top like the reference section it is.
-    unless node.id == 'how-to-use' || node.id == 'glossary'
+    # the Glossary and Scripture Index start at the top like the reference
+    # sections they are.
+    unless node.id == 'how-to-use' || node.id == 'glossary' || node.id == 'scripture-index'
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
     end
