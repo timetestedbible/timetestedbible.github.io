@@ -2,11 +2,8 @@
   <!-- The relay of light: Father -> Son -> Bride -> World. Each bearer is
        moon to the one above (reflector) and sun to the one below (source).
        Pure black line art for the trade interior. -->
-  <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
-    </marker>
-  </defs>
+  <!-- Arrowheads are drawn as explicit filled triangles (no <marker> defs):
+       the PDF pipeline (prawn-svg) mis-places marker elements. -->
 
   <!-- ===== THE FATHER: the unborrowed light (rayed circle) ===== -->
   <g stroke="#000000" stroke-width="5" fill="none" stroke-linecap="round">
@@ -26,7 +23,8 @@
   <text x="530" y="98" font-size="19" font-style="italic" fill="#000000">“a sun and shield” — Psalm 84:11</text>
 
   <!-- arrow -->
-  <line x1="440" y1="140" x2="440" y2="196" stroke="#000000" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="440" y1="140" x2="440" y2="186" stroke="#000000" stroke-width="3"/>
+  <path d="M 433 186 L 447 186 L 440 198 Z" fill="#000000"/>
 
   <!-- ===== THE SON ===== -->
   <circle cx="440" cy="238" r="26" stroke="#000000" stroke-width="5" fill="none"/>
@@ -40,7 +38,8 @@
   <text x="360" y="320" text-anchor="end" font-size="19" font-style="italic" fill="#000000">“the Sun of righteousness” — Mal 4:2</text>
 
   <!-- arrow -->
-  <line x1="440" y1="300" x2="440" y2="356" stroke="#000000" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="440" y1="300" x2="440" y2="346" stroke="#000000" stroke-width="3"/>
+  <path d="M 433 346 L 447 346 L 440 358 Z" fill="#000000"/>
 
   <!-- ===== THE BRIDE ===== -->
   <circle cx="440" cy="398" r="26" stroke="#000000" stroke-width="5" fill="none"/>
@@ -53,7 +52,8 @@
   <text x="360" y="456" text-anchor="end" font-size="19" font-style="italic" fill="#000000">“ye are the light of the world” — Matt 5:14</text>
 
   <!-- arrow -->
-  <line x1="440" y1="460" x2="440" y2="516" stroke="#000000" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="440" y1="460" x2="440" y2="506" stroke="#000000" stroke-width="3"/>
+  <path d="M 433 506 L 447 506 L 440 518 Z" fill="#000000"/>
 
   <!-- ===== THE WORLD: the horizon in the night ===== -->
   <path d="M 250 570 Q 440 528 630 570" stroke="#000000" stroke-width="4" fill="none" stroke-linecap="round"/>
