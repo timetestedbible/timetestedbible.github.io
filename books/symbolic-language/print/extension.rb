@@ -197,6 +197,52 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     sx_scan texts.compact.join("\n"), page_from, page_to
   end
 
+  # Physical page -> printed folio offset, from the same source the running
+  # footer uses (page-numbering start-at after-toc).
+  def sx_folio_offset
+    ((defined?(@index) && @index && @index.start_page_number) ? @index.start_page_number : 1) - 1
+  end
+
+  # --- Chapter cross-reference page numbers ----------------------------------
+  # Derivation footnotes ("Derived in the link:...[Mountain] chapter.") and the
+  # glossary's seeref lines ("see link:...[Trees], ch. 35") carry a live
+  # internal PDF jump (convert_inline_anchor), but paper needs the folio too.
+  # Each pass records every chapter's start folio keyed by its dest anchor
+  # ($sx_chapter_folios, promoted at pass end exactly like the $fn_* pattern);
+  # the NEXT pass appends ", p. N" after the link (after its " chapter" /
+  # ", ch. N" tail when present) wherever a chapter link appears in footnote
+  # text or a glossary description. Forward references need the previous pass's
+  # map; backward ones use it too, uniformly. Pass 1 has no map and renders
+  # without page numbers; the footnote convergence loop re-renders until the
+  # layout (and with it the map) reaches a fixed point, so the final flush
+  # prints settled folios.
+  SX_CHAPLINK_RX = %r{(<a\b[^>]*\banchor="([^"]+)"[^>]*>.*?</a>)( chapters?\b|,\s*ch\.\s*\d+)?}m
+
+  # The maps are stored per RESERVE SET, because passes with different reserves
+  # lay out differently: the flush pass must read the map of the most recent
+  # pass with an IDENTICAL reserve (the settled layout it reproduces), not
+  # whatever pass ran last — the prune-check pass of the oscillation fallback
+  # renders a rejected layout, and its folios must not leak into the flush.
+  def sx_reserve_key
+    ((defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : {}).sort.inspect
+  end
+
+  def sx_chapter_folio_map
+    @sx_pass_map ||= begin
+      maps = (defined?($sx_folio_maps) && $sx_folio_maps) || {}
+      maps[sx_reserve_key] || ((defined?($sx_folio_latest) && $sx_folio_latest) || {})
+    end
+  end
+
+  def sx_append_chapter_pages text
+    map = sx_chapter_folio_map
+    return text if !map || map.empty? || !text.is_a?(::String) || !(text.include? 'anchor=')
+    text.gsub(SX_CHAPLINK_RX) do
+      whole, anchor, tail = $1, $2, $3
+      (folio = map[anchor]) ? %(#{whole}#{tail}, p. #{folio}) : %(#{whole}#{tail})
+    end
+  end
+
   # Catalog (physical pages) -> canonically ordered entries with printed folios:
   # [[book, [["1:16", [[208, false], [214, true]]], ...]], ...] — each locator a
   # [folio, quoted] pair (quoted = block-quoted in full there, printed bold).
@@ -205,7 +251,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # (front-matter colophon pages) are dropped.
   def sx_folio_entries
     return [] if !@sx_catalog || @sx_catalog.empty?
-    offset = ((defined?(@index) && @index && @index.start_page_number) ? @index.start_page_number : 1) - 1
+    offset = sx_folio_offset
     SX_CANON.filter_map do |book|
       next unless (verses = @sx_catalog[book])
       entries = verses.filter_map do |vd, pages|
@@ -235,11 +281,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   # Measured height of one note at footnotes size across the content width.
+  # Measure the DISPLAY text (chapter-page suffixes appended) so the reserved
+  # band always matches what the flush inks.
   def fn_note_height fn
     spacing = @theme.footnotes_item_spacing || 2
     h = nil
     theme_font :footnotes do
-      h = height_of_typeset_text %([#{fn.index}] #{fn.text}),
+      h = height_of_typeset_text (sx_append_chapter_pages %([#{fn.index}] #{fn.text})),
         inline_format: true, line_height: (@theme.footnotes_line_height || @theme.base_line_height)
     rescue StandardError
       h = nil
@@ -275,6 +323,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     @fn_seen = {}         # footnote index => already queued
     @fn_flushing = false
     @sx_catalog = {}      # book => { "chap:verse(-verse)" => { physical page => quoted? } }
+    @sx_folios_out = {}   # dest anchor => chapter start folio, collected THIS pass
   end
 
   # Reserve the foot band on this page by enlarging only its bottom margin, if the
@@ -300,6 +349,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     # (flush) pass of the primary (prepress) target — same folios as the
     # printed Scripture Index.
     write_scripture_index_json if !scratch? && defined?($fn_flush) && $fn_flush && (doc.attr 'media') == 'prepress'
+    # Promote this pass's chapter-start-folio map — keyed by the reserve set
+    # that produced it (see sx_chapter_folio_map) — after the flush, so
+    # measurement and ink within one pass always used the same map.
+    unless scratch?
+      ($sx_folio_maps ||= {})[sx_reserve_key] = @sx_folios_out
+      $sx_folio_latest = @sx_folios_out
+    end
     out
   end
 
@@ -323,7 +379,10 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   # After a prose block renders, record which page its footnote markers ended on.
+  # Glossary descriptions (dlist items — see traverse_list_item) also get their
+  # chapter-link page suffixes appended here, on the way to the page.
   def ink_prose string, opts = {}
+    string = sx_append_chapter_pages string if @sx_in_dlist_desc && !@fn_flushing
     return super if @fn_flushing || !@fn_doc
     fresh = string.scan(/_footnotedef_(\d+)/).flatten.map(&:to_i).uniq.reject { |i| @fn_seen[i] }
     return super if fresh.empty?
@@ -364,7 +423,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
         bounding_box [left, floor - FN_RULE_GAP], width: width, height: band - FN_RULE_GAP do
           theme_font :footnotes do
             fns.each do |fn|
-              ink_prose %([#{fn.index}] #{fn.text}), margin_bottom: spacing, hyphenate: true
+              ink_prose (sx_append_chapter_pages %([#{fn.index}] #{fn.text})), margin_bottom: spacing, hyphenate: true
             end
           end
         end
@@ -453,7 +512,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     item = list_type == :dlist ? node[1] : node   # qanda passes a [terms, desc] pair
     raw = item.instance_variable_get :@text if item.is_a? ::Asciidoctor::AbstractNode
     start_page = page_number
-    result = super
+    prev_desc = @sx_in_dlist_desc
+    @sx_in_dlist_desc = true if list_type == :dlist_desc   # seeref chapter links get ", p. N"
+    begin
+      result = super
+    ensure
+      @sx_in_dlist_desc = prev_desc
+    end
     sx_scan raw, start_page, page_number
     result
   end
@@ -806,6 +871,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   def ink_chapter_title node, title, opts = {}
+    # Record this chapter's start folio under its dest anchor — the map the
+    # NEXT pass uses to print ", p. N" after chapter cross-references.
+    if !scratch? && node.id && @sx_folios_out && (folio = page_number - sx_folio_offset) >= 1
+      @sx_folios_out[derive_anchor_from_id node.id] = folio
+    end
     if (part = @pending_part)
       @pending_part = nil
       add_dest_for_block part   # TOC entry + outline bookmark resolve to this page
