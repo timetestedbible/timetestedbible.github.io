@@ -943,3 +943,17 @@ moon) + neged (the facing counterpart/mate — the ezer-kenegdo word, carrying t
 into the throne verse) + v37's moon-witness. The throne, the full moon, the faithful witness —
 one sentence pair. Weld: Ps 72:5 lifnei yareach ("before the FACE of the moon") gives the same
 face-to-face geometry from the worshipper's side.
+
+### Jude's "Wandering Stars" — the Hebrew Has No Star-Clause
+
+Verified raw from `data/hg-chapters/Jude-1.json`. Greek Jude 13: ἀστέρες πλανῆται οἷς ὁ ζόφος
+τοῦ σκότους εἰς τὸν αἰῶνα τετήρηται ("wandering stars, for whom the blackness of darkness is
+reserved for ever"). The Hebrew Jude's v13 is **Isaiah 57:20 verbatim** — וּכְמוֹ גַּלֵּי הַיָּם
+שֶׁזּוֹרְקִים לַחוּץ רֶפֶשׁ וְטִיט, "like waves of the sea that cast out mire (refesh) and mud
+(tit)" — the wicked-as-troubled-sea figure, with **no star-clause at all**; the Greek adds the
+entire clause. Two consequences: (1) the condemnation is of the *men* (false teachers) in both
+witnesses — no light is cursed for wandering; (2) the planets are free to carry their names —
+and the king planet's Hebrew name Tzedeq belongs to a titled Owner: Malki-Tzedek, "King of
+righteousness" (Heb 7:2; Ps 110:4). Resolves the ch. 24 Wandering Stars tension (a
+Messiah-marked planet cannot sit in a condemned class; in the elder witness there is no
+condemned class of lights). In the book at ch. 24.
