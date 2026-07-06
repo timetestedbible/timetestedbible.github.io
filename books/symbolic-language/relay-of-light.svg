@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 680" font-family="Gentium Book Plus">
+  <!-- The relay of light: Father -> Son -> Bride -> World. Each bearer is
+       moon to the one above (reflector) and sun to the one below (source).
+       Pure black line art for the trade interior. -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- ===== THE FATHER: the unborrowed light (rayed circle) ===== -->
+  <g stroke="#000000" stroke-width="5" fill="none" stroke-linecap="round">
+    <circle cx="440" cy="78" r="26"/>
+    <g>
+      <line x1="440" y1="40" x2="440" y2="24"/>
+      <line x1="440" y1="116" x2="440" y2="132"/>
+      <line x1="402" y1="78" x2="386" y2="78"/>
+      <line x1="478" y1="78" x2="494" y2="78"/>
+      <line x1="413" y1="51" x2="402" y2="40"/>
+      <line x1="467" y1="51" x2="478" y2="40"/>
+      <line x1="413" y1="105" x2="402" y2="116"/>
+      <line x1="467" y1="105" x2="478" y2="116"/>
+    </g>
+  </g>
+  <text x="530" y="72" font-size="26" font-weight="bold" fill="#000000">THE FATHER</text>
+  <text x="530" y="98" font-size="19" font-style="italic" fill="#000000">“a sun and shield” — Psalm 84:11</text>
+
+  <!-- arrow -->
+  <line x1="440" y1="140" x2="440" y2="196" stroke="#000000" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- ===== THE SON ===== -->
+  <circle cx="440" cy="238" r="26" stroke="#000000" stroke-width="5" fill="none"/>
+  <text x="530" y="232" font-size="26" font-weight="bold" fill="#000000">THE SON</text>
+  <text x="530" y="258" font-size="19" font-style="italic" fill="#000000">“the faithful witness” — Psalm 89:37</text>
+  <!-- office tags -->
+  <text x="360" y="216" text-anchor="end" font-size="20" font-weight="bold" fill="#000000">moon toward the Father</text>
+  <text x="360" y="240" text-anchor="end" font-size="19" font-style="italic" fill="#000000">“the brightness of his glory” — Heb 1:3</text>
+  <text x="360" y="264" text-anchor="end" font-size="19" font-style="italic" fill="#000000">“nothing of himself” — John 5:19</text>
+  <text x="360" y="296" text-anchor="end" font-size="20" font-weight="bold" fill="#000000">sun toward the bride</text>
+  <text x="360" y="320" text-anchor="end" font-size="19" font-style="italic" fill="#000000">“the Sun of righteousness” — Mal 4:2</text>
+
+  <!-- arrow -->
+  <line x1="440" y1="300" x2="440" y2="356" stroke="#000000" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- ===== THE BRIDE ===== -->
+  <circle cx="440" cy="398" r="26" stroke="#000000" stroke-width="5" fill="none"/>
+  <text x="530" y="392" font-size="26" font-weight="bold" fill="#000000">THE BRIDE</text>
+  <text x="530" y="418" font-size="19" font-style="italic" fill="#000000">“fair as the moon” — Song 6:10</text>
+  <!-- office tags -->
+  <text x="360" y="376" text-anchor="end" font-size="20" font-weight="bold" fill="#000000">moon toward the Son</text>
+  <text x="360" y="400" text-anchor="end" font-size="19" font-style="italic" fill="#000000">“the glory of the man” — 1 Cor 11:7</text>
+  <text x="360" y="432" text-anchor="end" font-size="20" font-weight="bold" fill="#000000">sun toward the world</text>
+  <text x="360" y="456" text-anchor="end" font-size="19" font-style="italic" fill="#000000">“ye are the light of the world” — Matt 5:14</text>
+
+  <!-- arrow -->
+  <line x1="440" y1="460" x2="440" y2="516" stroke="#000000" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- ===== THE WORLD: the horizon in the night ===== -->
+  <path d="M 250 570 Q 440 528 630 570" stroke="#000000" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="440" y="606" text-anchor="middle" font-size="26" font-weight="bold" fill="#000000">THE WORLD</text>
+  <text x="440" y="634" text-anchor="middle" font-size="19" font-style="italic" fill="#000000">“the people that walked in darkness have seen a great light” — Isaiah 9:2</text>
+
+</svg>
