@@ -374,15 +374,19 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     result
   end
 
-  # Description-list descriptions (the glossary's seeref lines) are inked as
-  # list-item primary text, not paragraphs — collect their citations here.
-  # Blocks ATTACHED to a description traverse convert_paragraph, so only the
-  # primary text is scanned (no double count).
+  # List-item primary text is inked here, not via convert_paragraph — collect
+  # its citations too: glossary seeref lines arrive as :dlist_desc, the Pearl
+  # chapter's lexicon notes as :ulist items. Blocks ATTACHED to an item
+  # traverse convert_paragraph, so only the primary text is scanned (no double
+  # count). Scan the RAW @text ivar, not node.text — re-running substitutions
+  # would re-register any inline footnote macro.
   def traverse_list_item node, list_type, opts = {}
-    return super if scratch? || list_type != :dlist_desc
+    return super if scratch?
+    item = list_type == :dlist ? node[1] : node   # qanda passes a [terms, desc] pair
+    raw = item.instance_variable_get :@text if item.is_a? ::Asciidoctor::AbstractNode
     start_page = page_number
     result = super
-    sx_scan (node.text? ? node.text : nil), start_page, page_number
+    sx_scan raw, start_page, page_number
     result
   end
 
