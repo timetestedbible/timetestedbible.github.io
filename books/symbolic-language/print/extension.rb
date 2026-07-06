@@ -872,6 +872,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
     'what-is-the-point'     => 'what-is-the-point-plate-print.jpg',
     'lucifers-declared-plan' => 'lucifer-moon-plate-print.jpg',
+    'daniel-unsealed'       => 'daniel-sealed-plate-print.jpg',
     'the-pearl'             => 'merchant-pearl-plate-print.jpg',
     'the-fall-of-babylon'   => 'fall-of-babylon-plate-print.jpg',
   }.freeze
