@@ -144,6 +144,11 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'The office the enemy set his heart to seize has a symbol, and it is a pearl. The OT\'s pearls hide under the KJV\'s "rubies" — peninim, Strong\'s "probably a pearl (as round)": wisdom is more precious than pearls, and the virtuous bride\'s price is far above them. And the night sky keeps one fulness: keseh, the full moon, the letters under "throne" and "time appointed" (Psalm 81:3; Proverbs 7:20) — the one complete light, appointed to govern the moedim, entering by the east gate that Ezekiel says opens on the day of the new moon. Beside the city whose every gate is "of one pearl," the merchant\'s purchase comes into focus: one pearl, one gate — entry at the King\'s appointed time of meeting. The full calendar case is the work of Time Tested Tradition; this chapter establishes the symbol.'
     },
     {
+      slug: 'time-tested-tradition',
+      title: 'Time Tested Tradition',
+      summary: 'The companion volume introduced: Time Tested Tradition — The Renewed Biblical Calendar tests the inherited calendars against every anchor the record affords. With 99.9% certainty the cross fell in AD 32 (Josephus, Philo, Scripture, stone-etched eclipses); no known weekly sabbath aligns with Saturday on the known dates, and the year of the cross puts a Monday crucifixion — impossible for rising on the third day. All the receipts, presented for the reader to judge; the sabbaths emerge as a sign and a moed governed by the moon — the full moon. Free at TimeTested.Bible.'
+    },
+    {
       slug: 'the-four-winds',
       title: 'The Four Winds',
       summary: 'Wind, in Hebrew, is spirit (ruach). The four winds are the four spirits of heaven (Zechariah 6:5) — God\'s executing agents, shown in the New Testament as the four horsemen. They stir the nations, scatter and gather peoples, raise the dead, and are held or loosed at the throne\'s command.'

@@ -2,7 +2,7 @@
 # so the web book's sym: links can show a hover/tap preview popup instead of
 # forcing a jump to the glossary page (assets/js/glossary-popup.js consumes it).
 #
-# Parses books/symbolic-language/42-glossary.adoc:
+# Parses books/symbolic-language/43-glossary.adoc:
 #   [[sym-x]]Term:: definition +
 #   [.seeref]__(refs) · see link:/books/...[Title], ch. N__
 require 'json'
@@ -12,7 +12,7 @@ module SymbolicLanguage
     safe true
     priority :low
 
-    GLOSSARY = 'books/symbolic-language/42-glossary.adoc'
+    GLOSSARY = 'books/symbolic-language/43-glossary.adoc'
 
     def strip_inline(s)
       s = s.gsub(/sym:sym-[a-z0-9-]+\[([^\]]*)\]/, '\1')
