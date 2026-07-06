@@ -342,3 +342,7 @@ body.theme-light .book-chapter-body { color: var(--text-primary); }
 /* ---- Figures (Asciidoctor .imageblock) — fill the column; caption styled by .title above ---- */
 .book-chapter-body .imageblock { margin: 1.5em 0; }
 .book-chapter-body .imageblock img { display: block; width: 100%; height: auto; }
+
+/* Line-by-line poem walk: air above each restated-line unit */
+.book-chapter-body p.poemline,
+.book-chapter-body .paragraph.poemline { margin-top: 1.15em; }

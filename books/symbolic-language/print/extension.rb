@@ -354,6 +354,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def convert_paragraph node
     unless scratch? || @in_quote
       flush_table_float
+      # poemline units (restated poem line + commentary) get air above so the
+      # line-by-line walk doesn't run together visually.
+      move_down 5 if (node.role? && node.roles.include?('poemline')) && !at_page_top?
       balance_prose_paragraph node
     end
     result = super
