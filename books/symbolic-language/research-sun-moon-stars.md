@@ -547,3 +547,236 @@ suggest these strengthenings, in place, without restructuring:
    them is commanded, serving them is death (Deut 17:3; Job 31:26–28) — the difference
    between the book's method and astrology, stated in Scripture's own terms
    (Isa 47:13–14 supplies the contrast).
+
+
+---
+
+## The Elders and the Stars
+
+Author's thesis under test: **the elders are the stars/host, and the gates where the elders sit
+are the constellations** — "her husband is known in the gates, when he sitteth among the elders"
+(Prov 31:23); "let her own works praise her in the gates" (Prov 31:31). Discipline up front:
+stars = angels/messengers = the righteous is established doctrine in this book (Rev 1:20 + Dan
+12:3 + the angel-is-messenger rule). ELDERS = the sky-court is an **identity claim needing
+identity evidence**, so this section is tiered: Tier 1 = Scripture's own cross-text identities;
+Tier 2 = strong structural parallels; Tier 3 = alignments requiring star-lore beyond the text,
+recorded as the author's thesis. Counter-texts swept and recorded at the end. All verses verified
+against `kjv.json` / `kjv_strongs.txt`, `wlc.txt`, `strongs-hebrew-dictionary.js`, `lxx.txt`,
+`hg.txt` + `data/hg-chapters/`.
+
+### The Anchor: Isaiah 24:23
+
+WLC: וְחָפְרָה הַלְּבָנָה וּבוֹשָׁה הַחַמָּה כִּי־מָלַךְ יְהוָה צְבָאוֹת בְּהַר צִיּוֹן
+וּבִירוּשָׁלִַם וְנֶגֶד **זְקֵנָיו** כָּבוֹד
+
+> KJV: "Then the moon shall be confounded, and the sun ashamed, when the LORD of hosts shall
+> reign in mount Zion, and in Jerusalem, and before his **ancients** gloriously."
+
+One verse holds the whole thesis: the **levanah** (the bride-word moon — one of its three
+occurrences, always paired with *chammah*), the **chammah** sun, **YHWH of HOSTS** reigning,
+**Zion**, **his elders** (זְקֵנָיו — H2205 *zaqen*, hidden by KJV as "ancients"), and **glory**
+(*kavod*). The scene: the lesser lights outshone before the court when the King takes the seat.
+
+Two verified upgrades on the anchor:
+
+1. **The LXX renders "his elders" with *presbyteroi*** — the exact Greek word of Revelation's
+   twenty-four elders (Rev 4:4). Brenton (repo `lxx.txt`): "the Lord shall reign from out of
+   Zion... and shall be glorified **before his elders**." The oldest translation already read
+   Isa 24:23 as the elder-court scene; Rev 4 uses its word.
+2. **The same LXX line proves the unpointed-double thesis on the moon-word itself.** Brenton's
+   Isa 24:23 opens: "**the brick shall decay, and the wall shall fall**" — the LXX translators
+   read הלבנה as *levenah* "**brick**" (H3843, from *lavan*, "a brick, from the whiteness of the
+   clay") and החמה as *chomah* "**wall**" (H2346). Moon/brick and sun/wall are vowel-twins;
+   the ancient translators split exactly where the points decide. (Same family: H3840 *libnah*
+   "properly **whiteness**" — see Ex 24:10 below. All three — levanah moon, levenah brick, libnah
+   whiteness — grow from H3835 *lavan*, to be white.)
+
+### Tier 1 — Scripture's Own Cross-Text Identities
+
+**1. "Host of heaven" carries both referents in one phrase — Scripture's identity, not our
+analogy.**
+- The literal stars: Deut 4:19 — "the sun, and the moon, and the stars, even **all the host of
+  heaven**"; Jer 33:22 — "the **host of heaven** cannot be numbered... so will I multiply the
+  seed of David my servant, **and the Levites that minister unto me**" (note: the innumerable-host
+  promise lands on the *priests* as well as the seed — the host multiplied as ministers).
+- The throne-court: 1 Kgs 22:19 = 2 Chr 18:18 (Micaiah) — "I saw the LORD sitting on his throne,
+  and **all the host of heaven standing by him on his right hand and on his left**" — the host
+  *stands in session*.
+- The host is animate and worships: Neh 9:6 — "the **host of heaven worshippeth thee**."
+- The parallel runs in the Psalms: Ps 148:2–3 — "all his **angels**... all his **hosts**" ∥
+  "**sun and moon**... all ye **stars** of light"; Ps 103:20–21 (angels ∥ hosts ∥ ministers).
+- Lexeme fact (Strong's own): *tsava* H6635 — "a mass of persons... army... **specifically
+  hardship, worship**" — and the KJV's own column renders it "**appointed time**" (Job 7:1;
+  14:14; Dan 10:1 "the time appointed was long"). The host-word is an appointed-time word:
+  "LORD of hosts" is, by the KJV's own renderings of the same noun, Lord of the appointed
+  service.
+
+**2. Job's court: stars ∥ sons of God, heavens ∥ saints.** Job 38:7 — "the **morning stars**
+sang together, and all the **sons of God** shouted for joy" (WLC: כּוֹכְבֵי בֹקֶר ∥ בְּנֵי
+אֱלֹהִים — strict poetic apposition). The parallel runs both directions in the same book:
+Job 15:15 — "he putteth no trust in his **saints**; yea, the **heavens** are not clean in his
+sight"; Job 25:5 — "behold even to the **moon**, and it shineth not; yea, the **stars** are not
+pure in his sight" — saints/heavens and moon/stars interchange in the purity formula.
+
+**3. Psalm 89 holds the sky-court and the moon-witness in one psalm, in one lexeme.** Verified
+(Heb vv6–9): "the heavens shall praise thy wonders... thy **faithfulness** (emunah) in the
+**qahal of the holy ones** (בִּקְהַל קְדֹשִׁים); for who **in the shachaq** (בַשַּׁחַק) can be
+compared unto the LORD... among the **sons of the mighty** (בְּנֵי אֵלִים); God is greatly feared
+in the **sod of the holy ones** (בְּסוֹד־קְדֹשִׁים)... O LORD God of **hosts**... thy
+**faithfulness** round about thee." Then v37 (Heb 38): the moon, "a **faithful witness in the
+shachaq**." Same psalm, same *shachaq* H7834, same *emunah*: the assembly (qahal), the council
+(sod), the sons of the mighty, the hosts — and the moon-witness — share one address. (Note the
+derivation chain Strong's supplies: *sod* H5475 "a session... in close deliberation" is from
+H3245 *yasad*, **to found** — Prov 3:19's "founded the earth." The council-word is a
+founding-word.)
+
+**4. The occupied plural thrones.** Dan 7:9 — "thrones" (plural) were *placed*, and the Ancient
+of days sat; 7:10 — "the **judgment was set**" (the court sat); 7:26 — "the judgment shall
+**sit**." Who sits on the other thrones? Jesus assigns them: Matt 19:28 — "ye also shall sit upon
+**twelve thrones**, judging the twelve tribes of Israel"; Luke 22:30 same. Rev 4:4 shows the
+court seated: "round about the throne were four and twenty seats: and upon the seats I saw four
+and twenty **elders** sitting, clothed in **white** raiment; and they had on their heads crowns
+of gold." This connects the Pearl chapter's Dan 7:9 throne-reading (the keseh/kisse letters, the
+white-as-snow Occupant) to the elder-court seated around it.
+
+**5. The Hebrew Revelation's vocabulary is this section's vocabulary (second witness, verified
+raw from `data/hg-chapters/`).**
+- Rev 1:20 — וְהַסּוֹד מֵהַשִּׁבְעָה כּוֹכָבִים... הַשִּׁבְעָה כּוֹכָבִים אֵלֶּה הֵמָּה שִׁבְעָה
+  מַלְאָכִים וְהַשִּׁבְעָה מְנוֹרוֹת שִׁבְעָה זְקֵינִים — "the **SOD** of the seven stars" (the
+  "mystery" is rendered with **Ps 89:8's council-word**); "the seven stars are seven
+  **malakhim**" (messengers — the book's angel rule); "and the seven menorot, seven **ZEQENIM**"
+  — where the Greek reads *ekklesiai* (assemblies/churches), the Hebrew witness writes
+  **elders**. Flag the divergence honestly: this is the translator's interpretive rendering, an
+  assembly named by its representative office — but it is precisely the elders↔assembly
+  interchange this thesis needs, standing in the second witness at the definitional verse for
+  stars=messengers. Lamp-offices = elders, star-offices = messengers, side by side.
+- Rev 4:4 — twenty-four **כִּסְאִים** (kisse — the throne/keseh letters the Pearl chapter stands
+  on), twenty-four **זְקֵינִים**, clothed בְּמַלְבּוּשִׁים **לְבֵינִים** — garments spelled with
+  the **lavan letters** (the levanah family) — with crowns (כֶּתֶר) of gold; Rev 4:10 they cast
+  their crowns before him. In the Hebrew witness the elder-court sits on *kisse*-thrones in
+  *lavan*-garments: fulness-letters and whiteness-letters, the chapter's own pair.
+- Rev 1:16 — the seven stars are held בְּיַד יְמִינוֹ, "in his **right hand**" (*yamin* — see
+  Prov 3:16 and 1 Kgs 22:19's host on the right hand and the left), his face "shining like the
+  **shemesh**."
+
+### Tier 2 — Strong Structural Parallels
+
+**6. The twenty-four courses: rotation as timekeeping.** Verified: 1 Chr 24 — twenty-four
+priestly lots (v18 ends the list: "the three and twentieth to Delaiah, the four and twentieth to
+Maaziah"); 1 Chr 25:31 — twenty-four orders of singers ("the four and twentieth to
+Romamtiezer"), each order **twelve** strong (24 × 12 = 288); 1 Chr 27:1–15 — twelve military
+courses serving "**month by month throughout all the months of the year**" — the rotation *is*
+the calendar; Luke 1:5 — "the course of Abia" (the eighth lot, 1 Chr 24:10) still running and
+datable in the days of Herod. The Revelation elders carry priestly gear: harps and "golden vials
+full of odours, which are the prayers of saints" (Rev 5:8 — incense is priests' work). The
+author's prior work states the identification outright: **"24 elders around THE throne (Rev 4:4)
+= 24 priestly courses (1 Chr 24)... the full cycle of keseh-service"**
+(`_posts/2026-02-12-blood-moon-over-the-moon-city.html`, which also reads Matt 19:28's twelve
+thrones — *shaphat* = govern, per the book of Judges — as "twelve כסאות governing the twelve
+tribes = twelve keseh-days that set the appointed times for the year"). Tier verdict: the
+24↔24 number match, the priestly gear, and rotation-as-timekeeping are textual; "the sky's own
+courses keeping the appointed times" is the reading built on them — strong parallel, not stated
+identity.
+
+**7. Elders in the gates below ↔ gates of heaven above.** The earthly office, verified: the gate
+is *where elders sit as court and witnesses* — Deut 21:19; 22:15; 25:7 (cases brought "unto the
+elders of his city, and unto the **gate**"); Ruth 4:1–2, 9–11 — Boaz takes **ten elders** in the
+gate and the formula is witness-language: "Ye are **witnesses** this day... We are
+**witnesses**" (the moon-office word — Ps 89:37 "faithful **witness**"); Ps 107:32 — "praise him
+(*halal* — the shine/praise verb of Prov 31:28–31) in the **seat of the elders**"; Lam 5:14 —
+"the elders have **ceased from the gate**" (the office vacated in judgment); Prov 31:23 — the
+husband known in the gates among the elders (LXX: "sits **in council** with the old inhabitants
+of the land"). The heavenly gates, verified: Gen 28:17 — "the **gate of heaven**"; Ps 24:7–10 —
+the gates lift their heads for the King of glory, and the King's name is "**the LORD of
+hosts**" (the anchor's title); Ezek 46:1–12 — the east gate opened on sabbath and new-moon (the
+Pearl chapter's ground); Rev 21:12–21 — **twelve gates = twelve pearls**, the names of the
+**twelve tribes** on them, **angels at the gates**, twelve foundations = the twelve apostles.
+Add Gen 37:9 (sun, moon, eleven stars = the covenant family — Scripture's own decoding) and Rev
+12:1 (the woman's crown of twelve stars), and the two ends meet: tribes are written on the
+sky-gates, stars are the covenant people, elders sit in gates.
+
+**8. Exodus 24:9–11 — the prototype court, with the lavan-letters under the feet.** Verified:
+"Then went up Moses, and Aaron, Nadab, and Abihu, and **seventy of the elders of Israel**: and
+they **saw the God of Israel**: and there was **under his feet** as it were a paved work
+(לִבְנַת — H3840 *libnah*, 'properly, **whiteness**,' from *lavan*; LXX reads the sister-word:
+a sapphire **brick**, πλίνθος) of a sapphire stone, and as it were the **body of heaven** in his
+clearness... they saw God, and **did eat and drink**." The elders ascend, hold a covenant meal in
+the sky-court, and under the feet lies a thing spelled with the levanah-letters "as the body of
+heaven" (cf. Rev 12:1, "the **moon under her feet**"). Isa 24:23 (elders + reign + glory)
+deliberately echoes this scene — same cast, same mountain-court, same kavod. **Honest tension,
+recorded:** the OT court number is **seventy** (Ex 24:1, 9; Num 11:16 — seventy elders given the
+Spirit), not twenty-four; the twenty-four matches the *priestly courses* (Tier 2 §6), not the
+Sinai eldership. Do not harmonize silently; the two numbers are two institutions (eldership and
+priesthood), and Revelation's court wears the priestly gear.
+
+**9. Mazzaroth: the constellations come with statute-words attached.** Job 38:31–33, verified:
+Pleiades, Orion, "canst thou bring forth **Mazzaroth in his season** (בְּעִתּוֹ)... knowest thou
+the **ordinances of heaven** (חֻקּוֹת שָׁמָיִם — H2708, the *choq* family, Jer 31:35's
+moon-and-stars ordinances)? canst thou set the **dominion thereof** (מִשְׁטָרוֹ — H4896
+*mishtar*, from *shoter*, 'officer') in the earth?" — the constellation passage speaks in
+statutes and officer-rule: season, ordinance, jurisdiction. H4216 *Mazzaroth*: "some noted
+constellation (only in the plural), perhaps collectively, the **zodiac**." Companions: Job 9:9;
+Amos 5:8 (the seven stars and Orion, "The LORD is his name").
+
+### Tier 3 — The Author's Thesis Beyond the Text (recorded, not established)
+
+Specific constellation identifications — *which* elder is *which* constellation, Virgo/Leo
+scene-settings, the woman of Rev 12 as Virgo — require star-lore beyond Scripture's own
+sentences. The author's prior work in this repo, verified and citable:
+
+- `books/symbolic-language/research-pearl-fullmoon.md` — "TTT reads the 12 constellations as 12
+  sky-gates; **suggestive, not text-explicit**" and "Mazzaroth = 'gates' is TTT's framing; Job
+  38:32 says only 'constellations in his season'" — the honest labels are already the author's.
+- `books/symbolic-language/24-sun-moon-and-stars.adoc` (lines 111–114) — "the stars of God gather
+  into constellations, the 'Mazzaroth'... His people gather into the twelve tribes, the
+  constellations of His heaven"; "the woman is the constellation Virgo... the 'crown of twelve
+  stars' is the twelve constellations."
+- `_posts/2026-02-12-blood-moon-over-the-moon-city.html` — 24 elders = 24 priestly courses (the
+  keseh-service cycle); twelve thrones = twelve keseh-days; Leo/Virgo blood-moon scene; the
+  "thirteenth hidden" motif (thirteen sons / thirteenth month / Levi at the kisse).
+- `_posts/2026-02-18-summer-is-near.html` — the Adar 1 Leo/Tzedeq/Castor-Pollux alignment and
+  Acts 27–28 reading.
+
+What Scripture itself carries: constellations exist as God's ordered, seasonal, ruled hosts (Job
+38), the tribes are star-signed (Gen 37:9; Rev 12:1), the gates bear the tribes' names and are
+each one pearl (Rev 21). What it does not say in any verse: "the elders are the constellations."
+The chain Isa 24:23 → host-of-heaven → Ps 89 → Dan 7/Rev 4 makes *elders = the seated sky-court*
+a Scripture-carried reading; the further step *each elder = a named constellation* is TTT's
+framework and should be presented as such.
+
+### The Counterfeit Side (the false court proves the true office)
+
+- Deut 4:19 — the host "**divided unto all nations**": bowing *to* the host is the counterfeit
+  of standing *among* it.
+- 2 Kgs 23:5 — incense burned "to the sun, and to the moon, and to the **mazzalot** (H4208,
+  'the planets'), and to all the host of heaven" — the counterfeit priestly service to the court.
+- Ezek 8:11–12 — "**seventy men of the elders** of Israel... **every man his censer in his
+  hand**... in the **dark**, every man in the chambers of his imagery" — the Sinai
+  seventy inverted: elder-court + priestly incense, performed in darkness. The counterfeit
+  copies both institutions at once.
+- Ezek 8:16 — "about **five and twenty** men... their backs toward the temple... and they
+  **worshipped the sun toward the east**" — some read 24 courses + high priest inverted; record
+  as a reading, not a count Scripture explains.
+- Isa 3:14 — "The LORD will enter into judgment with the **elders** of his people" — the office
+  judged; Lam 5:14 — the elders ceased from the gate — the office vacated.
+
+### Counter-Text Sweep (does anything break the reading?)
+
+Swept for breakers; none found that severs the identity chains, three facts recorded honestly:
+(1) the overwhelming majority of *zaqen* occurrences are plainly mundane city-elders — the claim
+is not "every elder is a star" but that the heavenly court has an elder-bench which the earthly
+office mirrors (the book's standard above/below pattern; Ex 24 and Micaiah are the OT's own
+above-court scenes). (2) The **seventy vs twenty-four** number tension (Ex 24/Num 11 vs Rev 4)
+is real and unresolved by any verse; the 24 aligns with priesthood, the 70 with eldership. (3)
+The Hebrew Revelation's menorot = *zeqenim* (Rev 1:20) diverges from the Greek's *ekklesiai*;
+use it as a witness to the elders↔assembly interchange, not as the "original text" claim.
+Elders dying, sinning, or being judged (Ezek 8; Isa 3:14; 1 Kgs 21's Naboth letters) do not
+break the reading — they populate the counterfeit column, which the book's pattern expects.
+
+### Weld Back to Proverbs 31 (cross-filed in research-prov-31.md at vv23, 31)
+
+If the gates are the sky-gates and the elders the seated host, Prov 31:23 reads whole: the
+husband "known in the gates, when he sitteth **among the elders** of the land" — the sun on his
+circuit through the twelve, seated among the court (the Pearl chapter already has this line);
+and 31:31, "let her own works praise her in the gates," lands where Ps 107:32 puts it — "praise
+him in the **seat of the elders**" — with *halal*, the shine-verb, doing the praising.
