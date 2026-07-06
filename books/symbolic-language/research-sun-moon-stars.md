@@ -902,3 +902,29 @@ counter-sweep: **seventy is the plural — the fullness — of seven.**
   keeps the appointed times (Tier 2 §6). Fullness versus schedule — two measures of one
   institution, not two contradictory censuses. The morphology is fact; the 12/70 deployment is
   textual; the intensive reading ("the ultimate of seven") is the author's, recorded as such.
+
+### The Elder Light and the Younger (Gen 1:16 — ha-gadol / ha-qaton)
+
+Author's find, verified; in the book at ch. 24's founding-verse passage. Gen 1:16 WLC: אֶת־הַמָּאוֹר
+**הַגָּדֹל** לְמֶמְשֶׁלֶת הַיּוֹם וְאֶת־הַמָּאוֹר **הַקָּטֹן** לְמֶמְשֶׁלֶת הַלַּיְלָה. The pair
+gadol/qaton is the Torah's ordinary elder/younger family vocabulary, and the KJV's own column
+renders it so wherever a household is in view:
+
+- Gen 27:15 — Esau בְּנָהּ הַגָּדֹל = "her **eldest** son"; Jacob בְּנָהּ הַקָּטָן = "her
+  **younger** son." The identical pair of Gen 1:16.
+- Gen 29:16 — הַגְּדֹלָה Leah = "the **elder**"; הַקְּטַנָּה Rachel = "the **younger**" — and the
+  qetanah is the beloved bride, served for (both moon-offices, Son and bride, have a qaton story).
+- Gen 44:12 — "began at the **eldest** (בַּגָּדוֹל), left at the **youngest** (וּבַקָּטֹן)."
+
+So the founding verse reads, in its own register: "the **elder** light to rule the day, and the
+**younger** light to rule the night with the stars" — the household of Joseph's dream is not
+imported into Gen 1:16; it is the vocabulary Gen 1:16 is written in. Only here did the
+translators reach for "greater/lesser" instead of their own "elder/younger."
+
+The younger's portrait: 1 Sam 16:11 — "There remaineth yet the **youngest** (הַקָּטָן), and,
+behold, he **keepeth the sheep**." David the qaton-shepherd is the name the prophets give the
+Messiah centuries after David died — Ezek 34:23 "one shepherd… **my servant David**"; Ezek 37:24
+"**David my servant** shall be king… one shepherd" — and David's covenant psalm seats his throne
+among the lights: Ps 89:36-37, "his throne as the **sun** before me… established for ever as the
+**moon**, a faithful witness." The qaton son who kept the sheep holds the qaton light's throne;
+the shepherd enters by the door (John 10:1-2 — the east-gate argument of the Pearls chapter).
