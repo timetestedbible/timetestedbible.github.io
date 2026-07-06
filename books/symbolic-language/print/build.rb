@@ -145,29 +145,35 @@ build_target = lambda do |media, out|
   end
 
   fmt = ->(h) { '{' + h.map { |pg, pts| "#{pg}:#{pts}pt" }.join(', ') + '}' }
-# Safety criterion, not equality: the loop stops when every page that NEEDS a
-# band already has one at least as tall as needed (detected SUBSET-OF reserve).
-# The reserve only ever grows (max-union per pass), so oscillating markers —
-# a band on page N pushing its own marker to N+1 and back — cannot flip-flop
-# forever; both pages simply end up reserved. A reserved page whose marker
-# moved away keeps a small empty band (a slightly short page) — invisible,
-# and the price of a guarantee: the final flush pass renders with the exact
-# reserve that its own measuring pass proved sufficient, so a drawn note can
-# never land on an unreserved page (which printed notes OVER body text).
+# Converge on the EXACT fixed point: each pass reserves precisely the bands the
+# previous pass needed. When a pass's needs equal its own reserve, the flush is
+# guaranteed (that very layout proved the bands sufficient) AND no page carries
+# a stale band from an earlier pass — stale bands shorten pages invisibly and
+# bump block quotes into phantom gaps. If markers oscillate (a band on page N
+# pushing its own marker to N+1 and back), fall back to the old max-union
+# reserve, which cannot flip-flop, and grow it until safe.
 reserve = {}
 passes  = 0
+history = []
 loop do
   passes += 1
   detected = render.call reserve, false
   warn "  footnote pass #{passes}: reserved #{fmt.call reserve} -> needed #{fmt.call detected}"
-  safe = detected.all? { |pg, h| reserve[pg] && reserve[pg] >= h }
-  break if safe
-  if passes >= 12
-    warn "  footnote layout did not settle in 12 passes — reserving union and proceeding"
-    detected.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max }
+  break if detected == reserve                     # exact fixed point — no stale bands
+  if history.include?(detected) || passes >= 10
+    warn "  footnote layout oscillating — falling back to union reserve"
+    (history + [detected, reserve]).each { |m| m.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max } }
+    loop do
+      passes += 1
+      verify = render.call reserve, false
+      warn "  footnote pass #{passes} (union): reserved #{fmt.call reserve} -> needed #{fmt.call verify}"
+      break if verify.all? { |pg, h| reserve[pg] && reserve[pg] >= h } || passes >= 16
+      verify.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max }
+    end
     break
   end
-  detected.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max }
+  history << detected
+  reserve = detected.dup
 end
 warn "  footnote layout settled after #{passes} passes: #{fmt.call reserve}"
 render.call reserve, true
