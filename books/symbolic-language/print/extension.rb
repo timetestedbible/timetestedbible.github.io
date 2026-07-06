@@ -864,7 +864,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # chapter would have opened directly after a verso, the plate costs two
   # pages (a true-blank recto spacer + the plate verso).
   CHAPTER_PLATES = {
-    'noah-uncovered' => 'noah-uncovered-plate-print.jpg',
+    'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
+    'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
   }.freeze
 
   # Fill the trimmed page as fully as the aspect allows, centered — drawn on
