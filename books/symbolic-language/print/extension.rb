@@ -866,6 +866,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   CHAPTER_PLATES = {
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
+    'the-pearl'             => 'merchant-pearl-plate-print.jpg',
   }.freeze
 
   # Fill the trimmed page as fully as the aspect allows, centered — drawn on
