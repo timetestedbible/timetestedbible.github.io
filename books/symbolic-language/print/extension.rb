@@ -514,8 +514,12 @@ class QuoteCitationTreeprocessor < Asciidoctor::Extensions::Treeprocessor
       quote.remove_attr 'citetitle'
 
       cite_text = "#{EMDASH} #{parts.join(', ')}"
+      # :default subs so inline macros in the attribution (e.g. footnote:[]) are
+      # processed — the footnote then renders as a marker here and lands in the
+      # page-bottom band like any other note.
       citation = Asciidoctor::Block.new quote, :paragraph,
         source: cite_text,
+        subs: :default,
         attributes: { 'role' => 'text-right citation' }
       quote.blocks << citation
     end
