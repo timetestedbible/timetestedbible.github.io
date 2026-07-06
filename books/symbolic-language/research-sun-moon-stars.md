@@ -767,7 +767,9 @@ Swept for breakers; none found that severs the identity chains, three facts reco
 is not "every elder is a star" but that the heavenly court has an elder-bench which the earthly
 office mirrors (the book's standard above/below pattern; Ex 24 and Micaiah are the OT's own
 above-court scenes). (2) The **seventy vs twenty-four** number tension (Ex 24/Num 11 vs Rev 4)
-is real and unresolved by any verse; the 24 aligns with priesthood, the 70 with eldership. (3)
+is real and unresolved by any verse; the 24 aligns with priesthood, the 70 with eldership
+(the author's harmonization — seventy as the plural of seven — is recorded in its own
+subsection below). (3)
 The Hebrew Revelation's menorot = *zeqenim* (Rev 1:20) diverges from the Greek's *ekklesiai*;
 use it as a witness to the elders↔assembly interchange, not as the "original text" claim.
 Elders dying, sinning, or being judged (Ezek 8; Isa 3:14; 1 Kgs 21's Naboth letters) do not
@@ -780,3 +782,99 @@ husband "known in the gates, when he sitteth **among the elders** of the land" �
 circuit through the twelve, seated among the court (the Pearl chapter already has this line);
 and 31:31, "let her own works praise her in the gates," lands where Ps 107:32 puts it — "praise
 him in the **seat of the elders**" — with *halal*, the shine-verb, doing the praising.
+
+### The Hebrew Revelation Considered Whole (Ele Ha-Sodot)
+
+A full sweep of `data/hg-chapters/Revelation-*.json` for the star/moon/elder/white/sod
+vocabulary (every hit verified raw; this text's verse numbering diverges from the Greek in
+places — Greek equivalents noted). Standing caveat as at Tier 1 §5: this is a translation
+witness — evidence of which Hebrew words a fluent tradition chose, never an "original text"
+claim. Read whole, its choices are systematic, not one-off:
+
+1. **The book names itself with the council-word.** Rev 1:1 opens אֵלֶּה הַסּוֹדוֹת — "These
+   are the *sodot*" — where the Greek titles the book Ἀποκάλυψις, an uncovering. The whole book
+   is framed as admission into the divine council's deliberations (Amos 3:7 — "he revealeth his
+   **sod** unto his servants the prophets"; Jer 23:18 — "who hath stood in the **sod** of the
+   LORD"). And the frame returns at Rev 10:7 in Amos's own sentence-shape: "shall all these be
+   completed — **the sodot of YHWH** — just as he made known **to his servants and to his
+   prophets**." The "mystery of God" is the *sod* of Ps 89:7 book-wide, not just at 1:20.
+2. **The book is addressed to elders.** Rev 1:4 — "Yochanan, to the **seven zeqenim** in Asia"
+   — where the Greek addresses the seven *ekklesiai*. With 1:20's "the seven menorot are seven
+   **zeqenim**," the churches→elders rendering appears at both ends of the vision: the
+   translator consistently names an assembly by its elder-bench. Two occurrences, one policy —
+   the elders↔assembly interchange is this witness's standing equation.
+3. **The morning star is granted as "the dawn" — the very noun of Isaiah 14:12.** Rev 2:27
+   (Greek 2:28, "I will give him the morning star"): וּכְמוֹ שֶׁקִּבַּלְתִּי מֵאָבִי כָּךְ
+   אֶתֵּן לוֹ **הַשַּׁחַר** — "as I received from my Father, so I will give him **ha-shachar**,
+   the dawn." *Shachar* is the pedigree-word of helel **ben-shachar**, "son of the dawn": the
+   office the counterfeit claimed by sonship is here *granted* by the Son to the overcomer.
+   Honest note: the Greek's second morning-star line (22:16, "the bright and morning star") has
+   no counterpart in this text's 22:16 ("I am the root from the families of David") — the
+   shachar-grant at 2:27 is this witness's only morning-star sentence, and it gives it to the
+   saints.
+4. **The woman's moon is the yareach.** Rev 12:6 (Greek 12:1) — the woman clothed in the
+   **shemesh**, the **yareach** under her feet, on her head one **kether** of twelve
+   **kokhavim**. And Rev 6:12 — "the **yareach** was red as blood." The masculine moon-word
+   both times; *levanah* never appears in the text, but its letters do — see next.
+5. **The court sits before the Face.** Rev 12:2 (Greek 11:16) — the twenty-four zeqenim sit on
+   their thrones **לִפְנֵי יַהְוֶה** and fall **עַל פְּנֵיהֶם** — *lifnei*, the same
+   before-the-face construction as Ps 72:5's לִפְנֵי יָרֵחַ. The elder-court is seated facing
+   the Throne as the fearers of Ps 72:5 stand facing the moon — and as the palm-fronds (kappot
+   temarim) rejoice **lifnei YHWH** seven days (Lev 23:40).
+6. **Rev 22:5 is Isaiah 60:19, nearly letter for letter.** The Hebrew: וְלֹא יִהְיֶה עוֹד בָּהּ
+   הַשֶּׁמֶשׁ לְאוֹר יוֹמָם וּלְנֹגַהּ וְהַיָּרֵחַ לֹא יָאִיר לָךְ וְהָיָה לָךְ יַהְוֶה לְאוֹר
+   עוֹלָם וֵאלֹהַיִךְ לְתִפְאַרְתֵּךְ. WLC Isa 60:19: לֹא־יִהְיֶה־לָּךְ עוֹד הַשֶּׁמֶשׁ לְאוֹר
+   יוֹמָם וּלְנֹגַהּ הַיָּרֵחַ לֹא־יָאִיר לָךְ וְהָיָה־לָךְ יְהוָה לְאוֹר עוֹלָם וֵאלֹהַיִךְ
+   לְתִפְאַרְתֵּךְ. The Greek tradition at 22:5 paraphrases and **drops the moon** ("they need
+   no candle, neither light of the sun" — so KJV); the Hebrew witness gives Isaiah's full
+   sentence, yareach included, ending in "thy *tif'eret*." It reads Revelation's close as
+   Isaiah's retirement of the luminaries — the same Restoration texts as Grouping 2-F. And at
+   Rev 21:23 the replacement takes the office by its office-name: "the **tif'eret** of YHWH is
+   a **מָאוֹר** for them" — *ma'or*, H3974, Gen 1:16's luminary-word.
+7. **The foundations wear the sod-letters.** Rev 21:14 — twelve **יְסוֹדוֹת** (yesodot) bearing
+   the names of the twelve **שְׁלוּחִים** (sent-ones — the apostle-office rendered by the
+   sending root: messengers again). Letters-play, flagged as second-dimension and not lexical
+   identity: *yesod* (H3247, from *yasad*, to found) carries the letters of *sod* — and Strong's
+   itself derives *sod* H5475 from *yasad* (recorded at Tier 1 §3). The council set into the
+   foundations; the founding-word and the council-word are one family.
+8. **The Son of Man wears the Ancient of Days' wool.** Rev 1:14 — רֹאשׁוֹ וּשְׂעָרוֹ הָיָה
+   **לָבָן** כְּצֶמֶר **לָבָן** — "his head and his hair were white like wool, white" — Dan
+   7:9's court-description (hair "like the pure wool") on the Son of Man, doubled, in the lavan
+   letters. With 4:4's garments לְבֵינִים on the elders, the whole court — Occupant and bench —
+   is dressed in the levanah word-family.
+
+### Seventy: the Plural of Seven (the author's harmonization of §8's tension)
+
+The author's resolution of the seventy-vs-twenty-four tension recorded at §8 and in the
+counter-sweep: **seventy is the plural — the fullness — of seven.**
+
+- **The morphology, stated honestly.** שִׁבְעִים (*shiv'im*, seventy) is formed as the plural
+  of שֶׁבַע (*sheva*, seven) — but so is every Hebrew ten the plural of its unit (*shloshim*,
+  *arba'im*...), so the form alone proves nothing. The weight is in the usage: this book has
+  already leaned on the pair once — Daniel 9's "seventy" wearing the spelling of *weeks*
+  (Shavuot, the sevens-feast) — and on the intensive plural as a live device (Dan 7:9's wheels,
+  the yod-mem superlative). The question is whether Scripture deploys 7↔70 structurally for the
+  eldership. It does:
+- **Seven elders, then seventy.** The Hebrew Revelation supplies the seven: seven menorot =
+  seven **zeqenim** (Rev 1:20), one lamp-elder per assembly, the menorah as an elder-bench of
+  seven. The OT court is the seventy — and both institution texts write it *partitively*:
+  שִׁבְעִים **מִ**זִּקְנֵי יִשְׂרָאֵל, "seventy **of/from** the elders of Israel" (Ex 24:1;
+  Num 11:16) — seventy drawn out of the eldership, gathered "unto the **ohel mo'ed**," the tent
+  of the *appointed meeting* (Num 11:16), where the Spirit rests on them and they **prophesy**
+  (Num 11:25) — elders commissioned as messengers at the appointed-meeting place.
+- **The 12 + 70 camp pattern.** Ex 15:27 — Elim: "twelve **עֵינֹת** of water" (*ayin*, H5869 —
+  one word for both **spring and eye**) "and seventy **temarim** (palm-trees); and they
+  encamped there by the waters" — twelve eyes and seventy palms, the sky-camp's numbers pitched
+  at the water. (And the palm-frond is **kappot** temarim, Lev 23:40 — the *kaph* again, waved
+  **lifnei YHWH** seven days.) Gen 46:27/Ex 1:5 — **seventy souls** of Jacob; Deut 32:8 — the
+  nations bounded "according to the number of the children of Israel" (WLC), where the LXX
+  reads "according to the number of the **angels of God**" (Gen 10's table of nations counts
+  seventy) — the seventy runs through souls, nations, and the LXX's messengers in one verse's
+  two readings. Luke 10:1 — after the twelve, "the Lord appointed other **seventy** also, and
+  **sent** them two and two **before his face**" — the sending-commission, and *lifnei* again.
+- **The reading, tiered.** Seven = the elder-bench of one assembly (its menorah). Seventy = the
+  plural of seven — eldership in its fullness, the number of the souls and of the nations.
+  Twenty-four = a different axis entirely: not the count of the court but the **rotation** that
+  keeps the appointed times (Tier 2 §6). Fullness versus schedule — two measures of one
+  institution, not two contradictory censuses. The morphology is fact; the 12/70 deployment is
+  textual; the intensive reading ("the ultimate of seven") is the author's, recorded as such.
