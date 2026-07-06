@@ -957,3 +957,18 @@ and the king planet's Hebrew name Tzedeq belongs to a titled Owner: Malki-Tzedek
 righteousness" (Heb 7:2; Ps 110:4). Resolves the ch. 24 Wandering Stars tension (a
 Messiah-marked planet cannot sit in a condemned class; in the elder witness there is no
 condemned class of lights). In the book at ch. 24.
+
+### Saving the Greek Jude: Enoch Defines the Condemned Stars (appointed-times breakers)
+
+Follow-up to the Hebrew-Jude finding above. The Greek's added clause needs no rejection: Jude
+names his source at v14 ("Enoch also, the seventh from Adam, prophesied of these"), and 1 Enoch
+18:14-16 (repo: data/pseudepigrapha-raw/enoch.txt) defines the class: "a **prison for the stars
+and the host of heaven**... the stars which... have **transgressed the commandment** of the Lord
+in the beginning of their rising, because they **did not come forth at their appointed times**.
+And He was wroth with them, and bound them." The darkness is reserved for TIME-BREAKING stars —
+lawless lights — not for circuit-keepers; so Tzedeq (Malki-Tzedek's namesake) stands clear, and
+the Greek and Hebrew witnesses agree on the referent (wicked men) while the Greek's figure
+carries the book's own charge: abandoning the moedim. Note also Enoch's "prison for the stars
+and the HOST OF HEAVEN" — the identity-bridge phrase again — and the seven bound stars "like
+great burning mountains" (18:13). In the book at ch. 24 (Wandering Stars, two witnesses side by
+side + the Enoch block).
