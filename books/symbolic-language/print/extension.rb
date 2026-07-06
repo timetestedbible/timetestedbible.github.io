@@ -554,23 +554,54 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
 
   SX_HEAD_SIZE       = 9.5     # book heads a touch above the 9pt entries
   SX_TURNOVER_INDENT = 10.8    # ~0.15in hang for wrapped locator lines
+  SX_COLUMNS         = 3       # measured: only ~1% of entries wrap at 3 cols / 9pt
+  SX_COLUMN_GAP      = 14      # comfortable gutter (columns land ~100pt each)
+  SX_EXTRA           = ['1 Enoch', '2 Esdras'].freeze   # cited outside the 66-book canon
+
+  # One or two italic summary lines computed from the collected catalog at ink
+  # time, so they stay current on every build. Canonical counts exclude the
+  # extra-canonical tail, which is mentioned separately only when present.
+  def sx_stats_line entries
+    refs = extra_refs = cites = 0
+    books = {}
+    chapters = {}
+    entries.each do |book, verses|
+      if SX_EXTRA.include? book
+        extra_refs += verses.size
+        next
+      end
+      books[book] = true
+      verses.each do |vd, locs|
+        refs += 1
+        cites += locs.size
+        chapters[[book, vd[/\A\d+/]]] = true
+      end
+    end
+    fmt = ->(n) { n.to_s.gsub(/(\d)(?=(\d{3})+\z)/, '\1,') }
+    %(This book cites #{fmt[refs]} passages from #{books.size} of the 66 books of Scripture #{SX_EMDASH} ) +
+      %(#{fmt[cites]} citations in all, drawn from #{fmt[chapters.size]} chapters of the Bible) +
+      (extra_refs > 0 ? %(, besides #{fmt[extra_refs]} passages from books outside the canon.) : '.')
+  end
 
   # Ink the collected scripture index: books in canonical order as bold heads,
   # one verse per line — "1:16 · 208, 214" (middot separator; an en dash reads
-  # as a range) — in two dense columns (mirrors the gem's convert_index_section
-  # column_box usage). Locators where the verse is block-quoted print bold.
-  # Column/page breaks between entries are taken EXPLICITLY (move_past_bottom
-  # when the next line cannot fit), so every mid-book break re-opens with a
-  # "Book — continued" head; a fresh book head at a column top needs none.
+  # as a range) — in three dense columns (mirrors the gem's
+  # convert_index_section column_box usage). Locators where the verse is
+  # block-quoted print bold. Column/page breaks between entries are taken
+  # EXPLICITLY (move_past_bottom when the next line cannot fit), so every
+  # mid-book break re-opens with a "Book — continued" head; a fresh book head
+  # at a column top needs none.
   def ink_scripture_index
     entries = sx_folio_entries
     return if entries.empty?
     theme_font :base do
+      ink_prose %(<em>#{sx_stats_line entries}</em>),
+        align: :left, size: SX_HEAD_SIZE, margin_bottom: 3, hyphenate: false
       ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full.</em>',
         align: :left, size: SX_HEAD_SIZE, margin_bottom: 10, hyphenate: false
       esc = ->(s) { s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
       end_cursor = nil
-      column_box [bounds.left, cursor], columns: 2, width: bounds.width, reflow_margins: true, spacer: (@theme.index_column_gap || 24) do
+      column_box [bounds.left, cursor], columns: SX_COLUMNS, width: bounds.width, reflow_margins: true, spacer: SX_COLUMN_GAP do
         line_h = height_of_typeset_text 'A'
         first = true
         entries.each do |book, verses|
