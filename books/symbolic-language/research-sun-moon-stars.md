@@ -928,3 +928,18 @@ Messiah centuries after David died — Ezek 34:23 "one shepherd… **my servant 
 among the lights: Ps 89:36-37, "his throne as the **sun** before me… established for ever as the
 **moon**, a faithful witness." The qaton son who kept the sheep holds the qaton light's throne;
 the shepherd enters by the door (John 10:1-2 — the east-gate argument of the Pearls chapter).
+
+### Neged: the Throne as the Sun's Counterpart (Ps 89:36)
+
+Author's find, verified; in the book at ch. 24's David passage. Ps 89:37 (Heb): וְכִסְאוֹ
+כַשֶּׁמֶשׁ **נֶגְדִּי** — "his throne as the sun **negdi**." Neged H5048, Strong's: "a front,
+i.e. part opposite; specifically **a counterpart, or mate**; usually over against or before" —
+the KJV's flat "before me" hides the opposition. And it is the word of Gen 2:18: עֵזֶר
+**כְּנֶגְדּוֹ**, "an help **meet** for him" — the counterpart-mate. So the verse reads: his
+throne as the sun *standing opposite me, my counterpart* — the geometry of the full moon at
+opposition, returning the sun's whole face — and the next verse names the seat: "established
+for ever as the moon, a faithful witness in the shachaq." Chain: kisse = keseh letters (full
+moon) + neged (the facing counterpart/mate — the ezer-kenegdo word, carrying the bride-office
+into the throne verse) + v37's moon-witness. The throne, the full moon, the faithful witness —
+one sentence pair. Weld: Ps 72:5 lifnei yareach ("before the FACE of the moon") gives the same
+face-to-face geometry from the worshipper's side.
