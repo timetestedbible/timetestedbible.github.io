@@ -346,3 +346,7 @@ body.theme-light .book-chapter-body { color: var(--text-primary); }
 /* Line-by-line poem walk: air above each restated-line unit */
 .book-chapter-body p.poemline,
 .book-chapter-body .paragraph.poemline { margin-top: 1.15em; }
+
+/* Display couplets (centered Hebrew + transliteration) breathe wider */
+.book-chapter-body p.breath,
+.book-chapter-body .paragraph.breath { margin-top: 1.6em; }

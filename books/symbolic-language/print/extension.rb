@@ -756,6 +756,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       # poemline units (restated poem line + commentary) get air above so the
       # line-by-line walk doesn't run together visually.
       move_down 5 if (node.role? && node.roles.include?('poemline')) && !at_page_top?
+      # display couplets (centered Hebrew + transliteration) breathe wider
+      move_down 10 if (node.role? && node.roles.include?('breath')) && !at_page_top?
       balance_prose_paragraph node
     end
     unless scratch?
