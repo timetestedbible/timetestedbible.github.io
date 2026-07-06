@@ -324,3 +324,31 @@ wordplay/consonantal arguments no citation list can carry — their chapters
 must do it (the graders can't see Strong's); New name upgraded refs to
 Isa 62:2-5 (new name = married) after round 2. See memory:
 symbolic-language-no-overfitting.
+
+---
+
+## Re-run 2026-07-06 — 135 terms (glossary expanded since first run)
+
+Method identical: 3 blind consensus-proxy agents (bare term list, no
+repo access, no lookups) → 3 independent graders (verdict rubric as
+printed in the Introduction's table + fresh-eyes citation test against
+kjv.json). Raw rows: /tmp/stats/{consensus,grades}-{1,2,3}.tsv (session
+artifacts).
+
+Verdicts over 135: **Match 49 (36%) · Refined 53 (39%) · Divergent 21
+(16%) · Novel 12 (9%)** — printed table updated (was 28/43/12/16 over
+~120). Movement: Match up 8 pts (several once-novel terms now read as
+consensus-adjacent when the entry states the range plainly); Novel down
+7 (the glossary's newer entries mostly sharpen known symbols rather
+than stake bare claims); Divergent up 4 (Sun/Moon/Stars-family entries
+now overtly contradict the devotional readings).
+
+Citations: **Strong 80 (59%) · Partial 51 (38%) · Insufficient 4 (3%)**.
+The four insufficient: Butter (chemah churned-word), Heart of the earth
+(Ezek 5:5 argument), Pearl (consonantal poems), Wind (Zech 6:5 KJV
+reads "spirits") — each rests on chapter-length work no citation list
+carries; sentence to that effect kept in the Introduction.
+
+Note: sym-virgin was re-graded REFINED after its same-day definition
+sharpening (espoused standing / bride's companions / virgin of Israel —
+see research-ten-virgins.md); the printed percentages include that.
