@@ -843,6 +843,30 @@ claim. Read whole, its choices are systematic, not one-off:
    letters. With 4:4's garments לְבֵינִים on the elders, the whole court — Occupant and bench —
    is dressed in the levanah word-family.
 
+### White: Worn or Seated? (the elders' raiment vs the white throne)
+
+Author's question, answered by the texts' own split — verified:
+
+- **Dan 7:9 (Aramaic):** the white belongs to the **Occupant**, not the seat — לְבוּשֵׁהּ
+  כִּתְלַג חִוָּר "his **garment** white as snow," hair "like pure wool"; the **throne** is
+  שְׁבִיבִין דִּי־נוּר "fiery flames," its wheels "burning fire." The visible white disc is the
+  *robe* (Ps 104:2 — "who coverest thyself with **light as with a garment**"); the seat burns.
+- **Rev 4:4:** the **elders** wear the white (raiment; their thrones get no color) — Hebrew
+  witness: מַלְבּוּשִׁים לְבֵינִים.
+- **Rev 20:11:** the throne itself is white **exactly once**, at the judgment session — "a
+  great white throne." Hebrew witness: כִּסֵּא גָּדוֹל **וְלָבָן** — the **kisse/keseh letters
+  seated beside the lavan/levanah letters**, throne-white as one phrase; and "from before his
+  **face** (מִפָּנָיו) the heaven and the earth fled" — *panim* again.
+- The rank-pattern: whiteness is **worn** at every level — the Occupant's snow-garment (Dan
+  7:9), the elders' raiment (Rev 4:4), robes *given* to the souls (Rev 6:11 מַלְבּוּשֵׁי
+  לָבָן), the armies' white silk (Rev 19:14) — until the court sits in final judgment, when the
+  seat itself shows white and full.
+- **Bonus, Rev 19:14 (Hebrew witness):** "the armies which were in heaven" is rendered
+  **צִבְאוֹת הַשָּׁמַיִם** — *the hosts of the heavens*, the exact identity-bridge phrase of
+  1 Kgs 22:19/Deut 4:19 (Tier 1 §1) — riding סוּסֵי **לְבֵינָה** and clothed in **לְבֵינָה**
+  silk. Where the Greek says "armies," the second witness writes the OT's technical star-court
+  term, dressed in the moon-family letters.
+
 ### Seventy: the Plural of Seven (the author's harmonization of §8's tension)
 
 The author's resolution of the seventy-vs-twenty-four tension recorded at §8 and in the
