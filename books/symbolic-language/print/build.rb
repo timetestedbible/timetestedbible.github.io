@@ -161,14 +161,34 @@ loop do
   warn "  footnote pass #{passes}: reserved #{fmt.call reserve} -> needed #{fmt.call detected}"
   break if detected == reserve                     # exact fixed point — no stale bands
   if history.include?(detected) || passes >= 10
-    warn "  footnote layout oscillating — falling back to union reserve"
-    (history + [detected, reserve]).each { |m| m.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max } }
+    # Union ONLY the current state with the detected needs — unioning the whole
+    # pass history drags in early-pass page numbers (shifted layouts) and litters
+    # the book with stale bands.
+    warn "  footnote layout oscillating — reserving the union of the cycle"
+    detected.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max }
+    last_needed = nil
     loop do
       passes += 1
       verify = render.call reserve, false
       warn "  footnote pass #{passes} (union): reserved #{fmt.call reserve} -> needed #{fmt.call verify}"
+      last_needed = verify
       break if verify.all? { |pg, h| reserve[pg] && reserve[pg] >= h } || passes >= 16
       verify.each { |pg, h| reserve[pg] = [reserve[pg] || 0, h].max }
+    end
+    # Prune: union pages the settled layout no longer needs keep a phantom band
+    # that shortens the page and bumps block quotes. Try the exact needed-set
+    # once; keep it only if a fresh pass proves it sufficient.
+    if last_needed && last_needed.keys.sort != reserve.keys.sort
+      pruned = {}
+      last_needed.each { |pg, h| pruned[pg] = [reserve[pg] || 0, h].max }
+      passes += 1
+      check = render.call pruned, false
+      if check.all? { |pg, h| pruned[pg] && pruned[pg] >= h }
+        warn "  footnote pass #{passes} (prune): accepted #{fmt.call pruned}"
+        reserve = pruned
+      else
+        warn "  footnote pass #{passes} (prune): rejected — keeping union"
+      end
     end
     break
   end
