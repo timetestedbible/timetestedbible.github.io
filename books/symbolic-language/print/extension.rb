@@ -855,6 +855,35 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     # otherwise: >= 2 lines here AND >= 2 on the next page -> let super break it naturally
   end
 
+  # Full-page art plates on the VERSO facing a chapter's recto opening.
+  # Keyed by chapter id (slug); paths resolve against the document imagesdir
+  # (the chapters dir). The plate page is flagged @imported_page exactly like
+  # the blank parity spacers — no running head, no folio — and occupies a page
+  # number, so folio parity holds. When the chapter would have needed a blank
+  # verso spacer anyway, the plate absorbs it (no page-count change); when the
+  # chapter would have opened directly after a verso, the plate costs two
+  # pages (a true-blank recto spacer + the plate verso).
+  CHAPTER_PLATES = {
+    'noah-uncovered' => 'noah-uncovered-plate-print.jpg',
+  }.freeze
+
+  # Fill the trimmed page as fully as the aspect allows, centered — drawn on
+  # the page canvas (edge to edge, ignoring margins), so a plate whose aspect
+  # matches the 6x9 trim bleeds the full page.
+  def ink_chapter_plate chapter, target
+    dir = (chapter.document.attr 'imagesdir') || '.'
+    path = ::File.join dir, target
+    unless ::File.readable? path
+      warn %(chapter plate not found, leaving verso blank: #{path})
+      return
+    end
+    canvas do
+      image path, fit: [bounds.width, bounds.height], position: :center, vposition: :center
+    end
+  rescue StandardError => e
+    warn %(chapter plate failed (#{e.class}: #{e.message}), leaving verso blank: #{path})
+  end
+
   # Render the chapter epigraph (if any) ABOVE the chapter title. Real chapters
   # give us the TOC, PDF bookmarks, and running heads; this keeps the epigraph
   # above the title. Data comes from $chapter_epigraphs (set by build.rb).
@@ -862,11 +891,27 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # next page falls on a verso, insert a spacer — but a TRUE blank: flagging
   # it imported makes ink_running_content skip it (no running head, no
   # folio), while it still occupies a page number so folio parity holds.
-  def start_new_chapter _chapter
+  # A chapter with a CHAPTER_PLATES entry gets its plate on that facing verso
+  # (in place of the blank); the part-kicker case needs no special handling —
+  # @pending_part inks on the chapter recto (ink_chapter_title), after the
+  # plate verso, so a part-opening chapter with a plate still works.
+  def start_new_chapter chapter
     start_new_page unless at_page_top?
-    unless recto_page?
+    if !scratch? && (plate = CHAPTER_PLATES[chapter && chapter.id])
+      if recto_page?
+        # parity demands the plate's verso start a leaf later: this empty
+        # recto becomes a true-blank spacer, the plate takes the verso after.
+        state.page.instance_variable_set :@imported_page, true
+        start_new_page
+      end
+      ink_chapter_plate chapter, plate
       state.page.instance_variable_set :@imported_page, true
-      start_new_page
+      start_new_page                          # the chapter's recto opening
+    else
+      unless recto_page?
+        state.page.instance_variable_set :@imported_page, true
+        start_new_page
+      end
     end
   end
 
