@@ -759,6 +759,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # balance themselves as a unit (above), so paragraphs inside a quote — including
   # the injected citation — are excluded via @in_quote.
   def convert_paragraph node
+    # [.nohyph] role: suppress hyphenation for this paragraph (the gem guards
+    # every hyphenation call with `defined? @hyphenator`) — used where a break
+    # would split a brand name ("Bit-Shares" on the About page).
+    if (nohyph = node.role? && (node.roles.include? 'nohyph') && (defined? @hyphenator))
+      saved_hyphenator = @hyphenator
+      remove_instance_variable :@hyphenator
+    end
     unless scratch? || @in_quote
       flush_table_float
       # poemline units (restated poem line + commentary) get air above so the
@@ -784,6 +791,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       normalize_page_bottom unless @in_quote
     end
     result
+  ensure
+    @hyphenator = saved_hyphenator if nohyph
   end
 
   def balance_prose_paragraph node
@@ -960,7 +969,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     end
   end
 
-  def ink_chapter_title node, title, opts = {}
+def ink_chapter_title node, title, opts = {}
     # Record this chapter's start folio under its dest anchor — the map the
     # NEXT pass uses to print ", p. N" after chapter cross-references.
     if !scratch? && node.id && @sx_folios_out && (folio = page_number - sx_folio_offset) >= 1
