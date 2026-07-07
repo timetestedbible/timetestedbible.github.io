@@ -880,6 +880,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'orphans-widows-and-the-fatherless' => 'widow-door-plate-print.jpg',
     'the-remnant'           => 'olive-gleanings-plate-print.jpg',
     'justice-and-judgment'  => 'gate-judgment-plate-print.jpg',
+    'liberty'               => 'jubilee-plate-print.jpg',
+    'time-tested-tradition' => 'ttt-cover-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
