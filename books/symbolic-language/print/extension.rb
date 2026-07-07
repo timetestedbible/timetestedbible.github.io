@@ -766,6 +766,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       saved_hyphenator = @hyphenator
       remove_instance_variable :@hyphenator
     end
+    # Copyright-page blocks are set flush — no book-style first-line indent.
+    if (noindent = node.role? && (node.roles.any? { |r| r.start_with? 'copyright' }))
+      saved_indent = @theme.prose_text_indent
+      @theme.prose_text_indent = 0
+    end
     unless scratch? || @in_quote
       flush_table_float
       # poemline units (restated poem line + commentary) get air above so the
@@ -792,6 +797,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     end
     result
   ensure
+    @theme.prose_text_indent = saved_indent if noindent
     @hyphenator = saved_hyphenator if nohyph
   end
 
