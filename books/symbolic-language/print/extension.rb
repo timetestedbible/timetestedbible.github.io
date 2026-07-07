@@ -878,6 +878,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'marriage-and-divorce'  => 'hosea-silver-plate-print.jpg',
     'wings'                 => 'hem-plate-print.jpg',
     'orphans-widows-and-the-fatherless' => 'widow-door-plate-print.jpg',
+    'the-remnant'           => 'olive-gleanings-plate-print.jpg',
+    'justice-and-judgment'  => 'gate-judgment-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
