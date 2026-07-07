@@ -4,19 +4,14 @@ front_matter: true
 slug: copyright
 order: 0.1
 permalink: /books/symbolic-language/copyright/
-description: "Copyright and public-domain dedication."
+description: "Copyright, permissions, and credits."
 og_title: "Copyright — MEAT The Bible's Symbolic Language"
 ---
-// NOTE: matches the copyright/public-domain dedication of Time Tested Tradition.
-// TODO assign a NEW ISBN — TTT's own ISBN 978-1-7365211-4-4 cannot be reused for this title.
+// TODO assign a NEW ISBN before upload — TTT's own ISBN 978-1-7365211-4-4 cannot be reused for this title.
+// %nonfacing on the first block lets the page open on the TITLE VERSO (trade
+// convention for the copyright page) instead of being forced to a recto.
 
-[.text-center.copyright]
-{nbsp} +
-{nbsp} +
-{nbsp} +
-{nbsp}
-
-[.text-center.copyright-title]
+[.text-center.copyright-title%nonfacing]
 MEAT The Bible's Symbolic Language
 
 [.text-center.copyright]
@@ -26,7 +21,22 @@ MEAT The Bible's Symbolic Language
 Copyright © 2026 Daniel Larimer
 
 [.text-center.copyright]
-You may use and reproduce this work in its unmodified form, without any restriction; it has been placed in the public domain.
+This work may be freely reproduced and distributed in its complete, unmodified form. All other rights reserved.
+
+[.text-center.copyright]
+First Edition
+
+[.text-center.copyright]
+{nbsp}
+
+[.text-center.copyright]
+Unless otherwise noted, Scripture quotations are from the King James Version, which is in the public domain. Quotations marked ASV are from the American Standard Version (1901), public domain; those marked BSB and BLB are from the Berean Standard Bible and Berean Literal Bible, courtesy of Bible Hub, used freely.
+
+[.text-center.copyright]
+Scripture quotations marked NKJV are taken from the New King James Version®. Copyright © 1982 by Thomas Nelson. Used by permission. All rights reserved. Scripture quotations marked ESV are from the ESV® Bible (The Holy Bible, English Standard Version®), copyright © 2001 by Crossway. Used by permission. All rights reserved. Scripture quotations marked AMP are taken from the Amplified® Bible, copyright © 2015 by The Lockman Foundation. Used by permission. (lockman.org)
+
+[.text-center.copyright]
+The cover and the interior plates were composed by the author and rendered with the assistance of artificial-intelligence image tools, and the text was prepared and typeset with the assistance of AI language models. The arguments, the derivations, and the doctrine are the author's own.
 
 [.text-center.copyright]
 {nbsp}
@@ -38,12 +48,11 @@ _Freely you have received, freely give._
 — Matthew 10:8
 
 [.text-center.copyright]
-{nbsp} +
-{nbsp} +
 {nbsp}
 
-[.text-center.copyright]
-https://TimeTested.Bible[https://TimeTested.Bible]
-
-[.text-center.copyright]
+[.text-center.copyright%unbreakable]
+Published by the author +
+Printed in the United States of America +
+10{nbsp}{nbsp}9{nbsp}{nbsp}8{nbsp}{nbsp}7{nbsp}{nbsp}6{nbsp}{nbsp}5{nbsp}{nbsp}4{nbsp}{nbsp}3{nbsp}{nbsp}2{nbsp}{nbsp}1 +
+https://TimeTested.Bible[TimeTested.Bible] +
 ISBN: _to be assigned_

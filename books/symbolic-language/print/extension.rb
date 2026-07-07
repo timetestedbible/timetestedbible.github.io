@@ -301,6 +301,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # branch makes the internal jump (<a anchor=...>) but omits the role class, so a
   # roled xref loses its styling; re-add the class while keeping the internal anchor.
   def convert_inline_anchor node
+    # External links whose visible text IS the target (modulo scheme/case) must
+    # not print the bracketed URL twice — "TimeTested.Bible [https://…]". The
+    # gem's 'bare' role renders the text alone, hyperlink intact.
+    if node.type == :link && (t = node.text) && (tgt = node.target) &&
+        (tgt.sub(%r{^https?://}, '').chomp('/').downcase == t.sub(%r{^https?://}, '').chomp('/').downcase)
+      node.add_role 'bare' unless node.role? && (node.role.split.include? 'bare')
+    end
     if node.type == :xref && (role = node.role) && (refid = node.attributes['refid']) && node.text && !node.attributes['path']
       %(<a anchor="#{derive_anchor_from_id refid}" class="#{role}">#{node.text}</a>).gsub ']', '&#93;'
     elsif node.type == :link && (target = node.target).to_s.start_with?('/books/symbolic-language/')
@@ -646,7 +653,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     fmt = ->(n) { n.to_s.gsub(/(\d)(?=(\d{3})+\z)/, '\1,') }
     %(This book cites #{fmt[refs]} passages from #{books.size} of the 66 books of Scripture #{SX_EMDASH} ) +
       %(#{fmt[cites]} citations in all, drawn from #{fmt[chapters.size]} chapters of the Bible) +
-      (extra_refs > 0 ? %(, besides #{fmt[extra_refs]} passages from books outside the canon.) : '.')
+      (extra_refs > 0 ? %(, besides #{fmt[extra_refs]} #{extra_refs == 1 ? 'passage' : 'passages'} from books outside the canon.) : '.')
   end
 
   # Ink the collected scripture index: books in canonical order as bold heads,
@@ -889,6 +896,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'mountain'              => 'colossus-mountain-plate-print.jpg',
     'sea-and-waters'        => 'peace-be-still-plate-print.jpg',
     'trees'                 => 'kingdom-tree-plate-print.jpg',
+    'grass'                 => 'harvest-grass-plate-print.jpg',
+    'garments'              => 'wedding-garment-plate-print.jpg',
+    'the-bow'               => 'covenant-bow-plate-print.jpg',
+    'jacob-israel-and-ephraim' => 'jabbok-plate-print.jpg',
+    'butter'                => 'butter-churn-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
@@ -994,6 +1006,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
     end
+    # Chapter openers carry no running head (trade convention — the page
+    # already displays its own title); the folio footer stays.
+    @disable_running_content[:header].add page_number unless scratch?
     super
   end
 end

@@ -103,6 +103,10 @@ PARTS = {
   'glossary'           => 'Part Seven — The Glossary',
 }
 
+# About the Author closes the book AFTER the generated Scripture Index.
+back_entries = main_entries.select { |c| c[:slug] == 'about-the-author' }
+main_entries -= back_entries
+
 # Main chapters: auto page break, TOC entry, PDF bookmark, running head.
 # A chapter whose front matter carries `edition: digital` appears only in the
 # screen/web editions (the print run gets its summary elsewhere); `edition:
@@ -118,7 +122,16 @@ main_entries.each do |c|
   when 'digital' then doc << "\nifndef::print-edition[]\n"
   when 'print'   then doc << "\nifdef::print-edition[]\n"
   end
-  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
+  body = c[:body]
+  if c[:slug] == 'glossary'
+    # Keep each glossary entry whole on its page: a split entry strands its
+    # see-line at a column top. Every blank-line-delimited [[sym-…]] block is
+    # wrapped in an unbreakable open block.
+    body = body.split(/\n{2,}/).map { |blk|
+      blk.lstrip.start_with?('[[sym-') ? "[%unbreakable]\n--\n#{blk}\n--" : blk
+    }.join("\n\n")
+  end
+  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << body << "\n"
   doc << "\nendif::[]\n" if c[:edition]
   warn "  + #{c[:title]}  (#{c[:file]}#{c[:edition] ? ", #{c[:edition]}-only" : ''})"
 end
@@ -131,6 +144,11 @@ end
 # consistent across passes.
 doc << "\n[#scripture-index]\n== Scripture Index\n"
 warn '  + Scripture Index  (generated from citations by extension.rb)'
+
+back_entries.each do |c|
+  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
+  warn "  + #{c[:title]}  (#{c[:file]}, back matter)"
+end
 
 $chapter_epigraphs = epigraph_map
 

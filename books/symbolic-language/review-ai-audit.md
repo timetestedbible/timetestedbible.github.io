@@ -33,6 +33,11 @@ standard solves print quality and closes the seam at once.
 
 ## A. FUNCTIONAL DEFECTS — unambiguous; fix on approval
 
+> STATUS 2026-07-07: A1–A33 applied (A2 resolved by restoring the quoted translation's
+> own wording inside quote blocks — prose keeps "the LORD"; ch 33 blocks now marked
+> NKJV/ESV/AMP/BSB/BLB by wording-match, worth an author spot-check). B applied except
+> B1 (real ISBN, deferred to upload) and B8 (blank rectos, deferred until plate set final).
+
 Scripture/citation accuracy:
 - [ ] **A1. ch33 broken quote**: "fall into the hands of the living the LORD" (Heb 10:31) —
       artifact of the mechanical 𐤉𐤄𐤅𐤄→"the LORD" sweep running inside quotes.
@@ -175,7 +180,7 @@ Consistency passes (mechanical, global):
       receipts" + "deep dive" + "beyond compelling" + "99.9% certainty" + "must-read" +
       "sacred cow" (all ch27 — the TTT blurb chapter needs a full rewrite in book voice) ·
       "aka" (33:87) · "Stop sinning!" (33:126, the book's only exclamation) · "God's résumé"
-      (14:162) · "buzzword" (05:21) · "failure mode" (01:271) · "doom-unit" (32:109) · "are
+      (14:162) · ~~"buzzword" (05:21)~~ (author keeps "biblical buzzword") · "failure mode" (01:271) · "doom-unit" (32:109) · "are
       not in tension" (32:134) · "tied the knot" (28:109, unintentionally comic) · "paperwork"
       (09:183) · "a Husband who would not quit" (09:257) · "sales pitch" (15:144) · "market
       forces" (15:32) · "empty wallet / balance" (11:108/125) · "load-bearing" (25:76) ·
