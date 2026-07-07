@@ -103,8 +103,12 @@ PARTS = {
   'glossary'           => 'Part Seven — The Glossary',
 }
 
-# About the Author closes the book AFTER the generated Scripture Index.
-back_entries = main_entries.select { |c| c[:slug] == 'about-the-author' }
+# Back matter, rendered AFTER the generated Scripture Index: the Further
+# Studies pointer page (print-only; a compact section, not a full chapter
+# opening — author's ruling 2026-07-07), then About the Author closes the book.
+BACK_SLUGS = %w[further-studies about-the-author].freeze
+back_entries = main_entries.select { |c| BACK_SLUGS.include? c[:slug] }
+                           .sort_by { |c| BACK_SLUGS.index c[:slug] }
 main_entries -= back_entries
 
 # Main chapters: auto page break, TOC entry, PDF bookmark, running head.
@@ -146,8 +150,13 @@ doc << "\n[#scripture-index]\n== Scripture Index\n"
 warn '  + Scripture Index  (generated from citations by extension.rb)'
 
 back_entries.each do |c|
+  case c[:edition]
+  when 'digital' then doc << "\nifndef::print-edition[]\n"
+  when 'print'   then doc << "\nifdef::print-edition[]\n"
+  end
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
-  warn "  + #{c[:title]}  (#{c[:file]}, back matter)"
+  doc << "\nendif::[]\n" if c[:edition]
+  warn "  + #{c[:title]}  (#{c[:file]}, back matter#{c[:edition] ? ", #{c[:edition]}-only" : ''})"
 end
 
 $chapter_epigraphs = epigraph_map

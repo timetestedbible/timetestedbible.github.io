@@ -901,6 +901,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'wings'                 => 'hem-plate-print.jpg',
     'orphans-widows-and-the-fatherless' => 'widow-door-plate-print.jpg',
     'the-remnant'           => 'olive-gleanings-plate-print.jpg',
+    'heaven-and-hell'       => 'furnace-plate-print.jpg',
     'justice-and-judgment'  => 'gate-judgment-plate-print.jpg',
     'liberty'               => 'jubilee-plate-print.jpg',
     'worship'               => 'temple-worship-plate-print.jpg',
@@ -1018,7 +1019,7 @@ def ink_chapter_title node, title, opts = {}
     # measured drop.
     if node.id == 'how-to-use'
       move_down HOW_TO_USE_SINK
-    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'about-the-author')
+    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'further-studies' || node.id == 'about-the-author')
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
     end
