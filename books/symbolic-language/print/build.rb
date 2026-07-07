@@ -147,7 +147,9 @@ build_target = lambda do |media, out|
     $fn_detected_pages = {}
     attrs = {
       'pdf-themesdir'       => DIR,
-      'pdf-theme'           => 'trade',
+      # prepress carries 0.125in bleed on all sides (trade-bleed extends trade
+      # with page + margin geometry only); screen stays at bare 6x9 trim
+      'pdf-theme'           => (media == 'prepress' ? 'trade-bleed' : 'trade'),
       'pdf-fontsdir'        => FONTS,   # base fonts use explicit GEM_FONTS_DIR/ prefixes; Hebrew fonts resolve here
       'media'               => media,
       'hyphens'             => 'en',

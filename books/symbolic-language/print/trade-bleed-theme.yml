@@ -1,0 +1,24 @@
+# Prepress variant of the trade theme: the page carries BookBaby's 0.125in
+# bleed on ALL FOUR sides (same standard the cover wrap uses — verify against
+# their interior template at upload). Every margin measured from the page edge
+# grows by exactly the bleed, so the text block, running heads, and folios sit
+# at the SAME positions relative to TRIM as the 6x9 trade theme — pagination
+# is unchanged. Only the chapter plates (drawn on the page canvas by
+# extension.rb) actually reach into the bleed; after trimming they run
+# edge-to-edge, and the plate versos read as chapter markers on the fore-edge
+# of the closed book. The screen/digital PDF keeps the plain trade theme.
+extends: ./trade-theme.yml
+
+page:
+  size: [6.25in, 9.25in]
+  margin: [0.825in, 0.775in, 0.825in, 0.925in]   # trade margins + 0.125in bleed each side
+  margin-inner: 0.975in                            # 0.85 + bleed
+  margin-outer: 0.725in                            # 0.6 + bleed
+
+running-content:
+  start-at: after-toc
+
+header:
+  margin: [0.325in, inherit, 0, inherit]   # 0.2in from TRIM + 0.125in bleed
+footer:
+  margin: [0, inherit, 0.325in, inherit]   # 0.2in from TRIM + 0.125in bleed
