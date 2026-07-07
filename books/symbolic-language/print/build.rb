@@ -74,7 +74,7 @@ chapters.each do |path|
   slug  = fm['slug'] || File.basename(path, '.adoc').sub(/^\d+[-_]/, '')
   title = fm['title'] || slug
   epigraph_map[slug] = fm['epigraphs'] if fm['epigraphs'].is_a?(Array) && !fm['epigraphs'].empty?
-  (fm['front_matter'] ? front_entries : main_entries) << { slug: slug, title: title, body: body.strip, file: File.basename(path) }
+  (fm['front_matter'] ? front_entries : main_entries) << { slug: slug, title: title, body: body.strip, file: File.basename(path), edition: fm['edition'] }
 end
 
 # Front matter (e.g. the copyright page): rendered BEFORE the Contents as untitled
@@ -104,13 +104,23 @@ PARTS = {
 }
 
 # Main chapters: auto page break, TOC entry, PDF bookmark, running head.
+# A chapter whose front matter carries `edition: digital` appears only in the
+# screen/web editions (the print run gets its summary elsewhere); `edition:
+# print` is the inverse (e.g. the Further Studies pointer page). The whole
+# chapter — heading included — is wrapped in a preprocessor conditional on the
+# print-edition attribute, which build_target sets only for media=prepress.
 main_entries.each do |c|
   if (part = PARTS[c[:slug]])
     doc << "\n= #{part}\n"
     warn "  = #{part}"
   end
+  case c[:edition]
+  when 'digital' then doc << "\nifndef::print-edition[]\n"
+  when 'print'   then doc << "\nifdef::print-edition[]\n"
+  end
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
-  warn "  + #{c[:title]}  (#{c[:file]})"
+  doc << "\nendif::[]\n" if c[:edition]
+  warn "  + #{c[:title]}  (#{c[:file]}#{c[:edition] ? ", #{c[:edition]}-only" : ''})"
 end
 
 # Scripture Index — generated back matter: an empty chapter the converter
@@ -135,21 +145,25 @@ build_target = lambda do |media, out|
     $fn_reserve_pages  = reserve_pages
     $fn_flush          = do_flush
     $fn_detected_pages = {}
+    attrs = {
+      'pdf-themesdir'       => DIR,
+      'pdf-theme'           => 'trade',
+      'pdf-fontsdir'        => FONTS,   # base fonts use explicit GEM_FONTS_DIR/ prefixes; Hebrew fonts resolve here
+      'media'               => media,
+      'hyphens'             => 'en',
+      'imagesdir'           => SRC,
+      'front-cover-image'   => "image:#{File.join(DIR, 'title-page.svg')}[fit=fill]",
+    }
+    # The paper edition trims digital-only chapters and long-form proof runs
+    # (ifdef/ifndef::print-edition[] in the sources); screen and web keep them.
+    attrs['print-edition'] = '' if media == 'prepress'
     Asciidoctor.convert doc,
       backend: 'pdf',
       safe: :unsafe,
       base_dir: SRC,
       to_file: out,
       mkdirs: true,
-      attributes: {
-        'pdf-themesdir'       => DIR,
-        'pdf-theme'           => 'trade',
-        'pdf-fontsdir'        => FONTS,   # base fonts use explicit GEM_FONTS_DIR/ prefixes; Hebrew fonts resolve here
-        'media'               => media,
-        'hyphens'             => 'en',
-        'imagesdir'           => SRC,
-        'front-cover-image'   => "image:#{File.join(DIR, 'title-page.svg')}[fit=fill]",
-      }
+      attributes: attrs
     $fn_detected_pages.sort.to_h
   end
 
