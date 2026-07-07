@@ -295,6 +295,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     ((h || 24) + spacing).ceil
   end
   EPIGRAPH_INDENT = 40   # left/right margin on chapter epigraphs (keeps lines short, no hyphenation)
+  HOW_TO_USE_SINK = 82   # foot-alignment sink for "How to Use This Book" — ink slack below the last line measured ~95pt, but the break test needs a full line height, so the usable slack is less (88 spilled one line). Retune if that chapter's text changes.
 
   # Style roled cross-references (the sym: glossary macro). asciidoctor-pdf's xref
   # branch makes the internal jump (<a anchor=...>) but omits the role class, so a
@@ -966,11 +967,14 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     end
     # Drop the chapter title to about the middle of the page; the epigraph stays
     # above it in the top half. (Guard so a long epigraph never pushes it upward.)
-    # "How to Use This Book" is exempt (author's single-page exception): its
-    # title stays at the top so the conventions fit on one opening page — and
-    # the Glossary and Scripture Index start at the top like the reference
-    # sections they are.
-    unless node.id == 'how-to-use' || node.id == 'glossary' || node.id == 'scripture-index'
+    # The Glossary and Scripture Index start at the top like the reference
+    # sections they are. "How to Use This Book" instead hangs from the FOOT of
+    # its page (author's ruling, 2026-07-06) — whitespace above, last line on
+    # the bottom margin, like a printer's note; HOW_TO_USE_SINK carries the
+    # measured drop.
+    if node.id == 'how-to-use'
+      move_down HOW_TO_USE_SINK
+    elsif !(node.id == 'glossary' || node.id == 'scripture-index')
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
     end
