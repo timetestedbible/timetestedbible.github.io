@@ -888,6 +888,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'the-four-winds'        => 'four-horsemen-plate-print.jpg',
     'mountain'              => 'colossus-mountain-plate-print.jpg',
     'sea-and-waters'        => 'peace-be-still-plate-print.jpg',
+    'trees'                 => 'kingdom-tree-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
