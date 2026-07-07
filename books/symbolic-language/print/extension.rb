@@ -901,6 +901,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'the-bow'               => 'covenant-bow-plate-print.jpg',
     'jacob-israel-and-ephraim' => 'jabbok-plate-print.jpg',
     'butter'                => 'butter-churn-plate-print.jpg',
+    'about-the-author'      => 'author-portrait-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
@@ -1002,7 +1003,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     # measured drop.
     if node.id == 'how-to-use'
       move_down HOW_TO_USE_SINK
-    elsif !(node.id == 'glossary' || node.id == 'scripture-index')
+    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'about-the-author')
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
     end
