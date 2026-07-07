@@ -867,6 +867,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # pages (a true-blank recto spacer + the plate verso).
   CHAPTER_PLATES = {
     'introduction'          => 'five-loaves-plate-print.jpg',
+    'the-parables-of-the-kingdom' => 'sower-plate-print.jpg',
+    'signs-and-similitudes' => 'moriah-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
