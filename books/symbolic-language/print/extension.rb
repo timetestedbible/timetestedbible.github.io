@@ -869,6 +869,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'introduction'          => 'five-loaves-plate-print.jpg',
     'the-parables-of-the-kingdom' => 'sower-plate-print.jpg',
     'signs-and-similitudes' => 'moriah-plate-print.jpg',
+    'sign-of-jonah'         => 'jonah-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
     'the-fool-and-the-wise' => 'fool-and-wise-plate-print.jpg',
