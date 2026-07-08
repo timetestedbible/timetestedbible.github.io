@@ -222,7 +222,7 @@ def emit_barcode(svg, u, bz_x, bz_y):
     bar_h, guard_extra = 0.62, 0.08
     guard = set(range(0,3)) | set(range(45,50)) | set(range(92,95))
     svg.append(f'<g id="layer-barcode">')
-    svg.append(f'  <rect x="{u(bz_x)}" y="{u(bz_y)}" width="{u(bz_w)}" height="{u(bz_h)}" fill="#ffffff" rx="{u(0.04)}"/>')
+    svg.append(f'  <rect x="{u(bz_x)}" y="{u(bz_y)}" width="{u(bz_w)}" height="{u(bz_h)}" fill="#f2ead6" rx="{u(0.06)}"/>')
     svg.append(f'  <text x="{u(bz_x + bz_w/2)}" y="{u(bz_y + 0.21)}" text-anchor="middle" '
                f'font-family="Noto Serif" font-size="{u(0.115)}" fill="#000000">ISBN 978-1-7365211-6-8</text>')
     run = None
@@ -417,6 +417,63 @@ FLAP_TTB = [
     ("Take no man\u2019s word \u2014 verify.", 'i'),
 ]
 
+QR_TTB = [  # HTTPS://TIMETESTED.BIBLE, v3 29x29, ECC H (qrcode lib, 2026-07-08)
+    '11111110111100111000101111111',
+    '10000010111101100110101000001',
+    '10111010010100001010001011101',
+    '10111010100110110001001011101',
+    '10111010110111111111101011101',
+    '10000010110110010110101000001',
+    '11111110101010101010101111111',
+    '00000000000100110001100000000',
+    '00010010001001110101000111011',
+    '11101101100010011001110011111',
+    '01011010001100011000110001001',
+    '10110101000001001010000110000',
+    '01101110110110110101001110101',
+    '10000001011011111100010010101',
+    '01101110001011000101001010110',
+    '11100000000000111101100010011',
+    '00011011010111101011000011011',
+    '00010000110100101111100000001',
+    '10001011011110101110000011101',
+    '00101001001001010000000111011',
+    '10010011101010110000111111010',
+    '00000000110010001000100010001',
+    '11111110000000110101101010100',
+    '10000010001010101011100010110',
+    '10111010001011001101111110100',
+    '10111010111110110111001011111',
+    '10111010000011000101110111001',
+    '10000010000001010011001110111',
+    '11111110010001010110001110000',
+]
+
+def emit_qr(svg, u, cx, top, size_in=0.80):
+    """Stylized QR: navy rounded modules on a cream panel (same palette as the
+    lockup). ECC level H leaves styling headroom; quiet zone 4 modules."""
+    NAVY, CREAM = '#101830', '#f2ead6'
+    n = len(QR_TTB)
+    mod = size_in / n
+    quiet = 4 * mod
+    px, py = cx - size_in / 2 - quiet, top
+    panel = size_in + 2 * quiet
+    svg.append(f'<g id="layer-flap-qr">')
+    svg.append(f'  <rect x="{u(px)}" y="{u(py)}" width="{u(panel)}" height="{u(panel)}" fill="{CREAM}" rx="{u(0.06)}"/>')
+    x0, y0 = px + quiet, py + quiet
+    # finder patterns: solid rounded squares (7x7 corners)
+    finders = [(0, 0), (n - 7, 0), (0, n - 7)]
+    for fx, fy in finders:
+        svg.append(f'  <rect x="{u(x0 + fx*mod)}" y="{u(y0 + fy*mod)}" width="{u(7*mod)}" height="{u(7*mod)}" fill="{NAVY}" rx="{u(1.75*mod)}"/>')
+        svg.append(f'  <rect x="{u(x0 + (fx+1)*mod)}" y="{u(y0 + (fy+1)*mod)}" width="{u(5*mod)}" height="{u(5*mod)}" fill="{CREAM}" rx="{u(1.25*mod)}"/>')
+        svg.append(f'  <rect x="{u(x0 + (fx+2)*mod)}" y="{u(y0 + (fy+2)*mod)}" width="{u(3*mod)}" height="{u(3*mod)}" fill="{NAVY}" rx="{u(0.9*mod)}"/>')
+    in_finder = lambda r, c: any(fx <= c < fx+7 and fy <= r < fy+7 for fx, fy in finders)
+    for r, row in enumerate(QR_TTB):
+        for c, bit in enumerate(row):
+            if bit == '1' and not in_finder(r, c):
+                svg.append(f'  <circle cx="{u(x0 + (c+0.5)*mod)}" cy="{u(y0 + (r+0.5)*mod)}" r="{u(0.42*mod)}" fill="{NAVY}"/>')
+    svg.append('</g>')
+
 def emit_flap(svg, u, layer, x0, col_w, y0, lines, size=0.16, pitch=0.27):
     svg.append(f'<g id="{layer}" fill="#f0ebdd" font-family="Noto Serif" font-size="{u(size)}" {TEXT_SHADOW}>')
     yy = y0
@@ -511,6 +568,7 @@ def build_jacket():
     # 2026-07-08): the TimeTested.Bible pitch on the front flap; back flap
     # art-only.
     emit_flap(svg, u, 'layer-flap-front', 18.056, 3.125, 1.30, FLAP_TTB)
+    emit_qr(svg, u, (18.056 + 21.181) / 2, 7.65)
     _guides(svg, u, W, H, (BLD, FFOLD_L, SP0, SP1, FFOLD_R, W - BLD - 0.0), (TRIM_T, TRIM_B))
     out = 'cover-jacket-summit-meat.svg'
     open(out, 'w').write('\n'.join(svg) + '\n</svg>')
