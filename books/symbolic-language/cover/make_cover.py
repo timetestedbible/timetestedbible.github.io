@@ -607,19 +607,23 @@ def emit_ttt_flap(svg, u, x0, col_w):
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
                f'font-size="{u(0.13)}" fill-opacity="0.9">by Daniel Larimer</text>')
     yy += 0.40
-    for line in ("~Time Tested Tradition~ does a deep",
-                 "dive into history, testing every",
-                 "primary source and calendar theory",
-                 "against the sun, moon, and stars",
-                 "to prove the year of the cross and",
-                 "timing of the appointed feasts of",
-                 "the LORD. This is must read ^meat^",
-                 "for those interested in testing the",
-                 "tradition we have inherited from",
-                 "our fathers."):
+    # pitch: justified both edges (author's ruling 2026-07-08), final line ragged
+    measure = 2.85
+    xj = cx - measure / 2
+    pitch_lines = ("~Time Tested Tradition~ does a deep dive",
+                   "into history, testing every primary",
+                   "source and calendar theory against the",
+                   "sun, moon, and stars to prove the year",
+                   "of the cross and timing of the appointed",
+                   "feasts of the LORD. This is must read",
+                   "^meat^ for those interested in testing",
+                   "the tradition we have inherited from",
+                   "our fathers.")
+    for i, line in enumerate(pitch_lines):
         rendered = re.sub(r'\^([^^]+)\^', r'<tspan fill="#eda820" font-style="italic">\1</tspan>', line)
         rendered = re.sub(r'~([^~]+)~', r'<tspan font-style="italic">\1</tspan>', rendered)
-        svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-size="{u(0.15)}">{rendered}</text>')
+        just = '' if i == len(pitch_lines) - 1 else f' textLength="{u(measure)}" lengthAdjust="spacing"'
+        svg.append(f'  <text x="{u(xj)}" y="{u(yy)}" font-size="{u(0.15)}"{just}>{rendered}</text>')
         yy += 0.24
     yy += 0.14
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
