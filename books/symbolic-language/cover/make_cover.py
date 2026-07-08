@@ -357,7 +357,7 @@ def build(preset_name):
 #     flap 3.625 | back 6.375 | spine 1.306 | front 6.375 | flap 3.625
 #     keep-free: 0.5in panel-side of flap folds, 0.25in beside spine folds
 
-def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment, img_y=0.0):
+def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment, img_y=0.0, mirror_v=False):
     u = lambda v: round(v * DPI, 1)
     disp_w = img_disp_h * (SUMMIT_W / SUMMIT_H)
     svg = []
@@ -380,65 +380,39 @@ def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment, img_y=0.0):
 </defs>""")
     svg.append(f'<g id="layer-basefill"><rect width="{u(w_in)}" height="{u(h_in)}" fill="url(#backfill)"/></g>')
     svg.append(f'<g id="layer-background"><!-- swap href for the hi-res regeneration; keep x/y/width/height -->')
+    if mirror_v:
+        # art edge-to-edge: the bands above/below the placed image are its own
+        # mirror (pixel-continuous at the fold seams; they land on the turn-in)
+        for axis_y in (img_y, img_y + img_disp_h):
+            svg.append(f'  <image xlink:href="{SUMMIT_IMG}" x="{u(img_x)}" y="{u(img_y)}" width="{u(disp_w)}" height="{u(img_disp_h)}" '
+                       f'preserveAspectRatio="xMidYMid slice" transform="translate(0,{u(2 * axis_y)}) scale(1,-1)"/>')
     svg.append(f'  <image xlink:href="{SUMMIT_IMG}" x="{u(img_x)}" y="{u(img_y)}" width="{u(disp_w)}" height="{u(img_disp_h)}" '
                f'preserveAspectRatio="xMidYMid slice"/></g>')
     return svg, u
 
-FLAP_FRONT = [
-    ("\u201cI have fed you with ^milk^, and", 'ci'),
-    ("not with ^meat^: for hitherto ye", 'ci'),
-    ("were not able to bear it.\u201d", 'ci'),
-    ("1 Corinthians 3:2", 'cc'),
+FLAP_TTB = [
+    ("TIMETESTED.BIBLE", 'h'),
     ("", ''),
-    ("Milk is the word pre-digested \u2014", ''),
-    ("teaching handed over ready to", ''),
-    ("swallow. Meat is Scripture\u2019s", ''),
-    ("solid food: the Bible\u2019s own", ''),
-    ("symbolic language, and the skill", ''),
-    ("of chewing it yourself.", ''),
+    ("The book ends; the study", ''),
+    ("doesn\u2019t. TimeTested.Bible is a", ''),
+    ("free online study Bible built", ''),
+    ("on the method you now hold:", ''),
+    ("every verse of Scripture", ''),
+    ("linked to the symbols,", ''),
+    ("studies, and sources behind", ''),
+    ("this book.", ''),
     ("", ''),
-    ("Inside: the mark of the beast,", ''),
-    ("decoded as the counterfeit of a", ''),
-    ("census Moses took at Sinai. The", ''),
-    ("sign of Jonah \u2014 the only sign", ''),
-    ("Jesus gave \u2014 opened scene by", ''),
-    ("scene. Daniel\u2019s seal, which was", ''),
-    ("never wax. Lucifer\u2019s plan to", ''),
-    ("corrupt the signs of heaven.", ''),
-    ("The Name \u2014 not a sound to", ''),
-    ("pronounce, but the covenant", ''),
-    ("itself, owned as a bride takes", ''),
-    ("her husband\u2019s.", ''),
+    ("Pull every reference by key", ''),
+    ("word, by the Hebrew or Greek", ''),
+    ("beneath the English, and by", ''),
+    ("concept. What once took a", ''),
+    ("lifetime of concordance work", ''),
+    ("now takes minutes.", ''),
     ("", ''),
-    ("Say the title aloud \u2014 it is an", 'i'),
-    ("invitation: ^meet^ the Bible\u2019s", 'i'),
-    ("symbolic language.", 'i'),
-]
-FLAP_BACK = [
-    ("DANIEL LARIMER", 'h'),
-    ("", ''),
-    ("Daniel Larimer invented Delegated", ''),
-    ("Proof of Stake and built three of", ''),
-    ("the most-used blockchains of", ''),
-    ("their day \u2014 BitShares, Steem, and", ''),
-    ("EOS \u2014 systems that encourage", ''),
-    ("integrity by design. Then came", ''),
-    ("the realization that we do not", ''),
-    ("wrestle against flesh and blood \u2014", ''),
-    ("and no protocol reforms powers", ''),
-    ("in high places.", ''),
-    ("", ''),
-    ("He now spends his days as", ''),
-    ("Jeremiah spent his: in the", ''),
-    ("Scriptures, watching for the fall", ''),
-    ("of Babylon and the soon return", ''),
-    ("of Jesus.", ''),
-    ("", ''),
-    ("His ongoing work is free at", ''),
-    ("TimeTested.Bible \u2014 a study Bible", ''),
-    ("linking every verse to the", ''),
-    ("studies, symbols, and sources", ''),
-    ("behind this book.", ''),
+    ("The digital-only symbol", ''),
+    ("studies and the complete", ''),
+    ("Hebrew Matthew live there", ''),
+    ("too \u2014 free.", ''),
     ("", ''),
     ("Take no man\u2019s word \u2014 verify.", 'i'),
 ]
@@ -499,7 +473,7 @@ def build_case():
     k = disp_h / 9.85
     svg, u = _svg_scaffold(W, H, img_x, disp_h,
         f'HARDCOVER CASE (BookBaby US-Trade-Hard-Cover template, 476pp/420ppi): wrap {WRAPM}in | back 6.25 | spine {SP1-SP0:.3f} | front 6.25 | wrap; jacketed — no barcode',
-        img_y=img_y)
+        img_y=img_y, mirror_v=True)
     tcx = max(1861.3 / ppi + img_x, CR_R + 3.35 * k / 2 + 0.05)
     emit_meat_front(svg, u, tcx, k=k, face_cx=(face0 + face1) / 2, tagline_y=9.35, y_off=img_y)
     emit_meat_spine(svg, u, (SP0 + SP1) / 2, (BT + BB_Y) / 2, BB_Y - 0.825, min(0.30, (SP1 - SP0) * 0.42))
@@ -533,9 +507,10 @@ def build_jacket():
     bz_x, bz_y = BP1 - 0.25 - 2.0, TRIM_B - 0.375 - 1.2
     emit_hebrews(svg, u, (4.6125 + bz_x) / 2, bz_y + 0.23)
     emit_barcode(svg, u, bz_x, bz_y)
-    # flap columns: template text-safe zones (0.25in inside trim and folds)
-    emit_flap(svg, u, 'layer-flap-back', 0.375, 3.125, 1.05, FLAP_BACK)
-    emit_flap(svg, u, 'layer-flap-front', 18.056, 3.125, 0.95, FLAP_FRONT)
+    # flap columns: template text-safe zones. ONE text flap (author's ruling
+    # 2026-07-08): the TimeTested.Bible pitch on the front flap; back flap
+    # art-only.
+    emit_flap(svg, u, 'layer-flap-front', 18.056, 3.125, 1.30, FLAP_TTB)
     _guides(svg, u, W, H, (BLD, FFOLD_L, SP0, SP1, FFOLD_R, W - BLD - 0.0), (TRIM_T, TRIM_B))
     out = 'cover-jacket-summit-meat.svg'
     open(out, 'w').write('\n'.join(svg) + '\n</svg>')
