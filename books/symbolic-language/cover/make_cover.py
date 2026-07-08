@@ -393,14 +393,6 @@ def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment, img_y=0.0, mirror_v=Fa
     return svg, u
 
 FLAP_TTB = [
-    ("\u201cAnd there are also many other", 'ci'),
-    ("things that Jesus did, which if", 'ci'),
-    ("they were written one by one,", 'ci'),
-    ("I suppose that even the world", 'ci'),
-    ("itself could not contain the books", 'ci'),
-    ("that would be written.\u201d", 'ci'),
-    ("John 21:25", 'cc'),
-    ("", ''),
     ("TIMETESTED.BIBLE", 'hlogo'),
     ("", ''),
     ("The book ends; the study doesn\u2019t.", ''),
@@ -512,15 +504,14 @@ def emit_flap(svg, u, layer, x0, col_w, y0, lines, size=0.16, pitch=0.27):
     yy = y0
     for line, style in lines:
         if style == 'hlogo':
-            # icon + wordmark as one centered row (author's ruling 2026-07-08)
-            icon_s, gap, tw = 0.62, 0.16, 2.05   # tw: wordmark width at 0.185/ls 0.028
-            row_w = icon_s + gap + tw
-            x_icon = cx - row_w / 2
-            yy += 0.18
-            emit_app_icon(svg, u, x_icon + icon_s / 2, yy - icon_s / 2 - 0.065, size_in=icon_s)
-            svg.append(f'  <text x="{u(x_icon + icon_s + gap)}" y="{u(yy)}" fill="#eda820" '
-                       f'letter-spacing="{u(0.028)}" font-size="{u(0.185)}">{line}</text>')
-            yy += 0.38
+            # app tile at half the flap width, wordmark beneath (author's
+            # ruling 2026-07-08)
+            icon_s = 1.60
+            emit_app_icon(svg, u, cx, yy, size_in=icon_s)
+            yy += icon_s + 0.40
+            svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" fill="#eda820" '
+                       f'letter-spacing="{u(0.03)}" font-size="{u(0.20)}">{line}</text>')
+            yy += 0.44
             continue
         if not line:
             yy += 0.10
@@ -592,36 +583,56 @@ def build_case():
     print(f'{out}: case {W:.3f}x{H}in, spine {SP1-SP0:.3f}in, image h={disp_h}in at ({img_x:.3f},{img_y:.3f}), title cx={tcx:.3f}')
 
 def emit_ttt_flap(svg, u, x0, col_w):
-    """Back flap: the author's other book, pitched with its cover art
-    (ttt-cover-plate.jpg, the actual Time Tested Tradition cover)."""
+    """Back flap: John 21:25 over the author's other book, pitched with its
+    cover art (ttt-cover-plate.jpg, the actual Time Tested Tradition cover)."""
     GOLD, CREAM = '#eda820', '#f2ead6'
     cx = x0 + col_w / 2
     svg.append(f'<g id="layer-flap-ttt" fill="#f0ebdd" font-family="Noto Serif" {TEXT_SHADOW}>')
-    svg.append(f'  <text x="{u(cx)}" y="{u(0.72)}" text-anchor="middle" fill="{GOLD}" '
+    yy = 0.58
+    for line in ("\u201cAnd there are also many other",
+                 "things that Jesus did, which if",
+                 "they were written one by one,",
+                 "I suppose that even the world",
+                 "itself could not contain the books",
+                 "that would be written.\u201d"):
+        svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
+                   f'font-size="{u(0.15)}">{line}</text>')
+        yy += 0.24
+    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-size="{u(0.14)}">John 21:25</text>')
+    yy += 0.40
+    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" fill="{GOLD}" '
                f'letter-spacing="{u(0.03)}" font-size="{u(0.17)}">ALSO BY DANIEL LARIMER</text>')
+    yy += 0.30
     # cover art with a hairline cream frame
-    iw = 1.75
+    iw = 1.50
     ih = iw * 2156 / 1418
-    ix, iy = cx - iw / 2, 1.05
+    ix, iy = cx - iw / 2, yy
     svg.append(f'  <image xlink:href="../ttt-cover-plate.jpg" x="{u(ix)}" y="{u(iy)}" '
                f'width="{u(iw)}" height="{u(ih)}"/>')
     svg.append(f'  <rect x="{u(ix)}" y="{u(iy)}" width="{u(iw)}" height="{u(ih)}" '
                f'fill="none" stroke="{CREAM}" stroke-opacity="0.55" stroke-width="{u(0.008)}"/>')
-    yy = iy + ih + 0.42
+    yy = iy + ih + 0.36
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-weight="bold" '
                f'letter-spacing="{u(0.02)}" font-size="{u(0.20)}">TIME TESTED TRADITION</text>')
-    yy += 0.32
+    yy += 0.30
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
                f'fill="{GOLD}" font-size="{u(0.155)}">The Renewed Biblical Calendar</text>')
-    yy += 0.42
-    for line in ("When is the Sabbath? The calendar",
-                 "the Scriptures keep, recovered from",
-                 "the text itself \u2014 the renewed moon,",
-                 "the appointed feasts, and the count",
-                 "that convicts every alternative."):
-        svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-size="{u(0.15)}">{line}</text>')
+    yy += 0.38
+    for line in ("~Time Tested Tradition~ does a deep",
+                 "dive into history, testing every",
+                 "primary source and calendar theory",
+                 "against the sun, moon, and stars",
+                 "to prove the year of the cross and",
+                 "timing of the appointed feasts of",
+                 "the LORD. This is must read ^meat^",
+                 "for those interested in testing the",
+                 "tradition we have inherited from",
+                 "our fathers."):
+        rendered = re.sub(r'\^([^^]+)\^', r'<tspan fill="#eda820" font-style="italic">\1</tspan>', line)
+        rendered = re.sub(r'~([^~]+)~', r'<tspan font-style="italic">\1</tspan>', rendered)
+        svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-size="{u(0.15)}">{rendered}</text>')
         yy += 0.24
-    yy += 0.18
+    yy += 0.14
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
                f'font-size="{u(0.155)}">Read it free at TimeTested.Bible.</text>')
     svg.append('</g>')
