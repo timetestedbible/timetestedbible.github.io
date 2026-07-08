@@ -16,9 +16,10 @@ Asciidoctor::Extensions.register do
     name_positional_attributes 'label'
     process do |parent, target, attrs|
       label = attrs['label'] || target
-      if parent.document.backend == 'pdf'
-        # internal cross-reference to the glossary entry; styled via the PDF
-        # converter override (extension.rb), which adds the role class to roled xrefs
+      if %w(pdf epub3).include? parent.document.backend
+        # internal cross-reference to the glossary entry (single-file PDF and
+        # EPUB both carry the glossary aboard); styled via the PDF converter
+        # override (extension.rb), which adds the role class to roled xrefs
         Asciidoctor::Inline.new(parent, :anchor, label, type: :xref,
           target: "##{target}", attributes: { 'refid' => target, 'role' => 'symbol' })
       else

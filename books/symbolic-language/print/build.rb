@@ -33,11 +33,13 @@ ALL_TARGETS = {
   'prepress' => File.join(DIR, 'the-bibles-symbolic-language-print.pdf'),
   'screen'   => File.join(DIR, 'the-bibles-symbolic-language-screen.pdf'),
 }
+WANT_EPUB = ['all', 'epub', 'ebook'].include?(ARGV[0] || 'all')
 TARGETS = case (ARGV[0] || 'all')
           when 'all'               then ALL_TARGETS
           when 'print', 'prepress' then ALL_TARGETS.slice('prepress')
           when 'screen'            then ALL_TARGETS.slice('screen')
-          else abort "Unknown target #{ARGV[0].inspect} — use print, screen, or no argument for both"
+          when 'epub', 'ebook'     then {}
+          else abort "Unknown target #{ARGV[0].inspect} — use print, screen, epub, or no argument for all"
           end
 
 # --- Split Jekyll YAML front matter from the AsciiDoc body ---
@@ -54,6 +56,7 @@ abort "No chapter files (NN-name.adoc) in #{SRC}" if chapters.empty?
 
 doc = +<<~ADOC
   = MEAT The Bible's Symbolic Language
+  Daniel Larimer
   :doctype: book
   :lang: en
   :notitle:
@@ -66,6 +69,10 @@ ADOC
 # extension.rb (so we keep real chapters → TOC + bookmarks). Collect them here,
 # keyed by chapter id (the slug), and expose via the global the converter reads.
 epigraph_map = {}
+
+# Downsized image twins the EPUB needs generated (twin filename => master),
+# collected during assembly, produced by the epub branch via sips.
+$ebook_image_jobs = {}
 
 front_entries = []
 main_entries  = []
@@ -86,7 +93,8 @@ front_entries.each do |c|
 end
 
 # Contents — placed here, after the front matter and before the chapters.
-doc << "\ntoc::[]\n"
+# (Print/screen only: the EPUB carries its own navigation document.)
+doc << "\nifndef::ebook-edition[]\ntoc::[]\nendif::[]\n"
 
 # --- Parts: the book's seven movements. Keyed by the slug of the chapter that
 # OPENS each part. Emitted as bare level-0 headings — extension.rb renders each
@@ -141,7 +149,28 @@ main_entries.each do |c|
       "[%unbreakable]\n--\n#{blk}\n--"
     }.join("\n\n")
   end
-  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << body << "\n"
+  # The ebook cannot run the PDF converter's chapter machinery, so the plate
+  # (the COLOR master — the print pipeline uses the grayscale twin) and the
+  # epigraphs are injected as ebook-only blocks; the PDF passes never set
+  # ebook-edition, so its pagination is untouched.
+  ebook_front = +''
+  if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
+    color  = plate.sub '-print', ''
+    master = [color, plate].find { |f| File.exist? File.join(SRC, f) }
+    if master
+      # Reference a downsized "-ebook" twin (the masters total >100MB; stores
+      # charge delivery by the MB). The epub branch generates missing twins.
+      twin = master.sub(/\.jpg\z/, '-ebook.jpg')
+      $ebook_image_jobs[twin] = master
+      ebook_front << "image::#{twin}[#{c[:title]}]\n\n"
+    end
+  end
+  (epigraph_map[c[:slug]] || []).each do |e|
+    ebook_front << "[quote]\n____\n_#{e['quote']}_\n#{NBSP}#{NBSP}— #{e['ref']}\n____\n\n"
+  end
+  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
+  doc << "ifdef::ebook-edition[]\n\n#{ebook_front}\nendif::[]\n\n" unless ebook_front.empty?
+  doc << body << "\n"
   doc << "\nendif::[]\n" if c[:edition]
   warn "  + #{c[:title]}  (#{c[:file]}#{c[:edition] ? ", #{c[:edition]}-only" : ''})"
 end
@@ -152,15 +181,25 @@ end
 # chapter, so all page numbers it prints are already final; it is populated
 # identically on every pass of the footnote loop, so page counts stay
 # consistent across passes.
-doc << "\n[#scripture-index]\n== Scripture Index\n"
-warn '  + Scripture Index  (generated from citations by extension.rb)'
+doc << "\nifndef::ebook-edition[]\n[#scripture-index]\n== Scripture Index\nendif::[]\n"
+warn '  + Scripture Index  (generated from citations by extension.rb; print/screen only)'
 
 back_entries.each do |c|
   case c[:edition]
   when 'digital' then doc << "\nifndef::print-edition[]\n"
   when 'print'   then doc << "\nifdef::print-edition[]\n"
   end
-  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << c[:body] << "\n"
+  doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
+  # Same ebook-only plate injection as the main chapters (the author portrait).
+  if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
+    master = [plate.sub('-print', ''), plate].find { |f| File.exist? File.join(SRC, f) }
+    if master
+      twin = master.sub(/\.jpg\z/, '-ebook.jpg')
+      $ebook_image_jobs[twin] = master
+      doc << "ifdef::ebook-edition[]\n\nimage::#{twin}[#{c[:title]}]\n\nendif::[]\n\n"
+    end
+  end
+  doc << c[:body] << "\n"
   doc << "\nendif::[]\n" if c[:edition]
   warn "  + #{c[:title]}  (#{c[:file]}, back matter#{c[:edition] ? ", #{c[:edition]}-only" : ''})"
 end
@@ -260,3 +299,64 @@ render.call reserve, true
 end
 
 TARGETS.each { |media, out| build_target.call media, out }
+
+# --- EPUB (the ebook edition): one pass, no footnote loop (notes render as
+# chapter endnotes), no Scripture Index (no page numbers to index). The ebook
+# MATCHES THE PRINT EDITION (author's ruling 2026-07-08): print-edition is set,
+# so the digital-only chapters stay web-only; the color plates and epigraphs
+# ride in via the ebook-edition blocks injected above.
+if WANT_EPUB
+  require 'asciidoctor-epub3'
+  epub_out = File.join(DIR, 'the-bibles-symbolic-language.epub')
+
+  # Downsized image twins (plates >100MB in the masters; stores charge
+  # delivery by the MB): longest side 1600px, JPEG. Regenerated when stale.
+  $ebook_image_jobs.each do |twin, master|
+    t, m = File.join(SRC, twin), File.join(SRC, master)
+    next if File.exist?(t) && File.mtime(t) >= File.mtime(m)
+    system('sips', '-Z', '1600', '-s', 'format', 'jpeg', '-s', 'formatOptions', '80',
+           m, '--out', t, out: File::NULL, err: File::NULL) or abort "sips failed: #{master}"
+    warn "  ~ #{twin}  (ebook twin of #{master})"
+  end
+
+  epub_doc = doc.dup
+
+  # Chapter-permalink links become internal cross-references; links to
+  # web-only chapters become absolute site URLs (a bare /books/... path
+  # would dead-end inside an e-reader).
+  aboard = (main_entries + back_entries).reject { |c| c[:edition] == 'digital' }
+                                        .map { |c| c[:slug] }
+  epub_doc.gsub!(%r{link:/books/symbolic-language/([a-z0-9-]+)/\[([^\]]*)\]}) do
+    slug, text = $1, $2
+    aboard.include?(slug) ? "<<#{slug},#{text}>>" : %(https://timetested.bible/books/symbolic-language/#{slug}/[#{text}])
+  end
+
+  # Glossary verdict badges: restore the macro form (the [.verdict] rewrite
+  # above is for the PDF theme role; the ebook takes symbol_macro.rb's
+  # floated-span rendering, same as the web).
+  epub_doc.gsub!(/ +\[\.verdict\]#([A-Z]+)#/) { %( verdict:#{$1.downcase}[]) }
+
+  # Inline SVG diagrams -> pre-rasterized PNG twins where present (e-readers
+  # don't carry the fonts the SVGs assume).
+  epub_doc.gsub!(/^image::([\w-]+)\.svg\[/) do
+    png = "#{$1}-ebook.png"
+    File.exist?(File.join(SRC, png)) ? "image::#{png}[" : "image::#{$1}.svg["
+  end
+
+  $fn_reserve_pages, $fn_flush, $fn_detected_pages = {}, false, {}
+  Asciidoctor.convert epub_doc,
+    backend: 'epub3',
+    safe: :unsafe,
+    base_dir: SRC,
+    to_file: epub_out,
+    mkdirs: true,
+    attributes: {
+      'ebook-edition'     => '',
+      'print-edition'     => '',   # the ebook carries the print edition's content
+      'docfile'           => File.join(SRC, 'book.adoc'),  # synthetic (doc is a string); gives epub3 a docdir to resolve media against
+      'imagesdir'         => '.',  # relative — epub3's media copier joins it to docdir; an absolute dir gets double-joined
+      'front-cover-image' => 'cover/front-cover-summit-meat.jpg',
+      'uuid'              => 'urn:isbn:9781736521168',
+    }
+  warn "Wrote: #{epub_out}  (epub3, print-edition content)"
+end
