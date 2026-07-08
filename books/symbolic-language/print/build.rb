@@ -208,6 +208,29 @@ back_entries.each do |c|
   warn "  + #{c[:title]}  (#{c[:file]}, back matter#{c[:edition] ? ", #{c[:edition]}-only" : ''})"
 end
 
+# Inline parenthetical citations render abbreviated in the BUILT editions
+# (author's ruling 2026-07-08; the web keeps full names — Jekyll reads the
+# sources directly). Block-quote attributions and epigraphs keep full names
+# (display typography). The Scripture Index already recognizes these
+# abbreviations via SX_ALIASES.
+CITE_ABBR = {
+  'Genesis'=>'Gen','Exodus'=>'Ex','Leviticus'=>'Lev','Numbers'=>'Num','Deuteronomy'=>'Deut',
+  'Joshua'=>'Josh','Judges'=>'Judg','1 Samuel'=>'1 Sam','2 Samuel'=>'2 Sam',
+  '1 Kings'=>'1 Kgs','2 Kings'=>'2 Kgs','1 Chronicles'=>'1 Chr','2 Chronicles'=>'2 Chr',
+  'Nehemiah'=>'Neh','Esther'=>'Est','Psalms'=>'Ps','Psalm'=>'Ps','Proverbs'=>'Prov',
+  'Ecclesiastes'=>'Eccl','Song of Solomon'=>'Song','Isaiah'=>'Isa','Jeremiah'=>'Jer',
+  'Lamentations'=>'Lam','Ezekiel'=>'Ezek','Daniel'=>'Dan','Hosea'=>'Hos','Obadiah'=>'Obad',
+  'Micah'=>'Mic','Nahum'=>'Nah','Habakkuk'=>'Hab','Zephaniah'=>'Zeph','Haggai'=>'Hag',
+  'Zechariah'=>'Zech','Malachi'=>'Mal','Matthew'=>'Matt','Romans'=>'Rom',
+  '1 Corinthians'=>'1 Cor','2 Corinthians'=>'2 Cor','Galatians'=>'Gal','Ephesians'=>'Eph',
+  'Philippians'=>'Phil','Colossians'=>'Col','1 Thessalonians'=>'1 Thess',
+  '2 Thessalonians'=>'2 Thess','1 Timothy'=>'1 Tim','2 Timothy'=>'2 Tim','Philemon'=>'Philem',
+  'Hebrews'=>'Heb','James'=>'Jas','1 Peter'=>'1 Pet','2 Peter'=>'2 Pet','Revelation'=>'Rev',
+}.freeze
+CITE_ABBR_RX = /(?<=[(;] |\()(#{CITE_ABBR.keys.sort_by { |k| -k.length }.map { |k| Regexp.escape k }.join('|')})(?=\.?\s+\d)/
+doc.gsub!(CITE_ABBR_RX) { CITE_ABBR[$1] }
+warn "  ~ inline citations abbreviated (built editions only)"
+
 $chapter_epigraphs = epigraph_map
 
 # Page-bottom footnotes need to know which pages carry a marker before they are
