@@ -83,3 +83,41 @@ Targeted test of the definitional texts, not a full *shabbat* concordance sweep
 (the word stands ~150 times); the load-bearing set is above and none of the
 common-usage instances contradicts the unit-reading — the day-sense is the
 unit-sense at its smallest scale. Sweep fully before a chapter asserts the range.
+
+---
+
+## TTT lunar-sabbath review (2026-07-08) — the omer paradox, refined
+
+Reviewed chapters/10_When_is_the_Sabbath.md (TTT). Its Pentecost argument:
+First Fruits fixed on the 16th (LXX Lev 23; Josephus's temple practice;
+Josh 5:11), yet the 50th day must be "the morrow after the seventh
+sabbath" — irreconcilable on a continuous week except one year in seven;
+the three ancient camps each break one specification; the lunar month of
+four sevens (sabbaths at 8/15/22/29, renewed-moon days outside the count)
+satisfies all three every year, with Pentecost landing III.16.
+
+Two refinements added in the chapter (The Count That Convicts the
+Calendar), both beyond TTT's ch. 10 as written:
+
+1. **The dead-word argument** (sharpens TTT's "how else would a sabbath
+   be incomplete"): on a continuous cycle, a count of sevens beginning
+   the morrow after a sabbath *cannot* produce an incomplete seven — the
+   qualifier temimot would legislate nothing. A law that does not spend
+   words spends this one only in a reckoning where broken sevens are
+   possible — i.e., where days exist outside the weeks. The qualifier
+   itself presupposes the lunar structure.
+2. **The checksum frame**: the count is triple-specified (fixed start /
+   unit-count / landing condition) — over-determined the way the whole
+   text is redundant, so the true calendar passes silently and every
+   altered one is convicted by its own arithmetic. This joins the
+   Introduction's corruption principle (redundancy convicts the change)
+   applied to time itself, and matches TTT's own line that the lunar
+   sabbath was "encoded... hard to erase without leaving
+   inconsistencies."
+
+Also for TTT's benefit: the Greek week-as-sabbaton material (dis tou
+sabbatou, Luke 18:12; mia sabbaton throughout; Matt 28:1's double sense)
+and the Lev 23:15 = Deut 16:9 parallel-statute equation are not in TTT
+ch. 10 as written — they independently establish sabbath = the seven-unit
+before the calendar question is even raised, which is the ground the
+omer argument stands on.
