@@ -37,6 +37,7 @@ WRAP_IMG_W, WRAP_IMG_H = 5186, 3700   # expand_image.py output: 1:1 with the wra
 SUMMIT_IMG     = '../../../assets/img/symbol-cover-background.png'
 SUMMIT_W, SUMMIT_H = 3168, 1344       # ~136 DPI at display size — upscale before upload
 
+ISBN13   = "9781736521168"          # 978-1-7365211-6-8 — drives the back-cover EAN-13
 TITLE_1  = "The Bible's"
 TITLE_2  = "Symbolic Language"
 AUTHOR   = "Daniel Larimer"
@@ -271,11 +272,40 @@ def build(preset_name):
         hy += 0.26
     svg.append('</g>')
 
-    # --- layer: barcode zone (BookBaby drops the ISBN barcode here)
+    # --- layer: barcode — Bookland EAN-13 rendered from ISBN13 (pure black
+    # on the white zone; guard bars descend; human-readable lines above/below)
     bz_w, bz_h = 2.0, 1.2
-    svg.append(f'<g id="layer-barcode-zone">')
-    svg.append(f'  <rect x="{u(BACK_X1 - bz_w - 0.375)}" y="{u(BLEED + TRIM_H - bz_h - 0.375)}" '
-               f'width="{u(bz_w)}" height="{u(bz_h)}" fill="#ffffff" rx="{u(0.04)}"/></g>')
+    bz_x = BACK_X1 - bz_w - 0.375
+    bz_y = BLEED + TRIM_H - bz_h - 0.375
+    Lc = {0:'0001101',1:'0011001',2:'0010011',3:'0111101',4:'0100011',5:'0110001',6:'0101111',7:'0111011',8:'0110111',9:'0001011'}
+    Gc = {0:'0100111',1:'0110011',2:'0011011',3:'0100001',4:'0011101',5:'0111001',6:'0000101',7:'0010001',8:'0001001',9:'0010111'}
+    Rc = {0:'1110010',1:'1100110',2:'1101100',3:'1000010',4:'1011100',5:'1001110',6:'1010000',7:'1000100',8:'1001000',9:'1110100'}
+    PAR = {0:'LLLLLL',1:'LLGLGG',2:'LLGGLG',3:'LLGGGL',4:'LGLLGG',5:'LGGLLG',6:'LGGGLL',7:'LGLGLG',8:'LGLGGL',9:'LGGLGL'}
+    dg = [int(c) for c in ISBN13]
+    assert (10 - (sum(dg[i] for i in range(0,12,2)) + 3*sum(dg[i] for i in range(1,12,2))) % 10) % 10 == dg[12], 'ISBN check digit'
+    mods = '101' + ''.join((Lc if PAR[dg[0]][i]=='L' else Gc)[d] for i, d in enumerate(dg[1:7])) \
+         + '01010' + ''.join(Rc[d] for d in dg[7:13]) + '101'
+    assert len(mods) == 95
+    module = 0.0130                       # in — 100% EAN magnification
+    bars_w = 95 * module
+    bx0 = bz_x + (bz_w - bars_w) / 2
+    by0 = bz_y + 0.30
+    bar_h, guard_extra = 0.62, 0.08
+    guard = set(range(0,3)) | set(range(45,50)) | set(range(92,95))
+    svg.append(f'<g id="layer-barcode">')
+    svg.append(f'  <rect x="{u(bz_x)}" y="{u(bz_y)}" width="{u(bz_w)}" height="{u(bz_h)}" fill="#ffffff" rx="{u(0.04)}"/>')
+    svg.append(f'  <text x="{u(bz_x + bz_w/2)}" y="{u(bz_y + 0.21)}" text-anchor="middle" '
+               f'font-family="Noto Serif" font-size="{u(0.115)}" fill="#000000">ISBN 978-1-7365211-6-8</text>')
+    run = None
+    for i, m in enumerate(mods + '0'):
+        if m == '1' and run is None: run = i
+        if m == '0' and run is not None:
+            bh = bar_h + (guard_extra if run in guard else 0)
+            svg.append(f'  <rect x="{u(bx0 + run*module)}" y="{u(by0)}" width="{u((i-run)*module)}" height="{u(bh)}" fill="#000000"/>')
+            run = None
+    svg.append(f'  <text x="{u(bz_x + bz_w/2)}" y="{u(by0 + bar_h + guard_extra + 0.13)}" text-anchor="middle" '
+               f'font-family="Noto Serif" font-size="{u(0.105)}" letter-spacing="{u(0.02)}" fill="#000000">9 781736 521168</text>')
+    svg.append('</g>')
 
     # --- layer: guides (delete or hide before upload)
     svg.append(f'<g id="layer-guides" stroke="#00e0ff" stroke-width="1" stroke-dasharray="8,6" opacity="0.6">')
