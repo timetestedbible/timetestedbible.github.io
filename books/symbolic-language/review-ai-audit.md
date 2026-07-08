@@ -188,13 +188,13 @@ Consistency passes (mechanical, global):
       the lens of" (34:186) · "pun intended… awe-inspiring" (01:275 — the Introduction's
       LAST LINE) · "conversion table" (03:59) · "photographs" (04:178) · "macro/micro level"
       (04:311) · "without remainder" (06:32) · "corpus" ×3.
-- [ ] **C6. Reader flattery / grandiosity** (a hostile review prints these in full):
+- [x] **C6. Reader flattery / grandiosity** (a hostile review prints these in full):
       04:296-299 "you now hold more of the sign than sixteen centuries of commentary
       carried" + "In surveying the published teaching of every major tradition" (soften to
       "I have not found…", cut the flattery) · 01:88 "safe enough to agree with the church…
       strong enough to overturn her" (jacket copy in body prose) · 16:147 "the worst words
       in Scripture" · 35:587 "Scripture's usage never bends".
-- [ ] **C7. Chapter 33 (Path to Salvation) full polish to book standard** — contractions,
+- [x] **C7. Chapter 33 (Path to Salvation) full polish to book standard** — contractions,
       run-ons, person shifts, 15+ inline parenthetical glosses inside quotes, doubled
       sentence (L23=L158), random capitalization, "This chapter went into great depth" —
       plus A1/A2/A4/A13. Same pass over the draft strata of 34–35 (34:101/103/139, 35:12-21).

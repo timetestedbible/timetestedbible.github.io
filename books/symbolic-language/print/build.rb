@@ -146,6 +146,10 @@ main_entries.each do |c|
       # the web). For print, rewrite the macro as an inline role span on the
       # term line; the theme's `verdict` role sets the small-caps badge look.
       blk = blk.sub(/ verdict:(divergent|novel)\[\]/) { %(   [.verdict]##{$1.upcase}#) }
+      # see-line chapter numbers are the DIGITAL edition's numbering (the web
+      # shows them); no built book prints chapter numbers, so strip them here
+      # (print, screen, and epub all assemble from this doc).
+      blk = blk.gsub(/\[\.chnum\]#([^#]*)#/, '')
       "[%unbreakable]\n--\n#{blk}\n--"
     }.join("\n\n")
   end
