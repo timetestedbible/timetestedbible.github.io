@@ -103,7 +103,9 @@ PRESETS = {
     # SYMBOLIC in symbol-gold, THE BIBLE'S / LANGUAGE in cream. Read the gold:
     # MEAT [is] SYMBOLIC; read the cream: THE BIBLE'S LANGUAGE. Spoken, the
     # title is the invitation: "meet the Bible's symbolic language."
-    'summit-meat': dict(explicit=dict(img='SUMMIT', disp_h=9.85, x=-4.9, y=0.0),
+    # x=-4.54: the eclipse and the full moon sit equidistant (~0.36in) from
+    # the front panel's trim edges (author's ruling — neither orb cut).
+    'summit-meat': dict(explicit=dict(img='SUMMIT', disp_h=9.85, x=-4.54, y=0.0),
                         meat_layout=True, title_cx=9.10),
 }
 
