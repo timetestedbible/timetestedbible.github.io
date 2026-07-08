@@ -384,6 +384,21 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     out
   end
 
+  # BookBaby requires the interior page count to be a multiple of 4 and pads
+  # with white pages when it isn't; pad here instead so the uploaded file
+  # matches the quote (476pp). Done at write time — after convert_document has
+  # deleted its trailing orphan page and stamped the running content — so the
+  # pad pages exist in the file but carry no folio or running head.
+  def write pdf_doc, target
+    if @media == 'prepress' && (rem = page_count % 4) != 0
+      # start_new_page INSERTS after the current page, and the index inking
+      # can leave the cursor mid-document — move to the true end first.
+      go_to_page page_count
+      (4 - rem).times { start_new_page }
+    end
+    super
+  end
+
   # Each reference maps to an array of locator objects: {"p" => printed folio,
   # "q" => true when the verse is quoted in full (block-quoted) on that page}.
   def write_scripture_index_json
