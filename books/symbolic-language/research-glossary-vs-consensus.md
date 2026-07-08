@@ -460,3 +460,27 @@ the first two (identical verdicts):
 Totals over 142: **Match 48 (34%) · Refined 59 (42%) · Divergent 22
 (15%) · Novel 13 (9%)** — 35 divergent+novel, all badged. Citations:
 Strong 86 (61%) · Partial 52 · Insufficient 4.
+
+---
+
+## Delta run 2026-07-08e — Sabbath added (glossary now 143)
+
+3 blind proxies (all HIGH — seventh-day rest, creation/Decalogue,
+rest-in-Christ typology) → 3 graders unanimous **REFINED / STRONG**:
+the entry keeps the seventh-day rest as "the crown of the unit" while
+sharpening the referent to the complete six-and-one at every scale;
+"Lev 25:8 equates seven sabbaths of years with 49 years — near
+proof-grade"; the Greek (dis tou sabbatou; double sabbaton in Matt
+28:1) verified character-for-character, with the KJV itself tagging
+both Matt 28:1 occurrences G4521. Only Heb 4:9 graded ornamental.
+Digital chapter: The Sabbath, ch. 31. TTT cited for the calendar
+mechanics.
+
+Also: 2 John 4-6 entered ch. 6's love section (author-supplied — love
+decoded as commandment-walking, expressly "not new"), seconding both
+the Love (novel) and Truth (divergent) entries; 2 John becomes the
+64th book cited.
+
+Totals over 143: **Match 48 (34%) · Refined 60 (42%) · Divergent 22
+(15%) · Novel 13 (9%)**. Citations: Strong 87 (61%) · Partial 52 ·
+Insufficient 4.
