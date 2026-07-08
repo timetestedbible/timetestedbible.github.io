@@ -1,0 +1,187 @@
+# The coin — the stamped image and the price of a soul (2026-07-08)
+
+Working reference behind The Seal (ch. 9) — the coin as the seal made money: refined
+metal bearing the owner's image and superscription. Coverage: the NT money-words
+(*argurion* silver pieces, *dēnarion*, *lepton*, *kodrantēs*, *assarion*,
+*didrachmon*, *statēr*, *talanton*, *mna*) and the law's person-pricing and
+soul-ransom texts, verified against kjv_strongs.txt, hg.txt, wlc.txt. The full
+Hebrew *kesef/shekel* concordance was NOT swept (it is enormous and mostly
+commerce); the targeted set below is the person-as-coin evidence. Nothing below
+depends on an unswept verse.
+
+---
+
+## The finding
+
+Scripture prices persons in silver **in the law itself**, and calls the sinner a
+lost coin **in the Lord's own parable**. A coin is the seal in miniature — dug from
+a field, refined in fire, stamped with an image and a superscription, and belonging
+to whoever's name it bears. The coin-texts divide cleanly into the two economies:
+what man's mint says a soul is worth (thirty pieces, the gored-slave price), and
+what God's scales say (a flat ransom no rich man can raise and no poor man misses;
+a widow's two mites worth more than all; a redemption "not with corruptible
+things, as silver and gold, but with the precious blood").
+
+- **Luke 15:8-10** — decoded in-text: the lost piece of silver is the lost sinner;
+  the woman searches by a lit lamp (the commandment, Prov 6:23) and heaven
+  rejoices at the finding. God has already compared His people to coins.
+- **Lev 27:2-8** — "When a man shall make a singular vow, the **persons** shall be
+  for the LORD **by thy estimation**" — the law prices persons in sanctuary
+  shekels, by age and sex, with a poverty clause (27:8): the priest shall value
+  him "according to his ability." Persons are appraisable silver in God's own
+  statute — the symbol has a legal foundation.
+- **Ex 30:12-16** — the census coin: "every man **a ransom for his soul**... half
+  a shekel... to make **an atonement for your souls**." Two clauses carry the
+  doctrine: "**the rich shall not give more, and the poor shall not give less**"
+  (30:15) — the soul-price is flat; no man's life outbids another's — and the
+  money is "**a memorial**" before the LORD (30:16), the same category-word as
+  the frontlets (Ex 13:9): the ransom-coin and the forehead-sign are both
+  *zikkaron*, reminders of whose the man is.
+- **Ps 49:7-8** — the limit of all human coin: "None of them can by any means
+  redeem his brother, nor give to God a ransom for him: for the redemption of
+  their soul is precious, and it ceaseth for ever." **1 Pet 1:18-19** — the true
+  price: "not redeemed with corruptible things, as silver and gold... but with
+  the precious blood of Christ." **1 Cor 6:20** — "ye are **bought with a
+  price**: therefore glorify God in your body." The purchase closes where Rom
+  12:1 pointed: the body rendered to the buyer.
+
+---
+
+## The widow's two mites (Mark 12:41-44; Luke 21:1-4)
+
+The **widow** is a defined symbol — God's covenant people cut off from their
+Husband (glossary; Lam 1:1; Isa 54:4-5) — the remnant-figure of the book. Read the
+scene with the symbol and its frame:
+
+- The frame is deliberate: Mark sets it immediately after "which **devour widows'
+  houses**, and for a pretence make long prayers" (12:40), and Luke sets it
+  immediately before "there shall not be left one stone upon another" (21:6). A
+  devoured widow feeding the treasury of a condemned house — and the Lord watching
+  the treasury (12:41) sees her, not it.
+- "She of her want did cast in **all that she had, even all her living**" — Greek
+  *holon ton bion*, her whole *life*. Under the coin symbol the two lepta are not
+  a donation; they are the coin-self rendered entire — Rom 12:1 in currency.
+- The verdict inverts the ledger: "this poor widow hath cast **more in, than all
+  they**" — and the inversion is already in the law: at the ransom the rich give
+  no more and the poor no less (Ex 30:15), because at God's treasury a soul is a
+  soul. Abundance gives *of* itself; the widow gives *herself*.
+
+---
+
+## The fish with the coin in its mouth (Matt 17:24-27)
+
+The tribute demanded is the *didrachmon* — the temple half-shekel, which is to say
+**the Ex 30 soul-ransom itself**: the collectors are asking whether the Master
+pays the atonement-money for souls. Every detail speaks:
+
+- "**Then are the children free**" (17:26) — sons do not pay ransom in their
+  Father's house; He pays anyway, "lest we should offend."
+- The **fish** is a defined symbol — a man in the sea of nations, the redeemed
+  drawn out by the fishers of men (glossary; Hab 1:14; Matt 4:19). Peter the
+  fisher casts the hook; "the fish that **first cometh up**" is the fisher of
+  men's first catch.
+- The coin is in the fish's **mouth** — and the mouth is where the seal-texts put
+  the word: the hand-sign and forehead-memorial exist "that the LORD's **law may
+  be in thy mouth**" (Ex 13:9); "the word is very nigh unto thee, **in thy
+  mouth**, and in thy heart" (Deut 30:14); "confess with thy **mouth** the Lord
+  Jesus" (Rom 10:9). The man drawn from the sea comes up with the ransom-witness
+  in his mouth — the caught man carries his confession, and the confession is
+  coin enough.
+- The *statēr* is one full shekel — exactly two half-shekel ransoms: "give unto
+  them **for me and thee**" — two souls, flat rate, the Lord and His fisherman on
+  one coin.
+- **The Hebrew Matthew seals the grammar** (hg.txt): "you will find in its mouth
+  a coin of silver, and it you shall give **בעד for us**" — *be'ad*, the
+  atonement formula's own preposition: "and Aaron shall make atonement **be'ad**
+  himself and **be'ad** his house" (Lev 16:6, וכפר בעדו ובעד ביתו). The
+  substitution is in the preposition.
+
+---
+
+## The price of the Shepherd (Zech 11:12-13; Ex 21:32; Matt 26:15; 27:3-10)
+
+- "So they weighed for my price **thirty pieces of silver**... **a goodly price
+  that I was prised at of them**" (Zech 11:12-13) — the LORD Himself appraised in
+  coin, and the sum is a citation: thirty shekels is the law's price for a
+  **gored slave** (Ex 21:32). Man's mint valued the Shepherd at the damages owed
+  for a dead servant.
+- "Cast it unto the **potter**" — the price thrown to the clay-worker (see
+  research-clay.md); fulfilled to the letter: the returned blood-money "is not
+  lawful for to put into the **treasury**" (Matt 27:6 — the treasury that
+  swallowed widows' houses gags on this coin), so it buys "the **potter's
+  field**, to bury **strangers** in" (27:7).
+- Watch the purchase against its twin: the blood-price of the Shepherd buys a
+  *field for strangers* — and "the **field is the world**" (Matt 13:38), bought
+  whole by the man who sold all "for joy" over the treasure hidden in it (13:44).
+  Both purchases stand in Matthew: what His betrayers' coin bought in irony —
+  ground for strangers — His blood bought in earnest.
+- The type: Joseph sold for **twenty pieces of silver** (Gen 37:28); the
+  redemption: Hosea buys back the adulterous wife "for **fifteen pieces of
+  silver**, and for an homer of barley" (Hos 3:2 — the Marriage chapter's plate).
+  Sold, priced, and bought back — the whole account is kept in silver.
+
+---
+
+## The entrusted coin (adjacent, hold loosely)
+
+The talents (Matt 25:14-30) and the pounds (Luke 19:12-27): the Master's silver
+entrusted to servants to trade until He comes; the unprofitable servant buries the
+stamped money **in the earth** — the image hidden in the field instead of
+multiplied through it. And the laborers' **penny** (Matt 20:2-13): every laborer
+the same denarius, the flat wage beside the flat ransom — "I will give unto this
+last, even as unto thee." These run on the same coin-logic (what bears the
+Master's stamp must circulate and returns to Him with increase) but each parable
+carries its own load; cite them as neighbors, not proofs.
+
+---
+
+## Counterfeits and inversions
+
+- **Acts 8:20** — Simon offers coin for the Spirit: "Thy money perish with thee,
+  because thou hast thought that **the gift of God may be purchased with
+  money**." The beast's mint cannot buy the seal; the two economies do not
+  exchange.
+- **Isa 55:1-2** — the redemption market runs on no coin of ours: "he that hath
+  **no money**; come ye, buy, and eat... **without money** and without price" —
+  because the soul's true price was set at Ps 49:7-8 beyond every purse and paid
+  at 1 Pet 1:19.
+- **Matt 10:29-31** — two sparrows sold for a farthing, "ye are of **more value**
+  than many sparrows" — God's appraisal of persons stands above the market's
+  smallest coin.
+- **Matt 5:25-26** — "the uttermost farthing": debt reckoned in the world's
+  smallest denomination, exacted in full — the ledger the ransom exists to close.
+
+---
+
+## Where this touches the book
+
+- **The Seal, ch. 9** — this study is the chapter's coin-arc extended (image and
+  superscription; the lost coin; the mint of field, fire, and stamp).
+- **Orphans, Widows & the Fatherless, ch. 12 / The Remnant, ch. 13** — the widow's
+  two mites as the remnant-figure rendering her whole living.
+- **Marriage & Divorce, ch. 10** — Hos 3:2, the wife bought back in silver.
+- **Sea & Waters, ch. 37** — the fish drawn from the sea of nations.
+- **Path to Salvation, ch. 22** — "bought with a price"; the mouth-confession.
+- **research-clay.md** — the potter who receives the Shepherd's price.
+- **Glossary candidate: Coin** — the stamped image: a person as the owner's minted
+  image-bearer, priced by the law, ransomed flat-rate, lost and sought by
+  lamplight; man's mint values the Shepherd at slave-damages, God's scales value
+  the widow's whole living above all abundance. (Lev 27:2; Ex 30:12-16; Luke
+  15:8-10; Matt 17:27; 22:20-21; Zech 11:12-13.)
+
+---
+
+## Coverage appendix
+
+**Person-priced-in-silver (law):** Lev 27:2-8; Ex 30:12-16; Num 18:16 (firstborn
+redeemed at five shekels); Ex 21:32 (the gored slave, thirty).
+**Coin narratives:** Luke 15:8-10; Matt 17:24-27 (+ hg.txt be'ad); Matt 22:19-21;
+Mark 12:41-44 / Luke 21:1-4 (+ Mark 12:40; Luke 21:6 frame); Zech 11:12-13 →
+Matt 26:15; 27:3-10; Gen 37:28; Hos 3:2.
+**Ransom/purchase doctrine:** Ps 49:7-8; 1 Pet 1:18-19; 1 Cor 6:20; Isa 55:1-2;
+Acts 8:18-20.
+**Adjacent parables:** Matt 25:14-30; Luke 19:12-27; Matt 20:1-16; Matt 5:25-26;
+10:29-31.
+**Mouth-texts carried with the fish:** Ex 13:9; Deut 30:14; Rom 10:8-10.
+**Not swept:** the full kesef/shekel commerce concordance; the drachma/daric
+treasury lists of Ezra-Nehemiah. Neither is expected to bear on the symbol.
