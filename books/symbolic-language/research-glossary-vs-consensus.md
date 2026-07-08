@@ -387,3 +387,24 @@ Novel 13 (9%)**. Citations: Strong 82 (59%) · Partial 52 · Insufficient 4
 to show raw counts beside shares (author's ruling 2026-07-08: the raw
 totals drive home the number of unique readings — 34 of 138 divergent or
 novel).
+
+---
+
+## Delta run 2026-07-08b — Almond added, Swine re-graded (glossary now 139)
+
+Almond (new with the Fall of Babylon rod-serpent-rod section): 3 blind
+proxies (all HIGH — watchfulness via shaqed/shoqed + Aaron's rod as
+priesthood election/resurrection + menorah cups) → 3 graders unanimous
+**MATCH / STRONG** — "the cited verses carry each claim nearly verbatim;
+the shaqed/shaqad wordplay is visible in the Strong's tags."
+
+Swine re-graded after headword expansion (pig, boar, sow) and the
+hoof-without-cud mechanism enrichment: unanimous **REFINED / PARTIAL** —
+verdict unchanged from the original run; all three graders accepted the
+mechanism as "textually accurate to the law's list" and flagged only the
+Rev 11:2 nation-identification as inferential from the citation list
+alone (the chapter carries that argument; ch. 46).
+
+Totals over 139: **Match 49 (35%) · Refined 56 (40%) · Divergent 21
+(15%) · Novel 13 (9%)** (shares round to 99 — the Terms column is exact).
+Citations: Strong 83 (60%) · Partial 52 · Insufficient 4 (unchanged).
