@@ -583,41 +583,30 @@ def build_case():
     print(f'{out}: case {W:.3f}x{H}in, spine {SP1-SP0:.3f}in, image h={disp_h}in at ({img_x:.3f},{img_y:.3f}), title cx={tcx:.3f}')
 
 def emit_ttt_flap(svg, u, x0, col_w):
-    """Back flap: John 21:25 over the author's other book, pitched with its
-    cover art (ttt-cover-plate.jpg, the actual Time Tested Tradition cover)."""
+    """Back flap, mirroring the front: the TTT cover art up top (as the front
+    flap leads with the app tile), byline under the subtitle, and John 21:25
+    anchoring the foot (author's ruling 2026-07-08)."""
     GOLD, CREAM = '#eda820', '#f2ead6'
     cx = x0 + col_w / 2
     svg.append(f'<g id="layer-flap-ttt" fill="#f0ebdd" font-family="Noto Serif" {TEXT_SHADOW}>')
-    yy = 0.58
-    for line in ("\u201cAnd there are also many other",
-                 "things that Jesus did, which if",
-                 "they were written one by one,",
-                 "I suppose that even the world",
-                 "itself could not contain the books",
-                 "that would be written.\u201d"):
-        svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
-                   f'font-size="{u(0.15)}">{line}</text>')
-        yy += 0.24
-    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-size="{u(0.14)}">John 21:25</text>')
-    yy += 0.40
-    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" fill="{GOLD}" '
-               f'letter-spacing="{u(0.03)}" font-size="{u(0.17)}">ALSO BY DANIEL LARIMER</text>')
-    yy += 0.30
     # cover art with a hairline cream frame
     iw = 1.50
     ih = iw * 2156 / 1418
-    ix, iy = cx - iw / 2, yy
+    ix, iy = cx - iw / 2, 0.58
     svg.append(f'  <image xlink:href="../ttt-cover-plate.jpg" x="{u(ix)}" y="{u(iy)}" '
                f'width="{u(iw)}" height="{u(ih)}"/>')
     svg.append(f'  <rect x="{u(ix)}" y="{u(iy)}" width="{u(iw)}" height="{u(ih)}" '
                f'fill="none" stroke="{CREAM}" stroke-opacity="0.55" stroke-width="{u(0.008)}"/>')
-    yy = iy + ih + 0.36
+    yy = iy + ih + 0.38
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-weight="bold" '
                f'letter-spacing="{u(0.02)}" font-size="{u(0.20)}">TIME TESTED TRADITION</text>')
     yy += 0.30
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
                f'fill="{GOLD}" font-size="{u(0.155)}">The Renewed Biblical Calendar</text>')
-    yy += 0.38
+    yy += 0.27
+    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
+               f'font-size="{u(0.13)}" fill-opacity="0.9">by Daniel Larimer</text>')
+    yy += 0.40
     for line in ("~Time Tested Tradition~ does a deep",
                  "dive into history, testing every",
                  "primary source and calendar theory",
@@ -635,6 +624,18 @@ def emit_ttt_flap(svg, u, x0, col_w):
     yy += 0.14
     svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
                f'font-size="{u(0.155)}">Read it free at TimeTested.Bible.</text>')
+    # John 21:25 anchors the foot of the flap
+    yy += 0.52
+    for line in ("\u201cAnd there are also many other",
+                 "things that Jesus did, which if",
+                 "they were written one by one,",
+                 "I suppose that even the world",
+                 "itself could not contain the books",
+                 "that would be written.\u201d"):
+        svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
+                   f'font-size="{u(0.15)}">{line}</text>')
+        yy += 0.24
+    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-size="{u(0.14)}">John 21:25</text>')
     svg.append('</g>')
 
 def build_jacket():
