@@ -352,3 +352,38 @@ carries; sentence to that effect kept in the Introduction.
 Note: sym-virgin was re-graded REFINED after its same-day definition
 sharpening (espoused standing / bride's companions / virgin of Israel —
 see research-ten-virgins.md); the printed percentages include that.
+
+---
+
+## Delta run 2026-07-08 — 4 terms (glossary now 138)
+
+Method identical: 3 blind consensus-proxy agents (bare terms only, no repo
+access, no tools) → 3 independent graders (same rubric; fresh-eyes citation
+test against kjv_strongs.txt). Terms: Fire and Sheol (added with Heaven and
+Hell, unmeasured at the 135 run), Coin (new with ch. 10), and Seal
+(re-graded after its 2026-07-08 enhancement — precedent: the virgin
+re-grade above). Artifacts: /tmp/stats-delta/.
+
+Verdicts (unanimous across all three graders):
+- **Fire — REFINED** (STRONG ×2, PARTIAL): keeps the consensus triad but
+  collapses the "two-sided fire" into one fire whose outcome is the
+  covering; graders noted "never a chamber" outruns the citation list.
+- **Sheol — REFINED** (STRONG ×2, PARTIAL): sides with the scholarly
+  consensus (grave of all the dead, distinct from Gehenna) and sharpens it;
+  the sha'al etymology and "gates and bars" ride uncited.
+- **Seal — REFINED, was MATCH** (STRONG ×3): the old entry restated the
+  consensus; the enhanced entry names the seal's content (the Name and the
+  law at hand and eyes) — "every clause carried by a cited verse."
+- **Coin — NOVEL** (PARTIAL ×3): all three proxies independently reported
+  no settled consensus ("separate lessons, not one symbol"), so the unified
+  person-as-minted-image reading stakes a claim. Both citation gaps the
+  graders flagged (Ex 21:32 slave-damages; Mark 12:41-44 widow's living)
+  were added to the entry's seeref after grading; the PARTIAL grade is kept
+  as measured.
+
+Totals over 138: **Match 48 (35%) · Refined 56 (41%) · Divergent 21 (15%) ·
+Novel 13 (9%)**. Citations: Strong 82 (59%) · Partial 52 · Insufficient 4
+(unchanged: Butter, Heart of the earth, Pearl, Wind). Printed table updated
+to show raw counts beside shares (author's ruling 2026-07-08: the raw
+totals drive home the number of unique readings — 34 of 138 divergent or
+novel).

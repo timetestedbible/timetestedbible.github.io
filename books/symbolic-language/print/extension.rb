@@ -897,6 +897,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'knowing-faith-love-and-belief' => 'cloak-plate-print.jpg',
     'the-way-the-truth-and-the-life' => 'narrow-path-plate-print.jpg',
     'the-name'              => 'strong-tower-plate-print.jpg',
+    'the-seal'              => 'inkhorn-seal-plate-print.jpg',
+    'the-coin'              => 'fish-stater-plate-print.jpg',
     'marriage-and-divorce'  => 'hosea-silver-plate-print.jpg',
     'wings'                 => 'hem-plate-print.jpg',
     'orphans-widows-and-the-fatherless' => 'widow-door-plate-print.jpg',
