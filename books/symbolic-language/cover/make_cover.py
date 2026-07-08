@@ -118,23 +118,23 @@ TEXT_SHADOW = 'style="filter:url(#softshadow)"'
 # (k = disp_h / 9.85, the paperback display height); k=1 reproduces the
 # paperback byte-for-byte.
 
-def emit_meat_front(svg, u, tcx, k=1.0, face_cx=None, tagline_y=8.62):
+def emit_meat_front(svg, u, tcx, k=1.0, face_cx=None, tagline_y=8.62, y_off=0.0):
     GOLD, CREAM = '#eda820', '#f2ead6'
     svg.append(f'<g id="layer-front-title" font-family="Noto Serif" font-weight="bold" text-anchor="middle" {TEXT_SHADOW}>')
     # MEAT — the symbol: gold ITALIC (the book's register for a term under study)
-    svg.append(f'  <text x="{u(tcx)}" y="{u(4.05*k/1.18)}" font-size="{u(1.02*k)}" transform="scale(1,1.18)" '
+    svg.append(f'  <text x="{u(tcx)}" y="{u((4.05*k + y_off)/1.18)}" font-size="{u(1.02*k)}" transform="scale(1,1.18)" '
                f'fill="{GOLD}" font-style="italic" textLength="{u(3.35*k)}" lengthAdjust="spacingAndGlyphs">MEAT</text>')
     # underline — italic alone under-signals the symbol register at this size
-    svg.append(f'  <rect x="{u(tcx - 3.35*k/2)}" y="{u(4.19*k)}" width="{u(3.35*k)}" height="{u(0.042*k)}" fill="{GOLD}"/>')
+    svg.append(f'  <rect x="{u(tcx - 3.35*k/2)}" y="{u(4.19*k + y_off)}" width="{u(3.35*k)}" height="{u(0.042*k)}" fill="{GOLD}"/>')
     # the interleaved subtitle: cream/gold/cream
     for i, (line, col) in enumerate([("THE BIBLE\u2019S", CREAM), ("SYMBOLIC", GOLD), ("LANGUAGE", CREAM)]):
-        yy = (4.78 + i * 0.60) * k / 1.22
+        yy = ((4.78 + i * 0.60) * k + y_off) / 1.22
         svg.append(f'  <text x="{u(tcx)}" y="{u(yy)}" font-size="{u(0.52*k)}" transform="scale(1,1.22)" '
                    f'fill="{col}" textLength="{u(3.25*k)}" lengthAdjust="spacingAndGlyphs">{line}</text>')
     # closing rule — same stroke as the MEAT underline: the two gold bars
     # bracket THE BIBLE'S SYMBOLIC LANGUAGE into one lockup, author beneath
-    svg.append(f'  <rect x="{u(tcx - 3.35*k/2)}" y="{u(6.12*k)}" width="{u(3.35*k)}" height="{u(0.042*k)}" fill="{GOLD}"/>')
-    svg.append(f'  <text x="{u(tcx)}" y="{u(6.60*k)}" font-size="{u(0.22*k)}" fill="{GOLD}" '
+    svg.append(f'  <rect x="{u(tcx - 3.35*k/2)}" y="{u(6.12*k + y_off)}" width="{u(3.35*k)}" height="{u(0.042*k)}" fill="{GOLD}"/>')
+    svg.append(f'  <text x="{u(tcx)}" y="{u(6.60*k + y_off)}" font-size="{u(0.22*k)}" fill="{GOLD}" '
                f'letter-spacing="{u(0.025*k)}">{AUTHOR.upper()}</text>')
     # small elegant line at the foot of the front panel
     svg.append(f'  <text x="{u(face_cx if face_cx is not None else FRONT_CX)}" y="{u(tagline_y)}" font-size="{u(0.16*k)}" fill="{CREAM}" '
@@ -353,7 +353,7 @@ def build(preset_name):
 #     flap 3.625 | back 6.375 | spine 1.306 | front 6.375 | flap 3.625
 #     keep-free: 0.5in panel-side of flap folds, 0.25in beside spine folds
 
-def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment):
+def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment, img_y=0.0):
     u = lambda v: round(v * DPI, 1)
     disp_w = img_disp_h * (SUMMIT_W / SUMMIT_H)
     svg = []
@@ -376,7 +376,7 @@ def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment):
 </defs>""")
     svg.append(f'<g id="layer-basefill"><rect width="{u(w_in)}" height="{u(h_in)}" fill="url(#backfill)"/></g>')
     svg.append(f'<g id="layer-background"><!-- swap href for the hi-res regeneration; keep x/y/width/height -->')
-    svg.append(f'  <image xlink:href="{SUMMIT_IMG}" x="{u(img_x)}" y="0" width="{u(disp_w)}" height="{u(img_disp_h)}" '
+    svg.append(f'  <image xlink:href="{SUMMIT_IMG}" x="{u(img_x)}" y="{u(img_y)}" width="{u(disp_w)}" height="{u(img_disp_h)}" '
                f'preserveAspectRatio="xMidYMid slice"/></g>')
     return svg, u
 
@@ -480,27 +480,33 @@ def build_case():
     FB0, FB1 = SP1, 1039 / 72                     # front board
     CR_L, CR_R = 451 / 72, 633 / 72               # crimp keep-free outer bounds
     BT, BB_Y = 46 / 72, 711 / 72                  # board top/bottom
-    disp_h = 10.73                                 # watermark clears the right canvas edge at this scale
+    # The art covers the boards + 0.25in past each fold (the rest of the
+    # 0.625 wrap is glued inside; the basefill gradient shows only on the
+    # turn-in). Smaller than full-bleed, so the angel-and-moons subject
+    # breathes: the eclipse clears the crimp groove entirely (author's
+    # ruling 2026-07-08) and the title keeps its painting-anchored spot.
+    disp_h = 9.74
     ppi = SUMMIT_H / disp_h
-    orb_c_local = (1650 + 2370) / 2 / ppi          # eclipse/moon span center (source px 1650-2370)
-    img_x = (FB0 + FB1) / 2 - orb_c_local          # orbs equidistant from the front board's fold edges
+    img_y = (BT + BB_Y) / 2 - disp_h / 2
+    # orbs centered between the CRIMP LINE and the trim — the template's own
+    # sanctioned centering for the crimped case ("crimp line and trim line")
+    face0, face1 = CR_R, FB1
+    img_x = (face0 + face1) / 2 - (1650 + 2370) / 2 / ppi
     k = disp_h / 9.85
     svg, u = _svg_scaffold(W, H, img_x, disp_h,
-        f'HARDCOVER CASE (BookBaby US-Trade-Hard-Cover template, 476pp/420ppi): wrap {WRAPM}in | back 6.25 | spine {SP1-SP0:.3f} | front 6.25 | wrap')
-    # title: image-anchored like the paperback, pushed right of the crimp zone
+        f'HARDCOVER CASE (BookBaby US-Trade-Hard-Cover template, 476pp/420ppi): wrap {WRAPM}in | back 6.25 | spine {SP1-SP0:.3f} | front 6.25 | wrap; jacketed — no barcode',
+        img_y=img_y)
     tcx = max(1861.3 / ppi + img_x, CR_R + 3.35 * k / 2 + 0.05)
-    emit_meat_front(svg, u, tcx, k=k, face_cx=(FB0 + FB1) / 2, tagline_y=9.35)
+    emit_meat_front(svg, u, tcx, k=k, face_cx=(face0 + face1) / 2, tagline_y=9.35, y_off=img_y)
     emit_meat_spine(svg, u, (SP0 + SP1) / 2, (BT + BB_Y) / 2, BB_Y - 0.825, min(0.30, (SP1 - SP0) * 0.42))
     emit_back_copy(svg, u, 0.995, BT + 1.14)
-    bz_x, bz_y = CR_L - 2.0 - 0.25, BB_Y - 0.375 - 1.2
-    emit_hebrews(svg, u, (0.995 + bz_x) / 2, bz_y + 0.23)
-    # NOTE: if the case sits under the dust jacket, delete layer-barcode —
-    # the jacket carries the retail barcode.
-    emit_barcode(svg, u, bz_x, bz_y)
+    # no barcode on the case (the jacket carries it) — Hebrews centered on the
+    # back board's lower band instead
+    emit_hebrews(svg, u, (BB0 + CR_L) / 2, BB_Y - 0.375 - 1.2 + 0.23)
     _guides(svg, u, W, H, (WRAPM, CR_L, SP0, SP1, CR_R, FB1), (BT, BB_Y))
     out = 'cover-case-summit-meat.svg'
     open(out, 'w').write('\n'.join(svg) + '\n</svg>')
-    print(f'{out}: case {W:.3f}x{H}in, spine {SP1-SP0:.3f}in, image h={disp_h}in at x={img_x:.3f}, title cx={tcx:.3f}')
+    print(f'{out}: case {W:.3f}x{H}in, spine {SP1-SP0:.3f}in, image h={disp_h}in at ({img_x:.3f},{img_y:.3f}), title cx={tcx:.3f}')
 
 def build_jacket():
     W, H = 1551.53 / 72, 9.5
