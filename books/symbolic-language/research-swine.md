@@ -31,7 +31,7 @@ test — the walk) and the chewed cud (the inward test — the food brought back
 worked again). The camel, the coney, and the hare all fail the same way: cud without
 hoof. **The swine is the only beast named in either list that fails the other way —
 hoof without cud.** It wears the outward mark of the clean and lacks the inward work.
-It walks the walk and never chews the word.
+It appears to walk the walk — the hoof is the look of obedience, not the life of it — and never chews the word.
 
 That structure has a name in the New Testament: hypocrisy — the whited sepulchre that
 "appears beautiful outward, but is within full of dead men's bones and of all

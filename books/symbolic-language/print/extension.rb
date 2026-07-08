@@ -919,6 +919,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'the-bow'               => 'covenant-bow-plate-print.jpg',
     'jacob-israel-and-ephraim' => 'jabbok-plate-print.jpg',
     'butter'                => 'butter-churn-plate-print.jpg',
+    'the-other-white-meat'  => 'prodigal-trough-plate-print.jpg',
     'about-the-author'      => 'author-portrait-plate-print.jpg',
     'shadow'                => 'shadow-rock-plate-print.jpg',
     'noah-uncovered'        => 'noah-uncovered-plate-print.jpg',
