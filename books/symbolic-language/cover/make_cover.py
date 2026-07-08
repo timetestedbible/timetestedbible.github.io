@@ -46,8 +46,9 @@ TITLE_2  = "Symbolic Language"
 AUTHOR   = "Daniel Larimer"
 SPINE_TXT= "THE BIBLE\u2019S SYMBOLIC LANGUAGE  \u00b7  DANIEL LARIMER"
 BACK_COPY = [
-    ("\u201cI have fed you with ^milk^, and not with ^meat^:", "ci"),
-    ("for hitherto ye were not able to bear it.\u201d", "ci"),
+    ("\u201cI fed you with ^milk^ and not with ^meat^;", "ci"),
+    ("for until now you were not able to receive it,", "ci"),
+    ("and even now you are still not able.\u201d", "ci"),
     ("1 Corinthians 3:2", "cc"),
     ("", ""),
     ("By this time you ought to be eating meat.", ""),
@@ -191,9 +192,10 @@ def emit_back_copy(svg, u, x0, y0):
 
 def emit_hebrews(svg, u, heb_cx, hy):
     svg.append(f'<g id="layer-back-hebrews" fill="#f0ebdd" font-family="Noto Serif" {TEXT_SHADOW}>')
-    for line, style in [("\u201cFor every one that useth ^milk^", 'ci'),
-                        ("is unskilful in the word", 'ci'),
-                        ("of righteousness.\u201d", 'ci'),
+    for line, style in [("\u201cFor everyone who partakes", 'ci'),
+                        ("only of ^milk^ is unskilled in the", 'ci'),
+                        ("word of righteousness,", 'ci'),
+                        ("for he is a babe.\u201d", 'ci'),
                         ("Hebrews 5:13", 'cc')]:
         rendered = re.sub(r'\^([^^]+)\^', r'<tspan fill="#eda820" font-style="italic">\1</tspan>', line)
         attrs = (f' font-style="italic" font-size="{u(0.18)}"' if style == 'ci'
@@ -391,28 +393,34 @@ def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment, img_y=0.0, mirror_v=Fa
     return svg, u
 
 FLAP_TTB = [
-    ("TIMETESTED.BIBLE", 'h'),
+    ("\u201cAnd there are also many other", 'ci'),
+    ("things that Jesus did, which if", 'ci'),
+    ("they were written one by one,", 'ci'),
+    ("I suppose that even the world", 'ci'),
+    ("itself could not contain the books", 'ci'),
+    ("that would be written.\u201d", 'ci'),
+    ("John 21:25", 'cc'),
     ("", ''),
-    ("The book ends; the study", ''),
-    ("doesn\u2019t. TimeTested.Bible is a", ''),
-    ("free online study Bible built", ''),
-    ("on the method you now hold:", ''),
-    ("every verse of Scripture", ''),
-    ("linked to the symbols,", ''),
-    ("studies, and sources behind", ''),
-    ("this book.", ''),
+    ("TIMETESTED.BIBLE", 'hlogo'),
     ("", ''),
-    ("Pull every reference by key", ''),
-    ("word, by the Hebrew or Greek", ''),
-    ("beneath the English, and by", ''),
-    ("concept. What once took a", ''),
-    ("lifetime of concordance work", ''),
-    ("now takes minutes.", ''),
+    ("The book ends; the study doesn\u2019t.", ''),
     ("", ''),
-    ("The digital-only symbol", ''),
-    ("studies and the complete", ''),
-    ("Hebrew Matthew live there", ''),
-    ("too \u2014 free.", ''),
+    ("An interactive edition of this book", 'j'),
+    ("lives at TimeTested.Bible \u2014 every", 'j'),
+    ("quote and citation linked straight to", 'j'),
+    ("the Scriptures, with complete", 'j'),
+    ("interlinear tools to help you move", 'j'),
+    ("from ^milk^ to ^meat^.", ''),
+    ("", ''),
+    ("Pull every reference by key word, by the", 'j'),
+    ("Hebrew or Greek beneath the English,", 'j'),
+    ("and by concept \u2014 what once took a", 'j'),
+    ("lifetime of concordance work now takes", 'j'),
+    ("minutes.", ''),
+    ("", ''),
+    ("Download the ebook free, and have", 'j'),
+    ("your friends and family ^meet^ the", 'j'),
+    ("Bible\u2019s symbolic language.", ''),
     ("", ''),
     ("Take no man\u2019s word \u2014 verify.", 'i'),
 ]
@@ -474,26 +482,66 @@ def emit_qr(svg, u, cx, top, size_in=0.80):
                 svg.append(f'  <circle cx="{u(x0 + (c+0.5)*mod)}" cy="{u(y0 + (r+0.5)*mod)}" r="{u(0.42*mod)}" fill="{NAVY}"/>')
     svg.append('</g>')
 
+def emit_app_icon(svg, u, cx, top, size_in=0.52):
+    """The TimeTested.Bible app tile (icons/icon.svg): full moon on a navy
+    rounded square — inlined as vectors so the print render is resolution-free."""
+    s = size_in
+    x, y = cx - s / 2, top
+    svg.append(f'<g id="layer-flap-appicon">')
+    svg.append(f'  <defs><radialGradient id="ttbmoon" cx="50%" cy="50%" r="50%">'
+               f'<stop offset="0%" stop-color="#fffef0"/><stop offset="70%" stop-color="#f5f5dc"/>'
+               f'<stop offset="100%" stop-color="#e8e4c8"/></radialGradient>'
+               f'<linearGradient id="ttbbg" x1="0" y1="0" x2="0" y2="1">'
+               f'<stop offset="0%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#0d2840"/>'
+               f'</linearGradient></defs>')
+    svg.append(f'  <rect x="{u(x)}" y="{u(y)}" width="{u(s)}" height="{u(s)}" fill="url(#ttbbg)" rx="{u(s * 80 / 512)}"/>')
+    for r, op in ((200, 0.1), (180, 0.1)):
+        svg.append(f'  <circle cx="{u(cx)}" cy="{u(y + s/2)}" r="{u(s * r / 512)}" fill="#f5f5dc" opacity="{op}"/>')
+    svg.append(f'  <circle cx="{u(cx)}" cy="{u(y + s/2)}" r="{u(s * 160 / 512)}" fill="url(#ttbmoon)"/>')
+    for mx, my, mr, op in ((190, 200, 30, 0.4), (310, 280, 40, 0.35), (220, 320, 25, 0.3),
+                           (280, 180, 18, 0.25), (340, 220, 15, 0.3), (180, 280, 20, 0.25)):
+        svg.append(f'  <circle cx="{u(x + s * mx / 512)}" cy="{u(y + s * my / 512)}" r="{u(s * mr / 512)}" fill="#d8d4b8" opacity="{op}"/>')
+    svg.append('</g>')
+
 def emit_flap(svg, u, layer, x0, col_w, y0, lines, size=0.16, pitch=0.27):
+    # justified block, centered in the flap column (author's ruling 2026-07-08)
+    measure = 2.85
+    xj = x0 + (col_w - measure) / 2
+    cx = x0 + col_w / 2
     svg.append(f'<g id="{layer}" fill="#f0ebdd" font-family="Noto Serif" font-size="{u(size)}" {TEXT_SHADOW}>')
     yy = y0
     for line, style in lines:
+        if style == 'hlogo':
+            # icon + wordmark as one centered row (author's ruling 2026-07-08)
+            icon_s, gap, tw = 0.62, 0.16, 2.05   # tw: wordmark width at 0.185/ls 0.028
+            row_w = icon_s + gap + tw
+            x_icon = cx - row_w / 2
+            yy += 0.18
+            emit_app_icon(svg, u, x_icon + icon_s / 2, yy - icon_s / 2 - 0.065, size_in=icon_s)
+            svg.append(f'  <text x="{u(x_icon + icon_s + gap)}" y="{u(yy)}" fill="#eda820" '
+                       f'letter-spacing="{u(0.028)}" font-size="{u(0.185)}">{line}</text>')
+            yy += 0.38
+            continue
         if not line:
-            yy += 0.14
+            yy += 0.10
             continue
         rendered = re.sub(r'\^([^^]+)\^', r'<tspan fill="#eda820" font-style="italic">\1</tspan>', line)
         if style == 'h':
-            svg.append(f'  <text x="{u(x0 + col_w/2)}" y="{u(yy)}" text-anchor="middle" fill="#eda820" '
+            svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" fill="#eda820" '
                        f'letter-spacing="{u(0.03)}" font-size="{u(0.20)}">{rendered}</text>')
             yy += 0.10
         elif style in ('ci', 'cc'):
             attrs = ' font-style="italic"' if style == 'ci' else f' font-size="{u(0.14)}"'
-            svg.append(f'  <text x="{u(x0 + col_w/2)}" y="{u(yy)}" text-anchor="middle"{attrs}>{rendered}</text>')
+            svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle"{attrs}>{rendered}</text>')
+        elif style == 'j':
+            svg.append(f'  <text x="{u(xj)}" y="{u(yy)}" textLength="{u(measure)}" lengthAdjust="spacing">{rendered}</text>')
+        elif style == 'i':
+            svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic">{rendered}</text>')
         else:
-            it = ' font-style="italic"' if style == 'i' else ''
-            svg.append(f'  <text x="{u(x0)}" y="{u(yy)}"{it}>{rendered}</text>')
+            svg.append(f'  <text x="{u(xj)}" y="{u(yy)}">{rendered}</text>')
         yy += pitch
     svg.append('</g>')
+    return yy
 
 FINAL = False   # --final: omit layer-guides (upload-ready artwork)
 
@@ -543,6 +591,41 @@ def build_case():
     open(out, 'w').write('\n'.join(svg) + '\n</svg>')
     print(f'{out}: case {W:.3f}x{H}in, spine {SP1-SP0:.3f}in, image h={disp_h}in at ({img_x:.3f},{img_y:.3f}), title cx={tcx:.3f}')
 
+def emit_ttt_flap(svg, u, x0, col_w):
+    """Back flap: the author's other book, pitched with its cover art
+    (ttt-cover-plate.jpg, the actual Time Tested Tradition cover)."""
+    GOLD, CREAM = '#eda820', '#f2ead6'
+    cx = x0 + col_w / 2
+    svg.append(f'<g id="layer-flap-ttt" fill="#f0ebdd" font-family="Noto Serif" {TEXT_SHADOW}>')
+    svg.append(f'  <text x="{u(cx)}" y="{u(0.72)}" text-anchor="middle" fill="{GOLD}" '
+               f'letter-spacing="{u(0.03)}" font-size="{u(0.17)}">ALSO BY DANIEL LARIMER</text>')
+    # cover art with a hairline cream frame
+    iw = 1.75
+    ih = iw * 2156 / 1418
+    ix, iy = cx - iw / 2, 1.05
+    svg.append(f'  <image xlink:href="../ttt-cover-plate.jpg" x="{u(ix)}" y="{u(iy)}" '
+               f'width="{u(iw)}" height="{u(ih)}"/>')
+    svg.append(f'  <rect x="{u(ix)}" y="{u(iy)}" width="{u(iw)}" height="{u(ih)}" '
+               f'fill="none" stroke="{CREAM}" stroke-opacity="0.55" stroke-width="{u(0.008)}"/>')
+    yy = iy + ih + 0.42
+    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-weight="bold" '
+               f'letter-spacing="{u(0.02)}" font-size="{u(0.20)}">TIME TESTED TRADITION</text>')
+    yy += 0.32
+    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
+               f'fill="{GOLD}" font-size="{u(0.155)}">The Renewed Biblical Calendar</text>')
+    yy += 0.42
+    for line in ("When is the Sabbath? The calendar",
+                 "the Scriptures keep, recovered from",
+                 "the text itself \u2014 the renewed moon,",
+                 "the appointed feasts, and the count",
+                 "that convicts every alternative."):
+        svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-size="{u(0.15)}">{line}</text>')
+        yy += 0.24
+    yy += 0.18
+    svg.append(f'  <text x="{u(cx)}" y="{u(yy)}" text-anchor="middle" font-style="italic" '
+               f'font-size="{u(0.155)}">Read it free at TimeTested.Bible.</text>')
+    svg.append('</g>')
+
 def build_jacket():
     W, H = 1551.53 / 72, 9.5
     BLD = 0.125
@@ -567,8 +650,9 @@ def build_jacket():
     # flap columns: template text-safe zones. ONE text flap (author's ruling
     # 2026-07-08): the TimeTested.Bible pitch on the front flap; back flap
     # art-only.
-    emit_flap(svg, u, 'layer-flap-front', 18.056, 3.125, 1.30, FLAP_TTB)
-    emit_qr(svg, u, (18.056 + 21.181) / 2, 7.65)
+    flap_end = emit_flap(svg, u, 'layer-flap-front', 18.056, 3.125, 0.60, FLAP_TTB, size=0.15, pitch=0.24)
+    emit_qr(svg, u, (18.056 + 21.181) / 2, flap_end + 0.08, size_in=0.70)
+    emit_ttt_flap(svg, u, 0.375, 3.125)
     _guides(svg, u, W, H, (BLD, FFOLD_L, SP0, SP1, FFOLD_R, W - BLD - 0.0), (TRIM_T, TRIM_B))
     out = 'cover-jacket-summit-meat.svg'
     open(out, 'w').write('\n'.join(svg) + '\n</svg>')
