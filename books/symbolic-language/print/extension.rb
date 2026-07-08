@@ -89,6 +89,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   SX_VLIST = /(?:\s*,\s*\d{1,3}(?:[-–]\d{1,3})?(?=\s*[^\w\s]|\s*$))*/
   SX_CITE_RX = /\b(#{SX_BOOK_NAMES})\.?\s+(\d{1,3}:\d{1,3}(?:[-–]\d{1,3}(?::\d{1,3})?)?#{SX_VLIST}(?:\s*;\s*\d{1,3}:\d{1,3}(?:[-–]\d{1,3}(?::\d{1,3})?)?#{SX_VLIST})*)/
   SX_VERSE_RX = /\A(\d{1,3}):(\d{1,3}(?:[-–]\d{1,3}(?::\d{1,3})?)?)/
+  # Single-chapter books are cited verse-only ("Obadiah 16") and would never
+  # match SX_CITE_RX's chapter:verse shape; catch them separately and record
+  # under chapter 1. The lookahead rejects chapter:verse forms ("Jude 1:6"),
+  # which the main regex owns.
+  SX_ONECH_BOOKS = ['Obadiah', 'Philemon', 'Jude', '2 John', '3 John'].freeze
+  SX_ONECH_NAMES = (SX_ONECH_BOOKS + ['Obad', 'Philem', 'Phlm']).sort_by { |n| -n.length }.map { |n| Regexp.escape n }.join '|'
+  SX_ONECH_RX = /\b(#{SX_ONECH_NAMES})\.?\s+(\d{1,3}(?:[-–]\d{1,3})?)(?!:)#{SX_VLIST}/
   SX_EMDASH = '—'
 
   # quoted: the citation is a block-quote attribution — the verse is quoted in
@@ -109,18 +116,21 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def sx_scan text, page_from, page_to = page_from, quoted: false, boundaries: nil
     return if !@sx_catalog || !text.is_a?(::String) || text.empty?
     len = text.length
+    page_at = lambda do |offset_begin|
+      if page_to > page_from
+        fo = offset_begin.to_f / len
+        if boundaries && !boundaries.empty?
+          (page_from + (boundaries.count { |b| fo >= b })).clamp(page_from, page_to)
+        else
+          (page_from + (fo * (page_to - page_from + 1)).floor).clamp(page_from, page_to)
+        end
+      else
+        page_from
+      end
+    end
     text.scan SX_CITE_RX do
       m = Regexp.last_match
-      page = if page_to > page_from
-               fo = m.begin(0).to_f / len
-               if boundaries && !boundaries.empty?
-                 (page_from + (boundaries.count { |b| fo >= b })).clamp(page_from, page_to)
-               else
-                 (page_from + (fo * (page_to - page_from + 1)).floor).clamp(page_from, page_to)
-               end
-             else
-               page_from
-             end
+      page = page_at.call m.begin(0)
       book = SX_ALIASES[m[1]] || m[1]
       m[2].split(/\s*;\s*/).each do |seg|
         next unless seg =~ SX_VERSE_RX
@@ -128,6 +138,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
         sx_record book, chap, ($2.tr '–', '-'), page, quoted
         rest.scan(/,\s*(\d{1,3}(?:[-–]\d{1,3})?)/) { |(v)| sx_record book, chap, (v.tr '–', '-'), page, quoted }
       end
+    end
+    text.scan SX_ONECH_RX do
+      m = Regexp.last_match
+      page = page_at.call m.begin(0)
+      book = SX_ALIASES[m[1]] || m[1]
+      sx_record book, '1', (m[2].tr '–', '-'), page, quoted
+      m[0].scan(/,\s*(\d{1,3}(?:[-–]\d{1,3})?)/) { |(v)| sx_record book, '1', (v.tr '–', '-'), page, quoted }
     end
   end
 
@@ -683,7 +700,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
           ink_prose %(<strong>#{esc[book]}</strong>), align: :left, size: SX_HEAD_SIZE,
             margin_top: (first ? 0 : 5), margin_bottom: 1, hyphenate: false
           verses.each do |vd, locs|
-            text = %(#{vd} · #{locs.map { |f, q| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '})
+            vd_disp = (SX_ONECH_BOOKS.include? book) ? (vd.sub /\A1:/, '') : vd
+            text = %(#{vd_disp} · #{locs.map { |f, q| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '})
             # keep each entry whole: measure it (at turnover width — the
             # conservative side) and, when it cannot fit what remains of the
             # column, break explicitly and repeat the head as "— continued"

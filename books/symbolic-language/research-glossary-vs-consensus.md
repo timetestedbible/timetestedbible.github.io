@@ -436,3 +436,27 @@ edition's symbol study."
 Totals over 139: **Match 48 (35%) · Refined 57 (41%) · Divergent 21
 (15%) · Novel 13 (9%)**. Citations: Strong 84 · Partial 51 · 
 Insufficient 4.
+
+---
+
+## Delta run 2026-07-08d — Gehenna, Hell, Sodom added (glossary now 142)
+
+3 blind proxies (all HIGH on all three) → 3 graders; majority locked by
+the first two (identical verdicts):
+- **Gehenna — REFINED / STRONG**: consensus frame kept (Hinnom, final,
+  distinct from Sheol) but sharpened to carcase-destruction rather than
+  torment; "citations chain tightly — Mark 9 quotes Isa 66:24 verbatim."
+- **Hell — DIVERGENT / PARTIAL**: the word-split note is standard, but
+  the payload (Sheol the grave of all alike; Gehenna destruction; "the
+  doctrine changes with the word beneath") contradicts the dominant
+  eternal-conscious-punishment teaching. Badged, with the common view
+  printed for comparison. The book's most contested single word now
+  wears its own badge.
+- **Sodom — REFINED / STRONG**: the prophetic Jerusalem application is
+  an acknowledged consensus subpoint elevated to the definition;
+  "Rev 11:8 literally says spiritually called Sodom... where also our
+  Lord was crucified."
+
+Totals over 142: **Match 48 (34%) · Refined 59 (42%) · Divergent 22
+(15%) · Novel 13 (9%)** — 35 divergent+novel, all badged. Citations:
+Strong 86 (61%) · Partial 52 · Insufficient 4.
