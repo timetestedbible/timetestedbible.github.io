@@ -356,6 +356,7 @@ if WANT_EPUB
       'docfile'           => File.join(SRC, 'book.adoc'),  # synthetic (doc is a string); gives epub3 a docdir to resolve media against
       'imagesdir'         => '.',  # relative — epub3's media copier joins it to docdir; an absolute dir gets double-joined
       'front-cover-image' => 'cover/front-cover-summit-meat.jpg',
+      'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
       'uuid'              => 'urn:isbn:9781736521168',
     }
   warn "Wrote: #{epub_out}  (epub3, print-edition content)"
