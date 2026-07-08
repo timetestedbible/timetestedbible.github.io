@@ -121,3 +121,17 @@ and the Lev 23:15 = Deut 16:9 parallel-statute equation are not in TTT
 ch. 10 as written — they independently establish sabbath = the seven-unit
 before the calendar question is even raised, which is the ground the
 omer argument stands on.
+
+---
+
+## The count mechanism (author's ruling, 2026-07-08)
+
+The numbering begins the day AFTER the wave sheaf (sheaf 16/1; count opens
+17/1). The remainder of the sheaf's week (17-22, six days) is a BROKEN seven
+— precisely what *temimot* excludes — so the seven complete sabbaths are the
+weeks 23/1-29/1 through 9/3-15/3: forty-nine counted days, and the morrow
+after the seventh sabbath is the fiftieth — Pentecost III.16, every year,
+matching the Essene/Jubilees witnesses. (An earlier draft wrongly equated
+the fiftieth day with III.16 under count-from-16/1; the enumeration only
+closes when the count opens the day after the sheaf and the broken week is
+excluded — which makes the dead-word argument stronger, not weaker.)
