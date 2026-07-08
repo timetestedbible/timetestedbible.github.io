@@ -132,7 +132,13 @@ main_entries.each do |c|
     # see-line at a column top. Every blank-line-delimited [[sym-…]] block is
     # wrapped in an unbreakable open block.
     body = body.split(/\n{2,}/).map { |blk|
-      blk.lstrip.start_with?('[[sym-') ? "[%unbreakable]\n--\n#{blk}\n--" : blk
+      next blk unless blk.lstrip.start_with?('[[sym-')
+      # Experiment-verdict badges: the source marks a term with
+      # verdict:divergent[] / verdict:novel[] (rendered as a floated span on
+      # the web). For print, rewrite the macro as an inline role span on the
+      # term line; the theme's `verdict` role sets the small-caps badge look.
+      blk = blk.sub(/ verdict:(divergent|novel)\[\]/) { %(   [.verdict]##{$1.upcase}#) }
+      "[%unbreakable]\n--\n#{blk}\n--"
     }.join("\n\n")
   end
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n" << body << "\n"

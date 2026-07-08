@@ -758,6 +758,35 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # strand a single line of a paragraph on either side of a page break. Quotes
   # balance themselves as a unit (above), so paragraphs inside a quote — including
   # the injected citation — are excluded via @in_quote.
+  # Glossary verdict badges (DIVERGENT / NOVEL — see the Introduction's blind
+  # test). build.rb rewrites the source macro into an inline role span on the
+  # dlist term; this override strips it from the term text and draws the badge
+  # RIGHT-ALIGNED on the term's line with a raw prawn text_box (no inline
+  # formatting pipeline), after the terms ink at the captured cursor. The badge
+  # survives the unbreakable scratch/real double-convert via a node attribute.
+  def convert_dlist node
+    badge = node.attr 'verdictbadge'
+    node.items.each do |terms, _dd|
+      terms.each do |term|
+        src = term.instance_variable_get :@text
+        next unless src && (src.include? '[.verdict]#')
+        badge ||= src[/\[\.verdict\]#([A-Z]+)#/, 1]
+        node.set_attr 'verdictbadge', badge
+        term.instance_variable_set :@text, (src.sub /\s*\[\.verdict\]#[A-Z]+#/, '')
+      end
+    end
+    return super unless badge
+    y0 = cursor
+    result = super
+    unless scratch?
+      prev_fill = fill_color
+      fill_color '777777'
+      text_box badge, at: [0, y0 - 1.5], width: bounds.width, align: :right, size: 6.8
+      fill_color prev_fill
+    end
+    result
+  end
+
   def convert_paragraph node
     # [.nohyph] role: suppress hyphenation for this paragraph (the gem guards
     # every hyphenation call with `defined? @hyphenator`) — used where a break

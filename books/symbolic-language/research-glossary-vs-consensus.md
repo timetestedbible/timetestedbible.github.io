@@ -408,3 +408,31 @@ alone (the chapter carries that argument; ch. 46).
 Totals over 139: **Match 49 (35%) · Refined 56 (40%) · Divergent 21
 (15%) · Novel 13 (9%)** (shares round to 99 — the Terms column is exact).
 Citations: Strong 83 (60%) · Partial 52 · Insufficient 4 (unchanged).
+
+---
+
+## Delta run 2026-07-08c — Tail added; South removed (glossary now 139)
+
+Tail (new, with the Fall of Babylon tail-chain): 3 blind proxies (all
+HIGH — false prophet per Isa 9:15's own decode + Deut 28 rank) → 3
+graders unanimous **REFINED / STRONG** ("Isa 9:15 states the definition
+verbatim; the book sharpens with the Isa 9:16 led-destroyed mechanism
+into Rev 12:4/9:19 and Ex 4:4"). Graders note the stars-as-saints
+application rests on the separate Stars entry.
+
+South REMOVED (author's directive on the not-yet-proven sweep): its own
+research (research-directions.md) calls it the thinnest of the four
+quarters, no chapter or study derives it, and no chapter links it. Its
+prior verdict (MATCH) removed from the tallies.
+
+Not-yet-proven sweep resolved: East and West now derive in print (the
+Fall of Babylon's hindermost/qedem passage) — markers dropped, seerefs
+repointed to ch. 33; Living water derives in Sea & Waters ch. 38 (and
+research-river.md) — marker dropped; Lamb, Lion, Scarlet, Serpent,
+Valley are derived in the digital edition's symbol studies
+(_symbols/*.md) — markers replaced with "derived in the digital
+edition's symbol study."
+
+Totals over 139: **Match 48 (35%) · Refined 57 (41%) · Divergent 21
+(15%) · Novel 13 (9%)**. Citations: Strong 84 · Partial 51 · 
+Insufficient 4.

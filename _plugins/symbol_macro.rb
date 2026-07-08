@@ -27,4 +27,21 @@ Asciidoctor::Extensions.register do
       end
     end
   end
+  # Inline macro:  verdict:divergent[] / verdict:novel[]
+  #
+  # Marks a glossary term with its experiment verdict (see the Introduction's
+  # blind test). HTML renders a right-floated small-caps badge; the print
+  # pipeline (build.rb) strips this macro from the term and re-expresses it as
+  # a badge paragraph the PDF converter inks right-aligned on the term line.
+  inline_macro do
+    named :verdict
+    process do |parent, target, _attrs|
+      if parent.document.backend == 'pdf'
+        Asciidoctor::Inline.new(parent, :quoted, '', type: :unquoted)
+      else
+        html = %(<span class="verdict-badge verdict-#{target}" style="float:right;font-variant:small-caps;font-size:0.78em;letter-spacing:0.08em;color:#8a6d1a;">#{target}</span>)
+        Asciidoctor::Inline.new(parent, :quoted, html, type: :unquoted)
+      end
+    end
+  end
 end
