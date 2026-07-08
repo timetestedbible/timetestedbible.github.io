@@ -135,6 +135,57 @@ carries its own load; cite them as neighbors, not proofs.
 
 ---
 
+## The two censuses — the mark of the beast resolved
+
+Set Ex 30 beside Rev 13 and the mark of the beast stops being a riddle: **it is the
+counterfeit of the temple census.** Line by line:
+
+| God's census | Babylon's census |
+|---|---|
+| each counted man gives the ransom-coin, "an atonement for your souls" (Ex 30:12-16) | "he causeth **all**... to receive a mark" (Rev 13:16) |
+| the Name on the forehead (Ex 28:36-38; Rev 14:1) | "the **name** of the beast" at forehead or hand (13:17) |
+| "I heard the **number** of them which were sealed: 144,000" (Rev 7:4) | "count the **number** of the beast... the number of a man: 666" (13:18) |
+| the coin is the entry: atonement money for the sanctuary service (Ex 30:16) | the mark is the entry: "no man might **buy or sell**" without it (13:17) |
+| "that there be **no plague** among them when thou numberest them" (Ex 30:12); the tormentors touch only the unsealed (Rev 9:4) | the first vial falls precisely "upon the men which **had the mark** of the beast" (Rev 16:2) |
+| the register: "the LORD shall **count**, when he **writeth up** the people" (Ps 87:6) — the Lamb's **book of life** (Rev 13:8) | the beast's enrollment (13:16-18) — both registers stand in the same chapter |
+
+Seal of God or seal of Babylon; the Name or the name; the counted-and-ransomed or
+the counted-and-marked; atonement money or commerce money. Every man ends in one
+census.
+
+**Where the two censuses' money goes** is the deepest line of the parallel. The
+ransom silver of Sinai's census was not banked — it was **cast into the sockets of
+the sanctuary**: "of the hundred talents of silver were cast the sockets of the
+sanctuary, and the sockets of the vail; a talent for a socket" (Ex 38:25-27; a
+bekah a head for 603,550 counted men, Num 1:46). **God's house stood on the melted
+ransom-coins of His counted people** — every board socketed in redemption money.
+Babylon's house stands on its counted people's commerce. And the one thing
+Babylon's census cannot do is exclude the sealed from the market that matters:
+"he that hath **no money**; come ye, buy... **without money** and without price"
+(Isa 55:1).
+
+**David's census proves the rule in narrative** (2 Sam 24; 1 Chr 21): "Satan stood
+up against Israel, and provoked David to **number** Israel" — a census with no
+ransom taken — and the Ex 30:12 clause executes: the plague falls, seventy
+thousand die, and it halts at Araunah's threshingfloor, which David refuses to
+take free — "neither will I offer burnt offerings unto the LORD my God of that
+which doth cost me nothing" (2 Sam 24:24) — and buys. That purchased floor is
+mount Moriah, the temple site (2 Chr 3:1). The unransomed census brought the
+plague; a paid price stopped it; and the payment-ground became the house of God.
+Satan's census kills; God builds His house where the ransom was finally paid.
+
+**The number itself keeps the pattern.** 666 stands in the Old Testament exactly
+twice, once at each pole of the counterfeit: it is a **money** figure — "the
+weight of gold that came to Solomon in **one year** was six hundred threescore
+and six talents" (1 Kgs 10:14; 2 Chr 9:13), the revenue at the turn where the
+king begins multiplying gold against Deut 17:17 — and it is a **census** figure —
+"the children of Adonikam, **six hundred sixty and six**" (Ezra 2:13), an entry
+in the return rolls [name-note, verify before use: Adonikam = "my lord has
+risen"]. The number of the beast is a man's gold-count where God keeps a
+ransom-count.
+
+---
+
 ## Counterfeits and inversions
 
 - **Acts 8:20** — Simon offers coin for the Spirit: "Thy money perish with thee,
