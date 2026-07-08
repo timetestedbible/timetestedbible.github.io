@@ -108,7 +108,12 @@ commission; the sealing releases) is the hinge both texts turn on.
   H3671) **of the earth**": the garment-corner word (Deut 22:12; Isa 11:12; Ezek
   7:2 — see research-river.md, the kanphot note). The earth wears a four-winged
   garment, and the gathering takes it by the hem — the covenant edge, the Wings
-  chapter's own symbol.
+  chapter's own symbol. And the corner is not a neutral place: on the garment it
+  is where the law hangs its reminder — "that ye may look upon it, and **remember
+  all the commandments** of the LORD" (Num 15:39) — so the four corners of the
+  earth are where the rememberers wait: "the remnant of her seed, which **keep the
+  commandments** of God" (Rev 12:17). The winds gather from the hem those who kept
+  the hem: the who, the where, and the how of Matt 24:31 in one figure.
 - Supporting agency texts: the scattering was already wind-work — "I have spread
   you abroad **as the four winds**" (Zech 2:6); the regathering reverses it (Deut
   30:4); and the resurrection-breath *comes from the four winds* (Ezek 37:9) — the
@@ -146,6 +151,65 @@ And the instrument fits both hearings at once: the great sword is war's weapon
 that separates the rest-people out — wielded by a wind, which is a spirit, at the
 juncture when the four ruchot gather the chosen. One rider, one sword, heard
 twice: the earth hears war; the sealed hear the trumpet.
+
+---
+
+## Noah at the sixth seal — the timing, and what it supports
+
+Put the second reading of Noah into the seal sequence and the order locks:
+
+1. **Called in**: "Come thou and all thy house into the ark; for thee have I seen
+   righteous" (Gen 7:1) — the rest-man summoned *before* the judgment.
+2. **Shut in**: "the LORD shut him in" (Gen 7:16) — sealed, seven days before the
+   rain (7:4). The sealing precedes the wrath by a fixed interval.
+3. **Then the flood**: "until the day that Noe entered into the ark, and the flood
+   came" (Luke 17:26-27) — the Lord's own statement of the order, given as the
+   pattern of His coming. And the flood is itself a defined symbol — **an army in
+   motion** (the glossary's own entry: Isa 8:7, "the waters of the river... even
+   the king of Assyria"; Jer 47:2; Dan 9:26, "the end thereof shall be with a
+   flood"). So the days-of-Noah sentence reads at both depths: *until the day Noah
+   entered the ark/covenant, then the army came and destroyed them all.* Luke
+   decodes his own symbol eleven verses of prophecy later — where Matthew has the
+   abomination of desolation, Luke writes "when ye shall see Jerusalem **compassed
+   with armies**... then let them which are in Judaea flee" (Luke 21:20-21): enter
+   the covering, then the flood-army — fulfilled once when the covenant people
+   fled before Rome's flood, and standing for the end, spoken once, heard twice.
+
+Revelation 6-7 runs the same order at the sixth seal: cosmic signs (6:12-13) → the
+wrath *announced* — "the great day of his wrath is come; and who shall be able to
+stand?" (6:17) → the answer to that question: the winds held, the servants sealed
+(7:1-3) → and then, in the very next scene, **a company that was not in heaven
+before is suddenly there**: "After this I beheld, and, lo, a great multitude,
+which no man could number... **stood before the throne**" (7:9) — identified as
+"they which **came out of** great tribulation" (7:14). At one juncture Revelation
+shows **two companies**: the sealed *on earth* (7:1-8) and the gathered *before
+the throne* (7:9-17). That is the book's own structure (the Remnant chapter's
+first-resurrection company with its measured upper limit, and the remnant kept
+through — the premise of a tribulation *survival* guide).
+
+**The carrying mechanism is the wings of the wind.** "He did fly upon the
+*kanphei-ruach*, the wings of the wind" (Ps 18:10); "who maketh the clouds his
+chariot: who walketh upon the wings of the wind: who maketh his angels *spirits*"
+(Ps 104:3-4 — chariot, wings, and ministers in one breath); "the wind hath bound
+her up in her *wings*" (Hos 4:19 — a wind can carry a people in its hem); and the
+first deliverance was named so: "I bare you on eagles' wings, and brought you
+**unto myself**" (Ex 19:4) — the very clause of John 14:3, "I will receive you
+**unto myself**." Revelation keeps the mechanism in play: "to the woman were given
+two wings of a great eagle, that she might fly... from the face of the serpent"
+(12:14).
+
+**What the alignment establishes, stated in Scripture's own terms:** the order is
+sealed → gathered → wrath. The gathered are "taken away from the evil to come"
+(Isa 57:1); they are "not appointed... to wrath" (1 Thess 5:9); they are kept
+"**from** the hour of temptation, which shall come upon **all the world**" (Rev
+3:10 — kept from an *hour*, a span of time, not merely a trial); and they stand
+before the throne while the day of wrath opens on the earth below. Matt 24:29's
+own phrase places "the tribulation of those days" *before* the gathering, and the
+gathered company's own label is "they which came **out of** great tribulation"
+(Rev 7:14) — so the removal stands at the climax of the tribulation of those days
+and **before the wrath**. If the wrath-period is what the book names the
+tribulation proper, this is removal before it — with Noah's seven shut-in days
+(Gen 7:4) as the sealed interval between the door closing and the rain.
 
 ---
 
