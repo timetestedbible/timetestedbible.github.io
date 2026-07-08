@@ -34,8 +34,11 @@ IMG_W, IMG_H   = 1376, 768         # source pixels (NOTE: ~106 DPI at this
                                    # scale — regenerate hi-res before upload)
 WRAP_IMG       = '../../../assets/img/calendar-usurper-wrap.jpg'
 WRAP_IMG_W, WRAP_IMG_H = 5186, 3700   # expand_image.py output: 1:1 with the wrap
-SUMMIT_IMG     = '../../../assets/img/symbol-cover-background.png'
-SUMMIT_W, SUMMIT_H = 3168, 1344       # ~136 DPI at display size — upscale before upload
+SUMMIT_IMG     = 'symbol-cover-4x.png'   # upscaled 3.23x + watermark removed (2026-07-08)
+SUMMIT_W, SUMMIT_H = 10240, 4344      # ~430 DPI at the paperback display size
+SUMMIT_REF_H   = 1344.0               # the orb/title anchor constants (1650, 2370,
+                                      # 1861.3, ...) are px in the ORIGINAL 3168x1344
+                                      # frame; divide by (SUMMIT_REF_H / disp_h)
 
 ISBN13   = "9781736521168"          # 978-1-7365211-6-8 — drives the back-cover EAN-13
 TITLE_1  = "The Bible's"
@@ -327,13 +330,14 @@ def build(preset_name):
     # --- layer: barcode (shared EAN-13 renderer)
     emit_barcode(svg, u, BACK_X1 - 2.0 - 0.375, BLEED + TRIM_H - 1.2 - 0.375)
 
-    # --- layer: guides (delete or hide before upload)
-    svg.append(f'<g id="layer-guides" stroke="#00e0ff" stroke-width="1" stroke-dasharray="8,6" opacity="0.6">')
-    for gx in (BACK_X0, BACK_X1, SPINE_X1, FRONT_X1):
-        svg.append(f'  <line x1="{u(gx)}" y1="0" x2="{u(gx)}" y2="{u(WRAP_H)}"/>')
-    svg.append(f'  <line x1="0" y1="{u(BLEED)}" x2="{u(WRAP_W)}" y2="{u(BLEED)}"/>')
-    svg.append(f'  <line x1="0" y1="{u(WRAP_H - BLEED)}" x2="{u(WRAP_W)}" y2="{u(WRAP_H - BLEED)}"/>')
-    svg.append('</g>')
+    # --- layer: guides (delete or hide before upload; --final omits)
+    if not FINAL:
+        svg.append(f'<g id="layer-guides" stroke="#00e0ff" stroke-width="1" stroke-dasharray="8,6" opacity="0.6">')
+        for gx in (BACK_X0, BACK_X1, SPINE_X1, FRONT_X1):
+            svg.append(f'  <line x1="{u(gx)}" y1="0" x2="{u(gx)}" y2="{u(WRAP_H)}"/>')
+        svg.append(f'  <line x1="0" y1="{u(BLEED)}" x2="{u(WRAP_W)}" y2="{u(BLEED)}"/>')
+        svg.append(f'  <line x1="0" y1="{u(WRAP_H - BLEED)}" x2="{u(WRAP_W)}" y2="{u(WRAP_H - BLEED)}"/>')
+        svg.append('</g>')
     svg.append('</svg>')
 
     out = f'cover-wrap-{preset_name}.svg'
@@ -486,7 +490,7 @@ def build_case():
     # breathes: the eclipse clears the crimp groove entirely (author's
     # ruling 2026-07-08) and the title keeps its painting-anchored spot.
     disp_h = 9.74
-    ppi = SUMMIT_H / disp_h
+    ppi = SUMMIT_REF_H / disp_h   # anchors are original-frame px
     img_y = (BT + BB_Y) / 2 - disp_h / 2
     # orbs centered between the CRIMP LINE and the trim — the template's own
     # sanctioned centering for the crimped case ("crimp line and trim line")
@@ -516,8 +520,8 @@ def build_jacket():
     SP0, SP1 = 10.125, 823 / 72                   # spine folds
     BP0, BP1 = FFOLD_L, SP0                       # back panel
     FP0, FP1 = SP1, FFOLD_R                       # front panel
-    disp_h = 10.55                                 # watermark drops below the canvas at this scale
-    ppi = SUMMIT_H / disp_h
+    disp_h = 10.55
+    ppi = SUMMIT_REF_H / disp_h   # anchors are original-frame px
     img_x = (FP0 + FP1) / 2 - (1650 + 2370) / 2 / ppi
     k = disp_h / 9.85
     svg, u = _svg_scaffold(W, H, img_x, disp_h,
