@@ -57,7 +57,7 @@ BACK_COPY = [
     ("", ""),
     ("This book feeds meat \u2014 not a closed set of mysteries", ""),
     ("explained, but lessons in how to seek and discover", ""),
-    ("fresh meat on your own. With more than 120 symbols", ""),
+    ("fresh meat on your own. With more than 140 symbols", ""),
     ("proved from Scripture\u2019s own cross-references, it", ""),
     ("brings the Bible to life.", ""),
     ("", ""),
@@ -189,7 +189,7 @@ def build(preset_name):
                    f'letter-spacing="{u(0.025)}">{AUTHOR.upper()}</text>')
         # small elegant line at the foot of the front panel
         svg.append(f'  <text x="{u(FRONT_CX)}" y="{u(8.62)}" font-size="{u(0.16)}" fill="{CREAM}" '
-                   f'font-style="italic" font-weight="normal" letter-spacing="{u(0.02)}">Over 120 symbols revealed</text>')
+                   f'font-style="italic" font-weight="normal" letter-spacing="{u(0.02)}">Over 140 symbols revealed</text>')
         svg.append('</g>')
     else:
         svg.append(f'<g id="layer-front-title" font-family="Noto Serif" fill="#f2ead6" text-anchor="middle" {text_shadow}>')
