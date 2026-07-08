@@ -46,3 +46,15 @@ pass; verify counts before print claims.
    shape.
 5. faith obeys because it trusts (author's ground, ch06): Abraham "went
    out, not knowing whither" (Heb 11:8) — obedience ahead of sight.
+
+## The four offices — tested (author's thesis, 2026-07-08)
+
+faith = obeying from trust alone; belief = obeying because the facts
+compel; knowing = obeying as covenant/marriage obligation and intimacy;
+love = the keeping itself. CONFIRMED distinct: John 20:29 grades belief
+(seen) vs faith (not seen, yet believed) in one sentence; Hos 2:20 joins
+faithfulness and knowing as betrothal->marriage; Jer 22:16 defines knowing
+as covenant duties done; 1 John 5:3 defines love AS the keeping (an act,
+not a ground); Prov 3:5 opposes trust to leaning on understanding
+(faith != belief). "Collapse into one" was the wrong figure — one act,
+four offices. Ch06 collapse paragraph rewritten accordingly.
