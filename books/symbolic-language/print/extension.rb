@@ -802,6 +802,14 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # turn, the eye slides right) but never across a page TURN (recto -> next
   # verso). Short remainders and turn-crossing breaks push the entry whole to
   # the next page, as before.
+  # Data tables breathe: a small stand-off above every prevalence-table
+  # (author's ruling 2026-07-08 — "table needs some breathing room above"),
+  # skipped when the table already opens a page.
+  def convert_table node
+    move_down 8 if (node.has_role? 'prevalence-table') && !at_page_top?
+    super
+  end
+
   def convert_open node
     if node.role == 'glossentry' && !scratch?
       h = (dry_run { traverse node }).single_page_height rescue nil
