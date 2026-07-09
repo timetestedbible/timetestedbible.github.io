@@ -513,6 +513,14 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       return result
     end
     flush_table_float                       # place any pending float before a new table
+    # A table marked [.fullpage] always floats to its own page: text before it
+    # fills the current page, the table renders whole from a page top, and the
+    # following prose flows on after (author's ruling 2026-07-08 — in-flow
+    # placement was three lines from aligning and fragile to any reflow).
+    if node.has_role? 'fullpage'
+      @table_float = node
+      return
+    end
     ext = begin
       dry_run { convert_table node }
     rescue StandardError
@@ -571,16 +579,18 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     elsif force
       # Even a forced flush should fill the current page if the table fits in
       # what remains — advancing unconditionally left near-empty pages when a
-      # figure pushed the float's boundary onto a fresh page.
+      # figure pushed the float's boundary onto a fresh page. A [.fullpage]
+      # table always takes a fresh page.
       @table_float = nil
       ext = begin
         dry_run { convert_table node }
       rescue StandardError
         nil
       end
-      advance_page unless at_page_top? || (ext && ext.single_page?)
+      advance_page unless at_page_top? || (!(node.has_role? 'fullpage') && ext && ext.single_page?)
       render_float_table node
     else
+      return if node.has_role? 'fullpage'   # fullpage floats wait for a page top
       ext = begin
         dry_run { convert_table node }      # does it fit in what remains here?
       rescue StandardError
