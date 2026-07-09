@@ -269,3 +269,18 @@ edge of the mark passage:
    "when thou takest the SUM of the children of Israel after their
    number." A specific man's enrollment figure, solvable ("you shall
    FIND the sum").
+
+## The first redemption census — Numbers 3 (2026-07-09)
+
+First ransom of the firstborn = the Passover lamb's blood (Ex 12; hence
+Ex 13:2, 13-15's standing ordinance). First redemption BY MONEY =
+Numbers 3: Levites swapped man-for-man; firstborn counted 22,273 vs
+22,000; the 273 surplus redeemed at FIVE sanctuary shekels a head —
+1,365 shekels to Aaron (Num 3:46-50; price fixed Num 18:16).
+
+**The formula find:** Num 3:40, 43 — the firstborn numbered "by the
+NUMBER OF NAMES" (b'mispar shemot). Revelation's "the NUMBER OF HIS
+NAME" (mispar shemo) counterfeits the redemption-census formula itself:
+God's first money-redemption counts names and ransoms per head; the
+beast's enrollment counts under its name. Feeds the Coin chapter's
+census argument alongside Ex 30.
