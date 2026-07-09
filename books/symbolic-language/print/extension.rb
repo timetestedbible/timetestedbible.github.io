@@ -797,6 +797,23 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # RIGHT-ALIGNED on the term's line with a raw prawn text_box (no inline
   # formatting pipeline), after the terms ink at the captured cursor. The badge
   # survives the unbreakable scratch/real double-convert via a node attribute.
+  # Glossary entries: spread-aware keep-together (author's ruling 2026-07-08).
+  # An entry may FLOW across a spread (verso bottom -> facing recto: no page
+  # turn, the eye slides right) but never across a page TURN (recto -> next
+  # verso). Short remainders and turn-crossing breaks push the entry whole to
+  # the next page, as before.
+  def convert_open node
+    if node.role == 'glossentry' && !scratch?
+      h = (dry_run { traverse node }).single_page_height rescue nil
+      if h && h > cursor
+        # entry will not fit the remaining page: break across the spread only
+        start_new_page if (page_number.odd? || cursor < h * 0.25)
+      end
+      return traverse node
+    end
+    super
+  end
+
   def convert_dlist node
     badge = node.attr 'verdictbadge'
     node.items.each do |terms, _dd|

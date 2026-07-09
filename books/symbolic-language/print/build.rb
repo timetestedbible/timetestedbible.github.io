@@ -150,7 +150,7 @@ main_entries.each do |c|
       # shows them); no built book prints chapter numbers, so strip them here
       # (print, screen, and epub all assemble from this doc).
       blk = blk.gsub(/\[\.chnum\]#([^#]*)#/, '')
-      "[%unbreakable]\n--\n#{blk}\n--"
+      "[.glossentry]\n--\n#{blk}\n--"
     }.join("\n\n")
   end
   # The ebook cannot run the PDF converter's chapter machinery, so the plate
