@@ -24,12 +24,63 @@ the woman is the House of Israel and 10 coins represents 10 tribes. A parallel t
 cannot be proven, but fits generally. The "LAMP is a commandment"(TODO cite), and the
 LIGHT is the lived example of obedience to the commandment. (TODO cite)
 
-Now we are left with the silver coin, which takes us to the next parable with a coin:
+Now we are left with the silver coin, which takes us to a similtude with a coin:
 
 [quote.scripture, Matthew 17:24-27]
 ____
-And when they were come to Capernaum, they that received the half-shekel came to Peter, and said, Doth not your teacher pay the half-shekel? He saith, Yea. And when he came into the house, Jesus spake first to him, saying, What thinkest thou, Simon? the kings of the earth, from whom do they receive toll or tribute? from their sons, or from strangers? And when he said, From strangers, Jesus said unto him, Therefore the sons are free. But, lest we cause them to stumble, go thou to the sea, and cast a hook, and take up the fish that first cometh up; and when thou hast opened his mouth, thou shalt find a shekel: that take, and give unto them for me and thee.
+And when they were come to Capernaum, they that received the half-shekel came to Peter, and said, Doth not your teacher pay the half-shekel? He saith, Yea. And when he came into the house, Jesus spake first to him, saying, What thinkest thou, Simon? the kings of the earth, from whom do they receive toll or tribute? from their sons, or from STRANGER? And when he said, From STRANGER, Jesus said unto him, Therefore the sons are free. But, lest we cause them to stumble, go thou to the SEA, and cast a hook, and take up the FISH that *first cometh up*; and when thou hast opened his *mouth*, thou shalt find a shekel: that take, and give unto them for me and thee.
 ____
+
+Now this similtude is enacting the atonemnt of the souls described in Exodus. The firstborn of
+whatever opens the womb among the children of Israel belongs to God and *must be redeemed* and
+if any first born is not redeemed its neck shall be broken. This redemption occurs on the
+16th of the 1st month, first fruits, the day Jesus rose from the dead. 
+
+This is done as a *sign on your hand* and a *memorial* on your forehead, that the LORD's law
+may be in your *mouth*  -- Ex 13:9
+
+The first ransom was the passover lamb sparing the first born of Israel. 
+
+And the LORD said to Moses, Number all the firstborn of the males of the children of Israel from a month old and upward, and take **the number of their names**. 
+
+[quote.scripture, Exodus 30:12, 15]
+____
+When thou takest the sum of the children of Israel after their number, then shall they give every man *a ransom for his soul* unto the LORD, when thou numberest them; that there be *no plague* among them, when thou numberest them… The *rich* shall not give *more*, and the *poor* shall not give *less* than half a shekel… to make an *atonement* for your souls.
+____
+
+The ransom is an atonement as Exodus goes on to say:
+
+And you shall **take the atonement money of the children** of Israel, and shall appoint it for the service of the tabernacle of the congregation; that it may be a memorial to the children of Israel before the LORD, **to make an atonement for your souls**.
+
+
+And with this law we come to understand that the *first born* must pay the temple tax in order
+to avoid the plague when number them. 
+
+
+
+
+
+And all the firstborn males by the number of names, from a month old and upward, of those that were numbered of them, were twenty and two thousand two hundred and three score and thirteen.
+
+
+
+Whenever,
+    Israel is counted, every head owes a coin. 
+
+[quote.scripture, Exodus 30:12, 15]
+____
+When thou takest the sum of the children of Israel after their number, 
+     then shall they give every man *a ransom for his soul* unto the LORD, 
+     when thou numberest them; that there be *no plague* among them, 
+     when thou numberest them… The *rich* shall not give *more*, 
+     and the *poor* shall not give *less* than half a shekel… 
+     to make an *atonement* for your souls.
+____
+
+
+
+
+
 
 [quote.scripture, Matthew 17:27]
 ____
