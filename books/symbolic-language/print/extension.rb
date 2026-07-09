@@ -806,7 +806,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # (author's ruling 2026-07-08 — "table needs some breathing room above"),
   # skipped when the table already opens a page.
   def convert_table node
-    move_down 8 if (node.has_role? 'prevalence-table') && !at_page_top?
+    move_down 5 if (node.has_role? 'prevalence-table') && !at_page_top?
     super
   end
 
