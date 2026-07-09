@@ -284,3 +284,33 @@ NAME" (mispar shemo) counterfeits the redemption-census formula itself:
 God's first money-redemption counts names and ransoms per head; the
 beast's enrollment counts under its name. Feeds the Coin chapter's
 census argument alongside Ex 30.
+
+## The 22,273 — the count expanded (2026-07-09)
+
+Four edges on Num 3:43's number:
+
+1. **Exact where the army is round.** The tribal musters run in
+   round hundreds and fifties (Num 1); the redemption census alone
+   lands on a jagged 22,273 — counted "by the number of names," to
+   the man. Where ransom is owed, God counts individuals; where
+   strength is measured, He rounds. The exactness CREATES the 273
+   remainder, and the remainder forces the money: name-precision is
+   why redemption silver exists at all.
+2. **The anomaly is the sermon.** ~603,550 fighting men (Num 1:46)
+   imply hundreds of thousands of households — yet only 22,273
+   firstborn? The count is not of all firstborn living but of those
+   born under the claim: Ex 13:2's "whatsoever openeth the womb" was
+   instituted AT Passover, so the census (13 months on) numbers those
+   born since the blood. Only those born after the lamb are in the
+   redemption census — you enter God's count by being born under the
+   redemption, not by being present in the camp.
+3. **The 300 wrinkle**: Levite sub-clans sum 22,300 (7,500 + 8,600 +
+   6,200) but stand as 22,000 (3:39) — the classic reading: 300
+   Levite firstborn could not substitute, being owed for themselves.
+   Even the substitutes are audited name by name.
+4. **The two ledgers of Rev 7 keep the pattern**: the sealed are an
+   exact, heard NUMBER (144,000 — 12,000 by tribe, the redemption
+   ledger), while the great multitude is "which no man could NUMBER"
+   (7:9). God counts what He ransoms, to the name; the merely present
+   go unnumbered — and the beast counterfeits precisely the exact,
+   named, per-head ledger.
