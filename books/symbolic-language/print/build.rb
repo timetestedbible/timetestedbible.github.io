@@ -20,6 +20,7 @@
 require 'asciidoctor'
 require 'asciidoctor-pdf'
 require 'yaml'
+require 'json'
 require_relative 'extension'
 require File.expand_path('../../../_plugins/symbol_macro', __dir__)  # sym: inline macro — glossary xref (PDF) / link (web), shared with the web build
 
@@ -276,7 +277,13 @@ build_target = lambda do |media, out|
 # bump block quotes into phantom gaps. If markers oscillate (a band on page N
 # pushing its own marker to N+1 and back), fall back to the old max-union
 # reserve, which cannot flip-flop, and grow it until safe.
-reserve = {}
+RESERVE_CACHE = File.join(DIR, '.fn-reserve.json')
+reserve = begin
+  JSON.parse(File.read(RESERVE_CACHE)).transform_keys(&:to_i)
+rescue StandardError
+  {}
+end
+warn "  footnote reserve warm-start: #{reserve.size} pages cached" unless reserve.empty?
 passes  = 0
 history = []
 loop do
@@ -320,6 +327,7 @@ loop do
   reserve = detected.dup
 end
 warn "  footnote layout settled after #{passes} passes: #{fmt.call reserve}"
+File.write(RESERVE_CACHE, JSON.generate(reserve)) rescue nil
 render.call reserve, true
 
   warn "Wrote: #{out}  (media=#{media})"
