@@ -5,13 +5,14 @@ Gap: 274 KJV occurrences, no glossary entry. Verified against kjv_strongs.
 ## Scripture's own entry conditions
 
 Jesus does not leave "disciple" to the dictionary; He states conditions,
-twice with "cannot":
+three times with "cannot":
 - "If ye *continue in my word*, then are ye my disciples INDEED" (John
   8:31) — indeed: real against nominal.
 - "By this shall all men know that ye are my disciples, if ye have *love*
   one to another" (John 13:35) — and love is the keeping (1 John 5:3).
 - "Herein is my Father glorified, that ye bear much *fruit*; so shall ye
   be my disciples" (John 15:8) — fruit: works (glossary).
+- "If any man come to me, and *hate not* his father, and mother… CANNOT be my disciple" (Luke 14:26).
 - "whosoever doth not *bear his cross*… CANNOT be my disciple" (Luke 14:27).
 - "whosoever… *forsaketh not all* that he hath, he CANNOT be my disciple"
   (Luke 14:33).
@@ -34,6 +35,8 @@ forever," HG). Joined into the Gospel chapter's Commission closer.
 ## Glossary candidate (run delta grading first)
 
 > Disciple:: One in whom the law is sealed — "seal the law among my
-> disciples" — proven by continuing in the word, love, and fruit; twice
+> disciples" — proven by continuing in the word, love, and fruit; three times
 > Jesus says CANNOT of those who will not bear the cross and forsake all. +
 > (Isa 8:16; John 8:31; 13:35; 15:8; Luke 14:27, 33)
+
+**Verdict (3 blind proxies, 3 skeptical graders, 2026-07-09): unanimous DIVERGENT, citations STRONG** — all three graders independently verified every citation (H3928, H8527, G3100, the 274 count, HG 'forever') and ruled the law-sealed definition, the cannot-gates, and the Moses-resolved commission contradict the learner-follower consensus on load-bearing ground. Folded: entry 145, badge 37, divergent 24.

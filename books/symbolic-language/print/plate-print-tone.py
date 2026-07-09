@@ -22,8 +22,8 @@ Image.MAX_IMAGE_PIXELS = None
 def make_lut(floor, gamma):
     return [round(255 * (floor + (1 - floor) * (i / 255) ** gamma)) for i in range(256)]
 
-for f in sorted(glob.glob('*-plate-print.jpg')):
-    master = f.replace('-print', '')
+for f in sorted(glob.glob('images/print/*.jpg')):
+    master = f.replace('images/print/', 'images/masters/')
     if not os.path.exists(master):
         print('SKIP (no color master):', f)
         continue

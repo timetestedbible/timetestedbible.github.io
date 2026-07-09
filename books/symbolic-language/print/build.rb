@@ -160,12 +160,12 @@ main_entries.each do |c|
   # ebook-edition, so its pagination is untouched.
   ebook_front = +''
   if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
-    color  = plate.sub '-print', ''
+    color  = plate.sub 'images/print/', 'images/masters/'
     master = [color, plate].find { |f| File.exist? File.join(SRC, f) }
     if master
-      # Reference a downsized "-ebook" twin (the masters total >100MB; stores
-      # charge delivery by the MB). The epub branch generates missing twins.
-      twin = master.sub(/\.jpg\z/, '-ebook.jpg')
+      # Reference a downsized twin in images/ebook/ (the masters total >100MB;
+      # stores charge delivery by the MB). The epub branch generates twins.
+      twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
       ebook_front << "image::#{twin}[#{c[:title]}]\n\n"
     end
@@ -197,9 +197,9 @@ back_entries.each do |c|
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
   # Same ebook-only plate injection as the main chapters (the author portrait).
   if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
-    master = [plate.sub('-print', ''), plate].find { |f| File.exist? File.join(SRC, f) }
+    master = [plate.sub('images/print/', 'images/masters/'), plate].find { |f| File.exist? File.join(SRC, f) }
     if master
-      twin = master.sub(/\.jpg\z/, '-ebook.jpg')
+      twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
       doc << "ifdef::ebook-edition[]\n\nimage::#{twin}[#{c[:title]}]\n\nendif::[]\n\n"
     end
