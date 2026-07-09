@@ -236,3 +236,36 @@ Acts 8:18-20.
 **Mouth-texts carried with the fish:** Ex 13:9; Deut 30:14; Rom 10:8-10.
 **Not swept:** the full kesef/shekel commerce concordance; the drachma/daric
 treasury lists of Ezra-Nehemiah. Neither is expected to bear on the symbol.
+
+---
+
+## The number of its name — Rev 13:14-18 expanded (2026-07-09)
+
+HG Revelation 13 (versified one behind the Greek) sharpens every census
+edge of the mark passage:
+
+1. **Three formats, one enrollment** (v18/Gk 17): the sign, "the NAME of
+   the animal, or the NUMBER of its name." Name = covenant; the number
+   of a name is the COUNT of those enrolled under it — a census figure.
+2. **Revelation supplies the counter-census in the same vocabulary**:
+   "I heard the NUMBER of them which were sealed: 144,000" (Rev 7:4) —
+   His name on their foreheads (14:1). Two names, two numbers, two
+   censuses: 144,000 is the number of HIS name; 666 the number of ITS.
+3. **Rev 15:2**: the victors overcome "the beast... his image... his
+   mark, and the NUMBER of his name" — the count itself is a thing to
+   overcome: refusal of enrollment.
+4. **The only census-666 in Scripture**: "The children of ADONIKAM, six
+   hundred sixty and six" (Ezra 2:13) — a count filed UNDER A NAME, and
+   the name means "the lord has risen." (Neh 7:18 counts 667 — census
+   counts move; supporting pattern, not an identity proof.)
+5. **1 Kgs 10:14**: Solomon's 666 talents of gold per YEAR — the
+   commerce count, matching the buy/sell gate (Gk 17).
+6. **NEW — the rich-and-poor mirror**: HG v17 marks "the wealthy and
+   the poor" alike; Ex 30:15's ransom census: "the RICH shall not give
+   more, and the POOR shall not give less" — the counterfeit keeps the
+   original's equality clause.
+7. **Census vocabulary throughout**: chashav (calculate), sakh (sum),
+   and "the number of ONE man" (adam echad, v19/Gk 18) — cf. Ex 30:12
+   "when thou takest the SUM of the children of Israel after their
+   number." A specific man's enrollment figure, solvable ("you shall
+   FIND the sum").
