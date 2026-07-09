@@ -58,3 +58,5 @@ as covenant duties done; 1 John 5:3 defines love AS the keeping (an act,
 not a ground); Prov 3:5 opposes trust to leaning on understanding
 (faith != belief). "Collapse into one" was the wrong figure — one act,
 four offices. Ch06 collapse paragraph rewritten accordingly.
+
+**Faithful = consistent love (author, 2026-07-08):** love is the keeping; faithful is the keeping KEPT — Ex 17:12; Matt 24:46; Rev 2:10; 2 Tim 2:13.
