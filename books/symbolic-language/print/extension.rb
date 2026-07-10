@@ -1062,7 +1062,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # plate verso, so a part-opening chapter with a plate still works.
   def start_new_chapter chapter
     start_new_page unless at_page_top?
-    if !scratch? && (plate = CHAPTER_PLATES[chapter && chapter.id])
+    if !scratch? && !ENV['NO_PLATES'] && (plate = CHAPTER_PLATES[chapter && chapter.id])
       if recto_page?
         # parity demands the plate's verso start a leaf later: this empty
         # recto becomes a true-blank spacer, the plate takes the verso after.

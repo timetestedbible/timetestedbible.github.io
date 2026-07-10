@@ -34,6 +34,9 @@ ALL_TARGETS = {
   'prepress' => File.join(DIR, 'the-bibles-symbolic-language-print.pdf'),
   'screen'   => File.join(DIR, 'the-bibles-symbolic-language-screen.pdf'),
 }
+# NO_PLATES=1: text-review build — chapter plates skipped (inline diagrams kept),
+# separate output name so the print artifact is never clobbered.
+ALL_TARGETS.each { |k, v| ALL_TARGETS[k] = v.sub('.pdf', '-noplates.pdf') } if ENV['NO_PLATES']
 WANT_EPUB = ['all', 'epub', 'ebook'].include?(ARGV[0] || 'all')
 TARGETS = case (ARGV[0] || 'all')
           when 'all'               then ALL_TARGETS
@@ -277,7 +280,7 @@ build_target = lambda do |media, out|
 # bump block quotes into phantom gaps. If markers oscillate (a band on page N
 # pushing its own marker to N+1 and back), fall back to the old max-union
 # reserve, which cannot flip-flop, and grow it until safe.
-RESERVE_CACHE = File.join(DIR, '.fn-reserve.json')
+RESERVE_CACHE = File.join(DIR, ENV['NO_PLATES'] ? '.fn-reserve-noplates.json' : '.fn-reserve.json')
 reserve = begin
   JSON.parse(File.read(RESERVE_CACHE)).transform_keys(&:to_i)
 rescue StandardError
