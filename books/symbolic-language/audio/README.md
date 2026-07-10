@@ -66,3 +66,9 @@ Where print keeps a KJV word and defines it in the following line (2 Tim 2:19
 ("unrighteousness") — the ear cannot see footnotes, and a spoken
 quote-then-correction is clunky. anomia is always "lawlessness" (inherited
 from print); OT avon keeps "iniquity."
+
+## Colon appositions re-flow for speech
+
+Print's terse appositions ("The LORD: the name.") read as slammed stops in
+TTS. Speak them as flowing clauses ("The LORD — there is the name.") or full
+sentences. Sweep pattern when transforming: `[a-z]: [a-z]` inside narrator prose.
