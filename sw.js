@@ -85,8 +85,6 @@ const DATA_ASSETS = [
   '/data/bdb.json.gz',
   '/data/hebrew-gospels-interlinear.json.gz',
   '/data/hebrew-gospels-notes.json.gz',
-  '/data/gematria-compact.json.gz',
-  '/data/gematria-index.json.gz',
   '/data/verse-formatting.json.gz',
   '/docs/temple-chronology-verification.md'
 ];

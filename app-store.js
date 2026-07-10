@@ -36,7 +36,6 @@ const AppStore = {
     ui: {
       researchPanelOpen: false,  // Research panel visibility (collapsed thumb vs expanded)
       strongsId: null,          // Open Strongs modal (e.g., 'H430')
-      gematriaExpanded: false,  // Whether gematria related-words section is expanded
       searchQuery: null,        // Search query string
       personId: null,           // Open person card
       timelineEventId: null,    // Selected timeline event ID (opens detail panel)
@@ -478,7 +477,6 @@ const AppStore = {
     'OPEN_STRONGS',
     'SET_STRONGS_ID',
     'CLOSE_STRONGS',
-    'TOGGLE_GEMATRIA',
     'OPEN_SEARCH',
     'SET_SEARCH_QUERY',
     'CLOSE_SEARCH',
@@ -1283,7 +1281,6 @@ const AppStore = {
         // Collapsing also clears Strong's content (clean URL state)
         if (!open) {
           s.ui.strongsId = null;
-          s.ui.gematriaExpanded = false;
         }
         return true;
       }
@@ -1299,7 +1296,6 @@ const AppStore = {
         }
         if (s.ui.strongsId !== newStrongsId) {
           s.ui.strongsId = newStrongsId;
-          s.ui.gematriaExpanded = false;
           changed = true;
         }
         return changed;
@@ -1308,11 +1304,6 @@ const AppStore = {
       case 'CLOSE_STRONGS':
         if (s.ui.strongsId === null) return false;
         s.ui.strongsId = null;
-        s.ui.gematriaExpanded = false;
-        return true;
-      
-      case 'TOGGLE_GEMATRIA':
-        s.ui.gematriaExpanded = !s.ui.gematriaExpanded;
         return true;
         
       case 'OPEN_SEARCH':

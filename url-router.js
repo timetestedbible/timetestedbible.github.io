@@ -323,7 +323,6 @@ const URLRouter = {
       ui: {
         researchPanelOpen: false,
         strongsId: null,
-        gematriaExpanded: false,
         searchQuery: null,
         personId: null,
         timelineEventId: null,
@@ -497,9 +496,6 @@ const URLRouter = {
     }
     if (searchParams.get('research') === '1') {
       result.ui.researchPanelOpen = true;
-    }
-    if (searchParams.get('gematria')) {
-      result.ui.gematriaExpanded = searchParams.get('gematria') === '1';
     }
     // Global search query
     if (searchParams.get('q')) {
@@ -971,7 +967,6 @@ const URLRouter = {
     const params = new URLSearchParams();
     if (ui.strongsId) params.set('strongs', ui.strongsId);
     else if (ui.researchPanelOpen) params.set('research', '1');
-    if (ui.gematriaExpanded) params.set('gematria', '1');
     // Global search query (appears on any view when results are open)
     if (ui.globalSearchQuery) {
       params.set('q', ui.globalSearchQuery);
@@ -1195,7 +1190,7 @@ const URLRouter = {
    * Returns true ONLY when the path changed but the query string is identical,
    * and the parsed state resolves to the same book/chapter/verse/contentType.
    * This prevents back-button loops when e.g. /bible/Genesis/1 normalizes to /bible/kjv/Genesis/1.
-   * Any query-param change (strongs, il, verse, gematria, etc.) is a real state change, not normalization.
+   * Any query-param change (strongs, il, verse, etc.) is a real state change, not normalization.
    */
   _isUrlNormalization(currentURL, newURL) {
     try {

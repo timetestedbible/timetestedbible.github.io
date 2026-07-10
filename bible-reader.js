@@ -184,178 +184,6 @@ function getChapterFormatting(bookName, chapter) {
   return verseFormattingData[`${bookName}.${chapter}`] || null;
 }
 
-// ============================================
-// GEMATRIA DATA AND FUNCTIONS
-// ============================================
-
-// Gematria data storage
-var gematriaData = null;        // { hebrew: {...}, greek: {...} }
-var gematriaIndex = null;       // { value: { hebrew: [...], greek: [...] }, ... }
-var gematriaLoading = null;     // Promise while loading
-
-// Load gematria data (lazy load on first use)
-async function loadGematriaData() {
-  if (gematriaData && gematriaIndex) return true;
-  if (gematriaLoading) return gematriaLoading;
-  
-  gematriaLoading = (async () => {
-    try {
-      const [compact, index] = await Promise.all([
-        _fetchJsonGz('/data/gematria-compact.json'),
-        _fetchJsonGz('/data/gematria-index.json')
-      ]);
-      gematriaData = compact;
-      gematriaIndex = index;
-      console.log('[Gematria] Loaded gematria data');
-      return true;
-    } catch (err) {
-      console.warn('[Gematria] Failed to load gematria data:', err);
-      return false;
-    }
-  })();
-  
-  return gematriaLoading;
-}
-
-// Get gematria value for a Strong's number
-function getGematriaValue(strongsNum) {
-  if (!gematriaData) return null;
-  const normalized = normalizeStrongsNum(strongsNum);
-  
-  if (normalized.startsWith('H') && gematriaData.hebrew) {
-    const entry = gematriaData.hebrew[normalized];
-    return entry ? entry[1] : null;  // [lemma, value]
-  }
-  if (normalized.startsWith('G') && gematriaData.greek) {
-    const entry = gematriaData.greek[normalized];
-    return entry ? entry[1] : null;
-  }
-  return null;
-}
-
-// Get all words with the same gematria value
-function getRelatedByGematria(strongsNum, limit = 20) {
-  if (!gematriaIndex) return null;
-  
-  const value = getGematriaValue(strongsNum);
-  if (!value) return null;
-  
-  const related = gematriaIndex[value];
-  if (!related) return null;
-  
-  const normalized = normalizeStrongsNum(strongsNum);
-  const isHebrew = normalized.startsWith('H');
-  
-  // Filter out the current word and limit results
-  const hebrewWords = (related.hebrew || [])
-    .filter(w => w.strongs !== normalized)
-    .slice(0, limit);
-  const greekWords = (related.greek || [])
-    .filter(w => w.strongs !== normalized)
-    .slice(0, limit);
-  
-  return {
-    value: value,
-    hebrew: hebrewWords,
-    greek: greekWords,
-    totalHebrew: (related.hebrew || []).length - (isHebrew ? 1 : 0),
-    totalGreek: (related.greek || []).length - (!isHebrew ? 1 : 0)
-  };
-}
-
-// Render gematria section HTML
-function renderGematriaSection(strongsNum, expanded = false) {
-  const value = getGematriaValue(strongsNum);
-  if (!value) return '';
-  
-  const related = getRelatedByGematria(strongsNum);
-  const hasRelated = related && (related.hebrew.length > 0 || related.greek.length > 0);
-  
-  let html = `
-    <div class="strongs-gematria-section">
-      <div class="strongs-gematria-header${hasRelated ? ' strongs-gematria-clickable' : ''}"${hasRelated ? ` onclick="AppStore.dispatch({type:'TOGGLE_GEMATRIA'})"` : ''}>
-        <span class="strongs-gematria-icon">🔢</span>
-        <span class="strongs-gematria-title">Gematria</span>
-        <span class="strongs-gematria-value">${value}</span>
-        ${hasRelated ? `<span class="strongs-gematria-expand">${expanded ? '▲' : '▼'}</span>` : ''}
-      </div>
-  `;
-  
-  if (hasRelated) {
-    html += `<div class="strongs-gematria-related" id="gematria-related" style="display: ${expanded ? 'block' : 'none'};">`;
-    
-    // Hebrew words with same value
-    if (related.hebrew.length > 0) {
-      html += `<div class="strongs-gematria-group">
-        <div class="strongs-gematria-group-title">Hebrew (${related.totalHebrew})</div>
-        <div class="strongs-gematria-words">`;
-      
-      for (const word of related.hebrew) {
-        const primaryWord = extractPrimaryWord(word.def);
-        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="navigateToStrongs('${word.strongs}', event)">${primaryWord}</span>`;
-      }
-      
-      html += `</div></div>`;
-    }
-    
-    // Greek words with same value
-    if (related.greek.length > 0) {
-      html += `<div class="strongs-gematria-group">
-        <div class="strongs-gematria-group-title">Greek (${related.totalGreek})</div>
-        <div class="strongs-gematria-words">`;
-      
-      for (const word of related.greek) {
-        const primaryWord = extractPrimaryWord(word.def);
-        html += `<span class="strongs-gematria-word" data-strongs="${word.strongs}" onclick="navigateToStrongs('${word.strongs}', event)">${primaryWord}</span>`;
-      }
-      
-      html += `</div></div>`;
-    }
-    
-    html += `</div>`;
-  }
-  
-  html += `</div>`;
-  return html;
-}
-
-// Extract a clean primary word/phrase from a Strong's definition
-function extractPrimaryWord(def) {
-  if (!def) return '(unknown)';
-  
-  // Clean up the definition
-  let cleaned = def.trim();
-  
-  // Remove leading articles and common prefixes
-  cleaned = cleaned.replace(/^(a |an |the |to |properly[,:]? ?|i\.e\.[,:]? ?)/i, '');
-  
-  // Get the first meaningful word/phrase (up to comma, semicolon, or parenthesis)
-  const match = cleaned.match(/^([^,;(]+)/);
-  if (match) {
-    cleaned = match[1].trim();
-  }
-  
-  // Remove trailing articles/prepositions
-  cleaned = cleaned.replace(/\s+(of|the|a|an|in|to|for|by|as|or)$/i, '');
-  
-  // Limit length
-  if (cleaned.length > 25) {
-    cleaned = cleaned.substring(0, 22) + '...';
-  }
-  
-  // Capitalize first letter
-  if (cleaned.length > 0) {
-    cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
-  }
-  
-  return cleaned || '(unknown)';
-}
-
-// Toggle gematria expanded state — dispatches to AppStore (unidirectional flow)
-function toggleGematriaExpanded() {
-  AppStore.dispatch({ type: 'TOGGLE_GEMATRIA' });
-}
-
 // Get entry from Strong's dictionary (Hebrew or Greek)
 function getStrongsEntry(strongsNum) {
   const dict = getStrongsDict();
@@ -5635,12 +5463,6 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
     html += renderWordStudyHtml(wordStudy);
   }
   
-  // Add gematria section (if data is loaded) — derive expanded state from AppStore
-  const gematriaExp1 = typeof AppStore !== 'undefined' ? AppStore.getState().ui.gematriaExpanded : false;
-  if (gematriaData) {
-    html += renderGematriaSection(strongsNum, gematriaExp1);
-  }
-  
   // Add verse search link — populates the global search bar with this Strong's number
   html += `
     <div class="strongs-verse-search">
@@ -5650,29 +5472,13 @@ function updateStrongsPanelContent(strongsNum, isNavigation = false) {
   
   contentEl.innerHTML = html;
   
-  // Load gematria data if not loaded, then update section
-  if (!gematriaData) {
-    loadGematriaData().then(() => {
-      // Guard: check if gematria section already exists (avoid duplicate)
-      if (contentEl.querySelector('.strongs-gematria-section')) return;
-      
-      const gematriaSection = renderGematriaSection(strongsNum, gematriaExp1);
-      if (gematriaSection) {
-        const verseSearch = contentEl.querySelector('.strongs-verse-search');
-        if (verseSearch) {
-          verseSearch.insertAdjacentHTML('beforebegin', gematriaSection);
-        }
-      }
-    });
-  }
-  
   // Load BDB data if not loaded, then inject section
   if (!bdbData) {
     loadBDB().then(() => {
       if (contentEl.querySelector('.strongs-bdb-section')) return;
       const bdbHtml = renderBDBSection(strongsNum);
       if (bdbHtml) {
-        const insertBefore = contentEl.querySelector('.person-info-section, .strongs-symbol-info, .strongs-word-study, .strongs-gematria-section, .strongs-verse-search');
+        const insertBefore = contentEl.querySelector('.person-info-section, .strongs-symbol-info, .strongs-word-study, .strongs-verse-search');
         if (insertBefore) {
           insertBefore.insertAdjacentHTML('beforebegin', bdbHtml);
         }
@@ -5851,12 +5657,6 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
     html += renderWordStudyHtml(wordStudy);
   }
   
-  // Add gematria section (if data is loaded) — derive expanded state from AppStore
-  const gematriaExp2 = typeof AppStore !== 'undefined' ? AppStore.getState().ui.gematriaExpanded : false;
-  if (gematriaData) {
-    html += renderGematriaSection(strongsNum, gematriaExp2);
-  }
-  
   // Add verse search link — populates the global search bar with this Strong's number
   html += `
     <div class="strongs-verse-search">
@@ -5866,22 +5666,6 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
   
   contentEl.innerHTML = html;
   
-  // Load gematria data if not loaded, then update section
-  if (!gematriaData) {
-    loadGematriaData().then(() => {
-      // Guard: check if gematria section already exists (avoid duplicate)
-      if (contentEl.querySelector('.strongs-gematria-section')) return;
-      
-      const gematriaSection = renderGematriaSection(strongsNum, gematriaExp2);
-      if (gematriaSection) {
-        const verseSearch = contentEl.querySelector('.strongs-verse-search');
-        if (verseSearch) {
-          verseSearch.insertAdjacentHTML('beforebegin', gematriaSection);
-        }
-      }
-    });
-  }
-  
   // Load BDB data if not loaded, then inject section
   if (!bdbData) {
     loadBDB().then(() => {
@@ -5889,7 +5673,7 @@ function showStrongsPanel(strongsNum, englishWord, gloss, event, skipDispatch = 
       const bdbHtml = renderBDBSection(strongsNum);
       if (bdbHtml) {
         // Insert before person info or symbolic meaning
-        const insertBefore = contentEl.querySelector('.strongs-symbol-info, .person-info-section, .strongs-word-study, .strongs-gematria-section, .strongs-verse-search');
+        const insertBefore = contentEl.querySelector('.strongs-symbol-info, .person-info-section, .strongs-word-study, .strongs-verse-search');
         if (insertBefore) {
           insertBefore.insertAdjacentHTML('beforebegin', bdbHtml);
         }
