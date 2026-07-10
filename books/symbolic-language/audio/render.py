@@ -133,6 +133,27 @@ def tts(chunks, voices, model, key, outdir, stem):
         print(f'  seg{i:03d} [{role}]: {len(c)} chars -> {len(audio)//1024} KB')
     return seg_paths
 
+BITRATES = {1: 32, 2: 40, 3: 48, 4: 56, 5: 64, 6: 80, 7: 96, 8: 112,
+            9: 128, 10: 160, 11: 192, 12: 224, 13: 256, 14: 320}
+
+def _strip_mp3(data):
+    """Drop ID3v2 tag and any Xing/Info metadata frame so raw-joined
+    segments read as one continuous CBR stream with correct duration."""
+    if data[:3] == b'ID3':
+        size = ((data[6] & 0x7f) << 21) | ((data[7] & 0x7f) << 14) | \
+               ((data[8] & 0x7f) << 7) | (data[9] & 0x7f)
+        data = data[10 + size:]
+    # examine the first MPEG frame; skip it if it is a Xing/Info header frame
+    if len(data) > 4 and data[0] == 0xff and (data[1] & 0xe0) == 0xe0:
+        br = BITRATES.get((data[2] >> 4) & 0x0f)
+        sr = {0: 44100, 1: 48000, 2: 32000}.get((data[2] >> 2) & 0x03)
+        if br and sr:
+            flen = (144 * br * 1000) // sr + ((data[2] >> 1) & 0x01)
+            frame = data[:flen]
+            if b'Xing' in frame or b'Info' in frame:
+                data = data[flen:]
+    return data
+
 def concat(seg_paths, out_path):
     try:
         lst = out_path + '.txt'
@@ -141,9 +162,9 @@ def concat(seg_paths, out_path):
                         '-c', 'copy', out_path], check=True, capture_output=True)
         os.unlink(lst)
     except (FileNotFoundError, subprocess.CalledProcessError):
-        with open(out_path, 'wb') as out:      # raw concat fallback
+        with open(out_path, 'wb') as out:      # MP3-aware raw concat
             for p in seg_paths:
-                out.write(open(p, 'rb').read())
+                out.write(_strip_mp3(open(p, 'rb').read()))
     print(f'wrote {out_path}')
 
 if __name__ == '__main__':
