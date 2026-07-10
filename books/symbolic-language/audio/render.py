@@ -71,6 +71,9 @@ def parse_script(path):
                 # final clause, cueing the voice change and naming the reading
                 if pending == 'scripture' and ref and segs and segs[-1][0] == 'narrator':
                     spoken = spoken_citation(ref)
+                    # dedupe: skip if the intro already names the citation
+                    if spoken and spoken.lower() in segs[-1][1][-60:].lower():
+                        spoken = None
                     if spoken:
                         prev_role, prev = segs[-1]
                         prev = prev.rstrip()

@@ -72,3 +72,9 @@ from print); OT avon keeps "iniquity."
 Print's terse appositions ("The LORD: the name.") read as slammed stops in
 TTS. Speak them as flowing clauses ("The LORD — there is the name.") or full
 sentences. Sweep pattern when transforming: `[a-z]: [a-z]` inside narrator prose.
+
+## Never hand-write citation cues in scripts
+
+The renderer weaves "— Book N:" into the intro clause automatically from the
+[quote.scripture, REF] marker. Scripts leave intros bare ("…reads it out:");
+hand-written cues double up. (The renderer also dedupes as a backstop.)
