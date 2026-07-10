@@ -58,3 +58,11 @@ source of truth, and every meaning-level edit lands there first.
     into short sentences.
 11. **The print sentence wins when it already reads aloud well.** This is a
     narration pass, not a rewrite — same argument, same order, same doctrine.
+
+## Recovered words are spoken, not explained
+
+Where print keeps a KJV word and defines it in the following line (2 Tim 2:19
+"iniquity" = adikia), audio speaks the recovered rendering directly
+("unrighteousness") — the ear cannot see footnotes, and a spoken
+quote-then-correction is clunky. anomia is always "lawlessness" (inherited
+from print); OT avon keeps "iniquity."
