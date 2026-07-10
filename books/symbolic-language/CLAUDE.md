@@ -105,3 +105,13 @@ Discipline (hard-won — violating this has silently destroyed edits):
 - After every build: page count + `pdftotext` + grep for the edited phrases (beware
   hyphen-ation and line wraps breaking exact matches).
 - After every commit: confirm the hash appears in `git log`.
+
+## Audio edition (audio/)
+
+`audio/NN-*.adoc` mirrors each print chapter as a narration script — same argument,
+rewritten for the ear. Principles in `audio/README.md` (never read chapter:verse;
+attribution/recall/scene references instead; [beat]/[pause]/[long pause] markers).
+SYNC RULE: when a print chapter changes at the meaning level, update its audio twin
+in the same sitting and bump its `synced-to:` hash (drift check:
+`git log -1 --format=%h -- <source>` vs the front-matter value). Print is the source
+of truth; doctrine edits never originate in audio/.
