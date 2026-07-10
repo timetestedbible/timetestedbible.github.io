@@ -37,8 +37,9 @@ chapter's thumbnail regenerates.
      common column width SUBW = min(512, MEAT text width x 1.04) — on the
      cover the subtitle column runs slightly wider than MEAT. Renders at
      74/86/82 px in this sample. 8 px between lines, 24 after.
-   - Bottom gold rule, 4 px tall, FULL thumbnail width (x=0 to x=1280).
-     Gap after: 24.
+   - Gold rule under LANGUAGE, 4 px tall, width = SUBW at x=58 —
+     IDENTICAL to the rule under MEAT (the two in-column rules always
+     match; no full-width rule). Gap after: 24.
    - `CHAPTER N` — Georgia Bold 34 px, gold, manual letterspacing +6 px per
      glyph, at x=58. Gap after: 14.
    - Chapter name in CAPS (`THE SEAL`) — Georgia Bold, gold, 2 px stroke
