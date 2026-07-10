@@ -25,18 +25,22 @@ chapter's thumbnail regenerates.
    fade to alpha 0 at x=680. Drawn as per-column 1px lines, composited over
    the bed.
 3. **Title block** — left inset x=56, max text width 512 px, block
-   vertically centered (top clamped to y>=48). Stacked top to bottom with
+   vertically centered (top clamped to y>=40). Stacked top to bottom with
    the gaps given:
    - `MEAT` — Georgia Bold Italic 168 px, gold `#F0A722` (240,167,34),
-     3 px stroke `(28,18,6)`. Gap after: 26.
-   - Gold rule, 4 px tall, width = 96% of the MEAT text width, at x=58.
-     Gap after: 26.
-   - `THE BIBLE’S` / `SYMBOLIC LANGUAGE` — two lines, Georgia Bold 44 px,
-     cream `#F2E9D6` (242,233,214), curly apostrophe. 12 px between lines,
-     30 after.
-   - Short gold rule, 4 px x 200 px, at x=58. Gap after: 30.
+     3 px stroke `(28,18,6)`. Gap after: 22.
+   - Gold rule, 4 px tall, width = SUBW (below), at x=58. Gap after: 22.
+   - Series subtitle — THREE lines mirroring the cover's stack, casing,
+     and colors exactly: `THE BIBLE’S` (cream `#F2E9D6` (242,233,214),
+     curly apostrophe) / `SYMBOLIC` (gold) / `LANGUAGE` (cream). All
+     Georgia Bold; each line auto-fit (start 96 px, shrink by 2) to a
+     common column width SUBW = min(512, MEAT text width x 1.04) — on the
+     cover the subtitle column runs slightly wider than MEAT. Renders at
+     74/86/82 px in this sample. 8 px between lines, 24 after.
+   - Bottom gold rule, 4 px tall, FULL thumbnail width (x=0 to x=1280).
+     Gap after: 24.
    - `CHAPTER N` — Georgia Bold 34 px, gold, manual letterspacing +6 px per
-     glyph, at x=58. Gap after: 16.
+     glyph, at x=58. Gap after: 14.
    - Chapter name in CAPS (`THE SEAL`) — Georgia Bold, gold, 2 px stroke
      `(28,18,6)`; start at 96 px and shrink in steps of 2 until the line
      fits 512 px (long titles like ORPHANS, WIDOWS, AND THE FATHERLESS may
