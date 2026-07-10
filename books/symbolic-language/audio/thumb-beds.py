@@ -9,9 +9,11 @@ plate's committed prompt record (../plate-descriptions.md, style
 boilerplate stripped), or from the SCENES override below for chapters
 whose plate predates that file. Style: the approved storyboard-bed Doré
 sepia family, but with subtle muted color allowed over the warm sepia
-base — the print plates were B&W-constrained; thumbnails are not. Focal
-subject sits center-right so the left third stays clear for the
-thumbnail's title band (see assets-video/thumbnails/TEMPLATE.md).
+base — the print plates were B&W-constrained; thumbnails are not. Composition
+rule: the focal subject lives entirely in the RIGHT HALF of the frame —
+the left half is covered by the thumbnail's title band (see
+assets-video/thumbnails/TEMPLATE.md); nothing important left of center,
+left third quiet and dark.
 
 API key: ~/.gptapi.key (plain text; never printed). Outputs:
   assets-video/thumb-beds/<stem>.png   image, local-only (gitignored)
@@ -43,9 +45,12 @@ SCENES = {
         'seen entirely from behind lifts five loaves and two fishes '
         'overhead with both arms, light breaking through the clouds '
         'directly onto the offered bread; the seated multitude covers the '
-        'hillside in ordered companies down to the shining water, and in '
-        'the near foreground disciples wait with large empty wicker '
-        'baskets. His face is never visible.'),
+        'hillside in ordered companies down to the shining water, every '
+        'face turned toward the lifted loaves — the crowd is seen from '
+        'behind or in three-quarter view, all their sight-lines aimed at '
+        'the figure — and in the near foreground disciples wait with '
+        'large empty wicker baskets, also looking to the raised bread. '
+        'His face is never visible.'),
 }
 
 # One selective accent per the approved Seal recipe: red where the mark
@@ -67,11 +72,18 @@ STYLE = (
     'saturated modern color), dramatic single-source chiaroscuro with a '
     'lighter, warm exposure, painterly-photographic detail — overall '
     'bright enough to read as a lit scene, not sunk in shadow. Recompose '
-    'the scene for a wide 16:9 landscape frame: the focal subject and '
-    'main figures sit in the right two-thirds of the frame; the left '
-    'third stays simple, dark, and atmospheric, with no focal detail. '
-    'The image contains absolutely no text, lettering, inscriptions, '
-    'captions, or watermarks of any kind.')
+    'the scene for a wide 16:9 landscape frame: the focal subject sits '
+    'entirely within the RIGHT HALF of the frame — every important '
+    'element, figure, and point of light stays right of the vertical '
+    'centerline, with nothing that matters left of center; the left '
+    'third stays quiet, simple, dark, and atmospheric, with no focal '
+    'detail, because a title panel will cover the left side. Keep clear '
+    'margin between the focal subject and the frame edges — nothing '
+    'important in the top or bottom tenth of the frame. Every crowd '
+    'figure and onlooker faces the focal subject, so all sight-lines in '
+    'the composition point at it. The image '
+    'contains absolutely no text, lettering, inscriptions, captions, or '
+    'watermarks of any kind.')
 
 HEADER = """# Thumbnail bed prompts — dedicated 16:9 backgrounds
 
@@ -87,6 +99,14 @@ or the SCENES override in thumb-beds.py); style = the storyboard beds'
 Doré sepia family with subtle muted color allowed (the print plates were
 B&W-constrained; thumbnails are not). `thumbnail.py` prefers
 `assets-video/thumb-beds/<stem>.png` over the blur-filled plate.
+
+Composition rules (standing): the focal subject lives entirely in the
+RIGHT HALF of the frame — the thumbnail's title band covers the left.
+Nothing important left of center; the left third stays quiet and dark.
+Crowd/onlooker sight-lines must aim at the focal subject (crowds seen
+from behind or three-quarter, faces toward it). A bed whose subject
+strays left can sometimes be salvaged without regeneration via
+`thumbnail.py` `BED_TRANSFORMS` (mirror + slide-right).
 
 """
 

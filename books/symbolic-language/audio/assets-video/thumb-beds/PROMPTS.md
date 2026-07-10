@@ -13,11 +13,19 @@ Doré sepia family with subtle muted color allowed (the print plates were
 B&W-constrained; thumbnails are not). `thumbnail.py` prefers
 `assets-video/thumb-beds/<stem>.png` over the blur-filled plate.
 
+Composition rules (standing): the focal subject lives entirely in the
+RIGHT HALF of the frame — the thumbnail's title band covers the left.
+Nothing important left of center; the left third stays quiet and dark.
+Crowd/onlooker sight-lines must aim at the focal subject (crowds seen
+from behind or three-quarter, faces toward it). A bed whose subject
+strays left can sometimes be salvaged without regeneration via
+`thumbnail.py` `BED_TRANSFORMS` (mirror + slide-right).
+
 ## 01-introduction
 
 (1536x1024, quality high)
 
-On a rise above the Sea of Galilee at evening, a robed figure seen entirely from behind lifts five loaves and two fishes overhead with both arms, light breaking through the clouds directly onto the offered bread; the seated multitude covers the hillside in ordered companies down to the shining water, and in the near foreground disciples wait with large empty wicker baskets. His face is never visible. Style: 19th-century steel engraving in the manner of Gustave Doré — dense fine crosshatch linework over a warm sepia ink base, subtle muted color allowed over the sepia (quiet, aged tints — never saturated modern color), dramatic single-source chiaroscuro with a lighter, warm exposure, painterly-photographic detail — overall bright enough to read as a lit scene, not sunk in shadow. Recompose the scene for a wide 16:9 landscape frame: the focal subject and main figures sit in the right two-thirds of the frame; the left third stays simple, dark, and atmospheric, with no focal detail. The image contains absolutely no text, lettering, inscriptions, captions, or watermarks of any kind.
+On a rise above the Sea of Galilee at evening, a robed figure seen entirely from behind lifts five loaves and two fishes overhead with both arms, light breaking through the clouds directly onto the offered bread; the seated multitude covers the hillside in ordered companies down to the shining water, every face turned toward the lifted loaves — the crowd is seen from behind or in three-quarter view, all their sight-lines aimed at the figure — and in the near foreground disciples wait with large empty wicker baskets, also looking to the raised bread. His face is never visible. Style: 19th-century steel engraving in the manner of Gustave Doré — dense fine crosshatch linework over a warm sepia ink base, subtle muted color allowed over the sepia (quiet, aged tints — never saturated modern color), dramatic single-source chiaroscuro with a lighter, warm exposure, painterly-photographic detail — overall bright enough to read as a lit scene, not sunk in shadow. Recompose the scene for a wide 16:9 landscape frame: the focal subject sits entirely within the RIGHT HALF of the frame — every important element, figure, and point of light stays right of the vertical centerline, with nothing that matters left of center; the left third stays quiet, simple, dark, and atmospheric, with no focal detail, because a title panel will cover the left side. Keep clear margin between the focal subject and the frame edges — nothing important in the top or bottom tenth of the frame. Every crowd figure and onlooker faces the focal subject, so all sight-lines in the composition point at it. The image contains absolutely no text, lettering, inscriptions, captions, or watermarks of any kind.
 
 ## 09-the-seal
 
