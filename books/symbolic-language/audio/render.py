@@ -21,9 +21,9 @@ import argparse, json, os, re, subprocess, sys, time, urllib.request
 
 API = 'https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_128'
 MAX_CHARS = 4000          # stay under API per-request limits with headroom
-BREAKS = {'[beat]': '<break time="0.3s" />',
-          '[pause]': '<break time="0.7s" />',
-          '[long pause]': '<break time="1.2s" />'}
+BREAKS = {'[beat]': '<break time="0.2s" />',
+          '[pause]': '<break time="0.45s" />',
+          '[long pause]': '<break time="0.8s" />'}
 
 def parse_script(path):
     raw = open(path, encoding='utf-8').read()
