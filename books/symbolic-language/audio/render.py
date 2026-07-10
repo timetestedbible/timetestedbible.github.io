@@ -32,26 +32,45 @@ def _clean(text):
     text = re.sub(r'_([a-zA-Zāēīōū\'-]+)_', r'\1', text)   # transliterated terms
     return text.replace('…', '...').replace('“', '"').replace('”', '"').replace('’', "'")
 
+ORDINALS = {'1': 'First', '2': 'Second', '3': 'Third'}
+
+def spoken_citation(ref):
+    """'2 Timothy 2:19' -> 'Second Timothy, chapter 2.' Book+chapter only —
+    verse numbers are print apparatus, not speech."""
+    m = re.match(r'^\s*(\d)?\s*([A-Za-z][A-Za-z ]*?)\s+(\d+)(?::.*)?$', ref.strip())
+    if not m:
+        return None
+    num, book, chap = m.groups()
+    name = (ORDINALS.get(num, '') + ' ' if num else '') + book.strip()
+    return f'{name}, chapter {chap}.'
+
 def parse_script(path):
     """Returns ordered segments [(role, text)], role in {'narrator', 'scripture'}.
     Block quotes (____ fences) are scripture; everything else narrator. Brief
-    inline quotes inside narrator prose stay narrator."""
+    inline quotes inside narrator prose stay narrator. A cited quote's citation
+    is spoken (book + chapter) by the narrator right after the quote."""
     raw = open(path, encoding='utf-8').read()
     m = re.match(r'\A---\s*\n.*?\n---\s*\n(.*)\Z', raw, re.S)
     body = m.group(1) if m else raw
-    segs, cur, role, in_quote, pending = [], [], 'narrator', False, 'narrator'
+    segs, cur, role, in_quote, pending, ref = [], [], 'narrator', False, 'narrator', None
     for line in body.split('\n'):
-        mq = re.match(r'^\[quote[^,\]]*(,[^\]]+)?\]\s*$', line)
+        mq = re.match(r'^\[quote[^,\]]*(?:,([^\]]+))?\]\s*$', line)
         if mq:
             # a citation in the print marker = worth the scripture voice
-            pending = 'scripture' if mq.group(1) else 'narrator'
+            ref = mq.group(1)
+            pending = 'scripture' if ref else 'narrator'
             continue
         if re.match(r'^____\s*$', line):
             if cur and ''.join(cur).strip():
                 segs.append((role, _clean('\n'.join(cur).strip())))
             cur = []
             if in_quote:
-                role, in_quote, pending = 'narrator', False, 'narrator'
+                # speak the citation as the narrator's landing after the quote
+                if role == 'scripture' and ref:
+                    spoken = spoken_citation(ref)
+                    if spoken:
+                        cur = [spoken, '[pause]']
+                role, in_quote, pending, ref = 'narrator', False, 'narrator', None
             else:
                 role, in_quote = pending, True
             continue
