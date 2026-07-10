@@ -42,7 +42,7 @@ def spoken_citation(ref):
         return None
     num, book, chap = m.groups()
     name = (ORDINALS.get(num, '') + ' ' if num else '') + book.strip()
-    return f'{name}, chapter {chap}.'
+    return f'{name} {chap}'
 
 def parse_script(path):
     """Returns ordered segments [(role, text)], role in {'narrator', 'scripture'}.
@@ -65,13 +65,20 @@ def parse_script(path):
                 segs.append((role, _clean('\n'.join(cur).strip())))
             cur = []
             if in_quote:
-                # speak the citation as the narrator's landing after the quote
-                if role == 'scripture' and ref:
-                    spoken = spoken_citation(ref)
-                    if spoken:
-                        cur = [spoken, '[pause]']
                 role, in_quote, pending, ref = 'narrator', False, 'narrator', None
             else:
+                # citation-first: weave the spoken reference into the intro's
+                # final clause, cueing the voice change and naming the reading
+                if pending == 'scripture' and ref and segs and segs[-1][0] == 'narrator':
+                    spoken = spoken_citation(ref)
+                    if spoken:
+                        prev_role, prev = segs[-1]
+                        prev = prev.rstrip()
+                        if prev.endswith(':'):
+                            prev = prev[:-1].rstrip() + f' — {spoken}:'
+                        else:
+                            prev = prev + f' {spoken}:'
+                        segs[-1] = (prev_role, prev)
                 role, in_quote = pending, True
             continue
         cur.append(line)
