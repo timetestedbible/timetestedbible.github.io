@@ -25,50 +25,86 @@ BREAKS = {'[beat]': '<break time="0.2s" />',
           '[pause]': '<break time="0.45s" />',
           '[long pause]': '<break time="0.8s" />'}
 
-def parse_script(path):
-    raw = open(path, encoding='utf-8').read()
-    m = re.match(r'\A---\s*\n.*?\n---\s*\n(.*)\Z', raw, re.S)
-    body = m.group(1) if m else raw
-    out_lines = []
-    for line in body.split('\n'):
-        if re.match(r'^(\[quote[^\]]*\]|____)\s*$', line):
-            continue                       # quote framing is a voice direction, not speech
-        out_lines.append(line)
-    text = '\n'.join(out_lines)
+def _clean(text):
     # asciidoc emphasis -> plain words (ElevenLabs stresses from punctuation/context)
     text = re.sub(r'__([^_]+)__', r'\1', text)
     text = re.sub(r'\*([^*]+)\*', r'\1', text)
     text = re.sub(r'_([a-zA-Zāēīōū\'-]+)_', r'\1', text)   # transliterated terms
-    text = text.replace('…', '...').replace('“', '"').replace('”', '"').replace('’', "'")
-    return text
+    return text.replace('…', '...').replace('“', '"').replace('”', '"').replace('’', "'")
 
-def chunk(text):
-    # split on [long pause]; re-pack greedily under MAX_CHARS
-    parts = [p.strip() for p in text.split('[long pause]') if p.strip()]
-    chunks, cur = [], ''
-    for p in parts:
-        candidate = (cur + '\n' + BREAKS['[long pause]'] + '\n' + p) if cur else p
-        if len(candidate) > MAX_CHARS and cur:
-            chunks.append(cur)
-            cur = p
-        else:
-            cur = candidate
-    if cur:
-        chunks.append(cur)
-    return [apply_breaks(c) for c in chunks]
+def parse_script(path):
+    """Returns ordered segments [(role, text)], role in {'narrator', 'scripture'}.
+    Block quotes (____ fences) are scripture; everything else narrator. Brief
+    inline quotes inside narrator prose stay narrator."""
+    raw = open(path, encoding='utf-8').read()
+    m = re.match(r'\A---\s*\n.*?\n---\s*\n(.*)\Z', raw, re.S)
+    body = m.group(1) if m else raw
+    segs, cur, role, in_quote, pending = [], [], 'narrator', False, 'narrator'
+    for line in body.split('\n'):
+        mq = re.match(r'^\[quote[^,\]]*(,[^\]]+)?\]\s*$', line)
+        if mq:
+            # a citation in the print marker = worth the scripture voice
+            pending = 'scripture' if mq.group(1) else 'narrator'
+            continue
+        if re.match(r'^____\s*$', line):
+            if cur and ''.join(cur).strip():
+                segs.append((role, _clean('\n'.join(cur).strip())))
+            cur = []
+            if in_quote:
+                role, in_quote, pending = 'narrator', False, 'narrator'
+            else:
+                role, in_quote = pending, True
+            continue
+        cur.append(line)
+    if cur and ''.join(cur).strip():
+        segs.append((role, _clean('\n'.join(cur).strip())))
+    return segs
+
+def chunk(segs, quote_min=0):
+    """[(role, text)] -> [(role, chunk_text)]; same-role runs pack under
+    MAX_CHARS, splitting at [long pause] when a run must divide. Scripture
+    segments shorter than quote_min chars stay in the narrator's voice —
+    only quotes with real body earn the voice switch."""
+    segs = [('narrator' if role == 'scripture' and len(text) < quote_min else role, text)
+            for role, text in segs]
+    chunks = []
+    for role, text in segs:
+        parts = [p.strip() for p in text.split('[long pause]') if p.strip()]
+        cur = ''
+        for p in parts:
+            candidate = (cur + '\n' + BREAKS['[long pause]'] + '\n' + p) if cur else p
+            if len(candidate) > MAX_CHARS and cur:
+                chunks.append((role, cur))
+                cur = p
+            else:
+                cur = candidate
+        if cur:
+            if chunks and chunks[-1][0] == role and len(chunks[-1][1]) + len(cur) < MAX_CHARS:
+                chunks[-1] = (role, chunks[-1][1] + '\n' + BREAKS['[long pause]'] + '\n' + cur)
+            else:
+                chunks.append((role, cur))
+    out = []
+    for i, (role, c) in enumerate(chunks):
+        c = apply_breaks(c)
+        if i > 0 and chunks[i-1][0] != role:
+            c = '<break time="0.3s" />\n' + c      # breath at every voice handoff
+        out.append((role, c))
+    return out
 
 def apply_breaks(c):
     for k, v in BREAKS.items():
         c = c.replace(k, v)
     return c
 
-def tts(chunks, voice, model, key, outdir, stem):
+def tts(chunks, voices, model, key, outdir, stem):
+    """chunks: [(role, text)]; voices: {'narrator': id, 'scripture': id}."""
     seg_paths = []
     os.makedirs(os.path.join(outdir, stem), exist_ok=True)
-    for i, c in enumerate(chunks):
+    for i, (role, c) in enumerate(chunks):
+        voice = voices.get(role) or voices['narrator']
         body = {'text': c, 'model_id': model,
-                'previous_text': chunks[i-1][-500:] if i > 0 else None,
-                'next_text': chunks[i+1][:500] if i + 1 < len(chunks) else None,
+                'previous_text': chunks[i-1][1][-500:] if i > 0 else None,
+                'next_text': chunks[i+1][1][:500] if i + 1 < len(chunks) else None,
                 'voice_settings': {'stability': 0.5, 'similarity_boost': 0.75}}
         body = {k: v for k, v in body.items() if v is not None}
         req = urllib.request.Request(API.format(voice=voice),
@@ -79,6 +115,13 @@ def tts(chunks, voice, model, key, outdir, stem):
                 with urllib.request.urlopen(req, timeout=300) as r:
                     audio = r.read()
                 break
+            except urllib.error.HTTPError as e:
+                detail = e.read()[:300]
+                if attempt == 2:
+                    print(f'  seg{i:03d} FAILED: {e} {detail}', file=sys.stderr)
+                    raise
+                print(f'  seg{i:03d} retry after {e}: {detail}', file=sys.stderr)
+                time.sleep(5 * (attempt + 1))
             except Exception as e:
                 if attempt == 2:
                     raise
@@ -87,7 +130,7 @@ def tts(chunks, voice, model, key, outdir, stem):
         p = os.path.join(outdir, stem, f'seg{i:03d}.mp3')
         open(p, 'wb').write(audio)
         seg_paths.append(p)
-        print(f'  seg{i:03d}: {len(c)} chars -> {len(audio)//1024} KB')
+        print(f'  seg{i:03d} [{role}]: {len(c)} chars -> {len(audio)//1024} KB')
     return seg_paths
 
 def concat(seg_paths, out_path):
@@ -107,8 +150,11 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('script')
     ap.add_argument('--voice', default=os.environ.get('ELEVENLABS_VOICE_ID'))
+    ap.add_argument('--quote-voice', default=os.environ.get('ELEVENLABS_QUOTE_VOICE_ID'))
     ap.add_argument('--model', default='eleven_multilingual_v2')
     ap.add_argument('--out', default='out')
+    ap.add_argument('--quote-min', type=int, default=0,
+                    help='optional extra gate: min chars for the voice switch (0 = citation-driven only)')
     a = ap.parse_args()
     key = os.environ.get('ELEVENLABS_API_KEY')
     if not key:
@@ -118,7 +164,8 @@ if __name__ == '__main__':
     if not key or not a.voice:
         sys.exit('need ELEVENLABS_API_KEY env (or ~/.elevenlabs.key) and --voice/ELEVENLABS_VOICE_ID')
     stem = os.path.splitext(os.path.basename(a.script))[0]
-    chunks = chunk(parse_script(a.script))
-    print(f'{stem}: {len(chunks)} chunks, {sum(len(c) for c in chunks):,} chars')
-    segs = tts(chunks, a.voice, a.model, key, a.out, stem)
+    chunks = chunk(parse_script(a.script), quote_min=a.quote_min)
+    print(f'{stem}: {len(chunks)} chunks, {sum(len(c) for _, c in chunks):,} chars')
+    voices = {'narrator': a.voice, 'scripture': a.quote_voice or a.voice}
+    segs = tts(chunks, voices, a.model, key, a.out, stem)
     concat(segs, os.path.join(a.out, stem + '.mp3'))
