@@ -314,3 +314,37 @@ Four edges on Num 3:43's number:
    (7:9). God counts what He ransoms, to the name; the merely present
    go unnumbered — and the beast counterfeits precisely the exact,
    named, per-head ledger.
+
+## The count-word evidence: psephos / chashav (2026-07-10)
+
+**Greek.** Rev 13:18's verb is psephizo (G5585) — tally with a psephos (pebble). Only
+other NT use: Luke 14:28 "counteth the cost" (the disciple's tally, between Luke 14's
+cannot-gates). The noun psephos (G5586): Rev 2:17 x2 (the WHITE STONE with the new
+name) + Acts 26:10 (Paul's judicial vote against the saints). Compounds: Acts 1:26
+(Matthias "numbered with the eleven," sygkatepsephisthe — enrollment) and Acts 19:19
+(synepsephisan — counted the book-burning price, 50,000 silver). John elsewhere uses
+lithos freely (Rev 4:3; 18:21; John 8) — psephos in 2:17 is chosen against his default:
+a counting/voting/enrollment token, not a rock. Same author, same book, same word
+family: 2:17's token <-> 13:18's tally.
+
+**Hebrew (HG Rev 13:19, versification one behind Greek).** Count-verb = chashav (H2803),
+Scripture's ledger-reckoning: Gen 15:6 (counted for righteousness), Ps 32:2 (imputeth
+not iniquity), Lev 25:50-52 (jubilee redemption-price arithmetic). HG adds a clause the
+Greek lacks: "and you shall find THE SUM is 666" — the instruction framed as a tally.
+Number = mispar (H4557), the census word of Num 3:40 (b'mispar shemot).
+
+**HG white stone (Rev 2:16 HG numbering).** The Hebrew does not say "stone" at all:
+the overcomer receives EDUT TOVAH — "a good TESTIMONY, and in this testimony a new
+name written, which none can read except the one who received it." Edut = the covenant
+word (tables of the testimony Ex 31:18; ark of the testimony; Isa 8:16 seal among
+disciples). Two-witness synthesis: Greek names the OBJECT (a vote/enrollment token);
+Hebrew names its CONTENT (God's good testimony — cf. Heb 11:2, 4-5 "obtained a good
+report... God testifying"). White stone = God's vote FOR a man = his sealed census
+entry; the mark = the vote against, carried on the flesh.
+
+**Classical background (cultural furniture, not proof):** white pebble acquits, black
+condemns (Ovid, Met. 15.41-42); Acts 26:10 shows the judicial psephos inside the NT.
+Scripture's own two-token verdict: the two lots of Lev 16.
+
+**Verdict: the vocabulary of Rev 13:18 is census/tally/ledger vocabulary in both
+witnesses — gematria is far less likely the intent.**
