@@ -1,0 +1,293 @@
+#!/usr/bin/env python3
+"""Render the YouTube thumbnail for a chapter of MEAT: The Bible's Symbolic
+Language, per assets-video/thumbnails/TEMPLATE.md (the approved recipe —
+sample: 09-the-seal).
+
+Inputs per chapter: the PRINT chapter stem (e.g. 09-the-seal). Title and
+order come from the print chapter's front matter (../NN-*.adoc). Everything
+else is fixed by the template:
+
+  - eyebrow: CHAPTER N (integer order) — or BONUS STUDY for NNx chapters
+  - display line: the title uppercased, auto-fit (wraps at the natural
+    comma when a single line would fall below 56 px)
+  - bed: the chapter's plate from ../images/masters (matched by the stem's
+    number prefix), run through the SAME blur-fill 16:9 composite + warm
+    sepia tone as the video beds (video.build_still), then the template's
+    Brightness 1.12 / Color 1.05 lift. Exception: 09 uses the approved
+    assets-video/09-the-seal-bed.png directly. Chapters with no matching
+    plate fall back to the cover summit art (reported as "fallback").
+
+Usage:
+  out/venv/bin/python thumbnail.py 09-the-seal [23-path-to-salvation ...]
+  out/venv/bin/python thumbnail.py --all   # every print chapter except
+                                           # 00-*, 48-glossary, 49-about
+
+Output: assets-video/thumbnails/<stem>.png (1280x720) and <stem>-320.png
+(the 320x180 legibility proof). All imagery is local-only (gitignored);
+this script + TEMPLATE.md are the committed artifacts.
+"""
+import argparse, glob, os, re, sys
+
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+
+import video  # bed treatment shared with the video pipeline (build_still)
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+BOOK = os.path.normpath(os.path.join(HERE, '..'))
+MASTERS = os.path.join(BOOK, 'images', 'masters')
+COVER = os.path.join(BOOK, 'cover', 'front-cover-summit-meat.jpg')
+THUMBS = os.path.join(HERE, 'assets-video', 'thumbnails')
+BEDCACHE = os.path.join(HERE, 'out', 'thumb-beds')
+FONTS = '/System/Library/Fonts/Supplemental'
+GBI = os.path.join(FONTS, 'Georgia Bold Italic.ttf')
+GB = os.path.join(FONTS, 'Georgia Bold.ttf')
+
+W, H = 1280, 720
+GOLD = (240, 167, 34)
+CREAM = (242, 233, 214)
+PANEL = (12, 9, 6)
+STROKE = (28, 18, 6)
+INSET = 56                      # text left inset
+RULE_X = 58                     # rules + eyebrow left inset
+MAXW = 512                      # max text width in the band
+SUBTITLE = [('THE BIBLE’S', CREAM), ('SYMBOLIC', GOLD),
+            ('LANGUAGE', CREAM)]
+
+
+def front_matter(stem):
+    path = os.path.join(BOOK, stem + '.adoc')
+    text = open(path, encoding='utf-8').read()
+    m = re.match(r'---\n(.*?)\n---\n', text, re.S)
+    if not m:
+        sys.exit(f'{path}: no front matter')
+    fm = m.group(1)
+    tm = re.search(r'^title:\s*"(.*)"\s*$', fm, re.M)
+    om = re.search(r'^order:\s*([0-9.]+)\s*$', fm, re.M)
+    if not tm:
+        sys.exit(f'{path}: no title')
+    return tm.group(1), (float(om.group(1)) if om else None)
+
+
+def eyebrow_text(stem, order):
+    num = stem.split('-', 1)[0]
+    if num.endswith('x'):
+        return 'BONUS STUDY'
+    n = int(order) if order is not None else int(num)
+    return f'CHAPTER {n}'
+
+
+def bed_source(stem):
+    """(source path, kind) — kind is 'approved', 'plate', or 'fallback'."""
+    num = stem.split('-', 1)[0]
+    if num == '09':
+        return os.path.join(HERE, 'assets-video', '09-the-seal-bed.png'), \
+            'approved'
+    hits = sorted(glob.glob(os.path.join(MASTERS, num + '-*.*')))
+    if hits:
+        return hits[0], 'plate'
+    return COVER, 'fallback'
+
+
+def build_bed(src, kind):
+    """1280x720 RGBA bed: video-pipeline blur-fill composite + tone for raw
+    plates (the approved bed is already composited), then the template's
+    Brightness 1.12 / Color 1.05 lift. The cover fallback is first cropped
+    to the upper art band (16:9, above the printed title) so the cover's
+    own MEAT lettering never doubles the thumbnail's."""
+    if kind == 'approved':
+        img = Image.open(src)
+    else:
+        os.makedirs(BEDCACHE, exist_ok=True)
+        base = os.path.splitext(os.path.basename(src))[0]
+        if kind == 'fallback':
+            base += '-summit-crop'
+            crop = os.path.join(BEDCACHE, f'{base}.png')
+            if not os.path.exists(crop):
+                Image.open(src).crop((0, 12, 1564, 892)).save(crop)
+            src = crop
+        cached = os.path.join(BEDCACHE, f'{base}-still.png')
+        video.build_still(video.ffmpeg_bin(), src, cached)
+        img = Image.open(cached)
+    img = img.convert('RGB').resize((W, H), Image.LANCZOS)
+    img = ImageEnhance.Brightness(img).enhance(1.12)
+    img = ImageEnhance.Color(img).enhance(1.05)
+    return img.convert('RGBA')
+
+
+def band_overlay():
+    """Left title band: (12,9,6), alpha 225 to x=400, linear fade to 0 at
+    x=680, drawn as per-column 1px lines."""
+    ov = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(ov)
+    for x in range(680):
+        a = 225 if x <= 400 else round(225 * (680 - x) / 280)
+        d.line([(x, 0), (x, H)], fill=PANEL + (a,))
+    return ov
+
+
+def ink(font, text, sw=0):
+    return font.getbbox(text, stroke_width=sw)  # (x0, y0, x1, y1)
+
+
+def fit(fontfile, text, maxw, start=96, sw=0, floor=8):
+    """Largest size <= start (stepping by 2) whose ink width fits maxw."""
+    size = start
+    while size > floor:
+        f = ImageFont.truetype(fontfile, size)
+        b = ink(f, text, sw)
+        if b[2] - b[0] <= maxw:
+            return size, f, b
+        size -= 2
+    f = ImageFont.truetype(fontfile, floor)
+    return floor, f, ink(f, text, sw)
+
+
+def split_two(name):
+    """Break a long display line at the comma nearest the middle (keeping
+    the comma on line one), else at the space nearest the middle."""
+    mid = len(name) / 2
+    for sep, keep in ((',', 1), (' ', 0)):
+        idx = [m.start() for m in re.finditer(re.escape(sep), name)
+               if 0 < m.start() < len(name) - 1]
+        if idx:
+            i = min(idx, key=lambda j: abs(j - mid))
+            return name[:i + keep].rstrip(), name[i + 1:].strip()
+    return None
+
+
+def name_lines(name):
+    """Chapter display line(s): single-line fit, or a two-line comma wrap
+    when one line would fall below 56 px. Same size both lines."""
+    size, f, b = fit(GB, name, MAXW, sw=2)
+    if size >= 56:
+        return [(name, f, b)]
+    two = split_two(name)
+    if not two:
+        return [(name, f, b)]
+    s1, _, _ = fit(GB, two[0], MAXW, sw=2)
+    s2, _, _ = fit(GB, two[1], MAXW, sw=2)
+    size = min(s1, s2)
+    f = ImageFont.truetype(GB, size)
+    return [(ln, f, ink(f, ln, 2)) for ln in two]
+
+
+def tracked_width(d, f, text, track):
+    ws = [d.textlength(ch, font=f) for ch in text]
+    return sum(ws) + track * (len(text) - 1)
+
+
+def draw_tracked(d, xy, text, f, fill, track):
+    x, y = xy
+    for ch in text:
+        d.text((x, y), ch, font=f, fill=fill)
+        x += d.textlength(ch, font=f) + track
+
+
+def cover_icon(img):
+    """Book-cover brand mark, bottom-right: cover face at height 168, 3 px
+    cream border, over a blurred shadow (r=7, alpha 160, offset +4 grow)."""
+    cov = Image.open(COVER).convert('RGB')
+    ih = 168
+    iw = round(cov.width * ih / cov.height)
+    cov = cov.resize((iw, ih), Image.LANCZOS)
+    card = Image.new('RGB', (iw + 6, ih + 6), CREAM)
+    card.paste(cov, (3, 3))
+    cw, ch = card.size
+    x, y = W - cw - 26, H - ch - 26
+    shadow = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rectangle(
+        [x, y, x + cw + 8, y + ch + 8], fill=(0, 0, 0, 160))
+    img = Image.alpha_composite(img, shadow.filter(
+        ImageFilter.GaussianBlur(7)))
+    img.paste(card, (x, y))
+    return img
+
+
+def compose(stem):
+    title, order = front_matter(stem)
+    src, kind = bed_source(stem)
+    img = Image.alpha_composite(build_bed(src, kind), band_overlay())
+    d = ImageDraw.Draw(img)
+
+    # --- measure the stack -------------------------------------------------
+    meat_f = ImageFont.truetype(GBI, 168)
+    meat_b = ink(meat_f, 'MEAT', 3)
+    subw = min(MAXW, round((meat_b[2] - meat_b[0]) * 1.04))
+    subs = []
+    for text, color in SUBTITLE:
+        _, f, b = fit(GB, text, subw)
+        subs.append((text, color, f, b))
+    eye = eyebrow_text(stem, order)
+    eye_f = ImageFont.truetype(GB, 34)
+    eye_b = ink(eye_f, eye)
+    names = name_lines(title.upper().replace("'", '’'))
+
+    hgt = lambda b: b[3] - b[1]
+    total = (hgt(meat_b) + 22 + 4 + 22
+             + sum(hgt(b) for _, _, _, b in subs) + 8 * 2 + 24
+             + 4 + 24 + hgt(eye_b) + 14
+             + sum(hgt(b) for _, _, b in names) + 8 * (len(names) - 1))
+    y = max(40, (H - total) // 2)
+
+    # --- draw --------------------------------------------------------------
+    d.text((INSET, y - meat_b[1]), 'MEAT', font=meat_f, fill=GOLD,
+           stroke_width=3, stroke_fill=STROKE)
+    y += hgt(meat_b) + 22
+    d.rectangle([RULE_X, y, RULE_X + subw, y + 3], fill=GOLD)
+    y += 4 + 22
+    for text, color, f, b in subs:
+        d.text((INSET, y - b[1]), text, font=f, fill=color)
+        y += hgt(b) + 8
+    y += 24 - 8
+    d.rectangle([RULE_X, y, RULE_X + subw, y + 3], fill=GOLD)
+    y += 4 + 24
+    draw_tracked(d, (RULE_X, y - eye_b[1]), eye, eye_f, GOLD, 6)
+    y += hgt(eye_b) + 14
+    for text, f, b in names:
+        d.text((INSET, y - b[1]), text, font=f, fill=GOLD,
+               stroke_width=2, stroke_fill=STROKE)
+        y += hgt(b) + 8
+
+    img = cover_icon(img)
+
+    # --- write full size + 320px legibility proof ---------------------------
+    os.makedirs(THUMBS, exist_ok=True)
+    out = os.path.join(THUMBS, f'{stem}.png')
+    img.convert('RGB').save(out)
+    img.convert('RGB').resize((320, 180), Image.LANCZOS).save(
+        os.path.join(THUMBS, f'{stem}-320.png'))
+    wrap = ' / '.join(t for t, _, _ in names)
+    print(f'{stem}: {eye} | {wrap} | bed={kind}:'
+          f'{os.path.basename(src)} -> {out}')
+    return kind
+
+
+def all_stems():
+    stems = []
+    for p in sorted(glob.glob(os.path.join(BOOK, '[0-9][0-9]*-*.adoc'))):
+        stem = os.path.splitext(os.path.basename(p))[0]
+        num = stem.split('-', 1)[0]
+        if num == '00' or stem in ('48-glossary', '49-about-the-author'):
+            continue
+        stems.append(stem)
+    return stems
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('stems', nargs='*', help='print chapter stem(s)')
+    ap.add_argument('--all', action='store_true',
+                    help='every print chapter except 00-*/48/49')
+    args = ap.parse_args()
+    stems = all_stems() if args.all else args.stems
+    if not stems:
+        ap.error('give chapter stems or --all')
+    fallbacks = [s for s in stems if compose(s) == 'fallback']
+    print(f'\n{len(stems)} thumbnails -> {THUMBS}')
+    if fallbacks:
+        print(f'cover-art fallbacks ({len(fallbacks)}): '
+              + ', '.join(fallbacks))
+
+
+if __name__ == '__main__':
+    main()

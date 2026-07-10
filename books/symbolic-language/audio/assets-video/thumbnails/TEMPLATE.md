@@ -2,8 +2,16 @@
 
 One recipe for every chapter so the series reads as one set. Sample built:
 `09-the-seal.png` (draft, 2026-07-10). Imagery in this directory is
-local-only (gitignored); this spec is the committed artifact from which any
-chapter's thumbnail regenerates.
+local-only (gitignored); this spec and `audio/thumbnail.py` (the generator
+that implements it) are the committed artifacts from which any chapter's
+thumbnail regenerates:
+
+    out/venv/bin/python thumbnail.py <print-stem> [...]   # e.g. 09-the-seal
+    out/venv/bin/python thumbnail.py --all                # all chapters
+
+`--all` covers every print chapter except `00-*`, `48-glossary`, and
+`49-about-the-author`, bonus `NNx` chapters included. Title and order are
+read from the print chapter's front matter (`../NN-*.adoc`).
 
 ## Canvas
 
@@ -14,12 +22,24 @@ chapter's thumbnail regenerates.
 
 ## Layers, back to front
 
-1. **Bed image** — the chapter's approved 16:9 bed
-   (`assets-video/NN-<slug>-bed.png`, 1920x1080), LANCZOS-resized to
-   1280x720, then `ImageEnhance.Brightness 1.12` and `Color 1.05` (the
-   book-plate beds run dark; the lift keeps midtones visible under
-   compression). Choose/generate beds whose focal subject sits center-right —
-   the left third is reserved for the title band.
+1. **Bed image** — the chapter's 16:9 bed, LANCZOS-resized to 1280x720,
+   then `ImageEnhance.Brightness 1.12` and `Color 1.05` (the book-plate
+   beds run dark; the lift keeps midtones visible under compression).
+   Choose/generate beds whose focal subject sits center-right — the left
+   third is reserved for the title band. Bed sourcing, in order:
+   - a chapter-approved bed when one exists (`assets-video/NN-<slug>-bed.png`,
+     1920x1080 — currently only 09), used as-is;
+   - else the chapter's plate from `../images/masters/` (matched by the
+     stem's full number prefix — `13`, `05x`), run through the SAME
+     blur-fill 16:9 composite + warm-sepia tone as the video beds
+     (`video.build_still`: gblur-36 darkened fill behind the
+     height-fitted plate, then the uniform TONE lift);
+   - else (no matching plate) the cover summit art,
+     `../cover/front-cover-summit-meat.jpg`, first cropped to its upper
+     art band (0,12)-(1564,892) — exact 16:9, above the printed cover
+     title so the cover's own MEAT lettering never doubles the
+     thumbnail's — then the same build_still treatment. These are
+     placeholders until a dedicated plate/bed exists.
 2. **Left title band** — vertical translucent panel, color `(12, 9, 6)`
    (near-black warm brown): full alpha 225/255 from x=0 to x=400, linear
    fade to alpha 0 at x=680. Drawn as per-column 1px lines, composited over
@@ -40,14 +60,18 @@ chapter's thumbnail regenerates.
    - Gold rule under LANGUAGE, 4 px tall, width = SUBW at x=58 —
      IDENTICAL to the rule under MEAT (the two in-column rules always
      match; no full-width rule). Gap after: 24.
-   - `CHAPTER N` — Georgia Bold 34 px, gold, manual letterspacing +6 px per
-     glyph, at x=58. Gap after: 14.
+   - Eyebrow — Georgia Bold 34 px, gold, manual letterspacing +6 px per
+     glyph, at x=58: `CHAPTER N` (N = the front-matter `order` as a plain
+     integer) or `BONUS STUDY` for `NNx` bonus chapters. Gap after: 14.
    - Chapter name in CAPS (`THE SEAL`) — Georgia Bold, gold, 2 px stroke
      `(28,18,6)`; start at 96 px and shrink in steps of 2 until the line
-     fits 512 px (long titles like ORPHANS, WIDOWS, AND THE FATHERLESS may
-     wrap to two lines at the natural comma instead — fit each line
-     separately, same font size for both, minimum ~56 px). This is the
-     biggest variable text on purpose: it is the per-video hook.
+     fits 512 px. When a single line would land below 56 px, wrap to two
+     lines instead: break at the comma nearest the middle (comma stays on
+     line one), else at the space nearest the middle; fit each line
+     separately, both lines take the smaller of the two sizes; 8 px
+     between the lines. Straight apostrophes become curly (LUCIFER’S).
+     This is the biggest variable text on purpose: it is the per-video
+     hook.
    - The band renders "Chapter N — Name" as eyebrow + display line rather
      than one em-dash line so long chapter names never shrink the name below
      thumbnail legibility.
@@ -70,5 +94,6 @@ chapter's thumbnail regenerates.
 
 ## Per-chapter variables
 
-Only three inputs change: bed image path, chapter number, chapter name.
-Everything else is fixed.
+Only three inputs change: bed image path, eyebrow (chapter number or
+BONUS STUDY), chapter name — and `thumbnail.py` derives all three from the
+print chapter stem. Everything else is fixed.
