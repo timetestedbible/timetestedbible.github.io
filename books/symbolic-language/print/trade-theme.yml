@@ -198,10 +198,10 @@ link:
   font-color: '000000'
 toc:
   font-color: '000000'
-  # slightly tighter than body; the Contents may flow to a second page —
-  # professional spacing over cramming (author's ruling, 2026-07-05)
-  font-size: 10
-  line-height: 0.82
+  # sized to fill the Contents spread — half of p. iv sat empty at 10/0.82
+  # (author's ruling, 2026-07-10); must not spill to a fifth roman page.
+  font-size: 11
+  line-height: 0.9
   dot-leader:
     content: '. '
     font-color: '000000'
