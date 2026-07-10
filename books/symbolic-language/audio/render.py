@@ -111,8 +111,12 @@ if __name__ == '__main__':
     ap.add_argument('--out', default='out')
     a = ap.parse_args()
     key = os.environ.get('ELEVENLABS_API_KEY')
+    if not key:
+        keyfile = os.path.expanduser('~/.elevenlabs.key')
+        if os.path.exists(keyfile):
+            key = open(keyfile).read().strip()
     if not key or not a.voice:
-        sys.exit('need ELEVENLABS_API_KEY env and --voice/ELEVENLABS_VOICE_ID')
+        sys.exit('need ELEVENLABS_API_KEY env (or ~/.elevenlabs.key) and --voice/ELEVENLABS_VOICE_ID')
     stem = os.path.splitext(os.path.basename(a.script))[0]
     chunks = chunk(parse_script(a.script))
     print(f'{stem}: {len(chunks)} chunks, {sum(len(c) for c in chunks):,} chars')
