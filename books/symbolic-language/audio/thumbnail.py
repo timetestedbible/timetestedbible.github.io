@@ -68,7 +68,7 @@ SUBTITLE = [('THE BIBLE’S', CREAM), ('SYMBOLIC', GOLD),
 # left. Entries are tuned to the specific generated bed in
 # assets-video/thumb-beds/; retune or drop when that bed is regenerated.
 BED_TRANSFORMS = {
-    '01-introduction': dict(dy=36),             # lifted loaves clear of
+    '01-introduction': dict(mirror=True, dx=170, dy=55), # approved feeding bed: mirror, slide right, platter lowered — the twelve sink under the title band
                                                 # the top crop line
     '09-the-seal': dict(mirror=True, dx=110),   # sealing action (pen on
                                                 # forehead) out from under
@@ -173,12 +173,12 @@ def build_bed(src, kind, stem):
 
 
 def band_overlay():
-    """Left title band: (12,9,6), alpha 225 to x=400, linear fade to 0 at
-    x=680, drawn as per-column 1px lines."""
+    """Left title band: (12,9,6), alpha 225 to x=400, long gradual fade to 0
+    at x=880, drawn as per-column 1px lines."""
     ov = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(ov)
-    for x in range(680):
-        a = 225 if x <= 400 else round(225 * (680 - x) / 280)
+    for x in range(880):
+        a = 225 if x <= 400 else round(225 * (880 - x) / 480)
         d.line([(x, 0), (x, H)], fill=PANEL + (a,))
     return ov
 
