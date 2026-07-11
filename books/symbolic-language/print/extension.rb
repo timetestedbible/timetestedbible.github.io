@@ -994,6 +994,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'knowing-faith-love-and-belief' => 'images/print/06-cloak.jpg',
     'the-way-the-truth-and-the-life' => 'images/print/07-narrow-path.jpg',
     'the-name'              => 'images/print/08-strong-tower.jpg',
+    'the-disciple'          => 'images/print/09-sealed-scroll.jpg',
     'the-seal'              => 'images/print/10-inkhorn-seal.jpg',
     'the-coin'              => 'images/print/11-fish-stater.jpg',
     'marriage-and-divorce'  => 'images/print/12-hosea-silver.jpg',
