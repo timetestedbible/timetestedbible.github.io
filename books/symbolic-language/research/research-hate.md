@@ -11,8 +11,8 @@ of a covenant partner or claim — with feeling at most a variable overtone.
   hated 42, hateth 20, hatest 5, hating 1, haters 1, hateful 1 (Ps 36:2),
   "utterly" 1 (Judg 15:2's infinitive absolute), **odious 1 (Prov 30:23)** —
   and **enemies 3, enemy 2, foes 1**: the KJV itself renders the participle as
-  a status word, not a feeling word, in Exod 1:10; 2 Chr 1:11; Esth 9:16;
-  Prov 25:21; 27:6 ("the kisses of an ENEMY [sone] are deceitful").
+  a status word, not a feeling word, in Exod 1:10; 2 Sam 19:6; 2 Chr 1:11;
+  Esth 9:16; Prov 25:21; 27:6 ("the kisses of an ENEMY [sone] are deceitful").
 - **sin'ah (H8135, noun)**: 16 verses, 16 tokens (incl. Num 35:20 the
   manslayer statute; 2 Sam 13:15; Ps 139:22; Ezek 23:29 "hatefully").
 - **seni'ah (H8146, adj)**: 1× — Deut 21:15, the unique spelling לַשְּׂנִיאָה,
@@ -280,8 +280,12 @@ act is always a putting-out or a not-taking-in:
   rebuke. Silent unrebuke — letting the brother carry his sin unchallenged
   — IS the heart-hate: the inward un-brothering. "In thine heart" does not
   make hate an emotion; it locates where the casting-off can hide (cf. the
-  covered hatred of Prov 26:26). 1 John develops both halves: the
-  brother-hater "is in darkness" (2:9-11) and "is a murderer" (3:15).
+  covered hatred of Prov 26:26). The statute itself keeps the grudge in a
+  separate word: v18 continues "thou shalt not avenge, NOR BEAR ANY GRUDGE
+  (natar, H5201)" — Leviticus distinguishes sane from grudge-bearing in
+  consecutive verses, exactly as Genesis keeps satam for Esau's. 1 John
+  develops both halves: the brother-hater "is in darkness" (2:9-11) and
+  "is a murderer" (3:15).
 - **The reproof cluster**: "they HATE him that REBUKETH in the gate"
   (Amos 5:10); "he that HATETH REPROOF is brutish… shall die"
   (Prov 12:1; 15:10); "every one that doeth evil HATETH the light, NEITHER
@@ -321,8 +325,14 @@ thou hast LOVED, with all them that thou hast HATED" (16:37).
 
 ## Second witness — the Hebrew Gospels (bibles/hg.txt, data/hg-chapters/)
 
-Not lexeme-uniform, and honesty requires saying so — but every divergence
-runs TOWARD rejection, none toward emotion:
+Not lexeme-uniform, and honesty requires saying so. The flagship
+divergences run TOWARD rejection (John 15:18 "rejected me first"; Luke
+14:26's departure construction) — but the witness is mixed, not uniform:
+Cochin John also renders miseo with "angry" four times (7:7; 15:19, 23,
+24), and the persecution texts reach for wrath-vocabulary (qatsaph, Mark
+13:13; Luke 19:14). The second witness supports the rejection reading at
+its decisive points and adds an affect-coloring at others; it is weighed
+as support, not proof:
 
 - **sane (H8130) where allegiance is the point**: Matt 6:24 "without HATING
   (yisna) the one and LOVING the other, or HONORING (kabed) the one and
@@ -365,8 +375,9 @@ than a feeling.
   her, ARISE, BE GONE" — and Tamar's protest names the act, not the mood:
   "this evil in SENDING ME AWAY (shalach) is greater than the other" —
   and v17: "PUT (shilchu) now this woman OUT from me, and BOLT THE DOOR
-  after her." Shalach three times: the divorce-expulsion verb is the
-  hate's entire content. The law had one remedy for what Amnon did —
+  after her." Shalach twice in as many verses (v16 leshalcheni, v17
+  shilchu; v18's "brought her out" is yatsa): the divorce-expulsion verb
+  is the hate's entire content. The law had one remedy for what Amnon did —
   marry her and never put her away (Deut 22:29; Tamar even offers it,
   13:13); his hate is precisely the refusal of that duty, and it leaves
   Tamar "DESOLATE (shomemah) in her brother Absalom's house" — the
@@ -469,7 +480,28 @@ un-choosing those enactments execute.
   "mouth of two"; the un-chosen line carries the doubled inheritance.
   Observation only.
 
-## Candidate glossary entry (WORD badge; no blind grading yet)
+## Verdict (blind pipeline, 2026-07-11)
+
+3 blind proxies (no repo access): consensus = two registers, unreconciled —
+(a) a comparative/preference idiom for the famous cluster (Luke 14:26 via
+Matt 10:37; Gen 29:30-31; Deut 21:15; Mal 1:2-3/Rom 9:13 as election),
+near-universally taught; (b) real hostility elsewhere: God's settled
+opposition to sin, forbidden malice toward people (Lev 19:17 as nursed
+inner grudge), "love the sinner, hate the sin." 2 skeptical graders
+(citations re-verified against kjv_strongs.txt + WLC + HG chapter data,
+token-exact): Divergent/strong; Divergent/strong (hostile — swept all 139
+sane and 38 miseo verses for a rejection-proof counter-text and found
+none). **MAJORITY: DIVERGENT (2-0), citations strong** — the study does
+not sharpen the consensus's two-register scheme; it abolishes the emotion
+register, universalizing the un-choosing the consensus deploys only as a
+local escape hatch, reassigning the feelings to satam/natar/qut, and
+re-reading Lev 19:17 as the withheld rebuke. Graders' corrections folded
+above: shalach twice not three times in 2 Sam 13; 2 Sam 19:6 added to the
+enemies list; natar (Lev 19:18's own grudge verb) added; the HG summary
+softened to a mixed witness (Cochin John's four "angry" renderings
+reported against interest).
+
+## Candidate glossary entry (WORD badge — verdict: DIVERGENT)
 
 [[sym-hate]]Hate verdict:word[]:: To un-choose — the repudiation of a
 covenant partner or claim, never a mere feeling: the word of the un-favored

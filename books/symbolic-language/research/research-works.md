@@ -20,16 +20,19 @@ doings" word); **melakah (H4399)** "occupation, workmanship" — 149 verses
 (the sabbath command's word, Exod 20:9-10, and God's own creation-work,
 Gen 2:2-3) — a neighbor lexeme, bucketed literal below. The verb **pa'al
 (H6466)** supplies the fixed phrase **po'alei aven, "workers of
-iniquity" — 19 verses** (Job 31:3; 34:8, 22; Ps 5:5; 6:8; 14:4; 28:3;
-36:12; 53:4; 59:2; 64:2; 92:7, 9; 94:4, 16; 125:5; 141:9; Prov 10:29;
-21:15) — and its bright twin "worketh righteousness," po'el tsedeq
-(Ps 15:2).
+iniquity" — 23 verses** (Job 31:3; 34:8, 22; Ps 5:5; 6:8; 14:4; 28:3;
+36:12; 53:4; 59:2; 64:2; 92:7, 9; 94:4, 16; 125:5 [with article]; 141:9;
+Prov 10:29; 21:15 — plus four the KJV renders differently, hiding the
+fixed phrase: Ps 101:8 "wicked doers"; Ps 141:4; Isa 31:2; Hos 6:8) —
+and its bright twin "worketh righteousness," po'el tsedeq (Ps 15:2).
 
 Greek: **ergon (G2041)** — 161 verses, 176 tokens (John 25, Revelation
 21, Romans 15, James 12, Hebrews 11); "good work(s)" with ergon — 27
-verses; **erga nomou "works of the law" — 8 verses, 10 tokens** (Rom
-3:20, 28 KJV "deeds"; 9:32; Gal 2:16 ×3; 3:2, 5, 10 — the tally corrects
-research-dead-works.md's count of 5). **ergates (G2040)** "workers,
+verses; **erga nomou "works of the law" — 8 verses, 10 tokens on the
+Received Text behind the KJV** (Rom 3:20, 28 KJV "deeds"; 9:32 — TR
+only: the critical text, incl. this repo's greek_nt.txt, reads ἐξ ἔργων
+with no νόμου there, making it 7 verses/9 tokens on that text; Gal 2:16
+×3; 3:2, 5, 10 — the tally corrects research-dead-works.md's count of 5). **ergates (G2040)** "workers,
 labourers" — 15 verses. **ergazomai (G2038)** "to work" — 37 verses.
 **praxis (G4234)** "deeds" — 6 verses (incl. Matt 16:27, Rom 8:13,
 Col 3:9).
@@ -48,9 +51,11 @@ almsgiving IS tzedaqah, "righteousness"), not the definition.
 
 ## Scripture's self-gloss — works stand in the commandments' column
 
-- **Exod 18:20 — the defining first use: "thou shalt teach them the
-  STATUTES (chuqqim) and the LAWS (torot), and shalt shew them the WAY
-  wherein they must walk, and THE WORK (ha-ma'aseh) that they must do."**
+- **Exod 18:20 — the law's own defining use (not the lexeme's first
+  occurrence — ma'aseh appears from Gen 5:29 — but the first time the
+  law states what a work IS): "thou shalt teach them ORDINANCES
+  (chuqqim) and LAWS (torot), and shalt shew them the WAY wherein they
+  must walk, and THE WORK (ha-ma'aseh) that they must do."**
   One sentence, one chain: law taught → way walked → work done. The
   ma'aseh is what the taught law becomes when hands perform it — definite
   article, the work, an assigned thing, not self-invented effort.
@@ -391,6 +396,11 @@ almsgiving IS tzedaqah, "righteousness"), not the definition.
   of standing, not two lifestyles) coheres with Rom 3:31 and Jas 2, but
   Gal 3:12's blunt wording remains the tradition's strongest card and
   should be quoted, not paraphrased around, wherever the book handles it.
+  Gal 3:21 presses the same point harder still — "if there had been a law
+  given which could have GIVEN LIFE, verily righteousness should have
+  been by the law" — and belongs in the same flag: the law defines and
+  audits the works; the LIFE is given, never wage-earned (the pe'ullah
+  logic's own boundary).
 
 ## The charity texts — the subset folds into the genus
 
@@ -451,6 +461,26 @@ almsgiving IS tzedaqah, "righteousness"), not the definition.
 
 ## Counter-sweep — the literal range, and why it reinforces the fork
 
+- **Mark 14:6-8 — the Bethany anointing, the range's hardest case**:
+  __"she hath wrought a GOOD WORK (kalon ergon) on me"__ — no written
+  statute names spikenard, and the objectors hold an actual statute
+  (sell it, give to the poor). But the scene is an audit between two
+  duties, argued by the Owner in person: Jesus answers with the alms
+  statute's own words — "ye have the poor with you ALWAYS, and
+  whensoever ye will ye may do them good" (Deut 15:11 restated, the
+  charity command left standing) — and files the deed under the hour's
+  assignment: "she is come aforehand to ANOINT MY BODY TO THE BURYING,"
+  a burial duty executable only then. The audit is still whose-command;
+  Bethany adds that the Master's direct assignment (Mark 13:34 "to
+  every man his WORK"; John 9:4) audits alongside the written statute,
+  never against it. The definition holds in its "whose command" form —
+  the deed executes the Sender's present assignment — and this verse is
+  the reason the candidate is worded by command, not by statute-book.
+- **Rom 13:3-4 — "rulers are not a terror to GOOD WORKS"**: the auditor
+  looks pagan, but Paul deputizes him in the same breath — "he is the
+  MINISTER OF GOD to thee for good" — and five verses later grounds the
+  passage in the named commandments (13:9). The audit chain terminates
+  in God's ordinance even when the clerk is Caesar's.
 - **Craftsmanship ma'aseh (~70 of the 221)**: tabernacle needlework and
   "cunning work" (Exod 26-39, ~28 verses), temple lily-work and bases
   (1 Kgs 7; 2 Chr 3-4), apothecary's art, bakemeats, jewels, Tyre's wares
@@ -460,7 +490,9 @@ almsgiving IS tzedaqah, "righteousness"), not the definition.
   WORK, and, behold, they had done it AS THE LORD HAD COMMANDED… and
   Moses BLESSED them" (Exod 39:42-43)** — Scripture's first works-
   inspection: deed examined against command, then blessing; Rev 20:12 in
-  miniature. Its dark twin is the calf — equally skilled craftsmanship,
+  miniature (lexeme disclosed: the nouns there are avodah and melakah,
+  the service/workmanship words — it is the audit grammar, not the
+  ma'aseh lexeme, that carries the point). Its dark twin is the calf — equally skilled craftsmanship,
   executing man's design, inspected and ground to powder (Exod 32).
   The same hands, two commands, two verdicts: even the "literal" bucket
   teaches the definition.
@@ -519,11 +551,31 @@ wage-logic — not on whether judgment by works exists.
   scene and the calf twin are print-grade and unclaimed.
 - The seen-fork (Matt 5:16 vs 6:1/23:5, glory's address) may belong in
   the Light & Darkness audio/print pair as a refinement.
-- Blind grading not yet run; badge unassigned. The entry below predicts
-  DIVERGENT-adjacent WORD verdict (tradition affirms works-judgment but
-  defines the works differently); run the standard 3+3 protocol.
+## Verdict (blind pipeline, 2026-07-11)
 
-## Glossary entry (candidate — WORD badge, pending blind grading)
+3 blind proxies (no repo access): consensus = works are deeds/conduct
+generally; good works = charity, kindness, service — fruit and evidence
+of salvation, never cause; "works of the law" = futile merit-seeking by
+commandment-keeping, generalized against any Torah observance (ceremonial
+law retired; Torah-positive definitions flagged as fringe); Matt 7:21-23
+= nominal religion without relationship, anomia unpressed. 2 skeptical
+graders (citations re-verified token-exact against kjv_strongs.txt,
+greek_nt.txt, WLC, and HG chapter data; both ran deliberate break-attempts
+incl. Mark 14:6 and Rom 13:3): Divergent/strong; Divergent/strong.
+**MAJORITY: DIVERGENT (2-0), citations strong** — the study inverts the
+consensus rather than sharpening it: the consensus's negative foil
+(law-keeping) becomes the definition's positive content, its safe zone
+(church religious activity) becomes the chief counterfeit, and Matt
+7:21-23 flips from nominal-religion to a Deut 13 works-audit. Both
+graders noted the Westminster "good works are only such as God hath
+commanded" strand as the nearest traditional anchor — an ancestor, not
+the consensus. Graders' corrections folded above: Bethany and Rom 13
+added to the counter-sweep; Exod 18:20 reworded (defining use, not first
+occurrence; ORDINANCES per KJV); erga nomou TR/critical counts split;
+po'alei aven corrected upward to 23; Exod 39:42-43 lexemes disclosed;
+Gal 3:21 added to the hard-texts flag.
+
+## Glossary entry (WORD badge — verdict: DIVERGENT)
 
 [[sym-works]]Works (good works, evil works) verdict:word[]:: Deeds
 audited by whose command they execute — Scripture's own parallel:
