@@ -111,3 +111,14 @@ Isaiah:" — varied naturally. The renderer's citation weave (render.py
 
 Never hand-write the weave's own "— Book N:" form; write natural speech and
 let the renderer fold the reference in.
+
+## Render-time pronunciation fixes (render.py)
+
+`TTS_SPOKEN_FIXES` in render.py is a word-boundary substitution map applied
+only to API-bound text — narration chunks, woven citations, and the
+previous/next stitching context — never to the .adoc script or to the
+on-screen captions video.py rebuilds from it, which keep the book's
+spelling. First entry: the book "Job" (capital J only; lowercase
+"job"/"jobs" untouched) is sent as "Jobe" so the voice reads the name, not
+the occupation. Future mispronounced names slot in as one more
+(pattern, spoken form) pair.

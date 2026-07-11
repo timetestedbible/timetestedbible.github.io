@@ -21,6 +21,24 @@ import argparse, json, os, re, subprocess, sys, time, urllib.request
 
 API = 'https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_128'
 MAX_CHARS = 4000          # stay under API per-request limits with headroom
+
+# Pronunciation fixes applied ONLY to API-bound text (the spoken audio) —
+# never to the .adoc script or the chunk list video.py rebuilds for captions,
+# which keep the book's spelling. Word-boundary and case-sensitive: the book
+# "Job" reads "Jobe"; lowercase "job"/"jobs" (occupation) never matches.
+# Future mispronounced names slot in as one more (pattern, spoken) pair.
+TTS_SPOKEN_FIXES = [
+    (re.compile(r'\bJob\b'), 'Jobe'),
+]
+
+def spoken_fixes(text):
+    """Apply TTS_SPOKEN_FIXES to text bound for the TTS API — narration
+    chunks (woven citations included) and their previous/next stitching
+    context alike, so seams condition on what is actually spoken."""
+    for pat, rep in TTS_SPOKEN_FIXES:
+        text = pat.sub(rep, text)
+    return text
+
 BREAKS = {'[beat]': '<break time="0.2s" />',
           '[pause]': '<break time="0.45s" />',
           '[long pause]': '<break time="0.8s" />'}
@@ -147,9 +165,9 @@ def tts(chunks, voices, model, key, outdir, stem):
     os.makedirs(os.path.join(outdir, stem), exist_ok=True)
     for i, (role, c) in enumerate(chunks):
         voice = voices.get(role) or voices['narrator']
-        body = {'text': c, 'model_id': model,
-                'previous_text': chunks[i-1][1][-500:] if i > 0 else None,
-                'next_text': chunks[i+1][1][:500] if i + 1 < len(chunks) else None,
+        body = {'text': spoken_fixes(c), 'model_id': model,
+                'previous_text': spoken_fixes(chunks[i-1][1][-500:]) if i > 0 else None,
+                'next_text': spoken_fixes(chunks[i+1][1][:500]) if i + 1 < len(chunks) else None,
                 'voice_settings': {'stability': 0.5, 'similarity_boost': 0.75}}
         body = {k: v for k, v in body.items() if v is not None}
         req = urllib.request.Request(API.format(voice=voice),

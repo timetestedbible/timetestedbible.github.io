@@ -58,6 +58,19 @@ DOCK_MIN = 3.0                  # skip the dock if the discussion window is
 TONE = ('eq=brightness=0.04:gamma=1.18,'
         'colorbalance=rm=0.10:gm=0.03:bm=-0.10')
 
+# persistent corner brand mark (every scene except the branded intro card):
+# the book cover as a small bordered icon top-right, 'TimeTested.Bible' in
+# cream Georgia Bold beside it — a watermark, not a focal element
+COVER = os.path.join(HERE, '..', 'cover', 'front-cover-summit-meat.jpg')
+BRAND_TEXT = 'TimeTested.Bible'
+BRAND_CREAM = (242, 233, 214)   # thumbnail.py CREAM
+BRAND_ICON_H = 120              # icon height at 1080p (thumbs use 168 at 720p)
+BRAND_FS = 30                   # Georgia Bold text size
+BRAND_MARGIN = 26               # safe margin from the frame edges
+BRAND_GAP = 14                  # text-to-icon gap
+BRAND_ALPHA = 0.80              # overlay opacity over the scene
+BRAND_DOCK_ALPHA = 0.35         # receded while a docked quote holds the band
+
 BREAK_RE = re.compile(r'<break time="([0-9.]+)s"\s*/>')
 
 
@@ -409,6 +422,18 @@ def quote_fs(plain):
     return 60 if len(plain) <= 150 else 53 if len(plain) <= 260 else 46
 
 
+CITE_SCALE = 0.75               # citation line ≈ 3/4 of the card body size
+
+
+def cite_fs(body_fs):
+    """Citation-line size for a quote/dock card. Scales with the body
+    (author, 2026-07-10 — the old fixed 32/24 read like a small caption at
+    YouTube size); floored so the longest docked quotes keep a legible
+    line. The citation stays inside the card's \\an5 event, so it centers
+    under the quote body on the card's own axis."""
+    return max(24, round(body_fs * CITE_SCALE))
+
+
 def ass_time(t):
     t = max(t, 0.0)
     return f'{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}'
@@ -450,7 +475,8 @@ def write_ass(events, path):
             dlg(0, s, e, 'Dim', DIM_RECT % '52')
             body = f'{{\\an5\\pos(960,510)\\fs{fs}\\fad(350,400)}}{text}'
             if ev.get('ref'):
-                body += ('\\N\\N{\\fs32\\i0\\c' + GOLD + '}— ' + esc(ev['ref']))
+                body += (f'\\N\\N{{\\fs{cite_fs(fs)}\\i0\\c' + GOLD + '}— '
+                         + esc(ev['ref']))
             dlg(1, s, e, 'Quote', body, margins=(230, 230, 0))
         elif ev['kind'] == 'dock':
             # quote persistence: the card lingers smaller in the upper half
@@ -460,7 +486,8 @@ def write_ass(events, path):
             dlg(0, s, e, 'Dim', DOCK_RECT % '78')
             body = f'{{\\an5\\pos(960,{DOCK_H // 2})\\fs{fs}\\fad(280,320)}}{text}'
             if ev.get('ref'):
-                body += ('\\N{\\fs24\\i0\\c' + GOLD + '}— ' + esc(ev['ref']))
+                body += (f'\\N{{\\fs{cite_fs(fs)}\\i0\\c' + GOLD + '}— '
+                         + esc(ev['ref']))
             dlg(1, s, e, 'Quote', body, margins=(230, 230, 0))
     out = '\n'.join(lines) + '\n'
     out = out.replace(HL0, '{\\1c' + GOLD + '}').replace(HL1, '{\\1c&HFFFFFF&}')
@@ -600,18 +627,81 @@ def intro_clip(ff, print_stem, outdir):
     return clip
 
 
-def compose(ff, clips, sections, ass_path, audio, total, out_mp4):
+def brand_overlay(outdir=None):
+    """Build (and cache) the corner brand mark: a full-frame transparent PNG
+    with the book cover as a small cream-bordered icon top-right and
+    BRAND_TEXT beside it, vertically centered on the icon. compose() lays it
+    over the finished frame — full strength on scenes and full-screen quote
+    cards, receded to BRAND_DOCK_ALPHA while a docked quote holds the upper
+    band, absent during the branded intro card (which carries the cover)."""
+    out = outdir or os.path.join(HERE, 'out')
+    png = os.path.join(out, f'brand-{int(os.path.getmtime(COVER))}'
+                            f'-h{BRAND_ICON_H}-fs{BRAND_FS}-g{BEDGEN}.png')
+    if os.path.exists(png):
+        return png
+    from PIL import Image, ImageDraw, ImageFilter, ImageFont
+    canvas = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    cov = Image.open(COVER).convert('RGB')
+    ih = BRAND_ICON_H - 6
+    iw = round(cov.width * ih / cov.height)
+    cov = cov.resize((iw, ih), Image.LANCZOS)
+    card = Image.new('RGB', (iw + 6, ih + 6), BRAND_CREAM)
+    card.paste(cov, (3, 3))
+    x0, y0 = W - BRAND_MARGIN - card.width, BRAND_MARGIN
+    shadow = Image.new('RGBA', canvas.size, (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rectangle(
+        [x0 + 3, y0 + 4, x0 + card.width + 3, y0 + card.height + 4],
+        fill=(0, 0, 0, 140))
+    canvas = Image.alpha_composite(canvas, shadow.filter(
+        ImageFilter.GaussianBlur(7)))
+    canvas.paste(card, (x0, y0))
+    font = ImageFont.truetype(os.path.join(FONTS_DIR, 'Georgia Bold.ttf'),
+                              BRAND_FS)
+    d = ImageDraw.Draw(canvas)
+    tw = d.textlength(BRAND_TEXT, font=font)
+    asc, desc = font.getmetrics()
+    tx = x0 - BRAND_GAP - tw
+    ty = y0 + (card.height - asc - desc) / 2
+    d.text((tx + 1, ty + 2), BRAND_TEXT, font=font, fill=(0, 0, 0, 150))
+    d.text((tx, ty), BRAND_TEXT, font=font, fill=BRAND_CREAM + (255,))
+    canvas.save(png)
+    print(f'  brand mark -> {os.path.basename(png)}')
+    return png
+
+
+def compose(ff, clips, sections, ass_path, audio, total, out_mp4,
+            brand=None, brand_from=0.0, docks=()):
+    """brand: brand_overlay() PNG laid over the subtitled frame from
+    brand_from (0, or INTRO after the branded card) with a short alpha
+    fade-in; docks are (s, e) windows where it recedes to BRAND_DOCK_ALPHA
+    so it never fights the docked quote card in the upper band."""
     args = [ff, '-y']
     for c in clips:
         args += ['-i', c]
     args += ['-i', audio]
+    if brand:
+        args += ['-loop', '1', '-i', brand]
     fc, cur = [], '[0:v]'
     for i in range(1, len(clips)):
         nxt = f'[x{i}]'
         fc.append(f'{cur}[{i}:v]xfade=transition=fade:duration={XFADE}'
                   f':offset={sections[i]:.3f}{nxt}')
         cur = nxt
-    fc.append(f"{cur}subtitles=filename='{ass_path}':fontsdir='{FONTS_DIR}'[v]")
+    sub = f"{cur}subtitles=filename='{ass_path}':fontsdir='{FONTS_DIR}'"
+    if brand:
+        bi = len(clips) + 1
+        dock_expr = '+'.join(f'between(t,{s:.3f},{e:.3f})'
+                             for s, e in docks) or '0'
+        fc += [sub + '[vs]',
+               f'[{bi}:v]format=rgba,split[b0][b1]',
+               f'[b0]colorchannelmixer=aa={BRAND_ALPHA},'
+               f'fade=t=in:st={brand_from:.2f}:d=0.6:alpha=1[bn]',
+               f'[b1]colorchannelmixer=aa={BRAND_DOCK_ALPHA}[bd]',
+               f"[vs][bn]overlay=0:0:enable='gte(t,{brand_from:.2f})"
+               f"*not({dock_expr})'[vb]",
+               f"[vb][bd]overlay=0:0:enable='{dock_expr}'[v]"]
+    else:
+        fc.append(sub + '[v]')
     args += ['-filter_complex', ';'.join(fc), '-map', '[v]',
              '-map', f'{len(clips)}:a'] + venc_args(ff) + \
             ['-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k',
@@ -673,7 +763,10 @@ def main():
     if intro:
         clips, sections = [intro] + clips, [0.0] + sections
     out_mp4 = os.path.join(a.out, stem + '.mp4')
-    compose(ff, clips, sections, ass_path, audio, total, out_mp4)
+    compose(ff, clips, sections, ass_path, audio, total, out_mp4,
+            brand=brand_overlay(a.out),
+            brand_from=INTRO if intro else 0.0,
+            docks=[(e['s'], e['e']) for e in events if e['kind'] == 'dock'])
     print(f'wrote {out_mp4} ({ffprobe_duration(out_mp4):.1f}s, audio {total:.1f}s)')
 
 

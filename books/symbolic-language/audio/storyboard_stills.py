@@ -119,7 +119,11 @@ def main():
     if intro:
         clips, offsets = [intro] + clips, [0.0] + offsets
     out_mp4 = os.path.join(out, stem + '-storyboard.mp4')
-    video.compose(ff, clips, offsets, ass_path, audio, total, out_mp4)
+    video.compose(ff, clips, offsets, ass_path, audio, total, out_mp4,
+                  brand=video.brand_overlay(out),
+                  brand_from=video.INTRO if intro else 0.0,
+                  docks=[(e['s'], e['e']) for e in events
+                         if e['kind'] == 'dock'])
     print(f'wrote {out_mp4} ({video.ffprobe_duration(out_mp4):.1f}s, '
           f'audio {total:.1f}s, {len(scenes)} scenes)')
 
