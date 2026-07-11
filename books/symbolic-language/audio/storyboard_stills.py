@@ -35,17 +35,18 @@ def parse_storyboard(md_path):
     return scenes
 
 
-def still_clip(ff, img, n, outdir, tag):
-    # cache key includes the image identity (name + mtime) so regenerated
-    # or fallback beds never reuse a stale clip
+def still_clip(ff, img, n, outdir, tag, size):
+    # cache key includes the image identity (name + mtime) and frame size
+    # so regenerated/fallback beds and previews never reuse a stale clip
+    w, h = size
     key = f'{os.path.basename(img)}-{int(os.path.getmtime(img))}'
-    clip = os.path.join(outdir, f'sb-{tag}-{key}-n{n}.mp4')
+    clip = os.path.join(outdir, f'sb-{tag}-{key}-n{n}-{w}x{h}.mp4')
     if not os.path.exists(clip):
         video.run([ff, '-y', '-loop', '1', '-framerate', str(video.FPS),
                    '-i', img, '-vf',
-                   f'scale={video.W}:{video.H}:'
+                   f'scale={w}:{h}:'
                    f'force_original_aspect_ratio=increase:flags=lanczos,'
-                   f'crop={video.W}:{video.H},format=yuv420p',
+                   f'crop={w}:{h},format=yuv420p',
                    '-frames:v', str(n)] + video.venc_args(ff) + [clip])
     return clip
 
@@ -54,8 +55,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('stem')
     ap.add_argument('--model', default='small.en')
+    ap.add_argument('--preview', action='store_true',
+                    help='render at 720p for fast author-review iteration; '
+                         'the approved final gets a full 1080p render')
     a = ap.parse_args()
     stem = re.sub(r'\.adoc$', '', os.path.basename(a.stem))
+    size = (1280, 720) if a.preview else (video.W, video.H)
     out = os.path.join(HERE, 'out')
 
     scenes = parse_storyboard(os.path.join(HERE, 'storyboards', stem + '.md'))
@@ -96,7 +101,7 @@ def main():
 
     ff = video.ffmpeg_bin()
     print_stem = os.path.splitext(os.path.basename(print_twin))[0]
-    intro = video.intro_clip(ff, print_stem, segdir)
+    intro = video.intro_clip(ff, print_stem, segdir, size=size)
     starts = [s['t0'] for s in scenes] + [total]
     if intro:
         # branded card holds 0..INTRO while the chapter title is spoken;
@@ -114,7 +119,7 @@ def main():
               (video.XFADE if i + 1 < len(scenes) else 0.0)
         print(f'  {s["id"]}: {os.path.basename(s["img"])} {dur:.1f}s')
         clips.append(still_clip(ff, s['img'], round(dur * video.FPS), segdir,
-                                s['id']))
+                                s['id'], size))
     offsets = starts[:-1]
     if intro:
         clips, offsets = [intro] + clips, [0.0] + offsets
@@ -123,7 +128,8 @@ def main():
                   brand=video.brand_overlay(out),
                   brand_from=video.INTRO if intro else 0.0,
                   docks=[(e['s'], e['e']) for e in events
-                         if e['kind'] == 'dock'])
+                         if e['kind'] == 'dock'],
+                  size=size)
     print(f'wrote {out_mp4} ({video.ffprobe_duration(out_mp4):.1f}s, '
           f'audio {total:.1f}s, {len(scenes)} scenes)')
 

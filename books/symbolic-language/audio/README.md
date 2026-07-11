@@ -39,9 +39,16 @@ quote text is verbatim, always.
 - Block quotes = scripture voice: measured, slightly slower, a half-register
   shift. The intro sentence names the speaker; the quote is never followed by a
   spoken reference.
-- Section titles are read aloud, then `[long pause]`.
-- Epigraphs are read as the chapter's opening line, introduced softly
-  ("Revelation ends with this promise: …").
+- Section headings are never spoken as bare fragments (author, 2026-07-10:
+  "The Mint." heard cold doesn't tell a story). Each becomes a natural
+  storytelling transition sentence that CARRIES the heading's words —
+  "Every coin begins at the mint." — and video.py matches those words to
+  the print heading to place the on-screen title card, which still shows
+  the clean print heading. Then `[long pause]`.
+- Chapter epigraphs are NOT read aloud (author, 2026-07-10: a cold verse
+  with no context is an awkward start and breaks the chapter's flow). The
+  audio opens with the chapter number and title, then the opening prose.
+  The epigraph still belongs to the print page.
 
 ## Citation principles — the heart of the transform
 
@@ -105,9 +112,13 @@ Isaiah:" — varied naturally. The renderer's citation weave (render.py
 
 - Lead-in carries book + chapter ("Let's read Luke 15.") — the weave
   detects it (punctuation- and "chapter"-word-insensitive) and adds nothing.
-- Lead-in names the book only ("Hear Zechariah:") — the weave appends the
-  chapter alone: "Hear Zechariah — chapter 13:".
-- Bare intro — the full weave as before: "…opens as a trap — Matthew 22:".
+- Otherwise the reference joins the lead-in as natural English — never a
+  dash splice (an em-dash synthesizes as a jarring pause), and the book
+  name is always spoken with the chapter (a bare "chapter 13" is ambiguous
+  by ear: of the book being read, or of THIS book?). "Hear Job:" becomes
+  "Hear Job 34:"; "…Listen:" becomes "Listen to Zechariah 13:"; anything
+  else joins with "in" — "Moses continues in Exodus 13:". (Author,
+  2026-07-10.)
 
 Never hand-write the weave's own "— Book N:" form; write natural speech and
 let the renderer fold the reference in.
@@ -122,3 +133,41 @@ spelling. First entry: the book "Job" (capital J only; lowercase
 "job"/"jobs" untouched) is sent as "Jobe" so the voice reads the name, not
 the occupation. Future mispronounced names slot in as one more
 (pattern, spoken form) pair.
+
+Beside the map, `NUM_COMMA` strips thousands-separator commas from the same
+API-bound text (the voice chokes on "22,273" and "603,550"); it only fires
+when exactly three digits follow to a boundary, so list commas ("Exodus
+30:12, 15") never match. Captions and the script keep the book's
+digits-with-commas style.
+
+Double-quote marks are also stripped from API-bound text only — they make
+the voice pause mid-sentence where prose glides into a quotation (author,
+2026-07-10). Captions and the script keep the quotation marks; apostrophes
+stay (contractions need them).
+
+## Video edition — scripture on screen (video.py)
+
+Every scripture reading is put on screen the same way, regardless of voice:
+
+- Block quotes (`[quote.scripture]`) become full-screen quote cards with
+  the citation line. Quotes past ~300 plain characters paginate at their
+  own verse/sentence seams into pages of roughly 3-5 display lines, each
+  page revealed in sync with the reading (whisper word times) — the
+  citation stays on every page.
+- Inline scripture the narrator reads inside prose gets the SAME card
+  treatment (dim, panel, citation, gold keywords) when the quoted span is
+  5+ words, timed to the spoken span and held at least ~3 s. Spans of 2-4
+  words keep the small corner citation chip — a card would flash absurdly
+  for a two-word fragment.
+- After the voice finishes, a block quote may dock: the whole quote (when
+  it fits the upper area cleanly at 0.66x) or its final page holds on a
+  snug panel while the discussion captions run below.
+- Every text backdrop — caption boxes, quote cards, docked quotes, chips —
+  is a rounded, blur-feathered panel sized from measured text extents.
+  No hard-edged boxes or bands.
+- The corner brand mark alternates its two-line message ("Free eBook
+  Available" / "Hardcover Book", each over TimeTested.Bible) at scene
+  boundaries, holding each at least ~75 s.
+- While the author is reviewing, build with `storyboard_stills.py <stem>
+  --preview` — 720p, much faster turnaround. The approved final gets a
+  full-resolution 1080p render (drop the flag).

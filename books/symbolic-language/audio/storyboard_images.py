@@ -9,9 +9,10 @@ are understood:
   timed scene map: "### sNN · T0–T1 ..." blocks with "- prompt: <prompt>"
 
 Standing style rules (storyboard header): prompts already carry the
-sepia-painterly/lighter-exposure suffix; this script appends the no-text
+black-and-white Rembrandt-etching suffix; this script appends the no-text
 rule to every prompt and pins strict monochrome on scenes that do not
-declare their own red accent.
+declare their own accent (a red accent for blood/stamp/mark/seal subjects,
+or a warm gold gleam on in-focus metal like the coin).
 
 Chain per scene (per the audiobook-video-pipeline memory):
   API png (native, kept beside the bed)     assets-video/<stem>/native/scene-NN.png
@@ -36,7 +37,8 @@ API = 'https://api.openai.com/v1/images/generations'
 
 NO_TEXT = ('The image contains absolutely no text, lettering, inscriptions, '
            'captions, or watermarks of any kind.')
-MONO = 'Strictly monochrome-sepia throughout; no color accents anywhere.'
+MONO = ('Strictly black-and-white throughout — pure black ink on white '
+        'paper; no color accents anywhere, no sepia, no warm tint.')
 
 
 def ffmpeg_bin():
@@ -62,7 +64,7 @@ def parse_scenes(md_path):
 
 def build_prompt(prompt):
     parts = [prompt.rstrip()]
-    if not re.search(r'red accent', prompt, re.I):
+    if not re.search(r'(red|gold) accent', prompt, re.I):
         parts.append(MONO)
     parts.append(NO_TEXT)
     return ' '.join(parts)

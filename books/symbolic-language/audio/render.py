@@ -31,13 +31,24 @@ TTS_SPOKEN_FIXES = [
     (re.compile(r'\bJob\b'), 'Jobe'),
 ]
 
+# thousands-separator commas choke the voice ("22,273" reads as two
+# numbers): strip them from API-bound text only — captions and the script
+# keep the book's digits-with-commas style. Only exactly-3-digit groups to
+# a boundary match, so list commas ("Exodus 30:12, 15") are untouched.
+NUM_COMMA = re.compile(r'(?<=\d),(?=\d{3}\b)')
+
 def spoken_fixes(text):
-    """Apply TTS_SPOKEN_FIXES to text bound for the TTS API — narration
-    chunks (woven citations included) and their previous/next stitching
-    context alike, so seams condition on what is actually spoken."""
+    """Apply TTS_SPOKEN_FIXES + NUM_COMMA + quote-mark strip to text bound
+    for the TTS API — narration chunks (woven citations included) and
+    their previous/next stitching context alike, so seams condition on
+    what is actually spoken. Double-quote marks make the voice pause
+    mid-sentence when prose glides into a quotation (author, 2026-07-10),
+    so none are spoken; captions and the script keep them. Apostrophes
+    stay — contractions need them."""
     for pat, rep in TTS_SPOKEN_FIXES:
         text = pat.sub(rep, text)
-    return text
+    text = text.replace('"', '').replace('“', '').replace('”', '')
+    return NUM_COMMA.sub('', text)
 
 BREAKS = {'[beat]': '<break time="0.2s" />',
           '[pause]': '<break time="0.45s" />',
@@ -62,13 +73,17 @@ def spoken_citation(ref):
     return (ORDINALS.get(num, '') + ' ' if num else '') + book.strip(), chap
 
 def weave_citation(intro, ref):
-    """Weave the spoken reference into the intro's final clause, cueing the
-    voice change and naming the reading. Cooperates with teacher lead-ins:
+    """Weave the spoken reference into the intro's final clause as natural
+    English (author, 2026-07-10: no dash splice — an em-dash synthesizes
+    as a jarring pause; and the book name is always spoken with the
+    chapter, since a bare "chapter 13" is ambiguous by ear). Modes:
       - lead-in already carries book+chapter ("Let's read Luke 15.")
         -> no weave at all;
-      - lead-in names the book only ("Hear Zechariah:")
-        -> chapter-only weave ("Hear Zechariah — chapter 13:");
-      - bare intro -> the full weave ("...opens as a trap — Matthew 22:")."""
+      - lead-in ends with the book's name ("Hear Job:") -> the chapter
+        joins it: "Hear Job 34:";
+      - lead-in ends with "Listen" -> "Listen to Zechariah 13:";
+      - otherwise the reference joins with "in": "Moses continues in
+        Exodus 13:", "Listen to what Moses records in Exodus 30:"."""
     sc = spoken_citation(ref)
     if not sc:
         return intro
@@ -79,13 +94,15 @@ def weave_citation(intro, ref):
     nref = re.sub(r'[^a-z0-9]', '', name.lower()) + chap
     if re.search(re.escape(nref) + r'(?!\d)', ntail):
         return intro                    # lead-in already names the reading
-    book_pat = r'\b' + r'\s+'.join(map(re.escape, name.split())) + r'\b'
-    spoken = (f'chapter {chap}' if re.search(book_pat, tail, re.I)
-              else f'{name} {chap}')
     intro = intro.rstrip()
-    if intro.endswith(':'):
-        return intro[:-1].rstrip() + f' — {spoken}:'
-    return intro + f' {spoken}:'
+    if not intro.endswith(':'):
+        return intro + f' Hear {name} {chap}:'
+    head = intro[:-1].rstrip()
+    if head.lower().endswith(name.lower()):
+        return head + f' {chap}:'
+    if re.search(r'\blisten$', head, re.I):
+        return head + f' to {name} {chap}:'
+    return head + f' in {name} {chap}:'
 
 def parse_script(path):
     """Returns ordered segments [(role, text)], role in {'narrator', 'scripture'}.
