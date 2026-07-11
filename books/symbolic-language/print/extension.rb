@@ -1035,6 +1035,14 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # Fill the trimmed page as fully as the aspect allows, centered — drawn on
   # the page canvas (edge to edge, ignoring margins), so a plate whose aspect
   # matches the 6x9 trim bleeds the full page.
+  #
+  # media=prepress: the plates are authored at the bleed aspect (6.25x9.25),
+  # so a plain aspect-preserving `fit` spans that page exactly — DO NOT touch
+  # this branch, it is the shipping BookBaby geometry.
+  # media=screen: the page is bare 6x9 trim, a slightly narrower aspect, so
+  # `fit` letterboxes the plate (white bars top and bottom). COVER instead:
+  # scale up preserving aspect until both page dimensions are spanned, center,
+  # and let the slight overflow on the wider axis crop at the page edge.
   def ink_chapter_plate chapter, target
     dir = (chapter.document.attr 'imagesdir') || '.'
     path = ::File.join dir, target
@@ -1043,7 +1051,19 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       return
     end
     canvas do
-      image path, fit: [bounds.width, bounds.height], position: :center, vposition: :center
+      if @media == 'screen'
+        _obj, info = build_image_object path
+        if info.width * bounds.height >= info.height * bounds.width
+          # image aspect is wider than (or equal to) the page: height spans,
+          # width overflows evenly left/right and crops at the trim
+          image path, height: bounds.height, position: :center, vposition: :center
+        else
+          # image aspect is narrower: width spans, top/bottom overflow crops
+          image path, width: bounds.width, position: :center, vposition: :center
+        end
+      else
+        image path, fit: [bounds.width, bounds.height], position: :center, vposition: :center
+      end
     end
   rescue StandardError => e
     warn %(chapter plate failed (#{e.class}: #{e.message}), leaving verso blank: #{path})
