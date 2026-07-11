@@ -7,11 +7,11 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 
 | stem | inscription | citation |
 |------|-------------|----------|
-| 01-five-loaves | MY FLESH IS MEAT INDEED | JOHN 6:55 |
+| 01-five-loaves | FEEDING THE 5000 | JOHN 6:11 |
 | 02-sower | THE SOWER WENT FORTH TO SOW | MATTHEW 13:3 |
 | 03-moriah | ISAAC BEARS THE WOOD UP MORIAH | GENESIS 22:6 |
 | 04-jonah | A GREAT FISH TO SWALLOW UP JONAH | JONAH 1:17 |
-| 05-herald | HOW BEAUTIFUL UPON THE MOUNTAINS | ISAIAH 52:7 |
+| 05-herald | PROCLAIM THE GOSPEL UPON THE MOUNTAINS | ISAIAH 52:7 |
 | 06-cloak | FAITH WITHOUT WORKS IS DEAD | JAMES 2:26 |
 | 07-narrow-path | ASK FOR THE OLD PATHS | JEREMIAH 6:16 |
 | 08-strong-tower | THE NAME IS A STRONG TOWER | PROVERBS 18:10 |
@@ -53,4 +53,4 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 | 48-prodigal-trough | NO MAN GAVE UNTO HIM | LUKE 15:16 |
 
 <!-- AUTHOR-SET (dictated verbatim 2026-07-11 — do not overwrite):
-     43-wedding-garment, 44-covenant-bow, 45-jabbok, 47-butter-churn -->
+     01-five-loaves, 05-herald, 43-wedding-garment, 44-covenant-bow, 45-jabbok, 47-butter-churn -->

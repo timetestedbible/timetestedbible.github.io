@@ -93,6 +93,18 @@ def prepare_plaque():
     """Return (plaque LA image, field bbox (l, t, r, b)) at native scale."""
     frame = Image.open(FRAME_PATH).convert('RGBA')
     frame = frame.crop(frame.getchannel('A').getbbox())         # crop to alpha bbox
+    # Trim the hatched ground-shadow off the bottom. The frame asset carries a
+    # sparse contact shadow (plus near-invisible alpha noise reaching the image
+    # bottom, which defeats the bbox crop) below the tablet's solid bottom
+    # edge; composited on a plate it reads as a floating smudge. Keep rows
+    # through the last SOLID row — > 50% of pixels fully opaque (alpha > 250)
+    # — plus a couple px of contact shadow.
+    a = np.asarray(frame, dtype=np.uint8)
+    solid = (a[..., 3] > 250).mean(axis=1)
+    solid_rows = np.where(solid > 0.50)[0]
+    if solid_rows.size:
+        frame = frame.crop((0, 0, frame.width,
+                            min(frame.height, int(solid_rows[-1]) + 3)))
     w, h = frame.size
     frame = frame.resize((w, max(1, round(h * 0.384))), Image.LANCZOS)  # squash height (0.48 x 0.8)
 
