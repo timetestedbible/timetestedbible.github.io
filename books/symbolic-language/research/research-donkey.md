@@ -26,6 +26,20 @@ alone.** The same beast is the seat of Israel's native, lowly rule — judges'
 sons on colts where the nations ride horses — until the King Himself comes
 "meek, sitting upon the foal of the yoke-beast," and the horse is cut off.
 
+**Author's refinement (2026-07-11): the stiffnecked people = the donkey,
+whether native or foreign.** The fork of the yoke is no bloodline test —
+the Passover chapter legislates it in place: "One law shall be to him that
+is HOMEBORN, and unto the STRANGER that sojourneth among you" (Exod 12:49),
+said of who may eat the redeeming lamb. The home-born stiffneck faces the
+same araph as the unredeemed firstling; Prov 29:1 runs the sentence at
+individual scale ("hardeneth his neck… destroyed without remedy" — maqsheh
+oreph, the stiffnecked anatomy); and the offer side is equally unrestricted:
+the King who rides the yoke-beast addresses "ALL ye that labour and are
+heavy laden… take my yoke upon you" (Matt 11:28-29) — burden-bearers as
+such, not a nation. Israel in Egypt (the firstborn son under sivlot and
+mas, redeemed by the lamb) is the pattern's chief national instance, not
+its boundary.
+
 ## The defining statute — the unclean bearer redeemed by the lamb
 
 - **Exod 13:13 — "Every firstling of an ass thou shalt redeem (padah) with a
@@ -368,12 +382,13 @@ against covenant-men who will not know. Stated as structure, not proof:
 
 ## Glossary entry
 
-Candidate [[sym-donkey]]. Definition: "The burden-bearer — man in his
-laboring flesh, defined by whose yoke he is under: in the household it
-knows its master's crib, bears the load, rests on the sabbath, and — alone
-among the unclean — its firstling is redeemed with a lamb or dies by the
-neck; un-yoked it is the wild ass, a 'disciple of the wilderness,' alone.
-The judges rode the colts of Israel's peace, and the King comes lowly on
-the foal of the yoke-beast while the horse and chariot are cut off."
-Seerefs: Exod 13:13; Gen 49:14-15; Isa 1:3; Job 11:12; Jer 2:24; Zech
-9:9-10; Matt 21:5.
+Candidate [[sym-donkey]]. Definition: "The stiffnecked burden-bearer —
+man in his laboring flesh, home-born or stranger alike, defined at the
+fork of the yoke: in the household it knows its master's crib, bears the
+load, rests on the sabbath, and — alone among the unclean — its firstling
+is redeemed with a lamb or dies by the neck the stiffnecked harden;
+un-yoked it is the wild ass, a 'disciple of the wilderness,' alone. The
+judges rode the colts of Israel's peace, and the King comes lowly on the
+foal of the yoke-beast while the horse and chariot are cut off."
+Seerefs: Exod 13:13; 12:49; Gen 49:14-15; Isa 1:3; Job 11:12; Jer 2:24;
+Zech 9:9-10; Matt 21:5; 11:28-30.
