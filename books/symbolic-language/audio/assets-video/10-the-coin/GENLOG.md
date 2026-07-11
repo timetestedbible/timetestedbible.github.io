@@ -38,8 +38,24 @@ Notes:
   nPczCjzI2devNBz1zQrb narrator / JBFqnCBsd6RMkjVDRZzb scripture).
 - Stills draft: out/10-the-coin-storyboard.mp4 (1353.0s, 15 scenes; events:
   254 captions, 15 quote cards, 8 title cards, 20 inline chips).
-- Review flag for the author: scene-03's questioners include a central
-  bearded figure rendered face-on that a viewer could take for Jesus; the
-  coin-holder is correctly hands-only. Regenerate with
-  `python3 storyboard_images.py 10-the-coin --scenes 3 --force` if it reads
+- Review flag for the author: the trap scene's questioners include a
+  central bearded figure rendered face-on that a viewer could take for
+  Jesus; the coin-holder is correctly hands-only. (That bed now sits at
+  scene-05 after the recut below.) Regenerate with
+  `python3 storyboard_images.py 10-the-coin --scenes 5 --force` if it reads
   wrong.
+
+## Densify run — 2026-07-10 (recut to 43 scenes)
+
+Audio re-rendered the same day (teacher-transition pass): out/10-the-coin.mp3
+is now 1358.3s, 31 segments, same voices. Storyboard densified 15 -> 43
+scenes (density rule: one scene per ~30-40s of narration). The 15 original
+beds were KEPT and renamed to their new slots (mapping in
+storyboards/10-the-coin.md); 28 new scenes generated via the same recipe
+(gpt-image-1 1536x1024 high -> Upscayl 4x chapter-prefixed -> lanczos
+cover+crop 1920x1080): scenes 03, 04, 06, 07, 08, 11, 13, 15, 17, 18, 20,
+22, 23, 24, 25, 26, 28, 30, 31, 32, 33, 35, 36, 38, 39, 40, 41, 42. Red
+accent among the new set only on scene-33 (seal-mark on the lintel);
+scene-21 (blood on doorposts), scene-27 (seal on brow), and scene-29
+(struck mark on hand) carry theirs from the first run. Per-scene results
+in out/10-the-coin.imagegen2.log.

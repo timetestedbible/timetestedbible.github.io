@@ -35,14 +35,39 @@ def _clean(text):
 ORDINALS = {'1': 'First', '2': 'Second', '3': 'Third'}
 
 def spoken_citation(ref):
-    """'2 Timothy 2:19' -> 'Second Timothy, chapter 2.' Book+chapter only —
+    """'2 Timothy 2:19' -> ('Second Timothy', '2'). Book+chapter only —
     verse numbers are print apparatus, not speech."""
     m = re.match(r'^\s*(\d)?\s*([A-Za-z][A-Za-z ]*?)\s+(\d+)(?::.*)?$', ref.strip())
     if not m:
         return None
     num, book, chap = m.groups()
-    name = (ORDINALS.get(num, '') + ' ' if num else '') + book.strip()
-    return f'{name} {chap}'
+    return (ORDINALS.get(num, '') + ' ' if num else '') + book.strip(), chap
+
+def weave_citation(intro, ref):
+    """Weave the spoken reference into the intro's final clause, cueing the
+    voice change and naming the reading. Cooperates with teacher lead-ins:
+      - lead-in already carries book+chapter ("Let's read Luke 15.")
+        -> no weave at all;
+      - lead-in names the book only ("Hear Zechariah:")
+        -> chapter-only weave ("Hear Zechariah — chapter 13:");
+      - bare intro -> the full weave ("...opens as a trap — Matthew 22:")."""
+    sc = spoken_citation(ref)
+    if not sc:
+        return intro
+    name, chap = sc
+    tail = intro[-160:]
+    ntail = re.sub(r'[^a-z0-9]', '',
+                   re.sub(r'\bchapters?\b', '', tail, flags=re.I).lower())
+    nref = re.sub(r'[^a-z0-9]', '', name.lower()) + chap
+    if re.search(re.escape(nref) + r'(?!\d)', ntail):
+        return intro                    # lead-in already names the reading
+    book_pat = r'\b' + r'\s+'.join(map(re.escape, name.split())) + r'\b'
+    spoken = (f'chapter {chap}' if re.search(book_pat, tail, re.I)
+              else f'{name} {chap}')
+    intro = intro.rstrip()
+    if intro.endswith(':'):
+        return intro[:-1].rstrip() + f' — {spoken}:'
+    return intro + f' {spoken}:'
 
 def parse_script(path):
     """Returns ordered segments [(role, text)], role in {'narrator', 'scripture'}.
@@ -68,20 +93,11 @@ def parse_script(path):
                 role, in_quote, pending, ref = 'narrator', False, 'narrator', None
             else:
                 # citation-first: weave the spoken reference into the intro's
-                # final clause, cueing the voice change and naming the reading
+                # final clause (weave_citation cooperates with lead-ins that
+                # already carry the book and/or chapter)
                 if pending == 'scripture' and ref and segs and segs[-1][0] == 'narrator':
-                    spoken = spoken_citation(ref)
-                    # dedupe: skip if the intro already names the citation
-                    if spoken and spoken.lower() in segs[-1][1][-60:].lower():
-                        spoken = None
-                    if spoken:
-                        prev_role, prev = segs[-1]
-                        prev = prev.rstrip()
-                        if prev.endswith(':'):
-                            prev = prev[:-1].rstrip() + f' — {spoken}:'
-                        else:
-                            prev = prev + f' {spoken}:'
-                        segs[-1] = (prev_role, prev)
+                    prev_role, prev = segs[-1]
+                    segs[-1] = (prev_role, weave_citation(prev, ref))
                 role, in_quote = pending, True
             continue
         cur.append(line)

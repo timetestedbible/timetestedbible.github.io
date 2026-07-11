@@ -91,12 +91,23 @@ def main():
                                 a.model)
     pieces = video.chunk_pieces(chunks)
     events, _ = video.build_events(chunks, pieces, words, bounds, script,
-                                   print_twin)
+                                   print_twin,
+                                   scene_starts=[s['t0'] for s in scenes])
+
+    ff = video.ffmpeg_bin()
+    print_stem = os.path.splitext(os.path.basename(print_twin))[0]
+    intro = video.intro_clip(ff, print_stem, segdir)
+    starts = [s['t0'] for s in scenes] + [total]
+    if intro:
+        # branded card holds 0..INTRO while the chapter title is spoken;
+        # scene 1 crossfades in after it (its clip starts at INTRO)
+        events = [e for e in events
+                  if not (e['kind'] == 'title' and e['s'] < video.INTRO)]
+        assert starts[1] > video.INTRO + video.XFADE, 'scene 2 inside intro'
+        starts[0] = video.INTRO
     ass_path = os.path.join(out, stem + '-storyboard.ass')
     video.write_ass(events, ass_path)
 
-    ff = video.ffmpeg_bin()
-    starts = [s['t0'] for s in scenes] + [total]
     clips = []
     for i, s in enumerate(scenes):
         dur = (starts[i + 1] - starts[i]) + \
@@ -104,8 +115,11 @@ def main():
         print(f'  {s["id"]}: {os.path.basename(s["img"])} {dur:.1f}s')
         clips.append(still_clip(ff, s['img'], round(dur * video.FPS), segdir,
                                 s['id']))
+    offsets = starts[:-1]
+    if intro:
+        clips, offsets = [intro] + clips, [0.0] + offsets
     out_mp4 = os.path.join(out, stem + '-storyboard.mp4')
-    video.compose(ff, clips, starts[:-1], ass_path, audio, total, out_mp4)
+    video.compose(ff, clips, offsets, ass_path, audio, total, out_mp4)
     print(f'wrote {out_mp4} ({video.ffprobe_duration(out_mp4):.1f}s, '
           f'audio {total:.1f}s, {len(scenes)} scenes)')
 

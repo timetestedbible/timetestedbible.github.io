@@ -4,6 +4,24 @@ One `NN-*.adoc` here per print chapter: the same content, rewritten for the ear.
 These are narration scripts, not a second book — the print chapter remains the
 source of truth, and every meaning-level edit lands there first.
 
+## The audio IS the book read aloud — additive transitions only
+
+The script cannot deviate from the book or it isn't the book. Exactly two
+kinds of change are permitted when transforming a print chapter:
+
+1. **Additions** — teacher lead-ins ("Let's read Matthew 22.", "Hear Job:",
+   "Listen to what Moses records:") and small connective words where print
+   punctuation is unspeakable ("There were 22,273 of them…", "It is the
+   register of which the psalm says…").
+2. **Splits** — a sentence may divide at its own punctuation (a semicolon,
+   a mid-sentence colon, the second dash of a chain) into two spoken
+   sentences, keeping the book's words in the book's order. A split half
+   may open with the book's own conjunction ("And a kingdom stamps its
+   money.").
+
+No vocabulary substitutions, no restructuring, no paraphrase. Scripture
+quote text is verbatim, always.
+
 ## Sync process
 
 - Each audio file's front matter carries `audio-of:` (the source file) and
@@ -67,14 +85,29 @@ Where print keeps a KJV word and defines it in the following line (2 Tim 2:19
 quote-then-correction is clunky. anomia is always "lawlessness" (inherited
 from print); OT avon keeps "iniquity."
 
-## Colon appositions re-flow for speech
+## Heavy punctuation splits at the book's own seams
 
-Print's terse appositions ("The LORD: the name.") read as slammed stops in
-TTS. Speak them as flowing clauses ("The LORD — there is the name.") or full
-sentences. Sweep pattern when transforming: `[a-z]: [a-z]` inside narrator prose.
+Print's mid-sentence colons, em-dash chains, and semicolon stacks read as
+slammed stops or run-ons in TTS. Split them into spoken sentences AT the
+existing punctuation, words unchanged: "Ore is not spent; it is refined." →
+"Ore is not spent. It is refined." Sweep patterns inside narrator prose:
+`[a-z]: [a-z]`, paired ` — … — `, stacked `; `. A single em-dash speaks
+fine and stays. (This is the additive rule applied to punctuation — never
+reword to smooth a seam.)
 
-## Never hand-write citation cues in scripts
+## Teacher lead-ins before block quotes
 
-The renderer weaves "— Book N:" into the intro clause automatically from the
-[quote.scripture, REF] marker. Scripts leave intros bare ("…reads it out:");
-hand-written cues double up. (The renderer also dedupes as a backstop.)
+The print edition removed command language; the EAR needs it. Every block
+quote gets a directive lead-in that guides the listener — "Let's read
+Matthew 22.", "Consider Ezra:", "Listen to what Moses records:", "Hear
+Isaiah:" — varied naturally. The renderer's citation weave (render.py
+`weave_citation`) cooperates:
+
+- Lead-in carries book + chapter ("Let's read Luke 15.") — the weave
+  detects it (punctuation- and "chapter"-word-insensitive) and adds nothing.
+- Lead-in names the book only ("Hear Zechariah:") — the weave appends the
+  chapter alone: "Hear Zechariah — chapter 13:".
+- Bare intro — the full weave as before: "…opens as a trap — Matthew 22:".
+
+Never hand-write the weave's own "— Book N:" form; write natural speech and
+let the renderer fold the reference in.

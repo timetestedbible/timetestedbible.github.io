@@ -47,6 +47,13 @@ CAP_MAX = 95                    # max chars per narration caption event
 HL0, HL1 = '\x01', '\x02'       # keyword-highlight sentinels -> gold in ASS
 GOLD = '&H96C4D8&'              # citation/keyword gold (BGR)
 BEDGEN = 2                      # bump to invalidate cached plates/stills/beds
+INTRO = 5.5                     # branded title-card hold (s): the chapter's
+                                # thumbnail composition opens every video,
+                                # then the first scene fades in
+DOCK_MAX = 25.0                 # quote persistence: max seconds the quote
+                                # stays docked after the voice finishes
+DOCK_MIN = 3.0                  # skip the dock if the discussion window is
+                                # shorter than this
 # uniform bed tone: lift the darks a touch, lean warm sepia (kept subtle)
 TONE = ('eq=brightness=0.04:gamma=1.18,'
         'colorbalance=rm=0.10:gm=0.03:bm=-0.10')
@@ -278,8 +285,11 @@ def best_cut(s):
     return mid
 
 
-def build_events(chunks, pieces, words, bounds, script_path, print_path):
-    """Returns (events, section_starts). Event kinds: caption, title, quote, chip."""
+def build_events(chunks, pieces, words, bounds, script_path, print_path,
+                 scene_starts=()):
+    """Returns (events, section_starts). Event kinds: caption, title, quote,
+    chip, dock (quote persistence). scene_starts (storyboard scene windows)
+    additionally bound the docks when supplied."""
     events = []
     quotes = scripture_blocks(script_path)
     pool = print_quote_pool(print_path)
@@ -343,6 +353,22 @@ def build_events(chunks, pieces, words, bounds, script_path, print_path):
     for a, b in zip(seq, seq[1:]):
         if a['kind'] == 'caption':
             a['e'] = min(a['e'], b['s'] - 0.06)
+    # quote persistence: when narration keeps discussing a quote after the
+    # scripture voice finishes, dock the quote card smaller in the upper half
+    # while the captions run below — until the next quote/title/scene
+    # boundary, capped at DOCK_MAX
+    hard = [e['s'] for e in events if e['kind'] in ('quote', 'title')]
+    for q in [e for e in events if e['kind'] == 'quote']:
+        # a scene change within ~2s of the voice finishing is the quote's
+        # own discussion beat, not a topic move — it doesn't end the dock
+        marks = hard + [s for s in scene_starts if s > q['e'] + 2.0]
+        nxt = min([m for m in marks if m > q['e'] + 0.1] or [bounds[-1]])
+        end = min(q['e'] + DOCK_MAX, nxt - 0.4, bounds[-1])
+        caps = [c for c in events if c['kind'] == 'caption'
+                and q['e'] - 0.5 <= c['s'] < end]
+        if caps and end - q['e'] >= DOCK_MIN:
+            events.append({'kind': 'dock', 's': q['e'], 'e': end,
+                           'text': q['text'], 'ref': q.get('ref')})
     sections = [0.0] + [e['s'] for e in events
                         if e['kind'] == 'title' and e['s'] > 5.0]
     return events, sections
@@ -362,7 +388,7 @@ YCbCr Matrix: TV.709
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Narration,Georgia,44,&H00FFFFFF,&H000000FF,&H00000000,&H6E000000,0,0,0,0,100,100,0,0,4,10,0,2,260,260,56,1
 Style: Title,Georgia,64,&H00E6F0F6,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,2,0,1,0,0,5,200,200,10,1
-Style: Quote,Georgia,56,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,-1,0,0,100,100,0,0,1,0,0,5,230,230,10,1
+Style: Quote,Georgia,60,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,-1,0,0,100,100,0,0,1,0,0,5,230,230,10,1
 Style: Chip,Georgia,30,&H0096C4D8,&H000000FF,&H00000000,&H6E000000,0,-1,0,0,100,100,0,0,4,7,0,3,48,48,150,1
 Style: Dim,Georgia,20,&H00000000,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
 
@@ -372,6 +398,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 DIM_RECT = '{\\an7\\pos(0,0)\\p1\\c&H000000&\\alpha&H%s&\\fad(350,350)}' \
            'm 0 0 l %d 0 l %d %d l 0 %d{\\p0}' % ('%s', W, W, H, H)
+DOCK_H = 620                    # docked-quote band: upper half of the frame
+DOCK_RECT = '{\\an7\\pos(0,0)\\p1\\c&H000000&\\alpha&H%s&\\fad(280,320)}' \
+            'm 0 0 l %d 0 l %d %d l 0 %d{\\p0}' % ('%s', W, W, DOCK_H, DOCK_H)
+
+
+def quote_fs(plain):
+    """Quote-card body size (+12% then +8% per author, 2026-07-10); the
+    length tiers keep long quotes auto-fitting the card."""
+    return 60 if len(plain) <= 150 else 53 if len(plain) <= 260 else 46
 
 
 def ass_time(t):
@@ -411,13 +446,21 @@ def write_ass(events, path):
                 '{\\an5\\pos(960,532)\\fad(400,450)}' + text)
         elif ev['kind'] == 'quote':
             plain = text.replace(HL0, '').replace(HL1, '')
-            # quote-card body sizes (+12% per author, 2026-07-10); the
-            # length tiers keep long quotes auto-fitting the card
-            fs = 56 if len(plain) <= 150 else 49 if len(plain) <= 260 else 43
+            fs = quote_fs(plain)
             dlg(0, s, e, 'Dim', DIM_RECT % '52')
             body = f'{{\\an5\\pos(960,510)\\fs{fs}\\fad(350,400)}}{text}'
             if ev.get('ref'):
                 body += ('\\N\\N{\\fs32\\i0\\c' + GOLD + '}— ' + esc(ev['ref']))
+            dlg(1, s, e, 'Quote', body, margins=(230, 230, 0))
+        elif ev['kind'] == 'dock':
+            # quote persistence: the card lingers smaller in the upper half
+            # while the narration's captions keep running below it
+            plain = text.replace(HL0, '').replace(HL1, '')
+            fs = max(26, round(quote_fs(plain) * 0.66))
+            dlg(0, s, e, 'Dim', DOCK_RECT % '78')
+            body = f'{{\\an5\\pos(960,{DOCK_H // 2})\\fs{fs}\\fad(280,320)}}{text}'
+            if ev.get('ref'):
+                body += ('\\N{\\fs24\\i0\\c' + GOLD + '}— ' + esc(ev['ref']))
             dlg(1, s, e, 'Quote', body, margins=(230, 230, 0))
     out = '\n'.join(lines) + '\n'
     out = out.replace(HL0, '{\\1c' + GOLD + '}').replace(HL1, '{\\1c&HFFFFFF&}')
@@ -536,6 +579,27 @@ def build_bed(ff, stem, outdir, sections, total, animate):
     return clips
 
 
+def intro_clip(ff, print_stem, outdir):
+    """Branded opening card: the chapter's YouTube thumbnail composition
+    (thumbnail.py output — series title, CHAPTER N, chapter name) scaled to
+    frame size and held INTRO seconds before the first scene crossfades in.
+    The narration (the spoken chapter title) runs underneath; the on-screen
+    chapter-title event is suppressed by the caller since the card carries
+    it. Returns None (and warns) when the thumbnail hasn't been built."""
+    png = os.path.join(HERE, 'assets-video', 'thumbnails', print_stem + '.png')
+    if not os.path.exists(png):
+        print(f'  intro: no thumbnail {png} — run thumbnail.py; skipping card')
+        return None
+    n = round((INTRO + XFADE) * FPS)
+    key = f'intro-{print_stem}-{int(os.path.getmtime(png))}-n{n}-g{BEDGEN}'
+    clip = os.path.join(outdir, key + '.mp4')
+    if not os.path.exists(clip):
+        run([ff, '-y', '-loop', '1', '-framerate', str(FPS), '-i', png,
+             '-vf', f'scale={W}:{H}:flags=lanczos,format=yuv420p',
+             '-frames:v', str(n)] + venc_args(ff) + [clip])
+    return clip
+
+
 def compose(ff, clips, sections, ass_path, audio, total, out_mp4):
     args = [ff, '-y']
     for c in clips:
@@ -564,6 +628,8 @@ def main():
     ap.add_argument('--animate', action='store_true',
                     help='Ken Burns bed synthesis (final render); '
                          'default is instant still beds for storyboarding')
+    ap.add_argument('--no-intro', action='store_true',
+                    help='skip the branded thumbnail title card')
     ap.add_argument('--out', default=os.path.join(HERE, 'out'))
     a = ap.parse_args()
     stem = re.sub(r'\.adoc$', '', os.path.basename(a.stem))
@@ -588,13 +654,24 @@ def main():
     pieces = chunk_pieces(chunks)
     events, sections = build_events(chunks, pieces, words, bounds, script, print_twin)
     counts = {k: sum(1 for e in events if e['kind'] == k)
-              for k in ('caption', 'quote', 'title', 'chip')}
+              for k in ('caption', 'quote', 'title', 'chip', 'dock')}
     print(f'events: {counts}  sections at {[round(s,1) for s in sections]}')
+
+    ff = ffmpeg_bin()
+    print_stem = os.path.splitext(os.path.basename(print_twin))[0]
+    intro = None if a.no_intro else intro_clip(ff, print_stem, segdir)
+    if intro:
+        # the branded card carries the chapter title; drop the spoken-title
+        # event it would otherwise double, and start bed 0 at the card's end
+        events = [e for e in events
+                  if not (e['kind'] == 'title' and e['s'] < INTRO)]
+        sections = [INTRO] + [s for s in sections[1:] if s > INTRO + XFADE]
 
     ass_path = os.path.join(a.out, stem + '.ass')
     write_ass(events, ass_path)
-    ff = ffmpeg_bin()
     clips = build_bed(ff, stem, segdir, sections, total, a.animate)
+    if intro:
+        clips, sections = [intro] + clips, [0.0] + sections
     out_mp4 = os.path.join(a.out, stem + '.mp4')
     compose(ff, clips, sections, ass_path, audio, total, out_mp4)
     print(f'wrote {out_mp4} ({ffprobe_duration(out_mp4):.1f}s, audio {total:.1f}s)')
