@@ -505,6 +505,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # shifts by a paragraph or two, exactly like a floated figure in any print book;
   # lead-in prose should reference the table, not colon into it.
   def convert_table node
+    # Data tables breathe: a small stand-off above every prevalence-table
+    # (author's ruling 2026-07-08 — "table needs some breathing room above"),
+    # skipped when the table already opens a page. Applied before the scratch
+    # return so dry-run measurements see the same geometry as the real render.
+    move_down 5 if (node.has_role? 'prevalence-table') && !at_page_top?
     return super if scratch?
     if @float_now                           # the real (floated) render
       start_page = page_number
@@ -812,14 +817,6 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # turn, the eye slides right) but never across a page TURN (recto -> next
   # verso). Short remainders and turn-crossing breaks push the entry whole to
   # the next page, as before.
-  # Data tables breathe: a small stand-off above every prevalence-table
-  # (author's ruling 2026-07-08 — "table needs some breathing room above"),
-  # skipped when the table already opens a page.
-  def convert_table node
-    move_down 5 if (node.has_role? 'prevalence-table') && !at_page_top?
-    super
-  end
-
   def convert_open node
     if node.role == 'glossentry' && !scratch?
       # keep_together: measure the whole entry from a scratch page TOP. A plain
