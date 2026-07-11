@@ -5,7 +5,7 @@ goes to images/plated/<same name>.jpg, which is gitignored.
 
 Recipe:
   frame  images/plaque-frame.png, cropped to its alpha bbox, squashed to
-         0.48x height, grayscaled keeping alpha
+         0.384x height, grayscaled keeping alpha
   field  the writable face = bright pixels (level > 200, alpha > 230);
          rows where > 40% of pixels are bright, cols where > 35%
   scale  plaque resized so its width = 0.66 x plate width
@@ -72,7 +72,7 @@ def prepare_plaque():
     frame = Image.open(FRAME_PATH).convert('RGBA')
     frame = frame.crop(frame.getchannel('A').getbbox())         # crop to alpha bbox
     w, h = frame.size
-    frame = frame.resize((w, max(1, round(h * 0.48))), Image.LANCZOS)  # squash height
+    frame = frame.resize((w, max(1, round(h * 0.384))), Image.LANCZOS)  # squash height (0.48 x 0.8)
 
     a = np.asarray(frame, dtype=np.uint8)
     gray = a[..., :3].mean(axis=2)
@@ -108,7 +108,28 @@ def text_height(font, text):
     return box[3] - box[1], box[1]     # (height, y-offset of top)
 
 
-def compose(stem, inscription, citation):
+def series_size_ratio(captions):
+    """One type size for the whole series: the largest title ratio (of field
+    height) at which the LONGEST inscription still fits 0.84 x field width.
+    Every plaque then uses this same ratio — no per-plaque size wobble."""
+    plaque, field = prepare_plaque()
+    fl, ft, fr, fb = field
+    field_w, field_h = fr - fl, fb - ft
+    probe = Image.new('RGB', (8, 8))
+    draw = ImageDraw.Draw(probe)
+    ratio = 0.40
+    for inscription, _ in captions.values():
+        size = int(0.40 * field_h)
+        while size > 8:
+            font = load_font(size)
+            if tracked_width(draw, inscription, font, 0.12 * size) <= 0.84 * field_w:
+                break
+            size -= 2
+        ratio = min(ratio, size / field_h)
+    return min(0.40, ratio * 1.2)   # author: text 20% bigger
+
+
+def compose(stem, inscription, citation, size_ratio=None):
     master = os.path.join(MASTERS_DIR, stem + '.jpg')
     if not os.path.exists(master):
         print(f'SKIP (no master): {stem}')
@@ -131,13 +152,19 @@ def compose(stem, inscription, citation):
 
     draw = ImageDraw.Draw(plate)
 
-    # fit title to 0.84 x field width, from 0.40 x field height stepping -2
-    size = int(0.40 * field_h)
-    while size > 8:
-        font = load_font(size)
-        if tracked_width(draw, inscription, font, 0.12 * size) <= 0.84 * field_w:
-            break
-        size -= 2
+    # series-uniform size (ratio of field height); fallback: per-plaque fit
+    if size_ratio is not None:
+        size = max(8, int(size_ratio * field_h))
+        while size > 8 and tracked_width(
+                draw, inscription, load_font(size), 0.12 * size) > 0.84 * field_w:
+            size -= 2                    # overlong row: shrink this one only
+    else:
+        size = int(0.40 * field_h)
+        while size > 8:
+            font = load_font(size)
+            if tracked_width(draw, inscription, font, 0.12 * size) <= 0.84 * field_w:
+                break
+            size -= 2
     title_font = load_font(size)
     title_tracking = 0.12 * size
 
@@ -170,12 +197,14 @@ def main():
     if not args:
         raise SystemExit('usage: python3 print/plate-plaques.py [stem ...|--all]')
     captions = read_captions()
+    ratio = series_size_ratio(captions)
+    print(f'series title ratio: {ratio:.3f} of field height')
     stems = sorted(captions) if args == ['--all'] else args
     for stem in stems:
         if stem not in captions:
             print(f'SKIP (no caption row): {stem}')
             continue
-        compose(stem, *captions[stem])
+        compose(stem, *captions[stem], size_ratio=ratio)
 
 
 if __name__ == '__main__':
