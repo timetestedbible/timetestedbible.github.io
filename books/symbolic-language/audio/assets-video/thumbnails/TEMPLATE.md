@@ -82,11 +82,13 @@ read from the print chapter's front matter (`../NN-*.adoc`).
    - The band renders "Chapter N — Name" as eyebrow + display line rather
      than one em-dash line so long chapter names never shrink the name below
      thumbnail legibility.
-4. **Book-cover icon** — bottom-right corner. Source:
+4. **Book-cover icon** — top-right corner (author, 2026-07-10; moved up
+   from bottom-right so it rides open sky instead of the art's ground
+   detail, matching the video overlay corner). Source:
    `books/symbolic-language/cover/front-cover-summit-meat.jpg` (the actual
    front-cover face, 1800x2700 — not a PDF crop, not a plate fallback).
    Scale to height 168 (width ~112), 3 px cream border, pasted at
-   (1280 - w - 26, 720 - h - 26) over a Gaussian-blurred (r=7) black
+   (1280 - w - 26, 26) over a Gaussian-blurred (r=7) black
    rectangle shadow, alpha 160, offset +4 grow. Same corner every chapter —
    it is the series brand mark per the ad-overlay language in the video
    pipeline.

@@ -63,13 +63,21 @@ SUBTITLE = [('THE BIBLE’S', CREAM), ('SYMBOLIC', GOLD),
 # reflection-filled and lies under the title band's near-opaque core).
 # 'dy' slides the content DOWN by N output pixels by biasing the 16:9
 # crop window upward — real pixels from the crop's vertical slack, so it
-# only moves as far as the slack allows. Composition rule: the focal
-# subject must sit in the RIGHT HALF of the frame — the band owns the
-# left. Entries are tuned to the specific generated bed in
-# assets-video/thumb-beds/; retune or drop when that bed is regenerated.
+# only moves as far as the slack allows. 'fit': 'height' keeps the bed's
+# FULL height (no 16:9 trim — nothing top/bottom is lost): the whole
+# image scales to 720 tall and right-aligns; the vacated left strip
+# (W - scaled width, plus any dx) is reflection-filled under the band
+# core. Composition rule: the focal subject must sit in the RIGHT HALF
+# of the frame — the band owns the left. Entries are tuned to the
+# specific generated bed in assets-video/thumb-beds/; retune or drop
+# when that bed is regenerated.
 BED_TRANSFORMS = {
     '01-introduction': dict(mirror=True, dx=170, dy=55), # approved feeding bed: mirror, slide right, platter lowered — the twelve sink under the title band
                                                 # the top crop line
+    '02-the-parables-of-the-kingdom': dict(fit='height', mirror=True),
+                                                # full plate height kept —
+                                                # birds/path/hat untrimmed;
+                                                # sower cast to the right
     '09-the-seal': dict(mirror=True, dx=110),   # sealing action (pen on
                                                 # forehead) out from under
                                                 # the band; watchers sink
@@ -145,28 +153,41 @@ def build_bed(src, kind, stem):
         img = Image.open(cached)
     img = img.convert('RGB')
     t = BED_TRANSFORMS.get(stem, {})
-    if img.width * H != img.height * W:     # center cover-crop to 16:9
-        if img.width * H > img.height * W:
-            w = img.height * W // H
-            x = (img.width - w) // 2
-            img = img.crop((x, 0, x + w, img.height))
-        else:
-            h = img.width * H // W
-            y = (img.height - h) // 2
-            y -= round(t.get('dy', 0) * h / H)  # slide content down
-            y = max(0, min(img.height - h, y))
-            img = img.crop((0, y, img.width, y + h))
-    img = img.resize((W, H), Image.LANCZOS)
-    if t:
+    if t.get('fit') == 'height' and img.width * H < img.height * W:
+        nw = round(img.width * H / img.height)   # full height, no trim
+        img = img.resize((nw, H), Image.LANCZOS)
         if t.get('mirror'):
             img = img.transpose(Image.FLIP_LEFT_RIGHT)
-        dx = t.get('dx', 0)
-        if dx:
-            shifted = Image.new(img.mode, img.size)
-            shifted.paste(img.crop((0, 0, dx, H)).transpose(
-                Image.FLIP_LEFT_RIGHT), (0, 0))     # seam-continuous fill
-            shifted.paste(img.crop((0, 0, W - dx, H)), (dx, 0))
-            img = shifted
+        x0 = W - nw + t.get('dx', 0)             # right-align (+ slide)
+        canvas = Image.new(img.mode, (W, H))
+        if x0 > 0:                               # seam-continuous fill
+            canvas.paste(img.crop((0, 0, x0, H)).transpose(
+                Image.FLIP_LEFT_RIGHT), (0, 0))
+        canvas.paste(img, (x0, 0))
+        img = canvas
+    else:
+        if img.width * H != img.height * W:     # center cover-crop to 16:9
+            if img.width * H > img.height * W:
+                w = img.height * W // H
+                x = (img.width - w) // 2
+                img = img.crop((x, 0, x + w, img.height))
+            else:
+                h = img.width * H // W
+                y = (img.height - h) // 2
+                y -= round(t.get('dy', 0) * h / H)  # slide content down
+                y = max(0, min(img.height - h, y))
+                img = img.crop((0, y, img.width, y + h))
+        img = img.resize((W, H), Image.LANCZOS)
+        if t:
+            if t.get('mirror'):
+                img = img.transpose(Image.FLIP_LEFT_RIGHT)
+            dx = t.get('dx', 0)
+            if dx:
+                shifted = Image.new(img.mode, img.size)
+                shifted.paste(img.crop((0, 0, dx, H)).transpose(
+                    Image.FLIP_LEFT_RIGHT), (0, 0))  # seam-continuous fill
+                shifted.paste(img.crop((0, 0, W - dx, H)), (dx, 0))
+                img = shifted
     img = ImageEnhance.Brightness(img).enhance(1.12)
     img = ImageEnhance.Color(img).enhance(1.05)
     return img.convert('RGBA')
@@ -242,7 +263,7 @@ def draw_tracked(d, xy, text, f, fill, track):
 
 
 def cover_icon(img):
-    """Book-cover brand mark, bottom-right: cover face at height 168, 3 px
+    """Book-cover brand mark, top-right: cover face at height 168, 3 px
     cream border, over a blurred shadow (r=7, alpha 160, offset +4 grow)."""
     cov = Image.open(COVER).convert('RGB')
     ih = 168
@@ -251,7 +272,7 @@ def cover_icon(img):
     card = Image.new('RGB', (iw + 6, ih + 6), CREAM)
     card.paste(cov, (3, 3))
     cw, ch = card.size
-    x, y = W - cw - 26, H - ch - 26
+    x, y = W - cw - 26, 26
     shadow = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     ImageDraw.Draw(shadow).rectangle(
         [x, y, x + cw + 8, y + ch + 8], fill=(0, 0, 0, 160))
@@ -316,7 +337,8 @@ def compose(stem):
         os.path.join(THUMBS, f'{stem}-320.png'))
     wrap = ' / '.join(t for t, _, _ in names)
     xf = BED_TRANSFORMS.get(stem, {})
-    parts = (['mirror'] * bool(xf.get('mirror'))
+    parts = (['fit-height'] * (xf.get('fit') == 'height')
+             + ['mirror'] * bool(xf.get('mirror'))
              + [f'dx{xf.get("dx")}'] * bool(xf.get('dx'))
              + [f'dy{xf.get("dy")}'] * bool(xf.get('dy')))
     tag = f' [{"+".join(parts)}]' if parts else ''

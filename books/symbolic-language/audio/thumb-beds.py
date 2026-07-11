@@ -80,11 +80,12 @@ ACCENTS = {
 }
 
 STYLE = (
-    'Style: 19th-century steel engraving in the manner of Gustave Doré — '
-    'dense fine crosshatch linework over a warm sepia ink base, subtle '
-    'muted color allowed over the sepia (quiet, aged tints — never '
-    'saturated modern color), dramatic single-source chiaroscuro with a '
-    'lighter, warm exposure, painterly-photographic detail — overall '
+    'Style: a black-and-white etching in the style of Rembrandt — fine '
+    'cross-hatched line work, drypoint burr, dramatic chiaroscuro, the '
+    'look of an aged copper-plate print; pure black ink on white paper, '
+    'line work only, strictly monochrome black and white, no sepia, no '
+    'brown tones, no color tint of any kind beyond the single named '
+    'accent when one is specified, with a lighter exposure — overall '
     'bright enough to read as a lit scene, not sunk in shadow. Recompose '
     'the scene for a wide 16:9 landscape frame: the focal subject sits '
     'entirely within the RIGHT HALF of the frame — every important '
@@ -109,9 +110,11 @@ committed record from which any bed regenerates:
 
 Scene = the chapter's book-plate subject (auto-extracted from
 `../plate-descriptions.md` with the etching-style boilerplate stripped,
-or the SCENES override in thumb-beds.py); style = the storyboard beds'
-Doré sepia family with subtle muted color allowed (the print plates were
-B&W-constrained; thumbnails are not). `thumbnail.py` prefers
+or the SCENES override in thumb-beds.py); style = strict BLACK-AND-WHITE
+Rembrandt etching (author, 2026-07-10 — the earlier Doré-sepia-with-color
+language is retired), one selective accent color only where an ACCENTS
+entry names it (red for blood/stamp/mark, warm gold for metal). Beds are
+grayscale-normalized on install. `thumbnail.py` prefers
 `assets-video/thumb-beds/<stem>.png` over the blur-filled plate.
 
 Composition rules (standing): the focal subject lives entirely in the
@@ -129,7 +132,16 @@ never bundle them into a compound action ("five loaves and two fishes
 overhead" rendered fish only). (2) Crowds default to packed uniform
 rows facing anywhere; describe FAMILY GROUPS — separate clusters of
 adults and children with open grass between them, seen from behind or
-three-quarter, every figure turned toward the focal subject.
+three-quarter, every figure turned toward the focal subject. (3) Figure
+rules (author): priests/scribes/patriarchs wear BEARDS; for the
+frontlets texts ("between thine eyes") never depict Orthodox prayer
+boxes strapped to heads — the mark/writing sits on hand and forehead;
+a pen marking a forehead marks the FOREHEAD, not the hairline. (4) The
+subject faces INTO the open right field (face and action toward the
+right edge) so no mirror surgery is needed; native 1536x1024 is taller
+than 16:9 — thumbnail.py fit='height' keeps the full plate, so edge-to-
+edge compositions are safe, but keep the focal subject clear of the
+absolute frame edges.
 
 """
 
