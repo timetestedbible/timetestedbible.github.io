@@ -1059,6 +1059,18 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # and let the slight overflow on the wider axis crop at the page edge.
   def ink_chapter_plate chapter, target
     dir = (chapter.document.attr 'imagesdir') || '.'
+    # Plaqued twins (print/plate-plaques.py, from committed masters + captions):
+    # prepress reads the print-toned plaqued set (images/plated-print/), screen
+    # the color plaqued set (images/plated/). Fall back to the unplaqued
+    # images/print/ plate when no plaqued twin exists — 50-author-portrait
+    # carries no plaque by design. The web site's plate usage is untouched.
+    plaqued_dir = @media == 'screen' ? 'images/plated/' : 'images/plated-print/'
+    plaqued = target.sub 'images/print/', plaqued_dir
+    if ::File.readable?(::File.join dir, plaqued)
+      target = plaqued
+    else
+      warn %(no plaqued twin for #{target} — using the unplaqued plate)
+    end
     path = ::File.join dir, target
     unless ::File.readable? path
       warn %(chapter plate not found, leaving verso blank: #{path})
