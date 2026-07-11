@@ -347,16 +347,16 @@ def build(preset_name):
     print(f'{out}: wrap {WRAP_W:.3f}x{WRAP_H:.2f}in, spine {SPINE}in, image {w:.1f}x{h:.1f}in at x={x:.2f}')
 
 # ================= BookBaby HARDCOVER artifacts =================
-# Geometry read from BookBaby's own templates (Downloads, 2026-07-08), which
-# are generated for THIS quote: 476pp on Natural 420 PPI. All numbers below
-# are the template guide lines in points / 72. The paperback IN_PER_PAGE
-# spine math above does NOT apply to the hardcover.
+# Geometry read from BookBaby's own templates (Downloads, 2026-07-10), which
+# are generated for THIS quote: 484pp. All numbers below are the template
+# guide lines in points / 72. The paperback IN_PER_PAGE spine math above
+# does NOT apply to the hardcover.
 #
-#   US-Trade-Hard-Cover.pdf  (printed case): 1083.53 x 756 pt
-#     0.625in wrap | back board 6.25 | spine ~1.295 | front board 6.25 | wrap
-#     boards y [0.639, 9.875]; crimp keep-free zones 0.61in inside each fold
-#   US-Trade-DustJacket.pdf: 1551.53 x 684 pt, 0.125in bleed
-#     flap 3.625 | back 6.375 | spine 1.306 | front 6.375 | flap 3.625
+#   US-Trade-Hard-Cover (1).pdf  (printed case): 1089.22 x 756 pt
+#     0.625in wrap | back board 6.25 | spine 1.378 | front board 6.25 | wrap
+#     boards y [0.639, 9.889]; crimp keep-free zones 0.62in inside each fold
+#   US-Trade-DustJacket (1).pdf: 1557.22 x 684 pt, 0.125in bleed
+#     flap 3.625 | back 6.375 | spine 1.378 | front 6.375 | flap 3.625
 #     keep-free: 0.5in panel-side of flap folds, 0.25in beside spine folds
 
 def _svg_scaffold(w_in, h_in, img_x, img_disp_h, comment, img_y=0.0, mirror_v=False):
@@ -547,13 +547,13 @@ def _guides(svg, u, w_in, h_in, vxs, hys):
     svg.append('</g>')
 
 def build_case():
-    W, H = 1083.53 / 72, 10.5
+    W, H = 1089.22 / 72, 10.5
     WRAPM = 0.625
     BB0, BB1 = WRAPM, 6.875                       # back board
-    SP0, SP1 = 495.4 / 72, 588.6 / 72             # spine folds (template)
-    FB0, FB1 = SP1, 1039 / 72                     # front board
-    CR_L, CR_R = 451 / 72, 633 / 72               # crimp keep-free outer bounds
-    BT, BB_Y = 46 / 72, 711 / 72                  # board top/bottom
+    SP0, SP1 = 495 / 72, 594.216 / 72             # spine folds (template)
+    FB0, FB1 = SP1, 1044.22 / 72                  # front board
+    CR_L, CR_R = 450.41 / 72, 638.806 / 72        # crimp keep-free outer bounds
+    BT, BB_Y = 46 / 72, 712 / 72                  # board top/bottom
     # The art covers the boards + 0.25in past each fold (the rest of the
     # 0.625 wrap is glued inside; the basefill gradient shows only on the
     # turn-in). Smaller than full-bleed, so the angel-and-moons subject
@@ -568,7 +568,7 @@ def build_case():
     img_x = (face0 + face1) / 2 - (1650 + 2370) / 2 / ppi
     k = disp_h / 9.85
     svg, u = _svg_scaffold(W, H, img_x, disp_h,
-        f'HARDCOVER CASE (BookBaby US-Trade-Hard-Cover template, 476pp/420ppi): wrap {WRAPM}in | back 6.25 | spine {SP1-SP0:.3f} | front 6.25 | wrap; jacketed — no barcode',
+        f'HARDCOVER CASE (BookBaby US-Trade-Hard-Cover template, 484pp): wrap {WRAPM}in | back 6.25 | spine {SP1-SP0:.3f} | front 6.25 | wrap; jacketed — no barcode',
         img_y=img_y, mirror_v=True)
     tcx = max(1861.3 / ppi + img_x, CR_R + 3.35 * k / 2 + 0.05)
     emit_meat_front(svg, u, tcx, k=k, face_cx=(face0 + face1) / 2, tagline_y=9.35, y_off=img_y)
@@ -593,7 +593,7 @@ def emit_ttt_flap(svg, u, x0, col_w):
     iw = 1.50
     ih = iw * 2156 / 1418
     ix, iy = cx - iw / 2, 0.58
-    svg.append(f'  <image xlink:href="../ttt-cover-plate.jpg" x="{u(ix)}" y="{u(iy)}" '
+    svg.append(f'  <image xlink:href="../images/masters/32-ttt-cover.jpg" x="{u(ix)}" y="{u(iy)}" '
                f'width="{u(iw)}" height="{u(ih)}"/>')
     svg.append(f'  <rect x="{u(ix)}" y="{u(iy)}" width="{u(iw)}" height="{u(ih)}" '
                f'fill="none" stroke="{CREAM}" stroke-opacity="0.55" stroke-width="{u(0.008)}"/>')
@@ -643,11 +643,11 @@ def emit_ttt_flap(svg, u, x0, col_w):
     svg.append('</g>')
 
 def build_jacket():
-    W, H = 1551.53 / 72, 9.5
+    W, H = 1557.22 / 72, 9.5
     BLD = 0.125
-    TRIM_T, TRIM_B = 10 / 72, 675 / 72
-    FFOLD_L, FFOLD_R = 3.75, 1282 / 72            # flap folds
-    SP0, SP1 = 10.125, 823 / 72                   # spine folds
+    TRIM_T, TRIM_B = 10 / 72, 676 / 72
+    FFOLD_L, FFOLD_R = 3.75, 1287.22 / 72         # flap folds
+    SP0, SP1 = 10.125, 828.216 / 72               # spine folds
     BP0, BP1 = FFOLD_L, SP0                       # back panel
     FP0, FP1 = SP1, FFOLD_R                       # front panel
     disp_h = 10.55
@@ -655,7 +655,7 @@ def build_jacket():
     img_x = (FP0 + FP1) / 2 - (1650 + 2370) / 2 / ppi
     k = disp_h / 9.85
     svg, u = _svg_scaffold(W, H, img_x, disp_h,
-        f'DUST JACKET (BookBaby US-Trade-DustJacket template, 476pp/420ppi): flap 3.625 | back 6.375 | spine {SP1-SP0:.3f} | front 6.375 | flap 3.625; bleed {BLD}in')
+        f'DUST JACKET (BookBaby US-Trade-DustJacket template, 484pp): flap 3.625 | back 6.375 | spine {SP1-SP0:.3f} | front 6.375 | flap 3.625; bleed {BLD}in')
     tcx = max(1861.3 / ppi + img_x, (FP0 + 0.25) + 3.35 * k / 2 + 0.05)
     emit_meat_front(svg, u, tcx, k=k, face_cx=(FP0 + FP1) / 2, tagline_y=9.0)
     emit_meat_spine(svg, u, (SP0 + SP1) / 2, (TRIM_T + TRIM_B) / 2, TRIM_B - 0.825, min(0.30, (SP1 - SP0) * 0.42))
@@ -666,8 +666,9 @@ def build_jacket():
     # flap columns: template text-safe zones. ONE text flap (author's ruling
     # 2026-07-08): the TimeTested.Bible pitch on the front flap; back flap
     # art-only.
-    flap_end = emit_flap(svg, u, 'layer-flap-front', 18.056, 3.125, 0.60, FLAP_TTB, size=0.15, pitch=0.24)
-    emit_qr(svg, u, (18.056 + 21.181) / 2, flap_end + 0.08, size_in=0.70)
+    FL0 = 1305.22 / 72                            # front-flap text-safe left (template)
+    flap_end = emit_flap(svg, u, 'layer-flap-front', FL0, 3.125, 0.60, FLAP_TTB, size=0.15, pitch=0.24)
+    emit_qr(svg, u, FL0 + 3.125 / 2, flap_end + 0.08, size_in=0.70)
     emit_ttt_flap(svg, u, 0.375, 3.125)
     _guides(svg, u, W, H, (BLD, FFOLD_L, SP0, SP1, FFOLD_R, W - BLD - 0.0), (TRIM_T, TRIM_B))
     out = 'cover-jacket-summit-meat.svg'
