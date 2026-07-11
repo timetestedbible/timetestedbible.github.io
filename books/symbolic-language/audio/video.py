@@ -22,7 +22,7 @@ blur-feathered panels sized from measured text extents — WrapStyle 2 with
 explicit line breaks, so the panel geometry is exact (no hard-edged bands).
 
 Usage:
-  out/venv/bin/python video.py 09-the-seal [--animate] [--model small.en]
+  out/venv/bin/python video.py 10-the-seal [--animate] [--model small.en]
   (faster-whisper is only imported when out/<stem>.align.json is absent)
 
 Stills-first workflow: the default build uses STILL beds (no zoompan — beds
@@ -1054,7 +1054,7 @@ def compose(ff, clips, sections, ass_path, audio, total, out_mp4,
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('stem', help='chapter stem, e.g. 09-the-seal')
+    ap.add_argument('stem', help='chapter stem, e.g. 10-the-seal')
     ap.add_argument('--model', default='small.en')
     ap.add_argument('--animate', action='store_true',
                     help='Ken Burns bed synthesis (final render); '

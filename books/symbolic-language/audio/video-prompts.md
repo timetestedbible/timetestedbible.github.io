@@ -49,7 +49,7 @@ lift, DROP the color cast — so the B&W stays B&W and the red accents stay
 red. The Coin's beds predate the style change and stay sepia, with the
 warm TONE.)
 
-## assets-video/09-the-seal-bed.png
+## assets-video/10-the-seal-bed.png
 
 An aged hand pressing a heavy signet ring into molten sealing wax on a rolled
 parchment scroll bound with cord, lit by a single candle flame at the edge of

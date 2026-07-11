@@ -1,16 +1,16 @@
 # YouTube thumbnail template — MEAT: The Bible's Symbolic Language
 
 One recipe for every chapter so the series reads as one set. Sample built:
-`09-the-seal.png` (draft, 2026-07-10). Imagery in this directory is
+`10-the-seal.png` (draft, 2026-07-10). Imagery in this directory is
 local-only (gitignored); this spec and `audio/thumbnail.py` (the generator
 that implements it) are the committed artifacts from which any chapter's
 thumbnail regenerates:
 
-    out/venv/bin/python thumbnail.py <print-stem> [...]   # e.g. 09-the-seal
+    out/venv/bin/python thumbnail.py <print-stem> [...]   # e.g. 10-the-seal
     out/venv/bin/python thumbnail.py --all                # all chapters
 
-`--all` covers every print chapter except `00-*`, `48-glossary`, and
-`49-about-the-author`, bonus `NNx` chapters included. Title and order are
+`--all` covers every print chapter except `00-*`, `49-glossary`, and
+`50-about-the-author`, bonus `NNx` chapters included. Title and order are
 read from the print chapter's front matter (`../NN-*.adoc`).
 
 ## Canvas
@@ -35,9 +35,9 @@ read from the print chapter's front matter (`../NN-*.adoc`).
      Off-aspect sources (1536x1024 is 3:2) are center cover-cropped to
      16:9, never stretched;
    - else a chapter-approved bed (`assets-video/NN-<slug>-bed.png`,
-     1920x1080 — currently only 09), used as-is;
+     1920x1080 — currently only 10), used as-is;
    - else the chapter's plate from `../images/masters/` (matched by the
-     stem's full number prefix — `13`, `05x`), run through the SAME
+     stem's full number prefix — `13`, `16x`), run through the SAME
      blur-fill 16:9 composite + warm-sepia tone as the video beds
      (`video.build_still`: gblur-36 darkened fill behind the
      height-fitted plate, then the uniform TONE lift);

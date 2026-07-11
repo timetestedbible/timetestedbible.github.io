@@ -23,7 +23,7 @@ assets-video/ is local-only (gitignored): commit the storyboard md +
 GENLOG, never the imagery. API key: ~/.gptapi.key (never printed).
 
 Usage:
-  python3 storyboard_images.py 10-the-coin [--scenes 3,7] [--dry-run]
+  python3 storyboard_images.py 11-the-coin [--scenes 3,7] [--dry-run]
 """
 import argparse, base64, json, os, re, subprocess, sys, time
 import urllib.error, urllib.request
@@ -85,7 +85,7 @@ def generate(prompt, size, quality, key):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('stem', help='chapter stem, e.g. 10-the-coin')
+    ap.add_argument('stem', help='chapter stem, e.g. 11-the-coin')
     ap.add_argument('--scenes', help='comma-separated subset, e.g. 3,7')
     ap.add_argument('--size', default='1536x1024')
     ap.add_argument('--quality', default='high',

@@ -1,7 +1,7 @@
-# Storyboard — Chapter 12: Wings
+# Storyboard — Chapter 13: Wings
 
-chapter: 12 — Wings
-audio-of: 12-wings.adoc
+chapter: 13 — Wings
+audio-of: 13-wings.adoc
 scenes: 15
 style suffix (appended to every IMAGE prompt): monochrome-sepia photographic-painterly, lighter exposure, warm tone, 16:9
 rules: no legible text in any image; Jesus never shown face-on (hands, feet, garment, silhouette, from-behind only); red accent only where a seal/mark/blood/scarlet element is itself the subject — otherwise strictly monochrome-sepia.

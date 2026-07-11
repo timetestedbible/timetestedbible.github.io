@@ -1,7 +1,7 @@
-# Storyboard — Chapter 15: Heaven and Hell
+# Storyboard — Chapter 16: Heaven and Hell
 
-chapter: 15 — Heaven and Hell
-audio-of: 15-heaven-and-hell.adoc
+chapter: 16 — Heaven and Hell
+audio-of: 16-heaven-and-hell.adoc
 scenes: 15
 style suffix (appended to every IMAGE prompt): monochrome-sepia photographic-painterly, lighter exposure, warm tone, 16:9
 rules: no legible text in any image; Jesus never shown face-on (hands, feet, silhouette, light-form, from-behind only); red accent only where a seal/mark/blood/scarlet element is itself the subject — otherwise strictly monochrome-sepia.

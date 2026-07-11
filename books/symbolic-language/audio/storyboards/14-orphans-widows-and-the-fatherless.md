@@ -1,7 +1,7 @@
-# Storyboard — Chapter 13: Orphans, Widows, and the Fatherless
+# Storyboard — Chapter 14: Orphans, Widows, and the Fatherless
 
-chapter: 13 — Orphans, Widows, and the Fatherless
-audio-of: 13-orphans-widows-and-the-fatherless.adoc
+chapter: 14 — Orphans, Widows, and the Fatherless
+audio-of: 14-orphans-widows-and-the-fatherless.adoc
 scenes: 12
 style suffix (appended to every IMAGE prompt): monochrome-sepia photographic-painterly, lighter exposure, warm tone, 16:9
 rules: no legible text in any image; Jesus never shown face-on (hands, feet, silhouette, from-behind only); red accent only where a seal/mark/blood/scarlet element is itself the subject — otherwise strictly monochrome-sepia.

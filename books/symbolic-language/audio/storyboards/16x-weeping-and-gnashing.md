@@ -1,7 +1,7 @@
 # Storyboard — Bonus Study: The Weeping and the Gnashing
 
 chapter: 15x — The Weeping and the Gnashing (bonus study)
-audio-of: 15x-weeping-and-gnashing.adoc
+audio-of: 16x-weeping-and-gnashing.adoc
 scenes: 9
 style suffix (appended to every IMAGE prompt): monochrome-sepia photographic-painterly, lighter exposure, warm tone, 16:9
 rules: no legible text in any image; Jesus never shown face-on (hands, feet, silhouette, from-behind only); red accent only where a seal/mark/blood/scarlet element is itself the subject — otherwise strictly monochrome-sepia.

@@ -5,7 +5,7 @@ crossfades at scene starts, full caption/quote-card/title track from
 video.py (imported, not modified). For author review before any animation
 pass.
 
-Usage: out/venv/bin/python storyboard_stills.py 09-the-seal
+Usage: out/venv/bin/python storyboard_stills.py 10-the-seal
 Output: out/<stem>-storyboard.mp4
 """
 import argparse, os, re, sys

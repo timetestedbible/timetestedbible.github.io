@@ -1,7 +1,7 @@
-# Storyboard — Chapter 16: Shadow
+# Storyboard — Chapter 17: Shadow
 
-chapter: 16 — Shadow
-audio-of: 16-shadow.adoc
+chapter: 17 — Shadow
+audio-of: 17-shadow.adoc
 scenes: 14
 style suffix (appended to every IMAGE prompt): monochrome-sepia photographic-painterly, lighter exposure, warm tone, 16:9
 rules: no legible text in any image; Jesus never shown face-on (hands, feet, silhouette, from-behind only); red accent only where a seal/mark/blood/scarlet element is itself the subject — otherwise strictly monochrome-sepia.

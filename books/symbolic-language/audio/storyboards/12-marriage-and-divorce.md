@@ -1,7 +1,7 @@
-# Storyboard — Chapter 11: Marriage and Divorce
+# Storyboard — Chapter 12: Marriage and Divorce
 
-chapter: 11 — Marriage and Divorce
-audio-of: 11-marriage-and-divorce.adoc
+chapter: 12 — Marriage and Divorce
+audio-of: 12-marriage-and-divorce.adoc
 scenes: 15
 style suffix (appended to every IMAGE prompt): monochrome-sepia photographic-painterly, lighter exposure, warm tone, 16:9
 rules: no legible text in any image (documents shown as blank or fine-stroked parchment); Jesus never shown face-on (hands, feet, silhouette, from-behind only); red accent only where a seal/mark/blood/scarlet element is itself the subject — otherwise strictly monochrome-sepia.

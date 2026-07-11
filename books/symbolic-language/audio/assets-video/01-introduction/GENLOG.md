@@ -6,7 +6,7 @@ Recipe: Codex CLI (`codex exec --skip-git-repo-check --sandbox workspace-write
 0.144.1, native 1672x941) -> Upscayl 4x (`upscayl-bin -s 4 -n
 upscayl-standard-4x`) -> out/upscaled/scene-NN-4x.png -> ffmpeg lanczos
 1920x1080 -> assets-video/01-introduction/scene-NN.png. Per video-prompts.md;
-tone reference: assets-video/09-the-seal-bed.png.
+tone reference: assets-video/10-the-seal-bed.png.
 
 RUN HALTED BY AUTHOR after scene 12: scenes 13-15 were never attempted.
 Scene 12 had already completed its full chain (generate + upscale + downscale)
@@ -40,6 +40,6 @@ Notes:
   Caveat: these generic basenames follow video.py's upscale_master cache
   convention for assets-video/01-introduction/scene-NN.png, but they would
   collide if another chapter also names its scenes scene-NN — future
-  chapters should use descriptive names (as 09-the-seal's sNN-* set does)
+  chapters should use descriptive names (as 10-the-seal's sNN-* set does)
   or a chapter-prefixed scheme.
 - Thumbnail was NOT regenerated (halt landed first).

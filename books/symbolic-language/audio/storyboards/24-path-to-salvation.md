@@ -1,7 +1,7 @@
-# Storyboard — Chapter 23: Grace, Mercy, and the Gift of God
+# Storyboard — Chapter 24: Grace, Mercy, and the Gift of God
 
-chapter: 23 — Grace, Mercy, and the Gift of God
-audio-of: 23-path-to-salvation.adoc
+chapter: 24 — Grace, Mercy, and the Gift of God
+audio-of: 24-path-to-salvation.adoc
 scenes: 15
 style suffix (appended to every IMAGE prompt): monochrome-sepia photographic-painterly, lighter exposure, warm tone, 16:9
 rules: no legible text in any image (documents as blank or fine-stroked parchment); Jesus never shown face-on (hands, feet, silhouette, from-behind only); red accent only where a seal/mark/blood/scarlet element is itself the subject — otherwise strictly monochrome-sepia.

@@ -21,7 +21,7 @@ API key: ~/.gptapi.key (plain text; never printed). Outputs:
 thumbnail.py prefers assets-video/thumb-beds/<stem>.png automatically.
 
 Usage:
-  python3 thumb-beds.py 01-introduction 09-the-seal [...]
+  python3 thumb-beds.py 01-introduction 10-the-seal [...]
   python3 thumb-beds.py --dry-run <stem>      # print the prompt only
   python3 thumb-beds.py --quality medium ...  # default: high (~$0.25/img)
 
@@ -70,11 +70,11 @@ SCENES = {
 # One selective accent per the approved Seal recipe: red where the mark
 # itself appears; warm metallic gleam instead when the "seal" IS metal.
 ACCENTS = {
-    '09-the-seal': (
+    '10-the-seal': (
         'Accent: the small crossed mark on the kneeling elder’s '
         'forehead and the ink at the horn carry a deep muted red — the '
         'frame’s one strong color.'),
-    '10-the-coin': (
+    '11-the-coin': (
         'Accent: the coin in the fish’s mouth gleams warm '
         'silver-gold, the frame’s brightest point; no red anywhere.'),
 }

@@ -2,7 +2,7 @@
 """Render an audio/NN-*.adoc narration script to MP3 via ElevenLabs.
 
 Usage:
-  ELEVENLABS_API_KEY=... python3 render.py 09-the-seal.adoc [--voice VOICE_ID]
+  ELEVENLABS_API_KEY=... python3 render.py 10-the-seal.adoc [--voice VOICE_ID]
                                            [--model eleven_multilingual_v2]
                                            [--out out/]
 

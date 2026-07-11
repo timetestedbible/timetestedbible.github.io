@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Render the YouTube thumbnail for a chapter of MEAT: The Bible's Symbolic
 Language, per assets-video/thumbnails/TEMPLATE.md (the approved recipe —
-sample: 09-the-seal).
+sample: 10-the-seal).
 
-Inputs per chapter: the PRINT chapter stem (e.g. 09-the-seal). Title and
+Inputs per chapter: the PRINT chapter stem (e.g. 10-the-seal). Title and
 order come from the print chapter's front matter (../NN-*.adoc). Everything
 else is fixed by the template:
 
@@ -18,13 +18,13 @@ else is fixed by the template:
     the SAME blur-fill 16:9 composite + warm sepia tone as the video beds
     (video.build_still). Either way the template's Brightness 1.12 /
     Color 1.05 lift follows. Exception: 09 without a thumb-bed uses the
-    approved assets-video/09-the-seal-bed.png directly. Chapters with no
+    approved assets-video/10-the-seal-bed.png directly. Chapters with no
     matching plate fall back to the cover summit art ("fallback").
 
 Usage:
-  out/venv/bin/python thumbnail.py 09-the-seal [23-path-to-salvation ...]
+  out/venv/bin/python thumbnail.py 10-the-seal [24-path-to-salvation ...]
   out/venv/bin/python thumbnail.py --all   # every print chapter except
-                                           # 00-*, 48-glossary, 49-about
+                                           # 00-*, 49-glossary, 49-about
 
 Output: assets-video/thumbnails/<stem>.png (1280x720) and <stem>-320.png
 (the 320x180 legibility proof). All imagery is local-only (gitignored);
@@ -78,11 +78,11 @@ BED_TRANSFORMS = {
                                                 # full plate height kept —
                                                 # birds/path/hat untrimmed;
                                                 # sower cast to the right
-    '09-the-seal': dict(mirror=True, dx=110),   # sealing action (pen on
+    '10-the-seal': dict(mirror=True, dx=110),   # sealing action (pen on
                                                 # forehead) out from under
                                                 # the band; watchers sink
                                                 # into it
-    '10-the-coin': dict(mirror=True, dx=210),   # coin + fish to the right
+    '11-the-coin': dict(mirror=True, dx=210),   # coin + fish to the right
                                                 # half; fade lands on the
                                                 # empty dark side
 }
@@ -118,8 +118,8 @@ def bed_source(stem):
     if os.path.exists(tb):
         return tb, 'thumb-bed'
     num = stem.split('-', 1)[0]
-    if num == '09':
-        return os.path.join(HERE, 'assets-video', '09-the-seal-bed.png'), \
+    if num == '10':
+        return os.path.join(HERE, 'assets-video', '10-the-seal-bed.png'), \
             'approved'
     hits = sorted(glob.glob(os.path.join(MASTERS, num + '-*.*')))
     if hits:
@@ -352,7 +352,7 @@ def all_stems():
     for p in sorted(glob.glob(os.path.join(BOOK, '[0-9][0-9]*-*.adoc'))):
         stem = os.path.splitext(os.path.basename(p))[0]
         num = stem.split('-', 1)[0]
-        if num == '00' or stem in ('48-glossary', '49-about-the-author'):
+        if num == '00' or stem in ('49-glossary', '50-about-the-author'):
             continue
         stems.append(stem)
     return stems

@@ -1,6 +1,6 @@
-# Storyboard — Bonus Study: The Disciple
+# Storyboard — Chapter 9: The Disciple
 
-audio-of: 05x-the-disciple.adoc
+audio-of: 09-the-disciple.adoc
 
 Policy: every prompt carries the style suffix; red accents are selective (only where a seal/mark/blood element is itself the subject); no legible text in any image; the face of Jesus is never shown directly (hands, feet, silhouettes, from-behind compositions only).
 
