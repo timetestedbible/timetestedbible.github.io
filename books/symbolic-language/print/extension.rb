@@ -822,10 +822,23 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
 
   def convert_open node
     if node.role == 'glossentry' && !scratch?
-      h = (dry_run { traverse node }).single_page_height rescue nil
+      # keep_together: measure the whole entry from a scratch page TOP. A plain
+      # dry run starts at the live cursor, so any entry that overflowed the
+      # remaining space spanned two scratch pages and single_page_height came
+      # back nil — the rules below never fired for exactly the breaks they were
+      # written to control (entries split across page turns; the Sword seeref
+      # orphaned at a page top, 2026-07-11).
+      h = (dry_run(keep_together: true) { traverse node }).single_page_height rescue nil
       if h && h > cursor
-        # entry will not fit the remaining page: break across the spread only
-        start_new_page if (page_number.odd? || cursor < h * 0.25)
+        # entry will not fit the remaining page: it may flow across the spread
+        # (verso bottom -> facing recto), never across a page turn (recto ->
+        # next verso), and never leaving a short remainder behind. The flowed
+        # part must also be more than the [.seeref] tail — a citation line
+        # alone at a page top reads as an orphan cut off from its definition —
+        # so at least 3 text lines (> the tallest two-line seeref) must cross.
+        line_h = nil
+        theme_font(:base) { line_h = font.height * (@theme.base_line_height || 1.15) }
+        start_new_page if page_number.odd? || cursor < h * 0.25 || (h - cursor) < line_h * 3
       end
       return traverse node
     end
