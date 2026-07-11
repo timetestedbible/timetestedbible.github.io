@@ -27,6 +27,16 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "**/*.md.orig"
+  # Book dev docs — authoring pipeline, never deployed
+  - books/symbolic-language/CLAUDE.md
+  - books/symbolic-language/plate-descriptions.md
+  - books/symbolic-language/plate-captions.md
+  - books/symbolic-language/research
+  - books/symbolic-language/editorial-review
+  - books/symbolic-language/audio
+  - books/symbolic-language/print
+  - books/symbolic-language/draft-meat-intro.md
+  - books/symbolic-language/reflow-sentences.rb
 
 # Study collections
 collections:
