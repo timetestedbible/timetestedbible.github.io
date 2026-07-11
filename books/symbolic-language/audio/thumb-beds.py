@@ -41,16 +41,30 @@ API = 'https://api.openai.com/v1/images/generations'
 # finished plate's subject, honoring the plate rules (no face of Christ).
 SCENES = {
     '01-introduction': (
-        'On a rise above the Sea of Galilee at evening, a robed figure '
-        'seen entirely from behind lifts five loaves and two fishes '
-        'overhead with both arms, light breaking through the clouds '
-        'directly onto the offered bread; the seated multitude covers the '
-        'hillside in ordered companies down to the shining water, every '
-        'face turned toward the lifted loaves — the crowd is seen from '
-        'behind or in three-quarter view, all their sight-lines aimed at '
-        'the figure — and in the near foreground disciples wait with '
-        'large empty wicker baskets, also looking to the raised bread. '
-        'His face is never visible.'),
+        'On a grassy rise above the Sea of Galilee at evening, a robed '
+        'figure stands in the right half of the frame, seen entirely '
+        'from behind — the back of his head square to the viewer, only '
+        'hair, shoulders, and robe; no brow, no nose, no beard, no '
+        'profile visible. Above his two open upturned hands he holds '
+        'one single straight row of exactly five small round barley '
+        'loaves, side by side: the first loaf at the left end of the '
+        'row, the second beside it, the third at the center, the '
+        'fourth beside that, and the fifth at the right end — five '
+        'loaves in one row, no loaf behind another, none hidden, not '
+        'four, not six — and the light breaking through the clouds '
+        'falls on that row of five loaves alone. A small '
+        'wicker basket at his feet holds two small fish. '
+        'The multitude sits on the grass in family '
+        'groups — separate loose clusters of adults and children, '
+        'parents with children gathered beside them, open grass between '
+        'the clusters, never rows or ranks or a packed uniform mass. '
+        'Every group is seen from behind or in three-quarter view, '
+        'backs mostly toward the viewer, and every figure in every '
+        'cluster is turned toward the loaf-bearer, so every sight-line '
+        'in the scene converges on the five lifted loaves. The clusters '
+        'gather toward the figure on the right and thin away into '
+        'darkness at the left, the hillside and the dim shining water '
+        'beyond them.'),
 }
 
 # One selective accent per the approved Seal recipe: red where the mark
@@ -107,6 +121,15 @@ Crowd/onlooker sight-lines must aim at the focal subject (crowds seen
 from behind or three-quarter, faces toward it). A bed whose subject
 strays left can sometimes be salvaged without regeneration via
 `thumbnail.py` `BED_TRANSFORMS` (mirror + slide-right).
+
+Prompt lessons (standing): (1) explicit object counts — when a count
+matters (FIVE loaves), name the number, call each item distinct and
+countable, and give the counted objects their own lit focal moment;
+never bundle them into a compound action ("five loaves and two fishes
+overhead" rendered fish only). (2) Crowds default to packed uniform
+rows facing anywhere; describe FAMILY GROUPS — separate clusters of
+adults and children with open grass between them, seen from behind or
+three-quarter, every figure turned toward the focal subject.
 
 """
 
