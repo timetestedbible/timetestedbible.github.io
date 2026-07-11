@@ -173,12 +173,12 @@ def build_bed(src, kind, stem):
 
 
 def band_overlay():
-    """Left title band: (12,9,6), alpha 225 to x=400, long gradual fade to 0
-    at x=880, drawn as per-column 1px lines."""
+    """Left title band: (12,9,6): translucent core (alpha 196) so ghost
+    detail shows behind the title, fading to 0 at x=720."""
     ov = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(ov)
-    for x in range(880):
-        a = 225 if x <= 400 else round(225 * (880 - x) / 480)
+    for x in range(720):
+        a = 196 if x <= 400 else round(196 * (720 - x) / 320)
         d.line([(x, 0), (x, H)], fill=PANEL + (a,))
     return ov
 
