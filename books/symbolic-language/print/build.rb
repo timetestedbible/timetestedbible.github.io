@@ -115,10 +115,11 @@ PARTS = {
   'glossary'           => 'Part Seven — The Glossary',
 }
 
-# Back matter, rendered AFTER the generated Scripture Index: the Further
-# Studies pointer page (print-only; a compact section, not a full chapter
-# opening — author's ruling 2026-07-07), then About the Author closes the book.
-BACK_SLUGS = %w[further-studies about-the-author].freeze
+# Back matter, rendered AFTER the generated Scripture Index: the Bibliography
+# (sources page, both editions), the Further Studies pointer page (print-only;
+# a compact section, not a full chapter opening — author's ruling 2026-07-07),
+# then About the Author closes the book.
+BACK_SLUGS = %w[bibliography further-studies about-the-author].freeze
 back_entries = main_entries.select { |c| BACK_SLUGS.include? c[:slug] }
                            .sort_by { |c| BACK_SLUGS.index c[:slug] }
 main_entries -= back_entries

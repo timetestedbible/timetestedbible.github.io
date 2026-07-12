@@ -1166,7 +1166,7 @@ def ink_chapter_title node, title, opts = {}
     # measured drop.
     if node.id == 'how-to-use'
       move_down HOW_TO_USE_SINK
-    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'further-studies' || node.id == 'about-the-author')
+    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
     end
