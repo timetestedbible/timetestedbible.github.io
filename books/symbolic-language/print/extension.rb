@@ -1036,6 +1036,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'sun-moon-and-stars'    => 'images/print/29-joseph-dream.jpg',
     'spoken-once-heard-twice' => 'images/print/26-almond-rod.jpg',
     'foreskin'              => 'images/print/46-orchard-keeper.jpg',
+    'the-anointing'         => 'images/print/46x-horn-of-oil.jpg',
     'what-is-the-point'     => 'images/print/25-what-is-the-point.jpg',
     'lucifers-declared-plan' => 'images/print/30-lucifer-moon.jpg',
     'daniel-unsealed'       => 'images/print/36-daniel-sealed.jpg',

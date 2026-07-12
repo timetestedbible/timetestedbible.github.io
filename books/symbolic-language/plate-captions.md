@@ -49,6 +49,7 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 | 44-covenant-bow | THE COVENANT BOW | GENESIS 9:13 |
 | 45-jabbok | JACOB WRESTLES GOD | GENESIS 32:28 |
 | 46-orchard-keeper | COUNT THE FRUIT THEREOF AS UNCIRCUMCISED | LEVITICUS 19:23 |
+| 46x-horn-of-oil | SAMUEL ANOINTS DAVID | 1 SAMUEL 16:13 |
 | 47-butter-churn | CURDS AND HONEY HE SHALL EAT | ISAIAH 7:15 |
 | 48-prodigal-trough | NO MAN GAVE UNTO HIM | LUKE 15:16 |
 
