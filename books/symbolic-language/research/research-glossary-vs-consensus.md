@@ -1,5 +1,11 @@
 # Research: Glossary vs. blind consensus — experiment results
 
+The versioned cross-provider runner, prompt templates, schemas, input extractor,
+and checked-in run format now live in
+`books/symbolic-language/experiments/glossary-consensus/`. The historical runs
+below predate that runner; their narrative results remain part of the research
+record, while new runs preserve exact requests and raw responses in the repo.
+
 Author 2026-07-04: "take the terms in the glossary, and ask an AI subagent
 with fresh context to (1) define its primary symbolic meaning as generally
 accepted and cite the basis, (2) have another agent grade it against our

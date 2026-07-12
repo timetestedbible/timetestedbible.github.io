@@ -1,0 +1,164 @@
+{
+  "file": "books/symbolic-language/01-introduction.adoc",
+  "title": "Introduction",
+  "notes": [
+    "The Capernaum hard saying, Berean nobility test, and milk/meat frame open the book with clear force and a law-positive method. The AI consensus table is a concrete, non-hedging experiment that shores up the claim, and the semantic-drift plus relational-meaning sections are dense and persuasive. Multiple author-prose sentences still open with And/But/That in violation of house style. One symbol link is mismatched (olive/vine), a relative pronoun is missing before “the psalm said,” the milk-to-meat process uses a physically wrong verb, and the claim that NT Greek itself “passed through” a translation layer needs a light factual reword.",
+    "This chunk builds a dense, assertive case that milk is the word received and meat is the word done, chaining the dual witnesses of Matthew/Luke, Psalm 40, Isaiah’s butter, Hebrews 5, the fat/milk consonants, and the John 6 climb from bread to flesh to meat. The gospel-as-meat claim and the Corinthian dual serving of Christ crucified are tightly argued without hedging. Residual presenter staging still appears in mark that, notice that, Now go back, Mark that, and Watch. Multiple author sentences open with And, But, or That in house-style violation. Voice, density, and law-positive stance remain strong once those staging and open-word slips are cut."
+  ],
+  "proposals": [
+    {
+      "old": "the __“dark sayings of old”__ the psalm said he would utter (Mark 4:13; Psalm 78:2-3; Matthew 13:35). That exam waits a chapter ahead: link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].footnote:fn01parables[The link:/books/symbolic-language/the-parables-of-the-kingdom/[Parables of the Kingdom] chapter derives each parable of Matthew 13 from the Old Testament alone.]",
+      "new": "the __“dark sayings of old”__ that the psalm said he would utter (Mark 4:13; Psalm 78:2-3; Matthew 13:35). The examination waits a chapter ahead: link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].footnote:fn01parables[The link:/books/symbolic-language/the-parables-of-the-kingdom/[Parables of the Kingdom] chapter derives each parable of Matthew 13 from the Old Testament alone.]",
+      "type": "grammar",
+      "severity": "high",
+      "summary": "Restore the missing relative pronoun and remove the sentence-opening That.",
+      "rationale": "The clause needs “that” for grammatical completeness. Replacing “That exam” also clears the house-style sentence-open ban and lifts the register from casual “exam.”",
+      "_chunk": 1
+    },
+    {
+      "old": "And the test is not for Paul only — your understanding of any verse must be tested against every other verse, for __“at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established”__ (Deuteronomy 19:15): one verse cannot make a doctrine.",
+      "new": "The test is not for Paul only — your understanding of any verse must be tested against every other verse, for __“at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established”__ (Deuteronomy 19:15): one verse cannot make a doctrine.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-opening And in author prose.",
+      "rationale": "House style forbids author-prose sentences that begin with And. Dropping the conjunction keeps the claim intact and assertive.",
+      "_chunk": 1
+    },
+    {
+      "old": "But first we must prepare the ground by explaining the difference between a word and a symbol.",
+      "new": "First we must prepare the ground by explaining the difference between a word and a symbol.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-opening But in author prose.",
+      "rationale": "House style forbids author-prose sentences that begin with But. The shortened form preserves voice and density.",
+      "_chunk": 1
+    },
+    {
+      "old": "And because the meaning lives in the relationships between passages rather than in the label, it survives translation: trade the English word for the Hebrew or the Greek and the pattern still points to the same idea.",
+      "new": "Because the meaning lives in the relationships between passages rather than in the label, it survives translation: trade the English word for the Hebrew or the Greek and the pattern still points to the same idea.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-opening And in author prose.",
+      "rationale": "House style forbids author-prose sentences that begin with And. The causal claim stands cleanly without the conjunction.",
+      "_chunk": 1
+    },
+    {
+      "old": "That consistency is also the claim this book stakes its method on — a fabricated system would break somewhere under the weight of every occurrence being gathered and tested; this one, tested, holds.",
+      "new": "This consistency is also the claim this book stakes its method on — a fabricated system would break somewhere under the weight of every occurrence being gathered and tested; this one, tested, holds.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-opening That in author prose.",
+      "rationale": "House style forbids author-prose sentences that begin with That. “This consistency” keeps the forward reference and the assertive close.",
+      "_chunk": 1
+    },
+    {
+      "old": "the sym:sym-harlot[harlot], the sym:sym-olive[vine], the shepherds, the sym:sym-wings[wings] keep their meanings across authors who never met.",
+      "new": "the sym:sym-harlot[harlot], the sym:sym-vine[vine], the shepherds, the sym:sym-wings[wings] keep their meanings across authors who never met.",
+      "type": "factual",
+      "severity": "high",
+      "summary": "Align the symbol key with its displayed label.",
+      "rationale": "The markup points at olive while printing vine, a broken internal link. Matching key and display to vine restores consistency with the visible list.",
+      "_chunk": 1
+    },
+    {
+      "old": "and if you do not do the work to churn the milk into meat, you will remain immature at best — and at worst turn away entirely, like the crowds in Jesus’ day.",
+      "new": "and if you do not do the work to turn milk into meat, you will remain immature at best — and at worst turn away entirely, like the crowds in Jesus’ day.",
+      "type": "bad-metaphor",
+      "severity": "medium",
+      "summary": "Replace the physically wrong verb “churn” for milk-to-meat.",
+      "rationale": "Milk is churned into butter, not meat. “Turn” keeps the biblical milk/meat contrast without fighting the image.",
+      "_chunk": 1
+    },
+    {
+      "old": "The New Testament's Greek had already passed through one layer of translation before it reached English, and the symbols still hold.",
+      "new": "The New Testament has already passed through one layer of translation by the time it reaches English, and the symbols still hold.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Correct the implication that the Greek itself was a translation layer.",
+      "rationale": "NT Greek is the composition language for most of the corpus; the translation layer is Greek-to-English. The reword keeps the survival-of-symbols claim without the factual slip.",
+      "_chunk": 1
+    },
+    {
+      "old": "And what is the will?",
+      "new": "What is the will?",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden And sentence open.",
+      "rationale": "Author prose must not begin with And. The question stands cleanly without it.",
+      "_chunk": 2
+    },
+    {
+      "old": "And both evangelists wrote by the same Spirit — __“all scripture is given by inspiration of God”__ (2 Timothy 3:16) — so this is no reporter’s paraphrase: it is a divine equation, established at the mouth of two witnesses.",
+      "new": "Both evangelists wrote by the same Spirit — __“all scripture is given by inspiration of God”__ (2 Timothy 3:16) — so this is no reporter’s paraphrase: it is a divine equation, established at the mouth of two witnesses.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden And sentence open.",
+      "rationale": "House style bars And at the start of author prose. The claim is stronger without the conjunction.",
+      "_chunk": 2
+    },
+    {
+      "old": "Nature supplies the picture — and mark that this step is an observation, not a verse: milk is food another body has already digested; the infant does no work, it swallows what was broken down for it, and grows.",
+      "new": "Nature supplies the picture — an observation, not a verse: milk is food another body has already digested; the infant does no work, it swallows what was broken down for it, and grows.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Cut director cue 'mark that'.",
+      "rationale": "Mark that is forbidden presenter staging. The observation stands without the cue.",
+      "_chunk": 2
+    },
+    {
+      "old": "But poured into a false doctrine it sets just as agreeably, shaped to whatever the hearer wants to hear — __“after their own lusts shall they heap to themselves teachers, having *itching ears*”__ (2 Timothy 4:3) — and that is why the babe stays __“tossed to and fro, and carried about with every sym:sym-wind[wind] of doctrine”__ (Ephesians 4:14) until he is weaned.",
+      "new": "Poured into a false doctrine it sets just as agreeably, shaped to whatever the hearer wants to hear — __“after their own lusts shall they heap to themselves teachers, having *itching ears*”__ (2 Timothy 4:3) — and that is why the babe stays __“tossed to and fro, and carried about with every sym:sym-wind[wind] of doctrine”__ (Ephesians 4:14) until he is weaned.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden But sentence open.",
+      "rationale": "Author prose must not begin with But. The contrast remains clear from the prior sentence.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now go back to the synagogue at Capernaum, where this book began — and notice that Jesus began with sym:sym-bread[bread].",
+      "new": "Return to the synagogue at Capernaum, where this book began: Jesus began with sym:sym-bread[bread].",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Now go back and notice that staging.",
+      "rationale": "Now and notice that are forbidden director cues. The return to Capernaum and the bread claim stay intact.",
+      "_chunk": 2
+    },
+    {
+      "old": "Mark that distinction, because the common teaching runs exactly backwards.",
+      "new": "The distinction is decisive, because the common teaching runs exactly backwards.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Cut director cue 'Mark that'.",
+      "rationale": "Mark that is forbidden presenter staging. The assertion of the distinction is stronger without the cue.",
+      "_chunk": 2
+    },
+    {
+      "old": "That is not how Scripture speaks of it.",
+      "new": "Scripture does not speak of it that way.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden That sentence open.",
+      "rationale": "Author prose must not begin with That. The denial of the common teaching remains direct.",
+      "_chunk": 2
+    },
+    {
+      "old": "Watch Paul serve both tables from one message.",
+      "new": "Paul serves both tables from one message.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Cut director cue 'Watch'.",
+      "rationale": "Watch is forbidden presenter staging. The claim about Paul’s dual serving stands without the cue.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The Capernaum hard saying, Berean nobility test, and milk/meat frame open the book with clear force and a law-positive method. The AI consensus table is a concrete, non-hedging experiment that shores up the claim, and the semantic-drift plus relational-meaning sections are dense and persuasive. Multiple author-prose sentences still open with And/But/That in violation of house style. One symbol link is mismatched (olive/vine), a relative pronoun is missing before “the psalm said,” the milk-to-meat process uses a physically wrong verb, and the claim that NT Greek itself “passed through” a translation layer needs a light factual reword.\",\n  \"proposals\": [\n    {\n      \"old\": \"the __“dark sayings of old”__ the psalm said he would utter (Mark 4:13; Psalm 78:2-3; Matthew 13:35). That exam waits a chapter ahead: link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].footnote:fn01parables[The link:/books/symbolic-language/the-parables-of-the-kingdom/[Parables of the Kingdom] chapter derives each parable of Matthew 13 from the Old Testament alone.]\",\n      \"new\": \"the __“dark sayings of old”__ that the psalm said he would utter (Mark 4:13; Psalm 78:2-3; Matthew 13:35). The examination waits a chapter ahead: link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].footnote:fn01parables[The link:/books/symbolic-language/the-parables-of-the-kingdom/[Parables of the Kingdom] chapter derives each parable of Matthew 13 from the Old Testament alone.]\",\n      \"type\": \"grammar\",\n      \"severity\": \"high\",\n      \"summary\": \"Restore the missing relative pronoun and remove the sentence-opening That.\",\n      \"rationale\": \"The clause needs “that” for grammatical completeness. Replacing “That exam” also clears the house-style sentence-open ban and lifts the register from casual “exam.”\"\n    },\n    {\n      \"old\": \"And the test is not for Paul only — your understanding of any verse must be tested against every other verse, for __“at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established”__ (Deuteronomy 19:15): one verse cannot make a doctrine.\",\n      \"new\": \"The test is not for Paul only — your understanding of any verse must be tested against every other verse, for __“at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established”__ (Deuteronomy 19:15): one verse cannot make a doctrine.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-opening And in author prose.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And. Dropping the conjunction keeps the claim intact and assertive.\"\n    },\n    {\n      \"old\": \"But first we must prepare the ground by explaining the difference between a word and a symbol.\",\n      \"new\": \"First we must prepare the ground by explaining the difference between a word and a symbol.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-opening But in author prose.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with But. The shortened form preserves voice and density.\"\n    },\n    {\n      \"old\": \"And because the meaning lives in the relationships between passages rather than in the label, it survives translation: trade the English word for the Hebrew or the Greek and the pattern still points to the same idea.\",\n      \"new\": \"Because the meaning lives in the relationships between passages rather than in the label, it survives translation: trade the English word for the Hebrew or the Greek and the pattern still points to the same idea.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-opening And in author prose.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And. The causal claim stands cleanly without the conjunction.\"\n    },\n    {\n      \"old\": \"That consistency is also the claim this book stakes its method on — a fabricated system would break somewhere under the weight of every occurrence being gathered and tested; this one, tested, holds.\",\n      \"new\": \"This consistency is also the claim this book stakes its method on — a fabricated system would break somewhere under the weight of every occurrence being gathered and tested; this one, tested, holds.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-opening That in author prose.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with That. “This consistency” keeps the forward reference and the assertive close.\"\n    },\n    {\n      \"old\": \"the sym:sym-harlot[harlot], the sym:sym-olive[vine], the shepherds, the sym:sym-wings[wings] keep their meanings across authors who never met.\",\n      \"new\": \"the sym:sym-harlot[harlot], the sym:sym-vine[vine], the shepherds, the sym:sym-wings[wings] keep their meanings across authors who never met.\",\n      \"type\": \"factual\",\n      \"severity\": \"high\",\n      \"summary\": \"Align the symbol key with its displayed label.\",\n      \"rationale\": \"The markup points at olive while printing vine, a broken internal link. Matching key and display to vine restores consistency with the visible list.\"\n    },\n    {\n      \"old\": \"and if you do not do the work to churn the milk into meat, you will remain immature at best — and at worst turn away entirely, like the crowds in Jesus’ day.\",\n      \"new\": \"and if you do not do the work to turn milk into meat, you will remain immature at best — and at worst turn away entirely, like the crowds in Jesus’ day.\",\n      \"type\": \"bad-metaphor\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace the physically wrong verb “churn” for milk-to-meat.\",\n      \"rationale\": \"Milk is churned into butter, not meat. “Turn” keeps the biblical milk/meat contrast without fighting the image.\"\n    },\n    {\n      \"old\": \"The New Testament's Greek had already passed through one layer of translation before it reached English, and the symbols still hold.\",\n      \"new\": \"The New Testament has already passed through one layer of translation by the time it reaches English, and the symbols still hold.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Correct the implication that the Greek itself was a translation layer.\",\n      \"rationale\": \"NT Greek is the composition language for most of the corpus; the translation layer is Greek-to-English. The reword keeps the survival-of-symbols claim without the factual slip.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk builds a dense, assertive case that milk is the word received and meat is the word done, chaining the dual witnesses of Matthew/Luke, Psalm 40, Isaiah’s butter, Hebrews 5, the fat/milk consonants, and the John 6 climb from bread to flesh to meat. The gospel-as-meat claim and the Corinthian dual serving of Christ crucified are tightly argued without hedging. Residual presenter staging still appears in mark that, notice that, Now go back, Mark that, and Watch. Multiple author sentences open with And, But, or That in house-style violation. Voice, density, and law-positive stance remain strong once those staging and open-word slips are cut.\",\n  \"proposals\": [\n    {\n      \"old\": \"And what is the will?\",\n      \"new\": \"What is the will?\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden And sentence open.\",\n      \"rationale\": \"Author prose must not begin with And. The question stands cleanly without it.\"\n    },\n    {\n      \"old\": \"And both evangelists wrote by the same Spirit — __“all scripture is given by inspiration of God”__ (2 Timothy 3:16) — so this is no reporter’s paraphrase: it is a divine equation, established at the mouth of two witnesses.\",\n      \"new\": \"Both evangelists wrote by the same Spirit — __“all scripture is given by inspiration of God”__ (2 Timothy 3:16) — so this is no reporter’s paraphrase: it is a divine equation, established at the mouth of two witnesses.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden And sentence open.\",\n      \"rationale\": \"House style bars And at the start of author prose. The claim is stronger without the conjunction.\"\n    },\n    {\n      \"old\": \"Nature supplies the picture — and mark that this step is an observation, not a verse: milk is food another body has already digested; the infant does no work, it swallows what was broken down for it, and grows.\",\n      \"new\": \"Nature supplies the picture — an observation, not a verse: milk is food another body has already digested; the infant does no work, it swallows what was broken down for it, and grows.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Cut director cue 'mark that'.\",\n      \"rationale\": \"Mark that is forbidden presenter staging. The observation stands without the cue.\"\n    },\n    {\n      \"old\": \"But poured into a false doctrine it sets just as agreeably, shaped to whatever the hearer wants to hear — __“after their own lusts shall they heap to themselves teachers, having *itching ears*”__ (2 Timothy 4:3) — and that is why the babe stays __“tossed to and fro, and carried about with every sym:sym-wind[wind] of doctrine”__ (Ephesians 4:14) until he is weaned.\",\n      \"new\": \"Poured into a false doctrine it sets just as agreeably, shaped to whatever the hearer wants to hear — __“after their own lusts shall they heap to themselves teachers, having *itching ears*”__ (2 Timothy 4:3) — and that is why the babe stays __“tossed to and fro, and carried about with every sym:sym-wind[wind] of doctrine”__ (Ephesians 4:14) until he is weaned.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden But sentence open.\",\n      \"rationale\": \"Author prose must not begin with But. The contrast remains clear from the prior sentence.\"\n    },\n    {\n      \"old\": \"Now go back to the synagogue at Capernaum, where this book began — and notice that Jesus began with sym:sym-bread[bread].\",\n      \"new\": \"Return to the synagogue at Capernaum, where this book began: Jesus began with sym:sym-bread[bread].\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Now go back and notice that staging.\",\n      \"rationale\": \"Now and notice that are forbidden director cues. The return to Capernaum and the bread claim stay intact.\"\n    },\n    {\n      \"old\": \"Mark that distinction, because the common teaching runs exactly backwards.\",\n      \"new\": \"The distinction is decisive, because the common teaching runs exactly backwards.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Cut director cue 'Mark that'.\",\n      \"rationale\": \"Mark that is forbidden presenter staging. The assertion of the distinction is stronger without the cue.\"\n    },\n    {\n      \"old\": \"That is not how Scripture speaks of it.\",\n      \"new\": \"Scripture does not speak of it that way.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden That sentence open.\",\n      \"rationale\": \"Author prose must not begin with That. The denial of the common teaching remains direct.\"\n    },\n    {\n      \"old\": \"Watch Paul serve both tables from one message.\",\n      \"new\": \"Paul serves both tables from one message.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Cut director cue 'Watch'.\",\n      \"rationale\": \"Watch is forbidden presenter staging. The claim about Paul’s dual serving stands without the cue.\"\n    }\n  ]\n}"
+    }
+  ]
+}

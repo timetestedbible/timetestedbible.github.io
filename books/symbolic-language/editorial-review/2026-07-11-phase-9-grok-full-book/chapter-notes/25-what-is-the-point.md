@@ -1,0 +1,3 @@
+# What Is the Point?
+
+This chunk is dense, assertive, and law-positive: the letters-vs-points case is built cleanly from jot-and-tittle, Psalm 40/Hebrews 10, milk/fat, and Psalm 22, with the Masoretic fence and synagogue pressure treated as evidence rather than speculation. Scripture blocks and image callouts are well placed and the closing stake on obedience lands hard. Residual defects are almost all house-style: four author sentences open with That/And/But, and two presenter cues (“Now hear… mark”, “so read”) still stage the reader. No doctrine, quote wording, or AI stock vocabulary needs reopening.

@@ -1,0 +1,51 @@
+{
+  "file": "books/symbolic-language/16x-weeping-and-gnashing.adoc",
+  "title": "The Weeping and the Gnashing",
+  "notes": [
+    "The chapter’s core case is dense and law-positive: the definite articles, Psalm 112 tableau, gnashing as hatred of the righteous, and the seven insider judgments lock together cleanly. Hebrew Matthew’s grave vocabulary and the Stephen rehearsal give the argument real force without padding. Residual presenter staging still surfaces in two places (“Hold the two halves,” “Now walk… and mark”), one author sentence opens with And, and “roles’ endings not yet dealt” is incomplete English that blurs an otherwise sharp historical parallel. Surgical cuts restore the house voice while leaving every doctrinal claim and every scripture quotation untouched."
+  ],
+  "proposals": [
+    {
+      "old": "Hold the two halves of that scene together: the council gnashing, the righteous man seeing the kingdom opened.",
+      "new": "The two halves of that scene stand together: the council gnashing, the righteous man seeing the kingdom opened.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove banned director cue “Hold the…”.",
+      "rationale": "House style forbids presenter staging of the form Hold that / Hold the. The revision keeps the identical claim in assertive prose.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now walk the seven texts and mark who is cast out — for it is never the heathen:",
+      "new": "The seven texts cast out the same class of people — never the heathen:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove presenter staging “Now walk… and mark”.",
+      "rationale": "“Now walk” and “mark who” are explicit director cues banned by house style. The replacement asserts the same fact without the stage direction.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Matthew 24:51 closes a loop the psalms opened: the evil servant's portion is __“with the hypocrites”__ — and Psalm 35:16's gnashers are the __“*hypocritical* mockers.”__",
+      "new": "Matthew 24:51 closes a loop the psalms opened: the evil servant's portion is __“with the hypocrites”__ — and Psalm 35:16's gnashers are the __“*hypocritical* mockers.”__",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Author prose must not open with And.",
+      "rationale": "House style forbids sentences in author prose that begin with And/But/That. Dropping the initial And leaves the claim and the scripture links intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "It is the tableau of Luke 13:28 rehearsed in history with the roles' endings not yet dealt — and at the end of the age the same scene stands final, with the sight given to the ones outside.",
+      "new": "It is the tableau of Luke 13:28 rehearsed in history before the roles receive their final endings — and at the end of the age the same scene stands final, with the sight given to the ones outside.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Repair incomplete phrase “roles' endings not yet dealt”.",
+      "rationale": "“Not yet dealt” is unfinished English that obscures the historical-versus-final contrast. The revision states the same idea cleanly without adding doctrine.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chapter’s core case is dense and law-positive: the definite articles, Psalm 112 tableau, gnashing as hatred of the righteous, and the seven insider judgments lock together cleanly. Hebrew Matthew’s grave vocabulary and the Stephen rehearsal give the argument real force without padding. Residual presenter staging still surfaces in two places (“Hold the two halves,” “Now walk… and mark”), one author sentence opens with And, and “roles’ endings not yet dealt” is incomplete English that blurs an otherwise sharp historical parallel. Surgical cuts restore the house voice while leaving every doctrinal claim and every scripture quotation untouched.\",\n  \"proposals\": [\n    {\n      \"old\": \"Hold the two halves of that scene together: the council gnashing, the righteous man seeing the kingdom opened.\",\n      \"new\": \"The two halves of that scene stand together: the council gnashing, the righteous man seeing the kingdom opened.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned director cue “Hold the…”.\",\n      \"rationale\": \"House style forbids presenter staging of the form Hold that / Hold the. The revision keeps the identical claim in assertive prose.\"\n    },\n    {\n      \"old\": \"Now walk the seven texts and mark who is cast out — for it is never the heathen:\",\n      \"new\": \"The seven texts cast out the same class of people — never the heathen:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove presenter staging “Now walk… and mark”.\",\n      \"rationale\": \"“Now walk” and “mark who” are explicit director cues banned by house style. The replacement asserts the same fact without the stage direction.\"\n    },\n    {\n      \"old\": \"And Matthew 24:51 closes a loop the psalms opened: the evil servant's portion is __“with the hypocrites”__ — and Psalm 35:16's gnashers are the __“*hypocritical* mockers.”__\",\n      \"new\": \"Matthew 24:51 closes a loop the psalms opened: the evil servant's portion is __“with the hypocrites”__ — and Psalm 35:16's gnashers are the __“*hypocritical* mockers.”__\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Author prose must not open with And.\",\n      \"rationale\": \"House style forbids sentences in author prose that begin with And/But/That. Dropping the initial And leaves the claim and the scripture links intact.\"\n    },\n    {\n      \"old\": \"It is the tableau of Luke 13:28 rehearsed in history with the roles' endings not yet dealt — and at the end of the age the same scene stands final, with the sight given to the ones outside.\",\n      \"new\": \"It is the tableau of Luke 13:28 rehearsed in history before the roles receive their final endings — and at the end of the age the same scene stands final, with the sight given to the ones outside.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Repair incomplete phrase “roles' endings not yet dealt”.\",\n      \"rationale\": \"“Not yet dealt” is unfinished English that obscures the historical-versus-final contrast. The revision states the same idea cleanly without adding doctrine.\"\n    }\n  ]\n}"
+    }
+  ]
+}

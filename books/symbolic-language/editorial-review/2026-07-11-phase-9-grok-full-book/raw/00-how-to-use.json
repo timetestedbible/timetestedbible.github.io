@@ -1,0 +1,42 @@
+{
+  "file": "books/symbolic-language/00-how-to-use.adoc",
+  "title": "How to Use This Book",
+  "notes": [
+    "This front-matter how-to is already dense, practical, and mostly clean: clear section heads, consistent first-person authorial voice in places, proper AsciiDoc/sym markup, no And/But/That sentence opens, no stock AI diction, and a strong closing method statement. The main defects are a vague pronoun whose antecedent is only implicit, a needless passive that breaks the surrounding first-person register, and a minor singular/plural slip on digital edition(s). No doctrine, scripture wording, or staging problems appear. Surgical fixes restore clarity and voice consistency without expanding the text."
+  ],
+  "proposals": [
+    {
+      "old": "Where it obscures a key word, I use a more literal rendering and say so, sometimes going beneath English to Hebrew or Greek, including unpointed Hebrew consonants where a second meaning stands inside the first.",
+      "new": "Where the King James Version obscures a key word, I use a more literal rendering and say so, sometimes going beneath English to Hebrew or Greek, including unpointed Hebrew consonants where a second meaning stands inside the first.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Replace the vague pronoun with its clear antecedent.",
+      "rationale": "\"It\" has no explicit noun in the sentence; naming the King James Version removes the ambiguity while preserving the original claim and length.",
+      "_chunk": 1
+    },
+    {
+      "old": "It is an AI-assisted editorial estimate: Claude was asked to summarize common Christian readings and assign approximate shares, so read the numbers as relative consensus, not measurement.",
+      "new": "It is an AI-assisted editorial estimate: I asked Claude to summarize common Christian readings and assign approximate shares, so read the numbers as relative consensus, not measurement.",
+      "type": "tone-register",
+      "severity": "medium",
+      "summary": "Restore first-person voice for the author's own editorial step.",
+      "rationale": "The chapter already uses \"I\" and \"my\" for authorial choices; the passive \"Claude was asked\" is inconsistent and needlessly distant.",
+      "_chunk": 1
+    },
+    {
+      "old": "This book is offered in print and as a free digital edition.",
+      "new": "This book is offered in print and as free digital editions.",
+      "type": "grammar",
+      "severity": "low",
+      "summary": "Match number with the following sentence.",
+      "rationale": "The next sentence already says \"digital editions\" plural; aligning the count removes a small inconsistency.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This front-matter how-to is already dense, practical, and mostly clean: clear section heads, consistent first-person authorial voice in places, proper AsciiDoc/sym markup, no And/But/That sentence opens, no stock AI diction, and a strong closing method statement. The main defects are a vague pronoun whose antecedent is only implicit, a needless passive that breaks the surrounding first-person register, and a minor singular/plural slip on digital edition(s). No doctrine, scripture wording, or staging problems appear. Surgical fixes restore clarity and voice consistency without expanding the text.\",\n  \"proposals\": [\n    {\n      \"old\": \"Where it obscures a key word, I use a more literal rendering and say so, sometimes going beneath English to Hebrew or Greek, including unpointed Hebrew consonants where a second meaning stands inside the first.\",\n      \"new\": \"Where the King James Version obscures a key word, I use a more literal rendering and say so, sometimes going beneath English to Hebrew or Greek, including unpointed Hebrew consonants where a second meaning stands inside the first.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace the vague pronoun with its clear antecedent.\",\n      \"rationale\": \"\\\"It\\\" has no explicit noun in the sentence; naming the King James Version removes the ambiguity while preserving the original claim and length.\"\n    },\n    {\n      \"old\": \"It is an AI-assisted editorial estimate: Claude was asked to summarize common Christian readings and assign approximate shares, so read the numbers as relative consensus, not measurement.\",\n      \"new\": \"It is an AI-assisted editorial estimate: I asked Claude to summarize common Christian readings and assign approximate shares, so read the numbers as relative consensus, not measurement.\",\n      \"type\": \"tone-register\",\n      \"severity\": \"medium\",\n      \"summary\": \"Restore first-person voice for the author's own editorial step.\",\n      \"rationale\": \"The chapter already uses \\\"I\\\" and \\\"my\\\" for authorial choices; the passive \\\"Claude was asked\\\" is inconsistent and needlessly distant.\"\n    },\n    {\n      \"old\": \"This book is offered in print and as a free digital edition.\",\n      \"new\": \"This book is offered in print and as free digital editions.\",\n      \"type\": \"grammar\",\n      \"severity\": \"low\",\n      \"summary\": \"Match number with the following sentence.\",\n      \"rationale\": \"The next sentence already says \\\"digital editions\\\" plural; aligning the count removes a small inconsistency.\"\n    }\n  ]\n}"
+    }
+  ]
+}

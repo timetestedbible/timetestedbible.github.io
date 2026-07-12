@@ -444,6 +444,42 @@ printed order — annotate/reorder freely; chapters are movable blocks).
     - Paul's shipwreck enacts the island symbol
     - Living water: opposite symbol; heals the sea
 
+- **The Ship** _(Part Six — Symbol Studies)_  ⟶ establishes earthly rule riding upon the sea of peoples
+  - A City Built as a Ship
+    - Ezekiel 27 addresses Tyre and constructs her as one vessel
+    - Inhabitants are mariners; wise men pilots; allies and armies aboard
+    - International wealth and commerce form the cargo
+    - East wind breaks "thee"; the destroyed ship is the city
+  - Position and Scale
+    - Sea = the people in mass beneath
+    - Ship = earthly organized authority riding upon and directing them
+    - Fish lives within the sea; ship rides above it
+    - One ship is one polity; many ships preserve separate borders
+  - The King Above the Sea
+    - Earthly rulers require a constructed vessel
+    - Job 9: God alone treads the waves; Jesus walks directly upon them
+    - Sailing with the disciples places the vessel under its true Head
+    - Mark 4:1 seats the Teacher above the multitude before the parables
+  - When the Ship Breaks
+    - Acts 27 loses the ship but saves every soul aboard
+    - Polity and people joined but not identical
+    - Formal officers retain titles; the word through Paul truly pilots
+  - Tyre's Wake Reaches Babylon
+    - Isaiah 23: mart of nations, merchant princes, kingdoms shaken
+    - Revelation 18 repeats Ezekiel's cargo, sailors, dust, and lament
+  - The Ark Carries a House
+    - _Tevah_, not the ordinary ship word
+    - Covenant vessel carries Noah's house and every creature-kind
+    - Related witness of preservation, not the lexical definition
+  - One Man for the Ship
+    - Jonah's storm seeks one man while the vessel is threatened
+    - John 11: Rome may take place and nation
+    - Caiaphas surrenders one man so the ship of state may not perish
+  - Ancient Corroboration
+    - Alcaeus, Aeschylus, Plato, and Horace
+    - Mediterranean readers already knew the political metaphor
+    - External recognition supports; Ezekiel defines
+
 
 # Part III — Signs
 
@@ -971,55 +1007,68 @@ printed order — annotate/reorder freely; chapters are movable blocks).
     - Ruth gleaned corner, redeemed under wing
 
 - **The Name**  ⟶ overturns: Vain-taking = cursing; "in Jesus' name" formula
-  - Opening + In My Name
-    - Two common errors treat name as sound
-    - John 14:13: 'whatsoever' falsifies the formula
-    - 'In my name' = inside the relationship
-    - Exodus 23:21: 'my name is in him'
-    - That name-bearing Angel is pre-incarnate Christ
-    - 'Will not pardon' — pardon awaits incarnation
-    - ⚡ Angel's 'place prepared' anticipates John 14:2-3
-  - Lord, Lord
-    - Matthew 7:22: heaviest name-users are rejected
-    - 'Iniquity' = anomia: lawlessness
-    - Sound without substance; name isn't lip-word
-  - The Name Is the Covenant
-    - ⚡ David says ark; God answers 'name'
-    - The name is the covenant itself
-    - 'House' wordplay: building and family line
-    - Fulfilled three ways: flesh, stone, covenant
-    - Zechariah 6:12: name, house, throne united
-    - ⚡ Acts 4:12: no other covenant saves
-    - ⚡ Exodus 6:3: Abraham heard, hadn't covenanted
+  - What a Name Is Not
+    - John 14:13: unanswered prayers expose the missing definition
+    - The phrase tacked onto a prayer is not an incantation
+    - Not a pronunciation or sound
+    - Not a label detached from substance
+    - Matthew 7:22-23: claimants think their wonders were done in His Name
+    - Deuteronomy 13: even a real sign is false when it leads from obedience
+  - The Ark Bears the Name
+    - 2 Samuel 6:2: the Name called upon the ark between the cherubim
+    - David asks for a house for the ark; God answers with a house for His Name
+    - Solomon places the ark in the house built for the Name
+  - The 3 Things Inside
+    - Manna = the Word (Deuteronomy 8:3)
+    - Stone tables = covenant law (Deuteronomy 4:13)
+    - Aaron's budded rod = appointed, fruitful priesthood (Numbers 17)
+    - ⚡ A Name carries Word, covenant, and fruitful priesthood appointed by its Head
+  - The Head and His House
+    - House = building and people under a head
+    - Zechariah 6: Branch builds temple, rules, and serves as priest
+    - Wife takes husband's Name by entering his house and obeying him
+    - 1 Peter 3:6: Sarah obeyed Abraham, calling him lord
+    - 1 John 2:3-4: the Head is known by keeping His commandments
+  - In My Name
+    - John 14:13: 'whatsoever' rules out a spoken formula
+    - Colossians 3:17: whole life lived under the Name
+    - 1 John 5:14: prayer according to His will
+    - Proverbs 28:9: prayer with ear turned from law is abomination
+  - Applying the Name to the Lord's Prayer
+    - The established symbol unlocks a familiar passage
+    - Ezekiel 36: Name profaned or sanctified in the people who bear it
+    - Thy will be done: the Head obeyed
+    - Daily bread: manna/Word
+    - Debts forgiven: covenant mercy practiced
+    - Deliverance: High Priest intercedes
   - Taking It in Vain
-    - 'Vain' = shav: emptiness, for nothing
-    - Sin of the life, not mouth
-    - ⚡ Proverbs 28:9: lawless prayer is abomination
-    - ⚡ Most vain-taking happens inside the church
-    - Ezekiel 36:20: profaned by faithless wearing
-    - God hallows name by sanctifying wearers
-  - The Lord's Prayer
-    - ⚡ 'Hallowed be': imperative demanding Ezekiel 36:23
-    - Name hallowed when Bearer's will done
-    - Bread = word; manna proves law-walking
-    - Debts = sins; release must be practiced
-    - ⚡ 'Tempt' = 'prove': Genesis 22:1, Exodus 16:4
-    - 'From evil' = the evil one, personal
-    - The prayer: covenant renewed in miniature
-  - Keeping the Name + The Counterfeit Name
-    - Deuteronomy 28:58 binds law-keeping to name
-    - Revelation 14: commandments plus Father's forehead-name
-    - Babel: 'let us make us a name'
-    - ⚡ Made name versus given name: Bible's war
-    - ⚡ Revelation: no unmarked forehead exists
-  - Called by His Name
-    - Isaiah 4:1: 'called by name' = married
-    - ⚡ Seven women = churches wanting name only
-    - Ruth asks kanaph — wing, covenant edge
-    - Ezekiel 16:8: God weds by spread skirt
-    - ⚡ Tzitzit stitch commandments into the covering
-    - ⚡ Ruth's wedding raises David's name-house
-    - Close: name = covenant owned; marriage next
+    - Claiming the Name while rejecting, replacing, or removing a pillar
+    - Deuteronomy 28:58 binds law-keeping to the Name
+    - Isaiah 4:1: women want the Name with their own bread and garment
+  - The Counterfeit Name
+    - Substitutes a different word, covenant, or priesthood
+    - Babel's made Name versus Abraham's God-given Name
+    - Beast's forehead-name versus Father's Name and commandments
+
+- **The Tower** _(Part Six — Symbol Studies)_  ⟶ separates what the Name carries from what its stronghold does
+  - Strong Tower
+    - Proverbs 18:10: the LORD's Name protects the house gathered inside
+    - Husband's protection of wife under his Name
+    - Proverbs 18:11: wealth is a rival strong city in one's own conceit
+  - Babel's Tower
+    - One common word, one body, one city, one self-made Name
+    - God breaks the common word; the people scatter; construction stops
+  - Unfinished Tower
+    - Luke 14: count the cost inside the 3 disciple gates
+    - Shallow soil begins joyfully but has no root to endure the test
+    - ⚡ Unfinished tower = shallow soil made architectural
+  - Vineyard Tower
+    - Isaiah defines vineyard as house of Israel
+    - Tower in the midst = sanctuary, house for the Name
+    - Husbandmen reject the Son; the house is left desolate
+  - Fallen Tower
+    - Siloam = Sent; tower warns the city that rejects the Sent One
+    - Fallen tower = covenant stronghold broken, emptied, or judged
 
 - **The Remnant**  ⟶ overturns: The assumption most professing believers are saved
   - The Question and the Anchor: Elijah's Seven Thousand
@@ -1799,6 +1848,24 @@ printed order — annotate/reorder freely; chapters are movable blocks).
     - Seed passes the marked member (observation)
     - ⚡ Plow and knife: one operation (Jer 4:3-4)
 
+- **Short Study: The Anointing**  ⟶ recovers: appointment, not an undefined spiritual substance
+  - Marked for a work
+    - ⚡ Ex 28:41: anoint them that they may minister
+    - Objects anointed: tabernacle, ark, altars, laver, vessels
+  - Anointed after the Spirit departed
+    - ⚡ Saul remains the LORD's anointed after 1 Sam 16:14
+    - ⚡ Cyrus is God's anointed though he does not know Him
+    - Patriarchs protected as God's anointed without recorded oiling
+  - Anointed with the Spirit
+    - ⚡ Acts 10:38: appointment, power, and resulting work distinguished
+    - chrio for sacred appointment; aleipho for ordinary oiling
+  - Oil for the light, oil for the office
+    - ⚡ Ex 25:6 lists lamp oil and anointing oil separately
+    - Pure beaten lamp oil; restricted compound for anointing
+  - The Anointed One
+    - Mashiach and Christos: Messiah and Christ mean Anointed One
+    - Definition: marked as God's own and appointed to a stated work
+
 - **Appendix: Butter**  ⟶ overturns: butter as mere abundance imagery
   - The discernment diet
     - ⚡ Isa 7:15: butter teaches refusing evil
@@ -1811,6 +1878,48 @@ printed order — annotate/reorder freely; chapters are movable blocks).
   - A lordly dish
     - Judg 5:25: water, milk, butter ladder
     - Living-water question marked, pending study
+
+- **The End of the Law**  ⟶ defensive conclusion: Paul abolished God's law
+  - The End of the Commandment
+    - Telos: outcome, destination, purpose
+    - ⚡ Love is commandment's stated end
+    - Christ is law's embodied aim
+    - Faith establishes, never voids, the law
+  - Paul Names Different Laws
+    - Law of God; law of sin
+    - Law of Spirit; law of faith
+    - Law of Christ; commands of men
+    - Modifiers control the noun
+    - Human authority valid within God's bounds
+  - Work Is Not Obedience
+    - Work names deed; obedience names relation
+    - ⚡ Complete obedience earns no wages
+    - Romans excludes debt-claims, not duty
+    - James: work makes faith visible
+    - Gift creates the commanded walk
+  - Every Work in Context
+    - Romans: God's law explicit
+    - Galatians: circumcision-party application
+    - Some acts remain unnamed, ambiguous
+    - ⚡ Circumcision distinguished from God's commands
+  - Not Under the Law
+    - Paul forbids the license inference
+    - Believer dies; law does not
+    - Flesh was weak; Spirit fulfills righteousness
+    - Led by Spirit, away from flesh
+  - Curse, Schoolmaster, and Letter
+    - Redeemed from curse, not instruction
+    - Law identifies but cannot give life
+    - Custodian ends when son matures
+    - Condemnation yields to inward writing
+    - Changed priesthood, laws written inwardly
+  - Ordinances, Days, and Verdict
+    - Enmity and middle wall abolished
+    - Debt-note nailed; human ordinances refused
+    - Shadows still point to coming body
+    - Pagan elements cannot equal Sinai
+    - Acts council refuses salvation-price
+    - ⚡ Paul publicly kept the law
 
 # Flash cadence audit (flashes per chapter)
 
@@ -1826,6 +1935,7 @@ printed order — annotate/reorder freely; chapters are movable blocks).
 - The Sign of Jonah: 14
 - The Fall of Babylon: 11
 - Knowing, Faith, Love, and Belief: 6
+- The End of the Law: 5
 - Gospel: 8
 - The Way, The Truth, and The Life: 11
 - Garments: 8

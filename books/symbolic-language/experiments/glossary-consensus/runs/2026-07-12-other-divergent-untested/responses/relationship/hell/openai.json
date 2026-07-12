@@ -1,0 +1,195 @@
+{
+  "id": "resp_0b1f339ad4333326006a53540454c0819098a14b66ddbfb20c",
+  "object": "response",
+  "created_at": 1783845892,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845910,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b1f339ad4333326006a535404cdec81909327fcb4371b013c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0b1f339ad4333326006a53540ef0148190b3afd2f1ca183c0a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Hell primarily denotes final divine judgment and the negative destiny of the unrepentant, traditionally understood as eternal conscious punishment or separation from God. The consensus also recognizes that English “hell” can conflate Sheol/Hades with Gehenna and that annihilationism is a minority interpretation.\",\"book_summary\":\"The English word “hell” covers two distinct biblical referents: Sheol/Hades, the grave or realm of the dead encompassing righteous and wicked, and Gehenna, a destructive judgment.\",\"consensus_core_identification\":\"Final punitive judgment or exclusion from God for the wicked.\",\"book_core_identification\":\"A polysemous English label for both the common grave of the dead and destructive divine judgment.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book adds Sheol/Hades passages concerning the grave and the righteous dead to the cases labeled “hell,” while separating them from punitive Gehenna. It also specifies Gehenna as judgment that destroys rather than identifying it with eternal conscious punishment.\",\"material_contradiction\":\"The book does not deny that some “hell” texts concern final judgment, so it does not wholly replace the consensus referent. It does reject treating every occurrence of English “hell” as that referent and departs from the dominant eternal-conscious-punishment account by describing Gehenna as destructive judgment.\",\"rationale\":\"This is a refinement rather than a match because the book materially redraws the term’s boundaries and distinguishes two underlying biblical words. It is not divergent because final divine judgment remains one of its central referents, and both the lexical distinction and destructive interpretation are recognizable positions already represented in the consensus responses.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Psalm 16:10 and Matthew 10:28 illustrate differing uses and support distinguishing Sheol/Hades from Gehenna, but these two references alone do not fully establish that Sheol/Hades encompasses righteous and wicked alike or that Gehenna necessarily means annihilation rather than severe or final punishment.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3963,
+    "input_tokens_details": {
+      "cache_write_tokens": 3960,
+      "cached_tokens": 0
+    },
+    "output_tokens": 957,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4920
+  },
+  "user": null,
+  "metadata": {}
+}

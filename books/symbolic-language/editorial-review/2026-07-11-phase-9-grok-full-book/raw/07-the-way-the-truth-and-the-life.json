@@ -1,0 +1,119 @@
+{
+  "file": "books/symbolic-language/07-the-way-the-truth-and-the-life.adoc",
+  "title": "The Way, The Truth, and The Life",
+  "notes": [
+    "This chunk is strong: dense symbol chaining, law-positive voice, and a clean three-aspect assembly of way/truth/life into one Torah reality, with the highway and door sections landing hard. Scripture blocks and footnote discipline are clean, and the prosphatos rendering is properly footnoted rather than smuggled. Main defects are house-style sentence-open violations (But/And starts) and residual presenter staging (Note too / Now see / Now return / Take the three). A few section openers are slightly inconsistent in register; fix those surgically and the chapter voice stays intact.",
+    "This chunk tightly binds the I-am claims to the gospel-as-law thesis, ending with strong parallel structure and a clean handoff to the Name chapter. Voice stays dense, assertive, and law-positive with no AI padding or sentence-open violations. Scripture quotes and AsciiDoc markup are clean. Residual defects are a presenter staging cue, an incomplete idiom around 'made to sound,' and inverted phrasing that slightly blurs 'the standard walking.' No doctrine or factual mismatches appear."
+  ],
+  "proposals": [
+    {
+      "old": "But He has named _three_ things, not one, each a word Scripture has already filled with meaning; and the small word fastened to each is _the_ — not _a_ way, _a_ truth, _a_ life, but _the_, the particular one God defines.",
+      "new": "He has named _three_ things, not one, each a word Scripture has already filled with meaning; and the small word fastened to each is _the_ — not _a_ way, _a_ truth, _a_ life, but _the_ — the particular one God defines.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned sentence-open But and clean the appositive dash.",
+      "rationale": "Author prose may not open with But. The second em-dash also tightens the appositive after _the_ without changing meaning.",
+      "_chunk": 1
+    },
+    {
+      "old": "Note, too, where the road actually leads: He says __“unto the Father,”__ not __“to heaven.”__",
+      "new": "The road leads __“unto the Father,”__ not __“to heaven.”__",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Cut presenter cue Note too and assert the claim directly.",
+      "rationale": "Note too is a director cue in the Notice that family. The shortened line keeps the contrast and the double-underscore markup.",
+      "_chunk": 1
+    },
+    {
+      "old": "Take the three in the order He gave them.",
+      "new": "The three come in the order He gave them.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace instructional Take the three with a plain assertion.",
+      "rationale": "The original is a stage direction to the reader. The rewrite keeps the transition into the three sections without the cue.",
+      "_chunk": 1
+    },
+    {
+      "old": "Begin with __“the way.”__",
+      "new": "First, __“the way.”__",
+      "type": "tone-register",
+      "severity": "low",
+      "summary": "Align the first section opener with Next and Third.",
+      "rationale": "Begin with is mild staging and breaks the First/Next/Third pattern already used for the other two titles.",
+      "_chunk": 1
+    },
+    {
+      "old": "But Scripture says plainly what _the_ truth is:",
+      "new": "Scripture says plainly what _the_ truth is:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned sentence-open But.",
+      "rationale": "Author prose cannot start with But. Dropping it leaves the claim stronger and unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now see what Scripture marks a doorway with.",
+      "new": "Scripture marks a doorway with two marks.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace Now see staging with a direct claim.",
+      "rationale": "Now see is a banned presenter cue. The rewrite sets up the word-and-blood pair without directing the reader.",
+      "_chunk": 1
+    },
+    {
+      "old": "And on its posts is _spread_ the blood of the sym:sym-lamb[lamb]:",
+      "new": "On its posts is _spread_ the blood of the sym:sym-lamb[lamb]:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned sentence-open And.",
+      "rationale": "Author prose may not open with And. Parallelism with the prior On its posts is written line is preserved.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now return to where we began, and the three titles open.",
+      "new": "Return to the opening claim, and the three titles open.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Drop Now staging and name the return point cleanly.",
+      "rationale": "Now return is a director cue. The rewrite keeps the pivot into the embodied-Torah close without the stage direction.",
+      "_chunk": 1
+    },
+    {
+      "old": "Read through the symbols, it is simply this: there has only ever been _one_ way — one covenant-conduct, one standard, one life — and it now has a name.",
+      "new": "Through the symbols, it is simply this: there has only ever been _one_ way — one covenant-conduct, one standard, one life — and it now has a name.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove residual director cue that instructs the reader how to read.",
+      "rationale": "House style bans presenter staging of the 'Read that slowly' type. The claim can stand as direct assertion without the imperative.",
+      "_chunk": 2
+    },
+    {
+      "old": "The last line, then, is not the slammed door it is so often made to sound: __“no man cometh unto the Father, but by me.”__",
+      "new": "The last line, then, is not the slammed door it is so often made to sound like: __“no man cometh unto the Father, but by me.”__",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Complete the incomplete idiom 'made to sound.'",
+      "rationale": "English requires 'like' (or equivalent) after 'made to sound' when the following noun is the comparison. The fix restores grammar without changing force or metaphor.",
+      "_chunk": 2
+    },
+    {
+      "old": "He is the Torah embodied — the standard walking.",
+      "new": "He is the Torah embodied — the walking standard.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Restore natural English order for the appositive claim.",
+      "rationale": "'The standard walking' inverts expected order and can read as adjective + noun. 'The walking standard' states the same identification cleanly and keeps the density.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is strong: dense symbol chaining, law-positive voice, and a clean three-aspect assembly of way/truth/life into one Torah reality, with the highway and door sections landing hard. Scripture blocks and footnote discipline are clean, and the prosphatos rendering is properly footnoted rather than smuggled. Main defects are house-style sentence-open violations (But/And starts) and residual presenter staging (Note too / Now see / Now return / Take the three). A few section openers are slightly inconsistent in register; fix those surgically and the chapter voice stays intact.\",\n  \"proposals\": [\n    {\n      \"old\": \"But He has named _three_ things, not one, each a word Scripture has already filled with meaning; and the small word fastened to each is _the_ — not _a_ way, _a_ truth, _a_ life, but _the_, the particular one God defines.\",\n      \"new\": \"He has named _three_ things, not one, each a word Scripture has already filled with meaning; and the small word fastened to each is _the_ — not _a_ way, _a_ truth, _a_ life, but _the_ — the particular one God defines.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned sentence-open But and clean the appositive dash.\",\n      \"rationale\": \"Author prose may not open with But. The second em-dash also tightens the appositive after _the_ without changing meaning.\"\n    },\n    {\n      \"old\": \"Note, too, where the road actually leads: He says __“unto the Father,”__ not __“to heaven.”__\",\n      \"new\": \"The road leads __“unto the Father,”__ not __“to heaven.”__\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Cut presenter cue Note too and assert the claim directly.\",\n      \"rationale\": \"Note too is a director cue in the Notice that family. The shortened line keeps the contrast and the double-underscore markup.\"\n    },\n    {\n      \"old\": \"Take the three in the order He gave them.\",\n      \"new\": \"The three come in the order He gave them.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace instructional Take the three with a plain assertion.\",\n      \"rationale\": \"The original is a stage direction to the reader. The rewrite keeps the transition into the three sections without the cue.\"\n    },\n    {\n      \"old\": \"Begin with __“the way.”__\",\n      \"new\": \"First, __“the way.”__\",\n      \"type\": \"tone-register\",\n      \"severity\": \"low\",\n      \"summary\": \"Align the first section opener with Next and Third.\",\n      \"rationale\": \"Begin with is mild staging and breaks the First/Next/Third pattern already used for the other two titles.\"\n    },\n    {\n      \"old\": \"But Scripture says plainly what _the_ truth is:\",\n      \"new\": \"Scripture says plainly what _the_ truth is:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned sentence-open But.\",\n      \"rationale\": \"Author prose cannot start with But. Dropping it leaves the claim stronger and unchanged.\"\n    },\n    {\n      \"old\": \"Now see what Scripture marks a doorway with.\",\n      \"new\": \"Scripture marks a doorway with two marks.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace Now see staging with a direct claim.\",\n      \"rationale\": \"Now see is a banned presenter cue. The rewrite sets up the word-and-blood pair without directing the reader.\"\n    },\n    {\n      \"old\": \"And on its posts is _spread_ the blood of the sym:sym-lamb[lamb]:\",\n      \"new\": \"On its posts is _spread_ the blood of the sym:sym-lamb[lamb]:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned sentence-open And.\",\n      \"rationale\": \"Author prose may not open with And. Parallelism with the prior On its posts is written line is preserved.\"\n    },\n    {\n      \"old\": \"Now return to where we began, and the three titles open.\",\n      \"new\": \"Return to the opening claim, and the three titles open.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop Now staging and name the return point cleanly.\",\n      \"rationale\": \"Now return is a director cue. The rewrite keeps the pivot into the embodied-Torah close without the stage direction.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk tightly binds the I-am claims to the gospel-as-law thesis, ending with strong parallel structure and a clean handoff to the Name chapter. Voice stays dense, assertive, and law-positive with no AI padding or sentence-open violations. Scripture quotes and AsciiDoc markup are clean. Residual defects are a presenter staging cue, an incomplete idiom around 'made to sound,' and inverted phrasing that slightly blurs 'the standard walking.' No doctrine or factual mismatches appear.\",\n  \"proposals\": [\n    {\n      \"old\": \"Read through the symbols, it is simply this: there has only ever been _one_ way — one covenant-conduct, one standard, one life — and it now has a name.\",\n      \"new\": \"Through the symbols, it is simply this: there has only ever been _one_ way — one covenant-conduct, one standard, one life — and it now has a name.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove residual director cue that instructs the reader how to read.\",\n      \"rationale\": \"House style bans presenter staging of the 'Read that slowly' type. The claim can stand as direct assertion without the imperative.\"\n    },\n    {\n      \"old\": \"The last line, then, is not the slammed door it is so often made to sound: __“no man cometh unto the Father, but by me.”__\",\n      \"new\": \"The last line, then, is not the slammed door it is so often made to sound like: __“no man cometh unto the Father, but by me.”__\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Complete the incomplete idiom 'made to sound.'\",\n      \"rationale\": \"English requires 'like' (or equivalent) after 'made to sound' when the following noun is the comparison. The fix restores grammar without changing force or metaphor.\"\n    },\n    {\n      \"old\": \"He is the Torah embodied — the standard walking.\",\n      \"new\": \"He is the Torah embodied — the walking standard.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Restore natural English order for the appositive claim.\",\n      \"rationale\": \"'The standard walking' inverts expected order and can read as adjective + noun. 'The walking standard' states the same identification cleanly and keeps the density.\"\n    }\n  ]\n}"
+    }
+  ]
+}

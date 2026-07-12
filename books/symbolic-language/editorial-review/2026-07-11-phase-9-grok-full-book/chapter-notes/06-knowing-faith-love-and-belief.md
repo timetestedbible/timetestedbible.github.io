@@ -1,0 +1,5 @@
+# Love, Knowing, Faith, and Belief
+
+This chunk is dense, law-positive, and structurally clean: the four-office table, the love/hate axis, and the knowing-as-marriage argument land with force and almost no hedging. Scripture is woven tightly into the claims rather than parked beside them. Residual defects are mostly house-style: two author-prose sentences open with And/But, one explicit director cue (“Mark where”), two soft “Read…” imperatives that stage the reader, and a single inconsistent book abbreviation (Num). Fix those surgically and the voice stays intact.
+
+This chunk assembles sheep/voice/name with the four terms into one visible obedience, using dense scriptural chaining and the emunah picture of steady hands. The law-positive case that works equal commandment-keeping is assertive and clear. Residual defects are house-style And openings in author prose, plus presenter cues that break the assert-only register. One relative clause is slightly tangled. No quote, doctrine, or factual mismatches appear; the modern bias analogy is left as deliberate authorial choice.

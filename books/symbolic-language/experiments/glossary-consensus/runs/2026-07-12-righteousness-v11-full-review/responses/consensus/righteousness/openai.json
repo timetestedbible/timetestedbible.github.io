@@ -1,0 +1,173 @@
+{
+  "id": "resp_0952c0d9c42a6081006a5329fc4e788197b34c9185a6c3b2a4",
+  "object": "response",
+  "created_at": 1783835132,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783835158,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0952c0d9c42a6081006a5329fdec208197b8c5a0a6dbe9566f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0952c0d9c42a6081006a532a096c6081979093117ada55c226",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Moral and spiritual rightness before God: conformity to God’s character and will, including just conduct and, in salvation contexts, a right standing with God granted by grace.\",\"primary_basis\":[\"Genesis 15:6 — Abraham’s faith is counted as righteousness.\",\"Psalm 106:3 — righteousness is associated with justice and right conduct.\",\"Isaiah 61:10 — salvation and righteousness are pictured as garments bestowed by God.\",\"Matthew 5:6, 10, 20 — righteousness characterizes those who seek and live under God’s reign.\",\"Matthew 6:33 — believers are to seek God’s kingdom and righteousness.\",\"Romans 1:16–17 — the gospel reveals the righteousness of God and connects it with faith.\",\"Romans 3:21–26 — righteousness is manifested through Christ and received through faith.\",\"Romans 4:3–8 — righteousness is counted apart from works.\",\"2 Corinthians 5:21 — believers become the righteousness of God in Christ.\",\"Philippians 3:8–9 — Paul contrasts righteousness based on law with righteousness through faith in Christ.\",\"Ephesians 6:14 — righteousness is symbolized as a protective breastplate.\"],\"alternatives\":[{\"meaning\":\"A forensic or judicial status: God declares the believer righteous because of Christ, often explained as Christ’s righteousness being imputed or credited to the believer.\",\"basis\":[\"Romans 3:21–28\",\"Romans 4:3–8\",\"Romans 5:17–19\",\"2 Corinthians 5:21\",\"Philippians 3:9\"],\"prominence\":\"common\"},{\"meaning\":\"An imparted or transformative quality: grace actually makes a person righteous through sanctification, virtuous living, and participation in divine life, rather than righteousness being only a declared status.\",\"basis\":[\"Matthew 5:20\",\"Romans 6:13–19\",\"1 Corinthians 6:9–11\",\"James 2:14–26\",\"1 John 3:7\"],\"prominence\":\"common\"},{\"meaning\":\"Covenant faithfulness or covenant membership: righteousness denotes fidelity to covenant obligations, and justification identifies those recognized as members of God’s covenant people.\",\"basis\":[\"Genesis 15:6\",\"Deuteronomy 6:25\",\"Psalm 143:1–2\",\"Romans 3:1–6\",\"Galatians 2:15–21\"],\"prominence\":\"minority\"},{\"meaning\":\"Justice and right social order, especially protection of the poor and oppressed; righteousness is closely paired with justice rather than treated primarily as private morality or individual salvation.\",\"basis\":[\"Psalm 72:1–4\",\"Isaiah 1:16–17, 21–27\",\"Isaiah 5:7\",\"Amos 5:24\",\"Matthew 25:31–46\"],\"prominence\":\"common\"},{\"meaning\":\"God’s own saving justice and faithfulness: when Scripture speaks of the “righteousness of God,” it can signify God’s action in keeping promises, judging evil, and rescuing his people.\",\"basis\":[\"Psalm 98:1–3\",\"Isaiah 46:12–13\",\"Isaiah 51:5–8\",\"Romans 1:17\",\"Romans 3:25–26\"],\"prominence\":\"common\"},{\"meaning\":\"Christ himself as the believer’s righteousness: righteousness is interpreted christologically, with union with Christ being the source and embodiment of right standing and holy life.\",\"basis\":[\"Jeremiah 23:5–6\",\"1 Corinthians 1:30\",\"2 Corinthians 5:21\",\"Philippians 3:9\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus on the core idea of rightness according to God—encompassing right standing, right conduct, and justice. There is no settled consensus across Christian traditions on whether saving righteousness is principally declared, imputed, imparted, covenantal, participatory, or some combination of these.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1326,
+    "output_tokens_details": {
+      "reasoning_tokens": 499
+    },
+    "total_tokens": 1645
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,195 @@
+{
+  "id": "resp_0fe894157d824601006a53545b87388195b1f6154153414a84",
+  "object": "response",
+  "created_at": 1783845979,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783846001,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0fe894157d824601006a53545c9ed88195973c030a2a7c346d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0fe894157d824601006a535467e9608195a463fad1adf0bf98",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Storm/tempest is a multivalent image whose main accepted senses are divine judgment, trials or adversity, divine manifestation, and threatening chaos; context determines the application.\",\"book_summary\":\"Storm and the raging sea signify nations in collective turmoil, whose tumult Christ can sovereignly still.\",\"consensus_core_identification\":\"Overwhelming divine judgment, adversity, or chaotic disturbance.\",\"book_core_identification\":\"Political and collective turmoil among nations, figured as a raging sea or storm.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book selects national and political tumult from the broader consensus category of chaos or adversity. It excludes, for this entry, ordinary personal trials, generic divine judgment, and storm-theophany as the storm's direct identification.\",\"material_contradiction\":\"There is no necessary contradiction: turmoil among nations is a recognizable specific instance of the consensus's chaos, upheaval, and judgment-related senses. The disagreement concerns which cases define the symbol, not an incompatible central referent.\",\"rationale\":\"The consensus explicitly recognizes chaos, hostile powers, eschatological upheaval, and judgment involving nations. The book makes that collective-national application the defining meaning rather than one contextual possibility. This materially narrows the image's extension while retaining the broader category of turmoil or disorder, so the relationship is refined rather than divergent or novel.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The entry partly transfers sea-and-waters symbolism to storm/tempest. Isaiah 17 and Psalm 65 directly connect roaring waters with peoples or nations, but Mark 4 only records Christ calming a literal storm, and Luke 21 may juxtapose national distress and roaring seas rather than explicitly equate them. Thus the national identification is strongest in the prophetic parallels, while the Christological synthesis is more inferential.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3545,
+    "input_tokens_details": {
+      "cache_write_tokens": 3542,
+      "cached_tokens": 0
+    },
+    "output_tokens": 907,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4452
+  },
+  "user": null,
+  "metadata": {}
+}

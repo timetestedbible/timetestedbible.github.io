@@ -1,0 +1,167 @@
+{
+  "created_at": 1783845900,
+  "completed_at": 1783845905,
+  "id": "407d2ab7-f6ee-9017-b870-eeed9242a8c7",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Mainstream Christian teaching identifies Hell primarily as the final place or state of divine punishment, exclusion from God, and judgment for the unrepentant wicked (traditionally eternal conscious torment), symbolized by Gehenna fire imagery; alternatives include annihilationism, universalism, metaphorical/relational readings, and the common scholarly distinction that English 'hell' conflates Sheol/Hades with Gehenna.\",\n  \"book_summary\": \"One English word laid over two different things—Sheol/Hades (the grave that swallows righteous and wicked alike) and Gehenna (the judgment that destroys)—so that the doctrine changes with the word beneath; commonly taught is eternal conscious punishment and separation from God.\",\n  \"consensus_core_identification\": \"Final divine judgment/punishment and separation from God for the unrepentant (Gehenna-centered), with Sheol/Hades often noted as a distinct intermediate realm or grave.\",\n  \"book_core_identification\": \"An English umbrella term covering two distinct biblical referents: Sheol/Hades as the grave for all and Gehenna as the destroying judgment.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book treats Sheol/Hades and Gehenna as separate referents under one English word, so 'hell' doctrine shifts with the underlying term; consensus primarily anchors hell to final punitive Gehenna while listing the lexical distinction as a common alternative rather than the primary definition.\",\n  \"material_contradiction\": \"None at core; both recognize the final-judgment referent and the Sheol/Hades vs. Gehenna distinction, but the book elevates the dual-referent observation as the entry's essence and notes that common teaching of eternal conscious punishment follows from the conflation.\",\n  \"rationale\": \"Consensus primary meaning centers on Gehenna final punishment while repeatedly listing the Sheol/Hades–Gehenna lexical distinction as common; the book preserves that distinction and the judgment referent but makes the dual overlay and resulting doctrinal shift the core identification, thereby narrowing and reclassifying boundaries around which biblical cases count as 'hell' without replacing the central category of judgment/separation.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The book's emphasis on dual referents merely restates a common scholarly alternative already inside the consensus rather than refining the primary Gehenna-punishment core, so the relation could be scored MATCH or NOVEL depending on weight given to the common-view note.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_407d2ab7-f6ee-9017-b870-eeed9242a8c7",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4328,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 569,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4897,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 118780000,
+    "context_details": {
+      "input_tokens": 4328,
+      "output_tokens": 569
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

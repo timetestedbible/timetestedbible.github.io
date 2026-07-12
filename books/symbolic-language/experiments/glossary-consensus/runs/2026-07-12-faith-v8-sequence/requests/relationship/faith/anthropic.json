@@ -1,0 +1,87 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "faith",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 9000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFaith\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'faith' (Greek pistis, Hebrew emunah) primarily denotes personal trust in and reliance upon God — and, in the New Testament, specifically trust in Jesus Christ and his saving work — rather than mere intellectual agreement. It is standardly defined as confident assurance in God's character and promises, the divinely enabled means by which a person receives salvation and is counted righteous ('justification by faith'), and the posture of dependence that characterizes the whole Christian life ('walking by faith, not by sight').\",\n  \"primary_basis\": [\n    \"Hebrews 11:1 ('faith is the assurance of things hoped for, the conviction of things not seen')\",\n    \"Hebrews 11:6 ('without faith it is impossible to please God')\",\n    \"Genesis 15:6 with Romans 4:3-5, 16-22 (Abraham believed God and it was counted to him as righteousness)\",\n    \"Habakkuk 2:4 with Romans 1:17, Galatians 3:11, Hebrews 10:38 ('the righteous shall live by faith')\",\n    \"Ephesians 2:8-9 (saved by grace through faith, not works)\",\n    \"Romans 10:9-10, 17 (faith comes by hearing; believing unto salvation)\",\n    \"Galatians 2:16 (justified by faith in Christ, not works of the law)\",\n    \"John 3:16 and John 20:31 (believing in the Son for eternal life)\",\n    \"Mark 11:22-24 and Matthew 17:20 (faith and prayer; faith as a mustard seed)\",\n    \"2 Corinthians 5:7 (we walk by faith, not by sight)\",\n    \"James 2:14-26 (faith without works is dead — used to define living faith as active trust)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Faith as fidelity or faithfulness — covenant loyalty and steadfast allegiance to God, emphasized in scholarship on pistis as 'allegiance' and in the 'faithfulness of Christ' (pistis Christou) reading of Paul (e.g., Romans 3:22, Galatians 2:16 read as Christ's own faithfulness rather than believers' faith in Christ).\",\n      \"basis\": [\n        \"Romans 3:22\",\n        \"Galatians 2:16, 20\",\n        \"Habakkuk 2:4 (emunah as faithfulness)\",\n        \"Revelation 2:10 ('be faithful unto death')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'The faith' as an objective body of doctrine — the deposit of apostolic teaching to be believed, guarded, and contended for (fides quae creditur), as distinct from the act of believing.\",\n      \"basis\": [\n        \"Jude 3 ('contend for the faith once for all delivered to the saints')\",\n        \"1 Timothy 4:1; 6:12\",\n        \"2 Timothy 4:7 ('I have kept the faith')\",\n        \"Acts 6:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as intellectual assent to revealed truths — the classical Catholic scholastic emphasis (Aquinas: assent of the intellect moved by the will under grace), which Protestant traditions supplement with the threefold notitia (knowledge), assensus (assent), fiducia (trust), insisting saving faith exceeds bare assent (citing James 2:19, 'even the demons believe').\",\n      \"basis\": [\n        \"James 2:19\",\n        \"Hebrews 11:6\",\n        \"John 20:31\",\n        \"Romans 10:9-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as a distinct charismatic gift — a special, extraordinary endowment of faith for miracles, listed among the gifts of the Spirit, and distinguished from saving faith.\",\n      \"basis\": [\n        \"1 Corinthians 12:9\",\n        \"1 Corinthians 13:2\",\n        \"Matthew 17:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as a spiritual force or power that, when spoken and exercised, brings about results (Word of Faith / prosperity teaching's reading of 'faith moves mountains' texts as a law-like mechanism).\",\n      \"basis\": [\n        \"Mark 11:22-24\",\n        \"Matthew 21:21-22\",\n        \"Hebrews 11:1 (read as faith being the 'substance' that materializes things)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Faith as existential commitment or 'ultimate concern' apart from propositional belief — a liberal/existentialist theological reading (e.g., Tillich, Bultmann) framing faith as authentic self-commitment rather than trust in specific historical claims.\",\n      \"basis\": [\n        \"Hebrews 11:1 (reinterpreted)\",\n        \"Broad appeal to the Abraham narratives as a 'leap' of commitment (Genesis 12; 22)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Strictly speaking, 'faith' is a theological concept rather than a symbol (like water, a lamb, or leaven), so its 'symbolic meaning' is really its doctrinal definition, which is unusually well settled: trust in God/Christ, especially as the instrument of justification. The main live disputes are not about the core definition but about (a) the relation of faith to works (Catholic/Protestant and Paul/James discussions), (b) whether Pauline pistis Christou means faith IN Christ or the faithfulness OF Christ (an active scholarly debate), and (c) whether faith is primarily trust, assent, allegiance, or some combination. The Word of Faith 'faith as force' reading is widely regarded by mainstream scholarship as a distortion, though it is popular in some charismatic circles.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Trusting reliance on God—especially confidence in Jesus Christ and his saving work—expressed through commitment, obedience, and hope rather than mere intellectual agreement.\",\n  \"primary_basis\": [\n    \"Hebrews 11:1, 6—faith is assurance regarding what is hoped for and conviction regarding what is unseen, grounded in approaching God.\",\n    \"Ephesians 2:8–9—salvation is received by grace through faith, not earned by works.\",\n    \"Romans 3:21–28; 5:1—justification and peace with God are associated with faith in Jesus Christ.\",\n    \"Galatians 2:16, 20—life and justification are described in relation to faith in Christ.\",\n    \"John 3:16; 20:30–31—believing in Christ is linked with eternal life.\",\n    \"Mark 11:22–24—faith denotes trust in God, particularly in prayer.\",\n    \"James 2:14–26—living faith is shown by corresponding action rather than remaining mere verbal assent.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Faithfulness, fidelity, or loyal allegiance to God or Christ. This reading emphasizes enduring covenant loyalty and obedient commitment, and is sometimes debated in passages traditionally translated as “faith in Christ.”\",\n      \"basis\": [\n        \"Habakkuk 2:4; Romans 1:17—the righteous live by faith or faithfulness.\",\n        \"Galatians 5:22—the same Greek word group can denote faithfulness.\",\n        \"Romans 3:22; Galatians 2:16—the phrase pistis Christou is variously interpreted as faith in Christ, Christ’s faithfulness, or participation in Christ’s fidelity.\",\n        \"Revelation 2:10, 13; 14:12—faith is closely associated with steadfast loyalty under pressure.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"“The faith” as the received body of Christian belief, apostolic teaching, or communal confession rather than an individual act of trust.\",\n      \"basis\": [\n        \"Jude 3—“the faith” was once for all entrusted to the saints.\",\n        \"Acts 6:7—people become obedient to “the faith.”\",\n        \"1 Timothy 4:1, 6; 2 Timothy 4:7—faith can denote the Christian message or confession preserved and followed.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as a special Spirit-given capacity for unusual confidence in God, distinguished from the faith ordinarily expected of Christians.\",\n      \"basis\": [\n        \"1 Corinthians 12:9—faith is listed among particular gifts of the Spirit.\",\n        \"1 Corinthians 13:2—exceptional faith capable of “moving mountains” is distinguished rhetorically.\",\n        \"Matthew 17:20—mustard-seed faith is associated with extraordinary efficacy.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Faith primarily as intellectual assent to revealed propositions or acceptance of doctrine.\",\n      \"basis\": [\n        \"Romans 10:9–10—belief includes confessing truths about Jesus and his resurrection.\",\n        \"1 Corinthians 15:1–5—the gospel received in faith contains definite claims about Christ’s death and resurrection.\",\n        \"James 2:19—doctrinal belief alone is acknowledged but judged insufficient, making this a component rather than the usual complete definition.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that faith centrally involves trustful reliance on God or Christ, but no single settled symbolic definition covers every biblical use. “Faith” is ordinarily treated as a theological disposition or relationship rather than as a symbol in the strict sense. Its semantic range also includes faithfulness, allegiance, a body of doctrine, and a particular spiritual gift.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Trusting reliance and confident assurance in God and His promises, centered on Jesus Christ for salvation and life (not mere intellectual assent)\",\n  \"primary_basis\": [\n    \"Hebrews 11:1\",\n    \"Ephesians 2:8-9\",\n    \"Romans 1:17 / Habakkuk 2:4\",\n    \"Romans 10:17\",\n    \"John 3:16\",\n    \"Galatians 2:16-20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Intellectual assent or mental agreement to propositions/doctrines about God\",\n      \"basis\": [\n        \"James 2:19\",\n        \"various creedal formulations\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Covenant faithfulness/loyalty (especially the faithfulness of Christ or of God, via pistis Christou debates)\",\n      \"basis\": [\n        \"Galatians 2:16\",\n        \"Romans 3:22\",\n        \"Philippians 3:9\",\n        \"OT uses of emunah\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A supernatural gift or infused virtue enabling belief and good works\",\n      \"basis\": [\n        \"1 Corinthians 12:9\",\n        \"Ephesians 2:8\",\n        \"classical Catholic/Thomistic teaching\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Living obedience and active fidelity demonstrated in works (contrasted with dead faith)\",\n      \"basis\": [\n        \"James 2:14-26\",\n        \"Hebrews 11 narrative examples\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching and most biblical interpretation, the core sense of faith (pistis/emunah) as trustful reliance on God/Christ is settled and dominant in preaching, confessions, and popular exposition. Nuances (assent vs. trust vs. faithfulness vs. gift) exist and are debated in academic and confessional settings, but they do not displace the primary meaning. The term functions more as a theological concept than a pure symbol, though it is sometimes paired with symbolic imagery (e.g., shield of faith).\"\n}\n\nBOOK ENTRY\nTrusting faithfulness — reliance on God's unseen promise held steady through obedience. Works do not purchase the promise; they enact and bring faith to maturity, and faith without them is dead.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: confident trust in God and His promises — the sole instrument of justification.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Hab 2:4; Heb 11:1, 8; Jas 2:17, 22; Rom 4:4-5; Eph 2:8-10) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nHabakkuk 2:4 — Behold, his soul which is lifted up is not upright in him: but the just shall live by his faith.\nHebrews 11:1 — Now faith is the substance of things hoped for, the evidence of things not seen.\nHebrews 11:8 — By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.\nJames 2:17 — Even so faith, if it hath not works, is dead, being alone.\nJames 2:22 — Seest thou how faith wrought with his works, and by works was faith made perfect?\nRomans 4:4 — Now to him that worketh is the reward not reckoned of grace, but of debt.\nRomans 4:5 — But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.\nEphesians 2:8 — For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:\nEphesians 2:9 — Not of works, lest any man should boast.\nEphesians 2:10 — For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.\n\nCLASSIFY THE RELATIONSHIP\n\n- MATCH: substantially the same meaning as the recognizable consensus.\n- REFINED: compatible with the consensus but materially sharper, narrower,\n  broader, or more precisely supported.\n- DIVERGENT: contradicts or displaces a recognizable common interpretation.\n- NOVEL: no recognizable consensus covers the book's central claim; the book\n  stakes a meaning not represented by the blind responses.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "7bc3fdf8c322209052498cb7b47dd7427e35ffe790823981debbd2bb020531c9",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-12-faith-v8-revised",
+      "request": "runs/2026-07-12-faith-v8-revised/requests/relationship/faith/anthropic.json"
+    }
+  }
+}

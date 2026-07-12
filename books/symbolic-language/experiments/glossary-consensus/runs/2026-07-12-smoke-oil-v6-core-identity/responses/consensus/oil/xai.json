@@ -1,0 +1,156 @@
+{
+  "created_at": 1783834643,
+  "completed_at": 1783834655,
+  "id": "687a7f6f-a4b6-9008-b9f7-4f7f75b78a4d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_687a7f6f-a4b6-9008-b9f7-4f7f75b78a4d",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for biblical symbolism of \"Oil (lamp oil)\". I must respond only with JSON matching the specified schema, no surrounding text.\n{\n  \"primary_symbolic_meaning\": \"The Holy Spirit, representing empowerment, anointing, and spiritual readiness or blessing.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the Holy Spirit (as the empowering, anointing presence of God that enables spiritual light, illumination, and readiness)\",\n  \"primary_basis\": [\n    \"Matthew 25:1-13 (parable of the ten virgins and their lamp oil)\",\n    \"Zechariah 4:1-14 (olive oil and golden lampstand as 'not by might nor by power, but by my Spirit')\",\n    \"Exodus 27:20-21 / Leviticus 24:1-4 (pure olive oil for the continually burning tabernacle lamp)\",\n    \"1 Samuel 16:13 (anointing oil and the Spirit of the Lord coming upon David)\",\n    \"Acts 10:38 / Isaiah 61:1 (anointing with the Holy Spirit)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"personal faith, spiritual preparedness, or inner grace that sustains readiness for Christ's return\",\n      \"basis\": [\"Matthew 25:1-13\"],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"joy, gladness, or blessing ('oil of gladness')\",\n      \"basis\": [\"Psalm 45:7 / Hebrews 1:9\", \"Isaiah 61:3\", \"Psalm 23:5\"],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"healing or medicinal provision\",\n      \"basis\": [\"James 5:14\", \"Luke 10:34\", \"Mark 6:13\"],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"consecration, kingship, or priestly/prophetic appointment\",\n      \"basis\": [\"Exodus 30:22-33\", \"1 Kings 19:16\", \"Psalm 89:20\"],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the Word of God or divine wisdom as light-giving fuel\",\n      \"basis\": [\"Psalm 119:105 (lamp imagery)\", \"general lamp metaphors\"],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching (patristic, Reformation, evangelical, and liturgical traditions), lamp oil is most consistently linked to the Holy Spirit, especially via the ten-virgins parable and Zechariah's vision; other senses (healing, joy, consecration) are well-attested for oil in general but secondary for the specific 'lamp oil' image. No major Christian stream treats the term as purely literal or devoid of symbolic weight.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_687a7f6f-a4b6-9008-b9f7-4f7f75b78a4d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1326,
+    "output_tokens_details": {
+      "reasoning_tokens": 742
+    },
+    "total_tokens": 1931,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 83980000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1326
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

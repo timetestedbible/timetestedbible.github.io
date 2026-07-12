@@ -1,0 +1,60 @@
+{
+  "file": "books/symbolic-language/23-the-fear-of-the-lord.adoc",
+  "title": "The Fear of the Lord",
+  "notes": [
+    "This chapter tightly equates the fear of the Lord with obedience, wisdom, and worship through dense scripture chains that land the law-positive case without hedging. The closing strip of every prior symbol back to the single command is strong and fitting as the end of Part Two. Issues are limited to two house-style sentence-open Ands, an awkward personification of the prior chapter as watching, an incomplete as-the-chapter-found construction, and one prepositional attachment that a comma resolves. Voice stays assertive, biblical images hold, and no doctrine or quoted-text problems appear."
+  ],
+  "proposals": [
+    {
+      "old": "And the renewed covenant writes this very fear where the law is written: __“I will make an *everlasting covenant* with them… I will put *my fear in their hearts*, that they shall *not depart* from me”__ (Jeremiah 32:40).",
+      "new": "The renewed covenant writes this very fear where the law is written: __“I will make an *everlasting covenant* with them… I will put *my fear in their hearts*, that they shall *not depart* from me”__ (Jeremiah 32:40).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Paul names it a fork with no middle ground: __“if I yet pleased men, I should not be the servant of Christ”__ (Galatians 1:10).",
+      "new": "Paul names it a fork with no middle ground: __“if I yet pleased men, I should not be the servant of Christ”__ (Galatians 1:10).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "The last chapter watched Jesus make the same equation from the other side: quoting __“thou shalt *fear* the LORD thy God”__ (Deuteronomy 6:13), He rendered it __“thou shalt *worship* the Lord thy God”__ (Matthew 4:10) — the fear of the LORD is the thing sym:sym-worship[worship] acts out.",
+      "new": "The last chapter showed Jesus making the same equation from the other side: quoting __“thou shalt *fear* the LORD thy God”__ (Deuteronomy 6:13), He rendered it __“thou shalt *worship* the Lord thy God”__ (Matthew 4:10) — the fear of the LORD is the thing sym:sym-worship[worship] acts out.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Replace awkward personification watched with showed.",
+      "rationale": "A chapter does not watch; showed restores natural agency and removes the odd staging tone while preserving the cross-reference.",
+      "_chunk": 1
+    },
+    {
+      "old": "When the everlasting sym:sym-gospel[gospel] — the gospel of the kingdom, as the link:/books/symbolic-language/gospel/[Gospel] chapter found — is carried to every nation at the end, it is this:",
+      "new": "When the everlasting sym:sym-gospel[gospel] — the gospel of the kingdom, as found in the link:/books/symbolic-language/gospel/[Gospel] chapter — is carried to every nation at the end, it is this:",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Correct incomplete as the chapter found to as found in the chapter.",
+      "rationale": "The original lacks an object for found and inverts natural phrasing; the revision is grammatical and clear without altering the cross-reference.",
+      "_chunk": 1
+    },
+    {
+      "old": "To fear man is to fear grass: to break the law that stands for ever for the favour of a face that withers by evening.",
+      "new": "To fear man is to fear grass: to break the law that stands for ever, for the favour of a face that withers by evening.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Add comma to prevent misreading the prepositional phrase.",
+      "rationale": "Without the comma, for the favour can attach to stands for ever instead of to the breaking of the law.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chapter tightly equates the fear of the Lord with obedience, wisdom, and worship through dense scripture chains that land the law-positive case without hedging. The closing strip of every prior symbol back to the single command is strong and fitting as the end of Part Two. Issues are limited to two house-style sentence-open Ands, an awkward personification of the prior chapter as watching, an incomplete as-the-chapter-found construction, and one prepositional attachment that a comma resolves. Voice stays assertive, biblical images hold, and no doctrine or quoted-text problems appear.\",\n  \"proposals\": [\n    {\n      \"old\": \"And the renewed covenant writes this very fear where the law is written: __“I will make an *everlasting covenant* with them… I will put *my fear in their hearts*, that they shall *not depart* from me”__ (Jeremiah 32:40).\",\n      \"new\": \"The renewed covenant writes this very fear where the law is written: __“I will make an *everlasting covenant* with them… I will put *my fear in their hearts*, that they shall *not depart* from me”__ (Jeremiah 32:40).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"And Paul names it a fork with no middle ground: __“if I yet pleased men, I should not be the servant of Christ”__ (Galatians 1:10).\",\n      \"new\": \"Paul names it a fork with no middle ground: __“if I yet pleased men, I should not be the servant of Christ”__ (Galatians 1:10).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"The last chapter watched Jesus make the same equation from the other side: quoting __“thou shalt *fear* the LORD thy God”__ (Deuteronomy 6:13), He rendered it __“thou shalt *worship* the Lord thy God”__ (Matthew 4:10) — the fear of the LORD is the thing sym:sym-worship[worship] acts out.\",\n      \"new\": \"The last chapter showed Jesus making the same equation from the other side: quoting __“thou shalt *fear* the LORD thy God”__ (Deuteronomy 6:13), He rendered it __“thou shalt *worship* the Lord thy God”__ (Matthew 4:10) — the fear of the LORD is the thing sym:sym-worship[worship] acts out.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace awkward personification watched with showed.\",\n      \"rationale\": \"A chapter does not watch; showed restores natural agency and removes the odd staging tone while preserving the cross-reference.\"\n    },\n    {\n      \"old\": \"When the everlasting sym:sym-gospel[gospel] — the gospel of the kingdom, as the link:/books/symbolic-language/gospel/[Gospel] chapter found — is carried to every nation at the end, it is this:\",\n      \"new\": \"When the everlasting sym:sym-gospel[gospel] — the gospel of the kingdom, as found in the link:/books/symbolic-language/gospel/[Gospel] chapter — is carried to every nation at the end, it is this:\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Correct incomplete as the chapter found to as found in the chapter.\",\n      \"rationale\": \"The original lacks an object for found and inverts natural phrasing; the revision is grammatical and clear without altering the cross-reference.\"\n    },\n    {\n      \"old\": \"To fear man is to fear grass: to break the law that stands for ever for the favour of a face that withers by evening.\",\n      \"new\": \"To fear man is to fear grass: to break the law that stands for ever, for the favour of a face that withers by evening.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Add comma to prevent misreading the prepositional phrase.\",\n      \"rationale\": \"Without the comma, for the favour can attach to stands for ever instead of to the breaking of the law.\"\n    }\n  ]\n}"
+    }
+  ]
+}

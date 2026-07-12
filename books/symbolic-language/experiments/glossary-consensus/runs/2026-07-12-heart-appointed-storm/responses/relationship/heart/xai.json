@@ -1,0 +1,178 @@
+{
+  "created_at": 1783891448,
+  "completed_at": 1783891465,
+  "id": "dd756136-5850-9e92-a8b0-6c4c0e92f61a",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_dd756136-5850-9e92-a8b0-6c4c0e92f61a",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Heart of the earth\".\nThe book's entry for \"Heart of the earth\" is a minority reading that treats the phrase as a direct reference to Jerusalem itself—the navel and heart of the land—rather than Jesus' burial or descent. While the consensus acknowledges Jerusalem as a rare alternative (primarily via Ezekiel 5:5 and 38:12), the book's primary identification replaces the tomb/Hades referent with Jerusalem, making the cores materially contradictory. This is a DIVERGENT relationship: accepting the book's core requires rejecting the consensus's central referent. The scripture citations (Matthew 12:40; Ezekiel 5:5; 38:12) provide partial support for the book's view but insufficient backing for the consensus primary meaning. The extension is DIFFERENT_REFERENT, as the book reclassifies the phrase's referent entirely. Overall, the book's entry diverges from the blind consensus by prioritizing a minority interpretive option as its core meaning. \n\nThe relationship is DIVERGENT with core_relation CONTRADICTS and extension_relation DIFFERENT_REFERENT. The book's Jerusalem identification directly contradicts the consensus's tomb/Hades focus, though it draws on the same Ezekiel passages listed in the entry. This is not a refinement but a replacement of the central referent. The citations support the book's minority view but fall short of establishing it as primary, aligning with the consensus's own assessment of that reading as rare. The overall classification reflects a clear divergence where the book elevates an alternative to the consensus primary. \n\nThe book's entry presents Jerusalem as the heart of the land, contrasting with the consensus view of the grave or Hades as the primary meaning. This is a DIVERGENT relationship because the cores contradict each other. The consensus core is the tomb or Hades, while the book core is Jerusalem.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Primary identification of 'heart of the earth' (Matt 12:40) as Jesus' burial in the tomb/grave or sojourn in the realm of the dead (Sheol/Hades) for three days and nights, as the antitype of Jonah in the fish; Jerusalem/land readings appear only as minority or rare alternatives.\",\n  \"book_summary\": \"Jerusalem as the navel and heart of the land.\",\n  \"consensus_core_identification\": \"Christ's tomb/grave or Hades/Sheol (the place of death and burial)\",\n  \"book_core_identification\": \"Jerusalem (navel/heart of the land)\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus centers the three days on the burial interval (tomb or underworld); the book reassigns the entire phrase to Jerusalem itself, shifting the spatial and chronological boundaries to the city/land and events such as arrest or custody.\",\n  \"material_contradiction\": \"Book equates the phrase with Jerusalem; consensus equates it with the tomb or Hades. These cannot be the same referent in the same sense.\",\n  \"rationale\": \"Consensus responses converge on tomb/Hades as the settled core while listing the Jerusalem reading only as a minority alternative. The book discards that core and installs the minority identification as its sole entry, producing a replaced rather than refined or overlapping referent. The relation is therefore divergent, not refined or novel.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The explicit Jonah parallel in Matt 12:40 most naturally identifies the 'heart of the earth' with the place of confinement after death (tomb/Hades), not with the city of Jerusalem.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_dd756136-5850-9e92-a8b0-6c4c0e92f61a",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3396,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2283,
+    "output_tokens_details": {
+      "reasoning_tokens": 1869
+    },
+    "total_tokens": 5679,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 202980000,
+    "context_details": {
+      "input_tokens": 3396,
+      "output_tokens": 2283
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

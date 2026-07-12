@@ -1,0 +1,36 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_PERSUADED": 1
+  },
+  "rows": [
+    {
+      "anchor": "ship",
+      "term": "Ship",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "STRONG",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "protocol_version": 6,
+  "run_id": "2026-07-12-smoke-oil-v6-core-identity",
+  "created_at": "2026-07-12T05:37:23.169604+00:00",
+  "entry_count": 1,
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "input_sha256": "829e1de0bd04ea6c1c37c3b49ebdda29aa4182d72cf0da47368c5d6d9aece969",
+  "method_evidence_sha256": "ff2354729380e1a977c49d7df2d9868483f89d1e44b377c20ed7b50f8ee2acdc",
+  "prompt_sha256": {
+    "01-consensus.md": "d83510f763522125d0341623d1c78d7764a8820aecb6b2cdb1e7523db78f6a33",
+    "02-relationship.md": "802bccb3675bcd6f4c17ebba695e9e8bbc125e24ea63d47eaa8d345ba8303ba9",
+    "03-persuasion.md": "e791e0ad63e820bacfc5ac62887dfded3ca294b182bd8bad473a0a1a7447dedb"
+  },
+  "notes": "API keys are never written. Proprietary model runs are procedurally reproducible but not byte-for-byte deterministic."
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "gospel",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGospel\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'Gospel' (Greek euangelion, 'good news') primarily denotes the message of salvation accomplished by God through the life, death, and resurrection of Jesus Christ — the announcement that God has acted in Christ to forgive sin, reconcile humanity to himself, and inaugurate his kingdom, received by faith. It is less a symbol than a technical term for the core Christian proclamation (kerygma).\",\n  \"primary_basis\": [\n    \"1 Corinthians 15:1-4 (Paul's summary definition: Christ died for our sins, was buried, and was raised)\",\n    \"Romans 1:16-17 (the gospel as the power of God for salvation to everyone who believes)\",\n    \"Mark 1:1 ('The beginning of the gospel of Jesus Christ, the Son of God')\",\n    \"Mark 1:14-15 (Jesus proclaiming the gospel of God: the kingdom is at hand, repent and believe)\",\n    \"Isaiah 52:7 (the herald of good news announcing God's reign, background text)\",\n    \"Luke 4:18-19 (Jesus anointed to proclaim good news to the poor, citing Isaiah 61)\",\n    \"Galatians 1:6-9 (there is one true gospel, not to be altered)\",\n    \"Ephesians 1:13 (the gospel of your salvation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The gospel as the announcement of the kingdom of God — God's reign breaking into history through Jesus — with personal salvation as one component of a broader cosmic and social restoration (emphasized in kingdom-centered, missional, and much recent New Testament scholarship, e.g., N.T. Wright).\",\n      \"basis\": [\n        \"Mark 1:14-15\",\n        \"Matthew 4:23; 9:35 ('the gospel of the kingdom')\",\n        \"Luke 4:18-19\",\n        \"Isaiah 52:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Gospel' as a literary designation: the four canonical narratives (Matthew, Mark, Luke, John) recounting Jesus' life, death, and resurrection — a genre label rather than the message itself.\",\n      \"basis\": [\n        \"Mark 1:1 (title usage)\",\n        \"Early church usage (2nd-century titling, e.g., 'the Gospel according to Matthew')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Dispensationalist distinction between multiple gospels — e.g., the 'gospel of the kingdom' preached to Israel versus the 'gospel of the grace of God' preached by Paul to the church — treating them as distinct messages for distinct dispensations.\",\n      \"basis\": [\n        \"Matthew 4:23; 24:14\",\n        \"Acts 20:24\",\n        \"Galatians 2:7 (gospel to the circumcised vs. uncircumcised)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The gospel as a counter-imperial proclamation: euangelion deliberately echoes Roman imperial announcements of the emperor's accession or victories, so declaring Jesus' gospel is a political claim that Jesus, not Caesar, is Lord (emphasized in empire-critical scholarship).\",\n      \"basis\": [\n        \"Mark 1:1 compared with the Priene calendar inscription about Augustus\",\n        \"Romans 1:1-4\",\n        \"Philippians 2:9-11; Acts 17:7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Law/Gospel distinction in Lutheran and Reformed theology: 'Gospel' functions as one of two modes of God's word — pure promise and grace, contrasted with the demands and condemnation of the Law.\",\n      \"basis\": [\n        \"Romans 3:19-24\",\n        \"Galatians 3:10-14\",\n        \"John 1:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Social-gospel or liberationist reading: the gospel is primarily good news of liberation for the poor and oppressed, entailing social and economic justice in the present age.\",\n      \"basis\": [\n        \"Luke 4:18-19\",\n        \"Luke 6:20\",\n        \"Matthew 25:31-46\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Gospel' is unusual among terms submitted for symbolic analysis because it is not primarily a symbol (like 'lamb' or 'leaven') but a defined theological term with a broad, stable consensus core: the good news of salvation through Christ's death and resurrection, anchored especially in 1 Corinthians 15:1-4 and Romans 1:16. The alternative readings listed are mostly differences of emphasis or scope (kingdom-centered, law/gospel, political, social) rather than denials of the core. Genuine disagreement exists mainly at the margins: dispensationalist multiple-gospel schemes and strongly politicized or purely social redefinitions are minority positions. If an author's book assigns 'Gospel' a materially different or esoteric symbolic meaning (e.g., an allegorical code detached from the Christ-event), that would diverge from recognizable consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The “Gospel” primarily means the good news that God’s saving reign has come through Jesus Christ—especially through his death and resurrection—calling people to faith, repentance, forgiveness, and new life.\",\n  \"primary_basis\": [\n    \"Mark 1:1, 14–15 — Jesus proclaims the gospel of God and the arrival of God’s kingdom.\",\n    \"Luke 4:18–21 — Jesus identifies his mission with the prophetic proclamation of good news.\",\n    \"Romans 1:1–17 — the gospel concerns God’s Son and is God’s power for salvation to everyone who believes.\",\n    \"1 Corinthians 15:1–5 — Paul summarizes the gospel around Christ’s death for sins, burial, resurrection, and appearances.\",\n    \"Acts 10:36–43 — the apostolic message presents Jesus’ ministry, death, resurrection, lordship, and forgiveness of sins.\",\n    \"Isaiah 52:7 — the Old Testament background connects good news with God’s reign and deliverance.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The announcement of the kingdom or reign of God, with emphasis on God’s victory, restoration, and lordship rather than primarily on an individual plan of salvation.\",\n      \"basis\": [\n        \"Isaiah 52:7\",\n        \"Matthew 4:23\",\n        \"Mark 1:14–15\",\n        \"Luke 8:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"One of the four canonical written accounts of Jesus’ life, ministry, death, and resurrection: Matthew, Mark, Luke, or John.\",\n      \"basis\": [\n        \"Mark 1:1\",\n        \"Luke 1:1–4\",\n        \"John 20:30–31\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The whole body of Christian revelation or teaching, including its ethical demands and pattern of discipleship, rather than only the initial saving proclamation.\",\n      \"basis\": [\n        \"Matthew 28:19–20\",\n        \"Galatians 2:5, 14\",\n        \"Philippians 1:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A message of liberation and restoration for the poor, oppressed, and marginalized, understood in social as well as spiritual terms.\",\n      \"basis\": [\n        \"Isaiah 61:1–2\",\n        \"Luke 4:18–21\",\n        \"Luke 7:22\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"An eschatological proclamation announcing final judgment, worldwide worship of God, and the imminent consummation of his reign.\",\n      \"basis\": [\n        \"Matthew 24:14\",\n        \"Revelation 14:6–7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the core sense of “good news” centered on Jesus Christ and God’s saving reign. However, “Gospel” is primarily a theological and literary term rather than a fixed biblical symbol, and traditions differ over whether its central emphasis is Christ’s saving work, the kingdom of God, personal salvation, ecclesial teaching, or social restoration.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"the good news of salvation through the life, death, and resurrection of Jesus Christ\",\n  \"primary_basis\": [\n    \"Mark 1:1\",\n    \"Mark 1:14-15\",\n    \"Romans 1:16\",\n    \"1 Corinthians 15:1-4\",\n    \"Matthew 4:23\",\n    \"Isaiah 52:7 (as background)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the four canonical New Testament books (Matthew, Mark, Luke, John) that narrate the life and ministry of Jesus\",\n      \"basis\": [\n        \"early church usage and titles of the books\",\n        \"Irenaeus and subsequent patristic tradition\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the announcement of the kingdom of God / reign of God as present and future reality\",\n      \"basis\": [\n        \"Mark 1:14-15\",\n        \"Matthew 4:23\",\n        \"Luke 4:18-19 / Isaiah 61:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a literary genre of ancient biography focused on Jesus\",\n      \"basis\": [\n        \"modern biblical scholarship on genre\",\n        \"comparisons with Greco-Roman bioi\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching the Greek euangelion is uniformly rendered and understood as 'good news.' The precise content of that news (kingdom emphasis vs. cross-resurrection emphasis) receives different accents, yet these are complementary rather than contradictory readings of the same core term. No significant symbolic or allegorical redefinition exists outside this consensus.\"\n}\n\nBOOK ENTRY\nThe gospel of the kingdom — the renewed covenant, the law going forth from Zion.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the good news that Christ died for our sins, was buried, and rose again.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 52:7; 2:3; Jer 31:33; Heb 4:2) · see Gospel, ch. 5\n\nAVAILABLE KJV EXCERPTS\nIsaiah 52:7 — How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good, that publisheth salvation; that saith unto Zion, Thy God reigneth!\nIsaiah 2:3 — And many people shall go and say, Come ye, and let us go up to the mountain of the LORD, to the house of the God of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of the LORD from Jerusalem.\nJeremiah 31:33 — But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.\nHebrews 4:2 — For unto us was the gospel preached, as well as unto them: but the word preached did not profit them, not being mixed with faith in them that heard it.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "ecc41ba8765ddeb8820294a6e7234978bd90313de4e4e25960755ddf3e47d4fd",
+  "cache": {
+    "hit": false
+  }
+}

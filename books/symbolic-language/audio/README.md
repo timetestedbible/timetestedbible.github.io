@@ -4,6 +4,11 @@ One `NN-*.adoc` here per print chapter: the same content, rewritten for the ear.
 These are narration scripts, not a second book — the print chapter remains the
 source of truth, and every meaning-level edit lands there first.
 
+Every chapter opens with the book title, then its chapter number and name:
+`MEAT The Bible's Symbolic Language. [beat] Chapter [number]: [name].`
+The separately ordered `16x` study uses `Bonus Study` in place of a chapter
+number.
+
 ## The audio IS the book read aloud — additive transitions only
 
 The script cannot deviate from the book or it isn't the book. Exactly two

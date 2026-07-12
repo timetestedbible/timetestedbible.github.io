@@ -1,0 +1,36 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_PERSUADED": 1
+  },
+  "rows": [
+    {
+      "anchor": "righteousness",
+      "term": "Righteousness",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "REFINED",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    }
+  ]
+}

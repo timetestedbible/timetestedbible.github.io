@@ -1,0 +1,195 @@
+{
+  "id": "resp_0a1f85e3c43c5df3006a53553030d88194bdad5e5023507516",
+  "object": "response",
+  "created_at": 1783846192,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783846208,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a1f85e3c43c5df3006a535532b3c881948dd520454e337751",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a1f85e3c43c5df3006a53553bc1fc8194aa3f0655b068e0f6",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"Garden primarily signifies Edenic paradise: divine presence, life, communion, and creation lost through sin and ultimately restored.\",\"book_summary\":\"Garden signifies a planted collection of trees and, symbolically, a grouping of nations.\",\"consensus_core_identification\":\"Garden = paradise or Edenic fellowship with God.\",\"book_core_identification\":\"Garden = a collective grouping of nations represented as trees.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"DIFFERENT_REFERENT\",\"boundary_disagreement\":\"This is not merely a narrower Edenic application. The book reassigns the symbol from a sacred place or state of divine fellowship to a collective political referent—nations.\",\"material_contradiction\":\"When offered as the governing symbolic identification, “grouping of nations” replaces rather than preserves the consensus identification of paradise and divine communion. The two may coexist as contextual associations, but they are not the same referent or category.\",\"rationale\":\"None of the consensus responses or listed alternatives identifies a garden as a grouping of nations. Because the book explicitly contrasts its identification with the common Edenic view and substitutes a different symbolic referent, the relationship is divergent rather than refined.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Ezekiel 31:9 depicts multiple personified trees within the garden of God and thus supports a collective-tree image, but the quoted verse alone does not identify the garden itself as nations; that inference depends on the wider chapter’s political-tree allegory.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3586,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 3583
+    },
+    "output_tokens": 839,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4425
+  },
+  "user": null,
+  "metadata": {}
+}

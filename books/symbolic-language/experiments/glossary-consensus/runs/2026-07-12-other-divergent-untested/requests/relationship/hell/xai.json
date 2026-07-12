@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "hell",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHell\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'Hell' primarily signifies the final state or place of divine punishment and separation from God for the unrepentant wicked after death and final judgment. It is symbolically depicted through images of unquenchable fire, darkness, weeping and gnashing of teeth, and destruction (drawing on the Greek term Gehenna, itself derived from the Valley of Hinnom outside Jerusalem, a site associated with idolatrous burning and later with fiery judgment). The dominant traditional reading takes this as eternal conscious punishment and exclusion from God's presence.\",\n  \"primary_basis\": [\n    \"Matthew 25:41, 46 (eternal fire prepared for the devil; eternal punishment vs. eternal life)\",\n    \"Mark 9:43-48 (Gehenna, where 'their worm does not die and the fire is not quenched')\",\n    \"Matthew 10:28 (fear him who can destroy both soul and body in Gehenna)\",\n    \"Matthew 5:22, 29-30 (danger of the fire of Gehenna)\",\n    \"Matthew 13:41-42, 49-50 (fiery furnace, weeping and gnashing of teeth)\",\n    \"Luke 16:19-31 (the rich man in torment in Hades)\",\n    \"2 Thessalonians 1:9 (eternal destruction, away from the presence of the Lord)\",\n    \"Revelation 20:10-15 (lake of fire; second death)\",\n    \"Revelation 14:9-11 (smoke of their torment rises forever)\",\n    \"Jude 7 (Sodom as an example, undergoing punishment of eternal fire)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eternal conscious torment (traditionalist view): Hell is unending, conscious punishment of the wicked, whether the fire is literal or metaphorical for real anguish. This is the historic majority position of Catholic, Orthodox, and most Protestant confessions (e.g., Augustine, Aquinas, Westminster Confession).\",\n      \"basis\": [\n        \"Matthew 25:46\",\n        \"Revelation 14:9-11\",\n        \"Revelation 20:10\",\n        \"Mark 9:48\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Metaphorical/relational view: the fire, darkness, and worm imagery are symbols not to be taken literally; hell's essence is self-chosen exclusion and separation from God (a view articulated by figures such as C.S. Lewis and reflected in the Catechism of the Catholic Church's language of 'definitive self-exclusion from communion with God').\",\n      \"basis\": [\n        \"2 Thessalonians 1:9\",\n        \"Matthew 8:12 (outer darkness)\",\n        \"Luke 13:27 ('depart from me')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Annihilationism / conditional immortality: the wicked are ultimately destroyed and cease to exist rather than suffering forever; 'eternal punishment' means punishment with eternal (irreversible) results. Advocated by John Stott, Edward Fudge, Seventh-day Adventists, and a growing evangelical minority.\",\n      \"basis\": [\n        \"Matthew 10:28 (destroy both soul and body)\",\n        \"Malachi 4:1-3\",\n        \"2 Thessalonians 1:9 ('eternal destruction')\",\n        \"Revelation 20:14 ('second death')\",\n        \"John 3:16 ('perish')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Universal reconciliation (universalism): hell is real but remedial/purgative and temporary, with all persons ultimately reconciled to God. Associated historically with Origen and Gregory of Nyssa, and in modern times with writers such as David Bentley Hart and Robin Parry; a persistent but minority stream.\",\n      \"basis\": [\n        \"1 Corinthians 15:22-28\",\n        \"Colossians 1:19-20\",\n        \"Philippians 2:10-11\",\n        \"Romans 5:18\",\n        \"1 Timothy 2:4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Historicist/this-worldly reading of Gehenna: in Jesus' usage, Gehenna primarily warned of concrete historical judgment on Israel/Jerusalem (e.g., the events of AD 70) rather than a postmortem realm; drawn on by some critical scholars and partially by N.T. Wright, and by full preterists.\",\n      \"basis\": [\n        \"Jeremiah 7:30-34 and 19:1-13 (Valley of Hinnom as site of judgment)\",\n        \"Matthew 23:33-38 in context of judgment on Jerusalem\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Lexical distinction view (widely held in scholarship rather than a rival theology): 'hell' in older English Bibles conflates distinct terms—Sheol/Hades (the grave or intermediate realm of the dead), Gehenna (final punishment), and Tartarus (2 Peter 2:4)—so Hades/Sheol should not be equated with the hell of final judgment.\",\n      \"basis\": [\n        \"Psalm 16:10 / Acts 2:27 (Sheol/Hades)\",\n        \"Revelation 20:13-14 (Hades itself thrown into the lake of fire)\",\n        \"2 Peter 2:4 (Tartarus)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hell as purely mythological or psychological symbol: in liberal/demythologizing theology (e.g., influenced by Bultmann or Tillich), hell symbolizes present estrangement, despair, or the existential consequence of alienation from God rather than any postmortem state.\",\n      \"basis\": [\n        \"Read as reinterpretation of the Gehenna sayings and Revelation's apocalyptic imagery generally, rather than from specific proof texts\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus on the core referent: hell denotes final divine judgment and exclusion from God for the unrepentant, symbolized by fire (Gehenna imagery). What remains genuinely contested is the nature and duration of that state—eternal conscious torment (historically dominant), annihilation (growing minority), and universal restoration (persistent minority)—as well as whether the fire imagery is literal or metaphorical. Modern biblical scholarship also uniformly distinguishes Sheol/Hades (realm of the dead) from Gehenna (final punishment), a distinction blurred by the single English word 'hell' in the KJV tradition.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Hell most commonly signifies the final condition or realm of divine judgment: irreversible exclusion from blessed communion with God and punishment of unrepentant evil. Biblical images such as fire, outer darkness, the undying worm, and the second death express the horror and finality of that judgment, though traditions differ over how literally those images should be understood.\",\n  \"primary_basis\": [\n    \"Matthew 5:22, 29–30; 10:28 — Gehenna and the destruction of body and soul\",\n    \"Matthew 13:40–42, 49–50 — the fiery furnace and final separation of the wicked\",\n    \"Matthew 25:31–46 — eternal fire and eternal punishment contrasted with eternal life\",\n    \"Mark 9:43–48 — unquenchable fire and the undying worm\",\n    \"Luke 16:19–31 — the rich man in Hades, conscious torment, and an uncrossable chasm\",\n    \"2 Thessalonians 1:6–10 — punishment and exclusion from the Lord’s presence or glory\",\n    \"Jude 7, 13 — eternal fire and deepest darkness as judgment imagery\",\n    \"Revelation 14:9–11 — fire, sulfur, torment, and smoke ascending forever\",\n    \"Revelation 20:10–15; 21:8 — the lake of fire, final judgment, and the second death\",\n    \"Isaiah 66:24 and Daniel 12:2 — important Old Testament backgrounds for the worm, fire, shame, and final resurrection judgment\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eternal conscious punishment: the condemned remain conscious under irreversible divine punishment forever. Fire may be understood literally, symbolically, or analogically, while the enduring conscious punishment is treated as the central claim.\",\n      \"basis\": [\n        \"Matthew 25:46\",\n        \"Mark 9:43–48\",\n        \"Luke 16:19–31\",\n        \"Revelation 14:9–11\",\n        \"Revelation 20:10\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Conditional immortality or annihilationism: the wicked are finally destroyed, perish, or cease conscious existence rather than experience everlasting conscious torment. Hell is eternal in its irreversible result.\",\n      \"basis\": [\n        \"Matthew 10:28\",\n        \"John 3:16\",\n        \"Romans 6:23\",\n        \"2 Thessalonians 1:9\",\n        \"Revelation 20:14; 21:8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Universal restoration: hell is remedial, purifying, or temporary, and divine judgment ultimately leads all persons—or, in some versions, all creation—to reconciliation with God.\",\n      \"basis\": [\n        \"Acts 3:21\",\n        \"Romans 5:18–19\",\n        \"1 Corinthians 15:22–28\",\n        \"Philippians 2:10–11\",\n        \"Colossians 1:19–20\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Hell primarily symbolizes present spiritual alienation, destructive sin, social violence, or the lived consequences of rejecting God, rather than chiefly a postmortem realm or final state.\",\n      \"basis\": [\n        \"John 3:18–21\",\n        \"Romans 1:18–32\",\n        \"James 3:6\",\n        \"Luke 15:24, 32\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"“Hell” is an imprecise English umbrella term for distinct biblical concepts—Sheol, Hades, Gehenna, Tartarus, and the lake of fire. On this reading, some passages concern the grave or intermediate state, while others concern final judgment, so they should not automatically be treated as one symbol or place.\",\n      \"basis\": [\n        \"Psalm 16:10 and Acts 2:27 — Sheol/Hades\",\n        \"Luke 16:23 — Hades\",\n        \"Matthew 10:28 — Gehenna\",\n        \"2 Peter 2:4 — Tartarus\",\n        \"Revelation 20:13–15 — Hades distinguished from the lake of fire\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus that hell language denotes severe divine judgment and loss of the blessed life with God. There is no settled consensus across Christian traditions about whether it is a place or condition, whether its fire and darkness are literal or symbolic, whether punishment is everlasting conscious suffering or final destruction, or whether judgment can ultimately be restorative.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The final place or state of eternal conscious punishment, torment, and separation from God for the unrighteous after judgment\",\n  \"primary_basis\": [\n    \"Matthew 25:41-46\",\n    \"Mark 9:43-48\",\n    \"Luke 16:19-31\",\n    \"Revelation 20:10-15\",\n    \"2 Thessalonians 1:8-9\",\n    \"Revelation 14:9-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Annihilation or permanent destruction/cessation of existence of the wicked (conditional immortality) rather than endless conscious torment\",\n      \"basis\": [\n        \"Matthew 10:28\",\n        \"Malachi 4:1-3\",\n        \"Romans 6:23\",\n        \"2 Thessalonians 1:9\",\n        \"John 3:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Temporary remedial or purgatorial suffering leading ultimately to universal reconciliation and salvation of all\",\n      \"basis\": [\n        \"1 Timothy 2:4\",\n        \"1 Corinthians 15:22-28\",\n        \"Acts 3:21\",\n        \"Colossians 1:19-20\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Metaphor for present spiritual death, alienation from God, or the natural consequences of sin experienced in this life rather than a postmortem realm\",\n      \"basis\": [\n        \"Romans 6:23\",\n        \"Ephesians 2:1-5\",\n        \"modern existential and liberal theological readings of judgment imagery\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Simply the grave or the general realm of the dead (Sheol/Hades) without any implication of punishment or eternal destiny\",\n      \"basis\": [\n        \"Old Testament usage of Sheol (e.g., Psalm 16:10, Ecclesiastes 9:10)\",\n        \"Acts 2:27-31\",\n        \"certain restorationist or non-traditional readings\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian teaching across Catholic, Orthodox, and most Protestant traditions converges on hell as postmortem divine judgment involving lasting negative destiny for the unrighteous; the precise ontology (literal fire vs. relational separation, duration vs. annihilation) remains contested, but the broad punitive/separative sense is the recognizable primary consensus. Imagery of fire, darkness, and worms is widely treated as symbolic even by those affirming a real final state.\"\n}\n\nBOOK ENTRY\nOne English word laid over two different things — Sheol/Hades, the grave that swallows righteous and wicked alike, and Gehenna, the judgment that destroys. The doctrine changes with the word beneath.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the place of eternal conscious punishment and separation from God.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 16:10 with Matt 10:28) · see Heaven and Hell, ch. 16\n\nAVAILABLE KJV EXCERPTS\nPsalms 16:10 — For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "adda7012567f1a8674084410b616c351dabdea9522c47beb73e172ab1482b3dc",
+  "cache": {
+    "hit": false
+  }
+}

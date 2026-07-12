@@ -1,0 +1,78 @@
+{
+  "file": "books/symbolic-language/28-behold-the-hand.adoc",
+  "title": "Behold the Hand, Behold the Nail",
+  "notes": [
+    "The chunk is dense, assertive, and law-positive: the picture-rule is stated cleanly, the Name is spelled without hedging, and the scripture chain (Zechariah, John, Isaiah, Psalm, Isaiah 49) lands with force. Residual house-style defects are concentrated in sentence openings (That/And/But) and two presenter residues (“must be weighed carefully,” “Now take”). One meta cross-reference (“this part has already weighed”) also breaks the no-meta rule. No doctrine, scripture wording, or symbol claims need touching; the fixes are purely local register and openers."
+  ],
+  "proposals": [
+    {
+      "old": "That square hand came back from Babylon with the exiles; before it, Israel and Judah wrote in the old script — the one still found cut into Hezekiah's tunnel, stamped on Judean seals and coins — and that script descends from the first alphabet the world ever had, scratched out in the mining camps of Sinai in the very age Israel served in Egypt.",
+      "new": "The square hand came back from Babylon with the exiles; before it, Israel and Judah wrote in the old script — the one still found cut into Hezekiah's tunnel, stamped on Judean seals and coins — and that script descends from the first alphabet the world ever had, scratched out in the mining camps of Sinai in the very age Israel served in Egypt.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden sentence-initial That.",
+      "rationale": "Author prose may not open with That. The square hand is the natural subject and keeps the claim intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Scripture is conscious of its letters as letters: Psalm 119 walks the whole alphabet eight verses at a time, Lamentations weeps through it, the virtuous wife of Proverbs 31 is praised down its length.",
+      "new": "Scripture is conscious of its letters as letters: Psalm 119 walks the whole alphabet eight verses at a time, Lamentations weeps through it, the virtuous wife of Proverbs 31 is praised down its length.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "House style forbids And at the start of author prose. The sentence stands complete without it.",
+      "_chunk": 1
+    },
+    {
+      "old": "And God had already said where to look for the engraving:",
+      "new": "God had already said where to look for the engraving:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "Author prose may not open with And. The claim remains direct and assertive.",
+      "_chunk": 1
+    },
+    {
+      "old": "That path breaks no bone.",
+      "new": "The path breaks no bone.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden sentence-initial That.",
+      "rationale": "House style bars That as a sentence opener in author prose. The path is the clear subject.",
+      "_chunk": 1
+    },
+    {
+      "old": "This layer must be weighed carefully: what it is, and what it is not.\nIt decides no doctrine; the verses above stand complete without a single picture.\nBut the Name was spelled in these four drawings on scrolls a millennium and a half before Golgotha — the hand, the beholding, the peg, the beholding — and when the event came, the witnesses wrote it down in exactly those terms: behold the hands, the print of the nails, look upon me whom they have pierced.",
+      "new": "This layer decides no doctrine; the verses above stand complete without a single picture.\nThe Name was spelled in these four drawings on scrolls a millennium and a half before Golgotha — the hand, the beholding, the peg, the beholding — and when the event came, the witnesses wrote it down in exactly those terms: behold the hands, the print of the nails, look upon me whom they have pierced.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Cut weighing meta and But opener; assert the limit directly.",
+      "rationale": "“Must be weighed carefully” and “what it is and is not” are director/meta staging. Merging removes the But violation and keeps the exact doctrinal limit the author already states.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now take the letters to the sky.",
+      "new": "Take the letters to the sky.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director-cue Now.",
+      "rationale": "“Now take” matches the forbidden presenter staging list. The bare imperative preserves the author’s transitional voice.",
+      "_chunk": 1
+    },
+    {
+      "old": "The psalm of the cross carries the same wounds in the same members — __“they *pierced* my hands and my feet”__ — the verse whose one disputed letter this part has already weighed.",
+      "new": "The psalm of the cross carries the same wounds in the same members — __“they *pierced* my hands and my feet.”__",
+      "type": "tone-register",
+      "severity": "medium",
+      "summary": "Drop meta cross-reference to prior weighing.",
+      "rationale": "“This part has already weighed” is book-process meta-talk. The wounds claim stands complete without the aside.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chunk is dense, assertive, and law-positive: the picture-rule is stated cleanly, the Name is spelled without hedging, and the scripture chain (Zechariah, John, Isaiah, Psalm, Isaiah 49) lands with force. Residual house-style defects are concentrated in sentence openings (That/And/But) and two presenter residues (“must be weighed carefully,” “Now take”). One meta cross-reference (“this part has already weighed”) also breaks the no-meta rule. No doctrine, scripture wording, or symbol claims need touching; the fixes are purely local register and openers.\",\n  \"proposals\": [\n    {\n      \"old\": \"That square hand came back from Babylon with the exiles; before it, Israel and Judah wrote in the old script — the one still found cut into Hezekiah's tunnel, stamped on Judean seals and coins — and that script descends from the first alphabet the world ever had, scratched out in the mining camps of Sinai in the very age Israel served in Egypt.\",\n      \"new\": \"The square hand came back from Babylon with the exiles; before it, Israel and Judah wrote in the old script — the one still found cut into Hezekiah's tunnel, stamped on Judean seals and coins — and that script descends from the first alphabet the world ever had, scratched out in the mining camps of Sinai in the very age Israel served in Egypt.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden sentence-initial That.\",\n      \"rationale\": \"Author prose may not open with That. The square hand is the natural subject and keeps the claim intact.\"\n    },\n    {\n      \"old\": \"And Scripture is conscious of its letters as letters: Psalm 119 walks the whole alphabet eight verses at a time, Lamentations weeps through it, the virtuous wife of Proverbs 31 is praised down its length.\",\n      \"new\": \"Scripture is conscious of its letters as letters: Psalm 119 walks the whole alphabet eight verses at a time, Lamentations weeps through it, the virtuous wife of Proverbs 31 is praised down its length.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"House style forbids And at the start of author prose. The sentence stands complete without it.\"\n    },\n    {\n      \"old\": \"And God had already said where to look for the engraving:\",\n      \"new\": \"God had already said where to look for the engraving:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"Author prose may not open with And. The claim remains direct and assertive.\"\n    },\n    {\n      \"old\": \"That path breaks no bone.\",\n      \"new\": \"The path breaks no bone.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden sentence-initial That.\",\n      \"rationale\": \"House style bars That as a sentence opener in author prose. The path is the clear subject.\"\n    },\n    {\n      \"old\": \"This layer must be weighed carefully: what it is, and what it is not.\\nIt decides no doctrine; the verses above stand complete without a single picture.\\nBut the Name was spelled in these four drawings on scrolls a millennium and a half before Golgotha — the hand, the beholding, the peg, the beholding — and when the event came, the witnesses wrote it down in exactly those terms: behold the hands, the print of the nails, look upon me whom they have pierced.\",\n      \"new\": \"This layer decides no doctrine; the verses above stand complete without a single picture.\\nThe Name was spelled in these four drawings on scrolls a millennium and a half before Golgotha — the hand, the beholding, the peg, the beholding — and when the event came, the witnesses wrote it down in exactly those terms: behold the hands, the print of the nails, look upon me whom they have pierced.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Cut weighing meta and But opener; assert the limit directly.\",\n      \"rationale\": \"“Must be weighed carefully” and “what it is and is not” are director/meta staging. Merging removes the But violation and keeps the exact doctrinal limit the author already states.\"\n    },\n    {\n      \"old\": \"Now take the letters to the sky.\",\n      \"new\": \"Take the letters to the sky.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director-cue Now.\",\n      \"rationale\": \"“Now take” matches the forbidden presenter staging list. The bare imperative preserves the author’s transitional voice.\"\n    },\n    {\n      \"old\": \"The psalm of the cross carries the same wounds in the same members — __“they *pierced* my hands and my feet”__ — the verse whose one disputed letter this part has already weighed.\",\n      \"new\": \"The psalm of the cross carries the same wounds in the same members — __“they *pierced* my hands and my feet.”__\",\n      \"type\": \"tone-register\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop meta cross-reference to prior weighing.\",\n      \"rationale\": \"“This part has already weighed” is book-process meta-talk. The wounds claim stands complete without the aside.\"\n    }\n  ]\n}"
+    }
+  ]
+}

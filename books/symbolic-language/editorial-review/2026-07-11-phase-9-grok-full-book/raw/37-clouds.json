@@ -1,0 +1,69 @@
+{
+  "file": "books/symbolic-language/37-clouds.adoc",
+  "title": "Clouds",
+  "notes": [
+    "The chapter builds the cloud symbol with high density and clean vehicle-to-cargo-to-people chaining, staying law-positive and handing off tightly to trees and moment. Scripture assembly is strong and the core claim (cloud as driven vehicle of the word, known by what it pours) never wavers. Residual presenter staging ('Now open', 'Mark the', 'Now read') and two author sentences that open with And are the main house-style breaks. A dangling 'psalm above' also needs a local cut. Voice and assertiveness remain intact once those are removed; no AI vocabulary or metaphor fights appear."
+  ],
+  "proposals": [
+    {
+      "old": "And its motion set the nation's schedule:",
+      "new": "Its motion set the nation's schedule:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading And from author sentence.",
+      "rationale": "House style forbids author prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now open the hold, because Scripture tells us what the water is.",
+      "new": "Scripture opens the hold and tells us what the water is.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director-style 'Now open' cue.",
+      "rationale": "Staging language like 'Now open' violates the ban on presenter cues; the rewrite asserts the claim directly while preserving the cargo metaphor.",
+      "_chunk": 1
+    },
+    {
+      "old": "Mark the direction of motion too: the true cloud is *driven* where its Rider commands; the empty one is __“carried about of winds,”__ blown by whatever blows.",
+      "new": "The direction of motion distinguishes them too: the true cloud is *driven* where its Rider commands; the empty one is __“carried about of winds,”__ blown by whatever blows.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace 'Mark the' director cue with assertive phrasing.",
+      "rationale": "'Mark the' is forbidden director language; the rewrite keeps the contrast without the cue.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now read the gathering with the vocabulary in hand:",
+      "new": "The gathering uses the vocabulary in hand:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove 'Now read' staging before the quote.",
+      "rationale": "Director cues such as 'Now read' are banned; the replacement introduces the scripture assertively.",
+      "_chunk": 1
+    },
+    {
+      "old": "And they are themselves the vapour the sea at last gives up: the cloud of witnesses, risen from every nation, carried to meet the King.",
+      "new": "They are themselves the vapour the sea at last gives up: the cloud of witnesses, risen from every nation, carried to meet the King.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading And from author sentence.",
+      "rationale": "Author prose must not begin with And per house style.",
+      "_chunk": 1
+    },
+    {
+      "old": "It answers the second in the psalm above: __“who maketh the clouds his *chariot*: who walketh upon the *wings of the wind*: who maketh his angels *spirits*.”__",
+      "new": "It answers the second in the psalm: __“who maketh the clouds his *chariot*: who walketh upon the *wings of the wind*: who maketh his angels *spirits*.”__",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Drop dangling 'above' with no prior psalm quote.",
+      "rationale": "No psalm appears above this line in the chapter, so 'above' creates a broken reference; the quote stands alone.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chapter builds the cloud symbol with high density and clean vehicle-to-cargo-to-people chaining, staying law-positive and handing off tightly to trees and moment. Scripture assembly is strong and the core claim (cloud as driven vehicle of the word, known by what it pours) never wavers. Residual presenter staging ('Now open', 'Mark the', 'Now read') and two author sentences that open with And are the main house-style breaks. A dangling 'psalm above' also needs a local cut. Voice and assertiveness remain intact once those are removed; no AI vocabulary or metaphor fights appear.\",\n  \"proposals\": [\n    {\n      \"old\": \"And its motion set the nation's schedule:\",\n      \"new\": \"Its motion set the nation's schedule:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading And from author sentence.\",\n      \"rationale\": \"House style forbids author prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"Now open the hold, because Scripture tells us what the water is.\",\n      \"new\": \"Scripture opens the hold and tells us what the water is.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director-style 'Now open' cue.\",\n      \"rationale\": \"Staging language like 'Now open' violates the ban on presenter cues; the rewrite asserts the claim directly while preserving the cargo metaphor.\"\n    },\n    {\n      \"old\": \"Mark the direction of motion too: the true cloud is *driven* where its Rider commands; the empty one is __“carried about of winds,”__ blown by whatever blows.\",\n      \"new\": \"The direction of motion distinguishes them too: the true cloud is *driven* where its Rider commands; the empty one is __“carried about of winds,”__ blown by whatever blows.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace 'Mark the' director cue with assertive phrasing.\",\n      \"rationale\": \"'Mark the' is forbidden director language; the rewrite keeps the contrast without the cue.\"\n    },\n    {\n      \"old\": \"Now read the gathering with the vocabulary in hand:\",\n      \"new\": \"The gathering uses the vocabulary in hand:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove 'Now read' staging before the quote.\",\n      \"rationale\": \"Director cues such as 'Now read' are banned; the replacement introduces the scripture assertively.\"\n    },\n    {\n      \"old\": \"And they are themselves the vapour the sea at last gives up: the cloud of witnesses, risen from every nation, carried to meet the King.\",\n      \"new\": \"They are themselves the vapour the sea at last gives up: the cloud of witnesses, risen from every nation, carried to meet the King.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading And from author sentence.\",\n      \"rationale\": \"Author prose must not begin with And per house style.\"\n    },\n    {\n      \"old\": \"It answers the second in the psalm above: __“who maketh the clouds his *chariot*: who walketh upon the *wings of the wind*: who maketh his angels *spirits*.”__\",\n      \"new\": \"It answers the second in the psalm: __“who maketh the clouds his *chariot*: who walketh upon the *wings of the wind*: who maketh his angels *spirits*.”__\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop dangling 'above' with no prior psalm quote.\",\n      \"rationale\": \"No psalm appears above this line in the chapter, so 'above' creates a broken reference; the quote stands alone.\"\n    }\n  ]\n}"
+    }
+  ]
+}

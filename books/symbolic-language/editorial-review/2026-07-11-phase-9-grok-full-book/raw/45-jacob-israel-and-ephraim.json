@@ -1,0 +1,69 @@
+{
+  "file": "books/symbolic-language/45-jacob-israel-and-ephraim.adoc",
+  "title": "Jacob, Israel, and Ephraim",
+  "notes": [
+    "The chapter builds a tight, law-positive chain from Jacob’s crooked heart through Israel’s straightening to Ephraim’s fruit-in-affliction and the two sticks/olive trees, with dense, well-chosen scripture and no hedging. The dual-name argument against the old-man/new-man swap is clear and forceful. Issues are localized: one factual timing slip that attaches “the very night” to Genesis 35:10, two author-prose sentences that open with And, mild presenter staging in the “See when” and closing “Hold on” lines, and a stranded citation that breaks the John 1:47 sentence. No AI vocabulary, doctrine invention, or scripture-quote corruption appears."
+  ],
+  "proposals": [
+    {
+      "old": "The very night the name is given, God says __“thy name shall not be called any more Jacob”__ (Genesis 35:10) — and then keeps right on calling him Jacob, and names Himself to the end __“the God of Jacob.”__",
+      "new": "Even after the name is given, God says __“thy name shall not be called any more Jacob”__ (Genesis 35:10) — and then keeps right on calling him Jacob, and names Himself to the end __“the God of Jacob.”__",
+      "type": "factual",
+      "severity": "high",
+      "summary": "Remove false claim that Genesis 35:10 occurs the night the name is given.",
+      "rationale": "The name is first given at the ford (Genesis 32:28); Genesis 35:10 is the later Bethel reaffirmation. The dual-naming point stands without the erroneous “very night” timing.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the very root that named him crooked names the cure — __“the _crooked_ [_aqob_] shall be made straight”__ (Isaiah 40:4).",
+      "new": "The very root that named him crooked names the cure — __“the _crooked_ [_aqob_] shall be made straight”__ (Isaiah 40:4).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids And/But/That at the start of author sentences. Dropping the conjunction keeps the claim and the parallel intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "See _when_ it is won.",
+      "new": "The name is won at dawn.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace presenter cue with a direct assertion.",
+      "rationale": "“See when” functions as a director cue. The replacement states the same timing claim without staging language.",
+      "_chunk": 1
+    },
+    {
+      "old": "Hold on through the night, and the morning brings the new name, the renewed covenant, joy, and life.",
+      "new": "The one who holds on through the night receives the new name, the renewed covenant, joy, and life in the morning.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Convert closing imperative into an assertion of the pattern.",
+      "rationale": "The line is a reader-directed charge. Restating it as the pattern already established keeps the density and removes the staging tone.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Paul names the harvest in the very words of the blessing — __“the fulness of the Gentiles”__ (Romans 11:25): _melo ha-goyim_, come in at last.",
+      "new": "Paul names the harvest in the very words of the blessing — __“the fulness of the Gentiles”__ (Romans 11:25): _melo ha-goyim_, come in at last.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids And at the start of author sentences. The claim and the Hebrew link remain unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "The end of the work is a man with the grasping gone, and Jesus names him the moment He sees him: __“Behold an Israelite indeed, in whom is no guile!”__\n(John 1:47) — Jacob, with the Jacob taken out.",
+      "new": "The end of the work is a man with the grasping gone, and Jesus names him the moment He sees him: __“Behold an Israelite indeed, in whom is no guile!”__ (John 1:47) — Jacob, with the Jacob taken out.",
+      "type": "readability",
+      "severity": "low",
+      "summary": "Pull the stranded citation onto the same line as the quote.",
+      "rationale": "The reference currently sits alone on the next line, breaking the sentence. Keeping citation with the quote matches the chapter’s other inline references.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chapter builds a tight, law-positive chain from Jacob’s crooked heart through Israel’s straightening to Ephraim’s fruit-in-affliction and the two sticks/olive trees, with dense, well-chosen scripture and no hedging. The dual-name argument against the old-man/new-man swap is clear and forceful. Issues are localized: one factual timing slip that attaches “the very night” to Genesis 35:10, two author-prose sentences that open with And, mild presenter staging in the “See when” and closing “Hold on” lines, and a stranded citation that breaks the John 1:47 sentence. No AI vocabulary, doctrine invention, or scripture-quote corruption appears.\",\n  \"proposals\": [\n    {\n      \"old\": \"The very night the name is given, God says __“thy name shall not be called any more Jacob”__ (Genesis 35:10) — and then keeps right on calling him Jacob, and names Himself to the end __“the God of Jacob.”__\",\n      \"new\": \"Even after the name is given, God says __“thy name shall not be called any more Jacob”__ (Genesis 35:10) — and then keeps right on calling him Jacob, and names Himself to the end __“the God of Jacob.”__\",\n      \"type\": \"factual\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove false claim that Genesis 35:10 occurs the night the name is given.\",\n      \"rationale\": \"The name is first given at the ford (Genesis 32:28); Genesis 35:10 is the later Bethel reaffirmation. The dual-naming point stands without the erroneous “very night” timing.\"\n    },\n    {\n      \"old\": \"And the very root that named him crooked names the cure — __“the _crooked_ [_aqob_] shall be made straight”__ (Isaiah 40:4).\",\n      \"new\": \"The very root that named him crooked names the cure — __“the _crooked_ [_aqob_] shall be made straight”__ (Isaiah 40:4).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids And/But/That at the start of author sentences. Dropping the conjunction keeps the claim and the parallel intact.\"\n    },\n    {\n      \"old\": \"See _when_ it is won.\",\n      \"new\": \"The name is won at dawn.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace presenter cue with a direct assertion.\",\n      \"rationale\": \"“See when” functions as a director cue. The replacement states the same timing claim without staging language.\"\n    },\n    {\n      \"old\": \"Hold on through the night, and the morning brings the new name, the renewed covenant, joy, and life.\",\n      \"new\": \"The one who holds on through the night receives the new name, the renewed covenant, joy, and life in the morning.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Convert closing imperative into an assertion of the pattern.\",\n      \"rationale\": \"The line is a reader-directed charge. Restating it as the pattern already established keeps the density and removes the staging tone.\"\n    },\n    {\n      \"old\": \"And Paul names the harvest in the very words of the blessing — __“the fulness of the Gentiles”__ (Romans 11:25): _melo ha-goyim_, come in at last.\",\n      \"new\": \"Paul names the harvest in the very words of the blessing — __“the fulness of the Gentiles”__ (Romans 11:25): _melo ha-goyim_, come in at last.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids And at the start of author sentences. The claim and the Hebrew link remain unchanged.\"\n    },\n    {\n      \"old\": \"The end of the work is a man with the grasping gone, and Jesus names him the moment He sees him: __“Behold an Israelite indeed, in whom is no guile!”__\\n(John 1:47) — Jacob, with the Jacob taken out.\",\n      \"new\": \"The end of the work is a man with the grasping gone, and Jesus names him the moment He sees him: __“Behold an Israelite indeed, in whom is no guile!”__ (John 1:47) — Jacob, with the Jacob taken out.\",\n      \"type\": \"readability\",\n      \"severity\": \"low\",\n      \"summary\": \"Pull the stranded citation onto the same line as the quote.\",\n      \"rationale\": \"The reference currently sits alone on the next line, breaking the sentence. Keeping citation with the quote matches the chapter’s other inline references.\"\n    }\n  ]\n}"
+    }
+  ]
+}

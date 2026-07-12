@@ -1,0 +1,60 @@
+{
+  "file": "books/symbolic-language/10-the-seal.adoc",
+  "title": "The Seal",
+  "notes": [
+    "The chapter assembles the seal as Name-plus-law with high density, chaining signet, forehead plate, frontlets, inkhorn, Spirit impression, and beast counterfeit without padding. Law-positive voice and OT-to-Revelation continuity are strong; the two engravings on 2 Timothy 2:19 and the sabbath as full royal signet land cleanly. Residual defects are presenter staging cues, three author-prose sentence opens on And/That, and the spelled count against house digit style. No quote corruption, doctrine invention, or broken internal math. Surgical open and cue removals restore the asserted register."
+  ],
+  "proposals": [
+    {
+      "old": "Now read Revelation with the plate in view: the hundred forty and four thousand stand with the Lamb, __“having his Father's *name* written in their *foreheads*”__ (Revelation 14:1) — a kingdom of priests, every one wearing the plate.",
+      "new": "Revelation with the plate in view: the 144,000 stand with the Lamb, __“having his Father's *name* written in their *foreheads*”__ (Revelation 14:1) — a kingdom of priests, every one wearing the plate.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue and apply house digit count.",
+      "rationale": "“Now read” is forbidden presenter staging. House style requires digits for counts such as 144,000.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the book's last page makes it the estate of all His servants: __“they shall see his face; and his *name* shall be in their foreheads”__ (Revelation 22:4).",
+      "new": "The book's last page makes it the estate of all His servants: __“they shall see his face; and his *name* shall be in their foreheads”__ (Revelation 22:4).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading And in author prose.",
+      "rationale": "Author sentences may not open with And. Dropping it preserves the claim and the following scripture block.",
+      "_chunk": 1
+    },
+    {
+      "old": "Note which way the true seal faces.",
+      "new": "The true seal faces the other way.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace Note cue with direct assertion.",
+      "rationale": "“Note which” is a forbidden director cue. The replacement keeps the contrast that follows without meta instruction.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is the whole difference between the seals: one names an owner who keeps you; the other brands what it will spend.",
+      "new": "The whole difference between the seals is this: one names an owner who keeps you; the other brands what it will spend.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Eliminate leading That in author prose.",
+      "rationale": "Author sentences may not open with That. Rephrasing retains the exact contrast and density.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the seal has a common form every man has carried in his pocket — refined metal struck with an image and a superscription, an owner's name made money.",
+      "new": "The seal has a common form every man has carried in his pocket — refined metal struck with an image and a superscription, an owner's name made money.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading And before the coin bridge.",
+      "rationale": "Author sentences may not open with And. The claim and the next-chapter turn remain intact.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chapter assembles the seal as Name-plus-law with high density, chaining signet, forehead plate, frontlets, inkhorn, Spirit impression, and beast counterfeit without padding. Law-positive voice and OT-to-Revelation continuity are strong; the two engravings on 2 Timothy 2:19 and the sabbath as full royal signet land cleanly. Residual defects are presenter staging cues, three author-prose sentence opens on And/That, and the spelled count against house digit style. No quote corruption, doctrine invention, or broken internal math. Surgical open and cue removals restore the asserted register.\",\n  \"proposals\": [\n    {\n      \"old\": \"Now read Revelation with the plate in view: the hundred forty and four thousand stand with the Lamb, __“having his Father's *name* written in their *foreheads*”__ (Revelation 14:1) — a kingdom of priests, every one wearing the plate.\",\n      \"new\": \"Revelation with the plate in view: the 144,000 stand with the Lamb, __“having his Father's *name* written in their *foreheads*”__ (Revelation 14:1) — a kingdom of priests, every one wearing the plate.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue and apply house digit count.\",\n      \"rationale\": \"“Now read” is forbidden presenter staging. House style requires digits for counts such as 144,000.\"\n    },\n    {\n      \"old\": \"And the book's last page makes it the estate of all His servants: __“they shall see his face; and his *name* shall be in their foreheads”__ (Revelation 22:4).\",\n      \"new\": \"The book's last page makes it the estate of all His servants: __“they shall see his face; and his *name* shall be in their foreheads”__ (Revelation 22:4).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading And in author prose.\",\n      \"rationale\": \"Author sentences may not open with And. Dropping it preserves the claim and the following scripture block.\"\n    },\n    {\n      \"old\": \"Note which way the true seal faces.\",\n      \"new\": \"The true seal faces the other way.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace Note cue with direct assertion.\",\n      \"rationale\": \"“Note which” is a forbidden director cue. The replacement keeps the contrast that follows without meta instruction.\"\n    },\n    {\n      \"old\": \"That is the whole difference between the seals: one names an owner who keeps you; the other brands what it will spend.\",\n      \"new\": \"The whole difference between the seals is this: one names an owner who keeps you; the other brands what it will spend.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Eliminate leading That in author prose.\",\n      \"rationale\": \"Author sentences may not open with That. Rephrasing retains the exact contrast and density.\"\n    },\n    {\n      \"old\": \"And the seal has a common form every man has carried in his pocket — refined metal struck with an image and a superscription, an owner's name made money.\",\n      \"new\": \"The seal has a common form every man has carried in his pocket — refined metal struck with an image and a superscription, an owner's name made money.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading And before the coin bridge.\",\n      \"rationale\": \"Author sentences may not open with And. The claim and the next-chapter turn remain intact.\"\n    }\n  ]\n}"
+    }
+  ]
+}

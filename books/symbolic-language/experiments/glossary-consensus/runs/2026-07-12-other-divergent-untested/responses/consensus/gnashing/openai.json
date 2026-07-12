@@ -1,0 +1,173 @@
+{
+  "id": "resp_01728a16fd9a8dc5006a53507b1acc81948227866ba2cdcc2b",
+  "object": "response",
+  "created_at": 1783844987,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845004,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_01728a16fd9a8dc5006a53507bbc348194add5c67b8a07a738",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_01728a16fd9a8dc5006a53508099188194912d1dfef4cd4ba4",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Severe anguish, despair, and sometimes enraged regret experienced under divine judgment—especially exclusion from God’s kingdom and, in traditional Christian teaching, the punishment of hell.\",\"primary_basis\":[\"Matthew 8:12 — those excluded from the kingdom are cast into outer darkness, where there is weeping and gnashing of teeth.\",\"Matthew 13:41–42, 49–50 — the wicked are cast into the fiery furnace, where there is weeping and gnashing of teeth.\",\"Matthew 22:11–13 — the improperly dressed wedding guest is expelled into outer darkness.\",\"Matthew 24:48–51 — the unfaithful servant receives judgment and a place with the hypocrites.\",\"Matthew 25:26–30 — the unprofitable servant is cast into outer darkness.\",\"Luke 13:27–28 — the excluded see Abraham, Isaac, Jacob, and the prophets in God’s kingdom and respond with weeping and gnashing of teeth.\"],\"alternatives\":[{\"meaning\":\"Anger, hostility, or defiance toward God or the judge, rather than primarily pain or remorse.\",\"basis\":[\"Elsewhere in Scripture, gnashing the teeth commonly expresses hostile rage: Psalm 35:16; Psalm 37:12; Psalm 112:10; Lamentations 2:16; Acts 7:54.\",\"This usage leads some interpreters to understand the judged as reacting with continuing resentment or fury.\"],\"prominence\":\"minority\"},{\"meaning\":\"A general idiom for intense suffering or distress, without identifying one precise emotion such as regret, rage, or physical pain.\",\"basis\":[\"The judgment sayings pair gnashing with weeping and with images of exclusion, darkness, and fire.\",\"The expression may function rhetorically as a broad picture of eschatological misery rather than a technical description of a particular punishment.\"],\"prominence\":\"common\"},{\"meaning\":\"Literal chattering of teeth from cold in the ‘outer darkness.’\",\"basis\":[\"This reading connects darkness outside a banquet with nighttime cold.\",\"It has little support from the normal biblical use of tooth-gnashing, which more often denotes anguish or hostility.\"],\"prominence\":\"rare\"},{\"meaning\":\"Primarily covenantal or historical exclusion from the kingdom, especially the displacement of unbelieving or unfaithful members of Israel, rather than a direct description of postmortem hell.\",\"basis\":[\"Matthew 8:11–12 and Luke 13:28–29 contrast excluded ‘sons’ or hearers with patriarchs and people gathered into the kingdom.\",\"Some interpreters emphasize the passages’ immediate kingdom and covenant contexts.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus that the expression signifies an extreme negative response to divine judgment and exclusion. There is less consensus about whether the dominant emotion is pain, grief, remorse, rage, or some combination, and about whether every occurrence specifically describes eternal conscious punishment rather than eschatological judgment more generally.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 320,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 860,
+    "output_tokens_details": {
+      "reasoning_tokens": 240
+    },
+    "total_tokens": 1180
+  },
+  "user": null,
+  "metadata": {}
+}

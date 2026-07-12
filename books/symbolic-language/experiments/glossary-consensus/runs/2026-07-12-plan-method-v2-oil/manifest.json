@@ -1,0 +1,31 @@
+{
+  "protocol_version": 2,
+  "run_id": "2026-07-12-plan-method-v2-oil",
+  "created_at": "2026-07-12T05:09:46.890605+00:00",
+  "entry_count": 1,
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "input_sha256": "62a77faa1f4f73d87058ce005860ec0e80a6d61aefe91f57c83e6f8f2a32569b",
+  "method_evidence_sha256": "d39aa4b9dd355991a755d13c09163ff732d87e99d5931170725560b7ea1247fb",
+  "prompt_sha256": {
+    "01-consensus.md": "d83510f763522125d0341623d1c78d7764a8820aecb6b2cdb1e7523db78f6a33",
+    "02-relationship.md": "802bccb3675bcd6f4c17ebba695e9e8bbc125e24ea63d47eaa8d345ba8303ba9",
+    "03-persuasion.md": "cfdeeb651f0ce4c0389ef28ae928d4ada011f4d53a7506f4676c7a99e2d9d26d"
+  },
+  "notes": "API keys are never written. Proprietary model runs are procedurally reproducible but not byte-for-byte deterministic."
+}

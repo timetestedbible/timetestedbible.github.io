@@ -1,0 +1,178 @@
+{
+  "created_at": 1783845938,
+  "completed_at": 1783845979,
+  "id": "16482d61-890e-9886-a890-263c0bb6625a",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_16482d61-890e-9886-a890-263c0bb6625a",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Name\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's entry preserves the consensus referent (name = person/character/authority) but materially narrows and extends it by identifying the name itself as the covenant bond. The common-view note confirms 2 Sam 7:13, Ex 20:7, Isa 4:1, Ruth 3:9 supply partial support for the covenantal reading, yet the book's imagery (bridegroom's name, wing/corners = commandments) adds a specific protective covenantal layer not present in the listed alternatives.\",\n  \"extension_reasoning\": \"Consensus admits reputation, belonging, and covenant status as secondary; book adds the precise marital-covering mechanism and tzitzit symbolism while excluding purely magical or reputation-only senses. The printed citations alone give partial support (Isa 4:1 and Ruth 3:9 align with bridegroom imagery 50%).\",\n  \"core_verdict\": \"REFINED\",\n  \"extension_verdict\": \"REFINED\",\n  \"overall_verdict\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of 'name' as the covenant itself (via bridegroom imagery) preserves the consensus referent of name-as-person/character/authority while narrowing it to covenantal belonging and protection. The common-view note explicitly acknowledges the consensus view of character/authority/reputation, confirming the book's awareness of it, yet the entry 2 Sam 7:13; Ex 20:7; Isa 4:1; Ruth 3:9 supplies partial support for the covenantal extension.\",\n  \"extension_reasoning\": \"Consensus lists reputation, belonging, and name-change as alternatives; book adds the specific marital-covering mechanism (wing/corners = commandments) and excludes purely magical or reputation-only senses. The printed citations alone give partial support (Isa 4:1 and Ruth 3:9 align with bridegroom imagery 50%).\",\n  \"core_verdict\": \"REFINED\",\n  \"extension_verdict\": \"REFINED\",\n  \"overall_ver dict\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of 'name' as the covenant itself (via bridegroom imagery) preserves the consensus referent of name-as-person/character/author ity while narrowing it to covenantal belonging and protection. The common-view note explicitly acknowledges the consensus view of character/authority/reputation, confirming the book's awareness of it, yet the entry 2 Sam 7:13; Ex 20:7; Isa 4:1; Ruth 3:9 supplies partial support for the covenantal extension.\",\n  \"extension_reasoning\": \"Consensus lists reputation, belonging, and name-change as alternatives; book adds the specific marital-covering mechanism (wing/corners = commandments) and excludes purely magical or reputation-only senses. The printed citations alone give partial support (Isa 4:1 and Ruth 3:9 align with bridegroom imagery 50%).\",\n  \"core_verdict\": \"REFINED\",\n  \"extension_verdict\": \"REFINED\",\n  \"overall_verdict\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REF INED\",\n  \"core_reasoning\": \"The book's core identification of 'name' as the covenant itself (via bridegroom imagery) preserves the consensus referent of name-as-person/character/authority while narrowing it to covenantal belonging and protection. The common-view note explicitly acknowledges the consensus view of character/authority/re putation, confirming the book's awareness of it, yet the entry 2 Sam 7:13; Ex 20:7; Isa 4:1; Ruth 3:9 supplies partial support for the covenantal extension.\",\n  \"extension_reasoning\": \"Consensus lists reputation, belonging, and name-change as alternatives; book adds the specific marital-covering mechanism (wing/corners = commandments) and excludes purely magical or reputation-only senses. The printed citations alone give partial support (Isa 4:1 and Ruth 3:9 align with bridegroom imagery 50%).",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Name primarily symbolizes the essential character, nature, identity, authority, presence, and reputation of the bearer (especially God), so the name stands for the person; common secondary facets include delegated authority, renown, covenant belonging/ownership, and new-name identity transformation.\",\n  \"book_summary\": \"Name is the covenant itself, taken as a bride takes her husband’s name; to be called by His name is to be brought under His protective wing (covering), whose corners carry the reminder of the commandments.\",\n  \"consensus_core_identification\": \"the character, identity, authority, presence, and reputation of the person (esp. God)\",\n  \"book_core_identification\": \"the covenant itself (bridal taking of the name under protective wing-covering linked to the commandments)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book makes the primary sense the marriage-covenant covering (with wing/commandment imagery) and thus restricts central cases to covenantal belonging/protection; consensus treats character/identity/authority as primary across far broader usage, with covenant belonging only a secondary facet.\",\n  \"material_contradiction\": \"None; the book explicitly notes the common teaching of character/authority/reputation and the two can stand as complementary layers or emphases rather than mutually exclusive claims.\",\n  \"rationale\": \"Both cores operate inside the same broad category (name as marker of one’s identification with/relationship to God, including belonging and protection). The book therefore does not replace the referent or invent an uncovered one; it preserves the category while materially narrowing the primary identification to ‘the covenant itself’ via bridal-wing imagery and re-centering the extension on those specific cases, producing a real boundary refinement rather than equivalence, contradiction, or novelty.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Broad scriptural patterns of divine self-revelation, hallowing, and exaltation of the name more naturally support character/identity/authority as primary; the book’s covenant-bridal reading (and the unstated kanaf–tzitzit link) is a specialized application of a few texts rather than the core sense.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_16482d61-890e-9886-a890-263c0bb6625a",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3834,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 4502,
+    "output_tokens_details": {
+      "reasoning_tokens": 4007
+    },
+    "total_tokens": 8336,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 346800000,
+    "context_details": {
+      "input_tokens": 3834,
+      "output_tokens": 4502
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

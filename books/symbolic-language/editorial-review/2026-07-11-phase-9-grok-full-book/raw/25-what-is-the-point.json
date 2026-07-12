@@ -1,0 +1,78 @@
+{
+  "file": "books/symbolic-language/25-what-is-the-point.adoc",
+  "title": "What Is the Point?",
+  "notes": [
+    "This chunk is dense, assertive, and law-positive: the letters-vs-points case is built cleanly from jot-and-tittle, Psalm 40/Hebrews 10, milk/fat, and Psalm 22, with the Masoretic fence and synagogue pressure treated as evidence rather than speculation. Scripture blocks and image callouts are well placed and the closing stake on obedience lands hard. Residual defects are almost all house-style: four author sentences open with That/And/But, and two presenter cues (“Now hear… mark”, “so read”) still stage the reader. No doctrine, quote wording, or AI stock vocabulary needs reopening."
+  ],
+  "proposals": [
+    {
+      "old": "Now hear the writer of Hebrews quote that same verse — and mark whose mouth he puts it in:",
+      "new": "The writer of Hebrews quotes that same verse and puts it in the Messiah's mouth:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove presenter staging (“Now hear” / “mark”).",
+      "rationale": "House style forbids director cues; the rewrite states the same fact without commanding the reader.",
+      "_chunk": 1
+    },
+    {
+      "old": "The Introduction of this book stood on the fortieth Psalm — __“I delight to do thy will”__ — so read two verses up, in the psalm as the pointed Hebrew gives it:",
+      "new": "The Introduction of this book stood on the fortieth Psalm — __“I delight to do thy will”__ — and two verses earlier the pointed Hebrew reads:",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Drop the imperative “so read” cue.",
+      "rationale": "“so read two verses up” stages the reader; the replacement keeps the same pointer without the command.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is not a problem to be explained away; it is a permission — the apostolic practice treats the pre-Masoretic reading as the word of God.",
+      "new": "This is not a problem to be explained away; it is a permission — the apostolic practice treats the pre-Masoretic reading as the word of God.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Author prose must not open with “That”.",
+      "rationale": "House style bans sentence-initial That/And/But; “This” preserves the claim and force.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the reading that takes the crucifixion out of the psalm is the one the tradition kept.",
+      "new": "The reading that takes the crucifixion out of the psalm is the one the tradition kept.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop sentence-initial “And”.",
+      "rationale": "House style forbids author sentences starting with And; the claim stands without it.",
+      "_chunk": 1
+    },
+    {
+      "old": "But elevated to Scripture itself — bound into the text and taught as though God had inspired them — they become an addition to the word in the plainest sense: a mark of man on every syllable of God's, __“Add thou not unto his words, lest he reprove thee, and thou be found a *liar*”__ (Proverbs 30:6).",
+      "new": "Elevated to Scripture itself — bound into the text and taught as though God had inspired them — they become an addition to the word in the plainest sense: a mark of man on every syllable of God's, __“Add thou not unto his words, lest he reprove thee, and thou be found a *liar*”__ (Proverbs 30:6).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop sentence-initial “But”.",
+      "rationale": "House style forbids author sentences starting with But; contrast still reads from the prior sentence.",
+      "_chunk": 1
+    },
+    {
+      "old": "And His calendar sat under the same fence: the same community that fixed the vowels had long since traded the moon that is watched for a moon that is calculated — the appointed times this book reaches in the next part were guarded by the same social pressure.",
+      "new": "His calendar sat under the same fence: the same community that fixed the vowels had long since traded the moon that is watched for a moon that is calculated — the appointed times this book reaches in the next part were guarded by the same social pressure.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop sentence-initial “And”.",
+      "rationale": "House style forbids author sentences starting with And; the calendar claim is unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "The bias is not a hypothesis — it can be watched working.",
+      "new": "The bias is not a hypothesis — it can be watched at work.",
+      "type": "clarity",
+      "severity": "low",
+      "summary": "Fix non-idiomatic “watched working”.",
+      "rationale": "“watched working” is awkward; “watched at work” states the same claim cleanly without softening force.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is dense, assertive, and law-positive: the letters-vs-points case is built cleanly from jot-and-tittle, Psalm 40/Hebrews 10, milk/fat, and Psalm 22, with the Masoretic fence and synagogue pressure treated as evidence rather than speculation. Scripture blocks and image callouts are well placed and the closing stake on obedience lands hard. Residual defects are almost all house-style: four author sentences open with That/And/But, and two presenter cues (“Now hear… mark”, “so read”) still stage the reader. No doctrine, quote wording, or AI stock vocabulary needs reopening.\",\n  \"proposals\": [\n    {\n      \"old\": \"Now hear the writer of Hebrews quote that same verse — and mark whose mouth he puts it in:\",\n      \"new\": \"The writer of Hebrews quotes that same verse and puts it in the Messiah's mouth:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove presenter staging (“Now hear” / “mark”).\",\n      \"rationale\": \"House style forbids director cues; the rewrite states the same fact without commanding the reader.\"\n    },\n    {\n      \"old\": \"The Introduction of this book stood on the fortieth Psalm — __“I delight to do thy will”__ — so read two verses up, in the psalm as the pointed Hebrew gives it:\",\n      \"new\": \"The Introduction of this book stood on the fortieth Psalm — __“I delight to do thy will”__ — and two verses earlier the pointed Hebrew reads:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop the imperative “so read” cue.\",\n      \"rationale\": \"“so read two verses up” stages the reader; the replacement keeps the same pointer without the command.\"\n    },\n    {\n      \"old\": \"That is not a problem to be explained away; it is a permission — the apostolic practice treats the pre-Masoretic reading as the word of God.\",\n      \"new\": \"This is not a problem to be explained away; it is a permission — the apostolic practice treats the pre-Masoretic reading as the word of God.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Author prose must not open with “That”.\",\n      \"rationale\": \"House style bans sentence-initial That/And/But; “This” preserves the claim and force.\"\n    },\n    {\n      \"old\": \"And the reading that takes the crucifixion out of the psalm is the one the tradition kept.\",\n      \"new\": \"The reading that takes the crucifixion out of the psalm is the one the tradition kept.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop sentence-initial “And”.\",\n      \"rationale\": \"House style forbids author sentences starting with And; the claim stands without it.\"\n    },\n    {\n      \"old\": \"But elevated to Scripture itself — bound into the text and taught as though God had inspired them — they become an addition to the word in the plainest sense: a mark of man on every syllable of God's, __“Add thou not unto his words, lest he reprove thee, and thou be found a *liar*”__ (Proverbs 30:6).\",\n      \"new\": \"Elevated to Scripture itself — bound into the text and taught as though God had inspired them — they become an addition to the word in the plainest sense: a mark of man on every syllable of God's, __“Add thou not unto his words, lest he reprove thee, and thou be found a *liar*”__ (Proverbs 30:6).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop sentence-initial “But”.\",\n      \"rationale\": \"House style forbids author sentences starting with But; contrast still reads from the prior sentence.\"\n    },\n    {\n      \"old\": \"And His calendar sat under the same fence: the same community that fixed the vowels had long since traded the moon that is watched for a moon that is calculated — the appointed times this book reaches in the next part were guarded by the same social pressure.\",\n      \"new\": \"His calendar sat under the same fence: the same community that fixed the vowels had long since traded the moon that is watched for a moon that is calculated — the appointed times this book reaches in the next part were guarded by the same social pressure.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop sentence-initial “And”.\",\n      \"rationale\": \"House style forbids author sentences starting with And; the calendar claim is unchanged.\"\n    },\n    {\n      \"old\": \"The bias is not a hypothesis — it can be watched working.\",\n      \"new\": \"The bias is not a hypothesis — it can be watched at work.\",\n      \"type\": \"clarity\",\n      \"severity\": \"low\",\n      \"summary\": \"Fix non-idiomatic “watched working”.\",\n      \"rationale\": \"“watched working” is awkward; “watched at work” states the same claim cleanly without softening force.\"\n    }\n  ]\n}"
+    }
+  ]
+}

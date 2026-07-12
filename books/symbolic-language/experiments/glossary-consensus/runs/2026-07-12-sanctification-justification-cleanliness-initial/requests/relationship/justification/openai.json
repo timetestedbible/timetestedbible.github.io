@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "justification",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nJustify, justification\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'justify/justification' is understood as a forensic (legal/courtroom) term meaning to be declared righteous before God — the act by which God acquits the sinner and counts or reckons that person righteous, on the basis of faith in Jesus Christ rather than works of the law. In classic Protestant formulation this is a declarative act in which Christ's righteousness is imputed to the believer (justification by grace alone through faith alone). It is contrasted with condemnation and treated as the reversal of the guilty verdict, grounded in Christ's atoning death and resurrection.\",\n  \"primary_basis\": [\n    \"Romans 3:21-28 (justified freely by his grace through the redemption in Christ Jesus; justified by faith apart from works of the law)\",\n    \"Romans 4:1-8, 4:25 (Abraham believed God and it was counted to him as righteousness; raised for our justification)\",\n    \"Romans 5:1 (therefore, being justified by faith, we have peace with God)\",\n    \"Romans 5:9, 5:16-19 (justified by his blood; the one act of righteousness leads to justification and life)\",\n    \"Romans 8:30, 8:33 (whom he called he also justified; it is God who justifies)\",\n    \"Galatians 2:16 (a person is not justified by works of the law but through faith in Jesus Christ)\",\n    \"Galatians 3:6-14, 3:24 (justified by faith; the law as guardian until Christ)\",\n    \"Genesis 15:6 (Abraham believed the LORD, and he counted it to him as righteousness — cited in Romans 4 and Galatians 3)\",\n    \"Habakkuk 2:4 (the righteous shall live by faith — cited in Romans 1:17 and Galatians 3:11)\",\n    \"Philippians 3:9 (not having a righteousness of my own from the law, but that which comes through faith in Christ)\",\n    \"Titus 3:5-7 (justified by his grace, not by works done in righteousness)\",\n    \"2 Corinthians 5:21 (that we might become the righteousness of God in him)\",\n    \"Luke 18:9-14 (the tax collector went home justified rather than the Pharisee)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Roman Catholic (Tridentine) view: justification is not merely a declaration but an actual making-righteous — an infusion of grace that inwardly transforms and sanctifies the person, beginning at baptism and increasing through faith working in love and cooperation with grace; it encompasses what Protestants distinguish as sanctification.\",\n      \"basis\": [\n        \"Council of Trent, Decree on Justification (1547)\",\n        \"James 2:14-26 (a person is justified by works and not by faith alone)\",\n        \"Galatians 5:6 (faith working through love)\",\n        \"Romans 2:6-13 (the doers of the law will be justified)\",\n        \"1 Corinthians 6:11 (you were washed, sanctified, justified)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"New Perspective on Paul (Sanders, Dunn, N.T. Wright): justification is primarily a covenantal/ecclesiological declaration — God's verdict that one is a member of his covenant people — and Paul's polemic against 'works of the law' targets Jewish boundary markers (circumcision, food laws, Sabbath) rather than merit-seeking legalism; final justification is rendered in accordance with the whole life lived.\",\n      \"basis\": [\n        \"Romans 3:29-30 (God of Jews and Gentiles alike)\",\n        \"Galatians 2:11-16 in its table-fellowship context\",\n        \"Romans 2:13 and 2 Corinthians 5:10 (future judgment according to works)\",\n        \"E.P. Sanders, Paul and Palestinian Judaism (1977); J.D.G. Dunn; N.T. Wright, Justification (2009)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eastern Orthodox reading: justification is not a discrete forensic category but part of the single process of salvation as healing and union with God (theosis); the West's legal framing is regarded as foreign to the patristic Greek understanding of dikaioō as being made righteous through participation in Christ.\",\n      \"basis\": [\n        \"2 Peter 1:4 (partakers of the divine nature)\",\n        \"John 15:1-11 and 17:20-23 (abiding/union texts)\",\n        \"Patristic tradition (e.g., Athanasius, Cyril of Alexandria, Maximus the Confessor)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"James's 'demonstrative' sense: in James 2:14-26, 'justified' means shown or proved to be righteous — vindicated by works as the evidence of genuine faith — a usage most Protestant interpreters harmonize with Paul by distinguishing declarative from demonstrative justification.\",\n      \"basis\": [\n        \"James 2:21-25 (Abraham and Rahab justified by works)\",\n        \"Matthew 11:19 / Luke 7:35 (wisdom is justified by her deeds/children)\",\n        \"Luke 7:29 (the people justified God, i.e., acknowledged him righteous)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Justification as participation/union with Christ rather than (or prior to) imputation: righteousness is received through incorporation into Christ, so that the believer shares his vindicated status; associated with apocalyptic and participationist readings of Paul (Schweitzer, Sanders, Campbell) and with the Finnish Lutheran school's reading of Luther (justification as Christ's real presence in faith).\",\n      \"basis\": [\n        \"2 Corinthians 5:17-21\",\n        \"Philippians 3:8-9 ('found in him')\",\n        \"Galatians 2:19-20 (crucified with Christ; Christ lives in me)\",\n        \"Romans 6:1-11 (union with Christ in death and resurrection)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"'Faith of Christ' (pistis Christou) subjective-genitive reading: believers are justified by the faithfulness of Jesus Christ (his obedient faithfulness unto death) rather than, or logically prior to, their own act of believing; shifts the ground of justification from human faith to Christ's fidelity.\",\n      \"basis\": [\n        \"Galatians 2:16, 2:20; 3:22\",\n        \"Romans 3:22, 3:26\",\n        \"Philippians 3:9\",\n        \"Richard B. Hays, The Faith of Jesus Christ (1983)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Ecumenical convergence view: justification is God's gracious act by which sinners are both declared and made righteous, forgiveness and renewal held together; represented by the Lutheran–Catholic Joint Declaration on the Doctrine of Justification (1999), which treats the declarative and transformative aspects as inseparable.\",\n      \"basis\": [\n        \"Joint Declaration on the Doctrine of Justification (1999)\",\n        \"Romans 3:23-25; 5:1; 1 Corinthians 1:30\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Unlike many symbolic terms, 'justification' is a technical theological term rather than an image or emblem, so 'symbolic meaning' here amounts to its doctrinal sense. There is broad consensus across traditions that it concerns being set right/righteous before God through Christ; the sharp and historic division is over the mechanism and nature of that act — forensic declaration with imputed righteousness (classic Protestant, dominant in evangelical and Reformed teaching), versus transformative infusion (Roman Catholic), versus covenantal-membership verdict (New Perspective), versus healing/participation (Orthodox). The Protestant forensic reading is presented above as primary because it is the most widely recognized default in English-language biblical-studies and popular Christian teaching contexts, but the Catholic transformative view is equally official within the world's largest Christian communion, so 'settled consensus' applies to the general meaning, not to the disputed mechanics.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God’s forensic declaration that a sinner is righteous—acquitted from condemnation and placed in right standing with God—on the basis of Christ’s saving work and received through faith.\",\n  \"primary_basis\": [\n    \"Romans 3:20-28\",\n    \"Romans 4:1-8, 23-25\",\n    \"Romans 5:1, 9, 16-19\",\n    \"Romans 8:30-34\",\n    \"Galatians 2:16-21\",\n    \"Galatians 3:6-14\",\n    \"Philippians 3:8-9\",\n    \"2 Corinthians 5:19-21\",\n    \"Luke 18:9-14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Justification includes or effects an actual inward making-righteous, not merely an external legal declaration; it is associated with regeneration, sanctifying grace, and a lived righteousness.\",\n      \"basis\": [\n        \"Romans 5:17-19\",\n        \"Romans 6:1-14\",\n        \"1 Corinthians 6:11\",\n        \"Titus 3:5-7\",\n        \"James 2:21-24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Justification is chiefly God’s covenantal verdict identifying or vindicating members of the covenant family, with faith in Christ marking that membership rather than justification being framed primarily as the imputation of moral righteousness.\",\n      \"basis\": [\n        \"Genesis 15:6\",\n        \"Romans 3:21-30\",\n        \"Romans 4:9-17\",\n        \"Galatians 2:15-21\",\n        \"Galatians 3:6-29\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"To justify can mean to vindicate, demonstrate, or prove someone to be righteous, especially where works show that a profession of faith is genuine.\",\n      \"basis\": [\n        \"James 2:14-26\",\n        \"Matthew 11:19\",\n        \"Luke 7:29, 35\",\n        \"Romans 3:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Justification may refer to a future or final favorable judgment according to works, understood as confirming the reality of faith and union with Christ rather than necessarily replacing grace as its basis.\",\n      \"basis\": [\n        \"Matthew 12:36-37\",\n        \"Romans 2:5-16\",\n        \"2 Corinthians 5:10\",\n        \"Galatians 5:5-6\",\n        \"James 2:24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus that justification concerns being set right with God through Christ and by grace. There is no fully settled consensus on whether it is exclusively forensic, intrinsically transformative, chiefly covenantal, or how works and final judgment relate to it. The biblical verb also has ordinary contextual senses such as vindicating, acknowledging as right, or proving right, so it does not carry one invariant symbolic meaning in every passage.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God's forensic (legal) declaration that a sinner is righteous and in right standing with Him, based on faith in Christ's atoning work rather than personal merit or works of the law; often involving the imputation of Christ's righteousness\",\n  \"primary_basis\": [\n    \"Romans 3:21-28\",\n    \"Romans 4:1-8, 25\",\n    \"Romans 5:1, 9, 16-18\",\n    \"Galatians 2:16-17\",\n    \"Galatians 3:24\",\n    \"Titus 3:7\",\n    \"Philippians 3:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A transformative process in which God both declares and actually makes the person righteous by infused grace, involving cooperation with the Spirit, sacraments, and good works (not merely forensic imputation)\",\n      \"basis\": [\n        \"James 2:14-26\",\n        \"Romans 5:19\",\n        \"Council of Trent Session VI\",\n        \"Catholic catechetical tradition on justification as progressive sanctification\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant membership and eschatological vindication of God's people (New Perspective on Paul and related readings): justification primarily concerns inclusion in Abraham's family and status as God's people rather than individual forensic acquittal from sin guilt\",\n      \"basis\": [\n        \"Reinterpretations of Romans 1–4 and Galatians 2–3\",\n        \"works of N.T. Wright, E.P. Sanders, James Dunn\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Old Testament background sense of judicial vindication, righting of wrongs, or demonstration of covenant faithfulness (less focused on individual soteriology)\",\n      \"basis\": [\n        \"Deuteronomy 25:1\",\n        \"Isaiah 53:11\",\n        \"Psalm 143:2\",\n        \"various LXX uses of dikaioō\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Justification is a core soteriological doctrine employing forensic/legal metaphor rather than pure symbolism; the Reformation forensic reading remains the most widely taught primary sense in evangelical and classical Protestant instruction and much biblical commentary, yet major denominational and scholarly alternatives prevent a single settled consensus across all Christian traditions and academic biblical studies.\"\n}\n\nBOOK ENTRY\nTo judge, declare, or demonstrate a person, word, deed, or cause right against a question or charge; the opposite is to condemn. God answers the charge against the sinner by grace through Christ, forgiving rather than renaming ungodliness righteousness. Deeds may vindicate a claimed faith, but they cannot purchase the Judge's mercy or place God in debt.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught in Protestant theology: God's once-for-all legal declaration that a believer is righteous through Christ's imputed righteousness, received by faith apart from works.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 25:1; Prov 17:15; Matt 11:19; Luke 7:29; Rom 3:24-26; 4:4-8; 8:33; Jas 2:21-25) · see Uncommon Sanctification, Justification, and Cleanliness, and The End of the Law for Paul's law, works, wages, and debt vocabulary\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 25:1 — If there be a controversy between men, and they come unto judgment, that the judges may judge them; then they shall justify the righteous, and condemn the wicked.\nProverbs 17:15 — He that justifieth the wicked, and he that condemneth the just, even they both are abomination to the LORD.\nMatthew 11:19 — The Son of man came eating and drinking, and they say, Behold a man gluttonous, and a winebibber, a friend of publicans and sinners. But wisdom is justified of her children.\nLuke 7:29 — And all the people that heard him, and the publicans, justified God, being baptized with the baptism of John.\nRomans 3:24 — Being justified freely by his grace through the redemption that is in Christ Jesus:\nRomans 3:25 — Whom God hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of God;\nRomans 3:26 — To declare, I say, at this time his righteousness: that he might be just, and the justifier of him which believeth in Jesus.\nRomans 4:4 — Now to him that worketh is the reward not reckoned of grace, but of debt.\nRomans 4:5 — But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.\nRomans 4:6 — Even as David also describeth the blessedness of the man, unto whom God imputeth righteousness without works,\nRomans 4:7 — Saying, Blessed are they whose iniquities are forgiven, and whose sins are covered.\nRomans 4:8 — Blessed is the man to whom the Lord will not impute sin.\nRomans 8:33 — Who shall lay any thing to the charge of God's elect? It is God that justifieth.\nJames 2:21 — Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar?\nJames 2:22 — Seest thou how faith wrought with his works, and by works was faith made perfect?\nJames 2:23 — And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.\nJames 2:24 — Ye see then how that by works a man is justified, and not by faith only.\nJames 2:25 — Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "966dda1d5a555c929ffbe09a18c2f4f615c722e1db71a1154b73e130734f07ba",
+  "cache": {
+    "hit": false
+  }
+}

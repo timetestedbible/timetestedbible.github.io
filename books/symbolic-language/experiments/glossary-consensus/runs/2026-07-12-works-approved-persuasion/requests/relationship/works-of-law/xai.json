@@ -1,0 +1,126 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "works-of-law",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWorks of the law\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, especially in the Reformation/Protestant tradition, 'works of the law' (Greek: erga nomou) refers to deeds performed in obedience to the Mosaic law—understood broadly as any human effort or moral/ritual performance undertaken to earn or establish righteousness before God. The phrase functions in Paul's letters as the negative pole in the faith-versus-works contrast: no one is justified by works of the law, but only through faith in Jesus Christ. Symbolically, the term stands for legalism, self-reliant human achievement, and works-righteousness as opposed to justification received by grace through faith.\",\n  \"primary_basis\": [\n    \"Romans 3:20 — 'by the works of the law no flesh will be justified in his sight, for through the law comes knowledge of sin'\",\n    \"Romans 3:28 — 'a person is justified by faith apart from works of the law'\",\n    \"Galatians 2:16 — 'a person is not justified by works of the law but through faith in Jesus Christ... because by works of the law no one will be justified'\",\n    \"Galatians 3:2, 3:5 — 'Did you receive the Spirit by works of the law or by hearing with faith?'\",\n    \"Galatians 3:10 — 'all who rely on works of the law are under a curse'\",\n    \"Romans 4:1-8 (Abraham justified by faith, not works)\",\n    \"Romans 9:30-32 (Israel pursued righteousness 'as if it were by works')\",\n    \"Ephesians 2:8-9 and Titus 3:5 (grace, 'not of works'), commonly read as parallel to the phrase\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"New Perspective on Paul (E. P. Sanders, James D. G. Dunn, N. T. Wright): 'works of the law' refers primarily to Jewish covenant boundary markers—circumcision, food laws, Sabbath observance—that distinguished Jews from Gentiles. Paul's polemic targets ethnic exclusivism and the requirement that Gentiles adopt Jewish identity markers, not human effort or merit-based legalism as such. Supporters note the Qumran text 4QMMT ('some of the works of the Torah') as a Second Temple parallel.\",\n      \"basis\": [\n        \"Galatians 2:11-16 (the phrase first appears in the context of the Antioch table-fellowship dispute)\",\n        \"Galatians 5:2-6 and 6:12-15 (circumcision as the flashpoint)\",\n        \"Romans 3:29-30 (immediately after 3:28: 'Is God the God of Jews only?')\",\n        \"Acts 15:1-11 (the circumcision controversy)\",\n        \"4QMMT (extrabiblical Dead Sea Scrolls parallel)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Roman Catholic and some patristic readings: Paul excludes only the ceremonial works of the Mosaic law (circumcision, sacrifices, dietary rules), not moral works done in grace. Justification is by faith working through love, and grace-enabled works genuinely matter; the phrase is not a blanket rejection of works in salvation. Associated historically with Jerome, Aquinas's distinctions, and Catholic responses to Reformation exegesis.\",\n      \"basis\": [\n        \"Galatians 5:6 — 'faith working through love'\",\n        \"James 2:14-26 — 'a person is justified by works and not by faith alone'\",\n        \"Romans 2:6-13 — 'the doers of the law will be justified'\",\n        \"Matthew 25:31-46 (judgment according to deeds)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenantal-nomism / redemptive-historical reading: 'works of the law' denotes life under the old Mosaic covenant era as a whole, now obsolete in salvation history with Christ's coming; the issue is eschatological transition between covenants rather than either legalism or ethnic badges alone.\",\n      \"basis\": [\n        \"Galatians 3:19-25 (the law as guardian 'until Christ came')\",\n        \"Romans 10:4 ('Christ is the end/goal of the law')\",\n        \"2 Corinthians 3:6-11 (old and new covenant contrast)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Subjective-genitive or 'works which the law produces' reading: the phrase describes what the law itself works or effects in people (knowledge of sin, condemnation), rather than deeds humans perform. A niche grammatical proposal in academic literature.\",\n      \"basis\": [\n        \"Romans 3:20b ('through the law comes knowledge of sin')\",\n        \"Romans 7:7-13 (the law's effect of producing sin-consciousness)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Torah-observant/messianic readings: the phrase is a technical sectarian term (paralleling 4QMMT) for a particular halakhic system or man-made legal rulings, not the Torah itself; Paul rejects a specific legalistic interpretation of Torah rather than Torah observance per se. Held in Hebrew Roots and some Messianic Jewish circles.\",\n      \"basis\": [\n        \"4QMMT parallel\",\n        \"Matthew 5:17-19 (Jesus not abolishing the law)\",\n        \"Distinction drawn between 'law of God' (Romans 7:22) and 'works of the law'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The phrase appears in Romans 3:20, 3:28 and Galatians 2:16 (three times), 3:2, 3:5, 3:10. There is broad agreement on the surface referent—deeds connected to the Mosaic law—but the interpretive meaning is one of the most actively contested questions in Pauline studies. The traditional Protestant reading (works as human merit/legalism, opposed to grace) remains the most widely taught position in churches and popular teaching, and is arguably still dominant at the pew level. However, the New Perspective reading (boundary markers of Jewish identity) has been a major scholarly force since the late 1970s and is standard fare in academic commentaries, making the field genuinely divided. Because at least two robust interpretive traditions compete at scale, the term should be treated as recognizable but not settled: there is a dominant popular reading with a strong, well-established scholarly rival.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Deeds done in obedience to “the law,” ordinarily understood as the commandments of the Mosaic Torah, especially when relied upon as the basis or means of being justified before God. In much Christian teaching, the phrase consequently represents human law-keeping or religious achievement contrasted with justification by faith.\",\n  \"primary_basis\": [\n    \"Romans 3:19–20: no flesh is justified by works of the law, since the law brings knowledge of sin.\",\n    \"Romans 3:27–28: justification by faith is contrasted with works of the law.\",\n    \"Galatians 2:15–16: works of the law are repeatedly contrasted with faith in Jesus Christ as the means of justification.\",\n    \"Galatians 3:2–5: receiving the Spirit by faith is contrasted with works of the law.\",\n    \"Galatians 3:10–14: those who rely on works of the law are placed under the Torah’s curse; Christ redeems from that curse.\",\n    \"Romans 9:30–32 and Philippians 3:4–9 are commonly used as broader Pauline parallels contrasting law-based righteousness or personal credentials with righteousness by faith.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Any human moral effort, good deeds, or attempted merit—not specifically observance of the Mosaic Torah—when offered as grounds for salvation.\",\n      \"basis\": [\n        \"Romans 4:1–5 contrasts working for wages with faith.\",\n        \"Ephesians 2:8–9 excludes “works” as the basis of salvation, although it does not use the exact phrase “works of the law.”\",\n        \"Titus 3:5 similarly contrasts salvation by mercy with righteous deeds performed by humans.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Primarily Jewish identity or boundary practices, especially circumcision, food laws, and calendar or Sabbath observance, which distinguished Jews from Gentiles. On this reading Paul opposes requiring Gentiles to adopt Jewish covenant markers.\",\n      \"basis\": [\n        \"Galatians 2:11–16 places the phrase in the context of Jewish-Gentile table fellowship.\",\n        \"Galatians 5:2–6 and 6:12–15 focus on circumcision.\",\n        \"Romans 3:27–30 connects justification with God’s being God of both Jews and Gentiles.\",\n        \"Romans 4:9–12 discusses Abraham’s justification before circumcision.\",\n        \"Colossians 2:16 is often cited as a parallel concerning food, festivals, new moons, and Sabbaths.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mosaic observances performed apart from grace or the Spirit, rather than Spirit-enabled Christian obedience and works of love. This reading does not treat every good work as excluded from the Christian life.\",\n      \"basis\": [\n        \"Romans 2:6–13 speaks positively of doing what the law requires.\",\n        \"Romans 8:3–4 says the law’s righteous requirement is fulfilled in those who walk according to the Spirit.\",\n        \"Galatians 5:6 speaks of faith working through love.\",\n        \"Galatians 5:13–14 and 6:2 describe loving service and fulfilling the law of Christ.\",\n        \"James 2:14–26, while not using “works of the law,” is commonly invoked to distinguish living faith and its works from reliance on law observance.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Specific humanly formulated halakhic rulings or sectarian interpretations of Torah, rather than the commandments of the Torah as a whole.\",\n      \"basis\": [\n        \"The expression in the Dead Sea Scroll text 4QMMT (“some works of the law”) is often compared with Paul’s wording.\",\n        \"Galatians 1:14 and Mark 7:8–13 are sometimes used as contextual evidence concerning ancestral traditions, although neither directly defines Paul’s phrase.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The expression is normally treated as a Pauline theological or technical phrase rather than as a symbol with one fixed symbolic referent. There is broad agreement that it concerns deeds associated with law observance and that Paul denies their role as the basis of justification. There is no settled consensus on whether its scope is the whole Mosaic Torah, especially Jewish boundary markers, merit-seeking human action more generally, or some combination of these.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Human efforts or deeds of obedience to the Mosaic Law (Torah) that cannot justify or make a person righteous before God, in contrast to justification by faith in Christ\",\n  \"primary_basis\": [\n    \"Romans 3:20\",\n    \"Romans 3:28\",\n    \"Galatians 2:16\",\n    \"Galatians 3:2\",\n    \"Galatians 3:5\",\n    \"Galatians 3:10-12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jewish ethnic boundary markers or identity badges (circumcision, food laws, Sabbath observance) rather than the Torah as a whole or general moral effort\",\n      \"basis\": [\n        \"Galatians 2:11-16\",\n        \"Romans 3:28-30\",\n        \"New Perspective on Paul scholarship (Sanders, Dunn, Wright)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Primarily the ceremonial/ritual prescriptions of the Mosaic Law (as distinct from its moral requirements), so that moral good works remain relevant under grace\",\n      \"basis\": [\n        \"Historical Catholic and some Protestant readings of Romans/Galatians\",\n        \"Contrast with James 2:14-26\",\n        \"Council of Trent-era interpretations\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Any human works or self-reliant efforts in general (not limited to Mosaic Law) that attempt to earn standing with God\",\n      \"basis\": [\n        \"Broader Reformation-era extensions of Romans 3–4 and Galatians\",\n        \"Some popular evangelical teaching\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The phrase is almost exclusively Pauline. Traditional Protestant teaching (still dominant in many churches) treats it as law-keeping that fails to justify. Academic biblical studies commonly favor the New Perspective boundary-marker reading. Catholic and some historical Protestant views often narrow it to ceremonial aspects. Ongoing debates mean no single settled interpretation exists across Christian traditions and scholarship.\"\n}\n\nBOOK ENTRY\nPaul's phrase for deeds considered in relation to law. It is not a synonym for obedience and does not identify one unchanging class of deeds. The surrounding passage may identify God's law, a circumcision-party application, or leave the particular acts unnamed. What remains consistent is the rejected claim made for those deeds: they cannot purchase justification, produce the Spirit, establish covenant standing, or place God in debt. The context identifies the work; the phrase denies it as the purchase price.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rom 3:20, 28; 9:32 KJV/TR; Gal 2:16; 3:2, 5, 10) · see The End of the Law\n\nAVAILABLE KJV EXCERPTS\nRomans 3:20 — Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.\nRomans 3:28 — Therefore we conclude that a man is justified by faith without the deeds of the law.\nRomans 9:32 — Wherefore? Because they sought it not by faith, but as it were by the works of the law. For they stumbled at that stumblingstone;\nGalatians 2:16 — Knowing that a man is not justified by the works of the law, but by the faith of Jesus Christ, even we have believed in Jesus Christ, that we might be justified by the faith of Christ, and not by the works of the law: for by the works of the law shall no flesh be justified.\nGalatians 3:2 — This only would I learn of you, Received ye the Spirit by the works of the law, or by the hearing of faith?\nGalatians 3:5 — He therefore that ministereth to you the Spirit, and worketh miracles among you, doeth he it by the works of the law, or by the hearing of faith?\nGalatians 3:10 — For as many as are of the works of the law are under the curse: for it is written, Cursed is every one that continueth not in all things which are written in the book of the law to do them.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "7d4066ecb26d9d89436d84de852ba711fb133bcb14d4a86835d844a72d0826af",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-12-works-approved",
+      "request": "runs/2026-07-12-works-approved/requests/relationship/works-of-law/xai.json"
+    }
+  }
+}

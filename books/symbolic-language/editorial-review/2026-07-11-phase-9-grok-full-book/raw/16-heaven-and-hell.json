@@ -1,0 +1,110 @@
+{
+  "file": "books/symbolic-language/16-heaven-and-hell.adoc",
+  "title": "Heaven and Hell",
+  "notes": [
+    "This chunk is dense, assertive, and law-positive, with clean scriptural chaining that dismantles popular heaven/hell geography without hedging. The three-word hell analysis and fire-as-God section assemble evidence tightly and keep the author's voice. Residual defects are almost entirely house-style sentence openings (And/That), one presenter staging cue, and word-form counts that should be digits. No quote corruption, doctrine invention, or broken links appear; once openers and numbers are cleaned the register stays on-target.",
+    "This chunk makes a dense, assertive case that the second death is final destruction, not endless torment, chaining law, prophets, Targums, and Revelation without hedging. The Plato-to-Augustine paper trail is clean and effective, and the close into the covering chapter is well placed. Residual presenter staging appears in “once the words are weighed.” One sentence overloads the kolasis and aiōnios arguments into a single track that benefits from a split at the natural evidence seam. Otherwise the prose is free of AI stock, sentence-open violations, and register slips; voice and law-positive stance hold throughout."
+  ],
+  "proposals": [
+    {
+      "old": "And the Hebrew word itself keeps both registers at once: _shamayim_ is always dual or plural, never singular — the visible sky overhead and the seat of authority above, two layers of one word.",
+      "new": "The Hebrew word itself keeps both registers at once: _shamayim_ is always dual or plural, never singular — the visible sky overhead and the seat of authority above, two layers of one word.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences that begin with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And __“new”__ is the word this book has met before: the Hebrew of Isaiah 65:17 is _chadash_, the root of *renew, repair, rebuild* — the word of the renewed covenant (Jeremiah 31:31) — and the Greek is _kainos_, new in freshness, not new in existence.",
+      "new": "The word __“new”__ is the word this book has met before: the Hebrew of Isaiah 65:17 is _chadash_, the root of *renew, repair, rebuild* — the word of the renewed covenant (Jeremiah 31:31) — and the Greek is _kainos_, new in freshness, not new in existence.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences that begin with And; the rewrite preserves every symbol and claim.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is why Scripture's own word for their state is *sleep* — and why sheol is temporary: __“The LORD killeth, and maketh alive: he *bringeth down to the grave, and bringeth up*”__ (1 Samuel 2:6); __“O grave, I will be thy *destruction*”__ (Hosea 13:14); and in the end, __“death and hell *delivered up the dead* which were in them”__ (Revelation 20:13).",
+      "new": "This is why Scripture's own word for their state is *sleep* — and why sheol is temporary: __“The LORD killeth, and maketh alive: he *bringeth down to the grave, and bringeth up*”__ (1 Samuel 2:6); __“O grave, I will be thy *destruction*”__ (Hosea 13:14); and in the end, __“death and hell *delivered up the dead* which were in them”__ (Revelation 20:13).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Replace sentence-initial That with This.",
+      "rationale": "House style forbids author-prose sentences that begin with That; This matches the chapter's own repeated construction.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the refiner: __“he shall sit as a *refiner and purifier* of silver”__ (Malachi 3:3) — the dross goes, the silver stays, in one and the same crucible; the very fire the link:/books/symbolic-language/the-remnant/[Remnant] chapter watched carry the third part through (Zechariah 13:9).",
+      "new": "The refiner: __“he shall sit as a *refiner and purifier* of silver”__ (Malachi 3:3) — the dross goes, the silver stays, in one and the same crucible; the very fire the link:/books/symbolic-language/the-remnant/[Remnant] chapter watched carry the third part through (Zechariah 13:9).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences that begin with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And release is built into the calendar itself: the jubilee the link:/books/symbolic-language/liberty/[Liberty] chapter proclaimed frees every debtor and bond-servant on a set day — nothing in the system is endless.",
+      "new": "Release is built into the calendar itself: the jubilee the link:/books/symbolic-language/liberty/[Liberty] chapter proclaimed frees every debtor and bond-servant on a set day — nothing in the system is endless.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences that begin with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now comes the silence that should end the argument.\n\nDeuteronomy 28 is God's own catalogue of covenant curses — fifty-four verses of escalating horror: blight, boils, madness, siege, famine driving parents to unspeakable things, exile, slavery.\n\nAnd in all fifty-four verses of the worst that God Himself threatens, endless torment after death is never mentioned.",
+      "new": "The silence that ends the argument is this.\n\nDeuteronomy 28 is God's own catalogue of covenant curses — 54 verses of escalating horror: blight, boils, madness, siege, famine driving parents to unspeakable things, exile, slavery.\n\nIn all 54 verses of the worst that God Himself threatens, endless torment after death is never mentioned.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip staging cue and And-open; convert verse counts to digits.",
+      "rationale": "Removes presenter-style 'Now comes' and the forbidden sentence-initial And while enforcing house-style digit counts.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Paul closes the question twice over: God __“*only* hath immortality”__ (1 Timothy 6:16) — if every soul were immortal, He would not be alone in it — and the righteous are those who __“*seek* for glory and honour and *immortality*”__ (Romans 2:7).",
+      "new": "Paul closes the question twice over: God __“*only* hath immortality”__ (1 Timothy 6:16) — if every soul were immortal, He would not be alone in it — and the righteous are those who __“*seek* for glory and honour and *immortality*”__ (Romans 2:7).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences that begin with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "The first is _sheol_ — and the King James itself testifies that something is buried here, because it renders the one Hebrew word __“grave”__ thirty-one times and __“hell”__ thirty-one times — one word, split down the middle.",
+      "new": "The first is _sheol_ — and the King James itself testifies that something is buried here, because it renders the one Hebrew word __“grave”__ 31 times and __“hell”__ 31 times — one word, split down the middle.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Convert word-form counts to digits.",
+      "rationale": "House style requires numbers as digits for counts.",
+      "_chunk": 1
+    },
+    {
+      "old": "The hard verses fall into place around this, once the words are weighed.",
+      "new": "The hard verses fall into place around this.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove residual director-cue staging.",
+      "rationale": "“Once the words are weighed” is presenter staging of the forbidden “Weigh the” type. The claim stands without the cue.",
+      "_chunk": 2
+    },
+    {
+      "old": "__“Everlasting punishment”__ (Matthew 25:46) is _kolasis_ — from a root meaning *to prune*, the gardener's word, and Jesus drew its picture Himself: the fruitless branch __“is cast forth… and burned”__ (John 15:6) — cut off and consumed, not kept alive in the coals; and __“everlasting”__ (_aiōnios_) marks the permanence of the *result*, exactly as __“eternal redemption”__ (Hebrews 9:12) is a redeeming that happened once and holds forever, and as Sodom, set forth as an example of __“eternal fire”__ (Jude 7), is not burning this afternoon.",
+      "new": "__“Everlasting punishment”__ (Matthew 25:46) is _kolasis_ — from a root meaning *to prune*, the gardener's word, and Jesus drew its picture Himself: the fruitless branch __“is cast forth… and burned”__ (John 15:6) — cut off and consumed, not kept alive in the coals.\n__“Everlasting”__ (_aiōnios_) marks the permanence of the *result*, exactly as __“eternal redemption”__ (Hebrews 9:12) is a redeeming that happened once and holds forever, and as Sodom, set forth as an example of __“eternal fire”__ (Jude 7), is not burning this afternoon.",
+      "type": "readability",
+      "severity": "medium",
+      "summary": "Split overloaded sentence at the natural evidence seam.",
+      "rationale": "One sentence stacks the prune image, the branch burning, and two permanence parallels. Two sentences keep density while making the claim easier to track.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is dense, assertive, and law-positive, with clean scriptural chaining that dismantles popular heaven/hell geography without hedging. The three-word hell analysis and fire-as-God section assemble evidence tightly and keep the author's voice. Residual defects are almost entirely house-style sentence openings (And/That), one presenter staging cue, and word-form counts that should be digits. No quote corruption, doctrine invention, or broken links appear; once openers and numbers are cleaned the register stays on-target.\",\n  \"proposals\": [\n    {\n      \"old\": \"And the Hebrew word itself keeps both registers at once: _shamayim_ is always dual or plural, never singular — the visible sky overhead and the seat of authority above, two layers of one word.\",\n      \"new\": \"The Hebrew word itself keeps both registers at once: _shamayim_ is always dual or plural, never singular — the visible sky overhead and the seat of authority above, two layers of one word.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And __“new”__ is the word this book has met before: the Hebrew of Isaiah 65:17 is _chadash_, the root of *renew, repair, rebuild* — the word of the renewed covenant (Jeremiah 31:31) — and the Greek is _kainos_, new in freshness, not new in existence.\",\n      \"new\": \"The word __“new”__ is the word this book has met before: the Hebrew of Isaiah 65:17 is _chadash_, the root of *renew, repair, rebuild* — the word of the renewed covenant (Jeremiah 31:31) — and the Greek is _kainos_, new in freshness, not new in existence.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And; the rewrite preserves every symbol and claim.\"\n    },\n    {\n      \"old\": \"That is why Scripture's own word for their state is *sleep* — and why sheol is temporary: __“The LORD killeth, and maketh alive: he *bringeth down to the grave, and bringeth up*”__ (1 Samuel 2:6); __“O grave, I will be thy *destruction*”__ (Hosea 13:14); and in the end, __“death and hell *delivered up the dead* which were in them”__ (Revelation 20:13).\",\n      \"new\": \"This is why Scripture's own word for their state is *sleep* — and why sheol is temporary: __“The LORD killeth, and maketh alive: he *bringeth down to the grave, and bringeth up*”__ (1 Samuel 2:6); __“O grave, I will be thy *destruction*”__ (Hosea 13:14); and in the end, __“death and hell *delivered up the dead* which were in them”__ (Revelation 20:13).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace sentence-initial That with This.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with That; This matches the chapter's own repeated construction.\"\n    },\n    {\n      \"old\": \"And the refiner: __“he shall sit as a *refiner and purifier* of silver”__ (Malachi 3:3) — the dross goes, the silver stays, in one and the same crucible; the very fire the link:/books/symbolic-language/the-remnant/[Remnant] chapter watched carry the third part through (Zechariah 13:9).\",\n      \"new\": \"The refiner: __“he shall sit as a *refiner and purifier* of silver”__ (Malachi 3:3) — the dross goes, the silver stays, in one and the same crucible; the very fire the link:/books/symbolic-language/the-remnant/[Remnant] chapter watched carry the third part through (Zechariah 13:9).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And release is built into the calendar itself: the jubilee the link:/books/symbolic-language/liberty/[Liberty] chapter proclaimed frees every debtor and bond-servant on a set day — nothing in the system is endless.\",\n      \"new\": \"Release is built into the calendar itself: the jubilee the link:/books/symbolic-language/liberty/[Liberty] chapter proclaimed frees every debtor and bond-servant on a set day — nothing in the system is endless.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And.\"\n    },\n    {\n      \"old\": \"Now comes the silence that should end the argument.\\n\\nDeuteronomy 28 is God's own catalogue of covenant curses — fifty-four verses of escalating horror: blight, boils, madness, siege, famine driving parents to unspeakable things, exile, slavery.\\n\\nAnd in all fifty-four verses of the worst that God Himself threatens, endless torment after death is never mentioned.\",\n      \"new\": \"The silence that ends the argument is this.\\n\\nDeuteronomy 28 is God's own catalogue of covenant curses — 54 verses of escalating horror: blight, boils, madness, siege, famine driving parents to unspeakable things, exile, slavery.\\n\\nIn all 54 verses of the worst that God Himself threatens, endless torment after death is never mentioned.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip staging cue and And-open; convert verse counts to digits.\",\n      \"rationale\": \"Removes presenter-style 'Now comes' and the forbidden sentence-initial And while enforcing house-style digit counts.\"\n    },\n    {\n      \"old\": \"And Paul closes the question twice over: God __“*only* hath immortality”__ (1 Timothy 6:16) — if every soul were immortal, He would not be alone in it — and the righteous are those who __“*seek* for glory and honour and *immortality*”__ (Romans 2:7).\",\n      \"new\": \"Paul closes the question twice over: God __“*only* hath immortality”__ (1 Timothy 6:16) — if every soul were immortal, He would not be alone in it — and the righteous are those who __“*seek* for glory and honour and *immortality*”__ (Romans 2:7).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And.\"\n    },\n    {\n      \"old\": \"The first is _sheol_ — and the King James itself testifies that something is buried here, because it renders the one Hebrew word __“grave”__ thirty-one times and __“hell”__ thirty-one times — one word, split down the middle.\",\n      \"new\": \"The first is _sheol_ — and the King James itself testifies that something is buried here, because it renders the one Hebrew word __“grave”__ 31 times and __“hell”__ 31 times — one word, split down the middle.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Convert word-form counts to digits.\",\n      \"rationale\": \"House style requires numbers as digits for counts.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk makes a dense, assertive case that the second death is final destruction, not endless torment, chaining law, prophets, Targums, and Revelation without hedging. The Plato-to-Augustine paper trail is clean and effective, and the close into the covering chapter is well placed. Residual presenter staging appears in “once the words are weighed.” One sentence overloads the kolasis and aiōnios arguments into a single track that benefits from a split at the natural evidence seam. Otherwise the prose is free of AI stock, sentence-open violations, and register slips; voice and law-positive stance hold throughout.\",\n  \"proposals\": [\n    {\n      \"old\": \"The hard verses fall into place around this, once the words are weighed.\",\n      \"new\": \"The hard verses fall into place around this.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove residual director-cue staging.\",\n      \"rationale\": \"“Once the words are weighed” is presenter staging of the forbidden “Weigh the” type. The claim stands without the cue.\"\n    },\n    {\n      \"old\": \"__“Everlasting punishment”__ (Matthew 25:46) is _kolasis_ — from a root meaning *to prune*, the gardener's word, and Jesus drew its picture Himself: the fruitless branch __“is cast forth… and burned”__ (John 15:6) — cut off and consumed, not kept alive in the coals; and __“everlasting”__ (_aiōnios_) marks the permanence of the *result*, exactly as __“eternal redemption”__ (Hebrews 9:12) is a redeeming that happened once and holds forever, and as Sodom, set forth as an example of __“eternal fire”__ (Jude 7), is not burning this afternoon.\",\n      \"new\": \"__“Everlasting punishment”__ (Matthew 25:46) is _kolasis_ — from a root meaning *to prune*, the gardener's word, and Jesus drew its picture Himself: the fruitless branch __“is cast forth… and burned”__ (John 15:6) — cut off and consumed, not kept alive in the coals.\\n__“Everlasting”__ (_aiōnios_) marks the permanence of the *result*, exactly as __“eternal redemption”__ (Hebrews 9:12) is a redeeming that happened once and holds forever, and as Sodom, set forth as an example of __“eternal fire”__ (Jude 7), is not burning this afternoon.\",\n      \"type\": \"readability\",\n      \"severity\": \"medium\",\n      \"summary\": \"Split overloaded sentence at the natural evidence seam.\",\n      \"rationale\": \"One sentence stacks the prune image, the branch burning, and two permanence parallels. Two sentences keep density while making the claim easier to track.\"\n    }\n  ]\n}"
+    }
+  ]
+}

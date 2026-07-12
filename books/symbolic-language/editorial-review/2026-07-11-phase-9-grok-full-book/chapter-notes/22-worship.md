@@ -1,0 +1,3 @@
+# Worship
+
+This chunk is strong: dense parallel-column method, clear separation of worship from singing, firm bow-and-serve pair, and a clean arc from Abraham’s first use through the everlasting gospel and the beast crisis. The law-positive stance and body-allegiance definition land with force. Residual presenter staging still surfaces (Watch, Now consider, Now look closely, Hold the equation, And listen), and several author-prose sentences open with And or That against house style. One soft meta line (“worth sitting with the irony”) weakens an otherwise assertive close. Surgical cuts restore the author’s direct voice without touching doctrine or quoted Scripture.

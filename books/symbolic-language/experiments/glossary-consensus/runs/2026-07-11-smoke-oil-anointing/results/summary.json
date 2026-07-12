@@ -1,0 +1,35 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_UNPERSUADED": 1
+  },
+  "rows": [
+    {
+      "anchor": "oil",
+      "term": "Oil",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_UNPERSUADED"
+    }
+  ]
+}

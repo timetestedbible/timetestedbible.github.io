@@ -1,0 +1,3 @@
+# Trees
+
+The chapter is dense, assertive, and law-positive: tree as nation is fixed early, then carried cleanly through anatomy, fruit, forest, beast, and garden with strong scripture seams. The Isaiah 66 gardens argument and the clean/unclean close are especially sharp. House-style And-openers recur in author prose and must be stripped. Residual presenter staging appears in Look again and Read so. One unclear phrase (The symbol supplies nothing) and a subject-complement mismatch (verses are the LORD gathering) need surgical repair; the olive-trees relative clause is slightly tangled but secondary.

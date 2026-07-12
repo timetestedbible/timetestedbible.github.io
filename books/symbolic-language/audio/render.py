@@ -64,9 +64,26 @@ def _clean(text):
 ORDINALS = {'1': 'First', '2': 'Second', '3': 'Third'}
 
 def spoken_citation(ref):
-    """'2 Timothy 2:19' -> ('Second Timothy', '2'). Book+chapter only —
-    verse numbers are print apparatus, not speech."""
-    m = re.match(r'^\s*(\d)?\s*([A-Za-z][A-Za-z ]*?)\s+(\d+)(?::.*)?$', ref.strip())
+    """'2 Timothy 2:19' -> ('Second Timothy', '2').
+
+    Book+chapter only are spoken; verse numbers and display-only citation
+    notes such as "NKJV" or "rendered from the Hebrew" remain on the video
+    card without entering the narration.
+    """
+    ref = ref.strip().strip('"')
+    # In Obadiah, Philemon, Jude, and Second/Third John, a bare number is a
+    # verse rather than a chapter. Speak the book alone instead of inventing
+    # a chapter number from the display citation.
+    one_chapter = re.match(
+        r'^\s*((?:2|3)\s+John|Obadiah|Philemon|Jude)\s+\d+', ref, re.I)
+    if one_chapter:
+        name = one_chapter.group(1)
+        if name[0].isdigit():
+            number, book = name.split(None, 1)
+            name = ORDINALS[number] + ' ' + book
+        return name, ''
+    m = re.match(r'^\s*(\d)?\s*([A-Za-z][A-Za-z ]*?)\s+(\d+)(?::[\d,\-\s]+)?',
+                 ref)
     if not m:
         return None
     num, book, chap = m.groups()
@@ -96,13 +113,15 @@ def weave_citation(intro, ref):
         return intro                    # lead-in already names the reading
     intro = intro.rstrip()
     if not intro.endswith(':'):
-        return intro + f' Hear {name} {chap}:'
+        return intro + f' Hear {name}{(" " + chap) if chap else ""}:'
     head = intro[:-1].rstrip()
     if head.lower().endswith(name.lower()):
-        return head + f' {chap}:'
+        return head + f'{(" " + chap) if chap else ""}:'
     if re.search(r'\blisten$', head, re.I):
-        return head + f' to {name} {chap}:'
-    return head + f' in {name} {chap}:'
+        return head + f' to {name}{(" " + chap) if chap else ""}:'
+    if not chap and re.search(r'\bread$', head, re.I):
+        return head + f' {name}:'
+    return head + f' in {name}{(" " + chap) if chap else ""}:'
 
 def parse_script(path):
     """Returns ordered segments [(role, text)], role in {'narrator', 'scripture'}.

@@ -1,0 +1,173 @@
+{
+  "id": "resp_00e395ae2ad8b634006a5408c7b4e88196ab13f006188ec2e3",
+  "object": "response",
+  "created_at": 1783892167,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783892182,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_00e395ae2ad8b634006a5408c865c88196be1aa36a8b3851f0",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_00e395ae2ad8b634006a5408cc03f48196aa4446fdc877b7f2",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"God’s forensic declaration that a sinner is righteous—acquitted from condemnation and placed in right standing with God—on the basis of Christ’s saving work and received through faith.\",\"primary_basis\":[\"Romans 3:20-28\",\"Romans 4:1-8, 23-25\",\"Romans 5:1, 9, 16-19\",\"Romans 8:30-34\",\"Galatians 2:16-21\",\"Galatians 3:6-14\",\"Philippians 3:8-9\",\"2 Corinthians 5:19-21\",\"Luke 18:9-14\"],\"alternatives\":[{\"meaning\":\"Justification includes or effects an actual inward making-righteous, not merely an external legal declaration; it is associated with regeneration, sanctifying grace, and a lived righteousness.\",\"basis\":[\"Romans 5:17-19\",\"Romans 6:1-14\",\"1 Corinthians 6:11\",\"Titus 3:5-7\",\"James 2:21-24\"],\"prominence\":\"common\"},{\"meaning\":\"Justification is chiefly God’s covenantal verdict identifying or vindicating members of the covenant family, with faith in Christ marking that membership rather than justification being framed primarily as the imputation of moral righteousness.\",\"basis\":[\"Genesis 15:6\",\"Romans 3:21-30\",\"Romans 4:9-17\",\"Galatians 2:15-21\",\"Galatians 3:6-29\"],\"prominence\":\"minority\"},{\"meaning\":\"To justify can mean to vindicate, demonstrate, or prove someone to be righteous, especially where works show that a profession of faith is genuine.\",\"basis\":[\"James 2:14-26\",\"Matthew 11:19\",\"Luke 7:29, 35\",\"Romans 3:4\"],\"prominence\":\"common\"},{\"meaning\":\"Justification may refer to a future or final favorable judgment according to works, understood as confirming the reality of faith and union with Christ rather than necessarily replacing grace as its basis.\",\"basis\":[\"Matthew 12:36-37\",\"Romans 2:5-16\",\"2 Corinthians 5:10\",\"Galatians 5:5-6\",\"James 2:24\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is broad Christian consensus that justification concerns being set right with God through Christ and by grace. There is no fully settled consensus on whether it is exclusively forensic, intrinsically transformative, chiefly covenantal, or how works and final judgment relate to it. The biblical verb also has ordinary contextual senses such as vindicating, acknowledging as right, or proving right, so it does not carry one invariant symbolic meaning in every passage.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 320,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 720,
+    "output_tokens_details": {
+      "reasoning_tokens": 138
+    },
+    "total_tokens": 1040
+  },
+  "user": null,
+  "metadata": {}
+}

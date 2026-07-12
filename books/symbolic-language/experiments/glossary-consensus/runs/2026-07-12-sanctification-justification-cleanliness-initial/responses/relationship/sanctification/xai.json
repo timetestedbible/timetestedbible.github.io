@@ -1,0 +1,178 @@
+{
+  "created_at": 1783892287,
+  "completed_at": 1783892317,
+  "id": "85ed3fd6-e483-9c86-95a2-e8b5564c49b1",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_85ed3fd6-e483-9c86-95a2-e8b5564c49b1",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Sanctify, sanctification\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of sanctification as causing/appointing/acknowledging holiness by removing from common status and placing under divine ownership for appointed purpose is equivalent to the consensus's 'set apart as holy' and 'make holy for God'. The book's explicit inclusion of moral cleansing as fitting but not the entire meaning, plus its emphasis on treating/preparing accordingly, refines the consensus's primary focus on progressive moral transformation and conformity to Christ by subordinating it to the broader ownership/claim framework. This is a boundary adjustment rather than replacement.\",\n  \"extension_reasoning\": \"The book narrows the consensus's dominant progressive sanctification (inward renewal, dying to sin) by stating it is not the word's entire meaning, while broadening to include cultic/ceremonial consecration, sanctifying God and His Name, and 1 Corinthians 7:14's familial sanctification. It reclassifies moral cleansing as secondary rather than central, and adds the reverse usage of people sanctifying God, which the consensus treats as a common alternative but not primary.\",\n  \"consensus_summary\": \"In mainstream Christian teaching, to 'sanctify' means to set apart as holy for God, and 'sanctification' denotes the process (and in some texts the accomplished state) by which believers are made holy — separated from sin and common use, consecrated to God, and progressively conformed to the moral character of Christ through the work of the Holy Spirit.\",\n  \" book_summary\": \"To cause, appoint, or acknowledge as holy — removing someone or something from common status, placing it under an owner's claim for an appointed purpose, and treating or preparing it accordingly. God sanctifies by claiming for Himself and fitting for His use; people sanctify God and His Name by treating and displaying Him as holy. Moral cleansing and obedient living fit a person to that holy calling, but they are not the word's entire meaning.\",\n  \"rationale\": \"The book's lexical emphasis on ownership claim and purpose aligns with the consensus's cultic root and core set-apart sense, but its common-view note explicitly distinguishes the progressive inward renewal as commonly taught rather than definitive, and subordinates moral aspects. This creates a refined extension where the consensus's primary referent is narrowed and the book's broader claim-based framework is elevated.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The book's downplaying of progressive moral transformation as not the entire meaning conflicts with its prominence as the dominant primary meaning in consensus responses and much New Testament scholarship.\",\n  \"confidence\": \"high\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of sanct ification as causing/appointing/acknowledging holiness by removing from common status and placing under divine ownership for appointed purpose is equivalent to the consensus's 'set apart as holy' and 'make holy for God'. The book's explicit inclusion of moral cleansing as fitting but not the entire meaning, plus its emphasis on treating/preparing accordingly, refines the consensus's primary focus on progressive moral transformation and conformity to Christ by subordinating it to the broader ownership/claim framework. This is a boundary adjustment rather than replacement.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Sanctify means to set apart as holy for God; sanctification is primarily the process (or accomplished state) by which believers are made holy, separated from sin, and progressively conformed to Christ by the Spirit, with definitive, entire, theosis/sacramental, and cultic senses as alternatives.\",\n  \"book_summary\": \"To cause, appoint, or acknowledge as holy by removing from common status, placing under an owner's claim for an appointed purpose, and treating or preparing it accordingly; God claims and fits for His use, people sanctify God/Name by treating Him as holy; moral cleansing and obedience fit the calling but are not the entire meaning.\",\n  \"consensus_core_identification\": \"set apart / make holy for God (primary emphasis on progressive moral-spiritual transformation of believers)\",\n  \"book_core_identification\": \"cause/appoint/acknowledge as holy via removal from common status under owner's claim for purpose plus corresponding treatment (moral fitting but not entire)\",\n  \"core_relation\": \"BOOK_BROADENS\",\n  \"extension_relation\": \"BOOK_SUPERSET\",\n  \"boundary_disagreement\": \"Book centers ownership-claim, reverse sanctification of God/Name, and pure consecration of persons/objects (including cases without progressive moral change) as core; treats progressive inward renewal as non-entire. Consensus primary centers progressive moral transformation of believers and lists cultic/reverse/definitive as alternatives.\",\n  \"material_contradiction\": \"None; both affirm setting apart as holy. Book subordinates rather than denies moral cleansing.\",\n  \"rationale\": \"Minimum cores share the set-apart-as-holy referent. Book preserves that category but materially broadens and re-prioritizes: it elevates claim/purpose/treatment (including reverse and non-moral cases) to the definitional center while explicitly demoting the progressive moral process that forms the consensus primary meaning to a secondary fitting aspect. This is boundary and precision disagreement, not replacement of the central referent.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The dominant Christian and NT usage for believers equates sanctification with progressive Spirit-wrought moral renewal (the view the book itself flags as 'commonly taught'), which the entry subordinates as incomplete.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_85ed3fd6-e483-9c86-95a2-e8b5564c49b1",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 5067,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 3457,
+    "output_tokens_details": {
+      "reasoning_tokens": 2955
+    },
+    "total_tokens": 8524,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 306840000,
+    "context_details": {
+      "input_tokens": 5067,
+      "output_tokens": 3457
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

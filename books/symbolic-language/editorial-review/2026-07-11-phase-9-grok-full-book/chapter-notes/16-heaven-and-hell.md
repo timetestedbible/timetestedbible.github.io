@@ -1,0 +1,5 @@
+# Heaven and Hell
+
+This chunk is dense, assertive, and law-positive, with clean scriptural chaining that dismantles popular heaven/hell geography without hedging. The three-word hell analysis and fire-as-God section assemble evidence tightly and keep the author's voice. Residual defects are almost entirely house-style sentence openings (And/That), one presenter staging cue, and word-form counts that should be digits. No quote corruption, doctrine invention, or broken links appear; once openers and numbers are cleaned the register stays on-target.
+
+This chunk makes a dense, assertive case that the second death is final destruction, not endless torment, chaining law, prophets, Targums, and Revelation without hedging. The Plato-to-Augustine paper trail is clean and effective, and the close into the covering chapter is well placed. Residual presenter staging appears in “once the words are weighed.” One sentence overloads the kolasis and aiōnios arguments into a single track that benefits from a split at the natural evidence seam. Otherwise the prose is free of AI stock, sentence-open violations, and register slips; voice and law-positive stance hold throughout.

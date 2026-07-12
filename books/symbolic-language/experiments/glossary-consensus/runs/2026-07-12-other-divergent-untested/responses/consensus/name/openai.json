@@ -1,0 +1,173 @@
+{
+  "id": "resp_038214ee67a1aec9006a5350c6f3d08193bd3a2b412beecad2",
+  "object": "response",
+  "created_at": 1783845062,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845082,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_038214ee67a1aec9006a5350c789688193b36262de6ccc10b3",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_038214ee67a1aec9006a5350ce7e10819398cdd7d38cac1e3e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"A “name” most commonly symbolizes the identity and revealed character of the person who bears it; in biblical usage it can therefore represent the person himself or herself, including that person’s presence, reputation, and authority. God’s name especially signifies God as revealed and made known.\",\"primary_basis\":[\"Exodus 3:13–15 — God’s revealed name is associated with his identity and covenantal self-disclosure.\",\"Exodus 34:5–7 — the LORD proclaims his name by declaring his character and attributes.\",\"Psalm 20:7 — trusting in the name of the LORD means trusting in God himself.\",\"Proverbs 18:10 — the name of the LORD represents God’s protective presence and power.\",\"Matthew 1:21–23 — Jesus’ names identify his mission and significance.\",\"John 17:6, 26 — Jesus makes the Father’s name known, commonly understood as revealing God’s person and character.\",\"Philippians 2:9–11 — the exalted name of Jesus signifies supreme status and authority.\"],\"alternatives\":[{\"meaning\":\"Delegated authority or agency: acting “in the name” of someone means acting under that person’s authorization and power.\",\"basis\":[\"Matthew 28:19\",\"Luke 10:17\",\"Acts 3:6\",\"Acts 4:7–12\",\"Colossians 3:17\"],\"prominence\":\"common\"},{\"meaning\":\"Reputation, honor, or renown: a good or great name represents public standing and remembered reputation.\",\"basis\":[\"Genesis 11:4\",\"Genesis 12:2\",\"Proverbs 22:1\",\"Ecclesiastes 7:1\",\"Revelation 3:1\"],\"prominence\":\"common\"},{\"meaning\":\"Covenant ownership and belonging: bearing, receiving, or having a name written signifies being claimed by God and included among his people.\",\"basis\":[\"Numbers 6:27\",\"2 Chronicles 7:14\",\"Isaiah 43:7\",\"Revelation 3:12\",\"Revelation 14:1\"],\"prominence\":\"common\"},{\"meaning\":\"A divinely assigned vocation or transformed identity: receiving a new name marks a changed status, mission, or eschatological identity.\",\"basis\":[\"Genesis 17:5, 15\",\"Genesis 32:28\",\"Isaiah 62:2\",\"Matthew 16:17–18\",\"Revelation 2:17\"],\"prominence\":\"minority\"},{\"meaning\":\"Continued existence or memorial: preserving or blotting out a name can symbolize enduring remembrance, lineage, or removal from the community.\",\"basis\":[\"Deuteronomy 25:6\",\"Ruth 4:5, 10\",\"Psalm 9:5\",\"Psalm 109:13\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus on the core idea of identity or character represented by a name, but no single exclusive symbolic definition applies in every passage. Context determines whether identity, authority, reputation, belonging, or vocation is emphasized.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1011,
+    "output_tokens_details": {
+      "reasoning_tokens": 368
+    },
+    "total_tokens": 1328
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,33 @@
+{
+  "file": "books/symbolic-language/21-light-and-darkness.adoc",
+  "title": "Light and Darkness, Day and Night",
+  "notes": [
+    "This chunk delivers a dense, law-positive chain that equates light with the lived commandment and visible good works, darkness with deliberate concealment of evil, and day/night with the open versus hidden life. Scripture links (Proverbs, Isaiah, John, Exodus plague, Thessalonians, outer darkness) assemble cleanly with the oil/garment symbols and close the chapter without loose ends. Two author-prose sentences violate the house ban on opening with That/And. The rest of the prose is already tight, free of director cues, AI stock, and quote corruption; only those sentence-open fixes are required."
+  ],
+  "proposals": [
+    {
+      "old": "That is why a hidden lamp is no lamp at all — __“neither do men light a candle, and put it under a bushel”__ (Matthew 5:15).",
+      "new": "A hidden lamp is no lamp at all — __“neither do men light a candle, and put it under a bushel”__ (Matthew 5:15).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop banned sentence-initial That.",
+      "rationale": "House style forbids author-prose sentences that begin with That. The shortened assertion still follows directly from the preceding claim about visible good works and keeps the Matthew citation intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the LORD Himself is source and sum: __“The LORD is my *light* and my *salvation*”__ (Psalm 27:1) — light and _yeshuah_ in one breath.",
+      "new": "The LORD Himself is source and sum: __“The LORD is my *light* and my *salvation*”__ (Psalm 27:1) — light and _yeshuah_ in one breath.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop banned sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences that begin with And. Removing the conjunction leaves the same identity claim and the Psalm quotation unchanged.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk delivers a dense, law-positive chain that equates light with the lived commandment and visible good works, darkness with deliberate concealment of evil, and day/night with the open versus hidden life. Scripture links (Proverbs, Isaiah, John, Exodus plague, Thessalonians, outer darkness) assemble cleanly with the oil/garment symbols and close the chapter without loose ends. Two author-prose sentences violate the house ban on opening with That/And. The rest of the prose is already tight, free of director cues, AI stock, and quote corruption; only those sentence-open fixes are required.\",\n  \"proposals\": [\n    {\n      \"old\": \"That is why a hidden lamp is no lamp at all — __“neither do men light a candle, and put it under a bushel”__ (Matthew 5:15).\",\n      \"new\": \"A hidden lamp is no lamp at all — __“neither do men light a candle, and put it under a bushel”__ (Matthew 5:15).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop banned sentence-initial That.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with That. The shortened assertion still follows directly from the preceding claim about visible good works and keeps the Matthew citation intact.\"\n    },\n    {\n      \"old\": \"And the LORD Himself is source and sum: __“The LORD is my *light* and my *salvation*”__ (Psalm 27:1) — light and _yeshuah_ in one breath.\",\n      \"new\": \"The LORD Himself is source and sum: __“The LORD is my *light* and my *salvation*”__ (Psalm 27:1) — light and _yeshuah_ in one breath.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop banned sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And. Removing the conjunction leaves the same identity claim and the Psalm quotation unchanged.\"\n    }\n  ]\n}"
+    }
+  ]
+}

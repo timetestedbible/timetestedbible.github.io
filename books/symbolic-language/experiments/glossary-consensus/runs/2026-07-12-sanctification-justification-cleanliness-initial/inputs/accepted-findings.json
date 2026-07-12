@@ -1,0 +1,112 @@
+{
+  "sources": [
+    {
+      "run_id": "2026-07-12-faith-v8-sequence",
+      "manifest_sha256": "b2a5ee512b0aeecf95af1358f7ab7c6e0b4f637fbdd39cb39a668a08d939651c"
+    },
+    {
+      "run_id": "2026-07-12-works-symbol-links-final",
+      "manifest_sha256": "5beab47d8d51827f6349faa6acaf5e208e5807bd02a4ce5b37acbf1adf8eb3aa"
+    },
+    {
+      "run_id": "2026-07-12-righteousness-complete-evidence-final",
+      "manifest_sha256": "6778b76104a8fc353a71cd520c0a2e9fe16788db645f53c0ca2a87189c7ad08f"
+    }
+  ],
+  "findings": [
+    {
+      "anchor": "faith",
+      "term": "Faith",
+      "book_entry": "Trusting faithfulness — reliance on God's unseen promise held steady through obedience. Works do not purchase the promise; they enact and bring faith to maturity, and faith without them is dead.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Living faith is trusting reliance on God that is held steady and enacted through obedience; obedient fidelity is integral to faith’s living operation rather than merely an optional accompaniment.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Faith is trusting faithfulness: reliance on God's unseen promise in which the steadiness of obedience is constitutive of the faith itself (emunah), not merely a downstream consequence — trust and fidelity fused in one disposition held through delay and testing.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Trusting faithfulness — reliance on God's unseen promise held steady through obedience",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        }
+      }
+    },
+    {
+      "anchor": "works",
+      "term": "Works (good works, evil works)",
+      "book_entry": "Deeds — not a synonym for obedience. A work becomes obedience when it executes a legitimate command; it becomes disobedience when the command or deed conflicts with God's command. Romans 4 uses the laborer's work offered for wages and debt; James 2 uses Abraham's work as faith made visible. Complete obedience still earns no wage: the servant has only done his duty.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Works are deeds, not a synonym for obedience; a deed counts as obedience or disobedience according to its relation to a legitimate command and ultimately to God’s command.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-works-symbol-links-final"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "A 'work' is a deed or action as such — not a synonym for obedience and not an inherently negative cipher for self-righteous effort. The deed becomes obedience when it executes a legitimate command and disobedience when the deed or its commanding authority conflicts with God's command; and no work, not even complete obedience, creates a wage-claim on God (Luke 17:10), which is the specific claim Paul excludes in Romans 4:4-5 while James 2 uses the same word for faith's visible enactment.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-works-symbol-links-final"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Works are deeds/actions; a work becomes obedience only when it executes a legitimate command and becomes disobedience when it conflicts with God's command; works are therefore not a synonym for obedience.",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-works-symbol-links-final"
+        }
+      }
+    },
+    {
+      "anchor": "works-of-law",
+      "term": "Works of the law",
+      "book_entry": "Paul's phrase for deeds considered in relation to law. It is not a synonym for obedience and does not identify one unchanging class of deeds. The surrounding passage may identify God's law, a circumcision-party application, or leave the particular acts unnamed. What remains consistent is the rejected claim made for those deeds: they cannot purchase justification, produce the Spirit, establish covenant standing, or place God in debt. The context identifies the work; the phrase denies it as the purchase price.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "Paul’s negative use of “works of the law” targets law-related deeds claimed as grounds for obtaining justification, the Spirit, or covenant standing; it is not a blanket rejection of obedience or good works flowing from faith.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-works-symbol-links-final"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "'Works of the law' (erga nomou) is not a code-word for one fixed class of deeds (neither legalism-in-general nor Jewish boundary markers specifically); the surrounding context identifies which deeds are in view (God's law in Rom 3:20, 28 and Gal 3:10; the circumcision-party's demand in Gal 2:16; unnamed acts in Gal 3:2, 5), and what Paul uniformly denies is the claim made for those deeds — that they can purchase justification, produce the Spirit, establish covenant standing, or place God in debt. The phrase attacks the deed's asserted purchase-power, not the deeds or the law as such.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-works-symbol-links-final"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Paul's phrase for deeds considered in relation to law; the surrounding context identifies the particular deeds (God's law, a circumcision-party application, or unnamed acts), while the phrase itself consistently denies those deeds any power to purchase justification, produce the Spirit, establish covenant standing, or place God in debt.",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-works-symbol-links-final"
+        }
+      }
+    },
+    {
+      "anchor": "righteousness",
+      "term": "Righteousness",
+      "book_entry": "Right-living. God is Right-Living by definition — His ways and works are the measure of right. For those under His authority, right-living is the doing of His commandments: the law kept, worn as the garment of righteous acts. Romans 4 excludes wage-work that would put God in debt, not obedience; even complete obedience earns no wage because the servant has only done his duty. Righteousness is given and reckoned by grace, but the gift never renames wrong-living right.",
+      "accepted_by_provider": {
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Righteousness is right-living: God is Right-Living by definition (His ways and works are the measure of right), and for those under His authority righteousness is the doing of His commandments — a substance of conduct that is granted and reckoned by grace (its source is gift) but is never a bare status that renames wrong-living right.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-righteousness-complete-evidence-final"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Righteousness is right-living: God is right-living by definition (His ways and works the measure); for those under His authority it is the doing of His commandments (the law kept, worn as the garment of righteous acts). It is given and reckoned by grace, yet the gift never renames wrong-living right; complete obedience earns no wage because the servant has only done his duty.",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-righteousness-complete-evidence-final"
+        }
+      }
+    }
+  ]
+}

@@ -26,9 +26,14 @@ timetested.bible (this repo IS the deployment — GitHub Pages serves it directl
 ## Building the print PDF
 
 ```sh
-cd books/symbolic-language/print && ruby build.rb
+./books/symbolic-language/print/build.rb setup      # first checkout only
+cd books/symbolic-language/print && ./build.rb
 mdls -name kMDItemNumberOfPages the-bibles-symbolic-language-print.pdf   # page count (target ~480)
 ```
+
+The executable build script automatically leaves macOS's obsolete system Ruby
+for Homebrew Ruby. `ruby build.rb` is also safe: the script performs the same
+restart before loading Bundler or Asciidoctor.
 
 Discipline (hard-won — violating this has silently destroyed edits):
 

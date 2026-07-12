@@ -1,0 +1,3 @@
+# Noah Uncovered
+
+This chunk delivers a tight double reading of Genesis 8:13 that locks the flood log to the sixth seal while keeping the plain sense primary. Strengths include the clean assembly of echad/ot/shanah into seals of the age, consistent lexicon work, and the firm close that never unseats the ship's log. Residual presenter staging is heavy (Mark three things, Do what this part, Now read, Hold this, Now weigh, sit down and try). Multiple author-prose sentences open with And or But, one fingerprint clause is tangled, and 'make Noah the righteous' is awkward. Surgical replacements restore assertive density without touching doctrine or quoted text.

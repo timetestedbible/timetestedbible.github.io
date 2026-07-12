@@ -1,0 +1,195 @@
+{
+  "id": "resp_0422f8742c12e686006a5349af83e481968224e9e800f41257",
+  "object": "response",
+  "created_at": 1783843247,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783843263,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0422f8742c12e686006a5349b082348196aa6db91d82b30b90",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0422f8742c12e686006a5349b6f1d0819699b396a639bfb9ad",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Works are deeds or conduct, with good and evil works ordinarily understood as outward manifestations of faith, character, or allegiance; traditions dispute their role in justification and salvation.\",\"book_summary\":\"Works are deeds, but not inherently obedience. A deed counts as obedience or disobedience according to its relation to a legitimate divine command; even complete obedience remains duty rather than wage-earning merit.\",\"consensus_core_identification\":\"Works = human deeds or actions, especially morally significant conduct.\",\"book_core_identification\":\"Works = deeds as such, whose status as obedience or disobedience depends on the command governing them.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book retains the consensus referent of deeds but rejects treating works generally as synonymous with obedience or meritorious effort. It reclassifies some works as obedience, others as disobedience, and denies that even complete obedient work thereby earns wages from God.\",\"material_contradiction\":\"There is no contradiction over the basic referent. The material disagreement concerns whether the category of works may be broadly identified with obedience or merit in Pauline salvation discourse; the book insists that obedience and wage entitlement are separate determinations added to a deed.\",\"rationale\":\"Both readings identify works centrally as deeds. The book does not replace that referent, but adds a governing distinction: deeds become obedience only by executing legitimate commands and can instead constitute disobedience. It also sharpens the works–wages distinction by combining Romans 4 with Luke 17. Because these conditions materially revise how cases are classified without changing the central category, the relationship is REFINED rather than MATCH or DIVERGENT.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The blind consensus already defines works as deeds rather than as a strict synonym for obedience and explicitly recognizes disputes about merit. Thus the book's distinction could be viewed as an elaboration already compatible with consensus rather than a substantial refinement; its real target is chiefly the common-view note's broad equation of Pauline works with obedient human effort.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4585,
+    "input_tokens_details": {
+      "cache_write_tokens": 4582,
+      "cached_tokens": 0
+    },
+    "output_tokens": 771,
+    "output_tokens_details": {
+      "reasoning_tokens": 331
+    },
+    "total_tokens": 5356
+  },
+  "user": null,
+  "metadata": {}
+}

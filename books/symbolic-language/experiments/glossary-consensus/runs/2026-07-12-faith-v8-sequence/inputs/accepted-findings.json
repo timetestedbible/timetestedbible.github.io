@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "run_id": "2026-07-12-belief-v8-revised",
+      "manifest_sha256": "f7d36aaf8600d04ad8de19a10a4e063e0176afc99f2028601e83bbae9f440400"
+    }
+  ],
+  "findings": [
+    {
+      "anchor": "belief",
+      "term": "Belief, to believe",
+      "book_entry": "Receiving God's testimony as governing truth in a response that submits to it. Bare assent can recognize a fact — demons believe and tremble — but saving belief obeys the word believed, and persistent refusal to obey exposes unbelief.",
+      "source_run": "2026-07-12-belief-v8-revised",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Saving belief is receiving God’s testimony as governing truth in a response that submits to it; bare factual assent is insufficient.",
+          "model": "gpt-5.6-sol"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "To believe, in the saving sense, is to receive God's testimony as governing truth in a response that submits to it — such that belief and obedience are two faces of one covenant response, and persistent refusal to obey is what Scripture itself calls unbelief. This is distinct from bare assent (which demons share) and is not reducible to a private inner state that asks nothing of conduct.",
+          "model": "claude-fable-5"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Receiving God's testimony as governing truth in a response that submits to it",
+          "model": "grok-4.5"
+        }
+      }
+    }
+  ]
+}

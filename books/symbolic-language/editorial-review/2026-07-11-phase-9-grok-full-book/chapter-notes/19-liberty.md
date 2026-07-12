@@ -1,0 +1,3 @@
+# Liberty
+
+This chunk is dense, law-positive, and symbolically tight: jubilee as the sole biblical liberty, the swallow nesting at the altar, the bored ear at the doorpost, and the Jeremiah symmetry all land with force. Verse assembly is clean and the modern counterfeit is named without hedging. Residual defects are house-style only—multiple author sentences open with And, plus presenter staging (Notice, mark). No AI stock vocabulary, no broken math or mistyped quotes, and no doctrine rewrites required. Surgical openers and cue removals will restore the book’s assertive register without thinning density.

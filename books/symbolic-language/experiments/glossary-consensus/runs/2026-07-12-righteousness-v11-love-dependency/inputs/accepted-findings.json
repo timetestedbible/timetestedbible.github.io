@@ -1,0 +1,93 @@
+{
+  "sources": [
+    {
+      "run_id": "2026-07-12-belief-v8-revised",
+      "manifest_sha256": "f7d36aaf8600d04ad8de19a10a4e063e0176afc99f2028601e83bbae9f440400"
+    },
+    {
+      "run_id": "2026-07-12-faith-v8-sequence",
+      "manifest_sha256": "b2a5ee512b0aeecf95af1358f7ab7c6e0b4f637fbdd39cb39a668a08d939651c"
+    },
+    {
+      "run_id": "2026-07-12-love-v11-revised",
+      "manifest_sha256": "e1411802e0801d6c0ad5f87eb777d84d7862bedef9bfb97fd88d64d41cb746a1"
+    }
+  ],
+  "findings": [
+    {
+      "anchor": "belief",
+      "term": "Belief, to believe",
+      "book_entry": "Receiving God's testimony as governing truth in a response that submits to it. Bare assent can recognize a fact — demons believe and tremble — but saving belief obeys the word believed, and persistent refusal to obey exposes unbelief.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Saving belief is receiving God’s testimony as governing truth in a response that submits to it; bare factual assent is insufficient.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-belief-v8-revised"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "To believe, in the saving sense, is to receive God's testimony as governing truth in a response that submits to it — such that belief and obedience are two faces of one covenant response, and persistent refusal to obey is what Scripture itself calls unbelief. This is distinct from bare assent (which demons share) and is not reducible to a private inner state that asks nothing of conduct.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-belief-v8-revised"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Receiving God's testimony as governing truth in a response that submits to it",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-belief-v8-revised"
+        }
+      }
+    },
+    {
+      "anchor": "faith",
+      "term": "Faith",
+      "book_entry": "Trusting faithfulness — reliance on God's unseen promise held steady through obedience. Works do not purchase the promise; they enact and bring faith to maturity, and faith without them is dead.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Living faith is trusting reliance on God that is held steady and enacted through obedience; obedient fidelity is integral to faith’s living operation rather than merely an optional accompaniment.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Faith is trusting faithfulness: reliance on God's unseen promise in which the steadiness of obedience is constitutive of the faith itself (emunah), not merely a downstream consequence — trust and fidelity fused in one disposition held through delay and testing.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Trusting faithfulness — reliance on God's unseen promise held steady through obedience",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        }
+      }
+    },
+    {
+      "anchor": "love",
+      "term": "Love",
+      "book_entry": "Self-giving covenant allegiance embodied, for those under God's authority, in commandment-keeping. Obedience without love can be empty sacrifice, but claimed love that persistently refuses His commands is false — “this is the love of God, that we keep his commandments”.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "For those under God’s authority, love is self-giving allegiance that necessarily takes embodied form in keeping His commandments; persistent command-refusal contradicts a profession of love, while outward deeds without that allegiance are insufficient.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-love-v11-revised"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Love is self-giving covenant allegiance; for those under God's authority, that allegiance is constitutively embodied in keeping His commandments — such that obedience severed from allegiance is empty sacrifice (1 Cor 13:3), and professed love that persistently refuses His commands is a false profession (1 John 5:3; John 14:15; 2 John 6).",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-love-v11-revised"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Self-giving covenant allegiance embodied, for those under God's authority, in commandment-keeping",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-love-v11-revised"
+        }
+      }
+    }
+  ]
+}

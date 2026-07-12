@@ -1,0 +1,92 @@
+{
+  "file": "books/symbolic-language/24-path-to-salvation.adoc",
+  "title": "Grace, Mercy, and the Gift of God",
+  "notes": [
+    "This chunk recovers grace, mercy, and the gift from thin formulas into their full scriptural force with dense, law-positive evidence from the Name, covenant loyalty, the debt parable, wages versus charisma, and the two kinds of sin. The voice stays assertive and the assembly of texts is tight and purposeful. Residual defects are few and local: one explicit director cue, one author sentence opening with That, and one elliptical predicate that leaves the claim incomplete until the next sentence. No quote wording, doctrine, or factual naming problems appear. Modern accounting language stays inside the biblical debt image and needs no reopening.",
+    "This chunk tightly binds Romans 7’s war in the members to unintentional sin and the publican’s plea, then rebuilds the three-step path on the law while preserving the author’s law-positive density and the mercy-grace-gift distinctions. Strengths are the clean scripture integration, assertive contrasts, and sharp handoff to the next part. Residual issues are one presenter staging cue (“Mark where”), three house-style sentence-open violations (two “That,” one “But”), and a slightly tangled closing sentence that blurs the Introduction reference. Surgical replacements restore direct assertion and flow without touching doctrine, quotes, or the deliberate modern metaphor."
+  ],
+  "proposals": [
+    {
+      "old": "Every one of them is half.",
+      "new": "Every one of them is half-true.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Complete the bare predicate so the claim is immediately clear.",
+      "rationale": "The elliptical 'is half' withholds the meaning until the following sentence; 'half-true' states the same point without loss of density or voice.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now watch what the formula leaves out.",
+      "new": "The formula leaves out the rest.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove the director cue 'Now watch'.",
+      "rationale": "House style forbids presenter staging of this form; the replacement asserts the claim directly and keeps the transition into the grace-and-truth evidence.",
+      "_chunk": 1
+    },
+    {
+      "old": "That claim does not plead the blood; it counts the blood a common thing.",
+      "new": "The claim does not plead the blood; it counts the blood a common thing.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Eliminate sentence-initial 'That' in author prose.",
+      "rationale": "House style forbids author sentences that open with That; 'The claim' preserves reference and force without hedging.",
+      "_chunk": 1
+    },
+    {
+      "old": "Mark where Paul stands: he calls the law good and delights in it in the inward man, while the flesh he drags behind him keeps breaking it.",
+      "new": "Paul stands here: he calls the law good and delights in it in the inward man, while the flesh he drags behind him keeps breaking it.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue “Mark where.”",
+      "rationale": "House style forbids presenter staging such as “Mark that.” Direct assertion keeps the author’s voice and density.",
+      "_chunk": 2
+    },
+    {
+      "old": "That is not the defiant sinner of Numbers 15; it is the unintentional one, at war, confessing, covered by the High Priest — the publican's whole prayer: __“God be *merciful* to me a sinner”__ (Luke 18:13).",
+      "new": "This is not the defiant sinner of Numbers 15; it is the unintentional one, at war, confessing, covered by the High Priest — the publican's whole prayer: __“God be *merciful* to me a sinner”__ (Luke 18:13).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Eliminate sentence-initial “That.”",
+      "rationale": "Author prose must not open with That/And/But. “This” preserves the exact claim and reference.",
+      "_chunk": 2
+    },
+    {
+      "old": "No. But a mind and heart of obedience is.",
+      "new": "No, but a mind and heart of obedience is.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Merge to remove sentence-initial “But.”",
+      "rationale": "House style bans author-prose sentences that begin with But. The single sentence keeps the contrast and elliptical force.",
+      "_chunk": 2
+    },
+    {
+      "old": "The servant who means to keep His commands exactly will want them exactly as they were written — which raises a question this book has been leaning on since the Introduction read one word two ways: what, precisely, did the prophets write?",
+      "new": "The servant who means to keep His commands exactly will want them exactly as they were written — which raises a question this book has been leaning on since the Introduction, where one word was read two ways: what, precisely, did the prophets write?",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Untangle the Introduction reference.",
+      "rationale": "“since the Introduction read one word two ways” is awkward and slightly obscures the claim. The rewrite keeps identical meaning with clearer structure.",
+      "_chunk": 2
+    },
+    {
+      "old": "That question opens the next part of this book.",
+      "new": "This question opens the next part of this book.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Eliminate sentence-initial “That.”",
+      "rationale": "Author prose must not open with That/And/But. “This” preserves the exact handoff.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk recovers grace, mercy, and the gift from thin formulas into their full scriptural force with dense, law-positive evidence from the Name, covenant loyalty, the debt parable, wages versus charisma, and the two kinds of sin. The voice stays assertive and the assembly of texts is tight and purposeful. Residual defects are few and local: one explicit director cue, one author sentence opening with That, and one elliptical predicate that leaves the claim incomplete until the next sentence. No quote wording, doctrine, or factual naming problems appear. Modern accounting language stays inside the biblical debt image and needs no reopening.\",\n  \"proposals\": [\n    {\n      \"old\": \"Every one of them is half.\",\n      \"new\": \"Every one of them is half-true.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Complete the bare predicate so the claim is immediately clear.\",\n      \"rationale\": \"The elliptical 'is half' withholds the meaning until the following sentence; 'half-true' states the same point without loss of density or voice.\"\n    },\n    {\n      \"old\": \"Now watch what the formula leaves out.\",\n      \"new\": \"The formula leaves out the rest.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove the director cue 'Now watch'.\",\n      \"rationale\": \"House style forbids presenter staging of this form; the replacement asserts the claim directly and keeps the transition into the grace-and-truth evidence.\"\n    },\n    {\n      \"old\": \"That claim does not plead the blood; it counts the blood a common thing.\",\n      \"new\": \"The claim does not plead the blood; it counts the blood a common thing.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Eliminate sentence-initial 'That' in author prose.\",\n      \"rationale\": \"House style forbids author sentences that open with That; 'The claim' preserves reference and force without hedging.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk tightly binds Romans 7’s war in the members to unintentional sin and the publican’s plea, then rebuilds the three-step path on the law while preserving the author’s law-positive density and the mercy-grace-gift distinctions. Strengths are the clean scripture integration, assertive contrasts, and sharp handoff to the next part. Residual issues are one presenter staging cue (“Mark where”), three house-style sentence-open violations (two “That,” one “But”), and a slightly tangled closing sentence that blurs the Introduction reference. Surgical replacements restore direct assertion and flow without touching doctrine, quotes, or the deliberate modern metaphor.\",\n  \"proposals\": [\n    {\n      \"old\": \"Mark where Paul stands: he calls the law good and delights in it in the inward man, while the flesh he drags behind him keeps breaking it.\",\n      \"new\": \"Paul stands here: he calls the law good and delights in it in the inward man, while the flesh he drags behind him keeps breaking it.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue “Mark where.”\",\n      \"rationale\": \"House style forbids presenter staging such as “Mark that.” Direct assertion keeps the author’s voice and density.\"\n    },\n    {\n      \"old\": \"That is not the defiant sinner of Numbers 15; it is the unintentional one, at war, confessing, covered by the High Priest — the publican's whole prayer: __“God be *merciful* to me a sinner”__ (Luke 18:13).\",\n      \"new\": \"This is not the defiant sinner of Numbers 15; it is the unintentional one, at war, confessing, covered by the High Priest — the publican's whole prayer: __“God be *merciful* to me a sinner”__ (Luke 18:13).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Eliminate sentence-initial “That.”\",\n      \"rationale\": \"Author prose must not open with That/And/But. “This” preserves the exact claim and reference.\"\n    },\n    {\n      \"old\": \"No. But a mind and heart of obedience is.\",\n      \"new\": \"No, but a mind and heart of obedience is.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Merge to remove sentence-initial “But.”\",\n      \"rationale\": \"House style bans author-prose sentences that begin with But. The single sentence keeps the contrast and elliptical force.\"\n    },\n    {\n      \"old\": \"The servant who means to keep His commands exactly will want them exactly as they were written — which raises a question this book has been leaning on since the Introduction read one word two ways: what, precisely, did the prophets write?\",\n      \"new\": \"The servant who means to keep His commands exactly will want them exactly as they were written — which raises a question this book has been leaning on since the Introduction, where one word was read two ways: what, precisely, did the prophets write?\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Untangle the Introduction reference.\",\n      \"rationale\": \"“since the Introduction read one word two ways” is awkward and slightly obscures the claim. The rewrite keeps identical meaning with clearer structure.\"\n    },\n    {\n      \"old\": \"That question opens the next part of this book.\",\n      \"new\": \"This question opens the next part of this book.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Eliminate sentence-initial “That.”\",\n      \"rationale\": \"Author prose must not open with That/And/But. “This” preserves the exact handoff.\"\n    }\n  ]\n}"
+    }
+  ]
+}

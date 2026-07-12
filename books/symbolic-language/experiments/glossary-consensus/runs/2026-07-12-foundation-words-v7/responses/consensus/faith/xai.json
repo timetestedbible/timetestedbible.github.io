@@ -1,0 +1,156 @@
+{
+  "created_at": 1783835681,
+  "completed_at": 1783835692,
+  "id": "1daef895-f149-9215-a51d-4e6d101b3c86",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_1daef895-f149-9215-a51d-4e6d101b3c86",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Faith\" in Christian teaching and biblical interpretation, as a blind consensus definer. I must not search for or infer any author's material, jus...",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Trusting reliance and confident assurance in God and His promises, centered on Jesus Christ for salvation and life (not mere intellectual assent)\",\n  \"primary_basis\": [\n    \"Hebrews 11:1\",\n    \"Ephesians 2:8-9\",\n    \"Romans 1:17 / Habakkuk 2:4\",\n    \"Romans 10:17\",\n    \"John 3:16\",\n    \"Galatians 2:16-20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Intellectual assent or mental agreement to propositions/doctrines about God\",\n      \"basis\": [\n        \"James 2:19\",\n        \"various creedal formulations\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Covenant faithfulness/loyalty (especially the faithfulness of Christ or of God, via pistis Christou debates)\",\n      \"basis\": [\n        \"Galatians 2:16\",\n        \"Romans 3:22\",\n        \"Philippians 3:9\",\n        \"OT uses of emunah\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A supernatural gift or infused virtue enabling belief and good works\",\n      \"basis\": [\n        \"1 Corinthians 12:9\",\n        \"Ephesians 2:8\",\n        \"classical Catholic/Thomistic teaching\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Living obedience and active fidelity demonstrated in works (contrasted with dead faith)\",\n      \"basis\": [\n        \"James 2:14-26\",\n        \"Hebrews 11 narrative examples\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching and most biblical interpretation, the core sense of faith (pistis/emunah) as trustful reliance on God/Christ is settled and dominant in preaching, confessions, and popular exposition. Nuances (assent vs. trust vs. faithfulness vs. gift) exist and are debated in academic and confessional settings, but they do not displace the primary meaning. The term functions more as a theological concept than a pure symbol, though it is sometimes paired with symbolic imagery (e.g., shield of faith).\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_1daef895-f149-9215-a51d-4e6d101b3c86",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1427,
+    "output_tokens_details": {
+      "reasoning_tokens": 892
+    },
+    "total_tokens": 2029,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 97660000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1427
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

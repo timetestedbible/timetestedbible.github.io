@@ -1,0 +1,5 @@
+# Wings
+
+Dense, law-positive kanaph threading from the bleeding woman through tzitzit, Malachi’s wings, the ark, Ruth, the torn skirt, and the earth’s corners is the chapter’s clear strength; symbol links and scripture placement stay clean and assertive. Residual defects are presenter staging (Notice, Mark, Read it, Be precise) and multiple author-prose sentences that open with And or That. The count “one hundred and eight” should be digits per house style. No doctrine rewrites, quote-text changes, or modern-metaphor fights are needed; the voice and density hold once the staging and sentence-open violations are cut.
+
+This chunk tightly joins kanaph to pe’ah and the remnant edge with clean law-positive density and a useful closing tool for the reader. The symbolic assembly from garment to field to Ruth lands with force. Three author-prose sentences open with banned That/And, and one long summary sentence breaks parallel structure on the covenant clause. No doctrine or quote wording needs touch; the rest of the register and markup hold.

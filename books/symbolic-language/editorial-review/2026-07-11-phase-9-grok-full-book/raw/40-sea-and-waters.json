@@ -1,0 +1,318 @@
+{
+  "file": "books/symbolic-language/40-sea-and-waters.adoc",
+  "title": "Sea & Waters",
+  "notes": [
+    "Strong chapter: dense parallel-column method, clear Revelation 17 anchor, and consistent sea=peoples case built from Isaiah through Revelation without hedging. Main defects are house-style sentence-open violations (And/But/That), residual director cues (Notice, Watch, Then look), one opening sentence fragment, and a small object-case slip (to they). Voice and doctrine are already assertive; fixes stay surgical.",
+    "This chunk tightly chains Red Sea typology through Revelation’s plagues, the two witnesses, baptism, and the fishers-of-men call, with strong cross-links to Babylon and Tyre. Density and law-positive assertiveness stay high, and the prevalence table fits the book’s method. Residual presenter staging remains thick: Mark the phrase, Now run, Notice the flag, Now listen, and habit-worth-forming meta-talk. Several author-prose sentences open with And, But, or That in violation of house style. Surgical cuts to those cues will restore the assertive voice without touching doctrine or quotes.",
+    "This chunk tightly chains the sea symbol from the stilling of the storm and walking on water through Job, Psalms, Isaiah, Genesis, the two seas, the molten sea, and “no more sea,” then opens sand and islands with clean scripture assemblies and prevalence tables. The voice stays dense and law-positive where it asserts. Residual defects are mostly house-style: multiple author sentences open with And/But/That, plus director cues (Notice, Now run, mark for now, listen to) that stage the reader instead of stating the claim. One post-table rhetorical question still hedges rather than asserts the identification already fixed by the chapter. Surgical line fixes restore the register without touching doctrine or quoted text.",
+    "This chunk strongly assembles the island symbol from prophetic summons through the Acts 27–28 shipwreck as lived type, then cleanly distinguishes living water and maps sea against mountain. Residual presenter staging remains in 'watch the', 'simply note that', and 'By now you should also have'. Two author sentences open with And. A relative 'that' is missing before 'the vowel points later buried'. The count 'two hundred seventy-six' should be digits per house style. Density and law-positive voice hold; the needed fixes are surgical."
+  ],
+  "proposals": [
+    {
+      "old": "From the beasts coming out of the sea, to mountains and trees being thrown into the sea, to Jonah, and then Jesus walking on the sea, and disciples fishing in the sea.",
+      "new": "It runs from the beasts coming out of the sea, to mountains and trees being thrown into the sea, to Jonah, then Jesus walking on the sea, and disciples fishing in the sea.",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Turn the hanging list into a complete sentence.",
+      "rationale": "The line is a sentence fragment. A short subject restores grammar without changing the catalogue of sea scenes.",
+      "_chunk": 1
+    },
+    {
+      "old": "Notice that this is the very same chapter that defined the mountain (Revelation 17:9-10).",
+      "new": "This is the very same chapter that defined the mountain (Revelation 17:9-10).",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Drop the director cue “Notice that.”",
+      "rationale": "House style forbids presenter staging. The claim stands cleaner as a direct assertion.",
+      "_chunk": 1
+    },
+    {
+      "old": "But as we learned with the mountain, an apt analogy is not the basis for defining a symbol — and neither is a familiar idiom.",
+      "new": "As we learned with the mountain, an apt analogy is not the basis for defining a symbol — and neither is a familiar idiom.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial But.",
+      "rationale": "Author prose may not open with But. Dropping it keeps the contrast and the mountain cross-reference intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "Watch Isaiah do it:",
+      "new": "Isaiah does it:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove the cue “Watch.”",
+      "rationale": "“Watch” is a forbidden director cue. A plain present-tense lead-in matches the surrounding assertive register.",
+      "_chunk": 1
+    },
+    {
+      "old": "The sea is matched to the world, and the fulness of the sea to they that dwell in the world.",
+      "new": "The sea is matched to the world, and the fulness of the sea to them that dwell in the world.",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Fix object case: they → them.",
+      "rationale": "After the preposition “to,” the object form is required. “Them that dwell” keeps the KJV cadence while correcting the grammar.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the symbol scales all the way down to a single person:",
+      "new": "The symbol scales all the way down to a single person:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style bars And at the start of author prose. The scale claim needs no conjunction.",
+      "_chunk": 1
+    },
+    {
+      "old": "That sym:sym-wind[wind] returns later in the chapter.",
+      "new": "The sym:sym-wind[wind] returns later in the chapter.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial That.",
+      "rationale": "Author sentences must not open with That. “The wind” preserves the forward pointer and the sym markup.",
+      "_chunk": 1
+    },
+    {
+      "old": "And in Revelation the dragon attacks the woman with this very weapon:",
+      "new": "In Revelation the dragon attacks the woman with this very weapon:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "Same house-style open ban. The Revelation 12 lead-in remains direct and dense.",
+      "_chunk": 1
+    },
+    {
+      "old": "Mark the phrase: cast into the sea, sank as a stone.",
+      "new": "The phrase itself is the symbol: cast into the sea, sank as a stone.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue 'Mark the phrase'.",
+      "rationale": "House style forbids presenter staging of this kind. The rewrite asserts the claim in the author’s voice.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now run Egypt’s plagues from first to last, because Revelation does.",
+      "new": "Egypt’s plagues run from first to last, because Revelation does.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Drop the director cue 'Now run'.",
+      "rationale": "Imperative staging of the 'Now derive/consider' family is banned. The sentence still drives the sequence without the cue.",
+      "_chunk": 2
+    },
+    {
+      "old": "And it closed with the drowners drowned: an army dead in the sea.",
+      "new": "It closed with the drowners drowned: an army dead in the sea.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Author prose must not open with And.",
+      "rationale": "House style forbids And at the start of author sentences. Dropping it preserves meaning and rhythm.",
+      "_chunk": 2
+    },
+    {
+      "old": "But run the symbols: the waters are the peoples, and to turn the waters to blood is to bring death upon the peoples — the witnesses carry the power to kill, and they carry it in their testimony.",
+      "new": "Run the symbols: the waters are the peoples, and to turn the waters to blood is to bring death upon the peoples — the witnesses carry the power to kill, and they carry it in their testimony.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Author prose must not open with But.",
+      "rationale": "House style forbids But at the start of author sentences. The imperative 'Run the symbols' already matches the author’s voice elsewhere.",
+      "_chunk": 2
+    },
+    {
+      "old": "That is what baptism pictures, and Micah completes the thought — what God did to Pharaoh’s host He will do to our sins:",
+      "new": "Baptism pictures the same passage, and Micah completes the thought — what God did to Pharaoh’s host He will do to our sins:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Author prose must not open with That.",
+      "rationale": "House style forbids That at the start of author sentences. The rewrite keeps the baptism–Exodus link intact.",
+      "_chunk": 2
+    },
+    {
+      "old": "Notice the flag that marks these verses as symbolic — the same flag that stopped me at the fleeing island in the mountain chapter: personification.",
+      "new": "The flag that marks these verses as symbolic is the same flag that stopped me at the fleeing island in the mountain chapter: personification.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue 'Notice the flag'.",
+      "rationale": "Presenter staging of the 'Notice that' family is banned. The claim about personification stands without the cue.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now listen to Jesus recruit His disciples, and watch the interpretation arrive in the very next verse:",
+      "new": "Jesus recruits His disciples with the same image, and the interpretation arrives in the very next verse:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove 'Now listen' and 'watch' director cues.",
+      "rationale": "Both are banned presenter staging. The rewrite asserts the recruitment and the adjacent interpretation in author voice.",
+      "_chunk": 2
+    },
+    {
+      "old": "Reading the next verse is another habit worth forming: when a symbol appears, Scripture often sets the interpretation right beside it.",
+      "new": "When a symbol appears, Scripture often sets the interpretation right beside it.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Cut meta-talk about reader habits.",
+      "rationale": "House style forbids meta-talk and habit-forming cues. The interpretive claim remains and is stronger without the frame.",
+      "_chunk": 2
+    },
+    {
+      "old": "And sym:sym-way[the way] is itself a symbol — the walk, a man’s covenant conduct — with a chapter of its own back in Part Two; mark for now that His walk runs over the very waters ours drowns in.",
+      "new": "sym:sym-way[The way] is itself a symbol — the walk, a man’s covenant conduct — with a chapter of its own back in Part Two. His walk runs over the very waters ours drowns in.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove And-open and director cue “mark for now.”",
+      "rationale": "Author prose cannot open with And; “mark for now” is banned presenter staging. Split restores assertion without loss of claim.",
+      "_chunk": 3
+    },
+    {
+      "old": "Notice what a sea is by definition: a gathering of waters.\nAnd notice what God does with it: he separates dry land out of it.",
+      "new": "A sea is by definition a gathering of waters.\nGod separates dry land out of it.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip dual “Notice” director cues and And-open.",
+      "rationale": "“Notice what” is banned staging; the second line also violates the And-open rule. Direct statements keep the definitional force.",
+      "_chunk": 3
+    },
+    {
+      "old": "Now run the symbol through it.",
+      "new": "The symbol runs as follows.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace “Now run” presenter cue with assertion.",
+      "rationale": "“Now run” is director staging of the banned “Now derive/consider” class. The replacement keeps the transition and density.",
+      "_chunk": 3
+    },
+    {
+      "old": "And when that upper assembly speaks, listen to what its voice sounds like:",
+      "new": "When that upper assembly speaks, its voice sounds like this:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove And-open and “listen to” cue.",
+      "rationale": "Sentence-open And is forbidden; “listen to what” stages the reader. The rewrite asserts the same lead-in to the quote.",
+      "_chunk": 3
+    },
+    {
+      "old": "That is why __“the sand of the sea”__ is Scripture’s byword for a multitude past numbering: Abraham’s seed __“as the sym:sym-sand[sand] which is upon the sym:sym-sea[sea] shore”__ (Genesis 22:17); Israel __“as the sym:sym-sand[sand] of the sym:sym-sea[sea], which cannot be measured nor numbered”__ (Hosea 1:10); and the last enemy horde, Gog and Magog, __“the number of whom is as the sym:sym-sand[sand] of the sym:sym-sea[sea]”__ (Revelation 20:8).",
+      "new": "The phrase __“the sand of the sea”__ is Scripture’s byword for a multitude past numbering: Abraham’s seed __“as the sym:sym-sand[sand] which is upon the sym:sym-sea[sea] shore”__ (Genesis 22:17); Israel __“as the sym:sym-sand[sand] of the sym:sym-sea[sea], which cannot be measured nor numbered”__ (Hosea 1:10); and the last enemy horde, Gog and Magog, __“the number of whom is as the sym:sym-sand[sand] of the sym:sym-sea[sea]”__ (Revelation 20:8).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Eliminate sentence-initial That.",
+      "rationale": "Author prose may not open with That. “The phrase” preserves the exact claim and all markup.",
+      "_chunk": 3
+    },
+    {
+      "old": "And when the kingdom fell, the Chaldeans broke the sea in pieces and __“carried the brass of them to Babylon”__ (2 Kings 25:13) — even the emblem of the gathered people went into captivity with them.",
+      "new": "When the kingdom fell, the Chaldeans broke the sea in pieces and __“carried the brass of them to Babylon”__ (2 Kings 25:13) — even the emblem of the gathered people went into captivity with them.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop forbidden And-open.",
+      "rationale": "House style bars author sentences that begin with And. Content and markup stay identical.",
+      "_chunk": 3
+    },
+    {
+      "old": "And God uses the sand to preach to His people:",
+      "new": "God uses the sand to preach to His people:",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop forbidden And-open.",
+      "rationale": "Author prose cannot start with And. The lead-in to the Jeremiah quote is otherwise clean.",
+      "_chunk": 3
+    },
+    {
+      "old": "But sand is loose and forever shifting, and that makes it the one ground a man must never build on:",
+      "new": "Sand is loose and forever shifting, and that makes it the one ground a man must never build on:",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop forbidden But-open.",
+      "rationale": "Author sentences may not begin with But. The claim about building on the multitude is unchanged.",
+      "_chunk": 3
+    },
+    {
+      "old": "And they are gathered home — the remnant recovered __“from the sym:sym-island[islands] of the sym:sym-sea[sea]”__ (Isaiah 11:11), His glory sent __“unto the sym:sym-island[isles] afar off”__ (Isaiah 66:19).",
+      "new": "They are gathered home — the remnant recovered __“from the sym:sym-island[islands] of the sym:sym-sea[sea]”__ (Isaiah 11:11), His glory sent __“unto the sym:sym-island[isles] afar off”__ (Isaiah 66:19).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading And in author prose.",
+      "rationale": "House style forbids author sentences that open with And.",
+      "_chunk": 4
+    },
+    {
+      "old": "When the last judgment shakes the world, watch the islands and the mountains part ways:",
+      "new": "When the last judgment shakes the world, the islands and the mountains part ways:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue 'watch the'.",
+      "rationale": "Presenter staging of the 'Now watch' family is banned; the claim stands without the cue.",
+      "_chunk": 4
+    },
+    {
+      "old": "Job names them in a phrase the vowel points later buried: __“the sym:sym-island[island] of the innocent,”__ delivered __“by the pureness of thine hands”__ (Job 22:30 — the unpointed consonants, _iy_, are the very letters that name the isles).",
+      "new": "Job names them in a phrase that the vowel points later buried: __“the sym:sym-island[island] of the innocent,”__ delivered __“by the pureness of thine hands”__ (Job 22:30 — the unpointed consonants, _iy_, are the very letters that name the isles).",
+      "type": "grammar",
+      "severity": "high",
+      "summary": "Insert missing relative 'that'.",
+      "rationale": "The clause needs the relative pronoun for grammatical completeness and clarity.",
+      "_chunk": 4
+    },
+    {
+      "old": "They must hold together to be saved — __“Except these abide in the ship, ye cannot be saved”__ (Acts 27:31) — two hundred seventy-six souls in all (Acts 27:37).",
+      "new": "They must hold together to be saved — __“Except these abide in the ship, ye cannot be saved”__ (Acts 27:31) — 276 souls in all (Acts 27:37).",
+      "type": "readability",
+      "severity": "medium",
+      "summary": "Render the count as digits.",
+      "rationale": "House style requires numbers as digits for counts.",
+      "_chunk": 4
+    },
+    {
+      "old": "One caution before we close.",
+      "new": "One distinction remains.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace closing-stage cue with plain claim.",
+      "rationale": "Presenter framing 'before we close' is meta-staging; a direct label keeps the caution without the cue.",
+      "_chunk": 4
+    },
+    {
+      "old": "The living water is a symbol in its own right, and the glossary carries it; for now, simply note that a sea of salt and a river of life are not the same symbol, and the context tells you which is which.",
+      "new": "The living water is a symbol in its own right, and the glossary carries it; a sea of salt and a river of life are not the same symbol, and the context tells which is which.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip 'simply note that' director cue.",
+      "rationale": "The phrase is a Notice-that cue; the distinction asserts cleanly without it.",
+      "_chunk": 4
+    },
+    {
+      "old": "By now you should also have three habits that will let you make these discoveries yourself: read the parallel columns, read the next verse, and treat personification as a flag that a symbol is in play.",
+      "new": "Three habits open these discoveries: read the parallel columns, read the next verse, and treat personification as a flag that a symbol is in play.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace coaching meta-talk with assertive claim.",
+      "rationale": "Second-person 'you should' and 'yourself' are presenter staging; the habits stand as direct instruction.",
+      "_chunk": 4
+    },
+    {
+      "old": "And the sym:sym-beast[beasts] that rose out of this sea are next, taken up with the sym:sym-tree[trees] and defined the same way we have defined the mountain and the sea: by letting Scripture interpret Scripture.",
+      "new": "The sym:sym-beast[beasts] that rose out of this sea are next, taken up with the sym:sym-tree[trees] and defined the same way we have defined the mountain and the sea: by letting Scripture interpret Scripture.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading And in author prose.",
+      "rationale": "House style forbids author sentences that open with And.",
+      "_chunk": 4
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"Strong chapter: dense parallel-column method, clear Revelation 17 anchor, and consistent sea=peoples case built from Isaiah through Revelation without hedging. Main defects are house-style sentence-open violations (And/But/That), residual director cues (Notice, Watch, Then look), one opening sentence fragment, and a small object-case slip (to they). Voice and doctrine are already assertive; fixes stay surgical.\",\n  \"proposals\": [\n    {\n      \"old\": \"From the beasts coming out of the sea, to mountains and trees being thrown into the sea, to Jonah, and then Jesus walking on the sea, and disciples fishing in the sea.\",\n      \"new\": \"It runs from the beasts coming out of the sea, to mountains and trees being thrown into the sea, to Jonah, then Jesus walking on the sea, and disciples fishing in the sea.\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Turn the hanging list into a complete sentence.\",\n      \"rationale\": \"The line is a sentence fragment. A short subject restores grammar without changing the catalogue of sea scenes.\"\n    },\n    {\n      \"old\": \"Notice that this is the very same chapter that defined the mountain (Revelation 17:9-10).\",\n      \"new\": \"This is the very same chapter that defined the mountain (Revelation 17:9-10).\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop the director cue “Notice that.”\",\n      \"rationale\": \"House style forbids presenter staging. The claim stands cleaner as a direct assertion.\"\n    },\n    {\n      \"old\": \"But as we learned with the mountain, an apt analogy is not the basis for defining a symbol — and neither is a familiar idiom.\",\n      \"new\": \"As we learned with the mountain, an apt analogy is not the basis for defining a symbol — and neither is a familiar idiom.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial But.\",\n      \"rationale\": \"Author prose may not open with But. Dropping it keeps the contrast and the mountain cross-reference intact.\"\n    },\n    {\n      \"old\": \"Watch Isaiah do it:\",\n      \"new\": \"Isaiah does it:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove the cue “Watch.”\",\n      \"rationale\": \"“Watch” is a forbidden director cue. A plain present-tense lead-in matches the surrounding assertive register.\"\n    },\n    {\n      \"old\": \"The sea is matched to the world, and the fulness of the sea to they that dwell in the world.\",\n      \"new\": \"The sea is matched to the world, and the fulness of the sea to them that dwell in the world.\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Fix object case: they → them.\",\n      \"rationale\": \"After the preposition “to,” the object form is required. “Them that dwell” keeps the KJV cadence while correcting the grammar.\"\n    },\n    {\n      \"old\": \"And the symbol scales all the way down to a single person:\",\n      \"new\": \"The symbol scales all the way down to a single person:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style bars And at the start of author prose. The scale claim needs no conjunction.\"\n    },\n    {\n      \"old\": \"That sym:sym-wind[wind] returns later in the chapter.\",\n      \"new\": \"The sym:sym-wind[wind] returns later in the chapter.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial That.\",\n      \"rationale\": \"Author sentences must not open with That. “The wind” preserves the forward pointer and the sym markup.\"\n    },\n    {\n      \"old\": \"And in Revelation the dragon attacks the woman with this very weapon:\",\n      \"new\": \"In Revelation the dragon attacks the woman with this very weapon:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"Same house-style open ban. The Revelation 12 lead-in remains direct and dense.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk tightly chains Red Sea typology through Revelation’s plagues, the two witnesses, baptism, and the fishers-of-men call, with strong cross-links to Babylon and Tyre. Density and law-positive assertiveness stay high, and the prevalence table fits the book’s method. Residual presenter staging remains thick: Mark the phrase, Now run, Notice the flag, Now listen, and habit-worth-forming meta-talk. Several author-prose sentences open with And, But, or That in violation of house style. Surgical cuts to those cues will restore the assertive voice without touching doctrine or quotes.\",\n  \"proposals\": [\n    {\n      \"old\": \"Mark the phrase: cast into the sea, sank as a stone.\",\n      \"new\": \"The phrase itself is the symbol: cast into the sea, sank as a stone.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue 'Mark the phrase'.\",\n      \"rationale\": \"House style forbids presenter staging of this kind. The rewrite asserts the claim in the author’s voice.\"\n    },\n    {\n      \"old\": \"Now run Egypt’s plagues from first to last, because Revelation does.\",\n      \"new\": \"Egypt’s plagues run from first to last, because Revelation does.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop the director cue 'Now run'.\",\n      \"rationale\": \"Imperative staging of the 'Now derive/consider' family is banned. The sentence still drives the sequence without the cue.\"\n    },\n    {\n      \"old\": \"And it closed with the drowners drowned: an army dead in the sea.\",\n      \"new\": \"It closed with the drowners drowned: an army dead in the sea.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Author prose must not open with And.\",\n      \"rationale\": \"House style forbids And at the start of author sentences. Dropping it preserves meaning and rhythm.\"\n    },\n    {\n      \"old\": \"But run the symbols: the waters are the peoples, and to turn the waters to blood is to bring death upon the peoples — the witnesses carry the power to kill, and they carry it in their testimony.\",\n      \"new\": \"Run the symbols: the waters are the peoples, and to turn the waters to blood is to bring death upon the peoples — the witnesses carry the power to kill, and they carry it in their testimony.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Author prose must not open with But.\",\n      \"rationale\": \"House style forbids But at the start of author sentences. The imperative 'Run the symbols' already matches the author’s voice elsewhere.\"\n    },\n    {\n      \"old\": \"That is what baptism pictures, and Micah completes the thought — what God did to Pharaoh’s host He will do to our sins:\",\n      \"new\": \"Baptism pictures the same passage, and Micah completes the thought — what God did to Pharaoh’s host He will do to our sins:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Author prose must not open with That.\",\n      \"rationale\": \"House style forbids That at the start of author sentences. The rewrite keeps the baptism–Exodus link intact.\"\n    },\n    {\n      \"old\": \"Notice the flag that marks these verses as symbolic — the same flag that stopped me at the fleeing island in the mountain chapter: personification.\",\n      \"new\": \"The flag that marks these verses as symbolic is the same flag that stopped me at the fleeing island in the mountain chapter: personification.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue 'Notice the flag'.\",\n      \"rationale\": \"Presenter staging of the 'Notice that' family is banned. The claim about personification stands without the cue.\"\n    },\n    {\n      \"old\": \"Now listen to Jesus recruit His disciples, and watch the interpretation arrive in the very next verse:\",\n      \"new\": \"Jesus recruits His disciples with the same image, and the interpretation arrives in the very next verse:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove 'Now listen' and 'watch' director cues.\",\n      \"rationale\": \"Both are banned presenter staging. The rewrite asserts the recruitment and the adjacent interpretation in author voice.\"\n    },\n    {\n      \"old\": \"Reading the next verse is another habit worth forming: when a symbol appears, Scripture often sets the interpretation right beside it.\",\n      \"new\": \"When a symbol appears, Scripture often sets the interpretation right beside it.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Cut meta-talk about reader habits.\",\n      \"rationale\": \"House style forbids meta-talk and habit-forming cues. The interpretive claim remains and is stronger without the frame.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 3,
+      "raw": "{\n  \"chapter_note\": \"This chunk tightly chains the sea symbol from the stilling of the storm and walking on water through Job, Psalms, Isaiah, Genesis, the two seas, the molten sea, and “no more sea,” then opens sand and islands with clean scripture assemblies and prevalence tables. The voice stays dense and law-positive where it asserts. Residual defects are mostly house-style: multiple author sentences open with And/But/That, plus director cues (Notice, Now run, mark for now, listen to) that stage the reader instead of stating the claim. One post-table rhetorical question still hedges rather than asserts the identification already fixed by the chapter. Surgical line fixes restore the register without touching doctrine or quoted text.\",\n  \"proposals\": [\n    {\n      \"old\": \"And sym:sym-way[the way] is itself a symbol — the walk, a man’s covenant conduct — with a chapter of its own back in Part Two; mark for now that His walk runs over the very waters ours drowns in.\",\n      \"new\": \"sym:sym-way[The way] is itself a symbol — the walk, a man’s covenant conduct — with a chapter of its own back in Part Two. His walk runs over the very waters ours drowns in.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove And-open and director cue “mark for now.”\",\n      \"rationale\": \"Author prose cannot open with And; “mark for now” is banned presenter staging. Split restores assertion without loss of claim.\"\n    },\n    {\n      \"old\": \"Notice what a sea is by definition: a gathering of waters.\\nAnd notice what God does with it: he separates dry land out of it.\",\n      \"new\": \"A sea is by definition a gathering of waters.\\nGod separates dry land out of it.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip dual “Notice” director cues and And-open.\",\n      \"rationale\": \"“Notice what” is banned staging; the second line also violates the And-open rule. Direct statements keep the definitional force.\"\n    },\n    {\n      \"old\": \"Now run the symbol through it.\",\n      \"new\": \"The symbol runs as follows.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace “Now run” presenter cue with assertion.\",\n      \"rationale\": \"“Now run” is director staging of the banned “Now derive/consider” class. The replacement keeps the transition and density.\"\n    },\n    {\n      \"old\": \"And when that upper assembly speaks, listen to what its voice sounds like:\",\n      \"new\": \"When that upper assembly speaks, its voice sounds like this:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove And-open and “listen to” cue.\",\n      \"rationale\": \"Sentence-open And is forbidden; “listen to what” stages the reader. The rewrite asserts the same lead-in to the quote.\"\n    },\n    {\n      \"old\": \"That is why __“the sand of the sea”__ is Scripture’s byword for a multitude past numbering: Abraham’s seed __“as the sym:sym-sand[sand] which is upon the sym:sym-sea[sea] shore”__ (Genesis 22:17); Israel __“as the sym:sym-sand[sand] of the sym:sym-sea[sea], which cannot be measured nor numbered”__ (Hosea 1:10); and the last enemy horde, Gog and Magog, __“the number of whom is as the sym:sym-sand[sand] of the sym:sym-sea[sea]”__ (Revelation 20:8).\",\n      \"new\": \"The phrase __“the sand of the sea”__ is Scripture’s byword for a multitude past numbering: Abraham’s seed __“as the sym:sym-sand[sand] which is upon the sym:sym-sea[sea] shore”__ (Genesis 22:17); Israel __“as the sym:sym-sand[sand] of the sym:sym-sea[sea], which cannot be measured nor numbered”__ (Hosea 1:10); and the last enemy horde, Gog and Magog, __“the number of whom is as the sym:sym-sand[sand] of the sym:sym-sea[sea]”__ (Revelation 20:8).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Eliminate sentence-initial That.\",\n      \"rationale\": \"Author prose may not open with That. “The phrase” preserves the exact claim and all markup.\"\n    },\n    {\n      \"old\": \"And when the kingdom fell, the Chaldeans broke the sea in pieces and __“carried the brass of them to Babylon”__ (2 Kings 25:13) — even the emblem of the gathered people went into captivity with them.\",\n      \"new\": \"When the kingdom fell, the Chaldeans broke the sea in pieces and __“carried the brass of them to Babylon”__ (2 Kings 25:13) — even the emblem of the gathered people went into captivity with them.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop forbidden And-open.\",\n      \"rationale\": \"House style bars author sentences that begin with And. Content and markup stay identical.\"\n    },\n    {\n      \"old\": \"And God uses the sand to preach to His people:\",\n      \"new\": \"God uses the sand to preach to His people:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop forbidden And-open.\",\n      \"rationale\": \"Author prose cannot start with And. The lead-in to the Jeremiah quote is otherwise clean.\"\n    },\n    {\n      \"old\": \"But sand is loose and forever shifting, and that makes it the one ground a man must never build on:\",\n      \"new\": \"Sand is loose and forever shifting, and that makes it the one ground a man must never build on:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop forbidden But-open.\",\n      \"rationale\": \"Author sentences may not begin with But. The claim about building on the multitude is unchanged.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 4,
+      "raw": "{\n  \"chapter_note\": \"This chunk strongly assembles the island symbol from prophetic summons through the Acts 27–28 shipwreck as lived type, then cleanly distinguishes living water and maps sea against mountain. Residual presenter staging remains in 'watch the', 'simply note that', and 'By now you should also have'. Two author sentences open with And. A relative 'that' is missing before 'the vowel points later buried'. The count 'two hundred seventy-six' should be digits per house style. Density and law-positive voice hold; the needed fixes are surgical.\",\n  \"proposals\": [\n    {\n      \"old\": \"And they are gathered home — the remnant recovered __“from the sym:sym-island[islands] of the sym:sym-sea[sea]”__ (Isaiah 11:11), His glory sent __“unto the sym:sym-island[isles] afar off”__ (Isaiah 66:19).\",\n      \"new\": \"They are gathered home — the remnant recovered __“from the sym:sym-island[islands] of the sym:sym-sea[sea]”__ (Isaiah 11:11), His glory sent __“unto the sym:sym-island[isles] afar off”__ (Isaiah 66:19).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading And in author prose.\",\n      \"rationale\": \"House style forbids author sentences that open with And.\"\n    },\n    {\n      \"old\": \"When the last judgment shakes the world, watch the islands and the mountains part ways:\",\n      \"new\": \"When the last judgment shakes the world, the islands and the mountains part ways:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue 'watch the'.\",\n      \"rationale\": \"Presenter staging of the 'Now watch' family is banned; the claim stands without the cue.\"\n    },\n    {\n      \"old\": \"Job names them in a phrase the vowel points later buried: __“the sym:sym-island[island] of the innocent,”__ delivered __“by the pureness of thine hands”__ (Job 22:30 — the unpointed consonants, _iy_, are the very letters that name the isles).\",\n      \"new\": \"Job names them in a phrase that the vowel points later buried: __“the sym:sym-island[island] of the innocent,”__ delivered __“by the pureness of thine hands”__ (Job 22:30 — the unpointed consonants, _iy_, are the very letters that name the isles).\",\n      \"type\": \"grammar\",\n      \"severity\": \"high\",\n      \"summary\": \"Insert missing relative 'that'.\",\n      \"rationale\": \"The clause needs the relative pronoun for grammatical completeness and clarity.\"\n    },\n    {\n      \"old\": \"They must hold together to be saved — __“Except these abide in the ship, ye cannot be saved”__ (Acts 27:31) — two hundred seventy-six souls in all (Acts 27:37).\",\n      \"new\": \"They must hold together to be saved — __“Except these abide in the ship, ye cannot be saved”__ (Acts 27:31) — 276 souls in all (Acts 27:37).\",\n      \"type\": \"readability\",\n      \"severity\": \"medium\",\n      \"summary\": \"Render the count as digits.\",\n      \"rationale\": \"House style requires numbers as digits for counts.\"\n    },\n    {\n      \"old\": \"One caution before we close.\",\n      \"new\": \"One distinction remains.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace closing-stage cue with plain claim.\",\n      \"rationale\": \"Presenter framing 'before we close' is meta-staging; a direct label keeps the caution without the cue.\"\n    },\n    {\n      \"old\": \"The living water is a symbol in its own right, and the glossary carries it; for now, simply note that a sea of salt and a river of life are not the same symbol, and the context tells you which is which.\",\n      \"new\": \"The living water is a symbol in its own right, and the glossary carries it; a sea of salt and a river of life are not the same symbol, and the context tells which is which.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip 'simply note that' director cue.\",\n      \"rationale\": \"The phrase is a Notice-that cue; the distinction asserts cleanly without it.\"\n    },\n    {\n      \"old\": \"By now you should also have three habits that will let you make these discoveries yourself: read the parallel columns, read the next verse, and treat personification as a flag that a symbol is in play.\",\n      \"new\": \"Three habits open these discoveries: read the parallel columns, read the next verse, and treat personification as a flag that a symbol is in play.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace coaching meta-talk with assertive claim.\",\n      \"rationale\": \"Second-person 'you should' and 'yourself' are presenter staging; the habits stand as direct instruction.\"\n    },\n    {\n      \"old\": \"And the sym:sym-beast[beasts] that rose out of this sea are next, taken up with the sym:sym-tree[trees] and defined the same way we have defined the mountain and the sea: by letting Scripture interpret Scripture.\",\n      \"new\": \"The sym:sym-beast[beasts] that rose out of this sea are next, taken up with the sym:sym-tree[trees] and defined the same way we have defined the mountain and the sea: by letting Scripture interpret Scripture.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading And in author prose.\",\n      \"rationale\": \"House style forbids author sentences that open with And.\"\n    }\n  ]\n}"
+    }
+  ]
+}

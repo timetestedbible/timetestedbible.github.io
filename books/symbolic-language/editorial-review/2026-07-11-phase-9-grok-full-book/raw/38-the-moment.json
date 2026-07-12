@@ -1,0 +1,78 @@
+{
+  "file": "books/symbolic-language/38-the-moment.adoc",
+  "title": "The Moment",
+  "notes": [
+    "This chapter is one of the manuscript’s tightest symbol studies: rega and pithom are traced cleanly from Exodus through Revelation, and the Babylon–kingdom transfer close is dense and law-positive without padding. Residual presenter staging remains in “Watch them,” “And watch,” and “Take the phrase as a marker,” which undercut the assertive voice. Four author-prose sentences open with And, violating house style. One clause (“every term of the offer reads”) is incomplete and stalls the claim. Surgical fixes to those leave a strong, print-ready chapter."
+  ],
+  "proposals": [
+    {
+      "old": "Watch them arrive in the same verse over the ruin of a land: __“suddenly are my tents spoiled, and my curtains *in a moment*”__ (Jeremiah 4:20).",
+      "new": "They arrive in the same verse over the ruin of a land: __“suddenly are my tents spoiled, and my curtains *in a moment*”__ (Jeremiah 4:20).",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue “Watch them.”",
+      "rationale": "House style forbids presenter staging such as “Watch them.” Assert the arrival of the words instead.",
+      "_chunk": 1
+    },
+    {
+      "old": "And watch the word do its full work on Babylon herself:",
+      "new": "The word does its full work on Babylon herself:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove opening And and director “watch.”",
+      "rationale": "Author prose may not start with And, and “watch” is a banned director cue. Assert the action directly.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Paul, under the weight of real suffering, reaches for the identical word to shrink it: __“our light affliction, which is but *for a moment*, worketh for us a far more exceeding and eternal weight of glory”__ (2 Corinthians 4:17).",
+      "new": "Paul, under the weight of real suffering, reaches for the identical word to shrink it: __“our light affliction, which is but *for a moment*, worketh for us a far more exceeding and eternal weight of glory”__ (2 Corinthians 4:17).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the offer arrives priced in Babylon's own doom-unit: he shows the kingdoms in a *moment* — the very measure by which they fall.",
+      "new": "The offer arrives priced in Babylon's own doom-unit: he shows the kingdoms in a *moment* — the very measure by which they fall.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And if the account can close in a wink, the vocabulary had best be in hand before it does.",
+      "new": "If the account can close in a wink, the vocabulary had best be in hand before it does.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "He takes Jesus __“up into an *exceeding high mountain*”__ (Matthew 4:8) and shows Him __“all the kingdoms of the world *in a moment of time*”__ (Luke 4:5) — and by now every term of the offer reads.",
+      "new": "He takes Jesus __“up into an *exceeding high mountain*”__ (Matthew 4:8) and shows Him __“all the kingdoms of the world *in a moment of time*”__ (Luke 4:5) — and by now every term of the offer is plain.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Replace incomplete “reads” with “is plain.”",
+      "rationale": "“Every term of the offer reads” lacks a complement and stalls the claim; “is plain” keeps the density and finishes the sense.",
+      "_chunk": 1
+    },
+    {
+      "old": "Take the phrase as a marker wherever you meet it: *in a moment*, *suddenly* — when Scripture hangs those words on a kingdom, it is speaking the judgment of Babylon, or a similitude of it.",
+      "new": "The phrase is a marker wherever it appears: *in a moment*, *suddenly* — when Scripture hangs those words on a kingdom, it is speaking the judgment of Babylon, or a similitude of it.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Convert instructional “Take the phrase” into an assertion.",
+      "rationale": "House style prefers asserting the case over director cues that tell the reader what to do with the phrase.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chapter is one of the manuscript’s tightest symbol studies: rega and pithom are traced cleanly from Exodus through Revelation, and the Babylon–kingdom transfer close is dense and law-positive without padding. Residual presenter staging remains in “Watch them,” “And watch,” and “Take the phrase as a marker,” which undercut the assertive voice. Four author-prose sentences open with And, violating house style. One clause (“every term of the offer reads”) is incomplete and stalls the claim. Surgical fixes to those leave a strong, print-ready chapter.\",\n  \"proposals\": [\n    {\n      \"old\": \"Watch them arrive in the same verse over the ruin of a land: __“suddenly are my tents spoiled, and my curtains *in a moment*”__ (Jeremiah 4:20).\",\n      \"new\": \"They arrive in the same verse over the ruin of a land: __“suddenly are my tents spoiled, and my curtains *in a moment*”__ (Jeremiah 4:20).\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue “Watch them.”\",\n      \"rationale\": \"House style forbids presenter staging such as “Watch them.” Assert the arrival of the words instead.\"\n    },\n    {\n      \"old\": \"And watch the word do its full work on Babylon herself:\",\n      \"new\": \"The word does its full work on Babylon herself:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove opening And and director “watch.”\",\n      \"rationale\": \"Author prose may not start with And, and “watch” is a banned director cue. Assert the action directly.\"\n    },\n    {\n      \"old\": \"And Paul, under the weight of real suffering, reaches for the identical word to shrink it: __“our light affliction, which is but *for a moment*, worketh for us a far more exceeding and eternal weight of glory”__ (2 Corinthians 4:17).\",\n      \"new\": \"Paul, under the weight of real suffering, reaches for the identical word to shrink it: __“our light affliction, which is but *for a moment*, worketh for us a far more exceeding and eternal weight of glory”__ (2 Corinthians 4:17).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"And the offer arrives priced in Babylon's own doom-unit: he shows the kingdoms in a *moment* — the very measure by which they fall.\",\n      \"new\": \"The offer arrives priced in Babylon's own doom-unit: he shows the kingdoms in a *moment* — the very measure by which they fall.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"And if the account can close in a wink, the vocabulary had best be in hand before it does.\",\n      \"new\": \"If the account can close in a wink, the vocabulary had best be in hand before it does.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"He takes Jesus __“up into an *exceeding high mountain*”__ (Matthew 4:8) and shows Him __“all the kingdoms of the world *in a moment of time*”__ (Luke 4:5) — and by now every term of the offer reads.\",\n      \"new\": \"He takes Jesus __“up into an *exceeding high mountain*”__ (Matthew 4:8) and shows Him __“all the kingdoms of the world *in a moment of time*”__ (Luke 4:5) — and by now every term of the offer is plain.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace incomplete “reads” with “is plain.”\",\n      \"rationale\": \"“Every term of the offer reads” lacks a complement and stalls the claim; “is plain” keeps the density and finishes the sense.\"\n    },\n    {\n      \"old\": \"Take the phrase as a marker wherever you meet it: *in a moment*, *suddenly* — when Scripture hangs those words on a kingdom, it is speaking the judgment of Babylon, or a similitude of it.\",\n      \"new\": \"The phrase is a marker wherever it appears: *in a moment*, *suddenly* — when Scripture hangs those words on a kingdom, it is speaking the judgment of Babylon, or a similitude of it.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Convert instructional “Take the phrase” into an assertion.\",\n      \"rationale\": \"House style prefers asserting the case over director cues that tell the reader what to do with the phrase.\"\n    }\n  ]\n}"
+    }
+  ]
+}

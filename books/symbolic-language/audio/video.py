@@ -206,6 +206,14 @@ def is_title(piece):
             and not t.endswith(':') and len(piece['toks']) <= 9)
 
 
+def is_chapter_opener(piece):
+    """Recognize the spoken book-and-chapter introduction as one title card."""
+    t = re.sub(r'\s+', ' ', piece['text']).strip()
+    return bool(re.match(
+        r"^MEAT The Bible's Symbolic Language\. (?:Chapter [A-Za-z-]+:|Bonus Study:)",
+        t))
+
+
 def scripture_blocks(script_path):
     """Ordered (ref, raw_body) for every [quote.scripture, REF] block."""
     body = open(script_path, encoding='utf-8').read()
@@ -455,6 +463,14 @@ def build_events(chunks, pieces, words, bounds, script_path, print_path,
             times = align_chunk(toks, words, t0, t1)
             for t, se in zip(toks, times):
                 t['s'], t['e'] = se
+            if is_chapter_opener(piece):
+                s = max(0.0, toks[0]['s'] - 0.4)
+                e = max(toks[-1]['e'] + 1.6, s + 2.5)
+                lines = [l.strip().rstrip('.') for l in
+                         re.split(r'(?<=\.)\s+', piece['text']) if l.strip()]
+                events.append({'kind': 'title', 's': s, 'e': e,
+                               'text': '\\N'.join(lines)})
+                continue
             # section title card: the spoken transition sentence carries
             # the print heading's words (bare headings in older scripts
             # match too) — the card shows the print heading itself; the
@@ -805,14 +821,23 @@ def write_ass(events, path):
 # ---------------------------------------------------------------- video bed
 
 def pick_images(stem, n):
-    prefix = re.match(r'\d+', stem)
     imgs = sorted(f for f in os.listdir(MASTERS)
                   if f.lower().endswith(('.jpg', '.png', '.jpeg')))
-    if prefix:
-        for i, f in enumerate(imgs):
-            if f.startswith(prefix.group(0) + '-'):
-                imgs = imgs[i:] + imgs[:i]
-                break
+    # Prefer the exact chapter token (`40s-`, `16x-`) so a bonus chapter
+    # with its own plate does not silently inherit the base chapter's art.
+    # Retain the numeric prefix as a fallback for bonus chapters that do not
+    # yet have a dedicated master.
+    token = stem.split('-', 1)[0]
+    prefixes = [token + '-']
+    numeric = re.match(r'\d+', token)
+    if numeric and numeric.group(0) != token:
+        prefixes.append(numeric.group(0) + '-')
+    for wanted in prefixes:
+        hit = next((i for i, f in enumerate(imgs)
+                    if f.startswith(wanted)), None)
+        if hit is not None:
+            imgs = imgs[hit:] + imgs[:hit]
+            break
     return [os.path.join(MASTERS, imgs[i % len(imgs)]) for i in range(n)]
 
 

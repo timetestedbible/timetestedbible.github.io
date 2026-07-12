@@ -189,6 +189,16 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'If mountains are kingdoms, the sea is the peoples they rise from and rule over. Revelation 17 defines both, and the key unlocks the beasts from the sea, the flood that is an invading army, the two waters of creation (nations below, the sea of glass above), and the "no more sea" of the new creation.'
     },
     {
+      slug: 'the-ship',
+      title: 'The Ship',
+      summary: 'A ship is an earthly kingdom or state riding upon the sea of peoples. Ezekiel builds Tyre as one vessel—rulers at the helm, inhabitants as crew, armies aboard, and commerce as cargo—then distinguishes the broken polity from the people it carried. Christ needs no constructed state beneath Him: He walks upon the sea directly, and a vessel carrying His disciples comes under its true Head.'
+    },
+    {
+      slug: 'tower',
+      title: 'The Tower',
+      summary: 'A tower is the stronghold raised by a Name around its house: refuge, watchtower, and beacon. The LORD\'s Name protects and guides; Babel raises a counterfeit Name and loses its common word; an unfinished tower is a discipleship begun without depth; and a fallen tower is a covenant stronghold broken or judged.'
+    },
+    {
       slug: 'trees',
       title: 'Trees',
       summary: 'A tree in Scripture is a nation or people group — rooted in its origin, sheltering those within it, judged by its fruit, and cut down in judgment ("It is thou, O king," Daniel says of Babylon). The tree completes the picture: mountain (kingdom) over tree (nation) over grass (the individual). Its wild companion is the beast — the nations as ravening kingdoms (Daniel\'s four beasts) and the unclean animals God cleanses to bring in the Gentiles (Peter\'s vision).'
@@ -219,9 +229,29 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: 'Take away the foreskins of your heart, says Jeremiah — a symbol the reader is expected to know. Scripture decodes it out loud: what the circumcision made without hands removes is "the body of the sins of the flesh." The foreskin is the blocking flesh over a covenant member: the uncircumcised heart cannot be humbled or love, the uncircumcised ear cannot hearken, uncircumcised lips cannot be heard, and a young tree\'s fruit is orlah until the covenant year. Cut it away, or be cut off.'
     },
     {
+      slug: 'the-anointing',
+      title: 'The Anointing',
+      summary: 'Anointing is an appointment before it is an experience: oil marks a person or thing as God\'s own for a stated office, while the Spirit supplies the power for the work. Priests, kings, prophets, the tabernacle, Cyrus, and Christ separate the mark, the appointment, the office, and its power.'
+    },
+    {
       slug: 'butter',
       title: 'Butter',
       summary: 'Very few would connect butter to sound doctrine — yet Scripture does. Butter is the word churned solid: the discernment diet ("butter and honey shall he eat, that he may know to refuse the evil, and choose the good"), the remnant\'s food, the wash of the walking feet ("I washed my steps with butter"). Faithful hands carried butter to David in the wilderness while the betrayer\'s words stayed "smoother than butter, but war was in his heart."'
+    },
+    {
+      slug: 'the-other-white-meat',
+      title: 'The Other White Meat',
+      summary: 'The swine wears the outward sign of the clean and lacks the inward work: the hoof is parted, but the cud is never chewed. From the boar in the vineyard to the washed sow returning to the mire, it is Scripture\'s picture of the nation and the worshipper that present clean while remaining unclean.'
+    },
+    {
+      slug: 'uncommon-sanctification-justification-and-cleanliness',
+      title: 'Uncommon Sanctification, Justification, and Cleanliness',
+      summary: 'A compact case study in turning received milk into tested meat. Cleansing removes defilement; sanctification takes what was common under a holy claim and appointed use; justification answers a charge with a judgment. Paul says washed, sanctified, and justified because the three operations are not synonyms.'
+    },
+    {
+      slug: 'the-end-of-the-law',
+      title: 'The End of the Law',
+      summary: 'A defensive reading of Paul\'s disputed vocabulary: end as purpose, law named by its ruler, work distinguished from obedience, wages from duty, and the curse from the command. Christ is not where the law failed and stopped, but the right-living purpose toward which it points.'
     },
     {
       slug: 'glossary',

@@ -1,0 +1,205 @@
+{
+  "file": "books/symbolic-language/15-the-remnant.adoc",
+  "title": "The Remnant",
+  "notes": [
+    "This chunk is one of the book's strongest evidence assemblies: independent ratios from Solomon, Jeremiah, Elijah/Paul, Zechariah, Isaiah, field geometry, and gold ore converge on a narrow remnant band without padding. The tables and edition-conditioned blocks are clear and useful. Residual director staging remains in 'Weigh the chapter' and 'mark where,' and several author sentences open with And/But/That against house style. Print and web field sections also disagree on row spacing (handbreadth vs two handbreadths), which should track the table math. Fixes below are surgical openers and one factual alignment; doctrine and quoted scripture are left untouched.",
+    "This chunk stacks creation ratios, Job's household, extrabiblical counts, and land-capacity arithmetic into a tight case for the remnant near 0.2 percent, with clean tables and a strong convergence close. Strengths are the concrete chaining of independent lines and the law-positive density of the argument. Residual defects include three author sentences opening with And or That, director staging (hold that, Hold the, Now seat), an internal Job survivor mismatch (six with wife versus five in later tables and print summary), a household table that splits one Sabean raid into two rows, and a stray endif::[] markup tag. The fixes restore house style, count consistency, and clean AsciiDoc without altering doctrine or quoted text.",
+    "The chunk’s core strength is the four-word Hebrew remnant etymology, tightly linked to needle’s-eye and exceeding-righteousness images, plus a clean Ruth enactment of the gleaning household. Design-not-failure and the closing urgency paragraphs stay assertive and on-voice. Residual presenter staging remains in two “Now” constructions and a “weigh” cue; the print-only block opens with a forbidden And. No quote, doctrine, or factual defects appear. Minor colloquial “worth the dig” is the only other register slip."
+  ],
+  "proposals": [
+    {
+      "old": "Weigh the chapter the way the evidence is built.",
+      "new": "The chapter is built the way the evidence is built.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove forbidden director cue 'Weigh the'.",
+      "rationale": "House style bans 'Weigh the' as presenter staging. The replacement keeps the same structural role without the cue.",
+      "_chunk": 1
+    },
+    {
+      "old": "And mark where the ratio lives: in the very verse where the divorced wife is called home — __“for I am married unto you,”__ the remarriage of the sym:sym-marriage[marriage] chapter.",
+      "new": "The ratio lives in the very verse where the divorced wife is called home — __“for I am married unto you,”__ the remarriage of the sym:sym-marriage[marriage] chapter.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop And-open and 'mark' staging.",
+      "rationale": "Author prose may not open with And, and 'mark where' is a residual director cue. The claim is unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is the anchor.",
+      "new": "This is the anchor.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Replace sentence-initial That.",
+      "rationale": "House style forbids author prose sentences starting with That. 'This' preserves the same pointer and density.",
+      "_chunk": 1
+    },
+    {
+      "old": "But run the arithmetic the verse invites.",
+      "new": "The arithmetic the verse invites is decisive.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove But-open and imperative staging.",
+      "rationale": "Author prose may not open with But, and 'run the arithmetic' is a director cue. The replacement asserts the same transition into the count.",
+      "_chunk": 1
+    },
+    {
+      "old": "And __“the sym:sym-field[field] is the world”__ (Matthew 13:38): the larger the harvest, the smaller its edge — and the gleanings at that edge are, by the law's own terms, the sym:sym-poor[poor], the sym:sym-stranger[stranger], the sym:sym-fatherless[fatherless], and the sym:sym-widow[widow] of the Orphans and Widows chapter.",
+      "new": "__“the sym:sym-field[field] is the world”__ (Matthew 13:38) sets the scale: the larger the harvest, the smaller its edge — and the gleanings at that edge are, by the law's own terms, the sym:sym-poor[poor], the sym:sym-stranger[stranger], the sym:sym-fatherless[fatherless], and the sym:sym-widow[widow] of the Orphans and Widows chapter.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove And-open without altering the quote.",
+      "rationale": "Author prose may not open with And. The quote text inside marks is preserved; only the lead-in is restructured.",
+      "_chunk": 1
+    },
+    {
+      "old": "And __“the sym:sym-field[field] is the world”__ (Matthew 13:38): the larger the harvest, the smaller its edge.",
+      "new": "__“the sym:sym-field[field] is the world”__ (Matthew 13:38) sets the scale: the larger the harvest, the smaller its edge.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove And-open in the print-edition field block.",
+      "rationale": "Same house-style violation as the web twin. Quote wording is untouched; only the sentence open is fixed.",
+      "_chunk": 1
+    },
+    {
+      "old": "That last row turns the whole hard saying inside out.",
+      "new": "The last row turns the whole hard saying inside out.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Replace sentence-initial That.",
+      "rationale": "Author prose may not open with That. 'The last row' keeps the same referent and force.",
+      "_chunk": 1
+    },
+    {
+      "old": "The edge of a field is fixed by mathematics: grain is sown in rows a handbreadth apart, and the perimeter row's share of the crop *shrinks as the field grows*.",
+      "new": "The edge of a field is fixed by mathematics: grain is sown in rows roughly two handbreadths apart, and the perimeter row's share of the crop *shrinks as the field grows*.",
+      "type": "factual",
+      "severity": "medium",
+      "summary": "Align print row spacing with the web table math.",
+      "rationale": "The web block and table use roughly two handbreadths; print's 'a handbreadth' contradicts that spacing and would change the edge percentages.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Moses had said it from the beginning, without a figure at all: __“The LORD did not set his love upon you… because ye were more in number than any people; for ye were the *fewest of all people*”__ (Deuteronomy 7:7) — a verdict still visible on any modern map, where sym:sym-israel[Israel] stands one nation among nearly two hundred, its people a tenth of a percent of mankind.",
+      "new": "Moses had said it from the beginning, without a figure at all: __“The LORD did not set his love upon you… because ye were more in number than any people; for ye were the *fewest of all people*”__ (Deuteronomy 7:7) — a verdict still visible on any modern map, where sym:sym-israel[Israel] stands one nation among nearly two hundred, its people a tenth of a percent of mankind.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove leading And from author prose sentence.",
+      "rationale": "House style forbids author sentences starting with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "A household of several hundred souls; six who lived — the four messengers, Job, and his wife.",
+      "new": "A household of several hundred souls; five who lived — the four messengers and Job himself.",
+      "type": "factual",
+      "severity": "high",
+      "summary": "Align early survivor count with later evidence table and print summary.",
+      "rationale": "Later text and the convergence table consistently use five (four messengers plus Job); the early six-with-wife creates an internal mismatch.",
+      "_chunk": 2
+    },
+    {
+      "old": "| 7,000 sheep | 35-70 shepherds | 1\n| 3,000 camels | 30-60 handlers | 1\n| 500 yoke of oxen | 150-300 laborers | 1\n| 500 donkeys | 15-30 handlers | 1\n| The feast-house | 10 children, 20-60 servants | 1",
+      "new": "| 7,000 sheep | 35-70 shepherds | 1\n| 3,000 camels | 30-60 handlers | 1\n| 500 yoke of oxen and 500 donkeys | 165-330 laborers | 1\n| The feast-house | 10 children, 20-60 servants | 1",
+      "type": "factual",
+      "severity": "high",
+      "summary": "Combine oxen and donkeys into one row to match the four disasters of Job 1.",
+      "rationale": "Scripture records four raids and four messengers; the Sabeans took oxen and asses together, so the table must list four survivors before Job is added.",
+      "_chunk": 2
+    },
+    {
+      "old": "That figure is an upper bound, not a count of the faithful, for Jesus set the bar above them: __“except your sym:sym-righteousness[righteousness] shall *exceed* the righteousness of the scribes and Pharisees, ye shall in no case enter into the kingdom”__ (Matthew 5:20).",
+      "new": "The figure is an upper bound, not a count of the faithful, for Jesus set the bar above them: __“except your sym:sym-righteousness[righteousness] shall *exceed* the righteousness of the scribes and Pharisees, ye shall in no case enter into the kingdom”__ (Matthew 5:20).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove leading That from author prose sentence.",
+      "rationale": "House style forbids author sentences starting with That.",
+      "_chunk": 2
+    },
+    {
+      "old": "The most demonstratively religious one percent was not enough — hold that word __“exceed”__; the Hebrew of the remnant will hand it back to us shortly.",
+      "new": "The most demonstratively religious one percent was not enough — the word __“exceed”__; the Hebrew of the remnant will hand it back shortly.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Hold that director cue.",
+      "rationale": "House style explicitly bans Hold that and similar presenter staging.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the heirs are not disembodied spirits: those in the first resurrection are bodily kings and priests who __“reigned with Christ a thousand years”__ (Revelation 20:4-6) on that bodily land — __“the meek shall inherit the earth”__ (Psalm 37:11; Matthew 5:5), and the Hebrew under __“earth”__ is _erets_, the land.",
+      "new": "The heirs are not disembodied spirits: those in the first resurrection are bodily kings and priests who __“reigned with Christ a thousand years”__ (Revelation 20:4-6) on that bodily land — __“the meek shall inherit the earth”__ (Psalm 37:11; Matthew 5:5), and the Hebrew under __“earth”__ is _erets_, the land.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove leading And from author prose sentence.",
+      "rationale": "House style forbids author sentences starting with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "Hold the whole promised land to that God-approved density and it carries about 110 million people at the traditional borders, about 330 million at the widest.\nNow seat the candidates:",
+      "new": "The whole promised land at that God-approved density carries about 110 million people at the traditional borders, about 330 million at the widest.\nSeat the candidates:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Hold and Now staging imperatives.",
+      "rationale": "House style bans Hold that and Now-style director cues that break the assertive register.",
+      "_chunk": 2
+    },
+    {
+      "old": "The land was sized for the remnant, and the remnant for the land.\nendif::[]",
+      "new": "The land was sized for the remnant, and the remnant for the land.",
+      "type": "typo",
+      "severity": "high",
+      "summary": "Remove stray endif::[] markup.",
+      "rationale": "Orphaned conditional end-tag with no matching open breaks AsciiDoc rendering.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now hear the Lord again: __“It is easier for a camel to go through the *eye of a needle*, than for a sym:sym-rich[rich] man to enter into the kingdom”__ (Matthew 19:24) — and remember what the sym:sym-rich[rich] are in this book's vocabulary: the proud, the unbowed.",
+      "new": "The Lord says again: __“It is easier for a camel to go through the *eye of a needle*, than for a sym:sym-rich[rich] man to enter into the kingdom”__ (Matthew 19:24) — and remember what the sym:sym-rich[rich] are in this book's vocabulary: the proud, the unbowed.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue “Now hear”.",
+      "rationale": "House style forbids presenter staging of the “Now hear” form; the scriptural link can be asserted directly.",
+      "_chunk": 3
+    },
+    {
+      "old": "Now return to the question Jesus was asked, and weigh His answer with the numbers on the table.",
+      "new": "The question Jesus was asked stands with the numbers on the table.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove “Now return” and “weigh” director cues.",
+      "rationale": "Both “Now return” and “weigh” are listed presenter staging; the claim is stronger when asserted without instructing the reader.",
+      "_chunk": 3
+    },
+    {
+      "old": "And the Hebrew keeps the picture in the remnant's own name: one of the words our Bibles print as __“remnant”__ and __“survivor”__ is _sarid_ — __“the *remnant* whom the LORD shall call”__ (Joel 2:32) — and it grows from a root meaning *to slip out through the puncture*: the needle's eye Jesus set at the gate was hiding in the word all along (Matthew 19:24).",
+      "new": "The Hebrew keeps the picture in the remnant's own name: one of the words our Bibles print as __“remnant”__ and __“survivor”__ is _sarid_ — __“the *remnant* whom the LORD shall call”__ (Joel 2:32) — and it grows from a root meaning *to slip out through the puncture*: the needle's eye Jesus set at the gate was hiding in the word all along (Matthew 19:24).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop leading “And” from author prose.",
+      "rationale": "House style forbids author sentences that open with And/But/That.",
+      "_chunk": 3
+    },
+    {
+      "old": "The Hebrew says the opposite, four times over, in the four words our Bibles render __“remnant”__ — and each one is worth the dig.",
+      "new": "The Hebrew says the opposite, four times over, in the four words our Bibles render __“remnant”__ — and each one is worth the work.",
+      "type": "tone-register",
+      "severity": "low",
+      "summary": "Replace colloquial “dig” with denser “work”.",
+      "rationale": "“Worth the dig” is casual register that slightly undercuts the etymological density of the surrounding paragraph.",
+      "_chunk": 3
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is one of the book's strongest evidence assemblies: independent ratios from Solomon, Jeremiah, Elijah/Paul, Zechariah, Isaiah, field geometry, and gold ore converge on a narrow remnant band without padding. The tables and edition-conditioned blocks are clear and useful. Residual director staging remains in 'Weigh the chapter' and 'mark where,' and several author sentences open with And/But/That against house style. Print and web field sections also disagree on row spacing (handbreadth vs two handbreadths), which should track the table math. Fixes below are surgical openers and one factual alignment; doctrine and quoted scripture are left untouched.\",\n  \"proposals\": [\n    {\n      \"old\": \"Weigh the chapter the way the evidence is built.\",\n      \"new\": \"The chapter is built the way the evidence is built.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden director cue 'Weigh the'.\",\n      \"rationale\": \"House style bans 'Weigh the' as presenter staging. The replacement keeps the same structural role without the cue.\"\n    },\n    {\n      \"old\": \"And mark where the ratio lives: in the very verse where the divorced wife is called home — __“for I am married unto you,”__ the remarriage of the sym:sym-marriage[marriage] chapter.\",\n      \"new\": \"The ratio lives in the very verse where the divorced wife is called home — __“for I am married unto you,”__ the remarriage of the sym:sym-marriage[marriage] chapter.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop And-open and 'mark' staging.\",\n      \"rationale\": \"Author prose may not open with And, and 'mark where' is a residual director cue. The claim is unchanged.\"\n    },\n    {\n      \"old\": \"That is the anchor.\",\n      \"new\": \"This is the anchor.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace sentence-initial That.\",\n      \"rationale\": \"House style forbids author prose sentences starting with That. 'This' preserves the same pointer and density.\"\n    },\n    {\n      \"old\": \"But run the arithmetic the verse invites.\",\n      \"new\": \"The arithmetic the verse invites is decisive.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove But-open and imperative staging.\",\n      \"rationale\": \"Author prose may not open with But, and 'run the arithmetic' is a director cue. The replacement asserts the same transition into the count.\"\n    },\n    {\n      \"old\": \"And __“the sym:sym-field[field] is the world”__ (Matthew 13:38): the larger the harvest, the smaller its edge — and the gleanings at that edge are, by the law's own terms, the sym:sym-poor[poor], the sym:sym-stranger[stranger], the sym:sym-fatherless[fatherless], and the sym:sym-widow[widow] of the Orphans and Widows chapter.\",\n      \"new\": \"__“the sym:sym-field[field] is the world”__ (Matthew 13:38) sets the scale: the larger the harvest, the smaller its edge — and the gleanings at that edge are, by the law's own terms, the sym:sym-poor[poor], the sym:sym-stranger[stranger], the sym:sym-fatherless[fatherless], and the sym:sym-widow[widow] of the Orphans and Widows chapter.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove And-open without altering the quote.\",\n      \"rationale\": \"Author prose may not open with And. The quote text inside marks is preserved; only the lead-in is restructured.\"\n    },\n    {\n      \"old\": \"And __“the sym:sym-field[field] is the world”__ (Matthew 13:38): the larger the harvest, the smaller its edge.\",\n      \"new\": \"__“the sym:sym-field[field] is the world”__ (Matthew 13:38) sets the scale: the larger the harvest, the smaller its edge.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove And-open in the print-edition field block.\",\n      \"rationale\": \"Same house-style violation as the web twin. Quote wording is untouched; only the sentence open is fixed.\"\n    },\n    {\n      \"old\": \"That last row turns the whole hard saying inside out.\",\n      \"new\": \"The last row turns the whole hard saying inside out.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace sentence-initial That.\",\n      \"rationale\": \"Author prose may not open with That. 'The last row' keeps the same referent and force.\"\n    },\n    {\n      \"old\": \"The edge of a field is fixed by mathematics: grain is sown in rows a handbreadth apart, and the perimeter row's share of the crop *shrinks as the field grows*.\",\n      \"new\": \"The edge of a field is fixed by mathematics: grain is sown in rows roughly two handbreadths apart, and the perimeter row's share of the crop *shrinks as the field grows*.\",\n      \"type\": \"factual\",\n      \"severity\": \"medium\",\n      \"summary\": \"Align print row spacing with the web table math.\",\n      \"rationale\": \"The web block and table use roughly two handbreadths; print's 'a handbreadth' contradicts that spacing and would change the edge percentages.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk stacks creation ratios, Job's household, extrabiblical counts, and land-capacity arithmetic into a tight case for the remnant near 0.2 percent, with clean tables and a strong convergence close. Strengths are the concrete chaining of independent lines and the law-positive density of the argument. Residual defects include three author sentences opening with And or That, director staging (hold that, Hold the, Now seat), an internal Job survivor mismatch (six with wife versus five in later tables and print summary), a household table that splits one Sabean raid into two rows, and a stray endif::[] markup tag. The fixes restore house style, count consistency, and clean AsciiDoc without altering doctrine or quoted text.\",\n  \"proposals\": [\n    {\n      \"old\": \"And Moses had said it from the beginning, without a figure at all: __“The LORD did not set his love upon you… because ye were more in number than any people; for ye were the *fewest of all people*”__ (Deuteronomy 7:7) — a verdict still visible on any modern map, where sym:sym-israel[Israel] stands one nation among nearly two hundred, its people a tenth of a percent of mankind.\",\n      \"new\": \"Moses had said it from the beginning, without a figure at all: __“The LORD did not set his love upon you… because ye were more in number than any people; for ye were the *fewest of all people*”__ (Deuteronomy 7:7) — a verdict still visible on any modern map, where sym:sym-israel[Israel] stands one nation among nearly two hundred, its people a tenth of a percent of mankind.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove leading And from author prose sentence.\",\n      \"rationale\": \"House style forbids author sentences starting with And.\"\n    },\n    {\n      \"old\": \"A household of several hundred souls; six who lived — the four messengers, Job, and his wife.\",\n      \"new\": \"A household of several hundred souls; five who lived — the four messengers and Job himself.\",\n      \"type\": \"factual\",\n      \"severity\": \"high\",\n      \"summary\": \"Align early survivor count with later evidence table and print summary.\",\n      \"rationale\": \"Later text and the convergence table consistently use five (four messengers plus Job); the early six-with-wife creates an internal mismatch.\"\n    },\n    {\n      \"old\": \"| 7,000 sheep | 35-70 shepherds | 1\\n| 3,000 camels | 30-60 handlers | 1\\n| 500 yoke of oxen | 150-300 laborers | 1\\n| 500 donkeys | 15-30 handlers | 1\\n| The feast-house | 10 children, 20-60 servants | 1\",\n      \"new\": \"| 7,000 sheep | 35-70 shepherds | 1\\n| 3,000 camels | 30-60 handlers | 1\\n| 500 yoke of oxen and 500 donkeys | 165-330 laborers | 1\\n| The feast-house | 10 children, 20-60 servants | 1\",\n      \"type\": \"factual\",\n      \"severity\": \"high\",\n      \"summary\": \"Combine oxen and donkeys into one row to match the four disasters of Job 1.\",\n      \"rationale\": \"Scripture records four raids and four messengers; the Sabeans took oxen and asses together, so the table must list four survivors before Job is added.\"\n    },\n    {\n      \"old\": \"That figure is an upper bound, not a count of the faithful, for Jesus set the bar above them: __“except your sym:sym-righteousness[righteousness] shall *exceed* the righteousness of the scribes and Pharisees, ye shall in no case enter into the kingdom”__ (Matthew 5:20).\",\n      \"new\": \"The figure is an upper bound, not a count of the faithful, for Jesus set the bar above them: __“except your sym:sym-righteousness[righteousness] shall *exceed* the righteousness of the scribes and Pharisees, ye shall in no case enter into the kingdom”__ (Matthew 5:20).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove leading That from author prose sentence.\",\n      \"rationale\": \"House style forbids author sentences starting with That.\"\n    },\n    {\n      \"old\": \"The most demonstratively religious one percent was not enough — hold that word __“exceed”__; the Hebrew of the remnant will hand it back to us shortly.\",\n      \"new\": \"The most demonstratively religious one percent was not enough — the word __“exceed”__; the Hebrew of the remnant will hand it back shortly.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Hold that director cue.\",\n      \"rationale\": \"House style explicitly bans Hold that and similar presenter staging.\"\n    },\n    {\n      \"old\": \"And the heirs are not disembodied spirits: those in the first resurrection are bodily kings and priests who __“reigned with Christ a thousand years”__ (Revelation 20:4-6) on that bodily land — __“the meek shall inherit the earth”__ (Psalm 37:11; Matthew 5:5), and the Hebrew under __“earth”__ is _erets_, the land.\",\n      \"new\": \"The heirs are not disembodied spirits: those in the first resurrection are bodily kings and priests who __“reigned with Christ a thousand years”__ (Revelation 20:4-6) on that bodily land — __“the meek shall inherit the earth”__ (Psalm 37:11; Matthew 5:5), and the Hebrew under __“earth”__ is _erets_, the land.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove leading And from author prose sentence.\",\n      \"rationale\": \"House style forbids author sentences starting with And.\"\n    },\n    {\n      \"old\": \"Hold the whole promised land to that God-approved density and it carries about 110 million people at the traditional borders, about 330 million at the widest.\\nNow seat the candidates:\",\n      \"new\": \"The whole promised land at that God-approved density carries about 110 million people at the traditional borders, about 330 million at the widest.\\nSeat the candidates:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Hold and Now staging imperatives.\",\n      \"rationale\": \"House style bans Hold that and Now-style director cues that break the assertive register.\"\n    },\n    {\n      \"old\": \"The land was sized for the remnant, and the remnant for the land.\\nendif::[]\",\n      \"new\": \"The land was sized for the remnant, and the remnant for the land.\",\n      \"type\": \"typo\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove stray endif::[] markup.\",\n      \"rationale\": \"Orphaned conditional end-tag with no matching open breaks AsciiDoc rendering.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 3,
+      "raw": "{\n  \"chapter_note\": \"The chunk’s core strength is the four-word Hebrew remnant etymology, tightly linked to needle’s-eye and exceeding-righteousness images, plus a clean Ruth enactment of the gleaning household. Design-not-failure and the closing urgency paragraphs stay assertive and on-voice. Residual presenter staging remains in two “Now” constructions and a “weigh” cue; the print-only block opens with a forbidden And. No quote, doctrine, or factual defects appear. Minor colloquial “worth the dig” is the only other register slip.\",\n  \"proposals\": [\n    {\n      \"old\": \"Now hear the Lord again: __“It is easier for a camel to go through the *eye of a needle*, than for a sym:sym-rich[rich] man to enter into the kingdom”__ (Matthew 19:24) — and remember what the sym:sym-rich[rich] are in this book's vocabulary: the proud, the unbowed.\",\n      \"new\": \"The Lord says again: __“It is easier for a camel to go through the *eye of a needle*, than for a sym:sym-rich[rich] man to enter into the kingdom”__ (Matthew 19:24) — and remember what the sym:sym-rich[rich] are in this book's vocabulary: the proud, the unbowed.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue “Now hear”.\",\n      \"rationale\": \"House style forbids presenter staging of the “Now hear” form; the scriptural link can be asserted directly.\"\n    },\n    {\n      \"old\": \"Now return to the question Jesus was asked, and weigh His answer with the numbers on the table.\",\n      \"new\": \"The question Jesus was asked stands with the numbers on the table.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove “Now return” and “weigh” director cues.\",\n      \"rationale\": \"Both “Now return” and “weigh” are listed presenter staging; the claim is stronger when asserted without instructing the reader.\"\n    },\n    {\n      \"old\": \"And the Hebrew keeps the picture in the remnant's own name: one of the words our Bibles print as __“remnant”__ and __“survivor”__ is _sarid_ — __“the *remnant* whom the LORD shall call”__ (Joel 2:32) — and it grows from a root meaning *to slip out through the puncture*: the needle's eye Jesus set at the gate was hiding in the word all along (Matthew 19:24).\",\n      \"new\": \"The Hebrew keeps the picture in the remnant's own name: one of the words our Bibles print as __“remnant”__ and __“survivor”__ is _sarid_ — __“the *remnant* whom the LORD shall call”__ (Joel 2:32) — and it grows from a root meaning *to slip out through the puncture*: the needle's eye Jesus set at the gate was hiding in the word all along (Matthew 19:24).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop leading “And” from author prose.\",\n      \"rationale\": \"House style forbids author sentences that open with And/But/That.\"\n    },\n    {\n      \"old\": \"The Hebrew says the opposite, four times over, in the four words our Bibles render __“remnant”__ — and each one is worth the dig.\",\n      \"new\": \"The Hebrew says the opposite, four times over, in the four words our Bibles render __“remnant”__ — and each one is worth the work.\",\n      \"type\": \"tone-register\",\n      \"severity\": \"low\",\n      \"summary\": \"Replace colloquial “dig” with denser “work”.\",\n      \"rationale\": \"“Worth the dig” is casual register that slightly undercuts the etymological density of the surrounding paragraph.\"\n    }\n  ]\n}"
+    }
+  ]
+}

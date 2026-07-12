@@ -1,0 +1,33 @@
+{
+  "protocol_version": 5,
+  "status": "superseded",
+  "status_note": "The judge could reject a core conclusion while offering a broader restatement of the same referent; protocol version 6 adds semantic-relation guardrails.",
+  "run_id": "2026-07-12-smoke-oil-v5-neutral-best-explanation",
+  "created_at": "2026-07-12T05:28:18.359895+00:00",
+  "entry_count": 1,
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "input_sha256": "1c8533ac614cffe2fe1fa878655b02da4d6169c6e68307354d5087fefd3aeda2",
+  "method_evidence_sha256": "ff2354729380e1a977c49d7df2d9868483f89d1e44b377c20ed7b50f8ee2acdc",
+  "prompt_sha256": {
+    "01-consensus.md": "d83510f763522125d0341623d1c78d7764a8820aecb6b2cdb1e7523db78f6a33",
+    "02-relationship.md": "802bccb3675bcd6f4c17ebba695e9e8bbc125e24ea63d47eaa8d345ba8303ba9",
+    "03-persuasion.md": "36ef113c1f4d0c3da5c5389418b75e90962e0b4dd1cb03661f52e9679d4f79d1"
+  },
+  "notes": "API keys are never written. Proprietary model runs are procedurally reproducible but not byte-for-byte deterministic."
+}

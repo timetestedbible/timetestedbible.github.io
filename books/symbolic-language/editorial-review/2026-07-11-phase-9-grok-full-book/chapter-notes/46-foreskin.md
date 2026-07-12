@@ -1,0 +1,3 @@
+# The Foreskin
+
+This chapter delivers a clean, law-positive decode of the foreskin from Colossians 2:11, testing the blocking-flesh definition across heart, ear, lips, fruit, and Stephen before closing on the Genesis cut-or-be-cut-off wordplay. The member-by-member assembly is dense and on-voice, with a strong return to Jeremiah’s plow-and-knife pair. Residual defects are limited to two author-prose sentence openings banned by house style (That / And) and one director-cue hedge that undercuts the seed-placement observation. No doctrine, scripture-quote, or modernism problems appear. Surgical one-line fixes restore assertiveness without reopening the argument.

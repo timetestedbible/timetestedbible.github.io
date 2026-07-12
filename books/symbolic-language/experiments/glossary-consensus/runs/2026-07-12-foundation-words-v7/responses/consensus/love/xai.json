@@ -1,0 +1,156 @@
+{
+  "created_at": 1783835726,
+  "completed_at": 1783835737,
+  "id": "79cbeb7c-dcd2-98e0-a74e-b4121ff42dfd",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_79cbeb7c-dcd2-98e0-a74e-b4121ff42dfd",
+      "summary": [
+        {
+          "text": "The user wants me to act as the blind consensus definer for the term \"Love\" in biblical symbolism. I must respond ONLY with JSON matching the schema, no surrounding text.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The essence and nature of God expressed as selfless, unconditional, sacrificial love (agape) that defines Christian virtue, the greatest commandment, and the model for all human relationships\",\n  \"primary_basis\": [\n    \"1 John 4:8\",\n    \"1 John 4:16\",\n    \"John 3:16\",\n    \"Romans 5:8\",\n    \"1 Corinthians 13:1-13\",\n    \"Matthew 22:37-40\",\n    \"John 15:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ's redemptive love for the Church, frequently symbolized through the metaphor of marriage or covenant fidelity\",\n      \"basis\": [\n        \"Ephesians 5:25-33\",\n        \"Hosea 1-3\",\n        \"Song of Solomon (allegorical reading)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Brotherly affection or friendship (philia) among believers or between Jesus and disciples\",\n      \"basis\": [\n        \"John 21:15-17\",\n        \"John 15:13-15\",\n        \"Romans 12:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Romantic or erotic desire (eros), treated literally rather than as divine allegory\",\n      \"basis\": [\n        \"Song of Solomon (literal reading)\",\n        \"Proverbs 5:15-19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Familial natural affection (storge) within households\",\n      \"basis\": [\n        \"Romans 12:10 (compound forms)\",\n        \"2 Timothy 3:3 (negative)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern Christian teaching, agape as God's nature and the supreme commandment forms a clear, long-standing consensus; linguistic distinctions among Greek terms for love are widely recognized but secondary to the dominant theological reading.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_79cbeb7c-dcd2-98e0-a74e-b4121ff42dfd",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1540,
+    "output_tokens_details": {
+      "reasoning_tokens": 1046
+    },
+    "total_tokens": 2142,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 102520000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1540
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

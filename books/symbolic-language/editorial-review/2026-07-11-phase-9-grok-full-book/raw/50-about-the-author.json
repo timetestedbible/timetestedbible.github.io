@@ -1,0 +1,24 @@
+{
+  "file": "books/symbolic-language/50-about-the-author.adoc",
+  "title": "About the Author",
+  "notes": [
+    "This About the Author page is dense, assertive, and on-voice: the arc from free-market systems to Scripture, and the blockchain-verify parallel to the book’s method, land cleanly without hedging or director cues. No And/But/That sentence opens, no stock AI diction, and the 1 Thessalonians close fits the law-positive stance. The main defect is one overloaded career sentence: missing comma after “design” creates a garden-path, and the colon-plus-nested-dash structure buries the patent claim past seventy words. A surgical comma and period split restore the evidence seam without changing claims, titles, or tense. Otherwise the chunk is print-ready."
+  ],
+  "proposals": [
+    {
+      "old": "He spent fourteen years building systems that encourage integrity by design against the moral hazard and corruption of our financial and political lives: he invented Delegated Proof of Stake, built the first blockchain-based decentralized exchange, the first stablecoins, and the first social-media platform on a blockchain — three of the most-used chains of their day, BitShares, Steem, and EOS, entrusted with billions of dollars — and holds patents for provably secure voting systems, among other inventions.",
+      "new": "He spent fourteen years building systems that encourage integrity by design, against the moral hazard and corruption of our financial and political lives.\nHe invented Delegated Proof of Stake, built the first blockchain-based decentralized exchange, the first stablecoins, and the first social-media platform on a blockchain — three of the most-used chains of their day, BitShares, Steem, and EOS, entrusted with billions of dollars — and holds patents for provably secure voting systems, among other inventions.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Add comma after “design” and split the overloaded sentence at the colon.",
+      "rationale": "Without the comma, “by design against” garden-paths as one phrase; the colon-bound line also runs too long with a nested appositive. A period restores a clean evidence seam and keeps every claim intact.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This About the Author page is dense, assertive, and on-voice: the arc from free-market systems to Scripture, and the blockchain-verify parallel to the book’s method, land cleanly without hedging or director cues. No And/But/That sentence opens, no stock AI diction, and the 1 Thessalonians close fits the law-positive stance. The main defect is one overloaded career sentence: missing comma after “design” creates a garden-path, and the colon-plus-nested-dash structure buries the patent claim past seventy words. A surgical comma and period split restore the evidence seam without changing claims, titles, or tense. Otherwise the chunk is print-ready.\",\n  \"proposals\": [\n    {\n      \"old\": \"He spent fourteen years building systems that encourage integrity by design against the moral hazard and corruption of our financial and political lives: he invented Delegated Proof of Stake, built the first blockchain-based decentralized exchange, the first stablecoins, and the first social-media platform on a blockchain — three of the most-used chains of their day, BitShares, Steem, and EOS, entrusted with billions of dollars — and holds patents for provably secure voting systems, among other inventions.\",\n      \"new\": \"He spent fourteen years building systems that encourage integrity by design, against the moral hazard and corruption of our financial and political lives.\\nHe invented Delegated Proof of Stake, built the first blockchain-based decentralized exchange, the first stablecoins, and the first social-media platform on a blockchain — three of the most-used chains of their day, BitShares, Steem, and EOS, entrusted with billions of dollars — and holds patents for provably secure voting systems, among other inventions.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Add comma after “design” and split the overloaded sentence at the colon.\",\n      \"rationale\": \"Without the comma, “by design against” garden-paths as one phrase; the colon-bound line also runs too long with a nested appositive. A period restores a clean evidence seam and keeps every claim intact.\"\n    }\n  ]\n}"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "resp_05cd0cb8c28917a0006a531566b47c819398ddb788c2345bf9",
+  "object": "response",
+  "created_at": 1783829862,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783829882,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_05cd0cb8c28917a0006a531567ced88193b2038e5d8d4bf952",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_05cd0cb8c28917a0006a53156c64b481939b5822089bb645ce",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The Holy Spirit—especially the Spirit’s anointing, empowering, and setting apart of a person for divine service—is the symbolic meaning most commonly assigned to oil in Christian teaching.\",\"primary_basis\":[\"1 Samuel 16:13 — David is anointed with oil, and the Spirit of the LORD comes powerfully upon him.\",\"Isaiah 61:1 and Luke 4:18 — the Messiah is described as anointed by the Spirit to carry out his mission.\",\"Acts 10:38 — God anoints Jesus with the Holy Spirit and power.\",\"Zechariah 4:1–14 — the lampstand supplied with oil is commonly connected with God’s Spirit, especially through the declaration, “Not by might, nor by power, but by my Spirit.”\",\"Exodus 30:22–33; Leviticus 8:10–12 — sacred anointing oil consecrates the tabernacle, priests, and their service.\"] ,\"alternatives\":[{\"meaning\":\"Consecration, divine appointment, or authorization for an office such as king, priest, or prophet. This overlaps with Spirit symbolism but can function independently as a sign of being set apart.\",\"basis\":[\"Exodus 29:7; 30:30\",\"Leviticus 8:10–12\",\"1 Samuel 10:1\",\"1 Kings 19:15–16\"],\"prominence\":\"common\"},{\"meaning\":\"Joy, gladness, honor, and festive blessing.\",\"basis\":[\"Psalm 23:5\",\"Psalm 45:7\",\"Isaiah 61:3\",\"Hebrews 1:9\"],\"prominence\":\"common\"},{\"meaning\":\"Healing, soothing care, or medicinal treatment.\",\"basis\":[\"Isaiah 1:6\",\"Mark 6:13\",\"Luke 10:34\",\"James 5:14\"],\"prominence\":\"common\"},{\"meaning\":\"Material provision, prosperity, abundance, or divine blessing, since oil was an important agricultural commodity.\",\"basis\":[\"Deuteronomy 7:13\",\"2 Kings 4:1–7\",\"Joel 2:19,24\",\"Hosea 2:8\"],\"prominence\":\"common\"},{\"meaning\":\"Readiness, vigilance, or persevering faith, particularly in interpretations of the oil carried by the wise virgins.\",\"basis\":[\"Matthew 25:1–13\"],\"prominence\":\"minority\"},{\"meaning\":\"Light-bearing testimony or the sustaining divine supply that enables faithful witness.\",\"basis\":[\"Exodus 27:20–21\",\"Leviticus 24:2\",\"Zechariah 4:1–14\",\"Revelation 11:3–4\"],\"prominence\":\"minority\"},{\"meaning\":\"The ordinary practical substance used for grooming, hospitality, burial preparation, food, lamps, or commerce, without a necessary symbolic meaning.\",\"basis\":[\"Matthew 6:17\",\"Luke 7:46\",\"Matthew 25:3–8\",\"Mark 14:8\",\"Revelation 6:6\"],\"prominence\":\"common\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"“Oil symbolizes the Holy Spirit” is the dominant shorthand in Christian preaching and typological interpretation. Biblical scholarship generally emphasizes that oil has several context-dependent functions and that no passage establishes a universal one-to-one equation between oil and the Spirit. Thus there is a recognizable primary association, but no settled interpretation applicable to every occurrence.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 869,
+    "output_tokens_details": {
+      "reasoning_tokens": 160
+    },
+    "total_tokens": 1186
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,3 @@
+# Orphans, Widows, and the Fatherless
+
+This chunk strongly assembles widow, fatherless, stranger, and poor as the covenant people themselves, using clean opposite pairs and tight scripture chains that deepen the literal commands without dissolving them. The arc from confession of widowhood through the Redeemer-Husband to food and raiment as word and works is dense and law-positive. Residual defects are presenter staging (Now hear, Watch, paired Read cues), house-style sentence opens with But and And, a pronoun slip on “It should not,” and the tangled “Among… is a close family” construction. The fixes are surgical, preserve every quote, markup, and symbol link, and restore the author’s assertive voice without touching doctrine.

@@ -1,22 +1,66 @@
 #!/usr/bin/env ruby
 # Build the trade-paperback (6x9) PDF of "The Bible's Symbolic Language".
 #
+# macOS still ships Ruby 2.6 at /usr/bin/ruby. It is too old for this bundle
+# and does not see the project's gems. Keep this bootstrap above every require
+# so even `ruby build.rb` repairs the interpreter before loading the build.
+major, minor = RUBY_VERSION.split('.').first(2).map(&:to_i)
+if major < 3 || (major == 3 && minor < 1)
+  if ENV['TIMETESTED_RUBY_BOOTSTRAPPED'] == '1'
+    abort "The selected replacement Ruby is also too old: #{RUBY_DESCRIPTION}"
+  end
+  candidates = [
+    ENV['TIMETESTED_RUBY'],
+    '/opt/homebrew/opt/ruby/bin/ruby', # Apple Silicon Homebrew
+    '/usr/local/opt/ruby/bin/ruby',    # Intel Homebrew
+  ].compact
+  replacement = candidates.find { |path| File.file?(path) && File.executable?(path) }
+  unless replacement
+    abort <<~MSG
+      This build requires Ruby 3.1 or newer; #{RUBY_DESCRIPTION} is too old.
+      Install Homebrew Ruby (`brew install ruby`) or set TIMETESTED_RUBY to a
+      compatible Ruby executable.
+    MSG
+  end
+  warn "System Ruby #{RUBY_VERSION} detected; restarting with #{replacement}"
+  exec({ 'TIMETESTED_RUBY_BOOTSTRAPPED' => '1' }, replacement, File.expand_path(__FILE__), *ARGV)
+end
+
+# Resolve the declared project bundle no matter which directory launched the
+# script. This keeps the PDF and EPUB renderers on the versions in Gemfile.lock.
+repo_root = File.expand_path('../../..', __dir__)
+ENV['BUNDLE_GEMFILE'] ||= File.join(repo_root, 'Gemfile')
+if ARGV.first == 'setup'
+  require 'rbconfig'
+  bundle = File.join(File.dirname(RbConfig.ruby), 'bundle')
+  abort "Bundler was not found beside #{RbConfig.ruby}" unless File.executable? bundle
+  Dir.chdir repo_root
+  exec bundle, 'install'
+end
+begin
+  require 'bundler/setup'
+rescue Bundler::GemNotFound => e
+  abort "#{e.message}\nRun #{File.basename(__FILE__)} setup once to install the locked bundle."
+end
+#
 # Replaces the old bash/awk pipeline with the Asciidoctor Ruby API:
 #   - real YAML parsing of each chapter's Jekyll front matter (title, epigraphs)
 #   - a treeprocessor extension (extension.rb) for the quote/citation transform
 #   - asciidoctor-pdf for rendering, with the trade theme
 #
 # Usage:
-#   ruby build.rb            # BOTH PDFs: print (prepress — the default artifact
+#   ./build.rb               # BOTH PDFs: print (prepress — the default artifact
 #                            # we edit and iterate on) and screen (refined later)
-#   ruby build.rb print      # print-ready only: facing pages, gutter margins
-#   ruby build.rb screen     # screen only: single pages
+#   ./build.rb print         # print-ready only: facing pages, gutter margins
+#   ./build.rb screen        # screen only: single pages
+#   ./build.rb setup         # first checkout: install the locked bundle
+#   ruby build.rb print      # also supported; auto-restarts out of system Ruby
 #
 # Outputs:
 #   the-bibles-symbolic-language-print.pdf    (media=prepress)
 #   the-bibles-symbolic-language-screen.pdf   (media=screen)
 #
-# Requires:  gem install asciidoctor-pdf
+# First checkout only: bundle install
 require 'asciidoctor'
 require 'asciidoctor-pdf'
 require 'yaml'
@@ -112,7 +156,7 @@ PARTS = {
   'sun-moon-and-stars' => 'Part Four — The Calendar',
   'the-four-winds'     => 'Part Five — The Prophecy',
   'mountain'           => 'Part Six — Symbol Studies',
-  'glossary'           => 'Part Seven — The Glossary',
+  'the-end-of-the-law' => 'Part Seven — Reference',
 }
 
 # Back matter, rendered AFTER the generated Scripture Index: the Bibliography

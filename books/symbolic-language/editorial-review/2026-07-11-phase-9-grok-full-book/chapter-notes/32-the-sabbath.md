@@ -1,0 +1,3 @@
+# The Sabbath
+
+This chunk builds a tight, law-positive case that sabbath names the complete seven at every scale, from day-unit through jubilee to the age, with strong parallel-statute evidence and a sharp calendar-checksum argument. Density and assertiveness hold where the prose stays clean. Residual presenter staging remains in several lead-ins (Ask, watch, Read...notice, Now, Notice), and two author sentences open with But and And. A few light mechanical modernisms sit in the text but do not fight the biblical images. Surgical removal of the cues and openers restores house style without touching doctrine, quotes, or the calendar claim.

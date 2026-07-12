@@ -1,0 +1,73 @@
+{
+  "file": "books/symbolic-language/03-signs-and-similitudes.adoc",
+  "title": "Signs and Similitudes",
+  "notes": [
+    "This chunk delivers a dense, assertive chain of lived similitudes—Abraham’s offering, Joseph’s life, Rahab’s scarlet line, and Israel’s history fulfilled in the Son—with tight scripture links and no hedging. The Abraham-to-John and Joseph-to-Stephen sequences land with force, and the Clement citation seals the Rahab reading cleanly. House-style sentence-open violations (And, That) and residual presenter staging (scenes, lens) interrupt the prose rhythm. One relative clause lacks its connector and tangles a cross-reference. Surgical fixes restore flow and register without touching doctrine, quotes, or the author’s law-positive density."
+  ],
+  "proposals": [
+    {
+      "old": "And Abraham names the place with a promise in the future tense: __“In the mount of the LORD it shall be seen”__ (Genesis 22:14).",
+      "new": "Abraham names the place with a promise in the future tense: __“In the mount of the LORD it shall be seen”__ (Genesis 22:14).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop leading And from author prose.",
+      "rationale": "House style forbids author sentences starting with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "That is a similitude: not a story about the truth, but the truth rehearsed.",
+      "new": "This is a similitude: not a story about the truth, but the truth rehearsed.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Replace leading That with This.",
+      "rationale": "House style forbids author sentences starting with That; This preserves the tight claim.",
+      "_chunk": 2
+    },
+    {
+      "old": "And then the line Stephen preached to the Sanhedrin: __“at the *second time* Joseph was made known to his brethren”__ (Acts 7:13).",
+      "new": "Then the line Stephen preached to the Sanhedrin: __“at the *second time* Joseph was made known to his brethren”__ (Acts 7:13).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop leading And from author prose.",
+      "rationale": "House style forbids author sentences starting with And; Then keeps the sequence.",
+      "_chunk": 2
+    },
+    {
+      "old": "(1 Corinthians 10:2, a crossing the sym:sym-sea[Sea & Waters] chapter will read)",
+      "new": "(1 Corinthians 10:2, a crossing that the sym:sym-sea[Sea & Waters] chapter will read)",
+      "type": "grammar",
+      "severity": "high",
+      "summary": "Insert missing relative that.",
+      "rationale": "The appositive lacks its connector and reads as a fragment; that restores grammar without altering sense or markup.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now widen the lens all the way, because the master similitude is Israel herself.",
+      "new": "The master similitude is Israel herself.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Remove cinematic director cue.",
+      "rationale": "Now widen the lens is presenter staging; the claim stands cleanly on its own.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now the scenes run.",
+      "new": "The scenes run.",
+      "type": "ai-sounding-staging",
+      "severity": "low",
+      "summary": "Drop leading Now from staging line.",
+      "rationale": "Avoids residual presenter register at the open while preserving the author’s scene metaphor.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "error": "Invalid \\escape: line 34 column 46 (char 3280)"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk delivers a dense, assertive chain of lived similitudes—Abraham’s offering, Joseph’s life, Rahab’s scarlet line, and Israel’s history fulfilled in the Son—with tight scripture links and no hedging. The Abraham-to-John and Joseph-to-Stephen sequences land with force, and the Clement citation seals the Rahab reading cleanly. House-style sentence-open violations (And, That) and residual presenter staging (scenes, lens) interrupt the prose rhythm. One relative clause lacks its connector and tangles a cross-reference. Surgical fixes restore flow and register without touching doctrine, quotes, or the author’s law-positive density.\",\n  \"proposals\": [\n    {\n      \"old\": \"And Abraham names the place with a promise in the future tense: __“In the mount of the LORD it shall be seen”__ (Genesis 22:14).\",\n      \"new\": \"Abraham names the place with a promise in the future tense: __“In the mount of the LORD it shall be seen”__ (Genesis 22:14).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And.\"\n    },\n    {\n      \"old\": \"That is a similitude: not a story about the truth, but the truth rehearsed.\",\n      \"new\": \"This is a similitude: not a story about the truth, but the truth rehearsed.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace leading That with This.\",\n      \"rationale\": \"House style forbids author sentences starting with That; This preserves the tight claim.\"\n    },\n    {\n      \"old\": \"And then the line Stephen preached to the Sanhedrin: __“at the *second time* Joseph was made known to his brethren”__ (Acts 7:13).\",\n      \"new\": \"Then the line Stephen preached to the Sanhedrin: __“at the *second time* Joseph was made known to his brethren”__ (Acts 7:13).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And; Then keeps the sequence.\"\n    },\n    {\n      \"old\": \"(1 Corinthians 10:2, a crossing the sym:sym-sea[Sea & Waters] chapter will read)\",\n      \"new\": \"(1 Corinthians 10:2, a crossing that the sym:sym-sea[Sea & Waters] chapter will read)\",\n      \"type\": \"grammar\",\n      \"severity\": \"high\",\n      \"summary\": \"Insert missing relative that.\",\n      \"rationale\": \"The appositive lacks its connector and reads as a fragment; that restores grammar without altering sense or markup.\"\n    },\n    {\n      \"old\": \"Now widen the lens all the way, because the master similitude is Israel herself.\",\n      \"new\": \"The master similitude is Israel herself.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove cinematic director cue.\",\n      \"rationale\": \"Now widen the lens is presenter staging; the claim stands cleanly on its own.\"\n    },\n    {\n      \"old\": \"Now the scenes run.\",\n      \"new\": \"The scenes run.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"low\",\n      \"summary\": \"Drop leading Now from staging line.\",\n      \"rationale\": \"Avoids residual presenter register at the open while preserving the author’s scene metaphor.\"\n    }\n  ]\n}"
+    }
+  ]
+}

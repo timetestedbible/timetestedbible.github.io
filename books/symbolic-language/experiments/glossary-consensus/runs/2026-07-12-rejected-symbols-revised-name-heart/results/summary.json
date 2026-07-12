@@ -1,0 +1,83 @@
+{
+  "entry_count": 3,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_UNPERSUADED": 2,
+    "NOVEL": 1
+  },
+  "rows": [
+    {
+      "anchor": "heart",
+      "term": "Heart of the earth",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_UNPERSUADED"
+    },
+    {
+      "anchor": "name",
+      "term": "Name",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "REFINED",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_UNPERSUADED"
+    },
+    {
+      "anchor": "pearl",
+      "term": "Pearl",
+      "relation": "NOVEL",
+      "relationship_votes": [
+        "NOVEL",
+        "DIVERGENT",
+        "NOVEL"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "NOVEL"
+    }
+  ]
+}

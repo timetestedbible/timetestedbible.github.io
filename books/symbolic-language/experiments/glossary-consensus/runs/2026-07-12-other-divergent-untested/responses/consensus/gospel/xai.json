@@ -1,0 +1,156 @@
+{
+  "created_at": 1783845006,
+  "completed_at": 1783845018,
+  "id": "e8c08723-bd38-9da4-85e2-ed11285ef3f3",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_e8c08723-bd38-9da4-85e2-ed11285ef3f3",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Gospel\" in Christian teaching and biblical interpretation, based on my independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the good news of salvation through the life, death, and resurrection of Jesus Christ\",\n  \"primary_basis\": [\n    \"Mark 1:1\",\n    \"Mark 1:14-15\",\n    \"Romans 1:16\",\n    \"1 Corinthians 15:1-4\",\n    \"Matthew 4:23\",\n    \"Isaiah 52:7 (as background)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the four canonical New Testament books (Matthew, Mark, Luke, John) that narrate the life and ministry of Jesus\",\n      \"basis\": [\n        \"early church usage and titles of the books\",\n        \"Irenaeus and subsequent patristic tradition\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the announcement of the kingdom of God / reign of God as present and future reality\",\n      \"basis\": [\n        \"Mark 1:14-15\",\n        \"Matthew 4:23\",\n        \"Luke 4:18-19 / Isaiah 61:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a literary genre of ancient biography focused on Jesus\",\n      \"basis\": [\n        \"modern biblical scholarship on genre\",\n        \"comparisons with Greco-Roman bioi\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching the Greek euangelion is uniformly rendered and understood as 'good news.' The precise content of that news (kingdom emphasis vs. cross-resurrection emphasis) receives different accents, yet these are complementary rather than contradictory readings of the same core term. No significant symbolic or allegorical redefinition exists outside this consensus.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_e8c08723-bd38-9da4-85e2-ed11285ef3f3",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1270,
+    "output_tokens_details": {
+      "reasoning_tokens": 854
+    },
+    "total_tokens": 1872,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 86320000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1270
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

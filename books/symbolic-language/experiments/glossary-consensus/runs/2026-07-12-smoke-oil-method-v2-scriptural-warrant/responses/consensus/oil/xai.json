@@ -1,0 +1,156 @@
+{
+  "created_at": 1783833040,
+  "completed_at": 1783833048,
+  "id": "bc32b1be-5510-9d09-8896-e7ac380cc856",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_bc32b1be-5510-9d09-8896-e7ac380cc856",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Oil (lamp oil)\" in biblical symbolism. I must respond with a specific JSON format and nothing else.\n{\n  \"primary_symbolic_meaning\": \"The Holy Spirit, representing spiritual enlightenment, readiness, and empowerment.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The Holy Spirit (as the source of light, anointing, and spiritual empowerment)\",\n  \"primary_basis\": [\n    \"Matthew 25:1-13 (oil in the lamps of the wise virgins)\",\n    \"Zechariah 4:1-14 (oil feeding the lampstand)\",\n    \"Exodus 27:20-21 and Leviticus 24:1-4 (pure olive oil for the tabernacle lamp)\",\n    \"1 Samuel 16:13 and related anointing texts linked to Spirit endowment\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Spiritual readiness, vigilance, or preparedness for Christ's return\",\n      \"basis\": [\"Matthew 25:1-13 (contextual emphasis on the virgins' foresight)\"],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith, grace, or personal piety that sustains spiritual life\",\n      \"basis\": [\"Matthew 25:1-13 (oil as the 'fuel' distinguishing wise from foolish)\", \"Psalm 23:5\"],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Good works or righteous deeds that accompany faith\",\n      \"basis\": [\"Matthew 25:1-13 (some patristic and moral readings)\", \"James 2:14-26 (works as evidence)\"],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Joy or gladness\",\n      \"basis\": [\"Psalm 45:7 / Hebrews 1:9 (oil of gladness)\", \"Isaiah 61:3\"],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching (patristic, medieval, Reformation, and modern evangelical/catholic sources) lamp oil is most consistently linked to the Holy Spirit, especially via the light motif and the parable of the virgins; secondary moral or preparatory readings of Matthew 25 remain common but do not displace the pneumatological consensus for oil as a biblical symbol.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_bc32b1be-5510-9d09-8896-e7ac380cc856",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1176,
+    "output_tokens_details": {
+      "reasoning_tokens": 707
+    },
+    "total_tokens": 1781,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 74980000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1176
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

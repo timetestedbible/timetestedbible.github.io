@@ -1,0 +1,51 @@
+{
+  "file": "books/symbolic-language/47-butter.adoc",
+  "title": "Butter",
+  "notes": [
+    "This chapter is tightly structured and symbolically dense, chaining butter from the churn through remnant diet, Job’s steps, wilderness provision, counterfeit speech, and Jael’s dish with a clear true/counterfeit contrast. The voice stays assertive, law-positive, and free of stock AI diction. Residual defects are presenter staging (“mark”), two author-prose sentences that open with And, a missing preposition inside the Hebrews link text, and light meta-hedging on the water register. All proposed fixes are surgical, preserve doctrine, scripture quotes, and AsciiDoc markup, and restore house style without reopening symbols."
+  ],
+  "proposals": [
+    {
+      "old": "the discernment link:/books/symbolic-language/introduction/[Hebrews assigns the strong-meat eater] (Hebrews 5:14).",
+      "new": "the discernment link:/books/symbolic-language/introduction/[Hebrews assigns to the strong-meat eater] (Hebrews 5:14).",
+      "type": "grammar",
+      "severity": "high",
+      "summary": "Missing preposition after “assigns”.",
+      "rationale": "“Hebrews assigns the strong-meat eater” is ungrammatical; the required English is “assigns to.” The change is confined to the link text and leaves the surrounding claim and footnote untouched.",
+      "_chunk": 1
+    },
+    {
+      "old": "And mark the third symbol: the hidden thing is *swords*, and the sword is the word — __“the sword of the Spirit, which is the *word of God*”__ (Ephesians 6:17).",
+      "new": "The third symbol is the hidden thing: *swords*, and the sword is the word — __“the sword of the Spirit, which is the *word of God*”__ (Ephesians 6:17).",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue “mark” and sentence-open “And”.",
+      "rationale": "House style forbids both sentence-initial “And” in author prose and presenter staging of the “Mark that” family. The rewrite keeps the identical claim and all markup.",
+      "_chunk": 1
+    },
+    {
+      "old": "Whether the asked-for water carries the living-water register is a question this book leaves open; the escalation itself — water, milk, butter — runs the symbol's whole ladder in one verse.",
+      "new": "Whether the asked-for water carries the living-water register remains open; the escalation itself — water, milk, butter — runs the symbol's whole ladder in one verse.",
+      "type": "tone-register",
+      "severity": "medium",
+      "summary": "Strip meta-talk about “this book”.",
+      "rationale": "House style rejects hedging and meta-talk that names the book leaving questions open. The shortened form retains the author’s deliberate openness without the register slip.",
+      "_chunk": 1
+    },
+    {
+      "old": "Taste what is set before you, and mark whether it was churned — or merely smoothed.\nAnd the meat on the same table has its counterfeit too — the flesh that presents clean and is not — and it is the next chapter.",
+      "new": "Taste what is set before you, whether it was churned — or merely smoothed.\nThe meat on the same table has its counterfeit too — the flesh that presents clean and is not — and it is the next chapter.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove “mark” staging and sentence-open “And”.",
+      "rationale": "Both “mark whether” and the following “And” violate house style (director cues and sentence-open rules). The revision keeps the food-theme imperative, the true/counterfeit contrast, and the chapter transition intact.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chapter is tightly structured and symbolically dense, chaining butter from the churn through remnant diet, Job’s steps, wilderness provision, counterfeit speech, and Jael’s dish with a clear true/counterfeit contrast. The voice stays assertive, law-positive, and free of stock AI diction. Residual defects are presenter staging (“mark”), two author-prose sentences that open with And, a missing preposition inside the Hebrews link text, and light meta-hedging on the water register. All proposed fixes are surgical, preserve doctrine, scripture quotes, and AsciiDoc markup, and restore house style without reopening symbols.\",\n  \"proposals\": [\n    {\n      \"old\": \"the discernment link:/books/symbolic-language/introduction/[Hebrews assigns the strong-meat eater] (Hebrews 5:14).\",\n      \"new\": \"the discernment link:/books/symbolic-language/introduction/[Hebrews assigns to the strong-meat eater] (Hebrews 5:14).\",\n      \"type\": \"grammar\",\n      \"severity\": \"high\",\n      \"summary\": \"Missing preposition after “assigns”.\",\n      \"rationale\": \"“Hebrews assigns the strong-meat eater” is ungrammatical; the required English is “assigns to.” The change is confined to the link text and leaves the surrounding claim and footnote untouched.\"\n    },\n    {\n      \"old\": \"And mark the third symbol: the hidden thing is *swords*, and the sword is the word — __“the sword of the Spirit, which is the *word of God*”__ (Ephesians 6:17).\",\n      \"new\": \"The third symbol is the hidden thing: *swords*, and the sword is the word — __“the sword of the Spirit, which is the *word of God*”__ (Ephesians 6:17).\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue “mark” and sentence-open “And”.\",\n      \"rationale\": \"House style forbids both sentence-initial “And” in author prose and presenter staging of the “Mark that” family. The rewrite keeps the identical claim and all markup.\"\n    },\n    {\n      \"old\": \"Whether the asked-for water carries the living-water register is a question this book leaves open; the escalation itself — water, milk, butter — runs the symbol's whole ladder in one verse.\",\n      \"new\": \"Whether the asked-for water carries the living-water register remains open; the escalation itself — water, milk, butter — runs the symbol's whole ladder in one verse.\",\n      \"type\": \"tone-register\",\n      \"severity\": \"medium\",\n      \"summary\": \"Strip meta-talk about “this book”.\",\n      \"rationale\": \"House style rejects hedging and meta-talk that names the book leaving questions open. The shortened form retains the author’s deliberate openness without the register slip.\"\n    },\n    {\n      \"old\": \"Taste what is set before you, and mark whether it was churned — or merely smoothed.\\nAnd the meat on the same table has its counterfeit too — the flesh that presents clean and is not — and it is the next chapter.\",\n      \"new\": \"Taste what is set before you, whether it was churned — or merely smoothed.\\nThe meat on the same table has its counterfeit too — the flesh that presents clean and is not — and it is the next chapter.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove “mark” staging and sentence-open “And”.\",\n      \"rationale\": \"Both “mark whether” and the following “And” violate house style (director cues and sentence-open rules). The revision keeps the food-theme imperative, the true/counterfeit contrast, and the chapter transition intact.\"\n    }\n  ]\n}"
+    }
+  ]
+}

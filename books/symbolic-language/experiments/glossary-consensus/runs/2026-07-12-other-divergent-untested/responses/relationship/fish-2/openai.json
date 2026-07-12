@@ -1,0 +1,201 @@
+{
+  "id": "resp_0572f727b97d0d3c006a5353b3a0e881959ca5d98db149cc6e",
+  "object": "response",
+  "created_at": 1783845811,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845835,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0572f727b97d0d3c006a5353b409a88195970a82143c7cb1c1",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0572f727b97d0d3c006a5353be62948195ba2352f41b414141",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0572f727b97d0d3c006a5353c3ae348195ad0db59a6b45ccec",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The consensus distinguishes several streams: Jonah’s great fish is primarily God’s appointed means of deathlike confinement and deliverance, typologically anticipating Christ’s burial and resurrection; sea-monsters can separately represent chaos, evil powers, or hostile nations and empires.\",\"book_summary\":\"The book identifies the fish or sea-monster as a devouring kingdom that swallows its victim and is compelled to release what it consumed.\",\"consensus_core_identification\":\"For Jonah, a divinely appointed instrument and figure of the grave/resurrection; for prophetic sea-monsters, a hostile power that may include an empire.\",\"book_core_identification\":\"A predatory kingdom represented as a swallowing sea-monster, with eventual forced restitution or release.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book selects and sharpens the recognized hostile-empire reading into a kingdom-specific swallowing-and-release pattern, while apparently applying it to the great-fish motif that the consensus primarily treats as providential and christological. It thus preserves the imperial sea-monster category but reclassifies Jonah-related cases and excludes broader chaos or merely providential meanings from its core definition.\",\"material_contradiction\":\"For Jonah’s fish, the book’s kingdom referent materially differs from the consensus’s primary identification as God’s rescue instrument and type of burial and resurrection. However, it does not replace the entire consensus field because hostile kingdoms such as Egypt and Babylon are already recognized sea-monster referents.\",\"rationale\":\"This is REFINED rather than NOVEL because the consensus explicitly includes sea-monsters as hostile nations or empires, even mentioning Egypt and Babylon. It is not a simple MATCH because the book narrows that broad category to devouring kingdoms, adds a required release dynamic, and appears to extend this political identification to the Jonah motif. Given the compound term’s multiple recognized streams, the result is partial reclassification rather than wholly contradictory cores.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Jeremiah 51:34 clearly depicts Babylon’s king as a swallowing dragon, and Ezekiel 32:2 compares Pharaoh to a sea creature, but neither excerpt identifies Jonah’s appointed fish as a kingdom or clearly establishes a general rule that such kingdoms are forced to restore what they swallowed. “Cast me out” supports release imagery but does not by itself establish compulsion or restitution.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3460,
+    "input_tokens_details": {
+      "cache_write_tokens": 3457,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1211,
+    "output_tokens_details": {
+      "reasoning_tokens": 703
+    },
+    "total_tokens": 4671
+  },
+  "user": null,
+  "metadata": {}
+}

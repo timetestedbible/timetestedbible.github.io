@@ -1,0 +1,87 @@
+{
+  "file": "books/symbolic-language/22-worship.adoc",
+  "title": "Worship",
+  "notes": [
+    "This chunk is strong: dense parallel-column method, clear separation of worship from singing, firm bow-and-serve pair, and a clean arc from Abraham’s first use through the everlasting gospel and the beast crisis. The law-positive stance and body-allegiance definition land with force. Residual presenter staging still surfaces (Watch, Now consider, Now look closely, Hold the equation, And listen), and several author-prose sentences open with And or That against house style. One soft meta line (“worth sitting with the irony”) weakens an otherwise assertive close. Surgical cuts restore the author’s direct voice without touching doctrine or quoted Scripture."
+  ],
+  "proposals": [
+    {
+      "old": "Watch Hezekiah’s temple service hold three acts apart in one verse:",
+      "new": "Hezekiah’s temple service holds three acts apart in one verse:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue and fix subject-verb agreement.",
+      "rationale": "House style bans presenter staging such as “Watch.” Asserting the scene directly keeps the author’s density and voice.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now consider the first time the word appears in the Bible, because Scripture’s first use of a word is a teacher.",
+      "new": "The first time the word appears in the Bible is a teacher.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip “Now consider” staging while keeping the first-use claim.",
+      "rationale": "Director cues are banned. The following sentence already names Abraham, so the shortened claim stays clear and dense.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the homage-kiss is no Greek invention — Scripture’s Hebrew knows it well:",
+      "new": "The homage-kiss is no Greek invention — Scripture’s Hebrew knows it well:",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove author-prose sentence opening with And.",
+      "rationale": "House style forbids And at the start of author sentences. Dropping it leaves the claim intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Job, clearing himself of the oldest idolatry, describes sym:sym-sun[sun]-worship as exactly this: __“If I beheld the sun when it shined… or my mouth hath *kissed my hand*: this also were an iniquity… for I should have *denied the God that is above*”__ (Job 31:26-28).",
+      "new": "Job, clearing himself of the oldest idolatry, describes sym:sym-sun[sun]-worship as exactly this: __“If I beheld the sun when it shined… or my mouth hath *kissed my hand*: this also were an iniquity… for I should have *denied the God that is above*”__ (Job 31:26-28).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove author-prose sentence opening with And.",
+      "rationale": "House style forbids And at the start of author sentences. The Job evidence and markup stay unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is why it can be demanded, refused, and died for — none of which makes sense of a song.",
+      "new": "Worship can be demanded, refused, and died for — none of which makes sense of a song.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove author-prose sentence opening with That.",
+      "rationale": "House style forbids That at the start of author sentences. Naming the subject keeps the force of the claim.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now look closely at what Jesus quoted, because there is a discovery in it.",
+      "new": "What Jesus quoted holds a discovery.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove “Now look closely” director staging.",
+      "rationale": "Presenter cues are banned. The shorter assertion preserves the discovery claim without meta instruction.",
+      "_chunk": 1
+    },
+    {
+      "old": "Hold the equation; we will need it in a moment at the end of the age.",
+      "new": "The equation returns at the end of the age.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove banned “Hold” director cue and future-tense staging.",
+      "rationale": "House style explicitly bans “Hold that” cues. A direct forward pointer keeps the author’s density.",
+      "_chunk": 1
+    },
+    {
+      "old": "And listen to how the One to be worshipped is identified — __“him that *made heaven, and earth, and the sea*”__ — for Scripture has exactly one commandment that grounds itself in that formula:",
+      "new": "The One to be worshipped is identified as __“him that *made heaven, and earth, and the sea*”__ — for Scripture has exactly one commandment that grounds itself in that formula:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove And-open and “listen” staging in one cut.",
+      "rationale": "Author prose may not open with And, and “listen” is presenter staging. The identification claim and scripture markup remain intact.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is strong: dense parallel-column method, clear separation of worship from singing, firm bow-and-serve pair, and a clean arc from Abraham’s first use through the everlasting gospel and the beast crisis. The law-positive stance and body-allegiance definition land with force. Residual presenter staging still surfaces (Watch, Now consider, Now look closely, Hold the equation, And listen), and several author-prose sentences open with And or That against house style. One soft meta line (“worth sitting with the irony”) weakens an otherwise assertive close. Surgical cuts restore the author’s direct voice without touching doctrine or quoted Scripture.\",\n  \"proposals\": [\n    {\n      \"old\": \"Watch Hezekiah’s temple service hold three acts apart in one verse:\",\n      \"new\": \"Hezekiah’s temple service holds three acts apart in one verse:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue and fix subject-verb agreement.\",\n      \"rationale\": \"House style bans presenter staging such as “Watch.” Asserting the scene directly keeps the author’s density and voice.\"\n    },\n    {\n      \"old\": \"Now consider the first time the word appears in the Bible, because Scripture’s first use of a word is a teacher.\",\n      \"new\": \"The first time the word appears in the Bible is a teacher.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip “Now consider” staging while keeping the first-use claim.\",\n      \"rationale\": \"Director cues are banned. The following sentence already names Abraham, so the shortened claim stays clear and dense.\"\n    },\n    {\n      \"old\": \"And the homage-kiss is no Greek invention — Scripture’s Hebrew knows it well:\",\n      \"new\": \"The homage-kiss is no Greek invention — Scripture’s Hebrew knows it well:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove author-prose sentence opening with And.\",\n      \"rationale\": \"House style forbids And at the start of author sentences. Dropping it leaves the claim intact.\"\n    },\n    {\n      \"old\": \"And Job, clearing himself of the oldest idolatry, describes sym:sym-sun[sun]-worship as exactly this: __“If I beheld the sun when it shined… or my mouth hath *kissed my hand*: this also were an iniquity… for I should have *denied the God that is above*”__ (Job 31:26-28).\",\n      \"new\": \"Job, clearing himself of the oldest idolatry, describes sym:sym-sun[sun]-worship as exactly this: __“If I beheld the sun when it shined… or my mouth hath *kissed my hand*: this also were an iniquity… for I should have *denied the God that is above*”__ (Job 31:26-28).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove author-prose sentence opening with And.\",\n      \"rationale\": \"House style forbids And at the start of author sentences. The Job evidence and markup stay unchanged.\"\n    },\n    {\n      \"old\": \"That is why it can be demanded, refused, and died for — none of which makes sense of a song.\",\n      \"new\": \"Worship can be demanded, refused, and died for — none of which makes sense of a song.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove author-prose sentence opening with That.\",\n      \"rationale\": \"House style forbids That at the start of author sentences. Naming the subject keeps the force of the claim.\"\n    },\n    {\n      \"old\": \"Now look closely at what Jesus quoted, because there is a discovery in it.\",\n      \"new\": \"What Jesus quoted holds a discovery.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove “Now look closely” director staging.\",\n      \"rationale\": \"Presenter cues are banned. The shorter assertion preserves the discovery claim without meta instruction.\"\n    },\n    {\n      \"old\": \"Hold the equation; we will need it in a moment at the end of the age.\",\n      \"new\": \"The equation returns at the end of the age.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned “Hold” director cue and future-tense staging.\",\n      \"rationale\": \"House style explicitly bans “Hold that” cues. A direct forward pointer keeps the author’s density.\"\n    },\n    {\n      \"old\": \"And listen to how the One to be worshipped is identified — __“him that *made heaven, and earth, and the sea*”__ — for Scripture has exactly one commandment that grounds itself in that formula:\",\n      \"new\": \"The One to be worshipped is identified as __“him that *made heaven, and earth, and the sea*”__ — for Scripture has exactly one commandment that grounds itself in that formula:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove And-open and “listen” staging in one cut.\",\n      \"rationale\": \"Author prose may not open with And, and “listen” is presenter staging. The identification claim and scripture markup remain intact.\"\n    }\n  ]\n}"
+    }
+  ]
+}

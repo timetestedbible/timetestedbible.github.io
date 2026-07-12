@@ -1,0 +1,223 @@
+{
+  "file": "books/symbolic-language/02-the-parables-of-the-kingdom.adoc",
+  "title": "The Parables of the Kingdom",
+  "notes": [
+    "This chunk delivers a dense, law-positive derivation of the sower parable with tight OT cross-references and a clean four-for-four grading table that asserts the closed-book method without apology. Strengths include the uniform-symbol principle, the Eden-to-heart ground chain, and the personal concession that modern tools enable independent work. Residual defects are presenter staging cues (Stop and weigh, Now derive) plus multiple author-prose sentences that open with And or That. A few instructional imperatives lean toward director register rather than pure assertion. Scripture quotes and symbol links are clean; no doctrine or factual mismatches appear.",
+    "This chunk is strong on tight OT-to-parable derivation for mustard, leaven, treasure, pearl, and net, with clear Teacher keys, law-positive stance, and effective inversion of the common treasure reading. The feeding similitude lands cleanly as lived symbol. Residual defects are concentrated: six author-prose sentences open with And or But, one stock AI term (landscapes), and presenter staging (Write the derivation out, Derive it, Mark them, Test it, mark what). Exam/grading register is deliberate and should remain. Surgical open and cue fixes restore house style without touching doctrine, quotes, or symbol claims.",
+    "This closing chunk delivers a dense, assertive tally of the parables exam and a strong density argument that fits the book's law-positive voice. Scripture linkage and the householder application land cleanly. Residual problems are three author-prose openings with And/That, two director-style 'mark' cues, one awkward presenter phrase ('watched graded'), and spelled-out counts that violate the digits house rule. Surgical fixes restore the rules without thinning the argument or touching doctrine."
+  ],
+  "proposals": [
+    {
+      "old": "Stop and weigh that rebuke.\nA teacher may not be astonished that students fail an exam on material they were never given; His astonishment is only just if the answers were already on the table.",
+      "new": "A teacher may not be astonished that students fail an exam on material they were never given; His astonishment is only just if the answers were already on the table.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove banned director cue.",
+      "rationale": "House style forbids Stop and and Weigh the staging. The following sentence already carries the claim.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the Scriptures the disciples grew up on do not merely contain parables — they decode them in front of the reader and expect him to grade himself.",
+      "new": "The Scriptures the disciples grew up on do not merely contain parables — they decode them in front of the reader and expect him to grade himself.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading And.",
+      "rationale": "Author prose must not open with And. The claim stands intact without it.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is how this chapter will read them, and it will keep score.",
+      "new": "This chapter will read them that way, and it will keep score.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Rewrite to avoid leading That.",
+      "rationale": "House style bars sentences that begin with That in author prose. Meaning and density are preserved.",
+      "_chunk": 1
+    },
+    {
+      "old": "Next, weigh what you gathered before you lean on it.",
+      "new": "Next, examine what you gathered before you lean on it.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace weigh staging verb.",
+      "rationale": "Weigh the is listed as banned director language. Examine keeps the evaluative force without the cue.",
+      "_chunk": 1
+    },
+    {
+      "old": "That standard is what makes the rebuke in the boat just, and it measures its weight: Jesus did not upbraid the twelve for missing an obscurity; seed and ground and thorns and fowls were established patterns, laid down across the whole of the Scriptures read to them every sabbath since childhood.",
+      "new": "This standard is what makes the rebuke in the boat just, and it measures its weight: Jesus did not upbraid the twelve for missing an obscurity; seed and ground and thorns and fowls were established patterns, laid down across the whole of the Scriptures read to them every sabbath since childhood.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Change leading That to This.",
+      "rationale": "Author prose cannot open with That. This preserves reference and assertion.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now derive what the thorns *mean*, for the Old Testament assigns that too.",
+      "new": "Derive what the thorns *mean*, for the Old Testament assigns that too.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Drop banned Now derive cue.",
+      "rationale": "House style explicitly forbids Now derive. The imperative remains assertive without the staging prefix.",
+      "_chunk": 1
+    },
+    {
+      "old": "And that pair of weeds — thorn and thistle together — returns exactly once more in the Hebrew Scriptures, and Hosea builds the whole indictment around it:",
+      "new": "The pair of weeds — thorn and thistle together — returns exactly once more in the Hebrew Scriptures, and Hosea builds the whole indictment around it:",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove And and That openers.",
+      "rationale": "Sentence cannot begin with And or That. The pair keeps the anaphoric force cleanly.",
+      "_chunk": 1
+    },
+    {
+      "old": "And why is the exchange a heart of *flesh* for a heart of *stone*?",
+      "new": "Why is the exchange a heart of *flesh* for a heart of *stone*?",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading And.",
+      "rationale": "Author prose must not open with And. The rhetorical question stands stronger without it.",
+      "_chunk": 1
+    },
+    {
+      "old": "Write the derivation out: an enemy's seed grows beside God's seed in one field, indistinguishable until fruit, and a harvest-day of burning sorts them.",
+      "new": "The derivation is plain: an enemy's seed grows beside God's seed in one field, indistinguishable until fruit, and a harvest-day of burning sorts them.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace director command with direct assertion of the derivation.",
+      "rationale": "Write the derivation out functions as a presenter cue. The rephrased line asserts the same content in the author's voice.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the disciples had already watched God plant the least and grow it into the shelter of the world, in a parable He decoded Himself:",
+      "new": "The disciples had already watched God plant the least and grow it into the shelter of the world, in a parable He decoded Himself:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading And from author prose.",
+      "rationale": "House style forbids author sentences that begin with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "But carry the first parable's edge with you: fowls also devour seed, and Assyria's sheltering cedar housed __“all great nations”__ on its way to the axe (Ezekiel 31:6) — the branches that shelter the nations shelter what the nations bring.",
+      "new": "The first parable's edge still applies: fowls also devour seed, and Assyria's sheltering cedar housed __“all great nations”__ on its way to the axe (Ezekiel 31:6) — the branches that shelter the nations shelter what the nations bring.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading But and the carry-with-you cue.",
+      "rationale": "Sentence opens with But; carry ... with you echoes forbidden keep-in-mind staging. The replacement asserts the same caution.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the treasure has a definition older than the parable, spoken at Sinai to the whole nation:",
+      "new": "The treasure has a definition older than the parable, spoken at Sinai to the whole nation:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading And from author prose.",
+      "rationale": "House style forbids author sentences that begin with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "And this treasure is hidden — Asaph says so of the saints themselves: the enemy takes __“crafty counsel against thy people,”__ consulting __“against thy *hidden ones*”__ (Psalm 83:3).",
+      "new": "This treasure is hidden — Asaph says so of the saints themselves: the enemy takes __“crafty counsel against thy people,”__ consulting __“against thy *hidden ones*”__ (Psalm 83:3).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading And from author prose.",
+      "rationale": "House style forbids author sentences that begin with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the sym:sym-pearl[Pearl] chapter will carry the derivation a ring deeper, for the parable holds more than a jewel: the gates of the city John saw are waiting inside it, and Scripture keeps its one pearl of great price where no tradition has thought to look for it.",
+      "new": "The sym:sym-pearl[Pearl] chapter will carry the derivation a ring deeper, for the parable holds more than a jewel: the gates of the city John saw are waiting inside it, and Scripture keeps its one pearl of great price where no tradition has thought to look for it.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading And from author prose.",
+      "rationale": "House style forbids author sentences that begin with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the sorting on the shore was Torah before it was parable — fins and scales, clean from unclean (Leviticus 11:9-10): these men were fishermen of Israel; they had sorted every catch of their lives by Leviticus.",
+      "new": "The sorting on the shore was Torah before it was parable — fins and scales, clean from unclean (Leviticus 11:9-10): these men were fishermen of Israel; they had sorted every catch of their lives by Leviticus.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove leading And from author prose.",
+      "rationale": "House style forbids author sentences that begin with And.",
+      "_chunk": 2
+    },
+    {
+      "old": "Two landscapes, one message — the sown sym:sym-field[field] and the peopled sea — because the kingdom is drawing from both.",
+      "new": "Two pictures, one message — the sown sym:sym-field[field] and the peopled sea — because the kingdom is drawing from both.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace banned AI term landscapes.",
+      "rationale": "Landscape is listed stock AI vocabulary. Pictures preserves the parallel and the biblical image pair without the modern register slip.",
+      "_chunk": 2
+    },
+    {
+      "old": "And mark why the score was owed: not one answer hung on a single verse.",
+      "new": "The score was owed for this reason: not one answer hung on a single verse.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove And-start and director 'mark' cue.",
+      "rationale": "Author prose may not open with And; 'mark why' is a banned director cue. The replacement keeps the claim and colon structure.",
+      "_chunk": 3
+    },
+    {
+      "old": "Where He supplied none — the mustard tree, the leaven, the treasure, the pearl — the same Scriptures carry the reader most of the way, and mark plainly where the derivation ends and the testing begins.",
+      "new": "Where He supplied none — the mustard tree, the leaven, the treasure, the pearl — the same Scriptures carry the reader most of the way, and show plainly where the derivation ends and the testing begins.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace director 'mark plainly' with neutral verb.",
+      "rationale": "'Mark plainly' functions as a presenter cue to the reader. 'Show plainly' keeps the same claim with Scriptures as subject.",
+      "_chunk": 3
+    },
+    {
+      "old": "That is why His rebuke was fair, and why His question was not rhetorical.",
+      "new": "His rebuke was fair for that reason, and His question was not rhetorical.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove That-start from author prose.",
+      "rationale": "House style forbids author sentences opening with That. The rewrite preserves the causal link without the banned opener.",
+      "_chunk": 3
+    },
+    {
+      "old": "That is the reader this book aims to form: not a keeper of its conclusions but a scribe instructed — one who can take a text he has never been taught, derive it from what Scripture itself defined, mark honestly what remains under test, and go gather the uses.",
+      "new": "This book aims to form that reader: not a keeper of its conclusions but a scribe instructed — one who can take a text he has never been taught, derive it from what Scripture itself defined, mark honestly what remains under test, and go gather the uses.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove That-start while keeping the target description.",
+      "rationale": "Author prose may not open with That. The new lead keeps the identical definition of the intended reader.",
+      "_chunk": 3
+    },
+    {
+      "old": "The seven parables, with the householder's saying that seals them, run twenty-six verses — some five hundred and eighty-five words — and carry more than fifty decodable terms, one symbolic use every five words, defined by more than eighty passages from twenty-three books of the Law, the Prophets, and the Psalms.",
+      "new": "The seven parables, with the householder's saying that seals them, run 26 verses — some 585 words — and carry more than 50 decodable terms, one symbolic use every 5 words, defined by more than 80 passages from 23 books of the Law, the Prophets, and the Psalms.",
+      "type": "readability",
+      "severity": "medium",
+      "summary": "Convert count numbers to digits per house style.",
+      "rationale": "House style requires digits for counts. The change is purely orthographic and leaves every claim intact.",
+      "_chunk": 3
+    },
+    {
+      "old": "Everything that follows in this book stands or falls with the method you have just watched graded; once the method holds, the conclusions are arithmetic.",
+      "new": "Everything that follows in this book stands or falls with the method just graded; once the method holds, the conclusions are arithmetic.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove presenter staging and fix awkward 'watched graded'.",
+      "rationale": "'You have just watched' is director staging; 'watched graded' is also ungrammatical. 'Just graded' is assertive and clear.",
+      "_chunk": 3
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk delivers a dense, law-positive derivation of the sower parable with tight OT cross-references and a clean four-for-four grading table that asserts the closed-book method without apology. Strengths include the uniform-symbol principle, the Eden-to-heart ground chain, and the personal concession that modern tools enable independent work. Residual defects are presenter staging cues (Stop and weigh, Now derive) plus multiple author-prose sentences that open with And or That. A few instructional imperatives lean toward director register rather than pure assertion. Scripture quotes and symbol links are clean; no doctrine or factual mismatches appear.\",\n  \"proposals\": [\n    {\n      \"old\": \"Stop and weigh that rebuke.\\nA teacher may not be astonished that students fail an exam on material they were never given; His astonishment is only just if the answers were already on the table.\",\n      \"new\": \"A teacher may not be astonished that students fail an exam on material they were never given; His astonishment is only just if the answers were already on the table.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned director cue.\",\n      \"rationale\": \"House style forbids Stop and and Weigh the staging. The following sentence already carries the claim.\"\n    },\n    {\n      \"old\": \"And the Scriptures the disciples grew up on do not merely contain parables — they decode them in front of the reader and expect him to grade himself.\",\n      \"new\": \"The Scriptures the disciples grew up on do not merely contain parables — they decode them in front of the reader and expect him to grade himself.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading And.\",\n      \"rationale\": \"Author prose must not open with And. The claim stands intact without it.\"\n    },\n    {\n      \"old\": \"That is how this chapter will read them, and it will keep score.\",\n      \"new\": \"This chapter will read them that way, and it will keep score.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Rewrite to avoid leading That.\",\n      \"rationale\": \"House style bars sentences that begin with That in author prose. Meaning and density are preserved.\"\n    },\n    {\n      \"old\": \"Next, weigh what you gathered before you lean on it.\",\n      \"new\": \"Next, examine what you gathered before you lean on it.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace weigh staging verb.\",\n      \"rationale\": \"Weigh the is listed as banned director language. Examine keeps the evaluative force without the cue.\"\n    },\n    {\n      \"old\": \"That standard is what makes the rebuke in the boat just, and it measures its weight: Jesus did not upbraid the twelve for missing an obscurity; seed and ground and thorns and fowls were established patterns, laid down across the whole of the Scriptures read to them every sabbath since childhood.\",\n      \"new\": \"This standard is what makes the rebuke in the boat just, and it measures its weight: Jesus did not upbraid the twelve for missing an obscurity; seed and ground and thorns and fowls were established patterns, laid down across the whole of the Scriptures read to them every sabbath since childhood.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Change leading That to This.\",\n      \"rationale\": \"Author prose cannot open with That. This preserves reference and assertion.\"\n    },\n    {\n      \"old\": \"Now derive what the thorns *mean*, for the Old Testament assigns that too.\",\n      \"new\": \"Derive what the thorns *mean*, for the Old Testament assigns that too.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop banned Now derive cue.\",\n      \"rationale\": \"House style explicitly forbids Now derive. The imperative remains assertive without the staging prefix.\"\n    },\n    {\n      \"old\": \"And that pair of weeds — thorn and thistle together — returns exactly once more in the Hebrew Scriptures, and Hosea builds the whole indictment around it:\",\n      \"new\": \"The pair of weeds — thorn and thistle together — returns exactly once more in the Hebrew Scriptures, and Hosea builds the whole indictment around it:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove And and That openers.\",\n      \"rationale\": \"Sentence cannot begin with And or That. The pair keeps the anaphoric force cleanly.\"\n    },\n    {\n      \"old\": \"And why is the exchange a heart of *flesh* for a heart of *stone*?\",\n      \"new\": \"Why is the exchange a heart of *flesh* for a heart of *stone*?\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading And.\",\n      \"rationale\": \"Author prose must not open with And. The rhetorical question stands stronger without it.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk is strong on tight OT-to-parable derivation for mustard, leaven, treasure, pearl, and net, with clear Teacher keys, law-positive stance, and effective inversion of the common treasure reading. The feeding similitude lands cleanly as lived symbol. Residual defects are concentrated: six author-prose sentences open with And or But, one stock AI term (landscapes), and presenter staging (Write the derivation out, Derive it, Mark them, Test it, mark what). Exam/grading register is deliberate and should remain. Surgical open and cue fixes restore house style without touching doctrine, quotes, or symbol claims.\",\n  \"proposals\": [\n    {\n      \"old\": \"Write the derivation out: an enemy's seed grows beside God's seed in one field, indistinguishable until fruit, and a harvest-day of burning sorts them.\",\n      \"new\": \"The derivation is plain: an enemy's seed grows beside God's seed in one field, indistinguishable until fruit, and a harvest-day of burning sorts them.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace director command with direct assertion of the derivation.\",\n      \"rationale\": \"Write the derivation out functions as a presenter cue. The rephrased line asserts the same content in the author's voice.\"\n    },\n    {\n      \"old\": \"And the disciples had already watched God plant the least and grow it into the shelter of the world, in a parable He decoded Himself:\",\n      \"new\": \"The disciples had already watched God plant the least and grow it into the shelter of the world, in a parable He decoded Himself:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences that begin with And.\"\n    },\n    {\n      \"old\": \"But carry the first parable's edge with you: fowls also devour seed, and Assyria's sheltering cedar housed __“all great nations”__ on its way to the axe (Ezekiel 31:6) — the branches that shelter the nations shelter what the nations bring.\",\n      \"new\": \"The first parable's edge still applies: fowls also devour seed, and Assyria's sheltering cedar housed __“all great nations”__ on its way to the axe (Ezekiel 31:6) — the branches that shelter the nations shelter what the nations bring.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading But and the carry-with-you cue.\",\n      \"rationale\": \"Sentence opens with But; carry ... with you echoes forbidden keep-in-mind staging. The replacement asserts the same caution.\"\n    },\n    {\n      \"old\": \"And the treasure has a definition older than the parable, spoken at Sinai to the whole nation:\",\n      \"new\": \"The treasure has a definition older than the parable, spoken at Sinai to the whole nation:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And this treasure is hidden — Asaph says so of the saints themselves: the enemy takes __“crafty counsel against thy people,”__ consulting __“against thy *hidden ones*”__ (Psalm 83:3).\",\n      \"new\": \"This treasure is hidden — Asaph says so of the saints themselves: the enemy takes __“crafty counsel against thy people,”__ consulting __“against thy *hidden ones*”__ (Psalm 83:3).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And the sym:sym-pearl[Pearl] chapter will carry the derivation a ring deeper, for the parable holds more than a jewel: the gates of the city John saw are waiting inside it, and Scripture keeps its one pearl of great price where no tradition has thought to look for it.\",\n      \"new\": \"The sym:sym-pearl[Pearl] chapter will carry the derivation a ring deeper, for the parable holds more than a jewel: the gates of the city John saw are waiting inside it, and Scripture keeps its one pearl of great price where no tradition has thought to look for it.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And the sorting on the shore was Torah before it was parable — fins and scales, clean from unclean (Leviticus 11:9-10): these men were fishermen of Israel; they had sorted every catch of their lives by Leviticus.\",\n      \"new\": \"The sorting on the shore was Torah before it was parable — fins and scales, clean from unclean (Leviticus 11:9-10): these men were fishermen of Israel; they had sorted every catch of their lives by Leviticus.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences that begin with And.\"\n    },\n    {\n      \"old\": \"Two landscapes, one message — the sown sym:sym-field[field] and the peopled sea — because the kingdom is drawing from both.\",\n      \"new\": \"Two pictures, one message — the sown sym:sym-field[field] and the peopled sea — because the kingdom is drawing from both.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace banned AI term landscapes.\",\n      \"rationale\": \"Landscape is listed stock AI vocabulary. Pictures preserves the parallel and the biblical image pair without the modern register slip.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 3,
+      "raw": "{\n  \"chapter_note\": \"This closing chunk delivers a dense, assertive tally of the parables exam and a strong density argument that fits the book's law-positive voice. Scripture linkage and the householder application land cleanly. Residual problems are three author-prose openings with And/That, two director-style 'mark' cues, one awkward presenter phrase ('watched graded'), and spelled-out counts that violate the digits house rule. Surgical fixes restore the rules without thinning the argument or touching doctrine.\",\n  \"proposals\": [\n    {\n      \"old\": \"And mark why the score was owed: not one answer hung on a single verse.\",\n      \"new\": \"The score was owed for this reason: not one answer hung on a single verse.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove And-start and director 'mark' cue.\",\n      \"rationale\": \"Author prose may not open with And; 'mark why' is a banned director cue. The replacement keeps the claim and colon structure.\"\n    },\n    {\n      \"old\": \"Where He supplied none — the mustard tree, the leaven, the treasure, the pearl — the same Scriptures carry the reader most of the way, and mark plainly where the derivation ends and the testing begins.\",\n      \"new\": \"Where He supplied none — the mustard tree, the leaven, the treasure, the pearl — the same Scriptures carry the reader most of the way, and show plainly where the derivation ends and the testing begins.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace director 'mark plainly' with neutral verb.\",\n      \"rationale\": \"'Mark plainly' functions as a presenter cue to the reader. 'Show plainly' keeps the same claim with Scriptures as subject.\"\n    },\n    {\n      \"old\": \"That is why His rebuke was fair, and why His question was not rhetorical.\",\n      \"new\": \"His rebuke was fair for that reason, and His question was not rhetorical.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove That-start from author prose.\",\n      \"rationale\": \"House style forbids author sentences opening with That. The rewrite preserves the causal link without the banned opener.\"\n    },\n    {\n      \"old\": \"That is the reader this book aims to form: not a keeper of its conclusions but a scribe instructed — one who can take a text he has never been taught, derive it from what Scripture itself defined, mark honestly what remains under test, and go gather the uses.\",\n      \"new\": \"This book aims to form that reader: not a keeper of its conclusions but a scribe instructed — one who can take a text he has never been taught, derive it from what Scripture itself defined, mark honestly what remains under test, and go gather the uses.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove That-start while keeping the target description.\",\n      \"rationale\": \"Author prose may not open with That. The new lead keeps the identical definition of the intended reader.\"\n    },\n    {\n      \"old\": \"The seven parables, with the householder's saying that seals them, run twenty-six verses — some five hundred and eighty-five words — and carry more than fifty decodable terms, one symbolic use every five words, defined by more than eighty passages from twenty-three books of the Law, the Prophets, and the Psalms.\",\n      \"new\": \"The seven parables, with the householder's saying that seals them, run 26 verses — some 585 words — and carry more than 50 decodable terms, one symbolic use every 5 words, defined by more than 80 passages from 23 books of the Law, the Prophets, and the Psalms.\",\n      \"type\": \"readability\",\n      \"severity\": \"medium\",\n      \"summary\": \"Convert count numbers to digits per house style.\",\n      \"rationale\": \"House style requires digits for counts. The change is purely orthographic and leaves every claim intact.\"\n    },\n    {\n      \"old\": \"Everything that follows in this book stands or falls with the method you have just watched graded; once the method holds, the conclusions are arithmetic.\",\n      \"new\": \"Everything that follows in this book stands or falls with the method just graded; once the method holds, the conclusions are arithmetic.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove presenter staging and fix awkward 'watched graded'.\",\n      \"rationale\": \"'You have just watched' is director staging; 'watched graded' is also ungrammatical. 'Just graded' is assertive and clear.\"\n    }\n  ]\n}"
+    }
+  ]
+}

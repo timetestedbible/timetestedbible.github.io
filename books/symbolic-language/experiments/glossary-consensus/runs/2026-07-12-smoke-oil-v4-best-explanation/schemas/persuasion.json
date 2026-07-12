@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "persuasion": {"type": "string", "enum": ["PERSUADED", "UNPERSUADED"]},
+    "rationale": {"type": "string"},
+    "strongest_counter_interpretation": {"type": "string"},
+    "counter_case": {"type": "array", "items": {"type": "string"}},
+    "book_explanatory_advantages": {"type": "array", "items": {"type": "string"}},
+    "counter_explanatory_advantages": {"type": "array", "items": {"type": "string"}},
+    "comparative_winner": {"type": "string", "enum": ["BOOK", "COUNTER"]},
+    "decisive_sources": {"type": "array", "items": {"type": "string"}},
+    "unresolved_objections": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+  },
+  "required": ["persuasion", "rationale", "strongest_counter_interpretation", "counter_case", "book_explanatory_advantages", "counter_explanatory_advantages", "comparative_winner", "decisive_sources", "unresolved_objections", "confidence"]
+}

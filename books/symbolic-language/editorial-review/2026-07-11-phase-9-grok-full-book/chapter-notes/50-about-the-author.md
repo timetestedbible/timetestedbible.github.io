@@ -1,0 +1,3 @@
+# About the Author
+
+This About the Author page is dense, assertive, and on-voice: the arc from free-market systems to Scripture, and the blockchain-verify parallel to the book’s method, land cleanly without hedging or director cues. No And/But/That sentence opens, no stock AI diction, and the 1 Thessalonians close fits the law-positive stance. The main defect is one overloaded career sentence: missing comma after “design” creates a garden-path, and the colon-plus-nested-dash structure buries the patent claim past seventy words. A surgical comma and period split restore the evidence seam without changing claims, titles, or tense. Otherwise the chunk is print-ready.

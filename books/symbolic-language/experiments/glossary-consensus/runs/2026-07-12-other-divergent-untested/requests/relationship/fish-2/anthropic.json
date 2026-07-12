@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "fish-2",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 9000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFish (great fish, sea-monster)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching the 'great fish' is understood first as God's appointed instrument of both judgment and deliverance for Jonah, and above all as a type of Christ's burial and resurrection: Jonah's three days and nights in the fish's belly prefigure Jesus' three days in the tomb, a typology Jesus himself invokes as 'the sign of Jonah.' The fish thus symbolizes divine preservation through death-like descent and the certainty of resurrection.\",\n  \"primary_basis\": [\n    \"Jonah 1:17\",\n    \"Jonah 2:1-10\",\n    \"Matthew 12:39-41\",\n    \"Matthew 16:4\",\n    \"Luke 11:29-32\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The sea-monster (tannin, Leviathan, Rahab) as a symbol of chaos, evil, and God-opposing powers—sometimes identified with Satan or with hostile empires such as Egypt and Babylon—whom God defeats, a reading standard in critical scholarship on ancient Near Eastern chaos-combat imagery and echoed in the dragon of Revelation.\",\n      \"basis\": [\n        \"Job 41:1-34\",\n        \"Psalm 74:13-14\",\n        \"Psalm 104:26\",\n        \"Isaiah 27:1\",\n        \"Isaiah 51:9-10\",\n        \"Ezekiel 29:3\",\n        \"Ezekiel 32:2\",\n        \"Revelation 12:3-9\",\n        \"Revelation 13:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fish as a symbol of people gathered by the gospel—believers caught in the net of the kingdom—rooted in Jesus' call to become 'fishers of men' and the miraculous catches; the church as the net containing good and bad fish until final judgment.\",\n      \"basis\": [\n        \"Matthew 4:19\",\n        \"Mark 1:17\",\n        \"Luke 5:1-11\",\n        \"Matthew 13:47-50\",\n        \"John 21:1-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fish as an early Christian emblem of Christ himself via the ICHTHYS acrostic ('Jesus Christ, Son of God, Savior'), used in catacomb art and patristic writing (e.g., Tertullian calling believers 'little fishes' following the great Fish); this is an extrabiblical church tradition rather than a direct exegesis of a passage.\",\n      \"basis\": [\n        \"Tertullian, De Baptismo 1 (patristic, extrabiblical)\",\n        \"John 21:9-13 (sometimes associated)\",\n        \"Matthew 14:17-19 (sometimes associated)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The great fish of Jonah read as a literal historical creature and simple narrative instrument of God's providence, with no symbolic meaning beyond what the New Testament typology assigns; common among conservative and literalist interpreters.\",\n      \"basis\": [\n        \"Jonah 1:17\",\n        \"Jonah 2:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eucharistic or messianic-banquet symbolism of fish, drawn from the feeding miracles and the post-resurrection meal, developed mainly in patristic writing and early Christian art rather than in modern exegesis.\",\n      \"basis\": [\n        \"Matthew 14:13-21\",\n        \"John 6:1-14\",\n        \"John 21:9-13\",\n        \"Luke 24:42-43\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Fish in the dietary laws as markers of clean/unclean distinction, occasionally moralized symbolically (e.g., fins and scales as discernment) in ancient and homiletic interpretation.\",\n      \"basis\": [\n        \"Leviticus 11:9-12\",\n        \"Deuteronomy 14:9-10\",\n        \"Letter of Barnabas 10 (extrabiblical)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"The compound term spans at least three distinct symbolic streams that Christian interpretation does not merge into one settled meaning: (1) Jonah's great fish, where consensus is strong and dominated by the 'sign of Jonah' resurrection typology explicitly endorsed in the Gospels; (2) the sea-monster/Leviathan/Rahab tradition, where the chaos-and-evil-powers reading is broadly standard in biblical scholarship; and (3) fish generally, associated with believers, evangelism, and (extrabiblically) with Christ via the ICHTHYS symbol. Because these referents carry materially different meanings, there is no single settled symbolic interpretation for the term as a whole, though within each sub-context recognizable consensus exists. The primary meaning given reflects the most cited and christologically authorized usage (the great fish of Jonah). Notably, the Hebrew of Jonah says 'great fish' (dag gadol) while the Septuagint and Matthew use ketos ('sea-monster/whale'), which is why the terms are often grouped; interpreters generally treat them as the same creature in that narrative.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"In Christian interpretation of the “great fish” in Jonah, the most recognizable symbolic reading is the realm of death or the grave from which God delivers—typologically anticipating Christ’s burial and resurrection after three days.\",\n  \"primary_basis\": [\n    \"Jonah 1:17—Jonah remains inside the great fish for three days and three nights.\",\n    \"Jonah 2:1–10—Jonah describes his confinement in deathlike terms, including “the belly of Sheol,” before being delivered.\",\n    \"Matthew 12:39–40—Jesus explicitly compares Jonah’s three days in the fish with the Son of Man’s three days in the heart of the earth.\",\n    \"Matthew 16:4 and Luke 11:29–30—the “sign of Jonah” is applied to Jesus, though Luke emphasizes Jonah himself as a sign.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The great fish is chiefly an instrument of divine providence: simultaneously judgment, preservation, and deliverance, rather than a symbol with one fixed referent.\",\n      \"basis\": [\n        \"Jonah 1:17 states that the Lord appointed or provided the fish.\",\n        \"Jonah 2:6–10 presents God as preserving Jonah and commanding the fish to release him.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sea-monsters symbolize primordial chaos, hostile cosmic powers, or nations opposed to God, which God creates, restrains, or defeats.\",\n      \"basis\": [\n        \"Genesis 1:21—God creates the great sea creatures, denying them independent divine status.\",\n        \"Job 7:12; 26:12–13; 41:1–34—sea and Leviathan imagery evoke dangerous powers under God’s authority.\",\n        \"Psalm 74:13–14 and 89:9–10—God crushes sea-monsters, Leviathan, or Rahab.\",\n        \"Isaiah 27:1 and 51:9–10—Leviathan, the dragon, and Rahab represent powers defeated by God.\",\n        \"Ezekiel 29:3 and 32:2—Pharaoh is portrayed as a great sea-monster.\",\n        \"Revelation 12:3–9 and 13:1—dragon and sea-beast imagery represents satanic and imperial opposition.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fish symbolize people gathered through evangelism or separated at judgment.\",\n      \"basis\": [\n        \"Matthew 4:19 and Mark 1:17—disciples are made “fishers of men.”\",\n        \"Luke 5:1–11—the miraculous catch accompanies the disciples’ mission to gather people.\",\n        \"Matthew 13:47–50—the net gathering fish symbolizes the final separation of the righteous and wicked.\",\n        \"John 21:1–14—the large catch is often interpreted ecclesially or missionally.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fish serves as a symbol of Christ and Christian identity, especially through the early Christian ΙΧΘΥΣ (“fish”) acrostic.\",\n      \"basis\": [\n        \"The direct basis is early Christian tradition rather than an explicit biblical equation.\",\n        \"New Testament claims about Jesus as Christ, Son of God, and Savior supplied the content summarized by the Greek acrostic.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jonah’s fish represents a particular political empire, demonic being, or other specific historical power.\",\n      \"basis\": [\n        \"Such readings generally depend on extended allegory or attempts to connect Jonah with broader sea-monster and imperial imagery rather than on an explicit identification in Jonah.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for “fish,” “great fish,” and “sea-monster” across the Bible. The death-and-resurrection typology is the dominant Christian reading of Jonah’s great fish because Jesus supplies the comparison in Matthew 12. Ordinary fish, Jonah’s appointed fish, and mythic or prophetic sea-monsters function differently and should not be treated as one uniform symbol.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Typological prefiguration of Christ's death, burial for three days, and resurrection (the great fish's belly as the grave/Sheol)\",\n  \"primary_basis\": [\n    \"Jonah 1:17\",\n    \"Jonah 2:1-10\",\n    \"Matthew 12:39-41\",\n    \"Luke 11:29-32\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Embodiment of primordial chaos, evil, or hostile powers (Leviathan/Rahab as sea-monster to be subdued by God)\",\n      \"basis\": [\n        \"Job 41\",\n        \"Psalm 74:13-14\",\n        \"Isaiah 27:1\",\n        \"Isaiah 51:9\",\n        \"Psalm 89:9-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ himself (via the Greek acrostic ΙΧΘΥΣ = Jesus Christ, Son of God, Savior) or the baptized Christian\",\n      \"basis\": [\n        \"Matthew 4:19\",\n        \"John 21:1-14\",\n        \"early Christian catacomb inscriptions and art\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Instrument of divine judgment that becomes a means of deliverance or temporary refuge\",\n      \"basis\": [\n        \"Jonah 1-2\",\n        \"parallels in other deliverance narratives\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian tradition overwhelmingly treats the Jonah great fish as a type of Christ via the explicit Matthean parallel; OT sea-monster language retains chaoskampf resonances but is secondary for the specific 'great fish' phrase. Ordinary 'fish' symbolism (ICHTHYS, fishers of men) is widespread yet distinct from the great-fish motif.\"\n}\n\nBOOK ENTRY\nA devouring kingdom that swallows and is forced to give back.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: God's appointed rescue-instrument, a type of the three days in the tomb.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 51:34; Ezek 32:2) · see The Sign of Jonah, ch. 4\n\nAVAILABLE KJV EXCERPTS\nJeremiah 51:34 — Nebuchadrezzar the king of Babylon hath devoured me, he hath crushed me, he hath made me an empty vessel, he hath swallowed me up like a dragon, he hath filled his belly with my delicates, he hath cast me out.\nEzekiel 32:2 — Son of man, take up a lamentation for Pharaoh king of Egypt, and say unto him, Thou art like a young lion of the nations, and thou art as a whale in the seas: and thou camest forth with thy rivers, and troubledst the waters with thy feet, and fouledst their rivers.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "f5fb97e8a484ea0da5c96048a6745b9f435b501dbd5e3cef929154664f174cd3",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "primary_meaning": {"type": "string"},
+    "primary_basis": {"type": "array", "items": {"type": "string"}},
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "meaning": {"type": "string"},
+          "basis": {"type": "array", "items": {"type": "string"}},
+          "prominence": {
+            "type": "string",
+            "enum": ["dominant", "common", "minority", "rare", "unclear"]
+          }
+        },
+        "required": ["meaning", "basis", "prominence"]
+      }
+    },
+    "has_settled_consensus": {"type": "boolean"},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+    "notes": {"type": "string"}
+  },
+  "required": ["primary_meaning", "primary_basis", "alternatives", "has_settled_consensus", "confidence", "notes"]
+}

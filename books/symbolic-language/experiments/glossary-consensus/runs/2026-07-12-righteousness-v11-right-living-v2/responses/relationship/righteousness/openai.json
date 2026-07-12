@@ -1,0 +1,201 @@
+{
+  "id": "resp_073f9f26674ccf4e006a53397f3b248197a1df92ac94f9750f",
+  "object": "response",
+  "created_at": 1783839103,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783839129,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_073f9f26674ccf4e006a5339810f508197ad5a689e0bb835df",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_073f9f26674ccf4e006a53398af9fc8197a432486a174e28e2",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_073f9f26674ccf4e006a533990946c819791ab678c0b7eb366",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Righteousness centrally means rightness according to God, commonly encompassing both a graciously granted right standing before God and actual conformity to God's will in conduct.\",\"book_summary\":\"Righteousness is identified primarily as right-living: God's own ways define what is right, and human righteousness consists in doing his commandments. It may be given or reckoned by grace, but grace does not classify wrongful conduct as righteous.\",\"consensus_core_identification\":\"Rightness before God, including both justified status and moral conformity to God's standard.\",\"book_core_identification\":\"Actual right-living according to God's commandments, while still allowing that righteousness is graciously given and reckoned.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The consensus admits both forensic right standing and lived obedience as central instances of righteousness, often making status primary and conduct its fruit. The book makes right-living primary and limits forensic language by refusing any interpretation under which reckoning alone makes wrong-living itself righteous.\",\"material_contradiction\":\"There is no complete contradiction because ethical right-living is already a major part of the consensus and the book retains grace and reckoning. The material difference is whether righteousness centrally includes a status distinguishable from present conduct or is fundamentally right conduct even when graciously given or reckoned.\",\"rationale\":\"The book does not introduce an unknown meaning or replace divine rightness with an unrelated referent. It selects and sharpens the consensus's ethical-conformity component, shifting the boundary against readings that treat imputed status as the primary identification independent of lived obedience. That is a substantive narrowing and reclassification rather than a wholly divergent core.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The opening identification of righteousness with right-living, contrasted with the common view of right standing followed by right-living as fruit, could be judged DIVERGENT because status and conduct are distinct referents. However, the blind consensus itself expressly includes moral conformity in its core, while the book expressly retains gracious reckoning, so the overall relation is better classified as a narrowing with boundary disagreement. The cited texts directly support both commandment-keeping and gracious reckoning, but they do not by themselves fully establish the book's synthesis or exclude forensic status as a central sense.\",\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4025,
+    "input_tokens_details": {
+      "cache_write_tokens": 4022,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1342,
+    "output_tokens_details": {
+      "reasoning_tokens": 855
+    },
+    "total_tokens": 5367
+  },
+  "user": null,
+  "metadata": {}
+}

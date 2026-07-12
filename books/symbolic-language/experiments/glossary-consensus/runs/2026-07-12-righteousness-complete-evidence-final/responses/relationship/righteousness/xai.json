@@ -1,0 +1,178 @@
+{
+  "created_at": 1783847264,
+  "completed_at": 1783847304,
+  "id": "5f8fe03f-a967-935d-ae73-71b5b8f2a441",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_5f8fe03f-a967-935d-ae73-71b5b8f2a441",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Righteousness\". I must return only a JSON matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of righteousness as right-living (doing God's commandments, kept as garment) aligns with the consensus primary meaning of right standing and conformity to God's standard, but materially narrows the mechanism to actual obedience rather than imputed/forensic declaration alone. The book retains the gift-by-grace aspect and garment imagery but rejects any renaming of wrong-living as right, adding a boundary condition that the consensus's imputed reading does not explicitly require.\",\n  \"extension_reasoning\": \"The book adds the condition that righteousness is 100% actual right-living (never renames wrong) and excludes wage-work framing, while the consensus allows imputed status as primary (with conduct as fruit or alternative). It reclassifies cases where imputed righteousness might cover unright living as outside the referent, but preserves the garment and obedience imagery.\",\n  \"citations_support\": 3\n}```json\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of righteousness as right-living (doing God's commandments, kept as garment) aligns with the consensus primary meaning of right standing and conformity to God's standard but materially narrows the mechanism to actual obedience rather than imputed/forensic declaration alone. The book retains the gift-by-grace aspect and garment imagery but rejects any renaming of wrong-living as right, adding a boundary condition that the consensus's imputed reading does not explicitly require.\",\n  \"extension_reasoning\": \"The book adds 100% actual right-living (never renames wrong) and excludes wage-work framing; consensus allows imputed status as primary (conduct as fruit or alternative). It reclassifies cases where imputed righteousness might cover unright living as outside the referent, but preserves garment and obedience imagery.\",\n  \"citations_support\": 3\n}\n ```json\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of righteousness as right-living (doing God's commandments, kept as garment) aligns with the consensus primary meaning of right standing and conformity to God's standard but materially nar rows the mechanism to actual obedience rather than imputed/forensic declaration alone. The book retains the gift-by-grace aspect and garment imagery but rejects any renaming of wrong-living as right, adding a boundary condition that the consensus's imputed reading does not explicitly require.\",\n  \"extension_reasoning\": \"The book adds 100% actual right-living (never renames wrong) and excludes wage-work framing; consensus allows imputed status as primary (conduct as fruit or alternative). It reclassifies cases where imputed righteousness might cover unright living as outside the referent, but preserves garment and obedience imagery.\",\n  \"citations_support\": 3\n}\n```json {\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of righteousness as right-living (doing God's commandments, kept as garment) aligns with the consensus primary meaning of right standing and conformity to God's standard but materially narrows the mechanism to actual obedience rather than imputed/forensic declaration alone. The book retains the gift-by-grace aspect and garment imagery but rejects any renaming of wrong-living as right, adding a boundary condition that the consensus's imputed reading does not explicitly require.\",\n  \"extension_reasoning\": \"The book adds 100% actual right-living (never renames wrong) and excludes wage-work framing; consensus allows imputed status as primary (conduct as fruit or alternative). It reclassifies cases where imputed righteousness might cover unright living as outside the referent, but preserves garment and obedience imagery.\",\n  \"citations_support\": 3\n}```json\n{\n  \"core_relation\": \"REFINED\",\n   \"extension_relation\": \"REFINED\",\n   \"core_reasoning\": \"The book's core identification of righteousness as right-living (doing God's commandments, kept as garment) aligns with the consensus primary meaning of right standing and conformity to God's standard but materially narrows the mechanism to actual obedience rather than imputed/forensic declaration alone. The book retains the gift-by-grace aspect and garment imagery but rejects any renaming of wrong-living as right, adding a boundary condition that the consensus's imputed reading does not explicitly require.\",\n   \"extension_reasoning\": \"The book adds 100% actual right-living (never renames wrong) and excludes wage-work framing; consensus allows imputed status as primary (conduct as fruit or alternative). It reclassifies cases where imputed righteousness might cover unright living as outside the referent, but preserves garment and obedience imagery.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Consensus identifies righteousness primarily as right standing before God (right relationship and conformity to His moral standard/character), most prominently as the righteousness of God/Christ credited or imputed to believers through faith rather than works; symbolic imagery includes garments/robes, breastplate, and crown. Alternatives (imputed forensic, infused transformative, covenant faithfulness, ethical-social justice, God's saving vindication) are recognized as common but secondary or contested mechanisms around the settled core.\",\n  \"book_summary\": \"The book defines righteousness as right-living: God Himself is Right-Living by definition (His ways/works the measure); for those under His authority it is the doing of His commandments (the law kept, worn as the garment of righteous acts). Romans 4 excludes only wage-work that debts God, not obedience (complete obedience earns nothing as mere duty). Righteousness is given and reckoned by grace, yet the gift never renames wrong-living right.\",\n  \"consensus_core_identification\": \"Right standing before God / conformity to His standard, primarily as imputed/credited status via faith\",\n  \"book_core_identification\": \"Right-living (actual doing of God's commandments / law kept as righteous acts), given and reckoned by grace without renaming wrong-living\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Book excludes any forensic/status application that would leave wrong-living intact while still calling the person righteous; it makes actual commandment-keeping constitutive rather than merely subsequent fruit or evidence of a prior standing.\",\n  \"material_contradiction\": \"Book holds that the grace-gift/reckoning of righteousness never renames wrong-living as right, which directly contradicts the dominant consensus primary (especially Protestant imputed/forensic) that declares the believer righteous (right standing) while practice may still include sin (simul iustus et peccator).\",\n  \"rationale\": \"Minimum cores are not equivalent: consensus centers on right standing (often a declared/imputed status received by faith, with living as related or subsequent), while the book centers on right-living itself (obedience/commandments as the thing given and worn). Accepting the book replaces the consensus identification rather than merely narrowing its cases; the explicit denial that the gift can cover/rename wrong-living produces a material contradiction with the primary forensic reading, even though both share grace-reckoning language, garment imagery, and rejection of meritorious wage-work. Overlap on secondary alternatives (ethical/transformative) does not salvage core equivalence.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Key Pauline texts printed (Rom 4:4-8; Phil 3:9) are classically read as forensic imputation of status apart from works, so the book's prioritization of commandment-keeping (Deut 6:25; 1 John 3:7) and duty (Luke 17) may conflate or subordinate justification to sanctification against the consensus primary.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_5f8fe03f-a967-935d-ae73-71b5b8f2a441",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4863,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 4701,
+    "output_tokens_details": {
+      "reasoning_tokens": 4033
+    },
+    "total_tokens": 9564,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 377400000,
+    "context_details": {
+      "input_tokens": 4863,
+      "output_tokens": 4701
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

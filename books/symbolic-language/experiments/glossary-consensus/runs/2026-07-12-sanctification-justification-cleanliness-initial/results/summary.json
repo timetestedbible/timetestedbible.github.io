@@ -1,0 +1,82 @@
+{
+  "entry_count": 3,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "REFINED": 3
+  },
+  "rows": [
+    {
+      "anchor": "cleanliness",
+      "term": "Clean, unclean; cleanse, cleansing",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "STRONG",
+      "citation_support_votes": [
+        "PARTIAL",
+        "STRONG",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "justification",
+      "term": "Justify, justification",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "STRONG",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "sanctification",
+      "term": "Sanctify, sanctification",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "MATCH",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "STRONG",
+      "citation_support_votes": [
+        "STRONG",
+        "STRONG",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    }
+  ]
+}

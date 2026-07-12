@@ -1,0 +1,87 @@
+{
+  "file": "books/symbolic-language/14-orphans-widows-and-the-fatherless.adoc",
+  "title": "Orphans, Widows, and the Fatherless",
+  "notes": [
+    "This chunk strongly assembles widow, fatherless, stranger, and poor as the covenant people themselves, using clean opposite pairs and tight scripture chains that deepen the literal commands without dissolving them. The arc from confession of widowhood through the Redeemer-Husband to food and raiment as word and works is dense and law-positive. Residual defects are presenter staging (Now hear, Watch, paired Read cues), house-style sentence opens with But and And, a pronoun slip on “It should not,” and the tangled “Among… is a close family” construction. The fixes are surgical, preserve every quote, markup, and symbol link, and restore the author’s assertive voice without touching doctrine."
+  ],
+  "proposals": [
+    {
+      "old": "But it is so plainly good that we read past it — and we read past it assuming one thing: that we stand among the givers, never the widow, never the orphan.",
+      "new": "It is so plainly good that we read past it — and we read past it assuming one thing: that we stand among the givers, never the widow, never the orphan.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove sentence-initial But.",
+      "rationale": "House style forbids author prose sentences starting with But; the claim stands cleanly without it.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now hear how God speaks of His own people when they break covenant.",
+      "new": "God speaks of His own people when they break covenant.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove presenter cue Now hear.",
+      "rationale": "Director-style staging is banned; the direct assertion matches the author’s voice and density.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the corner of the field left unreaped from the last chapter was reserved for exactly these: __“for the stranger, for the fatherless, and for the widow”__ (Deuteronomy 24:19).",
+      "new": "The corner of the field left unreaped from the last chapter was reserved for exactly these: __“for the stranger, for the fatherless, and for the widow”__ (Deuteronomy 24:19).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Paul names the commonwealth in the verse just before: the Gentiles had been __“aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God”__ (Ephesians 2:12).",
+      "new": "Paul names the commonwealth in the verse just before: the Gentiles had been __“aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God”__ (Ephesians 2:12).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove sentence-initial And.",
+      "rationale": "House style forbids author prose sentences starting with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "Watch the two renderings trade places across the same texts.",
+      "new": "The two renderings trade places across the same texts.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue Watch.",
+      "rationale": "Presenter staging is banned; the claim is stronger as a direct assertion.",
+      "_chunk": 1
+    },
+    {
+      "old": "It should not, and it does not — because the wallet was never the measure.",
+      "new": "They should not, and they do not — because the wallet was never the measure.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Fix pronoun agreement with the poor.",
+      "rationale": "It has no clear antecedent; they agrees with the poor just named and clarifies the claim.",
+      "_chunk": 1
+    },
+    {
+      "old": "Among the Hebrew words rendered __“poor”__ in these promises is a close family also rendered __“meek”__ and __“humble”__ — Strong’s calls its two chief members __“practically the same”__ — and the family grows from a root that means _bowed down_.",
+      "new": "The Hebrew words rendered __“poor”__ in these promises form a close family also rendered __“meek”__ and __“humble”__ — Strong’s calls its two chief members __“practically the same”__ — and the family grows from a root that means _bowed down_.",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Repair inverted subject construction.",
+      "rationale": "Among X is a family is tangled English; form a close family states the claim cleanly and keeps the Strong’s note intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "Read the camel and the needle as a statement about money, and Scripture contradicts itself on its face: Abraham was __“very rich in cattle, in silver, and in gold”__ (Genesis 13:2), Job’s latter end was blessed with double, Joseph administered an empire’s wealth and David a kingdom’s — and all of them heirs.\n\nRead it as the symbol reads — the unbowed cannot pass the low door — and the paradox was never there: __“with men this is impossible; but with God all things are possible”__ (Matthew 19:26), and what God does with the proud is bow them.",
+      "new": "If the camel and the needle are a statement about money, Scripture contradicts itself on its face: Abraham was __“very rich in cattle, in silver, and in gold”__ (Genesis 13:2), Job’s latter end was blessed with double, Joseph administered an empire’s wealth and David a kingdom’s — and all of them heirs.\n\nAs the symbol reads it — the unbowed cannot pass the low door — and the paradox was never there: __“with men this is impossible; but with God all things are possible”__ (Matthew 19:26), and what God does with the proud is bow them.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove paired director Read cues.",
+      "rationale": "Both sentences open with presenter staging banned by house style; the conditional and As the symbol keep the exact contrast, density, and all scripture intact.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk strongly assembles widow, fatherless, stranger, and poor as the covenant people themselves, using clean opposite pairs and tight scripture chains that deepen the literal commands without dissolving them. The arc from confession of widowhood through the Redeemer-Husband to food and raiment as word and works is dense and law-positive. Residual defects are presenter staging (Now hear, Watch, paired Read cues), house-style sentence opens with But and And, a pronoun slip on “It should not,” and the tangled “Among… is a close family” construction. The fixes are surgical, preserve every quote, markup, and symbol link, and restore the author’s assertive voice without touching doctrine.\",\n  \"proposals\": [\n    {\n      \"old\": \"But it is so plainly good that we read past it — and we read past it assuming one thing: that we stand among the givers, never the widow, never the orphan.\",\n      \"new\": \"It is so plainly good that we read past it — and we read past it assuming one thing: that we stand among the givers, never the widow, never the orphan.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove sentence-initial But.\",\n      \"rationale\": \"House style forbids author prose sentences starting with But; the claim stands cleanly without it.\"\n    },\n    {\n      \"old\": \"Now hear how God speaks of His own people when they break covenant.\",\n      \"new\": \"God speaks of His own people when they break covenant.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove presenter cue Now hear.\",\n      \"rationale\": \"Director-style staging is banned; the direct assertion matches the author’s voice and density.\"\n    },\n    {\n      \"old\": \"And the corner of the field left unreaped from the last chapter was reserved for exactly these: __“for the stranger, for the fatherless, and for the widow”__ (Deuteronomy 24:19).\",\n      \"new\": \"The corner of the field left unreaped from the last chapter was reserved for exactly these: __“for the stranger, for the fatherless, and for the widow”__ (Deuteronomy 24:19).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"And Paul names the commonwealth in the verse just before: the Gentiles had been __“aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God”__ (Ephesians 2:12).\",\n      \"new\": \"Paul names the commonwealth in the verse just before: the Gentiles had been __“aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God”__ (Ephesians 2:12).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove sentence-initial And.\",\n      \"rationale\": \"House style forbids author prose sentences starting with And.\"\n    },\n    {\n      \"old\": \"Watch the two renderings trade places across the same texts.\",\n      \"new\": \"The two renderings trade places across the same texts.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue Watch.\",\n      \"rationale\": \"Presenter staging is banned; the claim is stronger as a direct assertion.\"\n    },\n    {\n      \"old\": \"It should not, and it does not — because the wallet was never the measure.\",\n      \"new\": \"They should not, and they do not — because the wallet was never the measure.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Fix pronoun agreement with the poor.\",\n      \"rationale\": \"It has no clear antecedent; they agrees with the poor just named and clarifies the claim.\"\n    },\n    {\n      \"old\": \"Among the Hebrew words rendered __“poor”__ in these promises is a close family also rendered __“meek”__ and __“humble”__ — Strong’s calls its two chief members __“practically the same”__ — and the family grows from a root that means _bowed down_.\",\n      \"new\": \"The Hebrew words rendered __“poor”__ in these promises form a close family also rendered __“meek”__ and __“humble”__ — Strong’s calls its two chief members __“practically the same”__ — and the family grows from a root that means _bowed down_.\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Repair inverted subject construction.\",\n      \"rationale\": \"Among X is a family is tangled English; form a close family states the claim cleanly and keeps the Strong’s note intact.\"\n    },\n    {\n      \"old\": \"Read the camel and the needle as a statement about money, and Scripture contradicts itself on its face: Abraham was __“very rich in cattle, in silver, and in gold”__ (Genesis 13:2), Job’s latter end was blessed with double, Joseph administered an empire’s wealth and David a kingdom’s — and all of them heirs.\\n\\nRead it as the symbol reads — the unbowed cannot pass the low door — and the paradox was never there: __“with men this is impossible; but with God all things are possible”__ (Matthew 19:26), and what God does with the proud is bow them.\",\n      \"new\": \"If the camel and the needle are a statement about money, Scripture contradicts itself on its face: Abraham was __“very rich in cattle, in silver, and in gold”__ (Genesis 13:2), Job’s latter end was blessed with double, Joseph administered an empire’s wealth and David a kingdom’s — and all of them heirs.\\n\\nAs the symbol reads it — the unbowed cannot pass the low door — and the paradox was never there: __“with men this is impossible; but with God all things are possible”__ (Matthew 19:26), and what God does with the proud is bow them.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove paired director Read cues.\",\n      \"rationale\": \"Both sentences open with presenter staging banned by house style; the conditional and As the symbol keep the exact contrast, density, and all scripture intact.\"\n    }\n  ]\n}"
+    }
+  ]
+}

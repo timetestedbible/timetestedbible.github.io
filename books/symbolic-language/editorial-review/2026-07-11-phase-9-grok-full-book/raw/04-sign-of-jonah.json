@@ -1,0 +1,164 @@
+{
+  "file": "books/symbolic-language/04-sign-of-jonah.adoc",
+  "title": "The Sign of Jonah",
+  "notes": [
+    "This chunk delivers dense scene-by-scene typology of Jonah against the Passion, with clear internal symbol work on heart of the earth/seas and the great fish as kingdom. Prevalence tables and the refusal of the three-days-only reading fit the book’s method. Residual house-style defects cluster in multiple And/But sentence opens and director cues (listen, mark, Notice, hold). One high-severity grammar break appears in the Rome/Jerusalem mount sentence, where the subject collapses after the final em-dash. Surgical fixes restore the And/But ban and the broken clause without touching doctrine or quoted scripture.",
+    "The chunk’s strength is its dense, law-positive chaining of Jonah to the Passion and the nations, capped by a clean scene-by-scene table and a sharp correction of Augustine’s two-frame compression. The recovery claim is assertive and the symbol work (belly/Sheol, reeds/suph, yeshuah, great city) stays tight. Residual problems are concentrated in presenter staging: multiple “Now/Listen/See/Step back/mark here” director cues, three author-prose sentence opens with And/But/That, and second-person “you have just watched/hold/read” framing that softens the assertiveness. A few register slips (“reward the dig,” “no skeptic would script”) also surface. Surgical cuts restore the author’s voice without touching doctrine or quoted text."
+  ],
+  "proposals": [
+    {
+      "old": "But listen to how Luke reports the same saying:",
+      "new": "Luke reports the same saying:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned But open and staging cue listen.",
+      "rationale": "Author prose may not start with But; listen functions as a director cue barred by house style.",
+      "_chunk": 1
+    },
+    {
+      "old": "But Scripture itself locates the heart of the earth.",
+      "new": "Scripture itself locates the heart of the earth.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned But sentence open.",
+      "rationale": "House style forbids author-prose sentences that begin with But.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the world Jesus spoke into knew the name: Philo of Alexandria calls Jerusalem the __“heart of the whole earth”__; the Sibylline Oracles, __“the navel and heart of the earth”__; later Greek copies of Ezekiel even change __“navel”__ to __“heart”__ where Jerusalem is in view.",
+      "new": "The world Jesus spoke into knew the name: Philo of Alexandria calls Jerusalem the __“heart of the whole earth”__; the Sibylline Oracles, __“the navel and heart of the earth”__; later Greek copies of Ezekiel even change __“navel”__ to __“heart”__ where Jerusalem is in view.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open.",
+      "rationale": "House style forbids author-prose sentences that begin with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And with that phrase the proof closes inside Scripture itself.",
+      "new": "With that phrase the proof closes inside Scripture itself.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open.",
+      "rationale": "House style forbids author-prose sentences that begin with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And they wash their hands of him — the sailors in words, __“lay not upon us innocent blood”__ (Jonah 1:14); the governor in water, __“I am innocent of the blood of this just person”__ (Matthew 27:24).",
+      "new": "They wash their hands of him — the sailors in words, __“lay not upon us innocent blood”__ (Jonah 1:14); the governor in water, __“I am innocent of the blood of this just person”__ (Matthew 27:24).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open.",
+      "rationale": "House style forbids author-prose sentences that begin with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "And mark the double truth in the verbs: Jonah offers himself — __“cast me forth”__ — yet it is other hands that take him up and cast him; exactly as the Messiah is __“delivered… by wicked hands”__ (Acts 2:23) and yet insists, __“No man taketh it from me, but I lay it down of myself”__ (John 10:18).",
+      "new": "The verbs carry a double truth: Jonah offers himself — __“cast me forth”__ — yet it is other hands that take him up and cast him; exactly as the Messiah is __“delivered… by wicked hands”__ (Acts 2:23) and yet insists, __“No man taketh it from me, but I lay it down of myself”__ (John 10:18).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove And open and director cue mark.",
+      "rationale": "Banned And start plus Mark that-style staging; rewrite asserts the same claim without either.",
+      "_chunk": 1
+    },
+    {
+      "old": "Notice also who sends it: __“the LORD had *prepared* a sym:sym-fish-2[great fish]”__ (Jonah 1:17) — _vayman_, appointed.",
+      "new": "Who sends it is named: __“the LORD had *prepared* a sym:sym-fish-2[great fish]”__ (Jonah 1:17) — _vayman_, appointed.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Remove director cue Notice.",
+      "rationale": "Notice that is an explicit house-style director cue; the replacement keeps the claim and the quote intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "Rome is the *iron* of Nebuchadnezzar’s image — Daniel named the second and third kingdoms outright, Medo-Persia and Greece (Daniel 8:20-21), and the iron fourth that __“breaketh in pieces”__ all before it (Daniel 2:40) is the empire that held the world when He came — the current face of the one world-empire, and offered her true King she chose her mount instead: __“We have no king but Caesar”__ (John 19:15).",
+      "new": "Rome is the *iron* of Nebuchadnezzar’s image — Daniel named the second and third kingdoms outright, Medo-Persia and Greece (Daniel 8:20-21), and the iron fourth that __“breaketh in pieces”__ all before it (Daniel 2:40) is the empire that held the world when He came — the current face of the one world-empire. Offered her true King, she chose her mount instead: __“We have no king but Caesar”__ (John 19:15).",
+      "type": "clarity",
+      "severity": "high",
+      "summary": "Repair subject collapse after the final em-dash.",
+      "rationale": "The clause and offered her true King she chose her mount instead loses its subject and becomes a fragment; a clean sentence break restores grammar while preserving the claim.",
+      "_chunk": 1
+    },
+    {
+      "old": "And he is __“brought up… from corruption”__ — the precise word Peter presses at Pentecost: __“thou wilt not… suffer thine Holy One to see corruption”__ (Psalm 16:10; Acts 2:27).",
+      "new": "He is __“brought up… from corruption”__ — the precise word Peter presses at Pentecost: __“thou wilt not… suffer thine Holy One to see corruption”__ (Psalm 16:10; Acts 2:27).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned author-prose sentence open with And.",
+      "rationale": "House style forbids sentences in author prose starting with And. Dropping the conjunction keeps the claim intact and denser.",
+      "_chunk": 2
+    },
+    {
+      "old": "Two details of the prayer reward the dig.",
+      "new": "Two details of the prayer repay close reading.",
+      "type": "tone-register",
+      "severity": "medium",
+      "summary": "Replace informal “reward the dig” register slip.",
+      "rationale": "“Reward the dig” is presenter slang that undercuts the book’s density. The replacement keeps the same force without the colloquial turn.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now set the two castings side by side, because the contrast is the verdict.",
+      "new": "Set the two castings side by side: the contrast is the verdict.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip director cue “Now set.”",
+      "rationale": "“Now set” is a banned presenter cue. The imperative without the temporal staging preserves the author’s assertive voice.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now comes the part no skeptic would script.",
+      "new": "The next movement is the part no skeptic would invent.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove “Now comes” staging and soft modern “script.”",
+      "rationale": "Director open plus film-metaphor “script” both fight house style. The rewrite stays assertive and drops the cue.",
+      "_chunk": 2
+    },
+    {
+      "old": "Listen to the city’s title.",
+      "new": "The city’s title is fixed.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace “Listen to” director cue with a direct claim.",
+      "rationale": "“Listen to” is a banned presenter cue. A short assertive sentence hands the same structural role to the following evidence.",
+      "_chunk": 2
+    },
+    {
+      "old": "(The reckoning of those days is the work of _Time Tested Tradition_; mark here only that the sign carries its durations — three days in the fish, three days’ journey in the city, forty days of warning — and that none of them are idle.)",
+      "new": "(The reckoning of those days is the work of _Time Tested Tradition_; the sign carries its durations — three days in the fish, three days’ journey in the city, forty days of warning — and none of them are idle.)",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Delete “mark here only that” director cue inside the parenthesis.",
+      "rationale": "“Mark here only” is a banned cue. Removing it leaves the factual note clean and still points the reader forward without staging.",
+      "_chunk": 2
+    },
+    {
+      "old": "See what Jesus says these gentiles will then do: __“The men of Nineveh shall rise in judgment with this generation, and shall condemn it.”__",
+      "new": "Jesus says these gentiles will then do this: __“The men of Nineveh shall rise in judgment with this generation, and shall condemn it.”__",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip “See what” director cue.",
+      "rationale": "“See what” is a banned presenter open. The direct subject-verb form keeps the quotation and the claim.",
+      "_chunk": 2
+    },
+    {
+      "old": "But he compressed the whole descent into two frames, and so set one of them wrong: the ship is not the cross.\nYou have just watched the ship carry the night of the betrayal — the sleeper wakened, the questioning, the innocent blood, the lots — while the cross stands further down, where the reeds are bound about the prophet’s head.",
+      "new": "He compressed the whole descent into two frames, and so set one of them wrong: the ship is not the cross.\nThe ship carries the night of the betrayal — the sleeper wakened, the questioning, the innocent blood, the lots — while the cross stands further down, where the reeds are bound about the prophet’s head.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Fix But-open and second-person “You have just watched” staging in one contiguous block.",
+      "rationale": "Author prose may not open with But; “You have just watched” is residual director framing. Both fixes restore assertion without altering the Augustine correction or the ship/cross distinction.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk delivers dense scene-by-scene typology of Jonah against the Passion, with clear internal symbol work on heart of the earth/seas and the great fish as kingdom. Prevalence tables and the refusal of the three-days-only reading fit the book’s method. Residual house-style defects cluster in multiple And/But sentence opens and director cues (listen, mark, Notice, hold). One high-severity grammar break appears in the Rome/Jerusalem mount sentence, where the subject collapses after the final em-dash. Surgical fixes restore the And/But ban and the broken clause without touching doctrine or quoted scripture.\",\n  \"proposals\": [\n    {\n      \"old\": \"But listen to how Luke reports the same saying:\",\n      \"new\": \"Luke reports the same saying:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned But open and staging cue listen.\",\n      \"rationale\": \"Author prose may not start with But; listen functions as a director cue barred by house style.\"\n    },\n    {\n      \"old\": \"But Scripture itself locates the heart of the earth.\",\n      \"new\": \"Scripture itself locates the heart of the earth.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned But sentence open.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with But.\"\n    },\n    {\n      \"old\": \"And the world Jesus spoke into knew the name: Philo of Alexandria calls Jerusalem the __“heart of the whole earth”__; the Sibylline Oracles, __“the navel and heart of the earth”__; later Greek copies of Ezekiel even change __“navel”__ to __“heart”__ where Jerusalem is in view.\",\n      \"new\": \"The world Jesus spoke into knew the name: Philo of Alexandria calls Jerusalem the __“heart of the whole earth”__; the Sibylline Oracles, __“the navel and heart of the earth”__; later Greek copies of Ezekiel even change __“navel”__ to __“heart”__ where Jerusalem is in view.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And with that phrase the proof closes inside Scripture itself.\",\n      \"new\": \"With that phrase the proof closes inside Scripture itself.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And they wash their hands of him — the sailors in words, __“lay not upon us innocent blood”__ (Jonah 1:14); the governor in water, __“I am innocent of the blood of this just person”__ (Matthew 27:24).\",\n      \"new\": \"They wash their hands of him — the sailors in words, __“lay not upon us innocent blood”__ (Jonah 1:14); the governor in water, __“I am innocent of the blood of this just person”__ (Matthew 27:24).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open.\",\n      \"rationale\": \"House style forbids author-prose sentences that begin with And.\"\n    },\n    {\n      \"old\": \"And mark the double truth in the verbs: Jonah offers himself — __“cast me forth”__ — yet it is other hands that take him up and cast him; exactly as the Messiah is __“delivered… by wicked hands”__ (Acts 2:23) and yet insists, __“No man taketh it from me, but I lay it down of myself”__ (John 10:18).\",\n      \"new\": \"The verbs carry a double truth: Jonah offers himself — __“cast me forth”__ — yet it is other hands that take him up and cast him; exactly as the Messiah is __“delivered… by wicked hands”__ (Acts 2:23) and yet insists, __“No man taketh it from me, but I lay it down of myself”__ (John 10:18).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove And open and director cue mark.\",\n      \"rationale\": \"Banned And start plus Mark that-style staging; rewrite asserts the same claim without either.\"\n    },\n    {\n      \"old\": \"Notice also who sends it: __“the LORD had *prepared* a sym:sym-fish-2[great fish]”__ (Jonah 1:17) — _vayman_, appointed.\",\n      \"new\": \"Who sends it is named: __“the LORD had *prepared* a sym:sym-fish-2[great fish]”__ (Jonah 1:17) — _vayman_, appointed.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove director cue Notice.\",\n      \"rationale\": \"Notice that is an explicit house-style director cue; the replacement keeps the claim and the quote intact.\"\n    },\n    {\n      \"old\": \"Rome is the *iron* of Nebuchadnezzar’s image — Daniel named the second and third kingdoms outright, Medo-Persia and Greece (Daniel 8:20-21), and the iron fourth that __“breaketh in pieces”__ all before it (Daniel 2:40) is the empire that held the world when He came — the current face of the one world-empire, and offered her true King she chose her mount instead: __“We have no king but Caesar”__ (John 19:15).\",\n      \"new\": \"Rome is the *iron* of Nebuchadnezzar’s image — Daniel named the second and third kingdoms outright, Medo-Persia and Greece (Daniel 8:20-21), and the iron fourth that __“breaketh in pieces”__ all before it (Daniel 2:40) is the empire that held the world when He came — the current face of the one world-empire. Offered her true King, she chose her mount instead: __“We have no king but Caesar”__ (John 19:15).\",\n      \"type\": \"clarity\",\n      \"severity\": \"high\",\n      \"summary\": \"Repair subject collapse after the final em-dash.\",\n      \"rationale\": \"The clause and offered her true King she chose her mount instead loses its subject and becomes a fragment; a clean sentence break restores grammar while preserving the claim.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"The chunk’s strength is its dense, law-positive chaining of Jonah to the Passion and the nations, capped by a clean scene-by-scene table and a sharp correction of Augustine’s two-frame compression. The recovery claim is assertive and the symbol work (belly/Sheol, reeds/suph, yeshuah, great city) stays tight. Residual problems are concentrated in presenter staging: multiple “Now/Listen/See/Step back/mark here” director cues, three author-prose sentence opens with And/But/That, and second-person “you have just watched/hold/read” framing that softens the assertiveness. A few register slips (“reward the dig,” “no skeptic would script”) also surface. Surgical cuts restore the author’s voice without touching doctrine or quoted text.\",\n  \"proposals\": [\n    {\n      \"old\": \"And he is __“brought up… from corruption”__ — the precise word Peter presses at Pentecost: __“thou wilt not… suffer thine Holy One to see corruption”__ (Psalm 16:10; Acts 2:27).\",\n      \"new\": \"He is __“brought up… from corruption”__ — the precise word Peter presses at Pentecost: __“thou wilt not… suffer thine Holy One to see corruption”__ (Psalm 16:10; Acts 2:27).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned author-prose sentence open with And.\",\n      \"rationale\": \"House style forbids sentences in author prose starting with And. Dropping the conjunction keeps the claim intact and denser.\"\n    },\n    {\n      \"old\": \"Two details of the prayer reward the dig.\",\n      \"new\": \"Two details of the prayer repay close reading.\",\n      \"type\": \"tone-register\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace informal “reward the dig” register slip.\",\n      \"rationale\": \"“Reward the dig” is presenter slang that undercuts the book’s density. The replacement keeps the same force without the colloquial turn.\"\n    },\n    {\n      \"old\": \"Now set the two castings side by side, because the contrast is the verdict.\",\n      \"new\": \"Set the two castings side by side: the contrast is the verdict.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip director cue “Now set.”\",\n      \"rationale\": \"“Now set” is a banned presenter cue. The imperative without the temporal staging preserves the author’s assertive voice.\"\n    },\n    {\n      \"old\": \"Now comes the part no skeptic would script.\",\n      \"new\": \"The next movement is the part no skeptic would invent.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove “Now comes” staging and soft modern “script.”\",\n      \"rationale\": \"Director open plus film-metaphor “script” both fight house style. The rewrite stays assertive and drops the cue.\"\n    },\n    {\n      \"old\": \"Listen to the city’s title.\",\n      \"new\": \"The city’s title is fixed.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace “Listen to” director cue with a direct claim.\",\n      \"rationale\": \"“Listen to” is a banned presenter cue. A short assertive sentence hands the same structural role to the following evidence.\"\n    },\n    {\n      \"old\": \"(The reckoning of those days is the work of _Time Tested Tradition_; mark here only that the sign carries its durations — three days in the fish, three days’ journey in the city, forty days of warning — and that none of them are idle.)\",\n      \"new\": \"(The reckoning of those days is the work of _Time Tested Tradition_; the sign carries its durations — three days in the fish, three days’ journey in the city, forty days of warning — and none of them are idle.)\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Delete “mark here only that” director cue inside the parenthesis.\",\n      \"rationale\": \"“Mark here only” is a banned cue. Removing it leaves the factual note clean and still points the reader forward without staging.\"\n    },\n    {\n      \"old\": \"See what Jesus says these gentiles will then do: __“The men of Nineveh shall rise in judgment with this generation, and shall condemn it.”__\",\n      \"new\": \"Jesus says these gentiles will then do this: __“The men of Nineveh shall rise in judgment with this generation, and shall condemn it.”__\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip “See what” director cue.\",\n      \"rationale\": \"“See what” is a banned presenter open. The direct subject-verb form keeps the quotation and the claim.\"\n    },\n    {\n      \"old\": \"But he compressed the whole descent into two frames, and so set one of them wrong: the ship is not the cross.\\nYou have just watched the ship carry the night of the betrayal — the sleeper wakened, the questioning, the innocent blood, the lots — while the cross stands further down, where the reeds are bound about the prophet’s head.\",\n      \"new\": \"He compressed the whole descent into two frames, and so set one of them wrong: the ship is not the cross.\\nThe ship carries the night of the betrayal — the sleeper wakened, the questioning, the innocent blood, the lots — while the cross stands further down, where the reeds are bound about the prophet’s head.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Fix But-open and second-person “You have just watched” staging in one contiguous block.\",\n      \"rationale\": \"Author prose may not open with But; “You have just watched” is residual director framing. Both fixes restore assertion without altering the Augustine correction or the ship/cross distinction.\"\n    }\n  ]\n}"
+    }
+  ]
+}

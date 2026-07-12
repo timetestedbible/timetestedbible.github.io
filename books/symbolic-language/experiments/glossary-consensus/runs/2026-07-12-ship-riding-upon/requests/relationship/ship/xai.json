@@ -1,0 +1,126 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "ship",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nShip\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"The ship most commonly symbolizes the Church — the vessel of salvation that carries believers safely through the storms and dangers of the world (the 'sea') toward the safe harbor of eternal life. This reading is deeply rooted in patristic writing (e.g., Tertullian, Hippolytus, Cyprian, Augustine), in liturgical architecture (the main body of a church building is called the 'nave,' from Latin navis, ship), and in the typological link between Noah's ark and baptism/the Church.\",\n  \"primary_basis\": [\n    \"Genesis 6–9 (Noah's ark as the vessel preserving the faithful through judgment, read typologically as the Church)\",\n    \"1 Peter 3:20–21 (the ark explicitly connected to baptism and salvation)\",\n    \"Matthew 8:23–27 / Mark 4:35–41 / Luke 8:22–25 (Jesus calming the storm while in the boat with the disciples — the Church buffeted by the world but safe with Christ aboard)\",\n    \"Matthew 14:22–33 / Mark 6:45–52 (the disciples' boat in the storm; Peter walking on water)\",\n    \"Luke 5:1–11 (Jesus teaching from Peter's boat and the miraculous catch, often read as Peter's boat = the Church, the 'barque of Peter' in Catholic tradition)\",\n    \"John 21:1–14 (the post-resurrection catch of fish, read as the Church's mission gathering souls)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The journey or voyage of the individual life of faith — the believer navigating trials toward heaven, with associated imagery of anchors, storms, and shipwreck.\",\n      \"basis\": [\n        \"Hebrews 6:19 (hope as 'an anchor of the soul')\",\n        \"1 Timothy 1:19 (some have 'made shipwreck of their faith')\",\n        \"Acts 27 (Paul's shipwreck, often preached allegorically as the perils of the faith journey)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human commerce, worldly wealth, and pride destined for judgment — especially the 'ships of Tarshish' as emblems of human arrogance and the merchant ships of Babylon.\",\n      \"basis\": [\n        \"Isaiah 2:16 (the LORD's day against 'all the ships of Tarshish')\",\n        \"Psalm 48:7 (God breaking the ships of Tarshish)\",\n        \"Ezekiel 27 (Tyre depicted as a magnificent ship that is wrecked)\",\n        \"Revelation 18:17–19 (shipmasters and sailors mourning Babylon's fall)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Flight from God's call and disobedience, drawn from Jonah boarding a ship to flee to Tarshish.\",\n      \"basis\": [\n        \"Jonah 1:3–15\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Instability and false doctrine — believers 'tossed to and fro' like a vessel on waves when lacking sound teaching (wave/sea imagery applied to the ship motif).\",\n      \"basis\": [\n        \"Ephesians 4:14\",\n        \"James 1:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In some end-times and Adventist-adjacent or devotional readings, the 'old ship of Zion' as the vehicle carrying the redeemed home — essentially a hymnic/folk extension of the Church-as-ship image rather than a distinct exegesis.\",\n      \"basis\": [\n        \"Derived homiletically from the Noah's ark and stilling-of-the-storm passages rather than a distinct proof text\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The ship-as-Church reading is one of the most stable and widely recognized symbols in Christian interpretive history, attested from the second and third centuries (Tertullian's De Baptismo, Hippolytus, Cyprian's De Unitate) through medieval art, the architectural term 'nave,' the World Council of Churches' ship-and-cross logo, and the Catholic phrase 'barque of Peter.' Alternative meanings are context-dependent rather than competing: prophetic texts use ships for commerce and pride, and devotional literature uses the voyage for the individual pilgrim life. None of these displaces the ecclesial reading as the primary consensus. Strictly speaking, the Bible itself never states 'ship = Church'; the consensus is a product of typology and tradition, which interpreters widely acknowledge.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Church—often called the ship or Barque of Peter—carrying believers through the dangers of the world toward salvation, with Christ as protector or pilot.\",\n  \"primary_basis\": [\n    \"Matthew 8:23–27; Mark 4:35–41; Luke 8:22–25: Christ preserves the disciples' boat amid the storm, traditionally read as an image of the Church surviving persecution and turmoil.\",\n    \"Matthew 14:22–33; Mark 6:45–52; John 6:16–21: Christ comes to the endangered disciples at sea and brings safety.\",\n    \"Luke 5:1–11: Jesus teaches from Simon Peter's boat and commissions Peter and the others to gather people, supporting the later image of Peter's barque.\",\n    \"Genesis 6–9 and 1 Peter 3:20–21: Noah's ark, though not normally called a ship in the text, is typologically interpreted as the Church or community of salvation carrying people safely through judgment.\",\n    \"Acts 27:13–44: Paul's storm and shipwreck have often received ecclesial or salvation-oriented readings, although the ship is literal in the narrative.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The course or voyage of an individual human life, especially the believer passing through trials under divine guidance.\",\n      \"basis\": [\n        \"The storm-calming narratives in Matthew 8:23–27, Mark 4:35–41, and Luke 8:22–25 are frequently applied devotionally to personal crises.\",\n        \"James 3:4 uses a ship as an illustration of a life or large body directed by something small, specifically comparing the rudder to the tongue.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Salvation, refuge, or the means by which people are preserved through judgment, without necessarily identifying the vessel specifically with the institutional Church.\",\n      \"basis\": [\n        \"Genesis 6–9 presents the ark as the means of preservation through the flood.\",\n        \"Hebrews 11:7 and 1 Peter 3:20–21 interpret Noah's deliverance in relation to faith, salvation, and baptism.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Maritime commerce, material wealth, and the economic systems of worldly powers.\",\n      \"basis\": [\n        \"Revelation 18:17–19 associates ships, sailors, and sea trade with Babylon's wealth and its collapse.\",\n        \"Revelation 8:9 includes the destruction of ships within judgments affecting the sea.\",\n        \"Isaiah 2:16 and Psalm 48:7 use impressive ships as examples of human pride, power, or wealth brought low.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A particular ministry, congregation, or missionary enterprise guided by Christ.\",\n      \"basis\": [\n        \"Luke 5:1–11 links Peter's boat with teaching and the mission of gathering people.\",\n        \"Acts 27 has sometimes been allegorized as the preservation of Christian mission or a believing community amid danger.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The Church is the most recognizable traditional Christian symbolic meaning of a ship, especially in patristic interpretation, preaching, hymnody, architecture, and the expression “Barque of Peter.” Nevertheless, Scripture does not establish “ship” as a fixed symbol with one universal referent. Most biblical ships are narrative or illustrative objects, and their symbolic significance depends heavily on context.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The Church as the vessel of salvation navigating the waters of the world, storms of trial, or judgment (often linked to Noah's ark as type)\",\n  \"primary_basis\": [\n    \"Genesis 6–9 (Noah's ark as saving vessel)\",\n    \"1 Peter 3:20–21 (ark prefiguring baptism and salvation through Christ)\",\n    \"Matthew 8:23–27 / Mark 4:35–41 / Luke 8:22–25 (Jesus calming the storm in the boat with the disciples)\",\n    \"Matthew 14:22–33 (Jesus walking on water to the boat)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The individual Christian life or soul journeying through the sea of worldly troubles toward heaven\",\n      \"basis\": [\n        \"Same Gospel storm and boat narratives applied devotionally\",\n        \"Patristic and later spiritual writings on the soul as ship\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worldly commerce, wealth, or the transient fortunes of this age\",\n      \"basis\": [\n        \"Revelation 18:17–19 (ships and merchants mourning Babylon)\",\n        \"Ezekiel 27 (ships of Tyre as commercial power)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A temporary refuge or instrument of divine providence (without strong ecclesial typology)\",\n      \"basis\": [\n        \"Jonah 1 (ship as setting for flight and judgment)\",\n        \"Acts 27 (Paul's voyage and shipwreck)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Church-as-ship (or ark) image is a long-standing, widely attested piece of Christian symbolism in patristic, liturgical, and artistic tradition; other readings exist but are secondary or context-specific rather than competing for primary status.\"\n}\n\nBOOK ENTRY\nAn organized city, state, or governed body riding upon the sea of peoples: its rulers guide it, its inhabitants and servants crew it, its armies defend it, and its wealth is carried as cargo. The ship may be broken while its people survive.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ezek 27:2-36; Isa 23:1-18; Acts 27:22, 31, 37, 41-44; Rev 18:9-19; Jonah 1:4-16) · see The Ship\n\nAVAILABLE KJV EXCERPTS\nEzekiel 27:2 — Now, thou son of man, take up a lamentation for Tyrus;\nEzekiel 27:3 — And say unto Tyrus, O thou that art situate at the entry of the sea, which art a merchant of the people for many isles, Thus saith the Lord GOD; O Tyrus, thou hast said, I am of perfect beauty.\nEzekiel 27:4 — Thy borders are in the midst of the seas, thy builders have perfected thy beauty.\nEzekiel 27:5 — They have made all thy ship boards of fir trees of Senir: they have taken cedars from Lebanon to make masts for thee.\nEzekiel 27:6 — Of the oaks of Bashan have they made thine oars; the company of the Ashurites have made thy benches of ivory, brought out of the isles of Chittim.\nEzekiel 27:7 — Fine linen with broidered work from Egypt was that which thou spreadest forth to be thy sail; blue and purple from the isles of Elishah was that which covered thee.\nEzekiel 27:8 — The inhabitants of Zidon and Arvad were thy mariners: thy wise men, O Tyrus, that were in thee, were thy pilots.\nEzekiel 27:9 — The ancients of Gebal and the wise men thereof were in thee thy calkers: all the ships of the sea with their mariners were in thee to occupy thy merchandise.\nEzekiel 27:10 — They of Persia and of Lud and of Phut were in thine army, thy men of war: they hanged the shield and helmet in thee; they set forth thy comeliness.\nEzekiel 27:11 — The men of Arvad with thine army were upon thy walls round about, and the Gammadims were in thy towers: they hanged their shields upon thy walls round about; they have made thy beauty perfect.\nEzekiel 27:12 — Tarshish was thy merchant by reason of the multitude of all kind of riches; with silver, iron, tin, and lead, they traded in thy fairs.\nEzekiel 27:13 — Javan, Tubal, and Meshech, they were thy merchants: they traded the persons of men and vessels of brass in thy market.\nEzekiel 27:14 — They of the house of Togarmah traded in thy fairs with horses and horsemen and mules.\nEzekiel 27:15 — The men of Dedan were thy merchants; many isles were the merchandise of thine hand: they brought thee for a present horns of ivory and ebony.\nEzekiel 27:16 — Syria was thy merchant by reason of the multitude of the wares of thy making: they occupied in thy fairs with emeralds, purple, and broidered work, and fine linen, and coral, and agate.\nEzekiel 27:17 — Judah, and the land of Israel, they were thy merchants: they traded in thy market wheat of Minnith, and Pannag, and honey, and oil, and balm.\nEzekiel 27:18 — Damascus was thy merchant in the multitude of the wares of thy making, for the multitude of all riches; in the wine of Helbon, and white wool.\nEzekiel 27:19 — Dan also and Javan going to and fro occupied in thy fairs: bright iron, cassia, and calamus, were in thy market.\nEzekiel 27:20 — Dedan was thy merchant in precious clothes for chariots.\nEzekiel 27:21 — Arabia, and all the princes of Kedar, they occupied with thee in lambs, and rams, and goats: in these were they thy merchants.\nEzekiel 27:22 — The merchants of Sheba and Raamah, they were thy merchants: they occupied in thy fairs with chief of all spices, and with all precious stones, and gold.\nEzekiel 27:23 — Haran, and Canneh, and Eden, the merchants of Sheba, Asshur, and Chilmad, were thy merchants.\nEzekiel 27:24 — These were thy merchants in all sorts of things, in blue clothes, and broidered work, and in chests of rich apparel, bound with cords, and made of cedar, among thy merchandise.\nEzekiel 27:25 — The ships of Tarshish did sing of thee in thy market: and thou wast replenished, and made very glorious in the midst of the seas.\nEzekiel 27:26 — Thy rowers have brought thee into great waters: the east wind hath broken thee in the midst of the seas.\nEzekiel 27:27 — Thy riches, and thy fairs, thy merchandise, thy mariners, and thy pilots, thy calkers, and the occupiers of thy merchandise, and all thy men of war, that are in thee, and in all thy company which is in the midst of thee, shall fall into the midst of the seas in the day of thy ruin.\nEzekiel 27:28 — The suburbs shall shake at the sound of the cry of thy pilots.\nEzekiel 27:29 — And all that handle the oar, the mariners, and all the pilots of the sea, shall come down from their ships, they shall stand upon the land;\nEzekiel 27:30 — And shall cause their voice to be heard against thee, and shall cry bitterly, and shall cast up dust upon their heads, they shall wallow themselves in the ashes:\nEzekiel 27:31 — And they shall make themselves utterly bald for thee, and gird them with sackcloth, and they shall weep for thee with bitterness of heart and bitter wailing.\nEzekiel 27:32 — And in their wailing they shall take up a lamentation for thee, and lament over thee, saying, What city is like Tyrus, like the destroyed in the midst of the sea?\nEzekiel 27:33 — When thy wares went forth out of the seas, thou filledst many people; thou didst enrich the kings of the earth with the multitude of thy riches and of thy merchandise.\nEzekiel 27:34 — In the time when thou shalt be broken by the seas in the depths of the waters thy merchandise and all thy company in the midst of thee shall fall.\nEzekiel 27:35 — All the inhabitants of the isles shall be astonished at thee, and their kings shall be sore afraid, they shall be troubled in their countenance.\nEzekiel 27:36 — The merchants among the people shall hiss at thee; thou shalt be a terror, and never shalt be any more.\nIsaiah 23:1 — The burden of Tyre. Howl, ye ships of Tarshish; for it is laid waste, so that there is no house, no entering in: from the land of Chittim it is revealed to them.\nIsaiah 23:2 — Be still, ye inhabitants of the isle; thou whom the merchants of Zidon, that pass over the sea, have replenished.\nIsaiah 23:3 — And by great waters the seed of Sihor, the harvest of the river, is her revenue; and she is a mart of nations.\nIsaiah 23:4 — Be thou ashamed, O Zidon: for the sea hath spoken, even the strength of the sea, saying, I travail not, nor bring forth children, neither do I nourish up young men, nor bring up virgins.\nIsaiah 23:5 — As at the report concerning Egypt, so shall they be sorely pained at the report of Tyre.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "b7b1b9e1d13b1dec7bef1bf0075ba52392f96f3ea7d87e9e6f6b803ee2c2934b",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-12-ship-initial",
+      "request": "runs/2026-07-12-ship-initial/requests/relationship/ship/xai.json"
+    }
+  }
+}

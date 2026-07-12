@@ -1,0 +1,36 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "REFINED": 1
+  },
+  "rows": [
+    {
+      "anchor": "love",
+      "term": "Love",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "STRONG",
+      "citation_support_votes": [
+        "PARTIAL",
+        "STRONG",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    }
+  ]
+}

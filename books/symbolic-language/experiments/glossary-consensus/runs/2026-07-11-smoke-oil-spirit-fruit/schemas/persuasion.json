@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "persuasion": {"type": "string", "enum": ["PERSUADED", "UNPERSUADED"]},
+    "rationale": {"type": "string"},
+    "decisive_sources": {"type": "array", "items": {"type": "string"}},
+    "unresolved_objections": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+  },
+  "required": ["persuasion", "rationale", "decisive_sources", "unresolved_objections", "confidence"]
+}

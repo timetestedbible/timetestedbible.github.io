@@ -1,0 +1,476 @@
+{
+  "entry_count": 20,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_PERSUADED": 11,
+    "DIVERGENT_UNPERSUADED": 2,
+    "NOVEL": 1,
+    "REFINED": 6
+  },
+  "rows": [
+    {
+      "anchor": "disciple",
+      "term": "Disciple",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "STRONG"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "dragon",
+      "term": "Dragon",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "egypt",
+      "term": "Egypt",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "fish-2",
+      "term": "Fish (great fish, sea-monster)",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "REFINED",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "garden",
+      "term": "Garden",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "gnashing",
+      "term": "Gnashing of teeth",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "STRONG",
+      "citation_support_votes": [
+        "PARTIAL",
+        "STRONG",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "gospel",
+      "term": "Gospel",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "REFINED",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "harlot",
+      "term": "Harlot",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "heart",
+      "term": "Heart of the earth",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_UNPERSUADED"
+    },
+    {
+      "anchor": "hell",
+      "term": "Hell",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "life",
+      "term": "Life (the life)",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "moon",
+      "term": "Moon",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "name",
+      "term": "Name",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_UNPERSUADED"
+    },
+    {
+      "anchor": "new",
+      "term": "New name",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "pearl",
+      "term": "Pearl",
+      "relation": "NOVEL",
+      "relationship_votes": [
+        "NOVEL",
+        "NOVEL",
+        "NOVEL"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "NOVEL"
+    },
+    {
+      "anchor": "sign",
+      "term": "Sign",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "storm",
+      "term": "Storm, tempest",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "STRONG",
+      "citation_support_votes": [
+        "STRONG",
+        "PARTIAL",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "truth",
+      "term": "Truth (the truth)",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "STRONG",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "valley",
+      "term": "Valley",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    },
+    {
+      "anchor": "way",
+      "term": "Way (the way)",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "STRONG",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    }
+  ]
+}

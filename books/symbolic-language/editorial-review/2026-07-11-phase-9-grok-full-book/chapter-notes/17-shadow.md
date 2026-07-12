@@ -1,0 +1,5 @@
+# Shadow
+
+This chunk assembles a dense, law-positive case that biblical shadow is protective shelter rather than disposable gloom, chaining tsel, wings, hand, tree-kingdoms, and overshadowing into a coherent rereading of Colossians 2. Scripture density and internal consistency are high; the Colossians turn lands cleanly once the evidence is stacked. Residual defects are almost entirely house-style: director cues (Hold the verdict, Read and notice, Now the equation, Now even) and multiple author-prose sentences that open with And, But, or That. No doctrine, quote, or factual errors require change; the listed fixes stay surgical and preserve voice and markup.
+
+The chunk assembles the shadow-of-death texts with high density and ends on a sharp, law-positive close. Parallel columns and the light-behind-shadow claim land cleanly. The sole clear defect is residual presenter staging in the method paragraph, which breaks the no-director-cues rule and briefly shifts into meta-instruction. No grammar errors, sentence-open violations, or scripture-quote problems appear. The rest of the prose stays assertive and on-voice.

@@ -1,0 +1,24 @@
+{
+  "file": "books/symbolic-language/00-copyright.adoc",
+  "title": "Copyright",
+  "notes": [
+    "This copyright page is clean, correctly structured front matter: free-reproduction grant, standard multi-version Scripture credits, transparent AI-assistance disclosure that keeps doctrine ownership with the author, and proper ISBN/print-run/TimeTested.Bible placement. No grammar errors, no presenter staging, no And/But/That sentence opens, and no doctrine or quote-text problems. The sole consistency gap is the display title form, which drops the em dash used for the work’s established title elsewhere. Otherwise the chunk needs no intervention."
+  ],
+  "proposals": [
+    {
+      "old": "MEAT The Bible's Symbolic Language",
+      "new": "MEAT — The Bible's Symbolic Language",
+      "type": "factual",
+      "severity": "low",
+      "summary": "Restore the established em-dash form of the book title on the copyright display line.",
+      "rationale": "The manuscript title is MEAT — The Bible's Symbolic Language; the copyright-title block currently omits the dash and should match for internal naming consistency.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This copyright page is clean, correctly structured front matter: free-reproduction grant, standard multi-version Scripture credits, transparent AI-assistance disclosure that keeps doctrine ownership with the author, and proper ISBN/print-run/TimeTested.Bible placement. No grammar errors, no presenter staging, no And/But/That sentence opens, and no doctrine or quote-text problems. The sole consistency gap is the display title form, which drops the em dash used for the work’s established title elsewhere. Otherwise the chunk needs no intervention.\",\n  \"proposals\": [\n    {\n      \"old\": \"MEAT The Bible's Symbolic Language\",\n      \"new\": \"MEAT — The Bible's Symbolic Language\",\n      \"type\": \"factual\",\n      \"severity\": \"low\",\n      \"summary\": \"Restore the established em-dash form of the book title on the copyright display line.\",\n      \"rationale\": \"The manuscript title is MEAT — The Bible's Symbolic Language; the copyright-title block currently omits the dash and should match for internal naming consistency.\"\n    }\n  ]\n}"
+    }
+  ]
+}

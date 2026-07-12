@@ -1,0 +1,42 @@
+{
+  "file": "books/symbolic-language/09-the-disciple.adoc",
+  "title": "The Disciple",
+  "notes": [
+    "This chunk is strong: it opens with a precise lexical definition from Isaiah, chains the three cannot-gates to the marks of discipleship, and closes the arc from baptism into the Name to the sealed forehead with clean symbolic consistency. The law-positive stance and density of proof-texts are intact and assertive. Residual issues are limited: one house-style sentence-open with And, a presenter-style 'word to weigh' cue, and one incomplete clause after a semicolon that leaves the Matthew 5:17 allusion dangling. No AI vocabulary, no doctrine rewrites needed, and the modern contrast 'growth curves' is deliberate rather than defective. Surgical fixes restore flow without thinning the voice."
+  ],
+  "proposals": [
+    {
+      "old": "And the covenant one is baptized into has stated content:",
+      "new": "The covenant into which one is baptized has stated content:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden sentence-initial And and repair the relative clause.",
+      "rationale": "Author prose may not open with And; the original also lacks a relative pronoun, which the rewrite supplies without changing meaning.",
+      "_chunk": 1
+    },
+    {
+      "old": "_Indeed_ is the word to weigh: it is spoken to men who had just *believed* (John 8:30-31) — believed as a profession believes: His word accounted factual and worth trusting, an assent even __“the devils”__ manage, who __“believe, and tremble”__ (James 2:19).",
+      "new": "_Indeed_ is spoken to men who had just *believed* (John 8:30-31) — believed as a profession believes: His word accounted factual and worth trusting, an assent even __“the devils”__ manage, who __“believe, and tremble”__ (James 2:19).",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove presenter cue 'the word to weigh'.",
+      "rationale": "House style forbids director cues such as 'Weigh the'; the cut keeps the claim and the following evidence intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "He kept the law — perfectly: __“Which of you convinceth me of sin?”__ (John 8:46); not to destroy but to fulfil (Matthew 5:17).",
+      "new": "He kept the law — perfectly: __“Which of you convinceth me of sin?”__ (John 8:46). He came not to destroy but to fulfil (Matthew 5:17).",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Complete the dangling clause after the semicolon.",
+      "rationale": "The original leaves 'not to destroy but to fulfil' without a subject or finite verb; the rewrite restores a full sentence while preserving the two citations and the claim.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is strong: it opens with a precise lexical definition from Isaiah, chains the three cannot-gates to the marks of discipleship, and closes the arc from baptism into the Name to the sealed forehead with clean symbolic consistency. The law-positive stance and density of proof-texts are intact and assertive. Residual issues are limited: one house-style sentence-open with And, a presenter-style 'word to weigh' cue, and one incomplete clause after a semicolon that leaves the Matthew 5:17 allusion dangling. No AI vocabulary, no doctrine rewrites needed, and the modern contrast 'growth curves' is deliberate rather than defective. Surgical fixes restore flow without thinning the voice.\",\n  \"proposals\": [\n    {\n      \"old\": \"And the covenant one is baptized into has stated content:\",\n      \"new\": \"The covenant into which one is baptized has stated content:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden sentence-initial And and repair the relative clause.\",\n      \"rationale\": \"Author prose may not open with And; the original also lacks a relative pronoun, which the rewrite supplies without changing meaning.\"\n    },\n    {\n      \"old\": \"_Indeed_ is the word to weigh: it is spoken to men who had just *believed* (John 8:30-31) — believed as a profession believes: His word accounted factual and worth trusting, an assent even __“the devils”__ manage, who __“believe, and tremble”__ (James 2:19).\",\n      \"new\": \"_Indeed_ is spoken to men who had just *believed* (John 8:30-31) — believed as a profession believes: His word accounted factual and worth trusting, an assent even __“the devils”__ manage, who __“believe, and tremble”__ (James 2:19).\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove presenter cue 'the word to weigh'.\",\n      \"rationale\": \"House style forbids director cues such as 'Weigh the'; the cut keeps the claim and the following evidence intact.\"\n    },\n    {\n      \"old\": \"He kept the law — perfectly: __“Which of you convinceth me of sin?”__ (John 8:46); not to destroy but to fulfil (Matthew 5:17).\",\n      \"new\": \"He kept the law — perfectly: __“Which of you convinceth me of sin?”__ (John 8:46). He came not to destroy but to fulfil (Matthew 5:17).\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Complete the dangling clause after the semicolon.\",\n      \"rationale\": \"The original leaves 'not to destroy but to fulfil' without a subject or finite verb; the rewrite restores a full sentence while preserving the two citations and the claim.\"\n    }\n  ]\n}"
+    }
+  ]
+}

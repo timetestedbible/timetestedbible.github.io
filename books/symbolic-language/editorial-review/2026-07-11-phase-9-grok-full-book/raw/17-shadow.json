@@ -1,0 +1,101 @@
+{
+  "file": "books/symbolic-language/17-shadow.adoc",
+  "title": "Shadow",
+  "notes": [
+    "This chunk assembles a dense, law-positive case that biblical shadow is protective shelter rather than disposable gloom, chaining tsel, wings, hand, tree-kingdoms, and overshadowing into a coherent rereading of Colossians 2. Scripture density and internal consistency are high; the Colossians turn lands cleanly once the evidence is stacked. Residual defects are almost entirely house-style: director cues (Hold the verdict, Read and notice, Now the equation, Now even) and multiple author-prose sentences that open with And, But, or That. No doctrine, quote, or factual errors require change; the listed fixes stay surgical and preserve voice and markup.",
+    "The chunk assembles the shadow-of-death texts with high density and ends on a sharp, law-positive close. Parallel columns and the light-behind-shadow claim land cleanly. The sole clear defect is residual presenter staging in the method paragraph, which breaks the no-director-cues rule and briefly shifts into meta-instruction. No grammar errors, sentence-open violations, or scripture-quote problems appear. The rest of the prose stays assertive and on-voice."
+  ],
+  "proposals": [
+    {
+      "old": "Hold the verdict on Colossians until the evidence is in; the verse will be waiting further down this road, and by then it will read as the opposite of a discharge.",
+      "new": "The verdict on Colossians waits until the evidence is in; the verse stands further down this road, and by then it will read as the opposite of a discharge.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue Hold the verdict.",
+      "rationale": "House style forbids Hold that and similar staging; rephrase asserts the same sequence without addressing the reader.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is the habit to carry from this page: when the English wobbles between renderings, the wobble is a signpost — look beneath it.",
+      "new": "The habit to carry from this page is this: when the English wobbles between renderings, the wobble is a signpost — look beneath it.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Author prose must not open with That.",
+      "rationale": "House rule bars That at the start of author sentences; the claim and cadence stay intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "And Isaiah sets the definition in parallel columns — Scripture’s habit of defining a term by saying the thing twice:",
+      "new": "Isaiah sets the definition in parallel columns — Scripture’s habit of defining a term by saying the thing twice:",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "Author prose never opens with And; the definition claim is unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "And under the anointed king’s shadow Israel shall live among the heathen (Lamentations 4:20).",
+      "new": "Under the anointed king’s shadow Israel shall live among the heathen (Lamentations 4:20).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "House style forbids And at the start of author prose; the citation and claim remain exact.",
+      "_chunk": 1
+    },
+    {
+      "old": "Read the refuge verses again and notice what the shadow shields from: the heat.",
+      "new": "The refuge verses name what the shadow shields from: the heat.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Read and notice staging.",
+      "rationale": "Director cues such as Read that and Notice that are banned; the assertion of content is direct and denser.",
+      "_chunk": 1
+    },
+    {
+      "old": "And whose hand is that?",
+      "new": "Whose hand is that?",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And.",
+      "rationale": "Author sentences may not open with And; the rhetorical question is preserved.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now the equation closes, because we already know where the covering hangs.",
+      "new": "The equation closes, because we already know where the covering hangs.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Drop opening Now as staging.",
+      "rationale": "Now constructions are listed among forbidden director cues; the logical close remains.",
+      "_chunk": 1
+    },
+    {
+      "old": "But a shadow is not detached from its body; it is _attached_ to it.",
+      "new": "A shadow is not detached from its body; it is _attached_ to it.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop sentence-initial But.",
+      "rationale": "House style forbids But at the start of author prose; the attachment claim is unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "Step back and take the lesson, because this chapter is a prime example of the whole method.",
+      "new": "This chapter is a prime example of the whole method.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip the director cue that stages the reader.",
+      "rationale": "House style bans presenter cues such as Step back and take the lesson. The remaining clause keeps the author’s claim without meta-instruction.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk assembles a dense, law-positive case that biblical shadow is protective shelter rather than disposable gloom, chaining tsel, wings, hand, tree-kingdoms, and overshadowing into a coherent rereading of Colossians 2. Scripture density and internal consistency are high; the Colossians turn lands cleanly once the evidence is stacked. Residual defects are almost entirely house-style: director cues (Hold the verdict, Read and notice, Now the equation, Now even) and multiple author-prose sentences that open with And, But, or That. No doctrine, quote, or factual errors require change; the listed fixes stay surgical and preserve voice and markup.\",\n  \"proposals\": [\n    {\n      \"old\": \"Hold the verdict on Colossians until the evidence is in; the verse will be waiting further down this road, and by then it will read as the opposite of a discharge.\",\n      \"new\": \"The verdict on Colossians waits until the evidence is in; the verse stands further down this road, and by then it will read as the opposite of a discharge.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue Hold the verdict.\",\n      \"rationale\": \"House style forbids Hold that and similar staging; rephrase asserts the same sequence without addressing the reader.\"\n    },\n    {\n      \"old\": \"That is the habit to carry from this page: when the English wobbles between renderings, the wobble is a signpost — look beneath it.\",\n      \"new\": \"The habit to carry from this page is this: when the English wobbles between renderings, the wobble is a signpost — look beneath it.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Author prose must not open with That.\",\n      \"rationale\": \"House rule bars That at the start of author sentences; the claim and cadence stay intact.\"\n    },\n    {\n      \"old\": \"And Isaiah sets the definition in parallel columns — Scripture’s habit of defining a term by saying the thing twice:\",\n      \"new\": \"Isaiah sets the definition in parallel columns — Scripture’s habit of defining a term by saying the thing twice:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"Author prose never opens with And; the definition claim is unchanged.\"\n    },\n    {\n      \"old\": \"And under the anointed king’s shadow Israel shall live among the heathen (Lamentations 4:20).\",\n      \"new\": \"Under the anointed king’s shadow Israel shall live among the heathen (Lamentations 4:20).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"House style forbids And at the start of author prose; the citation and claim remain exact.\"\n    },\n    {\n      \"old\": \"Read the refuge verses again and notice what the shadow shields from: the heat.\",\n      \"new\": \"The refuge verses name what the shadow shields from: the heat.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Read and notice staging.\",\n      \"rationale\": \"Director cues such as Read that and Notice that are banned; the assertion of content is direct and denser.\"\n    },\n    {\n      \"old\": \"And whose hand is that?\",\n      \"new\": \"Whose hand is that?\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And.\",\n      \"rationale\": \"Author sentences may not open with And; the rhetorical question is preserved.\"\n    },\n    {\n      \"old\": \"Now the equation closes, because we already know where the covering hangs.\",\n      \"new\": \"The equation closes, because we already know where the covering hangs.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop opening Now as staging.\",\n      \"rationale\": \"Now constructions are listed among forbidden director cues; the logical close remains.\"\n    },\n    {\n      \"old\": \"But a shadow is not detached from its body; it is _attached_ to it.\",\n      \"new\": \"A shadow is not detached from its body; it is _attached_ to it.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop sentence-initial But.\",\n      \"rationale\": \"House style forbids But at the start of author prose; the attachment claim is unchanged.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"The chunk assembles the shadow-of-death texts with high density and ends on a sharp, law-positive close. Parallel columns and the light-behind-shadow claim land cleanly. The sole clear defect is residual presenter staging in the method paragraph, which breaks the no-director-cues rule and briefly shifts into meta-instruction. No grammar errors, sentence-open violations, or scripture-quote problems appear. The rest of the prose stays assertive and on-voice.\",\n  \"proposals\": [\n    {\n      \"old\": \"Step back and take the lesson, because this chapter is a prime example of the whole method.\",\n      \"new\": \"This chapter is a prime example of the whole method.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip the director cue that stages the reader.\",\n      \"rationale\": \"House style bans presenter cues such as Step back and take the lesson. The remaining clause keeps the author’s claim without meta-instruction.\"\n    }\n  ]\n}"
+    }
+  ]
+}

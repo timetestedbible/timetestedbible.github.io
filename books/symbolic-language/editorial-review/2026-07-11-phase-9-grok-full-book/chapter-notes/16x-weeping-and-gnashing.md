@@ -1,0 +1,3 @@
+# The Weeping and the Gnashing
+
+The chapter’s core case is dense and law-positive: the definite articles, Psalm 112 tableau, gnashing as hatred of the righteous, and the seven insider judgments lock together cleanly. Hebrew Matthew’s grave vocabulary and the Stephen rehearsal give the argument real force without padding. Residual presenter staging still surfaces in two places (“Hold the two halves,” “Now walk… and mark”), one author sentence opens with And, and “roles’ endings not yet dealt” is incomplete English that blurs an otherwise sharp historical parallel. Surgical cuts restore the house voice while leaving every doctrinal claim and every scripture quotation untouched.

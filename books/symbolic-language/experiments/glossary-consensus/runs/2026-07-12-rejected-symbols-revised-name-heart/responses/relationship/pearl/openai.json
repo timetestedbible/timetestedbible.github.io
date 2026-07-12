@@ -1,0 +1,195 @@
+{
+  "id": "resp_0e2ee58006176b39006a54061507cc8195851aa137700e81f1",
+  "object": "response",
+  "created_at": 1783891477,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783891492,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e2ee58006176b39006a5406158b8c8195876cdfc15fc7fdc6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0e2ee58006176b39006a54061c4fec81958988699f067fff20",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"NOVEL\",\"consensus_summary\":\"Pearl chiefly signifies the kingdom of heaven, Christ, salvation, or sacred truth as something of supreme spiritual worth; recognized secondary uses include the Church, redeemed glory, and worldly luxury.\",\"book_summary\":\"Pearl signifies “the one complete light,” identified with the full moon as governor of appointed times, and links wisdom, the bride, and the single-pearl gates of the heavenly city as the merchant’s royal entry.\",\"consensus_core_identification\":\"The kingdom of heaven or comparable sacred reality of surpassing value.\",\"book_core_identification\":\"The full moon as the one complete light, symbolically expressed in wisdom, the bride, and the city’s one-pearl gates.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"DIFFERENT_REFERENT\",\"boundary_disagreement\":\"The book retains associations with wisdom, the bride, and New Jerusalem imagery but reclassifies these around a lunar identity absent from the consensus. It does not merely narrow or broaden the conventional kingdom-as-supreme-value reading; it supplies a different symbolic referent.\",\"material_contradiction\":\"No explicit contradiction is established because the book acknowledges the common kingdom/Church readings and could treat them as secondary. Its core identification nevertheless replaces the conventional primary referent with the full moon in the entry’s controlling sense.\",\"rationale\":\"The consensus alternatives include kingdom, Christ, Church, sacred truth, redeemed glory, and luxury, but none identifies the pearl with the full moon or “one complete light.” Revelation 21:21 creates overlap at the pearl gates, while wisdom and bride imagery overlap broader sacred associations, yet the lunar synthesis is a novel identification rather than a refinement of the consensus core.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed texts separately mention rubies, the moon and appointed seasons, a throne, and one-pearl gates, but they do not themselves establish that pearl means the full moon, that the cited Hebrew terms encode the proposed links, or that the gates constitute the merchant’s entry at the King’s gate.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3007,
+    "input_tokens_details": {
+      "cache_write_tokens": 3004,
+      "cached_tokens": 0
+    },
+    "output_tokens": 796,
+    "output_tokens_details": {
+      "reasoning_tokens": 364
+    },
+    "total_tokens": 3803
+  },
+  "user": null,
+  "metadata": {}
+}

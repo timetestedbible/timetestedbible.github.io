@@ -1,0 +1,78 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "oil",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nOil\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, oil most commonly symbolizes the Holy Spirit, especially the Spirit's anointing, presence, and empowering. Anointing with oil marked prophets, priests, and kings as set apart and empowered by God, and this is read typologically as pointing to the Spirit's anointing of Christ (the 'Anointed One'/Messiah) and of believers.\",\n  \"primary_basis\": [\n    \"1 Samuel 16:13 (Samuel anoints David and the Spirit rushes upon him)\",\n    \"Exodus 30:22-33 (holy anointing oil for consecrating priests and the tabernacle)\",\n    \"Zechariah 4:1-6 (lampstand and olive oil linked to 'not by might... but by my Spirit')\",\n    \"Isaiah 61:1 / Luke 4:18 ('the Spirit of the Lord is upon me, because he has anointed me')\",\n    \"Acts 10:38 ('God anointed Jesus of Nazareth with the Holy Spirit and with power')\",\n    \"1 John 2:20, 27 (the 'anointing' believers have received)\",\n    \"2 Corinthians 1:21-22 (God anointed us and gave the Spirit as a seal)\",\n    \"Psalm 23:5 ('you anoint my head with oil')\",\n    \"Matthew 25:1-13 (oil in the lamps of the wise virgins, often read as the Spirit or spiritual readiness)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Healing and restoration: oil as a medicinal/ministerial sign used in prayer for the sick, foundational to practices of anointing the sick (and the Catholic/Orthodox sacrament of anointing).\",\n      \"basis\": [\n        \"James 5:14\",\n        \"Mark 6:13\",\n        \"Luke 10:34 (the Samaritan pours oil and wine on wounds)\",\n        \"Isaiah 1:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Joy and gladness: oil as a festal symbol of blessing, celebration, and divine favor ('oil of gladness').\",\n      \"basis\": [\n        \"Psalm 45:7 / Hebrews 1:9\",\n        \"Isaiah 61:3\",\n        \"Psalm 104:15\",\n        \"Ecclesiastes 9:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Consecration and setting apart for sacred office or use (priests, kings, prophets, sacred objects), emphasized as a distinct meaning rather than only a vehicle for the Spirit.\",\n      \"basis\": [\n        \"Exodus 29:7\",\n        \"Leviticus 8:10-12\",\n        \"Exodus 40:9-15\",\n        \"1 Kings 19:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Blessing, abundance, and prosperity: oil as a staple of the land's fruitfulness and covenant blessing; also unity/fellowship in Psalm 133.\",\n      \"basis\": [\n        \"Deuteronomy 7:13; 8:8\",\n        \"Joel 2:19, 24\",\n        \"Psalm 133:1-2\",\n        \"Deuteronomy 33:24\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In the parable of the ten virgins specifically, oil read as faith, good works, grace, or spiritual preparedness rather than strictly the Holy Spirit (a long-standing exegetical divergence, e.g., Augustine and later commentators).\",\n      \"basis\": [\n        \"Matthew 25:1-13\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Light/illumination and witness: oil as fuel for lamps symbolizing testimony, devotion, or the word of God sustained in the believer.\",\n      \"basis\": [\n        \"Exodus 27:20-21\",\n        \"Leviticus 24:2\",\n        \"Zechariah 4\",\n        \"Matthew 5:14-16 (by extension)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly recognizable consensus that oil's chief symbolic referent is the Holy Spirit and His anointing, rooted in the Old Testament practice of anointing and the messianic title 'Anointed One.' However, oil is a multivalent biblical symbol, and interpreters routinely acknowledge secondary meanings (healing, joy, consecration, abundance) as context-dependent rather than competing. The most debated single text is Matthew 25 (the ten virgins), where commentators divide over whether the oil represents the Spirit, faith, works, or readiness. Sacramental traditions (Catholic, Orthodox) also institutionalize oil in chrismation/confirmation and anointing of the sick, reinforcing the Spirit-and-healing associations.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Holy Spirit—especially divine anointing, consecration, presence, and empowerment for service—is the symbolic meaning most commonly assigned to oil in Christian teaching.\",\n  \"primary_basis\": [\n    \"1 Samuel 16:13 — David is anointed with oil, and the Spirit of the LORD comes powerfully upon him.\",\n    \"Isaiah 61:1 and Luke 4:18 — anointing is associated with the Spirit resting upon and commissioning the Messiah.\",\n    \"Acts 10:38 — God anoints Jesus with the Holy Spirit and power.\",\n    \"Zechariah 4:1-14, especially 4:6 — the vision of the oil-fed lampstand is explained in terms of God's Spirit rather than human might.\",\n    \"2 Corinthians 1:21-22 — divine anointing is linked with the Spirit given as a guarantee.\",\n    \"1 John 2:20, 27 — believers receive an 'anointing,' commonly interpreted in Christian teaching as the Holy Spirit.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Consecration, appointment, or authorization for a sacred office, particularly that of priest, king, prophet, or Messiah. This may overlap with Spirit symbolism but can function independently as a ritual and vocational sign.\",\n      \"basis\": [\n        \"Exodus 28:41; 29:7\",\n        \"Exodus 30:22-33\",\n        \"Leviticus 8:10-12\",\n        \"1 Samuel 10:1\",\n        \"1 Kings 19:15-16\",\n        \"Psalm 2:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Healing or medicinal care, sometimes accompanied by prayer and divine healing rather than functioning as a direct symbol of the Holy Spirit.\",\n      \"basis\": [\n        \"Isaiah 1:6\",\n        \"Mark 6:13\",\n        \"Luke 10:34\",\n        \"James 5:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Joy, honor, refreshment, blessing, prosperity, or festal abundance.\",\n      \"basis\": [\n        \"Psalm 23:5\",\n        \"Psalm 45:7\",\n        \"Psalm 104:15\",\n        \"Isaiah 61:3\",\n        \"Ecclesiastes 9:8\",\n        \"Hebrews 1:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Light, spiritual readiness, vigilance, or persevering preparedness, especially through oil used in lamps.\",\n      \"basis\": [\n        \"Exodus 27:20-21\",\n        \"Matthew 25:1-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hospitality, personal honor, grooming, or mourning practices, often reflecting ordinary ancient custom rather than a fixed theological symbol.\",\n      \"basis\": [\n        \"2 Samuel 14:2\",\n        \"Psalm 23:5\",\n        \"Matthew 6:17\",\n        \"Luke 7:46\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Oil as an ordinary commodity—food, fuel, medicine, trade goods, or agricultural produce—with no necessary symbolic meaning in a given passage.\",\n      \"basis\": [\n        \"Deuteronomy 7:13\",\n        \"1 Kings 17:12-16\",\n        \"2 Kings 4:1-7\",\n        \"Luke 16:6\",\n        \"Revelation 6:6\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable dominant Christian convention identifying oil with the Holy Spirit, particularly where anointing and empowerment occur together. Nevertheless, biblical interpretation does not treat oil as a universal one-to-one symbol. Its meaning is strongly context-dependent, and many passages concern consecration, healing, joy, hospitality, lamp fuel, or ordinary material use instead.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"the Holy Spirit (His anointing, presence, empowerment, and illumination)\",\n  \"primary_basis\": [\n    \"1 Samuel 16:13 (anointing of David with oil accompanied by the Spirit of the Lord)\",\n    \"Isaiah 61:1 and Luke 4:18 (Spirit of the Lord anoints for ministry)\",\n    \"Acts 10:38 (God anointed Jesus with the Holy Spirit and power)\",\n    \"Zechariah 4:1-14 (oil flowing to the lampstand, interpreted as 'not by might nor by power but by my Spirit')\",\n    \"Matthew 25:1-13 (oil in the virgins' lamps commonly read as the Holy Spirit or His sustaining presence)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"healing and physical restoration\",\n      \"basis\": [\n        \"James 5:14-15 (elders anoint the sick with oil)\",\n        \"Mark 6:13 (disciples anoint many sick with oil)\",\n        \"Luke 10:34 (oil used medicinally by the Good Samaritan)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"joy, gladness, or festivity\",\n      \"basis\": [\n        \"Psalm 45:7 / Hebrews 1:9 (oil of gladness)\",\n        \"Psalm 23:5 (anoint my head with oil)\",\n        \"Isaiah 61:3 (oil of joy instead of mourning)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"consecration / setting apart for sacred office or service\",\n      \"basis\": [\n        \"Exodus 30:22-33 (holy anointing oil for tabernacle and priests)\",\n        \"Leviticus 8 (anointing of Aaron and sons)\",\n        \"1 Kings 1:39 and 19:16 (anointing of kings and prophets)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"readiness, vigilance, or personal spiritual preparation (distinct from the Spirit Himself)\",\n      \"basis\": [\n        \"Matthew 25:1-13 (oil as the resource that keeps the lamp burning)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"abundance, blessing, or prosperity\",\n      \"basis\": [\n        \"Deuteronomy 8:8 and 32:13 (land of olive oil)\",\n        \"Joel 2:24 (vats overflowing with oil)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, Reformation, evangelical, and modern biblical-theological sources the dominant symbolic assignment of oil (especially olive oil used in anointing) is the Holy Spirit; other associations (healing, joy, consecration) are widely recognized but secondary or derivative of the Spirit motif rather than competing primaries.\"\n}\n\nBOOK ENTRY\nThe pressed, tested fruit of the olive — proven works that make light; not the Spirit.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the Holy Spirit — anointing, consecration, and empowering.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 27:20; Prov 21:20; Matt 25:3-9; 5:16) · see The Fool and the Wise, ch. 20\n\nAVAILABLE KJV EXCERPTS\nExodus 27:20 — And thou shalt command the children of Israel, that they bring thee pure oil olive beaten for the light, to cause the lamp to burn always.\nProverbs 21:20 — There is treasure to be desired and oil in the dwelling of the wise; but a foolish man spendeth it up.\nMatthew 25:3 — They that were foolish took their lamps, and took no oil with them:\nMatthew 25:4 — But the wise took oil in their vessels with their lamps.\nMatthew 25:5 — While the bridegroom tarried, they all slumbered and slept.\nMatthew 25:6 — And at midnight there was a cry made, Behold, the bridegroom cometh; go ye out to meet him.\nMatthew 25:7 — Then all those virgins arose, and trimmed their lamps.\nMatthew 25:8 — And the foolish said unto the wise, Give us of your oil; for our lamps are gone out.\nMatthew 25:9 — But the wise answered, saying, Not so; lest there be not enough for us and you: but go ye rather to them that sell, and buy for yourselves.\nMatthew 5:16 — Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.\n\nCLASSIFY THE RELATIONSHIP\n\n- MATCH: substantially the same meaning as the recognizable consensus.\n- REFINED: compatible with the consensus but materially sharper, narrower,\n  broader, or more precisely supported.\n- DIVERGENT: contradicts or displaces a recognizable common interpretation.\n- NOVEL: no recognizable consensus covers the book's central claim; the book\n  stakes a meaning not represented by the blind responses.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  }
+}

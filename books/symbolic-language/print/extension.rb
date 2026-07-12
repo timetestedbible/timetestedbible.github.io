@@ -854,13 +854,27 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       end
     end
     return super unless badge
+    badge_page = page_number
     y0 = cursor
     result = super
     unless scratch?
+      # A long glossary definition may legitimately flow across a facing-page
+      # spread. `super` then leaves Prawn on the second page; drawing at y0
+      # without returning first strands the badge on that page instead of on
+      # the term line where it belongs. Ink on the captured start page, then
+      # restore both the ending page and cursor so subsequent layout is
+      # untouched.
+      end_page = page_number
+      end_cursor = cursor
+      go_to_page badge_page if end_page != badge_page
       prev_fill = fill_color
       fill_color '777777'
       text_box badge, at: [0, y0 - 1.5], width: bounds.width, align: :right, size: 6.8
       fill_color prev_fill
+      if end_page != badge_page
+        go_to_page end_page
+        move_cursor_to end_cursor
+      end
     end
     result
   end
@@ -1003,7 +1017,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'gospel'                => 'images/print/05-herald.jpg',
     'knowing-faith-love-and-belief' => 'images/print/06-cloak.jpg',
     'the-way-the-truth-and-the-life' => 'images/print/07-narrow-path.jpg',
-    'the-name'              => 'images/print/08-strong-tower.jpg',
+    'the-name'              => 'images/print/08-ark-name.jpg',
+    'tower'                 => 'images/print/08-strong-tower.jpg',
     'the-disciple'          => 'images/print/09-sealed-scroll.jpg',
     'the-seal'              => 'images/print/10-inkhorn-seal.jpg',
     'the-coin'              => 'images/print/11-fish-stater.jpg',
@@ -1021,6 +1036,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'the-four-winds'        => 'images/print/34-four-horsemen.jpg',
     'mountain'              => 'images/print/39-colossus-mountain.jpg',
     'sea-and-waters'        => 'images/print/40-peace-be-still.jpg',
+    'the-ship'              => 'images/print/40s-ship-of-state.jpg',
     'trees'                 => 'images/print/41-kingdom-tree.jpg',
     'grass'                 => 'images/print/42-harvest-grass.jpg',
     'garments'              => 'images/print/43-wedding-garment.jpg',

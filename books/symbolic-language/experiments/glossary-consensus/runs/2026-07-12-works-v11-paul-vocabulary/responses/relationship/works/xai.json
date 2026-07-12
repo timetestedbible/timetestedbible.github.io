@@ -1,0 +1,167 @@
+{
+  "created_at": 1783839878,
+  "completed_at": 1783839884,
+  "id": "e396c334-7e3b-95b4-93cb-c226015e8fcc",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Across the blind responses, 'works' primarily means a person's outward deeds or conduct that express and evidence the inner spiritual condition—good works as the fruit of genuine faith, grace, and regeneration, and evil works as the fruit of unbelief, the flesh, or darkness—serving as the visible basis of assessment and judgment, while remaining distinct from saving faith itself in the dominant Protestant framing.\",\n  \"book_summary\": \"Works are deeds that are not synonymous with obedience; a work becomes obedience only when it executes God's command (or disobedience under another lawgiver). Romans 4 treats the laborer's work as offered for wages/debt, while James 2 treats Abraham's work as faith made visible; even complete obedience earns no wage, as the servant has only done his duty.\",\n  \"consensus_core_identification\": \"Outward human deeds/actions (good or evil) that manifest inner spiritual state as fruit/evidence of faith or its opposite.\",\n  \"book_core_identification\": \"Deeds whose moral or spiritual character is fixed by the governing lawgiver (obedience only when executing God's command), distinct from any automatic equation with obedience and carrying no wage-earning status even when complete.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"The book excludes the common equation of works with obedience or with human effort broadly opposed to faith; it reclassifies works so that only those executing God's command count as obedience, and it denies that even complete duty-works earn wages or merit.\",\n  \"material_contradiction\": \"None at the center: both identify works as deeds; the book does not replace the referent with something else (e.g., doctrine or a hidden power) but tightens the conditions under which deeds count as obedience versus mere works.\",\n  \"rationale\": \"Both cores refer to human deeds rather than to an unrelated symbol. The consensus treats works generically as fruit/evidence of the heart and often loosely equates good works with obedience that follows faith. The book preserves the deeds referent but materially narrows and conditions it: works are not a synonym for obedience; obedience is defined strictly by whose command is executed; and Luke 17:7-10 / Romans 4 are used to strip works of any wage-earning status. This is boundary refinement and partial reclassification of cases (which deeds count as obedience, whether they can ever be meritorious), not replacement of the central referent. The book's common-view note itself acknowledges the broader Protestant framing it is refining.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The consensus already distinguishes works from meritorious cause of justification and cites the same Romans 4 and James 2 texts; the book's further insistence that works are 'not a synonym for obedience' may be viewed as a terminological precision rather than a material change of extension.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_e396c334-7e3b-95b4-93cb-c226015e8fcc",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4956,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 639,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5595,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 135540000,
+    "context_details": {
+      "input_tokens": 4956,
+      "output_tokens": 639
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

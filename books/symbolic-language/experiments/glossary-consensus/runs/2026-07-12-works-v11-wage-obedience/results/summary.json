@@ -1,0 +1,36 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "REFINED": 1
+  },
+  "rows": [
+    {
+      "anchor": "works",
+      "term": "Works (good works, evil works)",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "MATCH",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "STRONG",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    }
+  ]
+}

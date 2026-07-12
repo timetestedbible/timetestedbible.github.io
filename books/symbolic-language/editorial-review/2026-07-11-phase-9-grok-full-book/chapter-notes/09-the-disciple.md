@@ -1,0 +1,3 @@
+# The Disciple
+
+This chunk is strong: it opens with a precise lexical definition from Isaiah, chains the three cannot-gates to the marks of discipleship, and closes the arc from baptism into the Name to the sealed forehead with clean symbolic consistency. The law-positive stance and density of proof-texts are intact and assertive. Residual issues are limited: one house-style sentence-open with And, a presenter-style 'word to weigh' cue, and one incomplete clause after a semicolon that leaves the Matthew 5:17 allusion dangling. No AI vocabulary, no doctrine rewrites needed, and the modern contrast 'growth curves' is deliberate rather than defective. Surgical fixes restore flow without thinning the voice.

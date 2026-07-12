@@ -1,0 +1,3 @@
+# Time Tested Tradition
+
+This chunk is dense, assertive, and on-voice: the map/terrain frame, the chained NT charges against Pharisaic tradition, and the eclipse-anchored AD 32 claim land with force and without hedging. Main defects are house-style sentence openers (multiple author-prose lines begin with But/And/That), residual presenter imperatives built on “weigh,” one clear comma splice, and a slightly broken “puts a Monday crucifixion” construction. TimeTested.Bible also appears in body prose, which house style reserves for front/back matter or footnotes; one residual “And when…” opener remains after the fixes below.

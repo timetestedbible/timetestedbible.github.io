@@ -1,0 +1,195 @@
+{
+  "id": "resp_0a58d37cef86b1fd006a533cfaca008190ac73c8f09c9491b7",
+  "object": "response",
+  "created_at": 1783839994,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783840015,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a58d37cef86b1fd006a533cfc8e4881908af5462238dbc51a",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a58d37cef86b1fd006a533d05a74881908d14f921626f1343",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Righteousness centrally means rightness according to God, encompassing both right standing before God—often graciously credited through faith—and actual conformity to God’s will in conduct.\",\"book_summary\":\"Righteousness is primarily actual right-living: doing what God commands according to God’s own right character. It is graciously given or reckoned and never merited as a wage, but grace does not classify wrong conduct itself as righteous.\",\"consensus_core_identification\":\"Divinely measured rightness, expressed as both a relational or forensic standing before God and moral conformity to his will.\",\"book_core_identification\":\"Divinely measured right-living, especially obedient conduct under God’s authority, granted or reckoned by grace without becoming meritorious wage-work.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book privileges the consensus’s ethical or transformative component and excludes—or at least resists—cases in which a person is called righteous solely by an imputed forensic status while remaining characterized by wrong-living. It reclassifies obedience as constitutive of righteousness rather than merely its subsequent fruit, while retaining gracious reckoning and the denial of merit.\",\"material_contradiction\":\"There is a material boundary conflict with the dominant forensic formulation: the common view can distinguish righteous standing from present righteous conduct, whereas the book insists that grace never turns wrong-living into right-living and identifies righteousness primarily with the latter. However, this does not replace the broader category of rightness according to God and closely matches a common ethical/transformative alternative already recognized by the consensus.\",\"rationale\":\"The minimum cores overlap in identifying righteousness as rightness measured by God. The book does not introduce a new referent; it selects and strengthens the behavioral-obediential strand already included in all three consensus responses. Its distinctive move is to subordinate forensic standing to actual right-living and to interpret Romans 4 as excluding meritorious wage claims rather than obedience itself. Because this changes which cases qualify and how imputation relates to conduct without abandoning the general category, the relationship is REFINED rather than MATCH, DIVERGENT, or NOVEL.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Romans 4:5 explicitly speaks of God justifying the ungodly and counting faith as righteousness apart from working, while Philippians 3:9 contrasts Paul’s law-based righteousness with righteousness through faith. Those texts naturally support a forensic standing not reducible to commandment-keeping, so the printed citations do not by themselves establish the book’s claim that right-living is the primary identification or that Romans 4 excludes only debt-producing work rather than works more generally.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4269,
+    "input_tokens_details": {
+      "cache_write_tokens": 4266,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1021,
+    "output_tokens_details": {
+      "reasoning_tokens": 454
+    },
+    "total_tokens": 5290
+  },
+  "user": null,
+  "metadata": {}
+}

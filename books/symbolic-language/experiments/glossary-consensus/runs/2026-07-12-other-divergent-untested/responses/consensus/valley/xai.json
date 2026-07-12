@@ -1,0 +1,156 @@
+{
+  "created_at": 1783845145,
+  "completed_at": 1783845159,
+  "id": "f81ed9da-5d80-925b-9b18-12f0135fb2cd",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_f81ed9da-5d80-925b-9b18-12f0135fb2cd",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Valley\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primarySymbolicMeaning\": \"A place of trial, testing, or spiritual low point, often symbolizing dark times, death, or adversity, from which God's presence provides comfort and strength.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A place or season of trial, affliction, spiritual darkness, or testing that the believer must pass through under God's care\",\n  \"primary_basis\": [\n    \"Psalm 23:4\",\n    \"Psalm 84:6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A site of divine judgment, battle, or decisive reckoning\",\n      \"basis\": [\n        \"Joel 3:2\",\n        \"Joel 3:12-14\",\n        \"2 Chronicles 20:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Humility or lowliness that God will raise up (contrasted with mountains of pride)\",\n      \"basis\": [\n        \"Isaiah 40:4\",\n        \"Luke 3:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A place of fruitfulness, fertility, or natural blessing\",\n      \"basis\": [\n        \"Numbers 13:23-24\",\n        \"Deuteronomy 8:7\",\n        \"Song of Solomon 6:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A desolate setting for restoration or resurrection hope\",\n      \"basis\": [\n        \"Ezekiel 37:1-14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian preaching, devotion, and popular teaching overwhelmingly treat 'valley' via the Psalm 23 image of walking through darkness or death-shadow with divine presence; other biblical valleys supply secondary but well-attested motifs of judgment, humility, or fertility without displacing the primary trial reading.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_f81ed9da-5d80-925b-9b18-12f0135fb2cd",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1588,
+    "output_tokens_details": {
+      "reasoning_tokens": 1183
+    },
+    "total_tokens": 2190,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 105400000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1588
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

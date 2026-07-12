@@ -1,0 +1,178 @@
+{
+  "created_at": 1783891470,
+  "completed_at": 1783891508,
+  "id": "40608617-2984-99cd-b48d-8cfe9ed765b4",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_40608617-2984-99cd-b48d-8cfe9ed765b4",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Name\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification preserves the consensus referent (God's name as covenant identity, character, authority, and presence) but materially narrows and extends it by specifying that the name consists exactly of the 3 covenant elements provided by the Head of the house (Word/mana, law/tables, priesthood/rod). This is not a replacement of the central referent but a precise boundary condition: the name is the house's covenant identity rather than the person's character or reputation in general.\",\n  \"extension_reasoning\": \"The book 1) adds the specific tripartite content (manna, stone tables, Aaron's rod) as the concrete makeup of the name, 2) introduces the mechanism of counterfeit names (substitution of any of the three), 3) defines taking the name in vain as rejection or removal of any element, and  4) links the name to bridal covenant belonging (entering the house, obeying authority). These are boundary refinements rather than contradictions; the consensus already includes name-as-presence-in-sanctuary and name-as-authority, which the book particularizes to the ark's contents.\",\n  \"citations_support\": \"strong\",\n \"citations_reasoning\": \"The printed KJV excerpts (2 Sam 6:2; 7:2,13; 1 Kgs 8:20-21; Heb 9:4; Deut 8:3; 4:13; Num 17:5,8; Ex  20:7; Isa 4:1) directly supply the house-for-name, ark-contents, and 'name in vain' texts that the book uses, giving strong textual grounding for its specific identification.\"\n}```json\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED \",\n  \"core_reasoning\": \"The book's core identification preserves the consensus referent (God's name as covenant identity, character, authority, and presence) but materially narrows and extends it by specifying that the name consists exactly of the 3 covenant elements provided by the Head of the house (Word/mana, law/tables , priesthood/rod). This is not a replacement of the central referent but a precise boundary condition: the name is the house's covenant identity rather than the person's character or reputation in general.\",\n  \"extension_reasoning\": \"The book 1) adds the specific tripartite content (manna, stone tables, Aaron 's rod) as the concrete makeup of the name, 2) introduces the mechanism of counterfeit names (substitution of any of the three), 3) defines taking the name in vain as rejection or removal of any element, and 4) links the name to bridal covenant belonging (entering the house, obeying authority). These are boundary refinements rather than contradictions; the consensus already includes name-as-presence-in-sanctuary and name-as-authority, which the book particularizes to the ark's contents.\",\n  \"citations_support\": \"strong\",\n  \"citations_reasoning\": \"The printed KJV excerpts (2 Sam 6 2; 7:2,13; 1 Kgs 8:20-21; Heb 9:4; Deut 8:3; 4:13; Num 17:5,8; Ex 20:7; Isa 4:1) directly supply the house-for-name , ark-contents, and 'name in vain' texts that the book uses, giving strong textual grounding for its specific identification.\"\n}\n``` \n\n{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Name symbolizes the essential character, identity, authority, presence, and reputation of the person, especially God's revealed nature; acting or calling on the name engages the person himself.\",\n  \"book_summary\": \"Name is the covenant identity of a house consisting of the Word (manna), covenant law (stone tables), and fruitful priesthood (Aaron's budded rod); counterfeit names substitute different elements; taking the name in vain means rejecting or removing any of them; a bride takes the Name by entering the house under authority and obedience.\",\n  \"consensus_core_identification\": \"the person's (esp.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"A name primarily symbolizes the essential character, identity, authority, presence, and reputation of the person who bears it (supremely God or Jesus), so that knowing, invoking, or acting in the name engages the person himself; alternatives (delegated agency, reputation, new identity, dwelling presence) are complementary facets of the same core.\",\n  \"book_summary\": \"Name is the covenant identity of a house, consisting of three things appointed by its Head: the Word (manna), the covenant law (stone tables), and the fruitful priesthood (Aaron’s budded rod). A counterfeit substitutes different elements; the Name is taken in vain when any is rejected or removed; a bride takes her Husband’s Name by entering His house under His authority and obedience.\",\n  \"consensus_core_identification\": \"the person’s (especially God’s) character, identity, authority, presence, and reputation\",\n  \"book_core_identification\": \"the tripartite covenant identity of a house (Word/manna + law/tables + priesthood/rod)\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus treats Name as a broad personal attribute applicable across many scriptural contexts and persons; the book redefines it exclusively as the three ark-contents that constitute house-identity and related house/bride imagery.\",\n  \"material_contradiction\": \"Consensus equates Name with personal character/identity/authority; the book equates Name with the concrete triad of manna, tables, and rod as house-covenant identity. The two cannot both be the primary symbolic referent of the same term in the same sense; accepting the book replaces the consensus identification (as the book itself signals by noting the common view separately).\",\n  \"rationale\": \"Minimum cores are non-equivalent: consensus centers on abstract personal attributes revealed by any name, while the book centers on three specific cultic objects that constitute a house’s covenant identity. The book’s own common-view note explicitly distinguishes its claim from the consensus teaching of character/authority/reputation, confirming replacement rather than narrowing, broadening, or mere absence. No consensus primary or alternative meaning mentions the manna-tables-rod triad or house-identity construction. Therefore the relation is core-divergent with a different referent, not a refinement of shared cases.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The triad could be read as a typological unpacking of God’s character, word, and authority (already inside the consensus), making the entry a specialized REFINED application rather than a replaced referent; the printed verses link Name to house/ark without an explicit equation of Name = the three items.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_40608617-2984-99cd-b48d-8cfe9ed765b4",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4713,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 4437,
+    "output_tokens_details": {
+      "reasoning_tokens": 3833
+    },
+    "total_tokens": 9150,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 358560000,
+    "context_details": {
+      "input_tokens": 4713,
+      "output_tokens": 4437
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

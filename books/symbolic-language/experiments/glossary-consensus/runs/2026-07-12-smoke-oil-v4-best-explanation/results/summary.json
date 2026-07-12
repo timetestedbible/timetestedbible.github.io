@@ -1,0 +1,36 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_PERSUADED": 1
+  },
+  "rows": [
+    {
+      "anchor": "oil",
+      "term": "Oil (lamp oil)",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "STRONG",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    }
+  ]
+}

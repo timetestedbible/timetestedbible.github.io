@@ -1,0 +1,77 @@
+{
+  "sources": [
+    {
+      "run_id": "2026-07-12-foundation-words-v7",
+      "manifest_sha256": "3b746a69738a32237517e223f27f8cc06a2b8045302d82d3bb7c62294672ef3e"
+    }
+  ],
+  "findings": [
+    {
+      "anchor": "belief",
+      "term": "Belief, to believe",
+      "book_entry": "To obey because it is the truth — an obedient response, not bare assent; the opposite of “believe” is apeitheō, to disobey.",
+      "source_run": "2026-07-12-foundation-words-v7",
+      "accepted_by_provider": {
+        "anthropic": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "To believe, in Scripture, is an obedient response to the truth rather than bare intellectual assent; its scriptural opposite is not doubt but disobedience (apeitheo), as the Greek of John 3:36 and the obeyed/believed parallel of Romans 10:16 show.",
+          "model": "claude-fable-5"
+        }
+      }
+    },
+    {
+      "anchor": "faith",
+      "term": "Faith",
+      "book_entry": "Faithfulness — obedience held steady by hope in the promise; “faith without works is dead”.",
+      "source_run": "2026-07-12-foundation-words-v7",
+      "accepted_by_provider": {
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Biblical 'faith' (emunah/pistis) denotes faithfulness: steadfast obedience to God's commandments held constant in hope of the unseen promise — an enacted covenant loyalty, not a mental state of assent or bare inner trust of which works are only a downstream effect.",
+          "model": "claude-fable-5"
+        }
+      }
+    },
+    {
+      "anchor": "knowing",
+      "term": "Knowing, to know",
+      "book_entry": "Covenant relationship proven by obedience — the intimate “knew” of marriage; a stranger is one not known.",
+      "source_run": "2026-07-12-foundation-words-v7",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "To know God is to stand in a covenant relationship with him, a relationship whose reality is demonstrated by obedience to his commandments.",
+          "model": "gpt-5.6-sol"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "'To know' (God, or be known by Him) denotes a covenant relationship — of the intimate, marital kind first instanced in Genesis 4:1 — whose existence is proven by keeping the commandments; to be 'not known' is to be a stranger, one outside the covenant household.",
+          "model": "claude-fable-5"
+        },
+        "xai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "Knowing God is a covenant relationship (intimate like marriage) proven by obedience; the unknown are strangers/workers of lawlessness.",
+          "model": "grok-4.5"
+        }
+      }
+    },
+    {
+      "anchor": "love",
+      "term": "Love",
+      "book_entry": "Keeping the commandments — “this is the love of God, that we keep his commandments”.",
+      "source_run": "2026-07-12-foundation-words-v7",
+      "accepted_by_provider": {
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "In Scripture's own usage, the love of God (humanity's love toward God, and love of neighbor under Him) is enacted commandment-keeping — obedience to what God commanded — rather than an inner feeling or mere affection: 'this is the love of God, that we keep his commandments' (1 John 5:3).",
+          "model": "claude-fable-5"
+        },
+        "xai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "Love (the love of God) is the keeping of His commandments.",
+          "model": "grok-4.5"
+        }
+      }
+    }
+  ]
+}

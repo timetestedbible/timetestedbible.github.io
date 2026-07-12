@@ -1,0 +1,3 @@
+# Jacob, Israel, and Ephraim
+
+The chapter builds a tight, law-positive chain from Jacob’s crooked heart through Israel’s straightening to Ephraim’s fruit-in-affliction and the two sticks/olive trees, with dense, well-chosen scripture and no hedging. The dual-name argument against the old-man/new-man swap is clear and forceful. Issues are localized: one factual timing slip that attaches “the very night” to Genesis 35:10, two author-prose sentences that open with And, mild presenter staging in the “See when” and closing “Hold on” lines, and a stranded citation that breaks the John 1:47 sentence. No AI vocabulary, doctrine invention, or scripture-quote corruption appears.

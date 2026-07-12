@@ -1,0 +1,155 @@
+{
+  "id": "resp_0736ccca5c575753006a532a1a1d5481978b72acb5026665f3",
+  "object": "response",
+  "created_at": 1783835162,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783835170,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0736ccca5c575753006a532a1ad93481978db70eb503d01a42",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0736ccca5c575753006a532a1ed2e881978ef9b3bff03f43ca",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The consensus treats righteousness broadly as right standing before God together with conformity to God’s will, with a dominant salvation-context emphasis on righteousness granted through faith rather than earned by works. Ethical obedience is recognized as a common secondary or complementary sense.\",\"book_summary\":\"The book identifies righteousness specifically with doing God’s commandments—the law actually kept and embodied in righteous acts—and rejects reducing it to vague goodness or a merely received forensic verdict.\",\"rationale\":\"The claim is not novel because all blind responses recognize ethical or behavioral righteousness as an established biblical meaning. It is nevertheless divergent because the book elevates that meaning to the controlling definition and explicitly displaces the commonly taught forensic/imputed interpretation that the consensus places at or near the center.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Deuteronomy 6:25, Psalm 119:172, and 1 John 3:7 directly support a genuine obedience-centered use of righteousness, but they do not by themselves establish that this is the term’s exhaustive meaning, negate forensic uses in Pauline texts, or fully substantiate the garment imagery.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3297,
+    "input_tokens_details": {
+      "cache_write_tokens": 3294,
+      "cached_tokens": 0
+    },
+    "output_tokens": 423,
+    "output_tokens_details": {
+      "reasoning_tokens": 180
+    },
+    "total_tokens": 3720
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "pearl",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nPearl\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"The pearl primarily symbolizes the Kingdom of Heaven (or the salvation/gospel found in it) as a treasure of supreme, surpassing worth — something so valuable that a person should gladly give up everything else to obtain it. By extension it stands for sacred, precious spiritual truth.\",\n  \"primary_basis\": [\n    \"Matthew 13:45-46 (the Parable of the Pearl of Great Price: the kingdom of heaven likened to a merchant who sells all he has to buy one pearl of great value)\",\n    \"Matthew 7:6 ('do not cast your pearls before swine' — pearls as holy, precious truth not to be treated with contempt)\",\n    \"Revelation 21:21 (the twelve gates of the New Jerusalem each made of a single pearl, associating pearls with the glory and worth of God's kingdom)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ himself as the pearl of great price — the believer surrenders everything to gain Christ (Phil 3:7-8 often cited in support).\",\n      \"basis\": [\n        \"Matthew 13:45-46\",\n        \"Philippians 3:7-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The reversed reading: the merchant is Christ and the pearl is the Church or the individual believer, whom Christ 'purchased' at the cost of everything (his life). Popular in some evangelical and dispensational teaching.\",\n      \"basis\": [\n        \"Matthew 13:45-46\",\n        \"1 Corinthians 6:20\",\n        \"Ephesians 5:25-27\",\n        \"Acts 20:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pearls as worldly luxury, ostentation, and moral corruption — adornment of the immodest or of 'Babylon the Great,' symbolizing wealth opposed to godliness.\",\n      \"basis\": [\n        \"1 Timothy 2:9\",\n        \"Revelation 17:4\",\n        \"Revelation 18:12-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Patristic/mystical readings of the pearl as the soul, purity, or the incarnate Word (e.g., the pearl formed in the oyster as an image of the virgin birth in some early Christian and Syriac writings such as Ephrem the Syrian's Hymns on the Pearl).\",\n      \"basis\": [\n        \"Matthew 13:45-46 (allegorized)\",\n        \"extrabiblical patristic tradition\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gnostic-influenced reading of the pearl as the divine soul lost in the material world (as in the 'Hymn of the Pearl' from the Acts of Thomas) — sometimes referenced in scholarship but not mainstream Christian teaching.\",\n      \"basis\": [\n        \"Acts of Thomas (Hymn of the Pearl, extracanonical)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly settled consensus that the pearl symbolizes something of supreme spiritual value — most commonly the Kingdom of Heaven/salvation per Matthew 13:45-46, with Matthew 7:6 supporting the sense of holy truth. The chief live interpretive debate concerns the parable's direction: whether the seeker is the believer (pearl = kingdom/Christ) or Christ (pearl = church/believer); both readings are widely taught. A distinct negative valence (pearls as luxury and worldliness) coexists in the New Testament and is recognized in standard commentaries, but it does not displace the dominant positive symbolism.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The pearl most commonly symbolizes the incomparable worth of the kingdom of God—and, by extension, salvation or life in Christ—worth surrendering everything else to obtain.\",\n  \"primary_basis\": [\n    \"Matthew 13:45–46 — the merchant and the pearl of great price is the principal basis; the parable presents the kingdom of heaven as supremely valuable.\",\n    \"Matthew 7:6 — “pearls” represent something sacred and precious, often understood as divine truth or the gospel, reinforcing the general symbolism of spiritual value.\",\n    \"Revelation 21:21 — the pearl gates of the New Jerusalem associate pearls with the beauty, glory, and immeasurable value of the final redeemed order.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ himself is the pearl of great price, whom the believer seeks and values above everything else.\",\n      \"basis\": [\n        \"Matthew 13:45–46\",\n        \"Philippians 3:8 is often used as a thematic parallel, though it does not mention pearls.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The pearl represents the Church or redeemed people, while the merchant represents Christ, who gives all to acquire them.\",\n      \"basis\": [\n        \"Matthew 13:45–46\",\n        \"Ephesians 5:25 is sometimes cited as a thematic parallel concerning Christ giving himself for the Church.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Pearls symbolize sacred teaching, gospel truth, or wisdom that should not be offered to those who will contemptuously profane it.\",\n      \"basis\": [\n        \"Matthew 7:6\",\n        \"Job 28:18 in translations that compare wisdom with pearls.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pearls symbolize the splendor, purity, or preciousness of the New Jerusalem and entrance into the consummated kingdom.\",\n      \"basis\": [\n        \"Revelation 21:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pearls signify extravagant wealth, luxury, or ostentatious adornment, sometimes with a negative connotation.\",\n      \"basis\": [\n        \"1 Timothy 2:9\",\n        \"Revelation 17:4\",\n        \"Revelation 18:12,16\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong dominant association between pearls and exceptional spiritual preciousness, especially the supreme value of the kingdom in Matthew 13:45–46. However, there is no fully settled one-to-one symbolic referent across Scripture: context can make the pearl represent the kingdom, Christ, sacred truth, redeemed glory, or material luxury. Even within the pearl-of-great-price parable, interpreters differ over whether the pearl specifically represents the kingdom or Christ, and whether the merchant represents the seeker or Christ.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The kingdom of heaven (or the gospel of salvation/Christ) as a treasure of supreme, inestimable worth for which everything else should be sacrificed\",\n  \"primary_basis\": [\n    \"Matthew 13:45-46 (Parable of the Pearl of Great Price)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sacred or holy things (divine truths, the gospel, or teachings of Christ) that must not be cast before the unworthy or unappreciative\",\n      \"basis\": [\n        \"Matthew 7:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Church or the individual human soul (in readings where the merchant is Christ/God who seeks and purchases the pearl at great cost)\",\n      \"basis\": [\n        \"Matthew 13:45-46 (patristic and allegorical interpretations)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity, perfection, or the glorious entrance into the heavenly city\",\n      \"basis\": [\n        \"Revelation 21:21 (gates of pearl)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General preciousness, rarity, or wisdom formed through trial\",\n      \"basis\": [\n        \"Broader biblical imagery of pearls as costly jewels (e.g., Job 28; 1 Timothy 2:9; Revelation 17–18)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The parable supplies the dominant Christian symbolic association; secondary uses (Matt 7:6; Rev 21) are also standard. Allegorical details of the parable (who is the merchant, what exactly is the pearl) vary by tradition but do not displace the core sense of supreme value.\"\n}\n\nBOOK ENTRY\nThe one complete light — under the KJV's “rubies” (peninim, Strong's pearl), wisdom and the bride are priced above pearls; and the night sky's one pearl is the full moon (keseh, “fulness,” the letters under “throne” and “time appointed”), governor of the appointed times, the one-pearl gates of the city — the merchant's entry at the King's gate.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the kingdom of heaven, worth surrendering everything to gain — or the church, purchased by Christ.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Prov 3:15; 31:10; Ps 81:3; Prov 7:20; Job 26:9; Ps 104:19; Rev 21:21) · see The Pearls of Wisdom, ch. 31\n\nAVAILABLE KJV EXCERPTS\nProverbs 3:15 — She is more precious than rubies: and all the things thou canst desire are not to be compared unto her.\nProverbs 31:10 — Who can find a virtuous woman? for her price is far above rubies.\nPsalms 81:3 — Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day.\nProverbs 7:20 — He hath taken a bag of money with him, and will come home at the day appointed.\nJob 26:9 — He holdeth back the face of his throne, and spreadeth his cloud upon it.\nPsalms 104:19 — He appointed the moon for seasons: the sun knoweth his going down.\nRevelation 21:21 — And the twelve gates were twelve pearls; every several gate was of one pearl: and the street of the city was pure gold, as it were transparent glass.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "21f5d97f77123348de7de1bcc79a6cbabfc2478a2c40baae164254c3d15491cd",
+  "cache": {
+    "hit": false
+  }
+}

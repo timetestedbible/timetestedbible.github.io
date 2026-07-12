@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "relation": {"type": "string", "enum": ["MATCH", "REFINED", "DIVERGENT", "NOVEL"]},
+    "consensus_summary": {"type": "string"},
+    "book_summary": {"type": "string"},
+    "rationale": {"type": "string"},
+    "citation_support": {"type": "string", "enum": ["STRONG", "PARTIAL", "INSUFFICIENT"]},
+    "strongest_objection": {"type": "string"},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+  },
+  "required": ["relation", "consensus_summary", "book_summary", "rationale", "citation_support", "strongest_objection", "confidence"]
+}

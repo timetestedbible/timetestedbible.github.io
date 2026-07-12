@@ -1,0 +1,195 @@
+{
+  "id": "resp_0f81c8cfc43d2d2e006a5349bf8b048194bbb369fc62da1d90",
+  "object": "response",
+  "created_at": 1783843263,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783843283,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f81c8cfc43d2d2e006a5349c0c5ec8194bcd06a365174a05c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f81c8cfc43d2d2e006a5349ca32188194a066c71de9022b33",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The shared consensus identifies “works of the law” as deeds associated with observance of the Mosaic Torah, especially when treated as a basis for justification. It also recognizes substantial disagreement over whether these are the whole Torah, boundary markers, ceremonial requirements, or merit-seeking works more generally.\",\"book_summary\":\"The book treats the phrase as context-dependent deeds considered in relation to law, not as a fixed class or a synonym for obedience. Its constant element is the invalid claim that such deeds can purchase justification, produce the Spirit, establish covenant standing, or put God in debt.\",\"consensus_core_identification\":\"Deeds associated with Mosaic-law observance that cannot serve as the basis of justification before God.\",\"book_core_identification\":\"Contextually identified deeds related to law whose claimed efficacy as the purchase price of divine standing or blessing is denied.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"BOOK_SUPERSET\",\"boundary_disagreement\":\"The book broadens the ordinary identification beyond deeds that actually obey the Mosaic Torah. It includes context-specific circumcision-party applications and potentially unnamed deeds merely considered under a law-based claim, while refusing to define one stable class of acts. Obedient Torah deeds remain included but no longer define the phrase’s full extension.\",\"material_contradiction\":\"There is no contradiction at the shared center: both readings connect the deeds with law and deny their power to justify. The material difference is that the predominant consensus tends to identify the acts by their Torah-observant character, whereas the book makes the rejected claim made for contextually variable acts the phrase’s stable feature.\",\"rationale\":\"This is REFINED rather than MATCH because the book materially changes how cases are classified: “works of the law” is not a fixed set of Mosaic-law observances but a contextual category unified by an invalid instrumental claim. It is not DIVERGENT because it retains the consensus’s central law-related referent and justification contrast, and the consensus itself already contains alternatives involving boundary markers and particular halakhic applications.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed texts strongly support the denial that works of the law justify or produce the Spirit, but they do not by themselves establish that the phrase lacks a stable Torah-observance referent. Galatians 3:10’s appeal to doing everything written in the law may instead suggest that actual Torah performance remains integral to the phrase’s meaning.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4075,
+    "input_tokens_details": {
+      "cache_write_tokens": 4072,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1015,
+    "output_tokens_details": {
+      "reasoning_tokens": 506
+    },
+    "total_tokens": 5090
+  },
+  "user": null,
+  "metadata": {}
+}

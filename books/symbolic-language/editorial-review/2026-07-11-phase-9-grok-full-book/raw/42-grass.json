@@ -1,0 +1,60 @@
+{
+  "file": "books/symbolic-language/42-grass.adoc",
+  "title": "Grass",
+  "notes": [
+    "The chapter is dense, law-positive, and well-chained: grass to grain to harvest to chaff/tares to firstfruits to leaven, with OT definitions driving NT parables. Scripture density and assertive voice are strong; the closing reaping image lands cleanly. Residual house-style defects remain: one director cue (“Mark the mercy”), three author-prose sentences opening with “That,” and a compressed parallel that drops “are” before “the LORD’s own.” No doctrine, quote, or modernism problems need reopening."
+  ],
+  "proposals": [
+    {
+      "old": "Mark the mercy in the sifting:",
+      "new": "The mercy in the sifting:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue “Mark”.",
+      "rationale": "House style forbids presenter staging such as “Mark that/the.” Dropping the imperative leaves a plain assertion that still introduces the Amos quote.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is the enemy's work, and the Teacher's key link:/books/symbolic-language/the-parables-of-the-kingdom/[has already graded it]: the sym:sym-field[field] is the world, the good sym:sym-seed[seed] are the children of the kingdom, and the tares are the children of the wicked one (Matthew 13:38).footnote:fn36tares[Derived and graded in the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]",
+      "new": "This is the enemy's work, and the Teacher's key link:/books/symbolic-language/the-parables-of-the-kingdom/[has already graded it]: the sym:sym-field[field] is the world, the good sym:sym-seed[seed] are the children of the kingdom, and the tares are the children of the wicked one (Matthew 13:38).footnote:fn36tares[Derived and graded in the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Replace sentence-initial “That” with “This”.",
+      "rationale": "Author prose must not open with That. “This” keeps the same deictic force without the house-style violation.",
+      "_chunk": 1
+    },
+    {
+      "old": "That sheaf is Christ: __“now is Christ risen from the dead, and become the firstfruits of them that slept”__ (1 Corinthians 15:20), raised in the very season of the wave sheaf, the first of a harvest that rises after Him.",
+      "new": "This sheaf is Christ: __“now is Christ risen from the dead, and become the firstfruits of them that slept”__ (1 Corinthians 15:20), raised in the very season of the wave sheaf, the first of a harvest that rises after Him.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Replace sentence-initial “That” with “This”.",
+      "rationale": "Author prose must not open with That. “This sheaf” still points cleanly to the wave sheaf just named.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is why He could say __“Who hath ears to hear, let him hear”__ (Matthew 13:9), and why His astonishment that His own disciples link:/books/symbolic-language/the-parables-of-the-kingdom/[could not decode the sower] was just (Mark 4:13).footnote:fn36ears[That astonishment, and the exam it implies, is the argument of the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]",
+      "new": "This is why He could say __“Who hath ears to hear, let him hear”__ (Matthew 13:9), and why His astonishment that His own disciples link:/books/symbolic-language/the-parables-of-the-kingdom/[could not decode the sower] was just (Mark 4:13).footnote:fn36ears[His astonishment, and the exam it implies, is the argument of the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Fix “That” opens in body and footnote.",
+      "rationale": "Both the main sentence and the footnote open with That, which house style forbids in author prose. “This is why” and “His astonishment” preserve meaning and markup.",
+      "_chunk": 1
+    },
+    {
+      "old": "A hearer who knew that flesh is grass, that the harvest is the day of the LORD, that the wicked are chaff and tares and the firstfruits the LORD's own, needed no interpreter — the meaning was written already in the Law and the Prophets.",
+      "new": "A hearer who knew that flesh is grass, that the harvest is the day of the LORD, that the wicked are chaff and tares and the firstfruits are the LORD's own, needed no interpreter — the meaning was written already in the Law and the Prophets.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Restore missing “are” in the parallel list.",
+      "rationale": "The third “that” clause currently reads as if the wicked are also the firstfruits. Adding “are” restores the intended parallel without changing doctrine.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chapter is dense, law-positive, and well-chained: grass to grain to harvest to chaff/tares to firstfruits to leaven, with OT definitions driving NT parables. Scripture density and assertive voice are strong; the closing reaping image lands cleanly. Residual house-style defects remain: one director cue (“Mark the mercy”), three author-prose sentences opening with “That,” and a compressed parallel that drops “are” before “the LORD’s own.” No doctrine, quote, or modernism problems need reopening.\",\n  \"proposals\": [\n    {\n      \"old\": \"Mark the mercy in the sifting:\",\n      \"new\": \"The mercy in the sifting:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue “Mark”.\",\n      \"rationale\": \"House style forbids presenter staging such as “Mark that/the.” Dropping the imperative leaves a plain assertion that still introduces the Amos quote.\"\n    },\n    {\n      \"old\": \"That is the enemy's work, and the Teacher's key link:/books/symbolic-language/the-parables-of-the-kingdom/[has already graded it]: the sym:sym-field[field] is the world, the good sym:sym-seed[seed] are the children of the kingdom, and the tares are the children of the wicked one (Matthew 13:38).footnote:fn36tares[Derived and graded in the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]\",\n      \"new\": \"This is the enemy's work, and the Teacher's key link:/books/symbolic-language/the-parables-of-the-kingdom/[has already graded it]: the sym:sym-field[field] is the world, the good sym:sym-seed[seed] are the children of the kingdom, and the tares are the children of the wicked one (Matthew 13:38).footnote:fn36tares[Derived and graded in the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace sentence-initial “That” with “This”.\",\n      \"rationale\": \"Author prose must not open with That. “This” keeps the same deictic force without the house-style violation.\"\n    },\n    {\n      \"old\": \"That sheaf is Christ: __“now is Christ risen from the dead, and become the firstfruits of them that slept”__ (1 Corinthians 15:20), raised in the very season of the wave sheaf, the first of a harvest that rises after Him.\",\n      \"new\": \"This sheaf is Christ: __“now is Christ risen from the dead, and become the firstfruits of them that slept”__ (1 Corinthians 15:20), raised in the very season of the wave sheaf, the first of a harvest that rises after Him.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace sentence-initial “That” with “This”.\",\n      \"rationale\": \"Author prose must not open with That. “This sheaf” still points cleanly to the wave sheaf just named.\"\n    },\n    {\n      \"old\": \"That is why He could say __“Who hath ears to hear, let him hear”__ (Matthew 13:9), and why His astonishment that His own disciples link:/books/symbolic-language/the-parables-of-the-kingdom/[could not decode the sower] was just (Mark 4:13).footnote:fn36ears[That astonishment, and the exam it implies, is the argument of the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]\",\n      \"new\": \"This is why He could say __“Who hath ears to hear, let him hear”__ (Matthew 13:9), and why His astonishment that His own disciples link:/books/symbolic-language/the-parables-of-the-kingdom/[could not decode the sower] was just (Mark 4:13).footnote:fn36ears[His astonishment, and the exam it implies, is the argument of the chapter link:/books/symbolic-language/the-parables-of-the-kingdom/[The Parables of the Kingdom].]\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Fix “That” opens in body and footnote.\",\n      \"rationale\": \"Both the main sentence and the footnote open with That, which house style forbids in author prose. “This is why” and “His astonishment” preserve meaning and markup.\"\n    },\n    {\n      \"old\": \"A hearer who knew that flesh is grass, that the harvest is the day of the LORD, that the wicked are chaff and tares and the firstfruits the LORD's own, needed no interpreter — the meaning was written already in the Law and the Prophets.\",\n      \"new\": \"A hearer who knew that flesh is grass, that the harvest is the day of the LORD, that the wicked are chaff and tares and the firstfruits are the LORD's own, needed no interpreter — the meaning was written already in the Law and the Prophets.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Restore missing “are” in the parallel list.\",\n      \"rationale\": \"The third “that” clause currently reads as if the wicked are also the firstfruits. Adding “are” restores the intended parallel without changing doctrine.\"\n    }\n  ]\n}"
+    }
+  ]
+}

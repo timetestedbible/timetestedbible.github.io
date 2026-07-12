@@ -1,0 +1,156 @@
+{
+  "created_at": 1783835654,
+  "completed_at": 1783835663,
+  "id": "6a495397-59b9-9a7d-8a6d-f7e0593a2635",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_6a495397-59b9-9a7d-8a6d-f7e0593a2635",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Belief, to believe\" in Christian teaching and biblical interpretation, without any bias from an author's position.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Personal trust/reliance upon God (especially Jesus Christ) for salvation, eternal life, and relationship with God, going beyond mere intellectual assent to include commitment and dependence\",\n  \"primary_basis\": [\n    \"John 3:16-18\",\n    \"John 20:31\",\n    \"Acts 16:31\",\n    \"Romans 3:22-28\",\n    \"Romans 10:9-10\",\n    \"Ephesians 2:8-9\",\n    \"Hebrews 11:1,6\",\n    \"Mark 1:15\",\n    \"Galatians 2:16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Intellectual assent or cognitive agreement with doctrines/facts about God or Christ (without necessarily implying trust or transformation)\",\n      \"basis\": [\n        \"James 2:19\",\n        \"John 2:23-25\",\n        \"Acts 8:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant faithfulness, loyalty, or obedience (pistis as fidelity rather than primarily mental belief)\",\n      \"basis\": [\n        \"Habakkuk 2:4 (as cited in Romans 1:17, Galatians 3:11)\",\n        \"Romans 1:5\",\n        \"Galatians 5:6\",\n        \"Hebrews 3:12-19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Blind or unexamined acceptance without evidence or reason\",\n      \"basis\": [\n        \"Popular caricatures or critiques rather than primary biblical texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream Christian teaching and biblical interpretation, 'belief/to believe' (Greek pisteuō/pistis) is overwhelmingly treated as saving faith centered on Christ; scholarly nuances around 'faithfulness' exist but do not displace the dominant pastoral and confessional emphasis on trust for salvation. The term is largely functional/theological rather than a free-floating symbol like water or light.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_6a495397-59b9-9a7d-8a6d-f7e0593a2635",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1196,
+    "output_tokens_details": {
+      "reasoning_tokens": 707
+    },
+    "total_tokens": 1801,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 81940000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1196
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

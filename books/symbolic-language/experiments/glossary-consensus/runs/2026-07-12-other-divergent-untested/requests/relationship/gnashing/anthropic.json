@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "gnashing",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 9000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGnashing of teeth\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'gnashing of teeth' (nearly always paired with 'weeping') symbolizes the extreme anguish, despair, and suffering of those who are excluded from God's kingdom and consigned to final judgment or hell. It functions as a stock formula in Jesus' teaching for the conscious misery and regret of the condemned — the pain of eschatological loss.\",\n  \"primary_basis\": [\n    \"Matthew 8:12\",\n    \"Matthew 13:42\",\n    \"Matthew 13:50\",\n    \"Matthew 22:13\",\n    \"Matthew 24:51\",\n    \"Matthew 25:30\",\n    \"Luke 13:28\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Gnashing of teeth as an expression of rage, hostility, or defiant anger rather than sorrow. In the Old Testament and Acts, gnashing teeth consistently signals fury directed at the righteous (the wicked gnash at the psalmist; the Sanhedrin gnashes at Stephen). Some interpreters therefore read the Gospel formula as the condemned raging against God rather than merely grieving.\",\n      \"basis\": [\n        \"Psalm 35:16\",\n        \"Psalm 37:12\",\n        \"Psalm 112:10\",\n        \"Job 16:9\",\n        \"Lamentations 2:16\",\n        \"Acts 7:54\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gnashing of teeth as remorse and self-reproach — the condemned grinding their teeth in bitter regret over lost opportunity, emphasized in some patristic and devotional readings (e.g., contrast between seeing the patriarchs in the kingdom while being cast out in Luke 13:28).\",\n      \"basis\": [\n        \"Luke 13:28\",\n        \"Psalm 112:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A conditionalist/annihilationist reading: the weeping and gnashing occur at the moment of exclusion and judgment (the 'casting out') rather than describing an unending conscious state, so the phrase does not by itself prove eternal conscious torment.\",\n      \"basis\": [\n        \"Matthew 8:12\",\n        \"Matthew 13:42\",\n        \"Psalm 112:10 (the wicked 'melts away' / perishes after gnashing)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal-physical reading tied to fiery torment (teeth chattering or grinding from pain, sometimes paired in older interpretation with 'outer darkness' as literal cold and dark), found in some medieval and popular-literalist treatments.\",\n      \"basis\": [\n        \"Matthew 13:42\",\n        \"Matthew 22:13\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus that the phrase is a fixed Matthean/Lukan formula describing the state of the finally excluded, with anguish/despair as the dominant gloss. The main live scholarly and homiletical debate is whether the gesture connotes grief and regret or anger and defiance, since the Old Testament background (Psalms, Job, Lamentations) and Acts 7:54 uniformly use gnashing for rage. Many commentators combine the two, taking weeping as sorrow and gnashing as fury or bitter frustration. Disagreements about the duration or literalness of the state reflect wider disputes over the nature of hell rather than over the phrase's basic symbolic force.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Severe anguish, despair, and sometimes enraged regret experienced under divine judgment—especially exclusion from God’s kingdom and, in traditional Christian teaching, the punishment of hell.\",\n  \"primary_basis\": [\n    \"Matthew 8:12 — those excluded from the kingdom are cast into outer darkness, where there is weeping and gnashing of teeth.\",\n    \"Matthew 13:41–42, 49–50 — the wicked are cast into the fiery furnace, where there is weeping and gnashing of teeth.\",\n    \"Matthew 22:11–13 — the improperly dressed wedding guest is expelled into outer darkness.\",\n    \"Matthew 24:48–51 — the unfaithful servant receives judgment and a place with the hypocrites.\",\n    \"Matthew 25:26–30 — the unprofitable servant is cast into outer darkness.\",\n    \"Luke 13:27–28 — the excluded see Abraham, Isaac, Jacob, and the prophets in God’s kingdom and respond with weeping and gnashing of teeth.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Anger, hostility, or defiance toward God or the judge, rather than primarily pain or remorse.\",\n      \"basis\": [\n        \"Elsewhere in Scripture, gnashing the teeth commonly expresses hostile rage: Psalm 35:16; Psalm 37:12; Psalm 112:10; Lamentations 2:16; Acts 7:54.\",\n        \"This usage leads some interpreters to understand the judged as reacting with continuing resentment or fury.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A general idiom for intense suffering or distress, without identifying one precise emotion such as regret, rage, or physical pain.\",\n      \"basis\": [\n        \"The judgment sayings pair gnashing with weeping and with images of exclusion, darkness, and fire.\",\n        \"The expression may function rhetorically as a broad picture of eschatological misery rather than a technical description of a particular punishment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal chattering of teeth from cold in the ‘outer darkness.’\",\n      \"basis\": [\n        \"This reading connects darkness outside a banquet with nighttime cold.\",\n        \"It has little support from the normal biblical use of tooth-gnashing, which more often denotes anguish or hostility.\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Primarily covenantal or historical exclusion from the kingdom, especially the displacement of unbelieving or unfaithful members of Israel, rather than a direct description of postmortem hell.\",\n      \"basis\": [\n        \"Matthew 8:11–12 and Luke 13:28–29 contrast excluded ‘sons’ or hearers with patriarchs and people gathered into the kingdom.\",\n        \"Some interpreters emphasize the passages’ immediate kingdom and covenant contexts.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that the expression signifies an extreme negative response to divine judgment and exclusion. There is less consensus about whether the dominant emotion is pain, grief, remorse, rage, or some combination, and about whether every occurrence specifically describes eternal conscious punishment rather than eschatological judgment more generally.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Intense anguish, sorrow, and regret experienced by those excluded from God's kingdom and consigned to eschatological punishment (outer darkness or hell)\",\n  \"primary_basis\": [\n    \"Matthew 8:12\",\n    \"Matthew 13:42\",\n    \"Matthew 13:50\",\n    \"Matthew 22:13\",\n    \"Matthew 24:51\",\n    \"Matthew 25:30\",\n    \"Luke 13:28\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Rage, fury, or hostile anger directed against the righteous or against God\",\n      \"basis\": [\n        \"Acts 7:54\",\n        \"Psalm 112:10\",\n        \"Job 16:9\",\n        \"Lamentations 2:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal physical grinding of teeth as a symptom of extreme pain or torment\",\n      \"basis\": [\n        \"Contextual pairing with weeping in judgment parables\",\n        \"Medical/physiological descriptions in ancient literature\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Frustration or despair of the wicked at the triumph of the righteous (without necessarily implying eternal hell)\",\n      \"basis\": [\n        \"Psalm 35:16\",\n        \"Psalm 37:12\",\n        \"Some Second-Temple Jewish apocalyptic texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream Christian biblical interpretation and teaching the Matthean/Lukan formula 'weeping and gnashing of teeth' functions as a fixed idiomatic marker of final judgment and exclusion; alternative emotional nuances (rage vs. pure anguish) are acknowledged but remain secondary to the dominant eschatological reading.\"\n}\n\nBOOK ENTRY\nThe rage of the wicked at the righteous — what the excluded do at the sight of the kingdom they forfeited, sorrow and hatred in one face; then they melt away. Defined on the wicked against the just, staged at Stephen's trial, templated in the psalm: he shall see, be grieved, gnash, and perish.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the anguish of the damned under conscious, everlasting torment.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 112:10; Ps 37:12; Luke 13:28; Acts 7:54; Matt 8:12) · see The Weeping and the Gnashing | (Ps 112:10; Ps 37:12; Luke 13:28; Acts 7:54; Matt 8:12) · see The Weeping and the Gnashing, in the free digital edition at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nPsalms 112:10 — The wicked shall see it, and be grieved; he shall gnash with his teeth, and melt away: the desire of the wicked shall perish.\nPsalms 37:12 — The wicked plotteth against the just, and gnasheth upon him with his teeth.\nLuke 13:28 — There shall be weeping and gnashing of teeth, when ye shall see Abraham, and Isaac, and Jacob, and all the prophets, in the kingdom of God, and you yourselves thrust out.\nActs 7:54 — When they heard these things, they were cut to the heart, and they gnashed on him with their teeth.\nMatthew 8:12 — But the children of the kingdom shall be cast out into outer darkness: there shall be weeping and gnashing of teeth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "fe2948c09d9e6bf8bb3ce87da6b166b663accea597c09ef8e983fdb092837917",
+  "cache": {
+    "hit": false
+  }
+}

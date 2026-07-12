@@ -1,0 +1,60 @@
+{
+  "file": "books/symbolic-language/34-the-four-winds.adoc",
+  "title": "The Four Winds",
+  "notes": [
+    "This chunk delivers a dense, assertive identification of the four winds as throne-commissioned spirits, chaining Zechariah’s chariots, the horsemen, Ezekiel’s judgments, scatter/gather texts, east-wind judgments, and the sealing restraint with clean symbol links and law-positive force. Scripture blocks and internal cross-references are accurate and well-placed. Residual defects are three author-prose And-openers (two of them presenter-style “mark” cues that stage the reader), one missing relative pronoun that leaves an appositive dangling, and a modern marriage idiom that jars the register. Surgical replacements restore house style and clarity without altering doctrine, quotes, or density."
+  ],
+  "proposals": [
+    {
+      "old": "And all wind answers to its Maker — He rebukes even a literal storm, __“Peace, be still,”__ and it obeys (Mark 4:39); the more so these spirit-winds He sends and recalls.",
+      "new": "All wind answers to its Maker — He rebukes even a literal storm, __“Peace, be still,”__ and it obeys (Mark 4:39); the more so these spirit-winds He sends and recalls.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove prohibited sentence-initial And.",
+      "rationale": "House style forbids author-prose sentences starting with And; the claim stands stronger and cleaner without the conjunction.",
+      "_chunk": 1
+    },
+    {
+      "old": "from the four _corners_ of the earth where the dispersed wait (Isaiah 11:12), corners the link:/books/symbolic-language/wings/[Wings] chapter searched; the winds sweep the quarters, and the quarters give up their gleanings.",
+      "new": "from the four _corners_ of the earth where the dispersed wait (Isaiah 11:12), corners that the link:/books/symbolic-language/wings/[Wings] chapter searched; the winds sweep the quarters, and the quarters give up their gleanings.",
+      "type": "grammar",
+      "severity": "high",
+      "summary": "Insert missing relative pronoun.",
+      "rationale": "The appositive lacks “that,” leaving the clause ungrammatical and the reference to the Wings chapter dangling.",
+      "_chunk": 1
+    },
+    {
+      "old": "And mark who waits at the corners: on the garment, the corner is where the law hangs its reminder — __“that ye may look upon it, and *remember all the commandments* of the LORD”__ (Numbers 15:39) — and at the earth's four wings wait __“the remnant… which *keep the commandments* of God”__ (Revelation 12:17).",
+      "new": "At the corners wait those who keep the commandments: on the garment, the corner is where the law hangs its reminder — __“that ye may look upon it, and *remember all the commandments* of the LORD”__ (Numbers 15:39) — and at the earth's four wings wait __“the remnant… which *keep the commandments* of God”__ (Revelation 12:17).",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue and And-start; assert the remnant identification.",
+      "rationale": "House style bans “mark” staging and And-openers; the rewrite keeps the garment/earth parallel and density while stating the claim directly.",
+      "_chunk": 1
+    },
+    {
+      "old": "And mark where the scene stands: after the sixth seal is opened (Revelation 6:12) — the riders commissioned at the first four seals are still reined in at the four corners when the sixth is broken.",
+      "new": "The scene stands after the sixth seal is opened (Revelation 6:12) — the riders commissioned at the first four seals are still reined in at the four corners when the sixth is broken.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director “mark” cue and And-start.",
+      "rationale": "Staging language and prohibited opener violate house style; the factual placement of the scene remains intact and assertive.",
+      "_chunk": 1
+    },
+    {
+      "old": "Jesus had already tied the knot for Nicodemus: __“The *wind* bloweth where it listeth… so is every one that is *born of the Spirit*”__ (John 3:8) — one word for wind and Spirit, in Hebrew and in Greek alike.",
+      "new": "Jesus had already joined wind and Spirit for Nicodemus: __“The *wind* bloweth where it listeth… so is every one that is *born of the Spirit*”__ (John 3:8) — one word for wind and Spirit, in Hebrew and in Greek alike.",
+      "type": "bad-metaphor",
+      "severity": "medium",
+      "summary": "Replace marriage idiom with direct join.",
+      "rationale": "The modern “tied the knot” cliché jars against the biblical register and confuses the intended identification of wind with Spirit.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk delivers a dense, assertive identification of the four winds as throne-commissioned spirits, chaining Zechariah’s chariots, the horsemen, Ezekiel’s judgments, scatter/gather texts, east-wind judgments, and the sealing restraint with clean symbol links and law-positive force. Scripture blocks and internal cross-references are accurate and well-placed. Residual defects are three author-prose And-openers (two of them presenter-style “mark” cues that stage the reader), one missing relative pronoun that leaves an appositive dangling, and a modern marriage idiom that jars the register. Surgical replacements restore house style and clarity without altering doctrine, quotes, or density.\",\n  \"proposals\": [\n    {\n      \"old\": \"And all wind answers to its Maker — He rebukes even a literal storm, __“Peace, be still,”__ and it obeys (Mark 4:39); the more so these spirit-winds He sends and recalls.\",\n      \"new\": \"All wind answers to its Maker — He rebukes even a literal storm, __“Peace, be still,”__ and it obeys (Mark 4:39); the more so these spirit-winds He sends and recalls.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove prohibited sentence-initial And.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And; the claim stands stronger and cleaner without the conjunction.\"\n    },\n    {\n      \"old\": \"from the four _corners_ of the earth where the dispersed wait (Isaiah 11:12), corners the link:/books/symbolic-language/wings/[Wings] chapter searched; the winds sweep the quarters, and the quarters give up their gleanings.\",\n      \"new\": \"from the four _corners_ of the earth where the dispersed wait (Isaiah 11:12), corners that the link:/books/symbolic-language/wings/[Wings] chapter searched; the winds sweep the quarters, and the quarters give up their gleanings.\",\n      \"type\": \"grammar\",\n      \"severity\": \"high\",\n      \"summary\": \"Insert missing relative pronoun.\",\n      \"rationale\": \"The appositive lacks “that,” leaving the clause ungrammatical and the reference to the Wings chapter dangling.\"\n    },\n    {\n      \"old\": \"And mark who waits at the corners: on the garment, the corner is where the law hangs its reminder — __“that ye may look upon it, and *remember all the commandments* of the LORD”__ (Numbers 15:39) — and at the earth's four wings wait __“the remnant… which *keep the commandments* of God”__ (Revelation 12:17).\",\n      \"new\": \"At the corners wait those who keep the commandments: on the garment, the corner is where the law hangs its reminder — __“that ye may look upon it, and *remember all the commandments* of the LORD”__ (Numbers 15:39) — and at the earth's four wings wait __“the remnant… which *keep the commandments* of God”__ (Revelation 12:17).\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue and And-start; assert the remnant identification.\",\n      \"rationale\": \"House style bans “mark” staging and And-openers; the rewrite keeps the garment/earth parallel and density while stating the claim directly.\"\n    },\n    {\n      \"old\": \"And mark where the scene stands: after the sixth seal is opened (Revelation 6:12) — the riders commissioned at the first four seals are still reined in at the four corners when the sixth is broken.\",\n      \"new\": \"The scene stands after the sixth seal is opened (Revelation 6:12) — the riders commissioned at the first four seals are still reined in at the four corners when the sixth is broken.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director “mark” cue and And-start.\",\n      \"rationale\": \"Staging language and prohibited opener violate house style; the factual placement of the scene remains intact and assertive.\"\n    },\n    {\n      \"old\": \"Jesus had already tied the knot for Nicodemus: __“The *wind* bloweth where it listeth… so is every one that is *born of the Spirit*”__ (John 3:8) — one word for wind and Spirit, in Hebrew and in Greek alike.\",\n      \"new\": \"Jesus had already joined wind and Spirit for Nicodemus: __“The *wind* bloweth where it listeth… so is every one that is *born of the Spirit*”__ (John 3:8) — one word for wind and Spirit, in Hebrew and in Greek alike.\",\n      \"type\": \"bad-metaphor\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace marriage idiom with direct join.\",\n      \"rationale\": \"The modern “tied the knot” cliché jars against the biblical register and confuses the intended identification of wind with Spirit.\"\n    }\n  ]\n}"
+    }
+  ]
+}

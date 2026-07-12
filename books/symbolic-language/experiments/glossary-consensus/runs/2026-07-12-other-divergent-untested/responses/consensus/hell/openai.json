@@ -1,0 +1,173 @@
+{
+  "id": "resp_0d1b7dd4c75387bb006a5350a966208194ba3e2c50f7739048",
+  "object": "response",
+  "created_at": 1783845033,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845053,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0d1b7dd4c75387bb006a5350aa769c8194a6749a6709f8daa8",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0d1b7dd4c75387bb006a5350ad9ef48194bdfe8b8c4fe1ae5c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Hell most commonly signifies the final condition or realm of divine judgment: irreversible exclusion from blessed communion with God and punishment of unrepentant evil. Biblical images such as fire, outer darkness, the undying worm, and the second death express the horror and finality of that judgment, though traditions differ over how literally those images should be understood.\",\"primary_basis\":[\"Matthew 5:22, 29–30; 10:28 — Gehenna and the destruction of body and soul\",\"Matthew 13:40–42, 49–50 — the fiery furnace and final separation of the wicked\",\"Matthew 25:31–46 — eternal fire and eternal punishment contrasted with eternal life\",\"Mark 9:43–48 — unquenchable fire and the undying worm\",\"Luke 16:19–31 — the rich man in Hades, conscious torment, and an uncrossable chasm\",\"2 Thessalonians 1:6–10 — punishment and exclusion from the Lord’s presence or glory\",\"Jude 7, 13 — eternal fire and deepest darkness as judgment imagery\",\"Revelation 14:9–11 — fire, sulfur, torment, and smoke ascending forever\",\"Revelation 20:10–15; 21:8 — the lake of fire, final judgment, and the second death\",\"Isaiah 66:24 and Daniel 12:2 — important Old Testament backgrounds for the worm, fire, shame, and final resurrection judgment\"],\"alternatives\":[{\"meaning\":\"Eternal conscious punishment: the condemned remain conscious under irreversible divine punishment forever. Fire may be understood literally, symbolically, or analogically, while the enduring conscious punishment is treated as the central claim.\",\"basis\":[\"Matthew 25:46\",\"Mark 9:43–48\",\"Luke 16:19–31\",\"Revelation 14:9–11\",\"Revelation 20:10\"],\"prominence\":\"dominant\"},{\"meaning\":\"Conditional immortality or annihilationism: the wicked are finally destroyed, perish, or cease conscious existence rather than experience everlasting conscious torment. Hell is eternal in its irreversible result.\",\"basis\":[\"Matthew 10:28\",\"John 3:16\",\"Romans 6:23\",\"2 Thessalonians 1:9\",\"Revelation 20:14; 21:8\"],\"prominence\":\"minority\"},{\"meaning\":\"Universal restoration: hell is remedial, purifying, or temporary, and divine judgment ultimately leads all persons—or, in some versions, all creation—to reconciliation with God.\",\"basis\":[\"Acts 3:21\",\"Romans 5:18–19\",\"1 Corinthians 15:22–28\",\"Philippians 2:10–11\",\"Colossians 1:19–20\"],\"prominence\":\"minority\"},{\"meaning\":\"Hell primarily symbolizes present spiritual alienation, destructive sin, social violence, or the lived consequences of rejecting God, rather than chiefly a postmortem realm or final state.\",\"basis\":[\"John 3:18–21\",\"Romans 1:18–32\",\"James 3:6\",\"Luke 15:24, 32\"],\"prominence\":\"minority\"},{\"meaning\":\"“Hell” is an imprecise English umbrella term for distinct biblical concepts—Sheol, Hades, Gehenna, Tartarus, and the lake of fire. On this reading, some passages concern the grave or intermediate state, while others concern final judgment, so they should not automatically be treated as one symbol or place.\",\"basis\":[\"Psalm 16:10 and Acts 2:27 — Sheol/Hades\",\"Luke 16:23 — Hades\",\"Matthew 10:28 — Gehenna\",\"2 Peter 2:4 — Tartarus\",\"Revelation 20:13–15 — Hades distinguished from the lake of fire\"],\"prominence\":\"common\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is broad Christian consensus that hell language denotes severe divine judgment and loss of the blessed life with God. There is no settled consensus across Christian traditions about whether it is a place or condition, whether its fire and darkness are literal or symbolic, whether punishment is everlasting conscious suffering or final destruction, or whether judgment can ultimately be restorative.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1018,
+    "output_tokens_details": {
+      "reasoning_tokens": 127
+    },
+    "total_tokens": 1335
+  },
+  "user": null,
+  "metadata": {}
+}

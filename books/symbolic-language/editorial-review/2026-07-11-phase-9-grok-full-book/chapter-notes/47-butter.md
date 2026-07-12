@@ -1,0 +1,3 @@
+# Butter
+
+This chapter is tightly structured and symbolically dense, chaining butter from the churn through remnant diet, Job’s steps, wilderness provision, counterfeit speech, and Jael’s dish with a clear true/counterfeit contrast. The voice stays assertive, law-positive, and free of stock AI diction. Residual defects are presenter staging (“mark”), two author-prose sentences that open with And, a missing preposition inside the Hebrews link text, and light meta-hedging on the water register. All proposed fixes are surgical, preserve doctrine, scripture quotes, and AsciiDoc markup, and restore house style without reopening symbols.

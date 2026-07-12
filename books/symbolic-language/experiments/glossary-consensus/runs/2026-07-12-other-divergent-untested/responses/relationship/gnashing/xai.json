@@ -1,0 +1,167 @@
+{
+  "created_at": 1783845856,
+  "completed_at": 1783845860,
+  "id": "44959a19-2fb8-9e92-9562-4b7bb66e9e18",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Mainstream consensus identifies 'gnashing of teeth' (paired with weeping) as the extreme anguish, despair, and suffering of those finally excluded from God's kingdom under eschatological judgment or hell, with a commonly noted alternative that the gesture can express rage or hostility (drawing on OT and Acts usage) rather than pure sorrow.\",\n  \"book_summary\": \"The book identifies gnashing of teeth as the rage of the wicked against the righteous—the mixed sorrow and hatred of the excluded at the sight of the kingdom they forfeited—followed by their melting away, templated from the psalms and staged at Stephen's trial.\",\n  \"consensus_core_identification\": \"Eschatological anguish/despair (or rage) of the finally condemned at exclusion/judgment.\",\n  \"book_core_identification\": \"Rage of the wicked at the righteous (sorrow + hatred) upon seeing the forfeited kingdom, after which they perish/melt away.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book privileges the OT rage template (wicked gnash at the just then melt/perish) and the visual exclusion scene (Luke 13:28; Acts 7:54) as definitional, thereby narrowing the dominant consensus reading of pure or primary anguish under everlasting conscious torment and reclassifying the emotion and duration of the state.\",\n  \"material_contradiction\": \"None at the central referent (still the reaction of the excluded wicked); the disagreement is over dominant emotion (rage vs. anguish) and post-gnashing outcome (melt away/perish vs. unending conscious torment).\",\n  \"rationale\": \"Both identify the same Matthean/Lukan formula as the reaction of the excluded wicked. Consensus treats anguish/despair of the damned as primary (with rage as common alternative); the book preserves the exclusion referent but narrows it to the rage-against-the-righteous template drawn from Ps 112:10/37:12 and Acts 7:54, adding the 'melt away' terminus and rejecting the common everlasting-torment gloss. This is refinement by boundary and emphasis, not replacement of the core referent.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The consensus primary meaning of pure eschatological anguish under conscious torment is so dominant in Christian teaching that elevating the rage-and-perish reading may be viewed as a minority re-emphasis rather than a refinement of the same core.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_44959a19-2fb8-9e92-9562-4b7bb66e9e18",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3348,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 559,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 3907,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 98580000,
+    "context_details": {
+      "input_tokens": 3348,
+      "output_tokens": 559
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

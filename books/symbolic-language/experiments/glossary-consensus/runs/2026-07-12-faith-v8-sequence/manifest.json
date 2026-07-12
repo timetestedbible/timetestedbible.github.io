@@ -1,0 +1,39 @@
+{
+  "protocol_version": 8,
+  "run_id": "2026-07-12-faith-v8-sequence",
+  "created_at": "2026-07-12T06:19:28.418200+00:00",
+  "entry_count": 1,
+  "persuasion_scope": "all",
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "input_sha256": "1712561f673e1bb05175c5c20fba6e14831c74801618679d7c7468a4466e876a",
+  "method_evidence_sha256": "ff2354729380e1a977c49d7df2d9868483f89d1e44b377c20ed7b50f8ee2acdc",
+  "accepted_findings_sha256": "4b3264c9e09189fbe2d90ddc61fa507bb60e9d7caae8eeffc264a5c9e1f3deb6",
+  "accepted_finding_sources": [
+    {
+      "run_id": "2026-07-12-belief-v8-revised",
+      "manifest_sha256": "f7d36aaf8600d04ad8de19a10a4e063e0176afc99f2028601e83bbae9f440400"
+    }
+  ],
+  "prompt_sha256": {
+    "01-consensus.md": "d83510f763522125d0341623d1c78d7764a8820aecb6b2cdb1e7523db78f6a33",
+    "02-relationship.md": "802bccb3675bcd6f4c17ebba695e9e8bbc125e24ea63d47eaa8d345ba8303ba9",
+    "03-persuasion.md": "2ea0417d70bd7ac9510fa07a4b82f178be0d9dbed854996e2e50e8df03f8f5ff"
+  },
+  "notes": "API keys are never written. Proprietary model runs are procedurally reproducible but not byte-for-byte deterministic."
+}

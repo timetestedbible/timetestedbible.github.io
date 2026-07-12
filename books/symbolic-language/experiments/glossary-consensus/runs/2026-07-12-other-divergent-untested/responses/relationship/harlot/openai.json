@@ -1,0 +1,195 @@
+{
+  "id": "resp_0c9e87fdd67f61a9006a5353f3397c81909880f47923ab2b22",
+  "object": "response",
+  "created_at": 1783845875,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845892,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c9e87fdd67f61a9006a5353f3cdb081908b0143fab0b23e17",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c9e87fdd67f61a9006a5353fcbc148190b9381f438d54ca5b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The symbolic harlot primarily represents spiritual or covenantal unfaithfulness—idolatry, apostasy, and corrupt alliances. In Revelation, Rome or a broader anti-God world system is prominent, while unfaithful Jerusalem is a recognized minority identification.\",\"book_summary\":\"The book identifies the harlot specifically as Jerusalem: a covenant people retaining covenant form while betraying its substance, portrayed spiritually as Sodom, Egypt, and Babylon.\",\"consensus_core_identification\":\"A covenant community, city, or world system characterized by spiritual unfaithfulness to God.\",\"book_core_identification\":\"Unfaithful covenantal Jerusalem, specifically identified as Revelation’s great harlot-city.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book restricts Revelation’s harlot to apostate Jerusalem and thereby excludes Rome, a generic apostate religious system, and the broader world system as the direct referent. Jerusalem is already an established minority option within the consensus, so this is a narrowing rather than a novel identification.\",\"material_contradiction\":\"There is no contradiction with the consensus’s general meaning of covenant unfaithfulness. There is, however, a material disagreement with the dominant Rome reading and broader world-system readings of Revelation 17–18.\",\"rationale\":\"Reduced to their minimum cores, both readings retain covenant betrayal as the symbol’s meaning. The book then makes a specific referential claim—Jerusalem—that the consensus recognizes but does not privilege. Accepting the book therefore narrows the consensus field and rejects several commonly admitted Revelation referents without replacing the underlying symbolic category.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The citations depend on identifying the “great city” of Revelation 17:18 with the “great city” of Revelation 11:8. Revelation 11:8 points toward Jerusalem, but shared wording alone does not prove that both passages have the same city in view; Revelation 17:18’s ruling over earthly kings is commonly taken as evidence for imperial Rome. Ezekiel 23 supports Jerusalem’s prophetic harlot imagery but does not independently settle Revelation’s referent.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3566,
+    "input_tokens_details": {
+      "cache_write_tokens": 3563,
+      "cached_tokens": 0
+    },
+    "output_tokens": 969,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4535
+  },
+  "user": null,
+  "metadata": {}
+}

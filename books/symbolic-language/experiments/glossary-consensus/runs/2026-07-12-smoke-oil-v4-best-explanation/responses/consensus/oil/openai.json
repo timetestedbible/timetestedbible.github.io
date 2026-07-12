@@ -1,0 +1,173 @@
+{
+  "id": "resp_01d76c9bc7b05b29006a53253cf3a88197b96a8bbf69f9d8db",
+  "object": "response",
+  "created_at": 1783833916,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783833935,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_01d76c9bc7b05b29006a53253ded8c8197943899119ef89b59",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_01d76c9bc7b05b29006a532542ff3c81979df0e4da9f77e4fb",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The Holy Spirit—especially the Spirit’s indwelling, empowering, and sustaining presence—is the symbolic meaning most commonly assigned to lamp oil in Christian typological teaching.\",\"primary_basis\":[\"Zechariah 4:1–6, 11–14: oil-bearing olive trees supply the lampstand, and the vision is explained by “Not by might, nor by power, but by my Spirit.”\",\"Matthew 25:1–13: the wise virgins possess oil for their lamps; many Christian interpreters understand this as the indispensable inward presence or provision of the Holy Spirit, although the parable itself emphasizes readiness and does not explicitly identify the oil.\",\"Revelation 4:5: the seven burning lamps before God’s throne are explicitly identified with the seven spirits of God.\",\"1 Samuel 16:13 and related anointing texts: the coming of the Spirit accompanies anointing with oil, providing the broader biblical basis for oil as a symbol of the Spirit.\"],\"alternatives\":[{\"meaning\":\"Spiritual preparedness, vigilance, and perseverance for Christ’s coming, without assigning the oil a separate one-to-one referent.\",\"basis\":[\"Matthew 25:1–13 directly stresses being ready for the delayed bridegroom.\",\"Matthew 24:42–44 and 25:13 frame the parable with commands to watch and remain ready.\"],\"prominence\":\"common\"},{\"meaning\":\"Faithful discipleship expressed in good works, charity, love, or mercy.\",\"basis\":[\"Matthew 5:14–16 connects shining light with good works.\",\"Matthew 25:31–46, later in the same discourse as the ten virgins, emphasizes acts of mercy.\",\"Historically, a substantial patristic and ecclesial tradition interpreted the virgins’ oil as good works, almsgiving, love, or mercy.\"],\"prominence\":\"common\"},{\"meaning\":\"Faith, grace, or an inward spiritual life that cannot be borrowed from another person.\",\"basis\":[\"Matthew 25:8–9 portrays the oil as a personal provision that cannot simply be transferred at the decisive moment.\",\"Ephesians 2:8 and related grace-and-faith texts are sometimes brought into theological readings, though they do not themselves identify lamp oil with faith or grace.\"],\"prominence\":\"minority\"},{\"meaning\":\"God’s word or revealed truth that nourishes spiritual illumination.\",\"basis\":[\"Psalm 119:105 calls God’s word a lamp and light, although it does not identify the lamp’s oil with the word.\",\"Proverbs 6:23 similarly associates commandment and teaching with lamp and light.\"],\"prominence\":\"minority\"},{\"meaning\":\"Ordinary fuel within a narrative or cultic setting, with no independent symbolic meaning beyond keeping the lamp burning.\",\"basis\":[\"Exodus 27:20–21 and Leviticus 24:1–4 prescribe pure olive oil so sanctuary lamps may burn continually.\",\"In Matthew 25:1–13, many historical-critical interpreters treat the oil as a necessary story element supporting the parable’s central message of readiness rather than as a separately encoded symbol.\"],\"prominence\":\"common\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"The Holy Spirit is the most recognizable generalized Christian symbol for oil, including lamp oil, but there is no fully settled interpretation across all passages. In the parable of the ten virgins especially, readiness is more explicit than any identification of the oil itself, and major traditions have also read it as good works, love, faith, grace, or simply the narrative means by which preparedness is displayed.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 320,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1011,
+    "output_tokens_details": {
+      "reasoning_tokens": 272
+    },
+    "total_tokens": 1331
+  },
+  "user": null,
+  "metadata": {}
+}

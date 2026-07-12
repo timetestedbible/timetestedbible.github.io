@@ -1,0 +1,3 @@
+# Signs and Similitudes
+
+This chunk delivers a dense, assertive chain of lived similitudes—Abraham’s offering, Joseph’s life, Rahab’s scarlet line, and Israel’s history fulfilled in the Son—with tight scripture links and no hedging. The Abraham-to-John and Joseph-to-Stephen sequences land with force, and the Clement citation seals the Rahab reading cleanly. House-style sentence-open violations (And, That) and residual presenter staging (scenes, lens) interrupt the prose rhythm. One relative clause lacks its connector and tangles a cross-reference. Surgical fixes restore flow and register without touching doctrine, quotes, or the author’s law-positive density.

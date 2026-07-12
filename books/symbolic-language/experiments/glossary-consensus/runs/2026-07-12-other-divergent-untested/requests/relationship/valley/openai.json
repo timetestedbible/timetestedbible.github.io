@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "valley",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nValley\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the valley most commonly symbolizes a season of trial, suffering, darkness, or spiritual low point — the 'low place' of human experience (often contrasted with mountaintop experiences of blessing or divine encounter) through which God nevertheless accompanies and sustains the believer.\",\n  \"primary_basis\": [\n    \"Psalm 23:4 (the valley of the shadow of death — God's presence in the darkest place)\",\n    \"Psalm 84:6 (the Valley of Baca/weeping, passed through and turned into a place of springs)\",\n    \"Hosea 2:15 (the Valley of Achor made a door of hope)\",\n    \"Isaiah 40:4 (every valley shall be lifted up — preparation for God's coming and reversal of low estate)\",\n    \"1 Kings 20:28 (God is 'God of the valleys' as well as the hills)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Valley of divine judgment and decision — the place where God gathers and judges the nations (Valley of Jehoshaphat, Valley of Decision), and by extension the Valley of Hinnom (Gehenna) as an image of final condemnation.\",\n      \"basis\": [\n        \"Joel 3:2, 12, 14 (Valley of Jehoshaphat; multitudes in the valley of decision)\",\n        \"Jeremiah 7:31–32; 19:6 (Valley of Hinnom / Topheth, valley of slaughter)\",\n        \"2 Kings 23:10 (Hinnom defiled as a place of idolatrous burning, background to Gehenna)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Valley as the scene of spiritual death and God-wrought restoration — the valley of dry bones representing hopelessness reversed by the Spirit (often applied to Israel's restoration or to revival/regeneration).\",\n      \"basis\": [\n        \"Ezekiel 37:1–14 (the valley of dry bones brought to life)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Valley as an image of humility and lowliness — the low that God exalts while the proud heights are brought down, frequently used in preaching on humbling and preparation for Christ.\",\n      \"basis\": [\n        \"Isaiah 40:4 with Luke 3:5 (every valley filled, applied to John the Baptist's ministry)\",\n        \"Luke 14:11 / general exaltation-of-the-lowly motif\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Valley as a place of testing through battle or crisis where faith is proven (e.g., David and Goliath in the Valley of Elah; Gideon and other battles fought in valleys), used devotionally as 'facing giants in the valley.'\",\n      \"basis\": [\n        \"1 Samuel 17:2–3, 19 (Valley of Elah)\",\n        \"Judges 7 (Midianites in the valley)\",\n        \"2 Chronicles 20 (battle and blessing in the Valley of Berachah)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Valley as fertile, watered lowland symbolizing abundance, blessing, and provision (a positive agricultural image rather than a negative one).\",\n      \"basis\": [\n        \"Numbers 24:6 (Balaam's oracle — like valleys spread out)\",\n        \"Psalm 65:13 (valleys covered with grain)\",\n        \"Deuteronomy 11:11 (a land of hills and valleys drinking rain from heaven)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Valley' is not a formally fixed symbol in the way some biblical images are; its force depends heavily on context (Baca, Achor, Hinnom, Jehoshaphat, Elah, dry bones each carry distinct associations). Nevertheless, in popular Christian teaching, hymnody, and devotional literature there is a strong, recognizable convention: the valley stands for the dark or difficult season of life traversed with God, driven above all by Psalm 23:4. The judgment-valley (Joel/Hinnom) and restoration-valley (Ezekiel 37) readings are well established but are usually treated as context-specific rather than as the default symbolic meaning.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A low place of suffering, danger, grief, or spiritual trial through which God accompanies and sustains his people.\",\n  \"primary_basis\": [\n    \"Psalm 23:4 — “the valley of the shadow of death” is widely applied to mortal danger, grief, suffering, and other dark trials.\",\n    \"Psalm 84:5–7 — the Valley of Baca is commonly interpreted as a place of weeping or hardship transformed by pilgrimage and divine provision.\",\n    \"Ezekiel 37:1–14 — the valley of dry bones depicts extreme desolation and hopelessness from which God brings restoration and life.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Death or the approach to death specifically, rather than hardship in general.\",\n      \"basis\": [\n        \"Psalm 23:4 is traditionally translated “the valley of the shadow of death,” although many modern interpreters understand the Hebrew expression more broadly as “deep darkness.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Humility, lowliness, or the humble who are raised by God.\",\n      \"basis\": [\n        \"Isaiah 40:3–4 — every valley is lifted up in preparation for the Lord’s coming.\",\n        \"Luke 3:4–6 — applies Isaiah’s imagery to the ministry of John the Baptist.\",\n        \"Luke 1:52 — although it does not mention valleys, the raising of the lowly reinforces this theological association.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment, conflict, or decision.\",\n      \"basis\": [\n        \"Joel 3:2,12–14 — the Valley of Jehoshaphat and “valley of decision” are settings of God’s judgment on the nations.\",\n        \"Zechariah 14:4–5 — a newly formed valley is associated with the day of the Lord and deliverance amid judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Restoration, renewed life, and hope emerging from desolation.\",\n      \"basis\": [\n        \"Ezekiel 37:1–14 — God raises the dry bones in the valley and restores Israel.\",\n        \"Hosea 2:15 — the Valley of Achor becomes “a door of hope.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fruitfulness, provision, refuge, or blessing.\",\n      \"basis\": [\n        \"Psalm 65:12–13 — valleys are covered with grain and portrayed as rejoicing.\",\n        \"Isaiah 65:10 — the Valley of Achor becomes a resting place for herds.\",\n        \"Song of Songs 2:1 — the “lily of the valleys” contributes to positive imagery of beauty and fertility.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal geographical setting without an intended symbolic meaning.\",\n      \"basis\": [\n        \"Many biblical valleys are ordinary place-names or topographical locations; their significance must be determined from each passage rather than from a universal symbolic code.\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian preaching most recognizably uses “valley” as a metaphor for hardship or a spiritual low point, especially from Psalm 23. Biblical studies, however, does not treat valley as having one fixed symbolic meaning. Its significance varies by context and can include danger, death, humility, judgment, restoration, fertility, or simply geography.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A place or season of trial, affliction, spiritual darkness, or testing that the believer must pass through under God's care\",\n  \"primary_basis\": [\n    \"Psalm 23:4\",\n    \"Psalm 84:6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A site of divine judgment, battle, or decisive reckoning\",\n      \"basis\": [\n        \"Joel 3:2\",\n        \"Joel 3:12-14\",\n        \"2 Chronicles 20:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Humility or lowliness that God will raise up (contrasted with mountains of pride)\",\n      \"basis\": [\n        \"Isaiah 40:4\",\n        \"Luke 3:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A place of fruitfulness, fertility, or natural blessing\",\n      \"basis\": [\n        \"Numbers 13:23-24\",\n        \"Deuteronomy 8:7\",\n        \"Song of Solomon 6:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A desolate setting for restoration or resurrection hope\",\n      \"basis\": [\n        \"Ezekiel 37:1-14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian preaching, devotion, and popular teaching overwhelmingly treat 'valley' via the Psalm 23 image of walking through darkness or death-shadow with divine presence; other biblical valleys supply secondary but well-attested motifs of judgment, humility, or fertility without displacing the primary trial reading.\"\n}\n\nBOOK ENTRY\nThe low and humbled — the opposite of the mountain-kingdom; “every valley shall be exalted”.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the low seasons of trial and death, set against the mountaintop.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 40:4) · see Mountain, ch. 39 — derived in the digital edition’s symbol study at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nIsaiah 40:4 — Every valley shall be exalted, and every mountain and hill shall be made low: and the crooked shall be made straight, and the rough places plain:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "97885b1a512fed221ec86f98791fdab48bfe04818357eeacdb38edc3e32fad5b",
+  "cache": {
+    "hit": false
+  }
+}

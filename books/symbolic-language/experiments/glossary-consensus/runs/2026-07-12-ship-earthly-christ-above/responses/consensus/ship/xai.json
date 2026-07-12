@@ -1,0 +1,156 @@
+{
+  "created_at": 1783895573,
+  "completed_at": 1783895582,
+  "id": "fa1f618c-4957-9802-89c6-a54b7a047274",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_fa1f618c-4957-9802-89c6-a54b7a047274",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Ship\" in Christian teaching and biblical interpretation, remaining blind to any author's position.\n{\n  \"primary_meaning\": \"The Church as a vessel or ship navigating through the world, with Christ as the pilot or captain, symbolizing salvation and the journey of faith.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The Church as the vessel of salvation navigating the waters of the world, storms of trial, or judgment (often linked to Noah's ark as type)\",\n  \"primary_basis\": [\n    \"Genesis 6–9 (Noah's ark as saving vessel)\",\n    \"1 Peter 3:20–21 (ark prefiguring baptism and salvation through Christ)\",\n    \"Matthew 8:23–27 / Mark 4:35–41 / Luke 8:22–25 (Jesus calming the storm in the boat with the disciples)\",\n    \"Matthew 14:22–33 (Jesus walking on water to the boat)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The individual Christian life or soul journeying through the sea of worldly troubles toward heaven\",\n      \"basis\": [\n        \"Same Gospel storm and boat narratives applied devotionally\",\n        \"Patristic and later spiritual writings on the soul as ship\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worldly commerce, wealth, or the transient fortunes of this age\",\n      \"basis\": [\n        \"Revelation 18:17–19 (ships and merchants mourning Babylon)\",\n        \"Ezekiel 27 (ships of Tyre as commercial power)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A temporary refuge or instrument of divine providence (without strong ecclesial typology)\",\n      \"basis\": [\n        \"Jonah 1 (ship as setting for flight and judgment)\",\n        \"Acts 27 (Paul's voyage and shipwreck)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Church-as-ship (or ark) image is a long-standing, widely attested piece of Christian symbolism in patristic, liturgical, and artistic tradition; other readings exist but are secondary or context-specific rather than competing for primary status.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_fa1f618c-4957-9802-89c6-a54b7a047274",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1086,
+    "output_tokens_details": {
+      "reasoning_tokens": 638
+    },
+    "total_tokens": 1688,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 75280000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1086
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

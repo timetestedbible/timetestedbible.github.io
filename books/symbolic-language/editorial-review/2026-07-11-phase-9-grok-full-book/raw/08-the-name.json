@@ -1,0 +1,137 @@
+{
+  "file": "books/symbolic-language/08-the-name.adoc",
+  "title": "The Name",
+  "notes": [
+    "The chapter’s core case is strong: name as covenant rather than sound, built tightly from Exodus 23 through David’s house to the Lord’s Prayer. Scripture density and law-positive force are intact, and the vain-name and Lord-Lord sections land cleanly. Residual defects are mostly house-style sentence opens (But/And) and a few director cues (Notice that, Hear, walk them) that stage the reader instead of asserting. A couple of relative-clause openers also weaken the seams between sections. Surgical fixes restore the author’s voice without touching doctrine or quoted text.",
+    "This chunk is dense and law-positive: the prayer petitions, Babel versus the given name, the seven women versus Ruth under the wing, and the name-law-garment synthesis all land with force. The closing compound of bride, name, house, and temple is clean and consistent with the book’s method. Residual presenter staging remains in two places (Watch the Name-bearer; Read whole), and three author sentences open with And, violating house style. No doctrine rewrites, scripture-quote defects, or factual naming errors appear. Surgical cue removals and sentence-open fixes restore the assertive register without thinning the argument."
+  ],
+  "proposals": [
+    {
+      "old": "But Jesus made a promise about His name that no magic word could keep:",
+      "new": "Jesus made a promise about His name that no magic word could keep:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden But sentence open in author prose.",
+      "rationale": "House style bars author sentences that start with But. Dropping the conjunction keeps the claim and the contrast with the prior paragraph.",
+      "_chunk": 1
+    },
+    {
+      "old": "Notice that God, answering, plays on David’s own word — for a __“house”__ in Scripture is a building _and_ a family line, and a family line is exactly what carries a name.",
+      "new": "God, answering, plays on David’s own word — for a __“house”__ in Scripture is a building _and_ a family line, and a family line is exactly what carries a name.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip the director cue Notice that.",
+      "rationale": "Notice that is an explicit forbidden presenter cue. The sentence already asserts the wordplay; the cue only stages the reader.",
+      "_chunk": 1
+    },
+    {
+      "old": "And in covenant: the Son of David builds the house the first two only sketched — __“Destroy this temple, and in three days I will raise it up… he spake of the *temple of his body*”__ (John 2:19-21); __“ye also, as lively sym:sym-stone[stones], are *built up a spiritual house*”__ (1 Peter 2:5); __“Christ as a son over his own house; *whose house are we*”__ (Hebrews 3:6).",
+      "new": "In covenant: the Son of David builds the house the first two only sketched — __“Destroy this temple, and in three days I will raise it up… he spake of the *temple of his body*”__ (John 2:19-21); __“ye also, as lively sym:sym-stone[stones], are *built up a spiritual house*”__ (1 Peter 2:5); __“Christ as a son over his own house; *whose house are we*”__ (Hebrews 3:6).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop And so the parallel list stays legal under house style.",
+      "rationale": "Author prose may not open with And. Parallel In the flesh / In stone / In covenant is cleaner without the conjunction.",
+      "_chunk": 1
+    },
+    {
+      "old": "And it is why __“there is none other name under heaven… whereby we must be saved”__ (Acts 4:12): no other name, because no other _covenant_.",
+      "new": "It is why __“there is none other name under heaven… whereby we must be saved”__ (Acts 4:12): no other name, because no other _covenant_.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove And at the start of author prose.",
+      "rationale": "House style forbids And-opened sentences. The claim already continues the prior list of reasons.",
+      "_chunk": 1
+    },
+    {
+      "old": "And God’s remedy is not a correction of speech: __“I will *sanctify my great name*, which was profaned among the heathen… when I shall be *sanctified in you* before their eyes”__ (Ezekiel 36:23) — He hallows His own name by making the people who wear it holy.",
+      "new": "God’s remedy is not a correction of speech: __“I will *sanctify my great name*, which was profaned among the heathen… when I shall be *sanctified in you* before their eyes”__ (Ezekiel 36:23) — He hallows His own name by making the people who wear it holy.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Remove And sentence open before God’s remedy.",
+      "rationale": "Author prose cannot start with And. The assertion stands without the conjunction.",
+      "_chunk": 1
+    },
+    {
+      "old": "Hear the petitions that march out behind it, each in the same commanding mood:",
+      "new": "The petitions that march out behind it keep the same commanding mood:",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace Hear staging with a direct assertion.",
+      "rationale": "Hear is a presenter cue in the same family as Notice/Mark. Asserting the petitions’ mood keeps density and voice.",
+      "_chunk": 1
+    },
+    {
+      "old": "Which sets up the sharpest test Jesus ever gave.",
+      "new": "This sets up the sharpest test Jesus ever gave.",
+      "type": "readability",
+      "severity": "low",
+      "summary": "Replace dangling Which with a clear demonstrative.",
+      "rationale": "Which as a sentence open is a weak relative hangover from the prior paragraph. This points cleanly to the name-bearer claim just established.",
+      "_chunk": 1
+    },
+    {
+      "old": "The covenant runs through every petition that follows; walk them with the Bible’s symbolic language in hand.",
+      "new": "The covenant runs through every petition that follows when read in the Bible’s symbolic language.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Remove the walk them director imperative.",
+      "rationale": "Walk them is a stage direction to the reader. The revised line states the same method without the cue.",
+      "_chunk": 1
+    },
+    {
+      "old": "Watch the Name-bearer pray this very petition over a man:",
+      "new": "The Name-bearer prays this very petition over a man:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director cue Watch before the Luke quotation.",
+      "rationale": "House style forbids presenter staging such as Watch. Asserting the act keeps the claim and the following scripture block intact.",
+      "_chunk": 2
+    },
+    {
+      "old": "Read whole, the prayer Jesus taught is the covenant renewed in miniature: the name hallowed, the kingdom summoned, the will obeyed, the word received daily, the release practiced, the deliverance promised.",
+      "new": "Taken whole, the prayer Jesus taught is the covenant renewed in miniature: the name hallowed, the kingdom summoned, the will obeyed, the word received daily, the release practiced, the deliverance promised.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace imperative Read whole with Taken whole.",
+      "rationale": "Read whole functions as a director cue to the reader. Taken whole preserves the density and the same claim without staging.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the true Husband gives His sym:sym-widow[widowed] people exactly link:/books/symbolic-language/orphans-widows-and-the-fatherless/[the two things these women decline] — __“food and raiment”__ (Deuteronomy 10:18): the sym:sym-bread[bread] of His word and the sym:sym-garment[garment] of His righteousness.footnote:fn08foodraiment[The food and the raiment are opened fully in the link:/books/symbolic-language/orphans-widows-and-the-fatherless/[Orphans, Widows, and the Fatherless] chapter.]",
+      "new": "The true Husband gives His sym:sym-widow[widowed] people exactly link:/books/symbolic-language/orphans-widows-and-the-fatherless/[the two things these women decline] — __“food and raiment”__ (Deuteronomy 10:18): the sym:sym-bread[bread] of His word and the sym:sym-garment[garment] of His righteousness.footnote:fn08foodraiment[The food and the raiment are opened fully in the link:/books/symbolic-language/orphans-widows-and-the-fatherless/[Orphans, Widows, and the Fatherless] chapter.]",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The claim and all markup stay unchanged.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the only raiment the story provides her is the one she asks for.",
+      "new": "The only raiment the story provides her is the one she asks for.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The contrast with the seven women remains intact.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the name owned is also written — impressed on its bearers like a signet in wax.",
+      "new": "The name owned is also written — impressed on its bearers like a signet in wax.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The bridge into the Seal chapter stays the same.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chapter’s core case is strong: name as covenant rather than sound, built tightly from Exodus 23 through David’s house to the Lord’s Prayer. Scripture density and law-positive force are intact, and the vain-name and Lord-Lord sections land cleanly. Residual defects are mostly house-style sentence opens (But/And) and a few director cues (Notice that, Hear, walk them) that stage the reader instead of asserting. A couple of relative-clause openers also weaken the seams between sections. Surgical fixes restore the author’s voice without touching doctrine or quoted text.\",\n  \"proposals\": [\n    {\n      \"old\": \"But Jesus made a promise about His name that no magic word could keep:\",\n      \"new\": \"Jesus made a promise about His name that no magic word could keep:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden But sentence open in author prose.\",\n      \"rationale\": \"House style bars author sentences that start with But. Dropping the conjunction keeps the claim and the contrast with the prior paragraph.\"\n    },\n    {\n      \"old\": \"Notice that God, answering, plays on David’s own word — for a __“house”__ in Scripture is a building _and_ a family line, and a family line is exactly what carries a name.\",\n      \"new\": \"God, answering, plays on David’s own word — for a __“house”__ in Scripture is a building _and_ a family line, and a family line is exactly what carries a name.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip the director cue Notice that.\",\n      \"rationale\": \"Notice that is an explicit forbidden presenter cue. The sentence already asserts the wordplay; the cue only stages the reader.\"\n    },\n    {\n      \"old\": \"And in covenant: the Son of David builds the house the first two only sketched — __“Destroy this temple, and in three days I will raise it up… he spake of the *temple of his body*”__ (John 2:19-21); __“ye also, as lively sym:sym-stone[stones], are *built up a spiritual house*”__ (1 Peter 2:5); __“Christ as a son over his own house; *whose house are we*”__ (Hebrews 3:6).\",\n      \"new\": \"In covenant: the Son of David builds the house the first two only sketched — __“Destroy this temple, and in three days I will raise it up… he spake of the *temple of his body*”__ (John 2:19-21); __“ye also, as lively sym:sym-stone[stones], are *built up a spiritual house*”__ (1 Peter 2:5); __“Christ as a son over his own house; *whose house are we*”__ (Hebrews 3:6).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop And so the parallel list stays legal under house style.\",\n      \"rationale\": \"Author prose may not open with And. Parallel In the flesh / In stone / In covenant is cleaner without the conjunction.\"\n    },\n    {\n      \"old\": \"And it is why __“there is none other name under heaven… whereby we must be saved”__ (Acts 4:12): no other name, because no other _covenant_.\",\n      \"new\": \"It is why __“there is none other name under heaven… whereby we must be saved”__ (Acts 4:12): no other name, because no other _covenant_.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove And at the start of author prose.\",\n      \"rationale\": \"House style forbids And-opened sentences. The claim already continues the prior list of reasons.\"\n    },\n    {\n      \"old\": \"And God’s remedy is not a correction of speech: __“I will *sanctify my great name*, which was profaned among the heathen… when I shall be *sanctified in you* before their eyes”__ (Ezekiel 36:23) — He hallows His own name by making the people who wear it holy.\",\n      \"new\": \"God’s remedy is not a correction of speech: __“I will *sanctify my great name*, which was profaned among the heathen… when I shall be *sanctified in you* before their eyes”__ (Ezekiel 36:23) — He hallows His own name by making the people who wear it holy.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove And sentence open before God’s remedy.\",\n      \"rationale\": \"Author prose cannot start with And. The assertion stands without the conjunction.\"\n    },\n    {\n      \"old\": \"Hear the petitions that march out behind it, each in the same commanding mood:\",\n      \"new\": \"The petitions that march out behind it keep the same commanding mood:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace Hear staging with a direct assertion.\",\n      \"rationale\": \"Hear is a presenter cue in the same family as Notice/Mark. Asserting the petitions’ mood keeps density and voice.\"\n    },\n    {\n      \"old\": \"Which sets up the sharpest test Jesus ever gave.\",\n      \"new\": \"This sets up the sharpest test Jesus ever gave.\",\n      \"type\": \"readability\",\n      \"severity\": \"low\",\n      \"summary\": \"Replace dangling Which with a clear demonstrative.\",\n      \"rationale\": \"Which as a sentence open is a weak relative hangover from the prior paragraph. This points cleanly to the name-bearer claim just established.\"\n    },\n    {\n      \"old\": \"The covenant runs through every petition that follows; walk them with the Bible’s symbolic language in hand.\",\n      \"new\": \"The covenant runs through every petition that follows when read in the Bible’s symbolic language.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove the walk them director imperative.\",\n      \"rationale\": \"Walk them is a stage direction to the reader. The revised line states the same method without the cue.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk is dense and law-positive: the prayer petitions, Babel versus the given name, the seven women versus Ruth under the wing, and the name-law-garment synthesis all land with force. The closing compound of bride, name, house, and temple is clean and consistent with the book’s method. Residual presenter staging remains in two places (Watch the Name-bearer; Read whole), and three author sentences open with And, violating house style. No doctrine rewrites, scripture-quote defects, or factual naming errors appear. Surgical cue removals and sentence-open fixes restore the assertive register without thinning the argument.\",\n  \"proposals\": [\n    {\n      \"old\": \"Watch the Name-bearer pray this very petition over a man:\",\n      \"new\": \"The Name-bearer prays this very petition over a man:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director cue Watch before the Luke quotation.\",\n      \"rationale\": \"House style forbids presenter staging such as Watch. Asserting the act keeps the claim and the following scripture block intact.\"\n    },\n    {\n      \"old\": \"Read whole, the prayer Jesus taught is the covenant renewed in miniature: the name hallowed, the kingdom summoned, the will obeyed, the word received daily, the release practiced, the deliverance promised.\",\n      \"new\": \"Taken whole, the prayer Jesus taught is the covenant renewed in miniature: the name hallowed, the kingdom summoned, the will obeyed, the word received daily, the release practiced, the deliverance promised.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace imperative Read whole with Taken whole.\",\n      \"rationale\": \"Read whole functions as a director cue to the reader. Taken whole preserves the density and the same claim without staging.\"\n    },\n    {\n      \"old\": \"And the true Husband gives His sym:sym-widow[widowed] people exactly link:/books/symbolic-language/orphans-widows-and-the-fatherless/[the two things these women decline] — __“food and raiment”__ (Deuteronomy 10:18): the sym:sym-bread[bread] of His word and the sym:sym-garment[garment] of His righteousness.footnote:fn08foodraiment[The food and the raiment are opened fully in the link:/books/symbolic-language/orphans-widows-and-the-fatherless/[Orphans, Widows, and the Fatherless] chapter.]\",\n      \"new\": \"The true Husband gives His sym:sym-widow[widowed] people exactly link:/books/symbolic-language/orphans-widows-and-the-fatherless/[the two things these women decline] — __“food and raiment”__ (Deuteronomy 10:18): the sym:sym-bread[bread] of His word and the sym:sym-garment[garment] of His righteousness.footnote:fn08foodraiment[The food and the raiment are opened fully in the link:/books/symbolic-language/orphans-widows-and-the-fatherless/[Orphans, Widows, and the Fatherless] chapter.]\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The claim and all markup stay unchanged.\"\n    },\n    {\n      \"old\": \"And the only raiment the story provides her is the one she asks for.\",\n      \"new\": \"The only raiment the story provides her is the one she asks for.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The contrast with the seven women remains intact.\"\n    },\n    {\n      \"old\": \"And the name owned is also written — impressed on its bearers like a signet in wax.\",\n      \"new\": \"The name owned is also written — impressed on its bearers like a signet in wax.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The bridge into the Seal chapter stays the same.\"\n    }\n  ]\n}"
+    }
+  ]
+}

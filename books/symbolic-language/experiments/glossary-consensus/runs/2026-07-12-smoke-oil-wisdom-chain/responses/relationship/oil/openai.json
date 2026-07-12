@@ -1,0 +1,155 @@
+{
+  "id": "resp_0248fea09d24ce29006a53200096bc81948a4e56b43db4d79f",
+  "object": "response",
+  "created_at": 1783832576,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783832586,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0248fea09d24ce29006a5320017ef08194b91873f8851d0ada",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0248fea09d24ce29006a532005b0008194a42b8b198556f216",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The recognizable popular interpretation identifies lamp oil with the Holy Spirit, especially the Spirit’s indwelling power sustaining spiritual light and readiness. Other established readings include preparedness, grace, faith, good works, and obedience, while academic interpreters may resist assigning the oil a fixed referent.\",\"book_summary\":\"The book identifies oil not directly as the Holy Spirit, but as Spirit-taught truth and correction inwardly retained and tested through obedience; the resulting visible light is exemplary good works.\",\"rationale\":\"The entry materially displaces the dominant Holy-Spirit identification, even while retaining the Spirit as the source of the process. Its emphasis on inwardly stored truth becoming proven obedience overlaps recognizable minority or alternative readings involving good works, faithful obedience, inward spiritual life, and readiness. It is therefore divergent rather than novel: its synthesis is distinctive, but its principal elements are represented in the interpretive landscape.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited texts support several links in the proposed chain—reproof compared to oil, oil stored by the wise, truth acquired and retained, the Spirit producing obedience, and visible light associated with good works—but no cited passage explicitly equates lamp oil with Spirit-taught correction worked into proven obedience. Zechariah 4 also more naturally reinforces the common Spirit association, while Matthew 25 leaves the oil undecoded.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3609,
+    "input_tokens_details": {
+      "cache_write_tokens": 3606,
+      "cached_tokens": 0
+    },
+    "output_tokens": 519,
+    "output_tokens_details": {
+      "reasoning_tokens": 221
+    },
+    "total_tokens": 4128
+  },
+  "user": null,
+  "metadata": {}
+}

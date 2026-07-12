@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "name",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nName\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical interpretation, a 'name' symbolizes the essential character, nature, and identity of the person who bears it — the name stands for the person themselves. This is most emphasized with the divine name: God's name represents God's own being, character, authority, and presence, so that to know, call on, praise, or profane the name is to know, call on, praise, or profane God himself. By extension, acting 'in the name' of someone means acting in their person, character, and delegated authority.\",\n  \"primary_basis\": [\n    \"Exodus 3:13-15 (God reveals his name 'I AM' as self-disclosure of his being)\",\n    \"Exodus 34:5-7 (the LORD proclaims his name by declaring his character)\",\n    \"Exodus 20:7 (prohibition against taking the LORD's name in vain)\",\n    \"Psalm 9:10 ('those who know your name put their trust in you')\",\n    \"Proverbs 18:10 ('the name of the LORD is a strong tower')\",\n    \"Matthew 6:9 ('hallowed be your name')\",\n    \"John 17:6, 26 (Jesus manifests the Father's name)\",\n    \"Acts 4:12 ('no other name under heaven... by which we must be saved')\",\n    \"Philippians 2:9-11 (God gives Jesus 'the name that is above every name')\",\n    \"Joel 2:32 / Romans 10:13 ('everyone who calls on the name of the Lord will be saved')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Name as delegated authority and agency: to speak or act 'in the name of' someone is to act as their authorized representative with their power (prayer, baptism, healing, and ministry done in Jesus' name).\",\n      \"basis\": [\n        \"John 14:13-14\",\n        \"Acts 3:6\",\n        \"Matthew 28:19\",\n        \"Colossians 3:17\",\n        \"Mark 9:38-39\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Name-change as transformation of identity, destiny, or covenant status: receiving a new name marks a new relationship with God or a new vocation.\",\n      \"basis\": [\n        \"Genesis 17:5 (Abram to Abraham)\",\n        \"Genesis 32:28 (Jacob to Israel)\",\n        \"Matthew 16:17-18 (Simon to Peter)\",\n        \"Isaiah 62:2\",\n        \"Revelation 2:17; 3:12 (the 'new name' given to overcomers)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Name as reputation, honor, or renown — one's standing before God and others; making a name for oneself versus God making one's name great.\",\n      \"basis\": [\n        \"Genesis 11:4 (Babel)\",\n        \"Genesis 12:2 ('I will make your name great')\",\n        \"Proverbs 22:1 ('a good name is to be chosen rather than great riches')\",\n        \"2 Samuel 7:9\",\n        \"Ecclesiastes 7:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Deuteronomic 'name theology': in critical scholarship, God's 'name' dwelling in the temple functions as a hypostasis or mode of divine presence, distinguishing God's transcendent being from his localized manifestation.\",\n      \"basis\": [\n        \"Deuteronomy 12:5, 11\",\n        \"1 Kings 8:27-29\",\n        \"2 Samuel 7:13\",\n        \"Jeremiah 7:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Knowing a name confers power or control over the one named (an ancient Near Eastern / magical-invocation reading, sometimes applied to Jacob asking the angel's name or to naming the animals as exercising dominion).\",\n      \"basis\": [\n        \"Genesis 2:19-20\",\n        \"Genesis 32:29\",\n        \"Judges 13:17-18\",\n        \"Acts 19:13-16 (as a negative example of magical misuse of the name)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Name as record of eternal destiny — having one's name 'written in the book of life' as symbol of election and salvation.\",\n      \"basis\": [\n        \"Exodus 32:32-33\",\n        \"Luke 10:20\",\n        \"Philippians 4:3\",\n        \"Revelation 20:15; 21:27\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic weight of 'name' in Scripture is one of the more settled areas of biblical interpretation, agreed on across Catholic, Orthodox, Protestant, and academic traditions: the name represents the person — their character, nature, authority, and presence — rather than a mere label. The alternative readings listed are largely complementary facets (authority, reputation, new identity) rather than rival interpretations, though the scholarly 'name theology' debate and magical-power readings are materially distinct. If the intended term were a specific name (e.g., a particular biblical name's etymology) rather than the general concept 'name,' the answer would differ; this response addresses the general biblical-symbolic concept.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A “name” most commonly symbolizes the identity and revealed character of the person who bears it; in biblical usage it can therefore represent the person himself or herself, including that person’s presence, reputation, and authority. God’s name especially signifies God as revealed and made known.\",\n  \"primary_basis\": [\n    \"Exodus 3:13–15 — God’s revealed name is associated with his identity and covenantal self-disclosure.\",\n    \"Exodus 34:5–7 — the LORD proclaims his name by declaring his character and attributes.\",\n    \"Psalm 20:7 — trusting in the name of the LORD means trusting in God himself.\",\n    \"Proverbs 18:10 — the name of the LORD represents God’s protective presence and power.\",\n    \"Matthew 1:21–23 — Jesus’ names identify his mission and significance.\",\n    \"John 17:6, 26 — Jesus makes the Father’s name known, commonly understood as revealing God’s person and character.\",\n    \"Philippians 2:9–11 — the exalted name of Jesus signifies supreme status and authority.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Delegated authority or agency: acting “in the name” of someone means acting under that person’s authorization and power.\",\n      \"basis\": [\n        \"Matthew 28:19\",\n        \"Luke 10:17\",\n        \"Acts 3:6\",\n        \"Acts 4:7–12\",\n        \"Colossians 3:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Reputation, honor, or renown: a good or great name represents public standing and remembered reputation.\",\n      \"basis\": [\n        \"Genesis 11:4\",\n        \"Genesis 12:2\",\n        \"Proverbs 22:1\",\n        \"Ecclesiastes 7:1\",\n        \"Revelation 3:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant ownership and belonging: bearing, receiving, or having a name written signifies being claimed by God and included among his people.\",\n      \"basis\": [\n        \"Numbers 6:27\",\n        \"2 Chronicles 7:14\",\n        \"Isaiah 43:7\",\n        \"Revelation 3:12\",\n        \"Revelation 14:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A divinely assigned vocation or transformed identity: receiving a new name marks a changed status, mission, or eschatological identity.\",\n      \"basis\": [\n        \"Genesis 17:5, 15\",\n        \"Genesis 32:28\",\n        \"Isaiah 62:2\",\n        \"Matthew 16:17–18\",\n        \"Revelation 2:17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Continued existence or memorial: preserving or blotting out a name can symbolize enduring remembrance, lineage, or removal from the community.\",\n      \"basis\": [\n        \"Deuteronomy 25:6\",\n        \"Ruth 4:5, 10\",\n        \"Psalm 9:5\",\n        \"Psalm 109:13\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the core idea of identity or character represented by a name, but no single exclusive symbolic definition applies in every passage. Context determines whether identity, authority, reputation, belonging, or vocation is emphasized.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The name of a person (especially God or Jesus) stands for their full identity, character, authority, power, and presence, so that invoking or acting 'in the name' means acting by that person's authority and under their protection.\",\n  \"primary_basis\": [\n    \"Exodus 3:13-15 (divine self-revelation of the Name)\",\n    \"Exodus 34:5-7 (Name = character)\",\n    \"Proverbs 18:10 (Name as strong tower)\",\n    \"Matthew 28:19 (baptism into the Name)\",\n    \"John 14:13-14; 16:23-24 (prayer in Jesus' name)\",\n    \"Acts 3:6, 16; 4:7-12 (healing and salvation by the Name)\",\n    \"Philippians 2:9-11 (Name above every name)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Mere personal label or proper noun without deeper symbolic force\",\n      \"basis\": [\n        \"Ordinary narrative uses (e.g., Genesis genealogies, Gospel naming scenes)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Reputation, fame, or renown\",\n      \"basis\": [\n        \"Proverbs 22:1\",\n        \"Ecclesiastes 7:1\",\n        \"Isaiah 56:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cultic or magical formula whose power resides in the syllables themselves\",\n      \"basis\": [\n        \"Later Jewish and early Christian magical papyri; some popular piety around the Tetragrammaton or 'Jesus'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream patristic, medieval, Reformation, and modern evangelical/mainline exegesis the primary symbolic sense is stable: the divine Name is virtually equivalent to the person and power of God/Christ. Secondary senses (reputation, literal label) are acknowledged but not treated as the dominant theological symbolism.\"\n}\n\nBOOK ENTRY\nThe covenant itself — taken as a bride takes her husband's: to be called by His name is to be brought under His wing, whose corners carry the reminder of the commandments.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the person's character, authority, and reputation.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(2 Sam 7:13; Ex 20:7; Isa 4:1; Ruth 3:9) · see The Name, ch. 8\n\nAVAILABLE KJV EXCERPTS\n2 Samuel 7:13 — He shall build an house for my name, and I will stablish the throne of his kingdom for ever.\nExodus 20:7 — Thou shalt not take the name of the LORD thy God in vain; for the LORD will not hold him guiltless that taketh his name in vain.\nIsaiah 4:1 — And in that day seven women shall take hold of one man, saying, We will eat our own bread, and wear our own apparel: only let us be called by thy name, to take away our reproach.\nRuth 3:9 — And he said, Who art thou? And she answered, I am Ruth thine handmaid: spread therefore thy skirt over thine handmaid; for thou art a near kinsman.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "1095453e21b1551660ac7f608d8ecc664543051cad9eb9d85656f53860bea7da",
+  "cache": {
+    "hit": false
+  }
+}

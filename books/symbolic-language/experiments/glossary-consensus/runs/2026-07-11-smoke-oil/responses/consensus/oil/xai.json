@@ -1,0 +1,156 @@
+{
+  "created_at": 1783828027,
+  "completed_at": 1783828040,
+  "id": "8c956d45-a8e4-9bb5-8026-7c76bea1f461",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_8c956d45-a8e4-9bb5-8026-7c76bea1f461",
+      "summary": [
+        {
+          "text": "The task is about the symbolic meaning of \"Oil\" in Christian teaching and biblical interpretation.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the Holy Spirit (His anointing, presence, empowerment, and illumination)\",\n  \"primary_basis\": [\n    \"1 Samuel 16:13 (anointing of David with oil accompanied by the Spirit of the Lord)\",\n    \"Isaiah 61:1 and Luke 4:18 (Spirit of the Lord anoints for ministry)\",\n    \"Acts 10:38 (God anointed Jesus with the Holy Spirit and power)\",\n    \"Zechariah 4:1-14 (oil flowing to the lampstand, interpreted as 'not by might nor by power but by my Spirit')\",\n    \"Matthew 25:1-13 (oil in the virgins' lamps commonly read as the Holy Spirit or His sustaining presence)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"healing and physical restoration\",\n      \"basis\": [\n        \"James 5:14-15 (elders anoint the sick with oil)\",\n        \"Mark 6:13 (disciples anoint many sick with oil)\",\n        \"Luke 10:34 (oil used medicinally by the Good Samaritan)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"joy, gladness, or festivity\",\n      \"basis\": [\n        \"Psalm 45:7 / Hebrews 1:9 (oil of gladness)\",\n        \"Psalm 23:5 (anoint my head with oil)\",\n        \"Isaiah 61:3 (oil of joy instead of mourning)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"consecration / setting apart for sacred office or service\",\n      \"basis\": [\n        \"Exodus 30:22-33 (holy anointing oil for tabernacle and priests)\",\n        \"Leviticus 8 (anointing of Aaron and sons)\",\n        \"1 Kings 1:39 and 19:16 (anointing of kings and prophets)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"readiness, vigilance, or personal spiritual preparation (distinct from the Spirit Himself)\",\n      \"basis\": [\n        \"Matthew 25:1-13 (oil as the resource that keeps the lamp burning)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"abundance, blessing, or prosperity\",\n      \"basis\": [\n        \"Deuteronomy 8:8 and 32:13 (land of olive oil)\",\n        \"Joel 2:24 (vats overflowing with oil)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, Reformation, evangelical, and modern biblical-theological sources the dominant symbolic assignment of oil (especially olive oil used in anointing) is the Holy Spirit; other associations (healing, joy, consecration) are widely recognized but secondary or derivative of the Spirit motif rather than competing primaries.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_8c956d45-a8e4-9bb5-8026-7c76bea1f461",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1863,
+    "output_tokens_details": {
+      "reasoning_tokens": 1185
+    },
+    "total_tokens": 2465,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 121900000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1863
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "life",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLife (the life)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'life' or 'the life' symbolically denotes eternal, divine life (Greek zoe) that comes from God and is embodied in and given through Jesus Christ — a qualitatively new spiritual existence in communion with God, as opposed to mere biological existence (bios) or spiritual death. In Johannine usage especially, Christ himself is identified as 'the life,' so the term functions both as the gift (eternal life for believers) and the giver (Christ as the source and embodiment of that life).\",\n  \"primary_basis\": [\n    \"John 14:6 — 'I am the way, and the truth, and the life'\",\n    \"John 11:25 — 'I am the resurrection and the life'\",\n    \"John 1:4 — 'In him was life, and the life was the light of men'\",\n    \"John 3:16 — 'whoever believes in him should not perish but have eternal life'\",\n    \"John 5:26 — 'as the Father has life in himself, so he has granted the Son also to have life in himself'\",\n    \"John 10:10 — 'I came that they may have life, and have it abundantly'\",\n    \"John 17:3 — 'this is eternal life, that they know you, the only true God, and Jesus Christ'\",\n    \"1 John 5:11-12 — 'God gave us eternal life, and this life is in his Son; whoever has the Son has life'\",\n    \"1 John 1:1-2 — 'the word of life... the life was made manifest'\",\n    \"Colossians 3:4 — 'Christ who is your life'\",\n    \"Romans 6:4 — 'walk in newness of life'\",\n    \"Galatians 2:20 — 'it is no longer I who live, but Christ who lives in me'\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ himself as 'the Life' — a personal, christological identification rather than a state or gift; life is not a thing bestowed but a Person indwelling the believer (emphasized in Johannine theology, patristic writers, and traditions such as the deeper-life and Watchman Nee/Witness Lee streams).\",\n      \"basis\": [\n        \"John 14:6\",\n        \"John 11:25\",\n        \"Colossians 3:4\",\n        \"Galatians 2:20\",\n        \"Philippians 1:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eternal life as post-mortem immortality — everlasting existence in heaven after death, emphasizing future duration rather than present quality; common in popular piety though many scholars stress that Johannine eternal life is a present possession.\",\n      \"basis\": [\n        \"John 3:16\",\n        \"Matthew 25:46\",\n        \"Daniel 12:2\",\n        \"Romans 6:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Abundant life — a present-tense quality of flourishing, fullness, blessing, and vitality in this world; in some prosperity-oriented teaching this extends to material and physical well-being.\",\n      \"basis\": [\n        \"John 10:10\",\n        \"Deuteronomy 30:19-20\",\n        \"Psalm 16:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Life as participation in the divine nature (theosis/divinization) — sharing in God's own uncreated life; emphasized in Eastern Orthodox theology.\",\n      \"basis\": [\n        \"2 Peter 1:4\",\n        \"John 5:26\",\n        \"John 6:53-57\",\n        \"1 Corinthians 15:45\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Life as breath/soul (Hebrew nephesh, ruach) — the animating principle given by God, a natural rather than symbolic sense stressed in Old Testament scholarship; sometimes linked to 'the life is in the blood.'\",\n      \"basis\": [\n        \"Genesis 2:7\",\n        \"Leviticus 17:11\",\n        \"Job 33:4\",\n        \"Ecclesiastes 12:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Life mediated through symbols of access — the tree of life, bread of life, water of life, and book of life — where 'life' names covenantal fellowship with God restored in the new creation.\",\n      \"basis\": [\n        \"Genesis 2:9; 3:22-24\",\n        \"John 6:35\",\n        \"Revelation 2:7; 21:6; 22:1-2\",\n        \"Revelation 20:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Conditionalist/annihilationist reading — 'life' means literal continued existence itself; the alternative to eternal life is cessation of being rather than eternal conscious torment.\",\n      \"basis\": [\n        \"John 3:16 ('perish')\",\n        \"Romans 6:23\",\n        \"Matthew 10:28\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus across Catholic, Orthodox, and Protestant traditions that 'life/the life' in the New Testament symbolizes eternal, divine (zoe) life found in Christ — both a present spiritual reality and a future consummation — with Christ himself identified as its embodiment and source. The listed alternatives are mostly differences of emphasis (present vs. future, gift vs. Person, quality vs. duration) rather than mutually exclusive readings. The main genuine divergence is between the theological/symbolic sense and the OT anthropological sense (breath/soul), which coexist in scholarship. Because the bare term 'life' spans many biblical contexts (tree of life, book of life, bread of life, blood as life), interpreters typically specify the context; the Johannine 'the life' formula is the anchor for the dominant reading.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine or eternal life given by God in and through Jesus Christ—salvation understood as restored communion with God, spiritually present now and fulfilled in resurrection.\",\n  \"primary_basis\": [\n    \"John 1:4 — “In him was life,” associating life with the incarnate Word.\",\n    \"John 5:21, 24-26 — the Son gives life and possesses life in himself; believers pass from death to life.\",\n    \"John 10:10, 28 — Jesus gives abundant and eternal life.\",\n    \"John 11:25-26 — Jesus declares, “I am the resurrection and the life.”\",\n    \"John 14:6 — Jesus declares, “I am the way, and the truth, and the life.”\",\n    \"John 17:3 — eternal life is defined relationally as knowing the Father and Jesus Christ.\",\n    \"Romans 6:4, 23 — believers walk in newness of life, and God’s gift is eternal life in Christ.\",\n    \"Colossians 3:3-4 — Christ is identified as the believer’s life.\",\n    \"1 John 1:1-2; 5:11-12, 20 — eternal life is manifested in Christ and possessed through the Son.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ himself as “the Life,” emphasizing his identity as the source, embodiment, and mediator of divine life rather than merely a gift he bestows.\",\n      \"basis\": [\n        \"John 11:25\",\n        \"John 14:6\",\n        \"Colossians 3:4\",\n        \"1 John 1:1-2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ordinary created or biological life—the animating breath and earthly existence bestowed and sustained by God. In many passages “life” is literal rather than symbolic.\",\n      \"basis\": [\n        \"Genesis 2:7\",\n        \"Job 33:4\",\n        \"Psalm 104:29-30\",\n        \"Acts 17:25, 28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection life: bodily life restored after death, especially through participation in Christ’s resurrection.\",\n      \"basis\": [\n        \"John 5:28-29\",\n        \"John 11:25-26\",\n        \"Romans 6:4-9\",\n        \"1 Corinthians 15:20-23, 42-49\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Present spiritual renewal or sanctified conduct—“newness of life,” often contrasted with sin, alienation, or spiritual death.\",\n      \"basis\": [\n        \"Romans 6:4, 11-13\",\n        \"Romans 8:6, 10-11\",\n        \"Ephesians 2:1-5\",\n        \"Galatians 2:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant flourishing, wisdom, and righteousness: life as well-being, blessing, and the fruitful path produced by fidelity to God.\",\n      \"basis\": [\n        \"Deuteronomy 30:15-20\",\n        \"Proverbs 3:16-18\",\n        \"Proverbs 8:35\",\n        \"Proverbs 12:28\",\n        \"Psalm 16:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit’s life-giving presence or power, particularly as the principle of spiritual and resurrection life.\",\n      \"basis\": [\n        \"John 6:63\",\n        \"Romans 8:2, 6, 10-11\",\n        \"2 Corinthians 3:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Immortality or unending conscious existence considered chiefly as duration rather than communion with God or participation in Christ.\",\n      \"basis\": [\n        \"Matthew 25:46\",\n        \"John 3:16\",\n        \"Revelation 21:4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong central Christian association between “life,” especially “the life” in Johannine or Christological language, and eternal/divine life in Christ. Nevertheless, the term is highly context-dependent and often denotes ordinary existence, present spiritual renewal, righteous flourishing, or bodily resurrection. Thus there is no single settled symbolic interpretation applicable to every biblical occurrence.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Jesus Christ himself as the personal source, embodiment, and giver of spiritual/eternal life (zoe)\",\n  \"primary_basis\": [\n    \"John 14:6 ('I am the way, and the truth, and the life')\",\n    \"John 11:25 ('I am the resurrection and the life')\",\n    \"John 1:4 ('In him was life')\",\n    \"1 John 1:1–2 ('the Word of life… the life was made manifest')\",\n    \"Colossians 3:4 ('Christ who is your life')\",\n    \"1 John 5:11–12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eternal life as the gift/state of salvation and communion with God granted to believers\",\n      \"basis\": [\n        \"John 3:16\",\n        \"John 17:3\",\n        \"Romans 6:23\",\n        \"1 John 5:11–13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Physical/biological life (nephesh/psyche) as the created animating principle given by God\",\n      \"basis\": [\n        \"Genesis 2:7\",\n        \"Leviticus 17:11\",\n        \"Acts 17:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit as the life-giving presence and power\",\n      \"basis\": [\n        \"John 6:63\",\n        \"Romans 8:2, 10–11\",\n        \"2 Corinthians 3:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Tree of Life as eschatological symbol of immortality and restored paradise\",\n      \"basis\": [\n        \"Genesis 2:9; 3:22–24\",\n        \"Revelation 2:7; 22:2, 14\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In New Testament usage and historic Christian teaching the definite form 'the life' most consistently functions as a christological title or as the divine/eternal life that is identical with or flows from Christ; physical life and the Tree of Life remain important but secondary symbolic registers. The distinction between zoe (divine life) and bios/psyche (creaturely life) is widely recognized in biblical studies.\"\n}\n\nBOOK ENTRY\nCovenant existence — the life the law produces.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: Christ Himself, and the eternal life imparted to believers.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 30:19-20; Lev 18:5; John 14:6; Matt 7:14) · see The Way, the Truth & the Life, ch. 7\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 30:19 — I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:\nDeuteronomy 30:20 — That thou mayest love the LORD thy God, and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days: that thou mayest dwell in the land which the LORD sware unto thy fathers, to Abraham, to Isaac, and to Jacob, to give them.\nLeviticus 18:5 — Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am the LORD.\nJohn 14:6 — Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.\nMatthew 7:14 — Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "db737503f7afe6318bf30c1c2e7af281b727390905f4440c8db514d9d070618b",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "file": "books/symbolic-language/32-the-sabbath.adoc",
+  "title": "The Sabbath",
+  "notes": [
+    "This chunk builds a tight, law-positive case that sabbath names the complete seven at every scale, from day-unit through jubilee to the age, with strong parallel-statute evidence and a sharp calendar-checksum argument. Density and assertiveness hold where the prose stays clean. Residual presenter staging remains in several lead-ins (Ask, watch, Read...notice, Now, Notice), and two author sentences open with But and And. A few light mechanical modernisms sit in the text but do not fight the biblical images. Surgical removal of the cues and openers restores house style without touching doctrine, quotes, or the calendar claim."
+  ],
+  "proposals": [
+    {
+      "old": "Ask what the word _sabbath_ names and every answer points at one day in seven.",
+      "new": "Every common answer takes the word _sabbath_ to name one day in seven.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove rhetorical Ask staging; assert the common claim directly.",
+      "rationale": "Opening with Ask is presenter staging. The replacement keeps the same claim and density in the author's voice.",
+      "_chunk": 1
+    },
+    {
+      "old": "But the law counts sabbaths — and watch what it says about them:",
+      "new": "The law counts sabbaths, and the wording is exact:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Fix But-open and drop watch cue.",
+      "rationale": "Author prose may not open with But; watch is a banned director cue. The new line asserts the same lead-in without either defect.",
+      "_chunk": 1
+    },
+    {
+      "old": "Read the commandment again with the unit in view, and notice that it legislates all seven days:",
+      "new": "With the unit in view the commandment legislates all seven days:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Read/notice director staging.",
+      "rationale": "Read... and notice that are presenter cues. The replacement states the claim directly and preserves the following scripture block.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now scale the unit by the prophetic day — for __“one day is with the Lord as a thousand years, and a thousand years as one day”__ (2 Peter 3:8) — and the sabbath opens into the calendar of the whole age.",
+      "new": "Scale the unit by the prophetic day — for __“one day is with the Lord as a thousand years, and a thousand years as one day”__ (2 Peter 3:8) — and the sabbath opens into the calendar of the whole age.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Drop Now director cue.",
+      "rationale": "Now scale is a banned staging form. Removing Now leaves an assertive imperative that matches the author's voice and density.",
+      "_chunk": 1
+    },
+    {
+      "old": "And it has a *landing condition*: __“unto the morrow after the seventh sabbath shall ye number fifty days”__ — the fiftieth day must itself be the morrow after a sabbath.",
+      "new": "It has a *landing condition*: __“unto the morrow after the seventh sabbath shall ye number fifty days”__ — the fiftieth day must itself be the morrow after a sabbath.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove And sentence open.",
+      "rationale": "Author prose may not open with And. Parallel structure with the two preceding It has lines is restored by the simple drop.",
+      "_chunk": 1
+    },
+    {
+      "old": "Notice what the continuous week does to the law's own grammar.",
+      "new": "The continuous week empties the law's own grammar.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace Notice cue with direct assertion.",
+      "rationale": "Notice what is a banned director cue. The new line asserts the same point and leads cleanly into the following evidence sentence.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk builds a tight, law-positive case that sabbath names the complete seven at every scale, from day-unit through jubilee to the age, with strong parallel-statute evidence and a sharp calendar-checksum argument. Density and assertiveness hold where the prose stays clean. Residual presenter staging remains in several lead-ins (Ask, watch, Read...notice, Now, Notice), and two author sentences open with But and And. A few light mechanical modernisms sit in the text but do not fight the biblical images. Surgical removal of the cues and openers restores house style without touching doctrine, quotes, or the calendar claim.\",\n  \"proposals\": [\n    {\n      \"old\": \"Ask what the word _sabbath_ names and every answer points at one day in seven.\",\n      \"new\": \"Every common answer takes the word _sabbath_ to name one day in seven.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove rhetorical Ask staging; assert the common claim directly.\",\n      \"rationale\": \"Opening with Ask is presenter staging. The replacement keeps the same claim and density in the author's voice.\"\n    },\n    {\n      \"old\": \"But the law counts sabbaths — and watch what it says about them:\",\n      \"new\": \"The law counts sabbaths, and the wording is exact:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Fix But-open and drop watch cue.\",\n      \"rationale\": \"Author prose may not open with But; watch is a banned director cue. The new line asserts the same lead-in without either defect.\"\n    },\n    {\n      \"old\": \"Read the commandment again with the unit in view, and notice that it legislates all seven days:\",\n      \"new\": \"With the unit in view the commandment legislates all seven days:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Read/notice director staging.\",\n      \"rationale\": \"Read... and notice that are presenter cues. The replacement states the claim directly and preserves the following scripture block.\"\n    },\n    {\n      \"old\": \"Now scale the unit by the prophetic day — for __“one day is with the Lord as a thousand years, and a thousand years as one day”__ (2 Peter 3:8) — and the sabbath opens into the calendar of the whole age.\",\n      \"new\": \"Scale the unit by the prophetic day — for __“one day is with the Lord as a thousand years, and a thousand years as one day”__ (2 Peter 3:8) — and the sabbath opens into the calendar of the whole age.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop Now director cue.\",\n      \"rationale\": \"Now scale is a banned staging form. Removing Now leaves an assertive imperative that matches the author's voice and density.\"\n    },\n    {\n      \"old\": \"And it has a *landing condition*: __“unto the morrow after the seventh sabbath shall ye number fifty days”__ — the fiftieth day must itself be the morrow after a sabbath.\",\n      \"new\": \"It has a *landing condition*: __“unto the morrow after the seventh sabbath shall ye number fifty days”__ — the fiftieth day must itself be the morrow after a sabbath.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove And sentence open.\",\n      \"rationale\": \"Author prose may not open with And. Parallel structure with the two preceding It has lines is restored by the simple drop.\"\n    },\n    {\n      \"old\": \"Notice what the continuous week does to the law's own grammar.\",\n      \"new\": \"The continuous week empties the law's own grammar.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace Notice cue with direct assertion.\",\n      \"rationale\": \"Notice what is a banned director cue. The new line asserts the same point and leads cleanly into the following evidence sentence.\"\n    }\n  ]\n}"
+    }
+  ]
+}

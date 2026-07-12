@@ -1,0 +1,195 @@
+{
+  "id": "resp_0477f5bf7ffe0283006a5334cf1358819092fc72e6a0b25ca8",
+  "object": "response",
+  "created_at": 1783837903,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783837918,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0477f5bf7ffe0283006a5334cfd1048190b1d9b8da67c8cf1a",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0477f5bf7ffe0283006a5334d670e48190a41129adcb159755",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Righteousness centrally means rightness according to God, encompassing both right standing before God and conformity to his will in upright conduct; traditions differ over whether saving righteousness is chiefly imputed, infused, covenantal, or enacted.\",\"book_summary\":\"Righteousness is specifically the doing of God’s commandments—the law enacted in righteous deeds and symbolically worn as a garment—not merely general goodness or a forensic verdict received apart from conduct.\",\"consensus_core_identification\":\"Rightness before God, expressed as a granted status and/or conformity to God’s moral will.\",\"book_core_identification\":\"Actual obedience to God’s commandments and the resulting righteous acts.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book restricts righteousness to enacted commandment-keeping. It excludes vague moral goodness and, most materially, cases in which a person is called righteous solely by an imputed or forensic verdict without corresponding obedience. The consensus admits ethical obedience as a genuine sense but also includes status-based and other relational uses.\",\"material_contradiction\":\"The book contradicts the dominant forensic view only where that view identifies righteousness as a received verdict independent of enacted obedience. It does not replace the consensus’s broader category of rightness according to God, because ethical obedience is already a recognized common component and alternative within that category.\",\"rationale\":\"This is not novel: all three consensus responses explicitly recognize ethical or behavioral righteousness, and the cited texts are standard evidence for it. Nor is it a full core replacement, because both readings concern conformity to God’s standard. The book materially narrows the term’s extension by making commandment-doing constitutive and rejecting verdict-only cases, so REFINED is more appropriate than MATCH or DIVERGENT.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Deuteronomy 6:25, Psalm 119:172, and 1 John 3:7 strongly establish that Scripture can call commandment-keeping and righteous action ‘righteousness,’ but they do not by themselves prove that this is the term’s exclusive meaning or rule out forensic, gifted, covenantal, or divine-righteousness uses elsewhere. The garment identification is also not directly demonstrated by the printed excerpts.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3630,
+    "input_tokens_details": {
+      "cache_write_tokens": 3627,
+      "cached_tokens": 0
+    },
+    "output_tokens": 836,
+    "output_tokens_details": {
+      "reasoning_tokens": 363
+    },
+    "total_tokens": 4466
+  },
+  "user": null,
+  "metadata": {}
+}

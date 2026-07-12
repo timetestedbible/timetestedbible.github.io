@@ -14,6 +14,7 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 | 05-herald | PROCLAIM THE GOSPEL UPON THE MOUNTAINS | ISAIAH 52:7 |
 | 06-cloak | FAITH WITHOUT WORKS IS DEAD | JAMES 2:26 |
 | 07-narrow-path | ASK FOR THE OLD PATHS | JEREMIAH 6:16 |
+| 08-ark-name | THE ARK OF THE COVENANT | HEBREWS 9:4 |
 | 08-strong-tower | THE NAME IS A STRONG TOWER | PROVERBS 18:10 |
 | 09-sealed-scroll | SEAL THE LAW AMONG MY DISCIPLES | ISAIAH 8:16 |
 | 10-inkhorn-seal | THE MARK SET UPON THE FOREHEADS | EZEKIEL 9:4 |
@@ -43,6 +44,7 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 | 36-daniel-sealed | SHUT UP THE WORDS, SEAL THE BOOK | DANIEL 12:4 |
 | 39-colossus-mountain | THE STONE BECAME A GREAT MOUNTAIN | DANIEL 2:35 |
 | 40-peace-be-still | PEACE, BE STILL | MARK 4:39 |
+| 40s-ship-of-state | WHAT CITY IS LIKE TYRUS | EZEKIEL 27:32 |
 | 41-kingdom-tree | IT IS THOU, O KING | DANIEL 4:22 |
 | 42-harvest-grass | ALL FLESH IS GRASS | ISAIAH 40:6 |
 | 43-wedding-garment | MAN WITHOUT WEDDING GARMENT | MATTHEW 22:11 |

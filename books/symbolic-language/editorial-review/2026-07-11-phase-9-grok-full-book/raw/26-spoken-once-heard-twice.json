@@ -1,0 +1,69 @@
+{
+  "file": "books/symbolic-language/26-spoken-once-heard-twice.adoc",
+  "title": "Spoken Once, Heard Twice",
+  "notes": [
+    "The chunk teaches the dual-reading principle cleanly from Jeremiah’s almond vision through the woman/fire chain to Genesis 3:15 and Revelation 12, keeping density, assertion, and law-positive voice. Scripture blocks, sym: links, and Hebrew letter claims are intact and free of AI stock diction. Five author-prose sentences open with And or But, violating house style. One elliptical title sentence (“is one”) needs a clarifying noun for readability. No director-cue list items, quote typos, or factual mismatches appear."
+  ],
+  "proposals": [
+    {
+      "old": "And the word the title lands on is the book's whole claim: what the Introduction poured as sym:sym-milk[milk], these chapters serve as sym:sym-meat[meat].",
+      "new": "The word the title lands on is the book's whole claim: what the Introduction poured as sym:sym-milk[milk], these chapters serve as sym:sym-meat[meat].",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open in author prose.",
+      "rationale": "House style forbids author-prose sentences starting with And. Dropping the conjunction preserves the claim and flow.",
+      "_chunk": 1
+    },
+    {
+      "old": "But these rhymes do more than aid the ear — they rhyme in *meaning*, so that the memory-hook and the message are the same device.",
+      "new": "These rhymes do more than aid the ear — they rhyme in *meaning*, so that the memory-hook and the message are the same device.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned But sentence open in author prose.",
+      "rationale": "House style forbids author-prose sentences starting with But. The contrast remains clear without the opening conjunction.",
+      "_chunk": 1
+    },
+    {
+      "old": "And when the prophets write Babylon's obituary, the pun goes to war:",
+      "new": "When the prophets write Babylon's obituary, the pun goes to war:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open before the Babylon quote.",
+      "rationale": "House style forbids author-prose sentences starting with And. The temporal clause stands cleanly on its own.",
+      "_chunk": 1
+    },
+    {
+      "old": "And when the promise was kept, both readings met in one womb: the virgin supplied the flesh, and the seed no man fathered was conceived __“of the *Holy Ghost*”__ (Matthew 1:20) — __“the power of the Highest shall *overshadow* thee”__ (Luke 1:35) — the God who is __“a *consuming fire*”__ (Hebrews 12:29) giving the woman the seed she could not have.",
+      "new": "When the promise was kept, both readings met in one womb: the virgin supplied the flesh, and the seed no man fathered was conceived __“of the *Holy Ghost*”__ (Matthew 1:20) — __“the power of the Highest shall *overshadow* thee”__ (Luke 1:35) — the God who is __“a *consuming fire*”__ (Hebrews 12:29) giving the woman the seed she could not have.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open on the incarnation reading.",
+      "rationale": "House style forbids author-prose sentences starting with And. The long claim is unchanged once the conjunction is dropped.",
+      "_chunk": 1
+    },
+    {
+      "old": "And John reopens the garden by name: the dragon of his vision is __“that old *serpent*”__ (Revelation 12:9); the woman travails and bears the __“*man child*, who was to rule all nations”__ (Revelation 12:5); and the serpent's ancient enmity finds its stated target — __“the dragon… went to make war with *the remnant of her seed*, which keep the commandments of God”__ (Revelation 12:17).",
+      "new": "John reopens the garden by name: the dragon of his vision is __“that old *serpent*”__ (Revelation 12:9); the woman travails and bears the __“*man child*, who was to rule all nations”__ (Revelation 12:5); and the serpent's ancient enmity finds its stated target — __“the dragon… went to make war with *the remnant of her seed*, which keep the commandments of God”__ (Revelation 12:17).",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open on the Revelation 12 reading.",
+      "rationale": "House style forbids author-prose sentences starting with And. The identification of woman and seed remains intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "This book's title is one, built in homage to the device this chapter teaches: say it aloud, and _MEAT The Bible's Symbolic Language_ is also _meet the Bible's symbolic language_ — the food and the invitation in one sound, divided only by where the speaker pauses.",
+      "new": "This book's title is one such pun, built in homage to the device this chapter teaches: say it aloud, and _MEAT The Bible's Symbolic Language_ is also _meet the Bible's symbolic language_ — the food and the invitation in one sound, divided only by where the speaker pauses.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Supply the missing noun after elliptical 'is one'.",
+      "rationale": "The sentence leaves 'one' without a clear head noun. Adding 'such pun' makes the reference to the preceding English-puns sentence explicit without changing the claim.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"The chunk teaches the dual-reading principle cleanly from Jeremiah’s almond vision through the woman/fire chain to Genesis 3:15 and Revelation 12, keeping density, assertion, and law-positive voice. Scripture blocks, sym: links, and Hebrew letter claims are intact and free of AI stock diction. Five author-prose sentences open with And or But, violating house style. One elliptical title sentence (“is one”) needs a clarifying noun for readability. No director-cue list items, quote typos, or factual mismatches appear.\",\n  \"proposals\": [\n    {\n      \"old\": \"And the word the title lands on is the book's whole claim: what the Introduction poured as sym:sym-milk[milk], these chapters serve as sym:sym-meat[meat].\",\n      \"new\": \"The word the title lands on is the book's whole claim: what the Introduction poured as sym:sym-milk[milk], these chapters serve as sym:sym-meat[meat].\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open in author prose.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And. Dropping the conjunction preserves the claim and flow.\"\n    },\n    {\n      \"old\": \"But these rhymes do more than aid the ear — they rhyme in *meaning*, so that the memory-hook and the message are the same device.\",\n      \"new\": \"These rhymes do more than aid the ear — they rhyme in *meaning*, so that the memory-hook and the message are the same device.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned But sentence open in author prose.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with But. The contrast remains clear without the opening conjunction.\"\n    },\n    {\n      \"old\": \"And when the prophets write Babylon's obituary, the pun goes to war:\",\n      \"new\": \"When the prophets write Babylon's obituary, the pun goes to war:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open before the Babylon quote.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And. The temporal clause stands cleanly on its own.\"\n    },\n    {\n      \"old\": \"And when the promise was kept, both readings met in one womb: the virgin supplied the flesh, and the seed no man fathered was conceived __“of the *Holy Ghost*”__ (Matthew 1:20) — __“the power of the Highest shall *overshadow* thee”__ (Luke 1:35) — the God who is __“a *consuming fire*”__ (Hebrews 12:29) giving the woman the seed she could not have.\",\n      \"new\": \"When the promise was kept, both readings met in one womb: the virgin supplied the flesh, and the seed no man fathered was conceived __“of the *Holy Ghost*”__ (Matthew 1:20) — __“the power of the Highest shall *overshadow* thee”__ (Luke 1:35) — the God who is __“a *consuming fire*”__ (Hebrews 12:29) giving the woman the seed she could not have.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open on the incarnation reading.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And. The long claim is unchanged once the conjunction is dropped.\"\n    },\n    {\n      \"old\": \"And John reopens the garden by name: the dragon of his vision is __“that old *serpent*”__ (Revelation 12:9); the woman travails and bears the __“*man child*, who was to rule all nations”__ (Revelation 12:5); and the serpent's ancient enmity finds its stated target — __“the dragon… went to make war with *the remnant of her seed*, which keep the commandments of God”__ (Revelation 12:17).\",\n      \"new\": \"John reopens the garden by name: the dragon of his vision is __“that old *serpent*”__ (Revelation 12:9); the woman travails and bears the __“*man child*, who was to rule all nations”__ (Revelation 12:5); and the serpent's ancient enmity finds its stated target — __“the dragon… went to make war with *the remnant of her seed*, which keep the commandments of God”__ (Revelation 12:17).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open on the Revelation 12 reading.\",\n      \"rationale\": \"House style forbids author-prose sentences starting with And. The identification of woman and seed remains intact.\"\n    },\n    {\n      \"old\": \"This book's title is one, built in homage to the device this chapter teaches: say it aloud, and _MEAT The Bible's Symbolic Language_ is also _meet the Bible's symbolic language_ — the food and the invitation in one sound, divided only by where the speaker pauses.\",\n      \"new\": \"This book's title is one such pun, built in homage to the device this chapter teaches: say it aloud, and _MEAT The Bible's Symbolic Language_ is also _meet the Bible's symbolic language_ — the food and the invitation in one sound, divided only by where the speaker pauses.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Supply the missing noun after elliptical 'is one'.\",\n      \"rationale\": \"The sentence leaves 'one' without a clear head noun. Adding 'such pun' makes the reference to the preceding English-puns sentence explicit without changing the claim.\"\n    }\n  ]\n}"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "resp_0cc612df914b1d4b006a53504b9b708193a1e28f4ce1c80fda",
+  "object": "response",
+  "created_at": 1783844939,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783844960,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0cc612df914b1d4b006a53504d3310819390ffa5e1818bb4a6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0cc612df914b1d4b006a535053b9b881938902299b056014c4",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"A disciple most commonly signifies a committed follower and learner of Jesus—one who receives his teaching, imitates his way of life, obeys him, and participates in his mission. In Christian application, the disciple often functions as the model or representative of Christian believers generally.\",\"primary_basis\":[\"Matthew 4:18–22 — Jesus calls followers to come after him and become fishers of people.\",\"Matthew 16:24–26; Luke 9:23–24 — discipleship is defined by self-denial, taking up the cross, and following Jesus.\",\"Luke 6:40 — a fully trained disciple becomes like the teacher.\",\"John 8:31–32 — continuing in Jesus’ word identifies true disciples.\",\"John 13:34–35 — love for one another marks Jesus’ disciples.\",\"John 15:8 — bearing fruit is associated with being Jesus’ disciples.\",\"Matthew 28:18–20 — disciples are commissioned to make other disciples through baptism and teaching.\",\"Acts 11:26 — the disciples are identified with the community later called Christians.\"],\"alternatives\":[{\"meaning\":\"A member of the Twelve apostles or of Jesus’ immediate historical circle.\",\"basis\":[\"Matthew 10:1–4 links the Twelve specifically with the designation “disciples.”\",\"Mark 3:13–19 and Luke 6:13–16 distinguish and appoint the Twelve from the wider body of followers.\",\"Some Gospel contexts use “the disciples” as shorthand for this inner group.\"],\"prominence\":\"common\"},{\"meaning\":\"A broader adherent or student of a teacher, not necessarily a committed Christian believer.\",\"basis\":[\"Matthew 9:14 refers to disciples of John the Baptist and disciples of the Pharisees.\",\"John 9:28 speaks of disciples of Moses.\",\"The underlying Greek term mathētēs ordinarily denotes a learner, pupil, or adherent.\"],\"prominence\":\"common\"},{\"meaning\":\"A literary representative of the church or of different kinds of Christian response—faithful, fearful, misunderstanding, failing, or restored.\",\"basis\":[\"The disciples’ misunderstanding and fear in Mark 4:40; 8:14–21 are often read as instruction or warning for later believers.\",\"Peter’s failure and restoration in Luke 22:31–34, 54–62 and John 21:15–19 are frequently treated paradigmatically.\",\"Matthew 28:16–20 presents the disciples as recipients of a commission extended through the ongoing church.\"],\"prominence\":\"common\"},{\"meaning\":\"A symbol specifically of an elite, esoteric, or unusually advanced class of Christians distinct from ordinary believers.\",\"basis\":[\"Such readings occur in some mystical, sectarian, or highly allegorical interpretations but are not the normal New Testament or mainstream Christian usage.\",\"The broader identification of disciples with Christians in Acts 11:26 weighs against treating discipleship as inherently restricted to an elite class.\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is strong consensus about the ordinary theological meaning of “disciple” as a learner and follower of Jesus. However, the term is primarily a relational or communal designation rather than a fixed symbol with one settled symbolic referent. Its precise scope varies by context: it may denote the Twelve, a wider group of followers, Christians generally, or literary representatives of the church.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 987,
+    "output_tokens_details": {
+      "reasoning_tokens": 295
+    },
+    "total_tokens": 1305
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,5 @@
+# The Fall of Babylon
+
+This chunk is a high-density similitude assembly: Exodus plagues, rod-serpent-rod, come-out call, north spoiler, and stone-sinking lock the Fall of Babylon to the first deliverance with tight Hebrew work (matteh, chazaq, tsaphon, shaqed) and clean cross-text. The rod-to-almond resurrection arc and the double grip on chazaq are especially strong. Residual house-style defects cluster on director cues (Mark, watch) and And-opened author sentences forbidden outside scripture. The modern landscaping metaphor appears twice and undercuts the mountain-into-sea image the chapter itself is proving. Grammar and internal naming are otherwise clean; no doctrine or quote wording needs touch.
+
+This chunk is dense, assertive, and well-chained: the Babylon/Jonah contrast, the three spiritual names on Jerusalem, and the Exodus shore-song close all land with force and without hedging. The identification work is clear and law-positive. Residual defects are narrow: one opening director cue and one author-prose sentence that begins with And. No doctrine, quote, or symbol changes are needed; the rest of the prose already matches house density and voice.

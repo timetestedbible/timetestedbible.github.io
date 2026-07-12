@@ -1,0 +1,5 @@
+# Marriage and Divorce
+
+The chunk is dense, law-first, and assertive: porneia vs moicheia, Joseph’s betrothal, Deuteronomy’s nakedness vocabulary, Ezra’s commanded divorce, and Vashti’s formula all land with force and keep the author’s voice. Residual presenter staging is the main defect—several director cues still direct the reader instead of stating the claim. Two author-prose sentences open with And, violating house style. Scripture blocks and footnotes are clean; no doctrine or quote wording needs touch.
+
+This chunk delivers a dense, law-positive remarriage-through-death case with tight Esther, Jeremiah, Hosea, John 8, and Revelation chaining. The Husband-pays-the-penalty thesis is clear and assertive. Residual presenter staging remains (Now open/watch, Listen to, mark that), and several author-prose sentences open with And, But, or That against house style. No doctrine, symbol IDs, or scripture-quote wording needs change; fixes are surgical cue removal and sentence-open repairs only.

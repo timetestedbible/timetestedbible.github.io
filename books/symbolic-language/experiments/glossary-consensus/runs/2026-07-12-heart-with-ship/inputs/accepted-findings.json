@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "run_id": "2026-07-12-ship-final",
+      "manifest_sha256": "a96c4c7d98baafe6267cd8bf6fc7c8cfb093460a57bc6d88bc3e7a93680e6855"
+    }
+  ],
+  "findings": [
+    {
+      "anchor": "ship",
+      "term": "Ship",
+      "book_entry": "An earthly kingdom, city, state, or governed political body riding upon the sea of peoples: its rulers guide it, its inhabitants and servants crew it, its armies defend it, and its wealth is carried as cargo. Christ needs no constructed body beneath Him: He walks upon the sea directly, and when He sails with His disciples the vessel comes under its true Head. The ship may be broken while its people survive.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "A ship, when functioning symbolically, represents an organized earthly governed body such as a city, state, kingdom, or polity.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-ship-final"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "A ship symbolizes an earthly kingdom, city, state, or governed political body riding upon the sea of peoples: its pilots are its rulers, its crew its inhabitants and servants, its defenders its armies, its cargo its wealth; the vessel may be broken while its people survive.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-ship-final"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "An earthly kingdom, city, state, or governed political body riding upon the sea of peoples, with rulers as pilots, inhabitants/servants as crew, armies as defenders, and wealth as cargo.",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-ship-final"
+        }
+      }
+    }
+  ]
+}

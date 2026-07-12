@@ -1,0 +1,119 @@
+{
+  "file": "books/symbolic-language/36-daniel-unsealed.adoc",
+  "title": "Daniel Unsealed",
+  "notes": [
+    "Strong, dense opening that asserts the seal-and-unseal frame, the dual jubilee/seventy-seventy counts, and the two-decree structure without hedging. Letter re-readings are cleanly marked and the marriage-covenant link lands with force. Residual defects are mostly house-style sentence opens (But/That/And) and a few presenter cues (Mark the verb, Now read, Now count). One tangled relative clause on KJV tenses vs. letters needs a short clarity fix. No AI stock vocabulary, no doctrine rewrites required, and scripture blocks are left untouched.",
+    "This short closing chunk asserts the unsealed counts with density and cleanly integrates the Matthew quotation plus dual print/non-print endings. Strengths include tight prose, preserved markup, and a law-positive close that points forward without hedging. Issues are limited to a clear house-style sentence-open violation in the print branch, two spelled-out count numbers that violate the digits rule, and one mild presenter-style imperative. No quote corruption, doctrine drift, or AI vocabulary appears. Surgical fixes restore compliance while leaving voice and claims intact."
+  ],
+  "proposals": [
+    {
+      "old": "But read carefully what the seventy must contain: all of Jeremiah's words brought upon that land — __“even all that is written in this book”__ (Jeremiah 25:13) — and Babylon made a desolation for ever.",
+      "new": "Read carefully what the seventy must contain: all of Jeremiah's words brought upon that land — __“even all that is written in this book”__ (Jeremiah 25:13) — and Babylon made a desolation for ever.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading But from author prose.",
+      "rationale": "House style forbids author sentences that open with And/But/That.",
+      "_chunk": 1
+    },
+    {
+      "old": "That places 2026-2027 in the *third year* of Hezekiah's sign — two fallow years, __“and in the third year *sow ye, and reap*”__ (Isaiah 37:30) — and the third is the year of going up: __“on the *third day* thou shalt *go up unto the house of the LORD*”__ (2 Kings 20:5).",
+      "new": "This places 2026-2027 in the *third year* of Hezekiah's sign — two fallow years, __“and in the third year *sow ye, and reap*”__ (Isaiah 37:30) — and the third is the year of going up: __“on the *third day* thou shalt *go up unto the house of the LORD*”__ (2 Kings 20:5).",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Replace sentence-initial That with This.",
+      "rationale": "Author prose may not open with That; This keeps the same deictic force without the violation.",
+      "_chunk": 1
+    },
+    {
+      "old": "That count runs from the covenant itself, sealed in 1876 BC, four hundred thirty years to the selfsame day before the Exodus (Exodus 12:40-41) — and if the reign of a thousand years is its final millennium, the reign opens 3,900 years in: the very year the seventieth jubilee closed.",
+      "new": "This count runs from the covenant itself, sealed in 1876 BC, four hundred thirty years to the selfsame day before the Exodus (Exodus 12:40-41) — and if the reign of a thousand years is its final millennium, the reign opens 3,900 years in: the very year the seventieth jubilee closed.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Replace sentence-initial That with This.",
+      "rationale": "Same house-style ban on That-openings; This preserves reference to the second reading.",
+      "_chunk": 1
+    },
+    {
+      "old": "And four hundred ninety years from that second decree is where the reading says the times end, __“in tribulation.”__",
+      "new": "Four hundred ninety years from that second decree is where the reading says the times end, __“in tribulation.”__",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop leading And from author prose.",
+      "rationale": "House style forbids author sentences that open with And.",
+      "_chunk": 1
+    },
+    {
+      "old": "Mark the verb.",
+      "new": "The verbs differ.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace director cue with plain assertion.",
+      "rationale": "Mark the verb is a forbidden presenter staging cue; The verbs differ keeps the structural role and author density.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now read the whole verse the second time through:",
+      "new": "Read the whole verse the second time through:",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Strip Now from the re-reading cue.",
+      "rationale": "Now read is residual director staging; the bare imperative matches the chapter’s other Read the letters again markers.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now count, a sym:sym-day[day] for a sym:sym-year[year].",
+      "new": "Count a sym:sym-day[day] for a sym:sym-year[year].",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Strip Now from the counting cue.",
+      "rationale": "Now count is presenter staging; the bare imperative preserves markup and force.",
+      "_chunk": 1
+    },
+    {
+      "old": "Daniel's twelfth chapter seals the timeline — and the King James points the tenses forward that the letters point back:",
+      "new": "Daniel's twelfth chapter seals the timeline — and the King James points the tenses forward while the letters point back:",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Untangle the relative clause on tenses.",
+      "rationale": "Forward that the letters point back is tangled; while restores the clear opposition without adding words or softening the claim.",
+      "_chunk": 1
+    },
+    {
+      "old": "The blessing has a second number: add the thousand three hundred thirty-five, and the count runs to the spring of 2028 — the abomination made desolate, and the waiting ones arrived.",
+      "new": "The blessing has a second number: add the 1,335, and the count runs to the spring of 2028 — the abomination made desolate, and the waiting ones arrived.",
+      "type": "readability",
+      "severity": "medium",
+      "summary": "Render the 1335 count as digits per house style.",
+      "rationale": "House style requires digits for counts; the spelled form is the only defect in an otherwise clean sentence.",
+      "_chunk": 2
+    },
+    {
+      "old": "Set that end against the seventy jubilees and the second decree's four hundred ninety, and the three counts close on the same few years — the tribulation of the times’ end that the ninth chapter named.",
+      "new": "With that end set against the seventy jubilees and the second decree's 490, the three counts close on the same few years — the tribulation of the times’ end that the ninth chapter named.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Remove imperative staging and digitise the 490 count.",
+      "rationale": "“Set that” functions as residual presenter cue akin to forbidden “Mark that/Hold that”; the rewrite keeps exact meaning and also converts the count to digits.",
+      "_chunk": 2
+    },
+    {
+      "old": "And that scene waits at the end of every count.",
+      "new": "This scene waits at the end of every count.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Eliminate forbidden sentence-initial And.",
+      "rationale": "Author prose may not open with And/But/That; “This scene” preserves reference and rhythm without the violation.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"Strong, dense opening that asserts the seal-and-unseal frame, the dual jubilee/seventy-seventy counts, and the two-decree structure without hedging. Letter re-readings are cleanly marked and the marriage-covenant link lands with force. Residual defects are mostly house-style sentence opens (But/That/And) and a few presenter cues (Mark the verb, Now read, Now count). One tangled relative clause on KJV tenses vs. letters needs a short clarity fix. No AI stock vocabulary, no doctrine rewrites required, and scripture blocks are left untouched.\",\n  \"proposals\": [\n    {\n      \"old\": \"But read carefully what the seventy must contain: all of Jeremiah's words brought upon that land — __“even all that is written in this book”__ (Jeremiah 25:13) — and Babylon made a desolation for ever.\",\n      \"new\": \"Read carefully what the seventy must contain: all of Jeremiah's words brought upon that land — __“even all that is written in this book”__ (Jeremiah 25:13) — and Babylon made a desolation for ever.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading But from author prose.\",\n      \"rationale\": \"House style forbids author sentences that open with And/But/That.\"\n    },\n    {\n      \"old\": \"That places 2026-2027 in the *third year* of Hezekiah's sign — two fallow years, __“and in the third year *sow ye, and reap*”__ (Isaiah 37:30) — and the third is the year of going up: __“on the *third day* thou shalt *go up unto the house of the LORD*”__ (2 Kings 20:5).\",\n      \"new\": \"This places 2026-2027 in the *third year* of Hezekiah's sign — two fallow years, __“and in the third year *sow ye, and reap*”__ (Isaiah 37:30) — and the third is the year of going up: __“on the *third day* thou shalt *go up unto the house of the LORD*”__ (2 Kings 20:5).\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace sentence-initial That with This.\",\n      \"rationale\": \"Author prose may not open with That; This keeps the same deictic force without the violation.\"\n    },\n    {\n      \"old\": \"That count runs from the covenant itself, sealed in 1876 BC, four hundred thirty years to the selfsame day before the Exodus (Exodus 12:40-41) — and if the reign of a thousand years is its final millennium, the reign opens 3,900 years in: the very year the seventieth jubilee closed.\",\n      \"new\": \"This count runs from the covenant itself, sealed in 1876 BC, four hundred thirty years to the selfsame day before the Exodus (Exodus 12:40-41) — and if the reign of a thousand years is its final millennium, the reign opens 3,900 years in: the very year the seventieth jubilee closed.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace sentence-initial That with This.\",\n      \"rationale\": \"Same house-style ban on That-openings; This preserves reference to the second reading.\"\n    },\n    {\n      \"old\": \"And four hundred ninety years from that second decree is where the reading says the times end, __“in tribulation.”__\",\n      \"new\": \"Four hundred ninety years from that second decree is where the reading says the times end, __“in tribulation.”__\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop leading And from author prose.\",\n      \"rationale\": \"House style forbids author sentences that open with And.\"\n    },\n    {\n      \"old\": \"Mark the verb.\",\n      \"new\": \"The verbs differ.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace director cue with plain assertion.\",\n      \"rationale\": \"Mark the verb is a forbidden presenter staging cue; The verbs differ keeps the structural role and author density.\"\n    },\n    {\n      \"old\": \"Now read the whole verse the second time through:\",\n      \"new\": \"Read the whole verse the second time through:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Strip Now from the re-reading cue.\",\n      \"rationale\": \"Now read is residual director staging; the bare imperative matches the chapter’s other Read the letters again markers.\"\n    },\n    {\n      \"old\": \"Now count, a sym:sym-day[day] for a sym:sym-year[year].\",\n      \"new\": \"Count a sym:sym-day[day] for a sym:sym-year[year].\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Strip Now from the counting cue.\",\n      \"rationale\": \"Now count is presenter staging; the bare imperative preserves markup and force.\"\n    },\n    {\n      \"old\": \"Daniel's twelfth chapter seals the timeline — and the King James points the tenses forward that the letters point back:\",\n      \"new\": \"Daniel's twelfth chapter seals the timeline — and the King James points the tenses forward while the letters point back:\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Untangle the relative clause on tenses.\",\n      \"rationale\": \"Forward that the letters point back is tangled; while restores the clear opposition without adding words or softening the claim.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This short closing chunk asserts the unsealed counts with density and cleanly integrates the Matthew quotation plus dual print/non-print endings. Strengths include tight prose, preserved markup, and a law-positive close that points forward without hedging. Issues are limited to a clear house-style sentence-open violation in the print branch, two spelled-out count numbers that violate the digits rule, and one mild presenter-style imperative. No quote corruption, doctrine drift, or AI vocabulary appears. Surgical fixes restore compliance while leaving voice and claims intact.\",\n  \"proposals\": [\n    {\n      \"old\": \"The blessing has a second number: add the thousand three hundred thirty-five, and the count runs to the spring of 2028 — the abomination made desolate, and the waiting ones arrived.\",\n      \"new\": \"The blessing has a second number: add the 1,335, and the count runs to the spring of 2028 — the abomination made desolate, and the waiting ones arrived.\",\n      \"type\": \"readability\",\n      \"severity\": \"medium\",\n      \"summary\": \"Render the 1335 count as digits per house style.\",\n      \"rationale\": \"House style requires digits for counts; the spelled form is the only defect in an otherwise clean sentence.\"\n    },\n    {\n      \"old\": \"Set that end against the seventy jubilees and the second decree's four hundred ninety, and the three counts close on the same few years — the tribulation of the times’ end that the ninth chapter named.\",\n      \"new\": \"With that end set against the seventy jubilees and the second decree's 490, the three counts close on the same few years — the tribulation of the times’ end that the ninth chapter named.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove imperative staging and digitise the 490 count.\",\n      \"rationale\": \"“Set that” functions as residual presenter cue akin to forbidden “Mark that/Hold that”; the rewrite keeps exact meaning and also converts the count to digits.\"\n    },\n    {\n      \"old\": \"And that scene waits at the end of every count.\",\n      \"new\": \"This scene waits at the end of every count.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Eliminate forbidden sentence-initial And.\",\n      \"rationale\": \"Author prose may not open with And/But/That; “This scene” preserves reference and rhythm without the violation.\"\n    }\n  ]\n}"
+    }
+  ]
+}

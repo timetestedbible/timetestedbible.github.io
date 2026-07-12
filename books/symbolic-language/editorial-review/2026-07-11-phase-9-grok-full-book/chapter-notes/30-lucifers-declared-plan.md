@@ -1,0 +1,3 @@
+# Lucifer's Declared Plan
+
+This chunk is a strong, assertive unpacking of Isaiah 14 into five sequential lunar steps, with dense consonant work, clean symbol links, and a tight close that binds the counterfeit calendar to the gospel and the feasts. The law-positive voice and checkable method hold throughout. Residual defects cluster in house-style sentence openings (multiple And/But/That starts in author prose) and light presenter staging ('Do that here', 'remember', 'Now'). No AI stock vocabulary, no mistyped scripture, and no doctrine or quote alterations required. A few modern turns remain minor and do not fight the biblical images.

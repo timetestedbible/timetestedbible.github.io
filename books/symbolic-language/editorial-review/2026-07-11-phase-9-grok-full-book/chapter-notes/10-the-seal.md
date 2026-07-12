@@ -1,0 +1,3 @@
+# The Seal
+
+The chapter assembles the seal as Name-plus-law with high density, chaining signet, forehead plate, frontlets, inkhorn, Spirit impression, and beast counterfeit without padding. Law-positive voice and OT-to-Revelation continuity are strong; the two engravings on 2 Timothy 2:19 and the sabbath as full royal signet land cleanly. Residual defects are presenter staging cues, three author-prose sentence opens on And/That, and the spelled count against house digit style. No quote corruption, doctrine invention, or broken internal math. Surgical open and cue removals restore the asserted register.

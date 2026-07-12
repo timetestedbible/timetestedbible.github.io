@@ -1,0 +1,138 @@
+{
+  "created_at": 1783837004,
+  "completed_at": 1783837011,
+  "id": "15faeda2-f2ab-948a-a331-6a87f72c2313",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_15faeda2-f2ab-948a-a331-6a87f72c2313",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the book's entry on \"Faith\" and the blind consensus responses.\nMATCH\n\nThe book's entry is substantially the same as the recognizable consensus across Responses A, B, and C. It centers on trusting reliance on God’s unseen promises as the instrument of justification, while incorporating the faithfulness/loyalty dimension (common in the alternatives) and the James 2 emphasis on works maturing faith rather than purchasing it. The common-view note explicitly aligns with the settled primary meaning in A and C. The scripture citations reinforce this without introducing new concepts. This is a refined but compatible presentation of the established doctrine. The citations provide strong support.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Primary settled meaning across responses is personal trusting reliance on God/Christ and His promises (not mere assent) as the means of justification/salvation and Christian living; faithfulness/allegiance, objective doctrine, assent, and gift are common secondary senses.\",\n  \"book_summary\": \"Trusting faithfulness: reliance on God’s unseen promise held steady through obedience; works do not purchase the promise but enact/mature faith (dead without them).\",\n  \"rationale\": \"The book’s core (trusting reliance on the unseen promise, instrument of justification) is fully compatible with the consensus primary meaning and its common-view note. It is refined rather than identical by fusing trust with faithfulness and by precisely integrating the James/Hebrews obedience-maturation motif while carefully denying works-purchase, sharpening the semantic range the blind responses treat as alternatives.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Fusing ‘trust’ and ‘faithfulness’ plus foregrounding works-maturation could be read as blurring the sharp Protestant ‘faith alone’ emphasis that the consensus treats as primary, even though the book explicitly denies purchase.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_15faeda2-f2ab-948a-a331-6a87f72c2313",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3753,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1034,
+    "output_tokens_details": {
+      "reasoning_tokens": 773
+    },
+    "total_tokens": 4787,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 135180000,
+    "context_details": {
+      "input_tokens": 3753,
+      "output_tokens": 1034
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,128 @@
+{
+  "file": "books/symbolic-language/06-knowing-faith-love-and-belief.adoc",
+  "title": "Love, Knowing, Faith, and Belief",
+  "notes": [
+    "This chunk is dense, law-positive, and structurally clean: the four-office table, the love/hate axis, and the knowing-as-marriage argument land with force and almost no hedging. Scripture is woven tightly into the claims rather than parked beside them. Residual defects are mostly house-style: two author-prose sentences open with And/But, one explicit director cue (“Mark where”), two soft “Read…” imperatives that stage the reader, and a single inconsistent book abbreviation (Num). Fix those surgically and the voice stays intact.",
+    "This chunk assembles sheep/voice/name with the four terms into one visible obedience, using dense scriptural chaining and the emunah picture of steady hands. The law-positive case that works equal commandment-keeping is assertive and clear. Residual defects are house-style And openings in author prose, plus presenter cues that break the assert-only register. One relative clause is slightly tangled. No quote, doctrine, or factual mismatches appear; the modern bias analogy is left as deliberate authorial choice."
+  ],
+  "proposals": [
+    {
+      "old": "And John's second epistle runs the whole chain in three verses, and swears none of it is new:",
+      "new": "John's second epistle runs the whole chain in three verses, and swears none of it is new:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And-opening in author prose.",
+      "rationale": "House style forbids author sentences starting with And. Dropping the conjunction keeps the claim and the following quote intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "Read it so, and the audit is exact: gifts without obedience are a cymbal — sound with nothing inside.",
+      "new": "Defined so, the audit is exact: gifts without obedience are a cymbal — sound with nothing inside.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Replace reader-directive “Read it so” with assertive phrasing.",
+      "rationale": "“Read it so” is a soft director cue. “Defined so” keeps the logical hinge to 1 John 5:3 without staging the reader.",
+      "_chunk": 1
+    },
+    {
+      "old": "Mark where the hymn lands: __“I shall *know* just as I also am *known*”__ — Paul's love chapter ends in the covenant word this chapter defines next.",
+      "new": "The hymn lands on the covenant word this chapter defines next: __“I shall *know* just as I also am *known*”__.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove banned “Mark where” director cue.",
+      "rationale": "“Mark where” is an explicit house-style director cue. The rewrite asserts the landing point and preserves the knowing link without the stage direction.",
+      "_chunk": 1
+    },
+    {
+      "old": "with whom God spoke __“face to face, even plainly, and not in *riddles*”__ (Num 12:8).",
+      "new": "with whom God spoke __“face to face, even plainly, and not in *riddles*”__ (Numbers 12:8).",
+      "type": "factual",
+      "severity": "medium",
+      "summary": "Expand inconsistent book abbreviation to full name.",
+      "rationale": "Every other citation in the chunk uses the full book name. “Num” is the only abbreviation and breaks internal consistency.",
+      "_chunk": 1
+    },
+    {
+      "old": "But Jesus turns away people whose facts are exactly right:",
+      "new": "Jesus turns away people whose facts are exactly right:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned But-opening in author prose.",
+      "rationale": "House style forbids author sentences starting with But. The contrast is already clear from the preceding sentence.",
+      "_chunk": 1
+    },
+    {
+      "old": "Read __“iniquity”__ in the New Testament and this is usually the word underneath — law-breaking, wearing a vaguer name.",
+      "new": "In the New Testament __“iniquity”__ is usually this word underneath — law-breaking, wearing a vaguer name.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Remove imperative “Read” staging.",
+      "rationale": "The imperative stages the reader. The rewrite states the lexical fact directly and keeps the link to anomia from the prior sentence.",
+      "_chunk": 1
+    },
+    {
+      "old": "And they follow no other — __“a sym:sym-stranger[stranger] will they not follow… for they know not the sym:sym-voice[voice] of strangers”__ (John 10:5): the stranger is the one outside the covenant, so His sheep will not heed the voice, the teaching, of those outside it. __“He calleth his own sym:sym-sheep[sheep] by sym:sym-name[name]”__ (John 10:3) — and the sym:sym-name[name] is a symbol with its own chapter just ahead.",
+      "new": "They follow no other — __“a sym:sym-stranger[stranger] will they not follow… for they know not the sym:sym-voice[voice] of strangers”__ (John 10:5): the stranger is the one outside the covenant, so His sheep will not heed the voice, the teaching, of those outside it. __“He calleth his own sym:sym-sheep[sheep] by sym:sym-name[name]”__ (John 10:3) — and the sym:sym-name[name] is a symbol with its own chapter just ahead.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open in author prose.",
+      "rationale": "House style forbids author sentences starting with And. Dropping it preserves the claim and flow without loss.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now read that famous verse whole:",
+      "new": "The famous verse states it whole:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace director cue with assertive lead-in.",
+      "rationale": "“Now read” is presenter staging banned by house style. The replacement keeps the structural role and density.",
+      "_chunk": 2
+    },
+    {
+      "old": "And Abraham, who __“believed in the LORD”__ (Genesis 15:6), is shown to have been __“justified by works, when he had offered Isaac”__ (James 2:21) — the believing and the obeying are one act.",
+      "new": "Abraham, who __“believed in the LORD”__ (Genesis 15:6), is shown to have been __“justified by works, when he had offered Isaac”__ (James 2:21) — the believing and the obeying are one act.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove banned And sentence open in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The claim and scripture links remain identical.",
+      "_chunk": 2
+    },
+    {
+      "old": "So the sentence James wrote completes itself: faith without works is dead because the works are the commandments done — the keeping this chapter has been proving — and a faith that keeps nothing holds nothing.",
+      "new": "So the sentence James wrote completes itself: faith without works is dead because the works are the commandments done — the keeping that this chapter has been proving — and a faith that keeps nothing holds nothing.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Insert missing relative that for smoother clause.",
+      "rationale": "The reduced relative is slightly tangled and slows the claim. Adding “that” clarifies without changing meaning or density.",
+      "_chunk": 2
+    },
+    {
+      "old": "See, then, what the symbols do to the simplest promise of all.",
+      "new": "The symbols do this to the simplest promise of all.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Replace imperative staging with direct assertion.",
+      "rationale": "“See, then” functions as a director cue. The rewrite keeps the pivot role and author voice.",
+      "_chunk": 2
+    },
+    {
+      "old": "Then remember the many this chapter has already met — who prophesied and did wonders *in that name*, and were not known.",
+      "new": "The many this chapter has already met — who prophesied and did wonders *in that name*, and were not known.",
+      "type": "ai-sounding-staging",
+      "severity": "medium",
+      "summary": "Drop “Then remember” presenter cue.",
+      "rationale": "The phrase stages the reader rather than asserting. Removing it leaves the contrast intact and denser.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is dense, law-positive, and structurally clean: the four-office table, the love/hate axis, and the knowing-as-marriage argument land with force and almost no hedging. Scripture is woven tightly into the claims rather than parked beside them. Residual defects are mostly house-style: two author-prose sentences open with And/But, one explicit director cue (“Mark where”), two soft “Read…” imperatives that stage the reader, and a single inconsistent book abbreviation (Num). Fix those surgically and the voice stays intact.\",\n  \"proposals\": [\n    {\n      \"old\": \"And John's second epistle runs the whole chain in three verses, and swears none of it is new:\",\n      \"new\": \"John's second epistle runs the whole chain in three verses, and swears none of it is new:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And-opening in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. Dropping the conjunction keeps the claim and the following quote intact.\"\n    },\n    {\n      \"old\": \"Read it so, and the audit is exact: gifts without obedience are a cymbal — sound with nothing inside.\",\n      \"new\": \"Defined so, the audit is exact: gifts without obedience are a cymbal — sound with nothing inside.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace reader-directive “Read it so” with assertive phrasing.\",\n      \"rationale\": \"“Read it so” is a soft director cue. “Defined so” keeps the logical hinge to 1 John 5:3 without staging the reader.\"\n    },\n    {\n      \"old\": \"Mark where the hymn lands: __“I shall *know* just as I also am *known*”__ — Paul's love chapter ends in the covenant word this chapter defines next.\",\n      \"new\": \"The hymn lands on the covenant word this chapter defines next: __“I shall *know* just as I also am *known*”__.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned “Mark where” director cue.\",\n      \"rationale\": \"“Mark where” is an explicit house-style director cue. The rewrite asserts the landing point and preserves the knowing link without the stage direction.\"\n    },\n    {\n      \"old\": \"with whom God spoke __“face to face, even plainly, and not in *riddles*”__ (Num 12:8).\",\n      \"new\": \"with whom God spoke __“face to face, even plainly, and not in *riddles*”__ (Numbers 12:8).\",\n      \"type\": \"factual\",\n      \"severity\": \"medium\",\n      \"summary\": \"Expand inconsistent book abbreviation to full name.\",\n      \"rationale\": \"Every other citation in the chunk uses the full book name. “Num” is the only abbreviation and breaks internal consistency.\"\n    },\n    {\n      \"old\": \"But Jesus turns away people whose facts are exactly right:\",\n      \"new\": \"Jesus turns away people whose facts are exactly right:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned But-opening in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with But. The contrast is already clear from the preceding sentence.\"\n    },\n    {\n      \"old\": \"Read __“iniquity”__ in the New Testament and this is usually the word underneath — law-breaking, wearing a vaguer name.\",\n      \"new\": \"In the New Testament __“iniquity”__ is usually this word underneath — law-breaking, wearing a vaguer name.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Remove imperative “Read” staging.\",\n      \"rationale\": \"The imperative stages the reader. The rewrite states the lexical fact directly and keeps the link to anomia from the prior sentence.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk assembles sheep/voice/name with the four terms into one visible obedience, using dense scriptural chaining and the emunah picture of steady hands. The law-positive case that works equal commandment-keeping is assertive and clear. Residual defects are house-style And openings in author prose, plus presenter cues that break the assert-only register. One relative clause is slightly tangled. No quote, doctrine, or factual mismatches appear; the modern bias analogy is left as deliberate authorial choice.\",\n  \"proposals\": [\n    {\n      \"old\": \"And they follow no other — __“a sym:sym-stranger[stranger] will they not follow… for they know not the sym:sym-voice[voice] of strangers”__ (John 10:5): the stranger is the one outside the covenant, so His sheep will not heed the voice, the teaching, of those outside it. __“He calleth his own sym:sym-sheep[sheep] by sym:sym-name[name]”__ (John 10:3) — and the sym:sym-name[name] is a symbol with its own chapter just ahead.\",\n      \"new\": \"They follow no other — __“a sym:sym-stranger[stranger] will they not follow… for they know not the sym:sym-voice[voice] of strangers”__ (John 10:5): the stranger is the one outside the covenant, so His sheep will not heed the voice, the teaching, of those outside it. __“He calleth his own sym:sym-sheep[sheep] by sym:sym-name[name]”__ (John 10:3) — and the sym:sym-name[name] is a symbol with its own chapter just ahead.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. Dropping it preserves the claim and flow without loss.\"\n    },\n    {\n      \"old\": \"Now read that famous verse whole:\",\n      \"new\": \"The famous verse states it whole:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace director cue with assertive lead-in.\",\n      \"rationale\": \"“Now read” is presenter staging banned by house style. The replacement keeps the structural role and density.\"\n    },\n    {\n      \"old\": \"And Abraham, who __“believed in the LORD”__ (Genesis 15:6), is shown to have been __“justified by works, when he had offered Isaac”__ (James 2:21) — the believing and the obeying are one act.\",\n      \"new\": \"Abraham, who __“believed in the LORD”__ (Genesis 15:6), is shown to have been __“justified by works, when he had offered Isaac”__ (James 2:21) — the believing and the obeying are one act.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove banned And sentence open in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The claim and scripture links remain identical.\"\n    },\n    {\n      \"old\": \"So the sentence James wrote completes itself: faith without works is dead because the works are the commandments done — the keeping this chapter has been proving — and a faith that keeps nothing holds nothing.\",\n      \"new\": \"So the sentence James wrote completes itself: faith without works is dead because the works are the commandments done — the keeping that this chapter has been proving — and a faith that keeps nothing holds nothing.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Insert missing relative that for smoother clause.\",\n      \"rationale\": \"The reduced relative is slightly tangled and slows the claim. Adding “that” clarifies without changing meaning or density.\"\n    },\n    {\n      \"old\": \"See, then, what the symbols do to the simplest promise of all.\",\n      \"new\": \"The symbols do this to the simplest promise of all.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Replace imperative staging with direct assertion.\",\n      \"rationale\": \"“See, then” functions as a director cue. The rewrite keeps the pivot role and author voice.\"\n    },\n    {\n      \"old\": \"Then remember the many this chapter has already met — who prophesied and did wonders *in that name*, and were not known.\",\n      \"new\": \"The many this chapter has already met — who prophesied and did wonders *in that name*, and were not known.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop “Then remember” presenter cue.\",\n      \"rationale\": \"The phrase stages the reader rather than asserting. Removing it leaves the contrast intact and denser.\"\n    }\n  ]\n}"
+    }
+  ]
+}

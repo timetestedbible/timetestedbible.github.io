@@ -1,0 +1,3 @@
+# Light and Darkness, Day and Night
+
+This chunk delivers a dense, law-positive chain that equates light with the lived commandment and visible good works, darkness with deliberate concealment of evil, and day/night with the open versus hidden life. Scripture links (Proverbs, Isaiah, John, Exodus plague, Thessalonians, outer darkness) assemble cleanly with the oil/garment symbols and close the chapter without loose ends. Two author-prose sentences violate the house ban on opening with That/And. The rest of the prose is already tight, free of director cues, AI stock, and quote corruption; only those sentence-open fixes are required.

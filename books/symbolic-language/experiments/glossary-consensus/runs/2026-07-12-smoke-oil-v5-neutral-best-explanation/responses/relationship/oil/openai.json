@@ -1,0 +1,155 @@
+{
+  "id": "resp_08dc06cb1b5a2a18006a5326117a8c8197ac3d79b30a9f783c",
+  "object": "response",
+  "created_at": 1783834129,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783834139,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_08dc06cb1b5a2a18006a53261265288197895fae61b9a1f8c8",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_08dc06cb1b5a2a18006a5326174dd08197a035a20b26ca313e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The blind responses identify the Holy Spirit as the dominant conventional meaning of lamp oil, while noting substantial alternatives such as preparedness, inward faith or grace, good works, obedience, and occasionally God’s word or spiritual illumination.\",\"book_summary\":\"The book identifies oil more specifically with divine truth and corrective instruction received and stored inwardly until they produce proven obedience; the resulting visible obedience is the lamp’s light.\",\"rationale\":\"The entry displaces the dominant Holy-Spirit identification with a commandment-and-obedience interpretation. Its themes overlap recognizable minority readings involving the Word, inward spiritual reality, good works, and preparedness, so it is not wholly novel. Nevertheless, its central equation of oil with stored, tested truth and correction is materially different from the consensus’s leading interpretation rather than merely a sharper formulation of it.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited texts strongly connect commandments with inward storage, life, light, and obedient works, and Psalm 141:5 compares reproof to excellent oil. However, no cited passage directly identifies the lamp oil in Matthew 25 with commandments or proven obedience; that identification depends on combining several separate metaphors, while Zechariah 4 and Ezekiel 36 can more naturally support the common Spirit reading.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4358,
+    "input_tokens_details": {
+      "cache_write_tokens": 4355,
+      "cached_tokens": 0
+    },
+    "output_tokens": 571,
+    "output_tokens_details": {
+      "reasoning_tokens": 291
+    },
+    "total_tokens": 4929
+  },
+  "user": null,
+  "metadata": {}
+}

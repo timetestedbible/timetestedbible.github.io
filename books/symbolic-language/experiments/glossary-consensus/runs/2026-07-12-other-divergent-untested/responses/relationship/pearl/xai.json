@@ -1,0 +1,178 @@
+{
+  "created_at": 1783845972,
+  "completed_at": 1783846003,
+  "id": "9ca5cfcb-f660-9ea6-a9af-5e474a70ee61",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_9ca5cfcb-f660-9ea6-a9af-5e474a70ee61",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Pearl\". I must return only a JSON matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's primary identification of the pearl as the 'one complete light' (full moon, keseh, fulness) and the gates of the New Jerusalem preserves the consensus category of supreme value and heavenly glory while materially narrowing the referent to lunar symbolism and the appointed times. The book's common-view note retains the kingdom/church teaching but subordinates it to the lunar and wisdom imagery.\",\n  \"extension_reasoning\": \"The book adds the full moon as the pearl and the merchant's entry at the King's gate; it excludes the kingdom-of-heaven-as-pearl reading in favor of lunar and bridal imagery; it retains the Rev 21:21 gates but recontextualizes them as the merchant's entry. The Proverbs 3:15 and 31:10 citations are used to subordinate pearls to wisdom and the bride.\",\n \"scripture_support\": \"partial\",\n  \"scripture_reasoning\": \"The printed citations (Prov 3:15; 31:10; Ps 81:3; Ps 104:19; Rev 21:21) provide partial support by linking pearls to wisdom, bride, moon, and gates but do not directly cite Matthew 13:45-46, weakening the kingdom-of-heaven basis while strengthening the lunar and bridal extensions.\"\n}```json\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's primary identification of the pearl as the 'one complete light' (full moon, keseh, fulness) and the gates of the New Jerusalem preserves the consensus category of supreme value and heavenly glory while materially narrowing the referent to lunar symbolism and the appointed times. The book's common-view note retains the kingdom/church teaching but subordinates it to the lunar and wisdom imagery.\",\n  \"extension_reasoning\": \"The book adds the full moon as the pearl and the merchant's entry at the King's gate; it excludes the kingdom-of-heaven-as-pearl reading in favor of lunar and bridal imagery; it retains the Rev 21:21 gates but recontext ualizes them as the merchant's entry. The Proverbs 3:15 and 31:10 citations are used to subordinate pearls to wisdom and the bride.\",\n  \"scripture_support\": \"partial\",\n  \"scripture_reasoning\": \"The printed citations (Prov 3:15; 31:10; Ps 81:3; Ps 104:19; Rev 21:21) provide partial support by linking pearls to wisdom, bride, moon, and gates but do not directly cite Matthew 13:45-46, weakening the kingdom-of-heaven basis while strengthening the lunar and bridal extensions.\"\n}\n``` \n\n \"boundary_disagreement\": \"The book narrows the pearl to the full moon (keseh) and the one-pearl gates as merchant's entry, excluding the kingdom-of-heaven referent while retaining the gates and merchant imagery from the parable.\",\n  \"material_contradiction\": false,\n  \"ration ale\": \"The book's core preserves the consensus's emphasis on supreme value and heavenly glory (Rev 21:21) but refines the extension by identifying the pearl specifically as the full moon and the gates as the merchant's entry at the King's gate.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"Pearl primarily symbolizes the kingdom of heaven (or by extension salvation/Christ/the gospel) as a treasure of supreme value worth surrendering all to obtain, from the Parable of the Pearl of Great Price; alternatives include Christ or the church as the pearl, sacred truths (Matt 7:6), New Jerusalem glory (Rev 21:21), or negative luxury.\",\n  \"book_summary\": \"Pearl is the one complete light: under KJV rubies (peninim = pearl), wisdom and the bride are priced above pearls; the night sky's one pearl is the full moon (keseh = fulness), governor of appointed times; the one-pearl gates are the merchant's entry at the King's gate.\",\n  \"consensus_core_identification\": \"kingdom of heaven (supreme-value treasure from Matt 13:45-46), with common variants Christ or church\",\n  \"book_core_identification\": \"full moon as the night sky's one pearl / the one complete light (with wisdom/bride priced above and pearl gates as merchant entry)\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Book introduces full-moon / appointed-times / one-complete-light lunar symbolism wholly absent from consensus; retains only the peripheral one-pearl gates and merchant allusion while centering an unrelated celestial referent.\",\n  \"material_contradiction\": \"None explicit; the entry's common-view note separately acknowledges the kingdom/church reading without rejecting it, so the novel lunar core does not directly negate the consensus referent.\",\n  \"rationale\": \"Consensus cores (and all listed alternatives) uniformly orbit the Matthean parable's pearl as kingdom/Christ/church/supreme treasure or related applications (sacred truth, glory, luxury). The book's minimum core—the full moon as 'the one pearl' via keseh wordplay, linked to wisdom/bride and calendrical governance—has no counterpart in any consensus response. Shared surface elements (Rev 21:21 gates, merchant) are secondary and do not preserve or refine the central identification, producing novelty by absence rather than refinement or contradiction.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The full-moon equation rests on specialized Hebrew letter/word associations (keseh under throne/time-appointed, peninim) not recoverable from the plain sense of the printed verses alone, which mainstream symbolism never links to pearl.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_9ca5cfcb-f660-9ea6-a9af-5e474a70ee61",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3391,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 3828,
+    "output_tokens_details": {
+      "reasoning_tokens": 3277
+    },
+    "total_tokens": 7219,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 295580000,
+    "context_details": {
+      "input_tokens": 3391,
+      "output_tokens": 3828
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

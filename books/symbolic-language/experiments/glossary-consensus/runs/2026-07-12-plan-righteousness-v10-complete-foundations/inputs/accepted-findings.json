@@ -1,0 +1,112 @@
+{
+  "sources": [
+    {
+      "run_id": "2026-07-12-foundation-words-v7",
+      "manifest_sha256": "3b746a69738a32237517e223f27f8cc06a2b8045302d82d3bb7c62294672ef3e"
+    },
+    {
+      "run_id": "2026-07-12-belief-v8-revised",
+      "manifest_sha256": "f7d36aaf8600d04ad8de19a10a4e063e0176afc99f2028601e83bbae9f440400"
+    },
+    {
+      "run_id": "2026-07-12-faith-v8-sequence",
+      "manifest_sha256": "b2a5ee512b0aeecf95af1358f7ab7c6e0b4f637fbdd39cb39a668a08d939651c"
+    }
+  ],
+  "findings": [
+    {
+      "anchor": "belief",
+      "term": "Belief, to believe",
+      "book_entry": "Receiving God's testimony as governing truth in a response that submits to it. Bare assent can recognize a fact — demons believe and tremble — but saving belief obeys the word believed, and persistent refusal to obey exposes unbelief.",
+      "accepted_by_provider": {
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "To believe, in the saving sense, is to receive God's testimony as governing truth in a response that submits to it — such that belief and obedience are two faces of one covenant response, and persistent refusal to obey is what Scripture itself calls unbelief. This is distinct from bare assent (which demons share) and is not reducible to a private inner state that asks nothing of conduct.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-belief-v8-revised"
+        },
+        "openai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Saving belief is receiving God’s testimony as governing truth in a response that submits to it; bare factual assent is insufficient.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-belief-v8-revised"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Receiving God's testimony as governing truth in a response that submits to it",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-belief-v8-revised"
+        }
+      }
+    },
+    {
+      "anchor": "faith",
+      "term": "Faith",
+      "book_entry": "Trusting faithfulness — reliance on God's unseen promise held steady through obedience. Works do not purchase the promise; they enact and bring faith to maturity, and faith without them is dead.",
+      "accepted_by_provider": {
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Faith is trusting faithfulness: reliance on God's unseen promise in which the steadiness of obedience is constitutive of the faith itself (emunah), not merely a downstream consequence — trust and fidelity fused in one disposition held through delay and testing.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        },
+        "openai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Living faith is trusting reliance on God that is held steady and enacted through obedience; obedient fidelity is integral to faith’s living operation rather than merely an optional accompaniment.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "Trusting faithfulness — reliance on God's unseen promise held steady through obedience",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-faith-v8-sequence"
+        }
+      }
+    },
+    {
+      "anchor": "knowing",
+      "term": "Knowing, to know",
+      "book_entry": "Covenant relationship proven by obedience — the intimate “knew” of marriage; a stranger is one not known.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "To know God is to stand in a covenant relationship with him, a relationship whose reality is demonstrated by obedience to his commandments.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-foundation-words-v7"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "'To know' (God, or be known by Him) denotes a covenant relationship — of the intimate, marital kind first instanced in Genesis 4:1 — whose existence is proven by keeping the commandments; to be 'not known' is to be a stranger, one outside the covenant household.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-foundation-words-v7"
+        },
+        "xai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "Knowing God is a covenant relationship (intimate like marriage) proven by obedience; the unknown are strangers/workers of lawlessness.",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-foundation-words-v7"
+        }
+      }
+    },
+    {
+      "anchor": "love",
+      "term": "Love",
+      "book_entry": "Keeping the commandments — “this is the love of God, that we keep his commandments”.",
+      "accepted_by_provider": {
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "In Scripture's own usage, the love of God (humanity's love toward God, and love of neighbor under Him) is enacted commandment-keeping — obedience to what God commanded — rather than an inner feeling or mere affection: 'this is the love of God, that we keep his commandments' (1 John 5:3).",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-foundation-words-v7"
+        },
+        "xai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "Love (the love of God) is the keeping of His commandments.",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-foundation-words-v7"
+        }
+      }
+    }
+  ]
+}

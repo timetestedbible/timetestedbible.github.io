@@ -1,0 +1,195 @@
+{
+  "id": "resp_033fb192ee879035006a5417faf6508197a2cf3ca46d020412",
+  "object": "response",
+  "created_at": 1783896059,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783896066,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_033fb192ee879035006a5417fba96481978226e40c694f76cc",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_033fb192ee879035006a5417fdce708197945edd2362bef4cf",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The phrase identifies Jesus’ grave/tomb or, more broadly, the realm or state of the dead between his death and resurrection.\",\"book_summary\":\"The phrase identifies Jerusalem as the symbolic navel and heart of the land.\",\"consensus_core_identification\":\"Jesus’ place or state of burial/death.\",\"book_core_identification\":\"Jerusalem, understood as the central heart of the land.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"DIFFERENT_REFERENT\",\"boundary_disagreement\":\"This is not merely a dispute over whether the referent includes both the tomb and Hades. The book replaces the death-and-burial referent with a geographical-symbolic identification of Jerusalem.\",\"material_contradiction\":\"In Matthew 12:40, the consensus takes Jesus’ being in the “heart of the earth” as his burial or presence among the dead; the book instead takes the location to be Jerusalem. These cannot serve as the same immediate identification in the same contextual sense without reclassifying the saying.\",\"rationale\":\"The book’s reading is divergent because it replaces the consensus’s central referent rather than narrowing or broadening it. It is not novel: the blind responses explicitly recognize Jerusalem or the heart of the land as a minority or rare alternative.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Ezekiel 5:5 and 38:12 support describing Jerusalem as centrally situated among the nations or in the land, but they do not by themselves establish that Matthew 12:40 uses “heart of the earth” for Jerusalem. Matthew’s direct Jonah analogy more naturally supports confinement in death, the grave, or Hades.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3030,
+    "input_tokens_details": {
+      "cache_write_tokens": 3027,
+      "cached_tokens": 0
+    },
+    "output_tokens": 471,
+    "output_tokens_details": {
+      "reasoning_tokens": 112
+    },
+    "total_tokens": 3501
+  },
+  "user": null,
+  "metadata": {}
+}

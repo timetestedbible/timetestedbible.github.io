@@ -1,0 +1,155 @@
+{
+  "id": "resp_01e18df5daf0e1c9006a532c8c2648819491db76462aa4e967",
+  "object": "response",
+  "created_at": 1783835788,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783835802,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_01e18df5daf0e1c9006a532c8cac70819490390eb6515f7739",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_01e18df5daf0e1c9006a532c959c1481948dd2fc14c3fcae94",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The blind consensus defines love broadly as God-grounded, self-giving and sacrificial devotion expressed toward God and neighbor. It also recognizes covenant loyalty, obedience, and practical ethical action as important expressions of love.\",\"book_summary\":\"The book gives a narrower, behavioral definition: love of God consists in keeping or walking according to God's commandments, rather than merely feeling affection or professing unconditional benevolence.\",\"rationale\":\"This is materially narrower than the consensus but is recognizably contained within it, especially in the responses describing love as covenant allegiance expressed through obedience. It does not reject self-giving devotion outright, but it makes commandment-keeping constitutive of love rather than one expression among several. Thus it sharpens and partially displaces the consensus emphasis without introducing an unrepresented meaning.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The cited texts strongly connect love of God with obedience, and 1 John 5:3 and 2 John 6 use near-definitional language. However, they concern love in specific Godward and covenantal contexts and do not by themselves establish that every biblical use of “love” is reducible to commandment-keeping.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 2908,
+    "input_tokens_details": {
+      "cache_write_tokens": 2905,
+      "cached_tokens": 0
+    },
+    "output_tokens": 753,
+    "output_tokens_details": {
+      "reasoning_tokens": 490
+    },
+    "total_tokens": 3661
+  },
+  "user": null,
+  "metadata": {}
+}

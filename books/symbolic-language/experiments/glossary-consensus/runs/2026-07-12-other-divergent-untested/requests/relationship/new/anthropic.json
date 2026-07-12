@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "new",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 9000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nNew name\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, a 'new name' symbolizes the new identity, character, and status God confers on a person He has redeemed and claimed as His own. It marks a decisive transformation of the person's nature and relationship to God — the old identity is replaced by a God-given one — and, eschatologically, it signifies the believer's full acceptance, ownership by God, and glorified identity in the age to come.\",\n  \"primary_basis\": [\n    \"Revelation 2:17 (a white stone with a new name written on it, known only to the one who receives it)\",\n    \"Revelation 3:12 (Christ writes on the overcomer the name of God, the name of the New Jerusalem, and 'my new name')\",\n    \"Isaiah 62:2 (Zion 'shall be called by a new name that the mouth of the LORD will give')\",\n    \"Isaiah 65:15 (God's servants called 'by another name')\",\n    \"Genesis 17:5 and 17:15 (Abram to Abraham; Sarai to Sarah)\",\n    \"Genesis 32:28 (Jacob renamed Israel)\",\n    \"John 1:42 and Matthew 16:17-18 (Simon renamed Cephas/Peter)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Personal intimacy with Christ: the new name of Revelation 2:17, known only to its recipient, signifies a unique, private relationship between the individual believer and God — an emphasis found widely in devotional and pastoral literature (e.g., strands going back to expositors like Charles Spurgeon and George MacDonald).\",\n      \"basis\": [\n        \"Revelation 2:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The 'new name' is Christ's own name (or God's name) placed upon believers, symbolizing His ownership of them and their belonging to Him and to the New Jerusalem, rather than a distinct personal name for each believer.\",\n      \"basis\": [\n        \"Revelation 3:12\",\n        \"Revelation 14:1\",\n        \"Revelation 22:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Corporate/covenantal restoration: in the Isaiah passages, the new name signifies the eschatological vindication and changed status of Zion/Israel (from 'Forsaken' and 'Desolate' to 'Hephzibah' and 'Beulah'), i.e., a national-covenantal renewal rather than individual conversion; Christian interpreters then apply this typologically to the church.\",\n      \"basis\": [\n        \"Isaiah 62:2-4\",\n        \"Isaiah 62:12\",\n        \"Hosea 1-2 (renaming of Hosea's children)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Historical-critical background reading: the white stone and name in Revelation 2:17 evoke Greco-Roman customs (a tessera of admission to a feast, an acquittal pebble in court, or an amulet bearing a secret divine name), so the symbol denotes admission, acquittal, or protective power rather than personal transformation per se.\",\n      \"basis\": [\n        \"Revelation 2:17 read against first-century cultural background (commentary literature, e.g., discussions in Aune, Beale, Hemer)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sectarian/ritual reading: in Latter-day Saint temple practice, the 'new name' is a literal name given in ordinances, connected to exaltation — a materially different, ritualized interpretation outside mainstream Christian exegesis.\",\n      \"basis\": [\n        \"Revelation 2:17 as used in LDS teaching\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly recognizable consensus that 'new name' symbolizes God-given new identity/transformation and eschatological acceptance, anchored in the Old Testament renaming narratives (Abraham, Israel, Peter) and in Isaiah 62 and Revelation 2-3. The main interpretive disagreements concern details rather than the core symbol: whether the Revelation 2:17 name is the believer's own transformed identity, Christ's name conferred on the believer, or a token of admission/vindication; and whether the Isaiah texts are primarily corporate (Zion/Israel) or individually applied. These readings overlap and are often combined in commentaries, so the field is not sharply polarized.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A “new name” most commonly symbolizes a new, God-given identity and status—often associated with transformation, belonging to God, vindication, and a new vocation or destiny.\",\n  \"primary_basis\": [\n    \"Isaiah 62:2–4 — restored Zion receives a new name from the LORD, marking vindication and changed status.\",\n    \"Revelation 2:17 — the conqueror receives a white stone bearing a new name known only to its recipient.\",\n    \"Revelation 3:12 — Christ writes on the conqueror the names of God, the New Jerusalem, and Christ’s own new name, signifying belonging and eschatological identity.\",\n    \"Genesis 17:5, 15 — Abram and Sarai become Abraham and Sarah in connection with covenant promises.\",\n    \"Genesis 32:28; 35:10 — Jacob is renamed Israel after his encounter with God.\",\n    \"John 1:42; Matthew 16:17–18 — Simon is called Cephas/Peter in connection with calling and vocation.\",\n    \"Isaiah 56:5 — God promises the faithful an everlasting “name,” expressing honored and enduring standing.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A uniquely personal, secret eschatological name expressing intimate communion between Christ and each victorious believer.\",\n      \"basis\": [\n        \"Revelation 2:17 emphasizes that no one knows the name except the one who receives it.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A corporate designation for restored Zion, Jerusalem, or the covenant people, rather than primarily an individual identity.\",\n      \"basis\": [\n        \"Isaiah 62:2–4 addresses Zion/Jerusalem collectively.\",\n        \"Revelation 3:12 associates believers with the name of the New Jerusalem.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A mark of divine ownership, allegiance, citizenship, and protection, comparable to bearing God’s name or seal.\",\n      \"basis\": [\n        \"Revelation 3:12 places divine and civic names upon the conqueror.\",\n        \"Revelation 7:3–4 and 14:1 depict God’s servants bearing the divine name or seal.\",\n        \"Revelation 22:4 says God’s name will be on the servants’ foreheads.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A revelation of Christ’s own previously hidden or newly manifested identity and authority, rather than a renamed identity given to the believer.\",\n      \"basis\": [\n        \"Revelation 3:12 refers specifically to Christ’s “new name.”\",\n        \"Revelation 19:12 describes Christ as having a name known only to himself, while Revelation 19:16 presents his royal title.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal replacement name that redeemed individuals will use in the age to come.\",\n      \"basis\": [\n        \"A literal reading of Revelation 2:17 and analogies with biblical renaming narratives.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the general symbolism of a divinely bestowed, transformed identity or status. There is no settled consensus on the precise content of the “new name” in Revelation 2:17 or whether it is the believer’s personal name, Christ’s name, a designation of belonging, or a combination of these ideas.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A new spiritual identity or transformed character bestowed by God on the faithful/overcomer, signifying redemption, intimate belonging, and eternal status before Him\",\n  \"primary_basis\": [\n    \"Isaiah 62:2\",\n    \"Revelation 2:17\",\n    \"Revelation 3:12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A unique secret personal name known only to the recipient and God, denoting private intimacy and recognition\",\n      \"basis\": [\n        \"Revelation 2:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Inscription of God's own name (or Christ's new name) and the New Jerusalem upon the believer, marking ownership and heavenly citizenship\",\n      \"basis\": [\n        \"Revelation 3:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal new personal name assigned in the afterlife or heavenly realm\",\n      \"basis\": [\n        \"Revelation 2:17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Symbol of conversion, baptism, or Christian renaming practices reflecting a changed life\",\n      \"basis\": [\n        \"Isaiah 62:2\",\n        \"traditional Christian practice linking biblical renamings (e.g., Abram/Abraham, Jacob/Israel, Saul/Paul)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation consistently treats 'new name' as divine bestowal of renewed identity or status drawn from OT prophetic renaming and NT apocalyptic promises; secondary details (secret personal name versus divine name written on the person) differ among commentators but do not overturn the core consensus.\"\n}\n\nBOOK ENTRY\nThe renewed covenant, known — kept — only by the one who receives it.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: a new God-given identity and character bestowed on the overcomer.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 32:28; Isa 62:2-5; 65:15; Rev 2:17) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nGenesis 32:28 — And he said, Thy name shall be called no more Jacob, but Israel: for as a prince hast thou power with God and with men, and hast prevailed.\nIsaiah 62:2 — And the Gentiles shall see thy righteousness, and all kings thy glory: and thou shalt be called by a new name, which the mouth of the LORD shall name.\nIsaiah 62:3 — Thou shalt also be a crown of glory in the hand of the LORD, and a royal diadem in the hand of thy God.\nIsaiah 62:4 — Thou shalt no more be termed Forsaken; neither shall thy land any more be termed Desolate: but thou shalt be called Hephzibah, and thy land Beulah: for the LORD delighteth in thee, and thy land shall be married.\nIsaiah 62:5 — For as a young man marrieth a virgin, so shall thy sons marry thee: and as the bridegroom rejoiceth over the bride, so shall thy God rejoice over thee.\nIsaiah 65:15 — And ye shall leave your name for a curse unto my chosen: for the Lord GOD shall slay thee, and call his servants by another name:\nRevelation 2:17 — He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the hidden manna, and will give him a white stone, and in the stone a new name written, which no man knoweth saving he that receiveth it.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "5d4e49cff4097a7cb07bb20cefbfe798ae32b7e5c3b352dbb2839a5b4f24b8d8",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "heart",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHeart of the earth\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'heart of the earth' is Jesus's own phrase (Matthew 12:40) prophesying His burial in the tomb/grave — the period between His death and resurrection, typologically paralleled with Jonah's three days and nights in the belly of the great fish. The dominant reading takes it as the grave itself, often with the extended sense of entering the realm of the dead (Sheol/Hades).\",\n  \"primary_basis\": [\n    \"Matthew 12:40 (the source text: 'so shall the Son of Man be three days and three nights in the heart of the earth')\",\n    \"Jonah 1:17; 2:2-6 (the typological antecedent; Jonah cries 'out of the belly of Sheol')\",\n    \"Matthew 16:21; Luke 24:46; 1 Corinthians 15:3-4 (the 'third day' resurrection framework the phrase is read against)\",\n    \"Ephesians 4:9 ('descended into the lower parts of the earth')\",\n    \"Psalm 16:10 / Acts 2:27-31 ('you will not abandon my soul to Sheol/Hades')\",\n    \"1 Peter 3:18-19 (used by those extending the meaning to the descent to the dead)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Descent into Hades/Sheol (the underworld or realm of the dead), not merely the physical tomb — the patristic and creedal reading ('He descended to the dead'), in which Christ's soul entered the abode of the dead while His body lay in the grave.\",\n      \"basis\": [\n        \"Ephesians 4:9\",\n        \"1 Peter 3:18-20; 4:6\",\n        \"Acts 2:27-31 quoting Psalm 16:10\",\n        \"Apostles' Creed tradition\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Heart of the earth' refers to Jerusalem (viewed as the center/navel of the earth, cf. Ezekiel 5:5; 38:12), so the three days and nights begin with Jesus's betrayal/arrest and custody in the city, not with burial. This reading is advanced chiefly to resolve the chronological difficulty of fitting 'three days and three nights' between Friday burial and Sunday resurrection.\",\n      \"basis\": [\n        \"Ezekiel 5:5 ('Jerusalem... in the midst/center of the nations')\",\n        \"Ezekiel 38:12 ('dwell at the center/navel of the earth')\",\n        \"Matthew 26:45-50 (delivered into the hands of sinners, taken as the starting point)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A figurative expression for being in the grip of death and hostile powers (the 'depths' as a Hebrew idiom for extreme distress or the power of death), without a precise spatial referent — emphasizing the phrase as poetic language drawn from Jonah's psalm rather than cosmology.\",\n      \"basis\": [\n        \"Jonah 2:2-6\",\n        \"Psalm 71:20 ('depths of the earth')\",\n        \"Psalm 63:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literalist chronological readings (e.g., Wednesday or Thursday crucifixion schemes) that treat 'heart of the earth' straightforwardly as the tomb but insist the 'three days and three nights' be a full 72 hours; the symbolic referent is the same (the grave) but the interpretive application differs.\",\n      \"basis\": [\n        \"Matthew 12:40 read as demanding a literal 72-hour entombment\",\n        \"Comparison with Matthew 27:63; Mark 8:31 ('after three days')\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The phrase occurs only once in Scripture (Matthew 12:40), so all interpretation centers on that verse and its Jonah typology. There is broad, recognizable consensus that it refers to Jesus's burial/time in the grave, often widened to include the descent to the realm of the dead. Disagreements are mostly about scope (tomb only vs. Hades/Sheol) and chronology (when the three days and nights begin and whether they are idiomatic or literal), not about the basic referent. The 'Jerusalem as heart of the earth' reading is a genuine but distinctly minority alternative found mainly in popular apologetics and some evangelical writers addressing the chronology problem.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Jesus’ death and burial—his being in the grave or, more broadly, in the state/realm of the dead before his resurrection.\",\n  \"primary_basis\": [\n    \"Matthew 12:40, where Jesus compares the Son of Man’s being “in the heart of the earth” with Jonah’s time inside the great fish.\",\n    \"Jonah 1:17, the narrative underlying Jesus’ three-days-and-three-nights comparison.\",\n    \"Matthew 27:57–60 and 28:1–7, describing Jesus’ burial in the tomb and subsequent resurrection.\",\n    \"Parallel passion and burial accounts: Mark 15:42–16:6; Luke 23:50–24:7; John 19:38–20:9.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The subterranean realm of the dead—Sheol or Hades—with the phrase referring specifically to Christ’s descent to the dead rather than merely his entombment.\",\n      \"basis\": [\n        \"Acts 2:27,31, applying Psalm 16 to Christ’s not being abandoned to Hades.\",\n        \"Ephesians 4:9, especially when “the lower parts of the earth” is read as the underworld.\",\n        \"Romans 10:7, which associates bringing Christ up with descent into the abyss.\",\n        \"1 Peter 3:18–20 and 4:6, traditionally connected with Christ’s proclamation to the dead.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The literal interior or center of the physical earth, often identified with a spatially located underworld or hell.\",\n      \"basis\": [\n        \"A strongly spatial reading of “heart of the earth” in Matthew 12:40.\",\n        \"Traditional cosmological readings of passages mentioning Sheol, Hades, the abyss, or “lower parts of the earth,” such as Ephesians 4:9.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Jerusalem, the land of Israel, or the midst of the earthly human order, so that Jesus’ time under human custody or condemnation—not only his time in the tomb—fulfills the saying.\",\n      \"basis\": [\n        \"Use of “earth” or “land” as a possible rendering of Greek gē.\",\n        \"Attempts to reconcile Matthew 12:40’s “three days and three nights” with alternative passion chronologies.\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"A general metaphor for profound humiliation, suffering, or apparent abandonment to death, without specifying either a tomb or an underworld location.\",\n      \"basis\": [\n        \"The death-and-deliverance pattern of Jonah 1–2.\",\n        \"Biblical poetic language associating deep places with death and distress, including Jonah 2:2–6 and Psalm 88:3–6.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus that the phrase refers to Jesus’ death and burial before resurrection. There is no equally settled consensus about the precise location implied: many interpret it simply as the grave, while significant traditional interpretation understands it as Hades or the realm of the dead.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The grave or tomb (place of burial/death) of Jesus, paralleling Jonah's confinement in the fish as a sign of death and subsequent deliverance/resurrection\",\n  \"primary_basis\": [\n    \"Matthew 12:40\",\n    \"Jonah 1:17 (and 2:1-10 for the parallel of confinement and deliverance)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The underworld/Hades/Sheol (realm of the dead), sometimes linked to Christ's descent after death\",\n      \"basis\": [\n        \"Matthew 12:40\",\n        \"Ephesians 4:9\",\n        \"1 Peter 3:18-19 (traditional associations)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal geographic center or interior of the earth\",\n      \"basis\": [\n        \"Literalist reading of the phrasing in Matthew 12:40\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Broader period of Jesus' passion, suffering, or abandonment rather than specifically the tomb\",\n      \"basis\": [\n        \"Interpretive expansions beyond the Jonah parallel in Matthew 12:40\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The phrase is almost exclusively discussed via the Jonah–Jesus typology in Matthew 12:40; consensus centers on the burial/grave as the primary referent for the three days and nights, with Hades as a frequent theological extension rather than a fully separate reading. No major competing symbolic systems exist in mainstream Christian interpretation or biblical studies.\"\n}\n\nBOOK ENTRY\nJerusalem — the navel and heart of the land.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the grave or Hades, where Christ lay three days.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 12:40; Ezek 5:5; 38:12) · see The Sign of Jonah, ch. 4\n\nAVAILABLE KJV EXCERPTS\nMatthew 12:40 — For as Jonas was three days and three nights in the whale's belly; so shall the Son of man be three days and three nights in the heart of the earth.\nEzekiel 5:5 — Thus saith the Lord GOD; This is Jerusalem: I have set it in the midst of the nations and countries that are round about her.\nEzekiel 38:12 — To take a spoil, and to take a prey; to turn thine hand upon the desolate places that are now inhabited, and upon the people that are gathered out of the nations, which have gotten cattle and goods, that dwell in the midst of the land.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "0c409835260dd105f57207d5eaf59936a3d4f737e5a3dc8aefdd096267c36d44",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "entry_count": 2,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "REFINED": 2
+  },
+  "rows": [
+    {
+      "anchor": "works",
+      "term": "Works (good works, evil works)",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "STRONG",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "NOT_APPLICABLE",
+      "persuasion_votes": [],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "works-of-law",
+      "term": "Works of the law",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "NOT_APPLICABLE",
+      "persuasion_votes": [],
+      "final_verdict": "REFINED"
+    }
+  ]
+}

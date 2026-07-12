@@ -1,0 +1,31 @@
+{
+  "protocol_version": 2,
+  "run_id": "2026-07-12-plan-method-v2-scriptural-warrant",
+  "created_at": "2026-07-12T05:10:28.537223+00:00",
+  "entry_count": 1,
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "input_sha256": "0a18d1ac7eedadc75f3b7575acf19400bad5532a36652a268ce12aa5970dc0d7",
+  "method_evidence_sha256": "33383402b841ffe17ab2f4d1e1513aa96023f63c8bd5e61eabcb3e81fa42e8d7",
+  "prompt_sha256": {
+    "01-consensus.md": "d83510f763522125d0341623d1c78d7764a8820aecb6b2cdb1e7523db78f6a33",
+    "02-relationship.md": "802bccb3675bcd6f4c17ebba695e9e8bbc125e24ea63d47eaa8d345ba8303ba9",
+    "03-persuasion.md": "61364b9146cf8fc0f7a9f8065cb65a0cc5667c907c5c8e15d397cc8b2e29a275"
+  },
+  "notes": "API keys are never written. Proprietary model runs are procedurally reproducible but not byte-for-byte deterministic."
+}

@@ -1,0 +1,183 @@
+{
+  "file": "books/symbolic-language/49-glossary.adoc",
+  "title": "Glossary of Symbols",
+  "notes": [
+    "This glossary chunk opens with a dense, assertive introduction to the full vocabulary and then delivers tightly packed symbol definitions in consistent AsciiDoc form with badges, seerefs, and cross-links. Strengths include law-positive voice, precise first-use and Hebrew-root claims, parallel commonview statements, and high information density without stock AI phrasing. Issues are confined to the intro prose: a sentence-initial And, meta-language that invites the reader to weigh readings, a count spelled out while nearby counts already use digits, and a slightly awkward reduced relative clause on the divergent/novel set. Entry bodies themselves are largely clean of grammar, staging, sentence-open, or house-style defects. A few long definition sentences stay inside the author's preferred density and register.",
+    "This glossary chunk is dense, assertive, and consistent with the book’s law-positive voice. Divergent entries cleanly contrast the author’s reading with the common view, and the seeref/sym-link apparatus is orderly. Residual defects are local: a broken verb parallel in Foreskin, an unclear “Defined on” plus modern “templated” in Gnashing of teeth, a compressed equation in Hate, and curly apostrophes in two seeref lines. No sentence-open violations, director cues, or stock AI vocabulary appear.",
+    "This glossary chunk is dense, assertive, and consistent with the book’s law-positive voice: each entry packs Hebrew roots, scripture, and commonview contrasts without hedging or staging. Meat, Peace, Seal, Pearl, and North are especially strong assemblies of evidence into single claims. Local defects are few: one missing relative pronoun, one garbled apposition in the title entry Meat, one inverted clause, and one sentence fragment. No AI register, no And/But/That openers in prose, and no markup or quote-text problems. Surgical fixes restore grammar and clarity while leaving every symbol identification untouched.",
+    "This glossary chunk is dense, consistent in form, and keeps the law-positive voice with tight scripture anchors and cross-links. Most entries are surgically clear. Residual defects are local: one dangling participle, a missing relative pronoun, a grammar slip on the jubilee model, a register-odd noun use of “decode,” a telegraphic “virgins plural,” and a seeref that leaks TimeTested.Bible into always-on body text while mixing digital-link and print phrasing. No director cues, no And/But/That sentence opens, and no doctrine rewrites needed."
+  ],
+  "proposals": [
+    {
+      "old": "And it is the tip of the iceberg.",
+      "new": "It is the tip of the iceberg.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove forbidden sentence-initial And in author prose.",
+      "rationale": "House style bars author-prose sentences that open with And. The claim and metaphor remain intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "Entries carrying a small DIVERGENT or NOVEL badge are the thirty-four the Introduction's experiment found contradicting the common teaching or claiming ground no tradition has claimed — and each DIVERGENT entry also states the common reading, so the two can be weighed side by side.",
+      "new": "Entries carrying a small DIVERGENT or NOVEL badge are the 34 that the Introduction's experiment found to contradict the common teaching or to claim ground no tradition has claimed — and each DIVERGENT entry also states the common reading beside it.",
+      "type": "clarity",
+      "severity": "high",
+      "summary": "Fix count style, relative-clause grammar, and meta weighing language.",
+      "rationale": "Nearby counts already use digits; the reduced relative is tangled; 'weighed side by side' is the forbidden meta-talk pattern. Parallel 'beside it' matches the WORD-badge sentence that follows.",
+      "_chunk": 1
+    },
+    {
+      "old": "the uncircumcised heart cannot be humbled or love, the uncircumcised ear “cannot hearken,” uncircumcised lips cannot be heard,",
+      "new": "the uncircumcised heart cannot be humbled and cannot love, the uncircumcised ear “cannot hearken,” uncircumcised lips cannot be heard,",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Fix broken parallel between passive and active verbs.",
+      "rationale": "“Cannot be humbled or love” mixes a passive complement with an active verb under one auxiliary. Splitting the negation restores parallel grammar without changing the claim.",
+      "_chunk": 2
+    },
+    {
+      "old": "Defined on the wicked against the just, staged at Stephen's trial, templated in the psalm: he shall see, be grieved, gnash, and perish.",
+      "new": "Defined by the wicked against the just, staged at Stephen's trial, patterned in the psalm: he shall see, be grieved, gnash, and perish.",
+      "type": "readability",
+      "severity": "medium",
+      "summary": "Clarify the definitional phrase and drop modern tech register.",
+      "rationale": "“Defined on” is unclear English for the intended grounding of the definition. “Templated” is software register; “patterned” keeps the same meaning in biblical prose.",
+      "_chunk": 2
+    },
+    {
+      "old": "Jesus' parallel saying translates the hard text: “hate not” father and mother is __“he that loveth father or mother *more than me*.”__",
+      "new": "Jesus' parallel saying translates the hard text: “hate not” father and mother means __“he that loveth father or mother *more than me*.”__",
+      "type": "clarity",
+      "severity": "low",
+      "summary": "Replace compressed “is” with “means” for the equation.",
+      "rationale": "The telegraphic “is” forces the reader to supply the equivalence. “Means” states the translation relation directly and matches the surrounding density.",
+      "_chunk": 2
+    },
+    {
+      "old": "[.seeref]__(2 Sam 12:3; Jer 11:19; Isa 53:6-7; Ex 12:5; Luke 10:3; John 1:29) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition’s symbol study at TimeTested.Bible__",
+      "new": "[.seeref]__(2 Sam 12:3; Jer 11:19; Isa 53:6-7; Ex 12:5; Luke 10:3; John 1:29) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition's symbol study at TimeTested.Bible__",
+      "type": "typo",
+      "severity": "low",
+      "summary": "Replace curly apostrophe with ASCII apostrophe in source.",
+      "rationale": "The right single quotation mark in “edition’s” is an encoding slip; AsciiDoc source should use a straight apostrophe for consistency and tooling safety.",
+      "_chunk": 2
+    },
+    {
+      "old": "[.seeref]__(Prov 28:15; Zeph 3:3; Jer 50:17; Ezek 19; Rev 5:5) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition’s symbol study at TimeTested.Bible__",
+      "new": "[.seeref]__(Prov 28:15; Zeph 3:3; Jer 50:17; Ezek 19; Rev 5:5) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition's symbol study at TimeTested.Bible__",
+      "type": "typo",
+      "severity": "low",
+      "summary": "Replace curly apostrophe with ASCII apostrophe in source.",
+      "rationale": "Same encoding slip as the Lamb seeref; straighten the apostrophe in “edition's” for clean AsciiDoc source.",
+      "_chunk": 2
+    },
+    {
+      "old": "In the north country the spoilers of sym:sym-babel[Babylon] gather — “an assembly of great nations,” the ten allied kings who turn on the seven the sym:sym-harlot[whore] rules — and in its uttermost recesses, the “sides of the north,” the enemy set his seat.",
+      "new": "In the north country the spoilers of sym:sym-babel[Babylon] gather — “an assembly of great nations,” the ten allied kings who turn on the seven that the sym:sym-harlot[whore] rules — and in its uttermost recesses, the “sides of the north,” the enemy set his seat.",
+      "type": "grammar",
+      "severity": "high",
+      "summary": "Insert missing relative pronoun before the object clause.",
+      "rationale": "“the seven the whore rules” lacks the required “that/whom,” leaving a dangling object. One-word insertion restores grammar without altering the claim.",
+      "_chunk": 3
+    },
+    {
+      "old": "sym:sym-milk[Milk] and meat are one substance in two states — the word received, and the word done: chewed and tasted as the ear tries words, served in due season, its fruit senses exercised to discern.",
+      "new": "sym:sym-milk[Milk] and meat are one substance in two states — the word received, and the word done: chewed and tasted as the ear tries words, served in due season, its fruit the senses exercised to discern.",
+      "type": "clarity",
+      "severity": "high",
+      "summary": "Repair the ungrammatical apposition at the end of the Meat definition.",
+      "rationale": "“its fruit senses exercised” is missing a determiner and reads as a fragment. Adding “the” restores the intended parallel to Heb 5:14 while keeping every other word and the book’s central claim intact.",
+      "_chunk": 3
+    },
+    {
+      "old": "A sign must be watched for: the east gate opens on it for worship, commerce resents it, and Paul files it among the shadows of things to come; which phase renews the month, the sym:sym-pearl[Pearl] chapter weighs from the letters.",
+      "new": "A sign must be watched for: the east gate opens on it for worship, commerce resents it, and Paul files it among the shadows of things to come; the sym:sym-pearl[Pearl] chapter weighs from the letters which phase renews the month.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Un-invert the final clause so the subject precedes its object.",
+      "rationale": "The original places the relative clause first, producing a Yoda-like hang. Reordering yields a clear English sentence with identical meaning and markup.",
+      "_chunk": 3
+    },
+    {
+      "old": "Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.",
+      "new": "Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” It is distinct from Gehenna, the judgment.",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Convert the trailing fragment into a complete sentence.",
+      "rationale": "“Distinct from Gehenna…” is a sentence fragment after a full stop. Prefixing “It is” supplies the missing subject and verb without changing the distinction drawn.",
+      "_chunk": 3
+    },
+    {
+      "old": "[.seeref]__(Isa 40:4) · see link:/books/symbolic-language/mountain/[Mountain][.chnum]#, ch. 39# — derived in the digital edition’s symbol study at TimeTested.Bible__",
+      "new": "[.seeref]__(Isa 40:4) · see link:/books/symbolic-language/mountain/[Mountain][.chnum]#, ch. 39#__",
+      "type": "factual",
+      "severity": "high",
+      "summary": "Strip TimeTested.Bible and the derived clause from the always-on seeref.",
+      "rationale": "House style confines TimeTested.Bible to front/back matter or footnotes; this line also breaks the clean in-book pattern used by Stone → Mountain and leaves a print/digital mashup.",
+      "_chunk": 4
+    },
+    {
+      "old": "A covenant cut by God — for a covenant is _cut_ (Hebrew _karat_) — grown into the kingdom that breaks the world-empires and fills the earth.",
+      "new": "A covenant cut by God — for a covenant is _cut_ (Hebrew _karat_) — that grows into the kingdom that breaks the world-empires and fills the earth.",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Replace dangling past participle with a relative clause.",
+      "rationale": "“Grown” hangs after the em-dashes with no clear attachment; “that grows” ties the covenant/stone cleanly to the kingdom outcome.",
+      "_chunk": 4
+    },
+    {
+      "old": "The Feast of Weeks runs the same count in days — seven sevens to the fiftieth — the jubilee modeled a day for a sym:sym-year[year].",
+      "new": "The Feast of Weeks runs the same count in days — seven sevens to the fiftieth — the jubilee modeled as a day for a sym:sym-year[year].",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Insert “as” so the jubilee model is grammatical.",
+      "rationale": "“The jubilee modeled a day” lacks the required preposition; “modeled as” restores the intended day-for-year correspondence.",
+      "_chunk": 4
+    },
+    {
+      "old": "The vineyard's reckoning — where the sym:sym-fruit[fruit] a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that __“*burst out* with new wine”__ when the grapes are good; the growers themselves trodden — __“the great winepress of the *wrath* of God”__ — and blood for wine, when the vintage is wickedness.",
+      "new": "The vineyard's reckoning — where the sym:sym-fruit[fruit] that a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that __“*burst out* with new wine”__ when the grapes are good; the growers themselves trodden — __“the great winepress of the *wrath* of God”__ — and blood for wine, when the vintage is wickedness.",
+      "type": "grammar",
+      "severity": "medium",
+      "summary": "Add the relative “that” before “a people has borne.”",
+      "rationale": "Zero-relative “the fruit a people has borne” momentarily misreads; the explicit relative keeps the clause clear without changing meaning.",
+      "_chunk": 4
+    },
+    {
+      "old": "The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the covenant: obedience makes Israel “the head, and not the tail,” and the curse inverts it.",
+      "new": "The prophet that teacheth lies — Isaiah's own decoding, with head and tail already defined by the covenant: obedience makes Israel “the head, and not the tail,” and the curse inverts it.",
+      "type": "tone-register",
+      "severity": "low",
+      "summary": "Change noun “decode” to “decoding.”",
+      "rationale": "“Decode” as a bare noun is a modern register slip; “decoding” matches the book’s denser, more formal voice while preserving the claim.",
+      "_chunk": 4
+    },
+    {
+      "old": "the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the sym:sym-marriage[bride]’s companions who follow her in — the opposite of the sym:sym-harlot[harlot] who goes after many.",
+      "new": "the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins, plural, are the sym:sym-marriage[bride]’s companions who follow her in — the opposite of the sym:sym-harlot[harlot] who goes after many.",
+      "type": "readability",
+      "severity": "low",
+      "summary": "Punctuate “virgins, plural,” for clarity.",
+      "rationale": "Bare “virgins plural” is telegraphic to the point of stumble; light commas keep the author’s density without rewriting the claim.",
+      "_chunk": 4
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This glossary chunk opens with a dense, assertive introduction to the full vocabulary and then delivers tightly packed symbol definitions in consistent AsciiDoc form with badges, seerefs, and cross-links. Strengths include law-positive voice, precise first-use and Hebrew-root claims, parallel commonview statements, and high information density without stock AI phrasing. Issues are confined to the intro prose: a sentence-initial And, meta-language that invites the reader to weigh readings, a count spelled out while nearby counts already use digits, and a slightly awkward reduced relative clause on the divergent/novel set. Entry bodies themselves are largely clean of grammar, staging, sentence-open, or house-style defects. A few long definition sentences stay inside the author's preferred density and register.\",\n  \"proposals\": [\n    {\n      \"old\": \"And it is the tip of the iceberg.\",\n      \"new\": \"It is the tip of the iceberg.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove forbidden sentence-initial And in author prose.\",\n      \"rationale\": \"House style bars author-prose sentences that open with And. The claim and metaphor remain intact.\"\n    },\n    {\n      \"old\": \"Entries carrying a small DIVERGENT or NOVEL badge are the thirty-four the Introduction's experiment found contradicting the common teaching or claiming ground no tradition has claimed — and each DIVERGENT entry also states the common reading, so the two can be weighed side by side.\",\n      \"new\": \"Entries carrying a small DIVERGENT or NOVEL badge are the 34 that the Introduction's experiment found to contradict the common teaching or to claim ground no tradition has claimed — and each DIVERGENT entry also states the common reading beside it.\",\n      \"type\": \"clarity\",\n      \"severity\": \"high\",\n      \"summary\": \"Fix count style, relative-clause grammar, and meta weighing language.\",\n      \"rationale\": \"Nearby counts already use digits; the reduced relative is tangled; 'weighed side by side' is the forbidden meta-talk pattern. Parallel 'beside it' matches the WORD-badge sentence that follows.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This glossary chunk is dense, assertive, and consistent with the book’s law-positive voice. Divergent entries cleanly contrast the author’s reading with the common view, and the seeref/sym-link apparatus is orderly. Residual defects are local: a broken verb parallel in Foreskin, an unclear “Defined on” plus modern “templated” in Gnashing of teeth, a compressed equation in Hate, and curly apostrophes in two seeref lines. No sentence-open violations, director cues, or stock AI vocabulary appear.\",\n  \"proposals\": [\n    {\n      \"old\": \"the uncircumcised heart cannot be humbled or love, the uncircumcised ear “cannot hearken,” uncircumcised lips cannot be heard,\",\n      \"new\": \"the uncircumcised heart cannot be humbled and cannot love, the uncircumcised ear “cannot hearken,” uncircumcised lips cannot be heard,\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Fix broken parallel between passive and active verbs.\",\n      \"rationale\": \"“Cannot be humbled or love” mixes a passive complement with an active verb under one auxiliary. Splitting the negation restores parallel grammar without changing the claim.\"\n    },\n    {\n      \"old\": \"Defined on the wicked against the just, staged at Stephen's trial, templated in the psalm: he shall see, be grieved, gnash, and perish.\",\n      \"new\": \"Defined by the wicked against the just, staged at Stephen's trial, patterned in the psalm: he shall see, be grieved, gnash, and perish.\",\n      \"type\": \"readability\",\n      \"severity\": \"medium\",\n      \"summary\": \"Clarify the definitional phrase and drop modern tech register.\",\n      \"rationale\": \"“Defined on” is unclear English for the intended grounding of the definition. “Templated” is software register; “patterned” keeps the same meaning in biblical prose.\"\n    },\n    {\n      \"old\": \"Jesus' parallel saying translates the hard text: “hate not” father and mother is __“he that loveth father or mother *more than me*.”__\",\n      \"new\": \"Jesus' parallel saying translates the hard text: “hate not” father and mother means __“he that loveth father or mother *more than me*.”__\",\n      \"type\": \"clarity\",\n      \"severity\": \"low\",\n      \"summary\": \"Replace compressed “is” with “means” for the equation.\",\n      \"rationale\": \"The telegraphic “is” forces the reader to supply the equivalence. “Means” states the translation relation directly and matches the surrounding density.\"\n    },\n    {\n      \"old\": \"[.seeref]__(2 Sam 12:3; Jer 11:19; Isa 53:6-7; Ex 12:5; Luke 10:3; John 1:29) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition’s symbol study at TimeTested.Bible__\",\n      \"new\": \"[.seeref]__(2 Sam 12:3; Jer 11:19; Isa 53:6-7; Ex 12:5; Luke 10:3; John 1:29) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition's symbol study at TimeTested.Bible__\",\n      \"type\": \"typo\",\n      \"severity\": \"low\",\n      \"summary\": \"Replace curly apostrophe with ASCII apostrophe in source.\",\n      \"rationale\": \"The right single quotation mark in “edition’s” is an encoding slip; AsciiDoc source should use a straight apostrophe for consistency and tooling safety.\"\n    },\n    {\n      \"old\": \"[.seeref]__(Prov 28:15; Zeph 3:3; Jer 50:17; Ezek 19; Rev 5:5) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition’s symbol study at TimeTested.Bible__\",\n      \"new\": \"[.seeref]__(Prov 28:15; Zeph 3:3; Jer 50:17; Ezek 19; Rev 5:5) · see link:/books/symbolic-language/the-way-the-truth-and-the-life/[The Way, the Truth & the Life][.chnum]#, ch. 7# — derived in the digital edition's symbol study at TimeTested.Bible__\",\n      \"type\": \"typo\",\n      \"severity\": \"low\",\n      \"summary\": \"Replace curly apostrophe with ASCII apostrophe in source.\",\n      \"rationale\": \"Same encoding slip as the Lamb seeref; straighten the apostrophe in “edition's” for clean AsciiDoc source.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 3,
+      "raw": "{\n  \"chapter_note\": \"This glossary chunk is dense, assertive, and consistent with the book’s law-positive voice: each entry packs Hebrew roots, scripture, and commonview contrasts without hedging or staging. Meat, Peace, Seal, Pearl, and North are especially strong assemblies of evidence into single claims. Local defects are few: one missing relative pronoun, one garbled apposition in the title entry Meat, one inverted clause, and one sentence fragment. No AI register, no And/But/That openers in prose, and no markup or quote-text problems. Surgical fixes restore grammar and clarity while leaving every symbol identification untouched.\",\n  \"proposals\": [\n    {\n      \"old\": \"In the north country the spoilers of sym:sym-babel[Babylon] gather — “an assembly of great nations,” the ten allied kings who turn on the seven the sym:sym-harlot[whore] rules — and in its uttermost recesses, the “sides of the north,” the enemy set his seat.\",\n      \"new\": \"In the north country the spoilers of sym:sym-babel[Babylon] gather — “an assembly of great nations,” the ten allied kings who turn on the seven that the sym:sym-harlot[whore] rules — and in its uttermost recesses, the “sides of the north,” the enemy set his seat.\",\n      \"type\": \"grammar\",\n      \"severity\": \"high\",\n      \"summary\": \"Insert missing relative pronoun before the object clause.\",\n      \"rationale\": \"“the seven the whore rules” lacks the required “that/whom,” leaving a dangling object. One-word insertion restores grammar without altering the claim.\"\n    },\n    {\n      \"old\": \"sym:sym-milk[Milk] and meat are one substance in two states — the word received, and the word done: chewed and tasted as the ear tries words, served in due season, its fruit senses exercised to discern.\",\n      \"new\": \"sym:sym-milk[Milk] and meat are one substance in two states — the word received, and the word done: chewed and tasted as the ear tries words, served in due season, its fruit the senses exercised to discern.\",\n      \"type\": \"clarity\",\n      \"severity\": \"high\",\n      \"summary\": \"Repair the ungrammatical apposition at the end of the Meat definition.\",\n      \"rationale\": \"“its fruit senses exercised” is missing a determiner and reads as a fragment. Adding “the” restores the intended parallel to Heb 5:14 while keeping every other word and the book’s central claim intact.\"\n    },\n    {\n      \"old\": \"A sign must be watched for: the east gate opens on it for worship, commerce resents it, and Paul files it among the shadows of things to come; which phase renews the month, the sym:sym-pearl[Pearl] chapter weighs from the letters.\",\n      \"new\": \"A sign must be watched for: the east gate opens on it for worship, commerce resents it, and Paul files it among the shadows of things to come; the sym:sym-pearl[Pearl] chapter weighs from the letters which phase renews the month.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Un-invert the final clause so the subject precedes its object.\",\n      \"rationale\": \"The original places the relative clause first, producing a Yoda-like hang. Reordering yields a clear English sentence with identical meaning and markup.\"\n    },\n    {\n      \"old\": \"Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.\",\n      \"new\": \"Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” It is distinct from Gehenna, the judgment.\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Convert the trailing fragment into a complete sentence.\",\n      \"rationale\": \"“Distinct from Gehenna…” is a sentence fragment after a full stop. Prefixing “It is” supplies the missing subject and verb without changing the distinction drawn.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 4,
+      "raw": "{\n  \"chapter_note\": \"This glossary chunk is dense, consistent in form, and keeps the law-positive voice with tight scripture anchors and cross-links. Most entries are surgically clear. Residual defects are local: one dangling participle, a missing relative pronoun, a grammar slip on the jubilee model, a register-odd noun use of “decode,” a telegraphic “virgins plural,” and a seeref that leaks TimeTested.Bible into always-on body text while mixing digital-link and print phrasing. No director cues, no And/But/That sentence opens, and no doctrine rewrites needed.\",\n  \"proposals\": [\n    {\n      \"old\": \"[.seeref]__(Isa 40:4) · see link:/books/symbolic-language/mountain/[Mountain][.chnum]#, ch. 39# — derived in the digital edition’s symbol study at TimeTested.Bible__\",\n      \"new\": \"[.seeref]__(Isa 40:4) · see link:/books/symbolic-language/mountain/[Mountain][.chnum]#, ch. 39#__\",\n      \"type\": \"factual\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip TimeTested.Bible and the derived clause from the always-on seeref.\",\n      \"rationale\": \"House style confines TimeTested.Bible to front/back matter or footnotes; this line also breaks the clean in-book pattern used by Stone → Mountain and leaves a print/digital mashup.\"\n    },\n    {\n      \"old\": \"A covenant cut by God — for a covenant is _cut_ (Hebrew _karat_) — grown into the kingdom that breaks the world-empires and fills the earth.\",\n      \"new\": \"A covenant cut by God — for a covenant is _cut_ (Hebrew _karat_) — that grows into the kingdom that breaks the world-empires and fills the earth.\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace dangling past participle with a relative clause.\",\n      \"rationale\": \"“Grown” hangs after the em-dashes with no clear attachment; “that grows” ties the covenant/stone cleanly to the kingdom outcome.\"\n    },\n    {\n      \"old\": \"The Feast of Weeks runs the same count in days — seven sevens to the fiftieth — the jubilee modeled a day for a sym:sym-year[year].\",\n      \"new\": \"The Feast of Weeks runs the same count in days — seven sevens to the fiftieth — the jubilee modeled as a day for a sym:sym-year[year].\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Insert “as” so the jubilee model is grammatical.\",\n      \"rationale\": \"“The jubilee modeled a day” lacks the required preposition; “modeled as” restores the intended day-for-year correspondence.\"\n    },\n    {\n      \"old\": \"The vineyard's reckoning — where the sym:sym-fruit[fruit] a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that __“*burst out* with new wine”__ when the grapes are good; the growers themselves trodden — __“the great winepress of the *wrath* of God”__ — and blood for wine, when the vintage is wickedness.\",\n      \"new\": \"The vineyard's reckoning — where the sym:sym-fruit[fruit] that a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that __“*burst out* with new wine”__ when the grapes are good; the growers themselves trodden — __“the great winepress of the *wrath* of God”__ — and blood for wine, when the vintage is wickedness.\",\n      \"type\": \"grammar\",\n      \"severity\": \"medium\",\n      \"summary\": \"Add the relative “that” before “a people has borne.”\",\n      \"rationale\": \"Zero-relative “the fruit a people has borne” momentarily misreads; the explicit relative keeps the clause clear without changing meaning.\"\n    },\n    {\n      \"old\": \"The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the covenant: obedience makes Israel “the head, and not the tail,” and the curse inverts it.\",\n      \"new\": \"The prophet that teacheth lies — Isaiah's own decoding, with head and tail already defined by the covenant: obedience makes Israel “the head, and not the tail,” and the curse inverts it.\",\n      \"type\": \"tone-register\",\n      \"severity\": \"low\",\n      \"summary\": \"Change noun “decode” to “decoding.”\",\n      \"rationale\": \"“Decode” as a bare noun is a modern register slip; “decoding” matches the book’s denser, more formal voice while preserving the claim.\"\n    },\n    {\n      \"old\": \"the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the sym:sym-marriage[bride]’s companions who follow her in — the opposite of the sym:sym-harlot[harlot] who goes after many.\",\n      \"new\": \"the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins, plural, are the sym:sym-marriage[bride]’s companions who follow her in — the opposite of the sym:sym-harlot[harlot] who goes after many.\",\n      \"type\": \"readability\",\n      \"severity\": \"low\",\n      \"summary\": \"Punctuate “virgins, plural,” for clarity.\",\n      \"rationale\": \"Bare “virgins plural” is telegraphic to the point of stumble; light commas keep the author’s density without rewriting the claim.\"\n    }\n  ]\n}"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# How to Use This Book
+
+This front-matter how-to is already dense, practical, and mostly clean: clear section heads, consistent first-person authorial voice in places, proper AsciiDoc/sym markup, no And/But/That sentence opens, no stock AI diction, and a strong closing method statement. The main defects are a vague pronoun whose antecedent is only implicit, a needless passive that breaks the surrounding first-person register, and a minor singular/plural slip on digital edition(s). No doctrine, scripture wording, or staging problems appear. Surgical fixes restore clarity and voice consistency without expanding the text.

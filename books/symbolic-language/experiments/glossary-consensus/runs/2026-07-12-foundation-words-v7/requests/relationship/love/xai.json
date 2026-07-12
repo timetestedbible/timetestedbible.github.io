@@ -1,0 +1,78 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "love",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLove\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'love' (especially Greek agape) primarily signifies the essential nature and character of God Himself—self-giving, sacrificial, unconditional benevolence supremely revealed in Christ's atoning death—which believers are commanded to reflect toward God and neighbor. It is treated as the summary of the Law, the greatest of the theological virtues, and the defining mark of Christian discipleship, rather than as an emotion or mere affection.\",\n  \"primary_basis\": [\n    \"1 John 4:7-8, 16 ('God is love')\",\n    \"John 3:16 ('For God so loved the world...')\",\n    \"1 Corinthians 13:1-13 (the 'love chapter'; 'the greatest of these is love')\",\n    \"Matthew 22:37-40 / Mark 12:29-31 / Deuteronomy 6:5 / Leviticus 19:18 (the two great commandments)\",\n    \"John 13:34-35 ('By this all men will know that you are my disciples')\",\n    \"John 15:12-13 ('Greater love has no one than this...')\",\n    \"Romans 5:8 ('God demonstrates his own love for us...')\",\n    \"Romans 13:8-10 ('love is the fulfillment of the law')\",\n    \"Galatians 5:22 (love as the first fruit of the Spirit)\",\n    \"1 John 3:16-18 (love shown in deed and truth)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covenant loyalty (Hebrew hesed): love understood as God's steadfast, faithful covenant commitment to Israel and to His people, emphasizing fidelity and loyal-love rather than affection.\",\n      \"basis\": [\n        \"Exodus 34:6-7\",\n        \"Deuteronomy 7:7-9\",\n        \"Psalm 136 ('his steadfast love endures forever')\",\n        \"Hosea 2:19-20; 11:1-4\",\n        \"Lamentations 3:22-23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Nuptial/bridal love: love as the marital bond between Christ and the Church (or God and Israel), often read allegorically or typologically, especially from the Song of Songs; prominent in patristic, medieval, and mystical exegesis.\",\n      \"basis\": [\n        \"Song of Songs (allegorical readings, e.g., Origen, Bernard of Clairvaux)\",\n        \"Ephesians 5:25-32\",\n        \"Hosea 1-3\",\n        \"Revelation 19:7-9; 21:2\",\n        \"Isaiah 62:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Love as practical ethical action and social obligation: love defined operationally as concrete deeds of justice, mercy, and care for neighbor and enemy, emphasized in liberationist, Anabaptist, and social-gospel traditions.\",\n      \"basis\": [\n        \"Matthew 25:31-46\",\n        \"Luke 10:25-37 (Good Samaritan)\",\n        \"Matthew 5:43-48 (love of enemies)\",\n        \"James 2:14-17\",\n        \"1 John 3:17-18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Love as intra-Trinitarian relation: love as the eternal bond among Father, Son, and Holy Spirit (Augustine's identification of the Spirit as the mutual love of Father and Son), grounding creation and redemption in God's inner life.\",\n      \"basis\": [\n        \"John 17:24-26\",\n        \"John 3:35; 5:20\",\n        \"Augustine, De Trinitate (theological tradition drawing on these texts)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Lexical-distinction reading: love parsed into distinct Greek categories (agape, phileo, eros, storge) with agape claimed as a uniquely divine kind of love; popularized by Anders Nygren and C.S. Lewis, though many modern lexicographers dispute sharp distinctions.\",\n      \"basis\": [\n        \"John 21:15-17 (agapao/phileo alternation)\",\n        \"Nygren, 'Agape and Eros'; C.S. Lewis, 'The Four Loves'\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Love' is less a symbol than a central theological concept, and its core meaning is among the most settled in Christian interpretation: God's self-giving nature revealed in Christ and the supreme commandment governing Christian life. The listed alternatives are largely complementary emphases (covenantal, nuptial, ethical, Trinitarian) rather than competing definitions. Genuine scholarly dispute exists mainly at the margins—e.g., whether agape is lexically distinct from other Greek love-words (widely questioned since James Barr and D.A. Carson) and how allegorical the Song of Songs reading should be.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Self-giving, faithful, and sacrificial concern for the good of another, grounded supremely in God’s own character and revealed in Christ. In Christian teaching, love commonly signifies both God’s gracious action toward humanity and the central obligation to love God and one’s neighbor.\",\n  \"primary_basis\": [\n    \"1 John 4:7–10, 16 — God is love, and divine love is manifested in sending the Son.\",\n    \"John 3:16 — God’s love is expressed through the giving of the Son.\",\n    \"Romans 5:8 — Christ’s death demonstrates God’s love for sinners.\",\n    \"John 13:34–35 — self-giving love is the identifying mark of Jesus’ disciples.\",\n    \"John 15:12–13 — laying down one’s life is presented as the greatest love.\",\n    \"Matthew 22:37–40; Mark 12:29–31 — love of God and neighbor summarizes the commandments.\",\n    \"1 Corinthians 13:1–13 — love is the indispensable and enduring Christian virtue.\",\n    \"Romans 13:8–10; Galatians 5:13–14 — love fulfills the law.\",\n    \"Ephesians 5:1–2, 25 — Christ’s sacrificial action supplies the pattern for Christian and marital love.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covenant loyalty or steadfast faithfulness: love can emphasize committed allegiance expressed through obedience and enduring mercy rather than primarily emotion.\",\n      \"basis\": [\n        \"Deuteronomy 6:4–5\",\n        \"Deuteronomy 7:7–9\",\n        \"John 14:15, 21–24\",\n        \"1 John 5:2–3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Affectionate or relational attachment, including familial love, friendship, compassion, and ordinary interpersonal affection.\",\n      \"basis\": [\n        \"John 11:3, 5, 35–36\",\n        \"John 21:15–17\",\n        \"Romans 12:10\",\n        \"Titus 2:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Romantic, marital, and erotic desire, especially in interpretations of the Song of Songs and marital texts.\",\n      \"basis\": [\n        \"Song of Songs 2:4–7; 8:6–7\",\n        \"Genesis 29:20\",\n        \"Ephesians 5:25–33\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The mutual love between Christ and the Church, sometimes developed through bridal or mystical symbolism.\",\n      \"basis\": [\n        \"Song of Songs, in traditional allegorical interpretation\",\n        \"Ephesians 5:25–32\",\n        \"Revelation 19:7–9; 21:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A distinction in which Greek agapē denotes uniquely divine or unconditional love, while philia denotes friendship and erōs romantic desire. This is widespread in popular teaching but is not treated by most biblical scholars as a rigid lexical distinction in every passage.\",\n      \"basis\": [\n        \"John 21:15–17, often cited despite the apparent interchange of agapaō and phileō\",\n        \"1 Corinthians 13\",\n        \"1 John 4:7–10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus on love as self-giving devotion grounded in God and directed toward God and neighbor. Nevertheless, “love” is usually a theological and ethical reality rather than a symbol with one fixed referent. Its precise sense varies by context, including covenant faithfulness, affection, friendship, marital desire, and sacrificial action.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The essence and nature of God expressed as selfless, unconditional, sacrificial love (agape) that defines Christian virtue, the greatest commandment, and the model for all human relationships\",\n  \"primary_basis\": [\n    \"1 John 4:8\",\n    \"1 John 4:16\",\n    \"John 3:16\",\n    \"Romans 5:8\",\n    \"1 Corinthians 13:1-13\",\n    \"Matthew 22:37-40\",\n    \"John 15:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ's redemptive love for the Church, frequently symbolized through the metaphor of marriage or covenant fidelity\",\n      \"basis\": [\n        \"Ephesians 5:25-33\",\n        \"Hosea 1-3\",\n        \"Song of Solomon (allegorical reading)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Brotherly affection or friendship (philia) among believers or between Jesus and disciples\",\n      \"basis\": [\n        \"John 21:15-17\",\n        \"John 15:13-15\",\n        \"Romans 12:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Romantic or erotic desire (eros), treated literally rather than as divine allegory\",\n      \"basis\": [\n        \"Song of Solomon (literal reading)\",\n        \"Proverbs 5:15-19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Familial natural affection (storge) within households\",\n      \"basis\": [\n        \"Romans 12:10 (compound forms)\",\n        \"2 Timothy 3:3 (negative)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern Christian teaching, agape as God's nature and the supreme commandment forms a clear, long-standing consensus; linguistic distinctions among Greek terms for love are widely recognized but secondary to the dominant theological reading.\"\n}\n\nBOOK ENTRY\nKeeping the commandments — “this is the love of God, that we keep his commandments”.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: an emotion — affection, unconditional benevolence — with the commandments optional to it.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(John 14:15; 1 John 5:3; 2 John 4-6) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nJohn 14:15 — If ye love me, keep my commandments.\n1 John 5:3 — For this is the love of God, that we keep his commandments: and his commandments are not grievous.\n\nCLASSIFY THE RELATIONSHIP\n\n- MATCH: substantially the same meaning as the recognizable consensus.\n- REFINED: compatible with the consensus but materially sharper, narrower,\n  broader, or more precisely supported.\n- DIVERGENT: contradicts or displaces a recognizable common interpretation.\n- NOVEL: no recognizable consensus covers the book's central claim; the book\n  stakes a meaning not represented by the blind responses.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  }
+}

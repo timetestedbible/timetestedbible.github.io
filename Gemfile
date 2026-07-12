@@ -7,3 +7,6 @@ gem "bigdecimal"
 # Only affects .adoc files; existing Markdown/HTML content is untouched.
 gem "jekyll-asciidoc"
 gem "asciidoctor"
+gem "asciidoctor-pdf", "~> 2.3"
+gem "asciidoctor-epub3", "~> 2.3"
+gem "text-hyphen", "~> 1.5"

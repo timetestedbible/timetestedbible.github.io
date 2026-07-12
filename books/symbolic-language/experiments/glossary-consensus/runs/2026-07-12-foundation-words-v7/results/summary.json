@@ -1,0 +1,107 @@
+{
+  "entry_count": 4,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_UNPERSUADED": 1,
+    "MATCH": 1,
+    "REFINED": 2
+  },
+  "rows": [
+    {
+      "anchor": "belief",
+      "term": "Belief, to believe",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "STRONG",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    },
+    {
+      "anchor": "faith",
+      "term": "Faith",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_UNPERSUADED"
+    },
+    {
+      "anchor": "knowing",
+      "term": "Knowing, to know",
+      "relation": "MATCH",
+      "relationship_votes": [
+        "MATCH",
+        "MATCH",
+        "REFINED"
+      ],
+      "citation_support": "STRONG",
+      "citation_support_votes": [
+        "STRONG",
+        "STRONG",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "MATCH"
+    },
+    {
+      "anchor": "love",
+      "term": "Love",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "REFINED"
+      ],
+      "citation_support": "STRONG",
+      "citation_support_votes": [
+        "STRONG",
+        "STRONG",
+        "STRONG"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    }
+  ]
+}

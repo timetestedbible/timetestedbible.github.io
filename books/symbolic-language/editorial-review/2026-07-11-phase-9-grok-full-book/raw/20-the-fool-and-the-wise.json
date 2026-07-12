@@ -1,0 +1,87 @@
+{
+  "file": "books/symbolic-language/20-the-fool-and-the-wise.adoc",
+  "title": "The Fool and the Wise",
+  "notes": [
+    "This chunk is dense and assertive: the fool is fixed as the disobedient hearer, the ten virgins are chained through prior symbols, and oil is identified as the bought-and-kept law with a sharp Gethsemane press link. Voice stays law-positive and free of AI stock vocabulary. Residual defects are almost entirely house-style sentence openings—six author sentences begin with And and one with That. One mild director cue (“Begin with”) stages the virgins section. Scripture blocks, markup, and claims are otherwise clean; no doctrine or quote wording needs touch."
+  ],
+  "proposals": [
+    {
+      "old": "And the Lord Himself draws the line — not between those who hear and those who don’t, but between two men who hear the very same words:",
+      "new": "The Lord Himself draws the line — not between those who hear and those who don’t, but between two men who hear the very same words:",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. Removing it restores compliance without changing claim or density.",
+      "_chunk": 1
+    },
+    {
+      "old": "That is the whole difference between the wise and the fool.",
+      "new": "This is the whole difference between the wise and the fool.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Replace sentence-initial That with This.",
+      "rationale": "House style forbids author sentences starting with That. This keeps the same assertive close while obeying the rule.",
+      "_chunk": 1
+    },
+    {
+      "old": "Begin with who the virgins are — and who they are not.",
+      "new": "Who the virgins are — and who they are not — comes first.",
+      "type": "ai-sounding-staging",
+      "severity": "low",
+      "summary": "Remove director-style Begin with cue.",
+      "rationale": "Presenter staging is barred. The rewrite keeps the same identification move without instructing the reader.",
+      "_chunk": 1
+    },
+    {
+      "old": "And in the law, a virgin can already belong to a husband.",
+      "new": "In the law, a virgin can already belong to a husband.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. Surgical removal preserves the legal claim intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the kingdom of heaven is likened to *ten* virgins.",
+      "new": "The kingdom of heaven is likened to *ten* virgins.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The count and claim remain unchanged.",
+      "_chunk": 1
+    },
+    {
+      "old": "And no one can lend it: your neighbor’s obedience will not burn for you.",
+      "new": "No one can lend it: your neighbor’s obedience will not burn for you.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The non-transferability point stays sharp.",
+      "_chunk": 1
+    },
+    {
+      "old": "And it sits on the Mount of Olives (Luke 22:39) — by these symbols the mount of the olive nation: Israel itself.",
+      "new": "It sits on the Mount of Olives (Luke 22:39) — by these symbols the mount of the olive nation: Israel itself.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The geographic-symbol link is unaltered.",
+      "_chunk": 1
+    },
+    {
+      "old": "And the wise were wise the way the wise man built on rock: they heard, and they did, and when the Bridegroom came their light was burning.",
+      "new": "The wise were wise the way the wise man built on rock: they heard, and they did, and when the Bridegroom came their light was burning.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Drop sentence-initial And in author prose.",
+      "rationale": "House style forbids author sentences starting with And. The closing parallel to the rock builder remains intact.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is dense and assertive: the fool is fixed as the disobedient hearer, the ten virgins are chained through prior symbols, and oil is identified as the bought-and-kept law with a sharp Gethsemane press link. Voice stays law-positive and free of AI stock vocabulary. Residual defects are almost entirely house-style sentence openings—six author sentences begin with And and one with That. One mild director cue (“Begin with”) stages the virgins section. Scripture blocks, markup, and claims are otherwise clean; no doctrine or quote wording needs touch.\",\n  \"proposals\": [\n    {\n      \"old\": \"And the Lord Himself draws the line — not between those who hear and those who don’t, but between two men who hear the very same words:\",\n      \"new\": \"The Lord Himself draws the line — not between those who hear and those who don’t, but between two men who hear the very same words:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. Removing it restores compliance without changing claim or density.\"\n    },\n    {\n      \"old\": \"That is the whole difference between the wise and the fool.\",\n      \"new\": \"This is the whole difference between the wise and the fool.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Replace sentence-initial That with This.\",\n      \"rationale\": \"House style forbids author sentences starting with That. This keeps the same assertive close while obeying the rule.\"\n    },\n    {\n      \"old\": \"Begin with who the virgins are — and who they are not.\",\n      \"new\": \"Who the virgins are — and who they are not — comes first.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"low\",\n      \"summary\": \"Remove director-style Begin with cue.\",\n      \"rationale\": \"Presenter staging is barred. The rewrite keeps the same identification move without instructing the reader.\"\n    },\n    {\n      \"old\": \"And in the law, a virgin can already belong to a husband.\",\n      \"new\": \"In the law, a virgin can already belong to a husband.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. Surgical removal preserves the legal claim intact.\"\n    },\n    {\n      \"old\": \"And the kingdom of heaven is likened to *ten* virgins.\",\n      \"new\": \"The kingdom of heaven is likened to *ten* virgins.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The count and claim remain unchanged.\"\n    },\n    {\n      \"old\": \"And no one can lend it: your neighbor’s obedience will not burn for you.\",\n      \"new\": \"No one can lend it: your neighbor’s obedience will not burn for you.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The non-transferability point stays sharp.\"\n    },\n    {\n      \"old\": \"And it sits on the Mount of Olives (Luke 22:39) — by these symbols the mount of the olive nation: Israel itself.\",\n      \"new\": \"It sits on the Mount of Olives (Luke 22:39) — by these symbols the mount of the olive nation: Israel itself.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The geographic-symbol link is unaltered.\"\n    },\n    {\n      \"old\": \"And the wise were wise the way the wise man built on rock: they heard, and they did, and when the Bridegroom came their light was burning.\",\n      \"new\": \"The wise were wise the way the wise man built on rock: they heard, and they did, and when the Bridegroom came their light was burning.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Drop sentence-initial And in author prose.\",\n      \"rationale\": \"House style forbids author sentences starting with And. The closing parallel to the rock builder remains intact.\"\n    }\n  ]\n}"
+    }
+  ]
+}

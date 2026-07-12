@@ -1,0 +1,164 @@
+{
+  "file": "books/symbolic-language/05-gospel.adoc",
+  "title": "Gospel",
+  "notes": [
+    "This chunk delivers a dense, law-positive case that the gospel is the everlasting royal proclamation of God's reign and covenant, running from Abraham and Sinai through Jesus, not a post-cross invention about death and resurrection. Strengths include the clean prevalence table, tight chaining of Isaiah-Nahum-Mark-Hebrews-Revelation, and the clear distinction between the message Jesus taught and messages about Him. Residual presenter staging remains thick (Stop here, Hear what, Look once more, Mark where, Now the hinge, listen to, And read). Multiple author-prose sentences open with And/But/That, violating house style. Quotes and doctrine are untouched; the fixes below are surgical register clean-ups only.",
+    "This chunk carries a dense, law-positive case that the gospel is the kingdom announcement secured by cross and resurrection, not reduced to them. Scripture chaining is tight, the Hebrew Matthew material is used assertively, and the closing commission seal is strong. Residual house-style defects cluster in sentence openings (And/But/That) and presenter staging (Mark how, Now return, Read closely / Read it as). Fix those surgically and the voice stays dense without director cues or soft openers."
+  ],
+  "proposals": [
+    {
+      "old": "Stop here and you might think the gospel is the death and resurrection themselves; but Paul anchors it twice in *the Scriptures* — and his Scriptures were the Old Testament.",
+      "new": "The gospel is not the death and resurrection themselves; Paul anchors it twice in *the Scriptures* — and his Scriptures were the Old Testament.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip director cue and hedging.",
+      "rationale": "House style bans Stop-and cues and soft you-might-think phrasing; the double anchor in the Scriptures is asserted directly.",
+      "_chunk": 1
+    },
+    {
+      "old": "Hear what the gospel asks for.",
+      "new": "The gospel asks for this.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Hear-what director cue.",
+      "rationale": "Presenter staging is forbidden; the next sentence already states the demand without the cue.",
+      "_chunk": 1
+    },
+    {
+      "old": "Look once more at the herald’s third clause: __“that publisheth salvation”__ — the Hebrew is _yeshuah_: the Old Testament’s gospel-verse publishes *Jesus* by name.",
+      "new": "The herald’s third clause is __“that publisheth salvation”__ — the Hebrew is _yeshuah_: the Old Testament’s gospel-verse publishes *Jesus* by name.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Look-once-more staging.",
+      "rationale": "Director cues of the Look variety are banned; the claim about yeshuah stands alone.",
+      "_chunk": 1
+    },
+    {
+      "old": "Mark where the herald stands — upon the sym:sym-mountain[mountains]; what a mountain is, the link:/books/symbolic-language/mountain/[Mountain] chapter will prove.",
+      "new": "The herald stands upon the sym:sym-mountain[mountains]; what a mountain is, the link:/books/symbolic-language/mountain/[Mountain] chapter will prove.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Mark-where director cue.",
+      "rationale": "Explicit Mark staging violates house style; rephrase to direct assertion while preserving the mountain link.",
+      "_chunk": 1
+    },
+    {
+      "old": "When Jesus stood up in His hometown synagogue to announce His own commission, listen to which scripture He chose:",
+      "new": "When Jesus stood up in His hometown synagogue to announce His own commission, He chose this scripture:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove listen-to cue.",
+      "rationale": "Staging language is prohibited; the sentence now leads straight into the Isaiah quote.",
+      "_chunk": 1
+    },
+    {
+      "old": "Now the hinge that the common definition cannot survive.",
+      "new": "The hinge that the common definition cannot survive is this.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove Now-the-hinge presenter framing.",
+      "rationale": "Now as director cue is banned; the strong claim about the pre-cross preaching is kept intact.",
+      "_chunk": 1
+    },
+    {
+      "old": "And read what the everlasting gospel says when it opens its mouth: fear God, give Him glory, worship the Maker, the judgment is come.",
+      "new": "The everlasting gospel says when it opens its mouth: fear God, give Him glory, worship the Maker, the judgment is come.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove And-read staging and And sentence open.",
+      "rationale": "Combines banned And-start with read-what cue; direct statement preserves the content of Revelation 14.",
+      "_chunk": 1
+    },
+    {
+      "old": "But a king’s proclamation with terms is obeyed or defied — and Scripture says the gospel is the kind of thing men will be judged for not obeying.",
+      "new": "A king’s proclamation with terms is obeyed or defied — and Scripture says the gospel is the kind of thing men will be judged for not obeying.",
+      "type": "sentence-open",
+      "severity": "medium",
+      "summary": "Fix author prose starting with But.",
+      "rationale": "House style forbids sentences in author prose starting with But; the contrast remains clear from the preceding sentences.",
+      "_chunk": 1
+    },
+    {
+      "old": "Mark how Paul glosses his own words inside that first verse:",
+      "new": "Paul glosses his own words inside that first verse:",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove the director cue Mark how.",
+      "rationale": "House style forbids presenter staging of the Mark that / Mark how family. Opening on the claim keeps the author’s density.",
+      "_chunk": 2
+    },
+    {
+      "old": "That is what sym:sym-belief[believe] means in Scripture’s mouth: not thinking a thing true, but trusting enough to obey.",
+      "new": "In Scripture’s mouth, sym:sym-belief[believe] means not thinking a thing true, but trusting enough to obey.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Stop the author sentence from opening with That.",
+      "rationale": "Author prose must not begin with That. The rewrite preserves the exact claim and markup.",
+      "_chunk": 2
+    },
+    {
+      "old": "But the purchase is not the proclamation.",
+      "new": "The purchase is not the proclamation.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop the opening But.",
+      "rationale": "House style bars author sentences that start with But. The assertion stands cleaner without it.",
+      "_chunk": 2
+    },
+    {
+      "old": "And he is expressly defending the resurrection here — the burden of the whole of 1 Corinthians 15 — summarizing the hinge of the gospel, not redrawing its borders.",
+      "new": "He is expressly defending the resurrection here — the burden of the whole of 1 Corinthians 15 — summarizing the hinge of the gospel, not redrawing its borders.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop the opening And.",
+      "rationale": "Author prose must not start with And. Content and em-dashes stay intact.",
+      "_chunk": 2
+    },
+    {
+      "old": "And the resurrection __“declared”__ Him __“the Son of God with power”__ — the enthronement of the King.",
+      "new": "The resurrection __“declared”__ Him __“the Son of God with power”__ — the enthronement of the King.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop the opening And on the third kingdom clause.",
+      "rationale": "House style forbids And-openers in author prose. Parallel structure with the prior two clauses is cleaner without it.",
+      "_chunk": 2
+    },
+    {
+      "old": "And it is why, at the end of the age, the message has not changed:",
+      "new": "It is why, at the end of the age, the message has not changed:",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop the opening And.",
+      "rationale": "Author sentences must not begin with And. The parallel It is why construction already carries the force.",
+      "_chunk": 2
+    },
+    {
+      "old": "Now return to the sentence the AI gave us, and grade it.",
+      "new": "Return to the sentence the AI gave us.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Strip Now and the grade-it command.",
+      "rationale": "Forbidden director cues include Now-return and instructional grade-it language. The following sentences already perform the evaluation.",
+      "_chunk": 2
+    },
+    {
+      "old": "But as a definition it fails the full witness of Scripture.",
+      "new": "As a definition it fails the full witness of Scripture.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Drop the opening But.",
+      "rationale": "House style bars But at the start of author prose. The verdict remains direct.",
+      "_chunk": 2
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk delivers a dense, law-positive case that the gospel is the everlasting royal proclamation of God's reign and covenant, running from Abraham and Sinai through Jesus, not a post-cross invention about death and resurrection. Strengths include the clean prevalence table, tight chaining of Isaiah-Nahum-Mark-Hebrews-Revelation, and the clear distinction between the message Jesus taught and messages about Him. Residual presenter staging remains thick (Stop here, Hear what, Look once more, Mark where, Now the hinge, listen to, And read). Multiple author-prose sentences open with And/But/That, violating house style. Quotes and doctrine are untouched; the fixes below are surgical register clean-ups only.\",\n  \"proposals\": [\n    {\n      \"old\": \"Stop here and you might think the gospel is the death and resurrection themselves; but Paul anchors it twice in *the Scriptures* — and his Scriptures were the Old Testament.\",\n      \"new\": \"The gospel is not the death and resurrection themselves; Paul anchors it twice in *the Scriptures* — and his Scriptures were the Old Testament.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip director cue and hedging.\",\n      \"rationale\": \"House style bans Stop-and cues and soft you-might-think phrasing; the double anchor in the Scriptures is asserted directly.\"\n    },\n    {\n      \"old\": \"Hear what the gospel asks for.\",\n      \"new\": \"The gospel asks for this.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Hear-what director cue.\",\n      \"rationale\": \"Presenter staging is forbidden; the next sentence already states the demand without the cue.\"\n    },\n    {\n      \"old\": \"Look once more at the herald’s third clause: __“that publisheth salvation”__ — the Hebrew is _yeshuah_: the Old Testament’s gospel-verse publishes *Jesus* by name.\",\n      \"new\": \"The herald’s third clause is __“that publisheth salvation”__ — the Hebrew is _yeshuah_: the Old Testament’s gospel-verse publishes *Jesus* by name.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Look-once-more staging.\",\n      \"rationale\": \"Director cues of the Look variety are banned; the claim about yeshuah stands alone.\"\n    },\n    {\n      \"old\": \"Mark where the herald stands — upon the sym:sym-mountain[mountains]; what a mountain is, the link:/books/symbolic-language/mountain/[Mountain] chapter will prove.\",\n      \"new\": \"The herald stands upon the sym:sym-mountain[mountains]; what a mountain is, the link:/books/symbolic-language/mountain/[Mountain] chapter will prove.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Mark-where director cue.\",\n      \"rationale\": \"Explicit Mark staging violates house style; rephrase to direct assertion while preserving the mountain link.\"\n    },\n    {\n      \"old\": \"When Jesus stood up in His hometown synagogue to announce His own commission, listen to which scripture He chose:\",\n      \"new\": \"When Jesus stood up in His hometown synagogue to announce His own commission, He chose this scripture:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove listen-to cue.\",\n      \"rationale\": \"Staging language is prohibited; the sentence now leads straight into the Isaiah quote.\"\n    },\n    {\n      \"old\": \"Now the hinge that the common definition cannot survive.\",\n      \"new\": \"The hinge that the common definition cannot survive is this.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove Now-the-hinge presenter framing.\",\n      \"rationale\": \"Now as director cue is banned; the strong claim about the pre-cross preaching is kept intact.\"\n    },\n    {\n      \"old\": \"And read what the everlasting gospel says when it opens its mouth: fear God, give Him glory, worship the Maker, the judgment is come.\",\n      \"new\": \"The everlasting gospel says when it opens its mouth: fear God, give Him glory, worship the Maker, the judgment is come.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove And-read staging and And sentence open.\",\n      \"rationale\": \"Combines banned And-start with read-what cue; direct statement preserves the content of Revelation 14.\"\n    },\n    {\n      \"old\": \"But a king’s proclamation with terms is obeyed or defied — and Scripture says the gospel is the kind of thing men will be judged for not obeying.\",\n      \"new\": \"A king’s proclamation with terms is obeyed or defied — and Scripture says the gospel is the kind of thing men will be judged for not obeying.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"medium\",\n      \"summary\": \"Fix author prose starting with But.\",\n      \"rationale\": \"House style forbids sentences in author prose starting with But; the contrast remains clear from the preceding sentences.\"\n    }\n  ]\n}"
+    },
+    {
+      "chunk": 2,
+      "raw": "{\n  \"chapter_note\": \"This chunk carries a dense, law-positive case that the gospel is the kingdom announcement secured by cross and resurrection, not reduced to them. Scripture chaining is tight, the Hebrew Matthew material is used assertively, and the closing commission seal is strong. Residual house-style defects cluster in sentence openings (And/But/That) and presenter staging (Mark how, Now return, Read closely / Read it as). Fix those surgically and the voice stays dense without director cues or soft openers.\",\n  \"proposals\": [\n    {\n      \"old\": \"Mark how Paul glosses his own words inside that first verse:\",\n      \"new\": \"Paul glosses his own words inside that first verse:\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove the director cue Mark how.\",\n      \"rationale\": \"House style forbids presenter staging of the Mark that / Mark how family. Opening on the claim keeps the author’s density.\"\n    },\n    {\n      \"old\": \"That is what sym:sym-belief[believe] means in Scripture’s mouth: not thinking a thing true, but trusting enough to obey.\",\n      \"new\": \"In Scripture’s mouth, sym:sym-belief[believe] means not thinking a thing true, but trusting enough to obey.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Stop the author sentence from opening with That.\",\n      \"rationale\": \"Author prose must not begin with That. The rewrite preserves the exact claim and markup.\"\n    },\n    {\n      \"old\": \"But the purchase is not the proclamation.\",\n      \"new\": \"The purchase is not the proclamation.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop the opening But.\",\n      \"rationale\": \"House style bars author sentences that start with But. The assertion stands cleaner without it.\"\n    },\n    {\n      \"old\": \"And he is expressly defending the resurrection here — the burden of the whole of 1 Corinthians 15 — summarizing the hinge of the gospel, not redrawing its borders.\",\n      \"new\": \"He is expressly defending the resurrection here — the burden of the whole of 1 Corinthians 15 — summarizing the hinge of the gospel, not redrawing its borders.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop the opening And.\",\n      \"rationale\": \"Author prose must not start with And. Content and em-dashes stay intact.\"\n    },\n    {\n      \"old\": \"And the resurrection __“declared”__ Him __“the Son of God with power”__ — the enthronement of the King.\",\n      \"new\": \"The resurrection __“declared”__ Him __“the Son of God with power”__ — the enthronement of the King.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop the opening And on the third kingdom clause.\",\n      \"rationale\": \"House style forbids And-openers in author prose. Parallel structure with the prior two clauses is cleaner without it.\"\n    },\n    {\n      \"old\": \"And it is why, at the end of the age, the message has not changed:\",\n      \"new\": \"It is why, at the end of the age, the message has not changed:\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop the opening And.\",\n      \"rationale\": \"Author sentences must not begin with And. The parallel It is why construction already carries the force.\"\n    },\n    {\n      \"old\": \"Now return to the sentence the AI gave us, and grade it.\",\n      \"new\": \"Return to the sentence the AI gave us.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Strip Now and the grade-it command.\",\n      \"rationale\": \"Forbidden director cues include Now-return and instructional grade-it language. The following sentences already perform the evaluation.\"\n    },\n    {\n      \"old\": \"But as a definition it fails the full witness of Scripture.\",\n      \"new\": \"As a definition it fails the full witness of Scripture.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Drop the opening But.\",\n      \"rationale\": \"House style bars But at the start of author prose. The verdict remains direct.\"\n    }\n  ]\n}"
+    }
+  ]
+}

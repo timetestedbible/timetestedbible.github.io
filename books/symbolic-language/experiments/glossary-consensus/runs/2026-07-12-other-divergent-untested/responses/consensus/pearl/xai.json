@@ -1,0 +1,156 @@
+{
+  "created_at": 1783845101,
+  "completed_at": 1783845114,
+  "id": "371d93f7-6be6-9abd-b975-898226abf8de",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_371d93f7-6be6-9abd-b975-898226abf8de",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Pearl\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The kingdom of heaven (or the gospel of salvation/Christ) as a treasure of supreme, inestimable worth for which everything else should be sacrificed\",\n  \"primary_basis\": [\n    \"Matthew 13:45-46 (Parable of the Pearl of Great Price)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sacred or holy things (divine truths, the gospel, or teachings of Christ) that must not be cast before the unworthy or unappreciative\",\n      \"basis\": [\n        \"Matthew 7:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Church or the individual human soul (in readings where the merchant is Christ/God who seeks and purchases the pearl at great cost)\",\n      \"basis\": [\n        \"Matthew 13:45-46 (patristic and allegorical interpretations)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity, perfection, or the glorious entrance into the heavenly city\",\n      \"basis\": [\n        \"Revelation 21:21 (gates of pearl)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General preciousness, rarity, or wisdom formed through trial\",\n      \"basis\": [\n        \"Broader biblical imagery of pearls as costly jewels (e.g., Job 28; 1 Timothy 2:9; Revelation 17–18)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The parable supplies the dominant Christian symbolic association; secondary uses (Matt 7:6; Rev 21) are also standard. Allegorical details of the parable (who is the merchant, what exactly is the pearl) vary by tradition but do not displace the core sense of supreme value.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_371d93f7-6be6-9abd-b975-898226abf8de",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1797,
+    "output_tokens_details": {
+      "reasoning_tokens": 1367
+    },
+    "total_tokens": 2399,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 117940000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1797
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

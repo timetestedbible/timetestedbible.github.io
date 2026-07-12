@@ -1,0 +1,87 @@
+{
+  "file": "books/symbolic-language/33-time-tested-tradition.adoc",
+  "title": "Time Tested Tradition",
+  "notes": [
+    "This chunk is dense, assertive, and on-voice: the map/terrain frame, the chained NT charges against Pharisaic tradition, and the eclipse-anchored AD 32 claim land with force and without hedging. Main defects are house-style sentence openers (multiple author-prose lines begin with But/And/That), residual presenter imperatives built on “weigh,” one clear comma splice, and a slightly broken “puts a Monday crucifixion” construction. TimeTested.Bible also appears in body prose, which house style reserves for front/back matter or footnotes; one residual “And when…” opener remains after the fixes below."
+  ],
+  "proposals": [
+    {
+      "old": "But if we can definitively identify the years, the months, and the days of the week on which certain events occurred, then we can see what calendar — if any — matches the historical testimony.",
+      "new": "If we can definitively identify the years, the months, and the days of the week on which certain events occurred, then we can see what calendar — if any — matches the historical testimony.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove prohibited sentence-initial But in author prose.",
+      "rationale": "House style forbids author-prose sentences that open with And/But/That. Dropping the conjunction keeps the claim intact and assertive.",
+      "_chunk": 1
+    },
+    {
+      "old": "On the known dates, none of the known weekly sabbaths align with Saturday; the year of the cross puts a *Monday* crucifixion — an impossibility for rising on the third day after three days and three nights.",
+      "new": "On the known dates, none of the known weekly sabbaths align with Saturday; the year of the cross puts the crucifixion on a *Monday* — an impossibility for rising on the third day after three days and three nights.",
+      "type": "clarity",
+      "severity": "medium",
+      "summary": "Repair awkward “puts a Monday crucifixion” phrasing.",
+      "rationale": "The original is compressed past natural English and briefly obscures the claim. The rewrite states the same fact in ordinary word order without adding doctrine.",
+      "_chunk": 1
+    },
+    {
+      "old": "Before weighing the evidence, weigh the witnesses, for Scripture itself commands it.",
+      "new": "The witnesses must be weighed before the evidence, for Scripture itself commands it.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Remove director-cue “weigh the” imperative.",
+      "rationale": "House style bans presenter staging such as “Weigh the.” The replacement keeps the same legal-testimony force in third-person assertion.",
+      "_chunk": 1
+    },
+    {
+      "old": "And if Scripture declares a sect to be children of the father of lies, how can its testimony be received?",
+      "new": "If Scripture declares a sect to be children of the father of lies, how can its testimony be received?",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove prohibited sentence-initial And.",
+      "rationale": "Author prose may not open with And. The rhetorical question stands without the conjunction.",
+      "_chunk": 1
+    },
+    {
+      "old": "When that testimony is put on the stand, weigh what it actually brings.",
+      "new": "When that testimony is put on the stand, what it actually brings must be weighed.",
+      "type": "ai-sounding-staging",
+      "severity": "high",
+      "summary": "Eliminate second “weigh” director cue.",
+      "rationale": "The imperative addresses the reader as a stage direction. Passive assertion preserves the courtroom image and the demand to test the witnesses.",
+      "_chunk": 1
+    },
+    {
+      "old": "the writings of the losing side are not archived by the winners, they are neglected and destroyed.",
+      "new": "the writings of the losing side are not archived by the winners; they are neglected and destroyed.",
+      "type": "grammar",
+      "severity": "high",
+      "summary": "Fix comma splice after “winners.”",
+      "rationale": "Two independent clauses were joined by a comma. A semicolon is the minimal correct join and keeps the cadence.",
+      "_chunk": 1
+    },
+    {
+      "old": "That same argument from silence once dismissed the house of David as legend — until the Tel Dan stone surfaced in 1993 with __“House of David”__ cut into it; and Pontius Pilate — until his stone came out of the ground at Caesarea in 1961.",
+      "new": "The same argument from silence once dismissed the house of David as legend — until the Tel Dan stone surfaced in 1993 with __“House of David”__ cut into it; and Pontius Pilate — until his stone came out of the ground at Caesarea in 1961.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove prohibited sentence-initial That.",
+      "rationale": "House style bars author-prose openings with That. “The same” keeps the anaphora and the archaeological punch.",
+      "_chunk": 1
+    },
+    {
+      "old": "And God did not appoint the map — He appointed the terrain: __“let them be for sym:sym-sign[signs], and for seasons”__ — for _moedim_, the appointed times — __“and for days, and years”__ (Genesis 1:14), spoken of the lights in the firmament, which have kept perfect time through every century in which the maps were redrawn.",
+      "new": "God did not appoint the map — He appointed the terrain: __“let them be for sym:sym-sign[signs], and for seasons”__ — for _moedim_, the appointed times — __“and for days, and years”__ (Genesis 1:14), spoken of the lights in the firmament, which have kept perfect time through every century in which the maps were redrawn.",
+      "type": "sentence-open",
+      "severity": "high",
+      "summary": "Remove prohibited sentence-initial And before the Genesis claim.",
+      "rationale": "Opening with And violates house style. The map/terrain contrast and the Genesis 1:14 citation remain unchanged and stronger without the conjunction.",
+      "_chunk": 1
+    }
+  ],
+  "raw_parts": [
+    {
+      "chunk": 1,
+      "raw": "{\n  \"chapter_note\": \"This chunk is dense, assertive, and on-voice: the map/terrain frame, the chained NT charges against Pharisaic tradition, and the eclipse-anchored AD 32 claim land with force and without hedging. Main defects are house-style sentence openers (multiple author-prose lines begin with But/And/That), residual presenter imperatives built on “weigh,” one clear comma splice, and a slightly broken “puts a Monday crucifixion” construction. TimeTested.Bible also appears in body prose, which house style reserves for front/back matter or footnotes; one residual “And when…” opener remains after the fixes below.\",\n  \"proposals\": [\n    {\n      \"old\": \"But if we can definitively identify the years, the months, and the days of the week on which certain events occurred, then we can see what calendar — if any — matches the historical testimony.\",\n      \"new\": \"If we can definitively identify the years, the months, and the days of the week on which certain events occurred, then we can see what calendar — if any — matches the historical testimony.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove prohibited sentence-initial But in author prose.\",\n      \"rationale\": \"House style forbids author-prose sentences that open with And/But/That. Dropping the conjunction keeps the claim intact and assertive.\"\n    },\n    {\n      \"old\": \"On the known dates, none of the known weekly sabbaths align with Saturday; the year of the cross puts a *Monday* crucifixion — an impossibility for rising on the third day after three days and three nights.\",\n      \"new\": \"On the known dates, none of the known weekly sabbaths align with Saturday; the year of the cross puts the crucifixion on a *Monday* — an impossibility for rising on the third day after three days and three nights.\",\n      \"type\": \"clarity\",\n      \"severity\": \"medium\",\n      \"summary\": \"Repair awkward “puts a Monday crucifixion” phrasing.\",\n      \"rationale\": \"The original is compressed past natural English and briefly obscures the claim. The rewrite states the same fact in ordinary word order without adding doctrine.\"\n    },\n    {\n      \"old\": \"Before weighing the evidence, weigh the witnesses, for Scripture itself commands it.\",\n      \"new\": \"The witnesses must be weighed before the evidence, for Scripture itself commands it.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove director-cue “weigh the” imperative.\",\n      \"rationale\": \"House style bans presenter staging such as “Weigh the.” The replacement keeps the same legal-testimony force in third-person assertion.\"\n    },\n    {\n      \"old\": \"And if Scripture declares a sect to be children of the father of lies, how can its testimony be received?\",\n      \"new\": \"If Scripture declares a sect to be children of the father of lies, how can its testimony be received?\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove prohibited sentence-initial And.\",\n      \"rationale\": \"Author prose may not open with And. The rhetorical question stands without the conjunction.\"\n    },\n    {\n      \"old\": \"When that testimony is put on the stand, weigh what it actually brings.\",\n      \"new\": \"When that testimony is put on the stand, what it actually brings must be weighed.\",\n      \"type\": \"ai-sounding-staging\",\n      \"severity\": \"high\",\n      \"summary\": \"Eliminate second “weigh” director cue.\",\n      \"rationale\": \"The imperative addresses the reader as a stage direction. Passive assertion preserves the courtroom image and the demand to test the witnesses.\"\n    },\n    {\n      \"old\": \"the writings of the losing side are not archived by the winners, they are neglected and destroyed.\",\n      \"new\": \"the writings of the losing side are not archived by the winners; they are neglected and destroyed.\",\n      \"type\": \"grammar\",\n      \"severity\": \"high\",\n      \"summary\": \"Fix comma splice after “winners.”\",\n      \"rationale\": \"Two independent clauses were joined by a comma. A semicolon is the minimal correct join and keeps the cadence.\"\n    },\n    {\n      \"old\": \"That same argument from silence once dismissed the house of David as legend — until the Tel Dan stone surfaced in 1993 with __“House of David”__ cut into it; and Pontius Pilate — until his stone came out of the ground at Caesarea in 1961.\",\n      \"new\": \"The same argument from silence once dismissed the house of David as legend — until the Tel Dan stone surfaced in 1993 with __“House of David”__ cut into it; and Pontius Pilate — until his stone came out of the ground at Caesarea in 1961.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove prohibited sentence-initial That.\",\n      \"rationale\": \"House style bars author-prose openings with That. “The same” keeps the anaphora and the archaeological punch.\"\n    },\n    {\n      \"old\": \"And God did not appoint the map — He appointed the terrain: __“let them be for sym:sym-sign[signs], and for seasons”__ — for _moedim_, the appointed times — __“and for days, and years”__ (Genesis 1:14), spoken of the lights in the firmament, which have kept perfect time through every century in which the maps were redrawn.\",\n      \"new\": \"God did not appoint the map — He appointed the terrain: __“let them be for sym:sym-sign[signs], and for seasons”__ — for _moedim_, the appointed times — __“and for days, and years”__ (Genesis 1:14), spoken of the lights in the firmament, which have kept perfect time through every century in which the maps were redrawn.\",\n      \"type\": \"sentence-open\",\n      \"severity\": \"high\",\n      \"summary\": \"Remove prohibited sentence-initial And before the Genesis claim.\",\n      \"rationale\": \"Opening with And violates house style. The map/terrain contrast and the Genesis 1:14 citation remain unchanged and stronger without the conjunction.\"\n    }\n  ]\n}"
+    }
+  ]
+}

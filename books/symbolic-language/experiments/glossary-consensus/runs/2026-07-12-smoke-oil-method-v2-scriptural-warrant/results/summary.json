@@ -1,0 +1,32 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_PENDING": 1
+  },
+  "rows": [
+    {
+      "anchor": "oil",
+      "term": "Oil (lamp oil)",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "STRONG",
+        "PARTIAL"
+      ],
+      "persuasion": "PENDING",
+      "persuasion_votes": [],
+      "final_verdict": "DIVERGENT_PENDING"
+    }
+  ]
+}

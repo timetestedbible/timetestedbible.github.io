@@ -1,0 +1,201 @@
+{
+  "id": "resp_012c6b4db638e1bd006a5353e4254481969bc3715b036e338b",
+  "object": "response",
+  "created_at": 1783845860,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845885,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_012c6b4db638e1bd006a5353e4c05881968ff1195140116ed3",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_012c6b4db638e1bd006a5353efabec81968d5e45e9fe0d73e1",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_012c6b4db638e1bd006a5353f44ed48196a30abceb378c80b8",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The Gospel is the good news of God’s saving reign through Jesus Christ, centrally expressed in his death and resurrection and calling for faith and repentance.\",\"book_summary\":\"The Gospel is specifically the gospel of the kingdom, identified with covenant renewal and God’s law or word proceeding from Zion.\",\"consensus_core_identification\":\"Good news of salvation and God’s reign accomplished through Jesus Christ, especially his death and resurrection.\",\"book_core_identification\":\"Good news of God’s kingdom understood as the renewed covenant and the promulgation and internalization of divine law from Zion.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The consensus includes kingdom proclamation, covenant renewal, forgiveness, and Christ’s death and resurrection within the Gospel, with the Christ-event as its defining center. The book restricts or redirects that center toward renewed covenant and law from Zion, while Hebrews 4:2 may also extend the term to an earlier Israelite proclamation. Thus it excludes or demotes some cross-resurrection-centered formulations while admitting covenantal cases not ordinarily treated as the Gospel’s defining content.\",\"material_contradiction\":\"There is no necessary contradiction between Christ’s saving work and new-covenant kingdom renewal. The material disagreement is over which content defines the Gospel: the consensus centers it on Jesus and the cross-resurrection event, whereas the book centers it on covenant renewal and divine law.\",\"rationale\":\"The book remains within a recognizable kingdom-centered understanding already represented among the consensus alternatives, so it does not replace the Gospel with an unrelated referent and is not novel. Nevertheless, its equation of the Gospel with renewed covenant and law from Zion materially narrows and reclassifies the accepted content rather than merely restating the consensus.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The entry could be classified as DIVERGENT because its terse equation appears to replace the consensus’s Christ-centered, cross-resurrection definition with covenant and law. Against that classification, Isaiah 52:7 explicitly joins good news with God’s reign, and kingdom-centered readings are a recognized part of the consensus, making refinement more appropriate unless the fuller chapter expressly denies the Christ-event as Gospel content.\",\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3336,
+    "input_tokens_details": {
+      "cache_write_tokens": 3333,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1147,
+    "output_tokens_details": {
+      "reasoning_tokens": 682
+    },
+    "total_tokens": 4483
+  },
+  "user": null,
+  "metadata": {}
+}

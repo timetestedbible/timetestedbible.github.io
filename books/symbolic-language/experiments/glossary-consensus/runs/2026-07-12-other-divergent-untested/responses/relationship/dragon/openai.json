@@ -1,0 +1,195 @@
+{
+  "id": "resp_0f8bc44065c78689006a535395dde881948880ec37e133da27",
+  "object": "response",
+  "created_at": 1783845781,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845794,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f8bc44065c78689006a535396d6948194b8a3c174c1ba09b3",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f8bc44065c78689006a53539cab648194b1f57317845cd36f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The dominant identification is Satan, explicitly named as the dragon in Revelation 12:9 and 20:2. Hostile kingdoms and rulers are recognized as a common secondary or Old Testament application.\",\"book_summary\":\"The book identifies the dragon primarily as a devouring kingdom, illustrated by Pharaoh/Egypt and Nebuchadnezzar/Babylon, while acknowledging the common Satan interpretation.\",\"consensus_core_identification\":\"Satan, the personal cosmic adversary of God.\",\"book_core_identification\":\"A devouring political kingdom or imperial power.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"Both readings cover dragon imagery associated with hostile political powers, especially Egypt and Babylon. The book elevates that political application to the governing identification, whereas the consensus treats kingdoms as secondary embodiments or agents and retains Satan as the dragon’s explicit primary referent in Revelation.\",\"material_contradiction\":\"For the dragon in Revelation, Satan and a devouring kingdom are different referents. Accepting the book’s definition as the primary identification replaces the consensus core rather than merely narrowing it, even if a kingdom may be understood as Satanically empowered.\",\"rationale\":\"This is not novel because all consensus responses recognize oppressive kingdoms, rulers, or empire as an established dragon interpretation. It is nevertheless divergent because the book substitutes that recognized alternative for the settled primary identification of Satan. The overlap in political cases does not make the cores equivalent.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited texts strongly demonstrate that Pharaoh and Nebuchadnezzar can be portrayed as dragons and that Babylon acts devouringly, but they do not establish that every symbolic dragon—especially the dragon explicitly called the devil and Satan in Revelation—is a kingdom.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3305,
+    "input_tokens_details": {
+      "cache_write_tokens": 3302,
+      "cached_tokens": 0
+    },
+    "output_tokens": 652,
+    "output_tokens_details": {
+      "reasoning_tokens": 272
+    },
+    "total_tokens": 3957
+  },
+  "user": null,
+  "metadata": {}
+}
