@@ -8,7 +8,8 @@ timetested.bible (this repo IS the deployment — GitHub Pages serves it directl
 - `NN-*.adoc` — chapters. Front matter: `title`, `slug`, `permalink`, `order` (drives
   assembly order — NOT the filename), `description`, `epigraphs`. Bonus chapters carry
   `edition: digital` (wrapped `ifndef::print-edition[]` in the print build). `NNx-*.adoc`
-  are digital bonus chapters (order N.5).
+  are order-N.5 inserts; edition comes from front matter, not the x (16x/41x digital-only,
+  38x print-only, 46x both editions — author's ruling 2026-07-12).
 - `48-glossary.adoc` — the symbol glossary. Entry format:
   `[[sym-anchor]]Term (qualifier) verdict:divergent[]:: definition +` then optional
   `[.commonview]__Commonly taught: …__ +` then `[.seeref]__(verses) · see link:…[Chapter Title][.chnum]#, ch. N#__`.
