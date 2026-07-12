@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "persuasion": {"type": "string", "enum": ["PERSUADED", "UNPERSUADED"]},
+    "support_scope": {"type": "string", "enum": ["FULL", "CORE_ONLY", "NONE"]},
+    "rationale": {"type": "string"},
+    "book_core_identification": {"type": "string"},
+    "book_secondary_elaborations": {"type": "array", "items": {"type": "string"}},
+    "strongest_counter_interpretation": {"type": "string"},
+    "counter_core_identification": {"type": "string"},
+    "counter_relation_to_book_core": {"type": "string", "enum": ["CONTRADICTS", "SAME_CORE_BROADER", "SAME_CORE_NARROWER", "EQUIVALENT"]},
+    "material_core_denial": {"type": "string"},
+    "counter_case": {"type": "array", "items": {"type": "string"}},
+    "book_explanatory_advantages": {"type": "array", "items": {"type": "string"}},
+    "counter_explanatory_advantages": {"type": "array", "items": {"type": "string"}},
+    "evidence_book_core_cannot_explain": {"type": "array", "items": {"type": "string"}},
+    "comparative_winner": {"type": "string", "enum": ["BOOK", "COUNTER"]},
+    "decisive_sources": {"type": "array", "items": {"type": "string"}},
+    "unresolved_objections": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+  },
+  "required": ["persuasion", "support_scope", "rationale", "book_core_identification", "book_secondary_elaborations", "strongest_counter_interpretation", "counter_core_identification", "counter_relation_to_book_core", "material_core_denial", "counter_case", "book_explanatory_advantages", "counter_explanatory_advantages", "evidence_book_core_cannot_explain", "comparative_winner", "decisive_sources", "unresolved_objections", "confidence"]
+}

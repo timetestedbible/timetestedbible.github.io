@@ -1,0 +1,40 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "gemini",
+    "xai"
+  ],
+  "counts": {
+    "DIVERGENT_PERSUADED": 1
+  },
+  "rows": [
+    {
+      "anchor": "heart",
+      "term": "Heart of the earth",
+      "relation": "DIVERGENT",
+      "relationship_votes": [
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT",
+        "DIVERGENT"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "STRONG",
+        "PARTIAL"
+      ],
+      "persuasion": "PERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "PERSUADED",
+        "PERSUADED"
+      ],
+      "final_verdict": "DIVERGENT_PERSUADED"
+    }
+  ]
+}

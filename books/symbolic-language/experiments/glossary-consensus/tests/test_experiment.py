@@ -64,7 +64,13 @@ class ExperimentTests(unittest.TestCase):
             manifest = exp.load_json(run / "manifest.json")
             self.assertEqual(exp.build_method_evidence(), snapshot.read_text(encoding="utf-8"))
             self.assertEqual(exp.sha256_text(snapshot.read_text(encoding="utf-8")), manifest["method_evidence_sha256"])
-            self.assertEqual(11, manifest["protocol_version"])
+            self.assertEqual(12, manifest["protocol_version"])
+
+    def test_calendar_application_is_ablated_from_judging_excerpt(self):
+        source = "Before\n// experiment-ablation-start: calendar-application\nCalendar claim\n// experiment-ablation-end: calendar-application\nAfter"
+        cleaned = exp.clean_adoc(source)
+        self.assertEqual("Before\n\nAfter", cleaned)
+        self.assertNotIn("Calendar claim", cleaned)
 
     def test_persuasion_requires_consistent_comparative_winner(self):
         persuaded = {
@@ -134,6 +140,8 @@ class ExperimentTests(unittest.TestCase):
     def test_majority_requires_more_than_half(self):
         self.assertEqual("DIVERGENT", exp.majority(["DIVERGENT", "DIVERGENT", "REFINED"]))
         self.assertEqual("DISPUTED", exp.majority(["MATCH", "REFINED", "NOVEL"]))
+        self.assertEqual("PERSUADED", exp.majority(["PERSUADED", "PERSUADED", "PERSUADED", "UNPERSUADED"]))
+        self.assertEqual("DISPUTED", exp.majority(["PERSUADED", "PERSUADED", "UNPERSUADED", "UNPERSUADED"]))
         self.assertEqual("PENDING", exp.majority([]))
 
     def test_secret_is_redacted_from_saved_request(self):
@@ -141,6 +149,22 @@ class ExperimentTests(unittest.TestCase):
         payload, headers = exp.build_request("openai", cfg, "consensus", "term", exp.schema_for("consensus"))
         self.assertIn("<REDACTED>", headers["authorization"])
         self.assertNotIn("api_key", str(payload).lower())
+
+    def test_gemini_request_uses_redacted_header_and_structured_output(self):
+        cfg = exp.load_json(exp.DEFAULT_CONFIG)["providers"]["gemini"]
+        schema = exp.schema_for("consensus")
+        payload, headers = exp.build_request("gemini", cfg, "consensus", "term", schema)
+        self.assertEqual("<REDACTED>", headers["x-goog-api-key"])
+        self.assertEqual("application/json", payload["generationConfig"]["responseMimeType"])
+        self.assertEqual(schema, payload["generationConfig"]["responseJsonSchema"])
+        self.assertNotIn("<REDACTED>", str(payload))
+
+    def test_gemini_response_text_extraction_ignores_thought_parts(self):
+        response = {"candidates": [{"content": {"parts": [
+            {"thought": True, "text": "hidden reasoning"},
+            {"text": "{\"primary_meaning\":\"visible\"}"},
+        ]}}]}
+        self.assertEqual('{"primary_meaning":"visible"}', exp.extract_response_text("gemini_generate_content", response))
 
     def test_summary_splits_divergent_by_persuasion(self):
         entries = [

@@ -1,0 +1,41 @@
+{
+  "sources": [
+    {
+      "run_id": "2026-07-12-ship-four-judges",
+      "manifest_sha256": "44aa78e949d21650872a8b83907f52fa6e9758df3902d00dd62710b3d0024f26"
+    }
+  ],
+  "findings": [
+    {
+      "anchor": "ship",
+      "term": "Ship",
+      "book_entry": "An earthly kingdom, city, state, or governed political body riding upon the sea of peoples: its rulers guide it, its inhabitants and servants crew it, its armies defend it, and its wealth is carried as cargo. Christ needs no constructed body beneath Him: He walks upon the sea directly, and when He sails with His disciples the vessel comes under its true Head. The ship may be broken while its people survive.",
+      "accepted_by_provider": {
+        "openai": {
+          "accepted_scope": "CORE_ONLY",
+          "adjudicated_core_identification": "A ship can signify a bounded, organized, governed political or civic body, with its leaders as pilots, its people as crew, its defenders aboard, and its wealth as cargo.",
+          "model": "gpt-5.6-sol",
+          "source_run": "2026-07-12-ship-four-judges"
+        },
+        "anthropic": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "A ship is an earthly kingdom, city, state, or governed political body riding upon the sea of peoples: its pilots are its rulers, its crew its inhabitants and servants, its defenders its armies, and its cargo its wealth; the ship may be broken while its people survive.",
+          "model": "claude-fable-5",
+          "source_run": "2026-07-12-ship-four-judges"
+        },
+        "gemini": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "An earthly kingdom, city, state, or governed political body riding upon the sea of peoples.",
+          "model": "gemini-3.1-pro-preview",
+          "source_run": "2026-07-12-ship-four-judges"
+        },
+        "xai": {
+          "accepted_scope": "FULL",
+          "adjudicated_core_identification": "An earthly kingdom, city, state, or governed political body riding upon the sea of peoples, with rulers as pilots, inhabitants/servants as crew, armies as defenders, and wealth as cargo; the ship may be broken while its people survive.",
+          "model": "grok-4.5",
+          "source_run": "2026-07-12-ship-four-judges"
+        }
+      }
+    }
+  ]
+}

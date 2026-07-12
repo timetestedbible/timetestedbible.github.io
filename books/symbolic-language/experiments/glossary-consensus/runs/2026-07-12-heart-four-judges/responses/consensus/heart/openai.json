@@ -1,0 +1,173 @@
+{
+  "id": "resp_0a30eb701f7fcf24006a535098d63881978249d8b92670779d",
+  "object": "response",
+  "created_at": 1783845016,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845043,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a30eb701f7fcf24006a53509b35bc81979c098f132c082f55",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a30eb701f7fcf24006a5350a6ef0c8197a3a81a0d65edaf26",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Jesus’ death and burial—his being in the grave or, more broadly, in the state/realm of the dead before his resurrection.\",\"primary_basis\":[\"Matthew 12:40, where Jesus compares the Son of Man’s being “in the heart of the earth” with Jonah’s time inside the great fish.\",\"Jonah 1:17, the narrative underlying Jesus’ three-days-and-three-nights comparison.\",\"Matthew 27:57–60 and 28:1–7, describing Jesus’ burial in the tomb and subsequent resurrection.\",\"Parallel passion and burial accounts: Mark 15:42–16:6; Luke 23:50–24:7; John 19:38–20:9.\"],\"alternatives\":[{\"meaning\":\"The subterranean realm of the dead—Sheol or Hades—with the phrase referring specifically to Christ’s descent to the dead rather than merely his entombment.\",\"basis\":[\"Acts 2:27,31, applying Psalm 16 to Christ’s not being abandoned to Hades.\",\"Ephesians 4:9, especially when “the lower parts of the earth” is read as the underworld.\",\"Romans 10:7, which associates bringing Christ up with descent into the abyss.\",\"1 Peter 3:18–20 and 4:6, traditionally connected with Christ’s proclamation to the dead.\"],\"prominence\":\"common\"},{\"meaning\":\"The literal interior or center of the physical earth, often identified with a spatially located underworld or hell.\",\"basis\":[\"A strongly spatial reading of “heart of the earth” in Matthew 12:40.\",\"Traditional cosmological readings of passages mentioning Sheol, Hades, the abyss, or “lower parts of the earth,” such as Ephesians 4:9.\"],\"prominence\":\"minority\"},{\"meaning\":\"Jerusalem, the land of Israel, or the midst of the earthly human order, so that Jesus’ time under human custody or condemnation—not only his time in the tomb—fulfills the saying.\",\"basis\":[\"Use of “earth” or “land” as a possible rendering of Greek gē.\",\"Attempts to reconcile Matthew 12:40’s “three days and three nights” with alternative passion chronologies.\"],\"prominence\":\"rare\"},{\"meaning\":\"A general metaphor for profound humiliation, suffering, or apparent abandonment to death, without specifying either a tomb or an underworld location.\",\"basis\":[\"The death-and-deliverance pattern of Jonah 1–2.\",\"Biblical poetic language associating deep places with death and distress, including Jonah 2:2–6 and Psalm 88:3–6.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad Christian consensus that the phrase refers to Jesus’ death and burial before resurrection. There is no equally settled consensus about the precise location implied: many interpret it simply as the grave, while significant traditional interpretation understands it as Hades or the realm of the dead.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 320,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1124,
+    "output_tokens_details": {
+      "reasoning_tokens": 501
+    },
+    "total_tokens": 1444
+  },
+  "user": null,
+  "metadata": {}
+}

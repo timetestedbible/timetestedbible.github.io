@@ -21,8 +21,9 @@ This directory turns that process into a versioned, rerunnable protocol.
 
 The runner performs three stages:
 
-1. **Blind consensus.** Claude, GPT, and Grok receive only a headword. They do
-   not receive the book, its definition, its citations, or its existing badge.
+1. **Blind consensus.** Claude, GPT, Gemini, and Grok receive only a headword.
+   They do not receive the book, its definition, its citations, or its existing
+   badge.
 2. **Relationship.** Fresh calls receive all anonymized blind responses plus the
    glossary entry and its cited verses. Each classifies the entry as `MATCH`,
    `REFINED`, `DIVERGENT`, or `NOVEL` and grades the glossary citations.
@@ -60,7 +61,8 @@ text or detail the book's core cannot explain without contradiction.
 Dependent conclusions can be tested in layers. Foundational entries are first
 run through persuasion on their own proving material. A downstream run imports
 findings provider by provider: GPT receives only findings accepted earlier by
-the same GPT model, Claude receives Claude's, and Grok receives Grok's. A model
+the same GPT model, Claude receives Claude's, Gemini receives Gemini's, and
+Grok receives Grok's. A model
 that rejected a foundation is not forced to accept it; a model that accepted
 one must identify genuinely new contradictory evidence before revising it. The
 artifact records the source-run hash, exact model, full entry, accepted scope,
@@ -84,8 +86,8 @@ response records both cores, their semantic relation, the cases added or
 excluded, and any material contradiction.
 
 Every provider gets one vote. A verdict requires more than half of the available
-votes. Three different votes produce `DISPUTED`; the runner never silently
-breaks a tie.
+votes. A tie, including a 2–2 split, produces `DISPUTED`; the runner never
+silently breaks a tie.
 
 ## Requirements
 
@@ -96,6 +98,7 @@ breaks a tie.
 ```sh
 export OPENAI_API_KEY="..."
 export ANTHROPIC_API_KEY="..."
+export GEMINI_API_KEY="..."
 export XAI_API_KEY="..."
 ```
 
@@ -106,6 +109,7 @@ The checked-in defaults currently use:
 
 - OpenAI `gpt-5.6-sol`
 - Anthropic `claude-fable-5`
+- Google `gemini-3.1-pro-preview`
 - xAI `grok-4.5`
 
 Copy `config.example.json` to another filename to change a model or endpoint,
@@ -139,7 +143,7 @@ schemas, model config, and secret-free consensus requests under
 python3 experiment.py run --run-id 2026-07-cross-model
 ```
 
-The default run uses all three providers and all three stages. Useful options:
+The default run uses all four providers and all three stages. Useful options:
 
 ```sh
 # A cheap end-to-end smoke test
@@ -227,6 +231,11 @@ boundary divergence without being mislabeled as a replaced referent.
 Protocol version 11 makes those axes independent: a core-divergent reading may
 retain some consensus cases while rejecting the consensus's central referent,
 so overlap or subset extension no longer forces a REFINED label.
+Protocol version 12 adds Gemini 3.1 Pro Preview through Google's
+GenerateContent API as a fourth independent provider. It also supports explicit
+evidence-ablation markers: the frozen chapter remains intact for audit, while a
+marked downstream application can be omitted from a test designed to establish
+that conclusion without circularly supplying the application as a premise.
 
 ## What the percentages mean
 

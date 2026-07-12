@@ -164,6 +164,11 @@ def chapter_map() -> dict[str, Path]:
 
 
 def clean_adoc(value: str) -> str:
+    value = re.sub(
+        r"(?ms)^// experiment-ablation-start: ([^\n]+)\n.*?^// experiment-ablation-end: \1\s*$",
+        "",
+        value,
+    )
     value = re.sub(r"(?m)^---.*?^---\s*", "", value, flags=re.S)
     value = re.sub(r"(?m)^(?:ifn?def|endif)::.*$", "", value)
     value = re.sub(r"(?m)^\[[^\]]+\]\s*$", "", value)
@@ -439,6 +444,17 @@ def build_request(provider: str, cfg: dict[str, Any], stage: str, prompt: str, s
         if cfg.get("reasoning_effort"):
             payload["reasoning"] = {"effort": cfg["reasoning_effort"]}
         headers = {"authorization": "Bearer <REDACTED>", "content-type": "application/json"}
+    elif api == "gemini_generate_content":
+        payload = {
+            "systemInstruction": {"parts": [{"text": SYSTEMS[stage]}]},
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": cfg.get("max_output_tokens", 12000),
+                "responseMimeType": "application/json",
+                "responseJsonSchema": schema,
+            },
+        }
+        headers = {"x-goog-api-key": "<REDACTED>", "content-type": "application/json"}
     else:
         raise ValueError(f"Unsupported API style for {provider}: {api}")
     return payload, headers
@@ -447,6 +463,13 @@ def build_request(provider: str, cfg: dict[str, Any], stage: str, prompt: str, s
 def extract_response_text(api: str, response: dict[str, Any]) -> str:
     if api == "anthropic_messages":
         return "".join(block.get("text", "") for block in response.get("content", []) if block.get("type") == "text")
+    if api == "gemini_generate_content":
+        return "".join(
+            part.get("text", "")
+            for candidate in response.get("candidates", [])
+            for part in candidate.get("content", {}).get("parts", [])
+            if not part.get("thought")
+        )
     if response.get("output_text"):
         return response["output_text"]
     texts: list[str] = []
@@ -474,6 +497,8 @@ def http_json(url: str, payload: dict[str, Any], headers: dict[str, str], key: s
     live_headers = dict(headers)
     if api == "anthropic_messages":
         live_headers["x-api-key"] = key
+    elif api == "gemini_generate_content":
+        live_headers["x-goog-api-key"] = key
     else:
         live_headers["authorization"] = f"Bearer {key}"
     data = json.dumps(payload).encode("utf-8")
@@ -556,7 +581,11 @@ def summarize(run_dir: Path, entries: list[dict[str, Any]], providers: list[str]
     results = run_dir / "results"
     dump_json(results / "summary.json", summary)
     with (results / "verdicts.csv").open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["anchor", "term", "relation", "relationship_votes", "citation_support", "citation_support_votes", "persuasion", "persuasion_votes", "final_verdict"])
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=["anchor", "term", "relation", "relationship_votes", "citation_support", "citation_support_votes", "persuasion", "persuasion_votes", "final_verdict"],
+            lineterminator="\n",
+        )
         writer.writeheader()
         for row in rows:
             writer.writerow({**row, "relationship_votes": "|".join(row["relationship_votes"]), "citation_support_votes": "|".join(row["citation_support_votes"]), "persuasion_votes": "|".join(row["persuasion_votes"])})
@@ -696,7 +725,7 @@ def snapshot_run(
     safe_cfg = json.loads(json.dumps(cfg))
     dump_json(run_dir / "config.json", safe_cfg)
     manifest = {
-        "protocol_version": 11,
+        "protocol_version": 12,
         "run_id": run_dir.name,
         "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "entry_count": len(entries),
@@ -901,17 +930,17 @@ def build_parser() -> argparse.ArgumentParser:
     for name, func in (("plan", command_plan), ("run", command_run)):
         cmd = sub.add_parser(name, help="prepare requests only" if name == "plan" else "run or resume the experiment")
         cmd.add_argument("--config", default=str(DEFAULT_CONFIG))
-        cmd.add_argument("--providers", nargs="+", choices=["openai", "anthropic", "xai"])
+        cmd.add_argument("--providers", nargs="+", choices=["openai", "anthropic", "gemini", "xai"])
         cmd.add_argument("--run-id")
         cmd.add_argument("--term", action="append", default=[], help="anchor or exact headword; repeatable")
         cmd.add_argument("--limit", type=int)
         cmd.add_argument("--include-words", action="store_true", help="include the 12 recovered WORD entries")
-        cmd.add_argument("--accepted-run", action="append", default=[], help="import unanimous persuasion findings from a frozen prior run; repeatable")
+        cmd.add_argument("--accepted-run", action="append", default=[], help="import each provider's own persuasion findings from a frozen prior run; repeatable")
         cmd.set_defaults(func=func)
     run = sub.choices["run"]
     plan = sub.choices["plan"]
     plan.add_argument("--persuade-all", action="store_true", help="plan persuasion for every selected entry, not only divergent entries")
-    run.add_argument("--workers", type=int, default=3)
+    run.add_argument("--workers", type=int, default=4)
     run.add_argument("--stop-after", choices=STAGES, default="persuasion")
     run.add_argument("--force", action="store_true")
     run.add_argument("--refresh-input", action="store_true")

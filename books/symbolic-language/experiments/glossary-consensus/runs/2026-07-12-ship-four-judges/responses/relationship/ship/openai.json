@@ -1,0 +1,195 @@
+{
+  "id": "resp_07ab3d0b976124c0006a54248317d0819388a08d29c537f960",
+  "object": "response",
+  "created_at": 1783899267,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783899287,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_07ab3d0b976124c0006a5424842cb481939c5ea3ffdb83a312",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_07ab3d0b976124c0006a54248d3ba88193889ae90f70c1adc6",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"A ship primarily signifies the Church as a vessel carrying believers through worldly dangers toward salvation; ships can secondarily represent commerce, wealth, political-economic power, or an individual life journey.\",\"book_summary\":\"A ship signifies an earthly governed political body—such as a kingdom, city, or state—whose rulers, inhabitants, military, and wealth correspond to a ship’s officers, crew, defenses, and cargo.\",\"consensus_core_identification\":\"Ship = the Church as vessel of salvation.\",\"book_core_identification\":\"Ship = an earthly political body or state borne upon the peoples.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book replaces the consensus’s central ecclesial referent with a political one. It retains some cases that the consensus already associates secondarily with worldly commerce and powers, especially Tyre and Babylon, but reclassifies them more precisely as governed political bodies rather than merely emblems of wealth or trade. It also resists identifying Christ’s vessel with a necessary constructed ecclesial body.\",\"material_contradiction\":\"In the same symbolic sense, the ship cannot primarily be both the Church as the divinely appointed vessel of salvation and an earthly political state. The book’s statement that Christ needs no constructed body beneath him directly undercuts the traditional Church-as-ship identification rather than merely narrowing it.\",\"rationale\":\"The minimum identifications have different central referents: ecclesial community versus secular polity. This warrants DIVERGENT rather than REFINED. The reading is not NOVEL because the consensus explicitly recognizes ships as symbols of worldly commerce, Babylon, Tyre, pride, and political-economic power; however, those appear only as alternatives and do not preserve the consensus’s primary Church identification.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Ezekiel 27 strongly portrays Tyre as a ship and supports correspondences involving rulers, inhabitants, soldiers, and cargo, while Acts 27 supports the claim that a ship may be destroyed while its people survive. Nevertheless, several references concern literal ships or maritime commerce, and the printed citations do not establish that ships generally signify political bodies. They also omit the Gospel passages needed to support the entry’s claims about Christ walking on the sea and taking headship when aboard.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 5210,
+    "input_tokens_details": {
+      "cache_write_tokens": 5207,
+      "cached_tokens": 0
+    },
+    "output_tokens": 898,
+    "output_tokens_details": {
+      "reasoning_tokens": 413
+    },
+    "total_tokens": 6108
+  },
+  "user": null,
+  "metadata": {}
+}
