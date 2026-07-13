@@ -46,7 +46,7 @@ METHOD_EXCERPTS = (
 SYSTEMS = {
     "consensus": "Return only the requested structured result. Remain blind to the author's position.",
     "relationship": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
-    "persuasion": "Return only the requested structured result. Act as a skeptical but fair reader and compare the book with the strongest specific alternative explanation.",
+    "persuasion": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
 }
 
 BOOK_ALIASES = {
@@ -386,6 +386,15 @@ def validate_persuasion_decision(value: dict[str, Any]) -> None:
         )
     if value["persuasion"] == "PERSUADED" and value["support_scope"] == "NONE":
         raise ValueError("$.support_scope: PERSUADED requires FULL or CORE_ONLY")
+    unsupported = value.get("unsupported_glossary_assertions", [])
+    if value["support_scope"] == "FULL" and unsupported:
+        raise ValueError(
+            "$.unsupported_glossary_assertions: FULL requires no unsupported assertion from the glossary entry"
+        )
+    if value["support_scope"] == "CORE_ONLY" and not unsupported:
+        raise ValueError(
+            "$.unsupported_glossary_assertions: CORE_ONLY requires a material unsupported assertion actually printed in the glossary entry"
+        )
     if value["persuasion"] == "UNPERSUADED":
         if value["support_scope"] != "NONE":
             raise ValueError("$.support_scope: UNPERSUADED requires NONE")
@@ -725,7 +734,7 @@ def snapshot_run(
     safe_cfg = json.loads(json.dumps(cfg))
     dump_json(run_dir / "config.json", safe_cfg)
     manifest = {
-        "protocol_version": 12,
+        "protocol_version": 13,
         "run_id": run_dir.name,
         "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "entry_count": len(entries),

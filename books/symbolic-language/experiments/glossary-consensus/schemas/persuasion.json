@@ -3,10 +3,12 @@
   "additionalProperties": false,
   "properties": {
     "persuasion": {"type": "string", "enum": ["PERSUADED", "UNPERSUADED"]},
-    "support_scope": {"type": "string", "enum": ["FULL", "CORE_ONLY", "NONE"]},
+    "support_scope": {"type": "string", "enum": ["FULL", "CORE_ONLY", "NONE"], "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."},
     "rationale": {"type": "string"},
     "book_core_identification": {"type": "string"},
-    "book_secondary_elaborations": {"type": "array", "items": {"type": "string"}},
+    "book_secondary_elaborations": {"type": "array", "items": {"type": "string"}, "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."},
+    "unsupported_glossary_assertions": {"type": "array", "items": {"type": "string"}, "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."},
+    "chapter_only_objections": {"type": "array", "items": {"type": "string"}, "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."},
     "strongest_counter_interpretation": {"type": "string"},
     "counter_core_identification": {"type": "string"},
     "counter_relation_to_book_core": {"type": "string", "enum": ["CONTRADICTS", "SAME_CORE_BROADER", "SAME_CORE_NARROWER", "EQUIVALENT"]},
@@ -20,5 +22,5 @@
     "unresolved_objections": {"type": "array", "items": {"type": "string"}},
     "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
   },
-  "required": ["persuasion", "support_scope", "rationale", "book_core_identification", "book_secondary_elaborations", "strongest_counter_interpretation", "counter_core_identification", "counter_relation_to_book_core", "material_core_denial", "counter_case", "book_explanatory_advantages", "counter_explanatory_advantages", "evidence_book_core_cannot_explain", "comparative_winner", "decisive_sources", "unresolved_objections", "confidence"]
+  "required": ["persuasion", "support_scope", "rationale", "book_core_identification", "book_secondary_elaborations", "unsupported_glossary_assertions", "chapter_only_objections", "strongest_counter_interpretation", "counter_core_identification", "counter_relation_to_book_core", "material_core_denial", "counter_case", "book_explanatory_advantages", "counter_explanatory_advantages", "evidence_book_core_cannot_explain", "comparative_winner", "decisive_sources", "unresolved_objections", "confidence"]
 }

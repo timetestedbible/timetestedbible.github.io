@@ -5,8 +5,8 @@ with truth:
 
 1. **Consensus distance:** Does the book match, refine, contradict, or go beyond
    the symbolic meaning recognizable to blinded AI agents?
-2. **Persuasiveness:** When the book diverges, does its full scriptural case
-   persuade independent skeptical-reader agents?
+2. **Persuasiveness:** When the glossary diverges, does the supplied scriptural
+   evidence establish its exact definition against the strongest rival?
 
 The experiment does **not** decide doctrine by majority vote. Scripture carries
 the book's argument. The models serve as independent proxies for recognizable
@@ -45,13 +45,21 @@ The runner performs three stages:
    glossary entry and its cited verses. Each classifies the entry as `MATCH`,
    `REFINED`, `DIVERGENT`, or `NOVEL` and grades the glossary citations.
 3. **Persuasion.** Only majority-`DIVERGENT` entries proceed. Fresh calls receive
-   the common reading, glossary entry, available KJV excerpts, and the full
-   proving chapter. They also receive the same compact excerpt of the book's
+   the common reading, glossary entry, available KJV excerpts, and the relevant
+   proving chapter as an evidence packet. They also receive the same compact excerpt of the book's
    stated interpretive method and its Sower known-answer validation. These are
    contiguous source excerpts with only AsciiDoc presentation markup removed;
    no experiment-authored explanation or judging instruction is inserted into
-   them. Each agent must compare the book with the strongest specific rival it
-   can formulate and return `PERSUADED` or `UNPERSUADED`.
+   them. Each agent must compare the glossary definition with the strongest
+   specific rival it can formulate and return `PERSUADED` or `UNPERSUADED`.
+
+The glossary entry is the only proposition under judgment. The proving chapter
+is evidence for that proposition, not a second object of review. A judge may
+record objections to broader applications made only in the chapter, but those
+objections cannot lower the glossary ruling. `FULL` means every material claim
+printed in the glossary entry is supported; `CORE_ONLY` requires an unsupported
+material assertion actually printed in that entry. Chapter-only objections are
+stored separately for a future chapter-argument experiment.
 
 The common method evidence is protocol-wide, not tailored to a disputed term.
 The selected passages are the Introduction's opening, the Parables chapter's
@@ -69,11 +77,12 @@ response records both explanations' advantages and the comparative winner;
 the runner rejects a binary verdict that contradicts that comparison.
 
 The judge must also separate the minimum contrastive core from secondary
-elaboration. A broader or narrower restatement of the same referent cannot
-defeat that referent as a “counter-interpretation.” Such a result is recorded as
-`PERSUADED` with `CORE_ONLY` support when the modifiers remain disputed. An
+assertions actually printed in the glossary entry. A broader or narrower
+restatement of the same referent cannot defeat that referent as a
+“counter-interpretation.” `CORE_ONLY` is reserved for a disputed assertion in
+the entry itself, never an application found only in its supporting chapter. An
 `UNPERSUADED` result requires a materially contradictory core plus at least 1
-text or detail the book's core cannot explain without contradiction.
+text or detail the glossary's core cannot explain without contradiction.
 
 Dependent conclusions can be tested in layers. Foundational entries are first
 run through persuasion on their own proving material. A downstream run imports
@@ -253,6 +262,11 @@ GenerateContent API as a fourth independent provider. It also supports explicit
 evidence-ablation markers: the frozen chapter remains intact for audit, while a
 marked downstream application can be omitted from a test designed to establish
 that conclusion without circularly supplying the application as a premise.
+Protocol version 13 makes the glossary entry the sole judgment target. Proving
+chapters remain frozen evidence packets, but objections to chapter-only claims
+are recorded separately and cannot reduce the glossary's support scope. A
+`CORE_ONLY` ruling now requires the judge to identify a material unsupported
+assertion actually printed in the glossary entry.
 
 ## What the percentages mean
 

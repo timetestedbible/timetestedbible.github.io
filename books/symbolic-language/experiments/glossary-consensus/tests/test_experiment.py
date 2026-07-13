@@ -64,7 +64,7 @@ class ExperimentTests(unittest.TestCase):
             manifest = exp.load_json(run / "manifest.json")
             self.assertEqual(exp.build_method_evidence(), snapshot.read_text(encoding="utf-8"))
             self.assertEqual(exp.sha256_text(snapshot.read_text(encoding="utf-8")), manifest["method_evidence_sha256"])
-            self.assertEqual(12, manifest["protocol_version"])
+            self.assertEqual(13, manifest["protocol_version"])
 
     def test_calendar_application_is_ablated_from_judging_excerpt(self):
         source = "Before\n// experiment-ablation-start: calendar-application\nCalendar claim\n// experiment-ablation-end: calendar-application\nAfter"
@@ -77,11 +77,13 @@ class ExperimentTests(unittest.TestCase):
             "persuasion": "PERSUADED", "support_scope": "CORE_ONLY",
             "comparative_winner": "BOOK", "counter_relation_to_book_core": "SAME_CORE_BROADER",
             "evidence_book_core_cannot_explain": [],
+            "unsupported_glossary_assertions": ["A disputed assertion printed in the entry"],
         }
         unpersuaded = {
             "persuasion": "UNPERSUADED", "support_scope": "NONE",
             "comparative_winner": "COUNTER", "counter_relation_to_book_core": "CONTRADICTS",
             "evidence_book_core_cannot_explain": ["A material counter-text"],
+            "unsupported_glossary_assertions": ["The core identification"],
         }
         exp.validate_persuasion_decision(persuaded)
         exp.validate_persuasion_decision(unpersuaded)
@@ -89,6 +91,26 @@ class ExperimentTests(unittest.TestCase):
             exp.validate_persuasion_decision({**unpersuaded, "counter_relation_to_book_core": "SAME_CORE_BROADER"})
         with self.assertRaises(ValueError):
             exp.validate_persuasion_decision({**unpersuaded, "evidence_book_core_cannot_explain": []})
+        with self.assertRaises(ValueError):
+            exp.validate_persuasion_decision({**persuaded, "support_scope": "FULL"})
+        with self.assertRaises(ValueError):
+            exp.validate_persuasion_decision({**persuaded, "unsupported_glossary_assertions": []})
+
+    def test_persuasion_judges_glossary_not_chapter(self):
+        prompt = exp.render_template("persuasion", {
+            "TERM": "Ship",
+            "BOOK_ENTRY": "A ship is a governed political body.",
+            "CITATIONS": "Ezekiel 27",
+            "SCRIPTURE_EXCERPTS": "Tyre is constructed as a ship.",
+            "CONSENSUS_RESPONSES": "The Church.",
+            "METHOD_EVIDENCE": "Method evidence.",
+            "ACCEPTED_FINDINGS": "No prior findings were supplied.",
+            "EVIDENCE_BUNDLE": "A chapter with broader applications.",
+        })
+        prompt_flat = " ".join(prompt.split())
+        self.assertIn("only proposition under judgment is the exact BOOK ENTRY", prompt_flat)
+        self.assertIn("Chapter-only objections do not prevent `FULL`", prompt_flat)
+        self.assertIn("future chapter-level experiment", prompt_flat)
 
     def test_relationship_label_matches_semantic_core_relation(self):
         exp.validate_relationship_decision({"relation": "MATCH", "core_relation": "EQUIVALENT", "extension_relation": "SAME_CASES"})

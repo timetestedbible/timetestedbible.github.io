@@ -50,10 +50,10 @@ const MeatTesterView = {
           <p>
             AI serves here as a proxy for recognizable orthodox or popular teaching—not
             as an oracle of truth. First it states the inherited interpretation while
-            blinded to the book. Then MEAT presents its definition, citations, method,
-            and full argument. Finally the same independent models must formulate the
-            strongest competing explanation and decide which reading accounts for the
-            supplied evidence better.
+            blinded to the book. Then MEAT presents its glossary definition, citations,
+            method, and supporting evidence. Finally the same independent models must
+            decide whether that exact glossary entry explains the evidence better than
+            the strongest competing definition. The chapter itself is not being graded.
           </p>
           <p>
             When a divergent conclusion persuades that panel, the result does not prove
@@ -76,7 +76,7 @@ const MeatTesterView = {
           <span class="meat-flow-arrow" aria-hidden="true">→</span>
           <article>
             <span class="meat-step-number">3</span>
-            <div><strong>Test the argument</strong><p>The proving chapter faces the strongest specific rival in a best-explanation comparison.</p></div>
+            <div><strong>Test the glossary entry</strong><p>The definition faces the strongest specific rival; its chapter is admitted only as supporting evidence.</p></div>
           </article>
           <span class="meat-flow-arrow" aria-hidden="true">→</span>
           <article class="meat-flow-human">
@@ -92,7 +92,7 @@ const MeatTesterView = {
           </div>
           <div class="meat-control-grid">
             <article><strong>Blind first impression</strong><p>The consensus stage never sees MEAT's definition, citations, or verdict badge.</p></article>
-            <article><strong>Same evidence standard</strong><p>Judges receive frozen excerpts from the book, not an experimenter's paraphrase of its case.</p></article>
+            <article><strong>Entry-only scope</strong><p>The glossary definition is judged. Broader chapter applications are preserved as evidence but cannot lower its ruling.</p></article>
             <article><strong>Strongest rival required</strong><p>“Unpersuaded” must identify a contradictory interpretation that explains the same evidence better.</p></article>
             <article><strong>Dependencies stay personal</strong><p>A model inherits only conclusions that the same provider and model accepted in a prior frozen run.</p></article>
             <article><strong>Strict majority</strong><p>Every provider gets one vote. A 2–2 split is disputed; no tie is silently broken.</p></article>
@@ -458,7 +458,7 @@ const MeatTesterView = {
     const copy = {
       consensus: ['Blind baseline', 'Only the headword was supplied. These answers establish the recognizable inherited reading before MEAT is revealed.'],
       relationship: ['Relationship ruling', 'The judges compare the book entry with the blinded baseline: match, refinement, divergence, or a genuinely novel proposal.'],
-      persuasion: ['Best-explanation test', 'The judges receive the book’s method and proving material, formulate the strongest rival reading, and decide which explanation handles the evidence better.'],
+      persuasion: ['Glossary best-explanation test', 'The judges test the exact glossary entry against the strongest rival definition. The chapter supplies evidence; its broader arguments are outside this ruling.'],
     }[this._activeStage];
 
     panel.innerHTML = `
@@ -593,7 +593,9 @@ const MeatTesterView = {
       ];
     } else {
       rows = [
-        ['Book core', data.book_core_identification],
+        ['Glossary core', data.book_core_identification],
+        ['Unsupported glossary assertions', data.unsupported_glossary_assertions],
+        ['Chapter-only objections', data.chapter_only_objections],
         ['Strongest counter-interpretation', data.strongest_counter_interpretation],
         ['Why this ruling', data.rationale],
         ['Book’s explanatory advantages', data.book_explanatory_advantages],
@@ -703,7 +705,7 @@ const MeatTesterView = {
   },
 
   scopeLabel(scope) {
-    return ({ FULL: 'full argument', CORE_ONLY: 'core only', NONE: 'no support' })[scope] || this.titleCase(scope);
+    return ({ FULL: 'whole glossary entry', CORE_ONLY: 'glossary core only', NONE: 'glossary unsupported' })[scope] || this.titleCase(scope);
   },
 
   verdictClass(verdict) {
