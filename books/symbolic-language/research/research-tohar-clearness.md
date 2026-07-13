@@ -133,3 +133,44 @@ a glass the glory of the Lord," we are "changed into the same image" — one
 mirror, the Word, gives back both the man's face and the Lord's glory, and
 the looking transforms the one into the other. John 1:14 closes it: the Word
 made flesh, "and we beheld his glory."
+
+## Addendum 5 (author): "from glory to glory" => month to month?
+
+The question: does 2 Corinthians 3:18's "from glory to glory" carry the
+lunar cadence? Verified findings:
+
+1. **The passage's own frame is a WANING reflected glory.** Moses' face
+   shone from beholding God (Exodus 34:29) — reflected light on a man's
+   face, the mirror office exactly — and Paul's contrast is that this glory
+   "was to be done away" (2 Corinthians 3:7): a reflected shine that fades.
+   Israel "could not stedfastly behold" it; the veil. Against that, 3:18:
+   the unveiled face beholding as in a glass is changed "from glory to
+   glory" — the un-fading counterpart. Moses' face is the waning moon;
+   the beholder in the mirror is the moon renewed.
+2. **"From X to X" is the appointed-cadence idiom.** Psalm 84:7 — "they go
+   from strength to strength (me-chayil el-chayil), every one of them in
+   Zion APPEARETH (yera'eh, the niphal of ra'ah — the pilgrimage-command
+   verb, Exodus 23:17) before God" — the feast-to-feast march, in the very
+   psalm of "the LORD God is a sun" (84:11). Isaiah 66:23 — "from new moon
+   to new moon (midei-chodesh b'chodsho), and from sabbath to sabbath."
+   The idiom family: strength→strength, month→month, sabbath→sabbath,
+   glory→glory.
+3. **Chodesh IS renewal** (TTT ch. 7: the noun of chadash — "the moon
+   renewed to perfection"). Month to month is the mirror's own glory-to-
+   glory: each cycle the reflector returns to fullness.
+4. **The consummation ends the cycle in fixed fullness:** "neither shall
+   thy moon withdraw itself" (Isaiah 60:20); the city needs no moon, for
+   the Lamb is its light (Revelation 21:23). From glory to glory, until a
+   glory that no longer wanes.
+
+House-rule note: Paul's immediate referent for doxa is the glory of the two
+ministrations — the month reading is the SYMBOLIC layer riding the
+mirror/moon pattern, flagged as such; but the fading-reflected-glory frame
+(Moses' face) is internal to the passage, so the lunar shape is in the
+text's own imagery, not imported.
+
+Also (from the Job 37:18 question, same day): the kaf of כִּרְאִי permits only
+"AS a molten mirror," never "with" — but the consonants ראי are both re'i
+(mirror, H7209, hapax here) and ro'i (seeing/appearance, H7210 — El Ro'i,
+Genesis 16:13): the sky spread as the cast thing seeing is done in, the
+mirror of the God who sees.
