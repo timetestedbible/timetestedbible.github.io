@@ -103,7 +103,7 @@ const MeatTesterView = {
         <section class="meat-results" id="meat-results" aria-labelledby="meat-results-title">
           <div class="meat-section-heading meat-results-heading">
             <div><span>The rulings</span><h2 id="meat-results-title">Review the experiment yourself</h2></div>
-            <p>Start with the panel's conclusion, then open the evidence trail that produced it.</p>
+            <p>Start with the panel's conclusion, then open the evidence trail that produced it. Protocol 13 judges only the glossary entry; older frozen runs are marked as legacy scope.</p>
           </div>
           <div id="meat-dashboard-loading" class="meat-dashboard-loading" role="status">Loading the frozen experiment archive…</div>
           <div id="meat-dashboard" hidden>
@@ -320,6 +320,13 @@ const MeatTesterView = {
           </label>
         </header>
 
+        ${Number(run.protocolVersion || 0) < 13 ? `
+          <aside class="meat-legacy-scope" role="note">
+            <strong>Legacy scope · protocol ${this.escapeHtml(run.protocolVersion || 'unknown')}</strong>
+            <span>This frozen ruling predates the glossary-only boundary and may include objections to broader chapter arguments. It remains available for audit but should be rerun under protocol 13 before its scope qualifier is treated as a glossary ruling.</span>
+          </aside>
+        ` : ''}
+
         <div class="meat-comparison">
           <section><span>Recognizable common reading</span><p>${this.escapeHtml(entry.commonView || this.firstConsensus(entry) || 'No consensus summary recorded.')}</p></section>
           <div class="meat-versus" aria-hidden="true">vs.</div>
@@ -477,7 +484,7 @@ const MeatTesterView = {
 
   judgeCard(judge, entry) {
     const verdict = this.stageVerdict(judge, this._activeStage);
-    const scope = this._activeStage === 'persuasion' && judge.supportScope ? ` · ${this.scopeLabel(judge.supportScope)}` : '';
+    const scope = this._activeStage === 'persuasion' && judge.supportScope ? ` · ${this.scopeLabel(judge.supportScope, entry.protocolVersion)}` : '';
     const hasAudit = Boolean(judge.artifacts?.[this._activeStage]);
     return `
       <article class="meat-judge-card ${this.stageVerdictClass(verdict)}">
@@ -704,7 +711,10 @@ const MeatTesterView = {
     })[verdict] || this.titleCase(verdict);
   },
 
-  scopeLabel(scope) {
+  scopeLabel(scope, protocolVersion = 0) {
+    if (Number(protocolVersion) < 13) {
+      return ({ FULL: 'full · legacy scope', CORE_ONLY: 'core only · legacy scope', NONE: 'unsupported · legacy scope' })[scope] || `${this.titleCase(scope)} · legacy scope`;
+    }
     return ({ FULL: 'whole glossary entry', CORE_ONLY: 'glossary core only', NONE: 'glossary unsupported' })[scope] || this.titleCase(scope);
   },
 

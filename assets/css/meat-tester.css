@@ -535,6 +535,24 @@
   line-height: 1.55;
 }
 
+.meat-legacy-scope {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--accent-gold) 9%, var(--surface-raised));
+  border: 1px solid color-mix(in srgb, var(--accent-gold) 34%, var(--border-subtle));
+  border-radius: 8px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.meat-legacy-scope strong {
+  flex: 0 0 auto;
+  color: var(--text-primary);
+}
+
 .meat-versus {
   align-self: center;
   color: var(--text-tertiary);
@@ -1033,6 +1051,10 @@
 
   .meat-citations {
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .meat-legacy-scope {
     flex-direction: column;
   }
 
