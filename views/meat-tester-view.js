@@ -322,7 +322,7 @@ const MeatTesterView = {
           </label>
         </header>
 
-        ${Number(run.protocolVersion || 0) < 13 ? `
+        ${this.needsLegacyScopeWarning(run, entry) ? `
           <aside class="meat-legacy-scope" role="note">
             <strong>Legacy scope · protocol ${this.escapeHtml(run.protocolVersion || 'unknown')}</strong>
             <span>This frozen ruling predates the glossary-only boundary and may include objections to broader chapter arguments. It remains available for audit but should be rerun under protocol 13 before its scope qualifier is treated as a glossary ruling.</span>
@@ -723,9 +723,16 @@ const MeatTesterView = {
 
   scopeLabel(scope, protocolVersion = 0) {
     if (Number(protocolVersion) < 13) {
-      return ({ FULL: 'full · legacy scope', CORE_ONLY: 'core only · legacy scope', NONE: 'unsupported · legacy scope' })[scope] || `${this.titleCase(scope)} · legacy scope`;
+      return ({ FULL: 'full', CORE_ONLY: 'core only · legacy scope', NONE: 'unsupported · legacy scope' })[scope] || `${this.titleCase(scope)} · legacy scope`;
     }
     return ({ FULL: 'whole glossary entry', CORE_ONLY: 'glossary core only', NONE: 'glossary unsupported' })[scope] || this.titleCase(scope);
+  },
+
+  needsLegacyScopeWarning(run, entry) {
+    if (Number(run?.protocolVersion || 0) >= 13) return false;
+    const completedJudges = (entry?.judges || []).filter(judge => judge.persuasion && judge.persuasion !== 'PENDING');
+    if (!completedJudges.length) return false;
+    return completedJudges.some(judge => judge.persuasion !== 'PERSUADED' || judge.supportScope !== 'FULL');
   },
 
   verdictClass(verdict) {
