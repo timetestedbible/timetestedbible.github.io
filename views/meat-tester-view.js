@@ -208,7 +208,18 @@ const MeatTesterView = {
     this._container.querySelector('#meat-stats').innerHTML = `
       <article><span>Current conclusions</span><strong>${stats.currentConclusions}</strong></article>
       <article><span>Divergent cases persuaded</span><strong>${persuaded}</strong></article>
-      <article><span>Model families represented</span><strong>${stats.providerModels}</strong></article>
+      <article class="meat-model-stat">
+        <span>Model families represented</span>
+        <div class="meat-model-stat-value">
+          <strong>${stats.providerModels}</strong>
+          <div class="meat-model-icons" aria-label="GPT, Claude, Gemini, and Grok">
+            ${this.providerIcon('openai', 'GPT')}
+            ${this.providerIcon('anthropic', 'Claude')}
+            ${this.providerIcon('gemini', 'Gemini')}
+            ${this.providerIcon('xai', 'Grok')}
+          </div>
+        </div>
+      </article>
       <article><span>Frozen runs available</span><strong>${stats.archivedRuns}</strong></article>
     `;
     this.renderResultList();
@@ -574,6 +585,10 @@ const MeatTesterView = {
 
   providerInitial(provider) {
     return ({ openai: 'GP', anthropic: 'C', gemini: 'Ge', xai: 'Gr' })[provider] || String(provider || '?').slice(0, 2);
+  },
+
+  providerIcon(provider, label) {
+    return `<span class="meat-model-icon" title="${this.escapeAttr(label)}"><img src="/assets/img/reviews/${this.escapeAttr(provider === 'xai' ? 'xai' : provider)}.${provider === 'openai' ? 'png' : 'svg'}" alt="${this.escapeAttr(label)}"></span>`;
   },
 
   stageVerdict(judge, stage) {

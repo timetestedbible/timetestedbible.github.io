@@ -271,6 +271,41 @@
   font-size: 2rem;
 }
 
+.meat-model-stat-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.meat-model-stat-value strong {
+  margin-top: 0;
+}
+
+.meat-model-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.meat-model-icon {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  background: color-mix(in srgb, var(--surface-raised) 72%, var(--text-primary) 8%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+}
+
+.meat-model-icon img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
 .meat-dashboard-controls {
   display: grid;
   grid-template-columns: 190px 230px minmax(240px, 1fr);
