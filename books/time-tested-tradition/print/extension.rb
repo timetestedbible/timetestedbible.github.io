@@ -1010,6 +1010,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # chapter would have opened directly after a verso, the plate costs two
   # pages (a true-blank recto spacer + the plate verso).
   CHAPTER_PLATES = {
+    'where-does-the-day-start' => 'images/print/05-day-lost-at-sea.jpg',
     'when-does-the-month-start' => 'images/print/07-watchman-full-moon.jpg',
     'about-the-author' => 'images/print/author-portrait.jpg',
   }.freeze
