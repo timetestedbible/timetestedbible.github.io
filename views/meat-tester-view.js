@@ -12,6 +12,7 @@ const MeatTesterView = {
   _mode: 'current',
   _query: '',
   _verdict: 'ALL',
+  _sort: 'TERM',
   _selected: null,
   _activeStage: 'persuasion',
   _auditCache: new Map(),
@@ -130,6 +131,13 @@ const MeatTesterView = {
                   <option value="DISPUTED">Disputed</option>
                 </select>
               </label>
+              <label>
+                <span>Sort</span>
+                <select id="meat-sort">
+                  <option value="TERM">Term A–Z</option>
+                  <option value="RULING">Ruling label</option>
+                </select>
+              </label>
               <label class="meat-search-label">
                 <span>Find a conclusion</span>
                 <input id="meat-search" type="search" placeholder="Oil, faith, ship…" autocomplete="off">
@@ -197,6 +205,10 @@ const MeatTesterView = {
       this._verdict = event.target.value;
       this.renderResultList();
     });
+    this._container.querySelector('#meat-sort').addEventListener('change', event => {
+      this._sort = event.target.value;
+      this.renderResultList();
+    });
     this._container.querySelector('#meat-search').addEventListener('input', event => {
       this._query = event.target.value.trim().toLowerCase();
       this.renderResultList();
@@ -240,12 +252,36 @@ const MeatTesterView = {
   },
 
   filteredEntries() {
-    return this.entriesForMode().filter(entry => {
+    const entries = this.entriesForMode().filter(entry => {
       if (this._verdict === 'CONFLICT' && !this.hasJudgeConflict(entry)) return false;
       if (!['ALL', 'CONFLICT'].includes(this._verdict) && entry.finalVerdict !== this._verdict) return false;
       if (!this._query) return true;
       return [entry.term, entry.definition, entry.commonView, entry.runId]
         .some(value => String(value || '').toLowerCase().includes(this._query));
+    });
+    return this.sortEntries(entries);
+  },
+
+  sortEntries(entries) {
+    const rulingOrder = [
+      'DIVERGENT_PERSUADED',
+      'DIVERGENT_UNPERSUADED',
+      'DIVERGENT_PENDING',
+      'REFINED',
+      'MATCH',
+      'NOVEL',
+      'DISPUTED',
+    ];
+    return [...entries].sort((a, b) => {
+      if (this._sort === 'RULING') {
+        const aIndex = rulingOrder.indexOf(a.finalVerdict);
+        const bIndex = rulingOrder.indexOf(b.finalVerdict);
+        const categoryOrder = (aIndex < 0 ? rulingOrder.length : aIndex) - (bIndex < 0 ? rulingOrder.length : bIndex);
+        if (categoryOrder) return categoryOrder;
+      }
+      const termOrder = String(a.term || '').localeCompare(String(b.term || ''));
+      if (termOrder) return termOrder;
+      return String(b.createdAt || '').localeCompare(String(a.createdAt || ''));
     });
   },
 
