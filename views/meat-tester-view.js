@@ -120,6 +120,7 @@ const MeatTesterView = {
                 <span>Ruling</span>
                 <select id="meat-verdict-filter">
                   <option value="ALL">All rulings</option>
+                  <option value="CONFLICT">Any judge conflict</option>
                   <option value="DIVERGENT_PERSUADED">Divergent · persuaded</option>
                   <option value="DIVERGENT_UNPERSUADED">Divergent · unconvinced</option>
                   <option value="DIVERGENT_PENDING">Divergent · not yet judged</option>
@@ -240,7 +241,8 @@ const MeatTesterView = {
 
   filteredEntries() {
     return this.entriesForMode().filter(entry => {
-      if (this._verdict !== 'ALL' && entry.finalVerdict !== this._verdict) return false;
+      if (this._verdict === 'CONFLICT' && !this.hasJudgeConflict(entry)) return false;
+      if (!['ALL', 'CONFLICT'].includes(this._verdict) && entry.finalVerdict !== this._verdict) return false;
       if (!this._query) return true;
       return [entry.term, entry.definition, entry.commonView, entry.runId]
         .some(value => String(value || '').toLowerCase().includes(this._query));
@@ -663,6 +665,14 @@ const MeatTesterView = {
     return entry.judges.map(judge => `${judge.label}: ${this.stageVerdictLabel(this.stageVerdict(judge, entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship'), entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship')}`).join('; ');
   },
 
+  hasJudgeConflict(entry) {
+    const stage = entry.persuasion && entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship';
+    const rulings = entry.judges
+      .map(judge => this.stageVerdict(judge, stage))
+      .filter(ruling => ruling && ruling !== 'PENDING');
+    return new Set(rulings).size > 1;
+  },
+
   judgeDot(judge, entry) {
     const stage = entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship';
     const verdict = this.stageVerdict(judge, stage);
@@ -674,7 +684,7 @@ const MeatTesterView = {
   },
 
   providerIcon(provider, label) {
-    return `<span class="meat-model-icon" title="${this.escapeAttr(label)}"><img src="/assets/img/reviews/${this.escapeAttr(provider === 'xai' ? 'xai' : provider)}.${provider === 'openai' ? 'png' : 'svg'}" alt="${this.escapeAttr(label)}"></span>`;
+    return `<img class="meat-model-icon meat-model-icon--${this.escapeAttr(provider)}" src="/assets/img/reviews/${this.escapeAttr(provider === 'xai' ? 'xai' : provider)}.${provider === 'openai' ? 'png' : 'svg'}" alt="${this.escapeAttr(label)}" title="${this.escapeAttr(label)}">`;
   },
 
   stageVerdict(judge, stage) {
