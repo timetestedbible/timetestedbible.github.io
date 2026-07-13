@@ -932,7 +932,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     lh_mult = @theme.base_line_height || 1.15
     line_h  = nil
     theme_font(:base) { line_h = font.height * lh_mult }
-    min_chunk = line_h * 2                             # >= 2 lines on each side of a break
+    # >= 2 lines on each side of a break. The 10% slack absorbs the gap between
+    # the computed line height and prawn's real rendered advance (~5% larger for
+    # this face) — without it, capacities in that gap read as two lines when only
+    # one truly fits, and single lines strand (the p. 44 orphan, 2026-07-13).
+    min_chunk = line_h * 2.2
     first_h   = ext.from.cursor
     last_h    = bounds.height - ext.to.cursor
     spans     = ext.to.page - ext.from.page
@@ -946,9 +950,25 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       # instead of opening a hole between paragraphs) — unless the first page
       # would drop below the minimum, in which case send the whole paragraph over.
       deficit = min_chunk - last_h
-      pull = (deficit / line_h).ceil * line_h
-      if first_h - pull >= min_chunk
+      # Half-a-line of slack on both the pull and the keep-side guard: the
+      # computed line height undershoots the real rendered advance by a
+      # fraction, which left breaks unmoved and single lines stranded
+      # (the p. 44 orphan, 2026-07-13).
+      pull = (deficit / line_h).ceil * line_h + line_h * 0.5
+      if first_h - pull >= min_chunk + line_h * 0.5
         shorten_page_bottom pull
+        # The computed line height can undershoot the real rendered advance by a
+        # fraction of a point, leaving the break unmoved (the p.44 one-word orphan,
+        # 2026-07-13). Re-measure; if the widow survives the pull, take the whole
+        # paragraph over — this page simply runs a line short at the bottom.
+        ext2 = begin
+          dry_run { convert_paragraph node }
+        rescue StandardError
+          nil
+        end
+        if ext2 && !ext2.single_page? && (bounds.height - ext2.to.cursor) < min_chunk
+          advance_page unless at_page_top?
+        end
       else
         advance_page unless at_page_top?
       end
@@ -991,9 +1011,25 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       # runs short at the bottom — unless the first page would then drop below the
       # minimum, in which case send the whole quote over.
       deficit = min_chunk - last_h
-      pull = (deficit / line_h).ceil * line_h
-      if first_h - pull >= min_chunk
+      # Half-a-line of slack on both the pull and the keep-side guard: the
+      # computed line height undershoots the real rendered advance by a
+      # fraction, which left breaks unmoved and single lines stranded
+      # (the p. 44 orphan, 2026-07-13).
+      pull = (deficit / line_h).ceil * line_h + line_h * 0.5
+      if first_h - pull >= min_chunk + line_h * 0.5
         shorten_page_bottom pull
+        # The computed line height can undershoot the real rendered advance by a
+        # fraction of a point, leaving the break unmoved (the p.44 one-word orphan,
+        # 2026-07-13). Re-measure; if the widow survives the pull, take the whole
+        # paragraph over — this page simply runs a line short at the bottom.
+        ext2 = begin
+          dry_run { convert_paragraph node }
+        rescue StandardError
+          nil
+        end
+        if ext2 && !ext2.single_page? && (bounds.height - ext2.to.cursor) < min_chunk
+          advance_page unless at_page_top?
+        end
       else
         advance_page unless at_page_top?
       end
