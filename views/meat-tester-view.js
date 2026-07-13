@@ -325,7 +325,7 @@ const MeatTesterView = {
           <div class="meat-versus" aria-hidden="true">vs.</div>
           <section><span>MEAT's conclusion</span><p>${this.escapeHtml(entry.definition || 'No book definition recorded.')}</p></section>
         </div>
-        ${entry.citations ? `<div class="meat-citations"><strong>Cited evidence</strong><span>${this.escapeHtml(entry.citations)}</span></div>` : ''}
+        ${entry.citations ? `<div class="meat-citations"><strong>Cited evidence</strong><span>${this.renderCitationEvidence(entry.citations)}</span></div>` : ''}
 
         <nav class="meat-stage-tabs" aria-label="Experiment stage">
           ${this.stageButton('consensus', '1 · Blind baseline')}
@@ -370,6 +370,83 @@ const MeatTesterView = {
       });
     });
     this.renderStagePanel(run, entry);
+    this.preloadVerseTooltips();
+  },
+
+  renderCitationEvidence(citations) {
+    const books = [
+      'Song of Solomon', 'Song of Songs', '1 Thessalonians', '2 Thessalonians',
+      '1 Corinthians', '2 Corinthians', '1 Chronicles', '2 Chronicles',
+      'Deuteronomy', 'Ecclesiastes', 'Lamentations', 'Philippians', 'Revelation',
+      'Zephaniah', 'Zechariah', 'Leviticus', 'Numbers', 'Joshua', 'Judges',
+      '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', 'Nehemiah', 'Esther',
+      'Proverbs', 'Jeremiah', 'Ezekiel', 'Daniel', 'Habakkuk', 'Malachi',
+      'Matthew', 'Romans', 'Galatians', 'Ephesians', 'Colossians', 'Hebrews',
+      '1 Timothy', '2 Timothy', 'Philemon', 'James', '1 Peter', '2 Peter',
+      '1 John', '2 John', '3 John', 'Genesis', 'Exodus', 'Ruth', 'Ezra', 'Job',
+      'Psalms', 'Psalm', 'Isaiah', 'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah',
+      'Micah', 'Nahum', 'Haggai', 'Mark', 'Luke', 'John', 'Acts', 'Titus', 'Jude',
+      'Gen', 'Exod', 'Ex', 'Lev', 'Num', 'Deut', 'Josh', 'Judg', 'Sam', 'Kgs',
+      'Chr', 'Neh', 'Est', 'Ps', 'Psa', 'Prov', 'Eccl', 'Song', 'Isa', 'Jer',
+      'Lam', 'Ezek', 'Dan', 'Hos', 'Obad', 'Mic', 'Nah', 'Hab', 'Zeph', 'Hag',
+      'Zech', 'Mal', 'Matt', 'Mk', 'Lk', 'Jn', 'Rom', 'Cor', 'Gal', 'Eph',
+      'Phil', 'Col', 'Thess', 'Tim', 'Tit', 'Phlm', 'Heb', 'Jas', 'Pet', 'Rev',
+    ].sort((a, b) => b.length - a.length);
+    const bookPattern = books.map(book => book.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+    const referencePattern = new RegExp(`\\b((?:[123]\\s+)?(?:${bookPattern}))\\.?\\s+(\\d+(?::\\d+(?:[-–—]\\d+)?(?:,\\s*\\d+(?:[-–—]\\d+)?)*)?(?:[-–—]\\d+(?::\\d+)?)?)`, 'gi');
+    const continuationPattern = /^(\s*)(\d+:\d+(?:[-–—]\d+)?(?:,\s*\d+(?:[-–—]\d+)?)*)/;
+    let currentBook = '';
+
+    return String(citations).split(/(;)/).map(segment => {
+      if (segment === ';') return ';';
+      let html = '';
+      let cursor = 0;
+      let foundNamedReference = false;
+      referencePattern.lastIndex = 0;
+      let match;
+
+      while ((match = referencePattern.exec(segment))) {
+        foundNamedReference = true;
+        html += this.escapeHtml(segment.slice(cursor, match.index));
+        const displayBook = match[1];
+        const displayReference = match[2];
+        currentBook = this.normalizeCitationBook(displayBook);
+        html += this.scripturePreviewLink(match[0], this.canonicalCitation(currentBook, displayReference));
+        cursor = match.index + match[0].length;
+      }
+
+      if (foundNamedReference) return html + this.escapeHtml(segment.slice(cursor));
+
+      const continuation = currentBook ? segment.match(continuationPattern) : null;
+      if (!continuation) return this.escapeHtml(segment);
+      const displayReference = continuation[2];
+      const remainder = segment.slice(continuation[0].length);
+      return `${this.escapeHtml(continuation[1])}${this.scripturePreviewLink(displayReference, this.canonicalCitation(currentBook, displayReference))}${this.escapeHtml(remainder)}`;
+    }).join('');
+  },
+
+  normalizeCitationBook(book) {
+    return typeof normalizeBookName === 'function' ? normalizeBookName(book) : String(book).replace(/\.$/, '');
+  },
+
+  canonicalCitation(book, reference) {
+    if (/^(Obadiah|Philemon|2 John|3 John|Jude)$/i.test(book) && !reference.includes(':')) return `${book} 1:${reference}`;
+    return `${book} ${reference}`;
+  },
+
+  scripturePreviewLink(display, citation) {
+    const match = citation.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
+    const translation = typeof getDefaultTranslation === 'function' ? getDefaultTranslation() : 'akjv';
+    const href = match
+      ? `/reader/bible/${encodeURIComponent(translation)}/${encodeURIComponent(match[1])}/${match[2]}${match[3] ? `.${match[3]}` : ''}`
+      : `/reader/bible/${encodeURIComponent(translation)}/`;
+    return `<a href="${this.escapeAttr(href)}" class="scripture-ref meat-scripture-ref" data-citation="${this.escapeAttr(citation)}" data-ref="${this.escapeAttr(citation)}" onmouseenter="if(typeof showVerseTooltip==='function')showVerseTooltip(this,event)" onmouseleave="if(typeof hideVerseTooltip==='function')hideVerseTooltip()" onclick="if(typeof handleCitationClick==='function'){handleCitationClick(event);return false;}">${this.escapeHtml(display)}</a>`;
+  },
+
+  preloadVerseTooltips() {
+    if (typeof Bible === 'undefined' || !Bible.loadTranslation) return;
+    const translation = typeof getDefaultTranslation === 'function' ? getDefaultTranslation() : 'akjv';
+    Bible.loadTranslation(translation).catch(() => {});
   },
 
   stageButton(stage, label) {
