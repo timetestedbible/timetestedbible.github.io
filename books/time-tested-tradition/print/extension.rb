@@ -1011,6 +1011,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # pages (a true-blank recto spacer + the plate verso).
   CHAPTER_PLATES = {
     # TTT 2nd edition: no chapter plates yet — figures are inline images.
+    'about-the-author' => 'images/print/author-portrait.jpg',
   }.freeze
 
   # Fill the trimmed page as fully as the aspect allows, centered — drawn on

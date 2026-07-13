@@ -390,6 +390,7 @@ if WANT_EPUB
   # delivery by the MB): longest side 1600px, JPEG. Regenerated when stale.
   $ebook_image_jobs.each do |twin, master|
     t, m = File.join(SRC, twin), File.join(SRC, master)
+    require 'fileutils'; FileUtils.mkdir_p File.dirname(t)   # sips writes a FILE named after a missing dir
     next if File.exist?(t) && File.mtime(t) >= File.mtime(m)
     system('sips', '-Z', '1600', '-s', 'format', 'jpeg', '-s', 'formatOptions', '80',
            m, '--out', t, out: File::NULL, err: File::NULL) or abort "sips failed: #{master}"

@@ -1,21 +1,57 @@
 ---
 title: "Copyright"
-slug: ttt-copyright
 front_matter: true
+slug: ttt-copyright
+order: 0
 published: false
+description: "Copyright, permissions, and credits."
 ---
-[.text-center]
-*Time Tested Tradition* +
-The Renewed Biblical Calendar
+// %nonfacing on the first block lets the page open on the TITLE VERSO (trade
+// convention for the copyright page) instead of being forced to a recto.
 
+[.text-left.copyright-title%nonfacing]
+Time Tested Tradition: The Renewed Biblical Calendar
+
+[.text-left.copyright]
+{nbsp}
+
+[.text-left.copyright]
+Copyright © 2026 Daniel Larimer
+
+[.text-left.copyright]
+This work may be freely reproduced and distributed in its complete, unmodified form. All other rights reserved.
+
+[.text-left.copyright]
 Second Edition
 
-Copyright © 2026 Daniel Larimer. All rights reserved.
+[.text-left.copyright]
+{nbsp}
 
-// TODO before print: ISBN for the second edition, printer line, and the
-// translation-permissions block (copy the pattern from MEAT's 00-copyright.adoc
-// once the second edition's quoted translations are settled).
+[.text-left.copyright]
+Unless otherwise noted, Scripture quotations are from the King James Version, which is in the public domain. Quotations marked BSB are from the Berean Standard Bible, courtesy of Bible Hub, used freely. Quotations marked LXX are translated from the Septuagint's Greek text.
 
-Unless otherwise noted, Scripture quotations are from the King James Version, which is in the public domain.
+[.text-left.copyright]
+Scripture quotations marked NASB are taken from the New American Standard Bible®, copyright © 1960, 1971, 1977, 1995, 2020 by The Lockman Foundation. Used by permission. All rights reserved. (lockman.org) Scripture quotations marked NKJV are taken from the New King James Version®. Copyright © 1982 by Thomas Nelson. Used by permission. All rights reserved. Scripture quotations marked ESV are from the ESV® Bible (The Holy Bible, English Standard Version®), copyright © 2001 by Crossway. Used by permission. All rights reserved. Scripture quotations marked AMP are taken from the Amplified® Bible, copyright © 2015 by The Lockman Foundation. Used by permission. (lockman.org)
 
+[.text-left.copyright]
+The interior figures are the author's. The second edition's text was reconstructed from the prior editions and typeset with the assistance of AI language models. The arguments, the chronology, and the doctrine are the author's own.
+
+[.text-left.copyright]
+{nbsp}
+
+[.text-left.copyright]
+_Freely you have received, freely give._
+
+[.text-left.copyright]
+— Matthew 10:8
+
+[.text-left.copyright]
+{nbsp}
+
+// TODO before print: assign the second-edition ISBN and restore it on the
+// last line (MEAT pattern: printer's key + TimeTested.Bible + ISBN).
+[.text-left.copyright%unbreakable]
+Published by the author +
+Printed in the United States of America +
+10{nbsp}{nbsp}9{nbsp}{nbsp}8{nbsp}{nbsp}7{nbsp}{nbsp}6{nbsp}{nbsp}5{nbsp}{nbsp}4{nbsp}{nbsp}3{nbsp}{nbsp}2{nbsp}{nbsp}1 +
 https://TimeTested.Bible[TimeTested.Bible]
