@@ -180,3 +180,57 @@ wholly given to the fire, never ransomed, never split. The snare takes one
 by the foot in secret; the net takes the many by enclosure. At the end
 there is no more net and no more ban (Zechariah 14:11; Revelation 22:3):
 the catch is landed, the count stands, and the net is not torn.
+
+## Addendum (author, same day): "the net is the judgment and harvest" —
+## consistent against all uses?
+
+Yes — and Scripture couples net and *mishpat* in its own words, repeatedly.
+The sweep (every weld verified against the tagged text):
+
+1. **The net delivers to the courtroom.** Ezekiel 17:20 — "I will spread my
+   net upon him… and I will bring him to Babylon, and will PLEAD (shaphat,
+   H8199 — the judging verb) with him there for his trespass." The catch is
+   hauled to trial.
+2. **The reflex-net IS the known judgment.** Psalm 9:15-16 — the heathen's
+   foot taken in their own hidden net, and the very next line: "The LORD is
+   known by the JUDGMENT (mishpat) which he executeth: the wicked is snared
+   in the work of his own hands."
+3. **Judgment pronounced on false netters, in the net verse itself.** Hosea
+   5:1 — "JUDGMENT is toward you, because ye have been a snare on Mizpah,
+   and a net spread upon Tabor."
+4. **The fisher-empire is ordained judgment.** Habakkuk 1:12, three verses
+   before the nets — "thou hast ordained them for JUDGMENT… established
+   them for correction."
+5. **The net is the refining trial.** Psalm 66:10-12 — "thou hast TRIED us,
+   as silver is tried. Thou broughtest us into the net… out into a wealthy
+   place."
+6. **Being in the net = being under the rebuke.** Isaiah 51:20 — "as a wild
+   bull in a net: they are FULL OF THE FURY OF THE LORD, the rebuke of thy
+   God."
+7. **Matthew 13 equates net and harvest internally.** "The HARVEST is the
+   end (synteleia, G4930) of the age" (13:39) and the net parable closes
+   "so shall it be at the end (G4930) of the age" (13:49) — same word, same
+   angels, same furnace: the tares' harvest and the sagēnē's landing are
+   one event told twice.
+8. **The evil net is the sudden day.** Ecclesiastes 9:12 — "man knoweth not
+   his TIME: as the fishes taken in an evil net… so are the sons of men
+   snared in an evil time, when it falleth suddenly" — and the day of the
+   Lord "as a snare shall it come on ALL them that dwell on the face of the
+   whole earth" (Luke 21:35; pagis, the trap-family word at net scale).
+9. **Net-harvest vs root-harvest.** Proverbs 12:12 — "the wicked desireth
+   the net (matsod) of evil men: but the root of the righteous YIELDETH" —
+   the verse itself contrasts the two ways of increase: the seized haul
+   and the grown fruit. The wicked's net is a counterfeit harvest, and by
+   finds 2-3 it turns into his own judgment.
+
+The two faces are one landing: **harvest** is the ingathering face (gather,
+asaph; drawn full to shore; the catch as portion and meat; 153 great fish
+counted), **judgment** is the sorting face (vessels or furnace; consecrated
+or destroyed — the cherem's two outcomes; pleading at Babylon). Edge cases
+stay honest: Proverbs 1:17 states the mechanism (unseen enclosure), not an
+exception; Isaiah 19:8's empty, mourning nets are judgment ON the fisher
+(as Habakkuk 1:17 is answered by the plunderer plundered, 2:8); John 21 is
+the harvest face complete — all great fish, none cast away, the net not
+torn; and the craft uses (altar grate, pillar networks) are fabric, carried
+as coherence only — though the devoted does burn on the altar's resheth,
+and the pillars' networks hang full of pomegranates: the net full of fruit.
