@@ -589,7 +589,8 @@
 }
 
 .meat-verdict-badge,
-.meat-development-badge {
+.meat-development-badge,
+.meat-revision-badge {
   display: inline-flex;
   align-items: center;
   min-height: 24px;
@@ -601,7 +602,8 @@
   text-transform: uppercase;
 }
 
-.meat-development-badge {
+.meat-development-badge,
+.meat-revision-badge {
   color: var(--color-warning);
   background: var(--color-warning-muted);
 }
@@ -708,7 +710,8 @@
 }
 
 .meat-legacy-scope,
-.meat-partial-scope {
+.meat-partial-scope,
+.meat-revision-scope {
   display: flex;
   gap: 10px;
   margin-bottom: 18px;
@@ -722,7 +725,8 @@
 }
 
 .meat-legacy-scope strong,
-.meat-partial-scope strong {
+.meat-partial-scope strong,
+.meat-revision-scope strong {
   flex: 0 0 auto;
   color: var(--text-primary);
 }
@@ -730,6 +734,11 @@
 .meat-partial-scope {
   background: color-mix(in srgb, var(--color-info) 8%, var(--surface-raised));
   border-color: color-mix(in srgb, var(--color-info) 34%, var(--border-subtle));
+}
+
+.meat-revision-scope {
+  background: color-mix(in srgb, var(--color-warning) 8%, var(--surface-raised));
+  border-color: color-mix(in srgb, var(--color-warning) 34%, var(--border-subtle));
 }
 
 .meat-untested-note {
@@ -1349,7 +1358,8 @@
   }
 
   .meat-legacy-scope,
-  .meat-partial-scope {
+  .meat-partial-scope,
+  .meat-revision-scope {
     flex-direction: column;
   }
 

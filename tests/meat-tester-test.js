@@ -54,6 +54,15 @@ assert.strictEqual(testedTarget?.untested, false, 'A tested glossary URL should 
 const lambTarget = MeatTesterView.resolveRouteEntry({ term: 'lamb' });
 assert.strictEqual(lambTarget?.entry.term, 'The Lamb');
 assert.strictEqual(lambTarget?.entry.frozenTerm, 'Lamb');
+assert.strictEqual(lambTarget?.entry.revisionPending, true);
+assert.strictEqual(lambTarget?.entry.definition, 'Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.');
+const frozenLambTarget = MeatTesterView.resolveRouteEntry({ term: 'lamb', run: '2026-07-13-all-symbols-phase-2' });
+assert.strictEqual(frozenLambTarget?.entry.term, 'Lamb');
+assert.strictEqual(frozenLambTarget?.entry.revisionPending, undefined);
+const eastTarget = MeatTesterView.resolveRouteEntry({ term: 'east' });
+assert.strictEqual(eastTarget?.entry.revisionPending, true);
+assert(eastTarget?.entry.definition.startsWith('Where beginnings and returns come from'));
+assert(eastTarget?.entry.frozenDefinition.startsWith('The front of the compass'));
 
 for (const entry of index.currentEntries) {
   assert(entry.runId, `${entry.anchor} is missing a current run`);

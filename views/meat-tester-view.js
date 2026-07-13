@@ -314,8 +314,7 @@ const MeatTesterView = {
       const current = this._data.currentEntries.find(candidate => candidate.anchor === params.term);
       if (current) {
         run = this._data.runs.find(candidate => candidate.id === current.runId);
-        const frozenEntry = run?.entries.find(candidate => candidate.anchor === params.term);
-        entry = frozenEntry ? { ...frozenEntry, term: current.term, frozenTerm: current.frozenTerm || '' } : null;
+        entry = run ? current : null;
       }
     }
     if (run && entry) return { run, entry, untested: false };
@@ -505,6 +504,7 @@ const MeatTesterView = {
           <span class="meat-result-card-top">
             <span class="meat-verdict-badge">${this.escapeHtml(this.verdictLabel(entry.finalVerdict))}</span>
             ${development ? '<span class="meat-development-badge">Development protocol</span>' : ''}
+            ${entry.revisionPending ? '<span class="meat-revision-badge">Revision · rerun needed</span>' : ''}
           </span>
           <strong>${this.escapeHtml(entry.term)}</strong>
           <span class="meat-result-definition">${this.escapeHtml(entry.definition || 'No definition recorded.')}</span>
@@ -585,6 +585,13 @@ const MeatTesterView = {
             </select>
           </label>
         </header>
+
+        ${entry.revisionPending ? `
+          <aside class="meat-revision-scope" role="note">
+            <strong>Current glossary revision · rerun needed</strong>
+            <span>The definition or cited evidence changed after this frozen run. The glossary wording below is current; the verdict badge and judge panels apply to the archived wording.</span>
+          </aside>
+        ` : ''}
 
         ${this.needsLegacyScopeWarning(run, entry) ? `
           <aside class="meat-legacy-scope" role="note">

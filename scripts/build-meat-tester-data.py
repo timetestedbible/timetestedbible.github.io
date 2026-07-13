@@ -231,10 +231,27 @@ def build_index() -> dict[str, Any]:
         run = run_lookup[run_id]
         entry = next(entry for entry in run["entries"] if entry["anchor"] == anchor)
         live_entry = live_glossary_by_anchor.get(anchor, {})
+        live_term = live_entry.get("term") or entry["term"]
+        live_definition = live_entry.get("definition", entry["definition"])
+        live_common_view = live_entry.get("common_view", entry["commonView"])
+        live_citations = live_entry.get("citations", entry["citations"])
+        revision_pending = any((
+            live_definition != entry["definition"],
+            live_common_view != entry["commonView"],
+            live_citations != entry["citations"],
+        ))
         current_entries.append({
             **entry,
-            "term": live_entry.get("term") or entry["term"],
-            "frozenTerm": entry["term"] if live_entry.get("term") and live_entry["term"] != entry["term"] else "",
+            "term": live_term,
+            "definition": live_definition,
+            "commonView": live_common_view,
+            "citations": live_citations,
+            "sourceBadge": live_entry.get("source_badge", entry["sourceBadge"]),
+            "frozenTerm": entry["term"] if live_term != entry["term"] else "",
+            "frozenDefinition": entry["definition"] if live_definition != entry["definition"] else "",
+            "frozenCommonView": entry["commonView"] if live_common_view != entry["commonView"] else "",
+            "frozenCitations": entry["citations"] if live_citations != entry["citations"] else "",
+            "revisionPending": revision_pending,
             "runId": run_id,
             "protocolVersion": run["protocolVersion"],
         })
