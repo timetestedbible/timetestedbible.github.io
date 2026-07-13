@@ -28,8 +28,21 @@ assert.deepStrictEqual(
 
 assert.strictEqual(index.schemaVersion, 1);
 assert(index.stats.currentConclusions > 0);
+assert.strictEqual(index.stats.glossaryEntries, index.glossaryEntries.length);
+assert.strictEqual(index.stats.untestedEntries, index.glossaryEntries.filter(entry => !entry.tested).length);
+assert(index.glossaryEntries.length > index.currentEntries.length, 'The symbol cloud should include untested glossary entries');
+assert.strictEqual(new Set(index.glossaryEntries.map(entry => entry.anchor)).size, index.glossaryEntries.length);
+assert(index.glossaryEntries.some(entry => entry.anchor === 'almond' && entry.finalVerdict === 'UNTESTED'));
+assert(index.glossaryEntries.some(entry => entry.anchor === 'ship' && entry.tested && entry.finalVerdict === 'DIVERGENT_PERSUADED'));
 assert(index.currentEntries.some(entry => entry.anchor === 'ship' && entry.finalVerdict === 'DIVERGENT_PERSUADED'));
 assert(index.currentEntries.some(entry => entry.anchor === 'heart' && entry.judges.length === 4));
+
+MeatTesterView._data = index;
+const untestedTarget = MeatTesterView.resolveRouteEntry({ term: 'almond' });
+assert(untestedTarget?.untested, 'An untested glossary URL should resolve to its glossary detail');
+assert.strictEqual(untestedTarget.entry.term, 'Almond (shaqed)');
+const testedTarget = MeatTesterView.resolveRouteEntry({ term: 'ship' });
+assert.strictEqual(testedTarget?.untested, false, 'A tested glossary URL should resolve to its frozen run');
 
 for (const entry of index.currentEntries) {
   assert(entry.runId, `${entry.anchor} is missing a current run`);

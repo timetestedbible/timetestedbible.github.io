@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import importlib.util
 import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -30,6 +31,17 @@ PROVIDER_LABELS = {
     "openai": "GPT",
     "xai": "Grok",
 }
+
+
+def load_current_glossary() -> list[dict[str, Any]]:
+    """Read every entry from the book's current glossary, including Words."""
+    module_path = EXPERIMENT / "experiment.py"
+    spec = importlib.util.spec_from_file_location("meat_tester_experiment", module_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Could not load glossary parser from {module_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.parse_glossary(include_words=True)
 
 
 def load_json(path: Path, default: Any = None) -> Any:
@@ -201,6 +213,24 @@ def build_index() -> dict[str, Any]:
         current_entries.append({**entry, "runId": run_id, "protocolVersion": run["protocolVersion"]})
     current_entries.sort(key=lambda entry: entry["term"].lower())
 
+    current_by_anchor = {entry["anchor"]: entry for entry in current_entries}
+    glossary_entries: list[dict[str, Any]] = []
+    for book_entry in load_current_glossary():
+        current = current_by_anchor.get(book_entry["anchor"])
+        glossary_entries.append({
+            "anchor": book_entry["anchor"],
+            "term": book_entry["term"],
+            "definition": book_entry.get("definition", ""),
+            "commonView": book_entry.get("common_view", ""),
+            "citations": book_entry.get("citations", ""),
+            "sourceBadge": book_entry.get("source_badge", ""),
+            "chapterSlugs": book_entry.get("chapter_slugs", []),
+            "tested": current is not None,
+            "runId": current.get("runId", "") if current else "",
+            "finalVerdict": current.get("finalVerdict", "UNTESTED") if current else "UNTESTED",
+        })
+    glossary_entries.sort(key=lambda entry: entry["term"].lower())
+
     verdict_counts = Counter(entry["finalVerdict"] for entry in current_entries)
     provider_models = {
         (provider["id"], provider["model"])
@@ -215,6 +245,8 @@ def build_index() -> dict[str, Any]:
         "experimentBase": "/books/symbolic-language/experiments/glossary-consensus",
         "stats": {
             "currentConclusions": len(current_entries),
+            "glossaryEntries": len(glossary_entries),
+            "untestedEntries": sum(1 for entry in glossary_entries if not entry["tested"]),
             "archivedRuns": len(runs),
             "reportableRuns": sum(1 for run in runs if run["reportable"]),
             "providerModels": len(provider_models),
@@ -222,6 +254,7 @@ def build_index() -> dict[str, Any]:
         },
         "currentRuns": current_runs,
         "currentEntries": current_entries,
+        "glossaryEntries": glossary_entries,
         "runs": runs,
     }
 

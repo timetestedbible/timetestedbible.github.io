@@ -413,7 +413,13 @@
 .meat-symbol-legend-item.verdict-novel { color: var(--color-purple); }
 .meat-symbol-token.verdict-divergent-pending,
 .meat-symbol-token.verdict-pending,
-.meat-symbol-legend-item.verdict-divergent-pending { color: var(--text-tertiary); }
+.meat-symbol-token.verdict-untested,
+.meat-symbol-legend-item.verdict-divergent-pending,
+.meat-symbol-legend-item.verdict-untested { color: var(--text-tertiary); }
+
+.meat-symbol-token.verdict-untested {
+  opacity: 0.72;
+}
 
 .meat-dashboard-controls {
   display: grid;
@@ -661,6 +667,61 @@
 .meat-legacy-scope strong {
   flex: 0 0 auto;
   color: var(--text-primary);
+}
+
+.meat-untested-note {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 22px 0 16px;
+  padding: 14px 16px;
+  color: var(--text-secondary);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.meat-untested-note strong,
+.meat-untested-definition > span {
+  color: var(--text-primary);
+}
+
+.meat-untested-definition {
+  margin-bottom: 16px;
+  padding: 17px;
+  background: var(--accent-primary-subtle);
+  border: 1px solid var(--border-accent);
+  border-radius: 9px;
+}
+
+.meat-untested-definition > span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.meat-untested-definition p {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.meat-untested-chapter {
+  display: inline-block;
+  margin-top: 13px;
+  color: var(--accent-primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.meat-untested-chapter:hover,
+.meat-untested-chapter:focus-visible {
+  text-decoration: underline;
 }
 
 .meat-versus {
@@ -1057,15 +1118,19 @@
 
 .meat-result-card.verdict-divergent-pending,
 .meat-result-card.verdict-pending,
+.meat-result-card.verdict-untested,
 .meat-verdict-badge.verdict-divergent-pending,
-.meat-verdict-badge.verdict-pending {
+.meat-verdict-badge.verdict-pending,
+.meat-verdict-badge.verdict-untested {
   border-color: var(--border-strong);
 }
 
 .verdict-divergent-pending > .meat-result-card-top .meat-verdict-badge,
 .verdict-pending > .meat-result-card-top .meat-verdict-badge,
+.verdict-untested > .meat-result-card-top .meat-verdict-badge,
 .meat-verdict-badge.verdict-divergent-pending,
-.meat-verdict-badge.verdict-pending {
+.meat-verdict-badge.verdict-pending,
+.meat-verdict-badge.verdict-untested {
   color: var(--text-secondary);
   background: var(--surface-sunken);
 }

@@ -120,7 +120,7 @@ const MeatTesterView = {
             <section id="meat-symbol-overview" class="meat-symbol-overview" aria-labelledby="meat-symbol-cloud-title" tabindex="-1">
               <div class="meat-symbol-overview-heading">
                 <div><span>At a glance</span><h3 id="meat-symbol-cloud-title">Symbol cloud</h3></div>
-                <p>Every current term has equal weight; color shows its ruling.</p>
+                <p>Every glossary entry has equal weight; color shows its ruling or testing status.</p>
               </div>
               <div class="meat-symbol-legend" aria-label="Ruling color key">
                 ${this.cloudLegend('DIVERGENT_PERSUADED', 'Divergent · persuaded')}
@@ -129,7 +129,8 @@ const MeatTesterView = {
                 ${this.cloudLegend('MATCH', 'Match')}
                 ${this.cloudLegend('NOVEL', 'Novel')}
                 ${this.cloudLegend('DISPUTED', 'Disputed')}
-                ${this.cloudLegend('DIVERGENT_PENDING', 'Pending')}
+                ${this.cloudLegend('DIVERGENT_PENDING', 'Divergent · not yet judged')}
+                ${this.cloudLegend('UNTESTED', 'Not yet tested')}
               </div>
               <div id="meat-symbol-cloud" class="meat-symbol-cloud"></div>
             </section>
@@ -280,13 +281,17 @@ const MeatTesterView = {
     this._container.querySelector('#meat-search').value = normalized.search;
 
     const target = this.resolveRouteEntry(normalized);
-    this._selected = target ? { runId: target.run.id, anchor: target.entry.anchor } : null;
-    this._activeStage = normalized.stage || (target?.entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship');
+    this._selected = target ? { runId: target.run?.id || '', anchor: target.entry.anchor } : null;
+    this._activeStage = normalized.stage || (target?.untested ? 'relationship' : target?.entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship');
     this.renderDashboard();
 
     const detail = this._container.querySelector('#meat-detail');
     if (!target) {
       detail.innerHTML = '<div class="meat-detail-empty">Choose a conclusion to inspect its evidence trail.</div>';
+      return;
+    }
+    if (target.untested) {
+      this.renderUntestedDetail(target.entry);
       return;
     }
     this.renderDetail(target.run, target.entry);
@@ -299,11 +304,14 @@ const MeatTesterView = {
     let entry = run?.entries.find(candidate => candidate.anchor === params.term);
     if (!entry) {
       const current = this._data.currentEntries.find(candidate => candidate.anchor === params.term);
-      if (!current) return null;
-      run = this._data.runs.find(candidate => candidate.id === current.runId);
-      entry = run?.entries.find(candidate => candidate.anchor === params.term);
+      if (current) {
+        run = this._data.runs.find(candidate => candidate.id === current.runId);
+        entry = run?.entries.find(candidate => candidate.anchor === params.term);
+      }
     }
-    return run && entry ? { run, entry } : null;
+    if (run && entry) return { run, entry, untested: false };
+    const glossaryEntry = this._data.glossaryEntries?.find(candidate => candidate.anchor === params.term);
+    return glossaryEntry ? { run: null, entry: glossaryEntry, untested: true } : null;
   },
 
   routeParams(overrides = {}) {
@@ -343,7 +351,7 @@ const MeatTesterView = {
     const stats = this._data.stats;
     const persuaded = stats.verdicts.DIVERGENT_PERSUADED || 0;
     this._container.querySelector('#meat-stats').innerHTML = `
-      <article><span>Current conclusions</span><strong>${stats.currentConclusions}</strong></article>
+      <article><span>Glossary entries tested</span><strong>${stats.currentConclusions} / ${stats.glossaryEntries || stats.currentConclusions}</strong></article>
       <article><span>Divergent cases persuaded</span><strong>${persuaded}</strong></article>
       <article class="meat-model-stat">
         <span>Model families represented</span>
@@ -370,7 +378,8 @@ const MeatTesterView = {
   renderSymbolCloud() {
     const cloud = this._container.querySelector('#meat-symbol-cloud');
     if (!cloud) return;
-    const entries = [...this._data.currentEntries].sort((a, b) => String(a.term || '').localeCompare(String(b.term || '')));
+    const entries = [...(this._data.glossaryEntries || this._data.currentEntries)]
+      .sort((a, b) => String(a.term || '').localeCompare(String(b.term || '')));
     cloud.innerHTML = entries.map(entry => `
       <a class="meat-symbol-token ${this.verdictClass(entry.finalVerdict)}${this._selected?.anchor === entry.anchor ? ' is-selected' : ''}"
               href="${this.escapeAttr(this.meatHref({ mode: 'current', term: entry.anchor, run: null, stage: null, judge: null }))}"
@@ -459,6 +468,51 @@ const MeatTesterView = {
         </a>
       `;
     }).join('');
+  },
+
+  renderUntestedDetail(entry) {
+    const detail = this._container.querySelector('#meat-detail');
+    const entries = this._data.glossaryEntries || [];
+    const index = entries.findIndex(candidate => candidate.anchor === entry.anchor);
+    const previous = index > 0 ? entries[index - 1] : null;
+    const next = index >= 0 && index < entries.length - 1 ? entries[index + 1] : null;
+    const chapter = entry.chapterSlugs?.[0]
+      ? `<a class="meat-untested-chapter" href="/books/symbolic-language/${this.escapeAttr(entry.chapterSlugs[0])}/">Read the supporting chapter →</a>`
+      : '';
+
+    detail.innerHTML = `
+      <article class="meat-detail-shell">
+        <header class="meat-detail-header">
+          <div>
+            <span class="meat-verdict-badge ${this.verdictClass('UNTESTED')}">${this.escapeHtml(this.verdictLabel('UNTESTED'))}</span>
+            <h3>${this.escapeHtml(entry.term)}</h3>
+          </div>
+        </header>
+
+        <aside class="meat-untested-note" role="note">
+          <strong>No frozen experiment ruling yet</strong>
+          <span>This entry is present in the book's current glossary, but it has not yet passed through the independent judging protocol.</span>
+        </aside>
+
+        <section class="meat-untested-definition">
+          <span>Current glossary entry</span>
+          <p>${this.escapeHtml(entry.definition || 'No definition recorded.')}</p>
+          ${chapter}
+        </section>
+        ${entry.citations ? `<div class="meat-citations"><strong>Cited evidence</strong><span>${this.renderCitationEvidence(entry.citations)}</span></div>` : ''}
+
+        <nav class="meat-detail-navigation" aria-label="Glossary navigation">
+          <a href="${this.escapeAttr(this.meatHref({ term: null, run: null, stage: null, judge: null }))}">↑ Symbol overview</a>
+          ${previous
+            ? `<a href="${this.escapeAttr(this.meatHref({ term: previous.anchor, run: null, stage: null, judge: null }))}">← Previous</a>`
+            : '<span aria-disabled="true">← Previous</span>'}
+          ${next
+            ? `<a href="${this.escapeAttr(this.meatHref({ term: next.anchor, run: null, stage: null, judge: null }))}">Next →</a>`
+            : '<span aria-disabled="true">Next →</span>'}
+        </nav>
+      </article>
+    `;
+    this.preloadVerseTooltips();
   },
 
   renderDetail(run, entry) {
@@ -879,6 +933,7 @@ const MeatTesterView = {
       NOVEL: 'No settled baseline',
       DISPUTED: 'Panel disputed',
       PENDING: 'Pending',
+      UNTESTED: 'Not yet tested',
     })[verdict] || this.titleCase(verdict);
   },
 
