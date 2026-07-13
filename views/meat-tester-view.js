@@ -109,6 +109,22 @@ const MeatTesterView = {
           <div id="meat-dashboard-loading" class="meat-dashboard-loading" role="status">Loading the frozen experiment archive…</div>
           <div id="meat-dashboard" hidden>
             <div id="meat-stats" class="meat-stats"></div>
+            <section id="meat-symbol-overview" class="meat-symbol-overview" aria-labelledby="meat-symbol-cloud-title" tabindex="-1">
+              <div class="meat-symbol-overview-heading">
+                <div><span>At a glance</span><h3 id="meat-symbol-cloud-title">Symbol cloud</h3></div>
+                <p>Every current term has equal weight; color shows its ruling.</p>
+              </div>
+              <div class="meat-symbol-legend" aria-label="Ruling color key">
+                ${this.cloudLegend('DIVERGENT_PERSUADED', 'Divergent · persuaded')}
+                ${this.cloudLegend('DIVERGENT_UNPERSUADED', 'Divergent · unconvinced')}
+                ${this.cloudLegend('REFINED', 'Refined')}
+                ${this.cloudLegend('MATCH', 'Match')}
+                ${this.cloudLegend('NOVEL', 'Novel')}
+                ${this.cloudLegend('DISPUTED', 'Disputed')}
+                ${this.cloudLegend('DIVERGENT_PENDING', 'Pending')}
+              </div>
+              <div id="meat-symbol-cloud" class="meat-symbol-cloud"></div>
+            </section>
             <div class="meat-dashboard-controls" aria-label="Filter experiment results">
               <label>
                 <span>View</span>
@@ -235,7 +251,40 @@ const MeatTesterView = {
       </article>
       <article><span>Frozen runs available</span><strong>${stats.archivedRuns}</strong></article>
     `;
+    this.renderSymbolCloud();
     this.renderResultList();
+  },
+
+  cloudLegend(verdict, label) {
+    return `<span class="meat-symbol-legend-item ${this.verdictClass(verdict)}"><i aria-hidden="true"></i>${this.escapeHtml(label)}</span>`;
+  },
+
+  renderSymbolCloud() {
+    const cloud = this._container.querySelector('#meat-symbol-cloud');
+    if (!cloud) return;
+    const entries = [...this._data.currentEntries].sort((a, b) => String(a.term || '').localeCompare(String(b.term || '')));
+    cloud.innerHTML = entries.map(entry => `
+      <button class="meat-symbol-token ${this.verdictClass(entry.finalVerdict)}${this._selected?.anchor === entry.anchor ? ' is-selected' : ''}"
+              data-run="${this.escapeAttr(entry.runId)}" data-anchor="${this.escapeAttr(entry.anchor)}"
+              title="${this.escapeAttr(`${entry.term}: ${this.verdictLabel(entry.finalVerdict)}`)}"
+              aria-pressed="${this._selected?.anchor === entry.anchor}">
+        ${this.escapeHtml(entry.term)}
+      </button>
+    `).join('');
+    cloud.querySelectorAll('.meat-symbol-token').forEach(button => {
+      button.addEventListener('click', () => this.selectCloudEntry(button.dataset.run, button.dataset.anchor));
+    });
+  },
+
+  selectCloudEntry(runId, anchor) {
+    this._mode = 'current';
+    this._verdict = 'ALL';
+    this._query = '';
+    this._container.querySelector('#meat-mode-filter').value = 'current';
+    this._container.querySelector('#meat-verdict-filter').value = 'ALL';
+    this._container.querySelector('#meat-search').value = '';
+    this.renderResultList();
+    this.selectEntry(runId, anchor);
   },
 
   entriesForMode() {
@@ -329,6 +378,7 @@ const MeatTesterView = {
     this._loadToken += 1;
     this._selected = { runId, anchor };
     this._activeStage = entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship';
+    this.renderSymbolCloud();
     this.renderResultList();
     this.renderDetail(run, entry);
     if (scroll && window.innerWidth < 980) {
@@ -342,6 +392,7 @@ const MeatTesterView = {
       .filter(candidate => candidate.entries.some(item => item.anchor === entry.anchor))
       .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
     const judgment = this.getHumanJudgment(run.id, entry.anchor);
+    const detailNavigation = this.detailNavigation(run.id, entry.anchor);
 
     detail.innerHTML = `
       <article class="meat-detail-shell">
@@ -398,6 +449,12 @@ const MeatTesterView = {
             ${this.humanButton('REVIEWING', 'Still reviewing', judgment)}
           </div>
         </section>
+
+        <nav class="meat-detail-navigation" aria-label="Ruling navigation">
+          <button data-detail-nav="overview">↑ Symbol overview</button>
+          <button data-detail-nav="previous"${detailNavigation.previous ? ` data-run="${this.escapeAttr(detailNavigation.previous.runId)}" data-anchor="${this.escapeAttr(detailNavigation.previous.anchor)}"` : ' disabled'}>← Previous</button>
+          <button data-detail-nav="next"${detailNavigation.next ? ` data-run="${this.escapeAttr(detailNavigation.next.runId)}" data-anchor="${this.escapeAttr(detailNavigation.next.anchor)}"` : ' disabled'}>Next →</button>
+        </nav>
       </article>
     `;
 
@@ -414,8 +471,30 @@ const MeatTesterView = {
         this.renderDetail(run, entry);
       });
     });
+    detail.querySelector('[data-detail-nav="overview"]').addEventListener('click', () => {
+      const overview = this._container.querySelector('#meat-symbol-overview');
+      overview?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      overview?.focus({ preventScroll: true });
+    });
+    detail.querySelectorAll('[data-detail-nav="previous"], [data-detail-nav="next"]').forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.disabled) return;
+        this.selectEntry(button.dataset.run, button.dataset.anchor, false);
+        this._container.querySelector('#meat-detail')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
     this.renderStagePanel(run, entry);
     this.preloadVerseTooltips();
+  },
+
+  detailNavigation(runId, anchor) {
+    const entries = this.filteredEntries();
+    const index = entries.findIndex(entry => entry.runId === runId && entry.anchor === anchor);
+    if (index < 0) return { previous: null, next: null };
+    return {
+      previous: index > 0 ? entries[index - 1] : null,
+      next: index < entries.length - 1 ? entries[index + 1] : null,
+    };
   },
 
   renderCitationEvidence(citations) {

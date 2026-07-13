@@ -301,6 +301,119 @@
   object-fit: cover;
 }
 
+.meat-symbol-overview {
+  margin-bottom: 18px;
+  padding: 20px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  outline: none;
+}
+
+.meat-symbol-overview:focus-visible {
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.meat-symbol-overview-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.meat-symbol-overview-heading span {
+  color: var(--accent-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.meat-symbol-overview-heading h3 {
+  margin: 3px 0 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.55rem;
+}
+
+.meat-symbol-overview-heading p {
+  margin: 0;
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
+}
+
+.meat-symbol-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  margin: 15px 0 18px;
+}
+
+.meat-symbol-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 0.73rem;
+}
+
+.meat-symbol-legend-item i {
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.meat-symbol-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 7px 15px;
+  padding: 18px;
+  background: var(--surface-sunken);
+  border-radius: 9px;
+}
+
+.meat-symbol-token {
+  padding: 2px 0;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+.meat-symbol-token:hover,
+.meat-symbol-token:focus-visible,
+.meat-symbol-token.is-selected {
+  border-bottom-color: currentColor;
+  outline: none;
+}
+
+.meat-symbol-token.is-selected {
+  font-weight: 800;
+}
+
+.meat-symbol-token.verdict-divergent-persuaded,
+.meat-symbol-legend-item.verdict-divergent-persuaded { color: var(--color-success); }
+.meat-symbol-token.verdict-divergent-unpersuaded,
+.meat-symbol-token.verdict-divergent-disputed,
+.meat-symbol-token.verdict-disputed,
+.meat-symbol-legend-item.verdict-divergent-unpersuaded,
+.meat-symbol-legend-item.verdict-disputed { color: var(--color-warning); }
+.meat-symbol-token.verdict-refined,
+.meat-symbol-legend-item.verdict-refined { color: var(--color-info); }
+.meat-symbol-token.verdict-match,
+.meat-symbol-legend-item.verdict-match { color: var(--accent-gold); }
+.meat-symbol-token.verdict-novel,
+.meat-symbol-legend-item.verdict-novel { color: var(--color-purple); }
+.meat-symbol-token.verdict-divergent-pending,
+.meat-symbol-token.verdict-pending,
+.meat-symbol-legend-item.verdict-divergent-pending { color: var(--text-tertiary); }
+
 .meat-dashboard-controls {
   display: grid;
   grid-template-columns: 165px 220px 175px minmax(240px, 1fr);
@@ -822,6 +935,38 @@
   border-color: var(--accent-gold);
 }
 
+.meat-detail-navigation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.meat-detail-navigation button {
+  min-height: 40px;
+  padding: 8px 10px;
+  color: var(--text-secondary);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.meat-detail-navigation button:hover:not(:disabled),
+.meat-detail-navigation button:focus-visible {
+  color: var(--text-primary);
+  border-color: var(--border-accent);
+  outline: none;
+}
+
+.meat-detail-navigation button:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
 .meat-closing {
   max-width: 780px;
   margin: 80px auto 0;
@@ -1045,6 +1190,16 @@
     flex-direction: column;
   }
 
+  .meat-symbol-overview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .meat-symbol-cloud {
+    justify-content: flex-start;
+  }
+
   .meat-legacy-scope {
     flex-direction: column;
   }
@@ -1064,5 +1219,9 @@
 
   .meat-human-choice {
     flex: 1 1 100%;
+  }
+
+  .meat-detail-navigation {
+    grid-template-columns: 1fr;
   }
 }
