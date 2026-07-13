@@ -122,3 +122,14 @@ carry different theology:
 The lean: the blood moon carries Psalm 89:44 for the cover — judgment strikes
 the true configuration (full, facing, faithful) and its glory ceases under
 the shadow; the dark conjunction remains the counterfeit's flag.
+
+## Addendum 4 (author): the two mirrors are one — the Word made flesh
+
+The law-mirror of James 1:23-25 (shows a man his natural face; the glass is
+"the perfect law of liberty") and the glory-mirror do not collide — they are
+one surface, because the moon is symbolic of Messiah, the Word made flesh.
+2 Corinthians 3:18 (katoptrizomai, G2734) states the union: "beholding as in
+a glass the glory of the Lord," we are "changed into the same image" — one
+mirror, the Word, gives back both the man's face and the Lord's glory, and
+the looking transforms the one into the other. John 1:14 closes it: the Word
+made flesh, "and we beheld his glory."
