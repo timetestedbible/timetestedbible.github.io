@@ -527,8 +527,19 @@ const URLRouter = {
         result.ui.timelineSearch = searchParams.get('search');
       } else if (result.content.view === 'reader') {
         result.ui.searchQuery = searchParams.get('search');
+      } else if (result.content.view === 'meat-tester') {
+        result.content.params.search = searchParams.get('search');
       }
       // For other views, ignore 'search' param
+    }
+    if (result.content.view === 'meat-tester') {
+      if (searchParams.get('term')) result.content.params.term = searchParams.get('term');
+      if (searchParams.get('run')) result.content.params.run = searchParams.get('run');
+      if (searchParams.get('mode')) result.content.params.mode = searchParams.get('mode');
+      if (searchParams.get('ruling')) result.content.params.ruling = searchParams.get('ruling');
+      if (searchParams.get('sort')) result.content.params.sort = searchParams.get('sort');
+      if (searchParams.get('stage')) result.content.params.stage = searchParams.get('stage');
+      if (searchParams.get('judge')) result.content.params.judge = searchParams.get('judge');
     }
     if (searchParams.get('person')) {
       result.ui.personId = searchParams.get('person');
@@ -1051,6 +1062,17 @@ const URLRouter = {
       if (ui.timelineCenterYear !== null && ui.timelineCenterYear !== undefined) {
         params.set('year', ui.timelineCenterYear);
       }
+    }
+    if (content.view === 'meat-tester') {
+      const meat = content.params || {};
+      if (meat.term) params.set('term', meat.term);
+      if (meat.run) params.set('run', meat.run);
+      if (meat.mode && meat.mode !== 'current') params.set('mode', meat.mode);
+      if (meat.ruling && meat.ruling !== 'ALL') params.set('ruling', meat.ruling);
+      if (meat.sort && meat.sort !== 'TERM') params.set('sort', meat.sort);
+      if (meat.search) params.set('search', meat.search);
+      if (meat.stage) params.set('stage', meat.stage);
+      if (meat.judge) params.set('judge', meat.judge);
     }
     
     const queryString = params.toString();

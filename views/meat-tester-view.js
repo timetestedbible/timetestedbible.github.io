@@ -17,12 +17,20 @@ const MeatTesterView = {
   _activeStage: 'persuasion',
   _auditCache: new Map(),
   _loadToken: 0,
+  _routeParams: {},
+  _routeKey: '',
 
   PROVIDER_ORDER: ['openai', 'anthropic', 'gemini', 'xai'],
 
-  render(_state, _derived, container) {
+  // Navigation state is canonical in content.params. Render from the route;
+  // controls dispatch route changes, and ordinary anchors use the app router.
+  render(state, _derived, container) {
     this._container = container;
-    if (container.querySelector('.meat-tester-view')) return;
+    this._routeParams = this.normalizeRouteParams(state?.content?.params || {});
+    if (container.querySelector('.meat-tester-view')) {
+      if (this._data) this.applyRouteState(this._routeParams);
+      return;
+    }
 
     container.innerHTML = `
       <div class="meat-tester-view">
@@ -183,6 +191,7 @@ const MeatTesterView = {
 
   cleanup() {
     this._loadToken += 1;
+    this._routeKey = '';
     this._container = null;
   },
 
@@ -196,9 +205,7 @@ const MeatTesterView = {
       }
       if (token !== this._loadToken || !this._container) return;
       this.bindDashboard();
-      this.renderDashboard();
-      const featured = this._data.currentEntries.find(entry => entry.anchor === 'ship') || this._data.currentEntries[0];
-      if (featured) this.selectEntry(featured.runId, featured.anchor, false);
+      this.applyRouteState(this._routeParams, true);
     } catch (error) {
       const loading = this._container?.querySelector('#meat-dashboard-loading');
       if (loading) loading.innerHTML = `<strong>The experiment archive could not be loaded.</strong><span>${this.escapeHtml(error.message)}</span>`;
@@ -212,23 +219,124 @@ const MeatTesterView = {
     dashboard.hidden = false;
 
     this._container.querySelector('#meat-mode-filter').addEventListener('change', event => {
-      this._mode = event.target.value;
-      this._selected = null;
-      this.renderDashboard();
-      this._container.querySelector('#meat-detail').innerHTML = '<div class="meat-detail-empty">Choose a conclusion to inspect its evidence trail.</div>';
+      this.dispatchRoute({ mode: event.target.value, term: null, run: null, stage: null, judge: null });
     });
     this._container.querySelector('#meat-verdict-filter').addEventListener('change', event => {
-      this._verdict = event.target.value;
-      this.renderResultList();
+      this.dispatchRoute({ ruling: event.target.value });
     });
     this._container.querySelector('#meat-sort').addEventListener('change', event => {
-      this._sort = event.target.value;
-      this.renderResultList();
+      this.dispatchRoute({ sort: event.target.value });
     });
     this._container.querySelector('#meat-search').addEventListener('input', event => {
-      this._query = event.target.value.trim().toLowerCase();
-      this.renderResultList();
+      this.dispatchRoute({ search: event.target.value.trim() }, true);
     });
+  },
+
+  normalizeRouteParams(params) {
+    const mode = params.mode === 'history' ? 'history' : 'current';
+    const requestedRuling = String(params.ruling || 'ALL').toUpperCase();
+    const ruling = [
+      'ALL',
+      'CONFLICT',
+      'DIVERGENT_PERSUADED',
+      'DIVERGENT_UNPERSUADED',
+      'DIVERGENT_PENDING',
+      'REFINED',
+      'MATCH',
+      'NOVEL',
+      'DISPUTED',
+    ].includes(requestedRuling)
+      ? requestedRuling
+      : 'ALL';
+    const sort = params.sort === 'RULING' ? 'RULING' : 'TERM';
+    const stage = ['consensus', 'relationship', 'persuasion'].includes(params.stage) ? params.stage : '';
+    const judge = this.PROVIDER_ORDER.includes(params.judge) ? params.judge : '';
+    return {
+      mode,
+      ruling,
+      sort,
+      search: String(params.search || ''),
+      term: String(params.term || ''),
+      run: String(params.run || ''),
+      stage,
+      judge,
+    };
+  },
+
+  applyRouteState(params, force = false) {
+    const normalized = this.normalizeRouteParams(params);
+    const routeKey = JSON.stringify(normalized);
+    if (!force && routeKey === this._routeKey) return;
+    this._routeKey = routeKey;
+    this._routeParams = normalized;
+    this._mode = normalized.mode;
+    this._verdict = normalized.ruling;
+    this._sort = normalized.sort;
+    this._query = normalized.search.toLowerCase();
+
+    this._container.querySelector('#meat-mode-filter').value = this._mode;
+    this._container.querySelector('#meat-verdict-filter').value = this._verdict;
+    this._container.querySelector('#meat-sort').value = this._sort;
+    this._container.querySelector('#meat-search').value = normalized.search;
+
+    const target = this.resolveRouteEntry(normalized);
+    this._selected = target ? { runId: target.run.id, anchor: target.entry.anchor } : null;
+    this._activeStage = normalized.stage || (target?.entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship');
+    this.renderDashboard();
+
+    const detail = this._container.querySelector('#meat-detail');
+    if (!target) {
+      detail.innerHTML = '<div class="meat-detail-empty">Choose a conclusion to inspect its evidence trail.</div>';
+      return;
+    }
+    this.renderDetail(target.run, target.entry);
+    if (normalized.judge) this.openAudit(target.run, target.entry, normalized.judge);
+  },
+
+  resolveRouteEntry(params) {
+    if (!params.term) return null;
+    let run = params.run ? this._data.runs.find(candidate => candidate.id === params.run) : null;
+    let entry = run?.entries.find(candidate => candidate.anchor === params.term);
+    if (!entry) {
+      const current = this._data.currentEntries.find(candidate => candidate.anchor === params.term);
+      if (!current) return null;
+      run = this._data.runs.find(candidate => candidate.id === current.runId);
+      entry = run?.entries.find(candidate => candidate.anchor === params.term);
+    }
+    return run && entry ? { run, entry } : null;
+  },
+
+  routeParams(overrides = {}) {
+    const merged = { ...this._routeParams, ...overrides };
+    Object.keys(merged).forEach(key => {
+      if (merged[key] === null || merged[key] === undefined || merged[key] === '') delete merged[key];
+    });
+    return this.normalizeRouteParams(merged);
+  },
+
+  dispatchRoute(overrides = {}, replace = false) {
+    if (typeof AppStore === 'undefined') return;
+    AppStore.dispatch({
+      type: 'SET_VIEW',
+      view: 'meat-tester',
+      params: this.routeParams(overrides),
+      replace,
+    });
+  },
+
+  meatHref(overrides = {}) {
+    const route = this.routeParams(overrides);
+    const query = new URLSearchParams();
+    if (route.term) query.set('term', route.term);
+    if (route.run) query.set('run', route.run);
+    if (route.mode !== 'current') query.set('mode', route.mode);
+    if (route.ruling !== 'ALL') query.set('ruling', route.ruling);
+    if (route.sort !== 'TERM') query.set('sort', route.sort);
+    if (route.search) query.set('search', route.search);
+    if (route.stage) query.set('stage', route.stage);
+    if (route.judge) query.set('judge', route.judge);
+    const queryString = query.toString();
+    return `/meat-tester${queryString ? `?${queryString}` : ''}`;
   },
 
   renderDashboard() {
@@ -264,27 +372,13 @@ const MeatTesterView = {
     if (!cloud) return;
     const entries = [...this._data.currentEntries].sort((a, b) => String(a.term || '').localeCompare(String(b.term || '')));
     cloud.innerHTML = entries.map(entry => `
-      <button class="meat-symbol-token ${this.verdictClass(entry.finalVerdict)}${this._selected?.anchor === entry.anchor ? ' is-selected' : ''}"
-              data-run="${this.escapeAttr(entry.runId)}" data-anchor="${this.escapeAttr(entry.anchor)}"
+      <a class="meat-symbol-token ${this.verdictClass(entry.finalVerdict)}${this._selected?.anchor === entry.anchor ? ' is-selected' : ''}"
+              href="${this.escapeAttr(this.meatHref({ mode: 'current', term: entry.anchor, run: null, stage: null, judge: null }))}"
               title="${this.escapeAttr(`${entry.term}: ${this.verdictLabel(entry.finalVerdict)}`)}"
-              aria-pressed="${this._selected?.anchor === entry.anchor}">
+              ${this._selected?.anchor === entry.anchor ? 'aria-current="page"' : ''}>
         ${this.escapeHtml(entry.term)}
-      </button>
+      </a>
     `).join('');
-    cloud.querySelectorAll('.meat-symbol-token').forEach(button => {
-      button.addEventListener('click', () => this.selectCloudEntry(button.dataset.run, button.dataset.anchor));
-    });
-  },
-
-  selectCloudEntry(runId, anchor) {
-    this._mode = 'current';
-    this._verdict = 'ALL';
-    this._query = '';
-    this._container.querySelector('#meat-mode-filter').value = 'current';
-    this._container.querySelector('#meat-verdict-filter').value = 'ALL';
-    this._container.querySelector('#meat-search').value = '';
-    this.renderResultList();
-    this.selectEntry(runId, anchor);
   },
 
   entriesForMode() {
@@ -349,9 +443,9 @@ const MeatTesterView = {
       const selected = this._selected?.runId === entry.runId && this._selected?.anchor === entry.anchor;
       const development = this._mode === 'history' && entry.reportable === false;
       return `
-        <button class="meat-result-card ${this.verdictClass(entry.finalVerdict)}${selected ? ' is-selected' : ''}"
-                data-run="${this.escapeAttr(entry.runId)}" data-anchor="${this.escapeAttr(entry.anchor)}"
-                aria-pressed="${selected}">
+        <a class="meat-result-card ${this.verdictClass(entry.finalVerdict)}${selected ? ' is-selected' : ''}"
+                href="${this.escapeAttr(this.meatHref({ term: entry.anchor, run: this._mode === 'history' ? entry.runId : null, stage: null, judge: null }))}"
+                ${selected ? 'aria-current="page"' : ''}>
           <span class="meat-result-card-top">
             <span class="meat-verdict-badge">${this.escapeHtml(this.verdictLabel(entry.finalVerdict))}</span>
             ${development ? '<span class="meat-development-badge">Development protocol</span>' : ''}
@@ -362,28 +456,9 @@ const MeatTesterView = {
             ${entry.judges.map(judge => this.judgeDot(judge, entry)).join('')}
           </span>
           ${this._mode === 'history' ? `<span class="meat-run-label">${this.escapeHtml(entry.runId)} · protocol ${entry.protocolVersion || 'development'}</span>` : ''}
-        </button>
+        </a>
       `;
     }).join('');
-
-    list.querySelectorAll('.meat-result-card').forEach(button => {
-      button.addEventListener('click', () => this.selectEntry(button.dataset.run, button.dataset.anchor));
-    });
-  },
-
-  selectEntry(runId, anchor, scroll = true) {
-    const run = this._data.runs.find(candidate => candidate.id === runId);
-    const entry = run?.entries.find(candidate => candidate.anchor === anchor);
-    if (!run || !entry) return;
-    this._loadToken += 1;
-    this._selected = { runId, anchor };
-    this._activeStage = entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship';
-    this.renderSymbolCloud();
-    this.renderResultList();
-    this.renderDetail(run, entry);
-    if (scroll && window.innerWidth < 980) {
-      this._container.querySelector('#meat-detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   },
 
   renderDetail(run, entry) {
@@ -451,36 +526,24 @@ const MeatTesterView = {
         </section>
 
         <nav class="meat-detail-navigation" aria-label="Ruling navigation">
-          <button data-detail-nav="overview">↑ Symbol overview</button>
-          <button data-detail-nav="previous"${detailNavigation.previous ? ` data-run="${this.escapeAttr(detailNavigation.previous.runId)}" data-anchor="${this.escapeAttr(detailNavigation.previous.anchor)}"` : ' disabled'}>← Previous</button>
-          <button data-detail-nav="next"${detailNavigation.next ? ` data-run="${this.escapeAttr(detailNavigation.next.runId)}" data-anchor="${this.escapeAttr(detailNavigation.next.anchor)}"` : ' disabled'}>Next →</button>
+          <a href="${this.escapeAttr(this.meatHref({ term: null, run: null, stage: null, judge: null }))}">↑ Symbol overview</a>
+          ${detailNavigation.previous
+            ? `<a href="${this.escapeAttr(this.meatHref({ term: detailNavigation.previous.anchor, run: this._mode === 'history' ? detailNavigation.previous.runId : null, stage: null, judge: null }))}">← Previous</a>`
+            : '<span aria-disabled="true">← Previous</span>'}
+          ${detailNavigation.next
+            ? `<a href="${this.escapeAttr(this.meatHref({ term: detailNavigation.next.anchor, run: this._mode === 'history' ? detailNavigation.next.runId : null, stage: null, judge: null }))}">Next →</a>`
+            : '<span aria-disabled="true">Next →</span>'}
         </nav>
       </article>
     `;
 
-    detail.querySelector('#meat-run-select').addEventListener('change', event => this.selectEntry(event.target.value, entry.anchor, false));
-    detail.querySelectorAll('.meat-stage-tab').forEach(button => {
-      button.addEventListener('click', () => {
-        this._activeStage = button.dataset.stage;
-        this.renderDetail(run, entry);
-      });
+    detail.querySelector('#meat-run-select').addEventListener('change', event => {
+      this.dispatchRoute({ term: entry.anchor, run: event.target.value, judge: null });
     });
     detail.querySelectorAll('.meat-human-choice').forEach(button => {
       button.addEventListener('click', () => {
         this.setHumanJudgment(run.id, entry.anchor, button.dataset.judgment);
         this.renderDetail(run, entry);
-      });
-    });
-    detail.querySelector('[data-detail-nav="overview"]').addEventListener('click', () => {
-      const overview = this._container.querySelector('#meat-symbol-overview');
-      overview?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      overview?.focus({ preventScroll: true });
-    });
-    detail.querySelectorAll('[data-detail-nav="previous"], [data-detail-nav="next"]').forEach(button => {
-      button.addEventListener('click', () => {
-        if (button.disabled) return;
-        this.selectEntry(button.dataset.run, button.dataset.anchor, false);
-        this._container.querySelector('#meat-detail')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
     this.renderStagePanel(run, entry);
@@ -574,7 +637,7 @@ const MeatTesterView = {
   },
 
   stageButton(stage, label) {
-    return `<button class="meat-stage-tab${this._activeStage === stage ? ' is-active' : ''}" data-stage="${stage}" aria-pressed="${this._activeStage === stage}">${label}</button>`;
+    return `<a href="${this.escapeAttr(this.meatHref({ stage, judge: null }))}" class="meat-stage-tab${this._activeStage === stage ? ' is-active' : ''}"${this._activeStage === stage ? ' aria-current="page"' : ''}>${label}</a>`;
   },
 
   renderStagePanel(run, entry) {
@@ -594,9 +657,6 @@ const MeatTesterView = {
         <div class="meat-audit-empty">Choose a judge above to inspect its exact prompt, reasoning summary, and raw response.</div>
       </div>
     `;
-    panel.querySelectorAll('.meat-review-judge').forEach(button => {
-      button.addEventListener('click', () => this.openAudit(run, entry, button.dataset.provider));
-    });
   },
 
   judgeCard(judge, entry) {
@@ -608,9 +668,9 @@ const MeatTesterView = {
         <div class="meat-judge-heading"><strong>${this.escapeHtml(judge.label)}</strong><span>${this.escapeHtml(judge.model)}</span></div>
         <div class="meat-judge-verdict">${this.escapeHtml(this.stageVerdictLabel(verdict, this._activeStage))}${this.escapeHtml(scope)}</div>
         ${this._activeStage === 'consensus' && judge.consensusMeaning ? `<p>${this.escapeHtml(judge.consensusMeaning)}</p>` : ''}
-        <button class="meat-review-judge" data-provider="${this.escapeAttr(judge.id)}"${hasAudit ? '' : ' disabled'}>
-          ${hasAudit ? 'Inspect prompt & response' : 'No saved response'}
-        </button>
+        ${hasAudit
+          ? `<a class="meat-review-judge" href="${this.escapeAttr(this.meatHref({ term: entry.anchor, run: this._selected?.runId || null, stage: this._activeStage, judge: judge.id }))}">Inspect prompt & response</a>`
+          : '<span class="meat-review-judge is-disabled">No saved response</span>'}
       </article>
     `;
   },

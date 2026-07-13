@@ -383,6 +383,7 @@
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1rem;
   line-height: 1.25;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -487,6 +488,7 @@
   padding: 16px;
   color: var(--text-primary);
   text-align: left;
+  text-decoration: none;
   background: var(--surface-raised);
   border: 1px solid var(--border-subtle);
   border-left-width: 4px;
@@ -693,8 +695,11 @@
 }
 
 .meat-stage-tab {
+  display: block;
   padding: 10px 9px;
   color: var(--text-secondary);
+  text-align: center;
+  text-decoration: none;
   background: transparent;
   border: 0;
   border-radius: 6px;
@@ -764,6 +769,7 @@
 }
 
 .meat-review-judge {
+  display: inline-block;
   margin-top: 12px;
   padding: 7px 10px;
   color: var(--accent-primary);
@@ -773,13 +779,14 @@
   cursor: pointer;
   font-size: 0.77rem;
   font-weight: 700;
+  text-decoration: none;
 }
 
-.meat-review-judge:hover:not(:disabled) {
+.meat-review-judge:hover:not(.is-disabled) {
   background: var(--accent-primary-subtle);
 }
 
-.meat-review-judge:disabled {
+.meat-review-judge.is-disabled {
   color: var(--text-disabled);
   border-color: var(--border-subtle);
   cursor: default;
@@ -944,10 +951,15 @@
   border-top: 1px solid var(--border-subtle);
 }
 
-.meat-detail-navigation button {
+.meat-detail-navigation a,
+.meat-detail-navigation span {
+  display: grid;
+  place-items: center;
   min-height: 40px;
   padding: 8px 10px;
   color: var(--text-secondary);
+  text-align: center;
+  text-decoration: none;
   background: var(--surface-sunken);
   border: 1px solid var(--border-subtle);
   border-radius: 7px;
@@ -955,14 +967,14 @@
   cursor: pointer;
 }
 
-.meat-detail-navigation button:hover:not(:disabled),
-.meat-detail-navigation button:focus-visible {
+.meat-detail-navigation a:hover,
+.meat-detail-navigation a:focus-visible {
   color: var(--text-primary);
   border-color: var(--border-accent);
   outline: none;
 }
 
-.meat-detail-navigation button:disabled {
+.meat-detail-navigation span[aria-disabled="true"] {
   opacity: 0.38;
   cursor: default;
 }
