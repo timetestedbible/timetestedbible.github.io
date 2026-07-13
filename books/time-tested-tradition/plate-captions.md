@@ -7,13 +7,15 @@ citation beneath at reduced size. Same compositor pipeline as MEAT
 digital-only chapters (19x, 20, 21, 22), Scripture Index, and Bibliography carry
 no plates; About the Author carries the unplaqued portrait.
 
+<!-- AUTHOR-SET (2026-07-13 — do not overwrite): 05-day-lost-at-sea -->
+
 | stem | inscription | citation |
 |------|-------------|----------|
 | 01-searching-king | A KING SEARCHES OUT THE MATTER | PROVERBS 25:2 |
 | 02-inherited-scrolls | OUR FATHERS HAVE INHERITED LIES | JEREMIAH 16:19 |
 | 03-map-and-terrain | THE MAP TESTED AGAINST THE LAND | 1 THESSALONIANS 5:21 |
 | 04-before-the-council | OBEY GOD RATHER THAN MEN | ACTS 5:29 |
-| 05-day-lost-at-sea | THE DAY LOST SAILING WEST | PIGAFETTA, 1522 |
+| 05-day-lost-at-sea | COMPARING SHIP LOG TO CALENDAR | PIGAFETTA, 1522 |
 | 06-bridegroom-dawn | THE SUN COMES FORTH AS A BRIDEGROOM | PSALM 19:5 |
 | 07-watchman-full-moon | THE FULL MOON KEEPS THE FEAST | PSALM 81:3 |
 | 07x-lucifer-moon | (reuse MEAT plate 30-lucifer-moon with its caption) | ISAIAH 14:13 |
