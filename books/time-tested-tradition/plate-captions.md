@@ -14,6 +14,7 @@ no plates; About the Author carries the unplaqued portrait.
 | 01-searching-king | A KING SEARCHES OUT THE MATTER | PROVERBS 25:2 |
 | 02-inherited-scrolls | OUR FATHERS HAVE INHERITED LIES | JEREMIAH 16:19 |
 | 03-map-and-terrain | THE MAP TESTED AGAINST THE LAND | 1 THESSALONIANS 5:21 |
+| 03x-joseph-dream | THE SUN, THE MOON, AND ELEVEN STARS | GENESIS 37:9 |
 | 04-before-the-council | OBEY GOD RATHER THAN MEN | ACTS 5:29 |
 | 05-day-lost-at-sea | COMPARING SHIP LOG TO CALENDAR | PIGAFETTA, 1522 |
 | 06-bridegroom-dawn | THE SUN COMES FORTH AS A BRIDEGROOM | PSALM 19:5 |
@@ -28,7 +29,7 @@ no plates; About the Author carries the unplaqued portrait.
 | 14-three-nights | THREE DAYS AND THREE NIGHTS | MATTHEW 12:40 |
 | 15-backs-to-the-temple | BACKS TO THE TEMPLE, FACES EASTWARD | EZEKIEL 8:16 |
 | 15x1-two-reckonings | TWO RECKONINGS OF ONE REIGN | JOSEPHUS, ANTIQUITIES |
-| 15x2-crowned-in-rome | CROWNED IN ROME, PROVEN AT ACTIUM | JOSEPHUS, ANTIQUITIES 14.14 |
+| 15x2-crowned-in-rome | CROWNED KING OF JUDEA IN ROME | JOSEPHUS, ANTIQUITIES 14.14 |
 | 15x4-steadfast-heavens | THE ORDINANCES OF THE MOON AND STARS | JEREMIAH 31:35 |
 | 16-thief-beside-him | REMEMBER ME IN YOUR KINGDOM | LUKE 23:42 |
 | 17-taught-at-the-door | TEACH THEM DILIGENTLY UNTO THY CHILDREN | DEUTERONOMY 6:7 |

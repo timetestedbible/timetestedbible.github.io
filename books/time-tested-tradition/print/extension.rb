@@ -1080,8 +1080,31 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # chapter would have opened directly after a verso, the plate costs two
   # pages (a true-blank recto spacer + the plate verso).
   CHAPTER_PLATES = {
+    'introduction' => 'images/print/01-searching-king.jpg',
+    'inherited-lies' => 'images/print/02-inherited-scrolls.jpg',
+    'principles-of-evaluation' => 'images/print/03-map-and-terrain.jpg',
+    'sun-moon-and-stars' => 'images/print/03x-joseph-dream.jpg',
+    'alleged-authority-of-sanhedrin' => 'images/print/04-before-the-council.jpg',
     'where-does-the-day-start' => 'images/print/05-day-lost-at-sea.jpg',
+    'when-does-the-day-start' => 'images/print/06-bridegroom-dawn.jpg',
     'when-does-the-month-start' => 'images/print/07-watchman-full-moon.jpg',
+    'lucifers-declared-plan' => 'images/print/07x-lucifer-moon.jpg',
+    'when-does-the-year-start' => 'images/print/08-abib-sheaf.jpg',
+    'how-to-observe-the-signs' => 'images/print/09-watchman-tower.jpg',
+    'when-is-the-sabbath' => 'images/print/10-sabbath-quarters.jpg',
+    'the-day-of-saturn' => 'images/print/11-star-of-saturn.jpg',
+    '32-ad-resurrection' => 'images/print/12-darkness-at-noon.jpg',
+    'herod-the-great' => 'images/print/13-herods-eclipse.jpg',
+    'passion-week' => 'images/print/14-three-nights.jpg',
+    'solar-only-calendars' => 'images/print/15-backs-to-the-temple.jpg',
+    'herod-regal-vs-defacto' => 'images/print/15x1-two-reckonings.jpg',
+    'herods-appointment-and-battle-of-actium' => 'images/print/15x2-crowned-in-rome.jpg',
+    'stability-of-astronomy' => 'images/print/15x4-steadfast-heavens.jpg',
+    'the-path-to-salvation' => 'images/print/16-thief-beside-him.jpg',
+    'commands-to-follow' => 'images/print/17-taught-at-the-door.jpg',
+    'appointed-times' => 'images/print/18-booths-full-moon.jpg',
+    'miscellaneous-commands' => 'images/print/19-fringes-remembered.jpg',
+    'closing-remarks' => 'images/print/23-repent-and-be-baptized.jpg',
     'about-the-author' => 'images/print/author-portrait.jpg',
   }.freeze
 
