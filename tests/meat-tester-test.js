@@ -41,6 +41,8 @@ assert(index.glossaryEntries.some(entry => entry.anchor === 'almond' && entry.te
 assert(index.glossaryEntries.some(entry => entry.anchor === 'ship' && entry.tested && entry.finalVerdict === 'DIVERGENT_PERSUADED'));
 assert(index.currentEntries.some(entry => entry.anchor === 'ship' && entry.finalVerdict === 'DIVERGENT_PERSUADED'));
 assert(index.currentEntries.some(entry => entry.anchor === 'heart' && entry.judges.length === 4));
+assert(index.currentEntries.some(entry => entry.anchor === 'lamb' && entry.term === 'The Lamb' && entry.frozenTerm === 'Lamb'));
+assert(index.glossaryEntries.some(entry => entry.anchor === 'lamb' && entry.term === 'The Lamb'));
 
 MeatTesterView._data = index;
 const untestedTarget = MeatTesterView.resolveRouteEntry({ term: 'anointing' });
