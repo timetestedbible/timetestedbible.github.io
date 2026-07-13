@@ -220,6 +220,10 @@ running-content:
 header:
   height: 0.6in
   margin: [0.2in, inherit, 0, inherit]   # push header down from the trim edge (BookBaby 0.5in safety)
+  # Numbered chapters present themselves as "16 · Title" (numbered_title, see
+  # extension.rb) for the Contents and the PDF outline; the running head keeps
+  # the clean title alone.
+  title-style: basic
   recto:
     right:
       content: '{chapter-title}'

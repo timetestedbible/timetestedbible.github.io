@@ -101,9 +101,15 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # quoted: the citation is a block-quote attribution — the verse is quoted in
   # full on that page, so its locator prints BOLD in the index. Bold wins when
   # the same verse is also cited inline on the same page.
+  # Each page slot stores [quoted, chapter-number-or-nil]: the chapter number
+  # is captured at scan time (@sx_current_ch — the chapter being rendered, set
+  # in convert_section from $chapter_numbers) and drives the index's "(ch N)"
+  # locator groups. A page belongs to exactly one chapter (chapters open on a
+  # fresh page), so the first-seen chapter for a page stands.
   def sx_record book, chap, vspec, page, quoted
     pages = ((@sx_catalog[book] ||= {})[%(#{chap}:#{vspec})] ||= {})
-    pages[page] = (pages[page] || false) | quoted
+    prev = pages[page]
+    pages[page] = [(prev ? prev[0] : false) | quoted, prev ? prev[1] : @sx_current_ch]
   end
 
   # Scan a block's source text for citations and record them against the page
@@ -261,8 +267,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   # Catalog (physical pages) -> canonically ordered entries with printed folios:
-  # [[book, [["1:16", [[208, false], [214, true]]], ...]], ...] — each locator a
-  # [folio, quoted] pair (quoted = block-quoted in full there, printed bold).
+  # [[book, [["1:16", [[208, [false, 5]], [214, [true, 29]]]], ...]], ...] — each
+  # locator a [folio, [quoted, ch]] pair (quoted = block-quoted in full there,
+  # printed bold; ch = printed chapter number, nil in unnumbered chapters).
   # The folio offset comes from the same source the running footer uses
   # (page-numbering start-at after-toc); citations inked before folio 1
   # (front-matter colophon pages) are dropped.
@@ -273,10 +280,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       next unless (verses = @sx_catalog[book])
       entries = verses.filter_map do |vd, pages|
         locs = {}
-        pages.each do |p, q|
+        pages.each do |p, (q, ch)|
           f = p - offset
           next if f < 1
-          locs[f] = (locs[f] || false) | q
+          prev = locs[f]
+          locs[f] = [(prev ? prev[0] : false) | q, prev ? prev[1] : ch]
         end
         next if locs.empty?
         next unless vd =~ /\A(\d+):(\d+)(?:-(?:(\d+):)?(\d+))?/
@@ -312,6 +320,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     ((h || 24) + spacing).ceil
   end
   EPIGRAPH_INDENT = 40   # left/right margin on chapter epigraphs (keeps lines short, no hyphenation)
+  CHNUM_BAND      = 26   # band the CHAPTER N kicker occupies above the title (10.5pt heading line + gap) — the mid-page sink rises by this so the title's optical position is unchanged
   HOW_TO_USE_SINK = 82   # foot-alignment sink for "How to Use This Book" — ink slack below the last line measured ~95pt, but the break test needs a full line height, so the usable slack is less (88 spilled one line). Retune if that chapter's text changes.
 
   # Style roled cross-references (the sym: glossary macro). asciidoctor-pdf's xref
@@ -347,7 +356,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     @fn_queue = {}        # page_number => [footnote, ...]
     @fn_seen = {}         # footnote index => already queued
     @fn_flushing = false
-    @sx_catalog = {}      # book => { "chap:verse(-verse)" => { physical page => quoted? } }
+    @sx_catalog = {}      # book => { "chap:verse(-verse)" => { physical page => [quoted?, ch] } }
+    @sx_current_ch = nil  # printed number of the chapter being rendered (nil = unnumbered)
     @sx_folios_out = {}   # dest anchor => chapter start folio, collected THIS pass
   end
 
@@ -400,13 +410,15 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   # Each reference maps to an array of locator objects: {"p" => printed folio,
-  # "q" => true when the verse is quoted in full (block-quoted) on that page}.
+  # "q" => true when the verse is quoted in full (block-quoted) on that page,
+  # "ch" => the printed chapter number the page falls in (null when the page
+  # belongs to an unnumbered chapter or insert)}.
   def write_scripture_index_json
     entries = sx_folio_entries
     return if entries.empty?
     data = {}
     entries.each do |book, verses|
-      verses.each { |vd, locs| data[%(#{book} #{vd})] = locs.map { |f, q| { 'p' => f, 'q' => q } } }
+      verses.each { |vd, locs| data[%(#{book} #{vd})] = locs.map { |f, (q, ch)| { 'p' => f, 'q' => q, 'ch' => ch } } }
     end
     path = ::File.expand_path '../scripture-index.json', __dir__
     ::File.write path, (::JSON.pretty_generate data)
@@ -635,6 +647,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       @pending_part = node
       return traverse(node)
     end
+    # Scripture-index chapter context: every citation recorded while this
+    # chapter renders carries its printed number (nil for unnumbered chapters
+    # and inserts) — see sx_record. Level-2 subheadings pass through here too
+    # and must not clear it, hence the level guard.
+    @sx_current_ch = ((defined?($chapter_numbers) && $chapter_numbers) ? $chapter_numbers[node.id] : nil) if node.level == 1
     # Back-matter density (author's ruling, 2026-07-05): the glossary packs to
     # reference-apparatus convention — one point below body with tighter
     # leading — while every other chapter keeps the reading spec.
@@ -717,7 +734,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     theme_font :base do
       ink_prose %(<em>#{sx_stats_line entries}</em>),
         align: :left, size: SX_HEAD_SIZE, margin_bottom: 3, hyphenate: false
-      ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full.</em>',
+      ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full; (ch N) names the chapter the pages fall in.</em>',
         align: :left, size: SX_HEAD_SIZE, margin_bottom: 10, hyphenate: false
       esc = ->(s) { s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
       end_cursor = nil
@@ -731,7 +748,24 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
             margin_top: (first ? 0 : 5), margin_bottom: 1, hyphenate: false
           verses.each do |vd, locs|
             vd_disp = (SX_ONECH_BOOKS.include? book) ? (vd.sub /\A1:/, '') : vd
-            text = %(#{vd_disp} · #{locs.map { |f, q| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '})
+            # Locators group by the chapter they fall in: consecutive pages
+            # sharing a printed chapter number take one "(ch N)" suffix —
+            # "45, 61 (ch 5); 292 (ch 29)" — while pages in unnumbered
+            # chapters/inserts keep bare numbers. Pages ascend, and chapters
+            # ascend with them, so consecutive-run grouping is exact.
+            groups = []
+            locs.each do |f, (q, ch)|
+              if (g = groups.last) && g[0] == ch
+                g[1] << [f, q]
+              else
+                groups << [ch, [[f, q]]]
+              end
+            end
+            loc_text = groups.map { |ch, fs|
+              run = fs.map { |f, q| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '
+              ch ? %(#{run} (ch #{ch})) : run
+            }.join '; '
+            text = %(#{vd_disp} · #{loc_text})
             # keep each entry whole: measure it (at turnover width — the
             # conservative side) and, when it cannot fit what remains of the
             # column, break explicitly and repeat the head as "— continued"
@@ -1170,6 +1204,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
 def ink_chapter_title node, title, opts = {}
+    # Printed chapter number ($chapter_numbers, build.rb). The section presents
+    # itself as "29 · Title" (numbered_title — see ChapterNumberTreeprocessor)
+    # so the Contents and the PDF outline carry the number; the opener strips
+    # that prefix here and draws a small CHAPTER 29 kicker above the title
+    # instead, in the part-kicker style.
+    chnum = (defined?($chapter_numbers) && $chapter_numbers) ? $chapter_numbers[node.id] : nil
+    title = title.sub(/\A#{chnum} · /, '') if chnum
     # Record this chapter's start folio under its dest anchor — the map the
     # NEXT pass uses to print ", p. N" after chapter cross-references.
     if !scratch? && node.id && @sx_folios_out && (folio = page_number - sx_folio_offset) >= 1
@@ -1214,12 +1255,42 @@ def ink_chapter_title node, title, opts = {}
       move_down HOW_TO_USE_SINK
     elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
       mid = bounds.height / 2.0
+      mid += CHNUM_BAND if chnum   # the kicker inks above the title; keep the title at mid
       move_cursor_to mid if cursor > mid
+    end
+    # The chapter-number kicker: same small centered heading treatment as the
+    # part kicker (which, when present, sits at the page top with its rule —
+    # this line lands below it, directly above the title).
+    if chnum
+      theme_font :heading do
+        ink_prose %(<font size="10.5">CHAPTER #{chnum}</font>), align: :center, margin_bottom: 10, hyphenate: false
+      end
     end
     # Chapter openers carry no running head (trade convention — the page
     # already displays its own title); the folio footer stays.
     @disable_running_content[:header].add page_number unless scratch?
     super
+  end
+end
+
+# Printed chapter numbers (author's ruling 2026-07-13: "number the books
+# fully"). Chapters whose slug maps to a number in $chapter_numbers (build.rb —
+# the integer prefix of the source filename) present themselves as
+# "29 · Title" through a numbered_title override: asciidoctor-pdf reads
+# numbered_title for both the TOC entries (dot leaders and links intact) and
+# the PDF outline bookmarks, so both carry the number with no further code.
+# The big opener title strips the prefix and draws a CHAPTER 29 kicker instead
+# (ink_chapter_title), and the running heads stay clean title-only via the
+# theme's header title-style: basic. PDF-only: the EPUB's own navigation is
+# left untouched.
+class ChapterNumberTreeprocessor < Asciidoctor::Extensions::Treeprocessor
+  def process document
+    return nil unless (document.attr 'backend') == 'pdf' && defined?($chapter_numbers) && $chapter_numbers
+    document.find_by(context: :section).each do |sect|
+      next unless sect.level == 1 && (num = $chapter_numbers[sect.id])
+      sect.define_singleton_method(:numbered_title) { |*| %(#{num} · #{title}) }
+    end
+    nil
   end
 end
 
@@ -1255,4 +1326,5 @@ end
 
 Asciidoctor::Extensions.register do
   treeprocessor QuoteCitationTreeprocessor
+  treeprocessor ChapterNumberTreeprocessor
 end

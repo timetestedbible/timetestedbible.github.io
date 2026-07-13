@@ -124,10 +124,22 @@ $ebook_image_jobs = {}
 
 front_entries = []
 main_entries  = []
+# Printed chapter numbers (author's ruling 2026-07-13: "number the books fully").
+# A chapter's number is the bare integer prefix of its source FILENAME
+# (29-sun-moon-and-stars.adoc -> 29); x-inserts (16x-, 40s-, 48w-…) have no
+# bare-integer prefix and stay unnumbered, as do the 00- openers (preface,
+# how-to-use), front matter, and the back matter (removed below). The map is
+# EDITION-AGNOSTIC: digital-only chapters keep their numbers, so the print
+# edition shows honest gaps where the web carries a chapter. extension.rb reads
+# it for the opener's CHAPTER N kicker, the numbered Contents entries, and the
+# Scripture Index's "(ch N)" locator groups.
+$chapter_numbers = {}
 chapters.each do |path|
   fm, body = split_front_matter(File.read(path))
   slug  = fm['slug'] || File.basename(path, '.adoc').sub(/^\d+[-_]/, '')
   title = fm['title'] || slug
+  num = File.basename(path)[/\A(\d+)-/, 1].to_i   # x-inserts miss the match -> 0
+  $chapter_numbers[slug] = num if num > 0 && !fm['front_matter']
   epigraph_map[slug] = fm['epigraphs'] if fm['epigraphs'].is_a?(Array) && !fm['epigraphs'].empty?
   (fm['front_matter'] ? front_entries : main_entries) << { slug: slug, title: title, body: body.strip, file: File.basename(path), edition: fm['edition'] }
 end
@@ -167,6 +179,7 @@ BACK_SLUGS = %w[bibliography further-studies about-the-author].freeze
 back_entries = main_entries.select { |c| BACK_SLUGS.include? c[:slug] }
                            .sort_by { |c| BACK_SLUGS.index c[:slug] }
 main_entries -= back_entries
+BACK_SLUGS.each { |slug| $chapter_numbers.delete slug }   # back matter is unnumbered (both 50-* files land here)
 
 # Main chapters: auto page break, TOC entry, PDF bookmark, running head.
 # A chapter whose front matter carries `edition: digital` appears only in the
@@ -195,9 +208,10 @@ main_entries.each do |c|
       # the web). For print, rewrite the macro as an inline role span on the
       # term line; the theme's `verdict` role sets the small-caps badge look.
       blk = blk.sub(/ verdict:(divergent|novel|word)\[\]/) { %(   [.verdict]##{$1.upcase}#) }
-      # see-line chapter numbers are the DIGITAL edition's numbering (the web
-      # shows them); no built book prints chapter numbers, so strip them here
-      # (print, screen, and epub all assemble from this doc).
+      # see-line chapter numbers stay stripped in the built editions even now
+      # that chapters print numbered ($chapter_numbers): the PDF appends the
+      # more useful ", p. N" after each see-link instead (extension.rb), and
+      # the epub keeps live links (print, screen, and epub all assemble here).
       blk = blk.gsub(/\[\.chnum\]#([^#]*)#/, '')
       "[.glossentry]\n--\n#{blk}\n--"
     }.join("\n\n")
