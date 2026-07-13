@@ -9,6 +9,10 @@ const index = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'mea
 assert.strictEqual(MeatTesterView.verdictLabel('DIVERGENT_PERSUADED'), 'Divergent · persuaded');
 assert.strictEqual(MeatTesterView.verdictClass('DIVERGENT_PERSUADED'), 'verdict-divergent-persuaded');
 assert.strictEqual(MeatTesterView.escapeHtml('<script>'), '&lt;script&gt;');
+const cloudRoute = MeatTesterView.normalizeRouteParams({ cloud: 'UNTESTED,BOGUS,REFINED,UNTESTED' });
+assert.strictEqual(cloudRoute.cloud, 'REFINED,UNTESTED');
+MeatTesterView._routeParams = cloudRoute;
+assert.strictEqual(MeatTesterView.cloudToggleHref('UNTESTED'), '/meat-tester?cloud=REFINED');
 
 assert.deepStrictEqual(
   MeatTesterView.extractRequestPrompt({ payload: { instructions: 'system', input: 'user' } }),

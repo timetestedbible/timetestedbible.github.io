@@ -352,8 +352,11 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 2px 0;
   color: var(--text-secondary);
   font-size: 0.73rem;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .meat-symbol-legend-item i {
@@ -361,6 +364,39 @@
   height: 8px;
   background: currentColor;
   border-radius: 50%;
+}
+
+.meat-symbol-legend-item:hover,
+.meat-symbol-legend-item:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  outline: none;
+}
+
+.meat-symbol-legend-item.is-hidden {
+  opacity: 0.38;
+  text-decoration: line-through;
+}
+
+.meat-symbol-legend-item.is-hidden i {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+.meat-symbol-legend-reset {
+  margin-left: auto;
+  padding: 2px 0;
+  color: var(--accent-primary);
+  font-size: 0.73rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.meat-symbol-legend-reset:hover,
+.meat-symbol-legend-reset:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  outline: none;
 }
 
 .meat-symbol-cloud {
@@ -396,6 +432,14 @@
 
 .meat-symbol-token.is-selected {
   font-weight: 800;
+}
+
+.meat-symbol-cloud-empty {
+  width: 100%;
+  padding: 12px;
+  color: var(--text-tertiary);
+  text-align: center;
+  font-size: 0.86rem;
 }
 
 .meat-symbol-token.verdict-divergent-persuaded,

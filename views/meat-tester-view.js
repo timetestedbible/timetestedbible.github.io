@@ -21,6 +21,16 @@ const MeatTesterView = {
   _routeKey: '',
 
   PROVIDER_ORDER: ['openai', 'anthropic', 'gemini', 'xai'],
+  CLOUD_CATEGORIES: [
+    ['DIVERGENT_PERSUADED', 'Divergent · persuaded'],
+    ['DIVERGENT_UNPERSUADED', 'Divergent · unconvinced'],
+    ['REFINED', 'Refined'],
+    ['MATCH', 'Match'],
+    ['NOVEL', 'Novel'],
+    ['DISPUTED', 'Disputed'],
+    ['DIVERGENT_PENDING', 'Divergent · not yet judged'],
+    ['UNTESTED', 'Not yet tested'],
+  ],
 
   // Navigation state is canonical in content.params. Render from the route;
   // controls dispatch route changes, and ordinary anchors use the app router.
@@ -120,18 +130,9 @@ const MeatTesterView = {
             <section id="meat-symbol-overview" class="meat-symbol-overview" aria-labelledby="meat-symbol-cloud-title" tabindex="-1">
               <div class="meat-symbol-overview-heading">
                 <div><span>At a glance</span><h3 id="meat-symbol-cloud-title">Symbol cloud</h3></div>
-                <p>Every glossary entry has equal weight; color shows its ruling or testing status.</p>
+                <p id="meat-symbol-cloud-summary">Every glossary entry has equal weight; color shows its ruling or testing status.</p>
               </div>
-              <div class="meat-symbol-legend" aria-label="Ruling color key">
-                ${this.cloudLegend('DIVERGENT_PERSUADED', 'Divergent · persuaded')}
-                ${this.cloudLegend('DIVERGENT_UNPERSUADED', 'Divergent · unconvinced')}
-                ${this.cloudLegend('REFINED', 'Refined')}
-                ${this.cloudLegend('MATCH', 'Match')}
-                ${this.cloudLegend('NOVEL', 'Novel')}
-                ${this.cloudLegend('DISPUTED', 'Disputed')}
-                ${this.cloudLegend('DIVERGENT_PENDING', 'Divergent · not yet judged')}
-                ${this.cloudLegend('UNTESTED', 'Not yet tested')}
-              </div>
+              <div id="meat-symbol-legend" class="meat-symbol-legend" aria-label="Toggle cloud categories"></div>
               <div id="meat-symbol-cloud" class="meat-symbol-cloud"></div>
             </section>
             <div class="meat-dashboard-controls" aria-label="Filter experiment results">
@@ -252,6 +253,11 @@ const MeatTesterView = {
     const sort = params.sort === 'RULING' ? 'RULING' : 'TERM';
     const stage = ['consensus', 'relationship', 'persuasion'].includes(params.stage) ? params.stage : '';
     const judge = this.PROVIDER_ORDER.includes(params.judge) ? params.judge : '';
+    const requestedCloud = new Set(String(params.cloud || '').split(',').filter(Boolean));
+    const cloud = this.CLOUD_CATEGORIES
+      .map(([verdict]) => verdict)
+      .filter(verdict => requestedCloud.has(verdict))
+      .join(',');
     return {
       mode,
       ruling,
@@ -261,6 +267,7 @@ const MeatTesterView = {
       run: String(params.run || ''),
       stage,
       judge,
+      cloud,
     };
   },
 
@@ -343,6 +350,7 @@ const MeatTesterView = {
     if (route.search) query.set('search', route.search);
     if (route.stage) query.set('stage', route.stage);
     if (route.judge) query.set('judge', route.judge);
+    if (route.cloud) query.set('cloud', route.cloud);
     const queryString = query.toString();
     return `/meat-tester${queryString ? `?${queryString}` : ''}`;
   },
@@ -367,19 +375,52 @@ const MeatTesterView = {
       </article>
       <article><span>Frozen runs available</span><strong>${stats.archivedRuns}</strong></article>
     `;
+    this.renderSymbolLegend();
     this.renderSymbolCloud();
     this.renderResultList();
   },
 
-  cloudLegend(verdict, label) {
-    return `<span class="meat-symbol-legend-item ${this.verdictClass(verdict)}"><i aria-hidden="true"></i>${this.escapeHtml(label)}</span>`;
+  hiddenCloudVerdicts() {
+    return new Set(String(this._routeParams.cloud || '').split(',').filter(Boolean));
+  },
+
+  cloudToggleHref(verdict) {
+    const hidden = this.hiddenCloudVerdicts();
+    hidden.has(verdict) ? hidden.delete(verdict) : hidden.add(verdict);
+    const cloud = this.CLOUD_CATEGORIES
+      .map(([candidate]) => candidate)
+      .filter(candidate => hidden.has(candidate))
+      .join(',');
+    return this.meatHref({ cloud: cloud || null });
+  },
+
+  renderSymbolLegend() {
+    const legend = this._container.querySelector('#meat-symbol-legend');
+    if (!legend) return;
+    const hidden = this.hiddenCloudVerdicts();
+    legend.innerHTML = this.CLOUD_CATEGORIES.map(([verdict, label]) => {
+      const visible = !hidden.has(verdict);
+      return `<a class="meat-symbol-legend-item ${this.verdictClass(verdict)}${visible ? '' : ' is-hidden'}"
+        href="${this.escapeAttr(this.cloudToggleHref(verdict))}"
+        role="button"
+        aria-pressed="${visible}"
+        title="${this.escapeAttr(`${visible ? 'Hide' : 'Show'} ${label}`)}"><i aria-hidden="true"></i>${this.escapeHtml(label)}</a>`;
+    }).join('') + (hidden.size
+      ? `<a class="meat-symbol-legend-reset" href="${this.escapeAttr(this.meatHref({ cloud: null }))}">Show all</a>`
+      : '');
   },
 
   renderSymbolCloud() {
     const cloud = this._container.querySelector('#meat-symbol-cloud');
     if (!cloud) return;
-    const entries = [...(this._data.glossaryEntries || this._data.currentEntries)]
+    const allEntries = [...(this._data.glossaryEntries || this._data.currentEntries)]
       .sort((a, b) => String(a.term || '').localeCompare(String(b.term || '')));
+    const hidden = this.hiddenCloudVerdicts();
+    const entries = allEntries.filter(entry => !hidden.has(entry.finalVerdict));
+    const summary = this._container.querySelector('#meat-symbol-cloud-summary');
+    if (summary) summary.textContent = hidden.size
+      ? `${entries.length} of ${allEntries.length} glossary entries shown. Select a color label to toggle it.`
+      : `All ${allEntries.length} glossary entries shown. Select a color label to toggle it.`;
     cloud.innerHTML = entries.map(entry => `
       <a class="meat-symbol-token ${this.verdictClass(entry.finalVerdict)}${this._selected?.anchor === entry.anchor ? ' is-selected' : ''}"
               href="${this.escapeAttr(this.meatHref({ mode: 'current', term: entry.anchor, run: null, stage: null, judge: null }))}"
@@ -387,7 +428,7 @@ const MeatTesterView = {
               ${this._selected?.anchor === entry.anchor ? 'aria-current="page"' : ''}>
         ${this.escapeHtml(entry.term)}
       </a>
-    `).join('');
+    `).join('') || '<span class="meat-symbol-cloud-empty">No categories selected. Use “Show all” above to restore the cloud.</span>';
   },
 
   entriesForMode() {

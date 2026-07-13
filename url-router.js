@@ -540,6 +540,7 @@ const URLRouter = {
       if (searchParams.get('sort')) result.content.params.sort = searchParams.get('sort');
       if (searchParams.get('stage')) result.content.params.stage = searchParams.get('stage');
       if (searchParams.get('judge')) result.content.params.judge = searchParams.get('judge');
+      if (searchParams.get('cloud')) result.content.params.cloud = searchParams.get('cloud');
     }
     if (searchParams.get('person')) {
       result.ui.personId = searchParams.get('person');
@@ -1073,6 +1074,7 @@ const URLRouter = {
       if (meat.search) params.set('search', meat.search);
       if (meat.stage) params.set('stage', meat.stage);
       if (meat.judge) params.set('judge', meat.judge);
+      if (meat.cloud) params.set('cloud', meat.cloud);
     }
     
     const queryString = params.toString();
