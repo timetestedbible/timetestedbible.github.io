@@ -23,13 +23,13 @@ no plates; About the Author carries the unplaqued portrait.
 | 08-abib-sheaf | THE MONTH OF THE ABIB | EXODUS 13:4 |
 | 09-watchman-tower | SIGNS READ FROM THE TOWER | GENESIS 1:14 |
 | 10-sabbath-quarters | A SIGN BETWEEN ME AND YOU | EXODUS 31:13 |
-| 11-star-of-saturn | THE STAR OF YOUR GOD | AMOS 5:26 |
+| 11-star-court | THE STAR OF YOUR GOD | ACTS 7:43 |
 | 12-darkness-at-noon | DARKNESS OVER THE LAND AT NOON | AMOS 8:9 |
 | 13-herods-eclipse | THE ECLIPSE BEFORE HEROD DIED | JOSEPHUS, ANTIQUITIES 17.6.4 |
-| 14-three-nights | THREE DAYS AND THREE NIGHTS | MATTHEW 12:40 |
+| 14-before-pilate | PILATE WASHES HIS HANDS | MATTHEW 27:24 |
 | 15-backs-to-the-temple | BACKS TO THE TEMPLE, FACES EASTWARD | EZEKIEL 8:16 |
 | 15x1-two-reckonings | TWO RECKONINGS OF ONE REIGN | JOSEPHUS, ANTIQUITIES |
-| 15x2-crowned-in-rome | CROWNED KING OF JUDEA IN ROME | JOSEPHUS, ANTIQUITIES 14.14 |
+| 15x2-crowned-in-rome | HEROD CROWNED KING OF JUDEA, 39 BC | JOSEPHUS, ANTIQUITIES 14.14 |
 | 15x4-steadfast-heavens | THE ORDINANCES OF THE MOON AND STARS | JEREMIAH 31:35 |
 | 16-thief-beside-him | REMEMBER ME IN YOUR KINGDOM | LUKE 23:42 |
 | 17-taught-at-the-door | TEACH THEM DILIGENTLY UNTO THY CHILDREN | DEUTERONOMY 6:7 |
