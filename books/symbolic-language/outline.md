@@ -1,4 +1,4 @@
-# MEAT: The Bible's Symbolic Language — working outline
+# MEAT The Bible's Symbolic Language — working outline
 
 Format: chapter → section → key points (≤7 sections, ≤7 points, ≤7 words).
 ⚡ marks a flash — the unexpected insight a reader underlines.

@@ -29,7 +29,7 @@ const MeatTesterView = {
           <div class="meat-eyebrow">A reproducible challenge to inherited interpretations</div>
           <h1>MEAT Tester Experiment</h1>
           <p class="meat-hero-lede">
-            Can the scriptural argument in <em>MEAT: The Bible's Symbolic Language</em>
+            Can the scriptural argument in <em>MEAT The Bible's Symbolic Language</em>
             overcome the strongest popular objections when the same AI models that
             describe the common teaching are asked to judge the evidence?
           </p>

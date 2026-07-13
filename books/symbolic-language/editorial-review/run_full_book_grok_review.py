@@ -714,7 +714,7 @@ def main() -> None:
         if res["notes"]:
             notes_joined.append(f"### {res['title']}\n\n" + "\n\n".join(res["notes"]))
     (OUT / "GROK-FULL-BOOK-REVIEW.md").write_text(
-        f"""# Grok Full-Book Review — *MEAT: The Bible's Symbolic Language*
+        f"""# Grok Full-Book Review — *MEAT The Bible's Symbolic Language*
 
 **Model:** {MODEL}  
 **Date:** 2026-07-11  

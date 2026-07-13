@@ -1,4 +1,4 @@
-# Grok Broad Review — *MEAT: The Bible's Symbolic Language*
+# Grok Broad Review — *MEAT The Bible's Symbolic Language*
 
 **Reviewer:** Grok  
 **Mode:** Broad critical + residual editorial pass  
@@ -90,7 +90,7 @@ Introduction: **“Claude Fable 5”** — not a known model. Everywhere else th
 
 ### One paragraph
 
-*MEAT: The Bible’s Symbolic Language* teaches a cross-text method for recovering Scripture’s own vocabulary, then spends that method across a large glossary and a sequence of demanding case studies. Its best chapters earn their overturns with multiple witnesses and scene-first quotation; its main remaining editorial risk is a thin residue of presenter cues and cadence sameness after otherwise successful anti-AI-polish passes — plus one high-visibility model-name error in the Introduction’s blind test. Serious Bible students who will test claims will find it substantial; readers seeking light devotion will not.
+*MEAT The Bible’s Symbolic Language* teaches a cross-text method for recovering Scripture’s own vocabulary, then spends that method across a large glossary and a sequence of demanding case studies. Its best chapters earn their overturns with multiple witnesses and scene-first quotation; its main remaining editorial risk is a thin residue of presenter cues and cadence sameness after otherwise successful anti-AI-polish passes — plus one high-visibility model-name error in the Introduction’s blind test. Serious Bible students who will test claims will find it substantial; readers seeking light devotion will not.
 
 ### One sentence
 

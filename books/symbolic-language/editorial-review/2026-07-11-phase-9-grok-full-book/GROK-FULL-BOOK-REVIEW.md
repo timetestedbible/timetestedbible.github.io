@@ -1,4 +1,4 @@
-# Grok Full-Book Review — *MEAT: The Bible's Symbolic Language*
+# Grok Full-Book Review — *MEAT The Bible's Symbolic Language*
 
 **Model:** grok-4.5  
 **Date:** 2026-07-11  

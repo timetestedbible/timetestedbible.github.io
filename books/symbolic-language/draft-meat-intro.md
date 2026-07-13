@@ -291,7 +291,7 @@ too, answered flesh with words — "thou hast the words of eternal life"
 no comprehension. That is milk's failure mode, lived out — they received,
 and never chewed.
 
-That is why this book is called *MEAT: The Bible's Symbolic Language*. It does not hand you a closed set
+That is why this book is called *MEAT The Bible's Symbolic Language*. It does not hand you a closed set
 of conclusions to swallow; it teaches you to chew — to gather, to taste,
 to test, and to do. And say the title aloud and you have the invitation
 on its back cover: come — meet the Bible's symbolic language (pun intended, in the spirit of the awe-inspiring wordplay found throughout scripture).
