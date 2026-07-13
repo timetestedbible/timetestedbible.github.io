@@ -1,0 +1,195 @@
+{
+  "id": "resp_0ad9f1a6b0717bf2006a54799949148193869c2a0bbe49fae0",
+  "object": "response",
+  "created_at": 1783921049,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921067,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0ad9f1a6b0717bf2006a547999ca48819386d7113751cc9747",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0ad9f1a6b0717bf2006a5479a4b638819394dfe92a2ebba726",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Cloud primarily signifies the manifest presence and glory of God, with secondary uses involving divine guidance, heavenly coming, judgment, multitudes, and empty promises.\",\"book_summary\":\"Cloud is chiefly a heavenly vehicle or carrier: it conveys divine movement, Christ, the caught-up saints, the word as rain, and metaphorically a multitude; its counterfeit is a waterless cloud.\",\"consensus_core_identification\":\"A sign or manifestation of divine presence and glory.\",\"book_core_identification\":\"A heavenly vehicle or medium of transport and conveyance.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book elevates the recognized chariot and cloud-coming imagery into the controlling identification, reclassifying the Exodus pillar, Ascension cloud, eschatological clouds, caught-up saints, and even the distinct 'cloud of witnesses' idiom as instances of conveyance. It also adds the word or doctrine as the cloud's cargo and treats waterless clouds as counterfeits, whereas the consensus treats these as separate, context-dependent senses.\",\"material_contradiction\":\"There is no direct contradiction: a cloud may manifest divine presence while also functioning as a vehicle or attendant medium. The disagreement is over which function is primary and whether several distinct cloud idioms belong to one transport schema.\",\"rationale\":\"The book does not match the consensus core, but neither does it replace it with an incompatible referent. Its vehicle interpretation is already recognizable in the consensus through Psalm 104, divine guidance, Christ's cloud-coming, Ascension, and eschatological imagery. The material difference is its unification and extension of those cases, especially Hebrews 12:1 and the doctrine-as-rain claim, under a single carrier model.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed texts establish a divine chariot metaphor and several associations between clouds, divine movement, Christ, and saints, but they do not clearly establish that transport is the cloud's general symbolic meaning. Hebrews 12:1 uses 'cloud' as a multitude metaphor, while the doctrine-as-cargo and waterless-counterfeit claims lack printed supporting references.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4508,
+    "input_tokens_details": {
+      "cache_write_tokens": 4505,
+      "cached_tokens": 0
+    },
+    "output_tokens": 958,
+    "output_tokens_details": {
+      "reasoning_tokens": 499
+    },
+    "total_tokens": 5466
+  },
+  "user": null,
+  "metadata": {}
+}

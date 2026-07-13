@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "heaven",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHeaven\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'Heaven' primarily signifies the dwelling place of God — the transcendent realm of God's presence, throne, and glory — and, derivatively, the eternal destiny or home of the redeemed, where believers experience unbroken fellowship with God. It stands symbolically for divine transcendence, holiness, and the consummated blessedness promised to the faithful.\",\n  \"primary_basis\": [\n    \"Genesis 1:1 (God creates the heavens and the earth)\",\n    \"1 Kings 8:27, 30 (heaven as God's dwelling place, though it cannot contain him)\",\n    \"Psalm 11:4; Psalm 103:19 (the LORD's throne is in heaven)\",\n    \"Isaiah 66:1 (heaven is my throne, the earth my footstool)\",\n    \"Matthew 6:9 (Our Father who art in heaven)\",\n    \"Matthew 5:12; 6:19-20 (reward and treasure laid up in heaven)\",\n    \"John 14:2-3 (in my Father's house are many rooms; I go to prepare a place for you)\",\n    \"2 Corinthians 5:1 (a house not made with hands, eternal in the heavens)\",\n    \"Philippians 3:20 (our citizenship is in heaven)\",\n    \"Colossians 3:1-2 (set your minds on things above)\",\n    \"Hebrews 9:24 (Christ entered heaven itself, now to appear in God's presence)\",\n    \"1 Peter 1:4 (an inheritance kept in heaven)\",\n    \"Revelation 4:1-11 (the heavenly throne room)\",\n    \"Revelation 21:1-4; 22:1-5 (new heaven and new earth; God dwelling with his people)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Physical/cosmological sense: 'heaven(s)' as the sky, firmament, and celestial bodies — part of created order rather than a symbolic-theological realm (the 'first heaven' in traditional tripartite readings drawing on 2 Corinthians 12:2).\",\n      \"basis\": [\n        \"Genesis 1:6-8, 14-17\",\n        \"Psalm 19:1\",\n        \"Deuteronomy 10:14\",\n        \"2 Corinthians 12:2 (third heaven implies lower heavens)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Kingdom of heaven' as a reverential circumlocution for God's reign or kingship (Matthew's substitution for 'kingdom of God'), so 'heaven' functions as a metonym for God himself rather than a place.\",\n      \"basis\": [\n        \"Matthew 3:2; 4:17; 13 (kingdom of heaven parables)\",\n        \"Luke 15:18 (I have sinned against heaven)\",\n        \"Daniel 4:26 (Heaven rules)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Heaven not as the final destination but as God's dimension that will ultimately be joined with a renewed earth — the 'new heavens and new earth' emphasis (prominent in recent biblical theology, e.g., N. T. Wright), which treats disembodied 'going to heaven' as at most an intermediate state.\",\n      \"basis\": [\n        \"Isaiah 65:17; 66:22\",\n        \"Romans 8:19-23\",\n        \"2 Peter 3:13\",\n        \"Revelation 21:1-3 (the New Jerusalem descends to earth)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Heaven as a state or condition of perfect communion with God rather than a spatial location — the beatific vision emphasis in Catholic and classical theology (Catechism of the Catholic Church 1023-1029 describes heaven as the state of supreme, definitive happiness in seeing God).\",\n      \"basis\": [\n        \"1 Corinthians 13:12 (then face to face)\",\n        \"1 John 3:2 (we shall see him as he is)\",\n        \"Matthew 5:8 (the pure in heart shall see God)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purely metaphorical, psychological, or existential readings: heaven as a symbol of inner spiritual state, moral ideal, or human hope rather than an objective postmortem reality (found in liberal Protestant, process, and some modern critical interpretation).\",\n      \"basis\": [\n        \"Luke 17:21 ('the kingdom of God is within/among you,' extended by analogy)\",\n        \"General demythologizing hermeneutics (e.g., Bultmann) rather than specific proof texts\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"'Heavenly places' as a present spiritual sphere of authority and conflict that believers already inhabit in Christ (Pauline usage in Ephesians), distinct from heaven as future destiny.\",\n      \"basis\": [\n        \"Ephesians 1:3, 20; 2:6; 3:10; 6:12\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus across Catholic, Orthodox, and Protestant traditions that heaven denotes God's dwelling/presence and the eternal blessedness of the redeemed. The live disputes concern mode rather than core meaning: place vs. state, present spiritual reality vs. future destination, disembodied intermediate state vs. embodied life on a renewed earth, and how much of the biblical language is ancient cosmology versus theological symbol. The Hebrew 'shamayim' and Greek 'ouranos' both cover 'sky' and 'God's realm,' which drives much of the interpretive variation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The transcendent dwelling place of God, the center of divine authority, and the ultimate eschatological destiny of eternal fellowship for believers.\",\n  \"primary_basis\": [\n    \"Matthew 6:9\",\n    \"John 14:2-3\",\n    \"Revelation 21:1-4\",\n    \"2 Corinthians 12:2\",\n    \"Isaiah 66:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The physical sky, atmosphere, or cosmic universe (the firmament).\",\n      \"basis\": [\n        \"Genesis 1:1\",\n        \"Psalm 19:1\",\n        \"Deuteronomy 28:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The present spiritual reality of God's reign breaking into the earthly realm (the Kingdom of Heaven).\",\n      \"basis\": [\n        \"Matthew 3:2\",\n        \"Matthew 4:17\",\n        \"Luke 17:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An interior, mystical state of spiritual union with God rather than a spatial or physical location.\",\n      \"basis\": [\n        \"Ephesians 2:6\",\n        \"Colossians 3:1-3\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical theology, heaven operates on a spectrum from the literal atmospheric sky to the transcendent abode of God. While literally referencing the sky in many ancient contexts, its primary symbolic and theological weight in Christian tradition denotes divine presence, sovereign rule, and ultimate salvation.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The transcendent realm and presence of God—associated with divine rule, holiness, blessed communion, and the promised destiny of the redeemed.\",\n  \"primary_basis\": [\n    \"Psalm 115:3 — God is described as being in heaven and ruling sovereignly.\",\n    \"Isaiah 66:1 — heaven is called God’s throne.\",\n    \"Matthew 6:9-10 — the Father is “in heaven,” from which his holy name and rule are invoked.\",\n    \"Matthew 6:19-21 — treasure in heaven symbolizes enduring value with God.\",\n    \"John 14:2-3 — Jesus promises a place with himself in the Father’s house.\",\n    \"Philippians 3:20 — believers’ citizenship is said to be in heaven.\",\n    \"Colossians 3:1-4 — heavenward orientation represents life centered on Christ and God.\",\n    \"Revelation 4-5 — heaven is portrayed as the sphere of God’s throne, worship, and sovereign government.\",\n    \"Revelation 21:1-4 — heaven and earth are renewed, and God dwells with redeemed humanity.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The visible sky or upper cosmos—the expanse containing clouds, birds, sun, moon, and stars—rather than a symbolic afterlife realm.\",\n      \"basis\": [\n        \"Genesis 1:6-8,14-17\",\n        \"Psalm 19:1\",\n        \"Matthew 6:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"“Kingdom of heaven” as God’s reign or kingship, especially in Matthew, rather than a geographical place called heaven.\",\n      \"basis\": [\n        \"Matthew 3:2\",\n        \"Matthew 5:3\",\n        \"Matthew 13:24-50\",\n        \"Matthew 19:23-24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The intermediate abode or blessed condition of believers with Christ after death, prior to bodily resurrection and final renewal.\",\n      \"basis\": [\n        \"Luke 23:43\",\n        \"2 Corinthians 5:1-8\",\n        \"Philippians 1:21-23\",\n        \"Revelation 6:9-11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The final Christian hope understood not as permanent disembodied residence in heaven but as bodily resurrection and life in the renewed creation, where heaven and earth are united.\",\n      \"basis\": [\n        \"Isaiah 65:17-25\",\n        \"Romans 8:18-25\",\n        \"1 Corinthians 15:42-55\",\n        \"2 Peter 3:13\",\n        \"Revelation 21:1-4,22-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A hierarchy of multiple heavens or celestial levels inhabited by spiritual beings.\",\n      \"basis\": [\n        \"2 Corinthians 12:2\",\n        \"Nehemiah 9:6\",\n        \"Psalm 148:4\",\n        \"Ephesians 6:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"An inward spiritual state, mystical consciousness, or symbol of the divine within, rather than an objective divine realm or future destiny.\",\n      \"basis\": [\n        \"Luke 17:20-21 is sometimes used for this reading, though the passage directly concerns the kingdom of God rather than defining heaven.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on heaven as the sphere of God’s presence and rule and, derivatively, blessed communion with God. Nevertheless, the biblical word is polysemous: it can denote the ordinary sky, the celestial cosmos, God’s transcendent realm, the present abode of the blessed dead, or God’s reign in the phrase “kingdom of heaven.” Christian traditions also distinguish the intermediate heavenly state from the final hope of resurrection and renewed creation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the eternal dwelling place of God and the final abode of the redeemed in perfect communion with Him\",\n  \"primary_basis\": [\n    \"John 14:2-3\",\n    \"Revelation 21:1-4\",\n    \"Matthew 6:9\",\n    \"Philippians 3:20\",\n    \"2 Corinthians 5:1\",\n    \"Hebrews 11:16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the created sky or firmament (atmospheric and celestial heavens)\",\n      \"basis\": [\n        \"Genesis 1:1, 6-8\",\n        \"Psalm 19:1\",\n        \"Matthew 24:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the intermediate abode of the righteous after death prior to resurrection and new creation\",\n      \"basis\": [\n        \"Luke 23:43\",\n        \"2 Corinthians 5:8\",\n        \"Revelation 6:9-11\",\n        \"Philippians 1:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a present spiritual state or reign of God rather than (or more than) a future location\",\n      \"basis\": [\n        \"Luke 17:20-21\",\n        \"Matthew 5:3, 10\",\n        \"select modern and mystical theological readings\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"synonym or near-synonym for the kingdom of God as present-and-future divine rule\",\n      \"basis\": [\n        \"Matthew's repeated 'kingdom of heaven'\",\n        \"parallel kingdom sayings in Mark/Luke\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Broad Christian consensus treats heaven primarily as God's dwelling and the believers' eschatological home; variations concern intermediate vs. final state, place vs. state language, and literal vs. metaphorical emphasis, but these do not displace the core symbolic sense in mainstream teaching and biblical interpretation.\"\n}\n\nBOOK ENTRY\nThe jurisdiction where God's will is already done — the visible sky and the seat of rule in one dual word (shamayim), over against the earth, the realm delegated to men where His will must yet be done. God's motion is downward — rain, fire, the Son, the city; the climb up is Babel's. The hope is heaven come down, not man gone up.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 115:16; Isa 66:1; Matt 6:10; John 3:13; Rev 21:2-3) · see Heaven and Hell, ch. 16\n\nAVAILABLE KJV EXCERPTS\nPsalms 115:16 — The heaven, even the heavens, are the LORD'S: but the earth hath he given to the children of men.\nIsaiah 66:1 — Thus saith the LORD, The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?\nMatthew 6:10 — Thy kingdom come. Thy will be done in earth, as it is in heaven.\nJohn 3:13 — And no man hath ascended up to heaven, but he that came down from heaven, even the Son of man which is in heaven.\nRevelation 21:2 — And I John saw the holy city, new Jerusalem, coming down from God out of heaven, prepared as a bride adorned for her husband.\nRevelation 21:3 — And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "c3d399b3042f34a9870e2c09dcde677f733fcc3510254d5a75515aa61b8b1112",
+  "cache": {
+    "hit": false
+  }
+}

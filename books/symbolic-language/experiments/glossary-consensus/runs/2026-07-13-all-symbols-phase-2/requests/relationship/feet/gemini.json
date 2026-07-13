@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "feet",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFeet\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, feet most commonly symbolize a person's 'walk'—that is, one's conduct, moral direction, and course of life. To have one's feet on a right path, kept from stumbling, or set upon a rock is read as living faithfully and obediently before God, while straying or slipping feet represent sin and moral failure.\",\n  \"primary_basis\": [\n    \"Psalm 119:105 ('a lamp to my feet and a light to my path')\",\n    \"Psalm 1:1 (the way/walk of the righteous vs. the wicked)\",\n    \"Proverbs 4:26-27 ('ponder the path of your feet')\",\n    \"Psalm 40:2 ('set my feet upon a rock')\",\n    \"Psalm 121:3 ('he will not let your foot be moved')\",\n    \"Proverbs 6:18 ('feet that make haste to run to evil')\",\n    \"Ephesians 6:15 (feet shod with readiness of the gospel of peace)\",\n    \"Luke 1:79 ('to guide our feet into the way of peace')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Feet as the emblem of the messenger who proclaims good news—the 'beautiful feet' of gospel heralds and evangelists.\",\n      \"basis\": [\n        \"Isaiah 52:7\",\n        \"Nahum 1:15\",\n        \"Romans 10:15\",\n        \"Ephesians 6:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Feet as a symbol of dominion, victory, and subjection—enemies placed 'under the feet' of God, Christ, or his people.\",\n      \"basis\": [\n        \"Psalm 110:1\",\n        \"Psalm 8:6\",\n        \"1 Corinthians 15:25-27\",\n        \"Hebrews 2:8\",\n        \"Romans 16:20\",\n        \"Joshua 10:24\",\n        \"Genesis 3:15 (crushing the serpent's head, often linked)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Feet (especially footwashing) as a symbol of humility, servanthood, and cleansing from daily defilement—Christ washing the disciples' feet as the model of humble service and ongoing sanctification.\",\n      \"basis\": [\n        \"John 13:1-17\",\n        \"Luke 7:36-50 (the woman washing Jesus' feet)\",\n        \"1 Timothy 5:10\",\n        \"Genesis 18:4 and hospitality texts\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sitting or falling at someone's feet as a posture of discipleship, worship, and submission to a teacher or to Christ.\",\n      \"basis\": [\n        \"Luke 10:39 (Mary at Jesus' feet)\",\n        \"Acts 22:3 (Paul 'at the feet of Gamaliel')\",\n        \"Revelation 1:17\",\n        \"Matthew 28:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The foot treading on land as a sign of taking possession or claiming inheritance/territory.\",\n      \"basis\": [\n        \"Joshua 1:3\",\n        \"Deuteronomy 11:24\",\n        \"Genesis 13:17 (walking the land)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Feet in visionary imagery as a symbol of judgment, stability, or divine character—e.g., Christ's feet like burnished bronze, the iron-and-clay feet of Nebuchadnezzar's statue as fragile kingdoms, treading the winepress of wrath.\",\n      \"basis\": [\n        \"Revelation 1:15\",\n        \"Daniel 2:33-43\",\n        \"Revelation 19:15\",\n        \"Isaiah 63:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Feet as the humble but necessary members of the body of Christ, teaching mutual dependence within the church.\",\n      \"basis\": [\n        \"1 Corinthians 12:15, 12:21\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Feet do not carry one single settled symbolic meaning in Christian interpretation; the meaning is strongly context-dependent. The 'walk of life' sense is arguably the broadest and most frequently invoked in devotional and homiletical use, but the messenger motif (Isa 52:7/Rom 10:15), dominion motif (Ps 110:1), and humility/footwashing motif (John 13) are each robust, well-attested strands with their own liturgical and doctrinal traditions (e.g., Maundy Thursday footwashing; christological use of Ps 110). Any claim that feet have one fixed symbolic meaning across Scripture would exceed the recognizable consensus, which treats the symbol as a cluster of related but distinct usages.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Moral conduct, the path of life, readiness to spread the Gospel, and humility or servanthood (particularly in the context of foot-washing).\",\n  \"primary_basis\": [\n    \"Psalm 119:105\",\n    \"Isaiah 52:7\",\n    \"Romans 10:15\",\n    \"Ephesians 6:15\",\n    \"John 13:1-17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Authority, dominion, and total subjugation of enemies (when things are placed 'under the feet').\",\n      \"basis\": [\n        \"Psalm 8:6\",\n        \"Joshua 10:24\",\n        \"1 Corinthians 15:25-27\",\n        \"Ephesians 1:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A Hebrew euphemism for genitalia, sexual intimacy, or private parts.\",\n      \"basis\": [\n        \"Ruth 3:4-14\",\n        \"Isaiah 7:20\",\n        \"Exodus 4:25\",\n        \"1 Samuel 24:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Judgment, contempt, or destructive oppression (when trampling underfoot).\",\n      \"basis\": [\n        \"Luke 21:24\",\n        \"Hebrews 10:29\",\n        \"Matthew 7:6\",\n        \"Malachi 4:3\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of feet in the Bible is highly contextual and generally tied to an associated action. Washing feet universally symbolizes humility and spiritual cleansing; beautiful or shod feet denote the spreading of the Gospel; and placing something under the feet denotes supreme authority. In academic biblical scholarship, 'feet' is also widely recognized as an Old Testament euphemism for reproductive organs.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Most commonly, “feet” symbolize a person’s practical walk—conduct, direction, and manner of life. They can therefore represent whether someone follows God’s way, stands securely, or is prepared to carry out a calling. This is a broad contextual association rather than a fixed biblical symbol.\",\n  \"primary_basis\": [\n    \"Psalm 119:59, 101, 105 — turning one’s feet toward God’s testimonies, restraining them from evil, and receiving guidance for one’s path\",\n    \"Proverbs 4:26–27 — keeping one’s feet from evil and making one’s path secure\",\n    \"Psalm 40:2; 66:9 — God setting or preserving the feet, signifying stability and security\",\n    \"Hebrews 12:13 — making straight paths for one’s feet\",\n    \"Ephesians 6:15 — feet fitted with readiness from the gospel of peace\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Humility, cleansing, and servant ministry, especially through washing another person’s feet.\",\n      \"basis\": [\n        \"John 13:5–17 — Jesus washes the disciples’ feet and presents it as an example of humble service\",\n        \"Luke 7:37–46 — washing and anointing Jesus’ feet expresses penitence, love, and hospitality\",\n        \"1 Timothy 5:10 — washing the saints’ feet as evidence of faithful service\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Subjection, victory, or authority over enemies—placing something under one’s feet signifies dominion.\",\n      \"basis\": [\n        \"Psalm 8:6 — creation placed under humanity’s feet\",\n        \"Psalm 110:1 — enemies made a footstool\",\n        \"1 Corinthians 15:25–27 — all enemies and powers placed under Christ’s feet\",\n        \"Hebrews 2:8 — all things subjected under his feet\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Readiness to proclaim the gospel or the welcome arrival of a messenger.\",\n      \"basis\": [\n        \"Isaiah 52:7 — the beautiful feet of one bringing good news\",\n        \"Romans 10:15 — application of Isaiah’s image to gospel proclamation\",\n        \"Ephesians 6:15 — feet equipped with the readiness of the gospel of peace\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Discipleship, worship, dependence, or submission, represented by sitting or falling at someone’s feet.\",\n      \"basis\": [\n        \"Luke 10:39 — Mary sits at Jesus’ feet to hear his teaching\",\n        \"Luke 8:35 — the healed man sits at Jesus’ feet\",\n        \"Revelation 1:17 — John falls at Christ’s feet\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Rejection and impending judgment, symbolized by shaking dust from the feet.\",\n      \"basis\": [\n        \"Matthew 10:14; Mark 6:11; Luke 10:10–12 — disciples shake dust from their feet when their message is rejected\",\n        \"Acts 13:51 — Paul and Barnabas enact this sign against rejection\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Human frailty, uncleanness, or the earthly aspect of a person, especially when feet require washing or are made of clay.\",\n      \"basis\": [\n        \"John 13:10 — washed feet remain necessary after bathing\",\n        \"Daniel 2:33–35, 41–45 — feet partly of iron and clay represent the divided and vulnerable final phase of the image’s kingdom\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In a few passages, “feet” may function as a euphemism for sexual organs or bodily exposure rather than as a theological symbol.\",\n      \"basis\": [\n        \"Isaiah 6:2 — seraphim cover their feet, sometimes interpreted euphemistically\",\n        \"Ruth 3:4–8 and Judges 3:24 — language involving feet has prompted euphemistic readings, though interpretations are disputed\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation does not assign one settled symbolic meaning to “feet.” Meaning is strongly controlled by the immediate image or action. “Walk/conduct” is the broadest recurring association, but humility and service, gospel readiness, dominion, discipleship, and judgment are also well-established contextual readings.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the walk, path, or moral conduct of life\",\n  \"primary_basis\": [\n    \"Psalm 119:105\",\n    \"Ephesians 6:15\",\n    \"Hebrews 12:13\",\n    \"Proverbs 4:26-27\",\n    \"1 Samuel 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"humility and service (exemplified by foot-washing)\",\n      \"basis\": [\n        \"John 13:1-17\",\n        \"1 Timothy 5:10\",\n        \"Luke 7:38-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"evangelism or readiness to bring good news\",\n      \"basis\": [\n        \"Isaiah 52:7\",\n        \"Romans 10:15\",\n        \"Nahum 1:15\",\n        \"Ephesians 6:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"dominion, victory, or subjection of enemies\",\n      \"basis\": [\n        \"Psalm 8:6\",\n        \"Psalm 110:1\",\n        \"1 Corinthians 15:25-27\",\n        \"Ephesians 1:22\",\n        \"Hebrews 2:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"reverence or acknowledgment of holy ground (removing footwear)\",\n      \"basis\": [\n        \"Exodus 3:5\",\n        \"Joshua 5:15\",\n        \"Acts 7:33\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"judgment or rejection (shaking dust from feet)\",\n      \"basis\": [\n        \"Matthew 10:14\",\n        \"Mark 6:11\",\n        \"Acts 13:51\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Meanings of feet are strongly contextual across Scripture and Christian teaching; associations with life's path/conduct, service, mission, and dominion recur frequently but none is universally dominant.\"\n}\n\nBOOK ENTRY\nThe walk — a man's conduct, his way; washed clean while the body stays bathed.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(John 13:10) · see Garments & Armor, ch. 43\n\nAVAILABLE KJV EXCERPTS\nJohn 13:10 — Jesus saith to him, He that is washed needeth not save to wash his feet, but is clean every whit: and ye are clean, but not all.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "4fd1fd7a4bd5d615c0278c75ffbfef7349c1cdcc16455aed9015cce7bbdb2751",
+  "cache": {
+    "hit": false
+  }
+}

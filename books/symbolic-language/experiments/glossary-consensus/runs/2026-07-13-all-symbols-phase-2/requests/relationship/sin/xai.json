@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "sin",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSin\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'sin' primarily denotes transgression of God's law and rebellion against God — a moral failure or 'missing the mark' (Greek hamartia) that separates humanity from God, incurs guilt, and requires atonement. It functions both as individual wrongful acts and as a universal fallen condition inherited from Adam (original sin), with death as its consequence and Christ's atoning work as its remedy.\",\n  \"primary_basis\": [\n    \"1 John 3:4 (sin is lawlessness)\",\n    \"Romans 3:23 (all have sinned and fall short of the glory of God)\",\n    \"Romans 6:23 (the wages of sin is death)\",\n    \"Genesis 3 (the fall of Adam and Eve)\",\n    \"Romans 5:12-19 (sin entering the world through one man)\",\n    \"Isaiah 59:2 (iniquities separate you from your God)\",\n    \"Psalm 51:1-5 (in sin did my mother conceive me)\",\n    \"James 1:14-15 (desire conceives and gives birth to sin, sin brings death)\",\n    \"James 4:17 (knowing the right thing and failing to do it)\",\n    \"1 John 1:8-9 (if we say we have no sin, we deceive ourselves)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sin as an enslaving power or quasi-personified force that rules over humanity, not merely discrete acts — prominent in Pauline theology and in modern New Testament scholarship (e.g., apocalyptic readings of Paul).\",\n      \"basis\": [\n        \"Romans 6:6-14 (sin shall not have dominion over you)\",\n        \"Romans 7:14-25 (sin dwelling in me)\",\n        \"Genesis 4:7 (sin crouching at the door)\",\n        \"John 8:34 (everyone who sins is a slave to sin)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin as debt owed to God, drawing on Aramaic and Second Temple idiom — reflected in the Lord's Prayer and in medieval satisfaction theories of atonement.\",\n      \"basis\": [\n        \"Matthew 6:12 (forgive us our debts)\",\n        \"Matthew 18:23-35 (parable of the unforgiving servant)\",\n        \"Colossians 2:14 (canceling the record of debt)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin as sickness or disease of the soul requiring healing rather than primarily legal guilt requiring punishment — the therapeutic emphasis characteristic of Eastern Orthodox theology and some patristic writers.\",\n      \"basis\": [\n        \"Psalm 41:4 (heal me, for I have sinned against you)\",\n        \"Isaiah 53:5 (by his wounds we are healed)\",\n        \"Mark 2:17 (it is not the healthy who need a doctor)\",\n        \"1 Peter 2:24\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sin as ritual impurity, stain, or defilement that must be cleansed or purged — rooted in Levitical purity language and sacrificial imagery.\",\n      \"basis\": [\n        \"Leviticus 16 (Day of Atonement)\",\n        \"Isaiah 1:18 (though your sins are like scarlet)\",\n        \"Psalm 51:7 (purge me with hyssop)\",\n        \"Hebrews 9:13-14 (purify our conscience)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin understood primarily as broken relationship — with God, neighbor, self, and creation — an emphasis in relational and covenantal theologies, and extended in liberation theology to include structural or systemic sin embedded in social institutions.\",\n      \"basis\": [\n        \"Genesis 3:8-13 (hiding from God, blaming one another)\",\n        \"Hosea (covenant infidelity imagery)\",\n        \"Amos 5:21-24 (justice and social wrongdoing)\",\n        \"Micah 6:8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus across Catholic, Orthodox, and Protestant traditions on the core meaning: sin is offense against God — lawlessness, rebellion, and 'missing the mark' — both as acts and as a fallen condition. The alternatives listed are largely complementary metaphors (power, debt, disease, stain, broken relationship) emphasized differently by traditions rather than mutually exclusive rival definitions; scholars such as Gary Anderson have traced the historical shift among these metaphors. Caveat: 'Sin' can also refer to unrelated referents in the Bible and ancient Near East — the Wilderness of Sin (Exodus 16:1) and the Mesopotamian moon god Sîn (sometimes invoked in discussions of Ur and place names). If the author's book concerns one of those proper-noun senses, the consensus described here (the theological concept) would not apply.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Rebellion against God, transgression of His law, and missing the mark of His holy standard, resulting in alienation.\",\n  \"primary_basis\": [\n    \"Romans 3:23\",\n    \"1 John 3:4\",\n    \"Isaiah 59:2\",\n    \"Genesis 3:1-19\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An enslaving cosmic power or personified master that holds humanity in bondage.\",\n      \"basis\": [\n        \"Romans 6:12-14\",\n        \"Genesis 4:7\",\n        \"John 8:34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A spiritual and moral debt owed to God demanding repayment or cancellation.\",\n      \"basis\": [\n        \"Matthew 6:12\",\n        \"Colossians 2:14\",\n        \"Luke 11:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A defilement, stain, or spiritual disease that corrupts nature and requires cleansing.\",\n      \"basis\": [\n        \"Psalm 51:2\",\n        \"Isaiah 1:18\",\n        \"Jeremiah 17:9\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the fundamental definition involves transgression and missing the mark, biblical authors frequently employ rich symbolism such as debt, disease, stain, and slavery to describe the multifaceted nature and effects of sin.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Sin most commonly signifies human rebellion against, disobedience to, and estrangement from God—an evil condition expressed in wrongful acts and resulting in corruption and death. Strictly speaking, biblical and Christian teaching usually treats sin as a theological and moral reality rather than as a symbol with one fixed symbolic referent.\",\n  \"primary_basis\": [\n    \"Genesis 3:1–24 — humanity’s disobedience produces alienation, curse, and death.\",\n    \"Isaiah 59:2 — iniquities separate people from God.\",\n    \"Romans 3:23 — all have sinned and fall short of God’s glory.\",\n    \"Romans 5:12–21 — sin enters the world and reigns through death.\",\n    \"Romans 6:16–23 — sin is portrayed as an enslaving master whose outcome is death.\",\n    \"1 John 3:4 — sin is identified with lawlessness.\",\n    \"James 1:14–15 — desire gives birth to sin, and sin brings forth death.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sin as transgression or violation of divine law: concrete culpable acts contrary to God’s commands.\",\n      \"basis\": [\n        \"Psalm 51:1–4\",\n        \"Romans 4:15\",\n        \"1 John 3:4\",\n        \"James 2:9–11\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Sin as ‘missing the mark’ or falling short of God’s intended standard. This is a widespread explanatory gloss based especially on Greek hamartia, though many scholars regard it as incomplete if treated as the whole biblical definition.\",\n      \"basis\": [\n        \"Romans 3:23\",\n        \"Philippians 3:14, by analogy with goal or mark imagery\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin as an enslaving, quasi-personified power that rules humanity rather than merely a collection of individual misdeeds.\",\n      \"basis\": [\n        \"Genesis 4:7\",\n        \"John 8:34\",\n        \"Romans 5:12–21\",\n        \"Romans 6:6–23\",\n        \"Romans 7:8–23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin as an inherited condition or original sin: humanity shares a fallen state traced to Adam, with traditions differing over inherited guilt, corruption, and mortality.\",\n      \"basis\": [\n        \"Genesis 3:1–24\",\n        \"Psalm 51:5\",\n        \"Romans 5:12–19\",\n        \"1 Corinthians 15:21–22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin primarily as spiritual sickness, corruption, or bondage requiring healing and restoration. This is especially prominent in Eastern Christian interpretation, though it also appears elsewhere.\",\n      \"basis\": [\n        \"Psalm 38:3–8\",\n        \"Isaiah 1:5–6\",\n        \"Mark 2:17\",\n        \"Romans 7:21–24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin fundamentally as unbelief, idolatry, or misplaced allegiance, from which particular immoral acts proceed.\",\n      \"basis\": [\n        \"Exodus 20:3–5\",\n        \"Jeremiah 2:13\",\n        \"John 16:8–9\",\n        \"Romans 1:21–25\",\n        \"Romans 14:23\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that sin involves opposition to God and brings alienation, bondage, corruption, and death. There is no single settled symbolic interpretation because Scripture uses several overlapping legal, relational, cultic, medical, and dominion metaphors, and Christian traditions weight them differently.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Any thought, word, deed, or disposition that transgresses God's law, misses the divine standard (hamartia), or rebels against God, producing guilt and separation from Him\",\n  \"primary_basis\": [\n    \"Romans 3:23\",\n    \"1 John 3:4\",\n    \"Romans 6:23\",\n    \"Isaiah 59:2\",\n    \"Genesis 3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Inherited Adamic condition of guilt and corruption (original sin) transmitted to all humanity\",\n      \"basis\": [\n        \"Romans 5:12-19\",\n        \"Psalm 51:5\",\n        \"Ephesians 2:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A personified cosmic power or enslaving force that dwells in and dominates human nature\",\n      \"basis\": [\n        \"Romans 6:6-23\",\n        \"Romans 7:7-25\",\n        \"John 8:34\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Primarily a relational rupture or spiritual sickness/alienation rather than forensic legal guilt\",\n      \"basis\": [\n        \"Luke 15 (prodigal son)\",\n        \"Eastern Orthodox therapeutic tradition\",\n        \"Isaiah 1:5-6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian confessions the core denotation of sin as moral failure relative to God's will is settled; differences concern transmission, ontology, and juridical vs. therapeutic emphasis rather than the basic meaning itself.\"\n}\n\nBOOK ENTRY\nThe transgression of the law — Scripture's own definition: “sin is the transgression of the law”; where no law is, there is no transgression, and by the law is the knowledge of sin.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(1 John 3:4; Rom 4:15; 3:20; 7:7) · see Grace, Mercy & the Gift, ch. 24\n\nAVAILABLE KJV EXCERPTS\n1 John 3:4 — Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.\nRomans 4:15 — Because the law worketh wrath: for where no law is, there is no transgression.\nRomans 3:20 — Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.\nRomans 7:7 — What shall we say then? Is the law sin? God forbid. Nay, I had not known sin, but by the law: for I had not known lust, except the law had said, Thou shalt not covet.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "a2bfa07d3f22e116304d635b930213ba1540840f734c730514bda0be01f203d8",
+  "cache": {
+    "hit": false
+  }
+}

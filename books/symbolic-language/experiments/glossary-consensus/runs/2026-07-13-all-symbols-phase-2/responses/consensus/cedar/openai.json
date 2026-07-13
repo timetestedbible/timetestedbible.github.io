@@ -1,0 +1,173 @@
+{
+  "id": "resp_0d4e8cd8e46c2f79006a5473939e088196b5f770bb187816b7",
+  "object": "response",
+  "created_at": 1783919507,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919527,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0d4e8cd8e46c2f79006a5473946e6081968cccdecf01219f5a",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0d4e8cd8e46c2f79006a54739afe0881969380e62a1e2b577c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\n  \"primary_meaning\": \"Strength, majesty, lofty stature, and enduring stability. The cedar—especially the cedar of Lebanon—is commonly used as an image of impressive, durable greatness; in positive contexts it characterizes the flourishing righteous or divinely established rule.\",\n  \"primary_basis\": [\n    \"Psalm 92:12 — the righteous grow like a cedar in Lebanon.\",\n    \"Psalm 104:16 — the cedars of Lebanon are described as trees planted and sustained by the Lord.\",\n    \"Ezekiel 17:22–24 — God plants a lofty cedar, commonly interpreted in Christian tradition as representing the divinely established Messiah, kingdom, or people of God.\",\n    \"Ezekiel 31:3–9 — Assyria's greatness and power are pictured as a magnificent cedar of Lebanon.\",\n    \"1 Kings 5–6 — cedar's durability and splendor are associated with Solomon's temple.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The flourishing, stability, and spiritual vitality of the righteous.\",\n      \"basis\": [\n        \"Psalm 92:12–15 — the righteous flourish like the cedar and continue bearing fruit.\",\n        \"Psalm 1:3 provides a related, though non-cedar-specific, image of the godly person as a firmly planted tree.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pride, arrogant power, or human greatness that God will humble.\",\n      \"basis\": [\n        \"Isaiah 2:12–13 — the lofty cedars of Lebanon appear among things brought low in the day of the Lord.\",\n        \"Ezekiel 31:10–14 — the towering cedar becomes proud and is cut down.\",\n        \"Zechariah 11:1–2 — the fallen cedar symbolizes the downfall of what is exalted and powerful.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Messianic kingship and the growth of God's kingdom.\",\n      \"basis\": [\n        \"Ezekiel 17:22–24 — God takes a tender sprig, plants it on Israel's mountain, and causes it to become a noble cedar.\",\n        \"Christian interpretation often connects this royal planting imagery with the Davidic Messiah and the worldwide shelter of his kingdom.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Holiness, incorruptibility, cleansing, or preservation.\",\n      \"basis\": [\n        \"Leviticus 14:4–7, 49–52 — cedarwood is used in purification rites.\",\n        \"Numbers 19:6 — cedarwood is included in preparing the ashes of the red heifer.\",\n        \"The durability and fragrance of cedar, together with these ritual uses, support later Christian typological readings.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The beauty, nobility, or imposing appearance of an individual.\",\n      \"basis\": [\n        \"Song of Songs 5:15 — the beloved's appearance is compared to Lebanon and described as choice as the cedars.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning applicable to every biblical occurrence. Strength, majesty, durability, and lofty stature form the broadest recognizable association, but context determines whether those qualities are praised as righteousness or divine rule, or condemned as pride and oppressive power.\"\n}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1102,
+    "output_tokens_details": {
+      "reasoning_tokens": 348
+    },
+    "total_tokens": 1420
+  },
+  "user": null,
+  "metadata": {}
+}

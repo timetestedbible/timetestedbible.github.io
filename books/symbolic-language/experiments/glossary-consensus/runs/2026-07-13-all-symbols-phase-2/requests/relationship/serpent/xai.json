@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "serpent",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSerpent\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the serpent primarily symbolizes Satan (the devil) and, by extension, evil, temptation, deception, and sin. The serpent of Eden is traditionally identified as Satan or as an instrument of Satan, making the serpent the archetypal image of the tempter and adversary of God and humanity.\",\n  \"primary_basis\": [\n    \"Genesis 3:1-15 (the serpent tempts Eve; the curse and the protoevangelium of Genesis 3:15)\",\n    \"Revelation 12:9 ('that ancient serpent, who is called the devil and Satan')\",\n    \"Revelation 20:2 ('the dragon, that ancient serpent, who is the devil and Satan')\",\n    \"2 Corinthians 11:3 (the serpent deceived Eve by his cunning)\",\n    \"Romans 16:20 (God will crush Satan under your feet, echoing Genesis 3:15)\",\n    \"John 8:44 (the devil as a liar and murderer from the beginning, traditionally linked to Eden)\",\n    \"Luke 10:19 (authority to tread on serpents and scorpions as power over the enemy)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A symbol of healing and salvation, and typologically of Christ lifted up on the cross, via the bronze serpent Moses raised in the wilderness.\",\n      \"basis\": [\n        \"Numbers 21:8-9\",\n        \"John 3:14-15\",\n        \"2 Kings 18:4 (Nehushtan, showing later ambivalence toward the image)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A symbol of wisdom, shrewdness, or prudence, used positively in Jesus' instruction to be 'wise as serpents.'\",\n      \"basis\": [\n        \"Matthew 10:16\",\n        \"Genesis 3:1 (the serpent described as more crafty/subtle than any beast, sometimes read as cunning rather than moral evil)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In historical-critical scholarship, the Genesis serpent read on its own terms as a literary figure—a clever talking animal or trickster in an etiological narrative—without identification with Satan, which is seen as a later (Second Temple and New Testament era) development.\",\n      \"basis\": [\n        \"Genesis 3:1 (the serpent introduced simply as a 'beast of the field' that the LORD God had made)\",\n        \"Wisdom of Solomon 2:24 as an early deuterocanonical text making the devil connection, cited to show the identification is post-Genesis\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The serpent as a chaos monster or cosmic sea-dragon (Leviathan/Rahab), representing forces of chaos opposed to God's created order, drawing on ancient Near Eastern combat myth imagery.\",\n      \"basis\": [\n        \"Isaiah 27:1 (Leviathan the fleeing/twisting serpent)\",\n        \"Job 26:13; Job 41\",\n        \"Psalm 74:13-14\",\n        \"Amos 9:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gnostic and some esoteric readings in which the Eden serpent is a liberator or revealer of knowledge (e.g., Ophite sects), a reading rejected by orthodox Christianity.\",\n      \"basis\": [\n        \"Genesis 3:4-7 as reinterpreted in Gnostic texts such as the Hypostasis of the Archons and the Testimony of Truth (non-canonical)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Serpents as instruments or signs of divine power and judgment (Moses' staff becoming a serpent; fiery serpents as punishment; Paul unharmed by a viper).\",\n      \"basis\": [\n        \"Exodus 4:3; Exodus 7:8-12\",\n        \"Numbers 21:6\",\n        \"Acts 28:3-6\",\n        \"Mark 16:18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus across Catholic, Orthodox, and Protestant traditions that the serpent's primary symbolic meaning is Satan/evil/temptation, anchored above all in Genesis 3 read through Revelation 12:9 and 20:2. However, the symbol is genuinely polyvalent in the Bible itself: the bronze serpent gives a well-established positive typological strand (healing, Christ crucified), and 'wise as serpents' preserves a positive wisdom connotation. Academic biblical scholarship commonly distinguishes the original Genesis narrative (where the serpent is not called Satan) from the later canonical and traditional identification, but this distinction operates alongside, rather than displacing, the dominant symbolic consensus in Christian teaching.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Satan, the Devil, temptation, deception, and the origin of evil\",\n  \"primary_basis\": [\n    \"Genesis 3:1-15\",\n    \"Revelation 12:9\",\n    \"Revelation 20:2\",\n    \"2 Corinthians 11:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ, salvation, healing, and substitutionary atonement via the Bronze Serpent typology\",\n      \"basis\": [\n        \"Numbers 21:8-9\",\n        \"John 3:14-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom, shrewdness, and prudence\",\n      \"basis\": [\n        \"Matthew 10:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Primordial chaos, cosmic rebellion, or anti-creation forces (Leviathan)\",\n      \"basis\": [\n        \"Isaiah 27:1\",\n        \"Psalm 74:14\",\n        \"Job 26:13\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Mortal danger, divine judgment, or demonic enemies\",\n      \"basis\": [\n        \"Amos 5:19\",\n        \"Luke 10:19\",\n        \"Psalm 58:4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the primary symbolic meaning overwhelmingly represents Satan and deception due to Genesis 3 and Revelation 12, a significant secondary typological meaning exists where the bronze serpent symbolizes Christ's atoning work on the cross, as explicitly stated in John 3.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Evil expressed through Satan, especially deception, temptation, sin, and opposition to God.\",\n  \"primary_basis\": [\n    \"Genesis 3:1–15 — the serpent deceives Eve and becomes the object of divine judgment.\",\n    \"2 Corinthians 11:3 — Paul recalls the serpent’s deception of Eve.\",\n    \"Revelation 12:9 — “the ancient serpent” is explicitly identified as the Devil and Satan, the deceiver of the world.\",\n    \"Revelation 20:2 — the dragon and ancient serpent are again identified as the Devil and Satan.\",\n    \"Romans 16:20 — God’s crushing of Satan under believers’ feet is commonly connected with Genesis 3:15.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"In historical-critical readings of Genesis 3, the serpent is a crafty creature or literary trickster within the Eden narrative, not explicitly Satan in the passage’s original literary setting.\",\n      \"basis\": [\n        \"Genesis 3:1 describes the serpent as one of the animals God made.\",\n        \"Genesis 3 itself never names the serpent as Satan; that identification is made explicitly in later Christian texts such as Revelation 12:9 and 20:2.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom, shrewdness, or prudent alertness, without an inherently evil sense.\",\n      \"basis\": [\n        \"Matthew 10:16 — Jesus instructs the disciples to be “wise as serpents and innocent as doves.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Healing, deliverance, and—through Christian typology—Christ’s saving work and crucifixion.\",\n      \"basis\": [\n        \"Numbers 21:4–9 — looking at the bronze serpent brings healing from serpent bites.\",\n        \"John 3:14–15 — Jesus compares his being lifted up to Moses lifting up the serpent in the wilderness.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An object of corrupt or idolatrous worship when a divinely provided sign is misused.\",\n      \"basis\": [\n        \"2 Kings 18:4 — Hezekiah destroys the bronze serpent, Nehushtan, because Israelites had been burning incense to it.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Danger, death, or divine judgment rather than Satan specifically.\",\n      \"basis\": [\n        \"Numbers 21:6 — fiery serpents punish Israel’s rebellion.\",\n        \"Deuteronomy 8:15 and 1 Corinthians 10:9 — serpents signify wilderness danger and judgment.\",\n        \"Isaiah 14:29 and Amos 5:19 — serpents appear as images of inescapable danger.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Chaos, hostile cosmic power, or monstrous opposition to God, especially where serpent imagery overlaps with dragon and Leviathan traditions.\",\n      \"basis\": [\n        \"Isaiah 27:1 — Leviathan is called a fleeing and twisting serpent.\",\n        \"Revelation 12:3–9 — the serpent is portrayed as a great dragon and cosmic adversary.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian teaching has a recognizable dominant interpretation of the serpent—particularly the Edenic or “ancient” serpent—as Satanic evil, deception, and temptation. The symbol is nevertheless context-dependent: Scripture also uses serpent imagery positively for prudence and healing, and many biblical scholars distinguish the serpent’s role in Genesis 3 itself from its later canonical identification with Satan.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Satan/the Devil as the embodiment of evil, deception, and temptation\",\n  \"primary_basis\": [\n    \"Genesis 3 (serpent as tempter of Eve)\",\n    \"Revelation 12:9 (ancient serpent identified as the devil/Satan)\",\n    \"Revelation 20:2 (dragon/ancient serpent bound as Satan)\",\n    \"2 Corinthians 11:3 (serpent's cunning deception of Eve)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal animal or natural creature without necessary demonic identification\",\n      \"basis\": [\n        \"Genesis 3 read in historical-critical isolation\",\n        \"Absence of explicit Satan language in the Hebrew text of Genesis\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Symbol of wisdom, shrewdness, or prudent cunning (sometimes positive)\",\n      \"basis\": [\n        \"Matthew 10:16 ('wise as serpents')\",\n        \"Proverbs 30:18-19 (serpent on a rock as wonder)\",\n        \"Ancient Near Eastern associations of serpents with wisdom\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Typological prefiguration of Christ and salvation/healing (bronze serpent)\",\n      \"basis\": [\n        \"Numbers 21:4-9 (bronze serpent raised for healing)\",\n        \"John 3:14-15 (Son of Man lifted up like the serpent)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Chaos monster or primordial force of disorder (linked to Leviathan/Rahab imagery)\",\n      \"basis\": [\n        \"Isaiah 27:1\",\n        \"Psalm 74:13-14\",\n        \"Job 26:13 and related chaoskampf motifs\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Agent of enlightenment or liberator of knowledge (non-orthodox/Gnostic readings)\",\n      \"basis\": [\n        \"Gnostic reinterpretations of Genesis 3\",\n        \"Select modern esoteric or revisionist treatments\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream Christian teaching and traditional biblical interpretation the identification of the Genesis serpent with Satan is the long-settled dominant reading, reinforced by New Testament explicit equations. Alternative senses appear in specific textual contexts (bronze serpent, shrewdness sayings) or in critical/Gnostic scholarship, but do not displace the primary Satanic symbolism in Christian consensus.\"\n}\n\nBOOK ENTRY\nThe deceiver; the one who strips the covenant covering.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 3:1) · see Sea & Waters, ch. 40 — derived in the digital edition’s symbol study at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nGenesis 3:1 — Now the serpent was more subtil than any beast of the field which the LORD God had made. And he said unto the woman, Yea, hath God said, Ye shall not eat of every tree of the garden?\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "c175f421c899907d3eb517f7110057d8f940ec738a0cdaaba0947d39ddd5399e",
+  "cache": {
+    "hit": false
+  }
+}

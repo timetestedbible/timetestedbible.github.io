@@ -1,0 +1,173 @@
+{
+  "id": "resp_089b57306a1152ab006a5475656eac81969b82e551787251c5",
+  "object": "response",
+  "created_at": 1783919973,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919992,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_089b57306a1152ab006a547566196c81969e8bc633b1b6805d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_089b57306a1152ab006a54756fdfb08196b655c527380ff70a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Fruitfulness, abundance, and divine blessing—especially the bounty of the Promised Land and the good fruit God desires from his people.\",\"primary_basis\":[\"Numbers 13:23–24 — the unusually large cluster of grapes represents the abundance of Canaan.\",\"Deuteronomy 8:7–10 — vines are included among the blessings of the good land.\",\"Genesis 49:11–12 — abundant vines and wine depict Judah’s prosperity.\",\"Isaiah 5:1–7 — God’s vineyard is expected to yield good grapes, symbolizing righteous covenant fruit.\",\"John 15:1–8 — the vine and its fruit are applied to spiritual fruitfulness through abiding in Christ.\"],\"alternatives\":[{\"meaning\":\"Israel or God’s covenant people, from whom God expects faithfulness and justice.\",\"basis\":[\"Psalm 80:8–16\",\"Isaiah 5:1–7\",\"Hosea 9:10; 10:1\"],\"prominence\":\"common\"},{\"meaning\":\"The blood of Christ and the Eucharist, because grapes produce the wine identified with Christ’s covenant blood.\",\"basis\":[\"Matthew 26:27–29\",\"Mark 14:23–25\",\"Luke 22:17–20\",\"1 Corinthians 10:16; 11:23–26\"],\"prominence\":\"common\"},{\"meaning\":\"Divine wrath and final judgment, pictured as grapes being gathered and crushed in a winepress.\",\"basis\":[\"Isaiah 63:1–6\",\"Joel 3:13\",\"Revelation 14:18–20\",\"Revelation 19:15\"],\"prominence\":\"common\"},{\"meaning\":\"Sin, corruption, or covenant unfaithfulness, particularly when the grapes are wild, bitter, or sour.\",\"basis\":[\"Deuteronomy 32:32–33\",\"Isaiah 5:2–7\",\"Jeremiah 31:29–30\",\"Ezekiel 18:2–4\"],\"prominence\":\"minority\"},{\"meaning\":\"Joy and festal celebration through the wine produced from grapes.\",\"basis\":[\"Psalm 104:14–15\",\"Ecclesiastes 9:7\",\"John 2:1–11\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"medium\",\"notes\":\"Grapes do not have one fixed biblical symbolism. Fruitfulness and blessing are the broadest positive associations, but context can shift the image toward Israel, Eucharistic blood, sinful fruit, joy, or judgment.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 954,
+    "output_tokens_details": {
+      "reasoning_tokens": 427
+    },
+    "total_tokens": 1273
+  },
+  "user": null,
+  "metadata": {}
+}

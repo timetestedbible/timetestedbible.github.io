@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "naked",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nNaked, nakedness\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, nakedness primarily symbolizes shame, guilt, and the exposure of sin before God — the human condition after the Fall, in which people are spiritually destitute and need to be 'covered' or clothed by God (ultimately with Christ's righteousness). The movement from unashamed nakedness in Eden, to shame-filled awareness of nakedness after sin, to God clothing Adam and Eve, is treated as the paradigm: nakedness = exposed sinfulness and shame; divine clothing = grace, atonement, and imputed righteousness.\",\n  \"primary_basis\": [\n    \"Genesis 2:25 (naked and not ashamed before the Fall)\",\n    \"Genesis 3:7 (eyes opened, they knew they were naked)\",\n    \"Genesis 3:10-11 ('I was afraid, because I was naked')\",\n    \"Genesis 3:21 (God clothes them with garments of skin)\",\n    \"Revelation 3:17-18 (Laodicea: 'wretched, pitiable, poor, blind, and naked... buy white garments so that the shame of your nakedness may not be seen')\",\n    \"Revelation 16:15 (blessed is the one who stays awake and keeps his garments, lest he walk naked and be exposed)\",\n    \"Hebrews 4:13 (all things naked and exposed before God's eyes)\",\n    \"Isaiah 61:10 / 2 Corinthians 5:21 (being clothed with garments of salvation / righteousness as the remedy)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Innocence and unfallen purity: before the Fall, nakedness without shame symbolizes original innocence, integrity, and unbroken intimacy with God and one another (emphasized in patristic writers and in John Paul II's 'theology of the body').\",\n      \"basis\": [\n        \"Genesis 2:25\",\n        \"Genesis 3:7 (by contrast)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment and public humiliation: in the prophets, stripping a nation or unfaithful 'wife' naked symbolizes God's judgment, disgrace, and exile.\",\n      \"basis\": [\n        \"Isaiah 47:2-3\",\n        \"Ezekiel 16:35-39; 23:26-29\",\n        \"Hosea 2:3\",\n        \"Nahum 3:5\",\n        \"Lamentations 1:8\",\n        \"Micah 1:8-11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Vulnerability, poverty, and human helplessness: nakedness stands for material destitution and the creaturely condition in which humans enter and leave the world, grounding the call to clothe the naked as an act of mercy.\",\n      \"basis\": [\n        \"Job 1:21\",\n        \"Ecclesiastes 5:15\",\n        \"Matthew 25:36-44\",\n        \"James 2:15-16\",\n        \"Isaiah 58:7\",\n        \"Job 22:6; 24:7-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Euphemism for sexual relations or sexual sin: 'uncovering nakedness' in the Levitical codes denotes illicit sexual intercourse, and some interpreters extend this to symbolic readings of dishonor (e.g., Ham and Noah).\",\n      \"basis\": [\n        \"Leviticus 18:6-19; 20:11-21\",\n        \"Genesis 9:20-25\",\n        \"Ezekiel 16 and 23 (adultery imagery)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The disembodied or mortal state awaiting resurrection: Paul uses being 'found naked' for existence without the resurrection body, longing to be 'further clothed.'\",\n      \"basis\": [\n        \"2 Corinthians 5:2-4\",\n        \"1 Corinthians 15:37 (bare/naked seed imagery)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Prophetic sign-act or ecstatic abandonment: going naked as an enacted prophetic sign of coming captivity or, in Saul's case, unusual prophetic behavior.\",\n      \"basis\": [\n        \"Isaiah 20:2-4\",\n        \"Micah 1:8\",\n        \"1 Samuel 19:24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The consensus is strong but two-sided: nakedness before the Fall symbolizes innocence, while after the Fall it symbolizes shame, guilt, and exposure needing divine covering. Most Christian teaching integrates both under a single arc (innocence lost, shame exposed, righteousness restored through God's clothing), with the shame/exposure/need-for-covering sense dominating sermonic and theological usage, reinforced by Revelation 3:17-18. The alternative senses (judgment, poverty, sexual euphemism, disembodiment) are well-recognized contextual meanings rather than rivals to the primary symbol; interpreters generally treat them as distinct uses in their respective genres. Note that 'uncovering nakedness' in Leviticus is usually classed as a legal idiom rather than a symbol per se.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual exposure, shame, guilt, and moral vulnerability resulting from sin, as well as the absence of righteous covering.\",\n  \"primary_basis\": [\n    \"Genesis 3:7\",\n    \"Genesis 3:10-11\",\n    \"Revelation 3:17-18\",\n    \"2 Corinthians 5:3\",\n    \"Exodus 32:25\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Original innocence, purity, and unhindered fellowship with God prior to the Fall.\",\n      \"basis\": [\n        \"Genesis 2:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment, public humiliation, and the stripping away of worldly power, wealth, or divine protection.\",\n      \"basis\": [\n        \"Isaiah 20:2-4\",\n        \"Micah 1:8\",\n        \"Ezekiel 16:39\",\n        \"Revelation 17:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Absolute transparency, truth, and human accountability before God's omniscience, demonstrating that nothing can be hidden.\",\n      \"basis\": [\n        \"Hebrews 4:13\",\n        \"Job 1:21\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of nakedness in biblical theology is firmly anchored in the Eden narrative. It shifts from symbolizing unashamed purity and innocence before the Fall to representing profound guilt, exposure, and the need for divine covering (often linked to atonement) after the Fall. In prophetic literature, nakedness is frequently employed as a metaphor for the humiliation and vulnerability of judged nations.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Shameful exposure and vulnerability, especially the exposure of sin or guilt and the loss of innocence under divine judgment.\",\n  \"primary_basis\": [\n    \"Genesis 2:25 contrasts original nakedness without shame with Genesis 3:7-11, where nakedness becomes associated with disobedience, fear, and shame.\",\n    \"Genesis 3:21 depicts God clothing Adam and Eve after the fall, often interpreted as covering their shame.\",\n    \"Isaiah 47:2-3, Ezekiel 16:36-39, Hosea 2:3,9-10, and Nahum 3:5 use exposed nakedness as imagery for humiliation and judgment.\",\n    \"Revelation 3:17-18 uses nakedness for a church's shameful spiritual condition and counsels receiving white garments.\",\n    \"Revelation 16:15 links keeping one's garments with avoiding exposed shame.\",\n    \"Hebrews 4:13 describes all creatures as naked and exposed before God's searching judgment.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Original innocence, openness, and unashamed intimacy before sin.\",\n      \"basis\": [\n        \"Genesis 2:25 states that the man and woman were naked and not ashamed.\",\n        \"Christian readings commonly contrast this condition with the fear and concealment of Genesis 3.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual poverty or lack of righteousness, requiring divine clothing.\",\n      \"basis\": [\n        \"Revelation 3:17-18 associates nakedness with spiritual destitution and white garments with remedy.\",\n        \"Isaiah 61:10 and Zechariah 3:3-5 contribute to the broader biblical symbolism of salvation or righteousness as clothing.\",\n        \"Second Corinthians 5:2-4 uses clothing and nakedness imagery in relation to the believer's heavenly state.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Public humiliation, defeat, captivity, or loss of social status, without necessarily symbolizing personal moral guilt.\",\n      \"basis\": [\n        \"Isaiah 20:2-4 uses nakedness as a prophetic sign of captives led away in disgrace.\",\n        \"Isaiah 47:2-3 and Nahum 3:5 portray conquered peoples or cities as publicly exposed.\",\n        \"Lamentations 1:8 associates Jerusalem's exposed nakedness with disgrace.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human vulnerability and complete exposure before God or other powers.\",\n      \"basis\": [\n        \"Hebrews 4:13 depicts every creature as naked and exposed before God.\",\n        \"Job 1:21 uses nakedness to express human creatureliness and the absence of possessions at birth and death.\",\n        \"Ecclesiastes 5:15 similarly emphasizes human dependence and inability to retain earthly gain.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Material poverty and bodily need, often meant literally rather than as a symbolic code.\",\n      \"basis\": [\n        \"Matthew 25:36,38,43-44 treats clothing the naked as an act of mercy.\",\n        \"James 2:15 refers to a brother or sister lacking clothing and daily food.\",\n        \"Isaiah 58:7 commands covering the naked as part of true devotion.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A euphemism for sexual relations, incest, or sexual violation.\",\n      \"basis\": [\n        \"Leviticus 18 and 20 repeatedly use 'uncover nakedness' for prohibited sexual relations.\",\n        \"Genesis 9:20-24 has generated interpretations involving dishonor, sexual impropriety, or literal viewing, though the precise action remains disputed.\",\n        \"Ezekiel 16 and 23 combine nakedness with imagery of sexual infidelity and exploitation.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Bodilessness or mortality in contrast with being clothed with the resurrection body.\",\n      \"basis\": [\n        \"Second Corinthians 5:1-4 contrasts being unclothed or naked with being further clothed by heavenly life.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation has no single fixed symbolic meaning for every occurrence. The broadest recurring association is shameful exposure following sin or under judgment, but context can instead indicate innocence, poverty, sexuality, captivity, creaturely vulnerability, or bodilessness. Many biblical references are partly or wholly literal rather than symbolic.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"shame, humiliation, and exposure of sin/guilt (requiring covering or clothing in righteousness)\",\n  \"primary_basis\": [\n    \"Genesis 3:7-11\",\n    \"Genesis 2:25 (contrast)\",\n    \"Revelation 3:17-18\",\n    \"Ezekiel 16:8-39\",\n    \"Isaiah 47:3\",\n    \"Revelation 16:15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"original innocence and unashamed purity (pre-Fall state)\",\n      \"basis\": [\n        \"Genesis 2:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"divine judgment, captivity, or public humiliation\",\n      \"basis\": [\n        \"Isaiah 20:2-4\",\n        \"Nahum 3:5\",\n        \"Hosea 2:3\",\n        \"Micah 1:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"spiritual poverty, vulnerability, or lack of righteousness\",\n      \"basis\": [\n        \"Revelation 3:17-18\",\n        \"2 Corinthians 5:3\",\n        \"Job 1:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"sexual impropriety, exposure, or dishonor (including familial curse motifs)\",\n      \"basis\": [\n        \"Genesis 9:20-27\",\n        \"Leviticus 18\",\n        \"Leviticus 20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"transparency, truthfulness, or radical honesty before God\",\n      \"basis\": [\n        \"occasional modern pastoral readings of Genesis 2-3\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian biblical interpretation consistently treats nakedness as polyvalent by context, yet the dominant symbolic cluster centers on post-Fall shame and the need for covering; pre-Fall innocence functions mainly as the contrasting foil rather than the primary ongoing symbol.\"\n}\n\nBOOK ENTRY\nWithout covenant covering — exposed in one's breach.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ezek 16:8; Gen 3:7) · see Garments & Armor, ch. 43\n\nAVAILABLE KJV EXCERPTS\nEzekiel 16:8 — Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my skirt over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a covenant with thee, saith the Lord GOD, and thou becamest mine.\nGenesis 3:7 — And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "10d929fa399306322cdc08096ed04774eef4c609e826235c22e759500763ad54",
+  "cache": {
+    "hit": false
+  }
+}

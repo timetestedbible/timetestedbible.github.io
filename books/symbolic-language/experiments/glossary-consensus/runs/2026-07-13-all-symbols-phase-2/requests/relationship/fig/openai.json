@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "fig",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFig leaves\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, fig leaves most commonly symbolize humanity's inadequate self-effort to cover sin and shame — human-made righteousness or self-justification that cannot truly atone. The image comes from Adam and Eve sewing fig leaves together after the Fall, a covering routinely contrasted in sermons and commentaries with the garments of skin God later provides (often read as pointing to divinely provided atonement through sacrifice, and typologically toward Christ). Closely bound up with this is the meaning of shame and the newly awakened consciousness of sin.\",\n  \"primary_basis\": [\n    \"Genesis 3:7 (Adam and Eve sew fig leaves to cover their nakedness)\",\n    \"Genesis 3:21 (God clothes them with garments of skin, the standard contrast text)\",\n    \"Genesis 2:25 (prior state of nakedness without shame, establishing the shame motif)\",\n    \"Isaiah 64:6 (righteous deeds as filthy rags — commonly paired to support the 'self-righteousness' reading)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hypocrisy or fruitless outward show: leaves without fruit, drawn from Jesus cursing the fig tree that had leaves but no figs — profession of religion without genuine fruit. Often extended to Israel's spiritual barrenness or, more broadly, to empty religiosity.\",\n      \"basis\": [\n        \"Matthew 21:18-19\",\n        \"Mark 11:12-14, 20-21\",\n        \"Luke 13:6-9 (parable of the barren fig tree)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Shame, guilt, and the loss of innocence per se — fig leaves simply as the emblem of fallen humanity's new awareness of exposure before God, without the further 'works-righteousness' polemic.\",\n      \"basis\": [\n        \"Genesis 3:7-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fig tree/fig leaves as a symbol of national Israel (especially in prophetic and dispensational interpretation), where the budding fig tree signals Israel's restoration or eschatological timing.\",\n      \"basis\": [\n        \"Matthew 24:32-34 (lesson of the fig tree)\",\n        \"Hosea 9:10\",\n        \"Jeremiah 24 (good and bad figs)\",\n        \"Joel 1:7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A tradition (found in some rabbinic and patristic speculation) that the fig was the actual tree of knowledge, making the fig leaves an ironic covering taken from the very tree of transgression.\",\n      \"basis\": [\n        \"Genesis 3:6-7 (inference from the immediate availability of fig leaves)\",\n        \"Rabbinic sources such as Genesis Rabbah; echoed by some church fathers\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"An origin account of clothing and modesty, read historically or morally rather than symbolically — fig leaves as the first garments, teaching modesty after the Fall.\",\n      \"basis\": [\n        \"Genesis 3:7, 3:21\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly recognizable consensus in popular and homiletical Christian usage: 'fig leaves' functions almost proverbially for inadequate human attempts to cover sin (self-righteousness), grounded in the Genesis 3:7 vs. 3:21 contrast. The hypocrisy/fruitlessness reading from the Gospel fig-tree episodes is also widespread but attaches more to the fig tree than to the leaves specifically; the two motifs are frequently blended in preaching (leaves = appearance, fruit = reality). Academic biblical scholarship is more restrained, often treating Genesis 3:7 as an etiology of shame and clothing rather than a doctrine of works-righteousness, so the strength of the 'self-effort' consensus is higher in devotional/evangelical teaching than in critical scholarship.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Human attempts to cover sin, shame, and guilt through self-righteousness or inadequate human efforts, rather than relying on God's provision.\",\n  \"primary_basis\": [\n    \"Genesis 3:7\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hypocrisy or the outward appearance of religion without spiritual fruit.\",\n      \"basis\": [\n        \"Matthew 21:19\",\n        \"Mark 11:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The awakening of human sexuality, modesty, and the loss of innocence.\",\n      \"basis\": [\n        \"Genesis 3:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Associations with ancient Near Eastern fertility symbols and cultic practices.\",\n      \"basis\": [\n        \"Genesis 3:7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The contrast between the human-made fig leaves of Genesis 3:7 and the God-given garments of skin in Genesis 3:21 is a central typological motif in Christian theology, representing human works versus divine grace.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"In Christian teaching, the fig leaves sewn by Adam and Eve most commonly symbolize humanity’s self-made attempt to conceal the shame and guilt of sin. They are often portrayed as an inadequate covering, sometimes extended typologically to human works or self-righteousness in contrast with God’s provision.\",\n  \"primary_basis\": [\n    \"Genesis 3:7 — Adam and Eve recognize their nakedness and sew fig leaves together as coverings.\",\n    \"Genesis 3:8–10 — despite their coverings, they remain afraid and hide from God, supporting the interpretation that the leaves do not resolve their guilt or alienation.\",\n    \"Genesis 2:25 — their original nakedness without shame provides the pre-fall contrast.\",\n    \"Genesis 3:21 — God clothes them with garments of skin; Christian preaching often contrasts this divine provision with their self-made fig-leaf coverings.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A literal, practical response to newly experienced nakedness and shame, without an intended symbolic contrast between human works and divine grace.\",\n      \"basis\": [\n        \"Genesis 3:7 directly presents the leaves as makeshift loincloths.\",\n        \"Historical-critical interpreters often avoid assigning theological symbolism beyond the narrative’s explicit themes of nakedness, shame, and disobedience.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sexual shame, damaged innocence, or disrupted human sexuality following disobedience.\",\n      \"basis\": [\n        \"Genesis 2:25 and 3:7 connect the transition from innocence to shame specifically with awareness of nakedness.\",\n        \"Genesis 3:10 identifies nakedness as Adam’s stated reason for fear and hiding.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Outward religious appearance without spiritual fruit, hypocrisy, or barren profession.\",\n      \"basis\": [\n        \"Matthew 21:18–19 and Mark 11:12–14 describe a fig tree with leaves but no fruit.\",\n        \"Mark 11:20–21 records the tree’s withering; Christian interpreters frequently associate it with fruitless religion or judgment on unfaithfulness.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel or its religious establishment displaying outward signs of vitality while lacking covenant fruit.\",\n      \"basis\": [\n        \"The fruitless fig tree in Matthew 21:18–22 and Mark 11:12–21 occurs in connection with Jesus’ actions at the temple.\",\n        \"Hosea 9:10, Jeremiah 8:13, Micah 7:1, and Luke 13:6–9 contribute to the broader biblical use of fig imagery for Israel and covenant fruitfulness.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Fertility or specifically sexual symbolism derived from the fig’s shape, abundance, or wider ancient cultural associations.\",\n      \"basis\": [\n        \"The coverings are applied to the sexual organs in Genesis 3:7.\",\n        \"Comparative cultural and psychoanalytic readings sometimes draw on ancient associations between figs, fertility, and sexuality, though Genesis does not state this symbolism explicitly.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable Christian consensus that the Genesis fig leaves represent shame-driven human self-covering after sin. The stronger claim that they specifically symbolize works-righteousness or false religion is widespread in Christian homiletics but is not a settled conclusion of biblical scholarship. In the New Testament fig-tree narratives, leaves can instead signify outward promise without corresponding fruit, so the meaning remains context-dependent.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Inadequate human attempts to cover personal sin, guilt, or shame through self-made efforts (often contrasted with God's later provision of covering)\",\n  \"primary_basis\": [\n    \"Genesis 3:7\",\n    \"Genesis 3:21 (contrasting divine covering with animal skins)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Mere literal/historical detail of improvised clothing with no intended deeper symbolism\",\n      \"basis\": [\n        \"Genesis 3:7 read purely as narrative\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"General emblem of human modesty or the onset of self-consciousness after the Fall\",\n      \"basis\": [\n        \"Genesis 3:7\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus in Christian biblical interpretation and teaching centers on the Genesis Fall narrative; other biblical fig imagery (e.g., cursed fig tree, sitting under a fig tree) is not normally applied to the specific phrase 'fig leaves'.\"\n}\n\nBOOK ENTRY\nSelf-made righteousness — a covering of one's own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 3:7; Matt 21:19) · see Garments & Armor, ch. 43\n\nAVAILABLE KJV EXCERPTS\nGenesis 3:7 — And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.\nMatthew 21:19 — And when he saw a fig tree in the way, he came to it, and found nothing thereon, but leaves only, and said unto it, Let no fruit grow on thee henceforward for ever. And presently the fig tree withered away.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "7ad2f70ebba91b357fac9c76e4d5871297f0cddbeb95e15ee6c41bc0ec0a31f4",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "gehenna",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGehenna (hell, the lake of fire)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, Gehenna (rendered 'hell' in most English Bibles) and the 'lake of fire' in Revelation are understood as symbols or names for the place/state of final, post-judgment punishment of the unrepentant wicked — traditionally conceived as eternal conscious torment, separation from God, and irreversible condemnation. The imagery derives from the Valley of Hinnom outside Jerusalem, a site of child sacrifice denounced by the prophets, which became in Second Temple Judaism a byword for divine judgment by fire.\",\n  \"primary_basis\": [\n    \"Matthew 5:22, 29-30\",\n    \"Matthew 10:28\",\n    \"Matthew 18:8-9\",\n    \"Matthew 23:15, 33\",\n    \"Mark 9:43-48 (with its allusion to Isaiah 66:24, 'their worm does not die and the fire is not quenched')\",\n    \"Luke 12:4-5\",\n    \"James 3:6\",\n    \"Matthew 25:41, 46 ('eternal fire... eternal punishment')\",\n    \"Revelation 19:20; 20:10, 14-15; 21:8 (the lake of fire, 'the second death')\",\n    \"Old Testament background: 2 Kings 23:10; 2 Chronicles 28:3; 33:6; Jeremiah 7:31-32; 19:2-6; Isaiah 66:24\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eternal conscious torment: unending punishment of the wicked in soul and (after resurrection) body; the fire imagery may be literal or metaphorical for real, everlasting suffering and exclusion from God. This is the classical position of Roman Catholic, Eastern Orthodox, and most historic Protestant confessions.\",\n      \"basis\": [\n        \"Matthew 25:41, 46\",\n        \"Mark 9:43-48\",\n        \"Revelation 14:9-11\",\n        \"Revelation 20:10\",\n        \"2 Thessalonians 1:9\",\n        \"Luke 16:19-31 (often adduced, though technically about Hades)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Annihilationism / conditional immortality: Gehenna and the lake of fire symbolize the final destruction and cessation of existence of the wicked ('the second death'), not unending torment. Held by Seventh-day Adventists, Jehovah's Witnesses, and a notable stream of evangelical scholars (e.g., John Stott, Edward Fudge, John Wenham).\",\n      \"basis\": [\n        \"Matthew 10:28 ('destroy both soul and body in Gehenna')\",\n        \"Revelation 20:14 ('the lake of fire is the second death')\",\n        \"Malachi 4:1-3\",\n        \"2 Thessalonians 1:9 read as 'destruction'\",\n        \"Romans 6:23 ('the wages of sin is death')\",\n        \"John 3:16 ('perish')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Universal reconciliation / restorative punishment: Gehenna-fire is purgative and corrective, ultimately leading to the salvation of all; associated with Origen, Gregory of Nyssa, and modern advocates (e.g., David Bentley Hart, Robin Parry).\",\n      \"basis\": [\n        \"1 Corinthians 15:22-28\",\n        \"Colossians 1:19-20\",\n        \"Philippians 2:9-11\",\n        \"1 Timothy 2:4; 4:10\",\n        \"Reading of 'aionios' (age-long) punishment in Matthew 25:46 as non-eternal\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Metaphorical/symbolic view within traditionalism: the fire, darkness, and worm are non-literal images of the reality of judgment and separation from God, whose actual nature is unspecified; hell is fundamentally self-chosen exclusion (common in Catholic Catechism-era teaching and writers like C.S. Lewis).\",\n      \"basis\": [\n        \"Mixed imagery of fire and darkness (Matthew 8:12 vs. Matthew 25:41) taken as sign of metaphor\",\n        \"2 Thessalonians 1:9 (separation 'from the presence of the Lord')\",\n        \"Catechism of the Catholic Church §1033-1037 (hell as definitive self-exclusion)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Historical/preterist reading: Jesus' Gehenna warnings refer primarily to temporal judgment on Jerusalem (the corpses in the Valley of Hinnom at the AD 70 destruction), not to a postmortem hell; advocated by some preterists and a few historical-Jesus scholars (echoing N.T. Wright's partial emphasis).\",\n      \"basis\": [\n        \"Jeremiah 7:31-33; 19:6-9 (Hinnom as site of corpses in national judgment)\",\n        \"Matthew 23:33-38 with 24:1-34 (judgment on 'this generation')\",\n        \"Gehenna's literal geography outside Jerusalem\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gehenna as temporary, purgatorial punishment (a reading carried over from rabbinic Judaism, where Gehinnom is often a limited-duration purgation, usually up to twelve months); occasionally invoked in Jewish-Christian comparative scholarship rather than church teaching.\",\n      \"basis\": [\n        \"Rabbinic sources (e.g., m. Eduyot 2:10; b. Rosh Hashanah 16b-17a) used as background context\",\n        \"Second Temple literature (1 Enoch 27; 4 Ezra 7) shaping Gehenna imagery\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a clear, recognizable consensus on the referent: Gehenna and the lake of fire symbolize final divine judgment on the wicked, distinct from Hades/Sheol (the intermediate state of the dead) — note Revelation 20:14, where Hades itself is thrown into the lake of fire. The live disputes concern the nature and duration of that judgment (eternal torment vs. annihilation vs. restoration) and how literally the fire imagery should be taken, not what the symbol points to. The traditional 'eternal conscious punishment' reading remains dominant across Catholic, Orthodox, and confessional Protestant teaching, though annihilationist and metaphorical readings have gained visibility in modern evangelical and academic discussion. Popular English usage often conflates Gehenna, Hades, and Tartarus under the single word 'hell,' which most scholars regard as a translation-driven blurring of distinct terms.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The state or place of ultimate, eternal judgment and punishment for the wicked, typically understood as eternal conscious torment and complete separation from God.\",\n  \"primary_basis\": [\n    \"Matthew 5:22\",\n    \"Matthew 10:28\",\n    \"Mark 9:43-48\",\n    \"Revelation 20:10\",\n    \"Revelation 20:14-15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Annihilationism or Conditional Immortality, where the fire completely consumes and destroys the wicked, resulting in a cessation of existence rather than eternal torment.\",\n      \"basis\": [\n        \"Matthew 10:28\",\n        \"Revelation 20:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A historical, temporal judgment, specifically referring to the literal Valley of Hinnom outside Jerusalem functioning as a symbol for the impending national destruction of Jerusalem in AD 70.\",\n      \"basis\": [\n        \"Jeremiah 7:31-33\",\n        \"Matthew 23:33\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Universalism or purgatorial purification, where the fire is restorative and refining, eventually leading to the reconciliation of all souls to God.\",\n      \"basis\": [\n        \"Mark 9:49\",\n        \"1 Corinthians 3:15\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While eternal conscious torment is the historically dominant consensus and primary interpretation, the exact nature and duration of this judgment are actively debated. Annihilationism has become a common alternative in modern biblical studies. The historical link to the Valley of Hinnom (Ge-Hinnom) is universally recognized as the etymological and symbolic origin of the term.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Gehenna/hell/the lake of fire most commonly symbolizes the final divine judgment of the unrepentant wicked: irreversible exclusion from blessed life with God and punishment traditionally understood as eternal conscious suffering.\",\n  \"primary_basis\": [\n    \"Matthew 5:22, 29–30; 10:28; 18:8–9 — Gehenna, destruction of body and soul, and eternal fire\",\n    \"Matthew 23:15, 33 — condemnation to Gehenna\",\n    \"Matthew 25:31–46 — eternal fire and eternal punishment contrasted with eternal life\",\n    \"Mark 9:43–48 — unquenchable fire and the undying worm, drawing on Isaiah 66:24\",\n    \"Luke 12:4–5 — God’s authority to cast into Gehenna\",\n    \"2 Thessalonians 1:8–9 — eternal destruction and exclusion from the Lord’s presence\",\n    \"Revelation 14:9–11 — torment, fire, and smoke ascending forever\",\n    \"Revelation 19:20; 20:10–15; 21:8 — the lake of fire, second death, and final judgment\",\n    \"Daniel 12:2 and John 5:28–29 — resurrection to shame or condemnation\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Conditional immortality or annihilationism: the wicked are finally destroyed, cease to live, or permanently lose life rather than remain eternally conscious in torment; the lake of fire is the “second death.”\",\n      \"basis\": [\n        \"Matthew 10:28\",\n        \"John 3:16\",\n        \"Romans 6:23\",\n        \"2 Thessalonians 1:9\",\n        \"Revelation 20:14; 21:8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Universal or restorative judgment: the fire is ultimately corrective or purifying, and divine judgment eventually culminates in universal reconciliation.\",\n      \"basis\": [\n        \"1 Corinthians 3:13–15\",\n        \"1 Corinthians 15:22–28\",\n        \"Philippians 2:10–11\",\n        \"Colossians 1:19–20\",\n        \"1 Timothy 2:3–6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gehenna sayings primarily signify historical or covenantal judgment, especially Jerusalem’s destruction, rather than an otherworldly final place of punishment.\",\n      \"basis\": [\n        \"Jeremiah 7:30–34; 19:1–15\",\n        \"Matthew 23:33–38\",\n        \"Matthew 24:1–34\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Hell is principally the subjective experience of God’s presence or love by those who reject God, rather than a separately created torture chamber; fire imagery expresses alienation, shame, or painful resistance to divine holiness.\",\n      \"basis\": [\n        \"John 3:19–21\",\n        \"Romans 2:5–8\",\n        \"2 Thessalonians 1:9\",\n        \"Revelation 14:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The imagery refers chiefly to the grave, death, or the intermediate state rather than final punishment.\",\n      \"basis\": [\n        \"Passages concerning Sheol or Hades, such as Psalm 16:10, Luke 16:23, and Revelation 20:13–14, are used in this reading, although biblical scholarship commonly distinguishes Sheol/Hades from Gehenna and the final lake of fire.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus that Gehenna and the lake of fire denote severe divine judgment and exclusion from final blessed life. There is no equally settled consensus about the precise nature of that judgment—literal or metaphorical fire, conscious torment or destruction, imposed penalty or experienced alienation—or about whether “hell,” Gehenna, Hades, and the lake of fire should be treated as exact synonyms.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the final place of eternal fiery punishment and torment for the wicked after divine judgment (hell)\",\n  \"primary_basis\": [\n    \"Matthew 5:22\",\n    \"Matthew 5:29-30\",\n    \"Matthew 10:28\",\n    \"Matthew 18:8-9\",\n    \"Matthew 23:15\",\n    \"Matthew 23:33\",\n    \"Mark 9:43-48\",\n    \"Luke 12:5\",\n    \"James 3:6\",\n    \"Revelation 19:20\",\n    \"Revelation 20:10\",\n    \"Revelation 20:14-15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"final irreversible destruction or annihilation of the wicked (not eternal conscious torment)\",\n      \"basis\": [\n        \"Matthew 10:28\",\n        \"Mark 9:43-48\",\n        \"Revelation 20:14-15\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"metaphorical image of severe divine judgment or separation from God rather than a literal postmortem location of fire\",\n      \"basis\": [\n        \"Matthew 5:22\",\n        \"Matthew 10:28\",\n        \"Mark 9:43-48\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the historical Valley of Hinnom as a symbol of temporal national judgment or disgrace (not primarily an afterlife locale)\",\n      \"basis\": [\n        \"Jeremiah 7:31-32\",\n        \"Jeremiah 19:6\",\n        \"2 Kings 23:10\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"temporary purgatorial or purifying fire leading ultimately to restoration\",\n      \"basis\": [\n        \"Mark 9:49\",\n        \"1 Corinthians 3:13-15\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian teaching across Catholic, Orthodox, and most Protestant sources equates Gehenna with the lake of fire as eternal hell; debates concern duration/nature of punishment and literal vs. figurative reading but do not displace the primary identification.\"\n}\n\nBOOK ENTRY\nThe judgment — the valley of Hinnom outside Jerusalem's wall, where the carcases of the transgressors burn: “their worm shall not die, neither shall their fire be quenched.” What destroys “both soul and body,” distinct from Sheol, the grave that holds all alike.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 10:28; Isa 66:24; Jer 7:32; Mark 9:43-48) · see Heaven and Hell, ch. 16\n\nAVAILABLE KJV EXCERPTS\nMatthew 10:28 — And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.\nIsaiah 66:24 — And they shall go forth, and look upon the carcases of the men that have transgressed against me: for their worm shall not die, neither shall their fire be quenched; and they shall be an abhorring unto all flesh.\nJeremiah 7:32 — Therefore, behold, the days come, saith the LORD, that it shall no more be called Tophet, nor the valley of the son of Hinnom, but the valley of slaughter: for they shall bury in Tophet, till there be no place.\nMark 9:43 — And if thy hand offend thee, cut it off: it is better for thee to enter into life maimed, than having two hands to go into hell, into the fire that never shall be quenched:\nMark 9:44 — Where their worm dieth not, and the fire is not quenched.\nMark 9:45 — And if thy foot offend thee, cut it off: it is better for thee to enter halt into life, than having two feet to be cast into hell, into the fire that never shall be quenched:\nMark 9:46 — Where their worm dieth not, and the fire is not quenched.\nMark 9:47 — And if thine eye offend thee, pluck it out: it is better for thee to enter into the kingdom of God with one eye, than having two eyes to be cast into hell fire:\nMark 9:48 — Where their worm dieth not, and the fire is not quenched.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d5252b69ce79fe29676d2fc330280e9704409392b8fc6bf2ac82aaf7a2cd8bda",
+  "cache": {
+    "hit": false
+  }
+}

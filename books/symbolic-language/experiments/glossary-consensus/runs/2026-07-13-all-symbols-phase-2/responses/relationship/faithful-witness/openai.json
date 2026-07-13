@@ -1,0 +1,195 @@
+{
+  "id": "resp_0c06dbaca98ef0e8006a547a5fb13481939c7fd5d9c8e48a7a",
+  "object": "response",
+  "created_at": 1783921247,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921264,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c06dbaca98ef0e8006a547a607f548193a80bdc492b43eed0",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c06dbaca98ef0e8006a547a6a00bc8193b59238d0c9dc0a4d",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"“Faithful Witness” is primarily a title of Jesus Christ, the trustworthy revealer of God whose testimony remains faithful through death and is vindicated in resurrection. Psalm 89’s moon and Davidic-covenant imagery are commonly treated as background or complementary symbolism.\",\"book_summary\":\"The term identifies the Messiah, with the moon portrayed as a heavenly symbol of his faithful transmission of the Father’s light and the enduring establishment of his throne.\",\"consensus_core_identification\":\"Jesus Christ, the Messiah, as God’s faithful witness.\",\"book_core_identification\":\"The Messiah as the faithful witness.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement is evident. The book gives the moon-Christ connection greater symbolic emphasis, but both the Christological title and the lunar imagery from Psalm 89 are recognizable within the consensus material.\",\"material_contradiction\":\"None. The claim that the moon symbolically displays the Messiah’s title is an added typological interpretation, not a replacement of the consensus referent.\",\"rationale\":\"Reduced to their minimum identifications, both readings identify the Faithful Witness as Jesus the Messiah. The book’s language about bearing the Father’s light and the moon writing this name in the sky elaborates the Psalm 89 background rather than changing the title’s central referent. Since the consensus explicitly recognizes both the messianic reading and the moon as Psalm 89’s celestial witness, the added symbolism does not create a materially different extension.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Revelation 1:5 and 3:14 directly support the messianic identification, and Psalm 89:37 supports the moon as a faithful celestial witness. However, the printed excerpts do not themselves establish that moonlight specifically represents the Messiah bearing the Father’s light unchanged; that is a further typological inference.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3502,
+    "input_tokens_details": {
+      "cache_write_tokens": 3499,
+      "cached_tokens": 0
+    },
+    "output_tokens": 919,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4421
+  },
+  "user": null,
+  "metadata": {}
+}

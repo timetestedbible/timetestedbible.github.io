@@ -95,7 +95,7 @@ def build_index() -> dict[str, Any]:
         shutil.rmtree(SOURCE_OUTPUT)
     SOURCE_OUTPUT.mkdir(parents=True)
     runs: list[dict[str, Any]] = []
-    by_anchor: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    by_anchor: dict[str, list[tuple[int, str, str]]] = defaultdict(list)
 
     for run_dir in sorted(path for path in RUNS.iterdir() if path.is_dir()):
         manifest = load_json(run_dir / "manifest.json")
@@ -150,6 +150,22 @@ def build_index() -> dict[str, Any]:
                 )
                 for provider, cfg in providers_config.items()
             ]
+            provider_count = len(judges)
+            completion = {
+                "providers": provider_count,
+                "consensus": sum(1 for judge in judges if judge["consensusMeaning"]),
+                "relationship": sum(1 for judge in judges if judge["relationship"] != "PENDING"),
+                "persuasion": sum(1 for judge in judges if judge["persuasion"] != "PENDING"),
+            }
+            relationship_complete = provider_count > 0 and completion["relationship"] == provider_count
+            persuasion_complete = provider_count > 0 and completion["persuasion"] == provider_count
+            terminal_relationship = relationship_complete and row.get("relation") != "DIVERGENT"
+            stage_rank = (
+                3 if persuasion_complete or terminal_relationship
+                else 2 if relationship_complete
+                else 1 if provider_count > 0 and completion["consensus"] == provider_count
+                else 0
+            )
             entry = {
                 "anchor": anchor,
                 "term": row.get("term") or book_entry.get("term") or anchor,
@@ -157,15 +173,17 @@ def build_index() -> dict[str, Any]:
                 "commonView": book_entry.get("common_view", ""),
                 "citations": book_entry.get("citations", ""),
                 "sourceBadge": book_entry.get("source_badge", ""),
-                "relation": row.get("relation", "PENDING"),
-                "citationSupport": row.get("citation_support", "PENDING"),
+                "relation": row.get("relation", "PENDING") if relationship_complete else "PENDING",
+                "citationSupport": row.get("citation_support", "PENDING") if relationship_complete else "PENDING",
                 "persuasion": row.get("persuasion", "PENDING"),
-                "finalVerdict": row.get("final_verdict", "PENDING"),
+                "finalVerdict": row.get("final_verdict", "PENDING") if relationship_complete else "PENDING",
+                "completion": completion,
+                "stageRank": stage_rank,
                 "judges": judges,
             }
             entries.append(entry)
             if reportable:
-                by_anchor[anchor].append((manifest.get("created_at", ""), run_dir.name))
+                by_anchor[anchor].append((stage_rank, manifest.get("created_at", ""), run_dir.name))
 
         run_paths = {
             "manifest": f"{run_url}/manifest.json",
@@ -202,20 +220,29 @@ def build_index() -> dict[str, Any]:
         })
 
     current_runs = {
-        anchor: max(candidates, key=lambda item: (item[0], item[1]))[1]
+        anchor: max(candidates, key=lambda item: (item[0], item[1], item[2]))[2]
         for anchor, candidates in by_anchor.items()
     }
     run_lookup = {run["id"]: run for run in runs}
+    current_glossary = load_current_glossary()
+    live_glossary_by_anchor = {entry["anchor"]: entry for entry in current_glossary}
     current_entries: list[dict[str, Any]] = []
     for anchor, run_id in current_runs.items():
         run = run_lookup[run_id]
         entry = next(entry for entry in run["entries"] if entry["anchor"] == anchor)
-        current_entries.append({**entry, "runId": run_id, "protocolVersion": run["protocolVersion"]})
+        live_entry = live_glossary_by_anchor.get(anchor, {})
+        current_entries.append({
+            **entry,
+            "term": live_entry.get("term") or entry["term"],
+            "frozenTerm": entry["term"] if live_entry.get("term") and live_entry["term"] != entry["term"] else "",
+            "runId": run_id,
+            "protocolVersion": run["protocolVersion"],
+        })
     current_entries.sort(key=lambda entry: entry["term"].lower())
 
     current_by_anchor = {entry["anchor"]: entry for entry in current_entries}
     glossary_entries: list[dict[str, Any]] = []
-    for book_entry in load_current_glossary():
+    for book_entry in current_glossary:
         current = current_by_anchor.get(book_entry["anchor"])
         glossary_entries.append({
             "anchor": book_entry["anchor"],

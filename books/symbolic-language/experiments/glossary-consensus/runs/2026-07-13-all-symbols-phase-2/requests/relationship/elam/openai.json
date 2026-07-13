@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "elam",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nElam\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"Elam has no strong single symbolic meaning in mainstream Christian interpretation; it is overwhelmingly treated as a literal ancient nation (east of Babylon, in the region of modern southwestern Iran, capital Susa/Shushan). Where a broader theological or typological significance is drawn, the most commonly assigned meaning is that Elam represents distant Gentile nations under God's sovereign judgment who are nevertheless promised restoration and inclusion in God's redemptive plan — judgment followed by mercy on the nations 'in the latter days,' with the presence of Elamites at Pentecost often cited as a fulfillment or foreshadowing of Gentile inclusion in the gospel.\",\n  \"primary_basis\": [\n    \"Genesis 10:22 (Elam as a son of Shem in the Table of Nations)\",\n    \"Genesis 14:1-17 (Chedorlaomer king of Elam)\",\n    \"Jeremiah 49:34-39 (oracle of judgment against Elam, ending with 'I will restore the fortunes of Elam in the latter days')\",\n    \"Isaiah 21:2 (Elam summoned against Babylon)\",\n    \"Isaiah 11:11 (remnant of God's people recovered from Elam)\",\n    \"Ezekiel 32:24-25 (Elam among the nations in the pit)\",\n    \"Daniel 8:2 (Susa in the province of Elam)\",\n    \"Acts 2:9 (Elamites present at Pentecost hearing the gospel)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Elam as a prophetic identification with modern Iran, with Jeremiah 49:34-39 read as an unfulfilled end-times prophecy about Iran (sometimes tied to its nuclear program, the Bushehr region, or a coming war), distinct from prophecies about 'Persia' (e.g., Ezekiel 38).\",\n      \"basis\": [\n        \"Jeremiah 49:34-39\",\n        \"Ezekiel 38:5 (Persia, read as distinct from Elam)\",\n        \"Isaiah 21:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Elam as a symbol of military might, especially archery and cavalry — the 'bow of Elam' representing worldly/foreign armed power that God will break.\",\n      \"basis\": [\n        \"Isaiah 22:6 ('Elam bore the quiver with chariots and horsemen')\",\n        \"Jeremiah 49:35 ('I will break the bow of Elam, the mainstay of their might')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Devotional or name-study symbolism based on proposed etymologies such as 'hidden,' 'eternity,' or 'highland,' treating Elam as representing hidden things or the distant/remote reaches of the world.\",\n      \"basis\": [\n        \"Genesis 10:22 (name lists used in name-meaning studies)\",\n        \"General onomastic/devotional tradition rather than specific exegetical passages\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Elam simply as historical Persia/the Persian empire's core territory, functioning in prophecy as the instrument God raises against Babylon (a historical-referential rather than symbolic reading).\",\n      \"basis\": [\n        \"Isaiah 21:2\",\n        \"Daniel 8:2\",\n        \"Isaiah 21:9 in context (fall of Babylon)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Elam differs from terms like 'Babylon' or 'Egypt' that carry well-established symbolic freight in Christian teaching; there is no comparable settled symbolic tradition for Elam. Most commentaries treat it geographically and historically. The judgment-then-restoration reading of Jeremiah 49:39, often linked to Acts 2:9, is the nearest thing to a common theological interpretation. The modern-Iran end-times reading is prominent in popular dispensationalist prophecy literature and media but is a minority position in academic and mainstream church interpretation. Because the question asks about symbolic meaning specifically, the honest answer is that recognizable consensus is weak; confidence is medium because the literal-nation consensus is clear even though symbolic consensus is not.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Distant Gentile nations that are subject to God's severe judgment but are ultimately included in His eschatological grace and the universal outpouring of the Holy Spirit.\",\n  \"primary_basis\": [\n    \"Jeremiah 49:34-39\",\n    \"Acts 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A strictly literal, historical nation with no overarching symbolic meaning beyond its geographic and political role in the Ancient Near East.\",\n      \"basis\": [\n        \"Genesis 10:22\",\n        \"Genesis 14:1\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"An instrument of divine judgment and warfare, particularly called by God to judge oppressive empires like Babylon.\",\n      \"basis\": [\n        \"Isaiah 21:2\",\n        \"Isaiah 22:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eternity or hiddenness, derived from a folk-etymological or mystical association with the Hebrew word 'olam.\",\n      \"basis\": [],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Elam lacks a prominent, universally recognized symbolic meaning in Christian tradition compared to nations like Egypt or Babylon. It is most frequently treated as a strictly historical entity. When interpreted symbolically or typologically, it typically underscores the universal scope of the Gospel, representing the fulfillment of God's promise to eventually restore scattered pagan nations.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Elam has no settled, term-specific symbolic meaning in Christian interpretation. It is primarily understood historically and geographically as the ancient people and territory east of Mesopotamia, associated with a son of Shem and later with the region of Persia/Iran.\",\n  \"primary_basis\": [\n    \"Genesis 10:22; 1 Chronicles 1:17 — Elam is named as a son or descendant-line of Shem.\",\n    \"Genesis 14:1,9 — Chedorlaomer is identified as king of Elam.\",\n    \"Isaiah 21:2; 22:6 — Elam appears as a historical military power involved in judgment and warfare.\",\n    \"Jeremiah 49:34-39 — prophecy of judgment against Elam followed by eventual restoration.\",\n    \"Daniel 8:2 — Elam is the province containing Susa.\",\n    \"Acts 2:9 — Elamites are among the historical peoples present at Pentecost.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Elam can exemplify a foreign nation brought under divine judgment and subsequently promised restoration.\",\n      \"basis\": [\n        \"Jeremiah 49:34-39, especially the breaking of Elam's bow, scattering among nations, and latter-days restoration.\",\n        \"Isaiah 21:2 and 22:6, where Elam participates in military judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Elamites at Pentecost contribute to the broader symbolism of the gospel reaching many nations and reversing human division; Elam itself is not usually treated as a distinct symbol.\",\n      \"basis\": [\n        \"Acts 2:5-11, particularly Acts 2:9.\",\n        \"Often read alongside Genesis 11:1-9 as a thematic contrast with Babel.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Elam prophetically represents modern Iran or Persia, sometimes in end-times interpretation.\",\n      \"basis\": [\n        \"The historical location of Elam in territory now largely within Iran.\",\n        \"Jeremiah 49:34-39, especially the phrase “in the latter days.”\",\n        \"Occasional association with Daniel's Persian setting and other prophetic texts.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Elam carries an allegorical meaning derived from proposed name meanings such as “hidden,” “distant,” “eternity,” or “youth,” and therefore symbolizes hiddenness, remoteness, or an age-related spiritual condition.\",\n      \"basis\": [\n        \"Name-based typological or devotional interpretation rather than a consistent biblical usage.\",\n        \"Competing proposed etymologies prevent a stable interpretation.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Interpretations of Elam are strongly context-dependent. Mainstream historical-critical and ordinary Christian readings treat it as a real people and place, not as a fixed biblical symbol. Judgment, restoration, international gospel inclusion, and modern-Iran readings arise from particular passages but do not constitute a universally recognized symbolic definition.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"No settled or commonly assigned symbolic meaning; treated primarily as a historical people and nation (descendants of Shem, located east of Babylon/Mesopotamia)\",\n  \"primary_basis\": [\n    \"Genesis 10:22\",\n    \"Jeremiah 49:34-39\",\n    \"Isaiah 11:11\",\n    \"Isaiah 21:2\",\n    \"Ezekiel 32:24\",\n    \"Acts 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A distant Gentile nation subject to divine judgment yet promised future restoration, sometimes loosely typifying remote peoples included in God's redemptive plan\",\n      \"basis\": [\n        \"Jeremiah 49:34-39\",\n        \"Isaiah 11:11\",\n        \"Isaiah 22:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Etymological association with 'eternity,' 'hidden,' or 'highland' applied occasionally in older lexical or devotional comments\",\n      \"basis\": [\n        \"Genesis 10:22 (name derivation discussions in lexicons)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Standard Christian biblical studies and teaching treat Elam almost exclusively as a concrete ethnic/geographical entity appearing in the Table of Nations, prophetic oracles of judgment/restoration, and the Pentecost narrative. No consistent typological, allegorical, or symbolic consensus (comparable to Babylon, Egypt, or Assyria) has developed in mainstream commentaries, systematic theologies, or popular Christian interpretation.\"\n}\n\nBOOK ENTRY\nBabel’s confederate — allied with Shinar in Scripture's first war, judged under Babylon's own sentence (“I will break the bow of Elam”), its oracle the prologue to Babylon's fall.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 14:1, 9; Jer 49:35; 51:56) · see The Bow, ch. 44\n\nAVAILABLE KJV EXCERPTS\nGenesis 14:1 — And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations;\nGenesis 14:9 — With Chedorlaomer the king of Elam, and with Tidal king of nations, and Amraphel king of Shinar, and Arioch king of Ellasar; four kings with five.\nJeremiah 49:35 — Thus saith the LORD of hosts; Behold, I will break the bow of Elam, the chief of their might.\nJeremiah 51:56 — Because the spoiler is come upon her, even upon Babylon, and her mighty men are taken, every one of their bows is broken: for the LORD God of recompences shall surely requite.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "74fad98d717b616d907bbd6c4fb66bf67d188e754565e35510f1d3575c5d4517",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "image",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nImage of metals (gold, silver, brass, clay)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"The great statue of Nebuchadnezzar's dream in Daniel 2 is most commonly understood as a prophetic symbol of a succession of world empires, decreasing in glory (gold to clay) from Babylon onward, which will ultimately be destroyed and replaced by God's everlasting kingdom (the stone cut without hands). In the traditional Christian scheme: the head of gold = Babylon (explicitly identified in the text as Nebuchadnezzar/Babylon), the silver chest and arms = Medo-Persia, the bronze belly and thighs = Greece (Alexander and successors), the iron legs = Rome, and the feet/toes of iron mixed with clay = a divided or weakened final form of that empire; the stone that smashes the image represents the kingdom of God (often identified with Christ and his kingdom/church).\",\n  \"primary_basis\": [\n    \"Daniel 2:31-45 (the dream and Daniel's interpretation; 'you are the head of gold,' v. 37-38; the stone becomes a mountain filling the earth, v. 34-35, 44-45)\",\n    \"Daniel 7:1-27 (the parallel vision of four beasts, standardly read as the same four kingdoms)\",\n    \"Daniel 8:20-21 (explicit naming of Media-Persia and Greece, used to anchor the identification of the middle kingdoms)\",\n    \"Luke 20:17-18 / Matthew 21:44 (Christ as the stone that crushes, linked to the stone of Daniel 2)\",\n    \"Psalm 118:22 and Isaiah 28:16 (stone imagery applied to Christ, connected to the smiting stone)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Critical-scholarly ('Greek') scheme: the four kingdoms are Babylon, Media, Persia, and Greece, with the iron-clay feet referring to the divided Hellenistic kingdoms (Ptolemies and Seleucids) and their intermarriages; the vision is read as culminating in the Maccabean era rather than Rome. This is the dominant view in academic historical-critical scholarship, though a minority position in traditional church teaching.\",\n      \"basis\": [\n        \"Daniel 2:43 (mixing 'with the seed of men' read as Seleucid-Ptolemaic dynastic marriages)\",\n        \"Daniel 8:20-21 and Daniel 11 (focus on Persia and Greece, Antiochus IV)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Dispensational/futurist reading: the legs and especially the feet and ten toes of iron and clay represent a future revived Roman empire or end-time confederation of ten kingdoms, destroyed at Christ's second coming; the stone's kingdom is the future millennial kingdom rather than the church age.\",\n      \"basis\": [\n        \"Daniel 2:41-44 (ten toes correlated with the ten horns of Daniel 7:24 and Revelation 17:12)\",\n        \"Revelation 13 and 17 (end-time beast empire)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ecclesial/amillennial emphasis: the stone cut without hands is Christ at his first coming, and the growing mountain is the church/kingdom of God expanding through history from the Roman era onward; the metals matter chiefly as the backdrop for the inauguration of Christ's kingdom.\",\n      \"basis\": [\n        \"Daniel 2:44-45\",\n        \"Luke 20:17-18\",\n        \"Mark 1:15 and Colossians 1:13 (kingdom inaugurated at Christ's coming)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral/qualitative reading: the descending value of the metals (gold, silver, bronze, iron, clay) symbolizes the progressive degeneration of human government, civilization, or moral character over history, sometimes paralleled with the classical 'ages of man' (Hesiod's golden-to-iron ages); often held alongside, not instead of, the four-empire view.\",\n      \"basis\": [\n        \"Daniel 2:39 ('inferior to you')\",\n        \"General observation of the decreasing value and increasing hardness/brittleness of the materials\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Historicist variations extending the iron-clay phase into the divided nations of post-Roman Europe (e.g., classic Protestant, Seventh-day Adventist teaching), with the stone as Christ's still-future kingdom; clay-iron mixture read as church-state or fragile national alliances that 'shall not cleave together.'\",\n      \"basis\": [\n        \"Daniel 2:41-43\",\n        \"Daniel 7:23-24 (Rome's division into ten kingdoms)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The identification of the image as a sequence of world kingdoms is essentially universal, since Daniel 2:36-45 itself gives that interpretation ('you are the head of gold... after you shall arise another kingdom'). Disagreement concerns which kingdoms follow Babylon (Rome-terminating vs. Greece-terminating schemes), the referent of the iron-clay feet, and the timing of the stone's kingdom (first coming/church vs. second coming/millennium). Traditional church teaching (patristic through most conservative interpreters, e.g., Josephus, Jerome onward) is Rome-terminating; historical-critical scholarship largely favors the Greece-terminating scheme. LDS tradition also uses the stone imagery distinctively, but that is outside mainstream Christian consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A succession of worldly empires or kingdoms, traditionally identified as Babylon, Medo-Persia, Greece, and Rome, which will ultimately be destroyed and replaced by God's eternal kingdom.\",\n  \"primary_basis\": [\n    \"Daniel 2:31-45\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A succession of empires ending with Greece (Babylon, Media, Persia, Greece), a view held primarily by critical scholars who date the book of Daniel to the Maccabean period.\",\n      \"basis\": [\n        \"Daniel 2:31-45\",\n        \"Daniel 7:1-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A representation of the general qualitative, moral, and political decline of human government over time, paralleling classical myths like Hesiod's Ages of Man.\",\n      \"basis\": [\n        \"Daniel 2:37-43\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A strictly eschatological or futuristic alignment of empires culminating in a revived Roman Empire or end-times global government (represented by the iron and clay feet).\",\n      \"basis\": [\n        \"Daniel 2:41-43\",\n        \"Revelation 13:1-10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While there is near unanimous agreement that the metals symbolize successive human kingdoms because Daniel explicitly states this to Nebuchadnezzar, debate exists over the exact historical identification of the later metals. The traditional Christian view sees Rome as the fourth kingdom, whereas modern critical scholarship often identifies the fourth kingdom as Greece.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The metals in Nebuchadnezzar’s image symbolize a succession of earthly kingdoms or world empires. Their changing materials portray successive stages of imperial rule, culminating in a divided and unstable kingdom represented by iron mixed with clay; all are ultimately displaced by God’s everlasting kingdom.\",\n  \"primary_basis\": [\n    \"Daniel 2:31–35 describes the image: a head of gold, chest and arms of silver, belly and thighs of bronze (“brass” in older translations), legs of iron, and feet of iron mixed with clay.\",\n    \"Daniel 2:36–45 explicitly interprets the image as a sequence of kingdoms, beginning with Nebuchadnezzar’s Babylon as the head of gold and ending with God’s indestructible kingdom.\",\n    \"Daniel 7:1–27 is commonly treated as a parallel vision of four successive kingdoms followed by divine rule.\",\n    \"Daniel 8:3–25, especially 8:20–21, explicitly identifies Medo-Persia and Greece and is often used to clarify the historical sequence.\",\n    \"Revelation 13 and 17 are sometimes connected typologically or eschatologically with Daniel’s sequence of beastly empires.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Traditional Christian identification: gold is Babylon, silver is Medo-Persia, bronze is Greece, iron is Rome, and the iron-and-clay phase represents Rome’s divided continuation, successor states, or a final revived form of Roman power.\",\n      \"basis\": [\n        \"Daniel 2:37–40\",\n        \"Daniel 7:3–7\",\n        \"Daniel 8:20–21\",\n        \"The longstanding Jewish and Christian four-empires scheme\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"A widespread critical-historical identification: gold is Babylon, silver is Media, bronze is Persia, and iron is the Greek or Hellenistic empire; the iron-and-clay division reflects the fragmented successor kingdoms, often especially the Seleucid and Ptolemaic realms.\",\n      \"basis\": [\n        \"Daniel 2:39–43\",\n        \"Daniel 7:5–7\",\n        \"Daniel 8:20–25\",\n        \"The historical setting commonly assigned to Daniel by critical scholarship\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Dispensational-futurist reading: the feet and toes of iron mixed with clay symbolize an end-time confederation or revived Roman Empire immediately preceding Christ’s kingdom.\",\n      \"basis\": [\n        \"Daniel 2:41–45\",\n        \"Daniel 7:7–27\",\n        \"Revelation 13:1–10\",\n        \"Revelation 17:9–14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Idealist or typological reading: the metals represent the recurring character of human political power rather than a strictly exhaustive historical timetable; earthly empires are impressive but internally fragile and destined to yield to God’s reign.\",\n      \"basis\": [\n        \"Daniel 2:31–45\",\n        \"Daniel 7:1–27\",\n        \"The contrast between the human-made image and the divinely established stone/kingdom\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Moralized readings in which the metals primarily symbolize declining human character, spiritual qualities, historical ages, or parts of an individual person.\",\n      \"basis\": [\n        \"Analogical associations attached to the relative value or strength of the materials rather than Daniel’s explicit interpretation\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is strong consensus on the basic meaning because Daniel 2 itself interprets the metals as successive kingdoms. There is no complete consensus on the precise identification of every kingdom or on whether the iron-and-clay stage is ancient, post-Roman, or future. The canonical image also includes iron, although the supplied term lists only gold, silver, brass/bronze, and clay.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Successive Gentile world empires (Babylon, Medo-Persia, Greece, Rome, and a final divided kingdom) that dominate history until God's eternal kingdom destroys them and fills the earth\",\n  \"primary_basis\": [\n    \"Daniel 2:31-45\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"General moral or spiritual decline of human government or civilization from glory (gold) to weakness and division (clay), without fixed identification of specific historical empires\",\n      \"basis\": [\n        \"Daniel 2:31-45 (allegorical reading)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Symbolic stages of church history or spiritual conditions rather than political empires\",\n      \"basis\": [\n        \"Daniel 2 (ecclesial/historicist allegory)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The metal image of Nebuchadnezzar’s dream is one of the most consistently interpreted prophetic symbols in Christian tradition; the four-kingdom succession (with Rome and its divisions as the final stage) is the standard reading across patristic, medieval, Reformation, and modern evangelical commentaries, with only minor variations in the precise identity of the fourth kingdom or the clay mixture.\"\n}\n\nBOOK ENTRY\nThe succession of gentile world-kingdoms, shattered by the stone-kingdom of God.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 2:32-45) · see Mountain, ch. 39\n\nAVAILABLE KJV EXCERPTS\nDaniel 2:32 — This image's head was of fine gold, his breast and his arms of silver, his belly and his thighs of brass,\nDaniel 2:33 — His legs of iron, his feet part of iron and part of clay.\nDaniel 2:34 — Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.\nDaniel 2:35 — Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.\nDaniel 2:36 — This is the dream; and we will tell the interpretation thereof before the king.\nDaniel 2:37 — Thou, O king, art a king of kings: for the God of heaven hath given thee a kingdom, power, and strength, and glory.\nDaniel 2:38 — And wheresoever the children of men dwell, the beasts of the field and the fowls of the heaven hath he given into thine hand, and hath made thee ruler over them all. Thou art this head of gold.\nDaniel 2:39 — And after thee shall arise another kingdom inferior to thee, and another third kingdom of brass, which shall bear rule over all the earth.\nDaniel 2:40 — And the fourth kingdom shall be strong as iron: forasmuch as iron breaketh in pieces and subdueth all things: and as iron that breaketh all these, shall it break in pieces and bruise.\nDaniel 2:41 — And whereas thou sawest the feet and toes, part of potters' clay, and part of iron, the kingdom shall be divided; but there shall be in it of the strength of the iron, forasmuch as thou sawest the iron mixed with miry clay.\nDaniel 2:42 — And as the toes of the feet were part of iron, and part of clay, so the kingdom shall be partly strong, and partly broken.\nDaniel 2:43 — And whereas thou sawest iron mixed with miry clay, they shall mingle themselves with the seed of men: but they shall not cleave one to another, even as iron is not mixed with clay.\nDaniel 2:44 — And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.\nDaniel 2:45 — Forasmuch as thou sawest that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great God hath made known to the king what shall come to pass hereafter: and the dream is certain, and the interpretation thereof sure.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "15ce318885374079de5cf925cd515123c3d3d71a80e970f971b3f5428b34436b",
+  "cache": {
+    "hit": false
+  }
+}

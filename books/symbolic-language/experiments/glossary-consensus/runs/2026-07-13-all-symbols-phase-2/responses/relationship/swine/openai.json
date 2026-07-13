@@ -1,0 +1,201 @@
+{
+  "id": "resp_056eb140695dba77006a547f264d948196b473e98b74cb7358",
+  "object": "response",
+  "created_at": 1783922470,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922490,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_056eb140695dba77006a547f26cbc08196b3a07efefdb1135f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_056eb140695dba77006a547f309700819694b8f4664cf3864b",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_056eb140695dba77006a547f3399f48196b87f9bc7d1d5c01b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Swine chiefly symbolize ritual and moral uncleanness, the profane or spiritually corrupt, with common applications to unreceptive people, Gentiles or pagans, apostates, and those returning to sin.\",\"book_summary\":\"Swine are the supreme unclean beast and more specifically depict outward covenant appearance without inward reality, Gentile outsiders who trample holy things, and the washed person who returns to corruption.\",\"consensus_core_identification\":\"Uncleanness or profane spiritual corruption.\",\"book_core_identification\":\"Uncleanness expressed through outward profession without inward transformation, especially in covenant outsiders or returners to corruption.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The consensus applies swine broadly to impurity and several related classes. The book elevates a narrower cluster—outward sign without inward work, Gentile trampling of holiness, and relapse after washing—from secondary applications to the controlling identification.\",\"material_contradiction\":\"None. The book retains the consensus identification of uncleanness and selects applications already represented among the consensus alternatives.\",\"rationale\":\"The opening designation, “unclean beast par excellence,” directly preserves the consensus core. The book is nevertheless more specific in making hypocrisy or merely outward covenant form, Gentile exclusion, and apostatic return integral to the symbol rather than optional contextual applications. This is a material narrowing, not a replacement or novel identification.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Leviticus and Deuteronomy directly establish uncleanness, Matthew supports trampling holy things, and 2 Peter supports return to corruption; however, the inward-work allegory is inferred from hoof and cud, while Revelation 11 names Gentiles trampling the city but never identifies them as swine. The composite Gentile-swine identification therefore depends on typological linkage rather than explicit textual equation.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3929,
+    "input_tokens_details": {
+      "cache_write_tokens": 3926,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1059,
+    "output_tokens_details": {
+      "reasoning_tokens": 656
+    },
+    "total_tokens": 4988
+  },
+  "user": null,
+  "metadata": {}
+}

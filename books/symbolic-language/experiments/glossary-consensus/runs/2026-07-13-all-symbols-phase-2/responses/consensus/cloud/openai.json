@@ -1,0 +1,173 @@
+{
+  "id": "resp_0f73d0d81e392ec3006a5473bd7190819793d0ec7440a5b25a",
+  "object": "response",
+  "created_at": 1783919549,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919575,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f73d0d81e392ec3006a5473bdf14481979986bbf70f9cb58d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f73d0d81e392ec3006a5473c4ef4c81978514cdc9433e6293",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The presence, glory, and majesty of God—often simultaneously revealing God and concealing the fullness of the divine presence.\",\"primary_basis\":[\"Exodus 13:21–22; 14:19–24 — the pillar of cloud manifests God’s guiding and protecting presence.\",\"Exodus 19:9,16–20; 24:15–18 — the cloud accompanies God’s manifestation at Sinai and covers the mountain with divine glory.\",\"Exodus 40:34–38 — the cloud fills and covers the tabernacle, signifying that God’s glory dwells there.\",\"Leviticus 16:2 — God appears in the cloud above the mercy seat.\",\"1 Kings 8:10–12; 2 Chronicles 5:13–14 — the cloud fills the temple when the glory of the Lord takes possession of it.\",\"Matthew 17:5; Mark 9:7; Luke 9:34–35 — the bright cloud at the Transfiguration signifies God’s presence and communicates the divine voice.\",\"Acts 1:9 — a cloud receives Jesus at the Ascension, commonly interpreted as divine rather than merely meteorological imagery.\"],\"alternatives\":[{\"meaning\":\"The eschatological coming, heavenly authority, and royal exaltation of the Son of Man or Christ.\",\"basis\":[\"Daniel 7:13–14 — one like a son of man comes with the clouds and receives universal dominion.\",\"Matthew 24:30; 26:64; Mark 13:26; 14:62; Luke 21:27 — Jesus applies cloud-coming imagery to the Son of Man.\",\"Revelation 1:7; 14:14–16 — Christ comes or appears upon the clouds in judgment and kingship.\"],\"prominence\":\"common\"},{\"meaning\":\"Divine guidance, protection, and covenant care for God’s people.\",\"basis\":[\"Exodus 13:21–22 — the cloud leads Israel through the wilderness.\",\"Exodus 14:19–20 — the cloud protects Israel by standing between Israel and Egypt.\",\"Numbers 9:15–23; Nehemiah 9:12,19 — the cloud directs Israel’s movements and is remembered as evidence of God’s continuing care.\",\"Psalm 105:39 — God spreads a cloud as a covering.\"],\"prominence\":\"common\"},{\"meaning\":\"Judgment, wrath, darkness, or the dread accompanying the day of the Lord.\",\"basis\":[\"Psalm 18:7–12 — dark clouds accompany God’s intervention in judgment.\",\"Isaiah 19:1 — the Lord rides on a swift cloud in judgment upon Egypt.\",\"Ezekiel 30:3,18; 32:7 — clouds and darkness characterize divine judgment.\",\"Joel 2:2; Zephaniah 1:15 — the day of the Lord is described as a day of clouds and thick darkness.\"],\"prominence\":\"common\"},{\"meaning\":\"Divine hiddenness, mystery, and the limits of human access to God.\",\"basis\":[\"Exodus 20:21 — Moses approaches the thick darkness where God is.\",\"Deuteronomy 4:11–12 — God speaks from fire, cloud, and thick darkness without a visible form.\",\"Psalm 97:2 — clouds and thick darkness surround God.\",\"1 Timothy 6:16 is often associated conceptually with this theme, although it speaks of unapproachable light rather than a cloud.\"],\"prominence\":\"common\"},{\"meaning\":\"Emptiness, unreliability, transience, or promise without fulfillment, especially in the image of clouds that bring no rain.\",\"basis\":[\"Proverbs 25:14 — one who boasts of gifts never given is like clouds without rain.\",\"Hosea 6:4; 13:3 — fleeting faithfulness or life is compared to morning cloud or mist.\",\"2 Peter 2:17 — false teachers are compared to mists driven by a storm.\",\"Jude 12 — false teachers are clouds without rain, swept along by winds.\"],\"prominence\":\"minority\"},{\"meaning\":\"The gathered multitude of witnesses surrounding believers.\",\"basis\":[\"Hebrews 12:1 — the 'great cloud of witnesses' is a metaphor for the faithful exemplars named in Hebrews 11.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is a broad Christian and scholarly consensus that cloud imagery most characteristically signals divine presence and glory, often combining manifestation with concealment. The symbol is nevertheless context-dependent: clouds can also signify guidance, judgment, eschatological authority, transience, or emptiness. Thus the primary meaning is settled as a general pattern, not as an exclusive meaning in every passage.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1301,
+    "output_tokens_details": {
+      "reasoning_tokens": 330
+    },
+    "total_tokens": 1618
+  },
+  "user": null,
+  "metadata": {}
+}

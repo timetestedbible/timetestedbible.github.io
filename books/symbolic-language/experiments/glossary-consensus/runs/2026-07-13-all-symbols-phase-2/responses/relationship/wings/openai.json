@@ -1,0 +1,195 @@
+{
+  "id": "resp_0944e7dd0056e8b0006a548033521c8197a1dce3b57498721c",
+  "object": "response",
+  "created_at": 1783922739,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922751,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0944e7dd0056e8b0006a548033e13c8197a0f0f817e043a292",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0944e7dd0056e8b0006a54803932588197a0e10db85a21353b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Wings primarily symbolize God’s protective refuge and sheltering care, while kanaph can secondarily mean a garment corner associated with covenantal covering and law-marking tassels.\",\"book_summary\":\"Wings are identified as the covenant edge—wing, skirt, border, or corner—where the law’s reminder is attached and covenant refuge is received.\",\"consensus_core_identification\":\"Divine protective refuge under God’s wings.\",\"book_core_identification\":\"The covenant-marked edge or corner that mediates covenant covering, remembrance, and refuge.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book retains refuge but makes the covenantal edge/garment-corner sense central, thereby narrowing generic wing-protection imagery and incorporating border, skirt, and law-reminder cases that consensus treats as secondary or context-specific.\",\"material_contradiction\":\"None. The book does not deny protective refuge; it relocates that motif within a more specific covenant-edge framework.\",\"rationale\":\"The book’s identification is recognizable within the consensus alternatives concerning kanaph as garment corner, covenant covering, and the location of tassels. It is therefore neither novel nor contradictory. However, it materially revises the dominant classification by treating the covenant edge as the unifying core rather than treating bird-wing refuge as primary and garment imagery as secondary.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Ezekiel 16:8 strongly supports skirt-covering and covenant, but the printed citation alone does not establish the law-reminder element or the full equation of wing, skirt, border, and corner; Numbers 15:38–40 or similar texts would be needed for that synthesis.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3834,
+    "input_tokens_details": {
+      "cache_write_tokens": 3831,
+      "cached_tokens": 0
+    },
+    "output_tokens": 648,
+    "output_tokens_details": {
+      "reasoning_tokens": 280
+    },
+    "total_tokens": 4482
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "truth",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nTruth (the truth)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'the truth' is understood first and foremost as the self-revelation of God in Jesus Christ — Christ himself is 'the truth' — and, by extension, God's word and the gospel message that reveals him. Knowing and abiding in this truth brings salvation and freedom, and it stands opposed to falsehood, deception, and the devil, who is 'the father of lies.' Thus 'truth' in Scripture is treated as personal and relational (embodied in Christ, communicated by the Spirit) rather than merely propositional accuracy.\",\n  \"primary_basis\": [\n    \"John 14:6 — 'I am the way, and the truth, and the life'\",\n    \"John 1:14, 17 — the Word made flesh, 'full of grace and truth'; 'grace and truth came through Jesus Christ'\",\n    \"John 8:31–32 — 'you will know the truth, and the truth will set you free'\",\n    \"John 17:17 — 'Sanctify them in the truth; your word is truth'\",\n    \"John 18:37–38 — Jesus testifies to the truth; Pilate asks 'What is truth?'\",\n    \"John 4:23–24 — worship 'in spirit and truth'\",\n    \"John 16:13; 14:17; 15:26 — the Spirit of truth guides into all truth\",\n    \"Ephesians 1:13; Colossians 1:5 — 'the word of truth, the gospel'\",\n    \"2 Thessalonians 2:10–13 — being saved through 'love of the truth' / 'belief in the truth'\",\n    \"1 Timothy 2:4 — God desires all to 'come to the knowledge of the truth'\",\n    \"John 8:44 — the devil as liar and 'father of lies,' the antithesis of truth\",\n    \"Psalm 119:142, 160 — God's law/word as truth (Old Testament background)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christological reading: 'the truth' is Jesus Christ himself in person, not merely a body of teaching (John 14:6; Ephesians 4:21, 'the truth is in Jesus').\",\n      \"basis\": [\n        \"John 14:6\",\n        \"John 1:14, 17\",\n        \"Ephesians 4:21\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Truth as God's word / Scripture / the gospel message — the revealed content of Christian faith and sound doctrine ('the word of truth,' 'the pillar and buttress of the truth').\",\n      \"basis\": [\n        \"John 17:17\",\n        \"2 Timothy 2:15\",\n        \"1 Timothy 3:15\",\n        \"Ephesians 1:13\",\n        \"James 1:18\",\n        \"Colossians 1:5\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Pneumatological reading: truth as communicated and made effective by the Holy Spirit, the 'Spirit of truth' ('the Spirit is the truth,' 1 John 5:6); worship 'in spirit and truth.'\",\n      \"basis\": [\n        \"John 14:17; 15:26; 16:13\",\n        \"1 John 5:6\",\n        \"John 4:23–24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Truth as 'the faith' / orthodox doctrine — especially in the Pastoral Epistles, where 'the truth' functions almost as a title for the apostolic deposit of teaching, opposed to heresy; emphasized in creedal and confessional traditions.\",\n      \"basis\": [\n        \"1 Timothy 2:4; 4:3; 6:5\",\n        \"2 Timothy 2:18, 25; 3:7–8; 4:4\",\n        \"Titus 1:1, 14\",\n        \"2 Peter 2:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hebrew-background reading: truth (ʾemet) as God's faithfulness, reliability, and covenant steadfastness rather than abstract correctness — 'steadfast love and faithfulness' (chesed we-emet); prominent in Old Testament scholarship and biblical theology.\",\n      \"basis\": [\n        \"Exodus 34:6\",\n        \"Psalm 25:5, 10\",\n        \"Psalm 86:15\",\n        \"Psalm 119:142, 160\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ethical/behavioral reading: truth as integrity, honesty, and living/'walking in the truth' or 'doing the truth,' i.e., a way of life rather than a proposition.\",\n      \"basis\": [\n        \"John 3:21\",\n        \"1 John 1:6\",\n        \"2 John 4; 3 John 3–4\",\n        \"Ephesians 4:15, 25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Philosophical/apologetic reading: 'the truth' as objective, absolute reality grounded in God, deployed against relativism; common in modern evangelical apologetics though built on the same texts.\",\n      \"basis\": [\n        \"John 18:37–38\",\n        \"Romans 1:18, 25 (exchanging the truth of God for a lie)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gnostic/esoteric reading (historical): truth as hidden divine knowledge (gnosis) accessible to initiates; rejected by orthodox Christianity but attested in early heterodox interpretation.\",\n      \"basis\": [\n        \"Gospel of Philip and other Nag Hammadi texts (extra-biblical)\",\n        \"reinterpretations of Johannine truth language\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus, though it is layered rather than singular: nearly all traditions agree that biblical 'truth' is ultimately personal — identified with Christ (John 14:6) and mediated by the Spirit and the word — while differing in emphasis. Catholic, Orthodox, and Protestant traditions all affirm the Christological center; differences among the alternatives listed are mostly matters of emphasis (person vs. word vs. doctrine vs. covenant faithfulness vs. way of life) rather than mutually exclusive readings. The Johannine writings supply the bulk of proof texts, and John 8:32 and 14:6 are by far the most cited verses. 'Truth' is less a 'symbol' in the strict typological sense than a theologically loaded term, but its symbolic/theological identification with Christ and God's word is firmly settled in Christian interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Jesus Christ as the ultimate, incarnate revelation of God, alongside the Gospel message and the written Word of God.\",\n  \"primary_basis\": [\n    \"John 14:6\",\n    \"John 1:14\",\n    \"John 8:32\",\n    \"John 17:17\",\n    \"John 16:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's covenant faithfulness, constancy, and reliability (derived from the Hebrew 'emeth').\",\n      \"basis\": [\n        \"Exodus 34:6\",\n        \"Psalm 25:10\",\n        \"Psalm 119:160\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Moral integrity, sincerity, and righteous living (often phrased as 'walking in truth').\",\n      \"basis\": [\n        \"1 John 1:6\",\n        \"3 John 1:4\",\n        \"Ephesians 4:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Objective reality and factual accuracy, as opposed to deceit, illusion, or idolatry.\",\n      \"basis\": [\n        \"Proverbs 12:22\",\n        \"Ephesians 4:25\",\n        \"Romans 1:25\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical theology, 'truth' bridges the Old Testament emphasis on God's steadfast faithfulness and the New Testament revelation where truth is personified in Jesus Christ and applied by the Holy Spirit.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s revealed reality—supremely embodied in Jesus Christ and expressed in God’s word—standing in opposition to falsehood, deception, and sin.\",\n  \"primary_basis\": [\n    \"John 14:6 — Jesus identifies himself as “the way, and the truth, and the life.”\",\n    \"John 1:14, 17 — truth is manifested through the incarnate Word and comes through Jesus Christ.\",\n    \"John 8:31–32, 36 — knowing the truth is associated with Christ’s teaching and liberation from slavery to sin.\",\n    \"John 17:17 — Jesus says to the Father, “Your word is truth.”\",\n    \"Psalm 119:142, 151, 160 — God’s law, commandments, and word are characterized as truth.\",\n    \"Ephesians 6:14 — truth, represented by the belt in the armor of God, signifies grounding in divine truth and integrity.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The gospel or saving message about Christ.\",\n      \"basis\": [\n        \"Ephesians 1:13 calls the gospel “the word of truth.”\",\n        \"Colossians 1:5 refers to “the word of the truth, the gospel.”\",\n        \"2 Thessalonians 2:10–13 connects belief in the truth with salvation.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral sincerity, honesty, and faithful conduct rather than merely correct doctrine.\",\n      \"basis\": [\n        \"John 3:21 speaks of the person who “does what is true.”\",\n        \"Ephesians 4:15, 25 connects truth with truthful speech and Christian conduct.\",\n        \"1 John 3:18 urges love “in deed and in truth.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s covenant faithfulness, reliability, or steadfastness.\",\n      \"basis\": [\n        \"Exodus 34:6 describes God with language often translated as faithfulness or truth.\",\n        \"Psalm 25:5, 10 and Psalm 85:10–11 associate truth with God’s faithful character and covenant ways.\",\n        \"Romans 3:3–4 affirms God’s truthfulness despite human unfaithfulness.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Reality disclosed by the Holy Spirit, especially spiritual understanding of Christ.\",\n      \"basis\": [\n        \"John 14:17; 15:26; 16:13 call the Holy Spirit “the Spirit of truth.”\",\n        \"1 John 5:6 states that “the Spirit is the truth.”\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Correct doctrine or orthodox Christian belief as opposed to heresy and deception.\",\n      \"basis\": [\n        \"1 Timothy 2:4 and 2 Timothy 2:15, 25 speak of knowledge or right handling of the truth.\",\n        \"Titus 1:14 contrasts the truth with false teaching.\",\n        \"2 John 1–4 uses truth for the apostolic faith in which believers walk.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that “truth” refers to divine reality and revelation centered in God and Christ, but it is not a fixed biblical symbol with one exclusive referent. Depending on context, it can denote Christ himself, God’s word, the gospel, sound doctrine, moral integrity, or divine faithfulness.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Jesus Christ as the personal embodiment and full revelation of divine truth\",\n  \"primary_basis\": [\n    \"John 14:6\",\n    \"John 1:14\",\n    \"John 1:17\",\n    \"John 8:32\",\n    \"John 18:37\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The written Word of God / Holy Scripture as reliable divine revelation\",\n      \"basis\": [\n        \"John 17:17\",\n        \"Psalm 119:160\",\n        \"2 Timothy 3:16-17\",\n        \"Psalm 119:142\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit as the Spirit of truth who guides into all truth\",\n      \"basis\": [\n        \"John 14:17\",\n        \"John 15:26\",\n        \"John 16:13\",\n        \"1 John 5:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The gospel message and apostolic teaching / Christian doctrine\",\n      \"basis\": [\n        \"Ephesians 1:13\",\n        \"Colossians 1:5\",\n        \"Galatians 2:5\",\n        \"1 Timothy 2:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's own character of faithfulness, reliability, and covenant loyalty\",\n      \"basis\": [\n        \"Exodus 34:6\",\n        \"Deuteronomy 32:4\",\n        \"Psalm 31:5\",\n        \"Isaiah 65:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral integrity, honesty, or upright conduct in human life\",\n      \"basis\": [\n        \"Psalm 15:2\",\n        \"Zechariah 8:16\",\n        \"Ephesians 4:25\",\n        \"3 John 1:3-4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream Christian interpretation the term 'the truth' is most strongly and distinctively linked to the person of Christ (especially via the Johannine corpus), with secondary but still widespread associations to Scripture, the Spirit, the gospel, and God's faithfulness. These readings are complementary rather than mutually exclusive in classical theology; no major competing symbolic system displaces the Christological primary.\"\n}\n\nBOOK ENTRY\nGod's law — the standard.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: Christ Himself, and God's word — the gospel that sets free.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 119:142; 2 John 4) · see The Way, the Truth & the Life, ch. 7\n\nAVAILABLE KJV EXCERPTS\nPsalms 119:142 — Thy righteousness is an everlasting righteousness, and thy law is the truth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "ab7c1f11c9c9ab1b5cfaf6c6a015d4f73e886aa3890892a3bef997e69fa6146b",
+  "cache": {
+    "hit": false
+  }
+}

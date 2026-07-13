@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920109,
+  "completed_at": 1783920127,
+  "id": "419befa7-7a66-9a18-b33a-3d51cddfbb3f",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_419befa7-7a66-9a18-b33a-3d51cddfbb3f",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Jew\" in Christian teaching and biblical interpretation, independently, without any author's material.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A true believer whose heart is circumcised by the Spirit (an inward Jew) rather than an ethnic descendant of Abraham alone\",\n  \"primary_basis\": [\n    \"Romans 2:28-29\",\n    \"Romans 9:6-8\",\n    \"Philippians 3:3\",\n    \"Galatians 3:7; 6:15-16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal ethnic or religious member of the Jewish people (the ordinary narrative and historical sense)\",\n      \"basis\": [\n        \"OT historical books and prophets\",\n        \"Gospels and Acts narratives (e.g., John 4:9; Acts 2:5)\",\n        \"Paul’s self-identification (Romans 11:1; Philippians 3:5)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Those who claim Jewish identity yet oppose Christ and are regarded as false claimants (synagogue of Satan)\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Jewish people corporately as representatives of unbelief or rejection of the Messiah in contrast to the Church\",\n      \"basis\": [\n        \"John 8:39-47\",\n        \"Acts 13:45-46\",\n        \"1 Thessalonians 2:14-16\",\n        \"historical supersessionist readings of Romans 9–11\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"In Christian interpretation the term functions primarily as an ethnic/religious designation; the spiritualized Pauline sense is widely taught but remains secondary and is not a universal symbolic consensus. Other readings arise from specific polemical or prophetic contexts and vary by tradition.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_419befa7-7a66-9a18-b33a-3d51cddfbb3f",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1560,
+    "output_tokens_details": {
+      "reasoning_tokens": 1120
+    },
+    "total_tokens": 2162,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 99880000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1560
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

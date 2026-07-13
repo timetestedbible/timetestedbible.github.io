@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "fear",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFear of the LORD\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'the fear of the LORD' is understood not primarily as terror but as reverent awe, worshipful respect, and humble submission before God — an attitude of devotion and obedience that Scripture presents as the foundation ('beginning') of wisdom and knowledge and the proper posture of covenant relationship with God.\",\n  \"primary_basis\": [\n    \"Proverbs 1:7 ('The fear of the LORD is the beginning of knowledge')\",\n    \"Proverbs 9:10 ('The fear of the LORD is the beginning of wisdom')\",\n    \"Psalm 111:10\",\n    \"Job 28:28\",\n    \"Ecclesiastes 12:13 ('Fear God and keep his commandments')\",\n    \"Deuteronomy 6:13; 10:12\",\n    \"Proverbs 8:13 ('The fear of the LORD is hatred of evil')\",\n    \"Proverbs 14:26-27\",\n    \"Psalm 34:11\",\n    \"Isaiah 11:2-3 (the Spirit of 'the fear of the LORD' resting on the Messiah)\",\n    \"Acts 9:31\",\n    \"2 Corinthians 7:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Filial fear versus servile fear: a classical Catholic and scholastic distinction (Augustine, Aquinas) in which mature 'fear of the LORD' is filial reverence born of love (a gift of the Holy Spirit, cf. Isaiah 11:2), while servile fear — dread of punishment — is an imperfect, preparatory stage.\",\n      \"basis\": [\n        \"Isaiah 11:2-3\",\n        \"1 John 4:18 ('perfect love casts out fear')\",\n        \"Psalm 130:4\",\n        \"Catechism of the Catholic Church on the gifts of the Spirit\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant loyalty and obedience: especially in Deuteronomic usage, 'fearing the LORD' functions as near-synonymous with keeping the covenant — loving, serving, and obeying God — rather than an emotional state.\",\n      \"basis\": [\n        \"Deuteronomy 6:13; 10:12-13\",\n        \"Deuteronomy 5:29\",\n        \"Joshua 24:14\",\n        \"Ecclesiastes 12:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal dread or terror before God's holiness and judgment: some interpreters (and many biblical-theology treatments) insist the term retains a real element of trembling and fright before the numinous holiness of God, resisting the softening of 'fear' into mere respect.\",\n      \"basis\": [\n        \"Exodus 20:18-20\",\n        \"Isaiah 6:5\",\n        \"Hebrews 10:31 ('a fearful thing to fall into the hands of the living God')\",\n        \"Hebrews 12:28-29\",\n        \"Luke 12:4-5\",\n        \"Philippians 2:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Ethical avoidance of evil: fear of the LORD read chiefly as a moral disposition — hating and turning away from sin — emphasized in wisdom literature.\",\n      \"basis\": [\n        \"Proverbs 8:13\",\n        \"Proverbs 16:6\",\n        \"Job 1:1; 28:28\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"'God-fearers' as a sociological/technical category: in Second Temple and New Testament contexts, 'those who fear God' can denote Gentile adherents to the synagogue, a usage distinct from the symbolic-theological meaning.\",\n      \"basis\": [\n        \"Acts 10:2, 22\",\n        \"Acts 13:16, 26\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"This term has one of the more settled interpretive consensuses in biblical studies: reverent awe leading to wisdom and obedience. The main live debate is not over the core meaning but over emphasis — how much genuine 'trembling' the term retains versus how fully it should be rendered as 'reverence' or 'awe.' The alternatives listed are largely complementary emphases rather than mutually exclusive readings, and most traditions (Protestant, Catholic, Orthodox) hold them together. The filial/servile distinction is standard in Catholic moral theology; the covenant-obedience reading dominates Old Testament scholarship on Deuteronomy; the 'real dread' emphasis appears in some Reformed and biblical-theology writing.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Profound reverence, awe, and respectful submission to God, which leads to obedience, worship, and the shunning of evil.\",\n  \"primary_basis\": [\n    \"Proverbs 1:7\",\n    \"Proverbs 8:13\",\n    \"Proverbs 9:10\",\n    \"Psalm 111:10\",\n    \"Ecclesiastes 12:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal dread, terror, or fright of God's wrath and punitive judgment (often distinguished historically as servile fear).\",\n      \"basis\": [\n        \"Luke 12:5\",\n        \"Hebrews 10:31\",\n        \"Deuteronomy 28:58\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Standard religious piety, formalized cultic worship, or adherence to Israelite covenant demands without primarily denoting an emotional state.\",\n      \"basis\": [\n        \"Deuteronomy 10:12\",\n        \"1 Samuel 12:14\",\n        \"Psalm 34:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Purely relational respect that minimizes any aspect of divine threat, equating the phrase almost entirely with trusting love.\",\n      \"basis\": [\n        \"1 John 4:18\",\n        \"Psalm 25:14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian consensus strongly emphasizes that the fear of the LORD is foundational to wisdom and represents filial awe and reverent obedience rather than paralyzing terror.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Reverent awe of God—recognition of his holiness, majesty, authority, and accountability before him—which produces humble worship, trust, rejection of evil, and obedient living. Christian teaching commonly distinguishes this from mere panic or servile terror, while allowing a genuine awareness of divine judgment.\",\n  \"primary_basis\": [\n    \"Proverbs 1:7 — “The fear of the LORD is the beginning of knowledge.”\",\n    \"Proverbs 9:10 — “The fear of the LORD is the beginning of wisdom.”\",\n    \"Job 28:28 — fearing the Lord is identified with wisdom and turning from evil with understanding.\",\n    \"Psalm 111:10 — the fear of the LORD is the beginning of wisdom and is associated with obedience.\",\n    \"Deuteronomy 10:12–13 — fearing God is joined with walking in his ways, loving, serving, and keeping his commandments.\",\n    \"Ecclesiastes 12:13 — fearing God is paired with keeping his commandments.\",\n    \"Proverbs 8:13 and 16:6 — fearing the LORD entails hatred of evil and turning away from it.\",\n    \"Isaiah 11:2–3 — delight in the fear of the LORD is associated with the Spirit resting upon the messianic king.\",\n    \"Acts 9:31 — the church walks in the fear of the Lord and the comfort of the Holy Spirit.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Actual dread of divine punishment or judgment. On this reading, fear includes—or in some contexts primarily denotes—being afraid because God can judge and destroy.\",\n      \"basis\": [\n        \"Exodus 20:18–20 — distinguishes immediate terror from the enduring fear intended to restrain sin.\",\n        \"Luke 12:4–5 — Jesus commands fear of the one who has authority to cast into hell.\",\n        \"Hebrews 10:31 — “It is a fearful thing to fall into the hands of the living God.”\",\n        \"Revelation 14:7 — fear of God is commanded in the setting of judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A comprehensive designation for covenant faithfulness or practical piety, rather than primarily an inward emotion. “Those who fear the LORD” thus means God’s faithful worshipers, characterized by allegiance, obedience, and right conduct.\",\n      \"basis\": [\n        \"Deuteronomy 6:2 and 10:12–13 — fear encompasses obedience, love, service, and covenant keeping.\",\n        \"Psalm 25:12–14 and 103:11–18 — those who fear God are portrayed as covenant recipients who keep his commands.\",\n        \"Malachi 3:16–18 — those who fear the LORD are his remembered and treasured people.\",\n        \"Acts 10:2, 22, 35 — “God-fearer” language describes devout worshipers whose conduct accords with reverence for God.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Filial fear: a childlike fear of offending, grieving, or being separated from God, contrasted with servile fear motivated chiefly by punishment. This is especially developed in Catholic and other classical theological traditions.\",\n      \"basis\": [\n        \"Psalm 130:4 — forgiveness leads to fear or reverence rather than eliminating it.\",\n        \"Romans 8:15 — believers have not received a spirit of slavery leading back into fear but the Spirit of adoption.\",\n        \"2 Corinthians 7:1 — holiness is brought to completion in the fear of God.\",\n        \"1 John 4:18 — perfect love casts out fear associated with punishment.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A distinct gift or disposition imparted by the Holy Spirit, traditionally numbered among the seven gifts of the Spirit and understood as profound reverence and unwillingness to offend God.\",\n      \"basis\": [\n        \"Isaiah 11:2–3 — the Spirit of knowledge and the fear of the LORD rests upon the messianic figure, who delights in that fear.\",\n        \"Traditional Christian interpretation of Isaiah 11, especially in Catholic theology, applies the Spirit’s gifts to believers through participation in Christ.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus on reverent, obedient awe as the phrase’s primary teaching meaning, especially in wisdom and discipleship contexts. The expression is nevertheless context-sensitive: some passages emphasize real dread of judgment, while others use it as shorthand for covenant piety. Thus the consensus is settled at the broad level but does not reduce every occurrence to a single emotional sense.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Reverential awe, profound respect, and loving obedience toward God that constitutes the foundation of true wisdom, knowledge, and righteous living\",\n  \"primary_basis\": [\n    \"Proverbs 1:7\",\n    \"Proverbs 9:10\",\n    \"Psalm 111:10\",\n    \"Job 28:28\",\n    \"Ecclesiastes 12:13\",\n    \"Isaiah 11:2-3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Servile terror or dread of divine wrath, punishment, and judgment\",\n      \"basis\": [\n        \"Hebrews 10:31\",\n        \"passages on God's wrath and judgment (e.g., Deuteronomy 28; Revelation)\",\n        \"distinction in classical theology between servile and filial fear\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"One of the seven gifts of the Holy Spirit (filial fear that perfects hope and charity)\",\n      \"basis\": [\n        \"Isaiah 11:2-3\",\n        \"Catholic and Eastern Christian catechetical tradition\",\n        \"Thomas Aquinas and scholastic treatments of the gifts\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Simple religious piety or covenantal loyalty expressed in Torah observance\",\n      \"basis\": [\n        \"Deuteronomy 6:2, 10:12\",\n        \"wisdom literature framing\",\n        \"some historical-critical readings of Hebrew yir'at YHWH\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across Protestant, Catholic, and Orthodox teaching the dominant sense is positive reverential awe rather than mere fright; distinctions between filial and servile fear are standard but do not overturn the primary positive reading.\"\n}\n\nBOOK ENTRY\nReverent awe expressed as keeping the commandments and departing from evil.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Eccl 12:13) · see The Fear of the Lord, ch. 23\n\nAVAILABLE KJV EXCERPTS\nEcclesiastes 12:13 — Let us hear the conclusion of the whole matter: Fear God, and keep his commandments: for this is the whole duty of man.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "184635334b0a127262aa2c0837a858b4ad4b14a0cf58e1b5893c74c76eeb8dea",
+  "cache": {
+    "hit": false
+  }
+}

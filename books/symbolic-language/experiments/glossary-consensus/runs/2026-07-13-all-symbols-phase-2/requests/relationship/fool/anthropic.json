@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "fool",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFool\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical interpretation, the 'fool' primarily symbolizes moral and spiritual rebellion against God rather than intellectual deficiency. The fool is one who lives as if God does not exist or does not matter—rejecting divine wisdom, despising instruction, and ordering life around self rather than the fear of the LORD. Folly is thus treated as a moral-religious category (practical godlessness), the antithesis of the wise person who fears God.\",\n  \"primary_basis\": [\n    \"Psalm 14:1 (parallel Psalm 53:1) — 'The fool says in his heart, There is no God'\",\n    \"Proverbs 1:7 — 'The fear of the LORD is the beginning of knowledge; fools despise wisdom and instruction'\",\n    \"Proverbs 12:15 — 'The way of a fool is right in his own eyes'\",\n    \"Proverbs 26:11 — the fool returning to his folly like a dog to its vomit\",\n    \"Luke 12:16–21 — the parable of the rich fool who stores up treasure for himself but is not rich toward God\",\n    \"Matthew 7:24–27 — the foolish man who builds his house on sand (hearing Christ's words but not doing them)\",\n    \"Matthew 25:1–13 — the foolish virgins who are unprepared for the bridegroom\",\n    \"1 Samuel 25 — Nabal, whose name means 'fool,' as the embodiment of arrogant godless folly\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The fool as a literary character type in wisdom literature — a pedagogical foil to the wise person, with scholars distinguishing gradations in the Hebrew terms (pethi/simple, kesil, ewil, nabal, and the letz/scoffer), representing a spectrum from naive gullibility to hardened insolence rather than a single symbol.\",\n      \"basis\": [\n        \"Proverbs 1:22 (simple ones, scoffers, fools distinguished)\",\n        \"Proverbs 1:32\",\n        \"Proverbs 9:4–18 (Woman Folly addressing the simple)\",\n        \"Proverbs 26:1–12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The 'fool for Christ' — a positive inversion in which believers accept being regarded as foolish by the world because God's 'foolishness' (the cross) is wiser than human wisdom. In some traditions (notably Eastern Orthodoxy) this develops into the ascetic vocation of 'holy fools' (yurodivy).\",\n      \"basis\": [\n        \"1 Corinthians 1:18–25 — the message of the cross is foolishness to those perishing; God's foolishness is wiser than men\",\n        \"1 Corinthians 4:10 — 'We are fools for Christ's sake'\",\n        \"1 Corinthians 3:18–19 — becoming a fool to become wise\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Fool' as a term of grave verbal abuse whose use Jesus condemns — the focus being on the sin of contemptuously calling another person a fool rather than on the fool as a symbol.\",\n      \"basis\": [\n        \"Matthew 5:22 — whoever says 'You fool' shall be in danger of hell fire (with 'raca')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Psalm 14:1 read narrowly as describing 'practical atheism' (living as though God will not act or judge) rather than theoretical denial of God's existence — a refinement often stressed in scholarly commentary since ancient Israel had few speculative atheists.\",\n      \"basis\": [\n        \"Psalm 14:1\",\n        \"Psalm 10:4 — 'in all his thoughts there is no room for God'\",\n        \"Zephaniah 1:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fool as an eschatological figure of unpreparedness — one who fails to reckon with death, judgment, or Christ's return, emphasized in some homiletic traditions.\",\n      \"basis\": [\n        \"Luke 12:20 — 'Fool! This night your soul is required of you'\",\n        \"Matthew 25:1–13\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly recognizable consensus that the biblical fool symbolizes moral and spiritual rebellion or practical godlessness, not low intelligence; virtually all traditions (Catholic, Orthodox, Protestant, and academic biblical scholarship) affirm this core. The main complexity is not disagreement over the core meaning but the coexistence of the Pauline inversion ('fools for Christ' / the 'foolishness' of the cross), which is a distinct, positive usage rather than a rival reading of the same symbol. Scholarly work further nuances the picture by distinguishing several Hebrew terms translated 'fool.' Assessment is offered without knowledge of the author's definition or argument.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A person who is morally and spiritually deficient, rejecting God's authority, ignoring divine wisdom, and living in practical atheism or rebellion, rather than merely lacking intellectual intelligence.\",\n  \"primary_basis\": [\n    \"Psalm 14:1\",\n    \"Psalm 53:1\",\n    \"Proverbs 1:7\",\n    \"Proverbs 12:15\",\n    \"Luke 12:20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The naive or simple-minded person who is gullible, easily led astray, and lacks experience, but is not yet a hardened mocker.\",\n      \"basis\": [\n        \"Proverbs 1:22\",\n        \"Proverbs 14:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The 'fool for Christ,' a believer whose reliance on the cross and God's wisdom appears as foolishness to secular or worldly standards.\",\n      \"basis\": [\n        \"1 Corinthians 1:18-27\",\n        \"1 Corinthians 3:18\",\n        \"1 Corinthians 4:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The blind or hypocritical religious person who focuses on external religious rules while missing the core spiritual truth.\",\n      \"basis\": [\n        \"Matthew 23:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical wisdom literature, the term 'fool' is primarily a moral category denoting spiritual rebellion and arrogance rather than low IQ. The New Testament introduces the paradoxical 'fool for Christ' to contrast divine wisdom with human wisdom.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A “fool” most commonly represents a morally and spiritually undiscerning person—one who rejects God’s wisdom and consequently lives in unbelief, wickedness, pride, or disobedience. In biblical interpretation, the term usually concerns character and relationship to God rather than low intelligence.\",\n  \"primary_basis\": [\n    \"Psalm 14:1; 53:1 — the fool denies God and acts corruptly.\",\n    \"Proverbs 1:7, 22; 10:23; 12:15; 14:9; 18:2; 26:1–12 — fools despise wisdom, trust themselves, delight in wrongdoing, and resist correction.\",\n    \"Psalm 111:10 and Proverbs 9:10 — true wisdom begins with fear of the Lord, providing the contrast by which folly is understood.\",\n    \"Matthew 7:24–27 — the foolish builder hears Jesus’ words but does not act on them.\",\n    \"Luke 12:16–21 — the rich fool trusts wealth and neglects accountability to God.\",\n    \"Romans 1:21–25 — those rejecting God’s truth become futile and foolish despite claiming wisdom.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An imprudent, careless, or unprepared person whose failure is chiefly practical rather than an explicit denial of God.\",\n      \"basis\": [\n        \"Proverbs 6:6–11; 22:3 — wisdom and folly contrasted through foresight and conduct.\",\n        \"Matthew 25:1–13 — the foolish virgins symbolize lack of preparation and watchfulness.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A wicked or morally corrupt person, with “fool” functioning almost as an ethical category synonymous with the ungodly.\",\n      \"basis\": [\n        \"Psalm 14:1–4; 53:1–4 — folly is linked directly with corruption and evildoing.\",\n        \"Proverbs 10:23; 14:9; 29:11 — fools delight in misconduct, mock guilt, and lack self-control.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A person judged foolish by worldly standards but faithful to God; this is an ironic reversal in which apparent foolishness may express Christian discipleship or divine wisdom.\",\n      \"basis\": [\n        \"1 Corinthians 1:18–29 — the message of the cross appears foolish to the world but manifests God’s wisdom.\",\n        \"1 Corinthians 3:18–20 — one must become “a fool” by worldly standards to become wise.\",\n        \"1 Corinthians 4:10 — the apostles are described ironically as “fools for Christ.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An insulting designation for another person, emphasizing contempt rather than serving as a stable symbol.\",\n      \"basis\": [\n        \"Matthew 5:22 — calling another person “fool” is treated as culpable contempt.\",\n        \"Matthew 23:17, 19 — Jesus uses “blind fools” in prophetic denunciation of religious leaders.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literary counterpart to the wise person in wisdom literature, representing one pole in a pedagogical contrast rather than a single theological symbol.\",\n      \"basis\": [\n        \"Proverbs 1–9 — wisdom and folly are repeatedly personified or contrasted.\",\n        \"Ecclesiastes 2:12–16; 10:1–15 — the wise and the fool serve as contrasting literary types.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong broad consensus that biblical folly is primarily moral and spiritual, not intellectual. However, “fool” is not a fixed symbol with one meaning in every passage; its force varies among godlessness, wickedness, resistance to instruction, practical imprudence, unpreparedness, contemptuous labeling, and Paul’s ironic reversal of worldly wisdom.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A person of moral and spiritual deficiency who rejects divine wisdom, instruction, or God Himself (practical ungodliness or denial of God), rather than mere intellectual incapacity\",\n  \"primary_basis\": [\n    \"Psalm 14:1 / 53:1\",\n    \"Proverbs 1:7\",\n    \"Proverbs 10:23 / 12:15 / 14:9\",\n    \"Proverbs 28:26\",\n    \"Luke 12:16-21 (rich fool)\",\n    \"Matthew 7:26 / 25:1-13 (foolish builder / virgins)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"One who willingly becomes a 'fool for Christ,' embracing the apparent foolishness of the gospel and appearing foolish to worldly standards\",\n      \"basis\": [\n        \"1 Corinthians 1:18-25\",\n        \"1 Corinthians 3:18\",\n        \"1 Corinthians 4:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A simple, naive, or inexperienced person (often distinguished from the hardened or scoffing fool) who may still be open to correction\",\n      \"basis\": [\n        \"Proverbs 1:4 / 7:7 / 14:15 / 22:3 (wisdom literature distinctions among 'simple,' 'fool,' 'scoffer')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Someone who trusts in material wealth, self-sufficiency, or earthly security while neglecting spiritual realities\",\n      \"basis\": [\n        \"Luke 12:16-21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A term of contemptuous insult whose use against a brother is forbidden as a serious offense\",\n      \"basis\": [\n        \"Matthew 5:22\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'holy fool' (yurodivy) figure who feigns madness or unconventional behavior as a form of prophetic witness or humility\",\n      \"basis\": [\n        \"Later Eastern Orthodox tradition drawing loosely on Pauline language\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across Hebrew (nabal, kesil, ewil) and Greek (moros, aphron) terms and traditional Christian exegesis, 'fool' primarily signals ethical-religious failure and rejection of God/wisdom rather than low IQ. Nuances exist by specific word and context, but the moral-spiritual sense is the clear consensus in biblical studies and Christian teaching.\"\n}\n\nBOOK ENTRY\nOne who hears God's word and will not do it — the lawless, not the unintelligent.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 14:1; Matt 7:26) · see The Fool and the Wise, ch. 20\n\nAVAILABLE KJV EXCERPTS\nPsalms 14:1 — To the chief Musician, A Psalm of David. The fool hath said in his heart, There is no God. They are corrupt, they have done abominable works, there is none that doeth good.\nMatthew 7:26 — And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "d7db8dff2c8a148dcb23b37285bcdfc639dad0f7e4415449d894ab4caaab5c90",
+  "cache": {
+    "hit": false
+  }
+}

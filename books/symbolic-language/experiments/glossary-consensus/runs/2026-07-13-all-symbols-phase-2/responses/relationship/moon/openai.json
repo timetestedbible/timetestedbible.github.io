@@ -1,0 +1,195 @@
+{
+  "id": "resp_009191ecc344993d006a547d0151b48196ab738b52b7b7db87",
+  "object": "response",
+  "created_at": 1783921921,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921934,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_009191ecc344993d006a547d01d44881969bd918a3ba26ec4f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_009191ecc344993d006a547d08436c8196aa5e2055a8d16a1b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The dominant traditional identification is the moon as the Church or people of God, a lesser light reflecting Christ; the responses also stress that lunar symbolism is context-dependent and includes judgment, sacred times, covenant stability, Israel, Mary, and familial figures.\",\"book_summary\":\"The book identifies the moon with the Son: Jesus is the faithful witness who shines in the world's darkness with light derived from the Father, rules the night, and marks appointed times.\",\"consensus_core_identification\":\"Moon = the Church or people of God reflecting Christ's light.\",\"book_core_identification\":\"Moon = the Son reflecting the Father's light.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"DIFFERENT_REFERENT\",\"boundary_disagreement\":\"This is not a narrowing or broadening of the ecclesial identification. The book transfers the moon's central referent from the Church to Christ and transfers the source of reflected light from Christ to the Father.\",\"material_contradiction\":\"In the consensus's principal analogy, Christ is the illuminating source and the Church is the lunar reflector. In the book, Christ himself is the lunar reflector and the Father is the source. Thus the same symbolic role is assigned to different referents.\",\"rationale\":\"Although both readings retain the general motif of lesser or derived light, their minimum identifications are not equivalent. The book explicitly acknowledges the common Church-reflecting-Christ view but replaces it with a Son-reflecting-the-Father interpretation. This makes the entry divergent rather than merely refined. It is not classified as novel because it directly contests and reassigns a recognizable consensus motif rather than introducing an unrelated symbolic category.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Psalm 89:37 calls the moon a faithful witness, and Revelation 1:5 calls Jesus the faithful witness, providing an intertextual basis for the identification. John 1:5 supports light shining in darkness, and John 5:19 supports the Son's dependence on the Father. However, none of the printed texts explicitly identifies the moon as Jesus, says that the Son has no light of his own, or supplies the lesser-light, night-ruling, and appointed-times claims; those require additional typological inference and unprinted creation texts.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3881,
+    "input_tokens_details": {
+      "cache_write_tokens": 3878,
+      "cached_tokens": 0
+    },
+    "output_tokens": 768,
+    "output_tokens_details": {
+      "reasoning_tokens": 294
+    },
+    "total_tokens": 4649
+  },
+  "user": null,
+  "metadata": {}
+}

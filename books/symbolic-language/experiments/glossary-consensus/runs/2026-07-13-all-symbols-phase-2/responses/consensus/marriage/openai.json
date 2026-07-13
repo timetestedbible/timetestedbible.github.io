@@ -1,0 +1,173 @@
+{
+  "id": "resp_07953ea42ed5cc0f006a54768e30888190ab3552a63bedfe57",
+  "object": "response",
+  "created_at": 1783920270,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920294,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_07953ea42ed5cc0f006a54768ee4108190a2047a33615df836",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_07953ea42ed5cc0f006a547695056881909dfc40a6187c3700",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Marriage and bride imagery most commonly symbolizes the covenantal, loving, faithful, and ultimately consummated union between Christ and his people, especially the Church. Christ is the bridegroom, and the Church or redeemed people of God is the bride.\",\"primary_basis\":[\"Ephesians 5:22–32 explicitly relates husband and wife to Christ and the Church and calls this relationship a “great mystery.”\",\"2 Corinthians 11:2 depicts the Corinthian church as a pure virgin betrothed to Christ.\",\"Revelation 19:6–9 describes the marriage supper of the Lamb and the preparation of his bride.\",\"Revelation 21:2, 9–10 and 22:17 identify the bride with the holy city, New Jerusalem, representing the redeemed people of God in final communion with God.\",\"John 3:28–30 presents Jesus as the bridegroom.\",\"Matthew 9:14–15; 25:1–13 and Mark 2:18–20 use bridegroom and wedding imagery for Jesus and the coming kingdom.\",\"Old Testament marital-covenant imagery supplies the background, especially Hosea 1–3; Isaiah 54:4–8; 62:4–5; Jeremiah 2:2; 3:1–14; Ezekiel 16; and 23.\"],\"alternatives\":[{\"meaning\":\"The bride or wife specifically symbolizes Israel in covenant with YHWH, rather than the Church as such. Israel’s idolatry is consequently portrayed as adultery, while restoration is portrayed as renewed marriage.\",\"basis\":[\"Hosea 1–3\",\"Isaiah 54:4–8; 62:4–5\",\"Jeremiah 2:2; 3:1–14; 31:31–32\",\"Ezekiel 16; 23\"],\"prominence\":\"common\"},{\"meaning\":\"The bride specifically symbolizes the New Jerusalem, the eschatological holy city and renewed covenant community.\",\"basis\":[\"Revelation 21:2, 9–10 explicitly calls New Jerusalem the bride, the wife of the Lamb.\",\"Revelation 22:17 speaks of “the Spirit and the bride.”\"],\"prominence\":\"common\"},{\"meaning\":\"Marriage symbolizes God’s covenant relationship with his people in a broad, unified sense encompassing both Israel and the Church or the whole redeemed people of God.\",\"basis\":[\"The Old Testament prophetic marriage texts are read together with Ephesians 5 and Revelation 19–22.\",\"Romans 9–11 and related continuity-of-the-people-of-God readings often inform this synthesis, though they do not themselves use bride imagery prominently.\"],\"prominence\":\"common\"},{\"meaning\":\"The bride symbolizes the individual believer or soul in personal, contemplative, or mystical union with Christ.\",\"basis\":[\"The Song of Songs has often been interpreted allegorically as the love between Christ and the individual soul.\",\"Psalm 45 and bridal language in Christian mystical and devotional traditions are also used.\"],\"prominence\":\"minority\"},{\"meaning\":\"Marriage imagery primarily symbolizes the union of Christ with redeemed humanity through the incarnation, rather than chiefly Christ’s relation to the institutional or corporate Church.\",\"basis\":[\"John 1:14 and other incarnation texts are sometimes combined with bridegroom imagery.\",\"Patristic interpretations occasionally understand the bridal chamber or marriage as the union of divine and human natures or of the Word with humanity.\"],\"prominence\":\"minority\"},{\"meaning\":\"In the Song of Songs, bride and marriage language primarily celebrates human erotic and marital love without requiring an allegorical referent to God, Christ, Israel, or the Church.\",\"basis\":[\"Song of Songs as a whole, especially Song 2:8–17; 4:1–16; 6:4–10; 8:6–7.\",\"This is widespread in modern historical-critical interpretation, although it addresses that book specifically rather than all biblical bride symbolism.\"],\"prominence\":\"common\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is a recognizable Christian consensus that bride and marriage imagery denotes covenant union between God or Christ and the people of God, with Christ-and-Church language being the standard New Testament formulation. The exact identity of the bride—Israel, Church, New Jerusalem, the whole redeemed community, or the individual soul—varies by passage and interpretive tradition.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1138,
+    "output_tokens_details": {
+      "reasoning_tokens": 234
+    },
+    "total_tokens": 1457
+  },
+  "user": null,
+  "metadata": {}
+}

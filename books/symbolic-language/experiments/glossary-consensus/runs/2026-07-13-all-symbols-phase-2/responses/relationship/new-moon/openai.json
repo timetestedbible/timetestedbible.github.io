@@ -1,0 +1,195 @@
+{
+  "id": "resp_0023a9baa8989fa3006a547d5b0984819395ffcb9d70a8c778",
+  "object": "response",
+  "created_at": 1783922011,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922025,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0023a9baa8989fa3006a547d5ba164819398fbbe3bfe592f59",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0023a9baa8989fa3006a547d633a508193b711ff0933c0ca7a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"The consensus identifies the new moon as the lunar marker of Israel’s monthly sacred calendar, commonly associated with renewal and interpreted in Colossians 2:16–17 as a ceremonial shadow fulfilled in Christ. It also marks occasions of worship, feasting, and suspended commerce.\",\"book_summary\":\"The book identifies the new moon as the renewed lunar phase that signals the beginning of the month, grounding this in the relationship of chodesh to renewal. It likewise connects the occasion with worship, resistance from commerce, and Paul’s classification of it among the shadows of things to come.\",\"consensus_core_identification\":\"A recurring lunar-month marker and Israelite ceremonial observance, associated with renewal and typologically classified as a shadow pointing to Christ.\",\"book_core_identification\":\"The renewed lunar phase that marks the start of the month and functions as a worship-calendar sign and Pauline shadow of things to come.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement appears in the entry. The book leaves the exact astronomical phase to another chapter, but it does not exclude or reclassify any cases recognized by the consensus.\",\"material_contradiction\":\"None. The book’s lexical and calendrical emphasis supplements rather than replaces the consensus identification, and its reference to Colossians preserves the mainstream shadow framework.\",\"rationale\":\"Reduced to their minimum cores, both readings identify the new moon as the renewed lunar marker beginning the month, embedded in Israel’s worship calendar and treated by Paul as a shadow of things to come. The book gives greater prominence to the term’s renewal etymology and to determining the precise lunar phase, but these are added details rather than a changed symbolic referent or extension.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed passages strongly support worship, the east gate, commercial impatience, and the Pauline shadow classification, but they do not by themselves establish the Hebrew etymology, that a sign must be actively watched for, or which precise lunar phase begins the month.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3813,
+    "input_tokens_details": {
+      "cache_write_tokens": 3810,
+      "cached_tokens": 0
+    },
+    "output_tokens": 874,
+    "output_tokens_details": {
+      "reasoning_tokens": 439
+    },
+    "total_tokens": 4687
+  },
+  "user": null,
+  "metadata": {}
+}

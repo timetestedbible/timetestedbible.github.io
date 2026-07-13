@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920367,
+  "completed_at": 1783920394,
+  "id": "ac32fd7c-5be4-9248-81da-37385ad8d298",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_ac32fd7c-5be4-9248-81da-37385ad8d298",
+      "summary": [
+        {
+          "text": "The task is about the symbolic meaning of \"New moon\" in Christian teaching and biblical interpretation.\n{\n  \"primary_meaning\": \"new beginnings, renewal, or the start of a new cycle\",\n  \"primary_basis\": [\n    \"Colossians 2:16\",\n    \"Numbers 10:10\",\n    \"Psalm 81:3\",\n    \"Isaiah 1:13-14\",\n    \"Ezekiel 46:1-6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"a shadow or type fulfilled in Christ\",\n      \"basis\": [\n        \"Colossians 2:16-17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n \"meaning\": \"a time of perpetual worship in the new heavens and new earth\",\n  \"basis\": [\n    \"Isaiah 66:23\"\n  ],\n  \"prominence\": \"minority\"\n},\n{\n  \"meaning\": \"a marker of covenant renewal or restoration\",\n  \"basis\": [\n    \"H ose a 2:11\"\n  ],\n  \"prominence\": \"rare\"\n}\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"The term primarily denotes the lunar festival and its associated worship, with the most common symbolic reading being renewal or new beginnings; the Colossians passage supplies a secondary but widely accepted reading as a shadow pointing to Christ.\"\n}``` \n\nThe primary symbolic meaning most commonly assigned to \"New moon\" in Christian teaching and biblical interpretation is **new beginnings, renewal, or the start of a new cycle**.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A ceremonial observance that functions as a shadow or type pointing forward to the substance found in Christ\",\n  \"primary_basis\": [\n    \"Colossians 2:16-17\",\n    \"Numbers 28:11-15\",\n    \"1 Chronicles 23:31\",\n    \"Isaiah 1:13-14\",\n    \"Ezekiel 46:1-6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"New beginnings, renewal, or the start of a fresh cycle of time under God's ordering\",\n      \"basis\": [\n        \"Astronomical fact of the lunar cycle beginning again\",\n        \"Psalm 81:3\",\n        \"1 Samuel 20:5, 18, 24\",\n        \"Numbers 10:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Perpetual worship continuing into the new creation\",\n      \"basis\": [\n        \"Isaiah 66:23\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A continuing obligatory observance for Christians\",\n      \"basis\": [\n        \"OT festival commands applied directly\",\n        \"Certain sabbatarian or Hebrew-roots readings of Colossians 2\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"Colossians 2 supplies the dominant Christian typological reading that new-moon observances belong to the ceremonial shadows fulfilled in Christ; the renewal motif is also frequently invoked but is secondary and more homiletical than dogmatic. No single naturalistic or prophetic symbolism has achieved comparable consensus.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_ac32fd7c-5be4-9248-81da-37385ad8d298",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2250,
+    "output_tokens_details": {
+      "reasoning_tokens": 1863
+    },
+    "total_tokens": 2853,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 139380000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 2250
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,179 @@
+{
+  "id": "resp_04cf76d8388bf33f006a5478a50a308194815dc86b7443009c",
+  "object": "response",
+  "created_at": 1783920805,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920834,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_04cf76d8388bf33f006a5478a5d3c081949598960823f48315",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_04cf76d8388bf33f006a5478b005e081949c10ad4cf3cd430c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_04cf76d8388bf33f006a5478b8d3808194a5be1c073a070748",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\n  \"primary_meaning\": \"There is no settled biblical symbolism for “west.” When Christian teaching does assign it a general symbolic value, the most recognizable association is with the setting sun and therefore with ending, decline, darkness, mortality, or death, often contrasted with east as dawn, resurrection, or new beginning.\",\n  \"primary_basis\": [\n    \"Psalm 50:1 — the span from the rising of the sun to its setting\",\n    \"Psalm 104:19 — the sun knows its time for setting\",\n    \"Psalm 113:3 — from sunrise to sunset the Lord’s name is praised\",\n    \"Malachi 1:11 — God’s name is great from the rising of the sun to its setting\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Complete or immeasurable separation, especially when west is paired with east.\",\n      \"basis\": [\n        \"Psalm 103:12 — sins removed as far as east is from west\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Universality or worldwide extent rather than darkness or death; east and west together encompass the whole earth and all peoples.\",\n      \"basis\": [\n        \"Genesis 28:14 — descendants spread west, east, north, and south\",\n        \"Psalm 50:1\",\n        \"Psalm 113:3\",\n        \"Isaiah 43:5-6 — God gathers from east, west, north, and south\",\n        \"Matthew 8:11 — people come from east and west into the kingdom\",\n        \"Luke 13:29 — people come from every cardinal direction\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The place of divine presence or the Holy of Holies, derived typologically from the westward location of the innermost sanctuary in the tabernacle and temple.\",\n      \"basis\": [\n        \"Exodus 26:22-34 — the western rear of the tabernacle and placement of the ark behind the veil\",\n        \"Leviticus 16:2-17 — God’s presence above the ark in the inner sanctuary\",\n        \"Ezekiel 8:16 — apostates turn their backs toward the temple while worshiping the sun in the east\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gentile territories, distant nations, or lands toward the sea, based on Israel’s geography and prophetic gathering language.\",\n      \"basis\": [\n        \"Isaiah 11:11-12 — gathering dispersed Israel from distant regions\",\n        \"Isaiah 49:12 — people come from afar, including western regions\",\n        \"Isaiah 59:19 — the Lord’s name feared from the west\",\n        \"Hosea 11:10 — children come trembling from the west\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A specific western kingdom or power in an apocalyptic passage, not a universal symbol of west.\",\n      \"basis\": [\n        \"Daniel 8:5 — the goat comes from the west\",\n        \"Daniel 8:21 — the goat is identified as the kingdom of Greece\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical references to west are usually literal geographic directions or one element in an east–west or four-directions formula. Symbolic meanings are therefore context-dependent. Sunset, ending, darkness, and death form the best-known later Christian symbolic association, but they are not a fixed biblical definition.\"\n}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1621,
+    "output_tokens_details": {
+      "reasoning_tokens": 840
+    },
+    "total_tokens": 1938
+  },
+  "user": null,
+  "metadata": {}
+}

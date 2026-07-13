@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919975,
+  "completed_at": 1783919988,
+  "id": "9998daf5-c64a-94ef-a716-ae3bef7eb9a0",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_9998daf5-c64a-94ef-a716-ae3bef7eb9a0",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Grass\" in biblical symbolism. I must return only a JSON object matching the specified schema, with no surrounding text.\n{\n  \"primary_symbolic_meaning\": \"The transience and frailty of human life, symbolizing how quickly people pass away like grass that withers and fades.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the frailty, mortality, and transience of human life\",\n  \"primary_basis\": [\n    \"Isaiah 40:6-8\",\n    \"Psalm 103:15-16\",\n    \"Psalm 90:5-6\",\n    \"1 Peter 1:24\",\n    \"James 1:10-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's providential care even for ephemeral things\",\n      \"basis\": [\n        \"Matthew 6:30\",\n        \"Luke 12:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"rest, refreshment, or temporary abundance\",\n      \"basis\": [\n        \"Mark 6:39\",\n        \"John 6:10\",\n        \"Psalm 23:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The withering-grass motif for human brevity is the standard, widely taught symbolic reading across Christian tradition, drawn from prophetic, psalmic, and New Testament texts; other associations exist but remain secondary.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_9998daf5-c64a-94ef-a716-ae3bef7eb9a0",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1354,
+    "output_tokens_details": {
+      "reasoning_tokens": 1077
+    },
+    "total_tokens": 1956,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 91360000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1354
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

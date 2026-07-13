@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "wall",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWall\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the wall most commonly symbolizes protection, security, and salvation—especially the defense God himself provides for his people. Ancient city walls were the primary guarantee of a city's safety, so the wall becomes an image of divine safeguarding: God is a 'wall of fire' around Jerusalem, salvation itself is called walls and bulwarks, and the walled New Jerusalem pictures the perfect security and inviolability of God's redeemed people. Conversely, a broken or missing wall symbolizes vulnerability, judgment, and defenselessness.\",\n  \"primary_basis\": [\n    \"Isaiah 26:1 ('salvation will God appoint for walls and bulwarks')\",\n    \"Isaiah 60:18 ('you shall call your walls Salvation, and your gates Praise')\",\n    \"Zechariah 2:4-5 (the LORD as 'a wall of fire' around Jerusalem)\",\n    \"Psalm 51:18 (prayer to 'build up the walls of Jerusalem')\",\n    \"Revelation 21:12-18 (the great high wall of the New Jerusalem)\",\n    \"Proverbs 25:28 (a person without self-control is 'like a city broken into and left without walls')\",\n    \"Nehemiah 1-6 (rebuilding Jerusalem's wall as restoration and renewed security under God)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Separation and division: the wall as a barrier of hostility between groups (Jew and Gentile) or between humanity and God, which Christ demolishes. This is the standard New Testament theological use in Ephesians and is heavily preached, often described as 'the dividing wall' broken down by the cross.\",\n      \"basis\": [\n        \"Ephesians 2:14 ('has broken down the dividing wall of hostility')\",\n        \"Often linked homiletically to the temple's soreg (barrier excluding Gentiles)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Obstacle or barrier to faith and obedience that God overcomes or enables believers to overcome, drawn chiefly from the fall of Jericho's walls; frequently used in sermons about faith conquering impossible circumstances ('walls come tumbling down').\",\n      \"basis\": [\n        \"Joshua 6:1-20 (the walls of Jericho fall)\",\n        \"Hebrews 11:30 ('by faith the walls of Jericho fell down')\",\n        \"Psalm 18:29 / 2 Samuel 22:30 ('by my God I can leap over a wall')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Broken walls as an image of divine judgment, sin's consequences, and personal vulnerability or lack of self-control; rebuilding walls as repentance, restoration, and re-establishing spiritual boundaries (a staple of preaching on Nehemiah).\",\n      \"basis\": [\n        \"Proverbs 25:28\",\n        \"Lamentations 2:8-9 (the LORD determined to destroy the wall)\",\n        \"Nehemiah 1:3; 2:17\",\n        \"Isaiah 5:5 (God removes the vineyard's wall in judgment)\",\n        \"Ezekiel 13:10-15 (whitewashed wall of false prophets)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False security or hypocrisy: the 'whitewashed wall'—an outwardly plastered but structurally unsound wall—as an image of false prophets and hypocrites, echoed in Paul's rebuke of the high priest.\",\n      \"basis\": [\n        \"Ezekiel 13:10-16\",\n        \"Acts 23:3 ('God will strike you, you whitewashed wall')\",\n        \"cf. Matthew 23:27 (whitewashed tombs, often linked)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Church or the individual believer as a wall—strength, maturity, and chastity—drawn from the Song of Songs ('I am a wall') and from intercessors who 'stand in the gap' in the wall, an image of prophetic or priestly mediation.\",\n      \"basis\": [\n        \"Song of Songs 8:9-10\",\n        \"Ezekiel 22:30 ('stand in the gap' / 'build up the wall')\",\n        \"Jeremiah 1:18; 15:20 (the prophet made 'a fortified bronze wall')\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"The wall is a polyvalent biblical image whose meaning is strongly context-dependent, so no single reading is exclusive. Nevertheless, the protection/security/salvation sense is the most widely recognized default in commentaries, Bible dictionaries (e.g., Dictionary of Biblical Imagery entries), and preaching, grounded in the realities of ancient walled cities. The Ephesians 2 'dividing wall' and the Jericho 'obstacle' readings are also very widely used but are typically treated as passage-specific applications rather than the general symbolic meaning. Confidence is medium rather than high because the term's polyvalence means different traditions foreground different senses (e.g., ecumenical and reconciliation contexts foreground Ephesians 2).\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Protection, security, and divine salvation, representing God's defense of His people.\",\n  \"primary_basis\": [\n    \"Isaiah 26:1\",\n    \"Isaiah 60:18\",\n    \"Zechariah 2:5\",\n    \"Nehemiah 1-7\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A barrier of separation or hostility, specifically the division between Jews and Gentiles or between humanity and God.\",\n      \"basis\": [\n        \"Ephesians 2:14\",\n        \"Isaiah 59:2\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"False security, human pride, or religious hypocrisy when built by human effort without God (e.g., whitewashed walls).\",\n      \"basis\": [\n        \"Ezekiel 13:10-14\",\n        \"Joshua 6:20\",\n        \"Acts 23:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Personal steadfastness, maturity, and spiritual strength.\",\n      \"basis\": [\n        \"Song of Solomon 8:9-10\",\n        \"Jeremiah 1:18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbol is highly contextual. In the Old Testament, it is predominantly positive (salvation, protection) unless depicting enemy fortresses. In the New Testament, its most iconic use is the abolished 'dividing wall of hostility' representing the Law separating Jews and Gentiles.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Protection, security, and a boundary preserving the integrity of a city or community; in theological imagery, a wall often represents God-given safety, salvation, or defense.\",\n  \"primary_basis\": [\n    \"Isaiah 26:1 — salvation is appointed as walls and ramparts.\",\n    \"Isaiah 60:18 — Jerusalem's walls are called Salvation.\",\n    \"Zechariah 2:5 — God promises to be a wall of fire around Jerusalem.\",\n    \"Nehemiah 1:3; 2:17; 4:6–23 — Jerusalem's broken and rebuilt wall signifies vulnerability followed by restored communal security.\",\n    \"Psalm 51:18; 122:7 — sound walls are associated with Jerusalem's welfare, peace, and security.\",\n    \"Revelation 21:12–21 — the New Jerusalem's great wall contributes to the imagery of secure, ordered, and holy community.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Separation, exclusion, or hostility between peoples, especially a barrier overcome through Christ.\",\n      \"basis\": [\n        \"Ephesians 2:14 — Christ breaks down the dividing wall of hostility between Jews and Gentiles.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A boundary distinguishing what is holy from what is common or profane.\",\n      \"basis\": [\n        \"Ezekiel 42:20 — the temple wall separates the holy area from the common.\",\n        \"Revelation 21:12–27 — the New Jerusalem's wall and gates participate in imagery of holiness and regulated access.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Personal self-control or moral defenses; a broken wall represents spiritual or ethical vulnerability.\",\n      \"basis\": [\n        \"Proverbs 25:28 — a person without self-control is compared to a city whose walls are broken down.\",\n        \"Proverbs 24:30–31 — neglected walls accompany the picture of indiscipline and ruin.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An apparently insurmountable obstacle that God overcomes.\",\n      \"basis\": [\n        \"Joshua 6:1–20 — the walls of Jericho fall through divine action.\",\n        \"Hebrews 11:30 — Jericho's walls fall by faith.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False security, deceptive religious claims, or teaching unable to withstand divine judgment.\",\n      \"basis\": [\n        \"Ezekiel 13:10–16 — false prophets are compared to those who whitewash an unstable wall.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Divine judgment or obstruction placed against rebellion.\",\n      \"basis\": [\n        \"Lamentations 3:7–9 — God walls in and blocks the sufferer's way.\",\n        \"Hosea 2:6 — God walls up Israel's way as disciplinary judgment.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled, context-independent symbolic meaning for “wall.” Protection and security are the most common default associations, but biblical usage also prominently includes separation, holiness, vulnerability, obstacles, false security, and judgment. Interpretation therefore depends heavily on the specific passage.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"protection, security, or defense (often divine protection around God's people or city)\",\n  \"primary_basis\": [\n    \"Isaiah 26:1\",\n    \"Isaiah 60:18\",\n    \"Zechariah 2:5\",\n    \"Revelation 21:12-18\",\n    \"Nehemiah (rebuilding of Jerusalem's walls as restoration of security)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"dividing barrier or wall of hostility/separation (especially ethnic, religious, or between humanity and God)\",\n      \"basis\": [\n        \"Ephesians 2:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"self-control, personal boundaries, or integrity (broken walls = vulnerability or lack of restraint)\",\n      \"basis\": [\n        \"Proverbs 25:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"fortification, strength, or the restored community of God's people\",\n      \"basis\": [\n        \"Psalm 51:18\",\n        \"Nehemiah 1–6\",\n        \"Song of Songs 8:9-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"judgment or desolation when broken down\",\n      \"basis\": [\n        \"Lamentations 2:8-9\",\n        \"Isaiah 5:5\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Symbolism of 'wall' is strongly context-dependent across OT narrative, prophetic poetry, wisdom literature, and NT theology; protection/security appears frequently but is not exclusive or universal.\"\n}\n\nBOOK ENTRY\nSalvation — the covenant's enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth's high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 60:18; Zech 2:5; Prov 18:11; Ezek 13:10-15) · see The Parable of the Vineyard | (Isa 60:18; Zech 2:5; Prov 18:11; Ezek 13:10-15) · see The Parable of the Vineyard, in the free digital edition at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nIsaiah 60:18 — Violence shall no more be heard in thy land, wasting nor destruction within thy borders; but thou shalt call thy walls Salvation, and thy gates Praise.\nZechariah 2:5 — For I, saith the LORD, will be unto her a wall of fire round about, and will be the glory in the midst of her.\nProverbs 18:11 — The rich man's wealth is his strong city, and as an high wall in his own conceit.\nEzekiel 13:10 — Because, even because they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter:\nEzekiel 13:11 — Say unto them which daub it with untempered morter, that it shall fall: there shall be an overflowing shower; and ye, O great hailstones, shall fall; and a stormy wind shall rend it.\nEzekiel 13:12 — Lo, when the wall is fallen, shall it not be said unto you, Where is the daubing wherewith ye have daubed it?\nEzekiel 13:13 — Therefore thus saith the Lord GOD; I will even rend it with a stormy wind in my fury; and there shall be an overflowing shower in mine anger, and great hailstones in my fury to consume it.\nEzekiel 13:14 — So will I break down the wall that ye have daubed with untempered morter, and bring it down to the ground, so that the foundation thereof shall be discovered, and it shall fall, and ye shall be consumed in the midst thereof: and ye shall know that I am the LORD.\nEzekiel 13:15 — Thus will I accomplish my wrath upon the wall, and upon them that have daubed it with untempered morter, and will say unto you, The wall is no more, neither they that daubed it;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "85628e6e7399af3018caf98eed7f0484315cd7fd396b4ba75159bf70a06c6424",
+  "cache": {
+    "hit": false
+  }
+}

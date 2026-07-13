@@ -1,0 +1,195 @@
+{
+  "id": "resp_0e37a2dfe3f176f0006a547c5532648197987de0767a57817a",
+  "object": "response",
+  "created_at": 1783921749,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921766,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e37a2dfe3f176f0006a547c55c3cc81979ec72dbc136063b6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0e37a2dfe3f176f0006a547c5e3e5c8197ba8a832a65a47981",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The dominant identification is Jesus Christ as the innocent, sacrificial Lamb of God, with believers, vulnerable people, and meekness recognized as secondary contextual uses.\",\"book_summary\":\"An unqualified lamb signifies a covenant person or member of the flock, not Christ specifically; Christ is identified only as the uniquely perfect, unblemished Lamb of God drawn from that flock.\",\"consensus_core_identification\":\"The Lamb primarily identifies Jesus Christ in his sacrificial and redemptive role.\",\"book_core_identification\":\"A lamb generically identifies a covenant person; Christ is the special and perfect lamb rather than the meaning of lamb itself.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book retains the christological identification for the specific title “Lamb of God” but reclassifies ordinary lamb imagery—Nathan’s ewe lamb, Jeremiah, Isaiah’s lamb, and the disciples—as covenant-person imagery rather than instances or anticipations of a primarily christological symbol.\",\"material_contradiction\":\"The book explicitly denies that lamb by itself denotes Christ and replaces the consensus’s primary referent with the broader category of covenant persons. Both still identify Christ as the Lamb of God, so their extensions overlap despite the core disagreement.\",\"rationale\":\"This is not novel because the consensus already recognizes believers or vulnerable people as lambs. It is divergent because the book promotes that secondary category to the symbol’s core identification while restricting Christ to a special qualified instance, thereby replacing rather than merely narrowing the consensus core.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited texts establish that lamb imagery can apply to several human figures and that John calls Christ the Lamb of God, but they do not by themselves establish “covenant person” as the governing meaning of lamb. Several passages emphasize affection, vulnerability, or slaughter, while Exodus 12:5 concerns a literal sacrificial animal; major christological Lamb texts, especially Revelation and 1 Peter, are omitted.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3958,
+    "input_tokens_details": {
+      "cache_write_tokens": 3955,
+      "cached_tokens": 0
+    },
+    "output_tokens": 756,
+    "output_tokens_details": {
+      "reasoning_tokens": 330
+    },
+    "total_tokens": 4714
+  },
+  "user": null,
+  "metadata": {}
+}

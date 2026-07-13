@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920145,
+  "completed_at": 1783920154,
+  "id": "7200c9b9-866f-9f62-91cb-086f54b55066",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7200c9b9-866f-9f62-91cb-086f54b55066",
+      "summary": [
+        {
+          "text": "The task is about the term \"Judgment\" in biblical symbolism. I need to respond with a specific JSON format based on my knowledge of Christian interpretation and biblical studies.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"God's definitive evaluation of human lives and deeds (especially at the eschatological Last Judgment), resulting in eternal reward or condemnation\",\n  \"primary_basis\": [\n    \"Matthew 25:31-46\",\n    \"Revelation 20:11-15\",\n    \"2 Corinthians 5:10\",\n    \"Romans 14:10-12\",\n    \"John 5:22-29\",\n    \"Acts 17:31\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's temporal or historical judgments on nations, cities, or individuals within history (e.g., exile, conquest, plagues) as expressions of covenant justice\",\n      \"basis\": [\n        \"Deuteronomy 28\",\n        \"Amos 1–2\",\n        \"Isaiah 13–23\",\n        \"Jeremiah 25\",\n        \"Luke 19:41-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Distinction between the judgment seat of Christ (for believers' rewards) and the great white throne (for the unredeemed)\",\n      \"basis\": [\n        \"2 Corinthians 5:10\",\n        \"1 Corinthians 3:12-15\",\n        \"Revelation 20:11-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Present-tense divine judgment already operative in the world or in the conscience through the Spirit and the gospel\",\n      \"basis\": [\n        \"John 3:18-19\",\n        \"John 12:31\",\n        \"Romans 1:18-32\",\n        \"1 Corinthians 11:31-32\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Metaphorical or existential description of the natural consequences of moral choices rather than a future personal divine tribunal\",\n      \"basis\": [\n        \"Galatians 6:7-8\",\n        \"various wisdom texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Mainstream Christian tradition across Catholic, Orthodox, and Protestant lines treats the Final Judgment as a core article of faith; secondary distinctions (timing, dual judgments, historical vs. eschatological) are widely recognized but do not displace the primary eschatological sense.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7200c9b9-866f-9f62-91cb-086f54b55066",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1002,
+    "output_tokens_details": {
+      "reasoning_tokens": 464
+    },
+    "total_tokens": 1605,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 66420000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 1002
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

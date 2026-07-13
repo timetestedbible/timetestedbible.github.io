@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919528,
+  "completed_at": 1783919549,
+  "id": "55f4de98-6485-9c77-8bab-b0da4eabc567",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_55f4de98-6485-9c77-8bab-b0da4eabc567",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Cedar\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_meaning\": \"strength, majesty, durability, and righteousness\",\n  \"primary_basis\": [\n    \"Psalm 92:12\",\n    \"1 Kings 5–7\",\n    \"Isaiah 2:13\",\n    \"Ezekiel 17\"\n  ],\n  \"alternatives\": [\n    {\n       \"meaning\": \"symbol of pride and loftiness that will be humbled\",\n       \"basis\": [\n         \"Isaiah 2:13\",\n         \"Isaiah 10:33–34\"\n       ],\n       \"prominence\": \"common\"\n     },\n     {\n       \"meaning\": \"symbol of foreign powers or Assyrian empire\",\n       \"basis\": [\n         \"Ezekiel 31\"\n       ],\n       \"prominence\": \"common\"\n     },\n     {\n       \"meaning\": \"material for sacred construction and purification\",\n       \"basis\": [\n         \"1 Kings 5–7\",\n         \"Leviticus 14\"\n       ],\n \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Cedar carries a positive connotation of strength and flourishing righteousness in the majority of Christian teaching, yet the same imagery is also used for pride and imperial power, so no single settled meaning exists.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"strength, majesty, durability, and the flourishing of the righteous\",\n  \"primary_basis\": [\n    \"Psalm 92:12\",\n    \"Psalm 104:16\",\n    \"Ezekiel 31:3-9\",\n    \"1 Kings 5–7 (cedar for the temple)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"human pride and loftiness that God humbles\",\n      \"basis\": [\n        \"Isaiah 2:13\",\n        \"Isaiah 10:33-34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the messianic kingdom or exalted tree of God’s planting\",\n      \"basis\": [\n        \"Ezekiel 17:22-24\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"purification and incorruptibility (ritual use of cedar wood)\",\n      \"basis\": [\n        \"Leviticus 14:4-6\",\n        \"Numbers 19:6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Cedars of Lebanon dominate biblical references; Christian teaching most often links them positively to strength and the righteous (via Ps 92), yet context can reverse the image to pride. Multiple secondary associations exist without one exclusive settled meaning.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_55f4de98-6485-9c77-8bab-b0da4eabc567",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1663,
+    "output_tokens_details": {
+      "reasoning_tokens": 1334
+    },
+    "total_tokens": 2265,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 109900000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1663
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

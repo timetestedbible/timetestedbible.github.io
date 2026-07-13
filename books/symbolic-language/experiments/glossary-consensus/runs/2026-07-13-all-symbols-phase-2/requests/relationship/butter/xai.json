@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "butter",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nButter (curdled milk, chemah)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"Abundance, prosperity, and the richness of God's blessing. In most Christian teaching and commentary, butter/curds (Hebrew chemah) functions as an emblem of plenty — the fatness of the land and the overflow of divine provision — since curdled milk was a staple luxury of pastoral abundance in the ancient Near East.\",\n  \"primary_basis\": [\n    \"Job 29:6 (Job's former prosperity: 'when my steps were washed with butter')\",\n    \"Deuteronomy 32:14 ('butter of kine, and milk of sheep' among the blessings God gave Israel)\",\n    \"Job 20:17 ('brooks of honey and butter' as the abundance the wicked will not enjoy)\",\n    \"Isaiah 7:15, 21-22 ('butter and honey shall he eat' in the Immanuel prophecy)\",\n    \"Genesis 18:8 (Abraham sets butter, milk, and a calf before his heavenly visitors — generous hospitality)\",\n    \"2 Samuel 17:29 (provisions of butter brought to David — sustenance and provision)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Scarcity/remnant survival food: in Isaiah 7:15-22 many modern commentators read curds and honey not as luxury but as the diet of a depopulated, devastated land — food available when agriculture has collapsed and only livestock foraging remains — so the sign carries a note of judgment as well as survival.\",\n      \"basis\": [\n        \"Isaiah 7:15\",\n        \"Isaiah 7:21-22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christological sign of the true humanity of Christ: patristic and later devotional writers (e.g., Irenaeus and subsequent commentators on the Immanuel prophecy) took 'butter and honey shall he eat' as evidence that the promised child would be genuinely human, eating ordinary infant food, and growing in moral discernment.\",\n      \"basis\": [\n        \"Isaiah 7:14-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Flattery, smooth deceit, and hypocrisy: words 'smoother than butter' while war is in the heart — butter as an image of treacherous, ingratiating speech.\",\n      \"basis\": [\n        \"Psalm 55:21\",\n        \"Judges 5:25 (Jael's butter offered to Sisera before killing him is sometimes read as deceptive hospitality)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Strife produced by pressing/provocation: the churning of milk bringing forth butter as a proverb that forcing/agitation produces conflict.\",\n      \"basis\": [\n        \"Proverbs 30:33\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Hospitality and generous welcome: butter as the best of the household set before guests.\",\n      \"basis\": [\n        \"Genesis 18:8\",\n        \"Judges 5:25\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Butter/curds (chemah) does not have a single, tightly settled symbolic meaning in Christian interpretation comparable to terms like 'leaven' or 'lamb.' The broadest and most frequently invoked association is abundance/rich provision, but the term's symbolic force is heavily context-dependent, and the most theologically discussed passage (Isaiah 7:15) is itself contested between 'abundance' and 'devastation-era subsistence' readings, with an additional patristic Christological layer. Translations vary between 'butter' (KJV) and 'curds' (most modern versions), which affects how commentators frame the image. Any author claiming one exclusive symbolic meaning would be going beyond recognizable consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Abundance, divine provision, and the richness of the land, often coupled with honey; alternatively, it symbolizes a diet of pastoral simplicity forced by national judgment and agricultural devastation.\",\n  \"primary_basis\": [\n    \"Isaiah 7:15\",\n    \"Isaiah 7:22\",\n    \"Job 20:17\",\n    \"Judges 5:25\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The true humanity and humble, ordinary upbringing of the incarnate Christ.\",\n      \"basis\": [\n        \"Isaiah 7:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Deceptive flattery, hypocrisy, or smooth but dangerous words.\",\n      \"basis\": [\n        \"Psalm 55:21\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Hospitality and honor toward a guest, sometimes as a precursor to betrayal.\",\n      \"basis\": [\n        \"Judges 5:25\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of butter or curds (chemah) heavily depends on the context. In the Immanuel prophecy of Isaiah 7, commentators debate whether the diet of 'curds and honey' represents the abundance of God's blessing or the deprivation of a land reduced to uncultivated pasture by invading armies. In Messianic interpretation, it frequently denotes Christ's incarnation and partaking in ordinary human weakness.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Rich nourishment, material abundance, and prosperity—often understood as a sign of God's generous provision. This is a broad contextual association rather than a fixed biblical symbol.\",\n  \"primary_basis\": [\n    \"Deuteronomy 32:13–14 — curds from cattle and milk from the flock appear among the rich provisions God gives Israel.\",\n    \"Job 20:17 — streams of curds and honey represent prosperity that the wicked will not enjoy.\",\n    \"Job 29:6 — washing one's steps with curds depicts Job's former prosperity.\",\n    \"Isaiah 7:21–22 — abundant curds and honey are produced in the altered condition of the land, though the passage's implications are disputed.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hospitality and generous welcome\",\n      \"basis\": [\n        \"Genesis 18:8 — Abraham serves curds, milk, and meat to his visitors.\",\n        \"Judges 5:25 — Jael gives Sisera curds in a noble or costly bowl.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A subsistence diet amid judgment, depopulation, or agricultural collapse\",\n      \"basis\": [\n        \"Isaiah 7:15, 21–22 — curds and honey may indicate survival from pastoral and uncultivated resources after cultivated land has been devastated, rather than uncomplicated luxury.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The consequences of pressure, agitation, or provocation\",\n      \"basis\": [\n        \"Proverbs 30:33 — pressing or churning milk produces curds/butter, analogously to pressing anger producing strife.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Spiritual nourishment, divine truth, or mature teaching\",\n      \"basis\": [\n        \"Some allegorical Christian readings extend the general symbolism of milk or rich food to curds/butter, but Scripture itself does not consistently establish this specific meaning for chemah.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Chemah is variously translated “curds,” “butter,” or “thickened milk.” Christian interpretation has no settled, term-specific symbolic definition. Its most recognizable positive association is rich provision or prosperity, but its meaning depends heavily on context, especially in Isaiah 7.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Prosperity, abundance, or richness of blessing\",\n  \"primary_basis\": [\n    \"Job 29:6\",\n    \"Deuteronomy 32:14\",\n    \"Job 20:17\",\n    \"Isaiah 7:22\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Flattery or hypocritical smooth speech\",\n      \"basis\": [\n        \"Psalm 55:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Simple or natural nourishment linked to childhood, scarcity, or learning to discern good and evil\",\n      \"basis\": [\n        \"Isaiah 7:15\",\n        \"Isaiah 7:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hospitality or refreshment offered to guests\",\n      \"basis\": [\n        \"Genesis 18:8\",\n        \"Judges 5:25\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Product of churning or agitation (affliction yielding something substantial)\",\n      \"basis\": [\n        \"Proverbs 30:33\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Butter/chemah occurs infrequently, almost entirely in poetic and prophetic texts; its sense remains highly contextual. No single fixed symbolic value is consistently taught across major Christian traditions or standard commentaries.\"\n}\n\nBOOK ENTRY\nThe word churned solid — milk worked by labor into sound doctrine: the diet that teaches to “refuse the evil, and choose the good,” the remnant's food, the wash of the walking feet (“I washed my steps with butter”). Its counterfeit is speech “smoother than butter” with war beneath.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Prov 30:33; Isa 7:15, 22; Job 29:6; 2 Sam 17:29; Ps 55:21) · see Butter, ch. 47\n\nAVAILABLE KJV EXCERPTS\nProverbs 30:33 — Surely the churning of milk bringeth forth butter, and the wringing of the nose bringeth forth blood: so the forcing of wrath bringeth forth strife.\nIsaiah 7:15 — Butter and honey shall he eat, that he may know to refuse the evil, and choose the good.\nIsaiah 7:22 — And it shall come to pass, for the abundance of milk that they shall give he shall eat butter: for butter and honey shall every one eat that is left in the land.\nJob 29:6 — When I washed my steps with butter, and the rock poured me out rivers of oil;\n2 Samuel 17:29 — And honey, and butter, and sheep, and cheese of kine, for David, and for the people that were with him, to eat: for they said, The people is hungry, and weary, and thirsty, in the wilderness.\nPsalms 55:21 — The words of his mouth were smoother than butter, but war was in his heart: his words were softer than oil, yet were they drawn swords.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "b1db07a6747111f84d41675c7788212375f99e08fcc7ac77840b44b811c6d2fe",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "id": "resp_04a785b335b8d642006a547c2902e081959c9eee8b84b8f3ed",
+  "object": "response",
+  "created_at": 1783921705,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921716,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_04a785b335b8d642006a547c29c2e48195876abee3d1cede18",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_04a785b335b8d642006a547c2def048195bd34b9ab9758c2ca",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"“Jew” ordinarily denotes ethnic or religious Jewish identity, but symbolically can identify an authentic, inward member of God’s covenant people, marked by spiritual rather than merely outward status.\",\"book_summary\":\"In covenant contexts, “Jew” denotes one who belongs inwardly to the covenant, whose heart and God-given praise fulfill the name Judah; in other contexts it retains its ordinary ethnic or religious meaning.\",\"consensus_core_identification\":\"An inward or authentic member of God’s covenant people.\",\"book_core_identification\":\"One inwardly belonging to the covenant.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement. Both readings preserve ordinary ethnic/religious usage and recognize a context-dependent inward covenantal usage. The book does not specify whether the inward category includes all Christians, faithful Jews specifically, or another precise ecclesiological group, but neither does it affirm a boundary contrary to the consensus.\",\"material_contradiction\":\"None. The book’s Judah/praise etymology supplements the shared identification rather than replacing or restricting it.\",\"rationale\":\"The minimum core identifications coincide: both define the symbolic Jew as an inward, authentic covenant member and distinguish this from merely outward identity. The book’s emphasis on Judah meaning “praise” explains Paul’s wording in Romans 2:29 but does not materially alter the referent or its extension. Its acknowledgment that the term can also be plainly ethnic or religious likewise matches the consensus caveat.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The phrase “one in the covenant” could be read more broadly or categorically than the consensus’s cautious account, which leaves disputed whether Paul means faithful Jews, all believers, or the Church. However, the book also leaves that population unspecified, so this is ambiguity rather than a demonstrated disagreement.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3909,
+    "input_tokens_details": {
+      "cache_write_tokens": 3906,
+      "cached_tokens": 0
+    },
+    "output_tokens": 615,
+    "output_tokens_details": {
+      "reasoning_tokens": 221
+    },
+    "total_tokens": 4524
+  },
+  "user": null,
+  "metadata": {}
+}

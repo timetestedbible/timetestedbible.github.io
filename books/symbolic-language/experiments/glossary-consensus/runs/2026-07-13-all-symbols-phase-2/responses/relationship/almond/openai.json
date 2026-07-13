@@ -1,0 +1,195 @@
+{
+  "id": "resp_057df4f8e2024e40006a547912466081908392c9b2f892f377",
+  "object": "response",
+  "created_at": 1783920914,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920929,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_057df4f8e2024e40006a547912e2f48190a1d40809aef8c98f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_057df4f8e2024e40006a54791b3b5881909de86700946a7c7b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"The almond primarily signifies divine watchfulness and readiness to fulfill God's word, with established secondary associations of Aaronic election, resurrection or new life, and the sanctuary lampstand's light and holiness.\",\"book_summary\":\"The almond is the wakeful or watcher-tree, a sign of Levi's divinely authenticated priesthood through life from a dead rod, and the floral form borne by the sanctuary lampstand.\",\"consensus_core_identification\":\"Almond = divine watchfulness over God's word, with context-specific priesthood, resurrection-life, and sanctuary-light associations.\",\"book_core_identification\":\"Almond = the watcher-tree, also functioning as the priesthood's resurrection sign and as the pattern of the sanctuary lamp.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement. The book foregrounds and integrates several associations that the consensus treats as primary and secondary context-specific strands, but it does not add or exclude a significant symbolic case.\",\"material_contradiction\":\"None. The book's watchfulness, priestly election, resurrection-life, and lampstand associations are all represented in the consensus responses.\",\"rationale\":\"The central identification is the same explicit Jeremiah association between almond and divine watching. The book then combines the same Numbers 17 and Exodus 25 strands recognized by the consensus. Its synthesis—especially linking the watcher-tree, resurrection sign, priesthood, and lamp—is more compressed and unified than the consensus presentation, but does not replace or contradict the consensus referent.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited texts directly establish the almond/watch wordplay, Aaron's almond-bearing rod, and almond-shaped lampstand cups, but they do not themselves explicitly unite these into one symbolic system or call Aaron's rod a 'resurrection sign'; those are interpretive syntheses.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3128,
+    "input_tokens_details": {
+      "cache_write_tokens": 3125,
+      "cached_tokens": 0
+    },
+    "output_tokens": 816,
+    "output_tokens_details": {
+      "reasoning_tokens": 424
+    },
+    "total_tokens": 3944
+  },
+  "user": null,
+  "metadata": {}
+}

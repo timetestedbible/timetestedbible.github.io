@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920286,
+  "completed_at": 1783920302,
+  "id": "d6612f14-57a1-998f-b4ad-bdb1e8000ce8",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_d6612f14-57a1-998f-b4ad-bdb1e8000ce8",
+      "summary": [
+        {
+          "text": "The task is about the term \"Moment\" in biblical symbolism. I need to find the primary symbolic meaning in Christian teaching and biblical interpretation.\nThe primary symbolic meaning most commonly assigned to \"moment\" in Christian teaching and biblical interpretation is that of a fleeting, transitory period—especially the brief span of earthly suffering or trial in contrast to the eternal perspective of God.\n\nThe biblical passages normally used to support that meaning are 2 Corinthians 4:17, Psalm  30:5, and Isaiah 54:7-8.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the fleeting or temporary character of earthly affliction, human life, or divine displeasure when set against eternal glory or favor\",\n  \"primary_basis\": [\n    \"2 Corinthians 4:17\",\n    \"Psalm 30:5\",\n    \"Isaiah 54:7-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the suddenness of eschatological transformation (resurrection or parousia)\",\n      \"basis\": [\n        \"1 Corinthians 15:51-52\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a brief interval of testing or temptation\",\n      \"basis\": [\n        \"Luke 4:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"an existential or mystical 'now' of encounter with God\",\n      \"basis\": [],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Unlike concrete biblical images (lamb, vine, light), 'moment' functions chiefly as a temporal adverb or noun of brevity rather than a developed symbol; published Christian interpretation therefore shows only loose, context-driven associations without a fixed traditional meaning.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_d6612f14-57a1-998f-b4ad-bdb1e8000ce8",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1326,
+    "output_tokens_details": {
+      "reasoning_tokens": 1036
+    },
+    "total_tokens": 1928,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 85840000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1326
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

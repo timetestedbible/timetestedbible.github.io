@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922216,
+  "completed_at": 1783922244,
+  "id": "6be7bea9-23e7-909e-a1e7-d4bbd876aa1d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_6be7bea9-23e7-909e-a1e7-d4bbd876aa1d",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Sabbath\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of Sabbath as the 'rest-day' that crowns the complete seven (six-plus-one) at every scale (week, year, jubilee) is equivalent to the consensus primary referent of sacred rest, but materially narrows the extension by excluding Christological/spiritual fulfillment and eschatological consummation. The book treats the rest as the structural crown of the numerical unit itself rather than as a type fulfilled in Christ or a symbol of salvation rest.\",\n  \"extension_reasoning\": \"The book adds 7th-year sabbath and jubilee scales (Lev 25) and the phrase 'seven sabbaths complete' (Lev 23:15) as primary cases, while the consensus treats these as complementary layers rather than central. It excludes the Lord's Day transfer and seventh-day binding as primary, and does not address covenant 7th-day sign or millennial typology as alternatives. The printed citations (Lev 23:15, 25, 2 Chr 36:21, Luke 18:12, Matt 28:1, Heb 4:9) provide strong support for the book's structural emphasis.\",\n  \"core_verdict\": 2,\n  \"extension_verdict\": 2,\n  \"overall_verdict\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of Sabbath as the 'rest-day' that crowns the complete seven (six-plus-one) at every scale (week, year, jubilee) is equivalent to the consensus primary referent of sacred rest, but materially narrows the extension by excluding Christological/spiritual fulfillment and eschatological consummation. The book treats the rest as the structural crown of the numerical unit itself rather than as a type fulfilled in Christ or a symbol of salvation rest.\",\n  \"extension_reasoning\": \"The book adds 7th-year sabbath and jubilee scales (Lev 25) and the phrase 'seven sabbaths complete' (Lev 23:15) as primary cases, while the consensus treats these as complementary layers rather than central. It excludes the Lord's Day transfer and seventh-day binding as primary, and does not address covenant 7th-day sign or millennial typology as alternatives. The printed citations (Lev 23:15, 25, 2 Chr 36:21, Luke 18:12, Matt 28:1, Heb 4:9) provide strong support for the book's structural emphasis.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"The Sabbath primarily symbolizes God's creational rest fulfilled as spiritual rest in Christ and the remaining eschatological rest for the people of God.\",\n  \"book_summary\": \"The Sabbath is the complete seven—the six-and-one unit counted by the law at every scale (week, land year, jubilee of seven sevens)—with the rest-day as crown of the whole that the word itself sometimes names.\",\n  \"consensus_core_identification\": \"spiritual/eschatological rest in God and Christ\",\n  \"book_core_identification\": \"complete seven (six-and-one structural unit whose seventh is rest)\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"NO_BASELINE\",\n  \"boundary_disagreement\": \"None applicable; the book does not operate inside the consensus rest-centric frame, so questions of which rest cases are included or excluded do not arise.\",\n  \"material_contradiction\": \"None; the book neither denies rest nor replaces a shared referent, but supplies an identification absent from the consensus primary and alternatives.\",\n  \"rationale\": \"Consensus cores (and listed alternatives) uniformly center rest—creational, soteriological in Christ, eschatological—with secondary layers of covenant sign, day-observance transfer, liberation, or millennial week. The book's minimum core is instead the heptadic unit itself (six-plus-one at multiple legal scales, rest as crown, week called sabbath). That structural-completeness identification is not covered by the consensus primary or any alternative, yielding novelty rather than refinement or contradiction.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The dominant Christian tradition, controlled by Hebrews 3–4 and Colossians 2, treats rest in Christ as the settled symbolic core; a purely structural heptad reading leaves that controlling typology unengaged.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_6be7bea9-23e7-909e-a1e7-d4bbd876aa1d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4723,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3226,
+    "output_tokens_details": {
+      "reasoning_tokens": 2801
+    },
+    "total_tokens": 7949,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 280340000,
+    "context_details": {
+      "input_tokens": 4723,
+      "output_tokens": 3226
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

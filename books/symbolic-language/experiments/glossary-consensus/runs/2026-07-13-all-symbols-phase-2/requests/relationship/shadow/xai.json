@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "shadow",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nShadow\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'shadow' most commonly symbolizes divine protection and refuge — being sheltered under God's presence, pictured as resting in the shadow of His wings or of the Almighty. God's shadow represents nearness, covering, and safety for those who trust Him.\",\n  \"primary_basis\": [\n    \"Psalm 91:1 (abiding under the shadow of the Almighty)\",\n    \"Psalm 17:8 (hide me under the shadow of your wings)\",\n    \"Psalm 36:7 (children of men take refuge in the shadow of your wings)\",\n    \"Psalm 57:1 (in the shadow of your wings I will take refuge)\",\n    \"Psalm 63:7 (in the shadow of your wings I sing for joy)\",\n    \"Psalm 121:5 (the LORD is your shade at your right hand)\",\n    \"Isaiah 25:4 (a shade from the heat, a refuge from the storm)\",\n    \"Isaiah 49:2 (in the shadow of his hand he hid me)\",\n    \"Song of Solomon 2:3 (I sat down under his shadow with great delight)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Typological foreshadowing: Old Testament laws, rituals, and institutions as a 'shadow' of the reality (substance) found in Christ and heavenly things — the shadow-versus-substance contrast central to Christian typology.\",\n      \"basis\": [\n        \"Colossians 2:16-17 (these are a shadow of the things to come, but the substance belongs to Christ)\",\n        \"Hebrews 8:5 (a copy and shadow of the heavenly things)\",\n        \"Hebrews 10:1 (the law has but a shadow of the good things to come)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Transience and brevity of human life: shadow as an image of fleeting, insubstantial existence.\",\n      \"basis\": [\n        \"Job 8:9 (our days on earth are a shadow)\",\n        \"Job 14:2 (he flees like a shadow and does not continue)\",\n        \"1 Chronicles 29:15 (our days on the earth are like a shadow)\",\n        \"Psalm 102:11 (my days are like an evening shadow)\",\n        \"Psalm 144:4 (his days are like a passing shadow)\",\n        \"Ecclesiastes 6:12 (life passed like a shadow)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Death, darkness, and gloom: 'the shadow of death' (tsalmavet) as an image of mortal danger, deep darkness, or spiritual gloom from which God delivers.\",\n      \"basis\": [\n        \"Psalm 23:4 (the valley of the shadow of death)\",\n        \"Isaiah 9:2 / Matthew 4:16 (those dwelling in the region and shadow of death, light has dawned)\",\n        \"Luke 1:79 (to give light to those who sit in darkness and in the shadow of death)\",\n        \"Job 10:21-22 (the land of darkness and the shadow of death)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Changeability and instability contrasted with God's immutability: God has 'no variation or shadow due to change,' making shadow a symbol of mutability and inconstancy.\",\n      \"basis\": [\n        \"James 1:17 (with whom there is no variation or shadow of turning)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Conveyed divine power or presence through a person: shadow as a medium of healing or overshadowing power.\",\n      \"basis\": [\n        \"Acts 5:15 (Peter's shadow falling on the sick)\",\n        \"Luke 1:35 (the power of the Most High will overshadow you)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"False or unreliable security: the shade of human alliances or rulers as inadequate protection compared with God's.\",\n      \"basis\": [\n        \"Isaiah 30:2-3 (seeking shelter in the shadow of Egypt shall be your humiliation)\",\n        \"Judges 9:15 (take refuge in the shade of the bramble)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Shadow is a genuinely polyvalent biblical image with no single settled symbolic meaning; interpretation is context-dependent. Two meanings compete for primacy: (1) devotional/Old Testament usage strongly favors protection and refuge under God, and (2) doctrinal/New Testament usage strongly favors the typological shadow-versus-substance contrast (Colossians 2:17; Hebrews 8:5; 10:1), which is arguably the most distinctively Christian theological use of the term. Reference works such as the Dictionary of Biblical Imagery typically list protection, transience, and foreshadowing as parallel senses rather than ranking one as definitive. I have listed protection as primary because it is the most frequent scriptural usage, but the typological sense is at least equally prominent in Christian theological teaching, so it is marked dominant among the alternatives.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Protection, refuge, and the comforting presence of God, often depicted as the shadow of wings or a great rock offering shelter from the heat.\",\n  \"primary_basis\": [\n    \"Psalm 17:8\",\n    \"Psalm 36:7\",\n    \"Psalm 91:1\",\n    \"Isaiah 25:4\",\n    \"Isaiah 32:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A typological prefiguration or incomplete representation of a greater spiritual reality, specifically the Old Covenant pointing to Christ.\",\n      \"basis\": [\n        \"Colossians 2:17\",\n        \"Hebrews 8:5\",\n        \"Hebrews 10:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The brevity, fragility, and fleeting nature of human life.\",\n      \"basis\": [\n        \"Job 8:9\",\n        \"Job 14:2\",\n        \"Psalm 102:11\",\n        \"Psalm 144:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Deep gloom, spiritual darkness, or the realm of death (e.g., the valley of the shadow of death).\",\n      \"basis\": [\n        \"Psalm 23:4\",\n        \"Isaiah 9:2\",\n        \"Luke 1:79\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of a shadow is highly context-dependent in Scripture. In the Old Testament, it primarily contrasts the heat of the sun (danger, judgment) with shade (divine protection), or illustrates how quickly human life passes. In the New Testament, it serves a critical theological function distinguishing the anticipatory shadows of the law from the substantial reality of Christ.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A preliminary, incomplete foreshadowing or type of the greater spiritual reality fulfilled in Christ. Christian interpretation especially describes the Mosaic law, sacrifices, festivals, priesthood, and earthly sanctuary as “shadows,” while Christ and the new-covenant realities are the substance.\",\n  \"primary_basis\": [\n    \"Colossians 2:16–17 — food laws, festivals, new moons, and Sabbaths are “a shadow of the things to come,” while the substance belongs to Christ.\",\n    \"Hebrews 8:4–5 — the earthly priests and sanctuary serve “a copy and shadow of the heavenly things.”\",\n    \"Hebrews 10:1 — the law has “a shadow of the good things to come” rather than their full reality.\",\n    \"Hebrews 9:23–24 — the earthly sanctuary is treated as a copy of the heavenly reality, supporting the same shadow-and-fulfillment framework.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine protection, refuge, and nearness, especially being sheltered under the shadow of God’s wings.\",\n      \"basis\": [\n        \"Psalm 17:8\",\n        \"Psalm 36:7\",\n        \"Psalm 57:1\",\n        \"Psalm 63:7\",\n        \"Psalm 91:1\",\n        \"Isaiah 32:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mortality, transience, or the fleeting and insubstantial character of human life.\",\n      \"basis\": [\n        \"1 Chronicles 29:15\",\n        \"Job 8:9\",\n        \"Job 14:2\",\n        \"Psalm 102:11\",\n        \"Psalm 109:23\",\n        \"Psalm 144:4\",\n        \"Ecclesiastes 6:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Deep darkness, mortal danger, suffering, or death, traditionally expressed as “the shadow of death.”\",\n      \"basis\": [\n        \"Job 3:5\",\n        \"Job 10:21–22\",\n        \"Psalm 23:4\",\n        \"Psalm 44:19\",\n        \"Psalm 107:10\",\n        \"Isaiah 9:2; compare Matthew 4:16 and Luke 1:79\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Change, instability, or variation, used negatively of God, with whom there is no shifting shadow.\",\n      \"basis\": [\n        \"James 1:17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A vehicle or sign of extraordinary apostolic healing power, based on people hoping Peter’s shadow would fall on the sick.\",\n      \"basis\": [\n        \"Acts 5:15–16\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled dominant theological use of “shadow” in Christian typology: an anticipatory and inferior form that points to fulfillment in Christ. The word is nevertheless context-dependent across Scripture and does not carry that meaning in every occurrence; protection, transience, and death or danger are also well-established biblical metaphors.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A temporary, incomplete, or typological foreshadowing of a greater spiritual reality (especially Christ, the gospel, or heavenly things)\",\n  \"primary_basis\": [\n    \"Colossians 2:16-17\",\n    \"Hebrews 8:5\",\n    \"Hebrews 10:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine protection, covering, or refuge under God's care\",\n      \"basis\": [\n        \"Psalm 17:8\",\n        \"Psalm 36:7\",\n        \"Psalm 57:1\",\n        \"Psalm 91:1\",\n        \"Isaiah 25:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Death, deep darkness, or the realm of mortality and threat\",\n      \"basis\": [\n        \"Psalm 23:4\",\n        \"Job 3:5\",\n        \"Isaiah 9:2\",\n        \"Luke 1:79\",\n        \"Matthew 4:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fleeting, insubstantial, or transient nature of human life\",\n      \"basis\": [\n        \"Job 8:9\",\n        \"Job 14:2\",\n        \"Psalm 102:11\",\n        \"Psalm 144:4\",\n        \"Ecclesiastes 6:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Absence of variation, turning, or imperfection (applied to God)\",\n      \"basis\": [\n        \"James 1:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical usage of 'shadow' is strongly context-dependent; the typological sense is especially prominent in Christian theological interpretation of Old Testament institutions, while protective and death-related senses dominate in the Psalms and prophetic literature. No single meaning monopolizes Christian teaching.\"\n}\n\nBOOK ENTRY\nThe covering of a greater presence — refuge under the Almighty's wings, a kingdom's protection over its people, the outline a coming body casts ahead of itself. Good to dwell in — not the gloom it is read as; the KJV itself renders the word “defence”.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 91:1; Num 14:9; Col 2:17) · see Shadow, ch. 17\n\nAVAILABLE KJV EXCERPTS\nPsalms 91:1 — He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty.\nNumbers 14:9 — Only rebel not ye against the LORD, neither fear ye the people of the land; for they are bread for us: their defence is departed from them, and the LORD is with us: fear them not.\nColossians 2:17 — Which are a shadow of things to come; but the body is of Christ.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "17a30f11580014f6df594091c1bff14430828379993839eae4f9661377a4834a",
+  "cache": {
+    "hit": false
+  }
+}

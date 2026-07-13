@@ -1,0 +1,173 @@
+{
+  "id": "resp_06ff07eff6da4b50006a54774530dc8193a64d00a3803429ae",
+  "object": "response",
+  "created_at": 1783920453,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920473,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_06ff07eff6da4b50006a547745da248193a0bf5b22cc6cdd5d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_06ff07eff6da4b50006a54774a3ac08193b443eb84cfe82982",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Worldly wealth, privilege, and self-sufficiency—often symbolizing attachment to temporal goods and the spiritual danger of trusting possessions rather than God.\",\"primary_basis\":[\"Matthew 6:19–24 — earthly treasure is contrasted with treasure in heaven, and service to God with service to mammon.\",\"Matthew 19:16–24; Mark 10:17–25; Luke 18:18–25 — riches are portrayed as a serious impediment to entering the kingdom.\",\"Luke 6:20–26 — the rich receive a warning in contrast with the blessed poor.\",\"Luke 12:13–21 — the rich fool represents material abundance without being “rich toward God.”\",\"Luke 16:19–31 — the rich man’s luxury and neglect of Lazarus lead to judgment.\",\"1 Timothy 6:9–10, 17–19 — the rich are warned against pride and uncertain riches and instructed to become rich in good works.\",\"James 2:1–7; 5:1–6 — the rich are associated with privilege, exploitation, and impending judgment.\",\"Revelation 3:17–18 — Laodicea’s claim to be rich symbolizes complacent self-sufficiency masking spiritual poverty.\"],\"alternatives\":[{\"meaning\":\"Literal socioeconomic wealth, without an inherent symbolic referent; many passages simply address people who possess substantial material resources.\",\"basis\":[\"Matthew 27:57 — Joseph of Arimathea is identified as a rich man without making wealth itself a symbolic category.\",\"1 Timothy 6:17–19 — instructions are given directly to materially rich Christians rather than treating “rich” solely as a symbol.\"],\"prominence\":\"dominant\"},{\"meaning\":\"Divine blessing, abundance, or honorable prosperity, especially where wealth is received with gratitude and faithful stewardship.\",\"basis\":[\"Genesis 13:2; 24:35 — Abraham’s wealth is presented in connection with divine blessing.\",\"1 Chronicles 29:12 — riches and honor are said to come from God.\",\"Proverbs 10:22 — the blessing of the Lord makes rich.\"],\"prominence\":\"common\"},{\"meaning\":\"Spiritual abundance—richness in faith, grace, good works, or relationship with God, regardless of material status.\",\"basis\":[\"Luke 12:21 — being “rich toward God” contrasts with merely accumulating possessions.\",\"2 Corinthians 8:9 — Christ’s poverty and believers’ enrichment are expressed in theological terms.\",\"Ephesians 1:7; 2:4,7; 3:8,16 — divine grace, mercy, glory, and Christ are described as riches.\",\"James 2:5 — the materially poor may be rich in faith.\",\"Revelation 2:9 — the persecuted church at Smyrna is materially poor yet spiritually rich.\"],\"prominence\":\"common\"},{\"meaning\":\"Religious or political elites who possess power and oppress the vulnerable, rather than all materially wealthy people indiscriminately.\",\"basis\":[\"Luke 1:51–53 — the powerful and rich are brought down or sent away empty.\",\"James 2:6–7 — rich persons are depicted as oppressing believers and dragging them into court.\",\"James 5:1–6 — wealthy landowners are condemned for fraud and exploitation.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"“Rich” has no single settled symbolic meaning across Scripture or Christian interpretation. Its sense is strongly contextual. The most recognizable negative symbolism is worldly self-sufficiency and the spiritual peril of wealth, but the Bible also uses riches literally, as a sign of blessing, and metaphorically for divine grace, faith, and good works.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 972,
+    "output_tokens_details": {
+      "reasoning_tokens": 206
+    },
+    "total_tokens": 1289
+  },
+  "user": null,
+  "metadata": {}
+}

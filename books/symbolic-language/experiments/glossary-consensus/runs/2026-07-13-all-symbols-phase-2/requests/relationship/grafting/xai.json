@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "grafting",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGrafting (grafted in)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"The inclusion of Gentile believers into God's covenant people. In Paul's olive tree metaphor, Gentiles are 'wild olive branches' grafted contrary to nature into the cultivated olive tree (rooted in the patriarchs and God's promises to Israel), sharing the nourishing root while some natural branches (unbelieving Israel) were broken off through unbelief. The image teaches Gentile participation in Israel's covenant blessings by faith, coupled with a warning against Gentile arrogance and an affirmation that natural branches can be grafted back in.\",\n  \"primary_basis\": [\n    \"Romans 11:17-24 (the central grafting passage)\",\n    \"Romans 11:11-16 (context: Israel's stumbling and the riches for the Gentiles)\",\n    \"Romans 11:25-32 (the mystery of Israel's partial hardening and future restoration)\",\n    \"Ephesians 2:11-22 (Gentiles, once strangers to the covenants, brought near and made fellow citizens)\",\n    \"Jeremiah 11:16 and Hosea 14:6 (Israel as an olive tree, background imagery)\",\n    \"John 15:1-8 (the related vine-and-branches abiding imagery, often compared)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Supersessionist/replacement reading: the broken-off branches show that the church has replaced ethnic Israel as God's people, with the grafting signifying transfer of covenant status to the church.\",\n      \"basis\": [\n        \"Romans 11:17-21 (branches broken off)\",\n        \"Matthew 21:43 (kingdom taken away and given to a people producing fruit)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Messianic Jewish / Hebrew Roots reading: Gentiles are grafted specifically into Israel itself (not merely an abstract 'people of God'), implying continuity with Israel's identity and, in stronger forms, an obligation or invitation to Torah observance.\",\n      \"basis\": [\n        \"Romans 11:17-24\",\n        \"Ephesians 2:12-13 (brought into the commonwealth of Israel)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Dispensationalist-inflected reading: the olive tree represents the place of covenant blessing or the Abrahamic root of blessing rather than Israel per se, keeping Israel and the church distinct while explaining Gentile access to blessing.\",\n      \"basis\": [\n        \"Romans 11:17-24\",\n        \"Genesis 12:3 (blessing to the nations through Abraham)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Individual soteriological/pastoral reading: grafting as a picture of individual salvation and union with Christ, with breaking off and regrafting used in debates over perseverance versus loss of salvation.\",\n      \"basis\": [\n        \"Romans 11:20-23 ('you stand by faith... do not be proud, but fear')\",\n        \"John 15:1-6 (branches cut off and burned)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The 'engrafted word' of James 1:21 (KJV wording): the implanted word of God taking root in the believer's soul — a distinct use of grafting language sometimes conflated with Romans 11.\",\n      \"basis\": [\n        \"James 1:21\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus that 'grafted in' refers to Paul's olive tree metaphor in Romans 11 and signifies Gentile inclusion in the covenant people rooted in Israel's patriarchs, by faith and not by merit. The main interpretive disputes are downstream: what exactly the olive tree represents (Israel, the covenant people through history, the place of blessing, or the remnant), whether Israel retains a distinct future (Romans 11:25-29 is widely read as affirming it), and what practical implications follow for Gentile believers. Commentators also frequently note that Paul's 'contrary to nature' grafting inverts normal horticultural practice, which he appears to acknowledge deliberately (Romans 11:24).\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The inclusion of Gentiles into the covenant promises and people of God, sharing in the spiritual heritage and root of Israel.\",\n  \"primary_basis\": [\n    \"Romans 11:17-24\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Individual spiritual union with Christ, drawing life from Him as the source (often conflating Paul's olive tree imagery with Jesus's vine imagery).\",\n      \"basis\": [\n        \"John 15:1-8\",\n        \"Romans 11:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Replacement Theology (Supersessionism), interpreting the grafting of wild branches and the breaking off of natural branches as the Gentile Church permanently replacing ethnic Israel in God's plan.\",\n      \"basis\": [\n        \"Romans 11:19-20\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A warning against Gentile pride, emphasizing that the Church remains dependent on the historical covenants made with Israel's patriarchs and that God is able to graft the natural branches back in.\",\n      \"basis\": [\n        \"Romans 11:18\",\n        \"Romans 11:23-24\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Romans 11 is the primary and nearly exclusive biblical text for this specific symbolic phrasing. Paul utilizes the agricultural practice of grafting a wild olive branch into a cultivated olive tree to illustrate how Gentiles are brought into God's redemptive plan while affirming God's ongoing relationship with Israel.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The grafting image most commonly symbolizes Gentile believers being incorporated by faith into the covenant people of God and sharing in the spiritual blessings rooted in Israel’s patriarchal promises. They are depicted as wild olive branches grafted into a cultivated olive tree, while being warned against pride toward Jewish branches.\",\n  \"primary_basis\": [\n    \"Romans 11:17–24 — the explicit image of wild olive branches grafted into Israel’s olive tree, broken-off branches, and their possible regrafting\",\n    \"Romans 11:11–16, 25–32 — the surrounding argument concerning Gentile inclusion, Israel’s stumbling, and continuing divine mercy toward Israel\",\n    \"Romans 9:6–8; 10:12–13 — the broader context of covenant identity and salvation by faith\",\n    \"Ephesians 2:11–22 — commonly used as a parallel teaching about Gentiles being brought near and incorporated into one people, although it does not use grafting language\",\n    \"Galatians 3:7–9, 26–29 — commonly cited regarding Gentile believers sharing Abrahamic blessing through faith in Christ\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A supersessionist or replacement reading: grafting signifies the predominantly Gentile church taking the covenantal place of unbelieving Israel as the new or true Israel.\",\n      \"basis\": [\n        \"Romans 11:17–21, especially the removal of some natural branches and inclusion of wild branches\",\n        \"Matthew 21:43 and 1 Peter 2:9–10 are often brought into this broader interpretation\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An individual-salvation or devotional reading: grafting primarily symbolizes each believer’s personal union with Christ and reception of spiritual life from him.\",\n      \"basis\": [\n        \"Romans 11:17–24, with the olive root understood christologically\",\n        \"John 15:1–6 is often treated as a conceptual parallel, though it uses vine-and-branches imagery rather than grafting\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A future-restoration reading: the regrafting of natural branches symbolizes a future large-scale conversion or restoration of ethnic Israel.\",\n      \"basis\": [\n        \"Romans 11:23–27, especially the claim that God can graft the natural branches in again and that “all Israel will be saved”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An ecclesial or sacramental reading: grafting denotes formal incorporation into the visible church, sometimes associated particularly with baptism.\",\n      \"basis\": [\n        \"Romans 11:17–24 interpreted alongside Romans 6:3–5, 1 Corinthians 12:13, and traditional baptismal theology\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the core image of Gentile inclusion in the blessings and people associated with Israel. There is no settled consensus on the precise identity of the olive tree or root, whether the church replaces Israel or is joined to Israel’s covenantal inheritance, and whether the regrafting of natural branches predicts a distinct future restoration of ethnic Israel.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Gentile believers being incorporated (as wild olive branches) into the cultivated olive tree representing the covenant people of God / Israel, thereby sharing in the root and rich sap of the Abrahamic promises and blessings while some natural branches are broken off for unbelief (with the possibility of re-grafting).\",\n  \"primary_basis\": [\n    \"Romans 11:17-24\",\n    \"Romans 11:11-36\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Supersessionist reading in which the olive tree is identified primarily with the Church that replaces ethnic Israel, so that Gentiles constitute the new permanent people of God.\",\n      \"basis\": [\n        \"Romans 11:17-24 (read as permanent displacement of the natural branches)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Emphasis on the temporary nature of Jewish unbelief and the future mass re-grafting of ethnic Israel into their own olive tree, with Gentiles as co-participants rather than replacements.\",\n      \"basis\": [\n        \"Romans 11:23-26\",\n        \"Romans 11:11-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Personal/spiritual application to individual believers’ vital union with Christ or the source of spiritual life, sometimes conflated with the vine-and-branches imagery.\",\n      \"basis\": [\n        \"Romans 11:17-24\",\n        \"John 15:1-8 (by analogy)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The grafting metaphor is almost exclusively derived from Paul’s explicit olive-tree allegory in Romans 11 and is one of the most consistently recognized New Testament symbols for the relationship between Israel and Gentile believers / the Church. Variations concern ecclesiological implications (inclusion vs. replacement, present vs. future status of Israel) rather than the core agricultural image itself.\"\n}\n\nBOOK ENTRY\nThe wild branch — the stranger, the Gentile — received into the covenant tree.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rom 11:17) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nRomans 11:17 — And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "b3a9faba24a2939a62cf7fc5972118f71975a934c79cfe4beda7468d729badbf",
+  "cache": {
+    "hit": false
+  }
+}

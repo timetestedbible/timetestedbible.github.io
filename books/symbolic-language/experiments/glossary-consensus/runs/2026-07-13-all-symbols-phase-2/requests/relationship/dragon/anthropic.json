@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "dragon",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDragon\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"The dragon symbolizes Satan (the devil) — the archenemy of God and his people, the ancient serpent who deceives, accuses, and persecutes, especially as portrayed in the book of Revelation.\",\n  \"primary_basis\": [\n    \"Revelation 12:3-9 (the great red dragon, explicitly identified as 'that ancient serpent, who is called the devil and Satan')\",\n    \"Revelation 12:13-17 (the dragon persecutes the woman and her offspring)\",\n    \"Revelation 13:2-4 (the dragon gives power and authority to the beast)\",\n    \"Revelation 16:13 (unclean spirits from the mouth of the dragon)\",\n    \"Revelation 20:2 (the dragon, that ancient serpent, who is the devil and Satan, bound for a thousand years)\",\n    \"Genesis 3:1-15 (the serpent in Eden, linked to the dragon via Revelation's 'ancient serpent' language)\",\n    \"Isaiah 27:1 (Leviathan the twisting serpent, the dragon in the sea, whom the LORD will slay)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Chaos-monster / cosmic chaos motif: in Old Testament scholarship, dragon imagery (Leviathan, Rahab, tannin) draws on ancient Near Eastern combat myths and symbolizes primeval chaos that God subdues at creation and in salvation history.\",\n      \"basis\": [\n        \"Psalm 74:13-14\",\n        \"Psalm 89:9-10\",\n        \"Job 26:12-13; Job 41\",\n        \"Isaiah 51:9-10\",\n        \"Isaiah 27:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hostile pagan empires or rulers who oppress God's people, personified as dragons — notably Egypt/Pharaoh and Babylon; some interpreters extend this to Rome behind Revelation's dragon-beast imagery.\",\n      \"basis\": [\n        \"Ezekiel 29:3 (Pharaoh as the great dragon in the Nile)\",\n        \"Ezekiel 32:2\",\n        \"Jeremiah 51:34 (Nebuchadnezzar swallows like a monster)\",\n        \"Isaiah 30:7 (Rahab as a name for Egypt)\",\n        \"Revelation 12-13 read against Roman imperial persecution\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In historicist Protestant interpretation, the dragon of Revelation 12 represents pagan Rome (and Satan working through it), which persecuted the early church and sought to destroy Christ.\",\n      \"basis\": [\n        \"Revelation 12:1-5 read as the church/Israel bringing forth Christ under Roman rule\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A purely literary/mythological figure without theological referent — the dragon as a stock ancient monster image with no fixed symbolic meaning; largely a position in some critical scholarship rather than church teaching.\",\n      \"basis\": [\n        \"Comparative studies of Ugaritic and Babylonian combat myths (Baal-Yam, Marduk-Tiamat) as background to biblical dragon language\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The identification of the dragon with Satan is unusually settled because Revelation 12:9 and 20:2 make the identification explicit within the text itself; virtually all Christian traditions (Catholic, Orthodox, Protestant, evangelical, and most critical commentators on Revelation) accept it. The alternative readings are not so much rivals as complementary layers: OT dragon/sea-monster imagery (chaos, Leviathan, Rahab) and its application to oppressive empires (Egypt, Babylon, Rome) are widely seen as the background that Revelation gathers up into the figure of Satan. Disagreement among interpreters concerns the referents of the beasts and the timing of the dragon's defeat (preterist, historicist, futurist, idealist schemes), not the dragon's core identity as the devil.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Satan, the Devil, and the ultimate personification of evil and rebellion against God.\",\n  \"primary_basis\": [\n    \"Revelation 12:3-9\",\n    \"Revelation 20:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Pagan empires, oppressive political powers, or hostile kings (such as Pharaoh or the Roman Empire) that persecute God's people.\",\n      \"basis\": [\n        \"Ezekiel 29:3\",\n        \"Jeremiah 51:34\",\n        \"Revelation 13:2-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Primordial cosmic chaos, often represented as a sea monster like Leviathan or Rahab, which God conquers to establish order.\",\n      \"basis\": [\n        \"Isaiah 27:1\",\n        \"Psalm 74:13-14\",\n        \"Job 41\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal historical creatures, such as dinosaurs or large extinct reptiles, referenced poetically.\",\n      \"basis\": [\n        \"Job 41\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The identification of the dragon as Satan is explicitly stated in Revelation 12:9, making it one of the most clearly defined and universally accepted symbols in Christian interpretation.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Satan—the devil as the chief personal power of evil, enemy of God, accuser and persecutor of God’s people.\",\n  \"primary_basis\": [\n    \"Revelation 12:3–9 explicitly identifies the great dragon as “that ancient serpent, who is called the devil and Satan.”\",\n    \"Revelation 12:13–17 depicts the dragon persecuting the woman and her offspring.\",\n    \"Revelation 13:1–4 presents the dragon as empowering the beast and receiving worship through it.\",\n    \"Revelation 20:2 identifies the dragon again as “the ancient serpent, who is the devil and Satan”; Revelation 20:7–10 describes his final defeat.\",\n    \"The identification with the “ancient serpent” connects the imagery retrospectively with the tempter in Genesis 3:1–15.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The primordial chaos monster or cosmic force of disorder subdued by God. This is especially important for Old Testament dragon, sea-monster, Leviathan, and Rahab imagery and often functions as a background to Revelation.\",\n      \"basis\": [\n        \"Psalm 74:13–14\",\n        \"Isaiah 27:1\",\n        \"Isaiah 51:9–10\",\n        \"Job 7:12; 26:12–13\",\n        \"Genesis 1:21, where the related Hebrew term can mean great sea creatures rather than an evil being\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Oppressive political or imperial power, especially pagan Rome in interpretations of Revelation. The dragon may symbolize the satanic power operating through empire rather than Satan considered apart from his earthly agents.\",\n      \"basis\": [\n        \"Revelation 12:3, where the dragon’s seven heads and ten horns use political-beast imagery\",\n        \"Revelation 13:1–4, where the dragon gives authority to the beast\",\n        \"Daniel 7:1–8, 17–27 as the principal background for beasts representing kingdoms\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A particular hostile ruler or kingdom portrayed as a monstrous dragon, notably Pharaoh/Egypt and, in some translations, Nebuchadnezzar/Babylon.\",\n      \"basis\": [\n        \"Ezekiel 29:3 identifies Pharaoh as a great dragon or monster in the Nile\",\n        \"Ezekiel 32:2 compares Pharaoh to a dragon or sea monster\",\n        \"Jeremiah 51:34 portrays Nebuchadnezzar as swallowing Judah like a dragon in traditional translations\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal extraordinary animal, sea creature, giant serpent, or—in some modern creationist readings—a dinosaur, rather than a symbolic spiritual or political figure.\",\n      \"basis\": [\n        \"Genesis 1:21\",\n        \"Job 40–41, when Behemoth or Leviathan is associated with dragon traditions\",\n        \"Translation traditions rendering Hebrew tannin or related creature terms as “dragon”\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled dominant Christian identification of the dragon in Revelation with Satan because Revelation states it explicitly. The term is not uniform across the entire Bible, however: Hebrew words traditionally translated “dragon” can denote sea monsters, serpents, jackals, ordinary great creatures, chaos imagery, or metaphorical rulers depending on context and translation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Satan (the Devil), the ancient serpent and adversary of God who opposes Christ and persecutes the people of God\",\n  \"primary_basis\": [\n    \"Revelation 12:3-9 (great red dragon identified as 'that ancient serpent called the devil, or Satan')\",\n    \"Revelation 20:2 (dragon seized and bound, 'that ancient serpent, who is the devil, or Satan')\",\n    \"Revelation 12:13-17; 13:2,4 (dragon as the power behind the beasts and persecutor of the woman/church)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Primordial chaos / sea monster (Leviathan-type figure representing disorder opposed to God's creative order)\",\n      \"basis\": [\n        \"Isaiah 27:1; 51:9\",\n        \"Psalm 74:13-14; 89:10\",\n        \"Job 41 (Leviathan)\",\n        \"Ezekiel 29:3; 32:2 (Pharaoh as dragon/sea monster)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pagan political power / empire (especially Rome as the persecuting world system empowered by or identified with the dragon)\",\n      \"basis\": [\n        \"Historicist and some preterist readings of Revelation 12–13\",\n        \"Danielic beast imagery applied to successive empires\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Generic personification of evil or the forces of opposition without strict identification as a personal Satan\",\n      \"basis\": [\n        \"Broader apocalyptic and mythological background studies\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian tradition and biblical scholarship overwhelmingly treat the dragon of Revelation as Satan on the basis of the book's own explicit identifications; OT 'dragon'/tannin and Leviathan language supplies the mythic background and is commonly read as typological of the same adversary or of chaotic evil, but does not displace the primary NT identification.\"\n}\n\nBOOK ENTRY\nA devouring kingdom.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: Satan himself, per Revelation 12:9.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Pharaoh, Ezek 29:3; Babylon, Jer 51:34) · see The Sign of Jonah, ch. 4\n\nAVAILABLE KJV EXCERPTS\nEzekiel 29:3 — Speak, and say, Thus saith the Lord GOD; Behold, I am against thee, Pharaoh king of Egypt, the great dragon that lieth in the midst of his rivers, which hath said, My river is mine own, and I have made it for myself.\nJeremiah 51:34 — Nebuchadrezzar the king of Babylon hath devoured me, he hath crushed me, he hath made me an empty vessel, he hath swallowed me up like a dragon, he hath filled his belly with my delicates, he hath cast me out.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "dd580cb8a2453f724f16231c48389c05cd1a738322bec9a4cc455fc7dd863b17",
+  "cache": {
+    "hit": false
+  }
+}

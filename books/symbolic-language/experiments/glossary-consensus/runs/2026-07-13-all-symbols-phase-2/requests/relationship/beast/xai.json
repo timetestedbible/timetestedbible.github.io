@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "beast",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nBeast, wild animal\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian interpretation, the symbolic 'beast' or wild animal represents earthly political power in opposition to God — specifically kingdoms, empires, and their rulers that persecute God's people. Daniel's four beasts are explicitly interpreted within the text as four kings/kingdoms (traditionally Babylon, Medo-Persia, Greece, Rome), and the beast(s) of Revelation are read as a climactic God-opposing world power and/or its ruler, frequently identified with the figure of the Antichrist. The core consensus idea is that 'beast' signifies brutal, arrogant, idolatrous human government or a tyrannical ruler animated by satanic power, in contrast to the humane, God-given rule symbolized by the 'one like a son of man.'\",\n  \"primary_basis\": [\n    \"Daniel 7:1-8 (four great beasts rise from the sea)\",\n    \"Daniel 7:17 ('these great beasts, which are four, are four kings')\",\n    \"Daniel 7:23 ('the fourth beast shall be a fourth kingdom upon earth')\",\n    \"Daniel 8:20-22 (animal imagery interpreted as Media-Persia and Greece)\",\n    \"Revelation 13:1-10 (the beast from the sea receiving the dragon's power and authority)\",\n    \"Revelation 13:11-18 (the second beast / beast from the earth; the mark and number 666)\",\n    \"Revelation 17:3, 7-12 (the scarlet beast with seven heads and ten horns interpreted as kings/kingdoms)\",\n    \"Revelation 11:7; 19:19-20; 20:10 (the beast as eschatological adversary defeated by Christ)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An individual end-time person, the Antichrist: a future world ruler who embodies the beast, demands worship, and persecutes believers before Christ's return (futurist/dispensationalist reading, often linked with 2 Thessalonians 2 and 1 John 2:18).\",\n      \"basis\": [\n        \"Revelation 13:1-18\",\n        \"2 Thessalonians 2:3-10\",\n        \"1 John 2:18, 22\",\n        \"Daniel 7:8, 24-25 (the 'little horn')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Roman Empire and/or a specific emperor, especially Nero: the preterist and dominant critical-scholarly reading, in which the beast of Revelation symbolizes first-century imperial Rome, the imperial cult, and Nero (666 as gematria for Neron Caesar).\",\n      \"basis\": [\n        \"Revelation 13:18 (number 666)\",\n        \"Revelation 17:9-11 (seven hills, sequence of kings)\",\n        \"Revelation 13:3 (Nero redivivus motif in scholarship)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The papacy or apostate church-state power: the classic historicist reading of the Reformers and continued today most prominently in Seventh-day Adventist teaching, identifying the beast with the Roman Catholic papal system across history.\",\n      \"basis\": [\n        \"Revelation 13:1-8\",\n        \"Daniel 7:25\",\n        \"Revelation 17:1-6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A timeless symbol of all God-opposing power, evil systems, or satanic influence in every age rather than one specific kingdom or person (idealist/symbolic reading).\",\n      \"basis\": [\n        \"Revelation 13 read typologically\",\n        \"Revelation 17:8 ('was, and is not, and is to come')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Beast' as a figure for brutish, irrational, carnal human nature or humanity apart from God — used in some devotional, allegorical, and patristic-influenced readings, and in interpretations of Nebuchadnezzar's beast-like humbling.\",\n      \"basis\": [\n        \"Psalm 73:22 ('I was as a beast before thee')\",\n        \"Daniel 4:16, 32-33 (Nebuchadnezzar given a beast's mind)\",\n        \"Ecclesiastes 3:18\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Wild animals as literal agents of divine judgment or symbols of chaos/danger in prophetic oracles (e.g., 'sword, famine, pestilence, and wild beasts'), a non-symbolic or semi-symbolic usage distinct from the apocalyptic beast.\",\n      \"basis\": [\n        \"Ezekiel 14:21\",\n        \"Leviticus 26:22\",\n        \"Revelation 6:8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus at the general level: symbolic 'beasts' in Daniel and Revelation stand for God-opposing kingdoms/empires and their rulers, a meaning stated within Scripture itself (Dan 7:17, 23). Disagreement is concentrated at the level of identification — which empire, era, institution, or individual the final beast denotes — where futurist (individual Antichrist), preterist (Rome/Nero), historicist (papacy), and idealist (timeless evil power) schools diverge. The general 'oppressive kingdom/ruler empowered by Satan' meaning is the shared core across these schools. Note that 'beast/wild animal' also occurs non-symbolically throughout Scripture; the symbolic consensus applies chiefly to the apocalyptic literature.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Oppressive, anti-God political powers, worldly empires, or a specific eschatological Antichrist that persecutes God's people.\",\n  \"primary_basis\": [\n    \"Daniel 7:3-17\",\n    \"Revelation 13:1-18\",\n    \"Revelation 17:3-17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A specific first-century historical tyrant, such as Nero or Domitian.\",\n      \"basis\": [\n        \"Revelation 13:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Base, irrational human nature, fleshly instincts, or false teachers given over to depravity.\",\n      \"basis\": [\n        \"2 Peter 2:12\",\n        \"Jude 1:10\",\n        \"Psalm 49:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Demonic forces or Satan himself acting as a devourer.\",\n      \"basis\": [\n        \"1 Peter 5:8\",\n        \"Revelation 11:7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the exact identity of the Beast in Revelation is heavily debated between preterist and futurist views, the underlying apocalyptic symbolism of wild beasts representing oppressive, godless empires or worldly rulers is a settled consensus.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"In apocalyptic Christian interpretation, a beast or wild animal most commonly symbolizes brutal, idolatrous political power—an empire, kingdom, or ruler that opposes God, arrogates divine authority, and persecutes God’s people.\",\n  \"primary_basis\": [\n    \"Daniel 7:1–27 — four beasts represent four kingdoms and their rulers; the final beast wages war against the saints.\",\n    \"Revelation 13:1–18 — the beasts from the sea and land embody persecuting political power and its religious or propagandistic support.\",\n    \"Revelation 17:3–18 — the scarlet beast is explicitly interpreted through kings and kingdoms and supports Babylon.\",\n    \"Revelation 19:19–20 — the beast and false prophet lead earthly opposition to Christ.\",\n    \"Daniel 4:16–33 — Nebuchadnezzar’s animal-like condition illustrates proud human rule becoming bestial and dehumanized.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A particular end-time individual, commonly called the Antichrist, especially the beast from the sea in Revelation 13.\",\n      \"basis\": [\n        \"Revelation 13:1–8\",\n        \"Revelation 17:8–14\",\n        \"2 Thessalonians 2:3–10, often correlated with Revelation’s beast\",\n        \"1 John 2:18, used to supply the title “Antichrist”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Specific historical empires or rulers, such as Babylon, Medo-Persia, Greece, Rome, Nero, or a later persecuting regime, rather than political evil in general.\",\n      \"basis\": [\n        \"Daniel 7:17,23–25\",\n        \"Daniel 8:20–25\",\n        \"Revelation 13:1–10\",\n        \"Revelation 17:9–11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Humanity degraded by pride, irrational appetite, or estrangement from God—human beings becoming morally 'bestial.'\",\n      \"basis\": [\n        \"Daniel 4:16–33\",\n        \"Psalm 49:12,20\",\n        \"Psalm 73:22\",\n        \"2 Peter 2:12\",\n        \"Jude 10\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Chaotic, demonic, or anti-creation forces subdued by God, with political empires viewed as manifestations of that deeper chaos.\",\n      \"basis\": [\n        \"Daniel 7:2–7, where beasts arise from the turbulent sea\",\n        \"Revelation 11:7\",\n        \"Revelation 13:1\",\n        \"Revelation 17:8\",\n        \"Job 40–41 and Isaiah 27:1 as broader chaos-monster background\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gentile peoples, outsiders, or persons considered ceremonially unclean, depending on the vision or metaphor.\",\n      \"basis\": [\n        \"Acts 10:9–28, where unclean animals lead into the reception of Gentiles\",\n        \"Matthew 15:26–28 and Mark 7:27–30, using animal imagery in a Jew-Gentile setting\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal nonhuman animals within creation, with no symbolic referent.\",\n      \"basis\": [\n        \"Genesis 1:24–25\",\n        \"Psalm 104:10–25\",\n        \"Mark 1:13\",\n        \"Acts 28:4–5\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong broad consensus in Danielic and Revelation apocalyptic interpretation that beasts signify anti-God kingdoms, rulers, or imperial systems. There is no single settled meaning for every biblical occurrence of 'beast' or 'wild animal,' since many uses are literal and others symbolize danger, moral degradation, Gentiles, chaos, or a particular eschatological ruler.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"An antichristian empire, ruler, or system of political/religious power opposed to God and empowered by Satan (commonly identified as the Antichrist or his kingdom)\",\n  \"primary_basis\": [\n    \"Revelation 13:1-18\",\n    \"Revelation 17:3-17\",\n    \"Revelation 19:19-20\",\n    \"Daniel 7:1-28\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The historical Roman Empire (or a specific emperor such as Nero)\",\n      \"basis\": [\n        \"Revelation 13\",\n        \"Revelation 17 (seven heads/hills)\",\n        \"Daniel 7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A future end-times world leader, dictatorship, or one-world government\",\n      \"basis\": [\n        \"Revelation 13\",\n        \"2 Thessalonians 2:3-12\",\n        \"Daniel 7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The papacy or institutional Roman Catholic Church as a continuing antichristian power\",\n      \"basis\": [\n        \"Revelation 13\",\n        \"Revelation 17\",\n        \"Daniel 7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Symbolic of human kingdoms, worldly power, or chaos in general (idealist reading)\",\n      \"basis\": [\n        \"Daniel 7\",\n        \"Revelation 13\",\n        \"Psalm 74:13-14\",\n        \"Isaiah 27:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal wild animals or merely natural ferocity without further political/eschatological reference\",\n      \"basis\": [\n        \"Genesis 1-2\",\n        \"various OT animal imagery\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Apocalyptic beasts (therion) are widely agreed to represent hostile powers rather than ordinary animals, but no single historical or future referent commands consensus across preterist, historicist, futurist, and idealist schools of Christian interpretation.\"\n}\n\nBOOK ENTRY\nA nation or kingdom of the world — the wild, predatory figure of a people, as the tree is its rooted figure; different beasts are different kingdoms, and the unclean beasts are the Gentile nations God cleanses in Peter's vision.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 7:17; 8:20-21; Acts 10:12, 28) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nDaniel 7:17 — These great beasts, which are four, are four kings, which shall arise out of the earth.\nDaniel 8:20 — The ram which thou sawest having two horns are the kings of Media and Persia.\nDaniel 8:21 — And the rough goat is the king of Grecia: and the great horn that is between his eyes is the first king.\nActs 10:12 — Wherein were all manner of fourfooted beasts of the earth, and wild beasts, and creeping things, and fowls of the air.\nActs 10:28 — And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto one of another nation; but God hath shewed me that I should not call any man common or unclean.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "67704057a5475eee3f8e871f9153aba687c510220852d545bc03830bf5f53d11",
+  "cache": {
+    "hit": false
+  }
+}

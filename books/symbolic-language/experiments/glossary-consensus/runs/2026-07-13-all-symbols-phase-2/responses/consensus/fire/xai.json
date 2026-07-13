@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919831,
+  "completed_at": 1783919858,
+  "id": "dd6740b3-7bcf-9a28-9dca-815e0b6d26d9",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_dd6740b3-7bcf-9a28-9dca-815e0b6d26d9",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Fire\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_meaning\": \"Divine judgment and wrath\",\n  \"primary_basis\": [\n    \"Matthew 25:41\",\n    \"2 Peter 3:7\",\n    \"Revelation 20:14-15\",\n    \"Hebrews 12:29\",\n    \"Malachi 3:2\"\n ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's purifying and holy presence\",\n      \"basis\": [\n        \"Exodus 3:2\",\n        \"Exodus 13:21\",\n        \"Hebrews 12:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit\",\n       \"basis\": [\n         \"Acts 2:3\"\n       ],\n       \"prominence\": \"common\"\n    },\n    {\n       \"meaning\": \"Purification and refinement\",\n       \"basis\": [\n         \"Malachi 3:2-3\",\n         \"1 Corinthians 3:13\",\n         \"Zechariah 13:9\"\n       ],\n       \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Fire carries multiple overlapping symbolic meanings in Christian interpretation, with divine judgment and purification being especially prominent, but no single meaning is exclusively dominant.\"\n}<|eos|> 1. State the primary symbolic meaning most commonly assigned to this term in Christian teaching and biblical interpretation.\n2. Cite the biblical passages normally used to support that meaning.\n3. Identify materially different alternative readings and describe each as dominant, common, minority, rare, or unclear.\n4. If the term has no settled symbolic interpretation, say so directly.\n\nDo not decide whether the common interpretation is true. This stage measures recognizable consensus, not truth. \n\n-- \n\nThe task is to define the primary symbolic meaning of \"Fire\" in Christian teaching and biblical interpretation, based on independent knowledge.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Divine judgment and wrath (including eschatological punishment)\",\n  \"primary_basis\": [\n    \"Matthew 3:10-12\",\n    \"Matthew 13:40-42\",\n    \"Matthew 25:41\",\n    \"Mark 9:43-48\",\n    \"2 Thessalonians 1:7-8\",\n    \"Hebrews 10:27\",\n    \"2 Peter 3:7\",\n    \"Jude 7\",\n    \"Revelation 14:10-11\",\n    \"Revelation 20:14-15\",\n    \"Revelation 21:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Manifest presence or theophany of God (often as consuming holiness)\",\n      \"basis\": [\n        \"Exodus 3:2\",\n        \"Exodus 13:21-22\",\n        \"Exodus 19:18\",\n        \"Exodus 24:17\",\n        \"Deuteronomy 4:24\",\n        \"1 Kings 18:38\",\n        \"Hebrews 12:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit\",\n      \"basis\": [\n        \"Matthew 3:11\",\n        \"Luke 3:16\",\n        \"Acts 2:3-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purification, refining, or testing of people/works\",\n      \"basis\": [\n        \"Isaiah 6:6-7\",\n        \"Malachi 3:2-3\",\n        \"Zechariah 13:9\",\n        \"1 Corinthians 3:13-15\",\n        \"1 Peter 1:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Zeal, passion, or devouring intensity (e.g., prophetic word or divine service)\",\n      \"basis\": [\n        \"Psalm 104:4\",\n        \"Jeremiah 20:9\",\n        \"Jeremiah 23:29\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Fire is polyvalent and context-dependent across the canon; Christian teaching and biblical studies routinely recognize multiple concurrent senses rather than one exclusive primary meaning. Judgment (especially hell/eschaton) receives heavy emphasis in moral and apocalyptic instruction, while presence, Spirit, and purification are equally standard in other loci. No single settled symbolic consensus overrides the others.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_dd6740b3-7bcf-9a28-9dca-815e0b6d26d9",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 2843,
+    "output_tokens_details": {
+      "reasoning_tokens": 2255
+    },
+    "total_tokens": 3445,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 176860000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 2843
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

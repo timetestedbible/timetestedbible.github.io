@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "foreskin",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nForeskin (uncircumcised)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the foreskin (and the state of being 'uncircumcised') symbolizes the unregenerate, sinful human nature ('the flesh') and, correspondingly, a heart that is closed, stubborn, and unresponsive to God. To be 'uncircumcised' is to stand outside God's covenant — impure, alienated, and spiritually insensible — while removal of the foreskin symbolizes the cutting away of sin and the cleansing/consecration of the person to God. This is developed into the metaphor of 'circumcision of the heart': physical foreskin removal typifies the inward removal of sinful resistance, accomplished ultimately (in Christian reading) by the Spirit through union with Christ rather than by the physical rite.\",\n  \"primary_basis\": [\n    \"Genesis 17:9-14 (circumcision as covenant sign; the uncircumcised male is 'cut off' from the covenant people)\",\n    \"Deuteronomy 10:16 ('circumcise the foreskin of your heart, and be no longer stubborn')\",\n    \"Deuteronomy 30:6 ('the LORD your God will circumcise your heart... so that you will love the LORD')\",\n    \"Leviticus 26:41 ('uncircumcised heart' humbled)\",\n    \"Jeremiah 4:4 ('circumcise yourselves to the LORD; remove the foreskin of your hearts')\",\n    \"Jeremiah 6:10 ('their ears are uncircumcised, they cannot listen')\",\n    \"Jeremiah 9:25-26 ('all the house of Israel are uncircumcised in heart')\",\n    \"Ezekiel 44:7, 9 ('uncircumcised in heart and uncircumcised in flesh' barred from the sanctuary)\",\n    \"Acts 7:51 (Stephen: 'you stiff-necked people, uncircumcised in heart and ears')\",\n    \"Romans 2:25-29 ('circumcision is a matter of the heart, by the Spirit, not the letter')\",\n    \"Philippians 3:3 ('we are the circumcision, who worship by the Spirit of God')\",\n    \"Colossians 2:11-13 ('circumcision made without hands, by putting off the body of the flesh, the circumcision of Christ'; 'dead in... the uncircumcision of your flesh')\",\n    \"Ephesians 2:11-13 (Gentiles 'called the uncircumcision'... 'alienated... strangers to the covenants' but brought near in Christ)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Ethnic/covenantal boundary marker: 'uncircumcised' functions simply as a label for outsiders to Israel — especially the Philistines and Gentiles generally — denoting foreignness and non-membership in the covenant people rather than an inner spiritual condition (e.g., Judges 14:3; 1 Samuel 17:26, 36; 2 Samuel 1:20; Ephesians 2:11; Galatians 2:7 where 'the uncircumcision' = Gentiles).\",\n      \"basis\": [\n        \"Judges 14:3\",\n        \"1 Samuel 17:26, 36\",\n        \"2 Samuel 1:20\",\n        \"1 Samuel 31:4\",\n        \"Ephesians 2:11\",\n        \"Galatians 2:7-9\",\n        \"Acts 11:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ritual impurity/defilement reading: the foreskin represents cultic uncleanness and unfitness for God's presence; 'uncircumcised' pairs with 'unclean' as a purity category (Isaiah 52:1; Ezekiel 44:7-9), and its extension to 'uncircumcised' fruit trees (Leviticus 19:23) shows it marking something forbidden/unconsecrated rather than sinful per se.\",\n      \"basis\": [\n        \"Isaiah 52:1\",\n        \"Ezekiel 44:7-9\",\n        \"Leviticus 19:23-25\",\n        \"Exodus 6:12, 30 ('uncircumcised lips' = unfitness to speak for God)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fertility/fruitfulness reading (largely academic): circumcision, and the 'foreskin' of trees in Leviticus 19:23, symbolizes the removal of an obstruction to fruitfulness; the rite is tied to the promise of Abraham's abundant offspring, so the foreskin represents blocked or unconsecrated fertility.\",\n      \"basis\": [\n        \"Leviticus 19:23-25 (uncircumcised fruit)\",\n        \"Genesis 17:2-6 (circumcision covenant joined to promise of multiplied offspring)\",\n        \"Exodus 6:12 ('uncircumcised lips' as ineffective speech, by analogy)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Shame/reproach reading: the foreskin embodies reproach or disgrace before God, removed at covenant renewal — e.g., Joshua 5 where circumcision at Gilgal 'rolls away the reproach of Egypt'; also foreskins as trophies of humiliation (1 Samuel 18:25-27).\",\n      \"basis\": [\n        \"Joshua 5:2-9\",\n        \"Genesis 34:14 ('a disgrace to us')\",\n        \"1 Samuel 18:25-27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Christological/typological reading: the removal of the foreskin prefigures Christ's death — Colossians 2:11's 'circumcision of Christ' read as his crucifixion (the stripping off of his body), and patristic/medieval devotion to Christ's own circumcision as the first shedding of his blood for sin.\",\n      \"basis\": [\n        \"Colossians 2:11-12\",\n        \"Luke 2:21\",\n        \"Patristic and medieval exegesis (e.g., sermons on the Feast of the Circumcision)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly settled and well-recognized symbolic tradition here, unusual in its explicitness: Scripture itself moralizes the term ('foreskin of your heart,' 'uncircumcised ears/lips'), so the primary meaning — the foreskin as the sinful, resistant 'flesh' whose removal signifies inner cleansing and covenant consecration — is stated within the biblical text and carried through virtually all major Christian streams (patristic, Reformation, Catholic, and modern evangelical exegesis). The alternatives listed are less rivals than complementary emphases: the ethnic-outsider usage and the impurity usage are both widely acknowledged as the literal/social senses on which the spiritual metaphor is built. Disagreement in scholarship concerns the rite's original function (fertility, apotropaism, tribal marking), not the settled theological symbolism of 'uncircumcision' as spiritual obduracy and alienation from God.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The unregenerate human nature, the flesh, or spiritual impurity representing a heart not yielded to God that requires spiritual cleansing.\",\n  \"primary_basis\": [\n    \"Deuteronomy 10:16\",\n    \"Jeremiah 4:4\",\n    \"Colossians 2:11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Exclusion from God's covenant community and separation from the promises of Israel, often used as a marker for Gentiles.\",\n      \"basis\": [\n        \"Ephesians 2:11-12\",\n        \"1 Samuel 17:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual deafness, stubbornness, and resistance to hearing God's word, often described as uncircumcised ears.\",\n      \"basis\": [\n        \"Jeremiah 6:10\",\n        \"Acts 7:51\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian interpretation, physical uncircumcision transitions metaphorically in both the Prophets and the New Testament to denote spiritual alienation and rebellion, whereas spiritual circumcision represents regeneration and the cutting away of the sinful nature by Christ.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"When used symbolically, “uncircumcised” most commonly denotes a person or human nature not inwardly consecrated to God—especially a hardened, disobedient, spiritually insensitive heart that remains identified with the “flesh” rather than covenant faithfulness.\",\n  \"primary_basis\": [\n    \"Deuteronomy 10:16 — Israel is commanded to circumcise the foreskin of the heart and cease being stubborn.\",\n    \"Deuteronomy 30:6 — God promises to circumcise the heart so that his people will love him.\",\n    \"Jeremiah 4:4 — circumcision of the heart is associated with repentance and removal of evil.\",\n    \"Jeremiah 6:10 — an “uncircumcised ear” is unable or unwilling to hear God's word.\",\n    \"Jeremiah 9:25–26 — physical circumcision is contrasted with being uncircumcised in heart.\",\n    \"Ezekiel 44:7,9 — uncircumcision of heart and flesh marks unfitness for sanctuary access.\",\n    \"Acts 7:51 — “uncircumcised in heart and ears” describes persistent resistance to the Holy Spirit.\",\n    \"Romans 2:25–29 — inward circumcision of the heart is contrasted with merely outward circumcision.\",\n    \"Colossians 2:11–13 — spiritual circumcision is described as putting off the body of flesh and is connected with union with Christ.\",\n    \"Philippians 3:3 — believers are identified as the true circumcision through worship by the Spirit and confidence in Christ rather than the flesh.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal covenantal or ethnic status: the foreskin simply indicates that a male has not received Israel's physical covenant sign, and “the uncircumcised” can function as a designation for Gentiles or covenant outsiders rather than as an independent symbol of personal depravity.\",\n      \"basis\": [\n        \"Genesis 17:9–14\",\n        \"Joshua 5:2–9\",\n        \"1 Samuel 17:26,36\",\n        \"Ephesians 2:11–12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral impurity, profaneness, or unfitness to approach what is holy. This overlaps with covenant exclusion but emphasizes ritual or sacred-space incompatibility.\",\n      \"basis\": [\n        \"Isaiah 52:1\",\n        \"Ezekiel 28:10\",\n        \"Ezekiel 31:18\",\n        \"Ezekiel 44:7,9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Incapacity or impediment: metaphorical “uncircumcision” of lips or ears signifies ineffective speech, inability to hear, or resistance to receiving God's message.\",\n      \"basis\": [\n        \"Exodus 6:12,30\",\n        \"Jeremiah 6:10\",\n        \"Acts 7:51\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Shame and reproach associated with uncircumcision, particularly in narratives where circumcision marks incorporation into Israel and removal of disgrace.\",\n      \"basis\": [\n        \"Genesis 34:14\",\n        \"Joshua 5:9\",\n        \"1 Samuel 17:26\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A typological contrast between old-covenant circumcision and Christian baptism or union with Christ, with removal of the foreskin interpreted as foreshadowing the putting away of sinful flesh.\",\n      \"basis\": [\n        \"Colossians 2:11–13\",\n        \"Romans 6:3–6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Physical circumcision and uncircumcision are spiritually indifferent under the new covenant; what matters is faith, obedience, or new creation. Here uncircumcision is not assigned an inherently negative symbolic value.\",\n      \"basis\": [\n        \"1 Corinthians 7:18–19\",\n        \"Galatians 5:6\",\n        \"Galatians 6:15\",\n        \"Colossians 3:11\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong consensus about the metaphorical phrases “uncircumcised heart” and “uncircumcised ears”: they signify stubbornness, spiritual insensitivity, or lack of inward covenant faithfulness. Nevertheless, “foreskin” or “uncircumcised” by itself has no single settled symbolic meaning across all biblical contexts. It may be literal, denote Gentile or covenant-outside status, express impurity or shame, or serve Pauline contrasts concerning flesh and inward renewal.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Spiritual uncleanness, hardness of heart, or exclusion from God's covenant people (contrasted with the need for heart-circumcision)\",\n  \"primary_basis\": [\n    \"Genesis 17:10-14 (physical circumcision as covenant sign; uncircumcised as cut off)\",\n    \"Deuteronomy 10:16; Jeremiah 4:4; Jeremiah 9:25-26 (call to circumcise the heart; judgment on the uncircumcised in heart)\",\n    \"Acts 7:51 (uncircumcised in heart and ears)\",\n    \"Romans 2:25-29 (true circumcision is of the heart by the Spirit)\",\n    \"Ephesians 2:11-12; Colossians 2:11 (uncircumcision of the flesh vs. circumcision of Christ putting off the body of flesh)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The sinful flesh or carnal nature that must be put off in conversion/union with Christ\",\n      \"basis\": [\n        \"Colossians 2:11-13\",\n        \"Romans 6:6 (body of sin)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ethnic/religious outsiders (Gentiles or non-covenant peoples) as opposed to Jews\",\n      \"basis\": [\n        \"Ephesians 2:11\",\n        \"1 Samuel 17:26, 36 (Philistines as uncircumcised)\",\n        \"Galatians 2:7-9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Impediment or unfitness for speech/service (uncircumcised lips)\",\n      \"basis\": [\n        \"Exodus 6:12, 30\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian biblical interpretation consistently treats physical foreskin/uncircumcision as a type pointing to spiritual realities of impurity, unbelief, or covenant status, with the NT emphasizing heart-circumcision over the physical rite. No major competing symbolic systems displace this reading in mainstream teaching.\"\n}\n\nBOOK ENTRY\nThe blocking flesh — “the body of the sins of the flesh,” Scripture's own decode — covering a covenant member and stopping its work: the uncircumcised heart cannot be humbled or love, the uncircumcised ear “cannot hearken,” uncircumcised lips cannot be heard, and a young tree's fruit is “uncircumcised” until the covenant year. Cut it away, or be cut off.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 17:14; Lev 19:23; 26:41; Deut 10:16; 30:6; Jer 4:4; 6:10; Ex 6:12; Acts 7:51; Col 2:11) · see The Foreskin, ch. 46\n\nAVAILABLE KJV EXCERPTS\nGenesis 17:14 — And the uncircumcised man child whose flesh of his foreskin is not circumcised, that soul shall be cut off from his people; he hath broken my covenant.\nLeviticus 19:23 — And when ye shall come into the land, and shall have planted all manner of trees for food, then ye shall count the fruit thereof as uncircumcised: three years shall it be as uncircumcised unto you: it shall not be eaten of.\nLeviticus 26:41 — And that I also have walked contrary unto them, and have brought them into the land of their enemies; if then their uncircumcised hearts be humbled, and they then accept of the punishment of their iniquity:\nDeuteronomy 10:16 — Circumcise therefore the foreskin of your heart, and be no more stiffnecked.\nDeuteronomy 30:6 — And the LORD thy God will circumcise thine heart, and the heart of thy seed, to love the LORD thy God with all thine heart, and with all thy soul, that thou mayest live.\nJeremiah 4:4 — Circumcise yourselves to the LORD, and take away the foreskins of your heart, ye men of Judah and inhabitants of Jerusalem: lest my fury come forth like fire, and burn that none can quench it, because of the evil of your doings.\nJeremiah 6:10 — To whom shall I speak, and give warning, that they may hear? behold, their ear is uncircumcised, and they cannot hearken: behold, the word of the LORD is unto them a reproach; they have no delight in it.\nExodus 6:12 — And Moses spake before the LORD, saying, Behold, the children of Israel have not hearkened unto me; how then shall Pharaoh hear me, who am of uncircumcised lips?\nActs 7:51 — Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Holy Ghost: as your fathers did, so do ye.\nColossians 2:11 — In whom also ye are circumcised with the circumcision made without hands, in putting off the body of the sins of the flesh by the circumcision of Christ:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "9781b0b638828813e707fcf1413d6f4af27a9ac0a4ee0730a9274ae161953788",
+  "cache": {
+    "hit": false
+  }
+}

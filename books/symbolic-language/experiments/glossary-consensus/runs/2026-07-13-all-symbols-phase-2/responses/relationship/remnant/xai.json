@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922147,
+  "completed_at": 1783922181,
+  "id": "bef810f9-74b2-9a2d-a4f9-6625b4b76578",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_bef810f9-74b2-9a2d-a4f9-6625b4b76578",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Remnant\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification matches the consensus: a small, faithful minority preserved by grace through judgment (Elijah's 7000, Zech 13:8-9's third refined). The book preserves the central referent of the faithful remnant but materially narrows its extension by specifying the remnant as the gleaners at the field's edge—widow, fatherless, stranger, Ruth—small by design and refined at a fixed ratio traceable to the gleaning law.  This adds a precise social and ritual identity (marginal gleaners) and a geometric ratio absent from consensus, while retaining the core faithful-survivor category.\",\n  \"extension_reasoning\": \"Consensus allows various faithful minorities (elect, church, future Jewish remnant). Book narrows to the specific gleaning typology and fixed-ratio survivors, excluding broader cases while adding Ruth 2's gleaners as the paradigm. Citations (Ruth 2, 1 Kgs 19:18, Zech 13:8-9, Rom 11:5) provide strong partial support for the refined identification.\",\n  \"overall_relation\": \"REFINED\",\n  \"core_confidence\": \"high \",\n  \"extension_confidence\": \"high  \",\n  \"notes\": \"The gleaning motif and fixed-ratio geometry constitute a boundary refinement rather than replacement of the consensus referent.\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification matches the consensus: a small, faithful minority preserved by grace through judgment (Elijah's 7000, Zech 13:8-9's third refined). The book preserves the central referent of the faithful remnant but materially narrows its extension by specifying the remnant as the gleaners at the field's edge—widow, fatherless, stranger, Ruth—small by design and refined at a fixed ratio traceable to the gleaning law.  This adds a precise social and ritual identity (marginal gleaners) and a geometric ratio absent from consensus, while retaining the core faithful-survivor category.\",\n  \" extension_reasoning\": \"Consensus allows various faithful minorities (elect, church, future Jewish remnant). Book narrows to the specific gleaning typology and fixed-ratio survivors, excluding broader cases while adding Ruth 2's gleaners as the paradigm. Citations (Ruth 2, 1 Kgs 19:18, Z 13:8-9, Rom 11:5) provide strong partial support for the refined identification.\",\n  \"overall_relation\": \"REFINED\",\n  \"core_confidence\": \"high \",\n  \"extension_confidence\": \"high  \",\n  \"notes\": \"The gleaning motif and fixed-ratio geometry constitute a boundary refinement rather than replacement of the consensus referent.\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification matches the consensus: a small, faithful minority preserved by grace through judgment (Elijah's 7000 , Zech 13:8-9's third refined).",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"The remnant is the faithful minority of God's people graciously preserved through judgment, exile, or apostasy, functioning as both a sign of judgment and of hope that secures covenant continuity; Paul applies it to the believing minority chosen by grace.\",\n  \"book_summary\": \"The faithful few who glean the edge—widow, fatherless, stranger, as Ruth did; small by design, refined like gold out of dross, at a fixed ratio traceable from the gleaning law's own geometry to Elijah's seven thousand.\",\n  \"consensus_core_identification\": \"faithful minority of God's covenant people preserved by grace through judgment\",\n  \"book_core_identification\": \"faithful few who glean the edge (widow, fatherless, stranger as Ruth), small by design and refined at a fixed ratio\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book confines remnant to the edge-gleaners typified by the poor/stranger under the gleaning statutes and requires a designed legal-ratio smallness; consensus admits broader historical survivors, elect, ecclesial minorities, and eschatological groups without the gleaning typology or geometric-ratio condition.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"Minimum cores both identify a small faithful group preserved by God (shared citations: 1 Kgs 19:18, Zech 13:8-9, Rom 11:5). The book retains that category yet materially narrows its extension and precision by equating the remnant with field-edge gleaners and deriving fixed smallness from gleaning-law geometry rather than residual survival alone; the added boundary conditions refine without replacing or contradicting the central referent.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"No consensus treatment links remnant to Ruth, gleaning statutes, or legal geometry; those elements re-center the motif on agricultural law in a way foreign to the prophetic-Pauline core.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_bef810f9-74b2-9a2d-a4f9-6625b4b76578",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 5502,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3522,
+    "output_tokens_details": {
+      "reasoning_tokens": 3064
+    },
+    "total_tokens": 9024,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 313680000,
+    "context_details": {
+      "input_tokens": 5502,
+      "output_tokens": 3522
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

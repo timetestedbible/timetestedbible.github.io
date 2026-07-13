@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "barley",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nBarley\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In most Christian teaching, barley symbolizes humble, lowly provision — the bread of the poor — through which God works and provides. Because barley was the cheaper grain eaten by the poor (about half the value of wheat), it is read as a picture of humility, lowliness, and God's use of small or despised means, most famously in the boy's five barley loaves with which Jesus feeds the five thousand. Closely intertwined with this is a second widely taught meaning: barley as the firstfruits grain of the early (Passover-season) harvest, and therefore a type of resurrection and of the 'firstfruits' people of God.\",\n  \"primary_basis\": [\n    \"John 6:9-13 (the five barley loaves in the feeding of the five thousand)\",\n    \"Judges 7:13 (the barley loaf tumbling into the Midianite camp, representing lowly Gideon/Israel)\",\n    \"2 Kings 4:42-44 (Elisha multiplying twenty barley loaves)\",\n    \"Ruth 1:22; 2:17, 23 (Ruth gleaning in the barley harvest; the poor gleaner motif)\",\n    \"Revelation 6:6 (barley priced at a third of wheat, marking it as the cheap grain of the poor)\",\n    \"Exodus 9:31-32 (barley already in the ear at the plague of hail, establishing it as the early grain)\",\n    \"Leviticus 23:10-11 and Deuteronomy 16:9 (the firstfruits sheaf of the early harvest, traditionally understood as barley, waved at Passover season)\",\n    \"1 Corinthians 15:20-23 (Christ as 'firstfruits,' linked typologically to the barley firstfruits offering)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Firstfruits / resurrection typology: barley, as the first grain ripe at Passover, prefigures Christ's resurrection as the 'firstfruits' and, in some prophetic-typology teaching, a 'first harvest' company of believers (with wheat as a later harvest at Pentecost). Especially prominent in Messianic, dispensational, and popular prophecy teaching.\",\n      \"basis\": [\n        \"Leviticus 23:10-14\",\n        \"Exodus 9:31-32\",\n        \"Ruth 1:22\",\n        \"1 Corinthians 15:20-23\",\n        \"John 20 read against the Feast of Firstfruits\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Patristic/medieval allegory: the barley loaves in John 6 represent the Old Testament Law or the letter of Scripture — nourishing but encased in a rough husk that must be broken open to reach the inner meaning (Augustine, Bede, and later allegorical commentators).\",\n      \"basis\": [\n        \"John 6:9 as expounded in Augustine's Tractates on the Gospel of John and Bede's homilies\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Scarcity, judgment, and cheapness: barley as a marker of famine pricing and divine judgment, or of low valuation (the price of a slave-wife, an adulteress, or false prophecy).\",\n      \"basis\": [\n        \"Revelation 6:6\",\n        \"Hosea 3:2 (Gomer redeemed partly with barley)\",\n        \"Ezekiel 13:19 (handfuls of barley)\",\n        \"Numbers 5:15 (the barley jealousy offering without oil or frankincense)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Simple agricultural/literal reading: barley carries no fixed symbolic meaning and functions simply as a seasonal and economic detail (dating events to spring, signaling poverty or ordinary agrarian life).\",\n      \"basis\": [\n        \"Ruth 1:22\",\n        \"2 Samuel 21:9\",\n        \"Exodus 9:31-32 read in mainstream critical and historical commentaries\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Barley has a recognizable cluster of associations rather than one settled symbolic meaning. The two most repeated interpretive threads are (1) humility/poor man's bread and (2) Passover-season firstfruits pointing to resurrection, and many teachers combine the two (the lowly grain that is nonetheless first to be raised/harvested). Academic biblical scholarship generally treats barley non-symbolically as an economic and calendrical marker, while devotional, typological, and prophecy-oriented literature supplies the symbolic readings. Because prominence differs sharply between popular typology teaching and mainstream commentary, no single interpretation can be called a settled consensus, though the humility/firstfruits pairing is the most widely recognizable.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Firstfruits of the harvest symbolizing the resurrection of Christ, as well as humility, poverty, and God's provision for the lowly.\",\n  \"primary_basis\": [\n    \"Leviticus 23:10-11\",\n    \"1 Corinthians 15:20\",\n    \"Ruth 1:22\",\n    \"John 6:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Poverty, lowliness, and human weakness (often referred to as the bread of the poor).\",\n      \"basis\": [\n        \"Judges 7:13\",\n        \"Ezekiel 4:12\",\n        \"John 6:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Economic hardship, famine, or scarcity.\",\n      \"basis\": [\n        \"Revelation 6:6\",\n        \"2 Kings 7:1\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Suspicion of sin, judgment, or jealousy.\",\n      \"basis\": [\n        \"Numbers 5:15\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical times, barley was cheaper and considered inferior to wheat, making it the staple of the poor. Christian interpretation heavily focuses on the timing of the barley harvest during Passover, linking the wave sheaf of barley to Christ's resurrection. Additionally, God's use of barley (like Gideon's barley loaf or Jesus multiplying barley loaves) symbolizes God using the weak and humble to accomplish His purposes.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Barley has no universally settled Christian symbolic meaning. Where a broad symbolism is assigned, it most often represents humble or inexpensive sustenance through which God provides—especially provision for ordinary or poor people.\",\n  \"primary_basis\": [\n    \"Ruth 1:22; 2:17–23; 3:15–17 — the barley harvest supplies Ruth and Naomi within a narrative of providence and redemption.\",\n    \"2 Kings 4:42–44 — barley loaves become the means of miraculous provision for a hundred men.\",\n    \"John 6:9–13 — Jesus multiplies a boy’s five barley loaves to feed the multitude.\",\n    \"Revelation 6:5–6 — barley is depicted as less costly than wheat during scarcity, supporting its association with basic or poorer food.\",\n    \"Judges 7:13–15 — the barley loaf in the Midianite’s dream represents Gideon’s seemingly humble or unimpressive force overcoming Midian.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Firstfruits, resurrection, or new life. Because barley was an early-ripening grain associated with the Passover season, some typological teaching connects it with Christ’s resurrection and the firstfruits of a coming harvest.\",\n      \"basis\": [\n        \"Leviticus 23:10–14 — the first sheaf is offered during the Passover-season festival, although the text does not explicitly call it barley.\",\n        \"Ruth 1:22 — Ruth arrives at the beginning of barley harvest, sometimes interpreted typologically as the start of new life.\",\n        \"John 6:4,9 — Passover and barley loaves occur together in the feeding narrative.\",\n        \"1 Corinthians 15:20–23 — Christ is called the firstfruits, though barley is not mentioned.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Humility, weakness, poverty, or low social status, considered apart from the broader theme of divine provision.\",\n      \"basis\": [\n        \"Judges 7:13–15 — a barley loaf signifies Gideon and his army in the dream.\",\n        \"John 6:9 — the miracle begins with inexpensive barley loaves supplied by a boy.\",\n        \"Revelation 6:6 — barley is priced below wheat.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Harvest blessing, covenant faithfulness, and redemption, especially in interpretations of Ruth.\",\n      \"basis\": [\n        \"Ruth 1:22; 2:20–23; 3:15–17; 4:13–17 — the barley harvest forms the setting for provision, kinship redemption, and restoration.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Scarcity, hardship, judgment, or subsistence conditions.\",\n      \"basis\": [\n        \"Ezekiel 4:9–13 — barley appears in siege rations and enacted judgment.\",\n        \"Revelation 6:5–6 — rationed grain prices portray famine or severe economic distress.\",\n        \"Exodus 9:31 — barley is destroyed in the plague of hail.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A fixed sacramental or prophetic code in which barley consistently denotes a particular class of believers, historical era, or eschatological group.\",\n      \"basis\": [\n        \"Such readings generally depend on extended typological systems rather than an explicit biblical definition of barley.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical passages use barley literally in several distinct settings, and Christian interpretation draws different contextual themes from them. The strongest recurring association is humble, ordinary provision, but it does not amount to a universally recognized symbolic definition.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Christ as the firstfruits of the resurrection (linked to the wave-sheaf offering)\",\n  \"primary_basis\": [\n    \"Leviticus 23:9-14 (barley wave sheaf / firstfruits offering at Passover season)\",\n    \"1 Corinthians 15:20-23 (Christ the firstfruits of those who have fallen asleep)\",\n    \"Agricultural calendar of Israel in which barley ripens first, coinciding with Unleavened Bread / Firstfruits\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"food of the poor, humility, or lowly provision\",\n      \"basis\": [\n        \"John 6:9 (five barley loaves)\",\n        \"2 Kings 4:42 (barley loaves multiplied by Elisha)\",\n        \"Ruth 1–2 (gleaning during barley harvest)\",\n        \"Ezekiel 4:9 (barley as siege bread)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"humble instrument of unexpected victory\",\n      \"basis\": [\n        \"Judges 7:13 (barley cake tumbling into the Midianite camp in Gideon’s dream)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"bitterness or jealousy (grain offering without oil or frankincense)\",\n      \"basis\": [\n        \"Numbers 5:15 (barley flour in the ordeal of jealousy)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Barley is not among the most fixed biblical symbols; the firstfruits/resurrection association is the strongest recurring typology in Christian teaching on the feasts, while socio-economic readings (poverty/humility) are frequent in narrative commentaries. No single meaning dominates every tradition.\"\n}\n\nBOOK ENTRY\nThe firstfruits — the first and humblest grain, reaped in spring; the sheaf waved before the LORD, which is Christ risen.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 9:31; Lev 23:10; Ruth 1:22; 2 Kgs 4:42; 1 Cor 15:20) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nExodus 9:31 — And the flax and the barley was smitten: for the barley was in the ear, and the flax was bolled.\nLeviticus 23:10 — Speak unto the children of Israel, and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest:\nRuth 1:22 — So Naomi returned, and Ruth the Moabitess, her daughter in law, with her, which returned out of the country of Moab: and they came to Bethlehem in the beginning of barley harvest.\n2 Kings 4:42 — And there came a man from Baalshalisha, and brought the man of God bread of the firstfruits, twenty loaves of barley, and full ears of corn in the husk thereof. And he said, Give unto the people, that they may eat.\n1 Corinthians 15:20 — But now is Christ risen from the dead, and become the firstfruits of them that slept.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "b199156727c6d1fcb29202986bbac3e6f78f4978d5e2ff8a6bec22c15376a244",
+  "cache": {
+    "hit": false
+  }
+}

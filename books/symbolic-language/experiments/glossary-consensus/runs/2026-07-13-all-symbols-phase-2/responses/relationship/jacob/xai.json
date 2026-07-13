@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921701,
+  "completed_at": 1783921734,
+  "id": "12af5c5f-cdb0-943d-8294-27fb1e5e0500",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_12af5c5f-cdb0-943d-8294-27fb1e5e0500",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Jacob\".\nThe book's entry narrows the symbol to the personal, moral core of Jacob's character—the crooked, supplanting human heart—while still invoking the same transformation motif that appears in the consensus. This is a REFINED relationship: the central referent (the supplanter who becomes Israel) is preserved, but the book sharpens the focus onto the inner heart-level change rather than the national or corporate identity that dominates the blind responses. The added emphasis on Jer 17:9 and the explicit link to chapter 45 (which distinguishes Jacob from Israel) further refines the boundary without replacing the consensus category. The scripture citations alone supply 2–3 strong supporting points (Gen 27:36 for the supplanting act, Jer 17:9 for the heart), which is partial but sufficient for the refinement judgment. Overall, the book's reading is a tighter, more psychological reading of the same transformation theme the consensus already treats as common.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Jacob primarily symbolizes the nation/covenant people of Israel (via renaming) and secondarily the individual supplanter transformed by grace into an overcomer, the elect, or the fleshly nature contrasted with Israel.\",\n  \"book_summary\": \"The crooked, supplanting human heart that God transforms.\",\n  \"consensus_core_identification\": \"Israel/covenant people or the (transformed) supplanting natural person/nature\",\n  \"book_core_identification\": \"the crooked/supplanting human heart that God transforms\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book restricts the symbol strictly to the inner heart (linked to Jer 17:9) and omits the primary consensus corporate/national Israel sense and broader person-level cases, while retaining only the supplanter-transformation motif.\",\n  \"material_contradiction\": \"None; the heart is the locus of the supplanting nature and transformation already present in consensus alternatives treating Jacob as fleshly/natural man.\",\n  \"rationale\": \"Consensus cores center on Israel as people or the whole supplanter-turned-overcomer; the book preserves that transformation/supplanter category as its entire identification but narrows the referent to the human heart specifically. This changes extension and precision (heart cases are a subset of person/nature cases) without replacing the central category or contradicting listed alternatives that already treat Jacob as fleshly nature. Extra consensus detail on election, typology, or nation does not create artificial divergence once reduced to minimum cores.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Settled consensus primary is corporate Israel (renaming + prophetic interchange), not the heart; Jer 17:9 has no direct Jacob link and the printed verses alone do not establish the transformation claim.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_12af5c5f-cdb0-943d-8294-27fb1e5e0500",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4225,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3525,
+    "output_tokens_details": {
+      "reasoning_tokens": 3101
+    },
+    "total_tokens": 7750,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 288320000,
+    "context_details": {
+      "input_tokens": 4225,
+      "output_tokens": 3525
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

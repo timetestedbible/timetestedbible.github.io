@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "milk",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nMilk\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian interpretation, milk primarily symbolizes elementary or basic spiritual teaching — the foundational nourishment appropriate to new or immature believers, typically contrasted with 'solid food' (meat), which represents mature, advanced doctrine. The image carries two related inflections: a positive one (milk as the pure, life-giving Word of God that new converts should crave) and a corrective one (remaining on milk as a sign of stunted spiritual growth).\",\n  \"primary_basis\": [\n    \"1 Corinthians 3:1-2 — Paul says he fed the Corinthians with milk, not solid food, because they were infants in Christ and not yet ready\",\n    \"Hebrews 5:12-14 — those needing milk are unskilled in the word of righteousness; solid food is for the mature\",\n    \"1 Peter 2:2 — 'like newborn infants, long for the pure spiritual milk, that by it you may grow up into salvation'\",\n    \"1 Corinthians 9:7 — milk as rightful nourishment from the flock (supporting the nourishment motif)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Abundance, blessing, and covenant prosperity — the 'land flowing with milk and honey' as a symbol of God's provision and the fertility of the Promised Land\",\n      \"basis\": [\n        \"Exodus 3:8\",\n        \"Exodus 3:17\",\n        \"Numbers 13:27\",\n        \"Deuteronomy 6:3\",\n        \"Joshua 5:6\",\n        \"Ezekiel 20:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Free grace and gospel blessings offered without cost — milk and wine bought 'without money and without price'\",\n      \"basis\": [\n        \"Isaiah 55:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Love, sweetness, and marital/sensual delight in Hebrew love poetry, often allegorized in Christian tradition as the sweetness of Christ's love or of Scripture\",\n      \"basis\": [\n        \"Song of Solomon 4:11\",\n        \"Song of Solomon 5:1\",\n        \"Song of Solomon 5:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Christ himself as the believer's nourishment — a patristic allegorical reading (notably Clement of Alexandria, Paedagogus) in which milk is the Logos who feeds the faithful\",\n      \"basis\": [\n        \"1 Peter 2:2 (read christologically, some manuscripts/interpretations linking to 'the Lord' in 2:3)\",\n        \"1 Corinthians 3:2 (patristic allegory)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Purity and whiteness as a descriptive image (e.g., of health or beauty), without doctrinal symbolism\",\n      \"basis\": [\n        \"Lamentations 4:7\",\n        \"Genesis 49:12\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a well-established, widely taught consensus: in the New Testament epistles, milk symbolizes elementary doctrine or basic spiritual nourishment for the spiritually immature, contrasted with solid food for the mature. Commentators routinely note the tension between the negative use in Paul and Hebrews (milk as a rebuke of immaturity) and the positive use in 1 Peter (milk as the pure Word to be craved); these are usually treated as complementary rather than contradictory. The Old Testament 'milk and honey' usage is a distinct, equally recognizable symbol of covenant abundance rather than of teaching, so context determines which sense applies.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Basic, foundational spiritual teachings or elementary truths suitable for new or spiritually immature believers.\",\n  \"primary_basis\": [\n    \"1 Corinthians 3:1-2\",\n    \"Hebrews 5:12-13\",\n    \"1 Peter 2:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine blessing, abundance, and prosperity, frequently paired with honey to describe the Promised Land.\",\n      \"basis\": [\n        \"Exodus 3:8\",\n        \"Leviticus 20:24\",\n        \"Joshua 5:6\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Pure, life-giving spiritual nourishment and the Word of God, emphasizing sustenance and growth rather than just immaturity.\",\n      \"basis\": [\n        \"1 Peter 2:2\",\n        \"Isaiah 55:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Natural human wealth, commodities, or the wealth of nations given to God's people.\",\n      \"basis\": [\n        \"Isaiah 60:16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In New Testament symbolism, milk is predominantly used as a metaphor contrasting elementary Christian doctrine with 'solid food' or deeper theological maturity. Conversely, in the Old Testament, it is a dominant symbol of agricultural, physical, and spiritual abundance.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Basic spiritual nourishment—especially elementary Christian teaching suited to new or spiritually immature believers.\",\n  \"primary_basis\": [\n    \"1 Corinthians 3:1–2: Paul contrasts feeding the Corinthians with milk rather than solid food because they were not ready for mature teaching.\",\n    \"Hebrews 5:12–14: milk represents elementary instruction, contrasted with solid food for the mature.\",\n    \"1 Peter 2:2–3: believers are to desire pure spiritual milk like newborn infants so that they may grow in salvation.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Abundance, fertility, and covenant blessing, especially in the description of the promised land as flowing with milk and honey.\",\n      \"basis\": [\n        \"Exodus 3:8, 17\",\n        \"Leviticus 20:24\",\n        \"Numbers 13:27\",\n        \"Deuteronomy 6:3\",\n        \"Joshua 5:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine provision and freely given spiritual satisfaction.\",\n      \"basis\": [\n        \"Isaiah 55:1 invites the thirsty to receive wine and milk without price.\",\n        \"Joel 3:18 depicts the restored land with hills flowing with milk.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Maternal nurture, comfort, and the sustaining blessings received from God's people or the restored Jerusalem.\",\n      \"basis\": [\n        \"Isaiah 60:16 speaks of receiving the milk of nations and kings.\",\n        \"Isaiah 66:10–13 portrays Jerusalem as a nursing mother whose milk provides satisfaction and comfort.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Beauty, sweetness, purity, or erotic attractiveness in poetic descriptions.\",\n      \"basis\": [\n        \"Song of Songs 4:11 associates milk and honey with the beloved's lips.\",\n        \"Song of Songs 5:12 describes the beloved's eyes as washed in milk.\",\n        \"Song of Songs 7:9 compares the beloved's mouth to wine, within related imagery of sensual abundance.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong consensus that milk signifies elementary spiritual teaching or nourishment in the New Testament maturity passages, but no single symbolic meaning governs every biblical occurrence. In 1 Peter 2:2 the image is positive nourishment producing growth, whereas in 1 Corinthians 3 and Hebrews 5 dependence on milk indicates immaturity. Old Testament usage often emphasizes material abundance, blessing, or maternal comfort instead.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"elementary Christian doctrine or pure spiritual nourishment for new/immature believers (in contrast to solid food for the mature)\",\n  \"primary_basis\": [\n    \"1 Corinthians 3:1-2\",\n    \"Hebrews 5:12-14\",\n    \"1 Peter 2:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"abundance, fertility, and blessing of the Promised Land\",\n      \"basis\": [\n        \"Exodus 3:8\",\n        \"Exodus 13:5\",\n        \"Deuteronomy 6:3\",\n        \"Joshua 5:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"innocence, purity, or simple goodness (sometimes linked to maternal care or the Word)\",\n      \"basis\": [\n        \"Isaiah 28:9 (context of weaned from milk)\",\n        \"occasional patristic extensions of 1 Peter 2:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"New Testament metaphors establish the dominant Christian symbolic use of milk as foundational teaching or the pure Word for spiritual infants. Old Testament 'land of milk and honey' imagery is frequent but primarily descriptive of material blessing rather than abstract doctrine. No major competing consensus exists for the term in isolation.\"\n}\n\nBOOK ENTRY\nThe word received — teaching another has already digested, swallowed without work; the right first food of babes, given to grow them, and meant to be outgrown at weaning. Churned, it becomes butter — the word worked toward solid food.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(1 Pet 2:2; 1 Cor 3:1-2; Isa 28:9; 7:15; Prov 30:33; Heb 5:12-13) · see Introduction, ch. 1\n\nAVAILABLE KJV EXCERPTS\n1 Peter 2:2 — As newborn babes, desire the sincere milk of the word, that ye may grow thereby:\n1 Corinthians 3:1 — And I, brethren, could not speak unto you as unto spiritual, but as unto carnal, even as unto babes in Christ.\n1 Corinthians 3:2 — I have fed you with milk, and not with meat: for hitherto ye were not able to bear it, neither yet now are ye able.\nIsaiah 28:9 — Whom shall he teach knowledge? and whom shall he make to understand doctrine? them that are weaned from the milk, and drawn from the breasts.\nIsaiah 7:15 — Butter and honey shall he eat, that he may know to refuse the evil, and choose the good.\nProverbs 30:33 — Surely the churning of milk bringeth forth butter, and the wringing of the nose bringeth forth blood: so the forcing of wrath bringeth forth strife.\nHebrews 5:12 — For when for the time ye ought to be teachers, ye have need that one teach you again which be the first principles of the oracles of God; and are become such as have need of milk, and not of strong meat.\nHebrews 5:13 — For every one that useth milk is unskilful in the word of righteousness: for he is a babe.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "74619be6b9181b58c95f60823fb152ba3454aa8356b4b8484edafda2ba605b5b",
+  "cache": {
+    "hit": false
+  }
+}

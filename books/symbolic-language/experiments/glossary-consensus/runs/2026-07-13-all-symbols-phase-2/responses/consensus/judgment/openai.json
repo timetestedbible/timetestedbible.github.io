@@ -1,0 +1,173 @@
+{
+  "id": "resp_080da70e42b84d6b006a5475f29aa8819391055fb2e4e3fc05",
+  "object": "response",
+  "created_at": 1783920114,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920135,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_080da70e42b84d6b006a5475f324648193950c8292aefbd822",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_080da70e42b84d6b006a5475f54ce881938fd9681bde51adc3",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"God’s righteous evaluation of human persons, deeds, peoples, or powers, resulting in a just verdict—vindication or condemnation—and often in reward, punishment, or separation. In Christian teaching, “judgment” most commonly points especially to the final, eschatological judgment by God through Christ.\",\"primary_basis\":[\"Ecclesiastes 12:14 — God brings every deed, including hidden things, into judgment.\",\"Matthew 25:31–46 — the Son of Man separates the righteous from the wicked and assigns their respective destinies.\",\"John 5:22–29 — the Father entrusts judgment to the Son, followed by resurrection to life or judgment.\",\"Acts 17:31 — God has appointed a day to judge the world in righteousness through the risen Christ.\",\"Romans 2:5–16 — God’s impartial judgment assesses deeds and hidden things.\",\"2 Corinthians 5:10 — all appear before Christ’s judgment seat to receive according to what they have done.\",\"Revelation 20:11–15 — the dead are judged before the great white throne according to their deeds.\"],\"alternatives\":[{\"meaning\":\"Historical or temporal divine judgment: God acts within history against individuals, nations, cities, or oppressive powers through disaster, defeat, exile, or societal collapse.\",\"basis\":[\"Genesis 6–9\",\"Exodus 7–12\",\"2 Kings 17:5–23\",\"2 Kings 25:1–21\",\"Isaiah 13:1–22\",\"Jeremiah 25:8–14\",\"Revelation 18:1–24\"],\"prominence\":\"common\"},{\"meaning\":\"Condemnation or punitive sentence specifically, rather than the whole neutral process of evaluation. In many passages “judgment” functions almost synonymously with adverse verdict, wrath, or destruction.\",\"basis\":[\"John 3:18–19\",\"John 12:31\",\"Romans 5:16–18\",\"2 Peter 2:4–9\",\"Jude 6–15\"],\"prominence\":\"common\"},{\"meaning\":\"Disciplinary, corrective, or purifying judgment directed toward God’s people, intended to expose sin, produce repentance, or restore holiness rather than merely condemn.\",\"basis\":[\"1 Corinthians 11:29–32\",\"Hebrews 12:5–11\",\"1 Peter 4:17\",\"Revelation 3:19\"],\"prominence\":\"common\"},{\"meaning\":\"Vindication and deliverance: judgment is good news for the oppressed because God condemns evil, establishes justice, and publicly vindicates the faithful.\",\"basis\":[\"Psalm 9:7–10\",\"Psalm 96:10–13\",\"Isaiah 11:1–5\",\"Luke 18:7–8\",\"Revelation 6:9–11\",\"Revelation 19:1–2\"],\"prominence\":\"common\"},{\"meaning\":\"Moral discernment or self-examination by believers, including distinguishing right from wrong and assessing oneself before God.\",\"basis\":[\"1 Corinthians 6:1–5\",\"1 Corinthians 11:28–31\",\"1 Corinthians 14:29\",\"Hebrews 5:14\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus on the core meaning of divine evaluation and just verdict, especially in relation to final judgment. However, “judgment” is not a symbol with one rigid referent in every passage: context determines whether it emphasizes evaluation, condemnation, temporal punishment, discipline, separation, or vindication.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 847,
+    "output_tokens_details": {
+      "reasoning_tokens": 107
+    },
+    "total_tokens": 1165
+  },
+  "user": null,
+  "metadata": {}
+}

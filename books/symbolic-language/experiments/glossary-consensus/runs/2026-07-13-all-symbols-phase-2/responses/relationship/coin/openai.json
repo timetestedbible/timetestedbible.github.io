@@ -1,0 +1,195 @@
+{
+  "id": "resp_06d69d40991fa770006a5479a662d481979ea6ee615d5345d0",
+  "object": "response",
+  "created_at": 1783921062,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921084,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_06d69d40991fa770006a5479a73e9c819799a38dd47294efb4",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_06d69d40991fa770006a5479b280bc8197b19ec713d554cf15",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"There is no single settled symbolism for coin. Recognized meanings include image, ownership, and allegiance; the lost sinner bearing God’s image; material wealth; civic obligation; betrayal; sacrificial generosity; stewardship; and divine provision, each largely controlled by context.\",\"book_summary\":\"The book unifies diverse coin passages around the person as an owner’s minted image-bearer, then interprets ransom money, legal valuation, betrayal silver, the lost coin, and the widow’s offering as different manifestations of divine versus human valuation.\",\"consensus_core_identification\":\"Coin is context-dependent, but one established strand identifies the image-bearing coin with a person who bears God’s image, belongs to God, and may be represented as lost and recovered.\",\"book_core_identification\":\"Coin signifies a person as the owner’s stamped image-bearer, whose ownership and value are disclosed through ransom, legal pricing, loss and recovery, and contrasting human and divine valuations.\",\"core_relation\":\"BOOK_BROADENS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The consensus generally confines the person-as-image-bearing-coin identification to the tribute coin and allegorical readings of the lost coin, while treating ransom money, betrayal silver, the widow’s mites, and other monetary passages as distinct symbols. The book extends one anthropological image-and-valuation framework across those otherwise separate cases.\",\"material_contradiction\":\"There is no direct contradiction of the recognized image-bearing or lost-sinner interpretations. The material difference is the book’s broader unification of passages that consensus normally interprets contextually and independently.\",\"rationale\":\"The book’s central referent—a person as an owner’s image-bearing coin—is explicitly recognizable within the consensus, especially Responses A and C, and overlaps Response D’s lost-sinner identification. It is therefore neither novel nor divergent. It is refined because the book materially broadens that established strand and reclassifies ransom, legal valuation, slave-price, betrayal, and widow-offering texts as parts of one coherent coin symbolism rather than merely separate contextual meanings.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed passages support the individual motifs of a lost sinner, an image indicating ownership, equal ransom money, legal valuation, slave-price silver, and sacrificial giving. However, they do not by themselves explicitly identify all these coins or payments with a person as God’s minted image-bearer; the ‘dug,’ ‘refined,’ and ‘struck with the NAME’ elements are also not established by the listed excerpts. The synthesis therefore depends on substantial typological inference.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4243,
+    "input_tokens_details": {
+      "cache_write_tokens": 4240,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1059,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 5302
+  },
+  "user": null,
+  "metadata": {}
+}

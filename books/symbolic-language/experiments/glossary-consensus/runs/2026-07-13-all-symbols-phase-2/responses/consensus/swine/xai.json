@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920650,
+  "completed_at": 1783920668,
+  "id": "38953ded-ebe7-9e2c-b476-ed80342e3141",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_38953ded-ebe7-9e2c-b476-ed80342e3141",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for biblical symbolism of \"Swine (pig, boar, sow)\". I must respond only with JSON matching the schema, no surrounding text.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"spiritual uncleanness or impurity (including moral filth, sin, and the reprobate who return to it)\",\n  \"primary_basis\": [\n    \"Leviticus 11:7-8 (pigs declared unclean and forbidden)\",\n    \"Deuteronomy 14:8 (same dietary prohibition)\",\n    \"Matthew 7:6 (pearls before swine: do not give what is holy to the unclean/unreceptive)\",\n    \"2 Peter 2:22 (sow returning to wallowing in the mire as image of apostates/false teachers reverting to sin)\",\n    \"Luke 15:15-16 (prodigal son reduced to feeding swine as nadir of degradation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Gentiles/pagans or the non-Jewish world (as unclean outsiders)\",\n      \"basis\": [\n        \"Gadarene swine episode (Matthew 8:28-34; Mark 5:1-20; Luke 8:26-39) set in Gentile territory\",\n        \"Matthew 7:6 interpreted as withholding the Gospel from the unreceptive\",\n        \"Jewish dietary distinction carried into early Christian typology\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"demons or a vessel/habitation for demonic forces\",\n      \"basis\": [\n        \"demons requesting and entering the herd of swine (Mark 5:11-13 and parallels)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"gluttony, greed, or sensual indulgence of the flesh\",\n      \"basis\": [\n        \"natural association of pigs with voracious appetite\",\n        \"patristic and medieval moral allegory (e.g., swine as vices of the flesh)\",\n        \"Proverbs 11:22 (gold ring in a pig's snout)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"heretics or those who trample sacred doctrine\",\n      \"basis\": [\n        \"Matthew 7:6 extended in patristic exegesis\",\n        \"2 Peter 2:22 applied to false teachers\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across OT law, Synoptic narratives, Petrine epistle, and subsequent Christian tradition the dominant symbolic valence remains uncleanness/impurity; alternative associations (Gentiles, demons, vices) are secondary elaborations that still rest on the same unclean status rather than independent positive or neutral meanings. No settled positive symbolic reading exists in mainstream Christian biblical interpretation.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_38953ded-ebe7-9e2c-b476-ed80342e3141",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 610,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1619,
+    "output_tokens_details": {
+      "reasoning_tokens": 1018
+    },
+    "total_tokens": 2229,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 103580000,
+    "context_details": {
+      "input_tokens": 610,
+      "output_tokens": 1619
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "stars",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nStars\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching and biblical studies, the most commonly assigned symbolic meaning of stars is angels or heavenly beings (the 'host of heaven'). This is the one symbolic identification the Bible itself makes explicit (Rev 1:20, where the seven stars 'are the angels of the seven churches'), and it is reinforced by passages where stars and angels are interchangeable or parallel (Job 38:7; Rev 9:1; Rev 12:4; Judg 5:20). Fallen or falling stars are correspondingly read as fallen angels or Satan (Isa 14:12; Luke 10:18 by association; Rev 12:4).\",\n  \"primary_basis\": [\n    \"Revelation 1:20\",\n    \"Job 38:7\",\n    \"Revelation 9:1\",\n    \"Revelation 12:4\",\n    \"Isaiah 14:12-13\",\n    \"Judges 5:20\",\n    \"Daniel 8:10\",\n    \"Jude 13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The innumerable descendants of Abraham / the covenant people of Israel — stars as a figure for God's people in their multitude, and in Joseph's dream as the family/tribes of Israel\",\n      \"basis\": [\n        \"Genesis 15:5\",\n        \"Genesis 22:17\",\n        \"Genesis 26:4\",\n        \"Genesis 37:9-10\",\n        \"Deuteronomy 1:10\",\n        \"Exodus 32:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The righteous or glorified saints who 'shine like stars' — resurrection glory and faithful witness\",\n      \"basis\": [\n        \"Daniel 12:3\",\n        \"Philippians 2:15\",\n        \"1 Corinthians 15:41-42\",\n        \"Matthew 13:43\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ as the Messiah — the 'star out of Jacob,' the 'bright morning star,' and the star of Bethlehem as a messianic sign\",\n      \"basis\": [\n        \"Numbers 24:17\",\n        \"Revelation 22:16\",\n        \"2 Peter 1:19\",\n        \"Matthew 2:1-10\",\n        \"Revelation 2:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Earthly rulers, dignitaries, or political powers — in prophetic and apocalyptic judgment oracles, the darkening or falling of stars signifies the collapse of nations, kings, and authorities\",\n      \"basis\": [\n        \"Isaiah 13:10\",\n        \"Ezekiel 32:7-8\",\n        \"Daniel 8:10 (as read politically)\",\n        \"Matthew 24:29\",\n        \"Genesis 37:9-10 (patriarchal heads)\",\n        \"Revelation 6:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Apostate teachers or false leaders in the church — 'wandering stars' as those who lead others astray\",\n      \"basis\": [\n        \"Jude 13\",\n        \"Revelation 8:10-11 (Wormwood, in some readings)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Objects of forbidden pagan worship (astral deities) — stars as created things that must not be venerated, sometimes treated as symbols of idolatry itself\",\n      \"basis\": [\n        \"Deuteronomy 4:19\",\n        \"Amos 5:26\",\n        \"Acts 7:42-43\",\n        \"2 Kings 23:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Simply part of created order testifying to God's glory and power, with no fixed symbolic referent — a literal/doxological reading\",\n      \"basis\": [\n        \"Psalm 19:1\",\n        \"Psalm 8:3\",\n        \"Psalm 147:4\",\n        \"Genesis 1:14-16\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Stars do not carry a single settled symbolic meaning across Scripture; the referent is strongly context-dependent, and standard reference works (Bible dictionaries, commentaries) list multiple senses. The angel/heavenly-being identification is treated as primary here because it is the only interpretation Scripture states explicitly (Rev 1:20) and it dominates discussion of apocalyptic star imagery. However, the 'seed of Abraham' usage (Genesis) and the 'righteous shining' usage (Daniel 12:3) are equally well recognized in their own contexts, and the ruler/political-power reading is standard in commentary on prophetic judgment oracles. Any claim that stars 'always' or 'consistently' symbolize one thing across the Bible would not reflect mainstream scholarly or historic interpretive consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Angels, heavenly beings, or spiritual authorities (both faithful and fallen), particularly in prophetic and apocalyptic literature.\",\n  \"primary_basis\": [\n    \"Revelation 1:20\",\n    \"Revelation 12:4\",\n    \"Job 38:7\",\n    \"Daniel 8:10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The innumerable multitude of God's covenant people or Abraham's descendants.\",\n      \"basis\": [\n        \"Genesis 15:5\",\n        \"Genesis 22:17\",\n        \"Nehemiah 9:23\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Glorified saints or righteous believers reflecting God's truth and light in a dark world.\",\n      \"basis\": [\n        \"Daniel 12:3\",\n        \"Philippians 2:15\",\n        \"1 Corinthians 15:41-42\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Messiah or Jesus Christ (specifically identified as a star or the 'Morning Star').\",\n      \"basis\": [\n        \"Numbers 24:17\",\n        \"Revelation 22:16\",\n        \"2 Peter 1:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Earthly patriarchs, leaders, or the twelve tribes of Israel.\",\n      \"basis\": [\n        \"Genesis 37:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of stars is polyvalent and highly dependent on biblical genre, though interpretations within specific contexts are well-settled. In apocalyptic literature, stars predominantly symbolize angels, demons, or cosmic spiritual powers. In patriarchal literature, they function as a metaphor for numerical vastness. Singularly, a star (especially the Morning Star) is a widely recognized Messianic symbol.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"In symbolic and especially apocalyptic interpretation, stars most commonly represent heavenly beings—particularly angels or angelic messengers—and, by extension in some contexts, spiritual powers.\",\n  \"primary_basis\": [\n    \"Job 38:7 associates the “morning stars” with the “sons of God,” commonly understood as heavenly beings.\",\n    \"Revelation 1:16, 1:20 explicitly identifies the seven stars as the angels or messengers of the seven churches.\",\n    \"Revelation 9:1 portrays a fallen star acting as a personal heavenly agent.\",\n    \"Revelation 12:4 is commonly interpreted as depicting angels or heavenly powers swept down with the dragon.\",\n    \"Isaiah 14:12 and Luke 10:18 are often brought into Christian discussions of a fallen heavenly being, although the original contexts and their relationship to star symbolism are disputed.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Numerous descendants, a vast people, or an innumerable multitude promised by God.\",\n      \"basis\": [\n        \"Genesis 15:5\",\n        \"Genesis 22:17\",\n        \"Genesis 26:4\",\n        \"Exodus 32:13\",\n        \"Deuteronomy 1:10\",\n        \"Hebrews 11:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human rulers, authorities, royal figures, or nations—especially their exaltation and downfall.\",\n      \"basis\": [\n        \"Genesis 37:9-10 interprets the sun, moon, and stars as members of Joseph’s ruling family.\",\n        \"Isaiah 13:10 uses darkened stars in an oracle of national judgment.\",\n        \"Ezekiel 32:7-8 uses extinguished heavenly lights in the judgment of Pharaoh.\",\n        \"Daniel 8:10 uses the heavenly host and stars in a vision concerning persecuted powers and people.\",\n        \"Matthew 24:29 and Revelation 6:13 use falling stars within imagery of cosmic and political judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The righteous, saints, teachers, or faithful witnesses who shine with heavenly glory.\",\n      \"basis\": [\n        \"Daniel 12:3 says that those who lead many to righteousness will shine like the stars.\",\n        \"Philippians 2:15 describes believers as shining like lights or stars in the world.\",\n        \"1 Corinthians 15:41-42 compares differing stellar glory with resurrection glory.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The leaders or messengers of local churches.\",\n      \"basis\": [\n        \"Revelation 1:20 identifies the seven stars as the angels or messengers of the seven churches.\",\n        \"Interpretations differ over whether these are heavenly angels, human church leaders, or personifications of the churches.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ as the Morning Star, signifying messianic kingship, victory, hope, and the dawn of salvation.\",\n      \"basis\": [\n        \"Numbers 24:17 speaks of a star coming from Jacob and is traditionally read messianically.\",\n        \"2 Peter 1:19 refers to the morning star rising in believers’ hearts.\",\n        \"Revelation 22:16 calls Jesus the bright Morning Star.\",\n        \"Revelation 2:28 promises the morning star to the conqueror.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Glory, splendor, permanence, guidance, or divine order in creation without representing a specific class of beings.\",\n      \"basis\": [\n        \"Psalm 8:3\",\n        \"Psalm 19:1-4\",\n        \"Psalm 136:9\",\n        \"1 Corinthians 15:41\",\n        \"Matthew 2:2-10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for “stars” across the Bible. They are frequently literal celestial bodies, and their symbolic referent depends strongly on genre and context. Angels or heavenly beings are the most recognizable general meaning in Christian apocalyptic interpretation, but descendants, rulers, the righteous, church messengers, and Christ are all well-established contextual readings.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Angels or heavenly/spiritual beings\",\n  \"primary_basis\": [\n    \"Revelation 1:20\",\n    \"Job 38:7\",\n    \"Isaiah 14:12-13\",\n    \"Revelation 12:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The people of God, saints, or Abraham's innumerable descendants\",\n      \"basis\": [\n        \"Genesis 15:5\",\n        \"Genesis 22:17\",\n        \"Genesis 37:9\",\n        \"Daniel 12:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Rulers, leaders, or authorities (including sometimes church leaders)\",\n      \"basis\": [\n        \"Genesis 37:9\",\n        \"Numbers 24:17\",\n        \"Revelation 1:20 (alternative pastoral reading)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ himself (especially as Morning Star)\",\n      \"basis\": [\n        \"Revelation 22:16\",\n        \"2 Peter 1:19\",\n        \"Numbers 24:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Signs of cosmic upheaval, judgment, or divine order (often more literal celestial imagery with symbolic import)\",\n      \"basis\": [\n        \"Matthew 24:29\",\n        \"Revelation 6:13\",\n        \"Isaiah 13:10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Meanings are strongly context-dependent across narrative, prophetic, and apocalyptic texts; angelic symbolism is the most frequent single association in classic Christian exegesis of the term in plural form, especially Revelation and Job, but no exclusive monopoly exists.\"\n}\n\nBOOK ENTRY\nThe righteous, who rule the night with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 12:3; Ps 136:9; Gen 37:9; Rev 12:1; Job 38:32) · see Sun, Moon & Stars, ch. 29\n\nAVAILABLE KJV EXCERPTS\nDaniel 12:3 — And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.\nPsalms 136:9 — The moon and stars to rule by night: for his mercy endureth for ever.\nGenesis 37:9 — And he dreamed yet another dream, and told it his brethren, and said, Behold, I have dreamed a dream more; and, behold, the sun and the moon and the eleven stars made obeisance to me.\nRevelation 12:1 — And there appeared a great wonder in heaven; a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars:\nJob 38:32 — Canst thou bring forth Mazzaroth in his season? or canst thou guide Arcturus with his sons?\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "e8e4db641965d0ad37290e4feb41e2ddd20d21809f55bb527a1169d4fa6ea6f0",
+  "cache": {
+    "hit": false
+  }
+}

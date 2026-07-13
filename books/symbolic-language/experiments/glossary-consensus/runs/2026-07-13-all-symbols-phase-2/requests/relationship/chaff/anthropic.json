@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "chaff",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nChaff\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, chaff overwhelmingly symbolizes the wicked, the worthless, and the unrepentant who are separated from the righteous and destroyed in divine judgment. The image derives from the ancient winnowing process, in which the light, useless husks are blown away by the wind (or burned) while the valuable grain is retained. Thus chaff stands for people (or things) that lack substance and value before God, are unstable and transient, and are ultimately swept away or consumed at judgment—most famously in John the Baptist's picture of Christ burning the chaff 'with unquenchable fire.'\",\n  \"primary_basis\": [\n    \"Psalm 1:4 — 'The wicked are not so, but are like chaff that the wind drives away'\",\n    \"Matthew 3:12 (parallel Luke 3:17) — 'He will gather his wheat into the barn, but the chaff he will burn with unquenchable fire'\",\n    \"Isaiah 17:13 — nations chased 'like chaff on the mountains before the wind'\",\n    \"Isaiah 29:5 — the multitude of ruthless foes 'like passing chaff'\",\n    \"Hosea 13:3 — the idolatrous 'like chaff that swirls from the threshing floor'\",\n    \"Job 21:18 — the wicked 'like chaff that the storm carries away'\",\n    \"Daniel 2:35 — the crushed kingdoms became 'like chaff of the summer threshing floors' carried away by the wind\",\n    \"Zephaniah 2:2 — 'before the day passes away like chaff'\",\n    \"Psalm 35:5 — 'Let them be like chaff before the wind'\",\n    \"Malachi 4:1 — the arrogant and evildoers as stubble burned up (frequently grouped with the chaff imagery)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worthless or false teaching versus true divine word: chaff as empty doctrine, false prophecy, or human speculation contrasted with the nourishing 'wheat' of God's word, based on Jeremiah 23:28 ('What has straw/chaff in common with wheat?'). Used homiletically and in discussions of discernment.\",\n      \"basis\": [\n        \"Jeremiah 23:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Transience, instability, and insubstantiality generally—chaff as an image of anything fleeting or without weight (not specifically the wicked), emphasizing impermanence rather than judgment.\",\n      \"basis\": [\n        \"Psalm 1:4\",\n        \"Isaiah 29:5\",\n        \"Hosea 13:3\",\n        \"Zephaniah 2:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Nominal or false believers mixed within the visible church until eschatological separation—an ecclesiological reading (often blended with the wheat-and-tares parable of Matthew 13, though that parable uses tares, not chaff). Augustine and later interpreters used the threshing-floor image this way.\",\n      \"basis\": [\n        \"Matthew 3:12\",\n        \"Luke 3:17\",\n        \"association with Matthew 13:24-30\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The worthless elements within an individual believer's life (sin, dross) that God purges through sanctification or refining trials—an internalized, devotional application rather than a two-class judgment reading.\",\n      \"basis\": [\n        \"Matthew 3:12 (applied devotionally)\",\n        \"analogy with refining imagery such as Malachi 3:2-3\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Chaff is one of the more stable and widely agreed symbols in biblical interpretation. The judgment/worthlessness reading is consistent across Old Testament wisdom, prophetic, and New Testament texts, and across patristic, Reformation, and modern commentary traditions (e.g., standard treatments in Bible dictionaries and the Dictionary of Biblical Imagery). Alternative readings are mostly extensions or applications of the core meaning (false teaching, transience, mixed church, personal purging) rather than genuinely competing interpretations. A common interpretive dispute concerns Matthew 3:12/Luke 3:17 specifically—whether the 'unquenchable fire' implies eternal conscious punishment or annihilation—but that debate concerns the fate of the chaff, not what the chaff symbolizes.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The wicked, ungodly, or unfruitful individuals who are separated from the righteous and destined for divine judgment and destruction.\",\n  \"primary_basis\": [\n    \"Psalm 1:4\",\n    \"Matthew 3:12\",\n    \"Luke 3:17\",\n    \"Daniel 2:35\",\n    \"Hosea 13:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worthless deeds, earthly works, or empty religious rituals that hold no eternal value and will be consumed by God's testing fire.\",\n      \"basis\": [\n        \"1 Corinthians 3:12-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False teachings, false prophecies, or deceptive words, heavily contrasted with the true, nourishing word of God (the wheat).\",\n      \"basis\": [\n        \"Jeremiah 23:28\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of chaff is remarkably consistent throughout the Bible. It relies on the ancient agricultural practice of winnowing, where harvested grain is tossed into the air so the wind can blow away the light, worthless outer husks (chaff) while the heavy, valuable grain (wheat) falls to the threshing floor. It universally denotes worthlessness, impermanence, and impending judgment.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Chaff most commonly symbolizes the wicked, ungodly, or unrepentant—people who lack enduring spiritual substance and are separated from the righteous under divine judgment, often pictured as being scattered or burned.\",\n  \"primary_basis\": [\n    \"Psalm 1:4–6: the wicked are like chaff driven away by the wind, in contrast to the rooted and fruitful righteous.\",\n    \"Matthew 3:11–12: the Messiah gathers the wheat but burns the chaff with unquenchable fire.\",\n    \"Luke 3:16–17: the parallel image of wheat gathered and chaff burned at judgment.\",\n    \"Psalm 35:5: hostile or wicked persons are asked to become like chaff before the wind.\",\n    \"Job 21:17–18: the wicked are compared to chaff carried away by a storm.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Chaff represents false professors, counterfeit believers, or merely nominal members of the visible religious community, contrasted with genuine believers as wheat.\",\n      \"basis\": [\n        \"Matthew 3:12 and Luke 3:17 are frequently applied in Christian preaching to final separation between genuine and merely professing believers.\",\n        \"The interpretation is a narrower ecclesial application of the broader wicked-versus-righteous judgment symbolism.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Chaff symbolizes human frailty, insubstantiality, instability, or the fleeting character of worldly prosperity rather than specifically final condemnation.\",\n      \"basis\": [\n        \"Job 21:18 compares the vulnerable prosperity of the wicked to chaff before the wind.\",\n        \"Hosea 13:3 uses chaff to depict transience and rapid disappearance.\",\n        \"Isaiah 17:13 portrays peoples fleeing like chaff before the wind.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Chaff symbolizes hostile nations, armies, or powers that God scatters and defeats.\",\n      \"basis\": [\n        \"Isaiah 17:13 depicts nations driven like chaff.\",\n        \"Isaiah 29:5 compares the multitude of ruthless enemies to passing chaff.\",\n        \"Isaiah 41:15–16 portrays Israel threshing mountains and the wind carrying them away like chaff.\",\n        \"Daniel 2:35 compares the destroyed kingdoms of the image to chaff blown away.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Chaff represents sin, corruption, or impurity removed from a person through divine purification, rather than condemned persons themselves.\",\n      \"basis\": [\n        \"Some readings of Matthew 3:11–12 and Luke 3:16–17 understand the fire primarily as purifying and the chaff as what must be removed from people.\",\n        \"This reading draws on broader biblical refining and purgative-fire imagery, though the immediate wheat-and-chaff separation is more commonly interpreted as judgment between groups.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Chaff or straw represents empty, false, or spiritually inferior teaching in contrast to nourishing divine truth.\",\n      \"basis\": [\n        \"Jeremiah 23:28 contrasts straw or chaff, depending on translation, with grain in a discussion of false prophetic dreams versus God’s word.\",\n        \"This is context-specific and is not the usual meaning of chaff throughout Scripture.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable consensus that chaff chiefly signifies the wicked or spiritually worthless under divine judgment, especially because of Psalm 1 and the preaching of John the Baptist. The image also naturally carries related ideas of worthlessness, instability, transience, and being scattered. Debate remains over the precise nature of the fire in Matthew 3 and Luke 3—such as final punishment, destruction, or purification—but not over the dominant judgment imagery.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the wicked/ungodly (or worthless people) who are separated from the righteous and destined for judgment or destruction\",\n  \"primary_basis\": [\n    \"Psalm 1:4\",\n    \"Matthew 3:12\",\n    \"Luke 3:17\",\n    \"Job 21:18\",\n    \"Isaiah 17:13\",\n    \"Hosea 13:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"anything worthless, empty, or transient that is easily discarded or scattered\",\n      \"basis\": [\n        \"general agricultural imagery in wisdom literature and prophets (e.g., Job 13:25; Isaiah 29:5; 41:15)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"false or hypocritical believers / empty profession of faith (as opposed to genuine fruit)\",\n      \"basis\": [\n        \"extension of the wheat-and-chaff winnowing motif in preaching on Matthew 3:12 / Luke 3:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Standard Christian and Jewish interpretive tradition treats chaff almost exclusively via the threshing/winnowing metaphor as the negative counterpart to wheat/grain; the judgment/destruction sense is the dominant and near-universal application in teaching and commentaries. No major competing symbolic systems exist for the term.\"\n}\n\nBOOK ENTRY\nThe empty husk winnowed off the grain and driven away by the wind — what the wicked are likened to: weightless, rootless, blown off and burned. Not to be confused with the tares.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 1:4; Matt 3:12) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nPsalms 1:4 — The ungodly are not so: but are like the chaff which the wind driveth away.\nMatthew 3:12 — Whose fan is in his hand, and he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff with unquenchable fire.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "434eb2961de85c263a254ab2b45b59caa7b0f98e9f49df32490b4b4fc88674c3",
+  "cache": {
+    "hit": false
+  }
+}

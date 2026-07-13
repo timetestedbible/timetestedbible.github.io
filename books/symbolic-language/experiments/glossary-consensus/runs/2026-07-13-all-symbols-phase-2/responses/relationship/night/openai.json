@@ -1,0 +1,201 @@
+{
+  "id": "resp_089f3ea4c317fa58006a547d698a648194ac9367e1d2583edd",
+  "object": "response",
+  "created_at": 1783922025,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922054,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_089f3ea4c317fa58006a547d6ab7e48194bef49a5437096f54",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_089f3ea4c317fa58006a547d76157c81948c2ad6249045451b",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_089f3ea4c317fa58006a547d7d97ac8194b6a816ba156d6ef0",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"Night primarily symbolizes spiritual and moral darkness—the sphere of sin, unbelief, evil, and separation from divine light. Associated themes include concealment, spiritual lethargy, drunkenness, trial, and the closing of opportunity.\",\"book_summary\":\"Night is the time or sphere of darkness, characterized by concealment, sleep, drunkenness, dark deeds, and the loss of opportunity.\",\"consensus_core_identification\":\"Night signifies spiritual or moral darkness opposed to the light of God, truth, righteousness, and vigilance.\",\"book_core_identification\":\"Night signifies a sphere of darkness opposed to wakefulness and righteous activity, in which people hide, sleep, become drunken, and lose opportunity.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement is evident. The book foregrounds concealment, sleep, drunkenness, and closed opportunity within the same negative darkness motif recognized by the consensus; it does not explicitly reject the consensus's broader applications.\",\"material_contradiction\":\"None. The book's features are established or listed applications of the consensus identification rather than a replacement of it.\",\"rationale\":\"Both readings reduce to night as the sphere or condition of darkness contrasted with light, sobriety, vigilance, and righteous action. The book's sleep and drunkenness language directly reflects 1 Thessalonians 5:5–7, while hiding and deeds done in darkness fit the consensus's moral-darkness and concealment themes. The closing of opportunity is also a recognized secondary application, especially from John 9:4. These additions elaborate the shared core without materially changing it.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed passages strongly support the darkness/day contrast and the association with sleep and drunkenness, but they do not by themselves establish the claims about hiding, deeds done secretly, or opportunity closing. Genesis 1:5 merely names literal night, and additional texts would be needed for those extensions.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3872,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 3869
+    },
+    "output_tokens": 1248,
+    "output_tokens_details": {
+      "reasoning_tokens": 830
+    },
+    "total_tokens": 5120
+  },
+  "user": null,
+  "metadata": {}
+}

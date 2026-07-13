@@ -1,0 +1,173 @@
+{
+  "id": "resp_018a0870f9dccddb006a5475fd495881948e81c071b607e631",
+  "object": "response",
+  "created_at": 1783920125,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920145,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_018a0870f9dccddb006a5475fdd12c8194a8dcceef5a2a65fa",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_018a0870f9dccddb006a5476067bc8819487618f7cd35c3c33",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"God’s righteous and impartial ordering of human life: judging rightly, giving people their due, restraining wrongdoing, and defending or restoring those who are oppressed or vulnerable. In Christian teaching, justice is commonly paired with righteousness and treated as both an attribute of God and a duty of God’s people.\",\"primary_basis\":[\"Deuteronomy 16:18–20 — judges must judge impartially and pursue justice.\",\"Psalm 89:14 — righteousness and justice are the foundation of God’s throne.\",\"Isaiah 1:16–17 — doing justice includes correcting oppression and defending the vulnerable.\",\"Amos 5:21–24 — acceptable worship is joined to justice and righteousness.\",\"Micah 6:8 — God requires his people to do justice, love mercy, and walk humbly.\",\"Luke 4:18–19 — Jesus announces good news, liberty, and release for the oppressed.\",\"Matthew 23:23 — Jesus identifies justice, mercy, and faithfulness as weightier matters of the law.\",\"Romans 2:5–11 — God’s judgment is righteous and impartial.\",\"Revelation 19:1–2 — God’s final judgments are described as true and just.\"],\"alternatives\":[{\"meaning\":\"Retributive or judicial justice: the deserved punishment of sin and vindication of the innocent, often associated with divine judgment.\",\"basis\":[\"Deuteronomy 32:4\",\"Romans 2:5–11\",\"Romans 12:19\",\"Revelation 20:11–15\"],\"prominence\":\"common\"},{\"meaning\":\"Restorative justice: setting broken relationships and social conditions right, restoring victims, liberating the oppressed, and reestablishing communal peace.\",\"basis\":[\"Isaiah 1:17\",\"Isaiah 58:6–10\",\"Luke 4:18–19\",\"James 1:27\"],\"prominence\":\"common\"},{\"meaning\":\"Covenantal righteousness or faithfulness: justice as God’s faithful action to uphold the covenant, save his people, and establish right relationships rather than merely distribute rewards and penalties.\",\"basis\":[\"Psalm 103:6\",\"Isaiah 42:1–7\",\"Isaiah 51:4–8\",\"Romans 3:21–26\"],\"prominence\":\"common\"},{\"meaning\":\"Justification through Christ: divine justice interpreted chiefly through the cross, where sin is judged and believers are declared righteous by grace.\",\"basis\":[\"Romans 3:21–26\",\"Romans 5:8–9\",\"2 Corinthians 5:21\",\"1 Peter 2:24\"],\"prominence\":\"common\"},{\"meaning\":\"The scales or balance as a symbol of justice, emphasizing impartial measurement and fair judgment. This is prominent in later Christian and Western iconography but is not a single, fixed biblical symbol for justice.\",\"basis\":[\"Leviticus 19:35–36\",\"Proverbs 11:1\",\"Proverbs 16:11\",\"Daniel 5:27\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is a strong consensus on the broad core—right judgment and the establishment of what is right—but no single settled symbolic interpretation. Biblical and Christian traditions variously emphasize impartial judgment, punishment, restoration, covenant faithfulness, social protection, or justification. Justice is usually treated as a theological and ethical concept rather than as a fixed biblical symbol.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1034,
+    "output_tokens_details": {
+      "reasoning_tokens": 330
+    },
+    "total_tokens": 1351
+  },
+  "user": null,
+  "metadata": {}
+}

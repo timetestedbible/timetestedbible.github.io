@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "jew",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nJew\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian symbolic interpretation, 'Jew' is most commonly taken to signify a member of God's covenant people, with the New Testament (especially Paul) redefining the 'true Jew' inwardly and spiritually: one whose heart is circumcised by the Spirit and who praises God, rather than one identified merely by ethnic descent or outward observance. On this reading, the term symbolizes authentic covenant belonging — faith-defined membership in the people of God — which many Christian traditions extend to believers in Christ regardless of ethnicity.\",\n  \"primary_basis\": [\n    \"Romans 2:28-29 ('For no one is a Jew who is merely one outwardly... a Jew is one inwardly, and circumcision is a matter of the heart, by the Spirit')\",\n    \"Romans 9:6-8 ('not all who are descended from Israel belong to Israel')\",\n    \"Philippians 3:3 ('we are the circumcision, who worship by the Spirit of God')\",\n    \"Galatians 3:28-29 ('neither Jew nor Greek... if you are Christ's, then you are Abraham's offspring')\",\n    \"Genesis 29:35 and 49:8 (Judah's name linked to 'praise,' underlying the etymological point echoed in Romans 2:29, 'whose praise is not from man but from God')\",\n    \"Revelation 2:9 and 3:9 ('those who say they are Jews and are not')\",\n    \"John 4:22 ('salvation is from the Jews')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Plain ethnic/national referent with no symbolism: 'Jew' simply denotes a physical descendant of Judah/Israel or an adherent of Judaism. Dispensationalist and much modern interpretation insists the term retains this literal sense and that Israel remains distinct from the Church (Romans 11 as key text).\",\n      \"basis\": [\n        \"Romans 11:1-2, 25-29\",\n        \"Romans 3:1-2\",\n        \"Esther and Ezra-Nehemiah usage of 'Jew' as ethnic term\",\n        \"John 4:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Supersessionist/ecclesiological reading: the Church is the 'new Israel' or 'true Jew,' with the term transferred wholesale from ethnic Israel to Christians. Dominant in patristic and much historic Christian teaching; widely criticized and retracted in post-Holocaust theology.\",\n      \"basis\": [\n        \"Galatians 6:16 ('the Israel of God')\",\n        \"1 Peter 2:9-10\",\n        \"Romans 2:28-29\",\n        \"Revelation 2:9; 3:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Johannine literary-symbolic reading: 'the Jews' (hoi Ioudaioi) in the Gospel of John functions as a narrative symbol for unbelieving religious opposition or 'the world' hostile to Jesus, rather than the ethnic group as a whole. Common in academic scholarship; handled cautiously because of its anti-Judaic reception history.\",\n      \"basis\": [\n        \"John 5:16-18\",\n        \"John 8:44\",\n        \"John 9:22\",\n        \"John 19:7-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Polemical-typological reading: 'Jew' as a symbol of legalism, works-righteousness, or reliance on the flesh versus the Spirit (found in strands of Reformation and older exegesis). Largely rejected in contemporary scholarship as an anti-Judaic caricature.\",\n      \"basis\": [\n        \"Galatians 4:21-31 (Hagar/Sinai allegory)\",\n        \"Romans 9:31-32\",\n        \"Philippians 3:4-7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Unlike stock biblical symbols (e.g., lamb, leaven), 'Jew' is primarily an ethnic-religious designation, and its symbolic use is a secondary, theologically contested development. The one broadly recognized symbolic locus is Paul's 'inward Jew' of Romans 2:28-29, which nearly all traditions acknowledge; but how far that redefinition extends (to full supersession, to a parallel 'spiritual Israel,' or not beyond Paul's rhetorical point) is sharply disputed among dispensationalist, covenantal, Catholic, and post-Holocaust interpreters. Consensus therefore exists on the key texts but not on a single settled symbolic meaning.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A true or spiritual believer whose heart has been inwardly transformed by God, representing the spiritual people of God (often associated with the Church) as opposed to merely outward or ethnic descent.\",\n  \"primary_basis\": [\n    \"Romans 2:28-29\",\n    \"Revelation 2:9\",\n    \"Revelation 3:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The literal, ethnic descendants of Abraham, Isaac, and Jacob, representing God's enduring covenantal promises and earthly people (emphasized in Dispensationalism which rejects spiritualizing the term).\",\n      \"basis\": [\n        \"Romans 9:1-5\",\n        \"Romans 11:1-2\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The religious establishment or the unbelieving world in direct opposition to Jesus, primarily interpreted as a typological or symbolic reading of 'hoi Ioudaioi' in Johannine literature.\",\n      \"basis\": [\n        \"John 8:31-44\",\n        \"John 11:47-53\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic interpretation of 'Jew' is heavily debated and largely depends on one's theological framework. Covenant theology frequently interprets the 'true Jew' symbolically as the Church or inward believers. Dispensationalism strongly maintains a literal, ethnic definition, rejecting the spiritualized substitution. Furthermore, Johannine usage is complex; identifying individuals or groups as 'most harmful' opponents based on this text has historically occurred, but such assessments are subjective, depend on diverse perspectives, and modern scholarship often restricts the term to specific first-century religious authorities rather than a universal symbol.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"When interpreted symbolically, “Jew” most commonly signifies a member of God’s covenant people—especially one whose covenant identity is inward and marked by faithfulness or “circumcision of the heart,” rather than merely by outward descent or observance. However, the term is ordinarily used literally in Scripture, and no single symbolic interpretation is settled across Christian traditions.\",\n  \"primary_basis\": [\n    \"Romans 2:28–29 — contrasts outward Jewish identity and circumcision with being a Jew inwardly, through circumcision of the heart.\",\n    \"Romans 9:6–8 — distinguishes physical descent from the children of promise within Israel.\",\n    \"Galatians 3:7, 26–29 — identifies those of faith as Abraham’s children and heirs of the promise in Christ.\",\n    \"Philippians 3:3 — describes believers as “the circumcision” who worship by the Spirit and boast in Christ.\",\n    \"Revelation 2:9; 3:9 — uses disputed language about those who “say they are Jews and are not,” often interpreted in terms of authentic covenant fidelity.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A literal ethnic, ancestral, religious, or Judean identity, rather than a symbol. This is the normal meaning in most biblical contexts and is especially emphasized by historical-grammatical interpretation.\",\n      \"basis\": [\n        \"John 4:9,22\",\n        \"Acts 2:5\",\n        \"Romans 1:16; 2:9–10\",\n        \"Romans 9:3–5; 11:1–2\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The Christian church or all believers in Christ as a transethnic “spiritual Israel.” This overlaps with the primary covenantal meaning but goes further by applying Jewish or Israelite identity directly to the church.\",\n      \"basis\": [\n        \"Galatians 3:26–29; 6:16\",\n        \"Philippians 3:3\",\n        \"1 Peter 2:9–10\",\n        \"Romans 4:11–17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The faithful remnant within ethnic Israel: Jews whose faith corresponds to God’s promise, rather than Gentile Christians or the church generally.\",\n      \"basis\": [\n        \"Romans 9:6–8,27\",\n        \"Romans 11:1–7\",\n        \"Romans 2:28–29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A negative symbol of legalism, outward religion, unbelief, or opposition to Christ. This appears in some historical Christian allegory and polemic but is not a stable lexical meaning and is widely criticized as reductive or anti-Jewish.\",\n      \"basis\": [\n        \"John 5:16–18; 8:39–47\",\n        \"Romans 2:17–24\",\n        \"2 Corinthians 3:14–16\",\n        \"Revelation 2:9; 3:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In some apocalyptic readings, “Jew” denotes the eschatologically authentic people of God, while false claimants represent persecuting religious opponents. The precise historical referents and whether the usage transfers Jewish identity to Christians remain disputed.\",\n      \"basis\": [\n        \"Revelation 2:9; 3:9\"\n      ],\n      \"prominence\": \"unclear\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement that “Jew” normally denotes actual Jewish people or identity, not a fixed symbol. Among symbolic or theological uses, inward membership in God’s covenant people is the most recognizable interpretation, but traditions disagree over whether this refers to faithful Jews, all believers in Christ, the church as “spiritual Israel,” or some combination. These symbolic readings should not be treated as replacing the term’s ordinary ethnic and historical sense in every passage.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A true believer whose heart is circumcised by the Spirit (an inward Jew) rather than an ethnic descendant of Abraham alone\",\n  \"primary_basis\": [\n    \"Romans 2:28-29\",\n    \"Romans 9:6-8\",\n    \"Philippians 3:3\",\n    \"Galatians 3:7; 6:15-16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal ethnic or religious member of the Jewish people (the ordinary narrative and historical sense)\",\n      \"basis\": [\n        \"OT historical books and prophets\",\n        \"Gospels and Acts narratives (e.g., John 4:9; Acts 2:5)\",\n        \"Paul’s self-identification (Romans 11:1; Philippians 3:5)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Those who claim Jewish identity yet oppose Christ and are regarded as false claimants (synagogue of Satan)\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Jewish people corporately as representatives of unbelief or rejection of the Messiah in contrast to the Church\",\n      \"basis\": [\n        \"John 8:39-47\",\n        \"Acts 13:45-46\",\n        \"1 Thessalonians 2:14-16\",\n        \"historical supersessionist readings of Romans 9–11\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"In Christian interpretation the term functions primarily as an ethnic/religious designation; the spiritualized Pauline sense is widely taught but remains secondary and is not a universal symbolic consensus. Other readings arise from specific polemical or prophetic contexts and vary by tradition.\"\n}\n\nBOOK ENTRY\nIn covenant contexts, one in the covenant — “he is a Jew, which is one inwardly,” while some “say they are Jews, and are not.” The name is Judah's, and Judah means praise — “Now will I praise the LORD” — so Paul's definition lands on the name itself: the Jew inwardly is he “whose praise is not of men, but of God.” The word also walks in plain dress, ethnic and religious; context decides which coat it wears.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rom 2:28-29; Gen 29:35; Rev 3:9; Rom 9:6; Zech 8:23) · see Jacob, Israel & Ephraim, ch. 45\n\nAVAILABLE KJV EXCERPTS\nRomans 2:28 — For he is not a Jew, which is one outwardly; neither is that circumcision, which is outward in the flesh:\nRomans 2:29 — But he is a Jew, which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of God.\nGenesis 29:35 — And she conceived again, and bare a son: and she said, Now will I praise the LORD: therefore she called his name Judah; and left bearing.\nRevelation 3:9 — Behold, I will make them of the synagogue of Satan, which say they are Jews, and are not, but do lie; behold, I will make them to come and worship before thy feet, and to know that I have loved thee.\nRomans 9:6 — Not as though the word of God hath taken none effect. For they are not all Israel, which are of Israel:\nZechariah 8:23 — Thus saith the LORD of hosts; In those days it shall come to pass, that ten men shall take hold out of all languages of the nations, even shall take hold of the skirt of him that is a Jew, saying, We will go with you: for we have heard that God is with you.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "3eaa3d0e5fa3deb600e5be459220ea7cc1588ac7eea179bd8145cc9c76dcabaf",
+  "cache": {
+    "hit": false
+  }
+}

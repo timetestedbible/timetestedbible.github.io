@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "sea",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSea, waters\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical scholarship, the sea and the waters most commonly symbolize chaos, disorder, and the powers of evil hostile to God — the untamed, threatening realm that God alone subdues and from which opposition to God's people arises. Closely joined to this, in apocalyptic and prophetic literature the sea/waters frequently stand for the restless mass of the nations or peoples of the world, out of which hostile empires and the beast emerge. God's sovereignty over the sea (creating, bounding, calming, or drying it) signifies his victory over chaos and evil, culminating in Revelation's declaration that in the new creation 'the sea was no more.'\",\n  \"primary_basis\": [\n    \"Genesis 1:2 (the deep/tehom and darkness before God orders creation)\",\n    \"Job 38:8-11 (God sets bounds to the sea)\",\n    \"Psalm 74:13-14 (God divides the sea and crushes Leviathan)\",\n    \"Psalm 89:9-10 (God rules the raging sea, crushes Rahab)\",\n    \"Psalm 93:3-4 (the floods lift up their voice; the LORD is mightier)\",\n    \"Isaiah 17:12-13 (the roaring of nations like the roaring of the seas)\",\n    \"Isaiah 27:1 (Leviathan, the dragon in the sea)\",\n    \"Isaiah 57:20 (the wicked are like the tossing sea)\",\n    \"Daniel 7:2-3 (four beasts rise from the great sea)\",\n    \"Mark 4:39-41 / Matthew 8:26-27 (Jesus stills the sea, demonstrating divine authority over chaos)\",\n    \"Revelation 13:1 (the beast rises out of the sea)\",\n    \"Revelation 17:15 ('the waters... are peoples and multitudes and nations and languages')\",\n    \"Revelation 21:1 ('and the sea was no more')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Waters/sea as the nations, peoples, or Gentile multitudes specifically (rather than chaos generally) — often treated as the controlling sense in prophetic/apocalyptic passages because Revelation 17:15 supplies an explicit inspired interpretation; the beast from the sea is then a power arising from the turbulent mass of humanity.\",\n      \"basis\": [\n        \"Revelation 17:15\",\n        \"Isaiah 17:12-13\",\n        \"Isaiah 8:7-8 (Assyria as overflowing waters)\",\n        \"Jeremiah 51:42, 55\",\n        \"Daniel 7:2-3 with 7:17\",\n        \"Revelation 13:1 contrasted with the beast from the earth/land in 13:11 (sea = Gentile nations, land = Israel in some readings)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Water (in positive contexts) as cleansing, spiritual life, the Holy Spirit, and baptism — living water, washing, and regeneration. This is a distinct strand applied to 'water(s)' rather than to 'the sea,' and is dominant for those specific passages though it is a different symbolic field.\",\n      \"basis\": [\n        \"John 4:10-14 (living water)\",\n        \"John 7:37-39 (rivers of living water = the Spirit)\",\n        \"Ezekiel 36:25 (sprinkling clean water)\",\n        \"Ezekiel 47:1-12 (life-giving river from the temple)\",\n        \"Titus 3:5; Ephesians 5:26 (washing of water)\",\n        \"Revelation 22:1, 17 (river/water of life)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The sea/waters as death, the grave, and judgment, with passage through the waters as a type of salvation, baptism, death-and-resurrection (Red Sea, the Flood, Jonah).\",\n      \"basis\": [\n        \"Exodus 14-15 with 1 Corinthians 10:1-2\",\n        \"Genesis 6-9 with 1 Peter 3:20-21\",\n        \"Jonah 2:2-6 with Matthew 12:40\",\n        \"Psalm 69:1-2, 14-15 (waters up to the neck as mortal peril)\",\n        \"2 Samuel 22:5 / Psalm 18:4 (waves of death)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The sea as the abyss — the demonic realm or prison of evil spirits, effectively equating sea and abyss in Revelation and the Gospels.\",\n      \"basis\": [\n        \"Revelation 11:7 and 13:1 read together (beast from the abyss / from the sea)\",\n        \"Luke 8:31-33 (demons, the abyss, and the drowning of the swine in the sea)\",\n        \"Revelation 9:1-2\",\n        \"Revelation 20:13 with 21:1\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Largely literal/geographical readings that minimize symbolism — the sea in prophecy simply denotes maritime regions, the Mediterranean, or literal geography; symbolic overlays are viewed as overreach except where Scripture explicitly interprets (e.g., Rev 17:15).\",\n      \"basis\": [\n        \"Grammatical-historical hermeneutics as practiced in some conservative/dispensational commentary traditions\",\n        \"Passages where 'the sea' is plainly geographic (e.g., Numbers 34:6; Ezekiel 47:10)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus across academic biblical studies (the ancient Near Eastern 'chaos waters' / Chaoskampf motif) and popular Christian teaching that the sea symbolizes chaos, evil, and hostility to God, and that in apocalyptic texts the sea/waters represent the restless nations of humanity — Revelation 17:15 is routinely cited as the Bible's own gloss. These two strands (chaos/evil and peoples/nations) are usually treated as complementary rather than competing. A caveat: 'sea' and 'water' are not symbolically identical; 'water' in non-sea contexts carries a well-established positive symbolism (cleansing, Spirit, life, baptism) that coexists with the negative sea symbolism. Interpreters generally hold both without contradiction, distinguishing the untamed sea from life-giving water.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Chaos, death, the abyss, and hostile cosmic forces that oppose God; a realm of restless evil and danger.\",\n  \"primary_basis\": [\n    \"Genesis 1:2\",\n    \"Job 38:8-11\",\n    \"Psalm 74:13\",\n    \"Psalm 89:9\",\n    \"Isaiah 57:20\",\n    \"Revelation 13:1\",\n    \"Revelation 21:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Gentile nations, unregenerate humanity, or multitudes of people in turmoil.\",\n      \"basis\": [\n        \"Isaiah 17:12-13\",\n        \"Revelation 17:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judgment, cleansing, and salvation through baptism (passing safely through the waters of death).\",\n      \"basis\": [\n        \"Exodus 14:21-22\",\n        \"1 Corinthians 10:1-2\",\n        \"1 Peter 3:20-21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Life, the Holy Spirit, and divine provision (specifically when framed as 'living waters' or rivers, in contrast to the salty, chaotic sea).\",\n      \"basis\": [\n        \"Ezekiel 47:1-12\",\n        \"John 7:37-39\",\n        \"Revelation 22:1-2\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical and Ancient Near Eastern symbolism, the 'sea' (Yam) almost universally represents chaos, the abyss, and forces hostile to divine order, which God subdues. This culminates in Revelation 21:1, where the sea is no more. 'Waters' more broadly have a dual symbolism: standing or raging waters represent death and judgment (the Flood, the Red Sea), while flowing 'living waters' represent the Holy Spirit, eternal life, and purification.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The sea or deep waters most commonly symbolize primordial chaos, danger, death, and hostile powers that God restrains or defeats. This is especially prominent in poetic, prophetic, and apocalyptic texts.\",\n  \"primary_basis\": [\n    \"Genesis 1:2, 6–10 — the primordial deep is ordered and bounded in creation.\",\n    \"Job 38:8–11; Psalms 93:3–4; 104:6–9 — God confines and rules the threatening waters.\",\n    \"Psalms 74:13–14; 89:9–10; Isaiah 27:1; 51:9–10 — divine victory over the sea and its monsters represents triumph over chaotic or hostile powers.\",\n    \"Exodus 14–15 — the sea is both a deadly threat and the arena of God's victory and deliverance.\",\n    \"Daniel 7:2–3 — violent imperial beasts emerge from the storm-tossed sea.\",\n    \"Mark 4:35–41 and parallels — Jesus' calming of the sea is commonly read as authority over chaos and mortal danger.\",\n    \"Revelation 13:1; 21:1 — the beast rises from the sea, while the disappearance of the sea is often interpreted as the removal of chaos, evil, or threat.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Peoples, nations, multitudes, or the turbulent pagan world, especially in prophetic and apocalyptic interpretation.\",\n      \"basis\": [\n        \"Isaiah 17:12–13 compares tumultuous nations to roaring seas.\",\n        \"Isaiah 57:20 compares the wicked to a tossing sea.\",\n        \"Daniel 7:2–3 associates the sea with the setting from which world empires arise.\",\n        \"Revelation 17:15 explicitly interprets waters as peoples, multitudes, nations, and languages.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Life, divine blessing, spiritual refreshment, and the Holy Spirit, particularly when the image is flowing or living water rather than the threatening sea.\",\n      \"basis\": [\n        \"Psalm 1:3 and Isaiah 44:3–4 use water for flourishing and divine blessing.\",\n        \"Ezekiel 47:1–12 depicts life-giving water flowing from the temple.\",\n        \"John 4:10–14 presents living water as eternal life.\",\n        \"John 7:37–39 explicitly relates living water to the Spirit.\",\n        \"Revelation 22:1–2 depicts the river of the water of life.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cleansing, rebirth, and baptismal renewal.\",\n      \"basis\": [\n        \"Ezekiel 36:25–27 links clean water with purification and a renewed heart and spirit.\",\n        \"John 3:5 associates birth of water and Spirit with entry into God's kingdom, though its precise interpretation is disputed.\",\n        \"Acts 22:16 and Ephesians 5:26 connect washing with cleansing.\",\n        \"1 Peter 3:20–21 relates the flood waters typologically to baptism.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment together with deliverance through death-like waters.\",\n      \"basis\": [\n        \"Genesis 6–9 presents flood waters as judgment while preserving Noah's household.\",\n        \"Exodus 14–15 makes the sea judgment for Egypt and deliverance for Israel.\",\n        \"Jonah 1–2 uses engulfing waters as an image of descent toward death followed by rescue.\",\n        \"1 Corinthians 10:1–2 and 1 Peter 3:20–21 support Christian typological readings involving baptism, judgment, and salvation.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Separation, instability, or the barrier between peoples and realms; on this reading, the absence of the sea in the new creation signifies the end of separation or alienation.\",\n      \"basis\": [\n        \"Isaiah 57:20 depicts the sea's restlessness and instability.\",\n        \"Revelation 21:1 has often been interpreted as removal of separation as well as chaos, although the text does not explicitly define the symbol this way.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal features of creation without a symbolic referent.\",\n      \"basis\": [\n        \"Genesis 1:9–10 calls the gathered waters seas as part of the created world.\",\n        \"Many narrative references to seas, rivers, and water function geographically or physically even when later interpreters also find typology in them.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for both “sea” and “waters” across Scripture. The threatening sea or deep most recognizably signifies chaos, danger, death, and hostile power, but water imagery can also signify life, Spirit, cleansing, judgment, salvation, or nations. Genre, movement, and context are decisive: stormy or abyssal seas tend toward chaos imagery, while flowing or living water tends toward life and blessing.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"chaos, disorder, and the forces of evil opposed to God's order\",\n  \"primary_basis\": [\n    \"Genesis 1:2\",\n    \"Psalm 74:13-14\",\n    \"Psalm 89:9-10\",\n    \"Isaiah 27:1\",\n    \"Isaiah 57:20\",\n    \"Daniel 7:2-3\",\n    \"Revelation 13:1\",\n    \"Revelation 21:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"peoples, multitudes, nations, or restless humanity\",\n      \"basis\": [\n        \"Isaiah 17:12-13\",\n        \"Jeremiah 51:55\",\n        \"Revelation 17:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"life-giving provision, the Holy Spirit, or spiritual refreshment (especially 'living waters')\",\n      \"basis\": [\n        \"Ezekiel 47:1-12\",\n        \"John 4:10-14\",\n        \"John 7:37-39\",\n        \"Revelation 22:1-2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"divine judgment or overwhelming trial (flood imagery)\",\n      \"basis\": [\n        \"Genesis 6–9\",\n        \"Psalm 69:1-2\",\n        \"Psalm 88:7\",\n        \"Jonah 2:3-5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the Gentile world or pagan powers arising from disorder\",\n      \"basis\": [\n        \"Daniel 7:2-7\",\n        \"Revelation 13:1\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian biblical interpretation the sea/waters most consistently function as a symbol of primordial chaos and anti-God forces that God subdues or will finally abolish; this reading is standard across patristic, Reformation, and modern evangelical commentaries, especially in apocalyptic texts. Context determines secondary uses (peoples, Spirit, judgment), but the chaos/evil association remains the dominant default.\"\n}\n\nBOOK ENTRY\nPeoples and nations — the restless, unrooted mass below the firmament; and, above it, the gathered waters of heaven: the still sea of glass where the angels and the redeemed stand.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rev 17:15; Gen 1:6-8; Ps 148:4; Rev 4:6; 15:2) · see Sea & Waters, ch. 40\n\nAVAILABLE KJV EXCERPTS\nRevelation 17:15 — And he saith unto me, The waters which thou sawest, where the whore sitteth, are peoples, and multitudes, and nations, and tongues.\nGenesis 1:6 — And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.\nGenesis 1:7 — And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.\nGenesis 1:8 — And God called the firmament Heaven. And the evening and the morning were the second day.\nPsalms 148:4 — Praise him, ye heavens of heavens, and ye waters that be above the heavens.\nRevelation 4:6 — And before the throne there was a sea of glass like unto crystal: and in the midst of the throne, and round about the throne, were four beasts full of eyes before and behind.\nRevelation 15:2 — And I saw as it were a sea of glass mingled with fire: and them that had gotten the victory over the beast, and over his image, and over his mark, and over the number of his name, stand on the sea of glass, having the harps of God.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "1fe1fb1a0d3fc7ff68f7b35d2701be118a7115e1fd09e23297f7775ed0a8ae8c",
+  "cache": {
+    "hit": false
+  }
+}

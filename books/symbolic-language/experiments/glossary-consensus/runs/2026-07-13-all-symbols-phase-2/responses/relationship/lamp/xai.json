@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921771,
+  "completed_at": 1783921799,
+  "id": "c918f4f4-8216-99c0-81b2-ab310a0d2f4a",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_c918f4f4-8216-99c0-81b2-ab310a0d2f4a",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Lamp\".\nThe book's entry for \"Lamp\" is simply \"The commandment,\" drawn directly from Proverbs 6:23, which states that \"the commandment is a lamp.\" This aligns closely with the consensus responses, which identify the primary meaning of \"lamp\" as God's Word or Scripture providing guidance and illumination, with Proverbs 6: 23 cited as a key basis. The book's terse phrasing narrows the focus to the commandment itself, but it does not contradict the broader consensus; instead, it refines the extension by emphasizing the specific referent from the verse while retaining the core identification of the commandment as a source of light and direction. The printed scripture reference supports this strongly, as it explicitly links the commandment to the lamp imagery. Overall, the relationship is REFINED, with the book preserving the consensus's central referent but narrowing its application to the commandment in this context.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Primary meaning across responses is God's Word/Scripture/divine truth as guidance and illumination (Ps 119:105, Prov 6:23, 2 Pet 1:19), with common alternatives of believer/church witness, readiness (ten virgins), lampstands as churches, Holy Spirit, human spirit/conscience, and Davidic lamp; polyvalent and context-driven.\",\"book_summary\":\"The commandment.\",\"consensus_core_identification\":\"God's Word/Scripture/commandment as illuminating guidance\",\"book_core_identification\":\"the commandment\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"Book restricts exclusively to the commandment (Prov 6:23 language) and omits the broader Word/truth category plus all common alternatives (witness, readiness, churches, Spirit, dynasty, etc.) that consensus treats as attested.\",\"material_contradiction\":\"none\",\"rationale\":\"Cores share the same general referent drawn from the identical Prov 6:23 basis, but the book narrows the primary identification to the single term 'commandment' and presents no other cases, whereas consensus treats 'Word/truth' more broadly and lists multiple extensions; this is boundary refinement rather than replacement or novelty.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Consensus documents several other frequent, context-specific biblical referents for lamp that the book's sole identification appears to exclude.\",\"confidence\":\"high\"}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c918f4f4-8216-99c0-81b2-ab310a0d2f4a",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3805,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3103,
+    "output_tokens_details": {
+      "reasoning_tokens": 2779
+    },
+    "total_tokens": 6908,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 254600000,
+    "context_details": {
+      "input_tokens": 3805,
+      "output_tokens": 3103
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "moment",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nMoment\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'moment' is most commonly treated not as a fixed symbol but as a temporal figure for instantaneous divine action and the brevity of earthly experience measured against eternity. Its most prominent doctrinal use is Paul's 'in a moment (Greek: atomos, an indivisible instant), in the twinkling of an eye' describing the sudden, instantaneous transformation of believers at the resurrection/last trumpet. Closely joined to this is the contrast between 'momentary' affliction and eternal glory: present suffering is a 'moment' compared with the eternal weight of glory God prepares.\",\n  \"primary_basis\": [\n    \"1 Corinthians 15:51-52 ('in a moment, in the twinkling of an eye, at the last trumpet')\",\n    \"2 Corinthians 4:17 ('our light and momentary affliction is producing for us an eternal weight of glory')\",\n    \"Psalm 30:5 ('his anger lasts only a moment, but his favor a lifetime')\",\n    \"Isaiah 54:7-8 ('for a brief moment I abandoned you, but with great compassion I will gather you')\",\n    \"Isaiah 26:20 ('hide yourselves for a little moment until the wrath is past')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The brevity of God's wrath or discipline contrasted with the permanence of His mercy and covenant favor (a pastoral/comfort reading rather than eschatological).\",\n      \"basis\": [\n        \"Psalm 30:5\",\n        \"Isaiah 54:7-8\",\n        \"Isaiah 26:20\",\n        \"Lamentations 3:31-33 (thematically linked)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Suddenness of divine judgment: God can destroy or consume the wicked 'in a moment,' emphasizing the unexpected swiftness of judgment.\",\n      \"basis\": [\n        \"Numbers 16:21, 45 ('that I may consume them in a moment')\",\n        \"Exodus 33:5\",\n        \"Psalm 73:19 ('how suddenly they are destroyed, swept away in a moment')\",\n        \"Job 34:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The transience of the wicked's prosperity and of all worldly things: the joy or triumph of the godless lasts 'but for a moment.'\",\n      \"basis\": [\n        \"Job 20:5\",\n        \"Psalm 73:18-20\",\n        \"Luke 4:5 (Satan shows the kingdoms of the world 'in a moment of time,' sometimes read as the fleeting nature of worldly glory)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The decisive 'now' of salvation or the kairos moment of decision — a homiletic use treating 'moment' as the critical instant in which one must respond to God.\",\n      \"basis\": [\n        \"2 Corinthians 6:2 ('now is the acceptable time; now is the day of salvation')\",\n        \"Hebrews 3:15 ('Today, if you hear his voice...')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In dispensational/rapture teaching specifically, 'in a moment' (1 Cor 15:52) is emphasized as a proof-text for the instantaneous rapture of the church.\",\n      \"basis\": [\n        \"1 Corinthians 15:51-52\",\n        \"1 Thessalonians 4:16-17 (paired passage)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"'Moment' is not a classical biblical symbol in the way that terms like 'lamb,' 'leaven,' or 'water' are; standard symbol dictionaries and commentaries treat it as a contextual temporal expression rather than an object of settled symbolic interpretation. There is, however, a recognizable cluster of conventional uses: (1) the instantaneous eschatological change of 1 Corinthians 15:52 (the most cited and doctrinally weighted usage), and (2) the moment/eternity contrast used pastorally regarding suffering and divine wrath. If an author assigns 'moment' a single fixed symbolic meaning across Scripture, that would go beyond mainstream published consensus, which reads the term contextually.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The fleeting nature of earthly time and afflictions when contrasted with eternity, as well as the suddenness of divine action and eschatological change.\",\n  \"primary_basis\": [\n    \"1 Corinthians 15:52\",\n    \"2 Corinthians 4:17\",\n    \"Psalm 30:5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The instantaneous, unexpected nature of Christ's return and the resurrection of the dead.\",\n      \"basis\": [\n        \"1 Corinthians 15:52\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The extreme brevity of God's wrath or discipline compared to His enduring grace and eternal favor.\",\n      \"basis\": [\n        \"Psalm 30:5\",\n        \"Isaiah 54:7-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A decisive, appointed point of divine opportunity, crisis, or judgment, often reflecting the Greek concept of kairos.\",\n      \"basis\": [\n        \"Luke 19:44\",\n        \"Esther 4:14\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The fragility and ultimate transience of human life, wicked prosperity, or worldly power.\",\n      \"basis\": [\n        \"Job 20:5\",\n        \"Psalm 73:19\",\n        \"Luke 4:5\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"While 'moment' is generally not treated as a rigid typological symbol in biblical hermeneutics, it serves as a major temporal motif. It is primarily used to draw a sharp contrast between the brevity of the temporal world (including affliction and divine discipline) and the permanence of eternity, or to emphasize the suddenness of eschatological events.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The term “moment” has no settled, technical symbolic meaning in Christian interpretation. When used symbolically, its most common broad sense is the brevity and transience of human experience, often contrasted with God’s eternity or the lasting significance of divine action.\",\n  \"primary_basis\": [\n    \"Psalm 30:5 — God’s anger lasts “but a moment,” contrasted with enduring favor.\",\n    \"Psalm 90:4-12 — human life is brief when measured against God’s eternity.\",\n    \"2 Corinthians 4:17-18 — “momentary” affliction is contrasted with eternal glory.\",\n    \"James 4:14 — human life is compared to a mist that appears briefly and vanishes.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A divinely appointed or decisive opportunity—a significant point in God’s timing requiring faithful response.\",\n      \"basis\": [\n        \"Ecclesiastes 3:1 — there is an appointed time for every matter.\",\n        \"Mark 1:15 — “the time is fulfilled,” announcing a decisive stage in God’s purpose.\",\n        \"Galatians 4:4 — Christ comes in “the fullness of time.”\",\n        \"Ephesians 5:15-16 — believers are told to make the most of the time or opportunity.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sudden eschatological transformation, judgment, or divine intervention.\",\n      \"basis\": [\n        \"1 Corinthians 15:51-52 — resurrection and transformation occur “in a moment, in the twinkling of an eye.”\",\n        \"Matthew 24:42-44 — the Son of Man comes at an unexpected hour.\",\n        \"1 Thessalonians 5:2-3 — the day of the Lord comes suddenly, like a thief.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A temporary period of suffering or divine displeasure that will be surpassed by restoration and eternal glory.\",\n      \"basis\": [\n        \"Psalm 30:5 — momentary anger is contrasted with lifelong favor and renewed joy.\",\n        \"Isaiah 54:7-8 — brief abandonment or wrath is contrasted with everlasting compassion.\",\n        \"2 Corinthians 4:17 — momentary affliction prepares an eternal weight of glory.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A special mystical or conversion instant in which an individual directly encounters God.\",\n      \"basis\": [\n        \"Acts 9:3-6 — Saul’s sudden encounter with Christ is sometimes treated as a defining spiritual moment.\",\n        \"Luke 24:30-32 — the disciples recognize Christ in a decisive instant.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Moment” is ordinarily a temporal expression rather than an established biblical symbol such as light, water, or bread. Its significance depends heavily on context. Christian teaching commonly uses it for brevity, appointed opportunity, or sudden divine action, but none of these functions as an exclusive or universally recognized symbolic definition.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the fleeting or temporary character of earthly affliction, human life, or divine displeasure when set against eternal glory or favor\",\n  \"primary_basis\": [\n    \"2 Corinthians 4:17\",\n    \"Psalm 30:5\",\n    \"Isaiah 54:7-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the suddenness of eschatological transformation (resurrection or parousia)\",\n      \"basis\": [\n        \"1 Corinthians 15:51-52\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a brief interval of testing or temptation\",\n      \"basis\": [\n        \"Luke 4:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"an existential or mystical 'now' of encounter with God\",\n      \"basis\": [],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Unlike concrete biblical images (lamb, vine, light), 'moment' functions chiefly as a temporal adverb or noun of brevity rather than a developed symbol; published Christian interpretation therefore shows only loose, context-driven associations without a fixed traditional meaning.\"\n}\n\nBOOK ENTRY\nThe instant of decisive action, built on the image of an eye's wink — the unit in which judgment and mercy alike are done, never a slow process: Babylon falls “in a moment… in one day,” and the dead are raised “in a moment, in the twinkling of an eye.”\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 47:9; Job 34:20; 1 Cor 15:52) · see The Moment, ch. 38 | (Isa 47:9; Job 34:20; 1 Cor 15:52) · see The Moment, in the free digital edition at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nIsaiah 47:9 — But these two things shall come to thee in a moment in one day, the loss of children, and widowhood: they shall come upon thee in their perfection for the multitude of thy sorceries, and for the great abundance of thine enchantments.\nJob 34:20 — In a moment shall they die, and the people shall be troubled at midnight, and pass away: and the mighty shall be taken away without hand.\n1 Corinthians 15:52 — In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "16ef576821add71910dbf341ea1e8910fe6b0347e67d30d81f82dc5c5fc64df5",
+  "cache": {
+    "hit": false
+  }
+}

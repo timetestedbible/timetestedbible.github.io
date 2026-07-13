@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "widow",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWidow\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the widow functions primarily as the archetype of the vulnerable and defenseless person who is under God's special protection and care. Alongside the orphan and the sojourner/stranger, the widow symbolizes the socially powerless whom God defends, and treatment of widows serves as a measure of true religion and covenant faithfulness. The widow is thus a symbol of dependence on God, of the poor whom the community is obligated to protect, and of the justice God demands.\",\n  \"primary_basis\": [\n    \"Exodus 22:22-24 (do not mistreat the widow or orphan; God will hear their cry)\",\n    \"Deuteronomy 10:18 (God executes justice for the fatherless and the widow)\",\n    \"Deuteronomy 24:17-21 (gleaning laws protecting widows)\",\n    \"Deuteronomy 27:19 (curse on those who pervert justice for the widow)\",\n    \"Psalm 68:5 (God as 'defender of widows')\",\n    \"Psalm 146:9 (the LORD upholds the widow and fatherless)\",\n    \"Isaiah 1:17, 1:23 (plead the widow's cause; failure to do so as marker of injustice)\",\n    \"Jeremiah 7:6; 22:3; Zechariah 7:10; Malachi 3:5 (prophetic indictments for oppressing widows)\",\n    \"James 1:27 (pure religion is to visit orphans and widows in their affliction)\",\n    \"1 Timothy 5:3-16 (church care for widows; the order of widows)\",\n    \"Acts 6:1-6 (distribution to widows in the early church)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Model of exemplary faith, piety, sacrificial giving, and persistent prayer: individual widows are held up as spiritual exemplars (the widow's mite, the persistent widow, Anna, the widow of Zarephath, Ruth and Naomi).\",\n      \"basis\": [\n        \"Mark 12:41-44 / Luke 21:1-4 (widow's two mites)\",\n        \"Luke 18:1-8 (parable of the persistent widow and the unjust judge)\",\n        \"Luke 2:36-38 (Anna the prophetess)\",\n        \"1 Kings 17:8-16 (widow of Zarephath, echoed in Luke 4:25-26)\",\n        \"Ruth 1 (Ruth and Naomi as faithful widows)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Corporate metaphor of desolation and abandonment: a city or nation (especially Jerusalem/Zion under judgment, or Babylon) pictured as a widow, symbolizing loss of covenant relationship, protection, and status; conversely, the end of widowhood symbolizes restoration.\",\n      \"basis\": [\n        \"Lamentations 1:1 (Jerusalem 'has become like a widow')\",\n        \"Isaiah 47:8-9 (Babylon's boast 'I shall not sit as a widow' and its judgment)\",\n        \"Isaiah 54:4-5 ('you will forget the reproach of your widowhood... your Maker is your husband')\",\n        \"Revelation 18:7 (Babylon: 'I sit as a queen and am no widow')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Allegorical/patristic readings in which the widow represents the soul or the Church bereft of (or awaiting) her Bridegroom Christ, or the Church drawn from the Gentiles (e.g., the widow of Zarephath read typologically); widowhood as an image of consecrated devotion to God alone.\",\n      \"basis\": [\n        \"1 Kings 17 read typologically (e.g., by Augustine, Ambrose, and other Fathers)\",\n        \"Luke 4:25-26 (Jesus' use of the Zarephath widow regarding the Gentiles)\",\n        \"1 Corinthians 7:8, 39-40 and 1 Timothy 5 (widowhood as a consecrated state, developed by Ambrose's 'De Viduis' and Tertullian)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Cautionary or negative usage: widowhood as a figure of reproach, curse, or divine judgment on the proud (Babylon), and warnings against those who exploit widows ('devour widows' houses') as a symbol of religious hypocrisy.\",\n      \"basis\": [\n        \"Isaiah 47:8-9\",\n        \"Mark 12:38-40 / Luke 20:46-47 (scribes who devour widows' houses)\",\n        \"Job 22:9; 24:3 (oppression of widows as marker of wickedness)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad, recognizable consensus across Catholic, Orthodox, Protestant, and academic biblical-studies literature that the widow symbolizes vulnerability and God's protective justice, standard in the 'widow, orphan, and stranger' triad of the Torah and prophets. The alternative readings are not mutually exclusive with the primary meaning; they are contextual extensions (exemplary faith narratives, the city-as-widow desolation metaphor, and allegorical patristic uses). The corporate-desolation metaphor (Lamentations 1:1) is well established in scholarship but secondary to the social-justice archetype in general Christian teaching.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Vulnerability, defenselessness, and total dependence on God, representing the marginalized who are objects of God's special protection and justice.\",\n  \"primary_basis\": [\n    \"Exodus 22:22-24\",\n    \"Deuteronomy 10:18\",\n    \"Psalm 68:5\",\n    \"Isaiah 1:17\",\n    \"James 1:27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Israel or the Church in a state of desolation, mourning, or exile.\",\n      \"basis\": [\n        \"Lamentations 1:1\",\n        \"Isaiah 54:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Exemplary faith, devotion, and total surrender of resources to God.\",\n      \"basis\": [\n        \"1 Kings 17:8-16\",\n        \"Mark 12:41-44\",\n        \"Luke 2:36-38\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual desolation or judgment, contrasted with a false sense of security (e.g., Babylon claiming not to be a widow).\",\n      \"basis\": [\n        \"Isaiah 47:8\",\n        \"Revelation 18:7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The widow is frequently grouped with the orphan and the alien in Scripture to form a triad representing the most vulnerable members of ancient society. Because they lacked a traditional male protector, they symbolically and practically represented those who must rely entirely on God, and for whom God demands strict social justice.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The widow most commonly signifies vulnerability, bereavement, social powerlessness, and material need, together with dependence on God and special entitlement to the community’s protection and justice.\",\n  \"primary_basis\": [\n    \"Exodus 22:22–24 — Israel is forbidden to afflict widows, whom God personally defends.\",\n    \"Deuteronomy 10:17–18; 14:28–29; 24:17–22; 27:19 — God executes justice for widows, and Israel must provide for and protect them.\",\n    \"Psalm 68:5; 146:9 — God is the defender and sustainer of widows.\",\n    \"Isaiah 1:17, 23 — care for widows is a test of communal justice and covenant faithfulness.\",\n    \"Jeremiah 7:6–7; 22:3 — oppression of widows exemplifies grave social and covenantal injustice.\",\n    \"James 1:27 — care for widows and orphans epitomizes pure religion.\",\n    \"1 Timothy 5:3–16 — the church is directed to honor and support widows who are truly in need.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Faithful dependence on God, sacrificial generosity, and wholehearted devotion despite poverty.\",\n      \"basis\": [\n        \"1 Kings 17:8–16 — the widow of Zarephath trusts God’s word and gives from scarcity.\",\n        \"Mark 12:41–44; Luke 21:1–4 — the poor widow’s offering represents total, costly giving.\",\n        \"Luke 2:36–38 — Anna’s widowhood is associated with sustained worship, fasting, and prayer.\",\n        \"1 Timothy 5:5 — the true widow sets her hope on God and continues in prayer.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Persistence and perseverance in prayer or in seeking justice.\",\n      \"basis\": [\n        \"Luke 18:1–8 — the persistent widow repeatedly petitions an unjust judge; Jesus explicitly applies the parable to continual prayer and confidence in divine justice.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A desolate, abandoned, or conquered city or people, especially Zion/Jerusalem, portrayed as a woman bereft of husband and children.\",\n      \"basis\": [\n        \"Lamentations 1:1 — devastated Jerusalem is described as having become like a widow.\",\n        \"Isaiah 54:4–8 — restored Zion’s former widowhood and abandonment are contrasted with renewed divine compassion.\",\n        \"Revelation 18:7 — Babylon’s boast that she is not a widow anticipates her sudden desolation and judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Church, Israel, or the individual soul temporarily bereft of the visible presence of the divine Bridegroom and therefore longing for reunion with him.\",\n      \"basis\": [\n        \"Matthew 9:15; Mark 2:19–20; Luke 5:34–35 — the Bridegroom’s removal provides the broader imagery behind later Christian allegory.\",\n        \"Isaiah 54:4–8 and Lamentations 1:1 — Zion’s widowhood supplied language for ecclesial and spiritual applications.\",\n        \"Luke 2:36–38; 1 Timothy 5:5 — devout widowhood was sometimes applied typologically to prayerful waiting for God.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Corrupt or falsely secure religious or imperial power claiming independence and immunity from loss.\",\n      \"basis\": [\n        \"Revelation 18:7 — Babylon declares, “I sit as a queen; I am no widow,” before judgment.\",\n        \"Isaiah 47:7–9 — Babylon’s confidence is overturned by widowhood and loss of children.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic definition of “widow” across Christian interpretation. Most biblical uses are literal, and the broadest recurring theological motif is the widow as the paradigmatic vulnerable person whom God defends and God’s people must protect. Other meanings arise from particular narratives, parables, prophetic personifications, and later allegorical interpretation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The vulnerable, desolate, and marginalized under God's special protection, for whom true religion requires care and justice\",\n  \"primary_basis\": [\n    \"James 1:27\",\n    \"Deuteronomy 10:18\",\n    \"Psalm 68:5\",\n    \"Exodus 22:22-24\",\n    \"Isaiah 1:17\",\n    \"1 Timothy 5:3-16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Church (or faithful remnant) as desolate yet persevering, awaiting the return of Christ the Bridegroom\",\n      \"basis\": [\n        \"Luke 18:1-8\",\n        \"Isaiah 54:4-6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A city or nation under judgment, abandoned and desolate\",\n      \"basis\": [\n        \"Lamentations 1:1\",\n        \"Isaiah 47:8-9\",\n        \"Revelation 18:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Exemplars of sacrificial faith, generosity, or trust in God amid poverty\",\n      \"basis\": [\n        \"Mark 12:41-44\",\n        \"1 Kings 17:8-24\",\n        \"Luke 2:36-38\",\n        \"Luke 21:1-4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Widow functions more often as a concrete social category carrying consistent ethical and theological weight (divine protection + communal duty) than as a single fixed allegorical symbol; prophetic personification and exemplary narratives supply secondary but well-attested layers without displacing the primary vulnerability motif.\"\n}\n\nBOOK ENTRY\nGod's covenant people cut off from their Husband.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Lam 1:1; Isa 54:5) · see Orphans, Widows & the Fatherless, ch. 14\n\nAVAILABLE KJV EXCERPTS\nLamentations 1:1 — How doth the city sit solitary, that was full of people! how is she become as a widow! she that was great among the nations, and princess among the provinces, how is she become tributary!\nIsaiah 54:5 — For thy Maker is thine husband; the LORD of hosts is his name; and thy Redeemer the Holy One of Israel; The God of the whole earth shall he be called.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "c68e13175f90868d9a6113c407731df6d87ec64b2a669e074433e5614fe3100b",
+  "cache": {
+    "hit": false
+  }
+}

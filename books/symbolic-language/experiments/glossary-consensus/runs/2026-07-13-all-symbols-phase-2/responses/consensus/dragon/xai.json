@@ -1,0 +1,156 @@
+{
+  "created_at": 1783844939,
+  "completed_at": 1783844951,
+  "id": "cdc66b54-44db-9179-b2fd-ef979334d45c",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_cdc66b54-44db-9179-b2fd-ef979334d45c",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Dragon\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Satan (the Devil), the ancient serpent and adversary of God who opposes Christ and persecutes the people of God\",\n  \"primary_basis\": [\n    \"Revelation 12:3-9 (great red dragon identified as 'that ancient serpent called the devil, or Satan')\",\n    \"Revelation 20:2 (dragon seized and bound, 'that ancient serpent, who is the devil, or Satan')\",\n    \"Revelation 12:13-17; 13:2,4 (dragon as the power behind the beasts and persecutor of the woman/church)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Primordial chaos / sea monster (Leviathan-type figure representing disorder opposed to God's creative order)\",\n      \"basis\": [\n        \"Isaiah 27:1; 51:9\",\n        \"Psalm 74:13-14; 89:10\",\n        \"Job 41 (Leviathan)\",\n        \"Ezekiel 29:3; 32:2 (Pharaoh as dragon/sea monster)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pagan political power / empire (especially Rome as the persecuting world system empowered by or identified with the dragon)\",\n      \"basis\": [\n        \"Historicist and some preterist readings of Revelation 12–13\",\n        \"Danielic beast imagery applied to successive empires\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Generic personification of evil or the forces of opposition without strict identification as a personal Satan\",\n      \"basis\": [\n        \"Broader apocalyptic and mythological background studies\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian tradition and biblical scholarship overwhelmingly treat the dragon of Revelation as Satan on the basis of the book's own explicit identifications; OT 'dragon'/tannin and Leviathan language supplies the mythic background and is commonly read as typological of the same adversary or of chaotic evil, but does not displace the primary NT identification.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_cdc66b54-44db-9179-b2fd-ef979334d45c",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1215,
+    "output_tokens_details": {
+      "reasoning_tokens": 732
+    },
+    "total_tokens": 1817,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 84940000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1215
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

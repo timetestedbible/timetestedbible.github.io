@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "olive",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nOlive, vine, fig\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical interpretation, the olive tree, the vine, and the fig tree are most commonly understood—individually and as a trio—as symbols of Israel, God's covenant people, and their expected spiritual fruitfulness (or failure to bear fruit) before God. The vine typically represents Israel planted and tended by God; the fig tree represents the nation of Israel (often in contexts of judgment or restoration); and the olive tree represents the covenant people of God, with special prominence in Paul's image of Gentile believers grafted into Israel's olive tree. Prophetic use of these trees regularly frames national blessing, judgment, and restoration.\",\n  \"primary_basis\": [\n    \"Psalm 80:8-16 (Israel as the vine brought out of Egypt)\",\n    \"Isaiah 5:1-7 (the Song of the Vineyard: 'the vineyard of the LORD of hosts is the house of Israel')\",\n    \"Jeremiah 2:21 (Israel planted as a choice vine)\",\n    \"Ezekiel 15 and 17 (Israel as a vine)\",\n    \"Hosea 10:1 (Israel is a luxuriant vine)\",\n    \"Hosea 9:10 (Israel like grapes and the first fruit of the fig tree)\",\n    \"Jeremiah 24 (the two baskets of figs representing exiled Judah)\",\n    \"Joel 1:7 (the ruined vine and fig tree as judgment on the nation)\",\n    \"Micah 7:1 and Jeremiah 8:13 (no figs on the fig tree as covenant failure)\",\n    \"Jeremiah 11:16 (Israel called a green olive tree)\",\n    \"Hosea 14:6 (restored Israel's beauty like the olive)\",\n    \"Romans 11:16-24 (the cultivated olive tree into which Gentile branches are grafted)\",\n    \"Matthew 21:18-19 / Mark 11:12-21 (the cursing of the barren fig tree, widely read as an enacted judgment on unfruitful Israel/the temple)\",\n    \"Luke 13:6-9 (parable of the barren fig tree)\",\n    \"Judges 9:8-15 (Jotham's fable of the olive, fig, and vine, the classic passage where the three appear together)\",\n    \"Deuteronomy 8:8 (the three among the characteristic fruits of the promised land)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The vine as Christ himself, with believers as the branches—Jesus as the 'true vine' who fulfills or replaces unfaithful Israel-as-vine; union with Christ and fruitbearing through abiding in him.\",\n      \"basis\": [\n        \"John 15:1-8\",\n        \"Often read against the background of Psalm 80 and Isaiah 5\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The fig tree as a specifically eschatological sign of national Israel, so that the budding fig tree in the Olivet Discourse is read as predicting Israel's national restoration (frequently linked in popular dispensationalism to 1948).\",\n      \"basis\": [\n        \"Matthew 24:32-34\",\n        \"Mark 13:28-30\",\n        \"Luke 21:29-31 (note Luke adds 'and all the trees,' which critics use against the Israel-specific reading)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sitting 'under one's own vine and fig tree' as a symbol of peace, security, and messianic-age prosperity rather than of the nation itself.\",\n      \"basis\": [\n        \"1 Kings 4:25\",\n        \"Micah 4:4\",\n        \"Zechariah 3:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The cursing of the fig tree read narrowly as a prophetic sign against the Jerusalem temple and its leadership (given the Markan sandwich with the temple cleansing), rather than against Israel as a whole—prominent in modern critical scholarship, partly to avoid supersessionist readings.\",\n      \"basis\": [\n        \"Mark 11:12-25 (intercalation with the temple action)\",\n        \"Jeremiah 7 and 8:13 as background\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The olive tree in Romans 11 read as the church or the people of God in a supersessionist sense (the church replacing Israel), versus the now more common reading that the root remains Israel/the patriarchs and Gentiles are grafted in without replacing natural branches.\",\n      \"basis\": [\n        \"Romans 11:16-24\",\n        \"Romans 11:28-29 (used against the replacement reading)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The three trees as general emblems of the land's fertility, divine blessing, and agricultural abundance, without a specific national referent.\",\n      \"basis\": [\n        \"Deuteronomy 8:8\",\n        \"Haggai 2:19\",\n        \"Habakkuk 3:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Distinct allegorical assignments to each tree in some homiletical and older traditions—e.g., olive for the Spirit/anointing or peace, vine for joy or the blood of Christ, fig for the law or self-righteousness (fig leaves in Eden).\",\n      \"basis\": [\n        \"Genesis 3:7 (fig leaves)\",\n        \"Genesis 8:11 (olive branch and peace)\",\n        \"Judges 9:9-13 (oil, sweetness, wine that cheers)\",\n        \"Zechariah 4:3, 11-14 (the two olive trees as anointed ones)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable and long-standing consensus that these three trees, especially in prophetic and Gospel contexts, symbolize Israel/God's covenant people and the demand for spiritual fruit. However, the consensus is passage-sensitive: John 15 is dominantly read christologically (vine = Christ), Romans 11 dominantly as the covenant people with Gentile inclusion, and the Olivet fig tree is genuinely contested (generic illustration of seasonal signs vs. symbol of national Israel). The 'fig tree = Israel restored in 1948' reading is very widespread in popular prophecy teaching but is a minority position in academic biblical scholarship; I have rated it 'common' overall because of its broad popular circulation. Zechariah 4's two olive trees form a separate symbolic stream (anointed ones/witnesses, cf. Revelation 11:4) usually treated apart from the Israel-as-olive-tree motif.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God's covenant people (Israel) and the divine blessings of peace, prosperity, and spiritual fruitfulness associated with the Promised Land.\",\n  \"primary_basis\": [\n    \"Deuteronomy 8:8\",\n    \"Judges 9:8-13\",\n    \"Habakkuk 3:17\",\n    \"Joel 1:7-12\",\n    \"Micah 4:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Distinct dispensational representations, where the Fig Tree represents national Israel, the Vine represents Israel's spiritual privileges (or the Church/Christ), and the Olive Tree represents Israel's covenantal and religious roots.\",\n      \"basis\": [\n        \"Hosea 9:10\",\n        \"Jeremiah 24:1-10\",\n        \"Matthew 24:32\",\n        \"John 15:1-5\",\n        \"Romans 11:17-24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological timekeeping, specifically reading the 'budding of the fig tree' alongside the other plants as prophetic indicators of the end times and the modern restoration of the State of Israel.\",\n      \"basis\": [\n        \"Matthew 24:32-34\",\n        \"Luke 21:29-31\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General spiritual fruitfulness, domestic peace, and divine provision applied individually to believers or the home.\",\n      \"basis\": [\n        \"Psalm 52:8\",\n        \"Psalm 128:3\",\n        \"John 15:5\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"As an agricultural triad, the olive, vine, and fig frequently appear together in the Old Testament to symbolize the health and wealth of the Promised Land. When God blesses Israel, these thrive; in judgment, they fail. While mainstream exegesis views them collectively as representing God's covenant blessings upon Israel, Dispensational interpreters have historically assigned specific, distinct symbolic identities to each plant.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Israel—or, more broadly, God’s covenant people—is the most common shared symbolic referent assigned to the olive, vine, and fig in Christian interpretation. The plants often depict Israel’s election, spiritual condition, fruitfulness, or exposure to judgment, although their meaning varies by passage.\",\n  \"primary_basis\": [\n    \"Olive: Jeremiah 11:16–17 calls Israel a flourishing olive tree that comes under judgment; Romans 11:17–24 uses the cultivated olive tree for the covenant people, with branches removed or grafted in.\",\n    \"Vine: Psalm 80:8–16 portrays Israel as a vine brought out of Egypt; Isaiah 5:1–7 explicitly identifies the vineyard as Israel and Judah; Jeremiah 2:21 and Hosea 10:1 likewise apply vine imagery to Israel.\",\n    \"Fig: Hosea 9:10 compares Israel’s ancestors to early figs; Jeremiah 24:1–10 uses good and bad figs for different groups within Judah; the judged fig tree in Matthew 21:18–21 and Mark 11:12–21 is commonly read against the context of judgment on Jerusalem and its temple establishment.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Peace, security, prosperity, and covenant blessing—especially in the combined expression of sitting under one’s vine and fig tree.\",\n      \"basis\": [\n        \"1 Kings 4:25\",\n        \"Micah 4:4\",\n        \"Zechariah 3:10\",\n        \"Joel 2:22–24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual fruitfulness or unfruitfulness, including the moral condition of individuals or communities, rather than a fixed ethnic or national referent.\",\n      \"basis\": [\n        \"Luke 13:6–9\",\n        \"Matthew 7:16–20\",\n        \"James 3:12\",\n        \"Habakkuk 3:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ and the church or Christ’s disciples: Jesus is the true vine, and believers bear fruit only by remaining in him.\",\n      \"basis\": [\n        \"John 15:1–8; the wording also recalls Israel’s earlier vine imagery and presents Jesus as the true vine.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The olive tree as the historically continuous people of God, incorporating believing Gentiles while warning both Jewish and Gentile branches against unbelief.\",\n      \"basis\": [\n        \"Romans 11:16–24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fig tree as a specific end-times sign of modern Israel’s national restoration, particularly through the budding fig tree in the Olivet Discourse.\",\n      \"basis\": [\n        \"Matthew 24:32–34\",\n        \"Mark 13:28–30\",\n        \"Luke 21:29–32\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal agricultural imagery with no intended stable symbolic referent; in many passages these plants simply represent ordinary produce, livelihood, or the created order.\",\n      \"basis\": [\n        \"Deuteronomy 8:8\",\n        \"Judges 9:8–13\",\n        \"John 1:48–50\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable primary association with Israel or the covenant people, but no universal symbolic code in which olive, vine, and fig always mean the same thing. Context controls: the vine has a major Christological meaning in John 15, the olive has a distinctive covenant-people function in Romans 11, and fig imagery can signify Israel, fruitfulness, judgment, prosperity, or simply a literal tree.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Israel (or God's covenant people/nation) in its various aspects\",\n  \"primary_basis\": [\n    \"Jeremiah 11:16 and Romans 11:17-24 (olive tree as Israel, with grafting of Gentiles)\",\n    \"Isaiah 5:1-7, Psalm 80:8-16, Jeremiah 2:21, Hosea 10:1 (vine/vineyard as Israel)\",\n    \"Hosea 9:10, Jeremiah 24, Joel 1:7, Matthew 21:18-19 and 24:32 (fig tree as Israel)\",\n    \"Habakkuk 3:17, Joel 1:7/1:12 (the three trees grouped in contexts of judgment or loss of blessing on the land/people)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Agricultural prosperity, peace, and divine blessing in the land (or their absence under judgment)\",\n      \"basis\": [\n        \"1 Kings 4:25, Micah 4:4, Zechariah 3:10 (sitting under vine and fig tree as peace/security)\",\n        \"Habakkuk 3:17, Haggai 2:19 (failure of olive/vine/fig as lack of blessing)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fruitful, useful plants that refuse worldly kingship (in contrast to the bramble)\",\n      \"basis\": [\n        \"Judges 9:8-15 (Jotham's parable of the trees)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Spiritual fruitfulness, anointing/joy/sweetness (oil of the Spirit, wine of joy, good works or sweetness of figs)\",\n      \"basis\": [\n        \"General associations of olive oil with anointing/Holy Spirit, vine with joy/abiding (John 15), figs with good fruit\",\n        \"Occasional devotional or allegorical readings in Christian teaching\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Distinct aspects of Israel or redemptive history (e.g., national/religious/spiritual; or Judaism/Israel/Church in some prophetic schemes)\",\n      \"basis\": [\n        \"Combinations of the individual tree symbols in some dispensational or typological commentaries\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Each tree independently carries a strong and longstanding identification with Israel across Old and New Testament usage and Christian interpretation; their joint appearance reinforces that association or the related theme of covenant blessing/judgment on the land. No single ultra-precise meaning for the exact trio is exclusive, but the Israel/people-of-God reading is the most widely recognized primary consensus.\"\n}\n\nBOOK ENTRY\nIsrael, the covenant people.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 11:16; Hos 9:10) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nJeremiah 11:16 — The LORD called thy name, A green olive tree, fair, and of goodly fruit: with the noise of a great tumult he hath kindled fire upon it, and the branches of it are broken.\nHosea 9:10 — I found Israel like grapes in the wilderness; I saw your fathers as the firstripe in the fig tree at her first time: but they went to Baalpeor, and separated themselves unto that shame; and their abominations were according as they loved.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d88eefc608b7a533d4fe68e1acaf094c502dba748c54e156f3a848cd6f1e25e5",
+  "cache": {
+    "hit": false
+  }
+}

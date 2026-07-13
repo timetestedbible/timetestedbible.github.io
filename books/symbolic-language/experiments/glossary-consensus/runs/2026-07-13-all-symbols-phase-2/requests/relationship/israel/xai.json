@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "israel",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nIsrael\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'Israel' primarily signifies the covenant people of God. In its most common symbolic/theological extension (found in patristic, Catholic, Orthodox, and Reformed traditions), the term is read as pointing beyond the ethnic nation to the Church as the 'true' or 'spiritual' Israel — the community of all who belong to God through faith in Christ, Jew and Gentile alike. The name itself, given to Jacob ('he strives with God,' Gen 32:28), is also frequently invoked as symbolizing the people who wrestle with and prevail with God.\",\n  \"primary_basis\": [\n    \"Genesis 32:28 (Jacob renamed Israel, 'for you have striven with God and with men')\",\n    \"Romans 9:6-8 ('not all who are descended from Israel belong to Israel')\",\n    \"Romans 2:28-29 (true circumcision is of the heart)\",\n    \"Galatians 3:7, 3:29 (those of faith are Abraham's offspring)\",\n    \"Galatians 6:16 ('the Israel of God')\",\n    \"Philippians 3:3 ('we are the circumcision')\",\n    \"1 Peter 2:9-10 (church described in Israel's covenant titles: chosen race, holy nation)\",\n    \"Ephesians 2:11-22 (Gentiles incorporated into the commonwealth of Israel)\",\n    \"Hosea 1:10 / Romans 9:25-26 ('not my people' called 'sons of the living God')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Dispensationalist / Christian Zionist reading: Israel refers strictly to the ethnic, national descendants of Jacob, permanently distinct from the Church, with unfulfilled national promises (land, kingdom, restoration) still awaiting literal fulfillment; the modern state of Israel is often seen as prophetically significant.\",\n      \"basis\": [\n        \"Genesis 12:1-3; 15:18 (Abrahamic land promise)\",\n        \"Jeremiah 31:35-37 (Israel's permanence as a nation)\",\n        \"Romans 11:1-2, 25-29 ('has God rejected his people? By no means... all Israel will be saved; the gifts and calling of God are irrevocable')\",\n        \"Ezekiel 36-37 (national regathering and restoration)\",\n        \"Acts 1:6-7 (question of restoring the kingdom to Israel)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christological/typological reading: Christ himself is the true Israel who recapitulates and fulfills Israel's story (exodus, wilderness testing, servant vocation); believers are 'Israel' only by union with him. Prominent in modern biblical theology and evangelical scholarship.\",\n      \"basis\": [\n        \"Matthew 2:15 citing Hosea 11:1 ('out of Egypt I called my son')\",\n        \"Isaiah 49:3-6 (the Servant called 'Israel')\",\n        \"Matthew 4:1-11 (Jesus reliving Israel's wilderness testing)\",\n        \"John 15:1 (Jesus as the true vine, an Israel image from Psalm 80 and Isaiah 5)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel as a figure of the individual believer or soul that wrestles with God and prevails — a devotional/spiritual reading rooted in the Jacob narrative, common in homiletics, mysticism, and older allegorical exegesis (e.g., Philo's 'one who sees God,' taken up by some Fathers).\",\n      \"basis\": [\n        \"Genesis 32:24-30 (Jacob's wrestling at Peniel)\",\n        \"Hosea 12:3-4 (he strove with the angel and prevailed)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Two-covenant or non-supersessionist reading: Israel remains the Jewish people in an ongoing, valid covenant with God alongside the Church; neither replaced by nor collapsed into the Church. Found in some post-Holocaust theology and some mainline/Catholic statements.\",\n      \"basis\": [\n        \"Romans 11:17-24, 28-29 (Gentiles grafted into Israel's olive tree; irrevocable calling)\",\n        \"Nostra Aetate and subsequent church documents (extra-biblical but influential)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Northern-kingdom sense: in prophetic literature 'Israel' sometimes designates only the northern kingdom (as opposed to Judah), which some interpreters treat as symbolically significant (e.g., in restorationist or British-Israelist schemes, the latter being fringe).\",\n      \"basis\": [\n        \"1 Kings 12 (division of the kingdom)\",\n        \"Hosea and Amos (oracles against the northern kingdom)\",\n        \"Ezekiel 37:15-22 (two sticks, Israel and Judah reunited)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement that 'Israel' fundamentally denotes God's covenant people, but Christian interpretation is famously and materially divided over the referent's extension: (a) the historic 'true Israel = the Church' reading dominated most of church history and remains standard in Catholic, Orthodox, and Reformed/covenantal traditions; (b) the dispensationalist insistence that Israel always means ethnic/national Israel is very widespread in American evangelicalism and popular prophecy teaching; (c) the Christ-as-true-Israel typology mediates between them in much recent scholarship. Because these readings are mutually exclusive on key points (e.g., the meaning of Galatians 6:16 and Romans 11:26), the term lacks a single settled symbolic interpretation across Christianity, even though the church-as-Israel reading has the strongest claim to historical dominance.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Church as the spiritual people of God or the New Israel, encompassing all believers in Christ, both Jew and Gentile.\",\n  \"primary_basis\": [\n    \"Galatians 6:16\",\n    \"Romans 9:6-8\",\n    \"Romans 2:28-29\",\n    \"1 Peter 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Ethnic, national Israel, maintaining a distinct covenantal identity and future prophetic destiny entirely separate from the Church.\",\n      \"basis\": [\n        \"Romans 11:25-27\",\n        \"Revelation 7:4-8\",\n        \"Jeremiah 31:35-37\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jesus Christ Himself as the true and faithful Israelite who perfectly fulfills the covenantal vocation of the nation.\",\n      \"basis\": [\n        \"Matthew 2:15\",\n        \"Isaiah 49:3\",\n        \"John 15:1\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Historically, Covenant Theology, Catholicism, and Orthodoxy have viewed the Church as the spiritual continuation of Israel. However, Dispensationalism strongly insists on a literal, ethnic interpretation of Israel distinct from the Church, making the interpretation heavily dependent on one's theological framework.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s covenant people: a people chosen, formed, and called by God to belong to him, bear witness to him, and mediate his blessing. In Christian symbolism, “Israel” therefore commonly represents the people of God, although Christians disagree sharply over whether this designation refers primarily to ethnic Israel, the church, or both in different senses.\",\n  \"primary_basis\": [\n    \"Genesis 32:28 — Jacob receives the name Israel, from whom the people derive their name.\",\n    \"Exodus 4:22 — Israel is called God’s firstborn son.\",\n    \"Exodus 19:5–6 — Israel is designated God’s treasured possession, a kingdom of priests, and a holy nation.\",\n    \"Deuteronomy 7:6–8 — Israel is described as a people chosen and loved by God.\",\n    \"Isaiah 41:8–10; 49:3–6 — Israel is portrayed as God’s servant and witness, with a mission extending to the nations.\",\n    \"Romans 9:6–8; 11:1–29 — Paul distinguishes physical descent from covenant identity while also affirming an enduring significance for Israel.\",\n    \"Galatians 6:16 — “the Israel of God,” whose precise referent is disputed.\",\n    \"1 Peter 2:9–10 — titles originally applied to Israel are applied to Christian communities.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Ethnic or national Israel—the descendants of Jacob—remains the primary referent and retains a distinct covenantal and eschatological role alongside the predominantly Gentile church.\",\n      \"basis\": [\n        \"Genesis 35:10–12\",\n        \"Jeremiah 31:35–37\",\n        \"Ezekiel 36:22–28\",\n        \"Romans 9–11, especially 11:25–29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The church is the renewed, expanded, or “spiritual” Israel, inheriting Israel’s covenant identity and vocation through union with Christ; stronger forms treat the church as replacing national Israel.\",\n      \"basis\": [\n        \"Matthew 21:43\",\n        \"Romans 2:28–29\",\n        \"Romans 9:6–8\",\n        \"Galatians 3:7–29; 6:16\",\n        \"Ephesians 2:11–22\",\n        \"1 Peter 2:9–10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jesus Christ is the representative or faithful Israelite who embodies Israel’s sonship, servant vocation, testing, and mission; those united to him participate in that identity.\",\n      \"basis\": [\n        \"Matthew 2:15\",\n        \"Matthew 4:1–11\",\n        \"Luke 3:21–4:13\",\n        \"John 15:1–6\",\n        \"Isaiah 49:3–6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Israel functions eschatologically as a symbol or pattern of the final redeemed people of God, sometimes incorporating both restored Israel and the multinational church.\",\n      \"basis\": [\n        \"Isaiah 2:2–4\",\n        \"Ezekiel 37:15–28\",\n        \"Revelation 7:4–9\",\n        \"Revelation 21:12–14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel’s history symbolizes the individual Christian’s spiritual journey—from bondage through testing to inheritance.\",\n      \"basis\": [\n        \"1 Corinthians 10:1–11\",\n        \"Hebrews 3:7–4:11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that Israel signifies God’s covenant people, but no settled Christian consensus identifies the precise scope of that symbolism. Major traditions differ over the continuing status of ethnic Israel, the church’s relation to Israel, and whether “Israel” can properly designate the church.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The covenant people of God, fulfilled or continued as the Christian Church (spiritual/new Israel)\",\n  \"primary_basis\": [\n    \"Galatians 6:16\",\n    \"Romans 9:6-8\",\n    \"Romans 2:28-29\",\n    \"1 Peter 2:9-10\",\n    \"Matthew 21:43\",\n    \"Ephesians 2:11-22\",\n    \"Hosea 1:10 / 2:23 (applied to Gentile believers in Romans 9:25-26 and 1 Peter 2:10)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The ethnic/physical descendants of Jacob (the Jewish people) remaining distinct as God's chosen people\",\n      \"basis\": [\n        \"Genesis 32:28\",\n        \"Romans 11:1-29\",\n        \"Jeremiah 31:35-37\",\n        \"OT covenant promises taken as irrevocable to ethnic Israel\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jesus Christ himself as the true/faithful Israel in whom the nation's vocation is fulfilled\",\n      \"basis\": [\n        \"Matthew 2:15 (Hosea 11:1)\",\n        \"Isaiah servant songs applied to Christ\",\n        \"John 15:1 (true vine)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The modern geopolitical State of Israel as prophetic fulfillment\",\n      \"basis\": [\n        \"Ezekiel 36–37\",\n        \"Isaiah 11:11-12\",\n        \"Amos 9:14-15 (read as national restoration)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"All true believers (Jew and Gentile) without strong ecclesiological identification as 'Church as Israel'\",\n      \"basis\": [\n        \"Galatians 3:7-29\",\n        \"Romans 4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation of 'Israel' is sharply divided along theological lines (covenant theology/supersessionism vs. dispensationalism vs. dual-covenant views). The Church-as-true-Israel reading has deep roots in patristic, medieval, Reformation, and much mainline teaching and remains widely recognizable as the historic symbolic default, yet competing literal-ethnic and Christological readings are also longstanding and currently influential; no single symbolic sense commands universal agreement.\"\n}\n\nBOOK ENTRY\nThe new name of the one who prevails with God — covenant and character, not blood.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 32:28; Rom 9:6) · see Jacob, Israel & Ephraim, ch. 45\n\nAVAILABLE KJV EXCERPTS\nGenesis 32:28 — And he said, Thy name shall be called no more Jacob, but Israel: for as a prince hast thou power with God and with men, and hast prevailed.\nRomans 9:6 — Not as though the word of God hath taken none effect. For they are not all Israel, which are of Israel:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d760a58544a54dd3c529455f97a814b3130488b6e2e04cb44c07b3116bc4d12b",
+  "cache": {
+    "hit": false
+  }
+}

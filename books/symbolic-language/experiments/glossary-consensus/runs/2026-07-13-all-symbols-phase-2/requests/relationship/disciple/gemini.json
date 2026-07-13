@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "disciple",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDisciple\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'disciple' (Greek mathētēs, 'learner') primarily signifies a committed follower of Jesus Christ — one who learns from him, obeys his teaching, imitates his life, denies self, takes up the cross, and is being formed into his likeness. It functions as the normative identity of every Christian: to be a Christian is to be a disciple, a lifelong apprentice of Jesus marked by obedience, love, and fruit-bearing.\",\n  \"primary_basis\": [\n    \"Matthew 28:19-20 (the Great Commission: 'make disciples of all nations... teaching them to obey')\",\n    \"Luke 9:23 / Matthew 16:24 ('If anyone would come after me, let him deny himself and take up his cross daily and follow me')\",\n    \"Luke 14:26-27, 33 (the cost of discipleship: renouncing all to follow Jesus)\",\n    \"John 8:31-32 ('If you abide in my word, you are truly my disciples')\",\n    \"John 13:34-35 ('By this all people will know that you are my disciples, if you have love for one another')\",\n    \"John 15:8 ('By this my Father is glorified, that you bear much fruit and so prove to be my disciples')\",\n    \"Acts 11:26 ('the disciples were first called Christians in Antioch')\",\n    \"Matthew 10:24-25 ('a disciple is not above his teacher... it is enough for the disciple to be like his teacher')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Disciple as every believer/Christian without distinction: in Acts the word simply denotes members of the church (Acts 6:1-2, 7; 9:1, 26; 11:26), so 'disciple' is equivalent to 'Christian' rather than describing a special level of commitment.\",\n      \"basis\": [\n        \"Acts 6:1-2, 7\",\n        \"Acts 9:1, 10, 26\",\n        \"Acts 11:26\",\n        \"Acts 14:21-22\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Disciple in the restricted historical sense: primarily the Twelve (or a wider inner circle such as the Seventy) whom Jesus personally called, trained, and commissioned — a technical designation of Jesus' immediate companions rather than all believers.\",\n      \"basis\": [\n        \"Matthew 10:1-4\",\n        \"Mark 3:13-19\",\n        \"Luke 6:12-16\",\n        \"Luke 10:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Two-tier or 'discipleship as a higher calling' reading: a disciple is a believer who has gone on to costly commitment, so one can be saved without yet being a disciple. Associated with some Free Grace/dispensational teaching and popular discipleship literature; strongly contested by Lordship-salvation and most Reformed/Catholic teaching.\",\n      \"basis\": [\n        \"Luke 14:25-33 (read as conditions beyond saving faith)\",\n        \"John 8:31 (read as 'truly' disciples vs. mere believers)\",\n        \"Luke 9:57-62\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Disciple as rabbinic apprentice/imitator: scholarly and Jewish-background readings stress that mathētēs mirrors the rabbi-talmid relationship — living with the teacher, memorizing and replicating his life — so discipleship symbolizes formation by imitation more than intellectual learning.\",\n      \"basis\": [\n        \"Matthew 10:24-25\",\n        \"Luke 6:40 ('everyone when he is fully trained will be like his teacher')\",\n        \"Mark 3:14 ('that they might be with him')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Broader usage for followers of other teachers or movements: disciples of John the Baptist, of Moses, or of the Pharisees, showing the term itself is generic for 'adherent of a teacher' rather than uniquely Christian.\",\n      \"basis\": [\n        \"John 1:35\",\n        \"John 9:28 ('we are disciples of Moses')\",\n        \"Matthew 9:14\",\n        \"Mark 2:18\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Disciple' is less a symbol than a role designation, but its figurative/theological meaning is well settled: a learner-follower of Jesus whose life is defined by obedience, self-denial, imitation, love, and fruit-bearing. The main live disagreement is not over this core meaning but over scope — whether 'disciple' equals every believer (the majority view, grounded in Acts and the Great Commission) or names a costlier, optional level of commitment (a minority position in evangelical debate). Historical-critical scholarship also distinguishes the narrower Gospel usage (the Twelve and Jesus' immediate followers) from the church's later generalized usage.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A dedicated follower, learner, or apprentice of Jesus Christ who submits to His teachings, imitates His life, and is committed to lifelong spiritual growth and obedience.\",\n  \"primary_basis\": [\n    \"Matthew 28:19-20\",\n    \"Luke 14:26-27\",\n    \"John 8:31-32\",\n    \"John 13:35\",\n    \"Matthew 11:29\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A specific reference to the Twelve Apostles, serving as the foundational leaders of the Church and representing the reconstitution of the twelve tribes of Israel.\",\n      \"basis\": [\n        \"Matthew 10:1\",\n        \"Luke 6:13\",\n        \"Matthew 19:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A secondary, higher tier of Christian commitment, distinguishing an entirely surrendered lordship follower from a nominal or basic believer.\",\n      \"basis\": [\n        \"Luke 14:25-33\",\n        \"Matthew 16:24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While disciple is overwhelmingly used to describe any genuine follower of Christ (essentially synonymous with Christian in Acts), narrower usages sometimes distinguish the original Twelve or emphasize a higher standard of radical commitment in modern discipleship literature.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A disciple most commonly signifies a committed follower and learner of Jesus—one who receives his teaching, imitates his way of life, obeys him, and participates in his mission. In Christian application, the disciple often functions as the model or representative of Christian believers generally.\",\n  \"primary_basis\": [\n    \"Matthew 4:18–22 — Jesus calls followers to come after him and become fishers of people.\",\n    \"Matthew 16:24–26; Luke 9:23–24 — discipleship is defined by self-denial, taking up the cross, and following Jesus.\",\n    \"Luke 6:40 — a fully trained disciple becomes like the teacher.\",\n    \"John 8:31–32 — continuing in Jesus’ word identifies true disciples.\",\n    \"John 13:34–35 — love for one another marks Jesus’ disciples.\",\n    \"John 15:8 — bearing fruit is associated with being Jesus’ disciples.\",\n    \"Matthew 28:18–20 — disciples are commissioned to make other disciples through baptism and teaching.\",\n    \"Acts 11:26 — the disciples are identified with the community later called Christians.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A member of the Twelve apostles or of Jesus’ immediate historical circle.\",\n      \"basis\": [\n        \"Matthew 10:1–4 links the Twelve specifically with the designation “disciples.”\",\n        \"Mark 3:13–19 and Luke 6:13–16 distinguish and appoint the Twelve from the wider body of followers.\",\n        \"Some Gospel contexts use “the disciples” as shorthand for this inner group.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A broader adherent or student of a teacher, not necessarily a committed Christian believer.\",\n      \"basis\": [\n        \"Matthew 9:14 refers to disciples of John the Baptist and disciples of the Pharisees.\",\n        \"John 9:28 speaks of disciples of Moses.\",\n        \"The underlying Greek term mathētēs ordinarily denotes a learner, pupil, or adherent.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A literary representative of the church or of different kinds of Christian response—faithful, fearful, misunderstanding, failing, or restored.\",\n      \"basis\": [\n        \"The disciples’ misunderstanding and fear in Mark 4:40; 8:14–21 are often read as instruction or warning for later believers.\",\n        \"Peter’s failure and restoration in Luke 22:31–34, 54–62 and John 21:15–19 are frequently treated paradigmatically.\",\n        \"Matthew 28:16–20 presents the disciples as recipients of a commission extended through the ongoing church.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A symbol specifically of an elite, esoteric, or unusually advanced class of Christians distinct from ordinary believers.\",\n      \"basis\": [\n        \"Such readings occur in some mystical, sectarian, or highly allegorical interpretations but are not the normal New Testament or mainstream Christian usage.\",\n        \"The broader identification of disciples with Christians in Acts 11:26 weighs against treating discipleship as inherently restricted to an elite class.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is strong consensus about the ordinary theological meaning of “disciple” as a learner and follower of Jesus. However, the term is primarily a relational or communal designation rather than a fixed symbol with one settled symbolic referent. Its precise scope varies by context: it may denote the Twelve, a wider group of followers, Christians generally, or literary representatives of the church.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A committed learner and follower of Jesus Christ who adheres to His teachings, imitates His way of life, and often incurs personal cost or self-denial\",\n  \"primary_basis\": [\n    \"Matthew 4:18-22 (calling of the first disciples to follow)\",\n    \"Matthew 16:24 / Mark 8:34 / Luke 9:23 (take up the cross and follow)\",\n    \"Matthew 28:19-20 (Great Commission to make disciples)\",\n    \"Luke 14:26-33 (cost of discipleship)\",\n    \"John 8:31 (abiding in Jesus' word as true discipleship)\",\n    \"Acts 11:26 (disciples first called Christians)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Specifically the Twelve chosen apostles as a restricted inner circle, distinct from the larger group of followers\",\n      \"basis\": [\n        \"Matthew 10:1-4\",\n        \"Mark 3:13-19\",\n        \"Luke 6:12-16\",\n        \"John 6:66-71 (distinction between many disciples and the Twelve)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Any pupil or adherent of a religious teacher (rabbinic or general first-century usage), not uniquely Christian or Christ-centered\",\n      \"basis\": [\n        \"John 9:28 (disciples of Moses)\",\n        \"Matthew 22:16 / Mark 2:18 (disciples of the Pharisees or John the Baptist)\",\n        \"Acts 19:1-7 (disciples of John)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A symbol of the entire Christian community or Church as those who continue Jesus' mission after the resurrection\",\n      \"basis\": [\n        \"Acts 6:1-7\",\n        \"Acts 9:1\",\n        \"Acts 11:26\",\n        \"Matthew 28:19-20\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream Christian teaching and biblical studies the term carries a clear, non-esoteric primary sense as follower/learner of Jesus; symbolic extensions (cost, imitation, Church) remain secondary and rest on the same core passages. No major competing symbolic system displaces this consensus within published Christian interpretation.\"\n}\n\nBOOK ENTRY\nOne in whom the law is sealed — “seal the law among my disciples” — proven by continuing in the word, love, and fruit; three times Jesus says cannot of those who will not leave their own, bear the cross, and forsake all. Baptized into the Name, the disciple is perfected “as his master” — the Head whose Name carries the Word, the covenant law, and the fruitful priesthood.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: a learner and follower of Jesus — any believer, entered by faith and baptism, growing lifelong in Christlikeness.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 8:16; Luke 6:40; Ex 23:21; Jer 31:33; John 8:31; Luke 14:26-33; Rev 14:1) · see The Disciple, ch. 9\n\nAVAILABLE KJV EXCERPTS\nIsaiah 8:16 — Bind up the testimony, seal the law among my disciples.\nLuke 6:40 — The disciple is not above his master: but every one that is perfect shall be as his master.\nExodus 23:21 — Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him.\nJeremiah 31:33 — But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.\nJohn 8:31 — Then said Jesus to those Jews which believed on him, If ye continue in my word, then are ye my disciples indeed;\nLuke 14:26 — If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple.\nLuke 14:27 — And whosoever doth not bear his cross, and come after me, cannot be my disciple.\nLuke 14:28 — For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it?\nLuke 14:29 — Lest haply, after he hath laid the foundation, and is not able to finish it, all that behold it begin to mock him,\nLuke 14:30 — Saying, This man began to build, and was not able to finish.\nLuke 14:31 — Or what king, going to make war against another king, sitteth not down first, and consulteth whether he be able with ten thousand to meet him that cometh against him with twenty thousand?\nLuke 14:32 — Or else, while the other is yet a great way off, he sendeth an ambassage, and desireth conditions of peace.\nLuke 14:33 — So likewise, whosoever he be of you that forsaketh not all that he hath, he cannot be my disciple.\nRevelation 14:1 — And I looked, and, lo, a Lamb stood on the mount Sion, and with him an hundred forty and four thousand, having his Father's name written in their foreheads.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "58e6baa74611a63aff9557232500c12ba91bd943d677f3eeffc34e187fb06deb",
+  "cache": {
+    "hit": false
+  }
+}

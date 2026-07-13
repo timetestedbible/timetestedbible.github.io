@@ -1,0 +1,173 @@
+{
+  "id": "resp_0570a6386253be2a006a5476b7c3a48193bdff7b69e4b73958",
+  "object": "response",
+  "created_at": 1783920311,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920335,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0570a6386253be2a006a5476b835f081939c30bfa140b8f2cb",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0570a6386253be2a006a5476c1116c8193b0fd595bbdd539b6",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"A mountain most commonly signifies a place or sphere of divine presence, revelation, worship, and encounter with God—often emphasizing holiness, transcendence, and nearness to heaven.\",\"primary_basis\":[\"Exodus 19–20; 24:12–18; 34:1–8 — God appears and gives the covenant at Mount Sinai.\",\"1 Kings 19:8–18 — Elijah encounters God at Horeb, the mountain of God.\",\"Psalm 48:1–3; Isaiah 2:2–3; Micah 4:1–2 — Mount Zion is associated with God's presence, temple, instruction, and universal worship.\",\"Matthew 5:1–2 — Jesus teaches from a mountain, commonly read in relation to Sinai and authoritative revelation.\",\"Matthew 17:1–8; Mark 9:2–8; Luke 9:28–36 — the Transfiguration occurs on a mountain amid divine disclosure.\",\"Hebrews 12:18–24 — Sinai and Zion function as contrasting settings of divine encounter and covenant.\",\"Revelation 21:10 — John is taken to a great, high mountain to receive a vision of the holy city.\"],\"alternatives\":[{\"meaning\":\"Kingdom, empire, government, or enduring dominion—especially God's kingdom when the mountain fills or rises above the earth.\",\"basis\":[\"Daniel 2:34–35, 44–45 — the stone becomes a great mountain, interpreted as God's everlasting kingdom.\",\"Isaiah 2:2–4 and Micah 4:1–4 — the mountain of the LORD is exalted above other mountains, with nations streaming to it.\",\"Jeremiah 51:25 — Babylon is called a destroying mountain.\"],\"prominence\":\"common\"},{\"meaning\":\"A formidable obstacle or seemingly impossible difficulty that can be removed through God's power or faith.\",\"basis\":[\"Zechariah 4:7 — the great mountain before Zerubbabel becomes a plain.\",\"Matthew 17:20; 21:21; Mark 11:23; 1 Corinthians 13:2 — moving mountains expresses overcoming what appears impossible.\"],\"prominence\":\"common\"},{\"meaning\":\"Human pride, exalted power, or opposition to God that will be humbled.\",\"basis\":[\"Isaiah 2:12–17 — lofty mountains occur within imagery of everything proud and exalted being brought low.\",\"Isaiah 40:4; Luke 3:5 — mountains and hills are made low in preparation for God's coming.\",\"Jeremiah 51:25 — imperial Babylon is portrayed as a mountain destined for destruction.\"],\"prominence\":\"minority\"},{\"meaning\":\"Stability, permanence, protection, or secure trust.\",\"basis\":[\"Psalm 125:1–2 — those who trust in the LORD are like Mount Zion, which cannot be moved.\",\"Psalm 46:2–3 — mountains moving into the sea represent the collapse of what normally seems most stable.\",\"Psalm 121:1–2 — the hills frame a confession that help ultimately comes from the LORD.\"],\"prominence\":\"minority\"},{\"meaning\":\"The created order shaken or dissolved under divine judgment and apocalyptic upheaval.\",\"basis\":[\"Micah 1:3–4; Nahum 1:5; Habakkuk 3:6, 10 — mountains melt, quake, or shatter before God's appearing.\",\"Revelation 6:14–16; 8:8; 16:20 — mountains are displaced or destroyed in judgment imagery.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single fixed biblical meaning for every occurrence of “mountain.” Divine presence and revelation is the broadest recognizable symbolic association in Christian interpretation, but prophetic, poetic, and apocalyptic contexts regularly use mountains for kingdoms, obstacles, stability, pride, or cosmic upheaval.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1209,
+    "output_tokens_details": {
+      "reasoning_tokens": 406
+    },
+    "total_tokens": 1526
+  },
+  "user": null,
+  "metadata": {}
+}

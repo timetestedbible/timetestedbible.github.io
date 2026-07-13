@@ -1,0 +1,201 @@
+{
+  "id": "resp_00abb37a0f9d16df006a54802863708190b527fb58001892c2",
+  "object": "response",
+  "created_at": 1783922728,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922748,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_00abb37a0f9d16df006a548028fc548190beb464d09d21e761",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_00abb37a0f9d16df006a5480347c0c81909bd48518e5c0888a",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_00abb37a0f9d16df006a54803569408190852418a7858290de",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The dominant consensus identifies the winepress as an image of divine wrath and judgment, especially the crushing of the wicked, while recognizing abundance and vineyard stewardship as secondary contextual senses.\",\"book_summary\":\"The book identifies the winepress more broadly as the vineyard’s point of reckoning, where a people’s fruit yields one of two outcomes: abundant new wine for good fruit or the bloody crushing of the wicked under divine wrath.\",\"consensus_core_identification\":\"Divine wrath and judgment upon the wicked.\",\"book_core_identification\":\"A reckoning of the fruit produced by a people, expressed either as blessing and abundance or as wrath and crushing.\",\"core_relation\":\"BOOK_BROADENS\",\"extension_relation\":\"BOOK_SUPERSET\",\"boundary_disagreement\":\"The book retains the consensus judgment imagery but makes it only one branch of a two-outcome symbol. It adds good-fruit cases involving overflowing presses and integrates vineyard evaluation into the winepress’s central meaning, whereas the consensus treats abundance and vineyard provision as secondary or context-specific senses.\",\"material_contradiction\":\"None. The book expressly affirms the standard wrath-and-judgment identification for the wicked vintage rather than replacing or denying it.\",\"rationale\":\"The core overlap is substantial: Joel 3, Lamentations 1, Isaiah 63, and Revelation 14 support the consensus identification and the book’s negative vintage. The book nevertheless expands the central category from judgment alone to a general reckoning that also includes prosperity for good fruit, drawing on Isaiah 5, Proverbs 3, and Joel 2. Because abundance and vineyard accountability are recognizable consensus alternatives, this is a material broadening rather than a novel identification.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Because the consensus responses already recognize abundance and vineyard accountability as established secondary meanings, one could classify the book as merely synthesizing the full consensus and thus as a MATCH. However, the book elevates those secondary cases into a single governing, two-vintage definition, materially broadening the dominant consensus core.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3883,
+    "input_tokens_details": {
+      "cache_write_tokens": 3880,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1005,
+    "output_tokens_details": {
+      "reasoning_tokens": 578
+    },
+    "total_tokens": 4888
+  },
+  "user": null,
+  "metadata": {}
+}

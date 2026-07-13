@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "light",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLight\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, light is the settled symbol of God's own nature and presence—His holiness, truth, and glory—and, derivatively, of Christ as the divine revelation and salvation given to the world. The core claim is twofold: God is light (utter purity and truth without any darkness), and Jesus Christ is 'the light of the world' who brings that divine life, truth, and salvation to humanity, dispelling the darkness of sin, ignorance, and death.\",\n  \"primary_basis\": [\n    \"1 John 1:5 ('God is light, and in him is no darkness at all')\",\n    \"John 8:12 ('I am the light of the world')\",\n    \"John 1:4-9 (the true light that gives light to everyone, coming into the world)\",\n    \"Genesis 1:3 ('Let there be light'), often read typologically alongside 2 Corinthians 4:6\",\n    \"2 Corinthians 4:6 (God who said 'let light shine out of darkness' has shone in our hearts)\",\n    \"Psalm 27:1 ('The LORD is my light and my salvation')\",\n    \"Isaiah 9:2 ('The people walking in darkness have seen a great light'), quoted in Matthew 4:16\",\n    \"John 12:35-36, 46 (walk while you have the light; believe in the light)\",\n    \"Revelation 21:23 (the Lamb is the lamp of the New Jerusalem)\",\n    \"1 Timothy 6:16 (God dwells in unapproachable light)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Truth, revelation, and divine guidance: light as God's word and wisdom illuminating human understanding and directing conduct (a strand so intertwined with the primary meaning that many treatments do not separate it).\",\n      \"basis\": [\n        \"Psalm 119:105 ('Your word is a lamp to my feet and a light to my path')\",\n        \"Psalm 119:130\",\n        \"Proverbs 6:23\",\n        \"2 Peter 1:19 (the prophetic word as a lamp shining in a dark place)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Moral goodness and righteous living: light as holiness, purity, and ethical conduct opposed to the 'works of darkness'; believers are 'children of light' who must 'walk in the light.'\",\n      \"basis\": [\n        \"Ephesians 5:8-14 ('walk as children of light')\",\n        \"1 John 1:6-7 (walking in the light vs. walking in darkness)\",\n        \"Romans 13:12 ('put on the armor of light')\",\n        \"1 Thessalonians 5:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The church and believers as witnesses: Christians as reflected or derivative light bearing testimony to God in the world.\",\n      \"basis\": [\n        \"Matthew 5:14-16 ('You are the light of the world... let your light shine')\",\n        \"Philippians 2:15 ('shine as lights in the world')\",\n        \"Acts 13:47 (a light for the Gentiles, citing Isaiah 49:6)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Salvation, deliverance, and eschatological blessing: light as the state of the redeemed, rescue from the 'domain of darkness,' and the glory of the age to come.\",\n      \"basis\": [\n        \"Colossians 1:12-13 (inheritance of the saints in light; delivered from the domain of darkness)\",\n        \"1 Peter 2:9 ('called you out of darkness into his marvelous light')\",\n        \"Isaiah 60:1-3, 19-20\",\n        \"Revelation 22:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eastern Orthodox 'uncreated light': the light of the Transfiguration understood (especially in Palamite/hesychast theology) as the uncreated divine energies, a real experiential participation in God rather than a mere metaphor.\",\n      \"basis\": [\n        \"Matthew 17:1-8 and parallels (the Transfiguration)\",\n        \"Exodus 34:29-35 (Moses' shining face)\",\n        \"2 Corinthians 3:18\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Life and joy/general well-being: a Hebrew-idiom reading in which light stands for life itself, prosperity, and favor (the 'light of life,' the 'light of the face').\",\n      \"basis\": [\n        \"Job 33:28, 30 ('the light of life')\",\n        \"Psalm 4:6; Psalm 36:9 ('in your light we see light')\",\n        \"Psalm 97:11\",\n        \"John 8:12 ('light of life')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gnostic and esoteric readings: light as a divine spark or inner illumination within humans, part of a dualistic light-versus-darkness cosmology; historically influential but rejected by orthodox Christianity, though echoes appear in some mystical and Quaker ('Inner Light') traditions.\",\n      \"basis\": [\n        \"Appropriations of John 1 and Johannine light/darkness dualism in Gnostic texts\",\n        \"Quaker appeal to John 1:9 (the light that enlightens every person)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Light is one of the most stable and widely agreed symbols in Christian interpretation. The consensus is not a single narrow definition but a tightly related cluster: God's nature/presence, Christ as revealer and savior, divine truth, and derivative human holiness and witness. Commentators across Catholic, Orthodox, and Protestant traditions treat these as facets of one symbol rather than competing readings. The listed 'alternatives' are mostly complementary emphases; only the Gnostic/esoteric reading is a materially different and historically contested interpretation. Any author claiming a novel or contrary primary meaning for 'light' would be departing from a very strong and well-documented consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine presence, holiness, truth, and revelation, most fully realized in Jesus Christ as the source of salvation and spiritual life, standing in stark contrast to the darkness of sin, evil, and ignorance.\",\n  \"primary_basis\": [\n    \"1 John 1:5\",\n    \"John 8:12\",\n    \"John 1:4-5\",\n    \"Isaiah 9:2\",\n    \"Psalm 27:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The moral witness and righteous conduct of believers reflecting God's nature in a fallen world.\",\n      \"basis\": [\n        \"Matthew 5:14-16\",\n        \"Philippians 2:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Word of God, divine law, and practical spiritual guidance for living.\",\n      \"basis\": [\n        \"Psalm 119:105\",\n        \"Proverbs 6:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The mechanism of divine judgment and the exposure of hidden sin or falsehood.\",\n      \"basis\": [\n        \"Ephesians 5:13\",\n        \"John 3:19-21\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"General gladness, joy, deliverance, and prosperity for God's people.\",\n      \"basis\": [\n        \"Esther 8:16\",\n        \"Psalm 97:11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of light is one of the most pervasive and universally recognized motifs in biblical literature, operating heavily within a dualistic framework where light inherently opposes darkness.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Light most commonly symbolizes God’s holy and life-giving presence as revealed truth and goodness: it discloses reality, guides people, brings salvation and life, and stands opposed to the darkness of sin, evil, ignorance, and death.\",\n  \"primary_basis\": [\n    \"Psalm 27:1 — the Lord is described as the psalmist’s light and salvation.\",\n    \"Psalm 36:9 — in God’s light people see light, linking light with divine life and revelation.\",\n    \"Psalm 119:105,130 — God’s word is a lamp and gives light, symbolizing guidance and understanding.\",\n    \"Isaiah 9:2 — light dawns upon people walking in darkness, commonly interpreted in terms of deliverance and messianic salvation.\",\n    \"Isaiah 60:1-3,19-20 — God’s glory and everlasting presence are portrayed as Israel’s light.\",\n    \"John 1:4-9 — the divine Word is the true light that gives life and enlightens humanity.\",\n    \"John 8:12 — Jesus identifies himself as the light of the world, giving the light of life.\",\n    \"2 Corinthians 4:6 — light symbolizes the knowledge of God’s glory revealed in Christ.\",\n    \"1 John 1:5-7 — “God is light,” with light associated with divine holiness, truth, and faithful fellowship.\",\n    \"Revelation 21:23-25; 22:5 — God and the Lamb illuminate the renewed creation, where darkness is absent.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Light specifically symbolizes Jesus Christ as the Messiah and revealer of God, rather than divine presence or truth in a broader sense.\",\n      \"basis\": [\n        \"Isaiah 9:2\",\n        \"John 1:4-9\",\n        \"John 8:12\",\n        \"John 9:5\",\n        \"John 12:35-36,46\",\n        \"Luke 2:30-32\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Light symbolizes the faithful witness and righteous conduct of God’s people, who reflect divine truth before the world.\",\n      \"basis\": [\n        \"Isaiah 42:6; 49:6\",\n        \"Matthew 5:14-16\",\n        \"Luke 11:33-36\",\n        \"Acts 13:47\",\n        \"Philippians 2:15\",\n        \"Ephesians 5:8-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Light symbolizes moral purity and righteousness, especially conduct that contrasts with sinful “works of darkness.”\",\n      \"basis\": [\n        \"John 3:19-21\",\n        \"Romans 13:12-13\",\n        \"Ephesians 5:8-14\",\n        \"1 Thessalonians 5:5-8\",\n        \"1 John 1:5-7; 2:8-11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Light symbolizes knowledge, understanding, or revelation, particularly illumination given through God’s word or gospel.\",\n      \"basis\": [\n        \"Psalm 119:105,130\",\n        \"Daniel 2:22\",\n        \"2 Corinthians 4:4-6\",\n        \"Ephesians 1:17-18\",\n        \"2 Peter 1:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Light symbolizes salvation, hope, flourishing, and renewed life after oppression, suffering, or death.\",\n      \"basis\": [\n        \"Job 33:28,30\",\n        \"Psalm 27:1\",\n        \"Isaiah 9:2\",\n        \"Isaiah 58:8-10\",\n        \"Micah 7:8-9\",\n        \"Matthew 4:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Light functions as exposure and judgment: it reveals hidden deeds and makes moral reality manifest, not merely comforting or saving.\",\n      \"basis\": [\n        \"John 3:19-21\",\n        \"1 Corinthians 4:5\",\n        \"Ephesians 5:11-13\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In some passages light denotes ordinary created light, daylight, life, prosperity, or public visibility without carrying a fixed theological symbol.\",\n      \"basis\": [\n        \"Genesis 1:3-5\",\n        \"Ecclesiastes 11:7\",\n        \"Job 30:26\",\n        \"Matthew 5:15\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad and recognizable consensus that light is a positive symbol associated with God, revelation, holiness, life, and salvation in contrast to darkness. Nevertheless, it is polyvalent: context determines whether the immediate referent is God, Christ, Scripture, salvation, moral purity, believers’ witness, or judgment through exposure.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God and especially Jesus Christ as the source of spiritual truth, holiness, life, salvation, and divine presence, opposed to darkness as evil, sin, and ignorance\",\n  \"primary_basis\": [\n    \"John 8:12\",\n    \"John 1:4-9\",\n    \"1 John 1:5\",\n    \"John 9:5\",\n    \"Matthew 5:14-16\",\n    \"2 Corinthians 4:6\",\n    \"Isaiah 9:2\",\n    \"Psalm 27:1\",\n    \"Genesis 1:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Believers or the Church as light-bearers who reflect and display God's light through righteous living and witness\",\n      \"basis\": [\n        \"Matthew 5:14-16\",\n        \"Ephesians 5:8\",\n        \"Philippians 2:15\",\n        \"1 Thessalonians 5:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Word of God or divine commandments as a guiding lamp or light for moral and spiritual direction\",\n      \"basis\": [\n        \"Psalm 119:105\",\n        \"Proverbs 6:23\",\n        \"2 Peter 1:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom, knowledge, understanding, or intellectual/spiritual illumination\",\n      \"basis\": [\n        \"Daniel 2:22\",\n        \"Ecclesiastes 2:13\",\n        \"Proverbs 4:18\",\n        \"Luke 11:34-36\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Life itself or vitality (often linked to divine life)\",\n      \"basis\": [\n        \"John 1:4\",\n        \"Job 33:28-30\",\n        \"Psalm 36:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Heavenly glory, angelic appearance, or theophanic radiance\",\n      \"basis\": [\n        \"Matthew 28:3\",\n        \"Acts 12:7\",\n        \"Revelation 21:23-24\",\n        \"Luke 2:9\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Light is among the most pervasive and consistent biblical symbols in Christian interpretation. Johannine literature supplies the dominant Christological reading, while the light/darkness dualism is near-universal across OT and NT usage and major Christian traditions. Secondary applications (believers, Scripture, wisdom) are widely recognized but remain derivative of the primary divine referent.\"\n}\n\nBOOK ENTRY\nThe law lived visibly — good works others can see.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Prov 6:23; Matt 5:16) · see Light and Darkness, ch. 21\n\nAVAILABLE KJV EXCERPTS\nProverbs 6:23 — For the commandment is a lamp; and the law is light; and reproofs of instruction are the way of life:\nMatthew 5:16 — Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "8883602a06945b1d62b50e0f6e28bae846656419d7d04faaba3be624365d1f1c",
+  "cache": {
+    "hit": false
+  }
+}

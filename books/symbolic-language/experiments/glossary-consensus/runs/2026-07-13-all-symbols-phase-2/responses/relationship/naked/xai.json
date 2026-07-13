@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921956,
+  "completed_at": 1783921979,
+  "id": "3f8dc3cb-a3de-9c6c-a524-3a233c60c8b1",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_3f8dc3cb-a3de-9c6c-a524-3a233c60c8b1",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Naked, nakedness\".\nThe book's entry \"Without covenant covering — exposed in one's breach\" is a precise, covenantal refinement of the consensus primary meaning. It keeps the core identification of nakedness as shameful exposure after sin but narrows the remedy to the absence of covenantal covering (as in Ezekiel 16:8, where God covers naked ness to enter covenant) and ties it directly to breach. This is REFINED rather than MATCH or DIVERGENT: the consensus already includes the shame/exposure/need-for-covering arc (especially via Genesis 3 and Ezekiel 16), but the book adds specificity about covenant breach and excludes purely general shame or poverty readings that the consensus still treats as valid alternatives. The printed references (Ezekiel 16:8 and Genesis 3:7) give strong support for this narrowed covenantal focus. Overall, the book's entry is a tighter, more technical version of the same symbolic referent. \n\ncore_relation: BOOK_NAR ROWS  \nextension_relation: PARTIAL_RECLASSIFICATION (adds covenant-specific boundary while retaining the exposure/shame category)  \nclassification: REFINED (with strong scriptural support from the cited passages) \n\nThe book's entry is a precise, covenantal refinement of the consensus primary meaning. It keeps the core identification of naked ness as shameful exposure after sin but narrows the remedy to the absence of covenantal covering (as in Ezekiel 16:8, where God covers naked ness to enter covenant) and ties it directly to breach.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Primary symbolic meaning is post-Fall shameful exposure of sin/guilt and spiritual vulnerability/destitution that requires divine covering (with righteousness, grace, or atonement); pre-Fall unashamed nakedness is a common contrasting alternative for innocence, while judgment/humiliation, poverty, sexual euphemism, and bodilessness are recognized contextual senses.\",\n  \"book_summary\": \"Nakedness means the state of being without covenant covering and thus exposed in one's breach.\",\n  \"consensus_core_identification\": \"shameful/spiritual exposure of sin needing covering\",\n  \"book_core_identification\": \"absence of covenant covering (exposed via breach)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book restricts the covering specifically to 'covenant covering' and the exposure to 'one's breach,' thereby excluding or de-emphasizing non-covenantal framings of covering (e.g., mere garments of skin, white garments of righteousness, or general atonement) and non-breach senses (pre-Fall innocence, material poverty, prophetic sign-acts, disembodiment) that the consensus admits as alternatives or contextual uses.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores both center on exposure that lacks covering after sin/breach; the book retains that referent and category but materially narrows precision and conditions by insisting on 'covenant covering' (drawn from the Ezek 16 marriage-covenant imagery) rather than the broader consensus cluster of divine clothing/righteousness/grace. This is boundary refinement, not replacement of the central identification or outright contradiction. Extension is a subset because the book privileges the post-sin/covenant-breach cases while the consensus primary plus alternatives cover a wider range of referents.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Ezek 16:8 supplies the covenant language, yet Gen 3:7 (and the broader consensus) does not frame the covering as covenantal, so the book may over-narrow a more general exposure-shame motif.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_3f8dc3cb-a3de-9c6c-a524-3a233c60c8b1",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4329,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2067,
+    "output_tokens_details": {
+      "reasoning_tokens": 1583
+    },
+    "total_tokens": 6396,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 202920000,
+    "context_details": {
+      "input_tokens": 4329,
+      "output_tokens": 2067
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

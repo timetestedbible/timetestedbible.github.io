@@ -1,0 +1,201 @@
+{
+  "id": "resp_033ed1323c320aba006a5479cfc5c88195bb3b90cde9844c49",
+  "object": "response",
+  "created_at": 1783921103,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921123,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_033ed1323c320aba006a5479d04fe48195a0e4a3e526c8adf6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_033ed1323c320aba006a5479d99b9881959b06b26d01ee1177",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_033ed1323c320aba006a5479dad8508195a4706f0cd29e802d",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"A disciple is a learner and committed follower of Jesus who receives his teaching, imitates him, obeys him, bears the cost of following, and ordinarily represents a Christian believer.\",\"book_summary\":\"A disciple is a covenantally marked person in whom God's law or Word is sealed, whose status is demonstrated by continuing in the Word, love, fruit, cross-bearing, and forsaking all, and who is baptized into the Name and perfected toward the Master's likeness.\",\"consensus_core_identification\":\"A committed learner-follower of Jesus.\",\"book_core_identification\":\"A proven, law-inscribed and Name-bearing follower conformed to Jesus through radical obedience.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book appears to exclude baptized or professing believers who do not demonstrably continue in the Word, bear the cross, and forsake all, whereas the dominant consensus ordinarily applies 'disciple' to Christians generally while treating those qualities as the norm and calling of discipleship. It thus reclassifies discipleship from a broad Christian identity toward a proven covenantal condition.\",\"material_contradiction\":\"There is no replacement of the central follower-of-Jesus referent. The material tension concerns whether all genuine believers are disciples as an identity or only those meeting the book's law-sealed and costly-obedience criteria qualify in the full sense.\",\"rationale\":\"The book retains the consensus category of a follower formed into the Master's likeness and draws on familiar marks of discipleship such as abiding in Jesus' word, obedience, self-denial, and renunciation. Its distinctive 'sealed law,' 'Name,' and priesthood framework supplies a more specific theological account and tighter qualification rather than a different referent. This narrowing is also recognizable in the consensus's listed minority view of discipleship as requiring a higher or proven level of commitment, so it is refined rather than novel.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Isaiah 8:16 says to seal the law 'among' the disciples but does not clearly define a disciple as a person in whom the law is sealed. Jeremiah 31:33, Exodus 23:21, and Revelation 14:1 can support broader law-and-Name associations, but the printed excerpts do not by themselves establish baptism into the Name, fruitful priesthood, or the full composite definition. The direct discipleship texts more securely support continuing in the Word, costly renunciation, and likeness to the Master.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4176,
+    "input_tokens_details": {
+      "cache_write_tokens": 4173,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1120,
+    "output_tokens_details": {
+      "reasoning_tokens": 594
+    },
+    "total_tokens": 5296
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "almond",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nAlmond (shaqed)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"God's watchfulness and vigilance—specifically His wakeful attentiveness to His word so as to fulfill it swiftly. This rests on the Hebrew wordplay in Jeremiah between 'shaqed' (almond) and 'shoqed' (watching/wakeful), reinforced by the natural fact that the almond is the first tree to blossom in the Levantine spring (often called the 'awake' or 'watchful' tree), making it an emblem of divine alertness, promptness, and the hastening of God's purposes.\",\n  \"primary_basis\": [\n    \"Jeremiah 1:11-12 (the vision of the almond branch: 'I see a branch of an almond tree [shaqed]... I am watching [shoqed] over my word to perform it')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine election and authenticated priesthood: Aaron's rod that budded, blossomed, and bore almonds signifies God's choice of the legitimate priest; in Christian typology this is frequently extended to resurrection and new life (dead wood brought to life), and to Christ's priesthood and resurrection.\",\n      \"basis\": [\n        \"Numbers 17:1-11 (esp. 17:8)\",\n        \"Hebrews 9:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Light, divine presence, and perfection in worship: the cups of the menorah were fashioned like almond blossoms, so the almond is read as tied to God's light, the flourishing life of God's sanctuary, or (combined with the wordplay) God's watchful presence over Israel.\",\n      \"basis\": [\n        \"Exodus 25:33-34\",\n        \"Exodus 37:19-20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Old age and human mortality: the blossoming almond tree (white blossoms) is taken as a figure for the white hair of the aged in the allegory of aging in Ecclesiastes.\",\n      \"basis\": [\n        \"Ecclesiastes 12:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection and awakening from death as a standalone symbol (early blooming = firstfruits of spring), used in Christian art and devotional writing, sometimes framing the almond-shaped mandorla around Christ in iconography.\",\n      \"basis\": [\n        \"Numbers 17:8 (typologically)\",\n        \"General natural symbolism rather than a single proof text\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Haste, suddenness, or imminent judgment: because the almond 'hastens' to bloom, some interpreters stress speed of coming judgment in Jeremiah's vision rather than watchfulness per se.\",\n      \"basis\": [\n        \"Jeremiah 1:11-12 read alongside Jeremiah 1:13-16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable, well-established consensus: the almond in biblical symbolism is chiefly the 'wakeful tree' signifying God's watchfulness over His word, anchored in the Jeremiah 1:11-12 pun, and this reading appears across commentaries, Bible dictionaries (e.g., entries on shaqed), and homiletical literature. The other biblical almond passages (Aaron's rod, the menorah, Ecclesiastes 12) generate distinct but complementary symbolic strands—priesthood/resurrection, sanctuary light, and old age—each widely acknowledged in reference works, though none displaces the watchfulness motif as the primary association. Genesis 43:11 (almonds among the gifts sent to Egypt) is occasionally cited but carries little symbolic weight in mainstream interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Watchfulness, the hastening or fulfillment of God's word, and resurrection or new life.\",\n  \"primary_basis\": [\n    \"Jeremiah 1:11-12\",\n    \"Numbers 17:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine election, vindication, and chosen priestly authority.\",\n      \"basis\": [\n        \"Numbers 17:5-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine light, fruitfulness, and the illumination of the Holy Spirit via the tabernacle lampstand.\",\n      \"basis\": [\n        \"Exodus 25:33-34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Old age, the passing of youth, and white hair (associated with the white/pink blossoms of the tree).\",\n      \"basis\": [\n        \"Ecclesiastes 12:5\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The primary symbolic meaning of watchfulness derives from an explicit Hebrew wordplay in Jeremiah 1:11-12 between 'shaqed' (almond tree) and 'shoqed' (watching). Because the almond is the first tree to blossom in the Middle Eastern spring, it naturally signifies awakening and resurrection, themes further reinforced by the miraculous blooming of Aaron's dead wooden staff.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Watchfulness or wakefulness—especially God’s vigilant readiness to fulfill his word. This symbolism rests on the Hebrew wordplay between šāqēd (“almond”) and šōqēd (“watching”), reinforced by the almond tree’s early blossoming.\",\n  \"primary_basis\": [\n    \"Jeremiah 1:11–12: Jeremiah sees an almond branch, and God explains, “I am watching over my word to perform it.”\",\n    \"The almond’s reputation as an early-blooming or “wakeful” tree commonly supports the Jeremiah wordplay in Christian exposition.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine election, authenticated priesthood, and fruitful spiritual authority\",\n      \"basis\": [\n        \"Numbers 17:8: Aaron’s staff buds, blossoms, and produces ripe almonds, vindicating God’s choice of Aaron and the Levitical priesthood.\",\n        \"Hebrews 9:4 recalls Aaron’s budded staff in connection with the ark.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection, new life, or supernatural fruitfulness arising from death\",\n      \"basis\": [\n        \"Numbers 17:8: the apparently lifeless staff produces buds, blossoms, and almonds.\",\n        \"Christian typological teaching sometimes connects Aaron’s living staff with resurrection life, though the biblical text directly emphasizes divine selection.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Old age or whitening hair\",\n      \"basis\": [\n        \"Ecclesiastes 12:5: “the almond tree blossoms” is commonly read as an image of the white or gray hair of old age.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Light, holiness, or life associated with the sanctuary and menorah\",\n      \"basis\": [\n        \"Exodus 25:31–36 and 37:17–22: the lampstand’s cups are shaped like almond blossoms.\",\n        \"These meanings arise from the lampstand’s broader symbolism rather than from an explicit interpretation of the almond itself.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The clearest and most widely recognized symbolic association of šāqēd is watchfulness, based explicitly on Jeremiah 1:11–12. Almond imagery is nevertheless context-dependent; it does not carry one fixed meaning in every biblical occurrence.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"divine watchfulness / vigilance (God promptly watching over and fulfilling His word)\",\n  \"primary_basis\": [\n    \"Jeremiah 1:11-12 (explicit wordplay between Hebrew shaqed 'almond' and shaqad 'to watch/be alert')\",\n    \"the almond tree’s early blooming as a natural image of readiness and swiftness\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"resurrection, new life emerging from death, or divine choice/confirmation of priesthood\",\n      \"basis\": [\n        \"Numbers 17:8 (Aaron’s rod, a dead almond branch that miraculously budded, blossomed, and produced almonds overnight)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"old age / white hair of the elderly\",\n      \"basis\": [\n        \"Ecclesiastes 12:5 (the blossoming almond tree as a poetic image of white hair)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"hope, awakening, or firstfruits of spring\",\n      \"basis\": [\n        \"general observation of the almond as the earliest tree to blossom in the biblical landscape\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Jeremiah wordplay is the single most frequently cited and distinctive symbolic association in Christian biblical interpretation and teaching; the other readings arise from different passages and remain secondary or context-specific rather than competing for the primary slot.\"\n}\n\nBOOK ENTRY\nThe watcher-tree and the priesthood's sign — first tree to wake, from shaqad, to watch: “I will watch over my word.” Aaron's dead rod budded, blossomed, and yielded almonds overnight — the house of Levi chosen by a resurrection sign — and the sanctuary lampstand is carved of almond cups: the watcher-tree bears the lamp.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 1:11-12; Num 17:8; Ex 25:33-34) · see The Fall of Babylon, ch. 35\n\nAVAILABLE KJV EXCERPTS\nJeremiah 1:11 — Moreover the word of the LORD came unto me, saying, Jeremiah, what seest thou? And I said, I see a rod of an almond tree.\nJeremiah 1:12 — Then said the LORD unto me, Thou hast well seen: for I will hasten my word to perform it.\nNumbers 17:8 — And it came to pass, that on the morrow Moses went into the tabernacle of witness; and, behold, the rod of Aaron for the house of Levi was budded, and brought forth buds, and bloomed blossoms, and yielded almonds.\nExodus 25:33 — Three bowls made like unto almonds, with a knop and a flower in one branch; and three bowls made like almonds in the other branch, with a knop and a flower: so in the six branches that come out of the candlestick.\nExodus 25:34 — And in the candlestick shall be four bowls made like unto almonds, with their knops and their flowers.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "5cdcfb878d911cafd42b0fc9e9eca009de8849e0cd9dc4c91bbc849a243eae90",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "assembly",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nAssembly of the wicked / synagogue of Satan\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching the phrase denotes a counterfeit covenant community: a group that claims the identity and privileges of God's people while in fact opposing God and persecuting the faithful, thereby serving Satan rather than God. In its original setting in Revelation, the dominant historical-critical reading takes it as the local Jewish synagogue communities in Smyrna and Philadelphia who denounced or slandered Christians to Roman authorities; the theological point drawn from it in Christian interpretation is that outward religious identity without allegiance to Christ is a false claim, so that the 'assembly' stands symbolically for false or apostate religion in opposition to the true people of God. The related phrase 'assembly of the wicked' (Psalm 22:16) is traditionally read christologically as the hostile crowd surrounding the suffering righteous one, applied in Christian exegesis to those who condemned and crucified Christ.\",\n  \"primary_basis\": [\n    \"Revelation 2:9 ('the slander of those who say they are Jews and are not, but are a synagogue of Satan')\",\n    \"Revelation 3:9 ('those of the synagogue of Satan who say that they are Jews and are not, but lie')\",\n    \"Psalm 22:16 ('the assembly of the wicked have enclosed me'), read as a passion prophecy\",\n    \"Psalm 26:4-5 ('I have hated the assembly of evildoers')\",\n    \"Romans 2:28-29 (true Jewishness is inward, of the heart)\",\n    \"John 8:39-44 (opponents of Jesus described as children of the devil rather than of Abraham)\",\n    \"Isaiah 45:14 and 60:14 (nations bowing before God's people, alluded to in Revelation 3:9)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Historical-referential reading: the actual Jewish synagogues of Smyrna and Philadelphia that rejected Christian claims and informed against believers; the phrase is polemic within a first-century intra-Jewish/sectarian conflict rather than a timeless symbol.\",\n      \"basis\": [\n        \"Revelation 2:9-10\",\n        \"Revelation 3:9\",\n        \"Acts 13:45, 14:2, 17:5-13 (patterns of synagogue opposition)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Supersessionist/ecclesial reading: the church is the true Israel, and the 'synagogue of Satan' represents Judaism (or any group) that claims covenant status apart from Christ; the true 'Jews' are believers in Jesus.\",\n      \"basis\": [\n        \"Revelation 2:9; 3:9\",\n        \"Romans 2:28-29\",\n        \"Galatians 6:16\",\n        \"Philippians 3:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritualizing/homiletic reading: the phrase stands for apostate or nominal Christianity and false churches in any era—religious bodies with outward form but Satanic allegiance—often used in Protestant polemics (e.g., against Rome) or in sermons against hypocrisy.\",\n      \"basis\": [\n        \"Revelation 2:9; 3:9\",\n        \"2 Corinthians 11:13-15\",\n        \"Matthew 7:21-23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gentile-Judaizer reading: a minority scholarly position holding that those 'who say they are Jews and are not' were Gentile Christians or God-fearers falsely adopting Jewish identity (e.g., to escape persecution or impose Jewish practice), not ethnic Jews at all.\",\n      \"basis\": [\n        \"Revelation 2:9; 3:9 read as literal denial of Jewish identity\",\n        \"comparisons with Galatians and the Judaizing controversy\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Conspiratorial/anti-Semitic misreading: identifying the 'synagogue of Satan' with Jews as a whole or with alleged impostor groups (e.g., certain Identity-movement claims about 'false Jews'); this appears in fringe literature and is rejected by mainstream scholarship and churches.\",\n      \"basis\": [\n        \"Revelation 2:9; 3:9 wrenched from their first-century context\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus on the symbolic force of the term—a false claim to be God's people combined with active hostility to the faithful—even though scholars still debate the precise historical referent in Revelation (ethnic Jewish synagogues vs. Judaizing Gentiles). 'Assembly of the wicked' (Psalm 22:16) and 'synagogue of Satan' (Revelation 2:9; 3:9) are distinct phrases that Christian interpreters have often linked, since the Septuagint's 'synagoge' can translate the Hebrew for 'assembly'; the christological reading of Psalm 22 as describing Christ's persecutors is ancient and widespread. Commentators across traditions (patristic, Reformation, and modern critical) uniformly caution that the Revelation texts are situational polemic and should not be generalized into a condemnation of Jews or Judaism as such.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A religious group or institution that claims to serve God and hold true covenantal authority, but actively opposes Christ and persecutes true believers. In its original biblical context, it specifically refers to local Jewish communities in Asia Minor who rejected Jesus as Messiah and persecuted the early Christians, while 'assembly of the wicked' prophetically describes those who orchestrated the crucifixion.\",\n  \"primary_basis\": [\n    \"Revelation 2:9\",\n    \"Revelation 3:9\",\n    \"Psalm 22:16\",\n    \"John 8:44\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Any false church, heretical group, or apostate religious institution that opposes true believers (a general spiritualized application historically used by Protestant Reformers against the Papacy).\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A historical anti-Semitic designation for the Jewish people collectively across all time.\",\n      \"basis\": [\n        \"John 8:44\",\n        \"Revelation 2:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal occult gatherings or groups explicitly worshipping Satan.\",\n      \"basis\": [\n        \"Revelation 2:9\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Modern biblical scholarship largely agrees that 'synagogue of Satan' originally described specific first-century local conflicts between early Christians and established Jewish communities in Smyrna and Philadelphia, rather than serving as a blanket condemnation of all Jews. 'Assembly of the wicked' is primarily drawn from Psalm 22:16, traditionally read as a Messianic prophecy regarding Christ's executioners.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A community that claims religious legitimacy or covenant identity but, through opposition to God, Christ, or faithful believers, functions as an instrument of Satan. In Christian interpretation, the expression usually signifies false or hostile religion rather than a building or an assembly openly dedicated to Satan.\",\n  \"primary_basis\": [\n    \"Revelation 2:9 — opponents of the church at Smyrna who claim to be Jews are called “a synagogue of Satan.”\",\n    \"Revelation 3:9 — the same designation is applied to opponents of the church at Philadelphia.\",\n    \"Psalm 26:5 — the psalmist declares hatred for the “assembly of evildoers” or “congregation of the wicked.”\",\n    \"John 8:39–44 — often cited in Christian interpretation as a parallel in which claimed covenant ancestry is contrasted with conduct characterized as doing the devil’s works.\",\n    \"Romans 2:28–29 — sometimes used to support the broader theological distinction between outward religious identity and inward faithfulness.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The phrase in Revelation refers specifically to local Jewish opponents of the Christian communities in first-century Smyrna and Philadelphia, probably in the context of social exclusion, denunciation, or persecution. On this reading it is historically particular and must not be generalized to Jews or Judaism.\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\",\n        \"The local and polemical settings of the messages to the seven churches\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"It symbolizes an apostate or false church: people professing to belong to God while corrupting doctrine, persecuting genuine believers, or serving worldly and demonic interests.\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\",\n        \"Matthew 7:15–23\",\n        \"2 Corinthians 11:13–15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"It represents an end-times counterfeit religious system or organized anti-Christian power aligned with Satan.\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\",\n        \"Revelation 13:11–18\",\n        \"Revelation 17:1–6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"It denotes ethnic Jews or Judaism generally as satanic or rejected by God.\",\n      \"basis\": [\n        \"A polemical generalization from Revelation 2:9 and 3:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"It refers literally to an assembly whose members consciously worship Satan.\",\n      \"basis\": [\n        \"A strictly literal reading of the phrase without regard to its polemical context\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus about the expression’s rhetorical symbolism—an ostensibly legitimate religious body acting in opposition to God—but no full consensus about its precise historical or prophetic referent. Mainstream contemporary interpretation generally rejects applying “synagogue of Satan” to Jewish people or Judaism as a whole, emphasizing that Revelation addresses particular opponents in specific first-century cities.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A group falsely claiming to be God's true people (Jews) who actually serve Satan by opposing and persecuting faithful Christians\",\n  \"primary_basis\": [\n    \"Revelation 2:9\",\n    \"Revelation 3:9\",\n    \"John 8:44\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Specific first-century Jewish synagogue communities in Smyrna and Philadelphia that slandered and opposed local Christian churches\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\",\n        \"historical context of Roman Asia Minor\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Any false or apostate religious assembly that pretends to piety while opposing true believers (broader symbolic application to false religion or counterfeit church)\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\",\n        \"Psalm 22:16 (assembly of the wicked)\",\n        \"2 Corinthians 11:13-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judaism or ethnic Jews collectively as perpetual enemies of the church\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\",\n        \"John 8:44\",\n        \"historical Christian polemic\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Judaizing Christians or internal false teachers claiming Mosaic privilege\",\n      \"basis\": [\n        \"Revelation 2:9\",\n        \"Revelation 3:9\",\n        \"Galatians 2-5 parallels\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The paired phrasing equates the OT 'assembly of the wicked' (e.g., Ps 22:16) with the NT 'synagogue of Satan.' Mainstream Christian teaching converges on the core idea of false claimants to covenant status who persecute the faithful; debates concern scope (local historical vs. typological) rather than the basic symbolic sense.\"\n}\n\nBOOK ENTRY\nThe counterfeit congregation — an edah (the covenant-assembly word) claiming covenant standing while gathered against the covenant's Lord: God names the rebel camp “this evil congregation… gathered together against me,” Korah's company declares all the congregation holy, and at the cross the assembly encloses the Messiah from inside the camp while the dogs compass from without — “the synagogue of Satan, which say they are Jews, and are not.”\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 22:16; Num 14:35; 16:3; Ps 1:5; 26:5; Acts 4:27; Rev 2:9; 3:9) · see What Is the Point?, ch. 25\n\nAVAILABLE KJV EXCERPTS\nPsalms 22:16 — For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet.\nNumbers 14:35 — I the LORD have said, I will surely do it unto all this evil congregation, that are gathered together against me: in this wilderness they shall be consumed, and there they shall die.\nNumbers 16:3 — And they gathered themselves together against Moses and against Aaron, and said unto them, Ye take too much upon you, seeing all the congregation are holy, every one of them, and the LORD is among them: wherefore then lift ye up yourselves above the congregation of the LORD?\nPsalms 1:5 — Therefore the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous.\nPsalms 26:5 — I have hated the congregation of evil doers; and will not sit with the wicked.\nActs 4:27 — For of a truth against thy holy child Jesus, whom thou hast anointed, both Herod, and Pontius Pilate, with the Gentiles, and the people of Israel, were gathered together,\nRevelation 2:9 — I know thy works, and tribulation, and poverty,(but thou art rich) and I know the blasphemy of them which say they are Jews, and are not, but are the synagogue of Satan.\nRevelation 3:9 — Behold, I will make them of the synagogue of Satan, which say they are Jews, and are not, but do lie; behold, I will make them to come and worship before thy feet, and to know that I have loved thee.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "e54e8a97abb5321e92da2ac1e921cf2569092402d7340d85fca18c506d544493",
+  "cache": {
+    "hit": false
+  }
+}

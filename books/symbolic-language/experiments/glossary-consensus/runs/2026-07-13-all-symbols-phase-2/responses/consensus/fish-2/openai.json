@@ -1,0 +1,173 @@
+{
+  "id": "resp_06bfca1f95f12473006a5350637c60819394f0f06550d7283f",
+  "object": "response",
+  "created_at": 1783844963,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783844987,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_06bfca1f95f12473006a535065d44081938fce74ff7ac414f1",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_06bfca1f95f12473006a53506d14c48193b2f151462479a880",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"In Christian interpretation of the “great fish” in Jonah, the most recognizable symbolic reading is the realm of death or the grave from which God delivers—typologically anticipating Christ’s burial and resurrection after three days.\",\"primary_basis\":[\"Jonah 1:17—Jonah remains inside the great fish for three days and three nights.\",\"Jonah 2:1–10—Jonah describes his confinement in deathlike terms, including “the belly of Sheol,” before being delivered.\",\"Matthew 12:39–40—Jesus explicitly compares Jonah’s three days in the fish with the Son of Man’s three days in the heart of the earth.\",\"Matthew 16:4 and Luke 11:29–30—the “sign of Jonah” is applied to Jesus, though Luke emphasizes Jonah himself as a sign.\"] ,\"alternatives\":[{\"meaning\":\"The great fish is chiefly an instrument of divine providence: simultaneously judgment, preservation, and deliverance, rather than a symbol with one fixed referent.\",\"basis\":[\"Jonah 1:17 states that the Lord appointed or provided the fish.\",\"Jonah 2:6–10 presents God as preserving Jonah and commanding the fish to release him.\"],\"prominence\":\"common\"},{\"meaning\":\"Sea-monsters symbolize primordial chaos, hostile cosmic powers, or nations opposed to God, which God creates, restrains, or defeats.\",\"basis\":[\"Genesis 1:21—God creates the great sea creatures, denying them independent divine status.\",\"Job 7:12; 26:12–13; 41:1–34—sea and Leviathan imagery evoke dangerous powers under God’s authority.\",\"Psalm 74:13–14 and 89:9–10—God crushes sea-monsters, Leviathan, or Rahab.\",\"Isaiah 27:1 and 51:9–10—Leviathan, the dragon, and Rahab represent powers defeated by God.\",\"Ezekiel 29:3 and 32:2—Pharaoh is portrayed as a great sea-monster.\",\"Revelation 12:3–9 and 13:1—dragon and sea-beast imagery represents satanic and imperial opposition.\"],\"prominence\":\"common\"},{\"meaning\":\"Fish symbolize people gathered through evangelism or separated at judgment.\",\"basis\":[\"Matthew 4:19 and Mark 1:17—disciples are made “fishers of men.”\",\"Luke 5:1–11—the miraculous catch accompanies the disciples’ mission to gather people.\",\"Matthew 13:47–50—the net gathering fish symbolizes the final separation of the righteous and wicked.\",\"John 21:1–14—the large catch is often interpreted ecclesially or missionally.\"],\"prominence\":\"common\"},{\"meaning\":\"The fish serves as a symbol of Christ and Christian identity, especially through the early Christian ΙΧΘΥΣ (“fish”) acrostic.\",\"basis\":[\"The direct basis is early Christian tradition rather than an explicit biblical equation.\",\"New Testament claims about Jesus as Christ, Son of God, and Savior supplied the content summarized by the Greek acrostic.\"],\"prominence\":\"common\"},{\"meaning\":\"Jonah’s fish represents a particular political empire, demonic being, or other specific historical power.\",\"basis\":[\"Such readings generally depend on extended allegory or attempts to connect Jonah with broader sea-monster and imperial imagery rather than on an explicit identification in Jonah.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single settled symbolic meaning for “fish,” “great fish,” and “sea-monster” across the Bible. The death-and-resurrection typology is the dominant Christian reading of Jonah’s great fish because Jesus supplies the comparison in Matthew 12. Ordinary fish, Jonah’s appointed fish, and mythic or prophetic sea-monsters function differently and should not be treated as one uniform symbol.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 324,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1124,
+    "output_tokens_details": {
+      "reasoning_tokens": 320
+    },
+    "total_tokens": 1448
+  },
+  "user": null,
+  "metadata": {}
+}

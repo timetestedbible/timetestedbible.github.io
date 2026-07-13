@@ -1,0 +1,201 @@
+{
+  "id": "resp_0dd43976a472ac2e006a547f3b68888194821df2b2dd9a552e",
+  "object": "response",
+  "created_at": 1783922491,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922519,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0dd43976a472ac2e006a547f3bfd6c81949744ceb4bf225ad2",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0dd43976a472ac2e006a547f45d0d08194b10a88985feb07ab",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0dd43976a472ac2e006a547f4f670c81948dbfff5e11d9ee7c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The consensus identifies the sword primarily with the Word of God as penetrating, authoritative speech, while also recognizing war, violence, and divine judgment as common context-dependent senses.\",\"book_summary\":\"The book restricts the symbol to war and judgment: the great sword produces violent conflict, while the flaming sword represents judgment that guards or excludes.\",\"consensus_core_identification\":\"The Word of God, especially as powerful speech that discerns or judges.\",\"book_core_identification\":\"War and the word or instrument of judgment.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book retains the consensus connection between sword and judgment-bearing divine speech but narrows that word-symbolism to judgment and elevates war to equal prominence. It omits broader consensus cases such as spiritual warfare, discernment, gospel division, civil authority, and sorrow. Its cited cases are nevertheless already covered by the consensus alternatives.\",\"material_contradiction\":\"There is no direct contradiction in the cited contexts: the consensus itself treats Revelation 6:4 as war or destruction and Genesis 3:24 as judgment or exclusion. The disagreement concerns which senses define the general glossary entry, not whether those two passages can bear the book’s meanings.\",\"rationale\":\"The book does not introduce an unknown meaning or deny the consensus senses in their relevant contexts. Instead, it selects and foregrounds two recognized portions of the consensus semantic range—war and judgment—while limiting the dominant Word-of-God identification to a judicial form. This is a material boundary reclassification rather than replacement of an incompatible referent.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Revelation 6:4 strongly supports war and killing, and Genesis 3:24 supports guarding or exclusion, but neither excerpt explicitly identifies the sword as a “word of judgment.” Explicit word-and-sword texts such as Ephesians 6:17, Hebrews 4:12, and Revelation 19:15 would be needed to support that part of the gloss strongly.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3490,
+    "input_tokens_details": {
+      "cache_write_tokens": 3487,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1396,
+    "output_tokens_details": {
+      "reasoning_tokens": 961
+    },
+    "total_tokens": 4886
+  },
+  "user": null,
+  "metadata": {}
+}

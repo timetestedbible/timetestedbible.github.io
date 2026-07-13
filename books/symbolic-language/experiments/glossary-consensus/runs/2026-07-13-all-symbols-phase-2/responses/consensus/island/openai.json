@@ -1,0 +1,173 @@
+{
+  "id": "resp_035c68d579477a95006a5475c7c8c08194874fdfa73c94285f",
+  "object": "response",
+  "created_at": 1783920071,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920093,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_035c68d579477a95006a5475c850588194ad855ece9e76aa05",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_035c68d579477a95006a5475d3462c819481b516533e4f798a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"When “islands” or “isles” carries representative force, it most commonly denotes distant coastlands and their peoples—especially remote Gentile nations or the farthest reaches of the inhabited world called to witness, worship, or receive God’s rule.\",\"primary_basis\":[\"Isaiah 42:4, 10–12 — the coastlands/islands await God’s instruction and are summoned to praise him.\",\"Isaiah 49:1 — distant coastlands and peoples are addressed together.\",\"Isaiah 51:5 — the coastlands hope for God and await his power.\",\"Isaiah 60:9 — the coastlands bring the nations and their wealth to Zion.\",\"Isaiah 66:19 — distant coastlands and nations are linked as places that will hear God’s glory.\",\"Psalm 72:10; 97:1 — islands or coastlands represent distant territories rejoicing in or submitting to the Lord’s reign.\",\"Zephaniah 2:11 — the coastlands of the nations worship the Lord.\"],\"alternatives\":[{\"meaning\":\"Literal islands, coastlands, or maritime regions, without an independent symbolic meaning. Many modern translations render the Hebrew term as “coastlands,” and numerous occurrences are primarily geographical.\",\"basis\":[\"Genesis 10:5 — maritime or coastland peoples and territories.\",\"Acts 13:6; 27:26; 28:1 — literal islands in travel narratives.\",\"Revelation 1:9 — Patmos as the literal location of John’s exile.\"],\"prominence\":\"dominant\"},{\"meaning\":\"Elements of the created world—or seemingly stable places of security—removed in the cosmic upheaval of final judgment.\",\"basis\":[\"Revelation 6:14 — every mountain and island is displaced.\",\"Revelation 16:20 — every island flees and the mountains disappear.\"],\"prominence\":\"common\"},{\"meaning\":\"Isolation, exile, or separation, usually drawn devotionally from John’s confinement on Patmos rather than treated as a fixed biblical symbol.\",\"basis\":[\"Revelation 1:9 — John receives the vision while exiled on Patmos.\"],\"prominence\":\"minority\"},{\"meaning\":\"An individual church, believer, or protected spiritual community surrounded by the hostile “sea” of the world.\",\"basis\":[\"This arises chiefly in later allegorical or symbolic systems rather than from an explicit biblical identification.\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no settled, universal Christian symbolism in which every island has one fixed meaning. The strongest recurring prophetic usage is geographic and representative: distant coastlands and their peoples, often standing for remote Gentile nations or the ends of the earth. Apocalyptic passages use islands differently, as parts of creation shaken or removed in judgment.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1045,
+    "output_tokens_details": {
+      "reasoning_tokens": 463
+    },
+    "total_tokens": 1364
+  },
+  "user": null,
+  "metadata": {}
+}

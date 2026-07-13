@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921653,
+  "completed_at": 1783921669,
+  "id": "32f7478f-fa42-9915-88b4-f093768a6c1a",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_32f7478f-fa42-9915-88b4-f093768a6c1a",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Instruction\".\nThe book's entry for \"Instruction\" is a concise, pointed definition that narrows the broader consensus into a single, focused referent: the discipline of the law (Torah/musar) that believers receive and keep, and which only fools despise. This directly echoes Proverbs 1:7 and 23:23, 23, and the chapter on the Fool and the Wise.\n\nConsensus responses treat \"instruction\" as divine teaching, guidance, Torah, or formative discipline (musar/paideia), with the discipline aspect appearing in several alternatives. The book's core identification therefore preserves the central referent (divine law-based instruction/discipline) while narrowing its extension to the specific act of receiving and keeping that discipline, and to the emotional valence of being despised by fools. This is a REFINED relationship: the book retains the consensus category but sharpens the boundary conditions and emphasis.\n\nThe printed citations (Prov 1:7; 23:23) supply strong support for the \"fools despise\" clause and the value of instruction, but only partial support for the book's precise framing of it as \"the discipline of the law received and kept.\" The full chapter reference suggests the author intends a more developed symbolic reading, but the printed material alone is sufficient to show continuity rather than contradiction.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Consensus primary sense is divine teaching/guidance (esp. torah as revealed will/law and musar as formative discipline), God's word that imparts wisdom, righteousness, and the path of life; common alternatives are chastening, the Mosaic Torah as tutor, parental admonition, or associated metaphors (light/path). Treated as theological concept more than fixed symbol; no single emblematic code beyond that range.\",\n  \"book_summary\": \"The discipline of the law, received and kept — what only fools despise.\",\n  \"consensus_core_identification\": \"divine teaching/discipline (torah/musar) that forms wisdom and righteous living\",\n  \"book_core_identification\": \"the discipline of the law when received and kept (despised only by fools)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book restricts the referent to the law's discipline specifically under the condition of being received and kept, whereas consensus admits broader divine teaching, Scripture generally, parental instruction, and Spirit guidance without that reception/keeping condition as definitional.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both cores stay inside the same category of divine/law-related instruction and discipline (musar/torah), and the book directly reuses the fools-despise language of Prov 1:7 that consensus also cites. The book nonetheless materially narrows extension and precision by equating instruction with the kept discipline of the law rather than the wider pedagogical concept of divine teaching, thereby excluding some cases consensus includes while retaining the central referent.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Consensus regularly treats instruction as a broader lexical-theological range (teaching + discipline + Torah + parental/apostolic forms) rather than exclusively the received-and-kept discipline of the law.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_32f7478f-fa42-9915-88b4-f093768a6c1a",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3709,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1893,
+    "output_tokens_details": {
+      "reasoning_tokens": 1461
+    },
+    "total_tokens": 5602,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 180080000,
+    "context_details": {
+      "input_tokens": 3709,
+      "output_tokens": 1893
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

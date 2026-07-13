@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921782,
+  "completed_at": 1783921819,
+  "id": "68f00e92-1477-919f-904b-e6e2d6ae3062",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_68f00e92-1477-919f-904b-e6e2d6ae3062",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Leaven\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of leaven as 'the hidden corruption that ferments through the whole lump' and 'the corrupt doctrine of the Pharisees' matches the consensus primary meaning of sin, corruption or false teaching that spreads pervasively. The book's emphasis on the process of souring, impurity, and fermentation refines the consensus by adding the specific imagery of the word made impure and embittered, while retaining the same referent and boundary conditions (Passover purging, altar prohibition, and NT application to Pharisees' doctrine).\",\n  \"extension_reasoning\": \"The book narrows the consensus by excluding the positive Kingdom-of-God alternative entirely and by rejecting the minority negative-parable reading; it also adds the precise symbolic equation of leaven with 'the word made impure' and the moral quality of being embittered and puffed up. These are boundary refinements rather than replacement of the central referent.\",\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Leaven is overwhelmingly used as a negative symbol for sin, corruption, hypocrisy, or false teaching that spreads pervasively, grounded in Passover regulations and apostolic warnings. A common positive alternative exists for the Kingdom parable, with a minority view reading the parable negatively.\",\n  \"book_summary\": \"Leaven is soured bread—the word made impure, embittered, and puffed up; the hidden corruption that ferments through the whole lump, purged before Passover and forbidden on God's altar. In the NT it is specifically the corrupt doctrine of the Pharisees.\",\n  \"consensus_core_identification\": \"spreading sin/corruption/false teaching/hypocrisy\",\n  \"book_core_identification\": \"hidden corruption (impure/embittered/puffed-up word/doctrine) that ferments through the whole lump\",\n  \"citation_support\": \"strong\",\n  \"rationale\": \"The printed citations (Leviticus 2:11, Matthew 16:12, 1 Corinthians 5:7-8) directly support the book's negative identification of leaven as corrupting influence and false doctrine. The book's omission of the positive parable is a narrowing, not a contradiction.\",\n  \"strongest_objection\": \"The book ignores the widely recognized positive symbolism of the Kingdom parable (Matthew 13:33; Luke 13:20-21) that many interpreters regard as equally scriptural.\",\n  \"confidence\": \"high\"\n}```json\n{\n  \"core_relation\": \"REFINED\",\n   \"extension_relation\": \"REFINED\",\n   \"core_reasoning\": \"The book's core identification of leaven as 'the hidden corruption that ferments through the whole lump' and 'the corrupt doctrine of the Pharisees' matches the consensus primary meaning of sin, corruption or false teaching that spreads pervasively. The book's emphasis on the process of souring, impurity, and fermentation refines the consensus by adding the specific imagery of the word made impure and embittered, while retaining the same referent and boundary conditions (Passover purging, altar prohibition, and NT application to Pharisees' doctrine).",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Primary meaning is sin, corruption, hypocrisy or false teaching that spreads pervasively (Passover removal, Jesus' warnings, Pauline usage); common alternative is positive kingdom growth in the leaven parable, with minority consistently-negative readings of that parable.\",\n  \"book_summary\": \"Soured bread as the word made impure, embittered and puffed up; hidden corruption fermenting through the whole lump, purged before Passover and forbidden on the altar; NT identification as the Pharisees' corrupt doctrine.\",\n  \"consensus_core_identification\": \"Pervasive spreading corruption/sin/false teaching/hypocrisy\",\n  \"book_core_identification\": \"Hidden corruption (impure/embittered/puffed-up word) fermenting through the whole, specifically Pharisees' corrupt doctrine\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None material; book simply does not address the common positive kingdom-parable alternative recognized by consensus.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"Minimum cores are identical: both identify leaven as the hidden, fermenting corruption (esp. false doctrine) that spreads through the lump and is purged at Passover/forbidden on the altar. Book's poetic descriptors and exclusive focus on the negative sense are wording or scope choices that do not alter the central referent or exclude cases belonging to the consensus primary meaning.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Book's silence on the well-attested positive kingdom usage (Matt 13:33/Luke 13:20-21) could be read as an implicit claim of exclusive negativity.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_68f00e92-1477-919f-904b-e6e2d6ae3062",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3762,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3220,
+    "output_tokens_details": {
+      "reasoning_tokens": 2826
+    },
+    "total_tokens": 6982,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 260760000,
+    "context_details": {
+      "input_tokens": 3762,
+      "output_tokens": 3220
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

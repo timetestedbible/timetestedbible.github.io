@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919748,
+  "completed_at": 1783919759,
+  "id": "33168fae-3ecf-90d0-b10a-ac1812fd5d38",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_33168fae-3ecf-90d0-b10a-ac1812fd5d38",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Faithful Witness\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A christological title for Jesus as the reliable, true, and ultimate revealer/testifier of God's character, will, and truth (even unto death)\",\n  \"primary_basis\": [\n    \"Revelation 1:5\",\n    \"Revelation 3:14\",\n    \"John 18:37 (linked as background for Jesus' self-description as witness to the truth)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A designation for Christian martyrs who faithfully testify to Christ even unto death (by analogy with the martys root)\",\n      \"basis\": [\n        \"Revelation 2:13 (Antipas as 'my faithful witness')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The moon (or creation) as a reliable celestial/covenantal witness\",\n      \"basis\": [\n        \"Psalm 89:37\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In published Christian interpretation and biblical studies the capitalized or titular form is overwhelmingly treated as a Revelation christological title; secondary applications to martyrs or Old Testament imagery exist but do not displace the primary sense.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_33168fae-3ecf-90d0-b10a-ac1812fd5d38",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 604,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1096,
+    "output_tokens_details": {
+      "reasoning_tokens": 810
+    },
+    "total_tokens": 1700,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 75920000,
+    "context_details": {
+      "input_tokens": 604,
+      "output_tokens": 1096
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

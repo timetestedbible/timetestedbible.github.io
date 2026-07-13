@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922605,
+  "completed_at": 1783922644,
+  "id": "b30986ad-6bd6-9972-9318-139fa7f47f64",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_b30986ad-6bd6-9972-9318-139fa7f47f64",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Valley\".\nThe book's entry for \"Valley\" is a narrow, context-specific identification centered on the Isaiah 40:4 imagery of the lowly being exalted, presented as the direct opposite of the mountain-kingdom. While this overlaps with one of the consensus alternatives (humility/lowliness), it does not match the dominant primary meaning across 90% of the responses, which is trial, suffering, and spiritual darkness (Psalm 23:4). The book's common-view note acknowledges the trial reading but then pivots to its own humility-focused definition, effectively elevating a secondary motif to primary status.\n\nThis is a REFINED relationship. The core category of \" low\" is preserved, but the book's extension narrows it to the social/spiritual state of humility (and its exaltation) rather than the experiential sense of hardship or trial. It excludes the dominant trial reading from its primary identification while retaining the humility motif as its central referent. The Isaiah 40:4 citation alone provides partial support, as it is one of several bases listed in the consensus for the humility alternative. \n\n```json\n{\n  \"consensus_summary\": \"Across responses A–D, the primary meaning of 'Valley' is a place or season of trial, suffering, spiritual darkness, grief, or testing (anchored 90% in Psalm 23:4 'valley of the shadow of death'), contrasted with mountaintop experiences. Alternatives include divine judgment (Joel), humility/lowliness to be exalted (Isaiah 40:4), fertility/blessing, restoration from desolation (Ezekiel 37), and literal geography. Most responses report settled consensus at the popular level around trial, with humility as a common secondary motif.\",\n  \"book_summary\": \"The low and humbled — the opposite of the mountain-kingdom; every valley shall be exalted (Isaiah 40:4). Commonly taught: low seasons of trial and death set against the mountaintop — but the entry itself identifies valleys with the humbled state to be raised up.\",\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"BOOK_NARROWS\",\n  \"core_relation_explanation\": \"The book's core identification (the lowly/humbled state, opposite mountain-kingdom) preserves the broad category of 'low' but materially narrows it to the social/spiritual humility motif from Isaiah 40:4, excluding the dominant trial/hardship sense that constitutes the consensus primary.\",\n  \"extension_relation_explanation\": \"The book adds precision by restricting 'valley' to the humble/lowly who are exalted, reclassifying it away from the primary trial reading and treating the humility case as central rather than alternative. It does not reject the trial motif entirely (per the common-view note) but subordinates it.\",\n  \"citation_support\": \"partial\",\n  \"citation_support_explanation\": \"The printed Isaiah 40:4 citation 100% supports the book's specific humility/exaltation claim but provides only partial backing for the entry as a whole, since the consensus treats this verse as one of several bases for an alternative rather than the primary meaning.\",\n  \"strongest_objection\": \"The book's re-prioritization of the Isaiah 40 humility motif over the overwhelmingly dominant Psalm 23 trial reading creates a material shift in the symbol's central referent, even though the motif itself is recognized in the consensus.\",\n  \"overall_confidence\": \"high\"\n}\n``` \n\nThe book's entry is a REFINED relationship. The core category of \"low\" is preserved, but the book's extension narrows it to the social/spiritual state of humility (and its exaltation) rather than the experiential sense of hardship or trial. It excludes the dominant trial reading from its primary identification while retaining the humility motif as its central referent. The Isaiah 40:4 citation alone provides partial support, as it is one of several bases listed in the consensus for the humility alternative. \n\n```json\n{\n  \"consensus_summary\": \"Across responses A–D, the primary meaning of 'Valley' is a place or season of trial, suffering, spiritual darkness, grief, or testing (anchored 90% in Psalm  23:4 'valley of the shadow of death'), contrasted with mountaintop experiences.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Primary consensus meaning is a place or season of trial, suffering, hardship, grief, spiritual darkness or low points (chiefly from Psalm 23:4), contrasted with mountaintops; common alternatives include divine judgment/decision, humility/lowliness to be exalted (Isa 40), restoration from desolation, and fertility/blessing.\",\n  \"book_summary\": \"The low and humbled (opposite of the mountain-kingdom) that shall be exalted, per “every valley shall be exalted.”\",\n  \"consensus_core_identification\": \"seasons/places of trial, suffering and spiritual low points\",\n  \"book_core_identification\": \"the lowly/humbled (to be exalted)\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus primary covers any hardship, dark season or testing as a valley experience (plus secondary contextual uses); book centers the humble/status that is raised and treats the trial reading only as a noted common teaching, not the core symbol.\",\n  \"material_contradiction\": \"Book replaces the consensus primary referent (trial/hardship) with a different referent (the lowly/humbled opposite mountain-kingdoms); the two cannot both serve as the core identification of the symbol in the same sense.\",\n  \"rationale\": \"Blind responses settle on the Psalm 23 trial reading as primary (with high agreement that this is the settled popular/devotional consensus) and list the Isaiah 40 humility reading only as one common alternative. The book instead adopts the humility/exaltation identification as its entry while explicitly labeling the trial reading “commonly taught,” thereby replacing rather than narrowing or refining the central referent. Overlap on the single Isa 40 case does not preserve the consensus core.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Dominant preaching, hymns and popular usage (acknowledged even in the book’s common-view note) treat valley via Psalm 23 as trials, so defining it as the humbled diverges from the primary settled association without nullifying that usage.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_b30986ad-6bd6-9972-9318-139fa7f47f64",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3729,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 4270,
+    "output_tokens_details": {
+      "reasoning_tokens": 3784
+    },
+    "total_tokens": 7999,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 323100000,
+    "context_details": {
+      "input_tokens": 3729,
+      "output_tokens": 4270
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

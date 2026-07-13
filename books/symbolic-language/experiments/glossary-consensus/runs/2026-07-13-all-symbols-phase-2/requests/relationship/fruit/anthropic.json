@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "fruit",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFruit\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'fruit' primarily symbolizes the visible outward product or evidence of a person's inner spiritual condition — that is, character, conduct, and works that flow from the heart. When applied to believers, it most often refers to Christlike character and good works produced by the Holy Spirit through a life united to Christ (the 'fruit of the Spirit'), and it serves as the test by which genuine faith or true versus false teachers are recognized ('by their fruits you shall know them').\",\n  \"primary_basis\": [\n    \"Galatians 5:22-23 (the fruit of the Spirit: love, joy, peace, etc.)\",\n    \"Matthew 7:15-20 (a tree is known by its fruit; test of true and false prophets)\",\n    \"John 15:1-8, 16 (the vine and the branches; abiding in Christ to bear much fruit)\",\n    \"Matthew 3:8 / Luke 3:8 (bear fruit worthy of repentance)\",\n    \"Matthew 12:33-35 (the good tree brings forth good fruit out of the heart)\",\n    \"Psalm 1:3 (the righteous like a tree yielding fruit in season)\",\n    \"Colossians 1:10 (bearing fruit in every good work)\",\n    \"Ephesians 5:9 (the fruit of light in goodness, righteousness, and truth)\",\n    \"Matthew 13:23 (the good soil that bears fruit in the parable of the sower)\",\n    \"Philippians 1:11 (filled with the fruit of righteousness)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Converts or evangelistic results — new believers won through gospel ministry are described as 'fruit' of a person's labor.\",\n      \"basis\": [\n        \"Romans 1:13 ('that I might have some fruit among you')\",\n        \"John 4:35-36 (gathering fruit for eternal life in the harvest)\",\n        \"1 Corinthians 16:15 (household of Stephanas as 'firstfruits of Achaia')\",\n        \"Colossians 1:6 (the gospel bearing fruit and growing in all the world)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Offspring or children — 'fruit of the womb' as a literal-symbolic idiom for progeny and, in Messianic usage, for the promised descendant.\",\n      \"basis\": [\n        \"Psalm 127:3 (the fruit of the womb is a reward)\",\n        \"Genesis 1:28 (be fruitful and multiply)\",\n        \"Deuteronomy 28:4 (blessed shall be the fruit of your womb)\",\n        \"Luke 1:42 (blessed is the fruit of your womb, spoken of Jesus)\",\n        \"Acts 2:30 (the fruit of David's loins on his throne)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Praise, worship, and confession — the 'fruit of the lips' as spoken offering to God.\",\n      \"basis\": [\n        \"Hebrews 13:15 (the fruit of lips that confess his name)\",\n        \"Hosea 14:2 (the fruit/offering of our lips)\",\n        \"Isaiah 57:19 (I create the fruit of the lips)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Material provision or financial giving — offerings and shared resources described as fruit.\",\n      \"basis\": [\n        \"Romans 15:28 (sealing to them this fruit, the collection for Jerusalem)\",\n        \"Philippians 4:17 (the fruit that increases to your credit)\",\n        \"2 Timothy 2:6 (the hardworking farmer should be first to partake of the fruit)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The consequences or results of actions generally, whether good or evil — a moral cause-and-effect idiom ('fruit of their ways', 'fruit of the wicked').\",\n      \"basis\": [\n        \"Proverbs 1:31 (eat the fruit of their way)\",\n        \"Jeremiah 17:10 (to give every man according to the fruit of his doings)\",\n        \"Isaiah 3:10 (the righteous shall eat the fruit of their deeds)\",\n        \"Hosea 10:13 (you have eaten the fruit of lies)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The forbidden fruit of Eden as a symbol of temptation, disobedience, and the fall — sometimes generalized into 'fruit' representing sin's enticement.\",\n      \"basis\": [\n        \"Genesis 2:16-17; 3:1-6 (the fruit of the tree of the knowledge of good and evil)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Firstfruits as a distinct typological symbol — Christ's resurrection and the Spirit's initial work as pledge or guarantee of the full harvest to come.\",\n      \"basis\": [\n        \"1 Corinthians 15:20, 23 (Christ the firstfruits of those who have fallen asleep)\",\n        \"Romans 8:23 (the firstfruits of the Spirit)\",\n        \"James 1:18 (a kind of firstfruits of his creatures)\",\n        \"Leviticus 23:9-14 (the wave offering of firstfruits)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, widely recognizable consensus across Catholic, Orthodox, and Protestant traditions that 'fruit' symbolizes the visible product of a person's inner life — character, works, and Spirit-produced virtues — anchored above all in Galatians 5, Matthew 7, and John 15. Debates exist within that consensus (e.g., whether 'fruit' in John 15 emphasizes character, converts, or obedience; whether fruit-bearing is evidence of salvation or a measure of reward), but these are variations on the same core meaning rather than rival symbols. The alternative senses listed (converts, offspring, praise, giving, firstfruits typology) are context-specific extensions that commentators broadly acknowledge alongside the primary meaning.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Outward actions, character traits, and spiritual virtues that result from one's inner relationship with God, particularly the Holy Spirit.\",\n  \"primary_basis\": [\n    \"Galatians 5:22-23\",\n    \"Matthew 7:15-20\",\n    \"John 15:1-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Biological offspring or children (fruit of the womb).\",\n      \"basis\": [\n        \"Psalm 127:3\",\n        \"Deuteronomy 28:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"New converts or the result of evangelistic labor.\",\n      \"basis\": [\n        \"Romans 1:13\",\n        \"John 4:36\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The natural consequences or results of one's deeds, whether good or evil.\",\n      \"basis\": [\n        \"Proverbs 1:31\",\n        \"Jeremiah 17:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Verbal praise and worship offered to God (fruit of lips).\",\n      \"basis\": [\n        \"Hebrews 13:15\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term fruit is widely and consistently used in biblical symbolism to denote the visible yield of an invisible condition, most famously the fruit of the Spirit.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The visible outcome or evidence produced by a person’s inner spiritual condition—especially character, conduct, and good works. In Christian teaching, “good fruit” commonly denotes righteousness and the virtues produced by the Holy Spirit, while “bad fruit” denotes sinful conduct revealing a corrupt source.\",\n  \"primary_basis\": [\n    \"Matthew 7:16–20 — people, especially false prophets, are known by their fruits.\",\n    \"Luke 6:43–45 — good or evil fruit proceeds from the corresponding condition of the heart.\",\n    \"Galatians 5:22–23 — the fruit of the Spirit is expressed in virtues such as love, joy, peace, and self-control.\",\n    \"John 15:1–8, 16 — abiding in Christ results in bearing much fruit.\",\n    \"Matthew 3:8–10; Luke 3:8–9 — fruit serves as evidence of genuine repentance.\",\n    \"Philippians 1:11 — believers are to be filled with the fruit of righteousness.\",\n    \"Colossians 1:10 — a worthy life bears fruit in every good work.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"People brought to faith or the results of evangelism and ministry.\",\n      \"basis\": [\n        \"John 4:35–38 — harvest imagery is applied to gathering people.\",\n        \"Romans 1:13 — Paul desires fruit among the Roman believers or converts.\",\n        \"1 Corinthians 3:6–9 — planting and growth describe ministerial results.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Praise, worship, charitable giving, or other particular offerings made to God.\",\n      \"basis\": [\n        \"Hebrews 13:15 — praise is called the fruit of lips that confess God’s name.\",\n        \"Philippians 4:17 — financial support is described as fruit credited to the giver.\",\n        \"Romans 15:28 — the Gentile contribution is described metaphorically as fruit.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human offspring or descendants, especially in the expression “fruit of the womb.”\",\n      \"basis\": [\n        \"Psalm 127:3 — children are the fruit of the womb.\",\n        \"Luke 1:42 — Jesus is called the fruit of Mary’s womb.\",\n        \"Deuteronomy 28:4, 11 — fruit of the womb denotes offspring within covenant blessing.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The consequences or recompense of one’s choices and deeds—beneficial or destructive.\",\n      \"basis\": [\n        \"Proverbs 1:31 — people eat the fruit of their way.\",\n        \"Proverbs 12:14; 13:2 — a person is satisfied by the fruit of speech or conduct.\",\n        \"Hosea 10:13 — wickedness produces its corresponding fruit.\",\n        \"Romans 6:21–22 — sinful and sanctified lives yield contrasting fruit and outcomes.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Agricultural abundance, fertility, and covenant blessing, sometimes contrasted with barrenness or judgment.\",\n      \"basis\": [\n        \"Deuteronomy 28:4, 11, 18, 33 — produce and fertility signify blessing or curse.\",\n        \"Psalm 1:3 — the righteous person resembles a tree yielding fruit in season.\",\n        \"Micah 4:4; Amos 9:13–14 — agricultural flourishing accompanies restoration.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In Edenic interpretation, the forbidden fruit symbolizes disobedience, illicitly seized knowledge, temptation, or humanity’s attempt at moral autonomy.\",\n      \"basis\": [\n        \"Genesis 2:16–17; 3:1–7 — eating the forbidden fruit constitutes the primal transgression.\",\n        \"Romans 5:12–19 — later Christian interpretation relates Adam’s disobedience to sin and death, though it does not focus on the fruit as an independent symbol.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological life, healing, and restored communion with God, especially the fruit of the tree of life.\",\n      \"basis\": [\n        \"Genesis 2:9; 3:22–24 — the tree of life and its fruit are associated with enduring life.\",\n        \"Revelation 2:7 — the victorious are granted access to the tree of life.\",\n        \"Revelation 22:1–2, 14 — the tree’s fruit and leaves appear in the restored creation.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong conventional meaning when “fruit” is used morally or spiritually: observable character, deeds, and outcomes reveal and arise from an underlying spiritual source. However, the Bible uses the image in several well-established ways, so the term by itself has no single settled symbolic interpretation apart from context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Outward evidence or produce of inward spiritual condition, especially virtues, character, and good works generated by faith or the Holy Spirit\",\n  \"primary_basis\": [\n    \"Matthew 7:15-20\",\n    \"Luke 6:43-45\",\n    \"Galatians 5:22-23\",\n    \"John 15:1-8\",\n    \"Colossians 1:10\",\n    \"James 3:17-18\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Children or descendants (fruit of the womb/loins)\",\n      \"basis\": [\n        \"Psalm 127:3\",\n        \"Genesis 30:2\",\n        \"Deuteronomy 7:13\",\n        \"Acts 2:30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Converts, disciples, or spiritual multiplication resulting from evangelism and ministry\",\n      \"basis\": [\n        \"John 15:16\",\n        \"Romans 1:13\",\n        \"Colossians 1:6\",\n        \"Philippians 1:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eucharistic wine (the fruit of the vine)\",\n      \"basis\": [\n        \"Matthew 26:29\",\n        \"Mark 14:25\",\n        \"Luke 22:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Material blessings, prosperity, or covenant rewards for obedience\",\n      \"basis\": [\n        \"Deuteronomy 28:4\",\n        \"Psalm 1:3\",\n        \"Proverbs 11:30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Firstfruits as consecrated offering or as Christ/believers in resurrection priority\",\n      \"basis\": [\n        \"Exodus 23:19\",\n        \"1 Corinthians 15:20-23\",\n        \"Romans 8:23\",\n        \"James 1:18\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical usage of 'fruit' is context-dependent and polyvalent, yet Christian teaching and preaching treat the moral/spiritual-produce sense (esp. fruit of the Spirit and 'by their fruits') as the dominant symbolic default; the other senses remain standard within their narrower idiomatic or liturgical settings.\"\n}\n\nBOOK ENTRY\nA nation's works, by which it is judged — “every good tree bringeth forth good fruit”.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 7:17; 21:43) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nMatthew 7:17 — Even so every good tree bringeth forth good fruit; but a corrupt tree bringeth forth evil fruit.\nMatthew 21:43 — Therefore say I unto you, The kingdom of God shall be taken from you, and given to a nation bringing forth the fruits thereof.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "34da2868f49712ab953eeb6f650e6eed65070b4b5267c236b9ad0b45e67cc5fe",
+  "cache": {
+    "hit": false
+  }
+}

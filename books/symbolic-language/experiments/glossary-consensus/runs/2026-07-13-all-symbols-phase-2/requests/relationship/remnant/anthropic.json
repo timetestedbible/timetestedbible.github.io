@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "remnant",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nRemnant\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the 'remnant' symbolizes the faithful minority of God's people whom He graciously preserves through judgment, exile, or widespread apostasy, guaranteeing the continuity of His covenant purposes. The remnant is understood as both a sign of judgment (only a small portion survives) and a sign of hope and grace (God does not utterly destroy His people but keeps a seed alive through whom salvation history continues). In New Testament interpretation, especially in Paul, the remnant becomes the believing minority 'chosen by grace,' demonstrating that God's promises have not failed even when the majority rejects them.\",\n  \"primary_basis\": [\n    \"Isaiah 10:20-22 (a remnant of Israel/Jacob will return to the mighty God)\",\n    \"Isaiah 1:9 (unless the LORD had left us a few survivors, we would have been like Sodom)\",\n    \"Isaiah 6:13 (the holy seed is the stump that remains)\",\n    \"1 Kings 19:18 (the 7,000 in Israel who have not bowed the knee to Baal)\",\n    \"Romans 11:1-5 (Paul cites Elijah: 'so too at the present time there is a remnant, chosen by grace')\",\n    \"Romans 9:27-29 (quoting Isaiah: 'only a remnant will be saved')\",\n    \"Genesis 45:7 (God sent Joseph 'to preserve for you a remnant on earth')\",\n    \"Zephaniah 3:12-13 (a people humble and lowly left in the midst of Israel)\",\n    \"Micah 2:12; 4:6-7; 5:7-8 (gathering of the remnant of Jacob)\",\n    \"Jeremiah 23:3; 31:7 (God will gather the remnant of His flock)\",\n    \"Ezra 9:8 (a remnant left as a peg in God's holy place)\",\n    \"Amos 5:15 (perhaps the LORD will be gracious to the remnant of Joseph)\",\n    \"Zechariah 8:11-12 (blessing on the remnant of the people)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Remnant primarily as a word of judgment rather than hope: in some prophetic contexts (especially Amos and parts of Isaiah), 'only a remnant' underscores the severity of destruction—so little survives that it emphasizes near-total loss rather than comfort. Critical scholarship often distinguishes this negative usage from the later positive 'remnant of hope' theology.\",\n      \"basis\": [\n        \"Amos 3:12 (as a shepherd rescues two legs or a piece of an ear)\",\n        \"Isaiah 6:11-13 (devastation until the land is utterly forsaken)\",\n        \"Isaiah 10:22 ('only a remnant will return; destruction is decreed')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Dispensationalist/futurist reading: the remnant refers specifically to a future believing Jewish remnant preserved and converted during the end times (the tribulation), distinct from the church, fulfilling promises of Israel's national restoration.\",\n      \"basis\": [\n        \"Zechariah 13:8-9 (a third refined through fire)\",\n        \"Romans 11:25-27 ('all Israel will be saved')\",\n        \"Revelation 7:1-8 (the 144,000 sealed from the tribes of Israel)\",\n        \"Revelation 12:17 (the rest/remnant of the woman's offspring)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Seventh-day Adventist reading: the 'remnant' is an identifiable end-time remnant church characterized by keeping the commandments of God (including the Sabbath) and possessing 'the testimony of Jesus' (understood as the Spirit of Prophecy), which Adventists apply to their own movement.\",\n      \"basis\": [\n        \"Revelation 12:17 (KJV: 'the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ')\",\n        \"Revelation 14:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Reformed/covenantal-election reading: the remnant is essentially identified with the elect—the true, invisible people of God within the visible community in every age—so 'remnant' becomes a theological synonym for God's sovereign election by grace and continuity between Israel and the church.\",\n      \"basis\": [\n        \"Romans 9:6-8 ('not all who are descended from Israel belong to Israel')\",\n        \"Romans 11:5-7 (a remnant chosen by grace; 'the elect obtained it')\",\n        \"Galatians 6:16 ('the Israel of God')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ethical/devotional application: the remnant as a model for the faithful minority in any era—Christians called to remain faithful amid cultural decline or persecution ('remnant theology' as a posture of the church in a hostile society). This is an extension of the primary meaning rather than a rival exegesis.\",\n      \"basis\": [\n        \"1 Kings 19:18 applied typologically\",\n        \"Zephaniah 3:12-13\",\n        \"Matthew 7:13-14 (the few who find the narrow way, often linked thematically)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The remnant motif is one of the most stable and well-documented themes in biblical theology, traced from Genesis (Noah, Joseph) through the prophets (especially Isaiah, where the name Shear-jashub, 'a remnant shall return,' embodies the theme) to Paul's argument in Romans 9-11. The broad consensus—faithful minority preserved by God's grace through judgment, securing the continuity of His redemptive plan—is shared across Catholic, Orthodox, Protestant, and critical-scholarly traditions. Disagreement is not over this core meaning but over its referent and application: whether the present remnant is the church, a future Jewish remnant, a specific denomination (the Adventist claim), or simply the elect. Scholarly debate also concerns whether individual prophetic texts use the motif as threat or promise, but both poles are recognized within the consensus framework.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A small, faithful minority of people who survive divine judgment and through whom God preserves His covenant promises, often representing true believers or the elect within a broader visible community.\",\n  \"primary_basis\": [\n    \"Isaiah 10:20-22\",\n    \"Jeremiah 23:3\",\n    \"Micah 2:12\",\n    \"Romans 9:27\",\n    \"Romans 11:4-5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A specific future group of ethnic Jews who will repent and turn to Christ during the end times or the Great Tribulation, a view heavily emphasized in dispensationalism.\",\n      \"basis\": [\n        \"Zechariah 13:8-9\",\n        \"Romans 11:25-27\",\n        \"Revelation 7:4-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The literal historical survivors of the Babylonian exile who returned to Judah, viewed strictly in their immediate historical context rather than as an ongoing spiritual type.\",\n      \"basis\": [\n        \"Ezra 9:8\",\n        \"Haggai 1:12\",\n        \"Nehemiah 1:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A specific end-time denomination or movement (e.g., in Seventh-day Adventist theology) that faithfully keeps God's commandments and possesses the spirit of prophecy.\",\n      \"basis\": [\n        \"Revelation 12:17\",\n        \"Revelation 14:12\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the fundamental theological concept of a faithful surviving minority chosen by grace is universally agreed upon across mainstream traditions, there is significant debate over its eschatological application, particularly regarding the distinction between the Church and national Israel in dispensational versus covenant theology.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The “remnant” most commonly symbolizes the surviving and often faithful portion of God’s covenant people whom God preserves through judgment, exile, apostasy, or calamity and from whom the community is renewed or restored.\",\n  \"primary_basis\": [\n    \"Isaiah 10:20–22 — a remnant of Israel returns and relies faithfully on the Lord.\",\n    \"Isaiah 11:11–16 — God gathers the remnant of his people from dispersion.\",\n    \"Isaiah 37:31–32 — the surviving remnant of Judah takes root and bears fruit.\",\n    \"Micah 2:12; 5:7–8 — the remnant of Israel is gathered and preserved among the nations.\",\n    \"Zephaniah 3:12–13 — a humble, purified remnant trusts in the Lord.\",\n    \"Ezra 9:8, 13–15 — the postexilic community is described as a remnant spared by God.\",\n    \"Romans 9:27–29 — Paul applies Isaiah’s remnant language to the portion of Israel that is saved.\",\n    \"Romans 11:1–5 — Paul speaks of a remnant chosen by grace, using Elijah’s faithful minority as a pattern.\",\n    \"1 Kings 19:18 — God preserves seven thousand in Israel who have not worshiped Baal.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A historically surviving population after war, exile, plague, or judgment, without necessarily implying exceptional faithfulness or spiritual purity.\",\n      \"basis\": [\n        \"2 Kings 19:30–31\",\n        \"2 Chronicles 34:21\",\n        \"Jeremiah 42:2\",\n        \"Ezekiel 5:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The preserved Jewish people or faithful portion of Israel, especially in relation to Israel’s continuing election and anticipated restoration.\",\n      \"basis\": [\n        \"Isaiah 11:11–16\",\n        \"Jeremiah 23:3\",\n        \"Romans 9:27–29\",\n        \"Romans 11:1–7, 25–29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A faithful minority within the visible church during periods of widespread apostasy, corruption, or persecution.\",\n      \"basis\": [\n        \"1 Kings 19:18 as a typological pattern\",\n        \"Romans 11:2–5\",\n        \"Revelation 2–3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A distinct end-time body of believers characterized by obedience to God’s commandments and testimony to Jesus; some traditions identify this with a particular denomination or movement.\",\n      \"basis\": [\n        \"Revelation 12:17, especially translations using “remnant”\",\n        \"Revelation 14:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The postexilic Judean community or returned exiles specifically, rather than a transhistorical spiritual category.\",\n      \"basis\": [\n        \"Ezra 9:8, 13–15\",\n        \"Nehemiah 1:3\",\n        \"Haggai 1:12, 14\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the core idea of a people preserved by God through crisis or judgment. Interpretation is less settled concerning the remnant’s precise identity, whether it is necessarily faithful, and whether the term refers primarily to Israel, the church, a historical group of survivors, or an end-time community.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A small, faithful core of God's people preserved by divine grace after judgment, disaster, exile, or widespread apostasy\",\n  \"primary_basis\": [\n    \"Isaiah 10:20-22\",\n    \"Isaiah 11:11, 16\",\n    \"Jeremiah 23:3\",\n    \"Micah 2:12; 5:7-8\",\n    \"Romans 9:27\",\n    \"Romans 11:5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Primarily literal historical survivors of war, conquest, or exile (with secondary spiritual overtones only)\",\n      \"basis\": [\n        \"2 Kings 19:30-31\",\n        \"Ezra 9:8\",\n        \"Nehemiah 1:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"End-time or eschatological pure church / faithful believers remaining amid final apostasy\",\n      \"basis\": [\n        \"Revelation 12:17\",\n        \"applications of OT remnant texts to the church\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ethnic/national Israel as a distinct remnant preserved separately from the church\",\n      \"basis\": [\n        \"Romans 11:1-5, 25-26\",\n        \"Isaiah remnant prophecies read dispensationally\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Standard Christian biblical interpretation, drawing from OT prophetic usage and NT Pauline application, consistently treats 'remnant' as the divinely preserved faithful minority rather than mere numerical remainder; secondary literal or eschatological nuances exist but do not displace the core symbolic sense.\"\n}\n\nBOOK ENTRY\nThe faithful few who glean the edge — widow, fatherless, stranger, as Ruth did; small by design, refined like gold out of dross, at a fixed ratio traceable from the gleaning law's own geometry to Elijah's seven thousand.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ruth 2; 1 Kgs 19:18; Zech 13:8-9; Rom 11:5) · see The Remnant, ch. 15\n\nAVAILABLE KJV EXCERPTS\nRuth 2:1 — And Naomi had a kinsman of her husband's, a mighty man of wealth, of the family of Elimelech; and his name was Boaz.\nRuth 2:2 — And Ruth the Moabitess said unto Naomi, Let me now go to the field, and glean ears of corn after him in whose sight I shall find grace. And she said unto her, Go, my daughter.\nRuth 2:3 — And she went, and came, and gleaned in the field after the reapers: and her hap was to light on a part of the field belonging unto Boaz, who was of the kindred of Elimelech.\nRuth 2:4 — And, behold, Boaz came from Bethlehem, and said unto the reapers, The LORD be with you. And they answered him, The LORD bless thee.\nRuth 2:5 — Then said Boaz unto his servant that was set over the reapers, Whose damsel is this?\nRuth 2:6 — And the servant that was set over the reapers answered and said, It is the Moabitish damsel that came back with Naomi out of the country of Moab:\nRuth 2:7 — And she said, I pray you, let me glean and gather after the reapers among the sheaves: so she came, and hath continued even from the morning until now, that she tarried a little in the house.\nRuth 2:8 — Then said Boaz unto Ruth, Hearest thou not, my daughter? Go not to glean in another field, neither go from hence, but abide here fast by my maidens:\nRuth 2:9 — Let thine eyes be on the field that they do reap, and go thou after them: have I not charged the young men that they shall not touch thee? and when thou art athirst, go unto the vessels, and drink of that which the young men have drawn.\nRuth 2:10 — Then she fell on her face, and bowed herself to the ground, and said unto him, Why have I found grace in thine eyes, that thou shouldest take knowledge of me, seeing I am a stranger?\nRuth 2:11 — And Boaz answered and said unto her, It hath fully been shewed me, all that thou hast done unto thy mother in law since the death of thine husband: and how thou hast left thy father and thy mother, and the land of thy nativity, and art come unto a people which thou knewest not heretofore.\nRuth 2:12 — The LORD recompense thy work, and a full reward be given thee of the LORD God of Israel, under whose wings thou art come to trust.\nRuth 2:13 — Then she said, Let me find favour in thy sight, my lord; for that thou hast comforted me, and for that thou hast spoken friendly unto thine handmaid, though I be not like unto one of thine handmaidens.\nRuth 2:14 — And Boaz said unto her, At mealtime come thou hither, and eat of the bread, and dip thy morsel in the vinegar. And she sat beside the reapers: and he reached her parched corn, and she did eat, and was sufficed, and left.\nRuth 2:15 — And when she was risen up to glean, Boaz commanded his young men, saying, Let her glean even among the sheaves, and reproach her not:\nRuth 2:16 — And let fall also some of the handfuls of purpose for her, and leave them, that she may glean them, and rebuke her not.\nRuth 2:17 — So she gleaned in the field until even, and beat out that she had gleaned: and it was about an ephah of barley.\nRuth 2:18 — And she took it up, and went into the city: and her mother in law saw what she had gleaned: and she brought forth, and gave to her that she had reserved after she was sufficed.\nRuth 2:19 — And her mother in law said unto her, Where hast thou gleaned to day? and where wroughtest thou? blessed be he that did take knowledge of thee. And she shewed her mother in law with whom she had wrought, and said, The man's name with whom I wrought to day is Boaz.\nRuth 2:20 — And Naomi said unto her daughter in law, Blessed be he of the LORD, who hath not left off his kindness to the living and to the dead. And Naomi said unto her, The man is near of kin unto us, one of our next kinsmen.\nRuth 2:21 — And Ruth the Moabitess said, He said unto me also, Thou shalt keep fast by my young men, until they have ended all my harvest.\nRuth 2:22 — And Naomi said unto Ruth her daughter in law, It is good, my daughter, that thou go out with his maidens, that they meet thee not in any other field.\nRuth 2:23 — So she kept fast by the maidens of Boaz to glean unto the end of barley harvest and of wheat harvest; and dwelt with her mother in law.\n1 Kings 19:18 — Yet I have left me seven thousand in Israel, all the knees which have not bowed unto Baal, and every mouth which hath not kissed him.\nZechariah 13:8 — And it shall come to pass, that in all the land, saith the LORD, two parts therein shall be cut off and die; but the third shall be left therein.\nZechariah 13:9 — And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people: and they shall say, The LORD is my God.\nRomans 11:5 — Even so then at this present time also there is a remnant according to the election of grace.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "027bc2657ad2355c5715e6fe1ab755dd8aeb8e2f386fea3d6b3657c5ad37d6c1",
+  "cache": {
+    "hit": false
+  }
+}

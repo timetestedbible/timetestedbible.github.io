@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "virgin",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nVirgin\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'virgin' functions symbolically as an image of purity and undivided covenant faithfulness to God. Corporately, God's people (Israel as 'virgin daughter Zion' in the Old Testament; the Church in the New Testament) are pictured as a virgin betrothed to God/Christ, with virginity signifying freedom from spiritual adultery (idolatry, apostasy) and readiness for union with the divine Bridegroom. The term is thus read primarily as a marital-covenant metaphor: the pure, faithful bride awaiting her husband.\",\n  \"primary_basis\": [\n    \"2 Corinthians 11:2 (Paul presents the church 'as a pure virgin to Christ')\",\n    \"Revelation 14:4 (the 144,000 'are virgins,' widely read as undefiled faithfulness rather than literal celibacy)\",\n    \"Matthew 25:1-13 (parable of the ten virgins awaiting the bridegroom)\",\n    \"Isaiah 7:14 with Matthew 1:22-23 and Luke 1:26-35 (the virgin who conceives, applied to Mary)\",\n    \"2 Kings 19:21; Isaiah 37:22 ('virgin daughter of Zion')\",\n    \"Jeremiah 18:13; 31:4, 21 ('virgin Israel')\",\n    \"Amos 5:2; Lamentations 1:15; 2:13 (virgin Israel/Zion in lament)\",\n    \"Revelation 19:7-8; 21:2, 9 (the bride of the Lamb, pure and prepared)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christological/Mariological reading: the virgin of Isaiah 7:14 as a literal prophetic sign fulfilled in the virginal conception of Jesus by Mary, signifying the divine origin and sinlessness of Christ; in Catholic and Orthodox tradition Mary's perpetual virginity further symbolizes her total consecration and figures the Church.\",\n      \"basis\": [\n        \"Isaiah 7:14\",\n        \"Matthew 1:18-25\",\n        \"Luke 1:26-38\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Critical-scholarly and Jewish reading: the Hebrew 'almah' in Isaiah 7:14 means 'young woman' rather than technical 'virgin,' with the sign originally referring to a child born in Isaiah's own time (e.g., Hezekiah or Isaiah's son); the virgin-birth reading arises from the Septuagint's 'parthenos.'\",\n      \"basis\": [\n        \"Isaiah 7:14-16 in historical context\",\n        \"Isaiah 8:3-4\",\n        \"Septuagint rendering of Isaiah 7:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ascetic/vocational reading: virginity as a consecrated state of life superior to or alongside marriage, symbolizing total devotion to God and anticipation of the resurrection life; foundational for consecrated virgins, monasticism, and clerical celibacy in Catholic and Orthodox traditions.\",\n      \"basis\": [\n        \"1 Corinthians 7:25-38\",\n        \"Matthew 19:10-12\",\n        \"Revelation 14:4 read literally by some Fathers\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological readiness reading: the virgins of Matthew 25 symbolize professing believers whose preparedness (oil/lamps) determines entry to the wedding feast; emphasis falls on watchfulness rather than purity per se.\",\n      \"basis\": [\n        \"Matthew 25:1-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal celibacy reading of Revelation 14:4: the 144,000 are actual unmarried celibates, taken by some patristic writers and some sectarian groups (e.g., certain Adventist or restorationist readings) rather than a metaphor for spiritual fidelity.\",\n      \"basis\": [\n        \"Revelation 14:1-5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Mary as type or icon of the Church: the Virgin Mother prefigures the Church, which is both virgin (pure in faith) and mother (bearing children through baptism), a patristic theme (e.g., Ambrose, Augustine) formalized in Catholic ecclesiology.\",\n      \"basis\": [\n        \"Luke 1:26-38\",\n        \"John 19:26-27\",\n        \"Revelation 12:1-6 as read Mariologically/ecclesiologically\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term operates on two well-established registers that interpreters generally treat as complementary rather than competing: (1) the literal-prophetic virginity of Mary (Isaiah 7:14/Matthew 1) and (2) the symbolic virgin-bride motif for God's people (2 Corinthians 11:2; Revelation 14; the OT 'virgin Israel/Zion' texts). The corporate purity/faithfulness meaning is the standard answer when 'virgin' is treated as a symbol, since the Marian usage is normally treated as historical fact and prophetic sign rather than symbol. The main genuine dispute in scholarship concerns the translation of 'almah' in Isaiah 7:14, and in Revelation 14:4 whether 'virgins' is literal or figurative; neither dispute unsettles the broad consensus that virginity in Scripture connotes purity and exclusive fidelity to God.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual purity, exclusive devotion, and faithfulness to God, most notably symbolizing the Church as the pure bride of Christ or faithful Israel.\",\n  \"primary_basis\": [\n    \"2 Corinthians 11:2\",\n    \"Revelation 14:4\",\n    \"Matthew 25:1-13\",\n    \"Jeremiah 31:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal celibacy or sexual purity as a high spiritual calling, heavily emphasized in early and medieval ascetic traditions.\",\n      \"basis\": [\n        \"1 Corinthians 7:25-34\",\n        \"Matthew 19:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A personified city or nation, often emphasizing vulnerability, inviolability, or tragedy (e.g., Virgin Daughter of Babylon, Virgin Israel).\",\n      \"basis\": [\n        \"Isaiah 47:1\",\n        \"Amos 5:2\",\n        \"Lamentations 2:13\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Symbolically, the term is predominantly understood as representing the uncorrupted, faithful people of God (the Church or Israel) waiting for their bridegroom, distinguishing them from the spiritual adultery or idolatry seen in surrounding nations.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Purity, chastity, and uncorrupted or exclusive devotion to God or Christ. In corporate imagery, a virgin commonly represents the faithful people of God—especially the Church—as a pure bride pledged to Christ.\",\n  \"primary_basis\": [\n    \"2 Corinthians 11:2 — Paul presents the Corinthian church as a “pure virgin” betrothed to Christ.\",\n    \"Ephesians 5:25–27 — the Church is portrayed as Christ’s cleansed, holy, and spotless bride, although the word “virgin” is not used directly.\",\n    \"Revelation 14:4–5 — the undefiled “virgins” who follow the Lamb are associated with faithfulness, truthfulness, and purity.\",\n    \"Matthew 25:1–13 — the ten virgins represent those awaiting the bridegroom, linking virgin imagery with belonging, vigilance, and readiness.\",\n    \"Jeremiah 31:4,13 and Amos 5:2 — “virgin Israel” personifies God’s covenant people.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal sexual virginity, particularly Mary’s virginity and the miraculous conception of Jesus, rather than a general symbol.\",\n      \"basis\": [\n        \"Isaiah 7:14\",\n        \"Matthew 1:18–25\",\n        \"Luke 1:26–35\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The Church as the virgin bride of Christ, emphasizing exclusive covenant fidelity and freedom from spiritual adultery or false teaching.\",\n      \"basis\": [\n        \"2 Corinthians 11:2–4\",\n        \"Ephesians 5:25–32\",\n        \"Revelation 19:7–8\",\n        \"Revelation 21:2,9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Watchfulness and preparedness for Christ’s coming, based on the wise and foolish virgins; here virginity itself is not the main distinguishing symbol.\",\n      \"basis\": [\n        \"Matthew 25:1–13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Personified Israel or a city/nation, often in contexts of covenant identity, vulnerability, mourning, judgment, or hoped-for restoration.\",\n      \"basis\": [\n        \"2 Kings 19:21\",\n        \"Isaiah 37:22\",\n        \"Jeremiah 14:17\",\n        \"Jeremiah 31:4,13\",\n        \"Amos 5:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Celibate consecration or renunciation of marriage for undivided service to God.\",\n      \"basis\": [\n        \"Matthew 19:10–12\",\n        \"1 Corinthians 7:25–35\",\n        \"Revelation 14:4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In Revelation 14:4, complete religious fidelity and avoidance of idolatrous defilement rather than literal male celibacy.\",\n      \"basis\": [\n        \"Revelation 14:4–5\",\n        \"Compare biblical portrayals of idolatry as sexual infidelity: Hosea 1–3; Revelation 17–18\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad and recognizable association between virginity and purity, chastity, consecration, or exclusive fidelity. However, there is no single settled symbolic meaning applicable to every passage. Some texts use “virgin” literally, while others personify Israel, describe the Church’s relation to Christ, or emphasize readiness and covenant faithfulness.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Purity, chastity, and undivided devotion/fidelity to God (most prominently embodied by Mary in the virgin birth of Christ, and secondarily by the Church or faithful as Christ's pure bride)\",\n  \"primary_basis\": [\n    \"Isaiah 7:14 (virgin shall conceive, applied messianically)\",\n    \"Matthew 1:18-25 and Luke 1:26-38 (Mary's virginal conception by the Holy Spirit)\",\n    \"2 Corinthians 11:2 (Church presented as pure virgin to Christ)\",\n    \"Matthew 25:1-13 (parable of the wise and foolish virgins)\",\n    \"Revelation 14:4 (the 144,000 as virgins who follow the Lamb)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Personification of Israel/Zion/Judah as the 'virgin daughter' (vulnerable yet elect people of God)\",\n      \"basis\": [\n        \"Isaiah 37:22\",\n        \"Jeremiah 14:17\",\n        \"Lamentations 1:15\",\n        \"Amos 5:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal lifelong sexual abstinence as a higher spiritual calling or state of perfection (especially in Catholic/Orthodox monastic and Marian teaching on perpetual virginity)\",\n      \"basis\": [\n        \"1 Corinthians 7:25-38\",\n        \"Matthew 19:12\",\n        \"traditional interpretation of Luke 1:34 and John 19:26-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral/spiritual innocence free from idolatry or worldliness (without necessarily implying sexual status)\",\n      \"basis\": [\n        \"Revelation 14:4\",\n        \"2 Corinthians 11:2\",\n        \"Ephesians 5:25-27\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern biblical scholarship and teaching, 'virgin' consistently functions as a symbol of purity and exclusive belonging to God. The Marian application is the single most dominant Christian usage; the corporate (Israel/Church) and individual purity applications are also standard and non-conflicting. No major tradition treats the term as lacking symbolic content.\"\n}\n\nBOOK ENTRY\nThe espoused — betrothed to one husband with the wedding still ahead: covenant standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the bride’s companions who follow her in — the opposite of the harlot who goes after many.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 22:23-24; Joel 1:8; Jer 31:4, 21; Amos 5:2; Ps 45:14-15; 2 Cor 11:2; Matt 25:1) · see The Fool and the Wise, ch. 20\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 22:23 — If a damsel that is a virgin be betrothed unto an husband, and a man find her in the city, and lie with her;\nDeuteronomy 22:24 — Then ye shall bring them both out unto the gate of that city, and ye shall stone them with stones that they die; the damsel, because she cried not, being in the city; and the man, because he hath humbled his neighbour's wife: so thou shalt put away evil from among you.\nJoel 1:8 — Lament like a virgin girded with sackcloth for the husband of her youth.\nJeremiah 31:4 — Again I will build thee, and thou shalt be built, O virgin of Israel: thou shalt again be adorned with thy tabrets, and shalt go forth in the dances of them that make merry.\nJeremiah 31:21 — Set thee up waymarks, make thee high heaps: set thine heart toward the highway, even the way which thou wentest: turn again, O virgin of Israel, turn again to these thy cities.\nAmos 5:2 — The virgin of Israel is fallen; she shall no more rise: she is forsaken upon her land; there is none to raise her up.\nPsalms 45:14 — She shall be brought unto the king in raiment of needlework: the virgins her companions that follow her shall be brought unto thee.\nPsalms 45:15 — With gladness and rejoicing shall they be brought: they shall enter into the king's palace.\n2 Corinthians 11:2 — For I am jealous over you with godly jealousy: for I have espoused you to one husband, that I may present you as a chaste virgin to Christ.\nMatthew 25:1 — Then shall the kingdom of heaven be likened unto ten virgins, which took their lamps, and went forth to meet the bridegroom.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "863ab4a86c8bc54d4467396e9acd80d0b371d97912a4cb58306ef5de248d44d1",
+  "cache": {
+    "hit": false
+  }
+}

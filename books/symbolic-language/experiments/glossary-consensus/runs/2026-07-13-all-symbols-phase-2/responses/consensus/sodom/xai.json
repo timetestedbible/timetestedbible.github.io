@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920588,
+  "completed_at": 1783920605,
+  "id": "1218fc48-3447-9ce0-bc62-375e146174cc",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_1218fc48-3447-9ce0-bc62-375e146174cc",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Sodom, Gomorrah\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_meaning\": \"Sodom and Gomorrah symbolize divine judgment on extreme wickedness, particularly sexual immorality and inhospitality.\",\n  \"primary_basis\": [\n    \"Genesis 19\",\n    \"Jude 1:7\",\n    \"2 Peter 2:6\",\n    \"Ezekiel  16:49-50\",\n    \"Luke 17:28-30\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Inhospitality and failure to show charity to strangers\",\n      \"basis\": [\n        \"Ezekiel 16:49-50\",\n        \"Genesis 19 (attack on angels as strangers)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General moral corruption and idolatry\",\n      \"basis\": [\n        \"Genesis 19\",\n        \"2 Peter 2:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian interpretation centers on judgment for sexual sin and inhospitality, with historical emphasis on homosexuality.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Symbol of divine judgment and fiery destruction upon extreme wickedness, especially sexual immorality and homosexual acts (sodomy)\",\n  \"primary_basis\": [\n    \"Genesis 18:20–19:29 (destruction narrative and the demand to 'know' the angelic visitors)\",\n    \"Jude 1:7 (example of those who indulged in sexual immorality and pursued unnatural desire/'strange flesh')\",\n    \"2 Peter 2:6–10 (example of condemnation of the ungodly, with Lot distressed by the sensual conduct of the wicked)\",\n    \"traditional Christian usage of 'sodomy' derived from the episode\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Symbol of judgment for inhospitality, pride, excess, and failure to aid the poor and needy\",\n      \"basis\": [\n        \"Ezekiel 16:49–50 (explicit list of Sodom's guilt)\",\n        \"Genesis 19 emphasis on the violation of strangers/guests\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General emblem of ungodliness, idolatry, or rebellion that prefigures eschatological judgment\",\n      \"basis\": [\n        \"Luke 17:28–30\",\n        \"Matthew 10:14–15 / 11:23–24\",\n        \"Isaiah 1:9–10 and other prophetic allusions\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Broad warning against any form of societal depravity or covenant unfaithfulness without specifying sexuality\",\n      \"basis\": [\n        \"Deuteronomy 29:23\",\n        \"Amos 4:11\",\n        \"Jeremiah 23:14 and parallel prophetic texts\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional and confessional Christian interpretation (patristic through modern evangelical and Catholic teaching) overwhelmingly centers the sexual-immorality reading; the inhospitality/social-justice reading is prominent in modern academic and progressive circles but remains secondary to the historic consensus. The cities function primarily as a cautionary type of irreversible divine wrath.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_1218fc48-3447-9ce0-bc62-375e146174cc",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 607,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1728,
+    "output_tokens_details": {
+      "reasoning_tokens": 1226
+    },
+    "total_tokens": 2335,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 110060000,
+    "context_details": {
+      "input_tokens": 607,
+      "output_tokens": 1728
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

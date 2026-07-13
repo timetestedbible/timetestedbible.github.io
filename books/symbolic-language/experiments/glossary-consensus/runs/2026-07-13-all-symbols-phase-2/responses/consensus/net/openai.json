@@ -1,0 +1,173 @@
+{
+  "id": "resp_06be04ef71f1fc51006a5476cfd8ec819596bcb78ede7bbf18",
+  "object": "response",
+  "created_at": 1783920335,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920358,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_06be04ef71f1fc51006a5476d0cbec81958cdfd334b4323749",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_06be04ef71f1fc51006a5476db940c8195bd6adaec6d2f7638",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"A fishing net most commonly symbolizes the gathering of people into God’s kingdom through evangelism and apostolic mission—especially the calling to become “fishers of men.”\",\"primary_basis\":[\"Matthew 4:18–20 — Jesus calls Peter and Andrew to become “fishers of men.”\",\"Mark 1:16–18 — the parallel calling of the fishermen.\",\"Luke 5:1–11 — the miraculous catch accompanies the disciples’ call to catch people.\",\"John 21:1–11 — the abundant catch is often read in Christian tradition as an image of apostolic mission, though the text does not explicitly define it that way.\"],\"alternatives\":[{\"meaning\":\"The kingdom’s broad gathering of all kinds of people, followed by final separation and judgment.\",\"basis\":[\"Matthew 13:47–50 — the kingdom is explicitly compared to a dragnet gathering fish of every kind; the good and bad are separated at the end of the age.\"],\"prominence\":\"common\"},{\"meaning\":\"A trap or snare representing danger, hostile schemes, captivity, or judgment.\",\"basis\":[\"Psalm 9:15; 35:7–8; 57:6; 140:5 — enemies spread nets as concealed traps and may themselves be caught in them.\",\"Proverbs 29:5 — flattery is compared to spreading a net.\",\"Ecclesiastes 9:12 — people are unexpectedly caught like fish in a net.\",\"Ezekiel 12:13; 17:20; 32:3 — God’s net signifies capture and judgment.\",\"Hosea 7:12 — God spreads a net over the disobedient.\"],\"prominence\":\"common\"},{\"meaning\":\"The Church as a universal or unified community gathered by apostolic mission, sometimes represented by the unbroken net and the 153 fish.\",\"basis\":[\"John 21:6–11 — the full yet unbroken net has been interpreted as the Church’s universality, unity, or fullness.\",\"Matthew 13:47–48 — the gathered fish are sometimes ecclesiologically interpreted as the visible Church containing a mixed body.\"],\"prominence\":\"minority\"},{\"meaning\":\"Humanity or nations subjected to oppressive conquest, as fish swept up by a ruler’s net.\",\"basis\":[\"Habakkuk 1:14–17 — the conqueror gathers people in a dragnet and rejoices over his captives.\",\"Ezekiel 32:3 — Pharaoh is caught in God’s net through the agency of many nations.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single context-independent symbolic meaning of “net” throughout Scripture. In popular Christian teaching, the fishing net is most recognizably associated with evangelistic gathering, but particular passages explicitly use it for final judgment, entrapment, captivity, or hostile oppression. Matthew 13 especially combines gathering with eschatological sorting rather than presenting the net as evangelism alone.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1034,
+    "output_tokens_details": {
+      "reasoning_tokens": 412
+    },
+    "total_tokens": 1351
+  },
+  "user": null,
+  "metadata": {}
+}

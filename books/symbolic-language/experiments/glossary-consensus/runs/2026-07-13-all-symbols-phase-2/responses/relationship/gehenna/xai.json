@@ -1,0 +1,167 @@
+{
+  "created_at": 1783921484,
+  "completed_at": 1783921490,
+  "id": "efe96295-dd3b-9357-ad2a-9f4ecfd6ed96",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Mainstream Christian consensus identifies Gehenna and the lake of fire as the place or state of final divine judgment and punishment of the unrepentant wicked after judgment (distinct from Hades/Sheol), traditionally eternal conscious torment or irreversible exclusion from God, with annihilationism, universal restoration, and metaphorical readings as recognized alternatives; the Valley of Hinnom supplies the historical imagery of judgment by fire.\",\n  \"book_summary\": \"Gehenna is the judgment itself, identified as the Valley of Hinnom outside Jerusalem where the carcasses of transgressors burn with undying worm and unquenchable fire, the place that destroys both soul and body, and is distinct from Sheol (the grave that holds all).\",\n  \"consensus_core_identification\": \"Final post-judgment punishment/exclusion of the wicked (hell/lake of fire), using Valley of Hinnom imagery.\",\n  \"book_core_identification\": \"The judgment consisting of the Valley of Hinnom (carcasses of transgressors burning; destroyer of both soul and body), distinct from Sheol.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book restricts the referent tightly to the valley/judgment of carcasses that destroy soul and body (Isa 66:24/Jer 7:32 language) and does not affirm the dominant traditional extension of everlasting conscious torment of the resurrected wicked as a permanent otherworldly location; it thereby excludes or leaves unasserted the full classical ECT/lake-of-fire package while retaining the core judgment-of-the-wicked category and Hades distinction.\",\n  \"material_contradiction\": \"none; the book does not deny that Gehenna names final judgment of the wicked or equate it with Sheol, so the central referent category remains intact.\",\n  \"rationale\": \"Both identify Gehenna with final judgment of the wicked that destroys body and soul and is distinct from Sheol/Hades, drawing on the same Valley-of-Hinnom and Isaiah 66:24 background. The book preserves that general referent but materially narrows its extension and precision to the valley of carcasses under judgment rather than the broader traditional package of eternal conscious torment or the lake of fire as an everlasting postmortem locale. This is boundary refinement (subset of cases and imagery), not replacement of the core category, so REFINED rather than DIVERGENT or MATCH. No alternative in the consensus is required; the book simply tightens the consensus core.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The book's silence on the lake of fire and on eternal conscious torment could be read as tacitly favoring annihilation or purely historical carcass imagery, which some might treat as shifting the core rather than merely narrowing; yet the entry still names 'the judgment' that destroys soul and body and is distinct from Sheol, preserving the consensus category.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_efe96295-dd3b-9357-ad2a-9f4ecfd6ed96",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4944,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 648,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5592,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 130080000,
+    "context_details": {
+      "input_tokens": 4944,
+      "output_tokens": 648
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

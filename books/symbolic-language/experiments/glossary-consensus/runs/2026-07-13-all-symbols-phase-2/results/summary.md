@@ -1,0 +1,12 @@
+# Glossary consensus experiment — generated summary
+
+Terms: 147
+
+| Verdict | Meaning | Terms | Share |
+|---|---|---:|---:|
+| Match | book agrees with the recognizable consensus | 40 | 27% |
+| Refined | compatible with the common reading, but sharper | 69 | 47% |
+| Novel | no recognizable consensus covers the book's central claim | 3 | 2% |
+| Disputed | the relationship graders did not reach a majority | 11 | 7% |
+| Divergent — pending | persuasion stage has not completed | 22 | 15% |
+| Pending | relationship stage has not completed | 2 | 1% |

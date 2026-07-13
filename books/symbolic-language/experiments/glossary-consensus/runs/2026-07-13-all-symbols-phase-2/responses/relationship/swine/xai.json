@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922476,
+  "completed_at": 1783922499,
+  "id": "7877a7a6-0118-9266-a002-e81a1dd0d10b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7877a7a6-0118-9266-a002-e81a1dd0d10b",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Swine (pig, boar, sow)\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of swine as the unclean beast par excellence (Levitical outward sign without inward work) and the nation outside the covenant that tramples the holy (pearls under feet, 42-month trampling of the holy city) preserves the consensus primary referent of uncleanness/impurity and the profane who reject or trample sacred things. The book narrows the referent to the specific hypocritical outward-only form and explicitly to Gentile nations outside the covenant, which the consensus treats as a common or minority alternative rather than the primary meaning.\",\n  \"extension_reasoning\": \"The book adds precision by centering the hypocrisy motif (cloven hoof without cud) and the Gentile/nation-outside-covenant identity (Rev 11:2, Matt 7:6), while retaining the core unclean status. It excludes or subordinates the 2 Peter 2:22 apostasy reading and the Gadarene/demonic reading, which consensus treats as common or minority extensions. The book's focus on Gentiles as the primary referent is a boundary narrowing rather than replacement of the central category.\",\n  \"consensus_summary\": \"Swine symbolize uncleanness, spiritual impurity and the profane who reject or trample sacred things, rooted in Leviticus 11:7, Deuteronomy 14:8, Matthew 7:6, and 2 Peter 2:22.\",\n  \"book_summary\": \"Swine are the unclean beast par excellence (outward sign without inward work) and the nation outside the covenant that tramples what is holy (pearls under feet, holy city under Gentiles, washed sow in mire).\",\n  \"consensus_core_identification\": \"uncleanness / spiritual impurity / the profane and unholy who reject or trample sacred things\",\n  \"book_core_identification\": \"unc lean beast par excellence (outward sign without inward work); nation outside the covenant that tramples what is holy\",\n  \"boundary_disagreement\": \"Book narrows to the specific hypocrisy of cloven hoof without cud and to Gentile nations outside the covenant; consensus allows broader applications to apostates, demons, and general impurity while treating Gentile symbolism as secondary.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"The book's core remains the consensus category of uncleanness and those who trample holy things, but it refines the extension by elevating the legal hypocrisy motif and the Gentile referent to definitional status.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Swine primarily symbolize uncleanness and spiritual impurity—the unholy, profane, and those who reject or trample sacred things—rooted in Levitical dietary laws and applied in NT texts such as Matthew 7:6 and 2 Peter 2:22; alternatives (Gentiles, apostasy, sensuality, demons, enemies) are treated as extensions of this core.\",\n  \"book_summary\": \"Swine are the unclean beast par excellence, defined by the outward sign of a parted hoof without the inward work of chewing the cud, and identified as the nation outside the covenant that tramples what is holy (pearls, holy city, washed sow).\",\n  \"consensus_core_identification\": \"uncleanness / spiritual impurity (the profane who reject or trample sacred things)\",\n  \"book_core_identification\": \"unclean beast with outward form lacking inward reality; the nation outside the covenant that tramples what is holy\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book elevates the specific legal defect (cloven hoof without cud) and the Gentile/nation-outside-covenant referent (linked via Rev 11:2) to definitional status, whereas consensus keeps general impurity broader and treats the hypocrisy reading and Gentile application as minority or secondary alternatives.\",\n  \"material_contradiction\": \"None; the book retains and builds on the uncleanness core without denying it.\",\n  \"rationale\": \"Both share the Levitical uncleanness foundation and the trampling motif from Matthew 7:6 / 2 Peter 2:22. The book preserves that category but materially narrows its precision and extension by making the partial-cleanness criterion and the covenant-outsider nation the explicit core identification rather than optional elaborations. This is boundary refinement, not core replacement or novelty.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus ranks the cloven-hoof hypocrisy note and the Gentile/nation reading as secondary or minority, not primary, so the book’s elevation of them may over-specify a broader impurity symbol.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7877a7a6-0118-9266-a002-e81a1dd0d10b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4252,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2785,
+    "output_tokens_details": {
+      "reasoning_tokens": 2293
+    },
+    "total_tokens": 7037,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 244460000,
+    "context_details": {
+      "input_tokens": 4252,
+      "output_tokens": 2785
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

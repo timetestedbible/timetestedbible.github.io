@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920868,
+  "completed_at": 1783920884,
+  "id": "eaaf19e3-7fa1-9d59-a697-58b5b4aa619a",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_eaaf19e3-7fa1-9d59-a697-58b5b4aa619a",
+      "summary": [
+        {
+          "text": "The task is about the term \"Wise\" in biblical symbolism for Christian teaching and interpretation.\n{\n  \"primary_meaning\": \"Those who possess spiritual wisdom or discernment, particularly those who fear the Lord and make righteous choices\",\n  \"primary_basis\": [\n    \"Proverbs 9:10\",\n    \"James 1:5\",\n    \"Matthew 7:24-27\",\n    \"Matthew 25 1-13\",\n    \"1 Corinthians 1:18-25\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Magi or wise men who visited Jesus\",\n      \"basis\": [\n        \"Matthew 2:1-12\"\n      ],\n      \"prominence\": \"common\"\n },\n    {\n      \"meaning\": \"Worldly wisdom that is foolishness to God\",\n      \"basis\": [\n        \"1 Corinthians 1:18-25\",\n        \"Proverbs 3:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Shrewdness or prudence in dealing with the world\",\n      \"basis\": [\n        \"Matthew 10:16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"The term 'wise' functions more as a character trait or ethical descriptor than a fixed symbol like 'lion' or 'bread', but in Christian teaching it consistently points to godly discernment and righteous living.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Godly wisdom or spiritual discernment expressed in prudent, obedient living that fears the Lord and builds on His word\",\n  \"primary_basis\": [\n    \"Proverbs 1:7\",\n    \"Proverbs 9:10\",\n    \"Matthew 7:24-27\",\n    \"Matthew 25:1-13\",\n    \"James 3:13-17\",\n    \"1 Corinthians 1:18-31\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ Himself as the wisdom of God\",\n      \"basis\": [\n        \"1 Corinthians 1:24\",\n        \"1 Corinthians 1:30\",\n        \"Colossians 2:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worldly or human wisdom that is folly before God\",\n      \"basis\": [\n        \"1 Corinthians 1:20-25\",\n        \"1 Corinthians 3:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Magi (wise men) as Gentile seekers who recognize and worship Christ\",\n      \"basis\": [\n        \"Matthew 2:1-12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Practical shrewdness or cunning in dealing with a hostile world\",\n      \"basis\": [\n        \"Matthew 10:16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"“Wise” functions more as a recurring ethical/spiritual attribute than as a concrete object-symbol (e.g., lamb, dove). Across wisdom literature and the Gospels it is consistently tied to fear of the Lord, readiness, and obedience; the main variations are contrastive (godly vs. worldly) or titular (Magi).\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_eaaf19e3-7fa1-9d59-a697-58b5b4aa619a",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1988,
+    "output_tokens_details": {
+      "reasoning_tokens": 1554
+    },
+    "total_tokens": 2590,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 129400000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1988
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

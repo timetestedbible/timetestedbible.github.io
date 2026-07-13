@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "four",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFour winds\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical scholarship, 'the four winds' is understood primarily as an idiom for the four cardinal directions (north, south, east, west) and thus for the totality or universality of the earth. Phrases such as 'from the four winds' or 'to the four winds' mean 'from every direction / to everywhere,' expressing the worldwide scope of God's action—whether gathering (the elect, exiles) or scattering (nations, kingdoms). Secondarily, the winds are frequently read as agents or forces under God's sovereign control operating across the whole earth.\",\n  \"primary_basis\": [\n    \"Matthew 24:31 (angels gather the elect 'from the four winds, from one end of heaven to the other')\",\n    \"Mark 13:27 (parallel gathering of the elect from the four winds)\",\n    \"Zechariah 2:6 ('I have spread you abroad as the four winds of the heavens')\",\n    \"Daniel 8:8 and Daniel 11:4 (a kingdom divided 'toward the four winds of heaven,' i.e., in all directions)\",\n    \"Jeremiah 49:36 (the four winds brought against Elam, scattering it in every direction)\",\n    \"Revelation 7:1 (four angels at the four corners of the earth holding the four winds)\",\n    \"Daniel 7:2 (the four winds of heaven stirring up the great sea)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Destructive forces of divine judgment: winds as instruments of God's wrath that devastate or scatter, temporarily restrained until God's timing (especially in apocalyptic contexts).\",\n      \"basis\": [\n        \"Revelation 7:1-3 (winds held back so they do not harm earth, sea, or trees until the servants of God are sealed)\",\n        \"Jeremiah 49:36\",\n        \"Jeremiah 4:11-13 (destructive wind imagery)\",\n        \"Daniel 7:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Turbulent political, historical, or heavenly forces stirring the nations: in Daniel 7:2 the winds churning the sea are commonly read as God-directed forces of upheaval among the Gentile nations from which world empires arise.\",\n      \"basis\": [\n        \"Daniel 7:2-3\",\n        \"Revelation 13:1 (beast rising from the sea, read in light of Daniel 7)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The breath/Spirit of God as life-giving power: in Ezekiel's valley of dry bones, the breath summoned 'from the four winds' is widely read as God's Spirit bringing resurrection life (playing on the Hebrew ruach, wind/breath/spirit).\",\n      \"basis\": [\n        \"Ezekiel 37:9-10\",\n        \"Ezekiel 37:14 ('I will put my Spirit in you')\",\n        \"John 3:8 (wind/Spirit wordplay often cited in support)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Angelic or heavenly agents/spirits sent out from God's presence: the four chariots of Zechariah are identified as 'the four winds/spirits of heaven' going out to patrol or execute God's will over the earth; some commentators generalize this to the winds as angelic ministers.\",\n      \"basis\": [\n        \"Zechariah 6:1-5\",\n        \"Psalm 104:4 ('he makes the winds his messengers')\",\n        \"Hebrews 1:7\",\n        \"Revelation 7:1 (angels controlling the winds)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal meteorological reading with no symbolic content: the four winds simply denote winds from the four quarters, a common ancient Near Eastern geographical convention, with no theological symbolism beyond directionality.\",\n      \"basis\": [\n        \"Ancient Near Eastern parallels (Akkadian 'four winds' idiom)\",\n        \"Daniel 8:8; 11:4 read as plain geographic idiom\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable agreement across Catholic, Orthodox, Protestant, and academic commentary that 'four winds' is fundamentally a merism for the four compass points, signifying worldwide extent or 'everywhere.' Disagreement is largely contextual rather than fundamental: the same idiom takes on judgment overtones in Jeremiah and Revelation, life-giving Spirit overtones in Ezekiel 37, and political-upheaval overtones in Daniel 7. Dispensational and prophecy-teaching traditions sometimes press Revelation 7:1 toward specific end-times scenarios (e.g., restrained war or catastrophe), but even these presuppose the base meaning of universal, earth-wide forces under divine control.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The totality of the earth, representing all four points of the compass (North, South, East, West) and signifying global or universal scope.\",\n  \"primary_basis\": [\n    \"Revelation 7:1\",\n    \"Matthew 24:31\",\n    \"Mark 13:27\",\n    \"Daniel 7:2\",\n    \"Daniel 8:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Angelic beings or spiritual agencies carrying out God's will globally.\",\n      \"basis\": [\n        \"Zechariah 6:5\",\n        \"Revelation 7:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment or chaotic, destructive forces of nature that God restrains or unleashes upon the earth.\",\n      \"basis\": [\n        \"Revelation 7:1\",\n        \"Jeremiah 49:36\",\n        \"Daniel 7:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The pervasive, life-giving power of the Holy Spirit or divine breath.\",\n      \"basis\": [\n        \"Ezekiel 37:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The 'four winds' is a well-established ancient idiom for the four points of the compass, denoting the entire world. While the exact function of the winds can vary contextually (e.g., gathering the elect, churning the sea, bringing breath), the spatial scope they represent is consistently universal.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The four winds most commonly symbolize the four quarters or cardinal directions of the world and, by extension, worldwide extent, totality, or universality.\",\n  \"primary_basis\": [\n    \"Jeremiah 49:36 — four winds are brought from the four quarters of heaven, scattering Elam in every direction.\",\n    \"Ezekiel 37:9 — breath is summoned from the four winds, indicating every direction or the full compass of heaven.\",\n    \"Daniel 8:8; 11:4 — kingdoms or powers are divided toward the four winds of heaven, meaning the various regions of the world.\",\n    \"Zechariah 2:6 — Israel is scattered as the four winds of heaven, expressing widespread dispersion.\",\n    \"Matthew 24:31 and Mark 13:27 — the elect are gathered from the four winds, explicitly extending from one end of heaven or earth to the other.\",\n    \"Revelation 7:1 — four winds are positioned at the four corners of the earth, conveying comprehensive worldwide reach.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Forces or instruments of divine judgment, upheaval, or destruction operating throughout the world.\",\n      \"basis\": [\n        \"Jeremiah 49:36 associates the winds with conquest and scattering.\",\n        \"Daniel 7:2 depicts the four winds stirring the great sea before the emergence of the beasts.\",\n        \"Revelation 7:1-3 portrays the winds as harmful forces restrained until God's servants are sealed.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Heavenly spirits, angelic powers, or divine agents associated with the four regions of heaven.\",\n      \"basis\": [\n        \"Zechariah 6:5 can be translated as either the 'four spirits' or 'four winds' of heaven and identifies them with the four chariots going out from God's presence.\",\n        \"Revelation 7:1 links four angels with control over the four winds.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The life-giving breath or Spirit of God summoned in its fullness.\",\n      \"basis\": [\n        \"Ezekiel 37:9-14 uses the same Hebrew word for wind, breath, and spirit; the breath from the four winds revives the dry bones.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Specific political kingdoms or historical powers.\",\n      \"basis\": [\n        \"Daniel 8:8 and 11:4 connect the four winds with the territorial division of kingdoms, leading some interpreters to identify them with particular political regions or successor powers.\",\n        \"Daniel 7:2 has sometimes encouraged historical identifications of the winds themselves, although the beasts, rather than the winds, are explicitly interpreted as kingdoms.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that the number four primarily marks the whole compass of the earth or heavens. The term's more specific function is context-dependent: it can denote worldwide dispersion or gathering, destructive judgment, heavenly agency, or life-giving breath. Thus, the general symbolism is settled, while the identity and action of the winds in individual passages are not always settled.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The four cardinal directions (north, south, east, west), representing the whole earth, all nations, or universal scope\",\n  \"primary_basis\": [\n    \"Matthew 24:31\",\n    \"Mark 13:27\",\n    \"Revelation 7:1\",\n    \"Daniel 7:2\",\n    \"Jeremiah 49:36\",\n    \"Zechariah 2:6\",\n    \"Ezekiel 37:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Destructive or chaotic forces of divine judgment acting upon the earth\",\n      \"basis\": [\n        \"Revelation 7:1\",\n        \"Daniel 7:2\",\n        \"Jeremiah 49:36\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Heavenly spirits or angels dispatched from God's presence\",\n      \"basis\": [\n        \"Zechariah 6:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The life-giving breath or Spirit of God coming from every direction\",\n      \"basis\": [\n        \"Ezekiel 37:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across standard Christian biblical interpretation and commentaries the directional/universal sense is the most consistently recognized primary symbolism, with contextual overlays (judgment, gathering, or life) treated as secondary applications rather than competing core meanings.\"\n}\n\nBOOK ENTRY\nThe four spirits of heaven — God's executing agents, shown as the four horsemen.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Zech 6:5) · see The Four Winds, ch. 34\n\nAVAILABLE KJV EXCERPTS\nZechariah 6:5 — And the angel answered and said unto me, These are the four spirits of the heavens, which go forth from standing before the Lord of all the earth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "b42d165c8a920c497e89ff1b90473f83de269a20c6afbde2f9ed092d389b0bbc",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "id": "resp_039f6af1b57f73c5006a547867acb88195a0a1ca5d9a718bbb",
+  "object": "response",
+  "created_at": 1783920743,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920764,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_039f6af1b57f73c5006a5478684dc081958138f8ccfac6d1fa",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_039f6af1b57f73c5006a54786daba08195ae7886ce1d85271a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"When used symbolically—especially as “the voice of God”—voice most commonly signifies divine self-revelation, authoritative speech, command, calling, or guidance: God making his will and presence known.\",\"primary_basis\":[\"Exodus 19:16-19; Deuteronomy 4:12, 33—Israel hears God’s voice at Sinai without seeing a form.\",\"Psalm 29:3-9—the voice of the LORD expresses divine majesty, power, and sovereignty.\",\"1 Kings 19:11-13—Elijah encounters God through the “low whisper” or “still small voice,” commonly interpreted as divine communication, though the translation is debated.\",\"Isaiah 30:21—a guiding word directs God’s people in the proper way.\",\"John 10:3-5, 16, 27—Christ’s sheep know and follow his voice, symbolizing recognition of and obedience to him.\",\"John 5:25-29—the Son’s voice conveys life-giving and judicial authority.\",\"Revelation 1:10-15; 10:3-4—the heavenly or divine voice communicates revelation and is associated with overwhelming authority. \"],\"alternatives\":[{\"meaning\":\"A voice can symbolize proclamation, witness, or the public transmission of a message rather than divine speech itself.\",\"basis\":[\"Isaiah 40:3-6; Matthew 3:3; John 1:23—the “voice crying in the wilderness” represents the prophetic herald.\",\"Revelation 12:10; 14:2—the heavenly voice announces or bears witness to divine events.\"],\"prominence\":\"common\"},{\"meaning\":\"The recognizable voice of the shepherd symbolizes personal relationship, identity, trust, and obedient discipleship.\",\"basis\":[\"John 10:3-5, 14-16, 27—the sheep distinguish the shepherd’s voice from that of strangers.\"],\"prominence\":\"common\"},{\"meaning\":\"A powerful or many-watered voice symbolizes majesty, irresistible power, and awe-inspiring divine or heavenly presence.\",\"basis\":[\"Ezekiel 43:2—the glory of God approaches with a voice like many waters.\",\"Revelation 1:15; 14:2; 19:6—voices like rushing waters or thunder convey overwhelming power and grandeur.\"],\"prominence\":\"common\"},{\"meaning\":\"A voice can personify a demand for justice, testimony, or accusation, even when no literal speaker is present.\",\"basis\":[\"Genesis 4:10—Abel’s blood “cries” from the ground.\",\"Hebrews 12:24—Jesus’ sprinkled blood “speaks a better word” than Abel’s.\"],\"prominence\":\"minority\"},{\"meaning\":\"The voices of bridegroom and bride symbolize communal joy, covenant blessing, restoration, and ordinary flourishing.\",\"basis\":[\"Jeremiah 7:34; 16:9; 25:10—the removal of these voices signifies judgment.\",\"Jeremiah 33:10-11—their return signifies restoration and thanksgiving.\",\"Revelation 18:23—their cessation marks Babylon’s desolation.\"],\"prominence\":\"minority\"},{\"meaning\":\"In some devotional traditions, “voice” is treated as an inward impression, conscience, or private guidance from God.\",\"basis\":[\"1 Kings 19:12 is frequently invoked through the traditional phrase “still small voice.”\",\"Romans 8:14-16 and John 16:13 are sometimes connected with inward divine guidance, although neither passage establishes “voice” as a fixed symbol for subjective impressions.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"“Voice” has no single settled symbolic meaning when unqualified; it often functions literally or metonymically for the speaker and message. The strongest recurring symbolic association is authoritative communication—most notably God’s revelation, command, call, or guidance—but context determines whether voice instead emphasizes identity, witness, power, justice, joy, or restoration.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1096,
+    "output_tokens_details": {
+      "reasoning_tokens": 276
+    },
+    "total_tokens": 1413
+  },
+  "user": null,
+  "metadata": {}
+}

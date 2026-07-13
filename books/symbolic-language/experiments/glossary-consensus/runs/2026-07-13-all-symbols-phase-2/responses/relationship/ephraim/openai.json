@@ -1,0 +1,201 @@
+{
+  "id": "resp_0a16065cbd5b8158006a547a404c108195a2fb76cde3590f7d",
+  "object": "response",
+  "created_at": 1783921216,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921243,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a16065cbd5b8158006a547a412d88819582c20bd70e4225b3",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a16065cbd5b8158006a547a4b8b4881958e472698ff7c8cc0",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a16065cbd5b8158006a547a5412bc819583d2cf7dc9db9ee8",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Ephraim primarily represents the northern kingdom of Israel, especially as covenant-unfaithful yet beloved and destined for restoration; fruitfulness, dispersion, and identification with a multitude of nations are secondary or minority readings.\",\"book_summary\":\"Ephraim is identified as the scattered covenant firstborn whose biological or covenantal seed becomes the “fulness of the nations.”\",\"consensus_core_identification\":\"Ephraim as the northern kingdom of Israel, led by the tribe of Ephraim.\",\"book_core_identification\":\"Ephraim as scattered northern-Israelite firstborn lineage continuing through seed identified with a multitude or fulness of nations.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book elevates a minority dispersion-and-descendants reading into the defining meaning. It reclassifies Ephraim beyond the historical northern kingdom to include its scattered seed among or as the nations, while not foregrounding ordinary prophetic cases concerning the kingdom’s apostasy, judgment, and restoration.\",\"material_contradiction\":\"There is no direct contradiction if the scattered firstborn is understood as the northern kingdom in dispersion. The material difference is the book’s genealogical and multinational extension, which mainstream consensus treats as a specialized or minority inference rather than Ephraim’s primary symbolic identity.\",\"rationale\":\"The book retains the general Ephraim/northern-Israel lineage rather than replacing it with an unrelated referent, so the relationship is refined rather than divergent. Its “fulness of the nations” formulation is recognizable in the consensus alternatives concerning lost tribes, Gentile inclusion, and Two-House interpretations, so it is not novel. The defining focus nevertheless shifts from the historical northern kingdom to its scattered seed and multinational destiny.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Genesis 48:19 supports Ephraim’s seed becoming a “multitude of nations,” but it does not itself call Ephraim scattered or firstborn, nor establish that the nations are literally Ephraim’s dispersed descendants. Those elements require additional texts and interpretive argument.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4280,
+    "input_tokens_details": {
+      "cache_write_tokens": 4277,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1390,
+    "output_tokens_details": {
+      "reasoning_tokens": 941
+    },
+    "total_tokens": 5670
+  },
+  "user": null,
+  "metadata": {}
+}

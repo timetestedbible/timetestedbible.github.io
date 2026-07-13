@@ -1,0 +1,173 @@
+{
+  "id": "resp_066c8677ae095636006a5474255c1481959f0fee9f96ec8256",
+  "object": "response",
+  "created_at": 1783919653,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919668,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_066c8677ae095636006a547425fc248195b835ed565eb3b28c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_066c8677ae095636006a54742a387481958e3537265833b258",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Access, entrance, or passage—most characteristically, access to God, salvation, and eternal life through Christ. A door or gate may therefore represent both the offered way of entry and the decisive boundary between those admitted and those excluded.\",\"primary_basis\":[\"John 10:7-9 — Jesus identifies himself as the gate/door through whom one enters and is saved.\",\"Matthew 7:13-14; Luke 13:24 — the narrow gate represents the difficult way leading to life, contrasted with the broad way leading to destruction.\",\"John 14:6 — although not using the door image, it commonly supports the interpretation of Christ as the exclusive way of access to the Father.\",\"Luke 13:25-28; Matthew 25:10-12 — the shut door symbolizes the end of opportunity and exclusion from the kingdom.\",\"Revelation 3:20 — Christ standing at the door and knocking is commonly interpreted as an invitation to fellowship, repentance, or personal reception of Christ.\"],\"alternatives\":[{\"meaning\":\"An opportunity opened by God, especially for ministry, evangelism, or effective service.\",\"basis\":[\"1 Corinthians 16:9\",\"2 Corinthians 2:12\",\"Colossians 4:3\",\"Revelation 3:8\"],\"prominence\":\"common\"},{\"meaning\":\"Access to heaven, divine revelation, or the presence and purposes of God.\",\"basis\":[\"Revelation 4:1\",\"Genesis 28:17\",\"Psalm 24:7-10\"],\"prominence\":\"common\"},{\"meaning\":\"Judgment, exclusion, or the final closing of an opportunity to enter.\",\"basis\":[\"Matthew 25:10-12\",\"Luke 13:25-28\",\"Genesis 7:16\"],\"prominence\":\"common\"},{\"meaning\":\"Human receptivity or the inward opening of the heart to Christ.\",\"basis\":[\"Revelation 3:20\",\"Acts 14:27\"],\"prominence\":\"common\"},{\"meaning\":\"Authority, civic power, security, or vulnerability, reflecting the legal and defensive role of ancient city gates.\",\"basis\":[\"Genesis 22:17\",\"Ruth 4:1-11\",\"Psalm 127:5\",\"Isaiah 45:1-2\"],\"prominence\":\"minority\"},{\"meaning\":\"The power or domain of death and hostile spiritual forces, especially in the expression “gates of Hades.”\",\"basis\":[\"Matthew 16:18\",\"Isaiah 38:10\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus around the general symbolism of access, entry, and boundary, especially Christ as the entrance to salvation. There is not one fixed meaning for every occurrence: context determines whether the image emphasizes invitation, opportunity, revelation, exclusion, judgment, authority, or security.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 825,
+    "output_tokens_details": {
+      "reasoning_tokens": 234
+    },
+    "total_tokens": 1144
+  },
+  "user": null,
+  "metadata": {}
+}

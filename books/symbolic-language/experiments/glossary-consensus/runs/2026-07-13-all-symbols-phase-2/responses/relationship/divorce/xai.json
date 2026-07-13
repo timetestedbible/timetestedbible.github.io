@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921128,
+  "completed_at": 1783921153,
+  "id": "8e86a419-14a6-938e-bf1c-b4225c41a672",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_8e86a419-14a6-938e-bf1c-b4225c41a672",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Divorce (bill of divorcement)\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification matches the consensus primary meaning: God's judicial separation of unfaithful Israel through the bill of divorcement, resulting in exile and scattering due to covenant betrayal (spiritual adultery). The 1:1 correspondence is preserved at the central referent level.\",\n  \"extension_reasoning\": \"The book refines the consensus by narrowing the scope of when divorce is 'hated' (only when it betrays the true covenant wife) versus 'commanded' (when the union is itself fornication or a marriage God never joined, e.g., Ezra 10), and by extending the resolution to include Christ's death at the cross answering the Deuteronomy 24 no-return rule. This adds boundary conditions and a typological application not present in the consensus alternatives.\",\n  \"citations_support\": \"strong\",\n  \"core_relation\": \"REFINED 70\",\n  \"extension_relation\": \"REFINED 65\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification matches the consensus primary meaning: God's judicial separation of unfaithful Israel through the bill of divor cement, resulting in exile and scattering due to covenant betrayal (spiritual adultery). The 1:1 correspondence is preserved at the central referent level.\",\n  \"extension_reasoning\": \"The book refines the consensus by narrowing the scope of when divorce is 'hated' (only when it betrays the true covenant wife ) versus 'commanded' (when the union is itself fornication or a marriage God never joined, e.g., Ezra 10), and by extending the resolution to include Christ's death at the cross answering the Deuteronomy 24 no-return rule. This adds boundary conditions and a typological application not present in the consensus alternatives .",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Symbolically, the bill of divorcement primarily represents God's judicial covenant severance from unfaithful Israel (spiritual adultery/idolatry), expressed as exile, within the prophetic marriage metaphor (with restoration often in view); the term is also frequently literal/ethical.\",\n  \"book_summary\": \"The covenant lawsuit executed as the wife sent out of the house (exile and scattering); hated when it betrays the covenant wife, but commanded when the union is fornication (a marriage God never joined); God gave Israel the bill and answered His own no-return rule at the cross.\",\n  \"consensus_core_identification\": \"God's judicial divorce/separation of unfaithful Israel for spiritual adultery, resulting in exile/judgment under the husband-wife covenant metaphor.\",\n  \"book_core_identification\": \"Executed covenant lawsuit sending the wife out (exile/scattering of Israel), with the additional framing that divorce is hated for true covenant wives but commanded for illegitimate unions, plus resolution of Deut 24's no-return via the cross.\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"BOOK_SUPERSET\",\n  \"boundary_disagreement\": \"Book adds the hated-vs-commanded distinction (applying to covenant betrayal vs. fornication/unions God never joined, e.g. foreign wives) and explicitly includes the cross as answering/resolving the Deuteronomy 24 no-return prohibition after God's divorce of Israel.\",\n  \"material_contradiction\": \"None; the book's core of Israel's divorce-as-exile matches the consensus primary without denying it.\",\n  \"rationale\": \"Minimum cores identify the same central referent (prophetic bill of divorcement as God's covenant lawsuit/exile of unfaithful Israel). Extra details do not create artificial disagreement. The book preserves that referent while broadening extension and precision with the hated/commanded boundary conditions and the cross resolution of the no-return rule (a recognizable but minority alternative in consensus). This is boundary refinement, not core replacement.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The cross answering the no-return rule (and full integration of commanded divorce for 'fornication' unions) elevates a minority legal-typological reading into the entry's core statement, beyond the settled consensus primary of simple covenant judgment/exile.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_8e86a419-14a6-938e-bf1c-b4225c41a672",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4976,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2593,
+    "output_tokens_details": {
+      "reasoning_tokens": 2074
+    },
+    "total_tokens": 7569,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 253180000,
+    "context_details": {
+      "input_tokens": 4976,
+      "output_tokens": 2593
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

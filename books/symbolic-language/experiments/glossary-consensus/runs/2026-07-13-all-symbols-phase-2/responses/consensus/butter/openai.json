@@ -1,0 +1,173 @@
+{
+  "id": "resp_0f91754dceb696bf006a54736ae7e88190b925d3f135e57033",
+  "object": "response",
+  "created_at": 1783919466,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919483,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f91754dceb696bf006a54736cd95c819088a889d5b889962c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f91754dceb696bf006a5473727e5c8190999008f9642ed479",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Rich nourishment, material abundance, and prosperity—often understood as a sign of God's generous provision. This is a broad contextual association rather than a fixed biblical symbol.\",\"primary_basis\":[\"Deuteronomy 32:13–14 — curds from cattle and milk from the flock appear among the rich provisions God gives Israel.\",\"Job 20:17 — streams of curds and honey represent prosperity that the wicked will not enjoy.\",\"Job 29:6 — washing one's steps with curds depicts Job's former prosperity.\",\"Isaiah 7:21–22 — abundant curds and honey are produced in the altered condition of the land, though the passage's implications are disputed.\"],\"alternatives\":[{\"meaning\":\"Hospitality and generous welcome\",\"basis\":[\"Genesis 18:8 — Abraham serves curds, milk, and meat to his visitors.\",\"Judges 5:25 — Jael gives Sisera curds in a noble or costly bowl.\"],\"prominence\":\"common\"},{\"meaning\":\"A subsistence diet amid judgment, depopulation, or agricultural collapse\",\"basis\":[\"Isaiah 7:15, 21–22 — curds and honey may indicate survival from pastoral and uncultivated resources after cultivated land has been devastated, rather than uncomplicated luxury.\"],\"prominence\":\"common\"},{\"meaning\":\"The consequences of pressure, agitation, or provocation\",\"basis\":[\"Proverbs 30:33 — pressing or churning milk produces curds/butter, analogously to pressing anger producing strife.\"],\"prominence\":\"minority\"},{\"meaning\":\"Spiritual nourishment, divine truth, or mature teaching\",\"basis\":[\"Some allegorical Christian readings extend the general symbolism of milk or rich food to curds/butter, but Scripture itself does not consistently establish this specific meaning for chemah.\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Chemah is variously translated “curds,” “butter,” or “thickened milk.” Christian interpretation has no settled, term-specific symbolic definition. Its most recognizable positive association is rich provision or prosperity, but its meaning depends heavily on context, especially in Isaiah 7.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 325,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 703,
+    "output_tokens_details": {
+      "reasoning_tokens": 249
+    },
+    "total_tokens": 1028
+  },
+  "user": null,
+  "metadata": {}
+}

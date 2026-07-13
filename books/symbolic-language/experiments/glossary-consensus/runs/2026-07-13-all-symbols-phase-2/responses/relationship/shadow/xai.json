@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922303,
+  "completed_at": 1783922335,
+  "id": "0ab68b6c-eee4-9861-a84b-8fd4defb7de6",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0ab68b6c-eee4-9861-a84b-8fd4defb7de6",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Shadow\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification is the protective covering of a greater presence, explicitly including refuge under God's wings, kingdom defence, and typological foreshadowing (outline of a coming body). This matches the 2–3 dominant senses in the consensus (protection and typology) but unifies them under one category rather than treating them as separate alternatives. The book also narrows the meaning by rejecting gloom/death readings as misreadings.\",\n  \"extension_reasoning\": \"The book adds the kingdom-protection sense (Num 14 9) and the typological outline sense (Col 2 17) as integral parts of the same protective covering, while excluding the shadow-of-death sense that several consensus responses list as common. It therefore narrows the range of cases the term covers and reclassifies the typological use as a form of covering rather as a separate category.\",\n  \"scripture_support\": \"strong\",\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core — protective covering of a greater presence — directly encompasses the two most prominent consensus senses (divine refuge and typological foreshadowing) while unifying them. It also explicitly rejects gloom/death readings, narrowing the term's scope.\",\n  \"extension_reasoning\": \"The book incorporates kingdom protection (Num 14:9) and the outline-of-coming-body sense (Col 2:17) as facets of the same protective covering, while excluding the shadow-of-death sense listed as common in several consensus responses. This constitutes a boundary narrowing rather than replacement of the central referent.\",\n  \"scripture_support\": \"strong\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n   \"extension_relation\": \"REFINED\",\n   \"core_reasoning\": \"The book's core identification — covering of a greater presence — aligns with the consensus's dominant senses of divine protection/refuge and typological foreshadowing, but unifies them under one category and rejects gloom/de ath readings.\",\n   \"extension_reasoning\": \"The book adds kingdom protection and the outline-of-coming-body sense as parts of the protective covering, while excluding the shadow-of-death sense that several consensus responses list as common. This is a boundary narrowing, not replacement of the central referent.\",\n   \"scripture_support\": \" strong\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core — protective covering of a greater presence — matches the consensus's two leading senses (protection and typology) but unifies them and excludes gloom/death readings .\",\n  \"extension_reasoning\": \"The book incorporates kingdom protection (Num 14:9) and the outline-of-coming-body sense (Col 2:17) as facets of the same protective covering, while excluding the shadow-of-death sense listed as common in several consensus responses.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Biblical 'shadow' is polyvalent with no single settled primary meaning; the two most prominent senses are divine protection/refuge (under wings or shade of the Almighty) and typological foreshadowing (OT institutions as shadow of Christ/substance), with common alternatives for life's transience and the shadow of death/gloom.\",\n  \"book_summary\": \"Covering of a greater presence: refuge under the Almighty's wings, a kingdom's protection over its people, and the outline a coming body casts ahead of itself; good to dwell in (not gloom), with KJV rendering the word as 'defence'.\",\n  \"consensus_core_identification\": \"Polyvalent image whose dominant uses are divine protection/refuge or typological foreshadowing of Christ, treated as separate context-dependent senses.\",\n  \"book_core_identification\": \"Covering of a greater presence that unifies refuge/protection and the outline cast by a coming body, positive and good to dwell in rather than gloom.\",\n  \"core_relation\": \"COMPATIBLE_OVERLAP\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book unifies the two dominant consensus senses (protection and typology) as aspects of one covering-of-greater-presence idea, adds kingdom-defence example, and excludes gloom/transience as misreadings, whereas consensus keeps the senses separate and lists gloom/death as common.\",\n  \"material_contradiction\": \"None on the included referents; book only rejects the gloom reading that consensus lists as a common alternative.\",\n  \"rationale\": \"Minimum cores overlap on the two dominant senses (protection and typology) attested across all consensus responses. The book preserves those referents but materially refines their relation and boundaries by treating them as a single positive covering, adding the Num 14:9 defence case, and excluding gloom; this is boundary adjustment rather than replacement of the central category.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Unifying protective and typological uses under one 'covering' may blur distinct scriptural contexts, and dismissing 'shadow of death' ignores a frequent and well-attested biblical phrase.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0ab68b6c-eee4-9861-a84b-8fd4defb7de6",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4056,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3250,
+    "output_tokens_details": {
+      "reasoning_tokens": 2766
+    },
+    "total_tokens": 7306,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 268440000,
+    "context_details": {
+      "input_tokens": 4056,
+      "output_tokens": 3250
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

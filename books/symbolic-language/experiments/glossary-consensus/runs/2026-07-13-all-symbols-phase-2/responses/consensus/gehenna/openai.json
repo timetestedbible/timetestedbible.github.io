@@ -1,0 +1,173 @@
+{
+  "id": "resp_04a3da409cd87aba006a54753314f88196bb01bde2f2991604",
+  "object": "response",
+  "created_at": 1783919923,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919944,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_04a3da409cd87aba006a5475338aec81969341df38f57fea13",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_04a3da409cd87aba006a54753b649c819681587b5db7f0a381",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Gehenna/hell/the lake of fire most commonly symbolizes the final divine judgment of the unrepentant wicked: irreversible exclusion from blessed life with God and punishment traditionally understood as eternal conscious suffering.\",\"primary_basis\":[\"Matthew 5:22, 29–30; 10:28; 18:8–9 — Gehenna, destruction of body and soul, and eternal fire\",\"Matthew 23:15, 33 — condemnation to Gehenna\",\"Matthew 25:31–46 — eternal fire and eternal punishment contrasted with eternal life\",\"Mark 9:43–48 — unquenchable fire and the undying worm, drawing on Isaiah 66:24\",\"Luke 12:4–5 — God’s authority to cast into Gehenna\",\"2 Thessalonians 1:8–9 — eternal destruction and exclusion from the Lord’s presence\",\"Revelation 14:9–11 — torment, fire, and smoke ascending forever\",\"Revelation 19:20; 20:10–15; 21:8 — the lake of fire, second death, and final judgment\",\"Daniel 12:2 and John 5:28–29 — resurrection to shame or condemnation\"] ,\"alternatives\":[{\"meaning\":\"Conditional immortality or annihilationism: the wicked are finally destroyed, cease to live, or permanently lose life rather than remain eternally conscious in torment; the lake of fire is the “second death.”\",\"basis\":[\"Matthew 10:28\",\"John 3:16\",\"Romans 6:23\",\"2 Thessalonians 1:9\",\"Revelation 20:14; 21:8\"],\"prominence\":\"minority\"},{\"meaning\":\"Universal or restorative judgment: the fire is ultimately corrective or purifying, and divine judgment eventually culminates in universal reconciliation.\",\"basis\":[\"1 Corinthians 3:13–15\",\"1 Corinthians 15:22–28\",\"Philippians 2:10–11\",\"Colossians 1:19–20\",\"1 Timothy 2:3–6\"],\"prominence\":\"minority\"},{\"meaning\":\"Gehenna sayings primarily signify historical or covenantal judgment, especially Jerusalem’s destruction, rather than an otherworldly final place of punishment.\",\"basis\":[\"Jeremiah 7:30–34; 19:1–15\",\"Matthew 23:33–38\",\"Matthew 24:1–34\"],\"prominence\":\"rare\"},{\"meaning\":\"Hell is principally the subjective experience of God’s presence or love by those who reject God, rather than a separately created torture chamber; fire imagery expresses alienation, shame, or painful resistance to divine holiness.\",\"basis\":[\"John 3:19–21\",\"Romans 2:5–8\",\"2 Thessalonians 1:9\",\"Revelation 14:10\"],\"prominence\":\"common\"},{\"meaning\":\"The imagery refers chiefly to the grave, death, or the intermediate state rather than final punishment.\",\"basis\":[\"Passages concerning Sheol or Hades, such as Psalm 16:10, Luke 16:23, and Revelation 20:13–14, are used in this reading, although biblical scholarship commonly distinguishes Sheol/Hades from Gehenna and the final lake of fire.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad Christian consensus that Gehenna and the lake of fire denote severe divine judgment and exclusion from final blessed life. There is no equally settled consensus about the precise nature of that judgment—literal or metaphorical fire, conscious torment or destruction, imposed penalty or experienced alienation—or about whether “hell,” Gehenna, Hades, and the lake of fire should be treated as exact synonyms.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 326,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1171,
+    "output_tokens_details": {
+      "reasoning_tokens": 383
+    },
+    "total_tokens": 1497
+  },
+  "user": null,
+  "metadata": {}
+}

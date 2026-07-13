@@ -1,0 +1,195 @@
+{
+  "id": "resp_04fdaef54757fac9006a547dfea3dc819393185165f85642de",
+  "object": "response",
+  "created_at": 1783922174,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922190,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_04fdaef54757fac9006a547dff2cbc8193bc4d24bbe7a5cfe8",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_04fdaef54757fac9006a547e08e1ec8193863669f955232bbe",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Rock centrally signifies God or Christ as the firm foundation, refuge, strength, and source of salvation; Christ may also be the cornerstone or stumbling stone.\",\"book_summary\":\"Rock signifies the covenant embodied personally in Christ, linking Israel’s spiritual Rock with the rejected stone made cornerstone.\",\"consensus_core_identification\":\"Rock = God/Christ, especially in divine firmness, protection, foundational security, and salvation.\",\"book_core_identification\":\"Rock = Christ specifically as the covenant in person.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book restricts the broad God/Christ symbolism to a specifically Christological-covenantal identification and groups the wilderness Rock and cornerstone under that category. The consensus also recognizes rock imagery concerning divine refuge, stability, strength, and other contextual uses that do not explicitly denote covenant.\",\"material_contradiction\":\"None. The book retains Christ as the central referent but gives the symbol a narrower covenantal specification.\",\"rationale\":\"The identification of the Rock with Christ is directly within the consensus. Calling Christ “the covenant in person” materially sharpens and narrows that identification rather than replacing it. The cornerstone motif is also already represented in the consensus, though the book integrates it into its covenant reading.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed texts establish God as Rock, Christ as the spiritual Rock, Christ as covenant, and the rejected stone as cornerstone, but no cited verse directly states that “rock” as a symbol means covenant; that conclusion depends on synthesizing distinct passages.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3661,
+    "input_tokens_details": {
+      "cache_write_tokens": 3658,
+      "cached_tokens": 0
+    },
+    "output_tokens": 855,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4516
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921519,
+  "completed_at": 1783921527,
+  "id": "e1c22561-ae75-94d0-907d-80fc784fe439",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_e1c22561-ae75-94d0-907d-80fc784fe439",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Grafting (grafted in)\".\n{\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify the core referent as the wild olive branch (Gentile/stranger) being grafted into the covenant tree (olive tree representing God's covenant people rooted in Israel/patriarchs). The book's 5-word phrasing is a direct, concise distillation of the consensus primary meaning from Romans 11:17-24.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Gentile believers as wild olive branches grafted into the cultivated olive tree of the covenant people of God rooted in Israel and the patriarchal promises, sharing its nourishment by faith while some natural branches are broken off for unbelief.\",\n  \"book_summary\": \"The wild branch—the stranger, the Gentile—received into the covenant tree.\",\n  \"consensus_core_identification\": \"Gentile inclusion (as wild branches) into the covenant olive tree of God/Israel\",\n  \"book_core_identification\": \"Gentile (wild branch/stranger) received into the covenant tree\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None; the book uses the same core image and referent without narrowing, broadening, or reclassifying cases.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"Both reduce to the identical minimum core drawn from Romans 11: the wild/Gentile branch received into the covenant tree. The book's concise phrasing is merely a restatement of the consensus primary meaning; extra consensus details (pride warning, regrafting possibility, root debates) are immaterial extensions that do not alter the central identification or its cases.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The entry's extreme brevity omits the full Pauline framing (broken-off branches, anti-arrogance warning, possible regrafting), which a reader might claim leaves the symbol under-specified, though this does not change the core equivalence.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_e1c22561-ae75-94d0-907d-80fc784fe439",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3638,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1131,
+    "output_tokens_details": {
+      "reasoning_tokens": 773
+    },
+    "total_tokens": 4769,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 132940000,
+    "context_details": {
+      "input_tokens": 3638,
+      "output_tokens": 1131
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

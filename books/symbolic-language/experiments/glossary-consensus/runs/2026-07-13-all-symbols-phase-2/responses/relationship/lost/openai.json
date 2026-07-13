@@ -1,0 +1,195 @@
+{
+  "id": "resp_03b3302205c9c262006a547cca3204819389e0dbcba159eafc",
+  "object": "response",
+  "created_at": 1783921866,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921878,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03b3302205c9c262006a547ccaafd48193b7ed305321ad88d4",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_03b3302205c9c262006a547cd0c9788193a45ea9f39913ca97",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The lost sheep is generally a sinner or spiritually straying person whom God or Christ seeks and restores, with Israel, wandering disciples, and backslidden believers as important contextual applications.\",\"book_summary\":\"The lost sheep specifically denotes the scattered house of Israel, whom Christ seeks and regathers.\",\"consensus_core_identification\":\"A spiritually straying person or people sought and restored by the divine Shepherd.\",\"book_core_identification\":\"Scattered Israel sought and regathered by Christ.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book restricts the symbol to scattered Israel, excluding the consensus's broader applications to sinners generally, Gentiles, or wandering Christians except insofar as they belong to Israel.\",\"material_contradiction\":\"There is no direct contradiction in identifying Israel as lost sheep; the disagreement is whether Israel is the exclusive or defining referent rather than one prominent biblical instance of the broader image.\",\"rationale\":\"The book's identification is explicitly recognized by every consensus response as a common biblical reading based on Matthew 10:6, Matthew 15:24, Jeremiah 50:6, and Ezekiel 34. It therefore is neither novel nor a replacement of the general category of spiritually straying people. It materially narrows that category to one covenantal-national group and emphasizes regathering rather than the broader themes of individual repentance and restoration.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Matthew 15:24 strongly identifies the immediate referent as the house of Israel, but that verse alone does not establish that all uses of “lost sheep” have this exclusive referent, nor does it explicitly state the fuller scattered-and-regathered formulation.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3313,
+    "input_tokens_details": {
+      "cache_write_tokens": 3310,
+      "cached_tokens": 0
+    },
+    "output_tokens": 687,
+    "output_tokens_details": {
+      "reasoning_tokens": 319
+    },
+    "total_tokens": 4000
+  },
+  "user": null,
+  "metadata": {}
+}

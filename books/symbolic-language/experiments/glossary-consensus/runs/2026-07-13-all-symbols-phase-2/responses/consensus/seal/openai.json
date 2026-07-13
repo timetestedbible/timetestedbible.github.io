@@ -1,0 +1,173 @@
+{
+  "id": "resp_0a7b184a2df68188006a5477749c088194b694dfa29b518e39",
+  "object": "response",
+  "created_at": 1783920500,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920522,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a7b184a2df68188006a547775458c8194ad120ed904fb5dad",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a7b184a2df68188006a54777eaa6881949377db579de0a723",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"A sign of belonging to God: divine ownership, authentication, and identification of God’s faithful people, often including God’s spiritual protection and preservation. The forehead location emphasizes openly marked identity and allegiance, in contrast to allegiance to the beast.\",\"primary_basis\":[\"Ezekiel 9:4–6 — a mark is placed on the foreheads of the faithful remnant, distinguishing them for preservation in judgment.\",\"Revelation 7:2–4 — the servants of God are sealed on their foreheads before destructive judgments.\",\"Revelation 9:4 — those having God’s seal are distinguished from those exposed to judgment.\",\"Revelation 14:1 — the 144,000 bear the Lamb’s and the Father’s name on their foreheads, signifying identity and allegiance.\",\"Revelation 22:4 — God’s servants bear his name on their foreheads.\",\"Revelation 13:16–17; 14:9–11 — the contrasting mark of the beast represents rival ownership, worship, and allegiance.\",\"2 Corinthians 1:21–22; Ephesians 1:13–14; 4:30 — Christians are sealed with the Holy Spirit, supporting the broader association of sealing with divine ownership, authentication, and preservation.\"],\"alternatives\":[{\"meaning\":\"The seal specifically denotes the indwelling or gift of the Holy Spirit, rather than merely a general sign of divine ownership.\",\"basis\":[\"2 Corinthians 1:21–22\",\"Ephesians 1:13–14\",\"Ephesians 4:30\"],\"prominence\":\"common\"},{\"meaning\":\"The forehead seal has a sacramental referent, especially baptism, confirmation/chrismation, or the sign of the cross placed on the baptized.\",\"basis\":[\"Early Christian baptismal and liturgical interpretation connected sealing language with initiation and the reception of the Spirit.\",\"2 Corinthians 1:21–22\",\"Ephesians 1:13–14\",\"Revelation 7:3\"],\"prominence\":\"common\"},{\"meaning\":\"The seal represents God’s name, character, law, or truth impressed upon the mind, with the forehead symbolizing thought, conviction, and conscious allegiance.\",\"basis\":[\"Deuteronomy 6:6–8\",\"Exodus 13:9,16\",\"Revelation 14:1\",\"Revelation 22:4\"],\"prominence\":\"common\"},{\"meaning\":\"The seal specifically signifies Sabbath observance as the identifying sign of loyalty to God, commonly contrasted with the mark of the beast.\",\"basis\":[\"Exodus 20:8–11\",\"Exodus 31:13–17\",\"Ezekiel 20:12,20\",\"Revelation 7:3\",\"Revelation 14:1,12\"],\"prominence\":\"minority\"},{\"meaning\":\"The apocalyptic seal is a literal or visibly detectable end-time mark placed upon a particular group, often the 144,000, rather than primarily a spiritual symbol applicable to all believers.\",\"basis\":[\"Revelation 7:3–8\",\"Revelation 14:1\"],\"prominence\":\"minority\"},{\"meaning\":\"The seal chiefly denotes election and guaranteed final salvation, implying that those sealed will certainly persevere to the end.\",\"basis\":[\"Ephesians 1:13–14\",\"Ephesians 4:30\",\"Revelation 7:3–4\",\"Revelation 14:1–5\"],\"prominence\":\"common\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus on the general symbolism of divine ownership, identity, and allegiance, often with protection or preservation. There is no settled consensus on the seal’s precise referent—whether it is specifically the Holy Spirit, a sacramental rite, God’s character or law, Sabbath observance, election, or an end-time mark.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 322,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1094,
+    "output_tokens_details": {
+      "reasoning_tokens": 294
+    },
+    "total_tokens": 1416
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "coin",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nCoin\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, the coin most commonly functions as a symbol of image, ownership, and allegiance: because a coin bears the image and inscription of its issuer, it belongs to that issuer. In the dominant homiletic and patristic reading of the tribute-money episode ('render to Caesar the things that are Caesar's, and to God the things that are God's'), the coin stamped with Caesar's image represents what is owed to earthly authority, while the human being—stamped with God's image (Genesis 1:26-27)—belongs wholly to God. The coin thus symbolizes the question of ultimate ownership and where one's allegiance is due.\",\n  \"primary_basis\": [\n    \"Matthew 22:15-22\",\n    \"Mark 12:13-17\",\n    \"Luke 20:20-26\",\n    \"Genesis 1:26-27 (paired with the tribute-coin passage in patristic and modern preaching to argue that humans are God's 'coinage,' bearing His image)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The lost coin as the lost sinner or lost soul: precious to God, diligently sought, and occasioning heavenly joy when recovered (Parable of the Lost Coin). Some patristic and medieval interpreters (e.g., Gregory the Great, Augustine) extended this to the coin as the image of God in the human soul, obscured by sin and recovered through grace.\",\n      \"basis\": [\n        \"Luke 15:8-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Thirty pieces of silver as the symbol of betrayal, treachery, and 'blood money'—the price at which Christ was valued and sold, often linked typologically to Zechariah's thirty shekels and to the price of a slave in Exodus.\",\n      \"basis\": [\n        \"Matthew 26:14-16\",\n        \"Matthew 27:3-10\",\n        \"Zechariah 11:12-13\",\n        \"Exodus 21:32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The widow's two small coins (mites/lepta) as a symbol of sacrificial, wholehearted giving—true generosity measured by cost to the giver rather than by amount.\",\n      \"basis\": [\n        \"Mark 12:41-44\",\n        \"Luke 21:1-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The denarius in the parable of the laborers in the vineyard as a symbol of God's grace or the equal reward of eternal life, given without regard to human calculations of merit.\",\n      \"basis\": [\n        \"Matthew 20:1-16\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The coin in the fish's mouth as a symbol of God's providential provision and/or Christ's freedom from the temple tax coupled with voluntary compliance to avoid offense.\",\n      \"basis\": [\n        \"Matthew 17:24-27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Coins/money generally as a symbol of mammon—worldly wealth as a rival object of devotion opposed to God.\",\n      \"basis\": [\n        \"Matthew 6:24\",\n        \"Luke 16:13\",\n        \"1 Timothy 6:10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"'Coin' does not carry a single fixed symbolic meaning in Christian interpretation; its significance is strongly context-dependent, varying across the tribute money, the lost coin, the thirty pieces of silver, the widow's mites, and the vineyard denarius. The most frequently taught and most theologically developed symbolism is the image-and-ownership reading of the tribute coin (humans bear God's image and therefore belong to God), which has deep patristic roots (e.g., Tertullian, Augustine) and remains standard in modern preaching, so it is listed as primary. However, the lost-coin and thirty-silver-pieces readings are nearly as widely recognized in their own contexts. Any author claiming one exclusive, settled symbolic meaning for 'coin' across Scripture would be going beyond recognizable consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Earthly wealth, secular authority, and temporal obligations, often serving as a contrast to divine authority and spiritual devotion.\",\n  \"primary_basis\": [\n    \"Matthew 22:15-22\",\n    \"Mark 12:13-17\",\n    \"Luke 20:20-26\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A lost human soul or sinner bearing the image of God, possessing great value and diligently sought by Him.\",\n      \"basis\": [\n        \"Luke 15:8-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Greed, betrayal, and the corrupting power of money (often specifically associated with silver coins).\",\n      \"basis\": [\n        \"Matthew 26:14-16\",\n        \"Matthew 27:3-9\",\n        \"Zechariah 11:12-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wholehearted sacrifice and devotion, where value is measured by proportion rather than monetary amount.\",\n      \"basis\": [\n        \"Mark 12:41-44\",\n        \"Luke 21:1-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Miraculous divine provision for earthly requirements.\",\n      \"basis\": [\n        \"Matthew 17:24-27\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Unlike natural elements (e.g., water, fire), 'coin' does not have a single, unified symbolic meaning across the biblical text. Its meaning is highly context-dependent, deriving from the specific narrative or parable in which it appears (e.g., the tribute penny, the lost drachma, the widow's mite, or Judas's thirty pieces of silver).\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Money or material value, especially as a symbol of wealth and the believer’s responsibility to use material resources faithfully rather than serve them as an idol.\",\n  \"primary_basis\": [\n    \"Matthew 6:19–24 — earthly treasure is contrasted with heavenly treasure, and service to God with service to mammon.\",\n    \"Luke 16:9–13 — money is treated as a test of faithfulness and as a potential rival master.\",\n    \"Mark 12:41–44; Luke 21:1–4 — the widow’s small coins illustrate sacrificial giving and value measured by devotion rather than amount.\",\n    \"Matthew 25:14–30; Luke 19:11–27 — monetary units entrusted to servants symbolize resources for which people are accountable.\",\n    \"1 Timothy 6:6–10, 17–19 — wealth is morally dangerous when loved or trusted, but can be used generously.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A lost person or soul whom God diligently seeks and restores.\",\n      \"basis\": [\n        \"Luke 15:8–10 — the parable of the lost coin is explicitly connected with joy over one sinner who repents.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Earthly political authority and civic obligation, set within the higher claim of God’s ownership.\",\n      \"basis\": [\n        \"Matthew 22:15–22; Mark 12:13–17; Luke 20:20–26 — Caesar’s image and inscription on the denarius ground the saying, “Render to Caesar … and to God …”\",\n        \"Genesis 1:26–27 is often brought into Christian exposition as an implicit contrast: the coin bears Caesar’s image, while humanity bears God’s image.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacrificial devotion whose spiritual worth exceeds its monetary value.\",\n      \"basis\": [\n        \"Mark 12:41–44; Luke 21:1–4 — the widow’s two small coins are valued because she gives out of poverty.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Betrayal, corrupt payment, or blood money.\",\n      \"basis\": [\n        \"Matthew 26:14–16; 27:3–10 — the thirty pieces of silver paid for Jesus’ betrayal.\",\n        \"Zechariah 11:12–13 — the thirty pieces of silver provide the prophetic background used by Matthew.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Humanity bearing the divine image and recovered through salvation; in detailed allegorical readings, the woman searching for the coin represents God, divine Wisdom, or the Church.\",\n      \"basis\": [\n        \"Luke 15:8–10 — developed allegorically from the lost coin’s retained value and recoverability.\",\n        \"Genesis 1:26–27 — invoked because a coin bears an image, analogously to humanity bearing God’s image.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no settled, universal biblical symbolism of the coin. Coins and monetary units function differently according to context: wealth, stewardship, sacrificial giving, civic authority, betrayal, or a lost sinner. The broad association with money and material value is the most recognizable, but interpretation should ordinarily be controlled by the particular passage.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"a lost sinner (or soul of value) who is diligently sought and joyfully recovered by God\",\n  \"primary_basis\": [\n    \"Luke 15:8-10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"earthly authority, taxes, and the distinction between what belongs to Caesar and what belongs to God (via the image on the coin)\",\n      \"basis\": [\n        \"Matthew 22:15-22\",\n        \"Mark 12:13-17\",\n        \"Luke 20:20-26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"stewardship of resources, gifts, or responsibilities entrusted by God\",\n      \"basis\": [\n        \"Matthew 25:14-30\",\n        \"Luke 19:11-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the price of betrayal or blood money\",\n      \"basis\": [\n        \"Matthew 26:14-16\",\n        \"Matthew 27:3-10\",\n        \"Zechariah 11:12-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"sacrificial generosity from poverty\",\n      \"basis\": [\n        \"Mark 12:41-44\",\n        \"Luke 21:1-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"divine provision meeting an obligation\",\n      \"basis\": [\n        \"Matthew 17:24-27\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Coins appear across multiple independent biblical contexts (parables of loss and stewardship, the tribute question, Judas's payment, the widow's offering, temple-tax provision) and receive distinct symbolic applications in Christian teaching; no single meaning has exclusive dominance.\"\n}\n\nBOOK ENTRY\nThe stamped image — a person as the owner's minted image-bearer: dug from the field, refined in the fire, struck with the NAME; priced by the law, ransomed at a flat half-shekel when counted, lost and sought by lamplight. Man's mint valued the Shepherd at slave-damages; God's scales weigh the widow's whole living above all abundance.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Luke 15:8-10; Ex 30:12-16; Lev 27:2; Ex 21:32; Matt 17:27; 22:20-21; Mark 12:41-44; Zech 11:12-13) · see The Coin, ch. 11\n\nAVAILABLE KJV EXCERPTS\nLuke 15:8 — Either what woman having ten pieces of silver, if she lose one piece, doth not light a candle, and sweep the house, and seek diligently till she find it?\nLuke 15:9 — And when she hath found it, she calleth her friends and her neighbours together, saying, Rejoice with me; for I have found the piece which I had lost.\nLuke 15:10 — Likewise, I say unto you, there is joy in the presence of the angels of God over one sinner that repenteth.\nExodus 30:12 — When thou takest the sum of the children of Israel after their number, then shall they give every man a ransom for his soul unto the LORD, when thou numberest them; that there be no plague among them, when thou numberest them.\nExodus 30:13 — This they shall give, every one that passeth among them that are numbered, half a shekel after the shekel of the sanctuary:(a shekel is twenty gerahs:) an half shekel shall be the offering of the LORD.\nExodus 30:14 — Every one that passeth among them that are numbered, from twenty years old and above, shall give an offering unto the LORD.\nExodus 30:15 — The rich shall not give more, and the poor shall not give less than half a shekel, when they give an offering unto the LORD, to make an atonement for your souls.\nExodus 30:16 — And thou shalt take the atonement money of the children of Israel, and shalt appoint it for the service of the tabernacle of the congregation; that it may be a memorial unto the children of Israel before the LORD, to make an atonement for your souls.\nLeviticus 27:2 — Speak unto the children of Israel, and say unto them, When a man shall make a singular vow, the persons shall be for the LORD by thy estimation.\nExodus 21:32 — If the ox shall push a manservant or a maidservant; he shall give unto their master thirty shekels of silver, and the ox shall be stoned.\nMatthew 17:27 — Notwithstanding, lest we should offend them, go thou to the sea, and cast an hook, and take up the fish that first cometh up; and when thou hast opened his mouth, thou shalt find a piece of money: that take, and give unto them for me and thee.\nMatthew 22:20 — And he saith unto them, Whose is this image and superscription?\nMatthew 22:21 — They say unto him, Caesar's. Then saith he unto them, Render therefore unto Caesar the things which are Caesar's; and unto God the things that are God's.\nMark 12:41 — And Jesus sat over against the treasury, and beheld how the people cast money into the treasury: and many that were rich cast in much.\nMark 12:42 — And there came a certain poor widow, and she threw in two mites, which make a farthing.\nMark 12:43 — And he called unto him his disciples, and saith unto them, Verily I say unto you, That this poor widow hath cast more in, than all they which have cast into the treasury:\nMark 12:44 — For all they did cast in of their abundance; but she of her want did cast in all that she had, even all her living.\nZechariah 11:12 — And I said unto them, If ye think good, give me my price; and if not, forbear. So they weighed for my price thirty pieces of silver.\nZechariah 11:13 — And the LORD said unto me, Cast it unto the potter: a goodly price that I was prised at of them. And I took the thirty pieces of silver, and cast them to the potter in the house of the LORD.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "03127f8c380f13b8434ddd134010bc8e768d9244e201850b543782e9ec601989",
+  "cache": {
+    "hit": false
+  }
+}

@@ -36,21 +36,25 @@ assert.strictEqual(index.stats.glossaryEntries, index.glossaryEntries.length);
 assert.strictEqual(index.stats.untestedEntries, index.glossaryEntries.filter(entry => !entry.tested).length);
 assert(index.glossaryEntries.length > index.currentEntries.length, 'The symbol cloud should include untested glossary entries');
 assert.strictEqual(new Set(index.glossaryEntries.map(entry => entry.anchor)).size, index.glossaryEntries.length);
-assert(index.glossaryEntries.some(entry => entry.anchor === 'almond' && entry.finalVerdict === 'UNTESTED'));
+assert(index.glossaryEntries.some(entry => entry.anchor === 'anointing' && entry.finalVerdict === 'UNTESTED'));
+assert(index.glossaryEntries.some(entry => entry.anchor === 'almond' && entry.tested && entry.finalVerdict === 'MATCH'));
 assert(index.glossaryEntries.some(entry => entry.anchor === 'ship' && entry.tested && entry.finalVerdict === 'DIVERGENT_PERSUADED'));
 assert(index.currentEntries.some(entry => entry.anchor === 'ship' && entry.finalVerdict === 'DIVERGENT_PERSUADED'));
 assert(index.currentEntries.some(entry => entry.anchor === 'heart' && entry.judges.length === 4));
 
 MeatTesterView._data = index;
-const untestedTarget = MeatTesterView.resolveRouteEntry({ term: 'almond' });
+const untestedTarget = MeatTesterView.resolveRouteEntry({ term: 'anointing' });
 assert(untestedTarget?.untested, 'An untested glossary URL should resolve to its glossary detail');
-assert.strictEqual(untestedTarget.entry.term, 'Almond (shaqed)');
+assert.strictEqual(untestedTarget.entry.term, 'Anoint, anointing');
 const testedTarget = MeatTesterView.resolveRouteEntry({ term: 'ship' });
 assert.strictEqual(testedTarget?.untested, false, 'A tested glossary URL should resolve to its frozen run');
 
 for (const entry of index.currentEntries) {
   assert(entry.runId, `${entry.anchor} is missing a current run`);
   assert(entry.judges.length > 0, `${entry.anchor} is missing judge metadata`);
+  if (entry.completion.relationship < entry.completion.providers) {
+    assert.strictEqual(entry.finalVerdict, 'PENDING', `${entry.anchor} exposes a partial panel as a final verdict`);
+  }
 }
 
 for (const run of index.runs) {

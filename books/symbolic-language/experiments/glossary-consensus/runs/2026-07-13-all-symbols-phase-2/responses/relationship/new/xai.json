@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922002,
+  "completed_at": 1783922023,
+  "id": "d7767ff7-0a53-9db9-b1a7-99ea225be52d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_d7767ff7-0a53-9db9-b1a7-99ea225be52d",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"New name\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of 'new name' as a newly conferred covenant identity matches the consensus's central referent of God-bestowed transformed identity and status. The book's phrasing ('under its giver') and emphasis on exclusive knowledge ('known, received, and kept only by the one who bears it') refine the consensus by specifying covenantal ownership and the private, recipient-only aspect drawn from Revelation 2:17, without contradicting the general category.\",\n  \"extension_reasoning\": \"The book narrows the extension by restricting 'new name' to covenantal identity known exclusively to the bearer, excluding broader corporate or national readings (e.g., Isaiah 62:2's restoration of Zion) and minority literal afterlife-name interpretations. It adds precision to the secret personal communion alternative already present in consensus responses, reclassifying cases to covenantal secrecy while retaining the primary identity referent.\",\n  \"consensus_summary\": \"Blind consensus across responses A–D identifies 'new name' as a God-conferred new identity, character, and status for the redeemed or overcomer, signifying transformation, covenant belonging, and eschatological vindication. Primary basis includes Revelation 2: 17, 3:12, Isaiah 62:2, and Genesis renamings; alternatives cover divine ownership, intimate secrecy, admission tokens, corporate Zion, and Christ's name.\",\n  \"book_summary\": \"The book entry defines 'new name' as a newly conferred covenant identity under its giver—known, received and kept only by the one who bears it. The common-view note restates it as a new God-given identity and character bestowed on the overcomer.\",\n  \"boundary_disagreement\": \"The book requires the name to be covenantal and exclusively known to the bearer, narrowing away from public/corporate renamings or ownership inscriptions without secrecy; consensus treats these as complementary or alternative.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Consensus primary meaning is a God-conferred new identity, character, and status on the redeemed/overcomer, marking transformation, covenant belonging, adoption, and vindication (from renamings like Abram/Abraham, Jacob/Israel, Simon/Peter plus Isa 62/65 and Rev 2:17/3:12). Alternatives treat it as ownership mark (God's/Christ's name), private intimate communion, admission/acquittal token, corporate Zion restoration, or (minority) Christ's own name.\",\"book_summary\":\"A newly conferred covenant identity under its giver — known, received, and kept only by the one who bears it. Commonly taught: a new God-given identity and character bestowed on the overcomer.\",\"consensus_core_identification\":\"God-given transformed identity/character/status for the believer or overcomer.\",\"book_core_identification\":\"Newly conferred covenant identity under its giver that is known, received, and kept exclusively by the bearer.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"Book makes exclusive knowledge/reception/keeping by the bearer definitional and frames the identity strictly as covenant under the giver; consensus primary admits public renamings (e.g., Abraham, Israel, Zion), ownership inscriptions, and corporate/status changes that lack personal secrecy.\",\"material_contradiction\":\"None.\",\"rationale\":\"Minimum cores both refer to a divine bestowal of new identity rather than a replaced referent, so not DIVERGENT or NOVEL. The book preserves that general category (explicitly noting the common identity/character reading) but materially tightens conditions and precision around covenant subordination and exclusive personal knowledge (esp. from Rev 2:17), thereby narrowing the extension relative to the broader consensus primary and its public/corporate alternatives. This is boundary refinement, not core replacement.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Secrecy is already a common consensus alternative and covenant belonging is implicit in the primary, so the entry could be judged mere wording (MATCH) rather than material narrowing.\",\"confidence\":\"high\"}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_d7767ff7-0a53-9db9-b1a7-99ea225be52d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4105,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2567,
+    "output_tokens_details": {
+      "reasoning_tokens": 2105
+    },
+    "total_tokens": 6672,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 234200000,
+    "context_details": {
+      "input_tokens": 4105,
+      "output_tokens": 2567
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

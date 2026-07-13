@@ -1,0 +1,195 @@
+{
+  "id": "resp_02c04fed51c72faf006a547a0ec13881969ee1463a20f2bf95",
+  "object": "response",
+  "created_at": 1783921166,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921183,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_02c04fed51c72faf006a547a0f9fb881968fa2829f1541d9fb",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_02c04fed51c72faf006a547a18888c81968a3916d986d53a87",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The dominant Christian-symbolic reading associates east with Eden, divine presence and glory, dawn or light, and Christ’s coming, while recognizing contextual negative uses such as exile and judgment.\",\"book_summary\":\"The book presents east as the compass’s front and symbolically as the source of beginnings and returns, linking the ancient/Edenic beginning, returning glory, Christ’s coming, and the kings crossing the Euphrates.\",\"consensus_core_identification\":\"East signifies the manifestation or approach of divine presence, paradise, light, and eschatological salvation.\",\"book_core_identification\":\"East signifies the point of origin for beginnings and returns or arrivals.\",\"core_relation\":\"BOOK_BROADENS\",\"extension_relation\":\"BOOK_SUPERSET\",\"boundary_disagreement\":\"The book retains the consensus’s Eden, returning-glory, and Christ-coming cases but generalizes them into a broader beginnings-and-returns principle. This also admits the kings of the east and the temporal sense of qedem, cases not inherently instances of divine presence or salvation.\",\"material_contradiction\":\"There is no direct contradiction at the center. The disagreement is over scope: the consensus treats the positive symbolism as specifically theological and context-dependent, whereas the book states a more general organizing pattern and does not acknowledge the established exile, judgment, and destructive-east-wind uses.\",\"rationale\":\"The shared central examples make this more than merely novel and prevent divergence: Eden, glory from the east, and the Son of Man’s coming are standard elements of the positive consensus. However, “where beginnings and returns come from” materially broadens that cluster into an abstract rule encompassing ancientness and the kings’ passage, so the relationship is refined rather than a wording-only match.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited texts show several important things located in or coming from the east, but they do not establish that east generally means the source of all beginnings and returns. Revelation 16:12 describes kings coming from the east without identifying their movement as a return, and Ezekiel 46:1 concerns gate opening rather than origin or return.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4035,
+    "input_tokens_details": {
+      "cache_write_tokens": 4032,
+      "cached_tokens": 0
+    },
+    "output_tokens": 911,
+    "output_tokens_details": {
+      "reasoning_tokens": 467
+    },
+    "total_tokens": 4946
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "north",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nNorth, the north country\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian interpretation, 'the north' or 'the north country' symbolizes the direction from which divine judgment, invasion, and calamity come upon Israel/Judah — concretely identified with Mesopotamian powers (Assyria and especially Babylon), which, because of the Syrian desert, invaded the land from the north. By extension, 'the north country' also denotes the land of exile from which God will regather his scattered people, so the term carries a paired sense: the source of judgment and the place of captivity from which restoration comes.\",\n  \"primary_basis\": [\n    \"Jeremiah 1:13-15 (the boiling pot facing away from the north; 'out of the north disaster shall be let loose')\",\n    \"Jeremiah 4:6 ('I bring disaster from the north, and great destruction')\",\n    \"Jeremiah 6:1, 6:22 (a people coming from the north country)\",\n    \"Jeremiah 25:9 ('the tribes of the north' with Nebuchadnezzar as instruments of judgment)\",\n    \"Jeremiah 50:3, 50:9, 50:41 (a nation from the north against Babylon itself)\",\n    \"Jeremiah 3:18; 16:14-15; 23:7-8; 31:8 (return of the exiles from the north country)\",\n    \"Zechariah 2:6-7 ('flee from the land of the north'); Zechariah 6:6-8 (the chariots toward the north country)\",\n    \"Ezekiel 26:7 (Nebuchadnezzar 'from the north' against Tyre)\",\n    \"Ezekiel 38:6, 38:15; 39:2 (Gog coming from 'the uttermost parts of the north')\",\n    \"Isaiah 41:25 (one stirred up from the north)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The north as the seat or direction of God's throne and divine glory: Zion described as 'in the far north' (Zaphon), theophany and splendor arriving from the north. Used to argue that north symbolizes the divine dwelling or heavenly council.\",\n      \"basis\": [\n        \"Psalm 48:2 ('Mount Zion, in the far north' / 'sides of the north')\",\n        \"Isaiah 14:13 (Lucifer/king of Babylon aspiring to 'the mount of assembly in the far north')\",\n        \"Job 37:22 ('out of the north comes golden splendor')\",\n        \"Ezekiel 1:4 (the storm-theophany coming from the north)\",\n        \"Job 26:7 ('he stretches out the north over empty space')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The north as associated with evil, darkness, hidden danger, or the domain of hostile spiritual powers (sometimes linked to Satan via Isaiah 14:13 or to Canaanite Mount Zaphon, seat of Baal). Found in some devotional, esoteric, and popular prophecy writing.\",\n      \"basis\": [\n        \"Isaiah 14:13 (read as Satan's ambition toward the north)\",\n        \"Jeremiah 1:14 (evil breaking forth from the north generalized into a spiritual principle)\",\n        \"Ezekiel 38-39 (Gog of the far north read as an end-times evil power, often identified in popular prophecy with Russia)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A purely geographic/literary reading with no fixed symbolism: 'north' simply reflects the historical route of invading armies and the location of exile, and later texts reuse the motif conventionally ('the foe from the north' as a stock prophetic image) without a deeper symbolic code.\",\n      \"basis\": [\n        \"Standard critical commentaries on Jeremiah 1:13-15; 4-6 (the 'foe from the north' motif)\",\n        \"Historical-geographical observations about the Fertile Crescent invasion routes\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological/typological reading in which the 'king of the north' (Daniel 11) and Gog 'from the uttermost north' (Ezekiel 38-39) become symbols of the final Antichrist or end-time coalition against God's people.\",\n      \"basis\": [\n        \"Daniel 11 (king of the north vs. king of the south)\",\n        \"Ezekiel 38:6, 38:15; 39:2\",\n        \"Joel 2:20 ('the northerner' to be removed)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable, well-established consensus in prophetic literature (especially Jeremiah, Ezekiel, Zechariah) that the north signifies the quarter of invasion/judgment and, correlatively, the land of exile from which Israel returns; commentaries across traditions agree this is grounded in geography (armies approached via the Fertile Crescent). The secondary strand tying the north to God's throne/Zaphon (Ps 48:2; Isa 14:13) is widely acknowledged in scholarship as reflecting ancient Near Eastern (Ugaritic Mount Zaphon) background, but it functions as a distinct motif rather than the primary symbolic meaning. Claims that the north inherently symbolizes evil or Satan's realm are a minority position in popular and esoteric interpretation, not mainstream exegesis. The Gog/'king of the north' end-times identifications (e.g., with Russia) are common in dispensationalist prophecy circles but contested in academic interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A source of impending divine judgment, hostile invasion, and disaster, often associated with destructive empires like Babylon or Assyria.\",\n  \"primary_basis\": [\n    \"Jeremiah 1:14\",\n    \"Jeremiah 4:6\",\n    \"Jeremiah 6:22\",\n    \"Ezekiel 38:15\",\n    \"Joel 2:20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The dwelling place of God, the divine council, or the sacred mountain (Mount Zaphon).\",\n      \"basis\": [\n        \"Psalm 48:2\",\n        \"Isaiah 14:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A place of cold, darkness, or mysterious forces.\",\n      \"basis\": [\n        \"Job 37:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Because invading Mesopotamian armies entered Israel from the north to avoid the Arabian desert, the north became a prophetic metonym for judgment and devastation. In other poetic contexts, the term borrows from Ancient Near Eastern mythology referring to the sacred mountain of the gods (Zaphon), representing divine exaltation.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The north most commonly signifies the quarter from which hostile invasion and divine judgment come, especially through Babylon and other northern armies. This symbolism reflects Israel’s geography: major eastern empires normally approached Judah from the north along established routes.\",\n  \"primary_basis\": [\n    \"Jeremiah 1:14-15 — disaster and invading kingdoms come from the north.\",\n    \"Jeremiah 4:6; 6:1,22; 10:22 — destruction and a great army are depicted as coming from the north.\",\n    \"Jeremiah 25:9; 46:20; 47:2 — northern forces function as instruments of judgment.\",\n    \"Ezekiel 26:7 — Nebuchadnezzar of Babylon comes against Tyre 'from the north.'\",\n    \"Joel 2:20 — the threatening army is called 'the northern army.'\",\n    \"Ezekiel 38:6,15; 39:2 — Gog comes from the far north in an eschatological invasion.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The north country denotes Babylon or the lands of exile in a largely geographical-historical sense, without necessarily carrying an independent symbolic meaning.\",\n      \"basis\": [\n        \"Jeremiah 3:18; 16:15; 23:8; 31:8 — Israel is gathered back from the north country.\",\n        \"Zechariah 2:6-7 — exiles are summoned from the land of the north, particularly Babylon.\",\n        \"Zechariah 6:6,8 — divine chariots go toward the north country.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The north is associated with God’s holy mountain, divine kingship, or the heavenly assembly.\",\n      \"basis\": [\n        \"Psalm 48:2 — Mount Zion is described as being 'in the far north' or as 'the heights of Zaphon,' the city of the great King.\",\n        \"Isaiah 14:13 — the aspiring ruler seeks the mount of assembly 'in the far reaches of the north.'\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The north is a direction of divine manifestation, not only enemy activity.\",\n      \"basis\": [\n        \"Ezekiel 1:4 — the prophet’s vision of God’s glory begins with a storm wind coming from the north.\",\n        \"Isaiah 41:25 — God raises a conqueror from the north, although the same figure is also associated with the east.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The north symbolizes Satan, evil, spiritual darkness, or rebellion against God.\",\n      \"basis\": [\n        \"Isaiah 14:13 is sometimes interpreted in Christian tradition as describing Satan’s attempt to seize the divine mountain in the north.\",\n        \"Northern invaders and Gog are sometimes generalized into symbols of demonic opposition.\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"The north country is a place from which God restores and gathers his people, emphasizing deliverance rather than judgment.\",\n      \"basis\": [\n        \"Jeremiah 3:18; 16:15; 23:8; 31:8 — restoration from the north country.\",\n        \"Zechariah 2:6-7 — return from northern exile.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic interpretation applicable to every occurrence. The strongest recurring association is invasion and judgment from the north, but many references are straightforward geographical descriptions of Babylon, exile, return, or other northern regions. Context controls the meaning.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"source/direction of invasion, calamity, and divine judgment (prototypically Babylon or other northern powers used as instruments of judgment)\",\n  \"primary_basis\": [\n    \"Jeremiah 1:13-15\",\n    \"Jeremiah 4:6\",\n    \"Jeremiah 6:1, 22\",\n    \"Jeremiah 10:22\",\n    \"Jeremiah 46:20; 50:3, 9, 41\",\n    \"Ezekiel 38:6, 15; 39:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"location of God's throne, the heavenly sanctuary, or Mount Zion ('sides of the north')\",\n      \"basis\": [\n        \"Psalm 48:2\",\n        \"Isaiah 14:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"eschatological northern aggressors (Magog or modern geopolitical powers such as Russia in certain prophetic schemes)\",\n      \"basis\": [\n        \"Ezekiel 38–39\",\n        \"Daniel 11 (king of the north)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"realm of evil, darkness, cold, or satanic pride\",\n      \"basis\": [\n        \"Isaiah 14:13 (pride of the morning star)\",\n        \"general prophetic association of north with threat\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"primarily literal geographic reference (Mesopotamia, Anatolia, or the route of invasion) with limited additional symbolism\",\n      \"basis\": [\n        \"historical-critical and geographical readings of the prophets\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Usage is strongly context-dependent: 'the north country' in Jeremiah almost always points to Babylon as agent of judgment, while 'sides of the north' in Psalms/Isaiah points to the divine dwelling. Christian interpreters therefore assign different primary meanings according to genre and tradition; no single symbolic consensus covers every occurrence.\"\n}\n\nBOOK ENTRY\nThe hidden quarter — tsaphon, from the root to hide, to lurk: the dark side of the sky, the door the ambush comes by. In the north country the spoilers of Babylon gather — “an assembly of great nations,” the ten allied kings who turn on the seven the whore rules — and in its uttermost recesses, the “sides of the north,” the enemy set his seat.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 1:14; 50:9, 41; 51:48; Ps 48:2; Isa 14:13; Rev 17:16-18) · see The Fall of Babylon, ch. 35, and Lucifer's Declared Plan, ch. 30\n\nAVAILABLE KJV EXCERPTS\nJeremiah 1:14 — Then the LORD said unto me, Out of the north an evil shall break forth upon all the inhabitants of the land.\nJeremiah 50:9 — For, lo, I will raise and cause to come up against Babylon an assembly of great nations from the north country: and they shall set themselves in array against her; from thence she shall be taken: their arrows shall be as of a mighty expert man; none shall return in vain.\nJeremiah 50:41 — Behold, a people shall come from the north, and a great nation, and many kings shall be raised up from the coasts of the earth.\nJeremiah 51:48 — Then the heaven and the earth, and all that is therein, shall sing for Babylon: for the spoilers shall come unto her from the north, saith the LORD.\nPsalms 48:2 — Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King.\nIsaiah 14:13 — For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of God: I will sit also upon the mount of the congregation, in the sides of the north:\nRevelation 17:16 — And the ten horns which thou sawest upon the beast, these shall hate the whore, and shall make her desolate and naked, and shall eat her flesh, and burn her with fire.\nRevelation 17:17 — For God hath put in their hearts to fulfil his will, and to agree, and give their kingdom unto the beast, until the words of God shall be fulfilled.\nRevelation 17:18 — And the woman which thou sawest is that great city, which reigneth over the kings of the earth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "80fc960e0b4bb125945b126b337e363a861d7bda67e9e6c2c997d6927edf41e6",
+  "cache": {
+    "hit": false
+  }
+}

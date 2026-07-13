@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "garment",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGarment\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, a garment most commonly symbolizes a person's spiritual state or standing before God — above all, righteousness. Being clothed in clean, white, or fine garments represents righteousness (whether imputed righteousness received from God/Christ or the righteous deeds of the saints), salvation, and acceptance before God; conversely, soiled, filthy, or inadequate garments represent sin, guilt, and unrighteousness. The dominant reading is 'the garment of salvation / robe of righteousness' — the believer is stripped of sin-stained clothing and clothed by God with righteousness, often expressed as being 'clothed with Christ.'\",\n  \"primary_basis\": [\n    \"Isaiah 61:10 ('he has clothed me with garments of salvation; he has covered me with the robe of righteousness')\",\n    \"Zechariah 3:3-5 (Joshua the high priest's filthy garments removed and replaced with clean/rich robes, explicitly interpreted as removal of iniquity)\",\n    \"Isaiah 64:6 ('all our righteous deeds are like filthy rags/a polluted garment')\",\n    \"Revelation 19:8 (fine linen, bright and pure, 'for the fine linen is the righteous deeds of the saints')\",\n    \"Revelation 3:4-5, 3:18; 7:13-14 (white garments; robes washed and made white in the blood of the Lamb)\",\n    \"Matthew 22:11-12 (parable of the wedding feast: the man without a wedding garment cast out — widely read as lacking the righteousness required for entry)\",\n    \"Galatians 3:27 ('as many of you as were baptized into Christ have put on Christ'); Romans 13:14\",\n    \"Genesis 3:21 (God clothing Adam and Eve with skins, frequently read as God's provision of covering for sin)\",\n    \"Ephesians 4:22-24; Colossians 3:9-14 (putting off the old self and putting on the new)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covering for sin/shame and atonement: the garment as God's provision to cover human nakedness, guilt, and shame, prefiguring atonement (often tied to sacrifice in the Genesis 3:21 skins). Closely related to, and often merged with, the righteousness reading.\",\n      \"basis\": [\n        \"Genesis 3:7, 3:21\",\n        \"Isaiah 61:10\",\n        \"Revelation 3:18 ('white garments so that... the shame of your nakedness may not be seen')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Identity, status, office, or authority: garments mark who a person is — royal robes, priestly vestments, the prophetic mantle passed from Elijah to Elisha, Joseph's coat. Tearing garments signals grief or loss of status; giving a robe confers honor or succession.\",\n      \"basis\": [\n        \"Exodus 28 (priestly garments 'for glory and for beauty')\",\n        \"1 Kings 19:19; 2 Kings 2:13-14 (Elijah's mantle)\",\n        \"Genesis 37:3 (Joseph's robe)\",\n        \"1 Samuel 18:4 (Jonathan giving David his robe)\",\n        \"Esther 6:8-9; Luke 15:22 (the best robe for the returning son)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The old and new self / moral character and conduct: 'putting off' vices and 'putting on' virtues as a change of moral clothing; character as what one wears.\",\n      \"basis\": [\n        \"Ephesians 4:22-24\",\n        \"Colossians 3:8-14\",\n        \"1 Peter 5:5 ('clothe yourselves with humility')\",\n        \"Job 29:14 ('I put on righteousness, and it clothed me')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The body, resurrection, and immortality: the mortal body as a garment/tent to be exchanged for a glorified, immortal covering; used in discussions of resurrection and the intermediate state.\",\n      \"basis\": [\n        \"2 Corinthians 5:1-4 ('longing to put on our heavenly dwelling... that we may not be found naked')\",\n        \"1 Corinthians 15:53-54 ('this perishable must put on the imperishable')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Readiness, watchfulness, and preparedness for the Lord's return: keeping one's garments so as not to be found naked or unprepared; girding the loins for service.\",\n      \"basis\": [\n        \"Revelation 16:15 ('Blessed is the one who stays awake and keeps his garments on')\",\n        \"Luke 12:35 ('Stay dressed for action')\",\n        \"Exodus 12:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Baptismal symbolism in liturgical/patristic tradition: the white baptismal garment as the putting on of Christ and the restoration of the robe of glory lost at the Fall (prominent in Eastern/Syriac fathers, e.g., Ephrem's 'robe of glory').\",\n      \"basis\": [\n        \"Galatians 3:27\",\n        \"Genesis 3:21 read alongside baptismal practice\",\n        \"patristic and liturgical usage rather than a single proof text\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Garment imagery is pervasive and multivalent in Scripture, but there is a recognizable center of gravity in Christian interpretation: garments symbolize one's spiritual condition and standing before God, with clean/white garments as righteousness and salvation and filthy garments as sin. A well-known intra-consensus debate concerns Revelation 19:8 and the wedding garment of Matthew 22 — whether the garment is imputed righteousness (a common Protestant emphasis) or the righteous deeds/sanctified life of believers; both remain within the same broad symbolic field. The alternative readings listed (status/office, old-new self, resurrection body, watchfulness, baptism) are materially distinct uses that context determines, and standard reference works treat all of them, with righteousness/salvation as the leading entry.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual state, character, righteousness, and standing before God, often contrasting human sinfulness with God's imputed righteousness or salvation.\",\n  \"primary_basis\": [\n    \"Isaiah 61:10\",\n    \"Isaiah 64:6\",\n    \"Zechariah 3:3-5\",\n    \"Matthew 22:11-12\",\n    \"Revelation 7:14\",\n    \"Revelation 19:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Outward behavior, habits, and the conscious adoption of a new nature in Christ.\",\n      \"basis\": [\n        \"Colossians 3:9-14\",\n        \"Ephesians 4:22-24\",\n        \"Romans 13:14\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Authority, office, or anointing for a specific calling or leadership role.\",\n      \"basis\": [\n        \"Exodus 28:2\",\n        \"2 Kings 2:13-14\",\n        \"Genesis 37:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Atonement and the covering of shame or sin.\",\n      \"basis\": [\n        \"Genesis 3:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The physical body, human mortality, or the resurrected, glorified state.\",\n      \"basis\": [\n        \"2 Corinthians 5:1-4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the primary application usually centers on righteousness and spiritual standing, the imagery is versatile and heavily dependent on context, extending to themes of physical covering, behavioral change, and divine authority.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A garment most commonly symbolizes a person’s spiritual or moral condition—especially righteousness, salvation, or acceptance bestowed by God. Clean, white, or festal garments typically signify righteousness and redeemed status, while stained or filthy garments signify guilt or defilement.\",\n  \"primary_basis\": [\n    \"Isaiah 61:10 — salvation and righteousness are depicted as garments supplied by God.\",\n    \"Zechariah 3:3-5 — Joshua’s filthy garments are removed and replaced, signifying the removal of iniquity.\",\n    \"Matthew 22:11-14 — the wedding garment represents fitness or readiness to participate in the kingdom banquet.\",\n    \"Galatians 3:27 — the baptized are described as having 'clothed' themselves with Christ.\",\n    \"Romans 13:14 — believers are instructed to 'put on' the Lord Jesus Christ.\",\n    \"Revelation 3:4-5, 18 — white garments signify purity, worthiness, and accepted status.\",\n    \"Revelation 7:9, 13-14 — robes washed white signify the redeemed cleansed through the Lamb.\",\n    \"Revelation 19:7-8 — fine linen is identified with the righteous deeds of the saints.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Identity, status, office, or authority: distinctive clothing can identify someone as priest, king, prophet, heir, or member of a community.\",\n      \"basis\": [\n        \"Exodus 28:2-4, 40-43 — priestly garments signify glory, beauty, and consecrated office.\",\n        \"Genesis 37:3, 23 — Joseph’s special garment marks favored status within the family.\",\n        \"2 Kings 2:8-14 — Elijah’s mantle becomes associated with prophetic vocation and succession.\",\n        \"Luke 15:22 — the best robe signals the restored son’s honor and family status.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin, corruption, or moral defilement: filthy, stained, or polluted garments represent guilt or compromised conduct.\",\n      \"basis\": [\n        \"Zechariah 3:3-4 — filthy garments correspond to iniquity.\",\n        \"Isaiah 64:6 — righteous deeds are compared with a polluted garment.\",\n        \"Jude 23 — a garment stained by the flesh evokes contamination by sin.\",\n        \"Revelation 3:4 — undefiled garments contrast with spiritual impurity.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mourning, humiliation, or repentance: sackcloth and torn garments outwardly express grief, judgment, or penitence.\",\n      \"basis\": [\n        \"Genesis 37:34 — Jacob tears his garments and wears sackcloth in mourning.\",\n        \"Joel 2:12-13 — torn garments are contrasted with genuine inward repentance.\",\n        \"Jonah 3:5-8 — sackcloth accompanies Nineveh’s repentance.\",\n        \"Matthew 11:21 — sackcloth and ashes signify repentance.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human embodiment, mortality, or the future resurrection body: clothing imagery can portray bodily existence and the longing to be clothed with immortality.\",\n      \"basis\": [\n        \"2 Corinthians 5:1-4 — Paul speaks of being clothed with a heavenly dwelling rather than found naked.\",\n        \"1 Corinthians 15:53-54 — the perishable and mortal must 'put on' imperishability and immortality.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Disguise, hypocrisy, or deceptive appearance: an outward garment can conceal a contrary inner reality.\",\n      \"basis\": [\n        \"Matthew 7:15 — false prophets come in sheep’s clothing while inwardly being ravenous wolves.\",\n        \"2 Corinthians 11:13-15 — deceptive ministers disguise themselves as servants of righteousness, using related appearance imagery.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Protection, divine care, or covenant covering: clothing may symbolize God’s provision for vulnerability and shame.\",\n      \"basis\": [\n        \"Genesis 3:21 — God provides garments for Adam and Eve after the fall.\",\n        \"Ezekiel 16:8-13 — God clothes Jerusalem in an allegory of covenant care and honor.\",\n        \"Luke 12:27-28 — God’s clothing of creation supports trust in divine provision.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for every occurrence of 'garment.' The righteousness/salvation reading is the most recognizable general Christian interpretation, especially for clean, white, wedding, or divinely supplied garments, but the symbolism changes materially with garment type, condition, wearer, and narrative context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Righteousness, purity, or salvation as a divine covering (especially white garments representing Christ's righteousness or the saints' holy standing)\",\n  \"primary_basis\": [\n    \"Isaiah 61:10\",\n    \"Zechariah 3:3-5\",\n    \"Matthew 22:11-14\",\n    \"Revelation 3:5\",\n    \"Revelation 7:9-14\",\n    \"Revelation 19:8\",\n    \"Galatians 3:27\",\n    \"Ephesians 4:22-24 / Colossians 3:9-10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Social status, authority, favor, or office (royal, priestly, or familial garments marking identity/role)\",\n      \"basis\": [\n        \"Genesis 37:3 (Joseph's coat)\",\n        \"Exodus 28 (priestly vestments)\",\n        \"1 Samuel 18:4\",\n        \"Luke 15:22 (best robe)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The physical body, mortality, or earthly life (to be put off/put on in resurrection or transformation imagery)\",\n      \"basis\": [\n        \"2 Corinthians 5:1-4\",\n        \"Job 10:11 (skin/flesh as clothing metaphor)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Outward deeds, works, or appearance (including hypocrisy or false covering)\",\n      \"basis\": [\n        \"Revelation 19:8 (fine linen = righteous acts)\",\n        \"Matthew 7:15 (sheep's clothing)\",\n        \"Matthew 23:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Church unity or the seamless integrity of Christ's body\",\n      \"basis\": [\n        \"John 19:23-24 (seamless tunic)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"White or clean garments are the most consistently interpreted symbol across patristic, Reformation, and modern evangelical/mainline teaching as righteousness/purity provided by God. Contextual uses (status, body, works) are widely recognized but secondary; no major competing primary consensus exists for the term in general Christian biblical symbolism.\"\n}\n\nBOOK ENTRY\nRighteousness — the righteous acts of the saints.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rev 19:8, ASV) · see Garments & Armor, ch. 43\n\nAVAILABLE KJV EXCERPTS\nRevelation 19:8 — And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "f52f271c7c8cd9a2176ed0b2640cf9a8f98e6010a17183af3758743d5f688e1e",
+  "cache": {
+    "hit": false
+  }
+}

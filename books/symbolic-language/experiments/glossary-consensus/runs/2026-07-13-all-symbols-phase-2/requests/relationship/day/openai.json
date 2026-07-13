@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "day",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDay\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'day' most commonly carries the symbolic sense of a divinely appointed period of time rather than a fixed 24-hour unit — above all a period of God's decisive action in judgment and salvation, epitomized in the phrase 'the Day of the Lord.' Closely tied to this is the widely cited principle that with God a 'day' is not measured by human clocks (a day as a thousand years), and, in prophetic interpretation, the frequently invoked day-for-a-year equivalence.\",\n  \"primary_basis\": [\n    \"2 Peter 3:8 ('with the Lord one day is as a thousand years, and a thousand years as one day')\",\n    \"Psalm 90:4\",\n    \"Numbers 14:34 ('each day for a year')\",\n    \"Ezekiel 4:6 ('a day for each year')\",\n    \"Joel 2:1-2, 31 (the Day of the Lord)\",\n    \"Amos 5:18-20\",\n    \"Zephaniah 1:14-18\",\n    \"1 Thessalonians 5:2\",\n    \"2 Peter 3:10\",\n    \"Genesis 2:4 ('in the day that the LORD God made the earth and the heavens' — 'day' used for an extended period)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Day as symbol of light, righteousness, salvation, and moral wakefulness, contrasted with night/darkness as sin, ignorance, and judgment ('children of the day,' 'the day is at hand'). Also the present time of opportunity for work before 'night' comes.\",\n      \"basis\": [\n        \"Romans 13:12-13\",\n        \"1 Thessalonians 5:5-8\",\n        \"John 9:4\",\n        \"John 11:9-10\",\n        \"Ephesians 5:8\",\n        \"2 Peter 1:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The day-year principle as a formal hermeneutical rule for apocalyptic time prophecies (e.g., 1260 days = 1260 years; 2300 days = 2300 years), characteristic of historicist interpretation (historic Protestant commentators, Seventh-day Adventists, and related traditions).\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:6\",\n        \"Daniel 7:25\",\n        \"Daniel 8:14\",\n        \"Daniel 9:24-27 (seventy 'weeks' understood as weeks of years)\",\n        \"Revelation 11:2-3\",\n        \"Revelation 12:6, 14\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'cosmic week' or millennial-day scheme: each creation day symbolizes a thousand years of world history, so history spans six thousand years followed by a sabbatical millennium. Found in the Epistle of Barnabas, Irenaeus, and other patristic writers; revived in some modern eschatological circles.\",\n      \"basis\": [\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\",\n        \"Genesis 1-2 (six days plus Sabbath as template)\",\n        \"Revelation 20:1-6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Creation 'days' as long ages or literary/theological frameworks rather than 24-hour periods (day-age interpretation, framework hypothesis, analogical days) — a symbolic or non-literal reading of 'day' specifically in Genesis 1.\",\n      \"basis\": [\n        \"Genesis 1:1-2:3\",\n        \"Genesis 2:4\",\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\",\n        \"Hebrews 4:1-11 (God's ongoing seventh-day rest)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Day' as strictly literal 24-hour usage with no symbolic content — held especially by young-earth creationists for Genesis 1 and by interpreters who resist symbolic time-schemes generally.\",\n      \"basis\": [\n        \"Genesis 1:5 ('evening and morning' formula)\",\n        \"Exodus 20:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'That day' / 'the day' as shorthand for the final eschatological consummation — Christ's return, resurrection, and last judgment ('the day of Christ,' 'the day of God').\",\n      \"basis\": [\n        \"Matthew 24:36\",\n        \"Matthew 7:22\",\n        \"Philippians 1:6, 10\",\n        \"2 Timothy 1:12, 18\",\n        \"2 Timothy 4:8\",\n        \"1 Corinthians 3:13\",\n        \"2 Peter 3:12\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"'Day' is a highly context-dependent term with several well-established but distinct symbolic uses rather than a single settled symbolic meaning. There is broad agreement on certain individual usages: 'the Day of the Lord' as the time of God's judgment/salvation is essentially uncontested; the day/night = light/darkness moral symbolism is widely recognized; and 2 Peter 3:8 is universally acknowledged to relativize divine time. However, whether 'day' functions as a fixed symbolic code (e.g., day = year in all apocalyptic prophecy, or day = 1000 years in a cosmic-week chronology) is contested. The day-year principle is dominant only within historicist traditions (notably Seventh-day Adventism and older Protestant commentary) and is rejected by most modern academic, preterist, futurist, and idealist interpreters, except that nearly all traditions accept the 'weeks of years' reading of Daniel 9. The meaning of 'day' in Genesis 1 remains one of the most debated interpretive questions in conservative Christianity. Because the experiment context suggests a book proposing a specific symbolic definition, note that any single fixed equivalence (day = year, day = 1000 years) represents a tradition-specific rather than pan-Christian consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The realm of spiritual light, truth, and righteousness, often contrasted with the darkness or 'night' of sin, ignorance, and evil.\",\n  \"primary_basis\": [\n    \"1 Thessalonians 5:5\",\n    \"Romans 13:12-13\",\n    \"John 9:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The 'Day of the Lord' as the eschatological culmination of history, denoting ultimate divine judgment, vindication, and salvation.\",\n      \"basis\": [\n        \"Amos 5:18-20\",\n        \"Joel 2:1-2\",\n        \"Zephaniah 1:14-15\",\n        \"1 Corinthians 3:13\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"An extended epoch or era of time, particularly in interpretations of the creation week (Day-Age theory) or historical dispensations.\",\n      \"basis\": [\n        \"Genesis 1\",\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A prophetic year, as utilized in the year-day principle for calculating apocalyptic timelines in historicist interpretation.\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:6\",\n        \"Daniel 9:24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of 'day' is heavily context-dependent in Scripture. In moral and ethical teachings, it represents holiness and spiritual awakening. In prophetic and eschatological contexts, it refers to God's final judgment and intervention. In apocalyptic prophecy, it is sometimes used as a formulaic placeholder for a literal year.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"In symbolic day–night imagery, “day” most commonly signifies light, divine revelation, moral clarity, righteous life, and the sphere of God’s saving activity, in contrast with the darkness of ignorance, sin, or evil.\",\n  \"primary_basis\": [\n    \"John 9:4–5 — day is associated with carrying out God’s works, contrasted with night.\",\n    \"John 11:9–10 — walking in the day represents walking with light and avoiding stumbling.\",\n    \"Romans 13:12–13 — the approaching day is linked with casting off deeds of darkness and living honorably.\",\n    \"1 Thessalonians 5:4–8 — believers are “children of light” and “children of the day,” characterized by vigilance and sobriety.\",\n    \"2 Peter 1:19 — the dawning day and rising morning star depict increasing divine illumination and eschatological fulfillment.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The “day of the Lord” signifies God’s decisive intervention in history, especially eschatological judgment, deliverance, and the consummation of salvation.\",\n      \"basis\": [\n        \"Isaiah 13:6–13\",\n        \"Joel 2:1–11, 31\",\n        \"Amos 5:18–20\",\n        \"Zephaniah 1:14–18\",\n        \"1 Thessalonians 5:2\",\n        \"2 Peter 3:10\",\n        \"Revelation 6:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A “day” can represent an appointed season or period of divine action, visitation, opportunity, or salvation rather than one calendar day.\",\n      \"basis\": [\n        \"Psalm 95:7–8; Hebrews 3:7–13 — “Today” as the present opportunity to respond to God.\",\n        \"Luke 19:42–44 — the day or time of divine visitation.\",\n        \"2 Corinthians 6:2 — “the day of salvation.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The creation “days” of Genesis 1 are understood by some Christians as long ages, literary or theological periods, or framework markers rather than ordinary solar days.\",\n      \"basis\": [\n        \"Genesis 1:1–2:3\",\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A prophetic day represents a year, especially in historicist interpretations of Daniel and Revelation.\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:6\",\n        \"Daniel 7:25\",\n        \"Daniel 9:24–27\",\n        \"Revelation 11:2–3; 12:6, 14\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The seven creation days symbolize seven broad eras of sacred or world history, sometimes culminating in an eschatological Sabbath or millennium.\",\n      \"basis\": [\n        \"Genesis 1:1–2:3\",\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\",\n        \"Revelation 20:1–6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In many passages “day” is not symbolic at all, but denotes daylight, a calendar day, or an unspecified point in time.\",\n      \"basis\": [\n        \"Genesis 1:5\",\n        \"Matthew 20:2\",\n        \"Acts 20:6\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for “day” apart from context. The day–night contrast most recognizably associates day with light, revelation, righteousness, and divine activity, while specialized phrases such as “day of the Lord,” creation days, and prophetic days carry distinct and disputed interpretations. Psalm 90:4 and 2 Peter 3:8 normally emphasize God’s transcendence over human time; their use as a fixed symbolic conversion formula is not universally accepted.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Light, righteousness, divine presence/truth, or the sphere of godly living (in explicit contrast to night as darkness, evil, or ignorance)\",\n  \"primary_basis\": [\n    \"1 Thessalonians 5:4-8\",\n    \"Romans 13:12-13\",\n    \"John 9:4; 11:9-10\",\n    \"Ephesians 5:8\",\n    \"Genesis 1:3-5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The eschatological 'Day of the Lord' as a climactic time of divine judgment and/or salvation\",\n      \"basis\": [\n        \"Isaiah 13:6,9\",\n        \"Joel 2:1,11,31\",\n        \"Amos 5:18-20\",\n        \"Zephaniah 1:14-18\",\n        \"1 Thessalonians 5:2\",\n        \"2 Peter 3:10\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"A prophetic year (day-year principle of interpretation)\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A thousand years in divine reckoning\",\n      \"basis\": [\n        \"2 Peter 3:8\",\n        \"Psalm 90:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An indefinite age or long creative/era period (day-age readings of Genesis)\",\n      \"basis\": [\n        \"Genesis 1\",\n        \"2 Peter 3:8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Symbolic uses of 'day' are strongly context-dependent across Christian tradition and biblical studies; the light/righteousness contrast is the most basic and widespread single motif, while 'Day of the Lord,' day-year, and day=1000 years readings are frequent in specific genres (prophecy, eschatology, creation debates) without a single overarching consensus that covers every occurrence.\"\n}\n\nBOOK ENTRY\nThe time of light — exposure and accountability, when deeds are seen and tested; the season to walk, work, and watch. The children of light are the children of the day. In the prophets’ counts the day is a unit that scales: a day for a year in judgment, and one day with the Lord as a thousand years.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 1:5; John 9:4; 1 Thess 5:5; Num 14:34; Ezek 4:6; 2 Pet 3:8) · see Light and Darkness, ch. 21\n\nAVAILABLE KJV EXCERPTS\nGenesis 1:5 — And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.\nJohn 9:4 — I must work the works of him that sent me, while it is day: the night cometh, when no man can work.\n1 Thessalonians 5:5 — Ye are all the children of light, and the children of the day: we are not of the night, nor of darkness.\nNumbers 14:34 — After the number of the days in which ye searched the land, even forty days, each day for a year, shall ye bear your iniquities, even forty years, and ye shall know my breach of promise.\nEzekiel 4:6 — And when thou hast accomplished them, lie again on thy right side, and thou shalt bear the iniquity of the house of Judah forty days: I have appointed thee each day for a year.\n2 Peter 3:8 — But, beloved, be not ignorant of this one thing, that one day is with the Lord as a thousand years, and a thousand years as one day.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "96f4c4ca4a66228fbcc3353aa060f186b4859df21b2c0465d0a55c01b1d9ecdf",
+  "cache": {
+    "hit": false
+  }
+}

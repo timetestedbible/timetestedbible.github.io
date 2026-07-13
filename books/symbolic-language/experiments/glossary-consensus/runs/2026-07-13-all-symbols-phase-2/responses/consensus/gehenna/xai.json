@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919959,
+  "completed_at": 1783919973,
+  "id": "92e3695e-5a19-91bc-853c-94c14a080801",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_92e3695e-5a19-91bc-853c-94c14a080801",
+      "summary": [
+        {
+          "text": "The user wants me to respond as a \"blind consensus definer\" for the term \"Gehenna (hell, the lake of fire)\" in biblical symbolism. I must return only the structured JSON result matching the schema, wi...{\n  \"primary_meaning\": \"Eternal place of fiery torment and punishment for the wicked after final judgment, symbolizing the lake of fire where the unrepentant face unending separation from God.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the final place of eternal fiery punishment and torment for the wicked after divine judgment (hell)\",\n  \"primary_basis\": [\n    \"Matthew 5:22\",\n    \"Matthew 5:29-30\",\n    \"Matthew 10:28\",\n    \"Matthew 18:8-9\",\n    \"Matthew 23:15\",\n    \"Matthew 23:33\",\n    \"Mark 9:43-48\",\n    \"Luke 12:5\",\n    \"James 3:6\",\n    \"Revelation 19:20\",\n    \"Revelation 20:10\",\n    \"Revelation 20:14-15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"final irreversible destruction or annihilation of the wicked (not eternal conscious torment)\",\n      \"basis\": [\n        \"Matthew 10:28\",\n        \"Mark 9:43-48\",\n        \"Revelation 20:14-15\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"metaphorical image of severe divine judgment or separation from God rather than a literal postmortem location of fire\",\n      \"basis\": [\n        \"Matthew 5:22\",\n        \"Matthew 10:28\",\n        \"Mark 9:43-48\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the historical Valley of Hinnom as a symbol of temporal national judgment or disgrace (not primarily an afterlife locale)\",\n      \"basis\": [\n        \"Jeremiah 7:31-32\",\n        \"Jeremiah 19:6\",\n        \"2 Kings 23:10\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"temporary purgatorial or purifying fire leading ultimately to restoration\",\n      \"basis\": [\n        \"Mark 9:49\",\n        \"1 Corinthians 3:13-15\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian teaching across Catholic, Orthodox, and most Protestant sources equates Gehenna with the lake of fire as eternal hell; debates concern duration/nature of punishment and literal vs. figurative reading but do not displace the primary identification.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_92e3695e-5a19-91bc-853c-94c14a080801",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 611,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1476,
+    "output_tokens_details": {
+      "reasoning_tokens": 953
+    },
+    "total_tokens": 2087,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 93100000,
+    "context_details": {
+      "input_tokens": 611,
+      "output_tokens": 1476
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

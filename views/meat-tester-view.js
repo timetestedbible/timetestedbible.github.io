@@ -313,7 +313,8 @@ const MeatTesterView = {
       const current = this._data.currentEntries.find(candidate => candidate.anchor === params.term);
       if (current) {
         run = this._data.runs.find(candidate => candidate.id === current.runId);
-        entry = run?.entries.find(candidate => candidate.anchor === params.term);
+        const frozenEntry = run?.entries.find(candidate => candidate.anchor === params.term);
+        entry = frozenEntry ? { ...frozenEntry, term: current.term, frozenTerm: current.frozenTerm || '' } : null;
       }
     }
     if (run && entry) return { run, entry, untested: false };
@@ -570,6 +571,7 @@ const MeatTesterView = {
           <div>
             <span class="meat-verdict-badge ${this.verdictClass(entry.finalVerdict)}">${this.escapeHtml(this.verdictLabel(entry.finalVerdict))}</span>
             <h3>${this.escapeHtml(entry.term)}</h3>
+            ${entry.frozenTerm ? `<span class="meat-frozen-headword">Frozen run headword: ${this.escapeHtml(entry.frozenTerm)}</span>` : ''}
           </div>
           <label class="meat-run-select-label">
             <span>Frozen run</span>
@@ -583,6 +585,13 @@ const MeatTesterView = {
           <aside class="meat-legacy-scope" role="note">
             <strong>Legacy scope · protocol ${this.escapeHtml(run.protocolVersion || 'unknown')}</strong>
             <span>This frozen ruling predates the glossary-only boundary and may include objections to broader chapter arguments. It remains available for audit but should be rerun under protocol 13 before its scope qualifier is treated as a glossary ruling.</span>
+          </aside>
+        ` : ''}
+
+        ${this.relationshipIsPartial(entry) ? `
+          <aside class="meat-partial-scope" role="note">
+            <strong>Phase 2 in progress · ${this.escapeHtml(entry.completion.relationship)}/${this.escapeHtml(entry.completion.providers)} judges</strong>
+            <span>The blind definitions are saved, but the overall relationship remains Pending until every panel member has classified this glossary entry.</span>
           </aside>
         ` : ''}
 
@@ -1004,6 +1013,11 @@ const MeatTesterView = {
     const completedJudges = (entry?.judges || []).filter(judge => judge.persuasion && judge.persuasion !== 'PENDING');
     if (!completedJudges.length) return false;
     return completedJudges.some(judge => judge.persuasion !== 'PERSUADED' || judge.supportScope !== 'FULL');
+  },
+
+  relationshipIsPartial(entry) {
+    const completion = entry?.completion;
+    return Boolean(completion?.providers && completion.relationship < completion.providers);
   },
 
   verdictClass(verdict) {

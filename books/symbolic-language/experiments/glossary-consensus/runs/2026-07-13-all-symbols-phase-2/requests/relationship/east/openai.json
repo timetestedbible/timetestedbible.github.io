@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "east",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nEast\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the east is most commonly understood as the direction associated with God's presence, glory, and salvation — the direction of the rising sun (dawn/light), of Eden, and of the expected coming (and return) of Christ. This underlies the historic Christian practice of praying and orienting churches toward the east.\",\n  \"primary_basis\": [\n    \"Genesis 2:8 (God plants the garden 'in the east, in Eden')\",\n    \"Ezekiel 43:1-4 (the glory of God enters the temple from the east; cf. Ezekiel 10:18-19 and 11:23, where the glory departs eastward)\",\n    \"Ezekiel 44:1-2 (the east gate reserved for the LORD)\",\n    \"Matthew 2:1-2, 9 (the magi come from the east, having seen his star in the east/at its rising)\",\n    \"Matthew 24:27 (as lightning comes from the east... so will be the coming of the Son of Man)\",\n    \"Malachi 4:2 ('sun of righteousness' rising, read messianically)\",\n    \"Luke 1:78 ('the dayspring/sunrise from on high,' anatole, applied to Christ)\",\n    \"Zechariah 14:4 (the LORD's feet on the Mount of Olives, east of Jerusalem)\",\n    \"Psalm 103:12 ('as far as the east is from the west,' used for the removal of sin)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eastward movement as departure, exile, or alienation from God's presence — a literary pattern in Genesis where sin drives people east (Adam and Eve, Cain, Babel, Lot), with return toward God pictured as movement back west toward Eden/the sanctuary.\",\n      \"basis\": [\n        \"Genesis 3:24 (cherubim placed at the east of Eden after expulsion)\",\n        \"Genesis 4:16 (Cain dwells east of Eden, in Nod)\",\n        \"Genesis 11:2 (migration eastward to Shinar/Babel)\",\n        \"Genesis 13:11 (Lot journeys east toward Sodom)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The east as the source of judgment or destructive power, especially via the 'east wind' (a scorching desert wind) and invading empires (Assyria, Babylon) coming from the east.\",\n      \"basis\": [\n        \"Genesis 41:6, 23, 27 (grain blasted by the east wind in Pharaoh's dream)\",\n        \"Exodus 10:13 and 14:21 (east wind brings the locusts and parts the sea)\",\n        \"Hosea 13:15; Jeremiah 18:17; Jonah 4:8 (east wind as instrument of judgment or affliction)\",\n        \"Isaiah 41:2 (one stirred up from the east, read of Cyrus)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The east ('people of the east,' bene qedem) as the realm of foreign nations, pagan wisdom, and Israel's enemies (Midianites, Amalekites, diviners from the east), sometimes read symbolically as worldly or occult wisdom contrasted with divine revelation.\",\n      \"basis\": [\n        \"Judges 6:3, 33 (Midianites and people of the east raid Israel)\",\n        \"1 Kings 4:30 (Solomon's wisdom exceeds the wisdom of all the people of the east)\",\n        \"Isaiah 2:6 (the house of Jacob filled with influences 'from the east,' diviners)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The east as simply an idiom for great or immeasurable distance rather than a theological direction, especially in the sin-removal text.\",\n      \"basis\": [\n        \"Psalm 103:12 ('as far as the east is from the west')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Warning against sun/east-facing worship as idolatry, showing that eastward orientation itself is not inherently holy.\",\n      \"basis\": [\n        \"Ezekiel 8:16 (men in the temple with their backs to the sanctuary, worshiping the sun toward the east)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"The east carries a recognized dual valence in scripture and in Christian interpretation. The positive strand — dawn, Eden, the glory of God returning from the east, and the eschatological coming of Christ — is the most prominent in Christian liturgical tradition (ad orientem prayer and church orientation, attested from the patristic era, e.g., Origen, Basil, John of Damascus). The negative strand (eastward exile in Genesis; east wind judgment; enemies from the east) is well established in academic biblical studies as a literary motif but functions alongside, not against, the dominant liturgical-theological reading. Because the symbolism is genuinely two-sided and context-dependent, the consensus is settled only in the sense that the Christ-oriented, God's-presence reading is clearly the dominant symbolic assignment in Christian teaching; confidence is rated medium rather than high because the term has multiple materially different, well-attested strands rather than one exclusive meaning.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Exile, separation from God's presence, and judgment.\",\n  \"primary_basis\": [\n    \"Genesis 3:24\",\n    \"Genesis 4:16\",\n    \"Genesis 11:2\",\n    \"Genesis 13:11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The arrival of God's glory, divine light, and the coming or return of Christ.\",\n      \"basis\": [\n        \"Ezekiel 43:2\",\n        \"Matthew 2:1-2\",\n        \"Matthew 24:27\",\n        \"Zechariah 14:4\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Paganism, idolatry, and foreign worldly wisdom.\",\n      \"basis\": [\n        \"Isaiah 2:6\",\n        \"Ezekiel 8:16\",\n        \"1 Kings 4:30\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of the East is dualistic and context-dependent. In early biblical narratives, traveling east frequently represents moving away from God's ideal into rebellion or exile, such as departing Eden or traveling toward Babylon and Sodom. Conversely, in prophetic and New Testament literature, the East often symbolizes hope, the dawning of divine light, the return of God's glory to the temple, and the eschatological return of Jesus.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"When “east” is given a positive symbolic meaning in Christian interpretation, it most commonly represents the manifestation or coming of God—especially Christ’s return—and, by association, light, resurrection, and paradise. This underlies the traditional Christian practice of facing east in prayer and worship.\",\n  \"primary_basis\": [\n    \"Genesis 2:8; 3:24 — Eden is associated with the east, contributing to the symbolism of paradise and restored access to God.\",\n    \"Ezekiel 43:1–5 — the glory of the Lord enters the restored temple from the east.\",\n    \"Ezekiel 44:1–3 — the eastern gate is sanctified by the Lord’s entrance.\",\n    \"Matthew 24:27 — the coming of the Son of Man is compared to lightning shining from east to west.\",\n    \"Revelation 7:2 — an angel bearing the seal of the living God ascends from the rising of the sun.\",\n    \"Malachi 4:2 — the “sun of righteousness” rising with healing is often connected typologically with Christ and eastward orientation.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Alienation from God, exile, or human rebellion: movement eastward or residence east of sacred space can mark departure from Eden and increasing estrangement.\",\n      \"basis\": [\n        \"Genesis 3:24 — humanity is expelled from Eden, with cherubim stationed on its eastern side.\",\n        \"Genesis 4:16 — Cain settles east of Eden after judgment.\",\n        \"Genesis 11:1–9 — the movement associated with Babel is rendered as eastward or from the east, depending on translation.\",\n        \"Genesis 13:11 — Lot journeys eastward toward the cities of the plain.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judgment, destruction, or adversity, particularly through the biblical motif of the east wind.\",\n      \"basis\": [\n        \"Exodus 10:13; 14:21 — an east wind brings the locust plague and divides the sea.\",\n        \"Job 27:21 — the east wind carries the wicked away.\",\n        \"Jeremiah 18:17 — God scatters his people like an east wind.\",\n        \"Hosea 13:15 — the east wind brings desolation.\",\n        \"Jonah 4:8 — a scorching east wind afflicts Jonah.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The nations, peoples, wisdom, or riches located east of Israel rather than a fixed theological symbol.\",\n      \"basis\": [\n        \"Genesis 29:1 — Jacob travels to the land of the peoples of the east.\",\n        \"1 Kings 4:30 — the wisdom of Solomon is compared with the wisdom of the people of the east.\",\n        \"Matthew 2:1–2 — the Magi come from the east seeking the newborn king.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A sacred architectural direction associated with temple access, worship, and divine glory.\",\n      \"basis\": [\n        \"Exodus 27:13–16 — the tabernacle court entrance is on the east side.\",\n        \"Numbers 3:38 — Moses, Aaron, and his sons camp before the tabernacle toward the east.\",\n        \"Ezekiel 40:6; 43:1–5 — the eastern gate features prominently in the visionary temple and the return of divine glory.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no settled, context-independent biblical symbolism of “east.” Positive Christian and liturgical interpretation most often connects it with divine appearing, Christ’s return, resurrection, and paradise, but biblical narratives also use eastward movement and the east wind for exile, rebellion, or judgment. Meaning therefore depends strongly on the passage and whether the reference is directional, geographical, architectural, or meteorological.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"direction of divine glory/presence, paradise (Eden), light, and the coming/advent of Christ (rising sun/resurrection)\",\n  \"primary_basis\": [\n    \"Genesis 2:8 (Lord God planted a garden in Eden, in the east)\",\n    \"Genesis 3:24 (cherubim and flaming sword east of the garden of Eden)\",\n    \"Ezekiel 43:1-5 (glory of the God of Israel came from the east; the earth shone with his glory)\",\n    \"Malachi 4:2 (sun of righteousness shall rise with healing in its wings)\",\n    \"Matthew 2:1-2 (wise men from the east... we saw his star when it rose)\",\n    \"Matthew 24:27 (as the lightning comes from the east and shines as far as the west, so will be the coming of the Son of Man)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"source of destructive judgment or scorching/desolating force (especially the east wind)\",\n      \"basis\": [\n        \"Exodus 10:13 (east wind brought the locusts)\",\n        \"Exodus 14:21 (east wind drove the sea back)\",\n        \"Hosea 13:15 (east wind... shall come, a wind of the Lord, rising from the wilderness)\",\n        \"Jonah 4:8 (God appointed a scorching east wind)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"direction of exile, foreign empires, or distant/pagan lands (Babylon and beyond)\",\n      \"basis\": [\n        \"Genesis 11:2 (people migrated from the east and settled in Shinar)\",\n        \"2 Kings 17:6 / 25:11 (deportations eastward to Assyria/Babylon)\",\n        \"Isaiah 2:6 / 46:11 (influences or a bird of prey from the east)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"place of wisdom or seekers who recognize the true King (Magi typology)\",\n      \"basis\": [\n        \"Matthew 2:1-12 (Magi from the east following the star to worship)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical and traditional Christian usage of 'East' is strongly contextual rather than univocal; the dominant liturgical and interpretive association (ad orientem prayer, church orientation, paradise/glory/Christ as rising sun) is well-attested and widely recognized across patristic, medieval, and modern sources, while meteorological/geopolitical negative senses remain common but secondary. No single exclusive meaning exists, yet a clear primary positive cluster is the settled consensus in Christian symbolism.\"\n}\n\nBOOK ENTRY\nThe front of the compass — Hebrew qedem, “east” and “ancient” in one word: Eden planted eastward, the glory returning “from the way of the east,” the lightning of the coming, the kings of the east crossing the dried river. Where beginnings and returns come from.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 2:8; Ezek 43:2; Matt 24:27; Rev 16:12; Ezek 46:1) · see The Fall of Babylon, ch. 35\n\nAVAILABLE KJV EXCERPTS\nGenesis 2:8 — And the LORD God planted a garden eastward in Eden; and there he put the man whom he had formed.\nEzekiel 43:2 — And, behold, the glory of the God of Israel came from the way of the east: and his voice was like a noise of many waters: and the earth shined with his glory.\nMatthew 24:27 — For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of man be.\nRevelation 16:12 — And the sixth angel poured out his vial upon the great river Euphrates; and the water thereof was dried up, that the way of the kings of the east might be prepared.\nEzekiel 46:1 — Thus saith the Lord GOD; The gate of the inner court that looketh toward the east shall be shut the six working days; but on the sabbath it shall be opened, and in the day of the new moon it shall be opened.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "df4f00070eb42e1841342f1aa6bf7b07e33a73923c8174f6397d342ffc941324",
+  "cache": {
+    "hit": false
+  }
+}

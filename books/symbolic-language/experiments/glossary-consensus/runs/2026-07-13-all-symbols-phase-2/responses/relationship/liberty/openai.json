@@ -1,0 +1,195 @@
+{
+  "id": "resp_06b72bdb17fd0ce5006a547c77d22c81958c0e211106af91ed",
+  "object": "response",
+  "created_at": 1783921783,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921795,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_06b72bdb17fd0ce5006a547c7851c081958ab72d57ab0e127f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_06b72bdb17fd0ce5006a547c7cf1088195b086dfb68fe115e1",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"Liberty is spiritual freedom granted through Christ from sin, death, condemnation, and enslaving law, ordered toward righteousness, love, and service rather than autonomy or license. Jubilee release is a recognized biblical type of this freedom.\",\"book_summary\":\"Liberty is the King’s Jubilee-like release from slavery to sin, figured by Egypt and Babylon, restoring people to God’s household, inheritance, and service. It changes masters rather than eliminating mastery; lawless license is counterfeit liberty and renewed bondage.\",\"consensus_core_identification\":\"Christ-given release from spiritual bondage into righteous service to God, not permission to sin.\",\"book_core_identification\":\"The King’s release from slavery into belonging, inheritance, and service under God, not masterless autonomy.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement. The book foregrounds Jubilee, household restoration, and change of masters, but the consensus already includes Jubilee typology, becoming servants of righteousness, and rejection of liberty as license.\",\"material_contradiction\":\"None. The book’s claim that liberty is a change of masters directly accords with the consensus description of freedom from sin as freedom for holiness and service.\",\"rationale\":\"Reduced to their minimum claims, both readings identify liberty as deliverance from sinful bondage into faithful service under God. The book’s royal-Jubilee and exile imagery supplies a more integrated metaphorical presentation, but it neither replaces the consensus referent nor materially changes the cases included.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The four printed texts strongly support Jubilee release, release of captives, the law of liberty, and false liberty that remains bondage. However, they do not by themselves fully establish every element of the synthesis—especially the explicit identification of the releaser as King, Egypt and Babylon as unified slavery types, and liberty as a comprehensive change of masters into God’s service.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3759,
+    "input_tokens_details": {
+      "cache_write_tokens": 3756,
+      "cached_tokens": 0
+    },
+    "output_tokens": 631,
+    "output_tokens_details": {
+      "reasoning_tokens": 222
+    },
+    "total_tokens": 4390
+  },
+  "user": null,
+  "metadata": {}
+}

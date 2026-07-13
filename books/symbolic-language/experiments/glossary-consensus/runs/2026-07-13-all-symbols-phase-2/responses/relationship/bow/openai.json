@@ -1,0 +1,195 @@
+{
+  "id": "resp_0aac1d9c97b25692006a547937b0348190b510fe119bea1472",
+  "object": "response",
+  "created_at": 1783920951,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920967,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0aac1d9c97b25692006a54793826d48190a7f84cf3ed77e4ce",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0aac1d9c97b25692006a54793eacb88190b9718569adbf3a88",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The bow has context-dependent but established senses: as a weapon it signifies military might, warfare, conquest, or judgment; as the rainbow it signifies God's covenant and mercy; breaking the weapon signifies defeated power or the end of war.\",\"book_summary\":\"The bow signifies the covenant that binds a people into a kingdom together with the military might that outwardly expresses that covenant; breaking the bow therefore means dissolving or disabling the kingdom's cohesion.\",\"consensus_core_identification\":\"Bow = either covenant-token (rainbow) or military might/warfare (weapon), with a broken bow marking the defeat or cessation of that might.\",\"book_core_identification\":\"Bow = a kingdom's constitutive covenant and its outward military might as two aspects of one symbol.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book preserves the recognized covenant and might associations but fuses them into a general theory of political cohesion. It extends covenant symbolism beyond the Noahic rainbow to whatever binds a kingdom together and reclassifies broken-bow texts from merely defeated armament or ended warfare to the unstringing of the kingdom itself.\",\"material_contradiction\":\"There is no direct contradiction: the consensus meanings remain present. The material difference is the book's claim that covenant and military might are integrally related aspects of the bow rather than distinct context-dependent senses.\",\"rationale\":\"The entry is not novel because both covenant-token and military-might meanings are prominent in the blind consensus. It is not a match because the consensus does not ordinarily identify every kingdom's bow with its constitutive covenant or infer that breaking it dissolves the kingdom as such. The book therefore refines and partially reclassifies familiar cases by imposing a unifying political-covenantal framework.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The entry may conflate distinct uses merely because Hebrew qesheth denotes both a weapon and a rainbow. Genesis directly supports a covenant-token, and Jeremiah and Hosea support military might being broken, but the printed texts do not by themselves establish that military might is the outward face of a kingdom's covenant or that breaking a bow generally 'unstrings' the kingdom. Isaiah 22:3's English wording about being 'bound' by archers especially does not independently prove that synthesis.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3747,
+    "input_tokens_details": {
+      "cache_write_tokens": 3744,
+      "cached_tokens": 0
+    },
+    "output_tokens": 813,
+    "output_tokens_details": {
+      "reasoning_tokens": 320
+    },
+    "total_tokens": 4560
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,173 @@
+{
+  "id": "resp_067d9dc012d223ed006a54161527bc819485af5ea45b585fc4",
+  "object": "response",
+  "created_at": 1783895573,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783895596,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_067d9dc012d223ed006a5416161e448194b29bc9c838fac596",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_067d9dc012d223ed006a54161ff9d88194a46ea8aee0a43bb9",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The Church—often called the ship or Barque of Peter—carrying believers through the dangers of the world toward salvation, with Christ as protector or pilot.\",\"primary_basis\":[\"Matthew 8:23–27; Mark 4:35–41; Luke 8:22–25: Christ preserves the disciples' boat amid the storm, traditionally read as an image of the Church surviving persecution and turmoil.\",\"Matthew 14:22–33; Mark 6:45–52; John 6:16–21: Christ comes to the endangered disciples at sea and brings safety.\",\"Luke 5:1–11: Jesus teaches from Simon Peter's boat and commissions Peter and the others to gather people, supporting the later image of Peter's barque.\",\"Genesis 6–9 and 1 Peter 3:20–21: Noah's ark, though not normally called a ship in the text, is typologically interpreted as the Church or community of salvation carrying people safely through judgment.\",\"Acts 27:13–44: Paul's storm and shipwreck have often received ecclesial or salvation-oriented readings, although the ship is literal in the narrative.\"],\"alternatives\":[{\"meaning\":\"The course or voyage of an individual human life, especially the believer passing through trials under divine guidance.\",\"basis\":[\"The storm-calming narratives in Matthew 8:23–27, Mark 4:35–41, and Luke 8:22–25 are frequently applied devotionally to personal crises.\",\"James 3:4 uses a ship as an illustration of a life or large body directed by something small, specifically comparing the rudder to the tongue.\"],\"prominence\":\"common\"},{\"meaning\":\"Salvation, refuge, or the means by which people are preserved through judgment, without necessarily identifying the vessel specifically with the institutional Church.\",\"basis\":[\"Genesis 6–9 presents the ark as the means of preservation through the flood.\",\"Hebrews 11:7 and 1 Peter 3:20–21 interpret Noah's deliverance in relation to faith, salvation, and baptism.\"],\"prominence\":\"common\"},{\"meaning\":\"Maritime commerce, material wealth, and the economic systems of worldly powers.\",\"basis\":[\"Revelation 18:17–19 associates ships, sailors, and sea trade with Babylon's wealth and its collapse.\",\"Revelation 8:9 includes the destruction of ships within judgments affecting the sea.\",\"Isaiah 2:16 and Psalm 48:7 use impressive ships as examples of human pride, power, or wealth brought low.\"],\"prominence\":\"minority\"},{\"meaning\":\"A particular ministry, congregation, or missionary enterprise guided by Christ.\",\"basis\":[\"Luke 5:1–11 links Peter's boat with teaching and the mission of gathering people.\",\"Acts 27 has sometimes been allegorized as the preservation of Christian mission or a believing community amid danger.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"The Church is the most recognizable traditional Christian symbolic meaning of a ship, especially in patristic interpretation, preaching, hymnody, architecture, and the expression “Barque of Peter.” Nevertheless, Scripture does not establish “ship” as a fixed symbol with one universal referent. Most biblical ships are narrative or illustrative objects, and their symbolic significance depends heavily on context.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1129,
+    "output_tokens_details": {
+      "reasoning_tokens": 436
+    },
+    "total_tokens": 1446
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922675,
+  "completed_at": 1783922701,
+  "id": "d8ffb7c1-7f9e-939c-9b53-cae63aeab035",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_d8ffb7c1-7f9e-939c-9b53-cae63aeab035",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Week\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"All responses identify 'week' as a heptad (seven) that is not limited to days; the book preserves this core while narrowing the primary referent to prophetic contexts (Daniel, jubilee 7 sabbaths of years) and explicitly linking it to the day-for-a-year principle. The consensus treats the creation-week pattern as foundational, but the book subordinates it to the calendrical heptad usage.\",\n  \"extension_reasoning\": \"The book adds the specific mechanism of 'seventy sevens that open into seventy jubilees' and the Feast of Weeks as seven sevens of days modeled on the jubilee, cases the consensus lists as minority or alternative but does not foreground. It excludes the liturgical 'Holy Week' and cosmic-day-as-year schemes that some responses treat as common.\",\n  \"citations_support\": \"strong\",\n  \" \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"All responses identify 'week' as a heptad (seven) that is not limited to days; the book preserves this core while narrowing the primary referent to prophetic contexts (Daniel, jubilee 7 sabbaths of years) and explicitly linking it to the day-for-a-year principle. The consensus treats the creation-week pattern as foundational, but the book subordinates it to the calendrical heptad usage.\",\n  \"extension_reasoning\": \"The book adds the specific mechanism of 'seventy sevens that open into seventy jubile es' and the Feast of Weeks as seven sevens of days modeled on the jubilee, cases the consensus lists as minority or alternative but does not foreground. It excludes the liturgical 'Holy Week' and cosmic-day-as-year schemes that some responses treat as common.\",\n  \"citations_support\": \"strong\"\n}turn\n\n \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"All responses identify 'week' as a heptad (seven) that is not limited to days; the book preserves this core while narrowing the primary referent to prophetic contexts (Daniel, jubilee 7 sabbaths of years) and explicitly linking it to the day-for-a-year principle. The consensus treats the creation-week pattern as foundational, but the book subordinates it to the calendrical heptad usage.\",\n  \"extension_reasoning\": \"The book adds the specific mechanism of 'seventy sevens that open into seventy jubile es' and the Feast of Weeks as seven sevens of days modeled on the jubilee, cases the consensus lists as minority or alternative but does not foreground. It excludes the liturgical 'Holy Week' and cosmic-day-as-year schemes that some responses treat as common.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Primary identification of 'week' (shabua) as a heptad of years in prophetic contexts such as Daniel 9, grounded in biblical precedents for sevens of years, with broader symbolism of divine completeness and ordered cycles drawn from the creation week and Sabbath.\",\n  \"book_summary\": \"A unit of sevens (shavua) not restricted to days: Laban's 'week' equals seven years of service, the jubilee counts seven sabbaths of years, Daniel's seventy weeks are sevens of years (unpointed seventy sevens opening into seventy jubilees), and the Feast of Weeks counts seven sevens of days modeling the jubilee day-for-year.\",\n  \"consensus_core_identification\": \"heptad (of years in prophetic/calendrical use) carrying completeness\",\n  \"book_core_identification\": \"unit of sevens (shavua) applicable to years as well as days\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"none\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores are identical: both take shavua as a heptad whose primary biblical force (Gen 29, Lev 25, Dan 9) is years rather than days. Extra consensus material on creation-week symbolism and the book's added jubilee/Feast-of-Weeks linkage and 'seventy jubilees' phrasing are non-core elaborations that do not alter the shared referent or the cases covered.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Some consensus responses elevate the creation-week pattern itself as the foundational or primary sense, which the book entry simply omits.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_d8ffb7c1-7f9e-939c-9b53-cae63aeab035",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4447,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3248,
+    "output_tokens_details": {
+      "reasoning_tokens": 2842
+    },
+    "total_tokens": 7695,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 276140000,
+    "context_details": {
+      "input_tokens": 4447,
+      "output_tokens": 3248
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

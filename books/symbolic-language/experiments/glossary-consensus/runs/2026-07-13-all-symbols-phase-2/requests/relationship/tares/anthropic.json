@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "tares",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nTares (darnel)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"The tares (darnel, Lolium temulentum) symbolize the 'sons of the evil one' — false believers or counterfeit Christians sown by the devil among the genuine 'sons of the kingdom' (the wheat). They look nearly identical to true believers until maturity, coexist with them until the end of the age, and are then separated out and destroyed at the final judgment by the angels. This meaning is unusually settled because Jesus himself supplies the interpretation within the Gospel text.\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30 (the Parable of the Wheat and the Tares)\",\n    \"Matthew 13:36-43 (Jesus' explicit interpretation: the good seed are the sons of the kingdom; the tares are the sons of the evil one; the enemy is the devil; the harvest is the end of the age)\",\n    \"Matthew 3:12 / Luke 3:17 (John the Baptist's wheat-and-chaff separation imagery, often cited as parallel)\",\n    \"Matthew 13:47-50 (Parable of the Dragnet, treated as a companion parable teaching the same end-time separation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Ecclesiological reading (corpus permixtum): the field is specifically the church, so the tares represent hypocrites and false members mixed within the visible church who must be tolerated (not forcibly rooted out) until God's judgment. Classic in Augustine's anti-Donatist polemic and much subsequent Catholic and magisterial Protestant teaching against premature purges, schism, or persecution.\",\n      \"basis\": [\n        \"Matthew 13:24-30, especially v. 29-30 ('let both grow together until the harvest')\",\n        \"Augustine's anti-Donatist writings and later citation in debates over church discipline and religious coercion\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The field is the world, not the church: the parable teaches the coexistence of the righteous and the wicked in the world at large until final judgment, and is not primarily about church discipline. Advocated by many modern exegetes appealing to Matthew 13:38 ('the field is the world') against the Augustinian ecclesial reading.\",\n      \"basis\": [\n        \"Matthew 13:38\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Tares as false doctrine or heresy sown secretly by Satan (or by heretics) into Christ's teaching/community — an emphasis found in some patristic writers (e.g., strands in Irenaeus, Chrysostom's homilies treat the tares as heretics) and in later polemical use.\",\n      \"basis\": [\n        \"Matthew 13:25 ('while men slept, his enemy came and sowed tares')\",\n        \"Patristic homiletic tradition (e.g., Chrysostom, Homilies on Matthew)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Tolerationist political reading: the parable as a proof-text against capital punishment of heretics and against state religious coercion (used by Roger Williams, some Anabaptists, and Enlightenment-era toleration arguments) — an application built on the standard meaning rather than a different identification of the tares.\",\n      \"basis\": [\n        \"Matthew 13:29-30\",\n        \"Roger Williams, 'The Bloudy Tenent of Persecution' and similar toleration literature\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gnostic or esoteric readings in which the tares represent an evil admixture in creation or in the soul sown by a lower power; some modern devotional readings similarly internalize the parable as good and evil impulses within each person.\",\n      \"basis\": [\n        \"Gospel of Thomas 57 (parallel parable used in some historical-critical discussion)\",\n        \"Assorted gnostic and modern spiritualizing commentary\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"This is one of the most settled symbols in Christian interpretation because the Gospel itself decodes it (Matt 13:36-43): tares = sons of the evil one / false counterfeits among the true. The genuine interpretive disputes concern secondary questions — whether the 'field' is the world or the church, and what pastoral or political conclusions follow about tolerating evil until judgment — not the core identification of the tares with the wicked or counterfeit believers. Botanical background (darnel's near-indistinguishability from wheat before heading) is routinely used to underline the counterfeit theme.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"False believers, hypocrites, or 'sons of the evil one' who coexist alongside true believers in the world or the visible church until the final judgment.\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30\",\n    \"Matthew 13:36-43\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Heretics and false teachers who introduce corrupt doctrines into the church.\",\n      \"basis\": [\n        \"Matthew 13:25\",\n        \"2 Peter 2:1-2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sinful tendencies, vices, or evil thoughts growing alongside virtues within an individual believer's soul.\",\n      \"basis\": [\n        \"Matthew 13 (allegorical/moral application)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Because the Gospel of Matthew includes an explicit interpretation attributed to Jesus (Matthew 13:38), there is overwhelming consensus that tares represent children of the evil one. Historical debates primarily revolve around ecclesiology, specifically whether the field is strictly the world or the visible church, rather than the symbolic definition of the tares themselves.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The tares (darnel) symbolize people aligned with evil—identified by Jesus as “the sons of the evil one”—who coexist with the righteous until their final separation and judgment at the end of the age.\",\n  \"primary_basis\": [\n    \"Matthew 13:24–30 — the parable of the wheat and the tares/weeds.\",\n    \"Matthew 13:36–43 — Jesus explicitly identifies the field as the world, the good seed as the sons of the kingdom, the tares as the sons of the evil one, the enemy as the devil, and the harvest as the end of the age.\",\n    \"Matthew 13:47–50 — the related parable of the net similarly depicts an end-time separation of the evil from the righteous.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hypocrites, nominal Christians, or otherwise false members within the visible church, who should not be prematurely uprooted by human judgment.\",\n      \"basis\": [\n        \"Matthew 13:24–30, especially the coexistence of wheat and tares and the command to let both grow until harvest.\",\n        \"This is a longstanding ecclesial application, although Matthew 13:38 explicitly calls the field “the world,” not the church.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False teachers or heretics who infiltrate and corrupt the Christian community.\",\n      \"basis\": [\n        \"Matthew 13:25 — the enemy secretly sows tares among the wheat.\",\n        \"Often connected by application with warnings about false teachers, such as Matthew 7:15–23 and Acts 20:29–30, though Jesus’ direct interpretation identifies the tares as evil persons more broadly.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"False doctrine, error, or evil influence rather than persons.\",\n      \"basis\": [\n        \"The image of hostile sowing in Matthew 13:25 can be extended metaphorically to corrupt teaching or influence.\",\n        \"The direct explanation in Matthew 13:38 weighs against making doctrine itself the primary referent.\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"A warning chiefly against attempting to construct a completely pure society or church before the final judgment.\",\n      \"basis\": [\n        \"Matthew 13:28–30 — the servants are forbidden to uproot the tares lest they also uproot the wheat.\",\n        \"Matthew 13:39–43 assigns the definitive separation to angels at the end of the age.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The core symbolism is unusually explicit because Matthew supplies Jesus’ interpretation. Debate mainly concerns the scope of the field and the parable’s application: the text says “the world,” while much Christian teaching applies it specifically to the mixed visible church. “Tares” is the traditional English rendering, especially in the KJV; modern translations commonly use “weeds,” often understood botanically as darnel.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The wicked (children of the evil one/devil) who are sown among the righteous (true believers) and left to grow together until the final judgment/harvest, when they will be separated and destroyed\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30\",\n    \"Matthew 13:36-43\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"False or hypocritical Christians (or heretics) appearing similar to true believers within the visible church\",\n      \"basis\": [\n        \"Matthew 13:24-30\",\n        \"Matthew 13:36-43\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin, evil influences, or worldly elements mixed into the life of the believer or the church\",\n      \"basis\": [\n        \"Matthew 13:24-30\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The primary meaning is fixed by Jesus' own explicit interpretation of the parable; later Christian teaching almost uniformly follows that explanation while applying it to false professors in the church or the world.\"\n}\n\nBOOK ENTRY\nThe counterfeit sown among the wheat by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed chaff.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 13:25-30, 38-40) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nMatthew 13:25 — But while men slept, his enemy came and sowed tares among the wheat, and went his way.\nMatthew 13:26 — But when the blade was sprung up, and brought forth fruit, then appeared the tares also.\nMatthew 13:27 — So the servants of the householder came and said unto him, Sir, didst not thou sow good seed in thy field? from whence then hath it tares?\nMatthew 13:28 —  He said unto them, An enemy hath done this. The servants said unto him, Wilt thou then that we go and gather them up?\nMatthew 13:29 — But he said, Nay; lest while ye gather up the tares, ye root up also the wheat with them.\nMatthew 13:30 — Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.\nMatthew 13:38 —  The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;\nMatthew 13:39 —  The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.\nMatthew 13:40 — As therefore the tares are gathered and burned in the fire; so shall it be in the end of this world.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "81e0b169f41d66f7ed740e0649153d4c3ae1eb0d81c0e03ed12828ca852cab60",
+  "cache": {
+    "hit": false
+  }
+}

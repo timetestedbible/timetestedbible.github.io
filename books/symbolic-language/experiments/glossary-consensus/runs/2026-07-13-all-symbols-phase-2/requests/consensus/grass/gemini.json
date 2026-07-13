@@ -1,0 +1,107 @@
+{
+  "provider": "gemini",
+  "stage": "consensus",
+  "term": "grass",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Remain blind to the author's position."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are the blind consensus definer in an experiment about biblical symbolism.\n\nYou have not been shown the author's book, definition, citations, argument, or\npreferred conclusion. Do not search for or infer that material. Answer from your\nindependent knowledge of published Christian interpretation and biblical studies.\n\nTERM\nGrass\n\nTASK\n\n1. State the primary symbolic meaning most commonly assigned to this term in\n   Christian teaching and biblical interpretation.\n2. Cite the biblical passages normally used to support that meaning.\n3. Identify materially different alternative readings and describe each as\n   dominant, common, minority, rare, or unclear.\n4. If the term has no settled symbolic interpretation, say so directly.\n\nDo not decide whether the common interpretation is true. This stage measures\nrecognizable consensus, not truth.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "cache_key": "9ffa0f89b69b4116d333562f04a653489ede6a204bdcd7782b38854c315a65a0",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "id": "resp_0f7b742b6c5bc124006a547d10621c8194b5e3b5e2464d7719",
+  "object": "response",
+  "created_at": 1783921936,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921951,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f7b742b6c5bc124006a547d111060819495389a7a3a1821c9",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f7b742b6c5bc124006a547d1a2e308194a8ef98b9ada3384e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The consensus primarily identifies a mountain with divine presence, revelation, worship, or encounter, while recognizing kingdoms and political powers as a common context-specific alternative.\",\"book_summary\":\"The book identifies a mountain categorically as a kingdom—the locus of ruling authority.\",\"consensus_core_identification\":\"A sphere or place of divine presence and revelation.\",\"book_core_identification\":\"A kingdom or ruling authority.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book elevates the recognized kingdom/power sense into the term's defining meaning, thereby excluding or reclassifying mountain texts centered on theophany, revelation, worship, stability, obstacles, or other associations. The consensus treats kingdom as only one contextual use.\",\"material_contradiction\":\"As general symbolic identifications, divine encounter and kingdom are different referents. Although they can overlap in Zion or God's kingdom, accepting the book's categorical definition replaces the consensus's primary identification rather than merely sharpening it.\",\"rationale\":\"The book's meaning is not novel because every consensus response explicitly lists kingdoms, empires, or governmental powers as a common alternative. Nevertheless, it diverges from the consensus core by making that alternative the governing identification for the symbol as such.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Jeremiah 51:25 and Daniel 2:35 support kingdom or imperial applications—Babylon as a destructive mountain and the stone becoming a mountain associated contextually with God's kingdom—but the printed verses alone do not establish that every symbolic mountain means a kingdom or specifically a 'seat of ruling authority.' Daniel's explicit kingdom interpretation occurs later in Daniel 2:44–45.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3856,
+    "input_tokens_details": {
+      "cache_write_tokens": 3853,
+      "cached_tokens": 0
+    },
+    "output_tokens": 742,
+    "output_tokens_details": {
+      "reasoning_tokens": 377
+    },
+    "total_tokens": 4598
+  },
+  "user": null,
+  "metadata": {}
+}

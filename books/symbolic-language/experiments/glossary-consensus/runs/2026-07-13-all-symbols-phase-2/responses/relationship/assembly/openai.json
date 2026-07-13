@@ -1,0 +1,195 @@
+{
+  "id": "resp_03ddd36f7d5d37b0006a5479124fb4819789ecbdae46011282",
+  "object": "response",
+  "created_at": 1783920914,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920928,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03ddd36f7d5d37b0006a5479135060819795ee3e839da4aba4",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_03ddd36f7d5d37b0006a5479188b6c8197a64da6d8ba881ee5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"A counterfeit covenant or religious community that claims to be God’s people while opposing God, Christ, or the faithful; this includes Revelation’s hostile “synagogue of Satan” and, typologically, the wicked assembly surrounding Christ.\",\"book_summary\":\"A counterfeit covenant congregation claiming holy or covenant standing while rebelling against the covenant Lord, exemplified by Israel’s rebel congregations, the assembly against Messiah, and those claiming to be Jews in Revelation.\",\"consensus_core_identification\":\"A falsely legitimate covenant community whose opposition to God or Christ reveals satanic allegiance.\",\"book_core_identification\":\"A counterfeit covenant assembly that claims covenant status while gathering against the covenant Lord.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement. The book foregrounds Korah and the wilderness rebel congregation as typological precedents, but these exemplify the same broader category of counterfeit or apostate religious assembly recognized by the consensus.\",\"material_contradiction\":\"None. The book neither replaces the consensus referent nor denies its historical or theological applications.\",\"rationale\":\"Reduced to their minimum identifications, both readings define the term as a congregation claiming covenant legitimacy while acting against God, Christ, or his faithful people. The book’s emphasis on the covenant-assembly term and its canonical sequence from Numbers through Psalm 22 to Revelation adds thematic detail rather than changing the category or its covered cases.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The entry may compress historically distinct groups and texts into one canonical type, and the printed excerpts alone do not establish every lexical nuance of “edah” or the inside/outside-camp distinction. Nevertheless, Numbers explicitly depicts an allegedly holy congregation gathered against God’s appointed leaders, Psalms depicts wicked assemblies, Acts identifies those gathered against Jesus, and Revelation names false covenant claimants the synagogue of Satan.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4059,
+    "input_tokens_details": {
+      "cache_write_tokens": 4056,
+      "cached_tokens": 0
+    },
+    "output_tokens": 670,
+    "output_tokens_details": {
+      "reasoning_tokens": 272
+    },
+    "total_tokens": 4729
+  },
+  "user": null,
+  "metadata": {}
+}

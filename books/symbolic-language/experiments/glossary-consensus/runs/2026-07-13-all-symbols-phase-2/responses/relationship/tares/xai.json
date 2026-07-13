@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922537,
+  "completed_at": 1783922546,
+  "id": "3c7bc90d-0e5b-936c-99ee-4c1b4ad50a49",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_3c7bc90d-0e5b-936c-99ee-4c1b4ad50a49",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Tares (darnel)\".\n{\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"explanation\": \"Core identification matches exactly: tares = children of the wicked one / counterfeit sown by the enemy among the wheat, mimicking until harvest, then bound and burned. Consensus and book both identify the referent as the wicked/counterfeit among the righteous. Book adds precision by distinguishing tares from winnowed chaff (a detail absent from consensus but not contradictory).",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Tares symbolize the sons of the evil one (false/counterfeit believers) sown by the devil among the sons of the kingdom (wheat); they coexist until the end-of-age harvest when angels separate and burn them. Core fixed by Jesus’ own interpretation.\",\n  \"book_summary\": \"The counterfeit sown among the wheat by the enemy—a weed that mimics true grain until harvest, then bound in bundles and burned; the children of the wicked one, distinct from the winnowed chaff.\",\n  \"consensus_core_identification\": \"sons of the evil one / false or counterfeit believers mixed with the righteous\",\n  \"book_core_identification\": \"the counterfeit / children of the wicked one sown among the wheat\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None material; book’s added note distinguishing tares from winnowed chaff merely separates two parallel biblical images without redefining the tares’ referent or cases.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both cores rest on the identical Matthean identification (tares = children of the wicked one). Book language is a direct, compact paraphrase of the settled consensus primary meaning; botanical mimicry, enemy-sowing, and final burning are already standard. The chaff distinction is an immaterial clarification, not a boundary shift or replacement of referent.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The explicit ‘distinct from winnowed chaff’ clause could be read as an extra restriction, yet it does not exclude any cases the consensus assigns to tares themselves.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_3c7bc90d-0e5b-936c-99ee-4c1b4ad50a49",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3748,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1230,
+    "output_tokens_details": {
+      "reasoning_tokens": 841
+    },
+    "total_tokens": 4978,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 141080000,
+    "context_details": {
+      "input_tokens": 3748,
+      "output_tokens": 1230
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

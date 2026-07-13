@@ -189,7 +189,7 @@ the book's discoveries — the gems list for part openers and back matter.
 
 **Feet** [ADEQUATE] — Takes one of the two consensus senses (feet = one's walk/conduct, omitting the under-the-feet dominion sense) and sharpens it with a specific application to John 13:10 — daily conduct cleansed while the bathed body stays clean. The definition itself is consensus-shared, but John 13:10 presupposes rather than proves feet = conduct; Prov 4:26-27 or Ps 119:105 would supply the definitional base.
 
-**Fish (great fish, sea-monster)** [ADEQUATE] — Sharpens the consensus empire-as-dragon strand into a structural claim: a kingdom that swallows and must disgorge; it silently sets aside the Jonah-fish-as-grave typology. Jer 51:34 and Ezek 32:2 carry the swallowing-kingdom reading explicitly, but the 'forced to give back' clause lives in Jer 51:44, which is not cited.
+**Great Fish (Sea-monster)** [ADEQUATE] — Sharpens the consensus empire-as-dragon strand into a structural claim: a kingdom that swallows and must disgorge; it silently sets aside the Jonah-fish-as-grave typology. Jer 51:34 and Ezek 32:2 carry the swallowing-kingdom reading explicitly, but the 'forced to give back' clause lives in Jer 51:44, which is not cited.
 
 **Four winds** [ADEQUATE] — Elevates the consensus's secondary strand (winds as agents of divine power) to the primary meaning and adds the horsemen identification, setting aside the 'from everywhere' compass idiom. Zech 6:5 explicitly calls them 'the four spirits of the heavens which go forth from... the LORD' amid a vision of colored-horse chariots, but Rev 6 is uncited, so 'shown as the four horsemen' rests on an unstated link.
 

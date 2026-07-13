@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "wisdom",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWisdom\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, personified Wisdom (especially 'Lady Wisdom' of Proverbs 8) is most commonly read as a symbol, type, or foreshadowing of Jesus Christ — the eternal Word/Wisdom of God through whom all things were made. Christ is identified as the Wisdom of God incarnate, so that the figure of Wisdom in the Old Testament wisdom literature is taken christologically. At the practical level, wisdom also stands for godly, skillful living rooted in the fear of the Lord, but the dominant symbolic interpretation of the personified figure is christological.\",\n  \"primary_basis\": [\n    \"Proverbs 8:22-31 (Wisdom present with God before creation)\",\n    \"Proverbs 3:19 ('By wisdom the LORD founded the earth')\",\n    \"1 Corinthians 1:24 ('Christ the power of God and the wisdom of God')\",\n    \"1 Corinthians 1:30 (Christ 'became to us wisdom from God')\",\n    \"Colossians 2:2-3 ('in whom are hidden all the treasures of wisdom and knowledge')\",\n    \"Colossians 1:15-17 (Christ as agent of creation, echoing Proverbs 8)\",\n    \"John 1:1-3 (Logos/Word paralleling Wisdom's role in creation)\",\n    \"Matthew 11:19 / Luke 7:35 ('wisdom is justified by her deeds/children')\",\n    \"Luke 11:49 (Jesus speaking as/of 'the Wisdom of God')\",\n    \"Hebrews 1:2-3 (Son as agent of creation and radiance of God's glory)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christological reading: personified Wisdom is Christ, the pre-existent Son/Logos. This is the classic patristic and traditional interpretation (Athanasius, Augustine, and Nicene-era debates over Proverbs 8:22 with the Arians all presuppose it).\",\n      \"basis\": [\n        \"Proverbs 8:22-31\",\n        \"1 Corinthians 1:24, 30\",\n        \"Colossians 1:15-17; 2:3\",\n        \"John 1:1-3\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Practical-ethical reading: wisdom symbolizes skill in godly living — reverent, righteous conduct grounded in the fear of the Lord — rather than a person. This is how much of Proverbs, James, and the wisdom corpus is preached and applied.\",\n      \"basis\": [\n        \"Proverbs 1:7; 9:10 ('the fear of the LORD is the beginning of wisdom')\",\n        \"James 1:5; 3:13-17 ('the wisdom from above')\",\n        \"Ecclesiastes 12:13\",\n        \"Psalm 111:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literary-personification reading (dominant in modern critical scholarship): Lady Wisdom in Proverbs 1, 8, and 9 is a poetic personification of a divine attribute or of the created order's moral structure, not a distinct hypostasis or a direct prophecy of Christ; the New Testament applies the imagery to Christ secondarily.\",\n      \"basis\": [\n        \"Proverbs 1:20-33; 8; 9:1-6 read as Hebrew poetic personification\",\n        \"Job 28 (wisdom as inaccessible quality, not person)\",\n        \"Comparison with the contrasting personification of Folly in Proverbs 9:13-18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pneumatological reading: Wisdom identified with the Holy Spirit, found in some early fathers (e.g., Irenaeus and Theophilus of Antioch, who paired Word=Son and Wisdom=Spirit).\",\n      \"basis\": [\n        \"Proverbs 8 read alongside Isaiah 11:2 ('the Spirit of wisdom and understanding')\",\n        \"Wisdom of Solomon 1:6-7; 7:22-27 (in traditions receiving the deuterocanon)\",\n        \"Irenaeus, Against Heresies 4.20\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Wisdom as Torah/God's Law: in Second Temple Jewish tradition (influential as background to Christian readings), personified Wisdom is identified with the Law given to Israel.\",\n      \"basis\": [\n        \"Sirach 24 (Wisdom dwelling in Israel, identified with the book of the covenant)\",\n        \"Baruch 3:9-4:4\",\n        \"Deuteronomy 4:6 (keeping the law is Israel's wisdom)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Marian/liturgical application: Catholic and Orthodox liturgy has applied Wisdom texts (Proverbs 8, Sirach 24) to the Virgin Mary as 'Seat of Wisdom,' an accommodated rather than literal identification.\",\n      \"basis\": [\n        \"Proverbs 8:22-31 and Sirach 24 used in Marian feasts\",\n        \"Traditional title 'Sedes Sapientiae'\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sophia theology / feminist readings: Wisdom (Sophia) as a feminine expression, image, or hypostasis of the divine, developed in Russian sophiology (Bulgakov, Solovyov) and modern feminist theology (e.g., Elizabeth Johnson).\",\n      \"basis\": [\n        \"Proverbs 8\",\n        \"Wisdom of Solomon 7-8\",\n        \"Sirach 24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a genuinely recognizable consensus, but it operates on two levels that should be distinguished. (1) As a moral concept, wisdom uncontroversially means godly skill in living rooted in the fear of the Lord. (2) As a personified symbolic figure, the historic Christian consensus — patristic, medieval, Reformation, and much evangelical teaching — reads Wisdom christologically, anchored in Paul's explicit statement that Christ is 'the wisdom of God' (1 Cor 1:24). Modern academic scholarship more often treats Lady Wisdom as literary personification and views the christological identification as a New Testament re-application of the imagery; this critical view is widespread in scholarship but the christological reading remains dominant in church teaching and popular interpretation. The Arian controversy over Proverbs 8:22 ('the LORD created/possessed me') is historically significant: both sides assumed Wisdom = the Son and disputed only what 'created' implied. Deuterocanonical texts (Wisdom of Solomon, Sirach) substantially shape Catholic and Orthodox interpretation but are noncanonical for Protestants.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Jesus Christ, the Second Person of the Trinity (the Logos or Word), representing God's mind and active agent in creation.\",\n  \"primary_basis\": [\n    \"Proverbs 8:22-31\",\n    \"1 Corinthians 1:24\",\n    \"1 Corinthians 1:30\",\n    \"Colossians 2:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A poetic and literary personification of God's inherent attribute of wisdom and the divine order embedded in creation, rather than a distinct divine person.\",\n      \"basis\": [\n        \"Proverbs 1:20-33\",\n        \"Proverbs 9:1-6\",\n        \"Job 28:12-28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit, viewed as the breath and active presence of God in creation and revelation.\",\n      \"basis\": [\n        \"Wisdom of Solomon 7:22-26\",\n        \"Proverbs 8:22-31\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Blessed Virgin Mary, often venerated liturgically as the Seat of Wisdom (Sedes Sapientiae) in whom the Word became flesh.\",\n      \"basis\": [\n        \"Sirach 24:1-22\",\n        \"Proverbs 8:22-31\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In historical orthodox Christian teaching, Old Testament personifications of Wisdom (especially in Proverbs 8) were heavily utilized in early Christological debates to describe the eternal generation of the Son. While the Christological interpretation dominates historical and theological consensus, modern historical-critical scholarship commonly reads it merely as a personified divine attribute.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God-given understanding that perceives divine order and leads to righteous, skillful living, grounded in reverence for God. In personified form, Wisdom represents God’s active instruction and ordering purpose.\",\n  \"primary_basis\": [\n    \"Proverbs 1:7, 20–33 — fear of the LORD as the beginning of knowledge and Wisdom calling publicly\",\n    \"Proverbs 2:1–11 — the LORD gives wisdom, which produces understanding and upright conduct\",\n    \"Proverbs 3:13–20 — Wisdom’s value and role in God’s ordering of creation\",\n    \"Proverbs 8:1–36 — personified Wisdom calls humanity and is associated with creation\",\n    \"Proverbs 9:1–12 — Wisdom’s invitation and the fear of the LORD as wisdom’s beginning\",\n    \"Job 28:12–28 — wisdom belongs to God, and fearing the Lord is wisdom\",\n    \"Ecclesiastes 7:11–12, 19; 9:13–18 — wisdom as protection, strength, and prudent insight\",\n    \"James 1:5; 3:13–18 — wisdom is given by God and shown in righteous, peaceable conduct\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Personified Wisdom, especially in Proverbs 8, is interpreted christologically as a figure or anticipation of Christ, the eternal Word and Wisdom of God.\",\n      \"basis\": [\n        \"Proverbs 8:22–31\",\n        \"Matthew 11:19; 12:42\",\n        \"Luke 11:49\",\n        \"John 1:1–3\",\n        \"1 Corinthians 1:24, 30\",\n        \"Colossians 2:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom represents God’s Torah, commandments, or revealed covenant instruction.\",\n      \"basis\": [\n        \"Deuteronomy 4:5–8\",\n        \"Psalm 19:7–10\",\n        \"Psalm 119:97–104\",\n        \"Proverbs 2:1–6\",\n        \"Sirach 24:1–23; Baruch 3:9–4:4 in traditions receiving the deuterocanonical books\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom is a feminine literary personification—Lady Wisdom—contrasted with Woman Folly, without necessarily symbolizing a distinct divine person.\",\n      \"basis\": [\n        \"Proverbs 1:20–33\",\n        \"Proverbs 8:1–9:6\",\n        \"Proverbs 9:13–18\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Wisdom symbolizes the Holy Spirit or a feminine aspect of divine activity.\",\n      \"basis\": [\n        \"Isaiah 11:2\",\n        \"Wisdom of Solomon 7:22–27; 9:17 in traditions receiving the deuterocanonical books\",\n        \"Ephesians 1:17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Wisdom personifies Israel, the Church, or the community that mediates divine instruction.\",\n      \"basis\": [\n        \"Proverbs 9:1–6\",\n        \"Sirach 24:8–17\",\n        \"Ephesians 3:10\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In some modern theological readings, Sophia names a distinct or quasi-distinct feminine dimension of God.\",\n      \"basis\": [\n        \"Proverbs 8:22–31\",\n        \"Wisdom of Solomon 7:22–27\",\n        \"Sirach 24:1–22\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement that biblical wisdom concerns God-given understanding expressed in faithful conduct. There is no single settled symbolic interpretation when Wisdom is personified: literary personification, divine attribute, Torah, and christological readings coexist, with traditions differing especially over Proverbs 8 and the deuterocanonical Wisdom literature.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Jesus Christ (the divine Logos/Son), as the personal embodiment and personification of God's wisdom\",\n  \"primary_basis\": [\n    \"Proverbs 8:22-31 (Wisdom present/begotten before creation and active in it)\",\n    \"1 Corinthians 1:24 ('Christ the power of God and the wisdom of God')\",\n    \"1 Corinthians 1:30 (Christ as wisdom from God)\",\n    \"Colossians 2:3 (all treasures of wisdom hidden in Christ)\",\n    \"Matthew 11:19 / Luke 7:35 (wisdom justified by her deeds/children, applied to Jesus)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literary/poetic personification of a divine attribute (God's wise ordering of creation and moral call) without hypostatic or christological identification\",\n      \"basis\": [\n        \"Proverbs 1–9 as extended poetic device\",\n        \"Job 28\",\n        \"modern critical biblical scholarship\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit\",\n      \"basis\": [\n        \"occasional patristic associations of Sophia with the Spirit\",\n        \"certain pneumatological readings of Wisdom literature\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A semi-divine feminine figure or archetype (Sophia)\",\n      \"basis\": [\n        \"Wisdom of Solomon and Sirach\",\n        \"Gnostic texts\",\n        \"some modern feminist or sophiological theologies\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian exegesis (patristic through confessional) overwhelmingly reads personified Wisdom christologically as a type or hypostasis of the Son; modern biblical studies commonly prefers a non-ontological literary reading while still acknowledging the later christological application. The christological sense remains the dominant symbolic assignment in Christian teaching.\"\n}\n\nBOOK ENTRY\nThe fear of the LORD lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Prov 9:10; Ps 111:10; Deut 4:6) · see The Fool and the Wise, ch. 20\n\nAVAILABLE KJV EXCERPTS\nProverbs 9:10 — The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.\nPsalms 111:10 — The fear of the LORD is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.\nDeuteronomy 4:6 — Keep therefore and do them; for this is your wisdom and your understanding in the sight of the nations, which shall hear all these statutes, and say, Surely this great nation is a wise and understanding people.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d50531e7c7f60c884aa882bbc079ac2f4e2bd51594c764a7e68b5a4fbb1c5929",
+  "cache": {
+    "hit": false
+  }
+}

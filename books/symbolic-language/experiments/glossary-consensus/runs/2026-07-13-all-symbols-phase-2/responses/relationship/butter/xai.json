@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921018,
+  "completed_at": 1783921065,
+  "id": "c456dda2-398b-9335-b30f-34fa96d1a6fb",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_c456dda2-398b-9335-b30f-34fa96d1a6fb",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Butter (curdled milk, chemah)\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"core_reasoning\": \"The book's primary identification of butter/chemah as 'milk worked by labor into sound doctrine' and 'the diet that teaches to refuse the evil, and choose the good' (Isa 7:15) is a material narrowing and re-extension of the consensus's most common referent—rich provision or abundance—by shifting the referent from literal pastoral luxury to its allegorical product: moral discernment and sound teaching produced by labor. The 2 Samuel 17:29 remnant provisions and Job 29:6 wash of steps are retained as supporting cases, but the central referent is replaced by the churning metaphor (Prov 30:33) as the mechanism that converts physical food into spiritual instruction. This is not replacement of the category but a boundary refinement that excludes the consensus's literal abundance reading while preserving the same scriptural citations.\",\n  \"extension_reasoning\": \"The book adds the specific teaching function ('refuse the evil and choose the good') and the churning-to-doctrine mechanism, excludes the pure abundance reading that dominates consensus responses, and reclassifies the remnant diet (Isa 7) from survival food to the instrument of discernment. It retains the flattery counterfeit (Ps 55:21) and hospitality elements but subordinates them to the doctrine-focused core. The rare consensus alternative of 'spiritual nourishment' is absorbed and sharpened into a precise allegorical reading tied to labor and moral choice.\",\n  \" \"core_support\": \"strong\",\n  \"extension_support\": \"strong\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"core_reasoning\": \"The book's primary identification of butter/chemah as 'milk worked by labor into sound doctrine' and 'the diet that teaches to refuse the evil, and choose the good' (Isa 7:15) is a material narrowing and re-extension of the consensus's most common referent—rich provision or abundance—by shifting the referent from literal pastoral luxury to its allegorical product: moral discernment and sound teaching produced by labor. The 2 Samuel 17:29 remnant provisions and Job 29:6 wash of steps are retained as supporting cases, but the central referent is replaced by the churning metaphor (Prov 30:33) as the mechanism that converts physical food into spiritual instruction. This is not replacement of the category but a boundary refinement that excludes the consensus's literal abundance reading while preserving the same scriptural citations.\",\n  \"extension_reasoning\": \"The book adds the specific teaching function ('refuse the evil and choose the good') and the churning-to-doctrine mechanism, excludes the pure abundance reading that dominates consensus responses, and reclassifies the remnant diet (Isa 7) from survival food to the instrument of discernment. It retains the flattery counterfeit (Ps 55:21) and hospitality elements but subordinates them to the doctrine-focused core. The rare consensus alternative of 'spiritual nourishment is absorbed and sharpened into a precise allegorical reading tied to labor and moral choice.\",\n  \" \"core_support\": \"strong\",\n  \"extension_support\": \"strong\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n \"extension_support\": \"strong\",\n  \"core_reasoning\": \"The book's primary identification of butter/chemah as 'milk worked by labor into sound doctrine' and 'the diet that teaches to refuse the evil, and choose the good' (Isa 7:15) is a material narrowing and re-extension of the consensus's most common referent—rich provision or abundance—by shifting the referent from literal pastoral luxury to its allegorical product: moral discernment and sound teaching produced by labor. The 2 Samuel 17:29 remnant provisions and Job 29:6 wash of steps are retained as supporting cases, but the central referent is replaced by the churning metaphor (Prov 30:33) as the mechanism that converts physical food into spiritual instruction. This is not replacement of the category but a boundary refinement that excludes the consensus's literal abundance reading while preserving the same scriptural citations.\",\n  \"extension_reasoning\": \"The book adds the specific teaching function ('refuse the evil and choose the good') and the churning-to-doctrine mechanism, excludes the pure abundance reading that dominates consensus responses, and reclassifies the remnant diet (Isa 7) from survival food to the instrument of discernment. It retains the flattery counterfeit (Ps 55:21) and hospitality elements but subordinates them to the doctrine-focused core. The rare consensus alternative of 'spiritual nourishment' is absorbed and sharpened into a precise allegorical reading tied to labor and moral choice.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Primary meaning is abundance, prosperity, and rich divine provision or fatness of the land (context-dependent, no settled single symbol). Common alternatives: remnant subsistence diet under judgment (Isa 7), Christ's true humanity, flattery/smooth deceit (Ps 55:21), hospitality; minority: product of agitation/strife (Prov 30:33).\",\n  \"book_summary\": \"Butter is milk churned solid by labor into sound doctrine: the diet teaching to refuse evil and choose good, the remnant's food, and the wash of walking feet; counterfeit is speech smoother than butter with war beneath.\",\n  \"consensus_core_identification\": \"abundance/prosperity/rich provision (or contextually remnant subsistence)\",\n  \"book_core_identification\": \"sound doctrine (labor-worked solid teaching enabling moral discernment)\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book unifies Job prosperity wash, Isa remnant diet, and Prov churning under a single doctrinal core (positive labor product), while consensus keeps them contextually separate (abundance vs. subsistence vs. strife analogy) without doctrinal referent.\",\n  \"material_contradiction\": \"Consensus primary of material abundance/prosperity cannot coexist as core with book's primary of sound doctrine; accepting the latter replaces the former identification of the same term.\",\n  \"rationale\": \"Consensus responses converge on abundance/prosperity as primary (drawn from Job, Deut, Isa abundance readings) with spiritual/doctrinal senses rare or absent; book replaces that core with allegorical sound doctrine via churning labor + Isa 7:15 discernment diet, reclassifying shared cases (remnant food, foot-wash, flattery counterfeit) under the new referent. This is core replacement, not boundary refinement of the same category, even though some extensions overlap and flattery is retained as counterfeit.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Key texts (Job 29:6; parallel provision lists) depict literal luxury/prosperity, Isa 7:15 describes a child eating butter to grow in knowledge (not butter-as-doctrine), and Prov 30:33 parallels churning to strife rather than positive labor for teaching; the doctrinal equation is an unsupported allegorical leap beyond even rare spiritual-nourishment alternatives.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c456dda2-398b-9335-b30f-34fa96d1a6fb",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3533,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 5036,
+    "output_tokens_details": {
+      "reasoning_tokens": 4505
+    },
+    "total_tokens": 8569,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 370900000,
+    "context_details": {
+      "input_tokens": 3533,
+      "output_tokens": 5036
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

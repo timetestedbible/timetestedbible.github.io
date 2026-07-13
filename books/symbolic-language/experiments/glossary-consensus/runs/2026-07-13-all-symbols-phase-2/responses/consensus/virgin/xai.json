@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920743,
+  "completed_at": 1783920762,
+  "id": "b5b308a3-9f7c-9fbb-bec9-549ed852a163",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_b5b308a3-9f7c-9fbb-bec9-549ed852a163",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Virgin\" in Christian teaching and biblical interpretation, based on my independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Purity, chastity, and undivided devotion/fidelity to God (most prominently embodied by Mary in the virgin birth of Christ, and secondarily by the Church or faithful as Christ's pure bride)\",\n  \"primary_basis\": [\n    \"Isaiah 7:14 (virgin shall conceive, applied messianically)\",\n    \"Matthew 1:18-25 and Luke 1:26-38 (Mary's virginal conception by the Holy Spirit)\",\n    \"2 Corinthians 11:2 (Church presented as pure virgin to Christ)\",\n    \"Matthew 25:1-13 (parable of the wise and foolish virgins)\",\n    \"Revelation 14:4 (the 144,000 as virgins who follow the Lamb)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Personification of Israel/Zion/Judah as the 'virgin daughter' (vulnerable yet elect people of God)\",\n      \"basis\": [\n        \"Isaiah 37:22\",\n        \"Jeremiah 14:17\",\n        \"Lamentations 1:15\",\n        \"Amos 5:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal lifelong sexual abstinence as a higher spiritual calling or state of perfection (especially in Catholic/Orthodox monastic and Marian teaching on perpetual virginity)\",\n      \"basis\": [\n        \"1 Corinthians 7:25-38\",\n        \"Matthew 19:12\",\n        \"traditional interpretation of Luke 1:34 and John 19:26-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral/spiritual innocence free from idolatry or worldliness (without necessarily implying sexual status)\",\n      \"basis\": [\n        \"Revelation 14:4\",\n        \"2 Corinthians 11:2\",\n        \"Ephesians 5:25-27\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern biblical scholarship and teaching, 'virgin' consistently functions as a symbol of purity and exclusive belonging to God. The Marian application is the single most dominant Christian usage; the corporate (Israel/Church) and individual purity applications are also standard and non-conflicting. No major tradition treats the term as lacking symbolic content.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_b5b308a3-9f7c-9fbb-bec9-549ed852a163",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1798,
+    "output_tokens_details": {
+      "reasoning_tokens": 1256
+    },
+    "total_tokens": 2400,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 114160000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1798
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

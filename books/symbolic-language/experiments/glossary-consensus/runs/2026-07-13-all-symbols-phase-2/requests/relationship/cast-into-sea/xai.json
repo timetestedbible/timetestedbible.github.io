@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "cast-into-sea",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nCast into the sea (a stone, mountain, or millstone sinking)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"Irreversible, total divine judgment: to be cast into the sea (like a stone, millstone, or mountain sinking) most commonly symbolizes complete, final, and unrecoverable destruction or removal by God's judgment. The sinking object disappears beyond retrieval, so the image signals a doom from which there is no rising again.\",\n  \"primary_basis\": [\n    \"Revelation 18:21 (a mighty angel throws a great millstone into the sea: 'so shall Babylon the great city be thrown down with violence, and shall be found no more')\",\n    \"Jeremiah 51:63-64 (a stone tied to the scroll is thrown into the Euphrates: 'Thus shall Babylon sink, to rise no more')\",\n    \"Exodus 15:4-5, 10 (Pharaoh's hosts cast into the sea; 'they sank like a stone... they sank as lead in the mighty waters')\",\n    \"Nehemiah 9:11 (God cast the pursuers into the depths 'as a stone into mighty waters')\",\n    \"Matthew 18:6; Mark 9:42; Luke 17:2 (better to have a great millstone hung around the neck and be drowned in the depth of the sea than to cause a little one to stumble)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's forgiveness and complete removal of sin: God 'casts all our sins into the depths of the sea,' meaning sins are put away permanently and remembered no more. This is a very widespread devotional and homiletical use of the sinking-in-the-sea image, though it applies the same 'gone beyond recovery' logic to sin rather than to persons or cities.\",\n      \"basis\": [\n        \"Micah 7:19\",\n        \"often paired with Psalm 103:12 and Isaiah 38:17 in preaching\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The power of faith and prayer to accomplish the impossible: Jesus' saying that faith can tell 'this mountain' to be 'taken up and cast into the sea' is read as hyperbole for prayer that overcomes insurmountable obstacles.\",\n      \"basis\": [\n        \"Matthew 21:21\",\n        \"Mark 11:22-23\",\n        \"cf. Matthew 17:20; Luke 17:6 (mulberry/sycamine tree planted in the sea)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A severe warning-deterrent against causing believers ('little ones') to stumble: the millstone-drowning saying is read primarily as a statement about the gravity of leading others into sin, with the sea image functioning as a fate 'better than' the judgment actually awaiting the offender.\",\n      \"basis\": [\n        \"Matthew 18:6\",\n        \"Mark 9:42\",\n        \"Luke 17:1-2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Preterist/symbolic-geographic reading: 'this mountain' cast into the sea refers specifically to the Temple Mount (or Mount of Olives, or Herodion), so the saying prophesies or symbolizes the removal of the Jerusalem temple system in judgment (sometimes with 'sea' as the Gentile nations).\",\n      \"basis\": [\n        \"Mark 11:23 in its fig-tree/temple-cleansing context (Mark 11:12-25)\",\n        \"sometimes linked to Zechariah 4:7 and Zechariah 14:4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Mountain = kingdom/political power, sea = the nations or chaotic humanity: casting a mountain into the sea symbolizes the overthrow of a kingdom among the peoples, drawing on prophetic idiom where mountains stand for kingdoms and the sea for restless nations.\",\n      \"basis\": [\n        \"Jeremiah 51:25 ('destroying mountain' = Babylon)\",\n        \"Revelation 8:8 ('something like a great mountain, burning with fire, was thrown into the sea')\",\n        \"Isaiah 17:12-13; Revelation 17:15 (sea/waters = peoples and nations)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"This term bundles several distinct biblical images (stone, millstone, mountain, sins) that share one underlying symbolic logic: what sinks into the sea is gone completely and irretrievably. Consensus is strong on that core logic, but the applied meaning splits by passage: judgment/destruction dominates for the millstone and stone texts (Revelation 18:21; Jeremiah 51; Exodus 15), forgiveness of sin dominates for Micah 7:19, and faith/prayer dominates for the mountain sayings. Because the question groups these together, the single most commonly assigned meaning across the corpus is final, unrecoverable divine judgment, with the sea often carrying background connotations of chaos, the abyss, and death in ancient Near Eastern and biblical imagery. Confidence is medium rather than high only because the term spans multiple texts whose standard readings differ by context.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Irrevocable, violent, and total judgment or destruction, permanently removing an entity so that it never rises again.\",\n  \"primary_basis\": [\n    \"Revelation 18:21\",\n    \"Jeremiah 51:63-64\",\n    \"Matthew 18:6\",\n    \"Mark 9:42\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The overcoming of seemingly impossible obstacles through the power of faith (specifically regarding a mountain).\",\n      \"basis\": [\n        \"Mark 11:23\",\n        \"Matthew 21:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The permanent removal, forgetting, and absolute forgiveness of sins.\",\n      \"basis\": [\n        \"Micah 7:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological judgment specifically against the Jerusalem Temple (interpreting 'this mountain' as the Temple Mount being destroyed).\",\n      \"basis\": [\n        \"Mark 11:23\",\n        \"Matthew 21:21\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The motif of casting a heavy stone or millstone into the sea universally signifies permanent, irrecoverable removal. In apocalyptic and prophetic literature, it denotes absolute destruction of enemies like Babylon. In moral teachings, it illustrates severe judgment for causing stumbling. Variations depend on the object cast: mountains represent either obstacles moved by faith or the judged Temple Mount, while sins cast into the depths represent total forgiveness.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Decisive and often irreversible divine judgment: the condemned person, city, kingdom, or hostile power is violently overthrown, removed, and made unable to rise again.\",\n  \"primary_basis\": [\n    \"Revelation 18:21 explicitly interprets a great millstone thrown into the sea as the violent and final downfall of Babylon.\",\n    \"Jeremiah 51:63–64 uses a stone-bound scroll cast into the Euphrates to signify that Babylon will sink and not rise because of divine judgment.\",\n    \"Exodus 15:4–5 and Nehemiah 9:11 describe God’s defeated enemies sinking in the waters like a stone.\",\n    \"Matthew 18:6, Mark 9:42, and Luke 17:2 use drowning with a millstone as an image of an exceptionally severe fate for one who causes others to stumble.\",\n    \"Revelation 8:8 presents a burning mountain cast into the sea within a sequence of divine judgments.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The removal of an apparently impossible obstacle through faith and prayer, rather than the judgment of an enemy.\",\n      \"basis\": [\n        \"Matthew 21:21 and Mark 11:23 speak of commanding a mountain to be cast into the sea as an illustration of extraordinary faith.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The overthrow of a particular empire or political power; the mountain symbolizes a kingdom, frequently identified as Babylon, Rome, or another persecuting empire.\",\n      \"basis\": [\n        \"Revelation 18:21 directly applies the sinking millstone to Babylon.\",\n        \"Jeremiah 51:25 calls Babylon a destroying mountain before portraying its irreversible fall in Jeremiah 51:63–64.\",\n        \"Revelation 8:8 is often interpreted historically or politically as the fall of a kingdom or imperial power.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A literal or relatively literal apocalyptic catastrophe affecting the sea, such as a volcanic mass, asteroid-like object, or supernatural physical disaster.\",\n      \"basis\": [\n        \"Revelation 8:8–9 describes a burning mountain entering the sea, followed by blood, marine death, and destroyed ships.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Consignment to the realm of chaos, death, or oblivion, drawing on the biblical symbolism of the sea as disorder and hostile power.\",\n      \"basis\": [\n        \"Exodus 15:4–5 and Nehemiah 9:11 associate sinking in deep waters with the annihilation of God’s enemies.\",\n        \"Revelation 13:1 and 21:1 contribute to the broader apocalyptic association of the sea with hostile chaos, although they do not themselves describe a stone or mountain being cast into it.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The removal or burial of sin rather than the destruction of a person or empire.\",\n      \"basis\": [\n        \"Micah 7:19 depicts God casting sins into the depths of the sea, using related but not identical imagery.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable dominant association with catastrophic, irreversible judgment, especially in the Babylon passages. Nevertheless, the image is not a fixed biblical symbol in every context: in the sayings about faith, a mountain cast into the sea signifies the overcoming of an impossible obstacle. The intended meaning must therefore be determined from the specific passage.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Sudden, violent, complete, and irreversible destruction or divine judgment\",\n  \"primary_basis\": [\n    \"Revelation 18:21\",\n    \"Jeremiah 51:63-64\",\n    \"Matthew 18:6\",\n    \"Mark 9:42\",\n    \"Luke 17:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The power of faith (or believing prayer) to remove great obstacles or accomplish the impossible\",\n      \"basis\": [\n        \"Matthew 21:21\",\n        \"Mark 11:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Permanent removal and non-remembrance of sins\",\n      \"basis\": [\n        \"Micah 7:19\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The imagery of a stone, mountain, or millstone cast into the sea appears in multiple distinct scriptural contexts. Apocalyptic and judgment passages (especially the millstone) most frequently supply the destruction/judgment sense in Christian teaching, while the mountain-into-sea sayings supply a separate, widely taught faith motif; the two are not collapsed into one settled symbol.\"\n}\n\nBOOK ENTRY\nThe fall of Babylon — a ruling power irreversibly destroyed, sunk into the sea of peoples, never to rise. A phrase-symbol, not a single word.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 51:63-64; Rev 18:21; Ex 15:4-5) · see The Fall of Babylon, ch. 35\n\nAVAILABLE KJV EXCERPTS\nJeremiah 51:63 — And it shall be, when thou hast made an end of reading this book, that thou shalt bind a stone to it, and cast it into the midst of Euphrates:\nJeremiah 51:64 — And thou shalt say, Thus shall Babylon sink, and shall not rise from the evil that I will bring upon her: and they shall be weary. Thus far are the words of Jeremiah.\nRevelation 18:21 — And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all.\nExodus 15:4 — Pharaoh's chariots and his host hath he cast into the sea: his chosen captains also are drowned in the Red sea.\nExodus 15:5 — The depths have covered them: they sank into the bottom as a stone.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "23a94c8681166d70355471e087420df34ecda38cccbc6ad7c0854c8ef4cbaa35",
+  "cache": {
+    "hit": false
+  }
+}

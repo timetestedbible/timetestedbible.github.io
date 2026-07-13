@@ -1,0 +1,195 @@
+{
+  "id": "resp_0a96b6f14af8ad4c006a547c15bfe08195a32d4257c06aa8e5",
+  "object": "response",
+  "created_at": 1783921685,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921704,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a96b6f14af8ad4c006a547c166fa48195a5a53ac9009784f9",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a96b6f14af8ad4c006a547c21be3c819597d11d18e59f586a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The settled consensus identifies Jacob primarily with Israel—the patriarch as representative of the covenant nation or elect people—while commonly recognizing his life as a secondary pattern of a deceptive, self-reliant person transformed by grace.\",\"book_summary\":\"The book identifies Jacob primarily with the crooked, supplanting human heart that God transforms.\",\"consensus_core_identification\":\"Israel or God's covenant people, represented by their patriarch Jacob.\",\"book_core_identification\":\"The deceitful and supplanting human heart undergoing divine transformation.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"DIFFERENT_REFERENT\",\"boundary_disagreement\":\"The book interiorizes and universalizes Jacob as a condition of the human heart, whereas the consensus centers the symbolic identification on the corporate covenant people. It promotes a widely recognized secondary devotional reading to the defining meaning and displaces the settled corporate referent.\",\"material_contradiction\":\"The claims are not historically incompatible, but as primary symbolic identifications they select different referents: corporate Israel versus the fallen human heart. Accepting the book's entry as Jacob's defining symbolism replaces, rather than merely narrows, the consensus core.\",\"rationale\":\"The book's meaning is recognizable within the consensus: every response mentions Jacob as a scheming, fleshly, or self-reliant person transformed by God, and Response B nearly states the book's formulation as primary. Nevertheless, the aggregate consensus expressly treats Jacob's identification with Israel and the covenant people as the settled core, with personal transformation secondary. Because the book substitutes an anthropological referent for that corporate one, the relationship is divergent rather than novel or merely refined.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The strongest objection is that the book closely matches a common consensus alternative—and Response B's primary meaning—so it could be viewed as selecting one accepted emphasis rather than contradicting consensus. However, the dominant settled identification across the responses remains corporate Israel, which the entry does not preserve as its core.\",\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3824,
+    "input_tokens_details": {
+      "cache_write_tokens": 3821,
+      "cached_tokens": 0
+    },
+    "output_tokens": 937,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4761
+  },
+  "user": null,
+  "metadata": {}
+}

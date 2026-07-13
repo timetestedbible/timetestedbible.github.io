@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "cloud",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nCloud\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching and biblical interpretation, the cloud is most commonly understood as a symbol of the divine presence and glory of God (often called the Shekinah glory) — the visible manifestation of God's presence that simultaneously reveals and conceals Him, guiding, protecting, and accompanying His people, and associated with theophany and, in the New Testament, with Christ's ascension and return.\",\n  \"primary_basis\": [\n    \"Exodus 13:21-22 (pillar of cloud guiding Israel)\",\n    \"Exodus 16:10 (glory of the LORD appearing in the cloud)\",\n    \"Exodus 19:9, 16 (cloud at Sinai theophany)\",\n    \"Exodus 24:15-18 (cloud covering the mountain; glory of the LORD)\",\n    \"Exodus 33:9-10 (pillar of cloud at the tent of meeting)\",\n    \"Exodus 40:34-38 (cloud filling the tabernacle)\",\n    \"Leviticus 16:2 (God appearing in the cloud over the mercy seat)\",\n    \"Numbers 9:15-23 (cloud directing Israel's journeys)\",\n    \"1 Kings 8:10-11 (cloud filling Solomon's temple)\",\n    \"Psalm 97:2; Psalm 104:3 (clouds surrounding God; clouds as His chariot)\",\n    \"Ezekiel 1:4; 10:3-4 (cloud in visions of God's glory)\",\n    \"Daniel 7:13 (Son of Man coming with the clouds of heaven)\",\n    \"Matthew 17:5; Mark 9:7; Luke 9:34-35 (bright cloud at the Transfiguration)\",\n    \"Matthew 24:30; 26:64 (Son of Man coming on the clouds)\",\n    \"Acts 1:9-11 (cloud receiving Christ at the ascension)\",\n    \"1 Thessalonians 4:17 (caught up in the clouds)\",\n    \"Revelation 1:7; 14:14 (Christ coming with/on the clouds)\",\n    \"1 Corinthians 10:1-2 (Israel baptized 'in the cloud')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eschatological judgment and the Day of the LORD — clouds as imagery of darkness, dread, and impending divine judgment.\",\n      \"basis\": [\n        \"Joel 2:2\",\n        \"Zephaniah 1:15\",\n        \"Ezekiel 30:3\",\n        \"Isaiah 19:1\",\n        \"Nahum 1:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A great multitude — the 'cloud of witnesses' as a metaphor for a vast crowd of faithful believers.\",\n      \"basis\": [\n        \"Hebrews 12:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Transience and fleetingness — clouds that quickly vanish as a picture of short-lived devotion, life, or sin removed.\",\n      \"basis\": [\n        \"Hosea 6:4; 13:3\",\n        \"Job 7:9; 30:15\",\n        \"Isaiah 44:22 (sins blotted out like a cloud)\",\n        \"James 4:14 (mist/vapor imagery, related)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Emptiness and false promise — 'clouds without rain/water' as a figure for boastful or false teachers who deliver nothing.\",\n      \"basis\": [\n        \"Jude 12\",\n        \"2 Peter 2:17\",\n        \"Proverbs 25:14\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Divine concealment, hiddenness, and mystery — the cloud as that which veils God from human sight, developed especially in mystical/apophatic tradition (e.g., 'The Cloud of Unknowing').\",\n      \"basis\": [\n        \"Exodus 20:21 (thick darkness where God was)\",\n        \"1 Kings 8:12\",\n        \"Lamentations 3:44\",\n        \"Job 22:13-14\",\n        \"Psalm 18:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Blessing, rain, and divine provision — clouds as bearers of rain signifying God's favor and refreshment.\",\n      \"basis\": [\n        \"1 Kings 18:44-45\",\n        \"Deuteronomy 33:26-28\",\n        \"Psalm 147:8\",\n        \"Zechariah 10:1\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, well-attested agreement across Catholic, Orthodox, Protestant, and academic biblical scholarship that the cloud's primary symbolic meaning is the manifest presence and glory of God (Shekinah), a theme that runs coherently from the Exodus narratives through the Transfiguration, Ascension, and Second Coming texts. The alternative meanings listed are genuinely present in Scripture and interpretation but are context-specific figures rather than rivals to the dominant theophany/glory reading. The 'cloud of witnesses' usage in Hebrews 12:1 is widely recognized but is a distinct idiom (a crowd metaphor), not the core symbolic tradition.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The presence, glory, and guidance of God (often referred to as the Shekinah glory), representing both His divine revelation and the veiling of His overwhelming majesty.\",\n  \"primary_basis\": [\n    \"Exodus 13:21-22\",\n    \"Exodus 24:15-18\",\n    \"1 Kings 8:10-11\",\n    \"Matthew 17:5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The vehicle or sign of Christ's return, divine authority, and judgment (apocalyptic clouds).\",\n      \"basis\": [\n        \"Daniel 7:13\",\n        \"Matthew 24:30\",\n        \"Revelation 1:7\",\n        \"1 Thessalonians 4:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A vast multitude or assembly of believers and saints.\",\n      \"basis\": [\n        \"Hebrews 12:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Transience, the brevity of human life, or fleeting faithfulness.\",\n      \"basis\": [\n        \"Job 7:9\",\n        \"Hosea 6:4\",\n        \"Hosea 13:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"False teachers, disappointment, or empty promises (clouds without rain).\",\n      \"basis\": [\n        \"Jude 1:12\",\n        \"Proverbs 25:14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The cloud is one of the most prominent theophanic symbols in Scripture, primarily denoting God's manifest presence. Secondary meanings depend heavily on specific literary contexts, such as apocalyptic literature (Christ's return) or poetic metaphor (multitudes, transience, or falsehood).\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The presence, glory, and majesty of God—often simultaneously revealing God and concealing the fullness of the divine presence.\",\n  \"primary_basis\": [\n    \"Exodus 13:21–22; 14:19–24 — the pillar of cloud manifests God’s guiding and protecting presence.\",\n    \"Exodus 19:9,16–20; 24:15–18 — the cloud accompanies God’s manifestation at Sinai and covers the mountain with divine glory.\",\n    \"Exodus 40:34–38 — the cloud fills and covers the tabernacle, signifying that God’s glory dwells there.\",\n    \"Leviticus 16:2 — God appears in the cloud above the mercy seat.\",\n    \"1 Kings 8:10–12; 2 Chronicles 5:13–14 — the cloud fills the temple when the glory of the Lord takes possession of it.\",\n    \"Matthew 17:5; Mark 9:7; Luke 9:34–35 — the bright cloud at the Transfiguration signifies God’s presence and communicates the divine voice.\",\n    \"Acts 1:9 — a cloud receives Jesus at the Ascension, commonly interpreted as divine rather than merely meteorological imagery.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The eschatological coming, heavenly authority, and royal exaltation of the Son of Man or Christ.\",\n      \"basis\": [\n        \"Daniel 7:13–14 — one like a son of man comes with the clouds and receives universal dominion.\",\n        \"Matthew 24:30; 26:64; Mark 13:26; 14:62; Luke 21:27 — Jesus applies cloud-coming imagery to the Son of Man.\",\n        \"Revelation 1:7; 14:14–16 — Christ comes or appears upon the clouds in judgment and kingship.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine guidance, protection, and covenant care for God’s people.\",\n      \"basis\": [\n        \"Exodus 13:21–22 — the cloud leads Israel through the wilderness.\",\n        \"Exodus 14:19–20 — the cloud protects Israel by standing between Israel and Egypt.\",\n        \"Numbers 9:15–23; Nehemiah 9:12,19 — the cloud directs Israel’s movements and is remembered as evidence of God’s continuing care.\",\n        \"Psalm 105:39 — God spreads a cloud as a covering.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judgment, wrath, darkness, or the dread accompanying the day of the Lord.\",\n      \"basis\": [\n        \"Psalm 18:7–12 — dark clouds accompany God’s intervention in judgment.\",\n        \"Isaiah 19:1 — the Lord rides on a swift cloud in judgment upon Egypt.\",\n        \"Ezekiel 30:3,18; 32:7 — clouds and darkness characterize divine judgment.\",\n        \"Joel 2:2; Zephaniah 1:15 — the day of the Lord is described as a day of clouds and thick darkness.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine hiddenness, mystery, and the limits of human access to God.\",\n      \"basis\": [\n        \"Exodus 20:21 — Moses approaches the thick darkness where God is.\",\n        \"Deuteronomy 4:11–12 — God speaks from fire, cloud, and thick darkness without a visible form.\",\n        \"Psalm 97:2 — clouds and thick darkness surround God.\",\n        \"1 Timothy 6:16 is often associated conceptually with this theme, although it speaks of unapproachable light rather than a cloud.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Emptiness, unreliability, transience, or promise without fulfillment, especially in the image of clouds that bring no rain.\",\n      \"basis\": [\n        \"Proverbs 25:14 — one who boasts of gifts never given is like clouds without rain.\",\n        \"Hosea 6:4; 13:3 — fleeting faithfulness or life is compared to morning cloud or mist.\",\n        \"2 Peter 2:17 — false teachers are compared to mists driven by a storm.\",\n        \"Jude 12 — false teachers are clouds without rain, swept along by winds.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The gathered multitude of witnesses surrounding believers.\",\n      \"basis\": [\n        \"Hebrews 12:1 — the 'great cloud of witnesses' is a metaphor for the faithful exemplars named in Hebrews 11.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad Christian and scholarly consensus that cloud imagery most characteristically signals divine presence and glory, often combining manifestation with concealment. The symbol is nevertheless context-dependent: clouds can also signify guidance, judgment, eschatological authority, transience, or emptiness. Thus the primary meaning is settled as a general pattern, not as an exclusive meaning in every passage.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Divine presence and glory of God (theophanic cloud / Shekinah)\",\n  \"primary_basis\": [\n    \"Exodus 13:21-22 (pillar of cloud)\",\n    \"Exodus 19:9, 16; 24:15-18 (Sinai theophany)\",\n    \"Exodus 40:34-38 (glory cloud over tabernacle)\",\n    \"1 Kings 8:10-11 (cloud filling the temple)\",\n    \"Matthew 17:5 (bright cloud at Transfiguration)\",\n    \"Acts 1:9 (ascension in a cloud)\",\n    \"Revelation 1:7; Daniel 7:13 (coming with/on the clouds)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment, wrath, or storm theophany\",\n      \"basis\": [\n        \"Psalm 97:2\",\n        \"Nahum 1:3\",\n        \"Joel 2:2\",\n        \"Zephaniah 1:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A multitude or host of people (\\\"cloud of witnesses\\\")\",\n      \"basis\": [\n        \"Hebrews 12:1\",\n        \"Isaiah 60:8 (occasional figurative use)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Concealment, hiddenness, or inaccessibility of God\",\n      \"basis\": [\n        \"Lamentations 3:44\",\n        \"Job 22:14\",\n        \"Psalm 18:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Emptiness or false promises (\\\"clouds without water\\\")\",\n      \"basis\": [\n        \"Jude 12\",\n        \"2 Peter 2:17\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern evangelical/biblical-studies sources the glory/presence cloud is the dominant and most consistently taught symbolic reading for \\\"cloud\\\" as a biblical symbol; other uses exist but are secondary or context-specific.\"\n}\n\nBOOK ENTRY\nThe vehicle of heaven — “who maketh the clouds his chariot” — and its cargo is the word: “my doctrine shall drop as the rain.” The pillar that led Israel, the cloud that received Him and brings Him back in like manner, the transport of the caught-up saints; risen from the sea of peoples, a multitude airborne — the cloud of witnesses. Its counterfeit is the cloud without water.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 104:3; Ex 13:21; Acts 1:9-11; Dan 7:13; 1 Thess 4:17; Heb 12:1) · see Clouds, ch. 37 | (Ps 104:3; Ex 13:21; Acts 1:9-11; Dan 7:13; 1 Thess 4:17; Heb 12:1) · see Clouds, in the free digital edition at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nPsalms 104:3 — Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind:\nExodus 13:21 — And the LORD went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night:\nActs 1:9 — And when he had spoken these things, while they beheld, he was taken up; and a cloud received him out of their sight.\nActs 1:10 — And while they looked stedfastly toward heaven as he went up, behold, two men stood by them in white apparel;\nActs 1:11 — Which also said, Ye men of Galilee, why stand ye gazing up into heaven? this same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven.\nDaniel 7:13 — I saw in the night visions, and, behold, one like the Son of man came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.\n1 Thessalonians 4:17 — Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord.\nHebrews 12:1 — Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us,\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "cb9a3143febce410278faf1f710ea084903f50fbc3f1cbb1e2e0fc835c60e04d",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921714,
+  "completed_at": 1783921725,
+  "id": "2c063071-b8ad-9b7c-8c42-d542fd53cb8d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_2c063071-b8ad-9b7c-8c42-d542fd53cb8d",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Jew\". I need to return a JSON object with specific fields.\n{\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"reasoning\": \"The book's core identification of 'Jew' as the inward covenant member whose praise is from God (via Romans 2: 28-29 and Genesis 29:35) is identical to the consensus primary meaning.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Primary symbolic sense of 'Jew' is the true/inward covenant member whose heart is circumcised by the Spirit (not mere ethnic/outward identity), with etymological link to Judah/praise; the term also retains ordinary ethnic/religious sense, context deciding, while false claimants appear in Rev; no single settled consensus exists beyond the shared Pauline texts.\",\n  \"book_summary\": \"In covenant contexts, a Jew is one in the covenant inwardly ('he is a Jew, which is one inwardly'), while some claim the name falsely; the name derives from Judah meaning praise so that the inward Jew is one whose praise is of God; the word also functions plainly as ethnic/religious, context deciding which sense applies.\",\n  \"consensus_core_identification\": \"inward/true covenant member (heart circumcision by Spirit, praise of God) as opposed to merely outward/ethnic; dual plain ethnic sense; false claimants\",\n  \"book_core_identification\": \"one in the covenant inwardly (with praise-of-God etymology) versus false claimants; dual plain ethnic/religious sense decided by context\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"none; both treat the inward-covenant sense as the principal symbolic use while retaining the ordinary ethnic sense without redefining its scope\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores are identical: both identify the primary symbolic referent as the inward covenant member of Romans 2:28-29 whose identity is confirmed by the Judah/praise etymology, both acknowledge false claimants (Rev 3:9), and both insist the term also walks in plain ethnic/religious dress with context deciding. Differences are only wording and degree of elaboration on alternatives; no replacement of referent, no narrowing/broadening of cases, and no contradiction.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The book's brevity omits explicit discussion of supersessionist or dispensational extensions that some consensus responses flag as contested alternatives, but this does not alter the shared core identification.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_2c063071-b8ad-9b7c-8c42-d542fd53cb8d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4265,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1273,
+    "output_tokens_details": {
+      "reasoning_tokens": 797
+    },
+    "total_tokens": 5538,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 159760000,
+    "context_details": {
+      "input_tokens": 4265,
+      "output_tokens": 1273
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

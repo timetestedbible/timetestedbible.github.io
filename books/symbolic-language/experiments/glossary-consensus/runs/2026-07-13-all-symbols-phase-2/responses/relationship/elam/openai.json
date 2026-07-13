@@ -1,0 +1,195 @@
+{
+  "id": "resp_0f20a5b9d2135735006a547a2affb08193bb83190c8cb8d3ea",
+  "object": "response",
+  "created_at": 1783921195,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921210,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f20a5b9d2135735006a547a2b9e688193ab220404eb37c91d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f20a5b9d2135735006a547a3378e48193ada0e967cdfce4e8",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"NOVEL\",\"consensus_summary\":\"Elam is primarily an ancient people and territory without a settled symbolic meaning; contextually it may exemplify a Gentile nation involved in warfare, divine judgment, restoration, or gospel inclusion.\",\"book_summary\":\"Elam symbolizes Babel’s confederate: allied with Shinar in the first biblical war and later sharing Babylon’s bow-breaking sentence, with Elam’s oracle anticipating Babylon’s fall.\",\"consensus_core_identification\":\"A historical nation with no established term-specific symbolic identity.\",\"book_core_identification\":\"The archetypal confederate of Babel/Babylon that participates in its militant order and shares its judgment.\",\"core_relation\":\"NO_CONSENSUS\",\"extension_relation\":\"NO_BASELINE\",\"boundary_disagreement\":\"Because the consensus recognizes no stable symbolic category for Elam, there is no agreed extension for the book to narrow or broaden. The book selects Elam’s association with Shinar and the parallel breaking of bows as its controlling symbolic pattern, rather than the judgment-restoration or Gentile-inclusion patterns discussed by the consensus.\",\"material_contradiction\":\"There is no contradiction with a settled consensus identification, since none exists. The book does, however, differ from the listed contextual reading of Elam as an instrument against Babylon by characterizing Elam principally as Babel’s confederate.\",\"rationale\":\"The historical details behind the entry are recognizable in the consensus, especially Elam’s military role and broken bow, but none of the responses identifies Elam symbolically as Babel’s confederate sharing Babylon’s sentence. That core synthesis is therefore novel rather than merely a refinement of an established symbolic referent.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Genesis 14 establishes that Elam’s king fought alongside Shinar’s king, and Jeremiah 49:35 and 51:56 supply a verbal parallel about broken bows. These texts do not by themselves establish that this alliance is Elam’s enduring symbolic identity, that Shinar and Babylon are functioning identically here, or that Elam’s oracle is a theological prologue to Babylon’s fall rather than simply an adjacent oracle.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3323,
+    "input_tokens_details": {
+      "cache_write_tokens": 3320,
+      "cached_tokens": 0
+    },
+    "output_tokens": 831,
+    "output_tokens_details": {
+      "reasoning_tokens": 386
+    },
+    "total_tokens": 4154
+  },
+  "user": null,
+  "metadata": {}
+}

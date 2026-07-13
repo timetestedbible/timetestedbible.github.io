@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921884,
+  "completed_at": 1783921896,
+  "id": "b0767fd2-169d-9280-8207-c66aaa65b7b8",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_b0767fd2-169d-9280-8207-c66aaa65b7b8",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Marriage, bride\".\nThe book's entry and the blind consensus responses are in clear agreement on the core identification. Both identify the symbol as the covenantal, one-flesh union between God (or Christ) and His people, with the wife/brother under the Husband's protection and name. The book's phrasing is a concise, slightly more personal and OT-rooted formulation that the consensus already treats as foundational rather than contradictory. \n\n**core_relation**: MATCH  \n**extension_relation**: MATCH  \n\nThe scripture citations printed with the entry (Gen 2:24; Ezek 16:8; Eph 5:31-32; Rev 19:7) supply 100 % of the key texts the consensus relies on, so the support is strong.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Mainstream Christian consensus identifies marriage/bride as the covenant union of Christ (bridegroom) with the Church/people of God (bride), rooted in OT Israel-as-wife-of-YHWH imagery and culminating in the eschatological marriage of the Lamb; alternatives refine identity (Israel vs Church, city, individual soul, etc.) without displacing the core marital-covenant referent.\",\n  \"book_summary\": \"The covenant union of God and His people expressed as the one-flesh bond that God Himself joins, the wife called by the Husband’s name and brought under His wing.\",\n  \"consensus_core_identification\": \"Covenant marital union between God/Christ and His people (Church as bride).\",\n  \"book_core_identification\": \"Covenant union of God and His people as the one-flesh bond God joins.\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None material; book’s ‘God and His people’ language is coextensive with the consensus’s Christ–Church / YHWH–Israel range.\",\n  \"material_contradiction\": \"None.\",\n  \"rationale\": \"Both reduce to the same central identification: marriage/bride figures the covenant union God establishes with His people. Consensus primary statements (Eph 5, Rev 19/21, OT prophetic marriage texts) and the book’s wording plus its four printed citations are interchangeable; differences are only phrasing (Christ vs God, Church vs people) or added color (one-flesh, under-wing) that do not alter referent, extension, or boundaries.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"A reader might claim the book’s broader ‘God and His people’ dilutes the specifically Christ–Church focus of NT texts, yet consensus itself already treats the OT YHWH–Israel foundation and NT Christ–Church development as continuous.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_b0767fd2-169d-9280-8207-c66aaa65b7b8",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4514,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1340,
+    "output_tokens_details": {
+      "reasoning_tokens": 904
+    },
+    "total_tokens": 5854,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 163000000,
+    "context_details": {
+      "input_tokens": 4514,
+      "output_tokens": 1340
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

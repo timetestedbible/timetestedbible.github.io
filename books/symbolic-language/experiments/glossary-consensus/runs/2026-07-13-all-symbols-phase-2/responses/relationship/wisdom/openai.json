@@ -1,0 +1,195 @@
+{
+  "id": "resp_065c7e1ae506754e006a54803fb14081968fb22e236ec7e571",
+  "object": "response",
+  "created_at": 1783922751,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922770,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_065c7e1ae506754e006a54804134548196b174622431739574",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_065c7e1ae506754e006a54804af1c48196b57391852e5d68dc",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Across the responses, practical wisdom is broadly understood as God-given understanding or skill for righteous living rooted in fear of the LORD. Most responses additionally treat personified Wisdom, especially in Proverbs 8, as christological, though this is distinct from the ordinary ethical sense.\",\"book_summary\":\"Wisdom is the fear of the LORD enacted through obedience to his commandments.\",\"consensus_core_identification\":\"God-oriented understanding and skill that produces righteous living, grounded in reverence for the LORD.\",\"book_core_identification\":\"Active obedience to God's commandments as the lived expression of the fear of the LORD.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The consensus includes understanding, discernment, divine ordering, and skillful righteous conduct within wisdom. The book concentrates the term on enacted commandment-keeping, thereby excluding or subordinating wisdom considered merely as insight, capacity, or personified divine imagery.\",\"material_contradiction\":\"There is no direct contradiction in the practical-ethical sense: commandment-keeping rooted in fear of the LORD is a recognized consensus case of wisdom. The book does not address the separate christological identification of personified Wisdom, and its cited texts do not concern Proverbs 8's figure.\",\"rationale\":\"The book's identification is explicitly represented within the consensus as the practical-ethical meaning of wisdom and as wisdom associated with Torah or commandments. It is therefore neither novel nor a replacement of the consensus referent. However, by equating wisdom specifically with lived fear expressed in obedience, it materially narrows the broader consensus category of God-given understanding and skillful righteous living.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Proverbs 9:10 and Psalm 111:10 call fear of the LORD the beginning of wisdom, which need not make fear or obedience exhaustive definitions of wisdom. Nevertheless, Psalm 111:10 closely connects understanding with doing the commandments, and Deuteronomy 4:6 directly calls keeping and doing the statutes Israel's wisdom, giving the entry strong support for its narrowed ethical identification.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4167,
+    "input_tokens_details": {
+      "cache_write_tokens": 4164,
+      "cached_tokens": 0
+    },
+    "output_tokens": 946,
+    "output_tokens_details": {
+      "reasoning_tokens": 504
+    },
+    "total_tokens": 5113
+  },
+  "user": null,
+  "metadata": {}
+}

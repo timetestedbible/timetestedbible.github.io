@@ -1,0 +1,195 @@
+{
+  "id": "resp_0a5a97aebf880bff006a547fb1caa481979f0ecc629dafd4c0",
+  "object": "response",
+  "created_at": 1783922609,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922629,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a5a97aebf880bff006a547fb2530c8197bb0205cb8a45d1ca",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a5a97aebf880bff006a547fbc6e10819787c824840ea181c6",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"A virgin symbolizes purity, chastity, and exclusive covenant fidelity, especially God’s people as the pure bride betrothed to God or Christ.\",\"book_summary\":\"A virgin signifies covenantal espousal to one husband while the wedding remains future—a status rather than achieved purity—with plural virgins sometimes being the bride’s attendants.\",\"consensus_core_identification\":\"The pure and exclusively faithful covenant bride of God or Christ.\",\"book_core_identification\":\"The covenantally espoused or betrothed woman whose marriage consummation is still future.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book retains the consensus’s bridal-covenant framework but makes betrothal status, rather than moral purity or attained faithfulness, the defining condition. It therefore reclassifies fallen or formerly divorced Israel as a “virgin” upon re-espousal and distinguishes the bride from plural virgin companions. It also excludes generic chastity, literal virginity, and Marian or ascetic cases unless they involve this covenantal status.\",\"material_contradiction\":\"There is no replacement of the central bridal-covenant referent. The material tension is that consensus commonly treats purity and fidelity as constitutive of virgin symbolism, whereas the book explicitly identifies virginity with covenant standing rather than attainment, allowing the designation even where demonstrated purity is absent.\",\"rationale\":\"The consensus already prominently includes a virgin betrothed to one husband and awaiting the bridegroom, especially from 2 Corinthians 11:2 and Matthew 25. The book therefore is not novel or divergent. It materially sharpens the symbol into a juridical-covenantal category and adjusts which cases qualify, making REFINED more appropriate than MATCH.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Deuteronomy 22 and 2 Corinthians 11 strongly connect virginity with betrothal, but the remaining citations do not establish that espousal is the term’s defining meaning in every case. Psalm 45 identifies the virgins as the bride’s companions, Matthew 25 does not call the ten virgins betrothed, and the restoration or re-espousal of divorced Israel requires contextual argument beyond the cited verses. The references thus support the proposed pattern without conclusively proving its asserted boundary.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4209,
+    "input_tokens_details": {
+      "cache_write_tokens": 4206,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1003,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 5212
+  },
+  "user": null,
+  "metadata": {}
+}

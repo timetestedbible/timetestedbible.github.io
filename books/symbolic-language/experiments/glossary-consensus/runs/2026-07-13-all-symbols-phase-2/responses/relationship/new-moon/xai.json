@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922012,
+  "completed_at": 1783922052,
+  "id": "7ec93f17-3a91-9be7-99e6-f83c93768544",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7ec93f17-3a91-9be7-99e6-f83c93768544",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"New moon\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of the new moon as the phase that 'serves as the sign of the start of the month' and 'renew[s] the month' (etymologically ch ̣ adash) is materially narrower than the consensus's typological reading as a ceremonial shadow fulfilled in Christ. The book retains the shadow-of-things-to-come reference (Col 2:16-17) and the calendrical function but shifts emphasis to the lunar phase's renewal function and the necessity of watching the sign ̣, while the consensus treats the renewal sense as secondary and derived from the ceremonial framework.\",\n  \"extension_reasoning\": \"The book narrows the cases by foregrounding the literal lunar phase and its renewal role (which consensus treats as homiletical or minority), while still including the shadow and worship aspects. It excludes ̣ the eschatological perpetual-worship reading (Isa 66:23) and the 'empty ritual' critique as primary, and does not address the continuing-obligation or lunar-sabbath reconstructions.\",\n  \"boundary_disagreement\": \"The book adds the etymological focus on 'renew' and the practical 'watching ̣ the sign' (east gate, commerce resentment) as definitional, which consensus subsumes under the ceremonial calendar without elevating them to primary status.\",\n  \"material_contradiction\": false,\n  \"rationale\": \"The book preserves the general referent (OT new-moon observance) but materially changes its extension by ̣ prioritizing the lunar renewal phase and sign-watching over the dominant typological fulfillment reading.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The book's etymological and phase-specific focus is not present in the consensus; it narrows the symbolic weight given to the shadow-of-Christ reading.\",\n \"confidence\": \"high\",\n  \"consensus_summary\": \"The new moon is primarily an Old Testament ceremonial calendrical observance marking the start of the month, understood as a shadow of things to come fulfilled in Christ (Col 2:16-17), with common associations of renewal/new beginnings, eschatological worship, ̣ and occasional critique as empty ritual.\",\n  \"book_summary\": \"The renewed moon (chodesh, from chadash 'to renew') is the lunar phase that signs the beginning of the month and names it; it must be watched for, on which the east gate opens for worship, commerce resents it ̣, and Paul lists it among the shadows of things to come; the specific phase that renews the month is weighed in the Pearl chapter.\",\n  \"consensus_core_identification\": \"Ceremonial monthly observance functioning as a shadow of things to come fulfilled in Christ, with renewal as a common secondary association.\",\n  \"book_core_identification\": \"The lunar phase of renewal (etymologically chodesh) that serves as the sign of the month's start, watched for worship and resented by commerce, and listed among shadows.\",\n  \"relation\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of the new moon as the phase that 'serves as the sign of the start of the month' and 'renew[s] the month' (etymologically ch ̣ adash) is materially narrower than the consensus ̣'s typological reading as a ceremonial shadow fulfilled in Christ. The book retains the shadow-of-things-to-come reference (Col 2:16-17) and the calendrical function but shifts emphasis to the lunar phase's renewal function and the necessity of watching the sign ̣, while the consensus treats the renewal ̣ sense as secondary and derived from the ceremonial framework.\",\n  \"extension_reasoning\": \"The book narrows the cases by foregrounding the literal lunar phase and its renewal role (which consensus treats as homiletical or minority), while still including the shadow and worship aspects. It excludes ̣ the eschatological perpetual-w orship reading (Isa 66:23) and the 'empty ritual' critique as primary, and does not address the continuing-obligation or lunar-sabbath reconstructions.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"The new moon is primarily an OT ceremonial calendrical observance (start of the month) that Colossians 2:16-17 identifies as a shadow of things to come fulfilled in Christ, commonly associated with renewal/new beginnings, with secondary readings as eschatological perpetual worship or empty ritual.\",\n  \"book_summary\": \"The renewed moon (chodesh from chadash, to renew): the lunar phase that signs the start of the month (and names the month itself), a watched-for sign on which the east gate opens for worship, which commerce resents, and which Paul files among the shadows of things to come; the precise phase is weighed elsewhere.\",\n  \"consensus_core_identification\": \"Ceremonial monthly observance that is a shadow of Christ, with an associated sense of renewal.\",\n  \"book_core_identification\": \"Lunar phase of renewal that marks the month’s beginning as a watched sign tied to worship, commerce, and the shadows of Colossians 2.\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None material; the book additionally flags the question of exactly which lunar phase renews the month (deferred to another chapter), a precision the consensus does not contest.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores coincide on the new moon as the monthly lunar/calendrical marker of renewal that functions in worship and is listed by Paul among the shadows. Emphasis differences (etymology and phase-watching versus typological primacy) and the deferred phase question are extra detail, not a change of referent, extension, or conditions.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Some consensus responses treat the Colossians shadow typology as the dominant Christian primary meaning, while the book leads with the etymological/calendrical definition and lists the shadow as one attribute among others.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7ec93f17-3a91-9be7-99e6-f83c93768544",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4182,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 4294,
+    "output_tokens_details": {
+      "reasoning_tokens": 3856
+    },
+    "total_tokens": 8476,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 333600000,
+    "context_details": {
+      "input_tokens": 4182,
+      "output_tokens": 4294
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

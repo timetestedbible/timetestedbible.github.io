@@ -1,0 +1,173 @@
+{
+  "id": "resp_0db9f9b8c3363aa7006a5478f1b3508195897d0f379256613e",
+  "object": "response",
+  "created_at": 1783920881,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920899,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0db9f9b8c3363aa7006a5478f250448195a037d3cc6396462c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0db9f9b8c3363aa7006a5478fa027c81959381b1b8b0b62c63",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"“Year” has no single settled biblical symbolic meaning. When used figuratively or typologically, its broadest conventional association is a complete or divinely appointed season—especially a time of favor, judgment, release, or restoration.\",\"primary_basis\":[\"Isaiah 61:1–2 and Luke 4:18–21 — “the year of the Lord’s favor” denotes the appointed era of salvation proclaimed and inaugurated by Christ.\",\"Leviticus 25:8–13 — the Jubilee year provides the principal biblical pattern for release, restoration, liberty, and return.\",\"Isaiah 34:8 and 63:4 — a “year” can mark an appointed period of divine vengeance or recompense.\",\"Ecclesiastes 3:1 — supports the broader concept of divinely appointed times and seasons, though it does not assign a fixed symbolism to “year.”\"],\"alternatives\":[{\"meaning\":\"A literal calendar or regnal year with no symbolic significance. This is the ordinary meaning in most biblical occurrences.\",\"basis\":[\"Genesis 7:11\",\"2 Kings 18:1\",\"Luke 3:1–2\"],\"prominence\":\"dominant\"},{\"meaning\":\"A Jubilee-like era of salvation, liberation, forgiveness, and restoration.\",\"basis\":[\"Leviticus 25:8–13\",\"Isaiah 61:1–2\",\"Luke 4:18–21\"],\"prominence\":\"common\"},{\"meaning\":\"An appointed period of divine judgment or recompense.\",\"basis\":[\"Isaiah 34:8\",\"Isaiah 63:4\",\"Jeremiah 11:23\"],\"prominence\":\"common\"},{\"meaning\":\"In prophetic interpretation, one symbolic day represents one literal year—the “day-year principle.” This is especially prominent in historicist interpretation but is not accepted as a universal rule across Christian traditions.\",\"basis\":[\"Numbers 14:34\",\"Ezekiel 4:5–6\",\"Daniel 9:24–27\"],\"prominence\":\"minority\"},{\"meaning\":\"A standardized 360-day “prophetic year,” commonly inferred by correlating apocalyptic periods such as 1,260 days, 42 months, and “time, times, and half a time.”\",\"basis\":[\"Daniel 7:25\",\"Daniel 12:7\",\"Revelation 11:2–3\",\"Revelation 12:6,14\",\"Revelation 13:5\"],\"prominence\":\"minority\"},{\"meaning\":\"A symbol of completeness simply because a year completes an annual cycle.\",\"basis\":[\"Exodus 23:14–17\",\"Psalm 65:11\"],\"prominence\":\"unclear\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Christian interpretation does not generally treat “year” as carrying one fixed symbolic value. Its meaning is determined by context: most occurrences are literal, while symbolic uses variously concern an appointed season, Jubilee restoration, judgment, or particular prophetic calculations.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 986,
+    "output_tokens_details": {
+      "reasoning_tokens": 371
+    },
+    "total_tokens": 1303
+  },
+  "user": null,
+  "metadata": {}
+}

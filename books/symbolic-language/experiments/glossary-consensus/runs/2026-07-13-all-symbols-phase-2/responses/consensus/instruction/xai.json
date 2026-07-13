@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920057,
+  "completed_at": 1783920071,
+  "id": "bf919319-9638-9e61-995d-af8d09d128fb",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_bf919319-9638-9e61-995d-af8d09d128fb",
+      "summary": [
+        {
+          "text": "The task is to define the symbolic meaning of the term \"Instruction\" in biblical symbolism, based on Christian teaching and biblical studies. I must remain blind to any author's position.\n{\n  \"primary_meaning\": \"The guidance and teaching provided by God or by wise parents, often pointing to the Law, wisdom literature, or the Scriptures themselves as sources of moral and spiritual direction.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Divine teaching, guidance, or doctrine (especially Scripture or Torah) that forms wisdom, righteousness, and moral character\",\n  \"primary_basis\": [\n    \"2 Timothy 3:16 (Scripture profitable for instruction in righteousness)\",\n    \"Proverbs 1:2–7; 4:1–13 (wisdom and instruction as foundational teaching)\",\n    \"Psalm 32:8 (God’s promise to instruct and guide)\",\n    \"Deuteronomy 4:1; 6:1–7 (Torah as instruction to be taught and kept)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Parental or human teaching and admonition (father/mother to child)\",\n      \"basis\": [\n        \"Proverbs 1:8; 4:1; 13:1\",\n        \"Ephesians 6:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Discipline, correction, or chastening (often overlapping with the same Hebrew term musar)\",\n      \"basis\": [\n        \"Proverbs 3:11–12; 13:24\",\n        \"Job 5:17\",\n        \"Hebrews 12:5–11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Law/Torah itself as covenantal instruction\",\n      \"basis\": [\n        \"Psalm 19:7–11; 119 (various)\",\n        \"Isaiah 2:3; Micah 4:2\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In standard Christian biblical interpretation and lexicography, ‘instruction’ (translating Hebrew tôrâ/mûsār or Greek paideia/didaskalia) carries a settled primary sense of formative divine or parental teaching rather than a freestanding allegory or type. Overlap with ‘discipline’ is widely recognized because of the semantic range of mûsār, but this does not displace the core pedagogical meaning. No major competing symbolic system (e.g., equating Instruction with a particular person of the Trinity or eschatological event) has achieved broad consensus.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_bf919319-9638-9e61-995d-af8d09d128fb",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1553,
+    "output_tokens_details": {
+      "reasoning_tokens": 1050
+    },
+    "total_tokens": 2155,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 99460000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1553
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

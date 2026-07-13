@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919737,
+  "completed_at": 1783919754,
+  "id": "df65b499-1079-9272-9a73-33ae696ecd2e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_df65b499-1079-9272-9a73-33ae696ecd2e",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Eye\" in Christian teaching and biblical interpretation, as a blind consensus definer. I must not look up or infer any specific author's material....",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"spiritual perception, insight, or understanding (the capacity to receive light/truth or remain in darkness)\",\n  \"primary_basis\": [\n    \"Matthew 6:22-23 (eye as lamp of the body)\",\n    \"Ephesians 1:18 (eyes of the heart enlightened)\",\n    \"Mark 8:18 / Isaiah 6:9-10 (having eyes yet not seeing)\",\n    \"Psalm 119:18 (open my eyes that I may see)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"divine omniscience, watchfulness, or providential care (especially 'the eyes of the Lord')\",\n      \"basis\": [\n        \"Proverbs 15:3\",\n        \"2 Chronicles 16:9\",\n        \"Psalm 33:18 / 34:15\",\n        \"Revelation 5:6 (seven eyes of the Lamb)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"envy, stinginess, or malice (the 'evil eye')\",\n      \"basis\": [\n        \"Matthew 6:23 (unhealthy/evil eye)\",\n        \"Mark 7:22\",\n        \"Proverbs 23:6 / 28:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"lust or covetous desire\",\n      \"basis\": [\n        \"1 John 2:16 (lust of the eyes)\",\n        \"Matthew 5:28-29\",\n        \"2 Peter 2:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"retributive justice (lex talionis)\",\n      \"basis\": [\n        \"Exodus 21:24\",\n        \"Leviticus 24:20\",\n        \"Matthew 5:38\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical usage is strongly context-dependent; no single fixed symbol dominates every occurrence. Spiritual perception is the most frequently taught general association in Christian interpretation and preaching, while divine watchfulness and the evil-eye idiom are also standard. Meanings shift with whether the eye is human, divine, healthy, or evil.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_df65b499-1079-9272-9a73-33ae696ecd2e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1680,
+    "output_tokens_details": {
+      "reasoning_tokens": 1157
+    },
+    "total_tokens": 2282,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 110920000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1680
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

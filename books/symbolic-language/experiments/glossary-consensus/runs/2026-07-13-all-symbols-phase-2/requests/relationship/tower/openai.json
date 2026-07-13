@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "tower",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nTower\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"Strength, protection, and refuge — most specifically, God himself as a place of safety to which the righteous flee. The tower functions as an image of divine security and defense, drawn from the ancient function of watchtowers and fortified towers as places of refuge and vigilance.\",\n  \"primary_basis\": [\n    \"Proverbs 18:10 ('The name of the LORD is a strong tower; the righteous run into it and are safe')\",\n    \"Psalm 61:3 ('You have been my refuge, a strong tower against the foe')\",\n    \"2 Samuel 22:3 and 2 Samuel 22:51 (God as high tower/tower of salvation)\",\n    \"Psalm 18:2 (God as fortress, stronghold, high tower in many translations)\",\n    \"Psalm 144:2 (God as fortress and high tower)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human pride, self-exaltation, and rebellion against God — the Tower of Babel as the archetype of humanity's attempt to reach heaven and make a name for itself apart from God, resulting in divine judgment and confusion of languages.\",\n      \"basis\": [\n        \"Genesis 11:1-9 (Tower of Babel)\",\n        \"Isaiah 2:12-15 (the LORD's judgment against every high tower)\",\n        \"Revelation 17-18 (Babylon imagery, often linked typologically to Babel)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Watchfulness, vigilance, and God's careful provision for his people — the watchtower in the vineyard representing God's protective oversight of Israel (and, in the parables, of his kingdom).\",\n      \"basis\": [\n        \"Isaiah 5:1-2 (the vineyard with a tower built in it)\",\n        \"Matthew 21:33 and Mark 12:1 (parable of the tenants, vineyard with a tower)\",\n        \"Isaiah 21:5-12 and Habakkuk 2:1 (the watchman standing on the watchtower)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Deliberate planning and counting the cost of discipleship — Jesus' image of a man building a tower who must first calculate whether he can finish it.\",\n      \"basis\": [\n        \"Luke 14:28-30\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A messianic or restorationist symbol — the 'tower of the flock' (Migdal Eder) as the place to which dominion returns, read messianically in some Jewish and Christian traditions and connected by some to Bethlehem and the nativity.\",\n      \"basis\": [\n        \"Micah 4:8\",\n        \"Genesis 35:21 (tower of Eder)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Church itself, being built up of living stones — a patristic allegory most famous from the Shepherd of Hermas, where the tower under construction represents the Church.\",\n      \"basis\": [\n        \"Shepherd of Hermas, Visions 3 and Similitude 9 (extra-biblical patristic text)\",\n        \"1 Peter 2:5 (living stones, sometimes linked in this tradition)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"The inscrutability of suffering and the call to repentance — the fall of the tower of Siloam used by Jesus to reject a simple sin-punishment calculus and to warn all to repent.\",\n      \"basis\": [\n        \"Luke 13:4-5\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"The tower is a genuinely bivalent symbol in Christian interpretation, and the consensus is context-dependent rather than singular. Two strands dominate: (1) the tower as divine strength/refuge (Proverbs 18:10 is by far the most frequently quoted 'tower' verse in devotional and homiletic literature), and (2) the Tower of Babel as human pride and rebellion. Which strand is treated as 'primary' depends heavily on the tradition and genre: devotional and hymnic usage ('A Mighty Fortress') favors the refuge meaning, while theological and narrative-typological treatments often foreground Babel. I have listed the refuge meaning as primary because it is the meaning most often assigned to the tower image as such (God is called a tower), whereas Babel is an event narrative from which pride symbolism is derived. A responsible summary should acknowledge that many reference works present these as co-equal, opposed meanings (tower built by God = safety; tower built by man = hubris).\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine protection, strength, and a secure refuge for believers.\",\n  \"primary_basis\": [\n    \"Proverbs 18:10\",\n    \"Psalm 61:3\",\n    \"2 Samuel 22:51\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human pride, rebellion, and arrogant self-reliance against God.\",\n      \"basis\": [\n        \"Genesis 11:1-9\",\n        \"Isaiah 2:15\",\n        \"Isaiah 30:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual vigilance, warning, and prophetic foresight (watchtower).\",\n      \"basis\": [\n        \"Habakkuk 2:1\",\n        \"Ezekiel 33:2-6\",\n        \"Isaiah 21:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual preparation and counting the cost of discipleship.\",\n      \"basis\": [\n        \"Luke 14:28\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbol of a tower is context-dependent in scripture, most prominently representing God's ultimate protection and security for the righteous. Conversely, when built by humans as a monument (such as the Tower of Babel), it serves as a classic symbol of human hubris, pride, and defiance of God. It also frequently appears as a metaphor for a prophet's vigilance.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Strength, protection, and secure refuge—especially God as the believer’s “strong tower.”\",\n  \"primary_basis\": [\n    \"Psalm 61:3 portrays God as “a strong tower against the enemy.”\",\n    \"Proverbs 18:10 compares the name of the LORD to a strong tower into which the righteous run for safety.\",\n    \"Psalm 18:2 and 2 Samuel 22:3 use “high tower” or equivalent “stronghold” language for God’s saving protection.\",\n    \"Psalm 144:2 similarly names God as a fortress, high tower, deliverer, and shield.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human pride, self-exaltation, rebellious ambition, or false security.\",\n      \"basis\": [\n        \"Genesis 11:1–9 describes the Tower of Babel as a project to reach heaven, make a name, and resist dispersion.\",\n        \"Isaiah 2:12–17 includes lofty towers among the exalted things humbled in the day of the LORD.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Watchfulness, vigilance, prophetic observation, or warning.\",\n      \"basis\": [\n        \"Isaiah 21:6–8 associates the watchtower with vigilant watching and reporting.\",\n        \"Habakkuk 2:1 depicts the prophet stationed on a watchtower awaiting God’s answer.\",\n        \"Ezekiel 3:17 and 33:1–9 develop the related watchman image as spiritual responsibility to warn.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Guardianship, provision, and accountable stewardship, particularly in vineyard imagery.\",\n      \"basis\": [\n        \"Isaiah 5:2 places a tower in the carefully prepared vineyard, emphasizing its protection and cultivation.\",\n        \"Matthew 21:33 and Mark 12:1 reuse the vineyard tower in the parable of the wicked tenants, where it forms part of the owner’s provision entrusted to stewards.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Church, Mary, spiritual beauty, dignity, or steadfastness in allegorical and devotional readings.\",\n      \"basis\": [\n        \"Song of Songs 4:4 compares the beloved’s neck to the Tower of David; Song of Songs 7:4 uses further tower imagery.\",\n        \"Historic Christian allegory has sometimes applied these images to the Church, while Catholic devotional tradition applies titles such as “Tower of David” to Mary.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Prudent planning and counting the cost of discipleship.\",\n      \"basis\": [\n        \"Luke 14:28–30 uses building a tower as an illustration of calculating the cost before beginning a demanding undertaking.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolism for every biblical occurrence of “tower.” The positive image of strength and refuge—especially God as a strong tower—is the most recognizable general Christian meaning, but context can reverse or substantially change the symbolism, as in Babel, prophetic watchtowers, vineyard towers, and Jesus’ tower-building illustration.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Human pride, hubris, and rebellion against God leading to confusion, division, and judgment\",\n  \"primary_basis\": [\n    \"Genesis 11:1-9 (Tower of Babel)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine strength, protection, and refuge for the righteous\",\n      \"basis\": [\n        \"Proverbs 18:10\",\n        \"Psalm 61:3\",\n        \"Psalm 18:2\",\n        \"2 Samuel 22:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Watchfulness, vigilance, or a vantage point for observation\",\n      \"basis\": [\n        \"Habakkuk 2:1\",\n        \"Isaiah 21:8\",\n        \"2 Kings 9:17\",\n        \"Ezekiel 3:17 (watchman imagery)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Beauty, dignity, strength, or fortification of the beloved (often allegorized as the Church or Mary)\",\n      \"basis\": [\n        \"Song of Solomon 4:4\",\n        \"Song of Solomon 7:4\",\n        \"Song of Solomon 8:10\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Illustration of the cost of discipleship, planning, or sudden judgment\",\n      \"basis\": [\n        \"Luke 14:28-30\",\n        \"Luke 13:4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"No single fixed symbolic meaning exists independent of context; Babel supplies the most widely recognized negative symbol in Christian teaching and biblical studies, while positive images of God as strong tower appear frequently in devotion and preaching. Other senses remain context-bound and secondary.\"\n}\n\nBOOK ENTRY\nThe stronghold raised by a Name around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving light to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a covenant stronghold broken, emptied, or judged.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Prov 18:10; Ex 13:21; Isa 4:5-6; Hab 2:1; Gen 11:1-8; Luke 14:28-30; Matt 13:20-21; Luke 13:4-5) · see The Tower | (Prov 18:10; Ex 13:21; Isa 4:5-6; Hab 2:1; Gen 11:1-8; Luke 14:28-30; Matt 13:20-21; Luke 13:4-5) · see The Tower\n\nAVAILABLE KJV EXCERPTS\nProverbs 18:10 — The name of the LORD is a strong tower: the righteous runneth into it, and is safe.\nExodus 13:21 — And the LORD went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night:\nIsaiah 4:5 — And the LORD will create upon every dwelling place of mount Zion, and upon her assemblies, a cloud and smoke by day, and the shining of a flaming fire by night: for upon all the glory shall be a defence.\nIsaiah 4:6 — And there shall be a tabernacle for a shadow in the daytime from the heat, and for a place of refuge, and for a covert from storm and from rain.\nHabakkuk 2:1 — I will stand upon my watch, and set me upon the tower, and will watch to see what he will say unto me, and what I shall answer when I am reproved.\nGenesis 11:1 — And the whole earth was of one language, and of one speech.\nGenesis 11:2 — And it came to pass, as they journeyed from the east, that they found a plain in the land of Shinar; and they dwelt there.\nGenesis 11:3 — And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter.\nGenesis 11:4 — And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.\nGenesis 11:5 — And the LORD came down to see the city and the tower, which the children of men builded.\nGenesis 11:6 — And the LORD said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.\nGenesis 11:7 — Go to, let us go down, and there confound their language, that they may not understand one another's speech.\nGenesis 11:8 — So the LORD scattered them abroad from thence upon the face of all the earth: and they left off to build the city.\nLuke 14:28 — For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it?\nLuke 14:29 — Lest haply, after he hath laid the foundation, and is not able to finish it, all that behold it begin to mock him,\nLuke 14:30 — Saying, This man began to build, and was not able to finish.\nMatthew 13:20 — But he that received the seed into stony places, the same is he that heareth the word, and anon with joy receiveth it;\nMatthew 13:21 — Yet hath he not root in himself, but dureth for a while: for when tribulation or persecution ariseth because of the word, by and by he is offended.\nLuke 13:4 — Or those eighteen, upon whom the tower in Siloam fell, and slew them, think ye that they were sinners above all men that dwelt in Jerusalem?\nLuke 13:5 — I tell you, Nay: but, except ye repent, ye shall all likewise perish.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "5f7c085afe38b8e60dd6e28be0653fae8a24a9964c266cf4a322c8ac1fc5f6b3",
+  "cache": {
+    "hit": false
+  }
+}

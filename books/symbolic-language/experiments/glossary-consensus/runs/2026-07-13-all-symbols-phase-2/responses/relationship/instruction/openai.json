@@ -1,0 +1,195 @@
+{
+  "id": "resp_0b587f80fad06cda006a547bed46a88194aa90a9fad6ec7074",
+  "object": "response",
+  "created_at": 1783921645,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921654,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b587f80fad06cda006a547bedc2c081949615fa0f6d82da65",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0b587f80fad06cda006a547bf1b6a481949072b7e5a3c9c33e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Instruction is divine teaching, guidance, and formative training, broadly encompassing Torah, Scripture, wisdom, doctrine, and corrective discipline.\",\"book_summary\":\"Instruction is specifically the discipline of divine law as willingly acquired, retained, and obeyed, in contrast to the fool’s rejection of it.\",\"consensus_core_identification\":\"Divinely grounded teaching or formative guidance for wisdom and righteous living.\",\"book_core_identification\":\"The discipline of divine law received and kept.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book limits instruction to law-centered discipline and adds the conditions of receiving and keeping it. The consensus also includes broader cases such as general scriptural teaching, parental instruction, apostolic doctrine, Spirit-guidance, and correction not specifically identified with law.\",\"material_contradiction\":\"None. Torah and discipline are both established parts of the consensus; the book selects and combines those senses rather than replacing the consensus referent.\",\"rationale\":\"The central category remains divine formative teaching, but the book gives it a materially narrower extension by identifying it specifically with the discipline of the law as accepted and retained. This is more precise than the broad consensus and excludes several cases the consensus admits.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Proverbs 1:7 and 23:23 clearly connect instruction with wisdom, acquisition, retention, and the fool’s rejection, but neither excerpt explicitly identifies instruction as 'the discipline of the law' or directly states obedience to law. That narrowing depends on lexical or wider contextual reasoning beyond the printed citations.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3310,
+    "input_tokens_details": {
+      "cache_write_tokens": 3307,
+      "cached_tokens": 0
+    },
+    "output_tokens": 568,
+    "output_tokens_details": {
+      "reasoning_tokens": 227
+    },
+    "total_tokens": 3878
+  },
+  "user": null,
+  "metadata": {}
+}

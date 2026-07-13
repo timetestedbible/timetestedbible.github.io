@@ -1,0 +1,195 @@
+{
+  "id": "resp_0fdeb762e9619ad9006a547d4aedfc819087156d1125bb8739",
+  "object": "response",
+  "created_at": 1783921994,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922011,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0fdeb762e9619ad9006a547d4bc8508190a376b90e8017203e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0fdeb762e9619ad9006a547d54c694819085242e3db526d98c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"A new name signifies a God-conferred transformed identity or status, including covenant belonging, changed character, vindication, vocation, ownership, and eschatological destiny. Its precise form may be personal, corporate, public, or secret.\",\"book_summary\":\"A new name is a newly bestowed covenant identity defined by dependence on its giver and by being uniquely known, received, and retained by its bearer.\",\"consensus_core_identification\":\"A God-given new identity or status.\",\"book_core_identification\":\"A God-given covenant identity uniquely possessed and known by its bearer.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book makes covenantal derivation and exclusive bearer knowledge or possession defining conditions. This narrows the broader consensus, which also covers public and corporate renamings, publicly recognized changes of status, character, vocation, and ownership without requiring secrecy or exclusive knowledge.\",\"material_contradiction\":\"There is no contradiction at the central referent: both identify the new name with a divinely conferred identity. The material boundary tension is that Isaiah’s corporate and publicly proclaimed names fit the consensus readily but do not obviously satisfy the book’s requirement that the name be known and kept only by its bearer.\",\"rationale\":\"The book retains the consensus identification rather than replacing it, while combining the covenant-renaming pattern with Revelation 2:17’s private-name feature and treating that feature as essential. Because secret or uniquely personal identity was already a common alternative in the blind responses, the reading is not novel. Its stricter conditions make it a refinement by narrowing.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Revelation 2:17 supports a name known only to its recipient, but Genesis 32 and Isaiah 62–65 depict names that are publicly declared and, in Isaiah, corporate. The entry may therefore overgeneralize one apocalyptic detail into a universal definition, and “kept only” is less directly stated than “known” and “received.”\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3796,
+    "input_tokens_details": {
+      "cache_write_tokens": 3793,
+      "cached_tokens": 0
+    },
+    "output_tokens": 888,
+    "output_tokens_details": {
+      "reasoning_tokens": 456
+    },
+    "total_tokens": 4684
+  },
+  "user": null,
+  "metadata": {}
+}

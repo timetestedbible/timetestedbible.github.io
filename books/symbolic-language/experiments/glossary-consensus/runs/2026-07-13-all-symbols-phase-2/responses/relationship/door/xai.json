@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921157,
+  "completed_at": 1783921196,
+  "id": "7b34361d-2551-904e-9495-84243b7ea50d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7b34361d-2551-904e-9495-84243b7ea50d",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Door, gate\".\nThe book's entry identifies the door/gate as the entrance to the house of God, serving as the destination of the way and marked on the posts, drawing from Exodus 12:7, Deuteronomy 6:9, and John 10:9. This aligns closely with the consensus view of doors and gates symbolizing access to God and salvation, particularly through Christ as the exclusive door. The core identification matches, as both emphasize entrance and access, with the book incorporating the Passover imagery and Christological reference. The relationship is MATCH, with the book's phrasing providing a more specific focus on the house of God and the marking on posts, but without contradicting the consensus. The scripture citations support this interpretation strongly. Overall, the book's entry refines the consensus by highlighting the typological and protective aspects, but the central referent remains consistent. The classification is MATCH. \n\nThe relationship is MATCH. The book's core identification of the door/gate as the entrance to the house of God, marked on the posts, and as the destination of the way, is equivalent to the consensus's primary meaning of access to salvation through Christ. The specific details in the book, such as the marking on the posts and the destination aspect, are extensions of the consensus's typological and access-related alternatives, particularly RESPONSE A 's minority view on blood-marked doorposts prefiguring Christ. The citations provide strong support, linking the Passover ritual, commandments on posts, and Christ's self-identification as the door. This classification reflects a refined but compatible understanding rather than a replacement or contradiction. The book's entry enriches the symbolic meaning without altering the fundamental referent. \n\nThe relationship is MATCH. The book's core identification of the door/gate as the entrance to the house of God, marked on the posts, and as the destination of the way, is equivalent to the consensus's primary meaning of access to salvation through Christ. The specific details in the book, such as the marking on the posts and the destination aspect, are extensions of the consensus's typological and access-related alternatives, particularly RESPONSE A 's minority view on blood-marked doorposts prefiguring Christ. The citations provide strong support, linking the Passover ritual, commandments on posts, and Christ's self- identification as the door. This classification reflects a refined but compatible understanding rather than a replacement or contradiction. The book's entry enriches the symbolic meaning without altering the fundamental referent. \n\nThe relationship is MATCH. The book's core identification of the door/gate as the entrance to the house of God, marked on the posts, and as the destination of the way, is equivalent to the consensus's primary meaning of access to salvation through Christ. The specific details in the book, such as the marking on the posts and the destination aspect, are extensions of the consensus's typological and access-related alternatives, particularly RESPONSE A 's minority view on blood marked doorposts prefiguring Christ. The citations provide strong support, linking the Passover ritual, commandments on posts, and Christ's self-identification as the door. This classification reflects a refined but compatible understanding rather than a replacement or contradiction. The book's entry enriches the symbolic meaning without altering the fundamental referent. \n\nThe relationship is MATCH. The book's core identification of the door/gate as the entrance to the house of God, marked on the posts, and as the destination of the way, is equivalent to the consensus's primary meaning of access to salvation through Christ. The specific details in the book, such as the marking on the posts and the destination aspect, are extensions of the consensus's typological and access-related alternatives, particularly RESPONSE A 's minority view on blood-marked doorposts prefiguring Christ. The citations provide strong support, linking the Passover ritual, commandments on posts, and Christ's self-identification as the door.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Door/gate primarily symbolizes access/entrance to God, salvation, and eternal life, with Christ as the exclusive door/gate (John 10); alternatives include open opportunity for ministry, civic authority/power (gates of Hades), door of the heart, eschatological exclusion, and minority typological OT prefigurations (Passover posts, ark, etc.).\",\n  \"book_summary\": \"The destination of the way — the entrance to the house of God, marked on the posts.\",\n  \"consensus_core_identification\": \"Access/entrance to God and salvation, characteristically Christ himself as the exclusive door/gate.\",\n  \"book_core_identification\": \"Entrance to the house of God (as destination of the way), marked on the posts.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book definitionally centers the house-of-God entrance that is marked on the posts and functions as destination of the way; consensus treats post-marking and house-of-God access as secondary/typological while admitting many other contextual extensions (opportunity, authority, heart, judgment) under a broader access category.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores share the general referent of entrance/access into God's dwelling/presence/salvation (supported by shared John 10:9 citation). Book preserves that category but materially narrows and re-precisifies it by making 'house of God + marked posts + destination of the way' definitional, elevating what consensus lists only as minority typology (Ex 12 posts) or secondary motif while excluding or demoting other common consensus cases. This is boundary/precision disagreement, not replacement of the central access referent.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Consensus primary is the direct Christological identification ('I am the door'); book's phrasing foregrounds architectural/ritual marking of the house entrance and may appear to treat Christology as secondary even while citing John 10:9.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7b34361d-2551-904e-9495-84243b7ea50d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4098,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 3915,
+    "output_tokens_details": {
+      "reasoning_tokens": 3445
+    },
+    "total_tokens": 8013,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 314940000,
+    "context_details": {
+      "input_tokens": 4098,
+      "output_tokens": 3915
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

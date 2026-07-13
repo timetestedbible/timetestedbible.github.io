@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920559,
+  "completed_at": 1783920572,
+  "id": "966fda77-16ca-96da-a54f-2ad1dcedcb3b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_966fda77-16ca-96da-a54f-2ad1dcedcb3b",
+      "summary": [
+        {
+          "text": "The user wants me to act as the \"blind consensus definer\" for the term \"Sheol (the grave, “hell”)\" in biblical symbolism, specifically in Christian teaching and biblical interpretation.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the underworld or shadowy realm of the dead (the grave) to which all people go after death, prior to any final judgment\",\n  \"primary_basis\": [\n    \"Genesis 37:35\",\n    \"Numbers 16:30-33\",\n    \"Job 7:9; 14:13\",\n    \"Psalm 6:5; 16:10; 88:3-6\",\n    \"Isaiah 14:9-15; 38:10\",\n    \"Ezekiel 32:21-27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"simply the physical grave or the state of death itself, without a conscious intermediate realm\",\n      \"basis\": [\n        \"Ecclesiastes 9:5-10\",\n        \"Psalm 6:5; 30:9\",\n        \"common renderings of Sheol as 'grave' in modern translations\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a temporary intermediate state of the dead (often with divisions for righteous and unrighteous) awaiting resurrection, equated with Hades\",\n      \"basis\": [\n        \"Luke 16:19-31\",\n        \"Acts 2:27-31 (quoting Psalm 16)\",\n        \"1 Samuel 28:11-19\",\n        \"traditional Christian use of Hades as parallel\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a place of punishment or torment for the wicked, equivalent to hell\",\n      \"basis\": [\n        \"Psalm 9:17\",\n        \"Proverbs 15:11; 27:20\",\n        \"Isaiah 5:14\",\n        \"KJV and older translations rendering Sheol as 'hell'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical scholarship and most Christian teaching distinguish Sheol from Gehenna (final place of punishment). Consensus exists on its basic identity as the realm of the dead, but details of consciousness, divisions, and duration remain contested across traditions and translations.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_966fda77-16ca-96da-a54f-2ad1dcedcb3b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 610,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1657,
+    "output_tokens_details": {
+      "reasoning_tokens": 1165
+    },
+    "total_tokens": 2267,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 105860000,
+    "context_details": {
+      "input_tokens": 610,
+      "output_tokens": 1657
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

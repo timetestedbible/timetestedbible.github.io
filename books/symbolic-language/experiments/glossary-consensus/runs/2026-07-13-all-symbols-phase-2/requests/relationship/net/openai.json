@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "net",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nNet\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching the net most commonly symbolizes the gospel and the kingdom of God as an instrument for gathering people: the work of evangelism by which souls are drawn into the church. This flows from Jesus' call to make his disciples 'fishers of men' and from the parable of the dragnet, where the net cast into the sea gathers fish of every kind, representing the kingdom's ingathering of all peoples pending final separation of righteous and wicked at judgment.\",\n  \"primary_basis\": [\n    \"Matthew 4:18-20 (fishermen casting a net called to be fishers of men)\",\n    \"Mark 1:16-18\",\n    \"Matthew 13:47-50 (parable of the dragnet: 'the kingdom of heaven is like a net')\",\n    \"Luke 5:1-11 (miraculous catch of fish; 'from now on you will catch men')\",\n    \"John 21:1-11 (post-resurrection catch of 153 fish, net not torn)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A snare or trap laid by the wicked, by enemies, or by seductive persons—symbolizing hidden danger, plots, and entrapment in sin or death, from which the righteous pray for deliverance.\",\n      \"basis\": [\n        \"Psalm 9:15\",\n        \"Psalm 10:9\",\n        \"Psalm 25:15\",\n        \"Psalm 31:4\",\n        \"Psalm 35:7-8\",\n        \"Psalm 57:6\",\n        \"Psalm 140:5\",\n        \"Psalm 141:9-10\",\n        \"Proverbs 1:17\",\n        \"Proverbs 29:5\",\n        \"Ecclesiastes 7:26\",\n        \"Micah 7:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An instrument of divine judgment: God spreading his net over nations or rulers to capture them for punishment or exile.\",\n      \"basis\": [\n        \"Ezekiel 12:13\",\n        \"Ezekiel 17:20\",\n        \"Ezekiel 32:3\",\n        \"Hosea 7:12\",\n        \"Lamentations 1:13\",\n        \"Job 19:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Oppressive human power or idolatrous self-reliance—Babylon 'catching men like fish in a net' and sacrificing to its own net—read as a symbol of predatory empire and worship of one's own strength.\",\n      \"basis\": [\n        \"Habakkuk 1:14-17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In patristic and later ecclesiological interpretation, the unbroken net of John 21 (with its 153 fish) symbolizes the unity and universality of the church, which holds all nations without schism; the tearing net of Luke 5 is sometimes contrasted as the church in the present mixed age.\",\n      \"basis\": [\n        \"John 21:11\",\n        \"Luke 5:6\",\n        \"interpretations in Jerome, Augustine (Tractates on John; sermons on the two catches of fish), and Gregory the Great\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"General entanglement in affliction or testing permitted by God ('you brought us into the net'), read devotionally as trials that refine the believer.\",\n      \"basis\": [\n        \"Psalm 66:10-12\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbol is strongly context-dependent and carries a well-recognized dual valence: in New Testament and homiletic usage the net is overwhelmingly positive (gospel/kingdom gathering souls, evangelism), while in Old Testament poetry and prophecy it is predominantly negative (snare of the wicked or net of divine judgment). Christian teaching most often foregrounds the positive evangelistic sense because of the 'fishers of men' call and the dragnet parable, so that is treated here as the primary consensus meaning, with the trap/judgment senses as widely acknowledged secondary readings rather than fringe views.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Evangelism, the gathering of souls, and the expansion of the Kingdom of God.\",\n  \"primary_basis\": [\n    \"Matthew 4:19\",\n    \"Matthew 13:47-50\",\n    \"Luke 5:4-11\",\n    \"John 21:6-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A trap, snare, or entanglement set by the wicked, enemies, or the devil to destroy the righteous.\",\n      \"basis\": [\n        \"Psalm 9:15\",\n        \"Psalm 25:15\",\n        \"Proverbs 29:5\",\n        \"1 Timothy 3:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment and inescapable capture by God for punishment.\",\n      \"basis\": [\n        \"Ezekiel 12:13\",\n        \"Ezekiel 32:3\",\n        \"Hosea 7:12\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbol of the net is highly contextual in biblical literature. In the New Testament, it is dominantly associated with the Gospel, evangelism, and the eschatological sorting of humanity. In the Old Testament, it frequently represents a hidden trap, danger, or inescapable judgment.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A fishing net most commonly symbolizes the gathering of people into God’s kingdom through evangelism and apostolic mission—especially the calling to become “fishers of men.”\",\n  \"primary_basis\": [\n    \"Matthew 4:18–20 — Jesus calls Peter and Andrew to become “fishers of men.”\",\n    \"Mark 1:16–18 — the parallel calling of the fishermen.\",\n    \"Luke 5:1–11 — the miraculous catch accompanies the disciples’ call to catch people.\",\n    \"John 21:1–11 — the abundant catch is often read in Christian tradition as an image of apostolic mission, though the text does not explicitly define it that way.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The kingdom’s broad gathering of all kinds of people, followed by final separation and judgment.\",\n      \"basis\": [\n        \"Matthew 13:47–50 — the kingdom is explicitly compared to a dragnet gathering fish of every kind; the good and bad are separated at the end of the age.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A trap or snare representing danger, hostile schemes, captivity, or judgment.\",\n      \"basis\": [\n        \"Psalm 9:15; 35:7–8; 57:6; 140:5 — enemies spread nets as concealed traps and may themselves be caught in them.\",\n        \"Proverbs 29:5 — flattery is compared to spreading a net.\",\n        \"Ecclesiastes 9:12 — people are unexpectedly caught like fish in a net.\",\n        \"Ezekiel 12:13; 17:20; 32:3 — God’s net signifies capture and judgment.\",\n        \"Hosea 7:12 — God spreads a net over the disobedient.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Church as a universal or unified community gathered by apostolic mission, sometimes represented by the unbroken net and the 153 fish.\",\n      \"basis\": [\n        \"John 21:6–11 — the full yet unbroken net has been interpreted as the Church’s universality, unity, or fullness.\",\n        \"Matthew 13:47–48 — the gathered fish are sometimes ecclesiologically interpreted as the visible Church containing a mixed body.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Humanity or nations subjected to oppressive conquest, as fish swept up by a ruler’s net.\",\n      \"basis\": [\n        \"Habakkuk 1:14–17 — the conqueror gathers people in a dragnet and rejoices over his captives.\",\n        \"Ezekiel 32:3 — Pharaoh is caught in God’s net through the agency of many nations.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single context-independent symbolic meaning of “net” throughout Scripture. In popular Christian teaching, the fishing net is most recognizably associated with evangelistic gathering, but particular passages explicitly use it for final judgment, entrapment, captivity, or hostile oppression. Matthew 13 especially combines gathering with eschatological sorting rather than presenting the net as evangelism alone.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The kingdom of heaven (or the church/gospel) cast into the world to gather people of every kind, who are later separated at the final judgment\",\n  \"primary_basis\": [\n    \"Matthew 13:47-50\",\n    \"Matthew 4:18-22\",\n    \"Mark 1:16-20\",\n    \"Luke 5:1-11\",\n    \"John 21:1-14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A snare or trap set by the wicked against the righteous or the innocent\",\n      \"basis\": [\n        \"Psalm 9:15\",\n        \"Psalm 10:9\",\n        \"Psalm 25:15\",\n        \"Psalm 31:4\",\n        \"Psalm 35:7-8\",\n        \"Psalm 57:6\",\n        \"Psalm 140:5\",\n        \"Proverbs 1:17\",\n        \"Proverbs 29:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The unbreakable unity or capacity of the church to hold a great multitude of believers\",\n      \"basis\": [\n        \"John 21:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"An instrument of divine judgment or capture by which God ensnares the wicked or the nations\",\n      \"basis\": [\n        \"Job 19:6\",\n        \"Ecclesiastes 9:12\",\n        \"Ezekiel 12:13\",\n        \"Ezekiel 17:20\",\n        \"Habakkuk 1:14-17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The dominant Christian symbolic reading derives from the Synoptic fishing-call narratives and especially the Matthean parable of the dragnet; OT snare imagery remains a frequent secondary motif in preaching and commentary but is not the primary ecclesial or missional symbol.\"\n}\n\nBOOK ENTRY\nThe gospel’s gathering of all kinds out of the sea of peoples.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 13:47-48) · see Sea & Waters, ch. 40\n\nAVAILABLE KJV EXCERPTS\nMatthew 13:47 — Again, the kingdom of heaven is like unto a net, that was cast into the sea, and gathered of every kind:\nMatthew 13:48 — Which, when it was full, they drew to shore, and sat down, and gathered the good into vessels, but cast the bad away.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "6b774689a541d3b013fdf425e60e9c15a3c5a2a655062ca72fb757f419fe28e4",
+  "cache": {
+    "hit": false
+  }
+}

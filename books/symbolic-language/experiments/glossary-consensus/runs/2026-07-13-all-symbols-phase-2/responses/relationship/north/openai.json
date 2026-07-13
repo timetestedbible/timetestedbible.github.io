@@ -1,0 +1,195 @@
+{
+  "id": "resp_04f6194d3088f3d8006a547d8902ec81979a6e71ac4d449285",
+  "object": "response",
+  "created_at": 1783922057,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922074,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_04f6194d3088f3d8006a547d89972081978d2a1e0a369287c7",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_04f6194d3088f3d8006a547d92185c8197878c1963e1bf339d",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The north is primarily the geographic-symbolic quarter from which hostile invasion, calamity, and divine judgment arrive; in other contexts it can denote exile, restoration, or the sacred divine mountain/Zaphon.\",\"book_summary\":\"The north is the hidden or dark quarter from which ambush and hostile powers emerge. It specifically identifies the nations attacking Babylon with Revelation’s ten kings and associates the far north with the enemy’s attempted seat.\",\"consensus_core_identification\":\"The north is the source or direction of hostile invasion and judgment.\",\"book_core_identification\":\"The north is the concealed, dark quarter and point of origin of hostile ambush.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book restricts the motif toward hidden hostile agency and eschatologically reclassifies Babylon’s northern attackers as Revelation’s ten kings. It also treats the 'sides of the north' chiefly through the enemy-seat motif, whereas consensus distinguishes divine-mountain texts from invasion texts and allows many occurrences to remain geographic.\",\"material_contradiction\":\"There is no direct contradiction in identifying the north with the approach of hostile forces. Tension arises only if the book makes the north inherently the enemy’s seat: Psalm 48:2 identifies the sides of the north with Zion, the city of the great King, while Isaiah 14:13 describes the enemy’s aspiration to occupy the divine assembly rather than establishing that the north intrinsically belongs to him.\",\"rationale\":\"The book retains the consensus’s central association between north and hostile incursion, so it does not replace the primary referent. It materially sharpens that association into a hidden, dark ambush quarter and applies it to a specific Revelation 17 scheme. These features fall within recognized minority eschatological and evil-realm alternatives but alter which cases are grouped together and how they are understood.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Jeremiah supports northern invaders and Revelation supports ten kings turning against the whore, but the printed texts do not identify those groups with one another. Nor do Psalm 48:2 and Isaiah 14:13 establish that the north is itself the enemy’s seat; they more naturally locate the divine city or assembly there, with the enemy seeking to usurp it.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4118,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 4115
+    },
+    "output_tokens": 932,
+    "output_tokens_details": {
+      "reasoning_tokens": 444
+    },
+    "total_tokens": 5050
+  },
+  "user": null,
+  "metadata": {}
+}

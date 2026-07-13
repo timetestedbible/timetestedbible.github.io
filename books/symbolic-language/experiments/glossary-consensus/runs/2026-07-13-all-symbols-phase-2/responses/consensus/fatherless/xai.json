@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919757,
+  "completed_at": 1783919780,
+  "id": "403e758f-c008-9e63-b3ba-300e8c050b5a",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_403e758f-c008-9e63-b3ba-300e8c050b5a",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Fatherless, orphan\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_meaning\": \"The fatherless or orphan symbolizes the vulnerable, helpless, and dependent who stand in special need of God's protection, provision, and justice, often pointing to spiritual orphanhood and the hope of adoption into God's family through Christ.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The vulnerable, helpless, and marginalized who stand under God's special protective care and fatherhood, and whose defense is a mark of true righteousness and pure religion\",\n  \"primary_basis\": [\n    \"Psalm 68:5\",\n    \"Deuteronomy 10:18\",\n    \"Exodus 22:22-24\",\n    \"Isaiah 1:17\",\n    \"James 1:27\",\n    \"Psalm 146:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Spiritual condition of those without God as Father, or of disciples temporarily left without the immediate presence of Christ until the Spirit is given\",\n      \"basis\": [\n        \"John 14:18\",\n        \"Romans 8:15\",\n        \"Galatians 4:4-7\",\n        \"Ephesians 1:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel or God's covenant people in seasons of exile, judgment, or apparent abandonment\",\n      \"basis\": [\n        \"Hosea 14:3\",\n        \"Lamentations 5:3\",\n        \"Jeremiah 49:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Allegorical type of the soul or the Church dependent on divine adoption rather than earthly lineage\",\n      \"basis\": [\n        \"patristic and medieval allegorical readings of the Psalms and prophetic texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus is strong on the ethical-theological force of the figure (God's character as father-protector and the corresponding duty of justice) rather than on any single elaborate allegory; the spiritual-adoption reading is also widespread in Christian teaching but secondary to the dominant social-justice and divine-care motif drawn from the Old Testament.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_403e758f-c008-9e63-b3ba-300e8c050b5a",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1819,
+    "output_tokens_details": {
+      "reasoning_tokens": 1379
+    },
+    "total_tokens": 2424,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 119320000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1819
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

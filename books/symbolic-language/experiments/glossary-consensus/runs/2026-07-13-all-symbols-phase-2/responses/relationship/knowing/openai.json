@@ -1,0 +1,195 @@
+{
+  "id": "resp_0142f3e84c6f8d09006a547c47c8b88190a0c950bd3b45f259",
+  "object": "response",
+  "created_at": 1783921735,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921748,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0142f3e84c6f8d09006a547c486af08190a9346367b6a27c5d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0142f3e84c6f8d09006a547c4cbc20819083cfdf46a4147b25",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"In its theological or symbolic use, “knowing” chiefly denotes intimate, experiential covenant relationship rather than mere factual awareness; knowing God includes or is evidenced by love, fidelity, and obedience. Sexual intimacy and covenantal acknowledgment are prominent contextual expressions of this relational core.\",\"book_summary\":\"“Knowing” signifies covenant relationship, illustrated by marital intimacy and distinguished from being a stranger, with obedience serving as evidence that the relationship is genuine.\",\"consensus_core_identification\":\"Personal, intimate, experiential covenant relationship, characteristically involving fidelity and obedience.\",\"book_core_identification\":\"Covenant relationship whose reality is demonstrated by obedience, modeled by marital intimacy and contrasted with estrangement.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement is evident. The book foregrounds obedience as proof of knowing God, but the consensus already includes obedience and covenant fidelity within the relational meaning. The book’s marriage and stranger contrasts likewise fit recognized intimate-union and covenantal-acknowledgment uses.\",\"material_contradiction\":\"None. The book neither replaces relational knowledge with a different referent nor denies the ordinary consensus identification.\",\"rationale\":\"Reduced to their minimum cores, both readings identify theological “knowing” with intimate covenant relationship rather than detached cognition. The book’s phrase “proven by obedience” is an emphasis supported within the consensus, especially by its ethical-obediential alternative, not a materially new condition or reclassification. Its marital example and unknown-stranger contrast are also standard manifestations of relational knowing.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The wording “proven by obedience” could be read more categorically than the consensus, making obedience a strict defining test rather than a characteristic expression or evidence of relationship. It could also be overgeneralized to exclude ordinary cognitive uses of “know.” In context, however, 1 John 2:3–4 explicitly presents obedience as the test of knowing God, and the concise entry appears directed to the term’s symbolic-theological sense rather than every lexical occurrence.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4295,
+    "input_tokens_details": {
+      "cache_write_tokens": 4292,
+      "cached_tokens": 0
+    },
+    "output_tokens": 693,
+    "output_tokens_details": {
+      "reasoning_tokens": 254
+    },
+    "total_tokens": 4988
+  },
+  "user": null,
+  "metadata": {}
+}

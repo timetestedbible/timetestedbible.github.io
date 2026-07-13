@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921321,
+  "completed_at": 1783921347,
+  "id": "6c413d04-5354-9b3f-9a2d-856132d0484d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_6c413d04-5354-9b3f-9a2d-856132d0484d",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Field\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify the primary referent as 'the world' via Matthew 13:38. The book preserves this central category but refines its extension by incorporating Leviticus 19:9-10 ( unreaped edges for the poor and stranger) and Matthew 13:44 (hidden treasure bought whole), which the consensus treats as minority or secondary applications rather than integral to the field's symbolic meaning.\",\n  \"extension_reasoning\": \"Consensus treats the gleaning aspect as absent from primary symbolism and the treasure as minority. The book integrates both as definitional features of the world-as-field, thereby broadening the extension while retaining the core referent.\",\n  \"citations_support\": \"strong\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify the primary referent as 'the world' via Matthew 13:38. The book preserves this central category but refines its extension by incorporating Leviticus 19:9-10 ( unreaped edges for the poor and stranger) and Matthew 13:44 (hidden treasure bought whole), which the consensus treats as minority or secondary applications rather than integral to the field's symbolic meaning.\",\n  \"extension_reasoning\": \"Consensus treats the gleaning aspect as absent from primary symbolism and the treasure as minority. The book integrates both as definitional features of the world-as-field, thereby broadening the extension while retaining the core referent.\",\n  \"citations_support\": \"strong (Matt 13:38 for world; Lev 19:9-10 for gleaning; Matt 13:44 implied in treasure)\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify the primary referent as the world via Matthew 13:38. The book preserves this central category but refines its extension by incorporating Leviticus 19:9-10 (unreaped edges for the poor and stranger) and Matthew 13:44 (hidden treasure bought whole), which the consensus treats as minority or secondary applications rather than integral to the field's symbolic meaning.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Primary meaning of field is the world (explicitly per Jesus in Matt 13:38), the sphere of humanity where the kingdom/gospel is sown, good and evil coexist until harvest; closely linked secondary senses include the mission/harvest field of souls, the church as God's cultivated field, and (by frequent conflation) human hearts as soils.\",\n  \"book_summary\": \"The world (Jesus' own decoding), sown with the seed of the word and reaped at the harvest; its unreaped edge is where the poor and stranger glean, and its hidden treasure is bought whole to be mined.\",\n  \"consensus_core_identification\": \"the world\",\n  \"book_core_identification\": \"the world\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"BOOK_SUPERSET\",\n  \"boundary_disagreement\": \"Book folds in the unreaped corners/gleanings for the poor and stranger (Lev 19) plus the hidden-treasure purchase as constitutive features of the world-field; consensus either omits these or treats them as separate/minor alternatives rather than integral to the primary identification.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores are identical (world via Matt 13:38). Extra book detail is not mere wording: it materially enlarges the extension by making gleaning law and treasure-in-field definitional of the same referent, producing a refined boundary without replacing the central identification. Thus REFINED with BOOK_SUPERSET extension rather than MATCH or DIVERGENT.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Levitical gleaning commands are agricultural/social legislation, not symbolic decoding of 'field = world'; integrating them (and the treasure) may over-harmonize texts the consensus keeps distinct or secondary.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_6c413d04-5354-9b3f-9a2d-856132d0484d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3558,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2649,
+    "output_tokens_details": {
+      "reasoning_tokens": 2231
+    },
+    "total_tokens": 6207,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 222420000,
+    "context_details": {
+      "input_tokens": 3558,
+      "output_tokens": 2649
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

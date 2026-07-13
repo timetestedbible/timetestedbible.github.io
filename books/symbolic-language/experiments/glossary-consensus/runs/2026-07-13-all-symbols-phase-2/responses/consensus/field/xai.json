@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919799,
+  "completed_at": 1783919809,
+  "id": "c2738db7-1d2c-980c-87d4-4bac8e7a4948",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_c2738db7-1d2c-980c-87d4-4bac8e7a4948",
+      "summary": [
+        {
+          "text": "The task is about the biblical symbolism of the term \"Field\". I need to respond with a specific JSON format.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the world\",\n  \"primary_basis\": [\n    \"Matthew 13:38 (explicit definition in the parable of the wheat and tares)\",\n    \"Matthew 13:24-30, 36-43\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the sphere or readiness of gospel harvest/evangelistic labor\",\n      \"basis\": [\n        \"John 4:35\",\n        \"Matthew 9:37-38\",\n        \"Luke 10:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the human heart or individual receptivity (soil types)\",\n      \"basis\": [\n        \"Matthew 13:3-9, 18-23 (parable of the sower)\",\n        \"Mark 4:3-20\",\n        \"Luke 8:5-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the church (as mixed community of wheat and tares)\",\n      \"basis\": [\n        \"interpretive tradition applying Matthew 13:24-30 internally despite the explicit world identification\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Jesus’ own allegorical key in Matthew 13:38 supplies the dominant symbolic identification; other uses are secondary metaphors rather than competing primary symbols.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c2738db7-1d2c-980c-87d4-4bac8e7a4948",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1153,
+    "output_tokens_details": {
+      "reasoning_tokens": 823
+    },
+    "total_tokens": 1755,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 79300000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1153
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

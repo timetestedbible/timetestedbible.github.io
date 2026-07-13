@@ -1,0 +1,201 @@
+{
+  "id": "resp_03ea141fddfac4d4006a547e49e3fc81958b0f3f908424d1fb",
+  "object": "response",
+  "created_at": 1783922249,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922281,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03ea141fddfac4d4006a547e4a7ed081959bc37edb784d620d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_03ea141fddfac4d4006a547e5648008195aeb7afdb81402917",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_03ea141fddfac4d4006a547e5fdedc8195891a5b78cfa3de23",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The seal on the forehead broadly signifies that people belong to God, bear his identity and allegiance, and are distinguished or protected in judgment; its precise referent may be God's name, the Holy Spirit, character, law, or another identifying sign.\",\"book_summary\":\"The seal is specifically God's name or inscription impressed upon his servants: holiness and obedience to divine law mark those whom the Lord owns. The Spirit stamps this inscription, while the beast's counterfeit occupies the same forehead-and-hand locations.\",\"consensus_core_identification\":\"A divine identifying mark of ownership and allegiance upon God's people, associated with preservation from judgment.\",\"book_core_identification\":\"God's identifying name—expressed as holiness and law—impressed upon those who belong to him.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book selects the divine name/holiness/law interpretation as the seal's definite content, treating the Spirit as the agent who stamps it rather than necessarily as the seal itself. It also brings the priestly forehead plate and the law on hand and between the eyes into the same symbolic complex. This excludes or demotes broader identifications such as an unspecified protective mark, the Spirit simpliciter, a sacramental seal, or a merely literal end-time mark.\",\"material_contradiction\":\"There is no contradiction with the consensus core of divine ownership, identity, and allegiance. There is only tension with the common alternative that identifies the seal itself specifically with the Holy Spirit, since the book distinguishes the Spirit who stamps from the name or inscription stamped.\",\"rationale\":\"The book retains the consensus's central referent—God's identifying mark upon his own—but gives that mark a materially more precise content: God's name, holiness, and law. This name/character/law reading is already recognizable within the consensus responses, so it is neither divergent nor novel. Its definite identification and reclassification of the Spirit and related biblical signs make it a refinement rather than a mere wording match.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited passages strongly connect forehead inscription, divine name, ownership, holiness, law, and protection, but they do not by themselves establish that all these images denote one identical seal; nor do the printed excerpts explicitly say that the Holy Spirit performs the stamping.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4511,
+    "input_tokens_details": {
+      "cache_write_tokens": 4508,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1365,
+    "output_tokens_details": {
+      "reasoning_tokens": 876
+    },
+    "total_tokens": 5876
+  },
+  "user": null,
+  "metadata": {}
+}

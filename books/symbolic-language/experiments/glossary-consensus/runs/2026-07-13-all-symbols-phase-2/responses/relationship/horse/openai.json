@@ -1,0 +1,195 @@
+{
+  "id": "resp_0a3ad9ef4cca1b4d006a547bdaaa94819082fa9b23043f53bf",
+  "object": "response",
+  "created_at": 1783921626,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921644,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a3ad9ef4cca1b4d006a547bdb35988190a88c8db27f241840",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a3ad9ef4cca1b4d006a547be432f081909bc235041983a70b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The white horse principally signifies victory or conquest. Revelation 19 clearly presents Christ’s righteous triumph, while Revelation 6 depicts conquest but leaves the rider’s identity disputed; horses more generally signify military power or divinely commissioned action.\",\"book_summary\":\"The entry restricts the image to Revelation 6:2: the white horse is the mount of an executing spiritual agent, whose rider conquers nations by means of the bow.\",\"consensus_core_identification\":\"White horse imagery signifies victorious conquest or triumphant power.\",\"book_core_identification\":\"The Revelation 6 white horse is the mount of a bow-bearing spiritual executor engaged in conquest.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The consensus covers white-horse imagery broadly, including Christ’s victory in Revelation 19 and several disputed interpretations of Revelation 6. The book selects the Revelation 6 case and specifies an executing spirit and bow-based conquest, thereby excluding the wider range of white-horse cases and interpretations.\",\"material_contradiction\":\"There is no direct contradiction at the core: both identify conquest. The book does not expressly reject Christological, generic-conquest, or other readings, but its narrow definition does not encompass them.\",\"rationale\":\"Reduced to their minimum cores, both readings identify the white horse with conquest. The book materially narrows that shared category to the bow-bearing conqueror of Revelation 6 and further characterizes the rider as an executing spirit. That spiritual-agent specification is recognizable within consensus references to divinely commissioned agents, so it is neither divergent nor wholly novel.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Revelation 6:2 directly supports the bow, crown, and conquest, but it does not identify the rider as a spirit or explicitly state that the conquered objects are nations. Those elements require interpretation beyond the printed citation.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3606,
+    "input_tokens_details": {
+      "cache_write_tokens": 3603,
+      "cached_tokens": 0
+    },
+    "output_tokens": 915,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4521
+  },
+  "user": null,
+  "metadata": {}
+}

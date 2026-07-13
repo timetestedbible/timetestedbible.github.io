@@ -1,0 +1,173 @@
+{
+  "id": "resp_08b977b50fa107a8006a5476dc4f9881959ac1825bdca8a5f2",
+  "object": "response",
+  "created_at": 1783920348,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920371,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_08b977b50fa107a8006a5476dcd2ec819590fd484f0205832d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_08b977b50fa107a8006a5476e4818c8195886219b8c5dcb31f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Spiritual and moral darkness: a condition or sphere associated with sin, unbelief, ignorance of God, evil, danger, and separation from divine light. Christian interpretation commonly treats night as the contrasting counterpart to Christ, truth, holiness, and salvation as “light.”\",\"primary_basis\":[\"John 3:19–21 — darkness is associated with evil deeds and avoidance of the light.\",\"John 13:30 — Judas departs to betray Jesus, followed by the symbolically suggestive statement, “And it was night.”\",\"Romans 13:12–13 — “the night” is passing away, so believers must cast off works of darkness and live honorably.\",\"1 Thessalonians 5:4–8 — night and darkness characterize those unprepared for the Day of the Lord, contrasted with believers as children of light and day.\",\"Ephesians 5:8–14 — former darkness and its unfruitful works are contrasted with life in the Lord’s light.\",\"Revelation 21:23–25; 22:5 — the absence of night in the final holy city signifies the removal of darkness under God’s everlasting light.\"],\"alternatives\":[{\"meaning\":\"The present fallen age awaiting the dawn of Christ’s kingdom or return. Here night is primarily eschatological rather than merely individual moral darkness.\",\"basis\":[\"Romans 13:12 — the passing night and approaching day.\",\"1 Thessalonians 5:1–8 — night imagery in teaching about the Day of the Lord.\",\"2 Peter 1:19 — a lamp shines in a dark place until the day dawns.\"],\"prominence\":\"common\"},{\"meaning\":\"A season of suffering, grief, fear, testing, or apparent divine absence, often followed by deliverance at morning.\",\"basis\":[\"Psalm 30:5 — weeping remains for the night, but joy comes in the morning.\",\"Psalm 42:8; 77:2–6 — night as the setting of lament, remembrance, and distress.\",\"Psalm 91:5 — the terror of the night.\",\"Job 35:10 — God gives songs in the night.\"],\"prominence\":\"common\"},{\"meaning\":\"Death, approaching death, or the end of one’s opportunity to work and respond.\",\"basis\":[\"John 9:4 — night comes when no one can work.\",\"Job 10:21–22 — death described as a land of darkness and deep shadow.\"],\"prominence\":\"minority\"},{\"meaning\":\"Rest, divine protection, contemplation, revelation, or encounter with God. Night is not intrinsically evil and can be a setting for prayer and revelation.\",\"basis\":[\"Genesis 1:5,14–18 — night belongs to the created order declared good.\",\"Psalm 4:8; 63:6; 121:6 — rest, meditation, and God’s protection by night.\",\"Genesis 28:10–17; 1 Samuel 3:1–10; Daniel 7:1–2 — divine dreams, visions, and calls occur at night.\",\"Luke 6:12 — Jesus spends the night in prayer.\"],\"prominence\":\"minority\"},{\"meaning\":\"A literal time marker without intended symbolic force.\",\"basis\":[\"Many biblical narratives mention night simply to establish chronology or circumstances; symbolic significance must be determined from each literary context.\"],\"prominence\":\"common\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is a settled broad consensus that night most often symbolizes spiritual darkness, evil, unbelief, or the fallen order when it is used figuratively in Christian interpretation. It does not have one invariant meaning, however: Scripture also uses night literally and, in some contexts, positively for rest, protection, prayer, or revelation.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1169,
+    "output_tokens_details": {
+      "reasoning_tokens": 397
+    },
+    "total_tokens": 1486
+  },
+  "user": null,
+  "metadata": {}
+}

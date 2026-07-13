@@ -1,6 +1,8 @@
 /* MEAT Tester experiment dashboard */
 
 .meat-tester-view {
+  --meat-match: color-mix(in srgb, var(--color-success) 52%, var(--color-info));
+  --meat-match-muted: color-mix(in srgb, var(--color-success-muted) 52%, var(--accent-primary-muted));
   max-width: 1240px;
   margin: 0 auto;
   padding: 34px 24px 72px;
@@ -443,7 +445,10 @@
 }
 
 .meat-symbol-token.verdict-divergent-persuaded,
-.meat-symbol-legend-item.verdict-divergent-persuaded { color: var(--color-success); }
+.meat-symbol-legend-item.verdict-divergent-persuaded {
+  color: var(--color-success);
+  font-weight: 800;
+}
 .meat-symbol-token.verdict-divergent-unpersuaded,
 .meat-symbol-token.verdict-divergent-disputed,
 .meat-symbol-token.verdict-disputed,
@@ -452,7 +457,7 @@
 .meat-symbol-token.verdict-refined,
 .meat-symbol-legend-item.verdict-refined { color: var(--color-info); }
 .meat-symbol-token.verdict-match,
-.meat-symbol-legend-item.verdict-match { color: var(--accent-gold); }
+.meat-symbol-legend-item.verdict-match { color: var(--meat-match); }
 .meat-symbol-token.verdict-novel,
 .meat-symbol-legend-item.verdict-novel { color: var(--color-purple); }
 .meat-symbol-token.verdict-divergent-pending,
@@ -657,6 +662,13 @@
   line-height: 1.1;
 }
 
+.meat-frozen-headword {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-tertiary);
+  font-size: 0.74rem;
+}
+
 .meat-run-select-label {
   flex: 0 1 330px;
 }
@@ -695,7 +707,8 @@
   line-height: 1.55;
 }
 
-.meat-legacy-scope {
+.meat-legacy-scope,
+.meat-partial-scope {
   display: flex;
   gap: 10px;
   margin-bottom: 18px;
@@ -708,9 +721,15 @@
   line-height: 1.45;
 }
 
-.meat-legacy-scope strong {
+.meat-legacy-scope strong,
+.meat-partial-scope strong {
   flex: 0 0 auto;
   color: var(--text-primary);
+}
+
+.meat-partial-scope {
+  background: color-mix(in srgb, var(--color-info) 8%, var(--surface-raised));
+  border-color: color-mix(in srgb, var(--color-info) 34%, var(--border-subtle));
 }
 
 .meat-untested-note {
@@ -1113,6 +1132,7 @@
 .meat-verdict-badge.verdict-divergent-persuaded {
   color: var(--color-success);
   background: var(--color-success-muted);
+  font-weight: 900;
 }
 
 .meat-result-card.verdict-divergent-unpersuaded,
@@ -1134,17 +1154,24 @@
   background: var(--color-warning-muted);
 }
 
-.meat-result-card.verdict-refined,
 .meat-result-card.verdict-match,
-.meat-verdict-badge.verdict-refined,
 .meat-verdict-badge.verdict-match {
+  border-color: var(--meat-match);
+}
+
+.verdict-match > .meat-result-card-top .meat-verdict-badge,
+.meat-verdict-badge.verdict-match {
+  color: var(--meat-match);
+  background: var(--meat-match-muted);
+}
+
+.meat-result-card.verdict-refined,
+.meat-verdict-badge.verdict-refined {
   border-color: var(--color-info);
 }
 
 .verdict-refined > .meat-result-card-top .meat-verdict-badge,
-.verdict-match > .meat-result-card-top .meat-verdict-badge,
-.meat-verdict-badge.verdict-refined,
-.meat-verdict-badge.verdict-match {
+.meat-verdict-badge.verdict-refined {
   color: var(--color-info);
   background: var(--accent-primary-muted);
 }
@@ -1321,7 +1348,8 @@
     justify-content: flex-start;
   }
 
-  .meat-legacy-scope {
+  .meat-legacy-scope,
+  .meat-partial-scope {
     flex-direction: column;
   }
 

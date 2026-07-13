@@ -1,0 +1,195 @@
+{
+  "id": "resp_0ff7e620c435642f006a547ba2f17c8190b192f4199f2f12fd",
+  "object": "response",
+  "created_at": 1783921571,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921590,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0ff7e620c435642f006a547ba3db888190855d2555dd62a301",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0ff7e620c435642f006a547bace4f0819084adfe5d2d36da57",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Heaven is primarily God's transcendent dwelling or sphere of presence, authority, and holiness, and derivatively the blessed destiny of the redeemed; it can also denote the visible sky, God's reign, an intermediate state, or the renewed union of heaven and earth.\",\"book_summary\":\"Heaven is God's jurisdiction—the domain where his will is already accomplished—expressed by shamayim as both visible sky and divine seat of rule. It contrasts with earth as humanity's delegated realm, and the final hope is heaven descending to earth rather than humanity permanently ascending to heaven.\",\"consensus_core_identification\":\"The transcendent realm of God's presence and sovereign rule, derivatively associated with redeemed communion with God.\",\"book_core_identification\":\"God's ruling jurisdiction, where his will is already done, encompassing the sky/seat-of-rule sense and destined to come down to earth.\",\"core_relation\":\"COMPATIBLE_OVERLAP\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book retains heaven as God's sphere of rule but makes accomplished divine will, rather than divine dwelling or the redeemed's destination, its defining boundary. It incorporates the visible sky into the unified identification and rejects permanent human ascent to heaven as the final hope, reclassifying that hope as heaven's descent and union with earth.\",\"material_contradiction\":\"There is no contradiction over heaven's association with God's rule and throne. The material disagreement concerns the consensus's derivative treatment of heaven as believers' final abode: the book explicitly opposes 'man gone up' as the ultimate hope. This does not replace the central divine-realm referent, especially because the consensus itself recognizes renewed creation and the New Jerusalem's descent.\",\"rationale\":\"The entry is not novel: the blind responses already identify heaven with divine rule, the physical sky, and the renewed union of heaven and earth. Nor is it a match, because the book combines these senses into a jurisdictional definition and excludes the common final-destination framing. Since it preserves the central referent of God's sphere of authority while materially revising which senses and eschatological cases belong under it, the relationship is refined.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed texts strongly support divine ownership and rule, the heaven-earth contrast, God's will being done in heaven, and the New Jerusalem descending. However, they do not by themselves fully establish the lexical claim that shamayim deliberately unifies visible sky and jurisdiction, the broader pattern that God's motion is always downward, or the claim that ascent as such is Babel-like.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4099,
+    "input_tokens_details": {
+      "cache_write_tokens": 4096,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1052,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 5151
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921749,
+  "completed_at": 1783921770,
+  "id": "7ef8827e-5fe0-9af7-87f0-3a1d7ca81884",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7ef8827e-5fe0-9af7-87f0-3a1d7ca81884",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Knowing, to know\".\nThe book's entry aligns closely with the consensus on \"knowing\" as intimate, covenantal relationship, with obedience as the proof. It refines the idea by stressing that covenant ties are proven through obedience, using the marriage \"knew\" as the model and defining a stranger as one not known. This matches the core 1 John 2:3-4 and Matt 7:23 references, plus Hos 4:6's warning on rejected knowledge. The citations support this well, showing partial but strong backing for the relational focus. Overall, it's REFINED—preserving the central covenantal sense while narrowing the extension to obedience as the key proof, without contradicting the broader relational view. Core relation: BOOK_NARROWS. Extension relation: BOOK_SUBSET (adds obedience as definitional proof). Citations: strong. Verdict: REFINED. \n\nThe book's entry aligns closely with the consensus on \"knowing\" as intimate, covenantal relationship with obedience as the proof. It refines the idea by stressing that covenant ties are proven through obedience, using the marriage \"knew\" as the model and defining a stranger as one not known. This matches the core 1 John 2:3-4 and Matt 7:23 references, plus Hos  4:6's warning on rejected knowledge. The citations support this well, showing partial but strong backing for the relational focus. Overall, it's REFINED—preserving the central covenantal sense while narrowing the extension to obedience as the key proof, without contradicting the broader relational view. Core relation: BOOK_NAR ROWS.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Biblical 'to know' (yada/ginōskō) primarily denotes intimate, experiential, covenantal relationship and personal communion (esp. with God), distinct from mere intellectual awareness; sexual union is the paradigm case, with common extensions to election/foreknowledge, obedience as evidence or ethical conduct, and moral experience.\",\n  \"book_summary\": \"Covenant relationship proven by obedience — the intimate “knew” of marriage; a stranger is one not known.\",\n  \"consensus_core_identification\": \"intimate/experiential/covenantal relational knowledge (vs. detached intellect)\",\n  \"book_core_identification\": \"covenant relationship proven by obedience (intimate marriage paradigm; stranger = not known)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book makes 'proven by obedience' definitional to the covenant relationship (narrowing via 1 John/Hosea), while consensus treats relational intimacy itself as primary and obedience as one common expression/evidence among others (election, pure communion, moral experience); pure relational or elective cases without the proof emphasis are less central or reclassified.\",\n  \"material_contradiction\": \"None — book retains the intimate covenant/relational core (shared Gen 4:1 marriage paradigm and Matt 7:23 non-knowing) without denying or replacing it.\",\n  \"rationale\": \"Minimum cores align on intimate covenant relationship (marriage 'knew' as model, stranger contrast). Book preserves that referent/category but materially narrows precision and boundary conditions by elevating 'proven by obedience' to the identification itself (drawing 1 John 2:3-4 and Hos 4:6 into the core), excluding or de-emphasizing broader consensus cases of relational knowing (e.g., divine election/foreknowledge, non-obediential communion) that lack this proof condition. This is refinement of extension/boundary, not core replacement or novelty.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus primary centers experiential intimacy/communion as the knowledge itself (with obedience secondary/evidential), so elevating 'proven by obedience' may over-narrow or reify one alternative into the definition.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7ef8827e-5fe0-9af7-87f0-3a1d7ca81884",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4703,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2078,
+    "output_tokens_details": {
+      "reasoning_tokens": 1576
+    },
+    "total_tokens": 6781,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 216820000,
+    "context_details": {
+      "input_tokens": 4703,
+      "output_tokens": 2078
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

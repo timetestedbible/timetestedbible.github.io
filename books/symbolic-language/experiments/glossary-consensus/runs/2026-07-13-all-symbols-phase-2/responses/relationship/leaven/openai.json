@@ -1,0 +1,201 @@
+{
+  "id": "resp_02541d450ecf2f58006a547c6d5f78819596b0903939e4d23a",
+  "object": "response",
+  "created_at": 1783921773,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921791,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_02541d450ecf2f58006a547c6dec788195b3606490b10a76f1",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_02541d450ecf2f58006a547c78015081958934c2c851efd7d3",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_02541d450ecf2f58006a547c7980708195beeb1a087c2ed9cb",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Leaven predominantly signifies sin, hypocrisy, false teaching, or corruption that spreads through a larger whole, while Matthew 13:33 and Luke 13:20–21 commonly supply a positive, context-dependent use for the kingdom’s pervasive growth.\",\"book_summary\":\"Leaven signifies the word or doctrine made impure—hidden corruption that permeates the whole—and is associated with corrupt Pharisaic doctrine, Passover purging, and exclusion from offerings burned on the altar.\",\"consensus_core_identification\":\"A pervasive corrupting influence, especially sin, hypocrisy, or false doctrine.\",\"book_core_identification\":\"Impure or corrupt doctrine and wickedness permeating the whole.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book presents only the negative corruptive application and does not admit the commonly recognized positive kingdom use in Matthew 13:33 and Luke 13:20–21. It therefore narrows leaven’s symbolic extension to corrupt doctrine and moral impurity, unless its silence about the kingdom parables is treated merely as omission.\",\"material_contradiction\":\"There is no contradiction at the negative core. The only material tension is that the consensus treats leaven as context-dependent and sometimes positive, whereas the entry states an exclusively negative definition without qualification.\",\"rationale\":\"The central identification is the same: corruption, particularly corrupt doctrine or wickedness, spreading throughout a whole. The book’s language about the word being impure, embittered, and puffed up elaborates that shared core rather than replacing it. The relationship is refined rather than a full match because the consensus expressly recognizes positive kingdom-growth cases that the book’s unqualified definition does not cover.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The entry never explicitly denies the positive kingdom interpretation; it may simply summarize the negative texts it cites. On that reading, its minimum core exactly matches the consensus and the proper classification would be MATCH rather than REFINED.\",\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3389,
+    "input_tokens_details": {
+      "cache_write_tokens": 3386,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1032,
+    "output_tokens_details": {
+      "reasoning_tokens": 610
+    },
+    "total_tokens": 4421
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921609,
+  "completed_at": 1783921654,
+  "id": "96ee7c5b-dcbb-952f-b00e-04690affe57a",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_96ee7c5b-dcbb-952f-b00e-04690affe57a",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Helmet of salvation\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification preserves the consensus referent (salvation as protective head-covering in spiritual battle) but materially narrows and deepens it: it identifies the helmet specifically as God's own war dress (yeshuah/Yeshua) that God puts on and lends to the soldier, with the head of every man being Christ (1 Cor 11:3) and the forehead bearing the name of God (Rev 22:4) rather than merely the believer's subjective assurance or hope. This shifts emphasis from present assurance or eschatological hope to objective divine appropriation and Christological identity, while retaining the protective function.\",\n  \"extension_reasoning\": \"The book adds the divine-warrior origin (Isa 59:16-17, 'put on when there was no man') and Christological reading (head=Christ 1 Cor 11:3; forehead=God's name vs counterfeit Rev 22:4) that consensus treats as minority or alternative; it excludes purely psychological 'protection of the mind' readings and eschatological-only hope by tying the helmet directly to Yeshua as the covering. The consensus's broad category of 'salvation as gift/assurance/hope protecting the believer' remains intact, but the book's extension reclassifies the helmet as Christ's own salvific covering rather than believer's mental state or future hope.\",\n  \"scripture_support\": \"strong\",\n  \"classification\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification preserves the consensus referent (salvation as protective head-covering in spiritual battle) but materially narrows and deepens it: it identifies the helmet specifically as God's own war dress (yeshuah / Yeshua) that God puts on and lends to the soldier, with the head of every man being Christ (1 Cor 11:3) and the forehead bearing the name of God (Rev 22:4) rather than merely the believer's subjective assurance or hope. This shifts emphasis from present assurance or eschat ological hope to objective divine appropriation and Christological identity, while retaining the protective function.\",\n  \"extension_reasoning\": \"The book adds the divine-warrior origin (Isa 59:16-17, 'put on when there was no man') and Christological reading (head=Christ 1 Cor 11 3; forehead=God's name vs counterfeit Rev 22:4) that consensus treats as minority or alternative; it excludes purely psychological 'protection of the mind' readings and eschatological-only hope by tying the helmet directly to Yeshua as the covering. The consensus's broad category of 'salvation as gift/assurance/h ope protecting the believer' remains intact, but the book's extension reclassifies the helmet as Christ's own salvific covering rather than believer's mental state or future hope.\",\n  \"scripture_support\": \"strong\",\n  \"classification\": \"REFINED\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n   \"core_reasoning\": \"The book's core identification preserves the consensus referent (salvation as protective head-covering in spiritual battle) but materially narrows and deepens it: it identifies the helmet specifically as God's own war dress (yeshuah / Yeshua) that God puts on and lends to the soldier, with the head of every man being Christ (1 Cor 11:3) and the forehead bearing the name of God (Rev 22:4) rather than merely the believer's subjective assurance or hope. This shifts emphasis from present assurance or eschat ological hope to objective divine appropriation and Christological identity, while retaining the protective function.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"The helmet of salvation is the believer’s assurance or hope of salvation that protects the mind against doubt, despair, and spiritual attack, as part of God’s armor; primary texts are Eph 6:17, 1 Thess 5:8 and Isa 59:17.\",\n  \"book_summary\": \"The head covered with yeshuah—Yeshua: God’s own war-dress put on when there was no man and lent to the soldier; David’s form (“thou hast covered my head in the day of battle”); the head of every man is Christ, and the counterfeit is issued for the same forehead.\",\n  \"consensus_core_identification\": \"assurance/hope of salvation as protective covering for the believer’s mind in spiritual warfare\",\n  \"book_core_identification\": \"covering of the head with yeshuah/Yeshua as God’s own war-dress lent to the soldier, the head being Christ (with forehead counterfeit)\",\n  \"core_relation\": \"COMPATIBLE_OVERLAP\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book equates yeshuah with the person Yeshua, applies 1 Cor 11:3 (head of every man is Christ) and Rev 22:4 forehead imagery (plus counterfeit), reclassifying the symbol christologically and as a seal; consensus primary centers psychological assurance/hope and treats divine-warrior or Christ-as-armor readings as secondary alternatives.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both cores identify the helmet with salvation drawn from God’s own armor (Isa 59) and given for the believer’s protection (Eph 6); the divine-warrior motif and “salvation as Christ” are already listed consensus alternatives. The book therefore preserves the central referent while refining its precision and extension through the yeshuah=Yeshua identification, the headship of Christ, and the forehead-counterfeit contrast—producing real boundary disagreement without replacing the referent.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus primary meaning stresses present assurance or future hope as mental protection; the book’s christological equation and counterfeit-forehead extension, while drawing on printed texts, shift emphasis beyond the armor passages themselves.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_96ee7c5b-dcbb-952f-b00e-04690affe57a",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3781,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 4150,
+    "output_tokens_details": {
+      "reasoning_tokens": 3643
+    },
+    "total_tokens": 7931,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 322700000,
+    "context_details": {
+      "input_tokens": 3781,
+      "output_tokens": 4150
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

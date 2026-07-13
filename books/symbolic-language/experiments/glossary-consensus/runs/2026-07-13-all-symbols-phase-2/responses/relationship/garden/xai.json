@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921465,
+  "completed_at": 1783921507,
+  "id": "03be5f24-2b65-9a6b-aa5e-21049e4bfbb9",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_03be5f24-2b65-9a6b-aa5e-21049e4bfbb9",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Garden\".\nThe book's entry for \"Garden\" is a clear DIVERGENCE from the blind consensus. The core identification is materially different: the consensus treats \"Garden\" as a symbol of paradise, divine presence, and eschatological restoration (Eden lost and regained), while the book defines it as a planted stand of trees that represents a grouping of nations. This is not a boundary adjustment or extension of the same referent; the two meanings cannot coexist as primary identifications for the same term in the same context. The Ezekiel 31:9 citation (linking the garden of God to the trees of Eden) supplies partial support for the book's reading by showing 31:9 as a tree/nation metaphor, but it does not rescue the core from divergence. The common-view note reinforces the split by explicitly contrasting the book's view with the widely taught paradise reading. The relationship is therefore DIVERGENT. \n\nThe book's entry for \"Garden\" is a clear DIVERGENCE from the blind consensus. The core identification is materially different: the consensus treats \"Garden\" as a symbol of paradise, divine presence, and eschatological restoration (Eden lost and regained), while the book defines it as a planted stand of trees that represents a grouping of nations. This is not a boundary adjustment or extension of the same referent; the two meanings cannot coexist as primary identifications for the same term in the same context. The Ezekiel 31:9 citation (linking the garden of God to the trees of Eden) supplies partial support for the book's reading by showing 31:9 as a tree/nation metaphor, but it does not rescue the core from divergence. The common-view note reinforces the split by explicitly contrasting the book's view with the widely taught paradise reading. The relationship is therefore DIVERGENT. \n\nThe book's entry for \"Garden\" is a clear DIVERGENCE from the blind consensus. The core identification is materially different: the consensus treats \"Garden\" as a symbol of paradise, divine presence, and eschatological restoration (Eden lost and regained), while the book defines it as a planted stand of trees that represents a grouping of nations. This is not a boundary adjustment or extension of the same referent; the two meanings cannot coexist as primary identifications for the same term in the same context. The Ezekiel 31:9 citation (linking the garden of God to the trees of Eden) supplies partial support for the book's reading by showing 31:9 as a tree/nation metaphor, but it does not rescue the core from divergence. The common-view note reinforces the split by explicitly contrasting the book's view with the widely taught paradise reading. The relationship is therefore DIVERGENT. \n\nThe book's entry for \"Garden\" is a clear DIVERGENCE from the blind consensus. The core identification is materially different: the consensus treats \"Garden\" as a symbol of paradise, divine presence and eschatological restoration (Eden lost and regained), while the book defines it as a planted stand of trees that represents a grouping of nations. This is not a boundary adjustment or extension of the same referent; the two meanings cannot coexist as primary identifications for the same term in the same context. The Ezekiel 31: 9 citation (linking the garden of God to the trees of Eden) supplies partial support for the book's reading by showing 31:9 as a tree/nation metaphor, but it does not rescue the core from divergence. The common-view note reinforces the split by explicitly contrasting the book's view with the widely taught paradise reading. The relationship is therefore DIVERGENT. \n\nThe book's entry for \"Garden\" is a clear DIVERGENCE from the blind consensus. The core identification is materially different: the consensus treats \"Garden\" as a symbol of paradise, divine presence and eschatological restoration (Eden lost and regained), while the book defines it as a planted stand of trees that represents a grouping of nations. This is not a boundary adjustment or extension of the same referent; the two meanings cannot coexist as primary identifications for the same term in the same context.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Consensus identifies garden primarily as paradise (Eden): the place of God's presence, unbroken fellowship, divine provision and life, framing the arc from creation through redemption to new-creation restoration, with complementary alternatives (temple/sanctuary, bride/soul, watered/fruitful life, Gethsemane obedience).\",\n  \"book_summary\": \"Garden is a planted stand of trees that constitutes a grouping of nations.\",\n  \"consensus_core_identification\": \"paradise/Eden as the locus of divine presence and fellowship (lost and restored)\",\n  \"book_core_identification\": \"planted stand of trees = grouping of nations\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus centers every major garden (Eden, Song, Gethsemane, tomb, New Jerusalem) inside the paradise/fellowship category; the book relocates the term entirely to a national collective via tree imagery and thereby excludes the paradise core.\",\n  \"material_contradiction\": \"The two cores cannot both be the primary identification of the same biblical symbol: accepting 'grouping of nations' requires discarding paradise/divine-fellowship as the central referent.\",\n  \"rationale\": \"Minimum cores are paradise (consensus) versus nations-group (book). The latter is not a narrowing, broadening or re-boundary of the former; it replaces the referent. No consensus primary or listed alternative anticipates the nations reading drawn from Ezek 31, so the identifications stand in material contradiction rather than refinement or mere novelty.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The single Ezek 31:9 citation (and its trees cross-reference) cannot override the pervasive Eden-to-New-Jerusalem paradise motif that dominates the rest of Scripture and all mainstream traditions.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_03be5f24-2b65-9a6b-aa5e-21049e4bfbb9",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4359,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3940,
+    "output_tokens_details": {
+      "reasoning_tokens": 3519
+    },
+    "total_tokens": 8299,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 315900000,
+    "context_details": {
+      "input_tokens": 4359,
+      "output_tokens": 3940
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

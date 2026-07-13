@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920714,
+  "completed_at": 1783920726,
+  "id": "495b013a-4cf0-9ffa-aa38-f4f5d85b85c6",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_495b013a-4cf0-9ffa-aa38-f4f5d85b85c6",
+      "summary": [
+        {
+          "text": "The user wants me to act as the \"blind consensus definer\" for the term \"Tzitzit\" in the context of biblical symbolism from a Christian teaching and biblical interpretation perspective.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A visual reminder to remember and obey all of God's commandments and to live a holy life set apart from sin\",\n  \"primary_basis\": [\n    \"Numbers 15:37-41\",\n    \"Deuteronomy 22:12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The fringe or hem of Jesus' garment as a source of healing power and messianic authority, fulfilled when the woman with the issue of blood touched it\",\n      \"basis\": [\n        \"Matthew 9:20-22\",\n        \"Matthew 14:36\",\n        \"Mark 6:56\",\n        \"Luke 8:43-48\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A symbol of the covenant people of God or Jewish identity under the Mosaic Law, now fulfilled or set aside in Christ\",\n      \"basis\": [\n        \"Numbers 15:37-41\",\n        \"Galatians 3:23-25\",\n        \"Colossians 2:16-17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The blue thread (tekhelet) specifically representing heaven, divinity, or the throne of God\",\n      \"basis\": [\n        \"Numbers 15:38-39\",\n        \"Exodus 24:10\",\n        \"Ezekiel 1:26\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The explicit purpose statement in Numbers 15 supplies a clear primary meaning that is consistently recognized in Christian biblical interpretation of the Old Testament command; secondary Christian applications center on New Testament references to Jesus' tassels but do not displace the original stated symbolism.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_495b013a-4cf0-9ffa-aa38-f4f5d85b85c6",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 604,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1141,
+    "output_tokens_details": {
+      "reasoning_tokens": 735
+    },
+    "total_tokens": 1745,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 74780000,
+    "context_details": {
+      "input_tokens": 604,
+      "output_tokens": 1141
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

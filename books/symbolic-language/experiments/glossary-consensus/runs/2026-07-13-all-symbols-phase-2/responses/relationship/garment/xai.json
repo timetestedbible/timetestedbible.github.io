@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921472,
+  "completed_at": 1783921499,
+  "id": "e53ded1c-eba9-956f-9c17-b598f7d76650",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_e53ded1c-eba9-956f-9c17-b598f7d76650",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Garment\".\nThe book's entry for \"Garment\" narrows the consensus primary meaning to a single, precise identification: the fine linen garment in Revelation 19:8 is explicitly the righteous acts of the saints. This is not a contradiction but a refinement that keeps the central referent (righteousness as divine covering) while tightening the boundary to the deeds-of-the-saints reading of that verse. The consensus already treats that reading as one of two viable options within the same broad category; the book simply selects and foregrounds the deeds interpretation as the entry's core definition. All other consensus alternatives (status, body, mourning, etc.) remain untouched. The 19:8 citation alone supplies strong support for the book's claim, as it is the exact verse the entry quotes. Overall relationship is REFINED. \n\n{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Garment primarily symbolizes spiritual state, righteousness, or salvation; clean/white/fine garments represent imputed righteousness or the righteous deeds of the saints, while filthy garments represent sin. Alternatives include status/office, old/new self, resurrection body, and watchfulness.\",\n  \"book_summary\": \"Garment (specifically fine linen) symbolizes righteousness, defined as the righteous acts of the saints.\",\n  \"consensus_core_ident ification\": \"person's spiritual state or standing before God, especially righteousness (imputed or deeds)\",\n  \"book_core_identification\": \"righteousness as the righteous acts of the saints\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_dis agreement\": \"Book excludes imputed righteousness and broader spiritual-state readings, limiting the term to the deeds-of-the-saints sense of Rev 19:8\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"The book's minimal core ('righteousness — the righteous acts of the saints') is a recognized subset of the consensus primary meaning; it does not replace the category but narrows its extension to one of the two options already admitted by the consensus.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus primary meaning is broader (includes imputed righteousness and salvation); book entry ignores other 19:8 interpretations and the multivalent uses of garment imagery.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"The blind consensus identifies the primary symbolic meaning of a garment as a person’s spiritual state or standing before God—especially righteousness and salvation. Clean/white/fine garments represent righteousness (imputed by God/Christ or the righteous deeds of the saints), salvation, and acceptance; filthy/soiled garments represent sin and guilt. Core texts repeatedly cited are Isa 61:10, Zech 3:3-5, Matt 22:11-12, Rev 19:8, Gal 3:27 and related white-robe passages. Alternatives (status/office, old/new self, body/resurrection, readiness, covering of shame) are recognized as common or minority but secondary. A noted intra-consensus debate exists specifically on whether Rev 19:8’s fine linen is imputed righteousness or the saints’ deeds.\",\n  \"book_summary\": \"The book entry defines garment simply as “Righteousness — the righteous acts of the saints,” citing only Rev 19:8 (ASV/KJV fine linen = righteousness of saints) and cross-referencing a later chapter on garments & armor.\",\n  \"consensus_core_identification\": \"spiritual standing/righteousness before God (imputed or deeds)\",\n  \"book_core_identification\": \"righteousness as the righteous acts of the saints\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book restricts the garment-of-righteousness sense exclusively to the saints’ own righteous acts, excluding or sidelining the equally common consensus reading of imputed/divine righteousness or covering for sin as itself the garment.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"Minimum cores share the same central referent (righteousness). The book does not replace that referent; it merely selects and hardens one side of the well-attested Rev 19:8 debate already noted inside the consensus, thereby narrowing the extension of cases the symbol is allowed to cover. Differences are therefore boundary/precision refinements, not a contradictory core or novel identification. The single printed citation is the exact verse that licenses the book’s phrasing, so support is strong for the narrowed claim even while the claim itself is narrower than the consensus primary.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus primary meaning is broader (encompassing imputed righteousness, salvation, and divine covering) and treats the deeds-only reading of Rev 19:8 as one optional pole of an intra-consensus debate rather than the exclusive definition of the symbol.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_e53ded1c-eba9-956f-9c17-b598f7d76650",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4596,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2928,
+    "output_tokens_details": {
+      "reasoning_tokens": 2351
+    },
+    "total_tokens": 7524,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 259920000,
+    "context_details": {
+      "input_tokens": 4596,
+      "output_tokens": 2928
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919378,
+  "completed_at": 1783919391,
+  "id": "0e400f97-f238-972e-8b4c-f37d78b9b78f",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0e400f97-f238-972e-8b4c-f37d78b9b78f",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Beast, wild animal\" in biblical symbolism. I must return only a JSON object matching the specified schema.\n{\n  \"primary_symbolic_meaning\": \"The Beast, or wild animal, most commonly symbolizes the Antichrist or a satanic-empowered political power or empire that opposes God and persecutes his people.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"An antichristian empire, ruler, or system of political/religious power opposed to God and empowered by Satan (commonly identified as the Antichrist or his kingdom)\",\n  \"primary_basis\": [\n    \"Revelation 13:1-18\",\n    \"Revelation 17:3-17\",\n    \"Revelation 19:19-20\",\n    \"Daniel 7:1-28\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The historical Roman Empire (or a specific emperor such as Nero)\",\n      \"basis\": [\n        \"Revelation 13\",\n        \"Revelation 17 (seven heads/hills)\",\n        \"Daniel 7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A future end-times world leader, dictatorship, or one-world government\",\n      \"basis\": [\n        \"Revelation 13\",\n        \"2 Thessalonians 2:3-12\",\n        \"Daniel 7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The papacy or institutional Roman Catholic Church as a continuing antichristian power\",\n      \"basis\": [\n        \"Revelation 13\",\n        \"Revelation 17\",\n        \"Daniel 7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Symbolic of human kingdoms, worldly power, or chaos in general (idealist reading)\",\n      \"basis\": [\n        \"Daniel 7\",\n        \"Revelation 13\",\n        \"Psalm 74:13-14\",\n        \"Isaiah 27:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal wild animals or merely natural ferocity without further political/eschatological reference\",\n      \"basis\": [\n        \"Genesis 1-2\",\n        \"various OT animal imagery\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Apocalyptic beasts (therion) are widely agreed to represent hostile powers rather than ordinary animals, but no single historical or future referent commands consensus across preterist, historicist, futurist, and idealist schools of Christian interpretation.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0e400f97-f238-972e-8b4c-f37d78b9b78f",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1425,
+    "output_tokens_details": {
+      "reasoning_tokens": 909
+    },
+    "total_tokens": 2030,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 97600000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1425
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

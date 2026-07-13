@@ -1,0 +1,173 @@
+{
+  "id": "resp_0a740a6ef1fcbfd5006a5475cbd830819599e66128af35995c",
+  "object": "response",
+  "created_at": 1783920075,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920099,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a740a6ef1fcbfd5006a5475cca6608195a85136d9c901cc87",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a740a6ef1fcbfd5006a5475d652ec819582da85b128262060",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"God’s covenant people: a people chosen, formed, and called by God to belong to him, bear witness to him, and mediate his blessing. In Christian symbolism, “Israel” therefore commonly represents the people of God, although Christians disagree sharply over whether this designation refers primarily to ethnic Israel, the church, or both in different senses.\",\"primary_basis\":[\"Genesis 32:28 — Jacob receives the name Israel, from whom the people derive their name.\",\"Exodus 4:22 — Israel is called God’s firstborn son.\",\"Exodus 19:5–6 — Israel is designated God’s treasured possession, a kingdom of priests, and a holy nation.\",\"Deuteronomy 7:6–8 — Israel is described as a people chosen and loved by God.\",\"Isaiah 41:8–10; 49:3–6 — Israel is portrayed as God’s servant and witness, with a mission extending to the nations.\",\"Romans 9:6–8; 11:1–29 — Paul distinguishes physical descent from covenant identity while also affirming an enduring significance for Israel.\",\"Galatians 6:16 — “the Israel of God,” whose precise referent is disputed.\",\"1 Peter 2:9–10 — titles originally applied to Israel are applied to Christian communities.\"],\"alternatives\":[{\"meaning\":\"Ethnic or national Israel—the descendants of Jacob—remains the primary referent and retains a distinct covenantal and eschatological role alongside the predominantly Gentile church.\",\"basis\":[\"Genesis 35:10–12\",\"Jeremiah 31:35–37\",\"Ezekiel 36:22–28\",\"Romans 9–11, especially 11:25–29\"],\"prominence\":\"common\"},{\"meaning\":\"The church is the renewed, expanded, or “spiritual” Israel, inheriting Israel’s covenant identity and vocation through union with Christ; stronger forms treat the church as replacing national Israel.\",\"basis\":[\"Matthew 21:43\",\"Romans 2:28–29\",\"Romans 9:6–8\",\"Galatians 3:7–29; 6:16\",\"Ephesians 2:11–22\",\"1 Peter 2:9–10\"],\"prominence\":\"common\"},{\"meaning\":\"Jesus Christ is the representative or faithful Israelite who embodies Israel’s sonship, servant vocation, testing, and mission; those united to him participate in that identity.\",\"basis\":[\"Matthew 2:15\",\"Matthew 4:1–11\",\"Luke 3:21–4:13\",\"John 15:1–6\",\"Isaiah 49:3–6\"],\"prominence\":\"minority\"},{\"meaning\":\"Israel functions eschatologically as a symbol or pattern of the final redeemed people of God, sometimes incorporating both restored Israel and the multinational church.\",\"basis\":[\"Isaiah 2:2–4\",\"Ezekiel 37:15–28\",\"Revelation 7:4–9\",\"Revelation 21:12–14\"],\"prominence\":\"common\"},{\"meaning\":\"Israel’s history symbolizes the individual Christian’s spiritual journey—from bondage through testing to inheritance.\",\"basis\":[\"1 Corinthians 10:1–11\",\"Hebrews 3:7–4:11\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is broad consensus that Israel signifies God’s covenant people, but no settled Christian consensus identifies the precise scope of that symbolism. Major traditions differ over the continuing status of ethnic Israel, the church’s relation to Israel, and whether “Israel” can properly designate the church.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1242,
+    "output_tokens_details": {
+      "reasoning_tokens": 486
+    },
+    "total_tokens": 1559
+  },
+  "user": null,
+  "metadata": {}
+}

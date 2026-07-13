@@ -1,0 +1,195 @@
+{
+  "id": "resp_0bf8d7ebf8d42f01006a547993cc008193b756ea93379d0700",
+  "object": "response",
+  "created_at": 1783921043,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921051,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0bf8d7ebf8d42f01006a547994498c819397cb65aa9e1e558d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0bf8d7ebf8d42f01006a54799671808193bce3bf499845074d",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"Chaff chiefly symbolizes the wicked or ungodly as spiritually insubstantial and worthless, separated from the righteous and scattered or burned in divine judgment.\",\"book_summary\":\"Chaff is the empty husk removed from grain in winnowing and symbolizes the wicked as weightless, rootless, wind-driven, and ultimately burned; it is distinct from tares.\",\"consensus_core_identification\":\"Chaff represents the wicked under divine judgment.\",\"book_core_identification\":\"Chaff represents the wicked, pictured as useless husks winnowed away and burned.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"None material. The warning not to confuse chaff with tares clarifies the agricultural image rather than excluding a case accepted by the consensus; the consensus itself recognizes that distinction.\",\"material_contradiction\":\"None. Both identify chaff with the wicked or ungodly who are separated and judged.\",\"rationale\":\"The minimum core identifications are identical. The book’s descriptors—empty, weightless, rootless, blown away, and burned—unpack the same winnowing and judgment imagery emphasized by all consensus responses. Its distinction between chaff and tares is compatible with, and explicitly anticipated by, the consensus rather than a substantive refinement.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The book compresses the symbol into two prominent judgment passages and does not mention context-specific extensions such as hostile nations, transience, or false teaching. However, those are secondary applications and their omission does not alter the shared primary identification.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3384,
+    "input_tokens_details": {
+      "cache_write_tokens": 3381,
+      "cached_tokens": 0
+    },
+    "output_tokens": 465,
+    "output_tokens_details": {
+      "reasoning_tokens": 123
+    },
+    "total_tokens": 3849
+  },
+  "user": null,
+  "metadata": {}
+}

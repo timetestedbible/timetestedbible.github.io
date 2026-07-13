@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919631,
+  "completed_at": 1783919653,
+  "id": "f2905f13-cf6f-9a54-9123-cbddb3ea635d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_f2905f13-cf6f-9a54-9123-cbddb3ea635d",
+      "summary": [
+        {
+          "text": "The task is about the symbolic meaning of \"Day\" in Christian teaching and biblical interpretation. I need to respond with a specific JSON format.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Light, righteousness, divine presence/truth, or the sphere of godly living (in explicit contrast to night as darkness, evil, or ignorance)\",\n  \"primary_basis\": [\n    \"1 Thessalonians 5:4-8\",\n    \"Romans 13:12-13\",\n    \"John 9:4; 11:9-10\",\n    \"Ephesians 5:8\",\n    \"Genesis 1:3-5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The eschatological 'Day of the Lord' as a climactic time of divine judgment and/or salvation\",\n      \"basis\": [\n        \"Isaiah 13:6,9\",\n        \"Joel 2:1,11,31\",\n        \"Amos 5:18-20\",\n        \"Zephaniah 1:14-18\",\n        \"1 Thessalonians 5:2\",\n        \"2 Peter 3:10\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"A prophetic year (day-year principle of interpretation)\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A thousand years in divine reckoning\",\n      \"basis\": [\n        \"2 Peter 3:8\",\n        \"Psalm 90:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An indefinite age or long creative/era period (day-age readings of Genesis)\",\n      \"basis\": [\n        \"Genesis 1\",\n        \"2 Peter 3:8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Symbolic uses of 'day' are strongly context-dependent across Christian tradition and biblical studies; the light/righteousness contrast is the most basic and widespread single motif, while 'Day of the Lord,' day-year, and day=1000 years readings are frequent in specific genres (prophecy, eschatology, creation debates) without a single overarching consensus that covers every occurrence.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_f2905f13-cf6f-9a54-9123-cbddb3ea635d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2078,
+    "output_tokens_details": {
+      "reasoning_tokens": 1566
+    },
+    "total_tokens": 2680,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 129040000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 2078
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

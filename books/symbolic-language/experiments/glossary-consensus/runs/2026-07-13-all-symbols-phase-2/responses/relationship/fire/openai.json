@@ -1,0 +1,195 @@
+{
+  "id": "resp_091821e81fcd0089006a547ab0e3948194a0749b7908df13a4",
+  "object": "response",
+  "created_at": 1783921328,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921345,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_091821e81fcd0089006a547ab148b081948290b13a9c75b0b0",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_091821e81fcd0089006a547aba3a948194909a660abd888408",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Fire centrally signifies God’s holy, consuming presence, expressed in judgment, purification, preservation, testing, and sometimes other context-specific senses such as the Holy Spirit or final punishment.\",\"book_summary\":\"Fire is always God’s own consuming presence rather than a place or chamber; that one presence preserves, refines, or consumes according to whether its object is spiritually “covered.”\",\"consensus_core_identification\":\"God’s holy and consuming presence, especially as judgment against evil and purification of what is preserved.\",\"book_core_identification\":\"God’s own consuming presence encountered by persons or things, with differing effects determined by covering.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book consolidates preservation in the furnace, refinement, and consumption under one invariant referent and rejects treating fire as a chamber or independent punitive realm. It also introduces “covering” as the decisive condition separating preservation from consumption. Consensus permits these effects but ordinarily treats them as distinct contextual senses and also admits fire as imagery for hell, Spirit, trials, or the divine word.\",\"material_contradiction\":\"There is no contradiction at the central identification: both identify fire with God’s holy, consuming presence and its purifying or judging action. The material disagreement concerns whether all relevant cases must be reclassified as encounters with that presence and whether covering universally determines the outcome.\",\"rationale\":\"The book closely preserves the consensus core, especially the formula that divine fire consumes evil while purifying or preserving what belongs to God. It nevertheless makes a substantive boundary claim by declaring fire “never a chamber, always the encounter” and by imposing a single covering-based explanation across consuming, refining, and preserving cases. That is a refinement rather than a replacement or a novel identification.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited texts strongly support divine presence, consumption, refinement, and preservation, but none explicitly identifies “covering” as the universal controlling condition or proves that fire can never denote a punitive place. The entry’s unifying boundary claim therefore goes beyond what its printed citations alone establish.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4336,
+    "input_tokens_details": {
+      "cache_write_tokens": 4333,
+      "cached_tokens": 0
+    },
+    "output_tokens": 828,
+    "output_tokens_details": {
+      "reasoning_tokens": 381
+    },
+    "total_tokens": 5164
+  },
+  "user": null,
+  "metadata": {}
+}

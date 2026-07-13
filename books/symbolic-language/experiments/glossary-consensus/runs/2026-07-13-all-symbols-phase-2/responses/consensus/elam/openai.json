@@ -1,0 +1,173 @@
+{
+  "id": "resp_06d6da268dd1024c006a5474481a708197bf3edffe9925e14e",
+  "object": "response",
+  "created_at": 1783919688,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919703,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_06d6da268dd1024c006a54744900d08197a43c9a414269f3a4",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_06d6da268dd1024c006a54744e9c348197b3d93ba5603889a5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Elam has no settled, term-specific symbolic meaning in Christian interpretation. It is primarily understood historically and geographically as the ancient people and territory east of Mesopotamia, associated with a son of Shem and later with the region of Persia/Iran.\",\"primary_basis\":[\"Genesis 10:22; 1 Chronicles 1:17 — Elam is named as a son or descendant-line of Shem.\",\"Genesis 14:1,9 — Chedorlaomer is identified as king of Elam.\",\"Isaiah 21:2; 22:6 — Elam appears as a historical military power involved in judgment and warfare.\",\"Jeremiah 49:34-39 — prophecy of judgment against Elam followed by eventual restoration.\",\"Daniel 8:2 — Elam is the province containing Susa.\",\"Acts 2:9 — Elamites are among the historical peoples present at Pentecost.\"],\"alternatives\":[{\"meaning\":\"Elam can exemplify a foreign nation brought under divine judgment and subsequently promised restoration.\",\"basis\":[\"Jeremiah 49:34-39, especially the breaking of Elam's bow, scattering among nations, and latter-days restoration.\",\"Isaiah 21:2 and 22:6, where Elam participates in military judgment.\"],\"prominence\":\"common\"},{\"meaning\":\"The Elamites at Pentecost contribute to the broader symbolism of the gospel reaching many nations and reversing human division; Elam itself is not usually treated as a distinct symbol.\",\"basis\":[\"Acts 2:5-11, particularly Acts 2:9.\",\"Often read alongside Genesis 11:1-9 as a thematic contrast with Babel.\"],\"prominence\":\"common\"},{\"meaning\":\"Elam prophetically represents modern Iran or Persia, sometimes in end-times interpretation.\",\"basis\":[\"The historical location of Elam in territory now largely within Iran.\",\"Jeremiah 49:34-39, especially the phrase “in the latter days.”\",\"Occasional association with Daniel's Persian setting and other prophetic texts.\"],\"prominence\":\"minority\"},{\"meaning\":\"Elam carries an allegorical meaning derived from proposed name meanings such as “hidden,” “distant,” “eternity,” or “youth,” and therefore symbolizes hiddenness, remoteness, or an age-related spiritual condition.\",\"basis\":[\"Name-based typological or devotional interpretation rather than a consistent biblical usage.\",\"Competing proposed etymologies prevent a stable interpretation.\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Interpretations of Elam are strongly context-dependent. Mainstream historical-critical and ordinary Christian readings treat it as a real people and place, not as a fixed biblical symbol. Judgment, restoration, international gospel inclusion, and modern-Iran readings arise from particular passages but do not constitute a universally recognized symbolic definition.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 872,
+    "output_tokens_details": {
+      "reasoning_tokens": 281
+    },
+    "total_tokens": 1190
+  },
+  "user": null,
+  "metadata": {}
+}

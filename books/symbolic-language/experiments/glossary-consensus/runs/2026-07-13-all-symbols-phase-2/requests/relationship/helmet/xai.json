@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "helmet",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHelmet of salvation\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"The 'helmet of salvation' is most commonly interpreted as the believer's assurance (or confident hope) of salvation in Christ, which protects the mind and thoughts—especially against doubt, despair, discouragement, and accusation—just as a literal helmet protects a soldier's head. In mainstream teaching it represents salvation received as a gift from God ('take' the helmet) that guards the believer's thinking and secures hope of final deliverance in spiritual warfare.\",\n  \"primary_basis\": [\n    \"Ephesians 6:17 ('Take the helmet of salvation...')\",\n    \"1 Thessalonians 5:8 ('...and for a helmet, the hope of salvation')\",\n    \"Isaiah 59:17 (the LORD puts on 'a helmet of salvation on his head'), widely cited as the Old Testament source of the image\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eschatological hope of future/final salvation: emphasizing 1 Thessalonians 5:8, the helmet is specifically the forward-looking hope of ultimate deliverance at Christ's return, rather than assurance of present salvation.\",\n      \"basis\": [\n        \"1 Thessalonians 5:8\",\n        \"Romans 8:23-25\",\n        \"1 Peter 1:3-5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine warrior motif: the armor, including the helmet, is originally God's own armor (Isaiah 59:17; cf. Isaiah 11:5; 49:2), which God/the Messiah wears to bring salvation and which is then bestowed on believers; the emphasis is on participation in God's own strength rather than a personal psychological assurance. Prominent in academic/exegetical commentary.\",\n      \"basis\": [\n        \"Isaiah 59:17\",\n        \"Isaiah 11:4-5\",\n        \"Ephesians 6:10-11\",\n        \"Wisdom of Solomon 5:17-20 (background text often cited by scholars)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Protection of the mind/thought life: a devotional-homiletical emphasis that the helmet guards the believer's mind against Satan's attacks—doubt, condemnation, false teaching, despair—stressing renewed thinking.\",\n      \"basis\": [\n        \"Ephesians 6:17\",\n        \"Romans 12:2\",\n        \"2 Corinthians 10:4-5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Salvation as Christ himself: the helmet is Christ or union with Christ, so putting on the armor equals putting on Christ; found in some patristic and devotional writers.\",\n      \"basis\": [\n        \"Romans 13:12-14\",\n        \"Ephesians 6:17\",\n        \"Galatians 3:27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Ecclesial/corporate reading: the armor, including the helmet, is given to the church corporately for its collective stand against evil powers, not primarily to individuals; emphasized by some modern scholars (e.g., readings stressing the corporate context of Ephesians).\",\n      \"basis\": [\n        \"Ephesians 6:10-18 read with Ephesians 1-3 corporate themes\",\n        \"Ephesians 3:10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad, recognizable consensus that the helmet symbolizes salvation—received as God's gift—functioning as protection for the believer, with the main interpretive variation being emphasis: present assurance of salvation versus future hope of salvation (driven by the 1 Thessalonians 5:8 parallel), and individual-psychological versus divine-warrior/corporate framings. These are differences of emphasis within a stable core rather than competing identifications. Isaiah 59:17 is almost universally acknowledged as Paul's source imagery. Roman soldier background details (the galea helmet) are common in popular teaching but are illustrative rather than a distinct interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The believer's assurance and present possession of salvation, as well as the future hope of final deliverance, which protects the mind and spiritual life from doubt and demonic attack.\",\n  \"primary_basis\": [\n    \"Ephesians 6:17\",\n    \"1 Thessalonians 5:8\",\n    \"Isaiah 59:17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Protection of the intellect and thoughts from false doctrine, despair, and deception.\",\n      \"basis\": [\n        \"Ephesians 6:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Strictly eschatological hope, focusing on the ultimate, future realization of salvation and deliverance from God's wrath.\",\n      \"basis\": [\n        \"1 Thessalonians 5:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The divine warrior's armor, symbolizing God's own victory, vindication, and saving power applied to His people.\",\n      \"basis\": [\n        \"Isaiah 59:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Interpretation is highly stable and stems from Paul's Armor of God metaphor. While academic commentary heavily emphasizes the Old Testament divine warrior roots from Isaiah and the eschatological hope of 1 Thessalonians, pastoral teaching often allegorizes the helmet as psychological or intellectual protection for the believer's mind against spiritual doubt.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s salvation protects the believer’s mind, confidence, and hope against spiritual attack, especially doubt, fear, and discouragement. The helmet commonly symbolizes receiving and maintaining assurance or hope of salvation as part of God’s spiritual armor.\",\n  \"primary_basis\": [\n    \"Ephesians 6:17 — believers are told to take “the helmet of salvation” as part of the armor of God.\",\n    \"1 Thessalonians 5:8 — Paul explicitly describes the helmet as “the hope of salvation,” strongly supporting the emphasis on confident, future-oriented hope.\",\n    \"Isaiah 59:17 — God, portrayed as a divine warrior, puts “a helmet of salvation on his head”; this is the principal Old Testament background for Paul’s imagery.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The helmet represents salvation itself as God’s objective gift and saving power, rather than primarily the believer’s subjective assurance or mental state.\",\n      \"basis\": [\n        \"Ephesians 6:17 calls it the helmet “of salvation” without explicitly mentioning the mind.\",\n        \"Isaiah 59:17 presents salvation as part of God’s own victorious armor.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The helmet primarily represents eschatological hope: confidence in final deliverance at Christ’s return rather than assurance of one’s present conversion or general protection of thoughts.\",\n      \"basis\": [\n        \"1 Thessalonians 5:8 identifies the helmet specifically as “the hope of salvation.”\",\n        \"The surrounding context of 1 Thessalonians 5:1–11 concerns the day of the Lord and final deliverance.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The image signifies participation in or appropriation of the divine warrior’s armor: believers stand in protection and victory supplied by God, rather than generating their own defensive strength.\",\n      \"basis\": [\n        \"Isaiah 59:17 originally depicts God himself wearing the helmet.\",\n        \"Ephesians 6:10–17 repeatedly emphasizes strength “in the Lord” and armor belonging to or supplied by God.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The helmet specifically means disciplined control of thoughts, doctrinal knowledge, or a renewed mind.\",\n      \"basis\": [\n        \"The helmet protects the head, leading interpreters to associate it with mental life.\",\n        \"Romans 12:2 and 2 Corinthians 10:5 are sometimes connected thematically, though neither identifies the helmet this way.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled broad consensus that the helmet symbolizes the protective effect of God’s salvation—especially assurance and hope—in spiritual conflict. Interpretation is less settled on whether the primary emphasis is present assurance, future salvation, protection of the mind, or the objective saving power of God.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Assurance/hope of salvation that protects the believer’s mind (thoughts, confidence, and resolve) against doubt, despair, and spiritual attack, as a piece of the Armor of God\",\n  \"primary_basis\": [\n    \"Ephesians 6:17\",\n    \"1 Thessalonians 5:8\",\n    \"Isaiah 59:17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Specifically the ‘hope of salvation’ (future-oriented confidence in deliverance) rather than present assurance of salvation already received\",\n      \"basis\": [\n        \"1 Thessalonians 5:8 wording\",\n        \"eschatological emphasis in some Protestant and evangelical expositions\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ’s own salvific work or divine warrior imagery applied to the believer (God’s helmet transferred to the Christian)\",\n      \"basis\": [\n        \"Isaiah 59:17\",\n        \"christological readings of the armor\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"General readiness or sobriety of the Christian soldier without special emphasis on mental protection\",\n      \"basis\": [\n        \"broader Armor-of-God metaphors in Ephesians 6\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Virtually all mainstream Christian traditions (patristic, medieval, Reformation, modern evangelical/Catholic) treat the phrase as part of the Ephesians 6 spiritual-armor catalogue and link it to mental/spiritual protection via salvation; the main variation is only whether the accent falls on present assurance or future hope.\"\n}\n\nBOOK ENTRY\nThe head covered with yeshuah — Yeshua: God's own war-dress, put on when there was no man, and lent to the soldier; David's form of it — “thou hast covered my head in the day of battle.” The head of every man is Christ, and the counterfeit is issued for the same forehead.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 59:16-17; Eph 6:11, 17; Ps 140:7; 1 Cor 11:3; 1 Thess 5:8; Rev 22:4) · see Garments & Armor, ch. 43\n\nAVAILABLE KJV EXCERPTS\nIsaiah 59:16 — And he saw that there was no man, and wondered that there was no intercessor: therefore his arm brought salvation unto him; and his righteousness, it sustained him.\nIsaiah 59:17 — For he put on righteousness as a breastplate, and an helmet of salvation upon his head; and he put on the garments of vengeance for clothing, and was clad with zeal as a cloke.\nEphesians 6:11 — Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.\nEphesians 6:17 — And take the helmet of salvation, and the sword of the Spirit, which is the word of God:\nPsalms 140:7 — O GOD the Lord, the strength of my salvation, thou hast covered my head in the day of battle.\n1 Corinthians 11:3 — But I would have you know, that the head of every man is Christ; and the head of the woman is the man; and the head of Christ is God.\n1 Thessalonians 5:8 — But let us, who are of the day, be sober, putting on the breastplate of faith and love; and for an helmet, the hope of salvation.\nRevelation 22:4 — And they shall see his face; and his name shall be in their foreheads.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "52641a576e5ab43ed4f14029106076d6e1380e3219ddd33b3aeae5ec129a65d9",
+  "cache": {
+    "hit": false
+  }
+}

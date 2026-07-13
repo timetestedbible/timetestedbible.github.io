@@ -1,0 +1,173 @@
+{
+  "id": "resp_08d5f071cd4bf9f4006a547725fa948197af37ad0d650db088",
+  "object": "response",
+  "created_at": 1783920422,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920441,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_08d5f071cd4bf9f4006a54772713048197bfd9ae32f4c193cc",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_08d5f071cd4bf9f4006a54772e8fc08197960876406f9b89b5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The “remnant” most commonly symbolizes the surviving and often faithful portion of God’s covenant people whom God preserves through judgment, exile, apostasy, or calamity and from whom the community is renewed or restored.\",\"primary_basis\":[\"Isaiah 10:20–22 — a remnant of Israel returns and relies faithfully on the Lord.\",\"Isaiah 11:11–16 — God gathers the remnant of his people from dispersion.\",\"Isaiah 37:31–32 — the surviving remnant of Judah takes root and bears fruit.\",\"Micah 2:12; 5:7–8 — the remnant of Israel is gathered and preserved among the nations.\",\"Zephaniah 3:12–13 — a humble, purified remnant trusts in the Lord.\",\"Ezra 9:8, 13–15 — the postexilic community is described as a remnant spared by God.\",\"Romans 9:27–29 — Paul applies Isaiah’s remnant language to the portion of Israel that is saved.\",\"Romans 11:1–5 — Paul speaks of a remnant chosen by grace, using Elijah’s faithful minority as a pattern.\",\"1 Kings 19:18 — God preserves seven thousand in Israel who have not worshiped Baal.\"],\"alternatives\":[{\"meaning\":\"A historically surviving population after war, exile, plague, or judgment, without necessarily implying exceptional faithfulness or spiritual purity.\",\"basis\":[\"2 Kings 19:30–31\",\"2 Chronicles 34:21\",\"Jeremiah 42:2\",\"Ezekiel 5:3\"],\"prominence\":\"common\"},{\"meaning\":\"The preserved Jewish people or faithful portion of Israel, especially in relation to Israel’s continuing election and anticipated restoration.\",\"basis\":[\"Isaiah 11:11–16\",\"Jeremiah 23:3\",\"Romans 9:27–29\",\"Romans 11:1–7, 25–29\"],\"prominence\":\"common\"},{\"meaning\":\"A faithful minority within the visible church during periods of widespread apostasy, corruption, or persecution.\",\"basis\":[\"1 Kings 19:18 as a typological pattern\",\"Romans 11:2–5\",\"Revelation 2–3\"],\"prominence\":\"common\"},{\"meaning\":\"A distinct end-time body of believers characterized by obedience to God’s commandments and testimony to Jesus; some traditions identify this with a particular denomination or movement.\",\"basis\":[\"Revelation 12:17, especially translations using “remnant”\",\"Revelation 14:12\"],\"prominence\":\"minority\"},{\"meaning\":\"The postexilic Judean community or returned exiles specifically, rather than a transhistorical spiritual category.\",\"basis\":[\"Ezra 9:8, 13–15\",\"Nehemiah 1:3\",\"Haggai 1:12, 14\"],\"prominence\":\"common\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus on the core idea of a people preserved by God through crisis or judgment. Interpretation is less settled concerning the remnant’s precise identity, whether it is necessarily faithful, and whether the term refers primarily to Israel, the church, a historical group of survivors, or an end-time community.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1023,
+    "output_tokens_details": {
+      "reasoning_tokens": 345
+    },
+    "total_tokens": 1341
+  },
+  "user": null,
+  "metadata": {}
+}

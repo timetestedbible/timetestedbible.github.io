@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "tree",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nTree\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching a tree most commonly symbolizes a person (or a people) whose inner spiritual condition is made visible in outward 'fruit' — especially the righteous person who, rooted in God, flourishes like a well-watered tree. Closely intertwined with this is the tree as a symbol of God-given life itself, epitomized by the Tree of Life.\",\n  \"primary_basis\": [\n    \"Psalm 1:3 (the righteous like a tree planted by streams of water)\",\n    \"Jeremiah 17:7-8 (the one who trusts in the LORD is like a tree planted by water)\",\n    \"Psalm 92:12-14 (the righteous flourish like the palm tree)\",\n    \"Matthew 7:17-20 / Luke 6:43-44 (a tree is known by its fruit)\",\n    \"Matthew 3:10 (every tree not bearing good fruit is cut down)\",\n    \"Isaiah 61:3 (oaks of righteousness, the planting of the LORD)\",\n    \"Genesis 2:9 and Revelation 22:2 (the Tree of Life)\",\n    \"Proverbs 3:18; 11:30 (wisdom and the fruit of the righteous as a tree of life)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Tree of Life as a distinct symbol of eternal life, paradise restored, and (in much Christian exegesis) Christ himself or the cross as the means of restored life.\",\n      \"basis\": [\n        \"Genesis 2:9; 3:22-24\",\n        \"Revelation 2:7; 22:2, 14\",\n        \"Proverbs 3:18\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The cross of Christ referred to as 'the tree,' linking crucifixion to the curse of hanging on a tree and to redemption.\",\n      \"basis\": [\n        \"Acts 5:30; 10:39; 13:29\",\n        \"Galatians 3:13 (citing Deuteronomy 21:22-23)\",\n        \"1 Peter 2:24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Great trees as symbols of kingdoms, empires, or proud rulers — exalted, sheltering many, and cut down in judgment.\",\n      \"basis\": [\n        \"Daniel 4:10-26 (Nebuchadnezzar's tree)\",\n        \"Ezekiel 17:22-24; 31:3-14 (Assyria/Egypt as cedars)\",\n        \"Judges 9:8-15 (Jotham's parable of the trees)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fig tree (and sometimes the olive tree or vine) as a symbol of Israel, its fruitfulness or barrenness signaling covenant faithfulness or judgment.\",\n      \"basis\": [\n        \"Mark 11:12-21 / Matthew 21:18-19 (cursing of the fig tree)\",\n        \"Luke 13:6-9 (parable of the barren fig tree)\",\n        \"Hosea 9:10; Jeremiah 8:13\",\n        \"Romans 11:16-24 (the olive tree and grafted branches)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The mustard seed growing into a tree as a picture of the kingdom of God's growth (variously read positively as expansive growth or, in a minority reading, as abnormal/compromised growth).\",\n      \"basis\": [\n        \"Matthew 13:31-32\",\n        \"Mark 4:30-32\",\n        \"Luke 13:18-19\",\n        \"Ezekiel 17:23; Daniel 4:12 (birds nesting in branches as background imagery)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Trees as sites or symbols of idolatry and false worship ('under every green tree,' Asherah poles), so that the tree stands for pagan cult practice.\",\n      \"basis\": [\n        \"Deuteronomy 12:2; 16:21\",\n        \"1 Kings 14:23; 2 Kings 17:10\",\n        \"Jeremiah 2:20; 3:6; Isaiah 57:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Esoteric or heavily allegorized readings, e.g., the tree of the knowledge of good and evil as sexuality, or 'trees' in prophetic texts decoded as specific angelic/human figures; found in fringe or sectarian interpretation rather than mainstream scholarship.\",\n      \"basis\": [\n        \"Genesis 3 (allegorized)\",\n        \"Ezekiel 31 (allegorized)\",\n        \"Mark 8:24 ('I see men as trees, walking,' sometimes symbolically pressed)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"'Tree' is a genuinely polyvalent biblical image, and standard reference works (e.g., dictionaries of biblical imagery) treat it under several heads rather than one fixed meaning. There is broad consensus on a cluster of recognized senses — the righteous person known by fruit, the Tree of Life, the cross, kingdoms/rulers, and Israel as fig/olive tree — but no single settled symbolic meaning covering all occurrences. Context (Genesis, Psalms/wisdom, prophets, Gospels, Revelation) determines which sense interpreters apply. Any author claiming that 'tree' carries one uniform coded meaning across Scripture would be going beyond recognizable mainstream consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Eternal life, spiritual flourishing, and the Cross of Christ, often linking the Tree of Life in Eden to the cross of Calvary and the New Jerusalem.\",\n  \"primary_basis\": [\n    \"Genesis 2:9\",\n    \"1 Peter 2:24\",\n    \"Acts 5:30\",\n    \"Revelation 22:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Individual believers or human beings, whose spiritual state is represented by their health, location near water, and fruitfulness.\",\n      \"basis\": [\n        \"Psalm 1:3\",\n        \"Jeremiah 17:7-8\",\n        \"Matthew 7:17-19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Earthly kingdoms, empires, or rulers, whose power and shelter are depicted as a massive, overarching tree.\",\n      \"basis\": [\n        \"Daniel 4:10-12\",\n        \"Ezekiel 31:3-9\",\n        \"Matthew 13:31-32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine wisdom, which brings life and flourishing to those who embrace it.\",\n      \"basis\": [\n        \"Proverbs 3:18\",\n        \"Proverbs 11:30\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The tree is a foundational biblical symbol. It creates a structural bookend in Scripture from the Tree of Life in Genesis to the Tree of Life in Revelation, with the cross of Christ frequently identified as the redemptive tree bridging the two.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Life, flourishing, rootedness, and fruitfulness under God. In Christian teaching, a thriving tree commonly represents a person or community sustained by God and producing good fruit; the tree of life intensifies this symbolism into divine or eternal life.\",\n  \"primary_basis\": [\n    \"Genesis 2:9; 3:22–24 — the tree of life in Eden\",\n    \"Psalm 1:1–3 — the righteous person as a tree planted by streams, bearing fruit\",\n    \"Proverbs 3:18; 11:30; 13:12; 15:4 — wisdom and righteousness described as a tree of life\",\n    \"Jeremiah 17:7–8 — the person who trusts in the Lord as a fruitful, well-watered tree\",\n    \"Ezekiel 47:12 — life-giving trees whose fruit is food and leaves bring healing\",\n    \"Matthew 7:17–20; 12:33 — trees and fruit as images of character and conduct\",\n    \"Revelation 2:7; 22:1–2,14 — the tree of life associated with paradise, healing, and eternal life\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An individual person, ruler, nation, or empire, especially one characterized by stature, influence, prosperity, or downfall.\",\n      \"basis\": [\n        \"Judges 9:7–15 — trees represent rulers in Jotham’s parable\",\n        \"Psalm 37:35 — the wicked person compared to a flourishing tree\",\n        \"Ezekiel 17:22–24; 31:3–14 — trees symbolize kingdoms and imperial power\",\n        \"Daniel 4:10–27 — the great tree represents Nebuchadnezzar and his kingdom\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s kingdom growing from small beginnings into expansive shelter.\",\n      \"basis\": [\n        \"Matthew 13:31–32; Mark 4:30–32; Luke 13:18–19 — the mustard seed becomes a tree in which birds nest\",\n        \"Ezekiel 17:22–24 — God plants a lofty tree that shelters birds\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral character revealed by its fruit; a good or bad tree represents a good or corrupt person, teacher, or community.\",\n      \"basis\": [\n        \"Matthew 3:10; 7:15–20; 12:33\",\n        \"Luke 3:9; 6:43–45\",\n        \"Jude 12 — fruitless trees used for condemned teachers\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel or the covenant people, often represented by an olive tree or fig tree and subject to cultivation, pruning, judgment, or restoration.\",\n      \"basis\": [\n        \"Hosea 9:10,16 — Israel likened to fruit and a stricken root\",\n        \"Matthew 21:18–22; Mark 11:12–21 — the barren fig tree, commonly read in relation to Israel or its leadership\",\n        \"Luke 13:6–9 — the unfruitful fig tree\",\n        \"Romans 11:16–24 — cultivated and wild olive branches representing covenant inclusion and exclusion\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The cross of Christ, especially when New Testament texts call the instrument of crucifixion a 'tree'; later Christian tradition also contrasts the cross with Eden’s trees.\",\n      \"basis\": [\n        \"Deuteronomy 21:22–23 — one hanged on a tree is under a curse\",\n        \"Acts 5:30; 10:39; 13:29\",\n        \"Galatians 3:13\",\n        \"1 Peter 2:24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Forbidden knowledge, disobedience, and humanity’s attempt to determine good and evil apart from God, specifically through the tree of the knowledge of good and evil.\",\n      \"basis\": [\n        \"Genesis 2:9,16–17; 3:1–24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judgment, barrenness, mortality, or destruction when a tree is fruitless, cut down, uprooted, or withered.\",\n      \"basis\": [\n        \"Isaiah 10:33–34\",\n        \"Daniel 4:14,23\",\n        \"Matthew 3:10; 21:18–22\",\n        \"Luke 13:6–9\",\n        \"Jude 12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom or Torah as a source of life and blessing.\",\n      \"basis\": [\n        \"Proverbs 3:18; 11:30; 13:12; 15:4\",\n        \"Psalm 1:1–3, often interpreted in relation to meditation on God’s law\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for the generic term 'tree.' Its meaning is strongly controlled by context, species, condition, and narrative role. Life and fruitful flourishing are the broadest positive associations, but Scripture also regularly uses trees for persons, kingdoms, Israel, moral character, the cross, forbidden knowledge, and judgment.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The cross of Christ (as the tree on which he was crucified, bringing redemption from the curse)\",\n  \"primary_basis\": [\n    \"Galatians 3:13\",\n    \"Deuteronomy 21:23\",\n    \"Acts 5:30\",\n    \"Acts 10:39\",\n    \"1 Peter 2:24\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eternal life, immortality, or restored paradise (Tree of Life)\",\n      \"basis\": [\n        \"Genesis 2:9\",\n        \"Genesis 3:22-24\",\n        \"Revelation 2:7\",\n        \"Revelation 22:2\",\n        \"Revelation 22:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A righteous or flourishing believer (rooted and fruitful)\",\n      \"basis\": [\n        \"Psalm 1:3\",\n        \"Jeremiah 17:7-8\",\n        \"Proverbs 11:30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fall of humanity or knowledge of good and evil (Tree of the Knowledge of Good and Evil)\",\n      \"basis\": [\n        \"Genesis 2:9\",\n        \"Genesis 2:17\",\n        \"Genesis 3:1-24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Nations, kingdoms, or rulers (as great or lofty trees)\",\n      \"basis\": [\n        \"Daniel 4:10-26\",\n        \"Ezekiel 17:22-24\",\n        \"Ezekiel 31:1-18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian tradition and biblical interpretation assign multiple well-attested symbolic meanings to 'tree,' with the cross and Tree of Life especially prominent in Christology and soteriology; no single exclusive consensus exists across all contexts.\"\n}\n\nBOOK ENTRY\nA nation or people.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 4:22; Rom 11:17) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nDaniel 4:22 — It is thou, O king, that art grown and become strong: for thy greatness is grown, and reacheth unto heaven, and thy dominion to the end of the earth.\nRomans 11:17 — And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "1bad5a9d3d83b31b499ec87b2c821212f3e7564126f4796e0df8316d165cd7fa",
+  "cache": {
+    "hit": false
+  }
+}

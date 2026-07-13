@@ -1,0 +1,201 @@
+{
+  "id": "resp_0315d08535012dee006a547fe85f948195979be7caf8591644",
+  "object": "response",
+  "created_at": 1783922664,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922691,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0315d08535012dee006a547fe91e7881958249bb423caacc41",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0315d08535012dee006a547ff3687c819586f19398849bca24",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0315d08535012dee006a547ffbee0481958c15eb7c3ef884a9",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"A week is fundamentally a heptad or unit of seven. It ordinarily denotes seven days, while Daniel 9 is widely understood to use seven-year units; the sevenfold pattern can also connote completeness and ordered sacred time.\",\"book_summary\":\"The book likewise defines shavua as a unit of seven that may be counted in days or years, applying seven-year units to Daniel and relating the pattern to Weeks, sabbatical years, and jubilee counting. It additionally suggests that Daniel’s seventy sevens unfold into seventy jubilees.\",\"consensus_core_identification\":\"A week is a heptad, with Daniel’s prophetic weeks commonly identified as sevens of years rather than ordinary seven-day weeks.\",\"book_core_identification\":\"A week is a unit of seven, capable of counting days or years, and Daniel’s weeks are sevens of years.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement appears at the minimum core: both readings admit day-weeks and year-heptads according to context. The book emphasizes jubilee scaling more strongly than the consensus.\",\"material_contradiction\":\"None at the core. The phrase about seventy sevens opening into seventy jubilees is an additional chronological or typological claim, but it does not replace the shared identification of Daniel’s weeks as year-heptads.\",\"rationale\":\"The book’s central definition closely matches the blind consensus: shavua is a seven/heptad, and Daniel 9 is read in seven-year units. Its Feast of Weeks and jubilee comparisons elaborate the same flexible sevenfold category rather than redefining the term. The added seventy-jubilee proposal is downstream detail and does not alter the core referent.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The printed texts strongly establish seven-day and seven-year counting patterns, but Daniel 9 does not itself explicitly say that its weeks are years, and Genesis 29 distinguishes the fulfilled bridal week from the subsequent seven years rather than plainly equating them. The further claim about seventy jubilees is also not directly established by the cited passages.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4035,
+    "input_tokens_details": {
+      "cache_write_tokens": 4032,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1363,
+    "output_tokens_details": {
+      "reasoning_tokens": 910
+    },
+    "total_tokens": 5398
+  },
+  "user": null,
+  "metadata": {}
+}

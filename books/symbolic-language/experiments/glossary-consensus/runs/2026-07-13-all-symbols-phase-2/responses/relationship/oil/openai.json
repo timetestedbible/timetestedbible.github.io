@@ -1,0 +1,195 @@
+{
+  "id": "resp_0ac30abe289a7d28006a547d9907308190a9177e2595fc151f",
+  "object": "response",
+  "created_at": 1783922073,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922088,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0ac30abe289a7d28006a547d99c10c81908e9ab8da363382c6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0ac30abe289a7d28006a547da0c5b88190b3ffbef1d6f76ab2",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The dominant consensus identifies lamp oil with the Holy Spirit—His indwelling, empowering, sustaining, and illuminating grace—while also recognizing readiness, genuine faith, inward grace, good works, and divine truth as alternative readings.\",\"book_summary\":\"The book identifies lamp oil as commandment-truth and corrective instruction received, tested, and stored inwardly until they produce proven obedience; the resulting visible obedience is the lamp's light.\",\"consensus_core_identification\":\"The Holy Spirit or Spirit-given sustaining grace.\",\"book_core_identification\":\"Internalized commandment-truth and correction embodied as proven obedience.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book reclassifies oil in the lamp texts from the Holy Spirit Himself to an inwardly stored product of receiving and obeying divine truth. It overlaps consensus alternatives concerning the Word, inward readiness, and good works, but excludes generic Spirit-possession, anointing, or readiness without tested obedience from the symbol's precise extension.\",\"material_contradiction\":\"The central referent is replaced: the consensus says the oil is the Holy Spirit or His grace, whereas the book says it is truth and correction transformed into proven obedience. Ezekiel 36:27 allows the Spirit to cause that obedience, but a cause and its resulting fruit are not the same referent.\",\"rationale\":\"This is not novel because the consensus explicitly lists divine truth, inward spiritual life, obedience, and good works as recognized alternatives. Nevertheless, those are secondary alternatives, while the consensus core remains the Holy Spirit. The book's common-view note acknowledges that identification and then advances a materially different one, making the relationship divergent rather than merely refined.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"No cited passage explicitly identifies lamp oil as stored commandment-truth or proven obedience. Proverbs 6:23 identifies the commandment as a lamp and law as light, Matthew 5:16 associates light with good works, and several texts concern inwardly stored law, but combining these into the specific equation 'oil = tested truth embodied as obedience' requires a substantial synthetic inference. Zechariah 4:6 may instead favor the consensus Spirit identification.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 5016,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 5013
+    },
+    "output_tokens": 859,
+    "output_tokens_details": {
+      "reasoning_tokens": 385
+    },
+    "total_tokens": 5875
+  },
+  "user": null,
+  "metadata": {}
+}

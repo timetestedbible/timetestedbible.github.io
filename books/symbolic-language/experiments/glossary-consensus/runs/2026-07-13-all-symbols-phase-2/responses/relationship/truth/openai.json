@@ -1,0 +1,195 @@
+{
+  "id": "resp_099b2fc8533c9691006a547f839fe08196b5187b17fc917a1b",
+  "object": "response",
+  "created_at": 1783922563,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922578,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_099b2fc8533c9691006a547f842fb48196ad4a3b81fa33d363",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_099b2fc8533c9691006a547f8cf09c8196a68d15805b13d102",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The consensus identifies “the truth” primarily with Jesus Christ as God’s incarnate revelation, and secondarily with God’s word, the gospel, sound doctrine, divine faithfulness, and truthful conduct.\",\"book_summary\":\"The book identifies “the truth” specifically as God’s law functioning as the authoritative standard.\",\"consensus_core_identification\":\"Jesus Christ and, derivatively, God’s revealed word or gospel.\",\"book_core_identification\":\"God’s law as the standard.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"God’s law is already covered within the consensus’s broader category of God’s word, especially through Psalm 119:142. However, the book elevates that narrower scriptural case into the governing identification while excluding or displacing the consensus’s central Christological referent and its prominent gospel referent.\",\"material_contradiction\":\"As primary identifications, Christ himself and God’s law are distinct referents. The book does not merely sharpen the meaning of the consensus’s Christological identification; it replaces it with law, despite acknowledging Christ and the gospel as the common view.\",\"rationale\":\"The entry is not novel because the consensus explicitly recognizes God’s law or word as truth and cites Psalm 119. Nevertheless, its minimum core differs materially from the consensus core: the consensus centers truth in Christ and divine revelation broadly, whereas the book centers it in law as normative standard. The overlap with the word/Scripture strand does not remove this replacement of the central referent.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Psalm 119:142 directly says that God’s law is truth, but it establishes that identification in a particular poetic context rather than proving that “the truth” generally or symbolically denotes law instead of Christ, the gospel, or divine revelation more broadly. Second John 4 does not by itself make the law identification explicit.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4004,
+    "input_tokens_details": {
+      "cache_write_tokens": 4001,
+      "cached_tokens": 0
+    },
+    "output_tokens": 928,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 4932
+  },
+  "user": null,
+  "metadata": {}
+}

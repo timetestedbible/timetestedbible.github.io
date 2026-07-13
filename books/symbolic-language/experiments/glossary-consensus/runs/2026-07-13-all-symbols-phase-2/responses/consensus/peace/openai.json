@@ -1,0 +1,173 @@
+{
+  "id": "resp_054cd40ab3dcc523006a54770f6dac8196b0a17090c36832d7",
+  "object": "response",
+  "created_at": 1783920399,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920417,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_054cd40ab3dcc523006a54770ff738819694d92a4b4b63d281",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_054cd40ab3dcc523006a5477155b5081968afaa4b42026dcde",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Restored wholeness and right relationship—especially reconciliation with God through Christ—which extends to harmony with others and ultimately to the renewal of creation. Christian interpretation commonly stresses that biblical peace (Hebrew shalom; Greek eirēnē) is more than the absence of conflict.\",\"primary_basis\":[\"Isaiah 9:6-7 — the messianic ruler is called the “Prince of Peace.”\",\"Isaiah 52:7; 53:5 — salvation is announced as peace, and the servant’s suffering brings peace.\",\"Luke 2:14 — Jesus’ birth is proclaimed in connection with peace.\",\"John 14:27; 16:33 — Jesus gives a peace unlike that offered by the world.\",\"Romans 5:1 — justification by faith results in peace with God through Jesus Christ.\",\"Ephesians 2:14-17 — Christ “is our peace,” reconciling divided peoples to God and one another.\",\"Colossians 1:19-20 — Christ makes peace through the blood of the cross and reconciles all things.\",\"Philippians 4:6-7 — the peace of God guards believers’ hearts and minds.\",\"Revelation 21:1-4 — final restoration removes death, mourning, crying, and pain, expressing the consummation of divine peace. \"],\"alternatives\":[{\"meaning\":\"Inner calm, assurance, or freedom from anxiety granted by God amid suffering.\",\"basis\":[\"John 14:27\",\"John 16:33\",\"Philippians 4:6-7\",\"Colossians 3:15\"],\"prominence\":\"common\"},{\"meaning\":\"Social harmony, reconciliation, peacemaking, and nonviolence in human relationships.\",\"basis\":[\"Matthew 5:9\",\"Matthew 5:38-48\",\"Romans 12:18-21\",\"James 3:18\"],\"prominence\":\"common\"},{\"meaning\":\"Comprehensive earthly flourishing—health, security, justice, prosperity, and communal well-being—reflecting the broad Old Testament sense of shalom.\",\"basis\":[\"Numbers 6:24-26\",\"Psalm 85:8-13\",\"Isaiah 32:16-18\",\"Jeremiah 29:7\"],\"prominence\":\"common\"},{\"meaning\":\"Messianic and eschatological order: the future reign of justice, harmony, and restored creation under God.\",\"basis\":[\"Isaiah 2:2-4\",\"Isaiah 11:1-9\",\"Micah 4:1-4\",\"Revelation 21:1-4\"],\"prominence\":\"common\"},{\"meaning\":\"Primarily the cessation of warfare or outward conflict, without necessarily implying spiritual reconciliation or comprehensive well-being.\",\"basis\":[\"Ecclesiastes 3:8\",\"1 Kings 4:24-25\",\"Jeremiah 6:14\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus around peace as divinely restored wholeness, reconciliation, and right order, centered in Christian teaching on Christ. There is no consensus that it has only one dimension: inward tranquility, social peacemaking, Old Testament flourishing, and future messianic restoration are widely recognized complementary emphases rather than mutually exclusive definitions.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 937,
+    "output_tokens_details": {
+      "reasoning_tokens": 253
+    },
+    "total_tokens": 1254
+  },
+  "user": null,
+  "metadata": {}
+}

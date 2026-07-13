@@ -1,0 +1,195 @@
+{
+  "id": "resp_079f497444ce648a006a547f72bab48193adfffb515bd0f997",
+  "object": "response",
+  "created_at": 1783922546,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922563,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_079f497444ce648a006a547f732cf48193b107e150bd3edd7a",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_079f497444ce648a006a547f7c71f8819395ccb104cddb8ca0",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Tree imagery is polyvalent and context-dependent, commonly signifying life and flourishing, persons or communities, kingdoms and rulers, Israel, the cross, and judgment. Nations or covenant peoples are a recognized common sense, but not the exclusive meaning.\",\"book_summary\":\"A tree symbolizes a nation or people.\",\"consensus_core_identification\":\"A context-dependent symbol whose established referents include persons, communities, nations, kingdoms, and several nonpolitical realities.\",\"book_core_identification\":\"A collective human polity or community: a nation or people.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book selects the recognized collective-people or nation sense as the entry’s identification, excluding or leaving unrepresented other established uses such as an individual ruler, righteous person, divine life, the cross, moral fruitfulness, or judgment.\",\"material_contradiction\":\"There is no direct contradiction where the cited contexts concern kingdoms or covenant peoples. The disagreement is the book’s restriction of generic tree symbolism to one recognized subset despite the consensus that the image has multiple context-governed senses.\",\"rationale\":\"The identification is not novel: the consensus explicitly includes nations, kingdoms, Israel, and covenant communities among standard tree referents. It is not a full match because the consensus denies that generic tree imagery has one settled collective meaning. The book therefore materially narrows the accepted range rather than replacing it with an unrelated referent.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Daniel 4:22 explicitly identifies the tree first with Nebuchadnezzar, an individual king, though his dominion and kingdom are implicated; Romans 11’s olive tree plausibly represents the covenant people, but its branches also distinguish constituent groups or persons. Thus the references support collective-political or communal usage without establishing that every symbolic tree means a nation or people.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4141,
+    "input_tokens_details": {
+      "cache_write_tokens": 4138,
+      "cached_tokens": 0
+    },
+    "output_tokens": 903,
+    "output_tokens_details": {
+      "reasoning_tokens": 503
+    },
+    "total_tokens": 5044
+  },
+  "user": null,
+  "metadata": {}
+}

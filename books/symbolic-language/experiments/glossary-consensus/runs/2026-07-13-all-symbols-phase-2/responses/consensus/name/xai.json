@@ -1,0 +1,156 @@
+{
+  "created_at": 1783845079,
+  "completed_at": 1783845088,
+  "id": "d99d35b7-df47-9cb9-88b6-0df5015cec80",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_d99d35b7-df47-9cb9-88b6-0df5015cec80",
+      "summary": [
+        {
+          "text": "The task is to define the symbolic meaning of \"Name\" in Christian teaching and biblical interpretation. I need to respond with a specific JSON format.\n{\n  \"primary_symbolic_meaning\": \"The name represents the person themselves, their character, authority, and reputation.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The name of a person (especially God or Jesus) stands for their full identity, character, authority, power, and presence, so that invoking or acting 'in the name' means acting by that person's authority and under their protection.\",\n  \"primary_basis\": [\n    \"Exodus 3:13-15 (divine self-revelation of the Name)\",\n    \"Exodus 34:5-7 (Name = character)\",\n    \"Proverbs 18:10 (Name as strong tower)\",\n    \"Matthew 28:19 (baptism into the Name)\",\n    \"John 14:13-14; 16:23-24 (prayer in Jesus' name)\",\n    \"Acts 3:6, 16; 4:7-12 (healing and salvation by the Name)\",\n    \"Philippians 2:9-11 (Name above every name)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Mere personal label or proper noun without deeper symbolic force\",\n      \"basis\": [\n        \"Ordinary narrative uses (e.g., Genesis genealogies, Gospel naming scenes)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Reputation, fame, or renown\",\n      \"basis\": [\n        \"Proverbs 22:1\",\n        \"Ecclesiastes 7:1\",\n        \"Isaiah 56:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cultic or magical formula whose power resides in the syllables themselves\",\n      \"basis\": [\n        \"Later Jewish and early Christian magical papyri; some popular piety around the Tetragrammaton or 'Jesus'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream patristic, medieval, Reformation, and modern evangelical/mainline exegesis the primary symbolic sense is stable: the divine Name is virtually equivalent to the person and power of God/Christ. Secondary senses (reputation, literal label) are acknowledged but not treated as the dominant theological symbolism.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_d99d35b7-df47-9cb9-88b6-0df5015cec80",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1089,
+    "output_tokens_details": {
+      "reasoning_tokens": 605
+    },
+    "total_tokens": 1691,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 77380000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1089
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

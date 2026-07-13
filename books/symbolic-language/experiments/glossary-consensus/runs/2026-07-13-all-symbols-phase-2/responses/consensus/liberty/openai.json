@@ -1,0 +1,173 @@
+{
+  "id": "resp_065a0d02c5821a9c006a547645da748194aeaef9d85dce7a30",
+  "object": "response",
+  "created_at": 1783920197,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920214,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_065a0d02c5821a9c006a5476465e488194942d312ea17987d6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_065a0d02c5821a9c006a54764ba9888194934f20d8eaf546fb",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Spiritual freedom in Christ: liberation from bondage to sin, condemnation, death, and the enslaving misuse of the law, resulting in freedom to live by the Spirit in righteousness and loving service rather than self-indulgence.\",\"primary_basis\":[\"John 8:31–36 — the Son makes believers free from slavery to sin.\",\"Romans 6:6–23 — believers are freed from sin and become servants of righteousness and God.\",\"Romans 8:1–4, 15, 21 — the Spirit frees from sin and death; creation awaits the liberty of glory.\",\"2 Corinthians 3:17 — “where the Spirit of the Lord is, there is liberty.”\",\"Galatians 2:4; 4:21–31; 5:1, 13–14 — freedom in Christ contrasts with slavery, but is ordered toward loving service.\",\"James 1:25; 2:12 — God’s instruction is described as the “law of liberty.”\",\"1 Peter 2:16 — liberty must not become a cover for evil but is lived in service to God.\"],\"alternatives\":[{\"meaning\":\"Freedom from obligation to the Mosaic law, especially circumcision and other boundary markers, within the Jew–Gentile controversies of the early church.\",\"basis\":[\"Acts 15:1–29\",\"Romans 7:1–6\",\"Galatians 2:3–5\",\"Galatians 5:1–6\",\"Colossians 2:16–23\"],\"prominence\":\"common\"},{\"meaning\":\"Freedom of conscience in morally disputable matters, limited by love and concern for another person’s conscience.\",\"basis\":[\"Romans 14:1–23\",\"1 Corinthians 8:1–13\",\"1 Corinthians 10:23–33\"],\"prominence\":\"common\"},{\"meaning\":\"Social, economic, or political liberation from oppression, often interpreted through Exodus, Jubilee, and Jesus’ proclamation of release to captives.\",\"basis\":[\"Exodus 3:7–10\",\"Leviticus 25:8–17\",\"Isaiah 58:6\",\"Isaiah 61:1–2\",\"Luke 4:16–21\"],\"prominence\":\"common\"},{\"meaning\":\"Eschatological liberation: the final freedom of creation and humanity from corruption, suffering, and death.\",\"basis\":[\"Romans 8:18–23\",\"1 Corinthians 15:50–57\",\"Revelation 21:1–5\"],\"prominence\":\"common\"},{\"meaning\":\"Individual autonomy or unrestricted permission to act according to personal desire.\",\"basis\":[\"Galatians 5:13\",\"1 Corinthians 6:12\",\"1 Corinthians 10:23\",\"1 Peter 2:16\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is a broad consensus that biblical liberty primarily signifies freedom in and through Christ, especially freedom from sin and spiritual bondage. It is not a single fixed symbol with one exclusive referent: different passages emphasize freedom from sin, the law’s condemnation, oppressive conditions, corruption, or constraints on conscience. Christian teaching generally distinguishes liberty from autonomous self-indulgence and presents it as freedom for holiness, love, and service.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 881,
+    "output_tokens_details": {
+      "reasoning_tokens": 207
+    },
+    "total_tokens": 1199
+  },
+  "user": null,
+  "metadata": {}
+}

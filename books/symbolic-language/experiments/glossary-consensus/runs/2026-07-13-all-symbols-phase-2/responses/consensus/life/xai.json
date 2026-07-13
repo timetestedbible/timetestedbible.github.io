@@ -1,0 +1,156 @@
+{
+  "created_at": 1783845047,
+  "completed_at": 1783845061,
+  "id": "e7ceacba-15a3-9167-973c-55c659e2b698",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_e7ceacba-15a3-9167-973c-55c659e2b698",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Life (the life)\" in biblical symbolism. I must return only a JSON object matching the specified schema, with no surrounding text.\n...",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Jesus Christ himself as the personal source, embodiment, and giver of spiritual/eternal life (zoe)\",\n  \"primary_basis\": [\n    \"John 14:6 ('I am the way, and the truth, and the life')\",\n    \"John 11:25 ('I am the resurrection and the life')\",\n    \"John 1:4 ('In him was life')\",\n    \"1 John 1:1–2 ('the Word of life… the life was made manifest')\",\n    \"Colossians 3:4 ('Christ who is your life')\",\n    \"1 John 5:11–12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eternal life as the gift/state of salvation and communion with God granted to believers\",\n      \"basis\": [\n        \"John 3:16\",\n        \"John 17:3\",\n        \"Romans 6:23\",\n        \"1 John 5:11–13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Physical/biological life (nephesh/psyche) as the created animating principle given by God\",\n      \"basis\": [\n        \"Genesis 2:7\",\n        \"Leviticus 17:11\",\n        \"Acts 17:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit as the life-giving presence and power\",\n      \"basis\": [\n        \"John 6:63\",\n        \"Romans 8:2, 10–11\",\n        \"2 Corinthians 3:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Tree of Life as eschatological symbol of immortality and restored paradise\",\n      \"basis\": [\n        \"Genesis 2:9; 3:22–24\",\n        \"Revelation 2:7; 22:2, 14\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In New Testament usage and historic Christian teaching the definite form 'the life' most consistently functions as a christological title or as the divine/eternal life that is identical with or flows from Christ; physical life and the Tree of Life remain important but secondary symbolic registers. The distinction between zoe (divine life) and bios/psyche (creaturely life) is widely recognized in biblical studies.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_e7ceacba-15a3-9167-973c-55c659e2b698",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1640,
+    "output_tokens_details": {
+      "reasoning_tokens": 1073
+    },
+    "total_tokens": 2245,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 108580000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1640
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

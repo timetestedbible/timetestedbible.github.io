@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919809,
+  "completed_at": 1783919832,
+  "id": "1c436ec7-c40f-9b73-9047-4bfbcdb1ab46",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_1c436ec7-c40f-9b73-9047-4bfbcdb1ab46",
+      "summary": [
+        {
+          "text": "The task is about the symbolic meaning of \"Feet\" in Christian teaching and biblical interpretation. I need to respond with a specific JSON format.\nThe primary symbolic meaning most commonly assigned to \"feet\" in Christian teaching and biblical interpretation is humility and service, as seen in the act of washing feet to model servant leadership.\n\nThe biblical passages normally used to support that meaning are John 13:1-17, where Jesus washes the disciples' feet to illustrate humility and 1 Timothy 5:10, which describes women who have washed the feet of the saints.\n\nMaterially different alternative readings include:\n- The path or conduct of life, supported by passages like Psalm 119:105 and Proverbs 4:26-27, which is common.\n- Readiness to spread the gospel, drawn from Isaiah 52:7 and Romans 10:15, which is common.\n- Dominion or authority, as in Psalm 8:6 and 1 Corinthians 15:25, which is common in some contexts.\n- Reverence or holiness, from Exodus 3:5, which is minority.\n- Pilgr image or journey, related to the walk, which is common.\n\nThe term does not have a fully settled symbolic interpretation, as meanings vary by context.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the walk, path, or moral conduct of life\",\n  \"primary_basis\": [\n    \"Psalm 119:105\",\n    \"Ephesians 6:15\",\n    \"Hebrews 12:13\",\n    \"Proverbs 4:26-27\",\n    \"1 Samuel 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"humility and service (exemplified by foot-washing)\",\n      \"basis\": [\n        \"John 13:1-17\",\n        \"1 Timothy 5:10\",\n        \"Luke 7:38-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"evangelism or readiness to bring good news\",\n      \"basis\": [\n        \"Isaiah 52:7\",\n        \"Romans 10:15\",\n        \"Nahum 1:15\",\n        \"Ephesians 6:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"dominion, victory, or subjection of enemies\",\n      \"basis\": [\n        \"Psalm 8:6\",\n        \"Psalm 110:1\",\n        \"1 Corinthians 15:25-27\",\n        \"Ephesians 1:22\",\n        \"Hebrews 2:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"reverence or acknowledgment of holy ground (removing footwear)\",\n      \"basis\": [\n        \"Exodus 3:5\",\n        \"Joshua 5:15\",\n        \"Acts 7:33\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"judgment or rejection (shaking dust from feet)\",\n      \"basis\": [\n        \"Matthew 10:14\",\n        \"Mark 6:11\",\n        \"Acts 13:51\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Meanings of feet are strongly contextual across Scripture and Christian teaching; associations with life's path/conduct, service, mission, and dominion recur frequently but none is universally dominant.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_1c436ec7-c40f-9b73-9047-4bfbcdb1ab46",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1881,
+    "output_tokens_details": {
+      "reasoning_tokens": 1371
+    },
+    "total_tokens": 2483,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 117220000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1881
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,101 @@
+{
+  "provider": "anthropic",
+  "stage": "consensus",
+  "term": "gnashing",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Remain blind to the author's position.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are the blind consensus definer in an experiment about biblical symbolism.\n\nYou have not been shown the author's book, definition, citations, argument, or\npreferred conclusion. Do not search for or infer that material. Answer from your\nindependent knowledge of published Christian interpretation and biblical studies.\n\nTERM\nGnashing of teeth\n\nTASK\n\n1. State the primary symbolic meaning most commonly assigned to this term in\n   Christian teaching and biblical interpretation.\n2. Cite the biblical passages normally used to support that meaning.\n3. Identify materially different alternative readings and describe each as\n   dominant, common, minority, rare, or unclear.\n4. If the term has no settled symbolic interpretation, say so directly.\n\nDo not decide whether the common interpretation is true. This stage measures\nrecognizable consensus, not truth.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "primary_meaning": {
+              "type": "string"
+            },
+            "primary_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "alternatives": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "meaning": {
+                    "type": "string"
+                  },
+                  "basis": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "prominence": {
+                    "type": "string",
+                    "enum": [
+                      "dominant",
+                      "common",
+                      "minority",
+                      "rare",
+                      "unclear"
+                    ]
+                  }
+                },
+                "required": [
+                  "meaning",
+                  "basis",
+                  "prominence"
+                ]
+              }
+            },
+            "has_settled_consensus": {
+              "type": "boolean"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary_meaning",
+            "primary_basis",
+            "alternatives",
+            "has_settled_consensus",
+            "confidence",
+            "notes"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "5e4a9bebde6bf3b871deb7b25bf2aa7a0e524a110d939247f6387f84a1d2687b",
+  "cache": {
+    "hit": false
+  }
+}

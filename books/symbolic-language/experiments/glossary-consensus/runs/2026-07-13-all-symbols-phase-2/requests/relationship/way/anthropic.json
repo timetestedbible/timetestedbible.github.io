@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "way",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWay (the way)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'the Way' primarily symbolizes Jesus Christ himself as the sole path or means of access to God the Father — salvation understood not as a technique or map but as a person to be followed. By extension it denotes the whole life of discipleship: following Jesus is walking 'the way' to God.\",\n  \"primary_basis\": [\n    \"John 14:6 ('I am the way, and the truth, and the life; no one comes to the Father except through me')\",\n    \"John 14:4-5 (Thomas's question about the way)\",\n    \"Hebrews 10:19-20 ('a new and living way' opened through Christ's flesh)\",\n    \"Matthew 7:13-14 (the narrow way that leads to life)\",\n    \"Isaiah 40:3 / Matthew 3:3 / Mark 1:2-3 / Luke 3:4 ('prepare the way of the Lord,' applied to Jesus)\",\n    \"John 10:9 and Acts 4:12 (often cited alongside as expressing exclusive access through Christ)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"'The Way' as the earliest self-designation or name for the Christian movement itself — the community of Jesus-followers before the label 'Christian' became standard. This is treated as historical fact in scholarship and is frequently folded into the primary christological reading (the movement was named for following Jesus who is the way).\",\n      \"basis\": [\n        \"Acts 9:2\",\n        \"Acts 19:9, 19:23\",\n        \"Acts 22:4\",\n        \"Acts 24:14, 24:22\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The 'two ways' moral tradition: 'way' as a manner of life or moral path — the way of the righteous versus the way of the wicked — an ethical rather than strictly christological symbol, prominent in Old Testament wisdom literature and early Christian catechesis.\",\n      \"basis\": [\n        \"Psalm 1:1-6\",\n        \"Proverbs 4:18-19; 12:28\",\n        \"Deuteronomy 30:15-19\",\n        \"Jeremiah 21:8\",\n        \"Matthew 7:13-14\",\n        \"Didache 1:1 (extra-biblical but widely cited in scholarship)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The 'way of the Lord' as God's own conduct, commandments, or Torah — walking in God's ways as covenant obedience; in Christian appropriation this Old Testament usage is often read as background or type fulfilled in Christ.\",\n      \"basis\": [\n        \"Genesis 18:19\",\n        \"Deuteronomy 8:6; 10:12\",\n        \"Psalm 119:1, 119:32-33\",\n        \"Isaiah 55:8-9\",\n        \"Exodus 33:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The eschatological highway of return from exile: Isaiah's prepared way through the wilderness as the path of God's redemptive return, read by some scholars (e.g., in studies of Mark's 'way' motif) as the controlling image behind New Testament 'way' language — a new-exodus journey motif rather than simply a metaphor for Jesus.\",\n      \"basis\": [\n        \"Isaiah 40:3-5\",\n        \"Isaiah 35:8-10 (the Highway of Holiness)\",\n        \"Isaiah 43:16-19\",\n        \"Mark 1:2-3 with Mark's repeated 'on the way' framing (Mark 8:27; 9:33-34; 10:32, 10:52)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The way as mystical or ascetic ascent — the spiritual journey or pilgrimage of the soul toward God (via purgativa/illuminativa/unitiva in later spiritual theology), using biblical 'way' texts as launching points for interior progress.\",\n      \"basis\": [\n        \"Psalm 84:5 ('in whose heart are the highways to Zion')\",\n        \"John 14:6 as read in mystical tradition\",\n        \"Hebrews 11:13-16 (pilgrim motif)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus: 'the Way' in Christian symbolism centers on John 14:6 — Christ as the exclusive way to the Father — combined with the Acts usage naming the earliest Christian movement 'the Way.' These two strands are usually presented together rather than as rivals. The main interpretive variation concerns emphasis: christological/person-centered (dominant), ethical two-ways lifestyle (common), covenantal Old Testament walking in God's ways (common as background), and the Isaianic new-exodus reading favored in some modern academic work (minority). This assessment is made without knowledge of the author's book or argument.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Jesus Christ as the exclusive path to God and salvation, and by extension, the Christian faith, lifestyle, and the early Christian community itself.\",\n  \"primary_basis\": [\n    \"John 14:6\",\n    \"Acts 9:2\",\n    \"Acts 19:9\",\n    \"Acts 22:4\",\n    \"Acts 24:14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The moral path of righteousness and wisdom, contrasted with the path of wickedness (the Two Ways tradition).\",\n      \"basis\": [\n        \"Psalm 1:6\",\n        \"Proverbs 4:18-19\",\n        \"Matthew 7:13-14\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"God's providential plans, methods, and unsearchable decrees.\",\n      \"basis\": [\n        \"Isaiah 55:8-9\",\n        \"Romans 11:33\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A spiritual journey or pilgrimage, often echoing the Exodus or the prophetic return from exile.\",\n      \"basis\": [\n        \"Isaiah 40:3\",\n        \"Isaiah 43:16\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term bridges Old Testament wisdom literature, where it denotes moral direction, and the New Testament, where it becomes a Christological title and the earliest self-designation of the Christian movement.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The way of salvation and life with God, centered in Jesus Christ: Christ is the way to the Father, and following “the way” means trusting him and living as his disciple.\",\n  \"primary_basis\": [\n    \"John 14:6 — Jesus declares, “I am the way, and the truth, and the life”; access to the Father is through him.\",\n    \"Matthew 7:13–14 — the narrow way leads to life, contrasted with the broad way leading to destruction.\",\n    \"Hebrews 10:19–20 — Christ opens a “new and living way” into God’s presence.\",\n    \"Acts 9:2; 19:9, 23; 22:4; 24:14, 22 — “the Way” functions as an early designation for the Christian faith and movement.\",\n    \"Psalm 1:1–6 — the way of the righteous is contrasted with the way of the wicked.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A person’s manner of life or moral course, especially the path of righteousness and obedience as opposed to wickedness.\",\n      \"basis\": [\n        \"Psalm 1:1–6\",\n        \"Proverbs 4:10–19\",\n        \"Proverbs 14:12\",\n        \"Matthew 7:13–14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s revealed instruction or commandments—the divinely prescribed path, often associated with Torah and wisdom.\",\n      \"basis\": [\n        \"Deuteronomy 5:32–33\",\n        \"Psalm 25:4–10\",\n        \"Psalm 119:1–3, 30–32\",\n        \"Proverbs 3:5–6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Christian community or movement itself, rather than primarily a symbol for an individual’s spiritual path.\",\n      \"basis\": [\n        \"Acts 9:2\",\n        \"Acts 19:9, 23\",\n        \"Acts 22:4\",\n        \"Acts 24:14, 22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The two contrasting destinies available to humanity: the way of life and the way of death.\",\n      \"basis\": [\n        \"Deuteronomy 30:15–20\",\n        \"Psalm 1:6\",\n        \"Jeremiah 21:8\",\n        \"Matthew 7:13–14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A prepared route for the coming or manifestation of the Lord, especially in prophetic and messianic texts.\",\n      \"basis\": [\n        \"Isaiah 40:3–5\",\n        \"Malachi 3:1\",\n        \"Matthew 3:3\",\n        \"Mark 1:2–3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The spiritual journey or pilgrimage of believers through the present life toward holiness and final communion with God.\",\n      \"basis\": [\n        \"Psalm 84:5–7\",\n        \"Isaiah 35:8–10\",\n        \"Luke 9:23\",\n        \"Hebrews 11:13–16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation broadly agrees that “the way” signifies the path to God, salvation, and faithful life, with Jesus as its decisive center in New Testament teaching. The precise emphasis remains context-dependent: some passages mean conduct, divine instruction, destiny, or the historical Christian movement rather than functioning as a single fixed symbol.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Jesus Christ as the exclusive path/means of access to God and salvation\",\n  \"primary_basis\": [\n    \"John 14:6\",\n    \"Hebrews 10:19-20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The early Christian community, movement, or faith (as a self-designation)\",\n      \"basis\": [\n        \"Acts 9:2\",\n        \"Acts 19:9\",\n        \"Acts 19:23\",\n        \"Acts 22:4\",\n        \"Acts 24:14\",\n        \"Acts 24:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The path of righteous living, discipleship, or obedience to God\",\n      \"basis\": [\n        \"Matthew 7:13-14\",\n        \"Psalm 1:6\",\n        \"Proverbs 4:11\",\n        \"Isaiah 30:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Preparation or highway for the Lord's coming (prophetic/forerunner sense)\",\n      \"basis\": [\n        \"Isaiah 40:3\",\n        \"Matthew 3:3\",\n        \"Mark 1:3\",\n        \"Luke 3:4\",\n        \"John 1:23\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"John 14:6 supplies the dominant christological reading in Christian teaching and preaching; Acts uses 'the Way' as a technical name for the Christian movement that presupposes that reading. Broader OT/NT 'way' language for righteous conduct is frequent but secondary to the specific titular sense.\"\n}\n\nBOOK ENTRY\nCovenant conduct — the walk.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: Jesus Himself as the one way to the Father; the narrow way against the broad.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 6:16; Matt 7:14) · see The Way, the Truth & the Life, ch. 7\n\nAVAILABLE KJV EXCERPTS\nJeremiah 6:16 — Thus saith the LORD, Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls. But they said, We will not walk therein.\nMatthew 7:14 — Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "40654bea196c2838ed61420974f5aba229af224addc490562b217dc91d5ea9d7",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "id": "resp_01535344f9fa481a006a547cdc9430819390cb7fe8b6227756",
+  "object": "response",
+  "created_at": 1783921884,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921899,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_01535344f9fa481a006a547cdd2ffc8193b1114b3ab166e33e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_01535344f9fa481a006a547ce33de08193a57d15032b27a67f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The dominant consensus identifies “meat” or “solid food” as advanced spiritual teaching suited to mature believers, contrasted with elementary “milk.” It also recognizes doing God’s will as a separate, context-specific meaning in John 4:34.\",\"book_summary\":\"The book identifies meat as the word brought to completion through obedience: God’s word not merely heard or received, but done. It interprets milk and meat as the same word in two states—received versus enacted—and integrates doing God’s will, discernment through use, and timely provision.\",\"consensus_core_identification\":\"Meat = advanced or mature spiritual teaching.\",\"book_core_identification\":\"Meat = God’s word obeyed and completed in action.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book promotes the consensus alternative from John 4:34 into the governing identification and reclassifies the milk–meat contrast. Rather than distinguishing elementary from advanced doctrinal content, it distinguishes the word received from the word practiced. It therefore retains passages involving maturity, discernment, and teaching but assigns them to an obedience-and-use axis rather than a doctrinal-depth axis.\",\"material_contradiction\":\"In the milk–meat contexts, the consensus says the difference lies chiefly in the level or complexity of teaching, whereas the book says milk and meat are one substance differentiated by reception versus completed obedience. These cannot serve as the same primary distinction without materially replacing the consensus identification.\",\"rationale\":\"The reading is not novel because the consensus explicitly lists John 4:34’s doing-God’s-will meaning as a common alternative. Nevertheless, the book does more than narrow the dominant view: it makes that alternative the essence of meat and uses it to reinterpret the central milk–meat passages. The central referent shifts from mature doctrinal content to enacted obedience, although some consensus-associated cases remain within the book’s extension.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"John 4:34 directly supports calling the completion of God’s will Jesus’ meat, but the printed citations do not explicitly establish the broader equation “meat = the word obeyed,” nor the claim that milk is the word received while meat is the same word done. Hebrews 5:14 links strong meat with maturity, practiced discernment, and use, but its surrounding context concerns skill in teaching and elementary principles, which can support the consensus reading at least as naturally. John 6:55 also identifies Christ’s flesh—not obedience or the word—as meat indeed.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3323,
+    "input_tokens_details": {
+      "cache_write_tokens": 3320,
+      "cached_tokens": 0
+    },
+    "output_tokens": 904,
+    "output_tokens_details": {
+      "reasoning_tokens": 360
+    },
+    "total_tokens": 4227
+  },
+  "user": null,
+  "metadata": {}
+}

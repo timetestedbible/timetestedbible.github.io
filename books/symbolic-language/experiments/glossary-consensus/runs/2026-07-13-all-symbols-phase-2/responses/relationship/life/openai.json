@@ -1,0 +1,195 @@
+{
+  "id": "resp_0a7e7beb3c5fdc40006a547c806b48819395735e4e0bd79ab6",
+  "object": "response",
+  "created_at": 1783921792,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921808,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a7e7beb3c5fdc40006a547c811f8081938f65c0caad2dbd20",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a7e7beb3c5fdc40006a547c89c7b88193b502fb9021b82da6",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The consensus identifies “the life” primarily as divine or eternal life given through Christ, and often as Christ himself, its source and embodiment. Covenant blessing through obedience is recognized only as a secondary biblical usage.\",\"book_summary\":\"The book identifies “the life” as covenant existence produced by keeping the law, applying this category to Deuteronomic, Levitical, Matthean, and Johannine language.\",\"consensus_core_identification\":\"Divine or eternal life in Christ, with Christ himself as its embodiment and source.\",\"book_core_identification\":\"Covenant existence produced by the law.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book elevates covenantal obedience-life texts from a recognized secondary usage to the controlling identification and reclassifies Christological and salvation-life passages accordingly. It thereby excludes or displaces the consensus’s direct identification of “the life” with Christ himself or with eternal life imparted through him.\",\"material_contradiction\":\"In the same Christological context, life as Christ himself or his imparted divine gift is a different referent from life as an existence produced by law observance. The book’s own common-view note marks this replacement explicitly.\",\"rationale\":\"The reading is not novel because the blind consensus repeatedly recognizes covenant blessing, obedience, and flourishing as an established alternative meaning, especially from Deuteronomy 30 and Leviticus 18. Nevertheless, the book does more than narrow the consensus: it replaces the dominant Christological identification with a law-produced covenantal state and extends that reinterpretation to John 14:6 and Matthew 7:14. This makes the relationship divergent despite overlap in the covenantal cases.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Deuteronomy 30:19–20 and Leviticus 18:5 support a connection between obedience, covenant blessing, and life, but John 14:6 directly identifies Jesus as “the life,” while Matthew 7:14 only says that the narrow way leads to life. The printed citations alone do not establish that these New Testament uses mean an existence produced by the law.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4292,
+    "input_tokens_details": {
+      "cache_write_tokens": 4289,
+      "cached_tokens": 0
+    },
+    "output_tokens": 920,
+    "output_tokens_details": {
+      "reasoning_tokens": 459
+    },
+    "total_tokens": 5212
+  },
+  "user": null,
+  "metadata": {}
+}

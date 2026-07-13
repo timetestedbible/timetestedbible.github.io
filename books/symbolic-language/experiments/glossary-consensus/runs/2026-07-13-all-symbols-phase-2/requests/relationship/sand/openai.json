@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "sand",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSand\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"Sand most commonly symbolizes an innumerable multitude — a quantity beyond counting — used especially of the promised descendants of Abraham and, by extension, of vast peoples or armies. In Christian teaching this is tied to God's covenant promise and its fulfillment in the many children of faith.\",\n  \"primary_basis\": [\n    \"Genesis 22:17 (descendants as numerous as the sand on the seashore)\",\n    \"Genesis 32:12\",\n    \"Genesis 41:49 (grain stored like the sand of the sea)\",\n    \"Joshua 11:4 (armies like the sand on the seashore)\",\n    \"1 Kings 4:20, 29 (Israel numerous as sand; Solomon's breadth of understanding like sand)\",\n    \"Hosea 1:10 (Israelites like the sand of the sea)\",\n    \"Romans 9:27 (quoting Isaiah/Hosea on the number of Israel as sand)\",\n    \"Hebrews 11:12 (descendants as many as the sand by the seashore)\",\n    \"Revelation 20:8 (Gog and Magog, in number like the sand of the sea)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Instability and foolish foundation: sand represents an unreliable basis for life or faith, contrasted with rock, in the parable of the wise and foolish builders. In much popular preaching this reading is at least as prominent as the multitude reading.\",\n      \"basis\": [\n        \"Matthew 7:26-27 (the foolish man who built his house on the sand)\",\n        \"Luke 6:49 (parallel, house without foundation)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divinely appointed boundary or limit: sand as the barrier God sets for the sea, symbolizing God's sovereign restraint over chaos.\",\n      \"basis\": [\n        \"Jeremiah 5:22 (I placed the sand as a boundary for the sea)\",\n        \"Job 38:8-11 (related theme of limiting the sea)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Weight, heaviness, or burden: sand as an image of crushing heaviness or grief.\",\n      \"basis\": [\n        \"Job 6:3 (grief heavier than the sand of the seas)\",\n        \"Proverbs 27:3 (a stone is heavy and sand a burden)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Hidden treasure or abundance from the sea and shore, in tribal blessings.\",\n      \"basis\": [\n        \"Deuteronomy 33:19 (treasures hidden in the sand, blessing of Zebulun and Issachar)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"The seashore or 'sand of the sea' as the vantage point of the beast's rising, sometimes given symbolic weight (the restless mass of nations/humanity) in apocalyptic interpretation.\",\n      \"basis\": [\n        \"Revelation 12:18-13:1 (the dragon/John standing on the sand of the sea as the beast rises)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable but bifurcated consensus: in biblical usage and formal commentary, sand overwhelmingly signifies countless multitude (the Abrahamic promise); in popular preaching and devotional teaching, the Matthew 7 image of sand as an unstable foundation is equally familiar and sometimes treated as the default meaning. The two readings coexist without conflict because they arise from different passages. Extra-biblical associations (e.g., sand in an hourglass symbolizing time) are not grounded in the biblical text and are rarely presented as biblical symbolism.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"An innumerable multitude, specifically referring to the vast, uncountable number of Abraham's descendants as promised by God.\",\n  \"primary_basis\": [\n    \"Genesis 22:17\",\n    \"Genesis 32:12\",\n    \"Hosea 1:10\",\n    \"Romans 9:27\",\n    \"Hebrews 11:12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Instability, foolishness, or a weak spiritual foundation for faith and life.\",\n      \"basis\": [\n        \"Matthew 7:26-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A divine boundary or limitation set by God to hold back chaotic forces or the sea.\",\n      \"basis\": [\n        \"Jeremiah 5:22\",\n        \"Proverbs 8:29\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A heavy burden, overwhelming grief, or unbearable provocation.\",\n      \"basis\": [\n        \"Job 6:3\",\n        \"Proverbs 27:3\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Sand functions as a prominent simile in Scripture. In the Old Testament, it overwhelmingly symbolizes an uncountable multitude, particularly in relation to the Abrahamic covenant. In the New Testament teachings of Jesus, it serves as a powerful metaphor for an unstable, worldly foundation compared to the solid rock of Christ's teachings.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"An innumerable multitude or immeasurable abundance, especially numerous descendants, peoples, armies, or other things beyond ordinary counting.\",\n  \"primary_basis\": [\n    \"Genesis 22:17 — Abraham’s offspring will multiply like the sand on the seashore.\",\n    \"Genesis 32:12 — Jacob recalls the promise that his offspring will be like the sand of the sea, which cannot be counted.\",\n    \"Genesis 41:49 — Joseph stores grain in abundance like the sand of the sea, beyond measuring.\",\n    \"Joshua 11:4; Judges 7:12; 1 Samuel 13:5 — vast armies are compared to seashore sand.\",\n    \"Psalm 139:17–18 — God’s thoughts are said to outnumber the grains of sand.\",\n    \"Jeremiah 33:22 — innumerable heavenly bodies and seashore sand illustrate the multiplication of God’s servants.\",\n    \"Hebrews 11:12 — Abraham’s descendants are described as countless as the sand by the seashore.\",\n    \"Revelation 20:8 — the nations gathered for battle are as numerous as the sand of the sea.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An unstable or inadequate foundation, symbolizing hearing without obedience, misplaced trust, or a life not founded on Christ’s teaching.\",\n      \"basis\": [\n        \"Matthew 7:24–27 — the foolish builder builds on sand, and the house collapses under storm.\",\n        \"Luke 6:46–49 presents the parallel contrast between a founded and an unfounded house, though it does not explicitly name sand.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A boundary established by God that restrains the sea, symbolizing divine sovereignty and ordered limits.\",\n      \"basis\": [\n        \"Jeremiah 5:22 — God appoints the sand as a perpetual boundary for the sea.\",\n        \"Job 38:8–11 — God sets limits for the sea, closely associated with the broader biblical boundary imagery.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Great weight, extent, or severity beyond easy measurement, especially of grief or burdens.\",\n      \"basis\": [\n        \"Job 6:2–3 — Job’s anguish and calamity would outweigh the sand of the seas.\",\n        \"Proverbs 27:3 — sand is invoked as an image of heaviness.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning applying to every occurrence of sand. The strongest recurring biblical association is innumerability or vast abundance, while Christian preaching also commonly uses the sand in Matthew 7 as a symbol of an insecure foundation. Meaning is strongly controlled by context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"vast or innumerable multitude\",\n  \"primary_basis\": [\n    \"Genesis 22:17\",\n    \"Genesis 32:12\",\n    \"Hebrews 11:12\",\n    \"Revelation 20:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"unstable or insecure foundation\",\n      \"basis\": [\n        \"Matthew 7:26-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"divine boundary or restraint of the sea\",\n      \"basis\": [\n        \"Jeremiah 5:22\",\n        \"Job 38:10-11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"heavy burden or weight\",\n      \"basis\": [\n        \"Proverbs 27:3\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Sand carries multiple context-dependent associations in Scripture rather than one fixed symbol; the sense of innumerability predominates in frequency of use and traditional commentary, while the parable of the house built on sand supplies a widely taught alternative.\"\n}\n\nBOOK ENTRY\nThe countless multitude — grains of the shore beyond number; and so a shifting foundation: to build on the sand is to build on the crowd, not the covenant-rock.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 22:17; Hos 1:10; Rev 20:8; Matt 7:26) · see Sea & Waters, ch. 40\n\nAVAILABLE KJV EXCERPTS\nGenesis 22:17 — That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;\nHosea 1:10 — Yet the number of the children of Israel shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living God.\nRevelation 20:8 — And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea.\nMatthew 7:26 — And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "0e311ed6bec710e212b665a703af37b88a7a2f6597ed16b59d80d2c84ab19c25",
+  "cache": {
+    "hit": false
+  }
+}

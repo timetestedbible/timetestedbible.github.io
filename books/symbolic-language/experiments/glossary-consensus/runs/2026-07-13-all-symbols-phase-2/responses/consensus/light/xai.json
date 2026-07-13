@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920201,
+  "completed_at": 1783920219,
+  "id": "9e8450f2-b289-9cf1-aa0e-b88dc987c8c4",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_9e8450f2-b289-9cf1-aa0e-b88dc987c8c4",
+      "summary": [
+        {
+          "text": "The user wants me to act as the blind consensus definer for the term \"Light\" in biblical symbolism.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"God and especially Jesus Christ as the source of spiritual truth, holiness, life, salvation, and divine presence, opposed to darkness as evil, sin, and ignorance\",\n  \"primary_basis\": [\n    \"John 8:12\",\n    \"John 1:4-9\",\n    \"1 John 1:5\",\n    \"John 9:5\",\n    \"Matthew 5:14-16\",\n    \"2 Corinthians 4:6\",\n    \"Isaiah 9:2\",\n    \"Psalm 27:1\",\n    \"Genesis 1:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Believers or the Church as light-bearers who reflect and display God's light through righteous living and witness\",\n      \"basis\": [\n        \"Matthew 5:14-16\",\n        \"Ephesians 5:8\",\n        \"Philippians 2:15\",\n        \"1 Thessalonians 5:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Word of God or divine commandments as a guiding lamp or light for moral and spiritual direction\",\n      \"basis\": [\n        \"Psalm 119:105\",\n        \"Proverbs 6:23\",\n        \"2 Peter 1:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom, knowledge, understanding, or intellectual/spiritual illumination\",\n      \"basis\": [\n        \"Daniel 2:22\",\n        \"Ecclesiastes 2:13\",\n        \"Proverbs 4:18\",\n        \"Luke 11:34-36\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Life itself or vitality (often linked to divine life)\",\n      \"basis\": [\n        \"John 1:4\",\n        \"Job 33:28-30\",\n        \"Psalm 36:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Heavenly glory, angelic appearance, or theophanic radiance\",\n      \"basis\": [\n        \"Matthew 28:3\",\n        \"Acts 12:7\",\n        \"Revelation 21:23-24\",\n        \"Luke 2:9\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Light is among the most pervasive and consistent biblical symbols in Christian interpretation. Johannine literature supplies the dominant Christological reading, while the light/darkness dualism is near-universal across OT and NT usage and major Christian traditions. Secondary applications (believers, Scripture, wisdom) are widely recognized but remain derivative of the primary divine referent.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_9e8450f2-b289-9cf1-aa0e-b88dc987c8c4",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2042,
+    "output_tokens_details": {
+      "reasoning_tokens": 1411
+    },
+    "total_tokens": 2644,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 132640000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 2042
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,195 @@
+{
+  "id": "resp_0c7681e557dedae7006a547cd9e3848195a6fca3fdadf2f9f4",
+  "object": "response",
+  "created_at": 1783921881,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921891,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c7681e557dedae7006a547cdb2d1081958fbbef2e25d69ad3",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c7681e557dedae7006a547cddb9688195ae15074a4db4fda2",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"Marriage and bride imagery signifies the covenantal union of God or Christ with his people, especially Christ with the Church, rooted in Israel’s covenant-marriage imagery and culminating in the marriage of the Lamb.\",\"book_summary\":\"Marriage signifies the covenant union of God and his people as a divinely joined one-flesh bond between Husband and wife.\",\"consensus_core_identification\":\"The bride is God’s covenant people—especially the Church—and marriage is their covenant union with God or Christ.\",\"book_core_identification\":\"The wife is God’s people, joined covenantally to God as Husband in a one-flesh bond.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"No material boundary disagreement. The book’s broad phrase “God and His people” accommodates both the Old Testament Israel-wife imagery and the New Testament Christ-Church bride imagery already recognized by the consensus.\",\"material_contradiction\":\"None. The language of one flesh, taking the Husband’s name, and being brought under his wing elaborates the covenantal identification rather than replacing it.\",\"rationale\":\"Both readings identify marriage as God’s covenant union with his people and the bride or wife as that covenant people. The book emphasizes the Genesis and Ephesians one-flesh pattern, but this is a biblical-theological specification of the same standard identification, not a changed referent or extension.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The book may appear broader than the consensus’s standard formulation because it says “God and His people” rather than specifically “Christ and the Church.” However, the consensus explicitly includes Israel as YHWH’s wife and recognizes a unified people-of-God formulation, while Ezekiel 16, Ephesians 5, and Revelation 19 directly span those applications.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4158,
+    "input_tokens_details": {
+      "cache_write_tokens": 4155,
+      "cached_tokens": 0
+    },
+    "output_tokens": 516,
+    "output_tokens_details": {
+      "reasoning_tokens": 133
+    },
+    "total_tokens": 4674
+  },
+  "user": null,
+  "metadata": {}
+}

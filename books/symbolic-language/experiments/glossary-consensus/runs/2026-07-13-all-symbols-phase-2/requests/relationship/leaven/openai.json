@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "leaven",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLeaven\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In most Christian teaching, leaven symbolizes sin, corruption, or evil influence—especially false teaching and hypocrisy—whose defining characteristic is that a small amount spreads pervasively through the whole. This underlies the moral logic of removing leaven at Passover and the apostolic exhortation to purge sin from the community.\",\n  \"primary_basis\": [\n    \"Exodus 12:14-20 (removal of leaven for Passover/Feast of Unleavened Bread)\",\n    \"Exodus 13:3-7\",\n    \"Leviticus 2:11 (leaven excluded from grain offerings burned to the LORD)\",\n    \"Matthew 16:6-12 (leaven of the Pharisees and Sadducees, identified as their teaching)\",\n    \"Mark 8:15 (leaven of the Pharisees and of Herod)\",\n    \"Luke 12:1 (leaven of the Pharisees, which is hypocrisy)\",\n    \"1 Corinthians 5:6-8 ('a little leaven leavens the whole lump'; purge out the old leaven of malice and evil)\",\n    \"Galatians 5:9 ('a little leaven leavens the whole lump,' applied to false teaching)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Leaven as a positive image of the hidden, gradual, pervasive growth of the Kingdom of God / the gospel's transforming influence in the world, based on Jesus' parable of the leaven.\",\n      \"basis\": [\n        \"Matthew 13:33\",\n        \"Luke 13:20-21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A negative reading of the parable of the leaven itself: leaven in Matthew 13:33 represents evil or false doctrine infiltrating and corrupting professing Christendom, on the argument that leaven is consistently negative elsewhere in Scripture. Associated especially with some dispensationalist and older fundamentalist commentators (e.g., Scofield tradition).\",\n      \"basis\": [\n        \"Matthew 13:33 read in light of Leviticus 2:11, Matthew 16:6-12, 1 Corinthians 5:6-8, Galatians 5:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Leaven as a neutral, non-symbolic element of ordinary life: it is permitted or even required in certain offerings, suggesting it is not inherently a symbol of evil but simply an image of pervasive influence (good or bad depending on context).\",\n      \"basis\": [\n        \"Leviticus 7:13 (leavened bread with the peace/thanksgiving offering)\",\n        \"Leviticus 23:17 (leavened loaves at Pentecost/Feast of Weeks)\",\n        \"Amos 4:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Leaven as specifically 'hypocrisy'—a narrower application of the negative sense, sometimes treated as its own distinct definition rather than a subset of general corruption.\",\n      \"basis\": [\n        \"Luke 12:1\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad, recognizable consensus that leaven in Scripture predominantly symbolizes sin, corruption, hypocrisy, or false doctrine that spreads pervasively, grounded in the Passover regulations and the explicit Pauline and Synoptic usages. The main interpretive dispute concerns the parable of the leaven (Matthew 13:33 / Luke 13:20-21): the majority of commentators across traditions read it positively (kingdom growth), which creates the acknowledged tension that leaven is not uniformly negative; a minority (notably in dispensationalist circles) insists on a consistently negative symbolism and reads the parable as corruption within Christendom. Both the dominant negative meaning and the common positive parable reading are well established in published interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Sin, hypocrisy, false teaching, and corruption that spreads pervasively and contaminates the whole.\",\n  \"primary_basis\": [\n    \"1 Corinthians 5:6-8\",\n    \"Matthew 16:6-12\",\n    \"Galatians 5:9\",\n    \"Luke 12:1\",\n    \"Exodus 12:15-20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Kingdom of God, representing the hidden, pervasive, and transformative growth of the gospel and grace in the world.\",\n      \"basis\": [\n        \"Matthew 13:33\",\n        \"Luke 13:20-21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A universally negative corrupting influence, arguing that even in the Parable of the Leaven it represents false doctrine or apostasy secretly entering the visible church rather than the gospel's positive growth.\",\n      \"basis\": [\n        \"Matthew 13:33\",\n        \"Leviticus 2:11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Leaven is overwhelmingly used as a negative symbol for sin and false doctrine in both testaments, primarily based on the Feast of Unleavened Bread and apostolic warnings. However, the Parable of the Leaven introduces a highly recognized, positive alternative meaning regarding the growth of the Kingdom of Heaven, leading to a recognized duality in its symbolic usage.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Leaven most commonly symbolizes a corrupting or morally harmful influence—especially sin, hypocrisy, or false teaching—that spreads through and affects a larger community.\",\n  \"primary_basis\": [\n    \"Exodus 12:15–20; 13:3–7 — leaven is removed during Passover and the Feast of Unleavened Bread, providing a foundational association with separation from the old life and impurity.\",\n    \"Matthew 16:6–12 — Jesus identifies the leaven of the Pharisees and Sadducees with their teaching.\",\n    \"Mark 8:15 — Jesus warns against the leaven of the Pharisees and Herod.\",\n    \"Luke 12:1 — the leaven of the Pharisees is explicitly identified as hypocrisy.\",\n    \"1 Corinthians 5:6–8 — a little leaven affects the whole batch; Paul applies the image to tolerated immorality, malice, and wickedness.\",\n    \"Galatians 5:7–9 — a little leaven permeates the whole batch, representing disruptive teaching or influence.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A positive image of the kingdom of God working quietly, internally, and pervasively until the whole is transformed.\",\n      \"basis\": [\n        \"Matthew 13:33 — the kingdom of heaven is like leaven hidden in flour until all is leavened.\",\n        \"Luke 13:20–21 — the kingdom of God is compared to leaven permeating a large quantity of flour.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A morally neutral symbol of pervasive influence: leaven may represent good or evil depending on the immediate context.\",\n      \"basis\": [\n        \"The negative applications in Matthew 16:6–12, Luke 12:1, 1 Corinthians 5:6–8, and Galatians 5:9 contrast with the positive kingdom sayings in Matthew 13:33 and Luke 13:20–21.\",\n        \"The shared point across these texts is leaven’s hidden, gradual, and comprehensive effect rather than an inherently fixed moral quality.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In the kingdom parable, leaven still represents corruption infiltrating the visible kingdom or church rather than the kingdom’s positive growth.\",\n      \"basis\": [\n        \"Matthew 13:33 and Luke 13:20–21 are read through the predominantly negative uses of leaven elsewhere.\",\n        \"Some interpreters connect this reading with surrounding parables involving mixed or corrupted conditions, especially Matthew 13:24–32, 36–43.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Leaven can signify ordinary, completed, or fully developed human life and worship rather than corruption.\",\n      \"basis\": [\n        \"Leviticus 7:13 permits leavened bread with the thanksgiving offering.\",\n        \"Leviticus 23:17 requires two leavened loaves at the Feast of Weeks, showing that leaven is not universally excluded from biblical worship imagery.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The conventional standalone symbolism is negative—spreading sin, corruption, hypocrisy, or false doctrine. Nevertheless, Scripture itself also uses leaven positively for the permeating action of God’s kingdom. Consequently, there is no settled rule that leaven always has one symbolic meaning; context is widely recognized as determinative.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"sin, moral corruption, or evil/false influence that spreads and permeates\",\n  \"primary_basis\": [\n    \"1 Corinthians 5:6-8\",\n    \"Galatians 5:9\",\n    \"Matthew 16:6,11-12\",\n    \"Luke 12:1\",\n    \"Mark 8:15\",\n    \"Exodus 12:15-20 (and related Passover/unleavened bread texts)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the gradual, pervasive, and transformative growth of the Kingdom of Heaven or the gospel\",\n      \"basis\": [\n        \"Matthew 13:33\",\n        \"Luke 13:20-21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"corruption or evil infiltrating the visible church/Christendom (negative reading of the Kingdom parable)\",\n      \"basis\": [\n        \"Matthew 13:33 (interpreted via the usual negative leaven motif)\",\n        \"Luke 13:20-21\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"hypocrisy or false teaching specifically (as a subset or application of corrupting influence)\",\n      \"basis\": [\n        \"Matthew 16:6-12\",\n        \"Luke 12:1\",\n        \"Mark 8:15\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Leaven carries a strongly predominant negative symbolic sense of spreading corruption across Christian interpretation, rooted in Pauline usage and Jesus' warnings plus OT Passover associations; the Kingdom parable supplies a well-known positive counter-usage, producing context-dependent dual symbolism and some debate over the parable itself. No single exclusive meaning is universally settled.\"\n}\n\nBOOK ENTRY\nBread soured — the word made impure, embittered, and puffed up; the hidden corruption that ferments through the whole lump, purged before Passover and forbidden on God's altar. The NT names it the corrupt doctrine of the Pharisees.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Lev 2:11; Matt 16:12; 1 Cor 5:7-8) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nLeviticus 2:11 — No meat offering, which ye shall bring unto the LORD, shall be made with leaven: for ye shall burn no leaven, nor any honey, in any offering of the LORD made by fire.\nMatthew 16:12 — Then understood they how that he bade them not beware of the leaven of bread, but of the doctrine of the Pharisees and of the Sadducees.\n1 Corinthians 5:7 — Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us:\n1 Corinthians 5:8 — Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "71c8efc4f23f4ec2402696fb20d560978d528c6d2e4e8299db0391e5e7f30f3b",
+  "cache": {
+    "hit": false
+  }
+}

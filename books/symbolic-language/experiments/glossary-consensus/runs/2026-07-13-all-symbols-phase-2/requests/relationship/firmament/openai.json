@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "firmament",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFirmament (Heaven)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the 'firmament' (Hebrew raqia, named 'Heaven' in Genesis 1:8) is understood as the expanse or vault God created on the second day to separate the waters above from the waters below. Symbolically it stands for God's power to order and divide chaos into a structured cosmos, and it functions as the visible boundary between the earthly realm and the heavenly realm—the sky/heavens that 'declare the glory of God' and point worshippers upward to God's transcendent dwelling and throne.\",\n  \"primary_basis\": [\n    \"Genesis 1:6-8 (God makes the firmament to divide the waters and calls it Heaven)\",\n    \"Genesis 1:14-20 (sun, moon, stars, and birds set in or before the firmament)\",\n    \"Psalm 19:1 ('the heavens declare the glory of God; the firmament shows his handiwork')\",\n    \"Psalm 150:1 ('praise him in the firmament of his power')\",\n    \"Ezekiel 1:22-26 (a firmament above the living creatures, beneath God's throne)\",\n    \"Daniel 12:3 (the wise shall shine 'as the brightness of the firmament')\",\n    \"Job 37:18 (the sky spread out, 'strong as a molten mirror')\",\n    \"Isaiah 40:22 (God stretches out the heavens like a curtain/tent)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Historical-critical reading: the raqia is a solid dome or beaten-out vault of ancient Near Eastern cosmology, holding back the cosmic waters above, with heavenly bodies fixed in it; the text reflects ancient cosmography rather than modern astronomy.\",\n      \"basis\": [\n        \"Genesis 1:6-8\",\n        \"Job 37:18\",\n        \"Genesis 7:11 and 8:2 ('windows of heaven')\",\n        \"Ezekiel 1:22-26\",\n        \"Comparative ANE literature (e.g., Enuma Elish parallels)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Concordist/conservative reading: the firmament is simply the 'expanse'—the atmosphere and/or visible sky (and sometimes outer space)—not a solid structure; the Hebrew term denotes something stretched out, compatible with modern cosmology.\",\n      \"basis\": [\n        \"Genesis 1:6-8 (translated 'expanse' in NASB, ESV, NIV)\",\n        \"Isaiah 40:22\",\n        \"Psalm 104:2 (stretching out the heavens like a tent)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Augustinian allegory: the firmament signifies Holy Scripture stretched like a skin or canopy over humanity, God's authoritative Word placed between believers and the heavenly waters (angelic realm).\",\n      \"basis\": [\n        \"Augustine, Confessions Book XIII on Genesis 1:6-8\",\n        \"Psalm 104:2 (heavens stretched out like a skin)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Origenist/patristic spiritual reading: the firmament represents the division between spiritual and corporeal realities, or the purified mind/soul that separates higher spiritual waters from lower carnal ones; sometimes extended to the saints or the Church as a 'firmament' between God and the world.\",\n      \"basis\": [\n        \"Origen, Homilies on Genesis 1\",\n        \"Genesis 1:6-8 read allegorically\",\n        \"Daniel 12:3 (the righteous shining like the firmament)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Liturgical-temple reading: the firmament as part of a cosmic temple structure, corresponding to the veil of the tabernacle/temple separating God's dwelling from the earthly courts; creation as sanctuary.\",\n      \"basis\": [\n        \"Genesis 1 read alongside Exodus 25-40 tabernacle parallels\",\n        \"Psalm 78:69 (sanctuary built 'like the high heavens')\",\n        \"Isaiah 40:22 (heavens as tent/curtain)\",\n        \"Ezekiel 1 (firmament beneath the throne)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is broad agreement on the term's theological/symbolic function—God's ordering of creation, the boundary between earthly and heavenly realms, and the sky as witness to God's glory. However, the literal referent is genuinely contested: academic biblical scholarship treats raqia as a solid vault of ancient cosmology (dominant in that sphere), while much popular and evangelical teaching reads it as the non-solid 'expanse' of sky/atmosphere (dominant in that sphere). Confidence is marked medium because 'consensus' depends heavily on which interpretive community is in view, and because the term carries both a physical-cosmological sense and layered symbolic senses (patristic allegory, temple symbolism) that are not uniformly taught.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The boundary between the earthly realm and God's heavenly throne, symbolizing divine sovereign order, protection from chaos, and the majestic declaration of God's glory.\",\n  \"primary_basis\": [\n    \"Genesis 1:6-8\",\n    \"Psalm 19:1\",\n    \"Ezekiel 1:22-26\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A reflection of Ancient Near Eastern cosmology representing a solid dome holding back cosmic oceans, interpreted as a symbol of God conquering chaotic waters to establish structural order.\",\n      \"basis\": [\n        \"Genesis 1:6-8\",\n        \"Job 37:18\",\n        \"Psalm 104:2-3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An allegorical boundary separating spiritual truths or angelic realms (the waters above) from earthly, carnal matters (the waters below), and sometimes representing the authority and expanse of Scripture.\",\n      \"basis\": [\n        \"Genesis 1:6-8\",\n        \"Psalm 19:1\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"While historically subjected to rich patristic allegory, modern interpretations are heavily divided between viewing the firmament as an ancient cosmological structure symbolizing order over chaos, a literal description of the earth's atmosphere, or a poetic metaphor for God's transcendent glory.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The heavenly or divine realm: a symbol of God’s transcendence, glory, sovereignty, and ordered rule over creation.\",\n  \"primary_basis\": [\n    \"Genesis 1:6–8, 14–17 — God creates and names the firmament/heavens, establishing cosmic order.\",\n    \"Psalm 19:1 — the firmament proclaims God’s handiwork and glory.\",\n    \"Psalm 150:1 — God is praised in his sanctuary and in the firmament of his power.\",\n    \"Ezekiel 1:22–26 — the shining expanse supports the vision of God’s throne, associating it with divine majesty and sovereignty.\",\n    \"Isaiah 66:1; Matthew 6:9 — heaven is identified more generally as God’s throne or dwelling, although these passages do not use the specific Hebrew term for firmament.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The physical sky or cosmological expanse separating the waters, rather than a symbol.\",\n      \"basis\": [\n        \"Genesis 1:6–8\",\n        \"Genesis 1:14–17\",\n        \"Genesis 1:20\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"God’s ordering of creation through boundaries and separation: the firmament symbolizes structure imposed upon primordial chaos.\",\n      \"basis\": [\n        \"Genesis 1:2, 6–10\",\n        \"Psalm 104:2–9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Creation’s witness to God: the firmament symbolizes the visible world’s proclamation of divine glory and craftsmanship.\",\n      \"basis\": [\n        \"Psalm 19:1–6\",\n        \"Psalm 150:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Heavenly brightness, immortality, or the future glory of the righteous.\",\n      \"basis\": [\n        \"Daniel 12:3, where the wise shine like the brightness of the firmament\",\n        \"Matthew 13:43, a related image of the righteous shining in the kingdom\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The firmament as Scripture, the Church, or the saints who communicate divine truth—allegorical readings found especially in some patristic interpretation.\",\n      \"basis\": [\n        \"Genesis 1:6–8 interpreted allegorically; notably developed in patristic readings such as Augustine’s treatment of the firmament as the authority of Scripture\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is no single settled Christian symbolic definition of “firmament.” In its principal biblical settings, the Hebrew raqia denotes the created expanse or sky and is often read cosmologically rather than symbolically. When symbolic significance is assigned, the most recognizable association is with the transcendent heavenly realm and the manifestation of God’s glory and sovereignty.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The celestial expanse or vault of the sky that God creates to separate the waters above from the waters below (and which He names Heaven), symbolizing the ordered boundary between the earthly realm and the divine realm as well as the visible display of God's creative glory and majesty.\",\n  \"primary_basis\": [\n    \"Genesis 1:6-8\",\n    \"Genesis 1:14-17\",\n    \"Psalm 19:1\",\n    \"Ezekiel 1:22-26\",\n    \"Daniel 12:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A solid, hammered-out dome or vault (raqia) reflecting ancient Near Eastern cosmology, with waters stored above it and heavenly bodies set in it.\",\n      \"basis\": [\n        \"Genesis 1:6-8\",\n        \"Job 37:18\",\n        \"Psalm 148:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The atmospheric or 'second' heaven (as distinct from the third heaven of God's immediate presence), understood as the sky and air surrounding the earth.\",\n      \"basis\": [\n        \"Genesis 1:6-8\",\n        \"2 Corinthians 12:2\",\n        \"Deuteronomy 11:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Allegorically the Church, the Scriptures, or the firmament of faith that separates the faithful from the world and reveals divine light.\",\n      \"basis\": [\n        \"Genesis 1:6-8 (patristic allegory)\",\n        \"Psalm 19:1\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Simply the open sky or weather canopy with no special solid or spiritual boundary function.\",\n      \"basis\": [\n        \"Genesis 1:6-8\",\n        \"Psalm 150:1\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"Traditional Christian interpretation consistently treats the firmament as the created heavens that both separate realms and declare God's glory; differences arise mainly over whether the raqia is conceived as solid, atmospheric, or purely symbolic, and over the degree of allegory applied by some patristic writers. Modern critical scholarship emphasizes the solid-dome ANE background more strongly than most confessional teaching.\"\n}\n\nBOOK ENTRY\nThe divider God set between the two seas of people — the restless nations below and the gathered waters above, the heavenly assembly — and the place where the lights are hung.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 1:6-8, 14-17; Ps 148:4; Rev 17:15) · see Sea & Waters, ch. 40\n\nAVAILABLE KJV EXCERPTS\nGenesis 1:6 — And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.\nGenesis 1:7 — And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.\nGenesis 1:8 — And God called the firmament Heaven. And the evening and the morning were the second day.\nGenesis 1:14 — And God said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:\nGenesis 1:15 — And let them be for lights in the firmament of the heaven to give light upon the earth: and it was so.\nGenesis 1:16 — And God made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.\nGenesis 1:17 — And God set them in the firmament of the heaven to give light upon the earth,\nPsalms 148:4 — Praise him, ye heavens of heavens, and ye waters that be above the heavens.\nRevelation 17:15 — And he saith unto me, The waters which thou sawest, where the whore sitteth, are peoples, and multitudes, and nations, and tongues.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "72f8c59745fa3f744e46a2db1aae8523f837e8260a382577cd27668b4db71cd6",
+  "cache": {
+    "hit": false
+  }
+}

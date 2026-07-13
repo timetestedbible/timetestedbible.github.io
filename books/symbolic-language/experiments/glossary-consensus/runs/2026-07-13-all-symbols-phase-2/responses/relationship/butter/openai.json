@@ -1,0 +1,195 @@
+{
+  "id": "resp_02cdc65909f6e7d5006a547969797c8194b919995b5b83e7c6",
+  "object": "response",
+  "created_at": 1783921001,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921017,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_02cdc65909f6e7d5006a54796a32cc8194b8c3fca3dc79ab9a",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_02cdc65909f6e7d5006a54797239508194a05ddabac65fcd4e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"Chemah most commonly signifies rich material nourishment, prosperity, or divine provision, though its force is context-dependent and can include remnant subsistence, hospitality, deceptive smoothness, or—rarely—spiritual nourishment.\",\"book_summary\":\"Butter signifies milk transformed through labor into sound doctrine, producing moral discernment and sustaining the remnant; smooth, warlike speech is its counterfeit.\",\"consensus_core_identification\":\"Rich material nourishment and abundance as an image of prosperity or provision.\",\"book_core_identification\":\"Sound doctrine produced through spiritual labor, functioning as discerning and remnant-sustaining food.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book retains the remnant-food and deceptive-speech passages but reclassifies butter’s principal positive instances—including Isaiah 7 and Job 29—from material provision or subsistence into doctrinal formation. Its doctrinal reading resembles the consensus’s rare spiritual-nourishment alternative but replaces, rather than merely narrows, the dominant material referent.\",\"material_contradiction\":\"For the same positive imagery, the consensus identifies material abundance or nourishment, whereas the book identifies sound doctrine. Accepting the latter as the governing symbol requires replacing the former identification, even though both can coexist as literal and allegorical levels.\",\"rationale\":\"The reading is not novel because spiritual nourishment or divine truth appears among the listed alternatives, and the counterfeit of smooth deceit is directly recognized by consensus. Nevertheless, the book elevates that minority allegorical possibility into the core meaning and links churning specifically to doctrinal production, contrary to the consensus’s central identification of material abundance and contextual variability.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The cited verses contain churning, food, discernment, remnant survival, prosperous imagery, and smooth deceptive speech, but they do not themselves identify butter with sound doctrine. Proverbs 30:33 explicitly uses churning as an analogy for provoked strife, while Isaiah 7’s phrase may mark the child’s age or circumstances rather than doctrine taught by eating butter.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3159,
+    "input_tokens_details": {
+      "cache_write_tokens": 3156,
+      "cached_tokens": 0
+    },
+    "output_tokens": 850,
+    "output_tokens_details": {
+      "reasoning_tokens": 405
+    },
+    "total_tokens": 4009
+  },
+  "user": null,
+  "metadata": {}
+}

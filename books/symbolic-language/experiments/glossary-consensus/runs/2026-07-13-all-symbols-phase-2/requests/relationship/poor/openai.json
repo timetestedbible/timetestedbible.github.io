@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "poor",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nPoor, meek, needy\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'poor, meek, needy' is most commonly read as a composite description of the humble faithful — those who recognize their spiritual poverty and total dependence on God rather than on their own resources, status, or power. This is the 'anawim' concept from the Hebrew Bible: the lowly ones who wait on God, whom God defends, vindicates, and promises to exalt. In the Beatitudes this is spiritualized as 'poor in spirit' and 'meek' — the humble who mourn their sin, submit to God, and will inherit the kingdom/earth. The terms thus symbolize the true people of God characterized by humility and trust, in contrast to the proud, self-sufficient, and oppressive.\",\n  \"primary_basis\": [\n    \"Matthew 5:3 ('Blessed are the poor in spirit, for theirs is the kingdom of heaven')\",\n    \"Matthew 5:5 ('Blessed are the meek, for they shall inherit the earth')\",\n    \"Psalm 37:11 ('But the meek shall inherit the earth')\",\n    \"Luke 6:20 ('Blessed are you poor, for yours is the kingdom of God')\",\n    \"Isaiah 61:1 (good news preached to the poor/afflicted; quoted by Jesus in Luke 4:18)\",\n    \"Isaiah 66:2 ('this is the one to whom I will look: he who is humble and contrite in spirit')\",\n    \"Zephaniah 2:3 and 3:12 (the humble/lowly remnant who seek the LORD)\",\n    \"Psalm 34:6 ('This poor man cried, and the LORD heard him')\",\n    \"Psalm 40:17 / Psalm 70:5 ('I am poor and needy, yet the Lord takes thought for me')\",\n    \"Psalm 72:12-13 (the king delivers the needy and the poor)\",\n    \"Matthew 11:29 (Jesus as 'gentle/meek and lowly in heart')\",\n    \"James 2:5 ('has not God chosen the poor of this world to be rich in faith?')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal socioeconomic reading: the terms refer to the materially poor and oppressed, whom God preferentially favors and defends; central to liberation theology and much modern Lukan scholarship (Luke's 'blessed are you poor' lacks 'in spirit').\",\n      \"basis\": [\n        \"Luke 6:20-24\",\n        \"Luke 4:18\",\n        \"Luke 1:52-53 (Magnificat)\",\n        \"James 2:5-6\",\n        \"Amos 2:6-7\",\n        \"Proverbs 14:31\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The 'anawim' as a specific historical remnant: the faithful lowly of post-exilic Israel who awaited the Messiah (exemplified by figures like Simeon, Anna, Mary); a scholarly and Catholic reading identifying the terms with a pious remnant community.\",\n      \"basis\": [\n        \"Zephaniah 3:12-13\",\n        \"Luke 1-2 (infancy narratives)\",\n        \"Psalm 37\",\n        \"Isaiah 61:1-3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Meekness read specifically as strength under control or disciplined gentleness (drawing on Greek 'praus'), i.e., a virtue of restrained power rather than a description of the poor; a homiletical emphasis often paired with Moses and Christ as models.\",\n      \"basis\": [\n        \"Numbers 12:3 (Moses the meekest man)\",\n        \"Matthew 11:29\",\n        \"Matthew 21:5\",\n        \"Galatians 5:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ecclesiological/typological reading: 'poor, meek, needy' symbolizes the true church or elect people of God collectively (or, in some prophetic/sectarian readings, a specific end-time group), contrasted with apostate or worldly religion.\",\n      \"basis\": [\n        \"Zephaniah 3:12\",\n        \"1 Corinthians 1:26-29\",\n        \"Revelation 3:17 (contrast with self-sufficient Laodicea)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Christological reading: the terms point ultimately to Christ himself as the archetypal poor, meek, and needy one who became poor for our sake.\",\n      \"basis\": [\n        \"2 Corinthians 8:9\",\n        \"Matthew 11:29\",\n        \"Zechariah 9:9 / Matthew 21:5\",\n        \"Psalm 22\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is a broadly recognizable consensus that the cluster 'poor, meek, needy' designates the humble who depend on God (the anawim tradition culminating in the Beatitudes), but the tradition contains a well-known, longstanding tension between spiritualized readings (Matthew's 'poor in spirit') and material/socioeconomic readings (Luke's 'you poor'; liberation theology). Most interpreters treat these as overlapping rather than mutually exclusive: the Hebrew terms 'ani/anaw/ebyon' carry both economic and spiritual connotations. Confidence is medium because the query combines three related but distinct terms rather than a single fixed symbol, and the balance between the spiritual and material readings varies significantly by tradition (evangelical, Catholic, liberationist).\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual humility, absolute dependence on God, and a faithful posture of receptivity to God's grace and deliverance, often corresponding to the Hebrew concept of the 'anawim' (the faithful remnant who rely on God rather than their own strength).\",\n  \"primary_basis\": [\n    \"Matthew 5:3\",\n    \"Matthew 5:5\",\n    \"Psalm 37:11\",\n    \"Isaiah 61:1\",\n    \"Zephaniah 3:12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal socio-economic poverty, material deprivation, and systemic oppression, highlighting God's preferential option for the materially poor and marginalized (heavily emphasized in Liberation Theology).\",\n      \"basis\": [\n        \"Luke 6:20\",\n        \"James 2:5\",\n        \"Amos 2:6\",\n        \"Proverbs 14:31\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An apocalyptic or sectarian remnant identifier, used by specific communities (such as the Qumran community or early Jewish-Christians) to designate themselves as the true, faithful Israel awaiting eschatological vindication.\",\n      \"basis\": [\n        \"Isaiah 11:4\",\n        \"Psalm 149:4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While mainstream Christian homiletics and theology have traditionally prioritized the spiritualized meaning ('poor in spirit' as humility), historical-critical scholarship and Liberation Theology firmly champion the socio-economic interpretation, creating a dual consensus where both spiritual dependence and material marginalization are recognized as vital, often overlapping, biblical themes.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Those who are humble, powerless, afflicted, or conscious of their dependence on God, and who therefore look to God for protection, justice, and salvation. In Christian teaching, the terms often symbolize spiritually receptive people rather than merely a social or economic class.\",\n  \"primary_basis\": [\n    \"Psalm 37:11 — the meek inherit the land, echoed in the Beatitudes.\",\n    \"Psalm 40:17; 69:32-33; 86:1 — the poor and needy depend upon God and receive his attention and deliverance.\",\n    \"Isaiah 61:1-2 and Luke 4:18-19 — good news is proclaimed to the poor as a mark of messianic salvation.\",\n    \"Zephaniah 3:12 — a humble and lowly remnant takes refuge in the Lord.\",\n    \"Matthew 5:3-5 — the poor in spirit receive the kingdom, and the meek inherit the earth.\",\n    \"Luke 6:20-21 — the poor and hungry are promised eschatological reversal.\",\n    \"James 2:5 — God chooses those poor in the world to be rich in faith and heirs of the kingdom.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The materially poor, economically deprived, and socially marginalized, without converting poverty into a primarily spiritual condition.\",\n      \"basis\": [\n        \"Luke 6:20 explicitly says “you who are poor,” unlike Matthew’s “poor in spirit.”\",\n        \"Isaiah 58:6-7; Amos 2:6-7; Matthew 25:31-46; and James 2:1-7 emphasize concrete deprivation, exploitation, and care for marginalized people.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The meek as people characterized ethically by gentleness, patience, nonviolence, and restrained strength rather than by poverty or social powerlessness.\",\n      \"basis\": [\n        \"Numbers 12:3 describes Moses as meek.\",\n        \"Matthew 11:29 presents Jesus as gentle or meek and humble in heart.\",\n        \"Matthew 21:5 depicts the king arriving meekly; Galatians 5:23 lists gentleness as fruit of the Spirit.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The faithful poor or “anawim”: a pious remnant within Israel whose affliction and social lowliness are joined to trust in God.\",\n      \"basis\": [\n        \"Psalms 9:18; 34:6; 37:11; 69:32-33 connect the afflicted poor with hope in God.\",\n        \"Zephaniah 2:3; 3:12 speaks of the humble or lowly who seek and trust the Lord.\",\n        \"Luke 1:46-55 reflects the theme of God exalting the lowly and filling the hungry.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ himself, especially in his humility, voluntary poverty, suffering, and identification with the oppressed.\",\n      \"basis\": [\n        \"Matthew 11:29 describes Jesus as meek and humble.\",\n        \"2 Corinthians 8:9 says Christ became poor for others’ sake.\",\n        \"Philippians 2:6-8 describes his self-emptying and humiliation.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"All sinners as spiritually destitute before God, regardless of their actual humility, faith, or economic condition.\",\n      \"basis\": [\n        \"Matthew 5:3 is often generalized through the phrase “poor in spirit.”\",\n        \"Revelation 3:17 portrays spiritually complacent people as poor and needy despite material wealth.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong recurring consensus motif—lowliness, dependence on God, and divine favor toward the afflicted—but no single settled interpretation covering “poor,” “meek,” and “needy” in every passage. Biblical scholarship commonly stresses that these words can denote literal socioeconomic deprivation, social powerlessness, ethical gentleness, spiritual humility, or overlapping combinations, depending on context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Spiritual humility and total dependence on God (the 'anawim' ideal): those who recognize their own spiritual poverty/need and meekly trust God rather than wealth, power, or self-sufficiency\",\n  \"primary_basis\": [\n    \"Matthew 5:3-5 (Beatitudes: 'poor in spirit' and 'meek')\",\n    \"Psalm 37:11 and related Psalms (meek/anawim inherit the land)\",\n    \"Isaiah 61:1 / Luke 4:18 (good news to the poor)\",\n    \"Zephaniah 2:3; 3:12 (humble and lowly who seek the Lord)\",\n    \"Luke 1:46-55 (Magnificat theme of God lifting the lowly)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Primarily or exclusively material/economic poverty as a condition specially favored or blessed by God\",\n      \"basis\": [\n        \"Luke 6:20 (plain 'poor' without 'in spirit')\",\n        \"James 2:5\",\n        \"liberation-theology and social-gospel readings\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The oppressed faithful remnant of Israel (or the Church) awaiting eschatological vindication\",\n      \"basis\": [\n        \"OT anawim motif across Psalms and prophets\",\n        \"Qumran and Second-Temple usage\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mere gentleness of temperament without reference to spiritual need or socioeconomic status\",\n      \"basis\": [\n        \"popular moralistic readings of 'meek'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian exegesis (patristic through Reformation and most modern confessional teaching) consistently privileges the spiritual-humility reading while still allowing secondary material or social applications; pure economic-only readings remain secondary in the broader historical consensus.\"\n}\n\nBOOK ENTRY\nThe bowed-humble before God — one Hebrew word family behind “poor” and “meek,” and “needy” (evyon) its constant companion; empty-handed toward Him, and so able to receive: the gospel’s hearers and heirs of the kingdom.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 37:11/Matt 5:5; Isa 61:1/Luke 4:18; Isa 66:2; Jas 2:5; Ps 72:12-13) · see Orphans, Widows & the Fatherless, ch. 14\n\nAVAILABLE KJV EXCERPTS\nPsalms 37:11 — But the meek shall inherit the earth; and shall delight themselves in the abundance of peace.\nIsaiah 61:1 — The Spirit of the Lord GOD is upon me; because the LORD hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound;\nIsaiah 66:2 — For all those things hath mine hand made, and all those things have been, saith the LORD: but to this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word.\nJames 2:5 — Hearken, my beloved brethren, Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him?\nPsalms 72:12 — For he shall deliver the needy when he crieth; the poor also, and him that hath no helper.\nPsalms 72:13 — He shall spare the poor and needy, and shall save the souls of the needy.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "839684069bd1b74a8c9e2f7d53112cd3210c1a306851650e759ec86fc3345f89",
+  "cache": {
+    "hit": false
+  }
+}

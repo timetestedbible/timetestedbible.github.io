@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922772,
+  "completed_at": 1783922782,
+  "id": "a9c27850-b128-9461-8106-2eada68b80c7",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_a9c27850-b128-9461-8106-2eada68b80c7",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Wise\".\nThe book's entry for \"Wise\" is a concise, direct identification that aligns precisely with the core meaning shared across all four consensus responses: a person defined by fearing the Lord and actively hearing and obeying God's word. This is not merely similar but matches the primary referent in each case, including the explicit scriptural anchors provided (Matthew 7:24 and Psalm 111:10). The consensus elaborates with additional layers such as contrasts with worldly wisdom, Christological readings, or eschatological preparedness, but these are presented as alternatives rather than replacements for the central definition. Therefore, the book's minimal core identification is equivalent to the consensus's, with no material contradiction or boundary shift in the primary sense. The citations alone offer strong support, as they are identical to those emphasized in the responses. Overall, this constitutes a MATCH relationship.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"Consensus primary meaning is the person who fears the LORD and hears/obeys God's word in practical righteous living (often contrasted with the fool or worldly wisdom); secondary alternatives include Christological personification, Magi, and ironic worldly senses.\",\"book_summary\":\"One who hears God's word and does it, who fears the LORD.\",\"consensus_core_identification\":\"one who fears the LORD and hears/does His word\",\"book_core_identification\":\"one who hears God's word and does it, who fears the LORD\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"None material; book simply states the shared primary positive core without altering its cases or conditions.\",\"material_contradiction\":\"None.\",\"rationale\":\"Minimum cores are identical in referent and sense (fear of the LORD + hearing and doing the word, per the shared Matt 7:24 / Ps 111:10 texts). Consensus elaborations and alternatives are extra detail that do not change or contradict the primary identification the book isolates.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Book is silent on common secondary senses (personified Wisdom/Christ, Magi, worldly irony), which a reader might wish were noted, yet silence does not alter or contradict the core match.\",\"confidence\":\"high\"}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_a9c27850-b128-9461-8106-2eada68b80c7",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3632,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1249,
+    "output_tokens_details": {
+      "reasoning_tokens": 957
+    },
+    "total_tokens": 4881,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 139900000,
+    "context_details": {
+      "input_tokens": 3632,
+      "output_tokens": 1249
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

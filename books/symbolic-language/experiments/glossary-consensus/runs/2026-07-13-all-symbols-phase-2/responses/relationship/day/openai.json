@@ -1,0 +1,201 @@
+{
+  "id": "resp_0ad447422405e792006a5479c49ea4819595261c24649432e4",
+  "object": "response",
+  "created_at": 1783921092,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921123,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0ad447422405e792006a5479c586008195bbe4baa2839d52fc",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0ad447422405e792006a5479cf52c08195932e656a0c6e6b57",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0ad447422405e792006a5479d9fad481958aa3ac33bb4f0560",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"There is no single exhaustive symbolic meaning of “day.” The strongest recurring identification is the sphere or time of light, righteousness, wakefulness, and divine activity; day-year symbolism and the thousand-year analogy are recognized but context-specific, while the Day of the Lord and other senses remain distinct.\",\"book_summary\":\"“Day” is the time of light in which deeds are exposed and people walk, work, and watch; in certain judgment and divine-time settings it also functions as a scalable temporal unit—a day for a year or a day as a thousand years.\",\"consensus_core_identification\":\"Day symbolizes the sphere or season of light, righteous activity, and vigilance, with context-specific temporal analogies such as day-for-year and day-as-thousand-years.\",\"book_core_identification\":\"Day is the time of light, exposure, accountable activity, and vigilance, and it can scale symbolically to a year or a thousand years in specified contexts.\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book consolidates the light/day motif and two temporal analogies into one compact identification, while the consensus generally treats them as distinct contextual uses and also recognizes major cases the book omits, especially the eschatological Day of the Lord. It also gives the scaling pattern a more affirmative, unified status than the consensus, which cautions against treating either analogy as a general conversion rule.\",\"material_contradiction\":\"There is no direct contradiction at the core. Tension would arise only if the book’s “unit that scales” were taken as a universal prophetic rule, since the consensus regards day-for-year as tradition- or passage-specific and 2 Peter 3:8 as an analogy about divine time rather than a fixed conversion formula.\",\"rationale\":\"The book preserves the consensus’s central day-versus-night identification and uses the same principal texts for light, work, vigilance, day-for-year judgment, and divine temporal transcendence. It is refined rather than a full match because it reorganizes several context-dependent meanings into a unified entry, sharpens light into exposure and accountability, and leaves out other established symbolic extensions.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Numbers 14:34 and Ezekiel 4:6 establish day-for-year correspondences in two particular enacted judgments, while 2 Peter 3:8 states a reciprocal comparison rather than a prophetic counting rule. Thus the citations support the examples but do not by themselves establish a general category of prophetic temporal scaling; “deeds are seen and tested” is also more inferred than directly stated in the printed verses.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4290,
+    "input_tokens_details": {
+      "cache_write_tokens": 4287,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1585,
+    "output_tokens_details": {
+      "reasoning_tokens": 1034
+    },
+    "total_tokens": 5875
+  },
+  "user": null,
+  "metadata": {}
+}

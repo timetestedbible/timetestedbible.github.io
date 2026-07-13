@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "babel",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nBabel / Babylon\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, Babel/Babylon functions as the archetypal symbol of human pride, self-exaltation, and organized rebellion against God — the 'city of man' or godless world system standing in deliberate contrast to the city of God (Jerusalem/Zion). Babel represents humanity's attempt to make a name for itself and reach heaven by its own power (resulting in confusion and scattering), and Babylon extends this into the image of an idolatrous, oppressive, seductive world power destined for divine judgment. In Revelation, 'Babylon the great' is the culminating symbol of this anti-God civilization, whose fall is contrasted with the descent of the New Jerusalem.\",\n  \"primary_basis\": [\n    \"Genesis 11:1–9 (the Tower of Babel: 'let us make a name for ourselves')\",\n    \"Genesis 10:8–10 (Nimrod and the founding of Babel)\",\n    \"Isaiah 13–14 (oracle against Babylon; the taunt against its proud king)\",\n    \"Isaiah 21:9 ('Fallen, fallen is Babylon')\",\n    \"Isaiah 47 (Babylon as the arrogant, humiliated queen)\",\n    \"Jeremiah 50–51 (judgment on Babylon; 'flee from the midst of Babylon')\",\n    \"Daniel 1–5 (Babylon as the proud empire humbled; Nebuchadnezzar, Belshazzar, the writing on the wall)\",\n    \"2 Kings 24–25 / Psalm 137 (Babylon as the power of exile and oppression)\",\n    \"Revelation 14:8; 16:19; 17:1–18; 18:1–24 (Babylon the great, mother of harlots; her fall)\",\n    \"1 Peter 5:13 (the church 'in Babylon,' widely read as symbolic)\",\n    \"Revelation 21–22 (New Jerusalem as the deliberate counter-image)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Babylon in Revelation and 1 Peter as a cipher for the Roman Empire / the city of Rome — the persecuting imperial power of the first century (the historical-critical and much patristic reading; the 'seven hills' of Revelation 17:9).\",\n      \"basis\": [\n        \"Revelation 17:9,18\",\n        \"1 Peter 5:13\",\n        \"Revelation 18 (commerce and empire imagery)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Babylon as the end-time or trans-historical 'world system' — a recurring/eschatological economic, political, and religious order opposed to God, not tied to any single city (common in evangelical and idealist interpretation, often combined with the primary meaning).\",\n      \"basis\": [\n        \"Revelation 17–18\",\n        \"Genesis 11:1–9\",\n        \"Isaiah 13–14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Babel/Babylon as confusion and division of human language and unity, typologically reversed at Pentecost (a common homiletical and patristic typology pairing Genesis 11 with Acts 2).\",\n      \"basis\": [\n        \"Genesis 11:7–9\",\n        \"Acts 2:1–11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Babylon the great as apostate Jerusalem (the city that killed the prophets), the preterist reading of Revelation.\",\n      \"basis\": [\n        \"Revelation 11:8\",\n        \"Revelation 17–18\",\n        \"Matthew 23:35–37\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Babylon as the Roman Catholic Church / papacy — the classic historicist Protestant identification (Luther, Reformation-era polemic; retained in some traditions such as Seventh-day Adventism).\",\n      \"basis\": [\n        \"Revelation 17:1–6\",\n        \"Revelation 18:4 ('come out of her, my people')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal rebuilt city of Babylon in Mesopotamia as the seat of the end-time Antichrist (some dispensationalist futurists).\",\n      \"basis\": [\n        \"Revelation 17–18\",\n        \"Zechariah 5:5–11\",\n        \"Jeremiah 50–51 read as unfulfilled\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"1 Peter's 'Babylon' as a literal place (Mesopotamian Babylon or the Egyptian garrison town Babylon) rather than a symbol for Rome.\",\n      \"basis\": [\n        \"1 Peter 5:13\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is unusually strong cross-traditional agreement on the core symbolism: Babel/Babylon = human pride, idolatrous empire, and the anti-God 'city of man' set against God's city, drawn from Augustine's two-cities framework onward. Disagreement is concentrated almost entirely on the referent of 'Babylon' in Revelation (Rome, Jerusalem, papacy, end-time system, literal rebuilt city), not on the underlying symbolic meaning. The Rome identification is dominant in academic scholarship, while the trans-historical world-system reading is dominant in popular preaching; these are usually treated as compatible layers rather than rivals.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Human pride, rebellion against God, systemic idolatry, and an oppressive, worldly anti-God system or empire.\",\n  \"primary_basis\": [\n    \"Genesis 11:1-9\",\n    \"Revelation 14:8\",\n    \"Revelation 17:1-18\",\n    \"Revelation 18:1-24\",\n    \"Daniel 4:28-30\",\n    \"Isaiah 13:1-22\",\n    \"Isaiah 14:4-23\",\n    \"Jeremiah 50:1-46\",\n    \"Jeremiah 51:1-64\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The first-century Roman Empire, functioning as a cipher for state-sponsored persecution of Christians (Preterist and Early Church view).\",\n      \"basis\": [\n        \"1 Peter 5:13\",\n        \"Revelation 17:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Roman Catholic Church or papal system (Historicist and classical Protestant Reformer view).\",\n      \"basis\": [\n        \"Revelation 17:4-9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A literal future rebuilt city of Babylon on the Euphrates River functioning as the center of the Antichrist's end-times empire (Dispensational Futurist view).\",\n      \"basis\": [\n        \"Revelation 17:1-18\",\n        \"Revelation 18:1-24\",\n        \"Zechariah 5:5-11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"First-century apostate Jerusalem, judged for persecuting the prophets and apostles and rejecting Christ (some Preterist views).\",\n      \"basis\": [\n        \"Revelation 11:8\",\n        \"Revelation 18:24\",\n        \"Matthew 23:34-37\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is nearly universal consensus on Babel/Babylon's broad thematic symbolism as a representation of human pride, idolatry, and a worldly society opposed to God's kingdom. However, eschatological debates fracture considerably over the specific historical or future referent of 'Babylon the Great' in the Book of Revelation.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Babel/Babylon most commonly symbolizes proud, idolatrous, oppressive human civilization organized in rebellion against God—especially worldly empire, corrupt power, and false religion destined for divine judgment.\",\n  \"primary_basis\": [\n    \"Genesis 11:1–9: Babel represents humanity’s collective pride, self-exaltation, and resistance to God, followed by the confusion of languages and scattering.\",\n    \"Isaiah 13–14: Babylon and its king exemplify arrogant imperial power brought down by divine judgment.\",\n    \"Jeremiah 50–51: Babylon is portrayed as an idolatrous oppressor of God’s people that will ultimately fall.\",\n    \"Daniel 2–5, especially 3:1–6 and 4:28–37: Babylon embodies imperial idolatry, self-glorification, persecution, and God’s sovereignty over human kingdoms.\",\n    \"Revelation 14:8; 16:19; 17:1–18; 18:1–24: “Babylon the Great” represents a wealthy, corrupt, persecuting, and idolatrous world power or system opposed to God.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"In Revelation, Babylon is a coded reference specifically to imperial Rome rather than a timeless world system.\",\n      \"basis\": [\n        \"Revelation 17:9 evokes Rome’s association with seven hills.\",\n        \"Revelation 17:18 describes Babylon as the great city ruling over the kings of the earth.\",\n        \"Revelation 18 emphasizes imperial wealth, commerce, luxury, and persecution.\",\n        \"1 Peter 5:13 is commonly understood to use “Babylon” as a cipher for Rome.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Babylon primarily represents false or apostate religion, sometimes identified in particular Christian traditions with a specific ecclesiastical institution.\",\n      \"basis\": [\n        \"Revelation 17 portrays Babylon as a richly adorned prostitute associated with blasphemy, idolatry, and persecution.\",\n        \"Revelation 18:4 calls God’s people to come out of her.\",\n        \"The identification with a specific later church institution depends largely on post-biblical confessional interpretation.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Babel chiefly symbolizes linguistic confusion, social fragmentation, and the breakdown of human unity.\",\n      \"basis\": [\n        \"Genesis 11:7–9 directly connects Babel with the confusion of language and humanity’s scattering.\",\n        \"Some Christian readings contrast Babel’s divided languages with the multilingual proclamation at Pentecost in Acts 2:1–11.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Babylon refers principally to the historical Neo-Babylonian Empire and its destruction of Jerusalem and exile of Judah, with symbolic extensions remaining secondary.\",\n      \"basis\": [\n        \"2 Kings 24–25 records Babylon’s conquest of Jerusalem and the exile.\",\n        \"Psalm 137 reflects Israel’s experience in Babylon.\",\n        \"Isaiah 13–14 and Jeremiah 50–51 address historical Babylon while also using elevated theological imagery.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In Revelation, Babylon may signify Jerusalem, especially Jerusalem viewed as corrupt and persecuting.\",\n      \"basis\": [\n        \"Revelation 11:8 symbolically renames the city where the Lord was crucified.\",\n        \"Revelation 18:24 attributes the blood of prophets and saints to Babylon, language sometimes compared with Matthew 23:29–37 and Luke 13:33–35.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Babylon is an end-times geopolitical city or empire that will be literally rebuilt in Mesopotamia.\",\n      \"basis\": [\n        \"A literal-futurist reading of Revelation 17–18 treats the named city geographically.\",\n        \"Old Testament prophecies concerning Babylon, especially Isaiah 13 and Jeremiah 50–51, are interpreted by proponents as awaiting final or fuller fulfillment.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus about the general negative symbolism: arrogant, idolatrous, oppressive civilization opposed to God and subject to judgment. There is no comparable consensus about Babylon’s exact historical or eschatological referent in Revelation; Rome, a transhistorical world system, false religion, Jerusalem, and a future literal Babylon are distinguished readings.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Prideful human rebellion against God (exalting self/city to heaven without God), producing confusion, scattering, and judgment; more broadly the archetypal worldly empire/system (idolatrous, immoral, oppressive) that captivates and persecutes God's people and stands opposed to His kingdom, destined for divine overthrow.\",\n  \"primary_basis\": [\n    \"Genesis 10:8-12; 11:1-9 (Nimrod, Tower of Babel, name 'Babel' = confusion)\",\n    \"Isaiah 13–14; 21; 47 (oracles of judgment on Babylon)\",\n    \"Jeremiah 50–51 (lengthy oracles against Babylon)\",\n    \"2 Kings 24–25; Daniel 1–5 (Babylonian conquest, exile, royal pride)\",\n    \"Revelation 14:8; 16:19; 17–18 (Babylon the Great, the harlot city, fallen)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Code name or symbol specifically for imperial Rome (and its culture/power)\",\n      \"basis\": [\n        \"1 Peter 5:13 (church in 'Babylon')\",\n        \"Revelation 17–18 details (seven hills, worldwide commerce, persecution of saints) matching first-century Rome\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False/apostate religion or ecclesiastical system (often historicist Protestant identification with papal Rome or institutional Christendom)\",\n      \"basis\": [\n        \"Revelation 17 (harlot with cup of abominations, riding the beast, drunk with saints' blood)\",\n        \"Reformation-era and later historicist readings of the same passages\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal future/rebuilt Babylon (or end-times geopolitical/economic system centered on a revived Babylon) in dispensational or futurist readings\",\n      \"basis\": [\n        \"Literalist interpretation of Isaiah 13, Jeremiah 50–51, and Revelation 18 as still-future\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"General symbol of any oppressive human culture, empire, or 'city of man' (Augustine) versus the city of God, without fixed historical identification\",\n      \"basis\": [\n        \"Genesis 11 linked to Revelation 17–18 pattern\",\n        \"Broader 'two cities' tradition in Christian theology\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Origin of pagan mystery religions or source of all false religion (popularized by certain 19th-century polemics)\",\n      \"basis\": [\n        \"Genesis 10–11 plus speculative extrabiblical reconstructions\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Broad Christian consensus holds that Babel/Babylon functions as the paradigmatic symbol of human pride and the anti-God world system; historical and confessional traditions differ mainly on concrete identification (Rome, ecclesiastical structures, future entity) rather than the core symbolic valence. Babel and Babylon are routinely treated as continuous in name, origin, and meaning.\"\n}\n\nBOOK ENTRY\nThe self-made kingdom that builds a name against heaven — an empire raised over many kingdoms, the covenant counterfeit.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 11:4; Jer 51:7; Rev 17:18) · see The Bow, ch. 44, and The Fall of Babylon, ch. 35\n\nAVAILABLE KJV EXCERPTS\nGenesis 11:4 — And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.\nJeremiah 51:7 — Babylon hath been a golden cup in the LORD'S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad.\nRevelation 17:18 — And the woman which thou sawest is that great city, which reigneth over the kings of the earth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "5af647f03304701665eb2c7fbc8923cbf81ec095ba9c05eb58346e38248cdf01",
+  "cache": {
+    "hit": false
+  }
+}

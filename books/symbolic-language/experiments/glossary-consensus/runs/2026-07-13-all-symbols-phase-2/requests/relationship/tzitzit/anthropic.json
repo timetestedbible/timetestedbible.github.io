@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "tzitzit",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nTzitzit\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, tzitzit (the tassels or fringes worn on the corners of garments) are primarily understood as a divinely commanded visual reminder of God's commandments and of Israel's covenant identity—an aid to remembering and obeying the Lord rather than following one's own heart and eyes. Christian interpreters generally take over this plain-sense meaning from the Torah itself: the fringes symbolize remembrance of, and obedience to, God's word, and consecration/holiness to God.\",\n  \"primary_basis\": [\n    \"Numbers 15:37-41 (the command to make tassels with a blue cord 'that you may look at it and remember all the commandments of the LORD')\",\n    \"Deuteronomy 22:12 (command to make tassels on the four corners of the garment)\",\n    \"Matthew 23:5 (Jesus criticizes Pharisees who 'enlarge the tassels' for show, presupposing the remembrance function)\",\n    \"Matthew 9:20-22 / Luke 8:43-48 (the woman touching the 'fringe' [kraspedon] of Jesus' garment)\",\n    \"Matthew 14:36 / Mark 6:56 (the sick begging to touch the fringe of his garment)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christological/messianic reading: the tzitzit on Jesus' garment as the locus of healing faith, often linked to Malachi 4:2 ('the sun of righteousness shall arise with healing in his wings'), since Hebrew kanaph means both 'wing' and 'corner' of a garment. The woman touching the fringe is read as recognizing Jesus as Messiah.\",\n      \"basis\": [\n        \"Malachi 4:2\",\n        \"Matthew 9:20-21\",\n        \"Matthew 14:36\",\n        \"Numbers 15:38 (kanaph, 'corner')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The blue thread (tekhelet) as symbolizing heaven, divinity, or royalty—so the tassel points the wearer upward to God's heavenly throne and kingly authority; some Christian homiletics extend this to Christ's divine and royal nature.\",\n      \"basis\": [\n        \"Numbers 15:38-39\",\n        \"Exodus 24:10 (sapphire/heavenly blue imagery)\",\n        \"Ezekiel 1:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Tzitzit as a mark of Israel's priestly/holy identity—the whole nation dressed with a token of consecration analogous to priestly garments, signifying being 'holy to your God'; Christians sometimes apply this typologically to the church as a royal priesthood.\",\n      \"basis\": [\n        \"Numbers 15:40\",\n        \"Exodus 19:6\",\n        \"1 Peter 2:9 (typological application)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Evidence used in Messianic Jewish and Hebrew-roots circles that Jesus was Torah-observant, and (in some strands) that believers should still wear tzitzit today as continuing obedience.\",\n      \"basis\": [\n        \"Matthew 9:20\",\n        \"Matthew 23:5 (Jesus objects to ostentation, not to the tassels themselves)\",\n        \"Numbers 15:37-41\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Reading the fringe of Saul's robe cut by David (a garment corner, associated with authority and covenant) as background: the garment corner/tassel as a symbol of personal authority, identity, and covenant standing.\",\n      \"basis\": [\n        \"1 Samuel 24:4-5\",\n        \"1 Samuel 15:27-28\",\n        \"Ruth 3:9 (spreading the 'corner'/wing as covenant protection)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Tzitzit is primarily a Jewish ritual object, and the core symbolic meaning—remembrance of God's commandments and holiness to God—is stated explicitly in Numbers 15:39-40, so Christian interpreters across traditions largely agree on it; there is little dispute at that level. The distinctively Christian interpretive activity centers on the Gospel healing narratives (touching the kraspedon/fringe of Jesus' garment) and the Malachi 4:2 'wings' connection, which is popular in evangelical, charismatic, and Messianic teaching but is a homiletic/typological inference rather than an exegetical consensus of academic commentators (some scholars note kraspedon may simply mean 'edge/hem'). The term does not carry a rich independent allegorical tradition in classical patristic or medieval exegesis compared with other symbols, so most symbolic elaboration is modern.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A physical reminder to remember and obey God's commandments, representing holiness, covenant loyalty, and devotion to God.\",\n  \"primary_basis\": [\n    \"Numbers 15:37-41\",\n    \"Deuteronomy 22:12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A conduit or point of contact for divine healing and faith, often associated with the 'wings' of the Messiah's garment.\",\n      \"basis\": [\n        \"Malachi 4:2\",\n        \"Matthew 9:20\",\n        \"Mark 5:27\",\n        \"Luke 8:44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Outward religious ostentation, legalism, or hypocrisy when enlarged for public display.\",\n      \"basis\": [\n        \"Matthew 23:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The royal and priestly status of the believer, symbolized specifically by the inclusion of the blue thread (tekhelet).\",\n      \"basis\": [\n        \"Numbers 15:38\",\n        \"Exodus 28:31\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation universally recognizes the Old Testament definition of the tzitzit as a mnemonic for the Law. New Testament interpretations frequently emphasize Christology (Jesus wearing the tzitzit and fulfilling the Law) and the contrast between inner faith (the woman with the issue of blood reaching for the hem) and outward show (the Pharisees enlarging their tassels).\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Tzitzit—the tassels or fringes attached to the corners of a garment—are most commonly understood as a visible reminder of God’s commandments and of Israel’s covenant calling to holiness and obedience.\",\n  \"primary_basis\": [\n    \"Numbers 15:37–41 explicitly commands the tassels, including a blue cord, so that Israel will remember and obey God’s commandments rather than follow the desires of the heart and eyes.\",\n    \"Deuteronomy 22:12 commands tassels on the four corners of one’s garment and is normally read alongside Numbers 15.\",\n    \"Matthew 23:5 confirms the tassels as recognized signs of religious observance, while criticizing their ostentatious enlargement rather than the practice itself.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The blue cord symbolizes heaven, divine revelation, royalty, priesthood, or God’s throne and therefore Israel’s consecration to God.\",\n      \"basis\": [\n        \"Numbers 15:38 specifies a blue cord but does not explicitly explain the color’s symbolism.\",\n        \"Exodus 25–28 repeatedly uses blue in tabernacle and priestly materials, providing the basis for symbolic associations.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jesus’ tzitzit or garment fringe symbolizes his covenant faithfulness, messianic authority, or the healing available through him.\",\n      \"basis\": [\n        \"Matthew 9:20–22; Mark 5:25–34; and Luke 8:43–48 describe a woman touching the fringe or edge of Jesus’ garment and being healed.\",\n        \"Matthew 14:34–36 and Mark 6:53–56 describe others seeking healing by touching the fringe of his garment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fringes of Jesus’ garment fulfill the image of healing in the Messiah’s “wings,” with the garment’s corners or tassels understood as wings.\",\n      \"basis\": [\n        \"Malachi 4:2 speaks of the sun of righteousness rising with healing in its wings.\",\n        \"The healing accounts involving the fringe of Jesus’ garment are linked typologically to Malachi 4:2, although the New Testament does not make that connection explicitly.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The four corner tassels symbolize the gathering or worldwide identity of God’s covenant people.\",\n      \"basis\": [\n        \"Deuteronomy 22:12 places tassels on the garment’s four corners.\",\n        \"Isaiah 11:12 uses the “four corners of the earth” in connection with gathering the dispersed, but it does not directly interpret tzitzit.\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Tzitzit symbolize status or public religious prestige when enlarged or displayed ostentatiously.\",\n      \"basis\": [\n        \"Matthew 23:5 says that scribes and Pharisees lengthened or enlarged their fringes to be seen by others.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled primary interpretation because Numbers 15 states the tassels’ function directly: remembrance leading to obedience and holiness. More elaborate meanings assigned to the blue cord, the four corners, or Jesus’ garment fringes are secondary symbolic or typological readings and are less settled.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A visual reminder to remember and obey all of God's commandments and to live a holy life set apart from sin\",\n  \"primary_basis\": [\n    \"Numbers 15:37-41\",\n    \"Deuteronomy 22:12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The fringe or hem of Jesus' garment as a source of healing power and messianic authority, fulfilled when the woman with the issue of blood touched it\",\n      \"basis\": [\n        \"Matthew 9:20-22\",\n        \"Matthew 14:36\",\n        \"Mark 6:56\",\n        \"Luke 8:43-48\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A symbol of the covenant people of God or Jewish identity under the Mosaic Law, now fulfilled or set aside in Christ\",\n      \"basis\": [\n        \"Numbers 15:37-41\",\n        \"Galatians 3:23-25\",\n        \"Colossians 2:16-17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The blue thread (tekhelet) specifically representing heaven, divinity, or the throne of God\",\n      \"basis\": [\n        \"Numbers 15:38-39\",\n        \"Exodus 24:10\",\n        \"Ezekiel 1:26\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The explicit purpose statement in Numbers 15 supplies a clear primary meaning that is consistently recognized in Christian biblical interpretation of the Old Testament command; secondary Christian applications center on New Testament references to Jesus' tassels but do not displace the original stated symbolism.\"\n}\n\nBOOK ENTRY\nThe tassels bound to the corners of the garment; looking upon them reminds the wearer of all the LORD's commandments, to do them.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Num 15:38-39) · see Wings, ch. 13\n\nAVAILABLE KJV EXCERPTS\nNumbers 15:38 — Speak unto the children of Israel, and bid them that they make them fringes in the borders of their garments throughout their generations, and that they put upon the fringe of the borders a ribband of blue:\nNumbers 15:39 — And it shall be unto you for a fringe, that ye may look upon it, and remember all the commandments of the LORD, and do them; and that ye seek not after your own heart and your own eyes, after which ye use to go a whoring:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "06a0ca89cd74473800d0a60a10159a7665dd3158198a0782604070bdb851c30e",
+  "cache": {
+    "hit": false
+  }
+}

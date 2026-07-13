@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919882,
+  "completed_at": 1783919896,
+  "id": "3fcc033d-e994-92c1-8592-7350637a8943",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_3fcc033d-e994-92c1-8592-7350637a8943",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Fornication, whoredom\" in Christian teaching and biblical interpretation, without any knowledge of the author's book or position.\n{\n  \"primary_meaning\": \"Spiritual adultery or idolatry, representing unfaithfulness to God through worship of other deities or false gods.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Spiritual unfaithfulness or idolatry (covenant adultery against God, often depicted as Israel or the people of God acting as a harlot by pursuing false gods or worldly powers)\",\n  \"primary_basis\": [\n    \"Hosea 1–3 (esp. Hosea 2:2–13)\",\n    \"Jeremiah 2:20–25; 3:1–9\",\n    \"Ezekiel 16:15–43; 23:1–49\",\n    \"Revelation 17:1–6; 18:3; 19:2\",\n    \"Isaiah 1:21; 57:3–8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal sexual immorality or cultic prostitution without metaphor (treated as straightforward ethical prohibition rather than symbol)\",\n      \"basis\": [\n        \"1 Corinthians 6:9–20\",\n        \"Galatians 5:19\",\n        \"Leviticus 18–20\",\n        \"Deuteronomy 22–23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Political alliances or dependence on foreign nations (treated as a form of unfaithfulness overlapping with but distinct from pure idolatry)\",\n      \"basis\": [\n        \"Ezekiel 16:26–29; 23:5–21\",\n        \"Hosea 7:11; 8:9\",\n        \"Isaiah 30:1–7; 31:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Apostate or corrupt religious institution (e.g., the harlot as the false church or Babylon as ecclesiastical Rome in historicist Protestant readings)\",\n      \"basis\": [\n        \"Revelation 17–18\",\n        \"interpretive tradition linking to 2 Thessalonians 2 and papal critiques\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Economic exploitation, luxury, or commercial seduction of the nations (especially Babylon the great as imperial commerce)\",\n      \"basis\": [\n        \"Revelation 18:3, 9–19\",\n        \"Ezekiel 27–28 (Tyre parallel)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The prophetic metaphor of whoredom for idolatry/covenant breach is the dominant and long-settled symbolic reading across mainstream Jewish and Christian interpretation of the relevant texts; literal sexual readings coexist but are not the primary symbolic assignment. Secondary applications (political, institutional, economic) remain subsidiary elaborations of the same unfaithfulness motif rather than fully independent meanings.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_3fcc033d-e994-92c1-8592-7350637a8943",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 607,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1473,
+    "output_tokens_details": {
+      "reasoning_tokens": 857
+    },
+    "total_tokens": 2080,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 94760000,
+    "context_details": {
+      "input_tokens": 607,
+      "output_tokens": 1473
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

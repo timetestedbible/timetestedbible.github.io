@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "sheol",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSheol (the grave, “hell”)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical scholarship, Sheol is most commonly understood as the Old Testament's term for the realm or abode of the dead — the grave or underworld to which all the dead, righteous and wicked alike, descend. It symbolizes the shadowy, silent condition of death itself rather than a place of active punishment. Modern translations therefore typically render it 'the grave,' 'the pit,' 'the realm of the dead,' or transliterate it as 'Sheol,' while older versions (notably the KJV) often rendered it 'hell,' contributing to popular conflation with the place of final punishment. In Christian theology Sheol is usually treated as the intermediate state of the dead prior to resurrection, corresponding to Greek 'Hades' in the New Testament, and is distinguished from Gehenna (the place of final judgment).\",\n  \"primary_basis\": [\n    \"Genesis 37:35 (Jacob expects to go down to Sheol mourning — a righteous man descends there)\",\n    \"Numbers 16:30-33 (Korah's company goes down alive into Sheol/the pit)\",\n    \"1 Samuel 2:6 (the LORD brings down to Sheol and raises up)\",\n    \"Job 14:13 (Job asks to be hidden in Sheol)\",\n    \"Psalm 6:5 (in death there is no remembrance; in Sheol who gives thanks?)\",\n    \"Psalm 16:10 (you will not abandon my soul to Sheol — quoted in Acts 2:27, 31 as Hades)\",\n    \"Psalm 88:3-12 (descriptions of Sheol as the pit, darkness, the land of forgetfulness)\",\n    \"Ecclesiastes 9:5, 10 (no work, knowledge, or wisdom in Sheol)\",\n    \"Isaiah 14:9-11, 15 (Sheol stirred to meet the king of Babylon)\",\n    \"Ezekiel 32:21-27 (the slain nations lying in Sheol)\",\n    \"Jonah 2:2 (from the belly of Sheol I cried)\",\n    \"Acts 2:27, 31 and Revelation 20:13-14 (Hades as the NT counterpart, ultimately emptied and destroyed)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sheol simply means the literal grave or the state of nonexistence/unconsciousness in death, with no conscious survival of any kind — the position of conditionalists, annihilationists, Seventh-day Adventists, and Jehovah's Witnesses ('soul sleep'), who stress that the dead in Sheol know nothing.\",\n      \"basis\": [\n        \"Ecclesiastes 9:5, 10\",\n        \"Psalm 6:5\",\n        \"Psalm 115:17\",\n        \"Psalm 146:4\",\n        \"Job 14:10-12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sheol/Hades as a divided or two-compartment intermediate realm — a place of comfort for the righteous ('Abraham's bosom' or Paradise) and a place of conscious torment for the wicked, awaiting final judgment. Often connected with the doctrine of Christ's descent to the dead ('he descended into hell') and, in some traditions, the 'harrowing of hell' or limbus patrum.\",\n      \"basis\": [\n        \"Luke 16:19-31 (the rich man and Lazarus)\",\n        \"Luke 23:43 (Paradise)\",\n        \"1 Peter 3:18-20; 4:6 (Christ preaching to the spirits in prison)\",\n        \"Ephesians 4:8-10 (he descended to the lower parts of the earth)\",\n        \"Acts 2:27, 31\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheol as 'hell' in the popular sense — a place of fiery punishment for the wicked — following the KJV's frequent rendering of Sheol as 'hell.' This reading conflates Sheol with Gehenna and persists in some traditionalist and popular preaching, though most scholars and modern translations reject the equation.\",\n      \"basis\": [\n        \"KJV renderings of Psalm 9:17; Deuteronomy 32:22; Proverbs 15:24; Isaiah 5:14\",\n        \"Popular association with Matthew 25:41, 46 and Revelation 20:14-15\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sheol as primarily a poetic/metaphorical personification of death's power — an insatiable devourer or hostile force from which God delivers, rather than a spatial location; emphasized in some critical and literary scholarship on Hebrew poetry.\",\n      \"basis\": [\n        \"Proverbs 27:20; 30:15-16 (Sheol is never satisfied)\",\n        \"Isaiah 5:14 (Sheol enlarges its appetite)\",\n        \"Habakkuk 2:5\",\n        \"Hosea 13:14 (O Sheol, where is your sting? — cited in 1 Corinthians 15:55)\",\n        \"Psalm 18:4-5 (cords of Sheol entangled me)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad scholarly and mainstream ecclesial consensus that Sheol denotes the common realm/state of the dead (the grave or underworld) in the Hebrew Bible, not the place of final fiery punishment; this is reflected in virtually all modern translations and standard reference works. However, the theological freight assigned to it — conscious intermediate state versus unconscious 'sleep,' divided compartments versus undifferentiated shadow-existence — remains genuinely disputed among traditions (Catholic, Orthodox, Reformed, evangelical conditionalist, Adventist, Jehovah's Witnesses). The consensus concerns the core referent (the abode/state of the dead), not the anthropology of what the dead experience there. The KJV's rendering 'hell' is the main historical source of popular divergence from the scholarly consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The shadowy realm of the dead, the underworld, or the grave, symbolizing mortality, the finality of physical death, and separation from the land of the living.\",\n  \"primary_basis\": [\n    \"Psalm 16:10\",\n    \"Psalm 139:8\",\n    \"Isaiah 14:9-11\",\n    \"Job 10:21-22\",\n    \"Ecclesiastes 9:10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A place of conscious torment and punishment for the wicked, historically treated as synonymous with Hell or Gehenna in older traditional theology.\",\n      \"basis\": [\n        \"Psalm 9:17\",\n        \"Luke 16:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A bipartite temporary holding place containing both a realm of comfort for the righteous (Abraham's Bosom) and a realm of torment for the wicked, prior to Christ's resurrection.\",\n      \"basis\": [\n        \"Luke 16:22-26\",\n        \"Ephesians 4:8-9\",\n        \"1 Peter 3:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A strictly literal reference to the physical dirt grave, representing a state of unconsciousness, non-existence, or 'soul sleep' until the final resurrection.\",\n      \"basis\": [\n        \"Ecclesiastes 9:5\",\n        \"Psalm 6:5\",\n        \"Psalm 115:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While modern biblical scholarship holds a settled consensus that Sheol refers to the ancient Israelite concept of the underworld or the grave rather than a place of eternal torment, historic Christian interpretation frequently conflated Sheol with Gehenna (Hell) or Hades. This conflation resulted in varied theological traditions regarding the conscious state of the dead and the Harrowing of Hell.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Sheol most commonly denotes the grave, death, or the shadowy realm of the dead—the common destination of the deceased. Symbolically, it represents death, separation from ordinary earthly life, darkness, silence, and human powerlessness. Modern biblical interpretation generally distinguishes Sheol from the later Christian concept of final hell or eternal punishment.\",\n  \"primary_basis\": [\n    \"Genesis 37:35 — Jacob expects to go down to Sheol mourning, presenting it as the destination of the dead.\",\n    \"Job 7:9; 14:13; 17:13–16 — Sheol is associated with death, darkness, concealment, and the grave.\",\n    \"Psalm 6:5; 88:3–12; 115:17 — Sheol is portrayed as a realm of silence and diminished participation in earthly worship.\",\n    \"Psalm 16:10 — the speaker hopes not to be abandoned to Sheol; applied to Christ in Acts 2:27–31.\",\n    \"Ecclesiastes 9:10 — Sheol is described as lacking earthly work, knowledge, and activity.\",\n    \"Isaiah 14:9–15 — Sheol poetically receives the fallen king of Babylon among the dead.\",\n    \"Hosea 13:14 — Sheol and death appear as parallel powers from which deliverance is possible.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sheol means the physical grave or the condition of being dead, without implying a distinct conscious underworld.\",\n      \"basis\": [\n        \"The term frequently appears in parallel with death, the pit, dust, and burial imagery: Psalm 49:14–15; 89:48; Hosea 13:14.\",\n        \"Ecclesiastes 9:5–10 is often read as depicting unconsciousness or the cessation of earthly activity in Sheol.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheol is a real intermediate realm of departed souls, corresponding broadly to New Testament Hades, prior to resurrection and final judgment.\",\n      \"basis\": [\n        \"Isaiah 14:9–11 poetically depicts the dead as present in Sheol.\",\n        \"Psalm 16:10 is rendered with Hades in Acts 2:27–31, establishing a Septuagint and New Testament correspondence.\",\n        \"Luke 16:19–31 is often brought into later Christian discussions of Hades and the intermediate state, although it does not use the Hebrew term Sheol.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheol is hell in the sense of a place of punitive suffering or final condemnation.\",\n      \"basis\": [\n        \"Older English translations sometimes render Sheol as “hell,” encouraging identification with Christian doctrines of punishment.\",\n        \"Deuteronomy 32:22 and Psalm 9:17 have traditionally been read as associating Sheol with divine judgment and the fate of the wicked.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In some poetic passages, Sheol symbolizes an immediate experience of mortal danger, overwhelming distress, exile, or apparent death rather than actual entrance into the realm of the dead.\",\n      \"basis\": [\n        \"Psalm 18:4–6 and 116:3 speak of the cords or pangs of Sheol surrounding a living sufferer.\",\n        \"Jonah 2:2 describes Jonah crying from the belly of Sheol while still alive.\",\n        \"Proverbs 1:12 and 5:5 use descent-to-Sheol imagery for destructive danger and deathward paths.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheol is personified as an insatiable power that swallows human life.\",\n      \"basis\": [\n        \"Proverbs 27:20 and 30:15–16 portray Sheol as never satisfied.\",\n        \"Isaiah 5:14 depicts Sheol enlarging its appetite and opening its mouth.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement that the Hebrew term primarily concerns death, the grave, or the realm of the dead, but no single settled symbolic interpretation applies in every passage. Its imagery varies by context, and its identification with final punitive hell is especially disputed. Translating Sheol simply as “hell” can obscure the distinction between the Hebrew Bible’s realm of the dead, the New Testament term Hades, and Gehenna or final judgment.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the underworld or shadowy realm of the dead (the grave) to which all people go after death, prior to any final judgment\",\n  \"primary_basis\": [\n    \"Genesis 37:35\",\n    \"Numbers 16:30-33\",\n    \"Job 7:9; 14:13\",\n    \"Psalm 6:5; 16:10; 88:3-6\",\n    \"Isaiah 14:9-15; 38:10\",\n    \"Ezekiel 32:21-27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"simply the physical grave or the state of death itself, without a conscious intermediate realm\",\n      \"basis\": [\n        \"Ecclesiastes 9:5-10\",\n        \"Psalm 6:5; 30:9\",\n        \"common renderings of Sheol as 'grave' in modern translations\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a temporary intermediate state of the dead (often with divisions for righteous and unrighteous) awaiting resurrection, equated with Hades\",\n      \"basis\": [\n        \"Luke 16:19-31\",\n        \"Acts 2:27-31 (quoting Psalm 16)\",\n        \"1 Samuel 28:11-19\",\n        \"traditional Christian use of Hades as parallel\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a place of punishment or torment for the wicked, equivalent to hell\",\n      \"basis\": [\n        \"Psalm 9:17\",\n        \"Proverbs 15:11; 27:20\",\n        \"Isaiah 5:14\",\n        \"KJV and older translations rendering Sheol as 'hell'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical scholarship and most Christian teaching distinguish Sheol from Gehenna (final place of punishment). Consensus exists on its basic identity as the realm of the dead, but details of consciousness, divisions, and duration remain contested across traditions and translations.\"\n}\n\nBOOK ENTRY\nThe demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 37:35; Ps 16:10; Eccl 9:5; Isa 5:14; Hos 13:14; Rev 20:13-14) · see Heaven and Hell, ch. 16\n\nAVAILABLE KJV EXCERPTS\nGenesis 37:35 — And all his sons and all his daughters rose up to comfort him; but he refused to be comforted; and he said, For I will go down into the grave unto my son mourning. Thus his father wept for him.\nPsalms 16:10 — For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.\nEcclesiastes 9:5 — For the living know that they shall die: but the dead know not any thing, neither have they any more a reward; for the memory of them is forgotten.\nIsaiah 5:14 — Therefore hell hath enlarged herself, and opened her mouth without measure: and their glory, and their multitude, and their pomp, and he that rejoiceth, shall descend into it.\nHosea 13:14 — I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction: repentance shall be hid from mine eyes.\nRevelation 20:13 — And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works.\nRevelation 20:14 — And death and hell were cast into the lake of fire. This is the second death.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "bcfaa8d61ecfc86e3a7d18bbb12e014f916a5631df4acfaf8564380f83b11f6a",
+  "cache": {
+    "hit": false
+  }
+}

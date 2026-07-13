@@ -1,0 +1,167 @@
+{
+  "created_at": 1783921558,
+  "completed_at": 1783921563,
+  "id": "6b16d2fc-3d73-9362-978b-614c3270592e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Harlot primarily symbolizes spiritual/covenantal unfaithfulness (idolatry and apostasy as marital infidelity); the great harlot of Revelation is a corrupt religious-political-economic system whose specific referent is disputed (most often imperial Rome, or an apostate church/world system, or sometimes Jerusalem).\",\n  \"book_summary\": \"The harlot is the covenant-breaker who wears the form of covenant without its substance — specifically “that great city,” spiritually Sodom, Egypt, Babylon: Jerusalem unfaithful.\",\n  \"consensus_core_identification\": \"spiritual adultery / covenant unfaithfulness, with the Revelation harlot as a corrupt system most commonly identified as Rome (or apostate religion / world system)\",\n  \"book_core_identification\": \"unfaithful Jerusalem (covenant-breaker wearing covenant form without substance; the great city of Rev 17:18 = the city of Rev 11:8)\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book identifies the harlot with Jerusalem and rejects the common Rome/apostate-world-system identification; consensus treats Jerusalem as only a minority alternative while treating Rome or a broader system as primary.\",\n  \"material_contradiction\": \"Consensus primary referent for the great harlot is imperial Rome (or a parallel apostate religious/world system); the book replaces that with Jerusalem unfaithful and explicitly denies the Rome reading in its common-view note.\",\n  \"rationale\": \"Both share the OT-rooted spiritual-adultery category, but the book’s core identification of the harlot (especially in Revelation) is Jerusalem as covenant-breaker. This is not a mere narrowing of the consensus’s shared category; it replaces the dominant consensus referent (Rome / apostate world system) that the book’s own note marks as the common teaching. Accepting the book’s identification requires rejecting the consensus primary referent for the same figure in the same context.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Jerusalem appears as a recognized minority/preterist alternative within the consensus itself, so the book could be viewed as selecting and elevating that alternative rather than inventing a contradictory core.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_6b16d2fc-3d73-9362-978b-614c3270592e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4385,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 508,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4893,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 110500000,
+    "context_details": {
+      "input_tokens": 4385,
+      "output_tokens": 508
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

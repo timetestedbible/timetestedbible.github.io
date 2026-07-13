@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919558,
+  "completed_at": 1783919571,
+  "id": "7d33e3ca-7186-9836-b41a-efce1aefed1b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7d33e3ca-7186-9836-b41a-efce1aefed1b",
+      "summary": [
+        {
+          "text": "The task is about the symbolic meaning of \"Cloud\" in Christian teaching and biblical interpretation.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Divine presence and glory of God (theophanic cloud / Shekinah)\",\n  \"primary_basis\": [\n    \"Exodus 13:21-22 (pillar of cloud)\",\n    \"Exodus 19:9, 16; 24:15-18 (Sinai theophany)\",\n    \"Exodus 40:34-38 (glory cloud over tabernacle)\",\n    \"1 Kings 8:10-11 (cloud filling the temple)\",\n    \"Matthew 17:5 (bright cloud at Transfiguration)\",\n    \"Acts 1:9 (ascension in a cloud)\",\n    \"Revelation 1:7; Daniel 7:13 (coming with/on the clouds)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment, wrath, or storm theophany\",\n      \"basis\": [\n        \"Psalm 97:2\",\n        \"Nahum 1:3\",\n        \"Joel 2:2\",\n        \"Zephaniah 1:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A multitude or host of people (\\\"cloud of witnesses\\\")\",\n      \"basis\": [\n        \"Hebrews 12:1\",\n        \"Isaiah 60:8 (occasional figurative use)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Concealment, hiddenness, or inaccessibility of God\",\n      \"basis\": [\n        \"Lamentations 3:44\",\n        \"Job 22:14\",\n        \"Psalm 18:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Emptiness or false promises (\\\"clouds without water\\\")\",\n      \"basis\": [\n        \"Jude 12\",\n        \"2 Peter 2:17\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern evangelical/biblical-studies sources the glory/presence cloud is the dominant and most consistently taught symbolic reading for \\\"cloud\\\" as a biblical symbol; other uses exist but are secondary or context-specific.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7d33e3ca-7186-9836-b41a-efce1aefed1b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1452,
+    "output_tokens_details": {
+      "reasoning_tokens": 938
+    },
+    "total_tokens": 2054,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 97240000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1452
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

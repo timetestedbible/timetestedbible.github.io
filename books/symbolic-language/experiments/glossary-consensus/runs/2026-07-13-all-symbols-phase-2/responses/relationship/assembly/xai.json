@@ -1,0 +1,178 @@
+{
+  "created_at": 1783920914,
+  "completed_at": 1783920948,
+  "id": "70c680c0-6f45-96b5-8a34-82964ba7afa6",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_70c680c0-6f45-96b5-8a34-82964ba7afa6",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Assembly of the wicked / synagogue of Satan\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_agreement\": \"The book's core identification of the term as a counterfeit covenant community (edah) that claims standing while opposing God and the Messiah aligns with the consensus's primary meaning of a false claimant group serving Satan through hostility to the faithful.\",\n  \"extension_disagreement\": \"The book narrows the referent to the specific Hebrew 'edah' pattern of rebel camps (Numbers 14/16, Korah) and the cross-time assembly enclosing Christ, excluding broader applications to apostate Christianity or end-times systems that consensus admits while retaining the historical Jewish opponents in Revelation.\",\n  \"scripture_support\": \"strong\",\n  \"classification\": \"REFINED\",\n  \"reasoning\": \"Both identify the term as counterfeit covenant assembly opposing God, but the book refines by centering on edah rebellions and cross-enclosure, excluding some consensus alternatives like spiritualized false churches.\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_agreement\": \"The book's core identification of the term as a counterfeit covenant community (edah) that claims standing while opposing God and the Messiah aligns with the consensus primary meaning of a false claimant group serving Satan through hostility to the faithful.\",\n  \"extension_disagreement\": \"The book narrows the referent to the specific Hebrew 'edah' pattern of rebel camps (Numbers 14/16, Korah) and the cross-time assembly enclosing Christ, excluding broader applications to apostate Christianity or end-times systems that consensus admits while retaining the historical Jewish opponents in Revelation.\",\n  \"scripture_support\": \"strong\",\n  \"classification\": \"REFINED\",\n  \"reasoning\": \"Both identify the term as counterfeit covenant assembly opposing God, but the book refines by centering on edah rebellions and cross-enclosure, excluding some consensus alternatives like spiritualized false churches.\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_agreement\": \"The book's core identification of the term as a counterfeit covenant community (edah) that claims standing while opposing God and the Messiah aligns with the consensus primary meaning of a false claimant group serving Satan through hostility to the faithful.\",\n  \"extension_disagreement\": \"The book narrows the referent to the specific Hebrew 'edah' pattern of rebel camps (Numbers 14/16, Korah) and the cross-time assembly enclosing Christ, excluding broader applications to apostate Christianity or end-times systems that consensus admits while retaining the historical Jewish opponents in Revelation.\",\n  \"scripture_support\": \"strong\",\n  \"classification\": \"REFINED\",\n  \"reasoning\": \"Both identify the term as counterfeit covenant assembly opposing God, but the book refines by centering on edah rebellions and cross-enclosure, excluding some consensus alternatives like spiritualized false churches.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"A counterfeit covenant community that claims the identity and privileges of God’s people while opposing God, persecuting the faithful, and thereby serving Satan; the Revelation phrase targets those who say they are Jews and are not, routinely linked with the ‘assembly of the wicked’ of Psalm 22:16 as the hostile company around the Messiah.\",\n  \"book_summary\": \"The counterfeit congregation—an edah (covenant-assembly term) that claims covenant standing while gathered against the covenant’s Lord—exemplified by the evil congregation of Numbers, Korah’s company that declared all holy, the assembly enclosing the Messiah at the cross, and those who say they are Jews and are not.\",\n  \"consensus_core_identification\": \"counterfeit covenant assembly claiming to be God’s people while opposing God and the faithful\",\n  \"book_core_identification\": \"counterfeit edah claiming covenant standing while gathered against the covenant’s Lord\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None material; both cover the Revelation opponents, the company at the cross, and false claimants generally. The book’s added OT wilderness paradigms (Numbers 14/16) function as illustrative types of the same referent rather than re-drawing boundaries.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"Minimum cores are identical: a false assembly that pretends covenant legitimacy while opposing the Lord. Extra typological detail (edah terminology, Korah, Numbers rebel camp) elaborates the shared referent without replacing it, narrowing cases, or introducing contradiction. Consensus primary meaning and listed alternatives already encompass the same symbolic force.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Emphasis on Numbers 14/16 and the technical term edah is heavier than in the consensus, which centers Revelation and Psalm 22; a reader could claim this shifts the definitional center of gravity even while preserving the core.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_70c680c0-6f45-96b5-8a34-82964ba7afa6",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4382,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 3213,
+    "output_tokens_details": {
+      "reasoning_tokens": 2769
+    },
+    "total_tokens": 7595,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 278500000,
+    "context_details": {
+      "input_tokens": 4382,
+      "output_tokens": 3213
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922113,
+  "completed_at": 1783922146,
+  "id": "8425f22d-5ff5-988b-b365-35d4c91ea709",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_8425f22d-5ff5-988b-b365-35d4c91ea709",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Pearl\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's primary identification of 'pearl' as the supreme spiritual treasure (kingdom of heaven, wisdom, bride, full moon as fulness, gates of the city) directly preserves the consensus core referent of supreme value and sacred truth while materially narrowing its extension to specific astronomical and symbolic instances (full moon as keseh, pearl gates, merchant's entry) that the consensus treats as secondary or contextual.\",\n  \"extension_reasoning\": \"The book adds the full moon (Ps 104:19, moon 81:3) and links it to wisdom/bride (Prov 3:15, 31:10) and gates/merchant (Rev 21:21, Matt 13:45-46), excluding the purely abstract kingdom/Christ readings while retaining the gates and parable elements; this is a boundary refinement rather than replacement.\",\n  \"citations_support\": \"strong\",\n  \"scripture_support\": \"strong\",\n  \"common_view_note\": \"acknowledged\",\n  \"final_classification\": \"REFINED\"\n}```json\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \" \"core_reasoning\": \"The book's primary identification of 'pearl' as the supreme spiritual treasure (kingdom of heaven, wisdom, bride, full moon as fulness, gates of the city) directly preserves the consensus core referent of supreme value and sacred truth while materially narrowing its extension to specific astronomical and symbolic instances ( full moon as keseh, pearl gates, merchant's entry) that the consensus treats as secondary or contextual.\",\n  \"extension_reasoning\": \"The book adds the full moon (Ps 104:19, moon 81:3) and links it to wisdom/bride (Prov 3:15,  31:10) and gates/merchant (Rev 21:21, Matt 13:45-46), excluding the purely abstract kingdom/Christ readings while retaining the gates and parable elements; this is a boundary refinement rather than replacement.\",\n  \"citations_support\": \"strong\",\n  \"scripture_support\": \" strong\",\n  \"common_view_note\": \"acknowledged\",\n  \"final_classification\": \"REFINED\"\n}\n``` \n\nThe book's entry preserves the consensus core of supreme spiritual value (kingdom, wisdom, gates) but narrows it to specific celestial and symbolic cases (full moon as keseh, pearl gates, merchant entry), making it REFINED rather than divergent or novel. The printed citations (Prov 3:15, 31:10, Ps 81:3, 104:19, Rev 21:21) provide strong support for the lunar, wisdom, and gates elements within the book's interpretive framework. The common-view note confirms awareness of the kingdom/church reading while presenting the refined lunar identification. This relationship is REFINED. \n\nThe JSON above reflects this classification. The core remains the supreme treasure, but the extension is refined to include the full moon and gates as primary instances.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"The pearl primarily symbolizes the Kingdom of Heaven (or salvation/gospel/Christ) as a treasure of supreme worth for which everything should be surrendered, based on Matthew 13:45-46, with secondary associations as sacred/holy truth (Matthew 7:6) and the gates of New Jerusalem (Revelation 21:21); common alternatives include the reverse (Christ as merchant, pearl as Church/believer) and negative luxury/vanity.\",\n  \"book_summary\": \"The pearl is the one complete light—the full moon (keseh, fulness) of the night sky, governor of appointed times—while wisdom and the bride are priced above pearls (via KJV rubies/peninim); this is the one-pearl gates of the city as the merchant’s entry at the King’s gate.\",\n  \"consensus_core_identification\": \"Kingdom of Heaven / supreme spiritual treasure (salvation, Christ, or gospel)\",\n  \"book_core_identification\": \"the full moon as the night sky’s one pearl / complete light\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"NO_BASELINE\",\n  \"boundary_disagreement\": \"Book centers calendrical lunar symbolism (full moon, appointed times, keseh) and elevates wisdom/bride above pearls while re-reading the merchant and one-pearl gates as lunar entry; consensus never contemplates lunar or calendrical cases at all.\",\n  \"material_contradiction\": \"None explicit; book separately notes the common kingdom/church view without denying it, but supplies an entirely different primary identification.\",\n  \"rationale\": \"Consensus core (kingdom/spiritual treasure from Matt 13, plus listed alternatives) contains no lunar, calendrical, or full-moon identification. Book’s core is precisely that identification (full moon via peninim/keseh links). Absence of any covering consensus referent makes the relation novel rather than a refinement, broadening, or contradiction of a shared core. Citations supply isolated components (pearl value, moon for seasons, pearl gates) but not the identification itself.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Standard NT symbolism from the Pearl of Great Price parable is set aside for an unattested lunar equation that depends on Strong’s numbers, letter associations under ‘throne/time,’ and intertextual moon-season links nowhere present in ordinary pearl symbolism.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_8425f22d-5ff5-988b-b365-35d4c91ea709",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3709,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3563,
+    "output_tokens_details": {
+      "reasoning_tokens": 3032
+    },
+    "total_tokens": 7272,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 280280000,
+    "context_details": {
+      "input_tokens": 3709,
+      "output_tokens": 3563
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

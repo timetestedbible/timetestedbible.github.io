@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "stone",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nStone (cut without hands)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian interpretation, the 'stone cut out without hands' from Nebuchadnezzar's dream in Daniel 2 symbolizes the Kingdom of God—established by divine action rather than human effort—and, by close extension, Christ the Messiah himself, whose kingdom shatters the succession of worldly empires (represented by the statue of gold, silver, bronze, iron, and clay) and grows to fill the whole earth. The phrase 'without hands' is consistently read as denoting supernatural, non-human origin.\",\n  \"primary_basis\": [\n    \"Daniel 2:34-35\",\n    \"Daniel 2:44-45\",\n    \"Psalm 118:22\",\n    \"Isaiah 28:16\",\n    \"Matthew 21:42-44\",\n    \"Luke 20:17-18\",\n    \"Acts 4:11\",\n    \"1 Peter 2:4-8\",\n    \"Ephesians 2:20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christological/patristic reading emphasizing the virgin birth: the stone 'cut without hands' typifies Christ's incarnation without human paternal agency (a reading found in Justin Martyr, Irenaeus, and later fathers, and echoed in some Catholic and Orthodox Mariological tradition, where the mountain is sometimes associated with the Virgin Mary).\",\n      \"basis\": [\n        \"Daniel 2:34-35\",\n        \"Isaiah 7:14\",\n        \"Luke 1:34-35\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Futurist/dispensational premillennial reading: the stone strikes the statue only at Christ's second coming, so the stone symbolizes the future millennial kingdom rather than the church age inaugurated at the first advent.\",\n      \"basis\": [\n        \"Daniel 2:44-45\",\n        \"Revelation 19:11-21\",\n        \"Revelation 20:1-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Amillennial/historic ('kingdom inaugurated') reading: the stone struck the image at Christ's first coming, and the growing mountain is the church/kingdom expanding through history—a materially different timing of fulfillment from the futurist view, though the referent (God's kingdom) is the same.\",\n      \"basis\": [\n        \"Daniel 2:44\",\n        \"Mark 1:15\",\n        \"Luke 17:20-21\",\n        \"Matthew 21:43-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Latter-day Saint (Mormon) reading: the stone represents the restored Church of Jesus Christ of Latter-day Saints, established in the latter days and destined to fill the earth.\",\n      \"basis\": [\n        \"Daniel 2:44-45\",\n        \"Doctrine and Covenants 65:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Traditional Jewish readings: the stone represents the future Messianic kingdom or Israel itself, with the fourth kingdom often identified as Rome; no identification with Jesus.\",\n      \"basis\": [\n        \"Daniel 2:44-45\",\n        \"Daniel 7:13-14, 27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Critical-historical scholarly reading: the stone is a symbol of a hoped-for divine kingdom composed by a second-century BCE author, with the four kingdoms as Babylon, Media, Persia, and Greece; the imagery is treated as apocalyptic literature about the Maccabean-era crisis rather than a prediction of Christ or the church.\",\n      \"basis\": [\n        \"Daniel 2:31-45\",\n        \"Daniel 7-8 (parallel four-kingdom schemes)\",\n        \"Daniel 11 (Antiochus IV context)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus in Christian teaching that the stone cut without hands signifies the Kingdom of God established supernaturally, typically identified with Christ and his kingdom; this is reinforced by the wider New Testament 'stone' motif (rejected cornerstone, stone of stumbling). Disagreements are largely about timing and referent-scope (first advent vs. second advent; church vs. millennial kingdom; virgin-birth typology) and about sectarian identifications (LDS restorationism), not about the core symbolism of a divinely established kingdom. The Aramaic phrase 'not by human hands' (Dan 2:34, 45) is universally taken to stress divine rather than human origin.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Jesus Christ and His eternal Kingdom of God, which is established by divine power rather than human agency and will ultimately crush and replace all worldly empires.\",\n  \"primary_basis\": [\n    \"Daniel 2:34-35\",\n    \"Daniel 2:44-45\",\n    \"Luke 20:17-18\",\n    \"1 Peter 2:4-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Christian Church spreading throughout history as the visible manifestation of God's kingdom on earth.\",\n      \"basis\": [\n        \"Matthew 16:18\",\n        \"1 Peter 2:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The virgin birth of Christ, specifically emphasizing His incarnation by the Holy Spirit without human participation.\",\n      \"basis\": [\n        \"Luke 1:34-35\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The imagery originates from Nebuchadnezzar's dream in Daniel 2. In Christian theology, the stone is overwhelmingly interpreted Christologically, connecting the 'stone cut without hands' to New Testament passages describing Christ as the chief cornerstone and a stone of stumbling that crushes the unrepentant.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The stone cut without human hands most commonly symbolizes the divinely established messianic kingdom of God, often identified personally with Christ as its king. It overthrows earthly kingdoms and becomes universal and enduring.\",\n  \"primary_basis\": [\n    \"Daniel 2:34–35 — the uncut stone strikes the statue, destroys it, and becomes a mountain filling the earth.\",\n    \"Daniel 2:44–45 — Daniel explicitly interprets the stone as a kingdom established by God that will destroy the preceding kingdoms and endure forever.\",\n    \"Matthew 21:42–44 and Luke 20:17–18 — Jesus applies stone imagery to himself and speaks of the stone crushing those on whom it falls.\",\n    \"Acts 4:10–11 and 1 Peter 2:4–8 — Christ is identified as the rejected but divinely chosen cornerstone, reinforcing the personal identification of Daniel’s stone with Christ.\",\n    \"Daniel 7:13–14, 18, 27 — the Son of Man and the saints receive an everlasting, universal dominion, commonly correlated with the kingdom represented by the stone.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The stone refers primarily to Christ personally, especially his decisive return and destruction of earthly political powers, rather than to the kingdom in a broader institutional or historical sense.\",\n      \"basis\": [\n        \"Daniel 2:34–35, 44–45\",\n        \"Matthew 21:42–44\",\n        \"Luke 20:17–18\",\n        \"Revelation 19:11–21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The stone represents the kingdom inaugurated at Christ’s first advent and manifested historically in the church, whose gradual worldwide expansion is pictured by the stone becoming a great mountain.\",\n      \"basis\": [\n        \"Daniel 2:35, 44–45\",\n        \"Matthew 13:31–33\",\n        \"Matthew 28:18–20\",\n        \"Colossians 1:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The stone represents God’s eschatological kingdom or the corporate people of God—the saints—without requiring that the stone itself symbolize an individual Messiah.\",\n      \"basis\": [\n        \"Daniel 2:44–45\",\n        \"Daniel 7:18, 22, 27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The stone is specifically the final, wholly future kingdom established at Christ’s second advent, sharply distinguished from the present church age.\",\n      \"basis\": [\n        \"Daniel 2:34–35, 44–45\",\n        \"Revelation 11:15\",\n        \"Revelation 19:11–21\",\n        \"Revelation 20:1–6\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus that the image signifies God’s supernatural, everlasting messianic rule in or through Christ. The principal disagreement concerns timing and referent: Christ personally versus his kingdom, and inauguration at the first advent versus establishment in its decisive form at the second advent.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The Messianic kingdom of God (Christ and/or His kingdom) of supernatural/divine origin that destroys all human kingdoms and fills the whole earth\",\n  \"primary_basis\": [\n    \"Daniel 2:34-35\",\n    \"Daniel 2:44-45\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jesus Christ personally (the divine 'stone' or cornerstone of non-human origin, often linked to virgin birth or eternal Sonship)\",\n      \"basis\": [\n        \"Daniel 2:34-35,44-45\",\n        \"Psalm 118:22\",\n        \"Isaiah 28:16\",\n        \"Matthew 21:42-44\",\n        \"Acts 4:11\",\n        \"1 Peter 2:4-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Christian Church (as the mountain that grows from the stone and fills the earth)\",\n      \"basis\": [\n        \"Daniel 2:35,44-45\",\n        \"Isaiah 2:2-3 (mountain of the Lord's house)\",\n        \"New Testament ecclesiology of kingdom/church continuity\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ's second coming / future millennial kingdom that catastrophically overthrows earthly powers\",\n      \"basis\": [\n        \"Daniel 2:34-35,44-45 read in futurist/dispensational eschatology\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The gospel message or spiritual power of God working without human agency\",\n      \"basis\": [\n        \"Daniel 2:34-35 interpreted allegorically or spiritually\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Mainstream Christian interpretation of Daniel 2 consistently treats the 'stone cut without hands' as a divine, non-human kingdom inaugurated by the Messiah; variations mainly concern whether the primary referent is Christ personally, the kingdom/Church as a whole, or the timing (already/not-yet vs. strictly future).\"\n}\n\nBOOK ENTRY\nA covenant cut by God — for a covenant is cut (Hebrew karat) — grown into the kingdom that breaks the world-empires and fills the earth.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 2:34-35, 44-45; Gen 15:17-18; Deut 9:10; Col 2:11) · see Mountain, ch. 39\n\nAVAILABLE KJV EXCERPTS\nDaniel 2:34 — Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.\nDaniel 2:35 — Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.\nDaniel 2:44 — And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.\nDaniel 2:45 — Forasmuch as thou sawest that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great God hath made known to the king what shall come to pass hereafter: and the dream is certain, and the interpretation thereof sure.\nGenesis 15:17 — And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces.\nGenesis 15:18 — In the same day the LORD made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:\nDeuteronomy 9:10 — And the LORD delivered unto me two tables of stone written with the finger of God; and on them was written according to all the words, which the LORD spake with you in the mount out of the midst of the fire in the day of the assembly.\nColossians 2:11 — In whom also ye are circumcised with the circumcision made without hands, in putting off the body of the sins of the flesh by the circumcision of Christ:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "6ece2194dfe79d25174d8e2fbba97b196f5b9a94a4cac320372b11f7493ce336",
+  "cache": {
+    "hit": false
+  }
+}

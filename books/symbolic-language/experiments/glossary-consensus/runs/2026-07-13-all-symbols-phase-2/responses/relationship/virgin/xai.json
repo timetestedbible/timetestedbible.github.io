@@ -1,0 +1,178 @@
+{
+  "created_at": 1783922613,
+  "completed_at": 1783922647,
+  "id": "0c6f11b7-a46c-91ad-a958-826d80cbf24e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0c6f11b7-a46c-91ad-a958-826d80cbf24e",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Virgin\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of 'virgin' as the espoused/betrothed state (covenant standing before the wedding) is equivalent to the consensus's emphasis on purity, exclusive devotion and the bride awaiting her husband. The book preserves the bridal-covenant metaphor but narrows the referent to the legal status of betrothal rather than moral attainment or general purity.\",\n  \"extension_reasoning\": \"The book adds the specific legal status of betrothed virgins (Deut 22:23 24) and the re-espousal of the ten-tribe house after divorce as 'virgin of Israel', while excluding cases where virginity implies achieved purity or literal celibacy. It also specifies plural virgins as companions following the bride, refining the corporate imagery to focus on covenant fidelity rather than general faithfulness.\",\n  \"citations_support \": \"strong\",\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of 'virgin' as the espoused/betrothed state (covenant standing before the wedding) is equivalent to the consensus's emphasis on purity exclusive devotion and the bride awaiting her husband. The book preserves the bridal-covenant metaphor but narrows the referent to the legal status of betrothal rather than moral attainment or general purity.\",\n  \"extension_reasoning\": \"The book adds the specific legal status of betrothed virgins (Deut 22 23 24) and the re-espousal of the ten-tribe house after divorce as 'virgin of Israel', while excluding cases where virginity implies achieved purity or literal celibacy. It also specifies plural virgins as companions following the bride, refining the corporate imagery to focus on covenant fidelity rather than general faithfulness.\",\n  \" citations_support\": \"strong\",\n  \"consensus_summary\": \"Consensus views 'virgin' primarily as a symbol of purity, exclusive devotion, and faithfulness to God, especially the Church or Israel as the pure bride betrothed to Christ.\",\n  \"book_summary\": \"The book defines 'virgin' as the espoused betrothed to one husband with wedding still ahead, emphasizing covenant standing rather than attainment; applied to re-espoused Israel and the bride's companions, opposite of the harlot.\",\n  \"relation\": \"REFINED\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET PARTIAL_RECLASSIFICATION\",\n  \"rationale\": \"The book preserves the consensus's general referent (the betrothed pure people of God) but materially narrows the conditions by defining virginity as legal covenant standing rather than moral purity attainment, and reclassifies specific cases such as the re-espoused northern tribes and companions as primary while de-emphasizing Marian and ascetic readings.\",\n  \"boundary_disagreement\": \"Book restricts 'virgin' to betrothal status and covenant position (including post-divorce re-espousal of northern Israel and bridal companions) rather than broader moral purity or attainment; omits or de-emphasizes Marian literal celibacy and pure readiness emphases while consensus includes them as alternatives or primaries.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Consensus identifies virgin primarily as purity, chastity and exclusive covenant faithfulness to God, most often the Church or Israel as pure virgin bride betrothed to Christ (with Marian virginity and consecrated celibacy as frequent alternatives).\",\n  \"book_summary\": \"Book defines virgin as the espoused—betrothed to one husband with the wedding still ahead: covenant standing, not attainment; law already counts a betrothed virgin a wife; prophets call the re-espoused ten-tribe house “the virgin of Israel”; plural virgins are the bride’s companions; opposite of the harlot.\",\n  \"consensus_core_identification\": \"pure/exclusively faithful bride (Israel or Church) betrothed to God/Christ\",\n  \"book_core_identification\": \"the espoused/betrothed one whose status is covenant standing (wedding still ahead), not attainment\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book narrows virginity to legal/covenantal betrothal status (including post-divorce re-espousal of northern Israel and the bride’s companions) and explicitly excludes “attainment”; consensus admits broader moral-purity, Marian, ascetic-celibacy and readiness cases.\",\n  \"material_contradiction\": \"None; book remains inside the bridal-covenant metaphor and does not deny purity or faithfulness.\",\n  \"rationale\": \"Both cores share the same bridal/espoused referent for God’s people. The book preserves that general category yet materially alters its conditions and precision (standing not attainment; specific re-espousal of the ten-tribe house; companions as virgins) and therefore covers only a subset of the cases consensus admits. This is boundary refinement, not core replacement or novelty.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"A reader could claim the shared betrothal texts make the cores simply equivalent (MATCH) or that “not attainment” quietly contradicts the purity emphasis (DIVERGENT); the explicit redefinition of conditions and the narrowed cases nevertheless favor REFINED.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0c6f11b7-a46c-91ad-a958-826d80cbf24e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4555,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3658,
+    "output_tokens_details": {
+      "reasoning_tokens": 3180
+    },
+    "total_tokens": 8213,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 302900000,
+    "context_details": {
+      "input_tokens": 4555,
+      "output_tokens": 3658
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

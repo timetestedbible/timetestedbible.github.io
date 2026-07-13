@@ -1,0 +1,195 @@
+{
+  "id": "resp_04e69fa93a55facf006a547aeebc3081909204e4d13df54ee0",
+  "object": "response",
+  "created_at": 1783921390,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921404,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_04e69fa93a55facf006a547af08ee08190b37c8dd741806773",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_04e69fa93a55facf006a547af5f3d88190bce075edad1c39a4",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The biblical fool is primarily a morally and spiritually deficient person who rejects God, divine wisdom, or instruction and lives in proud disobedience, rather than someone of low intelligence.\",\"book_summary\":\"The fool is specifically the lawless person who hears God’s word but willfully refuses to obey it, not an unintelligent person.\",\"consensus_core_identification\":\"A morally and spiritually rebellious or disobedient person, as opposed to an intellectually deficient person.\",\"book_core_identification\":\"A willfully disobedient hearer of God’s word—the lawless person, not the unintelligent.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book makes hearing God’s word and refusing to do it the defining condition. This narrows the broader consensus category, which can also include practical godlessness, resistance to instruction, pride, corrupt conduct, or imprudence without an explicit prior hearing of God’s word.\",\"material_contradiction\":\"There is no contradiction at the center: willful noncompliance with God’s word is a standard instance of the consensus’s moral-spiritual folly. The disagreement concerns whether that instance exhausts the category.\",\"rationale\":\"Both readings identify folly as ethical and religious rebellion rather than lack of intelligence. Matthew 7:26 directly supports the book’s sharper formulation, while Psalm 14:1 supports the broader association of folly with godlessness and corrupt conduct. Because the book turns one central manifestation of biblical folly—hearing without obeying—into its precise definition, it preserves the consensus referent while materially narrowing its extension.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Biblical wisdom literature applies fool-language to several kinds of moral and practical failure, and not every such text specifies that the person first heard God’s word and then refused it. The book may therefore overrestrict a broader biblical category.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3832,
+    "input_tokens_details": {
+      "cache_write_tokens": 3829,
+      "cached_tokens": 0
+    },
+    "output_tokens": 704,
+    "output_tokens_details": {
+      "reasoning_tokens": 300
+    },
+    "total_tokens": 4536
+  },
+  "user": null,
+  "metadata": {}
+}

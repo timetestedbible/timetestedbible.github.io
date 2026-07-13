@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "flood",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFlood\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the Flood (Noah's flood) primarily symbolizes God's judgment upon human sin combined with the salvation/preservation of a righteous remnant, and—via explicit New Testament typology—it prefigures Christian baptism, in which the believer passes through the waters of judgment into cleansing and new life.\",\n  \"primary_basis\": [\n    \"Genesis 6:5-8; 6:11-13; 7:17-24 (judgment on universal wickedness)\",\n    \"Genesis 6:8-9; 7:1; 8:15-9:17 (preservation of Noah, covenant, new creation/new beginning)\",\n    \"1 Peter 3:18-22 (the flood waters as a type/antitype of baptism)\",\n    \"2 Peter 2:5 and 2 Peter 3:5-7 (flood as paradigm of divine judgment, parallel to final judgment by fire)\",\n    \"Matthew 24:37-39 / Luke 17:26-27 ('as in the days of Noah'—flood as figure of sudden eschatological judgment)\",\n    \"Hebrews 11:7 (Noah's ark and salvation by faith)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eschatological warning: the flood as a type of the sudden, unexpected final judgment at Christ's return ('as in the days of Noah').\",\n      \"basis\": [\n        \"Matthew 24:37-39\",\n        \"Luke 17:26-27\",\n        \"2 Peter 3:5-7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Baptismal typology emphasized as the primary sense (especially in patristic, Catholic, Orthodox, and liturgical traditions, where the flood appears in baptismal liturgies and catechesis).\",\n      \"basis\": [\n        \"1 Peter 3:20-21\",\n        \"Patristic usage (e.g., Tertullian, On Baptism; Augustine; Catechism of the Catholic Church §1219)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"De-creation and re-creation: the flood as a reversal of Genesis 1 (return of chaos waters) followed by a new creation and renewed covenant/mandate—a prominent reading in academic biblical theology.\",\n      \"basis\": [\n        \"Genesis 1:2 compared with Genesis 7:11 (fountains of the deep, windows of heaven)\",\n        \"Genesis 8:1 (wind/Spirit over the waters echoing Gen 1:2)\",\n        \"Genesis 9:1-7 (renewed creation mandate)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Flood/deep waters more broadly as a symbol of overwhelming trouble, distress, death, or chaotic evil from which God delivers—apart from the Noah narrative.\",\n      \"basis\": [\n        \"Psalm 69:1-2, 14-15\",\n        \"Psalm 32:6\",\n        \"Psalm 18:4, 16\",\n        \"Isaiah 43:2\",\n        \"Jonah 2:3-5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The ark (rather than the flood itself) as a type of Christ or of the Church, with the flood as the judgment one is saved through only by being 'in' the ark—classic patristic and Reformed typology.\",\n      \"basis\": [\n        \"Genesis 6-8\",\n        \"1 Peter 3:20-21\",\n        \"Augustine, City of God 15; Cyprian's 'no salvation outside the church' imagery\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The flood as an image of satanic or persecuting opposition against God's people (a 'flood from the dragon's mouth').\",\n      \"basis\": [\n        \"Revelation 12:15-16\",\n        \"Isaiah 59:19 (in some translations: 'when the enemy comes in like a flood')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Flood imagery as an outpouring of blessing or of the Spirit (positive flood imagery), occasionally invoked in devotional and charismatic usage.\",\n      \"basis\": [\n        \"Isaiah 44:3\",\n        \"Amos 5:24 (justice rolling like waters)\",\n        \"Malachi 3:10 (overflowing blessing)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable, broadly settled consensus: the flood symbolizes divine judgment on sin paired with the salvation of a faithful remnant, and the New Testament itself fixes two interpretive lines—baptismal typology (1 Peter 3) and eschatological warning (Matthew 24 / 2 Peter 3). The alternatives listed are largely complementary emphases rather than competing meanings; which one is foregrounded varies by tradition (liturgical traditions stress baptism; evangelical preaching stresses judgment and the days-of-Noah warning; academic biblical theology stresses de-creation/re-creation). This assessment is made blind to the author's material, as instructed.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine judgment upon global sin and wickedness, simultaneously serving as a vehicle for the salvation of the righteous and acting as a typology for Christian baptism.\",\n  \"primary_basis\": [\n    \"Genesis 6-8\",\n    \"1 Peter 3:20-21\",\n    \"Matthew 24:37-39\",\n    \"Luke 17:26-27\",\n    \"2 Peter 2:5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Cosmic decreation and recreation, representing the return of primordial chaos waters followed by a new creation covenant.\",\n      \"basis\": [\n        \"Genesis 1:2\",\n        \"Genesis 7:11\",\n        \"2 Peter 3:5-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Overwhelming personal trials, sudden destruction, or the rapid and devastating invasion of enemies.\",\n      \"basis\": [\n        \"Psalm 69:1-2\",\n        \"Isaiah 59:19\",\n        \"Daniel 9:26\",\n        \"Revelation 12:15-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The final eschatological judgment of the earth, paralleling the future destruction by fire.\",\n      \"basis\": [\n        \"Matthew 24:37-39\",\n        \"2 Peter 3:6-7\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of the Flood is highly settled in Christian tradition primarily because the New Testament explicitly interprets it as a type of both eschatological judgment (Matthew 24) and the saving waters of baptism (1 Peter 3).\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Divine judgment upon pervasive human sin and corruption, especially as represented by Noah’s flood; it is commonly paired with God’s preservation of a faithful remnant and the beginning of a renewed creation.\",\n  \"primary_basis\": [\n    \"Genesis 6:5–13 — human wickedness and violence prompt divine judgment.\",\n    \"Genesis 7:17–24 — the flood executes that judgment.\",\n    \"Genesis 8:1–22 — Noah and the creatures are preserved, and the earth is renewed after the waters recede.\",\n    \"Genesis 9:8–17 — God establishes the post-flood covenant and gives the rainbow as its sign.\",\n    \"Matthew 24:37–39 and Luke 17:26–27 — Jesus uses the flood as a pattern of sudden, unexpected judgment.\",\n    \"2 Peter 2:5 and 3:5–7 — the flood is treated as a precedent for judgment upon the ungodly and for future cosmic judgment.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A type of Christian baptism: passage through judgment-bearing waters into salvation, a cleansed life, or a new beginning.\",\n      \"basis\": [\n        \"1 Peter 3:20–21 explicitly associates the salvation of Noah’s household through water with baptism.\",\n        \"Romans 6:3–4 is sometimes connected conceptually through baptismal death and new life, although it does not mention the flood.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Decreation and re-creation: the floodwaters symbolize a return to primordial chaos, followed by God’s restoration of an ordered world.\",\n      \"basis\": [\n        \"Genesis 1:2, 6–10 provides the creation-water imagery often compared with Genesis 7:11 and 8:1–14.\",\n        \"Genesis 8:1 echoes creation language through God’s wind or Spirit moving over the waters.\",\n        \"Genesis 8–9 presents renewed fertility, human vocation, and covenant after the flood.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An eschatological pattern foreshadowing the final judgment and the deliverance of God’s people.\",\n      \"basis\": [\n        \"Matthew 24:37–39 and Luke 17:26–30 compare the days of Noah with the coming of the Son of Man.\",\n        \"2 Peter 3:5–7 contrasts the ancient destruction by water with future judgment by fire.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cleansing or purification of a corrupted earth.\",\n      \"basis\": [\n        \"Genesis 6:11–13 describes the earth as corrupt and filled with violence before the flood.\",\n        \"The removal of the corrupt world and the renewed conditions of Genesis 8–9 support this reading, although Scripture more explicitly emphasizes judgment than ritual cleansing.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The waters of chaos, death, and anti-creation that threaten life but remain subject to God’s sovereignty.\",\n      \"basis\": [\n        \"Genesis 7:11 depicts the release of waters from above and below, reversing the ordered separations of Genesis 1.\",\n        \"Psalm 29:10 and broader biblical water imagery are sometimes read alongside the flood as depictions of God’s rule over overwhelming waters.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that the flood’s foremost symbolic or theological significance is divine judgment on sin. Christian interpretation also regularly treats preservation, covenant, new creation, baptism, and final judgment as interconnected secondary meanings rather than mutually exclusive alternatives.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God's righteous judgment on human wickedness and the merciful salvation of a faithful remnant via the ark\",\n  \"primary_basis\": [\n    \"Genesis 6–9\",\n    \"Matthew 24:37–39\",\n    \"Luke 17:26–27\",\n    \"2 Peter 2:5\",\n    \"2 Peter 3:5–7\",\n    \"Hebrews 11:7\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Typological prefiguration of Christian baptism (waters of judgment that also cleanse, ark as Church/Christ)\",\n      \"basis\": [\n        \"1 Peter 3:20–21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Foreshadowing of eschatological final judgment at Christ's return\",\n      \"basis\": [\n        \"Matthew 24:37–39\",\n        \"2 Peter 3:5–7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sign of divine covenant faithfulness and promise never again to destroy the earth by flood (rainbow)\",\n      \"basis\": [\n        \"Genesis 9:8–17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Re-creation motif restoring order from chaos after primordial waters\",\n      \"basis\": [\n        \"Genesis 1 and 6–9 parallels\",\n        \"Psalm 29\",\n        \"Psalm 104\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Primarily moral or legendary tale without strong typological weight\",\n      \"basis\": [],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Protestant, Catholic, and Orthodox teaching the Flood functions first as historical judgment-salvation narrative that supplies the dominant typology; baptismal and eschatological readings are widespread secondary applications rather than rivals.\"\n}\n\nBOOK ENTRY\nAn army in motion — a nation invading, or the Lord's own host sweeping the enemy away.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 8:7; Jer 47:2; Dan 9:26) · see Sea & Waters, ch. 40\n\nAVAILABLE KJV EXCERPTS\nIsaiah 8:7 — Now therefore, behold, the Lord bringeth up upon them the waters of the river, strong and many, even the king of Assyria, and all his glory: and he shall come up over all his channels, and go over all his banks:\nJeremiah 47:2 — Thus saith the LORD; Behold, waters rise up out of the north, and shall be an overflowing flood, and shall overflow the land, and all that is therein; the city, and them that dwell therein: then the men shall cry, and all the inhabitants of the land shall howl.\nDaniel 9:26 — And after threescore and two weeks shall Messiah be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood, and unto the end of the war desolations are determined.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "d634c61b6a65bf3bc557768c4b76bf8db41bca4eab6870c279d657944f730a08",
+  "cache": {
+    "hit": false
+  }
+}

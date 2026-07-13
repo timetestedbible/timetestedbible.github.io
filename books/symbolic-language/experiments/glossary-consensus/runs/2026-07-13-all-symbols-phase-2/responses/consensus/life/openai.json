@@ -1,0 +1,173 @@
+{
+  "id": "resp_01581611eaee4a8a006a5350b2b0a48195b6845332c26dfd0f",
+  "object": "response",
+  "created_at": 1783845042,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783845061,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_01581611eaee4a8a006a5350b43fa48195b4f0ae91b89c6b0d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_01581611eaee4a8a006a5350b79e1c81958dd2a46bd5a7329e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Divine or eternal life given by God in and through Jesus Christ—salvation understood as restored communion with God, spiritually present now and fulfilled in resurrection.\",\"primary_basis\":[\"John 1:4 — “In him was life,” associating life with the incarnate Word.\",\"John 5:21, 24-26 — the Son gives life and possesses life in himself; believers pass from death to life.\",\"John 10:10, 28 — Jesus gives abundant and eternal life.\",\"John 11:25-26 — Jesus declares, “I am the resurrection and the life.”\",\"John 14:6 — Jesus declares, “I am the way, and the truth, and the life.”\",\"John 17:3 — eternal life is defined relationally as knowing the Father and Jesus Christ.\",\"Romans 6:4, 23 — believers walk in newness of life, and God’s gift is eternal life in Christ.\",\"Colossians 3:3-4 — Christ is identified as the believer’s life.\",\"1 John 1:1-2; 5:11-12, 20 — eternal life is manifested in Christ and possessed through the Son.\"] ,\"alternatives\":[{\"meaning\":\"Christ himself as “the Life,” emphasizing his identity as the source, embodiment, and mediator of divine life rather than merely a gift he bestows.\",\"basis\":[\"John 11:25\",\"John 14:6\",\"Colossians 3:4\",\"1 John 1:1-2\"],\"prominence\":\"common\"},{\"meaning\":\"Ordinary created or biological life—the animating breath and earthly existence bestowed and sustained by God. In many passages “life” is literal rather than symbolic.\",\"basis\":[\"Genesis 2:7\",\"Job 33:4\",\"Psalm 104:29-30\",\"Acts 17:25, 28\"],\"prominence\":\"common\"},{\"meaning\":\"Resurrection life: bodily life restored after death, especially through participation in Christ’s resurrection.\",\"basis\":[\"John 5:28-29\",\"John 11:25-26\",\"Romans 6:4-9\",\"1 Corinthians 15:20-23, 42-49\"],\"prominence\":\"common\"},{\"meaning\":\"Present spiritual renewal or sanctified conduct—“newness of life,” often contrasted with sin, alienation, or spiritual death.\",\"basis\":[\"Romans 6:4, 11-13\",\"Romans 8:6, 10-11\",\"Ephesians 2:1-5\",\"Galatians 2:20\"],\"prominence\":\"common\"},{\"meaning\":\"Covenant flourishing, wisdom, and righteousness: life as well-being, blessing, and the fruitful path produced by fidelity to God.\",\"basis\":[\"Deuteronomy 30:15-20\",\"Proverbs 3:16-18\",\"Proverbs 8:35\",\"Proverbs 12:28\",\"Psalm 16:11\"],\"prominence\":\"common\"},{\"meaning\":\"The Holy Spirit’s life-giving presence or power, particularly as the principle of spiritual and resurrection life.\",\"basis\":[\"John 6:63\",\"Romans 8:2, 6, 10-11\",\"2 Corinthians 3:6\"],\"prominence\":\"minority\"},{\"meaning\":\"Immortality or unending conscious existence considered chiefly as duration rather than communion with God or participation in Christ.\",\"basis\":[\"Matthew 25:46\",\"John 3:16\",\"Revelation 21:4\"],\"prominence\":\"common\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is a strong central Christian association between “life,” especially “the life” in Johannine or Christological language, and eternal/divine life in Christ. Nevertheless, the term is highly context-dependent and often denotes ordinary existence, present spiritual renewal, righteous flourishing, or bodily resurrection. Thus there is no single settled symbolic interpretation applicable to every biblical occurrence.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 320,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 984,
+    "output_tokens_details": {
+      "reasoning_tokens": 165
+    },
+    "total_tokens": 1304
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,195 @@
+{
+  "id": "resp_05603602f6bc3ab0006a547ee285588194872458786fd3ddff",
+  "object": "response",
+  "created_at": 1783922402,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922419,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_05603602f6bc3ab0006a547ee37618819492c8010ff932d6d9",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_05603602f6bc3ab0006a547eeb50488194a2e6ed68bfefe6a0",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"DIVERGENT\",\"consensus_summary\":\"The stone signifies Christ and/or the divinely established messianic kingdom that destroys worldly empires and becomes universal.\",\"book_summary\":\"The stone signifies a covenant cut by God, which subsequently grows into the kingdom that destroys the empires and fills the earth.\",\"consensus_core_identification\":\"Stone = God's messianic kingdom, often identified personally with Christ.\",\"book_core_identification\":\"Stone = God's covenant; the kingdom is what that covenant grows into.\",\"core_relation\":\"CONTRADICTS\",\"extension_relation\":\"DIFFERENT_REFERENT\",\"boundary_disagreement\":\"The disagreement concerns the stone's immediate referent, not merely timing or scope. Consensus identifies the stone itself as the kingdom or Christ, whereas the book reclassifies it as a covenant antecedent that develops into the kingdom.\",\"material_contradiction\":\"In Daniel's symbol sequence, the same stone cannot straightforwardly be both the kingdom itself and a distinct covenant that only later becomes or produces the kingdom in the same sense. The book replaces the consensus referent while retaining the kingdom as the stone's eventual outcome.\",\"rationale\":\"Reducing both readings to their cores exposes a source-product distinction: kingdom versus covenant-becoming-kingdom. None of the consensus alternatives identifies the stone primarily as covenant. Because the book does not merely add covenantal background but assigns the stone to a different stage and referent, the relationship is divergent rather than refined or matched.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Daniel 2:44-45 explicitly interprets the image as a kingdom established by God, while none of the additional citations directly identifies Daniel's stone as a covenant. Genesis 15 concerns covenant cutting, Deuteronomy 9 concerns divinely written stone tablets, and Colossians 2 concerns circumcision made without hands; together they provide thematic analogies but not a direct exegetical link. Moreover, appealing to Hebrew karat is linguistically indirect because Daniel 2 is Aramaic.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3769,
+    "input_tokens_details": {
+      "cache_write_tokens": 3766,
+      "cached_tokens": 0
+    },
+    "output_tokens": 857,
+    "output_tokens_details": {
+      "reasoning_tokens": 435
+    },
+    "total_tokens": 4626
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921428,
+  "completed_at": 1783921437,
+  "id": "03bbd952-e896-9077-bc4d-5580ca45e00d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_03bbd952-e896-9077-bc4d-5580ca45e00d",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for \"Fornication, whoredom\".\n{\n  \"relation\": \"MATCH\",\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \"MATCH\",\n  \"core_identification\": \"Spiritual unfaithfulness to God, specifically idolatry and covenant-breaking (the out-of-covenant union itself constitutes the whoredom)\",\n  \"consensus_summary\": \"All four responses identify the primary symbolic meaning of fornication/whoredom as spiritual unfaithfulness to God, chiefly idolatry and apostasy, rooted in the marriage metaphor for the covenant.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Primary symbolic meaning of fornication/whoredom is spiritual unfaithfulness to God (idolatry, apostasy, covenant breach), grounded in the marriage metaphor for the divine covenant; Israel/church personified as harlot. Literal sexual immorality is foundational but non-symbolic; secondary extensions include political alliances, corrupt religion, and imperial commerce.\",\n  \"book_summary\": \"Spiritual unfaithfulness consisting in breaking covenant with God to pursue other gods and kingdoms; the out-of-covenant union itself constitutes the whoredom, distinct from mere physical sin.\",\n  \"consensus_core_identification\": \"Spiritual/covenant unfaithfulness (idolatry/apostasy) depicted as marital infidelity or prostitution.\",\n  \"book_core_identification\": \"Spiritual unfaithfulness as covenant-breaking union with other gods and kingdoms.\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None; both treat the core as covenant infidelity encompassing gods and political powers, while excluding pure physical sin as the symbolic referent.\",\n  \"material_contradiction\": \"None.\",\n  \"rationale\": \"Minimum cores are identical: both identify the symbolic referent as spiritual covenant unfaithfulness (not physical fornication). The book's phrasing ('other gods and kingdoms'; 'out-of-covenant union is itself the whoredom') is a compact restatement of the consensus primary meaning already illustrated by Hosea, Ezekiel, Jeremiah, Exodus, and Revelation. No narrowing, broadening, reclassification, or replacement of the central category occurs.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"None material; at most a quibble that the book is more concise and does not enumerate every secondary extension (political commerce, etc.) already treated as elaborations of the same core by consensus.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_03bbd952-e896-9077-bc4d-5580ca45e00d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4664,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1074,
+    "output_tokens_details": {
+      "reasoning_tokens": 649
+    },
+    "total_tokens": 5738,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 150040000,
+    "context_details": {
+      "input_tokens": 4664,
+      "output_tokens": 1074
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

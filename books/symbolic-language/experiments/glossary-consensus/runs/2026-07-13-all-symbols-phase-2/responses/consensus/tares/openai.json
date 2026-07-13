@@ -1,0 +1,173 @@
+{
+  "id": "resp_06182bf089bc4a2e006a54781f45c88195bbfb83f92307701e",
+  "object": "response",
+  "created_at": 1783920671,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920688,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_06182bf089bc4a2e006a54782008f48195b3cf3f7d25aa1bb9",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_06182bf089bc4a2e006a547825f7948195a79527c99fc3cd31",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The tares (darnel) symbolize people aligned with evil—identified by Jesus as “the sons of the evil one”—who coexist with the righteous until their final separation and judgment at the end of the age.\",\"primary_basis\":[\"Matthew 13:24–30 — the parable of the wheat and the tares/weeds.\",\"Matthew 13:36–43 — Jesus explicitly identifies the field as the world, the good seed as the sons of the kingdom, the tares as the sons of the evil one, the enemy as the devil, and the harvest as the end of the age.\",\"Matthew 13:47–50 — the related parable of the net similarly depicts an end-time separation of the evil from the righteous.\"],\"alternatives\":[{\"meaning\":\"Hypocrites, nominal Christians, or otherwise false members within the visible church, who should not be prematurely uprooted by human judgment.\",\"basis\":[\"Matthew 13:24–30, especially the coexistence of wheat and tares and the command to let both grow until harvest.\",\"This is a longstanding ecclesial application, although Matthew 13:38 explicitly calls the field “the world,” not the church.\"],\"prominence\":\"common\"},{\"meaning\":\"False teachers or heretics who infiltrate and corrupt the Christian community.\",\"basis\":[\"Matthew 13:25 — the enemy secretly sows tares among the wheat.\",\"Often connected by application with warnings about false teachers, such as Matthew 7:15–23 and Acts 20:29–30, though Jesus’ direct interpretation identifies the tares as evil persons more broadly.\"],\"prominence\":\"minority\"},{\"meaning\":\"False doctrine, error, or evil influence rather than persons.\",\"basis\":[\"The image of hostile sowing in Matthew 13:25 can be extended metaphorically to corrupt teaching or influence.\",\"The direct explanation in Matthew 13:38 weighs against making doctrine itself the primary referent.\"],\"prominence\":\"rare\"},{\"meaning\":\"A warning chiefly against attempting to construct a completely pure society or church before the final judgment.\",\"basis\":[\"Matthew 13:28–30 — the servants are forbidden to uproot the tares lest they also uproot the wheat.\",\"Matthew 13:39–43 assigns the definitive separation to angels at the end of the age.\"],\"prominence\":\"common\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"The core symbolism is unusually explicit because Matthew supplies Jesus’ interpretation. Debate mainly concerns the scope of the field and the parable’s application: the text says “the world,” while much Christian teaching applies it specifically to the mixed visible church. “Tares” is the traditional English rendering, especially in the KJV; modern translations commonly use “weeds,” often understood botanically as darnel.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 322,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 811,
+    "output_tokens_details": {
+      "reasoning_tokens": 229
+    },
+    "total_tokens": 1133
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "living-2",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLiving water\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'living water' primarily symbolizes the Holy Spirit given by Jesus Christ to believers, and closely bound up with that, the eternal life / salvation that Christ offers. Jesus is presented as the source of this water, which quenches spiritual thirst permanently and wells up to eternal life. John's Gospel itself supplies the dominant interpretive key by stating that the rivers of living water refer to the Spirit whom believers would receive.\",\n  \"primary_basis\": [\n    \"John 4:10-14 (Jesus and the Samaritan woman: 'living water... welling up to eternal life')\",\n    \"John 7:37-39 (rivers of living water; the evangelist's explicit gloss: 'this he said about the Spirit')\",\n    \"Jeremiah 2:13 and 17:13 (God as 'the fountain of living waters')\",\n    \"Zechariah 14:8 (living waters flowing out from Jerusalem)\",\n    \"Isaiah 12:3; 44:3; 55:1 (water/Spirit poured out; drawing water from the wells of salvation)\",\n    \"Revelation 7:17; 21:6; 22:1, 22:17 (the water of life, the river of the water of life)\",\n    \"Ezekiel 47:1-12 (river flowing from the temple, widely read typologically)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Holy Spirit specifically (as distinct from eternal life generally) — many commentators treat John 7:39 as fixing the referent exclusively as the Spirit.\",\n      \"basis\": [\n        \"John 7:37-39\",\n        \"Isaiah 44:3\",\n        \"Joel 2:28\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Eternal life / salvation itself, or Christ and his saving revelation as the gift, with the Spirit as a secondary or mediated referent (a classic exegetical debate on John 4).\",\n      \"basis\": [\n        \"John 4:10-14\",\n        \"John 6:35\",\n        \"Revelation 21:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The literal Hebrew idiom mayim chayyim, meaning fresh, flowing (spring) water as opposed to stagnant cistern water — the linguistic base on which the symbolism trades; in ritual contexts it refers to water suitable for purification.\",\n      \"basis\": [\n        \"Genesis 26:19\",\n        \"Leviticus 14:5-6, 50-52; 15:13\",\n        \"Numbers 19:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Baptism / baptismal regeneration — a sacramental reading prominent in patristic, Catholic, and Orthodox interpretation, and in early church practice ('baptize in living water,' Didache 7).\",\n      \"basis\": [\n        \"John 3:5 read alongside John 4 and 7\",\n        \"Didache 7 (extra-biblical)\",\n        \"Titus 3:5\",\n        \"Ezekiel 36:25-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The word of God / the gospel or divine teaching that cleanses and gives life (a homiletical extension found in some Protestant preaching and older commentary).\",\n      \"basis\": [\n        \"Ephesians 5:26\",\n        \"Isaiah 55:1-3, 10-11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Wisdom or Torah as living water — the Jewish background tradition (Sirach, Qumran, rabbinic sources) sometimes invoked by scholars as the frame Jesus reworks; occasionally carried into Christian readings as 'divine wisdom/revelation.'\",\n      \"basis\": [\n        \"Sirach 24:21-30 (deuterocanonical)\",\n        \"Proverbs 13:14; 18:4\",\n        \"Rabbinic and Qumran parallels (extra-biblical)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable, well-settled consensus: living water symbolizes the Spirit and the eternal life Christ gives, largely because John 7:39 provides an inner-biblical interpretation. The main live debate within the consensus is whether the referent in John 4 is the Spirit, eternal life, Christ's revelation, or all of these together; most commentators treat these as overlapping rather than competing. The literal idiom (flowing spring water) is universally acknowledged as the semantic background rather than a rival symbolic meaning. Sacramental (baptismal) readings are tradition-dependent: common in Catholic/Orthodox and patristic sources, less emphasized in evangelical Protestant interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Holy Spirit, eternal life, and the spiritually satisfying, life-giving grace of God mediated through Jesus Christ.\",\n  \"primary_basis\": [\n    \"John 4:10-14\",\n    \"John 7:37-39\",\n    \"Jeremiah 2:13\",\n    \"Revelation 7:17\",\n    \"Revelation 21:6\",\n    \"Revelation 22:1-17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The sacrament of Christian baptism, historically associated with fresh, flowing water\",\n      \"basis\": [\n        \"John 3:5\",\n        \"Ephesians 5:26\",\n        \"Hebrews 10:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Word of God or the Gospel message that purifies and sustains the believer\",\n      \"basis\": [\n        \"Ephesians 5:26\",\n        \"John 15:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Divine wisdom or the Torah, primarily emphasizing the Jewish intertestamental context\",\n      \"basis\": [\n        \"Proverbs 13:14\",\n        \"Proverbs 18:4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In its original ancient Near Eastern and linguistic context, 'living water' literally referred to flowing spring water as opposed to stagnant well or cistern water. Christian consensus is heavily anchored by John 7:39, which explicitly identifies 'living water' with the Holy Spirit. While the primary symbolic consensus universally centers on the Spirit and eternal life, liturgical and patristic traditions frequently extend the metaphor to baptismal regeneration.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s life-giving gift—especially the Holy Spirit—imparting spiritual renewal, salvation, and eternal life.\",\n  \"primary_basis\": [\n    \"John 7:37–39 explicitly identifies the promised rivers of living water with the Holy Spirit.\",\n    \"John 4:10–14 portrays Jesus’ living water as an inward, enduring gift that springs up to eternal life.\",\n    \"Isaiah 44:3 links poured-out water with the outpouring of God’s Spirit and blessing.\",\n    \"Ezekiel 47:1–12 and Zechariah 14:8 depict life-giving waters flowing from God’s eschatological presence.\",\n    \"Revelation 21:6; 22:1–2, 17 associates the water of life with God’s free gift, healing, and eternal life.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God himself as the inexhaustible source or fountain of life, contrasted with false gods and human substitutes.\",\n      \"basis\": [\n        \"Jeremiah 2:13 calls the LORD “the fountain of living waters.”\",\n        \"Jeremiah 17:13 similarly identifies the LORD as the fountain of living water.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jesus Christ or the salvation and revelation he personally gives, rather than the Holy Spirit considered separately.\",\n      \"basis\": [\n        \"John 4:10–14 centers the gift on Jesus and his ability to give eternal life.\",\n        \"John 6:35 and Revelation 21:6 are often read alongside the living-water sayings as invitations to receive life through Christ.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological life, healing, and restoration flowing from God’s presence in the renewed creation.\",\n      \"basis\": [\n        \"Ezekiel 47:1–12 describes temple water bringing life and healing wherever it flows.\",\n        \"Zechariah 14:8 places living waters in the final reign of the LORD.\",\n        \"Revelation 22:1–2 presents the river of the water of life in the New Jerusalem.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Baptism or baptismal grace.\",\n      \"basis\": [\n        \"John 3:5 is sometimes connected with John’s water imagery.\",\n        \"Early Christian and sacramental interpretation often associates John 4 and John 7 with baptism and the gift of the Spirit.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal fresh, flowing, or spring water, without an inherent symbolic referent.\",\n      \"basis\": [\n        \"Genesis 26:19 uses the expression for fresh spring water.\",\n        \"Leviticus 14:5–6 and Numbers 19:17 use “living water” in purification rites to mean running or fresh water.\",\n        \"Song of Songs 4:15 uses it poetically for flowing water.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus that, when used symbolically in the New Testament, “living water” signifies God’s life-giving saving gift, with the Holy Spirit as the clearest specific referent because of John 7:39. The imagery remains context-sensitive: some passages emphasize God as the source, Christ as giver, eternal life, or eschatological restoration rather than distinguishing these sharply.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the Holy Spirit (who imparts eternal life and quenches spiritual thirst)\",\n  \"primary_basis\": [\n    \"John 7:37-39 (explicitly identified as the Spirit)\",\n    \"John 4:10-14 (Jesus as giver of living water welling up to eternal life)\",\n    \"Jeremiah 2:13 and 17:13 (Yahweh as fountain of living waters, read christologically)\",\n    \"Revelation 7:17; 21:6; 22:1, 17 (river/water of life from God and the Lamb)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"eternal life or salvation offered by Christ\",\n      \"basis\": [\n        \"John 4:14\",\n        \"Revelation 21:6; 22:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the word or teaching of God/Christ\",\n      \"basis\": [\n        \"occasional patristic and later homiletic applications linking living water to Scripture or gospel proclamation\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"baptismal water or sacramental grace\",\n      \"basis\": [\n        \"early church liturgical and catechetical use connecting John 4/7 to baptism\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Christ himself as the source of life\",\n      \"basis\": [\n        \"Johannine Christology and some medieval spiritual readings\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Johannine texts supply the dominant Christian symbolic reading; Old Testament fountain imagery is consistently re-read through the lens of John 7. Alternative emphases (salvation, word, baptism) are not contradictory but secondary or contextual expansions of the same complex.\"\n}\n\nBOOK ENTRY\nThe Spirit and word of God going out to give life.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 2:13; John 7:38) · see Sea & Waters, ch. 40\n\nAVAILABLE KJV EXCERPTS\nJeremiah 2:13 — For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.\nJohn 7:38 — He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "beaebb0879c1ac2428519082f655a09160262441b9f14041998a613fe2dcbfeb",
+  "cache": {
+    "hit": false
+  }
+}

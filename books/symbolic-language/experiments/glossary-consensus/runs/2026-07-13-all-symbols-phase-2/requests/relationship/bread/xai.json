@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "bread",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nBread\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, bread primarily symbolizes Jesus Christ himself as the source of spiritual life and divine sustenance — the 'Bread of Life' — a meaning concentrated in and reinforced by the Eucharist/Lord's Supper, where bread represents (or, in sacramental traditions, becomes) Christ's body given for believers. Behind this stands the broader biblical motif of bread as God's life-giving provision, typified by the manna in the wilderness, which Christian interpreters read as foreshadowing Christ.\",\n  \"primary_basis\": [\n    \"John 6:35 ('I am the bread of life')\",\n    \"John 6:48-58 (bread from heaven; living bread; eating his flesh)\",\n    \"Matthew 26:26 / Mark 14:22 / Luke 22:19 ('This is my body' at the Last Supper)\",\n    \"1 Corinthians 11:23-26 (institution of the Lord's Supper)\",\n    \"Exodus 16 (manna as God's provision, read typologically of Christ)\",\n    \"John 6:31-33 (manna contrasted with the true bread from heaven)\",\n    \"Luke 24:30-35 (Christ known in the breaking of bread)\",\n    \"Matthew 14:13-21 and parallels (feeding of the five thousand as sign leading into the Bread of Life discourse)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Bread as the Word of God / spiritual nourishment from Scripture — humans live 'not by bread alone but by every word that proceeds from the mouth of God.'\",\n      \"basis\": [\n        \"Deuteronomy 8:3\",\n        \"Matthew 4:4 / Luke 4:4\",\n        \"Amos 8:11 (famine of hearing the words of the LORD)\",\n        \"Isaiah 55:1-3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Bread as God's daily physical provision and dependence on God for material needs, especially in the petition for 'daily bread.'\",\n      \"basis\": [\n        \"Matthew 6:11 / Luke 11:3 (Lord's Prayer)\",\n        \"Genesis 3:19 (bread by the sweat of the brow)\",\n        \"Psalm 104:14-15\",\n        \"Proverbs 30:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Bread as fellowship, communion, and the unity of the church — one loaf signifying one body of believers, expressed in shared table fellowship.\",\n      \"basis\": [\n        \"1 Corinthians 10:16-17\",\n        \"Acts 2:42, 46 (breaking of bread)\",\n        \"Acts 20:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Unleavened bread as purity, sincerity, and freedom from sin (with leaven as corruption), tied to Passover typology.\",\n      \"basis\": [\n        \"Exodus 12:8, 15-20\",\n        \"1 Corinthians 5:6-8\",\n        \"Matthew 16:6, 11-12 (leaven of the Pharisees)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The bread of the Presence (showbread) in the tabernacle/temple as symbol of covenant fellowship with God and, typologically, of Christ's abiding presence.\",\n      \"basis\": [\n        \"Exodus 25:30\",\n        \"Leviticus 24:5-9\",\n        \"1 Samuel 21:1-6 with Matthew 12:3-4\",\n        \"Hebrews 9:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Bread as suffering, hardship, or affliction ('bread of affliction,' 'bread of tears,' 'bread of adversity').\",\n      \"basis\": [\n        \"Deuteronomy 16:3\",\n        \"Psalm 80:5\",\n        \"Psalm 127:2\",\n        \"Isaiah 30:20\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Bread as anticipation of the eschatological messianic banquet — eating bread in the kingdom of God.\",\n      \"basis\": [\n        \"Luke 14:15\",\n        \"Isaiah 25:6\",\n        \"Matthew 8:11\",\n        \"Luke 22:16-18, 30\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Bread as hospitality and covenant/peace between persons, such that sharing bread creates a bond (and betrayal by a table companion is aggravated treachery).\",\n      \"basis\": [\n        \"Genesis 18:5-6\",\n        \"Psalm 41:9\",\n        \"John 13:18\",\n        \"Genesis 14:18 (Melchizedek bringing bread and wine)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Bread is among the most stable and heavily attested symbols in Christian interpretation. The dominant reading — Christ as the Bread of Life and the eucharistic body of Christ — is shared across Catholic, Orthodox, and Protestant traditions, though traditions differ sharply on the mode (transubstantiation, real presence, memorial symbol); that dispute concerns the mechanics of the sacrament, not the symbolic referent. The alternative readings listed are not rival identifications so much as complementary layers of a rich, multivalent symbol; most commentators treat several of them together, with the Word-of-God and daily-provision senses often folded into the christological reading (e.g., patristic and Reformation exegesis of 'daily bread' as both material need and Christ/the Word).\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The body of Christ and ultimate spiritual sustenance, specifically representing Jesus as the 'Bread of Life' and his sacrifice in the Eucharist/Communion.\",\n  \"primary_basis\": [\n    \"John 6:35-51\",\n    \"Matthew 26:26\",\n    \"1 Corinthians 11:23-24\",\n    \"Exodus 16:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Daily physical provision and complete reliance on God for basic human needs.\",\n      \"basis\": [\n        \"Matthew 6:11\",\n        \"Proverbs 30:8\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The Word of God and spiritual truth by which humanity is meant to live.\",\n      \"basis\": [\n        \"Deuteronomy 8:3\",\n        \"Matthew 4:4\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Fellowship, unity, and communion among believers (breaking of bread).\",\n      \"basis\": [\n        \"1 Corinthians 10:17\",\n        \"Acts 2:42\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin, corruption, or false teaching (when specifically referring to leaven or leavened bread).\",\n      \"basis\": [\n        \"Matthew 16:11-12\",\n        \"1 Corinthians 5:7-8\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Bread is one of the most central and multivalent symbols in Christian theology. While it universally represents God's provision, its interpretation bridges the physical (daily sustenance) and the spiritual (the Word of God), culminating in Christological and sacramental dimensions.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Bread most commonly symbolizes God-given life, provision, and spiritual nourishment, understood supremely in Christian teaching as Jesus Christ, the “bread of life.”\",\n  \"primary_basis\": [\n    \"Exodus 16:4-15, 31-35 — manna as bread provided by God in the wilderness.\",\n    \"Deuteronomy 8:3 — bread contrasted with, yet used to illustrate, dependence on every word from God.\",\n    \"John 6:32-35, 48-58 — Jesus identifies himself as the true bread from heaven and the bread of life.\",\n    \"Matthew 26:26-29; Mark 14:22-25; Luke 22:19-20 — Jesus identifies the broken bread of the Last Supper with his body.\",\n    \"1 Corinthians 10:16-17; 11:23-29 — bread signifies participation in Christ’s body and the unity of believers.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The sacramental body or real presence of Christ in the Eucharist. Traditions agree that Eucharistic bread signifies Christ’s body but differ materially over whether and how Christ is objectively present.\",\n      \"basis\": [\n        \"Matthew 26:26\",\n        \"Luke 22:19\",\n        \"John 6:51-58\",\n        \"1 Corinthians 10:16\",\n        \"1 Corinthians 11:23-29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s word or revealed truth as nourishment for spiritual life.\",\n      \"basis\": [\n        \"Deuteronomy 8:3\",\n        \"Matthew 4:4\",\n        \"Luke 4:4\",\n        \"Jeremiah 15:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ordinary material provision and the necessities of daily life rather than a specifically christological symbol.\",\n      \"basis\": [\n        \"Matthew 6:11\",\n        \"Luke 11:3\",\n        \"Proverbs 30:8-9\",\n        \"Acts 2:46\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fellowship and corporate unity of the church, represented by many believers sharing or forming one loaf.\",\n      \"basis\": [\n        \"Acts 2:42,46\",\n        \"1 Corinthians 10:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacred fellowship with God or God’s covenantal presence, especially through the bread of the Presence and sacred meals.\",\n      \"basis\": [\n        \"Exodus 25:23-30\",\n        \"Leviticus 24:5-9\",\n        \"1 Samuel 21:4-6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Affliction, sorrow, wickedness, or dishonestly obtained sustenance, as in expressions such as “bread of tears,” “bread of wickedness,” or “bread of deceit.”\",\n      \"basis\": [\n        \"Psalm 80:5\",\n        \"Proverbs 4:17\",\n        \"Proverbs 20:17\",\n        \"Isaiah 30:20\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus around bread as life-sustaining provision and spiritual nourishment from God, especially Christ as the bread of life. Bread is nevertheless context-dependent and does not have one exclusive symbolic referent. Eucharistic interpretations are especially prominent but remain divided over the nature of Christ’s presence.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The body of Christ (Eucharistic presence and sacrificial life given for believers)\",\n  \"primary_basis\": [\n    \"Matthew 26:26-28\",\n    \"Mark 14:22-24\",\n    \"Luke 22:19-20\",\n    \"1 Corinthians 11:23-26\",\n    \"John 6:35, 48-58\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's daily provision and physical/spiritual sustenance (manna typology)\",\n      \"basis\": [\n        \"Exodus 16\",\n        \"Matthew 6:11\",\n        \"Deuteronomy 8:3\",\n        \"John 6:31-33\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Word of God as true life-giving sustenance\",\n      \"basis\": [\n        \"Deuteronomy 8:3\",\n        \"Matthew 4:4\",\n        \"Luke 4:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christian fellowship and communal unity (breaking of bread)\",\n      \"basis\": [\n        \"Acts 2:42, 46\",\n        \"Acts 20:7\",\n        \"1 Corinthians 10:16-17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hospitality, covenant meal, or simple human sustenance without deeper christological overlay\",\n      \"basis\": [\n        \"Genesis 18:1-8\",\n        \"various OT meal narratives\",\n        \"non-sacramental readings of Gospel feedings\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching the Eucharistic identification of bread with Christ's body (and the related Bread of Life discourse) is the dominant and most widely attested symbolic reading; other senses remain common but secondary or complementary rather than competitive.\"\n}\n\nBOOK ENTRY\nThe word of God.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 8:3; Matt 4:4) · see Orphans, Widows & the Fatherless, ch. 14\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 8:3 — And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of the LORD doth man live.\nMatthew 4:4 — But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "69a68288b5d5d6dd68ad1d6a06fc97d7f5699cf0b824c3e647ed118c88f5558b",
+  "cache": {
+    "hit": false
+  }
+}

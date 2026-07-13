@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920495,
+  "completed_at": 1783920519,
+  "id": "4da87ef4-744c-9362-9821-3f976dea21c3",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_4da87ef4-744c-9362-9821-3f976dea21c3",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the biblical term \"Sabbath\". I must return only a structured JSON result matching the schema, with no surrounding text.\n{\n  \"primary_meaning\": \"The Sabbath primarily symbolizes God's creative rest and the call to rest in Him, often pointing toward spiritual rest in Christ for Christians.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Rest (God's rest after creation and the spiritual rest believers enter through Christ)\",\n  \"primary_basis\": [\n    \"Genesis 2:2-3\",\n    \"Exodus 20:8-11\",\n    \"Deuteronomy 5:12-15\",\n    \"Mark 2:27-28\",\n    \"Hebrews 4:1-11\",\n    \"Colossians 2:16-17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covenant sign between God and Israel marking them as His people\",\n      \"basis\": [\n        \"Exodus 31:13-17\",\n        \"Ezekiel 20:12\",\n        \"Ezekiel 20:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Typological foreshadowing of eschatological/eternal rest in the age to come\",\n      \"basis\": [\n        \"Hebrews 4:9-11\",\n        \"Isaiah 66:22-23\",\n        \"Revelation 14:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Liberation from bondage (Egypt/sin) and provision of social rest/justice for all creation\",\n      \"basis\": [\n        \"Deuteronomy 5:15\",\n        \"Exodus 23:12\",\n        \"Leviticus 25 (Sabbath/Jubilee framework)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Perpetual moral creation ordinance requiring strict seventh-day observance\",\n      \"basis\": [\n        \"Genesis 2:2-3\",\n        \"Exodus 20:8-11\",\n        \"Isaiah 58:13-14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation shows broad consensus that the Sabbath primarily symbolizes rest (creational and soteriological), even while traditions diverge sharply on whether/how the day itself remains binding, which day is observed, and the weight of covenant vs. typological aspects. The rest motif is the dominant, cross-tradition symbolic core in biblical studies and teaching.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_4da87ef4-744c-9362-9821-3f976dea21c3",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 604,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1998,
+    "output_tokens_details": {
+      "reasoning_tokens": 1479
+    },
+    "total_tokens": 2602,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 124280000,
+    "context_details": {
+      "input_tokens": 604,
+      "output_tokens": 1998
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

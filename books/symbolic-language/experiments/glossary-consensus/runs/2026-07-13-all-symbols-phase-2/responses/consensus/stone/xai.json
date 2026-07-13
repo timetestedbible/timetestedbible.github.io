@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920609,
+  "completed_at": 1783920626,
+  "id": "0cd49093-2930-9b2e-a000-a1f6d416808c",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0cd49093-2930-9b2e-a000-a1f6d416808c",
+      "summary": [
+        {
+          "text": "The task is about the biblical term \"Stone (cut without hands)\". I need to find the primary symbolic meaning in Christian teaching and biblical interpretation.\nThe primary symbolic meaning most commonly assigned to the term \"stone (cut without hands)\" in Christian teaching and biblical interpretation is the establishment of God's eternal kingdom, often identified with Jesus Christ or the Messianic age.\n\nThe biblical passages normally used to support that meaning are Daniel 2:34-35 and 2:44 45, which describe the stone striking the statue and becoming a mountain that fills the earth, symbolizing the kingdom of God that will never be destroyed.\n\nMaterially different alternative readings include:\n\n- The stone representing the Church as the body of believers, a common but secondary view in some commentaries.\n- The stone as the Gospel or the preaching of the kingdom, which appears in some interpretive traditions.\n- The stone as a future eschatological event, such as the second coming of Christ, which is a minority perspective in dispensational interpretations.\n\nThe term has a well-settled symbolic interpretation in Christian contexts.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The Messianic kingdom of God (Christ and/or His kingdom) of supernatural/divine origin that destroys all human kingdoms and fills the whole earth\",\n  \"primary_basis\": [\n    \"Daniel 2:34-35\",\n    \"Daniel 2:44-45\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jesus Christ personally (the divine 'stone' or cornerstone of non-human origin, often linked to virgin birth or eternal Sonship)\",\n      \"basis\": [\n        \"Daniel 2:34-35,44-45\",\n        \"Psalm 118:22\",\n        \"Isaiah 28:16\",\n        \"Matthew 21:42-44\",\n        \"Acts 4:11\",\n        \"1 Peter 2:4-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Christian Church (as the mountain that grows from the stone and fills the earth)\",\n      \"basis\": [\n        \"Daniel 2:35,44-45\",\n        \"Isaiah 2:2-3 (mountain of the Lord's house)\",\n        \"New Testament ecclesiology of kingdom/church continuity\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ's second coming / future millennial kingdom that catastrophically overthrows earthly powers\",\n      \"basis\": [\n        \"Daniel 2:34-35,44-45 read in futurist/dispensational eschatology\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The gospel message or spiritual power of God working without human agency\",\n      \"basis\": [\n        \"Daniel 2:34-35 interpreted allegorically or spiritually\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Mainstream Christian interpretation of Daniel 2 consistently treats the 'stone cut without hands' as a divine, non-human kingdom inaugurated by the Messiah; variations mainly concern whether the primary referent is Christ personally, the kingdom/Church as a whole, or the timing (already/not-yet vs. strictly future).\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0cd49093-2930-9b2e-a000-a1f6d416808c",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 606,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1762,
+    "output_tokens_details": {
+      "reasoning_tokens": 1262
+    },
+    "total_tokens": 2368,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 112080000,
+    "context_details": {
+      "input_tokens": 606,
+      "output_tokens": 1762
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "sword",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSword\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, the sword most commonly symbolizes the Word of God — Scripture and the spoken word of God as a penetrating, discerning, and powerful spiritual weapon. This is the dominant interpretation in sermons, commentaries, devotional literature, and systematic treatments of biblical imagery.\",\n  \"primary_basis\": [\n    \"Ephesians 6:17 — 'the sword of the Spirit, which is the word of God'\",\n    \"Hebrews 4:12 — 'the word of God is living and active, sharper than any two-edged sword'\",\n    \"Revelation 1:16 — a sharp two-edged sword proceeding from the mouth of the glorified Christ\",\n    \"Revelation 2:12, 2:16 — Christ identified as the one with the sharp two-edged sword\",\n    \"Revelation 19:15, 19:21 — the sword from the mouth of the rider on the white horse, widely read as His word of judgment\",\n    \"Isaiah 49:2 — 'He made my mouth like a sharp sword' (Servant Song, read christologically)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment and wrath — the sword as an instrument or emblem of God's punitive judgment on nations and individuals, especially in the prophets and Revelation.\",\n      \"basis\": [\n        \"Ezekiel 21 (the 'sword of the LORD' oracle)\",\n        \"Isaiah 34:5-6\",\n        \"Jeremiah 47:6\",\n        \"Deuteronomy 32:41\",\n        \"Revelation 19:15\",\n        \"Genesis 3:24 (the flaming sword barring Eden, often read as judgment/exclusion)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Civil or governmental authority — the sword as the state's God-given power to punish evil, foundational to Christian political theology (the 'power of the sword,' and in medieval thought the 'two swords' doctrine of temporal and spiritual authority).\",\n      \"basis\": [\n        \"Romans 13:4 — the ruler 'does not bear the sword in vain'\",\n        \"Luke 22:38 — 'here are two swords' (basis of the medieval two-swords theory, e.g., Boniface VIII's Unam Sanctam)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Division, conflict, and persecution brought by allegiance to Christ — Jesus' saying that He came 'not to bring peace, but a sword' is widely read as the divisive effect of the gospel, including within families.\",\n      \"basis\": [\n        \"Matthew 10:34-36\",\n        \"Luke 12:51-53 (parallel using 'division')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Violence and its self-destructive futility — the sword as emblem of human violence that Christians must renounce, central to pacifist and Anabaptist readings.\",\n      \"basis\": [\n        \"Matthew 26:52 — 'all who take the sword will perish by the sword'\",\n        \"John 18:11\",\n        \"Isaiah 2:4 / Micah 4:3 — swords beaten into plowshares\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Piercing sorrow or inner anguish — Simeon's prophecy to Mary that 'a sword will pierce your own soul,' prominent in Catholic devotion (Our Lady of Sorrows, the seven swords).\",\n      \"basis\": [\n        \"Luke 2:35\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Martyrdom and death by persecution — the sword as the instrument of martyrs' deaths and a general figure for lethal peril.\",\n      \"basis\": [\n        \"Romans 8:35\",\n        \"Hebrews 11:34, 11:37\",\n        \"Acts 12:2 — James killed 'with the sword'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The sword is a genuinely polyvalent biblical symbol, and reputable interpreters routinely acknowledge multiple senses depending on context. Nevertheless, when the question is what the sword symbolizes in Christian teaching, the overwhelmingly most cited answer is the Word of God (Ephesians 6:17; Hebrews 4:12), with divine judgment as the closely related second sense (the two often merge in Revelation, where the word of Christ executes judgment). The Romans 13 civil-authority sense and the Matthew 10:34 division sense are well established but context-specific rather than the default symbolic gloss. Answer given without knowledge of the author's material.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Word of God, functioning as a spiritual weapon of truth that convicts the heart, exposes inner thoughts, and defeats spiritual opposition.\",\n  \"primary_basis\": [\n    \"Ephesians 6:17\",\n    \"Hebrews 4:12\",\n    \"Revelation 1:16\",\n    \"Revelation 19:15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment, wrath, and military destruction\",\n      \"basis\": [\n        \"Isaiah 34:5\",\n        \"Ezekiel 21:9-10\",\n        \"Revelation 6:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Earthly authority, governmental justice, and the power of the state to execute punishment\",\n      \"basis\": [\n        \"Romans 13:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Division, ideological conflict, or relational strife provoked by the Gospel\",\n      \"basis\": [\n        \"Matthew 10:34\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The sword has a highly settled consensus in Christian interpretation that depends largely on its contextual category: in spiritual warfare contexts it universally represents the Word of God; in civic contexts it represents government authority; and in eschatological or prophetic contexts it represents judgment or division.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The Word of God—God’s powerful, penetrating truth or speech, often portrayed as a spiritual weapon and an instrument of discernment or judgment.\",\n  \"primary_basis\": [\n    \"Ephesians 6:17 explicitly identifies “the sword of the Spirit” as “the word of God.”\",\n    \"Hebrews 4:12 compares the word of God to a sharp two-edged sword that penetrates and judges the heart.\",\n    \"Isaiah 49:2 portrays the servant’s mouth as a sharp sword.\",\n    \"Revelation 1:16; 2:12,16; 19:15,21 depict a sharp sword proceeding from Christ’s mouth, commonly interpreted as his authoritative word of judgment.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment or punishment, including God’s judicial action against nations or evildoers.\",\n      \"basis\": [\n        \"Deuteronomy 32:41-42\",\n        \"Isaiah 34:5-6\",\n        \"Ezekiel 21:1-17\",\n        \"Revelation 19:15,21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"War, violence, death, or military destruction in a general sense.\",\n      \"basis\": [\n        \"Leviticus 26:6-8,25\",\n        \"Jeremiah 14:12\",\n        \"Ezekiel 5:12\",\n        \"Revelation 6:4,8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Conflict, division, or the disruptive consequences of allegiance to Jesus rather than literal warfare.\",\n      \"basis\": [\n        \"Matthew 10:34-36\",\n        \"Luke 12:51-53\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The coercive and punitive authority of civil government.\",\n      \"basis\": [\n        \"Romans 13:4, where the ruler “does not bear the sword in vain”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Persecution, execution, or martyrdom suffered by believers.\",\n      \"basis\": [\n        \"Romans 8:35\",\n        \"Hebrews 11:34,37\",\n        \"Revelation 13:10\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Personal anguish or piercing sorrow.\",\n      \"basis\": [\n        \"Luke 2:35, where a sword is said to pierce Mary’s own soul\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Illicit reliance on armed force, especially when contrasted with Jesus’ way.\",\n      \"basis\": [\n        \"Matthew 26:52\",\n        \"John 18:10-11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian teaching most recognizably uses the sword as a symbol of the Word of God, particularly in discussions of spiritual warfare. Nevertheless, biblical usage is strongly context-dependent: the sword also regularly signifies judgment, warfare, political authority, division, persecution, or sorrow. There is therefore no single settled meaning applicable to every occurrence.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the Word of God (as a living, piercing spiritual weapon of truth, conviction, and judgment)\",\n  \"primary_basis\": [\n    \"Ephesians 6:17 (sword of the Spirit, which is the word of God)\",\n    \"Hebrews 4:12 (word of God sharper than any two-edged sword)\",\n    \"Revelation 1:16; 2:12, 16; 19:15, 21 (sharp two-edged sword from Christ's mouth)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"divine judgment, warfare, or destructive power (often executed by God or his agents)\",\n      \"basis\": [\n        \"Genesis 3:24 (flaming sword guarding Eden)\",\n        \"numerous OT prophetic oracles (e.g., Isaiah 34:5–6; Ezekiel 21; Jeremiah 25)\",\n        \"Romans 13:4 (civil authority bearing the sword)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"division, conflict, or the cost of discipleship that separates people\",\n      \"basis\": [\n        \"Matthew 10:34–36 (not peace but a sword; family division)\",\n        \"Luke 12:51–53 (parallel saying)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"literal military weapon or instrument of violence/death\",\n      \"basis\": [\n        \"countless narrative OT and NT references (e.g., Exodus 15; 1 Samuel 17; Acts 12:2)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"persecution, martyrdom, or the threat of death for faith\",\n      \"basis\": [\n        \"Romans 8:35 (sword listed among sufferings)\",\n        \"Hebrews 11:34, 37 (saints escaping or dying by the sword)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Context determines usage: the Word-of-God reading is the dominant metaphorical/symbolic sense in Christian teaching and NT interpretation, while judgment/warfare and literal senses remain frequent. No single meaning covers every occurrence, yet the Word-of-God identification is the most consistently taught symbolic consensus.\"\n}\n\nBOOK ENTRY\nWar and the word of judgment — the great sword that takes peace from the earth; the flaming sword that guards the way.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rev 6:4; Gen 3:24) · see The Four Winds, ch. 34\n\nAVAILABLE KJV EXCERPTS\nRevelation 6:4 — And there went out another horse that was red: and power was given to him that sat thereon to take peace from the earth, and that they should kill one another: and there was given unto him a great sword.\nGenesis 3:24 — So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "210102a23444564cf6a57ceca0b37e1a53e6a34928c6719c2723c9409d99dd95",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921757,
+  "completed_at": 1783921786,
+  "id": "17e599e7-190f-91f9-878c-a213a99a9051",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_17e599e7-190f-91f9-878c-a213a99a9051",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Lamb\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's primary identification of 'lamb' as 'one of the flock — a covenant person' directly matches the consensus's secondary category of believers as vulnerable lambs/sheep under pastoral care ( Luke 10:3; John 21:15; Isaiah 40:11). The book then narrows the special title 'Lamb of God' to Christ as the perfect, unblemished lamb taken from the flock, which aligns with the consensus primary referent but restricts it to the specific typological fulfillment rather than the general sacrificial symbol. The book's explicit statement that the lamb is 'not by itself Christ' refines the boundary by demoting the general term from primary to secondary status, while preserving the central referent of Christ as the perfect Lamb of God.\",\n  \"extension_reasoning\": \"The book adds the specific cases of Nathan 2 Samuel 12:3 (beloved covenant member) and Jeremiah 11:19 (Jeremiah as lamb) as primary examples of the general 'lamb' symbol, which the consensus lists only as alternatives. It excludes the apocalyptic conquering Lamb of Revelation (treated as dominant in consensus) by not mentioning it at all and reclassifies the Passover/Exodus lamb (Exodus 12:5) as a covenantal type rather than primarily christological. The book's narrowing excludes plain 'lamb' usages from the consensus primary christological identification while retaining them as valid secondary cases for believers.\",\n  \"citation_support\": \"strong\",\n  \" citation_reasoning\": \"The printed KJV excerpts (2 Samuel 12:3; Jeremiah 11:19; Isaiah 53:6-7; Exodus 12:5; Luke 10:3; John 1:29) directly support the book's dual reading: the first four establish 'lamb' as a covenant person or innocent member of the flock, while John 1:29 and Exodus 12:5 anchor Christ as the perfect Lamb of God taken from the sheep. These citations provide strong, self-contained evidence for the book's hierarchy without needing external chapters.\",\n  \"notes\": \"The book's entry preserves the consensus general category of 'lamb' as covenant person while materially refining its extension by making that the primary referent and restricting the christological sense to the qualified title 'Lamb of God.' This is a boundary refinement rather than replacement of the central referent.\"\n}```json\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n   \"core_reasoning\": \"The book's primary identification of 'lamb' as 'one of the flock — a covenant person' directly matches the consensus's secondary category of believers as vulnerable lambs/sheep under pastoral care ( Luke 10:3; John 21:15 Isaiah 40:11).",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Primary meaning is Jesus Christ as the innocent sacrificial Lamb of God who atones for sin (fusing Passover, Levitical sacrifice, and Isaiah 53), with settled consensus across traditions; common alternatives include the conquering Lamb of Revelation, believers as vulnerable lambs/sheep of the flock, and general meekness/innocence.\",\n  \"book_summary\": \"Lamb means one of the flock—a covenant person—not by itself Christ (examples: Nathan’s ewe lamb, Jeremiah, disciples as lambs among wolves); the Lamb of God is specifically Christ, the perfect unblemished lamb taken out from the sheep.\",\n  \"consensus_core_identification\": \"Jesus Christ as the sacrificial Lamb of God\",\n  \"book_core_identification\": \"a covenant person / one of the flock (Christ only as the special perfect Lamb of God taken out from the sheep)\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book excludes plain “lamb” from Christ (explicitly “not by itself Christ”) and restricts the christological sense to the qualified title “Lamb of God” as perfect member of the flock category; consensus treats “Lamb” (especially as title) as primarily and independently Christ while listing flock-members only as secondary alternative.\",\n  \"material_contradiction\": \"Book’s assertion that the lamb is “not by itself Christ” directly negates the consensus’s settled primary identification of the Lamb as Christ the atoning sacrifice; the two cores cannot both be true as the default referent of the same term.\",\n  \"rationale\": \"Minimum cores conflict: consensus centers the symbol on Christ (with people-as-lambs as alternative), while the book centers it on ordinary covenant flock-members and reclassifies Christ only as a qualified special case drawn out of that category. This replaces rather than merely narrows or conditions the consensus referent. Shared secondary cases (believers; “Lamb of God”) do not erase the contradiction at the primary identification; accepting the book requires rejecting the consensus primary.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"NT usage (John 1:29/36, Revelation’s Lamb, 1 Cor 5:7, 1 Pet 1:19) and historic Christian consensus establish Christ as the primary settled meaning of the Lamb, with flock-member uses secondary; the book’s inversion and “not by itself Christ” claim lacks decisive warrant from the listed verses alone.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_17e599e7-190f-91f9-878c-a213a99a9051",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4303,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3270,
+    "output_tokens_details": {
+      "reasoning_tokens": 2710
+    },
+    "total_tokens": 7573,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 274580000,
+    "context_details": {
+      "input_tokens": 4303,
+      "output_tokens": 3270
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

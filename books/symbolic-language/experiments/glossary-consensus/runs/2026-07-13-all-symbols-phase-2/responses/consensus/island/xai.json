@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920075,
+  "completed_at": 1783920095,
+  "id": "105210e1-2c76-9b52-952c-6d0ef8971a9e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_105210e1-2c76-9b52-952c-6d0ef8971a9e",
+      "summary": [
+        {
+          "text": "The user wants me to act as the blind consensus definer for the term \"Island, isle\" in biblical symbolism.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Distant Gentile nations or remote coastlands of the earth that will receive God's law and salvation\",\n  \"primary_basis\": [\n    \"Genesis 10:5\",\n    \"Isaiah 42:4\",\n    \"Isaiah 42:10\",\n    \"Isaiah 49:1\",\n    \"Isaiah 51:5\",\n    \"Isaiah 60:9\",\n    \"Psalm 72:10\",\n    \"Psalm 97:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sites of isolation, exile, or separation (literal or spiritual)\",\n      \"basis\": [\n        \"Revelation 1:9 (Patmos)\",\n        \"geographic isolation motif in prophetic and apostolic settings\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Elements of creation that flee or vanish under divine judgment\",\n      \"basis\": [\n        \"Revelation 6:14\",\n        \"Revelation 16:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Arenas of missionary advance or temporary refuge for the gospel\",\n      \"basis\": [\n        \"Acts 13 (Cyprus)\",\n        \"Acts 27–28 (Malta)\",\n        \"general NT island itineraries\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The church as solid ground amid the chaotic sea of the world\",\n      \"basis\": [\n        \"allegorical extensions of sea = nations/chaos imagery\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"The Hebrew ʾiyyîm (often rendered “isles”/“islands”/“coastlands”) is treated in standard Christian biblical interpretation primarily as a prophetic metonym for far-off Gentile peoples rather than a freestanding typological symbol. Literal geographic references and eschatological instability motifs are secondary but well-attested; highly allegorical church-as-island readings remain marginal.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_105210e1-2c76-9b52-952c-6d0ef8971a9e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 604,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1765,
+    "output_tokens_details": {
+      "reasoning_tokens": 1293
+    },
+    "total_tokens": 2369,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 112220000,
+    "context_details": {
+      "input_tokens": 604,
+      "output_tokens": 1765
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

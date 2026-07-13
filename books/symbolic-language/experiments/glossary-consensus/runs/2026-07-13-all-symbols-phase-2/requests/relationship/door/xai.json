@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "door",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDoor, gate\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the door/gate primarily symbolizes access to God and salvation, with Christ himself identified as the exclusive door or gateway through which believers enter eternal life, safety, and fellowship with God. The image conveys both entrance (admission into salvation, the kingdom, the flock) and exclusivity (there is one legitimate way in).\",\n  \"primary_basis\": [\n    \"John 10:7-9 ('I am the door of the sheep... by me if any man enter in, he shall be saved')\",\n    \"John 14:6 (Christ as the exclusive way to the Father, read alongside the door saying)\",\n    \"Matthew 7:13-14 (the narrow gate leading to life vs. the wide gate leading to destruction)\",\n    \"Luke 13:24-25 (strive to enter through the narrow door; the shut door of eschatological exclusion)\",\n    \"Psalm 118:19-20 ('the gate of the LORD, through which the righteous shall enter')\",\n    \"Genesis 28:17 (Bethel as 'the gate of heaven')\",\n    \"Revelation 3:20 (Christ standing at the door and knocking)\",\n    \"Revelation 21:12-25 (the twelve gates of the New Jerusalem, never shut)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The narrow gate as the demanding path of discipleship and the two-ways motif (life vs. destruction), emphasizing moral decision rather than Christology per se.\",\n      \"basis\": [\n        \"Matthew 7:13-14\",\n        \"Luke 13:24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An 'open door' as divinely granted opportunity for ministry, evangelism, or gospel advance.\",\n      \"basis\": [\n        \"1 Corinthians 16:9\",\n        \"2 Corinthians 2:12\",\n        \"Colossians 4:3\",\n        \"Acts 14:27 ('door of faith')\",\n        \"Revelation 3:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The door of the heart: Christ's invitation to personal conversion or renewed fellowship, with the individual opening the door (a staple of evangelistic and devotional preaching, e.g., Holman Hunt's 'The Light of the World').\",\n      \"basis\": [\n        \"Revelation 3:20\",\n        \"Song of Solomon 5:2 (allegorical readings)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gates as power, authority, and judicial rule (the city gate as seat of counsel and strength), so 'gates of Hades' means the power of death/evil, and possessing an enemy's gate means conquest.\",\n      \"basis\": [\n        \"Matthew 16:18 ('the gates of hell shall not prevail')\",\n        \"Genesis 22:17; 24:60 (possess the gate of enemies)\",\n        \"Ruth 4:1-11; Deuteronomy 21:19 (gate as legal/civic forum)\",\n        \"Isaiah 38:10; Job 38:17 (gates of Sheol/death)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological door/gate of judgment and imminence: the shut door marking final exclusion or the nearness of Christ's return.\",\n      \"basis\": [\n        \"Matthew 25:10-12 (shut door in the parable of the virgins)\",\n        \"Luke 13:25\",\n        \"James 5:9 ('the Judge standing before the doors')\",\n        \"Revelation 4:1 (door opened in heaven)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Typological readings of Old Testament doors as prefiguring Christ or salvation: the blood-marked doorposts at Passover, the single door of Noah's ark, the tabernacle's one entrance, and Jacob's 'gate of heaven' at Bethel.\",\n      \"basis\": [\n        \"Exodus 12:7, 22-23\",\n        \"Genesis 6:16; 7:16\",\n        \"Exodus 26-27 (tabernacle entrance)\",\n        \"Genesis 28:17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The gates of the New Jerusalem as symbols of universal access, welcome, and eschatological security (gates never shut).\",\n      \"basis\": [\n        \"Revelation 21:12-13, 21, 25\",\n        \"Isaiah 60:11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Door/gate is a polyvalent biblical image, and interpreters routinely distinguish sub-uses by context (Christological door, narrow gate of discipleship, open door of opportunity, city gate as authority, eschatological shut door). Nevertheless, when the term is treated as a single symbol in Christian teaching, the dominant and widely recognized meaning is access/entrance to salvation with Christ as the one true door (John 10:9), and most alternative readings are treated as extensions or contextual variations of that core idea of entry, access, and exclusivity. Scholarly commentary tends to stress the ancient Near Eastern civic function of gates (power, judgment) more than popular preaching does, but this does not displace the salvation-access reading as the consensus symbolic meaning.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Christ as the exclusive means of access to salvation, eternal life, and fellowship with God; more broadly, the transition point or entrance into the Kingdom of God.\",\n  \"primary_basis\": [\n    \"John 10:9\",\n    \"Matthew 7:13-14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Evangelistic or missionary opportunity for the Gospel\",\n      \"basis\": [\n        \"1 Corinthians 16:9\",\n        \"Colossians 4:3\",\n        \"Revelation 3:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Civic authority, defensive power, or the place of judgment and governance\",\n      \"basis\": [\n        \"Matthew 16:18\",\n        \"Ruth 4:1\",\n        \"Deuteronomy 16:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The human heart, personal will, or individual receptivity to God\",\n      \"basis\": [\n        \"Revelation 3:20\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical symbolism, doors and gates predominantly represent access points. In the New Testament, this is heavily Christological (Christ as the door/gate). In the Old Testament context, 'gates' frequently carry the additional meaning of civic power, defense, and the seat of public judgment, a motif carried into the New Testament in phrases like 'the gates of Hades'.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Access, entrance, or passage—most characteristically, access to God, salvation, and eternal life through Christ. A door or gate may therefore represent both the offered way of entry and the decisive boundary between those admitted and those excluded.\",\n  \"primary_basis\": [\n    \"John 10:7-9 — Jesus identifies himself as the gate/door through whom one enters and is saved.\",\n    \"Matthew 7:13-14; Luke 13:24 — the narrow gate represents the difficult way leading to life, contrasted with the broad way leading to destruction.\",\n    \"John 14:6 — although not using the door image, it commonly supports the interpretation of Christ as the exclusive way of access to the Father.\",\n    \"Luke 13:25-28; Matthew 25:10-12 — the shut door symbolizes the end of opportunity and exclusion from the kingdom.\",\n    \"Revelation 3:20 — Christ standing at the door and knocking is commonly interpreted as an invitation to fellowship, repentance, or personal reception of Christ.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An opportunity opened by God, especially for ministry, evangelism, or effective service.\",\n      \"basis\": [\n        \"1 Corinthians 16:9\",\n        \"2 Corinthians 2:12\",\n        \"Colossians 4:3\",\n        \"Revelation 3:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Access to heaven, divine revelation, or the presence and purposes of God.\",\n      \"basis\": [\n        \"Revelation 4:1\",\n        \"Genesis 28:17\",\n        \"Psalm 24:7-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judgment, exclusion, or the final closing of an opportunity to enter.\",\n      \"basis\": [\n        \"Matthew 25:10-12\",\n        \"Luke 13:25-28\",\n        \"Genesis 7:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human receptivity or the inward opening of the heart to Christ.\",\n      \"basis\": [\n        \"Revelation 3:20\",\n        \"Acts 14:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Authority, civic power, security, or vulnerability, reflecting the legal and defensive role of ancient city gates.\",\n      \"basis\": [\n        \"Genesis 22:17\",\n        \"Ruth 4:1-11\",\n        \"Psalm 127:5\",\n        \"Isaiah 45:1-2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The power or domain of death and hostile spiritual forces, especially in the expression “gates of Hades.”\",\n      \"basis\": [\n        \"Matthew 16:18\",\n        \"Isaiah 38:10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus around the general symbolism of access, entry, and boundary, especially Christ as the entrance to salvation. There is not one fixed meaning for every occurrence: context determines whether the image emphasizes invitation, opportunity, revelation, exclusion, judgment, authority, or security.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Jesus Christ himself as the exclusive entrance or means of access to salvation, the sheepfold of God's people, and eternal life\",\n  \"primary_basis\": [\n    \"John 10:7-9 (I am the door/gate of the sheep; if anyone enters by me he will be saved)\",\n    \"John 14:6 (I am the way... no one comes to the Father except through me)\",\n    \"Matthew 7:13-14 (enter by the narrow gate that leads to life)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An open opportunity for gospel ministry, mission, or service\",\n      \"basis\": [\n        \"1 Corinthians 16:9\",\n        \"2 Corinthians 2:12\",\n        \"Colossians 4:3\",\n        \"Revelation 3:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ standing at the door of the human heart or church, seeking entrance and fellowship\",\n      \"basis\": [\n        \"Revelation 3:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Access to heaven, God's presence, or the heavenly throne room\",\n      \"basis\": [\n        \"Psalm 24:7-10\",\n        \"Revelation 4:1\",\n        \"Genesis 28:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The gates/powers of Hades or death that cannot prevail against the church\",\n      \"basis\": [\n        \"Matthew 16:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Protection, security, or the boundary of the city/people of God\",\n      \"basis\": [\n        \"Psalm 122:2\",\n        \"Isaiah 26:1-2\",\n        \"Nehemiah passages on rebuilding gates\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic and modern Christian teaching the Johannine 'I am the door/gate' saying is the most consistently cited and dominant symbolic identification; other uses (opportunity, heavenly access, heart's door, protective boundary) are frequent but secondary and context-specific rather than rival primaries.\"\n}\n\nBOOK ENTRY\nThe destination of the way — the entrance to the house of God, marked on the posts.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 12:7; Deut 6:9; John 10:9) · see The Way, the Truth & the Life, ch. 7\n\nAVAILABLE KJV EXCERPTS\nExodus 12:7 — And they shall take of the blood, and strike it on the two side posts and on the upper door post of the houses, wherein they shall eat it.\nDeuteronomy 6:9 — And thou shalt write them upon the posts of thy house, and on thy gates.\nJohn 10:9 — I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "742a91bcb3ea8f4e92a772c6796bed7307077ade440593cff4fc4f014ecc26b7",
+  "cache": {
+    "hit": false
+  }
+}

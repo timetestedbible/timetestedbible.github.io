@@ -1,0 +1,167 @@
+{
+  "created_at": 1783921335,
+  "completed_at": 1783921340,
+  "id": "addb5549-8876-98e8-b74d-1be1b7cd8519",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Fire primarily symbolizes God's holy presence that both judges/consumes evil and purifies or tests what is to be preserved (the consuming-fire cluster), with closely related common senses of Holy Spirit, eschatological hellfire, and trials.\",\n  \"book_summary\": \"Fire is God's own consuming presence itself—always the encounter, never a separate chamber—which sustains, refines, or consumes solely according to whether the object is covered.\",\n  \"consensus_core_identification\": \"God's holy presence/holiness expressed as purifying judgment and consuming wrath (judgment + purification + presence cluster).\",\n  \"book_core_identification\": \"God's own consuming presence (the encounter that is the fire), whose effect depends only on covering.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book unifies presence/judgment/purification into one referent and makes covering the sole boundary condition that decides sustain/refine vs. consume; it thereby reclassifies hellfire-as-separate-chamber and treats distinct sub-senses as modes of the same encounter rather than independent primary meanings.\",\n  \"material_contradiction\": \"none (cores share the same referent; difference is precision of extension and conditions)\",\n  \"rationale\": \"Consensus cores (especially A/B) already center on 'our God is a consuming fire' as holy presence that both judges and purifies. The book preserves that exact referent and the same key texts, but narrows and reconditions it: fire is never a place or separate agent, only the direct encounter, and covering alone determines outcome. This is boundary refinement and partial reclassification of cases (esp. hell and furnace), not replacement of the central identification, so REFINED rather than DIVERGENT or MATCH.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Some consensus responses (C/D) treat pure judgment/hellfire as the dominant primary meaning distinct from presence; the book's unification and 'never a chamber' claim could be read as denying that distinctness rather than merely refining it.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_addb5549-8876-98e8-b74d-1be1b7cd8519",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4744,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 480,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5224,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 116000000,
+    "context_details": {
+      "input_tokens": 4744,
+      "output_tokens": 480
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

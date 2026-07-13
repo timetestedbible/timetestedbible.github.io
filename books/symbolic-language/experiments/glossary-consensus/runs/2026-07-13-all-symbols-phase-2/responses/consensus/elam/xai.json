@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919721,
+  "completed_at": 1783919740,
+  "id": "47d20462-f9c0-92ff-b628-2227eec5dbf6",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_47d20462-f9c0-92ff-b628-2227eec5dbf6",
+      "summary": [
+        {
+          "text": "The user wants me to act as the \"blind consensus definer\" for the term \"Elam\" in biblical symbolism. I must respond only with JSON matching the specified schema, no surrounding text.\n{\n  \"primary_meaning\": \"Elam represents a distant, foreign nation or people group, often symbolizing enemies or distant powers in prophetic contexts.\",\n  \"primary_basis\": [\n    \"Jeremiah 49:34-39\",\n    \"Isaiah 21:2\",\n    \"Daniel 8:2\",\n    \"Acts 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Elam as a symbol of the church or restored Israel in the latter days\",\n      \"basis\": [\n        \"Jeremiah 49:39\"\n      ],\n      \"prominence\": \"minority\"\n    },\n ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Elam is primarily a historical reference to a region in ancient Persia with no widely agreed symbolic typology in mainstream Christian interpretation, unlike Babylon or Egypt.\"\n}turn\n\n{\n  \"primary_meaning\": \" Elam represents a distant eastern nation or people group, often appearing in prophetic judgment oracles as a foreign power under divine discipline.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"No settled or commonly assigned symbolic meaning; treated primarily as a historical people and nation (descendants of Shem, located east of Babylon/Mesopotamia)\",\n  \"primary_basis\": [\n    \"Genesis 10:22\",\n    \"Jeremiah 49:34-39\",\n    \"Isaiah 11:11\",\n    \"Isaiah 21:2\",\n    \"Ezekiel 32:24\",\n    \"Acts 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A distant Gentile nation subject to divine judgment yet promised future restoration, sometimes loosely typifying remote peoples included in God's redemptive plan\",\n      \"basis\": [\n        \"Jeremiah 49:34-39\",\n        \"Isaiah 11:11\",\n        \"Isaiah 22:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Etymological association with 'eternity,' 'hidden,' or 'highland' applied occasionally in older lexical or devotional comments\",\n      \"basis\": [\n        \"Genesis 10:22 (name derivation discussions in lexicons)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Standard Christian biblical studies and teaching treat Elam almost exclusively as a concrete ethnic/geographical entity appearing in the Table of Nations, prophetic oracles of judgment/restoration, and the Pentecost narrative. No consistent typological, allegorical, or symbolic consensus (comparable to Babylon, Egypt, or Assyria) has developed in mainstream commentaries, systematic theologies, or popular Christian interpretation.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_47d20462-f9c0-92ff-b628-2227eec5dbf6",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1735,
+    "output_tokens_details": {
+      "reasoning_tokens": 1360
+    },
+    "total_tokens": 2338,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 108480000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 1735
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

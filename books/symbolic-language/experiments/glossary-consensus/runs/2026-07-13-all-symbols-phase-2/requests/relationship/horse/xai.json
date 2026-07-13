@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "horse",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHorse, white horse\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching the horse is primarily a symbol of war, military power, and conquest, and the white horse specifically symbolizes victorious conquest. The most widely cited image is the white horse of Revelation 19:11, whose rider ('Faithful and True,' the Word of God) is universally understood as the victorious, returning Christ; white connotes victory, righteousness, and purity. The other famous white horse, the first of the four horsemen in Revelation 6:2, is also read as a figure of conquest, though the rider's identity is disputed (see alternatives). More broadly in Scripture, horses represent human military strength in contrast to trust in God.\",\n  \"primary_basis\": [\n    \"Revelation 19:11-16 (Christ on a white horse, conquering King of kings)\",\n    \"Revelation 6:2 (rider on a white horse with a bow and crown, going out conquering)\",\n    \"Revelation 6:1-8 (the four horsemen; horses as agents of judgment/war)\",\n    \"Zechariah 1:8-11 and 6:1-8 (colored horses as agents patrolling/executing God's purposes)\",\n    \"Psalm 20:7 and Psalm 33:17 (the horse as false hope of military might versus trust in God)\",\n    \"Job 39:19-25 (the war horse)\",\n    \"Exodus 15:1, 21 (horse and rider thrown into the sea—defeat of military power)\",\n    \"Isaiah 31:1 (woe to those who rely on horses)\",\n    \"James 3:3 and Proverbs 21:31 (horse as strength needing direction; victory belongs to the LORD)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The white horse rider of Revelation 6:2 is the Antichrist or a spirit of deceptive, counterfeit conquest—a parody of Christ in Revelation 19—so the white horse there symbolizes false or satanic conquest.\",\n      \"basis\": [\n        \"Revelation 6:1-2 read in contrast with Revelation 19:11-16\",\n        \"Matthew 24:4-5, 24 (false christs) used as an interpretive parallel to the seals\",\n        \"2 Corinthians 11:14 (Satan as angel of light) invoked for the counterfeit motif\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The white horse rider of Revelation 6:2 is Christ himself or the victorious advance of the gospel through the world (an older view found in Irenaeus and in some Reformed/postmillennial and older Protestant commentary).\",\n      \"basis\": [\n        \"Revelation 6:2 linked to Revelation 19:11\",\n        \"Mark 13:10 / Matthew 24:14 (gospel preached to all nations before the end)\",\n        \"Psalm 45:3-5 (the king riding forth victoriously with arrows)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Revelation 6:2 rider is a generic, non-personal symbol of militarism, imperial conquest, or invasion (sometimes tied historically to Parthian mounted archers), with no identification as either Christ or Antichrist.\",\n      \"basis\": [\n        \"Revelation 6:2 in its literary sequence with war, famine, and death (Rev 6:3-8)\",\n        \"Zechariah 1:8; 6:1-8 as background for colored horses as impersonal agents\",\n        \"Historical-critical readings citing the Parthian bow-and-white-horse imagery\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Horses (including chariots of fire) as symbols of divine, heavenly power and God's angelic hosts rather than human might.\",\n      \"basis\": [\n        \"2 Kings 2:11 (chariot and horses of fire at Elijah's ascension)\",\n        \"2 Kings 6:17 (horses and chariots of fire around Elisha)\",\n        \"Habakkuk 3:8, 15 (God riding on horses)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The horse as an emblem of unbridled passion or lust that must be restrained (a moral/allegorical reading in patristic and devotional literature).\",\n      \"basis\": [\n        \"Jeremiah 5:8 (well-fed lusty stallions)\",\n        \"Psalm 32:9 (be not like the horse or mule, needing bit and bridle)\",\n        \"James 3:3 (bits in horses' mouths)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is strong consensus that the horse symbolizes war/military power and that the white horse of Revelation 19 represents the victorious Christ; white denotes victory and righteousness. The one genuinely contested point is the identity of the white-horse rider in Revelation 6:2, where three readings (Antichrist/counterfeit conquest, Christ/gospel, and impersonal militarism/conquest) all have substantial published support—Antichrist/counterfeit and generic-conquest readings dominate modern evangelical and academic commentary respectively, while the Christ/gospel reading is an established minority view with ancient pedigree (Irenaeus). Assessment made blind to any author's book, definition, or argument.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Victory, righteous judgment, and conquest, most prominently symbolizing Jesus Christ's victorious return to defeat His enemies and establish His kingdom.\",\n  \"primary_basis\": [\n    \"Revelation 19:11-14\",\n    \"Revelation 6:2\",\n    \"Zechariah 1:8\",\n    \"Zechariah 6:3-6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Antichrist, false peace, or deceptive conquest (specifically regarding the rider of the first seal in Revelation 6).\",\n      \"basis\": [\n        \"Revelation 6:2\",\n        \"Matthew 24:4-5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human military might, worldly power, and the reliance on physical strength rather than God (referring to 'horse' in general).\",\n      \"basis\": [\n        \"Psalm 20:7\",\n        \"Isaiah 31:1-3\",\n        \"Deuteronomy 17:16\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The victorious and unstoppable spread of the Gospel throughout the world (an alternative view of the first seal).\",\n      \"basis\": [\n        \"Revelation 6:2\",\n        \"Psalm 45:4-5\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"While the white horse in Revelation 19 is universally accepted as symbolizing Christ's righteous victory, there is a major, long-standing debate regarding the white horse of Revelation 6 (the first seal). Many view the Revelation 6 rider as the Antichrist or false conquest, whereas others see it as Christ or the Gospel. Additionally, the 'horse' in general biblical symbolism represents warfare and military might.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Victory or conquest, especially victorious military or royal power. In Revelation 19 the white horse specifically represents Christ’s righteous, triumphant rule; in Revelation 6 the white horse and its crowned, bow-bearing rider signify conquest, though the rider’s identity is disputed.\",\n  \"primary_basis\": [\n    \"Revelation 6:1–2 — the first seal reveals a crowned rider on a white horse who goes out “conquering and to conquer.”\",\n    \"Revelation 19:11–16 — Christ, called Faithful and True and the Word of God, rides a white horse in judgment and victory.\",\n    \"Revelation 19:14 — the heavenly armies also ride white horses, reinforcing associations with triumphant heavenly warfare.\",\n    \"Zechariah 1:7–11 and 6:1–8 — colored horses function as divinely commissioned agents or patrols, providing important background for Revelation’s horse imagery.\",\n    \"Psalm 20:7; 33:16–17; Proverbs 21:31; Isaiah 31:1 — horses commonly represent military strength and warfare, often contrasted with trust in God.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ or the victorious spread of the gospel. On this reading, the rider in Revelation 6 anticipates the clearly christological white-horse rider of Revelation 19, and the conquest is spiritual or evangelical.\",\n      \"basis\": [\n        \"Revelation 6:1–2\",\n        \"Revelation 19:11–16\",\n        \"Matthew 24:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An antichrist, false messiah, or deceptive imitation of Christ. The white appearance represents counterfeit righteousness or victory, while the rider begins the judgments preceding Christ’s return.\",\n      \"basis\": [\n        \"Revelation 6:1–2\",\n        \"Matthew 24:4–5\",\n        \"Revelation 13:1–8\",\n        \"Revelation 19:11–16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ordinary military or imperial conquest, without identifying the rider as either Christ or Antichrist. Some historical readings connect the bow with Parthian cavalry or with pressures on the Roman Empire.\",\n      \"basis\": [\n        \"Revelation 6:1–2\",\n        \"Zechariah 6:1–8\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Pestilence or plague, sometimes linked to Apollo imagery or to conquest accompanied by disease.\",\n      \"basis\": [\n        \"Revelation 6:1–8\",\n        \"Ezekiel 14:21\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"More generally, horses symbolize earthly military power, speed, strength, and human reliance on warfare rather than on God; this meaning is not restricted to white horses.\",\n      \"basis\": [\n        \"Deuteronomy 17:16\",\n        \"Psalm 20:7\",\n        \"Psalm 33:16–17\",\n        \"Isaiah 31:1–3\",\n        \"Zechariah 10:3\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad consensus that white-horse imagery conveys victory, conquest, or triumphant power. There is no settled consensus about the identity or moral character of the rider in Revelation 6:2. By contrast, the rider in Revelation 19:11–16 is explicitly identified with Christ, so that particular passage has a settled christological interpretation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Victory, triumphant conquest, or the advance of Christ/the gospel\",\n  \"primary_basis\": [\n    \"Revelation 6:2\",\n    \"Revelation 19:11-16\",\n    \"Zechariah 6:1-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Antichrist or a false/deceptive conqueror (especially the first seal)\",\n      \"basis\": [\n        \"Revelation 6:2\",\n        \"contrast with the rider of Revelation 19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity and righteousness\",\n      \"basis\": [\n        \"symbolic use of white throughout Scripture\",\n        \"Revelation 19:11-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General divine judgment, military power, or one of the four horsemen of apocalypse\",\n      \"basis\": [\n        \"Revelation 6:1-8\",\n        \"Zechariah 1:8-17\",\n        \"Zechariah 6:1-8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The white horse of Revelation 19 is almost universally identified with the returning Christ; the white horse of the first seal (Revelation 6) remains disputed between Christ/gospel and Antichrist/conquest views. White color symbolism of purity/victory is stable across Christian tradition, but no single meaning covers every occurrence without debate.\"\n}\n\nBOOK ENTRY\nThe mount of an executing spirit; the conqueror who wins the nations by the bow.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rev 6:2) · see The Four Winds, ch. 34\n\nAVAILABLE KJV EXCERPTS\nRevelation 6:2 — And I saw, and behold a white horse: and he that sat on him had a bow; and a crown was given unto him: and he went forth conquering, and to conquer.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "f29b6cdc3496ae46633a91c2dd526cd51ff1da58277b003238b0729942c69bfb",
+  "cache": {
+    "hit": false
+  }
+}

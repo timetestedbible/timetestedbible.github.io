@@ -1,0 +1,173 @@
+{
+  "id": "resp_09a3a38dc20be43a006a5475b94aa48194a1a1b69df0ec36d4",
+  "object": "response",
+  "created_at": 1783920057,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920074,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_09a3a38dc20be43a006a5475b9dae08194b9d1829b8da689af",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_09a3a38dc20be43a006a5475beed748194a2c7be3208fcf3f0",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Strength, hardness, and irresistible power—often specifically severe, crushing, or unyielding political or judicial power.\",\"primary_basis\":[\"Daniel 2:40–43 portrays the fourth kingdom as strong as iron, crushing and breaking other powers.\",\"Psalm 2:9 uses a rod of iron for the Messiah’s irresistible rule and judgment.\",\"Revelation 2:27; 12:5; 19:15 adopts the rod-of-iron image for messianic authority.\",\"Jeremiah 1:18 describes God’s fortified servant as an iron pillar.\",\"Micah 4:13 uses horns of iron as an image of divinely given strength to crush enemies.\"],\"alternatives\":[{\"meaning\":\"Oppression, bondage, or severe affliction.\",\"basis\":[\"Deuteronomy 28:48 speaks of an iron yoke imposed in judgment.\",\"Deuteronomy 4:20; 1 Kings 8:51; Jeremiah 11:4 call Egypt an iron furnace, emphasizing harsh enslavement and affliction.\",\"Psalm 107:10,16 associates iron bonds and bars with captivity.\"],\"prominence\":\"common\"},{\"meaning\":\"Divine or messianic judgment and authoritative rule.\",\"basis\":[\"Psalm 2:9 and Revelation 2:27; 12:5; 19:15 use the rod of iron in scenes of royal rule and judgment.\",\"Jeremiah 15:12 invokes iron’s resistance in the context of unavoidable divine judgment.\"],\"prominence\":\"common\"},{\"meaning\":\"Stubbornness, inflexibility, or moral hardness.\",\"basis\":[\"Isaiah 48:4 describes Israel’s neck as an iron sinew, signifying obstinacy.\",\"Jeremiah 6:28 compares hardened rebels with bronze and iron.\"],\"prominence\":\"minority\"},{\"meaning\":\"Endurance, fortification, or steadfast resilience.\",\"basis\":[\"Jeremiah 1:18 uses an iron pillar for prophetic firmness under opposition.\",\"Job 40:18 describes Behemoth’s limbs as bars of iron, emphasizing formidable solidity.\"],\"prominence\":\"minority\"},{\"meaning\":\"Human technology, weaponry, or military superiority rather than a fixed spiritual symbol.\",\"basis\":[\"Judges 1:19 and 4:3,13 mention iron chariots as instruments of military strength.\",\"1 Samuel 13:19–22 associates ironworking with strategic and military advantage.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Iron has no single settled biblical symbolic meaning independent of context. The broadest recognizable association is strength and hardness, but the same physical qualities support several related applications: irresistible rule, judgment, oppression, resilience, and stubbornness. Many biblical occurrences are also literal references to the metal rather than symbols.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 811,
+    "output_tokens_details": {
+      "reasoning_tokens": 229
+    },
+    "total_tokens": 1128
+  },
+  "user": null,
+  "metadata": {}
+}

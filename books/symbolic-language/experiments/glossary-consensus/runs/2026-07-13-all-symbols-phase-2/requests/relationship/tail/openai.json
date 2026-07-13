@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "tail",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nTail\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching the tail most commonly symbolizes falsehood and deception, specifically the false prophet or lying teacher. This rests on the Bible's own explicit equation in Isaiah 9:15, 'the prophet who teaches lies, he is the tail,' and the image is frequently extended to Satan's deceptive power in Revelation, where the dragon's tail sweeps away a third of the stars and demonic locusts and horses inflict harm with their tails.\",\n  \"primary_basis\": [\n    \"Isaiah 9:14-15\",\n    \"Revelation 12:3-4\",\n    \"Revelation 9:10\",\n    \"Revelation 9:19\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Inferior, subordinate, or last position — the opposite of headship, leadership, or preeminence. This is the basis of the widespread 'head and not the tail' teaching on covenant blessing versus curse, in which being the tail signifies subjugation, indebtedness, and being ruled by others.\",\n      \"basis\": [\n        \"Deuteronomy 28:13\",\n        \"Deuteronomy 28:44\",\n        \"Isaiah 9:14\",\n        \"Isaiah 19:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Satan's deceptive influence drawing away a third of the angels (the fall of the angels), reading Revelation 12:4's dragon-tail sweeping stars from heaven as Satan seducing angelic beings into rebellion; some prophecy traditions explicitly combine this with Isaiah 9:15 so that the tail equals deception/false teaching by which Satan drew them.\",\n      \"basis\": [\n        \"Revelation 12:3-4\",\n        \"Isaiah 9:15 (used as an interpretive key)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Instrument of torment or destructive power — the stinging or serpent-headed tails of the demonic locusts and horses in the trumpet judgments symbolize the hurtful, poisonous after-effect of demonic activity or false doctrine ('the sting is in the tail').\",\n      \"basis\": [\n        \"Revelation 9:10\",\n        \"Revelation 9:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Merely literal or narrative uses without fixed symbolism (e.g., Moses seizing the serpent's tail, Samson's foxes, Behemoth's tail), cited by interpreters who caution that 'tail' has no single universal symbolic value across Scripture.\",\n      \"basis\": [\n        \"Exodus 4:4\",\n        \"Judges 15:4\",\n        \"Job 40:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is no single settled symbolic meaning; instead there are two well-recognized and frequently taught strands. (1) The Isaiah 9:15 definition — tail = lying/false prophet, deception — is the passage most often cited when a symbolic 'dictionary' meaning is sought, and it is heavily used in apocalyptic/prophecy interpretation of Revelation 12:4 (notably in Adventist and other historicist traditions, but also in broader evangelical commentary). (2) The Deuteronomy 28 usage — head versus tail as dominance versus subjection — is arguably more widespread in popular preaching but functions as an idiom of rank rather than a symbol of a specific entity. Which strand is 'primary' depends on tradition: symbol-focused and prophetic literature favors the false-prophet/deception reading; general devotional and prosperity/blessing teaching favors the position/rank reading. Both are recognizable mainstream usages, and interpreters routinely acknowledge context determines which applies.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Subordination, defeat, or the lowest and least significant position, often contrasted with the head which represents leadership and prominence.\",\n  \"primary_basis\": [\n    \"Deuteronomy 28:13\",\n    \"Deuteronomy 28:44\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"False prophets, lies, and spiritual deception, representing those who follow and lead others astray with falsehoods.\",\n      \"basis\": [\n        \"Isaiah 9:15\",\n        \"Revelation 12:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Destructive power, venom, or demonic aftermath, particularly the trailing sting of judgment in apocalyptic imagery.\",\n      \"basis\": [\n        \"Revelation 9:10\",\n        \"Revelation 9:19\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The head-and-tail dichotomy is well established in the Old Testament covenant blessings and curses to denote rulers versus the subjugated. In prophetic literature, it takes on an ethical dimension distinguishing true leaders from lying prophets, while in apocalyptic literature, tails often carry the sting of judgment or represent the sweeping reach of demonic power.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A false or deceitful prophet—more broadly, religious leadership or teaching that spreads lies. This is the strongest conventional symbolic assignment because Scripture itself explicitly identifies “the tail” with “the prophet who teaches lies.”\",\n  \"primary_basis\": [\n    \"Isaiah 9:14–15 — the “head” is the elder and honored man, while “the tail” is explicitly identified as the prophet who teaches lies.\",\n    \"Revelation 12:4 — the dragon’s tail sweeping down stars is sometimes connected with satanic deception or corrupting influence, though the text does not itself define the tail this way.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Inferiority, subordination, humiliation, or loss of leadership—the opposite of being the “head.”\",\n      \"basis\": [\n        \"Deuteronomy 28:13 — covenant blessing makes Israel the head and not the tail.\",\n        \"Deuteronomy 28:44 — covenant judgment makes the foreigner the head and Israel the tail.\",\n        \"Isaiah 9:14 — head and tail form a contrast between the exalted and the lowly or corrupt.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Satanic power or deceptive influence that draws others into rebellion.\",\n      \"basis\": [\n        \"Revelation 12:4 — the dragon’s tail sweeps a third of the stars from heaven; interpreters variously identify the stars as angels, rulers, or God’s people.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An instrument of torment, injury, or destructive power.\",\n      \"basis\": [\n        \"Revelation 9:10 — the locusts have scorpion-like tails with power to hurt.\",\n        \"Revelation 9:19 — the horses’ tails are like serpents and inflict harm.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A contemptible, spent, or ineffective ruler or enemy.\",\n      \"basis\": [\n        \"Isaiah 7:4 — Rezin and Pekah are disparagingly called the tails of two smoking firebrands.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Tail” has no single settled symbolic meaning across the Bible. The false-prophet interpretation is the clearest expressly defined symbolism, but other passages use the image independently for low status, satanic influence, or destructive force. Meaning therefore depends heavily on context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"subordinate, inferior, or last place (as opposed to the head/leadership)\",\n  \"primary_basis\": [\n    \"Deuteronomy 28:13\",\n    \"Deuteronomy 28:44\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"false prophets or teachers of lies\",\n      \"basis\": [\n        \"Isaiah 9:14-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"destructive or sweeping power of evil (e.g., the dragon casting down stars)\",\n      \"basis\": [\n        \"Revelation 12:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"stinging or tormenting capacity (as with scorpion-like or serpent-like tails)\",\n      \"basis\": [\n        \"Revelation 9:10\",\n        \"Revelation 9:19\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Biblical uses of 'tail' are contextual and metaphorical rather than a fixed, unified symbol across Christian tradition; the head/tail contrast for status is the most frequently invoked in teaching, while prophetic and apocalyptic readings remain secondary but well-attested.\"\n}\n\nBOOK ENTRY\nThe prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the covenant: obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the stars with its tail — the led destroyed by the misleading — and the trumpet armies' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 9:15-16; Deut 28:13, 44; Rev 12:4; 9:19; Ex 4:4) · see The Fall of Babylon, ch. 35\n\nAVAILABLE KJV EXCERPTS\nIsaiah 9:15 — The ancient and honourable, he is the head; and the prophet that teacheth lies, he is the tail.\nIsaiah 9:16 — For the leaders of this people cause them to err; and they that are led of them are destroyed.\nDeuteronomy 28:13 — And the LORD shall make thee the head, and not the tail; and thou shalt be above only, and thou shalt not be beneath; if that thou hearken unto the commandments of the LORD thy God, which I command thee this day, to observe and to do them:\nDeuteronomy 28:44 — He shall lend to thee, and thou shalt not lend to him: he shall be the head, and thou shalt be the tail.\nRevelation 12:4 — And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.\nRevelation 9:19 — For their power is in their mouth, and in their tails: for their tails were like unto serpents, and had heads, and with them they do hurt.\nExodus 4:4 — And the LORD said unto Moses, Put forth thine hand, and take it by the tail. And he put forth his hand, and caught it, and it became a rod in his hand:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "c70b5a92397e409f60dff68ae2d9663246b8edb76cc66db1ec73233a0a566623",
+  "cache": {
+    "hit": false
+  }
+}
