@@ -68,3 +68,28 @@ becomes the lit mirror. The word does not lexically mean "mirror" — but in the
 sky texts the mirror stands one verse away, and the throne parallel in Psalm 89
 puts tohar exactly where the moon-throne framework expects it: a brightness
 that is worn, given, and can be made to cease.
+
+## Addendum (author, same day): the reflector web
+
+The author's extension — the moon, the sapphire, polished gold, and the sea of
+glass are all one class: REFLECTORS. Verified against the tagged text:
+
+1. **The temple's basin was literally made of mirrors.** Exodus 38:8: "he made
+   the laver of brass... of the lookingglasses (mar'ot, H4759) of the women
+   assembling at the door of the tabernacle." A reflecting basin in the most
+   literal sense — cast from mirrors — standing before the sanctuary.
+2. **The casting-verb weld.** Job 37:18's sky is a "**molten** looking glass"
+   and the temple's sea is the "**molten** sea" (1 Kings 7:23; 2 Chronicles
+   4:2) — the SAME verb, *yatsaq* H3332, in the SAME passive stem (hophal) in
+   both. Scripture casts the sky-mirror and the temple sea with one word.
+3. **The chain assembled:** the molten mirror-sky (Job 37:18) — the molten,
+   mirror-made sea before the temple (Ex 38:8; 1 Kgs 7:23) — the sea of glass
+   before the throne (Rev 4:6; 15:2) — the sapphire pavement "as the body of
+   heaven in his tohar" under His feet (Ex 24:10) — the city's gold "pure...
+   like clear glass" (Rev 21:18). Copy and heavenly original agree: before the
+   throne stands a reflector, and the heaven under His feet is one.
+4. **The cover thesis.** Psalm 89:44 — his *tohar* made to cease, his throne
+   cast to the ground — is the full-moon-as-throne image exactly: a reflector
+   has no light of its own; strip it of the light it reflects, or cast it
+   down, and the glory "ceases." (The round molten sea, "round all about,"
+   ten cubits brim to brim, is noted without pressing it further.)
