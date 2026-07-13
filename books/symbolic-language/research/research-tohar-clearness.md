@@ -93,3 +93,32 @@ glass are all one class: REFLECTORS. Verified against the tagged text:
    has no light of its own; strip it of the light it reflects, or cast it
    down, and the glory "ceases." (The round molten sea, "round all about,"
    ten cubits brim to brim, is noted without pressing it further.)
+
+## Addendum 2: enōpion — the sea of glass FACES the throne
+
+Revelation 4:6's "before the throne" is ἐνώπιον (enōpion, G1799: en + ōps,
+"in the face of") — the Greek counterpart of Hebrew liphnei, the very
+"before = facing" preposition argument TTT chs. 21-22 run for Joel 2:31.
+The sea of glass is not merely near the throne; it stands IN ITS FACE — and
+a mirror reflects only what it faces. The full moon is the one phase that
+faces the sun whole, from opposition. The throne room states the calendar's
+geometry: the reflector at opposition, facing its light.
+
+## Addendum 3: the cover fork — blood moon vs dark phase
+
+Psalm 89:44 (tohar ceases, throne cast down) can wear either image; they
+carry different theology:
+
+- **Blood moon** (eclipse, possible ONLY at full moon — only at opposition,
+  only while facing): the TRUE throne's glory darkened under a shadow while
+  still in position. Fits Psalm 89 itself — the covenant-with-David psalm,
+  the faithful witness (89:37) eclipsed in judgment — and fits TTT ch. 22
+  (keseh turned to blood over the moon city).
+- **Dark phase** (conjunction): the reflector's lit face turned AWAY — not a
+  throne losing its glory but a throne that never faced the viewer. In the
+  books' framework this is the COUNTERFEIT's emblem (Lucifer's dark moon
+  exalted, Isaiah 14:13), not the fallen true throne.
+
+The lean: the blood moon carries Psalm 89:44 for the cover — judgment strikes
+the true configuration (full, facing, faithful) and its glory ceases under
+the shadow; the dark conjunction remains the counterfeit's flag.
