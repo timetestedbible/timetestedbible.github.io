@@ -1,0 +1,245 @@
+# Asciidoctor PDF theme — "The Bible's Symbolic Language"
+# Trade paperback, 6in x 9in. Use with:  -a pdf-theme=trade -a pdf-themesdir=<this dir>
+#
+# BookBaby requires a PURE BLACK interior — every ink value here is '000000'
+# (quoted so YAML keeps it a hex string, not the integer 0). No gray, no color.
+extends: default
+
+# Body face: Gentium Book Plus (SIL, OFL, bundled in ./fonts) — a text face designed
+# for scholarly/biblical publishing; full regular/italic/bold/bold-italic, wide
+# Latin coverage incl. the transliteration diacritics (kētos, anastēsontai).
+# Hebrew glyphs: fall back to Noto Serif Hebrew (OFL, bundled in ./fonts) so
+# unpointed consonants render in print. RTL ordering is handled by asciidoctor-pdf.
+# Paleo-Hebrew / Phoenician glyphs (the divine name) fall back to Noto Sans Phoenician (OFL, bundled).
+font:
+  catalog:
+    merge: true
+    Gentium Book Plus:
+      normal: GentiumBookPlus-Regular.ttf
+      bold: GentiumBookPlus-Bold.ttf
+      italic: GentiumBookPlus-Italic.ttf
+      bold_italic: GentiumBookPlus-BoldItalic.ttf
+    Noto Serif Hebrew:
+      normal: NotoSerifHebrew-Regular.ttf
+      bold: NotoSerifHebrew-Bold.ttf
+      italic: NotoSerifHebrew-Regular.ttf
+      bold_italic: NotoSerifHebrew-Bold.ttf
+    Noto Sans Phoenician:
+      normal: NotoSansPhoenician-Regular.ttf
+      bold: NotoSansPhoenician-Regular.ttf
+      italic: NotoSansPhoenician-Regular.ttf
+      bold_italic: NotoSansPhoenician-Regular.ttf
+  fallbacks:
+    # Gentium first: catches glyphs missing from the M+ 1mn symbol face (its
+    # gem subsets lack even the curly apostrophe U+2019 — "whale's belly"
+    # rendered a box). Gentium has no Hebrew/Phoenician, so those characters
+    # fall through to the next entries.
+    - Gentium Book Plus
+    - Noto Serif Hebrew
+    - Noto Sans Phoenician
+
+page:
+  size: [6in, 9in]
+  # Generous inner (gutter) margin for perfect-bound trade books.
+  margin: [0.7in, 0.65in, 0.7in, 0.8in]   # [top, right, bottom, left] (screen mode)
+  margin-inner: 0.85in                      # gutter side (prepress/facing-pages)
+  margin-outer: 0.6in
+
+base:
+  font-family: Gentium Book Plus
+  font-size: 11
+  # NOTE: asciidoctor-pdf line-height multiplies the FONT'S OWN natural line
+  # height, not the point size — and Gentium Book Plus carries tall metrics
+  # (ascent 1.099 + descent 0.366 = 1.465em, sized for stacked diacritics).
+  # 0.9 x 1.465em = 1.32em = ~14.5pt baseline-to-baseline on 11pt type: proper
+  # book leading. (1.3 here rendered ~1.9em — nearly double-spaced.)
+  line-height: 0.9
+  text-align: justify
+  font-color: '000000'
+
+heading:
+  font-family: Gentium Book Plus
+  font-style: bold
+  font-color: '000000'
+  h1-font-size: 22
+  h2-font-size: 16
+  h3-font-size: 13
+  # Keep >= 2 body lines under any heading: the paragraph balancer (extension.rb)
+  # pushes a paragraph to the next page rather than leave 1 line of it behind, so
+  # a heading must not ink unless that much room remains below it.
+  min-height-after: 42
+
+# Title page is supplied as a full-page front-cover SVG; the auto title page is
+# disabled (:notitle:). These keys are unused but kept black for safety.
+title-page:
+  align: center
+  title:
+    font-size: 30
+    font-color: '000000'
+    line-height: 1.1
+  subtitle:
+    font-size: 14
+    font-color: '000000'
+  authors:
+    font-size: 12
+    font-color: '000000'
+
+prose:
+  margin-bottom: 0
+  text-indent: 0.2in   # book first-line indent on every body paragraph
+                       # (the converter zeroes this while rendering quotes — see extension.rb)
+
+block:
+  margin-bottom: 10
+
+# Scripture / quote blocks — no rule, indented both sides, body-size italic text
+quote:
+  font-style: italic
+  font-color: '000000'
+  font-size: $base-font-size      # same size as regular text
+  border-width: 0
+  border-left-width: 0            # THE key for the left vertical bar (separate from border-width)
+  padding: [12, 30, 3, 30]        # [t,r,b,l] — top 12 ≈ bottom (3 + block margin 10), so the gap above a quote matches the gap after its citation
+  cite:
+    font-size: 8.5
+    font-style: normal
+    font-color: '000000'
+
+# Roles applied by the build script's transforms.
+# (Alignment comes from the built-in text-center/text-right roles; these add styling.)
+role:
+  epigraph:
+    font-style: italic
+    font-color: '000000'
+  citation:
+    font-size: 8.5
+    font-style: normal
+    font-color: '000000'
+  chapter-epigraph:
+    font-style: italic
+    font-color: '000000'
+  chapter-epigraph-cite:
+    font-size: 9
+    font-style: normal
+    font-color: '000000'
+  # Glossary cross-references to other symbols — the KJV "LORD" convention:
+  # bold capitals at reduced size (small-caps effect) in the body face. Keeps
+  # the distinction without the height/width clash the old monospace (M+ 1mn)
+  # had against Gentium ("wife" gappy, "whoredoms" dense).
+  symbol:
+    font-family: Gentium Book Plus
+    font-style: bold
+    font-size: 0.75em
+    text-transform: uppercase
+    font-color: '000000'
+  # Experiment-verdict badge on glossary terms (DIVERGENT / NOVEL) — small
+  # gray chip on the term line; see the Introduction's blind-test table.
+  verdict:
+    font-size: 6.8
+    font-color: '777777'
+  # Glossary "see <chapter>" pointer line — italic, smaller, set off from the definition
+  seeref:
+    font-style: italic
+    font-size: 9
+    font-color: '000000'
+  # Scripture references inside a definition — small italic, kept out of the way
+  scref:
+    font-style: italic
+    font-size: 8.5
+    font-color: '000000'
+  # Copyright / colophon page — small, quiet type (alignment via text-center)
+  copyright:
+    font-size: 9
+    font-color: '000000'
+    line-height: 1.5
+  copyright-title:
+    font-size: 12
+    font-style: italic
+    font-color: '000000'
+
+# Prevalence tables — clean "booktabs" style: pure-black horizontal rules only
+# (top rule, rule under the header, bottom rule), no shading, no vertical lines.
+table:
+  font-color: '000000'
+  font-size: 9.5
+  border-color: '000000'
+  border-width: 1.25        # top + bottom rules (frame=topbot)
+  grid-color: '000000'
+  grid-width: 0.5          # only drawn when a table uses grid=rows/cols/all
+  head:
+    font-style: bold
+    background-color: 'ffffff'
+    border-bottom-width: 1.25   # the rule under the header
+    border-bottom-color: '000000'
+  body:
+    background-color: 'ffffff'
+  cell:
+    padding: [2, 9, 2, 9]   # tight enough that the 19-row Jonah table fits one page
+table-caption:
+  font-style: italic
+  font-color: '000000'
+  font-size: 9
+  align: center
+thematic-break:
+  border-color: '000000'
+  border-style: solid
+  border-width: 0.5
+  margin-top: 14
+  margin-bottom: 14
+
+image-caption:
+  font-style: italic
+  font-color: '000000'
+  font-size: 9
+  align: center
+
+# Links and TOC — pure black (no blue), dot leaders for the contents page.
+link:
+  font-color: '000000'
+toc:
+  font-color: '000000'
+  # sized to fill the Contents spread — half of p. iv sat empty at 10/0.82
+  # (author's ruling, 2026-07-10); must not spill to a fifth roman page.
+  font-size: 11
+  line-height: 0.9
+  dot-leader:
+    content: '. '
+    font-color: '000000'
+
+# Footnotes — rendered at the foot of each page by the converter (extension.rb),
+# not as chapter-end notes. Small, pure black.
+footnotes:
+  font-size: 8.5
+  font-color: '000000'
+  item-spacing: 3
+
+page-numbering:
+  start-at: after-toc
+running-content:
+  start-at: after-toc
+header:
+  height: 0.6in
+  margin: [0.2in, inherit, 0, inherit]   # push header down from the trim edge (BookBaby 0.5in safety)
+  recto:
+    right:
+      content: '{chapter-title}'
+  verso:
+    left:
+      content: 'MEAT The Bible''s Symbolic Language'
+  font-size: 8
+  font-color: '000000'
+footer:
+  # 0.5in keeps the separator hairline BELOW the body floor (bottom margin
+  # 0.7in): at 0.6in the hairline sat 9.6pt above the floor and struck
+  # through the last text line of any page that filled to the bottom.
+  height: 0.5in
+  margin: [0, inherit, 0.2in, inherit]   # lift folio up from the trim edge (BookBaby 0.5in safety)
+  # footer separator keeps the inherited light-gray (DDDDDD) hairline — gray is fine for non-text rules
+  recto:
+    right:
+      content: '{page-number}'
+  verso:
+    left:
+      content: '{page-number}'
+  font-size: 9
+  font-color: '000000'
