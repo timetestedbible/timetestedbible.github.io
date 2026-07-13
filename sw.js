@@ -72,6 +72,7 @@ const CORE_ASSETS = [
 
 // Data files (JSON) — large files stored as .gz, decompressed on load
 const DATA_ASSETS = [
+  '/data/meat-tester-experiment.json',
   '/priestly_divisions.json',
   '/historical-events-v2.json',
   '/TorahReadingCycle.json',
@@ -166,7 +167,8 @@ const VIEW_ASSETS = [
   '/views/timeline-view.js',
   '/views/tutorial-view.js',
   '/views/blog-view.js',
-  '/views/methodology-view.js'
+  '/views/methodology-view.js',
+  '/views/meat-tester-view.js'
 ];
 
 // CSS assets
@@ -181,6 +183,7 @@ const CSS_ASSETS = [
   '/assets/css/sabbath-tester.css',
   '/assets/css/blog.css',
   '/assets/css/methodology.css',
+  '/assets/css/meat-tester.css',
   '/components/world-map.css',
   '/components/dateline-map.css'
 ];

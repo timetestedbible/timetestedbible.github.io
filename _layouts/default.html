@@ -141,6 +141,7 @@
   <link rel="stylesheet" href="/assets/css/bible-styles.css">
   <link rel="stylesheet" href="/assets/css/tutorial.css">
   <link rel="stylesheet" href="/assets/css/methodology.css">
+  <link rel="stylesheet" href="/assets/css/meat-tester.css">
   <link rel="stylesheet" href="/assets/css/settings.css">
   <link rel="stylesheet" href="/assets/css/symbols.css">
   <link rel="stylesheet" href="/assets/css/reader.css">
@@ -259,6 +260,9 @@
           </button>
           <button class="nav-dropdown-item" onclick="Layout.closeDropdown(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'symbols'}})">
             <span class="nav-dropdown-icon">🔣</span> Symbol Studies
+          </button>
+          <button class="nav-dropdown-item" onclick="Layout.closeDropdown(); AppStore.dispatch({type:'SET_VIEW',view:'meat-tester'})">
+            <span class="nav-dropdown-icon">⚖️</span> MEAT Tester Experiment
           </button>
           <button class="nav-dropdown-item" onclick="Layout.closeDropdown(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'verse-studies'}})">
             <span class="nav-dropdown-icon">📜</span> Verse Studies
@@ -464,6 +468,11 @@
         <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'sabbath-tester'}])">
           <span class="menu-icon">🔬</span>
           <span class="menu-label">Sabbath Tester</span>
+        </button>
+
+        <button class="menu-item" onclick="AppStore.dispatchBatch([{type:'CLOSE_MENU'},{type:'SET_VIEW',view:'meat-tester'}])">
+          <span class="menu-icon">⚖️</span>
+          <span class="menu-label">MEAT Tester</span>
         </button>
         
         <div class="menu-divider"></div>
@@ -705,6 +714,7 @@
   <script src="/views/tutorial-view.js"></script>
   <script src="/views/help-view.js"></script>
   <script src="/views/methodology-view.js"></script>
+  <script src="/views/meat-tester-view.js"></script>
   <script src="/views/priestly-view.js"></script>
   <script src="/views/sabbath-tester-view.js"></script>
   <script src="/views/blog-view.js"></script>
@@ -984,6 +994,7 @@
       if (typeof TutorialView !== 'undefined') ContentManager.registerView('tutorial', TutorialView);
       if (typeof HelpView !== 'undefined') ContentManager.registerView('help', HelpView);
       if (typeof MethodologyView !== 'undefined') ContentManager.registerView('methodology', MethodologyView);
+      if (typeof MeatTesterView !== 'undefined') ContentManager.registerView('meat-tester', MeatTesterView);
       if (typeof PriestlyView !== 'undefined') ContentManager.registerView('priestly', PriestlyView);
       if (typeof SabbathTesterView !== 'undefined') ContentManager.registerView('sabbath-tester', SabbathTesterView);
       if (typeof BlogView !== 'undefined') ContentManager.registerView('blog', BlogView);
@@ -1034,7 +1045,7 @@
               pathname.startsWith('/bible') || pathname.startsWith('/timeline') ||
               pathname.startsWith('/symbols') || pathname.startsWith('/research') || pathname.startsWith('/book') || pathname.startsWith('/settings') ||
               pathname.startsWith('/tutorial') || pathname.startsWith('/help') || pathname.startsWith('/blog') || pathname.startsWith('/feasts') ||
-              pathname.startsWith('/priestly') || pathname.startsWith('/sabbath-tester') ||
+              pathname.startsWith('/priestly') || pathname.startsWith('/sabbath-tester') || pathname.startsWith('/meat-tester') ||
               /^\/[^/]+\/[^/]+\/\d{4}-\d{2}-\d{2}\//.test(pathname)) {
             e.preventDefault();
             // pushState FIRST so window.location is updated before subscribers fire

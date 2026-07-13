@@ -17,6 +17,23 @@ The historical hand-run results are preserved in
 [`research-glossary-vs-consensus.md`](../../research/research-glossary-vs-consensus.md).
 This directory turns that process into a versioned, rerunnable protocol.
 
+## Public dashboard
+
+The reader-facing **MEAT Tester Experiment** is available at `/meat-tester`.
+It presents the premise and controls, summarizes the current rulings, preserves
+the full run history, and lets readers open every secret-free request, raw
+response, normalized judgment, prompt template, and source snapshot.
+
+After checking in a completed run, rebuild its deterministic public index:
+
+```sh
+npm run build:meat-tester
+```
+
+The dashboard treats AI as a proxy for recognizable popular teaching and as a
+skeptical reader of the book's case. It does not treat model consensus as a
+substitute for the reader's duty to examine the evidence.
+
 ## Design
 
 The runner performs three stages:

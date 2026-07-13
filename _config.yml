@@ -37,6 +37,10 @@ exclude:
   - books/symbolic-language/print
   - books/symbolic-language/draft-meat-intro.md
   - books/symbolic-language/reflow-sentences.rb
+  # Frozen experiment chapters have book front matter and would otherwise
+  # compete with the live chapters' permalinks. The dashboard generator copies
+  # them with SHA-256 hashes in data/meat-tester-sources/*.json for public audit.
+  - "books/symbolic-language/experiments/glossary-consensus/runs/**/inputs/chapters"
 
 # Study collections
 collections:

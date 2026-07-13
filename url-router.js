@@ -278,7 +278,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'books', 'symbols', 'priestly', 'sabbath-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research', 'multiverse'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'books', 'symbols', 'priestly', 'sabbath-tester', 'meat-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research', 'multiverse'],
   
   /**
    * Parse URL into state
@@ -859,6 +859,10 @@ const URLRouter = {
         break;
         
       case 'sabbath-tester':
+        // No additional params
+        break;
+
+      case 'meat-tester':
         // No additional params
         break;
         

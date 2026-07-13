@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "build:meat-tester": "python3 scripts/build-meat-tester-data.py",
+    "test:meat-tester": "node tests/meat-tester-test.js",
     "build:ranks": "node pipeline/build-content-graph.js",
     "build:dictionary": "node pipeline/build-symbol-dictionary.js",
     "build:studies": "npm run build:ranks && npm run build:dictionary",

@@ -85,6 +85,7 @@ const ContentManager = {
         settings: 'Settings',
         blog: 'Blog',
         timeline: 'Timeline',
+        'meat-tester': 'MEAT Tester Experiment',
         day: 'Day Detail'
       };
       if (viewTitles[viewName] !== undefined && viewTitles[viewName] !== null) {
