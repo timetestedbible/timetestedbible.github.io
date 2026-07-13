@@ -9,6 +9,7 @@ const index = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'mea
 assert.strictEqual(MeatTesterView.verdictLabel('DIVERGENT_PERSUADED'), 'Divergent · persuaded');
 assert.strictEqual(MeatTesterView.verdictClass('DIVERGENT_PERSUADED'), 'verdict-divergent-persuaded');
 assert.strictEqual(MeatTesterView.escapeHtml('<script>'), '&lt;script&gt;');
+assert.strictEqual(MeatTesterView.termSortKey('The Lamb'), 'lamb');
 const cloudRoute = MeatTesterView.normalizeRouteParams({ cloud: 'UNTESTED,BOGUS,REFINED,UNTESTED' });
 assert.strictEqual(cloudRoute.cloud, 'REFINED,UNTESTED');
 MeatTesterView._routeParams = cloudRoute;
@@ -50,6 +51,9 @@ assert(untestedTarget?.untested, 'An untested glossary URL should resolve to its
 assert.strictEqual(untestedTarget.entry.term, 'Anoint, anointing');
 const testedTarget = MeatTesterView.resolveRouteEntry({ term: 'ship' });
 assert.strictEqual(testedTarget?.untested, false, 'A tested glossary URL should resolve to its frozen run');
+const lambTarget = MeatTesterView.resolveRouteEntry({ term: 'lamb' });
+assert.strictEqual(lambTarget?.entry.term, 'The Lamb');
+assert.strictEqual(lambTarget?.entry.frozenTerm, 'Lamb');
 
 for (const entry of index.currentEntries) {
   assert(entry.runId, `${entry.anchor} is missing a current run`);

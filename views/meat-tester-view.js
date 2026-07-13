@@ -194,6 +194,7 @@ const MeatTesterView = {
   cleanup() {
     this._loadToken += 1;
     this._routeKey = '';
+    this._data = null;
     this._container = null;
   },
 
@@ -201,7 +202,7 @@ const MeatTesterView = {
     const token = ++this._loadToken;
     try {
       if (!this._data) {
-        const response = await fetch(this.DATA_URL);
+        const response = await fetch(this.DATA_URL, { cache: 'no-store' });
         if (!response.ok) throw new Error(`Experiment index returned ${response.status}`);
         this._data = await response.json();
       }
@@ -415,7 +416,7 @@ const MeatTesterView = {
     const cloud = this._container.querySelector('#meat-symbol-cloud');
     if (!cloud) return;
     const allEntries = [...(this._data.glossaryEntries || this._data.currentEntries)]
-      .sort((a, b) => String(a.term || '').localeCompare(String(b.term || '')));
+      .sort((a, b) => this.termSortKey(a.term).localeCompare(this.termSortKey(b.term)));
     const hidden = this.hiddenCloudVerdicts();
     const entries = allEntries.filter(entry => !hidden.has(entry.finalVerdict));
     const summary = this._container.querySelector('#meat-symbol-cloud-summary');
@@ -473,10 +474,14 @@ const MeatTesterView = {
         const categoryOrder = (aIndex < 0 ? rulingOrder.length : aIndex) - (bIndex < 0 ? rulingOrder.length : bIndex);
         if (categoryOrder) return categoryOrder;
       }
-      const termOrder = String(a.term || '').localeCompare(String(b.term || ''));
+      const termOrder = this.termSortKey(a.term).localeCompare(this.termSortKey(b.term));
       if (termOrder) return termOrder;
       return String(b.createdAt || '').localeCompare(String(a.createdAt || ''));
     });
+  },
+
+  termSortKey(term) {
+    return String(term || '').replace(/^the\s+/i, '').toLowerCase();
   },
 
   renderResultList() {
