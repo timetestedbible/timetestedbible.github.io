@@ -18,7 +18,7 @@ no plates; About the Author carries the unplaqued portrait.
 | 05-day-lost-at-sea | COMPARING SHIP LOG TO CALENDAR | PIGAFETTA, 1522 |
 | 06-bridegroom-dawn | THE SUN COMES FORTH AS A BRIDEGROOM | PSALM 19:5 |
 | 07-watchman-full-moon | THE FULL MOON KEEPS THE FEAST | PSALM 81:3 |
-| 07x-lucifer-moon | (reuse MEAT plate 30-lucifer-moon with its caption) | ISAIAH 14:13 |
+| 07x-lucifer-moon | MY THRONE ABOVE THE STARS OF GOD | ISAIAH 14:13 |
 | 08-abib-sheaf | THE MONTH OF THE ABIB | EXODUS 13:4 |
 | 09-watchman-tower | SIGNS READ FROM THE TOWER | GENESIS 1:14 |
 | 10-sabbath-quarters | A SIGN BETWEEN ME AND YOU | EXODUS 31:13 |
