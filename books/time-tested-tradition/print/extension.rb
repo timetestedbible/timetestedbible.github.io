@@ -312,7 +312,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     ((h || 24) + spacing).ceil
   end
   EPIGRAPH_INDENT = 40   # left/right margin on chapter epigraphs (keeps lines short, no hyphenation)
-  HOW_TO_USE_SINK = 82   # foot-alignment sink for "How to Use This Book" — ink slack below the last line measured ~95pt, but the break test needs a full line height, so the usable slack is less (88 spilled one line). Retune if that chapter's text changes.
+  PREFACE_SINK = 147   # foot-alignment sink for the Preface (author's ruling 2026-07-12: one page, bottom justified). Tuned by measured build; retune if the preface text changes.
 
   # Style roled cross-references (the sym: glossary macro). asciidoctor-pdf's xref
   # branch makes the internal jump (<a anchor=...>) but omits the role class, so a
@@ -1135,8 +1135,8 @@ def ink_chapter_title node, title, opts = {}
     # its page (author's ruling, 2026-07-06) — whitespace above, last line on
     # the bottom margin, like a printer's note; HOW_TO_USE_SINK carries the
     # measured drop.
-    if node.id == 'how-to-use'
-      move_down HOW_TO_USE_SINK
+    if node.id == 'preface'
+      move_down PREFACE_SINK
     elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
       mid = bounds.height / 2.0
       move_cursor_to mid if cursor > mid
