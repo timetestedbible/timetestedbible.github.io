@@ -82,3 +82,25 @@ Structural oddities: ch. 6 ends a paragraph mid-sentence ("In this"); ch. 18
 has a stranded half-sentence and one page-overflowing paragraph (the one
 non-fatal build error); ch. 10 has severely mangled bold markup in quotes,
 conservatively reconstructed — worth an author pass over its emphasis.
+
+## Follow-up (author-directed, same day)
+
+- **All 18 citation errors FIXED** in source (each verified against the quoted
+  text first): Colossians 2:8; Deuteronomy 17:8-9/17:8 (labels had been
+  swapped); 2 Corinthians 13:1; Job 38:31-33; Acts 7:42-43; Isaiah 66:23;
+  Leviticus 16:21-22; John 2:19; Matthew 5:17-19; Hebrews 4:14-16;
+  John 8:32-36; Hebrews 8:1-5; Matthew 22:34-40; Exodus 31:16-17 (was labeled
+  Zechariah 14); Jeremiah 16:19; Daniel 7:25; Zechariah 14:16-17 (verses
+  added); NKJV spelling. NOT touched: the Josephus "22nd year" Greek gloss
+  (ch. 13) — a manuscript-tradition claim, needs the author.
+- **All 10 lost data tables RECOVERED** from the print PDF's text layer,
+  verbatim with ligature repair only (chs. 11 ×2, 12 ×2, 13, 14 ×4, 18).
+  Print-edition discrepancies preserved and flagged: the Jonah table has 15
+  rows though the prose says "16 Parallels"; print typos "travles"/"Ninevah"/
+  "Shavout" kept. The NASA eclipse table exists in NEITHER source — its marker
+  says so; the author must supply it.
+- **Figures re-anchored by content** (23 exact-page verified, 6 page-matched,
+  1 parked in 15x4 with its pdf page noted).
+- **Herod's Appointment & Battle of Actium merged** (15x2) per the print PDF,
+  both web texts verbatim, internal headings demoted one level; all five
+  "Extra Chapter 1" references repaired into links to Herod: Regal vs De Facto.
