@@ -27,6 +27,15 @@ and authoritative for the public until the 2nd edition ships:
   merge pass).
 - `CONVERSION-SPEC.md` — the mechanical md→adoc rules used for the conversion.
 
+## Edition conventions (author's rulings)
+
+- 2026-07-13: the 2nd edition uses "Jesus" and "the LORD" — never "Yeshua" or
+  paleo-Hebrew 𐤉𐤄𐤅𐤄 — for accessibility. Exceptions: italic _Yeshua_ / (Yeshua)
+  glosses where the Hebrew name IS the argument (the yeshuah/salvation wordplay).
+  The Introduction's "Name of our Lord" section states the policy.
+- Sentence-position rule for the name: "The LORD" at sentence start, "the LORD"
+  elsewhere, "O LORD" in vocatives.
+
 ## Provenance rules
 
 - Conversion was MECHANICAL: wording is verbatim from the web edition
