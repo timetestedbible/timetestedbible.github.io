@@ -19,7 +19,14 @@ timetested.bible (this repo IS the deployment — GitHub Pages serves it directl
   Badges (DIVERGENT / NOVEL) come from the blind test; the preamble states the entry count — keep it true.
 - `print/build.rb` — assembles and renders the trade PDF (asciidoctor-pdf + `print/extension.rb`).
   `PARTS` map in build.rb assigns part titles by slug. Citations are abbreviated at build time
-  (write full book names in source). `[.chnum]#…#` spans are stripped for print, kept on web.
+  (write full book names in source).
+- **Chapter numbers are POSITIONAL** (author's ruling 2026-07-14): build.rb numbers every
+  print chapter sequentially in assembly order — letter/x inserts (40s, 40x, 46x, 48w, 48x,
+  49x) count; digital-only chapters, 00- openers, the 38x pointer, and back matter don't.
+  Filename prefixes are ORDER only, not numbers. Every `[.chnum]#, ch. N#` span that follows
+  a chapter link is REWRITTEN from the link's slug at build time (self-healing — write any
+  number, the build corrects it); a span pointing at a digital-only chapter warns UNRESOLVED
+  and should instead read "— a digital-edition chapter at TimeTested.Bible".
 - `_symbols/<key>.md` — canonical per-term repository: structured frontmatter
   plus the prose derivation published on the website. During migration its
   approved `definition` must match `49-glossary.adoc`; newer findings stay in

@@ -124,24 +124,49 @@ $ebook_image_jobs = {}
 
 front_entries = []
 main_entries  = []
-# Printed chapter numbers (author's ruling 2026-07-13: "number the books fully").
-# A chapter's number is the bare integer prefix of its source FILENAME
-# (29-sun-moon-and-stars.adoc -> 29); x-inserts (16x-, 40s-, 48w-…) have no
-# bare-integer prefix and stay unnumbered, as do the 00- openers (preface,
-# how-to-use), front matter, and the back matter (removed below). The map is
-# EDITION-AGNOSTIC: digital-only chapters keep their numbers, so the print
-# edition shows honest gaps where the web carries a chapter. extension.rb reads
-# it for the opener's CHAPTER N kicker, the numbered Contents entries, and the
-# Scripture Index's "(ch N)" locator groups.
-$chapter_numbers = {}
 chapters.each do |path|
   fm, body = split_front_matter(File.read(path))
   slug  = fm['slug'] || File.basename(path, '.adoc').sub(/^\d+[-_]/, '')
   title = fm['title'] || slug
-  num = File.basename(path)[/\A(\d+)-/, 1].to_i   # x-inserts miss the match -> 0
-  $chapter_numbers[slug] = num if num > 0 && !fm['front_matter']
   epigraph_map[slug] = fm['epigraphs'] if fm['epigraphs'].is_a?(Array) && !fm['epigraphs'].empty?
   (fm['front_matter'] ? front_entries : main_entries) << { slug: slug, title: title, body: body.strip, file: File.basename(path), edition: fm['edition'] }
+end
+
+# Printed chapter numbers (author's rulings: 2026-07-13 "number the books
+# fully"; 2026-07-14 number EVERY print chapter sequentially). Numbers are
+# POSITIONAL — the Nth print chapter in assembly order — not filename-derived,
+# so the letter/x inserts (40s, 40x, 46x, 48w, 48x, 49x) count, and digital-only
+# chapters (absent from print) leave no gaps. Unnumbered: digital-only chapters,
+# the 00- openers, the Further Studies pointer page, and back matter.
+# extension.rb reads the map for CHAPTER N kickers and numbered Contents
+# entries; scripture-index.json carries the same numbers to the web.
+NUMBER_EXEMPT_SLUGS = %w[bibliography further-studies about-the-author].freeze
+$chapter_numbers = {}
+main_entries.each do |c|
+  next if NUMBER_EXEMPT_SLUGS.include?(c[:slug]) || c[:edition] == 'digital' || c[:file].start_with?('00')
+  $chapter_numbers[c[:slug]] = ($chapter_numbers.size + 1)
+end
+
+# ", ch. N" cross-references self-heal: every [.chnum] span that follows a
+# chapter link is rewritten from the link's SLUG via $chapter_numbers, so
+# hand-written numbers can never go stale when a chapter is inserted. Spans
+# whose slug is unnumbered (digital-only target) or that follow no link are
+# left as written, with a warning for the author.
+CHNUM_LINK_RX = %r{(link:/books/symbolic-language/([a-z0-9-]+)/\[[^\[\]]*\])(\[\.chnum\]#, ch\. )(\d+)(#)}
+(front_entries + main_entries).each do |c|
+  c[:body] = c[:body].gsub(CHNUM_LINK_RX) do
+    pre, slug, mid, old, tail = Regexp.last_match.captures
+    if (nn = $chapter_numbers[slug])
+      warn "  chnum #{c[:file]}: #{slug} ch. #{old} -> ch. #{nn}" if nn.to_s != old
+      "#{pre}#{mid}#{nn}#{tail}"
+    else
+      warn "  chnum UNRESOLVED (#{slug} unnumbered) in #{c[:file]}"
+      Regexp.last_match[0]
+    end
+  end
+  c[:body].scan(/(?<!\])\[\.chnum\]#, ch\. \d+#/) do |bare|
+    warn "  chnum BARE (no adjacent link, left as written) in #{c[:file]}: #{bare}"
+  end
 end
 
 # Front matter (e.g. the copyright page): rendered BEFORE the Contents as untitled
@@ -179,7 +204,6 @@ BACK_SLUGS = %w[bibliography further-studies about-the-author].freeze
 back_entries = main_entries.select { |c| BACK_SLUGS.include? c[:slug] }
                            .sort_by { |c| BACK_SLUGS.index c[:slug] }
 main_entries -= back_entries
-BACK_SLUGS.each { |slug| $chapter_numbers.delete slug }   # back matter is unnumbered (both 50-* files land here)
 
 # Main chapters: auto page break, TOC entry, PDF bookmark, running head.
 # A chapter whose front matter carries `edition: digital` appears only in the
