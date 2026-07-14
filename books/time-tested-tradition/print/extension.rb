@@ -1057,7 +1057,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
         # 2026-07-13). Re-measure; if the widow survives the pull, take the whole
         # paragraph over — this page simply runs a line short at the bottom.
         ext2 = begin
-          dry_run { convert_paragraph node }
+          # QUOTE converter, not paragraph — a paragraph re-measure here mis-metered
+          # the block and double-rendered a quote in MEAT (2026-07-14).
+          dry_run { convert_quote_or_verse node }
         rescue StandardError
           nil
         end

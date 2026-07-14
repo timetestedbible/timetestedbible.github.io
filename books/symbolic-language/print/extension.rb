@@ -1047,10 +1047,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       pull = (deficit / line_h).ceil * line_h + line_h * 0.5
       if first_h - pull >= min_chunk + line_h * 0.5
         shorten_page_bottom pull
-        # Re-measure; if the widow survives the pull, take the whole paragraph
-        # over — this page simply runs a line short at the bottom.
+        # Re-measure with the QUOTE converter (a paragraph re-measure here mis-metered
+        # the block and double-rendered Isaiah 14:12-15, 2026-07-14); if the widow
+        # survives the pull, take the whole quote over — this page runs a line short.
         ext2 = begin
-          dry_run { convert_paragraph node }
+          dry_run { convert_quote_or_verse node }
         rescue StandardError
           nil
         end
