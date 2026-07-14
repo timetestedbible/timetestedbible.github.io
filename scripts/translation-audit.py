@@ -222,7 +222,7 @@ LIMITS = {
     'BSB': ('public domain (CC0, Bible Hub)', None), 'BLB': ('public domain (CC0, Bible Hub)', None),
     'own-rendering': ('author’s own rendering', None),
     'Hebrew': ('author’s rendering of Hebrew Gospels', None),
-    'NKJV': ('© Thomas Nelson', 250),
+    'NKJV': ('© Thomas Nelson', 500),
     'ESV': ('© Crossway', 500),
     'AMP': ('© Lockman', 1000),
     'NASB': ('© Lockman', 1000),

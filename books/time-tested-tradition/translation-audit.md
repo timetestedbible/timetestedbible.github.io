@@ -14,8 +14,8 @@ Gratis limits and required notices: books/copyright-policies/.
 | ASV | public domain | 33 | 55 | 0 | 55 | — | — |
 | JPS | public domain (1917) | 30 | 44 | 0 | 44 | — | — |
 | own-rendering | author’s own rendering | 11 | 22 | 2 | 24 | — | — |
-| NASB | © Lockman | 12 | 21 | 0 | 21 | 1000 | 979 (OK) |
 | Darby | public domain | 13 | 21 | 0 | 21 | — | — |
+| NASB | © Lockman | 12 | 21 | 0 | 21 | 1000 | 979 (OK) |
 | LXX | public domain (Brenton 1851) | 5 | 18 | 0 | 18 | — | — |
 | DRB | public domain | 6 | 14 | 0 | 14 | — | — |
 | ESV | © Crossway | 5 | 6 | 0 | 6 | 500 | 494 (OK) |

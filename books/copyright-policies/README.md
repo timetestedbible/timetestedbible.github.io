@@ -12,7 +12,7 @@ CHAPTER PASS THAT ADDS OR RELABELS QUOTES.
 | version | gratis limit | % of work cap | notice required | policy file |
 |---|---|---|---|---|
 | KJV, AKJV, ASV, YLT, JPS 1917, Darby, DRB, Smith's, Brenton LXX | none (public domain, US) | — | customary only | public-domain.md |
-| NKJV | **250 verses** | 25% | yes | nkjv-thomas-nelson.md |
+| NKJV | 500 verses | 25% (+ half-Bible-book cap; commentary exclusion) | yes | nkjv-thomas-nelson.md |
 | ESV | 500 verses | 25% (+ half-book cap; commentary exclusion) | yes | esv-crossway.md |
 | NASB | 1,000 verses | 50% | yes | nasb-amp-lockman.md |
 | AMP | 1,000 verses | 50% | yes | nasb-amp-lockman.md |
@@ -21,31 +21,38 @@ CHAPTER PASS THAT ADDS OR RELABELS QUOTES.
 
 ## Compliance standing (audited 2026-07-14)
 
-**MEAT** — comfortably clear. NKJV 69 of 250; ESV 3 of 500; AMP 3 of 1,000;
-one BSB/BLB quote (free); everything else public domain or the author's own
-rendering. Copyright page carries KJV/ASV/BSB/BLB/NKJV/ESV/AMP notices — all
-present translations covered.
+**MEAT** — comfortably clear on counts. NKJV 69 of 500; ESV 3 of 500; AMP
+3 of 1,000; one BSB quote (free); everything else public domain or the
+author's own rendering. Copyright page carries KJV/ASV/BSB/BLB/NKJV/ESV/AMP
+notices — all present translations covered.
 
-- FLAG (ESV): Crossway's gratis policy excludes use in "a commentary or
-  other biblical reference work." A book with a symbol glossary could be
-  argued into that category. With only 3 ESV verses in the whole book, the
-  cheap insurance is to re-source those 3 quotes to KJV/ASV and drop ESV
-  entirely — or get written permission. Author's call.
+- FLAG (ESV + NKJV): BOTH publishers exclude "a commentary or other
+  Biblical Reference work" from gratis use — regardless of verse count. A
+  book with a symbol glossary could be argued into that category. Options:
+  treat the books as argued monographs (not reference works — author's
+  judgment), seek written permission, or re-source the ESV 3 and NKJV 69
+  to KJV/public-domain and moot the question. Author's call.
 
-**TTT 2nd ed** — clear on everything LABELED (NASB 21 of 1,000; ESV 6 of
-500; AMP 3 of 1,000), but 67 block quotes (166 verses) plus ~60 inline
-quotes are UNLABELED MODERN text (the 1st edition quoted KJV/NKJV/ESV/AMP/
-NLT by preference without marking versions). Worst case, if every one of
-those ~226 verses is NKJV, the book sits at ~226 of NKJV's 250-verse limit —
-inside, but with no headroom for growth.
+**TTT 2nd ed** (the 1st edition is being PULLED — compliance targets the
+2nd edition only) — clear on everything LABELED (NASB 21 of 1,000; ESV 6
+of 500; AMP 3 of 1,000), but 67 block quotes (166 verses) plus ~60 inline
+quotes are UNLABELED MODERN text carried over from the 1st edition
+(quoted KJV/NKJV/ESV/AMP/NLT/NIV by preference without marking versions).
+Worst-case NKJV ceiling — every unidentified verse plus the AKJV-classified
+bucket (135, which NKJV can masquerade as) — is ~361 of NKJV's 500: inside
+the limit, with real headroom.
 
-- REQUIRED before ship: a labeling pass over the unidentified quotes (list
-  in books/time-tested-tradition/translation-audit.md). Each quote gets its
-  version named in the citation (MEAT house style). Where the wording isn't
-  load-bearing, prefer re-sourcing to KJV/public-domain to reclaim headroom.
-- Acts 17:30 in the Introduction is NLT verbatim: the copyright page carries
-  NO NLT notice today. Add Tyndale's credit line (nlt-tyndale.md) or
-  re-source the quote.
+- REQUIRED before the 2nd edition ships: a labeling pass over the
+  unidentified quotes (list in books/time-tested-tradition/
+  translation-audit.md). Each quote gets its version named in the citation
+  (MEAT house style); re-source to KJV/public-domain where wording isn't
+  load-bearing.
+- Sampled identifications already in the appendix: Acts 17:30 (Intro) is
+  NLT verbatim; Habakkuk 1:5-17 (ch. 20) reads as NIV. NEITHER has a
+  notice on TTT's copyright page today — add Tyndale's and Biblica's
+  credit lines for whatever the labeling pass confirms, or re-source.
+- The NKJV/ESV commentary-exclusion flag above applies to TTT as well
+  (TTT is argument, not reference — an easier case than MEAT's glossary).
 - The copyright page keys KJV/BSB/LXX/NASB/NKJV/ESV/AMP but the text also
   quotes ASV (55), JPS (44), Darby (21), DRB (14), Smith's (2) — public
   domain, no legal notice needed, but the "marked X" key should name them
@@ -60,9 +67,8 @@ inside, but with no headroom for growth.
   public-domain texts (bibles/); ≥0.75 word-containment claims a match.
   CAUTION: NKJV shares much vocabulary with AKJV/KJV — some of TTT's
   "AKJV" bucket (135 verses) may actually be NKJV. The labeling pass
-  resolves this; until then treat AKJV+UNIDENTIFIED (~301 verses) as the
-  true worst-case NKJV ceiling — OVER the 250 limit, which is another
-  reason the labeling pass is required, not optional.
+  resolves this; until then the worst-case NKJV ceiling is
+  AKJV+UNIDENTIFIED (~361 verses incl. inline) of the 500 limit.
 - The 25%/50% caps are nowhere near binding: both books are hundreds of
   pages of original prose; no single translation approaches a quarter of
   the text.
@@ -76,4 +82,4 @@ inside, but with no headroom for growth.
 | crossway.org/permissions | fetched directly 2026-07-14 (esv-crossway.md) |
 | lockman.org/permission-to-quote-copyright-trademark-information | fetched directly 2026-07-14 (nasb-amp-lockman.md) |
 | tyndale.com/permissions | via search excerpts 2026-07-14; page fetch not attempted |
-| harpercollinschristian.com/permissions (NKJV) | BOT-BLOCKED (403) 2026-07-14 — terms taken from secondary sources; AUTHOR: verify against the copyright page of a printed NKJV Bible or the publisher site in a browser |
+| harpercollinschristian.com/permissions (NKJV) | fetched directly 2026-07-14 via headless Chrome (plain fetch 403s); full page text cached in cache/ — current policy is 500 verses, superseding the 250 in older secondary sources |
