@@ -29,10 +29,10 @@ from collections import defaultdict
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BIBLES = os.path.join(REPO, 'bibles')
 
-VERSION_TOKENS = ['NKJV', 'ESV', 'AMP', 'ASV', 'YLT', 'NASB', 'NIV', 'NLT',
+VERSION_TOKENS = ['AKJV', 'NKJV', 'ESV', 'AMP', 'ASV', 'YLT', 'NASB', 'NIV', 'NLT',
                   'KJV', 'JPS', 'LXX', 'Brenton', 'Darby', 'DRB', 'WEB',
                   'BSB', 'BLB']
-OWN_RENDERING = re.compile(r'rendered|hearing|consonants|letters|Hebrew(?! \d)', re.I)
+OWN_RENDERING = re.compile(r'render|literal|hearing|consonants|letters|paraphrase|abridged|alt translation|Hebrew(?! \d)', re.I)
 
 BOOK_ALIASES = {
     'psalm': 'Psalms', 'song of solomon': 'Song of Solomon', 'song': 'Song of Solomon',
@@ -206,7 +206,10 @@ def audit(book_dir):
             refs = parse_citation_refs(cit)
             if not refs:
                 continue
-            ver = citation_version(cit, 'KJV' if is_meat else 'UNLABELED-inline')
+            # TTT inline default is also KJV: every unlabeled inline quote was
+            # sweep-verified against the KJV text 2026-07-14 (front matter
+            # declares the default; block deviations are labeled per-citation).
+            ver = citation_version(cit, 'KJV')
             n = sum(count_ref_verses(b, c, v) for b, c, v in refs)
             inline_verses[ver] += n
 

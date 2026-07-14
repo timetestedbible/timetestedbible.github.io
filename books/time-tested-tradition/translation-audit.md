@@ -7,90 +7,20 @@ Gratis limits and required notices: books/copyright-policies/.
 
 | version | status | block quotes | verses (blocks) | verses (inline) | total | gratis limit | headroom |
 |---|---|---|---|---|---|---|---|
-| KJV | public domain (US) | 211 | 315 | 0 | 315 | — | — |
-| UNIDENTIFIED-MODERN | UNKNOWN — identify & label | 67 | 166 | 0 | 166 | — | — |
-| AKJV | public domain | 65 | 135 | 0 | 135 | — | — |
-| UNLABELED-inline | UNKNOWN — identify & label | 0 | 0 | 60 | 60 | — | — |
+| KJV | public domain (US) | 213 | 321 | 60 | 381 | — | — |
+| AKJV | public domain | 67 | 156 | 0 | 156 | — | — |
+| ESV | © Crossway | 30 | 58 | 0 | 58 | 500 | 442 (OK) |
 | ASV | public domain | 33 | 55 | 0 | 55 | — | — |
 | JPS | public domain (1917) | 30 | 44 | 0 | 44 | — | — |
-| own-rendering | author’s own rendering | 11 | 22 | 2 | 24 | — | — |
+| own-rendering | author’s own rendering | 24 | 41 | 2 | 43 | — | — |
+| NIV | © Biblica/Zondervan | 13 | 38 | 0 | 38 | 500 | 462 (OK) |
+| NASB | © Lockman | 13 | 22 | 0 | 22 | 1000 | 978 (OK) |
 | Darby | public domain | 13 | 21 | 0 | 21 | — | — |
-| NASB | © Lockman | 12 | 21 | 0 | 21 | 1000 | 979 (OK) |
-| LXX | public domain (Brenton 1851) | 5 | 18 | 0 | 18 | — | — |
+| LXX | public domain (Brenton 1851) | 6 | 19 | 0 | 19 | — | — |
+| NKJV | © Thomas Nelson | 4 | 15 | 0 | 15 | 500 | 485 (OK) |
 | DRB | public domain | 6 | 14 | 0 | 14 | — | — |
-| ESV | © Crossway | 5 | 6 | 0 | 6 | 500 | 494 (OK) |
+| BSB | public domain (CC0, Bible Hub) | 5 | 12 | 0 | 12 | — | — |
 | LXX-Brenton | public domain (Brenton 1851) | 5 | 6 | 0 | 6 | — | — |
 | AMP | © Lockman | 1 | 3 | 0 | 3 | 1000 | 997 (OK) |
 | Smith | public domain | 2 | 2 | 0 | 2 | — | — |
-
-## Unidentified quotes (67) — need version labels
-
-| file | citation | opening words |
-|---|---|---|
-| 01-introduction.adoc | Proverbs 18:15 | the heart of the discerning acquires knowledge for… |
-| 01-introduction.adoc | Acts 17:30 | god overlooked people s ignorance about these things… |
-| 01-introduction.adoc | Proverbs 18:17 | the one who states his case first seems… |
-| 02-inherited-lies.adoc | Mark 7:13 | you nullify the word of god by your… |
-| 02-inherited-lies.adoc | Colossians 2:8 | see to it that no one takes you… |
-| 03-principles-of-evaluation.adoc | Deuteronomy 30:11 | now what i am commanding you today is… |
-| 03-principles-of-evaluation.adoc | Psalms 104:19 | he made the moon to mark the seasons… |
-| 03-principles-of-evaluation.adoc | Psalms 19:1-4 | the heavens declare the glory of god and… |
-| 03-principles-of-evaluation.adoc | Proverbs 18:17 | the one who states his case first seems… |
-| 04-alleged-authority-of-sanhedrin.adoc | Deuteronomy 19:15 | a single witness shall not suffice against a… |
-| 04-alleged-authority-of-sanhedrin.adoc | Deuteronomy 17:11 | according to the teaching that they will teach… |
-| 04-alleged-authority-of-sanhedrin.adoc | Deuteronomy 17:8 | if any case arises requiring decision between one… |
-| 05-where-does-the-day-start.adoc | Ezekiel 5:5 | thus says the lord this is jerusalem i… |
-| 06-when-does-the-day-start.adoc | Psalm 139:11–12 | if i say surely the darkness will hide… |
-| 06-when-does-the-day-start.adoc | Leviticus 23:26–32 | the lord said to moses the tenth day… |
-| 06-when-does-the-day-start.adoc | Exodus 23:2 | you shall not fall in with the many… |
-| 06-when-does-the-day-start.adoc | Psalm 119:89 | forever o lord your word is firmly fixed… |
-| 06-when-does-the-day-start.adoc | Exodus 12:4-10 | you shall keep it until the 14th day… |
-| 06-when-does-the-day-start.adoc | Exodus 16:23 | this is what the lord has commanded tomorrow… |
-| 06-when-does-the-day-start.adoc | 1 Samuel 19:11 | saul sent messengers to david s house to… |
-| 06-when-does-the-day-start.adoc | Matthew 6:34 | therefore do not be anxious about tomorrow for… |
-| 06-when-does-the-day-start.adoc | Luke 13:32 | behold i cast out demons and perform cures… |
-| 07-when-does-the-month-start.adoc | Psalms 81:3 | blow in the renewed moon the shofar in… |
-| 07-when-does-the-month-start.adoc | Revelation 12:1 | and was seen a great sign in the… |
-| 07-when-does-the-month-start.adoc | Genesis 37:9-10 | then he had another dream and he told… |
-| 07-when-does-the-month-start.adoc | Psalms 19:4-6 | in the heavens god has pitched a tent… |
-| 07x-lucifers-declared-plan.adoc | Isaiah 14:12-15 (alt translation) | i will rise into the sky i will… |
-| 08-when-does-the-year-start.adoc | Revelation 12:1 | and was seen a great sign in the… |
-| 10-when-is-the-sabbath.adoc | Ezekiel 46:1 | this is what the lord god says the… |
-| 10-when-is-the-sabbath.adoc | Joshua 5:10-12 | now the children of israel camped in gilgal… |
-| 11-the-day-of-saturn.adoc | Isaiah 47:13–14 | you are wearied with your many counsels let… |
-| 11-the-day-of-saturn.adoc | Leviticus 18:3–4 | you shall not do as they do in… |
-| 11-the-day-of-saturn.adoc | Deuteronomy 4:19 | and beware lest you raise your eyes to… |
-| 11-the-day-of-saturn.adoc | Jeremiah 17:24-27 | if you are careful to obey me declares… |
-| 12-32-ad-resurrection.adoc | Luke 2:1-5 | in those days caesar augustus issued a decree… |
-| 12-32-ad-resurrection.adoc | Luke 2:2 | this was the first census that took place… |
-| 12-32-ad-resurrection.adoc | Daniel 9:25 | your bible probably translates it something closer to… |
-| 12-32-ad-resurrection.adoc | Daniel 9:24 | seventy weeks have been determined upon thy people… |
-| 12-32-ad-resurrection.adoc | Daniel 9:25 | there shall be 70 sevened and 70 sixty… |
-| 12-32-ad-resurrection.adoc | Daniel 9:25 | there shall be 70 sevened and jubilee sixty… |
-| 12-32-ad-resurrection.adoc | Ezra 7:7–9 | and the year seven to artaxerxes king of… |
-| 14-passion-week.adoc | Mark 10:34 | who will mock him and spit on him… |
-| 14-passion-week.adoc | Acts 2:31 | he foresaw and spoke about the resurrection of… |
-| 16-the-path-to-salvation.adoc | 1 John 3:4 | whoever commits sin also commits lawlessness and sin… |
-| 16-the-path-to-salvation.adoc | Luke 6:40 | a disciple is not above his teacher but… |
-| 16-the-path-to-salvation.adoc | Romans 7:15 | for i do not understand my own actions… |
-| 16-the-path-to-salvation.adoc | Romans 7:16-25 | so then with the mind i myself serve… |
-| 17-commands-to-follow.adoc | 2 Timothy 3:16–17 | all scripture is god breathed and is useful… |
-| 17-commands-to-follow.adoc | Ephesians 4:17-20 | now this i say and testify in the… |
-| 17-commands-to-follow.adoc | Ezekiel 33:13 | if i tell the righteous man that he… |
-| 17-commands-to-follow.adoc | Romans 11:17-24 | but if some of the branches were broken… |
-| 18-appointed-times.adoc | Psalms 81:3 | you shall blow with the new moon shofar… |
-| 18-appointed-times.adoc | Numbers 28:11 | and in the beginnings of your months you… |
-| 18-appointed-times.adoc | Exodus 12:3,6 | tell the whole congregation of israel that on… |
-| 18-appointed-times.adoc | Leviticus 23:5-8 | the passover to the lord begins at twilight… |
-| 18-appointed-times.adoc | Leviticus 16:15-34 | and the bullock for the sin offering and… |
-| 18-appointed-times.adoc | Deuteronomy 15:1-3 | at the end of every seven years you… |
-| 19-miscellaneous-commands.adoc | Isaiah 66:16-17 | for by fire and his sword the lord… |
-| 20-usa-is-babylon-the-great.adoc | Habakkuk 2:7-8 | will not your creditors suddenly arise will they… |
-| 20-usa-is-babylon-the-great.adoc | Habakkuk 1:5-17 | i am raising up the babylonians that ruthless… |
-| 20-usa-is-babylon-the-great.adoc | Revelation 17:9 | this calls for a mind with wisdom the… |
-| 20-usa-is-babylon-the-great.adoc | Habakkuk 1:8 | they fly like an eagle swooping to devour… |
-| 21-pre-tribulation-rapture.adoc | "Revelation 18:9, 9:2" | and the smoke of her burning the sun… |
-| 22-blood-moon-over-the-moon-city.adoc | Revelation 4:2 | … |
-| 22-blood-moon-over-the-moon-city.adoc | "Revelation 4:6,8" | … |
-| 22-blood-moon-over-the-moon-city.adoc | "Ezekiel 32:1,7-8" | and it came to pass in the twelfth… |
-| 22-blood-moon-over-the-moon-city.adoc | "Zechariah 1:7,11" | upon the four and twentieth day of the… |
+| NLT | © Tyndale | 1 | 1 | 0 | 1 | 500 | 499 (OK) |
