@@ -734,7 +734,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     theme_font :base do
       ink_prose %(<em>#{sx_stats_line entries}</em>),
         align: :left, size: SX_HEAD_SIZE, margin_bottom: 3, hyphenate: false
-      ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full; (ch N) names the chapter the pages fall in.</em>',
+      ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full.</em>',
         align: :left, size: SX_HEAD_SIZE, margin_bottom: 10, hyphenate: false
       esc = ->(s) { s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
       end_cursor = nil
@@ -748,23 +748,10 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
             margin_top: (first ? 0 : 5), margin_bottom: 1, hyphenate: false
           verses.each do |vd, locs|
             vd_disp = (SX_ONECH_BOOKS.include? book) ? (vd.sub /\A1:/, '') : vd
-            # Locators group by the chapter they fall in: consecutive pages
-            # sharing a printed chapter number take one "(ch N)" suffix —
-            # "45, 61 (ch 5); 292 (ch 16)" — while pages in unnumbered
-            # chapters/inserts keep bare numbers. Pages ascend, and chapters
-            # ascend with them, so consecutive-run grouping is exact.
-            groups = []
-            locs.each do |f, (q, ch)|
-              if (g = groups.last) && g[0] == ch
-                g[1] << [f, q]
-              else
-                groups << [ch, [[f, q]]]
-              end
-            end
-            loc_text = groups.map { |ch, fs|
-              run = fs.map { |f, q| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '
-              ch ? %(#{run} (ch #{ch})) : run
-            }.join '; '
+            # Plain page runs — the author dropped the "(ch N)" locator groups
+            # (2026-07-14: chapter refs clutter the index; pages are the useful
+            # locator). The chapter number stays in scripture-index.json for the web.
+            loc_text = locs.map { |f, (q, _ch)| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '
             text = %(#{vd_disp} · #{loc_text})
             # keep each entry whole: measure it (at turnover width — the
             # conservative side) and, when it cannot fit what remains of the

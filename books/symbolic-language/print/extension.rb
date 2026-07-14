@@ -734,7 +734,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     theme_font :base do
       ink_prose %(<em>#{sx_stats_line entries}</em>),
         align: :left, size: SX_HEAD_SIZE, margin_bottom: 3, hyphenate: false
-      ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full; (ch N) names the chapter the pages fall in.</em>',
+      ink_prose '<em>References are to page numbers; bold numbers mark pages where the verse is quoted in full.</em>',
         align: :left, size: SX_HEAD_SIZE, margin_bottom: 10, hyphenate: false
       esc = ->(s) { s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
       end_cursor = nil
@@ -748,23 +748,10 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
             margin_top: (first ? 0 : 5), margin_bottom: 1, hyphenate: false
           verses.each do |vd, locs|
             vd_disp = (SX_ONECH_BOOKS.include? book) ? (vd.sub /\A1:/, '') : vd
-            # Locators group by the chapter they fall in: consecutive pages
-            # sharing a printed chapter number take one "(ch N)" suffix —
-            # "45, 61 (ch 5); 292 (ch 29)" — while pages in unnumbered
-            # chapters/inserts keep bare numbers. Pages ascend, and chapters
-            # ascend with them, so consecutive-run grouping is exact.
-            groups = []
-            locs.each do |f, (q, ch)|
-              if (g = groups.last) && g[0] == ch
-                g[1] << [f, q]
-              else
-                groups << [ch, [[f, q]]]
-              end
-            end
-            loc_text = groups.map { |ch, fs|
-              run = fs.map { |f, q| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '
-              ch ? %(#{run} (ch #{ch})) : run
-            }.join '; '
+            # Plain page runs — the author dropped the "(ch N)" locator groups
+            # (2026-07-14: chapter refs clutter the index; pages are the useful
+            # locator). The chapter number stays in scripture-index.json for the web.
+            loc_text = locs.map { |f, (q, _ch)| q ? %(<strong>#{f}</strong>) : f.to_s }.join ', '
             text = %(#{vd_disp} · #{loc_text})
             # keep each entry whole: measure it (at turnover width — the
             # conservative side) and, when it cannot fit what remains of the
@@ -1247,14 +1234,15 @@ def ink_chapter_title node, title, opts = {}
     end
     # Drop the chapter title to about the middle of the page; the epigraph stays
     # above it in the top half. (Guard so a long epigraph never pushes it upward.)
-    # The Glossary and Scripture Index start at the top like the reference
-    # sections they are. "How to Use This Book" instead hangs from the FOOT of
+    # The Glossary, Textual and Translation Notes, and Scripture Index start at
+    # the top like the reference sections they are. "How to Use This Book"
+    # instead hangs from the FOOT of
     # its page (author's ruling, 2026-07-06) — whitespace above, last line on
     # the bottom margin, like a printer's note; HOW_TO_USE_SINK carries the
     # measured drop.
     if node.id == 'how-to-use'
       move_down HOW_TO_USE_SINK
-    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
+    elsif !(node.id == 'glossary' || node.id == 'textual-and-translation-notes' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
       mid = bounds.height / 2.0
       mid += CHNUM_BAND if chnum   # the kicker inks above the title; keep the title at mid
       move_cursor_to mid if cursor > mid
