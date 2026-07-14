@@ -1,19 +1,116 @@
 ---
 layout: symbol-study
 symbol_key: scarlet
-title: "Scarlet — Symbol Study"
-description: "Scarlet in Scripture is the dye produced from a crushed worm — the visible mark of covenant blood, whether worn in faithful covering or counterfeited by those who mimic the covenant without its substance."
-strongs: [H8144, H8438, G2847]
-words: [scarlet, scarlet thread, scarlet colour, crimson, scarlet coloured]
+title: Scarlet — Symbol Study
+description: >-
+  Scarlet in Scripture is the dye produced from a crushed worm — the visible mark of covenant blood,
+  whether worn in faithful covering or counterfeited by those who mimic the covenant without its
+  substance.
+strongs:
+  - H8144
+  - H8438
+  - G2847
+words:
+  - scarlet
+  - scarlet thread
+  - scarlet colour
+  - crimson
+  - scarlet coloured
+record_version: 1
+record_type: symbol
+term: Scarlet
+definition: >-
+  Covenant blood displayed outwardly — and counterfeited by those who wear the form without the
+  substance.
+meaning: >-
+  Covenant blood displayed outwardly — and counterfeited by those who wear the form without the
+  substance.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-scarlet
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - scarlet
+      - scarlet thread
+      - scarlet colour
+      - crimson
+      - scarlet coloured
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      Covenant blood displayed outwardly — and counterfeited by those who wear the form without the
+      substance.
+    citations:
+      - Isa 1:18
+      - Josh 2:18
+      - Heb 9:19
+      - Rev 17:4
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      Covenant blood displayed outwardly — and counterfeited by those who wear the form without the
+      substance.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-scarlet
+    citations:
+      - Isa 1:18
+      - Josh 2:18
+      - Heb 9:19
+      - Rev 17:4
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      A deep bright red tinged with orange or yellow, -- of many tints and shades; a vivid or bright
+      red color. 2.
+    status: quoted
+    headword: SCARLET
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Scarlet
 
-**The bloodline of covenant — the death-produced covering that marks what belongs to God, and the color counterfeited by those who wear the form of covenant without the substance.**
+## Approved Definition
 
+**[Covenant](/research/symbols/covenant/) blood displayed outwardly — and counterfeited by those who wear the form without the substance.**
 > *"Come now, and let us reason together, saith the LORD: though your sins be as **scarlet**, they shall be as $[white] as $[snow]; though they be red like **crimson**, they shall be as wool."* — Isa 1:18
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**[Covenant](/research/symbols/covenant/) blood displayed outwardly — and counterfeited by those who wear the form without the substance.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **scarlet** begins: “A deep bright red tinged with orange or yellow, -- of many tints and shades; a vivid or bright red color. 2.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -164,8 +261,7 @@ The bride's lips — the instrument of her speech — are compared to a scarlet 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$blood** — Scarlet is $blood made wearable. The life of the flesh, made visible in blood, made *portable* through the scarlet material. Every ritual use of scarlet involves carrying and applying blood — the shed life that, when offered, atones, and when taken, accuses.
 
 - **$harlot** — The covenant-breaker who wears scarlet as seduction rather than as sacrifice. Jer 4:30 and Rev 17:4 show the same pattern: scarlet + gold as the uniform of misdirected devotion — the form of covenant loyalty spent on foreign masters.
@@ -248,3 +344,37 @@ KJV translates H8144 as "scarlet," "crimson," and "scarlet thread." H8438 appear
 - **$babylon_the_great** — The last iteration of the Babylon system wears purple and scarlet but lacks blue and white linen. What does the full identification profile reveal about the counterfeit covenant structure?
 - **$fire** — God's holy standard in active contact. When scarlet is cast into the red heifer's burning (Num 19:6), the blood-vehicle is consumed by the standard itself. What does it mean for the covering to be refined by the fire?
 - **$white** — The opposite of scarlet in Isa 1:18. What does whiteness represent, and how does the scarlet-to-white transformation work across Scripture?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **scarlet** begins:
+
+> “Scar”let, n. Etym: [OE. scarlat, scarlet, OF. escarlate, F. écarlate (cf. Pr. escarlat, escarlata, Sp. & Pg. escarlata, It. scarlatto, LL. scarlatum), from Per. sakirlat.] Defn: A deep bright red tinged with orange or yellow, -- of many tints and shades; a vivid or bright red color.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**[Covenant](/research/symbols/covenant/) blood displayed outwardly — and counterfeited by those who wear the form without the substance.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *scarlet*, *scarlet thread*, *scarlet colour*, *crimson*, *scarlet coloured*. The English-form sweep found **56 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- The printed texts establish scarlet's association with sin, a rescue signal, blood-sprinkling materials, and corrupt luxury, but they do not explicitly identify all scarlet as wearable covenant blood or describe Revelation's scarlet clothing as a counterfeit of covenant substance. The unified authentic-versus-counterfeit scheme therefore exceeds what the citations alone directly demonstrate.
+
+- One could argue DIVERGENT: the consensus's central identification is 'sin's stain,' and the book replaces that center with its near-opposite (the cleansing blood), reading even Isaiah 1:18 through a blood lens; sin-as-scarlet and blood-as-scarlet are different referents, and Isaiah 1:18 ('your sins be as scarlet') supports the sin reading rather than 'covenant blood made wearable,' making the printed citations an awkward fit for the book's thesis.
+
+- The dominant reflexive association remains sin via Isa 1:18, which the entry neither states nor foregrounds, so the wearable-blood synthesis may be charged with sidelining the primary consensus meaning and over-unifying disparate texts.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

@@ -1,19 +1,111 @@
 ---
 layout: symbol-study
 symbol_key: israel
-title: "Israel — Symbol Study"
-description: "Israel is defined by character — contending with God and prevailing — and has included non-descendants from its founding. The NT ekklesia is the same assembly (qahal) that stood at Sinai."
-strongs: [H3478, G2474, H3479]
-words: [Israel, Israelite, Israelites]
+title: Israel — Symbol Study
+description: >-
+  Israel is defined by character — contending with God and prevailing — and has included
+  non-descendants from its founding. The NT ekklesia is the same assembly (qahal) that stood at
+  Sinai.
+strongs:
+  - H3478
+  - G2474
+  - H3479
+words:
+  - Israel
+  - Israelite
+  - Israelites
+record_version: 1
+record_type: symbol
+term: Israel
+definition: >-
+  The covenant Name given to Jacob and borne at several scales: the man, his descendants, the
+  nation, or the faithful people who prevail with God. Context determines the sense; blood alone
+  does not settle it.
+meaning: >-
+  The covenant Name given to Jacob and borne at several scales: the man, his descendants, the
+  nation, or the faithful people who prevail with God. Context determines the sense; blood alone
+  does not settle it.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-israel
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - israel
+      - israelite
+      - israelites
+      - israel
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The covenant Name given to Jacob and borne at several scales: the man, his descendants, the
+      nation, or the faithful people who prevail with God. Context determines the sense; blood alone
+      does not settle it.
+    citations:
+      - Gen 32:28
+      - Rom 9:6
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The covenant Name given to Jacob and borne at several scales: the man, his descendants, the
+      nation, or the faithful people who prevail with God. Context determines the sense; blood alone
+      does not settle it.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-israel
+    citations:
+      - Gen 32:28
+      - Rom 9:6
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: null
+    status: unavailable
+    headword: null
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Israel
 
-**God's covenant people — defined from the beginning by character and covenant, not by bloodline alone.**
+## Approved Definition
 
+**The [covenant](/research/symbols/covenant/) [Name](/research/symbols/name/) given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.**
 > *"Thy name shall be called no more Jacob, but **Israel**: for as a prince hast thou power with God and with men, and hast prevailed."* — Gen 32:28
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The [covenant](/research/symbols/covenant/) [Name](/research/symbols/name/) given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+No exact Webster headword has yet been matched to **Israel**.
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -120,8 +212,7 @@ The framework is structural, not merely historical. Ezek 47:22-23 places strange
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$jacob** — The pre-transformation name. Isaiah uses both names interchangeably in poetic parallelism. Both appear in positive and negative contexts. God permanently identifies Himself as "God of Jacob" (Exo 3:15).
 
 - **$church-ekklesia** — G1577 ekklesia IS the LXX rendering of H6951 qahal. Acts 7:38 calls Israel at Sinai "the ekklesia in the wilderness." The "church" is Israel's assembly — same word, same inclusion mechanism (Exo 12:48), same one-law principle (Num 15:15).
@@ -192,3 +283,33 @@ Hos 1:9-10, Ezek 37:11-22, Amos 9:7-9, Mat 10:6, Mat 15:24, Acts 1:6
 - **$ephraim** — God's firstborn within Israel, scattered among the nations, destined for reunion with $judah. The "fullness of nations" promise.
 - **$judah** — The sceptre line, the lawgiver, the tribe whose name means praise. How Judah's character arc from seller to substitute prefigures the messianic role.
 - **$egypt** — The bondage-system Israel is defined by leaving. Why Egypt's name shares a root with $rock, and why Egypt is healable while $babylon is not.
+
+---
+
+## Dictionary Comparison
+
+The local 1913 Webster dataset has no exact headword for **Israel** under the display form used by the glossary. The biblical study therefore begins with the ordinary physical or grammatical sense visible in context and tests whether Scripture assigns it a more precise figurative sense.
+
+## Competing Definitions Tested
+
+- Genesis 32:28 explains Jacob’s personal renaming but does not itself establish a universal membership test for Israel. Romans 9:6 shows that descent alone is insufficient, yet in context it can be read as distinguishing an elect remnant within ethnic Israel rather than defining Israel broadly by individual character or admitting non-descendants. The printed texts therefore support the exclusion of blood as sufficient more clearly than they establish the book’s positive ‘covenant and character’ criterion.
+
+- The consensus notes deep, unresolved division between spiritual-Israel and ethnic-Israel readings, and the book's flat 'not blood' silently rejects the widespread dispensationalist alternative; one could argue this makes the book a REFINED narrowing rather than a MATCH. However, since the consensus's own primary identification already privileges the non-ethnic reading, siding with it is agreement with the consensus core, not a boundary change to it.
+
+- Book's singular focus on the personal rename and character criterion underplays the collective Church-as-Israel identification that forms the historical mainstream of the consensus primaries.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The [covenant](/research/symbols/covenant/) [Name](/research/symbols/name/) given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *israel*, *israelite*, *israelites*, *israel*. The English-form sweep found **2318 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

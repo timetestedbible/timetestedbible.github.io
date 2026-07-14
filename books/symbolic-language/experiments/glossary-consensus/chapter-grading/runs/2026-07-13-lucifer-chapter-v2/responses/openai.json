@@ -1,0 +1,451 @@
+{
+  "id": "resp_0faf93b9970d4f5c006a547ebb5f84819384fded60d6cbbeb1",
+  "object": "response",
+  "created_at": 1783922363,
+  "status": "incomplete",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": null,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": {
+    "reason": "max_output_tokens"
+  },
+  "instructions": "Return only the requested structured result. Apply the frozen rubric symmetrically, separate claim categories, and request only outcome-changing evidence.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0faf93b9970d4f5c006a547ebc10588193a4359622366ec39e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0faf93b9970d4f5c006a547ec872e8819384831533c8b06580",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0faf93b9970d4f5c006a547ed46f60819391410660ef948f4d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0faf93b9970d4f5c006a547ee0b97c8193a4c9a5c908c7d30f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0faf93b9970d4f5c006a547eed2c20819380d8717d83d02320",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0faf93b9970d4f5c006a547efa15588193bb07968e191fd167",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0faf93b9970d4f5c006a547f062c9c8193a9381ea341eb1633",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0faf93b9970d4f5c006a547f10a61c819394ed4e97f2fa9b2b",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0faf93b9970d4f5c006a547f12eed88193a0c167de71efb646",
+      "type": "message",
+      "status": "incomplete",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"overall_verdict\":\"DOES_NOT_MEET_STANDARD\",\"verdict_reason\":\"The conventional readings of Isaiah 14—“son of dawn,” “north,” “throne,” and “make myself like the Most High”—are admissible and strongly coherent as a unified boast of ascent and usurpation. Several proposed secondary hearings are possible wordplays, but the chapter does not establish their intentional conjunction. In particular, “son and bearer of blackness” is not shown to be a grammatical reading of בן־שחר, “covered lunar seat” blends separate lexical possibilities into one rendering, and the proposed silencing sense of אדמה lacks enough directly applicable grammatical evidence. More decisively, the chapter does not perform Rule 4’s required comparison with the strongest rival joint model: a royal or supernatural usurper ascending to the divine assembly in the north above the stars and clouds. That rival explains the immediate discourse with fewer unsupported steps. The eclipse-and-calendar synthesis therefore remains an interesting hypothesis rather than the demonstrated integrated meaning asserted by the chapter.\",\"rule_audit\":[{\"rule\":\"1\",\"result\":\"PASS\",\"reason\":\"The chapter expressly retains the received readings and does not argue that Masoretic pointing wins merely by traditional status. It treats alternate vocalizations as possible additional hearings.\"},{\"rule\":\"2\",\"result\":\"PASS\",\"reason\":\"The chapter generally cites versions, lexicons, and grammars for their linguistic claims rather than making their authority or popularity dispositive. References to Strong’s, Gesenius, and the ASV still require verification of the underlying data, but no reading is said to win solely because those authorities endorse it.\"},{\"rule\":\"3\",\"result\":\"FAIL\",\"reason\":\"The gate is not applied symmetrically or claim by claim. The standard readings pass, but “son and bearer of blackness” is not shown to fit the construct phrase grammatically; “covered lunar seat” conflates the throne and full-moon senses rather than presenting one morphologically defined candidate; and the transitive-benefactive Hithpael analysis of the silence root is asserted without a sufficiently close attested construction. Passing possibilities are also repeatedly treated as intentional double readings without a separate comparative demonstration.\"},{\"rule\":\"4\",\"result\":\"FAIL\",\"reason\":\"The symbolic background was supplied independently, but the chapter does not freeze it explicitly, map duplicated evidence, compare complete rival joint models, or state reversal conditions. It never tests its eclipse model against the strongest contextual rival: an ascent-to-the-divine-council boast using ordinary throne, north, stars, cloud, and Most High language. Compatibility and thematic unification are offered, but comparative expectedness is not established.\"}],\"claim_ledger\":[{\"claim\":\"בן־שחר can be rendered as “son and bearer of blackness” in addition to “son of dawn.”\",\"category\":\"LEXICAL_OR_GRAMMATICAL\",\"book_candidate\":\"שחר is heard from the verb “be black,” with בן supplying characterization: “son/bearer of blackness.”\",\"strongest_rival\":\"שחר is the independently attested noun “dawn” in the ordinary construct phrase “son of dawn.”\",\"book_admission\":\"FAIL\",\"rival_admission\":\"PASS\",\"comparison\":\"RIVAL_BETTER_SUPPORTED\",\"evidence_origins\":[\"TARGET_CHAPTER\"],\"reason\":\"The cited Job occurrence supports a verb meaning “be/grow black,” but the chapter does not show that this verbal form can serve as the nominal complement required by בן־. Calling it wordplay may support an allusion, but it does not license the displayed translation “son and bearer of blackness.”\",\"gap_owner\":\"CHAPTER_OVERCLAIM\",\"outcome_changing_evidence\":\"An independently attested Biblical Hebrew construction in which בן־ governs this verbal form or an independently attested noun שחר meaning “blackness” would change the gate result. Otherwise the sentence should be narrowed to a possible consonantal echo.\"},{\"claim\":\"הר מועד can carry the sense “high place of the appointed assembly,” connecting appointment, meeting, and convocation.\",\"category\":\"LEXICAL_OR_GRAMMATICAL\",\"book_candidate\":\"מועד invokes appointed time, place, and meeting, with Leviticus 23 linking appointed times to convocations.\",\"strongest_rival\":\"The phrase simply denotes the mountain of assembly or divine council, without a calendrical implication.\",\"book_admission\":\"PASS\",\"rival_admission\":\"PASS\",\"comparison\":\"UNDERDETERMINED\",\"evidence_origins\":[\"TARGET_CHAPTER\"],\"reason\":\"The cited Torah usage independently attests the appointed-time and assembly field. It makes the calendrical resonance admissible, but does not by itself show that Isaiah intends a calendar signal rather than an assembly place.\",\"gap_owner\":\"CHAPTER_OVERCLAIM\",\"outcome_changing_evidence\":\"A contextual or intertextual discriminator tying Isaiah’s particular phrase to calendrical observance, rather than merely to an assembly, would select the book’s fuller sense.\"},{\"claim\":\"ירכתי צפון can also be heard as “the innermost recesses of the hidden place.”\",\"category\":\"LINGUISTIC_VOCALIZATION\",\"book_candidate\":\"צפון is vocalized as a substantivized passive form meaning hidden, concealed, or treasured.\",\"strongest_rival\":\"צפון is the noun “north,” yielding “recesses/sides of the north.”\",\"book_admission\":\"PASS\",\"rival_admission\":\"PASS\",\"comparison\":\"UNDERDETERMINED\",\"evidence_origins\":[\"TARGET_CHAPTER\"],\"reason\":\"The chapter identifies independent uses of the hidden root and the phrase remains coherent if a hidden place is supplied. The conventional north reading is directly supported by Psalm 48’s use of the same phrase for Zion. Both are admissible, but intentional double reference is not demonstrated.\",\"gap_owner\":\"CHAPTER_OVERCLAIM\",\"outcome_changing_evidence\":\"A close Biblical Hebrew parallel where ירכתי governs a substantivized צפונ־ meaning a hidden place, or evidence that Isaiah deliberately invokes both Psalm 48 and the hidden-root passages, would materially strengthen the alternate.\"},{\"claim\":\"עב contributes the specific image of a dark cloud or cloud-mass.\",\"category\":\"LEXICAL_OR_GRAMMATICAL\",\"book_candidate\":\"The cloud is thick or dark, reinforcing the chapter’s darkness pattern.\",\"strongest_rival\":\"The word denotes a cloud or cloud-mass in ordinary divine-ascent imagery without encoding moral darkness.\",\"book_admission\":\"PASS\",\"rival_admission\":\"PASS\",\"comparison\":\"UNDERDETERMINED\",\"evidence_origins\":[\"TARGET_CHAPTER\"],\"reason\":\"A thick or dark cloud is lexically plausible. The further claim that its darkness identifies a counterfeit lunar phase is symbolic inference, not a consequence of the lexical sense alone.\",\"gap_owner\":\"NONE\",\"outcome_changing_evidence\":\"A close canonical use joining this exact cloud expression to lunar concealment or counterfeit light would make the proposed symbolism comparatively discriminating.\"},{\"claim\":\"כסאי can be heard as both “my throne” and “my full moon.”\",\"category\":\"LINGUISTIC_VOCALIZATION\",\"book_candidate\":\"Removing the first-person suffix leaves כסא, identified with a full-moon lexeme attested in Proverbs 7:20 and related to כסה in Psalm 81:3.\",\"strongest_rival\":\"כסאי is the ordinary suffixed noun “my throne,” confirmed by “exalt” and the following verb “sit.”\",\"book_admission\":\"PASS\",\"rival_admission\":\"PASS\",\"comparison\":\"RIVAL_BETTER_SUPPORTED\",\"evidence_origins\":[\"TARGET_CHAPTER\",\"BACKGROUND_PACKET\"],\"reason\":\"The chapter identifies independent full-moon loci, so the alternate reaches the low admission threshold. The immediate syntax, however, strongly selects “my throne”: it is exalted and then occupied. The consonantal overlap can support wordplay, but intentional lunar reference requires additional comparative evidence.\",\"gap_owner\":\"CHAPTER_OVERCLAIM\",\"outcome_changing_evidence\":\"Document the vocalization and suffix morphology directly, establish the full-moon sense independently of translation status, and provide an Isaiah-context discriminator showing that the lunar sense predicts details the throne-only rival does not explain.\"},{\"claim\":\"“My covered lunar seat” is a linguistically available rendering of כסאי.\",\"category\":\"LEXICAL_OR_GRAMMATICAL\",\"book_candidate\":\"The throne, covering etymology, and full-moon homograph combine into one covered lunar seat.\",\"strongest_rival\":\"The word means “my throne”; any covering or lunar association is a later symbolic synthesis rather than part of its lexical translation.\",\"book_admission\":\"FAIL\",\"rival_admission\":\"PASS\",\"comparison\":\"RIVAL_BETTER_SUPPORTED\",\"evidence_origins\":[\"TARGET_CHAPTER\",\"BACKGROUND_PACKET\"],\"reason\":\"Even if throne and full moon are separate admissible hearings, the phrase “covered lunar seat” simultaneously imports both plus an etymological covering association. The chapter does not establish a single lexeme or grammatical construction bearing that composite meaning.\",\"gap_owner\":\"CHAPTER_OVERCLAIM\",\"outcome_changing_evidence\":\"Retain the phrase only as an explicitly labeled symbolic synthesis, or supply independent lexical evidence that the relevant form itself denotes a covered lunar seat.\"},{\"claim\":\"Job 26:9 supports a deliberate throne/full-moon double hearing in which cloud covers either a throne or the moon’s face.\",\"category\":\"LINGUISTIC_VOCALIZATION\",\"book_candidate\":\"כסה is read as the full-moon noun, producing “he encloses the face of the full moon.”\",\"strongest_rival\":\"The form denotes God’s throne, whose face is covered by cloud.\",\"book_admission\":\"PASS\",\"rival_admission\":\"PASS\",\"comparison\":\"UNDERDETERMINED\",\"evidence_origins\":[\"TARGET_CHAPTER\",\"BACKGROUND_PACKET\"],\"reason\":\"Both resulting clauses are coherent, assuming the independently alleged full-moon lexeme. Coherence and consonantal overlap establish possible wordplay, not authorial intent or a controlling meaning for Isaiah 14.\",\"gap_owner\":\"CHAPTER_MISSING_EVIDENCE\",\"outcome_changing_evidence\":\"Textual, poetic, or intertextual evidence showing that Job intentionally coordinates the lunar and throne senses would make it an independent discriminator rather than another instance of the same proposed wordplay.\"},{\"claim\":\"אדמה can mean “I will bring the Highest to silence for myself.”\",\"category\":\"LINGUISTIC_VOCALIZATION\",\"book_candidate\":\"The consonants are parsed as a Hithpael of a cease/silence/destroy root, benefactive for the subject and transitive toward לעליון.\",\"strongest_rival\":\"The form comes from the resemblance root and means “I will make myself like the Most High.”\",\"book_admission\":\"UNDERDETERMINED\",\"rival_admission\":\"PASS\",\"comparison\":\"RIVAL_BETTER_SUPPORTED\",\"evidence_origins\":[\"TARGET_CHAPTER\",\"EVALUATOR_KNOWLEDGE\"],\"reason\":\"The cease/destroy sense is independently alleged, and assimilation may make the morphology formally possible. But the chapter admits that no second Hithpael occurrence of this root exists, and"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_chapter_argument_grade",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "overall_verdict": {
+            "type": "string",
+            "enum": [
+              "MEETS_STANDARD",
+              "MEETS_WITH_LIMITED_GAPS",
+              "UNDERDETERMINED_BY_PACKET",
+              "DOES_NOT_MEET_STANDARD"
+            ]
+          },
+          "verdict_reason": {
+            "type": "string"
+          },
+          "rule_audit": {
+            "type": "array",
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "rule": {
+                  "type": "string",
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                  ]
+                },
+                "result": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "PARTIAL",
+                    "FAIL",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "rule",
+                "result",
+                "reason"
+              ]
+            }
+          },
+          "claim_ledger": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 18,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "claim": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "LINGUISTIC_VOCALIZATION",
+                    "LEXICAL_OR_GRAMMATICAL",
+                    "SYMBOLIC_DERIVATION",
+                    "BACKGROUND_HYPOTHESIS",
+                    "RECIPROCAL_CONSILIENCE",
+                    "HISTORICAL_OR_ASTRONOMICAL",
+                    "THEOLOGICAL_SYNTHESIS"
+                  ]
+                },
+                "book_candidate": {
+                  "type": "string"
+                },
+                "strongest_rival": {
+                  "type": "string"
+                },
+                "book_admission": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "UNDERDETERMINED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "rival_admission": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "UNDERDETERMINED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "comparison": {
+                  "type": "string",
+                  "enum": [
+                    "BOOK_BETTER_SUPPORTED",
+                    "RIVAL_BETTER_SUPPORTED",
+                    "UNDERDETERMINED",
+                    "NOT_COMPARATIVE"
+                  ]
+                },
+                "evidence_origins": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "TARGET_CHAPTER",
+                      "BACKGROUND_PACKET",
+                      "EVALUATOR_KNOWLEDGE",
+                      "NONE"
+                    ]
+                  }
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "gap_owner": {
+                  "type": "string",
+                  "enum": [
+                    "NONE",
+                    "CHAPTER_MISSING_EVIDENCE",
+                    "CHAPTER_OVERCLAIM",
+                    "EVALUATOR_KNOWLEDGE_LIMIT",
+                    "PROTOCOL_MISSING_RULE"
+                  ]
+                },
+                "outcome_changing_evidence": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "claim",
+                "category",
+                "book_candidate",
+                "strongest_rival",
+                "book_admission",
+                "rival_admission",
+                "comparison",
+                "evidence_origins",
+                "reason",
+                "gap_owner",
+                "outcome_changing_evidence"
+              ]
+            }
+          },
+          "reciprocal_consilience": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "verdict": {
+                "type": "string",
+                "enum": [
+                  "VALID",
+                  "VALID_BUT_INCOMPLETE",
+                  "CIRCULAR",
+                  "NOT_ESTABLISHED",
+                  "NOT_APPLICABLE"
+                ]
+              },
+              "independent_background_support": {
+                "type": "string"
+              },
+              "incremental_target_evidence": {
+                "type": "string"
+              },
+              "dependency_or_duplication_risk": {
+                "type": "string"
+              },
+              "strongest_rival_joint_model": {
+                "type": "string"
+              },
+              "comparative_result": {
+                "type": "string"
+              },
+              "reversal_evidence": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "verdict",
+              "independent_background_support",
+              "incremental_target_evidence",
+              "dependency_or_duplication_risk",
+              "strongest_rival_joint_model",
+              "comparative_result",
+              "reversal_evidence"
+            ]
+          },
+          "category_error_audit": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "possible_error": {
+                  "type": "string"
+                },
+                "present_in_chapter": {
+                  "type": "boolean"
+                },
+                "explanation": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "possible_error",
+                "present_in_chapter",
+                "explanation"
+              ]
+            }
+          },
+          "claims_pass_as_written": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claims_underdetermined": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claims_fail_gate": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "material_gaps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "issue": {
+                  "type": "string"
+                },
+                "gap_owner": {
+                  "type": "string",
+                  "enum": [
+                    "CHAPTER_MISSING_EVIDENCE",
+                    "CHAPTER_OVERCLAIM",
+                    "EVALUATOR_KNOWLEDGE_LIMIT",
+                    "PROTOCOL_MISSING_RULE"
+                  ]
+                },
+                "why_material": {
+                  "type": "string"
+                },
+                "minimal_fix_or_test": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "issue",
+                "gap_owner",
+                "why_material",
+                "minimal_fix_or_test"
+              ]
+            }
+          },
+          "minimal_revisions": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "type": "string"
+            }
+          },
+          "no_bloat_recommendation": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          }
+        },
+        "required": [
+          "overall_verdict",
+          "verdict_reason",
+          "rule_audit",
+          "claim_ledger",
+          "reciprocal_consilience",
+          "category_error_audit",
+          "claims_pass_as_written",
+          "claims_underdetermined",
+          "claims_fail_gate",
+          "material_gaps",
+          "minimal_revisions",
+          "no_bloat_recommendation",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 18909,
+    "input_tokens_details": {
+      "cache_write_tokens": 18906,
+      "cached_tokens": 0
+    },
+    "output_tokens": 6000,
+    "output_tokens_details": {
+      "reasoning_tokens": 3718
+    },
+    "total_tokens": 24909
+  },
+  "user": null,
+  "metadata": {}
+}

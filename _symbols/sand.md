@@ -1,19 +1,107 @@
 ---
 layout: symbol-study
 symbol_key: sand
-title: "Sand — Symbol Study"
-description: "Sand in Scripture represents multitudes at the covenant boundary — countless people who may be swept into the sea of nations or bound to the Rock and become living stones."
-strongs: [H2344, G285]
-words: [sand]
+title: Sand — Symbol Study
+description: >-
+  Sand in Scripture represents multitudes at the covenant boundary — countless people who may be
+  swept into the sea of nations or bound to the Rock and become living stones.
+strongs:
+  - H2344
+  - G285
+words:
+  - sand
+record_version: 1
+record_type: symbol
+term: Sand
+definition: >-
+  A countless multitude and, when used as a foundation, the instability of building upon the crowd
+  rather than the covenant Rock — people not bound together by a covenant.
+meaning: >-
+  A countless multitude and, when used as a foundation, the instability of building upon the crowd
+  rather than the covenant Rock — people not bound together by a covenant.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-sand
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - rock
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - sand
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A countless multitude and, when used as a foundation, the instability of building upon the
+      crowd rather than the covenant Rock — people not bound together by a covenant.
+    citations:
+      - Gen 22:17
+      - Hos 1:10
+      - Rev 20:8
+      - Matt 7:26
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A countless multitude and, when used as a foundation, the instability of building upon the
+      crowd rather than the covenant Rock — people not bound together by a covenant.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-sand
+    citations:
+      - Gen 22:17
+      - Hos 1:10
+      - Rev 20:8
+      - Matt 7:26
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      Fine particles of stone, esp. of siliceous stone, but not reduced to dust; comminuted stone in
+      the form of loose grains, which are not coherent when wet.
+    status: quoted
+    headword: SAND
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Sand
 
-**Multitudes at the covenant boundary — countless people standing between the $sea and the $rock, not yet one or the other.**
+## Approved Definition
 
+**A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the [covenant](/research/symbols/covenant/) [Rock](/research/symbols/rock/) — people not bound together by a covenant.**
 > *"That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the **sand** which is upon the $[sea] shore"* — Gen 22:17
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the [covenant](/research/symbols/covenant/) [Rock](/research/symbols/rock/) — people not bound together by a covenant.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **sand** begins: “Fine particles of stone, esp. of siliceous stone, but not reduced to dust; comminuted stone in the form of loose grains, which are not coherent when wet.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -147,8 +235,7 @@ The Greek G285 *ammos* — sand heaped on a beach — carries a related sense: s
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$rock** — Sand's opposite and counterpart. The $rock is the unchanging covenant (1 Cor 10:4, Deu 32:4). Sand is the multitude without covenant binding — shifting where the $rock is fixed. Jesus makes the contrast absolute in Mat 7:24–27. But the two are not permanently separate: sand *becomes* $rock when bound to Christ (1 Pe 2:4–5). The $rock doesn't merely oppose the sand — it transforms it.
 
 - **$sea** — The nations, chaotic peoples (Rev 17:15, Isa 57:20). Sand lies at the edge of the $sea. When unbound from the $rock, sand is carried into the $sea — multitudes lost among the nations, indistinguishable from the churning mass. The seashore is the line between the two.
@@ -206,3 +293,37 @@ KJV translates H2344 consistently as "sand." G285 appears as "sand" in all NT oc
 - **$island** — The set-apart people rising out of the $sea. If sand becomes living stones and living stones become the spiritual house, how does the $island picture relate to the $jerusalem picture?
 - **$wings** — The covenant covering offered at the seashore. The *kanaph* connection between earth's edges and God's $wings deserves careful study. How does Num 15:38–40 illuminate what is being offered to the multitudes?
 - **$grass** — Another symbol for people, but from the angle of mortality rather than multitude. How do sand and $grass work together to describe the human condition?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **sand** begins:
+
+> “Sand, n. Etym: [AS. sand; akin to D. zand, G. sand, OHG. sant, Icel. sandr, Dan. & Sw. sand, Gr. 1. Fine particles of stone, esp. of siliceous stone, but not reduced to dust; comminuted stone in the form of loose grains, which are not coherent when wet. That finer matter, called sand, is no other than very small pebbles. Woodsward.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the [covenant](/research/symbols/covenant/) [Rock](/research/symbols/rock/) — people not bound together by a covenant.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *sand*. The English-form sweep found **28 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- Genesis 22:17, Hosea 1:10, and Revelation 20:8 strongly establish innumerability, while Matthew 7:26 establishes a foolish sandy foundation. But Matthew 7:26 itself does not identify sand with the crowd or explicitly call the contrasting rock the covenant-rock; those links require additional argument beyond the printed citations.
+
+- One could argue for MATCH: the book simply lists both consensus meanings (multitude and unstable foundation) in one sentence, and the 'crowd, not the covenant-rock' phrase is homiletic coloring rather than a material reclassification. Matthew 7 itself gives no textual warrant for reading its sand as 'the crowd,' so the fused reading may be too thin to count as a genuine boundary change; the cited verses on their face support only the two standard, separate senses.
+
+- The causal link (‘and so’) and the specific equation of parabolic sand with ‘the crowd’ (vs. rock as ‘covenant-rock’) are interpretive additions not required by the cited texts, which present the images independently.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

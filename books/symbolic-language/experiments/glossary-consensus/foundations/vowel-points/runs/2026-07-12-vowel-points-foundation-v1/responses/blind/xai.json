@@ -1,0 +1,187 @@
+{
+  "created_at": 1783907480,
+  "completed_at": 1783907495,
+  "id": "6f48d31f-05d2-923a-a6d4-453fdd24d8cd",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_6f48d31f-05d2-923a-a6d4-453fdd24d8cd",
+      "summary": [
+        {
+          "text": "The user wants me to respond with a specific JSON format about the textual basis for interpreting the Hebrew Bible, focusing on vowel points, etc. I must not provide any surrounding text, just the JSO...",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"vowel_points_original_to_written_text\": \"NO\",\n  \"vowel_points_authority\": \"REBUTTABLE_PRESUMPTION\",\n  \"cantillation_authority\": \"REBUTTABLE_PRESUMPTION\",\n  \"alternate_vocalization_admissible\": \"CONDITIONAL\",\n  \"received_pointing_alone_can_veto\": \"NO\",\n  \"burden_of_proof\": \"The proponent of any departure from the received Masoretic pointing bears the burden of proof.\",\n  \"required_support\": [\n    \"Strict grammatical and lexical compatibility with the unpointed consonantal text and standard Hebrew/Aramaic morphology\",\n    \"Positive corroboration from at least one independent ancient witness (pre-Masoretic manuscript, parallel biblical passage, or early translation)\",\n    \"Demonstration that the alternate reading yields coherent syntax and sense in context without special pleading\",\n    \"Absence of decisive contrary evidence from the broader manuscript tradition\"\n  ],\n  \"ketiv_qere_rule\": \"Where Ketiv and Qere diverge, the written consonants (Ketiv) remain primary data; the Qere supplies the traditional vocalization and may be followed, but neither automatically excludes a third, well-supported vocalization of the same consonants.\",\n  \"ancient_witness_rule\": \"Readings reflected in the Dead Sea Scrolls, Samaritan Pentateuch, Septuagint, Targums, Peshitta, or Vulgate that presuppose a different vocalization of the identical consonants constitute admissible external evidence and may rebut the Masoretic pointing.\",\n  \"historical_findings\": [\n    \"The original Hebrew and Aramaic biblical texts were composed and transmitted for centuries as purely consonantal writings, occasionally employing matres lectionis but lacking systematic vowel signs or cantillation marks.\",\n    \"The Tiberian vowel points and accent system were developed and standardized by the Masoretes of Tiberias between approximately the sixth and tenth centuries CE.\",\n    \"Pre-Masoretic manuscripts (notably the Dead Sea Scrolls) and early translations routinely attest unpointed text and, in many places, presuppose vocalizations different from the later Masoretic tradition.\",\n    \"The Masoretic apparatus itself preserves alternative readings (Ketiv/Qere, Sebirin, etc.), demonstrating that the received pointing was never regarded as the sole possible realization of the consonants.\"\n  ],\n  \"theological_assumptions\": [],\n  \"rationale\": \"Manuscript history and the internal structure of the Masoretic Text establish that vowel points and cantillation marks are secondary interpretive layers added long after the consonantal text was fixed. Consequently they carry strong traditional weight as a rebuttable presumption of the intended reading, yet they do not form part of the original written text and cannot by themselves veto a grammatically and lexically valid alternate vocalization that is independently supported by ancient witnesses or parallel passages. The burden therefore rests on the party proposing the alternate to supply positive external or contextual evidence; absent such evidence the received pointing remains the default. Ketiv/Qere pairs and the testimony of pre-Masoretic sources function as built-in controls that already acknowledge the possibility of multiple realizations of the same consonants.\",\n  \"confidence\": \"HIGH\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_6f48d31f-05d2-923a-a6d4-453fdd24d8cd",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vowel_points_original_to_written_text": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "UNCERTAIN"
+            ]
+          },
+          "vowel_points_authority": {
+            "type": "string",
+            "enum": [
+              "BINDING",
+              "REBUTTABLE_PRESUMPTION",
+              "EVIDENCE_ONLY",
+              "NONE"
+            ]
+          },
+          "cantillation_authority": {
+            "type": "string",
+            "enum": [
+              "BINDING",
+              "REBUTTABLE_PRESUMPTION",
+              "EVIDENCE_ONLY",
+              "NONE"
+            ]
+          },
+          "alternate_vocalization_admissible": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "CONDITIONAL"
+            ]
+          },
+          "received_pointing_alone_can_veto": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "CONDITIONAL"
+            ]
+          },
+          "burden_of_proof": {
+            "type": "string"
+          },
+          "required_support": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ketiv_qere_rule": {
+            "type": "string"
+          },
+          "ancient_witness_rule": {
+            "type": "string"
+          },
+          "historical_findings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "theological_assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          }
+        },
+        "required": [
+          "vowel_points_original_to_written_text",
+          "vowel_points_authority",
+          "cantillation_authority",
+          "alternate_vocalization_admissible",
+          "received_pointing_alone_can_veto",
+          "burden_of_proof",
+          "required_support",
+          "ketiv_qere_rule",
+          "ancient_witness_rule",
+          "historical_findings",
+          "theological_assumptions",
+          "rationale",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 949,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1832,
+    "output_tokens_details": {
+      "reasoning_tokens": 1154
+    },
+    "total_tokens": 2781,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 126980000,
+    "context_details": {
+      "input_tokens": 949,
+      "output_tokens": 1832
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Decide the foundational textual question independently, without anticipating any later biblical-symbol claim."
+}

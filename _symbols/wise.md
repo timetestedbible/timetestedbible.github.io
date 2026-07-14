@@ -1,19 +1,103 @@
 ---
 layout: symbol-study
 symbol_key: wise
-title: "Wise — Symbol Study"
-description: "The wise in Scripture are not the intelligent but the obedient — those who hear God's word and do it. The fool hears and does not."
-strongs: [H2450, H2451, G4680, G5429]
-words: [wise, wisdom, prudent, understanding, discreet]
+title: Wise — Symbol Study
+description: >-
+  The wise in Scripture are not the intelligent but the obedient — those who hear God's word and do
+  it. The fool hears and does not.
+strongs:
+  - H2450
+  - H2451
+  - G4680
+  - G5429
+words:
+  - wise
+  - wisdom
+  - prudent
+  - understanding
+  - discreet
+record_version: 1
+record_type: symbol
+term: Wise
+definition: One who hears God's word and does it, who fears the LORD.
+meaning: One who hears God's word and does it, who fears the LORD.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-wise
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - fool
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - wise
+      - wisdom
+      - prudent
+      - understanding
+      - discreet
+senses:
+  - id: approved-core
+    status: approved
+    summary: One who hears God's word and does it, who fears the LORD.
+    citations:
+      - Matt 7:24
+      - Ps 111:10
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: One who hears God's word and does it, who fears the LORD.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-wise
+    citations:
+      - Matt 7:24
+      - Ps 111:10
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: Having knowledge; knowing; enlightened; of extensive information; erudite; learned.
+    status: quoted
+    headword: WISE
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Wise
 
-**Obedient — one who hears God's instruction and does it.**
+## Approved Definition
 
+**One who hears God's word and does it, who fears the LORD.**
 > *"The fear of the LORD is the beginning of wisdom: a good understanding have all they that **do** his commandments."* — Ps 111:10
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**One who hears God's word and does it, who fears the LORD.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **wise** begins: “Having knowledge; knowing; enlightened; of extensive information; erudite; learned.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -137,8 +221,7 @@ The substitution clarifies it: "If any man among you seems to be *obedient to th
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$rock** — The wise man builds on $rock — the unchanging covenant (Mat 7:24–25). Obedience anchors life to the covenant that does not shift. The fool builds on $sand and falls. The $rock is not chosen for its appearance but for its permanence: the covenant endures the storm that destroys everything else.
 
 - **$sand** — The fool's foundation. $sand represents multitudes at the covenant boundary — people who have not yet been bound by covenant to the $rock. Building on $sand is building on human effort, numbers, or descent without the binding covenant. Sand becomes living stone only through union with Christ, the $rock (1 Pet 2:4–5). The wise man's house stands because he has crossed from $sand to $rock — from hearing to doing.
@@ -200,3 +283,35 @@ KJV translates H2450/H2451 as "wise" and "wisdom" throughout. G5429 *phronimos* 
 - **$faith** — The posture behind wisdom. If faith is trusting obedience, how does it relate to the wise man who hears and does?
 - **$truth** — The content wisdom obeys. What exactly are God's commandments as a symbolic concept, and how does rejecting them produce foolishness?
 - **$light** — The product of wisdom. How does obedience become visible, and what chain connects commandment-keeping to the light that shines before men?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **wise** begins:
+
+> “Wise, a. [Compar. Wiser; superl. Wisest.] Etym: [OE. wis, AS. wis; akin to OS. & OFries. wis, D. wijs, G. weise, OHG. wis, wisi, Icel. viss, Sw. vis, Dan. viis, Goth. weis; akin to wit, v. i. See Wit, v., and cf. Righteous, Wisdom.] 1. Having knowledge; knowing; enlightened; of extensive information; erudite; learned. They are wise to do evil, but to do good they have no knowledge. Jer. iv. 22.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The book may appear narrower because it defines the wise specifically through hearing and doing God's word rather than mentioning broader divine insight or discernment. However, the consensus itself treats such discernment as practically expressed in reverent obedience, so this is an immaterial difference in formulation.
+
+- Book is silent on common secondary senses (personified Wisdom/Christ, Magi, worldly irony), which a reader might wish were noted, yet silence does not alter or contradict the core match.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**One who hears God's word and does it, who fears the LORD.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *wise*, *wisdom*, *prudent*, *understanding*, *discreet*. The English-form sweep found **547 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

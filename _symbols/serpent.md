@@ -1,19 +1,100 @@
 ---
 layout: symbol-study
 symbol_key: serpent
-title: "Serpent — Symbol Study"
-description: "The serpent in Scripture represents the deceiver working through cunning speech — the personal agent of deception who beguiles the mind, distinguished from the dragon who animates empires."
-strongs: [H5175, G3789]
-words: [serpent, serpents, snake, viper, vipers, adder]
+title: Serpent — Symbol Study
+description: >-
+  The serpent in Scripture represents the deceiver working through cunning speech — the personal
+  agent of deception who beguiles the mind, distinguished from the dragon who animates empires.
+strongs:
+  - H5175
+  - G3789
+words:
+  - serpent
+  - serpents
+  - snake
+  - viper
+  - vipers
+  - adder
+record_version: 1
+record_type: symbol
+term: Serpent
+definition: The deceiver; the one who strips the covenant covering.
+meaning: The deceiver; the one who strips the covenant covering.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-serpent
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - serpent
+      - serpents
+      - snake
+      - viper
+      - vipers
+      - adder
+senses:
+  - id: approved-core
+    status: approved
+    summary: The deceiver; the one who strips the covenant covering.
+    citations:
+      - Gen 3:1
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: The deceiver; the one who strips the covenant covering.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-serpent
+    citations:
+      - Gen 3:1
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: "(Zoöl.) Defn: Any reptile of the order Ophidia; a snake, especially a large snake."
+    status: quoted
+    headword: SERPENT
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Serpent
 
-**The deceiver working through cunning speech — the personal agent who beguiles the mind through whispered suggestion, questioning and contradicting God's word.**
+## Approved Definition
 
+**The deceiver; the one who strips the [covenant](/research/symbols/covenant/) covering.**
 > *"Now the **serpent** was more subtil than any beast of the field which the LORD God had made. And he said unto the $[woman], Yea, hath God said…?"* — Gen 3:1
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The deceiver; the one who strips the [covenant](/research/symbols/covenant/) covering.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **serpent** begins: “(Zoöl.) Defn: Any reptile of the order Ophidia; a snake, especially a large snake.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -222,8 +303,7 @@ This is the serpent's trajectory across the full arc of Scripture: from speaking
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$dragon** — The serpent's empire-scale counterpart. The $dragon is the spiritual authority behind beast-kingdoms — Pharaoh, Babylon, the beast of Revelation. The serpent deceives the individual mind; the dragon animates the systems that enforce deception at scale. Rev 12:9 names them as one being; the two words persist because the two operations persist.
 
 - **$lamb** — The serpent's defining opposite. The Lamb is innocent (the serpent is cunning), truthful (the serpent lies), and self-sacrificing (the serpent is self-preserving). Rev 13:11 — the false prophet has "horns like a lamb" but "speaks as a dragon," the ultimate serpent-strategy: mimicking the Lamb's form while delivering the dragon's message.
@@ -337,3 +417,37 @@ Rev 12:9, Rev 12:14–15, Rev 20:2, Rev 9:19
 - **$curse** — The serpent is the first thing cursed in Scripture. How does the covenant penalty clause work from Gen 3:14 through to Rev 22:3, where "there shall be no more curse"?
 
 - **$scorpion** — The serpent's operational pair in the enemy's arsenal. What distinguishes incapacitating torment from lethal deception, and why does Jesus grant authority over both together?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **serpent** begins:
+
+> “Ser”pent, n. Etym: [F., fr. L. serpens, -entis (sc. bestia), fr. serpens, p. pr. of serpere to creep; akin to Gr. sarp, and perhaps to L. repere, E. reptile. Cf. Herpes.] 1. (Zoöl.) Defn: Any reptile of the order Ophidia; a snake, especially a large snake. See Illust. under Ophidia.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Genesis 3:1 supports the serpent's subtle, deceptive role, but by itself neither calls the serpent Satan nor explicitly mentions a covenant covering or its removal. The distinctive covenantal clause therefore requires support beyond the printed citation.
+
+- One could argue MATCH: 'the deceiver' just restates the consensus core, and 'strips the covenant covering' is merely descriptive color about the Eden episode (loss of innocence/nakedness) rather than a materially different identification. Alternatively, one could argue the 'covenant covering' concept is sufficiently absent from any consensus alternative to push toward NOVEL for that component.
+
+- Consensus primary rests on explicit NT equation of the serpent with Satan plus a wide polyvalent range; the book's unelaborated 'covenant covering' claim plus sole Gen 3:1 citation may appear under-supported or idiosyncratic relative to that consensus.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The deceiver; the one who strips the [covenant](/research/symbols/covenant/) covering.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *serpent*, *serpents*, *snake*, *viper*, *vipers*, *adder*. The English-form sweep found **56 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

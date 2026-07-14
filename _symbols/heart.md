@@ -1,19 +1,110 @@
 ---
 layout: symbol-study
 symbol_key: heart
-title: "Heart — Symbol Study"
-description: "The heart in Scripture is not the seat of emotion — it is the seat of covenant allegiance, where loyalty to God is held or refused, and where the trajectory of the whole person is determined."
-strongs: [H3820, H3824, G2588]
-words: [heart, hearts, hearted, brokenhearted, fainthearted, hardhearted, stiffhearted]
+title: Heart — Symbol Study
+description: >-
+  The heart in Scripture is not the seat of emotion — it is the seat of covenant allegiance, where
+  loyalty to God is held or refused, and where the trajectory of the whole person is determined.
+strongs:
+  - H3820
+  - H3824
+  - G2588
+words:
+  - heart
+  - hearts
+  - hearted
+  - brokenhearted
+  - fainthearted
+  - hardhearted
+  - stiffhearted
+record_version: 1
+record_type: symbol
+term: Heart of the earth
+definition: Jerusalem — the navel and heart of the land.
+meaning: Jerusalem — the navel and heart of the land.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-heart
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - heart
+      - hearts
+      - hearted
+      - brokenhearted
+      - fainthearted
+      - hardhearted
+      - stiffhearted
+      - heart of the earth
+senses:
+  - id: approved-core
+    status: approved
+    summary: Jerusalem — the navel and heart of the land.
+    citations:
+      - Matt 12:40
+      - Ezek 5:5
+      - Ezek 38:12
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: Jerusalem — the navel and heart of the land.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-heart
+    citations:
+      - Matt 12:40
+      - Ezek 5:5
+      - Ezek 38:12
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      (Anat.) Defn: A hollow, muscular organ, which, by contracting rhythmically, keeps up the
+      circulation of the blood.
+    status: quoted
+    headword: HEART
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Heart
 
-**The seat of covenant allegiance — where loyalty, will, and response to God are held or refused.**
+## Approved Definition
 
+**Jerusalem — the navel and heart of the land.**
 > *"Keep thy **heart** with all diligence; for out of it are the issues of life."* — Prov 4:23
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Jerusalem — the navel and heart of the land.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **heart** begins: “(Anat.) Defn: A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -253,8 +344,7 @@ The covenant-ready heart. Single treasure (Mat 6:21), single allegiance (Mat 5:8
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$rock** — The stony heart is the anti-$rock. Both involve stone, but the $rock — the covenant — is what the heart should be built *on*, not built *of*. The heart of stone (Ezek 36:26) resists the covenant; the $rock under the house (Mat 7:24) sustains it. When God replaces stone with flesh, the heart can finally rest on the $rock rather than imitate it.
 
 - **$fire** — God's covenant standard in active contact. The heart of stone hardens under $fire (Pharaoh); the heart of flesh is refined by it (1 Pet 1:7, Mal 3:2–3). Jer 4:4 warns that the uncircumcised heart becomes fuel for $fire. The heart's material determines the outcome — same fire, opposite results.
@@ -363,3 +453,39 @@ KJV translates H3820/H3824 as "heart" (~830×), plus "mind," "understanding," "m
 - **$circumcision** — The physical sign pointed to the heart all along. What does $circumcision represent, and why is heart-circumcision its fulfillment?
 - **$dove** — The dove is "without heart" in Hos 7:11. How does the dove's faithful covenant devotion illuminate what the heart is supposed to hold?
 - **$peace-shalom** — The antidote to the troubled heart. What does it mean that covenant-wholeness *garrisons* the heart?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **heart** begins:
+
+> “Heart, n. Etym: [OE. harte, herte, heorte, AS. heorte; akin to OS. herta, OFies. hirte, D. hart, OHG. herza, G. herz, Icel. hjarta, Sw. hjerta, Goth. haírt, Lith. szirdis, Russ. serdtse, Ir. cridhe, L. cor, Gr. Accord, Discord, Cordial, 4th Core, Courage.] 1. (Anat.) Defn: A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood. Why does my blood thus muster to my heart! Shak.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+A common reading is: **the grave or Hades, where Christ lay three days.**
+
+- Ezekiel 5:5 and 38:12 support Jerusalem or its people being situated in the midst of lands or nations, but they do not call Jerusalem the “heart of the earth” or establish that Matthew 12:40 uses the phrase geographically. Matthew’s immediate Jonah analogy more directly suggests confinement associated with death and deliverance.
+
+- Matthew 12:40's parallel with Jonah 'in the whale's belly' strongly suggests confinement in death, not residence in a city; Jonah's own prayer locates him 'in the belly of Sheol' (Jonah 2:2), and the Ezekiel texts say Jerusalem is in the midst of the nations/land but never use the phrase 'heart of the earth,' so the identification rests on an inferential bridge rather than direct lexical equivalence. Moreover, Jesus was already in Jerusalem before his arrest, straining the 'three days and nights' as time 'in' Jerusalem.
+
+- In Matthew 12:40, the phrase is directly parallel to Jonah being in the 'belly of the great fish' for three days and three nights, an image that much more naturally typifies entombment, death, or being swallowed by the earth, rather than merely being present in a central city.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Jerusalem — the navel and heart of the land.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *heart*, *hearts*, *hearted*, *brokenhearted*, *fainthearted*, *hardhearted*, *stiffhearted*, *heart of the earth*. The English-form sweep found **883 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

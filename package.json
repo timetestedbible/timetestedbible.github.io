@@ -5,7 +5,11 @@
     "build:ranks": "node pipeline/build-content-graph.js",
     "build:dictionary": "node pipeline/build-symbol-dictionary.js",
     "build:studies": "npm run build:ranks && npm run build:dictionary",
-    "verify:symbols": "node scripts/verify-symbol-refs.js"
+    "verify:symbols": "node scripts/verify-symbol-refs.js",
+    "verify:symbol-records": "node scripts/validate-symbol-records.js",
+    "lookup:webster": "node scripts/lookup-webster-1913.js",
+    "build:symbol-audit": "node scripts/build-symbol-support-audit.js",
+    "reconcile:symbol-studies": "node scripts/reconcile-symbol-studies.js --write"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",

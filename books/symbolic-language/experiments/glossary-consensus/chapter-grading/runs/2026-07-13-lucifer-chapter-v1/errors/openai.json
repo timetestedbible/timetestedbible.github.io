@@ -1,0 +1,4 @@
+{
+  "provider": "openai",
+  "error": "HTTP 400: {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'meat_chapter_argument_grade': In context=('properties', 'claim_ledger', 'items', 'properties', 'evidence_origins'), 'uniqueItems' is not permitted.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"text.format.schema\",\n    \"code\": \"invalid_json_schema\"\n  }\n}"
+}

@@ -1,0 +1,98 @@
+{
+  "written_text_status": "The unpointed consonantal text is the primary inspired witness. Masoretic vowel points, accents, and divisions are later interpretive traditions and are evaluated as historical evidence, not canonical scripture.",
+  "admissibility_gate": [
+    "Candidate must map perfectly to the unpointed Hebrew or Aramaic consonantal text without emendation or alteration.",
+    "Candidate must be morphologically and grammatically viable within Biblical Hebrew or Aramaic.",
+    "Candidate must possess a documented lexical basis in ancient lexicons, cognates, or prior biblical usage."
+  ],
+  "hard_disqualifiers": [
+    "Requires altering, adding, or removing consonants.",
+    "Directly contradicts the theological, moral, or covenantal framework established in the Torah.",
+    "Creates a grammatical impossibility for the historical era of composition.",
+    "Relies entirely on an anachronistic definition absent in prior or contemporary Scripture."
+  ],
+  "comparison_rules": [
+    {
+      "rule_id": "R1",
+      "title": "Immediate Context Fit",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "A candidate that better resolves the immediate syntactic and semantic context receives higher weight than one creating structural awkwardness.",
+      "justification": "Words derive specific meaning from their localized usage and surrounding syntax."
+    },
+    {
+      "rule_id": "R2",
+      "title": "Prior Canonical Usage",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "A reading with meaning and usage well-attested in the Torah or earlier Prophets outweighs a reading relying on later or extra-biblical sources.",
+      "justification": "Adheres to the premise that revelation is cumulative and earlier Scripture defines later vocabulary."
+    },
+    {
+      "rule_id": "R3",
+      "title": "Torah Coherence",
+      "operation": "HARD_CONSTRAINT",
+      "rule": "Any reading that nullifies or contradicts Torah definitions or commandments is disqualified.",
+      "justification": "Deuteronomy 13 requires all subsequent claims or prophetic interpretations to align with the prior written Law."
+    },
+    {
+      "rule_id": "R4",
+      "title": "Independent Translation Support",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Support from independent ancient translations (LXX, DSS, Targums, Syriac, Vulgate) adds weight proportional to lineage independence, not raw manuscript count.",
+      "justification": "Multiple independent witnesses to a pre-Masoretic vocalization tradition provide stronger historical evidence than a single repeated tradition."
+    },
+    {
+      "rule_id": "R5",
+      "title": "New Testament Confirmation",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "If both readings are OT-derivable, a reading explicitly confirmed, quoted, or alluded to by the New Testament receives decisive weight.",
+      "justification": "The NT serves as canonical confirmation and a check against misreading the earlier text, provided the reading is natively derivable from the OT."
+    }
+  ],
+  "evidence_hierarchy": [
+    {
+      "evidence": "Unpointed Consonants",
+      "default_role": "CONTROLLING",
+      "conditions": "Always controls the baseline possibilities for vocalization."
+    },
+    {
+      "evidence": "Torah and Prior Scripture",
+      "default_role": "STRONG",
+      "conditions": "When establishing permissible lexical definitions and theological boundaries."
+    },
+    {
+      "evidence": "Independent Ancient Translations (LXX, DSS, etc.)",
+      "default_role": "SUPPORTING",
+      "conditions": "When demonstrating evidence of widespread pre-Masoretic vocalization traditions."
+    },
+    {
+      "evidence": "Masoretic Points",
+      "default_role": "SUPPORTING",
+      "conditions": "Treated as a witness to a specific medieval Jewish reading tradition; evaluated equally alongside other witnesses."
+    },
+    {
+      "evidence": "New Testament",
+      "default_role": "CONTEXT_DEPENDENT",
+      "conditions": "Acts as a confirming witness or tie-breaker only if the reading is independently derivable from the Old Testament."
+    }
+  ],
+  "received_pointing_role": "EVIDENCE_ONLY",
+  "received_pointing_rule": "The Masoretic pointing is treated as one stream of ancient interpretive tradition. It holds no presumption of infallibility or binding authority and must compete on equal evidentiary footing with other ancient versions to explain the original unpointed consonants.",
+  "burden_of_proof_rule": "The burden of proof is strictly symmetrical for any two admissible vocalizations. Neither the Masoretic pointing, critical editions, nor modern consensus enjoys a presumption of originality. Both candidates must demonstrate their validity from consonants, grammar, context, and prior Scripture.",
+  "dependent_witness_rule": "Manuscripts, translations, or scribal traditions sharing a single common ancestor or demonstrably copying from one another are counted as a single witness to avoid artificially inflating the numerical weight of a reading.",
+  "source_bias_rule": "Traditions with known theological motivations (e.g., anti-Christian polemic in later Jewish transmission, or pro-Christian harmonization in later Christian transmission) must be scrutinized. A reading contrary to a source's expected bias is granted higher independent weight, while readings conforming to known biases are strictly evaluated against prior Scripture.",
+  "special_context_rules": [
+    "Poetic parallelism requires evaluating readings based on structural symmetry, meter, and established word pairs.",
+    "Prophetic and typological texts must be evaluated against the covenantal framework of blessings and curses outlined in Deuteronomy before assigning symbolic meaning."
+  ],
+  "tie_rule": "If, after applying all comparative weights and NT confirmation checks, both readings remain equally plausible explanations of the consonants and context, the evaluator must declare the text UNDERDETERMINED.",
+  "anti_ad_hoc_safeguards": [
+    "All rules, evidence weights, and hierarchical rankings must be rigidly fixed before the specific disputed word or desired theological outcome is identified.",
+    "No new rules, exceptions, or novel lexical definitions may be introduced to rescue a preferred reading that fails the established admissibility gate or comparative weighting."
+  ],
+  "proposed_baseline": "The unpointed consonantal text of the Hebrew/Aramaic Bible (e.g., BHS consonants), strictly stripped of all vowel points, cantillation marks, and later verse divisions, interpreted with the Torah as the primary definitional dictionary.",
+  "clarifications_needed": [
+    "How should we handle instances where ancient translations clearly read a different consonantal text entirely, rather than just a different vocalization of the same consonants?",
+    "What specific criteria distinguish an independent translational lineage from a dependent one in edge cases where cross-pollination is suspected?"
+  ],
+  "confidence": "HIGH"
+}

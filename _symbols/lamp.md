@@ -1,19 +1,103 @@
 ---
 layout: symbol-study
 symbol_key: lamp
-title: "Lamp — Symbol Study"
-description: "The lamp in Scripture represents the commandment — God's instruction that, when fueled by proven works, produces the visible light of obedience."
-strongs: [H5216, H3940, G2985]
-words: [lamp, lamps, torch, torches, candle, candles, candlestick]
+title: Lamp — Symbol Study
+description: >-
+  The lamp in Scripture represents the commandment — God's instruction that, when fueled by proven
+  works, produces the visible light of obedience.
+strongs:
+  - H5216
+  - H3940
+  - G2985
+words:
+  - lamp
+  - lamps
+  - torch
+  - torches
+  - candle
+  - candles
+  - candlestick
+record_version: 1
+record_type: symbol
+term: Lamp
+definition: The commandment.
+meaning: The commandment.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-lamp
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - lamp
+      - lamps
+      - torch
+      - torches
+      - candle
+      - candles
+      - candlestick
+senses:
+  - id: approved-core
+    status: approved
+    summary: The commandment.
+    citations:
+      - Prov 6:23
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: The commandment.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-lamp
+    citations:
+      - Prov 6:23
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: A thin plate or lamina. [Obs.] Chaucer.
+    status: quoted
+    headword: LAMP
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Lamp
 
-**The commandment — God's instruction, which produces no $light until fueled by the $oil of proven works.**
+## Approved Definition
 
+**The commandment.**
 > *"For the **commandment** is a **lamp**; and the law is $[light]; and reproofs of instruction are the way of life."* — Prov 6:23
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The commandment.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **lamp** begins: “A thin plate or lamina. [Obs.] Chaucer.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -159,8 +243,7 @@ Paul echoes this image centuries later: "we have this treasure in earthen vessel
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$light** — The $light is the visible example of obedience — the *product* of the lamp, not the lamp itself. Prov 6:23 distinguishes them in a single breath: "the commandment is a lamp; the law is light." The lamp is the instruction; the $light is what the world sees when that instruction is lived out.
 
 - **$oil** — Proven works — the fuel the lamp requires. Without $oil, the lamp produces no $light (Mat 25:8). The $oil is *beaten* (Exod 27:20), pressed from olives through trial, and cannot be borrowed from another (Mat 25:9). The commandment without works is dead.
@@ -224,3 +307,37 @@ KJV translates H5216 as "lamp," "candle," and "light." H3940 appears as "lamp," 
 - **$darkness** — The lamp's opposite condition. What does it mean that $darkness is specifically *concealed* disobedience, and how does the lamp expose it?
 - **$truth** — Another name for the same reality the lamp represents. How do $truth and lamp relate as parallel metaphors for God's commandment?
 - **$virgin** — The parable of the ten virgins depends on understanding the lamp. What does it mean to be exclusively devoted yet still shut out?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **lamp** begins:
+
+> “Lamp, n.Etym: [OE. (with excrescent p), fr. F. lame, L. lamina. See Lamina.] Defn: A thin plate or lamina. [Obs.] Chaucer.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Because Proverbs 6:23 directly equates the commandment with a lamp and the consensus already treats divine instruction as the core, the difference could be viewed as merely synonymous wording and thus a MATCH. However, taken as a general glossary definition, “the commandment” is narrower than the consensus’s broader “God’s Word/divine truth.”
+
+- One could argue MATCH: 'the commandment' is functionally synonymous with 'God's Word' in most preaching, and the consensus explicitly lists Prov 6:23 in its primary basis, making the difference arguably mere wording. Alternatively, one could argue the single proof-text is insufficient to warrant treating 'commandment' as the lamp's meaning across all biblical occurrences (e.g., Davidic lamp, Rev 4:5), which would push citation support toward PARTIAL.
+
+- In Hebrew poetry, terms like 'word', 'law', and 'commandment' are frequently used in synonymous parallelism (as in Psalm 119); therefore, isolating 'commandment' as the specific symbol while excluding 'word' may create an artificial distinction.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The commandment.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *lamp*, *lamps*, *torch*, *torches*, *candle*, *candles*, *candlestick*. The English-form sweep found **92 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

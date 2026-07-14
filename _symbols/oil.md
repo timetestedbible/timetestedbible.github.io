@@ -1,19 +1,136 @@
 ---
 layout: symbol-study
 symbol_key: oil
-title: "Oil — Symbol Study"
-description: "Oil in Scripture represents proven works — the product of covenant fruit pressed through trial, which cannot be borrowed or bought as a gift, and which fuels the visible light of obedience."
-strongs: [H8081, H4888, G1637, G5548]
-words: [oil, ointment]
+title: Oil — Symbol Study
+description: >-
+  Oil in Scripture represents proven works — the product of covenant fruit pressed through trial,
+  which cannot be borrowed or bought as a gift, and which fuels the visible light of obedience.
+strongs:
+  - H8081
+  - H4888
+  - G1637
+  - G5548
+words:
+  - oil
+  - ointment
+record_version: 1
+record_type: symbol
+term: Oil (lamp oil)
+definition: >-
+  The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to
+  give a visible example that lights the Way.
+meaning: >-
+  The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to
+  give a visible example that lights the Way.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-oil
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-oil.md
+    - books/symbolic-language/research/research-ten-virgins.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - oil
+      - ointment
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned
+      to give a visible example that lights the Way.
+    citations:
+      - Ex 25:6
+      - Ex 27:20
+      - Ps 119:11, 151, 172
+      - Ps 141:5
+      - Prov 6:23
+      - Prov 7:1-3
+      - Prov 21:20
+      - Prov 23:23
+      - Prov 27:5-9
+      - Jer 31:33
+      - Ezek 36:27
+      - Zech 4:6-14
+      - Matt 25:3-9
+      - Matt 5:16
+      - John 12:50
+      - 1 John 2:4
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned
+      to give a visible example that lights the Way.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-oil
+    citations:
+      - Ex 25:6
+      - Ex 27:20
+      - Ps 119:11, 151, 172
+      - Ps 141:5
+      - Prov 6:23
+      - Prov 7:1-3
+      - Prov 21:20
+      - Prov 23:23
+      - Prov 27:5-9
+      - Jer 31:33
+      - Ezek 36:27
+      - Zech 4:6-14
+      - Matt 25:3-9
+      - Matt 5:16
+      - John 12:50
+      - 1 John 2:4
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      Any one of a great variety of unctuous combustible substances, not miscible with water; as,
+      olive oil, whale oil, rock oil, etc.
+    status: quoted
+    headword: OIL
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Oil
 
-**Proven works — $fruit pressed through trial, fueling $light.**
+## Approved Definition
 
+**The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the [Way](/research/symbols/way/).**
 > *"Then all those **virgins** arose, and trimmed their lamps. And the foolish said unto the wise, Give us of your **oil**; for our lamps are gone out. But the wise answered, saying, Not so; lest there be not enough for us and you: but go ye rather to them that sell, and **buy** for yourselves."* — Mat 25:7–9
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the [Way](/research/symbols/way/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **oil** begins: “Any one of a great variety of unctuous combustible substances, not miscible with water; as, olive oil, whale oil, rock oil, etc.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -137,8 +254,7 @@ The foolish discover their lamps are going out. They have the appearance of devo
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$tree** — The olive $tree is the covenant community (Rom 11:17–24) — the nation or people group from which oil originates. No tree, no fruit, no oil. Being grafted into the tree is the prerequisite for producing anything.
 
 - **$fruit** — Olives are the $fruit of the olive tree — works and deeds (Gal 5:22, Mat 7:16–20). $Fruit is the raw material; oil is $fruit that has been pressed. The relationship is sequential: works become *proven* works through testing.
@@ -202,3 +318,39 @@ KJV translates H8081 as "oil," "ointment," "olive," and "fat." G1637 appears as 
 - **$light** — Oil fuels the lamp. How does $light as visible obedience shape the urgency of the ten virgins' parable — and the command to "let your light shine"?
 - **$wine** — Wine and oil appear together throughout Scripture as covenant blessings. How does the blood-of-the-covenant meaning of $wine illuminate what happened in the garden called "oil press"?
 - **$virgin** — The wise and foolish are distinguished only by oil. What does exclusive devotion look like when it has substance — and what does it look like when it does not?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **oil** begins:
+
+> “palm (Bot.), a palm tree whose fruit furnishes oil, esp. Elæis Guineensis. See Elæis. -- Oil sardine (Zoöl.), an East Indian herring (Clupea scombrina), valued for its oil. -- Oil shark (Zoöl.) (a) The liver shark. (b) The tope. -- Oil still, a still for hydrocarbons, esp. for petroleum. -- Oil test, a test for determining the temperature at which petroleum oils give off vapor which is liable to explode. -- Oil tree. (Bot.) (a) A plant of the genus Ricinus (R. communis), from the seeds of which castor oil is obtained. (b) An Indian tree, the mahwa. See Mahwa. (c) The oil palm. -- To burn the midnight oil, to study or work late at night. -- Volatle oils. See Essential oils, under Essential.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+A common reading is: **the Holy Spirit — anointing, consecration, and empowering.**
+
+- The citations establish several thematic links—commandment as lamp, truth stored inwardly, correction compared to oil, the Spirit causing obedience, and good works becoming visible light—but no cited passage directly identifies lamp oil itself with stored commandments or tested obedience. Zechariah 4 more naturally supports the common Spirit association, and Matthew 25 leaves the oil uninterpreted.
+
+- Zechariah 4:6 ('Not by might, nor by power, but by my spirit') and Ezekiel 36:27 ('I will put my spirit within you'), both printed with the entry, most naturally identify the lamp's supply with God's Spirit rather than with internalized commandments, so the book's own proof texts partly reinforce the consensus it rejects; moreover, no verse explicitly equates lamp oil with obedience — the identification rests on chaining Proverbs 6:23 (commandment = lamp), Psalm 141:5 (reproof = excellent oil), Proverbs 21:20 (oil stored by the wise), and Psalm 119:11 (word hid in the heart), an inferential composite rather than a direct statement.
+
+- The dominant popular and typological tradition (reflected in all three consensus responses) treats lamp oil as the Holy Spirit itself via Zechariah 4 and anointing parallels; equating it instead with stored obedience/fruit risks an idiosyncratic over-allegorization not required by the parable's readiness emphasis.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the [Way](/research/symbols/way/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *oil*, *ointment*. The English-form sweep found **215 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

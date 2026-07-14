@@ -1,0 +1,83 @@
+{
+  "source_run": "2026-07-12-vowel-points-foundation-v1",
+  "manifest_sha256": "a46f25f31b33c83d06655c79ea02eb81e8726d04a9b6caa6e9773d092cfda3e0",
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "vowel_points_original_to_written_text": "NO",
+      "vowel_points_authority": "REBUTTABLE_PRESUMPTION",
+      "cantillation_authority": "EVIDENCE_ONLY",
+      "alternate_vocalization_admissible": "CONDITIONAL",
+      "received_pointing_alone_can_veto": "NO",
+      "burden_of_proof": "The proponent of a vocalization departing from the received Masoretic pointing bears the burden of establishing compatibility with the transmitted consonants, valid period-appropriate morphology and syntax, attested lexical meaning, and contextual coherence. Independent support from early manuscripts, ancient versions, transcriptions, parallel passages, or another demonstrable reading tradition materially strengthens the case; the burden is heavier when the Masoretic reading is natural, coherent, and broadly corroborated.",
+      "required_support": [
+        "Compatibility with the transmitted consonantal text, including written vowel letters",
+        "A morphologically and syntactically valid construction appropriate to the language, period, and genre",
+        "Lexically attested usage rather than a merely imaginable assignment of vowels or meaning",
+        "Coherence with the immediate discourse and broader literary context",
+        "Careful comparison with Ketiv/Qere, parallel passages, early manuscripts, ancient translations, and transcriptions where available",
+        "Distinction between evidence for alternate vocalization and evidence for a different consonantal text",
+        "An account of exceptional grammar, orthography, semantic usage, or required emendation",
+        "An explanation of why the alternate reading is preferable or plausibly competitive with the received pointing"
+      ],
+      "core_rule": "The transmitted consonantal letters, including any written vowel letters, are the primary written textual datum. The Masoretic vowel points are a later graphic encoding of a valuable and often ancient reading tradition. They therefore carry a rebuttable presumption, but not automatic veto authority: an alternate vocalization may be admitted only when the consonants permit it and substantial linguistic, contextual, and preferably historical evidence supports it.",
+      "confidence": "HIGH"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "vowel_points_original_to_written_text": "NO",
+      "vowel_points_authority": "REBUTTABLE_PRESUMPTION",
+      "cantillation_authority": "EVIDENCE_ONLY",
+      "alternate_vocalization_admissible": "CONDITIONAL",
+      "received_pointing_alone_can_veto": "NO",
+      "burden_of_proof": "The party proposing a departure from the received Masoretic pointing bears the burden of proof, discharged by a preponderance of converging philological, versional, and manuscript evidence. The Tiberian vocalization remains the default reading because it codifies a continuous, linguistically credible oral tradition largely corroborated by pre-Masoretic transliteration evidence. The chapter's symmetric formulation is adopted explicitly: the pointing gets a vote, not a veto — and the proposed re-reading likewise gets no veto until the consonantal letters and independent witnesses agree. Allegations of tradent bias (e.g., synagogue-community motivation) do not shift the burden or lower the presumption globally; they are admissible only as locus-specific evidence where a concrete motive and a concrete divergence from elder witnesses can both be demonstrated at that locus.",
+      "required_support": [
+        "Grammatical validity: the alternate vocalization must yield a form attested or regularly derivable in Biblical Hebrew/Aramaic morphology (GKC, Joüon-Muraoka).",
+        "Lexical attestation: the resulting lexeme must be attested in standard lexicons (BDB, HALOT, DCH) or defensible from cognate Semitic evidence, not an ad hoc coinage.",
+        "Contextual and syntactic coherence: the alternate reading must fit the clause, discourse structure, and genre at least as well as the received pointing.",
+        "Ancient versional support where available: LXX, Peshitta, Vulgate, Targumim, or transliterations (Origen's Secunda, Jerome) reflecting the alternate vocalization materially strengthen the case — used critically, with allowance for translation technique and inner-versional corruption.",
+        "Manuscript evidence: Qumran orthography (matres lectionis), variant medieval Hebrew manuscripts, or the Samaritan reading tradition where relevant.",
+        "Inner-biblical parallels: parallel passages, formulaic usage, or the same consonantal string vocalized differently elsewhere in the MT (adopting the chapter's standard of gathering every occurrence of the form).",
+        "Explanation of the received pointing: a plausible account of how the Masoretic tradition arrived at its vocalization (harmonization, euphemism, theological or apologetic motive, lost idiom) if the alternate is preferred; motive claims must be demonstrated at the specific locus, not presumed from the tradents' community affiliation.",
+        "Consistency with the Masoretic apparatus: Ketiv/Qere, sebirin, and Masorah parva/magna signals of known ambiguity at the locus.",
+        "Category discipline: consonantal variants (letter-level differences) must be adjudicated under consonantal text-critical canons and cannot be cited as precedent for revocalization, and vice versa."
+      ],
+      "core_rule": "The consonantal letters (including matres lectionis) constitute the written biblical text; the Masoretic vowel points and accents are a later graphic codification (c. 6th–10th c. CE) of an ancient oral reading tradition. The pointing therefore holds the status of a rebuttable presumption — the default reading, honored as the product of exceptionally careful custodianship, but a reading of tradents rather than part of the autograph. A grammatically and lexically valid alternate vocalization of the same consonants is admissible in principle, but prevails only when it satisfies the enumerated evidentiary requirements and the elder independent witnesses converge in its favor. Symmetrically, neither the received pointing nor a proposed re-reading possesses veto authority standing alone: the pointing cannot disqualify a well-supported alternate merely by being received, and an alternate cannot displace the pointing merely by being possible.",
+      "confidence": "HIGH"
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "vowel_points_original_to_written_text": "NO",
+      "vowel_points_authority": "REBUTTABLE_PRESUMPTION",
+      "cantillation_authority": "EVIDENCE_ONLY",
+      "alternate_vocalization_admissible": "YES",
+      "received_pointing_alone_can_veto": "NO",
+      "burden_of_proof": "The burden of proof rests on the proposed alternate reading. A re-reading must earn its place by demonstrating that the consonantal letters permit it, external witnesses support it, and all counter-texts have been weighed.",
+      "required_support": [
+        "Consonantal permissibility (the bare letters must support the reading)",
+        "Ancient witness corroboration (e.g., Septuagint, Dead Sea Scrolls)",
+        "Comprehensive gathering and analysis of every occurrence of the word",
+        "Weighing of counter-texts and contextual coherence"
+      ],
+      "core_rule": "The consonantal letters constitute the original preserved text, whereas the Masoretic vowel points represent a later, historically conditioned reading tradition. The pointing is granted an evidentiary vote but no absolute veto over alternate vocalizations that possess strong manuscript or versional support.",
+      "confidence": "HIGH"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "vowel_points_original_to_written_text": "NO",
+      "vowel_points_authority": "REBUTTABLE_PRESUMPTION",
+      "cantillation_authority": "REBUTTABLE_PRESUMPTION",
+      "alternate_vocalization_admissible": "CONDITIONAL",
+      "received_pointing_alone_can_veto": "NO",
+      "burden_of_proof": "The proponent of any departure from the received Masoretic pointing bears the burden of proof; an alternate reading of the consonants must earn its place by positive evidence rather than mere possibility.",
+      "required_support": [
+        "Strict grammatical and lexical compatibility with the unpointed consonantal text and standard Hebrew/Aramaic morphology",
+        "Positive corroboration from at least one independent ancient witness (pre-Masoretic manuscript, parallel biblical passage, or early translation)",
+        "Demonstration that the alternate reading yields coherent syntax and sense in context without special pleading",
+        "Absence of decisive contrary evidence from the broader manuscript tradition"
+      ],
+      "core_rule": "The consonantal letters alone constitute the original written text; the Masoretic vowel points (and accents) are a later traditional reading that carries strong evidentiary weight as a default presumption but receives only a vote, never an automatic veto, over any grammatically valid alternate vocalization independently supported by the letters plus ancient witnesses.",
+      "confidence": "HIGH"
+    }
+  }
+}

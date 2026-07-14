@@ -1,7 +1,11 @@
 # Research: Shadow — the full corpus for a future chapter
 
-Author's thesis (2026-07-02): **it is GOOD to be in the shadow** — shadow is
-the covering of a greater presence, not the gloom it is typically read as.
+Refined thesis (2026-07-13): **a shadow is a symbolic object or activity that
+has a similar shape to the substance casting it**. A shadow can also function
+as covering, but its character depends on its substance. The appointed times
+and their holy assemblies have Christ's shape and belong to His shadow;
+Shadow of Death has Death's shape and belongs to the world's way toward the
+pit or grave.
 Corpus: 82 KJV verses (shadow/shade/overshadow); Hebrew *tsel* H6738 47×,
 *tselem* H6754 (image!) 15×, *tsalmavet* H6757 (shadow-of-death) 17×; Greek
 *skia* G4639 7×, *episkiazō* G1982 (overshadow) 5×.
@@ -20,9 +24,9 @@ Corpus: 82 KJV verses (shadow/shade/overshadow); Hebrew *tsel* H6738 47×,
   **shadow** (skia) of good things to come, and not the very **image**
   (eikōn) of the things" — shadow and image, tsel and tselem, outline and
   likeness.
-- **H6757 *tsalmavet*** = *tsel* + *maveth* (Strong's): the shadow OF DEATH
-  is a compound — death's shadow, not death; a shadow cannot kill, and a
-  shadow proves a light is shining somewhere.
+- **H6757 *tsalmavet*** is rendered *shadow of death* by the KJV. Its 17 Old
+  Testament uses form a separate symbol study: Death's outline and dominion,
+  associated with deep darkness, bondage, pits, doors, gates, and the grave.
 
 ## Tier 1 — Refuge under the Almighty (the defining uses)
 
@@ -103,15 +107,22 @@ us from Himself, and the shade is His Messiah. Now stated in ch. 28.
   in — not "mere" shadow (ties to Signs & Similitudes ch. 4; law-positive:
   the shadow does not abolish the body, nor the body the shadow).
 
-## Tier 4 — The shadow of death, disarmed
+## Tier 4 — Shadow of Death as a separate symbol
 
-- Ps 23:4 "though I walk THROUGH the valley of the shadow of death, I will
-  fear no evil: for **thou art with me**" — a shadow cannot kill.
+- Ps 23:4 combines 2 symbols: Valley supplies the low passage between
+  mountain-kingdoms; Shadow of Death supplies the world's death-shaped
+  dominion under which the traveler walks. The Shepherd leads through it.
+- Job 10:21-22 and 38:17 join Shadow of Death to a land, doors, and the gates
+  of death. Jeremiah 2:6 joins it to deserts and pits. Psalm 107:10, 14 places
+  bound captives beneath it and then brings them out.
 - Amos 5:8 He "turneth the shadow of death **into the morning**."
 - Ps 107:10, 14 "he brought them OUT of darkness and the shadow of death";
   Job 12:22 "bringeth out to light the shadow of death."
 - Isa 9:2 / Matt 4:16 / Luke 1:79 — on them that sit in the shadow of death,
   the LIGHT springs up.
+- The governing contrast is Rom 6:23: the world's sin-shaped activity pays
+  death as wages; the shadow of Christ leads through obedient service even
+  unto death and receives eternal life as God's gift (Phil 2:5-9).
 - The rest of the Job cluster (3:5; 10:21-22; 16:16; 24:17; 28:3; 34:22;
   38:17); Jer 2:6; 13:16; Ps 44:19.
 
@@ -131,18 +142,22 @@ us from Himself, and the shade is His Messiah. Now stated in ch. 28.
 Commonly taught: "shadow" read as gloom/threat (valley of the shadow of
 death as the emblematic use) or as "MERE shadow" (the law dismissively
 contrasted with substance in Col 2:17/Heb 10:1 — often taught as
-law-negative). The corpus shows the opposite center of gravity: refuge,
-covering, presence. Chapter thesis writes itself against both misreadings,
-and the law-positive reading of "shadow of good things" will need the
-prevalence table treatment (quote sources per the rule).
+law-negative). The corpus shows that the general symbol is an outline shaped
+by its substance, with refuge and covering as major effects. That lets the
+study retain Shadow of Death as a genuine negative application without making
+all shadows negative. The law-positive reading of "shadow of good things"
+will need the prevalence table treatment (quote sources per the rule).
 
 ## Chapter skeleton (when written)
 
-Definition verses (Ps 91:1; Isa 25:4; Ps 121:5) → KJV's own "defence"
-renderings (Num 14:9; Eccl 7:12) → wings/hand/rock/tabernacle refuge set →
+Literal outline and body → appointed times and holy assemblies shaped like
+Christ (Lev 23:2-4; Col 2:16-17) → definition verses (Ps 91:1; Isa 25:4; Ps
+121:5) → KJV's own "defence" renderings (Num 14:9; Eccl 7:12) →
+wings/hand/rock/tabernacle refuge set →
 the kingdom-tree's shadow (Judg 9; Ezek 31; Dan 4; Mark 4:32) → false
 shadows (Egypt; the good-shadowed idol trees) → the overshadowing presence
 (Sinai cloud → transfiguration → Luke 1:35 → Acts 5:15) → shadow/image/
 tselem (Gen 1:26) → the law as shadow of the Body (Col 2:17; Heb 10:1,
-law-positive) → the shadow of death disarmed (Ps 23:4; Amos 5:8; Isa 9:2)
-→ glossary: sym-shadow.
+law-positive) → Shadow of Death separated as Death-shaped way and dominion,
+then overcome by light (Ps 23:4; Ps 107:10, 14; Amos 5:8; Isa 9:2) →
+glossary: sym-shadow plus candidate sym-shadow-of-death.

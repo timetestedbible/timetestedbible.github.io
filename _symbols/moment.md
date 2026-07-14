@@ -1,19 +1,108 @@
 ---
 layout: symbol-study
 symbol_key: moment
-title: "Moment — Symbol Study"
-description: "The moment in Scripture is not mere brevity — it is the instant divine judgment falls, the sudden reckoning that separates what is built on the rock from what is built on sand."
-strongs: [H7281, G823]
-words: [moment]
+title: Moment — Symbol Study
+description: >-
+  The moment in Scripture is not mere brevity — it is the instant divine judgment falls, the sudden
+  reckoning that separates what is built on the rock from what is built on sand.
+strongs:
+  - H7281
+  - G823
+words:
+  - moment
+record_version: 1
+record_type: symbol
+term: Moment
+definition: >-
+  A short time expression pointing to the sudden destruction of Babylon the Great, aligned with the
+  resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals
+  may point directly or by type, shadow, or similitude to that appointed moment.
+meaning: >-
+  A short time expression pointing to the sudden destruction of Babylon the Great, aligned with the
+  resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals
+  may point directly or by type, shadow, or similitude to that appointed moment.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-moment
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - moment
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A short time expression pointing to the sudden destruction of Babylon the Great, aligned with
+      the resurrection, gathering, and protection through judgment. In prophecy, unusually brief
+      intervals may point directly or by type, shadow, or similitude to that appointed moment.
+    citations:
+      - Isa 47:9
+      - Job 34:20
+      - 1 Cor 15:52
+      - Rev 18:8, 10, 17, 19
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A short time expression pointing to the sudden destruction of Babylon the Great, aligned with
+      the resurrection, gathering, and protection through judgment. In prophecy, unusually brief
+      intervals may point directly or by type, shadow, or similitude to that appointed moment.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-moment
+    citations:
+      - Isa 47:9
+      - Job 34:20
+      - 1 Cor 15:52
+      - Rev 18:8, 10, 17, 19
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: A minute portion of time; a point of time; an instant; as, at thet very moment.
+    status: quoted
+    headword: MOMENT
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Moment
 
-**The sudden falling of divine judgment — the instant God's evaluation results in swift, irreversible action.**
+## Approved Definition
 
+**A short time expression pointing to the sudden destruction of [Babylon the Great](/research/symbols/babel/), aligned with the resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals may point directly or by type, shadow, or similitude to that appointed moment.**
 > *"In a **moment** shall they die, and the people shall be troubled at midnight, and pass away: and the mighty shall be taken away without hand."* — Job 34:20
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A short time expression pointing to the sudden destruction of [Babylon the Great](/research/symbols/babel/), aligned with the resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals may point directly or by type, shadow, or similitude to that appointed moment.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **moment** begins: “A minute portion of time; a point of time; an instant; as, at thet very moment.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -151,8 +240,7 @@ Light affliction → for a moment. Glory → eternal. The pattern holds: the mom
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$rock** — The unchanging covenant that outlasts every moment of judgment. Ps 30:5 and Isa 54:7–8 are the testimony of the $rock-dweller: the moment passed, but the covenant held. What endures beyond the moment is what was built on the $rock.
 
 - **$sand** — The multitudes at the covenant boundary who have not been bound to the $rock. When the moment falls, what is built on $sand collapses instantly (Mat 7:26–27). Ps 73:18 — "slippery places" that give way "as in a moment." $sand = what does not survive the moment of reckoning.
@@ -199,3 +287,37 @@ KJV translates H7281 as "moment" and occasionally as "instant" or "space." The r
 - **$sleep** — The state of those overtaken by the moment. If the moment falls "at midnight" upon the unaware, what does it mean to "awake out of sleep" before the moment arrives?
 
 - **$truth** — The standard by which the moment evaluates. The moment is not random destruction — it executes the verdict of God's commandment. How does $truth function as the measuring line of divine judgment?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **moment** begins:
+
+> “Mo”ment, n. Etym: [F. moment, L. momentum, for movimentum movement, motion, moment, fr. movere to move. See Move, and cf. Momentum, Movement.] 1. A minute portion of time; a point of time; an instant; as, at thet very moment. In a moment, in the twinkling of an eye. 1 Cor. xv. 52.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The printed texts clearly illustrate sudden judgment and resurrection, but they do not by themselves establish that every biblical “moment” means decisive action, that mercy and judgment alike always operate this way, or that divine action is “never a slow process.”
+
+- One could argue MATCH, since Response A's primary meaning already includes 'instantaneous divine action' and the book's pairing of judgment and mercy verses maps directly onto listed consensus senses; the omission of the affliction/eternity contrast in a short glossary entry might be compression rather than exclusion. However, the book's unification into one fixed symbol and its categorical 'never a slow process' claim go beyond what the consensus, which insists on contextual reading, would affirm.
+
+- Consensus explicitly denies any settled fixed symbolic meaning and treats the momentary-affliction/eternal-glory contrast (2 Cor 4:17; Ps 30:5) as at least co-primary, an emphasis the book omits.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A short time expression pointing to the sudden destruction of [Babylon the Great](/research/symbols/babel/), aligned with the resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals may point directly or by type, shadow, or similitude to that appointed moment.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *moment*. The English-form sweep found **22 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

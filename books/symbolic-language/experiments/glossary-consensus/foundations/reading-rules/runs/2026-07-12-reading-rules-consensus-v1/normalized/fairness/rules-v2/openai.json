@@ -1,0 +1,90 @@
+{
+  "verdict": "FAIR_WITH_CLARIFICATIONS",
+  "agree_to_use_as_baseline": "NO",
+  "symmetry": "PASS",
+  "neutrality": "PASS",
+  "reproducibility": "FAIL",
+  "strengths": [
+    "Both candidates face the same admission gate, evidence classes, source-risk rules, and decision threshold.",
+    "The method expressly permits underdetermination and does not infer originality merely from the rival's inadmissibility.",
+    "Hard admissibility constraints are generally separated from comparative evidence and reporting requirements.",
+    "Dependence, double-counting, circularity, source affiliation, and unsupported motive claims are addressed by general rules applying to either candidate.",
+    "The rules freeze the target, corpus, witnesses, searches, candidate analyses, and potential falsifiers before comparison.",
+    "The received pointing is treated as evidence from a reading tradition without being made binding or an automatic tiebreaker.",
+    "The reversal, ablation, exclusion, lineage, and adverse-evidence reporting requirements are strong safeguards against outcome-driven application.",
+    "Nothing as written guarantees protection for an author's preferred reading; the same rules could defeat either candidate."
+  ],
+  "ambiguities": [
+    {
+      "location": "Rule 3.4, symmetrical admission gate",
+      "problem": "Every construction must have at least one independent parallel matching language stratum, period, and genre. 'Construction,' 'independent parallel,' and the required degree of matching are undefined. This can make ordinary productive constructions inadmissible merely because an exact genre-specific token is unavailable, and it leaves substantial discretion over what counts as a match.",
+      "minimum_clarification": "Define the relevant constructional features and permit either a genuinely comparable cited parallel or a cited productive grammatical rule established from the frozen corpus. Require exact period-and-genre matching only for claims alleged to be restricted to that period or genre."
+    },
+    {
+      "location": "Rules 3.6 and 3.7",
+      "problem": "Terms such as 'non-default,' 'rare,' 'exceptional,' 'demonstrably later,' and 'every plausible composition-and-transmission window' lack operational definitions. Different evaluators could apply the hard gate differently.",
+      "minimum_clarification": "Freeze the relevant default grammar, rarity comparison class, chronological windows, and standard of demonstrating lateness before evidence collection; classify uncertainty as comparative weakness rather than gate failure unless incompatibility is established."
+    },
+    {
+      "location": "Rules 3, 5.1, and 12",
+      "problem": "A logically excluding concord or other encoded constraint can appear either as a gate failure or as controlling class-1 evidence. The resulting outcome could therefore be either `INADMISSIBLE_*` or `*_BETTER_SUPPORTED` for the same fact.",
+      "minimum_clarification": "State that any class-1 fact proving morphological, orthographic, or grammatical impossibility triggers the corresponding inadmissibility outcome; reserve controlling comparative evidence for facts that select between otherwise admissible analyses without showing that one violates the gate."
+    },
+    {
+      "location": "Rule 5, evidence classes",
+      "problem": "The boundary between class 1 and class 2 is not fully reproducible because class 1 includes immediate co-text and forced concord while class 2 includes morphology and syntax. Assignment matters because class 1 can be controlling.",
+      "minimum_clarification": "Limit class 1 to mechanically observable encoded features whose exclusion follows without a contestable lexical, syntactic, discourse, or genre analysis. Place all analysis-dependent concord, syntax, and discourse claims in class 2."
+    },
+    {
+      "location": "Rule 6, fixed scoring ledger",
+      "problem": "The labels `STRONGLY_FAVORS`, `FAVORS`, `NEUTRAL`, and `AMBIGUOUS` are not operationally defined. The rules also do not specify how conflicting data within one class yield a class-level score. Contrary evidence has no expressly defined score, and scoring each candidate separately could allow the same class to favor both without a prescribed resolution.",
+      "minimum_clarification": "Define each score, state how contrary evidence is represented, and specify how conflicting independent data within a class produce one comparative class result. Require unresolved material conflict within a class to be recorded as `AMBIGUOUS` unless a predeclared quality criterion resolves it."
+    },
+    {
+      "location": "Rules 5, 6, and 12",
+      "problem": "'Materially distinguishes,' 'clear higher-class evidence,' 'positive support,' and 'unresolved' are decisive terms but are not defined. This leaves the decision threshold insufficiently reproducible.",
+      "minimum_clarification": "Define a material datum as one that changes a gate determination, class score, or threshold condition under a stated linguistic or historical inference; define evidence as unresolved whenever a material objection or comparably qualified counteranalysis remains unadjudicated under the frozen criteria."
+    },
+    {
+      "location": "Rule 10, source-risk adjustment",
+      "problem": "The rule requires documenting the 'amount of adjustment,' but the system contains no quantitative scale or defined qualitative adjustment levels.",
+      "minimum_clarification": "Replace 'amount of adjustment' with a fixed qualitative effect, such as `NO_ADJUSTMENT`, `DOWNWEIGHT_WITHIN_CLASS`, or `REQUIRE_INDEPENDENT_CORROBORATION`, and define the consequence of each before scoring."
+    },
+    {
+      "location": "Rule 12.3, decision threshold",
+      "problem": "The required additional supporting class is symmetrical but unusually restrictive, and it is unclear whether it applies when the highest-class advantage consists of multiple independent families within one class. It can force underdetermination despite strong independent evidence concentrated in the most probative class.",
+      "minimum_clarification": "State expressly whether corroboration must come from a different numbered class. If that is intended, retain it explicitly; otherwise allow a second independent evidentiary family within the highest distinguishing class."
+    },
+    {
+      "location": "Rule 13, control homograph",
+      "problem": "'Suitable control,' control selection, and 'failure' are undefined. Because failure bars a better-supported verdict, discretionary control selection could create an unreviewable veto.",
+      "minimum_clarification": "Predefine suitability, the search and selection procedure, and the success criterion. Require disclosure of all controls satisfying the criteria, not a selectively chosen control, and treat disputed suitability as an unresolved assumption rather than an automatic bar."
+    },
+    {
+      "location": "Rule 13, final paragraph, compared with Rules 2, 10, and 11",
+      "problem": "The prohibition on adding any source-risk adjustment or context category 'after the target is known' conflicts with the case-specific freezing process, which necessarily occurs after the target is identified. Read literally, it could prohibit the adjustments Rules 10 and 11 require.",
+      "minimum_clarification": "Replace 'after the target is known' with 'after evidence collection or candidate scoring begins.' Require general adjustment criteria to be predeclared, while freezing their case-specific application under Rule 2 before scoring."
+    }
+  ],
+  "unfair_rules": [],
+  "missing_rules": [
+    "Operational definitions for the four class scores and a prescribed method for resolving conflicting evidence within a class.",
+    "A nondiscretionary protocol for identifying, selecting, and evaluating suitable calibration controls.",
+    "An explicit rule determining when a logically excluding fact produces inadmissibility rather than a comparative victory."
+  ],
+  "comparison_to_own_proposal": "The proposed rules substantially share the frozen proposal's central safeguards: fixed consonants, symmetrical admission, separation of admissibility from preference, evidence-family clustering, source neutrality, an underdetermined outcome, frozen searches, and reversal and ablation checks. They are stricter than the frozen proposal in requiring a matching parallel for every construction and an additional supporting class before a better-supported verdict. They also remove the frozen proposal's rebuttable presumption for received pointing. Those differences are symmetrical and do not inherently favor candidate A or B, but the stricter gate, undefined qualitative scoring, class-1 boundary, and control-veto procedure require clarification before reproducible use.",
+  "exact_revision_suggestions": [
+    "Replace Rule 3.4 with: `use a construction supported either by at least one genuinely comparable cited independent parallel in the relevant language variety or by a cited productive grammatical rule established from the frozen corpus; exact period-and-genre matching is required only when the proposed construction is claimed to depend on that period or genre.`",
+    "Add after Rule 3.7: `Before applying the gate, define the comparison class for defaultness and rarity and list the plausible chronological windows. Uncertain dating or classification is not a gate failure unless every frozen plausible window is incompatible with the candidate.`",
+    "Add to Rule 5.1: `Class 1 contains only mechanically observable encoded features whose excluding force does not depend on a contestable lexical, syntactic, discourse, or genre analysis. Analysis-dependent concord and syntax belong to class 2.`",
+    "Add after Rule 5.1: `If a class-1 constraint establishes failure of an admission criterion, report the applicable INADMISSIBLE outcome rather than a comparative BETTER_SUPPORTED outcome.`",
+    "Add to Rule 6: ``STRONGLY_FAVORS` means that the class contains independently checkable evidence that sharply discriminates between the candidates with no comparably strong unresolved counterevidence; `FAVORS` means material but noncontrolling discriminatory support; `NEUTRAL` means the class does not discriminate; `AMBIGUOUS` means material evidence conflicts or its direction cannot be resolved under the frozen criteria. Contrary evidence for one candidate is recorded as favorable evidence for the rival only when the inference is logically comparative. Unresolved material conflict within a class yields `AMBIGUOUS`.`",
+    "Add to Rule 6: `A datum is material only if, under an expressly stated inference, it can change a gate result, a class score, or a condition in Rule 12.`",
+    "Replace Rule 10's phrase `the amount of adjustment` with `one predeclared qualitative adjustment: NO_ADJUSTMENT, DOWNWEIGHT_WITHIN_CLASS, or REQUIRE_INDEPENDENT_CORROBORATION, together with the defined consequence of that adjustment.`",
+    "Clarify Rule 12.3 by stating either `The additional support must come from a different numbered class` or `A second independent evidentiary family within the highest distinguishing class may satisfy this condition.`",
+    "Add to the control provision: `Suitability criteria, search procedure, and success criterion must be frozen before scoring. Report every located control satisfying those criteria. A control failure exists only when the independently fixed reading is not recovered under the same gate and threshold rules; disputed suitability is reported as an unresolved assumption.`",
+    "Replace Rule 13's final prohibition with: `No rule, exception, weighting criterion, source-risk criterion, or context category may be added after evidence collection or scoring begins. General criteria must be predeclared, and their case-specific application must be frozen under Rule 2 before scoring.`"
+  ],
+  "reasoning": "As written, the framework is even-handed: candidate labels receive identical treatment, source adjustments are behavior-based rather than affiliation-based, hard exclusions are mostly separated from evidentiary weights, and underdetermination is preserved. There is no rule granting one undisclosed side an outcome-specific advantage. The principal defects concern reproducibility rather than partisan asymmetry. Undefined score levels, uncertain aggregation within classes, overlap between controlling class-1 evidence and the admission gate, an undefined calibration veto, and a timing conflict over source adjustments could lead independent evaluators to different outcomes. Because textual clarification is required, the rules should not yet be accepted exactly as written.",
+  "confidence": "HIGH"
+}

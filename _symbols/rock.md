@@ -1,19 +1,110 @@
 ---
 layout: symbol-study
 symbol_key: rock
-title: "Rock — Symbol Study"
-description: "The rock in Scripture represents the unchanging covenant — the binding agreement between God and man that does not shift, does not fail, and upon which everything else is built."
-strongs: [H6697, H5553, G4073]
-words: [rock, rocks]
+title: Rock — Symbol Study
+description: >-
+  The rock in Scripture represents the unchanging covenant — the binding agreement between God and
+  man that does not shift, does not fail, and upon which everything else is built.
+strongs:
+  - H6697
+  - H5553
+  - G4073
+words:
+  - rock
+  - rocks
+record_version: 1
+record_type: symbol
+term: Rock
+definition: >-
+  Jesus Christ, the covenant Head and bedrock beneath His house and kingdom — the foundation,
+  refuge, and source upon whom His people stand.
+meaning: >-
+  Jesus Christ, the covenant Head and bedrock beneath His house and kingdom — the foundation,
+  refuge, and source upon whom His people stand.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-rock
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - sand
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - rock
+      - rocks
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      Jesus Christ, the covenant Head and bedrock beneath His house and kingdom — the foundation,
+      refuge, and source upon whom His people stand.
+    citations:
+      - Deut 32:4
+      - Ps 40:2
+      - Isa 32:2
+      - Matt 7:24-25
+      - 1 Cor 10:4
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      Jesus Christ, the covenant Head and bedrock beneath His house and kingdom — the foundation,
+      refuge, and source upon whom His people stand.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-rock
+    citations:
+      - Deut 32:4
+      - Ps 40:2
+      - Isa 32:2
+      - Matt 7:24-25
+      - 1 Cor 10:4
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: Rock, n.
+    status: quoted
+    headword: ROCK
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Rock
 
-**The unchanging covenant — the binding agreement between God and man that does not shift, does not fail, and upon which everything stands or falls.**
+## Approved Definition
 
+**Jesus Christ, the [covenant](/research/symbols/covenant/) Head and bedrock beneath His house and [kingdom](/research/symbols/mountain/) — the foundation, refuge, and source upon whom His people stand.**
 > *"Moreover, brethren, I would not that ye should be ignorant, how that all our fathers… did all drink the same spiritual drink: for they drank of that spiritual **Rock** that followed them: and that **Rock** was Christ."* — 1 Co 10:4
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Jesus Christ, the [covenant](/research/symbols/covenant/) Head and bedrock beneath His house and [kingdom](/research/symbols/mountain/) — the foundation, refuge, and source upon whom His people stand.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **rock** begins: “Rock, n.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -169,8 +260,7 @@ Together: the Rock ($name, covenant) contains $truth (commandments), is communic
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$sand** — The rock's defining opposite. $sand represents the multitudes at the covenant boundary — Abraham's innumerable seed at the seashore, the people who may or may not enter the binding relationship. Rock is sand *bound by covenant*. Sand without the rock is swept into the $sea of nations. The Mat 7:24–27 contrast is between covenant and crowd.
 
 - **$truth** — God's commandment, God's standard. The rock is described as "a God of $truth" (Deu 32:4) — the covenant is built on the terms of God's own standard. $truth is the content of the covenant; the rock is the binding structure that holds it.
@@ -231,3 +321,37 @@ KJV translates H6697 as "rock," "strength," "God," "sharp," "mighty." H5553 as "
 - **$wine** — The blood that seals the covenant. How does the struck rock in the wilderness prefigure the covenant ratified by blood?
 - **$bread** — The Word that flows from the covenant. Manna came from the rock; Jesus is both Rock and Bread. How do the covenant and its terms relate?
 - **$name** — The covenant invoked. If rock and $name both point to covenant, what does "taking the $name in vain" mean for someone who claims to stand on the rock?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **rock** begins:
+
+> “Rock, n. Defn: See Roc.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The printed texts establish God as Rock, Christ as the spiritual Rock, Christ as covenant, and the rejected stone as cornerstone, but no cited verse directly states that “rock” as a symbol means covenant; that conclusion depends on synthesizing distinct passages.
+
+- One could argue MATCH: the book plainly says the Rock 'was Christ' and cites the same anchor texts (Deut 32:4; 1 Cor 10:4; Ps 118:22) as the consensus, so 'covenant in person' is merely a gloss on Christ, not a different identification. Conversely, one could argue NOVEL: 'the covenant' as the rock's meaning appears in no consensus response or alternative, and the linkage depends on chaining Isa 42:6 (which contains no rock language) to 1 Cor 10:4, making the covenant identification an interpretation the tradition does not attest for this symbol.
+
+- Consensus primary force is stability/refuge/foundation (and related motifs), not “covenant”; equating Rock directly with the covenant via Isa 42:6 is non-standard and absent from the blind responses’ bases or alternatives.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Jesus Christ, the [covenant](/research/symbols/covenant/) Head and bedrock beneath His house and [kingdom](/research/symbols/mountain/) — the foundation, refuge, and source upon whom His people stand.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *rock*, *rocks*. The English-form sweep found **128 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

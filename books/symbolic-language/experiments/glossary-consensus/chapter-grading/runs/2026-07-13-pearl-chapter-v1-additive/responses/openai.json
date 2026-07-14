@@ -1,0 +1,461 @@
+{
+  "id": "resp_02a07f52ee718673006a5487e7ab1481959be8a79b69037ed9",
+  "object": "response",
+  "created_at": 1783924711,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783924888,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Apply the frozen rubric symmetrically, separate claim categories, and request only outcome-changing evidence.",
+  "max_output_tokens": 20000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_02a07f52ee718673006a5487e8a98c8195b143f4512ae1cdb9",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_02a07f52ee718673006a5487f582ec819587a1c1f10fe65390",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_02a07f52ee718673006a5488024ba48195bb880a0f97bcfdcb",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_02a07f52ee718673006a54881017088195b91aee508333c208",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_02a07f52ee718673006a54881a601c8195be48e1ea270b6a41",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_02a07f52ee718673006a54882476f88195b8a07a239f16dc95",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\n  \"overall_verdict\": \"UNDERDETERMINED_BY_PACKET\",\n  \"verdict_reason\": \"The chapter supplies positive, noncircular clues for a pearl/full-moon association, especially the independently frozen moon-bride-gate background, Revelation's one-pearl gates, the night/lamp/husband/gates imagery in Proverbs 31, and the throne/full-moon homography. It therefore exceeds mere compatibility. However, several material linguistic links have not independently passed Rule 3 as written: the bundled Proverbs 3 renderings are not individually demonstrated for language, form, and context; the Proverbs 31 'shine' renderings are supported mainly from the root rather than the actual stems; and reading שחק as 'sky' does not produce a demonstrated grammatical clause. The crucial move from Psalm 81's keseh to 'the full moon is the same day as the new moon and begins the month' also exceeds the lexical evidence supplied. Because the lunar integration depends materially on these unresolved readings, while some peripheral wordplays fail, the packet does not justify either acceptance of the whole integrated claim or rejection of its narrower symbolic core.\",\n  \"rule_audit\": [\n    {\n      \"rule\": \"1\",\n      \"result\": \"PARTIAL\",\n      \"reason\": \"The chapter expressly says that pointing receives a vote rather than a veto and preserves the pointed housewife reading. It nevertheless sometimes treats agreement among named translations as cumulative confirmation without establishing their independence, and it does not consistently label unresolved comparisons as underdetermined.\"\n    },\n    {\n      \"rule\": \"2\",\n      \"result\": \"PARTIAL\",\n      \"reason\": \"Lexicons and versions contribute potentially relevant lexical and historical data, but phrases such as 'Strong's own definition,' lists of modern versions, and 'the oldest translation of all' occasionally function rhetorically as proof by status or number. Their actual arguments can be considered, but their authority, age, or count cannot decide the readings.\"\n    },\n    {\n      \"rule\": \"3\",\n      \"result\": \"PARTIAL\",\n      \"reason\": \"The chapter provides a useful inventory of changed words and usually identifies the consonants or a cited sense. It does not, however, test the received and additive readings symmetrically for morphology, construction, period, and immediate-clause coherence. Several pivotal proposals rely on root association, etymological gloss, cross-language consonantal resemblance, or a different stem without demonstrating the required form.\"\n    },\n    {\n      \"rule\": \"4\",\n      \"result\": \"PARTIAL\",\n      \"reason\": \"The prior sun-moon-stars and Lucifer material supplies an independently frozen background, and the target adds some incremental facts rather than merely repeating it. The chapter does not compare the strongest received-only model, map all duplicated dependencies, state reversal evidence, or distinguish prediction from accommodation. Its consilience is positive but incomplete.\"\n    },\n    {\n      \"rule\": \"5\",\n      \"result\": \"PARTIAL\",\n      \"reason\": \"The chapter explicitly preserves the wife-and-mother reading and presents the lunar hearing as additive. It does not consistently separate admission, active intention, and comparative gain. Some compatible alternates can stand as possibilities, but the chapter often moves directly from possible wordplay to intended double testimony.\"\n    }\n  ],\n  \"claim_ledger\": [\n    {\n      \"claim\": \"Hebrew peninim in Proverbs 3:15 and 31:10 may denote pearls rather than the received English 'rubies.'\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"received_or_base_reading\": \"Peninim denotes rubies or another red/precious substance.\",\n      \"proposed_additive_reading\": \"Peninim denotes pearls, with roundness relevant to the image.\",\n      \"relationship\": \"CONTRADICTORY_RIVALS\",\n      \"base_admission\": \"PASS\",\n      \"additive_admission\": \"UNDERDETERMINED\",\n      \"admission_outcome\": \"UNDERDETERMINED\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"The chapter identifies a recognized pearl proposal, but its principal support is a quoted lexicon judgment, 'probably a pearl,' and the later pearl synthesis. That identifies a possible sense but does not document independent ancient usage sufficient to select pearl at these loci. Evaluator knowledge indicates that the precise material denoted by peninim is disputed and requires source verification.\",\n      \"affirmative_exclusion_evidence\": \"None supplied; the received English 'rubies' does not itself exclude pearl.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"outcome_changing_evidence\": \"Cite independently dated Hebrew or cognate usage that discriminates pearl from coral, ruby, or generic precious material, and explain why the Proverbs contexts favor pearl.\"\n    },\n    {\n      \"claim\": \"Proverbs 3:14, Proverbs 31:18, and Matthew 13:45 uniquely form a three-text 'good merchandise' thread joining wisdom, woman, and pearl.\",\n      \"category\": \"RECIPROCAL_CONSILIENCE\",\n      \"received_or_base_reading\": \"Proverbs 3 and 31 share the Hebrew clause כי טוב סחרה, while Matthew independently describes a merchant seeking good pearls.\",\n      \"proposed_additive_reading\": \"The three passages form a deliberate canonical thread identifying wisdom, the bride, and the pearl.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"NOT_APPLICABLE\",\n      \"additive_admission\": \"NOT_APPLICABLE\",\n      \"admission_outcome\": \"NOT_APPLICABLE\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\"\n      ],\n      \"reason\": \"The letter-for-letter Hebrew clause shared by Proverbs 3:14 and 31:18 is material and supports a wisdom/woman connection. Matthew does not repeat that clause and is in another language; it combines merchant and good pearls rather than saying 'her merchandise is good.' The assertion that these are exactly the only relevant places also requires a reproducible corpus search.\",\n      \"affirmative_exclusion_evidence\": \"None.\",\n      \"gap_owner\": \"CHAPTER_OVERCLAIM\",\n      \"outcome_changing_evidence\": \"Narrow the claim to the exact Proverbs quotation and provide a concordance methodology if uniqueness across the canon remains material.\"\n    },\n    {\n      \"claim\": \"The alternate renderings in Proverbs 3:13-20 collectively produce a second lunar portrait while preserving the ordinary wisdom poem.\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"received_or_base_reading\": \"The poem speaks of obtaining wisdom, profitable merchandise, long life, honor, pleasant ways, peace, and the creation of earth and heavens.\",\n      \"proposed_additive_reading\": \"The same forms also speak of drawing out, going-round, harvest, brightness, appropriateness of days, shining, splendour, wholeness, and the witness's skies.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"PASS\",\n      \"additive_admission\": \"UNDERDETERMINED\",\n      \"admission_outcome\": \"UNDERDETERMINED\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"Several changes are ordinary lexical refinements, such as 'broken open' and 'skies.' Others are not demonstrated as senses of the forms in these clauses. In particular, 'appropriateness' is supported through an Aramaic comparison in Ezra rather than a shown Hebrew sense of orek, and 'going-round' risks substituting an etymological root image for the attested noun 'merchandise.' The package cannot pass merely because its combined lunar result is coherent.\",\n      \"affirmative_exclusion_evidence\": \"The ordinary wisdom/economic context positively favors merchandise, gain, long life, honor, pleasantness, and peace, but does not exclude every secondary wordplay.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"outcome_changing_evidence\": \"For each outcome-bearing change, cite an independent occurrence in the same language and comparable form or a productive derivation, then parse its syntax in the Proverbs clause.\"\n    },\n    {\n      \"claim\": \"Proverbs 31's palms, appointed portion, circuit, and night imagery constitute an admissible additive lunar hearing.\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"received_or_base_reading\": \"The woman works with her hands, gives portions to her household, uses a spindle, helps the poor, and keeps her lamp burning at night.\",\n      \"proposed_additive_reading\": \"Her curved palms hold the celestial circuit, distribute appointed portions, and portray a full moon governing the night.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"PASS\",\n      \"additive_admission\": \"UNDERDETERMINED\",\n      \"admission_outcome\": \"UNDERDETERMINED\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"BACKGROUND_PACKET\"\n      ],\n      \"reason\": \"Rendering kaph as 'palm' and noting its distinction from yad are admissible. Choq can denote an assigned portion or ordinance. The decisive rendering of pelekh as 'the circuit' is less secure: the chapter supplies an etymological gloss and a district usage, while the immediate spinning context strongly supports 'spindle/whorl.' A celestial clause is intelligible only after importing the lunar model, so independent contextual coherence remains insufficiently shown.\",\n      \"affirmative_exclusion_evidence\": \"The surrounding wool, flax, hands, spindle work, and clothing provide affirmative contextual preference for the textile reading, though not necessarily exclusion of all poetic wordplay.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"outcome_changing_evidence\": \"Provide an independently attested use of pelekh meaning a celestial or temporal circuit, or narrow the sentence to an evocative roundness association rather than a translation.\"\n    },\n    {\n      \"claim\": \"Proverbs 31:21 permits both the pointed 'scarlet' reading and an additive 'double garments' reading.\",\n      \"category\": \"LINGUISTIC_VOCALIZATION\",\n      \"received_or_base_reading\": \"All her household are clothed in scarlet.\",\n      \"proposed_additive_reading\": \"All her household are clothed in double garments.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"PASS\",\n      \"additive_admission\": \"PASS\",\n      \"admission_outcome\": \"BOTH_ADMISSIBLE_ADDITIVE\",\n      \"additive_intent_support\": \"SUPPORTED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"The same consonants support the traditional plural adjective and a numeral reading, both produce coherent household-clothing clauses, and the chapter identifies ancient Greek and Latin evidence for doubled garments. That versional evidence is relevant as historical data, not because the versions are old authorities. Exact morphology and translation dependence should still be source-verified, but the packet supplies enough for admission and positive historical support.\",\n      \"affirmative_exclusion_evidence\": \"None supplied; a household can be clothed both warmly/doubly and in scarlet.\",\n      \"gap_owner\": \"EVALUATOR_KNOWLEDGE_LIMIT\",\n      \"outcome_changing_evidence\": \"A grammatical demonstration that shnayim cannot modify the clothing expression here, or evidence that the cited versions derive from a different consonantal text, would reverse the additive admission.\"\n    },\n    {\n      \"claim\": \"The forms translated 'praise' in Proverbs 31:28, 30, and 31 also mean 'make her shine,' and שחק in verse 25 simultaneously supplies 'sky.'\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"received_or_base_reading\": \"Her husband and works praise her, she is praised, and she laughs at the future day.\",\n      \"proposed_additive_reading\": \"Her husband and works make her shine, she shines, and the witness's sky stands beneath the laugh.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"PASS\",\n      \"additive_admission\": \"FAIL\",\n      \"admission_outcome\": \"BASE_ONLY_ADMISSIBLE\",\n      \"additive_intent_support\": \"AFFIRMATIVELY_EXCLUDED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"The chapter establishes a root association between hll and shining but does not demonstrate that the Piel/Hithpael forms in these clauses carry the proposed luminous sense. Their parallel syntax strongly supports praise. More decisively, substituting the noun 'sky' for the verb 'laugh' does not yield a parsed grammatical clause; consonantal identity alone is insufficient under Rule 3.\",\n      \"affirmative_exclusion_evidence\": \"The coordinated statements that sons call her blessed and her husband praises her, together with the verbal syntax of 'laughs at the future day,' affirmatively support the received forms and exclude the unparsed noun substitution as a full alternate reading.\",\n      \"gap_owner\": \"CHAPTER_OVERCLAIM\",\n      \"outcome_changing_evidence\": \"For the shine readings, provide same-stem biblical examples with the proposed sense and parse each clause. For 'sky,' provide a grammatically complete construction from the extant consonants without adding or changing words.\"\n    },\n    {\n      \"claim\": \"The ordinary imagery of Proverbs 3 and 31 positively portrays the full moon while continuing to portray wisdom and the virtuous woman.\",\n      \"category\": \"SYMBOLIC_DERIVATION\",\n      \"received_or_base_reading\": \"The poems praise wisdom and an industrious covenant wife using household, commercial, agricultural, and creation imagery.\",\n      \"proposed_additive_reading\": \"The poems additionally portray the full moon as bride and faithful witness: rising at night, shining through the night, receiving light from her husband, governing portions and circuits, and appearing at gates among elders.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"NOT_APPLICABLE\",\n      \"additive_admission\": \"NOT_APPLICABLE\",\n      \"admission_outcome\": \"NOT_APPLICABLE\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"BACKGROUND_PACKET\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"The frozen background independently predicts moon/bride, husband/sun, gates, elders, night, and appointed-time associations. The target adds night rising, an enduring lamp, husband-given praise, and gates. These are positive correspondences, but many are expected in a literal household poem and some lunar specificity comes only from disputed rerenderings. The statement that exactly one light fits is overstated: the full moon uniquely approximates sunset-to-sunrise visibility, but the poem itself does not state those exact endpoints.\",\n      \"affirmative_exclusion_evidence\": \"The sustained textile, household, commercial, and charitable context strongly explains the imagery under the received-only model, but it does not contradict an additional poetic association.\",\n      \"gap_owner\": \"CHAPTER_OVERCLAIM\",\n      \"outcome_changing_evidence\": \"Narrow 'every line' and 'exactly one' claims, then identify a feature of the received text that is unlikely under the housewife-only model but specifically predicted by the full-moon model.\"\n    },\n    {\n      \"claim\": \"The one pearl of great price and Revelation's one-pearl gates symbolically identify the full moon as the kingdom's appointed gate.\",\n      \"category\": \"SYMBOLIC_DERIVATION\",\n      \"received_or_base_reading\": \"The parable depicts incomparable kingdom value and Revelation depicts the city's magnificent pearl gates.\",\n      \"proposed_additive_reading\": \"The one complete, round, white pearl is the full moon, and each pearl gate represents an appointed monthly meeting.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"NOT_APPLICABLE\",\n      \"additive_admission\": \"NOT_APPLICABLE\",\n      \"admission_outcome\": \"NOT_APPLICABLE\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"BACKGROUND_PACKET\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"Revelation's statement that each gate is one pearl is real incremental evidence, and the frozen background already connects the moon with appointed times and heavenly gates. Roundness, whiteness, and completeness make the analogy intelligible. Yet the chapter does not establish that pearl inherently means 'complete,' that every biblical pearl has this sense, or that twelve gates correspond to twelve monthly full moons rather than tribes, access, beauty, or value. The association is plausible but not selected over the strongest base-only model.\",\n      \"affirmative_exclusion_evidence\": \"Revelation expressly identifies the gate names with the twelve tribes, which supplies a strong base-only explanation but does not exclude an additional calendrical symbol.\",\n      \"gap_owner\": \"CHAPTER_OVERCLAIM\",\n      \"outcome_changing_evidence\": \"State the tribal reading as the controlling base and provide a nonduplicative textual link explicitly connecting pearl gates with monthly moedim.\"\n    },\n    {\n      \"claim\": \"Keseh 'full moon' and kisse 'throne' form an intended additive homography, including a possible full-moon hearing in Job 26:9.\",\n      \"category\": \"LINGUISTIC_VOCALIZATION\",\n      \"received_or_base_reading\": \"Job 26:9 speaks of God covering the face of his throne with cloud.\",\n      \"proposed_additive_reading\": \"The same consonants can evoke God covering the face of the full moon with cloud, linking throne and lunar fulness.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"PASS\",\n      \"additive_admission\": \"PASS\",\n      \"admission_outcome\": \"BOTH_ADMISSIBLE_ADDITIVE\",\n      \"additive_intent_support\": \"SUPPORTED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"BACKGROUND_PACKET\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"The chapter identifies independently attested throne and full-moon lexemes with overlapping consonantal spellings, and 'covering the face of the full moon with cloud' is morphologically and contextually coherent. Psalm 89's explicit throne/sun/moon similes provide positive contextual support beyond bare homography. This admits the additive hearing without proving that throne and full moon share the asserted etymology or that the pun was certainly intended.\",\n      \"affirmative_exclusion_evidence\": \"None supplied.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"A textual or morphological demonstration that the Job form necessarily contains a possessive throne form unavailable to keseh, or that the apparent spellings are not actually the same consonantal locus, would reverse admission.\"\n    },\n    {\n      \"claim\": \"Psalm 81:3 teaches that the new-moon day and full moon are one day, so the biblical month begins at the full moon.\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"received_or_base_reading\": \"The verse commands trumpet blowing at the new moon and at the keseh associated with the feast, commonly understood as an appointed or full-moon festival time.\",\n      \"proposed_additive_reading\": \"Keseh means full moon, the lack of a conjunction makes it appositional to chodesh, and therefore the full moon itself is the head of the month.\",\n      \"relationship\": \"CONTRADICTORY_RIVALS\",\n      \"base_admission\": \"PASS\",\n      \"additive_admission\": \"UNDERDETERMINED\",\n      \"admission_outcome\": \"UNDERDETERMINED\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"The packet supplies substantial evidence that keseh can mean full moon. It does not establish that the three temporal phrases must identify one day or that the absence of an explicit conjunction requires apposition. Hebrew poetic juxtaposition can support more than one syntactic relation. Version agreement establishes prevalence of 'full moon,' not the further calendrical conclusion.\",\n      \"affirmative_exclusion_evidence\": \"No decisive exclusion is supplied, but the ordinary distinction between chodesh and a midmonth feast is a serious rival model requiring direct syntactic and calendrical comparison.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"outcome_changing_evidence\": \"Provide a full syntactic analysis of Psalm 81:3 with comparable Hebrew constructions, then compare all biblical chodesh, keseh, and dated feast evidence under both month-start models.\"\n    },\n    {\n      \"claim\": \"Ezekiel's east gate, the full moon's eastern rise, the pearl warning, and the merchant parable jointly show that the full moon is the true appointed gate while alternative lunar phases are counterfeit entrances.\",\n      \"category\": \"THEOLOGICAL_SYNTHESIS\",\n      \"received_or_base_reading\": \"Ezekiel regulates a temple gate on Sabbaths and new-moon days; John 10 contrasts the shepherd with thieves; Matthew 7 warns against profaning holy things; Matthew 13 teaches the kingdom's incomparable value.\",\n      \"proposed_additive_reading\": \"These passages jointly distinguish the full moon entering the eastern gate from a western or dark-phase counterfeit and identify pearls with holy appointed times.\",\n      \"relationship\": \"NONCONTRADICTORY_ADDITIVE\",\n      \"base_admission\": \"NOT_APPLICABLE\",\n      \"additive_admission\": \"NOT_APPLICABLE\",\n      \"admission_outcome\": \"NOT_APPLICABLE\",\n      \"additive_intent_support\": \"POSSIBLE_NOT_ESTABLISHED\",\n      \"evidence_origins\": [\n        \"TARGET_CHAPTER\",\n        \"BACKGROUND_PACKET\",\n        \"EVALUATOR_KNOWLEDGE\"\n      ],\n      \"reason\": \"The full moon does rise approximately in the east near sunset, which is relevant astronomical information requiring external sourcing. The textual gate is a temple gate, however, and neither Ezekiel nor John explicitly contrasts lunar phases. Matthew 7 uses plural pearls and directly concerns protection of holy things; identifying those pearls specifically as calendrical appointments is an accommodation unless another textual link is supplied. The conclusion also depends on the unresolved Psalm 81 month-start claim.\",\n      \"affirmative_exclusion_evidence\": \"The immediate contexts independently explain temple access, shepherd legitimacy, protection of holy things, and kingdom value without lunar-phase contrasts.\",\n      \"gap_owner\": \"CHAPTER_OVERCLAIM\",\n      \"outcome_changing_evidence\": \"Narrow the claim to a symbolic analogy unless a text independently connects Ezekiel's opened east gate or Matthew's pearls to full-moon month beginnings.\"\n    }\n  ],\n  \"reciprocal_consilience\": {\n    \"verdict\": \"VALID_BUT_INCOMPLETE\",\n    \"independent_background_support\": \"The frozen packet independently establishes the argument's background model before the target: moon as faithful witness and bride-office, sun as husband/source, stars as covenant people, elders among the host, heavenly gates, and the moon's relation to appointed times. The target need not use itself to create those hypotheses.\",\n    \"incremental_target_evidence\": \"The target adds the exact shared Hebrew clause in Proverbs 3:14 and 31:18; Revelation's statement that each gate is one pearl; Proverbs 31's night, lamp, husband, gates, elders, and praise imagery; the throne/full-moon consonantal overlap; and Ezekiel's gate opening on a new-moon day.\",\n    \"dependency_or_duplication_risk\": \"Moon-bride, sun-husband, gates, elders, twelvefold celestial structure, and appointed-time symbolism were already used in the background and cannot be counted again as new target evidence. Several target rerenderings are selected because they fit that background, so they cannot then independently confirm it unless they first pass Rule 3 without the lunar synthesis.\",\n    \"strongest_base_only_or_excluding_model\": \"Proverbs 3 and 31 intentionally connect wisdom with the virtuous wife through shared commercial language; the wife poem uses ordinary textile, household, charitable, and reputational imagery; Matthew's pearl represents incomparable kingdom value; Revelation's pearl gates represent glorious tribal access to the city; Psalm 81 refers to a new-moon signal and a full-moon feast; and Ezekiel regulates a literal visionary temple gate. This model explains most undisputed facts without lunar rerenderings.\",\n    \"comparative_result\": \"The received-plus-lunar model unifies several otherwise separate images and gains some support from the one-pearl gates and throne/full-moon hearing. It currently requires disputed lexical moves and calendrical assumptions, however, and has not shown that the observed details are materially less expected under the strongest received-only model. Comparative gain is therefore positive but not established strongly enough to carry the chapter's full conclusion.\",\n    \"reversal_evidence\": \"The result would strengthen materially if the pivotal Proverbs forms passed same-form lexical and syntactic tests, Psalm 81 were shown by comparable constructions to identify chodesh with keseh, and an independent text linked pearl gates to monthly appointments. It would reverse against the integration if the proposed shine, circuit, full-moon, or Job readings were morphologically excluded, or if the historical witnesses cited for them reflected different consonants or dependent translation traditions.\"\n  },\n  \"category_error_audit\": [\n    {\n      \"possible_error\": \"Rejecting the pearl/full-moon symbol merely because it is not a vocalization claim\",\n      \"present_in_chapter\": false,\n      \"explanation\": \"The symbolic conclusion must be judged by derivation and comparative consilience, not by Rule 3. Only its linguistic premises receive the admission gate.\"\n    },\n    {\n      \"possible_error\": \"Treating shared consonants or an etymological root gloss as sufficient proof of an admissible sense\",\n      \"present_in_chapter\": true,\n      \"explanation\": \"The 'sky' beneath 'laugh,' some 'shine' renderings, 'appropriateness,' and 'circuit' rely on consonantal or root association without fully demonstrating the required lexeme, stem, syntax, and immediate-clause coherence.\"\n    },\n    {\n      \"possible_error\": \"Treating astronomical analogy as lexical proof\",\n      \"present_in_chapter\": true,\n      \"explanation\": \"Full-moon rising, roundness, whiteness, and eastern appearance may support a symbolic model after linguistic admission, but they cannot establish that a Hebrew form means circuit, shine, pearl, or month-beginning.\"\n    },\n    {\n      \"possible_error\": \"Treating version count, antiquity, or lexicon status as proof\",\n      \"present_in_chapter\": true,\n      \"explanation\": \"Named translations and Strong's can preserve data, but phrases emphasizing how many versions agree or which is oldest do not add proof without independence and argument.\"\n    },\n    {\n      \"possible_error\": \"Treating compatibility and thematic usefulness as proof of active double intention\",\n      \"present_in_chapter\": true,\n      \"explanation\": \"The chapter often moves from a coherent lunar application to statements that the letters intentionally testify twice. Rule 5 requires admission, intention, and comparative gain to be reported separately.\"\n    },\n    {\n      \"possible_error\": \"Using the target's lunar result to validate linguistic premises that are then counted as confirmation of the lunar result\",\n      \"present_in_chapter\": true,\n      \"explanation\": \"Several unusual translations become coherent only after the lunar portrait is assumed, creating a dependency risk. They must first be independently admitted before contributing reciprocal support.\"\n    }\n  ],\n  \"claims_pass_as_written\": [\n    \"Proverbs 3:14 and Proverbs 31:18 contain the same Hebrew clause, כי טוב סחרה.\",\n    \"The chapter preserves rather than displaces the ordinary wife-and-mother reading of Proverbs 31.\",\n    \"Revelation 21:21 describes each individual city gate as one pearl.\",\n    \"The frozen background independently links the moon with appointed times, bride imagery, gates, and the faithful-witness office.\",\n    \"The throne/full-moon consonantal overlap supplies a linguistically admissible additive hearing in Job 26:9 when kept distinct from claims of certain intention.\"\n  ],\n  \"claims_both_admissible_additive\": [\n    \"Proverbs 31:21 can preserve the pointed 'scarlet' reading while also admitting the historically witnessed 'double garments' hearing.\",\n    \"Job 26:9 can retain 'the face of his throne' while admitting a coherent full-moon/cloud wordplay.\"\n  ],\n  \"claims_additive_intent_underdetermined\": [\n    \"Peninim specifically denotes pearls at Proverbs 3:15 and 31:10.\",\n    \"The full set of Proverbs 3 rerenderings was intended to paint the moon.\",\n    \"Proverbs 31's palms, portions, and spindle/circuit language intentionally encode a lunar circuit.\",\n    \"The ordinary Proverbs poems intentionally portray the full moon rather than merely accommodating that symbolism.\",\n    \"The one pearl and the city's pearl gates intentionally identify monthly full-moon appointments.\",\n    \"Psalm 81:3 identifies the full moon with the first day of the month.\",\n    \"Ezekiel's east gate and John 10 intentionally contrast full-moon and dark-moon calendar systems.\",\n    \"Matthew 7's pearls specifically denote appointed times.\"\n  ],\n  \"claims_fail_gate\": [\n    \"Reading שחק in Proverbs 31:25 as the noun 'sky' does not produce a demonstrated grammatical alternate clause.\",\n    \"Rendering all relevant Proverbs 31 hll forms as 'make her shine' or 'she shall shine' is not admitted merely from the root's luminous association; the required stems and senses are not demonstrated.\"\n  ],\n  \"material_gaps\": [\n    {\n      \"issue\": \"Pivotal Proverbs rerenderings lack same-form morphological and syntactic documentation.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"why_material\": \"The claim that the poems themselves paint a full moon depends on more than general thematic analogy; several distinctive lunar details arise only from these rerenderings.\",\n      \"minimal_fix_or_test\": \"Add a compact footnote table giving, for each outcome-bearing form, parsing, same-language attestation, comparable construction, and immediate-clause translation.\"\n    },\n    {\n      \"issue\": \"The chapter infers a full-moon month beginning from Psalm 81 without demonstrating the syntax.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"why_material\": \"This is the bridge from a possible full-moon lexeme to the chapter's calendrical gate conclusion.\",\n      \"minimal_fix_or_test\": \"Supply comparable Hebrew temporal phrases showing whether the prepositional clauses are appositional, cumulative, or refer to distinct times.\"\n    },\n    {\n      \"issue\": \"The 'sky' and universal 'shine' renderings are stated as translations despite failed or unshown grammar.\",\n      \"gap_owner\": \"CHAPTER_OVERCLAIM\",\n      \"why_material\": \"The closing assertion that every changed word is attested and weighed is false as presently demonstrated.\",\n      \"minimal_fix_or_test\": \"Remove 'sky' as a translated second reading and describe it only as a consonantal echo; retain 'praise' unless same-stem luminous uses are documented.\"\n    },\n    {\n      \"issue\": \"The strongest received-only model is not compared with the received-plus-lunar model.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"why_material\": \"Household, textile, tribal-gate, feast, and kingdom-value readings explain much of the undisputed evidence without the lunar synthesis.\",\n      \"minimal_fix_or_test\": \"Add a short footnote naming the base-only explanations and identify the one or two target details claimed to be substantially more expected under the lunar model.\"\n    },\n    {\n      \"issue\": \"Astronomical claims and ancient-version dependencies are not sourced.\",\n      \"gap_owner\": \"EVALUATOR_KNOWLEDGE_LIMIT\",\n      \"why_material\": \"The sunset-to-sunrise uniqueness of a full moon and the independence or Vorlage of Greek and Latin garment readings affect comparative support but are not established within the packet.\",\n      \"minimal_fix_or_test\": \"Cite an astronomical reference and a textual note identifying the relevant version readings, dates, and whether they witness vocalization, consonantal variation, or interpretive translation.\"\n    }\n  ],\n  \"minimal_revisions\": [\n    \"Replace the claim that every changed word is an attested translation with a narrower statement distinguishing lexical translation, consonantal echo, and symbolic association; specifically remove 'sky' as a full alternate rendering unless a grammatical parse is supplied.\",\n    \"Add one compact morphology-and-syntax footnote for the pivotal hll forms, pelekh, orek/arik, and the Psalm 81 temporal construction.\",\n    \"Narrow 'the full moon is the head of the month' to 'a possible reading requiring the calendrical case cited in the footnote' unless Psalm 81's appositional syntax is independently demonstrated.\",\n    \"State that Revelation's tribal-gate reading and Proverbs' housewife reading remain the strongest base readings, then identify the incremental facts claimed for the additive lunar model.\",\n    \"Replace translation tallies and 'oldest translation' rhetoric with the actual wording, probable source text, and independence of the relevant witnesses.\"\n  ],\n  \"no_bloat_recommendation\": \"Do not add another thematic section. One lexical-syntax footnote, one brief base-only comparison, and three narrowed sentences would address the outcome-relevant defects.\",\n  \"confidence\": \"MEDIUM\"\n}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_chapter_argument_grade",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "overall_verdict": {
+            "type": "string",
+            "enum": [
+              "MEETS_STANDARD",
+              "MEETS_WITH_LIMITED_GAPS",
+              "UNDERDETERMINED_BY_PACKET",
+              "DOES_NOT_MEET_STANDARD"
+            ]
+          },
+          "verdict_reason": {
+            "type": "string"
+          },
+          "rule_audit": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "rule": {
+                  "type": "string",
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ]
+                },
+                "result": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "PARTIAL",
+                    "FAIL",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "rule",
+                "result",
+                "reason"
+              ]
+            }
+          },
+          "claim_ledger": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "claim": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "LINGUISTIC_VOCALIZATION",
+                    "LEXICAL_OR_GRAMMATICAL",
+                    "SYMBOLIC_DERIVATION",
+                    "BACKGROUND_HYPOTHESIS",
+                    "RECIPROCAL_CONSILIENCE",
+                    "HISTORICAL_OR_ASTRONOMICAL",
+                    "THEOLOGICAL_SYNTHESIS"
+                  ]
+                },
+                "received_or_base_reading": {
+                  "type": "string"
+                },
+                "proposed_additive_reading": {
+                  "type": "string"
+                },
+                "relationship": {
+                  "type": "string",
+                  "enum": [
+                    "NONCONTRADICTORY_ADDITIVE",
+                    "CONTRADICTORY_RIVALS",
+                    "NOT_COMPARATIVE"
+                  ]
+                },
+                "base_admission": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "UNDERDETERMINED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "additive_admission": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "UNDERDETERMINED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "admission_outcome": {
+                  "type": "string",
+                  "enum": [
+                    "BOTH_ADMISSIBLE_ADDITIVE",
+                    "BASE_ONLY_ADMISSIBLE",
+                    "ADDITIVE_ONLY_ADMISSIBLE",
+                    "NEITHER_ADMISSIBLE",
+                    "UNDERDETERMINED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "additive_intent_support": {
+                  "type": "string",
+                  "enum": [
+                    "SUPPORTED",
+                    "POSSIBLE_NOT_ESTABLISHED",
+                    "AFFIRMATIVELY_EXCLUDED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "evidence_origins": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "TARGET_CHAPTER",
+                      "BACKGROUND_PACKET",
+                      "EVALUATOR_KNOWLEDGE",
+                      "NONE"
+                    ]
+                  }
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "affirmative_exclusion_evidence": {
+                  "type": "string"
+                },
+                "gap_owner": {
+                  "type": "string",
+                  "enum": [
+                    "NONE",
+                    "CHAPTER_MISSING_EVIDENCE",
+                    "CHAPTER_OVERCLAIM",
+                    "EVALUATOR_KNOWLEDGE_LIMIT",
+                    "PROTOCOL_MISSING_RULE"
+                  ]
+                },
+                "outcome_changing_evidence": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "claim",
+                "category",
+                "received_or_base_reading",
+                "proposed_additive_reading",
+                "relationship",
+                "base_admission",
+                "additive_admission",
+                "admission_outcome",
+                "additive_intent_support",
+                "evidence_origins",
+                "reason",
+                "affirmative_exclusion_evidence",
+                "gap_owner",
+                "outcome_changing_evidence"
+              ]
+            }
+          },
+          "reciprocal_consilience": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "verdict": {
+                "type": "string",
+                "enum": [
+                  "VALID",
+                  "VALID_BUT_INCOMPLETE",
+                  "CIRCULAR",
+                  "NOT_ESTABLISHED",
+                  "NOT_APPLICABLE"
+                ]
+              },
+              "independent_background_support": {
+                "type": "string"
+              },
+              "incremental_target_evidence": {
+                "type": "string"
+              },
+              "dependency_or_duplication_risk": {
+                "type": "string"
+              },
+              "strongest_base_only_or_excluding_model": {
+                "type": "string"
+              },
+              "comparative_result": {
+                "type": "string"
+              },
+              "reversal_evidence": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "verdict",
+              "independent_background_support",
+              "incremental_target_evidence",
+              "dependency_or_duplication_risk",
+              "strongest_base_only_or_excluding_model",
+              "comparative_result",
+              "reversal_evidence"
+            ]
+          },
+          "category_error_audit": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "possible_error": {
+                  "type": "string"
+                },
+                "present_in_chapter": {
+                  "type": "boolean"
+                },
+                "explanation": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "possible_error",
+                "present_in_chapter",
+                "explanation"
+              ]
+            }
+          },
+          "claims_pass_as_written": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claims_both_admissible_additive": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claims_additive_intent_underdetermined": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claims_fail_gate": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "material_gaps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "issue": {
+                  "type": "string"
+                },
+                "gap_owner": {
+                  "type": "string",
+                  "enum": [
+                    "CHAPTER_MISSING_EVIDENCE",
+                    "CHAPTER_OVERCLAIM",
+                    "EVALUATOR_KNOWLEDGE_LIMIT",
+                    "PROTOCOL_MISSING_RULE"
+                  ]
+                },
+                "why_material": {
+                  "type": "string"
+                },
+                "minimal_fix_or_test": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "issue",
+                "gap_owner",
+                "why_material",
+                "minimal_fix_or_test"
+              ]
+            }
+          },
+          "minimal_revisions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "no_bloat_recommendation": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          }
+        },
+        "required": [
+          "overall_verdict",
+          "verdict_reason",
+          "rule_audit",
+          "claim_ledger",
+          "reciprocal_consilience",
+          "category_error_audit",
+          "claims_pass_as_written",
+          "claims_both_admissible_additive",
+          "claims_additive_intent_underdetermined",
+          "claims_fail_gate",
+          "material_gaps",
+          "minimal_revisions",
+          "no_bloat_recommendation",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 28997,
+    "input_tokens_details": {
+      "cache_write_tokens": 28994,
+      "cached_tokens": 0
+    },
+    "output_tokens": 9858,
+    "output_tokens_details": {
+      "reasoning_tokens": 2561
+    },
+    "total_tokens": 38855
+  },
+  "user": null,
+  "metadata": {}
+}

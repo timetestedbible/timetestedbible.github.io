@@ -1,19 +1,101 @@
 ---
 layout: symbol-study
 symbol_key: highway
-title: "Highway — Symbol Study"
-description: "The highway in Scripture represents the covenant path — a raised, cleared road where the faithful walk, which lies desolate when the covenant is broken."
-strongs: [H4546]
-words: [highway, highways]
+title: Highway — Symbol Study
+description: >-
+  The highway in Scripture represents the covenant path — a raised, cleared road where the faithful
+  walk, which lies desolate when the covenant is broken.
+strongs:
+  - H4546
+words:
+  - highway
+  - highways
+record_version: 1
+record_type: symbol
+term: Highway
+definition: >-
+  The Way of holiness — the prepared road home, made straight and smooth, where the wicked do not
+  walk.
+meaning: >-
+  The Way of holiness — the prepared road home, made straight and smooth, where the wicked do not
+  walk.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-highway
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - highway
+      - highways
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The Way of holiness — the prepared road home, made straight and smooth, where the wicked do
+      not walk.
+    citations:
+      - Isa 35:8
+      - Isa 40:3-4
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The Way of holiness — the prepared road home, made straight and smooth, where the wicked do
+      not walk.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-highway
+    citations:
+      - Isa 35:8
+      - Isa 40:3-4
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: High"way`, n.
+    status: quoted
+    headword: HIGHWAY
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Highway
 
-**The covenant path — raised above common ground, cleared of obstacles, walked only by the faithful.**
+## Approved Definition
 
+**The [Way](/research/symbols/way/) of holiness — the prepared road home, made straight and smooth, where the wicked do not walk.**
 > *"And an **highway** shall be there, and a $[way], and it shall be called The $[way] of holiness; the unclean shall not pass over it; but it shall be for those: the wayfaring men, though fools, shall not err therein."* — Isa 35:8
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The [Way](/research/symbols/way/) of holiness — the prepared road home, made straight and smooth, where the wicked do not walk.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **highway** begins: “High”way`, n.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -129,8 +211,7 @@ But even among these gathered guests, one enters without a wedding garment (Mat 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$way** — Conduct, manner of life. The highway is *where* you walk; the $way is *how* you walk. Isaiah 35:8 unites them as "the way of holiness." A highway without right conduct is like the wedding guest without a garment (Mat 22:11–13). Both must align.
 
 - **$rock** — Covenant, the unchanging foundation. The highway suggests the covenant *path* — the raised road one travels. The $rock suggests the covenant *foundation* — the unchanging ground beneath. The highway is built *upon* the $rock. A path raised on shifting $sand would collapse.
@@ -195,3 +276,37 @@ KJV translates H4546 as "highway," "highways," "path," "causeway," and "way." Th
 - **$wilderness** — The testing ground where the highway must be prepared. Why does the covenant path always run through the $wilderness before reaching the promise?
 - **$marriage** — The covenant picture to which the highway leads. The wedding feast parable sends servants to the highways. How does the $marriage metaphor illuminate who walks the highway and who refuses?
 - **$truth** — God's standard and commandments. If $truth defines the boundaries of the highway, what does it mean to walk the highway while ignoring the standard?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **highway** begins:
+
+> “High”way`, n. Defn: A road or way open to the use of the public; a main road or thoroughfare.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Isaiah 35:8 explicitly names the highway as “the way of holiness” but does not, in the isolated verse, explicitly say “home”; that nuance depends on the surrounding return-to-Zion context, especially verses 9–10. Even so, it does not create a substantive disagreement with the consensus.
+
+- One could argue the book narrows the symbol by dropping the Isaiah 40:3 'prepare the way for the Lord's coming' dimension (God coming to us, rather than us going home), which most responses treat as co-primary; a strict reader might call that a REFINED narrowing of the motif's direction. However, a one-line glossary gloss selecting the dominant Isa 35:8 strand does not deny or exclude the other strands, so MATCH remains the better classification.
+
+- None.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The [Way](/research/symbols/way/) of holiness — the prepared road home, made straight and smooth, where the wicked do not walk.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *highway*, *highways*. The English-form sweep found **25 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

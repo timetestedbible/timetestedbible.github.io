@@ -1,19 +1,115 @@
 ---
 layout: symbol-study
 symbol_key: sodom
-title: "Sodom — Symbol Study"
-description: "Sodom in Scripture represents prosperous community at ease in covenant violation — abundance without righteousness whose fullness becomes fuel for sudden fire-judgment from heaven."
-strongs: [H5467, G4670]
-words: [sodom, sodomite, sodoma]
+title: Sodom — Symbol Study
+description: >-
+  Sodom in Scripture represents prosperous community at ease in covenant violation — abundance
+  without righteousness whose fullness becomes fuel for sudden fire-judgment from heaven.
+strongs:
+  - H5467
+  - G4670
+words:
+  - sodom
+  - sodomite
+  - sodoma
+record_version: 1
+record_type: symbol
+term: Sodom, Gomorrah
+definition: >-
+  A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word
+  of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and
+  Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was
+  crucified.”
+meaning: >-
+  A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word
+  of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and
+  Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was
+  crucified.”
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-sodom
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - sodom
+      - sodomite
+      - sodoma
+      - gomorrah
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the
+      word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister
+      and Jerusalem the worse; and Revelation writes the name on “the great city… where also our
+      Lord was crucified.”
+    citations:
+      - Isa 1:10
+      - Ezek 16:46-48
+      - Rev 11:8
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the
+      word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister
+      and Jerusalem the worse; and Revelation writes the name on “the great city… where also our
+      Lord was crucified.”
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-sodom
+    citations:
+      - Isa 1:10
+      - Ezek 16:46-48
+      - Rev 11:8
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: null
+    status: unavailable
+    headword: null
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Sodom
 
-**The judgment of unrighteous abundance — ultimate moral decay, the name Scripture assigns to any covenant community that has become indistinguishable from $babylon.**
+## Approved Definition
 
+**A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was crucified.”**
 > *"Behold, this was the iniquity of thy sister **Sodom**, pride, fulness of $[bread], and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy."* — Ezek 16:49
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was crucified.”**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+No exact Webster headword has yet been matched to **Sodom, Gomorrah**.
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -205,8 +301,7 @@ Jerusalem was too proud to even *mention* Sodom — too proud to recognize the f
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$fire** — God's holy standard in active contact: consuming what violates covenant, refining what keeps it. Sodom receives $fire from heaven — the covenant standard applied to a community that had every provision and no faithfulness. The $fire does not refine Sodom; there is no covenant material left to preserve.
 
 - **$babylon** — Man's substitute system for God's covenant rule. Sodom is $babylon's *moral face* — the dimension of self-indulgent abundance that invites external judgment. Rev 11:8 names the great city as both Sodom and $egypt, revealing two faces of one anti-covenant system.
@@ -292,3 +387,33 @@ Rev 11:8
 - **$egypt** — The other name applied to the great city in Rev 11:8. $egypt enslaves through provision; Sodom corrupts through abundance. How do these two mechanisms work together in the same system?
 
 - **$bread** — "Fulness of bread" is Sodom's second-listed sin. If $bread represents covenant terms / the Word of God, what does it mean to be *full* of bread and yet utterly empty of righteousness?
+
+---
+
+## Dictionary Comparison
+
+The local 1913 Webster dataset has no exact headword for **Sodom, Gomorrah** under the display form used by the glossary. The biblical study therefore begins with the ordinary physical or grammatical sense visible in context and tests whether Scripture assigns it a more precise figurative sense.
+
+## Competing Definitions Tested
+
+- The cited texts strongly establish that Jerusalem is addressed or spiritually named as Sodom, but they do not establish that Jerusalem exhausts the term’s biblical symbolism. The broader biblical corpus repeatedly uses historical Sodom and Gomorrah as general examples of wickedness, destruction, and final judgment.
+
+- One could argue the book's move is DIVERGENT rather than REFINED: the consensus core is a general moral archetype, while the book makes Sodom a proper spiritual name of one particular city, effectively replacing an archetype with a specific identification and ignoring the dominant judgment-byword function that pervades both Testaments (Matt 10:15, Luke 17, Jude 7, 2 Pet 2:6). If the book means Sodom refers only to Jerusalem and never functions as a general byword, that could be read as rejecting rather than refining the consensus.
+
+- The consensus primary, grounded in the Genesis narrative plus the bulk of New Testament allusions (Jude, 2 Peter, Jesus' sayings), treats the historical cities as the foundational exemplar of judgment; elevating the secondary Jerusalem application to the core identification subordinates that wider and more settled usage.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was crucified.”**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *sodom*, *sodomite*, *sodoma*, *gomorrah*. The English-form sweep found **53 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

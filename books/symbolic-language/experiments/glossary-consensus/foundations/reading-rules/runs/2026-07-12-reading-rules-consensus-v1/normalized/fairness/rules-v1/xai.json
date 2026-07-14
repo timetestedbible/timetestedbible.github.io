@@ -1,0 +1,78 @@
+{
+  "verdict": "FAIR_WITH_CLARIFICATIONS",
+  "agree_to_use_as_baseline": "NO",
+  "symmetry": "FAIL",
+  "neutrality": "FAIL",
+  "reproducibility": "PASS",
+  "strengths": [
+    "Explicit permitted outcomes including UNDERDETERMINED and INADMISSIBLE, with a ban on forcing a winner.",
+    "Candidates must be frozen before comparison, with falsifiers stated up front.",
+    "Admission gate is the same for both candidates and separates admissibility from probability.",
+    "Evidence is examined in a fixed shared order with higher-class priority over lower-class corroboration.",
+    "Independence/double-counting, fact ledger, fallacy audit, and reversal/label-swap audit are stated in operational form.",
+    "Decision threshold requires controlling or clear multi-class advantage; weak dependent indicators cannot manufacture a win.",
+    "Post-hoc addition of rules, weights, or heightened-scrutiny categories is prohibited.",
+    "General source-risk rule (Rule 10) is framed as uniform and bidirectional."
+  ],
+  "ambiguities": [
+    {
+      "location": "Section 5 item 1",
+      "problem": "'direct disambiguating textual evidence' is undefined and sits above morphology/syntax, so evaluators can disagree on what enters the highest class.",
+      "minimum_clarification": "Define it as independently checkable features of the agreed consonants or immediate co-text that distinguish the two candidates without appeal to later pointing, versions, or external tradition (e.g., unambiguous morphological fit forced by neighboring forms), and state that absence of such evidence simply drops the analysis to class 2."
+    },
+    {
+      "location": "Section 12",
+      "problem": "'clear advantage', 'materially distinguishes', and 'equally strong unresolved counterevidence' lack operational tests.",
+      "minimum_clarification": "Require a written pairwise ledger entry naming the highest distinguishing class, the specific datum favoring the winner, the independent second-class support, and any residual counterevidence; if either scorer cannot state these without new criteria, classify UNDERDETERMINED."
+    },
+    {
+      "location": "Section 11.1",
+      "problem": "Triggers depend on identifying a tradition that 'rejects Jesus' and a text that 'testifies concerning Jesus', both of which are themselves interpretive and not defined.",
+      "minimum_clarification": "Replace the named theological trigger with a content-neutral test: any source with a documented institutional commitment on the exact interpretive question under decision requires independent corroboration for that question only."
+    },
+    {
+      "location": "Section 3 gate / Section 5",
+      "problem": "Allowable orthographic variation, period/genre bounds, and what counts as a 'defensible' construction are not operationalized.",
+      "minimum_clarification": "Require cited period-appropriate parallels for any non-default orthography or rare construction; without such citation the candidate fails the gate or is marked as relying on an unsupported exception."
+    },
+    {
+      "location": "Section 4 and Section 12 interaction",
+      "problem": "Practical default status of the received pointing in underdetermined cases could be misread as residual comparative weight.",
+      "minimum_clarification": "State explicitly that the citation default never enters the comparative ledger and may not be used to break ties."
+    }
+  ],
+  "unfair_rules": [
+    {
+      "rule_id": "Section 11.1 (Messianic testimony)",
+      "problem": "Heightened scrutiny is predeclared only for a 'later reading tradition that rejects Jesus' on whether a text 'testifies concerning Jesus'. The reverse stake (traditions that affirm such testimony) is not symmetrically listed, so the rule as written is not label-invariant and can systematically discount one side's source weight.",
+      "minimum_revision": "Delete the Jesus-specific wording. Rewrite as a fully general stake rule: when any reading tradition has an independently documented commitment on the precise question being decided, its reading on that question requires independent corroboration; apply identically regardless of which candidate benefits."
+    },
+    {
+      "rule_id": "Section 11 as a whole",
+      "problem": "Only three asymmetric, content-specific triggers are enumerated. Even though they claim to operate through Rule 10, listing only these applications creates a non-neutral predeclared exception set rather than a uniform principle.",
+      "minimum_revision": "Either (a) remove Section 11 and rely solely on the general Rule 10, or (b) keep Section 11 only as non-exhaustive examples of Rule 10 and state that every analogous stake on either side receives the same treatment."
+    },
+    {
+      "rule_id": "Section 11.3 (Expressly sealed passages)",
+      "problem": "Creates a special silence-protection for later readings in a predeclared class of passages without a matching general principle for other silence claims, risking one-sided undercutting of expected historical attestation arguments.",
+      "minimum_revision": "Fold into a general silence rule: arguments from silence are invalid unless the missing evidence would probably exist under the candidate; no passage class automatically immunizes novelty or disqualifies tradition."
+    }
+  ],
+  "missing_rules": [
+    "Operational definition of the highest evidence class ('direct disambiguating textual evidence').",
+    "Explicit Ketiv/Qere handling (admissibility support versus decision weight).",
+    "Corpus-period standard for routine orthographic variation (plene/defective, matres).",
+    "Symmetric statement that heightened source scrutiny applies to every tradition with a demonstrated stake, not only the three listed triggers.",
+    "Numeric or checklist test for 'clear advantage' versus residual balance."
+  ],
+  "comparison_to_own_proposal": "The proposed rules share the core architecture of my frozen proposal: consonantal gate first, freeze candidates, ordered comparative criteria, collapse dependent witnesses, exclude popularity/denomination, require underdetermination rather than forced winners, and demand symmetrical ledgers plus falsifiers. Main divergences: (1) received pointing is demoted to a late witness with no rebuttable presumption and no extra burden for departure, whereas my proposal treated it as a strong rebuttable default; (2) the proposal adds a detailed fallacy/fact-ledger apparatus that improves auditability; (3) Section 11 introduces content-specific heightened-scrutiny triggers absent from my proposal and currently stated asymmetrically. Gates, outcomes, double-counting, and anti-post-hoc controls are otherwise directionally aligned.",
+  "exact_revision_suggestions": [
+    "Replace Section 11.1–11.3 with a single general clause: 'Apply Rule 10 uniformly: any source with an independently documented institutional or doctrinal commitment on the exact question under decision requires independent corroboration for that question; list no candidate-favoring special topics.'",
+    "Define Section 5.1 'direct disambiguating textual evidence' as features of the agreed consonants or immediate co-text that distinguish A from B without later tradition, and require citation; else skip to class 2.",
+    "Add to Section 12: 'Clear advantage means the winner is favored at the highest class that distinguishes the pair, has at least one independent supporting class, and the loser has no counterevidence of equal class; if scorers disagree on any of these three checklist items, result is UNDERDETERMINED.'",
+    "Add one sentence to Section 4/12: 'The underdetermined citation default for the received pointing has zero comparative weight and cannot break a tie.'",
+    "Add to Section 3: 'Non-default orthography or rare morphology requires at least one cited period-and-corpus parallel; otherwise the candidate fails the gate.'"
+  ],
+  "reasoning": "Judged strictly as written for procedural fairness, the bulk of rules-v1 is symmetrical, outcome-complete, and highly reproducible: shared gate, frozen candidates, fixed evidence order, independence collapse, fallacy bans, multi-class decision threshold, underdetermination, and label-swap/reversal audits. Hard constraints (gate, no consonant change) are distinguished from ordered weights. Rule 10 is general. The decisive defects are in Section 11: it predeclares heightened scrutiny only for named topics and, in 11.1, only for traditions that 'reject Jesus,' which is not label-invariant and can give a structural, reviewable-but-asymmetric discount. That fails neutrality and symmetry even though the text disclaims a presumption of falsehood. Secondary defects are undefined top-class evidence and soft threshold language, which reduce reproducibility but are fixable. Because textual amendment is required (especially generalizing or deleting Section 11), the rules are not usable exactly as written as a frozen baseline; with the listed minimal revisions they would be fair. No hidden dispute was inferred.",
+  "confidence": "HIGH"
+}

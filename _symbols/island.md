@@ -1,19 +1,113 @@
 ---
 layout: symbol-study
 symbol_key: island
-title: "Island — Symbol Study"
-description: "The island in Scripture represents sanctified people — those set apart from the sea of chaotic nations, waiting for God's law and distinguished by covenant identity."
-strongs: [H339]
-words: [island, islands, isle, isles]
+title: Island — Symbol Study
+description: >-
+  The island in Scripture represents sanctified people — those set apart from the sea of chaotic
+  nations, waiting for God's law and distinguished by covenant identity.
+strongs:
+  - H339
+words:
+  - island
+  - islands
+  - isle
+  - isles
+record_version: 1
+record_type: symbol
+term: Island, isle
+definition: >-
+  A set-apart people rising from the sea of nations, waiting for God's law and preserved while
+  surrounding kingdoms fall.
+meaning: >-
+  A set-apart people rising from the sea of nations, waiting for God's law and preserved while
+  surrounding kingdoms fall.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-island
+  verdict: novel
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - island
+      - islands
+      - isle
+      - isles
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A set-apart people rising from the sea of nations, waiting for God's law and preserved while
+      surrounding kingdoms fall.
+    citations:
+      - Gen 10:5
+      - Job 22:30
+      - Isa 11:11
+      - Isa 42:4
+      - Isa 51:5
+      - Rev 16:20
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A set-apart people rising from the sea of nations, waiting for God's law and preserved while
+      surrounding kingdoms fall.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-island
+    citations:
+      - Gen 10:5
+      - Job 22:30
+      - Isa 11:11
+      - Isa 42:4
+      - Isa 51:5
+      - Rev 16:20
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: A tract of land surrounded by water, and smaller than a continent.
+    status: quoted
+    headword: ISLAND
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Island
 
-**Sanctified people — set apart from the $sea of nations, waiting for God's standard.**
+## Approved Definition
 
+**A set-apart people rising from the [sea](/research/symbols/sea/) of nations, waiting for God's law and preserved while surrounding kingdoms fall.**
 > *"Surely the **isles** shall wait for me, and the ships of Tarshish first, to bring thy sons from far, their silver and their gold with them, unto the name of the LORD thy God, and to the Holy One of Israel, because he hath glorified thee."* — Isa 60:9
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A set-apart people rising from the [sea](/research/symbols/sea/) of nations, waiting for God's law and preserved while surrounding kingdoms fall.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **island** begins: “A tract of land surrounded by water, and smaller than a continent.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -129,8 +223,7 @@ The island's meaning is inherently relational: it requires the contrast with the
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$sea** — The island's defining opposite. The $sea is the chaotic mass of unsanctified peoples and nations (Rev 17:15). The island exists only in distinction from the sea — sanctified people standing apart from the turbulent nations. When there is "no more sea" (Rev 21:1), the island's reason for existence is fulfilled: all chaos is gone, all peoples are sanctified, and the boundary dissolves.
 
 - **$mountain** — Paired with the island in Rev 6:14 and Rev 16:20. $Mountain = kingdom / ruling authority — the seat of power that governs the nations from above. The island = sanctified people — the community of the set-apart that stands within the nations. Both are structures of order in the midst of the $sea; both are shaken when God judges. The mountain *rules*; the island *is distinguished*.
@@ -170,3 +263,37 @@ KJV translates H339 as "isle," "island," and "isles." The word appears primarily
 - **$sea** — The island's opposite. How does the $sea function as the chaotic, unsanctified mass of nations throughout Scripture — and what does it mean that beasts (kingdoms) arise from it while islands stand apart within it?
 - **$mountain** — The island's companion in judgment. Both rise above the $sea, but the mountain rules while the island is set apart. How does the $mountain symbol illuminate the distinction between political authority and covenant identity?
 - **$truth** — The means of sanctification. The isles wait for God's law, and God's word is $truth. How does $truth function as the divine standard that creates the set-apart condition the island represents?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **island** begins:
+
+> “Is”land, n. Etym: [OE. iland, yland, AS. igland, , ; ig, , island + land, lond, land. AS. ig, , is akin to AS. eá water, river, OHG. , G. au meadow, Icel. ey island, Dan. & Sw. ö, Goth. ahwa a stream, water, L. aqua water. The s is due to confusion with isle. Cf. Ait, Eyot, Ewer, Aquatic.] 1. A tract of land surrounded by water, and smaller than a continent. Cf. Continent.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Isaiah 42:4 and 51:5 say that the isles await God's law and trust his arm, but they do not identify those isles as an already sanctified covenant-rock distinct from the nations. Genesis 10:5 directly calls them “isles of the Gentiles,” while Revelation 16:20 depicts every island fleeing rather than an innocent island being preserved. Job 22:30 supplies the KJV phrase “island of the innocent,” but alone cannot establish the entry's composite symbolism.
+
+- One could argue REFINED rather than DIVERGENT: the book's 'sanctified people waiting for the law' could be read as the eschatological end-state of the consensus's Gentile coastlands (the nations who wait for his law become God's people), and Responses C and D both list a church-as-island-amid-the-sea alternative, so the book's core is arguably a promoted alternative rather than a replacement. Additionally, Job 22:30 ('island of the innocent') gives the book a genuine KJV textual anchor the consensus never engages, and Isa 42:4/51:5 do speak of isles waiting for God's law/trust, so the printed citations lend the book more support than a pure novelty would have. Against this, Gen 10:5 ('isles of the Gentiles') and Rev 16:20 (islands fleeing in judgment) sit awkwardly with the book's reading.
+
+- The primary biblical usage in passages like Genesis 10:5 and Isaiah refers to actual remote coastlands and Gentile nations, not a sanctified covenant people. Additionally, the book's concept heavily relies on a specific KJV translation of Job 22:30 ('island of the innocent') which in modern scholarship is universally recognized as a translation anomaly (the Hebrew 'iy here meaning 'not', i.e., 'the one who is not innocent').
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A set-apart people rising from the [sea](/research/symbols/sea/) of nations, waiting for God's law and preserved while surrounding kingdoms fall.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *island*, *islands*, *isle*, *isles*. The English-form sweep found **48 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

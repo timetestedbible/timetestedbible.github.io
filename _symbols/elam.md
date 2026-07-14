@@ -1,19 +1,107 @@
 ---
 layout: symbol-study
 symbol_key: elam
-title: "Elam — Symbol Study"
-description: "Elam is modern Iran. Scripture uses the Elam-Babylon connection as the template for the fall of Babylon the Great — from Genesis 14 through Jeremiah 49 to Pentecost."
-strongs: [H5867, H5962, G1639]
-words: [elam, elamite, elamites]
+title: Elam — Symbol Study
+description: >-
+  Elam is modern Iran. Scripture uses the Elam-Babylon connection as the template for the fall of
+  Babylon the Great — from Genesis 14 through Jeremiah 49 to Pentecost.
+strongs:
+  - H5867
+  - H5962
+  - G1639
+words:
+  - elam
+  - elamite
+  - elamites
+record_version: 1
+record_type: symbol
+term: Elam
+definition: >-
+  Babel’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its
+  broken bow introduces Babylon's fall.
+meaning: >-
+  Babel’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its
+  broken bow introduces Babylon's fall.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-elam
+  verdict: novel
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - elam
+      - elamite
+      - elamites
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      Babel’s confederate — allied with Shinar in the first war and judged under Babylon's sentence.
+      Its broken bow introduces Babylon's fall.
+    citations:
+      - Gen 14:1, 9
+      - Jer 49:35
+      - Jer 51:56
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      Babel’s confederate — allied with Shinar in the first war and judged under Babylon's sentence.
+      Its broken bow introduces Babylon's fall.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-elam
+    citations:
+      - Gen 14:1, 9
+      - Jer 49:35
+      - Jer 51:56
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: null
+    status: unavailable
+    headword: null
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Elam
 
-**Modern Iran — the place where Scripture first enacts the fall of Babylon and where it says the bow will be broken in the latter days.**
+## Approved Definition
 
+**[Babel](/research/symbols/babel/)’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its broken [bow](/research/symbols/bow/) introduces Babylon's fall.**
 > *"Thus saith the LORD of hosts; Behold, I will **break the bow** of Elam, the chief of their might."* — Jer 49:35
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**[Babel](/research/symbols/babel/)’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its broken [bow](/research/symbols/bow/) introduces Babylon's fall.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+No exact Webster headword has yet been matched to **Elam**.
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -195,3 +283,62 @@ And in Ezra 10:2, it is the sons of Elam who initiate repentance: "We have tresp
 | H3104 | יוֹבֵל *yobel* | Jubilee, ram's horn — from H2986 *yabal* = to flow | Josh 6:4 |
 | H471 | אֶלְיָקִים *Eliakim* | God raises up | Isa 22:20 |
 | H2518 | חִלְקִיָּה *Hilkiah* | Portion of Yah | Isa 22:20 |
+
+---
+
+## Dictionary Comparison
+
+The local 1913 Webster dataset has no exact headword for **Elam** under the display form used by the glossary. The biblical study therefore begins with the ordinary physical or grammatical sense visible in context and tests whether Scripture assigns it a more precise figurative sense.
+
+## Competing Definitions Tested
+
+- Genesis 14 establishes that Elam’s king fought alongside Shinar’s king, and Jeremiah 49:35 and 51:56 supply a verbal parallel about broken bows. These texts do not by themselves establish that this alliance is Elam’s enduring symbolic identity, that Shinar and Babylon are functioning identically here, or that Elam’s oracle is a theological prologue to Babylon’s fall rather than simply an adjacent oracle.
+
+- One could argue REFINED: the consensus's nearest theological reading is 'foreign nation under divine judgment,' and the book merely narrows this to judgment shared with Babylon, so the general category (judged Gentile nation) is preserved while the boundary (alliance with Babel, no restoration) is changed. Additionally, the citations show alliance with Shinar and parallel bow-breaking language, but they do not by themselves establish that Elam functions as a symbol of 'Babel's confederate' rather than a historical participant, and Jer 49:39's restoration promise (omitted from the printed citations) cuts against the book's purely doom-bound framing.
+
+- The characterization of Elam as 'Babel's confederate' sharing its judgment obscures prophetic texts (like Isaiah 21:2) where Elam is explicitly summoned by God to attack and destroy Babylon, making them adversaries rather than just partners.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Occurrence Register
+
+<details markdown="1">
+<summary>Show the complete 29-verse English-form register</summary>
+
+**Genesis:** 10:22, 14:1, 14:9
+
+**1 Chronicles:** 1:17, 8:24, 26:3
+
+**Ezra:** 2:7, 2:31, 4:9, 8:7, 10:2, 10:26
+
+**Nehemiah:** 7:12, 7:34, 10:14, 12:42
+
+**Isaiah:** 11:11, 21:2, 22:6
+
+**Jeremiah:** 25:25, 49:34, 49:35, 49:36, 49:37, 49:38, 49:39
+
+**Ezekiel:** 32:24
+
+**Daniel:** 8:2
+
+**Acts:** 2:9
+
+</details>
+
+## Relationship to Other Symbols
+
+No reciprocal opposite is assigned to this entry.
+
+## Conclusion
+
+**[Babel](/research/symbols/babel/)’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its broken [bow](/research/symbols/bow/) introduces Babylon's fall.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *elam*, *elamite*, *elamites*. The English-form sweep found **29 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

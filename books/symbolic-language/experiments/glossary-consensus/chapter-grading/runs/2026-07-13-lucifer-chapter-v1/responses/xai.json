@@ -1,0 +1,394 @@
+{
+  "created_at": 1783922281,
+  "completed_at": null,
+  "id": "63535395-d0cb-9c74-99f2-98485c60ec0b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_63535395-d0cb-9c74-99f2-98485c60ec0b",
+      "summary": [
+        {
+          "text": "The user wants me to evaluate the chapter \"Lucifer's Declared Plan\" against the frozen rubric and premises, returning only a JSON object matching the schema.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"overall_verdict\": \"MEETS_WITH_LIMITED_GAPS\",\n  \"verdict_reason\": \"The chapter’s integrated core—Isaiah 14’s consonants admit layered readings that, with independently frozen sun/moon/stars and moedim symbolism, unify throne, assembly, hidden place, dark cloud, and “like the Most High” into a covered-lunar / sun-silencing joint model—is admissible under the frozen rules and stronger in explanatory scope than a purely abstract pride reading. Limited material gaps remain: the Hithpael “silence for myself” reading rests on productive morphology with thin direct attestation; “my throne” as “my full-moon seat” needs tighter lexical/form control; and a few synthesis steps overclaim certainty relative to the evidence shown.\",\n  \"rule_audit\": [\n    {\n      \"rule\": \"1\",\n      \"result\": \"PASS\",\n      \"reason\": \"Masoretic pointing is treated as one historical reading tradition; alternate same-consonant hearings (shachar, tsaphon/tsafun, kisse/keseh, edammeh) are developed without giving the points automatic priority or multiplying dependent witnesses.\"\n    },\n    {\n      \"rule\": \"2\",\n      \"result\": \"PASS\",\n      \"reason\": \"Status, majority, and authority are not used as proofs of readings. Lexica, Strong’s, Gesenius, ASV, and manuscript notes are invoked for data (senses, spellings, stem behavior), not as decisive institutional warrants.\"\n    },\n    {\n      \"rule\": \"3\",\n      \"result\": \"PARTIAL\",\n      \"reason\": \"Core rivals generally pass the same gate on consonants, morphology, and clause coherence (throne vs full-moon letters; moed assembly/time; north/hidden). The damah “cause to cease for myself” Hithpael is the weak gate item: transitive “cease” is independently attested, but the chapter itself notes no second Hithpael of that root and leans on productive formation plus ל-object marking—admissible only as a productive-rule claim, not as a securely attested form-sense pair.\"\n    },\n    {\n      \"rule\": \"4\",\n      \"result\": \"PARTIAL\",\n      \"reason\": \"Background sun/moon/stars and moedim material is frozen outside the target and supplies non-circular priors. Incremental target evidence (keseh/kisse spelling, dual edammeh, spatial verbs, eclipse geometry, Daniel 7:25 linkage) is real. Residual risks: partial reuse of Psalm 89 throne-as-moon and full-moon identity already used in the background packet; incomplete explicit comparison of the strongest rival joint model (royal-taunt / abstract usurpation without celestial mechanism) stage-by-stage as Rule 4 requires.\"\n    }\n  ],\n  \"claim_ledger\": [\n    {\n      \"claim\": \"Helel ben-shachar may be heard both as “shining one, son of dawn” and, by same-consonant wordplay, as bearer/product of blackness (shachar “be black”).\",\n      \"category\": \"LINGUISTIC_VOCALIZATION\",\n      \"book_candidate\": \"Son of dawn + son/bearer of blackness (wordplay)\",\n      \"strongest_rival\": \"Only “morning-star / son of dawn” (standard lexical reading)\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"UNDERDETERMINED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"EVALUATOR_KNOWLEDGE\"],\n      \"reason\": \"Both noun dawn (H7837) and verb be black (H7835) are real roots on the same consonants; the chapter correctly frames blackness as characterization/wordplay, not as cancelling the dawn sense. Rival remains fully admissible; wordplay does not defeat it.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Independent ancient exegesis or parallel Isaiah wordplay that forces blackness as the primary intended sense of the phrase (not mere secondary resonance).\"\n    },\n    {\n      \"claim\": \"Har moed is the high place of appointed assembly/time (moedim), not merely a generic congregational mountain.\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"book_candidate\": \"Mountain of appointed times/assembly (Leviticus 23 moedim field)\",\n      \"strongest_rival\": \"Only “mount of assembly” as a divine council / Zion place-name without calendar sense\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\"],\n      \"reason\": \"Torah’s moed field jointly covers appointed time, place, and meeting; the chapter’s lexical expansion is textually grounded. Place-only council readings remain possible but explain less of the later times/laws linkage.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Demonstration that Isaiah 14’s har moed is a fixed proper name whose usage excludes the appointed-time sense in this genre.\"\n    },\n    {\n      \"claim\": \"Yarkete tsaphon can be heard as recesses of the north and/or innermost recesses of the hidden/treasured place (tsafun).\",\n      \"category\": \"LINGUISTIC_VOCALIZATION\",\n      \"book_candidate\": \"Recesses of north + hidden/treasured place\",\n      \"strongest_rival\": \"Only geographic north / Zion-as-north (Psalm 48) without tsafun hearing\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"UNDERDETERMINED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"EVALUATOR_KNOWLEDGE\"],\n      \"reason\": \"Both north and hidden senses are consonant-admissible; Psalm 48 supports the north-Zion track strongly. Hiddenness is coherent with Job 20:26 and “hidden ones,” but does not uniquely win over the north reading.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Parallel unpointed loci where yarkete + these consonants are independently forced to tsafun rather than tsaphon.\"\n    },\n    {\n      \"claim\": \"The consonants of “my throne” (kisse’) are the same letter-set used for full moon (keseh/kese’; כסא/כסה), so Isaiah’s seat can be heard as a covered lunar full-moon seat.\",\n      \"category\": \"LINGUISTIC_VOCALIZATION\",\n      \"book_candidate\": \"Throne = covered seat / full-moon seat (double hearing)\",\n      \"strongest_rival\": \"Only royal throne (standard kisse’), with full-moon links merely thematic elsewhere\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\", \"EVALUATOR_KNOWLEDGE\"],\n      \"reason\": \"Proverbs 7:20 כסא and Psalm 81:3 כסה establish full-moon spellings; Job 26:9 and Psalm 89:36-37 bind throne, covering, sun, and moon. Rival remains admissible as the plain court sense; the double hearing is linguistically possible and contextually motivated, not smuggled consonants.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"outcome_changing_evidence\": \"Explicit morphological control that 1cs “my throne” (ks’y / pointed form) can be read as “my full moon” as a normal construct/form, not only that bare כסא/כסה spell both lemmas.\"\n    },\n    {\n      \"claim\": \"Edammeh le-elyon may be heard as “I will make myself like the Most High” and as “I will bring the Highest to silence for myself.”\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"book_candidate\": \"Be like + cause Highest Light to cease for oneself (Hithpael productive)\",\n      \"strongest_rival\": \"Only damah “resemble / be like” (traditional)\",\n      \"book_admission\": \"UNDERDETERMINED\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"RIVAL_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"EVALUATOR_KNOWLEDGE\"],\n      \"reason\": \"Damah “cease/destroy” and Hithpael self-interest with external objects are argued productively; chapter correctly notes no second Hithpael of the silence root. Traditional “be like” is the securely attested pairing with le-elyon. Silence reading may remain a secondary resonance but fails to clear the same admission confidence as the rival.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"outcome_changing_evidence\": \"Attested Hithpael (or clear analog) of damah II with external object “X” meaning “silence/destroy X for oneself,” or a frozen grammar rule that makes this form-sense pair routine in Isaiah’s dialect.\"\n    },\n    {\n      \"claim\": \"Elyon as Most High converges with the greater light/sun as Highest Light (Psalm 84:11; Genesis 1:16) inside Isaiah’s celestial field.\",\n      \"category\": \"SYMBOLIC_DERIVATION\",\n      \"book_candidate\": \"Most High Person + sun as His sign (not rival referents)\",\n      \"strongest_rival\": \"Elyon only as divine title with no solar symbol required\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"UNDERDETERMINED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\"],\n      \"reason\": \"Title and sun-symbol are both scriptural; the chapter’s “not rival referents” move is synthesis, not forced by grammar alone. Rival title-only reading remains fully coherent.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Isaian or Torah usage that independently equates elyon with the sun as a fixed symbolic identity, not only Psalm 84’s simile.\"\n    },\n    {\n      \"claim\": \"Stars of God in the boast are the righteous who assemble by the moon-governed moedim.\",\n      \"category\": \"SYMBOLIC_DERIVATION\",\n      \"book_candidate\": \"Stars = wise/righteous (Daniel 12:3) under lunar moedim rule\",\n      \"strongest_rival\": \"Stars as celestial host / divine council beings without church-people identification\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\"],\n      \"reason\": \"Daniel 12:3 and Genesis 1:14 / Psalm 104:19 supply independent OT support; background freezes the same map. Host/council readings remain possible but leave har moed + times less unified with Daniel 7:25.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Isaiah 14 parallel usage where “stars of God” clearly denotes only non-human host to the exclusion of the righteous-people sense.\"\n    },\n    {\n      \"claim\": \"Mountain of the appointed assembly is the kingdom of God’s covenant people gathered at appointed times.\",\n      \"category\": \"SYMBOLIC_DERIVATION\",\n      \"book_candidate\": \"Mountain = kingdom (Daniel 2) + moed assembly of the people\",\n      \"strongest_rival\": \"Zion / divine mountain as cultic place without “kingdom of the people” expansion\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"UNDERDETERMINED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\"],\n      \"reason\": \"Daniel 2 mountain=kingdom is real; applying it to har moed is a coherent synthesis but not uniquely forced. Place-only Zion reading still fits Psalm 48.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"A controlling Isaiah intertext that equates har moed specifically with the people-kingdom rather than the mountain-seat of rule.\"\n    },\n    {\n      \"claim\": \"The covered (dark) lunar seat raised into the sun’s apparent place is the sky’s performance of “like the Highest” by substitution and of silencing the sun’s testimony (eclipse geometry).\",\n      \"category\": \"HISTORICAL_OR_ASTRONOMICAL\",\n      \"book_candidate\": \"New/dark moon alignment covers solar disk; full moon cannot\",\n      \"strongest_rival\": \"Boast is pure spatial/political metaphor without astronomical mechanism\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"EVALUATOR_KNOWLEDGE\"],\n      \"reason\": \"Eclipse geometry is ordinary astronomical fact and fits the chapter’s spatial verb chain once lunar seat + Highest Light are granted. Metaphor-only rival needs fewer premises but leaves more of the precise celestial vocabulary unused.\",\n      \"gap_owner\": \"EVALUATOR_KNOWLEDGE_LIMIT\",\n      \"outcome_changing_evidence\": \"Ancient Near Eastern or biblical parallels showing Isaiah 14’s collocation was already heard as eclipse usurpation—or clear evidence that such geometry was unavailable/unintelligible to the intended audience.\"\n    },\n    {\n      \"claim\": \"Seizing the lunar signal is the mechanism for changing appointed times and thereby wearing out the saints (Daniel 7:25 consilience).\",\n      \"category\": \"RECIPROCAL_CONSILIENCE\",\n      \"book_candidate\": \"Isaiah celestial plan + Daniel times/laws agenda as one program\",\n      \"strongest_rival\": \"Daniel 7:25 is independent political calendar oppression without Isaiah 14 lunar reading\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\"],\n      \"reason\": \"After freezing moedim/moon and saints/stars independently, Daniel 7:25’s joint attack on saints and times is more expected under the lunar-signal usurpation model than under an abstract pride model. Duplication risk is moderate if “times” is only re-described, not newly predicted.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Historical or textual demonstration that Daniel’s “times” are unrelated to lunar moedim reckoning, breaking the joint expectedness.\"\n    },\n    {\n      \"claim\": \"Counterfeit claims full-moon throne while moving rule to the dark conjunction phase that alone can cover the sun; the two month-reckonings invert the lights.\",\n      \"category\": \"THEOLOGICAL_SYNTHESIS\",\n      \"book_candidate\": \"Full-moon start vs conjunction start invert mid-month lights; only dark moon eclipses\",\n      \"strongest_rival\": \"Calendar dispute is real historically but not encoded in Isaiah 14’s vowels/consonants\",\n      \"book_admission\": \"UNDERDETERMINED\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"UNDERDETERMINED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"EVALUATOR_KNOWLEDGE\"],\n      \"reason\": \"Astronomically coherent and thematically sharp, but the chapter does not supply independent OT proof that Isaiah’s boast itself encodes two competing month-start systems. Strong synthesis, weaker as a forced textual claim.\",\n      \"gap_owner\": \"CHAPTER_OVERCLAIM\",\n      \"outcome_changing_evidence\": \"Explicit biblical or early-period evidence linking Isaiah 14’s wording to a full-moon vs conjunction month-start controversy.\"\n    },\n    {\n      \"claim\": \"Amos 8:9-10 and the crucifixion darkness (sun failing at the feast of the only Son) are God turning the rebel’s silencing image into testimony.\",\n      \"category\": \"THEOLOGICAL_SYNTHESIS\",\n      \"book_candidate\": \"Noon sun darkening + feast mourning + only son; Luke “sun’s light failing”\",\n      \"strongest_rival\": \"Passion darkness is independent judgment sign without dependence on Isaiah 14 double reading\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"UNDERDETERMINED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\"],\n      \"reason\": \"Amos and Gospel texts are fairly cited; chapter wisely refuses to reduce the sign to ordinary totality. Link to Isaiah’s dual edammeh is typological consilience, not a linguistic necessity.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"A controlling NT or prophetic citation that explicitly frames the Passion darkness as fulfillment of Isaiah 14’s “silence the Highest” reading.\"\n    },\n    {\n      \"claim\": \"Received ambition (“like the Most High”) and silencing means are one act heard twice, not mutually exclusive readings.\",\n      \"category\": \"THEOLOGICAL_SYNTHESIS\",\n      \"book_candidate\": \"Usurpation by taking the sun’s visible place = likeness + suppression\",\n      \"strongest_rival\": \"Single traditional reading only; second hearing is modern overreading\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\"],\n      \"reason\": \"If the linguistic second hearing is only partial, the integrated “one act” still coheres as symbolic synthesis from spatial verbs + lunar/solar offices. Rival is safer linguistically but thinner on the chapter’s full vocabulary set.\",\n      \"gap_owner\": \"CHAPTER_MISSING_EVIDENCE\",\n      \"outcome_changing_evidence\": \"Secure admission of the damah-silence form (see above) or explicit narrowing that the silencing is symbolic geometry rather than a second verbal sense of edammeh.\"\n    },\n    {\n      \"claim\": \"Background offices (sun Father, moon faithful witness/Son, stars righteous, moon for moedim) may be used as frozen priors for the target without circular reuse.\",\n      \"category\": \"BACKGROUND_HYPOTHESIS\",\n      \"book_candidate\": \"Packet ch.29 offices as independent background\",\n      \"strongest_rival\": \"Those offices are themselves NT-driven projections illicit under Torah-first order\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"FAIL\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"BACKGROUND_PACKET\"],\n      \"reason\": \"Frozen packet derives sun/moon/stars from Genesis, Joseph’s dream, Psalms 84/89/104/136, Daniel 12, etc., with NT as confirmation—matching premises 2, 5, 8. Rival “illicit projection” fails against the packet’s OT-first build as supplied.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Showing that a material target inference depends on a background claim that only exists via NT-backward redefinition contradicting Torah/Prophets.\"\n    },\n    {\n      \"claim\": \"Lucifer’s covered lunar seat is the anti-type of the faithful full-moon witness: darkness-covered, beside the sun, reflecting nothing.\",\n      \"category\": \"SYMBOLIC_DERIVATION\",\n      \"book_candidate\": \"Counterfeit dark-moon office vs Psalm 89 full faithful witness\",\n      \"strongest_rival\": \"No lunar office in Isaiah 14; only royal throne metaphor\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\", \"BACKGROUND_PACKET\"],\n      \"reason\": \"Once kisse/keseh double hearing and background moon-office are admitted, the anti-type is tightly expected. Without those admissions, rival metaphor wins by simplicity.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"Failure of the kisse/keseh gate or of the independent full-moon = faithful-witness background identity.\"\n    },\n    {\n      \"claim\": \"Judgment to yarkete of the pit answers the sought yarkete of the hidden royal place (measure-for-measure).\",\n      \"category\": \"LEXICAL_OR_GRAMMATICAL\",\n      \"book_candidate\": \"Same yarkete term inverted high-to-low\",\n      \"strongest_rival\": \"Standard poetic antithesis without hidden-place wordplay\",\n      \"book_admission\": \"PASS\",\n      \"rival_admission\": \"PASS\",\n      \"comparison\": \"BOOK_BETTER_SUPPORTED\",\n      \"evidence_origins\": [\"TARGET_CHAPTER\"],\n      \"reason\": \"The shared yarkete linkage is on the face of the Hebrew and does not require the fuller celestial theory, though it fits it.\",\n      \"gap_owner\": \"NONE\",\n      \"outcome_changing_evidence\": \"None material; claim is locally secure either way.\"\n    }\n  ],\n  \"reciprocal_consilience\": {\n    \"verdict\": \"VALID_BUT_INCOMPLETE\",\n    \"independent_background_support\": \"Frozen ch.29 establishes from OT-first texts: greater/lesser lights as household offices; sun as LORD/Father source; moon as faithful witness / full counterpart (Psalm 89; reflection language); stars as righteous; moon appointed for moedim; relay-of-light offices—without using Isaiah 14.\",\n    \"incremental_target_evidence\": \"Same-consonant throne/full-moon spellings; har moed as appointed assembly; dual spatial reading of likeness as place-taking; dark-cloud covering; eclipse geometry as performed sentence; Daniel 7:25 times/laws joint attack; Amos/Passion noon darkening typology.\",\n    \"dependency_or_duplication_risk\": \"Psalm 89 throne-as-sun/moon and full-moon identity are used in both background and target; if counted twice they inflate reciprocal gain. Moon=Son office, if overweighted from NT titles rather than OT derivation, would reintroduce circularity—packet mostly avoids this, but target’s “Highest",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_63535395-d0cb-9c74-99f2-98485c60ec0b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "overall_verdict": {
+            "type": "string",
+            "enum": [
+              "MEETS_STANDARD",
+              "MEETS_WITH_LIMITED_GAPS",
+              "UNDERDETERMINED_BY_PACKET",
+              "DOES_NOT_MEET_STANDARD"
+            ]
+          },
+          "verdict_reason": {
+            "type": "string"
+          },
+          "rule_audit": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "rule": {
+                  "type": "string",
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                  ]
+                },
+                "result": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "PARTIAL",
+                    "FAIL",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "rule",
+                "result",
+                "reason"
+              ]
+            }
+          },
+          "claim_ledger": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 18,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "claim": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "LINGUISTIC_VOCALIZATION",
+                    "LEXICAL_OR_GRAMMATICAL",
+                    "SYMBOLIC_DERIVATION",
+                    "BACKGROUND_HYPOTHESIS",
+                    "RECIPROCAL_CONSILIENCE",
+                    "HISTORICAL_OR_ASTRONOMICAL",
+                    "THEOLOGICAL_SYNTHESIS"
+                  ]
+                },
+                "book_candidate": {
+                  "type": "string"
+                },
+                "strongest_rival": {
+                  "type": "string"
+                },
+                "book_admission": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "UNDERDETERMINED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "rival_admission": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "UNDERDETERMINED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "comparison": {
+                  "type": "string",
+                  "enum": [
+                    "BOOK_BETTER_SUPPORTED",
+                    "RIVAL_BETTER_SUPPORTED",
+                    "UNDERDETERMINED",
+                    "NOT_COMPARATIVE"
+                  ]
+                },
+                "evidence_origins": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "TARGET_CHAPTER",
+                      "BACKGROUND_PACKET",
+                      "EVALUATOR_KNOWLEDGE",
+                      "NONE"
+                    ]
+                  }
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "gap_owner": {
+                  "type": "string",
+                  "enum": [
+                    "NONE",
+                    "CHAPTER_MISSING_EVIDENCE",
+                    "CHAPTER_OVERCLAIM",
+                    "EVALUATOR_KNOWLEDGE_LIMIT",
+                    "PROTOCOL_MISSING_RULE"
+                  ]
+                },
+                "outcome_changing_evidence": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "claim",
+                "category",
+                "book_candidate",
+                "strongest_rival",
+                "book_admission",
+                "rival_admission",
+                "comparison",
+                "evidence_origins",
+                "reason",
+                "gap_owner",
+                "outcome_changing_evidence"
+              ]
+            }
+          },
+          "reciprocal_consilience": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "verdict": {
+                "type": "string",
+                "enum": [
+                  "VALID",
+                  "VALID_BUT_INCOMPLETE",
+                  "CIRCULAR",
+                  "NOT_ESTABLISHED",
+                  "NOT_APPLICABLE"
+                ]
+              },
+              "independent_background_support": {
+                "type": "string"
+              },
+              "incremental_target_evidence": {
+                "type": "string"
+              },
+              "dependency_or_duplication_risk": {
+                "type": "string"
+              },
+              "strongest_rival_joint_model": {
+                "type": "string"
+              },
+              "comparative_result": {
+                "type": "string"
+              },
+              "reversal_evidence": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "verdict",
+              "independent_background_support",
+              "incremental_target_evidence",
+              "dependency_or_duplication_risk",
+              "strongest_rival_joint_model",
+              "comparative_result",
+              "reversal_evidence"
+            ]
+          },
+          "category_error_audit": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "possible_error": {
+                  "type": "string"
+                },
+                "present_in_chapter": {
+                  "type": "boolean"
+                },
+                "explanation": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "possible_error",
+                "present_in_chapter",
+                "explanation"
+              ]
+            }
+          },
+          "claims_pass_as_written": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claims_underdetermined": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claims_fail_gate": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "material_gaps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "issue": {
+                  "type": "string"
+                },
+                "gap_owner": {
+                  "type": "string",
+                  "enum": [
+                    "CHAPTER_MISSING_EVIDENCE",
+                    "CHAPTER_OVERCLAIM",
+                    "EVALUATOR_KNOWLEDGE_LIMIT",
+                    "PROTOCOL_MISSING_RULE"
+                  ]
+                },
+                "why_material": {
+                  "type": "string"
+                },
+                "minimal_fix_or_test": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "issue",
+                "gap_owner",
+                "why_material",
+                "minimal_fix_or_test"
+              ]
+            }
+          },
+          "minimal_revisions": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "type": "string"
+            }
+          },
+          "no_bloat_recommendation": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          }
+        },
+        "required": [
+          "overall_verdict",
+          "verdict_reason",
+          "rule_audit",
+          "claim_ledger",
+          "reciprocal_consilience",
+          "category_error_audit",
+          "claims_pass_as_written",
+          "claims_underdetermined",
+          "claims_fail_gate",
+          "material_gaps",
+          "minimal_revisions",
+          "no_bloat_recommendation",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 19415,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 6560,
+    "output_tokens_details": {
+      "reasoning_tokens": 1560
+    },
+    "total_tokens": 25975,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 779980000,
+    "context_details": {
+      "input_tokens": 19415,
+      "output_tokens": 6560
+    }
+  },
+  "user": null,
+  "incomplete_details": {
+    "reason": "max_output_tokens"
+  },
+  "status": "incomplete",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Apply the frozen rubric symmetrically, separate claim categories, and request only outcome-changing evidence."
+}

@@ -1,19 +1,110 @@
 ---
 layout: symbol-study
 symbol_key: night
-title: "Night — Symbol Study"
-description: "Night in Scripture represents the season of hiddenness and unawareness — the temporal window when concealment prevails, opportunity closes, and the spiritually sleeping do not see what is coming."
-strongs: [H3915, G3571]
-words: [night, nights]
+title: Night — Symbol Study
+description: >-
+  Night in Scripture represents the season of hiddenness and unawareness — the temporal window when
+  concealment prevails, opportunity closes, and the spiritually sleeping do not see what is coming.
+strongs:
+  - H3915
+  - G3571
+words:
+  - night
+  - nights
+record_version: 1
+record_type: symbol
+term: Night
+definition: >-
+  The absence of Day and Light — visible obedience — marked by sleep or death and by sinful deeds
+  concealed in darkness. At the largest scale, it is the period from the fall of man until the
+  Kingdom of God begins on earth.
+meaning: >-
+  The absence of Day and Light — visible obedience — marked by sleep or death and by sinful deeds
+  concealed in darkness. At the largest scale, it is the period from the fall of man until the
+  Kingdom of God begins on earth.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-night
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - day
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - night
+      - nights
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The absence of Day and Light — visible obedience — marked by sleep or death and by sinful
+      deeds concealed in darkness. At the largest scale, it is the period from the fall of man until
+      the Kingdom of God begins on earth.
+    citations:
+      - Gen 1:5
+      - 1 Thess 5:5-7
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The absence of Day and Light — visible obedience — marked by sleep or death and by sinful
+      deeds concealed in darkness. At the largest scale, it is the period from the fall of man until
+      the Kingdom of God begins on earth.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-night
+    citations:
+      - Gen 1:5
+      - 1 Thess 5:5-7
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      That part of the natural day when the sun is beneath the horizon, or the time from sunset to
+      sunrise; esp., the time between dusk and dawn, when there is no light of the sun, but only
+      moonlight, starlight, or artificial light.
+    status: quoted
+    headword: NIGHT
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Night
 
-**The season of hiddenness — the temporal window when unawareness prevails, opportunity closes, and what is concealed has not yet been exposed.**
+## Approved Definition
 
+**The absence of [Day](/research/symbols/day/) and [Light](/research/symbols/light/) — visible obedience — marked by sleep or death and by sinful deeds concealed in [darkness](/research/symbols/darkness/). At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.**
 > *"The **night** is far spent, the $[day] is at hand: let us therefore cast off the works of $[darkness], and let us put on the armour of $[light]."* — Rom 13:12
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The absence of [Day](/research/symbols/day/) and [Light](/research/symbols/light/) — visible obedience — marked by sleep or death and by sinful deeds concealed in [darkness](/research/symbols/darkness/). At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **night** begins: “That part of the natural day when the sun is beneath the horizon, or the time from sunset to sunrise; esp., the time between dusk and dawn, when there is no light of the sun, but only moonlight, starlight, or artificial light.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -133,8 +224,7 @@ This confirms night's symbolic core: not the act of sinning, but the *concealmen
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$darkness** — Night's definitional twin. Gen 1:5 equates them: God called $darkness "Night." $darkness is the *state* of concealed disobedience; night is the *season* when that concealment prevails. Where $darkness describes what is hidden, night describes the temporal window of hiddenness.
 
 - **$day** — Night's defining opposite. $day represents exposure and the time of accountability — the season when everything hidden is brought to $light. The movement from night to $day (Rom 13:12) is the movement from concealment to full visibility. The "Day of the Lord" is the ultimate end of night: every work exposed, every secret burned up.
@@ -191,3 +281,37 @@ KJV translates H3915 consistently as "night" or "nights." G3571 likewise appears
 - **$day** — Night's opposite. The season of exposure and accountability. How does the "Day of the Lord" function as the end of night — and what does it mean to walk "as in the day" before that day arrives?
 - **$light** — The quality that ends night's power. $light is visible obedience — the example that makes night's concealment impossible. How does letting your $light shine dispel the conditions of night?
 - **$sleep** — Night's native condition. $sleep represents death and spiritual unawareness. How does the call to "awake out of sleep" relate to leaving the season of night behind — and what does resurrection have to do with waking up?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **night** begins:
+
+> “Night, n. Etym: [OE. night, niht, AS. neaht, niht; akin to D. nacht, OS. & OHG. naht, G. nacht, Icel. n, Sw. natt, Dan. nat, Goth. nachts, Lith. naktis, Russ. noche, W. nos, Ir. nochd, L. nox, noctis, gr. nakta, nakti. sq. root 265. Cf. Equinox, Nocturnal.] 1. That part of the natural day when the sun is beneath the horizon, or the time from sunset to sunrise; esp., the time between dusk and dawn, when there is no light of the sun, but only moonlight, starlight, or artificial light. And God called the light Day, and the darkness he called Night. Gen. i. 5.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The printed passages strongly support the darkness/day contrast and the association with sleep and drunkenness, but they do not by themselves establish the claims about hiding, deeds done secretly, or opportunity closing. Genesis 1:5 merely names literal night, and additional texts would be needed for those extensions.
+
+- One could argue the entry should be REFINED because it elevates 'when opportunity closes' (a secondary John 9:4 motif) into the core definition and silently excludes the positive/neutral uses of night that the consensus acknowledges, effectively presenting a narrower, wholly negative symbol. However, glossary compression that emphasizes the dominant sense without denying alternatives does not constitute a material boundary change, and Response B's own primary meaning already includes the closed-opportunity element.
+
+- The book foregrounds 'opportunity closes' and behavioral particulars (hiding/sleep/drunkenness), which could be read as tilting toward the 'end of opportunity' alternative rather than pure ontological darkness, but this remains inside the consensus primary and its common supporting texts.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The absence of [Day](/research/symbols/day/) and [Light](/research/symbols/light/) — visible obedience — marked by sleep or death and by sinful deeds concealed in [darkness](/research/symbols/darkness/). At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *night*, *nights*. The English-form sweep found **313 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

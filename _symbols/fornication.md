@@ -1,19 +1,112 @@
 ---
 layout: symbol-study
 symbol_key: fornication
-title: "Fornication — Symbol Study"
-description: "Fornication in Scripture represents idolatry — the act of turning from the true God to serve other masters. It is the covenant marriage broken, the faithful bride become a harlot."
-strongs: [H2181, G4202]
-words: [fornication, fornications, whoredom, whoredoms]
+title: Fornication — Symbol Study
+description: >-
+  Fornication in Scripture represents idolatry — the act of turning from the true God to serve other
+  masters. It is the covenant marriage broken, the faithful bride become a harlot.
+strongs:
+  - H2181
+  - G4202
+words:
+  - fornication
+  - fornications
+  - whoredom
+  - whoredoms
+record_version: 1
+record_type: symbol
+term: Fornication, whoredom
+definition: >-
+  Covenant unfaithfulness — joining oneself to other gods or kingdoms outside the union God
+  established. The physical sin supplies the image.
+meaning: >-
+  Covenant unfaithfulness — joining oneself to other gods or kingdoms outside the union God
+  established. The physical sin supplies the image.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-fornication
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - fornication
+      - fornications
+      - whoredom
+      - whoredoms
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      Covenant unfaithfulness — joining oneself to other gods or kingdoms outside the union God
+      established. The physical sin supplies the image.
+    citations:
+      - Ex 34:15-16
+      - Hos 1:2
+      - Jer 3:9
+      - Rev 17:2
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      Covenant unfaithfulness — joining oneself to other gods or kingdoms outside the union God
+      established. The physical sin supplies the image.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-fornication
+    citations:
+      - Ex 34:15-16
+      - Hos 1:2
+      - Jer 3:9
+      - Rev 17:2
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      Unlawful sexual intercourse on the part of an unmarried person; the act of such illicit sexual
+      intercourse between a man and a woman as does not by law amount to adultery.
+    status: quoted
+    headword: FORNICATION
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Fornication
 
-**Idolatry — the act of turning from God to serve other gods, other masters, other standards.**
+## Approved Definition
 
+**[Covenant](/research/symbols/covenant/) unfaithfulness — joining oneself to other gods or kingdoms outside the union God established. The physical sin supplies the image.**
 > *"This people will rise up, and go a **whoring** after the gods of the strangers of the land, whither they go to be among them, and will forsake me, and break my covenant which I have made with them."* — Deut 31:16
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**[Covenant](/research/symbols/covenant/) unfaithfulness — joining oneself to other gods or kingdoms outside the union God established. The physical sin supplies the image.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **fornication** begins: “Unlawful sexual intercourse on the part of an unmarried person; the act of such illicit sexual intercourse between a man and a woman as does not by law amount to adultery.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -190,8 +283,7 @@ And the $name — the covenant relationship itself — is what is profaned. To t
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$idolatry** — Fornication is the *act*; $idolatry is the *condition*. $idolatry = self-rule, rejecting God's Word (1 Sam 15:23). Fornication is how that self-rule expresses itself relationally — the moment the covenant partner turns to another master. The two are inseparable but not identical: one describes the posture of the heart, the other the motion of the feet.
 
 - **$marriage** — The covenant framework that makes fornication possible. $marriage = covenant between God and His people. Fornication = the violation of that covenant. Without the $marriage metaphor, fornication is merely an ethical failure; within it, fornication is relational catastrophe — a wife abandoning her husband.
@@ -265,3 +357,37 @@ KJV translates H2181 variously as "go a whoring," "play the harlot," "commit for
 - **$virgin** — The faithful, exclusively devoted. What does it mean that the 144,000 "virgins" of Revelation 14 are defined not by abstinence but by following the Lamb?
 - **$babylon** — The worldly system that administers fornication to all nations. How does her "wine" intoxicate, and what does "Come out of her, my people" demand?
 - **$truth** — God's standard, the commandment that fornication abandons. How does recognizing $truth as God's law change the way we understand "the truth shall make you free"?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **fornication** begins:
+
+> “For`ni*ca”tion, n. Etym: [F. fornication, L. fornicatio.] 1. Unlawful sexual intercourse on the part of an unmarried person; the act of such illicit sexual intercourse between a man and a woman as does not by law amount to adultery. Note: In England, the offense, though cognizable in the ecclesiastical courts, was not at common law subject to secular prosecution. In the United States it is indictable in some States at common law, in others only by statute. Whartyon.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The claim that the out-of-covenant union itself is the whoredom is more conceptually precise than the verses state explicitly, and “kingdoms” is clearest only in Revelation 17:2. Nevertheless, the combined citations strongly establish departure from God toward other gods and kings as the relevant symbolic field.
+
+- One could argue the book's formulation 'the out-of-covenant union is itself the whoredom' subtly broadens the symbol to make any non-covenantal alliance (religious, political, or marital, per Ex 34:16 and the cross-reference to Marriage and Divorce) constitutive of whoredom, which might push toward REFINED as a slight broadening beyond idolatry proper. But since the consensus responses already include political alliance and worldly entanglement within the same motif, this reading does not materially alter the extension.
+
+- None.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**[Covenant](/research/symbols/covenant/) unfaithfulness — joining oneself to other gods or kingdoms outside the union God established. The physical sin supplies the image.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *fornication*, *fornications*, *whoredom*, *whoredoms*. The English-form sweep found **80 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

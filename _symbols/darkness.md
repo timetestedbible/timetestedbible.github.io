@@ -1,19 +1,94 @@
 ---
 layout: symbol-study
 symbol_key: darkness
-title: "Darkness — Symbol Study"
-description: "Darkness in Scripture represents concealed disobedience — the state of hiding one's conduct from scrutiny. Light exposes; darkness covers. The contrast is not ignorance versus knowledge, but hiding versus being seen."
-strongs: [H2822, G4655]
-words: [darkness, dark]
+title: Darkness — Symbol Study
+description: >-
+  Darkness in Scripture represents concealed disobedience — the state of hiding one's conduct from
+  scrutiny. Light exposes; darkness covers. The contrast is not ignorance versus knowledge, but
+  hiding versus being seen.
+strongs:
+  - H2822
+  - G4655
+words:
+  - darkness
+  - dark
+record_version: 1
+record_type: symbol
+term: Darkness
+definition: Concealed disobedience — deeds hidden from the light.
+meaning: Concealed disobedience — deeds hidden from the light.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-darkness
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - light
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - darkness
+      - dark
+senses:
+  - id: approved-core
+    status: approved
+    summary: Concealed disobedience — deeds hidden from the light.
+    citations:
+      - John 3:19-20
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: Concealed disobedience — deeds hidden from the light.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-darkness
+    citations:
+      - John 3:19-20
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: The absence of light; blackness; obscurity; gloom.
+    status: quoted
+    headword: DARKNESS
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Darkness
 
-**Concealed disobedience — the state of hiding one's conduct from scrutiny.**
+## Approved Definition
 
+**Concealed disobedience — deeds hidden from the [light](/research/symbols/light/).**
 > *"And this is the condemnation, that $[light] is come into the world, and men loved **darkness** rather than $[light], because their deeds were evil. For every one that doeth evil hateth the $[light], neither cometh to the $[light], lest his deeds should be reproved."* — Jn 3:19–20
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Concealed disobedience — deeds hidden from the [light](/research/symbols/light/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **darkness** begins: “The absence of light; blackness; obscurity; gloom.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -171,8 +246,7 @@ There is urgency here. The $light — the visible example of God's $truth — is
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$light** — The defining opposite. $light = visible obedience, the example that can be seen and followed. Darkness conceals; $light makes manifest (Eph 5:13). God is $light with no darkness at all (1 Jn 1:5). Every command to leave darkness is a command to *be seen* — to let one's works be visible before others (Mat 5:16).
 
 - **$truth** — God's commandments, His standard. Walking in darkness = "do not the $truth" (1 Jn 1:6). Doing $truth = coming to the $light (Jn 3:21). Darkness is the concealment of failure to keep God's standard; $truth is that standard itself.
@@ -236,3 +310,37 @@ KJV translates H2822 as "darkness" and "dark." G4655 and G4653 both render as "d
 - **$wickedness** — The act that darkness conceals. If $wickedness is covenant transgression and darkness is the concealment of it, what happens when the mystery of iniquity is finally *revealed* (2 Th 2:7–8)?
 
 - **$way** — The conduct that darkness characterizes. "The way of the wicked is as darkness" (Prov 4:19). How does the $way symbol map the trajectories of those who hide versus those who walk openly?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **darkness** begins:
+
+> “Dark”ness, n. 1. The absence of light; blackness; obscurity; gloom. And darkness was upon the face of the deep. Gen. i.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- John 3:19–20 clearly associates darkness with evil deeds and avoidance of exposure, but it does not unambiguously identify darkness itself exclusively as concealed disobedience; concealment may be the reason evildoers prefer darkness rather than the complete symbolic meaning of darkness.
+
+- One could argue for MATCH: John 3:19-20 is a flagship consensus proof-text, and 'deeds hidden from the light' is arguably just a vivid restatement of 'evil deeds opposed to God's light,' making the concealment emphasis immaterial detail rather than a real boundary shift. However, the book's explicit definitional focus on concealment ('Concealed disobedience') selects one feature of the consensus complex as the essence, which excludes many cases the consensus admits, so the narrowing is material.
+
+- While John 3:19-20 describes men loving darkness to hide their evil deeds, other passages use darkness to describe an overarching spiritual state, a cosmic domain (Colossians 1:13), or general ignorance of God (1 Peter 2:9), which goes beyond merely the concealment of specific disobedient acts.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Concealed disobedience — deeds hidden from the [light](/research/symbols/light/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *darkness*, *dark*. The English-form sweep found **178 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

@@ -1,19 +1,105 @@
 ---
 layout: symbol-study
 symbol_key: mountain
-title: "Mountain — Symbol Study"
-description: "The mountain in Scripture represents a kingdom or ruling authority — a seat of governmental power, whether God's throne or man's empire."
-strongs: [H2022, G3735]
-words: [mountain, mountains, mount, kingdom, kingdoms]
+title: Mountain — Symbol Study
+description: >-
+  The mountain in Scripture represents a kingdom or ruling authority — a seat of governmental power,
+  whether God's throne or man's empire.
+strongs:
+  - H2022
+  - G3735
+words:
+  - mountain
+  - mountains
+  - mount
+  - kingdom
+  - kingdoms
+record_version: 1
+record_type: symbol
+term: Mountain
+definition: A kingdom, nation, or high place — the seat of ruling authority.
+meaning: A kingdom, nation, or high place — the seat of ruling authority.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-mountain
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - valley
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - mountain
+      - mountains
+      - mount
+      - kingdom
+      - kingdoms
+senses:
+  - id: approved-core
+    status: approved
+    summary: A kingdom, nation, or high place — the seat of ruling authority.
+    citations:
+      - Jer 51:25
+      - Dan 2:35
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: A kingdom, nation, or high place — the seat of ruling authority.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-mountain
+    citations:
+      - Jer 51:25
+      - Dan 2:35
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      A large mass of earth and rock, rising above the common level of the earth or adjacent land;
+      earth and rock forming an isolated peak or a ridge; an eminence higher than a hill; a mount.
+    status: quoted
+    headword: MOUNTAIN
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Mountain
 
-**A kingdom — a seat of ruling authority, established over the peoples below.**
+## Approved Definition
 
+**A kingdom, nation, or high place — the seat of ruling authority.**
+
+The fuller book and notebook trail is available in [Mountain](/books/symbolic-language/mountain/).
 > *"And the **stone** was cut out without hands, which smote the image upon his feet… and became a great **mountain**, and filled the whole earth."* — Dan 2:34–35
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A kingdom, nation, or high place — the seat of ruling authority.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **mountain** begins: “A large mass of earth and rock, rising above the common level of the earth or adjacent land; earth and rock forming an isolated peak or a ridge; an eminence higher than a hill; a mount.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -164,8 +250,7 @@ The pattern is consistent: when Jesus acts as King — teaching with authority, 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$sea** — The mountain's opposite landscape. The $sea represents chaotic, ungoverned peoples (Rev 17:15). Mountains rise *above* the sea — kingdoms ordering the nations. A mountain cast into the sea (Mat 21:21) is a government thrown into chaos. No more sea (Rev 21:1) means no more unruly nations — all are governed under God's mountain.
 
 - **$rock** — The mountain's substance. The $rock is the unchanging covenant; the mountain is the kingdom built from it. Daniel's stone *becomes* a mountain (Dan 2:35) — the covenant becomes a visible government. Jer 51:25 rolls $babylon down "from the rocks" — the false kingdom loses its foundation.
@@ -221,3 +306,37 @@ KJV translates H2022 as "mountain," "mount," and "hill" depending on context. G3
 - **$babylon** — The rival mountain. Man's substitute kingdom built on brick instead of stone. How does $babylon's mountain contrast with God's mountain in every detail?
 - **$jerusalem** — The holy mountain. The covenant community as the seat of God's government. How does $jerusalem function as both bride and kingdom?
 - **$faith** — What moves mountains. Trusting obedience as the force that topples kingdoms. How does the biblical concept of faith differ from mere belief, and why does it have governmental consequences?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **mountain** begins:
+
+> “Moun”tain, n. Etym: [OE. mountaine, montaine, F. montagne, LL. montanea, montania, fr. L. mons, montis, a mountain; cf. montanus belonging to a mountain. See 1st Mount.] 1. A large mass of earth and rock, rising above the common level of the earth or adjacent land; earth and rock forming an isolated peak or a ridge; an eminence higher than a hill; a mount.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Jeremiah 51:25 and Daniel 2:35 support kingdom or imperial applications—Babylon as a destructive mountain and the stone becoming a mountain associated contextually with God's kingdom—but the printed verses alone do not establish that every symbolic mountain means a kingdom or specifically a 'seat of ruling authority.' Daniel's explicit kingdom interpretation occurs later in Daniel 2:44–45.
+
+- One could argue for DIVERGENT: the consensus's primary identification is divine presence/encounter, and the book's entry effectively demotes or replaces that with the kingdom sense as THE meaning, which is a change of central referent rather than a boundary adjustment. If the full chapter (ch. 39) explicitly denies the divine-encounter sense, the relation would harden toward DIVERGENT rather than REFINED.
+
+- The dominant biblical-theological pattern (Sinai, Zion, Transfiguration, Hebrews 12) centers mountains on theophany and divine dwelling rather than reducing them solely to the kingdom sense, so the book's exclusive definition underweights the primary consensus identification.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A kingdom, nation, or high place — the seat of ruling authority.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *mountain*, *mountains*, *mount*, *kingdom*, *kingdoms*. The English-form sweep found **894 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

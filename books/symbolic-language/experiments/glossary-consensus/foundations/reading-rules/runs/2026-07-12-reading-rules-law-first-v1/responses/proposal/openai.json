@@ -1,0 +1,264 @@
+{
+  "id": "resp_0a117ee6f425fc62006a5460b0e7b48197844426a8514dad3f",
+  "object": "response",
+  "created_at": 1783914672,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783914762,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Propose a general comparison method independently, before seeing the author's rules or any disputed reading.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a117ee6f425fc62006a5460b1c1e881978a429c87cabdc7d3",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a117ee6f425fc62006a5460bd57c08197bb8909177086eff8",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"written_text_status\":\"Treat the unpointed consonantal text as the fixed textual datum unless the experiment separately establishes a consonantal variant. Vocalizations, accents, marginal readings, translations, and interpretations are witnesses or hypotheses about that datum, not additions possessing equal canonical status with it. Keep three claims separate: what consonants are written, how they may be vocalized, and what the resulting expression means in context.\",\"admissibility_gate\":[\"The candidate uses exactly the stipulated consonants in their stipulated order; any emendation or consonantal substitution must be classified as a separate textual hypothesis.\",\"The proposed vowels and any required dagesh, mater treatment, or consonantal function conform to an attested Hebrew or Aramaic morphological pattern appropriate to the text's language and period.\",\"The resulting form has an attested or regularly derivable lexical sense. A merely possible root without evidence for the proposed form or sense is insufficient.\",\"The candidate can occupy the syntactic position required by the clause without an otherwise unattested construction or unexplained grammatical failure.\",\"The candidate produces a coherent proposition or discourse function in the immediate context, even if it is not yet the most likely reading.\",\"Any idiom, ellipsis, semantic extension, or unusual spelling essential to the candidate must be documented by relevant biblical or genuinely comparable linguistic evidence.\",\"The candidate must be derivable from the earlier text itself before appeal to New Testament confirmation. A later theological association cannot make an otherwise inadmissible vocalization admissible.\",\"Record every gate judgment as PASS, FAIL, or UNCERTAIN, with cited evidence. A FAIL excludes the candidate; an UNCERTAIN judgment permits provisional comparison but reduces confidence.\"],\"hard_disqualifiers\":[\"Changing, transposing, adding, or deleting consonants while presenting the result as a vocalization of the same consonantal text.\",\"Requiring a morphology or syntax that is impossible in the relevant language rather than merely rare or disputed.\",\"Depending on an unattested meaning with no regular semantic derivation or relevant parallel.\",\"Producing an incoherent clause for which no documented idiom, ellipsis, discourse feature, or textual explanation is supplied.\",\"Depending circularly on the desired interpretation as the sole evidence for the proposed vocalization.\",\"Depending solely on denominational authority, popularity, manuscript quantity, or the prestige of a language or printed edition.\",\"Requiring a direct and unavoidable contradiction of the prior written law or established earlier-scripture definition when a contradiction-free candidate remains admissible. Apparent tension is not a disqualifier until lexical, contextual, and intertextual alternatives have been examined.\",\"Treating a translation's wording as an independent vocalization witness when it cannot discriminate between the candidates or is demonstrably dependent on another counted witness.\"],\"comparison_rules\":[{\"rule_id\":\"C1\",\"title\":\"Freeze candidates and evidence domains\",\"operation\":\"REPORTING\",\"rule\":\"Before comparative evaluation, label the candidates neutrally and state their morphology, lexical sense, syntax, and predicted contextual meaning. Use the same evidence checklist for both.\",\"justification\":\"Neutral labels and a fixed checklist reduce outcome-driven changes in criteria.\"},{\"rule_id\":\"C2\",\"title\":\"Separate facts from inferences\",\"operation\":\"REPORTING\",\"rule\":\"For every item, distinguish the observed datum, the inference drawn from it, and the confidence of that inference. Report disputed datings, dependencies, lexical analyses, and translation techniques as disputed rather than as facts.\",\"justification\":\"This exposes hidden assumptions and permits replication.\"},{\"rule_id\":\"C3\",\"title\":\"Local linguistic fit\",\"operation\":\"COMPARATIVE_WEIGHT\",\"rule\":\"Prefer the candidate requiring fewer marked, exceptional, or unsupported grammatical and lexical assumptions and better accounting for clause syntax, collocation, discourse role, parallelism, referents, and immediate semantic flow. Rarity alone does not defeat an attested construction.\",\"justification\":\"The immediate linguistic environment is generated with the expression and is normally the most discriminating evidence for its reading.\"},{\"rule_id\":\"C4\",\"title\":\"Explanatory coverage\",\"operation\":\"COMPARATIVE_WEIGHT\",\"rule\":\"Prefer the candidate that explains more observed features while introducing fewer independent auxiliary assumptions. Do not count the same feature repeatedly under grammar, context, and theology.\",\"justification\":\"Explanatory economy is reproducible when assumptions and observations are explicitly listed.\"},{\"rule_id\":\"C5\",\"title\":\"Whole-book and authorial usage\",\"operation\":\"COMPARATIVE_WEIGHT\",\"rule\":\"Compare vocabulary, morphology, collocations, themes, and symbol use within the same book and, where demonstrable, the same authorial corpus. Give closer linguistic and literary parallels more weight than remote verbal similarities.\",\"justification\":\"A book's usage constrains plausible senses without making every repeated consonantal form identical in meaning.\"},{\"rule_id\":\"C6\",\"title\":\"Earlier-scripture control\",\"operation\":\"HARD_CONSTRAINT\",\"rule\":\"Interpret candidates within definitions, covenant categories, and symbols established in the Torah and then the Prophets and other earlier Scripture. A later passage may clarify or fulfill but may not authorize a meaning that nullifies or reverses the prior witness.\",\"justification\":\"This implements the experiment's fixed law-first canonical order.\"},{\"rule_id\":\"C7\",\"title\":\"Canonical parallel controls\",\"operation\":\"COMPARATIVE_WEIGHT\",\"rule\":\"Rank parallels by specificity: explicit quotation or identifiable reuse; same rare construction or collocation; same defined symbol or covenant category; broad thematic resemblance. Require contextual compatibility and do not infer identity of meaning from one shared word alone.\",\"justification\":\"Specific parallels carry more information and reduce proof-texting.\"},{\"rule_id\":\"C8\",\"title\":\"New Testament confirmation\",\"operation\":\"COMPARATIVE_WEIGHT\",\"rule\":\"After Old Testament derivation, use the New Testament to confirm a referent, fulfillment, or meaning already available from the earlier text and to test proposed readings for canonical coherence. It cannot rescue a candidate that fails the Hebrew or Aramaic gate or contradicts the prior written witness.\",\"justification\":\"This preserves cumulative revelation without backward redefinition.\"},{\"rule_id\":\"C9\",\"title\":\"Direct textual and reading witnesses\",\"operation\":\"SOURCE_WEIGHT\",\"rule\":\"Evaluate manuscripts and explicit reading traditions by date, provenance, independence, clarity of vocalization evidence, and relation to the consonantal locus. A witness with explicit discriminating orthography or vocalization is stronger than one compatible with both candidates, but no witness prevails merely by language or quantity.\",\"justification\":\"Witness value depends on information and genealogy, not prestige or raw survival.\"},{\"rule_id\":\"C10\",\"title\":\"Ancient translations\",\"operation\":\"SOURCE_WEIGHT\",\"rule\":\"Use an ancient translation only after testing whether its wording discriminates between candidates, whether its translation technique normally represents the relevant feature, whether multiple renderings were possible, and whether it may reflect interpretation, paraphrase, harmonization, or a different consonantal Vorlage.\",\"justification\":\"Translations can preserve early readings but add ambiguity through the translation process.\"},{\"rule_id\":\"C11\",\"title\":\"Genealogical counting\",\"operation\":\"SOURCE_WEIGHT\",\"rule\":\"Cluster dependent manuscripts, versions, citations, and traditions into recoverable lineages. Repetition within one lineage establishes prevalence but receives one primary evidential count for independence; genuinely independent agreement receives additional weight.\",\"justification\":\"This prevents double-counting descendants of a common exemplar or interpretation.\"},{\"rule_id\":\"C12\",\"title\":\"Origin of competing readings\",\"operation\":\"COMPARATIVE_WEIGHT\",\"rule\":\"Prefer a candidate that plausibly explains both the written text and the emergence of the rival vocalization or tradition through documented mechanisms such as ambiguity, dialect, graphic convention, harmonization, simplification, liturgical use, or interpretive pressure. Reject speculative motive claims unsupported by transmission facts.\",\"justification\":\"A successful account of rival evidence is stronger than isolated compatibility.\"},{\"rule_id\":\"C13\",\"title\":\"No automatic preference for difficulty\",\"operation\":\"TIE_BREAK\",\"rule\":\"Do not mechanically prefer either the easier or harder reading. Prefer difficulty only when it plausibly explains alteration and remains linguistically and contextually coherent; prefer ease only when it reflects normal usage rather than harmonization or smoothing.\",\"justification\":\"Both simplification and accidental corruption occur, so either slogan alone is unreliable.\"},{\"rule_id\":\"C14\",\"title\":\"Dominance and robust selection\",\"operation\":\"TIE_BREAK\",\"rule\":\"Declare a winner when it passes the gate and is superior in one or more materially discriminating domains without being materially inferior in a higher-priority domain. Priority is: linguistic possibility and prior-scripture coherence; immediate syntax and discourse; specific book-level and earlier-canonical usage; independent direct witnesses; diagnostically reliable versions; later reading traditions and broad thematic support. If substantial evidence conflicts across domains and no candidate robustly dominates, return UNDERDETERMINED.\",\"justification\":\"An ordinal rule avoids invented numerical precision while allowing decisive evidence to control weaker evidence.\"},{\"rule_id\":\"C15\",\"title\":\"Sensitivity test\",\"operation\":\"REPORTING\",\"rule\":\"Repeat the conclusion after removing each disputed or non-independent evidence cluster in turn. Label a result ROBUST only if the winner remains the same; otherwise label it FRAGILE or UNDERDETERMINED and state the pivotal assumption.\",\"justification\":\"A reproducible method should reveal when its result depends on one contestable premise.\"}],\"evidence_hierarchy\":[{\"evidence\":\"Fixed consonantal text and demonstrable language rules\",\"default_role\":\"CONTROLLING\",\"conditions\":\"Controls whether the proposal is genuinely a vocalization of the stated text and linguistically possible; uncertainty in historical grammar must be reported.\"},{\"evidence\":\"Immediate clause, sentence, paragraph, discourse structure, and poetic parallelism\",\"default_role\":\"STRONG\",\"conditions\":\"Strongest ordinary comparative evidence when it genuinely discriminates and is not itself dependent on the disputed reading.\"},{\"evidence\":\"Morphological frequency, syntactic markedness, collocations, and lexically attested senses\",\"default_role\":\"STRONG\",\"conditions\":\"Use corpora and cited parallels relevant in language, genre, and period; frequency guides probability but does not create impossibility.\"},{\"evidence\":\"Usage within the same book or demonstrable authorial corpus\",\"default_role\":\"STRONG\",\"conditions\":\"Weight rises with rarity and contextual similarity; avoid assuming uniform meaning in every occurrence.\"},{\"evidence\":\"Torah definitions, covenant categories, and explicit earlier-scripture parallels\",\"default_role\":\"CONTROLLING\",\"conditions\":\"Controls canonical coherence; distinguish explicit definitions and quotations from general thematic resemblance.\"},{\"evidence\":\"Prophetic, historical, and wisdom parallels grounded in prior-scripture vocabulary\",\"default_role\":\"STRONG\",\"conditions\":\"Weight depends on chronological direction, specificity, and contextual fit.\"},{\"evidence\":\"New Testament quotation, fulfillment, or interpretive confirmation\",\"default_role\":\"STRONG\",\"conditions\":\"Applied only after derivation from the earlier text; cannot override failed Hebrew or Aramaic analysis or the prior written witness.\"},{\"evidence\":\"Independent manuscripts explicitly distinguishing the vocalizations\",\"default_role\":\"STRONG\",\"conditions\":\"Weight depends on date, provenance, genealogy, accuracy, and whether the notation is original or secondary.\"},{\"evidence\":\"Ancient translations that demonstrably distinguish the candidates\",\"default_role\":\"SUPPORTING\",\"conditions\":\"May become strong when early, independent, literal at the relevant feature, and unlikely to reflect another source wording; otherwise remains ambiguous.\"},{\"evidence\":\"Masoretic vowel points\",\"default_role\":\"SUPPORTING\",\"conditions\":\"Evidence for a carefully transmitted received reading, not binding Scripture and not automatically original. Weight depends on agreement among pointing traditions and fit with earlier evidence.\"},{\"evidence\":\"Masoretic accents\",\"default_role\":\"CONTEXT_DEPENDENT\",\"conditions\":\"Useful evidence for traditional syntax, phrasing, and liturgical reading; weaker where accentuation could follow rather than determine interpretation.\"},{\"evidence\":\"Ketiv/Qere annotations\",\"default_role\":\"CONTEXT_DEPENDENT\",\"conditions\":\"Strong evidence that transmitters recognized a distinction between written and read forms, but each case must determine whether the Qere preserves pronunciation, grammar, euphemism, dialect, correction, or a consonantal variant.\"},{\"evidence\":\"Later Jewish, Christian, denominational, or scholarly interpretation\",\"default_role\":\"WEAK\",\"conditions\":\"May preserve arguments or historical data but has no controlling force from authority, age, popularity, or institutional status alone.\"},{\"evidence\":\"Raw manuscript counts or modern edition prevalence\",\"default_role\":\"EXCLUDED\",\"conditions\":\"May report prevalence but cannot establish originality without genealogical independence and discriminating evidence.\"},{\"evidence\":\"Undocumented claims about a community's theological motives\",\"default_role\":\"EXCLUDED\",\"conditions\":\"Admit only when supported by source-specific historical evidence and a demonstrated mechanism affecting the locus.\"}],\"received_pointing_role\":\"EVIDENCE_ONLY\",\"received_pointing_rule\":\"The received Masoretic pointing creates neither a binding interpretation nor an automatic presumption of originality. Record it as a significant, historically transmitted reading witness. Its weight increases when it is linguistically natural, contextually strong, shared by independent pointing or reading traditions, and supported by earlier evidence; its weight decreases when late, internally divided, interpretively secondary, or contradicted by stronger independent evidence. Accents and Ketiv/Qere must be analyzed separately rather than bundled into a single Masoretic vote.\",\"burden_of_proof_rule\":\"The initial admissibility burden is symmetrical: each candidate must document its consonantal derivation, morphology, syntax, lexicon, and coherent contextual sense. After admission, each positive claim bears its own evidential burden, including claims of exceptional grammar, special symbolism, textual corruption, translation direction, dependence, or partisan alteration. No candidate wins merely because the rival has not been proved impossible. A proposal departing from the most directly and independently attested reading bears the burden of explaining that attestation, but the attested tradition still bears the burden of originality and receives no irrebuttable presumption.\",\"dependent_witness_rule\":\"Construct a dependency map before counting support. Witnesses copied from one exemplar, versions translated from another version, citations drawn from a known textual tradition, and modern authorities repeating the same argument form one evidence cluster. Count the underlying datum once, then separately report its historical diffusion. Where dependence is uncertain, run both independent and dependent models and reduce confidence if the result changes.\",\"source_bias_rule\":\"Do not discount a source merely because its community had an interest in the outcome, and do not credit it merely because it is old or prestigious. Apply the same source-critical questions to every tradition: opportunity to alter, demonstrated tendency, consistency, date, independence, transparency of method, and whether the alleged bias predicts the exact reading. Bias changes weight only when supported by source-specific evidence and a plausible transmission mechanism; otherwise motive arguments are excluded.\",\"special_context_rules\":[\"In poetry, evaluate parallelism, meter only where independently defensible, semantic pairing, and deliberate ambiguity; do not force prose expectations onto poetic syntax.\",\"In wordplay, cryptic language, names, or symbolic passages, permit deliberate polysemy only when both senses are linguistically available and the context positively activates them. Polysemy must not be invoked merely to avoid choosing.\",\"For quotations or identifiable reuse, distinguish the source's recoverable wording from the later author's interpretive application and test whether the later form reflects translation, paraphrase, or another textual form.\",\"For liturgical, euphemistic, taboo, or public-reading contexts, allow a difference between written and recited forms only with evidence of that general practice and its relevance at the locus.\",\"For dialectal, archaic, or code-switching contexts, require independent evidence that the feature belongs to that linguistic setting rather than inventing a dialect to save a candidate.\",\"When the consonantal base itself is disputed, complete a separate textual-criticism stage before comparing vocalizations; do not use a vocalization argument silently to alter the consonants.\",\"When both readings may have been intentionally available, require positive contextual evidence for designed ambiguity and report the result as a dual reading rather than selecting one by preference.\"],\"tie_rule\":\"Return UNDERDETERMINED whenever both candidates pass the gate and neither robustly dominates under the fixed priority order, or whenever the result reverses under reasonable treatments of disputed dependence, dating, grammar, or translation technique. A tie must not be broken by majority tradition, theological attractiveness, Christological labeling, novelty, or an arbitrary numerical score. Report the exact unresolved evidence and what future discovery would discriminate.\",\"anti_ad_hoc_safeguards\":[\"Publish the gate, domain priority, source rules, and tie rule before revealing candidate identities or desired outcomes.\",\"Use neutral candidate labels during initial linguistic and textual evaluation.\",\"Require identical evidence forms and search scope for both candidates, including adverse evidence.\",\"Predefine corpus boundaries and criteria for what counts as a grammatical, lexical, book-level, or canonical parallel.\",\"Keep a complete evidence ledger with citations, dependency clusters, discriminating value, and fact-versus-inference labels.\",\"Forbid changing weights or introducing a special exception after the result is visible unless the revised rule is stated generally and the whole comparison is rerun.\",\"Do not assign pseudo-precise numerical weights unsupported by calibration. Use the declared ordinal hierarchy, dominance rule, and sensitivity analysis.\",\"Have at least one evaluator independently apply the frozen rules; reconcile differences by identifying the specific gate judgment, datum, or inference rather than negotiating the desired conclusion.\",\"Record excluded evidence and the reason for exclusion so that unfavorable data cannot be silently omitted.\",\"Apply every proposed source-bias or special-context principle symmetrically to analogous sources and contexts.\",\"Preserve UNDERDETERMINED as a legitimate outcome and do not lower the decision threshold merely because a binary answer is desired.\"],\"proposed_baseline\":\"Use a preregistered constrained-comparison method: first freeze the consonantal datum and candidate analyses; second apply the symmetrical admissibility gate; third exclude hard failures; fourth build an evidence ledger and dependency map; fifth compare candidates under the fixed ordinal priority of linguistic possibility and prior-scripture coherence, immediate context, book and earlier-canonical usage, independent direct witnesses, diagnostically reliable translations, New Testament confirmation, and later reading traditions; sixth test whether one candidate robustly dominates and better explains the rival tradition; finally report WINNER, FRAGILE WINNER, DUAL READING, or UNDERDETERMINED with the pivotal evidence and assumptions.\",\"clarifications_needed\":[\"Whether the later phase will stipulate one consonantal base or permit a separately argued consonantal textual variant.\",\"Which manuscript images, editions, lexicons, grammars, corpora, and dating conventions all evaluators may consult so that searches are reproducible.\",\"Whether candidate generation is closed to two supplied readings or evaluators must also report additional admissible vocalizations.\",\"Whether the final experiment requires a categorical result only or also ROBUST, FRAGILE, and DUAL READING labels.\",\"What threshold of inter-evaluator agreement will count as successful replication.\"],\"confidence\":\"HIGH\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_reading_rules_proposal",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "written_text_status": {
+            "type": "string"
+          },
+          "admissibility_gate": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hard_disqualifiers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparison_rules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "rule_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "operation": {
+                  "type": "string",
+                  "enum": [
+                    "HARD_CONSTRAINT",
+                    "COMPARATIVE_WEIGHT",
+                    "SOURCE_WEIGHT",
+                    "TIE_BREAK",
+                    "REPORTING"
+                  ]
+                },
+                "rule": {
+                  "type": "string"
+                },
+                "justification": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "rule_id",
+                "title",
+                "operation",
+                "rule",
+                "justification"
+              ]
+            }
+          },
+          "evidence_hierarchy": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "type": "string"
+                },
+                "default_role": {
+                  "type": "string",
+                  "enum": [
+                    "CONTROLLING",
+                    "STRONG",
+                    "SUPPORTING",
+                    "WEAK",
+                    "EXCLUDED",
+                    "CONTEXT_DEPENDENT"
+                  ]
+                },
+                "conditions": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "evidence",
+                "default_role",
+                "conditions"
+              ]
+            }
+          },
+          "received_pointing_role": {
+            "type": "string",
+            "enum": [
+              "BINDING",
+              "REBUTTABLE_PRESUMPTION",
+              "EVIDENCE_ONLY",
+              "NONE"
+            ]
+          },
+          "received_pointing_rule": {
+            "type": "string"
+          },
+          "burden_of_proof_rule": {
+            "type": "string"
+          },
+          "dependent_witness_rule": {
+            "type": "string"
+          },
+          "source_bias_rule": {
+            "type": "string"
+          },
+          "special_context_rules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tie_rule": {
+            "type": "string"
+          },
+          "anti_ad_hoc_safeguards": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "proposed_baseline": {
+            "type": "string"
+          },
+          "clarifications_needed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          }
+        },
+        "required": [
+          "written_text_status",
+          "admissibility_gate",
+          "hard_disqualifiers",
+          "comparison_rules",
+          "evidence_hierarchy",
+          "received_pointing_role",
+          "received_pointing_rule",
+          "burden_of_proof_rule",
+          "dependent_witness_rule",
+          "source_bias_rule",
+          "special_context_rules",
+          "tie_rule",
+          "anti_ad_hoc_safeguards",
+          "proposed_baseline",
+          "clarifications_needed",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 2054,
+    "input_tokens_details": {
+      "cache_write_tokens": 2051,
+      "cached_tokens": 0
+    },
+    "output_tokens": 4301,
+    "output_tokens_details": {
+      "reasoning_tokens": 465
+    },
+    "total_tokens": 6355
+  },
+  "user": null,
+  "metadata": {}
+}

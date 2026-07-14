@@ -1,19 +1,103 @@
 ---
 layout: symbol-study
 symbol_key: iron
-title: "Iron — Symbol Study"
-description: "Iron in Scripture represents unyielding dominion — crushing imperial force that breaks and subdues all things, wielded by beasts or by Christ."
-strongs: [H1270, G4604]
-words: [iron]
+title: Iron — Symbol Study
+description: >-
+  Iron in Scripture represents unyielding dominion — crushing imperial force that breaks and subdues
+  all things, wielded by beasts or by Christ.
+strongs:
+  - H1270
+  - G4604
+words:
+  - iron
+record_version: 1
+record_type: symbol
+term: Iron
+definition: >-
+  The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the
+  empire ruling when Christ came.
+meaning: >-
+  The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the
+  empire ruling when Christ came.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-iron
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - iron
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the
+      empire ruling when Christ came.
+    citations:
+      - Dan 2:40
+      - Dan 8:20-21
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the
+      empire ruling when Christ came.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-iron
+    citations:
+      - Dan 2:40
+      - Dan 8:20-21
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      (Chem.) Defn: The most common and most useful metallic element, being of almost universal
+      occurrence, usually in the form of an oxide (as hematite, magnetite, etc.), or a hydrous oxide
+      (as limonite, turgite, etc.).
+    status: quoted
+    headword: IRON
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Iron
 
-**Unyielding dominion — crushing imperial force that breaks, subdues, and will not bend.**
+## Approved Definition
 
+**The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the empire ruling when Christ came.**
 > *"And the fourth kingdom shall be strong as **iron**: forasmuch as **iron** breaketh in pieces and subdueth all things: and as **iron** that breaketh all these, shall it break in pieces and bruise."* — Dan 2:40
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the empire ruling when Christ came.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **iron** begins: “(Chem.) Defn: The most common and most useful metallic element, being of almost universal occurrence, usually in the form of an oxide (as hematite, magnetite, etc.), or a hydrous oxide (as limonite, turgite, etc.).”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -167,8 +251,7 @@ This sits between the beast's iron (illegitimate dominion) and Christ's iron (le
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$clay** — Iron's defining opposite in Dan 2. $clay represents the human, moldable, brittle element that iron cannot bond with. Together they form the feet of the statue — the final $babylon form that is "partly strong, and partly broken" (Dan 2:42). The incompatibility between crushing imperial force and its fractured human base is what dooms the last kingdom.
 
 - **$rock** — The $rock (the unchanging $covenant) is what strikes the iron-clay feet and shatters the entire statue (Dan 2:34–35). The $rock then becomes a $mountain filling the earth — covenant kingdom replaces imperial kingdom. The dove dwells in the rock's clefts; the beast is broken against its face.
@@ -241,3 +324,37 @@ KJV translates H1270 consistently as "iron." The word appears in literal (tools,
 - **$fire** — The refining force that works *through* the iron furnace. If $fire is God's holy standard in active contact, what does it mean that He chooses iron — the hardest, most unyielding material — as the furnace walls for His most severe refining?
 
 - **$animal** — The fourth beast with iron teeth. How does the $animal symbol (people/tribe characterized by nature) interact with the iron symbol when the beast's defining nature *is* iron — devouring, crushing, stamping?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **iron** begins:
+
+> “houarn.] 1. (Chem.) Defn: The most common and most useful metallic element, being of almost universal occurrence, usually in the form of an oxide (as hematite, magnetite, etc.), or a hydrous oxide (as limonite, turgite, etc.). It is reduced on an enormous scale in three principal forms; viz., cast iron, steel, and wrought iron. Iron usually appears dark brown, from oxidation or impurity, but when pure, or an fresh surface, is a gray or white metal. It is easily oxidized (rusted) by moisture, and is attacked by many corrosive agents. Symbol Fe (Latin Ferrum). Atomic weight 55.9. Specific gravity, pure iron, 7.86; cast iron, 7.1. In magnetic properties, it is superior to all other substances.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the empire ruling when Christ came.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *iron*. The English-form sweep found **90 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- Daniel 2:40 identifies iron with a strong, crushing fourth kingdom but does not name that kingdom as Rome. Daniel 8:20–21 names Medo-Persia and Greece, supporting a historical sequence from which Rome may be inferred, but the printed citations alone do not explicitly establish the Roman identification or justify applying it as iron’s general meaning.
+
+- One could argue MATCH, since the book's identification exactly reproduces a listed consensus alternative (Daniel's fourth kingdom = Rome, common prominence) and the traditional identification of the iron legs as Rome is itself majority opinion for that passage; on that view the book merely selects a narrower scope for the entry rather than disagreeing. Against classification as REFINED, the entry may simply be about Daniel 2's iron rather than about 'iron' generally.
+
+- Iron is used in many other biblical contexts that cannot refer to Rome, such as the messianic 'rod of iron' (Psalm 2:9) or the 'iron furnace' of Egyptian bondage (Deut 4:20).
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "persuasion": {
+      "type": "string",
+      "enum": ["PERSUADED", "PARTLY_PERSUADED", "UNPERSUADED"]
+    },
+    "rules_are_best_objective_standard": {
+      "type": "string",
+      "enum": ["YES", "NO"]
+    },
+    "support_by_rule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rule_id": {"type": "string"},
+          "support": {"type": "string", "enum": ["STRONG", "ADEQUATE", "WEAK", "NONE"]},
+          "assessment": {"type": "string"}
+        },
+        "required": ["rule_id", "support", "assessment"]
+      }
+    },
+    "strongest_support": {"type": "array", "items": {"type": "string"}},
+    "unresolved_objections": {"type": "array", "items": {"type": "string"}},
+    "required_rule_changes": {"type": "array", "items": {"type": "string"}},
+    "required_argument_changes": {"type": "array", "items": {"type": "string"}},
+    "source_weight_is_not_positive_evidence": {
+      "type": "string",
+      "enum": ["AFFIRMED", "NOT_AFFIRMED"]
+    },
+    "future_baseline_commitment": {"type": "string"},
+    "reasoning": {"type": "string"},
+    "confidence": {"type": "string", "enum": ["HIGH", "MEDIUM", "LOW"]}
+  },
+  "required": [
+    "persuasion",
+    "rules_are_best_objective_standard",
+    "support_by_rule",
+    "strongest_support",
+    "unresolved_objections",
+    "required_rule_changes",
+    "required_argument_changes",
+    "source_weight_is_not_positive_evidence",
+    "future_baseline_commitment",
+    "reasoning",
+    "confidence"
+  ]
+}

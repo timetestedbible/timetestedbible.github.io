@@ -11,6 +11,8 @@ words: [armour, whole armour, breastplate, helmet, shield, girdle, shoes, harnes
 
 **God's own covenant attributes — transferred to His people. Each piece IS another symbol. The armor is the composite of covenant identity, worn.**
 
+The fuller book and notebook trail is available in [Garments & Armor](/books/symbolic-language/garments/).
+
 > *"He put on righteousness as a **breastplate**, and an **helmet** of salvation upon his head; and he put on the garments of vengeance for clothing, and was clad with zeal as a cloke."* — Isa 59:17
 
 ---

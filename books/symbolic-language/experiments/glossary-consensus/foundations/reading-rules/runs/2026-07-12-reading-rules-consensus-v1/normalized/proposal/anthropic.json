@@ -1,0 +1,155 @@
+{
+  "written_text_status": "The unpointed consonantal text (as attested in the best manuscript witnesses, weighted by textual history) is the controlling datum. Vocalization, accents, and word division are interpretive layers added later; they are evidence of a reading tradition, not part of the autographic text. Any candidate reading must be fully compatible with the consonantal skeleton, including matres lectionis actually present in the earliest recoverable consonantal witnesses. Where consonantal witnesses themselves diverge, that divergence must be adjudicated first, by ordinary text-critical method, before vocalization candidates are compared.",
+  "admissibility_gate": [
+    "G1 Consonantal fit: the reading must account for every consonant and every mater lectionis in the attested consonantal text with zero emendation; readings requiring consonantal change are a different exercise (conjectural emendation) and are excluded from this comparison.",
+    "G2 Grammatical viability: the reading must be morphologically well-formed and syntactically constructible in the attested grammar of the relevant language stratum (e.g., Standard Biblical Hebrew, Late Biblical Hebrew, Imperial Aramaic), documented by at least one independent parallel construction, not merely asserted as theoretically possible.",
+    "G3 Lexical attestation: the lexeme, stem (binyan), and required sense must be attested in the relevant corpus or in closely cognate contemporary material (epigraphy, Qumran, cognate languages used cautiously); a sense reconstructed solely to make the candidate work fails the gate.",
+    "G4 Semantic constructibility: the reading must yield a proposition that is parsable in its clause without deleting, relocating, or re-dividing other words unless that re-division is itself independently defensible under G1-G3.",
+    "G5 Statement of stakes: before evaluation, each candidate must be written out with its full parsing (root, stem, form, syntax) so that later evidence is scored against a fixed target, not a moving one."
+  ],
+  "hard_disqualifiers": [
+    "D1 The reading requires a consonantal emendation, an added or deleted mater lectionis unattested in any consonantal witness, or a word division contradicted by spacing/word-dividers in the earliest witnesses.",
+    "D2 The reading requires a grammatical construction with zero attested parallels in the language stratum and is contradicted by productive rules (not merely rare, but counter-grammatical).",
+    "D3 The reading requires a lexical sense attested nowhere in Hebrew/Aramaic or cognates and invented for this passage alone.",
+    "D4 The reading is anachronistic: it depends on a form, sense, or orthographic convention demonstrably later than any plausible dating window of the composition and its transmission.",
+    "D5 The reading produces an irresolvable contradiction with the immediate syntactic frame (e.g., forces agreement violations that cannot be paralleled) rather than mere awkwardness.",
+    "D6 The reading survives only by discarding all independent ancient witnesses simultaneously without a documented mechanism (e.g., a specific, plausible scribal or translational error) explaining how every witness went wrong."
+  ],
+  "comparison_rules": [
+    {
+      "rule_id": "R1",
+      "title": "Immediate context first",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Score each candidate for coherence with the immediate literary unit (clause, verse, pericope): syntactic fit, discourse flow, parallelism (in poetry, fit with the parallel colon is weighted heavily), and referential coherence. Score on a fixed 3-point scale (fits naturally / fits with strain / fits only with special pleading) recorded before other evidence is consulted.",
+      "justification": "Immediate context is the least manipulable and most probative internal evidence; ancient readers and scribes disambiguated homographs primarily by context."
+    },
+    {
+      "rule_id": "R2",
+      "title": "Whole-book and corpus usage",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Count attested uses of each candidate lexeme/form in (a) the same book, (b) the same author/corpus stratum, (c) the whole Hebrew Bible plus contemporary epigraphy and Qumran. A candidate matching the book's demonstrable idiom and collocational habits outweighs one attested only in distant corpora. Raw frequency alone does not decide; collocational match (same syntactic frame, same semantic field) is what counts.",
+      "justification": "Authors have measurable lexical and collocational habits; a reading consistent with them is antecedently more probable, while rare readings remain possible and must not be excluded by frequency alone (lectio difficilior consideration)."
+    },
+    {
+      "rule_id": "R3",
+      "title": "Canonical and inner-biblical parallels",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Parallel passages (synoptic texts, quotations, formulaic repetitions) count as strong evidence only where literary dependence or shared formula is independently demonstrable; otherwise they are supporting evidence. A parallel that itself contains the same ambiguity cannot resolve it and must be flagged as non-independent.",
+      "justification": "Genuine parallels show how the tradition itself construed the phrase; but circular use of equally ambiguous parallels must be blocked."
+    },
+    {
+      "rule_id": "R4",
+      "title": "Grammar and lexicon as gatekeepers, not deciders",
+      "operation": "HARD_CONSTRAINT",
+      "rule": "Grammars and lexicons determine admissibility (G2, G3) and can disqualify (D2, D3), but between two grammatically viable readings they add comparative weight only insofar as one construction is markedly more regular for the stratum. Lexicon glosses that are themselves derived from the disputed passage carry zero evidential weight (circularity check: trace each lexicon entry's citation base).",
+      "justification": "Reference works often encode interpretive decisions about the very passages in dispute; their citation base must be audited to avoid circularity."
+    },
+    {
+      "rule_id": "R5",
+      "title": "Manuscript evidence",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Weight manuscript witnesses by (a) independence of textual lineage, (b) antiquity of the tradition they carry (not merely the copy's date), (c) demonstrated general reliability in the book at hand. Consonantal variants that disambiguate (e.g., a mater lectionis or plene spelling in a Qumran or other early witness that fits only one candidate) are strong evidence. Count lineages, not copies.",
+      "justification": "Manuscripts are the primary carriers of the text; but a hundred copies of one archetype are one witness."
+    },
+    {
+      "rule_id": "R6",
+      "title": "Ancient versions",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "For each ancient translation (Old Greek/LXX, Aquila/Symmachus/Theodotion, Peshitta, Targums, Vulgate, Old Latin where relevant): first retrovert what consonantal text and vocalization the translator most plausibly read, using that translator's known technique for the book. A version counts only if the retroversion discriminates between the candidates. Free, paraphrastic, or contextually guessing translators receive reduced weight, determined by their measured technique elsewhere in the same book, assessed before applying it to the disputed word. Versions dependent on one another (e.g., Vulgate on Greek in some books, daughter versions of LXX) are collapsed into one vote per lineage.",
+      "justification": "Versions are the earliest datable evidence of how the consonants were vocalized, but only translation-technique-controlled retroversion prevents reading modern preferences into them."
+    },
+    {
+      "rule_id": "R7",
+      "title": "Explanatory mechanism for the rival",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "For each candidate, ask: if this reading is original, is there a known, documented scribal/vocalization mechanism (graphic similarity, homophony, harmonization, euphemism, theological correction, more common word replacing rarer) that explains the rise of the rival reading tradition? A candidate that explains its rival's existence gains weight; a candidate whose rival's existence is inexplicable loses weight. Apply the same mechanism catalogue to both candidates symmetrically.",
+      "justification": "This is the core logic of textual criticism (the reading that explains the others is preferred) applied to vocalization traditions."
+    },
+    {
+      "rule_id": "R8",
+      "title": "Aggregation and decision threshold",
+      "operation": "REPORTING",
+      "rule": "Record each rule's verdict (favors A / favors B / neutral) with brief justification in a fixed-order table completed in the order R1-R7. Declare a reading 'better supported' only if it is favored by (i) at least two independent evidence classes (internal-contextual, manuscript, versional, distributional) and (ii) no evidence class strongly favors the rival. Otherwise declare 'underdetermined' with the balance stated.",
+      "justification": "A fixed aggregation protocol prevents post hoc reweighting and forces the underdetermined verdict when evidence genuinely conflicts."
+    }
+  ],
+  "evidence_hierarchy": [
+    {
+      "evidence": "Earliest recoverable consonantal text (incl. matres, word division) across independent lineages",
+      "default_role": "CONTROLLING",
+      "conditions": "Controls admissibility absolutely; where early witnesses disambiguate consonantally, that is near-decisive."
+    },
+    {
+      "evidence": "Immediate literary context (clause, parallelism, discourse)",
+      "default_role": "STRONG",
+      "conditions": "Weight reduced where the passage is poetically elliptical, textually damaged, or where both readings fit comparably."
+    },
+    {
+      "evidence": "Ancient versions, retroverted with translation-technique controls",
+      "default_role": "STRONG",
+      "conditions": "Only where retroversion discriminates between candidates; downgraded to SUPPORTING for free translators; lineage-dependent versions collapsed."
+    },
+    {
+      "evidence": "Whole-book/corpus usage and collocational patterns",
+      "default_role": "SUPPORTING",
+      "conditions": "Upgraded to STRONG when the collocational match is exact and frequent within the same book; never a disqualifier by itself (rare words exist)."
+    },
+    {
+      "evidence": "Canonical parallels with demonstrable dependence or shared formula",
+      "default_role": "SUPPORTING",
+      "conditions": "Upgraded when dependence is secure and the parallel is unambiguous; EXCLUDED when the parallel shares the same ambiguity."
+    },
+    {
+      "evidence": "Grammars and lexicons",
+      "default_role": "CONTEXT_DEPENDENT",
+      "conditions": "Controlling at the admissibility gate; between admissible readings only supporting, and zero weight where the entry's evidence is the disputed passage itself."
+    },
+    {
+      "evidence": "Masoretic vocalization, accents, Ketiv/Qere",
+      "default_role": "STRONG",
+      "conditions": "A very early, independent, generally accurate reading tradition; creates a rebuttable presumption but is post-consonantal interpretation, defeasible by earlier discriminating evidence."
+    },
+    {
+      "evidence": "Medieval and later commentarial tradition",
+      "default_role": "WEAK",
+      "conditions": "Usable only as evidence that a reading was anciently entertained; carries no authority weight."
+    },
+    {
+      "evidence": "Modern scholarly consensus or denominational authority as such",
+      "default_role": "EXCLUDED",
+      "conditions": "Arguments made by scholars may be used on their merits; head-counting and institutional authority may not."
+    }
+  ],
+  "received_pointing_role": "REBUTTABLE_PRESUMPTION",
+  "received_pointing_rule": "The Masoretic vowel points and accents encode a reading tradition centuries older than the pointing itself and empirically accurate where checkable; therefore the pointed reading is the default and carries a rebuttable presumption. The presumption is defeated when (a) earlier discriminating evidence (Qumran orthography, translation-technique-controlled retroversion of early versions) supports the rival across independent lineages, or (b) the Masoretic reading is best explained by a documented secondary mechanism (harmonization, euphemism, theological adjustment, leveling to the common word) under R7, or (c) internal Masoretic evidence itself is divided (Ketiv/Qere, Eastern/Western or manuscript disagreement in pointing/accents). Ketiv/Qere pairs are treated as two ancient candidate readings, each entered separately through the admissibility gate with neither privileged a priori; the mere fact of the Qere apparatus shows the tradition itself registered doubt. Accents count as evidence of the tradents' syntactic construal, weighted like vocalization and rebuttable on the same terms.",
+  "burden_of_proof_rule": "Burdens are asymmetric by design and declared in advance: the challenger of the received pointed reading bears the burden of producing positive discriminating evidence from at least two independent evidence classes; the received reading needs only to withstand challenge. However, within any evidence class the evaluation of the two candidates is symmetric: the same mechanism catalogue, the same parsing standards, and the same retroversion controls are applied to both. If the received tradition is internally divided (Ketiv/Qere, manuscript pointing variation), the presumption lapses and both candidates bear equal burdens. Failure to meet the burden yields 'received reading stands (presumption unrebutted)', which must be distinguished in the report from 'received reading positively confirmed'.",
+  "dependent_witness_rule": "Before counting, construct a dependence map: (1) all copies within one textual lineage count as a single witness at their archetype's date; (2) daughter versions (e.g., versions translated from the LXX rather than from Hebrew) collapse into their parent's vote; (3) versions demonstrably consulting one another (or a shared exegetical tradition, e.g., Targumic tradition influencing Peshitta in some books) are flagged and either collapsed or given fractional independence with the decision documented; (4) lexicon and commentary entries citing each other or citing the disputed passage do not add witnesses; (5) the Masoretic vocalization and any version demonstrably following the same rabbinic reading tradition count once for that tradition. The report must state the number of genuinely independent lineages supporting each candidate, and only that number enters the aggregation in R8.",
+  "source_bias_rule": "General principle, fixed in advance and applied to every witness identically: for each witness, document (a) its known systematic tendencies in the book at hand (theological correction, euphemism, harmonization, anti-anthropomorphism, sectarian interest, translational freedom), established from its behavior in undisputed passages; (b) whether the disputed reading falls within the scope of that tendency. If yes, the witness's weight on this variant is reduced by one rank (e.g., STRONG to SUPPORTING), never to zero, and never selectively: the same tendency test is run for witnesses on both sides. Bias discounting must cite the undisputed comparanda that establish the tendency; a bias claim asserted only for the disputed passage is inadmissible. This covers theologically loaded passages, tiqqune sopherim-type contexts, euphemistic Qere classes, and polemically sensitive texts without creating passage-specific ad hoc rules.",
+  "special_context_rules": [
+    "Poetry: parallelism with the adjacent colon is elevated to strong internal evidence; tolerance for rare lexemes and archaic morphology is increased, so distributional rarity (R2) is discounted one rank.",
+    "Proper names and gentilic forms: distributional arguments are discounted (names are inherently rare); onomastic and epigraphic corpora are admitted as primary comparanda.",
+    "Known euphemism/correction classes (e.g., standing Qere substitutions, passages flagged in scribal tradition as adjusted): the received-pointing presumption is weakened one rank because a documented systematic motive for secondary vocalization exists; this is triggered only by the class membership established from undisputed cases, never invented for the passage.",
+    "Late-stratum or Aramaic sections: grammar and lexicon comparanda must be drawn from the matching stratum (LBH, Imperial Aramaic, Qumran Aramaic), not from Standard Biblical Hebrew defaults.",
+    "Textually damaged or highly formulaic contexts (lists, refrains): immediate-context weight is reduced because harmonizing pressure is high; mechanism analysis (R7) gains relative importance."
+  ],
+  "tie_rule": "If after completing the R1-R8 table no candidate is favored by two independent evidence classes without strong contrary evidence, the verdict is 'underdetermined'. In that case: (a) the received pointed reading is reported as the default text for citation purposes (presumption unrebutted), explicitly labeled as a default rather than a demonstrated result; (b) both readings must be reported with their full evidence tables; (c) no tiebreaker based on interpretive attractiveness, theological preference, or homiletic yield is permitted; (d) 'underdetermined' is a legitimate terminal verdict, not a failure state, and later phases may not retroactively convert it without new evidence classes.",
+  "anti_ad_hoc_safeguards": [
+    "S1 Pre-registration: this entire rule set, including weights, thresholds, and the aggregation formula (R8), is frozen before any disputed word is identified; later phases may apply it but not amend it for a particular passage.",
+    "S2 Fixed evaluation order: evidence is scored in the fixed order gate -> disqualifiers -> R1 -> R2 -> ... -> R8, with each score recorded before the next class is examined, preventing back-propagation from a preferred outcome.",
+    "S3 Symmetry audit: every argument type used against one candidate (rarity, bias, mechanism, retroversion doubt) must be explicitly run against the other candidate, and the report must show both runs.",
+    "S4 Circularity audit: lexicon entries, grammar paragraphs, and parallels are checked for whether their evidential base includes the disputed passage; if so they are struck from the count.",
+    "S5 Blind-parallel calibration: where feasible, the evaluator applies the same rules to a control case (an undisputed homograph in the same book) and must reach the known answer; failure requires reporting, not rule adjustment for the target passage.",
+    "S6 No post hoc weight invention: any weight, discount, or special-context trigger used in a verdict must be traceable to a rule stated in this frozen document; a needed-but-missing rule forces the 'underdetermined' verdict rather than improvisation.",
+    "S7 Outcome-independence declaration: the final report must include a statement of which rules, if their verdicts flipped, would flip the conclusion, demonstrating that the conclusion tracks evidence rather than the rules being reverse-engineered.",
+    "S8 Authority firewall: no step may cite denominational rulings, modern popularity counts, or unspecified consensus; scholarly work enters only as arguments and data subject to the same audits."
+  ],
+  "proposed_baseline": "Baseline decision procedure: (1) Fix both candidates with full parsing (G5). (2) Run the admissibility gate G1-G4; a candidate failing any gate is out. (3) Run hard disqualifiers D1-D6. (4) If both survive, complete the R1-R8 table in order: immediate context, corpus usage, controlled parallels, grammatical regularity, independent manuscript lineages, technique-controlled versional retroversion, and mechanism analysis, with dependence mapping and bias discounting applied uniformly. (5) The received Masoretic pointing supplies a rebuttable presumption; the challenger must win at least two independent evidence classes with none strongly contrary to rebut it. (6) Report one of three verdicts: 'Reading X better supported', 'received reading stands (presumption unrebutted)', or 'underdetermined (received reading as citation default only)', always with the full evidence table, the independent-lineage counts, and the symmetry and circularity audits attached.",
+  "clarifications_needed": [
+    "Whether later phases permit consonantal emendation proposals or restrict the comparison strictly to vocalizations of an agreed consonantal text (this method assumes the latter).",
+    "Whether the evaluator will have access to collated manuscript evidence (e.g., Qumran readings, Cairo Genizah, versional critical editions) or must reason from standard critical apparatuses only.",
+    "Whether 'better supported' must meet a fixed probability-like threshold for downstream use, or whether the qualitative two-independent-classes criterion in R8 suffices.",
+    "How the experiment wishes to handle cases where the two 'readings' differ also in word division or maqqef/accent-dependent syntax rather than vowels alone (this method treats defensible re-division as admissible under G1/G4).",
+    "Whether cognate-language evidence (Ugaritic, Akkadian, Arabic) should be capped at supporting weight as assumed here, or admitted more strongly for hapax-heavy poetry."
+  ],
+  "confidence": "HIGH"
+}

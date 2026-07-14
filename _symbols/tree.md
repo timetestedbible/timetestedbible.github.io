@@ -1,19 +1,97 @@
 ---
 layout: symbol-study
 symbol_key: tree
-title: "Tree — Symbol Study"
-description: "The tree in Scripture represents a nation or people group — rooted, sheltering, bearing fruit, and subject to being cut down in judgment."
-strongs: [H6086, G1186, G3586]
-words: [tree, trees]
+title: Tree — Symbol Study
+description: >-
+  The tree in Scripture represents a nation or people group — rooted, sheltering, bearing fruit, and
+  subject to being cut down in judgment.
+strongs:
+  - H6086
+  - G1186
+  - G3586
+words:
+  - tree
+  - trees
+record_version: 1
+record_type: symbol
+term: Tree
+definition: A nation or people.
+meaning: A nation or people.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-tree
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - tree
+      - trees
+senses:
+  - id: approved-core
+    status: approved
+    summary: A nation or people.
+    citations:
+      - Dan 4:22
+      - Rom 11:17
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: A nation or people.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-tree
+    citations:
+      - Dan 4:22
+      - Rom 11:17
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      (Bot.) Defn: Any perennial woody plant of considerable size (usually over twenty feet high)
+      and growing with a single trunk.
+    status: quoted
+    headword: TREE
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Tree
 
-**A nation or people group — a collective body rooted in its origin, sheltering those within its borders, and known by the $fruit it produces.**
+## Approved Definition
 
+**A nation or people.**
 > *"For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant."* — Isa 5:7
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A nation or people.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **tree** begins: “(Bot.) Defn: Any perennial woody plant of considerable size (usually over twenty feet high) and growing with a single trunk.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -145,8 +223,7 @@ God plants His tree (His nation) on His $mountain (His kingdom). The tree grows 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$mountain** — Kingdom / ruling authority. Trees grow *on* mountains; nations exist *under* governing powers. God plants His tree on His $mountain (Ezek 17:23). The tree is the organic community; the $mountain is the seat of power that oversees it.
 
 - **$sea** — Nations as chaotic, unsanctified peoples. The $sea represents peoples in their disordered, turbulent state (Rev 17:15). The tree represents peoples in their *ordered*, rooted, cultivated state. Beasts rise from the $sea (Dan 7:3); beasts shelter under the tree (Dan 4:12). One is chaos; the other is structure.
@@ -209,3 +286,37 @@ KJV translates H6086 as "tree," "trees," "wood," "timber," and "sticks" dependin
 - **$grass** — The individual person within the nation. What is the relationship between the mortal person ($grass), the collective nation (tree), and the governing kingdom ($mountain)?
 - **$babylon** — The great tree that gets cut down. How does Nebuchadnezzar's tree-dream illuminate the nature of worldly empire?
 - **$thorns** — The cursed tree. What makes a tree produce $thorns instead of $fruit, and how does this connect to the parable of the sower?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **tree** begins:
+
+> “Tree, n. Etym: [OE. tree, tre, treo, AS. treó, treów, tree, wood; akin to OFries. tr, OS. treo, trio, Icel. tr, Dan. træ, Sw. trä, träd, Goth. triu, Russ. drevo, W. derw an oak, Ir. darag, darog, Gr. dru tree, wood, daru wood. Dryad, Germander, Tar, n., Trough.] 1. (Bot.) Defn: Any perennial woody plant of considerable size (usually over twenty feet high) and growing with a single trunk.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Daniel 4:22 explicitly identifies the tree first with Nebuchadnezzar, an individual king, though his dominion and kingdom are implicated; Romans 11’s olive tree plausibly represents the covenant people, but its branches also distinguish constituent groups or persons. Thus the references support collective-political or communal usage without establishing that every symbolic tree means a nation or people.
+
+- One could argue for MATCH on the ground that 'nation or people' is squarely within the consensus's list of recognized senses and glossary entries are naturally selective; alternatively one could argue the book's exclusive single-meaning claim ('a tree carries one uniform coded meaning'), which Response A flags as beyond mainstream consensus, edges toward DIVERGENT by displacing the consensus's dominant senses (righteous person, Tree of Life, cross). The middle verdict of REFINED depends on reading the entry as narrowing rather than replacing.
+
+- Consensus uniformly insists on polyvalence and often ranks person/fruit, Tree of Life, or cross higher than nation/people; presenting the latter as the unqualified entry over-simplifies beyond mainstream recognition.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A nation or people.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *tree*, *trees*. The English-form sweep found **287 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

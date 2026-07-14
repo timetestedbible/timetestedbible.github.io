@@ -1,0 +1,151 @@
+{
+  "written_text_status": "The unpointed consonantal text is the fixed prior written witness; candidate vocalizations are reconstructions that must explain those consonants and may never replace or nullify them.",
+  "admissibility_gate": [
+    "Reading must be fully compatible with the received consonants without emendation, metathesis, or letter substitution.",
+    "Reading must be grammatically possible under attested Biblical Hebrew or Aramaic morphology and syntax for the relevant period and genre.",
+    "Reading must employ a lexically attested root or a formation produced by regular word-formation processes; pure hapax invention without morphological warrant is not admitted.",
+    "Reading must yield a coherent sense in the immediate clause and paragraph without requiring contradiction of explicit Torah commandments or covenant categories.",
+    "Both candidates, once admitted, are treated as initially possible; admissibility does not imply equal probability."
+  ],
+  "hard_disqualifiers": [
+    "Direct contradiction of an explicit Torah commandment, covenant definition, or legal category that the alternative reading avoids.",
+    "Grammatical or morphological impossibility for Biblical Hebrew/Aramaic (wrong stem, impossible agreement, or non-existent form).",
+    "Reliance on a meaning that is unattested and cannot be derived by regular semantic extension from the root’s established range.",
+    "Requirement that the consonants be altered or that a later tradition override the consonants.",
+    "Creation of internal incoherence within the same book or pericope that the competing reading does not create.",
+    "Circular dependence on a later interpretive system that itself presupposes the disputed vocalization."
+  ],
+  "comparison_rules": [
+    {
+      "rule_id": "R1",
+      "title": "Prior-Scripture Control",
+      "operation": "HARD_CONSTRAINT",
+      "rule": "Any reading that redefines or nullifies Torah covenant categories, legal definitions, or established Prophetic vocabulary is disqualified; later texts may confirm or fulfill but may not project a contradictory meaning backward.",
+      "justification": "Fixed direction of interpretation (Torah → Prophets → NT) and the written law as standing prior witness require that earlier definitions govern."
+    },
+    {
+      "rule_id": "R2",
+      "title": "Immediate Context Primacy",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Prefer the reading that produces superior clause-level and paragraph-level coherence, including subject-verb agreement, discourse flow, parallelismus membrorum, and local thematic fit, without ad-hoc syntactic surgery.",
+      "justification": "Immediate literary context is the nearest non-conjectural evidence of authorial intent and is less susceptible to later theological overlay."
+    },
+    {
+      "rule_id": "R3",
+      "title": "Corpus-Internal Usage",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Weight higher the reading whose root sense, collocations, and syntactic patterns match usage elsewhere in the same book and in earlier books of the same canonical stratum (Torah first, then Prophets).",
+      "justification": "Authorial and redactional consistency within the progressive canon supplies objective comparative data."
+    },
+    {
+      "rule_id": "R4",
+      "title": "Independent Lineage Weight",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Count independent textual lineages and discriminating agreements, not raw manuscript numbers; a single early independent witness may outweigh many dependent copies of one exemplar.",
+      "justification": "Numerical majority records survival prevalence, not originality; independence is the relevant evidentiary unit."
+    },
+    {
+      "rule_id": "R5",
+      "title": "Ancient Version Corroboration",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Ancient translations (Greek, Aramaic, Latin, Syriac, etc.) are weighted by demonstrable independence, translation technique, and capacity to reflect a distinct vocalization of the same consonants; they never override the consonants themselves.",
+      "justification": "Versions are secondary witnesses that can preserve early reading traditions but remain interpretive products of their source text."
+    },
+    {
+      "rule_id": "R6",
+      "title": "New Testament Confirmation Only After OT Derivation",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "After a reading is shown to be derivable from the consonants, grammar, and earlier-Scripture usage, New Testament citation or fulfillment may serve as confirming evidence; NT usage alone cannot create or rescue a reading that fails the OT derivation steps.",
+      "justification": "Preserves the cumulative order of revelation and prevents circular Christological projection onto the unpointed text."
+    },
+    {
+      "rule_id": "R7",
+      "title": "Parsimony of Assumptions",
+      "operation": "TIE_BREAK",
+      "rule": "When residual evidence is close, prefer the reading that requires fewer rare senses, fewer special grammatical exceptions, and fewer appeals to unattested traditions.",
+      "justification": "Reduces ad-hoc special pleading and favors the explanation that best accounts for the data with ordinary linguistic resources."
+    },
+    {
+      "rule_id": "R8",
+      "title": "Underdetermination Reporting",
+      "operation": "REPORTING",
+      "rule": "If after all ranked evidence the two readings remain equipollent, declare UNDERDETERMINED; do not force a winner by elevating a secondary source or by inventing a new weight.",
+      "justification": "Honest residual uncertainty is preferable to fabricated certainty and protects reproducibility."
+    }
+  ],
+  "evidence_hierarchy": [
+    {
+      "evidence": "Unpointed consonants plus immediate clause and paragraph context",
+      "default_role": "CONTROLLING",
+      "conditions": "Always primary; no secondary source may override clear consonantal and local-contextual fit."
+    },
+    {
+      "evidence": "Torah definitions, covenant categories, and earlier Prophetic vocabulary and symbols",
+      "default_role": "CONTROLLING",
+      "conditions": "Controls when the two readings diverge on legal or symbolic meaning; later texts cannot redefine these."
+    },
+    {
+      "evidence": "Standard Biblical Hebrew/Aramaic grammar, morphology, and syntax for the genre",
+      "default_role": "STRONG",
+      "conditions": "Unless a clear, attested exception pattern is demonstrated within the same corpus."
+    },
+    {
+      "evidence": "Lexicon and collocation patterns within the same book and earlier canonical strata",
+      "default_role": "STRONG",
+      "conditions": "Prefer senses with multiple independent biblical attestations over isolated or extrabiblical-only senses."
+    },
+    {
+      "evidence": "Independent ancient manuscript lineages and early versions reflecting distinct vocalizations",
+      "default_role": "SUPPORTING",
+      "conditions": "Weighted by date, provenance, independence, and translation direction; dependent copies count as one lineage."
+    },
+    {
+      "evidence": "New Testament citation, fulfillment, or symbolic reuse",
+      "default_role": "SUPPORTING",
+      "conditions": "Only after the reading is already derivable from OT consonants, grammar, and earlier-Scripture usage; never as free-standing dictionary replacement."
+    },
+    {
+      "evidence": "Masoretic vowel points, accents, and Ketiv/Qere notes",
+      "default_role": "CONTEXT_DEPENDENT",
+      "conditions": "Treated as a valuable medieval reading tradition that may preserve ancient knowledge; never binding Scripture merely by co-printing; may be outweighed by stronger contextual or earlier-scriptural evidence."
+    },
+    {
+      "evidence": "Later Jewish, Christian, denominational, or scholarly interpretive traditions",
+      "default_role": "WEAK",
+      "conditions": "Usable for locating arguments and data, but authority, antiquity, or popularity cannot override the canonical text or the ranked evidence above."
+    },
+    {
+      "evidence": "Raw numerical majority of surviving manuscripts without demonstrated independence",
+      "default_role": "EXCLUDED",
+      "conditions": "Majority alone never establishes originality; only independent lineages and discriminating evidence count."
+    }
+  ],
+  "received_pointing_role": "EVIDENCE_ONLY",
+  "received_pointing_rule": "Masoretic vowel points, accents, and Ketiv/Qere constitute a historically important reading tradition applied to the consonants; they supply one (often early-informed) reconstruction but are not themselves the inspired written text and may be set aside when stronger immediate-context, grammatical, or prior-Scripture evidence favors a different admissible vocalization.",
+  "burden_of_proof_rule": "Both candidates begin equal only after clearing the admissibility gate. The burden then shifts asymmetrically against any reading that (a) requires rare or unattested senses, (b) strains grammar, (c) creates tension with Torah categories that the alternative avoids, or (d) depends chiefly on later tradition. The reading that better preserves prior-Scripture coherence and ordinary linguistic usage carries the lower burden; the challenger must supply positive discriminating evidence.",
+  "dependent_witness_rule": "Copies, versions, or citations that demonstrably derive from a single exemplar or translation event constitute one independent lineage. Do not double-count; weight the lineage once and note any internal variation. Only demonstrably independent lines of transmission accumulate separate weight.",
+  "source_bias_rule": "Apply identical scrutiny to every source class—Jewish, Christian, critical, translational, or institutional. Flag potential interest in a preferred vocalization, but decide by ranked textual and linguistic evidence, not by the source’s confessional identity. No source is privileged or dismissed solely for its tradition of origin.",
+  "special_context_rules": [
+    "Ketiv and Qere are both historical witnesses; neither automatically prevails; evaluate each against consonants, context, and earlier Scripture.",
+    "Poetic and prophetic parallelism may license broader lexical range than legal prose, but still within attested senses.",
+    "When a locus involves covenant law or cultic categories, Torah definitions receive controlling weight before any symbolic or typological extension.",
+    "Signs of composition language (Semitic wordplay, idiom, syntax) versus translation Greek or other secondary language are weighed as evidence of direction of transmission, not as automatic originality of any single language.",
+    "A reading that later Scripture confirms is strengthened only if it was first derivable from the OT text under the rules above."
+  ],
+  "tie_rule": "If the ranked evidence leaves the two admissible readings equipollent or the discriminating data are insufficient, report the result as UNDERDETERMINED. Do not break the tie by elevating Masoretic pointing, numerical manuscript majority, denominational preference, or any newly invented weight.",
+  "anti_ad_hoc_safeguards": [
+    "All rules, weights, and hierarchies are fixed before the specific disputed consonants or desired outcome are examined.",
+    "Every preference claim must cite an explicit evidence category from the hierarchy and state whether it is controlling, strong, supporting, or weak.",
+    "No source may be re-ranked mid-analysis solely because it favors a preferred result.",
+    "Document both candidates fully, list hard disqualifiers applied, and record residual uncertainties.",
+    "Prohibit appeals to unspecified scholarly consensus or institutional authority as decisive.",
+    "If a new special rule appears necessary for one locus, it must be stated as a general principle applicable to any similar case, or the case remains underdetermined."
+  ],
+  "proposed_baseline": "A consonants-first, law-first comparative procedure: admit vocalizations only by consonantal fit, grammar, and lexical possibility; hard-disqualify contradictions of Torah categories or grammatical impossibility; rank remaining evidence by immediate context and earlier-Scripture usage (controlling), then independent manuscript and version lineages (supporting), treating Masoretic pointing as non-binding historical evidence and NT confirmation as post-derivation support only; forbid double-counting of dependent witnesses; apply symmetrical scrutiny to source bias; and default to UNDERDETERMINED on residual equipoise. The method is reproducible by any evaluator who applies the same fixed gates, hierarchy, and reporting rules without knowledge of a preferred theological outcome.",
+  "clarifications_needed": [
+    "Standard reference editions for Biblical Hebrew/Aramaic grammar and lexicon to be used as default baselines (without treating any lexicon gloss as infallible).",
+    "Operational threshold for declaring two lineages 'independent' when partial contamination is possible.",
+    "Whether a pre-agreed quantitative scoring sheet is desired for auditability, or qualitative ranked comparison with explicit justifications is sufficient."
+  ],
+  "confidence": "HIGH"
+}

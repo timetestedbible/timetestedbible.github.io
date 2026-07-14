@@ -1,0 +1,197 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "overall_verdict": {
+      "type": "string",
+      "enum": [
+        "MEETS_STANDARD",
+        "MEETS_WITH_LIMITED_GAPS",
+        "UNDERDETERMINED_BY_PACKET",
+        "DOES_NOT_MEET_STANDARD"
+      ]
+    },
+    "verdict_reason": {"type": "string"},
+    "rule_audit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rule": {"type": "string", "enum": ["1", "2", "3", "4", "5"]},
+          "result": {"type": "string", "enum": ["PASS", "PARTIAL", "FAIL", "NOT_APPLICABLE"]},
+          "reason": {"type": "string"}
+        },
+        "required": ["rule", "result", "reason"]
+      }
+    },
+    "claim_ledger": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "claim": {"type": "string"},
+          "category": {
+            "type": "string",
+            "enum": [
+              "LINGUISTIC_VOCALIZATION",
+              "LEXICAL_OR_GRAMMATICAL",
+              "SYMBOLIC_DERIVATION",
+              "BACKGROUND_HYPOTHESIS",
+              "RECIPROCAL_CONSILIENCE",
+              "HISTORICAL_OR_ASTRONOMICAL",
+              "THEOLOGICAL_SYNTHESIS"
+            ]
+          },
+          "received_or_base_reading": {"type": "string"},
+          "proposed_additive_reading": {"type": "string"},
+          "relationship": {
+            "type": "string",
+            "enum": ["NONCONTRADICTORY_ADDITIVE", "CONTRADICTORY_RIVALS", "NOT_COMPARATIVE"]
+          },
+          "base_admission": {"type": "string", "enum": ["PASS", "FAIL", "UNDERDETERMINED", "NOT_APPLICABLE"]},
+          "additive_admission": {"type": "string", "enum": ["PASS", "FAIL", "UNDERDETERMINED", "NOT_APPLICABLE"]},
+          "admission_outcome": {
+            "type": "string",
+            "enum": [
+              "BOTH_ADMISSIBLE_ADDITIVE",
+              "BASE_ONLY_ADMISSIBLE",
+              "ADDITIVE_ONLY_ADMISSIBLE",
+              "NEITHER_ADMISSIBLE",
+              "UNDERDETERMINED",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "additive_intent_support": {
+            "type": "string",
+            "enum": ["SUPPORTED", "POSSIBLE_NOT_ESTABLISHED", "AFFIRMATIVELY_EXCLUDED", "NOT_APPLICABLE"]
+          },
+          "evidence_origins": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["TARGET_CHAPTER", "BACKGROUND_PACKET", "EVALUATOR_KNOWLEDGE", "NONE"]
+            }
+          },
+          "reason": {"type": "string"},
+          "affirmative_exclusion_evidence": {"type": "string"},
+          "gap_owner": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "CHAPTER_MISSING_EVIDENCE",
+              "CHAPTER_OVERCLAIM",
+              "EVALUATOR_KNOWLEDGE_LIMIT",
+              "PROTOCOL_MISSING_RULE"
+            ]
+          },
+          "outcome_changing_evidence": {"type": "string"}
+        },
+        "required": [
+          "claim",
+          "category",
+          "received_or_base_reading",
+          "proposed_additive_reading",
+          "relationship",
+          "base_admission",
+          "additive_admission",
+          "admission_outcome",
+          "additive_intent_support",
+          "evidence_origins",
+          "reason",
+          "affirmative_exclusion_evidence",
+          "gap_owner",
+          "outcome_changing_evidence"
+        ]
+      }
+    },
+    "reciprocal_consilience": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": ["VALID", "VALID_BUT_INCOMPLETE", "CIRCULAR", "NOT_ESTABLISHED", "NOT_APPLICABLE"]
+        },
+        "independent_background_support": {"type": "string"},
+        "incremental_target_evidence": {"type": "string"},
+        "dependency_or_duplication_risk": {"type": "string"},
+        "strongest_base_only_or_excluding_model": {"type": "string"},
+        "comparative_result": {"type": "string"},
+        "reversal_evidence": {"type": "string"}
+      },
+      "required": [
+        "verdict",
+        "independent_background_support",
+        "incremental_target_evidence",
+        "dependency_or_duplication_risk",
+        "strongest_base_only_or_excluding_model",
+        "comparative_result",
+        "reversal_evidence"
+      ]
+    },
+    "category_error_audit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "possible_error": {"type": "string"},
+          "present_in_chapter": {"type": "boolean"},
+          "explanation": {"type": "string"}
+        },
+        "required": ["possible_error", "present_in_chapter", "explanation"]
+      }
+    },
+    "claims_pass_as_written": {"type": "array", "items": {"type": "string"}},
+    "claims_both_admissible_additive": {"type": "array", "items": {"type": "string"}},
+    "claims_additive_intent_underdetermined": {"type": "array", "items": {"type": "string"}},
+    "claims_fail_gate": {"type": "array", "items": {"type": "string"}},
+    "material_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "issue": {"type": "string"},
+          "gap_owner": {
+            "type": "string",
+            "enum": [
+              "CHAPTER_MISSING_EVIDENCE",
+              "CHAPTER_OVERCLAIM",
+              "EVALUATOR_KNOWLEDGE_LIMIT",
+              "PROTOCOL_MISSING_RULE"
+            ]
+          },
+          "why_material": {"type": "string"},
+          "minimal_fix_or_test": {"type": "string"}
+        },
+        "required": ["issue", "gap_owner", "why_material", "minimal_fix_or_test"]
+      }
+    },
+    "minimal_revisions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "no_bloat_recommendation": {"type": "string"},
+    "confidence": {"type": "string", "enum": ["HIGH", "MEDIUM", "LOW"]}
+  },
+  "required": [
+    "overall_verdict",
+    "verdict_reason",
+    "rule_audit",
+    "claim_ledger",
+    "reciprocal_consilience",
+    "category_error_audit",
+    "claims_pass_as_written",
+    "claims_both_admissible_additive",
+    "claims_additive_intent_underdetermined",
+    "claims_fail_gate",
+    "material_gaps",
+    "minimal_revisions",
+    "no_bloat_recommendation",
+    "confidence"
+  ]
+}

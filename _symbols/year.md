@@ -1,19 +1,114 @@
 ---
 layout: symbol-study
 symbol_key: year
-title: "Year — Symbol Study"
-description: "A revolution of time — from a single calendar cycle to a complete Jubilee revolution, the appointed turn that brings all things back to their origin."
-strongs: [H8141, G1763]
-words: [year, years]
+title: Year — Symbol Study
+description: >-
+  A revolution of time — from a single calendar cycle to a complete Jubilee revolution, the
+  appointed turn that brings all things back to their origin.
+strongs:
+  - H8141
+  - G1763
+words:
+  - year
+  - years
+record_version: 1
+record_type: symbol
+term: Year
+definition: >-
+  A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at
+  whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees,
+  and a thousand years pass as a day.
+meaning: >-
+  A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at
+  whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees,
+  and a thousand years pass as a day.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-year
+  verdict: novel
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-day-thousand.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - year
+      - years
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A turning — shanah, written on the root to change, repeat, return: one complete cycle of time,
+      at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy
+      jubilees, and a thousand years pass as a day.
+    citations:
+      - Jer 25:11-12
+      - Dan 9:2, 24
+      - Ps 90:4
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A turning — shanah, written on the root to change, repeat, return: one complete cycle of time,
+      at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy
+      jubilees, and a thousand years pass as a day.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-year
+    citations:
+      - Jer 25:11-12
+      - Dan 9:2, 24
+      - Ps 90:4
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      The time of the apparent revolution of the sun trough the ecliptic; the period occupied by the
+      earth in making its revolution around the sun, called the astronomical year; also, a period
+      more or less nearly agreeing with this, adopted by various nations as a measure of time, and
+      called the civil year; as, the common lunar year of 354 days, still in use among the
+      Mohammedans; the year of 360 days, etc.
+    status: quoted
+    headword: YEAR
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Year
 
-**A revolution of time — from a single calendar cycle to a complete Jubilee revolution, the appointed turn that brings all things back to their origin.**
+## Approved Definition
 
+**A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a [day](/research/symbols/day/).**
 > *"To proclaim the acceptable **year** of the LORD, and the $[day] of vengeance of our God; to comfort all that mourn"* — Isa 61:2
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a [day](/research/symbols/day/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **year** begins: “The time of the apparent revolution of the sun trough the ecliptic; the period occupied by the earth in making its revolution around the sun, called the astronomical year; also, a period more or less nearly agreeing with this, adopted by various nations as a measure of time, and called the civil year; as, the common lunar year of 354 days, still in use among the Mohammedans; the year of 360 days, etc.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -217,8 +312,7 @@ Moses embodies both readings simultaneously: he died at exactly 120 calendar yea
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$trumpet** — The Jubilee trumpet (Lev 25:9) proclaims the *shaneh* — the year of liberty. The $trumpet initiates the revolution. Five OT trumpet traditions converge at the seventh trumpet (Rev 11:15), which IS the cosmic Jubilee: kingdom transferred, debts cancelled, captives freed. The trumpet sounds on the "day"; the Jubilee-year is what unfolds.
 
 - **$day-as-1000-years** — The companion scaling principle. If a "day" can mean 1,000 years, then a "year" meaning 49 years is the modest version of the same principle. Together they establish that biblical time-words operate at whatever scale the covenant context requires. The 7,000-year creation week and the Jubilee cycle are two applications of the same fractal system.
@@ -288,3 +382,29 @@ Dan 9:24, Dan 9:25, Dan 9:26, Dan 9:27
 - **$fall-of-babylon** — The nine Jubilee terms in Jeremiah 50-51 make Babylon's fall the cosmic Jubilee-proclamation. What does this tell us about the relationship between judgment ("day of vengeance") and restoration ("year of recompences")?
 
 - **$day** — The opposite of "year" in Isaiah's prophetic binary. How does the "day of the LORD" function as the concentrated judgment-moment that makes the Jubilee-year possible?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **year** begins:
+
+> “sun, called the astronomical year; also, a period more or less nearly agreeing with this, adopted by various nations as a measure of time, and called the civil year; as, the common lunar year of 354 days, still in use among the Mohammedans; the year of 360 days, etc. In common usage, the year consists of 365 days, and every fourth year (called bissextile, or leap year) of 366 days, a day being added to February on that year, on account of the excess above 365 days (see Bissextile). Of twenty year of age he was, I guess. Chaucer. Note: The civil, or legal, year, in England, formerly commenced on the 25th of March. This practice continued throughout the British dominions till the year 1752.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+No material competing definition is recorded in the current independent review. Literal uses still constrain the symbol: the figurative reading must arise from the passage rather than being imposed on every occurrence.
+
+## Conclusion
+
+**A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a [day](/research/symbols/day/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *year*, *years*. The English-form sweep found **738 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

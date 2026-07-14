@@ -423,7 +423,9 @@ const ReaderView = {
     document.body.style.setProperty('height', 'auto', 'important');
     
     // Get counts for each content type
-    const symbolCount = typeof SYMBOL_DICTIONARY !== 'undefined' ? Object.keys(SYMBOL_DICTIONARY).length : 0;
+    const symbolCount = typeof SYMBOL_DICTIONARY !== 'undefined'
+      ? Object.values(SYMBOL_DICTIONARY).filter(symbol => symbol.recordType !== 'alias').length
+      : 0;
     const wordStudyCount = typeof WORD_STUDY_DICTIONARY !== 'undefined' ? Object.keys(WORD_STUDY_DICTIONARY).length : 0;
     const numberStudyFiles = ['GEMATRIA', '666', '7', '40', '12', '3', '6', '10', '70', '1000']; // Common ones
     const chapterCount = typeof TIME_TESTED_CHAPTERS !== 'undefined' ? TIME_TESTED_CHAPTERS.length : 0;
@@ -1404,9 +1406,14 @@ const ReaderView = {
           }
           // Final alias resolution if symbol found via alias
           if (!symbol && aliasedKey) { resolvedKey = aliasedKey; symbol = dict[aliasedKey]; }
-          // $[name] → display "name" as written; $name → display dictionary name or capitalized key
+          const displaySymbol = symbol;
+          if (symbol && symbol.aliasOf && dict[symbol.aliasOf]) {
+            resolvedKey = symbol.aliasOf;
+            symbol = dict[symbol.aliasOf];
+          }
+          // $[name] → display "name" as written; $name → display alias name or canonical name
           const displayName = keepText ? rawKey
-            : (symbol ? symbol.name
+            : (displaySymbol ? displaySymbol.name
               : rawKey.replace(/(^|-)([a-z])/g, (m, sep, c) => (sep ? '-' : '') + c.toUpperCase()));
           // If no symbol found, render as styled text (not a broken link)
           if (!symbol) {
@@ -2008,7 +2015,8 @@ const ReaderView = {
    * Dynamically populated from SYMBOL_DICTIONARY
    */
   buildSymbolIndexHTML() {
-    const allSymbols = Object.entries(SYMBOL_DICTIONARY || {});
+    const allSymbols = Object.entries(SYMBOL_DICTIONARY || {})
+      .filter(([, symbol]) => symbol.recordType !== 'alias');
     const byRank = [...allSymbols].sort((a, b) => (b[1].rank || 0) - (a[1].rank || 0));
     const byAlpha = [...allSymbols].sort((a, b) => a[1].name.localeCompare(b[1].name));
     const symbolCount = allSymbols.length;
@@ -2700,7 +2708,9 @@ const ReaderView = {
    * Get previous and next symbols for navigation
    */
   getSymbolPrevNext(currentKey) {
-    const keys = Object.keys(SYMBOL_DICTIONARY || {});
+    const keys = Object.entries(SYMBOL_DICTIONARY || {})
+      .filter(([, symbol]) => symbol.recordType !== 'alias')
+      .map(([key]) => key);
     const currentIndex = keys.indexOf(currentKey);
     
     return {
@@ -2715,7 +2725,8 @@ const ReaderView = {
    * Render symbol index (list of all symbols)
    */
   renderSymbolIndex(container) {
-    const symbols = Object.entries(SYMBOL_DICTIONARY || {});
+    const symbols = Object.entries(SYMBOL_DICTIONARY || {})
+      .filter(([, symbol]) => symbol.recordType !== 'alias');
     
     container.innerHTML = `
       <div class="reader-symbol-index">

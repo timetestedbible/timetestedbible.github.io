@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": ["FAIR_AS_WRITTEN", "FAIR_WITH_CLARIFICATIONS", "UNFAIR"]
+    },
+    "agree_to_use_as_baseline": {
+      "type": "string",
+      "enum": ["YES", "NO"]
+    },
+    "symmetry": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "neutrality": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "reproducibility": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "strengths": {"type": "array", "items": {"type": "string"}},
+    "ambiguities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "location": {"type": "string"},
+          "problem": {"type": "string"},
+          "minimum_clarification": {"type": "string"}
+        },
+        "required": ["location", "problem", "minimum_clarification"]
+      }
+    },
+    "unfair_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rule_id": {"type": "string"},
+          "problem": {"type": "string"},
+          "minimum_revision": {"type": "string"}
+        },
+        "required": ["rule_id", "problem", "minimum_revision"]
+      }
+    },
+    "missing_rules": {"type": "array", "items": {"type": "string"}},
+    "comparison_to_own_proposal": {"type": "string"},
+    "exact_revision_suggestions": {"type": "array", "items": {"type": "string"}},
+    "reasoning": {"type": "string"},
+    "confidence": {"type": "string", "enum": ["HIGH", "MEDIUM", "LOW"]}
+  },
+  "required": [
+    "verdict",
+    "agree_to_use_as_baseline",
+    "symmetry",
+    "neutrality",
+    "reproducibility",
+    "strengths",
+    "ambiguities",
+    "unfair_rules",
+    "missing_rules",
+    "comparison_to_own_proposal",
+    "exact_revision_suggestions",
+    "reasoning",
+    "confidence"
+  ]
+}

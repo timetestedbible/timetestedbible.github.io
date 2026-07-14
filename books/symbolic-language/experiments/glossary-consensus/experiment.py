@@ -43,10 +43,23 @@ METHOD_EXCERPTS = (
     (BOOK / "02-the-parables-of-the-kingdom.adoc", "[discrete]\n=== The Sower, Derived and Graded", "[discrete]\n=== The Wheat and the Tares", "The Sower, Derived and Graded"),
 )
 
+# Some glossary conclusions depend on premises proved in earlier chapters.
+# Keep those dependencies explicit so a persuasion judge receives the argument
+# as the book presents it instead of treating the glossary's owner chapter as
+# a self-contained essay.
+EVIDENCE_DEPENDENCIES = {
+    "pearl": ("sun-moon-and-stars", "lucifers-declared-plan"),
+}
+
 SYSTEMS = {
     "consensus": "Return only the requested structured result. Remain blind to the author's position.",
     "relationship": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
     "persuasion": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+    "vowel_points_blind": "Return only the requested structured result. Decide the foundational textual question independently, without anticipating any later biblical-symbol claim.",
+    "vowel_points_adjudication": "Return only the requested structured result. Compare your frozen prior commitment with the supplied chapter, revising it only where the chapter's evidence warrants revision.",
+    "reading_rules_proposal": "Return only the requested structured result. Propose a general comparison method independently, before seeing the author's rules or any disputed reading.",
+    "reading_rules_fairness": "Return only the requested structured result. Evaluate the supplied rules for symmetry, neutrality, clarity, and reproducibility without inventing or assuming a rationale for them.",
+    "reading_rules_rationale": "Return only the requested structured result. Decide whether the disclosed rationale establishes the already-reviewed rules as the best objective baseline, and identify any remaining defect precisely.",
 }
 
 BOOK_ALIASES = {
@@ -203,6 +216,9 @@ def parse_glossary(include_words: bool = False) -> list[dict[str, Any]]:
         common = re.search(r"(?ms)^\[\.commonview\]__(.*?)__", rest)
         seerefs = re.findall(r"(?ms)^\[\.seeref\]__(.*?)__", rest)
         slugs: list[str] = []
+        for slug in EVIDENCE_DEPENDENCIES.get(anchor, ()):
+            if slug not in slugs:
+                slugs.append(slug)
         for slug in re.findall(r"link:/books/symbolic-language/([^/]+)/", "\n".join(seerefs)):
             if slug not in slugs:
                 slugs.append(slug)

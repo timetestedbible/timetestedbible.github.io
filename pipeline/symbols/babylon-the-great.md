@@ -66,7 +66,7 @@ Every property below is cataloged directly from Scripture. No interpretation or 
 ### Called "the praise of the whole earth"
 - **Jer 51:41** — "how is the praise of the whole earth surprised! how is Babylon become an astonishment among the nations!"
 
-### Called "the hindermost [last/youngest] of the nations"
+### Called "the hindermost [last/end] of the nations"
 - **Jer 50:12** — "the hindermost of the nations shall be a wilderness, a dry land, and a desert"
 
 ### Contains "mingled people"
@@ -445,8 +445,13 @@ These are properties that distinguish Babylon the Great from historical Babylon 
 ### A. She has MULTIPLE CITIES (Jer 50:32, 51:43, Rev 16:19)
 - Historical Babylon was one city. This Babylon has CITIES (plural) and is divided into THREE PARTS.
 
-### B. She is the "hindermost [youngest/last] of the nations" (Jer 50:12)
-- Historical Babylon was one of the OLDEST civilizations. This one is specifically called the LAST.
+### B. She is the "hindermost [last/end] of the nations" (Jer 50:12)
+- H319 *achariyth* can carry three converging layers: last in rank after
+  judgment; last in the imperial succession (Babylon at the head of
+  Nebuchadnezzar's image, Babylon the Great at its feet); and westernmost in
+  position when Scripture's east-facing compass is applied. H319 does not
+  directly mean "west"; the directional inference is supported by the related
+  H314 *acharon*, which names the western "hinder sea."
 
 ### C. She dwells upon "many waters" with maritime trade (Jer 51:13, Rev 18:17-19)
 - Historical Babylon was an inland desert city on the Euphrates with no ocean access. This Babylon has shipmasters, sailors, and all who trade by sea.

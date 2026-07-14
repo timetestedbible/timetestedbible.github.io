@@ -1,19 +1,119 @@
 ---
 layout: symbol-study
 symbol_key: almond
-title: "Almond — Symbol Study"
-description: "The almond tree wakes before all others — and its Hebrew name is a living pun: shaqed (almond) IS shaqad (watching). It embodies God's sleepless vigilance over His word."
-strongs: [H8247, H8245, H8246]
-words: [almond, almonds, almond tree, watch, watching, hasten, waketh]
+title: Almond — Symbol Study
+description: >-
+  The almond tree wakes before all others — and its Hebrew name is a living pun: shaqed (almond) IS
+  shaqad (watching). It embodies God's sleepless vigilance over His word.
+strongs:
+  - H8247
+  - H8245
+  - H8246
+words:
+  - almond
+  - almonds
+  - almond tree
+  - watch
+  - watching
+  - hasten
+  - waketh
+record_version: 1
+record_type: symbol
+term: Almond (shaqed)
+definition: >-
+  The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures
+  watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the
+  sanctuary lamps.
+meaning: >-
+  The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures
+  watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the
+  sanctuary lamps.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-almond
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - almond
+      - almonds
+      - almond tree
+      - watch
+      - watching
+      - hasten
+      - waketh
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures
+      watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the
+      sanctuary lamps.
+    citations:
+      - Jer 1:11-12
+      - Num 17:8
+      - Ex 25:33-34
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures
+      watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the
+      sanctuary lamps.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-almond
+    citations:
+      - Jer 1:11-12
+      - Num 17:8
+      - Ex 25:33-34
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: The fruit of the almond tree.
+    status: quoted
+    headword: ALMOND
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Almond
 
-**God's watchful alertness over His word — the tree that wakes first, embodying the One who never sleeps.**
+## Approved Definition
 
+**The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the sanctuary [lamps](/research/symbols/lamp/).**
 > *"Then said the LORD unto me, Thou hast well seen: for I will hasten (H8245 *shaqad*) my word to perform it."* — Jer 1:12
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the sanctuary [lamps](/research/symbols/lamp/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **almond** begins: “The fruit of the almond tree.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -137,8 +237,7 @@ When Jacob sends gifts to the unknown ruler of Egypt (who is, unknown to him, hi
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$rod** — Jer 1:11 shows "a rod of an almond tree." Aaron's rod bears almonds (Num 17:8). The rod = authority, and when it is an *almond* rod, it is the authority of the One who watches. The watcher-tree validates the shepherd's staff.
 
 - **$lamp** — The menorah is almond-shaped throughout (Exo 25:33–34). The $lamp = God's commandment (Prov 6:23). The almond-shaped lamp suggests that God's instruction is His watchfulness made visible — the word He stays awake to perform, burning through the night.
@@ -194,3 +293,37 @@ KJV renders H8247 as "almond," "almond tree." H8245 appears as "watch," "watchin
 - **$lamp** — The menorah is shaped like an almond tree, and the $lamp represents God's commandment. How does the production chain — $lamp + $oil = $light — relate to God's watchful alertness over His instruction?
 - **$light** — If $light is visible obedience and the menorah burns in almond-cups, what does it mean that God's watchfulness takes the form of perpetual, visible $light in the tabernacle?
 - **$rod** — Aaron's rod bears almonds; Jeremiah sees an almond rod. How does the $rod as a symbol of authority relate to the almond's meaning of watchful alertness?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **almond** begins:
+
+> “Alm”ond, n. Etym: [OE. almande, almaunde, alemaunde, F. amande, L. amygdala, fr. Gr. almendra. Cf. Amygdalate.] 1. The fruit of the almond tree. Note: The different kinds, as bitter, sweet, thin-shelled, thick- shelled almonds, and Jordan almonds, are the products of different varieties of the one species, Amygdalus communis, a native of the Mediterranean region and western Asia.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The cited texts directly establish the almond/watch wordplay, Aaron's almond-bearing rod, and almond-shaped lampstand cups, but they do not themselves explicitly unite these into one symbolic system or call Aaron's rod a 'resurrection sign'; those are interpretive syntheses.
+
+- The KJV rendering printed with the entry reads 'I will hasten my word' rather than 'watch over,' so the wordplay-based watchfulness claim is not visible from the excerpt alone and depends on the Hebrew (or other translations); one could argue this makes support only partial. Additionally, one might object that the book's fused synthesis (watcher-tree bearing the lamp, priesthood as resurrection sign) elevates secondary strands into a unified identification the consensus keeps distinct, which could be read as a slight refinement rather than a pure match.
+
+- None applicable; the book and consensus are in complete agreement.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the sanctuary [lamps](/research/symbols/lamp/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *almond*, *almonds*, *almond tree*, *watch*, *watching*, *hasten*, *waketh*. The English-form sweep found **102 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

@@ -1,0 +1,48 @@
+{
+  "protocol": "unpointed-reading-rules-consensus",
+  "protocol_version": 1,
+  "run_id": "2026-07-12-reading-rules-consensus-v1",
+  "created_at": "2026-07-13T02:48:42.083147+00:00",
+  "stages": [
+    "proposal",
+    "fairness",
+    "rationale"
+  ],
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "api": "gemini_generate_content",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "prompt_sha256": {
+    "01-proposal.md": "114ead3b95f8f4dc16c4fd7a06bea6cf45a10e9078be387fe3bed68465934ef5",
+    "02-fairness.md": "ff5ba7ce7e63b843d9445fc2dbcc56d643450cfedd92ba63116f682623599ff4",
+    "03-rationale.md": "6353a3d241ee71cf5a718a9f428089b71293173544f1cd94402f289d22400c19"
+  },
+  "schema_sha256": {
+    "01-proposal.json": "98dd2dc2acf6c3ae28eb262d32cf23e8b0b3927dd3f65113e4d5b82bcc8e09fd",
+    "02-fairness.json": "a7af33b024f1649e4a20f8fa9c2a8d8bc23fe2c88d577b7d5800c9812348a4bd",
+    "03-rationale.json": "3818edd1136b06dd5b53a8ed8a7289f9b3ad444324844ff59c06aeb0fd6a49e3"
+  },
+  "consensus_gates": {
+    "fairness": "Every provider: FAIR_AS_WRITTEN + YES + all checks PASS",
+    "rationale": "Every provider: PERSUADED + YES + no required changes"
+  },
+  "notes": "No chapter or disputed reading is an input. Credential contents are never written."
+}

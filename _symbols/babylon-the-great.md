@@ -22,7 +22,7 @@ This is not ancient Mesopotamia.
 
 Scripture provides a detailed identification profile for the *last* Babylon — a checklist of properties so specific that they distinguish this entity from every previous empire, including the original Babylon on the Euphrates. The study of $babylon traces the *archetype*: man's substitute system for God's covenant rule. This study catalogs what Scripture says about its **final form** — who she is, what she looks like, and how she falls.
 
-The profile is exhaustive. Jeremiah, Isaiah, Habakkuk, Daniel, and Revelation converge on a single portrait: a nation with multiple cities, maritime trade, mingled peoples, global merchant dominance, eagle-swift military deployed abroad, towering pride, and self-perception of invincibility — the "hindermost" (youngest/last) of the nations, yet the one that rules over the kings of the earth.
+The profile is exhaustive. Jeremiah, Isaiah, Habakkuk, Daniel, and Revelation converge on a single portrait: a nation with multiple cities, maritime trade, mingled peoples, global merchant dominance, eagle-swift military deployed abroad, towering pride, and self-perception of invincibility — the "hindermost" or last of the nations, yet the one that rules over the kings of the earth.
 
 Every property below comes directly from Scripture. The reader's task is to hold the profile against history and ask: *who fits?*
 
@@ -32,7 +32,7 @@ Every property below comes directly from Scripture. The reader's task is to hold
 
 **Defining verses:** Rev 17:1–18, Rev 18:1–24, Jer 50–51, Isa 47, Hab 1–2
 
-**The surprise:** Jeremiah calls this Babylon "the hindermost of the nations" (Jer 50:12) — literally the *youngest*, the *last*. Ancient Babylon was among the oldest civilizations on earth. This one is specifically, emphatically, the newest.
+**The surprise:** Jeremiah calls this Babylon "the hindermost of the nations" (Jer 50:12) — *achariyth* (H319), the last or end. The word can carry three converging layers: last in rank after judgment, last in the imperial succession, and — when Scripture's east-facing compass is applied — westernmost in position.
 
 **Connected:** $babylon, $fall-of-babylon, $harlot, $ten-horns, $eagle, $lion, $bear, $serpent, $mountain, $sea, $fire, $wine, $iron, $dragon, $jerusalem
 
@@ -62,7 +62,9 @@ Ancient Babylon was one city. This Babylon has *cities* — plural — and is di
 
 > *"The **hindermost** of the nations shall be a wilderness, a dry land, and a desert."* — Jer 50:12
 
-The Hebrew H319 *achariyth* means "latter end, last, youngest." Ancient Babylon was one of the *oldest* civilizations in human history, tracing to Nimrod (Gen 10:10). This Babylon is specifically called the *last* of the nations — the youngest on the world stage.
+The Hebrew *achariyth* (H319), translated "hindermost," means "latter end" or "last" — what comes after. The immediate judgment brings the former "glory of kingdoms" (Isa 13:19) last in rank. The prophetic succession adds a second layer: Nebuchadnezzar's Babylon begins the statue as its head of gold (Dan 2:38), while Babylon the Great appears at the latter end, when the stone strikes the feet (Dan 2:34–35, 44–45). Babylon frames man's image: the original kingdom at its head and the final Babylon at its feet.
+
+The word-family also carries a directional layer. Scripture's compass faces east — *qedem* is both east and front — so west lies behind. The related *acharon* (H314) names the western "hinder sea" (Deut 11:24; Zech 14:8). "Westernmost" is therefore an inference from the east-facing compass and the after/back/end word-family, not a direct translation of *achariyth*. Jeremiah need not be made to choose among the layers: last in rank, last in succession, and last in position can all be true at once.
 
 These are not minor details. They are structural identifiers that force the reader to look beyond Mesopotamia.
 
@@ -324,7 +326,7 @@ This is not optional. It is a command: *come out*. The implication is that God's
 
 ## Patterns
 
-1. **The youngest of the nations.** Jer 50:12 — H319 *achariyth*, "hindermost/last." Ancient Babylon was among the oldest civilizations. This Babylon is specifically the *youngest* nation to achieve world dominion.
+1. **The hindermost of the nations.** Jer 50:12 — *achariyth* (H319), "last/end/hindermost." The pattern converges in rank, succession, and position: the former glory is brought lowest; Babylon begins Nebuchadnezzar's image at the head and returns at its feet; and the hindermost position is westernmost on Scripture's east-facing compass.
 
 2. **Many cities, many waters, many peoples.** Jer 50:32, 51:43 (plural cities); Jer 51:13, Rev 17:15 (many waters = many peoples); Jer 50:37 (mingled people). Not a single city-state but a vast, multi-ethnic, multi-urban empire.
 
@@ -412,7 +414,7 @@ Scripture provides these distinguishing marks. Any candidate for Babylon the Gre
 | H894 | *bābel* | Babylon — from H1101 *bālal* (to confuse/mix) | ~260× OT |
 | G897 | *Babylōn* | Babylon — Greek transliteration of H894 | 12× NT |
 | G3173 | *megas* | great — used with *polis* (city) throughout Rev 17–18 | "the great city" |
-| H319 | *achariyth* | latter end, last, youngest — Jer 50:12 "hindermost" | From H310 *achar* (after/behind) |
+| H319 | *achariyth* | latter end, last, hindermost — Jer 50:12 | From H310 *achar* (after/behind); related H314 names the western "hinder sea" |
 | H5671 | *abtit* | something pledged, a debt — Hab 2:6 "thick clay" | Connects to debt-loading |
 | G5331 | *pharmakeia* | sorcery, enchantment — from *pharmakon* (drug/spell) | Rev 18:23 |
 | G3466 | *mysterion* | mystery, hidden thing — Rev 17:5, 2 Thess 2:7 | Name on forehead |

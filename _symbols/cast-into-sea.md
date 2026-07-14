@@ -1,20 +1,111 @@
 ---
 layout: symbol-study
 symbol_key: cast-into-sea
-title: "Cast into the Sea — Symbol Study"
-description: "When Scripture throws a stone, mountain, or millstone into the sea, it pictures a ruling power irreversibly destroyed — swallowed up among the nations, never to rise again."
+title: Cast into the Sea — Symbol Study
+description: >-
+  When Scripture throws a stone, mountain, or millstone into the sea, it pictures a ruling power
+  irreversibly destroyed — swallowed up among the nations, never to rise again.
 strongs: []
-words: [cast into the sea]
-kjv_triggers: ["thrown into the sea", "midst of the sea", "sank as a stone", "millstone into the sea"]
+words:
+  - cast into the sea
+kjv_triggers:
+  - thrown into the sea
+  - midst of the sea
+  - sank as a stone
+  - millstone into the sea
+record_version: 1
+record_type: symbol
+term: Cast into the sea (a stone, mountain, tree, ship, or millstone sinking)
+definition: >-
+  A ruling power irreversibly destroyed and sunk into the sea of peoples, never to rise; especially
+  the fall of Babylon the Great.
+meaning: >-
+  A ruling power irreversibly destroyed and sunk into the sea of peoples, never to rise; especially
+  the fall of Babylon the Great.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-cast-into-sea
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - cast into the sea
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A ruling power irreversibly destroyed and sunk into the sea of peoples, never to rise;
+      especially the fall of Babylon the Great.
+    citations:
+      - Ex 15:4-5
+      - Jer 51:63-64
+      - Matt 21:21
+      - Luke 17:6
+      - Acts 27:41
+      - Rev 18:21
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A ruling power irreversibly destroyed and sunk into the sea of peoples, never to rise;
+      especially the fall of Babylon the Great.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-cast-into-sea
+    citations:
+      - Ex 15:4-5
+      - Jer 51:63-64
+      - Matt 21:21
+      - Luke 17:6
+      - Acts 27:41
+      - Rev 18:21
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: To send or drive by force; to throw; to fling; to hurl; to impel.
+    status: quoted
+    headword: CAST
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Cast into the Sea
 
-**A ruling power irreversibly destroyed — swallowed up among the nations, never to rise again.**
+## Approved Definition
 
+**A ruling power irreversibly destroyed and sunk into the [sea](/research/symbols/sea/) of peoples, never to rise; especially the fall of [Babylon the Great](/research/symbols/babel/).**
 > *"And a mighty angel took up a stone like a great **millstone**, and **cast it into the sea**, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all."* — Rev 18:21
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A ruling power irreversibly destroyed and sunk into the [sea](/research/symbols/sea/) of peoples, never to rise; especially the fall of [Babylon the Great](/research/symbols/babel/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **cast** begins: “To send or drive by force; to throw; to fling; to hurl; to impel.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -148,8 +239,7 @@ The opposite trajectory confirms this. Daniel's stone becomes a $mountain that f
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$mountain** — The most frequent object cast into the sea. $mountain = kingdom / ruling authority. When a mountain is cast into the sea, a kingdom is thrown into the chaos of nations. Rev 8:8 (burning mountain), Mat 21:21 (this mountain), Ps 46:2 (mountains carried into the sea). The mountain that *fills* the earth (Dan 2:35) is the opposite trajectory.
 
 - **$rock** — The stone that sinks. Exod 15:5 ("sank as a stone"), Neh 9:11 ("as a stone into mighty waters"), Jer 51:63 (stone cast into Euphrates), Rev 18:21 (millstone). The $rock normally represents the unchanging covenant — but here, a *false* authority is given the weight of stone and thrown down. The genuine $rock cannot be moved (Ps 62:6); the counterfeit stone sinks.
@@ -211,3 +301,35 @@ The objects grow heavier. The waters grow wider. The kingdoms grow larger. But t
 - **$rock** — The genuine $rock is the covenant that cannot be moved. The counterfeit stone sinks. How does the rock symbol clarify what stands and what falls?
 
 - **$fire** — The burning mountain of Rev 8:8 combines fire and sea. What does it mean that a kingdom is already aflame before it is cast into the nations?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **cast** begins:
+
+> “Cast, v. t. [imp. & p. p. Cast; p. pr. & vb. n. Casting.] Etym: [Cf. Dan. kastw, Icel. & Sw. kasta; perh. akin to L. gerer to bear, carry. E. Jest.] 1. To send or drive by force; to throw; to fling; to hurl; to impel. Uzziash prepared . . . slings to cast stones. 2 Chron. xxvi. 14 Cast thy garment about thee, and follow me. Acts. xii. 8 We must be cast upon a certain island. Acts. xxvii. 26.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *cast into the sea*. The English-form sweep found **7 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- Jeremiah 51:63–64 and Revelation 18:21 strongly support Babylon’s irreversible fall, and Exodus 15:4–5 supports enemies sinking like stone. However, the printed texts alone do not establish that the sea universally symbolizes peoples, nor that every stone, mountain, or millstone cast into the sea refers specifically to Babylon or a ruling power.
+
+- One could argue MATCH: the book's 'fall of Babylon' reading is exactly the dominant sense the consensus assigns to the key texts (Rev 18:21; Jer 51:63-64), and the consensus notes already acknowledge that judgment dominates for the stone/millstone passages, making the book's focus mere emphasis rather than material narrowing. Against this, the book's exclusive restriction to ruling powers and its distinctive 'sea of peoples' identification (the sea as nations, not mere oblivion) go beyond the consensus primary meaning and reclassify part of its extension, which fits REFINED better.
+
+- By restricting this phrase-symbol entirely to 'the fall of Babylon / a ruling power,' the book neglects identical phrasing in the gospels regarding individuals (the millstone warning) and faith (casting mountains into the sea), which use the same imagery for different applications.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A ruling power irreversibly destroyed and sunk into the [sea](/research/symbols/sea/) of peoples, never to rise; especially the fall of [Babylon the Great](/research/symbols/babel/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.

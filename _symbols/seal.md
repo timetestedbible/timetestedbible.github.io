@@ -1,19 +1,129 @@
 ---
 layout: symbol-study
 symbol_key: seal
-title: "Seal — Symbol Study"
-description: "The seal in Scripture represents authority's binding claim — the imprint of sovereign identity that secures, restricts, authenticates, or protects whatever it marks."
-strongs: [H2368, G4973]
-words: [seal, sealed, seals, sealing, sealeth, sealest, signet, signets]
+title: Seal — Symbol Study
+description: >-
+  The seal in Scripture represents authority's binding claim — the imprint of sovereign identity
+  that secures, restricts, authenticates, or protects whatever it marks.
+strongs:
+  - H2368
+  - G4973
+words:
+  - seal
+  - sealed
+  - seals
+  - sealing
+  - sealeth
+  - sealest
+  - signet
+  - signets
+record_version: 1
+record_type: symbol
+term: Seal (mark in the forehead)
+definition: >-
+  The Name impressed upon its owner, marking covenant identity and allegiance in the forehead. God's
+  seal joins ownership with departure from iniquity; the counterfeit claims the same place.
+meaning: >-
+  The Name impressed upon its owner, marking covenant identity and allegiance in the forehead. God's
+  seal joins ownership with departure from iniquity; the counterfeit claims the same place.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-seal
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-seal.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - seal
+      - sealed
+      - seals
+      - sealing
+      - sealeth
+      - sealest
+      - signet
+      - signets
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The Name impressed upon its owner, marking covenant identity and allegiance in the forehead.
+      God's seal joins ownership with departure from iniquity; the counterfeit claims the same
+      place.
+    citations:
+      - Ex 28:36-38
+      - Ex 13:9
+      - Ezek 9:4-6
+      - 2 Tim 2:19
+      - Rev 7:3
+      - Rev 14:1
+      - Rev 22:4
+      - Rev 13:16
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The Name impressed upon its owner, marking covenant identity and allegiance in the forehead.
+      God's seal joins ownership with departure from iniquity; the counterfeit claims the same
+      place.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-seal
+    citations:
+      - Ex 28:36-38
+      - Ex 13:9
+      - Ezek 9:4-6
+      - 2 Tim 2:19
+      - Rev 7:3
+      - Rev 14:1
+      - Rev 22:4
+      - Rev 13:16
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: "(Zoöl.) Defn: Any aquatic carnivorous mammal of the families Phocidæ and Otariidæ."
+    status: quoted
+    headword: SEAL
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Seal
 
-**Authority's binding claim — the imprint of sovereign identity pressed upon what it governs.**
+## Approved Definition
 
+**The [Name](/research/symbols/name/) impressed upon its owner, marking [covenant](/research/symbols/covenant/) identity and allegiance in the forehead. God's seal joins ownership with departure from iniquity; the counterfeit claims the same place.**
 > *"Write ye also for the Jews, as it liketh you, in the king's name, and **seal** it with the king's ring: for the writing which is written in the king's name, and **sealed** with the king's ring, may no man reverse."* — Est 8:8
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The [Name](/research/symbols/name/) impressed upon its owner, marking [covenant](/research/symbols/covenant/) identity and allegiance in the forehead. God's seal joins ownership with departure from iniquity; the counterfeit claims the same place.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **seal** begins: “(Zoöl.) Defn: Any aquatic carnivorous mammal of the families Phocidæ and Otariidæ.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -199,8 +309,7 @@ This is the same relationship between seal and $name. The covenant ($name) exist
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$mark** — Both appear on foreheads (Rev 7:3 seal; Rev 13:16 $mark), but they operate at different levels. The seal is the authority's *claim* — whose identity is impressed upon you. The $mark is the *observable practice* — visible conduct revealing whose ordinances you follow. The seal of God and the $mark of the beast are not synonyms but two sides of the allegiance question: the seal says who *owns* you; the $mark shows who you *obey*.
 
 - **$name** — The seal authenticates the $name. Priestly stones are engraved with the $names of Israel "like the engravings of a signet" (Exo 28:21). The covenant relationship ($name) is what the seal *binds*. 2 Tim 2:19 pairs them directly: the foundation bears a seal, and those who $name Christ's $name must depart from iniquity.
@@ -270,3 +379,37 @@ KJV translates H2856 as "seal," "sealed," "seal up," "make an end," "mark," "sto
 - **$the-end** — The appointed boundary where the seal breaks. Daniel's sealed book and John's unsealed book frame the question: what changes between "seal it up" and "seal it not"?
 
 - **$fire** — The seal claims; the $fire tests. Song 8:6 binds them together in covenant love's jealousy. How does God's holy standard in active contact relate to the seal's binding authority?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **seal** begins:
+
+> “names as sea lion, sea leopard, sea bear, or ursine seal, fur seal, and sea elephant. The bearded seal (Erignathus barbatus), the hooded seal (Cystophora crustata), and the ringed seal (Phoca foetida), are northern species. See also Eared seal, Harp seal, and Fur seal, under Eared, Harp, Monk, and Fur. Seals are much hunted for their skins and fur, and also for their oil, which in some species is very abundant. Harbor seal (Zoöl.), the common seal (Phoca vitulina). It inhabits both the North Atlantic and the North Pacific Ocean, and often ascends rivers; -- called also marbled seal, native seal, river seal, bay seal, land seal, sea calf, sea cat, sea dog, dotard, ranger, selchie, tangfish.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The cited passages strongly connect forehead inscription, divine name, ownership, holiness, law, and protection, but they do not by themselves establish that all these images denote one identical seal; nor do the printed excerpts explicitly say that the Holy Spirit performs the stamping.
+
+- One could argue REFINED: the book fixes the seal's referent specifically as the NAME (with a signet-plate typology absent from the consensus lists), implicitly setting aside referents like the Sabbath or baptism that some traditions hold, and Exodus 28 concerns the high priest alone, which might be read as a nonstandard typological narrowing. But since the name-in-forehead identification is already central to the blind consensus and the book excludes no cases, this objection does not establish a material boundary change.
+
+- Consensus primary readings treat Spirit, general ownership, or name as sufficient without elevating the Ex 28 plate or 2 Tim 2:19 dual phrase to definitional status, so the book's typological specificity may appear as added precision rather than the shared core.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The [Name](/research/symbols/name/) impressed upon its owner, marking [covenant](/research/symbols/covenant/) identity and allegiance in the forehead. God's seal joins ownership with departure from iniquity; the counterfeit claims the same place.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *seal*, *sealed*, *seals*, *sealing*, *sealeth*, *sealest*, *signet*, *signets*. The English-form sweep found **68 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

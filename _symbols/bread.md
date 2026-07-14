@@ -1,19 +1,115 @@
 ---
 layout: symbol-study
 symbol_key: bread
-title: "Bread — Symbol Study"
-description: "Bread in Scripture represents the Word of God — the covenant terms spoken from His mouth that sustain true life. Man does not live by bread alone, but by every word that proceeds from the mouth of God."
-strongs: [H3899, H4478, G740, G3131]
-words: [bread, loaf, loaves, manna, shewbread]
+title: Bread — Symbol Study
+description: >-
+  Bread in Scripture represents the Word of God — the covenant terms spoken from His mouth that
+  sustain true life. Man does not live by bread alone, but by every word that proceeds from the
+  mouth of God.
+strongs:
+  - H3899
+  - H4478
+  - G740
+  - G3131
+words:
+  - bread
+  - loaf
+  - loaves
+  - manna
+  - shewbread
+record_version: 1
+record_type: symbol
+term: Bread
+definition: The word of God. Unleavened bread is pure doctrine; leavened bread contains corrupting doctrine.
+meaning: The word of God. Unleavened bread is pure doctrine; leavened bread contains corrupting doctrine.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-bread
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - bread
+      - loaf
+      - loaves
+      - manna
+      - shewbread
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The word of God. Unleavened bread is pure doctrine; leavened bread contains corrupting
+      doctrine.
+    citations:
+      - Deut 8:3
+      - Ex 12:15
+      - Lev 2:11
+      - Matt 4:4
+      - Matt 16:12
+      - 1 Cor 5:7-8
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The word of God. Unleavened bread is pure doctrine; leavened bread contains corrupting
+      doctrine.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-bread
+    citations:
+      - Deut 8:3
+      - Ex 12:15
+      - Lev 2:11
+      - Matt 4:4
+      - Matt 16:12
+      - 1 Cor 5:7-8
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: To spread. [Obs.] Ray.
+    status: quoted
+    headword: BREAD
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Bread
 
-**The Word of God — covenant terms spoken from His mouth, received as sustenance for life.**
+## Approved Definition
 
+**The word of God. Unleavened bread is pure doctrine; [leavened bread](/research/symbols/leaven/) contains corrupting doctrine.**
 > *"And he humbled thee, and suffered thee to hunger, and fed thee with **manna**, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by **bread** only, but by every word that proceedeth out of the mouth of the LORD doth man live."* — Deut 8:3
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The word of God. Unleavened bread is pure doctrine; [leavened bread](/research/symbols/leaven/) contains corrupting doctrine.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **bread** begins: “To spread. [Obs.] Ray.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -172,8 +268,7 @@ At every stage, bread is the same thing: the Word of God — the covenant terms 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$wine** — Bread and wine form the two halves of the covenant meal. Bread = the terms; wine = the blood that ratifies them. At Sinai, Moses reads the words (Exod 24:7), then sprinkles the blood (Exod 24:8). At the Last Supper, Jesus breaks bread, then says "this cup is the $renewed-covenant in my blood" (Lk 22:20). One without the other is incomplete.
 
 - **$rock** — The $rock is the covenant itself — unchanging, immovable. Bread is the content of that covenant — the terms spoken and received. Israel ate manna in the wilderness and drank from the $rock (1 Cor 10:3–4). The Word (bread) and the covenant (rock) traveled together.
@@ -251,3 +346,37 @@ KJV translates H3899 as "bread," "food," "meat," "loaves," "shewbread" (with H64
 - **$marriage** — The covenant meal is a wedding feast. How does breaking bread together map onto the $marriage between God and His people?
 
 - **$mark** — The Sabbath is a sign, and the shewbread was renewed every Sabbath. How does the regular rhythm of receiving the Word connect to the visible practices that identify covenant people?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **bread** begins:
+
+> “Bread, v. t. Etym: [AS. brædan to make broad, to spread. See Broad, a.] Defn: To spread. [Obs.] Ray.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The printed verses explicitly contrast ordinary bread with the word proceeding from God rather than directly identifying bread as that word. They support an analogy of nourishment and dependence, but only indirectly support the glossary’s categorical equation.
+
+- One could argue REFINED: the consensus's broadest category is 'God-given spiritual nourishment,' and the book merely narrows within that category to the word of God — a sense every response lists as common, and one the notes in Response A even say is often folded into the christological reading (Christ as the Word). Additionally, the cited verses themselves set bread in contrast to the word ('not by bread alone'), so the equation bread=word is derivative; a defender would say the analogy of nourishment underwrites it, keeping the book within the consensus's own recognized range.
+
+- The provided citations (Deuteronomy 8:3 and Matthew 4:4) contrast physical bread with the Word of God rather than explicitly identifying bread as a symbol for the Word. Furthermore, isolating this single meaning ignores the far more dominant New Testament identification of bread with Christ's body and the Eucharist.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The word of God. Unleavened bread is pure doctrine; [leavened bread](/research/symbols/leaven/) contains corrupting doctrine.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *bread*, *loaf*, *loaves*, *manna*, *shewbread*. The English-form sweep found **383 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

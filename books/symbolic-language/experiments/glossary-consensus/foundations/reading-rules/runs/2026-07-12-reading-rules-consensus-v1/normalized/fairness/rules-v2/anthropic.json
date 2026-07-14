@@ -1,0 +1,88 @@
+{
+  "verdict": "FAIR_WITH_CLARIFICATIONS",
+  "agree_to_use_as_baseline": "NO",
+  "symmetry": "PASS",
+  "neutrality": "PASS",
+  "reproducibility": "FAIL",
+  "strengths": [
+    "The admission gate (Rule 3) applies identically to both candidates, and inadmissibility outcomes for either or both candidates are explicitly defined, so the method cannot force a winner.",
+    "The received pointing is handled symmetrically: it is admitted as one class-7 lineage witness, its citation-default role is explicitly given zero comparative weight, and no candidate bears extra burden for departing from it — this rule set could defeat a traditional reading as readily as a novel one.",
+    "Hard constraints (gate failures, class-1 encoded constraints) are cleanly distinguished from graded evidence weights (classes 2–8 with a fixed scoring scale).",
+    "Pre-registration discipline is strong: Rule 2 freezes candidates, witness sets, corpora, search protocols, and falsifiers before comparison; Rule 13 forbids adding rules or weights after the target is known and forces UNDERDETERMINED when a rule is missing.",
+    "Double-counting controls (Rules 5 and 7) are explicit: nonoverlapping primary class assignment, lineage counting rather than copy counting, collapse of dependent versions and lexicons, and uncertainty about dependence not converted into extra votes.",
+    "The source-risk rule (Rule 10) is stated generally, requires behavior-based evidence from undisputed comparanda fixed before scoring, applies identically to all confessional identities, forbids topic-based special treatment, and caps the effect at weight reduction (never positive evidence for the rival).",
+    "The silence/delayed-disclosure rule (Rule 9) is symmetric, requires independent establishment of expected attestation, and correctly limits any accepted silence claim to removing an expectation rather than supplying positive support.",
+    "UNDERDETERMINED is defined as a legitimate terminal outcome, and the citation default is barred from re-entering the ledger as a tiebreaker (Rule 12).",
+    "Rule 13's label-swap re-run, reversal-condition statement, assumption-removal test, and control-homograph calibration are stronger reproducibility checks than most published methods."
+  ],
+  "ambiguities": [
+    {
+      "location": "Rule 2, first bullet (target question)",
+      "problem": "Three distinct target questions are permitted (best contextual reading, earliest recoverable reading, reading of a specified community). The same evidence ledger can yield different verdicts under different targets, and the rules never state that exactly one target governs a given case or how class 7 weight varies by target.",
+      "minimum_clarification": "Add: 'Exactly one target question is frozen per case; the verdict is valid only for that target and must be labeled with it. A different target question is a different case requiring a fresh comparison.'"
+    },
+    {
+      "location": "Rule 5, class 1 vs class 2 boundary",
+      "problem": "'Forced concord' and 'another unambiguous encoded constraint' are undefined. Since class 1 is controlling, an evaluator could promote an ordinary syntactic-fit argument (class 2) into class 1 and make it dispositive — an unbounded, hard-to-review advantage for whichever side benefits.",
+      "minimum_clarification": "Add: 'A datum enters class 1 only if no attested construction in the frozen corpus permits the excluded candidate; if any cited parallel would rescue the candidate, the datum is class 2. The class-1 assignment and its exclusion argument must be stated and justified in the ledger before any class 2–8 scoring.'"
+    },
+    {
+      "location": "Rule 6 scoring scale",
+      "problem": "The scale (STRONGLY_FAVORS, FAVORS, NEUTRAL, AMBIGUOUS) has no per-candidate contrary/disfavors value, yet Rule 6 requires recording contrary evidence and Rule 12(2) depends on the rival's positive scores. It is unstated whether contrary evidence for A is entered as a score for B, and NEUTRAL vs AMBIGUOUS are undefined and their effect in Rule 12 is unspecified.",
+      "minimum_clarification": "Add: 'Each class is scored once per candidate. Evidence contrary to candidate A is entered as FAVORS or STRONGLY_FAVORS for candidate B where it discriminates. NEUTRAL means the class does not discriminate; AMBIGUOUS means the class discriminates but its direction is genuinely disputable. AMBIGUOUS never counts as positive support under Rule 12.'"
+    },
+    {
+      "location": "Rule 12, condition 1 ('highest class that materially distinguishes')",
+      "problem": "The rules imply but never state that class numbers 1–8 form a strict priority order for the threshold. Rule 5's 'lower class may corroborate a higher class' suggests it, but an evaluator could dispute whether, e.g., class 6 outranks class 7 for a given target question.",
+      "minimum_clarification": "Add: 'For Rule 12, classes are strictly ordered by their number, 1 highest through 8 lowest, regardless of target question.'"
+    },
+    {
+      "location": "Rule 12, condition 2 ('left unresolved')",
+      "problem": "'Unresolved' is undefined. An evaluator could declare the rival's higher-class FAVORS 'resolved' by an unstated or ad hoc explanation, converting the threshold into an unreviewable discretion point.",
+      "minimum_clarification": "Add: 'Contrary evidence is resolved only by a specific, independently supported dependence, corruption, translation-technique, or source-behavior explanation admissible under Rules 5, 7, 9, or 10, entered in the ledger with its supporting comparanda before the verdict is declared.'"
+    },
+    {
+      "location": "Rule 12, condition 3 and Rule 6 ('evidentiary family')",
+      "problem": "'Evidentiary family' is used in the threshold and ledger but never defined; it may or may not coincide with 'class' (Rule 5) or 'lineage' (Rule 7). Independence of the corroborating support cannot be verified without a definition.",
+      "minimum_clarification": "Add: 'An evidentiary family is the set of data sharing a common origin or dependence lineage as mapped under Rule 7; two data are family-independent only if the Rule 7 dependence map shows no shared exemplar, translation source, or reading tradition.'"
+    },
+    {
+      "location": "Rule 3, gate item 4 ('matching language stratum, period, and genre')",
+      "problem": "Requiring an independent parallel in the matching stratum, period, and genre can render both candidates inadmissible in small corpora (rare genres, short strata), and 'matching' is undefined, letting an evaluator narrow or widen the comparison corpus to admit or exclude a candidate.",
+      "minimum_clarification": "Add: 'The comparison corpus for each gate item is fixed in the Rule 2 freeze. Where the matching stratum-period-genre corpus is too small to attest common constructions, the nearest broader corpus fixed at freeze time may be used, with the distance disclosed and the reliance downgraded when scoring, identically for both candidates.'"
+    },
+    {
+      "location": "Rule 13, control homograph ('suitable control')",
+      "problem": "Suitability criteria and the timing of control selection are unspecified. If the control is chosen after scoring the target, an evaluator could select a control the method is known to pass, or declare no control 'suitable' to escape the bar.",
+      "minimum_clarification": "Add: 'Control candidates and the suitability criteria are fixed in the Rule 2 freeze, before any target-case scoring; a post-freeze declaration of unsuitability must be justified against those frozen criteria.'"
+    },
+    {
+      "location": "Rule 1 outcomes vs Rule 4 (Ketiv/Qere and divided traditions)",
+      "problem": "Rule 4 admits each attested alternative separately, which can yield three or more admissible candidates, but the outcome set and Rule 12 threshold are defined only for a two-candidate comparison.",
+      "minimum_clarification": "Add: 'Where more than two candidates survive the gate, comparisons are run pairwise under this procedure with all ledgers disclosed, and BETTER_SUPPORTED is declared only for a candidate that satisfies Rule 12 against every rival.'"
+    }
+  ],
+  "unfair_rules": [],
+  "missing_rules": [
+    "A symmetric transmission-mechanism analysis: neither the classes nor the ledger scores whether each candidate can explain the rise of its rival's reading tradition via a documented scribal or vocalization mechanism, applied from the same mechanism catalogue to both candidates. Currently mechanism reasoning appears only defensively (Rule 5's overturn clause, Rule 12's resolution of contrary evidence); a rule should state which class such an argument enters and that it must be run for both candidates.",
+    "A tie/equal-score rule within a class: when the same class scores FAVORS for both candidates on different data, Rule 12 does not state whether the class 'materially distinguishes' the candidates; a one-sentence rule should state that such a class is treated as nondiscriminating for condition 1.",
+    "A rule for readings that differ only in accent- or maqqef-dependent syntax with identical vowels: Rule 1 covers vocalization and word division, but syntax fixed solely by accentuation is not explicitly in scope, and class assignment for such disputes (class 2 vs class 7) is unstated.",
+    "A disclosure rule for evaluator's prior commitments or prior publications on the locus (Rule 8 firewalls scholarly status as evidence but does not require the evaluator to disclose their own stake)."
+  ],
+  "comparison_to_own_proposal": "The two frameworks agree on the essentials: consonantal text as the controlling datum, a symmetric admissibility gate excluding emendation, lineage counting instead of copy counting, translation-technique-controlled retroversion, behavior-based (never identity-based) source discounting established from undisputed comparanda, pre-registration with no post hoc weights, circularity audits on lexicons, an underdetermined terminal verdict, and control-case calibration. The principal substantive divergence is the status of the received pointing: my frozen proposal grants it a rebuttable presumption with an asymmetric challenger burden (rebuttal requires two independent evidence classes), whereas rules-v2 gives it zero presumptive weight, admitting it only as one class-7 lineage and as a labeled citation default outside the ledger. Rules-v2's choice is the more strictly symmetric of the two and is procedurally fair; it trades my evidential argument that the Masoretic tradition is empirically reliable for cleaner burden symmetry, which is an acceptable baseline choice and arguably better suited to a blind fairness experiment. Rules-v2 is also stricter than my proposal on double counting (nonoverlapping primary class assignment) and adds a label-swap re-run I did not have. Conversely, my proposal's R7 mechanism analysis (a candidate gains weight by explaining its rival's rise) is a scored comparative factor that rules-v2 lacks, and my R8 aggregation, while cruder, defined its key terms; rules-v2's Rule 12 threshold is more sophisticated but rests on undefined terms ('unresolved', 'evidentiary family', class ordering) that must be pinned down before two independent evaluators would reliably converge.",
+  "exact_revision_suggestions": [
+    "Rule 2: append 'Exactly one target question is frozen per case; the verdict is valid only for that target and must be labeled with it.'",
+    "Rule 5, class 1: append 'A datum enters class 1 only if no attested construction in the frozen corpus permits the excluded candidate; otherwise it is class 2. Class-1 assignments must be justified in the ledger before class 2–8 scoring.'",
+    "Rule 6: append 'Each class is scored once per candidate; evidence contrary to one candidate is entered as FAVORS or STRONGLY_FAVORS for the other where it discriminates. NEUTRAL means nondiscriminating; AMBIGUOUS means discriminating but of disputable direction; AMBIGUOUS never counts as positive support under Rule 12.'",
+    "Rule 12: insert 'For this rule, classes are strictly ordered by number, 1 highest through 8 lowest. A class scoring FAVORS or better for both candidates is treated as not materially distinguishing them.'",
+    "Rule 12, condition 2: replace 'left unresolved' with 'left unresolved, where resolution requires a specific, independently supported dependence, corruption, translation-technique, or source-behavior explanation admissible under Rules 5, 7, 9, or 10, recorded in the ledger before the verdict.'",
+    "Rules 6 and 12: add the definition 'An evidentiary family is a set of data sharing a common origin or dependence lineage under the Rule 7 map; family independence requires no shared exemplar, translation source, or reading tradition.'",
+    "Rule 3, item 4: append 'The comparison corpus is fixed at the Rule 2 freeze; where the matching stratum-period-genre corpus is too small, the nearest broader corpus fixed at freeze time may be used with the distance disclosed and identical treatment for both candidates.'",
+    "Rule 13: append 'Control cases and suitability criteria are fixed in the Rule 2 freeze, before target-case scoring.'",
+    "Rule 1: append 'Where more than two candidates survive the gate (e.g., divided traditions under Rule 4), comparisons run pairwise, and BETTER_SUPPORTED requires satisfying Rule 12 against every rival.'",
+    "Add to Rule 5 or Rule 6: 'For each candidate, record whether a documented scribal or vocalization mechanism from a fixed catalogue explains the rise of the rival reading tradition; the identical catalogue is applied to both candidates, and the finding is scored within class 7 (rise of a later reading tradition) or class 5 (manuscript-level mechanism) as appropriate.'",
+    "Add to Rule 1 (scope): 'Disputes fixed solely by accentuation or maqqef with identical consonants and vowels fall within scope; the accentual tradition itself is class-7 evidence, and the competing syntactic construals are evaluated under class 2.'"
+  ],
+  "reasoning": "Judged strictly as written, rules-v2 is procedurally fair. The gate (Rule 3) imposes identical requirements on both candidates; burdens are explicitly equalized (Rule 4) and the same silence, fallacy, and source-risk tests apply to whichever side benefits (Rules 9–10), so symmetry passes. Neutrality passes because source-weight adjustments require behavior demonstrated from undisputed comparanda fixed before scoring, no topic receives special treatment, and authority, popularity, and affiliation are firewalled; the rules would defeat a traditional reading exactly as readily as a novel one. Hard constraints (gate, class-1 exclusions) are properly separated from graded weights, and the outcome set, including UNDERDETERMINED and both inadmissibility results, is fully defined with the citation default barred from tiebreaking. Reproducibility, however, fails as written: the decision threshold in Rule 12 turns on undefined terms — the class priority ordering is implied but never stated, 'left unresolved' and 'evidentiary family' are undefined, and the scoring scale cannot express per-candidate contrary evidence or the effect of AMBIGUOUS — and the class 1/class 2 boundary ('forced concord', 'unambiguous encoded constraint') lets an evaluator promote ordinary contextual arguments into a controlling class. Each defect is repairable by a small textual insertion and none is directional (no identifiable side benefits systematically), so the verdict is FAIR_WITH_CLARIFICATIONS rather than UNFAIR. Because textual changes are required before two independent evaluators would reliably converge, I decline to adopt the rules exactly as written as the baseline.",
+  "confidence": "HIGH"
+}

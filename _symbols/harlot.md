@@ -1,20 +1,122 @@
 ---
 layout: symbol-study
 symbol_key: harlot
-title: "Harlot — Symbol Study"
-description: "The harlot in Scripture represents a covenant breaker — one who has abandoned exclusive allegiance to God to serve other masters. The faithful city becomes the harlot; the virgin becomes the whore."
-strongs: [H2181, G4204]
-words: [harlot, harlots, whore, whores, whorish]
-kjv_triggers: ["play the harlot", "go a whoring"]
+title: Harlot — Symbol Study
+description: >-
+  The harlot in Scripture represents a covenant breaker — one who has abandoned exclusive allegiance
+  to God to serve other masters. The faithful city becomes the harlot; the virgin becomes the whore.
+strongs:
+  - H2181
+  - G4204
+words:
+  - harlot
+  - harlots
+  - whore
+  - whores
+  - whorish
+kjv_triggers:
+  - play the harlot
+  - go a whoring
+record_version: 1
+record_type: symbol
+term: Harlot
+definition: >-
+  A covenant city or people unfaithful to its Husband while retaining the outward form of covenant.
+  In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom,
+  Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were killed.
+meaning: >-
+  A covenant city or people unfaithful to its Husband while retaining the outward form of covenant.
+  In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom,
+  Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were killed.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-harlot
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites:
+    - virgin
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - harlot
+      - harlots
+      - whore
+      - whores
+      - whorish
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A covenant city or people unfaithful to its Husband while retaining the outward form of
+      covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually
+      named Sodom, Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were
+      killed.
+    citations:
+      - Rev 17:18
+      - Rev 11:8
+      - Ezek 23:19
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A covenant city or people unfaithful to its Husband while retaining the outward form of
+      covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually
+      named Sodom, Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were
+      killed.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-harlot
+    citations:
+      - Rev 17:18
+      - Rev 11:8
+      - Ezek 23:19
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      A churl; a common man; a person, male or female, of low birth. [Obs.] He was a gentle harlot
+      and a kind.
+    status: quoted
+    headword: HARLOT
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Harlot
 
-**Covenant breaker — one who has abandoned exclusive allegiance to God to serve other masters.**
+## Approved Definition
 
+**A [covenant](/research/symbols/covenant/) city or people unfaithful to its Husband while retaining the outward form of covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom, [Egypt](/research/symbols/egypt/), and [Babylon](/research/symbols/babel/), but literally Jerusalem, where Jesus and the prophets were killed.**
 > *"How is the faithful city become an **harlot**! it was full of judgment; righteousness lodged in it; but now murderers."* — Isa 1:21
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A [covenant](/research/symbols/covenant/) city or people unfaithful to its Husband while retaining the outward form of covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom, [Egypt](/research/symbols/egypt/), and [Babylon](/research/symbols/babel/), but literally Jerusalem, where Jesus and the prophets were killed.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **harlot** begins: “A churl; a common man; a person, male or female, of low birth. [Obs.] He was a gentle harlot and a kind.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -192,8 +294,7 @@ The harlot here is not merely a person but a *principle* — the covenant-breaki
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$virgin** — The harlot's direct opposite. The $virgin represents faithful, exclusive devotion — the covenant partner who has not broken allegiance. "Chaste virgin to Christ" (2 Cor 11:2) versus "mother of harlots" (Rev 17:5). The same person can move between these two states: $jerusalem was faithful, then became a harlot; the harlot can return and be called "$[virgin] of Israel" again (Jer 31:21).
 
 - **$dove** — Faithful covenant devotion — undivided loyalty that returns home, dwells in the $rock, remains unmixed. The harlot is the dove misdirected. Hos 7:11 makes this explicit: Ephraim is "a silly $[dove] without heart" going to Egypt and Assyria. The dove's defining quality — returning to its master — is precisely what the harlot has abandoned.
@@ -294,3 +395,39 @@ KJV translates H2181 as "harlot," "whore," "go a whoring," "play the harlot," "w
 - **$babylon** — The harlot as system. How does $babylon — man's substitute kingdom — produce harlotry on a civilizational scale? Why is she called *Mother* of Harlots?
 - **$fornication** — The *act* that the harlot commits. What is the difference between $fornication (the act of $idolatry) and the harlot (the person who commits it)?
 - **$jerusalem** — The bride who can become the harlot and be restored again. The two women of Revelation — $babylon and $jerusalem — are the ultimate contrast between covenant breaking and covenant keeping.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **harlot** begins:
+
+> “Har”lot, n. Etym: [OE.harlot, herlot, a vagabond, OF. harlot, herlot, arlot; cf. Pr. arlot, Sp. arlote, It. arlotto; of uncertain origin.] 1. A churl; a common man; a person, male or female, of low birth. [Obs.] He was a gentle harlot and a kind. Chaucer.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+A common reading is: **spiritual adultery; in Revelation, an apostate religious world-system — Rome, not Jerusalem.**
+
+- The printed citations establish that Ezekiel portrays covenantal Jerusalem as a harlot and that Revelation 11 calls the crucifixion site ‘the great city,’ while Revelation 17 calls the woman ‘that great city.’ They do not by themselves prove that both Revelation passages designate the same city or overcome Revelation 17:18’s description of a city reigning over the kings of the earth, which strongly supports the Rome identification for many interpreters.
+
+- One could argue for DIVERGENT: the book does not merely narrow but replaces the dominant Revelation-17 referent (Rome) with Jerusalem, and its covenant-requirement excludes cases (Tyre, Nineveh, pagan Rome) that the consensus reads under harlot imagery via Isaiah 23 and Nahum 3 — arguably a rejection of part of the consensus's identification rather than a mere boundary adjustment. The counter is that the consensus explicitly denies settled agreement on the Revelation referent and lists Jerusalem as an established alternative, so the book contradicts a leading option, not the consensus core.
+
+- Scholars might argue that while Jerusalem perfectly fits the theological motif of covenant-breaking, the extensive commercial, geographic (seven hills), and imperial descriptions in Revelation 17–18 are more naturally suited to Rome or a broader worldly empire.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A [covenant](/research/symbols/covenant/) city or people unfaithful to its Husband while retaining the outward form of covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom, [Egypt](/research/symbols/egypt/), and [Babylon](/research/symbols/babel/), but literally Jerusalem, where Jesus and the prophets were killed.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *harlot*, *harlots*, *whore*, *whores*, *whorish*. The English-form sweep found **66 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

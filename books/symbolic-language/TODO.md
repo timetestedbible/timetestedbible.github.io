@@ -47,11 +47,13 @@ Candidates for a chapter and/or glossary entries. Working notes:
 - **East** = beginning and front. Hebrew *qedem* is both "east" and
   "ancient/before/in front" — Eden planted "eastward" (Gen 2:8); the glory
   enters from the east (Ezek 43:2); the wise men and the kings of the east.
-- **West** = behind, hindermost. Hebrew *yam* (the sea!) is also the word for
-  "west" — the sea at Israel's back; *achar* (behind/after) names the
-  "hinder sea" = the western sea (Zech 14:8; Joel 2:20). "The **hindermost**
-  of the nations" (Jer 50:12) = the westernmost nation. Facing east (qedem),
-  west is what lies behind.
+- **West** = behind, the end or destination of a course. Hebrew *yam* (the
+  sea!) is also the word for "west" — the sea at Israel's back; *acharon*
+  (last/hinder, H314) names the "hinder sea" = the western sea (Zech 14:8;
+  Joel 2:20). The related *acharith* (last/end, H319) calls Babylon "the
+  **hindermost of the nations**" (Jer 50:12). The layers converge: last in
+  rank, last in the succession that began with Nebuchadnezzar's head of gold,
+  and — facing east (*qedem*) — westernmost in position.
 - **South** = ? (negev / teman / darom — gather the uses; Dan 11 king of the
   south; "out of the south cometh the whirlwind," Job 37:9).
 

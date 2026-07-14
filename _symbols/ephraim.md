@@ -1,19 +1,101 @@
 ---
 layout: symbol-study
 symbol_key: ephraim
-title: "Ephraim — Symbol Study"
-description: "Ephraim means 'double fruit' — named for fruitfulness produced in exile. The scattered firstborn whose name is reversed in judgment and restored in return, connected to Bethlehem through the same root word."
-strongs: [H669, H672, H673]
-words: [Ephraim, Ephraimite, Ephrath, Ephratah, Ephrathite]
+title: Ephraim — Symbol Study
+description: >-
+  Ephraim means 'double fruit' — named for fruitfulness produced in exile. The scattered firstborn
+  whose name is reversed in judgment and restored in return, connected to Bethlehem through the same
+  root word.
+strongs:
+  - H669
+  - H672
+  - H673
+words:
+  - Ephraim
+  - Ephraimite
+  - Ephrath
+  - Ephratah
+  - Ephrathite
+record_version: 1
+record_type: symbol
+term: Ephraim
+definition: The scattered firstborn whose seed becomes the fulness of the nations.
+meaning: The scattered firstborn whose seed becomes the fulness of the nations.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-ephraim
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - ephraim
+      - ephraimite
+      - ephrath
+      - ephratah
+      - ephrathite
+      - ephraim
+senses:
+  - id: approved-core
+    status: approved
+    summary: The scattered firstborn whose seed becomes the fulness of the nations.
+    citations:
+      - Gen 48:19
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: The scattered firstborn whose seed becomes the fulness of the nations.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-ephraim
+    citations:
+      - Gen 48:19
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: "(Zoöl.) Defn: A hunter's name for the grizzly bear."
+    status: quoted
+    headword: EPHRAIM
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Ephraim
 
-**Double fruit — fruitfulness produced in exile. The scattered firstborn whose name is reversed in judgment and restored in return.**
+## Approved Definition
 
+**The scattered firstborn whose seed becomes the fulness of the nations.**
 > *"The name of the second called he **Ephraim**: For God hath caused me to be fruitful in the land of my affliction."* — Gen 41:52
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The scattered firstborn whose seed becomes the fulness of the nations.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **ephraim** begins: “(Zoöl.) Defn: A hunter's name for the grizzly bear.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -107,8 +189,7 @@ $judah = the bow (structure, authority, the sceptre-holder). Ephraim = the arrow
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$judah** — The complementary half. Judah = sceptre/lawgiver (Gen 49:10). Ephraim = birthright/fruitfulness (Gen 48:19). Two sticks made one (Ezek 37:16-19). Bow and arrow (Zech 9:13).
 
 - **$israel** — Ephraim IS God's firstborn within Israel (Jer 31:9). Often used interchangeably with "Israel" in Hosea for the northern kingdom.
@@ -157,3 +238,37 @@ Mic 5:2, Ruth 1:2, 1 Sam 17:12, Ps 132:6
 - **$judah** — The complementary half: sceptre vs birthright, bow vs arrow. How the reunion of the two sticks restores what the kingdom split broke.
 - **$fruit** — What Ephraim was named for, lost, and regained. How $fruit functions as the measure of faithfulness.
 - **$israel** — The broader identity Ephraim belongs to. How the firstborn-within-the-firstborn relates to the whole.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **ephraim** begins:
+
+> “E”phra*im, n. Etym: [The proper name.] (Zoöl.) Defn: A hunter's name for the grizzly bear.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Genesis 48:19 supports Ephraim’s seed becoming a “multitude of nations,” but it does not itself call Ephraim scattered or firstborn, nor establish that the nations are literally Ephraim’s dispersed descendants. Those elements require additional texts and interpretive argument.
+
+- One could argue for MATCH on the ground that Gen 48:19's 'multitude of nations' promise is part of the recorded consensus material and that 'scattered firstborn' is just the standard northern-kingdom identification in exilic dress; alternatively, one could push toward DIVERGENT by claiming the book quietly replaces the metonym-for-apostate-Israel core with a two-house/Gentile-seed identity that mainstream scholarship rejects. The REFINED verdict sits between these: the referent survives, but the operative extension is the minority reading, and the single printed citation (Gen 48:19) supports 'seed becomes a multitude of nations' while leaving 'scattered' and 'firstborn' unsupported by the printed proof-text alone.
+
+- In the vast majority of its biblical occurrences (especially in Hosea, Isaiah, and Jeremiah), 'Ephraim' clearly designates the contemporary historical northern kingdom of Israel, not an esoteric or eschatological dispersion of descendants among the nations.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The scattered firstborn whose seed becomes the fulness of the nations.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *ephraim*, *ephraimite*, *ephrath*, *ephratah*, *ephrathite*, *ephraim*. The English-form sweep found **177 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

@@ -1,19 +1,115 @@
 ---
 layout: symbol-study
 symbol_key: egypt
-title: "Egypt — Symbol Study"
-description: "Egypt's name literally means 'double confinement' — a system that enslaves through provision. Babylon's bondage face. Judged by plagues but healable: 'Blessed be Egypt my people.'"
-strongs: [H4714, G125]
-words: [Egypt, Egyptian, Egyptians, Pharaoh, Mizraim]
+title: Egypt — Symbol Study
+description: >-
+  Egypt's name literally means 'double confinement' — a system that enslaves through provision.
+  Babylon's bondage face. Judged by plagues but healable: 'Blessed be Egypt my people.'
+strongs:
+  - H4714
+  - G125
+words:
+  - Egypt
+  - Egyptian
+  - Egyptians
+  - Pharaoh
+  - Mizraim
+record_version: 1
+record_type: symbol
+term: Egypt
+definition: >-
+  A covenant city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the
+  great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.
+meaning: >-
+  A covenant city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the
+  great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-egypt
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - egypt
+      - egyptian
+      - egyptians
+      - pharaoh
+      - mizraim
+      - egypt
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A covenant city in bondage under worldly rule. Revelation applies the spiritual name Egypt to
+      the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.
+    citations:
+      - Rev 11:8
+      - Rev 18:24
+      - Matt 23:37
+      - Gal 4:25
+      - Isa 1:10
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A covenant city in bondage under worldly rule. Revelation applies the spiritual name Egypt to
+      the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-egypt
+    citations:
+      - Rev 11:8
+      - Rev 18:24
+      - Matt 23:37
+      - Gal 4:25
+      - Isa 1:10
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: null
+    status: unavailable
+    headword: null
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Egypt
 
-**A system that enslaves through provision — confinement disguised as security. Babylon's bondage face, judged by plagues but healable.**
+## Approved Definition
 
+**A [covenant](/research/symbols/covenant/) city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.**
 > *"And that great city, which **spiritually** is called $[sodom] and **Egypt**, where also our Lord was crucified."* — Rev 11:8
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A [covenant](/research/symbols/covenant/) city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+No exact Webster headword has yet been matched to **Egypt**.
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -142,8 +238,7 @@ The faces are distinct but connected. Egypt, Sodom, and Tyre are aspects of $bab
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$babylon** — Egypt is Babylon's bondage face. Rev 11:8 identifies the great city as "spiritually called Sodom and Egypt." Egypt's plagues template Revelation's judgments on Babylon.
 
 - **$sodom** — The moral face alongside Egypt's bondage face. Both named in Rev 11:8. Both aspects of the one system.
@@ -209,3 +304,35 @@ Exo 7:3, Exo 8:15, Exo 8:32, Exo 9:12, Exo 9:34-35, Exo 10:1, Exo 10:20, Exo 10:
 - **$israel** — Called out of Egypt as God's firstborn son. How the Exodus pattern repeats through Jesus and into Revelation.
 - **$rock** — Shares the same root (H6696) as Egypt. Same compression, opposite function: confinement that protects vs confinement that imprisons.
 - **$shadow** — Egypt offers a false shadow (Isa 30:3). How false shadows / false covenants contrast with God's covering.
+
+---
+
+## Dictionary Comparison
+
+The local 1913 Webster dataset has no exact headword for **Egypt** under the display form used by the glossary. The biblical study therefore begins with the ordinary physical or grammatical sense visible in context and tests whether Scripture assigns it a more precise figurative sense.
+
+## Competing Definitions Tested
+
+A common reading is: **bondage to sin, and the world-system out of which God redeems.**
+
+- Revelation 11:8 strongly points to Jerusalem as the city spiritually called Egypt, and the other verses establish Jerusalem as being in bondage, likened to Sodom, and guilty of killing prophets. But the printed citations do not explicitly identify the Babylon of Revelation 17–18 with Jerusalem, nor do they show that Egypt generally signifies Jerusalem rather than carrying the broader Exodus-based bondage symbolism.
+
+- Response A explicitly notes that 'some interpreters apply this specifically to unfaithful Jerusalem' under Revelation 11:8, so one could argue the book's reading is already a listed alternative and the relation is REFINED rather than DIVERGENT. However, that alternative frames Egypt as an emblem of the God-opposing world order with Jerusalem as one application; the book instead makes Jerusalem the definitional spiritual referent of Egypt itself and fuses it with the whore of Babylon, which replaces rather than qualifies the consensus identification.
+
+- The dominant biblical usage and the entire Christian interpretive tradition (patristic through modern) treat Egypt as the paradigmatic house of bondage; Rev 11:8 is a single metaphorical transfer of the name, not a redefinition of the symbol’s core meaning as Jerusalem.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A [covenant](/research/symbols/covenant/) city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *egypt*, *egyptian*, *egyptians*, *pharaoh*, *mizraim*, *egypt*. The English-form sweep found **803 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

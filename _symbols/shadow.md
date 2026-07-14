@@ -1,33 +1,175 @@
 ---
 layout: symbol-study
 symbol_key: shadow
-title: "Shadow — Symbol Study"
-description: "Shadow in Scripture means covenant protection — the covering cast by a body standing between you and destruction. The appointed times ARE the shadow that Christ's body casts."
-strongs: [H6738, G4639]
-words: [shadow, shade, defence, overshadow, bottom]
+title: Shadow — Symbol Study
+description: >-
+  A Scripture-first study of Shadow as a symbolic object or activity shaped like the substance that
+  casts it, including the appointed times and assemblies shaped like Christ's substance.
+strongs:
+  - H6738
+  - G4639
+words:
+  - shadow
+  - shade
+  - defence
+  - overshadow
+  - bottom
+record_version: 1
+record_type: symbol
+term: Shadow
+definition: >-
+  An object or activity shaped like the substance casting it, marking the reach and boundary of
+  that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's
+  substance; the Shadow of Death is its opposite.
+meaning: >-
+  An object or activity shaped like the substance casting it, marking the reach and boundary of
+  that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's
+  substance; the Shadow of Death is its opposite.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-shadow
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - shadow-of-death
+  related:
+    - shadow-of-death
+    - valley
+    - wings
+    - way
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-shadow.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - shadow
+      - shade
+      - defence
+      - overshadow
+      - bottom
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      An object or activity shaped like the substance casting it, marking the reach and boundary of
+      that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's
+      substance; the Shadow of Death is its opposite.
+    citations:
+      - Ps 91:1
+      - Num 14:9
+      - Col 2:16-17
+      - Heb 8:5
+      - Heb 10:1
+      - Lev 23:2-4
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      An object or activity shaped like the substance casting it, marking the reach and boundary of
+      that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's
+      substance; the Shadow of Death is its opposite.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-shadow
+    citations:
+      - Ps 91:1
+      - Num 14:9
+      - Col 2:16-17
+      - Heb 8:5
+      - Heb 10:1
+      - Lev 23:2-4
+  bible_literal:
+    text: >-
+      The shaped area of shade made when a body intercepts light; its outline resembles the body
+      casting it and may shelter whatever stands within it.
+    status: proposed
+    citations:
+      - 2 Kgs 20:9-11
+      - Jonah 4:5-6
+      - Ps 121:5-6
+  webster:
+    text: >-
+      Shade within defined limits; obscurity or deprivation of light, apparent on a surface, and
+      representing the form of the body which intercepts the rays of light; as, the shadow of a man,
+      of a tree, or of a tower.
+    status: quoted
+    headword: SHADOW
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Shadow
 
-**Covenant protection cast by a body standing between you and destruction.**
+The fuller book and notebook trail is available in [Shadow](/books/symbolic-language/shadow/).
 
+## Approved Definition
+
+**An object or activity shaped like the substance casting it, marking the reach and boundary of that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's substance; the [Shadow of Death](/research/symbols/shadow-of-death/) is its opposite.**
 > *"He that dwelleth in the secret place of the Most High shall abide under the **shadow** of the Almighty."* — Ps 91:1
 
 ---
 
+## Definition Layers
+
+### Bible symbolic sense
+
+**An object or activity shaped like the substance casting it, marking the reach and boundary of that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's substance; the [Shadow of Death](/research/symbols/shadow-of-death/) is its opposite.**
+
+### Bible literal sense
+
+**The shaped area of shade made when a body intercepts light; its outline resembles the body casting it and may shelter whatever stands within it.**
+
+### Webster's English sense
+
+Webster's 1913 entry for **shadow** begins: “Shade within defined limits; obscurity or deprivation of light, apparent on a surface, and representing the form of the body which intercepts the rays of light; as, the shadow of a man, of a tree, or of a tower.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+
+## How the Definition Was Refined
+
+**A shadow has the shape of the substance casting it and marks the reach of
+that substance's covering.**
+
+The earlier glossary definition correctly recognized covering, protection, and
+the outline of a coming body, but the outline is more central than it made
+clear. A shadow resembles what casts it. Scripture can therefore call a
+tabernacle, a law, an appointed time, or an assembled activity a Shadow: each
+enacts or displays the shape of a greater substance.
+
+Leviticus does not separate the appointments from their assemblies. The
+appointed times are proclaimed as *“holy convocations”*—appointed activities
+performed by an assembled people (Lev 23:2-4). Paul calls the holyday, new moon,
+and sabbaths a Shadow and immediately names the Body or substance: Christ (Col
+2:16-17). The calendar and congregation do not compete with Him; they take
+their shape from Him.
+
 ## The Key Insight
 
-A shadow requires three things: **(1)** a burning source — heat, judgment, exposure; **(2)** a body standing between you and that source; **(3)** your position behind or under the body.
+A shadow requires three things: **(1)** a source of light; **(2)** a body
+intercepting it; **(3)** a surface or person on which the body's outline falls.
+The shadow resembles the body because the body determines its shape.
 
-You cannot manufacture a shadow. You can only *position yourself into one*.
+When Scripture turns Shadow into an enacted symbol, an object or activity
+occupies that outline. Its shape identifies the substance to which it belongs.
+Standing within the shadow also places one within the reach or covering of the
+body that casts it.
 
-This physical logic holds across every scriptural use. God or His anointed is the body. Judgment or affliction is the source. You must position yourself in the shadow.
+This physical logic holds across the uses without making every shadow good.
+Christ, a kingdom, Egypt, a bramble, or Death may cast it. The character and
+destination of the shadow depend on its substance.
 
-**The shadow is strongest when the body is nearest** — not weakest. This reframes everything the New Testament says about shadow.
+The shadow is not a rival substance. Its recognizable shape depends upon the
+body that casts it, so the shadow directs attention back to that body.
 
-**Symbolizes:** Covenant protection — the covering you experience by positioning yourself behind God
+**Symbolizes:** An object or activity shaped like its substance
 
-**Opposite:** Exposed, uncovered — outside the shadow means outside the covenant
+**Governing question:** Whose shadow is it, and what substance gives it shape?
 
 **Defining verse:** Ps 91:1 — "abide under the shadow of the Almighty"
 
@@ -49,7 +191,15 @@ Isa 32:2 combines shadow with $rock: "the shadow of a great rock in a weary land
 
 This is the most consequential pattern. Paul writes that festivals, new moons, and sabbaths "are a shadow of things to come; but the body is of Christ" (Col 2:17). The word is G4639 *skia* — the *same word* the LXX uses to render *tsel* in the Psalms.
 
-Tradition reads this as dismissive: the shadow was a preview, now obsolete. But the physics of shadow say the opposite. A shadow is strongest when the body is nearest. The appointed times *are* the covenant protection. Christ *is* the body casting it. You experience the body's protection by positioning yourself in the shadow — by observing the appointed times.
+Leviticus calls those same appointments *holy convocations* (Lev 23:2-4).
+Their timing, assembly, and commanded activity form one enacted outline. The
+appointed time is the Shadow; the gathered assembly stands within and performs
+its shape; Christ is the substance whose form governs it.
+
+Tradition often reads this as dismissive: the shadow was a preview, now
+obsolete. Paul does not call the appointments false or empty. He identifies
+their substance. The appointed times and their assemblies have a shape derived
+from Christ; Christ is the body whose substance explains the activities.
 
 Compare Isa 4:6: "a tabernacle for a shadow in the daytime from the heat." The tabernacle *is* the shadow-shelter. And Heb 8:5 identifies the tabernacle as "a shadow of heavenly things." Same word, same function. The $booths of Sukkot = dwelling in the shadow = dwelling in covenant protection.
 
@@ -93,8 +243,7 @@ Jas 1:17 — God casts "no shadow of turning" (G5157 *trope* = rotation). He doe
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$wings** — Shadow and wings co-occur in four psalms (Ps 17:8, Ps 36:7, Ps 57:1, Ps 63:7). Both are covenant-protection terms; their pairing is a double-locked idiom for divine shelter.
 
 - **$rock** — "The shadow of a great rock in a weary land" (Isa 32:2). Rock = covenant foundation; its shadow = the protection that covenant provides.
@@ -107,7 +256,14 @@ Jas 1:17 — God casts "no shadow of turning" (G5157 *trope* = rotation). He doe
 
 - **$tree** — Every tree casts a shadow; every nation provides covering (Ezek 31:6, Mk 4:32). When the tree falls, the shadow vanishes (Ezek 31:12).
 
-- **$darkness** — Shadow presupposes a protective body between you and the source. Darkness is the absence of light. Shadow of death (H6757 *tsalmaveth*) is the domain where *death itself* is the body casting the shadow — a covering of death rather than of God.
+- **Shadow of Death** — a separate symbol, not an excluded exception. Its
+  activity has the shape of Death's substance: the world's sinful course under
+  darkness and bondage, ending at the pit or grave. The shadow of Christ has
+  His shape and ends in life.
+
+- **$darkness** — Shadow requires light and a body; darkness describes the
+  obscurity within which the outline may fall. The Shadow of Death joins both
+  ideas but is defined by the substance casting it, not by darkness alone.
 
 ---
 
@@ -135,7 +291,8 @@ Isa 30:2-3, Judg 9:15, Hos 4:13, Jer 48:45
 1Chr 29:15, Job 7:2, Job 8:9, Job 14:2, Job 17:7, Ps 102:11, Ps 109:23, Ps 144:4, Eccl 6:12, Eccl 8:13
 
 ### Shadow of Death (H6757 *tsalmaveth*)
-Ps 23:4, Isa 9:2, Mat 4:16, Lk 1:79, Job 3:5, Job 10:21, Job 10:22, Job 12:22, Job 16:16, Job 24:17, Job 28:3, Job 34:22, Job 38:17, Ps 44:19, Ps 107:10, Ps 107:14, Jer 2:6, Jer 13:16, Amos 5:8
+
+This is now treated as a [separate symbol study](/research/symbols/shadow-of-death/): Ps 23:4, Isa 9:2, Mat 4:16, Lk 1:79, Job 3:5, Job 10:21, Job 10:22, Job 12:22, Job 16:16, Job 24:17, Job 28:3, Job 34:22, Job 38:17, Ps 44:19, Ps 107:10, Ps 107:14, Jer 2:6, Jer 13:16, Amos 5:8.
 
 ### Overshadow (G1982 *episkiazo*)
 Lk 1:35, Mat 17:5, Mk 9:7, Lk 9:34, Acts 5:15
@@ -150,7 +307,7 @@ Gen 19:8 (Lot's roof-shadow = hospitality protection), Jonah 4:5-6 (booth + gour
 | Strong's | Word | Meaning | Count |
 |----------|------|---------|-------|
 | H6738 | *tsel* | shadow, shade, defence | ~49× OT |
-| H6757 | *tsalmaveth* | shadow of death (*tsel* + *maveth*) | 18× OT |
+| H6757 | *tsalmaveth* | shadow of death / deep darkness | 17× OT |
 | H6751 | *tsalal* | to shade, grow dark | Root verb |
 | H6752 | *tselel* | shadow, shade | 3× OT |
 | H6754 | *tselem* | image, likeness (the shadow-shape cast by the original) | |
@@ -168,3 +325,42 @@ KJV translates H6738 as "shadow," "shade," and "defence" (Num 14:9 — "their de
 - **$booths** — The appointed time of Sukkot is the enacted shadow: Isa 4:6 tabernacle for a shadow = Col 2:17 appointed times as shadow, constructed from $myrtle branches.
 - **$myrtle** — The faithful remnant dwelling in the shade (Zech 1:8); the anti-thorn that replaces the cursed order and becomes the material of God's shelter.
 - **$rock** — The covenant body that casts the shadow in Isa 32:2; traces the identity of the "great rock" across Scripture.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **shadow** begins:
+
+> “Shad”ow, n. Etym: [Originally the same word as shade. sq. root162. See Shade.] 1. Shade within defined limits; obscurity or deprivation of light, apparent on a surface, and representing the form of the body which intercepts the rays of light; as, the shadow of a man, of a tree, or of a tower. See the Note under Shade, n., 1.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Psalm 91:1, Numbers 14:9, and Colossians 2:17 support refuge, protective authority, and typological anticipation respectively. The older wording, however, overemphasized shelter and treated Shadow of Death as an excluded gloom-reading. The proposed refinement instead asks what all uses share: a shadow has the shape and reach of the substance casting it. Shadow of Death then becomes a distinct application rather than a contradiction.
+
+- One could argue for MATCH: the consensus itself was split between protection and typology as primary, and the book simply affirms both; the rejection of gloom could be read as a lexical clarification (tsel vs. tsalmavet) rather than a substantive boundary change, since the consensus responses themselves note the death sense derives from a distinct Hebrew term. If the gloom exclusion is treated as a technical distinction the consensus would accept, the entry reduces to a wording-level restatement of consensus senses.
+
+- Unifying protective and typological uses under one 'covering' may blur distinct scriptural contexts. The outline-and-substance refinement explains both without dismissing the separate Shadow of Death pattern.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**An object or activity shaped like the substance casting it, marking the reach
+and boundary of that substance's covering. The appointed times and holy
+assemblies are the Shadow of Christ's substance; the [Shadow of
+Death](/research/symbols/shadow-of-death/) is its opposite.**
+
+This is the approved glossary wording. It keeps shelter as a genuine effect
+while allowing the substance to determine whether its shadow ends in life or
+death.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *shadow*, *shade*, *defence*, *overshadow*, *bottom*. The English-form sweep found **124 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

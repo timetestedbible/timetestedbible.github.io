@@ -50,9 +50,20 @@
     t.setAttribute('data-glossary', key);
     t.style.pointerEvents = 'auto'; // the class disables them; the full-entry link must be clickable
     var refs = entry.refs ? '<div class="symbol-tooltip-sentence">(' + esc(entry.refs) + ')</div>' : '';
+    var opposite = entry.opposite
+      ? '<div class="symbol-tooltip-sentence"><em>Opposite:</em> <a href="/books/symbolic-language/glossary/#' +
+        esc(entry.opposite.id) + '">' + esc(entry.opposite.term) + '</a></div>'
+      : '';
+    var aliases = entry.aliases && entry.aliases.length
+      ? '<div class="symbol-tooltip-sentence"><em>Translation aliases:</em><br>' +
+        entry.aliases.map(function (item) {
+          return esc(item.label) + ' &rarr; <a href="/books/symbolic-language/glossary/#' +
+            esc(item.id) + '">' + esc(item.term) + '</a>';
+        }).join('<br>') + '</div>'
+      : '';
     t.innerHTML =
       '<div class="symbol-tooltip-header">' + esc(entry.term) + '</div>' +
-      '<div class="symbol-tooltip-meaning">' + esc(entry.def) + '</div>' + refs +
+      '<div class="symbol-tooltip-meaning">' + esc(entry.def) + '</div>' + aliases + opposite + refs +
       '<div class="symbol-tooltip-sentence"><a href="' + a.getAttribute('href') + '">Full glossary entry &rarr;</a></div>';
     document.body.appendChild(t);
 

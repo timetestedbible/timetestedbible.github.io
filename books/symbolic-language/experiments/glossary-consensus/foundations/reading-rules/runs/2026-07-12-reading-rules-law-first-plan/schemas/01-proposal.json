@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "written_text_status": {"type": "string"},
+    "admissibility_gate": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "hard_disqualifiers": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "comparison_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rule_id": {"type": "string"},
+          "title": {"type": "string"},
+          "operation": {
+            "type": "string",
+            "enum": ["HARD_CONSTRAINT", "COMPARATIVE_WEIGHT", "SOURCE_WEIGHT", "TIE_BREAK", "REPORTING"]
+          },
+          "rule": {"type": "string"},
+          "justification": {"type": "string"}
+        },
+        "required": ["rule_id", "title", "operation", "rule", "justification"]
+      }
+    },
+    "evidence_hierarchy": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {"type": "string"},
+          "default_role": {
+            "type": "string",
+            "enum": ["CONTROLLING", "STRONG", "SUPPORTING", "WEAK", "EXCLUDED", "CONTEXT_DEPENDENT"]
+          },
+          "conditions": {"type": "string"}
+        },
+        "required": ["evidence", "default_role", "conditions"]
+      }
+    },
+    "received_pointing_role": {
+      "type": "string",
+      "enum": ["BINDING", "REBUTTABLE_PRESUMPTION", "EVIDENCE_ONLY", "NONE"]
+    },
+    "received_pointing_rule": {"type": "string"},
+    "burden_of_proof_rule": {"type": "string"},
+    "dependent_witness_rule": {"type": "string"},
+    "source_bias_rule": {"type": "string"},
+    "special_context_rules": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "tie_rule": {"type": "string"},
+    "anti_ad_hoc_safeguards": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "proposed_baseline": {"type": "string"},
+    "clarifications_needed": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    }
+  },
+  "required": [
+    "written_text_status",
+    "admissibility_gate",
+    "hard_disqualifiers",
+    "comparison_rules",
+    "evidence_hierarchy",
+    "received_pointing_role",
+    "received_pointing_rule",
+    "burden_of_proof_rule",
+    "dependent_witness_rule",
+    "source_bias_rule",
+    "special_context_rules",
+    "tie_rule",
+    "anti_ad_hoc_safeguards",
+    "proposed_baseline",
+    "clarifications_needed",
+    "confidence"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "complete": true,
+  "providers": [
+    "openai",
+    "anthropic",
+    "xai"
+  ],
+  "verdicts": {
+    "openai": "UNDERDETERMINED_BY_PACKET",
+    "anthropic": "MEETS_WITH_LIMITED_GAPS",
+    "xai": "MEETS_WITH_LIMITED_GAPS"
+  },
+  "counts": {
+    "MEETS_WITH_LIMITED_GAPS": 2,
+    "UNDERDETERMINED_BY_PACKET": 1
+  }
+}

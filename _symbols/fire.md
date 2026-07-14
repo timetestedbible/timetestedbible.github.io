@@ -1,20 +1,123 @@
 ---
 layout: symbol-study
 symbol_key: fire
-title: "Fire — Symbol Study"
-description: "Fire in Scripture represents God's holy standard in active contact — the same flame refines what is genuine and consumes what is counterfeit."
-strongs: [H784, G4442]
-words: [fire, flame, burning, fiery, lake of fire]
-kjv_triggers: ["refiner's fire", "consuming fire"]
+title: Fire — Symbol Study
+description: >-
+  Fire in Scripture represents God's holy standard in active contact — the same flame refines what
+  is genuine and consumes what is counterfeit.
+strongs:
+  - H784
+  - G4442
+words:
+  - fire
+  - flame
+  - burning
+  - fiery
+  - lake of fire
+kjv_triggers:
+  - refiner's fire
+  - consuming fire
+record_version: 1
+record_type: symbol
+term: Fire
+definition: >-
+  God's all-consuming presence, which reveals, refines, or destroys according to what encounters it.
+  The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered
+  wickedness.
+meaning: >-
+  God's all-consuming presence, which reveals, refines, or destroys according to what encounters it.
+  The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered
+  wickedness.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-fire
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - fire
+      - flame
+      - burning
+      - fiery
+      - lake of fire
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      God's all-consuming presence, which reveals, refines, or destroys according to what encounters
+      it. The same fire sustains the bush, refines silver, preserves the covered, and consumes
+      uncovered wickedness.
+    citations:
+      - Deut 4:24
+      - Heb 12:29
+      - Ex 3:2
+      - Dan 3:25-27
+      - Mal 3:3
+      - 1 Cor 3:15
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      God's all-consuming presence, which reveals, refines, or destroys according to what encounters
+      it. The same fire sustains the bush, refines silver, preserves the covered, and consumes
+      uncovered wickedness.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-fire
+    citations:
+      - Deut 4:24
+      - Heb 12:29
+      - Ex 3:2
+      - Dan 3:25-27
+      - Mal 3:3
+      - 1 Cor 3:15
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: The evolution of light and heat in the combustion of bodies; combustion; state of ignition.
+    status: quoted
+    headword: FIRE
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Fire
 
-**God's holy standard in active contact — consuming what violates covenant, refining what keeps it.**
+## Approved Definition
 
+**God's all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.**
 > *"For the LORD thy God is a consuming **fire**, even a jealous God."* — Deut 4:24
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**God's all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **fire** begins: “The evolution of light and heat in the combustion of bodies; combustion; state of ignition.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -214,8 +317,7 @@ Revelation also describes demonic breastplates "of fire, and of jacinth, and bri
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$wickedness** — Covenant transgression (lawlessness, H7562/G4189). Fire and $wickedness are linked not merely as punishment and crime, but as nature and fuel. "Wickedness burneth as the fire" (Isa 9:18). Lawlessness does not simply *receive* fire — it *is* combustible material. People become "the fuel of the fire" (Isa 9:19). Covenant transgression generates its own destruction.
 
 - **$darkness** — Hidden, concealed disobedience. Fire and $darkness appear opposite in nature ($light vs. $darkness), yet fire can *produce* $darkness (Rev 9:2, Isa 9:18–19). The $darkness at Sinai (Deut 4:11, 5:22–23) surrounds the fire — God's standard is so intense that the visible result is impenetrable obscurity to those outside the covenant.
@@ -320,3 +422,37 @@ KJV translates H784 as "fire," "burning," "fiery," "flaming," "hot." G4442 appea
 - **$days-of-noah** — The water-then-fire escalation. Peter's parallel between the flood and the coming fire (2 Pet 3:5–7) raises the question: what changes between the two judgments, and what remains the same?
 
 - **$armor-of-god** — If fire tests every material, the armor is what survives the test. Each piece — truth, righteousness, faith, salvation, the Word — is fire-proof because it is made of the same substance the fire is looking for.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **fire** begins:
+
+> “Fire, n. Etym: [OE. fir, fyr, fur AS. fr; akin to D. vuur, OS. & OHG. fiur, G. feuer, Icel. f, f, Gr. purus pure, E. pure Cf. Empyrean, Pyre.] 1. The evolution of light and heat in the combustion of bodies; combustion; state of ignition. Note: The form of fire exhibited in the combustion of gases in an ascending stream or current is called flame. Anciently, fire, air, earth, and water were regarded as the four elements of which all things are composed.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**God's all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *fire*, *flame*, *burning*, *fiery*, *lake of fire*. The English-form sweep found **561 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- The cited texts strongly support divine presence, consumption, refinement, and preservation, but none explicitly identifies “covering” as the universal controlling condition or proves that fire can never denote a punitive place. The entry’s unifying boundary claim therefore goes beyond what its printed citations alone establish.
+
+- One could argue for DIVERGENT because 'never a chamber' flatly contradicts the mainstream reading of the lake of fire and Gehenna as a place of eternal punishment, and the 'covering' mechanism replaces context-dependent polyvalence with a single ontology of fire — a substantive theological revision, not mere boundary-tuning. However, the contradicted sense is a listed alternative, not the consensus core, and the book affirms rather than replaces the central referent (God's consuming presence), so REFINED remains the better fit.
+
+- Passages like Revelation 20:14-15 describe a 'lake of fire' into which the wicked are 'thrown,' heavily implying a spatial location ('chamber' or receptacle) rather than solely an encounter with God's presence.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

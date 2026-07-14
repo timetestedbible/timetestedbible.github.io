@@ -1,0 +1,191 @@
+{
+  "provider": "anthropic",
+  "stage": "reading_rules_proposal",
+  "phase": "proposal",
+  "round": null,
+  "request_stage": "reading_rules_proposal",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Propose a general comparison method independently, before seeing the author's rules or any disputed reading.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are participating in phase 1 of a reproducible methods experiment.\n\nNo author's rules, rationale, book chapter, disputed word, symbolic\ninterpretation, or desired outcome has been supplied. Propose your own general\nmethod before seeing any of them. Your answer will be frozen and returned to\nyou during later phases.\n\nThe recurring problem is this:\n\n- Two readings vocalize the same unpointed Hebrew or Aramaic consonantal text.\n- Both readings initially appear consonantally possible, grammatically\n  possible, and lexically attested. \"Admissible\" does not mean equally likely.\n- The task is to decide whether one reading is better supported or whether the\n  evidence remains underdetermined.\n\nThe method must work before the identity of the word or the desired\ninterpretation is known. It must not rely on denominational authority, modern\ncommentarial popularity, or an unspecified appeal to scholarly consensus.\nIt may use the biblical text, Hebrew/Aramaic grammar and lexicons, manuscript\nwitnesses, ancient translations, and relevant facts of textual history. State\nthe proper role of each rather than assuming that every source has equal force.\n\nPropose operational rules that another evaluator could apply reproducibly.\nDistinguish:\n\n1. the gate for admitting a candidate reading;\n2. hard disqualifiers from comparative evidence;\n3. the role of immediate context, whole-book usage, canonical parallels,\n   grammar, lexicons, manuscripts, and ancient translations;\n4. the role, if any, of Masoretic vowel points, accents, and Ketiv/Qere;\n5. burdens of proof and whether they are symmetrical;\n6. treatment of dependent witnesses and double-counting;\n7. treatment of source bias, conflicts of interest, or special textual\n   contexts under a general non-ad-hoc principle;\n8. the rule for ties and genuinely underdetermined cases;\n9. safeguards against inventing weights after seeing the desired result.\n\nDo not name or allude to any particular disputed biblical reading. Do not try\nto anticipate the author's eventual rules.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "written_text_status": {
+              "type": "string"
+            },
+            "admissibility_gate": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "hard_disqualifiers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "comparison_rules": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "rule_id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "operation": {
+                    "type": "string",
+                    "enum": [
+                      "HARD_CONSTRAINT",
+                      "COMPARATIVE_WEIGHT",
+                      "SOURCE_WEIGHT",
+                      "TIE_BREAK",
+                      "REPORTING"
+                    ]
+                  },
+                  "rule": {
+                    "type": "string"
+                  },
+                  "justification": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "rule_id",
+                  "title",
+                  "operation",
+                  "rule",
+                  "justification"
+                ]
+              }
+            },
+            "evidence_hierarchy": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string"
+                  },
+                  "default_role": {
+                    "type": "string",
+                    "enum": [
+                      "CONTROLLING",
+                      "STRONG",
+                      "SUPPORTING",
+                      "WEAK",
+                      "EXCLUDED",
+                      "CONTEXT_DEPENDENT"
+                    ]
+                  },
+                  "conditions": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "default_role",
+                  "conditions"
+                ]
+              }
+            },
+            "received_pointing_role": {
+              "type": "string",
+              "enum": [
+                "BINDING",
+                "REBUTTABLE_PRESUMPTION",
+                "EVIDENCE_ONLY",
+                "NONE"
+              ]
+            },
+            "received_pointing_rule": {
+              "type": "string"
+            },
+            "burden_of_proof_rule": {
+              "type": "string"
+            },
+            "dependent_witness_rule": {
+              "type": "string"
+            },
+            "source_bias_rule": {
+              "type": "string"
+            },
+            "special_context_rules": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tie_rule": {
+              "type": "string"
+            },
+            "anti_ad_hoc_safeguards": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "proposed_baseline": {
+              "type": "string"
+            },
+            "clarifications_needed": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            }
+          },
+          "required": [
+            "written_text_status",
+            "admissibility_gate",
+            "hard_disqualifiers",
+            "comparison_rules",
+            "evidence_hierarchy",
+            "received_pointing_role",
+            "received_pointing_rule",
+            "burden_of_proof_rule",
+            "dependent_witness_rule",
+            "source_bias_rule",
+            "special_context_rules",
+            "tie_rule",
+            "anti_ad_hoc_safeguards",
+            "proposed_baseline",
+            "clarifications_needed",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "bd97bcb295496fcd2fe3d4ea75c335a48775f7bbdc24e9967f164f8fbe4e6730"
+}

@@ -1,16 +1,91 @@
 ---
 layout: symbol-study
 symbol_key: hell
-title: "Hell — Symbol Study"
-description: "English collapses three Hebrew concepts into one word. Sheol is the grave. Gehinnom is divine judgment. The fire is God Himself. The biblical contrast is life vs. death — not bliss vs. torture."
-strongs: [H7585, H1516, H784, H4194, H6031, H6064, H312, H8145, G1067, G86, G928, G2851, G3041]
-words: [hell, sheol, gehenna, gehinnom, hades, fire, lake, death, torment, punishment, second death]
+title: Hell — Symbol Study
+description: >-
+  Hell is an ambiguous English translation label, not one scriptural place. This index separates
+  Sheol/Hades, Gehenna, and tartaroō before the larger study tests common claims about judgment.
+strongs: []
+words:
+  - hell
+record_version: 1
+record_type: word
+term: Hell
+definition: >-
+  An ambiguous English translation label with no single scriptural referent. Its meaning must be
+  taken from the underlying Hebrew or Greek word.
+meaning: >-
+  An ambiguous English translation label with no single scriptural referent. Its meaning must be
+  taken from the underlying Hebrew or Greek word.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-hell
+  verdict: word
+classification: word
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - hell
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      An ambiguous English translation label with no single scriptural referent. Its meaning must
+      be taken from the underlying Hebrew or Greek word.
+    citations:
+      - Ps 16:10
+      - Acts 2:27
+      - Matt 10:28
+      - 2 Pet 2:4
+      - Jude 6
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: null
+    status: not-applicable
+    citations: []
+  bible_literal:
+    text: >-
+      An ambiguous English translation label with no single scriptural referent. Its meaning must
+      be taken from the underlying Hebrew or Greek word.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-hell
+    citations:
+      - Ps 16:10
+      - Acts 2:27
+      - Matt 10:28
+      - 2 Pet 2:4
+      - Jude 6
+  webster:
+    text: >-
+      The place of the dead, or of souls after death; the grave; -- called in Hebrew sheol, and by
+      the Greeks hades.
+    status: quoted
+    headword: HELL
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Hell
 
-**Do the wicked suffer conscious torment forever — or do they cease to exist?**
+## Approved Definition
 
+**An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.**
+
+- **Sheol** → [Sheol](/research/symbols/sheol/)
+- **Hades** → [Sheol](/research/symbols/sheol/)
+- **Gehenna** → [Gehenna / Valley of Hinnom](/research/symbols/gehenna/)
+- **tartaroō** → [Tartarus](/research/symbols/tartarus/)
 Most Christians assume the answer is eternal torment. But Scripture says something different: "The wages of sin is **death**" (Rom 6:23). Not eternal torment. Death. The soul that sins "shall **die**" (Ezek 18:4). God is able to "**destroy** both soul and body" (Matt 10:28). And God "**alone** has immortality" (1 Tim 6:16) — if humans had immortal souls, God would not be alone in possessing it.
 
 This study examines what Scripture actually says — from Torah's own punishment principles, through the nature of sheol, to what Revelation calls the "second death" — and traces how the doctrine of eternal conscious torment entered Christianity from Greek philosophy rather than from the Hebrew text.
@@ -18,6 +93,22 @@ This study examines what Scripture actually says — from Torah's own punishment
 > *"For the **wages** of sin is **death**, but the gift of God is **eternal life** in Christ Jesus our Lord."* — Rom 6:23
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+*Not applicable. “Hell” is an English translation label, not a biblical object with one symbolic sense.*
+
+### Bible literal sense
+
+**An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.**
+
+### Webster's English sense
+
+Webster's 1913 entry for **hell** begins: “The place of the dead, or of souls after death; the grave; -- called in Hebrew sheol, and by the Greeks hades.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## What Torah Says About Punishment
 
@@ -490,8 +581,7 @@ Where this study cites the Hebrew gospel, the primary argument has already been 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 **Symbolizes:** The fate of the uncovered — what happens when the $fire of God's presence meets flesh without covering
 
 **Opposite:** Eternal life / the resurrection / the Garden of Eden
@@ -577,3 +667,43 @@ Dan 3:25-27, Ex 3:2, Isa 43:2
 - **$naked** — The covering question. Passover blood, the fourth man, the burning bush, the garments of righteousness.
 
 - **Verse studies:** [Rev 20:10](/research/verses/rev-20-10/) | [Rev 20:14](/research/verses/rev-20-14/) | [Rev 14:10](/research/verses/rev-14-10/) | [Rev 21:8](/research/verses/rev-21-8/) | [Mark 9:43](/research/verses/mark-9-43/) | [Matt 25:41](/research/verses/mat-25-41/) | [Luke 16:23](/research/verses/luk-16-23/) | [2 Thess 1:9](/research/verses/2th-1-9/) | [Dan 12:2](/research/verses/dan-12-2/) | [Mal 4:1](/research/verses/mal-4-1/) | [Rom 6:23](/research/verses/rom-6-23/) | [Isa 66:24](/research/verses/isa-66-24/)
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **hell** begins:
+
+> “Hell, n. Etym: [AS. hell; akin to D. hel, OHG. hella, G. hölle, Icel. hal, Sw. helfvete, Dan. helvede, Goth. halja, and to AS. helan to conceal. Hele, v. t., Conceal, Cell, Helmet, Hole, Occult.] 1. The place of the dead, or of souls after death; the grave; -- called in Hebrew sheol, and by the Greeks hades. He descended into hell. Book of Common Prayer. Thou wilt not leave my soul in hell. Ps. xvi. 10.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first. The larger doctrinal
+essay also compares passages translated *hell* with the distinct studies of
+[Sheol](/research/symbols/sheol/), [Gehenna](/research/symbols/gehenna/), and
+[Tartarus](/research/symbols/tartarus/). The English label alone is not an
+exhaustive corpus boundary because several Hebrew and Greek words share it.
+
+## Competing Definitions Tested
+
+A common reading is: **the place of eternal conscious punishment and separation from God.**
+
+- Psalm 16:10 and Matthew 10:28 illustrate differing uses and support distinguishing Sheol/Hades from Gehenna, but these two references alone do not fully establish that Sheol/Hades encompasses righteous and wicked alike or that Gehenna necessarily means annihilation rather than severe or final punishment.
+
+- One could argue DIVERGENT: the book denies the consensus's central identification (a single unified referent of eternal conscious punishment) and replaces it with two referents, one of which (Sheol) is not punitive at all — accepting the book requires rejecting the traditional identification for a substantial class of texts. However, since the consensus responses themselves list the Sheol/Gehenna distinction as a common recognized reading and annihilationism as an established alternative, the book's move stays within catalogued boundary disputes rather than contradicting the shared core (final divine judgment for the unrepentant).
+
+- The book's emphasis on dual referents merely restates a common scholarly alternative already inside the consensus rather than refining the primary Gehenna-punishment core, so the relation could be scored MATCH or NOVEL depending on weight given to the common-view note.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

@@ -1,0 +1,129 @@
+{
+  "provider": "anthropic",
+  "stage": "blind",
+  "request_stage": "vowel_points_blind",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Decide the foundational textual question independently, without anticipating any later biblical-symbol claim.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are participating in the first, blinded stage of a reproducible experiment\nabout the textual basis for interpreting the Hebrew Bible.\n\nNo disputed biblical symbol or proposed interpretation is before you. Commit\nto a general rule now, before any downstream argument is shown.\n\nUsing manuscript history, the structure of the Masoretic text, the biblical\ntextual witnesses, and standard Hebrew/Aramaic lexicons—but not denominational\ndoctrine, commentaries, or the popularity of an interpretation—distinguish:\n\n1. the consonantal written text;\n2. vowel letters contained within that text;\n3. Masoretic vowel points;\n4. Masoretic cantillation and accent marks;\n5. Ketiv and Qere readings;\n6. alternate ancient readings witnessed by manuscripts or translations.\n\nDetermine:\n\n- whether the Masoretic vowel points were part of the original written text;\n- whether the points are binding on interpretation and, if not, what weight\n  they carry;\n- whether a grammatically and lexically valid alternate vocalization of the\n  same consonants may be considered;\n- what evidence must support an alternate vocalization;\n- whether the received pointing alone can disqualify an alternate reading;\n- how Ketiv/Qere, parallel passages, ancient translations, and manuscript\n  evidence affect the decision;\n- who bears the burden of proof when departing from the received pointing.\n\nDistinguish historical findings from theological assumptions. Do not analyze,\nname, or allude to any particular disputed symbol. Your structured response\nwill be frozen and returned to you in a later stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "vowel_points_original_to_written_text": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO",
+                "UNCERTAIN"
+              ]
+            },
+            "vowel_points_authority": {
+              "type": "string",
+              "enum": [
+                "BINDING",
+                "REBUTTABLE_PRESUMPTION",
+                "EVIDENCE_ONLY",
+                "NONE"
+              ]
+            },
+            "cantillation_authority": {
+              "type": "string",
+              "enum": [
+                "BINDING",
+                "REBUTTABLE_PRESUMPTION",
+                "EVIDENCE_ONLY",
+                "NONE"
+              ]
+            },
+            "alternate_vocalization_admissible": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO",
+                "CONDITIONAL"
+              ]
+            },
+            "received_pointing_alone_can_veto": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO",
+                "CONDITIONAL"
+              ]
+            },
+            "burden_of_proof": {
+              "type": "string"
+            },
+            "required_support": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ketiv_qere_rule": {
+              "type": "string"
+            },
+            "ancient_witness_rule": {
+              "type": "string"
+            },
+            "historical_findings": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "theological_assumptions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            }
+          },
+          "required": [
+            "vowel_points_original_to_written_text",
+            "vowel_points_authority",
+            "cantillation_authority",
+            "alternate_vocalization_admissible",
+            "received_pointing_alone_can_veto",
+            "burden_of_proof",
+            "required_support",
+            "ketiv_qere_rule",
+            "ancient_witness_rule",
+            "historical_findings",
+            "theological_assumptions",
+            "rationale",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "5c8f7cf7798a82b476ab8408810de435cbf3b1ee68555150f1e4331794514969"
+}

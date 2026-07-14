@@ -1,19 +1,123 @@
 ---
 layout: symbol-study
 symbol_key: virgin
-title: "Virgin — Symbol Study"
-description: "The virgin in Scripture represents exclusive covenant devotion — faithfulness to one master. The harlot serves many; the virgin belongs to one."
-strongs: [H1330, G3933]
-words: [virgin, virgins]
+title: Virgin — Symbol Study
+description: >-
+  The virgin in Scripture represents exclusive covenant devotion — faithfulness to one master. The
+  harlot serves many; the virgin belongs to one.
+strongs:
+  - H1330
+  - G3933
+words:
+  - virgin
+  - virgins
+record_version: 1
+record_type: symbol
+term: Virgin
+definition: >-
+  The espoused — betrothed to one husband with the wedding still ahead: covenant standing, not
+  attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe
+  house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the bride’s
+  companions who follow her in.
+meaning: >-
+  The espoused — betrothed to one husband with the wedding still ahead: covenant standing, not
+  attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe
+  house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the bride’s
+  companions who follow her in.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-virgin
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - harlot
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-ten-virgins.md
+    - books/symbolic-language/research/research-virgin-manchild.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - virgin
+      - virgins
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The espoused — betrothed to one husband with the wedding still ahead: covenant standing, not
+      attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe
+      house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the bride’s
+      companions who follow her in.
+    citations:
+      - Deut 22:23-24
+      - Joel 1:8
+      - Jer 31:4, 21
+      - Amos 5:2
+      - Ps 45:14-15
+      - 2 Cor 11:2
+      - Matt 25:1
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The espoused — betrothed to one husband with the wedding still ahead: covenant standing, not
+      attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe
+      house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the bride’s
+      companions who follow her in.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-virgin
+    citations:
+      - Deut 22:23-24
+      - Joel 1:8
+      - Jer 31:4, 21
+      - Amos 5:2
+      - Ps 45:14-15
+      - 2 Cor 11:2
+      - Matt 25:1
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: A woman who has had no carnal knowledge of man; a maid.
+    status: quoted
+    headword: VIRGIN
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Virgin
 
-**Exclusive covenant devotion — faithfulness to one master, undivided loyalty to God.**
+## Approved Definition
 
+**The espoused — betrothed to one husband with the wedding still ahead: [covenant](/research/symbols/covenant/) standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the [bride](/research/symbols/marriage/)’s companions who follow her in.**
 > *"For I am jealous over you with godly jealousy: for I have espoused you to one husband, that I may present you as a chaste **virgin** to Christ."* — 2 Cor 11:2
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The espoused — betrothed to one husband with the wedding still ahead: [covenant](/research/symbols/covenant/) standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the [bride](/research/symbols/marriage/)’s companions who follow her in.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **virgin** begins: “A woman who has had no carnal knowledge of man; a maid.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -167,8 +271,7 @@ The opposite chain confirms this. $idolatry at its root is self-rule — rejecti
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$harlot** — The virgin's strict opposite. The $harlot is the covenant breaker — one who was married to God but committed spiritual adultery through $idolatry (serving other gods/masters). The same person or community can be virgin or harlot depending on the state of their allegiance. Isa 1:21 captures the entire transformation in a single verse.
 
 - **$fornication** — The *act* that transforms a virgin into a $harlot. $fornication = idolatry, the act of serving other gods. "Go a whoring after other gods" is the prophets' repeated charge (Deut 31:16, Judg 2:17, Ezek 6:9). The virgin who commits $fornication has broken the $marriage covenant.
@@ -233,3 +336,37 @@ KJV translates H1330 as "virgin," "maid," and "maiden." G3933 appears as "virgin
 - **$babylon** — The $harlot at civilizational scale. How does $babylon function as the anti-$jerusalem, the counterfeit kingdom built on self-rule? And what does "come out of her, my people" mean if her people were once virgins?
 
 - **$jerusalem** — The virgin at civilizational scale. How does Scripture distinguish the earthly $jerusalem (which can fall like Amos 5:2) from the heavenly $jerusalem (which descends as a bride in Rev 21)?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **virgin** begins:
+
+> “Vir”gin, n. Etym: [L. virgo, -inis: cf. OF. virgine, virgene, virge, vierge, F. vierge.] 1. A woman who has had no carnal knowledge of man; a maid.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Deuteronomy 22 and 2 Corinthians 11 strongly connect virginity with betrothal, but the remaining citations do not establish that espousal is the term’s defining meaning in every case. Psalm 45 identifies the virgins as the bride’s companions, Matthew 25 does not call the ten virgins betrothed, and the restoration or re-espousal of divorced Israel requires contextual argument beyond the cited verses. The references thus support the proposed pattern without conclusively proving its asserted boundary.
+
+- One could argue MATCH: the consensus already frames 'virgin' as a betrothal metaphor (2 Cor 11:2 'betrothed to one husband'; brides awaiting the Bridegroom), so 'espoused' merely restates the bride motif, and the companion/ten-tribe details are immaterial elaboration rather than real boundary disagreement. Conversely, one might press for DIVERGENT on the ground that 'covenant standing, not attainment' rejects the consensus's core of purity as the defining feature; but the book still retains chastity-to-one-husband as the operative contrast with the harlot, so the referent is not replaced.
+
+- A reader could claim the shared betrothal texts make the cores simply equivalent (MATCH) or that “not attainment” quietly contradicts the purity emphasis (DIVERGENT); the explicit redefinition of conditions and the narrowed cases nevertheless favor REFINED.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The espoused — betrothed to one husband with the wedding still ahead: [covenant](/research/symbols/covenant/) standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the [bride](/research/symbols/marriage/)’s companions who follow her in.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *virgin*, *virgins*. The English-form sweep found **55 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

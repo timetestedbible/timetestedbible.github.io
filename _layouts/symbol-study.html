@@ -2,7 +2,14 @@
 layout: default
 ---
 <article class="symbol-study-content symbol-article-body" style="max-width: 800px; margin: 0 auto; padding: 20px 24px;" role="article" aria-label="{{ page.title }}">
+  {% if page.record_type == "alias" %}
+  {% assign canonical_term = page.alias_of | replace: '-', ' ' | capitalize %}
+  <h1>{{ page.term }}</h1>
+  <p><strong>Alias of:</strong> <a href="/research/symbols/{{ page.alias_of }}/">{{ canonical_term }}</a></p>
+  <p>This lookup form points to the canonical study; its definition and evidence are maintained there.</p>
+  {% else %}
   {{ content }}
+  {% endif %}
 </article>
 <script>
 (function() {

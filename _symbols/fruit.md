@@ -1,19 +1,104 @@
 ---
 layout: symbol-study
 symbol_key: fruit
-title: "Fruit — Symbol Study"
-description: "Fruit in Scripture represents works and deeds — the visible output that reveals the nature of whoever produces it."
-strongs: [H6529, G2590]
-words: [fruit, fruits, fruitful, unfruitful]
+title: Fruit — Symbol Study
+description: >-
+  Fruit in Scripture represents works and deeds — the visible output that reveals the nature of
+  whoever produces it.
+strongs:
+  - H6529
+  - G2590
+words:
+  - fruit
+  - fruits
+  - fruitful
+  - unfruitful
+record_version: 1
+record_type: symbol
+term: Fruit
+definition: The works produced by a person or people, revealing the tree and supplying the basis for judgment.
+meaning: The works produced by a person or people, revealing the tree and supplying the basis for judgment.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-fruit
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - fruit
+      - fruits
+      - fruitful
+      - unfruitful
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The works produced by a person or people, revealing the tree and supplying the basis for
+      judgment.
+    citations:
+      - Matt 7:17
+      - Matt 21:43
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The works produced by a person or people, revealing the tree and supplying the basis for
+      judgment.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-fruit
+    citations:
+      - Matt 7:17
+      - Matt 21:43
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      Whatever is produced for the nourishment or enjoyment of man or animals by the processes of
+      vegetable growth, as corn, grass, cotton, flax, etc.; -- commonly used in the plural.
+    status: quoted
+    headword: FRUIT
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Fruit
 
-**Works and deeds — the visible output that reveals the hidden nature of whoever produces it.**
+## Approved Definition
 
+**The works produced by a person or people, revealing the [tree](/research/symbols/tree/) and supplying the basis for judgment.**
 > *"Ye shall know them by their **fruits**. Do men gather grapes of $[thorns], or figs of thistles?"* — Mat 7:16
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The works produced by a person or people, revealing the [tree](/research/symbols/tree/) and supplying the basis for judgment.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **fruit** begins: “Whatever is produced for the nourishment or enjoyment of man or animals by the processes of vegetable growth, as corn, grass, cotton, flax, etc.; -- commonly used in the plural.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -129,8 +214,7 @@ This is why barrenness carries such symbolic weight throughout Scripture. A barr
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$tree** — A $tree is a nation or people group. Fruit is what that nation *produces* — its works and deeds. The $tree-and-fruit relationship is the nation-and-works relationship: "every good $tree bringeth forth good fruit" (Mat 7:17). A nation is judged by what it does, not what it claims. A $tree that bears no fruit is hewn down (Mat 3:10).
 
 - **$thorns** — $thorns are worldly, choking people and influences — cares, riches, and pleasures that actively prevent fruitfulness. They do not destroy the seed; they choke the works. The $thorns don't kill the $tree — they surround it and make it barren, which amounts to the same judgment: "yielded no fruit" (Mk 4:7).
@@ -174,3 +258,37 @@ KJV translates H6529 as "fruit," "bough," and "reward." G2590 appears consistent
 - **$tree** — If fruit is works, then the $tree that bears it is the nation or people producing those works. How does the $tree-as-nation symbol shape our reading of every passage about fruitful and barren trees?
 - **$thorns** — The choking agent that prevents fruit. What does it mean that Jesus explicitly defines $thorns as worldly cares and riches — and that their primary effect is not destruction but *fruitlessness*?
 - **$wind** — The Spirit as invisible power. If fruit is the visible output and $wind is the invisible source, how does the fruit-of-the-Spirit passage (Gal 5:22) connect the unseen movement of God to the seen works of His people?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **fruit** begins:
+
+> “Fruit, n. Etym: [OE. fruit, frut, F. fruit, from L. fructus enjoyment, product, fruit, from frui, p. p. fructus, to enjoy; akin to E. brook, v. t. See Broook, v. t., and cf. Fructify, Frugal.] 1. Whatever is produced for the nourishment or enjoyment of man or animals by the processes of vegetable growth, as corn, grass, cotton, flax, etc.; -- commonly used in the plural. Six years thou shalt sow thy land, and shalt gather in the fruits thereof. Ex. xxiii. 10.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Matthew 7:17 does not itself specify nations or explicitly describe judicial assessment, so the book’s formulation depends chiefly on Matthew 21:43 and on combining the two passages rather than on both independently expressing the complete definition.
+
+- One could argue for MATCH: 'a nation's works, by which it is judged' is simply the consensus 'works as evidence, judged by output' applied to a corporate instance the consensus already permits, and the book entry may not intend to deny individual application. However, the entry's definitional framing ('a nation's works') presents the national sense as the identification itself, not one instance, which materially shifts the extension away from the individual-centered consensus.
+
+- Matthew 7:15-20 explicitly introduces the metaphor of trees and fruit to identify individual 'false prophets', suggesting the symbol is not restricted only to the works of a nation as a whole.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The works produced by a person or people, revealing the [tree](/research/symbols/tree/) and supplying the basis for judgment.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *fruit*, *fruits*, *fruitful*, *unfruitful*. The English-form sweep found **259 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

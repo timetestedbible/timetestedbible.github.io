@@ -256,14 +256,14 @@ def norm_ref(ref):
 
 
 def print_headings(print_path):
-    """Ordered section headings of the print twin ('=== ...' lines) as
+    """Ordered section headings of the print twin ('==', '===', or '====') as
     (normalized, display) pairs. The audio speaks each heading as a
     storytelling transition sentence that carries the heading's words
     (author, 2026-07-10: bare spoken headings don't tell a story); the
     on-screen title card keeps the print heading itself."""
     body = open(print_path, encoding='utf-8').read()
     return [(re.sub(r'[^a-z0-9]', '', m.group(1).lower()), m.group(1).strip())
-            for m in re.finditer(r'^={2,3}\s+(.+?)\s*$', body, re.M)]
+            for m in re.finditer(r'^={2,4}\s+(.+?)\s*$', body, re.M)]
 
 
 def print_sym_words(print_path):

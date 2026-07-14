@@ -1,0 +1,194 @@
+{
+  "written_text_status": "The unpointed consonantal string is the fixed primary datum. Every candidate must be a phonologically and morphologically viable analysis of that string (within period-normal orthographic variation such as plene/defective spelling). Vocalization, morphological segmentation, and lexical assignment are interpretive hypotheses about the written text, not replacements for it.",
+  "admissibility_gate": [
+    "Exact match to the given consonants, allowing only standard orthographic variation attested for the period and corpus (matres lectionis conventions, common plene/defective alternation).",
+    "Yields a morphologically well-formed word or phrase under descriptive Biblical Hebrew or Biblical Aramaic grammar.",
+    "Corresponds to a lexeme (or transparent derivation) attested in Biblical Hebrew/Aramaic or closely related Northwest Semitic with a semantically usable range.",
+    "Produces a clause that is syntactically parseable in the immediate context without requiring unattested constructions.",
+    "Does not depend on emending the consonants or inventing an unattested root solely to rescue the reading."
+  ],
+  "hard_disqualifiers": [
+    "Requires changing one or more consonants without independent manuscript support or a paleographically routine error type.",
+    "Produces outright ungrammatical syntax or semantic nonsense that cannot be resolved by known BH/BA constructions.",
+    "Rests on a completely unattested root or meaning lacking morphological, contextual, or comparative Semitic support.",
+    "Creates an irreconcilable contradiction with unambiguous immediate context in the absence of other textual disruption signals.",
+    "Double-counts the same stemma or treats a paraphrastic/secondary witness as if it were an independent Hebrew reading."
+  ],
+  "comparison_rules": [
+    {
+      "rule_id": "R1",
+      "title": "Admissibility before comparison",
+      "operation": "HARD_CONSTRAINT",
+      "rule": "Apply the admissibility gate first. Only readings that pass every gate criterion enter comparative evaluation; failing readings are eliminated, not weighed.",
+      "justification": "Ensures comparison occurs only among genuinely possible analyses of the same written text; possibility is necessary but not sufficient for preference."
+    },
+    {
+      "rule_id": "R2",
+      "title": "Immediate context and syntax primacy",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Prefer the reading that yields superior semantic fit, discourse coherence, and syntactic naturalness with the immediately surrounding clauses.",
+      "justification": "Local intelligibility is the strongest internal control once consonants are fixed; authors write for readers who encounter the clause in sequence."
+    },
+    {
+      "rule_id": "R3",
+      "title": "Morphological and lexical naturalness",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Prefer the analysis that uses common morphology and well-attested senses over rare, forced, or hapax-dependent analyses unless context clearly requires the rarer option.",
+      "justification": "Common forms and senses are the default expectation; rarity must be earned by contextual necessity, not assumed."
+    },
+    {
+      "rule_id": "R4",
+      "title": "Book-level and authorial usage",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "When a lexeme, construction, or formula shows clear preferences inside the same book or tightly related corpus, prefer the reading that aligns with those patterns.",
+      "justification": "Internal consistency within a literary unit is stronger evidence than generic corpus frequency alone."
+    },
+    {
+      "rule_id": "R5",
+      "title": "Independent early Hebrew manuscript support",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Give strong positive weight to early Hebrew witnesses (especially DSS and other pre-medieval Hebrew manuscripts) that independently support one vocalization-compatible analysis or a relevant orthographic cue; do not equate medieval MT copies with independent confirmation.",
+      "justification": "Early Hebrew manuscripts are direct witnesses to the written tradition closer to the compositional period."
+    },
+    {
+      "rule_id": "R6",
+      "title": "Ancient versions as indirect evidence",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Treat versions (LXX, Targums, Peshitta, Vulgate, etc.) as evidence of how ancient readers understood the consonants, weighted by demonstrated translation technique, independence, and degree of formal equivalence; never treat a version as equal to a Hebrew manuscript.",
+      "justification": "Versions can preserve early interpretive traditions but are filtered through translation strategy and target language."
+    },
+    {
+      "rule_id": "R7",
+      "title": "Received pointing and accents",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Count Masoretic vocalization and accents as a strong early reading tradition that supplies a default analysis, but allow them to be outweighed by cumulative higher-tier internal and early manuscript evidence.",
+      "justification": "The pointing is a carefully transmitted interpretive layer, not the consonants themselves; it deserves weight without automatic finality."
+    },
+    {
+      "rule_id": "R8",
+      "title": "Ketiv/Qere and known alternative traditions",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Treat Ketiv/Qere pairs and other ancient alternative notations as evidence that multiple analyses were already recognized; use them to support admissibility of alternatives, not as automatic victory for either side.",
+      "justification": "They document historical awareness of ambiguity without by themselves deciding original intent."
+    },
+    {
+      "rule_id": "R9",
+      "title": "Canonical and formulaic parallels",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Give supporting weight to clear parallel passages or fixed formulae only when the parallel is textually close and the shared language is diagnostic; do not force harmonization.",
+      "justification": "Genuine parallels can disambiguate idiom; over-harmonization invents evidence."
+    },
+    {
+      "rule_id": "R10",
+      "title": "Symmetrical documentation and falsifiers",
+      "operation": "REPORTING",
+      "rule": "Score both readings on the same criteria in the same order; explicitly state what evidence would reverse the preference for each reading.",
+      "justification": "Symmetry and falsifiability prevent one-sided special pleading."
+    },
+    {
+      "rule_id": "R11",
+      "title": "Underdetermination declaration",
+      "operation": "TIE_BREAK",
+      "rule": "If residual support remains roughly balanced after higher-tier criteria, declare the case underdetermined rather than forcing a winner.",
+      "justification": "Honest underdetermination is preferable to manufactured certainty."
+    }
+  ],
+  "evidence_hierarchy": [
+    {
+      "evidence": "Given unpointed consonants of the locus",
+      "default_role": "CONTROLLING",
+      "conditions": "All candidates must account for them; only routine orthographic variation is allowed."
+    },
+    {
+      "evidence": "Immediate syntactic and discourse context",
+      "default_role": "STRONG",
+      "conditions": "Always applied first among comparative factors; strongest internal discriminator."
+    },
+    {
+      "evidence": "Descriptive morphology and syntax of BH/BA",
+      "default_role": "STRONG",
+      "conditions": "Use standard descriptive grammars; prefer natural parses over strained ones."
+    },
+    {
+      "evidence": "Lexical attestation and sense distribution in BH/BA and closely related corpora",
+      "default_role": "STRONG",
+      "conditions": "Common senses preferred; rare senses require contextual necessity."
+    },
+    {
+      "evidence": "Book-level or authorial usage patterns",
+      "default_role": "SUPPORTING",
+      "conditions": "Applied when clear distributional preferences exist inside the same literary unit."
+    },
+    {
+      "evidence": "Independent early Hebrew manuscripts (e.g., DSS)",
+      "default_role": "STRONG",
+      "conditions": "Strong when they preserve relevant orthography or confirm one analysis; weight by independence and date."
+    },
+    {
+      "evidence": "Masoretic vocalization, accents, and standard MT tradition",
+      "default_role": "STRONG",
+      "conditions": "Default traditional analysis; rebuttable by cumulative higher-tier internal and early manuscript evidence."
+    },
+    {
+      "evidence": "Ketiv/Qere and other ancient alternative notations",
+      "default_role": "SUPPORTING",
+      "conditions": "Indicates historical plurality; supports admissibility more than final decision."
+    },
+    {
+      "evidence": "Ancient versions (LXX, Targums, Peshitta, Vulgate, etc.)",
+      "default_role": "SUPPORTING",
+      "conditions": "Weight by translation technique and independence; reduced force if paraphrastic or free."
+    },
+    {
+      "evidence": "Samaritan Pentateuch (Torah only)",
+      "default_role": "CONTEXT_DEPENDENT",
+      "conditions": "Useful early witness but adjust for known sectarian tendencies."
+    },
+    {
+      "evidence": "Canonical or formulaic parallels",
+      "default_role": "SUPPORTING",
+      "conditions": "Only when parallelism is close and diagnostic; no forced harmonization."
+    },
+    {
+      "evidence": "Medieval Jewish commentaries and modern scholarly opinion/consensus",
+      "default_role": "EXCLUDED",
+      "conditions": "May surface arguments already grounded in primary evidence; cannot supply independent weight or break ties."
+    },
+    {
+      "evidence": "Denominational authority or popularity of an interpretation",
+      "default_role": "EXCLUDED",
+      "conditions": "Never used to prefer a reading."
+    }
+  ],
+  "received_pointing_role": "REBUTTABLE_PRESUMPTION",
+  "received_pointing_rule": "Masoretic vowels and accents function as a rebuttable presumption of the traditional reading of the consonants. They carry substantial weight as a carefully preserved early interpretive tradition, yet they may be set aside when immediate context, morphology/lexicon, and independent early Hebrew evidence cumulatively favor another admissible analysis. Accents are treated as interpretive punctuation, not as independent proof of morphology. Ketiv preserves the written form; Qere records a traditional reading and does not automatically override the consonants.",
+  "burden_of_proof_rule": "Relative to the unpointed consonants, both admissible readings begin with equal formal standing. Evidential burden is comparative and effectively asymmetrical in application: the reading that better satisfies higher-tier criteria (immediate context, grammatical/lexical naturalness, independent early Hebrew support) prevails. A departure from the received Masoretic vocalization requires a clear positive advantage on those higher-tier grounds, not mere theoretical possibility. Absence of evidence is not evidence for novelty; the weaker or more ad-hoc reading bears the practical burden of justification.",
+  "dependent_witness_rule": "Collapse genealogically dependent witnesses to a single stemma node before weighing. Multiple medieval MT manuscripts do not multiply the force of the received pointing. Version sub-traditions that share a common translation or revision event count once. DSS aligned with the Masoretic text-type are not independent of MT for pointing disputes; clearly independent DSS readings receive separate weight. Never double-count a version and a later witness derived from it.",
+  "source_bias_rule": "Apply a uniform, pre-stated discount for known translational or ideological tendencies, regardless of which candidate benefits. Paraphrastic or theologically expansive sources (certain Targums, free LXX contexts) receive reduced force for fine-grained vocalization recovery; more formal-equivalence renderings receive higher force. Sectarian or revisionist witnesses are discounted precisely where a reading serves an identifiable agenda. The same bias adjustment must be applied symmetrically in every case.",
+  "special_context_rules": [
+    "Poetry: allow greater syntactic and lexical flexibility; use parallelism as a supporting disambiguator when clear.",
+    "Proper names and technical/cultic terms: prioritize onomastic and extra-biblical attestation patterns.",
+    "Legal or formulaic prose: prefer consistency with parallel legal formulations when genuinely parallel.",
+    "Biblical Aramaic clauses: apply BA grammar and lexicon, not Hebrew defaults.",
+    "Orthographic rarity: a reading that requires unusual spelling needs period-appropriate parallels.",
+    "Suspected textual corruption: only invoke after admissible unemended readings fail; prefer the least invasive explanation."
+  ],
+  "tie_rule": "If, after ordered application of hard constraints and higher-tier comparative criteria, the two readings remain roughly balanced, declare the case underdetermined and report both as viable. Do not manufacture a preference. The received pointing may be noted as the traditional reading without being declared original. Prefer the reading that requires fewer ad-hoc assumptions only when that difference is itself clear and pre-specified; otherwise leave the tie unbroken.",
+  "anti_ad_hoc_safeguards": [
+    "Freeze the full hierarchy, weights, and special-context categories before inspecting the specific disputed form.",
+    "Prohibit introduction of new criteria or re-weighting after observing which reading they favor.",
+    "Require symmetrical scoring tables for both readings on the same ordered criteria.",
+    "Any claimed exception must fall under a pre-declared special-context category and be applied consistently across cases.",
+    "Ban appeals to unspecified scholarly consensus, denominational tradition, or 'the obvious sense' that lack primary-text anchors.",
+    "Require explicit statement of falsifying evidence for whatever reading is preferred.",
+    "Document the decision path so an independent evaluator can reproduce the same outcome from the same rules."
+  ],
+  "proposed_baseline": "Gate candidates strictly by consonantal fidelity, morphological possibility, lexical attestation, and local syntactic parseability. Among admissible readings, rank by ordered comparative force: (1) immediate contextual and syntactic coherence, (2) morphological and lexical naturalness within attested usage, (3) independent early Hebrew manuscript support, (4) book-level usage patterns, (5) ancient versions weighted by technique and independence, (6) received Masoretic pointing and accents as a strong but rebuttable traditional analysis. Collapse dependent witnesses, discount known biases symmetrically, and apply pre-declared special-context rules only. Prefer a reading only when it holds a clear cumulative advantage on higher-tier criteria; otherwise declare underdetermination. Exclude modern popularity, denominational authority, and post-hoc reweighting. The method is frozen prior to any specific disputed word.",
+  "clarifications_needed": [
+    "Exact operational thresholds for 'clear cumulative advantage' versus residual balance.",
+    "Corpus-period definition of allowable orthographic variation for each major biblical section.",
+    "How heavily a single high-quality independent DSS orthographic cue should weigh against a uniform MT pointing tradition.",
+    "Handling of mixed Hebrew-Aramaic or heavily formulaic liturgical contexts."
+  ],
+  "confidence": "HIGH"
+}

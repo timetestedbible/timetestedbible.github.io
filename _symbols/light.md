@@ -1,19 +1,97 @@
 ---
 layout: symbol-study
 symbol_key: light
-title: "Light — Symbol Study"
-description: "Light in Scripture represents visible obedience — the outward, public demonstration of commandment-keeping that others can see, walk by, and imitate. Darkness hides; light shines."
-strongs: [H216, G5457]
-words: [light, lights]
+title: Light — Symbol Study
+description: >-
+  Light in Scripture represents visible obedience — the outward, public demonstration of
+  commandment-keeping that others can see, walk by, and imitate. Darkness hides; light shines.
+strongs:
+  - H216
+  - G5457
+words:
+  - light
+  - lights
+record_version: 1
+record_type: symbol
+term: Light
+definition: The law lived visibly as an example — obedient actions others can see.
+meaning: The law lived visibly as an example — obedient actions others can see.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-light
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - darkness
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - light
+      - lights
+senses:
+  - id: approved-core
+    status: approved
+    summary: The law lived visibly as an example — obedient actions others can see.
+    citations:
+      - Prov 6:23
+      - Matt 5:16
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: The law lived visibly as an example — obedient actions others can see.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-light
+    citations:
+      - Prov 6:23
+      - Matt 5:16
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      That agent, force, or action in nature by the operation of which upon the organs of sight,
+      objects are rendered visible or luminous.
+    status: quoted
+    headword: LIGHT
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Light
 
-**Visible obedience — the open, public demonstration of God's commandments that others can see and follow.**
+## Approved Definition
 
+**The law lived visibly as an example — obedient actions others can see.**
 > *"Let your **light** so shine before men, that they may see your good works, and glorify your Father which is in heaven."* — Mat 5:16
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The law lived visibly as an example — obedient actions others can see.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **light** begins: “That agent, force, or action in nature by the operation of which upon the organs of sight, objects are rendered visible or luminous.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -196,8 +274,7 @@ So the chain runs: light → visible good works (Mat 5:16) → righteousness (De
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$darkness** — The defining opposite. $darkness = concealed disobedience; light = visible obedience. Every passage that mentions light defines it against $darkness: Jn 3:19–21, 1 Jn 1:5–7, Eph 5:8–13. The two symbols are a single pair — you cannot understand one without the other. The transformation from $darkness to light is the movement from hiding to openness, from $wickedness to covenant faithfulness.
 
 - **$truth** — God's commandments, His standard (Ps 119:142, Jn 17:17). "He that doeth $truth cometh to the light" (Jn 3:21). $truth is what you obey; light is that obedience made visible. $truth is the content; light is the display. They always appear together because you cannot demonstrate what you do not have, and a standard no one can see might as well be hidden.
@@ -267,3 +344,37 @@ KJV translates H216 as "light" throughout. G5457 appears as "light" in all major
 - **$mountain** — The platform for the light. Why is the city set on a mountain, and what does it mean for visible obedience to be positioned within God's kingdom?
 - **$fruit** — The evidence of the light. How do works and deeds function as the proof that light is genuine and not mere profession?
 - **$name** — The covenant behind the light. Bearing God's name and being His light are connected — how does the third commandment relate to the call to shine?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **light** begins:
+
+> “velocity of about 186,300 miles per second; but it is now generally understood to consist, not in any actual transmission of particles or substance, but in the propagation of vibrations or undulations in a subtile, elastic medium, or ether, assumed to pervade all space, and to be thus set in vibratory motion by the action of luminous bodies, as the atmosphere is by sonorous bodies. This view of the nature of light is known as the undulatory or wave theory; the other, advocated by Newton (but long since abandoned), as the corpuscular, emission, or Newtonian theory. A more recent theory makes light to consist in electrical oscillations, and is known as the electro-magnetic theory of light.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The two citations support law as light and good works as visible light separately, but they do not conclusively establish that every biblical use of light means law embodied in works; major passages directly identify light with God or Christ.
+
+- One could argue DIVERGENT: by defining light as human law-keeping rather than God/Christ, the book replaces the consensus's central referent (divine being) with a different referent (human conduct), and 'light is God' vs. 'light is our lived obedience' identify categorically different things. This is a serious objection, but it fails the contradiction test because the consensus explicitly treats believer-conduct and law-as-light as legitimate co-existing senses of the same polyvalent symbol, and the book's cited verses genuinely carry those senses; the disagreement is over centrality and scope, not mutually exclusive claims.
+
+- In biblical theology, light overwhelmingly and fundamentally points to God (1 John 1:5) and Christ (John 8:12); defining it solely as human works or the law risks mistaking the reflection for the source.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The law lived visibly as an example — obedient actions others can see.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *light*, *lights*. The English-form sweep found **256 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

@@ -1,19 +1,94 @@
 ---
 layout: symbol-study
 symbol_key: way
-title: "Way — Symbol Study"
-description: "The way in Scripture represents conduct — manner of life — and when definite ('THE way'), it points to Torah-faithfulness: the pattern of living that God defines and Christ embodies."
-strongs: [H1870, G3598]
-words: [way, ways]
+title: Way — Symbol Study
+description: >-
+  The way in Scripture represents conduct — manner of life — and when definite ('THE way'), it
+  points to Torah-faithfulness: the pattern of living that God defines and Christ embodies.
+strongs:
+  - H1870
+  - G3598
+words:
+  - way
+  - ways
+record_version: 1
+record_type: symbol
+term: Way (the way)
+definition: Covenant conduct — the walk.
+meaning: Covenant conduct — the walk.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-way
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - way
+      - ways
+senses:
+  - id: approved-core
+    status: approved
+    summary: Covenant conduct — the walk.
+    citations:
+      - Jer 6:16
+      - Matt 7:14
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: Covenant conduct — the walk.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-way
+    citations:
+      - Jer 6:16
+      - Matt 7:14
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: Away. [Obs. or Archaic] Chaucer.
+    status: quoted
+    headword: WAY
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Way
 
-**Conduct — manner of life. When definite ("THE way"), the pattern of conduct defined by God's commandments.**
+## Approved Definition
 
+**[Covenant](/research/symbols/covenant/) conduct — the walk.**
 > *"For I know him, that he will command his children and his household after him, and they shall keep the **way** of the LORD, to do justice and judgment."* — Gen 18:19
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**[Covenant](/research/symbols/covenant/) conduct — the walk.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **way** begins: “Away. [Obs. or Archaic] Chaucer.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -181,8 +256,7 @@ They do not know the *conduct* that leads to peace — because they do not keep 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$truth** — The standard that defines the way. $truth = God's commandments; way = the conduct shaped by those commandments. "The way of truth" (2 Pet 2:2) is not a redundancy — it is the manner of life that follows from keeping God's standard. Jn 14:6 places them side by side because they are inseparable: the $truth defines, the way enacts.
 
 - **$light** — The visible demonstration of walking in the way. $light = visible obedience, the example that others can see. Prov 6:23 chains commandment → $light → way of life. Those who walk the way *become* $light — their conduct is the visible example (Mat 5:16). "He that doeth $[truth] cometh to the $[light]" (Jn 3:21) — keeping the standard produces visible conduct.
@@ -247,3 +321,39 @@ KJV translates H1870 *derek* as "way" (~590×), "ways" (~100×), and occasionall
 - **$light** — The visible result of walking in the way. How does conduct become example, and how does $light function as the demonstration of obedience?
 - **$faith** — The posture that makes the way walkable. If $faith is trusting obedience, how does it relate to the conduct the way demands?
 - **$wickedness** — The anti-way. What does $wickedness look like as the explicit negation of covenant conduct, and how does it consume itself?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **way** begins:
+
+> “Way, adv. Etym: [Aphetic form of away.] Defn: Away. [Obs. or Archaic] Chaucer. To do way, to take away; to remove. [Obs.] ”Do way your hands.” Chaucer. -- To make way with, to make away with. See under Away. [Archaic]”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**[Covenant](/research/symbols/covenant/) conduct — the walk.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *way*, *ways*. The English-form sweep found **788 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+A common reading is: **Jesus Himself as the one way to the Father; the narrow way against the broad.**
+
+- The strongest case for REFINED is that the consensus also describes “the way” as discipleship and righteous living, so “covenant conduct” could be viewed as narrowing that broader path-to-life category. However, the dominant consensus core is Christ himself, whereas the book’s concise identification is conduct; that is a change of referent, not merely a boundary adjustment.
+
+- All three consensus responses list the moral/conduct sense ('way of the righteous,' walking in God's commandments) as a common alternative, so one could argue the book merely re-weights an acknowledged layered sense — a boundary/emphasis shift within the same semantic family, which would make REFINED the correct verdict rather than DIVERGENT.
+
+- The dominant NT symbolic identification (John 14:6 + Acts “the Way”) is christological; redefining the term as covenant conduct subordinates or displaces that settled core without textual warrant in the printed entry itself.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

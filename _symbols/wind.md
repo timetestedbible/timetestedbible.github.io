@@ -1,19 +1,97 @@
 ---
 layout: symbol-study
 symbol_key: wind
-title: "Wind — Symbol Study"
-description: "Wind in Scripture represents God's invisible executing power — the Spirit-forces He dispatches from His throne to scatter, gather, stir nations, and raise the dead."
-strongs: [H7307, H7308, G417, G4151]
-words: [wind, winds]
+title: Wind — Symbol Study
+description: >-
+  Wind in Scripture represents God's invisible executing power — the Spirit-forces He dispatches
+  from His throne to scatter, gather, stir nations, and raise the dead.
+strongs:
+  - H7307
+  - H7308
+  - G417
+  - G4151
+words:
+  - wind
+  - winds
+record_version: 1
+record_type: symbol
+term: Wind
+definition: Spirit — ruach.
+meaning: Spirit — ruach.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-wind
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - wind
+      - winds
+senses:
+  - id: approved-core
+    status: approved
+    summary: Spirit — ruach.
+    citations:
+      - Zech 6:5
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: Spirit — ruach.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-wind
+    citations:
+      - Zech 6:5
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      To turn completely, or with repeated turns; especially, to turn about something fixed; to
+      cause to form convolutions about anything; to coil; to twine; to twist; to wreathe; as, to
+      wind thread on a spool or into a ball.
+    status: quoted
+    headword: WIND
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Wind
 
-**God's invisible executing power — Spirit-forces dispatched from the throne to carry out His purposes throughout the earth.**
+## Approved Definition
 
+**Spirit — ruach.**
 > *"The **wind** bloweth where it listeth, and thou hearest the sound thereof, but canst not tell whence it cometh, and whither it goeth: so is every one that is born of the Spirit."* — Jn 3:8
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Spirit — ruach.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **wind** begins: “To turn completely, or with repeated turns; especially, to turn about something fixed; to cause to form convolutions about anything; to coil; to twine; to twist; to wreathe; as, to wind thread on a spool or into a ball.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -131,8 +209,7 @@ The four winds carry life as readily as death. The same force that scattered Isr
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$sea** — Wind acts *upon* the sea. Daniel 7:2–3 shows four winds striving on the $sea (nations / chaotic peoples), stirring up the kingdoms that rise from it. Revelation 7:1 shows wind restrained so it does not blow on the $sea. The wind is the force; the sea is the field.
 
 - **$four-winds** — The "four winds" are the specifically numbered expression of this symbol — God's executing spirits dispatched from the throne to the four quarters of the earth. Zechariah 6:5 defines them as spirits standing before the Lord. They represent the universal scope of God's invisible agency.
@@ -191,3 +268,37 @@ KJV translates H7307 as "spirit" (~240×), "wind" (~90×), "breath" (~28×), and
 - **$grass** — "The spirit of the LORD bloweth upon it: surely the people is grass." What does it mean that the same *ruach* that raises dry bones also withers mortal flesh?
 - **$four-winds** — The numbered expression of this symbol. How do the four spirits of Zechariah 6 relate to the four angels of Revelation 7?
 - **$tree** — The nation that stands or falls when the wind blows. How does the tree's response to wind reveal the nation's covenant standing?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **wind** begins:
+
+> “Wind, v. t. [imp. & p. p. Wound (wound) (rarely Winded); p. pr. & vb. n. Winding.] Etym: [OE. winden, AS. windan; akin to OS. windan, D. & G. winden, OHG. wintan, Icel. & Sw. vinda, Dan. vinde, Goth. windan (in comp.). Cf. Wander, Wend.] 1. To turn completely, or with repeated turns; especially, to turn about something fixed; to cause to form convolutions about anything; to coil; to twine; to twist; to wreathe; as, to wind thread on a spool or into a ball. Whether to wind The woodbine round this arbor. Milton.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The entry might be read simply as the standard lexical equivalence of ruach with wind/spirit, making it a MATCH. Nevertheless, Zechariah 6:5’s plural heavenly spirits indicates a broader application than the consensus’s primary identification with the Holy Spirit.
+
+- One could argue the book's sole citation, Zech 6:5, points to the 'four spirits/winds of the heavens' — which several consensus responses classify as a distinct sense (angelic agents or cosmic directions), not the Holy Spirit — so the book might be identifying wind with created spirits rather than God's Spirit, which would push toward REFINED or even a different referent. However, the bare gloss 'Spirit — ruach' most naturally states the general lexical-symbolic equation the consensus itself treats as primary, and a single illustrative verse is thin evidence for a deliberate reclassification.
+
+- Zechariah 6:5 is treated by the consensus mainly under the secondary 'four winds' sense (directions, agents or angelic spirits) rather than as a primary proof-text for the Holy Spirit, so the book's sole printed citation may appear under-powered for the full consensus claim.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Spirit — ruach.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *wind*, *winds*. The English-form sweep found **135 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

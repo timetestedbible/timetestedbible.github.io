@@ -1,19 +1,106 @@
 ---
 layout: symbol-study
 symbol_key: fool
-title: "Fool — Symbol Study"
-description: "The fool in Scripture is not unintelligent — he is disobedient: a self-willed rebel who hears God's word and refuses to do it."
-strongs: [H5036, H3684, G3474]
-words: [fool, fools, foolish, foolishness, simple, simpleton]
+title: Fool — Symbol Study
+description: >-
+  The fool in Scripture is not unintelligent — he is disobedient: a self-willed rebel who hears
+  God's word and refuses to do it.
+strongs:
+  - H5036
+  - H3684
+  - G3474
+words:
+  - fool
+  - fools
+  - foolish
+  - foolishness
+  - simple
+  - simpleton
+record_version: 1
+record_type: symbol
+term: Fool
+definition: One who hears God's word and will not do it — the lawless, not the unintelligent.
+meaning: One who hears God's word and will not do it — the lawless, not the unintelligent.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-fool
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - wise
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - fool
+      - fools
+      - foolish
+      - foolishness
+      - simple
+      - simpleton
+senses:
+  - id: approved-core
+    status: approved
+    summary: One who hears God's word and will not do it — the lawless, not the unintelligent.
+    citations:
+      - Ps 14:1
+      - Matt 7:26
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: One who hears God's word and will not do it — the lawless, not the unintelligent.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-fool
+    citations:
+      - Ps 14:1
+      - Matt 7:26
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      A compound of gooseberries scalded and crushed, with cream; -- commonly called gooseberry
+      fool.
+    status: quoted
+    headword: FOOL
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Fool
 
-**Disobedient — the self-willed rebel who hears God's instruction and refuses to do it.**
+## Approved Definition
 
+**One who hears God's word and will not do it — the lawless, not the unintelligent.**
 > *"For we ourselves also were sometimes **foolish**, disobedient, deceived, serving divers lusts and pleasures, living in malice and envy, hateful, and hating one another."* — Titus 3:3
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**One who hears God's word and will not do it — the lawless, not the unintelligent.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **fool** begins: “A compound of gooseberries scalded and crushed, with cream; -- commonly called gooseberry fool.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -173,8 +260,7 @@ The will of the Lord is His $truth — His commandments, His standard. To walk a
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$faith** — $faith is trusting obedience (Rom 1:5, "obedience of faith"). The fool is the anti-type of $faith: he hears but will not commit, will not act, will not obey. Where $faith produces action, the fool produces only words (Prov 10:8, "a prating fool shall fall").
 
 - **$believe** — To $believe is to commit to obey (Jn 3:36, where "believeth not" = G544 *apeitheō*, to disobey). The fool is the one who refuses to $believe — not because he doubts intellectually, but because he will not commit his conduct to God's authority.
@@ -256,3 +342,37 @@ All seven terms — despite different nuances of obstinacy, contempt, heedlessne
 - **$idolatry** — The fool's theological root. Self-rule is the essence of $idolatry (1 Sam 15:23), and the fool is the self-ruler in daily practice. These two studies are two angles on the same rebellion.
 - **$oil** — What the foolish virgins lacked. How are proven works accumulated, and why can they not be borrowed? The $oil study traces the production chain from $fruit through pressing to visible $light.
 - **$truth** — What the fool refuses to obey. The $truth study traces God's commandments through Scripture and shows why "doing truth" (Jn 3:21) is the opposite of the fool's posture.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **fool** begins:
+
+> “Fool, n. Etym: [Cf. F. fouler to tread, crush. Cf. 1st Foil.] Defn: A compound of gooseberries scalded and crushed, with cream; -- commonly called gooseberry fool.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Biblical wisdom literature applies fool-language to several kinds of moral and practical failure, and not every such text specifies that the person first heard God’s word and then refused it. The book may therefore overrestrict a broader biblical category.
+
+- One could argue REFINED on the ground that the book narrows the fool to those who have actually heard God's word and refused it, thereby excluding the merely naive or the practical atheist who never received instruction, and that 'lawless' is a sharper juridical category than the consensus's broader 'practical godlessness.' If that condition is taken as strictly definitional rather than illustrative, the extension is a genuine subset of the consensus class.
+
+- One could claim the book's focus on 'hears and will not do' slightly privileges the Matt 7:26 case over pure practical atheism or Proverbs gradations, yet consensus itself unifies these under the identical moral core and cites the identical verses.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**One who hears God's word and will not do it — the lawless, not the unintelligent.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *fool*, *fools*, *foolish*, *foolishness*, *simple*, *simpleton*. The English-form sweep found **194 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

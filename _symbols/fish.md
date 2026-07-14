@@ -1,19 +1,109 @@
 ---
 layout: symbol-study
 symbol_key: fish
-title: "Fish — Symbol Study"
-description: "Fish in Scripture represent people living in the sea of nations — leaderless, vulnerable, waiting to be gathered. Fishermen are those sent to bring them in."
-strongs: [H1709, G2486]
-words: [fish, fishes, fishers, fishermen]
+title: Fish — Symbol Study
+description: >-
+  Fish in Scripture represent people living in the sea of nations — leaderless, vulnerable, waiting
+  to be gathered. Fishermen are those sent to bring them in.
+strongs:
+  - H1709
+  - G2486
+words:
+  - fish
+  - fishes
+  - fishers
+  - fishermen
+record_version: 1
+record_type: symbol
+term: Fish
+definition: >-
+  A person in the sea of nations, clean or unclean, gathered and sorted at the harvest. Fishers of
+  men draw the catch from the sea in the net.
+meaning: >-
+  A person in the sea of nations, clean or unclean, gathered and sorted at the harvest. Fishers of
+  men draw the catch from the sea in the net.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-fish
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-sea-verses.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - fish
+      - fishes
+      - fishers
+      - fishermen
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A person in the sea of nations, clean or unclean, gathered and sorted at the harvest. Fishers
+      of men draw the catch from the sea in the net.
+    citations:
+      - Hab 1:14
+      - Matt 4:19
+      - Matt 13:47-48
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A person in the sea of nations, clean or unclean, gathered and sorted at the harvest. Fishers
+      of men draw the catch from the sea in the net.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-fish
+    citations:
+      - Hab 1:14
+      - Matt 4:19
+      - Matt 13:47-48
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: A counter, used in various games.
+    status: quoted
+    headword: FISH
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Fish
 
-**People living in the $sea of nations — without covenant governance, waiting to be gathered.**
+## Approved Definition
 
+**A person in the [sea](/research/symbols/sea/) of nations, clean or unclean, gathered and sorted at the [harvest](/research/symbols/harvest/). Fishers of men draw the catch from the sea in the [net](/research/symbols/net/).**
 > *"And makest men as the **fishes** of the $[sea], as the creeping things, that have no ruler over them?"* — Hab 1:14
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A person in the [sea](/research/symbols/sea/) of nations, clean or unclean, gathered and sorted at the [harvest](/research/symbols/harvest/). Fishers of men draw the catch from the sea in the [net](/research/symbols/net/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **fish** begins: “A counter, used in various games.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -171,8 +261,7 @@ Similarly, Hosea 4:3 includes fish in a comprehensive image of national collapse
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$sea** — The fish's native element. The $sea = nations / chaotic peoples (Rev 17:15). Fish in the $sea = people living within the turbulent, uncovenanted mass of humanity. Every fishing action in Scripture — whether by God, by $babylon, or by the disciples — occurs in or from the $sea.
 
 - **$net** — The instrument of gathering that catches indiscriminately. Whether the kingdom dragnet of Mat 13:47, the imperial $net of Hab 1:15 that $babylon worships, or the restored $nets of Ezek 47:10, the $net is how fish-people are enclosed and drawn out. The $net does not select; separation happens after the catch.
@@ -248,3 +337,37 @@ KJV translates H1709/H1710 as "fish" and "fishes." H1728 and H1771 both render "
 - **$babylon** — The empire that fishes for its own glory. How does $babylon's relationship to the fish of the $sea contrast with God's commission to His fishermen?
 
 - **$bread** — Paired with fish in every feeding miracle. What does it mean that the Word and the catch from the $sea together constitute the full provision for the gathered people?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **fish** begins:
+
+> “Fish, n. Etym: [F. fiche peg, mark, fr. fisher to fix.] Defn: A counter, used in various games.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Several consensus responses treat Christ via the Ichthys emblem as the dominant broad Christian meaning, whereas the book gives only the people/converts reading. However, every response recognizes the book’s identification as primary or common, and the book does not explicitly reject the Christological emblem.
+
+- One could argue the book REFINES rather than matches, because it makes fish primarily denote all humanity in the nations (Hab 1:14) with the redeemed as a subset drawn out, whereas some consensus responses (B, D) treat fish more narrowly as converts/believers, and the book silently drops the ICHTHYS Christ meaning that two responses rank as primary. However, both elements (humanity as fish; the catch as converts) are explicitly present in the consensus responses, so this is emphasis, not a boundary change.
+
+- It could be argued that the book completely ignores the widely recognized Christological meaning (ICHTHYS), which some consensus responses list as the absolute primary symbol, though they concede it is not derived from direct biblical exegesis.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**A person in the [sea](/research/symbols/sea/) of nations, clean or unclean, gathered and sorted at the [harvest](/research/symbols/harvest/). Fishers of men draw the catch from the sea in the [net](/research/symbols/net/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *fish*, *fishes*, *fishers*, *fishermen*. The English-form sweep found **65 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

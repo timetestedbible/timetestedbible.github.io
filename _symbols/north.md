@@ -1,19 +1,129 @@
 ---
 layout: symbol-study
 symbol_key: north
-title: "North — Symbol Study"
-description: "The north in Scripture is the hidden direction — the quarter from which concealed judgment and God's throne-presence both approach, unseen until the moment of arrival."
-strongs: [H6828, H6830]
-words: [north, northern, northward, north parts, north country, north side, north wind]
+title: North — Symbol Study
+description: >-
+  The north in Scripture is the hidden direction — the quarter from which concealed judgment and
+  God's throne-presence both approach, unseen until the moment of arrival.
+strongs:
+  - H6828
+  - H6830
+words:
+  - north
+  - northern
+  - northward
+  - north parts
+  - north country
+  - north side
+  - north wind
+record_version: 1
+record_type: symbol
+term: North, the north country
+definition: >-
+  The hidden quarter and the direction from which concealed invaders emerge. The north country
+  gathers the nations that spoil Babylon; the enemy seeks his seat in its hidden recesses. It is
+  also the direction of God's mountain.
+meaning: >-
+  The hidden quarter and the direction from which concealed invaders emerge. The north country
+  gathers the nations that spoil Babylon; the enemy seeks his seat in its hidden recesses. It is
+  also the direction of God's mountain.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-north
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-directions.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - north
+      - northern
+      - northward
+      - north parts
+      - north country
+      - north side
+      - north wind
+      - the north country
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The hidden quarter and the direction from which concealed invaders emerge. The north country
+      gathers the nations that spoil Babylon; the enemy seeks his seat in its hidden recesses. It is
+      also the direction of God's mountain.
+    citations:
+      - Jer 1:14
+      - Jer 50:9, 41
+      - Jer 51:48
+      - Ps 48:2
+      - Isa 14:13
+      - Rev 17:16-18
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The hidden quarter and the direction from which concealed invaders emerge. The north country
+      gathers the nations that spoil Babylon; the enemy seeks his seat in its hidden recesses. It is
+      also the direction of God's mountain.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-north
+    citations:
+      - Jer 1:14
+      - Jer 50:9, 41
+      - Jer 51:48
+      - Ps 48:2
+      - Isa 14:13
+      - Rev 17:16-18
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      That one of the four cardinal points of the compass, at any place, which lies in the direction
+      of the true meridian, and to the left hand of a person facing the east; the direction opposite
+      to the south.
+    status: quoted
+    headword: NORTH
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # North
 
-**The hidden direction — the quarter from which what is concealed approaches, whether God's glory or God's judgment.**
+## Approved Definition
 
+**The hidden quarter and the direction from which concealed invaders emerge. The north country gathers the nations that spoil [Babylon](/research/symbols/babel/); the enemy seeks his seat in its hidden recesses. It is also the direction of God's [mountain](/research/symbols/mountain/).**
 > *"And the word of the LORD came unto me the second time, saying, What seest thou? And I said, I see a seething pot; and the face thereof is toward the **north**. Then the LORD said unto me, Out of the **north** an evil shall break forth upon all the inhabitants of the land."* — Jer 1:13–14
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The hidden quarter and the direction from which concealed invaders emerge. The north country gathers the nations that spoil [Babylon](/research/symbols/babel/); the enemy seeks his seat in its hidden recesses. It is also the direction of God's [mountain](/research/symbols/mountain/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **north** begins: “That one of the four cardinal points of the compass, at any place, which lies in the direction of the true meridian, and to the left hand of a person facing the east; the direction opposite to the south.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -171,8 +281,7 @@ This is the resolution of the "north" tension: God's judgment, issued from conce
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$lion** — The Judah-destroyer is "a lion from his thicket" (Jer 4:7); the Babylon-destroyer also comes "like a lion" (Jer 50:44) — both from the north. The $lion (kingly authority that devours) always approaches from the hidden quarter in Jeremiah's oracles. The concealment of the north is the thicket from which the lion springs.
 
 - **$snare** — The north and the $snare share the same operative principle: hiddenness. A snare works because it is not seen (Prov 1:17). Judgment from the north works because the target does not see it coming. The north *is* the direction of the snare.
@@ -254,3 +363,37 @@ KJV translates H6828 as "north," "north side," "north wind," "northward." The wo
 - **$lion** — The lion springs from the thicket toward Judah, then toward Babylon — always from the hidden quarter. What does the lion represent, and why does it emerge from concealment?
 - **$throne** — The north is throne-territory: God's seat, the adversary's aspiration. What does the throne represent, and what does it mean that God's authority is positioned in the hidden quarter?
 - **$babylon** — First the instrument stored in the north, then the target struck from the north. How does Babylon's full symbolic arc illuminate the boomerang pattern of the hidden direction?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **north** begins:
+
+> “North, n. Etym: [AS. noredh; akin to D. noord, G., Sw., & Dan. nord, Icel. noredhr. Cf. Norman, Norse.] 1. That one of the four cardinal points of the compass, at any place, which lies in the direction of the true meridian, and to the left hand of a person facing the east; the direction opposite to the south.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Jeremiah supports northern invaders and Revelation supports ten kings turning against the whore, but the printed texts do not identify those groups with one another. Nor do Psalm 48:2 and Isaiah 14:13 establish that the north is itself the enemy’s seat; they more naturally locate the divine city or assembly there, with the enemy seeking to usurp it.
+
+- One could argue the book's core is actually the Satanic-seat reading — a consensus-listed minority alternative promoted to primary — combined with an eschatological Rev 17 identification, which arguably contradicts the mainstream reading of Ps 48:2 (Zion as God's city) and replaces the historical foe-from-the-north referent; that would push toward DIVERGENT. However, the printed verses (Jer 1:14; 50:9, 41; 51:48) show the book still centering evil/invasion from the north, and the Rev 17 link, while a leap, is an added layer rather than a denial of the shared core.
+
+- Consensus (and historical-geographic grounding) treats north primarily as the route of judgment on Judah via Babylon, not definitionally 'hidden' or as the precise vehicle of Rev 17's ten kings against the whore; the satanic reading of Isa 14:13 and the Jer–Rev fusion are minority/non-standard.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The hidden quarter and the direction from which concealed invaders emerge. The north country gathers the nations that spoil [Babylon](/research/symbols/babel/); the enemy seeks his seat in its hidden recesses. It is also the direction of God's [mountain](/research/symbols/mountain/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *north*, *northern*, *northward*, *north parts*, *north country*, *north side*, *north wind*, *the north country*. The English-form sweep found **146 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

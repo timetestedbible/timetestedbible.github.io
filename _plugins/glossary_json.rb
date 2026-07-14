@@ -2,8 +2,10 @@
 # so the web book's sym: links can show a hover/tap preview popup instead of
 # forcing a jump to the glossary page (assets/js/glossary-popup.js consumes it).
 #
-# Parses books/symbolic-language/43-glossary.adoc:
+# Parses books/symbolic-language/49-glossary.adoc:
 #   [[sym-x]]Term:: definition +
+#   [.alias]__Alias: label → sym:sym-y[Term].__ +
+#   [.opposite]__Opposite: sym:sym-y[Term].__ +
 #   [.seeref]__(refs) · see link:/books/...[Title], ch. N__
 require 'json'
 
@@ -12,9 +14,10 @@ module SymbolicLanguage
     safe true
     priority :low
 
-    GLOSSARY = 'books/symbolic-language/43-glossary.adoc'
+    GLOSSARY = 'books/symbolic-language/49-glossary.adoc'
 
     def strip_inline(s)
+      s = s.gsub(/\s+verdict:[a-z-]+\[\]/, '')
       s = s.gsub(/sym:sym-[a-z0-9-]+\[([^\]]*)\]/, '\1')
       s = s.gsub(/link:[^\[\s]+\[([^\]]*)\]/, '\1')
       s = s.gsub(/__([^_]+)__/, '\1')
@@ -33,7 +36,16 @@ module SymbolicLanguage
         if (m = line.match(/^\[\[(sym-[a-z0-9-]+)\]\](.+?)::\s*(.*?)\s*\+?\s*$/))
           current = m[1]
           entries[current] = { 'term' => strip_inline(m[2]), 'def' => strip_inline(m[3]) }
-        elsif current && (m = line.match(/^\[\.seeref\]__\((.*?)\)\s*·\s*see link:(\S+?)\[([^\]]+)\],\s*ch\.\s*(\d+)__/))
+        elsif current && (m = line.match(/^\[\.alias\]__Alias:\s*(.*?)\s*→\s*sym:(sym-[a-z0-9-]+)\[([^\]]+)\]\.__(?:\s*\+)?\s*$/))
+          entries[current]['aliases'] ||= []
+          entries[current]['aliases'] << {
+            'label' => strip_inline(m[1]),
+            'id' => m[2],
+            'term' => strip_inline(m[3])
+          }
+        elsif current && (m = line.match(/^\[\.opposite\]__Opposite:\s*sym:(sym-[a-z0-9-]+)\[([^\]]+)\]\.__(?:\s*\+)?\s*$/))
+          entries[current]['opposite'] = { 'id' => m[1], 'term' => strip_inline(m[2]) }
+        elsif current && (m = line.match(/^\[\.seeref\]__\((.*?)\)\s*·\s*see link:(\S+?)\[([^\]]+)\](?:\[\.chnum\]#)?,\s*ch\.\s*(\d+)#?__/))
           entries[current]['refs'] = m[1]
           entries[current]['see'] = { 'url' => m[2], 'title' => m[3], 'ch' => m[4].to_i }
           current = nil

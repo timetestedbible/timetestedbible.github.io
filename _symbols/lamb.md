@@ -1,19 +1,115 @@
 ---
 layout: symbol-study
 symbol_key: lamb
-title: "Lamb — Symbol Study"
-description: "The lamb in Scripture represents innocent life given as substitutionary sacrifice — the pattern that begins with Abel, centers on Passover, and culminates in the slain One who stands on the throne with all authority."
-strongs: [G721, G286, H3532, H7716]
-words: [lamb, Lamb, lambkin, sheep, flock]
+title: Lamb — Symbol Study
+description: >-
+  The lamb in Scripture represents innocent life given as substitutionary sacrifice — the pattern
+  that begins with Abel, centers on Passover, and culminates in the slain One who stands on the
+  throne with all authority.
+strongs:
+  - G721
+  - G286
+  - H3532
+  - H7716
+words:
+  - lamb
+  - Lamb
+  - lambkin
+  - sheep
+  - flock
+record_version: 1
+record_type: symbol
+term: The Lamb
+definition: Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.
+meaning: Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-lamb
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - lamb
+      - lamb
+      - lambkin
+      - sheep
+      - flock
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now
+      reigning.
+    citations:
+      - Ex 12:5
+      - Isa 53:7
+      - John 1:29
+      - 1 Cor 5:7
+      - 1 Pet 1:18-19
+      - Rev 5:6-13
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now
+      reigning.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-lamb
+    citations:
+      - Ex 12:5
+      - Isa 53:7
+      - John 1:29
+      - 1 Cor 5:7
+      - 1 Pet 1:18-19
+      - Rev 5:6-13
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: "(Zoöl.) Defn: The young of the sheep."
+    status: quoted
+    headword: LAMB
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Lamb
 
-**Innocent life given as substitutionary sacrifice to cover covenant breach — and through that sacrifice, given all authority.**
+## Approved Definition
 
+**Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.**
 > *"And I beheld, and, lo, in the midst of the $[throne] and of the four beasts, and in the midst of the elders, stood a **Lamb** as it had been slain, having seven horns and seven eyes, which are the seven Spirits of God sent forth into all the earth."* — Rev 5:6
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **lamb** begins: “(Zoöl.) Defn: The young of the sheep.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -185,8 +281,7 @@ The river of life flows "out of the $throne of God and of the Lamb" (Rev 22:1) �
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$blood** — The life of the flesh made visible. When the lamb's $blood is offered, it atones (Lev 17:11); when displayed, it marks what belongs to God (Exod 12:13); when applied, it purifies (Rev 7:14 — robes washed white in $blood). The lamb and its $blood are inseparable: the sacrifice is the offering, and the $blood is the evidence that the offering was made.
 
 - **$throne** — The legitimate seat of governing authority. The Lamb stands *in the midst of* the $throne (Rev 5:6), shares the $throne with the Father (Rev 22:1, 3), and receives seven-fold ascription *because* He was slain (Rev 5:12). Who sits on the $throne defines the age — and at the consummation, it is the Lamb.
@@ -261,3 +356,29 @@ KJV translates H7716 as "sheep," "lamb," and "cattle" depending on context. H353
 - **$firstborn** — The covenant heir. The Passover lamb dies so the $firstborn lives — but Christ is both Lamb and $firstborn simultaneously. How does the $firstborn pattern of bypassed natural order (Isaac over Ishmael, Jacob over Esau) illuminate the Lamb's claim to the $throne?
 - **$marriage** — The covenant picture. The story ends at the $marriage supper of the Lamb. How does the $marriage study unpack the implications of the bride "making herself ready" (Rev 19:7)?
 - **$fire** — God's holy standard in active contact. Isaac saw the $fire and asked where the lamb was. How does the $fire study illuminate why sacrifice and $fire are inseparable in every covenant context?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **lamb** begins:
+
+> “Lamb, n. Etym: [AS. lamb; akin to D. & Dan. lam, G. & Sw. lamm, OS., Goth., & Icel. lamb.] 1. (Zoöl.) Defn: The young of the sheep.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+
+## Conclusion
+
+**Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *lamb*, *lamb*, *lambkin*, *sheep*, *flock*. The English-form sweep found **491 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

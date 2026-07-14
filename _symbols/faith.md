@@ -1,19 +1,108 @@
 ---
 layout: symbol-study
 symbol_key: faith
-title: "Faith — Symbol Study"
-description: "Faith in Scripture is not mental assent but trusting obedience — the active response to God's word that walks, acts, and enters the covenant."
-strongs: [H530, G4102]
-words: [faith]
+title: Faith — Symbol Study
+description: >-
+  Faith in Scripture is not mental assent but trusting obedience — the active response to God's word
+  that walks, acts, and enters the covenant.
+strongs:
+  - H530
+  - G4102
+words:
+  - faith
+record_version: 1
+record_type: word
+term: Faith
+definition: >-
+  Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through
+  obedience.
+meaning: >-
+  Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through
+  obedience.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-faith
+  verdict: word
+classification: word
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-faith.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - faith
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      Trusting faithfulness — reliance on God's unseen promise held steady and brought to life
+      through obedience.
+    citations:
+      - Hab 2:4
+      - Heb 11:1, 8
+      - Jas 2:17, 22
+      - Rom 4:4-5
+      - Eph 2:8-10
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: No independent symbolic sense is asserted by this glossary entry.
+    status: not-applicable
+    citations: []
+  bible_literal:
+    text: >-
+      Trusting faithfulness — reliance on God's unseen promise held steady and brought to life
+      through obedience.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-faith
+    citations:
+      - Hab 2:4
+      - Heb 11:1, 8
+      - Jas 2:17, 22
+      - Rom 4:4-5
+      - Eph 2:8-10
+  webster:
+    text: >-
+      Belief; the assent of the mind to the truth of what is declared by another, resting solely and
+      implicitly on his authority and veracity; reliance on testimony.
+    status: quoted
+    headword: FAITH
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Faith
 
-**Trusting obedience — the active response to God's $truth that acts on what He has spoken.**
+## Approved Definition
 
+**Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through obedience.**
 > *"Even so **faith**, if it hath not works, is dead, being alone."* — Jas 2:17
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+*No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
+
+### Bible literal sense
+
+**Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through obedience.**
+
+### Webster's English sense
+
+Webster's 1913 entry for **faith** begins: “Belief; the assent of the mind to the truth of what is declared by another, resting solely and implicitly on his authority and veracity; reliance on testimony.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -159,8 +248,7 @@ When any link is missing, the chain breaks. Remove faith — hearing without obe
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$truth** — $truth is God's commandment, His standard (Ps 119:142, Jn 17:17). Faith is the *response* to that standard — hearing God's commandment and obeying it. You cannot have faith without $truth to act upon. "He that doeth truth cometh to the light" (Jn 3:21) — doing $truth is what faith looks like in practice.
 
 - **$bread** — $bread is the Word of God, the covenant terms that sustain life (Deut 8:3, Jn 6:35). Faith is what happens when a person receives that $bread and *lives by it*. Israel received manna (the Torah-test bread, Exod 16:4) and was expected to respond with obedience — "whether they will walk in my law, or no." Receiving the $bread without walking in it is unbelief.
@@ -218,3 +306,39 @@ Eph 2:8
 - **$bread** — The Word that faith receives. How does the manna-test in Exodus 16 establish the pattern of God speaking and people obeying — or refusing?
 - **$light** — The visible result of faith. How does obedience become example, and why does Jesus connect the command to "let your light shine" directly to the law and the prophets?
 - **$fruit** — The works that faith produces. How does Scripture distinguish living fruit from dead works, and what determines whether a tree bears or is barren?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **faith** begins:
+
+> “Faith, n. Etym: [OE. feith, fayth, fay, OF. feid, feit, fei, F. foi, fr. L. fides; akin to fidere to trust, Gr. th is perhaps due to the influence of such words as truth, health, wealth. See Bid, Bide, and cf. Confide, Defy, Fealty.] 1. Belief; the assent of the mind to the truth of what is declared by another, resting solely and implicitly on his authority and veracity; reliance on testimony.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+A common reading is: **confident trust in God and His promises — the sole instrument of justification.**
+
+- The formulation may blur the distinction between faith itself and the works that evidence or complete it, whereas many mainstream Protestant accounts define justifying faith as trust alone and treat obedience strictly as its necessary fruit. The entry partly answers this by explicitly denying that works purchase the promise.
+
+- One could argue the book edges toward DIVERGENT because the common-view note singles out 'the sole instrument of justification' and the entry then elevates obedience and works into the very definition of faith — a move that Reformation-minded readers might see as blurring the faith/works distinction rather than merely refining it, especially since the book makes 'faithfulness held through obedience' definitional rather than consequential.
+
+- Fusing ‘trust’ and ‘faithfulness’ plus foregrounding works-maturation could be read as blurring the sharp Protestant ‘faith alone’ emphasis that the consensus treats as primary, even though the book explicitly denies purchase.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through obedience.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *faith*. The English-form sweep found **231 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

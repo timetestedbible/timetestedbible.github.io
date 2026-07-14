@@ -1,19 +1,122 @@
 ---
 layout: symbol-study
 symbol_key: lion
-title: "Lion — Symbol Study"
-description: "The lion in Scripture represents sovereign dominion — the raw power to rule, devour, or protect — wielded by Christ, by Satan, and by empires alike. The symbol encodes authority exercised."
-strongs: [H738, H3833, H3715, H744, G3023]
-words: [lion, lions, "lion's whelp", young lion, old lion, lioness]
+title: Lion — Symbol Study
+description: >-
+  The lion in Scripture represents sovereign dominion — the raw power to rule, devour, or protect —
+  wielded by Christ, by Satan, and by empires alike. The symbol encodes authority exercised.
+strongs:
+  - H738
+  - H3833
+  - H3715
+  - H744
+  - G3023
+words:
+  - lion
+  - lions
+  - lion's whelp
+  - young lion
+  - old lion
+  - lioness
+record_version: 1
+record_type: symbol
+term: Lion
+definition: >-
+  A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory
+  figure; its rightful holder is the Lion of Judah.
+meaning: >-
+  A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory
+  figure; its rightful holder is the Lion of Judah.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-lion
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-lion.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - lion
+      - lions
+      - lions whelp
+      - young lion
+      - old lion
+      - lioness
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory
+      figure; its rightful holder is the Lion of Judah.
+    citations:
+      - Prov 28:15
+      - Zeph 3:3
+      - Jer 50:17
+      - Ezek 19
+      - Rev 5:5
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory
+      figure; its rightful holder is the Lion of Judah.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-lion
+    citations:
+      - Prov 28:15
+      - Zeph 3:3
+      - Jer 50:17
+      - Ezek 19
+      - Rev 5:5
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      (Zoöl.) Defn: A large carnivorous feline mammal (Felis leo), found in Southern Asia and in
+      most parts of Africa, distinct varieties occurring in the different countries.
+    status: quoted
+    headword: LION
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Lion
 
-**Sovereign dominion — the raw power to rule, devour, or protect. The symbol encodes authority exercised, whether righteous or predatory.**
+## Approved Definition
 
+**A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory figure; its rightful holder is the Lion of Judah.**
 > *"And one of the elders saith unto me, Weep not: behold, the **Lion** of the tribe of $[judah], the Root of David, hath prevailed to open the book, and to loose the seven seals thereof. And I beheld, and, lo, in the midst of the $[throne] and of the four beasts… stood a **$[lamb]** as it had been slain"* — Rev 5:5–6
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory figure; its rightful holder is the Lion of Judah.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **lion** begins: “(Zoöl.) Defn: A large carnivorous feline mammal (Felis leo), found in Southern Asia and in most parts of Africa, distinct varieties occurring in the different countries.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -173,8 +276,7 @@ This foreshadows the lion-$lamb paradox of Revelation. The Lion's power, express
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$lamb** — The lion's defining opposite and paradoxical identity. Rev 5:5–6 is the hinge: the Lion of Judah *is* the slaughtered $lamb. True sovereign dominion is exercised through covenant sacrifice, not through devouring. The lamb does not replace the lion; it reveals what the lion's authority was always meant to look like.
 
 - **$bear** — The lion's consistent companion in predatory pairs. Wherever the lion represents the first wave of devouring authority (roaring, visible, kingly), the $bear follows as the second (crushing, relentless, overwhelming). Together they map the full threat of predatory rule — from David's proving ground to Daniel's empires to the final composite $beast.
@@ -283,3 +385,37 @@ KJV translates these variously as "lion," "young lion," "old lion," "great lion,
 - **$beast** — What happens when lion-dominion serves the $dragon. How do Daniel's four separate beasts compress into Revelation's composite empire?
 - **$throne** — The lion guards it, represents it, inherits it. What does the $throne symbolize, and why are lions inseparable from it?
 - **$judah** — The lion's tribe from Gen 49:9 to Rev 5:5. What does $judah represent, and how does the lion-promise shape the tribe's identity across Scripture?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **lion** begins:
+
+> “Li”on, n. Etym: [F. lion, L. leo, -onis, akin to Gr. Chameleon, Dandelion, Leopard.] 1. (Zoöl.) Defn: A large carnivorous feline mammal (Felis leo), found in Southern Asia and in most parts of Africa, distinct varieties occurring in the different countries. The adult male, in most varieties, has a thick mane of long shaggy hair that adds to his apparent size, which is less than that of the largest tigers. The length, however, is sometimes eleven feet to the base of the tail. The color is a tawny yellow or yellowish brown; the mane is darker, and the terminal tuft of the tail is black. In one variety, called the maneless lion, the male has only a slight mane.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory figure; its rightful holder is the Lion of Judah.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *lion*, *lions*, *lions whelp*, *young lion*, *old lion*, *lioness*. The English-form sweep found **119 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- Because the consensus makes Christ the paradigmatic primary referent while the book makes devouring rulers and empires primary, one could classify the entries as divergent at the level of central identification. Against that, the consensus expressly recognizes the book’s referents as common lion applications, and the book expressly retains Christ, making boundary reclassification the better fit. The printed texts strongly support wicked rulers, princes, Assyria, Babylon, and Christ as lion figures, but they do not by themselves establish the claim that the lion is tamed in Christ’s kingdom.
+
+- One could argue DIVERGENT: the book replaces the consensus's central referent (Christ) with a different primary referent (the beast-kingdom/wicked ruler), and 'the figure's rightful holder' framing subordinates rather than affirms the Christological reading; if primary identification is the core, the cores differ. Additionally, the closing claim that 'in His kingdom the lion is tamed' has no printed citation (Isa 11:6-7 is absent), weakening the entry's self-supported completeness.
+
+- The consensus emphasizes 1 Peter 5:8 (Satan as a prowling, roaring lion) as a major, equally prominent negative usage in Christian teaching. The book's entry does not explicitly include this, unless Satan is implicitly subsumed under the 'beast-kingdom' ruler concept.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

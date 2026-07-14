@@ -1,0 +1,143 @@
+{
+  "provider": "xai",
+  "stage": "adjudication",
+  "request_stage": "vowel_points_adjudication",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Compare your frozen prior commitment with the supplied chapter, revising it only where the chapter's evidence warrants revision.",
+    "input": "You previously made the following blinded commitment about the textual\nauthority of the Masoretic vowel points. Treat it as your own frozen answer.\n\nFROZEN PRIOR COMMITMENT\n\n{\n  \"vowel_points_original_to_written_text\": \"NO\",\n  \"vowel_points_authority\": \"REBUTTABLE_PRESUMPTION\",\n  \"cantillation_authority\": \"REBUTTABLE_PRESUMPTION\",\n  \"alternate_vocalization_admissible\": \"CONDITIONAL\",\n  \"received_pointing_alone_can_veto\": \"NO\",\n  \"burden_of_proof\": \"The proponent of any departure from the received Masoretic pointing bears the burden of proof.\",\n  \"required_support\": [\n    \"Strict grammatical and lexical compatibility with the unpointed consonantal text and standard Hebrew/Aramaic morphology\",\n    \"Positive corroboration from at least one independent ancient witness (pre-Masoretic manuscript, parallel biblical passage, or early translation)\",\n    \"Demonstration that the alternate reading yields coherent syntax and sense in context without special pleading\",\n    \"Absence of decisive contrary evidence from the broader manuscript tradition\"\n  ],\n  \"ketiv_qere_rule\": \"Where Ketiv and Qere diverge, the written consonants (Ketiv) remain primary data; the Qere supplies the traditional vocalization and may be followed, but neither automatically excludes a third, well-supported vocalization of the same consonants.\",\n  \"ancient_witness_rule\": \"Readings reflected in the Dead Sea Scrolls, Samaritan Pentateuch, Septuagint, Targums, Peshitta, or Vulgate that presuppose a different vocalization of the identical consonants constitute admissible external evidence and may rebut the Masoretic pointing.\",\n  \"historical_findings\": [\n    \"The original Hebrew and Aramaic biblical texts were composed and transmitted for centuries as purely consonantal writings, occasionally employing matres lectionis but lacking systematic vowel signs or cantillation marks.\",\n    \"The Tiberian vowel points and accent system were developed and standardized by the Masoretes of Tiberias between approximately the sixth and tenth centuries CE.\",\n    \"Pre-Masoretic manuscripts (notably the Dead Sea Scrolls) and early translations routinely attest unpointed text and, in many places, presuppose vocalizations different from the later Masoretic tradition.\",\n    \"The Masoretic apparatus itself preserves alternative readings (Ketiv/Qere, Sebirin, etc.), demonstrating that the received pointing was never regarded as the sole possible realization of the consonants.\"\n  ],\n  \"theological_assumptions\": [],\n  \"rationale\": \"Manuscript history and the internal structure of the Masoretic Text establish that vowel points and cantillation marks are secondary interpretive layers added long after the consonantal text was fixed. Consequently they carry strong traditional weight as a rebuttable presumption of the intended reading, yet they do not form part of the original written text and cannot by themselves veto a grammatically and lexically valid alternate vocalization that is independently supported by ancient witnesses or parallel passages. The burden therefore rests on the party proposing the alternate to supply positive external or contextual evidence; absent such evidence the received pointing remains the default. Ketiv/Qere pairs and the testimony of pre-Masoretic sources function as built-in controls that already acknowledge the possibility of multiple realizations of the same consonants.\",\n  \"confidence\": \"HIGH\"\n}\n\nYou will now receive the complete chapter \"What Is the Point?\" from the book\nunder review. Judge the chapter's foundational case on its evidence, not on\nwhether its conclusion is traditional or comfortable.\n\nFULL CHAPTER\n\nWalk into any synagogue on earth and ask to see the scroll.\nThe Torah read aloud this Sabbath, like the Torah read in Jesus’ day, carries no vowels — bare consonants, letter after letter, exactly as the scribes have copied them for thousands of years.\nThe reader supplies the vowels.\n\nEvery vowel you have ever seen printed in a Hebrew Bible was added later — the pointing system was fixed by the Masoretes of Tiberias, careful men working roughly from the seventh to the tenth century after Christ, a thousand years and more after the last prophet set down his last letter.\nWhat the prophets wrote, what the scribes counted and guarded jot by jot, was letters.\nWhat the Masoretes added was a reading — one choice of vowels for each word — written down and handed on as tradition.\n\nThe distinction is not a technicality; it is Jesus’ own.\n\nFor verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.\n\nThe jot is the yod, the smallest letter of the alphabet; the tittle is smaller still — the little horn of a stroke that separates one letter from its look-alike.\n\n.The jot and the tittle — the smallest letter, and the stroke that separates look-alikes\n\nThe pledge of preservation is sworn to the letters, down to their smallest parts.\nIt says nothing of vowel points, because when He said it there were none to swear by.\n\nThe oldest witnesses we hold read exactly the way the promise runs.\nThe scrolls from the caves at Qumran, copied before the apostles preached, carry the bare consonants.\nThe Greek translation of the Old Testament — the Septuagint, made two to three centuries before Christ — is something even more useful: a written record of how the letters were read a thousand years before the Masoretes pointed them.\nWhere the later pointing and that older Greek diverge, two readings of the same letters stand side by side, and the Greek is the elder witness.\n\nThe apostles have already told us which court they sat in.\nThe Introduction of this book stood on the fortieth Psalm — “I delight to do thy will” — so read two verses up, in the psalm as the pointed Hebrew gives it:\n\nSacrifice and offering thou didst not desire; mine ears hast thou opened: burnt offering and sin offering hast thou not required.\n\nNow hear the writer of Hebrews quote that same verse — and mark whose mouth he puts it in:\n\nWherefore when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me.\n\n“A body hast thou prepared me” is the old Greek reading of the psalm, and it is not what the pointed Hebrew says.\nThe apostle sets it in the Messiah's own mouth “when he cometh into the world,” and two verses later the psalm arrives at the line this book began with: “Lo, I come… to do thy will, O God” (Hebrews 10:7).\nThe New Testament's canon of the Old includes readings the later pointing does not carry.\nThat is not a problem to be explained away; it is a permission — the apostolic practice treats the pre-Masoretic reading as the word of God.\n\nThe Introduction already showed what hangs on this.\nThe same three letters — חלב — are chalav, milk, or cheleb, fat, divided only by the points — and here is exactly what that means, blown up large enough to see:\n\n.The letters the prophets wrote — and the marks the Masoretes added\n\nThe letters are the text; the bars and dots beneath them are the tradition — marks the prophets never wrote, and the choice between them decides which food the verse names.\nEzekiel 34:3 convicts the shepherds either way — eating the fat in the pointed text, drinking the milk in the older Greek.\nOne word, two pointings, and a doctrine in each.\n\nThe points must be weighed for what they are.\nThe Masoretes were the most careful custodians a text has ever had — they counted the letters of every book, marked the middle letter of the Torah, and built a fence of numbers around the text precisely so that nothing could be added or lost.\nHonor them for it.\n\nYet custodians are not judges, and these custodians were not neutral.\nThe vowels they fixed are the synagogue's vowels, handed down through the very generations that had answered the Messiah question with a ban — and Scripture documents the enforcement itself:\n\nThe Jews had agreed already, that if any man did confess that he was Christ, he should be put out of the synagogue.\n\nIt worked, and on the men best placed to know better:\n\nNevertheless among the chief rulers also many believed on him; but because of the Pharisees they did not confess him, lest they should be put out of the synagogue: for they loved the praise of men more than the praise of God.\n\nA reading that confessed too much could cost a man his place, his trade, and his family's standing; the reading that survived a thousand years of that pressure is the reading of those who stayed.\n\nThe bias is not a hypothesis — it can be watched working.\nThe psalm this chapter just opened is one example: the synagogue's pointing keeps the ears; the apostles’ Greek gives the Messiah His body.\nPsalm 22 is another — the psalm that opens with the cry from the cross.\n\nFor dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet.\n\n“Pierced” is how the old Greek read the word — a verb, they dug through — and it is how a Hebrew scroll found in the Judean desert, copied before the Masoretes were born, spells it: ka'aru, ending in a vav.\nThe synagogue's text ends the same word with a yod instead: ka'ari — “like a lion, my hands and my feet” — a sentence with no verb left in it.\nThe entire difference between the piercing and the lion is the length of a single stroke: a yod drawn out is a vav, the very jot the promise names.\n\nThe pierced reading does not rest on manuscripts alone; the canon itself testifies.\nZechariah writes the piercing — “they shall look upon me whom they have pierced” (Zechariah 12:10) — and Isaiah's Servant was “wounded for our transgressions” (Isaiah 53:5), where the word under “wounded” is chalal: properly, to bore through.\nAt the mouth of two witnesses the matter is established — the desert scroll and the old Greek keep the verb; Zechariah and Isaiah keep the event.\nAnd the reading that takes the crucifixion out of the psalm is the one the tradition kept.\n\nThe case is not a point at all, but a letter — a letter the promise itself guards.\nIf the tradition was bold enough to settle even a letter against the elder witnesses, how much more easily a point?\nThe points touch no letter; they pass the jot-and-tittle pledge untried and slip through the fence of numbers with every scribal count intact — the one place a man could make his own point instead of God's, and leave the text looking untouched.\n\nA command stands over exactly this.\n\nYe shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of the LORD your God which I command you.\n\nKept as commentary, the points add nothing — they stand beside the word, a reading of men, weighed like any reading.\nBut elevated to Scripture itself — bound into the text and taught as though God had inspired them — they become an addition to the word in the plainest sense: a mark of man on every syllable of God's, “Add thou not unto his words, lest he reprove thee, and thou be found a liar” (Proverbs 30:6).\n\nThe command exists “that ye may keep the commandments” — the fence against adding exists for the sake of obedience, the same stake this chapter set at its start.\nAnd His calendar sat under the same fence: the same community that fixed the vowels had long since traded the moon that is watched for a moon that is calculated — the appointed times this book reaches in the next part were guarded by the same social pressure.\n\nThis is no charge that the letters were lost; guarded by their numbers and answered by the scrolls from the desert, they held — held so well that the rare disputed letter stands exposed for weighing.\nIt is the vowel points that are on trial.\nWhat the pointing added, by its own accounting, was a tradition of reading — and tradition is a category Scripture has already taught this book how to handle.\n\nThe Gentiles shall come unto thee from the ends of the earth, and shall say, Surely our fathers have inherited lies, vanity, and things wherein there is no profit.\n\nPeter says the redeemed were bought out “from your vain conversation received by tradition from your fathers” (1 Peter 1:18); Jesus charges the scribes with “making the word of God of none effect through your tradition” (Mark 7:13).\nNone of that abolishes the scribes’ text — it ranks it.\nThe letters are the text; the pointing is the fathers’ reading of it — often right, worth hearing, and never the judge.\n\nThe ranking gives this book its rule, and it cuts both ways.\nA reading the letters permit may stand even against the pointing — but it earns its place the way every reading in this book earns it: every occurrence gathered, witnesses required, counter-texts weighed.\nThe pointing gets a vote; it does not get a veto — and neither does the re-reading, until the letters and the witnesses agree.\n\nThe stakes are the same stakes this book has carried from its first chapter: obedience.\n“Ye eat neither fat nor blood” is a standing command (Leviticus 3:17), spelled in milk's own letters — and the pointing a man trusts decides what obedience sets on his table.\nA man who intends to keep the commandments exactly will want them exactly as they were written.\nDig past the points to the letters; that is where the best meat is cut.\n\nThere is one more thing the letters do — something no pointing can record and no translation can carry.\nThey rhyme in meaning.\nThe next chapter opens that second dimension: one verse, written once, that reads two ways and is true in both.\n\nDetermine whether the chapter confirms, refines, revises, or overturns your\nprior commitment. In particular, assess its rule that the consonantal letters\nare the written text while the pointing is an important reading tradition that\ngets evidentiary weight but not automatic veto authority. Separate the\nchapter's core textual rule from any historical polemic or downstream\napplication that is not necessary to that rule.\n\nDo not discuss or anticipate any later disputed symbol. Return a final,\nprovider-specific commitment that can be frozen as a methodological premise\nfor subsequent experiments.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_vowel_points_adjudication",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "chapter_assessment": {
+              "type": "string",
+              "enum": [
+                "PERSUADED",
+                "PARTLY_PERSUADED",
+                "UNPERSUADED"
+              ]
+            },
+            "commitment_change": {
+              "type": "string",
+              "enum": [
+                "CONFIRMED",
+                "REFINED",
+                "REVISED",
+                "REVERSED"
+              ]
+            },
+            "vowel_points_original_to_written_text": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO",
+                "UNCERTAIN"
+              ]
+            },
+            "vowel_points_authority": {
+              "type": "string",
+              "enum": [
+                "BINDING",
+                "REBUTTABLE_PRESUMPTION",
+                "EVIDENCE_ONLY",
+                "NONE"
+              ]
+            },
+            "cantillation_authority": {
+              "type": "string",
+              "enum": [
+                "BINDING",
+                "REBUTTABLE_PRESUMPTION",
+                "EVIDENCE_ONLY",
+                "NONE"
+              ]
+            },
+            "alternate_vocalization_admissible": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO",
+                "CONDITIONAL"
+              ]
+            },
+            "received_pointing_alone_can_veto": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO",
+                "CONDITIONAL"
+              ]
+            },
+            "burden_of_proof": {
+              "type": "string"
+            },
+            "required_support": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "core_rule": {
+              "type": "string"
+            },
+            "strongest_chapter_evidence": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unresolved_objections": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            }
+          },
+          "required": [
+            "chapter_assessment",
+            "commitment_change",
+            "vowel_points_original_to_written_text",
+            "vowel_points_authority",
+            "cantillation_authority",
+            "alternate_vocalization_admissible",
+            "received_pointing_alone_can_veto",
+            "burden_of_proof",
+            "required_support",
+            "core_rule",
+            "strongest_chapter_evidence",
+            "unresolved_objections",
+            "rationale",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "4c48e7473c165050fae171f97b681f69c89fc20e0d35459838b7877ccfa86661"
+}

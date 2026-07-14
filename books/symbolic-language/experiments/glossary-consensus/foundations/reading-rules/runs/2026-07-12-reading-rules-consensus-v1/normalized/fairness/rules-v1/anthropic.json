@@ -1,0 +1,97 @@
+{
+  "verdict": "UNFAIR",
+  "agree_to_use_as_baseline": "NO",
+  "symmetry": "FAIL",
+  "neutrality": "FAIL",
+  "reproducibility": "PASS",
+  "strengths": [
+    "Explicit outcome set including UNDERDETERMINED and INADMISSIBLE, with an express statement that the method must not force a winner (Rule 1).",
+    "Candidate freezing with full parsing and pre-stated falsifiers before comparison (Rule 2), preventing moving targets.",
+    "A genuinely symmetric admission gate (Rule 3) that separates admissibility from probability and blocks self-validating lexicon glosses.",
+    "Correct separation of the consonantal datum from the Masoretic pointing, with the pointing counted as one reading-tradition lineage rather than many dependent echoes (Rules 4 and 7).",
+    "Fixed evidence order (Rule 5) with an explicit bar on lower classes overturning clear higher-class evidence without an independently supported mechanism.",
+    "Lineage counting and dependence collapsing (Rule 7), preventing copy-count inflation.",
+    "Objective-fact ledger separating observation, cited linguistic fact, inference, theological premise, and assumption (Rule 8).",
+    "Fallacy audit that blocks tradition, authority, popularity, circular lexicon use, burden shifting, and converting criticism of one reading into proof of the rival (Rule 9).",
+    "General source-risk rule requiring the tendency to be established independently of the disputed reading, applied to every source and both candidates, and never converting a discount into positive evidence for the rival (Rule 10).",
+    "Reproducibility and reversal audit including the A/B label-swap test, reversal conditions, and assumption-removal robustness (Rule 13).",
+    "Prohibition on adding rules, weights, or scrutiny categories after the target reading is known, with a forced UNDERDETERMINED when a rule is missing (Rule 13)."
+  ],
+  "ambiguities": [
+    {
+      "location": "Rule 5, class 1 ('direct disambiguating textual evidence')",
+      "problem": "Undefined and overlapping with class 5 (independent early manuscript evidence); since Rule 12(1) makes this class outcome-controlling, evaluators could classify the same datum differently and reach different verdicts.",
+      "minimum_clarification": "Define class 1 as: consonantal orthography of the disputed word itself (matres lectionis, word dividers, spacing) in early independent witnesses of this passage that is compatible with only one candidate; everything else falls in classes 2-8."
+    },
+    {
+      "location": "Rule 3, gate item 4 ('attested or defensible grammatical construction')",
+      "problem": "'Defensible' is undefined and could admit constructions merely asserted to be possible, weakening the gate asymmetrically in practice.",
+      "minimum_clarification": "Replace 'defensible' with 'supported by at least one cited independent parallel construction in the matching language stratum, period, and genre.'"
+    },
+    {
+      "location": "Rule 12 ('direct controlling evidence'; 'clear advantage')",
+      "problem": "Neither term is defined; the decision threshold therefore admits evaluator discretion at the decisive step.",
+      "minimum_clarification": "Define 'direct controlling evidence' as class-1 evidence under the clarified Rule 5, and require each class verdict to be recorded on a fixed scale (strongly favors / favors / neutral) with 'clear advantage' meaning at least 'favors' with no contrary 'favors' in the same class."
+    },
+    {
+      "location": "Rule 6 ('every material datum')",
+      "problem": "'Material' is undefined, allowing selective inclusion of data after the candidates are known.",
+      "minimum_clarification": "Require the materiality criterion (which data enter the ledger) to be stated before any datum is scored, and require listing of excluded data with the reason for exclusion."
+    },
+    {
+      "location": "Rule 4 / Rule 5 class 7",
+      "problem": "No provision for internally divided reading traditions (Ketiv/Qere, pointing or accent disagreement among Masoretic witnesses); it is unclear whether such pairs are one witness, two, or a lapsed default.",
+      "minimum_clarification": "Add: where the received tradition is internally divided, each attested variant enters the gate as a separate candidate reading and the citation default is suspended for that locus."
+    },
+    {
+      "location": "Rule 11.2 ('established calendar commitment')",
+      "problem": "'Established' is not tied to Rule 10's requirement of documentation from undisputed comparanda, and it is not stated that the trigger applies to every tradition with any calendar commitment on either side of the question.",
+      "minimum_clarification": "Add: the commitment must be documented from the tradition's conduct in undisputed passages, and the trigger applies identically to every reading tradition with a calendar commitment, whichever candidate its reading supports."
+    },
+    {
+      "location": "Rule 11.3 ('expressly sealed passages')",
+      "problem": "Who determines that words are 'expressly sealed,' and by what evidence, is unstated; if the sealed status is derived from the disputed passage or the candidate reading itself, the trigger is circular and unreviewable.",
+      "minimum_clarification": "Require the sealed characterization to be established from text independent of the disputed reading and locus, and note that Rule 9's general restriction on arguments from silence already applies symmetrically to both candidates."
+    }
+  ],
+  "unfair_rules": [
+    {
+      "rule_id": "Rule 11.1 (Messianic testimony)",
+      "problem": "The trigger is directional: it heightens scrutiny only for a reading tradition that 'rejects Jesus,' with no reciprocal trigger for reading traditions, versions, lexicons, or scholarship that affirm the same claim and have an equal demonstrated stake. As written it discounts one side's principal witness class on precisely the passages most likely to be disputed, while leaving equally interested opposing witnesses at full weight. It also contradicts Rule 10, which forbids religious label alone from triggering an adjustment and requires the tendency to be demonstrated independently for the precise class of readings; Rule 11.1's trigger is the religious position itself, not documented conduct.",
+      "minimum_revision": "Rewrite symmetrically and generically: 'When any reading tradition or witness has a demonstrated doctrinal stake, established under Rule 10 from its documented conduct in undisputed passages, in whether the text testifies concerning a disputed claim, its reading on that question requires independent corroboration. The same test applies to traditions and witnesses on both sides of the claim.' Remove the named theological referent."
+    },
+    {
+      "rule_id": "Rule 11.3 (Expressly sealed passages)",
+      "problem": "It removes an argument type (absence of earlier recognition) only in favor of the later, non-traditional candidate, and the trigger depends on an interpretive judgment ('Scripture expressly says... sealed') that is not required to be established independently of the dispute. Combined with 11.1, the net effect of Rule 11 as written is one-directional: every trigger weakens the traditional reading's support or shields the challenger, and none runs the other way.",
+      "minimum_revision": "Either delete 11.3 as redundant with Rule 9's symmetric argument-from-silence restriction, or rewrite: 'Arguments from expected historical attestation are governed solely by Rule 9 for both candidates; any claim that attestation should not be expected must be established from evidence independent of the disputed reading and locus.'"
+    },
+    {
+      "rule_id": "Rule 11 (as a category)",
+      "problem": "A general linguistic comparison method should not contain subject-matter-specific triggers naming particular theological content; even pre-declared, content-named triggers select which class of passages one side's witnesses are discounted on, which is a passage-class-specific rule of exactly the kind Rule 10 and Rule 13 otherwise prohibit.",
+      "minimum_revision": "Replace Rule 11 entirely with the sentence: 'All heightened-scrutiny adjustments operate exclusively through Rule 10; no content-specific trigger categories exist.' If pre-declared classes are retained, each must be stated in content-neutral form (demonstrated doctrinal, calendrical, or institutional stake) and shown to apply bidirectionally."
+    }
+  ],
+  "missing_rules": [
+    "A control-case calibration requirement: apply the full procedure to an undisputed homograph in the same book and reach the known answer before the target verdict is issued (failure is reported, not repaired ad hoc).",
+    "An anachronism disqualifier: a candidate depending on a form, sense, or orthographic convention demonstrably later than the composition-and-transmission window is inadmissible, not merely weak.",
+    "Genre and stratum adjustments fixed in advance (poetry parallelism weighting, discounted distributional arguments for proper names and hapax-heavy poetry, matching-stratum comparanda for late or Aramaic sections).",
+    "Explicit Ketiv/Qere and divided-tradition handling (see ambiguity above).",
+    "A fixed recording scale for per-class verdicts and a requirement to state the numeric count of independent lineages supporting each candidate in the final report.",
+    "A statement of whether re-division candidates must also satisfy word-divider/spacing evidence in the earliest witnesses where such evidence exists."
+  ],
+  "comparison_to_own_proposal": "The two proposals converge on most of the architecture: consonantal text as the controlling datum; a symmetric admissibility gate with circularity checks on lexicon glosses; frozen candidates with full parsing; a fixed evidence order; lineage-counting with dependence collapsing; translation-technique-controlled retroversion; a mechanism-for-the-rival criterion; an explicit UNDERDETERMINED outcome with the received pointing as a labeled citation default only; exclusion of authority, popularity, and theological attractiveness; and a reversal/robustness audit (Rule 13's label-swap test is a genuine improvement over my S3). The two substantive divergences are: (1) burden of proof — my proposal gives the received pointing a rebuttable presumption with an asymmetric challenger burden; rules-v1 gives it no presumption and equal burdens. Rules-v1's choice is the more symmetric of the two and I can accept it as a fair alternative, provided the pointing genuinely retains its Rule 5 class-7 evidential weight as a very early tradition rather than being silently zeroed. (2) Rule 11 — my source-bias rule is fully general and content-neutral, requiring tendencies to be demonstrated from undisputed comparanda identically for all witnesses; rules-v1's Rule 10 matches mine, but Rule 11.1 and 11.3 then carve content-specific, one-directional exceptions that my proposal deliberately excludes ('without creating passage-specific ad hoc rules'). Rules-v1 also lacks my calibration control (S5), special-context genre rules, and anachronism disqualifier (D4).",
+  "exact_revision_suggestions": [
+    "Replace Rule 11.1 with: 'When any reading tradition or witness has a demonstrated doctrinal stake — established under Rule 10 from its documented conduct in undisputed passages — in whether the text testifies concerning a disputed claim, its reading on that question requires independent corroboration. This applies identically to traditions and witnesses on both sides of the claim.'",
+    "Delete Rule 11.3, or replace it with: 'Arguments from expected historical attestation are governed solely by Rule 9 for both candidates; any claim that such attestation should not be expected must be established from evidence independent of the disputed reading and locus.'",
+    "Amend Rule 11.2 to add: 'The calendar commitment must be documented from the tradition's conduct in undisputed passages, and the trigger applies to every reading tradition with such a commitment, whichever candidate its reading supports.'",
+    "In Rule 5, define class 1 as: 'consonantal orthography of the disputed word itself (matres lectionis, word dividers, spacing) in early independent witnesses of this passage that is compatible with only one candidate.'",
+    "In Rule 3 item 4, replace 'or defensible' with 'or supported by at least one cited independent parallel construction in the matching language stratum, period, and genre.'",
+    "In Rule 12, add: 'Each evidence class is recorded as strongly-favors / favors / neutral before the next class is examined; \"clear advantage\" means at least \"favors\" with no contrary \"favors\" within the same class; \"direct controlling evidence\" means class-1 evidence as defined in Rule 5.'",
+    "In Rule 6, add: 'The criterion for which data are material must be stated before any datum is scored; excluded data are listed with reasons.'",
+    "Add to Rule 4: 'Where the received tradition is internally divided (Ketiv/Qere, pointing or accent disagreement among its witnesses), each variant enters the gate as a separate candidate and the citation default is suspended for that locus.'",
+    "Add a calibration rule: 'Before issuing the target verdict, the evaluator applies the full procedure to at least one undisputed homograph in the same book and must reach the known answer; failure is reported and bars a BETTER_SUPPORTED verdict for the target.'",
+    "Add an anachronism gate item to Rule 3: 'The candidate must not depend on a form, sense, or orthographic convention demonstrably later than any plausible dating window of the composition and its transmission.'"
+  ],
+  "reasoning": "Judged strictly as written, Rules 1-10, 12, and 13 constitute a largely fair, symmetric, and reproducible procedure: both candidates pass the same gate, evidence is examined in a fixed order with a shared ledger, dependence is collapsed, source discounts require independently documented tendencies applied to all sources, UNDERDETERMINED is a defined terminal outcome, and the label-swap and reversal audits make the comparison checkable by an independent evaluator. The equal-burden treatment of the received pointing differs from my frozen proposal's rebuttable presumption, but it is the more symmetric option and is not a fairness defect. The disqualifying problem is Rule 11. Rule 11.1 heightens scrutiny of a reading tradition defined by a named religious position ('rejects Jesus') with no reciprocal trigger for equally interested witnesses on the opposite side; this is directional by construction, contradicts Rule 10's own prohibition on religious-label-based adjustments, and discounts one side's principal witness on exactly the passage class where disputes are likely. Rule 11.3 shields only the non-traditional candidate from an argument type that Rule 9 already regulates symmetrically, via a 'sealed' trigger whose determination is not required to be independent of the dispute. Every Rule 11 trigger, as written, operates in one direction. Because these are textual defects requiring revision — not mere ambiguities resolvable by clarification — the rules are not fair as written, neutrality and symmetry fail at Rule 11, and I cannot agree to apply the document exactly as written. With Rule 11 rewritten in content-neutral, bidirectional form (or replaced by Rule 10 alone) and the listed ambiguities fixed, the remainder would be an acceptable baseline close to my own proposal. Reproducibility passes because the ledger, fixed order, and audit requirements would let an independent evaluator retrace the comparison, though the Rule 5 class-1 and Rule 12 threshold definitions should be tightened as specified.",
+  "confidence": "HIGH"
+}

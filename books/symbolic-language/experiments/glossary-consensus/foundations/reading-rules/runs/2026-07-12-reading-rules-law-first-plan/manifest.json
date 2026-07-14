@@ -1,0 +1,49 @@
+{
+  "protocol": "unpointed-reading-rules-consensus",
+  "protocol_version": 2,
+  "run_id": "2026-07-12-reading-rules-law-first-plan",
+  "created_at": "2026-07-13T03:50:54.994779+00:00",
+  "stages": [
+    "proposal",
+    "fairness",
+    "rationale"
+  ],
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "api": "gemini_generate_content",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "prompt_sha256": {
+    "01-proposal.md": "0538ff6fd013139d5766b384184495b4c47bb21b1e3b09a6d8e05d8e704a405c",
+    "02-fairness.md": "d6e31fafb63135441496378e3d79e3617602c23a48c7d6b9406d71396762afd9",
+    "03-rationale.md": "6295c337c0df1c3af3b0a44a02ec052480bed2b824382b07acd467ec3461fa9c"
+  },
+  "schema_sha256": {
+    "01-proposal.json": "98dd2dc2acf6c3ae28eb262d32cf23e8b0b3927dd3f65113e4d5b82bcc8e09fd",
+    "02-fairness.json": "a7af33b024f1649e4a20f8fa9c2a8d8bc23fe2c88d577b7d5800c9812348a4bd",
+    "03-rationale.json": "3818edd1136b06dd5b53a8ed8a7289f9b3ad444324844ff59c06aeb0fd6a49e3"
+  },
+  "canonical_premises_sha256": "49ca885e22e713ac9ccb7d3060427ac1ce79f63a32fb264a36e0dbdfe6b7d847",
+  "consensus_gates": {
+    "fairness": "Every provider: FAIR_AS_WRITTEN + YES + all checks PASS",
+    "rationale": "Every provider: PERSUADED + YES + no required changes"
+  },
+  "notes": "No chapter or disputed reading is an input. Credential contents are never written."
+}

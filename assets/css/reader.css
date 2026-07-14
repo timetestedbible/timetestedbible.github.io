@@ -574,6 +574,20 @@
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .symbol-study-body table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .symbol-study-body th {
+    white-space: normal;
+  }
+}
+
 /* Horizontal Rules */
 .symbol-study-body hr,
 .word-study-body hr,

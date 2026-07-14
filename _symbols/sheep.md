@@ -1,19 +1,108 @@
 ---
 layout: symbol-study
 symbol_key: sheep
-title: "Sheep — Symbol Study"
-description: "The sheep in Scripture represents covenant people — those who belong to God, hear His voice, follow His lead, and cannot shepherd themselves."
-strongs: [H6629, G4263]
-words: [sheep, flock, flocks, ewe, ewes, ram, rams]
+title: Sheep — Symbol Study
+description: >-
+  The sheep in Scripture represents covenant people — those who belong to God, hear His voice,
+  follow His lead, and cannot shepherd themselves.
+strongs:
+  - H6629
+  - G4263
+words:
+  - sheep
+  - flock
+  - flocks
+  - ewe
+  - ewes
+  - ram
+  - rams
+record_version: 1
+record_type: symbol
+term: Sheep
+definition: The covenant people — His flock — who hear the Shepherd's voice and follow.
+meaning: The covenant people — His flock — who hear the Shepherd's voice and follow.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-sheep
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - sheep
+      - flock
+      - flocks
+      - ewe
+      - ewes
+      - ram
+      - rams
+senses:
+  - id: approved-core
+    status: approved
+    summary: The covenant people — His flock — who hear the Shepherd's voice and follow.
+    citations:
+      - Ps 95:7
+      - Ezek 34:30-31
+      - John 10:3-4, 14-16, 27
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: The covenant people — His flock — who hear the Shepherd's voice and follow.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-sheep
+    citations:
+      - Ps 95:7
+      - Ezek 34:30-31
+      - John 10:3-4, 14-16, 27
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      (Zoöl.) Defn: Any one of several species of ruminants of the genus Ovis, native of the higher
+      mountains of both hemispheres, but most numerous in Asia.
+    status: quoted
+    headword: SHEEP
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Sheep
 
-**Covenant people — those who belong to God, hear His voice, follow, and cannot guide themselves.**
+## Approved Definition
 
+**The [covenant](/research/symbols/covenant/) people — His flock — who hear the Shepherd's [voice](/research/symbols/voice/) and follow.**
 > *"And ye my flock, the flock of my **pasture**, are men, and I am your God, saith the Lord GOD."* — Ezek 34:31
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The [covenant](/research/symbols/covenant/) people — His flock — who hear the Shepherd's [voice](/research/symbols/voice/) and follow.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **sheep** begins: “(Zoöl.) Defn: Any one of several species of ruminants of the genus Ovis, native of the higher mountains of both hemispheres, but most numerous in Asia.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -187,8 +276,7 @@ Some within the covenant community consume the good pasture and foul what remain
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$animal** — Sheep are a specific subset of $animal (people / tribe / sub-state). While $animal broadly represents people-groups characterized by their nature — lions (royal), wolves (ravenous), serpents (cunning) — sheep represent the specific subset who are domestic, dependent, and covenantally bound. In Daniel 4, animals dwell *under* the tree (nations subordinate to empires); sheep dwell *in the pasture* under the shepherd. The distinction is governance: animals are characterized by nature; sheep are defined by relationship.
 
 - **$faith** — $faith is trusting obedience — and sheep are the living portrait of it. They hear and follow (Jn 10:27). They do not understand the route; they trust the voice. When $faith fails, the sheep strays (Isa 53:6). When $faith operates, the sheep moves forward under direction. The Greek *probaton* ("that which walks forward") is nearly a definition of $faith in motion.
@@ -268,3 +356,29 @@ KJV translates H6629 as "flock," "sheep," "cattle" (small livestock). G4263 cons
 - **$grass** — The sheep's pasture. If grass represents mortal people, what does it mean for the shepherd to lead His flock to "green pastures"?
 - **$name** — The shepherd calls His sheep by name. How does calling by $name relate to covenant identity and belonging?
 - **$dove** — Another creature representing covenant devotion. How do the dove's faithful return and the sheep's dependent following illuminate each other — and where do they differ?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **sheep** begins:
+
+> “Sheep, n. sing. & pl. Etym: [OE. shep, scheep, AS. sc, sceáp; akin to OFries. sk, LG. & D. schaap, G. schaf, OHG. scaf, Skr. chaga. sq. root295. Cf. Sheepherd.] 1. (Zoöl.) Defn: Any one of several species of ruminants of the genus Ovis, native of the higher mountains of both hemispheres, but most numerous in Asia.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+
+## Conclusion
+
+**The [covenant](/research/symbols/covenant/) people — His flock — who hear the Shepherd's [voice](/research/symbols/voice/) and follow.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *sheep*, *flock*, *flocks*, *ewe*, *ewes*, *ram*, *rams*. The English-form sweep found **488 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

@@ -1,19 +1,114 @@
 ---
 layout: symbol-study
 symbol_key: dragon
-title: "Dragon — Symbol Study"
-description: "The dragon in Scripture represents the spiritual authority behind empire — the primeval serpent operating at kingdom-scale, animating successive beast-nations, defeated by God's sword."
-strongs: [H8577, G1404]
-words: [dragon, dragons, sea-monster, whale, serpent]
+title: Dragon — Symbol Study
+description: >-
+  The dragon in Scripture represents the spiritual authority behind empire — the primeval serpent
+  operating at kingdom-scale, animating successive beast-nations, defeated by God's sword.
+strongs:
+  - H8577
+  - G1404
+words:
+  - dragon
+  - dragons
+  - sea-monster
+  - whale
+  - serpent
+record_version: 1
+record_type: symbol
+term: Dragon
+definition: >-
+  The devouring spiritual power behind earthly beasts and kingdoms, identified as the Devil and
+  Satan and giving its power, throne, and authority to the beast.
+meaning: >-
+  The devouring spiritual power behind earthly beasts and kingdoms, identified as the Devil and
+  Satan and giving its power, throne, and authority to the beast.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-dragon
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - dragon
+      - dragons
+      - sea-monster
+      - whale
+      - serpent
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The devouring spiritual power behind earthly beasts and kingdoms, identified as the Devil and
+      Satan and giving its power, throne, and authority to the beast.
+    citations:
+      - Pharaoh, Ezek 29:3
+      - Babylon, Jer 51:34
+      - Rev 12:9
+      - Rev 13:2
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The devouring spiritual power behind earthly beasts and kingdoms, identified as the Devil and
+      Satan and giving its power, throne, and authority to the beast.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-dragon
+    citations:
+      - Pharaoh, Ezek 29:3
+      - Babylon, Jer 51:34
+      - Rev 12:9
+      - Rev 13:2
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      (Myth.) Defn: A fabulous animal, generally represented as a monstrous winged serpent or
+      lizard, with a crested head and enormous claws, and regarded as very powerful and ferocious.
+    status: quoted
+    headword: DRAGON
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Dragon
 
-**The authority behind empire — the spiritual power that animates successive beast-kingdoms, identified as the primeval $serpent, manifested through Pharaoh and $babylon, dwelling in the $sea of nations.**
+## Approved Definition
 
+**The devouring spiritual power behind earthly [beasts](/research/symbols/beast/) and kingdoms, identified as the Devil and Satan and giving its power, throne, and authority to the beast.**
 > *"And the great **dragon** was cast out, that old $[serpent], called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him."* — Rev 12:9
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The devouring spiritual power behind earthly [beasts](/research/symbols/beast/) and kingdoms, identified as the Devil and Satan and giving its power, throne, and authority to the beast.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **dragon** begins: “(Myth.) Defn: A fabulous animal, generally represented as a monstrous winged serpent or lizard, with a crested head and enormous claws, and regarded as very powerful and ferocious.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -209,8 +304,7 @@ The escalation runs: *nachash* → *saraph* (fiery serpent, Isa 14:29) → *tann
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$serpent** — The dragon's personal-scale identity. The *nachash* of Eden and the *tanniyn* of empire are one being (Rev 12:9), distinguished by operational scale: the serpent beguiles individuals through cunning speech; the dragon animates kingdoms through delegated authority. Isa 27:1 names both in one sentence of judgment.
 
 - **$sea** — The dragon's habitat. The $sea represents nations and chaotic peoples (Rev 17:15). The dragon dwells *in* the sea (Ezek 29:3, 32:2, Isa 27:1) — the spiritual authority living within the nation-mass, raising empires from within it. The beast emerges from the sea because the dragon is already there.
@@ -290,3 +384,37 @@ KJV translates H8577 as "dragon" (~15×), "whale" (~3×), "serpent" (~3×), "sea
 - **$pit-abyss** — The dragon's containment. What is the difference between binding in the pit and destruction in the lake of fire — and why does the sequence matter?
 - **$egypt** — The dragon's first mask. How does the Exodus narrative function as the template for every subsequent dragon-defeat in Scripture?
 - **$fall-of-babylon** — The collapse of everything the dragon built. How does the "come out of her, my people" command relate to the dragon's binding?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **dragon** begins:
+
+> “Drag”on, n. Etym: [F. dragon, L. draco, fr. Gr. dar to see), and so called from its terrible eyes. Cf. Drake a dragon, Dragoon.] 1. (Myth.) Defn: A fabulous animal, generally represented as a monstrous winged serpent or lizard, with a crested head and enormous claws, and regarded as very powerful and ferocious. The dragons which appear in early paintings and sculptures are invariably representations of a winged crocodile. Fairholt.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The cited texts strongly demonstrate that Pharaoh and Nebuchadnezzar can be portrayed as dragons and that Babylon acts devouringly, but they do not establish that every symbolic dragon—especially the dragon explicitly called the devil and Satan in Revelation—is a kingdom.
+
+- The book's identification matches an alternative the consensus itself lists as common (dragon = hostile empire, Pharaoh/Egypt, Babylon), and A's notes even say these readings are 'layered rather than competing.' One could therefore argue REFINED: the book merely elevates a recognized alternative rather than introducing contradiction. However, the book's common-view note shows it means to displace, not layer with, the Satan identification, and the cited verses do not address Revelation 12:9's explicit contrary statement, so the contradiction at the core stands.
+
+- Revelation 12:9 and 20:2 explicitly name the dragon Satan, which the consensus rightly takes as definitive for the dominant biblical usage; the OT kingdom metaphors, while real, are secondary and do not override that identification.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The devouring spiritual power behind earthly [beasts](/research/symbols/beast/) and kingdoms, identified as the Devil and Satan and giving its power, throne, and authority to the beast.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *dragon*, *dragons*, *sea-monster*, *whale*, *serpent*. The English-form sweep found **84 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

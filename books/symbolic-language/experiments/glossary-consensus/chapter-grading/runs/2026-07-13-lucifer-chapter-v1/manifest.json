@@ -1,0 +1,39 @@
+{
+  "protocol": "chapter-argument-grade",
+  "protocol_version": 1,
+  "run_id": "2026-07-13-lucifer-chapter-v1",
+  "created_at": "2026-07-13T05:57:59.688394+00:00",
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "api": "gemini_generate_content",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "input_sha256": {
+    "chapter": "43ccea8517be3b15effb7d2f95e98f742309e4252999fe7ba517859c4253a6e6",
+    "rules": "5d5c908c06910d408a848ea49f1df21790ffa031d2bb28defb48156f5940e954",
+    "premises": "24e50669859aefba98cf032aac5491be92f3b4bb9ed937565177cbba164e55ba",
+    "background": {
+      "29-sun-moon-and-stars.adoc": "25c9437098317fe52165b3882483d5c626f0e0c247f13d824b5713a3cbedf1d5"
+    }
+  },
+  "prompt_sha256": "dd85ff4402dc49f4e5a47cf64e1ee2e8cdaf003d4b773272705ee0f71bb52f20",
+  "schema_sha256": "0a6ffb25ecac4d75f04baa6cc691b8520bc69aa0798c2d6bdeb0e66af06553cf",
+  "notes": "The chapter is the sole grading target. Background files are frozen evidence dependencies. Provider agreement is not evidence. Credential contents are never written."
+}

@@ -1,19 +1,122 @@
 ---
 layout: symbol-study
 symbol_key: sea
-title: "Sea — Symbol Study"
-description: "The sea in Scripture represents the chaotic mass of nations and peoples — restless, turbulent, and ungoverned by covenant. Revelation 17:15 gives the key outright."
-strongs: [H3220, H4325, G2281, G5204]
-words: [sea, seas, waters, waves, wave, water]
+title: Sea — Symbol Study
+description: >-
+  The sea in Scripture represents the chaotic mass of nations and peoples — restless, turbulent, and
+  ungoverned by covenant. Revelation 17:15 gives the key outright.
+strongs:
+  - H3220
+  - H4325
+  - G2281
+  - G5204
+words:
+  - sea
+  - seas
+  - waters
+  - waves
+  - wave
+  - water
+record_version: 1
+record_type: symbol
+term: Sea, waters
+definition: >-
+  Peoples and nations in an unrooted mass. Below the firmament they are restless; gathered above,
+  they become the still waters of heaven, the sea of glass.
+meaning: >-
+  Peoples and nations in an unrooted mass. Below the firmament they are restless; gathered above,
+  they become the still waters of heaven, the sea of glass.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-sea
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-sea-verses.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - sea
+      - seas
+      - waters
+      - waves
+      - wave
+      - water
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      Peoples and nations in an unrooted mass. Below the firmament they are restless; gathered
+      above, they become the still waters of heaven, the sea of glass.
+    citations:
+      - Rev 17:15
+      - Gen 1:6-8
+      - Ps 148:4
+      - Rev 4:6
+      - Rev 15:2
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      Peoples and nations in an unrooted mass. Below the firmament they are restless; gathered
+      above, they become the still waters of heaven, the sea of glass.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-sea
+    citations:
+      - Rev 17:15
+      - Gen 1:6-8
+      - Ps 148:4
+      - Rev 4:6
+      - Rev 15:2
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      One of the larger bodies of salt water, less than an ocean, found on the earth's surface; a
+      body of salt water of second rank, generally forming part of, or connecting with, an ocean or
+      a larger sea; as, the Mediterranean Sea; the Sea of Marmora; the North Sea; the Carribean Sea.
+    status: quoted
+    headword: SEA
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Sea
 
-**The chaotic mass of nations and peoples — restless, turbulent, ungoverned by covenant.**
+## Approved Definition
 
+**Peoples and nations in an unrooted mass. Below the [firmament](/research/symbols/firmament/) they are restless; gathered above, they become the still waters of heaven, the sea of glass.**
 > *"The **waters** which thou sawest, where the whore sitteth, are peoples, and multitudes, and nations, and tongues."* — Rev 17:15
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Peoples and nations in an unrooted mass. Below the [firmament](/research/symbols/firmament/) they are restless; gathered above, they become the still waters of heaven, the sea of glass.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **sea** begins: “One of the larger bodies of salt water, less than an ocean, found on the earth's surface; a body of salt water of second rank, generally forming part of, or connecting with, an ocean or a larger sea; as, the Mediterranean Sea; the Sea of Marmora; the North Sea; the Carribean Sea.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -122,8 +225,7 @@ The creation pattern completes itself. In Genesis 1, God separated land from sea
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$island** — The sea's defining opposite. An island is land set apart from the sea — sanctified people distinguished from the chaotic nations. The isles "wait for his law" (Isa 42:4) — the set-apart peoples await the very truth that sanctifies them. When the sea is no more (Rev 21:1), the need for islands disappears: all is holy ground.
 
 - **$animal** — Kingdoms and characterized people-groups that rise *out of* the sea. Dan 7:3 — four beasts from the sea. Rev 13:1 — the beast from the sea. The sea is the source-pool; the beast is what takes shape when invisible powers stir that pool. Animals are peoples with specific character; the sea is peoples *without* specific form — raw, undifferentiated.
@@ -180,3 +282,37 @@ KJV translates H3220 as "sea" and occasionally "west" (directional). H4325 appea
 - **$babylon** — The system that rides the sea. $babylon sits on the waters and draws power from the peoples. How does the commercial and religious empire depend on the restless nations beneath it?
 
 - **$wind** — The force that stirs the sea. The four winds of heaven strove upon the great sea (Dan 7:2). What happens when the winds are held back (Rev 7:1), and what does it mean when they are released?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **sea** begins:
+
+> “Sea, n. Etym: [OE. see, AS. sæ; akin to D. zee, OS. & OHG. seo, G. see, OFries. se, Dan. sö, Sw. sjö, Icel. sær, Goth. saiws, and perhaps to L. saevus firce, savage. sq. root 151 a.] 1. One of the larger bodies of salt water, less than an ocean, found on the earth's surface; a body of salt water of second rank, generally forming part of, or connecting with, an ocean or a larger sea; as, the Mediterranean Sea; the Sea of Marmora; the North Sea; the Carribean Sea.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The citations clearly establish waters as peoples, upper waters above the firmament, and a sea of glass before God's throne, but they do not explicitly identify the Genesis/Psalm upper waters with Revelation's sea of glass; that equation is an interpretive synthesis. The supplied excerpts also show the redeemed standing on the glassy sea, but not angels doing so.
+
+- One could argue for MATCH, since 'waters = peoples and nations' is directly supported by Rev 17:15 and is prominently listed in every consensus response; on that view the heavenly sea-of-glass material is merely extra detail. Alternatively, one could argue the two-tier cosmological identification (lower waters = humanity, upper waters = sea of glass of the redeemed) is absent from all consensus responses and alternatives, pushing toward NOVEL. REFINED sits between these because the primary referent is consensus-covered while the extension is genuinely restructured.
+
+- Consensus primary (chaos/evil) is demoted or elided in favor of a dual peoples/heavenly-glass scheme; standard readings do not routinely equate the sea of glass with the 'waters above the firmament,' so the book may over-systematize.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Peoples and nations in an unrooted mass. Below the [firmament](/research/symbols/firmament/) they are restless; gathered above, they become the still waters of heaven, the sea of glass.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *sea*, *seas*, *waters*, *waves*, *wave*, *water*. The English-form sweep found **979 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

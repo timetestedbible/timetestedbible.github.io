@@ -1,19 +1,132 @@
 ---
 layout: symbol-study
 symbol_key: marriage
-title: "Marriage — Symbol Study"
-description: "Marriage in Scripture is the governing picture for covenant — God as husband, His people as wife, faithfulness as obedience, and divorce as covenant termination for idolatry."
-strongs: [G1062, H802]
-words: [marriage, marry, married, wife, husband, bride, bridegroom, wed, wedding, espouse, espoused, betroth, betrothed]
+title: Marriage — Symbol Study
+description: >-
+  Marriage in Scripture is the governing picture for covenant — God as husband, His people as wife,
+  faithfulness as obedience, and divorce as covenant termination for idolatry.
+strongs:
+  - G1062
+  - H802
+words:
+  - marriage
+  - marry
+  - married
+  - wife
+  - husband
+  - bride
+  - bridegroom
+  - wed
+  - wedding
+  - espouse
+  - espoused
+  - betroth
+  - betrothed
+record_version: 1
+record_type: symbol
+term: Marriage, bride
+definition: >-
+  The covenant union of God and His people — a one-flesh bond in which the wife receives the
+  Husband's Name and comes under His covering.
+meaning: >-
+  The covenant union of God and His people — a one-flesh bond in which the wife receives the
+  Husband's Name and comes under His covering.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-marriage
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - divorce
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-marriage-divorce.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - marriage
+      - marry
+      - married
+      - wife
+      - husband
+      - bride
+      - bridegroom
+      - wed
+      - wedding
+      - espouse
+      - espoused
+      - betroth
+      - betrothed
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The covenant union of God and His people — a one-flesh bond in which the wife receives the
+      Husband's Name and comes under His covering.
+    citations:
+      - Gen 2:24
+      - Ezek 16:8
+      - Eph 5:31-32
+      - Rev 19:7
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The covenant union of God and His people — a one-flesh bond in which the wife receives the
+      Husband's Name and comes under His covering.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-marriage
+    citations:
+      - Gen 2:24
+      - Ezek 16:8
+      - Eph 5:31-32
+      - Rev 19:7
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      The act of marrying, or the state of being married; legal union of a man and a woman for life,
+      as husband and wife; wedlock; matrimony.
+    status: quoted
+    headword: MARRIAGE
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Marriage
 
-**The covenant picture — God as husband, His people as wife, faithfulness as covenant obedience, adultery as idolatry.**
+## Approved Definition
 
+**The [covenant](/research/symbols/covenant/) union of God and His people — a one-flesh bond in which the wife receives the Husband's [Name](/research/symbols/name/) and comes under His [covering](/research/symbols/wings/).**
 > *"I spread my $[wings] over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a **covenant** with thee, saith the Lord GOD, and thou becamest mine."* — Ezek 16:8
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The [covenant](/research/symbols/covenant/) union of God and His people — a one-flesh bond in which the wife receives the Husband's [Name](/research/symbols/name/) and comes under His [covering](/research/symbols/wings/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **marriage** begins: “The act of marrying, or the state of being married; legal union of a man and a woman for life, as husband and wife; wedlock; matrimony.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -152,8 +265,7 @@ This is why the entire drama of Scripture can be read as a marriage story: a bet
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$fornication** — Idolatry / serving other gods. This is the stated ground for divorce in the marriage-covenant framework. "Except for $fornication" (Mat 19:9) = except for idolatry. The wife who goes after other gods is the wife who may be put away.
 
 - **$wings** — Covenant covering / Torah reminder. The same Hebrew word (H3671 *kanaph*) means both "wings" and "skirt." Spreading the $wings over someone = entering covenant with them (Ezek 16:8). Ruth's marriage proposal and God's covenant entry use the same term.
@@ -222,3 +334,37 @@ Note: H1166 *ba'al* is especially revealing. The word means both "husband" and "
 - **$name** — The covenant bond that marriage enacts. How does taking God's $name parallel taking a husband's name, and what does it mean to bear that $name "in vain"?
 
 - **$harlot** — The unfaithful wife. How does the $harlot represent the covenant partner who has turned to other gods — and how does $babylon function as the ultimate $harlot system?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **marriage** begins:
+
+> “Mar”riage, n. Etym: [OE. mariage, F. mariage. See Marry, v. t.] 1. The act of marrying, or the state of being married; legal union of a man and a woman for life, as husband and wife; wedlock; matrimony. Marriage is honorable in all. Heb. xiii. 4.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The book may appear broader than the consensus’s standard formulation because it says “God and His people” rather than specifically “Christ and the Church.” However, the consensus explicitly includes Israel as YHWH’s wife and recognizes a unified people-of-God formulation, while Ezekiel 16, Ephesians 5, and Revelation 19 directly span those applications.
+
+- One could argue the book's referent 'God and His people' subtly broadens beyond the consensus's headline 'Christ and the Church,' making it REFINED (BOOK_BROADENS). But this unified reading is itself listed within the consensus responses (explicitly as an alternative in Response C and implicitly in all responses' OT-foundation framing), and the entry's own citations (Eph 5:32; Rev 19:7) include the Christ-Church sense, so the broadening claim collapses into wording rather than a material extension change.
+
+- A reader might claim the book’s broader ‘God and His people’ dilutes the specifically Christ–Church focus of NT texts, yet consensus itself already treats the OT YHWH–Israel foundation and NT Christ–Church development as continuous.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The [covenant](/research/symbols/covenant/) union of God and His people — a one-flesh bond in which the wife receives the Husband's [Name](/research/symbols/name/) and comes under His [covering](/research/symbols/wings/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *marriage*, *marry*, *married*, *wife*, *husband*, *bride*, *bridegroom*, *wed*, *wedding*, *espouse*, *espoused*, *betroth*, *betrothed*. The English-form sweep found **542 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

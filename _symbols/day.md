@@ -1,19 +1,114 @@
 ---
 layout: symbol-study
 symbol_key: day
-title: "Day — Symbol Study"
-description: "Day in Scripture represents exposure — the time of accountability when everything is seen, tested, and laid bare."
-strongs: [H3117, G2250]
-words: [day, days]
+title: Day — Symbol Study
+description: >-
+  Day in Scripture represents exposure — the time of accountability when everything is seen, tested,
+  and laid bare.
+strongs:
+  - H3117
+  - G2250
+words:
+  - day
+  - days
+record_version: 1
+record_type: symbol
+term: Day
+definition: >-
+  The time of light, exposure, and accountable action. In prophetic counts, a day may also scale to
+  a year or a thousand years, depending on context.
+meaning: >-
+  The time of light, exposure, and accountable action. In prophetic counts, a day may also scale to
+  a year or a thousand years, depending on context.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-day
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - night
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-day-thousand.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - day
+      - days
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The time of light, exposure, and accountable action. In prophetic counts, a day may also scale
+      to a year or a thousand years, depending on context.
+    citations:
+      - Gen 1:5
+      - John 9:4
+      - 1 Thess 5:5
+      - Num 14:34
+      - Ezek 4:6
+      - 2 Pet 3:8
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The time of light, exposure, and accountable action. In prophetic counts, a day may also scale
+      to a year or a thousand years, depending on context.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-day
+    citations:
+      - Gen 1:5
+      - John 9:4
+      - 1 Thess 5:5
+      - Num 14:34
+      - Ezek 4:6
+      - 2 Pet 3:8
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      The time of light, or interval between one night and the next; the time between sunrise and
+      sunset, or from dawn to darkness; hence, the light; sunshine.
+    status: quoted
+    headword: DAY
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Day
 
-**Exposure — the time of accountability when all things are visible and all works are tested.**
+## Approved Definition
 
+**The time of [light](/research/symbols/light/), exposure, and accountable action. In prophetic counts, a day may also scale to a [year](/research/symbols/year/) or a thousand years, depending on context.**
 > *"And God called the $[light] **Day**, and the $[darkness] he called $[Night]: and the evening and the morning were the first **day**."* — Gen 1:5
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The time of [light](/research/symbols/light/), exposure, and accountable action. In prophetic counts, a day may also scale to a [year](/research/symbols/year/) or a thousand years, depending on context.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **day** begins: “The time of light, or interval between one night and the next; the time between sunrise and sunset, or from dawn to darkness; hence, the light; sunshine.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Many Senses of *Yom*
 
@@ -136,8 +231,7 @@ This is the transformation the New Testament presses: live *now* as though the f
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$light** — Day's defining content. God called $light "Day" (Gen 1:5). $light is visible obedience — the example that shines. Day is the time-season in which that visibility operates. You are $light; you live in Day. The two are inseparable but not interchangeable.
 
 - **$night** — Day's opposite. The season of hiddenness, unawareness, and closed opportunity. Where Day exposes, $night conceals. Where Day enables work, $night ends it. The thief comes in the $night because $night provides cover — the Day strips it away.
@@ -200,3 +294,37 @@ KJV translates H3117 as "day," "time," "daily," "ever," and other temporal expre
 - **$sleep** — The posture of $night. If $sleep is spiritual unawareness, what does it mean to "awake out of $sleep" and step into the Day? The $sleep study traces the connection between death, unawareness, and the call to rise.
 
 - **$fruit** — What Day exposes. "The Day shall declare every man's work." The $fruit study explores what works and deeds represent across Scripture — and what it means for them to survive or burn in the Day of testing.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **day** begins:
+
+> “Day, n. Etym: [OE. day, dai,, dei, AS. dæg; akin to OS., D., Dan., & Sw. dag, G, tag, Icel. dagr, Goth. dags; cf. Skr. dah (for dhagh ) to burn. *69. Cf. Dawn.] 1. The time of light, or interval between one night and the next; the time between sunrise and sunset, or from dawn to darkness; hence, the light; sunshine.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**The time of [light](/research/symbols/light/), exposure, and accountable action. In prophetic counts, a day may also scale to a [year](/research/symbols/year/) or a thousand years, depending on context.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *day*, *days*. The English-form sweep found **2256 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- Numbers 14:34 and Ezekiel 4:6 establish day-for-year correspondences in two particular enacted judgments, while 2 Peter 3:8 states a reciprocal comparison rather than a prophetic counting rule. Thus the citations support the examples but do not by themselves establish a general category of prophetic temporal scaling; “deeds are seen and tested” is also more inferred than directly stated in the printed verses.
+
+- The book presents the day-year and day-thousand-years equivalences as a general prophetic principle ('the day is a unit that scales'), which the consensus treats as a minority, tradition-specific (historicist) reading and as a statement of divine timelessness rather than a conversion rule; one could argue this elevation of a contested alternative to definitional status constitutes a REFINED broadening. Additionally, the printed citations do not directly ground the 'exposure and accountability, deeds seen and tested' component (a verse like 1 Cor 3:13 is not cited), making support only partial.
+
+- None.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

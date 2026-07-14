@@ -1,19 +1,95 @@
 ---
 layout: symbol-study
 symbol_key: truth
-title: "Truth — Symbol Study"
-description: "Truth in Scripture is not factual accuracy — it is God's commandments, the divine standard that sanctifies, frees, and defines reality itself."
-strongs: [H571, G225]
-words: [truth]
+title: Truth — Symbol Study
+description: >-
+  Truth in Scripture is not factual accuracy — it is God's commandments, the divine standard that
+  sanctifies, frees, and defines reality itself.
+strongs:
+  - H571
+  - G225
+words:
+  - truth
+record_version: 1
+record_type: symbol
+term: Truth (the truth)
+definition: God's law — the standard.
+meaning: God's law — the standard.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-truth
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - truth
+senses:
+  - id: approved-core
+    status: approved
+    summary: God's law — the standard.
+    citations:
+      - Ps 119:142
+      - 2 John 4
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: God's law — the standard.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-truth
+    citations:
+      - Ps 119:142
+      - 2 John 4
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      The quality or being true; as: -- (a) Conformity to fact or reality; exact accordance with
+      that which is, or has been; or shall be. (b) Conformity to rule; exactness; close
+      correspondence with an example, mood, object of imitation, or the like.
+    status: quoted
+    headword: TRUTH
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Truth
 
-**God's commandments — the divine standard by which reality is measured and life is lived.**
+## Approved Definition
 
+**God's law — the standard.**
 > *"Sanctify them through thy **truth**: thy word is **truth**."* — Jn 17:17
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**God's law — the standard.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **truth** begins: “The quality or being true; as: -- (a) Conformity to fact or reality; exact accordance with that which is, or has been; or shall be. (b) Conformity to rule; exactness; close correspondence with an example, mood, object of imitation, or the like.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -159,8 +235,7 @@ This is why 1 Jn 1:6 equates walking in $darkness with lying: the $darkness-walk
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$light** — Visible obedience — the outward demonstration of keeping God's standard. "He that doeth truth cometh to the $light" (Jn 3:21). Truth is the standard; $light is what it looks like when someone lives by it.
 
 - **$darkness** — Concealed disobedience — the hiding of covenant-breaking. Walking in $darkness = "do not the truth" (1 Jn 1:6). $darkness is not ignorance of truth but active concealment of one's rejection of it.
@@ -228,3 +303,39 @@ The Hebrew H571 *ʾemeth* shares its root with H530 *ʾemunah* ($faith). In Hebr
 - **$bread** — The Word that sustains. If truth = word = $bread, what does it mean to eat $bread — and what does famine look like when truth is withdrawn?
 - **$wickedness** — The opposite trajectory. If truth is God's standard, $wickedness is its transgression. How does lawlessness consume itself (Isa 9:18)?
 - **$faith** — The response to truth. How does the shared Hebrew root of *ʾemeth* (truth) and *ʾemunah* ($faith) illuminate the inseparability of God's standard and human obedience?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **truth** begins:
+
+> “Truth, n.; pl. Truths. Etym: [OE. treuthe, trouthe, treowpe, AS. treów. See True; cf. Troth, Betroth.] 1. The quality or being true; as: -- (a) Conformity to fact or reality; exact accordance with that which is, or has been; or shall be. (b) Conformity to rule; exactness; close correspondence with an example, mood, object of imitation, or the like. Plows, to go true, depend much on the truth of the ironwork. Mortimer. (c) Fidelity; constancy; steadfastness; faithfulness. Alas! they had been friends in youth, But whispering tongues can poison truth. Coleridge.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+A common reading is: **Christ Himself, and God's word — the gospel that sets free.**
+
+- The entry could reasonably be classified as REFINED if “God’s revealed reality/word” is treated as the consensus core category and God’s law as a narrower subset of it. Psalm 119:142 also makes that narrowing textually explicit. The DIVERGENT classification depends on giving controlling weight to the consensus’s repeated Christological center and reading the glossary entry as replacing that center rather than merely addressing one context.
+
+- One could argue this is REFINED rather than DIVERGENT: the consensus itself lists 'the truth as Scripture/God's word' as a common alternative (with Ps 119:142/160 as proof texts), and 'God's law' could be read as a narrowing within that recognized category rather than a replacement of the consensus referent. On that view the book simply selects and sharpens an already-acknowledged layer.
+
+- Ps 119:142 (shared with consensus alternatives) supports 'law is truth' but does not displace the dominant Christocentric consensus that the book itself acknowledges as commonly taught.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**God's law — the standard.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *truth*. The English-form sweep found **224 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

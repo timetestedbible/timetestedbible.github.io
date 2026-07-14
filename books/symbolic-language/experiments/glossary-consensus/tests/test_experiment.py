@@ -14,18 +14,33 @@ SPEC.loader.exec_module(exp)
 
 
 class ExperimentTests(unittest.TestCase):
-    def test_glossary_has_147_symbols_and_12_recovered_words(self):
+    def test_glossary_has_147_symbols_and_16_recovered_words(self):
         symbols = exp.parse_glossary(include_words=False)
         all_entries = exp.parse_glossary(include_words=True)
         self.assertEqual(147, len(symbols))
-        self.assertEqual(159, len(all_entries))
-        self.assertEqual(12, sum(entry["source_badge"] == "WORD" for entry in all_entries))
+        self.assertEqual(163, len(all_entries))
+        self.assertEqual(16, sum(entry["source_badge"] == "WORD" for entry in all_entries))
 
     def test_blind_input_does_not_expose_book_definition(self):
         entry = exp.parse_glossary(include_words=False)[0]
         prompt = exp.render_template("consensus", {"TERM": entry["term"]})
         self.assertIn(entry["term"], prompt)
         self.assertNotIn(entry["definition"], prompt)
+
+    def test_pearl_includes_its_foundation_chapters(self):
+        pearl = next(entry for entry in exp.parse_glossary() if entry["anchor"] == "pearl")
+        self.assertEqual(
+            ["sun-moon-and-stars", "lucifers-declared-plan", "the-pearl"],
+            pearl["chapter_slugs"],
+        )
+        self.assertEqual(
+            [
+                "books/symbolic-language/29-sun-moon-and-stars.adoc",
+                "books/symbolic-language/30-lucifers-declared-plan.adoc",
+                "books/symbolic-language/31-the-pearl.adoc",
+            ],
+            pearl["chapter_files"],
+        )
 
     def test_method_evidence_is_limited_to_persuasion(self):
         entry = exp.parse_glossary(include_words=False)[0]

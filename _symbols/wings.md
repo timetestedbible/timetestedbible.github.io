@@ -1,19 +1,111 @@
 ---
 layout: symbol-study
 symbol_key: wings
-title: "Wings — Symbol Study"
-description: "One Hebrew word — kanaph — covers bird wings, garment edges, covenant skirts, and the corners of the earth. In every case, it points to the same reality: covenant covering and Torah reminder."
-strongs: [H3671, G4420]
-words: [wing, wings, skirt, skirts, borders, corners, quarters]
+title: Wings — Symbol Study
+description: >-
+  One Hebrew word — kanaph — covers bird wings, garment edges, covenant skirts, and the corners of
+  the earth. In every case, it points to the same reality: covenant covering and Torah reminder.
+strongs:
+  - H3671
+  - G4420
+words:
+  - wing
+  - wings
+  - skirt
+  - skirts
+  - borders
+  - corners
+  - quarters
+record_version: 1
+record_type: symbol
+term: Wings (kanaph)
+definition: >-
+  The covenant edge — wing, skirt, border, corner — where the reminder of the law is bound and
+  refuge is found.
+meaning: >-
+  The covenant edge — wing, skirt, border, corner — where the reminder of the law is bound and
+  refuge is found.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-wings
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-wings-audit.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - wing
+      - wings
+      - skirt
+      - skirts
+      - borders
+      - corners
+      - quarters
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The covenant edge — wing, skirt, border, corner — where the reminder of the law is bound and
+      refuge is found.
+    citations:
+      - Ezek 16:8
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The covenant edge — wing, skirt, border, corner — where the reminder of the law is bound and
+      refuge is found.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-wings
+    citations:
+      - Ezek 16:8
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: One of the two anterior limbs of a bird, pterodactyl, or bat.
+    status: quoted
+    headword: WING
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Wings
 
-**Covenant covering — the protective shelter of God's covenant and the Torah that reminds you whose you are.**
+## Approved Definition
 
+**The [covenant](/research/symbols/covenant/) edge — wing, skirt, border, corner — where the reminder of the law is bound and refuge is found.**
 > *"Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my **skirt** over thee, and covered thy nakedness: yea, I sware unto thee, and **entered into a covenant** with thee, saith the Lord GOD; and thou becamest mine."* — Ezek 16:8
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The [covenant](/research/symbols/covenant/) edge — wing, skirt, border, corner — where the reminder of the law is bound and refuge is found.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **wing** begins: “One of the two anterior limbs of a bird, pterodactyl, or bat.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -162,8 +254,7 @@ Isaiah 11:12 gathers $israel's dispersed from the four *kanaph* — from the fou
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$rock** — The $rock is the unchanging covenant itself; the wings are its covering extension. The cherubim spread their wings over the ark of the covenant (Exod 25:20) — wings overshadowing the $rock. The dove dwells "in the clefts of the $rock" (Song 2:14) and finds shelter "under his wings" (Ps 91:4). The covenant and its covering are inseparable.
 
 - **$sand** — $sand represents multitudes at the covenant boundary — people at the edge between the $sea of nations and the $rock of covenant. The *kanaph* of the earth (Job 38:13, Isa 11:12) is precisely where $sand exists: the boundary zone. The covenant wings extend to the edge; the multitudes there either come under the covering or are swept into the $sea.
@@ -233,3 +324,35 @@ KJV renders H3671 over 100 times in the OT. The breadth of its English translati
 - **$mark** — Visible practice that identifies covenant membership. The fringes on the *kanaph* are the $mark of allegiance — what happens when the wings become observable.
 - **$eagle** — The messenger who bears the wings. If *kanaph* = covenant covering, what does it mean that the $eagle carries it — and that nations function as God's eagle-agents?
 - **$sand** — Multitudes at the covenant boundary. The *kanaph* of the earth is where $sand exists — the study of $sand reveals what it means to stand at the edge of the wings.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **wing** begins:
+
+> “or bat. They correspond to the arms of man, and are usually modified for flight, but in the case of a few species of birds, as the ostrich, auk, etc., the wings are used only as an assistance in running or swimming. As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings. Deut. xxxii. 11. Note: In the wing of a bird the long quill feathers are in series. The primaries are those attached to the ulnar side of the hand; the secondaries, or wing coverts, those of the forearm: the scapulars, those that lie over the humerus; and the bastard feathers, those of the short outer digit. See Illust. of Bird, and Plumage.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**The [covenant](/research/symbols/covenant/) edge — wing, skirt, border, corner — where the reminder of the law is bound and refuge is found.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *wing*, *wings*, *skirt*, *skirts*, *borders*, *corners*, *quarters*. The English-form sweep found **174 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- Ezekiel 16:8 strongly supports skirt-covering and covenant, but the printed citation alone does not establish the law-reminder element or the full equation of wing, skirt, border, and corner; Numbers 15:38–40 or similar texts would be needed for that synthesis.
+
+- One could argue this is a MATCH, since every consensus response already lists the garment-edge/covenant-covering meaning as a recognized common alternative and the book retains refuge; the difference might be seen as merely a change of emphasis rather than a material change of identification. However, the book's collapsing of wing, skirt, border, corner, and law-tassel into one governing 'covenant edge' concept—supported in print only by Ezekiel 16:8, which attests the skirt-covenant sense but not the law-reminder element—goes beyond the consensus's structure of a dominant bird-wing meaning with separate secondary senses.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

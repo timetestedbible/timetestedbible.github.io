@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "vowel_points_original_to_written_text": {
+      "type": "string",
+      "enum": ["YES", "NO", "UNCERTAIN"]
+    },
+    "vowel_points_authority": {
+      "type": "string",
+      "enum": ["BINDING", "REBUTTABLE_PRESUMPTION", "EVIDENCE_ONLY", "NONE"]
+    },
+    "cantillation_authority": {
+      "type": "string",
+      "enum": ["BINDING", "REBUTTABLE_PRESUMPTION", "EVIDENCE_ONLY", "NONE"]
+    },
+    "alternate_vocalization_admissible": {
+      "type": "string",
+      "enum": ["YES", "NO", "CONDITIONAL"]
+    },
+    "received_pointing_alone_can_veto": {
+      "type": "string",
+      "enum": ["YES", "NO", "CONDITIONAL"]
+    },
+    "burden_of_proof": {"type": "string"},
+    "required_support": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "ketiv_qere_rule": {"type": "string"},
+    "ancient_witness_rule": {"type": "string"},
+    "historical_findings": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "theological_assumptions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "rationale": {"type": "string"},
+    "confidence": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    }
+  },
+  "required": [
+    "vowel_points_original_to_written_text",
+    "vowel_points_authority",
+    "cantillation_authority",
+    "alternate_vocalization_admissible",
+    "received_pointing_alone_can_veto",
+    "burden_of_proof",
+    "required_support",
+    "ketiv_qere_rule",
+    "ancient_witness_rule",
+    "historical_findings",
+    "theological_assumptions",
+    "rationale",
+    "confidence"
+  ]
+}

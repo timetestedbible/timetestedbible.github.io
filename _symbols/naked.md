@@ -1,19 +1,105 @@
 ---
 layout: symbol-study
 symbol_key: naked
-title: "Naked — Symbol Study"
-description: "Nakedness in Scripture represents the state of being without covenant covering — exposed before God and the nations because the garment of covenant relationship has been stripped away or never obtained."
-strongs: [H6174, H5903, H6172, H6168, H6544, G1131, G1132]
-words: [naked, nakedness, bare, uncover]
+title: Naked — Symbol Study
+description: >-
+  Nakedness in Scripture represents the state of being without covenant covering — exposed before
+  God and the nations because the garment of covenant relationship has been stripped away or never
+  obtained.
+strongs:
+  - H6174
+  - H5903
+  - H6172
+  - H6168
+  - H6544
+  - G1131
+  - G1132
+words:
+  - naked
+  - nakedness
+  - bare
+  - uncover
+record_version: 1
+record_type: symbol
+term: Naked, nakedness
+definition: Without covenant covering — exposed in one's sin.
+meaning: Without covenant covering — exposed in one's sin.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-naked
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - garment
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - naked
+      - nakedness
+      - bare
+      - uncover
+senses:
+  - id: approved-core
+    status: approved
+    summary: Without covenant covering — exposed in one's sin.
+    citations:
+      - Ezek 16:8
+      - Gen 3:7
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: Without covenant covering — exposed in one's sin.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-naked
+    citations:
+      - Ezek 16:8
+      - Gen 3:7
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: Having no clothes on; uncovered; nude; bare; as, a naked body; a naked limb; a naked sword.
+    status: quoted
+    headword: NAKED
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Naked
 
-**Without covenant covering — exposed before God and the nations because the garment of covenant relationship has been stripped away or never obtained.**
+## Approved Definition
 
+**Without [covenant](/research/symbols/covenant/) covering — exposed in one's [sin](/research/symbols/sin/).**
 > *"I spread my skirt over thee, and **covered thy nakedness**: yea, I sware unto thee, and entered into a $[covenant] with thee, saith the Lord GOD, and thou becamest mine."* — Ezek 16:8
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Without [covenant](/research/symbols/covenant/) covering — exposed in one's [sin](/research/symbols/sin/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **naked** begins: “Having no clothes on; uncovered; nude; bare; as, a naked body; a naked limb; a naked sword.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -173,8 +259,7 @@ The $harlot — the covenant breaker — is made naked by the very powers she re
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$harlot** — The harlot is the covenant breaker; her judgment is to be made naked (Ezek 16:39, Rev 17:16). The two symbols are intertwined: harlotry breaks the covenant, nakedness is the resulting condition.
 
 - **$shadow** — The shadow is the covenant protection cast by a body standing between you and judgment ($shadow = covenant covering). Nakedness is the opposite — outside the shadow, fully exposed.
@@ -259,3 +344,37 @@ H6544 *pâraʻ* is translated "naked" (Ex 32:25), "perish" (Prov 29:18), "refuse
 - **$fig-tree** — From the first failed covering (Gen 3:7) to the cursed tree (Mat 21:19), the fig tree traces the story of human-made coverings that cannot replace what God provides.
 
 - **$sackcloth** — The garment that *replaces* glory after judgment. When the covering is stripped (naked), what remains is either sackcloth (dark testimony of loss) or nothing at all. Isaiah removes sackcloth to walk naked (Isa 20:2) — even the garment of mourning is taken away.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **naked** begins:
+
+> “Na”ked, a. Etym: [AS. nacod; akin to D. naakt, G. nackt, OHG. nacchot, nahhot, Icel. nökvi, nakinn, Sw. naken, Dan. nögen, Goth. naqa, Lith. n, Russ. nagii, L. nudus, Skr. nagna. sq. root266. Cf. Nude.] 1. Having no clothes on; uncovered; nude; bare; as, a naked body; a naked limb; a naked sword.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The covenant qualification may be viewed as largely terminological rather than a genuine narrowing, since Ezekiel 16:8 directly joins covering nakedness with covenant and Genesis 3:7 supplies the paradigmatic exposure after transgression. Even so, the book's unqualified formulation makes covenant breach constitutive, whereas the consensus recognizes additional non-covenantal uses.
+
+- One could argue this is a MATCH: 'covenant covering' is simply the book's idiom for the consensus's 'divine covering/imputed righteousness,' and Responses A–D already treat clothing-by-God as the remedy for exposed sin, so the covenantal framing adds no material change. The counter is that the book's definition makes covenant status constitutive of the symbol's meaning (breach → exposure), which conditions and narrows cases (excluding poverty, creaturely vulnerability, pre-Fall innocence) in a way the broader consensus does not.
+
+- Ezek 16:8 supplies the covenant language, yet Gen 3:7 (and the broader consensus) does not frame the covering as covenantal, so the book may over-narrow a more general exposure-shame motif.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Without [covenant](/research/symbols/covenant/) covering — exposed in one's [sin](/research/symbols/sin/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *naked*, *nakedness*, *bare*, *uncover*. The English-form sweep found **274 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

@@ -1,19 +1,127 @@
 ---
 layout: symbol-study
 symbol_key: sheol
-title: "Sheol — Symbol Study"
-description: "Sheol derives from the Hebrew root meaning 'to demand.' It is mortality's insatiable claim on all flesh — personified as a power with a mouth, gates, and bars, answered only by God's ability to ransom and resurrect."
-strongs: [H7585, G86, H4194, G2288]
-words: [sheol, hell, grave, pit, hades, death]
+title: Sheol — Symbol Study
+description: >-
+  Sheol derives from the Hebrew root meaning 'to demand.' It is mortality's insatiable claim on all
+  flesh — personified as a power with a mouth, gates, and bars, answered only by God's ability to
+  ransom and resurrect.
+strongs:
+  - H7585
+  - G86
+  - H4194
+  - G2288
+words:
+  - sheol
+  - grave
+  - pit
+  - death
+record_version: 1
+record_type: symbol
+term: Sheol (the grave, “hell”)
+definition: >-
+  The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous
+  and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is
+  made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.”
+  Distinct from Gehenna, the judgment.
+meaning: >-
+  The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous
+  and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is
+  made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.”
+  Distinct from Gehenna, the judgment.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-sheol
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - sheol
+      - hell
+      - grave
+      - pit
+      - hades
+      - death
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing
+      righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in
+      silence until it is made to give them back; then it is itself destroyed — “O grave, I will be
+      thy destruction.” Distinct from Gehenna, the judgment.
+    citations:
+      - Gen 37:35
+      - Ps 16:10
+      - Eccl 9:5
+      - Isa 5:14
+      - Hos 13:14
+      - Rev 20:13-14
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing
+      righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in
+      silence until it is made to give them back; then it is itself destroyed — “O grave, I will be
+      thy destruction.” Distinct from Gehenna, the judgment.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-sheol
+    citations:
+      - Gen 37:35
+      - Ps 16:10
+      - Eccl 9:5
+      - Isa 5:14
+      - Hos 13:14
+      - Rev 20:13-14
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: The place of departed spirits; Hades; also, the grave.
+    status: quoted
+    headword: SHEOL
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Sheol
 
-**Mortality's demand on all flesh — the insatiable claim that death makes on every living thing, personified as a power with a mouth, belly, gates, and bars, and answered only by God's power to ransom, redeem, and resurrect.**
+## Approved Definition
 
+**The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.**
 > *"I will ransom them from the power of the **grave**; I will redeem them from **death**: O **death**, I will be thy plagues; O **grave**, I will be thy destruction."* — Hos 13:14
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **sheol** begins: “The place of departed spirits; Hades; also, the grave.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -186,8 +294,7 @@ The choice Jeremiah describes — fountain or cistern, living water or empty pit
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$pit-abyss** — The pit (*bowr*) and sheol parallel in poetry (Ps 30:3, Isa 14:15, 38:18) but differ in function. The $pit-abyss is enforced containment of the *living* — stripping influence, temporary, openable. Sheol is the demand on the *dead* — claiming life itself. Joseph's pit was intended as a grave by his brothers but functioned as a holding cell by God's design. The same structure serves both purposes.
 
 - **$water** — The fountain of living water (Jer 2:13, Ps 36:9) is sheol's structural opposite. Sheol demands life; the fountain supplies it. The cistern (H877/H953) that parallels sheol in Hebrew poetry is the broken container that holds no water — no life. To choose cisterns over the fountain is to choose the demanding place over the source of life.
@@ -268,3 +375,37 @@ KJV translates H7585 as "grave" 31× and "hell" 31× — obscuring the fact that
 - **$darkness** — Sheol's defining environment. If $darkness represents the absence of God's governing light, and sheol is the realm of total darkness, what does it mean that "if I make my bed in sheol, thou art there" (Ps 139:8)?
 
 - **$perpetual-sleep** — The state of the dead in sheol. Is the silence of sheol (Ps 6:5, Eccl 9:10) permanent unconsciousness, or a condition that resurrection interrupts?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **sheol** begins:
+
+> “She”ol, n. Etym: [Heb. sh.] Defn: The place of departed spirits; Hades; also, the grave. For thou wilt not leave my soul to sheel. Ps. xvi. 10. (Rev. Ver.)”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- The printed texts substantially support universality, silence, devouring imagery, release of the dead, and destruction of death/Hades, but they do not by themselves establish the proposed derivation from sha'al, supply the gates-and-bars imagery, or conclusively prove unconsciousness rather than poetic descriptions of death. Revelation also names Hades, so identifying it directly with Hebrew Sheol requires an additional lexical argument.
+
+- One could argue for REFINED: the book's 'dead sleep in silence' affirmatively adopts the soul-sleep/unconscious position (Eccl 9:5), thereby rejecting the common conscious-intermediate-state and two-compartment readings the consensus lists — a material precision about the condition of Sheol's inhabitants, not mere wording. Additionally, the sha'al etymology ('the demanding place') is a contested scholarly derivation not supported by the printed citations themselves.
+
+- Etymology from sha'al ‘demand’ is speculative (not the dominant scholarly derivation); ‘sleep in silence’ privileges the conditionalist/soul-sleep reading over common bipartite-conscious alternatives that consensus still lists.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *sheol*, *hell*, *grave*, *pit*, *hades*, *death*. The English-form sweep found **536 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

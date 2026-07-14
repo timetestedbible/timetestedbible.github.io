@@ -136,15 +136,60 @@ const files = fs.readdirSync(SYMBOLS_DIR)
 const entries = [];
 let skipped = 0;
 
+// Parse every record before resolving aliases so an alias may point to a
+// canonical record that sorts later in the directory.
+const records = new Map();
 for (const file of files) {
   const key = path.basename(file, '.md');
   const content = fs.readFileSync(path.join(SYMBOLS_DIR, file), 'utf8');
-  const { frontmatter, body } = parseMarkdown(content);
+  records.set(key, parseMarkdown(content));
+}
+
+for (const file of files) {
+  const key = path.basename(file, '.md');
+  const { frontmatter, body } = records.get(key);
   
   // Require minimum frontmatter
   if (!frontmatter.words || !frontmatter.symbol_key) {
     console.warn(`SKIP ${key}: missing words or symbol_key in frontmatter`);
     skipped++;
+    continue;
+  }
+
+  if (frontmatter.record_type === 'alias') {
+    const aliasOf = String(frontmatter.alias_of || '').trim();
+    const target = records.get(aliasOf);
+    if (!target || target.frontmatter.record_type === 'alias') {
+      console.warn(`SKIP ${key}: alias target '${aliasOf}' is missing or is itself an alias`);
+      skipped++;
+      continue;
+    }
+
+    const targetBoldLine = extractBoldLine(target.body);
+    const targetSentence = String(
+      target.frontmatter.definition || targetBoldLine || target.frontmatter.description || ''
+    ).trim();
+    const targetMeaning = String(
+      target.frontmatter.meaning || deriveShortMeaning(targetSentence)
+    ).trim();
+    const targetCategory = categoryMap[aliasOf] || { category: 'Uncategorized', subcategory: null };
+
+    entries.push({
+      key,
+      name: String(frontmatter.term || keyToName(key)).toUpperCase(),
+      words: (frontmatter.words || []).map(w => String(w).toLowerCase()),
+      kjvTriggers: [],
+      strongs: [],
+      meaning: targetMeaning,
+      sentence: targetSentence,
+      opposite: target.frontmatter.opposite || null,
+      rank: rankMap[aliasOf] || 0,
+      category: targetCategory.category,
+      subcategory: targetCategory.subcategory,
+      link: `/research/symbols/${aliasOf}/`,
+      recordType: 'alias',
+      aliasOf
+    });
     continue;
   }
   
@@ -153,8 +198,11 @@ for (const file of files) {
     console.warn(`WARN ${key}: no bold opening line found, using description`);
   }
   
-  const sentence = boldLine || frontmatter.description || '';
-  const meaning = deriveShortMeaning(sentence);
+  // Structured studies carry their canonical definition in frontmatter so the
+  // index, popup, abstract, and conclusion do not drift apart. Legacy studies
+  // continue to use their opening bold line until they are migrated.
+  const sentence = String(frontmatter.definition || boldLine || frontmatter.description || '').trim();
+  const meaning = String(frontmatter.meaning || deriveShortMeaning(sentence)).trim();
   
   // Format words array (concept names for search + display)
   const words = (frontmatter.words || []).map(w => String(w).toLowerCase());
@@ -198,7 +246,9 @@ for (const file of files) {
     rank: rankMap[key] || 0,
     category: cat.category,
     subcategory: cat.subcategory,
-    link: `/research/symbols/${key}/`
+    link: `/research/symbols/${key}/`,
+    recordType: frontmatter.record_type || 'symbol',
+    aliasOf: null
   });
 }
 
@@ -219,6 +269,8 @@ for (let i = 0; i < entries.length; i++) {
   output += `  '${escapeJS(e.key)}': {\n`;
   output += `    key: '${escapeJS(e.key)}',\n`;
   output += `    name: '${escapeJS(e.name)}',\n`;
+  output += `    recordType: '${escapeJS(e.recordType)}',\n`;
+  output += `    aliasOf: ${e.aliasOf ? `'${escapeJS(e.aliasOf)}'` : 'null'},\n`;
   output += `    words: [${wordsStr}],\n`;
   const kjvStr = e.kjvTriggers.map(w => `'${escapeJS(w)}'`).join(', ');
   if (e.kjvTriggers.length > 0) {
@@ -245,14 +297,16 @@ const SYMBOL_WORD_INDEX = {};
 const SYMBOL_MULTI_WORD_PHRASES = [];
 
 for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
+  const target = symbol.aliasOf ? SYMBOL_DICTIONARY[symbol.aliasOf] : symbol;
+  if (!target) continue;
   for (const word of symbol.words) {
-    SYMBOL_WORD_INDEX[word] = symbol;
+    SYMBOL_WORD_INDEX[word] = target;
     // Track multi-word phrases (those containing spaces)
     if (word.includes(' ')) {
       SYMBOL_MULTI_WORD_PHRASES.push({
         phrase: word,
-        symbol: symbol,
-        key: key
+        symbol: target,
+        key: target.key
       });
     }
   }
@@ -281,6 +335,7 @@ SYMBOL_MULTI_WORD_PHRASES.sort((a, b) => b.phrase.length - a.phrase.length);
 // Build a Strong's number index
 const SYMBOL_STRONGS_INDEX = {};
 for (const [key, symbol] of Object.entries(SYMBOL_DICTIONARY)) {
+  if (symbol.recordType === 'alias') continue;
   if (symbol.strongs) {
     for (const strongs of symbol.strongs) {
       SYMBOL_STRONGS_INDEX[strongs] = symbol;

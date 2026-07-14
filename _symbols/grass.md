@@ -1,19 +1,93 @@
 ---
 layout: symbol-study
 symbol_key: grass
-title: "Grass — Symbol Study"
-description: "Grass in Scripture represents mortal people — flourishing briefly, withering under the wind, and sorted at the harvest. The Word of God endures; the grass does not."
-strongs: [H2682]
-words: [grass, grasses]
+title: Grass — Symbol Study
+description: >-
+  Grass in Scripture represents mortal people — flourishing briefly, withering under the wind, and
+  sorted at the harvest. The Word of God endures; the grass does not.
+strongs:
+  - H2682
+words:
+  - grass
+  - grasses
+record_version: 1
+record_type: symbol
+term: Grass
+definition: Mortal people or flesh, growing across the field until they wither or are gathered at harvest.
+meaning: Mortal people or flesh, growing across the field until they wither or are gathered at harvest.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-grass
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - grass
+      - grasses
+senses:
+  - id: approved-core
+    status: approved
+    summary: Mortal people or flesh, growing across the field until they wither or are gathered at harvest.
+    citations:
+      - Isa 40:6-8
+      - Matt 13:38
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: Mortal people or flesh, growing across the field until they wither or are gathered at harvest.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-grass
+    citations:
+      - Isa 40:6-8
+      - Matt 13:38
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: "Popularly: Herbage; the plants which constitute the food of cattle and other beasts; pasture."
+    status: quoted
+    headword: GRASS
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Grass
 
-**Mortal people — flourishing briefly, withering under the $wind of the LORD, and sorted by their $fruit at harvest.**
+## Approved Definition
 
+**Mortal people or flesh, growing across the [field](/research/symbols/field/) until they wither or are gathered at [harvest](/research/symbols/harvest/).**
 > *"The voice said, Cry. And he said, What shall I cry? All flesh is **grass**, and all the goodliness thereof is as the flower of the field: The **grass** withereth, the flower fadeth: because the spirit of the LORD bloweth upon it: surely the people is **grass**."* — Isa 40:6–7
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**Mortal people or flesh, growing across the [field](/research/symbols/field/) until they wither or are gathered at [harvest](/research/symbols/harvest/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **grass** begins: “Popularly: Herbage; the plants which constitute the food of cattle and other beasts; pasture.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -171,8 +245,7 @@ The progression is: great $tree (empire) → cut down → eats grass (lives amon
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$wind** — The invisible power that withers the grass: "the spirit of the LORD bloweth upon it" (Isa 40:7). $wind = Spirit / invisible power. The Spirit acts on mortal people, and mortality is the result. The same *ruach* that gives life (Ezek 37:9) also takes it — the grass flourishes or withers at the Spirit's passage.
 
 - **$tree** — Grass and $tree appear together in Rev 8:7 and Dan 4:10–33. $tree = nation / people group; grass = individual mortal people within or beneath those nations. A third of the $trees burn, but *all* the grass burns — the collective structures partially survive, but the people bear the full weight. Nebuchadnezzar as $tree, cut down and eating grass, enacts the same distinction.
@@ -238,3 +311,37 @@ KJV translates H2682 primarily as "grass" and occasionally as "herb." G5528 appe
 - **$fruit** — The only thing that distinguishes wheat from tares. How does Scripture define the works and deeds that reveal what kind of grass you are?
 - **$bread** — The eternal counterpart to temporary grass. If grass = people and $bread = the Word of God, what does it mean to "eat" the Word — and what happens to the grass that does?
 - **$mark** — The seal that separates protected grass from exposed grass. What are the observable practices that identify which authority's grass you are?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **grass** begins:
+
+> “Grass, n. Etym: [OE. gras, gres, gers, AS, qr, g; akin to OFries. gres, gers, OS., D., G., Icel., & Goth. gras, Dan. gr, Sw. gr, and prob. to Z. grcen, grow. Cf. Graze.] 1. Popularly: Herbage; the plants which constitute the food of cattle and other beasts; pasture.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Matthew 13:38 says that the field is the world and that people are represented by good seed and tares; it does not say grass is the field. Therefore the printed citations strongly establish only the mortal-human identification, not the book's added field identification.
+
+- One could argue MATCH: Isaiah 40:7 itself says 'the people is grass,' so grass=mortal man is simply the literal core of the consensus's own proof text, and 'the field God farms unto harvest' is an interpretive elaboration rather than a change in identification. Conversely, one could argue the Matt 13:38 harvest-field component is sufficiently absent from all consensus responses to push toward NOVEL for that half of the entry.
+
+- Matthew 13:38 defines the 'field' as the world and the 'good seed' as the children of the kingdom, but does not explicitly mention 'grass' (Greek *chortos*), making the extension of the symbol of grass to mean the 'field God farms' textually indirect based on this verse alone.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**Mortal people or flesh, growing across the [field](/research/symbols/field/) until they wither or are gathered at [harvest](/research/symbols/harvest/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *grass*, *grasses*. The English-form sweep found **56 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

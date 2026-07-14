@@ -1,0 +1,191 @@
+{
+  "provider": "anthropic",
+  "stage": "reading_rules_proposal",
+  "phase": "proposal",
+  "round": null,
+  "request_stage": "reading_rules_proposal",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Propose a general comparison method independently, before seeing the author's rules or any disputed reading.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are participating in phase 1 of a reproducible methods experiment.\n\nNo author's rules, rationale, book chapter, disputed word, symbolic\ninterpretation, or desired outcome has been supplied. Propose your own general\nmethod before seeing any of them. Your answer will be frozen and returned to\nyou during later phases.\n\nThe following canonical and textual premises are fixed by the scope of the\nexperiment. Work within them; do not replace them with a secular-critical,\ndenominational, or interfaith-neutral framework and do not spend the response\narguing whether the premises should have been chosen.\n\nFIXED CANONICAL PREMISES\n\n# Canonical premises v1 — proposed for human approval\n\nThese are premises of the experiment, not conclusions the participating AI is\nasked to reconsider.\n\n## 1. Canon\n\nThe Old and New Testaments are the inspired, truthful, internally coherent word\nof God. The experiment does not ask whether either Testament is authoritative.\n\n## 2. Direction of interpretation\n\nRevelation is cumulative. The Torah was given before the Prophets, and the\nTorah and Prophets were given before the New Testament. Therefore later\nScripture is interpreted through definitions, covenant categories, symbols,\nand tests established in earlier Scripture:\n\n**Torah -> Prophets -> New Testament**\n\nThe New Testament may identify a fulfillment, disclose a referent, or confirm\na meaning contained in earlier Scripture. It may not be used to project a\nmeaning backward that contradicts, abolishes, or redefines the Torah and\nProphets.\n\n## 3. The written law is the prior witness\n\nDeuteronomy 31:9-13 orders the written law to be read publicly and repeatedly.\nDeuteronomy 31:24-26 places the completed book of the law beside the ark \"for a\nwitness.\" The written law is therefore the standing prior testimony against\nwhich later claims are heard.\n\n## 4. Later claims are tested by the prior word\n\nDeuteronomy 13:1-4 refuses even a fulfilled sign when its messenger teaches\ndeparture from God's prior commandments. Deuteronomy 18:21-22 also requires a\nclaimed prophetic word to come to pass. Fulfillment is necessary where a\nprediction is made, but fulfillment never licenses contradiction of the law.\nIsaiah 8:20 states the same order: \"To the law and to the testimony.\"\n\nAccordingly, Jesus, an apostle, a prophet, a translation, or an interpretation\nis not correctly understood as teaching against the prior written word. An\napparent conflict requires renewed interpretation; it does not authorize\nnullification of the earlier witness.\n\n## 5. Old Testament definitions govern New Testament symbols\n\nThe Old Testament supplies the primary vocabulary for New Testament symbolic\nlanguage. A New Testament symbol is first derived from the Torah, histories,\nwisdom writings, and Prophets. New Testament use may confirm or complete that\nderivation, but it does not serve as a free-standing replacement dictionary.\n\n## 6. Human traditions remain subordinate\n\nJewish, Christian, denominational, scholarly, translational, and scribal\ntraditions are human witnesses. Their data and arguments may be valuable, but\ntheir authority, antiquity, institutional status, or popularity cannot override\nthe canonical text.\n\nThe Masoretic vowel points and accents are evaluated as a later reading\ntradition applied to the consonantal text. This premise does not decide how\nmuch historical evidence that tradition supplies; determining a fair and\nobjective weight is one purpose of the rules experiment. The points are not\npermitted to become binding Scripture merely by being printed with the text.\n\n## 7. Language and manuscript witnesses\n\nThe experiment does not presume that the surviving Greek form of a New\nTestament writing is necessarily the original-language form merely because it\nis Greek, early, numerous, or the source text printed in modern critical\neditions. A Greek manuscript is a witness to the original text. It does not\nautomatically override Hebrew, Aramaic, Latin, or other ancient witnesses by\nlanguage, institutional acceptance, or numerical survival.\n\nThe same restriction applies in every direction. A Hebrew or Aramaic witness\ndoes not become original merely because its language fits the biblical setting,\nand a Latin witness does not become independent merely because it preserves a\ndifferent reading. For each locus, evaluate:\n\n- manuscript date and provenance;\n- independence or dependence of textual lineages;\n- whether copies repeat one exemplar or preserve independent information;\n- translation technique and plausible direction of translation;\n- Semitic or Greek syntax, idiom, wordplay, and other signs of composition or\n  translation;\n- agreement with the prior-scripture vocabulary and context;\n- whether one reading gives a documented explanation for the rise of the\n  others.\n\nCount independent lineages and discriminating evidence, not the raw number of\nsurviving copies. Numerical majority establishes prevalence in the surviving\ntradition; it does not by itself establish originality. The original language\nand earliest recoverable reading remain conclusions to be demonstrated rather\nthan presumptions granted to Greek, Hebrew, Aramaic, or Latin.\n\n## 8. Role of the New Testament in a Hebrew-reading dispute\n\nWhen two vocalizations of the same Old Testament consonants are linguistically\nadmissible:\n\n1. derive each candidate from the Hebrew or Aramaic consonants, grammar,\n   lexicon, immediate context, and earlier-scripture usage;\n2. compare each candidate with the Torah's covenant framework and the\n   Prophets' established vocabulary and symbols;\n3. then use the New Testament as canonical confirmation, fulfillment evidence,\n   or a check against misreading the earlier text.\n\nA candidate does not win merely because a Christian tradition calls it\nChristological. It must be derivable from the Old Testament. Conversely, a\nlater tradition's rejection of Jesus cannot veto an Old-Testament-derived\nreading that the New Testament then confirms.\n\n## 9. Experiment objective\n\nThe experiment asks for an objective, reproducible, non-ad-hoc procedure for\ndeciding which of two admissible readings best explains the unpointed text\nwithin this law-first canonical order. It must distinguish textual and\nlinguistic facts from inference, expose burdens and evidence weights, avoid\nlogical fallacies, and permit `UNDERDETERMINED` when the evidence does not\nselect a winner.\n\n\nThe recurring problem is this:\n\n- Two readings vocalize the same unpointed Hebrew or Aramaic consonantal text.\n- Both readings initially appear consonantally possible, grammatically\n  possible, and lexically attested. \"Admissible\" does not mean equally likely.\n- The task is to decide whether one reading is better supported or whether the\n  evidence remains underdetermined.\n\nThe method must work before the identity of the word or the desired\ninterpretation is known. It must not rely on denominational authority, modern\ncommentarial popularity, or an unspecified appeal to scholarly consensus.\nIt may use the biblical text, Hebrew/Aramaic grammar and lexicons, manuscript\nwitnesses, ancient translations, and relevant facts of textual history. State\nthe proper role of each rather than assuming that every source has equal force.\n\nPropose operational rules that another evaluator could apply reproducibly.\nDistinguish:\n\n1. the gate for admitting a candidate reading;\n2. hard disqualifiers from comparative evidence;\n3. the role of immediate context, whole-book usage, canonical parallels,\n   grammar, lexicons, manuscripts, and ancient translations;\n4. the role, if any, of Masoretic vowel points, accents, and Ketiv/Qere;\n5. burdens of proof and whether they are symmetrical;\n6. treatment of dependent witnesses and double-counting;\n7. treatment of source bias, conflicts of interest, or special textual\n   contexts under a general non-ad-hoc principle;\n8. the rule for ties and genuinely underdetermined cases;\n9. safeguards against inventing weights after seeing the desired result.\n\nDo not name or allude to any particular disputed biblical reading. Do not try\nto anticipate the author's eventual rules.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "written_text_status": {
+              "type": "string"
+            },
+            "admissibility_gate": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "hard_disqualifiers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "comparison_rules": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "rule_id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "operation": {
+                    "type": "string",
+                    "enum": [
+                      "HARD_CONSTRAINT",
+                      "COMPARATIVE_WEIGHT",
+                      "SOURCE_WEIGHT",
+                      "TIE_BREAK",
+                      "REPORTING"
+                    ]
+                  },
+                  "rule": {
+                    "type": "string"
+                  },
+                  "justification": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "rule_id",
+                  "title",
+                  "operation",
+                  "rule",
+                  "justification"
+                ]
+              }
+            },
+            "evidence_hierarchy": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string"
+                  },
+                  "default_role": {
+                    "type": "string",
+                    "enum": [
+                      "CONTROLLING",
+                      "STRONG",
+                      "SUPPORTING",
+                      "WEAK",
+                      "EXCLUDED",
+                      "CONTEXT_DEPENDENT"
+                    ]
+                  },
+                  "conditions": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "evidence",
+                  "default_role",
+                  "conditions"
+                ]
+              }
+            },
+            "received_pointing_role": {
+              "type": "string",
+              "enum": [
+                "BINDING",
+                "REBUTTABLE_PRESUMPTION",
+                "EVIDENCE_ONLY",
+                "NONE"
+              ]
+            },
+            "received_pointing_rule": {
+              "type": "string"
+            },
+            "burden_of_proof_rule": {
+              "type": "string"
+            },
+            "dependent_witness_rule": {
+              "type": "string"
+            },
+            "source_bias_rule": {
+              "type": "string"
+            },
+            "special_context_rules": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tie_rule": {
+              "type": "string"
+            },
+            "anti_ad_hoc_safeguards": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "proposed_baseline": {
+              "type": "string"
+            },
+            "clarifications_needed": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            }
+          },
+          "required": [
+            "written_text_status",
+            "admissibility_gate",
+            "hard_disqualifiers",
+            "comparison_rules",
+            "evidence_hierarchy",
+            "received_pointing_role",
+            "received_pointing_rule",
+            "burden_of_proof_rule",
+            "dependent_witness_rule",
+            "source_bias_rule",
+            "special_context_rules",
+            "tie_rule",
+            "anti_ad_hoc_safeguards",
+            "proposed_baseline",
+            "clarifications_needed",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "ad9fec1ada689c1b6e936331e5a441e92cf7e6d8095aca9e091c66298c240b3d"
+}

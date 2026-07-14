@@ -1,19 +1,122 @@
 ---
 layout: symbol-study
 symbol_key: new-moon
-title: "New Moon (Renewed Moon) — Symbol Study"
-description: "The Hebrew word for 'new moon' (H2320 chodesh) comes from the verb 'to renew' (H2318 chadash) — which means to restore to completeness, not to begin from nothing. Every use of this root in Scripture means restoration to fullness."
-strongs: [H2320, H2318, H2319]
-words: [new moon, month, renew, new]
+title: New Moon (Renewed Moon) — Symbol Study
+description: >-
+  The Hebrew word for 'new moon' (H2320 chodesh) comes from the verb 'to renew' (H2318 chadash) —
+  which means to restore to completeness, not to begin from nothing. Every use of this root in
+  Scripture means restoration to fullness.
+strongs:
+  - H2320
+  - H2318
+  - H2319
+words:
+  - new moon
+  - month
+  - renew
+  - new
+record_version: 1
+record_type: symbol
+term: New moon
+definition: >-
+  The renewed moon — the phase of the moon that marks the start of the month: the full moon in the
+  east gate and sign of the appointed times.
+meaning: >-
+  The renewed moon — the phase of the moon that marks the start of the month: the full moon in the
+  east gate and sign of the appointed times.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-new-moon
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-pearl-fullmoon.md
+    - books/symbolic-language/research/research-sun-moon-stars.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - new moon
+      - month
+      - renew
+      - new
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The renewed moon — the phase of the moon that marks the start of the month: the full moon in
+      the east gate and sign of the appointed times.
+    citations:
+      - Ps 81:3
+      - 1 Sam 20:5, 18
+      - Isa 66:23
+      - Ezek 46:1-3
+      - Amos 8:5
+      - Col 2:16-17
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The renewed moon — the phase of the moon that marks the start of the month: the full moon in
+      the east gate and sign of the appointed times.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-new-moon
+    citations:
+      - Ps 81:3
+      - 1 Sam 20:5, 18
+      - Isa 66:23
+      - Ezek 46:1-3
+      - Amos 8:5
+      - Col 2:16-17
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      Having existed, or having been made, but a short time; having originated or occured lately;
+      having recently come into existence, or into one's possession; not early or long in being; of
+      late origin; recent; fresh; modern; -- opposed to old, as, a new coat; a new house; a new
+      book; a new fashion.
+    status: quoted
+    headword: NEW
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # New Moon — The Renewed Moon
 
-**The Hebrew word translated "new moon" means "renewed" — restored to completeness. Every use of the root verb in Scripture describes restoration to fullness, not a bare beginning.**
+## Approved Definition
 
+**The renewed moon — the phase of the moon that marks the start of the month: the full moon in the [east](/research/symbols/east/) gate and sign of the appointed times.**
 > *"Blow up the **trumpet** in the **renewed moon** (H2320 chodesh), in the **$[full-moon]** (H3677 keseh), on our solemn feast day."* — Ps 81:3
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The renewed moon — the phase of the moon that marks the start of the month: the full moon in the [east](/research/symbols/east/) gate and sign of the appointed times.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **new** begins: “Having existed, or having been made, but a short time; having originated or occured lately; having recently come into existence, or into one's possession; not early or long in being; of late origin; recent; fresh; modern; -- opposed to old, as, a new coat; a new house; a new book; a new fashion.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -235,8 +338,7 @@ If כסא means both throne and full moon, then every "throne" verse should prod
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$full-moon** — The companion study. H3677 *keseh* (full moon) and H2320 *chodesh* (renewed moon) appear in synonymous parallelism in Ps 81:3. If *chadash* means "restore to completeness," then the renewed moon IS the full moon.
 
 - **$throne** — H3678 *kissé* (throne) shares the same root as *keseh* (H3680 *kasah* = to cover/fill). The renewed moon, the full moon, and the throne are bound by shared roots. The day the moon is renewed to fullness is the day the king takes his seat.
@@ -264,3 +366,144 @@ If כסא means both throne and full moon, then every "throne" verse should prod
 - **$throne** — The כסא that means both throne and full moon. How the renewed moon connects to the day the king takes his seat.
 - **$shadow** — The appointed times are the shadow (Col 2:17). The moon marks these times (Ps 104:19). How the renewed-moon cycle structures covenant protection.
 - **Chapter: [When Does the Month Start?](/reader/timetested/07_When_Does_the_Month_Start)** — The full scriptural and astronomical case for a full-moon calendar, including the creation mandate, the Joshua long day, and the Isa 30:26 mathematical proof.
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **new** begins:
+
+> “New, a. [Compar. Newer; superl. Newest.] Etym: [OE. OE. newe, AS. niwe, neowe; akin to D. nieuw, OS. niwi, OHG. niuwi, G. neu, Icel. n, Dan. & Sw. ny, Goth. niujis, Lith. naujas, Russ. novuii, Ir. nua, nuadh, Gael. nuadh, W. newydd, Armor. nevez, L. novus, gr. nava, and prob. to E. now. Now, and cf. Announce, Innovate, Neophyte, Novel.] 1. Having existed, or having been made, but a short time; having originated or occured lately; having recently come into existence, or into one's possession; not early or long in being; of late origin; recent; fresh; modern; -- opposed to old, as, a new coat; a new house; a new book; a new fashion. ”Your new wife.” Chaucer.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+A common reading is: **the dark conjunction or first visible crescent that begins the month.**
+
+- The printed passages strongly support worship, the east gate, commercial impatience, and the Pauline shadow classification, but they do not by themselves establish the Hebrew etymology, that a sign must be actively watched for, or which precise lunar phase begins the month.
+
+- The entry's closing line signals that the book intends to argue a specific position on which lunar phase constitutes the 'new moon' (e.g., possibly a nonstandard phase identification), and if that chapter identifies a phase contrary to the conventional dark/first-crescent understanding, the fuller book position could shift toward REFINED or DIVERGENT; classifying on the entry alone may understate a real disagreement deferred elsewhere.
+
+- Some consensus responses treat the Colossians shadow typology as the dominant Christian primary meaning, while the book leads with the etymological/calendrical definition and lists the shadow as one attribute among others.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Occurrence Register
+
+<details markdown="1">
+<summary>Show the complete 384-verse English-form register</summary>
+
+**Genesis:** 7:11, 8:4, 8:5, 8:13, 8:14, 29:14, 38:24
+
+**Exodus:** 1:8, 2:2, 12:2, 12:3, 12:6, 12:18, 13:4, 13:5, 16:1, 19:1, 23:15, 34:18, 40:2, 40:17
+
+**Leviticus:** 16:29, 23:5, 23:6, 23:16, 23:24, 23:27, 23:32, 23:34, 23:39, 23:41, 25:9, 26:10, 27:6
+
+**Numbers:** 1:1, 1:18, 3:15, 3:22, 3:28, 3:34, 3:39, 3:40, 3:43, 9:1, 9:3, 9:5, 9:11, 9:22, 10:10, 10:11, 11:20, 11:21, 16:30, 18:16, 20:1, 26:62, 28:11, 28:14, 28:16, 28:17, 28:26, 29:1, 29:6, 29:7, 29:12, 33:3, 33:38
+
+**Deuteronomy:** 1:3, 16:1, 20:5, 21:13, 22:8, 24:5, 32:17
+
+**Joshua:** 4:19, 5:10, 9:13
+
+**Judges:** 5:8, 11:37, 11:38, 11:39, 15:13, 15:15, 16:11, 16:12, 19:2, 20:47
+
+**1 Samuel:** 6:1, 6:7, 11:14, 20:5, 20:18, 20:24, 20:27, 20:34, 27:7
+
+**2 Samuel:** 2:11, 5:5, 6:3, 6:11, 21:16, 24:8, 24:13
+
+**1 Kings:** 4:7, 4:27, 5:14, 6:1, 6:37, 6:38, 8:2, 11:16, 11:29, 11:30, 12:32, 12:33
+
+**2 Kings:** 2:20, 4:23, 15:8, 15:13, 23:31, 24:8, 25:1, 25:3, 25:8, 25:25, 25:27
+
+**1 Chronicles:** 3:4, 12:15, 13:7, 13:14, 21:12, 23:31, 27:1, 27:2, 27:3, 27:4, 27:5, 27:7, 27:8, 27:9, 27:10, 27:11, 27:12, 27:13, 27:14, 27:15
+
+**2 Chronicles:** 2:4, 3:2, 5:3, 7:10, 8:13, 15:8, 15:10, 20:5, 29:3, 29:17, 30:2, 30:13, 30:15, 31:3, 31:7, 35:1, 36:2, 36:9
+
+**Ezra:** 3:1, 3:5, 3:6, 3:8, 6:4, 6:15, 6:19, 7:8, 7:9, 8:31, 10:9, 10:16, 10:17
+
+**Nehemiah:** 1:1, 2:1, 6:15, 7:73, 8:2, 8:14, 9:1, 10:33, 10:39, 13:5, 13:12
+
+**Esther:** 2:12, 2:16, 3:7, 3:12, 3:13, 8:9, 8:12, 9:1, 9:15, 9:17, 9:19, 9:21, 9:22
+
+**Job:** 3:6, 7:3, 14:5, 21:21, 29:2, 29:20, 32:19, 39:2
+
+**Psalms:** 33:3, 40:3, 51:10, 81:3, 96:1, 98:1, 103:5, 144:9, 149:1
+
+**Proverbs:** 3:10, 25:25
+
+**Ecclesiastes:** 1:9, 1:10
+
+**Song of Solomon:** 7:13
+
+**Isaiah:** 1:13, 1:14, 24:7, 40:31, 41:1, 41:15, 42:9, 42:10, 43:19, 48:6, 62:2, 65:8, 65:17, 66:22, 66:23
+
+**Jeremiah:** 1:3, 2:24, 26:10, 28:1, 28:17, 31:22, 31:31, 36:9, 36:10, 36:22, 39:1, 39:2, 41:1, 52:4, 52:6, 52:12, 52:31
+
+**Lamentations:** 3:23, 5:21
+
+**Ezekiel:** 1:1, 1:2, 8:1, 11:19, 18:31, 20:1, 24:1, 26:1, 29:1, 29:17, 30:20, 31:1, 32:1, 32:17, 33:21, 36:26, 39:12, 39:14, 40:1, 45:17, 45:18, 45:20, 45:21, 45:25, 46:1, 46:3, 46:6, 47:12
+
+**Daniel:** 4:29, 10:4
+
+**Hosea:** 2:11, 4:11, 5:7, 9:2
+
+**Joel:** 1:5, 1:10, 2:23, 3:18
+
+**Amos:** 4:7, 8:5
+
+**Haggai:** 1:1, 1:11, 1:15, 2:1, 2:10, 2:18, 2:20
+
+**Zechariah:** 1:1, 1:7, 7:1, 7:3, 7:5, 8:19, 9:17, 11:8
+
+**Matthew:** 9:16, 9:17, 13:52, 26:28, 26:29, 27:60
+
+**Mark:** 1:27, 2:21, 2:22, 14:24, 14:25, 16:17
+
+**Luke:** 1:24, 1:26, 1:36, 1:56, 4:25, 5:36, 5:37, 5:38, 5:39, 22:20
+
+**John:** 4:35, 13:34, 19:41
+
+**Acts:** 2:13, 7:20, 17:19, 17:21, 18:11, 19:8, 20:3, 28:11
+
+**Romans:** 12:2
+
+**1 Corinthians:** 5:7, 11:25
+
+**2 Corinthians:** 3:6, 4:16, 5:17
+
+**Galatians:** 4:10, 6:15
+
+**Ephesians:** 2:15, 4:23, 4:24
+
+**Colossians:** 2:16, 3:10
+
+**Titus:** 3:5
+
+**Hebrews:** 6:6, 8:8, 8:13, 9:15, 10:20, 11:23, 12:24
+
+**James:** 5:17
+
+**2 Peter:** 3:13
+
+**1 John:** 2:7, 2:8
+
+**2 John:** 1:5
+
+**Revelation:** 2:17, 3:12, 5:9, 9:5, 9:10, 9:15, 11:2, 13:5, 14:3, 21:1, 21:2, 21:5, 22:2
+
+</details>
+
+## Conclusion
+
+**The renewed moon — the phase of the moon that marks the start of the month: the full moon in the [east](/research/symbols/east/) gate and sign of the appointed times.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *new moon*, *month*, *renew*, *new*. The English-form sweep found **384 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

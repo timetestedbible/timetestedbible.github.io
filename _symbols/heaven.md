@@ -1,19 +1,122 @@
 ---
 layout: symbol-study
 symbol_key: heaven
-title: "Heaven — Symbol Study"
-description: "Heaven in Scripture is not merely a location above — it is the jurisdictional domain where God's will operates without opposition, and the entire biblical narrative moves toward closing the gap between that domain and the earth."
-strongs: [H8064, H7549, G3772, G2032]
-words: [heaven, heavens, sky, firmament, heavenly, heavenly places]
+title: Heaven — Symbol Study
+description: >-
+  Heaven in Scripture is not merely a location above — it is the jurisdictional domain where God's
+  will operates without opposition, and the entire biblical narrative moves toward closing the gap
+  between that domain and the earth.
+strongs:
+  - H8064
+  - H7549
+  - G3772
+  - G2032
+words:
+  - heaven
+  - heavens
+  - sky
+  - firmament
+  - heavenly
+  - heavenly places
+record_version: 1
+record_type: symbol
+term: Heaven
+definition: >-
+  The jurisdiction where God's will is already done — both the visible sky and the seat of rule.
+  Scripture's saving movement comes downward from heaven to earth.
+meaning: >-
+  The jurisdiction where God's will is already done — both the visible sky and the seat of rule.
+  Scripture's saving movement comes downward from heaven to earth.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-heaven
+  verdict: novel
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - heaven
+      - heavens
+      - sky
+      - firmament
+      - heavenly
+      - heavenly places
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The jurisdiction where God's will is already done — both the visible sky and the seat of rule.
+      Scripture's saving movement comes downward from heaven to earth.
+    citations:
+      - Ps 115:16
+      - Isa 66:1
+      - Matt 6:10
+      - John 3:13
+      - Rev 21:2-3
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The jurisdiction where God's will is already done — both the visible sky and the seat of rule.
+      Scripture's saving movement comes downward from heaven to earth.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-heaven
+    citations:
+      - Ps 115:16
+      - Isa 66:1
+      - Matt 6:10
+      - John 3:13
+      - Rev 21:2-3
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      The expanse of space surrounding the earth; esp., that which seems to be over the earth like a
+      great arch or dome; the firmament; the sky; the place where the sun, moon, and stars appear;
+      -- often used in the plural in this sense.
+    status: quoted
+    headword: HEAVEN
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Heaven
 
-**The jurisdictional domain where God's will operates without opposition — simultaneously the physical sky above and God's authority-seat, with both layers always active.**
+## Approved Definition
 
+**The jurisdiction where God's will is already done — both the visible sky and the seat of rule. Scripture's saving movement comes downward from heaven to earth.**
 > *"Thy kingdom come. Thy will be done in **earth**, as it is in **heaven**."* — Mat 6:10
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The jurisdiction where God's will is already done — both the visible sky and the seat of rule. Scripture's saving movement comes downward from heaven to earth.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **heaven** begins: “The expanse of space surrounding the earth; esp., that which seems to be over the earth like a great arch or dome; the firmament; the sky; the place where the sun, moon, and stars appear; -- often used in the plural in this sense.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -196,8 +299,7 @@ This single passage is the heavens being *purged, shaken, and replaced* — Eph 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$earth** — Heaven's counterpart and the domain where the story unfolds. Earth is the delegated realm given to humanity (Ps 115:16), the footstool to heaven's throne (Isa 66:1). The entire narrative arc bends toward earth becoming what heaven already is — a place where God's will is done without opposition.
 
 - **$sea** — The chaotic dimension below both heaven and earth, representing nations in restless, turbulent rebellion (Rev 17:15, Isa 57:20). Heaven is the domain of unchallenged authority; the sea is the domain of unchanneled chaos. In the new creation, there is "no more sea" (Rev 21:1) — the turbulence of rebellious peoples is abolished.
@@ -284,3 +386,37 @@ KJV translates H8064 as "heaven(s)," "sky," and "air." H7549 appears as "firmame
 - **$earthquake** — The shaking that removes "things that are made." What are the man-installed structures in the heavenly realm, and what does it mean for them to be shaken out?
 - **$mountain** — Kingdom and ruling authority. How does the stone that becomes a mountain filling the earth (Dan 2:35) relate to the new heaven descending to meet the new earth?
 - **$renewed-covenant** — The Hebrew word for "new" in both "new covenant" and "new heavens" is H2319 *chadash* — from the root meaning "to renew, repair, rebuild." If the everlasting covenant was renewed rather than replaced, what does that imply about the heavens that are made *chadash*?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **heaven** begins:
+
+> “heven, hefen, heofen, AS. heofon; akin to OS. hevan, LG. heben, heven, Icel. hifinn; of uncertain origin, cf. D. hemel, G. himmel, Icel. himmin, Goth. himins; perh. akin to, or influenced by, the root of E. heave, or from a root signifying to cover, cf. Goth. gaham to put on, clothe one's self, G. hemd shirt, and perh. E. chemise.] 1. The expanse of space surrounding the earth; esp., that which seems to be over the earth like a great arch or dome; the firmament; the sky; the place where the sun, moon, and stars appear; -- often used in the plural in this sense. I never saw the heavens so dim by day. Shak. When my eyes shall be turned to behold for the last time the sun in heaven. D. Webster.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Conclusion
+
+**The jurisdiction where God's will is already done — both the visible sky and the seat of rule. Scripture's saving movement comes downward from heaven to earth.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *heaven*, *heavens*, *sky*, *firmament*, *heavenly*, *heavenly places*. The English-form sweep found **705 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
+
+## Competing Definitions Tested
+
+- The printed texts strongly support divine ownership and rule, the heaven-earth contrast, God's will being done in heaven, and the New Jerusalem descending. However, they do not by themselves fully establish the lexical claim that shamayim deliberately unifies visible sky and jurisdiction, the broader pattern that God's motion is always downward, or the claim that ascent as such is Babel-like.
+
+- One could argue MATCH: the book's descent emphasis is already listed as a common consensus alternative, and its throne/rule core matches the consensus primary, so the difference is emphasis rather than material boundary change. Against this, the consensus primary across all four responses explicitly includes heaven as the redeemed's eternal home/destiny, which the book pointedly recasts ('not man gone up'), making the disagreement more than wording.
+
+- The New Testament also speaks of believers having an inheritance kept in heaven (1 Peter 1:4), a citizenship in heaven (Philippians 3:20), and the desire to depart and be with Christ (Philippians 1:23), which may complicate the absolute denial of any 'upward' translation of the believer.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.

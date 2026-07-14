@@ -1,19 +1,113 @@
 ---
 layout: symbol-study
 symbol_key: gospel
-title: "Gospel — Symbol Study"
-description: "The gospel of the kingdom is the herald-announcement that God's covenant reign has arrived — preached as legal testimony to the nations, whose completion triggers the end."
-strongs: [G2098, G2097]
-words: [gospel, gospel of the kingdom, good tidings]
+title: Gospel — Symbol Study
+description: >-
+  The gospel of the kingdom is the herald-announcement that God's covenant reign has arrived —
+  preached as legal testimony to the nations, whose completion triggers the end.
+strongs:
+  - G2098
+  - G2097
+words:
+  - gospel
+  - gospel of the kingdom
+  - good tidings
+record_version: 1
+record_type: symbol
+term: Gospel
+definition: >-
+  The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to
+  Abraham and at Mount Sinai, and renewed under Jesus' rule.
+meaning: >-
+  The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to
+  Abraham and at Mount Sinai, and renewed under Jesus' rule.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-gospel
+  verdict: divergent
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files:
+    - books/symbolic-language/research/research-gospel.md
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - gospel
+      - gospel of the kingdom
+      - good tidings
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed
+      beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.
+    citations:
+      - Gen 12:3
+      - Isa 52:7
+      - Isa 2:3
+      - Jer 31:33
+      - Gal 3:8
+      - Heb 4:2
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed
+      beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-gospel
+    citations:
+      - Gen 12:3
+      - Isa 52:7
+      - Isa 2:3
+      - Jer 31:33
+      - Gal 3:8
+      - Heb 4:2
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: Glad tidings; especially, the good news concerning Christ, the Kingdom of God, and salvation.
+    status: quoted
+    headword: GOSPEL
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Gospel of the Kingdom
 
-**The herald-announcement that God's covenant reign has arrived — delivered as legal testimony to the nations, whose completion triggers $the-end.**
+## Approved Definition
 
+**The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.**
 > *"And this **gospel of the kingdom** shall be preached in all the world for a **witness** unto all nations; and then shall **the end** come."* — Mat 24:14
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **gospel** begins: “Glad tidings; especially, the good news concerning Christ, the Kingdom of God, and salvation.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -181,8 +275,7 @@ That this angel-proclamation occurs in Revelation's sequence immediately before 
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$the-end** — The $the-end is not termination but covenant fulfillment — the goal (*telos*) toward which God's covenant process drives. Mat 24:14 makes the gospel-testimony the trigger-condition: the *telos* cannot arrive until the *marturion* is complete. The finishing of witness (*teleo*) and the arriving of the goal (*telos*) share the same root because they are the same event viewed from two sides.
 
 - **$name** — The $name represents covenant relationship. Believers are persecuted "for my name's sake" (Mat 24:9) — for the covenant relationship itself. Acts 8:12 pairs the kingdom and the $name of Jesus as inseparable: "when they believed Philip preaching the things concerning the kingdom of God, and the name of Jesus Christ." The gospel of the kingdom is preached in the $name — under the authority of the covenant.
@@ -257,3 +350,39 @@ Heb 3:18–19, Heb 4:2, Heb 4:6
 - **$birth-pains** — The gospel is preached during the $birth-pains, not after them. What is the relationship between the painful transition of the old order and the herald-cry of the new?
 
 - **$wickedness** — Lawlessness multiplies (Mat 24:12) immediately before the gospel-testimony is completed (Mat 24:14). Why does the legal testimony require a lawless context?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **gospel** begins:
+
+> “See God, and Spell, v.] 1. Glad tidings; especially, the good news concerning Christ, the Kingdom of God, and salvation. And Jesus went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom. Matt. iv. 23. The steadfast belief of the promises of the gospel. Bentley. Note: It is probable that gospel is from. OE. godspel, God story, the narrative concerning God; but it was early confused with god spell, good story, good tidings, and was so used by the translators of the Authorized version of Scripture. This use has been retained in most cases in the Revised Version. Thus the literal sense [of gospel] is the ”narrative of God,” i. e., the life of Christ. Skeat.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+A common reading is: **the good news that Christ died for our sins, was buried, and rose again.**
+
+- The contrast with the explicitly noted common view could indicate that the book intends to replace, not merely refine, the Christ-event identification; on that reading the entry would be divergent. The printed wording alone, however, does not explicitly deny that Christ’s death and resurrection enact the renewed covenant.
+
+- One could argue REFINED: the consensus itself lists 'the gospel of the kingdom' as a common alternative reading, and the book's phrase leads with exactly that; Jer 31:33's new covenant is also arguably contained within mainstream gospel theology (Christ's blood inaugurating the new covenant), so the book might be seen as a covenantal sharpening of an admitted alternative rather than a replacement. Additionally, Heb 4:2 genuinely shows biblical usage of 'gospel' preached before Christ's death, lending some textual footing to a definition not anchored in the cross-resurrection events.
+
+- The Apostle Paul explicitly defines the Gospel as the death, burial, and resurrection of Christ in 1 Corinthians 15:1-4. While the Old Testament texts provided discuss the law, Zion, and the new covenant, applying the term 'Gospel' exclusively to these concepts ignores its explicit New Testament definition.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *gospel*, *gospel of the kingdom*, *good tidings*. The English-form sweep found **109 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

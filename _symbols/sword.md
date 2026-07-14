@@ -1,19 +1,138 @@
 ---
 layout: symbol-study
 symbol_key: sword
-title: "Sword — Symbol Study"
-description: "The sword in Scripture is the desolation-maker — the instrument that cuts, wastes, and parches, sharing its very root with drought, ruin, and the covenant mountain itself."
-strongs: [H2719, H2717, G4501, G3162]
-words: [sword, swords, dagger, knife, knives, tool, flaming sword, two-edged sword]
+title: Sword — Symbol Study
+description: >-
+  The sword in Scripture is the desolation-maker — the instrument that cuts, wastes, and parches,
+  sharing its very root with drought, ruin, and the covenant mountain itself.
+strongs:
+  - H2719
+  - H2717
+  - G4501
+  - G3162
+words:
+  - sword
+  - swords
+  - dagger
+  - knife
+  - knives
+  - tool
+  - flaming sword
+  - two-edged sword
+record_version: 1
+record_type: symbol
+term: Sword
+definition: >-
+  The Word of God wielded by the Spirit to discern and execute judgment; also war and the governing
+  force that carries judgment out. It proceeds from Christ's mouth, takes peace from the earth, and
+  guards the way.
+meaning: >-
+  The Word of God wielded by the Spirit to discern and execute judgment; also war and the governing
+  force that carries judgment out. It proceeds from Christ's mouth, takes peace from the earth, and
+  guards the way.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-sword
+  verdict: standard
+classification: symbol
+relationships:
+  opposites:
+    - opposite-in-its-war-sense-peace
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - sword
+      - swords
+      - dagger
+      - knife
+      - knives
+      - tool
+      - flaming sword
+      - two-edged sword
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The Word of God wielded by the Spirit to discern and execute judgment; also war and the
+      governing force that carries judgment out. It proceeds from Christ's mouth, takes peace from
+      the earth, and guards the way.
+    citations:
+      - Isa 49:2
+      - Eph 6:17
+      - Heb 4:12
+      - Rev 1:16
+      - Rev 2:16
+      - Rev 6:4
+      - Rev 19:15, 21
+      - Rom 13:4
+      - Gen 3:24
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The Word of God wielded by the Spirit to discern and execute judgment; also war and the
+      governing force that carries judgment out. It proceeds from Christ's mouth, takes peace from
+      the earth, and guards the way.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-sword
+    citations:
+      - Isa 49:2
+      - Eph 6:17
+      - Heb 4:12
+      - Rev 1:16
+      - Rev 2:16
+      - Rev 6:4
+      - Rev 19:15, 21
+      - Rom 13:4
+      - Gen 3:24
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: An offensive weapon, having a long and usually sharp
+    status: quoted
+    headword: SWORD
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Sword
 
-**The desolation-maker — the instrument that cuts and wastes, whose root IS drought and ruin, and whose edge both makes and breaks covenant.**
+The fuller book trail continues in [Garments & Armor](/books/symbolic-language/garments/),
+where the Sword of the Spirit appears as one piece of God's covenant armor.
 
+## Approved Definition
+
+**The Word of God wielded by the Spirit to discern and execute [judgment](/research/symbols/judgment/); also war and the governing force that carries judgment out. It proceeds from Christ's mouth, takes [peace](/research/symbols/peace/) from the earth, and guards the [way](/research/symbols/way/).**
 > *"For my **sword** shall be bathed in $[heaven]: behold, it shall come down upon Idumea, and upon the people of my curse, to judgment."* — Isa 34:5
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The Word of God wielded by the Spirit to discern and execute [judgment](/research/symbols/judgment/); also war and the governing force that carries judgment out. It proceeds from Christ's mouth, takes [peace](/research/symbols/peace/) from the earth, and guards the [way](/research/symbols/way/).**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **sword** begins: “An offensive weapon, having a long and usually sharp”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -218,8 +337,7 @@ The $thorns — worldly people characterized by cares, riches, and pleasures (Ma
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$fire** — The sword's constant companion: both appear at Eden's gate (Gen 3:24), both execute final judgment (Isa 66:16), both characterize Christ's return (Rev 19:12–15). $fire = God's holy standard in active contact, consuming what violates covenant and refining what keeps it. The sword desolates; the fire consumes. Together they are the full expression of the covenant standard applied.
 
 - **$famine** — The absence of God's Word. In the triad (sword + $famine + $pestilence), the sword enforces and the famine withdraws — violence upon the body, silence upon the soul. Amos 8:11 defines $famine as "not a famine of bread, but of hearing the words of the LORD." When the sword comes, the Word leaves.
@@ -335,3 +453,37 @@ KJV translates H2719 as "sword" (~370×), "knife" (Josh 5:2–3), "tool" (Exod 2
 - **$blood** — What the sword releases. How does the life made visible by the sword's cut function as both accusation and atonement?
 - **$babylon** — The worldly kingdom that borrows God's sword and is destroyed by it. How does Babylon's role as temporary executor of judgment illuminate the sword's divine ownership?
 - **$earthquake** — The systemic upheaval that replaces the sword in the Olivet Discourse. How does "shaking" relate to "desolating," and what does it mean that what cannot be shaken remains?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **sword** begins:
+
+> “Sword, n. Etym: [OE. swerd, AS. sweord; akin to OFries. swerd, swird, D. zwaard, OS. swerd, OHG. swert, G. schwert, Icel. sver, Sw. svärd, Dan. sværd; of uncertain origin.] 1. An offensive weapon, having a long and usually sharp”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Revelation 6:4 strongly supports war and killing, and Genesis 3:24 supports guarding or exclusion, but neither excerpt explicitly identifies the sword as a “word of judgment.” Explicit word-and-sword texts such as Ephesians 6:17, Hebrews 4:12, and Revelation 19:15 would be needed to support that part of the gloss strongly.
+
+- One could argue DIVERGENT: the consensus's central identification — the Word of God as the Spirit's sword that believers wield (Eph 6:17) — is effectively displaced by 'war,' and neither printed citation (Rev 6:4; Gen 3:24) mentions a 'word' at all, suggesting the book has replaced the referent rather than refined its boundary. The 'word of judgment' phrase may be doing less bridging work than a REFINED verdict assumes.
+
+- Explicit equations of the sword with the word of God (Eph 6:17; Heb 4:12) and the consistent reading of the sword from Christ’s mouth make Word of God the primary sense; the book’s citations support only secondary war/judgment imagery and omit those texts.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The Word of God wielded by the Spirit to discern and execute [judgment](/research/symbols/judgment/); also war and the governing force that carries judgment out. It proceeds from Christ's mouth, takes [peace](/research/symbols/peace/) from the earth, and guards the [way](/research/symbols/way/).**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *sword*, *swords*, *dagger*, *knife*, *knives*, *tool*, *flaming sword*, *two-edged sword*. The English-form sweep found **420 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.

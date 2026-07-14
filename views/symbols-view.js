@@ -25,7 +25,9 @@ const SymbolsView = {
    * Render the grid of all symbols
    */
   renderSymbolGrid(container) {
-    const symbols = Object.entries(SYMBOL_DICTIONARY).sort((a, b) => a[1].name.localeCompare(b[1].name));
+    const symbols = Object.entries(SYMBOL_DICTIONARY)
+      .filter(([, symbol]) => symbol.recordType !== 'alias')
+      .sort((a, b) => a[1].name.localeCompare(b[1].name));
     const symbolCount = symbols.length;
     
     container.innerHTML = `

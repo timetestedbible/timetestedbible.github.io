@@ -1,0 +1,43 @@
+{
+  "protocol": "vowel-points-foundation",
+  "protocol_version": 1,
+  "run_id": "2026-07-12-vowel-points-foundation-v1",
+  "created_at": "2026-07-13T01:12:01.280366+00:00",
+  "stages": [
+    "blind",
+    "adjudication"
+  ],
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "api": "gemini_generate_content",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "chapter": "books/symbolic-language/25-what-is-the-point.adoc",
+  "chapter_sha256": "969c62f1c12d0f5348b9e9bd9ff3519ae00f5cfe85d43d77231f84432b78f444",
+  "prompt_sha256": {
+    "01-blind.md": "ce6dc9de2edd17c4570400bc1c147ca612efd115f564efd080f609ce43048bcd",
+    "02-adjudication.md": "73d43492585f0702de85700adaa14464e810f96ee7adb8ddde94dd58efed0eea"
+  },
+  "schema_sha256": {
+    "01-blind.json": "09853d17347ddad83d76f7b6be9043f044818f671a2642a50ae6fd9f08d644b6",
+    "02-adjudication.json": "e8cd1485c1c7bcfaee5a827fdd75d481cadb8c0d680c93c957d1842cecd758fb"
+  },
+  "notes": "The blind commitment is completed before that provider receives the chapter. API keys are never written."
+}

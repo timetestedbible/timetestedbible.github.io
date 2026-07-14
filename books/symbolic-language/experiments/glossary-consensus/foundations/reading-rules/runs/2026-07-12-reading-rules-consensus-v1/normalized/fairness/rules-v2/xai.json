@@ -1,0 +1,56 @@
+{
+  "verdict": "FAIR_WITH_CLARIFICATIONS",
+  "agree_to_use_as_baseline": "NO",
+  "symmetry": "PASS",
+  "neutrality": "PASS",
+  "reproducibility": "FAIL",
+  "strengths": [
+    "Freeze-before-evidence protocol (Rule 2) blocks post-hoc criterion invention and candidate mutation.",
+    "Admission gate (Rule 3) is applied independently and identically to each candidate with hard INADMISSIBLE outcomes.",
+    "Outcomes are fully enumerated, including UNDERDETERMINED and single-side/both INADMISSIBLE, without forcing a winner.",
+    "Received pointing is given zero comparative weight and cannot break ties; both candidates bear the same positive-evidence burden (Rule 4).",
+    "Evidence classes are fixed, ordered, and non-overlapping with an explicit anti-double-counting rule (Rules 5 and 7).",
+    "Universal source-risk rule (Rule 10) is identity-blind and requires independently documented behavioral patterns before any discount.",
+    "Decision threshold (Rule 12) is mechanical, multi-class, and defaults to UNDERDETERMINED when any condition fails.",
+    "Reproducibility package requires identical ledgers, A/B label swap, falsifiers, dependence disclosures, assumption-removal tests, and control-case calibration (Rule 13).",
+    "Genre/context adjustments (Rule 11) and fallacy/silence audits (Rule 9) are predeclared and apply to either candidate.",
+    "Hard gate/Class-1 exclusion is cleanly separated from comparative scoring."
+  ],
+  "ambiguities": [
+    {
+      "location": "Rule 6 (score levels)",
+      "problem": "STRONGLY_FAVORS, FAVORS, NEUTRAL, and AMBIGUOUS lack operational criteria, allowing independent scorers to diverge on borderline data and thereby change which class is treated as distinguishing.",
+      "minimum_clarification": "Add checkable definitions, e.g.: NEUTRAL = no net directional force; AMBIGUOUS = direction uncertain or supports both; FAVORS = makes one reading clearly more natural/probable without excluding the other; STRONGLY_FAVORS = near-decisive fit that would be unexpected under the rival yet still short of Class-1 logical exclusion."
+    },
+    {
+      "location": "Rule 12 (phrase 'materially distinguishes' / 'material')",
+      "problem": "No definition of when a class 'materially distinguishes' the candidates, so selection of the highest distinguishing class can vary.",
+      "minimum_clarification": "Define a class as materially distinguishing when, after higher-class data are assigned, one candidate scores FAVORS or STRONGLY_FAVORS and the other does not (i.e., scores NEUTRAL, AMBIGUOUS, or is unsupported)."
+    },
+    {
+      "location": "Rule 12 condition 3 ('evidentiary family independent')",
+      "problem": "'Evidentiary family' is undefined, so the independence of the required additional-class support can be contested.",
+      "minimum_clarification": "Define evidentiary family as a distinct primary-source lineage or linguistic evidence type (e.g., same-book collocation vs independent manuscript orthography vs version retroversion) that is not derived from the same observation or stemma used for the highest-class advantage."
+    },
+    {
+      "location": "Rule 3 gate item 4 (construction parallel)",
+      "problem": "Requires 'at least one cited independent parallel in the matching language stratum, period, and genre' without stating how close the parallel must be or whether morphological-pattern attestation (vs full lexical identity) suffices.",
+      "minimum_clarification": "State that a parallel is sufficient when it attests the same construction type or morphological pattern in the matching variety; exact lexical identity is required only for sense claims that are unique to the disputed locus."
+    }
+  ],
+  "unfair_rules": [],
+  "missing_rules": [
+    "Operational criteria that distinguish STRONGLY_FAVORS from FAVORS and NEUTRAL from AMBIGUOUS.",
+    "Explicit definition of 'materially distinguishes' and of 'evidentiary family' for Rule 12.",
+    "Explicit default allowance statement for period-normal plene/defective and mater variation when no exceptional orthographic claim is made (partially implied by gate items 1 and 6 but not stated as automatic)."
+  ],
+  "comparison_to_own_proposal": "Rules-v2 are more procedurally detailed and mechanical than my frozen proposal. They align closely on freeze-first, symmetrical hard gates, collapse of dependent witnesses, predeclared genre adjustments, exclusion of authority/popularity, explicit falsifiers, and default underdetermination. Principal differences: (1) rules-v2 assign the received pointing zero comparative weight and equal positive-evidence burden to both candidates, whereas my proposal treated Masoretic pointing as a strong but rebuttable presumption that requires clear higher-tier advantage to override; (2) rules-v2 impose a stricter multi-class decision threshold than my 'clear cumulative advantage' language; (3) the gate’s cited-parallel requirement is slightly stricter. On symmetry and neutrality, rules-v2 meet or exceed my standards; residual defects are operational scoring and materiality definitions—analogous to the threshold clarifications I already listed for my own proposal.",
+  "exact_revision_suggestions": [
+    "Rule 6: insert operational score definitions—NEUTRAL = no net directional force; AMBIGUOUS = direction uncertain or supports both; FAVORS = clearly more natural/probable without excluding the rival; STRONGLY_FAVORS = near-decisive fit unexpected under the rival but short of Class-1 logical exclusion.",
+    "Rule 12: define 'highest class that materially distinguishes' as the highest-priority class in which one candidate scores FAVORS or STRONGLY_FAVORS and the other does not.",
+    "Rule 12 condition 3: define 'evidentiary family' as a distinct primary-source lineage or linguistic evidence type not derived from the same observation/stemma used for the highest-class advantage.",
+    "Rule 3 item 4: clarify that the required parallel attests the construction type or morphological pattern in the matching variety; exact lexical identity is required only for sense claims unique to the locus."
+  ],
+  "reasoning": "Evaluated solely as written for procedural fairness. Symmetry PASSes: the admission gate, evidence classes, scoring ledger, source-risk rule, genre adjustments, and decision threshold apply identically to both candidates; A/B label swap and equal burden statements prevent one-sided application. Neutrality PASSes: received pointing has zero comparative weight and cannot break ties; no candidate is penalized merely for departing from it; source discounts require independently documented behavioral patterns applied to every source class. Hard constraints (gate + Class-1 logical exclusion) are cleanly separated from comparative weights. Outcomes, including UNDERDETERMINED and INADMISSIBLE variants, are fully defined and forbid forcing a winner. Reproducibility FAILs without amendment because the critical score intensities (STRONGLY_FAVORS/FAVORS/NEUTRAL/AMBIGUOUS), the phrase 'materially distinguishes', and 'evidentiary family' lack operational definitions; independent evaluators can therefore diverge on which class is highest-distinguishing and whether Rule 12’s three conditions are met. These gaps are reviewable but not bounded tightly enough for exact reproduction, so the smallest clarifications listed above are required. No rule as written creates an unbounded or unreviewable advantage for one side; the same rules can defeat either candidate. Because textual clarifications are required, agree_to_use_as_baseline is NO and the verdict is FAIR_WITH_CLARIFICATIONS rather than FAIR_AS_WRITTEN. No unfair rules were identified.",
+  "confidence": "HIGH"
+}

@@ -25,13 +25,18 @@ All key texts verified against the corpus 2026-07-02.
   Ex 10:13 (locusts); Jon 4:8; "an east wind… the wind of the LORD"
   (Hos 13:15). (Proposed for ch. 11 Four Winds.)
 
-## West (yam) — the sea at the back; hindermost
+## West (yam) — the sea at the back; the end or destination
 
 - Hebrew for west IS "sea" (yam) — Israel faces east, the sea at its
-  back; "the hinder sea" = the western (Zech 14:8; Joel 2:20 "his face
-  toward the east sea, and his hinder part toward the utmost sea").
-- "The HINDERMOST of the nations shall be a wilderness" (Jer 50:12 —
-  said of Babylon's mother). Facing qedem, west is what lies behind.
+  back; *acharon* (last/hinder, H314) names "the hinder sea" = the western
+  (Zech 14:8; Joel 2:20 "his face toward the east sea, and his hinder part
+  toward the utmost sea").
+- The related *acharith* (last/end, H319) says, "The HINDERMOST of the
+  nations shall be a wilderness" (Jer 50:12 — said of Babylon's mother).
+  The oracle can carry all three layers: last in rank after judgment, last in
+  the imperial succession that began with Nebuchadnezzar's head of gold, and
+  — facing *qedem* — westernmost in position. "Westernmost" is the directional
+  inference, not a direct translation of H319.
 
 ## South — verify further before writing
 

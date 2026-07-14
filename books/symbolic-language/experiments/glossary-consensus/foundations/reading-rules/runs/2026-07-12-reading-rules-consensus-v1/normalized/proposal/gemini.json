@@ -1,0 +1,100 @@
+{
+  "written_text_status": "The unpointed consonantal text (Ketiv) serves as the fixed, unalterable baseline for both candidate readings.",
+  "admissibility_gate": [
+    "The reading must perfectly match the existing consonantal text without requiring emendation or rearrangement of consonants.",
+    "The reading must be morphologically possible and lexically attested in standard Hebrew or Aramaic lexicons.",
+    "The reading must not create an impossible syntactic sequence within its immediate clause."
+  ],
+  "hard_disqualifiers": [
+    "Requires alteration, addition, or deletion of the consonantal text.",
+    "Violates fundamental rules of biblical Hebrew/Aramaic grammar and phonotactics.",
+    "Results in a string of words that fundamentally cannot be parsed syntactically in the source language."
+  ],
+  "comparison_rules": [
+    {
+      "rule_id": "CR-01",
+      "title": "Immediate Syntactic and Semantic Coherence",
+      "operation": "HARD_CONSTRAINT",
+      "rule": "A reading that allows the immediate clause to function syntactically and semantically smoothly is preferred over one that requires highly anomalous or fractured syntax.",
+      "justification": "Words do not exist in isolation; their primary function is to serve the immediate syntactic unit. A syntactically coherent reading is vastly more probable."
+    },
+    {
+      "rule_id": "CR-02",
+      "title": "Intra-book and Canonical Usage",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "Preference is given to the reading that aligns with the specific authorial, stylistic, and lexical patterns of the book or historical stratum in which it appears.",
+      "justification": "Authors and editors exhibit identifiable linguistic habits and vocabulary preferences."
+    },
+    {
+      "rule_id": "CR-03",
+      "title": "Ancient Versional Support",
+      "operation": "SOURCE_WEIGHT",
+      "rule": "Readings that can be securely retroverted from ancient translations (e.g., LXX, Targum, Peshitta, Vulgate) provide external historical evidence for a specific vocalization tradition.",
+      "justification": "Ancient versions reflect vocalization traditions that often predate the Masoretic standardization."
+    },
+    {
+      "rule_id": "CR-04",
+      "title": "Lectio Difficilior Potior",
+      "operation": "COMPARATIVE_WEIGHT",
+      "rule": "If one reading is a common word or harmonizes with a parallel passage, and the other is a rarer but grammatically sound alternative, the more difficult reading is generally preferred unless other evidence strongly overrides.",
+      "justification": "Scribes and reading traditions tend to simplify difficult texts or harmonize them with familiar patterns rather than making simple texts more difficult."
+    },
+    {
+      "rule_id": "CR-05",
+      "title": "Resolution of Equivalency",
+      "operation": "TIE_BREAK",
+      "rule": "When syntactic, lexical, and external evidence remain perfectly balanced between two valid vocalizations, the Masoretic tradition is upheld as the default tie-breaker.",
+      "justification": "The Masoretic tradition represents the most rigorously transmitted reading tradition and holds the historical burden of proof."
+    }
+  ],
+  "evidence_hierarchy": [
+    {
+      "evidence": "Immediate clause syntax and grammar",
+      "default_role": "CONTROLLING",
+      "conditions": "Must be evaluated prior to broader semantic or theological considerations."
+    },
+    {
+      "evidence": "Whole-book stylistic and lexical patterns",
+      "default_role": "STRONG",
+      "conditions": "Applies when the usage is clearly established within the same literary unit."
+    },
+    {
+      "evidence": "Ancient Translation Retroversion (LXX, Targumim, Peshitta, Vulgate)",
+      "default_role": "SUPPORTING",
+      "conditions": "Requires confirmation that the version's reading is not an artifact of its own translation technique or theological bias."
+    },
+    {
+      "evidence": "Dead Sea Scrolls and early manuscripts (if bearing on pronunciation/vowels)",
+      "default_role": "CONTEXT_DEPENDENT",
+      "conditions": "Must account for sectarian spelling practices (e.g., Qumran plene spelling)."
+    },
+    {
+      "evidence": "Raw lexical frequency",
+      "default_role": "WEAK",
+      "conditions": "Used only to gauge general probability; cannot override immediate contextual fit."
+    }
+  ],
+  "received_pointing_role": "REBUTTABLE_PRESUMPTION",
+  "received_pointing_rule": "The Masoretic vocalization, accents, and Qere are treated as a highly reliable, ancient reading tradition. They are presumed correct unless the alternative reading demonstrates substantially superior syntactic coherence, overwhelming intra-book precedent, or definitive versional evidence lacking an alternative explanation.",
+  "burden_of_proof_rule": "The burden of proof is asymmetrical. The candidate reading that departs from the Masoretic vocalization must provide preponderant and compelling evidence to displace the received pointing. If neither candidate represents the Masoretic pointing, the burden is symmetrical.",
+  "dependent_witness_rule": "Witnesses derived from a common ancestor (e.g., a daughter translation of the Septuagint, or identical readings across closely affiliated medieval Masoretic manuscripts) are grouped and counted as a single witness representing their common source. Double-counting of genealogically dependent sources is prohibited.",
+  "source_bias_rule": "If an ancient version's vocalization tradition aligns with its known structural biases (e.g., the Targum's tendency to avoid anthropomorphisms or the Septuagint's harmonizations to the Pentateuch), its weight is heavily discounted as an exegetical artifact rather than an independent textual witness.",
+  "special_context_rules": [
+    "Poetry Rule: Poetic texts permit archaic vocabulary, elided particles, rare morphological forms, and disrupted word orders that would be disqualified in standard prose.",
+    "Parallelism Rule: In parallel accounts (e.g., Samuel/Kings vs. Chronicles), harmonization to the parallel text is a known scribal tendency; unique readings in the target text are shielded from forced harmonization.",
+    "Defective Spelling Rule: Older textual strata exhibiting strictly defective spelling allow greater latitude for divergent vocalizations than later strata with fixed plene markers."
+  ],
+  "tie_rule": "If the evidence for both readings is evenly balanced and no reading can conclusively displace the other, the case is declared genuinely underdetermined. The Masoretic pointing is retained by default for practical purposes, but the text is flagged as ambiguous.",
+  "anti_ad_hoc_safeguards": [
+    "Lexical definitions and grammatical rules must be cited from standard, established reference works (e.g., HALOT, BDB, GKC, Joüon-Muraoka) rather than generated specifically to resolve the current dispute.",
+    "Translational techniques and biases of ancient versions must be supported by general text-critical literature independent of the verse under examination.",
+    "The weighting hierarchy of evidence must remain strictly sequential and cannot be rearranged to favor a specific outcome."
+  ],
+  "proposed_baseline": "The fixed sequence of unpointed consonants (Ketiv) functions as the physical baseline, while the Masoretic vocalization acts as the default reading state to be evaluated.",
+  "clarifications_needed": [
+    "Is the text embedded in a poetic or prose section?",
+    "Does the text have a parallel synoptic passage elsewhere in the Hebrew Bible?",
+    "Are there specific plene/defective spelling conventions in the immediate context that constrain the vowels?"
+  ],
+  "confidence": "HIGH"
+}

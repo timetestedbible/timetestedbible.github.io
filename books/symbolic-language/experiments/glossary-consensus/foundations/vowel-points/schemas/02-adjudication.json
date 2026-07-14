@@ -1,0 +1,69 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "chapter_assessment": {
+      "type": "string",
+      "enum": ["PERSUADED", "PARTLY_PERSUADED", "UNPERSUADED"]
+    },
+    "commitment_change": {
+      "type": "string",
+      "enum": ["CONFIRMED", "REFINED", "REVISED", "REVERSED"]
+    },
+    "vowel_points_original_to_written_text": {
+      "type": "string",
+      "enum": ["YES", "NO", "UNCERTAIN"]
+    },
+    "vowel_points_authority": {
+      "type": "string",
+      "enum": ["BINDING", "REBUTTABLE_PRESUMPTION", "EVIDENCE_ONLY", "NONE"]
+    },
+    "cantillation_authority": {
+      "type": "string",
+      "enum": ["BINDING", "REBUTTABLE_PRESUMPTION", "EVIDENCE_ONLY", "NONE"]
+    },
+    "alternate_vocalization_admissible": {
+      "type": "string",
+      "enum": ["YES", "NO", "CONDITIONAL"]
+    },
+    "received_pointing_alone_can_veto": {
+      "type": "string",
+      "enum": ["YES", "NO", "CONDITIONAL"]
+    },
+    "burden_of_proof": {"type": "string"},
+    "required_support": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "core_rule": {"type": "string"},
+    "strongest_chapter_evidence": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "unresolved_objections": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "rationale": {"type": "string"},
+    "confidence": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    }
+  },
+  "required": [
+    "chapter_assessment",
+    "commitment_change",
+    "vowel_points_original_to_written_text",
+    "vowel_points_authority",
+    "cantillation_authority",
+    "alternate_vocalization_admissible",
+    "received_pointing_alone_can_veto",
+    "burden_of_proof",
+    "required_support",
+    "core_rule",
+    "strongest_chapter_evidence",
+    "unresolved_objections",
+    "rationale",
+    "confidence"
+  ]
+}

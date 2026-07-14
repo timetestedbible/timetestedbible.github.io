@@ -1,19 +1,110 @@
 ---
 layout: symbol-study
 symbol_key: harvest
-title: "Harvest — Symbol Study"
-description: "Harvest in Scripture represents the appointed separation — the consummation when accumulated works reach fullness and are gathered to their outcome, whether barn or winepress."
-strongs: [H7105, G2326]
-words: [harvest, reap, reaped, reapers, reapeth, sickle, harvestman]
+title: Harvest — Symbol Study
+description: >-
+  Harvest in Scripture represents the appointed separation — the consummation when accumulated works
+  reach fullness and are gathered to their outcome, whether barn or winepress.
+strongs:
+  - H7105
+  - G2326
+words:
+  - harvest
+  - reap
+  - reaped
+  - reapers
+  - reapeth
+  - sickle
+  - harvestman
+record_version: 1
+record_type: symbol
+term: Harvest
+definition: The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.
+meaning: The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.
+definition_status: approved
+definition_meta:
+  authority: book-glossary
+  status: approved
+  source: books/symbolic-language/49-glossary.adoc#sym-harvest
+  verdict: standard
+classification: symbol
+relationships:
+  opposites: []
+  related: []
+research:
+  status: documented
+  source_files: []
+  corpus:
+    translation: KJV with Strong's numbers
+    english_forms:
+      - harvest
+      - reap
+      - reaped
+      - reapers
+      - reapeth
+      - sickle
+      - harvestman
+senses:
+  - id: approved-core
+    status: approved
+    summary: >-
+      The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff
+      burned.
+    citations:
+      - Joel 3:13
+      - Matt 13:39
+provenance:
+  reconciled_on: "2026-07-13"
+  definition_checked_against: books/symbolic-language/49-glossary.adoc
+definitions:
+  bible_symbolic:
+    text: >-
+      The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff
+      burned.
+    status: approved
+    authority: book-glossary
+    source: books/symbolic-language/49-glossary.adoc#sym-harvest
+    citations:
+      - Joel 3:13
+      - Matt 13:39
+  bible_literal:
+    text: null
+    status: needs-research
+    citations: []
+    note: State this from ordinary biblical uses; do not copy the dictionary definition into this field.
+  webster:
+    text: >-
+      The gathering of a crop of any kind; the ingathering of the crops; also, the season of
+      gathering grain and fruits, late summer or early autumn.
+    status: quoted
+    headword: HARVEST
+    source: Webster's Revised Unabridged Dictionary (1913)
 ---
 
 # Harvest
 
-**The appointed separation — the consummation when accumulated works reach fullness and are gathered to their outcome.**
+## Approved Definition
 
+**The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.**
 > *"The **harvest** is the end of the world; and the **reapers** are the angels."* — Mat 13:39
 
 ---
+
+## Definition Layers
+
+### Bible symbolic sense
+
+**The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.**
+
+### Bible literal sense
+
+*Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
+
+### Webster's English sense
+
+Webster's 1913 entry for **harvest** begins: “The gathering of a crop of any kind; the ingathering of the crops; also, the season of gathering grain and fruits, late summer or early autumn.”
+
+These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -217,8 +308,7 @@ When the wrong works are sown, the harvest becomes grief. When the appointed sea
 
 ---
 
-## Connections
-
+## Relationship to Other Symbols
 - **$the-end** — Harvest is the mechanism of $the-end — the covenant purpose reaching fulfillment through cutting, gathering, and separating. Mat 13:39 equates them: "the harvest IS the consummation of the age." Harvest enacts what $the-end names.
 
 - **$fire** — The destination of the tares (Mat 13:40–42), the authority behind the grape harvest (Rev 14:18 — the angel "which had power over fire"), and the testing standard of all works (1 Cor 3:13). $fire — God's holy standard in active contact — is what meets the harvest at its conclusion: refining the wheat, consuming the chaff.
@@ -313,3 +403,37 @@ KJV translates H7105 as "harvest," "harvest time," and occasionally "bough/branc
 - **$babylon** — The threshing floor of Jer 51:33. How does Babylon's harvest — the gathering of her own accumulated wickedness — mirror the self-consuming fire pattern in Ezek 28:18?
 
 - **$fruit** — What the harvest gathers. How does the equation of $fruit with works and deeds explain why the harvest separates not by identity but by what was produced?
+
+---
+
+## Dictionary Comparison
+
+Webster's 1913 entry for **harvest** begins:
+
+> “Har”vest, n. Etym: [OE. harvest, hervest, AS. hærfest autumn; akin to LG. harfst, D. herfst, OHG. herbist, G. herbst, and prob. to L. carpere to pluck, Gr. Carpet.] 1. The gathering of a crop of any kind; the ingathering of the crops; also, the season of gathering grain and fruits, late summer or early autumn. Seedtime and harvest . . . shall not cease. Gen viii. 22. At harvest, when corn is ripe. Tyndale.”
+
+The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+
+## Competing Definitions Tested
+
+- Joel 3:13 emphasizes punitive judgment rather than righteous ingathering, and Matthew 13:39 alone identifies harvest with the end of the age without itself stating the wheat/chaff outcomes. Even so, the printed citations strongly support the entry's core identification, with Matthew 13:39 providing an explicit definition.
+
+- One could argue the book implicitly narrows the symbol by omitting the very widespread evangelistic 'harvest of souls' sense (which Responses A and B call 'dominant' in popular usage), so the entry could be read as REFINED (BOOK_SUBSET). However, a short glossary stating the primary meaning without listing alternatives is not a material boundary claim, and the consensus itself ranks the eschatological sense as primary.
+
+- The book omits the widely attested evangelistic sense that consensus lists as a dominant secondary use, but this does not alter the primary core match.
+
+
+
+These tests identify the boundary the definition must explain. A shared phrase or nearby theme is not enough by itself; the cited passages must establish the proposed identity and account for the countertexts without changing senses whenever the reading becomes difficult.
+
+## Conclusion
+
+**The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.**
+
+This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+
+---
+
+## Corpus and Method
+
+This study checks the glossary's defining citations first, then compares them with every KJV verse that prints *harvest*, *reap*, *reaped*, *reapers*, *reapeth*, *sickle*, *harvestman*. The English-form sweep found **95 verses**. It is exhaustive for those printed forms, but it is not a substitute for a Strong's-number sweep where several Hebrew or Greek words share one English translation.
