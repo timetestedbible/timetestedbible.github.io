@@ -10,14 +10,25 @@ timetested.bible (this repo IS the deployment — GitHub Pages serves it directl
   `edition: digital` (wrapped `ifndef::print-edition[]` in the print build). `NNx-*.adoc`
   are order-N.5 inserts; edition comes from front matter, not the x (16x/41x digital-only,
   38x print-only, 46x both editions — author's ruling 2026-07-12).
-- `48-glossary.adoc` — the symbol glossary. Entry format:
+- `49-glossary.adoc` — the symbol glossary. Entry format:
   `[[sym-anchor]]Term (qualifier) verdict:divergent[]:: definition +` then optional
-  `[.commonview]__Commonly taught: …__ +` then `[.seeref]__(verses) · see link:…[Chapter Title][.chnum]#, ch. N#__`.
+  `[.opposite]__Opposite: sym:sym-other[Other].__ +` and
+  `[.commonview]__Commonly taught: …__ +`, then `[.seeref]__(verses) · see link:…[Chapter Title][.chnum]#, ch. N#__`.
+  Opposite fields are reserved for direct reciprocal contrasts and must appear on both entries;
+  complementary figures and stages in a process are not opposites.
   Badges (DIVERGENT / NOVEL) come from the blind test; the preamble states the entry count — keep it true.
 - `print/build.rb` — assembles and renders the trade PDF (asciidoctor-pdf + `print/extension.rb`).
   `PARTS` map in build.rb assigns part titles by slug. Citations are abbreviated at build time
   (write full book names in source). `[.chnum]#…#` spans are stripped for print, kept on web.
-- `research/` — one `research-<topic>.md` per study; the glossary and chapters cite these.
+- `_symbols/<key>.md` — canonical per-term repository: structured frontmatter
+  plus the prose derivation published on the website. During migration its
+  approved `definition` must match `49-glossary.adoc`; newer findings stay in
+  `research.candidate_definition` until author approval. Format and authority
+  rules: `research/SYMBOL-REPOSITORY.md`.
+- `research/` — `research-<topic>.md` notebooks containing the newest occurrence
+  sweeps, countertexts, and exploratory work. Newer research is not automatically
+  more vetted than the book definition; canonical records cite these notebooks
+  as evidence sources rather than treating them as a competing glossary.
 - `images/masters/` (source), `images/print/` (tone-curved for uncoated stock via
   `print/plate-print-tone.py`), `images/ebook/` (generated, gitignored).
 - Repo root: `bibles/` (texts), `data/hg-chapters/` (Hebrew Gospels interlinear JSON),
@@ -67,9 +78,14 @@ Discipline (hard-won — violating this has silently destroyed edits):
    dimension, flagged as wordplay, never as the definition.
 4. **Sweep for counter-texts before fixing a definition** — define the range, not one
    fitted sense. Identity claims need identity-grade evidence.
-5. Write it up as `research/research-<topic>.md`: occurrences, the pattern, candidate
-   definition, counter-texts weighed, verdict.
-6. **Blind grading** (for glossary entries): 3 agents with no repo access state the
+5. Write or update `research/research-<topic>.md`: occurrences, the pattern,
+   candidate definition, counter-texts weighed, verdict. Then reconcile that
+   evidence into `_symbols/<key>.md` using `research/SYMBOL-REPOSITORY.md`.
+   Keep the current book definition in `definition` and place unapproved changes
+   under `research.candidate_definition`.
+6. Run `npm run verify:symbol-records` so approved definitions cannot drift from
+   the book while records are migrated.
+7. **Blind grading** (for glossary entries): 3 agents with no repo access state the
    consensus meaning; 3 skeptical graders read the research file and check the citations
    against `kjv_strongs.txt`/HG, output `VERDICT: Match|Refined|Divergent|Novel` — the
    majority verdict becomes the badge, and the glossary counts are updated.
@@ -88,6 +104,11 @@ Discipline (hard-won — violating this has silently destroyed edits):
   prose); a chapter never opens by reaching back.
 - **Numbers are digits**, even inside quotes (603,550; 144,000; "666 talents"). One-word
   small numbers may stay words.
+- **No Hebrew script in body text** (author's ruling 2026-07-13): readers can do nothing
+  with it, and RTL runs garble the print text flow. Use italic transliteration
+  (_ki-tov sachrah_) and letter-name prose ("spelled with aleph"); figures/images may
+  still SHOW letters. EXACTLY TWO exceptions (author): the moon/throne spelling argument
+  (כסא/כסה, chs. 30-31) and the vowel-point demonstration (חלב, chs. 1 and 25). No others.
 - **anomia = "lawlessness"** in every quote (KJV "iniquity"); check the Strong's tag —
   2 Tim 2:19 is adikia and keeps "iniquity."
 - **Translation choice is per-quote** (KJV/ASV/NKJV — whichever renders the key word
