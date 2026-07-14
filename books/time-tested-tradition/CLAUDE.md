@@ -40,9 +40,15 @@ and authoritative for the public until the 2nd edition ships:
 
 - Conversion was MECHANICAL: wording is verbatim from the web edition
   (2nd-edition draft); do not "improve" prose without the author.
-- Chapters 20-22 (USA is Babylon, Pre-Trib Rapture, Blood Moon) are web-only
-  drafts: not in the print PDF, not in the web reader manifest — kept as
-  `edition: digital` pending the author's ruling.
+- The digital-only drafts (USA is Babylon, Pre-Trib Rapture, Blood Moon) are
+  unnumbered x-inserts 19x2-19x4 (renamed from 20-22 on 2026-07-14 so the
+  print kickers run 1-20 with no gap): not in the print PDF, not in the web
+  reader manifest — kept as `edition: digital` pending the author's ruling.
+- Translation labeling (2026-07-14): unlabeled quotes are KJV (declared on
+  the copyright page); every deviation carries its version in the citation.
+  After adding or changing quotes, re-run
+  `python3 scripts/translation-audit.py books/time-tested-tradition` and
+  check books/copyright-policies/README.md for limits and notices.
 - The extras print in the PDF between Solar Only Calendars and The Path to
   Salvation (files 15x1-15x4); First Fruits & New Wine is web-only digital.
   The PDF combines Herod's Appointment with Battle of Actium; the source keeps
