@@ -380,6 +380,64 @@ against covenant-men who will not know. Stated as structure, not proof:
   Currently held as structure (the colt bound to the soreq until Shiloh
   comes; loosed when He comes), association-grade.
 
+## Addendum (author, 2026-07-15): Zech 9:9 — is He riding on BOTH?
+
+The question: does the language of Zech 9:9 suggest the King rides both
+animals? The witnesses, in order:
+
+1. **The Hebrew doubles the preposition.** WLC: רֹכֵב עַל־חֲמֹור
+   וְעַל־עַיִר בֶּן־אֲתֹנֹות — rokhev AL-chamor VE-AL-ayir ben-atonot,
+   "riding UPON an ass and UPON a colt, son of she-asses (plural)."
+   Simple apposition ("a donkey, that is, a colt") needs no second עַל;
+   the text takes the marked construction. Grammar alone leaves both
+   readings open — poetic doubling of one animal, or coordination of two.
+2. **The oracle it echoes coordinates two real objects with the same
+   syntax.** Gen 49:11: "binding TO THE VINE (la-gefen) his foal, and TO
+   THE CHOICE VINE (ve-la-soreqah) his ass's colt" — doubled preposition,
+   two kindred-but-distinct plants, two animal terms (iro / beni atono).
+   Nobody reads gefen and soreqah as one vine; by the source-oracle's own
+   model, chamor and ayir read most naturally as two kindred mounts.
+3. **The LXX — pre-Christian — reads two.** Brenton: "riding on an ass
+   AND a young foal" (ἐπὶ ὑποζύγιον καὶ πῶλον νέον). The two-animal
+   reading cannot be Matthew's invention; the Greek synagogue read it
+   that way centuries before him.
+4. **Matthew mirrors the doubled preposition exactly** — ἐπιβεβηκὼς ἐπὶ
+   ὄνον ΚΑΙ ἘΠῚ πῶλον (21:5) — and his narrative supplies two animals
+   throughout: "they brought the ass and the colt, and laid on THEM
+   (ἐπ᾽ αὐτῶν) the garments, and he sat upon THEM (ἐπάνω αὐτῶν)" (21:7).
+   The pronoun's first use in the verse is indisputably the two animals;
+   the second is usually deflected to "the garments," but Matthew wrote
+   the same word twice in one sentence.
+5. **The Hebrew Matthew answers the question directly — and surprises.**
+   HG 21:7 word-by-word: "they brought the she-ass (athon) and the colt
+   (ayir), and Yeshua rode UPON HER (עליה, feminine singular — the
+   MOTHER); and the others placed their vessels and their garments on
+   THEM (עליהם, both)." The Hebrew witness has Him on the she-ass, the
+   colt alongside, the company's gear on both.
+6. **Mark, Luke, and John name only the colt** — "whereon never man sat"
+   (Mark 11:7 ἐκάθισεν ἐπ᾽ αὐτόν; Luke 19:35 set Jesus ἐπὶ τὸν πῶλον;
+   John 12:14 the onarion).
+
+**Assembly.** The witnesses harmonize if the doubled עַל is literal: He
+rode BOTH — the mother for one leg (the Hebrew Matthew's "upon her"), the
+never-ridden colt for the entry itself (Mark/Luke/John's leg). Matthew,
+quoting the prophecy whole, reports the whole: both brought, both
+saddled, "he sat upon them." Each single-mount Gospel names one leg;
+none contradicts the other. The alternative harmonization (rider on the
+colt only, the dam alongside to steady her unbroken foal) satisfies
+Mark-Luke-John but leaves the LXX, the doubled preposition, Matthew's
+ἐπάνω αὐτῶν, and HG's "upon her" all unexplained.
+
+**Symbolic register (candidate structure, author to weigh):** Gen 49:11
+binds the two animals to two vines — the foal to the gefen, the she-ass's
+son to the soreqah, the choice-vine word of God's planted nation (Isa
+5:2; Jer 2:21). The mother is the athon that has long borne the yoke; the
+colt "whereon never man sat" has borne no yoke but His. The King who
+comes lowly rides them both into the city — the seasoned bearer and the
+newly claimed — one Rider over both, as the one law covers the homeborn
+and the stranger (Exod 12:49, the study's yoke-fork refinement). Held as
+structure pending the author's ruling.
+
 ## Glossary entry
 
 Candidate [[sym-donkey]]. Definition: "The stiffnecked burden-bearer —
