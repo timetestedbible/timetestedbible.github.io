@@ -438,6 +438,43 @@ newly claimed — one Rider over both, as the one law covers the homeborn
 and the stranger (Exod 12:49, the study's yoke-fork refinement). Held as
 structure pending the author's ruling.
 
+## Addendum 2 (author, 2026-07-15): "straightway he will send them" — moment-family?
+
+The question: does Matt 21:3's "right away" connect to "immediately" or
+"in a moment"?
+
+- **Lexically, no — and the distinction is clean.** "Straightway" is
+  euthys/eutheōs (G2117/G2112). "In a moment" (1 Cor 15:52) is en atomō
+  (G823, the uncuttable instant) with "the twinkling (rhipē) of an eye";
+  Hebrew's moment is rega (H7281, Job 34:20; Isa 26:20). Different word
+  families; no tag-level weld.
+- **But euthys carries its own freight: it is the STRAIGHT-word.** The
+  adverb of promptness is the adjective of the prepared road — "make his
+  paths STRAIGHT (eutheias)" (Matt 3:3; John 1:23, Isa 40:3's highway).
+  Greek promptness is straightness: no crooked delay. The colt is
+  released and returned by the straight way of the Lord.
+- **The Hebrew Matthew's bridge: u-MIYAD — "and immediately," letters:
+  "and FROM THE HAND."** HG Matt 21:3: "the master has need of them, and
+  miyad he will LET THEM GO (ya'azov)"; HG Mark 11:3: "the Lord needs
+  him, and miyad they will let him go (yanichuhu)." The Hebrew witness
+  reads the promptness as the OWNER'S instant release — the claim of the
+  Master opens the hand that held them, at once. (Wordplay note, held
+  lightly: Job 34:20 removes the mighty "WITHOUT hand" — lo b'yad — in a
+  moment at midnight; the needed colt is released FROM the hand — miyad —
+  straightway. The hand opens for the claimed; no hand avails for the
+  doomed.)
+- **Who sends whom: both directions are instant.** Greek Mark 11:3 adds
+  palin — "straightway he sends him BACK here" — the Borrower's promise
+  of prompt return; the HG reads the owner's prompt release. The verse
+  holds both: released from the hand the moment the Kyrios is named,
+  returned straightway when the need is served.
+- **Structural kinship to the moment-complex (structure, not lexeme):**
+  the shape of the scene — bound, loosed at the Master's claim, carried
+  into service, returned — is the gathering's shape: the trumpet sounds
+  and the dead are raised "in a moment" (1 Cor 15:52); the colt is
+  loosed "because the Lord hath need of him." The vocabulary differs;
+  the grammar of instant claim-and-release is one.
+
 ## Glossary entry
 
 Candidate [[sym-donkey]]. Definition: "The stiffnecked burden-bearer —
