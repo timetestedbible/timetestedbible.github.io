@@ -190,6 +190,56 @@ city at the end. The author's glossary entry is supported at every
 verifiable point; "owns the field" and the Virgo identification are
 association- and system-grade respectively, flagged above.
 
+## Addendum (author, 2026-07-15): is sachar the husband / bag-of-money word in Prov 7:19-20?
+
+Lexically no. __“The goodman”__ is ha-ish (H376, simply "the man"); __“a
+bag of money”__ is tseror ha-kesef (H6872 bundle + H3701 silver). No
+sachar in the verse. But the hunt lands anyway, three ways:
+
+1. **The verse puns silver against the full moon in its own letters.**
+   צְרוֹר־הַכֶּסֶף … לְיוֹם הַכֵּסֶא — tseror ha-KESEF taken in his hand,
+   coming home at yom ha-KESE: kesef and kese ring together (wordplay,
+   flagged). Silver is the redemption metal — the census ransom, the Coin
+   chapter's ledger — and the moon-white metal carried toward the
+   full-moon day.
+2. **What the bag holds, the return texts supply.** __“Behold, his REWARD
+   (sachar) is with him, and his WORK (pe'ulah) before him”__ (Isa 40:10;
+   62:11) — the coming One carries the sachar, and Rev 22:12 puts the
+   line in the returning King's mouth. Proverbs shows the bag; Isaiah
+   names the contents.
+3. **The tseror sweep (every occurrence checked) gives the bag its
+   theology:**
+   - Gen 42:35 — __“every man's BUNDLE OF MONEY (tseror kesef)”__ — the
+     EXACT phrase of Prov 7:20 — the brothers' redemption-silver returned
+     hidden in their sacks: the lord of the grain refuses payment and
+     sends the price home with the purchased.
+   - 1 Sam 25:29 — __“the soul of my lord shall be BOUND IN THE BUNDLE OF
+     LIFE (tseror ha-chayyim) with the LORD thy God”__ — souls kept in
+     God's own bundle.
+   - Song 1:13 — __“a BUNDLE of myrrh is my wellbeloved unto me; he shall
+     lie ALL NIGHT betwixt my breasts”__ — the beloved as the bundle
+     carried through the night.
+   - Amos 9:9 — sifted __“among all nations… yet shall not the least
+     grain (tseror) fall upon the earth”__ — nothing in the bundle is
+     lost in the sifting.
+   - Job 14:17 — __“my transgression is SEALED UP in a bag (tseror)”__ —
+     the sealed contents awaiting the day.
+   - Hag 1:6 — the counterfeit: __“he that EARNETH WAGES earneth wages
+     (sachar, H7936 DOUBLED — Leah's exact doubling from Gen 30:16) to
+     put it into a BAG (tseror) WITH HOLES”__ — the wage-and-bag verse,
+     negative pole: wages that leak from a pierced bundle, earned apart
+     from the LORD's house.
+
+**Candidate structure (author to weigh):** the Husband on the far journey
+carries the tseror ha-kesef — the redemption-silver, the souls bound in
+the bundle of life — through the whole night between the breasts, sifted
+through all nations with not one kernel falling, and opens the bag at the
+keseh homecoming: his reward is with him, __“and of all which he hath
+given me I should LOSE NOTHING, but should raise it up again at the LAST
+DAY”__ (John 6:39 — the Return chapter's own last-day anchor). Against
+it, the pierced bag of Haggai: wages earned outside the House run out the
+holes.
+
 ## Tiered verse lists
 
 **Tier 1 — definitional:** Gen 30:14-18; 49:14-15; Deut 33:18-19; Judg
