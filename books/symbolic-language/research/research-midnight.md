@@ -156,6 +156,57 @@ heaven, the announced midnight of the wedding — while Egypt's moonless
 midnight remains the pattern of the unannounced stroke against the house
 that would not let go.
 
+## Addendum (author, same day): are there 2 midnights? — the 180° reconciliation
+
+The question: with the month beginning at the full moon, Passover (14th-15th)
+falls at the dark moon — the moon 180° through its cycle from day 1. Does
+that break the midnight picture, or complete it?
+
+It completes it. **The month is a macro-day, and it has its own midnight.**
+
+1. **The month's light-curve maps onto the day's.** Read the lunation by
+   light: fulness is the month's NOON (maximum light), the dark conjunction
+   is the month's MIDNIGHT (no light). A month that begins at the full moon
+   begins at its noon and reaches its midnight at the 14th-15th — so in
+   this calendar **Passover falls at the midnight of the month.** The
+   Exodus stroke was midnight twice over: the halving of the night (chatsi
+   ha-laylah) inside the halving of the month — the mid-night of the moon's
+   own cycle.
+2. **Both midnights sit at a 180°.** The full moon stands 180° from the
+   sun — opposition, the geometry that marks the NIGHT's midnight from the
+   top of the sky. The dark moon stands 180° through the month from the
+   full-moon start — the MONTH's midnight. One angle, measured two ways,
+   yields the two midnights.
+3. **The markers invert, and the inversion is astronomical fact.** The full
+   moon culminates at the night's midnight: light standing in the middle of
+   the dark. The dark moon travels WITH the sun and culminates at NOON —
+   invisible darkness standing in the middle of the day. Scripture speaks
+   that inversion aloud for the dark 180: __“I will cause the sun to go
+   down at noon, and I will darken the earth in the clear day: and I will
+   turn your feasts into mourning… as the mourning of an only son”__ (Amos
+   8:9-10) — darkness at noon, at a feast, mourned like an only son: the
+   crucifixion's three-hour darkness at the sixth hour, at Passover, at the
+   month's midnight, when the dark moon itself stood unseen at the height
+   of the sky beside the sun. Jesus named that half's hour at His arrest:
+   __“this is your hour, and the power of darkness”__ (Luke 22:53).
+4. **The two redemptions take the two midnights.** The first redemption is
+   purchased in the dark 180: Egypt struck at the moonless midnight of the
+   month's midnight; the Lamb slain at the same station of the cycle,
+   darkness at noon. The final redemption arrives at the bright 180: the
+   Husband home at the keseh, the month's noon, whose night-half is the one
+   announced midnight of the sky — the bridegroom's cry under the full
+   witness at its height. Purchased in darkness, consummated in light; the
+   thief-stroke for the house of darkness, the published hour for the
+   children of light (1 Thessalonians 5:2-4) — and the path between them is
+   the bride's own arc, __“more and more unto the perfect day”__ (Proverbs
+   4:18).
+
+Flag (structural mapping): "the month's midnight" is the light-curve
+analogy made explicit, not a lexical claim — chatsot ha-laylah always
+denotes the night's half. The analogy earns its place because the calendar
+texts (keseh day 1; the 14th at the dark) put the events at exactly those
+stations, and Amos speaks the noon-inversion in his own words.
+
 ## Tiered verse lists
 
 **Tier 1 — definitional:** Ex 11:4; 12:29, 42; Matt 25:6 (HG ba-chatsi
