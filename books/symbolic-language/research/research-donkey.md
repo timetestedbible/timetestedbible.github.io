@@ -476,6 +476,19 @@ The question: does Matt 21:3's "right away" connect to "immediately" or
   loosed "because the Lord hath need of him." The vocabulary differs;
   the grammar of instant claim-and-release is one.
 
+**The immediacy is DOUBLED — the finding is also "at once" (2026-07-15):**
+Greek Matt 21:2: __“Go into the village… and STRAIGHTWAY (eutheōs) ye
+shall find an ass tied”__ — the same eutheōs as v3's sending. HG Matt
+21:2 renders it with the same miyad: __“Go to the fortress… and miyad you
+will find one she-ass and one colt.”__ At the Master's word the bearer is
+found at once and released at once — one errand, two instants, one word
+pair (eutheōs / miyad). And the same chapter carries the instant's dark
+twin in a third Greek immediacy word: the fruitless fig tree withers
+parachrēma, __“presently… How soon is the fig tree withered away!”__
+(Matt 21:19-20) — in one chapter the claimed bearer is loosed at once and
+the fruitless tree dies at once: the Exodus-midnight grammar (one stroke
+frees and judges) in miniature.
+
 **The other Hebrew Gospels (same question, checked):**
 
 - **Hebrew Mark 11:3** matches Hebrew Matthew: __“the Lord needs him, and
